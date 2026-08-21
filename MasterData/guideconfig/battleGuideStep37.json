@@ -1,0 +1,561 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8359430822174271028
+  },
+  "m_Name": "battleGuideStep37",
+  "groups": [
+    {
+      "groupId": 1,
+      "items": [
+        {
+          "stepId": 1,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "资源关扫荡已解锁请点击此处",
+            "descLanguageId": 0,
+            "targetName": "Bg",
+            "targetLayerPath": "Normal/MissionStageUI(Clone)/MapScroll/Viewport/Content/PointItem_1/Panel/Bg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 180,
+            "height": 60,
+            "connectRadius": 10,
+            "offset": {
+              "x": 40.0,
+              "y": -7.6
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 320.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40216,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击关卡",
+          "GMMark": 197
+        },
+        {
+          "stepId": 2,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "请勾选速战模式。",
+            "descLanguageId": 0,
+            "targetName": "BtnMop",
+            "targetLayerPath": "Normal/MissionStageUI(Clone)/StageInfo/Right/BtnGroup/BtnMop",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 140,
+            "height": 40,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40217,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "勾选扫荡",
+          "GMMark": 198
+        },
+        {
+          "stepId": 3,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "请点击开始速战按钮。",
+            "descLanguageId": 0,
+            "targetName": "BtnBattle",
+            "targetLayerPath": "Normal/MissionStageUI(Clone)/StageInfo/Right/BtnGroup/BtnBattle",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 190,
+            "height": 50,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40218,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 200,
+          "isFreeClickAfterFinish": 0,
+          "desc": "扫荡",
+          "GMMark": 199
+        }
+      ],
+      "desc": "资源关扫荡",
+      "autoId": 0
+    }
+  ],
+  "preGroups": [
+    {
+      "groupId": 2,
+      "items": [
+        {
+          "stepId": 1,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "资源关扫荡已解锁请点击此处",
+            "descLanguageId": 0,
+            "targetName": "Battle",
+            "targetLayerPath": "Normal/MainUI(Clone)/Bg/Panel_R/R/Battle",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 290,
+            "height": 134,
+            "connectRadius": 10,
+            "offset": {
+              "x": -37.7,
+              "y": -13.97
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -306.15,
+              "y": 148.21
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40216,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击战役",
+          "GMMark": 197
+        },
+        {
+          "stepId": 2,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "Toggle(1)",
+            "targetLayerPath": "Normal/MissionChapterSelection(Clone)/TypeGroup/List/Toggle(1)",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 80,
+            "height": 70,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 0
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 1500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击资源关卡",
+          "GMMark": 0
+        },
+        {
+          "stepId": 6,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "Normal",
+            "targetLayerPath": "Normal/MissionChapterSelection(Clone)/MissionChapterResources/Panel/Bg/Scroll View/Viewport/Content/1/PanelListAni/Normal",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 200,
+            "height": 310,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 501.23,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 0
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "进入医药研究",
+          "GMMark": 0
+        },
+        {
+          "stepId": 1,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "资源关扫荡已解锁请点击此处",
+            "descLanguageId": 0,
+            "targetName": "Bg",
+            "targetLayerPath": "Normal/MissionStageUI(Clone)/MapScroll/Viewport/Content/PointItem_1/Panel/Bg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 180,
+            "height": 60,
+            "connectRadius": 10,
+            "offset": {
+              "x": 40.0,
+              "y": -7.6
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 320.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40216,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击关卡",
+          "GMMark": 197
+        },
+        {
+          "stepId": 2,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "请勾选速战模式。",
+            "descLanguageId": 0,
+            "targetName": "BtnMop",
+            "targetLayerPath": "Normal/MissionStageUI(Clone)/StageInfo/Right/BtnGroup/BtnMop",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 140,
+            "height": 40,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40217,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "勾选扫荡",
+          "GMMark": 198
+        },
+        {
+          "stepId": 3,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "请点击开始速战按钮。",
+            "descLanguageId": 0,
+            "targetName": "BtnBattle",
+            "targetLayerPath": "Normal/MissionStageUI(Clone)/StageInfo/Right/BtnGroup/BtnBattle",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 190,
+            "height": 50,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40218,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 200,
+          "isFreeClickAfterFinish": 0,
+          "desc": "扫荡",
+          "GMMark": 199
+        }
+      ],
+      "desc": "",
+      "autoId": 0
+    }
+  ]
+}

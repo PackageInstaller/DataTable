@@ -1,0 +1,56 @@
+local BuriedPointConst = {
+    HotUpdateStart = "hot_update_start", --热更开始          (基础数据)
+    HotUpdateComplete = "hot_update_complete", --热更完成          (基础数据)
+    ResLoadComplete = "res_load_complete", --资源加载完成      (基础数据)
+    RegisterComplete = "register_complete", --注册完成
+    CreateRole = "create_role", --创角
+    UpdateName = "update_name", --改名字
+    LoginInterface = "login_interface", --游戏登陆界面
+    Login = "login", --登录              (基础数据)
+    Logout = "logout", --登出              (基础数据)
+    HeroGet = "hero_get", --英雄获取
+    HeroLevelup = "hero_level_up", --英雄升级
+    HeroAdvanceup = "hero_advance_up", --英雄突破
+    HeroWakeup = "hero_wake_up", --英雄觉醒
+    HeroGeneup = "hero_gene_up", --基因升级
+    HeroCoreup = "hero_core_up", --核心升级
+    HeroSkillup = "hero_skill_up", --技能升级
+    LotteryDraw = "lottery_draw", --英雄抽卡
+    Contraband_draw = "contraband_draw", --礼物抽卡埋点
+    BattleStart = "battle_start", --战斗开启
+    BattleRecord = "battle_record", --战斗结算
+    Guide = "guide", --新手引导
+    Story = "story", --剧情
+    Energy = "energy", --体力购买          (基础数据)
+    RechargePull = "recharge_pull", --拉起充值
+    Recharge = "recharge", --充值
+    Purchase = "purchase", --AF充值
+    ActivityRecharge = "activity_recharge", --打开首充
+    Cabin_level_up = "cabin_level_up", ---边仓升级
+    Cabin_garrison = "cabin_garrison", ---边仓驻守
+    Cabin_prodce = "cabin_prodce", ---边仓制造
+    Cabin_prodce_get = "cabin_prodce_get", --边仓制造奖励获取
+    Cabin_sythetic = "cabin_sythetic", ---合成舱合成
+    Cabin_intelligence = "cabin_intelligence", ---情报舱
+    Cabin_intelligence_get = "cabin_intelligence_get", --情报仓奖励获取
+    Cabin_cooking = "cabin_cooking", ---做菜
+    Cabin_dinner = "cabin_dinner", ---吃饭
+    Dormitory_enter = "dormitory_enter", --进入宿舍
+    Dormitory_out = "dormitory_out", --离开宿舍
+    Plot_reading = "plot_reading", --事件剧情阅读
+    Favorability = "favorability", --亲密度
+    Interaction = "interaction", --互动
+    Atmosphere = "atmosphere", --氛围值
+    Mood = "mood", --心情值点满
+    Activity_sevenday = "activity_sevenday", --七日活动
+    Draw10 = "draw10", --第一次10连抽
+    ShopBag = "shop_bag",   --礼包购买
+    ShopItemExchange = "shop_Item_exchange", --补给兑换
+    Item5Use = "item5_ues", --信用点消耗
+    Item6Use = "item6_ues", --精密星斯消耗
+    BattleSweep = "battle_sweep", --扫荡埋点
+    Task = "task", -- 任务
+}
+
+
+return BuriedPointConst

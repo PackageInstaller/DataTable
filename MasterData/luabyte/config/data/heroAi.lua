@@ -1,0 +1,3196 @@
+local title = {
+	id = 0,
+	heroId = 0,
+	slot = 0,
+	aiType = 0,
+	nameId = 0,
+	descId = 0,
+	icon = "",
+	effect = "",
+	geneShow = ""
+}
+
+local value = {
+[1] =
+{
+ 		id=1,
+ 		heroId=110001,
+ 		slot=1,
+ 		aiType=110001001,
+ 		nameId=4244,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[2] =
+{
+ 		id=2,
+ 		heroId=110001,
+ 		slot=2,
+ 		aiType=110001002,
+ 		nameId=4245,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[3] =
+{
+ 		id=3,
+ 		heroId=110001,
+ 		slot=3,
+ 		aiType=110001003,
+ 		nameId=4246,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[4] =
+{
+ 		id=4,
+ 		heroId=110001,
+ 		slot=4,
+ 		aiType=110001004,
+ 		nameId=4247,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[5] =
+{
+ 		id=5,
+ 		heroId=110001,
+ 		slot=5,
+ 		aiType=110001005,
+ 		nameId=4248,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[6] =
+{
+ 		id=6,
+ 		heroId=110002,
+ 		slot=1,
+ 		aiType=110002001,
+ 		nameId=4262,
+ 		descId=4298,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[7] =
+{
+ 		id=7,
+ 		heroId=110002,
+ 		slot=2,
+ 		aiType=110002002,
+ 		nameId=4263,
+ 		descId=4299,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[8] =
+{
+ 		id=8,
+ 		heroId=110002,
+ 		slot=3,
+ 		aiType=110002003,
+ 		nameId=4264,
+ 		descId=4300,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[9] =
+{
+ 		id=9,
+ 		heroId=110002,
+ 		slot=4,
+ 		aiType=110002004,
+ 		nameId=4265,
+ 		descId=4301,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[10] =
+{
+ 		id=10,
+ 		heroId=110002,
+ 		slot=5,
+ 		aiType=110002005,
+ 		nameId=4266,
+ 		descId=4302,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[11] =
+{
+ 		id=11,
+ 		heroId=110003,
+ 		slot=1,
+ 		aiType=110003001,
+ 		nameId=4238,
+ 		descId=4274,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[12] =
+{
+ 		id=12,
+ 		heroId=110003,
+ 		slot=2,
+ 		aiType=110003002,
+ 		nameId=4239,
+ 		descId=4275,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[13] =
+{
+ 		id=13,
+ 		heroId=110003,
+ 		slot=3,
+ 		aiType=110003003,
+ 		nameId=4240,
+ 		descId=4276,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[14] =
+{
+ 		id=14,
+ 		heroId=110003,
+ 		slot=4,
+ 		aiType=110003004,
+ 		nameId=4241,
+ 		descId=4277,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[15] =
+{
+ 		id=15,
+ 		heroId=110003,
+ 		slot=5,
+ 		aiType=110003005,
+ 		nameId=4242,
+ 		descId=4278,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[16] =
+{
+ 		id=16,
+ 		heroId=110004,
+ 		slot=1,
+ 		aiType=110004001,
+ 		nameId=4244,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[17] =
+{
+ 		id=17,
+ 		heroId=110004,
+ 		slot=2,
+ 		aiType=110004002,
+ 		nameId=4245,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[18] =
+{
+ 		id=18,
+ 		heroId=110004,
+ 		slot=3,
+ 		aiType=110004003,
+ 		nameId=4246,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[19] =
+{
+ 		id=19,
+ 		heroId=110004,
+ 		slot=4,
+ 		aiType=110004004,
+ 		nameId=4247,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[20] =
+{
+ 		id=20,
+ 		heroId=110004,
+ 		slot=5,
+ 		aiType=110004005,
+ 		nameId=4248,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[21] =
+{
+ 		id=21,
+ 		heroId=110005,
+ 		slot=1,
+ 		aiType=110005001,
+ 		nameId=4250,
+ 		descId=4286,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[22] =
+{
+ 		id=22,
+ 		heroId=110005,
+ 		slot=2,
+ 		aiType=110005002,
+ 		nameId=4251,
+ 		descId=4287,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[23] =
+{
+ 		id=23,
+ 		heroId=110005,
+ 		slot=3,
+ 		aiType=110005003,
+ 		nameId=4252,
+ 		descId=4288,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[24] =
+{
+ 		id=24,
+ 		heroId=110005,
+ 		slot=4,
+ 		aiType=110005004,
+ 		nameId=4253,
+ 		descId=4289,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[25] =
+{
+ 		id=25,
+ 		heroId=110005,
+ 		slot=5,
+ 		aiType=110005005,
+ 		nameId=4254,
+ 		descId=4290,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[26] =
+{
+ 		id=26,
+ 		heroId=110006,
+ 		slot=1,
+ 		aiType=110006001,
+ 		nameId=4244,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[27] =
+{
+ 		id=27,
+ 		heroId=110006,
+ 		slot=2,
+ 		aiType=110006002,
+ 		nameId=4245,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[28] =
+{
+ 		id=28,
+ 		heroId=110006,
+ 		slot=3,
+ 		aiType=110006003,
+ 		nameId=4246,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[29] =
+{
+ 		id=29,
+ 		heroId=110006,
+ 		slot=4,
+ 		aiType=110006004,
+ 		nameId=4247,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[30] =
+{
+ 		id=30,
+ 		heroId=110006,
+ 		slot=5,
+ 		aiType=110006005,
+ 		nameId=4248,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[31] =
+{
+ 		id=31,
+ 		heroId=110007,
+ 		slot=1,
+ 		aiType=110007001,
+ 		nameId=4256,
+ 		descId=4292,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[32] =
+{
+ 		id=32,
+ 		heroId=110007,
+ 		slot=2,
+ 		aiType=110007002,
+ 		nameId=4257,
+ 		descId=4293,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[33] =
+{
+ 		id=33,
+ 		heroId=110007,
+ 		slot=3,
+ 		aiType=110007003,
+ 		nameId=4258,
+ 		descId=4294,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[34] =
+{
+ 		id=34,
+ 		heroId=110007,
+ 		slot=4,
+ 		aiType=110007004,
+ 		nameId=4259,
+ 		descId=4295,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[35] =
+{
+ 		id=35,
+ 		heroId=110007,
+ 		slot=5,
+ 		aiType=110007005,
+ 		nameId=4260,
+ 		descId=4296,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[36] =
+{
+ 		id=36,
+ 		heroId=110008,
+ 		slot=1,
+ 		aiType=110008001,
+ 		nameId=4250,
+ 		descId=4286,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[37] =
+{
+ 		id=37,
+ 		heroId=110008,
+ 		slot=2,
+ 		aiType=110008002,
+ 		nameId=4251,
+ 		descId=4287,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[38] =
+{
+ 		id=38,
+ 		heroId=110008,
+ 		slot=3,
+ 		aiType=110008003,
+ 		nameId=4252,
+ 		descId=4288,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[39] =
+{
+ 		id=39,
+ 		heroId=110008,
+ 		slot=4,
+ 		aiType=110008004,
+ 		nameId=4253,
+ 		descId=4289,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[40] =
+{
+ 		id=40,
+ 		heroId=110008,
+ 		slot=5,
+ 		aiType=110008005,
+ 		nameId=4254,
+ 		descId=4290,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[41] =
+{
+ 		id=41,
+ 		heroId=110009,
+ 		slot=1,
+ 		aiType=110009001,
+ 		nameId=4238,
+ 		descId=4274,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[42] =
+{
+ 		id=42,
+ 		heroId=110009,
+ 		slot=2,
+ 		aiType=110009002,
+ 		nameId=4239,
+ 		descId=4275,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[43] =
+{
+ 		id=43,
+ 		heroId=110009,
+ 		slot=3,
+ 		aiType=110009003,
+ 		nameId=4240,
+ 		descId=4276,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[44] =
+{
+ 		id=44,
+ 		heroId=110009,
+ 		slot=4,
+ 		aiType=110009004,
+ 		nameId=4241,
+ 		descId=4277,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[45] =
+{
+ 		id=45,
+ 		heroId=110009,
+ 		slot=5,
+ 		aiType=110009005,
+ 		nameId=4242,
+ 		descId=4278,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[46] =
+{
+ 		id=46,
+ 		heroId=110010,
+ 		slot=1,
+ 		aiType=110010001,
+ 		nameId=4256,
+ 		descId=4292,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[47] =
+{
+ 		id=47,
+ 		heroId=110010,
+ 		slot=2,
+ 		aiType=110010002,
+ 		nameId=4257,
+ 		descId=4293,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[48] =
+{
+ 		id=48,
+ 		heroId=110010,
+ 		slot=3,
+ 		aiType=110010003,
+ 		nameId=4258,
+ 		descId=4294,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[49] =
+{
+ 		id=49,
+ 		heroId=110010,
+ 		slot=4,
+ 		aiType=110010004,
+ 		nameId=4259,
+ 		descId=4295,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[50] =
+{
+ 		id=50,
+ 		heroId=110010,
+ 		slot=5,
+ 		aiType=110010005,
+ 		nameId=4260,
+ 		descId=4296,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[51] =
+{
+ 		id=51,
+ 		heroId=110011,
+ 		slot=1,
+ 		aiType=110011001,
+ 		nameId=4244,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[52] =
+{
+ 		id=52,
+ 		heroId=110011,
+ 		slot=2,
+ 		aiType=110011002,
+ 		nameId=4245,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[53] =
+{
+ 		id=53,
+ 		heroId=110011,
+ 		slot=3,
+ 		aiType=110011003,
+ 		nameId=4246,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[54] =
+{
+ 		id=54,
+ 		heroId=110011,
+ 		slot=4,
+ 		aiType=110011004,
+ 		nameId=4247,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[55] =
+{
+ 		id=55,
+ 		heroId=110011,
+ 		slot=5,
+ 		aiType=110011005,
+ 		nameId=4248,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[56] =
+{
+ 		id=56,
+ 		heroId=120001,
+ 		slot=1,
+ 		aiType=120001001,
+ 		nameId=4250,
+ 		descId=4286,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[57] =
+{
+ 		id=57,
+ 		heroId=120001,
+ 		slot=2,
+ 		aiType=120001002,
+ 		nameId=4251,
+ 		descId=4287,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[58] =
+{
+ 		id=58,
+ 		heroId=120001,
+ 		slot=3,
+ 		aiType=120001003,
+ 		nameId=4252,
+ 		descId=4288,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[59] =
+{
+ 		id=59,
+ 		heroId=120001,
+ 		slot=4,
+ 		aiType=120001004,
+ 		nameId=4253,
+ 		descId=4289,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[60] =
+{
+ 		id=60,
+ 		heroId=120001,
+ 		slot=5,
+ 		aiType=120001005,
+ 		nameId=4254,
+ 		descId=4290,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[61] =
+{
+ 		id=61,
+ 		heroId=120002,
+ 		slot=1,
+ 		aiType=120002001,
+ 		nameId=4244,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[62] =
+{
+ 		id=62,
+ 		heroId=120002,
+ 		slot=2,
+ 		aiType=120002002,
+ 		nameId=4245,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[63] =
+{
+ 		id=63,
+ 		heroId=120002,
+ 		slot=3,
+ 		aiType=120002003,
+ 		nameId=4246,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[64] =
+{
+ 		id=64,
+ 		heroId=120002,
+ 		slot=4,
+ 		aiType=120002004,
+ 		nameId=4247,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[65] =
+{
+ 		id=65,
+ 		heroId=120002,
+ 		slot=5,
+ 		aiType=120002005,
+ 		nameId=4248,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[66] =
+{
+ 		id=66,
+ 		heroId=120003,
+ 		slot=1,
+ 		aiType=120003001,
+ 		nameId=4232,
+ 		descId=4268,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[67] =
+{
+ 		id=67,
+ 		heroId=120003,
+ 		slot=2,
+ 		aiType=120003002,
+ 		nameId=4233,
+ 		descId=4269,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[68] =
+{
+ 		id=68,
+ 		heroId=120003,
+ 		slot=3,
+ 		aiType=120003003,
+ 		nameId=4234,
+ 		descId=4270,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[69] =
+{
+ 		id=69,
+ 		heroId=120003,
+ 		slot=4,
+ 		aiType=120003004,
+ 		nameId=4235,
+ 		descId=4271,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[70] =
+{
+ 		id=70,
+ 		heroId=120003,
+ 		slot=5,
+ 		aiType=120003005,
+ 		nameId=4236,
+ 		descId=4272,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[71] =
+{
+ 		id=71,
+ 		heroId=120004,
+ 		slot=1,
+ 		aiType=120004001,
+ 		nameId=4244,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[72] =
+{
+ 		id=72,
+ 		heroId=120004,
+ 		slot=2,
+ 		aiType=120004002,
+ 		nameId=4245,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[73] =
+{
+ 		id=73,
+ 		heroId=120004,
+ 		slot=3,
+ 		aiType=120004003,
+ 		nameId=4246,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[74] =
+{
+ 		id=74,
+ 		heroId=120004,
+ 		slot=4,
+ 		aiType=120004004,
+ 		nameId=4247,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[75] =
+{
+ 		id=75,
+ 		heroId=120004,
+ 		slot=5,
+ 		aiType=120004005,
+ 		nameId=4248,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[76] =
+{
+ 		id=76,
+ 		heroId=120005,
+ 		slot=1,
+ 		aiType=120005001,
+ 		nameId=4238,
+ 		descId=4274,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[77] =
+{
+ 		id=77,
+ 		heroId=120005,
+ 		slot=2,
+ 		aiType=120005002,
+ 		nameId=4239,
+ 		descId=4275,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[78] =
+{
+ 		id=78,
+ 		heroId=120005,
+ 		slot=3,
+ 		aiType=120005003,
+ 		nameId=4240,
+ 		descId=4276,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[79] =
+{
+ 		id=79,
+ 		heroId=120005,
+ 		slot=4,
+ 		aiType=120005004,
+ 		nameId=4241,
+ 		descId=4277,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[80] =
+{
+ 		id=80,
+ 		heroId=120005,
+ 		slot=5,
+ 		aiType=120005005,
+ 		nameId=4242,
+ 		descId=4278,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[81] =
+{
+ 		id=81,
+ 		heroId=120006,
+ 		slot=1,
+ 		aiType=120006001,
+ 		nameId=4262,
+ 		descId=4298,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[82] =
+{
+ 		id=82,
+ 		heroId=120006,
+ 		slot=2,
+ 		aiType=120006002,
+ 		nameId=4263,
+ 		descId=4299,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[83] =
+{
+ 		id=83,
+ 		heroId=120006,
+ 		slot=3,
+ 		aiType=120006003,
+ 		nameId=4264,
+ 		descId=4300,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[84] =
+{
+ 		id=84,
+ 		heroId=120006,
+ 		slot=4,
+ 		aiType=120006004,
+ 		nameId=4265,
+ 		descId=4301,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[85] =
+{
+ 		id=85,
+ 		heroId=120006,
+ 		slot=5,
+ 		aiType=120006005,
+ 		nameId=4266,
+ 		descId=4302,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[86] =
+{
+ 		id=86,
+ 		heroId=120007,
+ 		slot=1,
+ 		aiType=120007001,
+ 		nameId=4262,
+ 		descId=4298,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[87] =
+{
+ 		id=87,
+ 		heroId=120007,
+ 		slot=2,
+ 		aiType=120007002,
+ 		nameId=4263,
+ 		descId=4299,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[88] =
+{
+ 		id=88,
+ 		heroId=120007,
+ 		slot=3,
+ 		aiType=120007003,
+ 		nameId=4264,
+ 		descId=4300,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[89] =
+{
+ 		id=89,
+ 		heroId=120007,
+ 		slot=4,
+ 		aiType=120007004,
+ 		nameId=4265,
+ 		descId=4301,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[90] =
+{
+ 		id=90,
+ 		heroId=120007,
+ 		slot=5,
+ 		aiType=120007005,
+ 		nameId=4266,
+ 		descId=4302,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[91] =
+{
+ 		id=91,
+ 		heroId=120008,
+ 		slot=1,
+ 		aiType=120008001,
+ 		nameId=4244,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[92] =
+{
+ 		id=92,
+ 		heroId=120008,
+ 		slot=2,
+ 		aiType=120008002,
+ 		nameId=4245,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[93] =
+{
+ 		id=93,
+ 		heroId=120008,
+ 		slot=3,
+ 		aiType=120008003,
+ 		nameId=4246,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[94] =
+{
+ 		id=94,
+ 		heroId=120008,
+ 		slot=4,
+ 		aiType=120008004,
+ 		nameId=4247,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[95] =
+{
+ 		id=95,
+ 		heroId=120008,
+ 		slot=5,
+ 		aiType=120008005,
+ 		nameId=4248,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[96] =
+{
+ 		id=96,
+ 		heroId=120009,
+ 		slot=1,
+ 		aiType=120009001,
+ 		nameId=4232,
+ 		descId=4268,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[97] =
+{
+ 		id=97,
+ 		heroId=120009,
+ 		slot=2,
+ 		aiType=120009002,
+ 		nameId=4233,
+ 		descId=4269,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[98] =
+{
+ 		id=98,
+ 		heroId=120009,
+ 		slot=3,
+ 		aiType=120009003,
+ 		nameId=4234,
+ 		descId=4270,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[99] =
+{
+ 		id=99,
+ 		heroId=120009,
+ 		slot=4,
+ 		aiType=120009004,
+ 		nameId=4235,
+ 		descId=4271,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[100] =
+{
+ 		id=100,
+ 		heroId=120009,
+ 		slot=5,
+ 		aiType=120009005,
+ 		nameId=4236,
+ 		descId=4272,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[101] =
+{
+ 		id=101,
+ 		heroId=120010,
+ 		slot=1,
+ 		aiType=120010001,
+ 		nameId=4232,
+ 		descId=4268,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[102] =
+{
+ 		id=102,
+ 		heroId=120010,
+ 		slot=2,
+ 		aiType=120010002,
+ 		nameId=4233,
+ 		descId=4269,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[103] =
+{
+ 		id=103,
+ 		heroId=120010,
+ 		slot=3,
+ 		aiType=120010003,
+ 		nameId=4234,
+ 		descId=4270,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[104] =
+{
+ 		id=104,
+ 		heroId=120010,
+ 		slot=4,
+ 		aiType=120010004,
+ 		nameId=4235,
+ 		descId=4271,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[105] =
+{
+ 		id=105,
+ 		heroId=120010,
+ 		slot=5,
+ 		aiType=120010005,
+ 		nameId=4236,
+ 		descId=4272,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[106] =
+{
+ 		id=106,
+ 		heroId=130001,
+ 		slot=1,
+ 		aiType=130001001,
+ 		nameId=4256,
+ 		descId=4292,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[107] =
+{
+ 		id=107,
+ 		heroId=130001,
+ 		slot=2,
+ 		aiType=130001002,
+ 		nameId=4257,
+ 		descId=4293,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[108] =
+{
+ 		id=108,
+ 		heroId=130001,
+ 		slot=3,
+ 		aiType=130001003,
+ 		nameId=4258,
+ 		descId=4294,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[109] =
+{
+ 		id=109,
+ 		heroId=130001,
+ 		slot=4,
+ 		aiType=130001004,
+ 		nameId=4259,
+ 		descId=4295,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[110] =
+{
+ 		id=110,
+ 		heroId=130001,
+ 		slot=5,
+ 		aiType=130001005,
+ 		nameId=4260,
+ 		descId=4296,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[111] =
+{
+ 		id=111,
+ 		heroId=130002,
+ 		slot=1,
+ 		aiType=130002001,
+ 		nameId=4250,
+ 		descId=4286,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[112] =
+{
+ 		id=112,
+ 		heroId=130002,
+ 		slot=2,
+ 		aiType=130002002,
+ 		nameId=4251,
+ 		descId=4287,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[113] =
+{
+ 		id=113,
+ 		heroId=130002,
+ 		slot=3,
+ 		aiType=130002003,
+ 		nameId=4252,
+ 		descId=4288,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[114] =
+{
+ 		id=114,
+ 		heroId=130002,
+ 		slot=4,
+ 		aiType=130002004,
+ 		nameId=4253,
+ 		descId=4289,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[115] =
+{
+ 		id=115,
+ 		heroId=130002,
+ 		slot=5,
+ 		aiType=130002005,
+ 		nameId=4254,
+ 		descId=4290,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[116] =
+{
+ 		id=116,
+ 		heroId=130003,
+ 		slot=1,
+ 		aiType=130003001,
+ 		nameId=4262,
+ 		descId=4298,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[117] =
+{
+ 		id=117,
+ 		heroId=130003,
+ 		slot=2,
+ 		aiType=130003002,
+ 		nameId=4263,
+ 		descId=4299,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[118] =
+{
+ 		id=118,
+ 		heroId=130003,
+ 		slot=3,
+ 		aiType=130003003,
+ 		nameId=4264,
+ 		descId=4300,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[119] =
+{
+ 		id=119,
+ 		heroId=130003,
+ 		slot=4,
+ 		aiType=130003004,
+ 		nameId=4265,
+ 		descId=4301,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[120] =
+{
+ 		id=120,
+ 		heroId=130003,
+ 		slot=5,
+ 		aiType=130003005,
+ 		nameId=4266,
+ 		descId=4302,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[121] =
+{
+ 		id=121,
+ 		heroId=130004,
+ 		slot=1,
+ 		aiType=130004001,
+ 		nameId=4250,
+ 		descId=4286,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[122] =
+{
+ 		id=122,
+ 		heroId=130004,
+ 		slot=2,
+ 		aiType=130004002,
+ 		nameId=4251,
+ 		descId=4287,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[123] =
+{
+ 		id=123,
+ 		heroId=130004,
+ 		slot=3,
+ 		aiType=130004003,
+ 		nameId=4252,
+ 		descId=4288,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[124] =
+{
+ 		id=124,
+ 		heroId=130004,
+ 		slot=4,
+ 		aiType=130004004,
+ 		nameId=4253,
+ 		descId=4289,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[125] =
+{
+ 		id=125,
+ 		heroId=130004,
+ 		slot=5,
+ 		aiType=130004005,
+ 		nameId=4254,
+ 		descId=4290,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[126] =
+{
+ 		id=126,
+ 		heroId=130005,
+ 		slot=1,
+ 		aiType=130005001,
+ 		nameId=4256,
+ 		descId=4292,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[127] =
+{
+ 		id=127,
+ 		heroId=130005,
+ 		slot=2,
+ 		aiType=130005002,
+ 		nameId=4257,
+ 		descId=4293,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[128] =
+{
+ 		id=128,
+ 		heroId=130005,
+ 		slot=3,
+ 		aiType=130005003,
+ 		nameId=4258,
+ 		descId=4294,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[129] =
+{
+ 		id=129,
+ 		heroId=130005,
+ 		slot=4,
+ 		aiType=130005004,
+ 		nameId=4259,
+ 		descId=4295,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[130] =
+{
+ 		id=130,
+ 		heroId=130005,
+ 		slot=5,
+ 		aiType=130005005,
+ 		nameId=4260,
+ 		descId=4296,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[131] =
+{
+ 		id=131,
+ 		heroId=130006,
+ 		slot=1,
+ 		aiType=130006001,
+ 		nameId=4238,
+ 		descId=4274,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[132] =
+{
+ 		id=132,
+ 		heroId=130006,
+ 		slot=2,
+ 		aiType=130006002,
+ 		nameId=4239,
+ 		descId=4275,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[133] =
+{
+ 		id=133,
+ 		heroId=130006,
+ 		slot=3,
+ 		aiType=130006003,
+ 		nameId=4240,
+ 		descId=4276,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[134] =
+{
+ 		id=134,
+ 		heroId=130006,
+ 		slot=4,
+ 		aiType=130006004,
+ 		nameId=4241,
+ 		descId=4277,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[135] =
+{
+ 		id=135,
+ 		heroId=130006,
+ 		slot=5,
+ 		aiType=130006005,
+ 		nameId=4242,
+ 		descId=4278,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[136] =
+{
+ 		id=136,
+ 		heroId=130007,
+ 		slot=1,
+ 		aiType=130007001,
+ 		nameId=4238,
+ 		descId=4274,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[137] =
+{
+ 		id=137,
+ 		heroId=130007,
+ 		slot=2,
+ 		aiType=130007002,
+ 		nameId=4239,
+ 		descId=4275,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[138] =
+{
+ 		id=138,
+ 		heroId=130007,
+ 		slot=3,
+ 		aiType=130007003,
+ 		nameId=4240,
+ 		descId=4276,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[139] =
+{
+ 		id=139,
+ 		heroId=130007,
+ 		slot=4,
+ 		aiType=130007004,
+ 		nameId=4241,
+ 		descId=4277,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[140] =
+{
+ 		id=140,
+ 		heroId=130007,
+ 		slot=5,
+ 		aiType=130007005,
+ 		nameId=4242,
+ 		descId=4278,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[141] =
+{
+ 		id=141,
+ 		heroId=130008,
+ 		slot=1,
+ 		aiType=130008001,
+ 		nameId=4238,
+ 		descId=4274,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[142] =
+{
+ 		id=142,
+ 		heroId=130008,
+ 		slot=2,
+ 		aiType=130008002,
+ 		nameId=4239,
+ 		descId=4275,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[143] =
+{
+ 		id=143,
+ 		heroId=130008,
+ 		slot=3,
+ 		aiType=130008003,
+ 		nameId=4240,
+ 		descId=4276,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[144] =
+{
+ 		id=144,
+ 		heroId=130008,
+ 		slot=4,
+ 		aiType=130008004,
+ 		nameId=4241,
+ 		descId=4277,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[145] =
+{
+ 		id=145,
+ 		heroId=130008,
+ 		slot=5,
+ 		aiType=130008005,
+ 		nameId=4242,
+ 		descId=4278,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[146] =
+{
+ 		id=146,
+ 		heroId=130009,
+ 		slot=1,
+ 		aiType=130009001,
+ 		nameId=4256,
+ 		descId=4292,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[147] =
+{
+ 		id=147,
+ 		heroId=130009,
+ 		slot=2,
+ 		aiType=130009002,
+ 		nameId=4257,
+ 		descId=4293,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[148] =
+{
+ 		id=148,
+ 		heroId=130009,
+ 		slot=3,
+ 		aiType=130009003,
+ 		nameId=4258,
+ 		descId=4294,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[149] =
+{
+ 		id=149,
+ 		heroId=130009,
+ 		slot=4,
+ 		aiType=130009004,
+ 		nameId=4259,
+ 		descId=4295,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[150] =
+{
+ 		id=150,
+ 		heroId=130009,
+ 		slot=5,
+ 		aiType=130009005,
+ 		nameId=4260,
+ 		descId=4296,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[151] =
+{
+ 		id=151,
+ 		heroId=140001,
+ 		slot=1,
+ 		aiType=140001001,
+ 		nameId=4232,
+ 		descId=4268,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[152] =
+{
+ 		id=152,
+ 		heroId=140001,
+ 		slot=2,
+ 		aiType=140001002,
+ 		nameId=4233,
+ 		descId=4269,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[153] =
+{
+ 		id=153,
+ 		heroId=140001,
+ 		slot=3,
+ 		aiType=140001003,
+ 		nameId=4234,
+ 		descId=4270,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[154] =
+{
+ 		id=154,
+ 		heroId=140001,
+ 		slot=4,
+ 		aiType=140001004,
+ 		nameId=4235,
+ 		descId=4271,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[155] =
+{
+ 		id=155,
+ 		heroId=140001,
+ 		slot=5,
+ 		aiType=140001005,
+ 		nameId=4236,
+ 		descId=4272,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[156] =
+{
+ 		id=156,
+ 		heroId=140002,
+ 		slot=1,
+ 		aiType=140002001,
+ 		nameId=4256,
+ 		descId=4292,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[157] =
+{
+ 		id=157,
+ 		heroId=140002,
+ 		slot=2,
+ 		aiType=140002002,
+ 		nameId=4257,
+ 		descId=4293,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[158] =
+{
+ 		id=158,
+ 		heroId=140002,
+ 		slot=3,
+ 		aiType=140002003,
+ 		nameId=4258,
+ 		descId=4294,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[159] =
+{
+ 		id=159,
+ 		heroId=140002,
+ 		slot=4,
+ 		aiType=140002004,
+ 		nameId=4259,
+ 		descId=4295,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[160] =
+{
+ 		id=160,
+ 		heroId=140002,
+ 		slot=5,
+ 		aiType=140002005,
+ 		nameId=4260,
+ 		descId=4296,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[161] =
+{
+ 		id=161,
+ 		heroId=140003,
+ 		slot=1,
+ 		aiType=140003001,
+ 		nameId=4244,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[162] =
+{
+ 		id=162,
+ 		heroId=140003,
+ 		slot=2,
+ 		aiType=140003002,
+ 		nameId=4245,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[163] =
+{
+ 		id=163,
+ 		heroId=140003,
+ 		slot=3,
+ 		aiType=140003003,
+ 		nameId=4246,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[164] =
+{
+ 		id=164,
+ 		heroId=140003,
+ 		slot=4,
+ 		aiType=140003004,
+ 		nameId=4247,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[165] =
+{
+ 		id=165,
+ 		heroId=140003,
+ 		slot=5,
+ 		aiType=140003005,
+ 		nameId=4248,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[166] =
+{
+ 		id=166,
+ 		heroId=140004,
+ 		slot=1,
+ 		aiType=140004001,
+ 		nameId=4256,
+ 		descId=4292,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[167] =
+{
+ 		id=167,
+ 		heroId=140004,
+ 		slot=2,
+ 		aiType=140004002,
+ 		nameId=4257,
+ 		descId=4293,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[168] =
+{
+ 		id=168,
+ 		heroId=140004,
+ 		slot=3,
+ 		aiType=140004003,
+ 		nameId=4258,
+ 		descId=4294,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[169] =
+{
+ 		id=169,
+ 		heroId=140004,
+ 		slot=4,
+ 		aiType=140004004,
+ 		nameId=4259,
+ 		descId=4295,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[170] =
+{
+ 		id=170,
+ 		heroId=140004,
+ 		slot=5,
+ 		aiType=140004005,
+ 		nameId=4260,
+ 		descId=4296,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[171] =
+{
+ 		id=171,
+ 		heroId=140005,
+ 		slot=1,
+ 		aiType=140005001,
+ 		nameId=4250,
+ 		descId=4286,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[172] =
+{
+ 		id=172,
+ 		heroId=140005,
+ 		slot=2,
+ 		aiType=140005002,
+ 		nameId=4251,
+ 		descId=4287,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[173] =
+{
+ 		id=173,
+ 		heroId=140005,
+ 		slot=3,
+ 		aiType=140005003,
+ 		nameId=4252,
+ 		descId=4288,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[174] =
+{
+ 		id=174,
+ 		heroId=140005,
+ 		slot=4,
+ 		aiType=140005004,
+ 		nameId=4253,
+ 		descId=4289,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[175] =
+{
+ 		id=175,
+ 		heroId=140005,
+ 		slot=5,
+ 		aiType=140005005,
+ 		nameId=4254,
+ 		descId=4290,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[176] =
+{
+ 		id=176,
+ 		heroId=140006,
+ 		slot=1,
+ 		aiType=140006001,
+ 		nameId=4244,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[177] =
+{
+ 		id=177,
+ 		heroId=140006,
+ 		slot=2,
+ 		aiType=140006002,
+ 		nameId=4245,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[178] =
+{
+ 		id=178,
+ 		heroId=140006,
+ 		slot=3,
+ 		aiType=140006003,
+ 		nameId=4246,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[179] =
+{
+ 		id=179,
+ 		heroId=140006,
+ 		slot=4,
+ 		aiType=140006004,
+ 		nameId=4247,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[180] =
+{
+ 		id=180,
+ 		heroId=140006,
+ 		slot=5,
+ 		aiType=140006005,
+ 		nameId=4248,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[181] =
+{
+ 		id=181,
+ 		heroId=140007,
+ 		slot=1,
+ 		aiType=140007001,
+ 		nameId=4262,
+ 		descId=4298,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[182] =
+{
+ 		id=182,
+ 		heroId=140007,
+ 		slot=2,
+ 		aiType=140007002,
+ 		nameId=4263,
+ 		descId=4299,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[183] =
+{
+ 		id=183,
+ 		heroId=140007,
+ 		slot=3,
+ 		aiType=140007003,
+ 		nameId=4264,
+ 		descId=4300,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[184] =
+{
+ 		id=184,
+ 		heroId=140007,
+ 		slot=4,
+ 		aiType=140007004,
+ 		nameId=4265,
+ 		descId=4301,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[185] =
+{
+ 		id=185,
+ 		heroId=140007,
+ 		slot=5,
+ 		aiType=140007005,
+ 		nameId=4266,
+ 		descId=4302,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[186] =
+{
+ 		id=186,
+ 		heroId=140008,
+ 		slot=1,
+ 		aiType=140008001,
+ 		nameId=4244,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[187] =
+{
+ 		id=187,
+ 		heroId=140008,
+ 		slot=2,
+ 		aiType=140008002,
+ 		nameId=4245,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[188] =
+{
+ 		id=188,
+ 		heroId=140008,
+ 		slot=3,
+ 		aiType=140008003,
+ 		nameId=4246,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[189] =
+{
+ 		id=189,
+ 		heroId=140008,
+ 		slot=4,
+ 		aiType=140008004,
+ 		nameId=4247,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[190] =
+{
+ 		id=190,
+ 		heroId=140008,
+ 		slot=5,
+ 		aiType=140008005,
+ 		nameId=4248,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[191] =
+{
+ 		id=191,
+ 		heroId=150001,
+ 		slot=1,
+ 		aiType=150001001,
+ 		nameId=4232,
+ 		descId=4268,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[192] =
+{
+ 		id=192,
+ 		heroId=150001,
+ 		slot=2,
+ 		aiType=150001002,
+ 		nameId=4233,
+ 		descId=4269,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[193] =
+{
+ 		id=193,
+ 		heroId=150001,
+ 		slot=3,
+ 		aiType=150001003,
+ 		nameId=4234,
+ 		descId=4270,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[194] =
+{
+ 		id=194,
+ 		heroId=150001,
+ 		slot=4,
+ 		aiType=150001004,
+ 		nameId=4235,
+ 		descId=4271,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[195] =
+{
+ 		id=195,
+ 		heroId=150001,
+ 		slot=5,
+ 		aiType=150001005,
+ 		nameId=4236,
+ 		descId=4272,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zh_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zh_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[196] =
+{
+ 		id=196,
+ 		heroId=150002,
+ 		slot=1,
+ 		aiType=150002001,
+ 		nameId=4238,
+ 		descId=4268,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[197] =
+{
+ 		id=197,
+ 		heroId=150002,
+ 		slot=2,
+ 		aiType=150002002,
+ 		nameId=4239,
+ 		descId=4269,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[198] =
+{
+ 		id=198,
+ 		heroId=150002,
+ 		slot=3,
+ 		aiType=150002003,
+ 		nameId=4240,
+ 		descId=4270,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[199] =
+{
+ 		id=199,
+ 		heroId=150002,
+ 		slot=4,
+ 		aiType=150002004,
+ 		nameId=4241,
+ 		descId=4271,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[200] =
+{
+ 		id=200,
+ 		heroId=150002,
+ 		slot=5,
+ 		aiType=150002005,
+ 		nameId=4242,
+ 		descId=4272,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[201] =
+{
+ 		id=201,
+ 		heroId=150003,
+ 		slot=1,
+ 		aiType=150003001,
+ 		nameId=4250,
+ 		descId=4268,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[202] =
+{
+ 		id=202,
+ 		heroId=150003,
+ 		slot=2,
+ 		aiType=150003002,
+ 		nameId=4251,
+ 		descId=4269,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[203] =
+{
+ 		id=203,
+ 		heroId=150003,
+ 		slot=3,
+ 		aiType=150003003,
+ 		nameId=4252,
+ 		descId=4270,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[204] =
+{
+ 		id=204,
+ 		heroId=150003,
+ 		slot=4,
+ 		aiType=150003004,
+ 		nameId=4253,
+ 		descId=4271,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[205] =
+{
+ 		id=205,
+ 		heroId=150003,
+ 		slot=5,
+ 		aiType=150003005,
+ 		nameId=4254,
+ 		descId=4272,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[206] =
+{
+ 		id=206,
+ 		heroId=150004,
+ 		slot=1,
+ 		aiType=150004001,
+ 		nameId=4250,
+ 		descId=4268,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[207] =
+{
+ 		id=207,
+ 		heroId=150004,
+ 		slot=2,
+ 		aiType=150004002,
+ 		nameId=4251,
+ 		descId=4269,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[208] =
+{
+ 		id=208,
+ 		heroId=150004,
+ 		slot=3,
+ 		aiType=150004003,
+ 		nameId=4252,
+ 		descId=4270,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[209] =
+{
+ 		id=209,
+ 		heroId=150004,
+ 		slot=4,
+ 		aiType=150004004,
+ 		nameId=4253,
+ 		descId=4271,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[210] =
+{
+ 		id=210,
+ 		heroId=150004,
+ 		slot=5,
+ 		aiType=150004005,
+ 		nameId=4254,
+ 		descId=4272,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[211] =
+{
+ 		id=211,
+ 		heroId=150005,
+ 		slot=1,
+ 		aiType=150005001,
+ 		nameId=4256,
+ 		descId=4268,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[212] =
+{
+ 		id=212,
+ 		heroId=150005,
+ 		slot=2,
+ 		aiType=150005002,
+ 		nameId=4257,
+ 		descId=4269,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[213] =
+{
+ 		id=213,
+ 		heroId=150005,
+ 		slot=3,
+ 		aiType=150005003,
+ 		nameId=4258,
+ 		descId=4270,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[214] =
+{
+ 		id=214,
+ 		heroId=150005,
+ 		slot=4,
+ 		aiType=150005004,
+ 		nameId=4259,
+ 		descId=4271,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[215] =
+{
+ 		id=215,
+ 		heroId=150005,
+ 		slot=5,
+ 		aiType=150005005,
+ 		nameId=4260,
+ 		descId=4272,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[216] =
+{
+ 		id=216,
+ 		heroId=150006,
+ 		slot=1,
+ 		aiType=110002001,
+ 		nameId=4262,
+ 		descId=4298,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[217] =
+{
+ 		id=217,
+ 		heroId=150006,
+ 		slot=2,
+ 		aiType=110002002,
+ 		nameId=4263,
+ 		descId=4299,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[218] =
+{
+ 		id=218,
+ 		heroId=150006,
+ 		slot=3,
+ 		aiType=110002003,
+ 		nameId=4264,
+ 		descId=4300,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[219] =
+{
+ 		id=219,
+ 		heroId=150006,
+ 		slot=4,
+ 		aiType=110002004,
+ 		nameId=4265,
+ 		descId=4301,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[220] =
+{
+ 		id=220,
+ 		heroId=150006,
+ 		slot=5,
+ 		aiType=110002005,
+ 		nameId=4266,
+ 		descId=4302,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_tk_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_tk_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[221] =
+{
+ 		id=221,
+ 		heroId=150007,
+ 		slot=1,
+ 		aiType=150007001,
+ 		nameId=4244,
+ 		descId=4286,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[222] =
+{
+ 		id=222,
+ 		heroId=150007,
+ 		slot=2,
+ 		aiType=150007002,
+ 		nameId=4245,
+ 		descId=4287,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[223] =
+{
+ 		id=223,
+ 		heroId=150007,
+ 		slot=3,
+ 		aiType=150007003,
+ 		nameId=4246,
+ 		descId=4288,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[224] =
+{
+ 		id=224,
+ 		heroId=150007,
+ 		slot=4,
+ 		aiType=150007004,
+ 		nameId=4247,
+ 		descId=4289,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[225] =
+{
+ 		id=225,
+ 		heroId=150007,
+ 		slot=5,
+ 		aiType=150007005,
+ 		nameId=4248,
+ 		descId=4290,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[226] =
+{
+ 		id=226,
+ 		heroId=150008,
+ 		slot=1,
+ 		aiType=150008001,
+ 		nameId=4238,
+ 		descId=4286,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[227] =
+{
+ 		id=227,
+ 		heroId=150008,
+ 		slot=2,
+ 		aiType=150008002,
+ 		nameId=4239,
+ 		descId=4287,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[228] =
+{
+ 		id=228,
+ 		heroId=150008,
+ 		slot=3,
+ 		aiType=150008003,
+ 		nameId=4240,
+ 		descId=4288,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[229] =
+{
+ 		id=229,
+ 		heroId=150008,
+ 		slot=4,
+ 		aiType=150008004,
+ 		nameId=4241,
+ 		descId=4289,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[230] =
+{
+ 		id=230,
+ 		heroId=150008,
+ 		slot=5,
+ 		aiType=150008005,
+ 		nameId=4242,
+ 		descId=4290,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zl_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zl_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[231] =
+{
+ 		id=231,
+ 		heroId=150009,
+ 		slot=1,
+ 		aiType=150009001,
+ 		nameId=4244,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[232] =
+{
+ 		id=232,
+ 		heroId=150009,
+ 		slot=2,
+ 		aiType=150009002,
+ 		nameId=4245,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[233] =
+{
+ 		id=233,
+ 		heroId=150009,
+ 		slot=3,
+ 		aiType=150009003,
+ 		nameId=4246,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[234] =
+{
+ 		id=234,
+ 		heroId=150009,
+ 		slot=4,
+ 		aiType=150009004,
+ 		nameId=4247,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[235] =
+{
+ 		id=235,
+ 		heroId=150009,
+ 		slot=5,
+ 		aiType=150009005,
+ 		nameId=4248,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[236] =
+{
+ 		id=236,
+ 		heroId=110012,
+ 		slot=1,
+ 		aiType=110012001,
+ 		nameId=4256,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[237] =
+{
+ 		id=237,
+ 		heroId=110012,
+ 		slot=2,
+ 		aiType=110012002,
+ 		nameId=4257,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[238] =
+{
+ 		id=238,
+ 		heroId=110012,
+ 		slot=3,
+ 		aiType=110012003,
+ 		nameId=4258,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[239] =
+{
+ 		id=239,
+ 		heroId=110012,
+ 		slot=4,
+ 		aiType=110012004,
+ 		nameId=4259,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[240] =
+{
+ 		id=240,
+ 		heroId=110012,
+ 		slot=5,
+ 		aiType=110012005,
+ 		nameId=4260,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[241] =
+{
+ 		id=241,
+ 		heroId=110014,
+ 		slot=1,
+ 		aiType=110014001,
+ 		nameId=4250,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[242] =
+{
+ 		id=242,
+ 		heroId=110014,
+ 		slot=2,
+ 		aiType=110014002,
+ 		nameId=4251,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[243] =
+{
+ 		id=243,
+ 		heroId=110014,
+ 		slot=3,
+ 		aiType=110014003,
+ 		nameId=4252,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[244] =
+{
+ 		id=244,
+ 		heroId=110014,
+ 		slot=4,
+ 		aiType=110014004,
+ 		nameId=4253,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[245] =
+{
+ 		id=245,
+ 		heroId=110014,
+ 		slot=5,
+ 		aiType=110014005,
+ 		nameId=4254,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[246] =
+{
+ 		id=246,
+ 		heroId=120013,
+ 		slot=1,
+ 		aiType=120013001,
+ 		nameId=4244,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[247] =
+{
+ 		id=247,
+ 		heroId=120013,
+ 		slot=2,
+ 		aiType=120013002,
+ 		nameId=4245,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[248] =
+{
+ 		id=248,
+ 		heroId=120013,
+ 		slot=3,
+ 		aiType=120013003,
+ 		nameId=4246,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[249] =
+{
+ 		id=249,
+ 		heroId=120013,
+ 		slot=4,
+ 		aiType=120013004,
+ 		nameId=4247,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[250] =
+{
+ 		id=250,
+ 		heroId=120013,
+ 		slot=5,
+ 		aiType=120013005,
+ 		nameId=4248,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_ss_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_ss_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[251] =
+{
+ 		id=251,
+ 		heroId=150010,
+ 		slot=1,
+ 		aiType=150010001,
+ 		nameId=4256,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[252] =
+{
+ 		id=252,
+ 		heroId=150010,
+ 		slot=2,
+ 		aiType=150010002,
+ 		nameId=4257,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[253] =
+{
+ 		id=253,
+ 		heroId=150010,
+ 		slot=3,
+ 		aiType=150010003,
+ 		nameId=4258,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[254] =
+{
+ 		id=254,
+ 		heroId=150010,
+ 		slot=4,
+ 		aiType=150010004,
+ 		nameId=4259,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[255] =
+{
+ 		id=255,
+ 		heroId=150010,
+ 		slot=5,
+ 		aiType=150010005,
+ 		nameId=4260,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[256] =
+{
+ 		id=256,
+ 		heroId=120011,
+ 		slot=1,
+ 		aiType=120011001,
+ 		nameId=4256,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[257] =
+{
+ 		id=257,
+ 		heroId=120011,
+ 		slot=2,
+ 		aiType=120011002,
+ 		nameId=4257,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[258] =
+{
+ 		id=258,
+ 		heroId=120011,
+ 		slot=3,
+ 		aiType=120011003,
+ 		nameId=4258,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[259] =
+{
+ 		id=259,
+ 		heroId=120011,
+ 		slot=4,
+ 		aiType=120011004,
+ 		nameId=4259,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[260] =
+{
+ 		id=260,
+ 		heroId=120011,
+ 		slot=5,
+ 		aiType=120011005,
+ 		nameId=4260,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_fs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_fs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[261] =
+{
+ 		id=261,
+ 		heroId=140010,
+ 		slot=1,
+ 		aiType=140010001,
+ 		nameId=4250,
+ 		descId=4280,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_1",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_1",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[262] =
+{
+ 		id=262,
+ 		heroId=140010,
+ 		slot=2,
+ 		aiType=140010002,
+ 		nameId=4251,
+ 		descId=4281,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_2",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_2",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[263] =
+{
+ 		id=263,
+ 		heroId=140010,
+ 		slot=3,
+ 		aiType=140010003,
+ 		nameId=4252,
+ 		descId=4282,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_3",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_3",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[264] =
+{
+ 		id=264,
+ 		heroId=140010,
+ 		slot=4,
+ 		aiType=140010004,
+ 		nameId=4253,
+ 		descId=4283,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_4",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_4",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+},
+[265] =
+{
+ 		id=265,
+ 		heroId=140010,
+ 		slot=5,
+ 		aiType=140010005,
+ 		nameId=4254,
+ 		descId=4284,
+ 		icon="UI/SpritePics/develop/gena/ui_develop_gena_zs_5",
+ 		effect="Effects1/Scene/effect_scene_geneball_zs_5",
+ 	geneShow="Effects1/Scene/effect_scene_gene1"
+}
+}
+
+return {title=title, value=value}

@@ -1,0 +1,16435 @@
+local title = {
+	id = 0,
+	seasonId = 0,
+	type = 0,
+	danType = 0,
+	order = 0,
+	taskLimit = 0,
+	limitValue1 = 0,
+	limitValue2 = 0,
+	reward = 0,
+	taskTitle = 0,
+	taskDesc = 0,
+	taskImage = ""
+}
+
+local value = {
+[1] =
+{
+ 		id=1,
+ 		seasonId=1,
+ 		type=1,
+ 		order=1,
+ 		taskLimit=1,
+ 		limitValue1=1,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35101,
+ 		taskDesc=35201,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[2] =
+{
+ 		id=2,
+ 		seasonId=1,
+ 		type=1,
+ 		order=2,
+ 		taskLimit=1,
+ 		limitValue1=2,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35102,
+ 		taskDesc=35202,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[3] =
+{
+ 		id=3,
+ 		seasonId=1,
+ 		type=1,
+ 		order=3,
+ 		taskLimit=1,
+ 		limitValue1=3,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35103,
+ 		taskDesc=35203,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[4] =
+{
+ 		id=4,
+ 		seasonId=1,
+ 		type=1,
+ 		order=4,
+ 		taskLimit=1,
+ 		limitValue1=4,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35104,
+ 		taskDesc=35204,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[5] =
+{
+ 		id=5,
+ 		seasonId=1,
+ 		type=1,
+ 		order=5,
+ 		taskLimit=1,
+ 		limitValue1=5,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35105,
+ 		taskDesc=35205,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[6] =
+{
+ 		id=6,
+ 		seasonId=1,
+ 		type=1,
+ 		order=6,
+ 		taskLimit=1,
+ 		limitValue1=6,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35106,
+ 		taskDesc=35206,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[7] =
+{
+ 		id=7,
+ 		seasonId=1,
+ 		type=1,
+ 		order=7,
+ 		taskLimit=1,
+ 		limitValue1=7,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35107,
+ 		taskDesc=35207,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[8] =
+{
+ 		id=8,
+ 		seasonId=1,
+ 		type=1,
+ 		order=8,
+ 		taskLimit=1,
+ 		limitValue1=8,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35108,
+ 		taskDesc=35208,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[9] =
+{
+ 		id=9,
+ 		seasonId=1,
+ 		type=1,
+ 		order=9,
+ 		taskLimit=1,
+ 		limitValue1=9,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35109,
+ 		taskDesc=35209,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[10] =
+{
+ 		id=10,
+ 		seasonId=1,
+ 		type=1,
+ 		order=10,
+ 		taskLimit=1,
+ 		limitValue1=10,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35110,
+ 		taskDesc=35210,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[11] =
+{
+ 		id=11,
+ 		seasonId=1,
+ 		type=1,
+ 		order=11,
+ 		taskLimit=1,
+ 		limitValue1=11,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35111,
+ 		taskDesc=35211,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[12] =
+{
+ 		id=12,
+ 		seasonId=1,
+ 		type=1,
+ 		order=12,
+ 		taskLimit=1,
+ 		limitValue1=12,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35112,
+ 		taskDesc=35212,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[13] =
+{
+ 		id=13,
+ 		seasonId=1,
+ 		type=1,
+ 		order=13,
+ 		taskLimit=2,
+ 		limitValue1=54,
+ 		reward=35102,
+ 		taskTitle=35113,
+ 		taskDesc=35213,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[14] =
+{
+ 		id=14,
+ 		seasonId=1,
+ 		type=1,
+ 		order=14,
+ 		taskLimit=2,
+ 		limitValue1=60,
+ 		reward=35102,
+ 		taskTitle=35114,
+ 		taskDesc=35214,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[15] =
+{
+ 		id=15,
+ 		seasonId=1,
+ 		type=1,
+ 		order=15,
+ 		taskLimit=2,
+ 		limitValue1=66,
+ 		reward=35102,
+ 		taskTitle=35115,
+ 		taskDesc=35215,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[16] =
+{
+ 		id=16,
+ 		seasonId=1,
+ 		type=1,
+ 		order=16,
+ 		taskLimit=2,
+ 		limitValue1=72,
+ 		reward=35103,
+ 		taskTitle=35116,
+ 		taskDesc=35216,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[17] =
+{
+ 		id=17,
+ 		seasonId=1,
+ 		type=1,
+ 		order=17,
+ 		taskLimit=2,
+ 		limitValue1=78,
+ 		reward=35103,
+ 		taskTitle=35117,
+ 		taskDesc=35217,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[18] =
+{
+ 		id=18,
+ 		seasonId=1,
+ 		type=1,
+ 		order=18,
+ 		taskLimit=2,
+ 		limitValue1=84,
+ 		reward=35103,
+ 		taskTitle=35118,
+ 		taskDesc=35218,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[19] =
+{
+ 		id=19,
+ 		seasonId=1,
+ 		type=1,
+ 		order=19,
+ 		taskLimit=2,
+ 		limitValue1=87,
+ 		reward=35104,
+ 		taskTitle=35119,
+ 		taskDesc=35219,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[20] =
+{
+ 		id=20,
+ 		seasonId=1,
+ 		type=1,
+ 		order=20,
+ 		taskLimit=2,
+ 		limitValue1=90,
+ 		reward=35104,
+ 		taskTitle=35120,
+ 		taskDesc=35220,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[21] =
+{
+ 		id=21,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=1,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=108,
+ 		reward=35105,
+ 		taskTitle=35121,
+ 		taskDesc=35221,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_1"
+},
+[22] =
+{
+ 		id=22,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=1,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=168,
+ 		reward=35105,
+ 		taskTitle=35122,
+ 		taskDesc=35222,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_1"
+},
+[23] =
+{
+ 		id=23,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=1,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=228,
+ 		reward=35105,
+ 		taskTitle=35123,
+ 		taskDesc=35223,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_1"
+},
+[24] =
+{
+ 		id=24,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=1,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=288,
+ 		reward=35105,
+ 		taskTitle=35124,
+ 		taskDesc=35224,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_1"
+},
+[25] =
+{
+ 		id=25,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=1,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=348,
+ 		reward=35105,
+ 		taskTitle=35125,
+ 		taskDesc=35225,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_1"
+},
+[26] =
+{
+ 		id=26,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=1,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=418,
+ 		reward=35105,
+ 		taskTitle=35126,
+ 		taskDesc=35226,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_1"
+},
+[27] =
+{
+ 		id=27,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=1,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=488,
+ 		reward=35105,
+ 		taskTitle=35127,
+ 		taskDesc=35227,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_1"
+},
+[28] =
+{
+ 		id=28,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=1,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=558,
+ 		reward=35105,
+ 		taskTitle=35128,
+ 		taskDesc=35228,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_1"
+},
+[29] =
+{
+ 		id=29,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=1,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=628,
+ 		reward=35105,
+ 		taskTitle=35129,
+ 		taskDesc=35229,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_1"
+},
+[30] =
+{
+ 		id=30,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=1,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=698,
+ 		reward=31701,
+ 		taskTitle=35130,
+ 		taskDesc=35230,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_1"
+},
+[31] =
+{
+ 		id=31,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=2,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=768,
+ 		reward=35105,
+ 		taskTitle=35131,
+ 		taskDesc=35231,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_2"
+},
+[32] =
+{
+ 		id=32,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=2,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=838,
+ 		reward=35105,
+ 		taskTitle=35132,
+ 		taskDesc=35232,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_2"
+},
+[33] =
+{
+ 		id=33,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=2,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=908,
+ 		reward=35105,
+ 		taskTitle=35133,
+ 		taskDesc=35233,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_2"
+},
+[34] =
+{
+ 		id=34,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=2,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=978,
+ 		reward=35105,
+ 		taskTitle=35134,
+ 		taskDesc=35234,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_2"
+},
+[35] =
+{
+ 		id=35,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=2,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1048,
+ 		reward=35105,
+ 		taskTitle=35135,
+ 		taskDesc=35235,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_2"
+},
+[36] =
+{
+ 		id=36,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=2,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1128,
+ 		reward=35105,
+ 		taskTitle=35136,
+ 		taskDesc=35236,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_2"
+},
+[37] =
+{
+ 		id=37,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=2,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=1208,
+ 		reward=35105,
+ 		taskTitle=35137,
+ 		taskDesc=35237,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_2"
+},
+[38] =
+{
+ 		id=38,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=2,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=1288,
+ 		reward=35105,
+ 		taskTitle=35138,
+ 		taskDesc=35238,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_2"
+},
+[39] =
+{
+ 		id=39,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=2,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=1368,
+ 		reward=35105,
+ 		taskTitle=35139,
+ 		taskDesc=35239,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_2"
+},
+[40] =
+{
+ 		id=40,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=2,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=1448,
+ 		reward=31702,
+ 		taskTitle=35140,
+ 		taskDesc=35240,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_2"
+},
+[41] =
+{
+ 		id=41,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=1528,
+ 		reward=35105,
+ 		taskTitle=35141,
+ 		taskDesc=35241,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[42] =
+{
+ 		id=42,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=1608,
+ 		reward=35105,
+ 		taskTitle=35142,
+ 		taskDesc=35242,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[43] =
+{
+ 		id=43,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=1688,
+ 		reward=35105,
+ 		taskTitle=35143,
+ 		taskDesc=35243,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[44] =
+{
+ 		id=44,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=1768,
+ 		reward=35105,
+ 		taskTitle=35144,
+ 		taskDesc=35244,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[45] =
+{
+ 		id=45,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1848,
+ 		reward=35105,
+ 		taskTitle=35145,
+ 		taskDesc=35245,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[46] =
+{
+ 		id=46,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1928,
+ 		reward=35105,
+ 		taskTitle=35146,
+ 		taskDesc=35246,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[47] =
+{
+ 		id=47,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=2008,
+ 		reward=35105,
+ 		taskTitle=35147,
+ 		taskDesc=35247,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[48] =
+{
+ 		id=48,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=2088,
+ 		reward=35105,
+ 		taskTitle=35148,
+ 		taskDesc=35248,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[49] =
+{
+ 		id=49,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=2168,
+ 		reward=35105,
+ 		taskTitle=35149,
+ 		taskDesc=35249,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[50] =
+{
+ 		id=50,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=2248,
+ 		reward=31703,
+ 		taskTitle=35150,
+ 		taskDesc=35250,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[51] =
+{
+ 		id=51,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=11,
+ 		taskLimit=3,
+ 		limitValue1=2328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35251,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[52] =
+{
+ 		id=52,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=12,
+ 		taskLimit=3,
+ 		limitValue1=2408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35252,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[53] =
+{
+ 		id=53,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=13,
+ 		taskLimit=3,
+ 		limitValue1=2488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35253,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[54] =
+{
+ 		id=54,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=14,
+ 		taskLimit=3,
+ 		limitValue1=2568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35254,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[55] =
+{
+ 		id=55,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=15,
+ 		taskLimit=3,
+ 		limitValue1=2648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35255,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[56] =
+{
+ 		id=56,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=16,
+ 		taskLimit=3,
+ 		limitValue1=2728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35256,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[57] =
+{
+ 		id=57,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=17,
+ 		taskLimit=3,
+ 		limitValue1=2808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35257,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[58] =
+{
+ 		id=58,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=18,
+ 		taskLimit=3,
+ 		limitValue1=2888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35258,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[59] =
+{
+ 		id=59,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=19,
+ 		taskLimit=3,
+ 		limitValue1=2968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35259,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[60] =
+{
+ 		id=60,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=20,
+ 		taskLimit=3,
+ 		limitValue1=3048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35260,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[61] =
+{
+ 		id=61,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=21,
+ 		taskLimit=3,
+ 		limitValue1=3128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35261,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[62] =
+{
+ 		id=62,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=22,
+ 		taskLimit=3,
+ 		limitValue1=3208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35262,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[63] =
+{
+ 		id=63,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=23,
+ 		taskLimit=3,
+ 		limitValue1=3288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35263,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[64] =
+{
+ 		id=64,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=24,
+ 		taskLimit=3,
+ 		limitValue1=3368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35264,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[65] =
+{
+ 		id=65,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=25,
+ 		taskLimit=3,
+ 		limitValue1=3448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35265,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[66] =
+{
+ 		id=66,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=26,
+ 		taskLimit=3,
+ 		limitValue1=3528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35266,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[67] =
+{
+ 		id=67,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=27,
+ 		taskLimit=3,
+ 		limitValue1=3608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35267,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[68] =
+{
+ 		id=68,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=28,
+ 		taskLimit=3,
+ 		limitValue1=3688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35268,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[69] =
+{
+ 		id=69,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=29,
+ 		taskLimit=3,
+ 		limitValue1=3768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35269,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[70] =
+{
+ 		id=70,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=30,
+ 		taskLimit=3,
+ 		limitValue1=3848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35270,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[71] =
+{
+ 		id=71,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=31,
+ 		taskLimit=3,
+ 		limitValue1=3928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35271,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[72] =
+{
+ 		id=72,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=32,
+ 		taskLimit=3,
+ 		limitValue1=4008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35272,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[73] =
+{
+ 		id=73,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=33,
+ 		taskLimit=3,
+ 		limitValue1=4088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35273,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[74] =
+{
+ 		id=74,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=34,
+ 		taskLimit=3,
+ 		limitValue1=4168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35274,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[75] =
+{
+ 		id=75,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=35,
+ 		taskLimit=3,
+ 		limitValue1=4248,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35275,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[76] =
+{
+ 		id=76,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=36,
+ 		taskLimit=3,
+ 		limitValue1=4328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35276,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[77] =
+{
+ 		id=77,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=37,
+ 		taskLimit=3,
+ 		limitValue1=4408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35277,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[78] =
+{
+ 		id=78,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=38,
+ 		taskLimit=3,
+ 		limitValue1=4488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35278,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[79] =
+{
+ 		id=79,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=39,
+ 		taskLimit=3,
+ 		limitValue1=4568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35279,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[80] =
+{
+ 		id=80,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=40,
+ 		taskLimit=3,
+ 		limitValue1=4648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35280,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[81] =
+{
+ 		id=81,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=41,
+ 		taskLimit=3,
+ 		limitValue1=4728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35281,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[82] =
+{
+ 		id=82,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=42,
+ 		taskLimit=3,
+ 		limitValue1=4808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35282,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[83] =
+{
+ 		id=83,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=43,
+ 		taskLimit=3,
+ 		limitValue1=4888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35283,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[84] =
+{
+ 		id=84,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=44,
+ 		taskLimit=3,
+ 		limitValue1=4968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35284,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[85] =
+{
+ 		id=85,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=45,
+ 		taskLimit=3,
+ 		limitValue1=5048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35285,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[86] =
+{
+ 		id=86,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=46,
+ 		taskLimit=3,
+ 		limitValue1=5128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35286,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[87] =
+{
+ 		id=87,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=47,
+ 		taskLimit=3,
+ 		limitValue1=5208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35287,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[88] =
+{
+ 		id=88,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=48,
+ 		taskLimit=3,
+ 		limitValue1=5288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35288,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[89] =
+{
+ 		id=89,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=49,
+ 		taskLimit=3,
+ 		limitValue1=5368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35289,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[90] =
+{
+ 		id=90,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=50,
+ 		taskLimit=3,
+ 		limitValue1=5448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35290,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[91] =
+{
+ 		id=91,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=51,
+ 		taskLimit=3,
+ 		limitValue1=5528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35291,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[92] =
+{
+ 		id=92,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=52,
+ 		taskLimit=3,
+ 		limitValue1=5608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35292,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[93] =
+{
+ 		id=93,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=53,
+ 		taskLimit=3,
+ 		limitValue1=5688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35293,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[94] =
+{
+ 		id=94,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=54,
+ 		taskLimit=3,
+ 		limitValue1=5768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35294,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[95] =
+{
+ 		id=95,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=55,
+ 		taskLimit=3,
+ 		limitValue1=5848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35295,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[96] =
+{
+ 		id=96,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=56,
+ 		taskLimit=3,
+ 		limitValue1=5928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35296,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[97] =
+{
+ 		id=97,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=57,
+ 		taskLimit=3,
+ 		limitValue1=6008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35297,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[98] =
+{
+ 		id=98,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=58,
+ 		taskLimit=3,
+ 		limitValue1=6088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35298,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[99] =
+{
+ 		id=99,
+ 		seasonId=1,
+ 		type=2,
+ 		danType=3,
+ 		order=59,
+ 		taskLimit=3,
+ 		limitValue1=6168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35299,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season01_3"
+},
+[100] =
+{
+ 		id=100,
+ 		seasonId=2,
+ 		type=1,
+ 		order=1,
+ 		taskLimit=1,
+ 		limitValue1=1,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35101,
+ 		taskDesc=35201,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[101] =
+{
+ 		id=101,
+ 		seasonId=2,
+ 		type=1,
+ 		order=2,
+ 		taskLimit=1,
+ 		limitValue1=2,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35102,
+ 		taskDesc=35202,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[102] =
+{
+ 		id=102,
+ 		seasonId=2,
+ 		type=1,
+ 		order=3,
+ 		taskLimit=1,
+ 		limitValue1=3,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35103,
+ 		taskDesc=35203,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[103] =
+{
+ 		id=103,
+ 		seasonId=2,
+ 		type=1,
+ 		order=4,
+ 		taskLimit=1,
+ 		limitValue1=4,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35104,
+ 		taskDesc=35204,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[104] =
+{
+ 		id=104,
+ 		seasonId=2,
+ 		type=1,
+ 		order=5,
+ 		taskLimit=1,
+ 		limitValue1=5,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35105,
+ 		taskDesc=35205,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[105] =
+{
+ 		id=105,
+ 		seasonId=2,
+ 		type=1,
+ 		order=6,
+ 		taskLimit=1,
+ 		limitValue1=6,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35106,
+ 		taskDesc=35206,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[106] =
+{
+ 		id=106,
+ 		seasonId=2,
+ 		type=1,
+ 		order=7,
+ 		taskLimit=1,
+ 		limitValue1=7,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35107,
+ 		taskDesc=35207,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[107] =
+{
+ 		id=107,
+ 		seasonId=2,
+ 		type=1,
+ 		order=8,
+ 		taskLimit=1,
+ 		limitValue1=8,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35108,
+ 		taskDesc=35208,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[108] =
+{
+ 		id=108,
+ 		seasonId=2,
+ 		type=1,
+ 		order=9,
+ 		taskLimit=1,
+ 		limitValue1=9,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35109,
+ 		taskDesc=35209,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[109] =
+{
+ 		id=109,
+ 		seasonId=2,
+ 		type=1,
+ 		order=10,
+ 		taskLimit=1,
+ 		limitValue1=10,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35110,
+ 		taskDesc=35210,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[110] =
+{
+ 		id=110,
+ 		seasonId=2,
+ 		type=1,
+ 		order=11,
+ 		taskLimit=1,
+ 		limitValue1=11,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35111,
+ 		taskDesc=35211,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[111] =
+{
+ 		id=111,
+ 		seasonId=2,
+ 		type=1,
+ 		order=12,
+ 		taskLimit=1,
+ 		limitValue1=12,
+ 		limitValue2=4,
+ 		reward=35101,
+ 		taskTitle=35112,
+ 		taskDesc=35212,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[112] =
+{
+ 		id=112,
+ 		seasonId=2,
+ 		type=1,
+ 		order=13,
+ 		taskLimit=2,
+ 		limitValue1=54,
+ 		reward=35102,
+ 		taskTitle=35113,
+ 		taskDesc=35213,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[113] =
+{
+ 		id=113,
+ 		seasonId=2,
+ 		type=1,
+ 		order=14,
+ 		taskLimit=2,
+ 		limitValue1=60,
+ 		reward=35102,
+ 		taskTitle=35114,
+ 		taskDesc=35214,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[114] =
+{
+ 		id=114,
+ 		seasonId=2,
+ 		type=1,
+ 		order=15,
+ 		taskLimit=2,
+ 		limitValue1=66,
+ 		reward=35102,
+ 		taskTitle=35115,
+ 		taskDesc=35215,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[115] =
+{
+ 		id=115,
+ 		seasonId=2,
+ 		type=1,
+ 		order=16,
+ 		taskLimit=2,
+ 		limitValue1=72,
+ 		reward=35103,
+ 		taskTitle=35116,
+ 		taskDesc=35216,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[116] =
+{
+ 		id=116,
+ 		seasonId=2,
+ 		type=1,
+ 		order=17,
+ 		taskLimit=2,
+ 		limitValue1=78,
+ 		reward=35103,
+ 		taskTitle=35117,
+ 		taskDesc=35217,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[117] =
+{
+ 		id=117,
+ 		seasonId=2,
+ 		type=1,
+ 		order=18,
+ 		taskLimit=2,
+ 		limitValue1=84,
+ 		reward=35103,
+ 		taskTitle=35118,
+ 		taskDesc=35218,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[118] =
+{
+ 		id=118,
+ 		seasonId=2,
+ 		type=1,
+ 		order=19,
+ 		taskLimit=2,
+ 		limitValue1=87,
+ 		reward=35104,
+ 		taskTitle=35119,
+ 		taskDesc=35219,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[119] =
+{
+ 		id=119,
+ 		seasonId=2,
+ 		type=1,
+ 		order=20,
+ 		taskLimit=2,
+ 		limitValue1=90,
+ 		reward=35104,
+ 		taskTitle=35120,
+ 		taskDesc=35220,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[120] =
+{
+ 		id=120,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=1,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=108,
+ 		reward=35105,
+ 		taskTitle=35121,
+ 		taskDesc=35221,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_1"
+},
+[121] =
+{
+ 		id=121,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=1,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=168,
+ 		reward=35105,
+ 		taskTitle=35122,
+ 		taskDesc=35222,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_1"
+},
+[122] =
+{
+ 		id=122,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=1,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=228,
+ 		reward=35105,
+ 		taskTitle=35123,
+ 		taskDesc=35223,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_1"
+},
+[123] =
+{
+ 		id=123,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=1,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=288,
+ 		reward=35105,
+ 		taskTitle=35124,
+ 		taskDesc=35224,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_1"
+},
+[124] =
+{
+ 		id=124,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=1,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=348,
+ 		reward=35105,
+ 		taskTitle=35125,
+ 		taskDesc=35225,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_1"
+},
+[125] =
+{
+ 		id=125,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=1,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=418,
+ 		reward=35105,
+ 		taskTitle=35126,
+ 		taskDesc=35226,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_1"
+},
+[126] =
+{
+ 		id=126,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=1,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=488,
+ 		reward=35105,
+ 		taskTitle=35127,
+ 		taskDesc=35227,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_1"
+},
+[127] =
+{
+ 		id=127,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=1,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=558,
+ 		reward=35105,
+ 		taskTitle=35128,
+ 		taskDesc=35228,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_1"
+},
+[128] =
+{
+ 		id=128,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=1,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=628,
+ 		reward=35105,
+ 		taskTitle=35129,
+ 		taskDesc=35229,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_1"
+},
+[129] =
+{
+ 		id=129,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=1,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=698,
+ 		reward=31704,
+ 		taskTitle=35130,
+ 		taskDesc=35230,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_1"
+},
+[130] =
+{
+ 		id=130,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=2,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=768,
+ 		reward=35105,
+ 		taskTitle=35131,
+ 		taskDesc=35231,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_2"
+},
+[131] =
+{
+ 		id=131,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=2,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=838,
+ 		reward=35105,
+ 		taskTitle=35132,
+ 		taskDesc=35232,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_2"
+},
+[132] =
+{
+ 		id=132,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=2,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=908,
+ 		reward=35105,
+ 		taskTitle=35133,
+ 		taskDesc=35233,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_2"
+},
+[133] =
+{
+ 		id=133,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=2,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=978,
+ 		reward=35105,
+ 		taskTitle=35134,
+ 		taskDesc=35234,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_2"
+},
+[134] =
+{
+ 		id=134,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=2,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1048,
+ 		reward=35105,
+ 		taskTitle=35135,
+ 		taskDesc=35235,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_2"
+},
+[135] =
+{
+ 		id=135,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=2,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1128,
+ 		reward=35105,
+ 		taskTitle=35136,
+ 		taskDesc=35236,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_2"
+},
+[136] =
+{
+ 		id=136,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=2,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=1208,
+ 		reward=35105,
+ 		taskTitle=35137,
+ 		taskDesc=35237,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_2"
+},
+[137] =
+{
+ 		id=137,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=2,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=1288,
+ 		reward=35105,
+ 		taskTitle=35138,
+ 		taskDesc=35238,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_2"
+},
+[138] =
+{
+ 		id=138,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=2,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=1368,
+ 		reward=35105,
+ 		taskTitle=35139,
+ 		taskDesc=35239,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_2"
+},
+[139] =
+{
+ 		id=139,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=2,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=1448,
+ 		reward=31705,
+ 		taskTitle=35140,
+ 		taskDesc=35240,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_2"
+},
+[140] =
+{
+ 		id=140,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=1528,
+ 		reward=35105,
+ 		taskTitle=35141,
+ 		taskDesc=35241,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[141] =
+{
+ 		id=141,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=1608,
+ 		reward=35105,
+ 		taskTitle=35142,
+ 		taskDesc=35242,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[142] =
+{
+ 		id=142,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=1688,
+ 		reward=35105,
+ 		taskTitle=35143,
+ 		taskDesc=35243,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[143] =
+{
+ 		id=143,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=1768,
+ 		reward=35105,
+ 		taskTitle=35144,
+ 		taskDesc=35244,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[144] =
+{
+ 		id=144,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1848,
+ 		reward=35105,
+ 		taskTitle=35145,
+ 		taskDesc=35245,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[145] =
+{
+ 		id=145,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1928,
+ 		reward=35105,
+ 		taskTitle=35146,
+ 		taskDesc=35246,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[146] =
+{
+ 		id=146,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=2008,
+ 		reward=35105,
+ 		taskTitle=35147,
+ 		taskDesc=35247,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[147] =
+{
+ 		id=147,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=2088,
+ 		reward=35105,
+ 		taskTitle=35148,
+ 		taskDesc=35248,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[148] =
+{
+ 		id=148,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=2168,
+ 		reward=35105,
+ 		taskTitle=35149,
+ 		taskDesc=35249,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[149] =
+{
+ 		id=149,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=2248,
+ 		reward=31706,
+ 		taskTitle=35150,
+ 		taskDesc=35250,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[150] =
+{
+ 		id=150,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=11,
+ 		taskLimit=3,
+ 		limitValue1=2328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35251,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[151] =
+{
+ 		id=151,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=12,
+ 		taskLimit=3,
+ 		limitValue1=2408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35252,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[152] =
+{
+ 		id=152,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=13,
+ 		taskLimit=3,
+ 		limitValue1=2488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35253,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[153] =
+{
+ 		id=153,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=14,
+ 		taskLimit=3,
+ 		limitValue1=2568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35254,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[154] =
+{
+ 		id=154,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=15,
+ 		taskLimit=3,
+ 		limitValue1=2648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35255,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[155] =
+{
+ 		id=155,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=16,
+ 		taskLimit=3,
+ 		limitValue1=2728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35256,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[156] =
+{
+ 		id=156,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=17,
+ 		taskLimit=3,
+ 		limitValue1=2808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35257,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[157] =
+{
+ 		id=157,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=18,
+ 		taskLimit=3,
+ 		limitValue1=2888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35258,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[158] =
+{
+ 		id=158,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=19,
+ 		taskLimit=3,
+ 		limitValue1=2968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35259,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[159] =
+{
+ 		id=159,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=20,
+ 		taskLimit=3,
+ 		limitValue1=3048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35260,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[160] =
+{
+ 		id=160,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=21,
+ 		taskLimit=3,
+ 		limitValue1=3128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35261,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[161] =
+{
+ 		id=161,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=22,
+ 		taskLimit=3,
+ 		limitValue1=3208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35262,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[162] =
+{
+ 		id=162,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=23,
+ 		taskLimit=3,
+ 		limitValue1=3288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35263,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[163] =
+{
+ 		id=163,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=24,
+ 		taskLimit=3,
+ 		limitValue1=3368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35264,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[164] =
+{
+ 		id=164,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=25,
+ 		taskLimit=3,
+ 		limitValue1=3448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35265,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[165] =
+{
+ 		id=165,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=26,
+ 		taskLimit=3,
+ 		limitValue1=3528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35266,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[166] =
+{
+ 		id=166,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=27,
+ 		taskLimit=3,
+ 		limitValue1=3608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35267,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[167] =
+{
+ 		id=167,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=28,
+ 		taskLimit=3,
+ 		limitValue1=3688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35268,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[168] =
+{
+ 		id=168,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=29,
+ 		taskLimit=3,
+ 		limitValue1=3768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35269,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[169] =
+{
+ 		id=169,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=30,
+ 		taskLimit=3,
+ 		limitValue1=3848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35270,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[170] =
+{
+ 		id=170,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=31,
+ 		taskLimit=3,
+ 		limitValue1=3928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35271,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[171] =
+{
+ 		id=171,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=32,
+ 		taskLimit=3,
+ 		limitValue1=4008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35272,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[172] =
+{
+ 		id=172,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=33,
+ 		taskLimit=3,
+ 		limitValue1=4088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35273,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[173] =
+{
+ 		id=173,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=34,
+ 		taskLimit=3,
+ 		limitValue1=4168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35274,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[174] =
+{
+ 		id=174,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=35,
+ 		taskLimit=3,
+ 		limitValue1=4248,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35275,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[175] =
+{
+ 		id=175,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=36,
+ 		taskLimit=3,
+ 		limitValue1=4328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35276,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[176] =
+{
+ 		id=176,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=37,
+ 		taskLimit=3,
+ 		limitValue1=4408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35277,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[177] =
+{
+ 		id=177,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=38,
+ 		taskLimit=3,
+ 		limitValue1=4488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35278,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[178] =
+{
+ 		id=178,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=39,
+ 		taskLimit=3,
+ 		limitValue1=4568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35279,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[179] =
+{
+ 		id=179,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=40,
+ 		taskLimit=3,
+ 		limitValue1=4648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35280,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[180] =
+{
+ 		id=180,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=41,
+ 		taskLimit=3,
+ 		limitValue1=4728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35281,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[181] =
+{
+ 		id=181,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=42,
+ 		taskLimit=3,
+ 		limitValue1=4808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35282,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[182] =
+{
+ 		id=182,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=43,
+ 		taskLimit=3,
+ 		limitValue1=4888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35283,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[183] =
+{
+ 		id=183,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=44,
+ 		taskLimit=3,
+ 		limitValue1=4968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35284,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[184] =
+{
+ 		id=184,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=45,
+ 		taskLimit=3,
+ 		limitValue1=5048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35285,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[185] =
+{
+ 		id=185,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=46,
+ 		taskLimit=3,
+ 		limitValue1=5128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35286,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[186] =
+{
+ 		id=186,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=47,
+ 		taskLimit=3,
+ 		limitValue1=5208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35287,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[187] =
+{
+ 		id=187,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=48,
+ 		taskLimit=3,
+ 		limitValue1=5288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35288,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[188] =
+{
+ 		id=188,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=49,
+ 		taskLimit=3,
+ 		limitValue1=5368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35289,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[189] =
+{
+ 		id=189,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=50,
+ 		taskLimit=3,
+ 		limitValue1=5448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35290,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[190] =
+{
+ 		id=190,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=51,
+ 		taskLimit=3,
+ 		limitValue1=5528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35291,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[191] =
+{
+ 		id=191,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=52,
+ 		taskLimit=3,
+ 		limitValue1=5608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35292,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[192] =
+{
+ 		id=192,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=53,
+ 		taskLimit=3,
+ 		limitValue1=5688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35293,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[193] =
+{
+ 		id=193,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=54,
+ 		taskLimit=3,
+ 		limitValue1=5768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35294,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[194] =
+{
+ 		id=194,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=55,
+ 		taskLimit=3,
+ 		limitValue1=5848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35295,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[195] =
+{
+ 		id=195,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=56,
+ 		taskLimit=3,
+ 		limitValue1=5928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35296,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[196] =
+{
+ 		id=196,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=57,
+ 		taskLimit=3,
+ 		limitValue1=6008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35297,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[197] =
+{
+ 		id=197,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=58,
+ 		taskLimit=3,
+ 		limitValue1=6088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35298,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[198] =
+{
+ 		id=198,
+ 		seasonId=2,
+ 		type=2,
+ 		danType=3,
+ 		order=59,
+ 		taskLimit=3,
+ 		limitValue1=6168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35299,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season02_3"
+},
+[199] =
+{
+ 		id=199,
+ 		seasonId=3,
+ 		type=1,
+ 		order=1,
+ 		taskLimit=1,
+ 		limitValue1=1,
+ 		reward=35101,
+ 		taskTitle=35101,
+ 		taskDesc=35201,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[200] =
+{
+ 		id=200,
+ 		seasonId=3,
+ 		type=1,
+ 		order=2,
+ 		taskLimit=1,
+ 		limitValue1=2,
+ 		reward=35101,
+ 		taskTitle=35102,
+ 		taskDesc=35202,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[201] =
+{
+ 		id=201,
+ 		seasonId=3,
+ 		type=1,
+ 		order=3,
+ 		taskLimit=1,
+ 		limitValue1=3,
+ 		reward=35101,
+ 		taskTitle=35103,
+ 		taskDesc=35203,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[202] =
+{
+ 		id=202,
+ 		seasonId=3,
+ 		type=1,
+ 		order=4,
+ 		taskLimit=1,
+ 		limitValue1=4,
+ 		reward=35101,
+ 		taskTitle=35104,
+ 		taskDesc=35204,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[203] =
+{
+ 		id=203,
+ 		seasonId=3,
+ 		type=1,
+ 		order=5,
+ 		taskLimit=1,
+ 		limitValue1=5,
+ 		reward=35101,
+ 		taskTitle=35105,
+ 		taskDesc=35205,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[204] =
+{
+ 		id=204,
+ 		seasonId=3,
+ 		type=1,
+ 		order=6,
+ 		taskLimit=1,
+ 		limitValue1=6,
+ 		reward=35101,
+ 		taskTitle=35106,
+ 		taskDesc=35206,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[205] =
+{
+ 		id=205,
+ 		seasonId=3,
+ 		type=1,
+ 		order=7,
+ 		taskLimit=1,
+ 		limitValue1=7,
+ 		reward=35101,
+ 		taskTitle=35107,
+ 		taskDesc=35207,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[206] =
+{
+ 		id=206,
+ 		seasonId=3,
+ 		type=1,
+ 		order=8,
+ 		taskLimit=1,
+ 		limitValue1=8,
+ 		reward=35101,
+ 		taskTitle=35108,
+ 		taskDesc=35208,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[207] =
+{
+ 		id=207,
+ 		seasonId=3,
+ 		type=1,
+ 		order=9,
+ 		taskLimit=1,
+ 		limitValue1=9,
+ 		reward=35101,
+ 		taskTitle=35109,
+ 		taskDesc=35209,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[208] =
+{
+ 		id=208,
+ 		seasonId=3,
+ 		type=1,
+ 		order=10,
+ 		taskLimit=1,
+ 		limitValue1=10,
+ 		reward=35101,
+ 		taskTitle=35110,
+ 		taskDesc=35210,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[209] =
+{
+ 		id=209,
+ 		seasonId=3,
+ 		type=1,
+ 		order=11,
+ 		taskLimit=1,
+ 		limitValue1=11,
+ 		reward=35101,
+ 		taskTitle=35111,
+ 		taskDesc=35211,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[210] =
+{
+ 		id=210,
+ 		seasonId=3,
+ 		type=1,
+ 		order=12,
+ 		taskLimit=1,
+ 		limitValue1=12,
+ 		reward=35101,
+ 		taskTitle=35112,
+ 		taskDesc=35212,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[211] =
+{
+ 		id=211,
+ 		seasonId=3,
+ 		type=1,
+ 		order=13,
+ 		taskLimit=2,
+ 		limitValue1=54,
+ 		reward=35102,
+ 		taskTitle=35113,
+ 		taskDesc=35213,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[212] =
+{
+ 		id=212,
+ 		seasonId=3,
+ 		type=1,
+ 		order=14,
+ 		taskLimit=2,
+ 		limitValue1=60,
+ 		reward=35102,
+ 		taskTitle=35114,
+ 		taskDesc=35214,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[213] =
+{
+ 		id=213,
+ 		seasonId=3,
+ 		type=1,
+ 		order=15,
+ 		taskLimit=2,
+ 		limitValue1=66,
+ 		reward=35102,
+ 		taskTitle=35115,
+ 		taskDesc=35215,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[214] =
+{
+ 		id=214,
+ 		seasonId=3,
+ 		type=1,
+ 		order=16,
+ 		taskLimit=2,
+ 		limitValue1=72,
+ 		reward=35103,
+ 		taskTitle=35116,
+ 		taskDesc=35216,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[215] =
+{
+ 		id=215,
+ 		seasonId=3,
+ 		type=1,
+ 		order=17,
+ 		taskLimit=2,
+ 		limitValue1=78,
+ 		reward=35103,
+ 		taskTitle=35117,
+ 		taskDesc=35217,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[216] =
+{
+ 		id=216,
+ 		seasonId=3,
+ 		type=1,
+ 		order=18,
+ 		taskLimit=2,
+ 		limitValue1=84,
+ 		reward=35103,
+ 		taskTitle=35118,
+ 		taskDesc=35218,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[217] =
+{
+ 		id=217,
+ 		seasonId=3,
+ 		type=1,
+ 		order=19,
+ 		taskLimit=2,
+ 		limitValue1=87,
+ 		reward=35104,
+ 		taskTitle=35119,
+ 		taskDesc=35219,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[218] =
+{
+ 		id=218,
+ 		seasonId=3,
+ 		type=1,
+ 		order=20,
+ 		taskLimit=2,
+ 		limitValue1=90,
+ 		reward=35104,
+ 		taskTitle=35120,
+ 		taskDesc=35220,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[219] =
+{
+ 		id=219,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=1,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=108,
+ 		reward=35105,
+ 		taskTitle=35121,
+ 		taskDesc=35221,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_1"
+},
+[220] =
+{
+ 		id=220,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=1,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=168,
+ 		reward=35105,
+ 		taskTitle=35122,
+ 		taskDesc=35222,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_1"
+},
+[221] =
+{
+ 		id=221,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=1,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=228,
+ 		reward=35105,
+ 		taskTitle=35123,
+ 		taskDesc=35223,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_1"
+},
+[222] =
+{
+ 		id=222,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=1,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=288,
+ 		reward=35105,
+ 		taskTitle=35124,
+ 		taskDesc=35224,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_1"
+},
+[223] =
+{
+ 		id=223,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=1,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=348,
+ 		reward=35105,
+ 		taskTitle=35125,
+ 		taskDesc=35225,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_1"
+},
+[224] =
+{
+ 		id=224,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=1,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=418,
+ 		reward=35105,
+ 		taskTitle=35126,
+ 		taskDesc=35226,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_1"
+},
+[225] =
+{
+ 		id=225,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=1,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=488,
+ 		reward=35105,
+ 		taskTitle=35127,
+ 		taskDesc=35227,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_1"
+},
+[226] =
+{
+ 		id=226,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=1,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=558,
+ 		reward=35105,
+ 		taskTitle=35128,
+ 		taskDesc=35228,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_1"
+},
+[227] =
+{
+ 		id=227,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=1,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=628,
+ 		reward=35105,
+ 		taskTitle=35129,
+ 		taskDesc=35229,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_1"
+},
+[228] =
+{
+ 		id=228,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=1,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=698,
+ 		reward=31707,
+ 		taskTitle=35130,
+ 		taskDesc=35230,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_1"
+},
+[229] =
+{
+ 		id=229,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=2,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=768,
+ 		reward=35105,
+ 		taskTitle=35131,
+ 		taskDesc=35231,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_2"
+},
+[230] =
+{
+ 		id=230,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=2,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=838,
+ 		reward=35105,
+ 		taskTitle=35132,
+ 		taskDesc=35232,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_2"
+},
+[231] =
+{
+ 		id=231,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=2,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=908,
+ 		reward=35105,
+ 		taskTitle=35133,
+ 		taskDesc=35233,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_2"
+},
+[232] =
+{
+ 		id=232,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=2,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=978,
+ 		reward=35105,
+ 		taskTitle=35134,
+ 		taskDesc=35234,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_2"
+},
+[233] =
+{
+ 		id=233,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=2,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1048,
+ 		reward=35105,
+ 		taskTitle=35135,
+ 		taskDesc=35235,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_2"
+},
+[234] =
+{
+ 		id=234,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=2,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1128,
+ 		reward=35105,
+ 		taskTitle=35136,
+ 		taskDesc=35236,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_2"
+},
+[235] =
+{
+ 		id=235,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=2,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=1208,
+ 		reward=35105,
+ 		taskTitle=35137,
+ 		taskDesc=35237,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_2"
+},
+[236] =
+{
+ 		id=236,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=2,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=1288,
+ 		reward=35105,
+ 		taskTitle=35138,
+ 		taskDesc=35238,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_2"
+},
+[237] =
+{
+ 		id=237,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=2,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=1368,
+ 		reward=35105,
+ 		taskTitle=35139,
+ 		taskDesc=35239,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_2"
+},
+[238] =
+{
+ 		id=238,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=2,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=1448,
+ 		reward=31708,
+ 		taskTitle=35140,
+ 		taskDesc=35240,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_2"
+},
+[239] =
+{
+ 		id=239,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=1528,
+ 		reward=35105,
+ 		taskTitle=35141,
+ 		taskDesc=35241,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[240] =
+{
+ 		id=240,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=1608,
+ 		reward=35105,
+ 		taskTitle=35142,
+ 		taskDesc=35242,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[241] =
+{
+ 		id=241,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=1688,
+ 		reward=35105,
+ 		taskTitle=35143,
+ 		taskDesc=35243,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[242] =
+{
+ 		id=242,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=1768,
+ 		reward=35105,
+ 		taskTitle=35144,
+ 		taskDesc=35244,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[243] =
+{
+ 		id=243,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1848,
+ 		reward=35105,
+ 		taskTitle=35145,
+ 		taskDesc=35245,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[244] =
+{
+ 		id=244,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1928,
+ 		reward=35105,
+ 		taskTitle=35146,
+ 		taskDesc=35246,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[245] =
+{
+ 		id=245,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=2008,
+ 		reward=35105,
+ 		taskTitle=35147,
+ 		taskDesc=35247,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[246] =
+{
+ 		id=246,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=2088,
+ 		reward=35105,
+ 		taskTitle=35148,
+ 		taskDesc=35248,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[247] =
+{
+ 		id=247,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=2168,
+ 		reward=35105,
+ 		taskTitle=35149,
+ 		taskDesc=35249,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[248] =
+{
+ 		id=248,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=2248,
+ 		reward=31709,
+ 		taskTitle=35150,
+ 		taskDesc=35250,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[249] =
+{
+ 		id=249,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=11,
+ 		taskLimit=3,
+ 		limitValue1=2328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35251,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[250] =
+{
+ 		id=250,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=12,
+ 		taskLimit=3,
+ 		limitValue1=2408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35252,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[251] =
+{
+ 		id=251,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=13,
+ 		taskLimit=3,
+ 		limitValue1=2488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35253,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[252] =
+{
+ 		id=252,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=14,
+ 		taskLimit=3,
+ 		limitValue1=2568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35254,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[253] =
+{
+ 		id=253,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=15,
+ 		taskLimit=3,
+ 		limitValue1=2648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35255,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[254] =
+{
+ 		id=254,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=16,
+ 		taskLimit=3,
+ 		limitValue1=2728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35256,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[255] =
+{
+ 		id=255,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=17,
+ 		taskLimit=3,
+ 		limitValue1=2808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35257,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[256] =
+{
+ 		id=256,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=18,
+ 		taskLimit=3,
+ 		limitValue1=2888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35258,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[257] =
+{
+ 		id=257,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=19,
+ 		taskLimit=3,
+ 		limitValue1=2968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35259,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[258] =
+{
+ 		id=258,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=20,
+ 		taskLimit=3,
+ 		limitValue1=3048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35260,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[259] =
+{
+ 		id=259,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=21,
+ 		taskLimit=3,
+ 		limitValue1=3128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35261,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[260] =
+{
+ 		id=260,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=22,
+ 		taskLimit=3,
+ 		limitValue1=3208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35262,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[261] =
+{
+ 		id=261,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=23,
+ 		taskLimit=3,
+ 		limitValue1=3288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35263,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[262] =
+{
+ 		id=262,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=24,
+ 		taskLimit=3,
+ 		limitValue1=3368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35264,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[263] =
+{
+ 		id=263,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=25,
+ 		taskLimit=3,
+ 		limitValue1=3448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35265,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[264] =
+{
+ 		id=264,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=26,
+ 		taskLimit=3,
+ 		limitValue1=3528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35266,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[265] =
+{
+ 		id=265,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=27,
+ 		taskLimit=3,
+ 		limitValue1=3608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35267,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[266] =
+{
+ 		id=266,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=28,
+ 		taskLimit=3,
+ 		limitValue1=3688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35268,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[267] =
+{
+ 		id=267,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=29,
+ 		taskLimit=3,
+ 		limitValue1=3768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35269,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[268] =
+{
+ 		id=268,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=30,
+ 		taskLimit=3,
+ 		limitValue1=3848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35270,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[269] =
+{
+ 		id=269,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=31,
+ 		taskLimit=3,
+ 		limitValue1=3928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35271,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[270] =
+{
+ 		id=270,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=32,
+ 		taskLimit=3,
+ 		limitValue1=4008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35272,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[271] =
+{
+ 		id=271,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=33,
+ 		taskLimit=3,
+ 		limitValue1=4088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35273,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[272] =
+{
+ 		id=272,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=34,
+ 		taskLimit=3,
+ 		limitValue1=4168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35274,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[273] =
+{
+ 		id=273,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=35,
+ 		taskLimit=3,
+ 		limitValue1=4248,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35275,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[274] =
+{
+ 		id=274,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=36,
+ 		taskLimit=3,
+ 		limitValue1=4328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35276,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[275] =
+{
+ 		id=275,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=37,
+ 		taskLimit=3,
+ 		limitValue1=4408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35277,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[276] =
+{
+ 		id=276,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=38,
+ 		taskLimit=3,
+ 		limitValue1=4488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35278,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[277] =
+{
+ 		id=277,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=39,
+ 		taskLimit=3,
+ 		limitValue1=4568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35279,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[278] =
+{
+ 		id=278,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=40,
+ 		taskLimit=3,
+ 		limitValue1=4648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35280,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[279] =
+{
+ 		id=279,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=41,
+ 		taskLimit=3,
+ 		limitValue1=4728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35281,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[280] =
+{
+ 		id=280,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=42,
+ 		taskLimit=3,
+ 		limitValue1=4808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35282,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[281] =
+{
+ 		id=281,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=43,
+ 		taskLimit=3,
+ 		limitValue1=4888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35283,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[282] =
+{
+ 		id=282,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=44,
+ 		taskLimit=3,
+ 		limitValue1=4968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35284,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[283] =
+{
+ 		id=283,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=45,
+ 		taskLimit=3,
+ 		limitValue1=5048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35285,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[284] =
+{
+ 		id=284,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=46,
+ 		taskLimit=3,
+ 		limitValue1=5128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35286,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[285] =
+{
+ 		id=285,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=47,
+ 		taskLimit=3,
+ 		limitValue1=5208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35287,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[286] =
+{
+ 		id=286,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=48,
+ 		taskLimit=3,
+ 		limitValue1=5288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35288,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[287] =
+{
+ 		id=287,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=49,
+ 		taskLimit=3,
+ 		limitValue1=5368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35289,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[288] =
+{
+ 		id=288,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=50,
+ 		taskLimit=3,
+ 		limitValue1=5448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35290,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[289] =
+{
+ 		id=289,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=51,
+ 		taskLimit=3,
+ 		limitValue1=5528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35291,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[290] =
+{
+ 		id=290,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=52,
+ 		taskLimit=3,
+ 		limitValue1=5608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35292,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[291] =
+{
+ 		id=291,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=53,
+ 		taskLimit=3,
+ 		limitValue1=5688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35293,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[292] =
+{
+ 		id=292,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=54,
+ 		taskLimit=3,
+ 		limitValue1=5768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35294,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[293] =
+{
+ 		id=293,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=55,
+ 		taskLimit=3,
+ 		limitValue1=5848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35295,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[294] =
+{
+ 		id=294,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=56,
+ 		taskLimit=3,
+ 		limitValue1=5928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35296,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[295] =
+{
+ 		id=295,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=57,
+ 		taskLimit=3,
+ 		limitValue1=6008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35297,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[296] =
+{
+ 		id=296,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=58,
+ 		taskLimit=3,
+ 		limitValue1=6088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35298,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[297] =
+{
+ 		id=297,
+ 		seasonId=3,
+ 		type=2,
+ 		danType=3,
+ 		order=59,
+ 		taskLimit=3,
+ 		limitValue1=6168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35299,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season03_3"
+},
+[298] =
+{
+ 		id=298,
+ 		seasonId=4,
+ 		type=1,
+ 		order=1,
+ 		taskLimit=1,
+ 		limitValue1=1,
+ 		reward=35101,
+ 		taskTitle=35101,
+ 		taskDesc=35201,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[299] =
+{
+ 		id=299,
+ 		seasonId=4,
+ 		type=1,
+ 		order=2,
+ 		taskLimit=1,
+ 		limitValue1=2,
+ 		reward=35101,
+ 		taskTitle=35102,
+ 		taskDesc=35202,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[300] =
+{
+ 		id=300,
+ 		seasonId=4,
+ 		type=1,
+ 		order=3,
+ 		taskLimit=1,
+ 		limitValue1=3,
+ 		reward=35101,
+ 		taskTitle=35103,
+ 		taskDesc=35203,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[301] =
+{
+ 		id=301,
+ 		seasonId=4,
+ 		type=1,
+ 		order=4,
+ 		taskLimit=1,
+ 		limitValue1=4,
+ 		reward=35101,
+ 		taskTitle=35104,
+ 		taskDesc=35204,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[302] =
+{
+ 		id=302,
+ 		seasonId=4,
+ 		type=1,
+ 		order=5,
+ 		taskLimit=1,
+ 		limitValue1=5,
+ 		reward=35101,
+ 		taskTitle=35105,
+ 		taskDesc=35205,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[303] =
+{
+ 		id=303,
+ 		seasonId=4,
+ 		type=1,
+ 		order=6,
+ 		taskLimit=1,
+ 		limitValue1=6,
+ 		reward=35101,
+ 		taskTitle=35106,
+ 		taskDesc=35206,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[304] =
+{
+ 		id=304,
+ 		seasonId=4,
+ 		type=1,
+ 		order=7,
+ 		taskLimit=1,
+ 		limitValue1=7,
+ 		reward=35101,
+ 		taskTitle=35107,
+ 		taskDesc=35207,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[305] =
+{
+ 		id=305,
+ 		seasonId=4,
+ 		type=1,
+ 		order=8,
+ 		taskLimit=1,
+ 		limitValue1=8,
+ 		reward=35101,
+ 		taskTitle=35108,
+ 		taskDesc=35208,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[306] =
+{
+ 		id=306,
+ 		seasonId=4,
+ 		type=1,
+ 		order=9,
+ 		taskLimit=1,
+ 		limitValue1=9,
+ 		reward=35101,
+ 		taskTitle=35109,
+ 		taskDesc=35209,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[307] =
+{
+ 		id=307,
+ 		seasonId=4,
+ 		type=1,
+ 		order=10,
+ 		taskLimit=1,
+ 		limitValue1=10,
+ 		reward=35101,
+ 		taskTitle=35110,
+ 		taskDesc=35210,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[308] =
+{
+ 		id=308,
+ 		seasonId=4,
+ 		type=1,
+ 		order=11,
+ 		taskLimit=1,
+ 		limitValue1=11,
+ 		reward=35101,
+ 		taskTitle=35111,
+ 		taskDesc=35211,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[309] =
+{
+ 		id=309,
+ 		seasonId=4,
+ 		type=1,
+ 		order=12,
+ 		taskLimit=1,
+ 		limitValue1=12,
+ 		reward=35101,
+ 		taskTitle=35112,
+ 		taskDesc=35212,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[310] =
+{
+ 		id=310,
+ 		seasonId=4,
+ 		type=1,
+ 		order=13,
+ 		taskLimit=2,
+ 		limitValue1=54,
+ 		reward=35102,
+ 		taskTitle=35113,
+ 		taskDesc=35213,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[311] =
+{
+ 		id=311,
+ 		seasonId=4,
+ 		type=1,
+ 		order=14,
+ 		taskLimit=2,
+ 		limitValue1=60,
+ 		reward=35102,
+ 		taskTitle=35114,
+ 		taskDesc=35214,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[312] =
+{
+ 		id=312,
+ 		seasonId=4,
+ 		type=1,
+ 		order=15,
+ 		taskLimit=2,
+ 		limitValue1=66,
+ 		reward=35102,
+ 		taskTitle=35115,
+ 		taskDesc=35215,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[313] =
+{
+ 		id=313,
+ 		seasonId=4,
+ 		type=1,
+ 		order=16,
+ 		taskLimit=2,
+ 		limitValue1=72,
+ 		reward=35103,
+ 		taskTitle=35116,
+ 		taskDesc=35216,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[314] =
+{
+ 		id=314,
+ 		seasonId=4,
+ 		type=1,
+ 		order=17,
+ 		taskLimit=2,
+ 		limitValue1=78,
+ 		reward=35103,
+ 		taskTitle=35117,
+ 		taskDesc=35217,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[315] =
+{
+ 		id=315,
+ 		seasonId=4,
+ 		type=1,
+ 		order=18,
+ 		taskLimit=2,
+ 		limitValue1=84,
+ 		reward=35103,
+ 		taskTitle=35118,
+ 		taskDesc=35218,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[316] =
+{
+ 		id=316,
+ 		seasonId=4,
+ 		type=1,
+ 		order=19,
+ 		taskLimit=2,
+ 		limitValue1=87,
+ 		reward=35104,
+ 		taskTitle=35119,
+ 		taskDesc=35219,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[317] =
+{
+ 		id=317,
+ 		seasonId=4,
+ 		type=1,
+ 		order=20,
+ 		taskLimit=2,
+ 		limitValue1=90,
+ 		reward=35104,
+ 		taskTitle=35120,
+ 		taskDesc=35220,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[318] =
+{
+ 		id=318,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=1,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=108,
+ 		reward=35105,
+ 		taskTitle=35121,
+ 		taskDesc=35221,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_1"
+},
+[319] =
+{
+ 		id=319,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=1,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=168,
+ 		reward=35105,
+ 		taskTitle=35122,
+ 		taskDesc=35222,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_1"
+},
+[320] =
+{
+ 		id=320,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=1,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=228,
+ 		reward=35105,
+ 		taskTitle=35123,
+ 		taskDesc=35223,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_1"
+},
+[321] =
+{
+ 		id=321,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=1,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=288,
+ 		reward=35105,
+ 		taskTitle=35124,
+ 		taskDesc=35224,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_1"
+},
+[322] =
+{
+ 		id=322,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=1,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=348,
+ 		reward=35105,
+ 		taskTitle=35125,
+ 		taskDesc=35225,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_1"
+},
+[323] =
+{
+ 		id=323,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=1,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=418,
+ 		reward=35105,
+ 		taskTitle=35126,
+ 		taskDesc=35226,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_1"
+},
+[324] =
+{
+ 		id=324,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=1,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=488,
+ 		reward=35105,
+ 		taskTitle=35127,
+ 		taskDesc=35227,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_1"
+},
+[325] =
+{
+ 		id=325,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=1,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=558,
+ 		reward=35105,
+ 		taskTitle=35128,
+ 		taskDesc=35228,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_1"
+},
+[326] =
+{
+ 		id=326,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=1,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=628,
+ 		reward=35105,
+ 		taskTitle=35129,
+ 		taskDesc=35229,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_1"
+},
+[327] =
+{
+ 		id=327,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=1,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=698,
+ 		reward=31710,
+ 		taskTitle=35130,
+ 		taskDesc=35230,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_1"
+},
+[328] =
+{
+ 		id=328,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=2,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=768,
+ 		reward=35105,
+ 		taskTitle=35131,
+ 		taskDesc=35231,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_2"
+},
+[329] =
+{
+ 		id=329,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=2,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=838,
+ 		reward=35105,
+ 		taskTitle=35132,
+ 		taskDesc=35232,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_2"
+},
+[330] =
+{
+ 		id=330,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=2,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=908,
+ 		reward=35105,
+ 		taskTitle=35133,
+ 		taskDesc=35233,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_2"
+},
+[331] =
+{
+ 		id=331,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=2,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=978,
+ 		reward=35105,
+ 		taskTitle=35134,
+ 		taskDesc=35234,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_2"
+},
+[332] =
+{
+ 		id=332,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=2,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1048,
+ 		reward=35105,
+ 		taskTitle=35135,
+ 		taskDesc=35235,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_2"
+},
+[333] =
+{
+ 		id=333,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=2,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1128,
+ 		reward=35105,
+ 		taskTitle=35136,
+ 		taskDesc=35236,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_2"
+},
+[334] =
+{
+ 		id=334,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=2,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=1208,
+ 		reward=35105,
+ 		taskTitle=35137,
+ 		taskDesc=35237,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_2"
+},
+[335] =
+{
+ 		id=335,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=2,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=1288,
+ 		reward=35105,
+ 		taskTitle=35138,
+ 		taskDesc=35238,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_2"
+},
+[336] =
+{
+ 		id=336,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=2,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=1368,
+ 		reward=35105,
+ 		taskTitle=35139,
+ 		taskDesc=35239,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_2"
+},
+[337] =
+{
+ 		id=337,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=2,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=1448,
+ 		reward=31711,
+ 		taskTitle=35140,
+ 		taskDesc=35240,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_2"
+},
+[338] =
+{
+ 		id=338,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=1528,
+ 		reward=35105,
+ 		taskTitle=35141,
+ 		taskDesc=35241,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[339] =
+{
+ 		id=339,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=1608,
+ 		reward=35105,
+ 		taskTitle=35142,
+ 		taskDesc=35242,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[340] =
+{
+ 		id=340,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=1688,
+ 		reward=35105,
+ 		taskTitle=35143,
+ 		taskDesc=35243,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[341] =
+{
+ 		id=341,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=1768,
+ 		reward=35105,
+ 		taskTitle=35144,
+ 		taskDesc=35244,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[342] =
+{
+ 		id=342,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1848,
+ 		reward=35105,
+ 		taskTitle=35145,
+ 		taskDesc=35245,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[343] =
+{
+ 		id=343,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1928,
+ 		reward=35105,
+ 		taskTitle=35146,
+ 		taskDesc=35246,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[344] =
+{
+ 		id=344,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=2008,
+ 		reward=35105,
+ 		taskTitle=35147,
+ 		taskDesc=35247,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[345] =
+{
+ 		id=345,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=2088,
+ 		reward=35105,
+ 		taskTitle=35148,
+ 		taskDesc=35248,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[346] =
+{
+ 		id=346,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=2168,
+ 		reward=35105,
+ 		taskTitle=35149,
+ 		taskDesc=35249,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[347] =
+{
+ 		id=347,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=2248,
+ 		reward=31712,
+ 		taskTitle=35150,
+ 		taskDesc=35250,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[348] =
+{
+ 		id=348,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=11,
+ 		taskLimit=3,
+ 		limitValue1=2328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35251,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[349] =
+{
+ 		id=349,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=12,
+ 		taskLimit=3,
+ 		limitValue1=2408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35252,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[350] =
+{
+ 		id=350,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=13,
+ 		taskLimit=3,
+ 		limitValue1=2488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35253,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[351] =
+{
+ 		id=351,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=14,
+ 		taskLimit=3,
+ 		limitValue1=2568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35254,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[352] =
+{
+ 		id=352,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=15,
+ 		taskLimit=3,
+ 		limitValue1=2648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35255,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[353] =
+{
+ 		id=353,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=16,
+ 		taskLimit=3,
+ 		limitValue1=2728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35256,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[354] =
+{
+ 		id=354,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=17,
+ 		taskLimit=3,
+ 		limitValue1=2808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35257,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[355] =
+{
+ 		id=355,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=18,
+ 		taskLimit=3,
+ 		limitValue1=2888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35258,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[356] =
+{
+ 		id=356,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=19,
+ 		taskLimit=3,
+ 		limitValue1=2968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35259,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[357] =
+{
+ 		id=357,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=20,
+ 		taskLimit=3,
+ 		limitValue1=3048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35260,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[358] =
+{
+ 		id=358,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=21,
+ 		taskLimit=3,
+ 		limitValue1=3128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35261,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[359] =
+{
+ 		id=359,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=22,
+ 		taskLimit=3,
+ 		limitValue1=3208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35262,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[360] =
+{
+ 		id=360,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=23,
+ 		taskLimit=3,
+ 		limitValue1=3288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35263,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[361] =
+{
+ 		id=361,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=24,
+ 		taskLimit=3,
+ 		limitValue1=3368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35264,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[362] =
+{
+ 		id=362,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=25,
+ 		taskLimit=3,
+ 		limitValue1=3448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35265,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[363] =
+{
+ 		id=363,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=26,
+ 		taskLimit=3,
+ 		limitValue1=3528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35266,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[364] =
+{
+ 		id=364,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=27,
+ 		taskLimit=3,
+ 		limitValue1=3608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35267,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[365] =
+{
+ 		id=365,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=28,
+ 		taskLimit=3,
+ 		limitValue1=3688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35268,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[366] =
+{
+ 		id=366,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=29,
+ 		taskLimit=3,
+ 		limitValue1=3768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35269,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[367] =
+{
+ 		id=367,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=30,
+ 		taskLimit=3,
+ 		limitValue1=3848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35270,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[368] =
+{
+ 		id=368,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=31,
+ 		taskLimit=3,
+ 		limitValue1=3928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35271,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[369] =
+{
+ 		id=369,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=32,
+ 		taskLimit=3,
+ 		limitValue1=4008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35272,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[370] =
+{
+ 		id=370,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=33,
+ 		taskLimit=3,
+ 		limitValue1=4088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35273,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[371] =
+{
+ 		id=371,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=34,
+ 		taskLimit=3,
+ 		limitValue1=4168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35274,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[372] =
+{
+ 		id=372,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=35,
+ 		taskLimit=3,
+ 		limitValue1=4248,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35275,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[373] =
+{
+ 		id=373,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=36,
+ 		taskLimit=3,
+ 		limitValue1=4328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35276,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[374] =
+{
+ 		id=374,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=37,
+ 		taskLimit=3,
+ 		limitValue1=4408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35277,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[375] =
+{
+ 		id=375,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=38,
+ 		taskLimit=3,
+ 		limitValue1=4488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35278,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[376] =
+{
+ 		id=376,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=39,
+ 		taskLimit=3,
+ 		limitValue1=4568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35279,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[377] =
+{
+ 		id=377,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=40,
+ 		taskLimit=3,
+ 		limitValue1=4648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35280,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[378] =
+{
+ 		id=378,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=41,
+ 		taskLimit=3,
+ 		limitValue1=4728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35281,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[379] =
+{
+ 		id=379,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=42,
+ 		taskLimit=3,
+ 		limitValue1=4808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35282,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[380] =
+{
+ 		id=380,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=43,
+ 		taskLimit=3,
+ 		limitValue1=4888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35283,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[381] =
+{
+ 		id=381,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=44,
+ 		taskLimit=3,
+ 		limitValue1=4968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35284,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[382] =
+{
+ 		id=382,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=45,
+ 		taskLimit=3,
+ 		limitValue1=5048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35285,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[383] =
+{
+ 		id=383,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=46,
+ 		taskLimit=3,
+ 		limitValue1=5128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35286,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[384] =
+{
+ 		id=384,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=47,
+ 		taskLimit=3,
+ 		limitValue1=5208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35287,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[385] =
+{
+ 		id=385,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=48,
+ 		taskLimit=3,
+ 		limitValue1=5288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35288,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[386] =
+{
+ 		id=386,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=49,
+ 		taskLimit=3,
+ 		limitValue1=5368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35289,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[387] =
+{
+ 		id=387,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=50,
+ 		taskLimit=3,
+ 		limitValue1=5448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35290,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[388] =
+{
+ 		id=388,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=51,
+ 		taskLimit=3,
+ 		limitValue1=5528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35291,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[389] =
+{
+ 		id=389,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=52,
+ 		taskLimit=3,
+ 		limitValue1=5608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35292,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[390] =
+{
+ 		id=390,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=53,
+ 		taskLimit=3,
+ 		limitValue1=5688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35293,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[391] =
+{
+ 		id=391,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=54,
+ 		taskLimit=3,
+ 		limitValue1=5768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35294,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[392] =
+{
+ 		id=392,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=55,
+ 		taskLimit=3,
+ 		limitValue1=5848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35295,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[393] =
+{
+ 		id=393,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=56,
+ 		taskLimit=3,
+ 		limitValue1=5928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35296,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[394] =
+{
+ 		id=394,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=57,
+ 		taskLimit=3,
+ 		limitValue1=6008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35297,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[395] =
+{
+ 		id=395,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=58,
+ 		taskLimit=3,
+ 		limitValue1=6088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35298,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[396] =
+{
+ 		id=396,
+ 		seasonId=4,
+ 		type=2,
+ 		danType=3,
+ 		order=59,
+ 		taskLimit=3,
+ 		limitValue1=6168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35299,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season04_3"
+},
+[397] =
+{
+ 		id=397,
+ 		seasonId=5,
+ 		type=1,
+ 		order=1,
+ 		taskLimit=1,
+ 		limitValue1=1,
+ 		reward=35101,
+ 		taskTitle=35101,
+ 		taskDesc=35201,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[398] =
+{
+ 		id=398,
+ 		seasonId=5,
+ 		type=1,
+ 		order=2,
+ 		taskLimit=1,
+ 		limitValue1=2,
+ 		reward=35101,
+ 		taskTitle=35102,
+ 		taskDesc=35202,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[399] =
+{
+ 		id=399,
+ 		seasonId=5,
+ 		type=1,
+ 		order=3,
+ 		taskLimit=1,
+ 		limitValue1=3,
+ 		reward=35101,
+ 		taskTitle=35103,
+ 		taskDesc=35203,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[400] =
+{
+ 		id=400,
+ 		seasonId=5,
+ 		type=1,
+ 		order=4,
+ 		taskLimit=1,
+ 		limitValue1=4,
+ 		reward=35101,
+ 		taskTitle=35104,
+ 		taskDesc=35204,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[401] =
+{
+ 		id=401,
+ 		seasonId=5,
+ 		type=1,
+ 		order=5,
+ 		taskLimit=1,
+ 		limitValue1=5,
+ 		reward=35101,
+ 		taskTitle=35105,
+ 		taskDesc=35205,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[402] =
+{
+ 		id=402,
+ 		seasonId=5,
+ 		type=1,
+ 		order=6,
+ 		taskLimit=1,
+ 		limitValue1=6,
+ 		reward=35101,
+ 		taskTitle=35106,
+ 		taskDesc=35206,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[403] =
+{
+ 		id=403,
+ 		seasonId=5,
+ 		type=1,
+ 		order=7,
+ 		taskLimit=1,
+ 		limitValue1=7,
+ 		reward=35101,
+ 		taskTitle=35107,
+ 		taskDesc=35207,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[404] =
+{
+ 		id=404,
+ 		seasonId=5,
+ 		type=1,
+ 		order=8,
+ 		taskLimit=1,
+ 		limitValue1=8,
+ 		reward=35101,
+ 		taskTitle=35108,
+ 		taskDesc=35208,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[405] =
+{
+ 		id=405,
+ 		seasonId=5,
+ 		type=1,
+ 		order=9,
+ 		taskLimit=1,
+ 		limitValue1=9,
+ 		reward=35101,
+ 		taskTitle=35109,
+ 		taskDesc=35209,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[406] =
+{
+ 		id=406,
+ 		seasonId=5,
+ 		type=1,
+ 		order=10,
+ 		taskLimit=1,
+ 		limitValue1=10,
+ 		reward=35101,
+ 		taskTitle=35110,
+ 		taskDesc=35210,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[407] =
+{
+ 		id=407,
+ 		seasonId=5,
+ 		type=1,
+ 		order=11,
+ 		taskLimit=1,
+ 		limitValue1=11,
+ 		reward=35101,
+ 		taskTitle=35111,
+ 		taskDesc=35211,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[408] =
+{
+ 		id=408,
+ 		seasonId=5,
+ 		type=1,
+ 		order=12,
+ 		taskLimit=1,
+ 		limitValue1=12,
+ 		reward=35101,
+ 		taskTitle=35112,
+ 		taskDesc=35212,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[409] =
+{
+ 		id=409,
+ 		seasonId=5,
+ 		type=1,
+ 		order=13,
+ 		taskLimit=2,
+ 		limitValue1=54,
+ 		reward=35102,
+ 		taskTitle=35113,
+ 		taskDesc=35213,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[410] =
+{
+ 		id=410,
+ 		seasonId=5,
+ 		type=1,
+ 		order=14,
+ 		taskLimit=2,
+ 		limitValue1=60,
+ 		reward=35102,
+ 		taskTitle=35114,
+ 		taskDesc=35214,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[411] =
+{
+ 		id=411,
+ 		seasonId=5,
+ 		type=1,
+ 		order=15,
+ 		taskLimit=2,
+ 		limitValue1=66,
+ 		reward=35102,
+ 		taskTitle=35115,
+ 		taskDesc=35215,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[412] =
+{
+ 		id=412,
+ 		seasonId=5,
+ 		type=1,
+ 		order=16,
+ 		taskLimit=2,
+ 		limitValue1=72,
+ 		reward=35103,
+ 		taskTitle=35116,
+ 		taskDesc=35216,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[413] =
+{
+ 		id=413,
+ 		seasonId=5,
+ 		type=1,
+ 		order=17,
+ 		taskLimit=2,
+ 		limitValue1=78,
+ 		reward=35103,
+ 		taskTitle=35117,
+ 		taskDesc=35217,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[414] =
+{
+ 		id=414,
+ 		seasonId=5,
+ 		type=1,
+ 		order=18,
+ 		taskLimit=2,
+ 		limitValue1=84,
+ 		reward=35103,
+ 		taskTitle=35118,
+ 		taskDesc=35218,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[415] =
+{
+ 		id=415,
+ 		seasonId=5,
+ 		type=1,
+ 		order=19,
+ 		taskLimit=2,
+ 		limitValue1=87,
+ 		reward=35104,
+ 		taskTitle=35119,
+ 		taskDesc=35219,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[416] =
+{
+ 		id=416,
+ 		seasonId=5,
+ 		type=1,
+ 		order=20,
+ 		taskLimit=2,
+ 		limitValue1=90,
+ 		reward=35104,
+ 		taskTitle=35120,
+ 		taskDesc=35220,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[417] =
+{
+ 		id=417,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=1,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=108,
+ 		reward=35105,
+ 		taskTitle=35121,
+ 		taskDesc=35221,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_1"
+},
+[418] =
+{
+ 		id=418,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=1,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=168,
+ 		reward=35105,
+ 		taskTitle=35122,
+ 		taskDesc=35222,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_1"
+},
+[419] =
+{
+ 		id=419,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=1,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=228,
+ 		reward=35105,
+ 		taskTitle=35123,
+ 		taskDesc=35223,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_1"
+},
+[420] =
+{
+ 		id=420,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=1,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=288,
+ 		reward=35105,
+ 		taskTitle=35124,
+ 		taskDesc=35224,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_1"
+},
+[421] =
+{
+ 		id=421,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=1,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=348,
+ 		reward=35105,
+ 		taskTitle=35125,
+ 		taskDesc=35225,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_1"
+},
+[422] =
+{
+ 		id=422,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=1,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=418,
+ 		reward=35105,
+ 		taskTitle=35126,
+ 		taskDesc=35226,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_1"
+},
+[423] =
+{
+ 		id=423,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=1,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=488,
+ 		reward=35105,
+ 		taskTitle=35127,
+ 		taskDesc=35227,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_1"
+},
+[424] =
+{
+ 		id=424,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=1,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=558,
+ 		reward=35105,
+ 		taskTitle=35128,
+ 		taskDesc=35228,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_1"
+},
+[425] =
+{
+ 		id=425,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=1,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=628,
+ 		reward=35105,
+ 		taskTitle=35129,
+ 		taskDesc=35229,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_1"
+},
+[426] =
+{
+ 		id=426,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=1,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=698,
+ 		reward=31713,
+ 		taskTitle=35130,
+ 		taskDesc=35230,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_1"
+},
+[427] =
+{
+ 		id=427,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=2,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=768,
+ 		reward=35105,
+ 		taskTitle=35131,
+ 		taskDesc=35231,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_2"
+},
+[428] =
+{
+ 		id=428,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=2,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=838,
+ 		reward=35105,
+ 		taskTitle=35132,
+ 		taskDesc=35232,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_2"
+},
+[429] =
+{
+ 		id=429,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=2,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=908,
+ 		reward=35105,
+ 		taskTitle=35133,
+ 		taskDesc=35233,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_2"
+},
+[430] =
+{
+ 		id=430,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=2,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=978,
+ 		reward=35105,
+ 		taskTitle=35134,
+ 		taskDesc=35234,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_2"
+},
+[431] =
+{
+ 		id=431,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=2,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1048,
+ 		reward=35105,
+ 		taskTitle=35135,
+ 		taskDesc=35235,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_2"
+},
+[432] =
+{
+ 		id=432,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=2,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1128,
+ 		reward=35105,
+ 		taskTitle=35136,
+ 		taskDesc=35236,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_2"
+},
+[433] =
+{
+ 		id=433,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=2,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=1208,
+ 		reward=35105,
+ 		taskTitle=35137,
+ 		taskDesc=35237,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_2"
+},
+[434] =
+{
+ 		id=434,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=2,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=1288,
+ 		reward=35105,
+ 		taskTitle=35138,
+ 		taskDesc=35238,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_2"
+},
+[435] =
+{
+ 		id=435,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=2,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=1368,
+ 		reward=35105,
+ 		taskTitle=35139,
+ 		taskDesc=35239,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_2"
+},
+[436] =
+{
+ 		id=436,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=2,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=1448,
+ 		reward=31714,
+ 		taskTitle=35140,
+ 		taskDesc=35240,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_2"
+},
+[437] =
+{
+ 		id=437,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=1528,
+ 		reward=35105,
+ 		taskTitle=35141,
+ 		taskDesc=35241,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[438] =
+{
+ 		id=438,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=1608,
+ 		reward=35105,
+ 		taskTitle=35142,
+ 		taskDesc=35242,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[439] =
+{
+ 		id=439,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=1688,
+ 		reward=35105,
+ 		taskTitle=35143,
+ 		taskDesc=35243,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[440] =
+{
+ 		id=440,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=1768,
+ 		reward=35105,
+ 		taskTitle=35144,
+ 		taskDesc=35244,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[441] =
+{
+ 		id=441,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1848,
+ 		reward=35105,
+ 		taskTitle=35145,
+ 		taskDesc=35245,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[442] =
+{
+ 		id=442,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1928,
+ 		reward=35105,
+ 		taskTitle=35146,
+ 		taskDesc=35246,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[443] =
+{
+ 		id=443,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=2008,
+ 		reward=35105,
+ 		taskTitle=35147,
+ 		taskDesc=35247,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[444] =
+{
+ 		id=444,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=2088,
+ 		reward=35105,
+ 		taskTitle=35148,
+ 		taskDesc=35248,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[445] =
+{
+ 		id=445,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=2168,
+ 		reward=35105,
+ 		taskTitle=35149,
+ 		taskDesc=35249,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[446] =
+{
+ 		id=446,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=2248,
+ 		reward=31715,
+ 		taskTitle=35150,
+ 		taskDesc=35250,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[447] =
+{
+ 		id=447,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=11,
+ 		taskLimit=3,
+ 		limitValue1=2328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35251,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[448] =
+{
+ 		id=448,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=12,
+ 		taskLimit=3,
+ 		limitValue1=2408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35252,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[449] =
+{
+ 		id=449,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=13,
+ 		taskLimit=3,
+ 		limitValue1=2488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35253,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[450] =
+{
+ 		id=450,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=14,
+ 		taskLimit=3,
+ 		limitValue1=2568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35254,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[451] =
+{
+ 		id=451,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=15,
+ 		taskLimit=3,
+ 		limitValue1=2648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35255,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[452] =
+{
+ 		id=452,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=16,
+ 		taskLimit=3,
+ 		limitValue1=2728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35256,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[453] =
+{
+ 		id=453,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=17,
+ 		taskLimit=3,
+ 		limitValue1=2808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35257,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[454] =
+{
+ 		id=454,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=18,
+ 		taskLimit=3,
+ 		limitValue1=2888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35258,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[455] =
+{
+ 		id=455,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=19,
+ 		taskLimit=3,
+ 		limitValue1=2968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35259,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[456] =
+{
+ 		id=456,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=20,
+ 		taskLimit=3,
+ 		limitValue1=3048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35260,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[457] =
+{
+ 		id=457,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=21,
+ 		taskLimit=3,
+ 		limitValue1=3128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35261,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[458] =
+{
+ 		id=458,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=22,
+ 		taskLimit=3,
+ 		limitValue1=3208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35262,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[459] =
+{
+ 		id=459,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=23,
+ 		taskLimit=3,
+ 		limitValue1=3288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35263,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[460] =
+{
+ 		id=460,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=24,
+ 		taskLimit=3,
+ 		limitValue1=3368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35264,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[461] =
+{
+ 		id=461,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=25,
+ 		taskLimit=3,
+ 		limitValue1=3448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35265,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[462] =
+{
+ 		id=462,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=26,
+ 		taskLimit=3,
+ 		limitValue1=3528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35266,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[463] =
+{
+ 		id=463,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=27,
+ 		taskLimit=3,
+ 		limitValue1=3608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35267,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[464] =
+{
+ 		id=464,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=28,
+ 		taskLimit=3,
+ 		limitValue1=3688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35268,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[465] =
+{
+ 		id=465,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=29,
+ 		taskLimit=3,
+ 		limitValue1=3768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35269,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[466] =
+{
+ 		id=466,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=30,
+ 		taskLimit=3,
+ 		limitValue1=3848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35270,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[467] =
+{
+ 		id=467,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=31,
+ 		taskLimit=3,
+ 		limitValue1=3928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35271,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[468] =
+{
+ 		id=468,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=32,
+ 		taskLimit=3,
+ 		limitValue1=4008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35272,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[469] =
+{
+ 		id=469,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=33,
+ 		taskLimit=3,
+ 		limitValue1=4088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35273,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[470] =
+{
+ 		id=470,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=34,
+ 		taskLimit=3,
+ 		limitValue1=4168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35274,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[471] =
+{
+ 		id=471,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=35,
+ 		taskLimit=3,
+ 		limitValue1=4248,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35275,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[472] =
+{
+ 		id=472,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=36,
+ 		taskLimit=3,
+ 		limitValue1=4328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35276,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[473] =
+{
+ 		id=473,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=37,
+ 		taskLimit=3,
+ 		limitValue1=4408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35277,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[474] =
+{
+ 		id=474,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=38,
+ 		taskLimit=3,
+ 		limitValue1=4488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35278,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[475] =
+{
+ 		id=475,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=39,
+ 		taskLimit=3,
+ 		limitValue1=4568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35279,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[476] =
+{
+ 		id=476,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=40,
+ 		taskLimit=3,
+ 		limitValue1=4648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35280,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[477] =
+{
+ 		id=477,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=41,
+ 		taskLimit=3,
+ 		limitValue1=4728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35281,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[478] =
+{
+ 		id=478,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=42,
+ 		taskLimit=3,
+ 		limitValue1=4808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35282,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[479] =
+{
+ 		id=479,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=43,
+ 		taskLimit=3,
+ 		limitValue1=4888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35283,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[480] =
+{
+ 		id=480,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=44,
+ 		taskLimit=3,
+ 		limitValue1=4968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35284,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[481] =
+{
+ 		id=481,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=45,
+ 		taskLimit=3,
+ 		limitValue1=5048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35285,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[482] =
+{
+ 		id=482,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=46,
+ 		taskLimit=3,
+ 		limitValue1=5128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35286,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[483] =
+{
+ 		id=483,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=47,
+ 		taskLimit=3,
+ 		limitValue1=5208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35287,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[484] =
+{
+ 		id=484,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=48,
+ 		taskLimit=3,
+ 		limitValue1=5288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35288,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[485] =
+{
+ 		id=485,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=49,
+ 		taskLimit=3,
+ 		limitValue1=5368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35289,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[486] =
+{
+ 		id=486,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=50,
+ 		taskLimit=3,
+ 		limitValue1=5448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35290,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[487] =
+{
+ 		id=487,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=51,
+ 		taskLimit=3,
+ 		limitValue1=5528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35291,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[488] =
+{
+ 		id=488,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=52,
+ 		taskLimit=3,
+ 		limitValue1=5608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35292,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[489] =
+{
+ 		id=489,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=53,
+ 		taskLimit=3,
+ 		limitValue1=5688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35293,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[490] =
+{
+ 		id=490,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=54,
+ 		taskLimit=3,
+ 		limitValue1=5768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35294,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[491] =
+{
+ 		id=491,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=55,
+ 		taskLimit=3,
+ 		limitValue1=5848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35295,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[492] =
+{
+ 		id=492,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=56,
+ 		taskLimit=3,
+ 		limitValue1=5928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35296,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[493] =
+{
+ 		id=493,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=57,
+ 		taskLimit=3,
+ 		limitValue1=6008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35297,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[494] =
+{
+ 		id=494,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=58,
+ 		taskLimit=3,
+ 		limitValue1=6088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35298,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[495] =
+{
+ 		id=495,
+ 		seasonId=5,
+ 		type=2,
+ 		danType=3,
+ 		order=59,
+ 		taskLimit=3,
+ 		limitValue1=6168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35299,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season05_3"
+},
+[496] =
+{
+ 		id=496,
+ 		seasonId=6,
+ 		type=1,
+ 		order=1,
+ 		taskLimit=1,
+ 		limitValue1=1,
+ 		reward=35101,
+ 		taskTitle=35101,
+ 		taskDesc=35201,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[497] =
+{
+ 		id=497,
+ 		seasonId=6,
+ 		type=1,
+ 		order=2,
+ 		taskLimit=1,
+ 		limitValue1=2,
+ 		reward=35101,
+ 		taskTitle=35102,
+ 		taskDesc=35202,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[498] =
+{
+ 		id=498,
+ 		seasonId=6,
+ 		type=1,
+ 		order=3,
+ 		taskLimit=1,
+ 		limitValue1=3,
+ 		reward=35101,
+ 		taskTitle=35103,
+ 		taskDesc=35203,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[499] =
+{
+ 		id=499,
+ 		seasonId=6,
+ 		type=1,
+ 		order=4,
+ 		taskLimit=1,
+ 		limitValue1=4,
+ 		reward=35101,
+ 		taskTitle=35104,
+ 		taskDesc=35204,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[500] =
+{
+ 		id=500,
+ 		seasonId=6,
+ 		type=1,
+ 		order=5,
+ 		taskLimit=1,
+ 		limitValue1=5,
+ 		reward=35101,
+ 		taskTitle=35105,
+ 		taskDesc=35205,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[501] =
+{
+ 		id=501,
+ 		seasonId=6,
+ 		type=1,
+ 		order=6,
+ 		taskLimit=1,
+ 		limitValue1=6,
+ 		reward=35101,
+ 		taskTitle=35106,
+ 		taskDesc=35206,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[502] =
+{
+ 		id=502,
+ 		seasonId=6,
+ 		type=1,
+ 		order=7,
+ 		taskLimit=1,
+ 		limitValue1=7,
+ 		reward=35101,
+ 		taskTitle=35107,
+ 		taskDesc=35207,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[503] =
+{
+ 		id=503,
+ 		seasonId=6,
+ 		type=1,
+ 		order=8,
+ 		taskLimit=1,
+ 		limitValue1=8,
+ 		reward=35101,
+ 		taskTitle=35108,
+ 		taskDesc=35208,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[504] =
+{
+ 		id=504,
+ 		seasonId=6,
+ 		type=1,
+ 		order=9,
+ 		taskLimit=1,
+ 		limitValue1=9,
+ 		reward=35101,
+ 		taskTitle=35109,
+ 		taskDesc=35209,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[505] =
+{
+ 		id=505,
+ 		seasonId=6,
+ 		type=1,
+ 		order=10,
+ 		taskLimit=1,
+ 		limitValue1=10,
+ 		reward=35101,
+ 		taskTitle=35110,
+ 		taskDesc=35210,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[506] =
+{
+ 		id=506,
+ 		seasonId=6,
+ 		type=1,
+ 		order=11,
+ 		taskLimit=1,
+ 		limitValue1=11,
+ 		reward=35101,
+ 		taskTitle=35111,
+ 		taskDesc=35211,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[507] =
+{
+ 		id=507,
+ 		seasonId=6,
+ 		type=1,
+ 		order=12,
+ 		taskLimit=1,
+ 		limitValue1=12,
+ 		reward=35101,
+ 		taskTitle=35112,
+ 		taskDesc=35212,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[508] =
+{
+ 		id=508,
+ 		seasonId=6,
+ 		type=1,
+ 		order=13,
+ 		taskLimit=2,
+ 		limitValue1=54,
+ 		reward=35102,
+ 		taskTitle=35113,
+ 		taskDesc=35213,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[509] =
+{
+ 		id=509,
+ 		seasonId=6,
+ 		type=1,
+ 		order=14,
+ 		taskLimit=2,
+ 		limitValue1=60,
+ 		reward=35102,
+ 		taskTitle=35114,
+ 		taskDesc=35214,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[510] =
+{
+ 		id=510,
+ 		seasonId=6,
+ 		type=1,
+ 		order=15,
+ 		taskLimit=2,
+ 		limitValue1=66,
+ 		reward=35102,
+ 		taskTitle=35115,
+ 		taskDesc=35215,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[511] =
+{
+ 		id=511,
+ 		seasonId=6,
+ 		type=1,
+ 		order=16,
+ 		taskLimit=2,
+ 		limitValue1=72,
+ 		reward=35103,
+ 		taskTitle=35116,
+ 		taskDesc=35216,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[512] =
+{
+ 		id=512,
+ 		seasonId=6,
+ 		type=1,
+ 		order=17,
+ 		taskLimit=2,
+ 		limitValue1=78,
+ 		reward=35103,
+ 		taskTitle=35117,
+ 		taskDesc=35217,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[513] =
+{
+ 		id=513,
+ 		seasonId=6,
+ 		type=1,
+ 		order=18,
+ 		taskLimit=2,
+ 		limitValue1=84,
+ 		reward=35103,
+ 		taskTitle=35118,
+ 		taskDesc=35218,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[514] =
+{
+ 		id=514,
+ 		seasonId=6,
+ 		type=1,
+ 		order=19,
+ 		taskLimit=2,
+ 		limitValue1=87,
+ 		reward=35104,
+ 		taskTitle=35119,
+ 		taskDesc=35219,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[515] =
+{
+ 		id=515,
+ 		seasonId=6,
+ 		type=1,
+ 		order=20,
+ 		taskLimit=2,
+ 		limitValue1=90,
+ 		reward=35104,
+ 		taskTitle=35120,
+ 		taskDesc=35220,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[516] =
+{
+ 		id=516,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=1,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=108,
+ 		reward=35105,
+ 		taskTitle=35121,
+ 		taskDesc=35221,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_1"
+},
+[517] =
+{
+ 		id=517,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=1,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=168,
+ 		reward=35105,
+ 		taskTitle=35122,
+ 		taskDesc=35222,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_1"
+},
+[518] =
+{
+ 		id=518,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=1,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=228,
+ 		reward=35105,
+ 		taskTitle=35123,
+ 		taskDesc=35223,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_1"
+},
+[519] =
+{
+ 		id=519,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=1,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=288,
+ 		reward=35105,
+ 		taskTitle=35124,
+ 		taskDesc=35224,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_1"
+},
+[520] =
+{
+ 		id=520,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=1,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=348,
+ 		reward=35105,
+ 		taskTitle=35125,
+ 		taskDesc=35225,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_1"
+},
+[521] =
+{
+ 		id=521,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=1,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=418,
+ 		reward=35105,
+ 		taskTitle=35126,
+ 		taskDesc=35226,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_1"
+},
+[522] =
+{
+ 		id=522,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=1,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=488,
+ 		reward=35105,
+ 		taskTitle=35127,
+ 		taskDesc=35227,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_1"
+},
+[523] =
+{
+ 		id=523,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=1,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=558,
+ 		reward=35105,
+ 		taskTitle=35128,
+ 		taskDesc=35228,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_1"
+},
+[524] =
+{
+ 		id=524,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=1,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=628,
+ 		reward=35105,
+ 		taskTitle=35129,
+ 		taskDesc=35229,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_1"
+},
+[525] =
+{
+ 		id=525,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=1,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=698,
+ 		reward=31716,
+ 		taskTitle=35130,
+ 		taskDesc=35230,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_1"
+},
+[526] =
+{
+ 		id=526,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=2,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=768,
+ 		reward=35105,
+ 		taskTitle=35131,
+ 		taskDesc=35231,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_2"
+},
+[527] =
+{
+ 		id=527,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=2,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=838,
+ 		reward=35105,
+ 		taskTitle=35132,
+ 		taskDesc=35232,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_2"
+},
+[528] =
+{
+ 		id=528,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=2,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=908,
+ 		reward=35105,
+ 		taskTitle=35133,
+ 		taskDesc=35233,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_2"
+},
+[529] =
+{
+ 		id=529,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=2,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=978,
+ 		reward=35105,
+ 		taskTitle=35134,
+ 		taskDesc=35234,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_2"
+},
+[530] =
+{
+ 		id=530,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=2,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1048,
+ 		reward=35105,
+ 		taskTitle=35135,
+ 		taskDesc=35235,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_2"
+},
+[531] =
+{
+ 		id=531,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=2,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1128,
+ 		reward=35105,
+ 		taskTitle=35136,
+ 		taskDesc=35236,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_2"
+},
+[532] =
+{
+ 		id=532,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=2,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=1208,
+ 		reward=35105,
+ 		taskTitle=35137,
+ 		taskDesc=35237,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_2"
+},
+[533] =
+{
+ 		id=533,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=2,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=1288,
+ 		reward=35105,
+ 		taskTitle=35138,
+ 		taskDesc=35238,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_2"
+},
+[534] =
+{
+ 		id=534,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=2,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=1368,
+ 		reward=35105,
+ 		taskTitle=35139,
+ 		taskDesc=35239,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_2"
+},
+[535] =
+{
+ 		id=535,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=2,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=1448,
+ 		reward=31717,
+ 		taskTitle=35140,
+ 		taskDesc=35240,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_2"
+},
+[536] =
+{
+ 		id=536,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=1528,
+ 		reward=35105,
+ 		taskTitle=35141,
+ 		taskDesc=35241,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[537] =
+{
+ 		id=537,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=1608,
+ 		reward=35105,
+ 		taskTitle=35142,
+ 		taskDesc=35242,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[538] =
+{
+ 		id=538,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=1688,
+ 		reward=35105,
+ 		taskTitle=35143,
+ 		taskDesc=35243,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[539] =
+{
+ 		id=539,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=1768,
+ 		reward=35105,
+ 		taskTitle=35144,
+ 		taskDesc=35244,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[540] =
+{
+ 		id=540,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1848,
+ 		reward=35105,
+ 		taskTitle=35145,
+ 		taskDesc=35245,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[541] =
+{
+ 		id=541,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1928,
+ 		reward=35105,
+ 		taskTitle=35146,
+ 		taskDesc=35246,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[542] =
+{
+ 		id=542,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=2008,
+ 		reward=35105,
+ 		taskTitle=35147,
+ 		taskDesc=35247,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[543] =
+{
+ 		id=543,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=2088,
+ 		reward=35105,
+ 		taskTitle=35148,
+ 		taskDesc=35248,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[544] =
+{
+ 		id=544,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=2168,
+ 		reward=35105,
+ 		taskTitle=35149,
+ 		taskDesc=35249,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[545] =
+{
+ 		id=545,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=2248,
+ 		reward=31718,
+ 		taskTitle=35150,
+ 		taskDesc=35250,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[546] =
+{
+ 		id=546,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=11,
+ 		taskLimit=3,
+ 		limitValue1=2328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35251,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[547] =
+{
+ 		id=547,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=12,
+ 		taskLimit=3,
+ 		limitValue1=2408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35252,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[548] =
+{
+ 		id=548,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=13,
+ 		taskLimit=3,
+ 		limitValue1=2488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35253,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[549] =
+{
+ 		id=549,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=14,
+ 		taskLimit=3,
+ 		limitValue1=2568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35254,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[550] =
+{
+ 		id=550,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=15,
+ 		taskLimit=3,
+ 		limitValue1=2648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35255,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[551] =
+{
+ 		id=551,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=16,
+ 		taskLimit=3,
+ 		limitValue1=2728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35256,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[552] =
+{
+ 		id=552,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=17,
+ 		taskLimit=3,
+ 		limitValue1=2808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35257,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[553] =
+{
+ 		id=553,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=18,
+ 		taskLimit=3,
+ 		limitValue1=2888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35258,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[554] =
+{
+ 		id=554,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=19,
+ 		taskLimit=3,
+ 		limitValue1=2968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35259,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[555] =
+{
+ 		id=555,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=20,
+ 		taskLimit=3,
+ 		limitValue1=3048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35260,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[556] =
+{
+ 		id=556,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=21,
+ 		taskLimit=3,
+ 		limitValue1=3128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35261,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[557] =
+{
+ 		id=557,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=22,
+ 		taskLimit=3,
+ 		limitValue1=3208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35262,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[558] =
+{
+ 		id=558,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=23,
+ 		taskLimit=3,
+ 		limitValue1=3288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35263,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[559] =
+{
+ 		id=559,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=24,
+ 		taskLimit=3,
+ 		limitValue1=3368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35264,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[560] =
+{
+ 		id=560,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=25,
+ 		taskLimit=3,
+ 		limitValue1=3448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35265,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[561] =
+{
+ 		id=561,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=26,
+ 		taskLimit=3,
+ 		limitValue1=3528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35266,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[562] =
+{
+ 		id=562,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=27,
+ 		taskLimit=3,
+ 		limitValue1=3608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35267,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[563] =
+{
+ 		id=563,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=28,
+ 		taskLimit=3,
+ 		limitValue1=3688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35268,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[564] =
+{
+ 		id=564,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=29,
+ 		taskLimit=3,
+ 		limitValue1=3768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35269,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[565] =
+{
+ 		id=565,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=30,
+ 		taskLimit=3,
+ 		limitValue1=3848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35270,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[566] =
+{
+ 		id=566,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=31,
+ 		taskLimit=3,
+ 		limitValue1=3928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35271,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[567] =
+{
+ 		id=567,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=32,
+ 		taskLimit=3,
+ 		limitValue1=4008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35272,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[568] =
+{
+ 		id=568,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=33,
+ 		taskLimit=3,
+ 		limitValue1=4088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35273,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[569] =
+{
+ 		id=569,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=34,
+ 		taskLimit=3,
+ 		limitValue1=4168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35274,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[570] =
+{
+ 		id=570,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=35,
+ 		taskLimit=3,
+ 		limitValue1=4248,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35275,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[571] =
+{
+ 		id=571,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=36,
+ 		taskLimit=3,
+ 		limitValue1=4328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35276,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[572] =
+{
+ 		id=572,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=37,
+ 		taskLimit=3,
+ 		limitValue1=4408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35277,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[573] =
+{
+ 		id=573,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=38,
+ 		taskLimit=3,
+ 		limitValue1=4488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35278,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[574] =
+{
+ 		id=574,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=39,
+ 		taskLimit=3,
+ 		limitValue1=4568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35279,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[575] =
+{
+ 		id=575,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=40,
+ 		taskLimit=3,
+ 		limitValue1=4648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35280,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[576] =
+{
+ 		id=576,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=41,
+ 		taskLimit=3,
+ 		limitValue1=4728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35281,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[577] =
+{
+ 		id=577,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=42,
+ 		taskLimit=3,
+ 		limitValue1=4808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35282,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[578] =
+{
+ 		id=578,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=43,
+ 		taskLimit=3,
+ 		limitValue1=4888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35283,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[579] =
+{
+ 		id=579,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=44,
+ 		taskLimit=3,
+ 		limitValue1=4968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35284,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[580] =
+{
+ 		id=580,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=45,
+ 		taskLimit=3,
+ 		limitValue1=5048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35285,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[581] =
+{
+ 		id=581,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=46,
+ 		taskLimit=3,
+ 		limitValue1=5128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35286,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[582] =
+{
+ 		id=582,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=47,
+ 		taskLimit=3,
+ 		limitValue1=5208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35287,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[583] =
+{
+ 		id=583,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=48,
+ 		taskLimit=3,
+ 		limitValue1=5288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35288,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[584] =
+{
+ 		id=584,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=49,
+ 		taskLimit=3,
+ 		limitValue1=5368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35289,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[585] =
+{
+ 		id=585,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=50,
+ 		taskLimit=3,
+ 		limitValue1=5448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35290,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[586] =
+{
+ 		id=586,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=51,
+ 		taskLimit=3,
+ 		limitValue1=5528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35291,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[587] =
+{
+ 		id=587,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=52,
+ 		taskLimit=3,
+ 		limitValue1=5608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35292,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[588] =
+{
+ 		id=588,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=53,
+ 		taskLimit=3,
+ 		limitValue1=5688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35293,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[589] =
+{
+ 		id=589,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=54,
+ 		taskLimit=3,
+ 		limitValue1=5768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35294,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[590] =
+{
+ 		id=590,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=55,
+ 		taskLimit=3,
+ 		limitValue1=5848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35295,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[591] =
+{
+ 		id=591,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=56,
+ 		taskLimit=3,
+ 		limitValue1=5928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35296,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[592] =
+{
+ 		id=592,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=57,
+ 		taskLimit=3,
+ 		limitValue1=6008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35297,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[593] =
+{
+ 		id=593,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=58,
+ 		taskLimit=3,
+ 		limitValue1=6088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35298,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[594] =
+{
+ 		id=594,
+ 		seasonId=6,
+ 		type=2,
+ 		danType=3,
+ 		order=59,
+ 		taskLimit=3,
+ 		limitValue1=6168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35299,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season06_3"
+},
+[595] =
+{
+ 		id=595,
+ 		seasonId=7,
+ 		type=1,
+ 		order=1,
+ 		taskLimit=1,
+ 		limitValue1=1,
+ 		reward=35101,
+ 		taskTitle=35101,
+ 		taskDesc=35201,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[596] =
+{
+ 		id=596,
+ 		seasonId=7,
+ 		type=1,
+ 		order=2,
+ 		taskLimit=1,
+ 		limitValue1=2,
+ 		reward=35101,
+ 		taskTitle=35102,
+ 		taskDesc=35202,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[597] =
+{
+ 		id=597,
+ 		seasonId=7,
+ 		type=1,
+ 		order=3,
+ 		taskLimit=1,
+ 		limitValue1=3,
+ 		reward=35101,
+ 		taskTitle=35103,
+ 		taskDesc=35203,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[598] =
+{
+ 		id=598,
+ 		seasonId=7,
+ 		type=1,
+ 		order=4,
+ 		taskLimit=1,
+ 		limitValue1=4,
+ 		reward=35101,
+ 		taskTitle=35104,
+ 		taskDesc=35204,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[599] =
+{
+ 		id=599,
+ 		seasonId=7,
+ 		type=1,
+ 		order=5,
+ 		taskLimit=1,
+ 		limitValue1=5,
+ 		reward=35101,
+ 		taskTitle=35105,
+ 		taskDesc=35205,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[600] =
+{
+ 		id=600,
+ 		seasonId=7,
+ 		type=1,
+ 		order=6,
+ 		taskLimit=1,
+ 		limitValue1=6,
+ 		reward=35101,
+ 		taskTitle=35106,
+ 		taskDesc=35206,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[601] =
+{
+ 		id=601,
+ 		seasonId=7,
+ 		type=1,
+ 		order=7,
+ 		taskLimit=1,
+ 		limitValue1=7,
+ 		reward=35101,
+ 		taskTitle=35107,
+ 		taskDesc=35207,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[602] =
+{
+ 		id=602,
+ 		seasonId=7,
+ 		type=1,
+ 		order=8,
+ 		taskLimit=1,
+ 		limitValue1=8,
+ 		reward=35101,
+ 		taskTitle=35108,
+ 		taskDesc=35208,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[603] =
+{
+ 		id=603,
+ 		seasonId=7,
+ 		type=1,
+ 		order=9,
+ 		taskLimit=1,
+ 		limitValue1=9,
+ 		reward=35101,
+ 		taskTitle=35109,
+ 		taskDesc=35209,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[604] =
+{
+ 		id=604,
+ 		seasonId=7,
+ 		type=1,
+ 		order=10,
+ 		taskLimit=1,
+ 		limitValue1=10,
+ 		reward=35101,
+ 		taskTitle=35110,
+ 		taskDesc=35210,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[605] =
+{
+ 		id=605,
+ 		seasonId=7,
+ 		type=1,
+ 		order=11,
+ 		taskLimit=1,
+ 		limitValue1=11,
+ 		reward=35101,
+ 		taskTitle=35111,
+ 		taskDesc=35211,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[606] =
+{
+ 		id=606,
+ 		seasonId=7,
+ 		type=1,
+ 		order=12,
+ 		taskLimit=1,
+ 		limitValue1=12,
+ 		reward=35101,
+ 		taskTitle=35112,
+ 		taskDesc=35212,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[607] =
+{
+ 		id=607,
+ 		seasonId=7,
+ 		type=1,
+ 		order=13,
+ 		taskLimit=2,
+ 		limitValue1=54,
+ 		reward=35102,
+ 		taskTitle=35113,
+ 		taskDesc=35213,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[608] =
+{
+ 		id=608,
+ 		seasonId=7,
+ 		type=1,
+ 		order=14,
+ 		taskLimit=2,
+ 		limitValue1=60,
+ 		reward=35102,
+ 		taskTitle=35114,
+ 		taskDesc=35214,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[609] =
+{
+ 		id=609,
+ 		seasonId=7,
+ 		type=1,
+ 		order=15,
+ 		taskLimit=2,
+ 		limitValue1=66,
+ 		reward=35102,
+ 		taskTitle=35115,
+ 		taskDesc=35215,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[610] =
+{
+ 		id=610,
+ 		seasonId=7,
+ 		type=1,
+ 		order=16,
+ 		taskLimit=2,
+ 		limitValue1=72,
+ 		reward=35103,
+ 		taskTitle=35116,
+ 		taskDesc=35216,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[611] =
+{
+ 		id=611,
+ 		seasonId=7,
+ 		type=1,
+ 		order=17,
+ 		taskLimit=2,
+ 		limitValue1=78,
+ 		reward=35103,
+ 		taskTitle=35117,
+ 		taskDesc=35217,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[612] =
+{
+ 		id=612,
+ 		seasonId=7,
+ 		type=1,
+ 		order=18,
+ 		taskLimit=2,
+ 		limitValue1=84,
+ 		reward=35103,
+ 		taskTitle=35118,
+ 		taskDesc=35218,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[613] =
+{
+ 		id=613,
+ 		seasonId=7,
+ 		type=1,
+ 		order=19,
+ 		taskLimit=2,
+ 		limitValue1=87,
+ 		reward=35104,
+ 		taskTitle=35119,
+ 		taskDesc=35219,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[614] =
+{
+ 		id=614,
+ 		seasonId=7,
+ 		type=1,
+ 		order=20,
+ 		taskLimit=2,
+ 		limitValue1=90,
+ 		reward=35104,
+ 		taskTitle=35120,
+ 		taskDesc=35220,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[615] =
+{
+ 		id=615,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=1,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=108,
+ 		reward=35105,
+ 		taskTitle=35121,
+ 		taskDesc=35221,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_1"
+},
+[616] =
+{
+ 		id=616,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=1,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=168,
+ 		reward=35105,
+ 		taskTitle=35122,
+ 		taskDesc=35222,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_1"
+},
+[617] =
+{
+ 		id=617,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=1,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=228,
+ 		reward=35105,
+ 		taskTitle=35123,
+ 		taskDesc=35223,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_1"
+},
+[618] =
+{
+ 		id=618,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=1,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=288,
+ 		reward=35105,
+ 		taskTitle=35124,
+ 		taskDesc=35224,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_1"
+},
+[619] =
+{
+ 		id=619,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=1,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=348,
+ 		reward=35105,
+ 		taskTitle=35125,
+ 		taskDesc=35225,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_1"
+},
+[620] =
+{
+ 		id=620,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=1,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=418,
+ 		reward=35105,
+ 		taskTitle=35126,
+ 		taskDesc=35226,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_1"
+},
+[621] =
+{
+ 		id=621,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=1,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=488,
+ 		reward=35105,
+ 		taskTitle=35127,
+ 		taskDesc=35227,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_1"
+},
+[622] =
+{
+ 		id=622,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=1,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=558,
+ 		reward=35105,
+ 		taskTitle=35128,
+ 		taskDesc=35228,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_1"
+},
+[623] =
+{
+ 		id=623,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=1,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=628,
+ 		reward=35105,
+ 		taskTitle=35129,
+ 		taskDesc=35229,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_1"
+},
+[624] =
+{
+ 		id=624,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=1,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=698,
+ 		reward=31719,
+ 		taskTitle=35130,
+ 		taskDesc=35230,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_1"
+},
+[625] =
+{
+ 		id=625,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=2,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=768,
+ 		reward=35105,
+ 		taskTitle=35131,
+ 		taskDesc=35231,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_2"
+},
+[626] =
+{
+ 		id=626,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=2,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=838,
+ 		reward=35105,
+ 		taskTitle=35132,
+ 		taskDesc=35232,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_2"
+},
+[627] =
+{
+ 		id=627,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=2,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=908,
+ 		reward=35105,
+ 		taskTitle=35133,
+ 		taskDesc=35233,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_2"
+},
+[628] =
+{
+ 		id=628,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=2,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=978,
+ 		reward=35105,
+ 		taskTitle=35134,
+ 		taskDesc=35234,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_2"
+},
+[629] =
+{
+ 		id=629,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=2,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1048,
+ 		reward=35105,
+ 		taskTitle=35135,
+ 		taskDesc=35235,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_2"
+},
+[630] =
+{
+ 		id=630,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=2,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1128,
+ 		reward=35105,
+ 		taskTitle=35136,
+ 		taskDesc=35236,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_2"
+},
+[631] =
+{
+ 		id=631,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=2,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=1208,
+ 		reward=35105,
+ 		taskTitle=35137,
+ 		taskDesc=35237,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_2"
+},
+[632] =
+{
+ 		id=632,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=2,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=1288,
+ 		reward=35105,
+ 		taskTitle=35138,
+ 		taskDesc=35238,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_2"
+},
+[633] =
+{
+ 		id=633,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=2,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=1368,
+ 		reward=35105,
+ 		taskTitle=35139,
+ 		taskDesc=35239,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_2"
+},
+[634] =
+{
+ 		id=634,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=2,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=1448,
+ 		reward=31720,
+ 		taskTitle=35140,
+ 		taskDesc=35240,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_2"
+},
+[635] =
+{
+ 		id=635,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=1528,
+ 		reward=35105,
+ 		taskTitle=35141,
+ 		taskDesc=35241,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[636] =
+{
+ 		id=636,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=1608,
+ 		reward=35105,
+ 		taskTitle=35142,
+ 		taskDesc=35242,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[637] =
+{
+ 		id=637,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=1688,
+ 		reward=35105,
+ 		taskTitle=35143,
+ 		taskDesc=35243,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[638] =
+{
+ 		id=638,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=1768,
+ 		reward=35105,
+ 		taskTitle=35144,
+ 		taskDesc=35244,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[639] =
+{
+ 		id=639,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1848,
+ 		reward=35105,
+ 		taskTitle=35145,
+ 		taskDesc=35245,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[640] =
+{
+ 		id=640,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1928,
+ 		reward=35105,
+ 		taskTitle=35146,
+ 		taskDesc=35246,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[641] =
+{
+ 		id=641,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=2008,
+ 		reward=35105,
+ 		taskTitle=35147,
+ 		taskDesc=35247,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[642] =
+{
+ 		id=642,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=2088,
+ 		reward=35105,
+ 		taskTitle=35148,
+ 		taskDesc=35248,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[643] =
+{
+ 		id=643,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=2168,
+ 		reward=35105,
+ 		taskTitle=35149,
+ 		taskDesc=35249,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[644] =
+{
+ 		id=644,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=2248,
+ 		reward=31721,
+ 		taskTitle=35150,
+ 		taskDesc=35250,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[645] =
+{
+ 		id=645,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=11,
+ 		taskLimit=3,
+ 		limitValue1=2328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35251,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[646] =
+{
+ 		id=646,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=12,
+ 		taskLimit=3,
+ 		limitValue1=2408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35252,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[647] =
+{
+ 		id=647,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=13,
+ 		taskLimit=3,
+ 		limitValue1=2488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35253,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[648] =
+{
+ 		id=648,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=14,
+ 		taskLimit=3,
+ 		limitValue1=2568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35254,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[649] =
+{
+ 		id=649,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=15,
+ 		taskLimit=3,
+ 		limitValue1=2648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35255,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[650] =
+{
+ 		id=650,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=16,
+ 		taskLimit=3,
+ 		limitValue1=2728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35256,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[651] =
+{
+ 		id=651,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=17,
+ 		taskLimit=3,
+ 		limitValue1=2808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35257,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[652] =
+{
+ 		id=652,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=18,
+ 		taskLimit=3,
+ 		limitValue1=2888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35258,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[653] =
+{
+ 		id=653,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=19,
+ 		taskLimit=3,
+ 		limitValue1=2968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35259,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[654] =
+{
+ 		id=654,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=20,
+ 		taskLimit=3,
+ 		limitValue1=3048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35260,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[655] =
+{
+ 		id=655,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=21,
+ 		taskLimit=3,
+ 		limitValue1=3128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35261,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[656] =
+{
+ 		id=656,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=22,
+ 		taskLimit=3,
+ 		limitValue1=3208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35262,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[657] =
+{
+ 		id=657,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=23,
+ 		taskLimit=3,
+ 		limitValue1=3288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35263,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[658] =
+{
+ 		id=658,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=24,
+ 		taskLimit=3,
+ 		limitValue1=3368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35264,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[659] =
+{
+ 		id=659,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=25,
+ 		taskLimit=3,
+ 		limitValue1=3448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35265,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[660] =
+{
+ 		id=660,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=26,
+ 		taskLimit=3,
+ 		limitValue1=3528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35266,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[661] =
+{
+ 		id=661,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=27,
+ 		taskLimit=3,
+ 		limitValue1=3608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35267,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[662] =
+{
+ 		id=662,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=28,
+ 		taskLimit=3,
+ 		limitValue1=3688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35268,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[663] =
+{
+ 		id=663,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=29,
+ 		taskLimit=3,
+ 		limitValue1=3768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35269,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[664] =
+{
+ 		id=664,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=30,
+ 		taskLimit=3,
+ 		limitValue1=3848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35270,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[665] =
+{
+ 		id=665,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=31,
+ 		taskLimit=3,
+ 		limitValue1=3928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35271,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[666] =
+{
+ 		id=666,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=32,
+ 		taskLimit=3,
+ 		limitValue1=4008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35272,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[667] =
+{
+ 		id=667,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=33,
+ 		taskLimit=3,
+ 		limitValue1=4088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35273,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[668] =
+{
+ 		id=668,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=34,
+ 		taskLimit=3,
+ 		limitValue1=4168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35274,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[669] =
+{
+ 		id=669,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=35,
+ 		taskLimit=3,
+ 		limitValue1=4248,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35275,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[670] =
+{
+ 		id=670,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=36,
+ 		taskLimit=3,
+ 		limitValue1=4328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35276,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[671] =
+{
+ 		id=671,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=37,
+ 		taskLimit=3,
+ 		limitValue1=4408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35277,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[672] =
+{
+ 		id=672,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=38,
+ 		taskLimit=3,
+ 		limitValue1=4488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35278,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[673] =
+{
+ 		id=673,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=39,
+ 		taskLimit=3,
+ 		limitValue1=4568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35279,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[674] =
+{
+ 		id=674,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=40,
+ 		taskLimit=3,
+ 		limitValue1=4648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35280,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[675] =
+{
+ 		id=675,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=41,
+ 		taskLimit=3,
+ 		limitValue1=4728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35281,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[676] =
+{
+ 		id=676,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=42,
+ 		taskLimit=3,
+ 		limitValue1=4808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35282,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[677] =
+{
+ 		id=677,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=43,
+ 		taskLimit=3,
+ 		limitValue1=4888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35283,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[678] =
+{
+ 		id=678,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=44,
+ 		taskLimit=3,
+ 		limitValue1=4968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35284,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[679] =
+{
+ 		id=679,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=45,
+ 		taskLimit=3,
+ 		limitValue1=5048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35285,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[680] =
+{
+ 		id=680,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=46,
+ 		taskLimit=3,
+ 		limitValue1=5128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35286,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[681] =
+{
+ 		id=681,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=47,
+ 		taskLimit=3,
+ 		limitValue1=5208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35287,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[682] =
+{
+ 		id=682,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=48,
+ 		taskLimit=3,
+ 		limitValue1=5288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35288,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[683] =
+{
+ 		id=683,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=49,
+ 		taskLimit=3,
+ 		limitValue1=5368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35289,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[684] =
+{
+ 		id=684,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=50,
+ 		taskLimit=3,
+ 		limitValue1=5448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35290,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[685] =
+{
+ 		id=685,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=51,
+ 		taskLimit=3,
+ 		limitValue1=5528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35291,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[686] =
+{
+ 		id=686,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=52,
+ 		taskLimit=3,
+ 		limitValue1=5608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35292,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[687] =
+{
+ 		id=687,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=53,
+ 		taskLimit=3,
+ 		limitValue1=5688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35293,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[688] =
+{
+ 		id=688,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=54,
+ 		taskLimit=3,
+ 		limitValue1=5768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35294,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[689] =
+{
+ 		id=689,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=55,
+ 		taskLimit=3,
+ 		limitValue1=5848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35295,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[690] =
+{
+ 		id=690,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=56,
+ 		taskLimit=3,
+ 		limitValue1=5928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35296,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[691] =
+{
+ 		id=691,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=57,
+ 		taskLimit=3,
+ 		limitValue1=6008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35297,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[692] =
+{
+ 		id=692,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=58,
+ 		taskLimit=3,
+ 		limitValue1=6088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35298,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[693] =
+{
+ 		id=693,
+ 		seasonId=7,
+ 		type=2,
+ 		danType=3,
+ 		order=59,
+ 		taskLimit=3,
+ 		limitValue1=6168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35299,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season07_3"
+},
+[694] =
+{
+ 		id=694,
+ 		seasonId=8,
+ 		type=1,
+ 		order=1,
+ 		taskLimit=1,
+ 		limitValue1=1,
+ 		reward=35101,
+ 		taskTitle=35101,
+ 		taskDesc=35201,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[695] =
+{
+ 		id=695,
+ 		seasonId=8,
+ 		type=1,
+ 		order=2,
+ 		taskLimit=1,
+ 		limitValue1=2,
+ 		reward=35101,
+ 		taskTitle=35102,
+ 		taskDesc=35202,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[696] =
+{
+ 		id=696,
+ 		seasonId=8,
+ 		type=1,
+ 		order=3,
+ 		taskLimit=1,
+ 		limitValue1=3,
+ 		reward=35101,
+ 		taskTitle=35103,
+ 		taskDesc=35203,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[697] =
+{
+ 		id=697,
+ 		seasonId=8,
+ 		type=1,
+ 		order=4,
+ 		taskLimit=1,
+ 		limitValue1=4,
+ 		reward=35101,
+ 		taskTitle=35104,
+ 		taskDesc=35204,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[698] =
+{
+ 		id=698,
+ 		seasonId=8,
+ 		type=1,
+ 		order=5,
+ 		taskLimit=1,
+ 		limitValue1=5,
+ 		reward=35101,
+ 		taskTitle=35105,
+ 		taskDesc=35205,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[699] =
+{
+ 		id=699,
+ 		seasonId=8,
+ 		type=1,
+ 		order=6,
+ 		taskLimit=1,
+ 		limitValue1=6,
+ 		reward=35101,
+ 		taskTitle=35106,
+ 		taskDesc=35206,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[700] =
+{
+ 		id=700,
+ 		seasonId=8,
+ 		type=1,
+ 		order=7,
+ 		taskLimit=1,
+ 		limitValue1=7,
+ 		reward=35101,
+ 		taskTitle=35107,
+ 		taskDesc=35207,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[701] =
+{
+ 		id=701,
+ 		seasonId=8,
+ 		type=1,
+ 		order=8,
+ 		taskLimit=1,
+ 		limitValue1=8,
+ 		reward=35101,
+ 		taskTitle=35108,
+ 		taskDesc=35208,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[702] =
+{
+ 		id=702,
+ 		seasonId=8,
+ 		type=1,
+ 		order=9,
+ 		taskLimit=1,
+ 		limitValue1=9,
+ 		reward=35101,
+ 		taskTitle=35109,
+ 		taskDesc=35209,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[703] =
+{
+ 		id=703,
+ 		seasonId=8,
+ 		type=1,
+ 		order=10,
+ 		taskLimit=1,
+ 		limitValue1=10,
+ 		reward=35101,
+ 		taskTitle=35110,
+ 		taskDesc=35210,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[704] =
+{
+ 		id=704,
+ 		seasonId=8,
+ 		type=1,
+ 		order=11,
+ 		taskLimit=1,
+ 		limitValue1=11,
+ 		reward=35101,
+ 		taskTitle=35111,
+ 		taskDesc=35211,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[705] =
+{
+ 		id=705,
+ 		seasonId=8,
+ 		type=1,
+ 		order=12,
+ 		taskLimit=1,
+ 		limitValue1=12,
+ 		reward=35101,
+ 		taskTitle=35112,
+ 		taskDesc=35212,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[706] =
+{
+ 		id=706,
+ 		seasonId=8,
+ 		type=1,
+ 		order=13,
+ 		taskLimit=2,
+ 		limitValue1=54,
+ 		reward=35102,
+ 		taskTitle=35113,
+ 		taskDesc=35213,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[707] =
+{
+ 		id=707,
+ 		seasonId=8,
+ 		type=1,
+ 		order=14,
+ 		taskLimit=2,
+ 		limitValue1=60,
+ 		reward=35102,
+ 		taskTitle=35114,
+ 		taskDesc=35214,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[708] =
+{
+ 		id=708,
+ 		seasonId=8,
+ 		type=1,
+ 		order=15,
+ 		taskLimit=2,
+ 		limitValue1=66,
+ 		reward=35102,
+ 		taskTitle=35115,
+ 		taskDesc=35215,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[709] =
+{
+ 		id=709,
+ 		seasonId=8,
+ 		type=1,
+ 		order=16,
+ 		taskLimit=2,
+ 		limitValue1=72,
+ 		reward=35103,
+ 		taskTitle=35116,
+ 		taskDesc=35216,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[710] =
+{
+ 		id=710,
+ 		seasonId=8,
+ 		type=1,
+ 		order=17,
+ 		taskLimit=2,
+ 		limitValue1=78,
+ 		reward=35103,
+ 		taskTitle=35117,
+ 		taskDesc=35217,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[711] =
+{
+ 		id=711,
+ 		seasonId=8,
+ 		type=1,
+ 		order=18,
+ 		taskLimit=2,
+ 		limitValue1=84,
+ 		reward=35103,
+ 		taskTitle=35118,
+ 		taskDesc=35218,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[712] =
+{
+ 		id=712,
+ 		seasonId=8,
+ 		type=1,
+ 		order=19,
+ 		taskLimit=2,
+ 		limitValue1=87,
+ 		reward=35104,
+ 		taskTitle=35119,
+ 		taskDesc=35219,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[713] =
+{
+ 		id=713,
+ 		seasonId=8,
+ 		type=1,
+ 		order=20,
+ 		taskLimit=2,
+ 		limitValue1=90,
+ 		reward=35104,
+ 		taskTitle=35120,
+ 		taskDesc=35220,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[714] =
+{
+ 		id=714,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=1,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=108,
+ 		reward=35105,
+ 		taskTitle=35121,
+ 		taskDesc=35221,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_1"
+},
+[715] =
+{
+ 		id=715,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=1,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=168,
+ 		reward=35105,
+ 		taskTitle=35122,
+ 		taskDesc=35222,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_1"
+},
+[716] =
+{
+ 		id=716,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=1,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=228,
+ 		reward=35105,
+ 		taskTitle=35123,
+ 		taskDesc=35223,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_1"
+},
+[717] =
+{
+ 		id=717,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=1,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=288,
+ 		reward=35105,
+ 		taskTitle=35124,
+ 		taskDesc=35224,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_1"
+},
+[718] =
+{
+ 		id=718,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=1,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=348,
+ 		reward=35105,
+ 		taskTitle=35125,
+ 		taskDesc=35225,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_1"
+},
+[719] =
+{
+ 		id=719,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=1,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=418,
+ 		reward=35105,
+ 		taskTitle=35126,
+ 		taskDesc=35226,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_1"
+},
+[720] =
+{
+ 		id=720,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=1,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=488,
+ 		reward=35105,
+ 		taskTitle=35127,
+ 		taskDesc=35227,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_1"
+},
+[721] =
+{
+ 		id=721,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=1,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=558,
+ 		reward=35105,
+ 		taskTitle=35128,
+ 		taskDesc=35228,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_1"
+},
+[722] =
+{
+ 		id=722,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=1,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=628,
+ 		reward=35105,
+ 		taskTitle=35129,
+ 		taskDesc=35229,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_1"
+},
+[723] =
+{
+ 		id=723,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=1,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=698,
+ 		reward=31722,
+ 		taskTitle=35130,
+ 		taskDesc=35230,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_1"
+},
+[724] =
+{
+ 		id=724,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=2,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=768,
+ 		reward=35105,
+ 		taskTitle=35131,
+ 		taskDesc=35231,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_2"
+},
+[725] =
+{
+ 		id=725,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=2,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=838,
+ 		reward=35105,
+ 		taskTitle=35132,
+ 		taskDesc=35232,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_2"
+},
+[726] =
+{
+ 		id=726,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=2,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=908,
+ 		reward=35105,
+ 		taskTitle=35133,
+ 		taskDesc=35233,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_2"
+},
+[727] =
+{
+ 		id=727,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=2,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=978,
+ 		reward=35105,
+ 		taskTitle=35134,
+ 		taskDesc=35234,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_2"
+},
+[728] =
+{
+ 		id=728,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=2,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1048,
+ 		reward=35105,
+ 		taskTitle=35135,
+ 		taskDesc=35235,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_2"
+},
+[729] =
+{
+ 		id=729,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=2,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1128,
+ 		reward=35105,
+ 		taskTitle=35136,
+ 		taskDesc=35236,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_2"
+},
+[730] =
+{
+ 		id=730,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=2,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=1208,
+ 		reward=35105,
+ 		taskTitle=35137,
+ 		taskDesc=35237,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_2"
+},
+[731] =
+{
+ 		id=731,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=2,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=1288,
+ 		reward=35105,
+ 		taskTitle=35138,
+ 		taskDesc=35238,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_2"
+},
+[732] =
+{
+ 		id=732,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=2,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=1368,
+ 		reward=35105,
+ 		taskTitle=35139,
+ 		taskDesc=35239,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_2"
+},
+[733] =
+{
+ 		id=733,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=2,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=1448,
+ 		reward=31723,
+ 		taskTitle=35140,
+ 		taskDesc=35240,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_2"
+},
+[734] =
+{
+ 		id=734,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=1528,
+ 		reward=35105,
+ 		taskTitle=35141,
+ 		taskDesc=35241,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[735] =
+{
+ 		id=735,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=1608,
+ 		reward=35105,
+ 		taskTitle=35142,
+ 		taskDesc=35242,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[736] =
+{
+ 		id=736,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=1688,
+ 		reward=35105,
+ 		taskTitle=35143,
+ 		taskDesc=35243,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[737] =
+{
+ 		id=737,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=1768,
+ 		reward=35105,
+ 		taskTitle=35144,
+ 		taskDesc=35244,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[738] =
+{
+ 		id=738,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1848,
+ 		reward=35105,
+ 		taskTitle=35145,
+ 		taskDesc=35245,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[739] =
+{
+ 		id=739,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1928,
+ 		reward=35105,
+ 		taskTitle=35146,
+ 		taskDesc=35246,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[740] =
+{
+ 		id=740,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=2008,
+ 		reward=35105,
+ 		taskTitle=35147,
+ 		taskDesc=35247,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[741] =
+{
+ 		id=741,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=2088,
+ 		reward=35105,
+ 		taskTitle=35148,
+ 		taskDesc=35248,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[742] =
+{
+ 		id=742,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=2168,
+ 		reward=35105,
+ 		taskTitle=35149,
+ 		taskDesc=35249,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[743] =
+{
+ 		id=743,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=2248,
+ 		reward=31724,
+ 		taskTitle=35150,
+ 		taskDesc=35250,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[744] =
+{
+ 		id=744,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=11,
+ 		taskLimit=3,
+ 		limitValue1=2328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35251,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[745] =
+{
+ 		id=745,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=12,
+ 		taskLimit=3,
+ 		limitValue1=2408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35252,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[746] =
+{
+ 		id=746,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=13,
+ 		taskLimit=3,
+ 		limitValue1=2488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35253,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[747] =
+{
+ 		id=747,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=14,
+ 		taskLimit=3,
+ 		limitValue1=2568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35254,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[748] =
+{
+ 		id=748,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=15,
+ 		taskLimit=3,
+ 		limitValue1=2648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35255,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[749] =
+{
+ 		id=749,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=16,
+ 		taskLimit=3,
+ 		limitValue1=2728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35256,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[750] =
+{
+ 		id=750,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=17,
+ 		taskLimit=3,
+ 		limitValue1=2808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35257,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[751] =
+{
+ 		id=751,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=18,
+ 		taskLimit=3,
+ 		limitValue1=2888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35258,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[752] =
+{
+ 		id=752,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=19,
+ 		taskLimit=3,
+ 		limitValue1=2968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35259,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[753] =
+{
+ 		id=753,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=20,
+ 		taskLimit=3,
+ 		limitValue1=3048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35260,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[754] =
+{
+ 		id=754,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=21,
+ 		taskLimit=3,
+ 		limitValue1=3128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35261,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[755] =
+{
+ 		id=755,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=22,
+ 		taskLimit=3,
+ 		limitValue1=3208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35262,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[756] =
+{
+ 		id=756,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=23,
+ 		taskLimit=3,
+ 		limitValue1=3288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35263,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[757] =
+{
+ 		id=757,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=24,
+ 		taskLimit=3,
+ 		limitValue1=3368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35264,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[758] =
+{
+ 		id=758,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=25,
+ 		taskLimit=3,
+ 		limitValue1=3448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35265,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[759] =
+{
+ 		id=759,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=26,
+ 		taskLimit=3,
+ 		limitValue1=3528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35266,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[760] =
+{
+ 		id=760,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=27,
+ 		taskLimit=3,
+ 		limitValue1=3608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35267,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[761] =
+{
+ 		id=761,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=28,
+ 		taskLimit=3,
+ 		limitValue1=3688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35268,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[762] =
+{
+ 		id=762,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=29,
+ 		taskLimit=3,
+ 		limitValue1=3768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35269,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[763] =
+{
+ 		id=763,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=30,
+ 		taskLimit=3,
+ 		limitValue1=3848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35270,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[764] =
+{
+ 		id=764,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=31,
+ 		taskLimit=3,
+ 		limitValue1=3928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35271,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[765] =
+{
+ 		id=765,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=32,
+ 		taskLimit=3,
+ 		limitValue1=4008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35272,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[766] =
+{
+ 		id=766,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=33,
+ 		taskLimit=3,
+ 		limitValue1=4088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35273,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[767] =
+{
+ 		id=767,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=34,
+ 		taskLimit=3,
+ 		limitValue1=4168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35274,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[768] =
+{
+ 		id=768,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=35,
+ 		taskLimit=3,
+ 		limitValue1=4248,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35275,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[769] =
+{
+ 		id=769,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=36,
+ 		taskLimit=3,
+ 		limitValue1=4328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35276,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[770] =
+{
+ 		id=770,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=37,
+ 		taskLimit=3,
+ 		limitValue1=4408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35277,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[771] =
+{
+ 		id=771,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=38,
+ 		taskLimit=3,
+ 		limitValue1=4488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35278,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[772] =
+{
+ 		id=772,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=39,
+ 		taskLimit=3,
+ 		limitValue1=4568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35279,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[773] =
+{
+ 		id=773,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=40,
+ 		taskLimit=3,
+ 		limitValue1=4648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35280,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[774] =
+{
+ 		id=774,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=41,
+ 		taskLimit=3,
+ 		limitValue1=4728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35281,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[775] =
+{
+ 		id=775,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=42,
+ 		taskLimit=3,
+ 		limitValue1=4808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35282,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[776] =
+{
+ 		id=776,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=43,
+ 		taskLimit=3,
+ 		limitValue1=4888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35283,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[777] =
+{
+ 		id=777,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=44,
+ 		taskLimit=3,
+ 		limitValue1=4968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35284,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[778] =
+{
+ 		id=778,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=45,
+ 		taskLimit=3,
+ 		limitValue1=5048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35285,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[779] =
+{
+ 		id=779,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=46,
+ 		taskLimit=3,
+ 		limitValue1=5128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35286,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[780] =
+{
+ 		id=780,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=47,
+ 		taskLimit=3,
+ 		limitValue1=5208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35287,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[781] =
+{
+ 		id=781,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=48,
+ 		taskLimit=3,
+ 		limitValue1=5288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35288,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[782] =
+{
+ 		id=782,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=49,
+ 		taskLimit=3,
+ 		limitValue1=5368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35289,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[783] =
+{
+ 		id=783,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=50,
+ 		taskLimit=3,
+ 		limitValue1=5448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35290,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[784] =
+{
+ 		id=784,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=51,
+ 		taskLimit=3,
+ 		limitValue1=5528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35291,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[785] =
+{
+ 		id=785,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=52,
+ 		taskLimit=3,
+ 		limitValue1=5608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35292,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[786] =
+{
+ 		id=786,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=53,
+ 		taskLimit=3,
+ 		limitValue1=5688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35293,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[787] =
+{
+ 		id=787,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=54,
+ 		taskLimit=3,
+ 		limitValue1=5768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35294,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[788] =
+{
+ 		id=788,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=55,
+ 		taskLimit=3,
+ 		limitValue1=5848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35295,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[789] =
+{
+ 		id=789,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=56,
+ 		taskLimit=3,
+ 		limitValue1=5928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35296,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[790] =
+{
+ 		id=790,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=57,
+ 		taskLimit=3,
+ 		limitValue1=6008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35297,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[791] =
+{
+ 		id=791,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=58,
+ 		taskLimit=3,
+ 		limitValue1=6088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35298,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[792] =
+{
+ 		id=792,
+ 		seasonId=8,
+ 		type=2,
+ 		danType=3,
+ 		order=59,
+ 		taskLimit=3,
+ 		limitValue1=6168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35299,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season08_3"
+},
+[793] =
+{
+ 		id=793,
+ 		seasonId=9,
+ 		type=1,
+ 		order=1,
+ 		taskLimit=1,
+ 		limitValue1=1,
+ 		reward=35101,
+ 		taskTitle=35101,
+ 		taskDesc=35201,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[794] =
+{
+ 		id=794,
+ 		seasonId=9,
+ 		type=1,
+ 		order=2,
+ 		taskLimit=1,
+ 		limitValue1=2,
+ 		reward=35101,
+ 		taskTitle=35102,
+ 		taskDesc=35202,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[795] =
+{
+ 		id=795,
+ 		seasonId=9,
+ 		type=1,
+ 		order=3,
+ 		taskLimit=1,
+ 		limitValue1=3,
+ 		reward=35101,
+ 		taskTitle=35103,
+ 		taskDesc=35203,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[796] =
+{
+ 		id=796,
+ 		seasonId=9,
+ 		type=1,
+ 		order=4,
+ 		taskLimit=1,
+ 		limitValue1=4,
+ 		reward=35101,
+ 		taskTitle=35104,
+ 		taskDesc=35204,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[797] =
+{
+ 		id=797,
+ 		seasonId=9,
+ 		type=1,
+ 		order=5,
+ 		taskLimit=1,
+ 		limitValue1=5,
+ 		reward=35101,
+ 		taskTitle=35105,
+ 		taskDesc=35205,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[798] =
+{
+ 		id=798,
+ 		seasonId=9,
+ 		type=1,
+ 		order=6,
+ 		taskLimit=1,
+ 		limitValue1=6,
+ 		reward=35101,
+ 		taskTitle=35106,
+ 		taskDesc=35206,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[799] =
+{
+ 		id=799,
+ 		seasonId=9,
+ 		type=1,
+ 		order=7,
+ 		taskLimit=1,
+ 		limitValue1=7,
+ 		reward=35101,
+ 		taskTitle=35107,
+ 		taskDesc=35207,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[800] =
+{
+ 		id=800,
+ 		seasonId=9,
+ 		type=1,
+ 		order=8,
+ 		taskLimit=1,
+ 		limitValue1=8,
+ 		reward=35101,
+ 		taskTitle=35108,
+ 		taskDesc=35208,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[801] =
+{
+ 		id=801,
+ 		seasonId=9,
+ 		type=1,
+ 		order=9,
+ 		taskLimit=1,
+ 		limitValue1=9,
+ 		reward=35101,
+ 		taskTitle=35109,
+ 		taskDesc=35209,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[802] =
+{
+ 		id=802,
+ 		seasonId=9,
+ 		type=1,
+ 		order=10,
+ 		taskLimit=1,
+ 		limitValue1=10,
+ 		reward=35101,
+ 		taskTitle=35110,
+ 		taskDesc=35210,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[803] =
+{
+ 		id=803,
+ 		seasonId=9,
+ 		type=1,
+ 		order=11,
+ 		taskLimit=1,
+ 		limitValue1=11,
+ 		reward=35101,
+ 		taskTitle=35111,
+ 		taskDesc=35211,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[804] =
+{
+ 		id=804,
+ 		seasonId=9,
+ 		type=1,
+ 		order=12,
+ 		taskLimit=1,
+ 		limitValue1=12,
+ 		reward=35101,
+ 		taskTitle=35112,
+ 		taskDesc=35212,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[805] =
+{
+ 		id=805,
+ 		seasonId=9,
+ 		type=1,
+ 		order=13,
+ 		taskLimit=2,
+ 		limitValue1=54,
+ 		reward=35102,
+ 		taskTitle=35113,
+ 		taskDesc=35213,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[806] =
+{
+ 		id=806,
+ 		seasonId=9,
+ 		type=1,
+ 		order=14,
+ 		taskLimit=2,
+ 		limitValue1=60,
+ 		reward=35102,
+ 		taskTitle=35114,
+ 		taskDesc=35214,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[807] =
+{
+ 		id=807,
+ 		seasonId=9,
+ 		type=1,
+ 		order=15,
+ 		taskLimit=2,
+ 		limitValue1=66,
+ 		reward=35102,
+ 		taskTitle=35115,
+ 		taskDesc=35215,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[808] =
+{
+ 		id=808,
+ 		seasonId=9,
+ 		type=1,
+ 		order=16,
+ 		taskLimit=2,
+ 		limitValue1=72,
+ 		reward=35103,
+ 		taskTitle=35116,
+ 		taskDesc=35216,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[809] =
+{
+ 		id=809,
+ 		seasonId=9,
+ 		type=1,
+ 		order=17,
+ 		taskLimit=2,
+ 		limitValue1=78,
+ 		reward=35103,
+ 		taskTitle=35117,
+ 		taskDesc=35217,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[810] =
+{
+ 		id=810,
+ 		seasonId=9,
+ 		type=1,
+ 		order=18,
+ 		taskLimit=2,
+ 		limitValue1=84,
+ 		reward=35103,
+ 		taskTitle=35118,
+ 		taskDesc=35218,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[811] =
+{
+ 		id=811,
+ 		seasonId=9,
+ 		type=1,
+ 		order=19,
+ 		taskLimit=2,
+ 		limitValue1=87,
+ 		reward=35104,
+ 		taskTitle=35119,
+ 		taskDesc=35219,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[812] =
+{
+ 		id=812,
+ 		seasonId=9,
+ 		type=1,
+ 		order=20,
+ 		taskLimit=2,
+ 		limitValue1=90,
+ 		reward=35104,
+ 		taskTitle=35120,
+ 		taskDesc=35220,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[813] =
+{
+ 		id=813,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=1,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=108,
+ 		reward=35105,
+ 		taskTitle=35121,
+ 		taskDesc=35221,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_1"
+},
+[814] =
+{
+ 		id=814,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=1,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=168,
+ 		reward=35105,
+ 		taskTitle=35122,
+ 		taskDesc=35222,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_1"
+},
+[815] =
+{
+ 		id=815,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=1,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=228,
+ 		reward=35105,
+ 		taskTitle=35123,
+ 		taskDesc=35223,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_1"
+},
+[816] =
+{
+ 		id=816,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=1,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=288,
+ 		reward=35105,
+ 		taskTitle=35124,
+ 		taskDesc=35224,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_1"
+},
+[817] =
+{
+ 		id=817,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=1,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=348,
+ 		reward=35105,
+ 		taskTitle=35125,
+ 		taskDesc=35225,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_1"
+},
+[818] =
+{
+ 		id=818,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=1,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=418,
+ 		reward=35105,
+ 		taskTitle=35126,
+ 		taskDesc=35226,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_1"
+},
+[819] =
+{
+ 		id=819,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=1,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=488,
+ 		reward=35105,
+ 		taskTitle=35127,
+ 		taskDesc=35227,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_1"
+},
+[820] =
+{
+ 		id=820,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=1,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=558,
+ 		reward=35105,
+ 		taskTitle=35128,
+ 		taskDesc=35228,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_1"
+},
+[821] =
+{
+ 		id=821,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=1,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=628,
+ 		reward=35105,
+ 		taskTitle=35129,
+ 		taskDesc=35229,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_1"
+},
+[822] =
+{
+ 		id=822,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=1,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=698,
+ 		reward=31725,
+ 		taskTitle=35130,
+ 		taskDesc=35230,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_1"
+},
+[823] =
+{
+ 		id=823,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=2,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=768,
+ 		reward=35105,
+ 		taskTitle=35131,
+ 		taskDesc=35231,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_2"
+},
+[824] =
+{
+ 		id=824,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=2,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=838,
+ 		reward=35105,
+ 		taskTitle=35132,
+ 		taskDesc=35232,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_2"
+},
+[825] =
+{
+ 		id=825,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=2,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=908,
+ 		reward=35105,
+ 		taskTitle=35133,
+ 		taskDesc=35233,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_2"
+},
+[826] =
+{
+ 		id=826,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=2,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=978,
+ 		reward=35105,
+ 		taskTitle=35134,
+ 		taskDesc=35234,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_2"
+},
+[827] =
+{
+ 		id=827,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=2,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1048,
+ 		reward=35105,
+ 		taskTitle=35135,
+ 		taskDesc=35235,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_2"
+},
+[828] =
+{
+ 		id=828,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=2,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1128,
+ 		reward=35105,
+ 		taskTitle=35136,
+ 		taskDesc=35236,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_2"
+},
+[829] =
+{
+ 		id=829,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=2,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=1208,
+ 		reward=35105,
+ 		taskTitle=35137,
+ 		taskDesc=35237,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_2"
+},
+[830] =
+{
+ 		id=830,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=2,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=1288,
+ 		reward=35105,
+ 		taskTitle=35138,
+ 		taskDesc=35238,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_2"
+},
+[831] =
+{
+ 		id=831,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=2,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=1368,
+ 		reward=35105,
+ 		taskTitle=35139,
+ 		taskDesc=35239,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_2"
+},
+[832] =
+{
+ 		id=832,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=2,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=1448,
+ 		reward=31726,
+ 		taskTitle=35140,
+ 		taskDesc=35240,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_2"
+},
+[833] =
+{
+ 		id=833,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=1528,
+ 		reward=35105,
+ 		taskTitle=35141,
+ 		taskDesc=35241,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[834] =
+{
+ 		id=834,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=1608,
+ 		reward=35105,
+ 		taskTitle=35142,
+ 		taskDesc=35242,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[835] =
+{
+ 		id=835,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=1688,
+ 		reward=35105,
+ 		taskTitle=35143,
+ 		taskDesc=35243,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[836] =
+{
+ 		id=836,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=1768,
+ 		reward=35105,
+ 		taskTitle=35144,
+ 		taskDesc=35244,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[837] =
+{
+ 		id=837,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1848,
+ 		reward=35105,
+ 		taskTitle=35145,
+ 		taskDesc=35245,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[838] =
+{
+ 		id=838,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1928,
+ 		reward=35105,
+ 		taskTitle=35146,
+ 		taskDesc=35246,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[839] =
+{
+ 		id=839,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=2008,
+ 		reward=35105,
+ 		taskTitle=35147,
+ 		taskDesc=35247,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[840] =
+{
+ 		id=840,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=2088,
+ 		reward=35105,
+ 		taskTitle=35148,
+ 		taskDesc=35248,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[841] =
+{
+ 		id=841,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=2168,
+ 		reward=35105,
+ 		taskTitle=35149,
+ 		taskDesc=35249,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[842] =
+{
+ 		id=842,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=2248,
+ 		reward=31727,
+ 		taskTitle=35150,
+ 		taskDesc=35250,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[843] =
+{
+ 		id=843,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=11,
+ 		taskLimit=3,
+ 		limitValue1=2328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35251,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[844] =
+{
+ 		id=844,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=12,
+ 		taskLimit=3,
+ 		limitValue1=2408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35252,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[845] =
+{
+ 		id=845,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=13,
+ 		taskLimit=3,
+ 		limitValue1=2488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35253,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[846] =
+{
+ 		id=846,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=14,
+ 		taskLimit=3,
+ 		limitValue1=2568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35254,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[847] =
+{
+ 		id=847,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=15,
+ 		taskLimit=3,
+ 		limitValue1=2648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35255,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[848] =
+{
+ 		id=848,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=16,
+ 		taskLimit=3,
+ 		limitValue1=2728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35256,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[849] =
+{
+ 		id=849,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=17,
+ 		taskLimit=3,
+ 		limitValue1=2808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35257,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[850] =
+{
+ 		id=850,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=18,
+ 		taskLimit=3,
+ 		limitValue1=2888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35258,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[851] =
+{
+ 		id=851,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=19,
+ 		taskLimit=3,
+ 		limitValue1=2968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35259,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[852] =
+{
+ 		id=852,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=20,
+ 		taskLimit=3,
+ 		limitValue1=3048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35260,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[853] =
+{
+ 		id=853,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=21,
+ 		taskLimit=3,
+ 		limitValue1=3128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35261,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[854] =
+{
+ 		id=854,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=22,
+ 		taskLimit=3,
+ 		limitValue1=3208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35262,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[855] =
+{
+ 		id=855,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=23,
+ 		taskLimit=3,
+ 		limitValue1=3288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35263,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[856] =
+{
+ 		id=856,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=24,
+ 		taskLimit=3,
+ 		limitValue1=3368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35264,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[857] =
+{
+ 		id=857,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=25,
+ 		taskLimit=3,
+ 		limitValue1=3448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35265,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[858] =
+{
+ 		id=858,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=26,
+ 		taskLimit=3,
+ 		limitValue1=3528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35266,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[859] =
+{
+ 		id=859,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=27,
+ 		taskLimit=3,
+ 		limitValue1=3608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35267,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[860] =
+{
+ 		id=860,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=28,
+ 		taskLimit=3,
+ 		limitValue1=3688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35268,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[861] =
+{
+ 		id=861,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=29,
+ 		taskLimit=3,
+ 		limitValue1=3768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35269,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[862] =
+{
+ 		id=862,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=30,
+ 		taskLimit=3,
+ 		limitValue1=3848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35270,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[863] =
+{
+ 		id=863,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=31,
+ 		taskLimit=3,
+ 		limitValue1=3928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35271,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[864] =
+{
+ 		id=864,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=32,
+ 		taskLimit=3,
+ 		limitValue1=4008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35272,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[865] =
+{
+ 		id=865,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=33,
+ 		taskLimit=3,
+ 		limitValue1=4088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35273,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[866] =
+{
+ 		id=866,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=34,
+ 		taskLimit=3,
+ 		limitValue1=4168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35274,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[867] =
+{
+ 		id=867,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=35,
+ 		taskLimit=3,
+ 		limitValue1=4248,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35275,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[868] =
+{
+ 		id=868,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=36,
+ 		taskLimit=3,
+ 		limitValue1=4328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35276,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[869] =
+{
+ 		id=869,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=37,
+ 		taskLimit=3,
+ 		limitValue1=4408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35277,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[870] =
+{
+ 		id=870,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=38,
+ 		taskLimit=3,
+ 		limitValue1=4488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35278,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[871] =
+{
+ 		id=871,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=39,
+ 		taskLimit=3,
+ 		limitValue1=4568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35279,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[872] =
+{
+ 		id=872,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=40,
+ 		taskLimit=3,
+ 		limitValue1=4648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35280,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[873] =
+{
+ 		id=873,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=41,
+ 		taskLimit=3,
+ 		limitValue1=4728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35281,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[874] =
+{
+ 		id=874,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=42,
+ 		taskLimit=3,
+ 		limitValue1=4808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35282,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[875] =
+{
+ 		id=875,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=43,
+ 		taskLimit=3,
+ 		limitValue1=4888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35283,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[876] =
+{
+ 		id=876,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=44,
+ 		taskLimit=3,
+ 		limitValue1=4968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35284,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[877] =
+{
+ 		id=877,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=45,
+ 		taskLimit=3,
+ 		limitValue1=5048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35285,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[878] =
+{
+ 		id=878,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=46,
+ 		taskLimit=3,
+ 		limitValue1=5128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35286,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[879] =
+{
+ 		id=879,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=47,
+ 		taskLimit=3,
+ 		limitValue1=5208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35287,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[880] =
+{
+ 		id=880,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=48,
+ 		taskLimit=3,
+ 		limitValue1=5288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35288,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[881] =
+{
+ 		id=881,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=49,
+ 		taskLimit=3,
+ 		limitValue1=5368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35289,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[882] =
+{
+ 		id=882,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=50,
+ 		taskLimit=3,
+ 		limitValue1=5448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35290,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[883] =
+{
+ 		id=883,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=51,
+ 		taskLimit=3,
+ 		limitValue1=5528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35291,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[884] =
+{
+ 		id=884,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=52,
+ 		taskLimit=3,
+ 		limitValue1=5608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35292,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[885] =
+{
+ 		id=885,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=53,
+ 		taskLimit=3,
+ 		limitValue1=5688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35293,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[886] =
+{
+ 		id=886,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=54,
+ 		taskLimit=3,
+ 		limitValue1=5768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35294,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[887] =
+{
+ 		id=887,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=55,
+ 		taskLimit=3,
+ 		limitValue1=5848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35295,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[888] =
+{
+ 		id=888,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=56,
+ 		taskLimit=3,
+ 		limitValue1=5928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35296,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[889] =
+{
+ 		id=889,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=57,
+ 		taskLimit=3,
+ 		limitValue1=6008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35297,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[890] =
+{
+ 		id=890,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=58,
+ 		taskLimit=3,
+ 		limitValue1=6088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35298,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[891] =
+{
+ 		id=891,
+ 		seasonId=9,
+ 		type=2,
+ 		danType=3,
+ 		order=59,
+ 		taskLimit=3,
+ 		limitValue1=6168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35299,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season09_3"
+},
+[892] =
+{
+ 		id=892,
+ 		seasonId=10,
+ 		type=1,
+ 		order=1,
+ 		taskLimit=1,
+ 		limitValue1=1,
+ 		reward=35101,
+ 		taskTitle=35101,
+ 		taskDesc=35201,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[893] =
+{
+ 		id=893,
+ 		seasonId=10,
+ 		type=1,
+ 		order=2,
+ 		taskLimit=1,
+ 		limitValue1=2,
+ 		reward=35101,
+ 		taskTitle=35102,
+ 		taskDesc=35202,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[894] =
+{
+ 		id=894,
+ 		seasonId=10,
+ 		type=1,
+ 		order=3,
+ 		taskLimit=1,
+ 		limitValue1=3,
+ 		reward=35101,
+ 		taskTitle=35103,
+ 		taskDesc=35203,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[895] =
+{
+ 		id=895,
+ 		seasonId=10,
+ 		type=1,
+ 		order=4,
+ 		taskLimit=1,
+ 		limitValue1=4,
+ 		reward=35101,
+ 		taskTitle=35104,
+ 		taskDesc=35204,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[896] =
+{
+ 		id=896,
+ 		seasonId=10,
+ 		type=1,
+ 		order=5,
+ 		taskLimit=1,
+ 		limitValue1=5,
+ 		reward=35101,
+ 		taskTitle=35105,
+ 		taskDesc=35205,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[897] =
+{
+ 		id=897,
+ 		seasonId=10,
+ 		type=1,
+ 		order=6,
+ 		taskLimit=1,
+ 		limitValue1=6,
+ 		reward=35101,
+ 		taskTitle=35106,
+ 		taskDesc=35206,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[898] =
+{
+ 		id=898,
+ 		seasonId=10,
+ 		type=1,
+ 		order=7,
+ 		taskLimit=1,
+ 		limitValue1=7,
+ 		reward=35101,
+ 		taskTitle=35107,
+ 		taskDesc=35207,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[899] =
+{
+ 		id=899,
+ 		seasonId=10,
+ 		type=1,
+ 		order=8,
+ 		taskLimit=1,
+ 		limitValue1=8,
+ 		reward=35101,
+ 		taskTitle=35108,
+ 		taskDesc=35208,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[900] =
+{
+ 		id=900,
+ 		seasonId=10,
+ 		type=1,
+ 		order=9,
+ 		taskLimit=1,
+ 		limitValue1=9,
+ 		reward=35101,
+ 		taskTitle=35109,
+ 		taskDesc=35209,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[901] =
+{
+ 		id=901,
+ 		seasonId=10,
+ 		type=1,
+ 		order=10,
+ 		taskLimit=1,
+ 		limitValue1=10,
+ 		reward=35101,
+ 		taskTitle=35110,
+ 		taskDesc=35210,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[902] =
+{
+ 		id=902,
+ 		seasonId=10,
+ 		type=1,
+ 		order=11,
+ 		taskLimit=1,
+ 		limitValue1=11,
+ 		reward=35101,
+ 		taskTitle=35111,
+ 		taskDesc=35211,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[903] =
+{
+ 		id=903,
+ 		seasonId=10,
+ 		type=1,
+ 		order=12,
+ 		taskLimit=1,
+ 		limitValue1=12,
+ 		reward=35101,
+ 		taskTitle=35112,
+ 		taskDesc=35212,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[904] =
+{
+ 		id=904,
+ 		seasonId=10,
+ 		type=1,
+ 		order=13,
+ 		taskLimit=2,
+ 		limitValue1=54,
+ 		reward=35102,
+ 		taskTitle=35113,
+ 		taskDesc=35213,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[905] =
+{
+ 		id=905,
+ 		seasonId=10,
+ 		type=1,
+ 		order=14,
+ 		taskLimit=2,
+ 		limitValue1=60,
+ 		reward=35102,
+ 		taskTitle=35114,
+ 		taskDesc=35214,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[906] =
+{
+ 		id=906,
+ 		seasonId=10,
+ 		type=1,
+ 		order=15,
+ 		taskLimit=2,
+ 		limitValue1=66,
+ 		reward=35102,
+ 		taskTitle=35115,
+ 		taskDesc=35215,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[907] =
+{
+ 		id=907,
+ 		seasonId=10,
+ 		type=1,
+ 		order=16,
+ 		taskLimit=2,
+ 		limitValue1=72,
+ 		reward=35103,
+ 		taskTitle=35116,
+ 		taskDesc=35216,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[908] =
+{
+ 		id=908,
+ 		seasonId=10,
+ 		type=1,
+ 		order=17,
+ 		taskLimit=2,
+ 		limitValue1=78,
+ 		reward=35103,
+ 		taskTitle=35117,
+ 		taskDesc=35217,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[909] =
+{
+ 		id=909,
+ 		seasonId=10,
+ 		type=1,
+ 		order=18,
+ 		taskLimit=2,
+ 		limitValue1=84,
+ 		reward=35103,
+ 		taskTitle=35118,
+ 		taskDesc=35218,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[910] =
+{
+ 		id=910,
+ 		seasonId=10,
+ 		type=1,
+ 		order=19,
+ 		taskLimit=2,
+ 		limitValue1=87,
+ 		reward=35104,
+ 		taskTitle=35119,
+ 		taskDesc=35219,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[911] =
+{
+ 		id=911,
+ 		seasonId=10,
+ 		type=1,
+ 		order=20,
+ 		taskLimit=2,
+ 		limitValue1=90,
+ 		reward=35104,
+ 		taskTitle=35120,
+ 		taskDesc=35220,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[912] =
+{
+ 		id=912,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=1,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=108,
+ 		reward=35105,
+ 		taskTitle=35121,
+ 		taskDesc=35221,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_1"
+},
+[913] =
+{
+ 		id=913,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=1,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=168,
+ 		reward=35105,
+ 		taskTitle=35122,
+ 		taskDesc=35222,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_1"
+},
+[914] =
+{
+ 		id=914,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=1,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=228,
+ 		reward=35105,
+ 		taskTitle=35123,
+ 		taskDesc=35223,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_1"
+},
+[915] =
+{
+ 		id=915,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=1,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=288,
+ 		reward=35105,
+ 		taskTitle=35124,
+ 		taskDesc=35224,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_1"
+},
+[916] =
+{
+ 		id=916,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=1,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=348,
+ 		reward=35105,
+ 		taskTitle=35125,
+ 		taskDesc=35225,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_1"
+},
+[917] =
+{
+ 		id=917,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=1,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=418,
+ 		reward=35105,
+ 		taskTitle=35126,
+ 		taskDesc=35226,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_1"
+},
+[918] =
+{
+ 		id=918,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=1,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=488,
+ 		reward=35105,
+ 		taskTitle=35127,
+ 		taskDesc=35227,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_1"
+},
+[919] =
+{
+ 		id=919,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=1,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=558,
+ 		reward=35105,
+ 		taskTitle=35128,
+ 		taskDesc=35228,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_1"
+},
+[920] =
+{
+ 		id=920,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=1,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=628,
+ 		reward=35105,
+ 		taskTitle=35129,
+ 		taskDesc=35229,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_1"
+},
+[921] =
+{
+ 		id=921,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=1,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=698,
+ 		reward=31728,
+ 		taskTitle=35130,
+ 		taskDesc=35230,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_1"
+},
+[922] =
+{
+ 		id=922,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=2,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=768,
+ 		reward=35105,
+ 		taskTitle=35131,
+ 		taskDesc=35231,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_2"
+},
+[923] =
+{
+ 		id=923,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=2,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=838,
+ 		reward=35105,
+ 		taskTitle=35132,
+ 		taskDesc=35232,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_2"
+},
+[924] =
+{
+ 		id=924,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=2,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=908,
+ 		reward=35105,
+ 		taskTitle=35133,
+ 		taskDesc=35233,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_2"
+},
+[925] =
+{
+ 		id=925,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=2,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=978,
+ 		reward=35105,
+ 		taskTitle=35134,
+ 		taskDesc=35234,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_2"
+},
+[926] =
+{
+ 		id=926,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=2,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1048,
+ 		reward=35105,
+ 		taskTitle=35135,
+ 		taskDesc=35235,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_2"
+},
+[927] =
+{
+ 		id=927,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=2,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1128,
+ 		reward=35105,
+ 		taskTitle=35136,
+ 		taskDesc=35236,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_2"
+},
+[928] =
+{
+ 		id=928,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=2,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=1208,
+ 		reward=35105,
+ 		taskTitle=35137,
+ 		taskDesc=35237,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_2"
+},
+[929] =
+{
+ 		id=929,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=2,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=1288,
+ 		reward=35105,
+ 		taskTitle=35138,
+ 		taskDesc=35238,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_2"
+},
+[930] =
+{
+ 		id=930,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=2,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=1368,
+ 		reward=35105,
+ 		taskTitle=35139,
+ 		taskDesc=35239,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_2"
+},
+[931] =
+{
+ 		id=931,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=2,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=1448,
+ 		reward=31729,
+ 		taskTitle=35140,
+ 		taskDesc=35240,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_2"
+},
+[932] =
+{
+ 		id=932,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=1528,
+ 		reward=35105,
+ 		taskTitle=35141,
+ 		taskDesc=35241,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[933] =
+{
+ 		id=933,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=1608,
+ 		reward=35105,
+ 		taskTitle=35142,
+ 		taskDesc=35242,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[934] =
+{
+ 		id=934,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=1688,
+ 		reward=35105,
+ 		taskTitle=35143,
+ 		taskDesc=35243,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[935] =
+{
+ 		id=935,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=1768,
+ 		reward=35105,
+ 		taskTitle=35144,
+ 		taskDesc=35244,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[936] =
+{
+ 		id=936,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1848,
+ 		reward=35105,
+ 		taskTitle=35145,
+ 		taskDesc=35245,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[937] =
+{
+ 		id=937,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1928,
+ 		reward=35105,
+ 		taskTitle=35146,
+ 		taskDesc=35246,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[938] =
+{
+ 		id=938,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=2008,
+ 		reward=35105,
+ 		taskTitle=35147,
+ 		taskDesc=35247,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[939] =
+{
+ 		id=939,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=2088,
+ 		reward=35105,
+ 		taskTitle=35148,
+ 		taskDesc=35248,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[940] =
+{
+ 		id=940,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=2168,
+ 		reward=35105,
+ 		taskTitle=35149,
+ 		taskDesc=35249,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[941] =
+{
+ 		id=941,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=2248,
+ 		reward=31730,
+ 		taskTitle=35150,
+ 		taskDesc=35250,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[942] =
+{
+ 		id=942,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=11,
+ 		taskLimit=3,
+ 		limitValue1=2328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35251,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[943] =
+{
+ 		id=943,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=12,
+ 		taskLimit=3,
+ 		limitValue1=2408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35252,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[944] =
+{
+ 		id=944,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=13,
+ 		taskLimit=3,
+ 		limitValue1=2488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35253,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[945] =
+{
+ 		id=945,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=14,
+ 		taskLimit=3,
+ 		limitValue1=2568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35254,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[946] =
+{
+ 		id=946,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=15,
+ 		taskLimit=3,
+ 		limitValue1=2648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35255,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[947] =
+{
+ 		id=947,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=16,
+ 		taskLimit=3,
+ 		limitValue1=2728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35256,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[948] =
+{
+ 		id=948,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=17,
+ 		taskLimit=3,
+ 		limitValue1=2808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35257,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[949] =
+{
+ 		id=949,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=18,
+ 		taskLimit=3,
+ 		limitValue1=2888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35258,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[950] =
+{
+ 		id=950,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=19,
+ 		taskLimit=3,
+ 		limitValue1=2968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35259,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[951] =
+{
+ 		id=951,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=20,
+ 		taskLimit=3,
+ 		limitValue1=3048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35260,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[952] =
+{
+ 		id=952,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=21,
+ 		taskLimit=3,
+ 		limitValue1=3128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35261,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[953] =
+{
+ 		id=953,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=22,
+ 		taskLimit=3,
+ 		limitValue1=3208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35262,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[954] =
+{
+ 		id=954,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=23,
+ 		taskLimit=3,
+ 		limitValue1=3288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35263,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[955] =
+{
+ 		id=955,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=24,
+ 		taskLimit=3,
+ 		limitValue1=3368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35264,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[956] =
+{
+ 		id=956,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=25,
+ 		taskLimit=3,
+ 		limitValue1=3448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35265,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[957] =
+{
+ 		id=957,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=26,
+ 		taskLimit=3,
+ 		limitValue1=3528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35266,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[958] =
+{
+ 		id=958,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=27,
+ 		taskLimit=3,
+ 		limitValue1=3608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35267,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[959] =
+{
+ 		id=959,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=28,
+ 		taskLimit=3,
+ 		limitValue1=3688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35268,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[960] =
+{
+ 		id=960,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=29,
+ 		taskLimit=3,
+ 		limitValue1=3768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35269,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[961] =
+{
+ 		id=961,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=30,
+ 		taskLimit=3,
+ 		limitValue1=3848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35270,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[962] =
+{
+ 		id=962,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=31,
+ 		taskLimit=3,
+ 		limitValue1=3928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35271,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[963] =
+{
+ 		id=963,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=32,
+ 		taskLimit=3,
+ 		limitValue1=4008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35272,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[964] =
+{
+ 		id=964,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=33,
+ 		taskLimit=3,
+ 		limitValue1=4088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35273,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[965] =
+{
+ 		id=965,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=34,
+ 		taskLimit=3,
+ 		limitValue1=4168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35274,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[966] =
+{
+ 		id=966,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=35,
+ 		taskLimit=3,
+ 		limitValue1=4248,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35275,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[967] =
+{
+ 		id=967,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=36,
+ 		taskLimit=3,
+ 		limitValue1=4328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35276,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[968] =
+{
+ 		id=968,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=37,
+ 		taskLimit=3,
+ 		limitValue1=4408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35277,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[969] =
+{
+ 		id=969,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=38,
+ 		taskLimit=3,
+ 		limitValue1=4488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35278,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[970] =
+{
+ 		id=970,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=39,
+ 		taskLimit=3,
+ 		limitValue1=4568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35279,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[971] =
+{
+ 		id=971,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=40,
+ 		taskLimit=3,
+ 		limitValue1=4648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35280,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[972] =
+{
+ 		id=972,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=41,
+ 		taskLimit=3,
+ 		limitValue1=4728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35281,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[973] =
+{
+ 		id=973,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=42,
+ 		taskLimit=3,
+ 		limitValue1=4808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35282,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[974] =
+{
+ 		id=974,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=43,
+ 		taskLimit=3,
+ 		limitValue1=4888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35283,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[975] =
+{
+ 		id=975,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=44,
+ 		taskLimit=3,
+ 		limitValue1=4968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35284,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[976] =
+{
+ 		id=976,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=45,
+ 		taskLimit=3,
+ 		limitValue1=5048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35285,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[977] =
+{
+ 		id=977,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=46,
+ 		taskLimit=3,
+ 		limitValue1=5128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35286,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[978] =
+{
+ 		id=978,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=47,
+ 		taskLimit=3,
+ 		limitValue1=5208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35287,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[979] =
+{
+ 		id=979,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=48,
+ 		taskLimit=3,
+ 		limitValue1=5288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35288,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[980] =
+{
+ 		id=980,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=49,
+ 		taskLimit=3,
+ 		limitValue1=5368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35289,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[981] =
+{
+ 		id=981,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=50,
+ 		taskLimit=3,
+ 		limitValue1=5448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35290,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[982] =
+{
+ 		id=982,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=51,
+ 		taskLimit=3,
+ 		limitValue1=5528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35291,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[983] =
+{
+ 		id=983,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=52,
+ 		taskLimit=3,
+ 		limitValue1=5608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35292,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[984] =
+{
+ 		id=984,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=53,
+ 		taskLimit=3,
+ 		limitValue1=5688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35293,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[985] =
+{
+ 		id=985,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=54,
+ 		taskLimit=3,
+ 		limitValue1=5768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35294,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[986] =
+{
+ 		id=986,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=55,
+ 		taskLimit=3,
+ 		limitValue1=5848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35295,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[987] =
+{
+ 		id=987,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=56,
+ 		taskLimit=3,
+ 		limitValue1=5928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35296,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[988] =
+{
+ 		id=988,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=57,
+ 		taskLimit=3,
+ 		limitValue1=6008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35297,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[989] =
+{
+ 		id=989,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=58,
+ 		taskLimit=3,
+ 		limitValue1=6088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35298,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[990] =
+{
+ 		id=990,
+ 		seasonId=10,
+ 		type=2,
+ 		danType=3,
+ 		order=59,
+ 		taskLimit=3,
+ 		limitValue1=6168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35299,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season10_3"
+},
+[991] =
+{
+ 		id=991,
+ 		seasonId=11,
+ 		type=1,
+ 		order=1,
+ 		taskLimit=1,
+ 		limitValue1=1,
+ 		reward=35101,
+ 		taskTitle=35101,
+ 		taskDesc=35201,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[992] =
+{
+ 		id=992,
+ 		seasonId=11,
+ 		type=1,
+ 		order=2,
+ 		taskLimit=1,
+ 		limitValue1=2,
+ 		reward=35101,
+ 		taskTitle=35102,
+ 		taskDesc=35202,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[993] =
+{
+ 		id=993,
+ 		seasonId=11,
+ 		type=1,
+ 		order=3,
+ 		taskLimit=1,
+ 		limitValue1=3,
+ 		reward=35101,
+ 		taskTitle=35103,
+ 		taskDesc=35203,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[994] =
+{
+ 		id=994,
+ 		seasonId=11,
+ 		type=1,
+ 		order=4,
+ 		taskLimit=1,
+ 		limitValue1=4,
+ 		reward=35101,
+ 		taskTitle=35104,
+ 		taskDesc=35204,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[995] =
+{
+ 		id=995,
+ 		seasonId=11,
+ 		type=1,
+ 		order=5,
+ 		taskLimit=1,
+ 		limitValue1=5,
+ 		reward=35101,
+ 		taskTitle=35105,
+ 		taskDesc=35205,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[996] =
+{
+ 		id=996,
+ 		seasonId=11,
+ 		type=1,
+ 		order=6,
+ 		taskLimit=1,
+ 		limitValue1=6,
+ 		reward=35101,
+ 		taskTitle=35106,
+ 		taskDesc=35206,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[997] =
+{
+ 		id=997,
+ 		seasonId=11,
+ 		type=1,
+ 		order=7,
+ 		taskLimit=1,
+ 		limitValue1=7,
+ 		reward=35101,
+ 		taskTitle=35107,
+ 		taskDesc=35207,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[998] =
+{
+ 		id=998,
+ 		seasonId=11,
+ 		type=1,
+ 		order=8,
+ 		taskLimit=1,
+ 		limitValue1=8,
+ 		reward=35101,
+ 		taskTitle=35108,
+ 		taskDesc=35208,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[999] =
+{
+ 		id=999,
+ 		seasonId=11,
+ 		type=1,
+ 		order=9,
+ 		taskLimit=1,
+ 		limitValue1=9,
+ 		reward=35101,
+ 		taskTitle=35109,
+ 		taskDesc=35209,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1000] =
+{
+ 		id=1000,
+ 		seasonId=11,
+ 		type=1,
+ 		order=10,
+ 		taskLimit=1,
+ 		limitValue1=10,
+ 		reward=35101,
+ 		taskTitle=35110,
+ 		taskDesc=35210,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1001] =
+{
+ 		id=1001,
+ 		seasonId=11,
+ 		type=1,
+ 		order=11,
+ 		taskLimit=1,
+ 		limitValue1=11,
+ 		reward=35101,
+ 		taskTitle=35111,
+ 		taskDesc=35211,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1002] =
+{
+ 		id=1002,
+ 		seasonId=11,
+ 		type=1,
+ 		order=12,
+ 		taskLimit=1,
+ 		limitValue1=12,
+ 		reward=35101,
+ 		taskTitle=35112,
+ 		taskDesc=35212,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1003] =
+{
+ 		id=1003,
+ 		seasonId=11,
+ 		type=1,
+ 		order=13,
+ 		taskLimit=2,
+ 		limitValue1=54,
+ 		reward=35102,
+ 		taskTitle=35113,
+ 		taskDesc=35213,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1004] =
+{
+ 		id=1004,
+ 		seasonId=11,
+ 		type=1,
+ 		order=14,
+ 		taskLimit=2,
+ 		limitValue1=60,
+ 		reward=35102,
+ 		taskTitle=35114,
+ 		taskDesc=35214,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1005] =
+{
+ 		id=1005,
+ 		seasonId=11,
+ 		type=1,
+ 		order=15,
+ 		taskLimit=2,
+ 		limitValue1=66,
+ 		reward=35102,
+ 		taskTitle=35115,
+ 		taskDesc=35215,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1006] =
+{
+ 		id=1006,
+ 		seasonId=11,
+ 		type=1,
+ 		order=16,
+ 		taskLimit=2,
+ 		limitValue1=72,
+ 		reward=35103,
+ 		taskTitle=35116,
+ 		taskDesc=35216,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1007] =
+{
+ 		id=1007,
+ 		seasonId=11,
+ 		type=1,
+ 		order=17,
+ 		taskLimit=2,
+ 		limitValue1=78,
+ 		reward=35103,
+ 		taskTitle=35117,
+ 		taskDesc=35217,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1008] =
+{
+ 		id=1008,
+ 		seasonId=11,
+ 		type=1,
+ 		order=18,
+ 		taskLimit=2,
+ 		limitValue1=84,
+ 		reward=35103,
+ 		taskTitle=35118,
+ 		taskDesc=35218,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1009] =
+{
+ 		id=1009,
+ 		seasonId=11,
+ 		type=1,
+ 		order=19,
+ 		taskLimit=2,
+ 		limitValue1=87,
+ 		reward=35104,
+ 		taskTitle=35119,
+ 		taskDesc=35219,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1010] =
+{
+ 		id=1010,
+ 		seasonId=11,
+ 		type=1,
+ 		order=20,
+ 		taskLimit=2,
+ 		limitValue1=90,
+ 		reward=35104,
+ 		taskTitle=35120,
+ 		taskDesc=35220,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1011] =
+{
+ 		id=1011,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=1,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=108,
+ 		reward=35105,
+ 		taskTitle=35121,
+ 		taskDesc=35221,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_1"
+},
+[1012] =
+{
+ 		id=1012,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=1,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=168,
+ 		reward=35105,
+ 		taskTitle=35122,
+ 		taskDesc=35222,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_1"
+},
+[1013] =
+{
+ 		id=1013,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=1,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=228,
+ 		reward=35105,
+ 		taskTitle=35123,
+ 		taskDesc=35223,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_1"
+},
+[1014] =
+{
+ 		id=1014,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=1,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=288,
+ 		reward=35105,
+ 		taskTitle=35124,
+ 		taskDesc=35224,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_1"
+},
+[1015] =
+{
+ 		id=1015,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=1,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=348,
+ 		reward=35105,
+ 		taskTitle=35125,
+ 		taskDesc=35225,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_1"
+},
+[1016] =
+{
+ 		id=1016,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=1,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=418,
+ 		reward=35105,
+ 		taskTitle=35126,
+ 		taskDesc=35226,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_1"
+},
+[1017] =
+{
+ 		id=1017,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=1,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=488,
+ 		reward=35105,
+ 		taskTitle=35127,
+ 		taskDesc=35227,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_1"
+},
+[1018] =
+{
+ 		id=1018,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=1,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=558,
+ 		reward=35105,
+ 		taskTitle=35128,
+ 		taskDesc=35228,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_1"
+},
+[1019] =
+{
+ 		id=1019,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=1,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=628,
+ 		reward=35105,
+ 		taskTitle=35129,
+ 		taskDesc=35229,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_1"
+},
+[1020] =
+{
+ 		id=1020,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=1,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=698,
+ 		reward=31731,
+ 		taskTitle=35130,
+ 		taskDesc=35230,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_1"
+},
+[1021] =
+{
+ 		id=1021,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=2,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=768,
+ 		reward=35105,
+ 		taskTitle=35131,
+ 		taskDesc=35231,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_2"
+},
+[1022] =
+{
+ 		id=1022,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=2,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=838,
+ 		reward=35105,
+ 		taskTitle=35132,
+ 		taskDesc=35232,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_2"
+},
+[1023] =
+{
+ 		id=1023,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=2,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=908,
+ 		reward=35105,
+ 		taskTitle=35133,
+ 		taskDesc=35233,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_2"
+},
+[1024] =
+{
+ 		id=1024,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=2,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=978,
+ 		reward=35105,
+ 		taskTitle=35134,
+ 		taskDesc=35234,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_2"
+},
+[1025] =
+{
+ 		id=1025,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=2,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1048,
+ 		reward=35105,
+ 		taskTitle=35135,
+ 		taskDesc=35235,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_2"
+},
+[1026] =
+{
+ 		id=1026,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=2,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1128,
+ 		reward=35105,
+ 		taskTitle=35136,
+ 		taskDesc=35236,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_2"
+},
+[1027] =
+{
+ 		id=1027,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=2,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=1208,
+ 		reward=35105,
+ 		taskTitle=35137,
+ 		taskDesc=35237,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_2"
+},
+[1028] =
+{
+ 		id=1028,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=2,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=1288,
+ 		reward=35105,
+ 		taskTitle=35138,
+ 		taskDesc=35238,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_2"
+},
+[1029] =
+{
+ 		id=1029,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=2,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=1368,
+ 		reward=35105,
+ 		taskTitle=35139,
+ 		taskDesc=35239,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_2"
+},
+[1030] =
+{
+ 		id=1030,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=2,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=1448,
+ 		reward=31732,
+ 		taskTitle=35140,
+ 		taskDesc=35240,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_2"
+},
+[1031] =
+{
+ 		id=1031,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=1528,
+ 		reward=35105,
+ 		taskTitle=35141,
+ 		taskDesc=35241,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1032] =
+{
+ 		id=1032,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=1608,
+ 		reward=35105,
+ 		taskTitle=35142,
+ 		taskDesc=35242,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1033] =
+{
+ 		id=1033,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=1688,
+ 		reward=35105,
+ 		taskTitle=35143,
+ 		taskDesc=35243,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1034] =
+{
+ 		id=1034,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=1768,
+ 		reward=35105,
+ 		taskTitle=35144,
+ 		taskDesc=35244,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1035] =
+{
+ 		id=1035,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1848,
+ 		reward=35105,
+ 		taskTitle=35145,
+ 		taskDesc=35245,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1036] =
+{
+ 		id=1036,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1928,
+ 		reward=35105,
+ 		taskTitle=35146,
+ 		taskDesc=35246,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1037] =
+{
+ 		id=1037,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=2008,
+ 		reward=35105,
+ 		taskTitle=35147,
+ 		taskDesc=35247,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1038] =
+{
+ 		id=1038,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=2088,
+ 		reward=35105,
+ 		taskTitle=35148,
+ 		taskDesc=35248,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1039] =
+{
+ 		id=1039,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=2168,
+ 		reward=35105,
+ 		taskTitle=35149,
+ 		taskDesc=35249,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1040] =
+{
+ 		id=1040,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=2248,
+ 		reward=31733,
+ 		taskTitle=35150,
+ 		taskDesc=35250,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1041] =
+{
+ 		id=1041,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=11,
+ 		taskLimit=3,
+ 		limitValue1=2328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35251,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1042] =
+{
+ 		id=1042,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=12,
+ 		taskLimit=3,
+ 		limitValue1=2408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35252,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1043] =
+{
+ 		id=1043,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=13,
+ 		taskLimit=3,
+ 		limitValue1=2488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35253,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1044] =
+{
+ 		id=1044,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=14,
+ 		taskLimit=3,
+ 		limitValue1=2568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35254,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1045] =
+{
+ 		id=1045,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=15,
+ 		taskLimit=3,
+ 		limitValue1=2648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35255,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1046] =
+{
+ 		id=1046,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=16,
+ 		taskLimit=3,
+ 		limitValue1=2728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35256,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1047] =
+{
+ 		id=1047,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=17,
+ 		taskLimit=3,
+ 		limitValue1=2808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35257,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1048] =
+{
+ 		id=1048,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=18,
+ 		taskLimit=3,
+ 		limitValue1=2888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35258,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1049] =
+{
+ 		id=1049,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=19,
+ 		taskLimit=3,
+ 		limitValue1=2968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35259,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1050] =
+{
+ 		id=1050,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=20,
+ 		taskLimit=3,
+ 		limitValue1=3048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35260,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1051] =
+{
+ 		id=1051,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=21,
+ 		taskLimit=3,
+ 		limitValue1=3128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35261,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1052] =
+{
+ 		id=1052,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=22,
+ 		taskLimit=3,
+ 		limitValue1=3208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35262,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1053] =
+{
+ 		id=1053,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=23,
+ 		taskLimit=3,
+ 		limitValue1=3288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35263,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1054] =
+{
+ 		id=1054,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=24,
+ 		taskLimit=3,
+ 		limitValue1=3368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35264,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1055] =
+{
+ 		id=1055,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=25,
+ 		taskLimit=3,
+ 		limitValue1=3448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35265,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1056] =
+{
+ 		id=1056,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=26,
+ 		taskLimit=3,
+ 		limitValue1=3528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35266,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1057] =
+{
+ 		id=1057,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=27,
+ 		taskLimit=3,
+ 		limitValue1=3608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35267,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1058] =
+{
+ 		id=1058,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=28,
+ 		taskLimit=3,
+ 		limitValue1=3688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35268,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1059] =
+{
+ 		id=1059,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=29,
+ 		taskLimit=3,
+ 		limitValue1=3768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35269,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1060] =
+{
+ 		id=1060,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=30,
+ 		taskLimit=3,
+ 		limitValue1=3848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35270,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1061] =
+{
+ 		id=1061,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=31,
+ 		taskLimit=3,
+ 		limitValue1=3928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35271,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1062] =
+{
+ 		id=1062,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=32,
+ 		taskLimit=3,
+ 		limitValue1=4008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35272,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1063] =
+{
+ 		id=1063,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=33,
+ 		taskLimit=3,
+ 		limitValue1=4088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35273,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1064] =
+{
+ 		id=1064,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=34,
+ 		taskLimit=3,
+ 		limitValue1=4168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35274,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1065] =
+{
+ 		id=1065,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=35,
+ 		taskLimit=3,
+ 		limitValue1=4248,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35275,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1066] =
+{
+ 		id=1066,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=36,
+ 		taskLimit=3,
+ 		limitValue1=4328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35276,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1067] =
+{
+ 		id=1067,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=37,
+ 		taskLimit=3,
+ 		limitValue1=4408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35277,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1068] =
+{
+ 		id=1068,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=38,
+ 		taskLimit=3,
+ 		limitValue1=4488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35278,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1069] =
+{
+ 		id=1069,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=39,
+ 		taskLimit=3,
+ 		limitValue1=4568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35279,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1070] =
+{
+ 		id=1070,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=40,
+ 		taskLimit=3,
+ 		limitValue1=4648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35280,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1071] =
+{
+ 		id=1071,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=41,
+ 		taskLimit=3,
+ 		limitValue1=4728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35281,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1072] =
+{
+ 		id=1072,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=42,
+ 		taskLimit=3,
+ 		limitValue1=4808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35282,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1073] =
+{
+ 		id=1073,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=43,
+ 		taskLimit=3,
+ 		limitValue1=4888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35283,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1074] =
+{
+ 		id=1074,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=44,
+ 		taskLimit=3,
+ 		limitValue1=4968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35284,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1075] =
+{
+ 		id=1075,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=45,
+ 		taskLimit=3,
+ 		limitValue1=5048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35285,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1076] =
+{
+ 		id=1076,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=46,
+ 		taskLimit=3,
+ 		limitValue1=5128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35286,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1077] =
+{
+ 		id=1077,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=47,
+ 		taskLimit=3,
+ 		limitValue1=5208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35287,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1078] =
+{
+ 		id=1078,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=48,
+ 		taskLimit=3,
+ 		limitValue1=5288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35288,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1079] =
+{
+ 		id=1079,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=49,
+ 		taskLimit=3,
+ 		limitValue1=5368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35289,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1080] =
+{
+ 		id=1080,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=50,
+ 		taskLimit=3,
+ 		limitValue1=5448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35290,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1081] =
+{
+ 		id=1081,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=51,
+ 		taskLimit=3,
+ 		limitValue1=5528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35291,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1082] =
+{
+ 		id=1082,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=52,
+ 		taskLimit=3,
+ 		limitValue1=5608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35292,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1083] =
+{
+ 		id=1083,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=53,
+ 		taskLimit=3,
+ 		limitValue1=5688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35293,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1084] =
+{
+ 		id=1084,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=54,
+ 		taskLimit=3,
+ 		limitValue1=5768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35294,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1085] =
+{
+ 		id=1085,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=55,
+ 		taskLimit=3,
+ 		limitValue1=5848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35295,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1086] =
+{
+ 		id=1086,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=56,
+ 		taskLimit=3,
+ 		limitValue1=5928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35296,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1087] =
+{
+ 		id=1087,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=57,
+ 		taskLimit=3,
+ 		limitValue1=6008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35297,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1088] =
+{
+ 		id=1088,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=58,
+ 		taskLimit=3,
+ 		limitValue1=6088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35298,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1089] =
+{
+ 		id=1089,
+ 		seasonId=11,
+ 		type=2,
+ 		danType=3,
+ 		order=59,
+ 		taskLimit=3,
+ 		limitValue1=6168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35299,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season11_3"
+},
+[1090] =
+{
+ 		id=1090,
+ 		seasonId=12,
+ 		type=1,
+ 		order=1,
+ 		taskLimit=1,
+ 		limitValue1=1,
+ 		reward=35101,
+ 		taskTitle=35101,
+ 		taskDesc=35201,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1091] =
+{
+ 		id=1091,
+ 		seasonId=12,
+ 		type=1,
+ 		order=2,
+ 		taskLimit=1,
+ 		limitValue1=2,
+ 		reward=35101,
+ 		taskTitle=35102,
+ 		taskDesc=35202,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1092] =
+{
+ 		id=1092,
+ 		seasonId=12,
+ 		type=1,
+ 		order=3,
+ 		taskLimit=1,
+ 		limitValue1=3,
+ 		reward=35101,
+ 		taskTitle=35103,
+ 		taskDesc=35203,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1093] =
+{
+ 		id=1093,
+ 		seasonId=12,
+ 		type=1,
+ 		order=4,
+ 		taskLimit=1,
+ 		limitValue1=4,
+ 		reward=35101,
+ 		taskTitle=35104,
+ 		taskDesc=35204,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1094] =
+{
+ 		id=1094,
+ 		seasonId=12,
+ 		type=1,
+ 		order=5,
+ 		taskLimit=1,
+ 		limitValue1=5,
+ 		reward=35101,
+ 		taskTitle=35105,
+ 		taskDesc=35205,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1095] =
+{
+ 		id=1095,
+ 		seasonId=12,
+ 		type=1,
+ 		order=6,
+ 		taskLimit=1,
+ 		limitValue1=6,
+ 		reward=35101,
+ 		taskTitle=35106,
+ 		taskDesc=35206,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1096] =
+{
+ 		id=1096,
+ 		seasonId=12,
+ 		type=1,
+ 		order=7,
+ 		taskLimit=1,
+ 		limitValue1=7,
+ 		reward=35101,
+ 		taskTitle=35107,
+ 		taskDesc=35207,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1097] =
+{
+ 		id=1097,
+ 		seasonId=12,
+ 		type=1,
+ 		order=8,
+ 		taskLimit=1,
+ 		limitValue1=8,
+ 		reward=35101,
+ 		taskTitle=35108,
+ 		taskDesc=35208,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1098] =
+{
+ 		id=1098,
+ 		seasonId=12,
+ 		type=1,
+ 		order=9,
+ 		taskLimit=1,
+ 		limitValue1=9,
+ 		reward=35101,
+ 		taskTitle=35109,
+ 		taskDesc=35209,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1099] =
+{
+ 		id=1099,
+ 		seasonId=12,
+ 		type=1,
+ 		order=10,
+ 		taskLimit=1,
+ 		limitValue1=10,
+ 		reward=35101,
+ 		taskTitle=35110,
+ 		taskDesc=35210,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1100] =
+{
+ 		id=1100,
+ 		seasonId=12,
+ 		type=1,
+ 		order=11,
+ 		taskLimit=1,
+ 		limitValue1=11,
+ 		reward=35101,
+ 		taskTitle=35111,
+ 		taskDesc=35211,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1101] =
+{
+ 		id=1101,
+ 		seasonId=12,
+ 		type=1,
+ 		order=12,
+ 		taskLimit=1,
+ 		limitValue1=12,
+ 		reward=35101,
+ 		taskTitle=35112,
+ 		taskDesc=35212,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1102] =
+{
+ 		id=1102,
+ 		seasonId=12,
+ 		type=1,
+ 		order=13,
+ 		taskLimit=2,
+ 		limitValue1=54,
+ 		reward=35102,
+ 		taskTitle=35113,
+ 		taskDesc=35213,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1103] =
+{
+ 		id=1103,
+ 		seasonId=12,
+ 		type=1,
+ 		order=14,
+ 		taskLimit=2,
+ 		limitValue1=60,
+ 		reward=35102,
+ 		taskTitle=35114,
+ 		taskDesc=35214,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1104] =
+{
+ 		id=1104,
+ 		seasonId=12,
+ 		type=1,
+ 		order=15,
+ 		taskLimit=2,
+ 		limitValue1=66,
+ 		reward=35102,
+ 		taskTitle=35115,
+ 		taskDesc=35215,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1105] =
+{
+ 		id=1105,
+ 		seasonId=12,
+ 		type=1,
+ 		order=16,
+ 		taskLimit=2,
+ 		limitValue1=72,
+ 		reward=35103,
+ 		taskTitle=35116,
+ 		taskDesc=35216,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1106] =
+{
+ 		id=1106,
+ 		seasonId=12,
+ 		type=1,
+ 		order=17,
+ 		taskLimit=2,
+ 		limitValue1=78,
+ 		reward=35103,
+ 		taskTitle=35117,
+ 		taskDesc=35217,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1107] =
+{
+ 		id=1107,
+ 		seasonId=12,
+ 		type=1,
+ 		order=18,
+ 		taskLimit=2,
+ 		limitValue1=84,
+ 		reward=35103,
+ 		taskTitle=35118,
+ 		taskDesc=35218,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1108] =
+{
+ 		id=1108,
+ 		seasonId=12,
+ 		type=1,
+ 		order=19,
+ 		taskLimit=2,
+ 		limitValue1=87,
+ 		reward=35104,
+ 		taskTitle=35119,
+ 		taskDesc=35219,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1109] =
+{
+ 		id=1109,
+ 		seasonId=12,
+ 		type=1,
+ 		order=20,
+ 		taskLimit=2,
+ 		limitValue1=90,
+ 		reward=35104,
+ 		taskTitle=35120,
+ 		taskDesc=35220,
+ 	taskImage="UI/SpritePics/Item/ui_icon_item_task01"
+},
+[1110] =
+{
+ 		id=1110,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=1,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=108,
+ 		reward=35105,
+ 		taskTitle=35121,
+ 		taskDesc=35221,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_1"
+},
+[1111] =
+{
+ 		id=1111,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=1,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=168,
+ 		reward=35105,
+ 		taskTitle=35122,
+ 		taskDesc=35222,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_1"
+},
+[1112] =
+{
+ 		id=1112,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=1,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=228,
+ 		reward=35105,
+ 		taskTitle=35123,
+ 		taskDesc=35223,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_1"
+},
+[1113] =
+{
+ 		id=1113,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=1,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=288,
+ 		reward=35105,
+ 		taskTitle=35124,
+ 		taskDesc=35224,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_1"
+},
+[1114] =
+{
+ 		id=1114,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=1,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=348,
+ 		reward=35105,
+ 		taskTitle=35125,
+ 		taskDesc=35225,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_1"
+},
+[1115] =
+{
+ 		id=1115,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=1,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=418,
+ 		reward=35105,
+ 		taskTitle=35126,
+ 		taskDesc=35226,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_1"
+},
+[1116] =
+{
+ 		id=1116,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=1,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=488,
+ 		reward=35105,
+ 		taskTitle=35127,
+ 		taskDesc=35227,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_1"
+},
+[1117] =
+{
+ 		id=1117,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=1,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=558,
+ 		reward=35105,
+ 		taskTitle=35128,
+ 		taskDesc=35228,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_1"
+},
+[1118] =
+{
+ 		id=1118,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=1,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=628,
+ 		reward=35105,
+ 		taskTitle=35129,
+ 		taskDesc=35229,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_1"
+},
+[1119] =
+{
+ 		id=1119,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=1,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=698,
+ 		reward=31734,
+ 		taskTitle=35130,
+ 		taskDesc=35230,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_1"
+},
+[1120] =
+{
+ 		id=1120,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=2,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=768,
+ 		reward=35105,
+ 		taskTitle=35131,
+ 		taskDesc=35231,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_2"
+},
+[1121] =
+{
+ 		id=1121,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=2,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=838,
+ 		reward=35105,
+ 		taskTitle=35132,
+ 		taskDesc=35232,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_2"
+},
+[1122] =
+{
+ 		id=1122,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=2,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=908,
+ 		reward=35105,
+ 		taskTitle=35133,
+ 		taskDesc=35233,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_2"
+},
+[1123] =
+{
+ 		id=1123,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=2,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=978,
+ 		reward=35105,
+ 		taskTitle=35134,
+ 		taskDesc=35234,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_2"
+},
+[1124] =
+{
+ 		id=1124,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=2,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1048,
+ 		reward=35105,
+ 		taskTitle=35135,
+ 		taskDesc=35235,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_2"
+},
+[1125] =
+{
+ 		id=1125,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=2,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1128,
+ 		reward=35105,
+ 		taskTitle=35136,
+ 		taskDesc=35236,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_2"
+},
+[1126] =
+{
+ 		id=1126,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=2,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=1208,
+ 		reward=35105,
+ 		taskTitle=35137,
+ 		taskDesc=35237,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_2"
+},
+[1127] =
+{
+ 		id=1127,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=2,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=1288,
+ 		reward=35105,
+ 		taskTitle=35138,
+ 		taskDesc=35238,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_2"
+},
+[1128] =
+{
+ 		id=1128,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=2,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=1368,
+ 		reward=35105,
+ 		taskTitle=35139,
+ 		taskDesc=35239,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_2"
+},
+[1129] =
+{
+ 		id=1129,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=2,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=1448,
+ 		reward=31735,
+ 		taskTitle=35140,
+ 		taskDesc=35240,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_2"
+},
+[1130] =
+{
+ 		id=1130,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=1,
+ 		taskLimit=3,
+ 		limitValue1=1528,
+ 		reward=35105,
+ 		taskTitle=35141,
+ 		taskDesc=35241,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1131] =
+{
+ 		id=1131,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=2,
+ 		taskLimit=3,
+ 		limitValue1=1608,
+ 		reward=35105,
+ 		taskTitle=35142,
+ 		taskDesc=35242,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1132] =
+{
+ 		id=1132,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=3,
+ 		taskLimit=3,
+ 		limitValue1=1688,
+ 		reward=35105,
+ 		taskTitle=35143,
+ 		taskDesc=35243,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1133] =
+{
+ 		id=1133,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=4,
+ 		taskLimit=3,
+ 		limitValue1=1768,
+ 		reward=35105,
+ 		taskTitle=35144,
+ 		taskDesc=35244,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1134] =
+{
+ 		id=1134,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=5,
+ 		taskLimit=3,
+ 		limitValue1=1848,
+ 		reward=35105,
+ 		taskTitle=35145,
+ 		taskDesc=35245,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1135] =
+{
+ 		id=1135,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=6,
+ 		taskLimit=3,
+ 		limitValue1=1928,
+ 		reward=35105,
+ 		taskTitle=35146,
+ 		taskDesc=35246,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1136] =
+{
+ 		id=1136,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=7,
+ 		taskLimit=3,
+ 		limitValue1=2008,
+ 		reward=35105,
+ 		taskTitle=35147,
+ 		taskDesc=35247,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1137] =
+{
+ 		id=1137,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=8,
+ 		taskLimit=3,
+ 		limitValue1=2088,
+ 		reward=35105,
+ 		taskTitle=35148,
+ 		taskDesc=35248,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1138] =
+{
+ 		id=1138,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=9,
+ 		taskLimit=3,
+ 		limitValue1=2168,
+ 		reward=35105,
+ 		taskTitle=35149,
+ 		taskDesc=35249,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1139] =
+{
+ 		id=1139,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=10,
+ 		taskLimit=3,
+ 		limitValue1=2248,
+ 		reward=31736,
+ 		taskTitle=35150,
+ 		taskDesc=35250,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1140] =
+{
+ 		id=1140,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=11,
+ 		taskLimit=3,
+ 		limitValue1=2328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35251,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1141] =
+{
+ 		id=1141,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=12,
+ 		taskLimit=3,
+ 		limitValue1=2408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35252,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1142] =
+{
+ 		id=1142,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=13,
+ 		taskLimit=3,
+ 		limitValue1=2488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35253,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1143] =
+{
+ 		id=1143,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=14,
+ 		taskLimit=3,
+ 		limitValue1=2568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35254,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1144] =
+{
+ 		id=1144,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=15,
+ 		taskLimit=3,
+ 		limitValue1=2648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35255,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1145] =
+{
+ 		id=1145,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=16,
+ 		taskLimit=3,
+ 		limitValue1=2728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35256,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1146] =
+{
+ 		id=1146,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=17,
+ 		taskLimit=3,
+ 		limitValue1=2808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35257,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1147] =
+{
+ 		id=1147,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=18,
+ 		taskLimit=3,
+ 		limitValue1=2888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35258,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1148] =
+{
+ 		id=1148,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=19,
+ 		taskLimit=3,
+ 		limitValue1=2968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35259,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1149] =
+{
+ 		id=1149,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=20,
+ 		taskLimit=3,
+ 		limitValue1=3048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35260,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1150] =
+{
+ 		id=1150,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=21,
+ 		taskLimit=3,
+ 		limitValue1=3128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35261,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1151] =
+{
+ 		id=1151,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=22,
+ 		taskLimit=3,
+ 		limitValue1=3208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35262,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1152] =
+{
+ 		id=1152,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=23,
+ 		taskLimit=3,
+ 		limitValue1=3288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35263,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1153] =
+{
+ 		id=1153,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=24,
+ 		taskLimit=3,
+ 		limitValue1=3368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35264,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1154] =
+{
+ 		id=1154,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=25,
+ 		taskLimit=3,
+ 		limitValue1=3448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35265,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1155] =
+{
+ 		id=1155,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=26,
+ 		taskLimit=3,
+ 		limitValue1=3528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35266,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1156] =
+{
+ 		id=1156,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=27,
+ 		taskLimit=3,
+ 		limitValue1=3608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35267,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1157] =
+{
+ 		id=1157,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=28,
+ 		taskLimit=3,
+ 		limitValue1=3688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35268,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1158] =
+{
+ 		id=1158,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=29,
+ 		taskLimit=3,
+ 		limitValue1=3768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35269,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1159] =
+{
+ 		id=1159,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=30,
+ 		taskLimit=3,
+ 		limitValue1=3848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35270,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1160] =
+{
+ 		id=1160,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=31,
+ 		taskLimit=3,
+ 		limitValue1=3928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35271,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1161] =
+{
+ 		id=1161,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=32,
+ 		taskLimit=3,
+ 		limitValue1=4008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35272,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1162] =
+{
+ 		id=1162,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=33,
+ 		taskLimit=3,
+ 		limitValue1=4088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35273,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1163] =
+{
+ 		id=1163,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=34,
+ 		taskLimit=3,
+ 		limitValue1=4168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35274,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1164] =
+{
+ 		id=1164,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=35,
+ 		taskLimit=3,
+ 		limitValue1=4248,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35275,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1165] =
+{
+ 		id=1165,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=36,
+ 		taskLimit=3,
+ 		limitValue1=4328,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35276,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1166] =
+{
+ 		id=1166,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=37,
+ 		taskLimit=3,
+ 		limitValue1=4408,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35277,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1167] =
+{
+ 		id=1167,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=38,
+ 		taskLimit=3,
+ 		limitValue1=4488,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35278,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1168] =
+{
+ 		id=1168,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=39,
+ 		taskLimit=3,
+ 		limitValue1=4568,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35279,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1169] =
+{
+ 		id=1169,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=40,
+ 		taskLimit=3,
+ 		limitValue1=4648,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35280,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1170] =
+{
+ 		id=1170,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=41,
+ 		taskLimit=3,
+ 		limitValue1=4728,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35281,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1171] =
+{
+ 		id=1171,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=42,
+ 		taskLimit=3,
+ 		limitValue1=4808,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35282,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1172] =
+{
+ 		id=1172,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=43,
+ 		taskLimit=3,
+ 		limitValue1=4888,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35283,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1173] =
+{
+ 		id=1173,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=44,
+ 		taskLimit=3,
+ 		limitValue1=4968,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35284,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1174] =
+{
+ 		id=1174,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=45,
+ 		taskLimit=3,
+ 		limitValue1=5048,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35285,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1175] =
+{
+ 		id=1175,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=46,
+ 		taskLimit=3,
+ 		limitValue1=5128,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35286,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1176] =
+{
+ 		id=1176,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=47,
+ 		taskLimit=3,
+ 		limitValue1=5208,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35287,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1177] =
+{
+ 		id=1177,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=48,
+ 		taskLimit=3,
+ 		limitValue1=5288,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35288,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1178] =
+{
+ 		id=1178,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=49,
+ 		taskLimit=3,
+ 		limitValue1=5368,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35289,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1179] =
+{
+ 		id=1179,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=50,
+ 		taskLimit=3,
+ 		limitValue1=5448,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35290,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1180] =
+{
+ 		id=1180,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=51,
+ 		taskLimit=3,
+ 		limitValue1=5528,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35291,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1181] =
+{
+ 		id=1181,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=52,
+ 		taskLimit=3,
+ 		limitValue1=5608,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35292,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1182] =
+{
+ 		id=1182,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=53,
+ 		taskLimit=3,
+ 		limitValue1=5688,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35293,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1183] =
+{
+ 		id=1183,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=54,
+ 		taskLimit=3,
+ 		limitValue1=5768,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35294,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1184] =
+{
+ 		id=1184,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=55,
+ 		taskLimit=3,
+ 		limitValue1=5848,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35295,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1185] =
+{
+ 		id=1185,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=56,
+ 		taskLimit=3,
+ 		limitValue1=5928,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35296,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1186] =
+{
+ 		id=1186,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=57,
+ 		taskLimit=3,
+ 		limitValue1=6008,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35297,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1187] =
+{
+ 		id=1187,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=58,
+ 		taskLimit=3,
+ 		limitValue1=6088,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35298,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+},
+[1188] =
+{
+ 		id=1188,
+ 		seasonId=12,
+ 		type=2,
+ 		danType=3,
+ 		order=59,
+ 		taskLimit=3,
+ 		limitValue1=6168,
+ 		reward=35106,
+ 		taskTitle=35151,
+ 		taskDesc=35299,
+ 	taskImage="UI/SpritePics/head/special/ui_icon_item_season12_3"
+}
+}
+
+return {title=title, value=value}

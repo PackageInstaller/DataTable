@@ -1,0 +1,13384 @@
+local title = {
+	id = 0,
+	passId = 0,
+	passPoint = 0,
+	levelPoint = 0,
+	upgradePoint = 0,
+	passLevel = 0,
+	isStage = 0,
+	freeReward = 0,
+	payReward = 0
+}
+
+local value = {
+[1] =
+{
+ 		id=1,
+ 		passId=1099,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[2] =
+{
+ 		id=2,
+ 		passId=1099,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[3] =
+{
+ 		id=3,
+ 		passId=1099,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[4] =
+{
+ 		id=4,
+ 		passId=1099,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[5] =
+{
+ 		id=5,
+ 		passId=1099,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[6] =
+{
+ 		id=6,
+ 		passId=1099,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[7] =
+{
+ 		id=7,
+ 		passId=1099,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[8] =
+{
+ 		id=8,
+ 		passId=1099,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[9] =
+{
+ 		id=9,
+ 		passId=1099,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[10] =
+{
+ 		id=10,
+ 		passId=1099,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[11] =
+{
+ 		id=11,
+ 		passId=1099,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[12] =
+{
+ 		id=12,
+ 		passId=1099,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[13] =
+{
+ 		id=13,
+ 		passId=1099,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[14] =
+{
+ 		id=14,
+ 		passId=1099,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[15] =
+{
+ 		id=15,
+ 		passId=1099,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[16] =
+{
+ 		id=16,
+ 		passId=1099,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[17] =
+{
+ 		id=17,
+ 		passId=1099,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[18] =
+{
+ 		id=18,
+ 		passId=1099,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[19] =
+{
+ 		id=19,
+ 		passId=1099,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[20] =
+{
+ 		id=20,
+ 		passId=1099,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[21] =
+{
+ 		id=21,
+ 		passId=1099,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[22] =
+{
+ 		id=22,
+ 		passId=1099,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[23] =
+{
+ 		id=23,
+ 		passId=1099,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[24] =
+{
+ 		id=24,
+ 		passId=1099,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[25] =
+{
+ 		id=25,
+ 		passId=1099,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[26] =
+{
+ 		id=26,
+ 		passId=1099,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[27] =
+{
+ 		id=27,
+ 		passId=1099,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[28] =
+{
+ 		id=28,
+ 		passId=1099,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[29] =
+{
+ 		id=29,
+ 		passId=1099,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[30] =
+{
+ 		id=30,
+ 		passId=1099,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[31] =
+{
+ 		id=31,
+ 		passId=1099,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[32] =
+{
+ 		id=32,
+ 		passId=1099,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[33] =
+{
+ 		id=33,
+ 		passId=1099,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[34] =
+{
+ 		id=34,
+ 		passId=1099,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[35] =
+{
+ 		id=35,
+ 		passId=1099,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[36] =
+{
+ 		id=36,
+ 		passId=1099,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[37] =
+{
+ 		id=37,
+ 		passId=1099,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[38] =
+{
+ 		id=38,
+ 		passId=1099,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[39] =
+{
+ 		id=39,
+ 		passId=1099,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[40] =
+{
+ 		id=40,
+ 		passId=1099,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[41] =
+{
+ 		id=41,
+ 		passId=1099,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[42] =
+{
+ 		id=42,
+ 		passId=1099,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[43] =
+{
+ 		id=43,
+ 		passId=1099,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[44] =
+{
+ 		id=44,
+ 		passId=1099,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[45] =
+{
+ 		id=45,
+ 		passId=1099,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[46] =
+{
+ 		id=46,
+ 		passId=1099,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[47] =
+{
+ 		id=47,
+ 		passId=1099,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[48] =
+{
+ 		id=48,
+ 		passId=1099,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[49] =
+{
+ 		id=49,
+ 		passId=1099,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[50] =
+{
+ 		id=50,
+ 		passId=1099,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[51] =
+{
+ 		id=51,
+ 		passId=1102,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[52] =
+{
+ 		id=52,
+ 		passId=1102,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[53] =
+{
+ 		id=53,
+ 		passId=1102,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[54] =
+{
+ 		id=54,
+ 		passId=1102,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[55] =
+{
+ 		id=55,
+ 		passId=1102,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[56] =
+{
+ 		id=56,
+ 		passId=1102,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[57] =
+{
+ 		id=57,
+ 		passId=1102,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[58] =
+{
+ 		id=58,
+ 		passId=1102,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[59] =
+{
+ 		id=59,
+ 		passId=1102,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[60] =
+{
+ 		id=60,
+ 		passId=1102,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[61] =
+{
+ 		id=61,
+ 		passId=1102,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[62] =
+{
+ 		id=62,
+ 		passId=1102,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[63] =
+{
+ 		id=63,
+ 		passId=1102,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[64] =
+{
+ 		id=64,
+ 		passId=1102,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[65] =
+{
+ 		id=65,
+ 		passId=1102,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[66] =
+{
+ 		id=66,
+ 		passId=1102,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[67] =
+{
+ 		id=67,
+ 		passId=1102,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[68] =
+{
+ 		id=68,
+ 		passId=1102,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[69] =
+{
+ 		id=69,
+ 		passId=1102,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[70] =
+{
+ 		id=70,
+ 		passId=1102,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[71] =
+{
+ 		id=71,
+ 		passId=1102,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[72] =
+{
+ 		id=72,
+ 		passId=1102,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[73] =
+{
+ 		id=73,
+ 		passId=1102,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[74] =
+{
+ 		id=74,
+ 		passId=1102,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[75] =
+{
+ 		id=75,
+ 		passId=1102,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[76] =
+{
+ 		id=76,
+ 		passId=1102,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[77] =
+{
+ 		id=77,
+ 		passId=1102,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[78] =
+{
+ 		id=78,
+ 		passId=1102,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[79] =
+{
+ 		id=79,
+ 		passId=1102,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[80] =
+{
+ 		id=80,
+ 		passId=1102,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[81] =
+{
+ 		id=81,
+ 		passId=1102,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[82] =
+{
+ 		id=82,
+ 		passId=1102,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[83] =
+{
+ 		id=83,
+ 		passId=1102,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[84] =
+{
+ 		id=84,
+ 		passId=1102,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[85] =
+{
+ 		id=85,
+ 		passId=1102,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[86] =
+{
+ 		id=86,
+ 		passId=1102,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[87] =
+{
+ 		id=87,
+ 		passId=1102,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[88] =
+{
+ 		id=88,
+ 		passId=1102,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[89] =
+{
+ 		id=89,
+ 		passId=1102,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[90] =
+{
+ 		id=90,
+ 		passId=1102,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[91] =
+{
+ 		id=91,
+ 		passId=1102,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[92] =
+{
+ 		id=92,
+ 		passId=1102,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[93] =
+{
+ 		id=93,
+ 		passId=1102,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[94] =
+{
+ 		id=94,
+ 		passId=1102,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[95] =
+{
+ 		id=95,
+ 		passId=1102,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[96] =
+{
+ 		id=96,
+ 		passId=1102,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[97] =
+{
+ 		id=97,
+ 		passId=1102,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[98] =
+{
+ 		id=98,
+ 		passId=1102,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[99] =
+{
+ 		id=99,
+ 		passId=1102,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[100] =
+{
+ 		id=100,
+ 		passId=1102,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[101] =
+{
+ 		id=101,
+ 		passId=2105,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[102] =
+{
+ 		id=102,
+ 		passId=2105,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[103] =
+{
+ 		id=103,
+ 		passId=2105,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[104] =
+{
+ 		id=104,
+ 		passId=2105,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[105] =
+{
+ 		id=105,
+ 		passId=2105,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[106] =
+{
+ 		id=106,
+ 		passId=2105,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[107] =
+{
+ 		id=107,
+ 		passId=2105,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[108] =
+{
+ 		id=108,
+ 		passId=2105,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[109] =
+{
+ 		id=109,
+ 		passId=2105,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[110] =
+{
+ 		id=110,
+ 		passId=2105,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[111] =
+{
+ 		id=111,
+ 		passId=2105,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[112] =
+{
+ 		id=112,
+ 		passId=2105,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[113] =
+{
+ 		id=113,
+ 		passId=2105,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[114] =
+{
+ 		id=114,
+ 		passId=2105,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[115] =
+{
+ 		id=115,
+ 		passId=2105,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[116] =
+{
+ 		id=116,
+ 		passId=2105,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[117] =
+{
+ 		id=117,
+ 		passId=2105,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[118] =
+{
+ 		id=118,
+ 		passId=2105,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[119] =
+{
+ 		id=119,
+ 		passId=2105,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[120] =
+{
+ 		id=120,
+ 		passId=2105,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[121] =
+{
+ 		id=121,
+ 		passId=2105,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[122] =
+{
+ 		id=122,
+ 		passId=2105,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[123] =
+{
+ 		id=123,
+ 		passId=2105,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[124] =
+{
+ 		id=124,
+ 		passId=2105,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[125] =
+{
+ 		id=125,
+ 		passId=2105,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[126] =
+{
+ 		id=126,
+ 		passId=2105,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[127] =
+{
+ 		id=127,
+ 		passId=2105,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[128] =
+{
+ 		id=128,
+ 		passId=2105,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[129] =
+{
+ 		id=129,
+ 		passId=2105,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[130] =
+{
+ 		id=130,
+ 		passId=2105,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[131] =
+{
+ 		id=131,
+ 		passId=2105,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[132] =
+{
+ 		id=132,
+ 		passId=2105,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[133] =
+{
+ 		id=133,
+ 		passId=2105,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[134] =
+{
+ 		id=134,
+ 		passId=2105,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[135] =
+{
+ 		id=135,
+ 		passId=2105,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[136] =
+{
+ 		id=136,
+ 		passId=2105,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[137] =
+{
+ 		id=137,
+ 		passId=2105,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[138] =
+{
+ 		id=138,
+ 		passId=2105,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[139] =
+{
+ 		id=139,
+ 		passId=2105,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[140] =
+{
+ 		id=140,
+ 		passId=2105,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[141] =
+{
+ 		id=141,
+ 		passId=2105,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[142] =
+{
+ 		id=142,
+ 		passId=2105,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[143] =
+{
+ 		id=143,
+ 		passId=2105,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[144] =
+{
+ 		id=144,
+ 		passId=2105,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[145] =
+{
+ 		id=145,
+ 		passId=2105,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[146] =
+{
+ 		id=146,
+ 		passId=2105,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[147] =
+{
+ 		id=147,
+ 		passId=2105,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[148] =
+{
+ 		id=148,
+ 		passId=2105,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[149] =
+{
+ 		id=149,
+ 		passId=2105,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[150] =
+{
+ 		id=150,
+ 		passId=2105,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[151] =
+{
+ 		id=151,
+ 		passId=2108,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[152] =
+{
+ 		id=152,
+ 		passId=2108,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[153] =
+{
+ 		id=153,
+ 		passId=2108,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[154] =
+{
+ 		id=154,
+ 		passId=2108,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[155] =
+{
+ 		id=155,
+ 		passId=2108,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[156] =
+{
+ 		id=156,
+ 		passId=2108,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[157] =
+{
+ 		id=157,
+ 		passId=2108,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[158] =
+{
+ 		id=158,
+ 		passId=2108,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[159] =
+{
+ 		id=159,
+ 		passId=2108,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[160] =
+{
+ 		id=160,
+ 		passId=2108,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[161] =
+{
+ 		id=161,
+ 		passId=2108,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[162] =
+{
+ 		id=162,
+ 		passId=2108,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[163] =
+{
+ 		id=163,
+ 		passId=2108,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[164] =
+{
+ 		id=164,
+ 		passId=2108,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[165] =
+{
+ 		id=165,
+ 		passId=2108,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[166] =
+{
+ 		id=166,
+ 		passId=2108,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[167] =
+{
+ 		id=167,
+ 		passId=2108,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[168] =
+{
+ 		id=168,
+ 		passId=2108,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[169] =
+{
+ 		id=169,
+ 		passId=2108,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[170] =
+{
+ 		id=170,
+ 		passId=2108,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[171] =
+{
+ 		id=171,
+ 		passId=2108,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[172] =
+{
+ 		id=172,
+ 		passId=2108,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[173] =
+{
+ 		id=173,
+ 		passId=2108,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[174] =
+{
+ 		id=174,
+ 		passId=2108,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[175] =
+{
+ 		id=175,
+ 		passId=2108,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[176] =
+{
+ 		id=176,
+ 		passId=2108,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[177] =
+{
+ 		id=177,
+ 		passId=2108,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[178] =
+{
+ 		id=178,
+ 		passId=2108,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[179] =
+{
+ 		id=179,
+ 		passId=2108,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[180] =
+{
+ 		id=180,
+ 		passId=2108,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[181] =
+{
+ 		id=181,
+ 		passId=2108,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[182] =
+{
+ 		id=182,
+ 		passId=2108,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[183] =
+{
+ 		id=183,
+ 		passId=2108,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[184] =
+{
+ 		id=184,
+ 		passId=2108,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[185] =
+{
+ 		id=185,
+ 		passId=2108,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[186] =
+{
+ 		id=186,
+ 		passId=2108,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[187] =
+{
+ 		id=187,
+ 		passId=2108,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[188] =
+{
+ 		id=188,
+ 		passId=2108,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[189] =
+{
+ 		id=189,
+ 		passId=2108,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[190] =
+{
+ 		id=190,
+ 		passId=2108,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[191] =
+{
+ 		id=191,
+ 		passId=2108,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[192] =
+{
+ 		id=192,
+ 		passId=2108,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[193] =
+{
+ 		id=193,
+ 		passId=2108,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[194] =
+{
+ 		id=194,
+ 		passId=2108,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[195] =
+{
+ 		id=195,
+ 		passId=2108,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[196] =
+{
+ 		id=196,
+ 		passId=2108,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[197] =
+{
+ 		id=197,
+ 		passId=2108,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[198] =
+{
+ 		id=198,
+ 		passId=2108,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[199] =
+{
+ 		id=199,
+ 		passId=2108,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[200] =
+{
+ 		id=200,
+ 		passId=2108,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[201] =
+{
+ 		id=201,
+ 		passId=2111,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[202] =
+{
+ 		id=202,
+ 		passId=2111,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[203] =
+{
+ 		id=203,
+ 		passId=2111,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[204] =
+{
+ 		id=204,
+ 		passId=2111,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[205] =
+{
+ 		id=205,
+ 		passId=2111,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[206] =
+{
+ 		id=206,
+ 		passId=2111,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[207] =
+{
+ 		id=207,
+ 		passId=2111,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[208] =
+{
+ 		id=208,
+ 		passId=2111,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[209] =
+{
+ 		id=209,
+ 		passId=2111,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[210] =
+{
+ 		id=210,
+ 		passId=2111,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[211] =
+{
+ 		id=211,
+ 		passId=2111,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[212] =
+{
+ 		id=212,
+ 		passId=2111,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[213] =
+{
+ 		id=213,
+ 		passId=2111,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[214] =
+{
+ 		id=214,
+ 		passId=2111,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[215] =
+{
+ 		id=215,
+ 		passId=2111,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[216] =
+{
+ 		id=216,
+ 		passId=2111,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[217] =
+{
+ 		id=217,
+ 		passId=2111,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[218] =
+{
+ 		id=218,
+ 		passId=2111,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[219] =
+{
+ 		id=219,
+ 		passId=2111,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[220] =
+{
+ 		id=220,
+ 		passId=2111,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[221] =
+{
+ 		id=221,
+ 		passId=2111,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[222] =
+{
+ 		id=222,
+ 		passId=2111,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[223] =
+{
+ 		id=223,
+ 		passId=2111,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[224] =
+{
+ 		id=224,
+ 		passId=2111,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[225] =
+{
+ 		id=225,
+ 		passId=2111,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[226] =
+{
+ 		id=226,
+ 		passId=2111,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[227] =
+{
+ 		id=227,
+ 		passId=2111,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[228] =
+{
+ 		id=228,
+ 		passId=2111,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[229] =
+{
+ 		id=229,
+ 		passId=2111,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[230] =
+{
+ 		id=230,
+ 		passId=2111,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[231] =
+{
+ 		id=231,
+ 		passId=2111,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[232] =
+{
+ 		id=232,
+ 		passId=2111,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[233] =
+{
+ 		id=233,
+ 		passId=2111,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[234] =
+{
+ 		id=234,
+ 		passId=2111,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[235] =
+{
+ 		id=235,
+ 		passId=2111,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[236] =
+{
+ 		id=236,
+ 		passId=2111,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[237] =
+{
+ 		id=237,
+ 		passId=2111,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[238] =
+{
+ 		id=238,
+ 		passId=2111,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[239] =
+{
+ 		id=239,
+ 		passId=2111,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[240] =
+{
+ 		id=240,
+ 		passId=2111,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[241] =
+{
+ 		id=241,
+ 		passId=2111,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[242] =
+{
+ 		id=242,
+ 		passId=2111,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[243] =
+{
+ 		id=243,
+ 		passId=2111,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[244] =
+{
+ 		id=244,
+ 		passId=2111,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[245] =
+{
+ 		id=245,
+ 		passId=2111,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[246] =
+{
+ 		id=246,
+ 		passId=2111,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[247] =
+{
+ 		id=247,
+ 		passId=2111,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[248] =
+{
+ 		id=248,
+ 		passId=2111,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[249] =
+{
+ 		id=249,
+ 		passId=2111,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[250] =
+{
+ 		id=250,
+ 		passId=2111,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[251] =
+{
+ 		id=251,
+ 		passId=2114,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[252] =
+{
+ 		id=252,
+ 		passId=2114,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[253] =
+{
+ 		id=253,
+ 		passId=2114,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[254] =
+{
+ 		id=254,
+ 		passId=2114,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[255] =
+{
+ 		id=255,
+ 		passId=2114,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[256] =
+{
+ 		id=256,
+ 		passId=2114,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[257] =
+{
+ 		id=257,
+ 		passId=2114,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[258] =
+{
+ 		id=258,
+ 		passId=2114,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[259] =
+{
+ 		id=259,
+ 		passId=2114,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[260] =
+{
+ 		id=260,
+ 		passId=2114,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[261] =
+{
+ 		id=261,
+ 		passId=2114,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[262] =
+{
+ 		id=262,
+ 		passId=2114,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[263] =
+{
+ 		id=263,
+ 		passId=2114,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[264] =
+{
+ 		id=264,
+ 		passId=2114,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[265] =
+{
+ 		id=265,
+ 		passId=2114,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[266] =
+{
+ 		id=266,
+ 		passId=2114,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[267] =
+{
+ 		id=267,
+ 		passId=2114,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[268] =
+{
+ 		id=268,
+ 		passId=2114,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[269] =
+{
+ 		id=269,
+ 		passId=2114,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[270] =
+{
+ 		id=270,
+ 		passId=2114,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[271] =
+{
+ 		id=271,
+ 		passId=2114,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[272] =
+{
+ 		id=272,
+ 		passId=2114,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[273] =
+{
+ 		id=273,
+ 		passId=2114,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[274] =
+{
+ 		id=274,
+ 		passId=2114,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[275] =
+{
+ 		id=275,
+ 		passId=2114,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[276] =
+{
+ 		id=276,
+ 		passId=2114,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[277] =
+{
+ 		id=277,
+ 		passId=2114,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[278] =
+{
+ 		id=278,
+ 		passId=2114,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[279] =
+{
+ 		id=279,
+ 		passId=2114,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[280] =
+{
+ 		id=280,
+ 		passId=2114,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[281] =
+{
+ 		id=281,
+ 		passId=2114,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[282] =
+{
+ 		id=282,
+ 		passId=2114,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[283] =
+{
+ 		id=283,
+ 		passId=2114,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[284] =
+{
+ 		id=284,
+ 		passId=2114,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[285] =
+{
+ 		id=285,
+ 		passId=2114,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[286] =
+{
+ 		id=286,
+ 		passId=2114,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[287] =
+{
+ 		id=287,
+ 		passId=2114,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[288] =
+{
+ 		id=288,
+ 		passId=2114,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[289] =
+{
+ 		id=289,
+ 		passId=2114,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[290] =
+{
+ 		id=290,
+ 		passId=2114,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[291] =
+{
+ 		id=291,
+ 		passId=2114,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[292] =
+{
+ 		id=292,
+ 		passId=2114,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[293] =
+{
+ 		id=293,
+ 		passId=2114,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[294] =
+{
+ 		id=294,
+ 		passId=2114,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[295] =
+{
+ 		id=295,
+ 		passId=2114,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[296] =
+{
+ 		id=296,
+ 		passId=2114,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[297] =
+{
+ 		id=297,
+ 		passId=2114,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[298] =
+{
+ 		id=298,
+ 		passId=2114,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[299] =
+{
+ 		id=299,
+ 		passId=2114,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[300] =
+{
+ 		id=300,
+ 		passId=2114,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[301] =
+{
+ 		id=301,
+ 		passId=2117,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[302] =
+{
+ 		id=302,
+ 		passId=2117,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[303] =
+{
+ 		id=303,
+ 		passId=2117,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[304] =
+{
+ 		id=304,
+ 		passId=2117,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[305] =
+{
+ 		id=305,
+ 		passId=2117,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[306] =
+{
+ 		id=306,
+ 		passId=2117,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[307] =
+{
+ 		id=307,
+ 		passId=2117,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[308] =
+{
+ 		id=308,
+ 		passId=2117,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[309] =
+{
+ 		id=309,
+ 		passId=2117,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[310] =
+{
+ 		id=310,
+ 		passId=2117,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[311] =
+{
+ 		id=311,
+ 		passId=2117,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[312] =
+{
+ 		id=312,
+ 		passId=2117,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[313] =
+{
+ 		id=313,
+ 		passId=2117,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[314] =
+{
+ 		id=314,
+ 		passId=2117,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[315] =
+{
+ 		id=315,
+ 		passId=2117,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[316] =
+{
+ 		id=316,
+ 		passId=2117,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[317] =
+{
+ 		id=317,
+ 		passId=2117,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[318] =
+{
+ 		id=318,
+ 		passId=2117,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[319] =
+{
+ 		id=319,
+ 		passId=2117,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[320] =
+{
+ 		id=320,
+ 		passId=2117,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[321] =
+{
+ 		id=321,
+ 		passId=2117,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[322] =
+{
+ 		id=322,
+ 		passId=2117,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[323] =
+{
+ 		id=323,
+ 		passId=2117,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[324] =
+{
+ 		id=324,
+ 		passId=2117,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[325] =
+{
+ 		id=325,
+ 		passId=2117,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[326] =
+{
+ 		id=326,
+ 		passId=2117,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[327] =
+{
+ 		id=327,
+ 		passId=2117,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[328] =
+{
+ 		id=328,
+ 		passId=2117,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[329] =
+{
+ 		id=329,
+ 		passId=2117,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[330] =
+{
+ 		id=330,
+ 		passId=2117,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[331] =
+{
+ 		id=331,
+ 		passId=2117,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[332] =
+{
+ 		id=332,
+ 		passId=2117,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[333] =
+{
+ 		id=333,
+ 		passId=2117,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[334] =
+{
+ 		id=334,
+ 		passId=2117,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[335] =
+{
+ 		id=335,
+ 		passId=2117,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[336] =
+{
+ 		id=336,
+ 		passId=2117,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[337] =
+{
+ 		id=337,
+ 		passId=2117,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[338] =
+{
+ 		id=338,
+ 		passId=2117,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[339] =
+{
+ 		id=339,
+ 		passId=2117,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[340] =
+{
+ 		id=340,
+ 		passId=2117,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[341] =
+{
+ 		id=341,
+ 		passId=2117,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[342] =
+{
+ 		id=342,
+ 		passId=2117,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[343] =
+{
+ 		id=343,
+ 		passId=2117,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[344] =
+{
+ 		id=344,
+ 		passId=2117,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[345] =
+{
+ 		id=345,
+ 		passId=2117,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[346] =
+{
+ 		id=346,
+ 		passId=2117,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[347] =
+{
+ 		id=347,
+ 		passId=2117,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[348] =
+{
+ 		id=348,
+ 		passId=2117,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[349] =
+{
+ 		id=349,
+ 		passId=2117,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[350] =
+{
+ 		id=350,
+ 		passId=2117,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[351] =
+{
+ 		id=351,
+ 		passId=2120,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[352] =
+{
+ 		id=352,
+ 		passId=2120,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[353] =
+{
+ 		id=353,
+ 		passId=2120,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[354] =
+{
+ 		id=354,
+ 		passId=2120,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[355] =
+{
+ 		id=355,
+ 		passId=2120,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[356] =
+{
+ 		id=356,
+ 		passId=2120,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[357] =
+{
+ 		id=357,
+ 		passId=2120,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[358] =
+{
+ 		id=358,
+ 		passId=2120,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[359] =
+{
+ 		id=359,
+ 		passId=2120,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[360] =
+{
+ 		id=360,
+ 		passId=2120,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[361] =
+{
+ 		id=361,
+ 		passId=2120,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[362] =
+{
+ 		id=362,
+ 		passId=2120,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[363] =
+{
+ 		id=363,
+ 		passId=2120,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[364] =
+{
+ 		id=364,
+ 		passId=2120,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[365] =
+{
+ 		id=365,
+ 		passId=2120,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[366] =
+{
+ 		id=366,
+ 		passId=2120,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[367] =
+{
+ 		id=367,
+ 		passId=2120,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[368] =
+{
+ 		id=368,
+ 		passId=2120,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[369] =
+{
+ 		id=369,
+ 		passId=2120,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[370] =
+{
+ 		id=370,
+ 		passId=2120,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[371] =
+{
+ 		id=371,
+ 		passId=2120,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[372] =
+{
+ 		id=372,
+ 		passId=2120,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[373] =
+{
+ 		id=373,
+ 		passId=2120,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[374] =
+{
+ 		id=374,
+ 		passId=2120,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[375] =
+{
+ 		id=375,
+ 		passId=2120,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[376] =
+{
+ 		id=376,
+ 		passId=2120,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[377] =
+{
+ 		id=377,
+ 		passId=2120,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[378] =
+{
+ 		id=378,
+ 		passId=2120,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[379] =
+{
+ 		id=379,
+ 		passId=2120,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[380] =
+{
+ 		id=380,
+ 		passId=2120,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[381] =
+{
+ 		id=381,
+ 		passId=2120,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[382] =
+{
+ 		id=382,
+ 		passId=2120,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[383] =
+{
+ 		id=383,
+ 		passId=2120,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[384] =
+{
+ 		id=384,
+ 		passId=2120,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[385] =
+{
+ 		id=385,
+ 		passId=2120,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[386] =
+{
+ 		id=386,
+ 		passId=2120,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[387] =
+{
+ 		id=387,
+ 		passId=2120,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[388] =
+{
+ 		id=388,
+ 		passId=2120,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[389] =
+{
+ 		id=389,
+ 		passId=2120,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[390] =
+{
+ 		id=390,
+ 		passId=2120,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[391] =
+{
+ 		id=391,
+ 		passId=2120,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[392] =
+{
+ 		id=392,
+ 		passId=2120,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[393] =
+{
+ 		id=393,
+ 		passId=2120,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[394] =
+{
+ 		id=394,
+ 		passId=2120,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[395] =
+{
+ 		id=395,
+ 		passId=2120,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[396] =
+{
+ 		id=396,
+ 		passId=2120,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[397] =
+{
+ 		id=397,
+ 		passId=2120,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[398] =
+{
+ 		id=398,
+ 		passId=2120,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[399] =
+{
+ 		id=399,
+ 		passId=2120,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[400] =
+{
+ 		id=400,
+ 		passId=2120,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[401] =
+{
+ 		id=401,
+ 		passId=2123,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[402] =
+{
+ 		id=402,
+ 		passId=2123,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[403] =
+{
+ 		id=403,
+ 		passId=2123,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[404] =
+{
+ 		id=404,
+ 		passId=2123,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[405] =
+{
+ 		id=405,
+ 		passId=2123,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[406] =
+{
+ 		id=406,
+ 		passId=2123,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[407] =
+{
+ 		id=407,
+ 		passId=2123,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[408] =
+{
+ 		id=408,
+ 		passId=2123,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[409] =
+{
+ 		id=409,
+ 		passId=2123,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[410] =
+{
+ 		id=410,
+ 		passId=2123,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[411] =
+{
+ 		id=411,
+ 		passId=2123,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[412] =
+{
+ 		id=412,
+ 		passId=2123,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[413] =
+{
+ 		id=413,
+ 		passId=2123,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[414] =
+{
+ 		id=414,
+ 		passId=2123,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[415] =
+{
+ 		id=415,
+ 		passId=2123,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[416] =
+{
+ 		id=416,
+ 		passId=2123,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[417] =
+{
+ 		id=417,
+ 		passId=2123,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[418] =
+{
+ 		id=418,
+ 		passId=2123,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[419] =
+{
+ 		id=419,
+ 		passId=2123,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[420] =
+{
+ 		id=420,
+ 		passId=2123,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[421] =
+{
+ 		id=421,
+ 		passId=2123,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[422] =
+{
+ 		id=422,
+ 		passId=2123,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[423] =
+{
+ 		id=423,
+ 		passId=2123,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[424] =
+{
+ 		id=424,
+ 		passId=2123,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[425] =
+{
+ 		id=425,
+ 		passId=2123,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[426] =
+{
+ 		id=426,
+ 		passId=2123,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[427] =
+{
+ 		id=427,
+ 		passId=2123,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[428] =
+{
+ 		id=428,
+ 		passId=2123,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[429] =
+{
+ 		id=429,
+ 		passId=2123,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[430] =
+{
+ 		id=430,
+ 		passId=2123,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[431] =
+{
+ 		id=431,
+ 		passId=2123,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[432] =
+{
+ 		id=432,
+ 		passId=2123,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[433] =
+{
+ 		id=433,
+ 		passId=2123,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[434] =
+{
+ 		id=434,
+ 		passId=2123,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[435] =
+{
+ 		id=435,
+ 		passId=2123,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[436] =
+{
+ 		id=436,
+ 		passId=2123,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[437] =
+{
+ 		id=437,
+ 		passId=2123,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[438] =
+{
+ 		id=438,
+ 		passId=2123,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[439] =
+{
+ 		id=439,
+ 		passId=2123,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[440] =
+{
+ 		id=440,
+ 		passId=2123,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[441] =
+{
+ 		id=441,
+ 		passId=2123,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[442] =
+{
+ 		id=442,
+ 		passId=2123,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[443] =
+{
+ 		id=443,
+ 		passId=2123,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[444] =
+{
+ 		id=444,
+ 		passId=2123,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[445] =
+{
+ 		id=445,
+ 		passId=2123,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[446] =
+{
+ 		id=446,
+ 		passId=2123,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[447] =
+{
+ 		id=447,
+ 		passId=2123,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[448] =
+{
+ 		id=448,
+ 		passId=2123,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[449] =
+{
+ 		id=449,
+ 		passId=2123,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[450] =
+{
+ 		id=450,
+ 		passId=2123,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[451] =
+{
+ 		id=451,
+ 		passId=2126,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[452] =
+{
+ 		id=452,
+ 		passId=2126,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[453] =
+{
+ 		id=453,
+ 		passId=2126,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[454] =
+{
+ 		id=454,
+ 		passId=2126,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[455] =
+{
+ 		id=455,
+ 		passId=2126,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[456] =
+{
+ 		id=456,
+ 		passId=2126,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[457] =
+{
+ 		id=457,
+ 		passId=2126,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[458] =
+{
+ 		id=458,
+ 		passId=2126,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[459] =
+{
+ 		id=459,
+ 		passId=2126,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[460] =
+{
+ 		id=460,
+ 		passId=2126,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[461] =
+{
+ 		id=461,
+ 		passId=2126,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[462] =
+{
+ 		id=462,
+ 		passId=2126,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[463] =
+{
+ 		id=463,
+ 		passId=2126,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[464] =
+{
+ 		id=464,
+ 		passId=2126,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[465] =
+{
+ 		id=465,
+ 		passId=2126,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[466] =
+{
+ 		id=466,
+ 		passId=2126,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[467] =
+{
+ 		id=467,
+ 		passId=2126,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[468] =
+{
+ 		id=468,
+ 		passId=2126,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[469] =
+{
+ 		id=469,
+ 		passId=2126,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[470] =
+{
+ 		id=470,
+ 		passId=2126,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[471] =
+{
+ 		id=471,
+ 		passId=2126,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[472] =
+{
+ 		id=472,
+ 		passId=2126,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[473] =
+{
+ 		id=473,
+ 		passId=2126,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[474] =
+{
+ 		id=474,
+ 		passId=2126,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[475] =
+{
+ 		id=475,
+ 		passId=2126,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[476] =
+{
+ 		id=476,
+ 		passId=2126,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[477] =
+{
+ 		id=477,
+ 		passId=2126,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[478] =
+{
+ 		id=478,
+ 		passId=2126,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[479] =
+{
+ 		id=479,
+ 		passId=2126,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[480] =
+{
+ 		id=480,
+ 		passId=2126,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[481] =
+{
+ 		id=481,
+ 		passId=2126,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[482] =
+{
+ 		id=482,
+ 		passId=2126,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[483] =
+{
+ 		id=483,
+ 		passId=2126,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[484] =
+{
+ 		id=484,
+ 		passId=2126,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[485] =
+{
+ 		id=485,
+ 		passId=2126,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[486] =
+{
+ 		id=486,
+ 		passId=2126,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[487] =
+{
+ 		id=487,
+ 		passId=2126,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[488] =
+{
+ 		id=488,
+ 		passId=2126,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[489] =
+{
+ 		id=489,
+ 		passId=2126,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[490] =
+{
+ 		id=490,
+ 		passId=2126,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[491] =
+{
+ 		id=491,
+ 		passId=2126,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[492] =
+{
+ 		id=492,
+ 		passId=2126,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[493] =
+{
+ 		id=493,
+ 		passId=2126,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[494] =
+{
+ 		id=494,
+ 		passId=2126,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[495] =
+{
+ 		id=495,
+ 		passId=2126,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[496] =
+{
+ 		id=496,
+ 		passId=2126,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[497] =
+{
+ 		id=497,
+ 		passId=2126,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[498] =
+{
+ 		id=498,
+ 		passId=2126,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[499] =
+{
+ 		id=499,
+ 		passId=2126,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[500] =
+{
+ 		id=500,
+ 		passId=2126,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[501] =
+{
+ 		id=501,
+ 		passId=2129,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[502] =
+{
+ 		id=502,
+ 		passId=2129,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[503] =
+{
+ 		id=503,
+ 		passId=2129,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[504] =
+{
+ 		id=504,
+ 		passId=2129,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[505] =
+{
+ 		id=505,
+ 		passId=2129,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[506] =
+{
+ 		id=506,
+ 		passId=2129,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[507] =
+{
+ 		id=507,
+ 		passId=2129,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[508] =
+{
+ 		id=508,
+ 		passId=2129,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[509] =
+{
+ 		id=509,
+ 		passId=2129,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[510] =
+{
+ 		id=510,
+ 		passId=2129,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[511] =
+{
+ 		id=511,
+ 		passId=2129,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[512] =
+{
+ 		id=512,
+ 		passId=2129,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[513] =
+{
+ 		id=513,
+ 		passId=2129,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[514] =
+{
+ 		id=514,
+ 		passId=2129,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[515] =
+{
+ 		id=515,
+ 		passId=2129,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[516] =
+{
+ 		id=516,
+ 		passId=2129,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[517] =
+{
+ 		id=517,
+ 		passId=2129,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[518] =
+{
+ 		id=518,
+ 		passId=2129,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[519] =
+{
+ 		id=519,
+ 		passId=2129,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[520] =
+{
+ 		id=520,
+ 		passId=2129,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[521] =
+{
+ 		id=521,
+ 		passId=2129,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[522] =
+{
+ 		id=522,
+ 		passId=2129,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[523] =
+{
+ 		id=523,
+ 		passId=2129,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[524] =
+{
+ 		id=524,
+ 		passId=2129,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[525] =
+{
+ 		id=525,
+ 		passId=2129,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[526] =
+{
+ 		id=526,
+ 		passId=2129,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[527] =
+{
+ 		id=527,
+ 		passId=2129,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[528] =
+{
+ 		id=528,
+ 		passId=2129,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[529] =
+{
+ 		id=529,
+ 		passId=2129,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[530] =
+{
+ 		id=530,
+ 		passId=2129,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[531] =
+{
+ 		id=531,
+ 		passId=2129,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[532] =
+{
+ 		id=532,
+ 		passId=2129,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[533] =
+{
+ 		id=533,
+ 		passId=2129,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[534] =
+{
+ 		id=534,
+ 		passId=2129,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[535] =
+{
+ 		id=535,
+ 		passId=2129,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[536] =
+{
+ 		id=536,
+ 		passId=2129,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[537] =
+{
+ 		id=537,
+ 		passId=2129,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[538] =
+{
+ 		id=538,
+ 		passId=2129,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[539] =
+{
+ 		id=539,
+ 		passId=2129,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[540] =
+{
+ 		id=540,
+ 		passId=2129,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[541] =
+{
+ 		id=541,
+ 		passId=2129,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[542] =
+{
+ 		id=542,
+ 		passId=2129,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[543] =
+{
+ 		id=543,
+ 		passId=2129,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[544] =
+{
+ 		id=544,
+ 		passId=2129,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[545] =
+{
+ 		id=545,
+ 		passId=2129,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[546] =
+{
+ 		id=546,
+ 		passId=2129,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[547] =
+{
+ 		id=547,
+ 		passId=2129,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[548] =
+{
+ 		id=548,
+ 		passId=2129,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[549] =
+{
+ 		id=549,
+ 		passId=2129,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[550] =
+{
+ 		id=550,
+ 		passId=2129,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[551] =
+{
+ 		id=551,
+ 		passId=2132,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[552] =
+{
+ 		id=552,
+ 		passId=2132,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[553] =
+{
+ 		id=553,
+ 		passId=2132,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[554] =
+{
+ 		id=554,
+ 		passId=2132,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[555] =
+{
+ 		id=555,
+ 		passId=2132,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[556] =
+{
+ 		id=556,
+ 		passId=2132,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[557] =
+{
+ 		id=557,
+ 		passId=2132,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[558] =
+{
+ 		id=558,
+ 		passId=2132,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[559] =
+{
+ 		id=559,
+ 		passId=2132,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[560] =
+{
+ 		id=560,
+ 		passId=2132,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[561] =
+{
+ 		id=561,
+ 		passId=2132,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[562] =
+{
+ 		id=562,
+ 		passId=2132,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[563] =
+{
+ 		id=563,
+ 		passId=2132,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[564] =
+{
+ 		id=564,
+ 		passId=2132,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[565] =
+{
+ 		id=565,
+ 		passId=2132,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[566] =
+{
+ 		id=566,
+ 		passId=2132,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[567] =
+{
+ 		id=567,
+ 		passId=2132,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[568] =
+{
+ 		id=568,
+ 		passId=2132,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[569] =
+{
+ 		id=569,
+ 		passId=2132,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[570] =
+{
+ 		id=570,
+ 		passId=2132,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[571] =
+{
+ 		id=571,
+ 		passId=2132,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[572] =
+{
+ 		id=572,
+ 		passId=2132,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[573] =
+{
+ 		id=573,
+ 		passId=2132,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[574] =
+{
+ 		id=574,
+ 		passId=2132,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[575] =
+{
+ 		id=575,
+ 		passId=2132,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[576] =
+{
+ 		id=576,
+ 		passId=2132,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[577] =
+{
+ 		id=577,
+ 		passId=2132,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[578] =
+{
+ 		id=578,
+ 		passId=2132,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[579] =
+{
+ 		id=579,
+ 		passId=2132,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[580] =
+{
+ 		id=580,
+ 		passId=2132,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[581] =
+{
+ 		id=581,
+ 		passId=2132,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[582] =
+{
+ 		id=582,
+ 		passId=2132,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[583] =
+{
+ 		id=583,
+ 		passId=2132,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[584] =
+{
+ 		id=584,
+ 		passId=2132,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[585] =
+{
+ 		id=585,
+ 		passId=2132,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[586] =
+{
+ 		id=586,
+ 		passId=2132,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[587] =
+{
+ 		id=587,
+ 		passId=2132,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[588] =
+{
+ 		id=588,
+ 		passId=2132,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[589] =
+{
+ 		id=589,
+ 		passId=2132,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[590] =
+{
+ 		id=590,
+ 		passId=2132,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[591] =
+{
+ 		id=591,
+ 		passId=2132,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[592] =
+{
+ 		id=592,
+ 		passId=2132,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[593] =
+{
+ 		id=593,
+ 		passId=2132,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[594] =
+{
+ 		id=594,
+ 		passId=2132,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[595] =
+{
+ 		id=595,
+ 		passId=2132,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[596] =
+{
+ 		id=596,
+ 		passId=2132,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[597] =
+{
+ 		id=597,
+ 		passId=2132,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[598] =
+{
+ 		id=598,
+ 		passId=2132,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[599] =
+{
+ 		id=599,
+ 		passId=2132,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[600] =
+{
+ 		id=600,
+ 		passId=2132,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[601] =
+{
+ 		id=601,
+ 		passId=2135,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[602] =
+{
+ 		id=602,
+ 		passId=2135,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[603] =
+{
+ 		id=603,
+ 		passId=2135,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[604] =
+{
+ 		id=604,
+ 		passId=2135,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[605] =
+{
+ 		id=605,
+ 		passId=2135,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[606] =
+{
+ 		id=606,
+ 		passId=2135,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[607] =
+{
+ 		id=607,
+ 		passId=2135,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[608] =
+{
+ 		id=608,
+ 		passId=2135,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[609] =
+{
+ 		id=609,
+ 		passId=2135,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[610] =
+{
+ 		id=610,
+ 		passId=2135,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[611] =
+{
+ 		id=611,
+ 		passId=2135,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[612] =
+{
+ 		id=612,
+ 		passId=2135,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[613] =
+{
+ 		id=613,
+ 		passId=2135,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[614] =
+{
+ 		id=614,
+ 		passId=2135,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[615] =
+{
+ 		id=615,
+ 		passId=2135,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[616] =
+{
+ 		id=616,
+ 		passId=2135,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[617] =
+{
+ 		id=617,
+ 		passId=2135,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[618] =
+{
+ 		id=618,
+ 		passId=2135,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[619] =
+{
+ 		id=619,
+ 		passId=2135,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[620] =
+{
+ 		id=620,
+ 		passId=2135,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[621] =
+{
+ 		id=621,
+ 		passId=2135,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[622] =
+{
+ 		id=622,
+ 		passId=2135,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[623] =
+{
+ 		id=623,
+ 		passId=2135,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[624] =
+{
+ 		id=624,
+ 		passId=2135,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[625] =
+{
+ 		id=625,
+ 		passId=2135,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[626] =
+{
+ 		id=626,
+ 		passId=2135,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[627] =
+{
+ 		id=627,
+ 		passId=2135,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[628] =
+{
+ 		id=628,
+ 		passId=2135,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[629] =
+{
+ 		id=629,
+ 		passId=2135,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[630] =
+{
+ 		id=630,
+ 		passId=2135,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[631] =
+{
+ 		id=631,
+ 		passId=2135,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[632] =
+{
+ 		id=632,
+ 		passId=2135,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[633] =
+{
+ 		id=633,
+ 		passId=2135,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[634] =
+{
+ 		id=634,
+ 		passId=2135,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[635] =
+{
+ 		id=635,
+ 		passId=2135,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[636] =
+{
+ 		id=636,
+ 		passId=2135,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[637] =
+{
+ 		id=637,
+ 		passId=2135,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[638] =
+{
+ 		id=638,
+ 		passId=2135,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[639] =
+{
+ 		id=639,
+ 		passId=2135,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[640] =
+{
+ 		id=640,
+ 		passId=2135,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[641] =
+{
+ 		id=641,
+ 		passId=2135,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[642] =
+{
+ 		id=642,
+ 		passId=2135,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[643] =
+{
+ 		id=643,
+ 		passId=2135,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[644] =
+{
+ 		id=644,
+ 		passId=2135,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[645] =
+{
+ 		id=645,
+ 		passId=2135,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[646] =
+{
+ 		id=646,
+ 		passId=2135,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[647] =
+{
+ 		id=647,
+ 		passId=2135,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[648] =
+{
+ 		id=648,
+ 		passId=2135,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[649] =
+{
+ 		id=649,
+ 		passId=2135,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[650] =
+{
+ 		id=650,
+ 		passId=2135,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[651] =
+{
+ 		id=651,
+ 		passId=2138,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[652] =
+{
+ 		id=652,
+ 		passId=2138,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[653] =
+{
+ 		id=653,
+ 		passId=2138,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[654] =
+{
+ 		id=654,
+ 		passId=2138,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[655] =
+{
+ 		id=655,
+ 		passId=2138,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[656] =
+{
+ 		id=656,
+ 		passId=2138,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[657] =
+{
+ 		id=657,
+ 		passId=2138,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[658] =
+{
+ 		id=658,
+ 		passId=2138,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[659] =
+{
+ 		id=659,
+ 		passId=2138,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[660] =
+{
+ 		id=660,
+ 		passId=2138,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[661] =
+{
+ 		id=661,
+ 		passId=2138,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[662] =
+{
+ 		id=662,
+ 		passId=2138,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[663] =
+{
+ 		id=663,
+ 		passId=2138,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[664] =
+{
+ 		id=664,
+ 		passId=2138,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[665] =
+{
+ 		id=665,
+ 		passId=2138,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[666] =
+{
+ 		id=666,
+ 		passId=2138,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[667] =
+{
+ 		id=667,
+ 		passId=2138,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[668] =
+{
+ 		id=668,
+ 		passId=2138,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[669] =
+{
+ 		id=669,
+ 		passId=2138,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[670] =
+{
+ 		id=670,
+ 		passId=2138,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[671] =
+{
+ 		id=671,
+ 		passId=2138,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[672] =
+{
+ 		id=672,
+ 		passId=2138,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[673] =
+{
+ 		id=673,
+ 		passId=2138,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[674] =
+{
+ 		id=674,
+ 		passId=2138,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[675] =
+{
+ 		id=675,
+ 		passId=2138,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[676] =
+{
+ 		id=676,
+ 		passId=2138,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[677] =
+{
+ 		id=677,
+ 		passId=2138,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[678] =
+{
+ 		id=678,
+ 		passId=2138,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[679] =
+{
+ 		id=679,
+ 		passId=2138,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[680] =
+{
+ 		id=680,
+ 		passId=2138,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[681] =
+{
+ 		id=681,
+ 		passId=2138,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[682] =
+{
+ 		id=682,
+ 		passId=2138,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[683] =
+{
+ 		id=683,
+ 		passId=2138,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[684] =
+{
+ 		id=684,
+ 		passId=2138,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[685] =
+{
+ 		id=685,
+ 		passId=2138,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[686] =
+{
+ 		id=686,
+ 		passId=2138,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[687] =
+{
+ 		id=687,
+ 		passId=2138,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[688] =
+{
+ 		id=688,
+ 		passId=2138,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[689] =
+{
+ 		id=689,
+ 		passId=2138,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[690] =
+{
+ 		id=690,
+ 		passId=2138,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[691] =
+{
+ 		id=691,
+ 		passId=2138,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[692] =
+{
+ 		id=692,
+ 		passId=2138,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[693] =
+{
+ 		id=693,
+ 		passId=2138,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[694] =
+{
+ 		id=694,
+ 		passId=2138,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[695] =
+{
+ 		id=695,
+ 		passId=2138,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[696] =
+{
+ 		id=696,
+ 		passId=2138,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[697] =
+{
+ 		id=697,
+ 		passId=2138,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[698] =
+{
+ 		id=698,
+ 		passId=2138,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[699] =
+{
+ 		id=699,
+ 		passId=2138,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[700] =
+{
+ 		id=700,
+ 		passId=2138,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[701] =
+{
+ 		id=701,
+ 		passId=2141,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[702] =
+{
+ 		id=702,
+ 		passId=2141,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[703] =
+{
+ 		id=703,
+ 		passId=2141,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[704] =
+{
+ 		id=704,
+ 		passId=2141,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[705] =
+{
+ 		id=705,
+ 		passId=2141,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[706] =
+{
+ 		id=706,
+ 		passId=2141,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[707] =
+{
+ 		id=707,
+ 		passId=2141,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[708] =
+{
+ 		id=708,
+ 		passId=2141,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[709] =
+{
+ 		id=709,
+ 		passId=2141,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[710] =
+{
+ 		id=710,
+ 		passId=2141,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[711] =
+{
+ 		id=711,
+ 		passId=2141,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[712] =
+{
+ 		id=712,
+ 		passId=2141,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[713] =
+{
+ 		id=713,
+ 		passId=2141,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[714] =
+{
+ 		id=714,
+ 		passId=2141,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[715] =
+{
+ 		id=715,
+ 		passId=2141,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[716] =
+{
+ 		id=716,
+ 		passId=2141,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[717] =
+{
+ 		id=717,
+ 		passId=2141,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[718] =
+{
+ 		id=718,
+ 		passId=2141,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[719] =
+{
+ 		id=719,
+ 		passId=2141,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[720] =
+{
+ 		id=720,
+ 		passId=2141,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[721] =
+{
+ 		id=721,
+ 		passId=2141,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[722] =
+{
+ 		id=722,
+ 		passId=2141,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[723] =
+{
+ 		id=723,
+ 		passId=2141,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[724] =
+{
+ 		id=724,
+ 		passId=2141,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[725] =
+{
+ 		id=725,
+ 		passId=2141,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[726] =
+{
+ 		id=726,
+ 		passId=2141,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[727] =
+{
+ 		id=727,
+ 		passId=2141,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[728] =
+{
+ 		id=728,
+ 		passId=2141,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[729] =
+{
+ 		id=729,
+ 		passId=2141,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[730] =
+{
+ 		id=730,
+ 		passId=2141,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[731] =
+{
+ 		id=731,
+ 		passId=2141,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[732] =
+{
+ 		id=732,
+ 		passId=2141,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[733] =
+{
+ 		id=733,
+ 		passId=2141,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[734] =
+{
+ 		id=734,
+ 		passId=2141,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[735] =
+{
+ 		id=735,
+ 		passId=2141,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[736] =
+{
+ 		id=736,
+ 		passId=2141,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[737] =
+{
+ 		id=737,
+ 		passId=2141,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[738] =
+{
+ 		id=738,
+ 		passId=2141,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[739] =
+{
+ 		id=739,
+ 		passId=2141,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[740] =
+{
+ 		id=740,
+ 		passId=2141,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[741] =
+{
+ 		id=741,
+ 		passId=2141,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[742] =
+{
+ 		id=742,
+ 		passId=2141,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[743] =
+{
+ 		id=743,
+ 		passId=2141,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[744] =
+{
+ 		id=744,
+ 		passId=2141,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[745] =
+{
+ 		id=745,
+ 		passId=2141,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[746] =
+{
+ 		id=746,
+ 		passId=2141,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[747] =
+{
+ 		id=747,
+ 		passId=2141,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[748] =
+{
+ 		id=748,
+ 		passId=2141,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[749] =
+{
+ 		id=749,
+ 		passId=2141,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[750] =
+{
+ 		id=750,
+ 		passId=2141,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[751] =
+{
+ 		id=751,
+ 		passId=2144,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[752] =
+{
+ 		id=752,
+ 		passId=2144,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[753] =
+{
+ 		id=753,
+ 		passId=2144,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[754] =
+{
+ 		id=754,
+ 		passId=2144,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[755] =
+{
+ 		id=755,
+ 		passId=2144,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[756] =
+{
+ 		id=756,
+ 		passId=2144,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[757] =
+{
+ 		id=757,
+ 		passId=2144,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[758] =
+{
+ 		id=758,
+ 		passId=2144,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[759] =
+{
+ 		id=759,
+ 		passId=2144,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[760] =
+{
+ 		id=760,
+ 		passId=2144,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[761] =
+{
+ 		id=761,
+ 		passId=2144,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[762] =
+{
+ 		id=762,
+ 		passId=2144,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[763] =
+{
+ 		id=763,
+ 		passId=2144,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[764] =
+{
+ 		id=764,
+ 		passId=2144,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[765] =
+{
+ 		id=765,
+ 		passId=2144,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[766] =
+{
+ 		id=766,
+ 		passId=2144,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[767] =
+{
+ 		id=767,
+ 		passId=2144,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[768] =
+{
+ 		id=768,
+ 		passId=2144,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[769] =
+{
+ 		id=769,
+ 		passId=2144,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[770] =
+{
+ 		id=770,
+ 		passId=2144,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[771] =
+{
+ 		id=771,
+ 		passId=2144,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[772] =
+{
+ 		id=772,
+ 		passId=2144,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[773] =
+{
+ 		id=773,
+ 		passId=2144,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[774] =
+{
+ 		id=774,
+ 		passId=2144,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[775] =
+{
+ 		id=775,
+ 		passId=2144,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[776] =
+{
+ 		id=776,
+ 		passId=2144,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[777] =
+{
+ 		id=777,
+ 		passId=2144,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[778] =
+{
+ 		id=778,
+ 		passId=2144,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[779] =
+{
+ 		id=779,
+ 		passId=2144,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[780] =
+{
+ 		id=780,
+ 		passId=2144,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[781] =
+{
+ 		id=781,
+ 		passId=2144,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[782] =
+{
+ 		id=782,
+ 		passId=2144,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[783] =
+{
+ 		id=783,
+ 		passId=2144,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[784] =
+{
+ 		id=784,
+ 		passId=2144,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[785] =
+{
+ 		id=785,
+ 		passId=2144,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[786] =
+{
+ 		id=786,
+ 		passId=2144,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[787] =
+{
+ 		id=787,
+ 		passId=2144,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[788] =
+{
+ 		id=788,
+ 		passId=2144,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[789] =
+{
+ 		id=789,
+ 		passId=2144,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[790] =
+{
+ 		id=790,
+ 		passId=2144,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[791] =
+{
+ 		id=791,
+ 		passId=2144,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[792] =
+{
+ 		id=792,
+ 		passId=2144,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[793] =
+{
+ 		id=793,
+ 		passId=2144,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[794] =
+{
+ 		id=794,
+ 		passId=2144,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[795] =
+{
+ 		id=795,
+ 		passId=2144,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[796] =
+{
+ 		id=796,
+ 		passId=2144,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[797] =
+{
+ 		id=797,
+ 		passId=2144,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[798] =
+{
+ 		id=798,
+ 		passId=2144,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[799] =
+{
+ 		id=799,
+ 		passId=2144,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[800] =
+{
+ 		id=800,
+ 		passId=2144,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[801] =
+{
+ 		id=801,
+ 		passId=2147,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[802] =
+{
+ 		id=802,
+ 		passId=2147,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[803] =
+{
+ 		id=803,
+ 		passId=2147,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[804] =
+{
+ 		id=804,
+ 		passId=2147,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[805] =
+{
+ 		id=805,
+ 		passId=2147,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[806] =
+{
+ 		id=806,
+ 		passId=2147,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[807] =
+{
+ 		id=807,
+ 		passId=2147,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[808] =
+{
+ 		id=808,
+ 		passId=2147,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[809] =
+{
+ 		id=809,
+ 		passId=2147,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[810] =
+{
+ 		id=810,
+ 		passId=2147,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[811] =
+{
+ 		id=811,
+ 		passId=2147,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[812] =
+{
+ 		id=812,
+ 		passId=2147,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[813] =
+{
+ 		id=813,
+ 		passId=2147,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[814] =
+{
+ 		id=814,
+ 		passId=2147,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[815] =
+{
+ 		id=815,
+ 		passId=2147,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[816] =
+{
+ 		id=816,
+ 		passId=2147,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[817] =
+{
+ 		id=817,
+ 		passId=2147,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[818] =
+{
+ 		id=818,
+ 		passId=2147,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[819] =
+{
+ 		id=819,
+ 		passId=2147,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[820] =
+{
+ 		id=820,
+ 		passId=2147,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[821] =
+{
+ 		id=821,
+ 		passId=2147,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[822] =
+{
+ 		id=822,
+ 		passId=2147,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[823] =
+{
+ 		id=823,
+ 		passId=2147,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[824] =
+{
+ 		id=824,
+ 		passId=2147,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[825] =
+{
+ 		id=825,
+ 		passId=2147,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[826] =
+{
+ 		id=826,
+ 		passId=2147,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[827] =
+{
+ 		id=827,
+ 		passId=2147,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[828] =
+{
+ 		id=828,
+ 		passId=2147,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[829] =
+{
+ 		id=829,
+ 		passId=2147,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[830] =
+{
+ 		id=830,
+ 		passId=2147,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[831] =
+{
+ 		id=831,
+ 		passId=2147,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[832] =
+{
+ 		id=832,
+ 		passId=2147,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[833] =
+{
+ 		id=833,
+ 		passId=2147,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[834] =
+{
+ 		id=834,
+ 		passId=2147,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[835] =
+{
+ 		id=835,
+ 		passId=2147,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[836] =
+{
+ 		id=836,
+ 		passId=2147,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[837] =
+{
+ 		id=837,
+ 		passId=2147,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[838] =
+{
+ 		id=838,
+ 		passId=2147,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[839] =
+{
+ 		id=839,
+ 		passId=2147,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[840] =
+{
+ 		id=840,
+ 		passId=2147,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[841] =
+{
+ 		id=841,
+ 		passId=2147,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[842] =
+{
+ 		id=842,
+ 		passId=2147,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[843] =
+{
+ 		id=843,
+ 		passId=2147,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[844] =
+{
+ 		id=844,
+ 		passId=2147,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[845] =
+{
+ 		id=845,
+ 		passId=2147,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[846] =
+{
+ 		id=846,
+ 		passId=2147,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[847] =
+{
+ 		id=847,
+ 		passId=2147,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[848] =
+{
+ 		id=848,
+ 		passId=2147,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[849] =
+{
+ 		id=849,
+ 		passId=2147,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[850] =
+{
+ 		id=850,
+ 		passId=2147,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[851] =
+{
+ 		id=851,
+ 		passId=2150,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[852] =
+{
+ 		id=852,
+ 		passId=2150,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[853] =
+{
+ 		id=853,
+ 		passId=2150,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[854] =
+{
+ 		id=854,
+ 		passId=2150,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[855] =
+{
+ 		id=855,
+ 		passId=2150,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[856] =
+{
+ 		id=856,
+ 		passId=2150,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[857] =
+{
+ 		id=857,
+ 		passId=2150,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[858] =
+{
+ 		id=858,
+ 		passId=2150,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[859] =
+{
+ 		id=859,
+ 		passId=2150,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[860] =
+{
+ 		id=860,
+ 		passId=2150,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[861] =
+{
+ 		id=861,
+ 		passId=2150,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[862] =
+{
+ 		id=862,
+ 		passId=2150,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[863] =
+{
+ 		id=863,
+ 		passId=2150,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[864] =
+{
+ 		id=864,
+ 		passId=2150,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[865] =
+{
+ 		id=865,
+ 		passId=2150,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[866] =
+{
+ 		id=866,
+ 		passId=2150,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[867] =
+{
+ 		id=867,
+ 		passId=2150,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[868] =
+{
+ 		id=868,
+ 		passId=2150,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[869] =
+{
+ 		id=869,
+ 		passId=2150,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[870] =
+{
+ 		id=870,
+ 		passId=2150,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[871] =
+{
+ 		id=871,
+ 		passId=2150,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[872] =
+{
+ 		id=872,
+ 		passId=2150,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[873] =
+{
+ 		id=873,
+ 		passId=2150,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[874] =
+{
+ 		id=874,
+ 		passId=2150,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[875] =
+{
+ 		id=875,
+ 		passId=2150,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[876] =
+{
+ 		id=876,
+ 		passId=2150,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[877] =
+{
+ 		id=877,
+ 		passId=2150,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[878] =
+{
+ 		id=878,
+ 		passId=2150,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[879] =
+{
+ 		id=879,
+ 		passId=2150,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[880] =
+{
+ 		id=880,
+ 		passId=2150,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[881] =
+{
+ 		id=881,
+ 		passId=2150,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[882] =
+{
+ 		id=882,
+ 		passId=2150,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[883] =
+{
+ 		id=883,
+ 		passId=2150,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[884] =
+{
+ 		id=884,
+ 		passId=2150,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[885] =
+{
+ 		id=885,
+ 		passId=2150,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[886] =
+{
+ 		id=886,
+ 		passId=2150,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[887] =
+{
+ 		id=887,
+ 		passId=2150,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[888] =
+{
+ 		id=888,
+ 		passId=2150,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[889] =
+{
+ 		id=889,
+ 		passId=2150,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[890] =
+{
+ 		id=890,
+ 		passId=2150,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[891] =
+{
+ 		id=891,
+ 		passId=2150,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[892] =
+{
+ 		id=892,
+ 		passId=2150,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[893] =
+{
+ 		id=893,
+ 		passId=2150,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[894] =
+{
+ 		id=894,
+ 		passId=2150,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[895] =
+{
+ 		id=895,
+ 		passId=2150,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[896] =
+{
+ 		id=896,
+ 		passId=2150,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[897] =
+{
+ 		id=897,
+ 		passId=2150,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[898] =
+{
+ 		id=898,
+ 		passId=2150,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[899] =
+{
+ 		id=899,
+ 		passId=2150,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[900] =
+{
+ 		id=900,
+ 		passId=2150,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[901] =
+{
+ 		id=901,
+ 		passId=2153,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[902] =
+{
+ 		id=902,
+ 		passId=2153,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[903] =
+{
+ 		id=903,
+ 		passId=2153,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[904] =
+{
+ 		id=904,
+ 		passId=2153,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[905] =
+{
+ 		id=905,
+ 		passId=2153,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[906] =
+{
+ 		id=906,
+ 		passId=2153,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[907] =
+{
+ 		id=907,
+ 		passId=2153,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[908] =
+{
+ 		id=908,
+ 		passId=2153,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[909] =
+{
+ 		id=909,
+ 		passId=2153,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[910] =
+{
+ 		id=910,
+ 		passId=2153,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[911] =
+{
+ 		id=911,
+ 		passId=2153,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[912] =
+{
+ 		id=912,
+ 		passId=2153,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[913] =
+{
+ 		id=913,
+ 		passId=2153,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[914] =
+{
+ 		id=914,
+ 		passId=2153,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[915] =
+{
+ 		id=915,
+ 		passId=2153,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[916] =
+{
+ 		id=916,
+ 		passId=2153,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[917] =
+{
+ 		id=917,
+ 		passId=2153,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[918] =
+{
+ 		id=918,
+ 		passId=2153,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[919] =
+{
+ 		id=919,
+ 		passId=2153,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[920] =
+{
+ 		id=920,
+ 		passId=2153,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[921] =
+{
+ 		id=921,
+ 		passId=2153,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[922] =
+{
+ 		id=922,
+ 		passId=2153,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[923] =
+{
+ 		id=923,
+ 		passId=2153,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[924] =
+{
+ 		id=924,
+ 		passId=2153,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[925] =
+{
+ 		id=925,
+ 		passId=2153,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[926] =
+{
+ 		id=926,
+ 		passId=2153,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[927] =
+{
+ 		id=927,
+ 		passId=2153,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[928] =
+{
+ 		id=928,
+ 		passId=2153,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[929] =
+{
+ 		id=929,
+ 		passId=2153,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[930] =
+{
+ 		id=930,
+ 		passId=2153,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[931] =
+{
+ 		id=931,
+ 		passId=2153,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[932] =
+{
+ 		id=932,
+ 		passId=2153,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[933] =
+{
+ 		id=933,
+ 		passId=2153,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[934] =
+{
+ 		id=934,
+ 		passId=2153,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[935] =
+{
+ 		id=935,
+ 		passId=2153,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[936] =
+{
+ 		id=936,
+ 		passId=2153,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[937] =
+{
+ 		id=937,
+ 		passId=2153,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[938] =
+{
+ 		id=938,
+ 		passId=2153,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[939] =
+{
+ 		id=939,
+ 		passId=2153,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[940] =
+{
+ 		id=940,
+ 		passId=2153,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[941] =
+{
+ 		id=941,
+ 		passId=2153,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[942] =
+{
+ 		id=942,
+ 		passId=2153,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[943] =
+{
+ 		id=943,
+ 		passId=2153,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[944] =
+{
+ 		id=944,
+ 		passId=2153,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[945] =
+{
+ 		id=945,
+ 		passId=2153,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[946] =
+{
+ 		id=946,
+ 		passId=2153,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[947] =
+{
+ 		id=947,
+ 		passId=2153,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[948] =
+{
+ 		id=948,
+ 		passId=2153,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[949] =
+{
+ 		id=949,
+ 		passId=2153,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[950] =
+{
+ 		id=950,
+ 		passId=2153,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[951] =
+{
+ 		id=951,
+ 		passId=2156,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[952] =
+{
+ 		id=952,
+ 		passId=2156,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[953] =
+{
+ 		id=953,
+ 		passId=2156,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[954] =
+{
+ 		id=954,
+ 		passId=2156,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[955] =
+{
+ 		id=955,
+ 		passId=2156,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[956] =
+{
+ 		id=956,
+ 		passId=2156,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[957] =
+{
+ 		id=957,
+ 		passId=2156,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[958] =
+{
+ 		id=958,
+ 		passId=2156,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[959] =
+{
+ 		id=959,
+ 		passId=2156,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[960] =
+{
+ 		id=960,
+ 		passId=2156,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[961] =
+{
+ 		id=961,
+ 		passId=2156,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[962] =
+{
+ 		id=962,
+ 		passId=2156,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[963] =
+{
+ 		id=963,
+ 		passId=2156,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[964] =
+{
+ 		id=964,
+ 		passId=2156,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[965] =
+{
+ 		id=965,
+ 		passId=2156,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[966] =
+{
+ 		id=966,
+ 		passId=2156,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[967] =
+{
+ 		id=967,
+ 		passId=2156,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[968] =
+{
+ 		id=968,
+ 		passId=2156,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[969] =
+{
+ 		id=969,
+ 		passId=2156,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[970] =
+{
+ 		id=970,
+ 		passId=2156,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[971] =
+{
+ 		id=971,
+ 		passId=2156,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[972] =
+{
+ 		id=972,
+ 		passId=2156,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[973] =
+{
+ 		id=973,
+ 		passId=2156,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[974] =
+{
+ 		id=974,
+ 		passId=2156,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[975] =
+{
+ 		id=975,
+ 		passId=2156,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[976] =
+{
+ 		id=976,
+ 		passId=2156,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[977] =
+{
+ 		id=977,
+ 		passId=2156,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[978] =
+{
+ 		id=978,
+ 		passId=2156,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[979] =
+{
+ 		id=979,
+ 		passId=2156,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[980] =
+{
+ 		id=980,
+ 		passId=2156,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[981] =
+{
+ 		id=981,
+ 		passId=2156,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[982] =
+{
+ 		id=982,
+ 		passId=2156,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[983] =
+{
+ 		id=983,
+ 		passId=2156,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[984] =
+{
+ 		id=984,
+ 		passId=2156,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[985] =
+{
+ 		id=985,
+ 		passId=2156,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[986] =
+{
+ 		id=986,
+ 		passId=2156,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[987] =
+{
+ 		id=987,
+ 		passId=2156,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[988] =
+{
+ 		id=988,
+ 		passId=2156,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[989] =
+{
+ 		id=989,
+ 		passId=2156,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[990] =
+{
+ 		id=990,
+ 		passId=2156,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[991] =
+{
+ 		id=991,
+ 		passId=2156,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[992] =
+{
+ 		id=992,
+ 		passId=2156,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[993] =
+{
+ 		id=993,
+ 		passId=2156,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[994] =
+{
+ 		id=994,
+ 		passId=2156,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[995] =
+{
+ 		id=995,
+ 		passId=2156,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[996] =
+{
+ 		id=996,
+ 		passId=2156,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[997] =
+{
+ 		id=997,
+ 		passId=2156,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[998] =
+{
+ 		id=998,
+ 		passId=2156,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[999] =
+{
+ 		id=999,
+ 		passId=2156,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[1000] =
+{
+ 		id=1000,
+ 		passId=2156,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[1001] =
+{
+ 		id=1001,
+ 		passId=2159,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[1002] =
+{
+ 		id=1002,
+ 		passId=2159,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[1003] =
+{
+ 		id=1003,
+ 		passId=2159,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[1004] =
+{
+ 		id=1004,
+ 		passId=2159,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[1005] =
+{
+ 		id=1005,
+ 		passId=2159,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[1006] =
+{
+ 		id=1006,
+ 		passId=2159,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[1007] =
+{
+ 		id=1007,
+ 		passId=2159,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[1008] =
+{
+ 		id=1008,
+ 		passId=2159,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[1009] =
+{
+ 		id=1009,
+ 		passId=2159,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[1010] =
+{
+ 		id=1010,
+ 		passId=2159,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[1011] =
+{
+ 		id=1011,
+ 		passId=2159,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[1012] =
+{
+ 		id=1012,
+ 		passId=2159,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[1013] =
+{
+ 		id=1013,
+ 		passId=2159,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[1014] =
+{
+ 		id=1014,
+ 		passId=2159,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[1015] =
+{
+ 		id=1015,
+ 		passId=2159,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[1016] =
+{
+ 		id=1016,
+ 		passId=2159,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[1017] =
+{
+ 		id=1017,
+ 		passId=2159,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[1018] =
+{
+ 		id=1018,
+ 		passId=2159,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[1019] =
+{
+ 		id=1019,
+ 		passId=2159,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[1020] =
+{
+ 		id=1020,
+ 		passId=2159,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[1021] =
+{
+ 		id=1021,
+ 		passId=2159,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[1022] =
+{
+ 		id=1022,
+ 		passId=2159,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[1023] =
+{
+ 		id=1023,
+ 		passId=2159,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[1024] =
+{
+ 		id=1024,
+ 		passId=2159,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[1025] =
+{
+ 		id=1025,
+ 		passId=2159,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[1026] =
+{
+ 		id=1026,
+ 		passId=2159,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[1027] =
+{
+ 		id=1027,
+ 		passId=2159,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[1028] =
+{
+ 		id=1028,
+ 		passId=2159,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[1029] =
+{
+ 		id=1029,
+ 		passId=2159,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[1030] =
+{
+ 		id=1030,
+ 		passId=2159,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[1031] =
+{
+ 		id=1031,
+ 		passId=2159,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[1032] =
+{
+ 		id=1032,
+ 		passId=2159,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[1033] =
+{
+ 		id=1033,
+ 		passId=2159,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[1034] =
+{
+ 		id=1034,
+ 		passId=2159,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[1035] =
+{
+ 		id=1035,
+ 		passId=2159,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[1036] =
+{
+ 		id=1036,
+ 		passId=2159,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[1037] =
+{
+ 		id=1037,
+ 		passId=2159,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[1038] =
+{
+ 		id=1038,
+ 		passId=2159,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[1039] =
+{
+ 		id=1039,
+ 		passId=2159,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[1040] =
+{
+ 		id=1040,
+ 		passId=2159,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[1041] =
+{
+ 		id=1041,
+ 		passId=2159,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[1042] =
+{
+ 		id=1042,
+ 		passId=2159,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[1043] =
+{
+ 		id=1043,
+ 		passId=2159,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[1044] =
+{
+ 		id=1044,
+ 		passId=2159,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[1045] =
+{
+ 		id=1045,
+ 		passId=2159,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[1046] =
+{
+ 		id=1046,
+ 		passId=2159,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[1047] =
+{
+ 		id=1047,
+ 		passId=2159,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[1048] =
+{
+ 		id=1048,
+ 		passId=2159,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[1049] =
+{
+ 		id=1049,
+ 		passId=2159,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[1050] =
+{
+ 		id=1050,
+ 		passId=2159,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[1051] =
+{
+ 		id=1051,
+ 		passId=2162,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[1052] =
+{
+ 		id=1052,
+ 		passId=2162,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[1053] =
+{
+ 		id=1053,
+ 		passId=2162,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[1054] =
+{
+ 		id=1054,
+ 		passId=2162,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[1055] =
+{
+ 		id=1055,
+ 		passId=2162,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[1056] =
+{
+ 		id=1056,
+ 		passId=2162,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[1057] =
+{
+ 		id=1057,
+ 		passId=2162,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[1058] =
+{
+ 		id=1058,
+ 		passId=2162,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[1059] =
+{
+ 		id=1059,
+ 		passId=2162,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[1060] =
+{
+ 		id=1060,
+ 		passId=2162,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[1061] =
+{
+ 		id=1061,
+ 		passId=2162,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[1062] =
+{
+ 		id=1062,
+ 		passId=2162,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[1063] =
+{
+ 		id=1063,
+ 		passId=2162,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[1064] =
+{
+ 		id=1064,
+ 		passId=2162,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[1065] =
+{
+ 		id=1065,
+ 		passId=2162,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[1066] =
+{
+ 		id=1066,
+ 		passId=2162,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[1067] =
+{
+ 		id=1067,
+ 		passId=2162,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[1068] =
+{
+ 		id=1068,
+ 		passId=2162,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[1069] =
+{
+ 		id=1069,
+ 		passId=2162,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[1070] =
+{
+ 		id=1070,
+ 		passId=2162,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[1071] =
+{
+ 		id=1071,
+ 		passId=2162,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[1072] =
+{
+ 		id=1072,
+ 		passId=2162,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[1073] =
+{
+ 		id=1073,
+ 		passId=2162,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[1074] =
+{
+ 		id=1074,
+ 		passId=2162,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[1075] =
+{
+ 		id=1075,
+ 		passId=2162,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[1076] =
+{
+ 		id=1076,
+ 		passId=2162,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[1077] =
+{
+ 		id=1077,
+ 		passId=2162,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[1078] =
+{
+ 		id=1078,
+ 		passId=2162,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[1079] =
+{
+ 		id=1079,
+ 		passId=2162,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[1080] =
+{
+ 		id=1080,
+ 		passId=2162,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[1081] =
+{
+ 		id=1081,
+ 		passId=2162,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[1082] =
+{
+ 		id=1082,
+ 		passId=2162,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[1083] =
+{
+ 		id=1083,
+ 		passId=2162,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[1084] =
+{
+ 		id=1084,
+ 		passId=2162,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[1085] =
+{
+ 		id=1085,
+ 		passId=2162,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[1086] =
+{
+ 		id=1086,
+ 		passId=2162,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[1087] =
+{
+ 		id=1087,
+ 		passId=2162,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[1088] =
+{
+ 		id=1088,
+ 		passId=2162,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[1089] =
+{
+ 		id=1089,
+ 		passId=2162,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[1090] =
+{
+ 		id=1090,
+ 		passId=2162,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[1091] =
+{
+ 		id=1091,
+ 		passId=2162,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[1092] =
+{
+ 		id=1092,
+ 		passId=2162,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[1093] =
+{
+ 		id=1093,
+ 		passId=2162,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[1094] =
+{
+ 		id=1094,
+ 		passId=2162,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[1095] =
+{
+ 		id=1095,
+ 		passId=2162,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[1096] =
+{
+ 		id=1096,
+ 		passId=2162,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[1097] =
+{
+ 		id=1097,
+ 		passId=2162,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[1098] =
+{
+ 		id=1098,
+ 		passId=2162,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[1099] =
+{
+ 		id=1099,
+ 		passId=2162,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[1100] =
+{
+ 		id=1100,
+ 		passId=2162,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[1101] =
+{
+ 		id=1101,
+ 		passId=2165,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[1102] =
+{
+ 		id=1102,
+ 		passId=2165,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[1103] =
+{
+ 		id=1103,
+ 		passId=2165,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[1104] =
+{
+ 		id=1104,
+ 		passId=2165,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[1105] =
+{
+ 		id=1105,
+ 		passId=2165,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[1106] =
+{
+ 		id=1106,
+ 		passId=2165,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[1107] =
+{
+ 		id=1107,
+ 		passId=2165,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[1108] =
+{
+ 		id=1108,
+ 		passId=2165,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[1109] =
+{
+ 		id=1109,
+ 		passId=2165,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[1110] =
+{
+ 		id=1110,
+ 		passId=2165,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[1111] =
+{
+ 		id=1111,
+ 		passId=2165,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[1112] =
+{
+ 		id=1112,
+ 		passId=2165,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[1113] =
+{
+ 		id=1113,
+ 		passId=2165,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[1114] =
+{
+ 		id=1114,
+ 		passId=2165,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[1115] =
+{
+ 		id=1115,
+ 		passId=2165,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[1116] =
+{
+ 		id=1116,
+ 		passId=2165,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[1117] =
+{
+ 		id=1117,
+ 		passId=2165,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[1118] =
+{
+ 		id=1118,
+ 		passId=2165,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[1119] =
+{
+ 		id=1119,
+ 		passId=2165,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[1120] =
+{
+ 		id=1120,
+ 		passId=2165,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[1121] =
+{
+ 		id=1121,
+ 		passId=2165,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[1122] =
+{
+ 		id=1122,
+ 		passId=2165,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[1123] =
+{
+ 		id=1123,
+ 		passId=2165,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[1124] =
+{
+ 		id=1124,
+ 		passId=2165,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[1125] =
+{
+ 		id=1125,
+ 		passId=2165,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[1126] =
+{
+ 		id=1126,
+ 		passId=2165,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[1127] =
+{
+ 		id=1127,
+ 		passId=2165,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[1128] =
+{
+ 		id=1128,
+ 		passId=2165,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[1129] =
+{
+ 		id=1129,
+ 		passId=2165,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[1130] =
+{
+ 		id=1130,
+ 		passId=2165,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[1131] =
+{
+ 		id=1131,
+ 		passId=2165,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[1132] =
+{
+ 		id=1132,
+ 		passId=2165,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[1133] =
+{
+ 		id=1133,
+ 		passId=2165,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[1134] =
+{
+ 		id=1134,
+ 		passId=2165,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[1135] =
+{
+ 		id=1135,
+ 		passId=2165,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[1136] =
+{
+ 		id=1136,
+ 		passId=2165,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[1137] =
+{
+ 		id=1137,
+ 		passId=2165,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[1138] =
+{
+ 		id=1138,
+ 		passId=2165,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[1139] =
+{
+ 		id=1139,
+ 		passId=2165,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[1140] =
+{
+ 		id=1140,
+ 		passId=2165,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[1141] =
+{
+ 		id=1141,
+ 		passId=2165,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[1142] =
+{
+ 		id=1142,
+ 		passId=2165,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[1143] =
+{
+ 		id=1143,
+ 		passId=2165,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[1144] =
+{
+ 		id=1144,
+ 		passId=2165,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[1145] =
+{
+ 		id=1145,
+ 		passId=2165,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[1146] =
+{
+ 		id=1146,
+ 		passId=2165,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[1147] =
+{
+ 		id=1147,
+ 		passId=2165,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[1148] =
+{
+ 		id=1148,
+ 		passId=2165,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[1149] =
+{
+ 		id=1149,
+ 		passId=2165,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[1150] =
+{
+ 		id=1150,
+ 		passId=2165,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+},
+[1151] =
+{
+ 		id=1151,
+ 		passId=2168,
+ 		levelPoint=100,
+ 		upgradePoint=100,
+ 		passLevel=1,
+ 		freeReward=1501,
+ 	payReward=1601
+},
+[1152] =
+{
+ 		id=1152,
+ 		passId=2168,
+ 		passPoint=100,
+ 		levelPoint=100,
+ 		upgradePoint=200,
+ 		passLevel=2,
+ 		freeReward=1502,
+ 	payReward=1602
+},
+[1153] =
+{
+ 		id=1153,
+ 		passId=2168,
+ 		passPoint=200,
+ 		levelPoint=100,
+ 		upgradePoint=300,
+ 		passLevel=3,
+ 		freeReward=1503,
+ 	payReward=1603
+},
+[1154] =
+{
+ 		id=1154,
+ 		passId=2168,
+ 		passPoint=300,
+ 		levelPoint=100,
+ 		upgradePoint=400,
+ 		passLevel=4,
+ 		freeReward=1504,
+ 	payReward=1604
+},
+[1155] =
+{
+ 		id=1155,
+ 		passId=2168,
+ 		passPoint=400,
+ 		levelPoint=100,
+ 		upgradePoint=500,
+ 		passLevel=5,
+ 		isStage=1,
+ 		freeReward=1505,
+ 	payReward=1605
+},
+[1156] =
+{
+ 		id=1156,
+ 		passId=2168,
+ 		passPoint=500,
+ 		levelPoint=100,
+ 		upgradePoint=600,
+ 		passLevel=6,
+ 		freeReward=1506,
+ 	payReward=1606
+},
+[1157] =
+{
+ 		id=1157,
+ 		passId=2168,
+ 		passPoint=600,
+ 		levelPoint=100,
+ 		upgradePoint=700,
+ 		passLevel=7,
+ 		freeReward=1507,
+ 	payReward=1607
+},
+[1158] =
+{
+ 		id=1158,
+ 		passId=2168,
+ 		passPoint=700,
+ 		levelPoint=100,
+ 		upgradePoint=800,
+ 		passLevel=8,
+ 		freeReward=1508,
+ 	payReward=1608
+},
+[1159] =
+{
+ 		id=1159,
+ 		passId=2168,
+ 		passPoint=800,
+ 		levelPoint=100,
+ 		upgradePoint=900,
+ 		passLevel=9,
+ 		freeReward=1509,
+ 	payReward=1609
+},
+[1160] =
+{
+ 		id=1160,
+ 		passId=2168,
+ 		passPoint=900,
+ 		levelPoint=100,
+ 		upgradePoint=1000,
+ 		passLevel=10,
+ 		isStage=1,
+ 		freeReward=1510,
+ 	payReward=1610
+},
+[1161] =
+{
+ 		id=1161,
+ 		passId=2168,
+ 		passPoint=1000,
+ 		levelPoint=100,
+ 		upgradePoint=1100,
+ 		passLevel=11,
+ 		freeReward=1511,
+ 	payReward=1611
+},
+[1162] =
+{
+ 		id=1162,
+ 		passId=2168,
+ 		passPoint=1100,
+ 		levelPoint=100,
+ 		upgradePoint=1200,
+ 		passLevel=12,
+ 		freeReward=1512,
+ 	payReward=1612
+},
+[1163] =
+{
+ 		id=1163,
+ 		passId=2168,
+ 		passPoint=1200,
+ 		levelPoint=100,
+ 		upgradePoint=1300,
+ 		passLevel=13,
+ 		freeReward=1513,
+ 	payReward=1613
+},
+[1164] =
+{
+ 		id=1164,
+ 		passId=2168,
+ 		passPoint=1300,
+ 		levelPoint=100,
+ 		upgradePoint=1400,
+ 		passLevel=14,
+ 		freeReward=1514,
+ 	payReward=1614
+},
+[1165] =
+{
+ 		id=1165,
+ 		passId=2168,
+ 		passPoint=1400,
+ 		levelPoint=100,
+ 		upgradePoint=1500,
+ 		passLevel=15,
+ 		isStage=1,
+ 		freeReward=1515,
+ 	payReward=1615
+},
+[1166] =
+{
+ 		id=1166,
+ 		passId=2168,
+ 		passPoint=1500,
+ 		levelPoint=100,
+ 		upgradePoint=1600,
+ 		passLevel=16,
+ 		freeReward=1516,
+ 	payReward=1616
+},
+[1167] =
+{
+ 		id=1167,
+ 		passId=2168,
+ 		passPoint=1600,
+ 		levelPoint=100,
+ 		upgradePoint=1700,
+ 		passLevel=17,
+ 		freeReward=1517,
+ 	payReward=1617
+},
+[1168] =
+{
+ 		id=1168,
+ 		passId=2168,
+ 		passPoint=1700,
+ 		levelPoint=100,
+ 		upgradePoint=1800,
+ 		passLevel=18,
+ 		freeReward=1518,
+ 	payReward=1618
+},
+[1169] =
+{
+ 		id=1169,
+ 		passId=2168,
+ 		passPoint=1800,
+ 		levelPoint=100,
+ 		upgradePoint=1900,
+ 		passLevel=19,
+ 		freeReward=1519,
+ 	payReward=1619
+},
+[1170] =
+{
+ 		id=1170,
+ 		passId=2168,
+ 		passPoint=1900,
+ 		levelPoint=100,
+ 		upgradePoint=2000,
+ 		passLevel=20,
+ 		isStage=1,
+ 		freeReward=1520,
+ 	payReward=1620
+},
+[1171] =
+{
+ 		id=1171,
+ 		passId=2168,
+ 		passPoint=2000,
+ 		levelPoint=100,
+ 		upgradePoint=2100,
+ 		passLevel=21,
+ 		freeReward=1521,
+ 	payReward=1621
+},
+[1172] =
+{
+ 		id=1172,
+ 		passId=2168,
+ 		passPoint=2100,
+ 		levelPoint=100,
+ 		upgradePoint=2200,
+ 		passLevel=22,
+ 		freeReward=1522,
+ 	payReward=1622
+},
+[1173] =
+{
+ 		id=1173,
+ 		passId=2168,
+ 		passPoint=2200,
+ 		levelPoint=100,
+ 		upgradePoint=2300,
+ 		passLevel=23,
+ 		freeReward=1523,
+ 	payReward=1623
+},
+[1174] =
+{
+ 		id=1174,
+ 		passId=2168,
+ 		passPoint=2300,
+ 		levelPoint=100,
+ 		upgradePoint=2400,
+ 		passLevel=24,
+ 		freeReward=1524,
+ 	payReward=1624
+},
+[1175] =
+{
+ 		id=1175,
+ 		passId=2168,
+ 		passPoint=2400,
+ 		levelPoint=100,
+ 		upgradePoint=2500,
+ 		passLevel=25,
+ 		isStage=1,
+ 		freeReward=1525,
+ 	payReward=1625
+},
+[1176] =
+{
+ 		id=1176,
+ 		passId=2168,
+ 		passPoint=2500,
+ 		levelPoint=100,
+ 		upgradePoint=2600,
+ 		passLevel=26,
+ 		freeReward=1526,
+ 	payReward=1626
+},
+[1177] =
+{
+ 		id=1177,
+ 		passId=2168,
+ 		passPoint=2600,
+ 		levelPoint=100,
+ 		upgradePoint=2700,
+ 		passLevel=27,
+ 		freeReward=1527,
+ 	payReward=1627
+},
+[1178] =
+{
+ 		id=1178,
+ 		passId=2168,
+ 		passPoint=2700,
+ 		levelPoint=100,
+ 		upgradePoint=2800,
+ 		passLevel=28,
+ 		freeReward=1528,
+ 	payReward=1628
+},
+[1179] =
+{
+ 		id=1179,
+ 		passId=2168,
+ 		passPoint=2800,
+ 		levelPoint=100,
+ 		upgradePoint=2900,
+ 		passLevel=29,
+ 		freeReward=1529,
+ 	payReward=1629
+},
+[1180] =
+{
+ 		id=1180,
+ 		passId=2168,
+ 		passPoint=2900,
+ 		levelPoint=100,
+ 		upgradePoint=3000,
+ 		passLevel=30,
+ 		isStage=1,
+ 		freeReward=1530,
+ 	payReward=1630
+},
+[1181] =
+{
+ 		id=1181,
+ 		passId=2168,
+ 		passPoint=3000,
+ 		levelPoint=100,
+ 		upgradePoint=3100,
+ 		passLevel=31,
+ 		freeReward=1531,
+ 	payReward=1631
+},
+[1182] =
+{
+ 		id=1182,
+ 		passId=2168,
+ 		passPoint=3100,
+ 		levelPoint=100,
+ 		upgradePoint=3200,
+ 		passLevel=32,
+ 		freeReward=1532,
+ 	payReward=1632
+},
+[1183] =
+{
+ 		id=1183,
+ 		passId=2168,
+ 		passPoint=3200,
+ 		levelPoint=100,
+ 		upgradePoint=3300,
+ 		passLevel=33,
+ 		freeReward=1533,
+ 	payReward=1633
+},
+[1184] =
+{
+ 		id=1184,
+ 		passId=2168,
+ 		passPoint=3300,
+ 		levelPoint=100,
+ 		upgradePoint=3400,
+ 		passLevel=34,
+ 		freeReward=1534,
+ 	payReward=1634
+},
+[1185] =
+{
+ 		id=1185,
+ 		passId=2168,
+ 		passPoint=3400,
+ 		levelPoint=100,
+ 		upgradePoint=3500,
+ 		passLevel=35,
+ 		isStage=1,
+ 		freeReward=1535,
+ 	payReward=1635
+},
+[1186] =
+{
+ 		id=1186,
+ 		passId=2168,
+ 		passPoint=3500,
+ 		levelPoint=100,
+ 		upgradePoint=3600,
+ 		passLevel=36,
+ 		freeReward=1536,
+ 	payReward=1636
+},
+[1187] =
+{
+ 		id=1187,
+ 		passId=2168,
+ 		passPoint=3600,
+ 		levelPoint=100,
+ 		upgradePoint=3700,
+ 		passLevel=37,
+ 		freeReward=1537,
+ 	payReward=1637
+},
+[1188] =
+{
+ 		id=1188,
+ 		passId=2168,
+ 		passPoint=3700,
+ 		levelPoint=100,
+ 		upgradePoint=3800,
+ 		passLevel=38,
+ 		freeReward=1538,
+ 	payReward=1638
+},
+[1189] =
+{
+ 		id=1189,
+ 		passId=2168,
+ 		passPoint=3800,
+ 		levelPoint=100,
+ 		upgradePoint=3900,
+ 		passLevel=39,
+ 		freeReward=1539,
+ 	payReward=1639
+},
+[1190] =
+{
+ 		id=1190,
+ 		passId=2168,
+ 		passPoint=3900,
+ 		levelPoint=100,
+ 		upgradePoint=4000,
+ 		passLevel=40,
+ 		isStage=1,
+ 		freeReward=1540,
+ 	payReward=1640
+},
+[1191] =
+{
+ 		id=1191,
+ 		passId=2168,
+ 		passPoint=4000,
+ 		levelPoint=100,
+ 		upgradePoint=4100,
+ 		passLevel=41,
+ 		freeReward=1541,
+ 	payReward=1641
+},
+[1192] =
+{
+ 		id=1192,
+ 		passId=2168,
+ 		passPoint=4100,
+ 		levelPoint=100,
+ 		upgradePoint=4200,
+ 		passLevel=42,
+ 		freeReward=1542,
+ 	payReward=1642
+},
+[1193] =
+{
+ 		id=1193,
+ 		passId=2168,
+ 		passPoint=4200,
+ 		levelPoint=100,
+ 		upgradePoint=4300,
+ 		passLevel=43,
+ 		freeReward=1543,
+ 	payReward=1643
+},
+[1194] =
+{
+ 		id=1194,
+ 		passId=2168,
+ 		passPoint=4300,
+ 		levelPoint=100,
+ 		upgradePoint=4400,
+ 		passLevel=44,
+ 		freeReward=1544,
+ 	payReward=1644
+},
+[1195] =
+{
+ 		id=1195,
+ 		passId=2168,
+ 		passPoint=4400,
+ 		levelPoint=100,
+ 		upgradePoint=4500,
+ 		passLevel=45,
+ 		isStage=1,
+ 		freeReward=1545,
+ 	payReward=1645
+},
+[1196] =
+{
+ 		id=1196,
+ 		passId=2168,
+ 		passPoint=4500,
+ 		levelPoint=100,
+ 		upgradePoint=4600,
+ 		passLevel=46,
+ 		freeReward=1546,
+ 	payReward=1646
+},
+[1197] =
+{
+ 		id=1197,
+ 		passId=2168,
+ 		passPoint=4600,
+ 		levelPoint=100,
+ 		upgradePoint=4700,
+ 		passLevel=47,
+ 		freeReward=1547,
+ 	payReward=1647
+},
+[1198] =
+{
+ 		id=1198,
+ 		passId=2168,
+ 		passPoint=4700,
+ 		levelPoint=100,
+ 		upgradePoint=4800,
+ 		passLevel=48,
+ 		freeReward=1548,
+ 	payReward=1648
+},
+[1199] =
+{
+ 		id=1199,
+ 		passId=2168,
+ 		passPoint=4800,
+ 		levelPoint=100,
+ 		upgradePoint=4900,
+ 		passLevel=49,
+ 		freeReward=1549,
+ 	payReward=1649
+},
+[1200] =
+{
+ 		id=1200,
+ 		passId=2168,
+ 		passPoint=4900,
+ 		passLevel=50,
+ 		isStage=1,
+ 		freeReward=1550,
+ 	payReward=1650
+}
+}
+
+return {title=title, value=value}

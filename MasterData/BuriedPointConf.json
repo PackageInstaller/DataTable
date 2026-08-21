@@ -1,0 +1,1164 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5347398227398732618
+  },
+  "m_Name": "BuriedPointConf",
+  "buriedPointDatas": [
+    {
+      "name": "请求版本信息",
+      "eventId": "request_version",
+      "beforeLogin": 1,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "request_version",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "获取CDN版本信息",
+      "eventId": "request_update",
+      "beforeLogin": 1,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "request_update",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "开始加载游戏资源",
+      "eventId": "res_load_start",
+      "beforeLogin": 1,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "res_load_start",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "下载资源更新完成",
+      "eventId": "request_compelet",
+      "beforeLogin": 1,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "request_compelet",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "游戏资源加载完成",
+      "eventId": "res_load_complete",
+      "beforeLogin": 1,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "res_load_complete",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "热更开始",
+      "eventId": "hot_update_start",
+      "beforeLogin": 1,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "hot_update_start",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "热更完成",
+      "eventId": "hot_update_complete",
+      "beforeLogin": 1,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "hot_update_complete",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "SDK登陆成功",
+      "eventId": "sdk_success",
+      "beforeLogin": 1,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "sdk_success",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "游戏登陆界面",
+      "eventId": "login_interface",
+      "beforeLogin": 1,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "login_interface",
+          "keys": []
+        },
+        {
+          "channelId": 2,
+          "eventId": "login_interface",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "注册完成",
+      "eventId": "register_complete",
+      "beforeLogin": 1,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "register_complete",
+          "keys": []
+        },
+        {
+          "channelId": 1,
+          "eventId": "register_complete",
+          "keys": []
+        },
+        {
+          "channelId": 2,
+          "eventId": "register_complete",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "登录",
+      "eventId": "login",
+      "beforeLogin": 0,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "login",
+          "keys": []
+        },
+        {
+          "channelId": 2,
+          "eventId": "login",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "登出",
+      "eventId": "logout",
+      "beforeLogin": 0,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "logout",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "开始请求服务器",
+      "eventId": "server_request",
+      "beforeLogin": 1,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "server_request",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "连接服务器完成  ",
+      "eventId": "login_success",
+      "beforeLogin": 1,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "login_success",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "账号升级",
+      "eventId": "up_level",
+      "beforeLogin": 0,
+      "keys": [
+        "gameUserLevel"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "up_level",
+          "keys": [
+            "gameUserLevel"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "账户升级到2级",
+      "eventId": "valid",
+      "beforeLogin": 0,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "valid",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "起名",
+      "eventId": "create_role",
+      "beforeLogin": 0,
+      "keys": [
+        "nickName",
+        "userId"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "create_role",
+          "keys": [
+            "nickName",
+            "userId"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "改名",
+      "eventId": "update_name",
+      "beforeLogin": 0,
+      "keys": [
+        "nickName"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "update_name",
+          "keys": [
+            "nickName"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "英雄升级",
+      "eventId": "hero_level_up",
+      "beforeLogin": 0,
+      "keys": [
+        "hero_type",
+        "hero_quality",
+        "hero_id",
+        "hero_level"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "hero_level_up",
+          "keys": [
+            "hero_type",
+            "hero_quality",
+            "hero_id",
+            "hero_level"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "英雄技能升级",
+      "eventId": "hero_skill_up",
+      "beforeLogin": 0,
+      "keys": [
+        "hero_type",
+        "hero_quality",
+        "hero_id",
+        "skill_level"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "hero_skill_up",
+          "keys": [
+            "hero_type",
+            "hero_quality",
+            "hero_id",
+            "skill_level"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "英雄突破",
+      "eventId": "hero_advance_up",
+      "beforeLogin": 0,
+      "keys": [
+        "hero_type",
+        "hero_quality",
+        "hero_id",
+        "hero_level"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "hero_advance_up",
+          "keys": [
+            "hero_type",
+            "hero_quality",
+            "hero_id",
+            "hero_level"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "英雄跃迁",
+      "eventId": "hero_wake_up",
+      "beforeLogin": 0,
+      "keys": [
+        "hero_type",
+        "hero_quality",
+        "hero_id",
+        "wake_level"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "hero_wake_up",
+          "keys": [
+            "hero_type",
+            "hero_quality",
+            "hero_id",
+            "wake_level"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "英雄核心升级",
+      "eventId": "hero_core_up",
+      "beforeLogin": 0,
+      "keys": [
+        "hero_type",
+        "hero_quality",
+        "hero_id",
+        "core_id"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "hero_core_up",
+          "keys": [
+            "hero_type",
+            "hero_quality",
+            "hero_id",
+            "core_id"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "英雄基因升级",
+      "eventId": "hero_gene_up",
+      "beforeLogin": 0,
+      "keys": [
+        "hero_type",
+        "hero_quality",
+        "hero_id",
+        "gene_id",
+        "gene_level"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "hero_gene_up",
+          "keys": [
+            "hero_type",
+            "hero_quality",
+            "hero_id",
+            "gene_id",
+            "gene_level"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "进入宿舍",
+      "eventId": "dormitory_enter",
+      "beforeLogin": 0,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "dormitory_enter",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "离开宿舍",
+      "eventId": "dormitory_out",
+      "beforeLogin": 0,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "dormitory_out",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "事件剧情阅读",
+      "eventId": "plot_reading",
+      "beforeLogin": 0,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "plot_reading",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "亲密度",
+      "eventId": "favorability",
+      "beforeLogin": 0,
+      "keys": [
+        "favorability_level"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "favorability",
+          "keys": [
+            "favorability_level"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "互动",
+      "eventId": "interaction",
+      "beforeLogin": 0,
+      "keys": [
+        "interaction_type"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "interaction",
+          "keys": [
+            "interaction_type"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "领取氛围值奖励",
+      "eventId": "atmosphere",
+      "beforeLogin": 1,
+      "keys": [
+        "atmosphere_level"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "atmosphere",
+          "keys": [
+            "atmosphere_level"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "心情值点满",
+      "eventId": "mood",
+      "beforeLogin": 0,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "mood",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "通关0-5",
+      "eventId": "valid_user",
+      "beforeLogin": 0,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "valid_user",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "边仓升级",
+      "eventId": "cabin_level_up",
+      "beforeLogin": 0,
+      "keys": [
+        "cabin_id",
+        "cabin_level"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "cabin_level_up",
+          "keys": [
+            "cabin_id",
+            "cabin_level"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "边仓驻守",
+      "eventId": "cabin_garrison",
+      "beforeLogin": 0,
+      "keys": [
+        "cabin_id",
+        "garrison_hero_list"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "cabin_garrison",
+          "keys": [
+            "cabin_id",
+            "garrison_hero_list"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "边仓制造",
+      "eventId": "cabin_prodce",
+      "beforeLogin": 0,
+      "keys": [
+        "produce_item_id",
+        "produce_num"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "cabin_prodce",
+          "keys": [
+            "produce_item_id",
+            "produce_num"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "边仓领取制造奖励",
+      "eventId": "cabin_prodce_get",
+      "beforeLogin": 0,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "cabin_prodce_get",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "合成仓合成",
+      "eventId": "cabin_sythetic",
+      "beforeLogin": 0,
+      "keys": [
+        "synthetic_item_id",
+        "synthetic_num",
+        "synthetic_hero",
+        "synthetic_item_get"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "cabin_sythetic",
+          "keys": [
+            "synthetic_item_id",
+            "synthetic_num",
+            "synthetic_hero",
+            "synthetic_item_get"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "情报仓",
+      "eventId": "cabin_intelligence",
+      "beforeLogin": 0,
+      "keys": [
+        "task_id",
+        "condition_a",
+        "condition_b"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "cabin_intelligence",
+          "keys": [
+            "task_id",
+            "condition_a",
+            "condition_b"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "情报仓奖励领取",
+      "eventId": "cabin_intelligence_get",
+      "beforeLogin": 0,
+      "keys": [
+        "task_id"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "cabin_intelligence_get",
+          "keys": [
+            "task_id"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "做菜",
+      "eventId": "cabin_cooking",
+      "beforeLogin": 0,
+      "keys": [
+        "dish_id",
+        "dish_hero_id"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "cabin_cooking",
+          "keys": [
+            "dish_id",
+            "dish_hero_id"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "吃饭",
+      "eventId": "cabin_dinner",
+      "beforeLogin": 0,
+      "keys": [
+        "dinner_hero_id"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "cabin_dinner",
+          "keys": [
+            "dinner_hero_id"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "体力购买",
+      "eventId": "energy",
+      "beforeLogin": 0,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "energy",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "首充",
+      "eventId": "activity_recharge",
+      "beforeLogin": 0,
+      "keys": [],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "activity_recharge",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "name": "英雄抽卡",
+      "eventId": "lottery_draw",
+      "beforeLogin": 0,
+      "keys": [
+        "darw_mode",
+        "draw_type"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "lottery_draw",
+          "keys": [
+            "darw_mode",
+            "draw_type"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "礼物抽卡",
+      "eventId": "contraband_draw",
+      "beforeLogin": 0,
+      "keys": [
+        "darw_mode"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "contraband_draw",
+          "keys": [
+            "darw_mode"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "七日目标埋点",
+      "eventId": "activity_sevenday",
+      "beforeLogin": 0,
+      "keys": [
+        "sevenday_mission",
+        "sevenday_score"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "activity_sevenday",
+          "keys": [
+            "sevenday_mission",
+            "sevenday_score"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "战斗开始",
+      "eventId": "battle_start",
+      "beforeLogin": 0,
+      "keys": [
+        "stagetype",
+        "stage"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "battle_start",
+          "keys": [
+            "stagetype",
+            "stage"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "战斗中",
+      "eventId": "battle_mid",
+      "beforeLogin": 0,
+      "keys": [
+        "stagetype",
+        "stage",
+        "battle_mission_quit",
+        "battle_mission_again"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "battle_mid",
+          "keys": [
+            "stagetype",
+            "stage",
+            "battle_mission_quit",
+            "battle_mission_again"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "战斗结算",
+      "eventId": "battle_record",
+      "beforeLogin": 0,
+      "keys": [
+        "stagetype",
+        "stage",
+        "battle_hero_ids",
+        "battle_hero_levels",
+        "battle_hero_skills",
+        "is_victory",
+        "stageStar",
+        "battle_time",
+        "use_skills",
+        "hero_battle_amount",
+        "hero_leave_amount",
+        "is_first_pass",
+        "is_first_perfect"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "battle_record",
+          "keys": [
+            "stagetype",
+            "stage",
+            "battle_hero_ids",
+            "battle_hero_levels",
+            "battle_hero_skills",
+            "is_victory",
+            "stageStar",
+            "battle_time",
+            "use_skills",
+            "hero_battle_amount",
+            "hero_leave_amount",
+            "is_first_pass",
+            "is_first_perfect"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "剧情",
+      "eventId": "story",
+      "beforeLogin": 0,
+      "keys": [
+        "group_id",
+        "skip_num",
+        "point_id"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "story",
+          "keys": [
+            "group_id",
+            "skip_num",
+            "point_id"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "英雄获取",
+      "eventId": "hero_get",
+      "beforeLogin": 0,
+      "keys": [
+        "hero_type",
+        "hero_quality",
+        "hero_id",
+        "hero_level"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "hero_get",
+          "keys": [
+            "hero_type",
+            "hero_quality",
+            "hero_id",
+            "hero_level"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "新手引导",
+      "eventId": "guide",
+      "beforeLogin": 0,
+      "keys": [
+        "guide"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "guide",
+          "keys": [
+            "guide"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "拉起充值",
+      "eventId": "recharge_pull",
+      "beforeLogin": 0,
+      "keys": [
+        "payId",
+        "orderId",
+        "price"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "recharge_pull",
+          "keys": [
+            "payId"
+          ]
+        },
+        {
+          "channelId": 2,
+          "eventId": "recharge_pull",
+          "keys": [
+            "payId",
+            "orderId",
+            "price"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "充值",
+      "eventId": "recharge",
+      "beforeLogin": 0,
+      "keys": [
+        "platform",
+        "uuid",
+        "user_id",
+        "event_code",
+        "order_id",
+        "amount",
+        "unit",
+        "currency",
+        "pay_type",
+        "status",
+        "id",
+        "name"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "recharge",
+          "keys": [
+            "platform",
+            "uuid",
+            "user_id",
+            "event_code",
+            "order_id",
+            "amount",
+            "unit",
+            "currency",
+            "pay_type",
+            "status",
+            "",
+            ""
+          ]
+        },
+        {
+          "channelId": 1,
+          "eventId": "recharge",
+          "keys": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "pay_type",
+            "status",
+            "id",
+            "name"
+          ]
+        },
+        {
+          "channelId": 2,
+          "eventId": "recharge",
+          "keys": [
+            "",
+            "",
+            "",
+            "",
+            "order_id",
+            "amount",
+            "",
+            "",
+            "",
+            "",
+            "id",
+            "name"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "信用点消耗",
+      "eventId": "item5_ues",
+      "beforeLogin": 0,
+      "keys": [
+        "item5_ues_type",
+        "item5_ues_num"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "item5_ues",
+          "keys": [
+            "item5_ues_type",
+            "item5_ues_num"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "星斯消耗",
+      "eventId": "item6_ues",
+      "beforeLogin": 0,
+      "keys": [
+        "item6_ues_type",
+        "item6_ues_num"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "item6_ues",
+          "keys": [
+            "item6_ues_type",
+            "item6_ues_num"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "礼包购买",
+      "eventId": "shop_bag",
+      "beforeLogin": 0,
+      "keys": [
+        "shop_bag_id"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "shop_bag",
+          "keys": [
+            "shop_bag_id"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "补给兑换",
+      "eventId": "shop_Item_exchange",
+      "beforeLogin": 0,
+      "keys": [
+        "shop_lib",
+        "shop_item_id",
+        "shop_item_num"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "shop_Item_exchange",
+          "keys": [
+            "shop_lib",
+            "shop_item_id",
+            "shop_item_num"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "扫荡",
+      "eventId": "battle_sweep",
+      "beforeLogin": 0,
+      "keys": [
+        "stage",
+        "sweep_num"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "battle_sweep",
+          "keys": [
+            "stage",
+            "sweep_num"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "任务",
+      "eventId": "task",
+      "beforeLogin": 0,
+      "keys": [
+        "task_type",
+        "task_id"
+      ],
+      "buriedPointItemDatas": [
+        {
+          "channelId": 0,
+          "eventId": "task",
+          "keys": [
+            "task_type",
+            "task_id"
+          ]
+        }
+      ]
+    }
+  ],
+  "dataChannelTypes": [
+    {
+      "channelId": 0,
+      "channelName": "小牛",
+      "className": "GameX.XNPlusDataSender"
+    },
+    {
+      "channelId": 1,
+      "channelName": "字节",
+      "className": "GameX.ByteDanceDataSender"
+    },
+    {
+      "channelId": 2,
+      "channelName": "热云",
+      "className": "GameX.TrackingDataSender"
+    }
+  ]
+}

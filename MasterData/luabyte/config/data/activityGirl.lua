@@ -1,0 +1,54 @@
+local title = {
+	id = 0,
+	activityId = 0,
+	hero = {},
+	finalRank = {},
+	chapterType = {},
+	support = 0,
+	supportItemNum = 0,
+	supportReward = 0,
+	supportNum = 0,
+	banner = "",
+	desc = 0,
+	girlRank = 0,
+	girlFinalRank = 0,
+	eightTalk = {},
+	twoTalk = {},
+	winTalk = {},
+	desc2 = 0,
+	desc3 = 0,
+	auditionSettleTime = 0,
+	topEightTime = 0,
+	topEightSettleTime = 0,
+	top2Time = 0,
+	top2SettleTime = 0
+}
+
+local value = {
+[1] =
+{
+ 		id=1,
+ 		activityId=201,
+ 		hero={110001,110002,110004,110005,110006,110007,110009,110010,110011,120002,120003,120004,120005,120007,120008,120009,130001,130002,130003,130004,130005,130006,130009,140001,140002,140004,140007,150007},
+ 		finalRank={8,2,1},
+ 		chapterType={1,3,4},
+ 		support=5002,
+ 		supportItemNum=1,
+ 		supportReward=5001,
+ 		supportNum=1,
+ 		desc=453,
+ 		girlRank=10,
+ 		girlFinalRank=3,
+ 		eightTalk={70000011,70000012,70000014,70000015,70000016,70000017,70000044,70000018,70000021,70000022,70000023,70000024,70000025,70000037,70000038,70000039,70000032,70000034,70000026,70000027,70000028,70000029,70000045,70000046,70000040,70000041,70000042,70000043},
+ 		twoTalk={70000011,70000012,70000014,70000015,70000016,70000017,70000044,70000018,70000021,70000022,70000023,70000024,70000025,70000037,70000038,70000039,70000032,70000034,70000026,70000027,70000028,70000029,70000045,70000046,70000040,70000041,70000042,70000043},
+ 		winTalk={70000034,70000035},
+ 		desc2=453,
+ 		auditionSettleTime=1685826000,
+ 		topEightTime=1685912400,
+ 		topEightSettleTime=1686430800,
+ 		top2Time=1686517200,
+ 	top2SettleTime=1687035600
+}
+}
+
+return {title=title, value=value}

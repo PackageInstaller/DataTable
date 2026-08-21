@@ -1,0 +1,553 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8359430822174271028
+  },
+  "m_Name": "battleGuideStep14",
+  "groups": [
+    {
+      "groupId": 1,
+      "items": [
+        {
+          "stepId": 6,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "这里是调查任务展示区域，点击任务可查看任务详情。",
+            "descLanguageId": 0,
+            "targetName": "HeadBg",
+            "targetLayerPath": "Normal/WishjourneyUI_New(Clone)/WishjourneyMap/Bg/1/Mask_ani/HeadBg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 1260,
+            "height": 420,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": -267.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -57.12,
+              "y": 93.61
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40197,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "介绍界面1",
+          "GMMark": 0
+        },
+        {
+          "stepId": 7,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "这是任务重置按钮，点击按钮可将当前未进行的任务刷新。",
+            "descLanguageId": 0,
+            "targetName": "RefreshBtn",
+            "targetLayerPath": "Normal/WishjourneyUI_New(Clone)/WishjourneyMap/BotLeft_Layout/RefreshBtn",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 110,
+            "height": 90,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 24.41
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40198,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "介绍界面2",
+          "GMMark": 0
+        },
+        {
+          "stepId": 8,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "请点击此处查看任务内容。",
+            "descLanguageId": 0,
+            "targetName": "HeadBg",
+            "targetLayerPath": "Normal/WishjourneyUI_New(Clone)/WishjourneyMap/Bg/1/Mask_ani/HeadBg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 160,
+            "height": 80,
+            "connectRadius": 10,
+            "offset": {
+              "x": 142.67,
+              "y": 63.86
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": -15.6
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40199,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "进入任务详情",
+          "GMMark": 0
+        },
+        {
+          "stepId": 9,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "首要目标为必须达成的目标，次要目标为可选任务，若完成可获得额外奖励。",
+            "descLanguageId": 0,
+            "targetName": "0",
+            "targetLayerPath": "Normal/WishjourneyUI_New(Clone)/children/WishjourneyEquip_New(Clone)/BgLeft/Scroll View/Viewport/Content/0",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 290,
+            "height": 80,
+            "connectRadius": 10,
+            "offset": {
+              "x": 221.1,
+              "y": 203.27
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -240.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40200,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "委托目标介绍",
+          "GMMark": 0
+        },
+        {
+          "stepId": 10,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "这里显示的是完成任务后可获得的报酬，未达成目标无法领取对应奖励。",
+            "descLanguageId": 0,
+            "targetName": "0",
+            "targetLayerPath": "Normal/WishjourneyUI_New(Clone)/children/WishjourneyEquip_New(Clone)/BgLeft/Scroll View/Viewport/Content/0",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 203,
+            "height": 80,
+            "connectRadius": 10,
+            "offset": {
+              "x": 137.2,
+              "y": 19.73
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -240.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40201,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "任务报酬介绍",
+          "GMMark": 0
+        },
+        {
+          "stepId": 11,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "此区域是派遣战员区域，点击区域可选择派遣的战员。",
+            "descLanguageId": 0,
+            "targetName": "0",
+            "targetLayerPath": "Normal/WishjourneyUI_New(Clone)/children/WishjourneyEquip_New(Clone)/BgLeft/Hero/Scroll View/Viewport/Content/0",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 140,
+            "height": 100,
+            "connectRadius": 10,
+            "offset": {
+              "x": 62.56,
+              "y": 19.65
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -240.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40202,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "派遣战员介绍",
+          "GMMark": 0
+        },
+        {
+          "stepId": 13,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "此区域是任务补给区域，携带补给后完成任务可获得额外奖励。",
+            "descLanguageId": 0,
+            "targetName": "ComItemPfb_Small",
+            "targetLayerPath": "Normal/WishjourneyUI_New(Clone)/children/WishjourneyEquip_New(Clone)/BgLeft/Food/Scroll/Viewport/Content/0/ComItemPfb_Small",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 130,
+            "height": 90,
+            "connectRadius": 10,
+            "offset": {
+              "x": 54.63,
+              "y": 18.57
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -240.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40203,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "补给介绍",
+          "GMMark": 0
+        },
+        {
+          "stepId": 14,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "请点击此处，点击按钮可部署所有可达成的任务目标及补给。",
+            "descLanguageId": 0,
+            "targetName": "SpeedBtn",
+            "targetLayerPath": "Normal/WishjourneyUI_New(Clone)/children/WishjourneyEquip_New(Clone)/BgLeft/SpeedBtn",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 110,
+            "height": 40,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -240.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40204,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "一键部署引导",
+          "GMMark": 0
+        },
+        {
+          "stepId": 12,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "现在任务准备已经全部完成，请开始任务吧。",
+            "descLanguageId": 0,
+            "targetName": "Start",
+            "targetLayerPath": "Normal/WishjourneyUI_New(Clone)/children/WishjourneyEquip_New(Clone)/BgLeft/Start",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 180,
+            "height": 50,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -240.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40205,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "开始调查",
+          "GMMark": 0
+        }
+      ],
+      "desc": "主动进入调查舱引导",
+      "autoId": 0
+    }
+  ],
+  "preGroups": []
+}

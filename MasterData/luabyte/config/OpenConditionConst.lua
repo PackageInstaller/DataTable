@@ -1,0 +1,44 @@
+local OpenConditionConst = {}
+
+OpenConditionConst["LevelCondition"] = require "OpenCondition.ConditionCommand.LevelCondition" -- 账号等级
+OpenConditionConst["TaskCompletedCondition"] = require "OpenCondition.ConditionCommand.TaskCompletedCondition" -- 任务完成
+OpenConditionConst["MissionCompletedCondition"] = require "OpenCondition.ConditionCommand.MissionCompletedCondition" -- 关卡通关
+OpenConditionConst["BagHaveItemCondition"] = require "OpenCondition.ConditionCommand.BagHaveItemCondition" -- 背包拥有某道具
+OpenConditionConst["HeroLevelCondition"] = require "OpenCondition.ConditionCommand.HeroLevelCondition" -- 英雄等级达到N级
+OpenConditionConst["HeroStarCondition"] = require "OpenCondition.ConditionCommand.HeroStarCondition" -- 英雄星级达到N
+OpenConditionConst["HeroBreakCondition"] = require "OpenCondition.ConditionCommand.HeroBreakCondition" -- 英雄突破等级达到N
+OpenConditionConst["HeroFavorCondition"] = require "OpenCondition.ConditionCommand.HeroFavorCondition" -- 英雄好感度达到N
+OpenConditionConst["HaveHeroCountCondition"] = require "OpenCondition.ConditionCommand.HaveHeroCountCondition" -- 英雄数量达到N
+OpenConditionConst["WeekDayCondition"] = require "OpenCondition.ConditionCommand.WeekDayCondition" -- 是否一周内某几天【多个条件满足一个即可】
+OpenConditionConst["GiftCondition"] = require "OpenCondition.ConditionCommand.GiftCondition" -- 是否送过某个英雄某个礼物
+OpenConditionConst["BridgeCondition"] = require "OpenCondition.ConditionCommand.BridgeCondition" -- 舰桥等级达到N
+OpenConditionConst["FirstRechargeCondition"] = require "OpenCondition.ConditionCommand.FirstRechargeCondition" -- 首充是否完成
+OpenConditionConst["GetHeroCondition"] = require "OpenCondition.ConditionCommand.GetHeroCondition" -- 是否获得英雄
+OpenConditionConst["AwakeHeroCondition"] = require "OpenCondition.ConditionCommand.AwakeHeroCondition" -- 英雄是否觉醒
+OpenConditionConst["CabinCondition"] = require "OpenCondition.ConditionCommand.CabinCondition" -- 任意舱室达到等级N
+OpenConditionConst["GuideCondition"] = require "OpenCondition.ConditionCommand.GuideCondition" -- 完成某步引导
+OpenConditionConst["CreateAcoountSecondCondition"] = require "OpenCondition.ConditionCommand.CreateAcoountSecondCondition" -- 账号创建日期的凌晨五点后+秒数内
+OpenConditionConst["ActivityCondition"] = require "OpenCondition.ConditionCommand.ActivityCondition" --活动是否开启
+OpenConditionConst["AnyHeroBreakCondition"] = require "OpenCondition.ConditionCommand.AnyHeroBreakCondition" -- 任意英雄突破等级达到N
+OpenConditionConst["PersonalMissionCompletedCondition"] = require "OpenCondition.ConditionCommand.PersonalMissionCompletedCondition" -- 任意英雄突破等级达到N
+local UnlockType = {}
+UnlockType.AccountLevel = 1
+UnlockType.TaskCompleted = 2
+UnlockType.MissionPass = 3
+UnlockType.GetItem = 4
+UnlockType.HeroLevel = 5
+UnlockType.HeroStar = 6
+UnlockType.HeroBreak = 7
+UnlockType.HeroFavor = 8
+UnlockType.HaveHeroCount = 9
+UnlockType.WeekOfDay = 10
+UnlockType.GiftItem = 11
+UnlockType.Bridge = 12
+UnlockType.FirstRecharge = 13
+UnlockType.GetHero = 14
+UnlockType.AwakeHero = 15
+UnlockType.AnyHeroBreak = 20
+UnlockType.PersonalMissionPass = 21
+OpenConditionConst.UnlockType = UnlockType
+
+return OpenConditionConst

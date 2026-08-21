@@ -1,0 +1,60 @@
+---自动生成代码----start----
+local UITeamConfigView = BaseClass( 'UITeamConfigView' , BaseView )
+local M = UITeamConfigView 
+--desc
+
+function M:__init(go)
+  local trans = go.transform 
+  self.btnClear = self:AddBaseCom( UIButton ,'btnClear')
+  self.btnStart = self:AddBaseCom( GameUIImage ,'btnStart')
+  self.heroItemCtr1 =   self:AddValue('UI.Ctrl.UITeamConfig.UIHeroItem2Ctrl','UI.View.UITeamConfig.UIHeroItem2View','heroItemCtr1')  
+  self.heroItemCtr2 =   self:AddValue('UI.Ctrl.UITeamConfig.UIHeroItem2Ctrl','UI.View.UITeamConfig.UIHeroItem2View','heroItemCtr2')  
+  self.heroItemCtr3 =   self:AddValue('UI.Ctrl.UITeamConfig.UIHeroItem2Ctrl','UI.View.UITeamConfig.UIHeroItem2View','heroItemCtr3')  
+  self.heroItemCtr4 =   self:AddValue('UI.Ctrl.UITeamConfig.UIHeroItem2Ctrl','UI.View.UITeamConfig.UIHeroItem2View','heroItemCtr4')  
+  self.heroItemCtr5 =   self:AddValue('UI.Ctrl.UITeamConfig.UIHeroItem2Ctrl','UI.View.UITeamConfig.UIHeroItem2View','heroItemCtr5')  
+  self.heroItemCtr6 =   self:AddValue('UI.Ctrl.UITeamConfig.UIHeroItem2Ctrl','UI.View.UITeamConfig.UIHeroItem2View','heroItemCtr6')  
+  self.heroItemCtr7 =   self:AddValue('UI.Ctrl.UITeamConfig.UIHeroItem2Ctrl','UI.View.UITeamConfig.UIHeroItem2View','heroItemCtr7')  
+  self.heroItemCtr8 =   self:AddValue('UI.Ctrl.UITeamConfig.UIHeroItem2Ctrl','UI.View.UITeamConfig.UIHeroItem2View','heroItemCtr8')  
+  self.heroItemCtr9 =   self:AddValue('UI.Ctrl.UITeamConfig.UIHeroItem2Ctrl','UI.View.UITeamConfig.UIHeroItem2View','heroItemCtr9')  
+  self.uiTeamItemCtrl =   self:AddValue('UI.Ctrl.UITeamConfig.UITeamItemCtrl','UI.View.UITeamConfig.UITeamItemView','uiTeamItemCtrl')  
+  self.skill1 =   self:AddValue('UI.Ctrl.UITeamConfig.UITeamSkillItemCtrl','UI.View.UITeamConfig.UITeamSkillItemView','skill1')  
+  self.skill2 =   self:AddValue('UI.Ctrl.UITeamConfig.UITeamSkillItemCtrl','UI.View.UITeamConfig.UITeamSkillItemView','skill2')  
+  self.tfNormalTeam =   self._binder:GetValue('tfNormalTeam')  
+  self.tfTeamConfigTips =   self._binder:GetValue('tfTeamConfigTips')  
+  self.labTest = self:AddBaseCom( GameUIText ,'labTest')
+  self.TabList =   self._binder:GetValue('TabList')  
+  self.HeroList = self:AddBaseCom( CircularScrollView ,'HeroList')
+  self.btnLeft = self:AddBaseCom( GameUIImage ,'btnLeft')
+  self.btnRight = self:AddBaseCom( GameUIImage ,'btnRight')
+  self.tfDot1 =   self._binder:GetValue('tfDot1')  
+  self.tfDot2 =   self._binder:GetValue('tfDot2')  
+  self.tfDot3 =   self._binder:GetValue('tfDot3')  
+  self.tfDot4 =   self._binder:GetValue('tfDot4')  
+  self.tfMaskTeach = self:AddBaseCom( GameUIImage ,'tfMaskTeach')
+  self.btnDevelop = self:AddBaseCom( UIButton ,'btnDevelop')
+  self.tfDotGroup =   self._binder:GetValue('tfDotGroup')  
+  self.btnAssist =   self._binder:GetValue('btnAssist')  
+  self.stateAssist =   self._binder:GetValue('stateAssist')  
+  self.HeroList2 = self:AddBaseCom( CircularScrollView ,'HeroList2')
+  self.friendHeroCtrl =   self:AddValue('UI.Ctrl.UITeamConfig.UIHeroItem2Ctrl','UI.View.UITeamConfig.UIHeroItem2View','friendHeroCtrl')  
+  self.btnFriRef = self:AddBaseCom( UIButton ,'btnFriRef')
+  self.labRefTimer = self:AddBaseCom( GameUIText ,'labRefTimer')
+  self.stateFriRef =   self._binder:GetValue('stateFriRef')  
+  self.tfTipsGene =   self._binder:GetValue('tfTipsGene')  
+  self.tfTipsSkill =   self._binder:GetValue('tfTipsSkill')  
+  self.tfTipsLevel =   self._binder:GetValue('tfTipsLevel')  
+  self.helpNumState =   self._binder:GetValue('helpNumState')  
+  self.labHelpNum = self:AddBaseCom( GameUIText ,'labHelpNum')
+  self.dot1_Bg = self:AddBaseCom( GameUIImage ,'dot1_Bg')
+  self.dot2_Bg = self:AddBaseCom( GameUIImage ,'dot2_Bg')
+  self.dot3_Bg = self:AddBaseCom( GameUIImage ,'dot3_Bg')
+  self.dot4_Bg = self:AddBaseCom( GameUIImage ,'dot4_Bg')
+  self.tfLockFir =   self._binder:GetValue('tfLockFir')  
+  self.tfRightPanel =   self._binder:GetValue('tfRightPanel')  
+  self.tfHelperTips =   self._binder:GetValue('tfHelperTips')  
+
+
+end
+
+return UITeamConfigView
+---自动生成代码----end----

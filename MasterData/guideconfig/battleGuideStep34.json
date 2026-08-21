@@ -1,0 +1,376 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8359430822174271028
+  },
+  "m_Name": "battleGuideStep34",
+  "groups": [
+    {
+      "groupId": 1,
+      "items": [
+        {
+          "stepId": 2,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "战员达到突破2后解锁技能养成",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "说明解锁技能",
+          "GMMark": 0
+        },
+        {
+          "stepId": 3,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "Btn_Home",
+            "targetLayerPath": "Fixed/TopBar(Clone)/CommonBack/CommonBack2/Top/Btn_Home",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 75,
+            "height": 67,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 1,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击返回主界面",
+          "GMMark": 0
+        },
+        {
+          "stepId": 12,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "Otaku",
+            "targetLayerPath": "Normal/MainUI(Clone)/Bg/Panel_R/R/Otaku",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 165,
+            "height": 83,
+            "connectRadius": 10,
+            "offset": {
+              "x": -38.38,
+              "y": 24.12
+            },
+            "isShowEffect": 1,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -9.64,
+              "y": -312.89
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击边舱",
+          "GMMark": 0
+        },
+        {
+          "stepId": 15,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 33,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 300,
+          "isFreeClickAfterFinish": 0,
+          "desc": "等待飞船动画",
+          "GMMark": 0
+        },
+        {
+          "stepId": 13,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "长官，请先修复训练舱。",
+            "descLanguageId": 0,
+            "targetName": "ComBtn_s_blue",
+            "targetLayerPath": "Normal/OtakuMainUI(Clone)/Root/Scroll View/Viewport/Content/Airship/GroupPanel/Train1/Bg/Buildable/ComBtn_s_blue",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 223,
+            "height": 120,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -375.0,
+              "y": -15.13
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40182,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "修复训练室",
+          "GMMark": 0
+        },
+        {
+          "stepId": 14,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "训练舱已修复，请进入。",
+            "descLanguageId": 0,
+            "targetName": "Train1",
+            "targetLayerPath": "Normal/OtakuMainUI(Clone)/Root/Scroll View/Viewport/Content/Airship/GroupPanel/Train1",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 223,
+            "height": 120,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -375.0,
+              "y": -15.13
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40183,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 2000,
+          "isFreeClickAfterFinish": 0,
+          "desc": "进入训练室",
+          "GMMark": 0
+        }
+      ],
+      "desc": "引导英雄技能升级",
+      "autoId": 0
+    }
+  ],
+  "preGroups": []
+}

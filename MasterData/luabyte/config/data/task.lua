@@ -1,0 +1,6370 @@
+local title = {
+	id = 0,
+	preTaskId = 0,
+	usePreTaskValue = 0,
+	type = 0,
+	group = 0,
+	order = 0,
+	des = 0,
+	icon = "",
+	limit = 0,
+	limitValue1 = 0,
+	limitValue2 = 0,
+	limitValue3 = 0,
+	limitValue4 = 0,
+	limitValue5 = 0,
+	reward = 0,
+	jumpId = 0,
+	activeValue = 0,
+	upActive = {},
+	trigger = {},
+	openCondition = {},
+	roomStoryId = 0,
+	favorValue = {},
+	energyReward = 0,
+	preName = 0,
+	preDes = 0,
+	heroStoryId = 0,
+	name = 0
+}
+
+local value = {
+[10001] =
+{
+ 		id=10001,
+ 		type=1,
+ 		order=1,
+ 		des=31110001,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=10103,
+ 		reward=10001,
+ 		jumpId=41,
+ 	name=31000008
+},
+[10002] =
+{
+ 		id=10002,
+ 		type=1,
+ 		order=2,
+ 		des=31110002,
+ 		limit=25,
+ 		limitValue1=2,
+ 		limitValue2=10,
+ 		reward=10002,
+ 		jumpId=61,
+ 	name=31010382
+},
+[10003] =
+{
+ 		id=10003,
+ 		type=1,
+ 		order=3,
+ 		des=31110003,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=10107,
+ 		reward=10003,
+ 		jumpId=41,
+ 	name=31000037
+},
+[10004] =
+{
+ 		id=10004,
+ 		type=1,
+ 		order=1,
+ 		des=31110004,
+ 		limit=25,
+ 		limitValue1=5,
+ 		limitValue2=10,
+ 		reward=10004,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10005] =
+{
+ 		id=10005,
+ 		type=1,
+ 		order=2,
+ 		des=31110005,
+ 		limit=33,
+ 		limitValue1=20,
+ 		limitValue2=1,
+ 		reward=10005,
+ 		jumpId=3,
+ 	name=31000048
+},
+[10006] =
+{
+ 		id=10006,
+ 		type=1,
+ 		order=3,
+ 		des=31110006,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=10111,
+ 		reward=10006,
+ 		jumpId=41,
+ 	name=31000037
+},
+[10007] =
+{
+ 		id=10007,
+ 		type=1,
+ 		order=1,
+ 		des=31110007,
+ 		limit=25,
+ 		limitValue1=6,
+ 		limitValue2=20,
+ 		reward=10007,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10008] =
+{
+ 		id=10008,
+ 		type=1,
+ 		order=2,
+ 		des=31110008,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=1004,
+ 		reward=10008,
+ 		jumpId=251,
+ 	name=31010430
+},
+[10009] =
+{
+ 		id=10009,
+ 		type=1,
+ 		order=3,
+ 		des=31110009,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=20109,
+ 		reward=10009,
+ 		jumpId=41,
+ 	name=31000037
+},
+[10010] =
+{
+ 		id=10010,
+ 		type=1,
+ 		order=1,
+ 		des=31110010,
+ 		limit=25,
+ 		limitValue1=3,
+ 		limitValue2=30,
+ 		reward=10010,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10011] =
+{
+ 		id=10011,
+ 		type=1,
+ 		order=2,
+ 		des=31110011,
+ 		limit=65,
+ 		limitValue1=3,
+ 		limitValue2=2,
+ 		reward=10011,
+ 		jumpId=63,
+ 	name=31010428
+},
+[10012] =
+{
+ 		id=10012,
+ 		type=1,
+ 		order=3,
+ 		des=31110012,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=20111,
+ 		reward=10012,
+ 		jumpId=41,
+ 	name=31000037
+},
+[10013] =
+{
+ 		id=10013,
+ 		type=1,
+ 		order=1,
+ 		des=31110013,
+ 		limit=25,
+ 		limitValue1=6,
+ 		limitValue2=30,
+ 		reward=10013,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10014] =
+{
+ 		id=10014,
+ 		type=1,
+ 		order=2,
+ 		des=31110014,
+ 		limit=65,
+ 		limitValue1=6,
+ 		limitValue2=2,
+ 		reward=10014,
+ 		jumpId=63,
+ 	name=31010430
+},
+[10015] =
+{
+ 		id=10015,
+ 		type=1,
+ 		order=3,
+ 		des=31110015,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=10205,
+ 		reward=10015,
+ 		jumpId=42,
+ 	name=31010434
+},
+[10016] =
+{
+ 		id=10016,
+ 		type=1,
+ 		order=1,
+ 		des=31110016,
+ 		limit=25,
+ 		limitValue1=3,
+ 		limitValue2=40,
+ 		reward=10016,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10017] =
+{
+ 		id=10017,
+ 		type=1,
+ 		order=2,
+ 		des=31110017,
+ 		limit=65,
+ 		limitValue1=2,
+ 		limitValue2=3,
+ 		reward=10017,
+ 		jumpId=63,
+ 	name=31010436
+},
+[10018] =
+{
+ 		id=10018,
+ 		type=1,
+ 		order=3,
+ 		des=31110018,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=30105,
+ 		reward=10018,
+ 		jumpId=41,
+ 	name=31010452
+},
+[10019] =
+{
+ 		id=10019,
+ 		type=1,
+ 		order=1,
+ 		des=31110019,
+ 		limit=25,
+ 		limitValue1=6,
+ 		limitValue2=40,
+ 		reward=10019,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10020] =
+{
+ 		id=10020,
+ 		type=1,
+ 		order=2,
+ 		des=31110020,
+ 		limit=65,
+ 		limitValue1=4,
+ 		limitValue2=3,
+ 		reward=10020,
+ 		jumpId=63,
+ 	name=31010438
+},
+[10021] =
+{
+ 		id=10021,
+ 		type=1,
+ 		order=3,
+ 		des=31110021,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=10211,
+ 		reward=10021,
+ 		jumpId=42,
+ 	name=31010452
+},
+[10022] =
+{
+ 		id=10022,
+ 		type=1,
+ 		order=1,
+ 		des=31110022,
+ 		limit=65,
+ 		limitValue1=6,
+ 		limitValue2=3,
+ 		reward=10022,
+ 		jumpId=63,
+ 	name=31000008
+},
+[10023] =
+{
+ 		id=10023,
+ 		type=1,
+ 		order=2,
+ 		des=31110023,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=30111,
+ 		reward=10023,
+ 		jumpId=41,
+ 	name=31010444
+},
+[10024] =
+{
+ 		id=10024,
+ 		type=1,
+ 		order=3,
+ 		des=31110024,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=20209,
+ 		reward=10024,
+ 		jumpId=42,
+ 	name=31010452
+},
+[10025] =
+{
+ 		id=10025,
+ 		type=1,
+ 		order=1,
+ 		des=31110025,
+ 		limit=25,
+ 		limitValue1=3,
+ 		limitValue2=50,
+ 		reward=10025,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10026] =
+{
+ 		id=10026,
+ 		type=1,
+ 		order=2,
+ 		des=31110026,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=40107,
+ 		reward=10026,
+ 		jumpId=41,
+ 	name=31010458
+},
+[10027] =
+{
+ 		id=10027,
+ 		type=1,
+ 		order=3,
+ 		des=31110027,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=20211,
+ 		reward=10027,
+ 		jumpId=42,
+ 	name=31010452
+},
+[10028] =
+{
+ 		id=10028,
+ 		type=1,
+ 		order=1,
+ 		des=31110028,
+ 		limit=25,
+ 		limitValue1=6,
+ 		limitValue2=50,
+ 		reward=10028,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10029] =
+{
+ 		id=10029,
+ 		type=1,
+ 		order=2,
+ 		des=31110029,
+ 		limit=61,
+ 		limitValue1=2,
+ 		limitValue2=1,
+ 		reward=10029,
+ 		jumpId=65,
+ 	name=31010458
+},
+[10030] =
+{
+ 		id=10030,
+ 		type=1,
+ 		order=3,
+ 		des=31110030,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=40111,
+ 		reward=10030,
+ 		jumpId=41,
+ 	name=31010452
+},
+[10031] =
+{
+ 		id=10031,
+ 		type=1,
+ 		order=1,
+ 		des=31110031,
+ 		limit=25,
+ 		limitValue1=8,
+ 		limitValue2=50,
+ 		reward=10031,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10032] =
+{
+ 		id=10032,
+ 		type=1,
+ 		order=2,
+ 		des=31110032,
+ 		limit=61,
+ 		limitValue1=4,
+ 		limitValue2=1,
+ 		reward=10032,
+ 		jumpId=65,
+ 	name=31010458
+},
+[10033] =
+{
+ 		id=10033,
+ 		type=1,
+ 		order=3,
+ 		des=31110033,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=30205,
+ 		reward=10033,
+ 		jumpId=42,
+ 	name=31010452
+},
+[10034] =
+{
+ 		id=10034,
+ 		type=1,
+ 		order=1,
+ 		des=31110034,
+ 		limit=25,
+ 		limitValue1=4,
+ 		limitValue2=60,
+ 		reward=10034,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10035] =
+{
+ 		id=10035,
+ 		type=1,
+ 		order=2,
+ 		des=31110035,
+ 		limit=65,
+ 		limitValue1=4,
+ 		limitValue2=4,
+ 		reward=10035,
+ 		jumpId=63,
+ 	name=31010444
+},
+[10036] =
+{
+ 		id=10036,
+ 		type=1,
+ 		order=3,
+ 		des=31110036,
+ 		limit=61,
+ 		limitValue1=6,
+ 		limitValue2=1,
+ 		reward=10036,
+ 		jumpId=65,
+ 	name=31010452
+},
+[10037] =
+{
+ 		id=10037,
+ 		type=1,
+ 		order=1,
+ 		des=31110037,
+ 		limit=25,
+ 		limitValue1=8,
+ 		limitValue2=60,
+ 		reward=10037,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10038] =
+{
+ 		id=10038,
+ 		type=1,
+ 		order=2,
+ 		des=31110038,
+ 		limit=61,
+ 		limitValue1=2,
+ 		limitValue2=2,
+ 		reward=10038,
+ 		jumpId=65,
+ 	name=31010458
+},
+[10039] =
+{
+ 		id=10039,
+ 		type=1,
+ 		order=3,
+ 		des=31110039,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=30211,
+ 		reward=10039,
+ 		jumpId=42,
+ 	name=31010452
+},
+[10040] =
+{
+ 		id=10040,
+ 		type=1,
+ 		order=1,
+ 		des=31110040,
+ 		limit=25,
+ 		limitValue1=2,
+ 		limitValue2=70,
+ 		reward=10040,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10041] =
+{
+ 		id=10041,
+ 		type=1,
+ 		order=2,
+ 		des=31110041,
+ 		limit=61,
+ 		limitValue1=4,
+ 		limitValue2=2,
+ 		reward=10041,
+ 		jumpId=65,
+ 	name=31010458
+},
+[10042] =
+{
+ 		id=10042,
+ 		type=1,
+ 		order=3,
+ 		des=31110042,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=50108,
+ 		reward=10042,
+ 		jumpId=41,
+ 	name=31010452
+},
+[10043] =
+{
+ 		id=10043,
+ 		type=1,
+ 		order=1,
+ 		des=31110043,
+ 		limit=25,
+ 		limitValue1=4,
+ 		limitValue2=70,
+ 		reward=10043,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10044] =
+{
+ 		id=10044,
+ 		type=1,
+ 		order=2,
+ 		des=31110044,
+ 		limit=121,
+ 		limitValue1=1,
+ 		limitValue2=3,
+ 		limitValue3=3,
+ 		reward=10044,
+ 		jumpId=66,
+ 	name=31010458
+},
+[10045] =
+{
+ 		id=10045,
+ 		type=1,
+ 		order=3,
+ 		des=31110045,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=40207,
+ 		reward=10045,
+ 		jumpId=42,
+ 	name=31010452
+},
+[10046] =
+{
+ 		id=10046,
+ 		type=1,
+ 		order=1,
+ 		des=31110046,
+ 		limit=25,
+ 		limitValue1=6,
+ 		limitValue2=70,
+ 		reward=10046,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10047] =
+{
+ 		id=10047,
+ 		type=1,
+ 		order=2,
+ 		des=31110047,
+ 		limit=61,
+ 		limitValue1=2,
+ 		limitValue2=3,
+ 		reward=10047,
+ 		jumpId=65,
+ 	name=31010458
+},
+[10048] =
+{
+ 		id=10048,
+ 		type=1,
+ 		order=3,
+ 		des=31110048,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=50115,
+ 		reward=10048,
+ 		jumpId=41,
+ 	name=31010452
+},
+[10049] =
+{
+ 		id=10049,
+ 		type=1,
+ 		order=1,
+ 		des=31110049,
+ 		limit=25,
+ 		limitValue1=8,
+ 		limitValue2=70,
+ 		reward=10049,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10050] =
+{
+ 		id=10050,
+ 		type=1,
+ 		order=2,
+ 		des=31110050,
+ 		limit=121,
+ 		limitValue1=1,
+ 		limitValue2=4,
+ 		limitValue3=6,
+ 		reward=10050,
+ 		jumpId=66,
+ 	name=31010458
+},
+[10051] =
+{
+ 		id=10051,
+ 		type=1,
+ 		order=3,
+ 		des=31110051,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=40211,
+ 		reward=10051,
+ 		jumpId=42,
+ 	name=31010452
+},
+[10052] =
+{
+ 		id=10052,
+ 		type=1,
+ 		order=1,
+ 		des=31110052,
+ 		limit=25,
+ 		limitValue1=2,
+ 		limitValue2=80,
+ 		reward=10052,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10053] =
+{
+ 		id=10053,
+ 		type=1,
+ 		order=2,
+ 		des=31110053,
+ 		limit=121,
+ 		limitValue1=3,
+ 		limitValue2=4,
+ 		limitValue3=6,
+ 		reward=10053,
+ 		jumpId=66,
+ 	name=31010458
+},
+[10054] =
+{
+ 		id=10054,
+ 		type=1,
+ 		order=3,
+ 		des=31110054,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=50206,
+ 		reward=10054,
+ 		jumpId=42,
+ 	name=31010452
+},
+[10055] =
+{
+ 		id=10055,
+ 		type=1,
+ 		order=1,
+ 		des=31110055,
+ 		limit=25,
+ 		limitValue1=4,
+ 		limitValue2=80,
+ 		reward=10055,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10056] =
+{
+ 		id=10056,
+ 		type=1,
+ 		order=2,
+ 		des=31110056,
+ 		limit=121,
+ 		limitValue1=5,
+ 		limitValue2=4,
+ 		limitValue3=6,
+ 		reward=10056,
+ 		jumpId=66,
+ 	name=31010458
+},
+[10057] =
+{
+ 		id=10057,
+ 		type=1,
+ 		order=3,
+ 		des=31110057,
+ 		limit=65,
+ 		limitValue1=5,
+ 		limitValue2=7,
+ 		reward=10057,
+ 		jumpId=63,
+ 	name=31010452
+},
+[10058] =
+{
+ 		id=10058,
+ 		type=1,
+ 		order=1,
+ 		des=31110058,
+ 		limit=25,
+ 		limitValue1=2,
+ 		limitValue2=90,
+ 		reward=10058,
+ 		jumpId=61,
+ 	name=31000008
+},
+[10059] =
+{
+ 		id=10059,
+ 		type=1,
+ 		order=2,
+ 		des=31110059,
+ 		limit=121,
+ 		limitValue1=7,
+ 		limitValue2=4,
+ 		limitValue3=6,
+ 		reward=10059,
+ 		jumpId=66,
+ 	name=31010458
+},
+[10060] =
+{
+ 		id=10060,
+ 		type=1,
+ 		order=3,
+ 		des=31110060,
+ 		limit=65,
+ 		limitValue1=8,
+ 		limitValue2=7,
+ 		reward=10060,
+ 		jumpId=63,
+ 	name=31010452
+},
+[20001] =
+{
+ 		id=20001,
+ 		type=2,
+ 		group=1,
+ 		order=1,
+ 		des=31110101,
+ 		limit=23,
+ 		limitValue1=1,
+ 		reward=11001,
+ 		jumpId=1,
+ 		activeValue=10,
+ 	name=0
+},
+[20003] =
+{
+ 		id=20003,
+ 		type=2,
+ 		group=2,
+ 		order=2,
+ 		des=31110102,
+ 		limit=4,
+ 		limitValue1=5,
+ 		reward=11002,
+ 		jumpId=61,
+ 		activeValue=15,
+ 	name=0
+},
+[20009] =
+{
+ 		id=20009,
+ 		type=2,
+ 		group=3,
+ 		order=3,
+ 		des=31110103,
+ 		limit=38,
+ 		limitValue1=1,
+ 		reward=11003,
+ 		jumpId=63,
+ 		activeValue=10,
+ 		upActive={0,0,5,10,10},
+ 		trigger={20103},
+ 		openCondition={1110},
+ 	name=0
+},
+[20002] =
+{
+ 		id=20002,
+ 		type=2,
+ 		group=4,
+ 		order=4,
+ 		des=31110104,
+ 		limit=2,
+ 		limitValue1=5,
+ 		reward=11004,
+ 		jumpId=41,
+ 		activeValue=15,
+ 	name=0
+},
+[20004] =
+{
+ 		id=20004,
+ 		type=2,
+ 		group=5,
+ 		order=5,
+ 		des=31110105,
+ 		limit=59,
+ 		limitValue1=3,
+ 		limitValue2=3,
+ 		reward=11005,
+ 		jumpId=45,
+ 		activeValue=15,
+ 	name=0
+},
+[20007] =
+{
+ 		id=20007,
+ 		type=2,
+ 		group=6,
+ 		order=6,
+ 		des=31110106,
+ 		limit=3,
+ 		limitValue1=1,
+ 		reward=11006,
+ 		jumpId=42,
+ 		activeValue=10,
+ 		upActive={0,0,5,10,10},
+ 		trigger={20111},
+ 		openCondition={1113},
+ 	name=0
+},
+[20005] =
+{
+ 		id=20005,
+ 		type=2,
+ 		group=7,
+ 		order=7,
+ 		des=31110107,
+ 		limit=7,
+ 		limitValue1=1,
+ 		reward=11007,
+ 		jumpId=52,
+ 		activeValue=15,
+ 	name=0
+},
+[20006] =
+{
+ 		id=20006,
+ 		type=2,
+ 		group=8,
+ 		order=8,
+ 		des=31110108,
+ 		limit=8,
+ 		limitValue1=1,
+ 		reward=11008,
+ 		jumpId=6,
+ 		activeValue=15,
+ 	name=0
+},
+[20014] =
+{
+ 		id=20014,
+ 		type=2,
+ 		group=9,
+ 		order=9,
+ 		des=31110109,
+ 		limit=63,
+ 		limitValue1=90,
+ 		reward=11009,
+ 		jumpId=41,
+ 		activeValue=15,
+ 	name=0
+},
+[20008] =
+{
+ 		id=20008,
+ 		type=2,
+ 		group=10,
+ 		order=10,
+ 		des=31110110,
+ 		limit=63,
+ 		limitValue1=160,
+ 		reward=11010,
+ 		jumpId=41,
+ 		activeValue=15,
+ 	name=0
+},
+[20011] =
+{
+ 		id=20011,
+ 		type=2,
+ 		group=11,
+ 		order=11,
+ 		des=31110111,
+ 		limit=111,
+ 		limitValue1=1,
+ 		reward=11011,
+ 		jumpId=72,
+ 		activeValue=15,
+ 	name=0
+},
+[20012] =
+{
+ 		id=20012,
+ 		type=2,
+ 		group=12,
+ 		order=12,
+ 		des=31110112,
+ 		limit=51,
+ 		limitValue1=1,
+ 		reward=11012,
+ 		jumpId=94,
+ 		activeValue=10,
+ 	name=0
+},
+[20010] =
+{
+ 		id=20010,
+ 		type=2,
+ 		group=13,
+ 		order=13,
+ 		des=31110113,
+ 		limit=39,
+ 		limitValue1=1,
+ 		reward=11013,
+ 		jumpId=76,
+ 		activeValue=10,
+ 		upActive={0,5,5,10,10},
+ 		trigger={20103},
+ 		openCondition={1110},
+ 	name=0
+},
+[30101] =
+{
+ 		id=30101,
+ 		type=3,
+ 		group=1,
+ 		order=14,
+ 		des=31110201,
+ 		limit=31,
+ 		limitValue1=5,
+ 		limitValue2=102,
+ 		reward=11201,
+ 		jumpId=76,
+ 		activeValue=15,
+ 	name=0
+},
+[30102] =
+{
+ 		id=30102,
+ 		type=3,
+ 		group=2,
+ 		order=1,
+ 		des=31110202,
+ 		limit=22,
+ 		limitValue1=1,
+ 		limitValue2=1,
+ 		reward=11202,
+ 		jumpId=3,
+ 		activeValue=10,
+ 	name=0
+},
+[30103] =
+{
+ 		id=30103,
+ 		type=3,
+ 		group=3,
+ 		order=2,
+ 		des=31110203,
+ 		limit=4,
+ 		limitValue1=30,
+ 		reward=11203,
+ 		jumpId=61,
+ 		activeValue=10,
+ 	name=0
+},
+[30104] =
+{
+ 		id=30104,
+ 		type=3,
+ 		group=4,
+ 		order=3,
+ 		des=31110204,
+ 		limit=63,
+ 		limitValue1=800,
+ 		reward=11204,
+ 		jumpId=41,
+ 		activeValue=10,
+ 	name=0
+},
+[30105] =
+{
+ 		id=30105,
+ 		type=3,
+ 		group=5,
+ 		order=4,
+ 		des=31110205,
+ 		limit=63,
+ 		limitValue1=1200,
+ 		reward=11205,
+ 		jumpId=41,
+ 		activeValue=15,
+ 	name=0
+},
+[30106] =
+{
+ 		id=30106,
+ 		type=3,
+ 		group=6,
+ 		order=5,
+ 		des=31110206,
+ 		limit=5,
+ 		limitValue1=3,
+ 		reward=11206,
+ 		jumpId=61,
+ 		activeValue=10,
+ 	name=0
+},
+[30107] =
+{
+ 		id=30107,
+ 		type=3,
+ 		group=7,
+ 		order=6,
+ 		des=31110207,
+ 		limit=38,
+ 		limitValue1=3,
+ 		reward=11207,
+ 		jumpId=63,
+ 		activeValue=10,
+ 	name=0
+},
+[30108] =
+{
+ 		id=30108,
+ 		type=3,
+ 		group=8,
+ 		order=7,
+ 		des=31110208,
+ 		limit=8,
+ 		limitValue1=5,
+ 		reward=11208,
+ 		jumpId=6,
+ 		activeValue=10,
+ 	name=0
+},
+[30109] =
+{
+ 		id=30109,
+ 		type=3,
+ 		group=9,
+ 		order=8,
+ 		des=31110209,
+ 		limit=22,
+ 		limitValue1=1,
+ 		limitValue2=2,
+ 		reward=11209,
+ 		jumpId=4,
+ 		activeValue=10,
+ 	name=0
+},
+[30110] =
+{
+ 		id=30110,
+ 		type=3,
+ 		group=10,
+ 		order=9,
+ 		des=31110210,
+ 		limit=39,
+ 		limitValue1=12,
+ 		reward=11210,
+ 		jumpId=76,
+ 		activeValue=15,
+ 	name=0
+},
+[30111] =
+{
+ 		id=30111,
+ 		type=3,
+ 		group=11,
+ 		order=10,
+ 		des=31110211,
+ 		limit=112,
+ 		limitValue1=1,
+ 		reward=11211,
+ 		jumpId=75,
+ 		activeValue=10,
+ 		upActive={0,5,5,10,10},
+ 		trigger={30105},
+ 		openCondition={1206},
+ 	name=0
+},
+[30112] =
+{
+ 		id=30112,
+ 		type=3,
+ 		group=12,
+ 		order=11,
+ 		des=31110212,
+ 		limit=36,
+ 		limitValue1=3,
+ 		reward=11212,
+ 		jumpId=65,
+ 		activeValue=10,
+ 		upActive={0,5,5,10,10},
+ 		trigger={40114},
+ 		openCondition={1309},
+ 	name=0
+},
+[30113] =
+{
+ 		id=30113,
+ 		type=3,
+ 		group=13,
+ 		order=12,
+ 		des=31110213,
+ 		limit=51,
+ 		limitValue1=5,
+ 		reward=11213,
+ 		jumpId=94,
+ 		activeValue=10,
+ 	name=0
+},
+[30114] =
+{
+ 		id=30114,
+ 		type=3,
+ 		group=14,
+ 		order=13,
+ 		des=31110214,
+ 		limit=7,
+ 		limitValue1=5,
+ 		reward=11214,
+ 		jumpId=52,
+ 		activeValue=15,
+ 	name=0
+},
+[40001] =
+{
+ 		id=40001,
+ 		type=4,
+ 		group=19,
+ 		order=1,
+ 		des=31110401,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=10111,
+ 		reward=11401,
+ 		jumpId=41,
+ 	name=31010411
+},
+[40002] =
+{
+ 		id=40002,
+ 		type=4,
+ 		group=19,
+ 		order=2,
+ 		des=31110402,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=20111,
+ 		reward=11402,
+ 		jumpId=41,
+ 	name=31010412
+},
+[40003] =
+{
+ 		id=40003,
+ 		type=4,
+ 		group=19,
+ 		order=3,
+ 		des=31110403,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=30111,
+ 		reward=11403,
+ 		jumpId=41,
+ 	name=31010413
+},
+[40004] =
+{
+ 		id=40004,
+ 		type=4,
+ 		group=19,
+ 		order=4,
+ 		des=31110404,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=40111,
+ 		reward=11404,
+ 		jumpId=41,
+ 	name=31010414
+},
+[40005] =
+{
+ 		id=40005,
+ 		type=4,
+ 		group=19,
+ 		order=5,
+ 		des=31110405,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=50115,
+ 		reward=11405,
+ 		jumpId=41,
+ 	name=31010415
+},
+[40006] =
+{
+ 		id=40006,
+ 		type=4,
+ 		group=19,
+ 		order=6,
+ 		des=31110406,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=60115,
+ 		reward=11406,
+ 		jumpId=41,
+ 	name=31010415
+},
+[40007] =
+{
+ 		id=40007,
+ 		type=4,
+ 		group=19,
+ 		order=7,
+ 		des=31110407,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=10211,
+ 		reward=11407,
+ 		jumpId=42,
+ 	name=31010415
+},
+[40008] =
+{
+ 		id=40008,
+ 		type=4,
+ 		group=19,
+ 		order=8,
+ 		des=31110408,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=20211,
+ 		reward=11408,
+ 		jumpId=42,
+ 	name=31010416
+},
+[40009] =
+{
+ 		id=40009,
+ 		type=4,
+ 		group=19,
+ 		order=9,
+ 		des=31110409,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=30211,
+ 		reward=11409,
+ 		jumpId=42,
+ 	name=31010417
+},
+[40010] =
+{
+ 		id=40010,
+ 		type=4,
+ 		group=19,
+ 		order=10,
+ 		des=31110410,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=40211,
+ 		reward=11410,
+ 		jumpId=42,
+ 	name=31010418
+},
+[40011] =
+{
+ 		id=40011,
+ 		type=4,
+ 		group=19,
+ 		order=11,
+ 		des=31110411,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=50215,
+ 		reward=11411,
+ 		jumpId=42,
+ 	name=31010419
+},
+[40012] =
+{
+ 		id=40012,
+ 		type=4,
+ 		group=19,
+ 		order=12,
+ 		des=31110412,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=60215,
+ 		reward=11412,
+ 		jumpId=42,
+ 	name=31010419
+},
+[40013] =
+{
+ 		id=40013,
+ 		type=4,
+ 		group=19,
+ 		order=13,
+ 		des=31110413,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=1003,
+ 		reward=11413,
+ 		jumpId=45,
+ 	name=0
+},
+[40014] =
+{
+ 		id=40014,
+ 		type=4,
+ 		group=19,
+ 		order=14,
+ 		des=31110414,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=1103,
+ 		reward=11414,
+ 		jumpId=45,
+ 	name=0
+},
+[40015] =
+{
+ 		id=40015,
+ 		type=4,
+ 		group=19,
+ 		order=15,
+ 		des=31110415,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=1403,
+ 		reward=11415,
+ 		jumpId=45,
+ 	name=0
+},
+[40016] =
+{
+ 		id=40016,
+ 		type=4,
+ 		group=19,
+ 		order=16,
+ 		des=31110416,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=1203,
+ 		reward=11416,
+ 		jumpId=45,
+ 	name=0
+},
+[40017] =
+{
+ 		id=40017,
+ 		type=4,
+ 		group=19,
+ 		order=17,
+ 		des=31110417,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=1303,
+ 		reward=11417,
+ 		jumpId=45,
+ 	name=0
+},
+[40018] =
+{
+ 		id=40018,
+ 		type=4,
+ 		group=19,
+ 		order=18,
+ 		des=31110418,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=1502,
+ 		reward=11418,
+ 		jumpId=45,
+ 	name=0
+},
+[40019] =
+{
+ 		id=40019,
+ 		type=4,
+ 		group=19,
+ 		order=19,
+ 		des=31110419,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=27,
+ 		limitValue1=1,
+ 		limitValue2=6,
+ 		reward=11419,
+ 		jumpId=64,
+ 	name=31010420
+},
+[40020] =
+{
+ 		id=40020,
+ 		type=4,
+ 		group=19,
+ 		order=20,
+ 		des=31110420,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=28,
+ 		limitValue1=1,
+ 		limitValue2=3,
+ 		reward=11420,
+ 		jumpId=64,
+ 	name=31010420
+},
+[40021] =
+{
+ 		id=40021,
+ 		type=4,
+ 		group=19,
+ 		order=21,
+ 		des=31110421,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=25,
+ 		limitValue1=1,
+ 		limitValue2=80,
+ 		reward=11421,
+ 		jumpId=61,
+ 	name=31010421
+},
+[40022] =
+{
+ 		id=40022,
+ 		type=4,
+ 		group=19,
+ 		order=22,
+ 		des=31110422,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=25,
+ 		limitValue1=1,
+ 		limitValue2=90,
+ 		reward=11422,
+ 		jumpId=61,
+ 	name=31010421
+},
+[40023] =
+{
+ 		id=40023,
+ 		type=4,
+ 		group=19,
+ 		order=23,
+ 		des=31110423,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=121,
+ 		limitValue1=1,
+ 		limitValue2=3,
+ 		limitValue3=3,
+ 		reward=11423,
+ 		jumpId=66,
+ 	name=31010422
+},
+[40024] =
+{
+ 		id=40024,
+ 		type=4,
+ 		group=19,
+ 		order=24,
+ 		des=31110424,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=121,
+ 		limitValue1=1,
+ 		limitValue2=4,
+ 		limitValue3=3,
+ 		reward=11424,
+ 		jumpId=66,
+ 	name=31010423
+},
+[40025] =
+{
+ 		id=40025,
+ 		type=4,
+ 		group=19,
+ 		order=25,
+ 		des=31110425,
+ 		icon="UI/SpritePics/task/ui_task_icon_05.png",
+ 		limit=121,
+ 		limitValue1=1,
+ 		limitValue2=4,
+ 		limitValue3=6,
+ 		reward=11425,
+ 		jumpId=66,
+ 	name=31010423
+},
+[80001] =
+{
+ 		id=80001,
+ 		type=8,
+ 		order=28,
+ 		des=31011059,
+ 		limit=31,
+ 		limitValue1=50,
+ 		limitValue2=5,
+ 		jumpId=1,
+ 		roomStoryId=983,
+ 	name=0
+},
+[80002] =
+{
+ 		id=80002,
+ 		type=8,
+ 		order=28,
+ 		des=31011060,
+ 		limit=31,
+ 		limitValue1=51,
+ 		limitValue2=5,
+ 		jumpId=1,
+ 		roomStoryId=985,
+ 	name=0
+},
+[80003] =
+{
+ 		id=80003,
+ 		type=8,
+ 		order=28,
+ 		des=31011061,
+ 		limit=31,
+ 		limitValue1=52,
+ 		limitValue2=5,
+ 		jumpId=1,
+ 		roomStoryId=987,
+ 	name=0
+},
+[80004] =
+{
+ 		id=80004,
+ 		type=8,
+ 		order=28,
+ 		des=31011062,
+ 		limit=31,
+ 		limitValue1=53,
+ 		limitValue2=5,
+ 		jumpId=1,
+ 		roomStoryId=989,
+ 	name=0
+},
+[80005] =
+{
+ 		id=80005,
+ 		type=8,
+ 		order=28,
+ 		des=31011063,
+ 		limit=31,
+ 		limitValue1=54,
+ 		limitValue2=5,
+ 		jumpId=1,
+ 		roomStoryId=991,
+ 	name=0
+},
+[80006] =
+{
+ 		id=80006,
+ 		type=8,
+ 		order=28,
+ 		des=31011064,
+ 		limit=31,
+ 		limitValue1=55,
+ 		limitValue2=5,
+ 		jumpId=1,
+ 		roomStoryId=993,
+ 	name=0
+},
+[80007] =
+{
+ 		id=80007,
+ 		type=8,
+ 		order=28,
+ 		des=31011065,
+ 		limit=31,
+ 		limitValue1=56,
+ 		limitValue2=5,
+ 		jumpId=1,
+ 		roomStoryId=995,
+ 	name=0
+},
+[80008] =
+{
+ 		id=80008,
+ 		type=8,
+ 		order=28,
+ 		des=31011066,
+ 		limit=31,
+ 		limitValue1=57,
+ 		limitValue2=5,
+ 		jumpId=1,
+ 		roomStoryId=997,
+ 	name=0
+},
+[80009] =
+{
+ 		id=80009,
+ 		type=8,
+ 		order=28,
+ 		des=31011067,
+ 		limit=31,
+ 		limitValue1=58,
+ 		limitValue2=5,
+ 		jumpId=1,
+ 		roomStoryId=999,
+ 	name=0
+},
+[80010] =
+{
+ 		id=80010,
+ 		type=8,
+ 		order=1,
+ 		des=5101,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=11000301,
+ 		jumpId=14,
+ 		roomStoryId=1014,
+ 	name=989
+},
+[80011] =
+{
+ 		id=80011,
+ 		type=8,
+ 		order=1,
+ 		des=5126,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=11000302,
+ 		jumpId=14,
+ 		roomStoryId=1016,
+ 	name=991
+},
+[80012] =
+{
+ 		id=80012,
+ 		type=8,
+ 		order=1,
+ 		des=5127,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=11000303,
+ 		jumpId=14,
+ 		roomStoryId=1018,
+ 	name=992
+},
+[80013] =
+{
+ 		id=80013,
+ 		type=8,
+ 		order=1,
+ 		des=5128,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=11000304,
+ 		jumpId=14,
+ 		roomStoryId=1020,
+ 	name=993
+},
+[80014] =
+{
+ 		id=80014,
+ 		type=8,
+ 		order=1,
+ 		des=5129,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=11000305,
+ 		jumpId=14,
+ 		roomStoryId=1022,
+ 	name=994
+},
+[80015] =
+{
+ 		id=80015,
+ 		type=8,
+ 		order=1,
+ 		des=5104,
+ 		limit=56,
+ 		limitValue1=1,
+ 		limitValue2=110003,
+ 		jumpId=6,
+ 		roomStoryId=1024,
+ 	name=990
+},
+[80016] =
+{
+ 		id=80016,
+ 		type=8,
+ 		order=1,
+ 		des=5129,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=11000312,
+ 		jumpId=14,
+ 		roomStoryId=60106,
+ 	name=994
+},
+[80017] =
+{
+ 		id=80017,
+ 		type=8,
+ 		order=1,
+ 		des=5129,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=11000313,
+ 		jumpId=14,
+ 		roomStoryId=60104,
+ 	name=994
+},
+[80018] =
+{
+ 		id=80018,
+ 		type=8,
+ 		order=1,
+ 		des=5129,
+ 		limit=30,
+ 		limitValue1=1,
+ 		limitValue2=11000311,
+ 		jumpId=14,
+ 		roomStoryId=60105,
+ 	name=994
+},
+[90001] =
+{
+ 		id=90001,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=110001,
+ 		jumpId=61,
+ 	name=0
+},
+[90002] =
+{
+ 		id=90002,
+ 		type=9,
+ 		order=2,
+ 		limit=78,
+ 		limitValue1=1,
+ 		limitValue2=4,
+ 		limitValue3=110001,
+ 		limitValue4=50110,
+ 		jumpId=1410,
+ 	name=0
+},
+[90003] =
+{
+ 		id=90003,
+ 		type=9,
+ 		order=3,
+ 		limit=83,
+ 		limitValue1=6,
+ 		limitValue2=110001,
+ 		jumpId=63,
+ 	name=0
+},
+[90004] =
+{
+ 		id=90004,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=3,
+ 		limitValue2=110001,
+ 		jumpId=65,
+ 	name=0
+},
+[90005] =
+{
+ 		id=90005,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=110002,
+ 		jumpId=61,
+ 	name=0
+},
+[90006] =
+{
+ 		id=90006,
+ 		type=9,
+ 		order=2,
+ 		limit=85,
+ 		limitValue1=2,
+ 		limitValue2=110002,
+ 		jumpId=65,
+ 	name=0
+},
+[90007] =
+{
+ 		id=90007,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=110003,
+ 		jumpId=61,
+ 	name=0
+},
+[90008] =
+{
+ 		id=90008,
+ 		type=9,
+ 		order=2,
+ 		limit=85,
+ 		limitValue1=2,
+ 		limitValue2=110003,
+ 		jumpId=65,
+ 	name=0
+},
+[90009] =
+{
+ 		id=90009,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=110004,
+ 		jumpId=61,
+ 	name=0
+},
+[90010] =
+{
+ 		id=90010,
+ 		type=9,
+ 		order=2,
+ 		limit=79,
+ 		limitValue1=20,
+ 		limitValue2=110004,
+ 		jumpId=41,
+ 	name=0
+},
+[90093] =
+{
+ 		id=90093,
+ 		type=9,
+ 		order=3,
+ 		limit=83,
+ 		limitValue1=6,
+ 		limitValue2=110004,
+ 		jumpId=63,
+ 	name=0
+},
+[90094] =
+{
+ 		id=90094,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=3,
+ 		limitValue2=110004,
+ 		jumpId=65,
+ 	name=0
+},
+[90011] =
+{
+ 		id=90011,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=110005,
+ 		jumpId=61,
+ 	name=0
+},
+[90012] =
+{
+ 		id=90012,
+ 		type=9,
+ 		order=2,
+ 		limit=77,
+ 		limitValue1=1,
+ 		limitValue2=1,
+ 		limitValue3=110005,
+ 		limitValue4=40111,
+ 		jumpId=1313,
+ 	name=0
+},
+[90013] =
+{
+ 		id=90013,
+ 		type=9,
+ 		order=3,
+ 		limit=85,
+ 		limitValue1=3,
+ 		limitValue2=110005,
+ 		jumpId=65,
+ 	name=0
+},
+[90014] =
+{
+ 		id=90014,
+ 		type=9,
+ 		order=4,
+ 		limit=83,
+ 		limitValue1=6,
+ 		limitValue2=110005,
+ 		jumpId=63,
+ 	name=0
+},
+[90015] =
+{
+ 		id=90015,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=110006,
+ 		jumpId=61,
+ 	name=0
+},
+[90016] =
+{
+ 		id=90016,
+ 		type=9,
+ 		order=2,
+ 		limit=83,
+ 		limitValue1=5,
+ 		limitValue2=110006,
+ 		jumpId=63,
+ 	name=0
+},
+[90017] =
+{
+ 		id=90017,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=110009,
+ 		jumpId=61,
+ 	name=0
+},
+[90018] =
+{
+ 		id=90018,
+ 		type=9,
+ 		order=2,
+ 		limit=76,
+ 		limitValue1=1,
+ 		limitValue2=4,
+ 		limitValue3=110009,
+ 		limitValue4=30111,
+ 		jumpId=1213,
+ 	name=0
+},
+[90019] =
+{
+ 		id=90019,
+ 		type=9,
+ 		order=3,
+ 		limit=83,
+ 		limitValue1=6,
+ 		limitValue2=110009,
+ 		jumpId=63,
+ 	name=0
+},
+[90020] =
+{
+ 		id=90020,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=3,
+ 		limitValue2=110009,
+ 		jumpId=65,
+ 	name=0
+},
+[90021] =
+{
+ 		id=90021,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=110010,
+ 		jumpId=61,
+ 	name=0
+},
+[90022] =
+{
+ 		id=90022,
+ 		type=9,
+ 		order=2,
+ 		limit=85,
+ 		limitValue1=2,
+ 		limitValue2=110010,
+ 		jumpId=65,
+ 	name=0
+},
+[90023] =
+{
+ 		id=90023,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=120001,
+ 		jumpId=61,
+ 	name=0
+},
+[90024] =
+{
+ 		id=90024,
+ 		type=9,
+ 		order=2,
+ 		limit=81,
+ 		limitValue1=10,
+ 		limitValue2=2,
+ 		limitValue3=120001,
+ 		jumpId=41,
+ 	name=0
+},
+[90095] =
+{
+ 		id=90095,
+ 		type=9,
+ 		order=3,
+ 		limit=83,
+ 		limitValue1=6,
+ 		limitValue2=120001,
+ 		jumpId=63,
+ 	name=0
+},
+[90096] =
+{
+ 		id=90096,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=3,
+ 		limitValue2=120001,
+ 		jumpId=65,
+ 	name=0
+},
+[90025] =
+{
+ 		id=90025,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=120002,
+ 		jumpId=61,
+ 	name=0
+},
+[90026] =
+{
+ 		id=90026,
+ 		type=9,
+ 		order=2,
+ 		limit=83,
+ 		limitValue1=5,
+ 		limitValue2=120002,
+ 		jumpId=63,
+ 	name=0
+},
+[90027] =
+{
+ 		id=90027,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=120003,
+ 		jumpId=61,
+ 	name=0
+},
+[90028] =
+{
+ 		id=90028,
+ 		type=9,
+ 		order=2,
+ 		limit=78,
+ 		limitValue1=1,
+ 		limitValue2=4,
+ 		limitValue3=120003,
+ 		limitValue4=50115,
+ 		jumpId=1415,
+ 	name=0
+},
+[90029] =
+{
+ 		id=90029,
+ 		type=9,
+ 		order=3,
+ 		limit=83,
+ 		limitValue1=6,
+ 		limitValue2=120003,
+ 		jumpId=63,
+ 	name=0
+},
+[90030] =
+{
+ 		id=90030,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=3,
+ 		limitValue2=120003,
+ 		jumpId=65,
+ 	name=0
+},
+[90031] =
+{
+ 		id=90031,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=120004,
+ 		jumpId=61,
+ 	name=0
+},
+[90032] =
+{
+ 		id=90032,
+ 		type=9,
+ 		order=2,
+ 		limit=79,
+ 		limitValue1=20,
+ 		limitValue2=120004,
+ 		jumpId=41,
+ 	name=0
+},
+[90033] =
+{
+ 		id=90033,
+ 		type=9,
+ 		order=3,
+ 		limit=85,
+ 		limitValue1=3,
+ 		limitValue2=120004,
+ 		jumpId=65,
+ 	name=0
+},
+[90034] =
+{
+ 		id=90034,
+ 		type=9,
+ 		order=4,
+ 		limit=75,
+ 		limitValue1=1,
+ 		limitValue2=120004,
+ 		limitValue3=60108,
+ 		jumpId=1508,
+ 	name=0
+},
+[90035] =
+{
+ 		id=90035,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=120007,
+ 		jumpId=61,
+ 	name=0
+},
+[90036] =
+{
+ 		id=90036,
+ 		type=9,
+ 		order=2,
+ 		limit=83,
+ 		limitValue1=5,
+ 		limitValue2=120007,
+ 		jumpId=63,
+ 	name=0
+},
+[90037] =
+{
+ 		id=90037,
+ 		type=9,
+ 		order=3,
+ 		limit=76,
+ 		limitValue1=1,
+ 		limitValue2=4,
+ 		limitValue3=120007,
+ 		limitValue4=40115,
+ 		jumpId=1310,
+ 	name=0
+},
+[90038] =
+{
+ 		id=90038,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=3,
+ 		limitValue2=120007,
+ 		jumpId=65,
+ 	name=0
+},
+[90039] =
+{
+ 		id=90039,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=120008,
+ 		jumpId=61,
+ 	name=0
+},
+[90040] =
+{
+ 		id=90040,
+ 		type=9,
+ 		order=2,
+ 		limit=85,
+ 		limitValue1=2,
+ 		limitValue2=120008,
+ 		jumpId=65,
+ 	name=0
+},
+[90097] =
+{
+ 		id=90097,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=120009,
+ 		jumpId=61,
+ 	name=0
+},
+[90098] =
+{
+ 		id=90098,
+ 		type=9,
+ 		order=2,
+ 		limit=85,
+ 		limitValue1=2,
+ 		limitValue2=120009,
+ 		jumpId=65,
+ 	name=0
+},
+[90041] =
+{
+ 		id=90041,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=130001,
+ 		jumpId=61,
+ 	name=0
+},
+[90042] =
+{
+ 		id=90042,
+ 		type=9,
+ 		order=2,
+ 		limit=83,
+ 		limitValue1=5,
+ 		limitValue2=130001,
+ 		jumpId=63,
+ 	name=0
+},
+[90043] =
+{
+ 		id=90043,
+ 		type=9,
+ 		order=3,
+ 		limit=76,
+ 		limitValue1=1,
+ 		limitValue2=5,
+ 		limitValue3=130001,
+ 		limitValue4=40113,
+ 		jumpId=1308,
+ 	name=0
+},
+[90044] =
+{
+ 		id=90044,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=3,
+ 		limitValue2=130001,
+ 		jumpId=65,
+ 	name=0
+},
+[90045] =
+{
+ 		id=90045,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=130003,
+ 		jumpId=61,
+ 	name=0
+},
+[90046] =
+{
+ 		id=90046,
+ 		type=9,
+ 		order=2,
+ 		limit=83,
+ 		limitValue1=5,
+ 		limitValue2=130003,
+ 		jumpId=63,
+ 	name=0
+},
+[90047] =
+{
+ 		id=90047,
+ 		type=9,
+ 		order=3,
+ 		limit=76,
+ 		limitValue1=1,
+ 		limitValue2=5,
+ 		limitValue3=130003,
+ 		limitValue4=40104,
+ 		jumpId=1304,
+ 	name=0
+},
+[90048] =
+{
+ 		id=90048,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=3,
+ 		limitValue2=130003,
+ 		jumpId=65,
+ 	name=0
+},
+[90049] =
+{
+ 		id=90049,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=130004,
+ 		jumpId=61,
+ 	name=0
+},
+[90050] =
+{
+ 		id=90050,
+ 		type=9,
+ 		order=2,
+ 		limit=83,
+ 		limitValue1=5,
+ 		limitValue2=130004,
+ 		jumpId=63,
+ 	name=0
+},
+[90051] =
+{
+ 		id=90051,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=130005,
+ 		jumpId=61,
+ 	name=0
+},
+[90052] =
+{
+ 		id=90052,
+ 		type=9,
+ 		order=2,
+ 		limit=85,
+ 		limitValue1=2,
+ 		limitValue2=130005,
+ 		jumpId=65,
+ 	name=0
+},
+[90053] =
+{
+ 		id=90053,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=130006,
+ 		jumpId=61,
+ 	name=0
+},
+[90054] =
+{
+ 		id=90054,
+ 		type=9,
+ 		order=2,
+ 		limit=85,
+ 		limitValue1=2,
+ 		limitValue2=130006,
+ 		jumpId=65,
+ 	name=0
+},
+[90055] =
+{
+ 		id=90055,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=130009,
+ 		jumpId=61,
+ 	name=0
+},
+[90056] =
+{
+ 		id=90056,
+ 		type=9,
+ 		order=2,
+ 		limit=83,
+ 		limitValue1=5,
+ 		limitValue2=130009,
+ 		jumpId=63,
+ 	name=0
+},
+[90057] =
+{
+ 		id=90057,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=140001,
+ 		jumpId=61,
+ 	name=0
+},
+[90058] =
+{
+ 		id=90058,
+ 		type=9,
+ 		order=2,
+ 		limit=83,
+ 		limitValue1=5,
+ 		limitValue2=140001,
+ 		jumpId=63,
+ 	name=0
+},
+[90059] =
+{
+ 		id=90059,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=140002,
+ 		jumpId=61,
+ 	name=0
+},
+[90060] =
+{
+ 		id=90060,
+ 		type=9,
+ 		order=2,
+ 		limit=75,
+ 		limitValue1=1,
+ 		limitValue2=140002,
+ 		limitValue3=50115,
+ 		jumpId=1415,
+ 	name=0
+},
+[90061] =
+{
+ 		id=90061,
+ 		type=9,
+ 		order=3,
+ 		limit=83,
+ 		limitValue1=6,
+ 		limitValue2=140002,
+ 		jumpId=63,
+ 	name=0
+},
+[90062] =
+{
+ 		id=90062,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=3,
+ 		limitValue2=140002,
+ 		jumpId=65,
+ 	name=0
+},
+[90063] =
+{
+ 		id=90063,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=140003,
+ 		jumpId=61,
+ 	name=0
+},
+[90064] =
+{
+ 		id=90064,
+ 		type=9,
+ 		order=2,
+ 		limit=85,
+ 		limitValue1=2,
+ 		limitValue2=140003,
+ 		jumpId=65,
+ 	name=0
+},
+[90065] =
+{
+ 		id=90065,
+ 		type=9,
+ 		order=3,
+ 		limit=83,
+ 		limitValue1=6,
+ 		limitValue2=140003,
+ 		jumpId=63,
+ 	name=0
+},
+[90066] =
+{
+ 		id=90066,
+ 		type=9,
+ 		order=4,
+ 		limit=75,
+ 		limitValue1=1,
+ 		limitValue2=140003,
+ 		limitValue3=60102,
+ 		jumpId=1502,
+ 	name=0
+},
+[90067] =
+{
+ 		id=90067,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=140004,
+ 		jumpId=61,
+ 	name=0
+},
+[90068] =
+{
+ 		id=90068,
+ 		type=9,
+ 		order=2,
+ 		limit=83,
+ 		limitValue1=5,
+ 		limitValue2=140004,
+ 		jumpId=63,
+ 	name=0
+},
+[90069] =
+{
+ 		id=90069,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=140005,
+ 		jumpId=61,
+ 	name=0
+},
+[90070] =
+{
+ 		id=90070,
+ 		type=9,
+ 		order=2,
+ 		limit=85,
+ 		limitValue1=2,
+ 		limitValue2=140005,
+ 		jumpId=65,
+ 	name=0
+},
+[90071] =
+{
+ 		id=90071,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=140006,
+ 		jumpId=61,
+ 	name=0
+},
+[90072] =
+{
+ 		id=90072,
+ 		type=9,
+ 		order=2,
+ 		limit=83,
+ 		limitValue1=5,
+ 		limitValue2=140006,
+ 		jumpId=63,
+ 	name=0
+},
+[90073] =
+{
+ 		id=90073,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=150001,
+ 		jumpId=61,
+ 	name=0
+},
+[90074] =
+{
+ 		id=90074,
+ 		type=9,
+ 		order=2,
+ 		limit=83,
+ 		limitValue1=5,
+ 		limitValue2=150001,
+ 		jumpId=63,
+ 	name=0
+},
+[90075] =
+{
+ 		id=90075,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=150002,
+ 		jumpId=61,
+ 	name=0
+},
+[90076] =
+{
+ 		id=90076,
+ 		type=9,
+ 		order=2,
+ 		limit=83,
+ 		limitValue1=5,
+ 		limitValue2=150002,
+ 		jumpId=63,
+ 	name=0
+},
+[90077] =
+{
+ 		id=90077,
+ 		type=9,
+ 		order=3,
+ 		limit=76,
+ 		limitValue1=1,
+ 		limitValue2=4,
+ 		limitValue3=150002,
+ 		limitValue4=40109,
+ 		jumpId=1311,
+ 	name=0
+},
+[90078] =
+{
+ 		id=90078,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=3,
+ 		limitValue2=150002,
+ 		jumpId=65,
+ 	name=0
+},
+[90079] =
+{
+ 		id=90079,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=150003,
+ 		jumpId=61,
+ 	name=0
+},
+[90080] =
+{
+ 		id=90080,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=2,
+ 		limitValue2=150003,
+ 		jumpId=65,
+ 	name=0
+},
+[90081] =
+{
+ 		id=90081,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=150004,
+ 		jumpId=61,
+ 	name=0
+},
+[90082] =
+{
+ 		id=90082,
+ 		type=9,
+ 		order=2,
+ 		limit=83,
+ 		limitValue1=5,
+ 		limitValue2=150004,
+ 		jumpId=63,
+ 	name=0
+},
+[90083] =
+{
+ 		id=90083,
+ 		type=9,
+ 		order=3,
+ 		limit=76,
+ 		limitValue1=1,
+ 		limitValue2=4,
+ 		limitValue3=150004,
+ 		limitValue4=40108,
+ 		jumpId=1307,
+ 	name=0
+},
+[90084] =
+{
+ 		id=90084,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=2,
+ 		limitValue2=150004,
+ 		jumpId=65,
+ 	name=0
+},
+[90085] =
+{
+ 		id=90085,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=150005,
+ 		jumpId=61,
+ 	name=0
+},
+[90086] =
+{
+ 		id=90086,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=2,
+ 		limitValue2=150005,
+ 		jumpId=65,
+ 	name=0
+},
+[90087] =
+{
+ 		id=90087,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=150006,
+ 		jumpId=61,
+ 	name=0
+},
+[90088] =
+{
+ 		id=90088,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=2,
+ 		limitValue2=150006,
+ 		jumpId=65,
+ 	name=0
+},
+[90089] =
+{
+ 		id=90089,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=150009,
+ 		jumpId=61,
+ 	name=0
+},
+[90090] =
+{
+ 		id=90090,
+ 		type=9,
+ 		order=2,
+ 		limit=79,
+ 		limitValue1=20,
+ 		limitValue2=150009,
+ 		jumpId=41,
+ 	name=0
+},
+[90091] =
+{
+ 		id=90091,
+ 		type=9,
+ 		order=3,
+ 		limit=83,
+ 		limitValue1=6,
+ 		limitValue2=150009,
+ 		jumpId=63,
+ 	name=0
+},
+[90092] =
+{
+ 		id=90092,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=3,
+ 		limitValue2=150009,
+ 		jumpId=65,
+ 	name=0
+},
+[90099] =
+{
+ 		id=90099,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=110012,
+ 		jumpId=61,
+ 	name=0
+},
+[90100] =
+{
+ 		id=90100,
+ 		type=9,
+ 		order=2,
+ 		limit=79,
+ 		limitValue1=20,
+ 		limitValue2=110012,
+ 		jumpId=41,
+ 	name=0
+},
+[90101] =
+{
+ 		id=90101,
+ 		type=9,
+ 		order=3,
+ 		limit=83,
+ 		limitValue1=6,
+ 		limitValue2=110012,
+ 		jumpId=63,
+ 	name=0
+},
+[90102] =
+{
+ 		id=90102,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=3,
+ 		limitValue2=110012,
+ 		jumpId=65,
+ 	name=0
+},
+[90103] =
+{
+ 		id=90103,
+ 		type=9,
+ 		order=1,
+ 		limit=46,
+ 		limitValue1=70,
+ 		limitValue2=120013,
+ 		jumpId=61,
+ 	name=0
+},
+[90104] =
+{
+ 		id=90104,
+ 		type=9,
+ 		order=4,
+ 		limit=85,
+ 		limitValue1=2,
+ 		limitValue2=120013,
+ 		jumpId=65,
+ 	name=0
+},
+[100001] =
+{
+ 		id=100001,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=110001,
+ 		jumpId=61,
+ 		trigger={110001},
+ 	name=0
+},
+[100002] =
+{
+ 		id=100002,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=110001,
+ 		jumpId=61,
+ 		trigger={110001},
+ 	name=0
+},
+[100003] =
+{
+ 		id=100003,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=110001,
+ 		jumpId=61,
+ 		trigger={110001},
+ 	name=0
+},
+[100004] =
+{
+ 		id=100004,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=110001,
+ 		jumpId=61,
+ 		trigger={110001},
+ 	name=0
+},
+[100005] =
+{
+ 		id=100005,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=110001,
+ 		jumpId=61,
+ 		trigger={110001},
+ 	name=0
+},
+[100006] =
+{
+ 		id=100006,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=110002,
+ 		jumpId=61,
+ 		trigger={110002},
+ 	name=0
+},
+[100007] =
+{
+ 		id=100007,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=110002,
+ 		jumpId=61,
+ 		trigger={110002},
+ 	name=0
+},
+[100008] =
+{
+ 		id=100008,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=110002,
+ 		jumpId=61,
+ 		trigger={110002},
+ 	name=0
+},
+[100009] =
+{
+ 		id=100009,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=110002,
+ 		jumpId=61,
+ 		trigger={110002},
+ 	name=0
+},
+[100010] =
+{
+ 		id=100010,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=110002,
+ 		jumpId=61,
+ 		trigger={110002},
+ 	name=0
+},
+[100011] =
+{
+ 		id=100011,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=110003,
+ 		jumpId=61,
+ 	name=0
+},
+[100012] =
+{
+ 		id=100012,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=110003,
+ 		jumpId=61,
+ 	name=0
+},
+[100013] =
+{
+ 		id=100013,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=110003,
+ 		jumpId=61,
+ 	name=0
+},
+[100014] =
+{
+ 		id=100014,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=110003,
+ 		jumpId=61,
+ 	name=0
+},
+[100015] =
+{
+ 		id=100015,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=110003,
+ 		jumpId=61,
+ 	name=0
+},
+[100016] =
+{
+ 		id=100016,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=110004,
+ 		jumpId=61,
+ 		trigger={110004},
+ 	name=0
+},
+[100017] =
+{
+ 		id=100017,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=110004,
+ 		jumpId=61,
+ 		trigger={110004},
+ 	name=0
+},
+[100018] =
+{
+ 		id=100018,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=110004,
+ 		jumpId=61,
+ 		trigger={110004},
+ 	name=0
+},
+[100019] =
+{
+ 		id=100019,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=110004,
+ 		jumpId=61,
+ 		trigger={110004},
+ 	name=0
+},
+[100020] =
+{
+ 		id=100020,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=110004,
+ 		jumpId=61,
+ 		trigger={110004},
+ 	name=0
+},
+[100021] =
+{
+ 		id=100021,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=110005,
+ 		jumpId=61,
+ 		trigger={110005},
+ 	name=0
+},
+[100022] =
+{
+ 		id=100022,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=110005,
+ 		jumpId=61,
+ 		trigger={110005},
+ 	name=0
+},
+[100023] =
+{
+ 		id=100023,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=110005,
+ 		jumpId=61,
+ 		trigger={110005},
+ 	name=0
+},
+[100024] =
+{
+ 		id=100024,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=110005,
+ 		jumpId=61,
+ 		trigger={110005},
+ 	name=0
+},
+[100025] =
+{
+ 		id=100025,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=110005,
+ 		jumpId=61,
+ 		trigger={110005},
+ 	name=0
+},
+[100026] =
+{
+ 		id=100026,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=110006,
+ 		jumpId=61,
+ 		trigger={110006},
+ 	name=0
+},
+[100027] =
+{
+ 		id=100027,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=110006,
+ 		jumpId=61,
+ 		trigger={110006},
+ 	name=0
+},
+[100028] =
+{
+ 		id=100028,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=110006,
+ 		jumpId=61,
+ 		trigger={110006},
+ 	name=0
+},
+[100029] =
+{
+ 		id=100029,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=110006,
+ 		jumpId=61,
+ 		trigger={110006},
+ 	name=0
+},
+[100030] =
+{
+ 		id=100030,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=110006,
+ 		jumpId=61,
+ 		trigger={110006},
+ 	name=0
+},
+[100031] =
+{
+ 		id=100031,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=110007,
+ 		jumpId=61,
+ 		trigger={110007},
+ 	name=0
+},
+[100032] =
+{
+ 		id=100032,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=110007,
+ 		jumpId=61,
+ 		trigger={110007},
+ 	name=0
+},
+[100033] =
+{
+ 		id=100033,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=110007,
+ 		jumpId=61,
+ 		trigger={110007},
+ 	name=0
+},
+[100034] =
+{
+ 		id=100034,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=110007,
+ 		jumpId=61,
+ 		trigger={110007},
+ 	name=0
+},
+[100035] =
+{
+ 		id=100035,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=110007,
+ 		jumpId=61,
+ 		trigger={110007},
+ 	name=0
+},
+[100036] =
+{
+ 		id=100036,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=110008,
+ 		jumpId=61,
+ 		trigger={110008},
+ 	name=0
+},
+[100037] =
+{
+ 		id=100037,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=110008,
+ 		jumpId=61,
+ 		trigger={110008},
+ 	name=0
+},
+[100038] =
+{
+ 		id=100038,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=110008,
+ 		jumpId=61,
+ 		trigger={110008},
+ 	name=0
+},
+[100039] =
+{
+ 		id=100039,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=110008,
+ 		jumpId=61,
+ 		trigger={110008},
+ 	name=0
+},
+[100040] =
+{
+ 		id=100040,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=110008,
+ 		jumpId=61,
+ 		trigger={110008},
+ 	name=0
+},
+[100041] =
+{
+ 		id=100041,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=110009,
+ 		jumpId=61,
+ 		trigger={110009},
+ 	name=0
+},
+[100042] =
+{
+ 		id=100042,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=110009,
+ 		jumpId=61,
+ 		trigger={110009},
+ 	name=0
+},
+[100043] =
+{
+ 		id=100043,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=110009,
+ 		jumpId=61,
+ 		trigger={110009},
+ 	name=0
+},
+[100044] =
+{
+ 		id=100044,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=110009,
+ 		jumpId=61,
+ 		trigger={110009},
+ 	name=0
+},
+[100045] =
+{
+ 		id=100045,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=110009,
+ 		jumpId=61,
+ 		trigger={110009},
+ 	name=0
+},
+[100046] =
+{
+ 		id=100046,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=110010,
+ 		jumpId=61,
+ 		trigger={110010},
+ 	name=0
+},
+[100047] =
+{
+ 		id=100047,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=110010,
+ 		jumpId=61,
+ 		trigger={110010},
+ 	name=0
+},
+[100048] =
+{
+ 		id=100048,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=110010,
+ 		jumpId=61,
+ 		trigger={110010},
+ 	name=0
+},
+[100049] =
+{
+ 		id=100049,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=110010,
+ 		jumpId=61,
+ 		trigger={110010},
+ 	name=0
+},
+[100050] =
+{
+ 		id=100050,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=110010,
+ 		jumpId=61,
+ 		trigger={110010},
+ 	name=0
+},
+[100051] =
+{
+ 		id=100051,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=110011,
+ 		jumpId=61,
+ 		trigger={110011},
+ 	name=0
+},
+[100052] =
+{
+ 		id=100052,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=110011,
+ 		jumpId=61,
+ 		trigger={110011},
+ 	name=0
+},
+[100053] =
+{
+ 		id=100053,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=110011,
+ 		jumpId=61,
+ 		trigger={110011},
+ 	name=0
+},
+[100054] =
+{
+ 		id=100054,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=110011,
+ 		jumpId=61,
+ 		trigger={110011},
+ 	name=0
+},
+[100055] =
+{
+ 		id=100055,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=110011,
+ 		jumpId=61,
+ 		trigger={110011},
+ 	name=0
+},
+[100056] =
+{
+ 		id=100056,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=120001,
+ 		jumpId=61,
+ 		trigger={120001},
+ 	name=0
+},
+[100057] =
+{
+ 		id=100057,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=120001,
+ 		jumpId=61,
+ 		trigger={120001},
+ 	name=0
+},
+[100058] =
+{
+ 		id=100058,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=120001,
+ 		jumpId=61,
+ 		trigger={120001},
+ 	name=0
+},
+[100059] =
+{
+ 		id=100059,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=120001,
+ 		jumpId=61,
+ 		trigger={120001},
+ 	name=0
+},
+[100060] =
+{
+ 		id=100060,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=120001,
+ 		jumpId=61,
+ 		trigger={120001},
+ 	name=0
+},
+[100061] =
+{
+ 		id=100061,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=120002,
+ 		jumpId=61,
+ 		trigger={120002},
+ 	name=0
+},
+[100062] =
+{
+ 		id=100062,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=120002,
+ 		jumpId=61,
+ 		trigger={120002},
+ 	name=0
+},
+[100063] =
+{
+ 		id=100063,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=120002,
+ 		jumpId=61,
+ 		trigger={120002},
+ 	name=0
+},
+[100064] =
+{
+ 		id=100064,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=120002,
+ 		jumpId=61,
+ 		trigger={120002},
+ 	name=0
+},
+[100065] =
+{
+ 		id=100065,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=120002,
+ 		jumpId=61,
+ 		trigger={120002},
+ 	name=0
+},
+[100066] =
+{
+ 		id=100066,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=120003,
+ 		jumpId=61,
+ 		trigger={120003},
+ 	name=0
+},
+[100067] =
+{
+ 		id=100067,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=120003,
+ 		jumpId=61,
+ 		trigger={120003},
+ 	name=0
+},
+[100068] =
+{
+ 		id=100068,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=120003,
+ 		jumpId=61,
+ 		trigger={120003},
+ 	name=0
+},
+[100069] =
+{
+ 		id=100069,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=120003,
+ 		jumpId=61,
+ 		trigger={120003},
+ 	name=0
+},
+[100070] =
+{
+ 		id=100070,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=120003,
+ 		jumpId=61,
+ 		trigger={120003},
+ 	name=0
+},
+[100071] =
+{
+ 		id=100071,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=120004,
+ 		jumpId=61,
+ 		trigger={120004},
+ 	name=0
+},
+[100072] =
+{
+ 		id=100072,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=120004,
+ 		jumpId=61,
+ 		trigger={120004},
+ 	name=0
+},
+[100073] =
+{
+ 		id=100073,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=120004,
+ 		jumpId=61,
+ 		trigger={120004},
+ 	name=0
+},
+[100074] =
+{
+ 		id=100074,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=120004,
+ 		jumpId=61,
+ 		trigger={120004},
+ 	name=0
+},
+[100075] =
+{
+ 		id=100075,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=120004,
+ 		jumpId=61,
+ 		trigger={120004},
+ 	name=0
+},
+[100076] =
+{
+ 		id=100076,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=120005,
+ 		jumpId=61,
+ 		trigger={120005},
+ 	name=0
+},
+[100077] =
+{
+ 		id=100077,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=120005,
+ 		jumpId=61,
+ 		trigger={120005},
+ 	name=0
+},
+[100078] =
+{
+ 		id=100078,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=120005,
+ 		jumpId=61,
+ 		trigger={120005},
+ 	name=0
+},
+[100079] =
+{
+ 		id=100079,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=120005,
+ 		jumpId=61,
+ 		trigger={120005},
+ 	name=0
+},
+[100080] =
+{
+ 		id=100080,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=120005,
+ 		jumpId=61,
+ 		trigger={120005},
+ 	name=0
+},
+[100081] =
+{
+ 		id=100081,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=120006,
+ 		jumpId=61,
+ 		trigger={120006},
+ 	name=0
+},
+[100082] =
+{
+ 		id=100082,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=120006,
+ 		jumpId=61,
+ 		trigger={120006},
+ 	name=0
+},
+[100083] =
+{
+ 		id=100083,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=120006,
+ 		jumpId=61,
+ 		trigger={120006},
+ 	name=0
+},
+[100084] =
+{
+ 		id=100084,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=120006,
+ 		jumpId=61,
+ 		trigger={120006},
+ 	name=0
+},
+[100085] =
+{
+ 		id=100085,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=120006,
+ 		jumpId=61,
+ 		trigger={120006},
+ 	name=0
+},
+[100086] =
+{
+ 		id=100086,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=120007,
+ 		jumpId=61,
+ 		trigger={120007},
+ 	name=0
+},
+[100087] =
+{
+ 		id=100087,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=120007,
+ 		jumpId=61,
+ 		trigger={120007},
+ 	name=0
+},
+[100088] =
+{
+ 		id=100088,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=120007,
+ 		jumpId=61,
+ 		trigger={120007},
+ 	name=0
+},
+[100089] =
+{
+ 		id=100089,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=120007,
+ 		jumpId=61,
+ 		trigger={120007},
+ 	name=0
+},
+[100090] =
+{
+ 		id=100090,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=120007,
+ 		jumpId=61,
+ 		trigger={120007},
+ 	name=0
+},
+[100091] =
+{
+ 		id=100091,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=120008,
+ 		jumpId=61,
+ 		trigger={120008},
+ 	name=0
+},
+[100092] =
+{
+ 		id=100092,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=120008,
+ 		jumpId=61,
+ 		trigger={120008},
+ 	name=0
+},
+[100093] =
+{
+ 		id=100093,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=120008,
+ 		jumpId=61,
+ 		trigger={120008},
+ 	name=0
+},
+[100094] =
+{
+ 		id=100094,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=120008,
+ 		jumpId=61,
+ 		trigger={120008},
+ 	name=0
+},
+[100095] =
+{
+ 		id=100095,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=120008,
+ 		jumpId=61,
+ 		trigger={120008},
+ 	name=0
+},
+[100096] =
+{
+ 		id=100096,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=120009,
+ 		jumpId=61,
+ 		trigger={120009},
+ 	name=0
+},
+[100097] =
+{
+ 		id=100097,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=120009,
+ 		jumpId=61,
+ 		trigger={120009},
+ 	name=0
+},
+[100098] =
+{
+ 		id=100098,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=120009,
+ 		jumpId=61,
+ 		trigger={120009},
+ 	name=0
+},
+[100099] =
+{
+ 		id=100099,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=120009,
+ 		jumpId=61,
+ 		trigger={120009},
+ 	name=0
+},
+[100100] =
+{
+ 		id=100100,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=120009,
+ 		jumpId=61,
+ 		trigger={120009},
+ 	name=0
+},
+[100101] =
+{
+ 		id=100101,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=120010,
+ 		jumpId=61,
+ 		trigger={120010},
+ 	name=0
+},
+[100102] =
+{
+ 		id=100102,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=120010,
+ 		jumpId=61,
+ 		trigger={120010},
+ 	name=0
+},
+[100103] =
+{
+ 		id=100103,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=120010,
+ 		jumpId=61,
+ 		trigger={120010},
+ 	name=0
+},
+[100104] =
+{
+ 		id=100104,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=120010,
+ 		jumpId=61,
+ 		trigger={120010},
+ 	name=0
+},
+[100105] =
+{
+ 		id=100105,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=120010,
+ 		jumpId=61,
+ 		trigger={120010},
+ 	name=0
+},
+[100106] =
+{
+ 		id=100106,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=130001,
+ 		jumpId=61,
+ 		trigger={130001},
+ 	name=0
+},
+[100107] =
+{
+ 		id=100107,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=130001,
+ 		jumpId=61,
+ 		trigger={130001},
+ 	name=0
+},
+[100108] =
+{
+ 		id=100108,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=130001,
+ 		jumpId=61,
+ 		trigger={130001},
+ 	name=0
+},
+[100109] =
+{
+ 		id=100109,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=130001,
+ 		jumpId=61,
+ 		trigger={130001},
+ 	name=0
+},
+[100110] =
+{
+ 		id=100110,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=130001,
+ 		jumpId=61,
+ 		trigger={130001},
+ 	name=0
+},
+[100111] =
+{
+ 		id=100111,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=130002,
+ 		jumpId=61,
+ 		trigger={130002},
+ 	name=0
+},
+[100112] =
+{
+ 		id=100112,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=130002,
+ 		jumpId=61,
+ 		trigger={130002},
+ 	name=0
+},
+[100113] =
+{
+ 		id=100113,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=130002,
+ 		jumpId=61,
+ 		trigger={130002},
+ 	name=0
+},
+[100114] =
+{
+ 		id=100114,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=130002,
+ 		jumpId=61,
+ 		trigger={130002},
+ 	name=0
+},
+[100115] =
+{
+ 		id=100115,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=130002,
+ 		jumpId=61,
+ 		trigger={130002},
+ 	name=0
+},
+[100116] =
+{
+ 		id=100116,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=130003,
+ 		jumpId=61,
+ 		trigger={130003},
+ 	name=0
+},
+[100117] =
+{
+ 		id=100117,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=130003,
+ 		jumpId=61,
+ 		trigger={130003},
+ 	name=0
+},
+[100118] =
+{
+ 		id=100118,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=130003,
+ 		jumpId=61,
+ 		trigger={130003},
+ 	name=0
+},
+[100119] =
+{
+ 		id=100119,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=130003,
+ 		jumpId=61,
+ 		trigger={130003},
+ 	name=0
+},
+[100120] =
+{
+ 		id=100120,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=130003,
+ 		jumpId=61,
+ 		trigger={130003},
+ 	name=0
+},
+[100121] =
+{
+ 		id=100121,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=130004,
+ 		jumpId=61,
+ 		trigger={130004},
+ 	name=0
+},
+[100122] =
+{
+ 		id=100122,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=130004,
+ 		jumpId=61,
+ 		trigger={130004},
+ 	name=0
+},
+[100123] =
+{
+ 		id=100123,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=130004,
+ 		jumpId=61,
+ 		trigger={130004},
+ 	name=0
+},
+[100124] =
+{
+ 		id=100124,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=130004,
+ 		jumpId=61,
+ 		trigger={130004},
+ 	name=0
+},
+[100125] =
+{
+ 		id=100125,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=130004,
+ 		jumpId=61,
+ 		trigger={130004},
+ 	name=0
+},
+[100126] =
+{
+ 		id=100126,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=130005,
+ 		jumpId=61,
+ 		trigger={130005},
+ 	name=0
+},
+[100127] =
+{
+ 		id=100127,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=130005,
+ 		jumpId=61,
+ 		trigger={130005},
+ 	name=0
+},
+[100128] =
+{
+ 		id=100128,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=130005,
+ 		jumpId=61,
+ 		trigger={130005},
+ 	name=0
+},
+[100129] =
+{
+ 		id=100129,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=130005,
+ 		jumpId=61,
+ 		trigger={130005},
+ 	name=0
+},
+[100130] =
+{
+ 		id=100130,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=130005,
+ 		jumpId=61,
+ 		trigger={130005},
+ 	name=0
+},
+[100131] =
+{
+ 		id=100131,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=130006,
+ 		jumpId=61,
+ 		trigger={130006},
+ 	name=0
+},
+[100132] =
+{
+ 		id=100132,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=130006,
+ 		jumpId=61,
+ 		trigger={130006},
+ 	name=0
+},
+[100133] =
+{
+ 		id=100133,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=130006,
+ 		jumpId=61,
+ 		trigger={130006},
+ 	name=0
+},
+[100134] =
+{
+ 		id=100134,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=130006,
+ 		jumpId=61,
+ 		trigger={130006},
+ 	name=0
+},
+[100135] =
+{
+ 		id=100135,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=130006,
+ 		jumpId=61,
+ 		trigger={130006},
+ 	name=0
+},
+[100136] =
+{
+ 		id=100136,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=130007,
+ 		jumpId=61,
+ 		trigger={130007},
+ 	name=0
+},
+[100137] =
+{
+ 		id=100137,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=130007,
+ 		jumpId=61,
+ 		trigger={130007},
+ 	name=0
+},
+[100138] =
+{
+ 		id=100138,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=130007,
+ 		jumpId=61,
+ 		trigger={130007},
+ 	name=0
+},
+[100139] =
+{
+ 		id=100139,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=130007,
+ 		jumpId=61,
+ 		trigger={130007},
+ 	name=0
+},
+[100140] =
+{
+ 		id=100140,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=130007,
+ 		jumpId=61,
+ 		trigger={130007},
+ 	name=0
+},
+[100141] =
+{
+ 		id=100141,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=130008,
+ 		jumpId=61,
+ 		trigger={130008},
+ 	name=0
+},
+[100142] =
+{
+ 		id=100142,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=130008,
+ 		jumpId=61,
+ 		trigger={130008},
+ 	name=0
+},
+[100143] =
+{
+ 		id=100143,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=130008,
+ 		jumpId=61,
+ 		trigger={130008},
+ 	name=0
+},
+[100144] =
+{
+ 		id=100144,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=130008,
+ 		jumpId=61,
+ 		trigger={130008},
+ 	name=0
+},
+[100145] =
+{
+ 		id=100145,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=130008,
+ 		jumpId=61,
+ 		trigger={130008},
+ 	name=0
+},
+[100146] =
+{
+ 		id=100146,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=130009,
+ 		jumpId=61,
+ 		trigger={130009},
+ 	name=0
+},
+[100147] =
+{
+ 		id=100147,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=130009,
+ 		jumpId=61,
+ 		trigger={130009},
+ 	name=0
+},
+[100148] =
+{
+ 		id=100148,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=130009,
+ 		jumpId=61,
+ 		trigger={130009},
+ 	name=0
+},
+[100149] =
+{
+ 		id=100149,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=130009,
+ 		jumpId=61,
+ 		trigger={130009},
+ 	name=0
+},
+[100150] =
+{
+ 		id=100150,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=130009,
+ 		jumpId=61,
+ 		trigger={130009},
+ 	name=0
+},
+[100151] =
+{
+ 		id=100151,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=140001,
+ 		jumpId=61,
+ 		trigger={140001},
+ 	name=0
+},
+[100152] =
+{
+ 		id=100152,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=140001,
+ 		jumpId=61,
+ 		trigger={140001},
+ 	name=0
+},
+[100153] =
+{
+ 		id=100153,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=140001,
+ 		jumpId=61,
+ 		trigger={140001},
+ 	name=0
+},
+[100154] =
+{
+ 		id=100154,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=140001,
+ 		jumpId=61,
+ 		trigger={140001},
+ 	name=0
+},
+[100155] =
+{
+ 		id=100155,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=140001,
+ 		jumpId=61,
+ 		trigger={140001},
+ 	name=0
+},
+[100156] =
+{
+ 		id=100156,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=140002,
+ 		jumpId=61,
+ 		trigger={140002},
+ 	name=0
+},
+[100157] =
+{
+ 		id=100157,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=140002,
+ 		jumpId=61,
+ 		trigger={140002},
+ 	name=0
+},
+[100158] =
+{
+ 		id=100158,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=140002,
+ 		jumpId=61,
+ 		trigger={140002},
+ 	name=0
+},
+[100159] =
+{
+ 		id=100159,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=140002,
+ 		jumpId=61,
+ 		trigger={140002},
+ 	name=0
+},
+[100160] =
+{
+ 		id=100160,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=140002,
+ 		jumpId=61,
+ 		trigger={140002},
+ 	name=0
+},
+[100161] =
+{
+ 		id=100161,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=140003,
+ 		jumpId=61,
+ 		trigger={140003},
+ 	name=0
+},
+[100162] =
+{
+ 		id=100162,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=140003,
+ 		jumpId=61,
+ 		trigger={140003},
+ 	name=0
+},
+[100163] =
+{
+ 		id=100163,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=140003,
+ 		jumpId=61,
+ 		trigger={140003},
+ 	name=0
+},
+[100164] =
+{
+ 		id=100164,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=140003,
+ 		jumpId=61,
+ 		trigger={140003},
+ 	name=0
+},
+[100165] =
+{
+ 		id=100165,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=140003,
+ 		jumpId=61,
+ 		trigger={140003},
+ 	name=0
+},
+[100166] =
+{
+ 		id=100166,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=140004,
+ 		jumpId=61,
+ 		trigger={140004},
+ 	name=0
+},
+[100167] =
+{
+ 		id=100167,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=140004,
+ 		jumpId=61,
+ 		trigger={140004},
+ 	name=0
+},
+[100168] =
+{
+ 		id=100168,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=140004,
+ 		jumpId=61,
+ 		trigger={140004},
+ 	name=0
+},
+[100169] =
+{
+ 		id=100169,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=140004,
+ 		jumpId=61,
+ 		trigger={140004},
+ 	name=0
+},
+[100170] =
+{
+ 		id=100170,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=140004,
+ 		jumpId=61,
+ 		trigger={140004},
+ 	name=0
+},
+[100171] =
+{
+ 		id=100171,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=140005,
+ 		jumpId=61,
+ 		trigger={140005},
+ 	name=0
+},
+[100172] =
+{
+ 		id=100172,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=140005,
+ 		jumpId=61,
+ 		trigger={140005},
+ 	name=0
+},
+[100173] =
+{
+ 		id=100173,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=140005,
+ 		jumpId=61,
+ 		trigger={140005},
+ 	name=0
+},
+[100174] =
+{
+ 		id=100174,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=140005,
+ 		jumpId=61,
+ 		trigger={140005},
+ 	name=0
+},
+[100175] =
+{
+ 		id=100175,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=140005,
+ 		jumpId=61,
+ 		trigger={140005},
+ 	name=0
+},
+[100176] =
+{
+ 		id=100176,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=140006,
+ 		jumpId=61,
+ 		trigger={140006},
+ 	name=0
+},
+[100177] =
+{
+ 		id=100177,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=140006,
+ 		jumpId=61,
+ 		trigger={140006},
+ 	name=0
+},
+[100178] =
+{
+ 		id=100178,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=140006,
+ 		jumpId=61,
+ 		trigger={140006},
+ 	name=0
+},
+[100179] =
+{
+ 		id=100179,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=140006,
+ 		jumpId=61,
+ 		trigger={140006},
+ 	name=0
+},
+[100180] =
+{
+ 		id=100180,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=140006,
+ 		jumpId=61,
+ 		trigger={140006},
+ 	name=0
+},
+[100181] =
+{
+ 		id=100181,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=140007,
+ 		jumpId=61,
+ 		trigger={140007},
+ 	name=0
+},
+[100182] =
+{
+ 		id=100182,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=140007,
+ 		jumpId=61,
+ 		trigger={140007},
+ 	name=0
+},
+[100183] =
+{
+ 		id=100183,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=140007,
+ 		jumpId=61,
+ 		trigger={140007},
+ 	name=0
+},
+[100184] =
+{
+ 		id=100184,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=140007,
+ 		jumpId=61,
+ 		trigger={140007},
+ 	name=0
+},
+[100185] =
+{
+ 		id=100185,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=140007,
+ 		jumpId=61,
+ 		trigger={140007},
+ 	name=0
+},
+[100186] =
+{
+ 		id=100186,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=140008,
+ 		jumpId=61,
+ 		trigger={140008},
+ 	name=0
+},
+[100187] =
+{
+ 		id=100187,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=140008,
+ 		jumpId=61,
+ 		trigger={140008},
+ 	name=0
+},
+[100188] =
+{
+ 		id=100188,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=140008,
+ 		jumpId=61,
+ 		trigger={140008},
+ 	name=0
+},
+[100189] =
+{
+ 		id=100189,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=140008,
+ 		jumpId=61,
+ 		trigger={140008},
+ 	name=0
+},
+[100190] =
+{
+ 		id=100190,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=140008,
+ 		jumpId=61,
+ 		trigger={140008},
+ 	name=0
+},
+[100191] =
+{
+ 		id=100191,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=150001,
+ 		jumpId=61,
+ 		trigger={150001},
+ 	name=0
+},
+[100192] =
+{
+ 		id=100192,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=150001,
+ 		jumpId=61,
+ 		trigger={150001},
+ 	name=0
+},
+[100193] =
+{
+ 		id=100193,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=150001,
+ 		jumpId=61,
+ 		trigger={150001},
+ 	name=0
+},
+[100194] =
+{
+ 		id=100194,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=150001,
+ 		jumpId=61,
+ 		trigger={150001},
+ 	name=0
+},
+[100195] =
+{
+ 		id=100195,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=150001,
+ 		jumpId=61,
+ 		trigger={150001},
+ 	name=0
+},
+[100196] =
+{
+ 		id=100196,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=150002,
+ 		jumpId=61,
+ 		trigger={150002},
+ 	name=0
+},
+[100197] =
+{
+ 		id=100197,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=150002,
+ 		jumpId=61,
+ 		trigger={150002},
+ 	name=0
+},
+[100198] =
+{
+ 		id=100198,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=150002,
+ 		jumpId=61,
+ 		trigger={150002},
+ 	name=0
+},
+[100199] =
+{
+ 		id=100199,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=150002,
+ 		jumpId=61,
+ 		trigger={150002},
+ 	name=0
+},
+[100200] =
+{
+ 		id=100200,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=150002,
+ 		jumpId=61,
+ 		trigger={150002},
+ 	name=0
+},
+[100201] =
+{
+ 		id=100201,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=150003,
+ 		jumpId=61,
+ 		trigger={150003},
+ 	name=0
+},
+[100202] =
+{
+ 		id=100202,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=150003,
+ 		jumpId=61,
+ 		trigger={150003},
+ 	name=0
+},
+[100203] =
+{
+ 		id=100203,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=150003,
+ 		jumpId=61,
+ 		trigger={150003},
+ 	name=0
+},
+[100204] =
+{
+ 		id=100204,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=150003,
+ 		jumpId=61,
+ 		trigger={150003},
+ 	name=0
+},
+[100205] =
+{
+ 		id=100205,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=150003,
+ 		jumpId=61,
+ 		trigger={150003},
+ 	name=0
+},
+[100206] =
+{
+ 		id=100206,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=150004,
+ 		jumpId=61,
+ 		trigger={150004},
+ 	name=0
+},
+[100207] =
+{
+ 		id=100207,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=150004,
+ 		jumpId=61,
+ 		trigger={150004},
+ 	name=0
+},
+[100208] =
+{
+ 		id=100208,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=150004,
+ 		jumpId=61,
+ 		trigger={150004},
+ 	name=0
+},
+[100209] =
+{
+ 		id=100209,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=150004,
+ 		jumpId=61,
+ 		trigger={150004},
+ 	name=0
+},
+[100210] =
+{
+ 		id=100210,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=150004,
+ 		jumpId=61,
+ 		trigger={150004},
+ 	name=0
+},
+[100211] =
+{
+ 		id=100211,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=150005,
+ 		jumpId=61,
+ 		trigger={150005},
+ 	name=0
+},
+[100212] =
+{
+ 		id=100212,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=150005,
+ 		jumpId=61,
+ 		trigger={150005},
+ 	name=0
+},
+[100213] =
+{
+ 		id=100213,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=150005,
+ 		jumpId=61,
+ 		trigger={150005},
+ 	name=0
+},
+[100214] =
+{
+ 		id=100214,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=150005,
+ 		jumpId=61,
+ 		trigger={150005},
+ 	name=0
+},
+[100215] =
+{
+ 		id=100215,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=150005,
+ 		jumpId=61,
+ 		trigger={150005},
+ 	name=0
+},
+[100216] =
+{
+ 		id=100216,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=150006,
+ 		jumpId=61,
+ 		trigger={150006},
+ 	name=0
+},
+[100217] =
+{
+ 		id=100217,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=150006,
+ 		jumpId=61,
+ 		trigger={150006},
+ 	name=0
+},
+[100218] =
+{
+ 		id=100218,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=150006,
+ 		jumpId=61,
+ 		trigger={150006},
+ 	name=0
+},
+[100219] =
+{
+ 		id=100219,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=150006,
+ 		jumpId=61,
+ 		trigger={150006},
+ 	name=0
+},
+[100220] =
+{
+ 		id=100220,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=150006,
+ 		jumpId=61,
+ 		trigger={150006},
+ 	name=0
+},
+[100221] =
+{
+ 		id=100221,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=150007,
+ 		jumpId=61,
+ 		trigger={150007},
+ 	name=0
+},
+[100222] =
+{
+ 		id=100222,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=150007,
+ 		jumpId=61,
+ 		trigger={150007},
+ 	name=0
+},
+[100223] =
+{
+ 		id=100223,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=150007,
+ 		jumpId=61,
+ 		trigger={150007},
+ 	name=0
+},
+[100224] =
+{
+ 		id=100224,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=150007,
+ 		jumpId=61,
+ 		trigger={150007},
+ 	name=0
+},
+[100225] =
+{
+ 		id=100225,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=150007,
+ 		jumpId=61,
+ 		trigger={150007},
+ 	name=0
+},
+[100226] =
+{
+ 		id=100226,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=150008,
+ 		jumpId=61,
+ 		trigger={150008},
+ 	name=0
+},
+[100227] =
+{
+ 		id=100227,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=150008,
+ 		jumpId=61,
+ 		trigger={150008},
+ 	name=0
+},
+[100228] =
+{
+ 		id=100228,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=150008,
+ 		jumpId=61,
+ 		trigger={150008},
+ 	name=0
+},
+[100229] =
+{
+ 		id=100229,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=150008,
+ 		jumpId=61,
+ 		trigger={150008},
+ 	name=0
+},
+[100230] =
+{
+ 		id=100230,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=150008,
+ 		jumpId=61,
+ 		trigger={150008},
+ 	name=0
+},
+[100231] =
+{
+ 		id=100231,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=150009,
+ 		jumpId=61,
+ 		trigger={150009},
+ 	name=0
+},
+[100232] =
+{
+ 		id=100232,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=150009,
+ 		jumpId=61,
+ 		trigger={150009},
+ 	name=0
+},
+[100233] =
+{
+ 		id=100233,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=150009,
+ 		jumpId=61,
+ 		trigger={150009},
+ 	name=0
+},
+[100234] =
+{
+ 		id=100234,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=150009,
+ 		jumpId=61,
+ 		trigger={150009},
+ 	name=0
+},
+[100235] =
+{
+ 		id=100235,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=150009,
+ 		jumpId=61,
+ 		trigger={150009},
+ 	name=0
+},
+[100236] =
+{
+ 		id=100236,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=110012,
+ 		jumpId=61,
+ 		trigger={110012},
+ 	name=0
+},
+[100237] =
+{
+ 		id=100237,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=110012,
+ 		jumpId=61,
+ 		trigger={110012},
+ 	name=0
+},
+[100238] =
+{
+ 		id=100238,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=110012,
+ 		jumpId=61,
+ 		trigger={110012},
+ 	name=0
+},
+[100239] =
+{
+ 		id=100239,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=110012,
+ 		jumpId=61,
+ 		trigger={110012},
+ 	name=0
+},
+[100240] =
+{
+ 		id=100240,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=110012,
+ 		jumpId=61,
+ 		trigger={110012},
+ 	name=0
+},
+[100241] =
+{
+ 		id=100241,
+ 		type=10,
+ 		order=1,
+ 		des=31014123,
+ 		limit=62,
+ 		limitValue1=2,
+ 		limitValue2=120013,
+ 		jumpId=61,
+ 		trigger={120013},
+ 	name=0
+},
+[100242] =
+{
+ 		id=100242,
+ 		type=10,
+ 		order=2,
+ 		des=31014124,
+ 		limit=62,
+ 		limitValue1=3,
+ 		limitValue2=120013,
+ 		jumpId=61,
+ 		trigger={120013},
+ 	name=0
+},
+[100243] =
+{
+ 		id=100243,
+ 		type=10,
+ 		order=3,
+ 		des=31014125,
+ 		limit=62,
+ 		limitValue1=4,
+ 		limitValue2=120013,
+ 		jumpId=61,
+ 		trigger={120013},
+ 	name=0
+},
+[100244] =
+{
+ 		id=100244,
+ 		type=10,
+ 		order=4,
+ 		des=31014126,
+ 		limit=62,
+ 		limitValue1=5,
+ 		limitValue2=120013,
+ 		jumpId=61,
+ 		trigger={120013},
+ 	name=0
+},
+[100245] =
+{
+ 		id=100245,
+ 		type=10,
+ 		order=5,
+ 		des=31014127,
+ 		limit=62,
+ 		limitValue1=6,
+ 		limitValue2=120013,
+ 		jumpId=61,
+ 		trigger={120013},
+ 	name=0
+},
+[110000] =
+{
+ 		id=110000,
+ 		type=11,
+ 		limit=87,
+ 		limitValue1=30,
+ 		limitValue3=110006,
+ 		trigger={110006},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110001] =
+{
+ 		id=110001,
+ 		type=11,
+ 		limit=88,
+ 		limitValue1=30,
+ 		limitValue2=3,
+ 		heroStoryId=374,
+ 	name=0
+},
+[110002] =
+{
+ 		id=110002,
+ 		type=11,
+ 		limit=89,
+ 		limitValue1=70,
+ 		limitValue3=110002,
+ 		trigger={110002},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110003] =
+{
+ 		id=110003,
+ 		type=11,
+ 		limit=95,
+ 		limitValue1=3,
+ 		heroStoryId=374,
+ 	name=0
+},
+[110004] =
+{
+ 		id=110004,
+ 		type=11,
+ 		limit=79,
+ 		limitValue1=300,
+ 		limitValue2=110004,
+ 		trigger={110004},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110005] =
+{
+ 		id=110005,
+ 		type=11,
+ 		limit=94,
+ 		limitValue1=50,
+ 		limitValue2=110001,
+ 		trigger={110001},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110006] =
+{
+ 		id=110006,
+ 		type=11,
+ 		limit=66,
+ 		limitValue1=30,
+ 		limitValue2=110010,
+ 		trigger={110010},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110007] =
+{
+ 		id=110007,
+ 		type=11,
+ 		limit=90,
+ 		limitValue1=240,
+ 		limitValue2=120001,
+ 		trigger={120001},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110008] =
+{
+ 		id=110008,
+ 		type=11,
+ 		limit=91,
+ 		limitValue1=10,
+ 		limitValue2=6,
+ 		limitValue3=120002,
+ 		trigger={120002},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110009] =
+{
+ 		id=110009,
+ 		type=11,
+ 		limit=68,
+ 		limitValue1=30,
+ 		limitValue2=120003,
+ 		trigger={120003},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110010] =
+{
+ 		id=110010,
+ 		type=11,
+ 		limit=79,
+ 		limitValue1=300,
+ 		limitValue2=120004,
+ 		trigger={120004},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110011] =
+{
+ 		id=110011,
+ 		type=11,
+ 		limit=79,
+ 		limitValue1=300,
+ 		limitValue2=120007,
+ 		trigger={120007},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110012] =
+{
+ 		id=110012,
+ 		type=11,
+ 		limit=87,
+ 		limitValue1=30,
+ 		limitValue3=130001,
+ 		trigger={130001},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110013] =
+{
+ 		id=110013,
+ 		type=11,
+ 		limit=87,
+ 		limitValue1=10,
+ 		limitValue3=130003,
+ 		trigger={130003},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110014] =
+{
+ 		id=110014,
+ 		type=11,
+ 		limit=90,
+ 		limitValue1=240,
+ 		limitValue2=140002,
+ 		trigger={140002},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110015] =
+{
+ 		id=110015,
+ 		type=11,
+ 		limit=93,
+ 		limitValue1=1,
+ 		limitValue2=150001,
+ 		trigger={150001},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110016] =
+{
+ 		id=110016,
+ 		type=11,
+ 		limit=92,
+ 		limitValue1=10,
+ 		limitValue2=150002,
+ 		trigger={150002},
+ 		heroStoryId=374,
+ 	name=0
+},
+[110017] =
+{
+ 		id=110017,
+ 		type=11,
+ 		limit=79,
+ 		limitValue1=300,
+ 		limitValue2=150003,
+ 		trigger={150003},
+ 		heroStoryId=374,
+ 	name=0
+}
+}
+
+return {title=title, value=value}

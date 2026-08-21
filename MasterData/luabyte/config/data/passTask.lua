@@ -1,0 +1,4386 @@
+local title = {
+	id = 0,
+	passId = 0,
+	taskType = 0,
+	name = 0,
+	des = 0,
+	num = 0,
+	linkto = 0,
+	order = 0,
+	limit = 0,
+	limitValue1 = 0,
+	limitValue2 = 0
+}
+
+local value = {
+[1] =
+{
+ 		id=1,
+ 		passId=1100,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[2] =
+{
+ 		id=2,
+ 		passId=1100,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[3] =
+{
+ 		id=3,
+ 		passId=1100,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[4] =
+{
+ 		id=4,
+ 		passId=1100,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[5] =
+{
+ 		id=5,
+ 		passId=1100,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[6] =
+{
+ 		id=6,
+ 		passId=1100,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[7] =
+{
+ 		id=7,
+ 		passId=1100,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[8] =
+{
+ 		id=8,
+ 		passId=1100,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[9] =
+{
+ 		id=9,
+ 		passId=1100,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[10] =
+{
+ 		id=10,
+ 		passId=1100,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[11] =
+{
+ 		id=11,
+ 		passId=1100,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[12] =
+{
+ 		id=12,
+ 		passId=1100,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[13] =
+{
+ 		id=13,
+ 		passId=1100,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[14] =
+{
+ 		id=14,
+ 		passId=1100,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[15] =
+{
+ 		id=15,
+ 		passId=1103,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[16] =
+{
+ 		id=16,
+ 		passId=1103,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[17] =
+{
+ 		id=17,
+ 		passId=1103,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[18] =
+{
+ 		id=18,
+ 		passId=1103,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[19] =
+{
+ 		id=19,
+ 		passId=1103,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[20] =
+{
+ 		id=20,
+ 		passId=1103,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[21] =
+{
+ 		id=21,
+ 		passId=1103,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[22] =
+{
+ 		id=22,
+ 		passId=1103,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[23] =
+{
+ 		id=23,
+ 		passId=1103,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[24] =
+{
+ 		id=24,
+ 		passId=1103,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[25] =
+{
+ 		id=25,
+ 		passId=1103,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[26] =
+{
+ 		id=26,
+ 		passId=1103,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[27] =
+{
+ 		id=27,
+ 		passId=1103,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[28] =
+{
+ 		id=28,
+ 		passId=1103,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[29] =
+{
+ 		id=29,
+ 		passId=2106,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[30] =
+{
+ 		id=30,
+ 		passId=2106,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[31] =
+{
+ 		id=31,
+ 		passId=2106,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[32] =
+{
+ 		id=32,
+ 		passId=2106,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[33] =
+{
+ 		id=33,
+ 		passId=2106,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[34] =
+{
+ 		id=34,
+ 		passId=2106,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[35] =
+{
+ 		id=35,
+ 		passId=2106,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[36] =
+{
+ 		id=36,
+ 		passId=2106,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[37] =
+{
+ 		id=37,
+ 		passId=2106,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[38] =
+{
+ 		id=38,
+ 		passId=2106,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[39] =
+{
+ 		id=39,
+ 		passId=2106,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[40] =
+{
+ 		id=40,
+ 		passId=2106,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[41] =
+{
+ 		id=41,
+ 		passId=2106,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[42] =
+{
+ 		id=42,
+ 		passId=2106,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[43] =
+{
+ 		id=43,
+ 		passId=2109,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[44] =
+{
+ 		id=44,
+ 		passId=2109,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[45] =
+{
+ 		id=45,
+ 		passId=2109,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[46] =
+{
+ 		id=46,
+ 		passId=2109,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[47] =
+{
+ 		id=47,
+ 		passId=2109,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[48] =
+{
+ 		id=48,
+ 		passId=2109,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[49] =
+{
+ 		id=49,
+ 		passId=2109,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[50] =
+{
+ 		id=50,
+ 		passId=2109,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[51] =
+{
+ 		id=51,
+ 		passId=2109,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[52] =
+{
+ 		id=52,
+ 		passId=2109,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[53] =
+{
+ 		id=53,
+ 		passId=2109,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[54] =
+{
+ 		id=54,
+ 		passId=2109,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[55] =
+{
+ 		id=55,
+ 		passId=2109,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[56] =
+{
+ 		id=56,
+ 		passId=2109,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[57] =
+{
+ 		id=57,
+ 		passId=2112,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[58] =
+{
+ 		id=58,
+ 		passId=2112,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[59] =
+{
+ 		id=59,
+ 		passId=2112,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[60] =
+{
+ 		id=60,
+ 		passId=2112,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[61] =
+{
+ 		id=61,
+ 		passId=2112,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[62] =
+{
+ 		id=62,
+ 		passId=2112,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[63] =
+{
+ 		id=63,
+ 		passId=2112,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[64] =
+{
+ 		id=64,
+ 		passId=2112,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[65] =
+{
+ 		id=65,
+ 		passId=2112,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[66] =
+{
+ 		id=66,
+ 		passId=2112,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[67] =
+{
+ 		id=67,
+ 		passId=2112,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[68] =
+{
+ 		id=68,
+ 		passId=2112,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[69] =
+{
+ 		id=69,
+ 		passId=2112,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[70] =
+{
+ 		id=70,
+ 		passId=2112,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[71] =
+{
+ 		id=71,
+ 		passId=2115,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[72] =
+{
+ 		id=72,
+ 		passId=2115,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[73] =
+{
+ 		id=73,
+ 		passId=2115,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[74] =
+{
+ 		id=74,
+ 		passId=2115,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[75] =
+{
+ 		id=75,
+ 		passId=2115,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[76] =
+{
+ 		id=76,
+ 		passId=2115,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[77] =
+{
+ 		id=77,
+ 		passId=2115,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[78] =
+{
+ 		id=78,
+ 		passId=2115,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[79] =
+{
+ 		id=79,
+ 		passId=2115,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[80] =
+{
+ 		id=80,
+ 		passId=2115,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[81] =
+{
+ 		id=81,
+ 		passId=2115,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[82] =
+{
+ 		id=82,
+ 		passId=2115,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[83] =
+{
+ 		id=83,
+ 		passId=2115,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[84] =
+{
+ 		id=84,
+ 		passId=2115,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[85] =
+{
+ 		id=85,
+ 		passId=2118,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[86] =
+{
+ 		id=86,
+ 		passId=2118,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[87] =
+{
+ 		id=87,
+ 		passId=2118,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[88] =
+{
+ 		id=88,
+ 		passId=2118,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[89] =
+{
+ 		id=89,
+ 		passId=2118,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[90] =
+{
+ 		id=90,
+ 		passId=2118,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[91] =
+{
+ 		id=91,
+ 		passId=2118,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[92] =
+{
+ 		id=92,
+ 		passId=2118,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[93] =
+{
+ 		id=93,
+ 		passId=2118,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[94] =
+{
+ 		id=94,
+ 		passId=2118,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[95] =
+{
+ 		id=95,
+ 		passId=2118,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[96] =
+{
+ 		id=96,
+ 		passId=2118,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[97] =
+{
+ 		id=97,
+ 		passId=2118,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[98] =
+{
+ 		id=98,
+ 		passId=2118,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[99] =
+{
+ 		id=99,
+ 		passId=2121,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[100] =
+{
+ 		id=100,
+ 		passId=2121,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[101] =
+{
+ 		id=101,
+ 		passId=2121,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[102] =
+{
+ 		id=102,
+ 		passId=2121,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[103] =
+{
+ 		id=103,
+ 		passId=2121,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[104] =
+{
+ 		id=104,
+ 		passId=2121,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[105] =
+{
+ 		id=105,
+ 		passId=2121,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[106] =
+{
+ 		id=106,
+ 		passId=2121,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[107] =
+{
+ 		id=107,
+ 		passId=2121,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[108] =
+{
+ 		id=108,
+ 		passId=2121,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[109] =
+{
+ 		id=109,
+ 		passId=2121,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[110] =
+{
+ 		id=110,
+ 		passId=2121,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[111] =
+{
+ 		id=111,
+ 		passId=2121,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[112] =
+{
+ 		id=112,
+ 		passId=2121,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[113] =
+{
+ 		id=113,
+ 		passId=2124,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[114] =
+{
+ 		id=114,
+ 		passId=2124,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[115] =
+{
+ 		id=115,
+ 		passId=2124,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[116] =
+{
+ 		id=116,
+ 		passId=2124,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[117] =
+{
+ 		id=117,
+ 		passId=2124,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[118] =
+{
+ 		id=118,
+ 		passId=2124,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[119] =
+{
+ 		id=119,
+ 		passId=2124,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[120] =
+{
+ 		id=120,
+ 		passId=2124,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[121] =
+{
+ 		id=121,
+ 		passId=2124,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[122] =
+{
+ 		id=122,
+ 		passId=2124,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[123] =
+{
+ 		id=123,
+ 		passId=2124,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[124] =
+{
+ 		id=124,
+ 		passId=2124,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[125] =
+{
+ 		id=125,
+ 		passId=2124,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[126] =
+{
+ 		id=126,
+ 		passId=2124,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[127] =
+{
+ 		id=127,
+ 		passId=2127,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[128] =
+{
+ 		id=128,
+ 		passId=2127,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[129] =
+{
+ 		id=129,
+ 		passId=2127,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[130] =
+{
+ 		id=130,
+ 		passId=2127,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[131] =
+{
+ 		id=131,
+ 		passId=2127,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[132] =
+{
+ 		id=132,
+ 		passId=2127,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[133] =
+{
+ 		id=133,
+ 		passId=2127,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[134] =
+{
+ 		id=134,
+ 		passId=2127,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[135] =
+{
+ 		id=135,
+ 		passId=2127,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[136] =
+{
+ 		id=136,
+ 		passId=2127,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[137] =
+{
+ 		id=137,
+ 		passId=2127,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[138] =
+{
+ 		id=138,
+ 		passId=2127,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[139] =
+{
+ 		id=139,
+ 		passId=2127,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[140] =
+{
+ 		id=140,
+ 		passId=2127,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[141] =
+{
+ 		id=141,
+ 		passId=2130,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[142] =
+{
+ 		id=142,
+ 		passId=2130,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[143] =
+{
+ 		id=143,
+ 		passId=2130,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[144] =
+{
+ 		id=144,
+ 		passId=2130,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[145] =
+{
+ 		id=145,
+ 		passId=2130,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[146] =
+{
+ 		id=146,
+ 		passId=2130,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[147] =
+{
+ 		id=147,
+ 		passId=2130,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[148] =
+{
+ 		id=148,
+ 		passId=2130,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[149] =
+{
+ 		id=149,
+ 		passId=2130,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[150] =
+{
+ 		id=150,
+ 		passId=2130,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[151] =
+{
+ 		id=151,
+ 		passId=2130,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[152] =
+{
+ 		id=152,
+ 		passId=2130,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[153] =
+{
+ 		id=153,
+ 		passId=2130,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[154] =
+{
+ 		id=154,
+ 		passId=2130,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[155] =
+{
+ 		id=155,
+ 		passId=2133,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[156] =
+{
+ 		id=156,
+ 		passId=2133,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[157] =
+{
+ 		id=157,
+ 		passId=2133,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[158] =
+{
+ 		id=158,
+ 		passId=2133,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[159] =
+{
+ 		id=159,
+ 		passId=2133,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[160] =
+{
+ 		id=160,
+ 		passId=2133,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[161] =
+{
+ 		id=161,
+ 		passId=2133,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[162] =
+{
+ 		id=162,
+ 		passId=2133,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[163] =
+{
+ 		id=163,
+ 		passId=2133,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[164] =
+{
+ 		id=164,
+ 		passId=2133,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[165] =
+{
+ 		id=165,
+ 		passId=2133,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[166] =
+{
+ 		id=166,
+ 		passId=2133,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[167] =
+{
+ 		id=167,
+ 		passId=2133,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[168] =
+{
+ 		id=168,
+ 		passId=2133,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[169] =
+{
+ 		id=169,
+ 		passId=2136,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[170] =
+{
+ 		id=170,
+ 		passId=2136,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[171] =
+{
+ 		id=171,
+ 		passId=2136,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[172] =
+{
+ 		id=172,
+ 		passId=2136,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[173] =
+{
+ 		id=173,
+ 		passId=2136,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[174] =
+{
+ 		id=174,
+ 		passId=2136,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[175] =
+{
+ 		id=175,
+ 		passId=2136,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[176] =
+{
+ 		id=176,
+ 		passId=2136,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[177] =
+{
+ 		id=177,
+ 		passId=2136,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[178] =
+{
+ 		id=178,
+ 		passId=2136,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[179] =
+{
+ 		id=179,
+ 		passId=2136,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[180] =
+{
+ 		id=180,
+ 		passId=2136,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[181] =
+{
+ 		id=181,
+ 		passId=2136,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[182] =
+{
+ 		id=182,
+ 		passId=2136,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[183] =
+{
+ 		id=183,
+ 		passId=2139,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[184] =
+{
+ 		id=184,
+ 		passId=2139,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[185] =
+{
+ 		id=185,
+ 		passId=2139,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[186] =
+{
+ 		id=186,
+ 		passId=2139,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[187] =
+{
+ 		id=187,
+ 		passId=2139,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[188] =
+{
+ 		id=188,
+ 		passId=2139,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[189] =
+{
+ 		id=189,
+ 		passId=2139,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[190] =
+{
+ 		id=190,
+ 		passId=2139,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[191] =
+{
+ 		id=191,
+ 		passId=2139,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[192] =
+{
+ 		id=192,
+ 		passId=2139,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[193] =
+{
+ 		id=193,
+ 		passId=2139,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[194] =
+{
+ 		id=194,
+ 		passId=2139,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[195] =
+{
+ 		id=195,
+ 		passId=2139,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[196] =
+{
+ 		id=196,
+ 		passId=2139,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[197] =
+{
+ 		id=197,
+ 		passId=2142,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[198] =
+{
+ 		id=198,
+ 		passId=2142,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[199] =
+{
+ 		id=199,
+ 		passId=2142,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[200] =
+{
+ 		id=200,
+ 		passId=2142,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[201] =
+{
+ 		id=201,
+ 		passId=2142,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[202] =
+{
+ 		id=202,
+ 		passId=2142,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[203] =
+{
+ 		id=203,
+ 		passId=2142,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[204] =
+{
+ 		id=204,
+ 		passId=2142,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[205] =
+{
+ 		id=205,
+ 		passId=2142,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[206] =
+{
+ 		id=206,
+ 		passId=2142,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[207] =
+{
+ 		id=207,
+ 		passId=2142,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[208] =
+{
+ 		id=208,
+ 		passId=2142,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[209] =
+{
+ 		id=209,
+ 		passId=2142,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[210] =
+{
+ 		id=210,
+ 		passId=2142,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[211] =
+{
+ 		id=211,
+ 		passId=2145,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[212] =
+{
+ 		id=212,
+ 		passId=2145,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[213] =
+{
+ 		id=213,
+ 		passId=2145,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[214] =
+{
+ 		id=214,
+ 		passId=2145,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[215] =
+{
+ 		id=215,
+ 		passId=2145,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[216] =
+{
+ 		id=216,
+ 		passId=2145,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[217] =
+{
+ 		id=217,
+ 		passId=2145,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[218] =
+{
+ 		id=218,
+ 		passId=2145,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[219] =
+{
+ 		id=219,
+ 		passId=2145,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[220] =
+{
+ 		id=220,
+ 		passId=2145,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[221] =
+{
+ 		id=221,
+ 		passId=2145,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[222] =
+{
+ 		id=222,
+ 		passId=2145,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[223] =
+{
+ 		id=223,
+ 		passId=2145,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[224] =
+{
+ 		id=224,
+ 		passId=2145,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[225] =
+{
+ 		id=225,
+ 		passId=2148,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[226] =
+{
+ 		id=226,
+ 		passId=2148,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[227] =
+{
+ 		id=227,
+ 		passId=2148,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[228] =
+{
+ 		id=228,
+ 		passId=2148,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[229] =
+{
+ 		id=229,
+ 		passId=2148,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[230] =
+{
+ 		id=230,
+ 		passId=2148,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[231] =
+{
+ 		id=231,
+ 		passId=2148,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[232] =
+{
+ 		id=232,
+ 		passId=2148,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[233] =
+{
+ 		id=233,
+ 		passId=2148,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[234] =
+{
+ 		id=234,
+ 		passId=2148,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[235] =
+{
+ 		id=235,
+ 		passId=2148,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[236] =
+{
+ 		id=236,
+ 		passId=2148,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[237] =
+{
+ 		id=237,
+ 		passId=2148,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[238] =
+{
+ 		id=238,
+ 		passId=2148,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[239] =
+{
+ 		id=239,
+ 		passId=2151,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[240] =
+{
+ 		id=240,
+ 		passId=2151,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[241] =
+{
+ 		id=241,
+ 		passId=2151,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[242] =
+{
+ 		id=242,
+ 		passId=2151,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[243] =
+{
+ 		id=243,
+ 		passId=2151,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[244] =
+{
+ 		id=244,
+ 		passId=2151,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[245] =
+{
+ 		id=245,
+ 		passId=2151,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[246] =
+{
+ 		id=246,
+ 		passId=2151,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[247] =
+{
+ 		id=247,
+ 		passId=2151,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[248] =
+{
+ 		id=248,
+ 		passId=2151,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[249] =
+{
+ 		id=249,
+ 		passId=2151,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[250] =
+{
+ 		id=250,
+ 		passId=2151,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[251] =
+{
+ 		id=251,
+ 		passId=2151,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[252] =
+{
+ 		id=252,
+ 		passId=2151,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[253] =
+{
+ 		id=253,
+ 		passId=2154,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[254] =
+{
+ 		id=254,
+ 		passId=2154,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[255] =
+{
+ 		id=255,
+ 		passId=2154,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[256] =
+{
+ 		id=256,
+ 		passId=2154,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[257] =
+{
+ 		id=257,
+ 		passId=2154,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[258] =
+{
+ 		id=258,
+ 		passId=2154,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[259] =
+{
+ 		id=259,
+ 		passId=2154,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[260] =
+{
+ 		id=260,
+ 		passId=2154,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[261] =
+{
+ 		id=261,
+ 		passId=2154,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[262] =
+{
+ 		id=262,
+ 		passId=2154,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[263] =
+{
+ 		id=263,
+ 		passId=2154,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[264] =
+{
+ 		id=264,
+ 		passId=2154,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[265] =
+{
+ 		id=265,
+ 		passId=2154,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[266] =
+{
+ 		id=266,
+ 		passId=2154,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[267] =
+{
+ 		id=267,
+ 		passId=2157,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[268] =
+{
+ 		id=268,
+ 		passId=2157,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[269] =
+{
+ 		id=269,
+ 		passId=2157,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[270] =
+{
+ 		id=270,
+ 		passId=2157,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[271] =
+{
+ 		id=271,
+ 		passId=2157,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[272] =
+{
+ 		id=272,
+ 		passId=2157,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[273] =
+{
+ 		id=273,
+ 		passId=2157,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[274] =
+{
+ 		id=274,
+ 		passId=2157,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[275] =
+{
+ 		id=275,
+ 		passId=2157,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[276] =
+{
+ 		id=276,
+ 		passId=2157,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[277] =
+{
+ 		id=277,
+ 		passId=2157,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[278] =
+{
+ 		id=278,
+ 		passId=2157,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[279] =
+{
+ 		id=279,
+ 		passId=2157,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[280] =
+{
+ 		id=280,
+ 		passId=2157,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[281] =
+{
+ 		id=281,
+ 		passId=2160,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[282] =
+{
+ 		id=282,
+ 		passId=2160,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[283] =
+{
+ 		id=283,
+ 		passId=2160,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[284] =
+{
+ 		id=284,
+ 		passId=2160,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[285] =
+{
+ 		id=285,
+ 		passId=2160,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[286] =
+{
+ 		id=286,
+ 		passId=2160,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[287] =
+{
+ 		id=287,
+ 		passId=2160,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[288] =
+{
+ 		id=288,
+ 		passId=2160,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[289] =
+{
+ 		id=289,
+ 		passId=2160,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[290] =
+{
+ 		id=290,
+ 		passId=2160,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[291] =
+{
+ 		id=291,
+ 		passId=2160,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[292] =
+{
+ 		id=292,
+ 		passId=2160,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[293] =
+{
+ 		id=293,
+ 		passId=2160,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[294] =
+{
+ 		id=294,
+ 		passId=2160,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[295] =
+{
+ 		id=295,
+ 		passId=2163,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[296] =
+{
+ 		id=296,
+ 		passId=2163,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[297] =
+{
+ 		id=297,
+ 		passId=2163,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[298] =
+{
+ 		id=298,
+ 		passId=2163,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[299] =
+{
+ 		id=299,
+ 		passId=2163,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[300] =
+{
+ 		id=300,
+ 		passId=2163,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[301] =
+{
+ 		id=301,
+ 		passId=2163,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[302] =
+{
+ 		id=302,
+ 		passId=2163,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[303] =
+{
+ 		id=303,
+ 		passId=2163,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[304] =
+{
+ 		id=304,
+ 		passId=2163,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[305] =
+{
+ 		id=305,
+ 		passId=2163,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[306] =
+{
+ 		id=306,
+ 		passId=2163,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[307] =
+{
+ 		id=307,
+ 		passId=2163,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[308] =
+{
+ 		id=308,
+ 		passId=2163,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[309] =
+{
+ 		id=309,
+ 		passId=2166,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[310] =
+{
+ 		id=310,
+ 		passId=2166,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[311] =
+{
+ 		id=311,
+ 		passId=2166,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[312] =
+{
+ 		id=312,
+ 		passId=2166,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[313] =
+{
+ 		id=313,
+ 		passId=2166,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[314] =
+{
+ 		id=314,
+ 		passId=2166,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[315] =
+{
+ 		id=315,
+ 		passId=2166,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[316] =
+{
+ 		id=316,
+ 		passId=2166,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[317] =
+{
+ 		id=317,
+ 		passId=2166,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[318] =
+{
+ 		id=318,
+ 		passId=2166,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[319] =
+{
+ 		id=319,
+ 		passId=2166,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[320] =
+{
+ 		id=320,
+ 		passId=2166,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[321] =
+{
+ 		id=321,
+ 		passId=2166,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[322] =
+{
+ 		id=322,
+ 		passId=2166,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+},
+[323] =
+{
+ 		id=323,
+ 		passId=2169,
+ 		taskType=1,
+ 		des=31013001,
+ 		num=15,
+ 		linkto=1,
+ 		order=1,
+ 		limit=23,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[324] =
+{
+ 		id=324,
+ 		passId=2169,
+ 		taskType=1,
+ 		des=31013002,
+ 		num=15,
+ 		linkto=41,
+ 		order=2,
+ 		limit=2,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[325] =
+{
+ 		id=325,
+ 		passId=2169,
+ 		taskType=1,
+ 		des=31013003,
+ 		num=15,
+ 		linkto=45,
+ 		order=3,
+ 		limit=59,
+ 		limitValue1=3,
+ 	limitValue2=3
+},
+[326] =
+{
+ 		id=326,
+ 		passId=2169,
+ 		taskType=1,
+ 		des=31013004,
+ 		num=15,
+ 		linkto=72,
+ 		order=4,
+ 		limit=111,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[327] =
+{
+ 		id=327,
+ 		passId=2169,
+ 		taskType=1,
+ 		des=31013005,
+ 		num=20,
+ 		linkto=51,
+ 		order=5,
+ 		limit=7,
+ 		limitValue1=1,
+ 	limitValue2=0
+},
+[328] =
+{
+ 		id=328,
+ 		passId=2169,
+ 		taskType=1,
+ 		des=31013006,
+ 		num=20,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=160,
+ 	limitValue2=0
+},
+[329] =
+{
+ 		id=329,
+ 		passId=2169,
+ 		taskType=2,
+ 		des=31013007,
+ 		num=80,
+ 		linkto=2,
+ 		order=7,
+ 		limit=31,
+ 		limitValue1=3,
+ 	limitValue2=8503
+},
+[330] =
+{
+ 		id=330,
+ 		passId=2169,
+ 		taskType=2,
+ 		des=31013008,
+ 		num=80,
+ 		linkto=3,
+ 		order=8,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=1
+},
+[331] =
+{
+ 		id=331,
+ 		passId=2169,
+ 		taskType=2,
+ 		des=31013009,
+ 		num=80,
+ 		linkto=41,
+ 		order=9,
+ 		limit=63,
+ 		limitValue1=1200,
+ 	limitValue2=0
+},
+[332] =
+{
+ 		id=332,
+ 		passId=2169,
+ 		taskType=2,
+ 		des=31013010,
+ 		num=80,
+ 		linkto=94,
+ 		order=10,
+ 		limit=51,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[333] =
+{
+ 		id=333,
+ 		passId=2169,
+ 		taskType=2,
+ 		des=31013011,
+ 		num=80,
+ 		linkto=51,
+ 		order=11,
+ 		limit=7,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[334] =
+{
+ 		id=334,
+ 		passId=2169,
+ 		taskType=2,
+ 		des=31013012,
+ 		num=100,
+ 		linkto=6,
+ 		order=12,
+ 		limit=8,
+ 		limitValue1=5,
+ 	limitValue2=0
+},
+[335] =
+{
+ 		id=335,
+ 		passId=2169,
+ 		taskType=2,
+ 		des=31013013,
+ 		num=100,
+ 		linkto=4,
+ 		order=13,
+ 		limit=22,
+ 		limitValue1=1,
+ 	limitValue2=2
+},
+[336] =
+{
+ 		id=336,
+ 		passId=2169,
+ 		taskType=2,
+ 		des=31013014,
+ 		num=100,
+ 		linkto=76,
+ 		order=14,
+ 		limit=39,
+ 		limitValue1=12,
+ 	limitValue2=0
+}
+}
+
+return {title=title, value=value}

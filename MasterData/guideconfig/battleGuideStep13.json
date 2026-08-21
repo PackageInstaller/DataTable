@@ -1,0 +1,258 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8359430822174271028
+  },
+  "m_Name": "battleGuideStep13",
+  "groups": [
+    {
+      "groupId": 1,
+      "items": [
+        {
+          "stepId": 1,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "<color=#ea8e46>医疗战员</color>是可以<color=#ea8e46>为其他友军恢复生命值</color>的职业。",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -376.91,
+              "y": 359.91
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40102,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "废话1",
+          "GMMark": 105
+        },
+        {
+          "stepId": 2,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "<color=#ea8e46>安息香</color>是医疗职业的代表战员，她的<color=#ea8e46>右侧战中分支</color>技能可同时为<color=#ea8e46>多个友军恢复生命值</color>。",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -376.91,
+              "y": 359.91
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40103,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "废话2",
+          "GMMark": 106
+        },
+        {
+          "stepId": 3,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "UIMissionTips(Clone)",
+            "targetLayerPath": "PopUp/UIMissionTips(Clone)",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 1660,
+            "height": 1660,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击任意处",
+          "GMMark": 0
+        },
+        {
+          "stepId": 4,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "请记得部署战员。",
+            "descLanguageId": 0,
+            "targetName": "ComAvatar_s",
+            "targetLayerPath": "Normal/uTeamConfigUI(Clone)/Panel/Left/HeroList/Viewport/Content/0/ComAvatar_s",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 178,
+            "height": 424,
+            "connectRadius": 0,
+            "offset": {
+              "x": 79.29,
+              "y": -328.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 112.0,
+              "y": 129.0
+            },
+            "effectRotation": -83,
+            "uiDialogOffeset": {
+              "x": 91.5,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40104,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "说明战员",
+          "GMMark": 107
+        }
+      ],
+      "desc": "战员职业引导",
+      "autoId": 0
+    }
+  ],
+  "preGroups": []
+}

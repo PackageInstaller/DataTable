@@ -1,0 +1,1049 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8359430822174271028
+  },
+  "m_Name": "40101",
+  "groups": [
+    {
+      "groupId": 40101,
+      "items": [
+        {
+          "stepId": 10,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 10,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            2,
+            3001
+          ],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤10  等待怪物登场",
+          "GMMark": 0
+        },
+        {
+          "stepId": 20,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "山巅城环境模拟训练载入…………",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 300.0
+            },
+            "isHero": 0,
+            "actorId": 51100,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤20 阿巴阿巴说话",
+          "GMMark": 81
+        },
+        {
+          "stepId": 30,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "身份权限认证……调查队队员【小满】，权限确认……符合……DNA确认……通过……",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 300.0
+            },
+            "isHero": 0,
+            "actorId": 51100,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤30 阿巴阿巴说话",
+          "GMMark": 81
+        },
+        {
+          "stepId": 40,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "吧唧吧唧，小巴，模拟一下山巅城盘踞的……吧唧……雇佣兵……吧唧！",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 300.0
+            },
+            "isHero": 0,
+            "actorId": 51121,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤40 小满说话",
+          "GMMark": 83
+        },
+        {
+          "stepId": 50,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "数据载入中……山巅城雇佣兵模拟完毕……",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 300.0
+            },
+            "isHero": 0,
+            "actorId": 51100,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤50 阿巴阿巴说话",
+          "GMMark": 81
+        },
+        {
+          "stepId": 51,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "警告……禁止将食物带入训练舱……",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 300.0
+            },
+            "isHero": 0,
+            "actorId": 51105,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤51 阿巴阿巴说话",
+          "GMMark": 81
+        },
+        {
+          "stepId": 60,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "！！！吧唧吧唧吧唧吧唧！！呜~痴（吃）丸（完）咯~呜~吧唧吧唧！",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 300.0
+            },
+            "isHero": 0,
+            "actorId": 51121,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤60 小满说话",
+          "GMMark": 83
+        },
+        {
+          "stepId": 70,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 6,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            28,
+            110010,
+            0
+          ],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤70  召唤小满",
+          "GMMark": 0
+        },
+        {
+          "stepId": 80,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 6,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            29,
+            110002,
+            0
+          ],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 1,
+          "desc": "步骤80  自动召唤丽贝卡",
+          "GMMark": 0
+        },
+        {
+          "stepId": 90,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 14,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            2,
+            3001
+          ],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤90  等待怪物死亡",
+          "GMMark": 0
+        },
+        {
+          "stepId": 100,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "吧唧，咕咚~~啧啧~~嗯嗯~原来如此~这些雇佣兵不会生成意识能量~",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 300.0
+            },
+            "isHero": 0,
+            "actorId": 51121,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 1000,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤100  小满说话",
+          "GMMark": 83
+        },
+        {
+          "stepId": 110,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "巴，来个意念载体气球~大号的！",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 300.0
+            },
+            "isHero": 0,
+            "actorId": 51123,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤110  小满说话",
+          "GMMark": 83
+        },
+        {
+          "stepId": 120,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "意念载体气球，发射准备…………发射完毕！",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 300.0
+            },
+            "isHero": 0,
+            "actorId": 51103,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤120 阿巴阿巴说话",
+          "GMMark": 81
+        },
+        {
+          "stepId": 130,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 10,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            2,
+            1061
+          ],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤130  等待怪物登场",
+          "GMMark": 0
+        },
+        {
+          "stepId": 140,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 23,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 2000,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤140 视角回正",
+          "GMMark": 0
+        },
+        {
+          "stepId": 150,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 18,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 110,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": -40.0,
+              "y": 140.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "该气球运载了大量的<color=#FFA500>意识能量</color>，\n只需要点击即可<color=#FFA500>点击</color>即可获取。",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": -220.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            2,
+            1061,
+            0
+          ],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤150 引导怪物",
+          "GMMark": 0
+        },
+        {
+          "stepId": 160,
+          "groupId": 40101,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 4,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "看我来锁定攻击！",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 110,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": -40.0,
+              "y": 140.0
+            },
+            "isShowEffect": 1,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 300.0
+            },
+            "isHero": 0,
+            "actorId": 51114,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            2,
+            1061
+          ],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "步骤160  引导怪物",
+          "GMMark": 0
+        }
+      ],
+      "desc": "40101",
+      "autoId": 0
+    }
+  ],
+  "preGroups": []
+}

@@ -1,0 +1,756 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8359430822174271028
+  },
+  "m_Name": "CE_02",
+  "groups": [
+    {
+      "groupId": 1,
+      "items": [
+        {
+          "stepId": 1,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 5,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [
+            "Timeline/Prefab/CutScene/gamestart02"
+          ],
+          "param2": [],
+          "delayTime": 50,
+          "isFreeClickAfterFinish": 0,
+          "desc": "第二关开场镜头",
+          "GMMark": 0
+        },
+        {
+          "stepId": 2,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "我的职业是<color=#FFA500>射手</color>，上阵<color=#FFA500>费用最低</color>，适合<color=#FFA500><b>优先</b></color>出击！",
+            "descLanguageId": 0,
+            "targetName": "Bg",
+            "targetLayerPath": "Normal/BattleUI(Clone)/bottomRight/roleList/2/Content/Bg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 104,
+            "height": 104,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 1,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -170.0,
+              "y": 170.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 360.0,
+              "y": -220.0
+            },
+            "isHero": 1,
+            "actorId": 110001,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "<color=#FFA500>射手</color>上阵所需<color=#FFA500>费用最低</color>，\n适合<color=#FFA500><b>第一个</b></color>布置！",
+            "tipsOffset": {
+              "x": -404.0,
+              "y": 5.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            0,
+            0,
+            0
+          ],
+          "delayTime": 2000,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击下面阿什琳",
+          "GMMark": 0
+        },
+        {
+          "stepId": 3,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 8,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "作为<color=#FFA500>远程英雄</color>，我需要站在<color=#FFA500><b>高台 </b></color>位置进行远程射击！",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 120,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 20.0
+            },
+            "isShowEffect": 1,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -150.0,
+              "y": 150.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 250.0,
+              "y": -350.0
+            },
+            "isHero": 1,
+            "actorId": 110001,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "<color=#FFA500>远程角色</color>需要站在<color=#FFA500><b>高台</b></color>进行远程射击。",
+            "tipsOffset": {
+              "x": 23.0,
+              "y": -225.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            23
+          ],
+          "delayTime": 200,
+          "isFreeClickAfterFinish": 0,
+          "desc": "让阿什琳上阵23号位",
+          "GMMark": 0
+        },
+        {
+          "stepId": 4,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 4,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "长官，<color=#FFA500>障碍物</color>会阻碍攻击视野，让我先<color=#FFA500><b>击破</b></color>它。",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 110,
+            "height": 10,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 50.0
+            },
+            "isShowEffect": 1,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -150.0,
+              "y": 150.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -280.0,
+              "y": -370.0
+            },
+            "isHero": 1,
+            "actorId": 110001,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "点击锁定<color=#FFA500>资源箱</color>，\n<color=#FFA500><b>击破</b></color>后可以获得<color=#FFA500>费用</color>。",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": -220.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            5,
+            210020303
+          ],
+          "delayTime": 1500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击箱子",
+          "GMMark": 0
+        },
+        {
+          "stepId": 5,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 14,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            5,
+            210020303
+          ],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "等待箱子破裂",
+          "GMMark": 0
+        },
+        {
+          "stepId": 8,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "Bg",
+            "targetLayerPath": "Normal/BattleUI(Clone)/Bottom/Bg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 128,
+            "height": 65,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "击破资源箱获得<color=#FFA500>费用</color>\n，\n可以继续<color=#FFA500>召唤</color>其他角色。",
+            "tipsOffset": {
+              "x": -179.0,
+              "y": 157.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 1000,
+          "isFreeClickAfterFinish": 0,
+          "desc": "引导费用",
+          "GMMark": 0
+        },
+        {
+          "stepId": 9,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "Bg",
+            "targetLayerPath": "Normal/BattleUI(Clone)/bottomRight/roleList/1/Content/Bg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 40,
+            "height": 31,
+            "connectRadius": 10,
+            "offset": {
+              "x": -40.0,
+              "y": 78.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "这是<color=#FFA500>召唤角色</color>所需<color=#FFA500>费用</color>。",
+            "tipsOffset": {
+              "x": 20.0,
+              "y": 120.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "引导英雄费用",
+          "GMMark": 0
+        },
+        {
+          "stepId": 7,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "关于<color=#FFA500>近战英雄</color>，只能上阵在<color=#FFA500><b>地面</b></color>上。",
+            "descLanguageId": 0,
+            "targetName": "Bg",
+            "targetLayerPath": "Normal/BattleUI(Clone)/bottomRight/roleList/1/Content/Bg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 104,
+            "height": 104,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 1,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -170.0,
+              "y": 170.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 360.0,
+              "y": -220.0
+            },
+            "isHero": 1,
+            "actorId": 120001,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "立刻召唤<color=#FFA500>近战角色</color>去防守<color=#FFA500><b>地面</b></color>。",
+            "tipsOffset": {
+              "x": -451.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            0,
+            0
+          ],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击米娅",
+          "GMMark": 0
+        },
+        {
+          "stepId": 10,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 8,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "请让我去防守敌人相对薄弱的线路。",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 108,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": -5.0,
+              "y": 0.0
+            },
+            "isShowEffect": 1,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -140.0,
+              "y": 140.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -200.0,
+              "y": -130.0
+            },
+            "isHero": 1,
+            "actorId": 120001,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "米娅是战士，防御能力较弱，\n适合防守进攻压力较小的线路。",
+            "tipsOffset": {
+              "x": 5.0,
+              "y": -225.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            6
+          ],
+          "delayTime": 200,
+          "isFreeClickAfterFinish": 1,
+          "desc": "引导米娅上6号位",
+          "GMMark": 0
+        },
+        {
+          "stepId": 11,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 15,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 10,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            21
+          ],
+          "delayTime": 0,
+          "isFreeClickAfterFinish": 0,
+          "desc": "等待费用到21",
+          "GMMark": 0
+        },
+        {
+          "stepId": 12,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "终于轮到我了！",
+            "descLanguageId": 0,
+            "targetName": "Bg",
+            "targetLayerPath": "Normal/BattleUI(Clone)/bottomRight/roleList/0/Content/Bg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 102,
+            "height": 102,
+            "connectRadius": 9,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 1,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -160.0,
+              "y": 160.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 350.0,
+              "y": -250.0
+            },
+            "isHero": 0,
+            "actorId": 51141,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "<color=#FFA500>费用</color>足够，立刻召唤<color=#FFA500>坦克角色</color>\n去防守另一条线路吧。",
+            "tipsOffset": {
+              "x": -625.0,
+              "y": 82.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            0,
+            0
+          ],
+          "delayTime": 1000,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击下方丽贝卡",
+          "GMMark": 0
+        },
+        {
+          "stepId": 13,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 1,
+          "isShowSkipButton": 0,
+          "actionType": 8,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "我的职业是<color=#FFA500>坦克</color>，更适合防守压力更大的下方路线。",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 124,
+            "height": 23,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 22.0
+            },
+            "isShowEffect": 1,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -160.0,
+              "y": 160.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -150.0,
+              "y": -470.0
+            },
+            "isHero": 0,
+            "actorId": 51141,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "丽贝卡作为<color=#FFA500>坦克</color>，\n适合防守压力更大的下方路线。",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": -225.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            18
+          ],
+          "delayTime": 200,
+          "isFreeClickAfterFinish": 1,
+          "desc": "点击上方丽贝卡推荐位",
+          "GMMark": 0
+        }
+      ],
+      "desc": "第二关引导13",
+      "autoId": 1
+    }
+  ],
+  "preGroups": []
+}

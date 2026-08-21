@@ -1,0 +1,9325 @@
+local title = {
+	id = 0,
+	name = 0,
+	describe = "",
+	type = 0,
+	target = {},
+	targetCondition = 0,
+	ignoreTarget = {},
+	entry = 0,
+	parameters = {},
+	parameters2 = {}
+}
+
+local value = {
+[101] =
+{
+ 		id=101,
+ 		name=130,
+ 		describe="所有角色生命提升11",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={101},
+ 	parameters2={}
+},
+[102] =
+{
+ 		id=102,
+ 		name=131,
+ 		describe="所有角色攻击提升12",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={102},
+ 	parameters2={}
+},
+[103] =
+{
+ 		id=103,
+ 		name=132,
+ 		describe="所有角色物防提升13",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={103},
+ 	parameters2={}
+},
+[104] =
+{
+ 		id=104,
+ 		name=133,
+ 		describe="所有角色魔防提升14",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={104},
+ 	parameters2={}
+},
+[105] =
+{
+ 		id=105,
+ 		name=105,
+ 		describe="给指挥官技能释放者增加被动，用豆子生怪",
+ 		type=2,
+ 		target={3},
+ 		entry=2,
+ 		parameters={10501,10502,10503},
+ 	parameters2={}
+},
+[106] =
+{
+ 		id=106,
+ 		name=106,
+ 		describe="给英雄增加被动，升级时生怪",
+ 		type=2,
+ 		target={2},
+ 		entry=3,
+ 		parameters={10601,10602,10603},
+ 	parameters2={}
+},
+[107] =
+{
+ 		id=107,
+ 		name=107,
+ 		describe="第一次用豆子不招怪",
+ 		type=21,
+ 		target={0},
+ 		entry=1,
+ 		parameters={1},
+ 	parameters2={}
+},
+[108] =
+{
+ 		id=108,
+ 		name=108,
+ 		describe="悬赏阿米莉亚死了炸死小飞机",
+ 		type=2,
+ 		target={52107,52108,52109},
+ 		targetCondition=2,
+ 		entry=4,
+ 		parameters={70310101},
+ 	parameters2={}
+},
+[1000] =
+{
+ 		id=1000,
+ 		name=30001000,
+ 		describe="基地变为1血",
+ 		type=9,
+ 		target={0},
+ 		entry=1,
+ 		parameters={1},
+ 	parameters2={}
+},
+[1001] =
+{
+ 		id=1001,
+ 		name=30001001,
+ 		describe="全体敌方单位的攻击力+40%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1001},
+ 	parameters2={}
+},
+[1002] =
+{
+ 		id=1002,
+ 		name=30001002,
+ 		describe="全体敌方单位的生命值+100%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002},
+ 	parameters2={}
+},
+[1003] =
+{
+ 		id=1003,
+ 		name=30001003,
+ 		describe="全体敌方单位的物理防御力+80%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1003},
+ 	parameters2={}
+},
+[1004] =
+{
+ 		id=1004,
+ 		name=30001004,
+ 		describe="全体敌方单位的异能防御力+120%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1004},
+ 	parameters2={}
+},
+[1005] =
+{
+ 		id=1005,
+ 		name=30001005,
+ 		describe="全体敌方单位的移动速度+80%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1005},
+ 	parameters2={}
+},
+[1006] =
+{
+ 		id=1006,
+ 		name=30001006,
+ 		describe="全体敌方单位造成伤害+50%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1006},
+ 	parameters2={}
+},
+[1007] =
+{
+ 		id=1007,
+ 		name=30001007,
+ 		describe="全体敌方单位受到的物理伤害-60%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1007},
+ 	parameters2={}
+},
+[1008] =
+{
+ 		id=1008,
+ 		name=30001008,
+ 		describe="全体敌方单位受到的异能伤害-60%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1008},
+ 	parameters2={}
+},
+[1009] =
+{
+ 		id=1009,
+ 		name=30001009,
+ 		describe="全体敌方单位受到的伤害-40%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1009},
+ 	parameters2={}
+},
+[1010] =
+{
+ 		id=1010,
+ 		name=30001010,
+ 		describe="全体敌方单位获得100%的吸血",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761,2004,2005,2304,2305,2704,2705},
+ 		entry=3,
+ 		parameters={1010},
+ 	parameters2={}
+},
+[1011] =
+{
+ 		id=1011,
+ 		name=30001011,
+ 		describe="全体敌方单位的攻击速度+50%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011},
+ 	parameters2={}
+},
+[1012] =
+{
+ 		id=1012,
+ 		name=30001012,
+ 		describe="全体敌方单位获得1000点护盾",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1012},
+ 	parameters2={}
+},
+[1013] =
+{
+ 		id=1013,
+ 		name=30001013,
+ 		describe="全体敌方单位的移动速度+30%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001},
+ 	parameters2={}
+},
+[1014] =
+{
+ 		id=1014,
+ 		name=30001014,
+ 		describe="全体敌方单位获得50%的吸血",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761,2004,2005,2304,2305,2704,2705},
+ 		entry=3,
+ 		parameters={4003},
+ 	parameters2={}
+},
+[1015] =
+{
+ 		id=1015,
+ 		name=30001015,
+ 		describe="全体敌方单位的生命值+50%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4002},
+ 	parameters2={}
+},
+[1016] =
+{
+ 		id=1016,
+ 		name=30001016,
+ 		describe="70级觉醒怪物 全属性+175%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1013},
+ 	parameters2={}
+},
+[1017] =
+{
+ 		id=1017,
+ 		name=30001017,
+ 		describe="全体敌方单位的全属性+90%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1014},
+ 	parameters2={}
+},
+[1018] =
+{
+ 		id=1018,
+ 		name=30001018,
+ 		describe="全体敌方单位的全属性+30%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1015},
+ 	parameters2={}
+},
+[1019] =
+{
+ 		id=1019,
+ 		name=30001019,
+ 		describe="全体敌方单位的生命值+50%、攻击力+20%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1016},
+ 	parameters2={}
+},
+[1020] =
+{
+ 		id=1020,
+ 		name=30001020,
+ 		describe="大熊的生命值+50%",
+ 		type=1,
+ 		target={22801},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4002},
+ 	parameters2={}
+},
+[1021] =
+{
+ 		id=1021,
+ 		name=30001021,
+ 		describe="角色阻挡+9",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1017},
+ 	parameters2={}
+},
+[1022] =
+{
+ 		id=1022,
+ 		name=30001022,
+ 		describe="全体敌方单位的生命值+30%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1018},
+ 	parameters2={}
+},
+[1023] =
+{
+ 		id=1023,
+ 		name=30001023,
+ 		describe="全体敌方单位的攻击力-30%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2001},
+ 	parameters2={}
+},
+[1024] =
+{
+ 		id=1024,
+ 		name=30001024,
+ 		describe="特殊词条：射手召唤资源消耗+200%",
+ 		type=3,
+ 		target={102},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={20000},
+ 	parameters2={}
+},
+[1025] =
+{
+ 		id=1025,
+ 		name=30001025,
+ 		describe="特殊词条：法师召唤资源消耗+200%",
+ 		type=3,
+ 		target={104},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={20000},
+ 	parameters2={}
+},
+[1026] =
+{
+ 		id=1026,
+ 		name=30001026,
+ 		describe="全体敌方单位的全属性-15%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1020},
+ 	parameters2={}
+},
+[1027] =
+{
+ 		id=1027,
+ 		name=30001027,
+ 		describe="全体敌方单位受到的异能伤害+60%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1024},
+ 	parameters2={}
+},
+[1028] =
+{
+ 		id=1028,
+ 		name=30001028,
+ 		describe="全体敌方单位受到的伤害-90%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1025},
+ 	parameters2={}
+},
+[1029] =
+{
+ 		id=1029,
+ 		name=30001029,
+ 		describe="全体敌方单位的生命值-80%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1026},
+ 	parameters2={}
+},
+[1030] =
+{
+ 		id=1030,
+ 		name=30001030,
+ 		describe="全体敌方单位的移动速度-25%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1027},
+ 	parameters2={}
+},
+[1031] =
+{
+ 		id=1031,
+ 		name=30001031,
+ 		describe="全体敌方单位的攻击速度+75%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1028},
+ 	parameters2={}
+},
+[1032] =
+{
+ 		id=1032,
+ 		name=30001032,
+ 		describe="全体敌方单位受到的伤害-80%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1030},
+ 	parameters2={}
+},
+[1033] =
+{
+ 		id=1033,
+ 		name=30001033,
+ 		describe="全体敌方单位受到的物理伤害-40%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1031},
+ 	parameters2={}
+},
+[1034] =
+{
+ 		id=1034,
+ 		name=30001034,
+ 		describe="全体敌方单位受到的异能伤害-40%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1032},
+ 	parameters2={}
+},
+[1035] =
+{
+ 		id=1035,
+ 		name=30001035,
+ 		describe="全体敌方单位受到的伤害-60%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1033},
+ 	parameters2={}
+},
+[1036] =
+{
+ 		id=1036,
+ 		name=30001036,
+ 		describe="全体敌方单位的生命值+150%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1035},
+ 	parameters2={}
+},
+[1037] =
+{
+ 		id=1037,
+ 		name=30001037,
+ 		describe="全体怪物的物理防御力、异能防御力+30%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1036},
+ 	parameters2={}
+},
+[1039] =
+{
+ 		id=1039,
+ 		name=30001039,
+ 		describe="20级怪物 全属性+15%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1039},
+ 	parameters2={}
+},
+[1040] =
+{
+ 		id=1040,
+ 		name=30001040,
+ 		describe="30级怪物 全属性+30%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1040},
+ 	parameters2={}
+},
+[1041] =
+{
+ 		id=1041,
+ 		name=30001041,
+ 		describe="40级怪物 全属性+45%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1041},
+ 	parameters2={}
+},
+[1042] =
+{
+ 		id=1042,
+ 		name=30001042,
+ 		describe="50级怪物 全属性+65%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1042},
+ 	parameters2={}
+},
+[1043] =
+{
+ 		id=1043,
+ 		name=30001043,
+ 		describe="55级怪物 全属性+90%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1043},
+ 	parameters2={}
+},
+[1044] =
+{
+ 		id=1044,
+ 		name=30001044,
+ 		describe="60级怪物 全属性+115%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1044},
+ 	parameters2={}
+},
+[1045] =
+{
+ 		id=1045,
+ 		name=30001045,
+ 		describe="65级怪物 全属性+135%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1045},
+ 	parameters2={}
+},
+[1046] =
+{
+ 		id=1046,
+ 		name=30001046,
+ 		describe="全体敌方单位的攻击力+30%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4009},
+ 	parameters2={}
+},
+[1047] =
+{
+ 		id=1047,
+ 		name=30001047,
+ 		describe="全体敌方单位的攻击力-50%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1047},
+ 	parameters2={}
+},
+[1048] =
+{
+ 		id=1048,
+ 		name=30001048,
+ 		describe="所有敌人的生命值、物理防御、异能防御+15%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1048},
+ 	parameters2={}
+},
+[1049] =
+{
+ 		id=1049,
+ 		name=30001049,
+ 		describe="全属性+100%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1051},
+ 	parameters2={}
+},
+[1050] =
+{
+ 		id=1050,
+ 		name=30001050,
+ 		describe="全体敌方单位生命值-40%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1056},
+ 	parameters2={}
+},
+[1051] =
+{
+ 		id=1051,
+ 		name=30001051,
+ 		describe="全体敌方单位受到的伤害+40%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1052},
+ 	parameters2={}
+},
+[1052] =
+{
+ 		id=1052,
+ 		name=30001052,
+ 		describe="全体敌方单位的生命值+80%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1046},
+ 	parameters2={}
+},
+[1053] =
+{
+ 		id=1053,
+ 		name=30001053,
+ 		describe="全体敌方单位的生命值+160%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1065},
+ 	parameters2={}
+},
+[1054] =
+{
+ 		id=1054,
+ 		name=30001054,
+ 		describe="全体敌方单位的生命值+240%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1087},
+ 	parameters2={}
+},
+[1055] =
+{
+ 		id=1055,
+ 		name=30001055,
+ 		describe="全体敌方单位的移动速度-30%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1097},
+ 	parameters2={}
+},
+[1056] =
+{
+ 		id=1056,
+ 		name=30001056,
+ 		describe="全体敌方单位受到的物理伤害+80%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1054},
+ 	parameters2={}
+},
+[1057] =
+{
+ 		id=1057,
+ 		name=30001057,
+ 		describe="关卡初始费用",
+ 		type=10,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={200},
+ 	parameters2={}
+},
+[1058] =
+{
+ 		id=1058,
+ 		name=30001058,
+ 		describe="全体敌方单位受到的物理伤害-100%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1101},
+ 	parameters2={}
+},
+[1059] =
+{
+ 		id=1059,
+ 		name=30001059,
+ 		describe="全体敌方单位物理防御力、异能防御力-50%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1095},
+ 	parameters2={}
+},
+[1060] =
+{
+ 		id=1060,
+ 		name=30001060,
+ 		describe="70级怪物 全属性+135%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1104},
+ 	parameters2={}
+},
+[1061] =
+{
+ 		id=1061,
+ 		name=30001061,
+ 		describe="75级怪物 全属性+170%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1105},
+ 	parameters2={}
+},
+[1062] =
+{
+ 		id=1062,
+ 		name=30001062,
+ 		describe="80级怪物 全属性+195%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1106},
+ 	parameters2={}
+},
+[1063] =
+{
+ 		id=1063,
+ 		name=30001063,
+ 		describe="85级怪物 全属性+215%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1107},
+ 	parameters2={}
+},
+[1064] =
+{
+ 		id=1064,
+ 		name=30001064,
+ 		describe="90级怪物 全属性+225%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1108},
+ 	parameters2={}
+},
+[1065] =
+{
+ 		id=1065,
+ 		name=30001065,
+ 		describe="全体敌方单位的攻击力-30%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2001},
+ 	parameters2={}
+},
+[2001] =
+{
+ 		id=2001,
+ 		name=30002001,
+ 		describe="所有战员的攻击力-30%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2001},
+ 	parameters2={}
+},
+[2002] =
+{
+ 		id=2002,
+ 		name=30002002,
+ 		describe="所有战员的生命值-50%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2002},
+ 	parameters2={}
+},
+[2003] =
+{
+ 		id=2003,
+ 		name=30002003,
+ 		describe="所有战员的物理防御-50%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2003},
+ 	parameters2={}
+},
+[2004] =
+{
+ 		id=2004,
+ 		name=30002004,
+ 		describe="所有战员的异能防御-50%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2004},
+ 	parameters2={}
+},
+[2005] =
+{
+ 		id=2005,
+ 		name=30002005,
+ 		describe="所有战员的治疗量-50%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2005},
+ 	parameters2={}
+},
+[2006] =
+{
+ 		id=2006,
+ 		name=30002006,
+ 		describe="重型类战员的阻挡数-1",
+ 		type=1,
+ 		target={101},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2006},
+ 	parameters2={}
+},
+[2007] =
+{
+ 		id=2007,
+ 		name=30002007,
+ 		describe="所有战员的治疗量-30%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2007},
+ 	parameters2={}
+},
+[2008] =
+{
+ 		id=2008,
+ 		name=30002008,
+ 		describe="所有战员获得15%的吸血",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761,2004,2005,2304,2305,2704,2705},
+ 		entry=3,
+ 		parameters={4006},
+ 	parameters2={}
+},
+[2009] =
+{
+ 		id=2009,
+ 		name=30002009,
+ 		describe="全体敌方单位获得2000点护盾",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1021},
+ 	parameters2={}
+},
+[2010] =
+{
+ 		id=2010,
+ 		name=30002010,
+ 		describe="所有战员的攻击速度+25%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1034},
+ 	parameters2={}
+},
+[2011] =
+{
+ 		id=2011,
+ 		name=30002011,
+ 		describe="所有战员每秒能量恢复+1",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2009},
+ 	parameters2={}
+},
+[2012] =
+{
+ 		id=2012,
+ 		name=30002012,
+ 		describe="所有战员每秒能量恢复-1",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2011},
+ 	parameters2={}
+},
+[2013] =
+{
+ 		id=2013,
+ 		name=30002013,
+ 		describe="所有战员的生命值-80%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1026},
+ 	parameters2={}
+},
+[2014] =
+{
+ 		id=2014,
+ 		name=30002014,
+ 		describe="重型类战员的阻挡数+1",
+ 		type=1,
+ 		target={101},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2012},
+ 	parameters2={}
+},
+[2015] =
+{
+ 		id=2015,
+ 		name=30002015,
+ 		describe="所有战员的生命值-40%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1056},
+ 	parameters2={}
+},
+[2016] =
+{
+ 		id=2016,
+ 		name=30002016,
+ 		describe="重型类战员的阻挡数+2",
+ 		type=1,
+ 		target={101},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2013},
+ 	parameters2={}
+},
+[2017] =
+{
+ 		id=2017,
+ 		name=30002017,
+ 		describe="战士类战员的阻挡数+1",
+ 		type=1,
+ 		target={103},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2012},
+ 	parameters2={}
+},
+[2018] =
+{
+ 		id=2018,
+ 		name=30002018,
+ 		describe="所有战员的物理防御-100%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2008},
+ 	parameters2={}
+},
+[2019] =
+{
+ 		id=2019,
+ 		name=30002019,
+ 		describe="BOSS战被动",
+ 		type=2,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999909401},
+ 	parameters2={}
+},
+[3001] =
+{
+ 		id=3001,
+ 		name=30003001,
+ 		describe="特殊词条：所有角色的部署资源消耗+20%",
+ 		type=3,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={2000,0},
+ 	parameters2={}
+},
+[3002] =
+{
+ 		id=3002,
+ 		name=30003002,
+ 		describe="特殊词条：坦克的部署资源消耗+100%",
+ 		type=3,
+ 		target={101},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={10000,0},
+ 	parameters2={}
+},
+[3003] =
+{
+ 		id=3003,
+ 		name=30003003,
+ 		describe="特殊词条：射手的部署资源消耗+100%",
+ 		type=3,
+ 		target={102},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={10000,0},
+ 	parameters2={}
+},
+[3004] =
+{
+ 		id=3004,
+ 		name=30003004,
+ 		describe="特殊词条：战士的部署资源消耗+100%",
+ 		type=3,
+ 		target={103},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={10000,0},
+ 	parameters2={}
+},
+[3005] =
+{
+ 		id=3005,
+ 		name=30003005,
+ 		describe="特殊词条：法师的部署资源消耗+100%",
+ 		type=3,
+ 		target={104},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={10000,0},
+ 	parameters2={}
+},
+[3006] =
+{
+ 		id=3006,
+ 		name=30003006,
+ 		describe="特殊词条：治疗的部署资源消耗+100%",
+ 		type=3,
+ 		target={106},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={10000,0},
+ 	parameters2={}
+},
+[3007] =
+{
+ 		id=3007,
+ 		name=30003007,
+ 		describe="可部署战员上限变为4",
+ 		type=11,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={4},
+ 	parameters2={}
+},
+[3008] =
+{
+ 		id=3008,
+ 		name=30003008,
+ 		describe="可部署战员上限变为7",
+ 		type=11,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={7},
+ 	parameters2={}
+},
+[3009] =
+{
+ 		id=3009,
+ 		name=30003009,
+ 		describe="所有战员部署资源消耗-25%",
+ 		type=3,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={-2500},
+ 	parameters2={}
+},
+[3010] =
+{
+ 		id=3010,
+ 		name=30003010,
+ 		describe="所有战员部署资源消耗-50%",
+ 		type=3,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={-5000},
+ 	parameters2={}
+},
+[3011] =
+{
+ 		id=3011,
+ 		name=30003011,
+ 		describe="所有战员部署资源消耗+25%",
+ 		type=3,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={2500},
+ 	parameters2={}
+},
+[3012] =
+{
+ 		id=3012,
+ 		name=30003012,
+ 		describe="所有战员升级资源消耗+2",
+ 		type=17,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={20},
+ 	parameters2={}
+},
+[3013] =
+{
+ 		id=3013,
+ 		name=30003013,
+ 		describe="所有战员升级资源消耗+4",
+ 		type=17,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={40},
+ 	parameters2={}
+},
+[3014] =
+{
+ 		id=3014,
+ 		name=30003014,
+ 		describe="所有战员升级资源消耗-2",
+ 		type=17,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={-20},
+ 	parameters2={}
+},
+[3015] =
+{
+ 		id=3015,
+ 		name=30003015,
+ 		describe="所有战员升级资源消耗-4",
+ 		type=17,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={-40},
+ 	parameters2={}
+},
+[3016] =
+{
+ 		id=3016,
+ 		name=30003016,
+ 		describe="重型类战员的阻挡数-1，所有战员每秒能量恢复+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={2006,2011},
+ 	parameters2={}
+},
+[3017] =
+{
+ 		id=3017,
+ 		name=30003017,
+ 		describe="全体敌方单位受到的物理伤害-60%，所有战员每秒能量恢复+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1007,2011},
+ 	parameters2={}
+},
+[3018] =
+{
+ 		id=3018,
+ 		name=30003018,
+ 		describe="全体敌方单位变的不可阻挡，所有战员每秒能量恢复+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={30120,2011},
+ 	parameters2={}
+},
+[3019] =
+{
+ 		id=3019,
+ 		name=30003019,
+ 		describe="可部署战员上限变为5",
+ 		type=11,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={5},
+ 	parameters2={}
+},
+[3020] =
+{
+ 		id=3020,
+ 		name=30003020,
+ 		describe="可部署战员上限变为6",
+ 		type=11,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={6},
+ 	parameters2={}
+},
+[3021] =
+{
+ 		id=3021,
+ 		name=30003021,
+ 		describe="全体战员的阻挡数+1",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2012},
+ 	parameters2={}
+},
+[3022] =
+{
+ 		id=3022,
+ 		name=30003022,
+ 		describe="所有战员部署资源消耗+15%",
+ 		type=3,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={1500},
+ 	parameters2={}
+},
+[3023] =
+{
+ 		id=3023,
+ 		name=30003023,
+ 		describe="所有战员部署资源消耗-15%",
+ 		type=3,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={-1500},
+ 	parameters2={}
+},
+[3024] =
+{
+ 		id=3024,
+ 		name=30003024,
+ 		describe="所有战员部署资源消耗+35%",
+ 		type=3,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={3500},
+ 	parameters2={}
+},
+[3025] =
+{
+ 		id=3025,
+ 		name=30003025,
+ 		describe="所有战员部署资源消耗-35%",
+ 		type=3,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={-3500},
+ 	parameters2={}
+},
+[3026] =
+{
+ 		id=3026,
+ 		name=30003026,
+ 		describe="所有战员升级资源消耗+1",
+ 		type=17,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={10},
+ 	parameters2={}
+},
+[3027] =
+{
+ 		id=3027,
+ 		name=30003027,
+ 		describe="所有战员升级资源消耗-1",
+ 		type=17,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={-10},
+ 	parameters2={}
+},
+[3028] =
+{
+ 		id=3028,
+ 		name=30003028,
+ 		describe="所有战员升级资源消耗+3",
+ 		type=17,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={30},
+ 	parameters2={}
+},
+[3029] =
+{
+ 		id=3029,
+ 		name=30003029,
+ 		describe="所有战员升级资源消耗-3",
+ 		type=17,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={-30},
+ 	parameters2={}
+},
+[3030] =
+{
+ 		id=3030,
+ 		name=30003030,
+ 		describe="部署召唤资源消耗+15%，但升级资源消耗-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3022,3027},
+ 	parameters2={}
+},
+[3031] =
+{
+ 		id=3031,
+ 		name=30003031,
+ 		describe="部署召唤资源消耗+35%，但升级资源消耗-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3024,3027},
+ 	parameters2={}
+},
+[3032] =
+{
+ 		id=3032,
+ 		name=30003032,
+ 		describe="部署召唤资源消耗-15%，但升级资源消耗+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3023,3026},
+ 	parameters2={}
+},
+[3033] =
+{
+ 		id=3033,
+ 		name=30003033,
+ 		describe="部署召唤资源消耗-35%，但升级资源消耗+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3025,3026},
+ 	parameters2={}
+},
+[3034] =
+{
+ 		id=3034,
+ 		name=30003034,
+ 		describe="部署召唤资源消耗-25%，但升级资源消耗+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3009,3026},
+ 	parameters2={}
+},
+[3035] =
+{
+ 		id=3035,
+ 		name=30003035,
+ 		describe="部署召唤资源消耗+25%，但升级资源消耗-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3011,3027},
+ 	parameters2={}
+},
+[3036] =
+{
+ 		id=3036,
+ 		name=30003036,
+ 		describe="所有战员部署资源消耗-50%",
+ 		type=3,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={-5000},
+ 	parameters2={}
+},
+[3037] =
+{
+ 		id=3037,
+ 		name=30003037,
+ 		describe="所有战员部署资源消耗-100%",
+ 		type=3,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={-10000},
+ 	parameters2={}
+},
+[3038] =
+{
+ 		id=3038,
+ 		name=30003038,
+ 		describe="所有敌方单位的出现间隔-80%",
+ 		type=19,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={-8000},
+ 	parameters2={}
+},
+[3039] =
+{
+ 		id=3039,
+ 		name=30003039,
+ 		describe="所有敌方单位的刷新间隔-80%",
+ 		type=20,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={-8000},
+ 	parameters2={}
+},
+[5001] =
+{
+ 		id=5001,
+ 		name=30005001,
+ 		describe="（5000+为悬赏低级词条）哨兵获得分裂效果3",
+ 		type=2,
+ 		target={1703},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={210035103},
+ 	parameters2={}
+},
+[5002] =
+{
+ 		id=5002,
+ 		name=30005002,
+ 		describe="花鳄获得分裂效果1",
+ 		type=2,
+ 		target={2701},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={220015101},
+ 	parameters2={}
+},
+[5003] =
+{
+ 		id=5003,
+ 		name=30005003,
+ 		describe="花鳄获得分裂效果2",
+ 		type=2,
+ 		target={2702},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={220025102},
+ 	parameters2={}
+},
+[5004] =
+{
+ 		id=5004,
+ 		name=30005004,
+ 		describe="花鳄获得分裂效果3",
+ 		type=2,
+ 		target={2706},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={220035103},
+ 	parameters2={}
+},
+[5005] =
+{
+ 		id=5005,
+ 		name=30005005,
+ 		describe="寻觅者获得分裂效果1",
+ 		type=2,
+ 		target={3701},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={230015101},
+ 	parameters2={}
+},
+[5006] =
+{
+ 		id=5006,
+ 		name=30005006,
+ 		describe="寻觅者获得分裂效果2",
+ 		type=2,
+ 		target={3702},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={230025102},
+ 	parameters2={}
+},
+[5007] =
+{
+ 		id=5007,
+ 		name=30005007,
+ 		describe="寻觅者获得分裂效果3",
+ 		type=2,
+ 		target={3703},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={230035103},
+ 	parameters2={}
+},
+[5008] =
+{
+ 		id=5008,
+ 		name=30005008,
+ 		describe="南舍之疾获得分裂效果1",
+ 		type=2,
+ 		target={4701},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={240015101},
+ 	parameters2={}
+},
+[5009] =
+{
+ 		id=5009,
+ 		name=30005009,
+ 		describe="南舍之疾获得分裂效果2",
+ 		type=2,
+ 		target={4702},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={240025102},
+ 	parameters2={}
+},
+[5010] =
+{
+ 		id=5010,
+ 		name=30005010,
+ 		describe="南舍之疾获得分裂效果3",
+ 		type=2,
+ 		target={4703},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={240035103},
+ 	parameters2={}
+},
+[5011] =
+{
+ 		id=5011,
+ 		name=30005011,
+ 		describe="花鳄获得分裂效果1第二章",
+ 		type=2,
+ 		target={2701},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={220015301},
+ 	parameters2={}
+},
+[5012] =
+{
+ 		id=5012,
+ 		name=30005012,
+ 		describe="花鳄获得分裂效果2第二章",
+ 		type=2,
+ 		target={2702},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={220025302},
+ 	parameters2={}
+},
+[5013] =
+{
+ 		id=5013,
+ 		name=30005013,
+ 		describe="花鳄获得分裂效果3第二章",
+ 		type=2,
+ 		target={2706},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={220035303},
+ 	parameters2={}
+},
+[5014] =
+{
+ 		id=5014,
+ 		name=30005014,
+ 		describe="（词条）普通类敌方单位50%生命值以下时，会分裂出一个拥有当前生命值的分身，分裂出的分身也具有分裂效果",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={5001,5002,5003,5004,5005,5006,5007,5008,5009,5010,5011,5012,5013},
+ 	parameters2={}
+},
+[5015] =
+{
+ 		id=5015,
+ 		name=30005015,
+ 		describe="全体敌方单位的物理防御+20%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1058},
+ 	parameters2={}
+},
+[5016] =
+{
+ 		id=5016,
+ 		name=30005016,
+ 		describe="全体敌方单位的异能防御+40%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1059},
+ 	parameters2={}
+},
+[5017] =
+{
+ 		id=5017,
+ 		name=30005017,
+ 		describe="全体敌方单位的属性+15%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1039},
+ 	parameters2={}
+},
+[5018] =
+{
+ 		id=5018,
+ 		name=30005018,
+ 		describe="全体敌方单位的生命值+40%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1064},
+ 	parameters2={}
+},
+[5019] =
+{
+ 		id=5019,
+ 		name=30005019,
+ 		describe="全体敌方单位的生命值+80%、所有战员每秒能量恢复+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1052,2011},
+ 	parameters2={}
+},
+[5020] =
+{
+ 		id=5020,
+ 		name=30005020,
+ 		describe="全体敌方单位拥有护盾时受到的伤害降低40%",
+ 		type=2,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={500010101},
+ 	parameters2={}
+},
+[5021] =
+{
+ 		id=5021,
+ 		name=30005021,
+ 		describe="（词条）全体敌方单位获得1000点护盾，拥有护盾时受到的伤害降低40%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1012,5022},
+ 	parameters2={}
+},
+[5022] =
+{
+ 		id=5022,
+ 		name=30005022,
+ 		describe="全体敌方单位无视防御35%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1069},
+ 	parameters2={}
+},
+[5023] =
+{
+ 		id=5023,
+ 		name=30005023,
+ 		describe="全体敌方单位的移动速度+30%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001},
+ 	parameters2={}
+},
+[5024] =
+{
+ 		id=5024,
+ 		name=30005024,
+ 		describe="全体敌方单位的攻击速度+40%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1072},
+ 	parameters2={}
+},
+[5025] =
+{
+ 		id=5025,
+ 		name=30005025,
+ 		describe="全体敌方单位获得吸血40%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={2004,2005,2304,2305,2704,2705,2704,1061,1761},
+ 		entry=3,
+ 		parameters={1075},
+ 	parameters2={}
+},
+[5026] =
+{
+ 		id=5026,
+ 		name=30005026,
+ 		describe="全体敌方单位造成的伤害+40%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1078},
+ 	parameters2={}
+},
+[5027] =
+{
+ 		id=5027,
+ 		name=30005027,
+ 		describe="全体战员造成的伤害-30%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={1081},
+ 	parameters2={}
+},
+[5028] =
+{
+ 		id=5028,
+ 		name=30005028,
+ 		describe="全体战员的全属性-12%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={1084},
+ 	parameters2={}
+},
+[6001] =
+{
+ 		id=6001,
+ 		name=30006001,
+ 		describe="（6000+为悬赏中级词条）普通类敌方单位获得自爆效果（50%）",
+ 		type=2,
+ 		target={1703,2701,2702,2706,3701,3702,3703,4701,4702,4703,5701,5702,5703,5707,5708,5709},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={220045002},
+ 	parameters2={}
+},
+[6002] =
+{
+ 		id=6002,
+ 		name=30006002,
+ 		describe="全体敌方单位的物理防御+30%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1060},
+ 	parameters2={}
+},
+[6003] =
+{
+ 		id=6003,
+ 		name=30006003,
+ 		describe="全体敌方单位的异能防御+60%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1061,1761},
+ 	parameters2={}
+},
+[6004] =
+{
+ 		id=6004,
+ 		name=30006004,
+ 		describe="全体敌方单位的全属性+30%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1040},
+ 	parameters2={}
+},
+[6005] =
+{
+ 		id=6005,
+ 		name=30006005,
+ 		describe="全体敌方单位的生命值+80%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1046},
+ 	parameters2={}
+},
+[6006] =
+{
+ 		id=6006,
+ 		name=30006006,
+ 		describe="全体敌方单位的生命值+160%、战员法力恢复+1",
+ 		target={0},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		parameters={1053,2011},
+ 	parameters2={}
+},
+[6007] =
+{
+ 		id=6007,
+ 		name=30006007,
+ 		describe="全体敌方单位拥有护盾时受到的伤害降低60%",
+ 		type=2,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={500010102},
+ 	parameters2={}
+},
+[6008] =
+{
+ 		id=6008,
+ 		name=30006008,
+ 		describe="全体敌方单位获得1000点护盾，拥有护盾时受到的伤害降低60%",
+ 		target={0},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		parameters={1012,6011},
+ 	parameters2={}
+},
+[6009] =
+{
+ 		id=6009,
+ 		name=30006009,
+ 		describe="全体敌方单位无视防御70%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1070},
+ 	parameters2={}
+},
+[6010] =
+{
+ 		id=6010,
+ 		name=30006010,
+ 		describe="全体敌方单位的移动速度+50%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1038},
+ 	parameters2={}
+},
+[6011] =
+{
+ 		id=6011,
+ 		name=30006011,
+ 		describe="全体敌方单位的攻击速度+80%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1073},
+ 	parameters2={}
+},
+[6012] =
+{
+ 		id=6012,
+ 		name=30006012,
+ 		describe="全体敌方单位获得吸血80%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={2004,2005,2304,2305,2704,2705,2704,1061,1761},
+ 		entry=3,
+ 		parameters={1076},
+ 	parameters2={}
+},
+[6013] =
+{
+ 		id=6013,
+ 		name=30006013,
+ 		describe="全体敌方单位造成的伤害+80%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1079},
+ 	parameters2={}
+},
+[6014] =
+{
+ 		id=6014,
+ 		name=30006014,
+ 		describe="全体战员造成的伤害-40%",
+ 		type=1,
+ 		target={2},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={1082},
+ 	parameters2={}
+},
+[6015] =
+{
+ 		id=6015,
+ 		name=30006015,
+ 		describe="全体战员的全属性-24%",
+ 		type=1,
+ 		target={2},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={1085},
+ 	parameters2={}
+},
+[6016] =
+{
+ 		id=6016,
+ 		name=30006016,
+ 		describe="普通类敌方单位受到的异能伤害-80%",
+ 		type=1,
+ 		target={1703,2701,2702,2706,3701,3702,3703,4701,4702,4703,5701,5702,5703,5707,5708,5709},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1088},
+ 	parameters2={}
+},
+[6017] =
+{
+ 		id=6017,
+ 		name=30006017,
+ 		describe="速度类敌方单位的生命值+50%、物理防御-100%",
+ 		type=1,
+ 		target={1713,2711,2712,2713,2711,2712,2713,3711,3712,3713,4711,4712,4713,5711,5712,5713,5714,5715,5716},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4002,1089},
+ 	parameters2={}
+},
+[6018] =
+{
+ 		id=6018,
+ 		name=30006018,
+ 		describe="射手类敌方单位获得隐身直到被阻挡",
+ 		type=1,
+ 		target={1723,2721,2722,2723,2721,2722,2723,3721,3722,3723},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={250110101},
+ 	parameters2={}
+},
+[6019] =
+{
+ 		id=6019,
+ 		name=30006019,
+ 		describe="异能类敌方单位获得一次重生",
+ 		type=2,
+ 		target={1733,2731,2732,2733,2731,2732,2733,3731,3732,3733,4721,4722,4723,5341,5342,5343,5344,5345,5346},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={210315001},
+ 	parameters2={}
+},
+[6020] =
+{
+ 		id=6020,
+ 		name=30006020,
+ 		describe="重装类敌方单位的全属性+30%、造成的伤害+100%、移动速度-25%、攻击速度-50%（熊鲨、大剑）",
+ 		type=1,
+ 		target={2741,2742,2743,4751,4752,4753},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1015,1090,1027,1091},
+ 	parameters2={}
+},
+[6021] =
+{
+ 		id=6021,
+ 		name=30006021,
+ 		describe="重装类敌方单位获得2000点护盾且每秒恢复5%的护盾、移动速度-25%、受到的伤害-20%（大锤、大盾、犀牛）",
+ 		type=1,
+ 		target={1743,3741,3742,3743,5751,5752,5753,5754,5755,5756},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1021,1092,1027,1019},
+ 	parameters2={}
+},
+[6022] =
+{
+ 		id=6022,
+ 		name=30006022,
+ 		describe="战士类敌方单位受到的伤害-60%，造成的伤害-50%，每次攻击+20%的攻击速度（叠加5次）",
+ 		target={0},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		parameters={6023,6024},
+ 	parameters2={}
+},
+[6023] =
+{
+ 		id=6023,
+ 		name=30006023,
+ 		describe="战士类敌方单位受到的伤害-60%，造成的伤害-50%",
+ 		type=1,
+ 		target={4731,4732,4733,5731,5732,5733,5734,5735,5736},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1033,1083},
+ 	parameters2={}
+},
+[6024] =
+{
+ 		id=6024,
+ 		name=30006024,
+ 		describe="战士类敌方单位每次攻击+20%的攻击速度（叠加5次）",
+ 		type=2,
+ 		target={4731,4732,4733,5731,5732,5733,5734,5735,5736},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={240105001},
+ 	parameters2={}
+},
+[6025] =
+{
+ 		id=6025,
+ 		name=30006025,
+ 		describe="飞行类敌方单位被摧毁时会沉默全体战员5秒",
+ 		type=2,
+ 		target={1751,1752,2751,2752,2753,2751,2752,2753,5761,5762,5763,5764,5765,5766},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={210515001},
+ 	parameters2={}
+},
+[6026] =
+{
+ 		id=6026,
+ 		name=30006026,
+ 		describe="特殊类敌方单位的移动速度+50%",
+ 		type=1,
+ 		target={2703,2704,2705,2703,2704,4741,4761,4762,4763,5721,5722,5723,5724,5725,5726},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1038},
+ 	parameters2={}
+},
+[6027] =
+{
+ 		id=6027,
+ 		name=30006027,
+ 		describe="全体战员的阻挡数+1、可上阵战员数-1（6人局）",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3019,3021},
+ 	parameters2={}
+},
+[6028] =
+{
+ 		id=6028,
+ 		name=30006028,
+ 		describe="全体战员的阻挡数+1、可上阵战员数-1（7人局）",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3020,3021},
+ 	parameters2={}
+},
+[7001] =
+{
+ 		id=7001,
+ 		name=30007001,
+ 		describe="（7000+为悬赏高级词条）全体敌方单位的物理防御+40%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1062},
+ 	parameters2={}
+},
+[7002] =
+{
+ 		id=7002,
+ 		name=30007002,
+ 		describe="全体敌方单位的异能防御+80%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1063},
+ 	parameters2={}
+},
+[7003] =
+{
+ 		id=7003,
+ 		name=30007003,
+ 		describe="全体敌方单位的全属性+45%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1041},
+ 	parameters2={}
+},
+[7004] =
+{
+ 		id=7004,
+ 		name=30007004,
+ 		describe="全体敌方单位的生命值+160%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1065},
+ 	parameters2={}
+},
+[7005] =
+{
+ 		id=7005,
+ 		name=30007005,
+ 		describe="全体敌方单位的生命值+240%、战员法力恢复+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1054,2011},
+ 	parameters2={}
+},
+[7006] =
+{
+ 		id=7006,
+ 		name=30007006,
+ 		describe="全体敌方单位拥有护盾时受到的伤害降低80%",
+ 		type=2,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={500010103},
+ 	parameters2={}
+},
+[7007] =
+{
+ 		id=7007,
+ 		name=30007007,
+ 		describe="全体敌方单位获得1000点护盾，拥有护盾时受到的伤害降低80%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1012,7006},
+ 	parameters2={}
+},
+[7008] =
+{
+ 		id=7008,
+ 		name=30007008,
+ 		describe="全体敌方单位无视防御100%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1071},
+ 	parameters2={}
+},
+[7009] =
+{
+ 		id=7009,
+ 		name=30007009,
+ 		describe="全体敌方单位的攻击速度+120%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1074},
+ 	parameters2={}
+},
+[7010] =
+{
+ 		id=7010,
+ 		name=30007010,
+ 		describe="全体敌方单位获得吸血120%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={2004,2005,2304,2305,2704,2705,2704,1061,1761},
+ 		entry=3,
+ 		parameters={1077},
+ 	parameters2={}
+},
+[7011] =
+{
+ 		id=7011,
+ 		name=30007011,
+ 		describe="全体敌方单位造成的伤害+120%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1080},
+ 	parameters2={}
+},
+[7012] =
+{
+ 		id=7012,
+ 		name=30007012,
+ 		describe="全体战员造成的伤害-50%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={1083},
+ 	parameters2={}
+},
+[7013] =
+{
+ 		id=7013,
+ 		name=30007013,
+ 		describe="全体战员的全属性-32%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={1086},
+ 	parameters2={}
+},
+[7014] =
+{
+ 		id=7014,
+ 		name=30007014,
+ 		describe="全体战员、全体敌方单位的生命值-40%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1050,2015},
+ 	parameters2={}
+},
+[7015] =
+{
+ 		id=7015,
+ 		name=30007015,
+ 		describe="全体敌方单位受到的伤害-90%、生命值-60%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1025,1049},
+ 	parameters2={}
+},
+[7016] =
+{
+ 		id=7016,
+ 		name=30007016,
+ 		describe="全体敌方单位变得不可阻挡、移动速度-25%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={3004,1027},
+ 	parameters2={}
+},
+[7017] =
+{
+ 		id=7017,
+ 		name=30007017,
+ 		describe="全体敌方单位的生命值+200%、受到的异能伤害+60%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1093,1024},
+ 	parameters2={}
+},
+[7018] =
+{
+ 		id=7018,
+ 		name=30007018,
+ 		describe="全体敌方单位的生命值低于50%时，造成的伤害+100%，受到的伤害-60%",
+ 		type=2,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={240235101},
+ 	parameters2={}
+},
+[7019] =
+{
+ 		id=7019,
+ 		name=30007019,
+ 		describe="全体敌方单位获得光环效果，周围的敌方单位的攻击力+10%（可叠加）",
+ 		type=2,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999905101},
+ 	parameters2={}
+},
+[20001] =
+{
+ 		id=20001,
+ 		name=30020001,
+ 		describe="01添加上阵点",
+ 		type=12,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={100,3,112,3,123,3,124,3,125,3},
+ 	parameters2={}
+},
+[20002] =
+{
+ 		id=20002,
+ 		name=30020002,
+ 		describe="02添加上阵点",
+ 		type=12,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={89,3,53,3,78,3,65,3,66,3},
+ 	parameters2={}
+},
+[20003] =
+{
+ 		id=20003,
+ 		name=30020003,
+ 		describe="03添加上阵点",
+ 		type=12,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={41,3,29,3,42,3,30,3},
+ 	parameters2={}
+},
+[20004] =
+{
+ 		id=20004,
+ 		name=30020004,
+ 		describe="01全体敌方单位的移动速度-30%,出现额外敌方单位",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1013,20018},
+ 	parameters2={}
+},
+[20005] =
+{
+ 		id=20005,
+ 		name=30020005,
+ 		describe="战中升级资源消耗-1",
+ 		type=17,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={-10},
+ 	parameters2={}
+},
+[20006] =
+{
+ 		id=20006,
+ 		name=30020006,
+ 		describe="02全体敌方单位受到的伤害-40%，所有战员召唤部署资源消耗-50%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1009,3010},
+ 	parameters2={}
+},
+[20007] =
+{
+ 		id=20007,
+ 		name=30020007,
+ 		describe="03全体敌方单位的全属性+45%，所有战员战中升级资源消耗-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1041,3027},
+ 	parameters2={}
+},
+[20008] =
+{
+ 		id=20008,
+ 		name=30020008,
+ 		describe="03敌方单位数量翻倍",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={10103001,1,10103002,1,10103003,1,10103004,1,10103005,1,10103006,1,10103007,1,10103008,1,10103009,1,10103010,1,10103011,1,10103012,1,10103013,1,10103014,1,10103015,1,10103016,1},
+ 	parameters2={}
+},
+[20009] =
+{
+ 		id=20009,
+ 		name=30020009,
+ 		describe="06爆炸反应堆数量减少,位置发生变化",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={10105004,1,10105002,1},
+ 	parameters2={}
+},
+[20010] =
+{
+ 		id=20010,
+ 		name=30020010,
+ 		describe="06全体敌方单位生命值+100%、受到的异能伤害+60%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1002,1027},
+ 	parameters2={}
+},
+[20011] =
+{
+ 		id=20011,
+ 		name=30020011,
+ 		describe="08全体敌方单位受到的物理伤害-40%、所有战员召唤部署资源消耗-25%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1033,3009},
+ 	parameters2={}
+},
+[20012] =
+{
+ 		id=20012,
+ 		name=30020012,
+ 		describe="全体敌方单位受到的伤害-90%、生命值-80%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1025,1026},
+ 	parameters2={}
+},
+[20013] =
+{
+ 		id=20013,
+ 		name=30020013,
+ 		describe="09全体敌方单位的移动速度-25%、攻击速度+75%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1030,1031},
+ 	parameters2={}
+},
+[20014] =
+{
+ 		id=20014,
+ 		name=30020014,
+ 		describe="MPA1A2的攻击速度+50%、攻击力+30%",
+ 		type=1,
+ 		target={1802},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011,4009},
+ 	parameters2={}
+},
+[20015] =
+{
+ 		id=20015,
+ 		name=30020015,
+ 		describe="10MPA1A2精英版本",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={10111011,1,10111002,1,10111003,1,10111004,1,10111005,1,10111006,1,10111007,1,10111008,1,10111009,1,10111010,1},
+ 	parameters2={}
+},
+[20016] =
+{
+ 		id=20016,
+ 		name=30020016,
+ 		describe="10MPA1A2的攻击速度+50%、攻击力+30%、造成范围攻击",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={20014,20015},
+ 	parameters2={}
+},
+[20017] =
+{
+ 		id=20017,
+ 		name=30020017,
+ 		describe="08全体敌方单位受到的魔法伤害-40%、所有战员战中升级资源消耗-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1022,3027},
+ 	parameters2={}
+},
+[20018] =
+{
+ 		id=20018,
+ 		name=30020018,
+ 		describe="01出现额外敌方单位",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={10101004,1,10101005,1,10101006,1},
+ 	parameters2={}
+},
+[20019] =
+{
+ 		id=20019,
+ 		name=30020019,
+ 		describe="01所有战员的生命值-80%、初始资源点数变更为320点",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={2013,20020},
+ 	parameters2={}
+},
+[20020] =
+{
+ 		id=20020,
+ 		name=30020020,
+ 		describe="初始资源点数变更为320点",
+ 		type=10,
+ 		target={0},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={320},
+ 	parameters2={}
+},
+[20021] =
+{
+ 		id=20021,
+ 		name=30020021,
+ 		describe="08全体敌方单位的攻击速度、移动速度+50%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1011,6010},
+ 	parameters2={}
+},
+[20022] =
+{
+ 		id=20022,
+ 		name=30020022,
+ 		describe="09全体敌方单位的物理、异能防御+500%，生命值-99%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={220065001},
+ 	parameters2={}
+},
+[20101] =
+{
+ 		id=20101,
+ 		name=30020101,
+ 		describe="01敌方单位将成对出现",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={20101001,1,20101002,1,20101003,1,20101004,1,20101005,1,20101006,1,20101007,1,20101008,1,20101009,1,20101010,1,20101013,1,20101014,1,20101015,1,20101016,1,20101017,1,20101018,1,20101019,1,20101020,1,20101021,1,20101022,1},
+ 	parameters2={}
+},
+[20102] =
+{
+ 		id=20102,
+ 		name=30020102,
+ 		describe="02添加上阵点",
+ 		type=12,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={65,3,63,3,53,3,51,3,40,3,28,3},
+ 	parameters2={}
+},
+[20103] =
+{
+ 		id=20103,
+ 		name=30020103,
+ 		describe="02地面敌方单位的攻击力+100%、造成的伤害+100%、物理防御-100%",
+ 		type=1,
+ 		target={1002,1012,2011},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4005,1029,2008},
+ 	parameters2={}
+},
+[20104] =
+{
+ 		id=20104,
+ 		name=30020104,
+ 		describe="开关CD时间延长至2分钟",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={20104004,1,20104002,1,20104003,1},
+ 	parameters2={}
+},
+[20105] =
+{
+ 		id=20105,
+ 		name=30020105,
+ 		describe="11开关会自动开启关闭",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={20105005,1,20105002,1,20105003,1,20105004,1},
+ 	parameters2={}
+},
+[20106] =
+{
+ 		id=20106,
+ 		name=30020106,
+ 		describe="04全体敌方单位移动速度+30%、所有战员战中升级资源消耗-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1013,3027},
+ 	parameters2={}
+},
+[20107] =
+{
+ 		id=20107,
+ 		name=30020107,
+ 		describe="10闪跃刀螂的攻击力+100%、生命值+100%",
+ 		type=1,
+ 		target={2003},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4005,1002},
+ 	parameters2={}
+},
+[20108] =
+{
+ 		id=20108,
+ 		name=30020108,
+ 		describe="熊鲨的生命值+50%",
+ 		type=1,
+ 		target={2041,2042,2043},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4002},
+ 	parameters2={}
+},
+[20109] =
+{
+ 		id=20109,
+ 		name=30020109,
+ 		describe="06出现额外敌方单位",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={20109025,1,20109026,1,20109027,1,20109028,1,20109029,1,20109030,1,20109031,1,20109032,1,20109033,1,20109034,1,20109035,1,20109036,1,20109037,1,20109038,1,20109039,1,20109040,1,20109041,1,20109042,1,20109043,1,20109044,1,20109045,1},
+ 	parameters2={}
+},
+[20110] =
+{
+ 		id=20110,
+ 		name=30020110,
+ 		describe="12出现额外敌方单位",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={20110031,1,20110032,1,20110033,1,20110034,1,20110035,1,20110036,1,20110037,1,20110038,1,20110039,1,20110040,1,20110041,1,20110042,1,20110043,1,20110044,1,20110045,1,20110046,1,20110047,1,20110048,1,20110049,1,20110050,1,20110051,1,20110052,1,20110053,1,20110054,1,20110055,1,20110056,1,20110057,1,20110058,1,20110059,1},
+ 	parameters2={}
+},
+[20111] =
+{
+ 		id=20111,
+ 		name=30020111,
+ 		describe="08敌方单位中将出现闪跃刀螂",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={20130,20131},
+ 	parameters2={}
+},
+[20112] =
+{
+ 		id=20112,
+ 		name=30020112,
+ 		describe="13全体怪物的攻击力+30%,所有战员部署资源消耗-25%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1046,3009},
+ 	parameters2={}
+},
+[20113] =
+{
+ 		id=20113,
+ 		name=30020113,
+ 		describe="09敌方单位中将出现闪跃刀螂",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={20113001,1,20113002,1,20113003,1,20113004,1,20113005,1,20113006,1,20113007,1,20113008,1,20113009,1,20113010,1,20113011,1,20113012,1,20113013,1,20113014,1,20113015,1,20113016,1,20113017,1,20113018,1,20113019,1,20113020,1,20113021,1,20113022,1,20113023,1,20113033,1,20113034,1,20113035,1,20113036,1,20113037,1,20113038,1},
+ 	parameters2={}
+},
+[20114] =
+{
+ 		id=20114,
+ 		name=30020114,
+ 		describe="09全体敌方单位的生命值+100%,所有战员每秒能量恢复+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1002,2011},
+ 	parameters2={}
+},
+[20115] =
+{
+ 		id=20115,
+ 		name=30020115,
+ 		describe="14熊鲨的生命值+100%",
+ 		type=1,
+ 		target={2041,2042,2043},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002},
+ 	parameters2={}
+},
+[20116] =
+{
+ 		id=20116,
+ 		name=30020116,
+ 		describe="14敌方单位变得更为强大、并出现额外敌方单位",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={20114032,1,20114033,1,20114034,1,20114035,1,20114036,1,20114037,1,20114038,1,20114039,1,20114040,1,20114041,1,20114042,1,20114043,1,20114044,1,20114045,1,20114046,1,20114047,1,20114048,1,20114049,1,20114050,1,20114051,1,20114052,1,20114053,1,20114054,1,20114055,1,20114056,1,20114057,1,20114058,1,20114059,1,20114060,1,20114061,1,20114062,1},
+ 	parameters2={}
+},
+[20117] =
+{
+ 		id=20117,
+ 		name=30020117,
+ 		describe="08全体敌方单位的生命值+50%，所有战员战中升级资源消耗-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1015,3027},
+ 	parameters2={}
+},
+[20118] =
+{
+ 		id=20118,
+ 		name=30020118,
+ 		describe="08全体敌方单位的攻击速度+50%，所有战员的攻击速度+25%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1011,2010},
+ 	parameters2={}
+},
+[20119] =
+{
+ 		id=20119,
+ 		name=30020119,
+ 		describe="09蝠翼蛇的移动速度+30%",
+ 		type=1,
+ 		target={2051,2052,2053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001},
+ 	parameters2={}
+},
+[20120] =
+{
+ 		id=20120,
+ 		name=30020120,
+ 		describe="10所有战员召唤部署资源消耗+25%，所有战员战中升级资源消耗-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3011,3027},
+ 	parameters2={}
+},
+[20121] =
+{
+ 		id=20121,
+ 		name=30020121,
+ 		describe="11雪蜥豹、花鳄、闪跃刀螂的移动速度+30%、生命值-50%",
+ 		type=1,
+ 		target={2001,2002,2006,2003,2004,2005,2011,2012,2013,2014},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001,2002},
+ 	parameters2={}
+},
+[20122] =
+{
+ 		id=20122,
+ 		name=30020122,
+ 		describe="11蝠翼蛇、熊鲨、海马狮、狐狼的生命值+100%",
+ 		type=1,
+ 		target={2021,2022,2023,2031,2032,2033,2041,2042,2043,2051,2052},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002},
+ 	parameters2={}
+},
+[20123] =
+{
+ 		id=20123,
+ 		name=30020123,
+ 		describe="09敌方单位中将出现闪跃刀螂，可部署战员上限增加1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={20113,3008},
+ 	parameters2={}
+},
+[20124] =
+{
+ 		id=20124,
+ 		name=30020124,
+ 		describe="12全体敌方单位的攻击力+30%，所有战员升级资源消耗-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1046,3027},
+ 	parameters2={}
+},
+[20125] =
+{
+ 		id=20125,
+ 		name=30020125,
+ 		describe="12全体敌方单位的生命值+50%，所有战员每秒能量恢复+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1015,2011},
+ 	parameters2={}
+},
+[20126] =
+{
+ 		id=20126,
+ 		name=30020126,
+ 		describe="13晶变奎恩熊的攻击力+30%、物理防御+30%，所召唤的雪蜥豹变的更为强大",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={20129,20128},
+ 	parameters2={}
+},
+[20127] =
+{
+ 		id=20127,
+ 		name=30020127,
+ 		describe="13全体怪物的生命值+50%，重型类战员的阻挡数-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1015,2006},
+ 	parameters2={}
+},
+[20128] =
+{
+ 		id=20128,
+ 		name=30020128,
+ 		describe="精英晶变奎恩熊召唤怪变更",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={20111029,1,20111002,1,20111003,1,20111004,1,20111005,1,20111006,1,20111007,1,20111008,1,20111009,1,20111010,1,20111011,1,20111012,1,20111013,1,20111014,1,20111015,1,20111016,1,20111017,1,20111018,1,20111019,1},
+ 	parameters2={}
+},
+[20129] =
+{
+ 		id=20129,
+ 		name=30020129,
+ 		describe="晶变奎恩熊的攻击力+30%、物理防御+30%",
+ 		type=1,
+ 		target={2100},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={3002},
+ 	parameters2={}
+},
+[20130] =
+{
+ 		id=20130,
+ 		name=30020130,
+ 		describe="敌方单位中将出现闪跃刀螂",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={20107027,1,20107002,1,20107003,1,20107004,1,20107005,1,20107006,1,20107007,1,20107008,1,20107009,1,20107010,1,20107011,1,20107028,1,20107013,1,20107014,1,20107015,1,20107016,1,20107017,1,20107018,1,20107019,1,20107020,1,20107029,1},
+ 	parameters2={}
+},
+[20131] =
+{
+ 		id=20131,
+ 		name=30020131,
+ 		describe="08风速线改变",
+ 		type=8,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={20107027,1,20107002,1,20107007,1,20107008,1,20107028,1,20107013,1,20107018,1,20107019,1,20107029,1},
+ 	parameters2={}
+},
+[20132] =
+{
+ 		id=20132,
+ 		name=30020132,
+ 		describe="10敌方单位变得更为强大、并出现额外敌方单位",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={20103026,1,20103027,1,20103028,1,20103029,1,20103030,1,20103031,1,20103032,1,20103033,1,20103034,1,20103035,1,20103036,1,20103037,1,20103038,1,20103039,1,20103040,1,20103041,1,20103042,1,20103043,1,20103044,1,20103045,1,20103046,1,20103047,1,20103048,1,20103049,1,20103050,1},
+ 	parameters2={}
+},
+[30101] =
+{
+ 		id=30101,
+ 		name=30030101,
+ 		describe="只能在毒气罐的伤害范围里面放置战员",
+ 		type=12,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={63,3,64,3,65,3,51,3,53,3,39,3,40,3,41,3},
+ 	parameters2={}
+},
+[30102] =
+{
+ 		id=30102,
+ 		name=30030102,
+ 		describe="部署物资箱的数量减少，剧毒罐子持续生效",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={30102004,1,30102003,1},
+ 	parameters2={}
+},
+[30103] =
+{
+ 		id=30103,
+ 		name=30030103,
+ 		describe="剧毒罐子持续生效",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={30103007,1,30103008,1,30103003,1,30103004,1,30103005,1,30103006,1,30103009,1,30103010,1},
+ 	parameters2={}
+},
+[30104] =
+{
+ 		id=30104,
+ 		name=30030104,
+ 		describe="废弃军备箱的生命值-70%",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={30104001,1,30104002,1,30104003,1,30104004,1,30104005,1,30104006,1,30104009,1,30104010,1,30104011,1,30104012,1,30104013,1},
+ 	parameters2={}
+},
+[30107] =
+{
+ 		id=30107,
+ 		name=30030107,
+ 		describe="邦加拉什的生命值+100%、移动速度+100%",
+ 		type=1,
+ 		target={2007,2008},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={3003},
+ 	parameters2={}
+},
+[30108] =
+{
+ 		id=30108,
+ 		name=30030108,
+ 		describe="废弃军备箱的生命值-70%",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={30108001,1,30108002,1,30108005,1,30108004,1,30108006,1},
+ 	parameters2={}
+},
+[30109] =
+{
+ 		id=30109,
+ 		name=30030109,
+ 		describe="09废弃军备箱的生命值-70%，所有战员升级资源消耗-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={30108,3027},
+ 	parameters2={}
+},
+[30110] =
+{
+ 		id=30110,
+ 		name=30030110,
+ 		describe="10全体敌方单位获得50%的吸血(移除爆居蟹)",
+ 		type=1,
+ 		target={2001,2002,2006,2003,2011,2012,2013,2014,2021,2022,2023,2031,2032,2033,2041,2042,2043,2051,2052,2053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761,2004,2005,2304,2305,2704,2705},
+ 		entry=3,
+ 		parameters={4003},
+ 	parameters2={}
+},
+[30111] =
+{
+ 		id=30111,
+ 		name=30030111,
+ 		describe="温妮召唤爆居蟹的频率提高",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={30111025,1,30111002,1,30111003,1,30111004,1,30111005,1,30111006,1,30111007,1,30111008,1,30111009,1,30111010,1,30111011,1,30111012,1,30111013,1,30111014,1,30111015,1,30111016,1,30111017,1,30111018,1,30111019,1,30111020,1,30111021,1,30111022,1,30111023,1,30111024,1},
+ 	parameters2={}
+},
+[30112] =
+{
+ 		id=30112,
+ 		name=30030112,
+ 		describe="熊鲨的生命值+100%",
+ 		type=1,
+ 		target={2041,2042,2043},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002},
+ 	parameters2={}
+},
+[30113] =
+{
+ 		id=30113,
+ 		name=30030113,
+ 		describe="全体敌方单位的攻击速度+50%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011},
+ 	parameters2={}
+},
+[30114] =
+{
+ 		id=30114,
+ 		name=30030114,
+ 		describe="剧毒罐子持续生效",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={30113006,1,30113007,1,30113003,1,30113004,1,30113005,1,30113008,1},
+ 	parameters2={}
+},
+[30115] =
+{
+ 		id=30115,
+ 		name=30030115,
+ 		describe="蝠翼蛇的生命值+100%、移动速度+30%",
+ 		type=1,
+ 		target={2051,2052},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002,4001},
+ 	parameters2={}
+},
+[30116] =
+{
+ 		id=30116,
+ 		name=30030116,
+ 		describe="12花鳄、闪跃刀螂、熊鲨的生命值+100%",
+ 		type=1,
+ 		target={2001,2002,2006,2003,2041,2042,2043},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002},
+ 	parameters2={}
+},
+[30117] =
+{
+ 		id=30117,
+ 		name=30030117,
+ 		describe="雪蜥豹获得1000点护盾",
+ 		type=1,
+ 		target={2011,2012,2013},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1012},
+ 	parameters2={}
+},
+[30118] =
+{
+ 		id=30118,
+ 		name=30030118,
+ 		describe="12熊鲨、爆居蟹、海马狮、蝠翼蛇、狐狼的攻击力+50%",
+ 		type=1,
+ 		target={2021,2022,2023,2031,2032,2033,2041,2042,2043,2051,2052,2004,2005},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4004},
+ 	parameters2={}
+},
+[30119] =
+{
+ 		id=30119,
+ 		name=30030119,
+ 		describe="爆居蟹的攻击力+50%",
+ 		type=1,
+ 		target={2004,2005},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4004},
+ 	parameters2={}
+},
+[30120] =
+{
+ 		id=30120,
+ 		name=30030120,
+ 		describe="全体敌方单位变的不可阻挡",
+ 		type=1,
+ 		target={2},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2010},
+ 	parameters2={}
+},
+[30121] =
+{
+ 		id=30121,
+ 		name=30030121,
+ 		describe="11全体敌方单位受到的伤害-90%、生命值-60%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1025,1049},
+ 	parameters2={}
+},
+[30122] =
+{
+ 		id=30122,
+ 		name=30030122,
+ 		describe="下方的两个剧毒罐子持续生效",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={30115012,1,30115002,1,30115013,1,30115004,1,30115005,1,30115006,1,30115007,1,30115008,1,30115009,1,30115010,1,30115011,1},
+ 	parameters2={}
+},
+[30123] =
+{
+ 		id=30123,
+ 		name=30030123,
+ 		describe="12雪蜥豹获得1000点护盾，下方的两个剧毒罐子持续生效",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={30117,30122},
+ 	parameters2={}
+},
+[30124] =
+{
+ 		id=30124,
+ 		name=30030124,
+ 		describe="全体敌方单位变的不可阻挡，移动速度-30%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={30120,1055},
+ 	parameters2={}
+},
+[30125] =
+{
+ 		id=30125,
+ 		name=30030125,
+ 		describe="16蝠翼蛇的攻击力+50%",
+ 		type=1,
+ 		target={2051,2052,2053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4004},
+ 	parameters2={}
+},
+[30126] =
+{
+ 		id=30126,
+ 		name=30030126,
+ 		describe="16全体敌方单位的生命值-40%，受到的伤害-60%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1056,1033},
+ 	parameters2={}
+},
+[30127] =
+{
+ 		id=30127,
+ 		name=30030127,
+ 		describe="17全体敌方单位的生命值+100%，物理、异能防御-50%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002,1095},
+ 	parameters2={}
+},
+[30128] =
+{
+ 		id=30128,
+ 		name=30030128,
+ 		describe="17全体敌方单位攻击速度+75%，移动速度-30%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1028,1097},
+ 	parameters2={}
+},
+[30129] =
+{
+ 		id=30129,
+ 		name=30030129,
+ 		describe="18普通类、特殊类敌方单位受到的远程伤害-50%",
+ 		type=1,
+ 		target={2001,2002,2006,2007,2008},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4034},
+ 	parameters2={}
+},
+[30130] =
+{
+ 		id=30130,
+ 		name=30030130,
+ 		describe="18全体敌方单位的移动速度+50%，生命值-30%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1038,1056},
+ 	parameters2={}
+},
+[40101] =
+{
+ 		id=40101,
+ 		name=30040101,
+ 		describe="无人机的移动速度+80%",
+ 		type=1,
+ 		target={1051,1052,1053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1005},
+ 	parameters2={}
+},
+[40102] =
+{
+ 		id=40102,
+ 		name=30040102,
+ 		describe="寻觅者获得1000点护盾",
+ 		type=1,
+ 		target={3001,3002,3003},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1012},
+ 	parameters2={}
+},
+[40103] =
+{
+ 		id=40103,
+ 		name=30040103,
+ 		describe="袭杀者、黑鹰的攻击速度+50%、攻击力+30%",
+ 		type=1,
+ 		target={1051,1052,1053,3021,3022,3023},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011,1046},
+ 	parameters2={}
+},
+[40104] =
+{
+ 		id=40104,
+ 		name=30040104,
+ 		describe="猎杀者的攻击力+50%、移动速度+30%",
+ 		type=1,
+ 		target={3011,3012,3013},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001,4004},
+ 	parameters2={}
+},
+[40105] =
+{
+ 		id=40105,
+ 		name=30040105,
+ 		describe="全体敌方单位的生命值+50%、受到的物理伤害-60%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4002,1007},
+ 	parameters2={}
+},
+[40106] =
+{
+ 		id=40106,
+ 		name=30040106,
+ 		describe="传播者攻击速度+50%",
+ 		type=1,
+ 		target={3031,3032,3033},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011},
+ 	parameters2={}
+},
+[40107] =
+{
+ 		id=40107,
+ 		name=30040107,
+ 		describe="爆居蟹的攻击力+50%",
+ 		type=1,
+ 		target={2004,2005},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4004},
+ 	parameters2={}
+},
+[40108] =
+{
+ 		id=40108,
+ 		name=30040108,
+ 		describe="阻击者的物理防御力+80%、攻击速度+50%、移动速度+30%",
+ 		type=1,
+ 		target={3041,3042,3043},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1003,1011,4001},
+ 	parameters2={}
+},
+[40109] =
+{
+ 		id=40109,
+ 		name=30040109,
+ 		describe="黑鹰的生命值+70%、造成的伤害+100%",
+ 		type=1,
+ 		target={3051,3052},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1050,1029},
+ 	parameters2={}
+},
+[40110] =
+{
+ 		id=40110,
+ 		name=30040110,
+ 		describe="毁灭者、哨兵、雨幕受到的物理伤害-40%",
+ 		type=1,
+ 		target={1003,1023,1043},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1031},
+ 	parameters2={}
+},
+[40111] =
+{
+ 		id=40111,
+ 		name=30040111,
+ 		describe="寻觅者、猎杀者获得2000点护盾",
+ 		type=1,
+ 		target={3001,3002,3003,3011,3012,3013},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1021},
+ 	parameters2={}
+},
+[40112] =
+{
+ 		id=40112,
+ 		name=30040112,
+ 		describe="全体敌方单位生命值+50%、攻击速度+50%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4002,1011},
+ 	parameters2={}
+},
+[40113] =
+{
+ 		id=40113,
+ 		name=30040113,
+ 		describe="传播者、阻击者的攻击力+40%、受到的伤害-40%",
+ 		type=1,
+ 		target={3031,3032,3033,3041,3042,3043},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1001,1009},
+ 	parameters2={}
+},
+[40114] =
+{
+ 		id=40114,
+ 		name=30040114,
+ 		describe="寻觅者、猎杀者的移动速度+80%",
+ 		type=1,
+ 		target={3001,3002,3003,3011,3012,3013},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1005},
+ 	parameters2={}
+},
+[40115] =
+{
+ 		id=40115,
+ 		name=30040115,
+ 		describe="寻觅者、猎杀者、袭杀者、传播者获得1000点护盾、受到的异能伤害-60%",
+ 		type=1,
+ 		target={3001,3002,3003,3011,3012,3013,3021,3022,3023,3031,3032,3033},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1012,1008},
+ 	parameters2={}
+},
+[40116] =
+{
+ 		id=40116,
+ 		name=30040116,
+ 		describe="无人机的移动速度+30%",
+ 		type=1,
+ 		target={1051,1052,1053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001},
+ 	parameters2={}
+},
+[40117] =
+{
+ 		id=40117,
+ 		name=30040117,
+ 		describe="猎杀者获得2000点护盾、100%的吸血",
+ 		type=1,
+ 		target={3011,3012,3013},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761,2004,2005,2304,2305,2704,2705},
+ 		entry=3,
+ 		parameters={1021,1010},
+ 	parameters2={}
+},
+[40118] =
+{
+ 		id=40118,
+ 		name=30040118,
+ 		describe="阻击者的攻击速度+50%、全属性+30%",
+ 		type=1,
+ 		target={3041,3042,3043},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011,1015},
+ 	parameters2={}
+},
+[40119] =
+{
+ 		id=40119,
+ 		name=30040119,
+ 		describe="爆居蟹的攻击力+100%",
+ 		type=1,
+ 		target={2004,2005},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4005},
+ 	parameters2={}
+},
+[40120] =
+{
+ 		id=40120,
+ 		name=30040120,
+ 		describe="黑鹰的攻击速度+50%、移动速度+80%",
+ 		type=1,
+ 		target={3051,3052},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011,1005},
+ 	parameters2={}
+},
+[40121] =
+{
+ 		id=40121,
+ 		name=30040121,
+ 		describe="12机械单位、爆居蟹、黑鹰的生命值+50%、物理防御+80%",
+ 		type=1,
+ 		target={1003,1043,2004,2005,3051,3052},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4002,1003},
+ 	parameters2={}
+},
+[40122] =
+{
+ 		id=40122,
+ 		name=30040122,
+ 		describe="12传播者、阻击者获得2000点护盾、攻击速度+50%",
+ 		type=1,
+ 		target={3031,3032,3033,3041,3042,3043},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1021,1011},
+ 	parameters2={}
+},
+[40123] =
+{
+ 		id=40123,
+ 		name=30040123,
+ 		describe="阻击者的生命值+100%",
+ 		type=1,
+ 		target={3041,3042,3043,3341,3342,3343},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002},
+ 	parameters2={}
+},
+[40124] =
+{
+ 		id=40124,
+ 		name=30040124,
+ 		describe="13防御电光塔的伤害+100%、攻击速度降低，全体敌方单位的全属性+30%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={40131,1040},
+ 	parameters2={}
+},
+[40125] =
+{
+ 		id=40125,
+ 		name=30040125,
+ 		describe="寻觅者、猎杀者的生命值+100%",
+ 		type=1,
+ 		target={3001,3002,3003,3011,3012,3013},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002},
+ 	parameters2={}
+},
+[40126] =
+{
+ 		id=40126,
+ 		name=30040126,
+ 		describe="机械敌方单位受到的物理伤害-60%（包括温妮）",
+ 		type=1,
+ 		target={1001,1002,1003,1011,1012,1013,1021,1022,1023,1031,1032,1033,1041,1042,1043,1051,1052,1053,1801,4100},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1007},
+ 	parameters2={}
+},
+[40127] =
+{
+ 		id=40127,
+ 		name=30040127,
+ 		describe="生物敌方单位受到的异能伤害-60%（包括温妮）",
+ 		type=1,
+ 		target={3001,3002,3011,3012,3021,3022,3031,3032,3041,3042,3043,3051,4100},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1008},
+ 	parameters2={}
+},
+[40128] =
+{
+ 		id=40128,
+ 		name=30040128,
+ 		describe="全体敌方单位获得100%的吸血（不包括自爆怪）",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={2004,2005,2304,2305,2704,2705,2704,1061,1761},
+ 		entry=3,
+ 		parameters={1010},
+ 	parameters2={}
+},
+[40129] =
+{
+ 		id=40129,
+ 		name=30040129,
+ 		describe="03重型类战员的阻挡数-1，所有战员部署资源消耗-25%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={2006,3009},
+ 	parameters2={}
+},
+[40130] =
+{
+ 		id=40130,
+ 		name=30040130,
+ 		describe="04全体敌方单位全属性+30%，爆居蟹的攻击力额外+50%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1039,40107},
+ 	parameters2={}
+},
+[40131] =
+{
+ 		id=40131,
+ 		name=30040131,
+ 		describe="防御电光塔的伤害+100%、攻击频率降低",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={40111005,1,40111002,1,40111006,1,40111004,1},
+ 	parameters2={}
+},
+[40132] =
+{
+ 		id=40132,
+ 		name=30040132,
+ 		describe="07传播者的攻击速度+50%",
+ 		type=1,
+ 		target={3031,3032,3033},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011},
+ 	parameters2={}
+},
+[40133] =
+{
+ 		id=40133,
+ 		name=30040133,
+ 		describe="07传播者的生命值+100%",
+ 		type=1,
+ 		target={3031,3032,3033},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002},
+ 	parameters2={}
+},
+[40134] =
+{
+ 		id=40134,
+ 		name=30040134,
+ 		describe="07生物敌方单位受到的异能伤害-40%，机械敌方单位受到的物理伤害-40%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={40135,40136},
+ 	parameters2={}
+},
+[40135] =
+{
+ 		id=40135,
+ 		name=30040135,
+ 		describe="机械敌方单位受到的物理伤害-40%",
+ 		type=1,
+ 		target={1001,1002,1003,1011,1012,1013,1021,1022,1023,1031,1032,1033,1041,1042,1043,1051,1052,1053,1801},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1031},
+ 	parameters2={}
+},
+[40136] =
+{
+ 		id=40136,
+ 		name=30040136,
+ 		describe="生物敌方单位受到的异能伤害-40%",
+ 		type=1,
+ 		target={3001,3002,3011,3012,3021,3022,3031,3032,3041,3042,3043,3051},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1032},
+ 	parameters2={}
+},
+[40137] =
+{
+ 		id=40137,
+ 		name=30040137,
+ 		describe="16飞行类敌方单位的移动速度+50%",
+ 		type=1,
+ 		target={1051,1052,1053,3051,3052,3053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1038},
+ 	parameters2={}
+},
+[40138] =
+{
+ 		id=40138,
+ 		name=30040138,
+ 		describe="17阻击者的攻击速度+50%、移动速度+50%",
+ 		type=1,
+ 		target={3041,3042,3043},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011,1038},
+ 	parameters2={}
+},
+[40139] =
+{
+ 		id=40139,
+ 		name=30040139,
+ 		describe="17敌方配置发生变化,召唤部署资源消耗-25%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={40141,3009},
+ 	parameters2={}
+},
+[40140] =
+{
+ 		id=40140,
+ 		name=30040140,
+ 		describe="17普通类敌方单位受到的远程伤害-100%",
+ 		type=1,
+ 		target={1003,3003},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4035},
+ 	parameters2={}
+},
+[40141] =
+{
+ 		id=40141,
+ 		name=30040141,
+ 		describe="敌方配置发生变化",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={40117027,1,40117028,1,40117029,1,40117030,1,40117031,1,40117032,1,40117033,1,40117034,1,40117035,1,40117036,1,40117037,1,40117038,1,40117039,1,40117040,1,40117041,1,40117042,1,40117043,1,40117044,1,40117045,1,40117046,1,40117047,1,40117048,1,40117049,1,40117050,1,40117051,1,40117052,1,40117053,1},
+ 	parameters2={}
+},
+[40142] =
+{
+ 		id=40142,
+ 		name=30040142,
+ 		describe="9敌方配置发生变化,全体敌方单位的生命值+50%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={40143,1015},
+ 	parameters2={}
+},
+[40143] =
+{
+ 		id=40143,
+ 		name=30040143,
+ 		describe="9敌方配置发生变化",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={40109021,1,40109022,1,40109023,1,40109024,1,40109025,1,40109026,1,40109027,1,40109028,1,40109029,1,40109030,1,40109031,1,40109032,1,40109033,1,40109034,1,40109035,1,40109036,1,40109037,1,40109038,1,40109039,1,40109040,1},
+ 	parameters2={}
+},
+[50101] =
+{
+ 		id=50101,
+ 		name=30050101,
+ 		describe="马尔杜克之刃攻击速度+50%，攻击力+50%",
+ 		type=1,
+ 		target={4031,4032,4033},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011,4004},
+ 	parameters2={}
+},
+[50102] =
+{
+ 		id=50102,
+ 		name=30050102,
+ 		describe="南舍之疾的生命值+50%",
+ 		type=1,
+ 		target={4001,4002,4003},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4002},
+ 	parameters2={}
+},
+[50103] =
+{
+ 		id=50103,
+ 		name=30050103,
+ 		describe="无人机的生命值+50%、移动速度+80%",
+ 		type=1,
+ 		target={1051,1052,1053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4002,1005},
+ 	parameters2={}
+},
+[50104] =
+{
+ 		id=50104,
+ 		name=30050104,
+ 		describe="提亚马特之环的生命值低于50%时攻击力+100%、攻击速度+50%、受到的伤害-80%",
+ 		type=2,
+ 		target={4021,4022,4023},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={240230101},
+ 	parameters2={}
+},
+[50105] =
+{
+ 		id=50105,
+ 		name=30050105,
+ 		describe="黑鹰获得100%的吸血",
+ 		type=1,
+ 		target={3051,3052},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761,2004,2005,2304,2305,2704,2705},
+ 		entry=3,
+ 		parameters={1010},
+ 	parameters2={}
+},
+[50106] =
+{
+ 		id=50106,
+ 		name=30050106,
+ 		describe="提亚马特之环的生命值+70%",
+ 		type=1,
+ 		target={4021,4022,4023},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1050},
+ 	parameters2={}
+},
+[50107] =
+{
+ 		id=50107,
+ 		name=30050107,
+ 		describe="提亚马特之环（空）的移动速度+30%",
+ 		type=1,
+ 		target={4071,4072,4073},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1005},
+ 	parameters2={}
+},
+[50108] =
+{
+ 		id=50108,
+ 		name=30050108,
+ 		describe="马尔杜克之刃受到的物理伤害-60%、攻击力+50%",
+ 		type=1,
+ 		target={4031,4032,4033},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1007,4004},
+ 	parameters2={}
+},
+[50109] =
+{
+ 		id=50109,
+ 		name=30050109,
+ 		describe="南舍之疾、马尔杜克之哨的生命值+100%",
+ 		type=1,
+ 		target={4001,4002,4003,4031,4032,4033},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002},
+ 	parameters2={}
+},
+[50110] =
+{
+ 		id=50110,
+ 		name=30050110,
+ 		describe="马尔杜克之力的全属性+30%",
+ 		type=1,
+ 		target={4051,4052,4053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1015},
+ 	parameters2={}
+},
+[50111] =
+{
+ 		id=50111,
+ 		name=30050111,
+ 		describe="南舍之疾受到的伤害-40%",
+ 		type=1,
+ 		target={4001,4002,4003},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1009},
+ 	parameters2={}
+},
+[50112] =
+{
+ 		id=50112,
+ 		name=30050112,
+ 		describe="马尔杜克之哨受到的物理伤害-60%、攻击力+50%",
+ 		type=1,
+ 		target={4031,4032,4033},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1007,4004},
+ 	parameters2={}
+},
+[50113] =
+{
+ 		id=50113,
+ 		name=30050113,
+ 		describe="（预留）出现额外敌方单位",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={50102001,1,50102002,1,50102003,1,50102004,1,50102005,1,50102006,1,50102007,1,50102008,1,50102024,1,50102010,1,50102011,1,50102012,1,50102013,1,50102014,1,50102025,1,50102016,1,50102017,1,50102018,1,50102019,1,50102026,1,50102027,1,50102022,1,50102023,1},
+ 	parameters2={}
+},
+[50114] =
+{
+ 		id=50114,
+ 		name=30050114,
+ 		describe="提亚马特之环（空）的移动速度+30%、受到的伤害-40%",
+ 		type=1,
+ 		target={4071,4072,4073},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001,1009},
+ 	parameters2={}
+},
+[50115] =
+{
+ 		id=50115,
+ 		name=30050115,
+ 		describe="南舍之影的物理防御力+80%",
+ 		type=1,
+ 		target={4061,4062,4063},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1003},
+ 	parameters2={}
+},
+[50116] =
+{
+ 		id=50116,
+ 		name=30050116,
+ 		describe="马尔杜克之力的生命值+50%、造成伤害+50%",
+ 		type=1,
+ 		target={4051,4052,4053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4002,1006},
+ 	parameters2={}
+},
+[50117] =
+{
+ 		id=50117,
+ 		name=30050117,
+ 		describe="全体敌方单位的物理防御力+80%、异能防御力+120%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1003,1004},
+ 	parameters2={}
+},
+[50118] =
+{
+ 		id=50118,
+ 		name=30050118,
+ 		describe="开关自动变化",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={50107006,1,50107007,1,50107003,1,50107004,1,50107005,1},
+ 	parameters2={}
+},
+[50119] =
+{
+ 		id=50119,
+ 		name=30050119,
+ 		describe="可上阵点-",
+ 		type=12,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={39,3,62,3,50,3,38,3},
+ 	parameters2={}
+},
+[50120] =
+{
+ 		id=50120,
+ 		name=30050120,
+ 		describe="提亚马特之光、提亚马特之环的生命值+50%",
+ 		type=1,
+ 		target={4021,4022,4023,4041},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4002},
+ 	parameters2={}
+},
+[50121] =
+{
+ 		id=50121,
+ 		name=30050121,
+ 		describe="马尔杜克之哨、马尔杜克之力的攻击力+50%，所有战员升级资源消耗-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={50146,3027},
+ 	parameters2={}
+},
+[50122] =
+{
+ 		id=50122,
+ 		name=30050122,
+ 		describe="提亚马特之环（空）的生命值+100%",
+ 		type=1,
+ 		target={4071,4072,4073},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002},
+ 	parameters2={}
+},
+[50123] =
+{
+ 		id=50123,
+ 		name=30050123,
+ 		describe="出现额外的马尔杜克之力",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={50109001,1,50109002,1,50109003,1,50109004,1,50109005,1,50109006,1,50109007,1,50109008,1,50109009,1,50109010,1,50109011,1,50109012,1,50109013,1,50109014,1,50109015,1,50109016,1,50109017,1,50109018,1,50109019,1},
+ 	parameters2={}
+},
+[50124] =
+{
+ 		id=50124,
+ 		name=30050124,
+ 		describe="马尔杜克之力的生命值+100%",
+ 		type=1,
+ 		target={4051,4052,4053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002},
+ 	parameters2={}
+},
+[50125] =
+{
+ 		id=50125,
+ 		name=30050125,
+ 		describe="提亚马特之环的生命值+50%、攻击速度+50%",
+ 		type=1,
+ 		target={4021,4022,4023},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4002,1011},
+ 	parameters2={}
+},
+[50126] =
+{
+ 		id=50126,
+ 		name=30050126,
+ 		describe="南舍之影的移动速度+30%",
+ 		type=1,
+ 		target={4061,4062,4063},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1005},
+ 	parameters2={}
+},
+[50127] =
+{
+ 		id=50127,
+ 		name=30050127,
+ 		describe="（预留）出现额外敌方单位",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={50102001,1,50102002,1,50102003,1,50102004,1,50102005,1,50102006,1,50102007,1,50102008,1,50102024,1,50102010,1,50102011,1,50102012,1,50102013,1,50102014,1,50102025,1,50102016,1,50102017,1,50102018,1,50102019,1,50102026,1,50102027,1,50102022,1,50102023,1},
+ 	parameters2={}
+},
+[50128] =
+{
+ 		id=50128,
+ 		name=30050128,
+ 		describe="全体敌方单位的生命值+50%，所有战员每秒能量恢复+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={4002,2011},
+ 	parameters2={}
+},
+[50129] =
+{
+ 		id=50129,
+ 		name=30050129,
+ 		describe="马尔杜克之力的攻击力+50%",
+ 		type=1,
+ 		target={4051,4052,4053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4004},
+ 	parameters2={}
+},
+[50130] =
+{
+ 		id=50130,
+ 		name=30050130,
+ 		describe="全体敌方单位的生命值+50%、攻击力+30%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1016},
+ 	parameters2={}
+},
+[50131] =
+{
+ 		id=50131,
+ 		name=30050131,
+ 		describe="马尔杜克之力、马尔杜克之刃的移动速度+30%",
+ 		type=1,
+ 		target={4031,4032,4033,4051,4052,4053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001},
+ 	parameters2={}
+},
+[50132] =
+{
+ 		id=50132,
+ 		name=30050132,
+ 		describe="开关自动变化（漂浮台）",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={50112006,1,50112002,1,50112003,1,50112004,1,50112005,1},
+ 	parameters2={}
+},
+[50133] =
+{
+ 		id=50133,
+ 		name=30050133,
+ 		describe="马尔杜克之力攻击速度+50%、造成的伤害+50%",
+ 		type=1,
+ 		target={4051,4052,4053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011,1006},
+ 	parameters2={}
+},
+[50134] =
+{
+ 		id=50134,
+ 		name=30050134,
+ 		describe="开关自动变化",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={50113004,1,50113002,1,50113003,1},
+ 	parameters2={}
+},
+[50135] =
+{
+ 		id=50135,
+ 		name=30050135,
+ 		describe="提亚马特之光攻击速度+50%，攻击力+50%",
+ 		type=1,
+ 		target={4041},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011,4004},
+ 	parameters2={}
+},
+[50136] =
+{
+ 		id=50136,
+ 		name=30050136,
+ 		describe="马尔杜克之力的攻击力+30%",
+ 		type=1,
+ 		target={4051,4052,4053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4009},
+ 	parameters2={}
+},
+[50137] =
+{
+ 		id=50137,
+ 		name=30050137,
+ 		describe="马尔杜克之刃获得2000点护盾",
+ 		type=1,
+ 		target={4031,4032,4033},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1021},
+ 	parameters2={}
+},
+[50138] =
+{
+ 		id=50138,
+ 		name=30050138,
+ 		describe="提亚马特之光的生命值+100%",
+ 		type=1,
+ 		target={4041},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002},
+ 	parameters2={}
+},
+[50139] =
+{
+ 		id=50139,
+ 		name=30050139,
+ 		describe="开关自动变化（阻挡台）",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={50115006,1,50115002,1,50115003,1,50115004,1,50115005,1},
+ 	parameters2={}
+},
+[50140] =
+{
+ 		id=50140,
+ 		name=30050140,
+ 		describe="南舍之疾受到的伤害-40%，移动速度+30%",
+ 		type=1,
+ 		target={4001,4002,4003},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1009,4001},
+ 	parameters2={}
+},
+[50141] =
+{
+ 		id=50141,
+ 		name=30050141,
+ 		describe="神弃之子获得2000点护盾（不受伤害时每秒恢复20%护盾）",
+ 		type=1,
+ 		target={5100},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999011401,999011301},
+ 	parameters2={}
+},
+[50142] =
+{
+ 		id=50142,
+ 		name=30050142,
+ 		describe="可上阵点增加",
+ 		type=12,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={17,3,18,3,40,3,41,3,52,3,53,3,64,3,65,3,76,3,77,3,88,3,89,3,111,3,112,3},
+ 	parameters2={}
+},
+[50143] =
+{
+ 		id=50143,
+ 		name=30050143,
+ 		describe="06全体敌方单位受到的异能伤害-60%，可上阵点增加",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1008,50142},
+ 	parameters2={}
+},
+[50144] =
+{
+ 		id=50144,
+ 		name=30050144,
+ 		describe="全体敌方单位受到的伤害-90%、生命值-60%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1025,1049},
+ 	parameters2={}
+},
+[50145] =
+{
+ 		id=50145,
+ 		name=30050145,
+ 		describe="14全体敌方单位受到的异能伤害-60%、生命值+50%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1008,1015},
+ 	parameters2={}
+},
+[50146] =
+{
+ 		id=50146,
+ 		name=30050146,
+ 		describe="马尔杜克之哨、马尔杜克之力的攻击力+50%",
+ 		type=1,
+ 		target={4011,4012,4013,4051,4052,4053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4004},
+ 	parameters2={}
+},
+[50147] =
+{
+ 		id=50147,
+ 		name=30050147,
+ 		describe="16开关自动变化（漂浮台）",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={50116002,1,50116003,1},
+ 	parameters2={}
+},
+[50148] =
+{
+ 		id=50148,
+ 		name=30050148,
+ 		describe="16全体敌方单位的生命值+100%，移动速度-30%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002,1097},
+ 	parameters2={}
+},
+[50149] =
+{
+ 		id=50149,
+ 		name=30050149,
+ 		describe="16敌方单位配置发生变化",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={50116001,1,50116002,1,50116003,1,50116004,1,50116005,1,50116017,1,50116007,1,50116008,1,50116018,1,50116010,1,50116011,1,50116019,1,50116013,1,50116014,1,50116020,1,50116016,1},
+ 	parameters2={}
+},
+[50150] =
+{
+ 		id=50150,
+ 		name=30050150,
+ 		describe="17敌方单位产生的战中升级资源提高",
+ 		type=2,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999909501},
+ 	parameters2={}
+},
+[50151] =
+{
+ 		id=50151,
+ 		name=30050151,
+ 		describe="17全体敌方单位出现的频率加快",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={50152,50153},
+ 	parameters2={}
+},
+[50152] =
+{
+ 		id=50152,
+ 		name=30050152,
+ 		describe="全体敌方单位出现的频率加快",
+ 		type=19,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={-3000},
+ 	parameters2={}
+},
+[50153] =
+{
+ 		id=50153,
+ 		name=30050153,
+ 		describe="全体敌方单位出现的频率加快",
+ 		type=20,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={-3000},
+ 	parameters2={}
+},
+[50154] =
+{
+ 		id=50154,
+ 		name=30050154,
+ 		describe="17敌方单位配置发生变化",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={50117021,1,50117001,1,50117002,1,50117003,1,50117004,1,50117005,1,50117006,1,50117007,1,50117008,1,50117009,1,50117010,1,50117011,1,50117012,1,50117013,1,50117014,1,50117015,1,50117016,1,50117021,1,50117022,1,50117019,1,50117020,1},
+ 	parameters2={}
+},
+[50155] =
+{
+ 		id=50155,
+ 		name=30050155,
+ 		describe="18异能类敌方单位的攻击速度+50%",
+ 		type=1,
+ 		target={4021,4022,4023,4031,4032,4033,4071,4072,4073},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011},
+ 	parameters2={}
+},
+[50156] =
+{
+ 		id=50156,
+ 		name=30050156,
+ 		describe="18近战敌方单位的生命值+50%，物理、异能防御力-100%",
+ 		type=1,
+ 		target={4001,4002,4003,4011,4012,4013,4031,4032,4033,4051,4052,4053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4002,1094},
+ 	parameters2={}
+},
+[50157] =
+{
+ 		id=50157,
+ 		name=30050157,
+ 		describe="18使用漂浮台时，全体敌方单位的移动速度+50%，持续5秒",
+ 		type=2,
+ 		target={5001},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999910001},
+ 	parameters2={}
+},
+[60101] =
+{
+ 		id=60101,
+ 		name=30060101,
+ 		describe="01时间变为夜晚",
+ 		type=1,
+ 		target={4},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={800010401},
+ 	parameters2={}
+},
+[60102] =
+{
+ 		id=60102,
+ 		name=30060102,
+ 		describe="01岩傀映射体的生命值+50%，所有战员每秒能量恢复+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={60144,2011},
+ 	parameters2={}
+},
+[60103] =
+{
+ 		id=60103,
+ 		name=30060103,
+ 		describe="01豹獾映射体的生命值+100%、移动速度+80%",
+ 		type=1,
+ 		target={5011,5012,5013,5014,5015,5016},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002,1005},
+ 	parameters2={}
+},
+[60104] =
+{
+ 		id=60104,
+ 		name=30060104,
+ 		describe="02岩傀映射体受到的伤害-40%",
+ 		type=1,
+ 		target={5001,5002,5003,5004,5005,5006,5007,5008,5009},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1009},
+ 	parameters2={}
+},
+[60105] =
+{
+ 		id=60105,
+ 		name=30060105,
+ 		describe="02豹獾映射体的移动速度+50%",
+ 		type=1,
+ 		target={5011,5012,5013,5014,5015,5016},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1038},
+ 	parameters2={}
+},
+[60106] =
+{
+ 		id=60106,
+ 		name=30060106,
+ 		describe="02敌方单位行动路线更加简洁，但升级资源消耗-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={60152,3027,60153},
+ 	parameters2={}
+},
+[60107] =
+{
+ 		id=60107,
+ 		name=30060107,
+ 		describe="03岩魁猩映射体的攻击力+40%、攻击速度+50%、物理防御+50%",
+ 		type=1,
+ 		target={5031,5032,5033,5034,5035,5036},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1001,1011,1023},
+ 	parameters2={}
+},
+[60108] =
+{
+ 		id=60108,
+ 		name=30060108,
+ 		describe="03花鳄映射体的移动速度+30%、受到的伤害-40%",
+ 		type=1,
+ 		target={5021,5022,5023,5024,5025,5026},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001,1009},
+ 	parameters2={}
+},
+[60109] =
+{
+ 		id=60109,
+ 		name=30060109,
+ 		describe="03坦克的阻挡数-1",
+ 		type=1,
+ 		target={101},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2006},
+ 	parameters2={}
+},
+[60110] =
+{
+ 		id=60110,
+ 		name=30060110,
+ 		describe="04岩魁猩映射体受到的物理伤害-60%、攻击力+40%",
+ 		type=1,
+ 		target={5031,5032,5033,5034,5035,5036},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1007,1001},
+ 	parameters2={}
+},
+[60111] =
+{
+ 		id=60111,
+ 		name=30060111,
+ 		describe="04花鳄映射体受到的伤害-60%、移动速度-25%、不可阻挡",
+ 		type=1,
+ 		target={5021,5022,5023,5024,5025,5026},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1033,1027,3004},
+ 	parameters2={}
+},
+[60112] =
+{
+ 		id=60112,
+ 		name=30060112,
+ 		describe="04岩傀映射体获得自爆能力（100%），所有战员升级资源消耗-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={60145,3027},
+ 	parameters2={}
+},
+[60113] =
+{
+ 		id=60113,
+ 		name=30060113,
+ 		describe="05岩魁猩映射体造成的伤害+50%、攻击力+50%",
+ 		type=1,
+ 		target={5031,5032,5033,5034,5035,5036},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1006,4004},
+ 	parameters2={}
+},
+[60114] =
+{
+ 		id=60114,
+ 		name=30060114,
+ 		describe="05反映射操作者受到的伤害-40%",
+ 		type=1,
+ 		target={5071},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1009},
+ 	parameters2={}
+},
+[60115] =
+{
+ 		id=60115,
+ 		name=30060115,
+ 		describe="05全体敌方单位的生命值+50%，所有战员每秒能量恢复+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={4002,2011},
+ 	parameters2={}
+},
+[60116] =
+{
+ 		id=60116,
+ 		name=30060116,
+ 		describe="06全体敌方单位变得不可阻挡、生命值-40%、移动速度-25%(不包括豹獾映射体）",
+ 		type=1,
+ 		target={5001,5002,5003,5004,5005,5006,5007,5008,5009,5021,5022,5023,5024,5025,5026,5031,5032,5033,5034,5035,5036,5041,5042,5043,5044,5045,5046,5051,5052,5053,5054,5055,5056,5061,5062,5063,5064,5065,5066,5071},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={3004,1056,1027},
+ 	parameters2={}
+},
+[60117] =
+{
+ 		id=60117,
+ 		name=30060117,
+ 		describe="06岩锥犀映射体的移动速度+50%,物理、异能防御-100%",
+ 		type=1,
+ 		target={5051,5052,5053,5054,5055,5056},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1038,1094},
+ 	parameters2={}
+},
+[60118] =
+{
+ 		id=60118,
+ 		name=30060118,
+ 		describe="06花鳄映射体、豹獾映射体的攻击力+100%、攻击速度+50%",
+ 		type=1,
+ 		target={5021,5022,5023,5024,5025,5026,5011,5012,5013,5014,5015,5016},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4005,1011},
+ 	parameters2={}
+},
+[60119] =
+{
+ 		id=60119,
+ 		name=30060119,
+ 		describe="07岩锥犀映射体的攻击速度+100%",
+ 		type=1,
+ 		target={5051,5052,5053,5054,5055,5056},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011},
+ 	parameters2={}
+},
+[60120] =
+{
+ 		id=60120,
+ 		name=30060120,
+ 		describe="07全体敌方单位的生命值+30%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1018},
+ 	parameters2={}
+},
+[60121] =
+{
+ 		id=60121,
+ 		name=30060121,
+ 		describe="07全体敌方单位的生命值高于50%时移动速度+50%，低于50%时移动速度-50%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4010},
+ 	parameters2={}
+},
+[60122] =
+{
+ 		id=60122,
+ 		name=30060122,
+ 		describe="08喵兔映射体的移动速度+80%",
+ 		type=1,
+ 		target={5061,5062,5063,5064,5065,5066},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1005},
+ 	parameters2={}
+},
+[60123] =
+{
+ 		id=60123,
+ 		name=30060123,
+ 		describe="08时间变为夜晚,所有战员每秒能量恢复+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={60149,2011},
+ 	parameters2={}
+},
+[60124] =
+{
+ 		id=60124,
+ 		name=30060124,
+ 		describe="08战员部署资源消耗-50%、升级资源消耗+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3010,3026},
+ 	parameters2={}
+},
+[60125] =
+{
+ 		id=60125,
+ 		name=30060125,
+ 		describe="09场景物件发生变化",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={60109001,1,60109002,1,60109006,1,60109007,1,60109008,1},
+ 	parameters2={}
+},
+[60126] =
+{
+ 		id=60126,
+ 		name=30060126,
+ 		describe="09岩锥犀映射体的全属性+30%,重装类、战士类战员的阻挡数+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={60143,2014,2017},
+ 	parameters2={}
+},
+[60127] =
+{
+ 		id=60127,
+ 		name=30060127,
+ 		describe="09全体敌方单位的生命值+30%,所有战员每秒能量恢复+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={1022,2011},
+ 	parameters2={}
+},
+[60128] =
+{
+ 		id=60128,
+ 		name=30060128,
+ 		describe="10狡鼬映射体的攻击力+30%",
+ 		type=1,
+ 		target={5041,5042,5043,5044,5045,5046},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4009},
+ 	parameters2={}
+},
+[60129] =
+{
+ 		id=60129,
+ 		name=30060129,
+ 		describe="10全体战员、敌方单位生命值-40%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={2015,1050},
+ 	parameters2={}
+},
+[60130] =
+{
+ 		id=60130,
+ 		name=30060130,
+ 		describe="10出现额外敌方单位(月兽师)",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={60110001,1,60110002,1,60110003,1,60110004,1,60110005,1,60110006,1,60110007,1,60110008,1,60110009,1,60110010,1,60110011,1,60110012,1,60110013,1,60110014,1,60110015,1,60110016,1,60110017,1,60110018,1,60110019,1,60110020,1,60110021,1,60110022,1,60110023,1,60110024,1,60110025,1,60110026,1,60110027,1,60110028,1,60110029,1,60110030,1,60110031,1,60110032,1,60110033,1,60110034,1,60110035,1,60110036,1,60110037,1},
+ 	parameters2={}
+},
+[60131] =
+{
+ 		id=60131,
+ 		name=30060131,
+ 		describe="11所有战员的生命值-50%",
+ 		type=1,
+ 		target={2},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2002},
+ 	parameters2={}
+},
+[60132] =
+{
+ 		id=60132,
+ 		name=30060132,
+ 		describe="11全体敌方单位获得50%吸血",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761,2004,2005,2304,2305,2704,2705},
+ 		entry=3,
+ 		parameters={4003},
+ 	parameters2={}
+},
+[60133] =
+{
+ 		id=60133,
+ 		name=30060133,
+ 		describe="11喵兔映射体的物理防御力+80%",
+ 		type=1,
+ 		target={5061,5062,5063,5064,5065,5066},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1003},
+ 	parameters2={}
+},
+[60134] =
+{
+ 		id=60134,
+ 		name=30060134,
+ 		describe="12全体敌方单位变得不可阻挡(不包括豹獾映射体）、移动速度-30%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={60116,1055},
+ 	parameters2={}
+},
+[60135] =
+{
+ 		id=60135,
+ 		name=30060135,
+ 		describe="12全体敌方单位的攻击速度+50%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011},
+ 	parameters2={}
+},
+[60136] =
+{
+ 		id=60136,
+ 		name=30060136,
+ 		describe="12所有战员的部署资源消耗+25%、升级资源消耗-4",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3011,3015},
+ 	parameters2={}
+},
+[60137] =
+{
+ 		id=60137,
+ 		name=30060137,
+ 		describe="13时间变更为夜晚",
+ 		type=1,
+ 		target={4},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={800010402,800010403},
+ 	parameters2={}
+},
+[60138] =
+{
+ 		id=60138,
+ 		name=30060138,
+ 		describe="13场景物件、敌方单位配置发生变化",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={60150,60151},
+ 	parameters2={}
+},
+[60139] =
+{
+ 		id=60139,
+ 		name=30060139,
+ 		describe="13岩傀映射体、岩魁猩映射体受到的伤害-40%",
+ 		type=1,
+ 		target={5001,5002,5003,5004,5005,5006,5007,5008,5009,5031,5032,5033,5034,5035,5036},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1009},
+ 	parameters2={}
+},
+[60140] =
+{
+ 		id=60140,
+ 		name=30060140,
+ 		describe="14花鳄映射体变得不可阻挡、生命值+100%",
+ 		type=1,
+ 		target={5021,5022,5023,5024,5025,5026},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={3004,1002},
+ 	parameters2={}
+},
+[60141] =
+{
+ 		id=60141,
+ 		name=30060141,
+ 		describe="14岩锥犀映射体受到的伤害-90%、生命值-80%，异能、物理防御力-100%",
+ 		type=1,
+ 		target={5051,5052,5053,5054,5055,5056},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1025,1026,1094},
+ 	parameters2={}
+},
+[60142] =
+{
+ 		id=60142,
+ 		name=30060142,
+ 		describe="14狡鼬映射体的攻击力+100%",
+ 		type=1,
+ 		target={5041,5042,5043,5044,5045,5046},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4005},
+ 	parameters2={}
+},
+[60143] =
+{
+ 		id=60143,
+ 		name=30060143,
+ 		describe="岩锥犀映射体的全属性+30%",
+ 		type=1,
+ 		target={5051,5052,5053,5054,5055,5056},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1015},
+ 	parameters2={}
+},
+[60144] =
+{
+ 		id=60144,
+ 		name=30060144,
+ 		describe="岩傀映射体的生命值+50%",
+ 		type=1,
+ 		target={5001,5002,5003,5004,5005,5006,5007,5008,5009},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4002},
+ 	parameters2={}
+},
+[60145] =
+{
+ 		id=60145,
+ 		name=30060145,
+ 		describe="岩傀映射体获得自爆能力（100%）",
+ 		type=2,
+ 		target={5001,5002,5003,5004,5005,5006,5007,5008,5009},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={220045002},
+ 	parameters2={}
+},
+[60146] =
+{
+ 		id=60146,
+ 		name=30060146,
+ 		describe="15初始为白天，120秒之后变为永久夜晚，首领处于夜晚仍可以被治疗,随着首领生命值提升其黑夜状态下的全体伤害技能的频率会逐渐降低",
+ 		type=1,
+ 		target={4},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={800010404,800010405},
+ 	parameters2={}
+},
+[60147] =
+{
+ 		id=60147,
+ 		name=30060147,
+ 		describe="15部署召唤资源消耗-35%，但升级资源消耗+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3025,3026},
+ 	parameters2={}
+},
+[60148] =
+{
+ 		id=60148,
+ 		name=30060148,
+ 		describe="15兔喵获得全体光环全体敌方单位的攻击力+2%（可叠加），每30秒+1%",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={60115036,1,60115037,1,60115038,1,60115039,1,60115040,1,60115041,1,60115042,1,60115043,1,60115044,1,60115010,1,60115011,1,60115012,1,60115013,1,60115014,1,60115015,1,60115016,1,60115017,1,60115018,1,60115019,1,60115020,1,60115021,1,60115022,1,60115023,1,60115024,1,60115025,1,60115026,1,60115027,1,60115028,1,60115029,1,60115030,1,60115031,1,60115032,1,60115033,1,60115034,1,60115035,1},
+ 	parameters2={}
+},
+[60149] =
+{
+ 		id=60149,
+ 		name=30060149,
+ 		describe="时间变为夜晚(日夜交替变永夜）",
+ 		type=1,
+ 		target={4},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={800010402,800010403},
+ 	parameters2={}
+},
+[60150] =
+{
+ 		id=60150,
+ 		name=30060150,
+ 		describe="13关卡场景物件发生变化",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={60113007,1,60113002,1,60113003,1,60113004,1,60113005,1},
+ 	parameters2={}
+},
+[60151] =
+{
+ 		id=60151,
+ 		name=30060151,
+ 		describe="13敌方单位配置发生变化",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={60113001,1,60113002,1,60113033,1,60113034,1,60113035,1,60113036,1,60113037,1,60113038,1,60113039,1,60113040,1,60113041,1,60113042,1,60113043,1,60113044,1,60113045,1,60113046,1,60113047,1,60113048,1,60113049,1,60113050,1,60113051,1,60113052,1,60113053,1,60113054,1,60113055,1,60113056,1,60113057,1,60113058,1,60113059,1,60113060,1,60113061,1,60113062,1,60113063,1},
+ 	parameters2={}
+},
+[60152] =
+{
+ 		id=60152,
+ 		name=30060152,
+ 		describe="02敌方单位行动路线更加简洁",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={60102022,1,60102023,1,60102024,1,60102025,1,60102026,1,60102027,1,60102028,1,60102029,1,60102030,1,60102031,1,60102032,1,60102033,1,60102034,1,60102035,1,60102036,1,60102037,1,60102038,1,60102039,1,60102040,1,60102041,1,60102042,1},
+ 	parameters2={}
+},
+[60153] =
+{
+ 		id=60153,
+ 		name=30060153,
+ 		describe="02风速线改变",
+ 		type=8,
+ 		target={0},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		parameters={60102005,1,60102002,1,60102006,1},
+ 	parameters2={}
+},
+[60154] =
+{
+ 		id=60154,
+ 		name=30060154,
+ 		describe="16花鳄映射体白天的治疗变为全体范围。夜晚中毒攻击变为全体范围，但造成的直接伤害降低",
+ 		type=1,
+ 		target={5021,5022,5023,5024,5025,5026},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999005201},
+ 	parameters2={}
+},
+[60155] =
+{
+ 		id=60155,
+ 		name=30060155,
+ 		describe="16岩傀映射体受到的异能伤害-80%",
+ 		type=1,
+ 		target={5001,5002,5003,5004,5005,5006,5007,5008,5009},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1088},
+ 	parameters2={}
+},
+[60156] =
+{
+ 		id=60156,
+ 		name=30060156,
+ 		describe="16岩魁猩的攻击力+50%",
+ 		type=1,
+ 		target={5031,5032,5033,5034,5035,5036},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4004},
+ 	parameters2={}
+},
+[60157] =
+{
+ 		id=60157,
+ 		name=30060157,
+ 		describe="17岩锥犀映射体的移动速度+80%，不可阻挡",
+ 		type=1,
+ 		target={5051,5052,5053,5054,5055,5056},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1005,3004},
+ 	parameters2={}
+},
+[60158] =
+{
+ 		id=60158,
+ 		name=30060158,
+ 		describe="17岩魁猩的专注度恢复+1",
+ 		type=1,
+ 		target={5031,5032,5033,5034,5035,5036},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2009},
+ 	parameters2={}
+},
+[801100] =
+{
+ 		id=801100,
+ 		name=30801100,
+ 		describe="绿野仙踪·第八关小BOSS的生命值-50%",
+ 		type=1,
+ 		target={10051,10052,10053,10054,10055,10056},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2002},
+ 	parameters2={}
+},
+[801101] =
+{
+ 		id=801101,
+ 		name=30801101,
+ 		describe="绿野仙踪·多萝西的祝福1：敌方单位产生的升级资源消耗+1",
+ 		type=2,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999909501},
+ 	parameters2={}
+},
+[801102] =
+{
+ 		id=801102,
+ 		name=30801102,
+ 		describe="绿野仙踪·多萝西的祝福2：所有战员的生命值处于50%以下时受到的物理、异能伤害-10%",
+ 		type=2,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999909601},
+ 	parameters2={}
+},
+[801103] =
+{
+ 		id=801103,
+ 		name=30801103,
+ 		describe="绿野仙踪·多萝西的祝福3：当战员被击败而撤退时，所有战员造成的伤害+20%，持续10秒",
+ 		type=2,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999909701},
+ 	parameters2={}
+},
+[801104] =
+{
+ 		id=801104,
+ 		name=30801104,
+ 		describe="绿野仙踪·多萝西的祝福4：所有战员的部署资源消耗-25%",
+ 		type=3,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={-2500},
+ 	parameters2={}
+},
+[801105] =
+{
+ 		id=801105,
+ 		name=30801105,
+ 		describe="绿野仙踪·多萝西的祝福5：当释放指挥官技能后，所有战员的攻击速度+25%，持续10秒",
+ 		type=2,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999909801},
+ 	parameters2={}
+},
+[801106] =
+{
+ 		id=801106,
+ 		name=30801106,
+ 		describe="绿野仙踪·多萝西的祝福6：当战员周围没有友军时，获得吸血20%",
+ 		target={0},
+ 		ignoreTarget={1061,1761,2004,2005,2304,2305,2704,2705},
+ 		entry=3,
+ 		parameters={801109,801110},
+ 	parameters2={}
+},
+[801107] =
+{
+ 		id=801107,
+ 		name=30801107,
+ 		describe="绿野仙踪·多萝西的祝福7：全体敌方单位的移动速度-25%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1027},
+ 	parameters2={}
+},
+[801108] =
+{
+ 		id=801108,
+ 		name=30801108,
+ 		describe="绿野仙踪·多萝西的祝福8：每击败一个首领敌方单位，全体战员累计获得以下加成：1·攻击力+10%。2·防御力+10%。3·专注值恢复+1。4·无视防御+20%。5·生命值+30%",
+ 		type=2,
+ 		target={4},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={210058101},
+ 	parameters2={}
+},
+[801109] =
+{
+ 		id=801109,
+ 		name=30801109,
+ 		describe="祝福6:获得吸血20%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761,2004,2005,2304,2305,2704,2705},
+ 		entry=3,
+ 		parameters={1117},
+ 	parameters2={}
+},
+[801110] =
+{
+ 		id=801110,
+ 		name=30801110,
+ 		describe="祝福6：周围有友军时失去吸血20%",
+ 		type=2,
+ 		target={2},
+ 		ignoreTarget={1061,1761,2004,2005,2304,2305,2704,2705},
+ 		entry=3,
+ 		parameters={999909901},
+ 	parameters2={}
+},
+[801111] =
+{
+ 		id=801111,
+ 		name=30801111,
+ 		describe="绿野仙踪·第八关NPC标记",
+ 		type=1,
+ 		target={10051,10052,10053,10054,10055,10057},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={210058106},
+ 	parameters2={}
+},
+[801112] =
+{
+ 		id=801112,
+ 		name=30801112,
+ 		describe="1·普通类敌人的数量增加",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={801101001,1,801101002,1,801101003,1,801101026,1,801101005,1,801101006,1,801101027,1,801101028,1,801101009,1,801101010,1,801101011,1,801101012,1,801101013,1,801101014,1,801101029,1,801101016,1,801101030,1,801101018,1,801101019,1,801101031,1,801101032,1,801101022,1,801101023,1,801101024,1,801101025,1},
+ 	parameters2={}
+},
+[801113] =
+{
+ 		id=801113,
+ 		name=30801113,
+ 		describe="1·部署召唤资源消耗-25%，但升级资源消耗+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3009,3026},
+ 	parameters2={}
+},
+[801114] =
+{
+ 		id=801114,
+ 		name=30801114,
+ 		describe="1·敌方单位的生命值+100%，物理、异能防御-100%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1002,1094},
+ 	parameters2={}
+},
+[801115] =
+{
+ 		id=801115,
+ 		name=30801115,
+ 		describe="2·当有敌方单位被击败时，培根的移动速度会+（可叠加）",
+ 		type=2,
+ 		target={10052},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={260520302},
+ 	parameters2={}
+},
+[801116] =
+{
+ 		id=801116,
+ 		name=30801116,
+ 		describe="2·敌方单位的出现间隔、等待时间-30%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={801118,801119},
+ 	parameters2={}
+},
+[801117] =
+{
+ 		id=801117,
+ 		name=30801117,
+ 		describe="2·全体敌方单位获得吸血50%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761,2004,2005,2304,2305,2704,2705},
+ 		entry=3,
+ 		parameters={4003},
+ 	parameters2={}
+},
+[801118] =
+{
+ 		id=801118,
+ 		name=30801118,
+ 		describe="敌方单位的出现间隔-30%",
+ 		type=19,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={-3000},
+ 	parameters2={}
+},
+[801119] =
+{
+ 		id=801119,
+ 		name=30801119,
+ 		describe="敌方单位的刷新间隔-30%",
+ 		type=20,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={-3000},
+ 	parameters2={}
+},
+[801120] =
+{
+ 		id=801120,
+ 		name=30801120,
+ 		describe="3·丽贝卡的移动速度+100%，自身受到攻击时移动速度永久降低（可叠加）",
+ 		type=1,
+ 		target={10054},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={260430701},
+ 	parameters2={}
+},
+[801121] =
+{
+ 		id=801121,
+ 		name=30801121,
+ 		describe="3·所有战员的生命值-30%，再部署时间缩短",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={801123,801124},
+ 	parameters2={}
+},
+[801122] =
+{
+ 		id=801122,
+ 		name=30801122,
+ 		describe="3·丽贝卡生命值50%以下时，专注度恢复速度提高",
+ 		type=2,
+ 		target={10054},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={260540803},
+ 	parameters2={}
+},
+[801123] =
+{
+ 		id=801123,
+ 		name=30801123,
+ 		describe="所有战员的生命值-30%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1056},
+ 	parameters2={}
+},
+[801124] =
+{
+ 		id=801124,
+ 		name=30801124,
+ 		describe="再部署时间缩短",
+ 		type=4,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={-20000},
+ 	parameters2={}
+},
+[801125] =
+{
+ 		id=801125,
+ 		name=30801125,
+ 		describe="4·海风藤的攻击速度+100%，当有敌方单位被击败时，海风藤的攻击速度永久降低（可叠加）",
+ 		type=1,
+ 		target={10053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={260530901},
+ 	parameters2={}
+},
+[801126] =
+{
+ 		id=801126,
+ 		name=30801126,
+ 		describe="4·海风藤专注度恢复速度+，自身受到攻击时专注度恢复速度短暂降低",
+ 		type=1,
+ 		target={10053},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={260530101},
+ 	parameters2={}
+},
+[801127] =
+{
+ 		id=801127,
+ 		name=30801127,
+ 		describe="4·部署召唤资源消耗+25%，全体敌方单位的移动速度-30%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={3011,1055},
+ 	parameters2={}
+},
+[801128] =
+{
+ 		id=801128,
+ 		name=30801128,
+ 		describe="5·波妮会周期性额外召唤1种稻草人图腾，该图腾每个每秒对所有战员造成10%最大生命值的伤害，可以被战员攻击，可上阵点增加",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={801143,801144},
+ 	parameters2={}
+},
+[801129] =
+{
+ 		id=801129,
+ 		name=30801129,
+ 		describe="5·波妮会持续恢复自身生命值，当处于异常状态中时，失去恢复效果",
+ 		type=2,
+ 		target={10051},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={260420301,260420401},
+ 	parameters2={}
+},
+[801130] =
+{
+ 		id=801130,
+ 		name=30801130,
+ 		describe="5·波妮可以被阻挡，但被阻挡时会使阻挡她的目标最大生命值-10%，持续至战员撤退",
+ 		type=2,
+ 		target={10051},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={260420501,260420601,260420801},
+ 	parameters2={}
+},
+[801131] =
+{
+ 		id=801131,
+ 		name=30801131,
+ 		describe="6·莉斯贝丝的3层爆破对主目标造成的伤害降低，但对被波及的目标造成的伤害大幅度提高，且爆破伤害可以穿透掩体",
+ 		type=1,
+ 		target={10055},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={260550308},
+ 	parameters2={}
+},
+[801132] =
+{
+ 		id=801132,
+ 		name=30801132,
+ 		describe="6·异能类敌方单位造成的伤害会使目标的异能抗性-15%，持续5秒",
+ 		type=2,
+ 		target={10021,10022,10023},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={260555201},
+ 	parameters2={}
+},
+[801133] =
+{
+ 		id=801133,
+ 		name=30801133,
+ 		describe="6·飞天猴子变的更加强大，可上阵7名战员",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={801134,3008},
+ 	parameters2={}
+},
+[801134] =
+{
+ 		id=801134,
+ 		name=30801134,
+ 		describe="飞天猴子变的更加强大",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={801106001,1,801106002,1,801106003,1,801106004,1,801106005,1,801106006,1,801106007,1,801106025,1,801106009,1,801106010,1,801106011,1,801106012,1,801106013,1,801106014,1,801106026,1,801106016,1,801106017,1,801106018,1,801106027,1,801106020,1,801106028,1,801106022,1,801106029,1,801106024,1,801106030,1},
+ 	parameters2={}
+},
+[801135] =
+{
+ 		id=801135,
+ 		name=30801135,
+ 		describe="7·莉斯贝丝的移动速度+，停留等待时间缩短，但会增加移动路线（多走2圈）",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={801107029,1,801107002,1,801107003,1,801107004,1,801107005,1,801107006,1,801107007,1,801107008,1,801107009,1,801107010,1,801107011,1,801107012,1,801107013,1,801107014,1,801107015,1,801107016,1,801107017,1,801107018,1,801107019,1,801107020,1,801107021,1,801107022,1,801107023,1,801107024,1,801107025,1,801107026,1,801107027,1,801107028,1},
+ 	parameters2={}
+},
+[801136] =
+{
+ 		id=801136,
+ 		name=30801136,
+ 		describe="7·莉斯贝丝处于飞行状态时，获得叠层技能。可部署7名战员，部署资源消耗-25%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={801145,3008,3009},
+ 	parameters2={}
+},
+[801137] =
+{
+ 		id=801137,
+ 		name=30801137,
+ 		describe="7·敌方单位被击败时额外提供1点升级资源消耗",
+ 		type=2,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999909501},
+ 	parameters2={}
+},
+[801138] =
+{
+ 		id=801138,
+ 		name=30801138,
+ 		describe="8·多萝西的祝福8于关卡开始时便处于持续生效状态，大巫师以外的首领单位生命值提高",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={801141,801142},
+ 	parameters2={}
+},
+[801139] =
+{
+ 		id=801139,
+ 		name=30801139,
+ 		describe="8·奥兹对最近的战员额外召唤一个自爆气球，且全体异能伤害技能开始对战员也生效",
+ 		type=1,
+ 		target={10058},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={210058201},
+ 	parameters2={}
+},
+[801140] =
+{
+ 		id=801140,
+ 		name=30801140,
+ 		describe="8·奥兹以外的首领类敌方单位被击败时，奥兹获得相应的额外能力<1：伤害+50%。2：防御+100%，每次受到攻击时防御逐渐-。3：攻击时所有目标的阻挡数-1。4：获得莉斯贝丝的叠层技能。5：不可被阻挡>",
+ 		type=1,
+ 		target={10058},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={210058202},
+ 	parameters2={}
+},
+[801141] =
+{
+ 		id=801141,
+ 		name=30801141,
+ 		describe="多萝西的祝福8于关卡开始时便处于持续生效状态",
+ 		type=2,
+ 		target={4},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={210058102},
+ 	parameters2={}
+},
+[801142] =
+{
+ 		id=801142,
+ 		name=30801142,
+ 		describe="小BOSS的生命值+30%",
+ 		type=1,
+ 		target={10051,10052,10053,10054,10055,10056},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1018},
+ 	parameters2={}
+},
+[801143] =
+{
+ 		id=801143,
+ 		name=30801143,
+ 		describe="稻草人关卡所有位置可上阵",
+ 		type=12,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={17,3,18,3,19,3,20,3,28,3,29,3,32,3,39,3,40,3,44,3,51,3,52,3,56,3,63,3,64,3,65,3,75,3,79,3,104,3,112,3,113,3,116,3,126,3,127,3},
+ 	parameters2={}
+},
+[801144] =
+{
+ 		id=801144,
+ 		name=30801144,
+ 		describe="波妮会周期性额外召唤1种稻草人图腾，该图腾会每秒对所有战员造成1%最大生命值的伤害，可以被战员攻击",
+ 		type=1,
+ 		target={10051},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={210059110},
+ 	parameters2={}
+},
+[801145] =
+{
+ 		id=801145,
+ 		name=30801145,
+ 		describe="莉斯贝丝处于飞行状态时，获得叠层技能",
+ 		type=1,
+ 		target={10056},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={260570203},
+ 	parameters2={}
+},
+[802101] =
+{
+ 		id=802101,
+ 		name=30802101,
+ 		describe="1重装类敌方单位的移动速度+80%",
+ 		type=1,
+ 		target={1343},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1005},
+ 	parameters2={}
+},
+[802102] =
+{
+ 		id=802102,
+ 		name=30802102,
+ 		describe="1重装类、速度类敌方单位全属性+70%",
+ 		type=1,
+ 		target={1313,1343},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1042},
+ 	parameters2={}
+},
+[802103] =
+{
+ 		id=802103,
+ 		name=30802103,
+ 		describe="1出现更为强大的敌方单位，且敌方单位出现的速度大幅度+",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={802101011,1,802101012,1,802101013,1,802101014,1,802101015,1,802101016,1,802101017,1,802101018,1},
+ 	parameters2={}
+},
+[802104] =
+{
+ 		id=802104,
+ 		name=30802104,
+ 		describe="2普通类敌方单位获得强化自爆，并可以穿透掩体",
+ 		type=2,
+ 		target={1301},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={220045003},
+ 	parameters2={}
+},
+[802105] =
+{
+ 		id=802105,
+ 		name=30802105,
+ 		describe="2飞行类敌方单位的移动速度+50%，受到的伤害-80%",
+ 		type=1,
+ 		target={1351},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1038,1030},
+ 	parameters2={}
+},
+[802106] =
+{
+ 		id=802106,
+ 		name=30802106,
+ 		describe="2速度类敌方单位获得不可阻挡，生命值+100%、受到的伤害-40%",
+ 		type=1,
+ 		target={1311},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={3004,1002,1082},
+ 	parameters2={}
+},
+[802107] =
+{
+ 		id=802107,
+ 		name=30802107,
+ 		describe="3普通类、速度类敌方单位受到的伤害-99%",
+ 		type=1,
+ 		target={2301,2311},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1112},
+ 	parameters2={}
+},
+[802108] =
+{
+ 		id=802108,
+ 		name=30802108,
+ 		describe="3重装类敌方单位的生命值+240%，攻击力+100%，物理、异能的防御-100%",
+ 		type=1,
+ 		target={2341},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1087,4005,1094},
+ 	parameters2={}
+},
+[802109] =
+{
+ 		id=802109,
+ 		name=30802109,
+ 		describe="3特殊类、飞行类敌方单位的移动速度+50%，攻击力+100%",
+ 		type=1,
+ 		target={2303,2351},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1038,4005},
+ 	parameters2={}
+},
+[802110] =
+{
+ 		id=802110,
+ 		name=30802110,
+ 		describe="4全体敌方单位获得不可阻挡，物理、异能防御+50%，敌方单位变得更强、出现频率更快",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={802111,802112},
+ 	parameters2={}
+},
+[802111] =
+{
+ 		id=802111,
+ 		name=30802111,
+ 		describe="全体敌方单位获得不可阻挡，物理、异能防御+50%",
+ 		type=1,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={3004,1113},
+ 	parameters2={}
+},
+[802112] =
+{
+ 		id=802112,
+ 		name=30802112,
+ 		describe="敌方单位更强出现频率更快",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={802104112,1,802104113,1,802104114,1,802104115,1,802104116,1,802104117,1,802104118,1,802104119,1,802104120,1,802104121,1,802104122,1,802104123,1,802104124,1,802104125,1,802104126,1,802104127,1,802104128,1,802104129,1,802104130,1,802104131,1,802104132,1},
+ 	parameters2={}
+},
+[802113] =
+{
+ 		id=802113,
+ 		name=30802113,
+ 		describe="4部署召唤资源消耗-35%，但升级资源消耗+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3025,3026},
+ 	parameters2={}
+},
+[802114] =
+{
+ 		id=802114,
+ 		name=30802114,
+ 		describe="4重装类敌方单位的移动速度+80%，远程类敌方单位的攻击+50%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={802115,802116},
+ 	parameters2={}
+},
+[802115] =
+{
+ 		id=802115,
+ 		name=30802115,
+ 		describe="重装怪的移动速度+80%",
+ 		type=1,
+ 		target={2341},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1005},
+ 	parameters2={}
+},
+[802116] =
+{
+ 		id=802116,
+ 		name=30802116,
+ 		describe="远程怪的攻击+50%",
+ 		type=1,
+ 		target={2321,2323},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4004},
+ 	parameters2={}
+},
+[802117] =
+{
+ 		id=802117,
+ 		name=30802117,
+ 		describe="5敌方单位会逐渐变强、数量也会有所提升",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={802105019,1,802105020,1,802105021,1,802105022,1,802105023,1,802105024,1,802105025,1,802105026,1,802105027,1,802105028,1,802105029,1,802105030,1,802105031,1,802105032,1,802105033,1,802105034,1,802105035,1,802105036,1},
+ 	parameters2={}
+},
+[802118] =
+{
+ 		id=802118,
+ 		name=30802118,
+ 		describe="5部署召唤资源消耗+35%，但升级资源消耗-1，全体敌方单位全属性+30%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3024,3027,1040},
+ 	parameters2={}
+},
+[802119] =
+{
+ 		id=802119,
+ 		name=30802119,
+ 		describe="5重装类敌方单位的移动速度+30%",
+ 		type=1,
+ 		target={2341,2342,2343},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001},
+ 	parameters2={}
+},
+[802120] =
+{
+ 		id=802120,
+ 		name=30802120,
+ 		describe="6特殊类敌方单位的移动速度+80%",
+ 		type=1,
+ 		target={2304},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1005},
+ 	parameters2={}
+},
+[802121] =
+{
+ 		id=802121,
+ 		name=30802121,
+ 		describe="6重装类敌方单位变得更强，且生命值50%以下时获得不可阻挡、移动速度+80%",
+ 		type=2,
+ 		target={2341,2342,2343},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999905001},
+ 	parameters2={}
+},
+[802122] =
+{
+ 		id=802122,
+ 		name=30802122,
+ 		describe="6普通类敌方单位变为特殊红色敌人，并获得分裂，且分裂的分身也会分裂",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={802149,802150},
+ 	parameters2={}
+},
+[802123] =
+{
+ 		id=802123,
+ 		name=30802123,
+ 		describe="7全体敌方单位的移动速度+50%，生命值50%以下时移动速度-50%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4010},
+ 	parameters2={}
+},
+[802124] =
+{
+ 		id=802124,
+ 		name=30802124,
+ 		describe="7敌方单位出现的频率+，重装以及近战类战员阻挡+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={802125,802126},
+ 	parameters2={}
+},
+[802125] =
+{
+ 		id=802125,
+ 		name=30802125,
+ 		describe="敌方单位出现的频率提高",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={802107041,1,802107042,1,802107043,1,802107044,1,802107045,1,802107046,1,802107047,1,802107048,1,802107049,1,802107050,1,802107051,1,802107052,1,802107053,1,802107054,1,802107055,1,802107056,1,802107057,1,802107058,1,802107059,1,802107060,1,802107061,1,802107062,1,802107063,1,802107064,1,802107065,1,802107066,1,802107067,1,802107068,1,802107069,1,802107070,1,802107071,1,802107072,1,802107073,1,802107074,1,802107075,1,802107076,1,802107077,1,802107078,1,802107079,1,802107080,1},
+ 	parameters2={}
+},
+[802126] =
+{
+ 		id=802126,
+ 		name=30802126,
+ 		describe="重装以及近战类战员阻挡+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={2014,2017},
+ 	parameters2={}
+},
+[802127] =
+{
+ 		id=802127,
+ 		name=30802127,
+ 		describe="7飞行类敌方单位的攻击+100%",
+ 		type=1,
+ 		target={2351,2352},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4005},
+ 	parameters2={}
+},
+[802128] =
+{
+ 		id=802128,
+ 		name=30802128,
+ 		describe="8全体敌方单位获得500点护盾",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1111},
+ 	parameters2={}
+},
+[802129] =
+{
+ 		id=802129,
+ 		name=30802129,
+ 		describe="8全体敌方单位的全属性+30%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1015},
+ 	parameters2={}
+},
+[802130] =
+{
+ 		id=802130,
+ 		name=30802130,
+ 		describe="8重装类敌方单位死亡时召唤一只速度类敌方单位，速度类敌方单位死亡时召唤一只普通类敌方单位",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={802131,802132},
+ 	parameters2={}
+},
+[802131] =
+{
+ 		id=802131,
+ 		name=30802131,
+ 		describe="重装类敌方单位死亡时召唤一只速度类敌方单位",
+ 		type=2,
+ 		target={2341},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999904801},
+ 	parameters2={}
+},
+[802132] =
+{
+ 		id=802132,
+ 		name=30802132,
+ 		describe="速度类敌方单位死亡时召唤一只普通类敌方单位",
+ 		type=2,
+ 		target={2311},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999904901},
+ 	parameters2={}
+},
+[802133] =
+{
+ 		id=802133,
+ 		name=30802133,
+ 		describe="9全体敌方单位受到的伤害-90%，生命值-80%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1025,1026},
+ 	parameters2={}
+},
+[802134] =
+{
+ 		id=802134,
+ 		name=30802134,
+ 		describe="9重装类敌方单位的攻击力+100%",
+ 		type=1,
+ 		target={2341},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4005},
+ 	parameters2={}
+},
+[802135] =
+{
+ 		id=802135,
+ 		name=30802135,
+ 		describe="9部署召唤资源消耗-25%，但升级资源消耗+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3009,3026},
+ 	parameters2={}
+},
+[802136] =
+{
+ 		id=802136,
+ 		name=30802136,
+ 		describe="10生物敌方单位受到的异能伤害-60%",
+ 		type=1,
+ 		target={3302,3303,3312,3342},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1008},
+ 	parameters2={}
+},
+[802137] =
+{
+ 		id=802137,
+ 		name=30802137,
+ 		describe="10机械敌方单位受到的物理伤害-60%",
+ 		type=1,
+ 		target={1302,1312,1322,1332,1333,1343},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1007},
+ 	parameters2={}
+},
+[802138] =
+{
+ 		id=802138,
+ 		name=30802138,
+ 		describe="10敌方单位变得更强，能量塔变为散射",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={802151,802152},
+ 	parameters2={}
+},
+[802139] =
+{
+ 		id=802139,
+ 		name=30802139,
+ 		describe="11出现特殊红色异能类、射手类敌方单位",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={802111001,1,802111002,1,802111003,1,802111004,1,802111005,1,802111006,1,802111007,1,802111008,1,802111009,1,802111010,1,802111011,1,802111012,1,802111013,1,802111014,1,802111015,1,802111027,1,802111017,1,802111028,1,802111019,1,802111020,1,802111021,1,802111022,1,802111023,1,802111024,1,802111025,1,802111026,1},
+ 	parameters2={}
+},
+[802140] =
+{
+ 		id=802140,
+ 		name=30802140,
+ 		describe="11部署召唤资源消耗-35%，但升级资源消耗+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3025,3026},
+ 	parameters2={}
+},
+[802141] =
+{
+ 		id=802141,
+ 		name=30802141,
+ 		describe="11红色水晶不再对战员造成伤害，而是恢复所有敌方单位的生命值",
+ 		type=1,
+ 		target={802104},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={52001001,52001002},
+ 	parameters2={}
+},
+[802142] =
+{
+ 		id=802142,
+ 		name=30802142,
+ 		describe="12温妮与玛乔丽的位置互换。温妮获得全屏伤害技能，并可以吸取能量。玛乔丽的大招技能将锁定最远目标",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={802112004,1,802112005,1,802112006,1},
+ 	parameters2={}
+},
+[802143] =
+{
+ 		id=802143,
+ 		name=30802143,
+ 		describe="12红色水晶不再对战员造成伤害，而是恢复所有战员的生命值",
+ 		type=1,
+ 		target={802104},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={52001003},
+ 	parameters2={}
+},
+[802144] =
+{
+ 		id=802144,
+ 		name=30802144,
+ 		describe="12温妮被击败后玛乔丽的大招冷却减半，玛乔丽被击败后温妮将直接进入狂暴状态",
+ 		type=2,
+ 		target={10801,10802,10803,10804},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={2108020101,2108030101},
+ 	parameters2={}
+},
+[802145] =
+{
+ 		id=802145,
+ 		name=30802145,
+ 		describe="精英本修正红色水晶攻击力*6",
+ 		type=1,
+ 		target={2001},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999012101},
+ 	parameters2={}
+},
+[802146] =
+{
+ 		id=802146,
+ 		name=30802146,
+ 		describe="精英本修正红色水晶攻击力*3",
+ 		type=1,
+ 		target={802101},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999012201},
+ 	parameters2={}
+},
+[802147] =
+{
+ 		id=802147,
+ 		name=30802147,
+ 		describe="精英本修正红色水晶攻击力*2",
+ 		type=1,
+ 		target={802102},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999012301},
+ 	parameters2={}
+},
+[802148] =
+{
+ 		id=802148,
+ 		name=30802148,
+ 		describe="精英本修正红色水晶攻击力*1.3",
+ 		type=1,
+ 		target={802103},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999012401},
+ 	parameters2={}
+},
+[802149] =
+{
+ 		id=802149,
+ 		name=30802149,
+ 		describe="(6)普通类敌方单位变为特殊红色单位",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={802106022,1,802106023,1,802106024,1,802106025,1,802106026,1,802106027,1,802106028,1,802106029,1,802106030,1,802106031,1,802106032,1,802106033,1,802106034,1,802106035,1,802106036,1,802106037,1,802106038,1,802106039,1,802106040,1,802106041,1,802106042,1},
+ 	parameters2={}
+},
+[802150] =
+{
+ 		id=802150,
+ 		name=30802150,
+ 		describe="(6)普通类敌方单位获得分裂",
+ 		type=2,
+ 		target={2301,2302,2306},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={220015104,220015204},
+ 	parameters2={}
+},
+[802151] =
+{
+ 		id=802151,
+ 		name=30802151,
+ 		describe="(10)敌方单位变得更强",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={802110017,1,802110018,1,802110019,1,802110020,1,802110021,1,802110022,1,802110023,1,802110024,1,802110025,1,802110026,1,802110027,1,802110028,1,802110029,1,802110030,1,802110031,1,802110032,1},
+ 	parameters2={}
+},
+[802152] =
+{
+ 		id=802152,
+ 		name=30802152,
+ 		describe="(10)能量塔变为散射",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={802110005,1,802110002,1,802110003,1,802110004,1},
+ 	parameters2={}
+},
+[901101] =
+{
+ 		id=901101,
+ 		name=30901101,
+ 		describe="剧毒罐子持续生效",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={901103009,1,901103010,1,901103011,1,901103012,1,901103007,1,901103008,1},
+ 	parameters2={}
+},
+[901102] =
+{
+ 		id=901102,
+ 		name=30901102,
+ 		describe="开关会自动开启",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={901108005,1,901108006,1,901108003,1,901108004,1},
+ 	parameters2={}
+},
+[901103] =
+{
+ 		id=901103,
+ 		name=30901103,
+ 		describe="开关自动变化（漂浮台），全体敌方单位移动速度-25%（901119）",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={901109006,1,901109004,1,901109005,1},
+ 	parameters2={}
+},
+[901104] =
+{
+ 		id=901104,
+ 		name=30901104,
+ 		describe="开关自动变化（阻挡台）",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={901110001,1,901110009,1,901110006,1,901110007,1,901110008,1},
+ 	parameters2={}
+},
+[901105] =
+{
+ 		id=901105,
+ 		name=30901105,
+ 		describe="（遭遇战专用）全体敌方单位受到的伤害-90%、生命值-80%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1025,901051},
+ 	parameters2={}
+},
+[901106] =
+{
+ 		id=901106,
+ 		name=30901106,
+ 		describe="（遭遇战专用）阻击者获得2000点护盾",
+ 		type=1,
+ 		target={3041,3042,3043,3341,3342,3343},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1021},
+ 	parameters2={}
+},
+[901107] =
+{
+ 		id=901107,
+ 		name=30901107,
+ 		describe="（遭遇战专用）全体敌方单位的物理防御力+150%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901053},
+ 	parameters2={}
+},
+[901108] =
+{
+ 		id=901108,
+ 		name=30901108,
+ 		describe="（遭遇战专用）全体敌方单位受到的异能伤害-40%、受到的物理伤害+80%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1032,1054},
+ 	parameters2={}
+},
+[901109] =
+{
+ 		id=901109,
+ 		name=30901109,
+ 		describe="（遭遇战专用）全体敌方单位的生命值-30%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901055},
+ 	parameters2={}
+},
+[901110] =
+{
+ 		id=901110,
+ 		name=30901110,
+ 		describe="（遭遇战专用）近战敌方单位的移动速度+30%",
+ 		type=1,
+ 		target={1301,1302,1303,1311,1312,1313,1341,1342,1343,1804},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001},
+ 	parameters2={}
+},
+[901111] =
+{
+ 		id=901111,
+ 		name=30901111,
+ 		describe="（遭遇战专用）远程敌方单位的攻击速度+50%",
+ 		type=1,
+ 		target={1321,1322,1323,1331,1332,1333},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011},
+ 	parameters2={}
+},
+[901112] =
+{
+ 		id=901112,
+ 		name=30901112,
+ 		describe="（遭遇战专用）蝠翼蛇的移动速度+30%",
+ 		type=1,
+ 		target={2351,2352,2353},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001},
+ 	parameters2={}
+},
+[901113] =
+{
+ 		id=901113,
+ 		name=30901113,
+ 		describe="（遭遇战专用）爆寄蟹获得1000点护盾",
+ 		type=1,
+ 		target={2304},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1012},
+ 	parameters2={}
+},
+[901114] =
+{
+ 		id=901114,
+ 		name=30901114,
+ 		describe="（遭遇战专用）全体敌方单位的攻击力+30%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901058},
+ 	parameters2={}
+},
+[901115] =
+{
+ 		id=901115,
+ 		name=30901115,
+ 		describe="（遭遇战专用）闪跃刀螂的移动速度+30%",
+ 		type=1,
+ 		target={2303},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001},
+ 	parameters2={}
+},
+[901116] =
+{
+ 		id=901116,
+ 		name=30901116,
+ 		describe="（遭遇战专用）全体敌方单位生命值+50%、物理防御力-80%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901056,901057},
+ 	parameters2={}
+},
+[901117] =
+{
+ 		id=901117,
+ 		name=30901117,
+ 		describe="（遭遇战专用）出现额外敌方单位",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={901207001,1,901207002,1,901207003,1,901207004,1,901207005,1,901207006,1,901207007,1,901207008,1,901207009,1,901207010,1,901207011,1,901207012,1,901207013,1,901207014,1,901207015,1,901207016,1,901207017,1,901207018,1,901207019,1,901207020,1,901207021,1,901207022,1},
+ 	parameters2={}
+},
+[901118] =
+{
+ 		id=901118,
+ 		name=30901118,
+ 		describe="（遭遇战专用）全体敌方单位移动速度+30%、受到的伤害+40%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001,1052},
+ 	parameters2={}
+},
+[901119] =
+{
+ 		id=901119,
+ 		name=30901119,
+ 		describe="（遭遇战专用）全体敌方单位的生命值低于50%时移动速度+80%（901120），物理、异能防御力-100%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901062,1027},
+ 	parameters2={}
+},
+[901120] =
+{
+ 		id=901120,
+ 		name=30901120,
+ 		describe="全体敌方单位的生命值低于50%时变的不可阻挡",
+ 		type=2,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901120101},
+ 	parameters2={}
+},
+[901121] =
+{
+ 		id=901121,
+ 		name=30901121,
+ 		describe="（遭遇战专用）全体敌方单位的生命值-40%，所有战员每秒能量恢复+1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901109,2011},
+ 	parameters2={}
+},
+[901122] =
+{
+ 		id=901122,
+ 		name=30901122,
+ 		describe="（遭遇战专用）全体敌方单位的生命值-30%，开关会自动开启",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901109,901102},
+ 	parameters2={}
+},
+[901123] =
+{
+ 		id=901123,
+ 		name=30901123,
+ 		describe="（遭遇战专用）全体战员、敌方单位生命值-40%(不包括温妮）",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={2015,901124},
+ 	parameters2={}
+},
+[901124] =
+{
+ 		id=901124,
+ 		name=30901124,
+ 		describe="（遭遇战专用）全体敌方单位生命值-40%",
+ 		type=1,
+ 		target={3301,3302,3303,3311,3312,3313,3321,3322,3323,3331,3332,3333,3341,3342,3343,3351,3352,3353},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901061},
+ 	parameters2={}
+},
+[901125] =
+{
+ 		id=901125,
+ 		name=30901125,
+ 		describe="（遭遇战专用）部署召唤资源消耗+25%，但升级资源消耗-1，每个区域出现额外首领敌方单位",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3011,3027},
+ 	parameters2={}
+},
+[901126] =
+{
+ 		id=901126,
+ 		name=30901126,
+ 		describe="P1-1普通类敌方单位的生命值+50%，且50%生命值以下时，会分裂出一个拥有当前生命值的分身，分裂出的分身也具有分裂效果",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901127,901128,901166},
+ 	parameters2={}
+},
+[901127] =
+{
+ 		id=901127,
+ 		name=30901127,
+ 		describe="哨兵获得分裂效果2",
+ 		type=2,
+ 		target={1302},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={210035303},
+ 	parameters2={}
+},
+[901128] =
+{
+ 		id=901128,
+ 		name=30901128,
+ 		describe="哨兵获得分裂效果3",
+ 		type=2,
+ 		target={1303},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={210035403},
+ 	parameters2={}
+},
+[901129] =
+{
+ 		id=901129,
+ 		name=30901129,
+ 		describe="P1-1速度类敌方单位获得自爆效果（100%伤害）",
+ 		type=2,
+ 		target={1311,1312,1313,2311,2312,2313,3311,3312,3313,4311,4312,4313,5311,5312,5313,5314,5315,5316},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={220045002},
+ 	parameters2={}
+},
+[901130] =
+{
+ 		id=901130,
+ 		name=30901130,
+ 		describe="P1-1初始资源点变更为600点，击杀敌方单位时，全体战员造成的伤害+1%（可叠加）",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901164,901165},
+ 	parameters2={}
+},
+[901131] =
+{
+ 		id=901131,
+ 		name=30901131,
+ 		describe="P1-2王大锤每秒恢复0.5%的生命值",
+ 		type=1,
+ 		target={1803},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999007201},
+ 	parameters2={}
+},
+[901132] =
+{
+ 		id=901132,
+ 		name=30901132,
+ 		describe="P1-2远程类敌方单位攻击时会对攻击范围内的友军进行治疗，战员周围没有友军时造成的伤害+30%、受到的伤害-30%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901169,901167,901168},
+ 	parameters2={}
+},
+[901133] =
+{
+ 		id=901133,
+ 		name=30901133,
+ 		describe="P1-2每个敌方单位每5秒会使周围的敌方单位攻击力+5%持续5秒（可叠加并刷新持续时间）",
+ 		type=2,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999905101},
+ 	parameters2={}
+},
+[901134] =
+{
+ 		id=901134,
+ 		name=30901134,
+ 		describe="P2-1爆居蟹在未被阻挡时获得隐形效果",
+ 		type=1,
+ 		target={2304},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={250110101},
+ 	parameters2={}
+},
+[901135] =
+{
+ 		id=901135,
+ 		name=30901135,
+ 		describe="P2-1所有敌方单位的攻击力+50%，处于毒气中时暂时失去该增益10秒",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901170,901171},
+ 	parameters2={}
+},
+[901136] =
+{
+ 		id=901136,
+ 		name=30901136,
+ 		describe="P2-1飞行怪移动速度+60%、生命值-50%",
+ 		type=1,
+ 		target={1351,1352,1353,2351,2352,2353,3351,3352,3353,5361,5362,5363,5364,5365,5366},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1038,901060},
+ 	parameters2={}
+},
+[901137] =
+{
+ 		id=901137,
+ 		name=30901137,
+ 		describe="P2-2毒气罐持续生效，战员的可部署位置增加",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901172,901173},
+ 	parameters2={}
+},
+[901138] =
+{
+ 		id=901138,
+ 		name=30901138,
+ 		describe="P2-2每当敌方单位受到毒气影响时获得不可阻挡，持续10秒",
+ 		type=2,
+ 		target={1705,1707},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999905401},
+ 	parameters2={}
+},
+[901139] =
+{
+ 		id=901139,
+ 		name=30901139,
+ 		describe="P2-2战员处于毒气中时，攻击力+30%、无法使用主动、自动技能",
+ 		type=2,
+ 		target={1705,1707},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999905501},
+ 	parameters2={}
+},
+[901140] =
+{
+ 		id=901140,
+ 		name=30901140,
+ 		describe="P3-1出现红色法师怪",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={901205001,1,901205002,1,901205003,1,901205004,1,901205005,1,901205006,1,901205007,1,901205022,1,901205009,1,901205010,1,901205011,1,901205012,1,901205013,1,901205014,1,901205015,1,901205016,1,901205017,1,901205023,1,901205019,1,901205020,1,901205021,1},
+ 	parameters2={}
+},
+[901141] =
+{
+ 		id=901141,
+ 		name=30901141,
+ 		describe="P3-1温妮会召唤自爆怪",
+ 		type=2,
+ 		target={3804},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999905601},
+ 	parameters2={}
+},
+[901142] =
+{
+ 		id=901142,
+ 		name=30901142,
+ 		describe="P3-1怪物移动速度+30%，每当敌方单位死亡时战员的专注度恢复+1持续1秒，重复获得可延长持续时间",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901174,901175},
+ 	parameters2={}
+},
+[901143] =
+{
+ 		id=901143,
+ 		name=30901143,
+ 		describe="P3-2出现红色远程怪，且额外出现的敌方单位物理、异能防御力-100%，但生命值+50%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901176,3025,901177},
+ 	parameters2={}
+},
+[901144] =
+{
+ 		id=901144,
+ 		name=30901144,
+ 		describe="P3-2敌方单位的物理防御、异能防御+100%，但生命值-50%（额外出现的敌方单位没有改加成）",
+ 		type=1,
+ 		target={3302,3312,3343,3322},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901066,901060},
+ 	parameters2={}
+},
+[901145] =
+{
+ 		id=901145,
+ 		name=30901145,
+ 		describe="P3-2能量塔的攻击速度-50%、伤害降低50%，但可以同时攻击5名敌方单位",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={901106001,1,901106007,1,901106008,1,901106004,1},
+ 	parameters2={}
+},
+[901146] =
+{
+ 		id=901146,
+ 		name=30901146,
+ 		describe="P4-1普通类、速度类敌方单位的移动速度+80%，近战敌方单位的攻击力+100%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901178,901179},
+ 	parameters2={}
+},
+[901147] =
+{
+ 		id=901147,
+ 		name=30901147,
+ 		describe="P4-1重装类敌方单位的生命值-50%，物理防御、异能防御+100%，50%生命值以下时，会分裂出一个拥有当前生命值的分身，分裂出的分身也具有分裂效果",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901148,901149,901150},
+ 	parameters2={}
+},
+[901148] =
+{
+ 		id=901148,
+ 		name=30901148,
+ 		describe="重装类敌方单位的生命值-50%，物理防御、异能防御+100%",
+ 		type=1,
+ 		target={1341,1342,1343,2341,2342,2343,3341,3342,3343,4351,4352,4353,5351,5352,5353,5354,5355,5356},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901060,901066},
+ 	parameters2={}
+},
+[901149] =
+{
+ 		id=901149,
+ 		name=30901149,
+ 		describe="鲨熊2的生命值50%以下时分裂，且分身也会分裂",
+ 		type=2,
+ 		target={2342},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={230425101},
+ 	parameters2={}
+},
+[901150] =
+{
+ 		id=901150,
+ 		name=30901150,
+ 		describe="鲨熊3的生命值50%以下时分裂，且分身也会分裂",
+ 		type=2,
+ 		target={2343},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={230425102},
+ 	parameters2={}
+},
+[901151] =
+{
+ 		id=901151,
+ 		name=30901151,
+ 		describe="P4-1治疗类战员的部署资源消耗+200%",
+ 		type=3,
+ 		target={106},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={20000,0},
+ 	parameters2={}
+},
+[901152] =
+{
+ 		id=901152,
+ 		name=30901152,
+ 		describe="P4-2跃迁螳螂的移动速度+80%，生命值50%以下时失去该加成",
+ 		type=1,
+ 		target={2303},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999010501},
+ 	parameters2={}
+},
+[901153] =
+{
+ 		id=901153,
+ 		name=30901153,
+ 		describe="P4-2爆居蟹的自爆伤害范围变为全屏范围(不可穿透掩体)，全体战员的部署资源消耗-50%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901180,3036},
+ 	parameters2={}
+},
+[901154] =
+{
+ 		id=901154,
+ 		name=30901154,
+ 		describe="P4-2全体敌方单位的移动速度-40%，生命值50%以下时+80%（不包括跃迁螳螂）",
+ 		type=1,
+ 		target={1301,1302,1303,1311,1312,1313,1321,1322,1323,1331,1332,1333,1341,1342,1343,1351,1352,1353,2301,2302,2306,2304,2307,2308,2311,2312,2313,2321,2322,2323,2331,2332,2333,2341,2342,2343,2351,2352,2353,3301,3302,3303,3311,3312,3313,3321,3322,3323,3331,3332,3333,3341,3342,3343,3351,3352,3353,4301,4302,4303,4311,4312,4313,4321,4322,4323,4331,4332,4333,4341,4343,4351,4352,4353,4361,4362,4363,4371,4372,4373,5301,5302,5303,5304,5305,5306,5307,5308,5307,5311,5312,5313,5314,5315,5316,5321,5322,5323,5324,5325,5326,5331,5332,5333,5334,5335,5336,5341,5342,5343,5344,5345,5346,5351,5352,5353,5354,5355,5356,5361,5362,5363,5364,5365,5366,5371},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999010601},
+ 	parameters2={}
+},
+[901155] =
+{
+ 		id=901155,
+ 		name=30901155,
+ 		describe="P5-1部署召唤资源消耗-100%，战员再部署时间-25秒（除刺客类战员以外），战员被部署时造成的伤害+50%、受到的伤害-50%持续15秒",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={3037,901181,901182},
+ 	parameters2={}
+},
+[901156] =
+{
+ 		id=901156,
+ 		name=30901156,
+ 		describe="P5-1全体敌方单位的生命值50%以上时，攻击速度+100%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999010801},
+ 	parameters2={}
+},
+[901157] =
+{
+ 		id=901157,
+ 		name=30901157,
+ 		describe="P5-1提亚马特之环被战员击杀时，使全体敌方单位眩晕5秒并使其受到的伤害+40%，持续10秒（若提亚马特之环处于水中则无法触发该效果）",
+ 		type=2,
+ 		target={4321,4322,4323},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999905901},
+ 	parameters2={}
+},
+[901158] =
+{
+ 		id=901158,
+ 		name=30901158,
+ 		describe="P5-2普通类敌方单位死亡时自爆,当敌方单位生命值降至50%以下时，会产生额外战中升级资源",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901183,901184},
+ 	parameters2={}
+},
+[901159] =
+{
+ 		id=901159,
+ 		name=30901159,
+ 		describe="P5-2暗鲨50%生命值以下时，会分裂出一个拥有当前生命值的分身，分裂出的分身也具有分裂效果",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901160,901161},
+ 	parameters2={}
+},
+[901160] =
+{
+ 		id=901160,
+ 		name=30901160,
+ 		describe="暗鲨1分裂",
+ 		type=2,
+ 		target={4361},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={210035503},
+ 	parameters2={}
+},
+[901161] =
+{
+ 		id=901161,
+ 		name=30901161,
+ 		describe="暗鲨2分裂",
+ 		type=2,
+ 		target={4362},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={210035603},
+ 	parameters2={}
+},
+[901162] =
+{
+ 		id=901162,
+ 		name=30901162,
+ 		describe="P5-2神弃之子未受到攻击时每5秒攻击力增加5%（可叠加），遭到攻击后清除该BUFF已叠加的层数",
+ 		type=2,
+ 		target={4802},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999906001,999906101},
+ 	parameters2={}
+},
+[901163] =
+{
+ 		id=901163,
+ 		name=30901163,
+ 		describe="第二周期大词条：重装类战员的阻挡数+2、战士类战员的阻挡数+1、可上阵战员数-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={2016,2017},
+ 	parameters2={}
+},
+[901164] =
+{
+ 		id=901164,
+ 		name=30901164,
+ 		describe="P1-1关卡初始费用变更为600",
+ 		type=10,
+ 		target={0},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={600},
+ 	parameters2={}
+},
+[901165] =
+{
+ 		id=901165,
+ 		name=30901165,
+ 		describe="击杀敌方单位时，全体战员造成的伤害+1%（可叠加）",
+ 		type=2,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999907801},
+ 	parameters2={}
+},
+[901166] =
+{
+ 		id=901166,
+ 		name=30901166,
+ 		describe="普通类敌方单位的生命值+50%",
+ 		type=1,
+ 		target={1301,1302,1303,2301,2302,2306,3301,3302,3303,4301,4302,4303,5301,5302,5303,5304,5305,5306,5307,5308,5307},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901056},
+ 	parameters2={}
+},
+[901167] =
+{
+ 		id=901167,
+ 		name=30901167,
+ 		describe="战员周围没有友军时，造成的伤害+50%、受到的伤害-30%",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999009401},
+ 	parameters2={}
+},
+[901168] =
+{
+ 		id=901168,
+ 		name=30901168,
+ 		describe="上述的反面词条，用于取消改加成",
+ 		type=2,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999907901},
+ 	parameters2={}
+},
+[901169] =
+{
+ 		id=901169,
+ 		name=30901169,
+ 		describe="P1-2远程类敌方单位攻击时会对攻击范围内的友军进行自身攻击力60%的治疗",
+ 		type=2,
+ 		target={1321,1322,1323,2321,2322,2323,3321,3322,3323},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999908001,999908101},
+ 	parameters2={}
+},
+[901170] =
+{
+ 		id=901170,
+ 		name=30901170,
+ 		describe="P2-1所有敌方单位的攻击力+50%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901063},
+ 	parameters2={}
+},
+[901171] =
+{
+ 		id=901171,
+ 		name=30901171,
+ 		describe="处于毒气中时敌方单位攻击力-50%",
+ 		type=2,
+ 		target={1705,1707},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999905301},
+ 	parameters2={}
+},
+[901172] =
+{
+ 		id=901172,
+ 		name=30901172,
+ 		describe="P2-2毒气罐持续生效",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={901104014,1,901104015,1,901104016,1,901104004,1,901104005,1,901104006,1,901104007,1,901104012,1,901104013,1},
+ 	parameters2={}
+},
+[901173] =
+{
+ 		id=901173,
+ 		name=30901173,
+ 		describe="P2-2战员可部署位增加",
+ 		type=12,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={38,3,39,3,41,3,42,3,43,3,50,3,51,3,52,3,53,3,55,3,63,3,64,3,65,3,66,3,67,3,75,3,76,3,77,3,79,3,86,3,87,3,89,3,90,3,91,3,98,3,101,3,102,3,103,3,110,3,111,3,113,3,115,3},
+ 	parameters2={}
+},
+[901174] =
+{
+ 		id=901174,
+ 		name=30901174,
+ 		describe="P3-1每当敌方单位死亡时战员的专注度恢复+1持续1秒，重复获得该增益使持续时间延长",
+ 		type=2,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999908201},
+ 	parameters2={}
+},
+[901175] =
+{
+ 		id=901175,
+ 		name=30901175,
+ 		describe="P3-1怪物移动速度+30%",
+ 		type=1,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={4001},
+ 	parameters2={}
+},
+[901176] =
+{
+ 		id=901176,
+ 		name=30901176,
+ 		describe="P3-2出现红色远程怪",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={901206001,1,901206002,1,901206003,1,901206004,1,901206005,1,901206006,1,901206007,1,901206008,1,901206009,1,901206010,1,901206026,1,901206012,1,901206013,1,901206014,1,901206015,1,901206027,1,901206017,1,901206018,1,901206019,1,901206020,1,901206021,1,901206022,1,901206023,1,901206028,1,901206025,1},
+ 	parameters2={}
+},
+[901177] =
+{
+ 		id=901177,
+ 		name=30901177,
+ 		describe="P3-2额外出现的敌方单位物理、异能防御力-100%，但生命值+50%",
+ 		type=1,
+ 		target={3323},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901062,901056},
+ 	parameters2={}
+},
+[901178] =
+{
+ 		id=901178,
+ 		name=30901178,
+ 		describe="P4-1普通类、速度类敌方单位的移动速度+80%",
+ 		type=1,
+ 		target={1301,1302,1303,2301,2302,2306,3301,3302,3303,4301,4302,4303,5301,5302,5303,5304,5305,5306,5307,5308,5307,1311,1312,1313,2311,2312,2313,3311,3312,3313,4311,4312,4313,5311,5312,5313,5314,5315,5316},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1005},
+ 	parameters2={}
+},
+[901179] =
+{
+ 		id=901179,
+ 		name=30901179,
+ 		describe="P4-1近战敌方单位的攻击力+100%",
+ 		type=1,
+ 		target={2301,2302,2304,2306,2303,2311,2312,2313,2341,2342,2343},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901070},
+ 	parameters2={}
+},
+[901180] =
+{
+ 		id=901180,
+ 		name=30901180,
+ 		describe="P4-2爆居蟹的自爆伤害范围变为全屏范围(不可穿透掩体)",
+ 		type=1,
+ 		target={2304},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999007401},
+ 	parameters2={}
+},
+[901181] =
+{
+ 		id=901181,
+ 		name=30901181,
+ 		describe="P5-1战员再部署时间-25秒（除刺客类战员以外）",
+ 		type=4,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=2,
+ 		parameters={-25000},
+ 	parameters2={}
+},
+[901182] =
+{
+ 		id=901182,
+ 		name=30901182,
+ 		describe="P5-1战员被部署时造成的伤害+50%持续15秒",
+ 		type=2,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999908501},
+ 	parameters2={}
+},
+[901183] =
+{
+ 		id=901183,
+ 		name=30901183,
+ 		describe="P5-2当敌方单位生命值降至50%以下时，获得额外战中升级资源",
+ 		type=2,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999908601},
+ 	parameters2={}
+},
+[901184] =
+{
+ 		id=901184,
+ 		name=30901184,
+ 		describe="P5-2普通类敌方单位死亡时自爆",
+ 		type=2,
+ 		target={1301,1302,1303,2301,2302,2306,3301,3302,3303,4301,4302,4303,5301,5302,5303,5304,5305,5306,5307,5308,5307},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={220045002},
+ 	parameters2={}
+},
+[901185] =
+{
+ 		id=901185,
+ 		name=30901185,
+ 		describe="P1-1普通类敌方单位的生命值+50%，所有战员的部署资源消耗-25%、升级资源消耗-1",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901221,3009,3027},
+ 	parameters2={}
+},
+[901186] =
+{
+ 		id=901186,
+ 		name=30901186,
+ 		describe="P1-1重装类敌方单位的移动速度+80%，物理防御、异能防御-100%",
+ 		type=1,
+ 		target={1341,1342,1343,2341,2342,2343,3341,3342,3343,4351,4352,4353,5351,5352,5353,5354,5355,5356},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1005,901062},
+ 	parameters2={}
+},
+[901187] =
+{
+ 		id=901187,
+ 		name=30901187,
+ 		describe="P1-1额外部署2个自爆桶，但会对所有单位造成伤害",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={901101001,1,901101002,1,901101003,1,901101004,1},
+ 	parameters2={}
+},
+[901188] =
+{
+ 		id=901188,
+ 		name=30901188,
+ 		describe="P1-2王大锤的物理、异能防御+50%，每次攻击时损失自身3%生命值，战员的部署资源消耗-50%,当敌方单位生命值降至50%以下时，获得额外战中升级资源消耗",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901222,901223,3036,901183},
+ 	parameters2={}
+},
+[901189] =
+{
+ 		id=901189,
+ 		name=30901189,
+ 		describe="P1-2重装类敌方单位死亡时会召唤2个普通类敌方单位",
+ 		type=2,
+ 		target={1341,1342,1343,2341,2342,2343,3341,3342,3343,4351,4352,4353,5351,5352,5353,5354,5355,5356},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999906301,999906302},
+ 	parameters2={}
+},
+[901190] =
+{
+ 		id=901190,
+ 		name=30901190,
+ 		describe="P1-2远程类、异能类敌方单位死亡时召唤1个普通类敌方单位",
+ 		type=2,
+ 		target={1321,1322,1323,2321,2322,2323,3321,3322,3323,4321,4322,4323,1331,1332,1333,2331,2332,2333,3331,3332,3333,4321,4322,4323,4371,4372,4373,5341,5342,5343,5344,5345,5346},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999906301},
+ 	parameters2={}
+},
+[901191] =
+{
+ 		id=901191,
+ 		name=30901191,
+ 		describe="P2-1爆居蟹死亡时会召唤1个爆居蟹，爆居蟹造成的伤害-30%",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901225,901226},
+ 	parameters2={}
+},
+[901192] =
+{
+ 		id=901192,
+ 		name=30901192,
+ 		describe="P2-1蝠翼蛇死亡时对所有单位造成自身最大生命值10%的伤害",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901227,901228},
+ 	parameters2={}
+},
+[901193] =
+{
+ 		id=901193,
+ 		name=30901193,
+ 		describe="P2-1处于毒气中的敌方单位受到的伤害+50%",
+ 		type=2,
+ 		target={1705,1707},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999906601},
+ 	parameters2={}
+},
+[901194] =
+{
+ 		id=901194,
+ 		name=30901194,
+ 		describe="P2-2温妮处于毒气中时物理、异能防御-1%（可叠加）",
+ 		type=2,
+ 		target={1705,1707},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999909001},
+ 	parameters2={}
+},
+[901195] =
+{
+ 		id=901195,
+ 		name=30901195,
+ 		describe="P2-2全体怪物处于毒气中时，攻击速度+50%",
+ 		type=2,
+ 		target={1705,1707},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999906701},
+ 	parameters2={}
+},
+[901196] =
+{
+ 		id=901196,
+ 		name=30901196,
+ 		describe="P2-2所有战员处于毒气中时，造成的伤害+50%",
+ 		type=2,
+ 		target={1705,1707},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999906801},
+ 	parameters2={}
+},
+[901197] =
+{
+ 		id=901197,
+ 		name=30901197,
+ 		describe="P3-1温妮存活时所有战员每秒受到自身最大生命值2%的伤害，同时每秒扣除温妮自身最大生命值的0.2%（最多扣除80%），废弃军备箱变更为高级资源消耗箱",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901229,901230},
+ 	parameters2={}
+},
+[901198] =
+{
+ 		id=901198,
+ 		name=30901198,
+ 		describe="P3-1重装类敌方单位死亡时，赋予所有战员单位2000点的护盾",
+ 		type=2,
+ 		target={1341,1342,1343,2341,2342,2343,3341,3342,3343,4351,4352,4353,5351,5352,5353,5354,5355,5356},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999907001},
+ 	parameters2={}
+},
+[901199] =
+{
+ 		id=901199,
+ 		name=30901199,
+ 		describe="P3-1能量塔提供资源消耗时，所有战员会恢复些许生命值",
+ 		type=2,
+ 		target={1801},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999907101},
+ 	parameters2={}
+},
+[901200] =
+{
+ 		id=901200,
+ 		name=30901200,
+ 		describe="P3-2普通类敌方单位的数量翻倍",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={901206001,1,901206002,1,901206003,1,901206004,1,901206005,1,901206006,1,901206007,1,901206008,1,901206009,1,901206010,1,901206011,1,901206012,1,901206013,1,901206014,1,901206015,1,901206016,1,901206017,1,901206018,1,901206019,1,901206020,1,901206021,1,901206022,1,901206023,1,901206024,1,901206025,1,901206029,1,901206030,1,901206031,1,901206032,1},
+ 	parameters2={}
+},
+[901201] =
+{
+ 		id=901201,
+ 		name=30901201,
+ 		describe="P3-2重装类敌方单位获得吸血50%，每当敌方单位死亡时战员的专注度恢复+2持续1秒，重复获得该增益使持续时间延长",
+ 		target={0},
+ 		ignoreTarget={1061,1761,2004,2005,2304,2305,2704,2705},
+ 		parameters={901231,901174},
+ 	parameters2={}
+},
+[901202] =
+{
+ 		id=901202,
+ 		name=30901202,
+ 		describe="P3-2能量塔产生的资源消耗翻倍，可部署战员上限变为7",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901232,3008},
+ 	parameters2={}
+},
+[901203] =
+{
+ 		id=901203,
+ 		name=30901203,
+ 		describe="P4-1普通类、速度类敌方单位死亡时会对所有战员造成伤害",
+ 		type=2,
+ 		target={1301,1302,1303,2301,2302,2306,3301,3302,3303,4301,4302,4303,5301,5302,5303,5304,5305,5306,5307,5308,5307,1311,1312,1313,2311,2312,2313,3311,3312,3313,4311,4312,4313,5311,5312,5313,5314,5315,5316},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999907201},
+ 	parameters2={}
+},
+[901204] =
+{
+ 		id=901204,
+ 		name=30901204,
+ 		describe="P4-1远程类敌方单位的攻击速度+50%",
+ 		type=1,
+ 		target={1321,1322,1323,2321,2322,2323,3321,3322,3323,4321,4322,4323},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1011},
+ 	parameters2={}
+},
+[901205] =
+{
+ 		id=901205,
+ 		name=30901205,
+ 		describe="P4-1异能类敌方单位受到的伤害-90%",
+ 		type=1,
+ 		target={1331,1332,1333,2331,2332,2333,3331,3332,3333,4321,4322,4323,4371,4372,4373,5341,5342,5343,5344,5345,5346},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1025},
+ 	parameters2={}
+},
+[901206] =
+{
+ 		id=901206,
+ 		name=30901206,
+ 		describe="P4-2爆居蟹死亡时不再造成伤害，而是为所有敌方单位恢复生命值",
+ 		type=1,
+ 		target={2304},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999008701},
+ 	parameters2={}
+},
+[901207] =
+{
+ 		id=901207,
+ 		name=30901207,
+ 		describe="P4-2奎恩熊每次攻击使自身造成的伤害+15%（可叠加）",
+ 		type=2,
+ 		target={2804},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999907401},
+ 	parameters2={}
+},
+[901208] =
+{
+ 		id=901208,
+ 		name=30901208,
+ 		describe="P4-2奎恩熊的生命值+100%，物理防御、异能防御-50%",
+ 		type=1,
+ 		target={2804},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901065,901067},
+ 	parameters2={}
+},
+[901209] =
+{
+ 		id=901209,
+ 		name=30901209,
+ 		describe="P5-1出现额外的漂浮台，部署位变更，上下各3个漂浮台，漂浮台以外部署位大量减少",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901210,901211},
+ 	parameters2={}
+},
+[901210] =
+{
+ 		id=901210,
+ 		name=30901210,
+ 		describe="出现额外的漂浮台，部署位变更，上下各3个漂浮台",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={901109007,1,901109008,1,901109009,1},
+ 	parameters2={}
+},
+[901211] =
+{
+ 		id=901211,
+ 		name=30901211,
+ 		describe="路上部署位大量减少",
+ 		type=12,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={29,3},
+ 	parameters2={}
+},
+[901212] =
+{
+ 		id=901212,
+ 		name=30901212,
+ 		describe="P5-1敌方类型变更（除了法师和飞盘以外都改成杂鱼、速度）",
+ 		type=6,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={901309025,1,901309026,1,901309027,1,901309028,1,901309029,1,901309030,1,901309031,1,901309032,1,901309033,1,901309034,1,901309035,1,901309036,1,901309037,1,901309038,1,901309039,1,901309040,1,901309041,1,901309042,1,901309043,1,901309044,1,901309045,1,901309046,1,901309047,1,901309048,1},
+ 	parameters2={}
+},
+[901213] =
+{
+ 		id=901213,
+ 		name=30901213,
+ 		describe="P5-1全体敌方单位受到攻击时移动速度-80%持续1秒",
+ 		type=2,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999907501},
+ 	parameters2={}
+},
+[901214] =
+{
+ 		id=901214,
+ 		name=30901214,
+ 		describe="P5-2战员受到的治疗量-50%，但获得100%吸血",
+ 		type=1,
+ 		target={2},
+ 		ignoreTarget={1061,1761,2004,2005,2304,2305,2704,2705},
+ 		entry=3,
+ 		parameters={2015,1010},
+ 	parameters2={}
+},
+[901215] =
+{
+ 		id=901215,
+ 		name=30901215,
+ 		describe="P5-2击杀敌方单位时所有战员造成的伤害+2%（可叠加）",
+ 		type=2,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999907601},
+ 	parameters2={}
+},
+[901216] =
+{
+ 		id=901216,
+ 		name=30901216,
+ 		describe="P5-2有敌方单位被击杀时，全体敌方单位的攻击速度+5%（可叠加）",
+ 		type=2,
+ 		target={1},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999907701},
+ 	parameters2={}
+},
+[901217] =
+{
+ 		id=901217,
+ 		name=30901217,
+ 		describe="第三周期大词条：当敌方单位死亡时，所有敌方单位全属性+5%(可叠加）。当战员被击败撤退时，全体战员全属性+10%，每秒恢复的专注度+1，持续15秒。召唤物被摧毁时，全体战员全属性+5%（可与战员叠加）。",
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		parameters={901218,901219,901220},
+ 	parameters2={}
+},
+[901218] =
+{
+ 		id=901218,
+ 		name=30901218,
+ 		describe="第三周期大词条：当敌方单位死亡时，所有敌方单位的攻击、物理防御、异能防御+2%(可叠加）",
+ 		type=2,
+ 		target={1},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999908701},
+ 	parameters2={}
+},
+[901219] =
+{
+ 		id=901219,
+ 		name=30901219,
+ 		describe="第三周期大词条：当我方战员被击败撤退时，全体我方战员全属性+15%，每秒恢复的专注度+1，持续15秒。",
+ 		type=2,
+ 		target={2},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999908801},
+ 	parameters2={}
+},
+[901220] =
+{
+ 		id=901220,
+ 		name=30901220,
+ 		describe="第三周期大词条：召唤物撤退时，全体我方战员全属性+5%（可与战员叠加）。",
+ 		type=2,
+ 		target={5},
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999908901},
+ 	parameters2={}
+},
+[901221] =
+{
+ 		id=901221,
+ 		name=30901221,
+ 		describe="普通类敌方单位的生命值+50%",
+ 		type=1,
+ 		target={1301,1302,1303,2301,2302,2306,3301,3302,3303,4301,4302,4303,5301,5302,5303,5304,5305,5306,5307,5308,5307},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901056},
+ 	parameters2={}
+},
+[901222] =
+{
+ 		id=901222,
+ 		name=30901222,
+ 		describe="P1-2王大锤的所有属性+30%",
+ 		type=1,
+ 		target={1803},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={901073},
+ 	parameters2={}
+},
+[901223] =
+{
+ 		id=901223,
+ 		name=30901223,
+ 		describe="P1-2王大锤被阻挡时每秒损失3%生命值",
+ 		type=2,
+ 		target={1803},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999906201},
+ 	parameters2={}
+},
+[901224] =
+{
+ 		id=901224,
+ 		name=30901224,
+ 		describe="P1-2关卡初始费用变更为600",
+ 		type=10,
+ 		target={0},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={600},
+ 	parameters2={}
+},
+[901225] =
+{
+ 		id=901225,
+ 		name=30901225,
+ 		describe="P2-1爆居蟹死亡时会召唤1个爆居蟹",
+ 		type=2,
+ 		target={2304},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999906401},
+ 	parameters2={}
+},
+[901226] =
+{
+ 		id=901226,
+ 		name=30901226,
+ 		describe="P2-1爆居蟹造成的伤害-30%",
+ 		type=1,
+ 		target={2304},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1081},
+ 	parameters2={}
+},
+[901227] =
+{
+ 		id=901227,
+ 		name=30901227,
+ 		describe="P2-1蝠翼蛇死亡时对所有单位造成自身最大生命值10%的伤害",
+ 		type=2,
+ 		target={1351,1352,1353,2351,2352,2353,3351,3352,3353,5361,5362,5363,5364,5365,5366},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999906501},
+ 	parameters2={}
+},
+[901228] =
+{
+ 		id=901228,
+ 		name=30901228,
+ 		describe="P2-1蝠翼蛇的移动速度-30%",
+ 		type=1,
+ 		target={1351,1352,1353,2351,2352,2353,3351,3352,3353,5361,5362,5363,5364,5365,5366},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={1097},
+ 	parameters2={}
+},
+[901229] =
+{
+ 		id=901229,
+ 		name=30901229,
+ 		describe="P3-1温妮存活时，所有战员每秒受到自身最大生命值2%的伤害",
+ 		type=2,
+ 		target={3804},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999906901,999909101},
+ 	parameters2={}
+},
+[901230] =
+{
+ 		id=901230,
+ 		name=30901230,
+ 		describe="P3-1废弃军备箱变更为资源消耗箱",
+ 		type=7,
+ 		target={0},
+ 		ignoreTarget={1061,1761},
+ 		entry=1,
+ 		parameters={901105001,1,901105006,1,901105007,1,901105011,1,901105010,1},
+ 	parameters2={}
+},
+[901231] =
+{
+ 		id=901231,
+ 		name=30901231,
+ 		describe="P3-2重装类敌方单位获得吸血50%",
+ 		type=1,
+ 		target={1341,1342,1343,2341,2342,2343,3341,3342,3343,4351,4352,4353,5351,5352,5353,5354,5355,5356},
+ 		targetCondition=2,
+ 		ignoreTarget={1061,1761,2004,2005,2304,2305,2704,2705},
+ 		entry=3,
+ 		parameters={4003},
+ 	parameters2={}
+},
+[901232] =
+{
+ 		id=901232,
+ 		name=30901232,
+ 		describe="P3-2能量塔产生的资源消耗翻倍",
+ 		type=1,
+ 		target={1801},
+ 		targetCondition=5,
+ 		ignoreTarget={1061,1761},
+ 		entry=3,
+ 		parameters={999008501},
+ 	parameters2={}
+},
+[11000101] =
+{
+ 		id=11000101,
+ 		describe="阿什琳词条：所有射手+7%暴击率",
+ 		type=1,
+ 		target={102},
+ 		entry=3,
+ 		parameters={1100010101},
+ 	parameters2={}
+},
+[11000201] =
+{
+ 		id=11000201,
+ 		describe="丽贝卡词条：自己减费",
+ 		type=16,
+ 		target={110002},
+ 		targetCondition=1,
+ 		entry=2,
+ 		parameters={1,-4,0},
+ 	parameters2={}
+},
+[11000301] =
+{
+ 		id=11000301,
+ 		describe="安息香词条：指挥官技能免费一次",
+ 		type=18,
+ 		target={3},
+ 		entry=1,
+ 		parameters={1},
+ 	parameters2={}
+},
+[1100031] =
+{
+ 		id=1100031,
+ 		describe="安息香属性+（好感度临时",
+ 		type=1,
+ 		target={110003},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={30001},
+ 	parameters2={}
+},
+[1100032] =
+{
+ 		id=1100032,
+ 		describe="安息香属性+（好感度临时",
+ 		type=1,
+ 		target={110003},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={30002},
+ 	parameters2={}
+},
+[1100040101] =
+{
+ 		id=1100040101,
+ 		describe="希格德莉法词条：所有星盟+暴击",
+ 		type=1,
+ 		target={201},
+ 		entry=3,
+ 		parameters={1100046001},
+ 	parameters2={}
+},
+[1100096001] =
+{
+ 		id=1100096001,
+ 		describe="波尼词条：编入队伍时所有战员+15装甲和星防。",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={1100096001},
+ 	parameters2={}
+},
+[1200020101] =
+{
+ 		id=1200020101,
+ 		describe="马蒂尔达词条：编入队伍时所有财团战员增加血量上限",
+ 		type=1,
+ 		target={202},
+ 		entry=3,
+ 		parameters={1200021201},
+ 	parameters2={}
+},
+[1200056001] =
+{
+ 		id=1200056001,
+ 		describe="莫妮卡词条：治疗加奶",
+ 		type=1,
+ 		target={106},
+ 		entry=3,
+ 		parameters={1200052201},
+ 	parameters2={}
+},
+[1300056101] =
+{
+ 		id=1300056101,
+ 		describe="菲碧词条：法师加攻",
+ 		type=1,
+ 		target={104},
+ 		entry=3,
+ 		parameters={1300056101},
+ 	parameters2={}
+},
+[1300056102] =
+{
+ 		id=1300056102,
+ 		describe="菲碧词条：法师加攻",
+ 		type=1,
+ 		target={104},
+ 		entry=3,
+ 		parameters={1300056102},
+ 	parameters2={}
+},
+[1400010101] =
+{
+ 		id=1400010101,
+ 		describe="鸫词条：AI-升级资源消耗",
+ 		type=3,
+ 		target={204},
+ 		entry=2,
+ 		parameters={0,-7},
+ 	parameters2={}
+},
+[1400020101] =
+{
+ 		id=1400020101,
+ 		describe="奈美词条：AI加护盾",
+ 		type=1,
+ 		target={204},
+ 		entry=3,
+ 		parameters={1400020701},
+ 	parameters2={}
+},
+[1300059401] =
+{
+ 		id=1300059401,
+ 		describe="菲碧词条：法师上阵费用降低",
+ 		type=3,
+ 		target={104},
+ 		entry=2,
+ 		parameters={0,-6},
+ 	parameters2={}
+},
+[701101] =
+{
+ 		id=701101,
+ 		name=30701101,
+ 		describe="◆所有战员增加25%生命值",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701101},
+ 	parameters2={}
+},
+[701102] =
+{
+ 		id=701102,
+ 		name=30701102,
+ 		describe="◆◆所有战员增加50%生命值",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701102},
+ 	parameters2={}
+},
+[701103] =
+{
+ 		id=701103,
+ 		name=30701103,
+ 		describe="◆所有战员增加5%攻击力",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701103},
+ 	parameters2={}
+},
+[701104] =
+{
+ 		id=701104,
+ 		name=30701104,
+ 		describe="◆◆所有战员增加10%攻击力",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701104},
+ 	parameters2={}
+},
+[701105] =
+{
+ 		id=701105,
+ 		name=30701105,
+ 		describe="◆所有战员增加15%物理防御力与异能防御力",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701105},
+ 	parameters2={}
+},
+[701106] =
+{
+ 		id=701106,
+ 		name=30701106,
+ 		describe="◆◆所有战员增加30%物理防御力与异能防御力",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701106},
+ 	parameters2={}
+},
+[701107] =
+{
+ 		id=701107,
+ 		name=30701107,
+ 		describe="◆所有战员部署资源消耗-8点",
+ 		type=3,
+ 		target={2},
+ 		entry=2,
+ 		parameters={0,-8},
+ 	parameters2={}
+},
+[701108] =
+{
+ 		id=701108,
+ 		name=30701108,
+ 		describe="◆◆所有战员部署资源消耗-16点",
+ 		type=3,
+ 		target={2},
+ 		entry=2,
+ 		parameters={0,-16},
+ 	parameters2={}
+},
+[701109] =
+{
+ 		id=701109,
+ 		name=30701109,
+ 		describe="◆所有战员增加6%造成的物理伤害",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701109},
+ 	parameters2={}
+},
+[701110] =
+{
+ 		id=701110,
+ 		name=30701110,
+ 		describe="◆◆所有战员增加12%造成的物理伤害",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701110},
+ 	parameters2={}
+},
+[701111] =
+{
+ 		id=701111,
+ 		name=30701111,
+ 		describe="◆所有战员增加6%造成的异能伤害",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701111},
+ 	parameters2={}
+},
+[701112] =
+{
+ 		id=701112,
+ 		name=30701112,
+ 		describe="◆◆所有战员增加12%造成的异能伤害",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701112},
+ 	parameters2={}
+},
+[701113] =
+{
+ 		id=701113,
+ 		name=30701113,
+ 		describe="◆所有战员增加8%暴击率",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701113},
+ 	parameters2={}
+},
+[701114] =
+{
+ 		id=701114,
+ 		name=30701114,
+ 		describe="◆◆所有战员增加16%暴击率",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701114},
+ 	parameters2={}
+},
+[701115] =
+{
+ 		id=701115,
+ 		name=30701115,
+ 		describe="◆所有战员增加8%吸血",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701115},
+ 	parameters2={}
+},
+[701116] =
+{
+ 		id=701116,
+ 		name=30701116,
+ 		describe="◆◆所有战员增加16%吸血",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701116},
+ 	parameters2={}
+},
+[701117] =
+{
+ 		id=701117,
+ 		name=30701117,
+ 		describe="◆所有战员受到的物理伤害与异能伤害-10%",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701117},
+ 	parameters2={}
+},
+[701118] =
+{
+ 		id=701118,
+ 		name=30701118,
+ 		describe="◆◆所有战员受到的物理伤害与异能伤害-20%",
+ 		type=1,
+ 		target={2},
+ 		entry=3,
+ 		parameters={701118},
+ 	parameters2={}
+},
+[702101] =
+{
+ 		id=702101,
+ 		name=30702101,
+ 		describe="◆◆◆使用星舰技能后，场上所有阵营为星盟的战员增加11%攻击力，可叠加3层。",
+ 		type=2,
+ 		target={201},
+ 		entry=3,
+ 		parameters={70210101},
+ 	parameters2={}
+},
+[702102] =
+{
+ 		id=702102,
+ 		name=30702102,
+ 		describe="◆◆◆所有阵营为财团的战员攻击附带『融甲』的敌人造成的伤害增加25%",
+ 		type=2,
+ 		target={202},
+ 		entry=3,
+ 		parameters={70210201},
+ 	parameters2={}
+},
+[702103] =
+{
+ 		id=702103,
+ 		name=30702103,
+ 		describe="◆◆◆所有阵营为尼比鲁的战员每秒额外恢复1点能量",
+ 		type=1,
+ 		target={203},
+ 		entry=3,
+ 		parameters={702103},
+ 	parameters2={}
+},
+[702104] =
+{
+ 		id=702104,
+ 		name=30702104,
+ 		describe="◆◆◆所有阵营为AI的战员攻击与释放技能时获得当前护盾25%的攻击力，持续1秒。",
+ 		type=2,
+ 		target={204},
+ 		entry=3,
+ 		parameters={70210401},
+ 	parameters2={}
+},
+[702105] =
+{
+ 		id=702105,
+ 		name=30702105,
+ 		describe="◆◆◆先行会战员：部署后每<color=#E54B4B>3</color>秒增加<color=#E54B4B>2</color>念力值",
+ 		type=1,
+ 		target={205},
+ 		entry=3,
+ 		parameters={702105},
+ 	parameters2={}
+},
+[703101] =
+{
+ 		id=703101,
+ 		name=30703101,
+ 		describe="◆所有职业为远攻的战员增加7%攻击力",
+ 		type=1,
+ 		target={102},
+ 		entry=3,
+ 		parameters={703101},
+ 	parameters2={}
+},
+[703102] =
+{
+ 		id=703102,
+ 		name=30703102,
+ 		describe="◆◆所有职业为远攻的战员增加14%攻击力",
+ 		type=1,
+ 		target={102},
+ 		entry=3,
+ 		parameters={703102},
+ 	parameters2={}
+},
+[703103] =
+{
+ 		id=703103,
+ 		name=30703103,
+ 		describe="◆所有职业为远攻的战员增加8%造成的物理伤害",
+ 		type=1,
+ 		target={102},
+ 		entry=3,
+ 		parameters={703103},
+ 	parameters2={}
+},
+[703104] =
+{
+ 		id=703104,
+ 		name=30703104,
+ 		describe="◆◆所有职业为远攻的战员增加16%造成的物理伤害",
+ 		type=1,
+ 		target={102},
+ 		entry=3,
+ 		parameters={703104},
+ 	parameters2={}
+},
+[703105] =
+{
+ 		id=703105,
+ 		name=30703105,
+ 		describe="◆所有职业为远攻的战员无视15%物理防御力与异能防御力",
+ 		type=1,
+ 		target={102},
+ 		entry=3,
+ 		parameters={703105},
+ 	parameters2={}
+},
+[703106] =
+{
+ 		id=703106,
+ 		name=30703106,
+ 		describe="◆◆所有职业为远攻的战员无视30%物理防御力与异能防御力",
+ 		type=1,
+ 		target={102},
+ 		entry=3,
+ 		parameters={703106},
+ 	parameters2={}
+},
+[703107] =
+{
+ 		id=703107,
+ 		name=30703107,
+ 		describe="◆所有职业为重装的战员增加20%物理防御力与异能防御力",
+ 		type=1,
+ 		target={101},
+ 		entry=3,
+ 		parameters={703107},
+ 	parameters2={}
+},
+[703108] =
+{
+ 		id=703108,
+ 		name=30703108,
+ 		describe="◆◆所有职业为重装的战员增加40%物理防御力与异能防御力",
+ 		type=1,
+ 		target={101},
+ 		entry=3,
+ 		parameters={703108},
+ 	parameters2={}
+},
+[703109] =
+{
+ 		id=703109,
+ 		name=30703109,
+ 		describe="◆所有职业为重装与近战的战员-15%受到的物理伤害与异能伤害",
+ 		type=1,
+ 		target={101,103},
+ 		entry=3,
+ 		parameters={703109},
+ 	parameters2={}
+},
+[703110] =
+{
+ 		id=703110,
+ 		name=30703110,
+ 		describe="◆◆所有职业为重装与近战的战员-30%受到的物理伤害与异能伤害",
+ 		type=1,
+ 		target={101,103},
+ 		entry=3,
+ 		parameters={703110},
+ 	parameters2={}
+},
+[703111] =
+{
+ 		id=703111,
+ 		name=30703111,
+ 		describe="◆所有职业为近战的战员增加17%造成的伤害",
+ 		type=1,
+ 		target={103},
+ 		entry=3,
+ 		parameters={703111},
+ 	parameters2={}
+},
+[703112] =
+{
+ 		id=703112,
+ 		name=30703112,
+ 		describe="◆◆所有职业为近战的战员增加35%造成的伤害",
+ 		type=1,
+ 		target={103},
+ 		entry=3,
+ 		parameters={703112},
+ 	parameters2={}
+},
+[703113] =
+{
+ 		id=703113,
+ 		name=30703113,
+ 		describe="◆所有职业为近战的战员增加15%攻击力",
+ 		type=1,
+ 		target={103},
+ 		entry=3,
+ 		parameters={703113},
+ 	parameters2={}
+},
+[703114] =
+{
+ 		id=703114,
+ 		name=30703114,
+ 		describe="◆◆所有职业为近战的战员增加30%攻击力",
+ 		type=1,
+ 		target={103},
+ 		entry=3,
+ 		parameters={703114},
+ 	parameters2={}
+},
+[703115] =
+{
+ 		id=703115,
+ 		name=30703115,
+ 		describe="◆所有职业为近战的战员增加25%吸血",
+ 		type=1,
+ 		target={103},
+ 		entry=3,
+ 		parameters={703115},
+ 	parameters2={}
+},
+[703116] =
+{
+ 		id=703116,
+ 		name=30703116,
+ 		describe="◆◆所有职业为近战的战员增加50%吸血",
+ 		type=1,
+ 		target={103},
+ 		entry=3,
+ 		parameters={703116},
+ 	parameters2={}
+},
+[703117] =
+{
+ 		id=703117,
+ 		name=30703117,
+ 		describe="◆所有职业为刺客的战员增加15%攻击力",
+ 		type=1,
+ 		target={105},
+ 		entry=3,
+ 		parameters={703117},
+ 	parameters2={}
+},
+[703118] =
+{
+ 		id=703118,
+ 		name=30703118,
+ 		describe="◆◆所有职业为刺客的战员增加30%攻击力",
+ 		type=1,
+ 		target={105},
+ 		entry=3,
+ 		parameters={703118},
+ 	parameters2={}
+},
+[703119] =
+{
+ 		id=703119,
+ 		name=30703119,
+ 		describe="◆所有职业为刺客的战员增加20%暴击率",
+ 		type=1,
+ 		target={105},
+ 		entry=3,
+ 		parameters={703119},
+ 	parameters2={}
+},
+[703120] =
+{
+ 		id=703120,
+ 		name=30703120,
+ 		describe="◆◆所有职业为刺客的战员增加40%暴击率",
+ 		type=1,
+ 		target={105},
+ 		entry=3,
+ 		parameters={703120},
+ 	parameters2={}
+},
+[703121] =
+{
+ 		id=703121,
+ 		name=30703121,
+ 		describe="◆所有职业为刺客的战员增加25%闪避率",
+ 		type=1,
+ 		target={105},
+ 		entry=3,
+ 		parameters={703121},
+ 	parameters2={}
+},
+[703122] =
+{
+ 		id=703122,
+ 		name=30703122,
+ 		describe="◆◆所有职业为刺客的战员增加50%闪避率",
+ 		type=1,
+ 		target={105},
+ 		entry=3,
+ 		parameters={703122},
+ 	parameters2={}
+},
+[703123] =
+{
+ 		id=703123,
+ 		name=30703123,
+ 		describe="◆所有职业为异能的战员增加7%攻击力",
+ 		type=1,
+ 		target={104},
+ 		entry=3,
+ 		parameters={703123},
+ 	parameters2={}
+},
+[703124] =
+{
+ 		id=703124,
+ 		name=30703124,
+ 		describe="◆◆所有职业为异能的战员增加14%攻击力",
+ 		type=1,
+ 		target={104},
+ 		entry=3,
+ 		parameters={703124},
+ 	parameters2={}
+},
+[703125] =
+{
+ 		id=703125,
+ 		name=30703125,
+ 		describe="◆所有职业为异能的战员增加8%造成的异能伤害",
+ 		type=1,
+ 		target={104},
+ 		entry=3,
+ 		parameters={703125},
+ 	parameters2={}
+},
+[703126] =
+{
+ 		id=703126,
+ 		name=30703126,
+ 		describe="◆◆所有职业为异能的战员增加16%造成的异能伤害",
+ 		type=1,
+ 		target={104},
+ 		entry=3,
+ 		parameters={703126},
+ 	parameters2={}
+},
+[703127] =
+{
+ 		id=703127,
+ 		name=30703127,
+ 		describe="◆所有职业为异能的战员增加10%暴击率",
+ 		type=1,
+ 		target={104},
+ 		entry=3,
+ 		parameters={703127},
+ 	parameters2={}
+},
+[703128] =
+{
+ 		id=703128,
+ 		name=30703128,
+ 		describe="◆◆所有职业为异能的战员增加20%暴击率",
+ 		type=1,
+ 		target={104},
+ 		entry=3,
+ 		parameters={703128},
+ 	parameters2={}
+},
+[703129] =
+{
+ 		id=703129,
+ 		name=30703129,
+ 		describe="◆所有职业为治疗的战员增加25%攻击力",
+ 		type=1,
+ 		target={106},
+ 		entry=3,
+ 		parameters={703129},
+ 	parameters2={}
+},
+[703130] =
+{
+ 		id=703130,
+ 		name=30703130,
+ 		describe="◆◆所有职业为治疗的战员增加50%攻击力",
+ 		type=1,
+ 		target={106},
+ 		entry=3,
+ 		parameters={703130},
+ 	parameters2={}
+},
+[703131] =
+{
+ 		id=703131,
+ 		name=30703131,
+ 		describe="◆所有职业为治疗的战员造成的治疗效果增加25%",
+ 		type=1,
+ 		target={106},
+ 		entry=3,
+ 		parameters={703131},
+ 	parameters2={}
+},
+[703132] =
+{
+ 		id=703132,
+ 		name=30703132,
+ 		describe="◆◆所有职业为治疗的战员造成的治疗效果增加50%",
+ 		type=1,
+ 		target={106},
+ 		entry=3,
+ 		parameters={703132},
+ 	parameters2={}
+},
+[704101] =
+{
+ 		id=704101,
+ 		name=30704101,
+ 		describe="◆◆◆阿什琳无视75%物理防御力",
+ 		type=1,
+ 		target={110001},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704101},
+ 	parameters2={}
+},
+[704102] =
+{
+ 		id=704102,
+ 		name=30704102,
+ 		describe="◆◆丽贝卡每秒恢复3%的生命值",
+ 		type=1,
+ 		target={110002},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704102},
+ 	parameters2={}
+},
+[704103] =
+{
+ 		id=704103,
+ 		name=30704103,
+ 		describe="◆◆安息香增加60%的攻击力",
+ 		type=1,
+ 		target={110003},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704103},
+ 	parameters2={}
+},
+[704104] =
+{
+ 		id=704104,
+ 		name=30704104,
+ 		describe="◆◆◆希格德莉法增加60%的攻击力",
+ 		type=1,
+ 		target={110004},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704104},
+ 	parameters2={}
+},
+[704105] =
+{
+ 		id=704105,
+ 		name=30704105,
+ 		describe="◆◆◆海风藤造成的伤害增加90%",
+ 		type=1,
+ 		target={110005},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704105},
+ 	parameters2={}
+},
+[704106] =
+{
+ 		id=704106,
+ 		name=30704106,
+ 		describe="◆◆赫萝克无视50%物理防御力",
+ 		type=1,
+ 		target={110006},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704106},
+ 	parameters2={}
+},
+[704107] =
+{
+ 		id=704107,
+ 		name=30704107,
+ 		describe="◆◆◆波妮造成的治疗效果增加90%",
+ 		type=1,
+ 		target={110009},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704107},
+ 	parameters2={}
+},
+[704108] =
+{
+ 		id=704108,
+ 		name=30704108,
+ 		describe="◆◆小满增加50%的暴击率与16%的暴击伤害",
+ 		type=1,
+ 		target={110010},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704108},
+ 	parameters2={}
+},
+[704109] =
+{
+ 		id=704109,
+ 		name=30704109,
+ 		describe="◆◆◆一松樱增加75%的暴击率与25%的暴击伤害",
+ 		type=1,
+ 		target={120001},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704109},
+ 	parameters2={}
+},
+[704110] =
+{
+ 		id=704110,
+ 		name=30704110,
+ 		describe="◆◆玛蒂尔达增加40%的攻击力",
+ 		type=1,
+ 		target={120002},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704110},
+ 	parameters2={}
+},
+[704111] =
+{
+ 		id=704111,
+ 		name=30704111,
+ 		describe="◆◆◆阿米莉亚和她的召唤物增加90%的攻击力",
+ 		target={0},
+ 		parameters={704112,704113},
+ 	parameters2={}
+},
+[704112] =
+{
+ 		id=704112,
+ 		name=30704112,
+ 		describe="◆◆◆阿米莉亚和她的召唤物增加90%的攻击力",
+ 		type=1,
+ 		target={120003},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704111},
+ 	parameters2={}
+},
+[704113] =
+{
+ 		id=704113,
+ 		name=30704113,
+ 		describe="◆◆◆阿米莉亚和她的召唤物增加90%的攻击力",
+ 		type=1,
+ 		target={1200033001,1200033002,1200033003,1200033004,1200033005,1200033006,1200033007,1200033008,1200032001,1200032002,1200032003,1200032004,1200032005,1200032006,1200032007,1200032008},
+ 		targetCondition=3,
+ 		entry=3,
+ 		parameters={704111},
+ 	parameters2={}
+},
+[704114] =
+{
+ 		id=704114,
+ 		name=30704114,
+ 		describe="◆◆◆玛乔丽造成的伤害增加90%",
+ 		type=1,
+ 		target={120004},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704114},
+ 	parameters2={}
+},
+[704115] =
+{
+ 		id=704115,
+ 		name=30704115,
+ 		describe="◆◆◆泷绛每秒恢复4.5%的生命值",
+ 		type=1,
+ 		target={120007},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704115},
+ 	parameters2={}
+},
+[704116] =
+{
+ 		id=704116,
+ 		name=30704116,
+ 		describe="◆◆莉斯贝丝造成的伤害增加60%",
+ 		type=1,
+ 		target={120008},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704116},
+ 	parameters2={}
+},
+[704117] =
+{
+ 		id=704117,
+ 		name=30704117,
+ 		describe="◆◆菘蓝和她的召唤物无视50%物理防御力",
+ 		target={0},
+ 		parameters={704118,704119},
+ 	parameters2={}
+},
+[704118] =
+{
+ 		id=704118,
+ 		name=30704118,
+ 		describe="◆◆菘蓝和她的召唤物无视50%物理防御力",
+ 		type=1,
+ 		target={120009},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704117},
+ 	parameters2={}
+},
+[704119] =
+{
+ 		id=704119,
+ 		name=30704119,
+ 		describe="◆◆菘蓝和她的召唤物无视50%物理防御力",
+ 		type=1,
+ 		target={1200092001,1200092002,1200092003,1200092004,1200092005,1200092006,1200092007,1200092008,1200092101,1200092102,1200092103,1200092104,1200092105,1200092106,1200092107,1200092108,1200092201,1200092202,1200092203,1200092204,1200092205,1200092206,1200092207,1200092208,1200092301,1200092302,1200092303,1200092304,1200092305,1200092306,1200092307,1200092308,1200092401,1200092402,1200092403,1200092404,1200092405,1200092406,1200092407,1200092408,1200092501,1200092502,1200092503,1200092504,1200092505,1200092506,1200092507,1200092508,1200092601,1200092602,1200092603,1200092604,1200092605,1200092606,1200092607,1200092608,1200092701,1200092702,1200092703,1200092704,1200092705,1200092706,1200092707,1200092708},
+ 		targetCondition=3,
+ 		entry=3,
+ 		parameters={704117},
+ 	parameters2={}
+},
+[704120] =
+{
+ 		id=704120,
+ 		name=30704120,
+ 		describe="◆◆◆欧诺弥亚造成的伤害增加90%",
+ 		type=1,
+ 		target={130001},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704120},
+ 	parameters2={}
+},
+[704121] =
+{
+ 		id=704121,
+ 		name=30704121,
+ 		describe="◆◆◆露希尔每秒恢复4.5%的生命值",
+ 		type=1,
+ 		target={130003},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704121},
+ 	parameters2={}
+},
+[704122] =
+{
+ 		id=704122,
+ 		name=30704122,
+ 		describe="◆◆海泽尔造成的伤害增加60%",
+ 		type=1,
+ 		target={130004},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704122},
+ 	parameters2={}
+},
+[704123] =
+{
+ 		id=704123,
+ 		name=30704123,
+ 		describe="◆◆菲碧增加50%的暴击率与16%的暴击伤害",
+ 		type=1,
+ 		target={130005},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704123},
+ 	parameters2={}
+},
+[704124] =
+{
+ 		id=704124,
+ 		name=30704124,
+ 		describe="◆◆厄瑞妮增加60%的攻击力",
+ 		type=1,
+ 		target={130006},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704124},
+ 	parameters2={}
+},
+[704125] =
+{
+ 		id=704125,
+ 		name=30704125,
+ 		describe="◆◆埃吉娅增加60%的攻击力",
+ 		type=1,
+ 		target={130009},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704125},
+ 	parameters2={}
+},
+[704126] =
+{
+ 		id=704126,
+ 		name=30704126,
+ 		describe="◆◆鸫和她的召唤物增加50%的暴击率与16%的暴击伤害",
+ 		target={0},
+ 		parameters={704127,704128},
+ 	parameters2={}
+},
+[704127] =
+{
+ 		id=704127,
+ 		name=30704127,
+ 		describe="◆◆鸫和她的召唤物增加50%的暴击率与16%的暴击伤害",
+ 		type=1,
+ 		target={140001},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704126},
+ 	parameters2={}
+},
+[704128] =
+{
+ 		id=704128,
+ 		name=30704128,
+ 		describe="◆◆鸫和她的召唤物增加50%的暴击率与16%的暴击伤害",
+ 		type=1,
+ 		target={1400012001,1400012002,1400012003,1400012004,1400012005,1400012006,1400012007,1400012008,1400015201,1400015202,1400015203,1400015204,1400015205,1400015206,1400015207,1400015208,1400015301,1400015302,1400015303,1400015304,1400015305,1400015306,1400015307,1400015308,1400016001,1400016002,1400016003,1400016004,1400016005,1400016006,1400016007,1400016008,1400016101,1400016102,1400016103,1400016104,1400016105,1400016106,1400016107,1400016108,1400016201,1400016202,1400016203,1400016204,1400016205,1400016206,1400016207,1400016208,1400016301,1400016302,1400016303,1400016304,1400016305,1400016306,1400016307,1400016308},
+ 		targetCondition=3,
+ 		entry=3,
+ 		parameters={704126},
+ 	parameters2={}
+},
+[704129] =
+{
+ 		id=704129,
+ 		name=30704129,
+ 		describe="◆◆◆奈美增加75%的暴击率与25%的暴击伤害",
+ 		type=1,
+ 		target={140002},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704129},
+ 	parameters2={}
+},
+[704130] =
+{
+ 		id=704130,
+ 		name=30704130,
+ 		describe="◆◆海金沙造成的伤害增加60%",
+ 		type=1,
+ 		target={140004},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704130},
+ 	parameters2={}
+},
+[704131] =
+{
+ 		id=704131,
+ 		name=30704131,
+ 		describe="◆◆川断：每秒恢复<color=#E54B4B>3%</color>的生命值",
+ 		type=1,
+ 		target={150006},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704131},
+ 	parameters2={}
+},
+[704132] =
+{
+ 		id=704132,
+ 		name=30704132,
+ 		describe="◆◆◆亚斯塔洛特：造成的伤害增加<color=#E54B4B>90%</color>",
+ 		type=1,
+ 		target={150004},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704132},
+ 	parameters2={}
+},
+[704133] =
+{
+ 		id=704133,
+ 		name=30704133,
+ 		describe="◆◆河合芽衣无视50%物理防御力",
+ 		type=1,
+ 		target={120013},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704133},
+ 	parameters2={}
+},
+[704134] =
+{
+ 		id=704134,
+ 		name=30704134,
+ 		describe="◆◆◆格特鲁德造成的伤害增加90%",
+ 		type=1,
+ 		target={110012},
+ 		targetCondition=1,
+ 		entry=3,
+ 		parameters={704134},
+ 	parameters2={}
+}
+}
+
+return {title=title, value=value}

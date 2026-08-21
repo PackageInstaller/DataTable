@@ -1,0 +1,948 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5591777440780138821
+  },
+  "m_Name": "RedPoint",
+  "items": [
+    {
+      "type": 1,
+      "style": 1,
+      "desc": "仓库中只要itemRed==2，则显示红点",
+      "title": "仓库红点-道具ID",
+      "paramlabel": "道具ID",
+      "paramDesc": "ID = 0 则表示所有【肖鲲】",
+      "isLua": 0,
+      "className": "GameX.BagItemRedChecker"
+    },
+    {
+      "type": 3,
+      "style": 1,
+      "desc": "",
+      "title": "任务红点",
+      "paramlabel": "任务类型",
+      "paramDesc": "任务类型,0为所有",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.TaskRedChecker"
+    },
+    {
+      "type": 4,
+      "style": 2,
+      "desc": "",
+      "title": "任务活跃度奖励",
+      "paramlabel": "类型",
+      "paramDesc": "0 为全部，2为日常 ， 3为周常 ",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.TaskChestAwardRedPointChecker"
+    },
+    {
+      "type": 6,
+      "style": 2,
+      "desc": "",
+      "title": "邮件红点",
+      "paramlabel": "",
+      "paramDesc": "【小花】",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.MailRedChecker"
+    },
+    {
+      "type": 5,
+      "style": 1,
+      "desc": "",
+      "title": "签到类型(4类型)",
+      "paramlabel": "activityId",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.LoginAwardChecker"
+    },
+    {
+      "type": 7,
+      "style": 1,
+      "desc": "",
+      "title": "7日目标奖励-每天目标",
+      "paramlabel": "day",
+      "paramDesc": "0=全部天数，1=第一天，2=第二天",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.DailyGolasTaskChecker"
+    },
+    {
+      "type": 17,
+      "style": 1,
+      "desc": "可以领取活跃度奖励时显示红点",
+      "title": "7日目标活跃度",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.DailyGolasScoreChecker"
+    },
+    {
+      "type": 8,
+      "style": 1,
+      "desc": "",
+      "title": "英雄升级红点",
+      "paramlabel": "英雄ID",
+      "paramDesc": "如果为0，则检测全部英雄",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.HeroLevelUpChecker"
+    },
+    {
+      "type": 9,
+      "style": 1,
+      "desc": "",
+      "title": "英雄突破红点",
+      "paramlabel": "英雄ID",
+      "paramDesc": "英雄ID=0则为全部英雄【邵禾】",
+      "isLua": 0,
+      "className": "GameX.HeroBreakRedPointChecker"
+    },
+    {
+      "type": 10,
+      "style": 1,
+      "desc": "",
+      "title": "英雄核心强化",
+      "paramlabel": "英雄ID",
+      "paramDesc": "英雄ID=0则表示全部【邵禾】",
+      "isLua": 0,
+      "className": "GameX.HeroCoreRedPointChecker"
+    },
+    {
+      "type": 11,
+      "style": 1,
+      "desc": "",
+      "title": "在线奖励红点",
+      "paramlabel": "",
+      "paramDesc": "【邵禾】",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.OnlineAwardRedPointChecker"
+    },
+    {
+      "type": 12,
+      "style": 1,
+      "desc": "当任意商店内有配置道具最终售价为0（即免费）且玩家未购买此道具至最大上限时",
+      "title": "商城红点",
+      "paramlabel": "物品id",
+      "paramDesc": "【家乐】",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.ShopRedPointChecker"
+    },
+    {
+      "type": 13,
+      "style": 1,
+      "desc": "",
+      "title": "人设",
+      "paramlabel": "英雄ID",
+      "paramDesc": "英雄ID=0时，为检测所有英雄【邵禾】",
+      "isLua": 0,
+      "className": "GameX.HeroStoryRedPointChecker"
+    },
+    {
+      "type": 14,
+      "style": 1,
+      "desc": "",
+      "title": "仓库红点-道具页签类型",
+      "paramlabel": "页签类型",
+      "paramDesc": "ITEM = 1,SPECIAL_WEAPON = 2 ,KEPPSAKE = 3 ,HOU_ZHAI = 4,所有=0",
+      "isLua": 0,
+      "className": "GameX.BagItemTypeRedPointChecker"
+    },
+    {
+      "type": 15,
+      "style": 1,
+      "desc": "",
+      "title": "章节奖励",
+      "paramlabel": "类型",
+      "paramDesc": "0为所有章节  其余则为章节id 只有主线有章节奖励",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.ChapterRewardRedPointChecker"
+    },
+    {
+      "type": 16,
+      "style": 1,
+      "desc": "",
+      "title": "星级奖励",
+      "paramlabel": "类型",
+      "paramDesc": "0为所有章节 1为主线 2为精英  其余则为章节id",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.ChapterStarRedPointChecker"
+    },
+    {
+      "type": 18,
+      "style": 5,
+      "desc": "",
+      "title": "获得新战员",
+      "paramlabel": "0 是全部  其他的是英雄id",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.HeroGetRedPointChecker"
+    },
+    {
+      "type": 19,
+      "style": 1,
+      "desc": "",
+      "title": "票选活动红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.VoteRedPointChecker"
+    },
+    {
+      "type": 20,
+      "style": 1,
+      "desc": "",
+      "title": "图鉴红点",
+      "paramlabel": "百科图鉴类型",
+      "paramDesc": "0为全部，大于0为配表类型",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.AltasRedPointChecker"
+    },
+    {
+      "type": 21,
+      "style": 1,
+      "desc": "",
+      "title": "兑换红点",
+      "paramlabel": "兑换活动ID",
+      "paramDesc": "活动ID , 0 为所有",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.ExchangeRedPointChecker"
+    },
+    {
+      "type": 22,
+      "style": 1,
+      "desc": "显示远征红点数量",
+      "title": "远征红点-通讯室奖励",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.WishjourneyRedPointChecker"
+    },
+    {
+      "type": 23,
+      "style": 2,
+      "desc": "显示所有舱室饱食度为0的总数",
+      "title": "边舱饱食度",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.OtakuEaterRedPointChecker"
+    },
+    {
+      "type": 24,
+      "style": 2,
+      "desc": "",
+      "title": "好友申请红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.FriendApplyRedPointChecker"
+    },
+    {
+      "type": 25,
+      "style": 1,
+      "desc": "",
+      "title": "成就奖励红点",
+      "paramlabel": "id",
+      "paramDesc": "id = 0 为全部   id != 0 则为id",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.AchievementRewardRedPointChecker"
+    },
+    {
+      "type": 26,
+      "style": 1,
+      "desc": "",
+      "title": "百科全书奖励红点",
+      "paramlabel": "0 全部 其他为百科类型",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.PlotRewardRedPointChecker"
+    },
+    {
+      "type": 27,
+      "style": 1,
+      "desc": "",
+      "title": "遭遇战红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.EncounterNewCycleRedPointChecker"
+    },
+    {
+      "type": 28,
+      "style": 3,
+      "desc": "",
+      "title": "月卡红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.MonthCardRedPointChecker"
+    },
+    {
+      "type": 29,
+      "style": 1,
+      "desc": "",
+      "title": "通行证开放红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.PassCardRedPointChecker"
+    },
+    {
+      "type": 30,
+      "style": 1,
+      "desc": "",
+      "title": "通行证奖励红点",
+      "paramlabel": "lv",
+      "paramDesc": "等级 0:检测所有",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.PassCardRewardRedPointChecker"
+    },
+    {
+      "type": 31,
+      "style": 1,
+      "desc": "",
+      "title": "餐厅菜品完成红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.OtakuCanteenFootRedPointChecker"
+    },
+    {
+      "type": 32,
+      "style": 1,
+      "desc": "",
+      "title": "解锁新指挥官技能红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.OtakuSkillUnLockRedPointChecker"
+    },
+    {
+      "type": 34,
+      "style": 1,
+      "desc": "",
+      "title": "制造舱制造完成红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.OtakuProduceRedPointChecker"
+    },
+    {
+      "type": 35,
+      "style": 1,
+      "desc": "",
+      "title": "通讯室未读红点",
+      "paramlabel": "0 为全部 其他为heriId",
+      "paramDesc": "阿乐",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.AddressBookRedPointChecker"
+    },
+    {
+      "type": 36,
+      "style": 1,
+      "desc": "",
+      "title": "战员图鉴红点",
+      "paramlabel": "英雄id",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.HeroAltasRedPointChecker"
+    },
+    {
+      "type": 37,
+      "style": 1,
+      "desc": "",
+      "title": "觉醒任务奖励红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.AwakeTeskPointChecker"
+    },
+    {
+      "type": 38,
+      "style": 1,
+      "desc": "",
+      "title": "玩法说明红点",
+      "paramlabel": "玩法 id",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.OtakuGameTipsTeskChecker"
+    },
+    {
+      "type": 39,
+      "style": 1,
+      "desc": "",
+      "title": "公告类型红点",
+      "paramlabel": "公告类型",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.NoticeActiveRedPointChecker"
+    },
+    {
+      "type": 40,
+      "style": 1,
+      "desc": "",
+      "title": "公告红点",
+      "paramlabel": "公告id",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.NoticeRedPointChecker"
+    },
+    {
+      "type": 41,
+      "style": 1,
+      "desc": "",
+      "title": "宿舍任务红点",
+      "paramlabel": "0 为全部  其他为活动id",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.DormDailyGolasRedPointChecker"
+    },
+    {
+      "type": 42,
+      "style": 1,
+      "desc": "",
+      "title": "支援红点",
+      "paramlabel": "0 是全部  其他的是技能组id",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.CmderSkillRedPointChecker"
+    },
+    {
+      "type": 43,
+      "style": 1,
+      "desc": "完成跃迁计划",
+      "title": "跃迁红点",
+      "paramlabel": "id",
+      "paramDesc": "id = 0 为全部  id !=0为英雄id",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.RoleAwakeRedPointChecker"
+    },
+    {
+      "type": 44,
+      "style": 1,
+      "desc": "",
+      "title": "悬赏奖励红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.MissionOfferRewardsRedPointChecker"
+    },
+    {
+      "type": 45,
+      "style": 1,
+      "desc": "",
+      "title": "基因首次激活的红点",
+      "paramlabel": "id",
+      "paramDesc": "id = 0 为全部  id !=0为英雄id",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.HeroGeneAllRedPointChecker"
+    },
+    {
+      "type": 46,
+      "style": 1,
+      "desc": "",
+      "title": "基因位置1首次激活",
+      "paramlabel": "id",
+      "paramDesc": "heroId",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.HeroGene1RedPointChecker"
+    },
+    {
+      "type": 47,
+      "style": 1,
+      "desc": "",
+      "title": "基因位置2首次激活",
+      "paramlabel": "id",
+      "paramDesc": "heroId",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.HeroGene2RedPointChecker"
+    },
+    {
+      "type": 48,
+      "style": 1,
+      "desc": "",
+      "title": "基因位置3首次激活",
+      "paramlabel": "id",
+      "paramDesc": "heroId",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.HeroGene3RedPointChecker"
+    },
+    {
+      "type": 49,
+      "style": 1,
+      "desc": "",
+      "title": "基因位置4首次激活",
+      "paramlabel": "id",
+      "paramDesc": "heroId",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.HeroGene4RedPointChecker"
+    },
+    {
+      "type": 50,
+      "style": 1,
+      "desc": "",
+      "title": "基因位置5首次激活",
+      "paramlabel": "id",
+      "paramDesc": "heroId",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.HeroGene5RedPointChecker"
+    },
+    {
+      "type": 51,
+      "style": 2,
+      "desc": "",
+      "title": "任务在主界面统一数字红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.TaskAllRedPointChecker"
+    },
+    {
+      "type": 52,
+      "style": 1,
+      "desc": "",
+      "title": "商城打包带走红点",
+      "paramlabel": "type",
+      "paramDesc": "类型 五六七",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.ShopBoxRedPointChecker"
+    },
+    {
+      "type": 53,
+      "style": 1,
+      "desc": "",
+      "title": "宿舍英雄相关的红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.DormHeroRedPoint"
+    },
+    {
+      "type": 54,
+      "style": 1,
+      "desc": "",
+      "title": "边舱存在可构建红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.OtakuExistBuildableRedPointChecker"
+    },
+    {
+      "type": 55,
+      "style": 1,
+      "desc": "",
+      "title": "首充红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.FirseRechargeRedPointChecker"
+    },
+    {
+      "type": 56,
+      "style": 1,
+      "desc": "",
+      "title": "通行证任务完成红点",
+      "paramlabel": "id",
+      "paramDesc": "id 任务id，0,检测所有",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.PassCardTaskRedPointChecker"
+    },
+    {
+      "type": 58,
+      "style": 1,
+      "desc": "",
+      "title": "宿舍氛围值红点",
+      "paramlabel": "heroId",
+      "paramDesc": "英雄id",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.DormAtmosphereRedPointChecker"
+    },
+    {
+      "type": 59,
+      "style": 1,
+      "desc": "",
+      "title": "编队技能红点",
+      "paramlabel": "idx",
+      "paramDesc": "技能位置",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.TeamSkillRedPointChecker"
+    },
+    {
+      "type": 60,
+      "style": 6,
+      "desc": "",
+      "title": "宿舍家具红点",
+      "paramlabel": "furnitureId",
+      "paramDesc": "家具id",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.DormFurnitureRedPointChecker"
+    },
+    {
+      "type": 61,
+      "style": 6,
+      "desc": "",
+      "title": "宿舍家具类型红点",
+      "paramlabel": "type",
+      "paramDesc": "家具类型",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.DormFurnitureTypeRedPointChecker"
+    },
+    {
+      "type": 62,
+      "style": 5,
+      "desc": "",
+      "title": "获得新战员(阵营)",
+      "paramlabel": "0 是全部  其他的是阵营id",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.HeroGetTypeRedPointChecker"
+    },
+    {
+      "type": 63,
+      "style": 6,
+      "desc": "",
+      "title": "百科图鉴类型红点",
+      "paramlabel": "类型",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.EncyclopediaByTypeRedPointChecker"
+    },
+    {
+      "type": 64,
+      "style": 6,
+      "desc": "",
+      "title": "百科图鉴红点",
+      "paramlabel": "id",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.EncyclopediaRedPointChecker"
+    },
+    {
+      "type": 65,
+      "style": 6,
+      "desc": "",
+      "title": "剧情图鉴大类型红点",
+      "paramlabel": "类型",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.StoryBookByTypeRedPointChecker"
+    },
+    {
+      "type": 66,
+      "style": 6,
+      "desc": "",
+      "title": "剧情图鉴子类型红点",
+      "paramlabel": "子类型，0：不检查",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.MainStoryBookBySubTypeRedPointChecker"
+    },
+    {
+      "type": 67,
+      "style": 6,
+      "desc": "",
+      "title": "剧情图单个检测红点",
+      "paramlabel": "id",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.StoryBookRedByIdRedPointChecker"
+    },
+    {
+      "type": 68,
+      "style": 6,
+      "desc": "",
+      "title": "长官笔记主线类型红点",
+      "paramlabel": "子类型",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.CommondNoticeMainRedPointChecker"
+    },
+    {
+      "type": 69,
+      "style": 6,
+      "desc": "",
+      "title": "长官笔记红点 ",
+      "paramlabel": "id",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.CommondNoticeRedPointChecker"
+    },
+    {
+      "type": 70,
+      "style": 1,
+      "desc": "",
+      "title": "基因链升级",
+      "paramlabel": "heroId",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.HeroGeneLevelRedPointChecker"
+    },
+    {
+      "type": 71,
+      "style": 1,
+      "desc": "",
+      "title": "获得新英雄（图鉴）",
+      "paramlabel": "heroId",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.HeroGetAtlasRedPointChecker"
+    },
+    {
+      "type": 72,
+      "style": 6,
+      "desc": "",
+      "title": "家具区域类型红点",
+      "paramlabel": "type",
+      "paramDesc": "家具区域类型",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.DormFurnitureAreaTypeRedPointChecker"
+    },
+    {
+      "type": 73,
+      "style": 1,
+      "desc": "",
+      "title": "活动副本任务红点",
+      "paramlabel": "activityId",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.ActivityCopyTaskRedPointChecker"
+    },
+    {
+      "type": 74,
+      "style": 1,
+      "desc": "",
+      "title": "Boss战挑战奖励红点",
+      "paramlabel": "bossWarId",
+      "paramDesc": "0为所有，其他为id",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.BossWarFirstRedPointChecker"
+    },
+    {
+      "type": 75,
+      "style": 1,
+      "desc": "",
+      "title": "Boss战周期奖励红点",
+      "paramlabel": "bossWarId",
+      "paramDesc": "0为所有，其他为id",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.BossWarChestRedPointChecker"
+    },
+    {
+      "type": 76,
+      "style": 1,
+      "desc": "",
+      "title": "Boss战新周期红点",
+      "paramlabel": "无",
+      "paramDesc": "无参数",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.BossWarNewRedPointChecker"
+    },
+    {
+      "type": 77,
+      "style": 1,
+      "desc": "",
+      "title": "有可调查任务的红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.WishjourneyIdleRedPointChecker"
+    },
+    {
+      "type": 78,
+      "style": 1,
+      "desc": "",
+      "title": "商店礼包类型红点",
+      "paramlabel": "type",
+      "paramDesc": "礼包类型",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.ShopBagTypeRedPointChecker"
+    },
+    {
+      "type": 79,
+      "style": 1,
+      "desc": "",
+      "title": "资源活动副本每日奖励红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.ResActivityRewardRedPointChecker"
+    },
+    {
+      "type": 80,
+      "style": 1,
+      "desc": "",
+      "title": "月签到红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.MonthSignRedPointChecker"
+    },
+    {
+      "type": 81,
+      "style": 1,
+      "desc": "",
+      "title": "体力领取红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.DayEnergyRedPointChecker"
+    },
+    {
+      "type": 82,
+      "style": 1,
+      "desc": "",
+      "title": "主线预热章节奖励红点",
+      "paramlabel": "chapterId",
+      "paramDesc": " 0是所有",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.MainPreheatRedPointChecker"
+    },
+    {
+      "type": 83,
+      "style": 1,
+      "desc": "",
+      "title": "成长基金红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.LevelFundRedPointChecker"
+    },
+    {
+      "type": 84,
+      "style": 1,
+      "desc": "",
+      "title": "普通商店类型红点",
+      "paramlabel": "type",
+      "paramDesc": "普通商店类型",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.ShopTypeRedPointChecker"
+    },
+    {
+      "type": 85,
+      "style": 1,
+      "desc": "",
+      "title": "宿舍拼图活动红点",
+      "paramlabel": "id",
+      "paramDesc": "活动id",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.DormPuzzleRedPointChecker"
+    },
+    {
+      "type": 86,
+      "style": 6,
+      "desc": "",
+      "title": "假面舞会交换礼红点",
+      "paramlabel": "id",
+      "paramDesc": "id",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.MasqueradeGiftRedPointChecker"
+    },
+    {
+      "type": 87,
+      "style": 1,
+      "desc": "",
+      "title": "活动副本成就红点",
+      "paramlabel": "id",
+      "paramDesc": "id",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.ActivityCopyAchievementRedPointChecker"
+    },
+    {
+      "type": 88,
+      "style": 1,
+      "desc": "",
+      "title": "活动副本奖励(大狂欢)",
+      "paramlabel": "id",
+      "paramDesc": "id",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.ActivityCopyRewardRedPointChecker"
+    },
+    {
+      "type": 89,
+      "style": 6,
+      "desc": "",
+      "title": "宿舍活动剧情红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.DormActivityStoryRedPoint"
+    },
+    {
+      "type": 90,
+      "style": 7,
+      "desc": "",
+      "title": "宿舍活动开放红点",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.DormPuzzleOpenRedPointChecker"
+    },
+    {
+      "type": 91,
+      "style": 1,
+      "desc": "",
+      "title": "极限挑战-破限技",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.LimitBreakSkillRedPointChecker"
+    },
+    {
+      "type": 92,
+      "style": 1,
+      "desc": "",
+      "title": "极限挑战-任务 ",
+      "paramlabel": "",
+      "paramDesc": "",
+      "isLua": 1,
+      "className": "DataCenter.RedPoint.LimitTaskRedPointChecker"
+    }
+  ],
+  "styles": [
+    {
+      "styleType": 0,
+      "name": "通用红点",
+      "path": "UI/Prefab/Components/RedPoint",
+      "id": 1
+    },
+    {
+      "styleType": 1,
+      "name": "数字红点",
+      "path": "UI/Prefab/Components/RedPointNumber",
+      "id": 2
+    },
+    {
+      "styleType": 2,
+      "name": "计时红点",
+      "path": "UI/Prefab/Components/RedPointTimer",
+      "id": 3
+    },
+    {
+      "styleType": 3,
+      "name": "日期红点",
+      "path": "UI/Prefab/Components/RedPointDate",
+      "id": 4
+    },
+    {
+      "styleType": 0,
+      "name": "新增红点",
+      "path": "UI/Prefab/Components/RedPointNew",
+      "id": 5
+    },
+    {
+      "styleType": 0,
+      "name": "新增红点02",
+      "path": "UI/Prefab/Components/RedPointNew02",
+      "id": 6
+    },
+    {
+      "styleType": 0,
+      "name": "宿舍活动红点",
+      "path": "UI/Prefab/Components/RedPointDorm",
+      "id": 7
+    }
+  ]
+}

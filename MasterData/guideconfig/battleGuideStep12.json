@@ -1,0 +1,966 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8359430822174271028
+  },
+  "m_Name": "battleGuideStep12",
+  "groups": [
+    {
+      "groupId": 1,
+      "items": [
+        {
+          "stepId": 1,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "长官，很高兴与您再次相见，欢迎来到阿图姆号的制造舱。",
+            "descLanguageId": 0,
+            "targetName": "image",
+            "targetLayerPath": "Normal/OtakuManufacturingCabin_new(Clone)/image",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40090,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "制造舱欢迎",
+          "GMMark": 0
+        },
+        {
+          "stepId": 7,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "制造舱的运行需要派遣战员进入，否则无法使用。",
+            "descLanguageId": 0,
+            "targetName": "PanelListAni",
+            "targetLayerPath": "Normal/OtakuManufacturingCabin_new(Clone)/OtakuSettlePanel/OtakuSettle/OtakuSettleList/SettleScrollView/Viewport/Content/0/PanelListAni",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 68,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": -42.56,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40091,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "引导入驻战员",
+          "GMMark": 0
+        },
+        {
+          "stepId": 8,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "每个战员入驻制造舱会带来不同的效果，记得查看战员的入驻详情。",
+            "descLanguageId": 0,
+            "targetName": "Item(Clone)",
+            "targetLayerPath": "PopUp/OtakuChooseHero_New(Clone)/Panel/Left/Scroll View/Viewport/Content/Item(Clone)",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 400,
+            "height": 90,
+            "connectRadius": 10,
+            "offset": {
+              "x": 397.1,
+              "y": -85.7
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 397.2,
+              "y": 348.1
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40092,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "选择战员",
+          "GMMark": 0
+        },
+        {
+          "stepId": 9,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "请确认派遣入驻。",
+            "descLanguageId": 0,
+            "targetName": "ComBtn_b_blue",
+            "targetLayerPath": "PopUp/OtakuChooseHero_New(Clone)/Panel/Left/ComBtn_b_blue",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 198,
+            "height": 54,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 422.58,
+              "y": -248.65
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40093,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击确定",
+          "GMMark": 0
+        },
+        {
+          "stepId": 2,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "该区域是可制造列表。",
+            "descLanguageId": 0,
+            "targetName": "ComItemPfb_Big",
+            "targetLayerPath": "Normal/OtakuManufacturingCabin_new(Clone)/Bg/Right/Scroll View/Viewport/Content/0/PanelListAni/ComItemPfb_Big",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 259,
+            "height": 347,
+            "connectRadius": 10,
+            "offset": {
+              "x": 168.05,
+              "y": -221.47
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 259.2,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40094,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "制造舱欢迎2",
+          "GMMark": 0
+        },
+        {
+          "stepId": 3,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "选中战员晋升资料，让我们来模拟一次制造过程吧。",
+            "descLanguageId": 0,
+            "targetName": "ComItemPfb_Big",
+            "targetLayerPath": "Normal/OtakuManufacturingCabin_new(Clone)/Bg/Right/Scroll View/Viewport/Content/0/PanelListAni/ComItemPfb_Big",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 90,
+            "height": 103,
+            "connectRadius": 10,
+            "offset": {
+              "x": 1.2,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40095,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "选中战员晋升资料",
+          "GMMark": 0
+        },
+        {
+          "stepId": 4,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "image",
+            "targetLayerPath": "Normal/OtakuManufacturingCabin_new(Clone)/image",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 410,
+            "height": 310,
+            "connectRadius": 10,
+            "offset": {
+              "x": 96.2,
+              "y": -3.1
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -712.4,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "此处区域可以预览制造时长及所需消耗的材料",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": -413.3
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "框中制造区域",
+          "GMMark": 0
+        },
+        {
+          "stepId": 5,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "<size=26>大部分资源制造时<color=#169BD5>不需要消耗其他资源</color>，<color=#FF9900>仅需消耗时间</color>。我们可以直接拉到最大值。</size>",
+            "descLanguageId": 0,
+            "targetName": "BtnMax",
+            "targetLayerPath": "Normal/OtakuManufacturingCabin_new(Clone)/Bg/Right/ManufactureList/ComNumBar/BtnMax",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 67,
+            "height": 32,
+            "connectRadius": 10,
+            "offset": {
+              "x": -58.38,
+              "y": -0.8
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 107.5,
+              "y": 191.2
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40096,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击最大！",
+          "GMMark": 0
+        },
+        {
+          "stepId": 6,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "开始制造后，记得每隔一段时间来收取一次资源。",
+            "descLanguageId": 0,
+            "targetName": "ComBtn_n_blue",
+            "targetLayerPath": "Normal/OtakuManufacturingCabin_new(Clone)/Bg/Right/ManufactureList/ComBtn_n_blue",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 180,
+            "height": 50,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 138.23,
+              "y": -167.57
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40097,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击开始制造",
+          "GMMark": 0
+        },
+        {
+          "stepId": 10,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "开始制造后，战员的饱食度会随着时长而减少。",
+            "descLanguageId": 0,
+            "targetName": "PanelListAni",
+            "targetLayerPath": "Normal/OtakuManufacturingCabin_new(Clone)/OtakuSettlePanel/OtakuSettle/OtakuSettleList/SettleScrollView/Viewport/Content/0/PanelListAni",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 190,
+            "height": 81,
+            "connectRadius": 10,
+            "offset": {
+              "x": -125.12,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40098,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 300,
+          "isFreeClickAfterFinish": 0,
+          "desc": "说明饱食度",
+          "GMMark": 0
+        },
+        {
+          "stepId": 11,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "制作完成后，处于制造舱内则会自动收取制造完成的道具。",
+            "descLanguageId": 0,
+            "targetName": "FinishPop(Clone)",
+            "targetLayerPath": "PopUp/ItemTips(Clone)/FinishPop(Clone)",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 177,
+            "height": 55,
+            "connectRadius": 10,
+            "offset": {
+              "x": -4.7,
+              "y": 4.1
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 35.13,
+              "y": -200.58
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40099,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 300,
+          "isFreeClickAfterFinish": 0,
+          "desc": "说明制作完成",
+          "GMMark": 0
+        },
+        {
+          "stepId": 16,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 35,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "关闭完成提示",
+          "GMMark": 0
+        },
+        {
+          "stepId": 12,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "当战员饱食度为0时则会停止生产，入驻其他战员继续制造吧！",
+            "descLanguageId": 0,
+            "targetName": "PanelListAni",
+            "targetLayerPath": "Normal/OtakuManufacturingCabin_new(Clone)/OtakuSettlePanel/OtakuSettle/OtakuSettleList/SettleScrollView/Viewport/Content/0/PanelListAni",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 88,
+            "height": 81,
+            "connectRadius": 10,
+            "offset": {
+              "x": -42.39,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40100,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 300,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击红色战员头像",
+          "GMMark": 0
+        },
+        {
+          "stepId": 13,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "Item(Clone)",
+            "targetLayerPath": "PopUp/OtakuChooseHero_New(Clone)/Panel/Left/Scroll View/Viewport/Content/Item(Clone)",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 410,
+            "height": 94,
+            "connectRadius": 10,
+            "offset": {
+              "x": 391.1,
+              "y": -260.5
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "选择战员列表第二个",
+          "GMMark": 0
+        },
+        {
+          "stepId": 14,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "ComBtn_b_blue",
+            "targetLayerPath": "PopUp/OtakuChooseHero_New(Clone)/Panel/Left/ComBtn_b_blue",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 200,
+            "height": 55,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 400,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击确定",
+          "GMMark": 0
+        },
+        {
+          "stepId": 15,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "那么制造舱现在就开始正常运转了。",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40101,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "引导结束语",
+          "GMMark": 0
+        }
+      ],
+      "desc": "制造仓首次制造引导",
+      "autoId": 0
+    }
+  ],
+  "preGroups": []
+}

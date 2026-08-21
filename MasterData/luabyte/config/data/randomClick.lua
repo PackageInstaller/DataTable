@@ -1,0 +1,4218 @@
+local title = {
+	id = 0,
+	hero = 0,
+	furnitureTypeId = 0,
+	furnitureId = 0,
+	opencondition = 0,
+	favorLevel = {},
+	Type = 0,
+	action = 0,
+	weight = 0,
+	lovePower = {},
+	favor = 0
+}
+
+local value = {
+[10101] =
+{
+ 		id=10101,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,5},
+ 		Type=1,
+ 		action=4201,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10102] =
+{
+ 		id=10102,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12155,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10103] =
+{
+ 		id=10103,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,5},
+ 		Type=1,
+ 		action=4202,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10104] =
+{
+ 		id=10104,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12158,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10105] =
+{
+ 		id=10105,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,2},
+ 		Type=2,
+ 		action=12159,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10106] =
+{
+ 		id=10106,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,2},
+ 		Type=2,
+ 		action=12160,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10107] =
+{
+ 		id=10107,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12161,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10108] =
+{
+ 		id=10108,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,12},
+ 		Type=1,
+ 		action=4203,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10109] =
+{
+ 		id=10109,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12166,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10110] =
+{
+ 		id=10110,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12167,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10111] =
+{
+ 		id=10111,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12168,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10112] =
+{
+ 		id=10112,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=12169,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10113] =
+{
+ 		id=10113,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		opencondition=10001,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000304,
+ 		weight=100,
+ 	favor=50
+},
+[10114] =
+{
+ 		id=10114,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		opencondition=10002,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000303,
+ 		weight=100,
+ 	favor=50
+},
+[10115] =
+{
+ 		id=10115,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		opencondition=10003,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000301,
+ 		weight=100,
+ 	favor=50
+},
+[10116] =
+{
+ 		id=10116,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		opencondition=8003,
+ 		favorLevel={3,12},
+ 		Type=3,
+ 		action=11000302,
+ 		weight=100,
+ 	favor=50
+},
+[10201] =
+{
+ 		id=10201,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,5},
+ 		Type=1,
+ 		action=4201,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10202] =
+{
+ 		id=10202,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12155,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10203] =
+{
+ 		id=10203,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,5},
+ 		Type=1,
+ 		action=4202,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10204] =
+{
+ 		id=10204,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12158,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10205] =
+{
+ 		id=10205,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,2},
+ 		Type=2,
+ 		action=12159,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10206] =
+{
+ 		id=10206,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,2},
+ 		Type=2,
+ 		action=12160,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10207] =
+{
+ 		id=10207,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12161,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10208] =
+{
+ 		id=10208,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,12},
+ 		Type=1,
+ 		action=4203,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10209] =
+{
+ 		id=10209,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12166,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10210] =
+{
+ 		id=10210,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12167,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10211] =
+{
+ 		id=10211,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12168,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=50
+},
+[10212] =
+{
+ 		id=10212,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=12169,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10213] =
+{
+ 		id=10213,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		opencondition=10001,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000304,
+ 		weight=100,
+ 	favor=50
+},
+[10214] =
+{
+ 		id=10214,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		opencondition=10002,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000303,
+ 		weight=100,
+ 	favor=50
+},
+[10215] =
+{
+ 		id=10215,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		opencondition=10003,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000301,
+ 		weight=100,
+ 	favor=50
+},
+[10216] =
+{
+ 		id=10216,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		opencondition=8008,
+ 		favorLevel={3,12},
+ 		Type=3,
+ 		action=11000302,
+ 		weight=100,
+ 	favor=50
+},
+[10301] =
+{
+ 		id=10301,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,5},
+ 		Type=1,
+ 		action=4201,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10302] =
+{
+ 		id=10302,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12155,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10303] =
+{
+ 		id=10303,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,5},
+ 		Type=1,
+ 		action=4202,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10304] =
+{
+ 		id=10304,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12158,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10305] =
+{
+ 		id=10305,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,2},
+ 		Type=2,
+ 		action=12159,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10306] =
+{
+ 		id=10306,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,2},
+ 		Type=2,
+ 		action=12160,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10307] =
+{
+ 		id=10307,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12161,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10308] =
+{
+ 		id=10308,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,12},
+ 		Type=1,
+ 		action=4203,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10309] =
+{
+ 		id=10309,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12166,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10310] =
+{
+ 		id=10310,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12167,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10311] =
+{
+ 		id=10311,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=12168,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10312] =
+{
+ 		id=10312,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=12169,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10313] =
+{
+ 		id=10313,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		opencondition=10001,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000304,
+ 		weight=100,
+ 	favor=50
+},
+[10314] =
+{
+ 		id=10314,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		opencondition=10002,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000303,
+ 		weight=100,
+ 	favor=50
+},
+[10315] =
+{
+ 		id=10315,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		opencondition=10003,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000301,
+ 		weight=100,
+ 	favor=50
+},
+[10316] =
+{
+ 		id=10316,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		opencondition=8008,
+ 		favorLevel={3,12},
+ 		Type=3,
+ 		action=11000302,
+ 		weight=100,
+ 	favor=50
+},
+[10801] =
+{
+ 		id=10801,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,5},
+ 		Type=1,
+ 		action=4401,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10802] =
+{
+ 		id=10802,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112155,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10803] =
+{
+ 		id=10803,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,5},
+ 		Type=1,
+ 		action=4402,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10804] =
+{
+ 		id=10804,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112158,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10805] =
+{
+ 		id=10805,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,2},
+ 		Type=2,
+ 		action=112159,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10806] =
+{
+ 		id=10806,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,2},
+ 		Type=2,
+ 		action=112160,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10807] =
+{
+ 		id=10807,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112161,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10808] =
+{
+ 		id=10808,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,12},
+ 		Type=1,
+ 		action=4403,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10809] =
+{
+ 		id=10809,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112166,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10810] =
+{
+ 		id=10810,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112167,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10811] =
+{
+ 		id=10811,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112168,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10812] =
+{
+ 		id=10812,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=112169,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[10813] =
+{
+ 		id=10813,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		opencondition=10001,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000304,
+ 		weight=100,
+ 	favor=50
+},
+[10814] =
+{
+ 		id=10814,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		opencondition=10002,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000303,
+ 		weight=100,
+ 	favor=50
+},
+[10815] =
+{
+ 		id=10815,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		opencondition=10003,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000301,
+ 		weight=100,
+ 	favor=50
+},
+[10816] =
+{
+ 		id=10816,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		opencondition=8008,
+ 		favorLevel={3,12},
+ 		Type=3,
+ 		action=11000302,
+ 		weight=100,
+ 	favor=50
+},
+[11301] =
+{
+ 		id=11301,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,5},
+ 		Type=1,
+ 		action=4301,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11302] =
+{
+ 		id=11302,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=102155,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11303] =
+{
+ 		id=11303,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,5},
+ 		Type=1,
+ 		action=4302,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11304] =
+{
+ 		id=11304,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=102158,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11305] =
+{
+ 		id=11305,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,2},
+ 		Type=2,
+ 		action=102159,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11306] =
+{
+ 		id=11306,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,2},
+ 		Type=2,
+ 		action=102160,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11307] =
+{
+ 		id=11307,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=102161,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11308] =
+{
+ 		id=11308,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,12},
+ 		Type=1,
+ 		action=4303,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11309] =
+{
+ 		id=11309,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=102166,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11310] =
+{
+ 		id=11310,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=102167,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11311] =
+{
+ 		id=11311,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=102168,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11312] =
+{
+ 		id=11312,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=102169,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11313] =
+{
+ 		id=11313,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		opencondition=10001,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000304,
+ 		weight=100,
+ 	favor=50
+},
+[11314] =
+{
+ 		id=11314,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		opencondition=10002,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000303,
+ 		weight=100,
+ 	favor=50
+},
+[11315] =
+{
+ 		id=11315,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		opencondition=10003,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000301,
+ 		weight=100,
+ 	favor=50
+},
+[11316] =
+{
+ 		id=11316,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		opencondition=8008,
+ 		favorLevel={3,12},
+ 		Type=3,
+ 		action=11000302,
+ 		weight=100,
+ 	favor=50
+},
+[11401] =
+{
+ 		id=11401,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,5},
+ 		Type=1,
+ 		action=4401,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11402] =
+{
+ 		id=11402,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112155,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11403] =
+{
+ 		id=11403,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,5},
+ 		Type=1,
+ 		action=4402,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11404] =
+{
+ 		id=11404,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112158,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11405] =
+{
+ 		id=11405,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,2},
+ 		Type=2,
+ 		action=112159,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11406] =
+{
+ 		id=11406,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,2},
+ 		Type=2,
+ 		action=112160,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11407] =
+{
+ 		id=11407,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112161,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11408] =
+{
+ 		id=11408,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,12},
+ 		Type=1,
+ 		action=4403,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11409] =
+{
+ 		id=11409,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112166,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11410] =
+{
+ 		id=11410,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112167,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11411] =
+{
+ 		id=11411,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112168,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11412] =
+{
+ 		id=11412,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=112169,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11413] =
+{
+ 		id=11413,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		opencondition=10001,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000304,
+ 		weight=100,
+ 	favor=50
+},
+[11414] =
+{
+ 		id=11414,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		opencondition=10002,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000303,
+ 		weight=100,
+ 	favor=50
+},
+[11415] =
+{
+ 		id=11415,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		opencondition=10003,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000301,
+ 		weight=100,
+ 	favor=50
+},
+[11416] =
+{
+ 		id=11416,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		opencondition=8008,
+ 		favorLevel={3,12},
+ 		Type=3,
+ 		action=11000302,
+ 		weight=100,
+ 	favor=50
+},
+[11601] =
+{
+ 		id=11601,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,5},
+ 		Type=1,
+ 		action=4401,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11602] =
+{
+ 		id=11602,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112155,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11603] =
+{
+ 		id=11603,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,5},
+ 		Type=1,
+ 		action=4402,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11604] =
+{
+ 		id=11604,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112158,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11605] =
+{
+ 		id=11605,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,2},
+ 		Type=2,
+ 		action=112159,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11606] =
+{
+ 		id=11606,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,2},
+ 		Type=2,
+ 		action=112160,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11607] =
+{
+ 		id=11607,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112161,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11608] =
+{
+ 		id=11608,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,12},
+ 		Type=1,
+ 		action=4403,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11609] =
+{
+ 		id=11609,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112166,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11610] =
+{
+ 		id=11610,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112167,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11611] =
+{
+ 		id=11611,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,12},
+ 		Type=2,
+ 		action=112168,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11612] =
+{
+ 		id=11612,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=112169,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[11613] =
+{
+ 		id=11613,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		opencondition=10001,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000304,
+ 		weight=100,
+ 	favor=50
+},
+[11614] =
+{
+ 		id=11614,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		opencondition=10002,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000303,
+ 		weight=100,
+ 	favor=50
+},
+[11615] =
+{
+ 		id=11615,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		opencondition=10003,
+ 		favorLevel={0,12},
+ 		Type=3,
+ 		action=11000301,
+ 		weight=100,
+ 	favor=50
+},
+[11616] =
+{
+ 		id=11616,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		opencondition=8008,
+ 		favorLevel={3,12},
+ 		Type=3,
+ 		action=11000302,
+ 		weight=100,
+ 	favor=50
+},
+[20101] =
+{
+ 		id=20101,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={3,5},
+ 		Type=2,
+ 		action=12170,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20102] =
+{
+ 		id=20102,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12171,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20103] =
+{
+ 		id=20103,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4204,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20104] =
+{
+ 		id=20104,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4205,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20105] =
+{
+ 		id=20105,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=12178,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20106] =
+{
+ 		id=20106,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4206,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20107] =
+{
+ 		id=20107,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=12183,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20108] =
+{
+ 		id=20108,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=12184,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20109] =
+{
+ 		id=20109,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,12},
+ 		Type=1,
+ 		action=4207,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20110] =
+{
+ 		id=20110,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=12189,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20111] =
+{
+ 		id=20111,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=12190,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20201] =
+{
+ 		id=20201,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={3,5},
+ 		Type=2,
+ 		action=12170,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20202] =
+{
+ 		id=20202,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12171,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20203] =
+{
+ 		id=20203,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4204,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20204] =
+{
+ 		id=20204,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4205,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20205] =
+{
+ 		id=20205,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=12178,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20206] =
+{
+ 		id=20206,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4206,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20207] =
+{
+ 		id=20207,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=12183,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20208] =
+{
+ 		id=20208,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=12184,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20209] =
+{
+ 		id=20209,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,12},
+ 		Type=1,
+ 		action=4207,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20210] =
+{
+ 		id=20210,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=12189,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20211] =
+{
+ 		id=20211,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=12190,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20301] =
+{
+ 		id=20301,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={3,5},
+ 		Type=2,
+ 		action=12170,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20302] =
+{
+ 		id=20302,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12171,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20303] =
+{
+ 		id=20303,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4204,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20304] =
+{
+ 		id=20304,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4205,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20305] =
+{
+ 		id=20305,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=12178,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20306] =
+{
+ 		id=20306,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4206,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20307] =
+{
+ 		id=20307,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=12183,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20308] =
+{
+ 		id=20308,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=12184,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20309] =
+{
+ 		id=20309,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,12},
+ 		Type=1,
+ 		action=4207,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20310] =
+{
+ 		id=20310,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=12189,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20311] =
+{
+ 		id=20311,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=12190,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20801] =
+{
+ 		id=20801,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={3,5},
+ 		Type=2,
+ 		action=112170,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20802] =
+{
+ 		id=20802,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112171,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20803] =
+{
+ 		id=20803,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4404,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20804] =
+{
+ 		id=20804,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4405,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20805] =
+{
+ 		id=20805,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=112178,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20806] =
+{
+ 		id=20806,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4406,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20807] =
+{
+ 		id=20807,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=112183,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20808] =
+{
+ 		id=20808,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=112184,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20809] =
+{
+ 		id=20809,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,12},
+ 		Type=1,
+ 		action=4407,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20810] =
+{
+ 		id=20810,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=112189,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[20811] =
+{
+ 		id=20811,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=112190,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21301] =
+{
+ 		id=21301,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={3,5},
+ 		Type=2,
+ 		action=102170,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21302] =
+{
+ 		id=21302,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=102171,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21303] =
+{
+ 		id=21303,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4304,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21304] =
+{
+ 		id=21304,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4305,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21305] =
+{
+ 		id=21305,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=102178,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21306] =
+{
+ 		id=21306,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4306,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21307] =
+{
+ 		id=21307,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=102183,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21308] =
+{
+ 		id=21308,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=102184,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21309] =
+{
+ 		id=21309,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,12},
+ 		Type=1,
+ 		action=4307,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21310] =
+{
+ 		id=21310,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=102189,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21311] =
+{
+ 		id=21311,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=102190,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21401] =
+{
+ 		id=21401,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={3,5},
+ 		Type=2,
+ 		action=112170,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21402] =
+{
+ 		id=21402,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112171,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21403] =
+{
+ 		id=21403,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4404,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21404] =
+{
+ 		id=21404,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4405,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21405] =
+{
+ 		id=21405,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=112178,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21406] =
+{
+ 		id=21406,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4406,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21407] =
+{
+ 		id=21407,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=112183,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21408] =
+{
+ 		id=21408,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=112184,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21409] =
+{
+ 		id=21409,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,12},
+ 		Type=1,
+ 		action=4407,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21410] =
+{
+ 		id=21410,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=112189,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21411] =
+{
+ 		id=21411,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=112190,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21601] =
+{
+ 		id=21601,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={3,5},
+ 		Type=2,
+ 		action=112170,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21602] =
+{
+ 		id=21602,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112171,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21603] =
+{
+ 		id=21603,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4404,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21604] =
+{
+ 		id=21604,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4405,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21605] =
+{
+ 		id=21605,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=112178,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21606] =
+{
+ 		id=21606,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={3,12},
+ 		Type=1,
+ 		action=4406,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21607] =
+{
+ 		id=21607,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=112183,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21608] =
+{
+ 		id=21608,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=112184,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21609] =
+{
+ 		id=21609,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,12},
+ 		Type=1,
+ 		action=4407,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21610] =
+{
+ 		id=21610,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={3,8},
+ 		Type=2,
+ 		action=112189,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[21611] =
+{
+ 		id=21611,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={3,12},
+ 		Type=2,
+ 		action=112190,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30101] =
+{
+ 		id=30101,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=4208,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30102] =
+{
+ 		id=30102,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=12195,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30103] =
+{
+ 		id=30103,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=4209,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30104] =
+{
+ 		id=30104,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=12202,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30105] =
+{
+ 		id=30105,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12203,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30106] =
+{
+ 		id=30106,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=12204,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30107] =
+{
+ 		id=30107,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=1210,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30108] =
+{
+ 		id=30108,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={9,12},
+ 		Type=1,
+ 		action=4211,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30109] =
+{
+ 		id=30109,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=12212,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30110] =
+{
+ 		id=30110,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12213,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30111] =
+{
+ 		id=30111,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12214,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30112] =
+{
+ 		id=30112,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12215,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30201] =
+{
+ 		id=30201,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=4208,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30202] =
+{
+ 		id=30202,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=12195,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30203] =
+{
+ 		id=30203,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=4209,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30204] =
+{
+ 		id=30204,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=12202,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30205] =
+{
+ 		id=30205,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12203,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30206] =
+{
+ 		id=30206,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=12204,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30207] =
+{
+ 		id=30207,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=1210,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30208] =
+{
+ 		id=30208,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={9,12},
+ 		Type=1,
+ 		action=4211,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30209] =
+{
+ 		id=30209,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=12212,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30210] =
+{
+ 		id=30210,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12213,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30211] =
+{
+ 		id=30211,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12214,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30212] =
+{
+ 		id=30212,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12215,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30301] =
+{
+ 		id=30301,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=4208,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30302] =
+{
+ 		id=30302,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=12195,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30303] =
+{
+ 		id=30303,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=4209,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30304] =
+{
+ 		id=30304,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=12202,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30305] =
+{
+ 		id=30305,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12203,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30306] =
+{
+ 		id=30306,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=12204,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30307] =
+{
+ 		id=30307,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=1210,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30308] =
+{
+ 		id=30308,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={9,12},
+ 		Type=1,
+ 		action=4211,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30309] =
+{
+ 		id=30309,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=12212,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30310] =
+{
+ 		id=30310,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12213,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30311] =
+{
+ 		id=30311,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12214,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30312] =
+{
+ 		id=30312,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=12215,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30801] =
+{
+ 		id=30801,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=4408,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30802] =
+{
+ 		id=30802,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=112195,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30803] =
+{
+ 		id=30803,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=4409,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30804] =
+{
+ 		id=30804,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=112202,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30805] =
+{
+ 		id=30805,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112203,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30806] =
+{
+ 		id=30806,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=112204,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30807] =
+{
+ 		id=30807,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=1410,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30808] =
+{
+ 		id=30808,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={9,12},
+ 		Type=1,
+ 		action=4411,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30809] =
+{
+ 		id=30809,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=112212,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30810] =
+{
+ 		id=30810,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112213,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30811] =
+{
+ 		id=30811,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112214,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[30812] =
+{
+ 		id=30812,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112215,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31301] =
+{
+ 		id=31301,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=4308,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31302] =
+{
+ 		id=31302,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=102195,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31303] =
+{
+ 		id=31303,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=4309,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31304] =
+{
+ 		id=31304,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=102202,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31305] =
+{
+ 		id=31305,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=102203,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31306] =
+{
+ 		id=31306,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=102204,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31307] =
+{
+ 		id=31307,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=1310,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31308] =
+{
+ 		id=31308,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={9,12},
+ 		Type=1,
+ 		action=4311,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31309] =
+{
+ 		id=31309,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=102212,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31310] =
+{
+ 		id=31310,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=102213,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31311] =
+{
+ 		id=31311,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=102214,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31312] =
+{
+ 		id=31312,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=102215,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31401] =
+{
+ 		id=31401,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=4408,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31402] =
+{
+ 		id=31402,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=112195,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31403] =
+{
+ 		id=31403,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=4409,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31404] =
+{
+ 		id=31404,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=112202,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31405] =
+{
+ 		id=31405,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112203,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31406] =
+{
+ 		id=31406,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=112204,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31407] =
+{
+ 		id=31407,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=1410,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31408] =
+{
+ 		id=31408,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={9,12},
+ 		Type=1,
+ 		action=4411,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31409] =
+{
+ 		id=31409,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=112212,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31410] =
+{
+ 		id=31410,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112213,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31411] =
+{
+ 		id=31411,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112214,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31412] =
+{
+ 		id=31412,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112215,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31601] =
+{
+ 		id=31601,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=4408,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31602] =
+{
+ 		id=31602,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=112195,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31603] =
+{
+ 		id=31603,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=4409,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31604] =
+{
+ 		id=31604,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=112202,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31605] =
+{
+ 		id=31605,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112203,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31606] =
+{
+ 		id=31606,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=112204,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31607] =
+{
+ 		id=31607,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={6,12},
+ 		Type=1,
+ 		action=1410,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31608] =
+{
+ 		id=31608,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={9,12},
+ 		Type=1,
+ 		action=4411,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31609] =
+{
+ 		id=31609,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={9,12},
+ 		Type=2,
+ 		action=112212,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31610] =
+{
+ 		id=31610,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112213,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31611] =
+{
+ 		id=31611,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112214,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[31612] =
+{
+ 		id=31612,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={6,12},
+ 		Type=2,
+ 		action=112215,
+ 		weight=100,
+ 		lovePower={30,40},
+ 	favor=10
+},
+[110101] =
+{
+ 		id=110101,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,5},
+ 		Type=4,
+ 		action=4201,
+ 		weight=100,
+ 	favor=10
+},
+[110103] =
+{
+ 		id=110103,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,5},
+ 		Type=4,
+ 		action=4202,
+ 		weight=100,
+ 	favor=10
+},
+[110108] =
+{
+ 		id=110108,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,12},
+ 		Type=4,
+ 		action=4203,
+ 		weight=100,
+ 	favor=10
+},
+[110201] =
+{
+ 		id=110201,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,5},
+ 		Type=4,
+ 		action=4201,
+ 		weight=100,
+ 	favor=10
+},
+[110203] =
+{
+ 		id=110203,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,5},
+ 		Type=4,
+ 		action=4202,
+ 		weight=100,
+ 	favor=10
+},
+[110208] =
+{
+ 		id=110208,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,12},
+ 		Type=4,
+ 		action=4203,
+ 		weight=100,
+ 	favor=10
+},
+[110301] =
+{
+ 		id=110301,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,5},
+ 		Type=4,
+ 		action=4201,
+ 		weight=100,
+ 	favor=10
+},
+[110303] =
+{
+ 		id=110303,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,5},
+ 		Type=4,
+ 		action=4202,
+ 		weight=100,
+ 	favor=10
+},
+[110308] =
+{
+ 		id=110308,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,12},
+ 		Type=4,
+ 		action=4203,
+ 		weight=100,
+ 	favor=10
+},
+[110801] =
+{
+ 		id=110801,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,5},
+ 		Type=4,
+ 		action=4401,
+ 		weight=100,
+ 	favor=10
+},
+[110803] =
+{
+ 		id=110803,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,5},
+ 		Type=4,
+ 		action=4402,
+ 		weight=100,
+ 	favor=10
+},
+[110808] =
+{
+ 		id=110808,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,12},
+ 		Type=4,
+ 		action=4403,
+ 		weight=100,
+ 	favor=10
+},
+[111301] =
+{
+ 		id=111301,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,5},
+ 		Type=4,
+ 		action=4301,
+ 		weight=100,
+ 	favor=10
+},
+[111303] =
+{
+ 		id=111303,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,5},
+ 		Type=4,
+ 		action=4302,
+ 		weight=100,
+ 	favor=10
+},
+[111308] =
+{
+ 		id=111308,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,12},
+ 		Type=4,
+ 		action=4303,
+ 		weight=100,
+ 	favor=10
+},
+[111401] =
+{
+ 		id=111401,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,5},
+ 		Type=4,
+ 		action=4401,
+ 		weight=100,
+ 	favor=10
+},
+[111403] =
+{
+ 		id=111403,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,5},
+ 		Type=4,
+ 		action=4402,
+ 		weight=100,
+ 	favor=10
+},
+[111408] =
+{
+ 		id=111408,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,12},
+ 		Type=4,
+ 		action=4403,
+ 		weight=100,
+ 	favor=10
+},
+[111601] =
+{
+ 		id=111601,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,5},
+ 		Type=4,
+ 		action=4401,
+ 		weight=100,
+ 	favor=10
+},
+[111603] =
+{
+ 		id=111603,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,5},
+ 		Type=4,
+ 		action=4402,
+ 		weight=100,
+ 	favor=10
+},
+[111608] =
+{
+ 		id=111608,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,12},
+ 		Type=4,
+ 		action=4403,
+ 		weight=100,
+ 	favor=10
+},
+[120103] =
+{
+ 		id=120103,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4204,
+ 		weight=100,
+ 	favor=10
+},
+[120104] =
+{
+ 		id=120104,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4205,
+ 		weight=100,
+ 	favor=10
+},
+[120106] =
+{
+ 		id=120106,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4206,
+ 		weight=100,
+ 	favor=10
+},
+[120109] =
+{
+ 		id=120109,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,12},
+ 		Type=4,
+ 		action=4207,
+ 		weight=100,
+ 	favor=10
+},
+[120203] =
+{
+ 		id=120203,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4204,
+ 		weight=100,
+ 	favor=10
+},
+[120204] =
+{
+ 		id=120204,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4205,
+ 		weight=100,
+ 	favor=10
+},
+[120206] =
+{
+ 		id=120206,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4206,
+ 		weight=100,
+ 	favor=10
+},
+[120209] =
+{
+ 		id=120209,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,12},
+ 		Type=4,
+ 		action=4207,
+ 		weight=100,
+ 	favor=10
+},
+[120303] =
+{
+ 		id=120303,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4204,
+ 		weight=100,
+ 	favor=10
+},
+[120304] =
+{
+ 		id=120304,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4205,
+ 		weight=100,
+ 	favor=10
+},
+[120306] =
+{
+ 		id=120306,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4206,
+ 		weight=100,
+ 	favor=10
+},
+[120309] =
+{
+ 		id=120309,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,12},
+ 		Type=4,
+ 		action=4207,
+ 		weight=100,
+ 	favor=10
+},
+[120803] =
+{
+ 		id=120803,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4404,
+ 		weight=100,
+ 	favor=10
+},
+[120804] =
+{
+ 		id=120804,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4405,
+ 		weight=100,
+ 	favor=10
+},
+[120806] =
+{
+ 		id=120806,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4406,
+ 		weight=100,
+ 	favor=10
+},
+[120809] =
+{
+ 		id=120809,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,12},
+ 		Type=4,
+ 		action=4407,
+ 		weight=100,
+ 	favor=10
+},
+[121303] =
+{
+ 		id=121303,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4304,
+ 		weight=100,
+ 	favor=10
+},
+[121304] =
+{
+ 		id=121304,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4305,
+ 		weight=100,
+ 	favor=10
+},
+[121306] =
+{
+ 		id=121306,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4306,
+ 		weight=100,
+ 	favor=10
+},
+[121309] =
+{
+ 		id=121309,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,12},
+ 		Type=4,
+ 		action=4307,
+ 		weight=100,
+ 	favor=10
+},
+[121403] =
+{
+ 		id=121403,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4404,
+ 		weight=100,
+ 	favor=10
+},
+[121404] =
+{
+ 		id=121404,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4405,
+ 		weight=100,
+ 	favor=10
+},
+[121406] =
+{
+ 		id=121406,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4406,
+ 		weight=100,
+ 	favor=10
+},
+[121409] =
+{
+ 		id=121409,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,12},
+ 		Type=4,
+ 		action=4407,
+ 		weight=100,
+ 	favor=10
+},
+[121603] =
+{
+ 		id=121603,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4404,
+ 		weight=100,
+ 	favor=10
+},
+[121604] =
+{
+ 		id=121604,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4405,
+ 		weight=100,
+ 	favor=10
+},
+[121606] =
+{
+ 		id=121606,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={3,12},
+ 		Type=4,
+ 		action=4406,
+ 		weight=100,
+ 	favor=10
+},
+[121609] =
+{
+ 		id=121609,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,12},
+ 		Type=4,
+ 		action=4407,
+ 		weight=100,
+ 	favor=10
+},
+[130101] =
+{
+ 		id=130101,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={6,12},
+ 		Type=4,
+ 		action=4208,
+ 		weight=100,
+ 	favor=10
+},
+[130103] =
+{
+ 		id=130103,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={6,12},
+ 		Type=4,
+ 		action=4209,
+ 		weight=100,
+ 	favor=10
+},
+[130108] =
+{
+ 		id=130108,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={9,12},
+ 		Type=4,
+ 		action=4211,
+ 		weight=100,
+ 	favor=10
+},
+[130201] =
+{
+ 		id=130201,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={6,12},
+ 		Type=4,
+ 		action=4208,
+ 		weight=100,
+ 	favor=10
+},
+[130203] =
+{
+ 		id=130203,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={6,12},
+ 		Type=4,
+ 		action=4209,
+ 		weight=100,
+ 	favor=10
+},
+[130208] =
+{
+ 		id=130208,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={9,12},
+ 		Type=4,
+ 		action=4211,
+ 		weight=100,
+ 	favor=10
+},
+[130301] =
+{
+ 		id=130301,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={6,12},
+ 		Type=4,
+ 		action=4208,
+ 		weight=100,
+ 	favor=10
+},
+[130303] =
+{
+ 		id=130303,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={6,12},
+ 		Type=4,
+ 		action=4209,
+ 		weight=100,
+ 	favor=10
+},
+[130308] =
+{
+ 		id=130308,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={9,12},
+ 		Type=4,
+ 		action=4211,
+ 		weight=100,
+ 	favor=10
+},
+[130801] =
+{
+ 		id=130801,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={6,12},
+ 		Type=4,
+ 		action=4408,
+ 		weight=100,
+ 	favor=10
+},
+[130803] =
+{
+ 		id=130803,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={6,12},
+ 		Type=4,
+ 		action=4409,
+ 		weight=100,
+ 	favor=10
+},
+[130808] =
+{
+ 		id=130808,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={9,12},
+ 		Type=4,
+ 		action=4411,
+ 		weight=100,
+ 	favor=10
+},
+[131301] =
+{
+ 		id=131301,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={6,12},
+ 		Type=4,
+ 		action=4308,
+ 		weight=100,
+ 	favor=10
+},
+[131303] =
+{
+ 		id=131303,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={6,12},
+ 		Type=4,
+ 		action=4309,
+ 		weight=100,
+ 	favor=10
+},
+[131308] =
+{
+ 		id=131308,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={9,12},
+ 		Type=4,
+ 		action=4311,
+ 		weight=100,
+ 	favor=10
+},
+[131401] =
+{
+ 		id=131401,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={6,12},
+ 		Type=4,
+ 		action=4408,
+ 		weight=100,
+ 	favor=10
+},
+[131403] =
+{
+ 		id=131403,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={6,12},
+ 		Type=4,
+ 		action=4409,
+ 		weight=100,
+ 	favor=10
+},
+[131408] =
+{
+ 		id=131408,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={9,12},
+ 		Type=4,
+ 		action=4411,
+ 		weight=100,
+ 	favor=10
+},
+[131601] =
+{
+ 		id=131601,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={6,12},
+ 		Type=4,
+ 		action=4408,
+ 		weight=100,
+ 	favor=10
+},
+[131603] =
+{
+ 		id=131603,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={6,12},
+ 		Type=4,
+ 		action=4409,
+ 		weight=100,
+ 	favor=10
+},
+[131608] =
+{
+ 		id=131608,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={9,12},
+ 		Type=4,
+ 		action=4411,
+ 		weight=100,
+ 	favor=10
+},
+[131413] =
+{
+ 		id=131413,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,12},
+ 		Type=5,
+ 		action=12347,
+ 		weight=100,
+ 	favor=0
+},
+[131418] =
+{
+ 		id=131418,
+ 		hero=110003,
+ 		furnitureTypeId=1,
+ 		favorLevel={0,12},
+ 		Type=5,
+ 		action=12348,
+ 		weight=100,
+ 	favor=0
+},
+[131423] =
+{
+ 		id=131423,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,12},
+ 		Type=5,
+ 		action=12347,
+ 		weight=100,
+ 	favor=0
+},
+[131428] =
+{
+ 		id=131428,
+ 		hero=110003,
+ 		furnitureTypeId=2,
+ 		favorLevel={0,12},
+ 		Type=5,
+ 		action=12348,
+ 		weight=100,
+ 	favor=0
+},
+[131433] =
+{
+ 		id=131433,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,12},
+ 		Type=5,
+ 		action=12347,
+ 		weight=100,
+ 	favor=0
+},
+[131438] =
+{
+ 		id=131438,
+ 		hero=110003,
+ 		furnitureTypeId=3,
+ 		favorLevel={0,12},
+ 		Type=5,
+ 		action=12348,
+ 		weight=100,
+ 	favor=0
+},
+[131443] =
+{
+ 		id=131443,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,12},
+ 		Type=5,
+ 		action=112347,
+ 		weight=100,
+ 	favor=0
+},
+[131448] =
+{
+ 		id=131448,
+ 		hero=110003,
+ 		furnitureTypeId=8,
+ 		favorLevel={0,12},
+ 		Type=5,
+ 		action=112348,
+ 		weight=100,
+ 	favor=0
+},
+[131453] =
+{
+ 		id=131453,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,12},
+ 		Type=5,
+ 		action=102347,
+ 		weight=100,
+ 	favor=0
+},
+[131458] =
+{
+ 		id=131458,
+ 		hero=110003,
+ 		furnitureTypeId=13,
+ 		favorLevel={0,12},
+ 		Type=5,
+ 		action=102348,
+ 		weight=100,
+ 	favor=0
+},
+[131463] =
+{
+ 		id=131463,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,12},
+ 		Type=5,
+ 		action=112347,
+ 		weight=100,
+ 	favor=0
+},
+[131468] =
+{
+ 		id=131468,
+ 		hero=110003,
+ 		furnitureTypeId=14,
+ 		favorLevel={0,12},
+ 		Type=5,
+ 		action=112348,
+ 		weight=100,
+ 	favor=0
+},
+[131473] =
+{
+ 		id=131473,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,12},
+ 		Type=5,
+ 		action=112347,
+ 		weight=100,
+ 	favor=0
+},
+[131478] =
+{
+ 		id=131478,
+ 		hero=110003,
+ 		furnitureTypeId=16,
+ 		favorLevel={0,12},
+ 		Type=5,
+ 		action=112348,
+ 		weight=100,
+ 	favor=0
+}
+}
+
+return {title=title, value=value}

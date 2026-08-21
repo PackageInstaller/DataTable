@@ -1,0 +1,2217 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8359430822174271028
+  },
+  "m_Name": "battleGuideStep10",
+  "groups": [
+    {
+      "groupId": 1,
+      "items": [
+        {
+          "stepId": 19,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 33,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 300,
+          "isFreeClickAfterFinish": 0,
+          "desc": "等待飞船的动画",
+          "GMMark": 0
+        },
+        {
+          "stepId": 1,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "长官，欢迎来到阿图姆号的边舱。",
+            "descLanguageId": 0,
+            "targetName": "stagePointItem7",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 92,
+            "height": 71,
+            "connectRadius": 10,
+            "offset": {
+              "x": 4.0,
+              "y": 120.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -192.0,
+              "y": 0.0
+            },
+            "effectRotation": 45,
+            "uiDialogOffeset": {
+              "x": 79.0,
+              "y": -200.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40070,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "进入舰桥说明",
+          "GMMark": 234
+        },
+        {
+          "stepId": 11,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "<size=26>边舱<color=#169BD5>包括舰桥中心、通讯室、制造舱及宿舍。</color></size>",
+            "descLanguageId": 0,
+            "targetName": "stagePointItem7",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 92,
+            "height": 71,
+            "connectRadius": 10,
+            "offset": {
+              "x": 4.0,
+              "y": 120.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -192.0,
+              "y": 0.0
+            },
+            "effectRotation": 45,
+            "uiDialogOffeset": {
+              "x": 79.0,
+              "y": -200.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40071,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "进入舰桥说明2",
+          "GMMark": 235
+        },
+        {
+          "stepId": 12,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "每个舱室都有其独特的功能，请长官妥善安排各舱室的工作内容、派遣合适的战员。",
+            "descLanguageId": 0,
+            "targetName": "stagePointItem7",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 92,
+            "height": 71,
+            "connectRadius": 10,
+            "offset": {
+              "x": 4.0,
+              "y": 120.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -192.0,
+              "y": 0.0
+            },
+            "effectRotation": 45,
+            "uiDialogOffeset": {
+              "x": 79.0,
+              "y": -200.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40072,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "进入舰桥说明3",
+          "GMMark": 236
+        },
+        {
+          "stepId": 13,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "由于阿图姆号在战斗中受损，部分功能暂不可用，需长官逐步重建。",
+            "descLanguageId": 0,
+            "targetName": "stagePointItem7",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 92,
+            "height": 71,
+            "connectRadius": 10,
+            "offset": {
+              "x": 4.0,
+              "y": 120.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -192.0,
+              "y": 0.0
+            },
+            "effectRotation": 45,
+            "uiDialogOffeset": {
+              "x": 79.0,
+              "y": -200.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40073,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "进入舰桥说明4",
+          "GMMark": 237
+        },
+        {
+          "stepId": 20,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 34,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            20
+          ],
+          "delayTime": 200,
+          "isFreeClickAfterFinish": 0,
+          "desc": "移动飞船",
+          "GMMark": 0
+        },
+        {
+          "stepId": 14,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "阿图姆号的核心舱室-舰桥中心保存还算完善，先来看看吧。",
+            "descLanguageId": 0,
+            "targetName": "Bridge",
+            "targetLayerPath": "Normal/OtakuMainUI(Clone)/Root/Scroll View/Viewport/Content/Airship/GroupPanel/Bridge",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 212,
+            "height": 118,
+            "connectRadius": 10,
+            "offset": {
+              "x": -1.42,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 79.0,
+              "y": -277.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40074,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "进入舰桥中心",
+          "GMMark": 238
+        },
+        {
+          "stepId": 15,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "舰桥中心是阿图姆号的核心，影响着其他舱室的建造数量及等级上限。",
+            "descLanguageId": 0,
+            "targetName": "BtnUpGrade",
+            "targetLayerPath": "Normal/BridgeUI(Clone)/OtakuTitlePanel/Name/BtnUpGrade",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 680,
+            "height": 320,
+            "connectRadius": 10,
+            "offset": {
+              "x": 226.93,
+              "y": -391.3
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -402.0,
+              "y": 407.9
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40075,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "舰桥中心说明",
+          "GMMark": 239
+        },
+        {
+          "stepId": 16,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "当长官的资源足够时，记得优先升级舰桥中心。",
+            "descLanguageId": 0,
+            "targetName": "BtnUpGrade",
+            "targetLayerPath": "Normal/BridgeUI(Clone)/OtakuTitlePanel/Name/BtnUpGrade",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 412,
+            "height": 75,
+            "connectRadius": 10,
+            "offset": {
+              "x": -69.6,
+              "y": 12.72
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40076,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "引导升级按钮说明",
+          "GMMark": 240
+        },
+        {
+          "stepId": 17,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "<size=30>派遣不同的战员会影响到舱室的工作效率，记得查看每个战员的边舱技能。</size>",
+            "descLanguageId": 0,
+            "targetName": "PanelListAni",
+            "targetLayerPath": "Normal/BridgeUI(Clone)/OtakuSettlePanel/OtakuSettle/OtakuSettleList/SettleScrollView/Viewport/Content/0/PanelListAni",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 125,
+            "height": 440,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": -257.01
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40077,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "引导入驻说明",
+          "GMMark": 241
+        },
+        {
+          "stepId": 2,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "舰桥内有阿图姆号的专属星舰技能，可以在战役内使用并协助推进战斗。",
+            "descLanguageId": 0,
+            "targetName": "BtnSupport",
+            "targetLayerPath": "Normal/BridgeUI(Clone)/BtnSupport",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 188,
+            "height": 41,
+            "connectRadius": 10,
+            "offset": {
+              "x": 1.42,
+              "y": 1.05
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 25.96,
+              "y": -243.7
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40078,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "舰桥说明指挥官技能",
+          "GMMark": 242
+        },
+        {
+          "stepId": 4,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "阿图姆号目前解锁了1个星舰技能，随着战役的逐渐推进会解锁更多的星舰技能。",
+            "descLanguageId": 0,
+            "targetName": "0",
+            "targetLayerPath": "Normal/CommanderSkillUI_new(Clone)/container/Scroll View/Viewport/Content/0",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 280,
+            "height": 510,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": -304.71
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40079,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 1000,
+          "isFreeClickAfterFinish": 0,
+          "desc": "介绍指挥官技能",
+          "GMMark": 243
+        },
+        {
+          "stepId": 6,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "<size=26>可以通过升级技能或者派遣战员来提升技能等级。</size>",
+            "descLanguageId": 0,
+            "targetName": "Bg",
+            "targetLayerPath": "Normal/CommanderSkillUI_new(Clone)/Bg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 260,
+            "height": 90,
+            "connectRadius": 10,
+            "offset": {
+              "x": 338.2,
+              "y": 209.83
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -395.7,
+              "y": -77.7
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40080,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "介绍指挥官技能",
+          "GMMark": 244
+        },
+        {
+          "stepId": 7,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "请点击此处，选择派遣的战员。",
+            "descLanguageId": 0,
+            "targetName": "bg",
+            "targetLayerPath": "Normal/CommanderSkillUI_new(Clone)/CommanderSkillContent_New/SkillPanel/SkillBg2/bg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 76,
+            "height": 10,
+            "connectRadius": 10,
+            "offset": {
+              "x": -0.26,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40081,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击选择战员",
+          "GMMark": 245
+        },
+        {
+          "stepId": 8,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "请选择战员。",
+            "descLanguageId": 0,
+            "targetName": "HeroHeadItem",
+            "targetLayerPath": "PopUp/CommanderSkillSelectUI(Clone)/HeadSelect/Scroll View/Viewport/Content/0/HeroHeadItem",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 92,
+            "height": 120,
+            "connectRadius": 10,
+            "offset": {
+              "x": -2.24,
+              "y": -8.33
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40186,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 600,
+          "isFreeClickAfterFinish": 0,
+          "desc": "选择赫萝克",
+          "GMMark": 246
+        },
+        {
+          "stepId": 9,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "请点击确认按钮。",
+            "descLanguageId": 0,
+            "targetName": "ok",
+            "targetLayerPath": "PopUp/CommanderSkillSelectUI(Clone)/HeadSelect/ok",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 197,
+            "height": 46,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40083,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击确定",
+          "GMMark": 247
+        },
+        {
+          "stepId": 10,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "同时，也可以通过消耗资源进行星舰技能的提升。",
+            "descLanguageId": 0,
+            "targetName": "0",
+            "targetLayerPath": "Normal/CommanderSkillUI_new(Clone)/CommanderSkillContent_New/ContentBg/ItemPanel/Scroll View/Viewport/Content/0",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 163,
+            "height": 102,
+            "connectRadius": 10,
+            "offset": {
+              "x": 68.36,
+              "y": 29.2
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40084,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "引导升级",
+          "GMMark": 248
+        },
+        {
+          "stepId": 18,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "长官，我的协助任务已完成。当长官需要我时，我会第一时间回到您身边。",
+            "descLanguageId": 0,
+            "targetName": "Bg",
+            "targetLayerPath": "Normal/CommanderSkillUI_new(Clone)/Bg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40085,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "结束说话",
+          "GMMark": 249
+        }
+      ],
+      "desc": "舰桥技能引导",
+      "autoId": 0
+    }
+  ],
+  "preGroups": [
+    {
+      "groupId": 2,
+      "items": [
+        {
+          "stepId": 3,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "边舱模块由此进入。",
+            "descLanguageId": 0,
+            "targetName": "Otaku",
+            "targetLayerPath": "Normal/MainUI(Clone)/Bg/Panel_R/R/Otaku",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 160,
+            "height": 75,
+            "connectRadius": 10,
+            "offset": {
+              "x": -38.3,
+              "y": 30.2
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -214.5,
+              "y": -330.12
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40086,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击边舱",
+          "GMMark": 0
+        },
+        {
+          "stepId": 19,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 33,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 300,
+          "isFreeClickAfterFinish": 0,
+          "desc": "等待飞船的动画",
+          "GMMark": 0
+        },
+        {
+          "stepId": 1,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "长官，欢迎来到阿图姆号的边舱。",
+            "descLanguageId": 0,
+            "targetName": "stagePointItem7",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 92,
+            "height": 71,
+            "connectRadius": 10,
+            "offset": {
+              "x": 4.0,
+              "y": 120.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -192.0,
+              "y": 0.0
+            },
+            "effectRotation": 45,
+            "uiDialogOffeset": {
+              "x": 79.0,
+              "y": -200.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40070,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "进入舰桥说明",
+          "GMMark": 234
+        },
+        {
+          "stepId": 11,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "<size=26>边舱<color=#169BD5>包括舰桥中心、通讯室、制造舱及宿舍。</color></size>",
+            "descLanguageId": 0,
+            "targetName": "stagePointItem7",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 92,
+            "height": 71,
+            "connectRadius": 10,
+            "offset": {
+              "x": 4.0,
+              "y": 120.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -192.0,
+              "y": 0.0
+            },
+            "effectRotation": 45,
+            "uiDialogOffeset": {
+              "x": 79.0,
+              "y": -200.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40071,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "进入舰桥说明2",
+          "GMMark": 235
+        },
+        {
+          "stepId": 12,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "每个舱室都有其独特的功能，请长官妥善安排各舱室的工作内容、派遣合适的战员。",
+            "descLanguageId": 0,
+            "targetName": "stagePointItem7",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 92,
+            "height": 71,
+            "connectRadius": 10,
+            "offset": {
+              "x": 4.0,
+              "y": 120.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -192.0,
+              "y": 0.0
+            },
+            "effectRotation": 45,
+            "uiDialogOffeset": {
+              "x": 79.0,
+              "y": -200.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40072,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "进入舰桥说明3",
+          "GMMark": 236
+        },
+        {
+          "stepId": 13,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "由于阿图姆号在战斗中受损，部分功能暂不可用，需长官逐步重建。",
+            "descLanguageId": 0,
+            "targetName": "stagePointItem7",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 92,
+            "height": 71,
+            "connectRadius": 10,
+            "offset": {
+              "x": 4.0,
+              "y": 120.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -192.0,
+              "y": 0.0
+            },
+            "effectRotation": 45,
+            "uiDialogOffeset": {
+              "x": 79.0,
+              "y": -200.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40073,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "进入舰桥说明4",
+          "GMMark": 237
+        },
+        {
+          "stepId": 20,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 34,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 0,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "",
+            "targetLayerPath": "",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [
+            20
+          ],
+          "delayTime": 200,
+          "isFreeClickAfterFinish": 0,
+          "desc": "移动飞船",
+          "GMMark": 0
+        },
+        {
+          "stepId": 14,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "阿图姆号的核心舱室-舰桥中心保存还算完善，先来看看吧。",
+            "descLanguageId": 0,
+            "targetName": "Bridge",
+            "targetLayerPath": "Normal/OtakuMainUI(Clone)/Root/Scroll View/Viewport/Content/Airship/GroupPanel/Bridge",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 212,
+            "height": 118,
+            "connectRadius": 10,
+            "offset": {
+              "x": -1.42,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 79.0,
+              "y": -277.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40074,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "进入舰桥中心",
+          "GMMark": 238
+        },
+        {
+          "stepId": 15,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "舰桥中心是阿图姆号的核心，影响着其他舱室的建造数量及等级上限。",
+            "descLanguageId": 0,
+            "targetName": "BtnUpGrade",
+            "targetLayerPath": "Normal/BridgeUI(Clone)/OtakuTitlePanel/Name/BtnUpGrade",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 680,
+            "height": 320,
+            "connectRadius": 10,
+            "offset": {
+              "x": 226.93,
+              "y": -391.3
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -402.0,
+              "y": 407.9
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40075,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "舰桥中心说明",
+          "GMMark": 239
+        },
+        {
+          "stepId": 16,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "当长官的资源足够时，记得优先升级舰桥中心。",
+            "descLanguageId": 0,
+            "targetName": "BtnUpGrade",
+            "targetLayerPath": "Normal/BridgeUI(Clone)/OtakuTitlePanel/Name/BtnUpGrade",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 412,
+            "height": 75,
+            "connectRadius": 10,
+            "offset": {
+              "x": -69.6,
+              "y": 12.72
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40076,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "引导升级按钮说明",
+          "GMMark": 240
+        },
+        {
+          "stepId": 17,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "<size=30>派遣不同的战员会影响到舱室的工作效率，记得查看每个战员的边舱技能。</size>",
+            "descLanguageId": 0,
+            "targetName": "PanelListAni",
+            "targetLayerPath": "Normal/BridgeUI(Clone)/OtakuSettlePanel/OtakuSettle/OtakuSettleList/SettleScrollView/Viewport/Content/0/PanelListAni",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 125,
+            "height": 440,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": -257.01
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40077,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 500,
+          "isFreeClickAfterFinish": 0,
+          "desc": "引导入驻说明",
+          "GMMark": 241
+        },
+        {
+          "stepId": 2,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "舰桥内有阿图姆号的专属星舰技能，可以在战役内使用并协助推进战斗。",
+            "descLanguageId": 0,
+            "targetName": "BtnSupport",
+            "targetLayerPath": "Normal/BridgeUI(Clone)/BtnSupport",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 188,
+            "height": 41,
+            "connectRadius": 10,
+            "offset": {
+              "x": 1.42,
+              "y": 1.05
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 25.96,
+              "y": -243.7
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40078,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "舰桥说明指挥官技能",
+          "GMMark": 242
+        },
+        {
+          "stepId": 4,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "阿图姆号目前解锁了1个星舰技能，随着战役的逐渐推进会解锁更多的星舰技能。",
+            "descLanguageId": 0,
+            "targetName": "0",
+            "targetLayerPath": "Normal/CommanderSkillUI_new(Clone)/container/Scroll View/Viewport/Content/0",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 280,
+            "height": 510,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": -304.71
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40079,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 1000,
+          "isFreeClickAfterFinish": 0,
+          "desc": "介绍指挥官技能",
+          "GMMark": 243
+        },
+        {
+          "stepId": 6,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "<size=26>可以通过升级技能或者派遣战员来提升技能等级。</size>",
+            "descLanguageId": 0,
+            "targetName": "Bg",
+            "targetLayerPath": "Normal/CommanderSkillUI_new(Clone)/Bg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 260,
+            "height": 90,
+            "connectRadius": 10,
+            "offset": {
+              "x": 338.2,
+              "y": 209.83
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -395.7,
+              "y": -77.7
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40080,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "介绍指挥官技能",
+          "GMMark": 244
+        },
+        {
+          "stepId": 7,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "请点击此处，选择派遣的战员。",
+            "descLanguageId": 0,
+            "targetName": "bg",
+            "targetLayerPath": "Normal/CommanderSkillUI_new(Clone)/CommanderSkillContent_New/SkillPanel/SkillBg2/bg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 76,
+            "height": 10,
+            "connectRadius": 10,
+            "offset": {
+              "x": -0.26,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40081,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击选择战员",
+          "GMMark": 245
+        },
+        {
+          "stepId": 8,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "请选择战员。",
+            "descLanguageId": 0,
+            "targetName": "HeroHeadItem",
+            "targetLayerPath": "PopUp/CommanderSkillSelectUI(Clone)/HeadSelect/Scroll View/Viewport/Content/0/HeroHeadItem",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 92,
+            "height": 120,
+            "connectRadius": 10,
+            "offset": {
+              "x": -2.24,
+              "y": -8.33
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40186,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 600,
+          "isFreeClickAfterFinish": 0,
+          "desc": "选择赫萝克",
+          "GMMark": 246
+        },
+        {
+          "stepId": 9,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "请点击确认按钮。",
+            "descLanguageId": 0,
+            "targetName": "ok",
+            "targetLayerPath": "PopUp/CommanderSkillSelectUI(Clone)/HeadSelect/ok",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 197,
+            "height": 46,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40083,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击确定",
+          "GMMark": 247
+        },
+        {
+          "stepId": 10,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "同时，也可以通过消耗资源进行星舰技能的提升。",
+            "descLanguageId": 0,
+            "targetName": "0",
+            "targetLayerPath": "Normal/CommanderSkillUI_new(Clone)/CommanderSkillContent_New/ContentBg/ItemPanel/Scroll View/Viewport/Content/0",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 163,
+            "height": 102,
+            "connectRadius": 10,
+            "offset": {
+              "x": 68.36,
+              "y": 29.2
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40084,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "引导升级",
+          "GMMark": 248
+        },
+        {
+          "stepId": 18,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 1,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 0,
+          "uiParam": {
+            "desc": "长官，我的协助任务已完成。当长官需要我时，我会第一时间回到您身边。",
+            "descLanguageId": 0,
+            "targetName": "Bg",
+            "targetLayerPath": "Normal/CommanderSkillUI_new(Clone)/Bg",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 0,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 0,
+            "height": 0,
+            "connectRadius": 10,
+            "offset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40085,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "结束说话",
+          "GMMark": 249
+        }
+      ],
+      "desc": "",
+      "autoId": 0
+    }
+  ]
+}

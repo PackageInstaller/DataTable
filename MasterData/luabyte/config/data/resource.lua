@@ -1,0 +1,8750 @@
+local title = {
+	id = 0,
+	name = 0,
+	nameEn = 0,
+	desc = "",
+	icon = "",
+	targeticon = "",
+	battleIcon = "",
+	imageHalf = "",
+	battleHalf = "",
+	imageWhole = "",
+	model = "",
+	highModel = "",
+	nakedModel = "",
+	drawHalf = "",
+	awakeHalf = "",
+	drawing = "",
+	fashionDrawing = "",
+	fashionText = "",
+	awakeDrawing = "",
+	drawingPicture = "",
+	illustration = "",
+	awakePicture = "",
+	awakeShow = "",
+	artWord = "",
+	fashionPicture = "",
+	DevelopAwakePicture = ""
+}
+
+local value = {
+[1] =
+{
+ 		id=1,
+ 		name=8110001,
+ 		desc="空模型",
+ 		model="Role1/Prefab/Hero_Battle/role_1",
+ 	DevelopAwakePicture=""
+},
+[2] =
+{
+ 		id=2,
+ 		name=8110001,
+ 		desc="空怪物模型",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2001_01",
+ 		model="Role1/Prefab/Monster/monster_1.prefab",
+ 	DevelopAwakePicture=""
+},
+[1000] =
+{
+ 		id=1000,
+ 		name=8110001,
+ 		desc="安息香buff属性提升",
+ 		model="Effects1/Skill/Hero/110003/effect_f_110003_skill01_buff",
+ 	DevelopAwakePicture=""
+},
+[1001] =
+{
+ 		id=1001,
+ 		name=8110001,
+ 		desc="安息香持续回血",
+ 		model="Effects1/Skill/Hero/110003/effect_f_110003_2b_attack_buff",
+ 	DevelopAwakePicture=""
+},
+[1002] =
+{
+ 		id=1002,
+ 		name=8110001,
+ 		desc="米娅光环",
+ 		model="Effects1/Skill/Hero/120001/effect_f_120001_1b_skill01",
+ 	DevelopAwakePicture=""
+},
+[1003] =
+{
+ 		id=1003,
+ 		name=8110001,
+ 		desc="米娅光环攻击的受击特效",
+ 		model="Effects1/Skill/Hero/120001/effect_f_120001_1b_skill01_hit",
+ 	DevelopAwakePicture=""
+},
+[1004] =
+{
+ 		id=1004,
+ 		name=8110001,
+ 		desc="阿什琳流血buff",
+ 		model="Effects1/Skill/Hero/110001/effect_f_110001_2b_attack01_buff",
+ 	DevelopAwakePicture=""
+},
+[1005] =
+{
+ 		id=1005,
+ 		name=8110001,
+ 		desc="奈美受击电流",
+ 		model="Effects1/Skill/Hero/140002/effect_f_140002_2a_attack01_hit",
+ 	DevelopAwakePicture=""
+},
+[1006] =
+{
+ 		id=1006,
+ 		name=8110001,
+ 		desc="奈美受击降低防御",
+ 		model="Effects1/Skill/Hero/140002/effect_f_140002_2b_attack01_hit",
+ 	DevelopAwakePicture=""
+},
+[1007] =
+{
+ 		id=1007,
+ 		name=8110001,
+ 		desc="海风藤吸血",
+ 		model="Effects1/Skill/Hero/110005/effect_f_110005_2b_attack03_hit_buff",
+ 	DevelopAwakePicture=""
+},
+[1008] =
+{
+ 		id=1008,
+ 		name=8110001,
+ 		desc="露希尔受击表现",
+ 		model="Effects1/Skill/Hero/130003/effect_f_130003_hit",
+ 	DevelopAwakePicture=""
+},
+[1009] =
+{
+ 		id=1009,
+ 		name=100011,
+ 		desc="闪烁怪闪现前特效",
+ 		model="Effects1/Skill/Monster/270022/effect_f_monster_270022_skill01",
+ 	DevelopAwakePicture=""
+},
+[1010] =
+{
+ 		id=1010,
+ 		name=100011,
+ 		desc="闪烁怪闪现后特效",
+ 		model="Effects1/Skill/Monster/270022/effect_f_monster_270022_skill",
+ 	DevelopAwakePicture=""
+},
+[1011] =
+{
+ 		id=1011,
+ 		name=8110001,
+ 		desc="玛乔丽地面残留火焰",
+ 		model="Effects1/Skill/Hero/120004/effect_f_120004_buff01",
+ 	DevelopAwakePicture=""
+},
+[1012] =
+{
+ 		id=1012,
+ 		name=8110001,
+ 		desc="玛乔丽灼烧buff",
+ 		model="Effects1/Skill/Hero/120004/effect_f_120004_buff02",
+ 	DevelopAwakePicture=""
+},
+[1013] =
+{
+ 		id=1013,
+ 		name=8110001,
+ 		desc="玛乔丽攻击提升buff",
+ 		model="Effects1/Skill/Hero/120004/effect_f_120004_buff03",
+ 	DevelopAwakePicture=""
+},
+[1014] =
+{
+ 		id=1014,
+ 		name=8110001,
+ 		desc="奈美技能循环特效",
+ 		model="Effects1/Skill/Hero/140002/effect_f_140002_skill01_loop",
+ 	DevelopAwakePicture=""
+},
+[1015] =
+{
+ 		id=1015,
+ 		name=8110001,
+ 		desc="毒气罐毒气特效",
+ 		model="Effects1/Scene/effect_scene_500007_02",
+ 	DevelopAwakePicture=""
+},
+[1016] =
+{
+ 		id=1016,
+ 		name=8110001,
+ 		desc="玛乔丽地面残留火焰大",
+ 		model="Effects1/Skill/Hero/120004/effect_f_120004_buff04",
+ 	DevelopAwakePicture=""
+},
+[1017] =
+{
+ 		id=1017,
+ 		name=8110001,
+ 		desc="温妮狂暴",
+ 		model="Effects1/Skill/Monster/270016/effect_f_monster_270016_kuangbao01",
+ 	DevelopAwakePicture=""
+},
+[1018] =
+{
+ 		id=1018,
+ 		name=8110001,
+ 		desc="阿米莉亚A技能",
+ 		model="Effects1/Skill/Hero/120003/effect_f_120003_1a_skill01_shayu",
+ 	DevelopAwakePicture=""
+},
+[1019] =
+{
+ 		id=1019,
+ 		name=8110001,
+ 		desc="眩晕",
+ 		model="Effects1/Skill/Common/effect_role_stun",
+ 	DevelopAwakePicture=""
+},
+[1020] =
+{
+ 		id=1020,
+ 		name=8110001,
+ 		desc="卡琳buff",
+ 		model="Effects1/Skill/Hero/140007/effect_f_140007_skill01_buff01",
+ 	DevelopAwakePicture=""
+},
+[1021] =
+{
+ 		id=1021,
+ 		name=8110001,
+ 		desc="菲碧净化buff",
+ 		model="Effects1/Skill/Hero/130005/effect_f_130005_1a_skill01_01_buff",
+ 	DevelopAwakePicture=""
+},
+[1022] =
+{
+ 		id=1022,
+ 		name=8110001,
+ 		desc="菲碧debuff",
+ 		model="Effects1/Skill/Hero/130005/effect_f_130005_1b_skill01_hit05",
+ 	DevelopAwakePicture=""
+},
+[1023] =
+{
+ 		id=1023,
+ 		name=8110001,
+ 		desc="菲碧受击1",
+ 		model="Effects1/Skill/Hero/130005/effect_f_130005_1b_skill01_hit01",
+ 	DevelopAwakePicture=""
+},
+[1024] =
+{
+ 		id=1024,
+ 		name=8110001,
+ 		desc="菲碧受击2",
+ 		model="Effects1/Skill/Hero/130005/effect_f_130005_1b_skill01_hit02",
+ 	DevelopAwakePicture=""
+},
+[1025] =
+{
+ 		id=1025,
+ 		name=8110001,
+ 		desc="菲碧受击3",
+ 		model="Effects1/Skill/Hero/130005/effect_f_130005_1b_skill01_hit03",
+ 	DevelopAwakePicture=""
+},
+[1026] =
+{
+ 		id=1026,
+ 		name=8110001,
+ 		desc="埃吉娅加血buff",
+ 		model="Effects1/Skill/Hero/130009/effect_f_130009_1b_skill_buff01",
+ 	DevelopAwakePicture=""
+},
+[1027] =
+{
+ 		id=1027,
+ 		name=8110001,
+ 		desc="埃吉娅加攻buff",
+ 		model="Effects1/Skill/Hero/130009/effect_f_130009_1b_skill_buff02",
+ 	DevelopAwakePicture=""
+},
+[1028] =
+{
+ 		id=1028,
+ 		name=8110001,
+ 		desc="泷绛1Abuff",
+ 		model="Effects1/Skill/Hero/120007/effect_f_120007_1a_skill01_buff",
+ 	DevelopAwakePicture=""
+},
+[1029] =
+{
+ 		id=1029,
+ 		name=8110001,
+ 		desc="波尼加魔抗buff",
+ 		model="Effects1/Skill/Hero/110009/effect_f_110009_buff01",
+ 	DevelopAwakePicture=""
+},
+[1030] =
+{
+ 		id=1030,
+ 		name=8110001,
+ 		desc="波尼加物抗buff",
+ 		model="Effects1/Skill/Hero/110009/effect_f_110009_buff02",
+ 	DevelopAwakePicture=""
+},
+[1031] =
+{
+ 		id=1031,
+ 		name=8110001,
+ 		desc="月之庇护",
+ 		model="Effects1/Skill/Hero/130006/effect_f_130006_buff",
+ 	DevelopAwakePicture=""
+},
+[1032] =
+{
+ 		id=1032,
+ 		name=8110001,
+ 		desc="厄瑞妮光环",
+ 		model="Effects1/Skill/Hero/130006/effect_f_130006_1a_skill01_hit",
+ 	DevelopAwakePicture=""
+},
+[1033] =
+{
+ 		id=1033,
+ 		name=8110001,
+ 		desc="贝蕾妮斯加血波",
+ 		model="Effects1/Skill/Hero/110010/effect_f_110010_attack02_buff",
+ 	DevelopAwakePicture=""
+},
+[1034] =
+{
+ 		id=1034,
+ 		name=8110001,
+ 		desc="希格德莉法技能标记",
+ 		model="Effects1/Skill/Hero/110004/effect_f_110004_mark",
+ 	DevelopAwakePicture=""
+},
+[1035] =
+{
+ 		id=1035,
+ 		name=8110001,
+ 		desc="希格德莉法武器强化",
+ 		model="Effects1/Skill/Hero/110004/effect_f_110004_buff",
+ 	DevelopAwakePicture=""
+},
+[1036] =
+{
+ 		id=1036,
+ 		name=8110001,
+ 		desc="二元光环",
+ 		model="Effects1/Skill/Hero/140006/effect_f_140006_skill01_buff02",
+ 	DevelopAwakePicture=""
+},
+[1037] =
+{
+ 		id=1037,
+ 		name=8110001,
+ 		desc="二元光环爆炸",
+ 		model="Effects1/Skill/Hero/140006/effect_f_140006_skill01_buff03",
+ 	DevelopAwakePicture=""
+},
+[1038] =
+{
+ 		id=1038,
+ 		name=8110001,
+ 		desc="水中行走指示特效",
+ 		model="Effects1/Skill/Monster/270049/effect_f_monster_270049_buff",
+ 	DevelopAwakePicture=""
+},
+[1039] =
+{
+ 		id=1039,
+ 		name=8110001,
+ 		desc="玛乔丽B路爆炸特效",
+ 		model="Effects1/Scene/effect_scene_boom006",
+ 	DevelopAwakePicture=""
+},
+[1040] =
+{
+ 		id=1040,
+ 		name=8110001,
+ 		desc="大树缠绕",
+ 		model="Effects1/Skill/Monster/270085/effect_f_monster_270085_skill_hit",
+ 	DevelopAwakePicture=""
+},
+[1041] =
+{
+ 		id=1041,
+ 		name=8110001,
+ 		desc="森林飞行白天光环",
+ 		model="Effects1/Skill/Monster/270084/effect_f_monster_270084_idle",
+ 	DevelopAwakePicture=""
+},
+[1042] =
+{
+ 		id=1042,
+ 		name=8110001,
+ 		desc="森林减双防 毒",
+ 		model="Effects1/Skill/Monster/270110/effect_f_monster_270110_attack01_debuff",
+ 	DevelopAwakePicture=""
+},
+[1043] =
+{
+ 		id=1043,
+ 		name=8110001,
+ 		desc="西格德利法黏着子弹",
+ 		model="Effects1/Skill/Hero/110004/effect_f_110004_1c_skill01_hit",
+ 	DevelopAwakePicture=""
+},
+[1044] =
+{
+ 		id=1044,
+ 		name=8110001,
+ 		desc="波尼兔子出现消失",
+ 		model="Effects1/Skill/Hero/110009/effect_f_110009_1c_skill1_02",
+ 	DevelopAwakePicture=""
+},
+[1045] =
+{
+ 		id=1045,
+ 		name=8110001,
+ 		desc="波尼跳舞兔子+光环",
+ 		model="Effects1/Skill/Hero/110009/effect_f_110009_1c_skill1_zd02",
+ 	DevelopAwakePicture=""
+},
+[1046] =
+{
+ 		id=1046,
+ 		name=8110001,
+ 		desc="波尼光环",
+ 		model="Effects1/Skill/Hero/110009/effect_f_110009_1c_skill01_buff",
+ 	DevelopAwakePicture=""
+},
+[1047] =
+{
+ 		id=1047,
+ 		name=8110001,
+ 		desc="西格德利法黏着子弹爆炸特效",
+ 		model="Effects1/Skill/Hero/110004/effect_f_110004_1c_skill01_hit01",
+ 	DevelopAwakePicture=""
+},
+[1048] =
+{
+ 		id=1048,
+ 		name=8110001,
+ 		desc="泷降1C技能光环",
+ 		model="Effects1/Skill/Hero/120007/effect_f_120007_1c_skill01_01",
+ 	DevelopAwakePicture=""
+},
+[1049] =
+{
+ 		id=1049,
+ 		name=8110001,
+ 		desc="欧诺米亚1A砸地特效",
+ 		model="Effects1/Skill/Hero/130001/effect_f_130001_skill01_hit01",
+ 	DevelopAwakePicture=""
+},
+[1050] =
+{
+ 		id=1050,
+ 		name=8110001,
+ 		desc="莎姬1A技能特效",
+ 		model="Effects1/Skill/Hero/110011/effect_f_110011_skill01_md",
+ 	DevelopAwakePicture=""
+},
+[1051] =
+{
+ 		id=1051,
+ 		name=8110001,
+ 		desc="伊迪斯B路复活特效",
+ 		model="Effects1/Skill/Hero/150009/effect_f_150009_1c_skill01",
+ 	DevelopAwakePicture=""
+},
+[1052] =
+{
+ 		id=1052,
+ 		name=8110001,
+ 		desc="资源箱标记",
+ 		model="Effects1/Scene/effect_scene_jiantou002",
+ 	DevelopAwakePicture=""
+},
+[1053] =
+{
+ 		id=1053,
+ 		name=8110001,
+ 		desc="毒气盾",
+ 		model="Effects1/Skill/Monster/270151/effect_f_monster_270151_skill",
+ 	DevelopAwakePicture=""
+},
+[1054] =
+{
+ 		id=1054,
+ 		name=8110001,
+ 		desc="波尼治疗特效",
+ 		model="Effects1/Skill/Hero/110009/effect_f_110009_hit01",
+ 	DevelopAwakePicture=""
+},
+[1055] =
+{
+ 		id=1055,
+ 		name=8110001,
+ 		desc="一松樱1C标记特效",
+ 		model="Effects1/Skill/Hero/120001/effect_f_120001_1c_skill01_01",
+ 	DevelopAwakePicture=""
+},
+[1056] =
+{
+ 		id=1056,
+ 		name=8110001,
+ 		desc="一松樱1C手上樱花特效",
+ 		model="Effects1/Skill/Hero/120001/effect_f_120001_1c_skill01_hand",
+ 	DevelopAwakePicture=""
+},
+[1057] =
+{
+ 		id=1057,
+ 		name=8110001,
+ 		desc="水都红色大剑盾",
+ 		model="Effects1/Skill/Monster/270047/effect_f_monster_270047_buff",
+ 	DevelopAwakePicture=""
+},
+[1058] =
+{
+ 		id=1058,
+ 		name=8110001,
+ 		desc="康斯维拉1A南瓜砸下表现",
+ 		model="Effects1/Skill/Hero/150005/effect_f_150005_1a_skill01",
+ 	DevelopAwakePicture=""
+},
+[1059] =
+{
+ 		id=1059,
+ 		name=8110001,
+ 		desc="康斯维拉1A地面持续表现",
+ 		model="Effects1/Skill/Hero/150005/effect_f_150005_1a_skill01_md",
+ 	DevelopAwakePicture=""
+},
+[1060] =
+{
+ 		id=1060,
+ 		name=8110001,
+ 		desc="康斯维拉1B猫头鹰出现",
+ 		model="Effects1/Skill/Hero/150005/effect_f_150005_1b_skill01_start",
+ 	DevelopAwakePicture=""
+},
+[1061] =
+{
+ 		id=1061,
+ 		name=8110001,
+ 		desc="怪物到达终点回收特效",
+ 		model="Effects1/Scene/effect_scene_vanish01",
+ 	DevelopAwakePicture=""
+},
+[1062] =
+{
+ 		id=1062,
+ 		name=8110001,
+ 		desc="物防高怪物罩子-270019",
+ 		model="Effects1/Skill/Common/effect_f_monster_zhaozi01",
+ 	DevelopAwakePicture=""
+},
+[1063] =
+{
+ 		id=1063,
+ 		name=8110001,
+ 		desc="物防高怪物罩子-270013",
+ 		model="Effects1/Skill/Common/effect_f_monster_zhaozi02",
+ 	DevelopAwakePicture=""
+},
+[1064] =
+{
+ 		id=1064,
+ 		name=8110001,
+ 		desc="物防高怪物罩子-220005",
+ 		model="Effects1/Skill/Common/effect_f_monster_zhaozi03",
+ 	DevelopAwakePicture=""
+},
+[1065] =
+{
+ 		id=1065,
+ 		name=8110001,
+ 		desc="左路升级特效",
+ 		model="Effects1/Skill/Common/effect_scene_skillup01",
+ 	DevelopAwakePicture=""
+},
+[1066] =
+{
+ 		id=1066,
+ 		name=8110001,
+ 		desc="左路标记特效",
+ 		model="Effects1/Skill/Common/effect_scene_skillupmark01",
+ 	DevelopAwakePicture=""
+},
+[1067] =
+{
+ 		id=1067,
+ 		name=8110001,
+ 		desc="右路升级特效",
+ 		model="Effects1/Skill/Common/effect_scene_skillup02",
+ 	DevelopAwakePicture=""
+},
+[1068] =
+{
+ 		id=1068,
+ 		name=8110001,
+ 		desc="右路标记特效",
+ 		model="Effects1/Skill/Common/effect_scene_skillupmark02",
+ 	DevelopAwakePicture=""
+},
+[1069] =
+{
+ 		id=1069,
+ 		name=8110001,
+ 		desc="觉醒升级特效",
+ 		model="Effects1/Skill/Common/effect_scene_skillup03",
+ 	DevelopAwakePicture=""
+},
+[1070] =
+{
+ 		id=1070,
+ 		name=8110001,
+ 		desc="觉醒标记特效",
+ 		model="Effects1/Skill/Common/effect_scene_skillupmark03",
+ 	DevelopAwakePicture=""
+},
+[1071] =
+{
+ 		id=1071,
+ 		name=8110001,
+ 		desc="毒液怪喷毒特效",
+ 		model="Effects1/Skill/Monster/270025/effect_f_monster_270025_skill01",
+ 	DevelopAwakePicture=""
+},
+[1072] =
+{
+ 		id=1072,
+ 		name=8110001,
+ 		desc="烟雾地块特效",
+ 		model="Effects1/Scene/effect_scene_floorbuff01",
+ 	DevelopAwakePicture=""
+},
+[1073] =
+{
+ 		id=1073,
+ 		name=8110001,
+ 		desc="攻击型地块特效",
+ 		model="Effects1/Scene/effect_scene_floorbuff02",
+ 	DevelopAwakePicture=""
+},
+[1074] =
+{
+ 		id=1074,
+ 		name=8110001,
+ 		desc="防御型地块特效",
+ 		model="Effects1/Scene/effect_scene_floorbuff03",
+ 	DevelopAwakePicture=""
+},
+[1075] =
+{
+ 		id=1075,
+ 		name=8110001,
+ 		desc="辅助型地块特效",
+ 		model="Effects1/Scene/effect_scene_floorbuff04",
+ 	DevelopAwakePicture=""
+},
+[1076] =
+{
+ 		id=1076,
+ 		name=8110001,
+ 		desc="豆子怪BUFF特效",
+ 		model="Effects1/Skill/Common/effect_scene_costmonsterbuff01",
+ 	DevelopAwakePicture=""
+},
+[1077] =
+{
+ 		id=1077,
+ 		name=8110001,
+ 		desc="红色温妮常驻红闪电特效",
+ 		model="Effects1/Skill/Monster/270016/effect_f_monster_270016_buff01",
+ 	DevelopAwakePicture=""
+},
+[1078] =
+{
+ 		id=1078,
+ 		name=8110001,
+ 		desc="红色锁定特效",
+ 		model="Effects1/Skill/Hero/120002/effect_f_120002_attack02_md",
+ 	DevelopAwakePicture=""
+},
+[1079] =
+{
+ 		id=1079,
+ 		name=8110001,
+ 		desc="格特鲁德1A失控特效",
+ 		model="Effects1/Skill/Hero/110012/effect_f_110012_1a_skill01_buff01",
+ 	DevelopAwakePicture=""
+},
+[1080] =
+{
+ 		id=1080,
+ 		name=8110001,
+ 		desc="亚斯塔罗特1C普攻刀",
+ 		model="Effects1/Skill/Hero/150004/effect_f_150004_Weapon",
+ 	DevelopAwakePicture=""
+},
+[1081] =
+{
+ 		id=1081,
+ 		name=8110001,
+ 		desc="依丝特加攻特效",
+ 		model="Effects1/Skill/Hero/150002/effect_f_150002_1a_skill01_buff1",
+ 	DevelopAwakePicture=""
+},
+[1082] =
+{
+ 		id=1082,
+ 		name=8110001,
+ 		desc="失去阻挡能力",
+ 		model="Effects1/Skill/Common/effect_loss_blocked",
+ 	DevelopAwakePicture=""
+},
+[1083] =
+{
+ 		id=1083,
+ 		name=8110001,
+ 		desc="绿野仙踪狗狂暴特效",
+ 		model="Effects1/Skill/Monster/270146/effect_f_270146_buff",
+ 	DevelopAwakePicture=""
+},
+[1084] =
+{
+ 		id=1084,
+ 		name=8110001,
+ 		desc="绿野仙踪北方女巫叠层1",
+ 		model="Effects1/Skill/Monster/270147/effect_f_monster_270147_skill_buff01",
+ 	DevelopAwakePicture=""
+},
+[1085] =
+{
+ 		id=1085,
+ 		name=8110001,
+ 		desc="绿野仙踪北方女巫叠层2",
+ 		model="Effects1/Skill/Monster/270147/effect_f_monster_270147_skill_buff02",
+ 	DevelopAwakePicture=""
+},
+[1086] =
+{
+ 		id=1086,
+ 		name=8110001,
+ 		desc="绿野仙踪北方女巫叠层3",
+ 		model="Effects1/Skill/Monster/270147/effect_f_monster_270147_skill_buff03",
+ 	DevelopAwakePicture=""
+},
+[1087] =
+{
+ 		id=1087,
+ 		name=8110001,
+ 		desc="绿野仙踪北方女巫叠层爆炸",
+ 		model="Effects1/Skill/Monster/270147/effect_f_monster_270147_skill_hit",
+ 	DevelopAwakePicture=""
+},
+[1088] =
+{
+ 		id=1088,
+ 		name=8110001,
+ 		desc="绿野仙踪西方女巫护罩",
+ 		model="Effects1/Skill/Monster/270148/effect_f_monster_270154_skill",
+ 	DevelopAwakePicture=""
+},
+[1089] =
+{
+ 		id=1089,
+ 		name=8110001,
+ 		desc="依丝特“欲”特效",
+ 		model="Effects1/Skill/Hero/150002/effect_f_150002_buff_hit",
+ 	DevelopAwakePicture=""
+},
+[1090] =
+{
+ 		id=1090,
+ 		name=8110001,
+ 		desc="飞行怪位置线特效",
+ 		model="Effects1/Battle/effect_scene_flypositionline",
+ 	DevelopAwakePicture=""
+},
+[1091] =
+{
+ 		id=1091,
+ 		name=8110001,
+ 		desc="绿野仙踪稻草人治疗BUFF特效",
+ 		model="Effects1/Skill/Monster/270136/effect_f_monster_270136_buff01",
+ 	DevelopAwakePicture=""
+},
+[1092] =
+{
+ 		id=1092,
+ 		name=8110001,
+ 		desc="奈美1C技能特效",
+ 		model="Effects1/Skill/Hero/140002/effect_f_140002_1c_skill01_loop",
+ 	DevelopAwakePicture=""
+},
+[1093] =
+{
+ 		id=1093,
+ 		name=8110001,
+ 		desc="河合芽衣1Abuff特效",
+ 		model="Effects1/Skill/Hero/120013/effect_f_120013_1a_skill01_buff",
+ 	DevelopAwakePicture=""
+},
+[1094] =
+{
+ 		id=1094,
+ 		name=8110001,
+ 		desc="河合芽衣休息回蓝特效",
+ 		model="Effects1/Skill/Hero/120013/effect_f_120013_buff",
+ 	DevelopAwakePicture=""
+},
+[1095] =
+{
+ 		id=1095,
+ 		name=8110001,
+ 		desc="狄波拉1B特效",
+ 		model="Effects1/Skill/Hero/150003/effect_f_150003_1b_skill01_buff",
+ 	DevelopAwakePicture=""
+},
+[1096] =
+{
+ 		id=1096,
+ 		name=8110001,
+ 		desc="狄波拉1B流光1",
+ 		model="Effects1/Skill/Hero/150003/effect_f_150003_1b_skill01_buff_weapon01",
+ 	DevelopAwakePicture=""
+},
+[1097] =
+{
+ 		id=1097,
+ 		name=8110001,
+ 		desc="狄波拉1B流光2",
+ 		model="Effects1/Skill/Hero/150003/effect_f_150003_1b_skill01_buff_weapon02",
+ 	DevelopAwakePicture=""
+},
+[100000] =
+{
+ 		id=100000,
+ 		name=8100000,
+ 		desc="商店老板娘",
+ 		icon="UI/SpritePics/head/Hero/100000",
+ 		targeticon="UI/SpritePics/head/Hero/100000_01",
+ 		battleIcon="UI/SpritePics/battle/100000",
+ 		imageHalf="UI/SpritePics/formation/100000",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/100000",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110001",
+ 		model="Role1/Prefab/Hero_Battle/role_100000",
+ 		highModel="Role1/Prefab/Hero_Show/role_100000_H",
+ 		drawHalf="UI/SpritePics/employee/100000",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110001",
+ 	DevelopAwakePicture=""
+},
+[110001] =
+{
+ 		id=110001,
+ 		name=8110001,
+ 		desc="阿什琳",
+ 		icon="UI/SpritePics/head/Hero/110001",
+ 		targeticon="UI/SpritePics/head/Hero/110001_01",
+ 		battleIcon="UI/SpritePics/battle/110001",
+ 		imageHalf="UI/SpritePics/formation/110001",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/110001",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110001",
+ 		model="Role1/Prefab/Hero_Battle/role_110001",
+ 		highModel="Role1/Prefab/Hero_Show/role_110001_H",
+ 		drawHalf="UI/SpritePics/employee/110001",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110001",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111001",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110001",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110001",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110001",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_110001_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110001"
+},
+[111001] =
+{
+ 		id=111001,
+ 		name=8110001,
+ 		desc="阿什琳（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/111001",
+ 		targeticon="UI/SpritePics/head/Hero/111001_01",
+ 		battleIcon="UI/SpritePics/battle/111001",
+ 		imageHalf="UI/SpritePics/formation/111001",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/111001",
+ 		imageWhole="UI/SpritePics/portrait/awake/111001",
+ 		model="Role1/Prefab/Hero_Battle/role_111001",
+ 		highModel="Role1/Prefab/Hero_Show/role_111001_H",
+ 		drawHalf="UI/SpritePics/employee/111001",
+ 		drawing="UI/SpritePics/portrait/awake/111001",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111001",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111001",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110001",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111001",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_111001_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110001"
+},
+[110002] =
+{
+ 		id=110002,
+ 		name=8110002,
+ 		desc="丽贝卡",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/SpritePics/formation/110002",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/110002",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110002",
+ 		model="Role1/Prefab/Hero_Battle/role_110002",
+ 		highModel="Role1/Prefab/Hero_Show/role_110002_H",
+ 		drawHalf="UI/SpritePics/employee/110002",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110002",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111002",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110002",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110002",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110002",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_110002_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110002"
+},
+[111002] =
+{
+ 		id=111002,
+ 		name=8110002,
+ 		desc="丽贝卡（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/111002",
+ 		targeticon="UI/SpritePics/head/Hero/111002_01",
+ 		battleIcon="UI/SpritePics/battle/111002",
+ 		imageHalf="UI/SpritePics/formation/111002",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/111002",
+ 		imageWhole="UI/SpritePics/portrait/awake/111002",
+ 		model="Role1/Prefab/Hero_Battle/role_111002",
+ 		highModel="Role1/Prefab/Hero_Show/role_111002_H",
+ 		drawHalf="UI/SpritePics/employee/111002",
+ 		drawing="UI/SpritePics/portrait/awake/111002",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111002",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111002",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110002",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111002",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_111002_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110002"
+},
+[110003] =
+{
+ 		id=110003,
+ 		name=8110003,
+ 		desc="安息香",
+ 		icon="UI/SpritePics/head/Hero/110003",
+ 		targeticon="UI/SpritePics/head/Hero/110003_01",
+ 		battleIcon="UI/SpritePics/battle/110003",
+ 		imageHalf="UI/SpritePics/formation/110003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/110003",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110003",
+ 		model="Role1/Prefab/Hero_Battle/role_110003",
+ 		highModel="Role1/Prefab/Hero_Show/role_110003_H",
+ 		nakedModel="Role1/Prefab/Hero_Show/role_110003_B",
+ 		drawHalf="UI/SpritePics/employee/110003",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110003",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111003",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110003",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110003",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110003",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		artWord="UI/SpritePics/dormitory/ui_dormitory_name_sakura",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_110003_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110003"
+},
+[111003] =
+{
+ 		id=111003,
+ 		name=8110003,
+ 		desc="安息香（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/111003",
+ 		targeticon="UI/SpritePics/head/Hero/111003_01",
+ 		battleIcon="UI/SpritePics/battle/111003",
+ 		imageHalf="UI/SpritePics/formation/111003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/111003",
+ 		imageWhole="UI/SpritePics/portrait/awake/111003",
+ 		model="Role1/Prefab/Hero_Battle/role_111003",
+ 		highModel="Role1/Prefab/Hero_Show/role_111003_H",
+ 		drawHalf="UI/SpritePics/employee/111003",
+ 		drawing="UI/SpritePics/portrait/awake/111003",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111003",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111003",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110003",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111003",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_111003_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110003"
+},
+[113003] =
+{
+ 		id=113003,
+ 		name=8110003,
+ 		desc="安息香（皮肤：旗袍）",
+ 		icon="UI/SpritePics/head/Hero/113003",
+ 		targeticon="UI/SpritePics/head/Hero/113003_01",
+ 		battleIcon="UI/SpritePics/battle/113003",
+ 		imageHalf="UI/SpritePics/formation/113003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/113003",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/113003",
+ 		model="Role1/Prefab/Hero_Battle/role_113003",
+ 		highModel="Role1/Prefab/Hero_Show/role_113003_H",
+ 		drawHalf="UI/SpritePics/employee/113003",
+ 		drawing="UI/SpritePics/portrait/portrait_body/113003",
+ 		fashionDrawing="UI/SpritePics/background/ui_background_fashion_113003",
+ 		fashionText="UI/SpritePics/develop/fashiontext/ui_fashiontext_113003",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111003",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_113003",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110003",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111003",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_113003_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110003"
+},
+[110004] =
+{
+ 		id=110004,
+ 		name=8110004,
+ 		desc="希格德莉法",
+ 		icon="UI/SpritePics/head/Hero/110004",
+ 		targeticon="UI/SpritePics/head/Hero/110004_01",
+ 		battleIcon="UI/SpritePics/battle/110004",
+ 		imageHalf="UI/SpritePics/formation/110004",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/110004",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110004",
+ 		model="Role1/Prefab/Hero_Battle/role_110004",
+ 		highModel="Role1/Prefab/Hero_Show/role_110004_H",
+ 		drawHalf="UI/SpritePics/employee/110004",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110004",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110004",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110004",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_110004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110004"
+},
+[111004] =
+{
+ 		id=111004,
+ 		name=8110004,
+ 		desc="希格德莉法（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/111004",
+ 		targeticon="UI/SpritePics/head/Hero/111004_01",
+ 		battleIcon="UI/SpritePics/battle/111004",
+ 		imageHalf="UI/SpritePics/formation/111004",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/111004",
+ 		imageWhole="UI/SpritePics/portrait/awake/111004",
+ 		model="Role1/Prefab/Hero_Battle/role_111004",
+ 		highModel="Role1/Prefab/Hero_Show/role_111004_H",
+ 		drawHalf="UI/SpritePics/employee/111004",
+ 		drawing="UI/SpritePics/portrait/awake/111004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111004",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110004",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111004",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_111004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110004"
+},
+[110005] =
+{
+ 		id=110005,
+ 		name=8110005,
+ 		desc="海风藤",
+ 		icon="UI/SpritePics/head/Hero/110005",
+ 		targeticon="UI/SpritePics/head/Hero/110005_01",
+ 		battleIcon="UI/SpritePics/battle/110005",
+ 		imageHalf="UI/SpritePics/formation/110005",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/110005",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110005",
+ 		model="Role1/Prefab/Hero_Battle/role_110005",
+ 		highModel="Role1/Prefab/Hero_Show/role_110005_H",
+ 		drawHalf="UI/SpritePics/employee/110005",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110005",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111005",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110005",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110005",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110005",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_110005_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110005"
+},
+[111005] =
+{
+ 		id=111005,
+ 		name=8110005,
+ 		desc="海风藤（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/111005",
+ 		targeticon="UI/SpritePics/head/Hero/111005_01",
+ 		battleIcon="UI/SpritePics/battle/111005",
+ 		imageHalf="UI/SpritePics/formation/111005",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/111005",
+ 		imageWhole="UI/SpritePics/portrait/awake/111005",
+ 		model="Role1/Prefab/Hero_Battle/role_111005",
+ 		highModel="Role1/Prefab/Hero_Show/role_111005_H",
+ 		drawHalf="UI/SpritePics/employee/111005",
+ 		drawing="UI/SpritePics/portrait/awake/111005",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111005",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111005",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110005",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111005",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_111005_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110005"
+},
+[110006] =
+{
+ 		id=110006,
+ 		name=8110006,
+ 		desc="赫萝克",
+ 		icon="UI/SpritePics/head/Hero/110006",
+ 		targeticon="UI/SpritePics/head/Hero/110006_01",
+ 		battleIcon="UI/SpritePics/battle/110006",
+ 		imageHalf="UI/SpritePics/formation/110006",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/110006",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110006",
+ 		model="Role1/Prefab/Hero_Battle/role_110006",
+ 		highModel="Role1/Prefab/Hero_Show/role_110006_H",
+ 		drawHalf="UI/SpritePics/employee/110006",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110006",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111006",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110006",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110006",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110006",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_110006_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110006"
+},
+[111006] =
+{
+ 		id=111006,
+ 		name=8110006,
+ 		desc="赫萝克（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/111006",
+ 		targeticon="UI/SpritePics/head/Hero/111006_01",
+ 		battleIcon="UI/SpritePics/battle/111006",
+ 		imageHalf="UI/SpritePics/formation/111006",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/111006",
+ 		imageWhole="UI/SpritePics/portrait/awake/111006",
+ 		model="Role1/Prefab/Hero_Battle/role_111006",
+ 		highModel="Role1/Prefab/Hero_Show/role_111006_H",
+ 		drawHalf="UI/SpritePics/employee/111006",
+ 		drawing="UI/SpritePics/portrait/awake/111006",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111006",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111006",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110006",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111006",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_111006_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110006"
+},
+[112006] =
+{
+ 		id=112006,
+ 		name=8110006,
+ 		desc="赫萝克（皮肤）",
+ 		icon="UI/SpritePics/head/Hero/112006",
+ 		targeticon="UI/SpritePics/head/Hero/112006_02",
+ 		battleIcon="UI/SpritePics/battle/112006",
+ 		imageHalf="UI/SpritePics/formation/112006",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/112006",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/112006",
+ 		model="Role1/Prefab/Hero_Battle/role_112006",
+ 		highModel="Role1/Prefab/Hero_Show/role_112006_H",
+ 		drawHalf="UI/SpritePics/employee/112006",
+ 		drawing="UI/SpritePics/portrait/portrait_body/112006",
+ 		fashionDrawing="UI/SpritePics/background/ui_background_fashion_112006",
+ 		fashionText="UI/SpritePics/develop/fashiontext/ui_fashiontext_112006",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111006",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_112006",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110006",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111006",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_112006_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_112006"
+},
+[110007] =
+{
+ 		id=110007,
+ 		name=8110007,
+ 		desc="培根",
+ 		icon="UI/SpritePics/head/Hero/110007",
+ 		targeticon="UI/SpritePics/head/Hero/110007_01",
+ 		battleIcon="UI/SpritePics/battle/110007",
+ 		imageHalf="UI/SpritePics/formation/110007",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/110007",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110007",
+ 		model="Role1/Prefab/Hero_Battle/role_110007",
+ 		highModel="Role1/Prefab/Hero_Show/role_110007_H",
+ 		drawHalf="UI/SpritePics/employee/110007",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110007",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/110007",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110007",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110007",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110007",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_110007_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110007"
+},
+[110008] =
+{
+ 		id=110008,
+ 		name=8110008,
+ 		desc="预备队员",
+ 		icon="UI/SpritePics/head/Hero/110008",
+ 		targeticon="UI/SpritePics/head/Hero/110008_01",
+ 		battleIcon="UI/SpritePics/battle/110008",
+ 		imageHalf="UI/SpritePics/formation/110008",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/110008",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110008",
+ 		model="Role1/Prefab/Hero_Battle/role_110008",
+ 		highModel="Role1/Prefab/Hero_Show/role_110008_H",
+ 		drawHalf="UI/SpritePics/employee/110008",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110008",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/110008",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110008",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110008",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110008",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_110008_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110008"
+},
+[110009] =
+{
+ 		id=110009,
+ 		name=8110009,
+ 		desc="波妮",
+ 		icon="UI/SpritePics/head/Hero/110009",
+ 		targeticon="UI/SpritePics/head/Hero/110009_01",
+ 		battleIcon="UI/SpritePics/battle/110009",
+ 		imageHalf="UI/SpritePics/formation/110009",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/110009",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110009",
+ 		model="Role1/Prefab/Hero_Battle/role_110009",
+ 		highModel="Role1/Prefab/Hero_Show/role_110009_H",
+ 		drawHalf="UI/SpritePics/employee/110009",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110009",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111009",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110009",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110009",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110009",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_110009_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110009"
+},
+[111009] =
+{
+ 		id=111009,
+ 		name=8110009,
+ 		desc="波妮（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/111009",
+ 		targeticon="UI/SpritePics/head/Hero/111009_01",
+ 		battleIcon="UI/SpritePics/battle/111009",
+ 		imageHalf="UI/SpritePics/formation/111009",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/111009",
+ 		imageWhole="UI/SpritePics/portrait/awake/111009",
+ 		model="Role1/Prefab/Hero_Battle/role_111009",
+ 		highModel="Role1/Prefab/Hero_Show/role_111009_H",
+ 		drawHalf="UI/SpritePics/employee/111009",
+ 		drawing="UI/SpritePics/portrait/awake/111009",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/111009",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111009",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110009",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111009",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_111009_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110009"
+},
+[110010] =
+{
+ 		id=110010,
+ 		name=8110010,
+ 		desc="贝蕾妮丝",
+ 		icon="UI/SpritePics/head/Hero/110010",
+ 		targeticon="UI/SpritePics/head/Hero/110010_01",
+ 		battleIcon="UI/SpritePics/battle/110010",
+ 		imageHalf="UI/SpritePics/formation/110010",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/110010",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110010",
+ 		model="Role1/Prefab/Hero_Battle/role_110010",
+ 		highModel="Role1/Prefab/Hero_Show/role_110010_H",
+ 		drawHalf="UI/SpritePics/employee/110010",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110010",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/110010",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110010",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110010",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110010",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_110010_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110010"
+},
+[111010] =
+{
+ 		id=111010,
+ 		name=8110010,
+ 		desc="贝蕾妮丝（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/111010",
+ 		targeticon="UI/SpritePics/head/Hero/111010_01",
+ 		battleIcon="UI/SpritePics/battle/111010",
+ 		imageHalf="UI/SpritePics/formation/111010",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/111010",
+ 		imageWhole="UI/SpritePics/portrait/awake/111010",
+ 		model="Role1/Prefab/Hero_Battle/role_111010",
+ 		highModel="Role1/Prefab/Hero_Show/role_111010_H",
+ 		drawHalf="UI/SpritePics/employee/111010",
+ 		drawing="UI/SpritePics/portrait/awake/111010",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/110010",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111010",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110010",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111010",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_111010_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110010"
+},
+[110011] =
+{
+ 		id=110011,
+ 		name=8110011,
+ 		desc="莎姬",
+ 		icon="UI/SpritePics/head/Hero/110011",
+ 		targeticon="UI/SpritePics/head/Hero/110011_01",
+ 		battleIcon="UI/SpritePics/battle/110011",
+ 		imageHalf="UI/SpritePics/formation/110011",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/110011",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110011",
+ 		model="Role1/Prefab/Hero_Battle/role_110011",
+ 		highModel="Role1/Prefab/Hero_Show/role_110011_H",
+ 		drawHalf="UI/SpritePics/employee/110011",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110011",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/110011",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110011",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110011",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110011",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_110011_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110011"
+},
+[110012] =
+{
+ 		id=110012,
+ 		name=8110012,
+ 		desc="格特鲁德",
+ 		icon="UI/SpritePics/head/Hero/110012",
+ 		targeticon="UI/SpritePics/head/Hero/110012_01",
+ 		battleIcon="UI/SpritePics/battle/110012",
+ 		imageHalf="UI/SpritePics/formation/110012",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/110012",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110012",
+ 		model="Role1/Prefab/Hero_Battle/role_110012",
+ 		highModel="Role1/Prefab/Hero_Show/role_110012_H",
+ 		drawHalf="UI/SpritePics/employee/110012",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110012",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/110012",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110012",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110012",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110012",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_110012_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110012"
+},
+[111012] =
+{
+ 		id=111012,
+ 		name=8110012,
+ 		desc="格特鲁德（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/111012",
+ 		targeticon="UI/SpritePics/head/Hero/111012_01",
+ 		battleIcon="UI/SpritePics/battle/111012",
+ 		imageHalf="UI/SpritePics/formation/111012",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/111012",
+ 		imageWhole="UI/SpritePics/portrait/awake/111012",
+ 		model="Role1/Prefab/Hero_Battle/role_111012",
+ 		highModel="Role1/Prefab/Hero_Show/role_111012_H",
+ 		drawHalf="UI/SpritePics/employee/111012",
+ 		drawing="UI/SpritePics/portrait/awake/111012",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/110012",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111012",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110012",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_111012",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_111012_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110012"
+},
+[110013] =
+{
+ 		id=110013,
+ 		name=8110013,
+ 		desc="疯狂科学家",
+ 		icon="UI/SpritePics/head/Hero/110013",
+ 		targeticon="UI/SpritePics/head/Hero/110013_01",
+ 		battleIcon="UI/SpritePics/battle/110013",
+ 		imageHalf="UI/SpritePics/formation/110013",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/110013",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110011",
+ 		model="Role1/Prefab/Hero_Battle/role_110013",
+ 		highModel="Role1/Prefab/Hero_Show/role_110013_H",
+ 		drawHalf="UI/SpritePics/employee/110013",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110011",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/110011",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110013",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110013",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110013",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_110013_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110013"
+},
+[110014] =
+{
+ 		id=110014,
+ 		name=8110014,
+ 		desc="寒露",
+ 		icon="UI/SpritePics/head/Hero/110014",
+ 		targeticon="UI/SpritePics/head/Hero/110014_01",
+ 		battleIcon="UI/SpritePics/battle/110014",
+ 		imageHalf="UI/SpritePics/formation/110014",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/110014",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/110011",
+ 		model="Role1/Prefab/Hero_Battle/role_110014",
+ 		highModel="Role1/Prefab/Hero_Show/role_110014_H",
+ 		drawHalf="UI/SpritePics/employee/110014",
+ 		drawing="UI/SpritePics/portrait/portrait_body/110011",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/110011",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110014",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration110014",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_110014",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_110014_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_110014"
+},
+[120001] =
+{
+ 		id=120001,
+ 		name=8120001,
+ 		desc="一松樱",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/SpritePics/formation/120001",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120001",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120001",
+ 		model="Role1/Prefab/Hero_Battle/role_120001",
+ 		highModel="Role1/Prefab/Hero_Show/role_120001_H",
+ 		drawHalf="UI/SpritePics/employee/120001",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120001",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121001",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120001",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120001",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120001",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead120001",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120001_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120001"
+},
+[121001] =
+{
+ 		id=121001,
+ 		name=8120001,
+ 		desc="一松樱（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/121001",
+ 		targeticon="UI/SpritePics/head/Hero/121001_01",
+ 		battleIcon="UI/SpritePics/battle/121001",
+ 		imageHalf="UI/SpritePics/formation/121001",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121001",
+ 		imageWhole="UI/SpritePics/portrait/awake/121001",
+ 		model="Role1/Prefab/Hero_Battle/role_121001",
+ 		highModel="Role1/Prefab/Hero_Show/role_121001_H",
+ 		drawHalf="UI/SpritePics/employee/121001",
+ 		drawing="UI/SpritePics/portrait/awake/121001",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121001",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121001",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120001",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121001",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_121001_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120001"
+},
+[122001] =
+{
+ 		id=122001,
+ 		name=8120001,
+ 		desc="一松樱（皮肤）",
+ 		icon="UI/SpritePics/head/Hero/122001",
+ 		targeticon="UI/SpritePics/head/Hero/122001_01",
+ 		battleIcon="UI/SpritePics/battle/122001",
+ 		imageHalf="UI/SpritePics/formation/122001",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/122001",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/122001",
+ 		model="Role1/Prefab/Hero_Battle/role_122001",
+ 		highModel="Role1/Prefab/Hero_Show/role_122001_H",
+ 		drawHalf="UI/SpritePics/employee/122001",
+ 		drawing="UI/SpritePics/portrait/portrait_body/122001",
+ 		fashionDrawing="UI/SpritePics/background/ui_background_fashion_122001",
+ 		fashionText="UI/SpritePics/develop/fashiontext/ui_fashiontext_122001",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121001",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_122001",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120001",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121001",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_122001_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120001"
+},
+[120002] =
+{
+ 		id=120002,
+ 		name=8120002,
+ 		desc="玛蒂尔达",
+ 		icon="UI/SpritePics/head/Hero/120002",
+ 		targeticon="UI/SpritePics/head/Hero/120002_01",
+ 		battleIcon="UI/SpritePics/battle/120002",
+ 		imageHalf="UI/SpritePics/formation/120002",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120002",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120002",
+ 		model="Role1/Prefab/Hero_Battle/role_120002",
+ 		highModel="Role1/Prefab/Hero_Show/role_120002_H",
+ 		drawHalf="UI/SpritePics/employee/120002",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120002",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121002",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120002",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120002",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120002",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120002_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120002"
+},
+[121002] =
+{
+ 		id=121002,
+ 		name=8120002,
+ 		desc="玛蒂尔达（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/121002",
+ 		targeticon="UI/SpritePics/head/Hero/121002_01",
+ 		battleIcon="UI/SpritePics/battle/121002",
+ 		imageHalf="UI/SpritePics/formation/121002",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121002",
+ 		imageWhole="UI/SpritePics/portrait/awake/121002",
+ 		model="Role1/Prefab/Hero_Battle/role_121002",
+ 		highModel="Role1/Prefab/Hero_Show/role_121002_H",
+ 		drawHalf="UI/SpritePics/employee/121002",
+ 		drawing="UI/SpritePics/portrait/awake/121002",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121002",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121002",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120002",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121002",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_121002_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120002"
+},
+[122002] =
+{
+ 		id=122002,
+ 		name=8120002,
+ 		desc="玛蒂尔达（皮肤）",
+ 		icon="UI/SpritePics/head/Hero/122002",
+ 		targeticon="UI/SpritePics/head/Hero/122002_01",
+ 		battleIcon="UI/SpritePics/battle/122002",
+ 		imageHalf="UI/SpritePics/formation/122002",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/122002",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/122002",
+ 		model="Role1/Prefab/Hero_Battle/role_122002",
+ 		highModel="Role1/Prefab/Hero_Show/role_122002_H",
+ 		drawHalf="UI/SpritePics/employee/122002",
+ 		drawing="UI/SpritePics/portrait/portrait_body/122002",
+ 		fashionDrawing="UI/SpritePics/background/ui_background_fashion_122002",
+ 		fashionText="UI/SpritePics/develop/fashiontext/ui_fashiontext_122002",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121002",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_122002",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120002",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121002",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_122002_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120002"
+},
+[120003] =
+{
+ 		id=120003,
+ 		name=8120003,
+ 		desc="阿米莉亚",
+ 		icon="UI/SpritePics/head/Hero/120003",
+ 		targeticon="UI/SpritePics/head/Hero/120003_01",
+ 		battleIcon="UI/SpritePics/battle/120003",
+ 		imageHalf="UI/SpritePics/formation/120003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120003",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120003",
+ 		model="Role1/Prefab/Hero_Battle/role_120003",
+ 		highModel="Role1/Prefab/Hero_Show/role_120003_H",
+ 		drawHalf="UI/SpritePics/employee/120003",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120003",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121003",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120003",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120003",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120003",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120003_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120003"
+},
+[121003] =
+{
+ 		id=121003,
+ 		name=8120003,
+ 		desc="阿米莉亚（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/121003",
+ 		targeticon="UI/SpritePics/head/Hero/121003_01",
+ 		battleIcon="UI/SpritePics/battle/121003",
+ 		imageHalf="UI/SpritePics/formation/121003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121003",
+ 		imageWhole="UI/SpritePics/portrait/awake/121003",
+ 		model="Role1/Prefab/Hero_Battle/role_121003",
+ 		highModel="Role1/Prefab/Hero_Show/role_121003_H",
+ 		drawHalf="UI/SpritePics/employee/121003",
+ 		drawing="UI/SpritePics/portrait/awake/121003",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121003",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121003",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120003",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121003",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_121003_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120003"
+},
+[120004] =
+{
+ 		id=120004,
+ 		name=8120004,
+ 		desc="玛乔丽",
+ 		icon="UI/SpritePics/head/Hero/120004",
+ 		targeticon="UI/SpritePics/head/Hero/120004_01",
+ 		battleIcon="UI/SpritePics/battle/120004",
+ 		imageHalf="UI/SpritePics/formation/120004",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120004",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Hero_Battle/role_120004",
+ 		highModel="Role1/Prefab/Hero_Show/role_120004_H",
+ 		drawHalf="UI/SpritePics/employee/120004",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120004",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120004",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120004",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[121004] =
+{
+ 		id=121004,
+ 		name=8120004,
+ 		desc="玛乔丽（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/121004",
+ 		targeticon="UI/SpritePics/head/Hero/121004_01",
+ 		battleIcon="UI/SpritePics/battle/121004",
+ 		imageHalf="UI/SpritePics/formation/121004",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121004",
+ 		imageWhole="UI/SpritePics/portrait/awake/121004",
+ 		model="Role1/Prefab/Hero_Battle/role_121004",
+ 		highModel="Role1/Prefab/Hero_Show/role_121004_H",
+ 		drawHalf="UI/SpritePics/employee/121004",
+ 		drawing="UI/SpritePics/portrait/awake/121004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121004",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120004",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121004",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_121004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[120005] =
+{
+ 		id=120005,
+ 		name=8120005,
+ 		desc="莫妮卡",
+ 		icon="UI/SpritePics/head/Hero/120005",
+ 		targeticon="UI/SpritePics/head/Hero/120005_01",
+ 		battleIcon="UI/SpritePics/battle/120005",
+ 		imageHalf="UI/SpritePics/formation/120005",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120005",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120005",
+ 		model="Role1/Prefab/Hero_Battle/role_120005",
+ 		highModel="Role1/Prefab/Hero_Show/role_120005_H",
+ 		drawHalf="UI/SpritePics/employee/120005",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120005",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120005",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120005",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120005",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120005",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120005_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120005"
+},
+[120006] =
+{
+ 		id=120006,
+ 		name=8120006,
+ 		desc="财团护卫",
+ 		icon="UI/SpritePics/head/Hero/120006",
+ 		targeticon="UI/SpritePics/head/Hero/120006_01",
+ 		battleIcon="UI/SpritePics/battle/120006",
+ 		imageHalf="UI/SpritePics/formation/120006",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120006",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120006",
+ 		model="Role1/Prefab/Hero_Battle/role_120006",
+ 		highModel="Role1/Prefab/Hero_Show/role_120006_H",
+ 		drawHalf="UI/SpritePics/employee/120006",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120006",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120006",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120006",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120006",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120006",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120006_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120006"
+},
+[120007] =
+{
+ 		id=120007,
+ 		name=8120007,
+ 		desc="泷降",
+ 		icon="UI/SpritePics/head/Hero/120007",
+ 		targeticon="UI/SpritePics/head/Hero/120007_01",
+ 		battleIcon="UI/SpritePics/battle/120007",
+ 		imageHalf="UI/SpritePics/formation/120007",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120007",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120007",
+ 		model="Role1/Prefab/Hero_Battle/role_120007",
+ 		highModel="Role1/Prefab/Hero_Show/role_120007_H",
+ 		drawHalf="UI/SpritePics/employee/120007",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120007",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120007",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120007",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120007",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120007",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120007_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120007"
+},
+[121007] =
+{
+ 		id=121007,
+ 		name=8120007,
+ 		desc="泷降（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/121007",
+ 		targeticon="UI/SpritePics/head/Hero/121007_01",
+ 		battleIcon="UI/SpritePics/battle/121007",
+ 		imageHalf="UI/SpritePics/formation/121007",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121007",
+ 		imageWhole="UI/SpritePics/portrait/awake/121007",
+ 		model="Role1/Prefab/Hero_Battle/role_121007",
+ 		highModel="Role1/Prefab/Hero_Show/role_121007_H",
+ 		drawHalf="UI/SpritePics/employee/121007",
+ 		drawing="UI/SpritePics/portrait/awake/121007",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120007",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121007",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120007",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121007",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_121007_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120007"
+},
+[120008] =
+{
+ 		id=120008,
+ 		name=8120008,
+ 		desc="莉斯贝丝",
+ 		icon="UI/SpritePics/head/Hero/120008",
+ 		targeticon="UI/SpritePics/head/Hero/120008_01",
+ 		battleIcon="UI/SpritePics/battle/120008",
+ 		imageHalf="UI/SpritePics/formation/120008",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120008",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120008",
+ 		model="Role1/Prefab/Hero_Battle/role_120008",
+ 		highModel="Role1/Prefab/Hero_Show/role_120008_H",
+ 		drawHalf="UI/SpritePics/employee/120008",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120008",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120008",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120008",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120008",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120008",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120008_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120008"
+},
+[121008] =
+{
+ 		id=121008,
+ 		name=8120008,
+ 		desc="莉斯贝丝（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/121008",
+ 		targeticon="UI/SpritePics/head/Hero/121008_01",
+ 		battleIcon="UI/SpritePics/battle/121008",
+ 		imageHalf="UI/SpritePics/formation/121008",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121008",
+ 		imageWhole="UI/SpritePics/portrait/awake/121008",
+ 		model="Role1/Prefab/Hero_Battle/role_121008",
+ 		highModel="Role1/Prefab/Hero_Show/role_121008_H",
+ 		drawHalf="UI/SpritePics/employee/121008",
+ 		drawing="UI/SpritePics/portrait/awake/121008",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120008",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121008",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120008",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121008",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_121008_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120008"
+},
+[120009] =
+{
+ 		id=120009,
+ 		name=8120009,
+ 		desc="菘蓝",
+ 		icon="UI/SpritePics/head/Hero/120009",
+ 		targeticon="UI/SpritePics/head/Hero/120009_01",
+ 		battleIcon="UI/SpritePics/battle/120009",
+ 		imageHalf="UI/SpritePics/formation/120009",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120009",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120009",
+ 		model="Role1/Prefab/Hero_Battle/role_120009",
+ 		highModel="Role1/Prefab/Hero_Show/role_120009_H",
+ 		drawHalf="UI/SpritePics/employee/120009",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120009",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120009",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120009",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120009",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120009",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120009_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120009"
+},
+[121009] =
+{
+ 		id=121009,
+ 		name=8120009,
+ 		desc="菘蓝(觉醒)",
+ 		icon="UI/SpritePics/head/Hero/121009",
+ 		targeticon="UI/SpritePics/head/Hero/121009_01",
+ 		battleIcon="UI/SpritePics/battle/121009",
+ 		imageHalf="UI/SpritePics/formation/121009",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121009",
+ 		imageWhole="UI/SpritePics/portrait/awake/121009",
+ 		model="Role1/Prefab/Hero_Battle/role_121009",
+ 		highModel="Role1/Prefab/Hero_Show/role_121009_H",
+ 		drawHalf="UI/SpritePics/employee/121009",
+ 		drawing="UI/SpritePics/portrait/awake/121009",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120009",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121009",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120009",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121009",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_121009_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120009"
+},
+[120010] =
+{
+ 		id=120010,
+ 		name=8120010,
+ 		desc="阿右",
+ 		icon="UI/SpritePics/head/Hero/120010",
+ 		targeticon="UI/SpritePics/head/Hero/120010_01",
+ 		battleIcon="UI/SpritePics/battle/120010",
+ 		imageHalf="UI/SpritePics/formation/120010",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120010",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120010",
+ 		model="Role1/Prefab/Hero_Battle/role_120010",
+ 		highModel="Role1/Prefab/Hero_Show/role_120010_H",
+ 		drawHalf="UI/SpritePics/employee/120010",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120010",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120010",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120010",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120010",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120010",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120010_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120010"
+},
+[120011] =
+{
+ 		id=120011,
+ 		name=8120011,
+ 		desc="财团头目",
+ 		icon="UI/SpritePics/head/Hero/120011",
+ 		targeticon="UI/SpritePics/head/Hero/120011_01",
+ 		battleIcon="UI/SpritePics/battle/120011",
+ 		imageHalf="UI/SpritePics/formation/120011",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120011",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120010",
+ 		model="Role1/Prefab/Hero_Battle/role_120011",
+ 		highModel="Role1/Prefab/Hero_Show/role_120011_H",
+ 		drawHalf="UI/SpritePics/employee/120011",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120010",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120010",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120011",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120011",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120011",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120011_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120011"
+},
+[120012] =
+{
+ 		id=120012,
+ 		name=8120012,
+ 		desc="社畜",
+ 		icon="UI/SpritePics/head/Hero/120012",
+ 		targeticon="UI/SpritePics/head/Hero/120012_01",
+ 		battleIcon="UI/SpritePics/battle/120012",
+ 		imageHalf="UI/SpritePics/formation/120012",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120012",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120010",
+ 		model="Role1/Prefab/Hero_Battle/role_120012",
+ 		highModel="Role1/Prefab/Hero_Show/role_120012_H",
+ 		drawHalf="UI/SpritePics/employee/120012",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120010",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120010",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120012",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120012",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120012",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120012_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120012"
+},
+[120013] =
+{
+ 		id=120013,
+ 		name=8120013,
+ 		desc="河合芽衣",
+ 		icon="UI/SpritePics/head/Hero/120013",
+ 		targeticon="UI/SpritePics/head/Hero/120013_01",
+ 		battleIcon="UI/SpritePics/battle/120013",
+ 		imageHalf="UI/SpritePics/formation/120013",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120013",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120013",
+ 		model="Role1/Prefab/Hero_Battle/role_120013",
+ 		highModel="Role1/Prefab/Hero_Show/role_120013_H",
+ 		drawHalf="UI/SpritePics/employee/120013",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120013",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120013",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120013",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120013",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120013",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120013_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120013"
+},
+[121013] =
+{
+ 		id=121013,
+ 		name=8120013,
+ 		desc="河合芽衣（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/121013",
+ 		targeticon="UI/SpritePics/head/Hero/121013_01",
+ 		battleIcon="UI/SpritePics/battle/121013",
+ 		imageHalf="UI/SpritePics/formation/121013",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121013",
+ 		imageWhole="UI/SpritePics/portrait/awake/121013",
+ 		model="Role1/Prefab/Hero_Battle/role_121013",
+ 		highModel="Role1/Prefab/Hero_Show/role_121013_H",
+ 		drawHalf="UI/SpritePics/employee/121013",
+ 		drawing="UI/SpritePics/portrait/awake/121013",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120013",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121013",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120013",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121013",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_121013_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120013"
+},
+[130001] =
+{
+ 		id=130001,
+ 		name=8130001,
+ 		desc="欧诺弥亚",
+ 		icon="UI/SpritePics/head/Hero/130001",
+ 		targeticon="UI/SpritePics/head/Hero/130001_01",
+ 		battleIcon="UI/SpritePics/battle/130001",
+ 		imageHalf="UI/SpritePics/formation/130001",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/130001",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/130001",
+ 		model="Role1/Prefab/Hero_Battle/role_130001",
+ 		highModel="Role1/Prefab/Hero_Show/role_130001_H",
+ 		drawHalf="UI/SpritePics/employee/130001",
+ 		drawing="UI/SpritePics/portrait/portrait_body/130001",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/131001",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130001",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130001",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130001",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_130001_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130001"
+},
+[131001] =
+{
+ 		id=131001,
+ 		name=8130001,
+ 		desc="欧诺弥亚（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/131001",
+ 		targeticon="UI/SpritePics/head/Hero/131001_01",
+ 		battleIcon="UI/SpritePics/battle/131001",
+ 		imageHalf="UI/SpritePics/formation/131001",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/131001",
+ 		imageWhole="UI/SpritePics/portrait/awake/131001",
+ 		model="Role1/Prefab/Hero_Battle/role_131001",
+ 		highModel="Role1/Prefab/Hero_Show/role_131001_H",
+ 		drawHalf="UI/SpritePics/employee/131001",
+ 		drawing="UI/SpritePics/portrait/awake/131001",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/131001",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_131001",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130001",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_131001",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_131001_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130001"
+},
+[130002] =
+{
+ 		id=130002,
+ 		name=8130002,
+ 		desc="齐娜",
+ 		icon="UI/SpritePics/head/Hero/130002",
+ 		targeticon="UI/SpritePics/head/Hero/130002_01",
+ 		battleIcon="UI/SpritePics/battle/130002",
+ 		imageHalf="UI/SpritePics/formation/130002",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/130002",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/130002",
+ 		model="Role1/Prefab/Hero_Battle/role_130002",
+ 		highModel="Role1/Prefab/Hero_Show/role_130002_H",
+ 		drawHalf="UI/SpritePics/employee/130002",
+ 		drawing="UI/SpritePics/portrait/portrait_body/130002",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130002",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130002",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130002",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130002",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_130002_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130002"
+},
+[130003] =
+{
+ 		id=130003,
+ 		name=8130003,
+ 		desc="露希尔",
+ 		icon="UI/SpritePics/head/Hero/130003",
+ 		targeticon="UI/SpritePics/head/Hero/130003_01",
+ 		battleIcon="UI/SpritePics/battle/130003",
+ 		imageHalf="UI/SpritePics/formation/130003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/130003",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/130003",
+ 		model="Role1/Prefab/Hero_Battle/role_130003",
+ 		highModel="Role1/Prefab/Hero_Show/role_130003_H",
+ 		drawHalf="UI/SpritePics/employee/130003",
+ 		drawing="UI/SpritePics/portrait/portrait_body/130003",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130003",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130003",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130003",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130003",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_130003_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130003"
+},
+[131003] =
+{
+ 		id=131003,
+ 		name=8130003,
+ 		desc="露希尔（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/131003",
+ 		targeticon="UI/SpritePics/head/Hero/131003_01",
+ 		battleIcon="UI/SpritePics/battle/131003",
+ 		imageHalf="UI/SpritePics/formation/131003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/131003",
+ 		imageWhole="UI/SpritePics/portrait/awake/131003",
+ 		model="Role1/Prefab/Hero_Battle/role_131003",
+ 		highModel="Role1/Prefab/Hero_Show/role_131003_H",
+ 		drawHalf="UI/SpritePics/employee/131003",
+ 		drawing="UI/SpritePics/portrait/awake/131003",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130003",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_131003",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130003",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_131003",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_131003_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130003"
+},
+[130004] =
+{
+ 		id=130004,
+ 		name=8130004,
+ 		desc="海泽尔",
+ 		icon="UI/SpritePics/head/Hero/130004",
+ 		targeticon="UI/SpritePics/head/Hero/130004_01",
+ 		battleIcon="UI/SpritePics/battle/130004",
+ 		imageHalf="UI/SpritePics/formation/130004",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/130004",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/130004",
+ 		model="Role1/Prefab/Hero_Battle/role_130004",
+ 		highModel="Role1/Prefab/Hero_Show/role_130004_H",
+ 		drawHalf="UI/SpritePics/employee/130004",
+ 		drawing="UI/SpritePics/portrait/portrait_body/130004",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130004",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130004",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130004",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_130004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130004"
+},
+[131004] =
+{
+ 		id=131004,
+ 		name=8130004,
+ 		desc="海泽尔（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/131004",
+ 		targeticon="UI/SpritePics/head/Hero/131004_01",
+ 		battleIcon="UI/SpritePics/battle/131004",
+ 		imageHalf="UI/SpritePics/formation/131004",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/131004",
+ 		imageWhole="UI/SpritePics/portrait/awake/131004",
+ 		model="Role1/Prefab/Hero_Battle/role_131004",
+ 		highModel="Role1/Prefab/Hero_Show/role_131004_H",
+ 		drawHalf="UI/SpritePics/employee/131004",
+ 		drawing="UI/SpritePics/portrait/awake/131004",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_131004",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130004",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_131004",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_131004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130004"
+},
+[130005] =
+{
+ 		id=130005,
+ 		name=8130005,
+ 		desc="菲碧",
+ 		icon="UI/SpritePics/head/Hero/130005",
+ 		targeticon="UI/SpritePics/head/Hero/130005_01",
+ 		battleIcon="UI/SpritePics/battle/130005",
+ 		imageHalf="UI/SpritePics/formation/130005",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/130005",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/130005",
+ 		model="Role1/Prefab/Hero_Battle/role_130005",
+ 		highModel="Role1/Prefab/Hero_Show/role_130005_H",
+ 		drawHalf="UI/SpritePics/employee/130005",
+ 		drawing="UI/SpritePics/portrait/portrait_body/130005",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130005",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130005",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130005",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130005",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_130005_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130005"
+},
+[131005] =
+{
+ 		id=131005,
+ 		name=8130005,
+ 		desc="菲碧（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/131005",
+ 		targeticon="UI/SpritePics/head/Hero/131005_01",
+ 		battleIcon="UI/SpritePics/battle/131005",
+ 		imageHalf="UI/SpritePics/formation/131005",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/131005",
+ 		imageWhole="UI/SpritePics/portrait/awake/131005",
+ 		model="Role1/Prefab/Hero_Battle/role_131005",
+ 		highModel="Role1/Prefab/Hero_Show/role_131005_H",
+ 		drawHalf="UI/SpritePics/employee/131005",
+ 		drawing="UI/SpritePics/portrait/awake/131005",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130005",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_131005",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130005",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_131005",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_131005_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130005"
+},
+[130006] =
+{
+ 		id=130006,
+ 		name=8130006,
+ 		desc="厄瑞妮",
+ 		icon="UI/SpritePics/head/Hero/130006",
+ 		targeticon="UI/SpritePics/head/Hero/130006_01",
+ 		battleIcon="UI/SpritePics/battle/130006",
+ 		imageHalf="UI/SpritePics/formation/130006",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/130006",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/130006",
+ 		model="Role1/Prefab/Hero_Battle/role_130006",
+ 		highModel="Role1/Prefab/Hero_Show/role_130006_H",
+ 		drawHalf="UI/SpritePics/employee/130006",
+ 		drawing="UI/SpritePics/portrait/portrait_body/130006",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130006",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130006",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130006",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130006",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_130006_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130006"
+},
+[131006] =
+{
+ 		id=131006,
+ 		name=8130006,
+ 		desc="厄瑞妮（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/131006",
+ 		targeticon="UI/SpritePics/head/Hero/131006_01",
+ 		battleIcon="UI/SpritePics/battle/131006",
+ 		imageHalf="UI/SpritePics/formation/131006",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/131006",
+ 		imageWhole="UI/SpritePics/portrait/awake/131006",
+ 		model="Role1/Prefab/Hero_Battle/role_131006",
+ 		highModel="Role1/Prefab/Hero_Show/role_131006_H",
+ 		drawHalf="UI/SpritePics/employee/131006",
+ 		drawing="UI/SpritePics/portrait/awake/131006",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130006",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_131006",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130006",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_131006",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_131006_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130006"
+},
+[130007] =
+{
+ 		id=130007,
+ 		name=8130007,
+ 		desc="艾拉菈",
+ 		icon="UI/SpritePics/head/Hero/130007",
+ 		targeticon="UI/SpritePics/head/Hero/130007_01",
+ 		battleIcon="UI/SpritePics/battle/130007",
+ 		imageHalf="UI/SpritePics/formation/130007",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/130007",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/130007",
+ 		model="Role1/Prefab/Hero_Battle/role_130007",
+ 		highModel="Role1/Prefab/Hero_Show/role_130007_H",
+ 		drawHalf="UI/SpritePics/employee/130007",
+ 		drawing="UI/SpritePics/portrait/portrait_body/130007",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130007",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130007",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130007",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130007",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_130007_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130007"
+},
+[130008] =
+{
+ 		id=130008,
+ 		name=8130008,
+ 		desc="达米拉侍卫",
+ 		icon="UI/SpritePics/head/Hero/130008",
+ 		targeticon="UI/SpritePics/head/Hero/130008_01",
+ 		battleIcon="UI/SpritePics/battle/130008",
+ 		imageHalf="UI/SpritePics/formation/130008",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/130008",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/130008",
+ 		model="Role1/Prefab/Hero_Battle/role_130008",
+ 		highModel="Role1/Prefab/Hero_Show/role_130008_H",
+ 		drawHalf="UI/SpritePics/employee/130008",
+ 		drawing="UI/SpritePics/portrait/portrait_body/130008",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130008",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130008",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130008",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130008",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_130008_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130008"
+},
+[130009] =
+{
+ 		id=130009,
+ 		name=8130009,
+ 		desc="埃吉娅",
+ 		icon="UI/SpritePics/head/Hero/130009",
+ 		targeticon="UI/SpritePics/head/Hero/130009_01",
+ 		battleIcon="UI/SpritePics/battle/130009",
+ 		imageHalf="UI/SpritePics/formation/130009",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/130009",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/130009",
+ 		model="Role1/Prefab/Hero_Battle/role_130009",
+ 		highModel="Role1/Prefab/Hero_Show/role_130009_H",
+ 		drawHalf="UI/SpritePics/employee/130009",
+ 		drawing="UI/SpritePics/portrait/portrait_body/130009",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130009",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130009",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130009",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130009",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_130009_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130009"
+},
+[131009] =
+{
+ 		id=131009,
+ 		name=8130009,
+ 		desc="埃吉娅（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/131009",
+ 		targeticon="UI/SpritePics/head/Hero/131009_01",
+ 		battleIcon="UI/SpritePics/battle/131009",
+ 		imageHalf="UI/SpritePics/formation/131009",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/131009",
+ 		imageWhole="UI/SpritePics/portrait/awake/131009",
+ 		model="Role1/Prefab/Hero_Battle/role_131009",
+ 		highModel="Role1/Prefab/Hero_Show/role_131009_H",
+ 		drawHalf="UI/SpritePics/employee/131009",
+ 		drawing="UI/SpritePics/portrait/awake/131009",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130009",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_131009",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130009",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_131009",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_131009_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130009"
+},
+[130010] =
+{
+ 		id=130010,
+ 		name=8130010,
+ 		desc="洒脱战士",
+ 		icon="UI/SpritePics/head/Hero/130010",
+ 		targeticon="UI/SpritePics/head/Hero/130010_01",
+ 		battleIcon="UI/SpritePics/battle/130010",
+ 		imageHalf="UI/SpritePics/formation/130010",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/130010",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/130008",
+ 		model="Role1/Prefab/Hero_Battle/role_130010",
+ 		highModel="Role1/Prefab/Hero_Show/role_130010_H",
+ 		drawHalf="UI/SpritePics/employee/130010",
+ 		drawing="UI/SpritePics/portrait/portrait_body/130008",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130008",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130010",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130010",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130010",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_130010_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130010"
+},
+[130011] =
+{
+ 		id=130011,
+ 		name=8130011,
+ 		desc="痴女",
+ 		icon="UI/SpritePics/head/Hero/130011",
+ 		targeticon="UI/SpritePics/head/Hero/130011_01",
+ 		battleIcon="UI/SpritePics/battle/130011",
+ 		imageHalf="UI/SpritePics/formation/130011",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/130011",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/130009",
+ 		model="Role1/Prefab/Hero_Battle/role_130011",
+ 		highModel="Role1/Prefab/Hero_Show/role_130011_H",
+ 		drawHalf="UI/SpritePics/employee/130011",
+ 		drawing="UI/SpritePics/portrait/portrait_body/130009",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130009",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130011",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130011",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130011",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_130011_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130011"
+},
+[130012] =
+{
+ 		id=130012,
+ 		name=8130012,
+ 		desc="兽医",
+ 		icon="UI/SpritePics/head/Hero/130012",
+ 		targeticon="UI/SpritePics/head/Hero/130012_01",
+ 		battleIcon="UI/SpritePics/battle/130012",
+ 		imageHalf="UI/SpritePics/formation/130012",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/130012",
+ 		imageWhole="UI/SpritePics/portrait/awake/131009",
+ 		model="Role1/Prefab/Hero_Battle/role_130012",
+ 		highModel="Role1/Prefab/Hero_Show/role_130012_H",
+ 		drawHalf="UI/SpritePics/employee/130012",
+ 		drawing="UI/SpritePics/portrait/awake/131009",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130009",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130012",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130012",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130012",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_130012_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130012"
+},
+[140001] =
+{
+ 		id=140001,
+ 		name=8140001,
+ 		desc="鸫rnx-156",
+ 		icon="UI/SpritePics/head/Hero/140001",
+ 		targeticon="UI/SpritePics/head/Hero/140001_01",
+ 		battleIcon="UI/SpritePics/battle/140001",
+ 		imageHalf="UI/SpritePics/formation/140001",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/140001",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/140001",
+ 		model="Role1/Prefab/Hero_Battle/role_140001",
+ 		highModel="Role1/Prefab/Hero_Show/role_140001_H",
+ 		drawHalf="UI/SpritePics/employee/140001",
+ 		drawing="UI/SpritePics/portrait/portrait_body/140001",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/141001",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140001",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration140001",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140001",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_140001_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140001"
+},
+[141001] =
+{
+ 		id=141001,
+ 		name=8140001,
+ 		desc="鸫rnx-156（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/141001",
+ 		targeticon="UI/SpritePics/head/Hero/141001_01",
+ 		battleIcon="UI/SpritePics/battle/141001",
+ 		imageHalf="UI/SpritePics/formation/141001",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/141001",
+ 		imageWhole="UI/SpritePics/portrait/awake/141001",
+ 		model="Role1/Prefab/Hero_Battle/role_141001",
+ 		highModel="Role1/Prefab/Hero_Show/role_141001_H",
+ 		drawHalf="UI/SpritePics/employee/141001",
+ 		drawing="UI/SpritePics/portrait/awake/141001",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/141001",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_141001",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration140001",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_141001",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_141001_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140001"
+},
+[140002] =
+{
+ 		id=140002,
+ 		name=8140002,
+ 		desc="奈美rnx-177",
+ 		icon="UI/SpritePics/head/Hero/140002",
+ 		targeticon="UI/SpritePics/head/Hero/140002_01",
+ 		battleIcon="UI/SpritePics/battle/140002",
+ 		imageHalf="UI/SpritePics/formation/140002",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/140002",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/140002",
+ 		model="Role1/Prefab/Hero_Battle/role_140002",
+ 		highModel="Role1/Prefab/Hero_Show/role_140002_H",
+ 		drawHalf="UI/SpritePics/employee/140002",
+ 		drawing="UI/SpritePics/portrait/portrait_body/140002",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/141002",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140002",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration140002",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140002",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_140002_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140002"
+},
+[141002] =
+{
+ 		id=141002,
+ 		name=8140002,
+ 		desc="奈美rnx-177（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/141002",
+ 		targeticon="UI/SpritePics/head/Hero/141002_01",
+ 		battleIcon="UI/SpritePics/battle/141002",
+ 		imageHalf="UI/SpritePics/formation/141002",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/141002",
+ 		imageWhole="UI/SpritePics/portrait/awake/141002",
+ 		model="Role1/Prefab/Hero_Battle/role_141002",
+ 		highModel="Role1/Prefab/Hero_Show/role_141002_H",
+ 		drawHalf="UI/SpritePics/employee/141002",
+ 		drawing="UI/SpritePics/portrait/awake/141002",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/141002",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_141002",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration140002",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_141002",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_141002_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140002"
+},
+[140003] =
+{
+ 		id=140003,
+ 		name=8140003,
+ 		desc="萨洛米",
+ 		icon="UI/SpritePics/head/Hero/140003",
+ 		targeticon="UI/SpritePics/head/Hero/140003_01",
+ 		battleIcon="UI/SpritePics/battle/140003",
+ 		imageHalf="UI/SpritePics/formation/140003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/140003",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/140002",
+ 		model="Role1/Prefab/Hero_Battle/role_140003",
+ 		highModel="Role1/Prefab/Hero_Show/role_140003_H",
+ 		drawHalf="UI/SpritePics/employee/140003",
+ 		drawing="UI/SpritePics/portrait/portrait_body/140002",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/140003",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140003",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration140003",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140003",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_140003_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140003"
+},
+[140004] =
+{
+ 		id=140004,
+ 		name=8140004,
+ 		desc="海金沙",
+ 		icon="UI/SpritePics/head/Hero/140004",
+ 		targeticon="UI/SpritePics/head/Hero/140004_01",
+ 		battleIcon="UI/SpritePics/battle/140004",
+ 		imageHalf="UI/SpritePics/formation/140004",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/140004",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/140004",
+ 		model="Role1/Prefab/Hero_Battle/role_140004",
+ 		highModel="Role1/Prefab/Hero_Show/role_140004_H",
+ 		drawHalf="UI/SpritePics/employee/140004",
+ 		drawing="UI/SpritePics/portrait/portrait_body/140004",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/140004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140004",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration140004",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140004",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_140004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140004"
+},
+[141004] =
+{
+ 		id=141004,
+ 		name=8140004,
+ 		desc="海金沙（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/141004",
+ 		targeticon="UI/SpritePics/head/Hero/141004_01",
+ 		battleIcon="UI/SpritePics/battle/141004",
+ 		imageHalf="UI/SpritePics/formation/141004",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/141004",
+ 		imageWhole="UI/SpritePics/portrait/awake/141004",
+ 		model="Role1/Prefab/Hero_Battle/role_141004",
+ 		highModel="Role1/Prefab/Hero_Show/role_141004_H",
+ 		drawHalf="UI/SpritePics/employee/141004",
+ 		drawing="UI/SpritePics/portrait/awake/141004",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/140004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_141004",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration141004",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_141004",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_141004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140004"
+},
+[140005] =
+{
+ 		id=140005,
+ 		name=8140005,
+ 		desc="斯露德",
+ 		icon="UI/SpritePics/head/Hero/140005",
+ 		targeticon="UI/SpritePics/head/Hero/140005_01",
+ 		battleIcon="UI/SpritePics/battle/140005",
+ 		imageHalf="UI/SpritePics/formation/140005",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/140005",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/140005",
+ 		model="Role1/Prefab/Hero_Battle/role_140005",
+ 		highModel="Role1/Prefab/Hero_Show/role_140005_H",
+ 		drawHalf="UI/SpritePics/employee/140005",
+ 		drawing="UI/SpritePics/portrait/portrait_body/140005",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/140005",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140005",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration140005",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140005",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_140005_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140005"
+},
+[140006] =
+{
+ 		id=140006,
+ 		name=8140006,
+ 		desc="二元",
+ 		icon="UI/SpritePics/head/Hero/140006",
+ 		targeticon="UI/SpritePics/head/Hero/140006_01",
+ 		battleIcon="UI/SpritePics/battle/140006",
+ 		imageHalf="UI/SpritePics/formation/140006",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/140006",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/140006",
+ 		model="Role1/Prefab/Hero_Battle/role_140006",
+ 		highModel="Role1/Prefab/Hero_Show/role_140006_H",
+ 		drawHalf="UI/SpritePics/employee/140006",
+ 		drawing="UI/SpritePics/portrait/portrait_body/140006",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/140006",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140006",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration140006",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140006",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_140006_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140006"
+},
+[141006] =
+{
+ 		id=141006,
+ 		name=8140006,
+ 		desc="二元（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/141006",
+ 		targeticon="UI/SpritePics/head/Hero/141006_01",
+ 		battleIcon="UI/SpritePics/battle/141006",
+ 		imageHalf="UI/SpritePics/formation/141006",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/141006",
+ 		imageWhole="UI/SpritePics/portrait/awake/141006",
+ 		model="Role1/Prefab/Hero_Battle/role_141006",
+ 		highModel="Role1/Prefab/Hero_Show/role_141006_H",
+ 		drawHalf="UI/SpritePics/employee/141006",
+ 		drawing="UI/SpritePics/portrait/awake/141006",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/140006",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_141006",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration140006",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_141006",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_141006_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140006"
+},
+[140007] =
+{
+ 		id=140007,
+ 		name=8140007,
+ 		desc="卡琳",
+ 		icon="UI/SpritePics/head/Hero/140007",
+ 		targeticon="UI/SpritePics/head/Hero/140007_01",
+ 		battleIcon="UI/SpritePics/battle/140007",
+ 		imageHalf="UI/SpritePics/formation/140007",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/140007",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/140007",
+ 		model="Role1/Prefab/Hero_Battle/role_140007",
+ 		highModel="Role1/Prefab/Hero_Show/role_140007_H",
+ 		drawHalf="UI/SpritePics/employee/140007",
+ 		drawing="UI/SpritePics/portrait/portrait_body/140007",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/140007",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140007",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration140007",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140007",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_140007_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140007"
+},
+[140008] =
+{
+ 		id=140008,
+ 		name=8140008,
+ 		desc="半觉醒AI",
+ 		icon="UI/SpritePics/head/Hero/140008",
+ 		targeticon="UI/SpritePics/head/Hero/140008_01",
+ 		battleIcon="UI/SpritePics/battle/140008",
+ 		imageHalf="UI/SpritePics/formation/140008",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/140008",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/140008",
+ 		model="Role1/Prefab/Hero_Battle/role_140008",
+ 		highModel="Role1/Prefab/Hero_Show/role_140008_H",
+ 		drawHalf="UI/SpritePics/employee/140008",
+ 		drawing="UI/SpritePics/portrait/portrait_body/140008",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/140008",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140008",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration140008",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140008",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_140008_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140008"
+},
+[140009] =
+{
+ 		id=140009,
+ 		name=8140009,
+ 		desc="芒硝",
+ 		icon="UI/SpritePics/head/Hero/140009",
+ 		targeticon="UI/SpritePics/head/Hero/140009_01",
+ 		battleIcon="UI/SpritePics/battle/140009",
+ 		imageHalf="UI/SpritePics/formation/140009",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/140009",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/140007",
+ 		model="Role1/Prefab/Hero_Battle/role_140009",
+ 		highModel="Role1/Prefab/Hero_Show/role_140009_H",
+ 		drawHalf="UI/SpritePics/employee/140009",
+ 		drawing="UI/SpritePics/portrait/portrait_body/140007",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/140007",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140009",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration140009",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140009",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_140009_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140009"
+},
+[140010] =
+{
+ 		id=140010,
+ 		name=8140010,
+ 		desc="AI古代骑士",
+ 		icon="UI/SpritePics/head/Hero/140010",
+ 		targeticon="UI/SpritePics/head/Hero/140010_01",
+ 		battleIcon="UI/SpritePics/battle/140010",
+ 		imageHalf="UI/SpritePics/formation/140010",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/140010",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/140008",
+ 		model="Role1/Prefab/Hero_Battle/role_140010",
+ 		highModel="Role1/Prefab/Hero_Show/role_140010_H",
+ 		drawHalf="UI/SpritePics/employee/140010",
+ 		drawing="UI/SpritePics/portrait/portrait_body/140008",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/140008",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140010",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration140010",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140010",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_140010_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140010"
+},
+[140011] =
+{
+ 		id=140011,
+ 		name=8140011,
+ 		desc="AI警犬",
+ 		icon="UI/SpritePics/head/Hero/140011",
+ 		targeticon="UI/SpritePics/head/Hero/140011_01",
+ 		battleIcon="UI/SpritePics/battle/140011",
+ 		imageHalf="UI/SpritePics/formation/140011",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/140011",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/140008",
+ 		model="Role1/Prefab/Hero_Battle/role_140011",
+ 		highModel="Role1/Prefab/Hero_Show/role_140011_H",
+ 		drawHalf="UI/SpritePics/employee/140011",
+ 		drawing="UI/SpritePics/portrait/portrait_body/140008",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/140008",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140011",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration140011",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_140011",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_140011_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_140011"
+},
+[150001] =
+{
+ 		id=150001,
+ 		name=8150001,
+ 		desc="荆芥",
+ 		icon="UI/SpritePics/head/Hero/150001",
+ 		targeticon="UI/SpritePics/head/Hero/150001_01",
+ 		battleIcon="UI/SpritePics/battle/150001",
+ 		imageHalf="UI/SpritePics/formation/150001",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/150001",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/150001",
+ 		model="Role1/Prefab/Hero_Battle/role_150001",
+ 		highModel="Role1/Prefab/Hero_Show/role_150001_H",
+ 		drawHalf="UI/SpritePics/employee/150001",
+ 		drawing="UI/SpritePics/portrait/portrait_body/150001",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150001",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150001",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150001",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150001",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_150001_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150001"
+},
+[151001] =
+{
+ 		id=151001,
+ 		name=8150001,
+ 		desc="荆芥（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/151001",
+ 		targeticon="UI/SpritePics/head/Hero/151001_01",
+ 		battleIcon="UI/SpritePics/battle/151001",
+ 		imageHalf="UI/SpritePics/formation/151001",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/151001",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/150001",
+ 		model="Role1/Prefab/Hero_Battle/role_151001",
+ 		highModel="Role1/Prefab/Hero_Show/role_151001_H",
+ 		drawHalf="UI/SpritePics/employee/151001",
+ 		drawing="UI/SpritePics/portrait/portrait_body/150001",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150001",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_151001",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150001",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_151001",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_151001_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150001"
+},
+[150002] =
+{
+ 		id=150002,
+ 		name=8150002,
+ 		desc="依丝特",
+ 		icon="UI/SpritePics/head/Hero/150002",
+ 		targeticon="UI/SpritePics/head/Hero/150002_01",
+ 		battleIcon="UI/SpritePics/battle/150002",
+ 		imageHalf="UI/SpritePics/formation/150002",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/150002",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/150002",
+ 		model="Role1/Prefab/Hero_Battle/role_150002",
+ 		highModel="Role1/Prefab/Hero_Show/role_150002_H",
+ 		drawHalf="UI/SpritePics/employee/150002",
+ 		drawing="UI/SpritePics/portrait/portrait_body/150002",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150002",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150002",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150002",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150002",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_150002_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150002"
+},
+[151002] =
+{
+ 		id=151002,
+ 		name=8150002,
+ 		desc="依丝特（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/151002",
+ 		targeticon="UI/SpritePics/head/Hero/151002_01",
+ 		battleIcon="UI/SpritePics/battle/151002",
+ 		imageHalf="UI/SpritePics/formation/151002",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/151002",
+ 		imageWhole="UI/SpritePics/portrait/awake/151002",
+ 		model="Role1/Prefab/Hero_Battle/role_151002",
+ 		highModel="Role1/Prefab/Hero_Show/role_151002_H",
+ 		drawHalf="UI/SpritePics/employee/151002",
+ 		drawing="UI/SpritePics/portrait/awake/151002",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150002",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_151002",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150002",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_151002",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110004",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_151002_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150002"
+},
+[150003] =
+{
+ 		id=150003,
+ 		name=8150003,
+ 		desc="蒂柏拉",
+ 		icon="UI/SpritePics/head/Hero/150003",
+ 		targeticon="UI/SpritePics/head/Hero/150003_01",
+ 		battleIcon="UI/SpritePics/battle/150003",
+ 		imageHalf="UI/SpritePics/formation/150003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/150003",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/150003",
+ 		model="Role1/Prefab/Hero_Battle/role_150003",
+ 		highModel="Role1/Prefab/Hero_Show/role_150003_H",
+ 		drawHalf="UI/SpritePics/employee/150003",
+ 		drawing="UI/SpritePics/portrait/portrait_body/150003",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150003",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150003",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150003",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150003",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_150003_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150003"
+},
+[151003] =
+{
+ 		id=151003,
+ 		name=8150003,
+ 		desc="蒂柏拉（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/151003",
+ 		targeticon="UI/SpritePics/head/Hero/151003_01",
+ 		battleIcon="UI/SpritePics/battle/151003",
+ 		imageHalf="UI/SpritePics/formation/151003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/151003",
+ 		imageWhole="UI/SpritePics/portrait/awake/151003",
+ 		model="Role1/Prefab/Hero_Battle/role_151003",
+ 		highModel="Role1/Prefab/Hero_Show/role_151003_H",
+ 		drawHalf="UI/SpritePics/employee/151003",
+ 		drawing="UI/SpritePics/portrait/awake/151003",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150003",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_151003",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150003",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_151003",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110004",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_151003_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150003"
+},
+[150004] =
+{
+ 		id=150004,
+ 		name=8150004,
+ 		desc="亚斯塔洛特",
+ 		icon="UI/SpritePics/head/Hero/150004",
+ 		targeticon="UI/SpritePics/head/Hero/150004_01",
+ 		battleIcon="UI/SpritePics/battle/150004",
+ 		imageHalf="UI/SpritePics/formation/150004",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/150004",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/150004",
+ 		model="Role1/Prefab/Hero_Battle/role_150004",
+ 		highModel="Role1/Prefab/Hero_Show/role_150004_H",
+ 		drawHalf="UI/SpritePics/employee/150004",
+ 		drawing="UI/SpritePics/portrait/portrait_body/150004",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150004",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150004",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150004",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_150004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150004"
+},
+[151004] =
+{
+ 		id=151004,
+ 		name=8150004,
+ 		desc="亚斯塔洛特（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/151004",
+ 		targeticon="UI/SpritePics/head/Hero/151004_01",
+ 		battleIcon="UI/SpritePics/battle/151004",
+ 		imageHalf="UI/SpritePics/formation/151004",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/151004",
+ 		imageWhole="UI/SpritePics/portrait/awake/151004",
+ 		model="Role1/Prefab/Hero_Battle/role_151004",
+ 		highModel="Role1/Prefab/Hero_Show/role_151004_H",
+ 		drawHalf="UI/SpritePics/employee/151004",
+ 		drawing="UI/SpritePics/portrait/awake/151004",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_151004",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150004",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_151004",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_151004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150004"
+},
+[150005] =
+{
+ 		id=150005,
+ 		name=8150005,
+ 		desc="康斯薇拉",
+ 		icon="UI/SpritePics/head/Hero/150005",
+ 		targeticon="UI/SpritePics/head/Hero/150005_01",
+ 		battleIcon="UI/SpritePics/battle/150005",
+ 		imageHalf="UI/SpritePics/formation/150005",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/150005",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/150005",
+ 		model="Role1/Prefab/Hero_Battle/role_150005",
+ 		highModel="Role1/Prefab/Hero_Show/role_150005_H",
+ 		drawHalf="UI/SpritePics/employee/150005",
+ 		drawing="UI/SpritePics/portrait/portrait_body/150005",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150005",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150005",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150005",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150005",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_150005_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150005"
+},
+[150006] =
+{
+ 		id=150006,
+ 		name=8150006,
+ 		desc="川断",
+ 		icon="UI/SpritePics/head/Hero/150006",
+ 		targeticon="UI/SpritePics/head/Hero/150006_01",
+ 		battleIcon="UI/SpritePics/battle/150006",
+ 		imageHalf="UI/SpritePics/formation/150006",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/150006",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/150006",
+ 		model="Role1/Prefab/Hero_Battle/role_150006",
+ 		highModel="Role1/Prefab/Hero_Show/role_150006_H",
+ 		drawHalf="UI/SpritePics/employee/150006",
+ 		drawing="UI/SpritePics/portrait/portrait_body/150006",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150006",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150006",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150006",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150006",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_150006_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150006"
+},
+[151006] =
+{
+ 		id=151006,
+ 		name=8150006,
+ 		desc="川断（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/151006",
+ 		targeticon="UI/SpritePics/head/Hero/151006_01",
+ 		battleIcon="UI/SpritePics/battle/151006",
+ 		imageHalf="UI/SpritePics/formation/151006",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/151006",
+ 		imageWhole="UI/SpritePics/portrait/awake/151006",
+ 		model="Role1/Prefab/Hero_Battle/role_151006",
+ 		highModel="Role1/Prefab/Hero_Show/role_151006_H",
+ 		drawHalf="UI/SpritePics/employee/151006",
+ 		drawing="UI/SpritePics/portrait/awake/151006",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150006",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_151006",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150006",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_151006",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110004",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_151006_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150006"
+},
+[150007] =
+{
+ 		id=150007,
+ 		name=8150007,
+ 		desc="丽芙",
+ 		icon="UI/SpritePics/head/Hero/150007",
+ 		targeticon="UI/SpritePics/head/Hero/150007_01",
+ 		battleIcon="UI/SpritePics/battle/150007",
+ 		imageHalf="UI/SpritePics/formation/150007",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/150007",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/150007",
+ 		model="Role1/Prefab/Hero_Battle/role_150007",
+ 		highModel="Role1/Prefab/Hero_Show/role_150007_H",
+ 		drawHalf="UI/SpritePics/employee/150007",
+ 		drawing="UI/SpritePics/portrait/portrait_body/150007",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150007",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150007",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150007",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150007",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_150007_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150007"
+},
+[150008] =
+{
+ 		id=150008,
+ 		name=8150008,
+ 		desc="光明会使徒",
+ 		icon="UI/SpritePics/head/Hero/150008",
+ 		targeticon="UI/SpritePics/head/Hero/150008_01",
+ 		battleIcon="UI/SpritePics/battle/150008",
+ 		imageHalf="UI/SpritePics/formation/150008",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/150008",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/150008",
+ 		model="Role1/Prefab/Hero_Battle/role_150008",
+ 		highModel="Role1/Prefab/Hero_Show/role_150008_H",
+ 		drawHalf="UI/SpritePics/employee/150008",
+ 		drawing="UI/SpritePics/portrait/portrait_body/150008",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150008",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150008",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150008",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150008",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_150008_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150008"
+},
+[150009] =
+{
+ 		id=150009,
+ 		name=8150009,
+ 		desc="伊迪斯",
+ 		icon="UI/SpritePics/head/Hero/150009",
+ 		targeticon="UI/SpritePics/head/Hero/150009_01",
+ 		battleIcon="UI/SpritePics/battle/150009",
+ 		imageHalf="UI/SpritePics/formation/150009",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/150009",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/150009",
+ 		model="Role1/Prefab/Hero_Battle/role_150009",
+ 		highModel="Role1/Prefab/Hero_Show/role_150009_H",
+ 		drawHalf="UI/SpritePics/employee/150009",
+ 		drawing="UI/SpritePics/portrait/portrait_body/150009",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150006",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150009",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150009",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150009",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_150009_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150009"
+},
+[151009] =
+{
+ 		id=151009,
+ 		name=8150009,
+ 		desc="伊迪斯（觉醒）",
+ 		icon="UI/SpritePics/head/Hero/151009",
+ 		targeticon="UI/SpritePics/head/Hero/151009_01",
+ 		battleIcon="UI/SpritePics/battle/151009",
+ 		imageHalf="UI/SpritePics/formation/151009",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/151009",
+ 		imageWhole="UI/SpritePics/portrait/awake/151009",
+ 		model="Role1/Prefab/Hero_Battle/role_151009",
+ 		highModel="Role1/Prefab/Hero_Show/role_151009_H",
+ 		drawHalf="UI/SpritePics/employee/151009",
+ 		drawing="UI/SpritePics/portrait/awake/151009",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150006",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_151009",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150009",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_151009",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_151009_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150009"
+},
+[150010] =
+{
+ 		id=150010,
+ 		name=8150010,
+ 		desc="私家侦探",
+ 		icon="UI/SpritePics/head/Hero/150010",
+ 		targeticon="UI/SpritePics/head/Hero/150010_01",
+ 		battleIcon="UI/SpritePics/battle/150010",
+ 		imageHalf="UI/SpritePics/formation/150010",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/150010",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/150010",
+ 		model="Role1/Prefab/Hero_Battle/role_150010",
+ 		highModel="Role1/Prefab/Hero_Show/role_150010_H",
+ 		drawHalf="UI/SpritePics/employee/150010",
+ 		drawing="UI/SpritePics/portrait/portrait_body/150010",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150007",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150010",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150010",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150010",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_150010_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150010"
+},
+[150011] =
+{
+ 		id=150011,
+ 		name=8150011,
+ 		desc="自负法师（马尔福）",
+ 		icon="UI/SpritePics/head/Hero/150011",
+ 		targeticon="UI/SpritePics/head/Hero/150011_01",
+ 		battleIcon="UI/SpritePics/battle/150011",
+ 		imageHalf="UI/SpritePics/formation/150011",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/150011",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/150011",
+ 		model="Role1/Prefab/Hero_Battle/role_150011",
+ 		highModel="Role1/Prefab/Hero_Show/role_150011_H",
+ 		drawHalf="UI/SpritePics/employee/150011",
+ 		drawing="UI/SpritePics/portrait/portrait_body/150011",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150008",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150011",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150011",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150011",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_150011_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150011"
+},
+[150012] =
+{
+ 		id=150012,
+ 		name=8150012,
+ 		desc="贝斯乐手",
+ 		icon="UI/SpritePics/head/Hero/150012",
+ 		targeticon="UI/SpritePics/head/Hero/150012_01",
+ 		battleIcon="UI/SpritePics/battle/150012",
+ 		imageHalf="UI/SpritePics/formation/150012",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/150012",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/150001",
+ 		model="Role1/Prefab/Hero_Battle/role_150012",
+ 		highModel="Role1/Prefab/Hero_Show/role_150012_H",
+ 		drawHalf="UI/SpritePics/employee/150012",
+ 		drawing="UI/SpritePics/portrait/portrait_body/150001",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/150008",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150012",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration150012",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_150012",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110004",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_150012_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_150012"
+},
+[210006] =
+{
+ 		id=210006,
+ 		name=100011,
+ 		desc="罐子的临时资源",
+ 		icon="UI/SpritePics/head/Monster/210004",
+ 		targeticon="UI/SpritePics/head/Monster/210004_01",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Monster/monster_210006",
+ 	DevelopAwakePicture=""
+},
+[220001] =
+{
+ 		id=220001,
+ 		name=100013,
+ 		desc="迅捷光刃",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1011",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1011_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1011",
+ 		imageHalf="UI/Texture/Monster/210002",
+ 		battleHalf="UI/Texture/Monster/210002",
+ 		imageWhole="UI/Texture/Monster/210002",
+ 		model="Role1/Prefab/Monster/monster_220001",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1011",
+ 	DevelopAwakePicture=""
+},
+[220002] =
+{
+ 		id=220002,
+ 		name=100014,
+ 		desc="火力终端",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1021",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1021_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1021",
+ 		imageHalf="UI/Texture/Monster/210003",
+ 		battleHalf="UI/Texture/Monster/210003",
+ 		imageWhole="UI/Texture/Monster/210003",
+ 		model="Role1/Prefab/Monster/monster_220002",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1021",
+ 	DevelopAwakePicture=""
+},
+[220003] =
+{
+ 		id=220003,
+ 		name=220003,
+ 		desc="重装铁卫",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1041",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1041_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1041",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Monster/monster_220003",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1803",
+ 	DevelopAwakePicture=""
+},
+[220004] =
+{
+ 		id=220004,
+ 		name=100012,
+ 		desc="尖兵",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1001",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1001_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1001",
+ 		imageHalf="UI/Texture/Monster/210001",
+ 		battleHalf="UI/Texture/Monster/210001",
+ 		imageWhole="UI/Texture/Monster/210001",
+ 		model="Role1/Prefab/Monster/monster_220004",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1001",
+ 	DevelopAwakePicture=""
+},
+[220005] =
+{
+ 		id=220005,
+ 		name=100012,
+ 		desc="财团重兵",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3041",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3041_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3041",
+ 		imageHalf="UI/Texture/Monster/210001",
+ 		battleHalf="UI/Texture/Monster/210001",
+ 		imageWhole="UI/Texture/Monster/210001",
+ 		model="Role1/Prefab/Monster/monster_220005",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3041",
+ 	DevelopAwakePicture=""
+},
+[220006] =
+{
+ 		id=220006,
+ 		name=100012,
+ 		desc="科学怪人",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3031_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/210001",
+ 		battleHalf="UI/Texture/Monster/210001",
+ 		imageWhole="UI/Texture/Monster/210001",
+ 		model="Role1/Prefab/Monster/monster_220006",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3031",
+ 	DevelopAwakePicture=""
+},
+[270001] =
+{
+ 		id=270001,
+ 		name=100016,
+ 		desc="突变幼兽",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2001",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2001_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2001",
+ 		imageHalf="UI/Texture/Monster/210005",
+ 		battleHalf="UI/Texture/Monster/210005",
+ 		imageWhole="UI/Texture/Monster/210005",
+ 		model="Role1/Prefab/Monster/monster_270001",
+ 	DevelopAwakePicture=""
+},
+[270002] =
+{
+ 		id=270002,
+ 		name=100017,
+ 		desc="巨齿兽",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2001",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2001_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2001",
+ 		imageHalf="UI/Texture/Monster/210006",
+ 		battleHalf="UI/Texture/Monster/210006",
+ 		imageWhole="UI/Texture/Monster/210006",
+ 		model="Role1/Prefab/Monster/monster_270002",
+ 	DevelopAwakePicture=""
+},
+[270003] =
+{
+ 		id=270003,
+ 		name=100018,
+ 		desc="猎角兽",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2001",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2001_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2001",
+ 		imageHalf="UI/Texture/Monster/210007",
+ 		battleHalf="UI/Texture/Monster/210007",
+ 		imageWhole="UI/Texture/Monster/210007",
+ 		model="Role1/Prefab/Monster/monster_270003",
+ 	DevelopAwakePicture=""
+},
+[270004] =
+{
+ 		id=270004,
+ 		name=100019,
+ 		desc="恐爪兽",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2801_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2801",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270004",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2801",
+ 	DevelopAwakePicture=""
+},
+[220007] =
+{
+ 		id=220007,
+ 		name=100012,
+ 		desc="黑鹰",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3051",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3051_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3051",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_220007",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3051",
+ 	DevelopAwakePicture=""
+},
+[270005] =
+{
+ 		id=270005,
+ 		name=100012,
+ 		desc="避难者",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3001",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3001_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3001",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270005",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3001",
+ 	DevelopAwakePicture=""
+},
+[270006] =
+{
+ 		id=270006,
+ 		name=100012,
+ 		desc="携刃守兵",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3011",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3011_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3011",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270006",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3011",
+ 	DevelopAwakePicture=""
+},
+[270007] =
+{
+ 		id=270007,
+ 		name=100012,
+ 		desc="持枪守兵",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3021",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3021_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3021",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270007",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3021",
+ 	DevelopAwakePicture=""
+},
+[270008] =
+{
+ 		id=270008,
+ 		name=100012,
+ 		desc="穿透者",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1031",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1031_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1031",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270008",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1041",
+ 	DevelopAwakePicture=""
+},
+[270009] =
+{
+ 		id=270009,
+ 		name=100012,
+ 		desc="探索者",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1051",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1051_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1051",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270009",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1051",
+ 	DevelopAwakePicture=""
+},
+[270010] =
+{
+ 		id=270010,
+ 		name=100012,
+ 		desc="囤积豚",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2001",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2001_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2001",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270010",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2001",
+ 	DevelopAwakePicture=""
+},
+[270011] =
+{
+ 		id=270011,
+ 		name=100012,
+ 		desc="贪食狐",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2011",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2011_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2011",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270011",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2011",
+ 	DevelopAwakePicture=""
+},
+[270012] =
+{
+ 		id=270012,
+ 		name=100012,
+ 		desc="刺豹",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2031",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2031_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2031",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270012",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2031",
+ 	DevelopAwakePicture=""
+},
+[270013] =
+{
+ 		id=270013,
+ 		name=100012,
+ 		desc="食岩熊",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2041",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2041_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2041",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270013",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2041",
+ 	DevelopAwakePicture=""
+},
+[270014] =
+{
+ 		id=270014,
+ 		name=100012,
+ 		desc="晶鸟",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2051",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2051_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2051",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270014",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2051",
+ 	DevelopAwakePicture=""
+},
+[270015] =
+{
+ 		id=270015,
+ 		name=100012,
+ 		desc="飞鼠鼬",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2021",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2021_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2021",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270015",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2021",
+ 	DevelopAwakePicture=""
+},
+[270016] =
+{
+ 		id=270016,
+ 		name=100012,
+ 		desc="温妮",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3801_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3801",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270016",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3801",
+ 	DevelopAwakePicture=""
+},
+[270017] =
+{
+ 		id=270017,
+ 		name=100012,
+ 		desc="迅捷光刃-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1012",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1012_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1012",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270017",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1012",
+ 	DevelopAwakePicture=""
+},
+[270018] =
+{
+ 		id=270018,
+ 		name=100012,
+ 		desc="火力终端-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1023",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1023_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1023",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270018",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1023",
+ 	DevelopAwakePicture=""
+},
+[270019] =
+{
+ 		id=270019,
+ 		name=100012,
+ 		desc="重装堡垒-变1",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1801_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1801",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270019",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1801",
+ 	DevelopAwakePicture=""
+},
+[270020] =
+{
+ 		id=270020,
+ 		name=100012,
+ 		desc="囤积豚-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2002",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2002_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2002",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270020",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2002",
+ 	DevelopAwakePicture=""
+},
+[270021] =
+{
+ 		id=270021,
+ 		name=100012,
+ 		desc="囤积豚-变1",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2004",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2004_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2004",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270021",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2004",
+ 	DevelopAwakePicture=""
+},
+[270022] =
+{
+ 		id=270022,
+ 		name=100012,
+ 		desc="囤积豚-变2",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2003",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2003_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2003",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270022",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2003",
+ 	DevelopAwakePicture=""
+},
+[270023] =
+{
+ 		id=270023,
+ 		name=100012,
+ 		desc="贪食狐-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2013",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2013_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2013",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270023",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2013",
+ 	DevelopAwakePicture=""
+},
+[270024] =
+{
+ 		id=270024,
+ 		name=100012,
+ 		desc="贪食狐-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2012",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2012_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2012",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270024",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2012",
+ 	DevelopAwakePicture=""
+},
+[270025] =
+{
+ 		id=270025,
+ 		name=100012,
+ 		desc="刺豹-绿",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2033",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2033_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2033",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270025",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2033",
+ 	DevelopAwakePicture=""
+},
+[270026] =
+{
+ 		id=270026,
+ 		name=100012,
+ 		desc="食岩熊-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2043",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2043_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2042",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270026",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2043",
+ 	DevelopAwakePicture=""
+},
+[270027] =
+{
+ 		id=270027,
+ 		name=100012,
+ 		desc="食岩熊-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2042",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2042_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2043",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270027",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2042",
+ 	DevelopAwakePicture=""
+},
+[270028] =
+{
+ 		id=270028,
+ 		name=100012,
+ 		desc="晶鸟-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2052",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2052_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2052",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270028",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2052",
+ 	DevelopAwakePicture=""
+},
+[270029] =
+{
+ 		id=270029,
+ 		name=100012,
+ 		desc="飞鼠鼬-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2022",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2022_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2022",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270029",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2022",
+ 	DevelopAwakePicture=""
+},
+[270030] =
+{
+ 		id=270030,
+ 		name=100012,
+ 		desc="飞鼠鼬-变1",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2023",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2023_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2023",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270030",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2023",
+ 	DevelopAwakePicture=""
+},
+[270031] =
+{
+ 		id=270031,
+ 		name=100012,
+ 		desc="火力终端-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1022",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1022_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1022",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270031",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1022",
+ 	DevelopAwakePicture=""
+},
+[270032] =
+{
+ 		id=270032,
+ 		name=100012,
+ 		desc="穿透者-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1032",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1032_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1032",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270032",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1042",
+ 	DevelopAwakePicture=""
+},
+[270033] =
+{
+ 		id=270033,
+ 		name=100012,
+ 		desc="探索者-变1",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1052",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1052_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1052",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270033",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1052",
+ 	DevelopAwakePicture=""
+},
+[270034] =
+{
+ 		id=270034,
+ 		name=100012,
+ 		desc="重装铁卫-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1042",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1042_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1042",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270034",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1802",
+ 	DevelopAwakePicture=""
+},
+[270035] =
+{
+ 		id=270035,
+ 		name=100012,
+ 		desc="刺豹-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2032",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2032_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2032",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270035",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_2032",
+ 	DevelopAwakePicture=""
+},
+[270036] =
+{
+ 		id=270036,
+ 		name=100012,
+ 		desc="尖兵-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1002",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1002_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1002",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270036",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1002",
+ 	DevelopAwakePicture=""
+},
+[270037] =
+{
+ 		id=270037,
+ 		name=100012,
+ 		desc="穿透者-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1033",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1033_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1032",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270037",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1033",
+ 	DevelopAwakePicture=""
+},
+[270038] =
+{
+ 		id=270038,
+ 		name=8021803,
+ 		desc="神弃之子",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1803",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1803_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270038",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4801",
+ 	DevelopAwakePicture=""
+},
+[270039] =
+{
+ 		id=270039,
+ 		name=8021803,
+ 		desc="尖兵-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1003",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1003_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270039",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1003",
+ 	DevelopAwakePicture=""
+},
+[270040] =
+{
+ 		id=270040,
+ 		name=8021803,
+ 		desc="迅捷光刃-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1013",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1013_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270040",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1013",
+ 	DevelopAwakePicture=""
+},
+[270041] =
+{
+ 		id=270041,
+ 		name=8021803,
+ 		desc="探索者-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1053",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1053_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270041",
+ 		drawing="UI/SpritePics/portrait/portrait_body/21803",
+ 	DevelopAwakePicture=""
+},
+[270042] =
+{
+ 		id=270042,
+ 		name=8021803,
+ 		desc="重装铁卫-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1043",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1043_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270042",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_270042",
+ 	DevelopAwakePicture=""
+},
+[270043] =
+{
+ 		id=270043,
+ 		name=8021803,
+ 		desc="不死猎犬",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4001",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4001_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270043",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4001",
+ 	DevelopAwakePicture=""
+},
+[270044] =
+{
+ 		id=270044,
+ 		name=8021803,
+ 		desc="隐殁杀手",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4011",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4011_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270044",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4011",
+ 	DevelopAwakePicture=""
+},
+[270045] =
+{
+ 		id=270045,
+ 		name=8021803,
+ 		desc="陨灭战士",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4031",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4031_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270045",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4031",
+ 	DevelopAwakePicture=""
+},
+[270046] =
+{
+ 		id=270046,
+ 		name=8021803,
+ 		desc="轮回术士",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4021",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4021_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270046",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4021",
+ 	DevelopAwakePicture=""
+},
+[270047] =
+{
+ 		id=270047,
+ 		name=8021803,
+ 		desc="无痕大剑手",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4051",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4051_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270047",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4051",
+ 	DevelopAwakePicture=""
+},
+[270048] =
+{
+ 		id=270048,
+ 		name=8021803,
+ 		desc="末路引导者",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4041",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4041_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270048",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4041",
+ 	DevelopAwakePicture=""
+},
+[270049] =
+{
+ 		id=270049,
+ 		name=8021803,
+ 		desc="落潮枪兵",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4061",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4061_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270049",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4061",
+ 	DevelopAwakePicture=""
+},
+[270050] =
+{
+ 		id=270050,
+ 		name=8021803,
+ 		desc="涌潮术士",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4071",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4071_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270050",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4071",
+ 	DevelopAwakePicture=""
+},
+[270051] =
+{
+ 		id=270051,
+ 		name=8021803,
+ 		desc="不死猎犬-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4002",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4002_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2032",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270052",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4002",
+ 	DevelopAwakePicture=""
+},
+[270052] =
+{
+ 		id=270052,
+ 		name=8021803,
+ 		desc="不死猎犬-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4003",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4003_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1002",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270051",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4003",
+ 	DevelopAwakePicture=""
+},
+[270053] =
+{
+ 		id=270053,
+ 		name=8021803,
+ 		desc="隐殁杀手-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4012",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4012_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1032",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270053",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4012",
+ 	DevelopAwakePicture=""
+},
+[270054] =
+{
+ 		id=270054,
+ 		name=8021803,
+ 		desc="隐殁杀手-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4013",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4013_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270054",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4013",
+ 	DevelopAwakePicture=""
+},
+[270055] =
+{
+ 		id=270055,
+ 		name=8021803,
+ 		desc="落潮暗鲨-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4062",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4062_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270055",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4062",
+ 	DevelopAwakePicture=""
+},
+[270056] =
+{
+ 		id=270056,
+ 		name=8021803,
+ 		desc="落潮暗鲨-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4063",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4063_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270056",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4063",
+ 	DevelopAwakePicture=""
+},
+[270057] =
+{
+ 		id=270057,
+ 		name=8021803,
+ 		desc="末路引导者-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4042",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4042_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270057",
+ 		drawing="UI/SpritePics/portrait/portrait_body/270057",
+ 	DevelopAwakePicture=""
+},
+[270058] =
+{
+ 		id=270058,
+ 		name=8021803,
+ 		desc="末路引导者-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4043",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4043_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270058",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_6010",
+ 	DevelopAwakePicture=""
+},
+[270059] =
+{
+ 		id=270059,
+ 		name=8021803,
+ 		desc="轮回术士-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4022",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4022_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270059",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4022",
+ 	DevelopAwakePicture=""
+},
+[270060] =
+{
+ 		id=270060,
+ 		name=8021803,
+ 		desc="轮回术士-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4023",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4023_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270060",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4023",
+ 	DevelopAwakePicture=""
+},
+[270061] =
+{
+ 		id=270061,
+ 		name=8021803,
+ 		desc="涌潮术士-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4072",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4072_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270061",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4072",
+ 	DevelopAwakePicture=""
+},
+[270062] =
+{
+ 		id=270062,
+ 		name=8021803,
+ 		desc="涌潮术士-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4073",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4073_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270062",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4073",
+ 	DevelopAwakePicture=""
+},
+[270063] =
+{
+ 		id=270063,
+ 		name=8021803,
+ 		desc="无痕大剑手-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4052",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4052_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270063",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4052",
+ 	DevelopAwakePicture=""
+},
+[270064] =
+{
+ 		id=270064,
+ 		name=8021803,
+ 		desc="无痕大剑手-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4053",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4053_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270064",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4053",
+ 	DevelopAwakePicture=""
+},
+[270065] =
+{
+ 		id=270065,
+ 		name=8021803,
+ 		desc="陨灭战士-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4032",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4032_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270065",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4032",
+ 	DevelopAwakePicture=""
+},
+[270066] =
+{
+ 		id=270066,
+ 		name=8021803,
+ 		desc="陨灭战士-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4033",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4033_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270066",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4033",
+ 	DevelopAwakePicture=""
+},
+[270067] =
+{
+ 		id=270067,
+ 		name=8021803,
+ 		desc="避难者-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3002",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3002_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2032",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270067",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3002",
+ 	DevelopAwakePicture=""
+},
+[270068] =
+{
+ 		id=270068,
+ 		name=8021803,
+ 		desc="避难者-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3003",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3003_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1002",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270068",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_6004",
+ 	DevelopAwakePicture=""
+},
+[270069] =
+{
+ 		id=270069,
+ 		name=8021803,
+ 		desc="持刀守卫-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3012",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3012_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1032",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270069",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3012",
+ 	DevelopAwakePicture=""
+},
+[270070] =
+{
+ 		id=270070,
+ 		name=8021803,
+ 		desc="持刀守卫-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3013",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3013_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270070",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_6005",
+ 	DevelopAwakePicture=""
+},
+[270071] =
+{
+ 		id=270071,
+ 		name=8021803,
+ 		desc="黑鹰-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3052",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3052_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270071",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3052",
+ 	DevelopAwakePicture=""
+},
+[270072] =
+{
+ 		id=270072,
+ 		name=8021803,
+ 		desc="黑鹰-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3053",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3053_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270072",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_6007",
+ 	DevelopAwakePicture=""
+},
+[270073] =
+{
+ 		id=270073,
+ 		name=8021803,
+ 		desc="持枪守卫-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3022",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3022_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270073",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3022",
+ 	DevelopAwakePicture=""
+},
+[270074] =
+{
+ 		id=270074,
+ 		name=8021803,
+ 		desc="持枪守卫-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3023",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3023_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270074",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_6006",
+ 	DevelopAwakePicture=""
+},
+[270075] =
+{
+ 		id=270075,
+ 		name=8021803,
+ 		desc="科学怪人-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3032",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3032_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270075",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3032",
+ 	DevelopAwakePicture=""
+},
+[270076] =
+{
+ 		id=270076,
+ 		name=8021803,
+ 		desc="科学怪人-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3033",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3033_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270076",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3031",
+ 	DevelopAwakePicture=""
+},
+[270077] =
+{
+ 		id=270077,
+ 		name=8021803,
+ 		desc="财团重兵-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3042",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3042_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270077",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3042",
+ 	DevelopAwakePicture=""
+},
+[270078] =
+{
+ 		id=270078,
+ 		name=8021803,
+ 		desc="财团重兵-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_3043",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_3043_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_3031",
+ 		imageHalf="UI/Texture/Monster/21803",
+ 		battleHalf="UI/Texture/Monster/21803",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/21803",
+ 		model="Role1/Prefab/Monster/monster_270078",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_3043",
+ 	DevelopAwakePicture=""
+},
+[270079] =
+{
+ 		id=270079,
+ 		name=8021803,
+ 		desc="草石虫",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5001",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5001_01",
+ 		model="Role1/Prefab/Monster/monster_270079",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5001",
+ 	DevelopAwakePicture=""
+},
+[270080] =
+{
+ 		id=270080,
+ 		name=8021803,
+ 		desc="花鳄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5021",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5021_01",
+ 		model="Role1/Prefab/Monster/monster_270080",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5021",
+ 	DevelopAwakePicture=""
+},
+[270081] =
+{
+ 		id=270081,
+ 		name=8021803,
+ 		desc="溜溜叶耳蜜熊",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5011",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5011_01",
+ 		model="Role1/Prefab/Monster/monster_270081",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5011",
+ 	DevelopAwakePicture=""
+},
+[270082] =
+{
+ 		id=270082,
+ 		name=8021803,
+ 		desc="双拳月牙猩",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5031",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5031_01",
+ 		model="Role1/Prefab/Monster/monster_270082",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5031",
+ 	DevelopAwakePicture=""
+},
+[270083] =
+{
+ 		id=270083,
+ 		name=8021803,
+ 		desc="噗噗大臭鼬",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5041",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5041_01",
+ 		model="Role1/Prefab/Monster/monster_270083",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5041",
+ 	DevelopAwakePicture=""
+},
+[270084] =
+{
+ 		id=270084,
+ 		name=8021803,
+ 		desc="叶形兔兔蛾",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5061",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5061_01",
+ 		model="Role1/Prefab/Monster/monster_270084",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5061",
+ 	DevelopAwakePicture=""
+},
+[270085] =
+{
+ 		id=270085,
+ 		name=8021803,
+ 		desc="抓人灌木",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5091",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5091_01",
+ 		model="Role1/Prefab/Monster/monster_270085",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5091",
+ 	DevelopAwakePicture=""
+},
+[270086] =
+{
+ 		id=270086,
+ 		name=8021803,
+ 		desc="奶怪实验家",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5071",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5071_01",
+ 		model="Role1/Prefab/Monster/monster_270086",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5071",
+ 	DevelopAwakePicture=""
+},
+[270087] =
+{
+ 		id=270087,
+ 		name=8021803,
+ 		desc="友方好好实验家",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5081",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5081_01",
+ 		model="Role1/Prefab/Monster/monster_270087",
+ 		drawing="UI/SpritePics/portrait/portrait_body/21803",
+ 	DevelopAwakePicture=""
+},
+[270088] =
+{
+ 		id=270088,
+ 		name=8021803,
+ 		desc="喙嘴树犀",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5051",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5051_01",
+ 		model="Role1/Prefab/Monster/monster_270088",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5051",
+ 	DevelopAwakePicture=""
+},
+[270089] =
+{
+ 		id=270089,
+ 		name=8021803,
+ 		desc="丛林BOSS",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5801_01",
+ 		model="Role1/Prefab/Monster/monster_270089",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5801",
+ 	DevelopAwakePicture=""
+},
+[270090] =
+{
+ 		id=270090,
+ 		name=8021803,
+ 		desc="草石虫 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5002",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5002_01",
+ 		model="Role1/Prefab/Monster/monster_270090",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5002",
+ 	DevelopAwakePicture=""
+},
+[270091] =
+{
+ 		id=270091,
+ 		name=8021803,
+ 		desc="花鳄 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5022",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5022_01",
+ 		model="Role1/Prefab/Monster/monster_270091",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5022",
+ 	DevelopAwakePicture=""
+},
+[270092] =
+{
+ 		id=270092,
+ 		name=8021803,
+ 		desc="溜溜叶耳蜜熊 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5012",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5012_01",
+ 		model="Role1/Prefab/Monster/monster_270092",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5012",
+ 	DevelopAwakePicture=""
+},
+[270093] =
+{
+ 		id=270093,
+ 		name=8021803,
+ 		desc="双拳月牙猩 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5032",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5032_01",
+ 		model="Role1/Prefab/Monster/monster_270093",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5032",
+ 	DevelopAwakePicture=""
+},
+[270094] =
+{
+ 		id=270094,
+ 		name=8021803,
+ 		desc="噗噗大臭鼬 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5042",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5042_01",
+ 		model="Role1/Prefab/Monster/monster_270094",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5042",
+ 	DevelopAwakePicture=""
+},
+[270095] =
+{
+ 		id=270095,
+ 		name=8021803,
+ 		desc="叶形兔兔蛾 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5062",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5062_01",
+ 		model="Role1/Prefab/Monster/monster_270095",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5062",
+ 	DevelopAwakePicture=""
+},
+[270096] =
+{
+ 		id=270096,
+ 		name=8021803,
+ 		desc="抓人灌木 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5092",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5092_01",
+ 		model="Role1/Prefab/Monster/monster_270096",
+ 		drawing="UI/SpritePics/portrait/portrait_body/21803",
+ 	DevelopAwakePicture=""
+},
+[270097] =
+{
+ 		id=270097,
+ 		name=8021803,
+ 		desc="喙嘴树犀 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5052",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5052_01",
+ 		model="Role1/Prefab/Monster/monster_270097",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5052",
+ 	DevelopAwakePicture=""
+},
+[270098] =
+{
+ 		id=270098,
+ 		name=8021803,
+ 		desc="草石虫 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5003",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5003_01",
+ 		model="Role1/Prefab/Monster/monster_270098",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5003",
+ 	DevelopAwakePicture=""
+},
+[270099] =
+{
+ 		id=270099,
+ 		name=8021803,
+ 		desc="花鳄 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5023",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5023_01",
+ 		model="Role1/Prefab/Monster/monster_270099",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5023",
+ 	DevelopAwakePicture=""
+},
+[270100] =
+{
+ 		id=270100,
+ 		name=8021803,
+ 		desc="溜溜叶耳蜜熊 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5013",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5013_01",
+ 		model="Role1/Prefab/Monster/monster_270100",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5013",
+ 	DevelopAwakePicture=""
+},
+[270101] =
+{
+ 		id=270101,
+ 		name=8021803,
+ 		desc="双拳月牙猩 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5033",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5033_01",
+ 		model="Role1/Prefab/Monster/monster_270101",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5033",
+ 	DevelopAwakePicture=""
+},
+[270102] =
+{
+ 		id=270102,
+ 		name=8021803,
+ 		desc="噗噗大臭鼬 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5043",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5043_01",
+ 		model="Role1/Prefab/Monster/monster_270102",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5043",
+ 	DevelopAwakePicture=""
+},
+[270103] =
+{
+ 		id=270103,
+ 		name=8021803,
+ 		desc="叶形兔兔蛾 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5063",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5063_01",
+ 		model="Role1/Prefab/Monster/monster_270103",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5063",
+ 	DevelopAwakePicture=""
+},
+[270104] =
+{
+ 		id=270104,
+ 		name=8021803,
+ 		desc="抓人灌木 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5093",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5093_01",
+ 		model="Role1/Prefab/Monster/monster_270104",
+ 		drawing="UI/SpritePics/portrait/portrait_body/21803",
+ 	DevelopAwakePicture=""
+},
+[270105] =
+{
+ 		id=270105,
+ 		name=8021803,
+ 		desc="喙嘴树犀 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5053",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5053_01",
+ 		model="Role1/Prefab/Monster/monster_270105",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5053",
+ 	DevelopAwakePicture=""
+},
+[270114] =
+{
+ 		id=270114,
+ 		name=8021803,
+ 		desc="草石虫 狂暴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5005",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5004_01",
+ 		model="Role1/Prefab/Monster/monster_270114",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5005",
+ 	DevelopAwakePicture=""
+},
+[270107] =
+{
+ 		id=270107,
+ 		name=8021803,
+ 		desc="花鳄 狂暴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5024",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5024_01",
+ 		model="Role1/Prefab/Monster/monster_270107",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5024",
+ 	DevelopAwakePicture=""
+},
+[270108] =
+{
+ 		id=270108,
+ 		name=8021803,
+ 		desc="溜溜叶耳蜜熊 狂暴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5014",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5014_01",
+ 		model="Role1/Prefab/Monster/monster_270108",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5014",
+ 	DevelopAwakePicture=""
+},
+[270109] =
+{
+ 		id=270109,
+ 		name=8021803,
+ 		desc="双拳月牙猩 狂暴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5034",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5034_01",
+ 		model="Role1/Prefab/Monster/monster_270109",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5034",
+ 	DevelopAwakePicture=""
+},
+[270110] =
+{
+ 		id=270110,
+ 		name=8021803,
+ 		desc="噗噗大臭鼬 狂暴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5044",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5044_01",
+ 		model="Role1/Prefab/Monster/monster_270110",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5044",
+ 	DevelopAwakePicture=""
+},
+[270111] =
+{
+ 		id=270111,
+ 		name=8021803,
+ 		desc="叶形兔兔蛾 狂暴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5064",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5064_01",
+ 		model="Role1/Prefab/Monster/monster_270111",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5064",
+ 	DevelopAwakePicture=""
+},
+[270112] =
+{
+ 		id=270112,
+ 		name=8021803,
+ 		desc="抓人灌木 狂暴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5094",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5094_01",
+ 		model="Role1/Prefab/Monster/monster_270112",
+ 		drawing="UI/SpritePics/portrait/portrait_body/21803",
+ 	DevelopAwakePicture=""
+},
+[270113] =
+{
+ 		id=270113,
+ 		name=8021803,
+ 		desc="喙嘴树犀 狂暴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5054",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5054_01",
+ 		model="Role1/Prefab/Monster/monster_270113",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5054",
+ 	DevelopAwakePicture=""
+},
+[270122] =
+{
+ 		id=270122,
+ 		name=8021803,
+ 		desc="草石虫 狂暴 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5006",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5005_01",
+ 		model="Role1/Prefab/Monster/monster_270122",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5006",
+ 	DevelopAwakePicture=""
+},
+[270115] =
+{
+ 		id=270115,
+ 		name=8021803,
+ 		desc="花鳄 狂暴 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5025",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5025_01",
+ 		model="Role1/Prefab/Monster/monster_270115",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5025",
+ 	DevelopAwakePicture=""
+},
+[270116] =
+{
+ 		id=270116,
+ 		name=8021803,
+ 		desc="溜溜叶耳蜜熊 狂暴 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5015",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5015_01",
+ 		model="Role1/Prefab/Monster/monster_270116",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5015",
+ 	DevelopAwakePicture=""
+},
+[270117] =
+{
+ 		id=270117,
+ 		name=8021803,
+ 		desc="双拳月牙猩 狂暴 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5035",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5035_01",
+ 		model="Role1/Prefab/Monster/monster_270117",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5035",
+ 	DevelopAwakePicture=""
+},
+[270118] =
+{
+ 		id=270118,
+ 		name=8021803,
+ 		desc="噗噗大臭鼬 狂暴 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5045",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5045_01",
+ 		model="Role1/Prefab/Monster/monster_270118",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5045",
+ 	DevelopAwakePicture=""
+},
+[270119] =
+{
+ 		id=270119,
+ 		name=8021803,
+ 		desc="叶形兔兔蛾 狂暴 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5065",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5065_01",
+ 		model="Role1/Prefab/Monster/monster_270119",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5065",
+ 	DevelopAwakePicture=""
+},
+[270120] =
+{
+ 		id=270120,
+ 		name=8021803,
+ 		desc="抓人灌木 狂暴 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5095",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5095_01",
+ 		model="Role1/Prefab/Monster/monster_270120",
+ 		drawing="UI/SpritePics/portrait/portrait_body/21803",
+ 	DevelopAwakePicture=""
+},
+[270121] =
+{
+ 		id=270121,
+ 		name=8021803,
+ 		desc="喙嘴树犀 狂暴 黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5055",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5055_01",
+ 		model="Role1/Prefab/Monster/monster_270121",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5055",
+ 	DevelopAwakePicture=""
+},
+[270106] =
+{
+ 		id=270106,
+ 		name=8021803,
+ 		desc="草石虫 狂暴 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5006",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5006_01",
+ 		model="Role1/Prefab/Monster/monster_270106",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5004",
+ 	DevelopAwakePicture=""
+},
+[270123] =
+{
+ 		id=270123,
+ 		name=8021803,
+ 		desc="花鳄 狂暴 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5026",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5026_01",
+ 		model="Role1/Prefab/Monster/monster_270123",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5026",
+ 	DevelopAwakePicture=""
+},
+[270124] =
+{
+ 		id=270124,
+ 		name=8021803,
+ 		desc="溜溜叶耳蜜熊 狂暴 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5016",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5016_01",
+ 		model="Role1/Prefab/Monster/monster_270124",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5016",
+ 	DevelopAwakePicture=""
+},
+[270125] =
+{
+ 		id=270125,
+ 		name=8021803,
+ 		desc="双拳月牙猩 狂暴 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5036",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5036_01",
+ 		model="Role1/Prefab/Monster/monster_270125",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5036",
+ 	DevelopAwakePicture=""
+},
+[270126] =
+{
+ 		id=270126,
+ 		name=8021803,
+ 		desc="噗噗大臭鼬 狂暴 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5046",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5046_01",
+ 		model="Role1/Prefab/Monster/monster_270126",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5046",
+ 	DevelopAwakePicture=""
+},
+[270127] =
+{
+ 		id=270127,
+ 		name=8021803,
+ 		desc="叶形兔兔蛾 狂暴 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5066",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5066_01",
+ 		model="Role1/Prefab/Monster/monster_270127",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5066",
+ 	DevelopAwakePicture=""
+},
+[270128] =
+{
+ 		id=270128,
+ 		name=8021803,
+ 		desc="抓人灌木 狂暴 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5096",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5096_01",
+ 		model="Role1/Prefab/Monster/monster_270128",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5093",
+ 	DevelopAwakePicture=""
+},
+[270129] =
+{
+ 		id=270129,
+ 		name=8021803,
+ 		desc="喙嘴树犀 狂暴 红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5056",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5056_01",
+ 		model="Role1/Prefab/Monster/monster_270129",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5056",
+ 	DevelopAwakePicture=""
+},
+[270130] =
+{
+ 		id=270130,
+ 		name=8021803,
+ 		desc="丛林BOSS 狂暴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_5802",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_5802_01",
+ 		model="Role1/Prefab/Monster/monster_270130",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_icon_monster_5802",
+ 	DevelopAwakePicture=""
+},
+[270131] =
+{
+ 		id=270131,
+ 		name=8021803,
+ 		desc="囤积豚-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2006",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2006_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2006",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270131",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_6001",
+ 	DevelopAwakePicture=""
+},
+[270132] =
+{
+ 		id=270132,
+ 		name=8021803,
+ 		desc="晶鸟-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2053",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2053_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2053",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270132",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_6003",
+ 	DevelopAwakePicture=""
+},
+[270150] =
+{
+ 		id=270150,
+ 		name=8021803,
+ 		desc="毒盾-蓝",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2007",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2006_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2006",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270150",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_6008",
+ 	DevelopAwakePicture=""
+},
+[270151] =
+{
+ 		id=270151,
+ 		name=8021803,
+ 		desc="毒盾-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2008",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2053_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2053",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270151",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_6009",
+ 	DevelopAwakePicture=""
+},
+[270133] =
+{
+ 		id=270133,
+ 		name=29000143,
+ 		desc="假面—一级普通怪（大蜘蛛）",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10001",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10001_01",
+ 		model="Role1/Prefab/Monster/monster_270133",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10001",
+ 	DevelopAwakePicture=""
+},
+[270134] =
+{
+ 		id=270134,
+ 		name=29000144,
+ 		desc="假面—一级普通怪（大蜘蛛）-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10002",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10002_01",
+ 		model="Role1/Prefab/Monster/monster_270134",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10002",
+ 	DevelopAwakePicture=""
+},
+[270135] =
+{
+ 		id=270135,
+ 		name=29000155,
+ 		desc="假面—一级氢气球炸弹",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10041",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10041_01",
+ 		model="Role1/Prefab/Monster/monster_270161",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10041",
+ 	DevelopAwakePicture=""
+},
+[270136] =
+{
+ 		id=270136,
+ 		name=29000156,
+ 		desc="假面—一级稻草人衍生物",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10042",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10042_01",
+ 		model="Role1/Prefab/Monster/monster_270136",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10042",
+ 	DevelopAwakePicture=""
+},
+[270137] =
+{
+ 		id=270137,
+ 		name=29000149,
+ 		desc="假面—二级普攻法术怪（女巫之眼）",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10021",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10021_01",
+ 		model="Role1/Prefab/Monster/monster_270137",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10021",
+ 	DevelopAwakePicture=""
+},
+[270138] =
+{
+ 		id=270138,
+ 		name=29000150,
+ 		desc="假面—二级普攻法术怪（女巫之眼）-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10022",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10022_01",
+ 		model="Role1/Prefab/Monster/monster_270138",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10022",
+ 	DevelopAwakePicture=""
+},
+[270139] =
+{
+ 		id=270139,
+ 		name=29000146,
+ 		desc="假面—二级速度怪（开大力）",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10011",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10011_01",
+ 		model="Role1/Prefab/Monster/monster_270139",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10011",
+ 	DevelopAwakePicture=""
+},
+[270140] =
+{
+ 		id=270140,
+ 		name=29000147,
+ 		desc="假面—二级速度怪（开大力）-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10012",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10012_01",
+ 		model="Role1/Prefab/Monster/monster_270140",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10012",
+ 	DevelopAwakePicture=""
+},
+[270141] =
+{
+ 		id=270141,
+ 		name=29000152,
+ 		desc="假面—二级飞天猴子",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10031",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10031_01",
+ 		model="Role1/Prefab/Monster/monster_270141",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10031",
+ 	DevelopAwakePicture=""
+},
+[270142] =
+{
+ 		id=270142,
+ 		name=29000153,
+ 		desc="假面—二级飞天猴子-黄",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10032",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10032_01",
+ 		model="Role1/Prefab/Monster/monster_270142",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10032",
+ 	DevelopAwakePicture=""
+},
+[270143] =
+{
+ 		id=270143,
+ 		name=29000158,
+ 		desc="假面—三级小BOSS稻草人波尼",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10051",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10051_01",
+ 		model="Role1/Prefab/Monster/monster_270143",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10051",
+ 	DevelopAwakePicture=""
+},
+[270144] =
+{
+ 		id=270144,
+ 		name=29000161,
+ 		desc="假面—BOSS铁皮人丽贝卡",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10054",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10054_01",
+ 		model="Role1/Prefab/Monster/monster_270144",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10054",
+ 	DevelopAwakePicture=""
+},
+[270145] =
+{
+ 		id=270145,
+ 		name=29000160,
+ 		desc="假面—BOSS狮子海风藤",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10053",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10053_01",
+ 		model="Role1/Prefab/Monster/monster_270145",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10053",
+ 	DevelopAwakePicture=""
+},
+[270146] =
+{
+ 		id=270146,
+ 		name=29000159,
+ 		desc="假面—BOSS狗狗培根",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10052",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10052_01",
+ 		model="Role1/Prefab/Monster/monster_270146",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10052",
+ 	DevelopAwakePicture=""
+},
+[270147] =
+{
+ 		id=270147,
+ 		name=29000162,
+ 		desc="假面—BOSS北方女巫莉斯贝丝",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10056",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10056_01",
+ 		model="Role1/Prefab/Monster/monster_270147",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10055",
+ 	DevelopAwakePicture=""
+},
+[270148] =
+{
+ 		id=270148,
+ 		name=29000163,
+ 		desc="假面—BOSS南方女巫莉斯贝丝",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10055",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10055_01",
+ 		model="Role1/Prefab/Monster/monster_270148",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10056",
+ 	DevelopAwakePicture=""
+},
+[270149] =
+{
+ 		id=270149,
+ 		name=29000165,
+ 		desc="假面—大BOSS大巫师",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10058",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10058_01",
+ 		model="Role1/Prefab/Monster/monster_270149",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10058",
+ 	DevelopAwakePicture=""
+},
+[270152] =
+{
+ 		id=270152,
+ 		name=29000157,
+ 		desc="假面-丽贝卡的剑",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10043",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10043_01",
+ 		model="Role1/Prefab/Monster/monster_270152",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10043",
+ 	DevelopAwakePicture=""
+},
+[270153] =
+{
+ 		id=270153,
+ 		name=29000164,
+ 		desc="假面—西方女巫地面状态",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10055",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10055_01",
+ 		model="Role1/Prefab/Monster/monster_270153",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10056",
+ 	DevelopAwakePicture=""
+},
+[270154] =
+{
+ 		id=270154,
+ 		name=29000145,
+ 		desc="假面—一级普通怪（大蜘蛛）-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10003",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10003_01",
+ 		model="Role1/Prefab/Monster/monster_270154",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10003",
+ 	DevelopAwakePicture=""
+},
+[270155] =
+{
+ 		id=270155,
+ 		name=29000148,
+ 		desc="假面—二级速度怪（开大力）-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10013",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10013_01",
+ 		model="Role1/Prefab/Monster/monster_270155",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10013",
+ 	DevelopAwakePicture=""
+},
+[270156] =
+{
+ 		id=270156,
+ 		name=29000151,
+ 		desc="假面—二级普攻法术怪（女巫之眼）-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10023",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10023_01",
+ 		model="Role1/Prefab/Monster/monster_270156",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10023",
+ 	DevelopAwakePicture=""
+},
+[270157] =
+{
+ 		id=270157,
+ 		name=29000154,
+ 		desc="假面—二级飞天猴子-红",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10033",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10033_01",
+ 		model="Role1/Prefab/Monster/monster_270157",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_10033",
+ 	DevelopAwakePicture=""
+},
+[270158] =
+{
+ 		id=270158,
+ 		name=8021803,
+ 		desc="机械自爆怪-原版",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_2005",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_2005_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_2005",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270158",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_1031",
+ 	DevelopAwakePicture=""
+},
+[270159] =
+{
+ 		id=270159,
+ 		name=100012,
+ 		desc="温妮（红）",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_4100",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_4100_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_4100",
+ 		imageHalf="UI/Texture/Monster/210008",
+ 		battleHalf="UI/Texture/Monster/210008",
+ 		imageWhole="UI/Texture/Monster/210008",
+ 		model="Role1/Prefab/Monster/monster_270159",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_4100",
+ 	DevelopAwakePicture=""
+},
+[270160] =
+{
+ 		id=270160,
+ 		name=100012,
+ 		desc="反塔BOSS伊斯特",
+ 	DevelopAwakePicture=""
+},
+[270161] =
+{
+ 		id=270161,
+ 		name=8021803,
+ 		desc="通用气球怪",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_1061",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_1061_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1061",
+ 		imageHalf="UI/Texture/Monster/210002",
+ 		battleHalf="UI/Texture/Monster/210002",
+ 		imageWhole="UI/Texture/Monster/210002",
+ 		model="Role1/Prefab/Monster/monster_270135",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_270161",
+ 	DevelopAwakePicture=""
+},
+[270162] =
+{
+ 		id=270162,
+ 		name=8021803,
+ 		desc="BOSS阿米莉亚",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_52007",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_52007_01",
+ 		battleIcon="UI/SpritePics/battle/120003",
+ 		imageHalf="UI/SpritePics/formation/120003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120003",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120003",
+ 		model="Role1/Prefab/Monster/monster_270162",
+ 		drawHalf="UI/SpritePics/employee/120003",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120003",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121003",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120003",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120003",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120003",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120003_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120003"
+},
+[270163] =
+{
+ 		id=270163,
+ 		name=8021803,
+ 		desc="BOSS阿米莉亚觉醒",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_52007",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_52007_01",
+ 		battleIcon="UI/SpritePics/battle/121003",
+ 		imageHalf="UI/SpritePics/formation/121003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121003",
+ 		imageWhole="UI/SpritePics/portrait/awake/121003",
+ 		model="Role1/Prefab/Monster/monster_270163",
+ 		drawHalf="UI/SpritePics/employee/121003",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120003",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121003",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121003",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120003",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121003",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120003_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120003"
+},
+[270164] =
+{
+ 		id=270164,
+ 		name=8021803,
+ 		desc="BOSS泷降",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_52001",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_52001_01",
+ 		battleIcon="UI/SpritePics/battle/120007",
+ 		imageHalf="UI/SpritePics/formation/120007",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/120007",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120007",
+ 		model="Role1/Prefab/Monster/monster_270164",
+ 		drawHalf="UI/SpritePics/employee/120007",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120007",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120007",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120007",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120007",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_120007",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120007_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120007"
+},
+[270165] =
+{
+ 		id=270165,
+ 		name=8021803,
+ 		desc="BOSS泷降觉醒",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_52001",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_52001_01",
+ 		battleIcon="UI/SpritePics/battle/121007",
+ 		imageHalf="UI/SpritePics/formation/121007",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121007",
+ 		imageWhole="UI/SpritePics/portrait/awake/121007",
+ 		model="Role1/Prefab/Monster/monster_270165",
+ 		drawHalf="UI/SpritePics/employee/121007",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120007",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/120007",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121007",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration120007",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_121007",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120007_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120007"
+},
+[270166] =
+{
+ 		id=270166,
+ 		name=8021803,
+ 		desc="BOSS露希尔",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_52004",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_52004_01",
+ 		battleIcon="UI/SpritePics/battle/130003",
+ 		imageHalf="UI/SpritePics/formation/130003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/130003",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/130003",
+ 		model="Role1/Prefab/Monster/monster_270166",
+ 		drawHalf="UI/SpritePics/employee/130003",
+ 		drawing="UI/SpritePics/portrait/portrait_body/130003",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130003",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130003",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130003",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_130003",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_130003_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130003"
+},
+[270167] =
+{
+ 		id=270167,
+ 		name=8021803,
+ 		desc="BOSS露希尔觉醒",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_52004",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_52004_01",
+ 		battleIcon="UI/SpritePics/battle/131003",
+ 		imageHalf="UI/SpritePics/formation/131003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/131003",
+ 		imageWhole="UI/SpritePics/portrait/awake/131003",
+ 		model="Role1/Prefab/Monster/monster_270167",
+ 		drawHalf="UI/SpritePics/employee/131003",
+ 		drawing="UI/SpritePics/portrait/portrait_body/130003",
+ 		awakeDrawing="UI/SpritePics/portrait/portrait_body/130003",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_131003",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration130003",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_131003",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_130003_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_130003"
+},
+[270168] =
+{
+ 		id=270168,
+ 		name=8021803,
+ 		desc="近战鲨鱼",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_52901",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_52901_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1011",
+ 		imageHalf="UI/Texture/Monster/210002",
+ 		battleHalf="UI/Texture/Monster/210002",
+ 		imageWhole="UI/Texture/Monster/210002",
+ 		model="Role1/Prefab/Monster/monster_270168",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_52901",
+ 	DevelopAwakePicture=""
+},
+[270169] =
+{
+ 		id=270169,
+ 		name=8021803,
+ 		desc="远程鲨鱼",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_52902",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_52902_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1011",
+ 		imageHalf="UI/Texture/Monster/210002",
+ 		battleHalf="UI/Texture/Monster/210002",
+ 		imageWhole="UI/Texture/Monster/210002",
+ 		model="Role1/Prefab/Monster/monster_270169",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_52902",
+ 	DevelopAwakePicture=""
+},
+[270170] =
+{
+ 		id=270170,
+ 		name=8021803,
+ 		desc="小飞机",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_52903",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_52903_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1011",
+ 		imageHalf="UI/Texture/Monster/210002",
+ 		battleHalf="UI/Texture/Monster/210002",
+ 		imageWhole="UI/Texture/Monster/210002",
+ 		model="Role1/Prefab/Monster/monster_270170",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_52903",
+ 	DevelopAwakePicture=""
+},
+[270171] =
+{
+ 		id=270171,
+ 		name=8021803,
+ 		desc="小飞机2",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_52903",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_52903_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1011",
+ 		imageHalf="UI/Texture/Monster/210002",
+ 		battleHalf="UI/Texture/Monster/210002",
+ 		imageWhole="UI/Texture/Monster/210002",
+ 		model="Role1/Prefab/Monster/monster_270170",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_52903",
+ 	DevelopAwakePicture=""
+},
+[270172] =
+{
+ 		id=270172,
+ 		name=8021803,
+ 		desc="小飞机3",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_52903",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_52903_01",
+ 		battleIcon="UI/SpritePics/head/Monster/ui_icon_monster_1011",
+ 		imageHalf="UI/Texture/Monster/210002",
+ 		battleHalf="UI/Texture/Monster/210002",
+ 		imageWhole="UI/Texture/Monster/210002",
+ 		model="Role1/Prefab/Monster/monster_270172",
+ 		drawing="UI/SpritePics/portrait/portrait_atlas/ui_atlas_portrait_monster_52903",
+ 	DevelopAwakePicture=""
+},
+[270173] =
+{
+ 		id=270173,
+ 		name=8120004,
+ 		desc="活动玛乔丽（觉醒）",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270173",
+ 		imageHalf="UI/SpritePics/formation/270173",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270173",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270173",
+ 		drawHalf="UI/SpritePics/employee/270173",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270173",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269173",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270173",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270174] =
+{
+ 		id=270174,
+ 		name=8120004,
+ 		desc="标准变身怪-捣蛋熊",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270174",
+ 		imageHalf="UI/SpritePics/formation/270174",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270174",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270174",
+ 		drawHalf="UI/SpritePics/employee/270174",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270174",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269174",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270174",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270175] =
+{
+ 		id=270175,
+ 		name=8120004,
+ 		desc="标准变身怪黄-捣蛋熊",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270175",
+ 		imageHalf="UI/SpritePics/formation/270175",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270175",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270175",
+ 		drawHalf="UI/SpritePics/employee/270175",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270175",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269175",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270175",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270176] =
+{
+ 		id=270176,
+ 		name=8120004,
+ 		desc="标准变身怪红-捣蛋熊",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270176",
+ 		imageHalf="UI/SpritePics/formation/270176",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270176",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270176",
+ 		drawHalf="UI/SpritePics/employee/270176",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270176",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269176",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270176",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270177] =
+{
+ 		id=270177,
+ 		name=8120004,
+ 		desc="变身精英怪-爆爆熊",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270177",
+ 		imageHalf="UI/SpritePics/formation/270177",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270177",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270177",
+ 		drawHalf="UI/SpritePics/employee/270177",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270177",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269177",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270177",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270178] =
+{
+ 		id=270178,
+ 		name=8120004,
+ 		desc="变身精英怪黄-爆爆熊",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270178",
+ 		imageHalf="UI/SpritePics/formation/270178",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270178",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270178",
+ 		drawHalf="UI/SpritePics/employee/270178",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270178",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269178",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270178",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270179] =
+{
+ 		id=270179,
+ 		name=8120004,
+ 		desc="变身精英怪红-爆爆熊",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270179",
+ 		imageHalf="UI/SpritePics/formation/270179",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270179",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270179",
+ 		drawHalf="UI/SpritePics/employee/270179",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270179",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269179",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270179",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270180] =
+{
+ 		id=270180,
+ 		name=8120004,
+ 		desc="远程石化怪-鳐鱼",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270180",
+ 		imageHalf="UI/SpritePics/formation/270180",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270180",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270180",
+ 		drawHalf="UI/SpritePics/employee/270180",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270180",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269180",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270180",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270181] =
+{
+ 		id=270181,
+ 		name=8120004,
+ 		desc="远程石化怪-黄鳐鱼",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270181",
+ 		imageHalf="UI/SpritePics/formation/270181",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270181",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270181",
+ 		drawHalf="UI/SpritePics/employee/270181",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270181",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269181",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270181",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270182] =
+{
+ 		id=270182,
+ 		name=8120004,
+ 		desc="远程石化怪-红鳐鱼",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270182",
+ 		imageHalf="UI/SpritePics/formation/270182",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270182",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270182",
+ 		drawHalf="UI/SpritePics/employee/270182",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270182",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269182",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270182",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270183] =
+{
+ 		id=270183,
+ 		name=8120004,
+ 		desc="偷豆子怪-旧颜料",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270183",
+ 		imageHalf="UI/SpritePics/formation/270183",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270183",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270183",
+ 		drawHalf="UI/SpritePics/employee/270183",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270183",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269183",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270183",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270184] =
+{
+ 		id=270184,
+ 		name=8120004,
+ 		desc="偷豆子怪黄-旧颜料",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270184",
+ 		imageHalf="UI/SpritePics/formation/270184",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270184",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270184",
+ 		drawHalf="UI/SpritePics/employee/270184",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270184",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269184",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270184",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270185] =
+{
+ 		id=270185,
+ 		name=8120004,
+ 		desc="偷豆子怪红-旧颜料",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270185",
+ 		imageHalf="UI/SpritePics/formation/270185",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270185",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270185",
+ 		drawHalf="UI/SpritePics/employee/270185",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270185",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269185",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270185",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270186] =
+{
+ 		id=270186,
+ 		name=8120004,
+ 		desc="不可阻挡怪-颜料",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270186",
+ 		imageHalf="UI/SpritePics/formation/270186",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270186",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270186",
+ 		drawHalf="UI/SpritePics/employee/270186",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270186",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269186",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270186",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270187] =
+{
+ 		id=270187,
+ 		name=8120004,
+ 		desc="不可阻挡怪黄-颜料",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270187",
+ 		imageHalf="UI/SpritePics/formation/270187",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270187",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270187",
+ 		drawHalf="UI/SpritePics/employee/270187",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270187",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269187",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270187",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270188] =
+{
+ 		id=270188,
+ 		name=8120004,
+ 		desc="不可阻挡怪红-颜料",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270188",
+ 		imageHalf="UI/SpritePics/formation/270188",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270188",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270188",
+ 		drawHalf="UI/SpritePics/employee/270188",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270188",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269188",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270188",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270189] =
+{
+ 		id=270189,
+ 		name=8120004,
+ 		desc="飞行喷射怪-蝙蝠",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270189",
+ 		imageHalf="UI/SpritePics/formation/270189",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270189",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270189",
+ 		drawHalf="UI/SpritePics/employee/270189",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270189",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269189",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270189",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270190] =
+{
+ 		id=270190,
+ 		name=8120004,
+ 		desc="飞行喷射怪黄-蝙蝠",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270190",
+ 		imageHalf="UI/SpritePics/formation/270190",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270190",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270190",
+ 		drawHalf="UI/SpritePics/employee/270190",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270190",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269190",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270190",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270191] =
+{
+ 		id=270191,
+ 		name=8120004,
+ 		desc="飞行喷射怪红-蝙蝠",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270191",
+ 		imageHalf="UI/SpritePics/formation/270191",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270191",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270191",
+ 		drawHalf="UI/SpritePics/employee/270191",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270191",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269191",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270191",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270192] =
+{
+ 		id=270192,
+ 		name=8120004,
+ 		desc="物免怪-雅典娜雕像",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270192",
+ 		imageHalf="UI/SpritePics/formation/270192",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270192",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270192",
+ 		drawHalf="UI/SpritePics/employee/270192",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270192",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269192",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270192",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270193] =
+{
+ 		id=270193,
+ 		name=8120004,
+ 		desc="法免怪-竖琴手雕像",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270193",
+ 		imageHalf="UI/SpritePics/formation/270193",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270193",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270193",
+ 		drawHalf="UI/SpritePics/employee/270193",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270193",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269193",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270193",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270194] =
+{
+ 		id=270194,
+ 		name=8120004,
+ 		desc="附身恶魔实体-小飞行怪",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270194",
+ 		imageHalf="UI/SpritePics/formation/270194",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270194",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270194",
+ 		drawHalf="UI/SpritePics/employee/270194",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270194",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269194",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270194",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270195] =
+{
+ 		id=270195,
+ 		name=8120004,
+ 		desc="附身恶魔",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270195",
+ 		imageHalf="UI/SpritePics/formation/270195",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270195",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270195",
+ 		drawHalf="UI/SpritePics/employee/270195",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270195",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269195",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270195",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270196] =
+{
+ 		id=270196,
+ 		name=8120004,
+ 		desc="全视之眼",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270196",
+ 		imageHalf="UI/SpritePics/formation/270196",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270196",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270196",
+ 		drawHalf="UI/SpritePics/employee/270196",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270196",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269196",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270196",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270197] =
+{
+ 		id=270197,
+ 		name=8120004,
+ 		desc="魅惑之眼",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270197",
+ 		imageHalf="UI/SpritePics/formation/270197",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270197",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270197",
+ 		drawHalf="UI/SpritePics/employee/270197",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270197",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269197",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270197",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[270198] =
+{
+ 		id=270198,
+ 		name=8120004,
+ 		desc="附身恶魔领主-恶魔猫",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_10801",
+ 		targeticon="UI/SpritePics/head/Monster/ui_icon_monster_10801_01",
+ 		battleIcon="UI/SpritePics/battle/270198",
+ 		imageHalf="UI/SpritePics/formation/270198",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/270198",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/120004",
+ 		model="Role1/Prefab/Monster/monster_270198",
+ 		drawHalf="UI/SpritePics/employee/270198",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 		awakeDrawing="UI/SpritePics/portrait/awake/121004",
+ 		drawingPicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270198",
+ 		illustration="UI/SpritePics/portrait/awake/ui_awake_illustration269198",
+ 		awakePicture="UI/SpritePics/develop/drawing/ui_develop_drawing_270198",
+ 		awakeShow="UI/Prefab/Awake/RoleAwakeHead110003",
+ 		fashionPicture="UI/SpritePics/develop/fashion/ui_fashion_120004_01",
+ 	DevelopAwakePicture="UI/SpritePics/develop/awake/ui_develop_awake_120004"
+},
+[320001] =
+{
+ 		id=320001,
+ 		name=8121003,
+ 		desc="阿米莉亚鲨鱼远程",
+ 		icon="UI/SpritePics/head/Hero/121003_01",
+ 		targeticon="UI/SpritePics/head/Hero/121003_01",
+ 		battleIcon="UI/SpritePics/battle/121003",
+ 		imageHalf="UI/SpritePics/formation/121003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121003",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/121003",
+ 		model="Role1/Prefab/Hero_Battle/role_320001",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120003",
+ 	DevelopAwakePicture=""
+},
+[320011] =
+{
+ 		id=320011,
+ 		name=8121003,
+ 		desc="阿米莉亚鲨鱼近战",
+ 		icon="UI/SpritePics/head/Hero/121003_01",
+ 		targeticon="UI/SpritePics/head/Hero/121003_01",
+ 		battleIcon="UI/SpritePics/battle/121003",
+ 		imageHalf="UI/SpritePics/formation/121003",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121003",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/121003",
+ 		model="Role1/Prefab/Hero_Battle/role_320002",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120003",
+ 	DevelopAwakePicture=""
+},
+[320002] =
+{
+ 		id=320002,
+ 		name=8121004,
+ 		desc="玛乔丽de飞机",
+ 		icon="UI/SpritePics/head/Hero/121004",
+ 		targeticon="UI/SpritePics/head/Hero/121004_01",
+ 		battleIcon="UI/SpritePics/battle/121004",
+ 		imageHalf="UI/SpritePics/formation/121004",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121004",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/121004",
+ 		model="Role1/Prefab/Hero_Battle/role_120001",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 	DevelopAwakePicture=""
+},
+[320022] =
+{
+ 		id=320022,
+ 		name=8121004,
+ 		desc="菘蓝de飞机2A",
+ 		icon="UI/SpritePics/head/Hero/121004",
+ 		targeticon="UI/SpritePics/head/Hero/121004_01",
+ 		battleIcon="UI/SpritePics/battle/121004",
+ 		imageHalf="UI/SpritePics/formation/121004",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121004",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/121004",
+ 		model="Role1/Prefab/Weapon_Battle/role_120009_Low_Weapon02",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 	DevelopAwakePicture=""
+},
+[340001] =
+{
+ 		id=340001,
+ 		name=8141001,
+ 		desc="鸫分身",
+ 		icon="UI/SpritePics/head/Hero/141001",
+ 		targeticon="UI/SpritePics/head/Hero/141001_01",
+ 		battleIcon="UI/SpritePics/battle/141001",
+ 		imageHalf="UI/SpritePics/formation/141001",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/141001",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/141001",
+ 		model="Role1/Prefab/Hero_Battle/role_340001",
+ 		drawing="UI/SpritePics/portrait/portrait_body/140001",
+ 	DevelopAwakePicture=""
+},
+[340002] =
+{
+ 		id=340002,
+ 		name=8141001,
+ 		desc="奈美的小飞机",
+ 		icon="UI/SpritePics/head/Hero/141001",
+ 		targeticon="UI/SpritePics/head/Hero/141001_01",
+ 		battleIcon="UI/SpritePics/battle/141001",
+ 		imageHalf="UI/SpritePics/formation/141001",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/141001",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/141001",
+ 		model="Role1/Prefab/Hero_Battle/role_140001",
+ 		drawing="UI/SpritePics/portrait/portrait_body/141001",
+ 	DevelopAwakePicture=""
+},
+[340003] =
+{
+ 		id=340003,
+ 		name=8121004,
+ 		desc="菘蓝de飞机",
+ 		icon="UI/SpritePics/head/Hero/121004",
+ 		targeticon="UI/SpritePics/head/Hero/121004_01",
+ 		battleIcon="UI/SpritePics/battle/121004",
+ 		imageHalf="UI/SpritePics/formation/121004",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121004",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/121004",
+ 		model="Role1/Prefab/Hero_Battle/role_340003",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 	DevelopAwakePicture=""
+},
+[340004] =
+{
+ 		id=340004,
+ 		name=8121004,
+ 		desc="菘蓝de飞机-大",
+ 		icon="UI/SpritePics/head/Hero/121004",
+ 		targeticon="UI/SpritePics/head/Hero/121004_01",
+ 		battleIcon="UI/SpritePics/battle/121004",
+ 		imageHalf="UI/SpritePics/formation/121004",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/121004",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/121004",
+ 		model="Role1/Prefab/Hero_Battle/role_340004",
+ 		drawing="UI/SpritePics/portrait/portrait_body/120004",
+ 	DevelopAwakePicture=""
+},
+[350091] =
+{
+ 		id=350091,
+ 		name=8121003,
+ 		desc="伊迪丝地雷",
+ 		model="Role1/Prefab/Hero_Battle/role_315901",
+ 	DevelopAwakePicture=""
+},
+[10000001] =
+{
+ 		id=10000001,
+ 		name=100012,
+ 		desc="备用武器（无模型）",
+ 		icon="UI/SpritePics/head/Hero/110001",
+ 		targeticon="UI/SpritePics/head/Hero/110001_01",
+ 		battleIcon="UI/SpritePics/battle/110001",
+ 		imageHalf="UI/Texture/Hero/110001",
+ 		battleHalf="UI/Texture/Hero/110001",
+ 		imageWhole="UI/Texture/Hero/110001",
+ 		model="Role1/Prefab/Weapon_Show/role_000001_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11000101] =
+{
+ 		id=11000101,
+ 		name=100012,
+ 		desc="阿什琳武器",
+ 		icon="UI/SpritePics/head/Hero/110001",
+ 		targeticon="UI/SpritePics/head/Hero/110001_01",
+ 		battleIcon="UI/SpritePics/battle/110001",
+ 		imageHalf="UI/Texture/Hero/110001",
+ 		battleHalf="UI/Texture/Hero/110001",
+ 		imageWhole="UI/Texture/Hero/110001",
+ 		model="Role1/Prefab/Weapon_Battle/role_110001_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11100101] =
+{
+ 		id=11100101,
+ 		name=100012,
+ 		desc="阿什琳超武",
+ 		icon="UI/SpritePics/head/Hero/110001",
+ 		targeticon="UI/SpritePics/head/Hero/110001_01",
+ 		battleIcon="UI/SpritePics/battle/110001",
+ 		imageHalf="UI/Texture/Hero/110001",
+ 		battleHalf="UI/Texture/Hero/110001",
+ 		imageWhole="UI/Texture/Hero/110001",
+ 		model="Role1/Prefab/Weapon_Battle/role_110001_Low_Super_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11000201] =
+{
+ 		id=11000201,
+ 		name=100013,
+ 		desc="塞维尔武器1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110002_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11000202] =
+{
+ 		id=11000202,
+ 		name=100013,
+ 		desc="塞维尔武器2",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110002_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[11100201] =
+{
+ 		id=11100201,
+ 		name=100013,
+ 		desc="塞维尔超武1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110002_Low_Super_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11100202] =
+{
+ 		id=11100202,
+ 		name=100013,
+ 		desc="塞维尔超武2",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110002_Low_Super_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[11000301] =
+{
+ 		id=11000301,
+ 		name=100013,
+ 		desc="安息香武器1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110003_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11000302] =
+{
+ 		id=11000302,
+ 		name=100013,
+ 		desc="安息香武器2",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110003_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[11000303] =
+{
+ 		id=11000303,
+ 		name=100013,
+ 		desc="安息香胜利笔记本",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110003_Low_Weapon03",
+ 	DevelopAwakePicture=""
+},
+[11100301] =
+{
+ 		id=11100301,
+ 		name=100013,
+ 		desc="安息香超武1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110003_Low_Super_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11100302] =
+{
+ 		id=11100302,
+ 		name=100013,
+ 		desc="安息香超武2",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110003_Low_Super_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[11000501] =
+{
+ 		id=11000501,
+ 		name=100013,
+ 		desc="海风藤武器1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110005_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11000502] =
+{
+ 		id=11000502,
+ 		name=100013,
+ 		desc="海风藤胜利游戏机",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110005_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[11100501] =
+{
+ 		id=11100501,
+ 		name=100013,
+ 		desc="海风藤超武1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110005_Low_Super_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11000601] =
+{
+ 		id=11000601,
+ 		name=100013,
+ 		desc="赫萝克武器1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110006_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11100602] =
+{
+ 		id=11100602,
+ 		name=100013,
+ 		desc="赫萝克超武1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110006_Low_Super_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11000701] =
+{
+ 		id=11000701,
+ 		name=100013,
+ 		desc="培根武器1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110007_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11100701] =
+{
+ 		id=11100701,
+ 		name=100013,
+ 		desc="培根超武1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110007_Low_Super_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11000801] =
+{
+ 		id=11000801,
+ 		name=100013,
+ 		desc="预备队员武器1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110008_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11000802] =
+{
+ 		id=11000802,
+ 		name=100013,
+ 		desc="预备队员武器2",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110008_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[11100801] =
+{
+ 		id=11100801,
+ 		name=100013,
+ 		desc="预备队员超武1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110008_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11100802] =
+{
+ 		id=11100802,
+ 		name=100013,
+ 		desc="预备队员超武2",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110008_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[11001101] =
+{
+ 		id=11001101,
+ 		name=100013,
+ 		desc="莎姬武器1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110011_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11101101] =
+{
+ 		id=11101101,
+ 		name=100013,
+ 		desc="莎姬超武1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Battle/role_110011_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12000101] =
+{
+ 		id=12000101,
+ 		name=100014,
+ 		desc="米娅武器",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Battle/role_120001_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12100101] =
+{
+ 		id=12100101,
+ 		name=100014,
+ 		desc="米娅超武",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Battle/role_120001_Low_Super_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12000201] =
+{
+ 		id=12000201,
+ 		name=100014,
+ 		desc="玛蒂尔达武器1",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Battle/role_120002_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12100201] =
+{
+ 		id=12100201,
+ 		name=100014,
+ 		desc="玛蒂尔达超武1",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Battle/role_120002_Low_Super_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12200201] =
+{
+ 		id=12200201,
+ 		name=100014,
+ 		desc="玛蒂尔达武器1-皮肤",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Battle/role_122002_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12000301] =
+{
+ 		id=12000301,
+ 		name=100014,
+ 		desc="阿米莉亚胜利鲨鱼",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Battle/role_120003_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12100301] =
+{
+ 		id=12100301,
+ 		name=100014,
+ 		desc="阿米莉亚胜利鲨鱼(超武)",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Battle/role_120003_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12000401] =
+{
+ 		id=12000401,
+ 		name=100014,
+ 		desc="玛乔丽武器1",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Battle/role_120004_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12100401] =
+{
+ 		id=12100401,
+ 		name=100014,
+ 		desc="玛乔丽超武1",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Battle/role_120004_Low_Super_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12000501] =
+{
+ 		id=12000501,
+ 		name=100014,
+ 		desc="莫妮卡武器1",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Battle/role_120005_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12100501] =
+{
+ 		id=12100501,
+ 		name=100014,
+ 		desc="莫妮卡超武1",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Battle/role_120005_Low_Super_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12000601] =
+{
+ 		id=12000601,
+ 		name=100014,
+ 		desc="财团护卫武器1",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Battle/role_120006_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12100601] =
+{
+ 		id=12100601,
+ 		name=100014,
+ 		desc="财团护卫超武1",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Battle/role_121006_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12001301] =
+{
+ 		id=12001301,
+ 		name=100014,
+ 		desc="河合芽衣武器1-书",
+ 		icon="UI/SpritePics/head/Hero/120013",
+ 		targeticon="UI/SpritePics/head/Hero/120013_01",
+ 		battleIcon="UI/SpritePics/battle/120013",
+ 		imageHalf="UI/Texture/Hero/120013",
+ 		battleHalf="UI/Texture/Hero/120013",
+ 		imageWhole="UI/Texture/Hero/120013",
+ 		model="Role1/Prefab/Weapon_Battle/role_120013_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12001302] =
+{
+ 		id=12001302,
+ 		name=100014,
+ 		desc="河合芽衣武器1-枪",
+ 		icon="UI/SpritePics/head/Hero/120013",
+ 		targeticon="UI/SpritePics/head/Hero/120013_01",
+ 		battleIcon="UI/SpritePics/battle/120013",
+ 		imageHalf="UI/Texture/Hero/120013",
+ 		battleHalf="UI/Texture/Hero/120013",
+ 		imageWhole="UI/Texture/Hero/120013",
+ 		model="Role1/Prefab/Weapon_Battle/role_120013_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[13000101] =
+{
+ 		id=13000101,
+ 		name=100015,
+ 		desc="欧诺弥亚武器1",
+ 		icon="UI/SpritePics/head/Hero/130001",
+ 		targeticon="UI/SpritePics/head/Hero/130001_01",
+ 		battleIcon="UI/SpritePics/battle/130001",
+ 		imageHalf="UI/Texture/Hero/130001",
+ 		battleHalf="UI/Texture/Hero/130001",
+ 		imageWhole="UI/Texture/Hero/130001",
+ 		model="Role1/Prefab/Weapon_Battle/role_130001_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[13000102] =
+{
+ 		id=13000102,
+ 		name=100015,
+ 		desc="欧诺弥亚武器2",
+ 		icon="UI/SpritePics/head/Hero/130001",
+ 		targeticon="UI/SpritePics/head/Hero/130001_01",
+ 		battleIcon="UI/SpritePics/battle/130001",
+ 		imageHalf="UI/Texture/Hero/130001",
+ 		battleHalf="UI/Texture/Hero/130001",
+ 		imageWhole="UI/Texture/Hero/130001",
+ 		model="Role1/Prefab/Weapon_Battle/role_130001_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[13100101] =
+{
+ 		id=13100101,
+ 		name=100015,
+ 		desc="欧诺弥亚超武1",
+ 		icon="UI/SpritePics/head/Hero/130001",
+ 		targeticon="UI/SpritePics/head/Hero/130001_01",
+ 		battleIcon="UI/SpritePics/battle/130001",
+ 		imageHalf="UI/Texture/Hero/130001",
+ 		battleHalf="UI/Texture/Hero/130001",
+ 		imageWhole="UI/Texture/Hero/130001",
+ 		model="Role1/Prefab/Weapon_Battle/role_131001_Low_Super_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[13100102] =
+{
+ 		id=13100102,
+ 		name=100015,
+ 		desc="欧诺弥亚超武2",
+ 		icon="UI/SpritePics/head/Hero/130001",
+ 		targeticon="UI/SpritePics/head/Hero/130001_01",
+ 		battleIcon="UI/SpritePics/battle/130001",
+ 		imageHalf="UI/Texture/Hero/130001",
+ 		battleHalf="UI/Texture/Hero/130001",
+ 		imageWhole="UI/Texture/Hero/130001",
+ 		model="Role1/Prefab/Weapon_Battle/role_130001_Low_Super_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[13000201] =
+{
+ 		id=13000201,
+ 		name=100015,
+ 		desc="齐娜武器",
+ 		icon="UI/SpritePics/head/Hero/130002",
+ 		targeticon="UI/SpritePics/head/Hero/130002_01",
+ 		battleIcon="UI/SpritePics/battle/130002",
+ 		imageHalf="UI/Texture/Hero/130002",
+ 		battleHalf="UI/Texture/Hero/130002",
+ 		imageWhole="UI/Texture/Hero/130002",
+ 		model="Role1/Prefab/Weapon_Battle/role_130002_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[14000101] =
+{
+ 		id=14000101,
+ 		name=100016,
+ 		desc="鸫rnx-156武器1",
+ 		icon="UI/SpritePics/head/Hero/140001",
+ 		targeticon="UI/SpritePics/head/Hero/140001_01",
+ 		battleIcon="UI/SpritePics/battle/140001",
+ 		imageHalf="UI/Texture/Hero/140001",
+ 		battleHalf="UI/Texture/Hero/140001",
+ 		imageWhole="UI/Texture/Hero/140001",
+ 		model="Role1/Prefab/Weapon_Battle/role_140001_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[14000102] =
+{
+ 		id=14000102,
+ 		name=100016,
+ 		desc="鸫rnx-156武器2",
+ 		icon="UI/SpritePics/head/Hero/140001",
+ 		targeticon="UI/SpritePics/head/Hero/140001_01",
+ 		battleIcon="UI/SpritePics/battle/140001",
+ 		imageHalf="UI/Texture/Hero/140001",
+ 		battleHalf="UI/Texture/Hero/140001",
+ 		imageWhole="UI/Texture/Hero/140001",
+ 		model="Role1/Prefab/Weapon_Battle/role_140001_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[14100101] =
+{
+ 		id=14100101,
+ 		name=100016,
+ 		desc="鸫rnx-156超武1",
+ 		icon="UI/SpritePics/head/Hero/140001",
+ 		targeticon="UI/SpritePics/head/Hero/140001_01",
+ 		battleIcon="UI/SpritePics/battle/140001",
+ 		imageHalf="UI/Texture/Hero/140001",
+ 		battleHalf="UI/Texture/Hero/140001",
+ 		imageWhole="UI/Texture/Hero/140001",
+ 		model="Role1/Prefab/Weapon_Battle/role_140001_Low_Super_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[14100102] =
+{
+ 		id=14100102,
+ 		name=100016,
+ 		desc="鸫rnx-156超武2",
+ 		icon="UI/SpritePics/head/Hero/140001",
+ 		targeticon="UI/SpritePics/head/Hero/140001_01",
+ 		battleIcon="UI/SpritePics/battle/140001",
+ 		imageHalf="UI/Texture/Hero/140001",
+ 		battleHalf="UI/Texture/Hero/140001",
+ 		imageWhole="UI/Texture/Hero/140001",
+ 		model="Role1/Prefab/Weapon_Battle/role_140001_Low_Super_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[14000201] =
+{
+ 		id=14000201,
+ 		name=100016,
+ 		desc="奈美武器1",
+ 		icon="UI/SpritePics/head/Hero/140001",
+ 		targeticon="UI/SpritePics/head/Hero/140001_01",
+ 		battleIcon="UI/SpritePics/battle/140001",
+ 		imageHalf="UI/Texture/Hero/140001",
+ 		battleHalf="UI/Texture/Hero/140001",
+ 		imageWhole="UI/Texture/Hero/140001",
+ 		model="Role1/Prefab/Weapon_Battle/role_140002_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[14000202] =
+{
+ 		id=14000202,
+ 		name=100016,
+ 		desc="奈美小飞机",
+ 		icon="UI/SpritePics/head/Hero/141001",
+ 		targeticon="UI/SpritePics/head/Hero/141001_01",
+ 		battleIcon="UI/SpritePics/battle/141001",
+ 		imageHalf="UI/SpritePics/formation/140002",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/140002",
+ 		model="Role1/Prefab/Retinue/140002",
+ 	DevelopAwakePicture=""
+},
+[14100201] =
+{
+ 		id=14100201,
+ 		name=100016,
+ 		desc="奈美超武1",
+ 		icon="UI/SpritePics/head/Hero/140001",
+ 		targeticon="UI/SpritePics/head/Hero/140001_01",
+ 		battleIcon="UI/SpritePics/battle/140001",
+ 		imageHalf="UI/Texture/Hero/140001",
+ 		battleHalf="UI/Texture/Hero/140001",
+ 		imageWhole="UI/Texture/Hero/140001",
+ 		model="Role1/Prefab/Weapon_Battle/role_140002_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[14100202] =
+{
+ 		id=14100202,
+ 		name=100016,
+ 		desc="奈美小飞机（超武）",
+ 		icon="UI/SpritePics/head/Hero/141001",
+ 		targeticon="UI/SpritePics/head/Hero/141001_01",
+ 		battleIcon="UI/SpritePics/battle/141001",
+ 		imageHalf="UI/SpritePics/formation/140002",
+ 		battleHalf="UI/SpritePics/portrait/portrait_battle/140002",
+ 		model="Role1/Prefab/Retinue/140002",
+ 	DevelopAwakePicture=""
+},
+[11000401] =
+{
+ 		id=11000401,
+ 		desc="西格德利法狙击枪",
+ 		model="Role1/Prefab/Weapon_Battle/role_110004_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11000402] =
+{
+ 		id=11000402,
+ 		desc="西格德利法战术目镜",
+ 	DevelopAwakePicture=""
+},
+[11000901] =
+{
+ 		id=11000901,
+ 		desc="波尼兔子",
+ 		model="Role1/Prefab/Weapon_Battle/role_110009_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[11000902] =
+{
+ 		id=11000902,
+ 		desc="波妮法杖",
+ 		model="Role1/Prefab/Weapon_Battle/role_110009_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[11001001] =
+{
+ 		id=11001001,
+ 		desc="贝蕾妮斯法杖",
+ 		model="Role1/Prefab/Weapon_Battle/role_110010_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12000801] =
+{
+ 		id=12000801,
+ 		desc="莉丝贝斯加特林",
+ 		model="Role1/Prefab/Weapon_Battle/role_120008_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12000701] =
+{
+ 		id=12000701,
+ 		desc="泷绛刀",
+ 		model="Role1/Prefab/Weapon_Battle/role_120007_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12000702] =
+{
+ 		id=12000702,
+ 		desc="泷绛盾",
+ 		model="Role1/Prefab/Weapon_Battle/role_120007_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[12000901] =
+{
+ 		id=12000901,
+ 		desc="菘蓝手枪",
+ 		model="Role1/Prefab/Weapon_Battle/role_120009_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[12000902] =
+{
+ 		id=12000902,
+ 		desc="菘蓝无人机1",
+ 		model="Role1/Prefab/Weapon_Battle/role_120009_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[12000903] =
+{
+ 		id=12000903,
+ 		desc="菘蓝无人机2",
+ 		model="Role1/Prefab/Weapon_Battle/role_120009_Low_Weapon03",
+ 	DevelopAwakePicture=""
+},
+[12000904] =
+{
+ 		id=12000904,
+ 		desc="菘蓝无人机3",
+ 		model="Role1/Prefab/Weapon_Battle/role_120009_Low_Weapon04",
+ 	DevelopAwakePicture=""
+},
+[13000801] =
+{
+ 		id=13000801,
+ 		desc="达米拉侍卫武器（空的武器、name用的欧诺米亚的）",
+ 		model="Role1/Prefab/Weapon_Battle/role_130002_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[13000401] =
+{
+ 		id=13000401,
+ 		desc="海泽尔大剑",
+ 		model="Role1/Prefab/Weapon_Battle/role_130004_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[13000501] =
+{
+ 		id=13000501,
+ 		desc="菲碧法球1",
+ 		model="Role1/Prefab/Weapon_Battle/role_130005_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[13000502] =
+{
+ 		id=13000502,
+ 		desc="菲碧法球2",
+ 		model="Role1/Prefab/Weapon_Battle/role_130005_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[13000503] =
+{
+ 		id=13000503,
+ 		desc="菲碧法球3",
+ 		model="Role1/Prefab/Weapon_Battle/role_130005_Low_Weapon03",
+ 	DevelopAwakePicture=""
+},
+[13000504] =
+{
+ 		id=13000504,
+ 		desc="菲碧法球4",
+ 		model="Role1/Prefab/Weapon_Battle/role_130005_Low_Weapon04",
+ 	DevelopAwakePicture=""
+},
+[13000601] =
+{
+ 		id=13000601,
+ 		desc="厄瑞尼法器",
+ 		model="Role1/Prefab/Weapon_Battle/role_130006_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[13000701] =
+{
+ 		id=13000701,
+ 		desc="艾拉拉法杖",
+ 		model="Role1/Prefab/Weapon_Battle/role_130007_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[13000901] =
+{
+ 		id=13000901,
+ 		desc="埃吉娅法杖",
+ 		model="Role1/Prefab/Weapon_Battle/role_130009_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[14000501] =
+{
+ 		id=14000501,
+ 		desc="斯露德大锤",
+ 		model="Role1/Prefab/Weapon_Battle/role_140005_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[14000601] =
+{
+ 		id=14000601,
+ 		desc="二元手枪",
+ 		model="Role1/Prefab/Weapon_Battle/role_140006_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[14000701] =
+{
+ 		id=14000701,
+ 		desc="卡琳盾",
+ 		model="Role1/Prefab/Weapon_Battle/role_140007_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[15000201] =
+{
+ 		id=15000201,
+ 		desc="依丝特法杖",
+ 		model="Role1/Prefab/Weapon_Battle/role_150002_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[15000301] =
+{
+ 		id=15000301,
+ 		desc="狄波拉武器1",
+ 		model="Role1/Prefab/Weapon_Battle/role_150003_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[15000302] =
+{
+ 		id=15000302,
+ 		desc="狄波拉武器2",
+ 		model="Role1/Prefab/Weapon_Battle/role_150003_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[15000401] =
+{
+ 		id=15000401,
+ 		desc="亚斯塔罗特镰刀",
+ 		model="Role1/Prefab/Weapon_Battle/role_150004_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[15000501] =
+{
+ 		id=15000501,
+ 		desc="康斯维拉法杖",
+ 		model="Role1/Prefab/Weapon_Battle/role_150005_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[15000601] =
+{
+ 		id=15000601,
+ 		desc="川断棒球棍",
+ 		model="Role1/Prefab/Weapon_Battle/role_150006_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[14000801] =
+{
+ 		id=14000801,
+ 		desc="半觉醒AI机枪(暂时是空的武器)",
+ 		model="Role1/Prefab/Weapon_Battle/role_130002_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[14000802] =
+{
+ 		id=14000802,
+ 		desc="半觉醒AI炮(暂时是空的武器)",
+ 		model="Role1/Prefab/Weapon_Battle/role_130002_Low_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[15000701] =
+{
+ 		id=15000701,
+ 		desc="丽芙武器",
+ 		model="Role1/Prefab/Weapon_Battle/role_150007_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[15000801] =
+{
+ 		id=15000801,
+ 		desc="贝蒂武器",
+ 		model="Role1/Prefab/Weapon_Battle/role_150008_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[15000901] =
+{
+ 		id=15000901,
+ 		desc="伊迪丝武器",
+ 		model="Role1/Prefab/Weapon_Battle/role_150009_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[110001001] =
+{
+ 		id=110001001,
+ 		name=100012,
+ 		desc="阿什琳高模武器",
+ 		icon="UI/SpritePics/head/Hero/110001",
+ 		targeticon="UI/SpritePics/head/Hero/110001_01",
+ 		battleIcon="UI/SpritePics/battle/110001",
+ 		imageHalf="UI/Texture/Hero/110001",
+ 		battleHalf="UI/Texture/Hero/110001",
+ 		imageWhole="UI/Texture/Hero/110001",
+ 		model="Role1/Prefab/Weapon_Show/role_110001_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[110002001] =
+{
+ 		id=110002001,
+ 		name=100013,
+ 		desc="塞维尔高模武器1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Show/role_110002_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[110002002] =
+{
+ 		id=110002002,
+ 		name=100013,
+ 		desc="塞维尔高模武器2",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Show/role_110002_High_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[110003001] =
+{
+ 		id=110003001,
+ 		name=100013,
+ 		desc="安息香高模武器1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Show/role_110003_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[110003002] =
+{
+ 		id=110003002,
+ 		name=100013,
+ 		desc="安息香高模武器2",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Show/role_110003_High_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[110003003] =
+{
+ 		id=110003003,
+ 		name=100013,
+ 		desc="安息香胜利笔记本",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Show/role_110003_High_Weapon03",
+ 	DevelopAwakePicture=""
+},
+[110005001] =
+{
+ 		id=110005001,
+ 		name=100013,
+ 		desc="海风藤高模武器1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Show/role_110005_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[110005002] =
+{
+ 		id=110005002,
+ 		name=100013,
+ 		desc="海风藤胜利游戏机",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Show/role_110005_High_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[110006001] =
+{
+ 		id=110006001,
+ 		name=100013,
+ 		desc="赫萝克高模武器1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Show/role_110006_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[110007001] =
+{
+ 		id=110007001,
+ 		name=100013,
+ 		desc="培根高模武器1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Show/role_110007_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[110008001] =
+{
+ 		id=110008001,
+ 		name=100013,
+ 		desc="预备队员高模武器1",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Show/role_110008_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[110008002] =
+{
+ 		id=110008002,
+ 		name=100013,
+ 		desc="预备队员高模武器2",
+ 		icon="UI/SpritePics/head/Hero/110002",
+ 		targeticon="UI/SpritePics/head/Hero/110002_01",
+ 		battleIcon="UI/SpritePics/battle/110002",
+ 		imageHalf="UI/Texture/Hero/110002",
+ 		battleHalf="UI/Texture/Hero/110002",
+ 		imageWhole="UI/Texture/Hero/110002",
+ 		model="Role1/Prefab/Weapon_Show/role_110008_High_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[120001001] =
+{
+ 		id=120001001,
+ 		name=100014,
+ 		desc="米娅高模武器",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Show/role_120001_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[120002001] =
+{
+ 		id=120002001,
+ 		name=100014,
+ 		desc="玛蒂尔达高模武器1",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Show/role_120002_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[122002001] =
+{
+ 		id=122002001,
+ 		name=100014,
+ 		desc="玛蒂尔达高模武器1-皮肤",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Battle/role_122002_Low_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[120003001] =
+{
+ 		id=120003001,
+ 		name=100014,
+ 		desc="阿米莉亚胜利鲨鱼",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Show/role_120003_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[120004001] =
+{
+ 		id=120004001,
+ 		name=100014,
+ 		desc="玛乔丽高模武器1",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Show/role_120004_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[120005001] =
+{
+ 		id=120005001,
+ 		name=100014,
+ 		desc="莫妮卡高模武器1",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Show/role_120005_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[120006001] =
+{
+ 		id=120006001,
+ 		name=100014,
+ 		desc="财团护卫高模武器1",
+ 		icon="UI/SpritePics/head/Hero/120001",
+ 		targeticon="UI/SpritePics/head/Hero/120001_01",
+ 		battleIcon="UI/SpritePics/battle/120001",
+ 		imageHalf="UI/Texture/Hero/120001",
+ 		battleHalf="UI/Texture/Hero/120001",
+ 		imageWhole="UI/Texture/Hero/120001",
+ 		model="Role1/Prefab/Weapon_Show/role_120006_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[120008001] =
+{
+ 		id=120008001,
+ 		name=100014,
+ 		desc="莉丝贝斯加特林",
+ 		icon="UI/SpritePics/head/Hero/120008",
+ 		targeticon="UI/SpritePics/head/Hero/120008_01",
+ 		battleIcon="UI/SpritePics/battle/120008",
+ 		imageHalf="UI/Texture/Hero/120008",
+ 		battleHalf="UI/Texture/Hero/120008",
+ 		imageWhole="UI/Texture/Hero/120008",
+ 		model="Role1/Prefab/Weapon_Show/role_120008_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[130001001] =
+{
+ 		id=130001001,
+ 		name=100015,
+ 		desc="欧诺弥亚高模武器1",
+ 		icon="UI/SpritePics/head/Hero/130001",
+ 		targeticon="UI/SpritePics/head/Hero/130001_01",
+ 		battleIcon="UI/SpritePics/battle/130001",
+ 		imageHalf="UI/Texture/Hero/130001",
+ 		battleHalf="UI/Texture/Hero/130001",
+ 		imageWhole="UI/Texture/Hero/130001",
+ 		model="Role1/Prefab/Weapon_Show/role_130001_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[130001002] =
+{
+ 		id=130001002,
+ 		name=100015,
+ 		desc="欧诺弥亚高模武器2",
+ 		icon="UI/SpritePics/head/Hero/130001",
+ 		targeticon="UI/SpritePics/head/Hero/130001_01",
+ 		battleIcon="UI/SpritePics/battle/130001",
+ 		imageHalf="UI/Texture/Hero/130001",
+ 		battleHalf="UI/Texture/Hero/130001",
+ 		imageWhole="UI/Texture/Hero/130001",
+ 		model="Role1/Prefab/Weapon_Show/role_130001_High_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[130002001] =
+{
+ 		id=130002001,
+ 		name=100015,
+ 		desc="达米拉侍卫武器（空的武器、name用的欧诺米亚的）",
+ 		icon="UI/SpritePics/head/Hero/130002",
+ 		targeticon="UI/SpritePics/head/Hero/130002_01",
+ 		battleIcon="UI/SpritePics/battle/130002",
+ 		imageHalf="UI/Texture/Hero/130002",
+ 		battleHalf="UI/Texture/Hero/130002",
+ 		imageWhole="UI/Texture/Hero/130002",
+ 		model="Role1/Prefab/Weapon_Show/role_130002_High_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[140001001] =
+{
+ 		id=140001001,
+ 		name=100016,
+ 		desc="鸫rnx-156高模武器1",
+ 		icon="UI/SpritePics/head/Hero/140001",
+ 		targeticon="UI/SpritePics/head/Hero/140001_01",
+ 		battleIcon="UI/SpritePics/battle/140001",
+ 		imageHalf="UI/Texture/Hero/140001",
+ 		battleHalf="UI/Texture/Hero/140001",
+ 		imageWhole="UI/Texture/Hero/140001",
+ 		model="Role1/Prefab/Weapon_Show/role_140001_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[140001002] =
+{
+ 		id=140001002,
+ 		name=100016,
+ 		desc="鸫rnx-156高模武器2",
+ 		icon="UI/SpritePics/head/Hero/140001",
+ 		targeticon="UI/SpritePics/head/Hero/140001_01",
+ 		battleIcon="UI/SpritePics/battle/140001",
+ 		imageHalf="UI/Texture/Hero/140001",
+ 		battleHalf="UI/Texture/Hero/140001",
+ 		imageWhole="UI/Texture/Hero/140001",
+ 		model="Role1/Prefab/Weapon_Show/role_140001_High_Weapon02",
+ 	DevelopAwakePicture=""
+},
+[140002001] =
+{
+ 		id=140002001,
+ 		name=100016,
+ 		desc="奈美高模武器1",
+ 		icon="UI/SpritePics/head/Hero/140001",
+ 		targeticon="UI/SpritePics/head/Hero/140001_01",
+ 		battleIcon="UI/SpritePics/battle/140001",
+ 		imageHalf="UI/Texture/Hero/140001",
+ 		battleHalf="UI/Texture/Hero/140001",
+ 		imageWhole="UI/Texture/Hero/140001",
+ 		model="Role1/Prefab/Weapon_Show/role_140002_High_Weapon01",
+ 	DevelopAwakePicture=""
+},
+[500001] =
+{
+ 		id=500001,
+ 		name=100011,
+ 		desc="陷阱开关苔原版",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_500001",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_500001",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_500001",
+ 	DevelopAwakePicture=""
+},
+[500002] =
+{
+ 		id=500002,
+ 		name=100011,
+ 		desc="陷阱苔原版",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_500002",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_500002",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_500002",
+ 	DevelopAwakePicture=""
+},
+[500003] =
+{
+ 		id=500003,
+ 		name=100011,
+ 		desc="基地堵路箱子",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_500003",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_500003",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_500003",
+ 	DevelopAwakePicture=""
+},
+[500004] =
+{
+ 		id=500004,
+ 		name=100011,
+ 		desc="回费储液罐",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_500004",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_500004",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_500004",
+ 	DevelopAwakePicture=""
+},
+[500005] =
+{
+ 		id=500005,
+ 		name=100011,
+ 		desc="防御电光塔",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_500005",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_500005",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_500005",
+ 	DevelopAwakePicture=""
+},
+[500006] =
+{
+ 		id=500006,
+ 		name=100011,
+ 		desc="反塔奖励箱子",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_500006",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_500006",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_500006",
+ 	DevelopAwakePicture=""
+},
+[500007] =
+{
+ 		id=500007,
+ 		name=100011,
+ 		desc="毒气罐",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_500007",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_500007",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_500007",
+ 	DevelopAwakePicture=""
+},
+[500008] =
+{
+ 		id=500008,
+ 		name=100011,
+ 		desc="漂浮台开关",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_500008",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_500008",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_500008",
+ 	DevelopAwakePicture=""
+},
+[500009] =
+{
+ 		id=500009,
+ 		name=100011,
+ 		desc="漂浮台",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_500009",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_500009",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_500009",
+ 	DevelopAwakePicture=""
+},
+[500010] =
+{
+ 		id=500010,
+ 		name=100011,
+ 		desc="阻挡台开关",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_500010",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_500010",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_500010",
+ 	DevelopAwakePicture=""
+},
+[500011] =
+{
+ 		id=500011,
+ 		name=100011,
+ 		desc="阻挡台",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_500011",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_500011",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_500011",
+ 	DevelopAwakePicture=""
+},
+[500012] =
+{
+ 		id=500012,
+ 		name=100011,
+ 		desc="陷阱开关单次",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_500012",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_500012",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_500012",
+ 	DevelopAwakePicture=""
+},
+[500013] =
+{
+ 		id=500013,
+ 		name=100011,
+ 		desc="陷阱单次",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_500002",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_500002",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_500013",
+ 	DevelopAwakePicture=""
+},
+[540001] =
+{
+ 		id=540001,
+ 		name=100011,
+ 		desc="指挥官屏障",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_540001",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_540001",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_540001",
+ 	DevelopAwakePicture=""
+},
+[550002] =
+{
+ 		id=550002,
+ 		name=100011,
+ 		desc="陷阱摇杆",
+ 		icon="UI/SpritePics/head/npc/210004",
+ 		targeticon="UI/SpritePics/head/npc/210004_01",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_550102",
+ 	DevelopAwakePicture=""
+},
+[550003] =
+{
+ 		id=550003,
+ 		name=100011,
+ 		desc="陷阱地刺",
+ 		icon="UI/SpritePics/head/npc/210004",
+ 		targeticon="UI/SpritePics/head/npc/210004_01",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_550103",
+ 	DevelopAwakePicture=""
+},
+[550004] =
+{
+ 		id=550004,
+ 		name=100011,
+ 		desc="充能塔",
+ 		icon="UI/SpritePics/head/npc/210004",
+ 		targeticon="UI/SpritePics/head/npc/210004_01",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_500004",
+ 	DevelopAwakePicture=""
+},
+[550005] =
+{
+ 		id=550005,
+ 		name=100011,
+ 		desc="毒液花",
+ 		model="Role1/Prefab/Npc/npc_500007",
+ 	DevelopAwakePicture=""
+},
+[550006] =
+{
+ 		id=550006,
+ 		name=100011,
+ 		desc="毒液花尸体",
+ 		model="Role1/Prefab/Hero_Battle/role_1",
+ 	DevelopAwakePicture=""
+},
+[550101] =
+{
+ 		id=550101,
+ 		name=100011,
+ 		desc="反塔基地",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_550101",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_550101",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_550101",
+ 	DevelopAwakePicture=""
+},
+[550102] =
+{
+ 		id=550102,
+ 		name=100011,
+ 		desc="陷阱摇杆",
+ 		icon="UI/SpritePics/head/npc/210004",
+ 		targeticon="UI/SpritePics/head/npc/210004_01",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_550102",
+ 	DevelopAwakePicture=""
+},
+[550103] =
+{
+ 		id=550103,
+ 		name=100011,
+ 		desc="陷阱地刺",
+ 		icon="UI/SpritePics/head/npc/210004",
+ 		targeticon="UI/SpritePics/head/npc/210004_01",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_550103",
+ 	DevelopAwakePicture=""
+},
+[550104] =
+{
+ 		id=550104,
+ 		name=100011,
+ 		desc="真伤塔",
+ 		icon="UI/SpritePics/head/npc/210004",
+ 		targeticon="UI/SpritePics/head/npc/210004_01",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_550104",
+ 	DevelopAwakePicture=""
+},
+[550105] =
+{
+ 		id=550105,
+ 		name=100011,
+ 		desc="时空收束装置（平行宇宙）",
+ 		icon="UI/SpritePics/head/npc/210004",
+ 		targeticon="UI/SpritePics/head/npc/210004_01",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_550105",
+ 	DevelopAwakePicture=""
+},
+[550106] =
+{
+ 		id=550106,
+ 		name=100011,
+ 		desc="毒液花",
+ 		model="Role1/Prefab/Npc/npc_550106",
+ 	DevelopAwakePicture=""
+},
+[550107] =
+{
+ 		id=550107,
+ 		name=100011,
+ 		desc="毒液花尸体",
+ 		model="Role1/Prefab/Npc/npc_550107",
+ 	DevelopAwakePicture=""
+},
+[550108] =
+{
+ 		id=550108,
+ 		name=100011,
+ 		desc="爆炸桶",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_550108",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_550108",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_550108",
+ 	DevelopAwakePicture=""
+},
+[550109] =
+{
+ 		id=550109,
+ 		name=100011,
+ 		desc="资源箱",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_550109",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_550109",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_550109",
+ 	DevelopAwakePicture=""
+},
+[550110] =
+{
+ 		id=550110,
+ 		name=100011,
+ 		desc="高级资源箱",
+ 		icon="UI/SpritePics/head/npc/ui_icon_npc_550110",
+ 		targeticon="UI/SpritePics/head/npc/ui_icon_npc_550110",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_550110",
+ 	DevelopAwakePicture=""
+},
+[550111] =
+{
+ 		id=550111,
+ 		name=100011,
+ 		desc="挡路石头",
+ 		icon="UI/SpritePics/head/npc/210004",
+ 		targeticon="UI/SpritePics/head/npc/210004_01",
+ 		battleIcon="UI/SpritePics/head/Monster/210004",
+ 		imageHalf="UI/Texture/Monster/210004",
+ 		battleHalf="UI/Texture/Monster/210004",
+ 		imageWhole="UI/Texture/Monster/210004",
+ 		model="Role1/Prefab/Npc/npc_550111",
+ 	DevelopAwakePicture=""
+},
+[1100072001] =
+{
+ 		id=1100072001,
+ 		name=100011,
+ 		desc="培根技能-减速特效",
+ 		model="Effects1/Skill/Hero/110007/effect_f_110007_skill01_hit",
+ 	DevelopAwakePicture=""
+},
+[550112] =
+{
+ 		id=550112,
+ 		name=100011,
+ 		desc="毒液地板",
+ 		model="Role1/Prefab/Npc/npc_550107",
+ 	DevelopAwakePicture=""
+},
+[550113] =
+{
+ 		id=550113,
+ 		name=100011,
+ 		desc="反塔用门",
+ 		model="Role1/Prefab/Npc/npc_550113",
+ 	DevelopAwakePicture=""
+},
+[550114] =
+{
+ 		id=550114,
+ 		name=100011,
+ 		desc="低级兽穴",
+ 		model="Role1/Prefab/Npc/npc_550114",
+ 	DevelopAwakePicture=""
+},
+[550115] =
+{
+ 		id=550115,
+ 		name=100011,
+ 		desc="中级兽穴",
+ 		model="Role1/Prefab/Npc/npc_550115",
+ 	DevelopAwakePicture=""
+},
+[550116] =
+{
+ 		id=550116,
+ 		name=100011,
+ 		desc="高级兽穴",
+ 		model="Role1/Prefab/Npc/npc_550116",
+ 	DevelopAwakePicture=""
+},
+[550117] =
+{
+ 		id=550117,
+ 		name=100011,
+ 		desc="无模型NPC",
+ 		model="Role1/Prefab/Npc/npc_550117",
+ 	DevelopAwakePicture=""
+},
+[550118] =
+{
+ 		id=550118,
+ 		name=100011,
+ 		desc="无",
+ 	DevelopAwakePicture=""
+},
+[550119] =
+{
+ 		id=550119,
+ 		name=100011,
+ 		desc="无",
+ 	DevelopAwakePicture=""
+},
+[550120] =
+{
+ 		id=550120,
+ 		name=100011,
+ 		desc="无",
+ 	DevelopAwakePicture=""
+},
+[550121] =
+{
+ 		id=550121,
+ 		name=100011,
+ 		desc="掩体触发装置（激活掩体）",
+ 		model="Role1/Prefab/Npc/npc_550121",
+ 	DevelopAwakePicture=""
+},
+[550122] =
+{
+ 		id=550122,
+ 		name=100011,
+ 		desc="白色触发装置（烟雾）触发特效挂载模型",
+ 		model="Role1/Prefab/Npc/npc_550122",
+ 	DevelopAwakePicture=""
+},
+[550123] =
+{
+ 		id=550123,
+ 		name=100011,
+ 		desc="黄色触发装置（攻击BUFF）触发特效挂载模型",
+ 		model="Role1/Prefab/Npc/npc_550123",
+ 	DevelopAwakePicture=""
+},
+[550124] =
+{
+ 		id=550124,
+ 		name=100011,
+ 		desc="深蓝色触发装置（抗性BUFF）触发特效挂载模型",
+ 		model="Role1/Prefab/Npc/npc_550124",
+ 	DevelopAwakePicture=""
+},
+[550125] =
+{
+ 		id=550125,
+ 		name=100011,
+ 		desc="绿色触发装置（治疗BUFF）触发特效挂载模型",
+ 		model="Role1/Prefab/Npc/npc_550125",
+ 	DevelopAwakePicture=""
+},
+[550126] =
+{
+ 		id=550126,
+ 		name=100011,
+ 		desc="红色触发装置（激活掩体）城市（山巅城、水城）",
+ 		model="Role1/Prefab/Npc/npc_550130",
+ 	DevelopAwakePicture=""
+},
+[550127] =
+{
+ 		id=550127,
+ 		name=100011,
+ 		desc="淡蓝色触发装置（激活抗性）城市（山巅城、水城）",
+ 		model="Role1/Prefab/Npc/npc_550127",
+ 	DevelopAwakePicture=""
+},
+[550128] =
+{
+ 		id=550128,
+ 		name=100011,
+ 		desc="黄色触发装置（激活伤害）城市（山巅城、水城）",
+ 		model="Role1/Prefab/Npc/npc_550126",
+ 	DevelopAwakePicture=""
+},
+[550129] =
+{
+ 		id=550129,
+ 		name=100011,
+ 		desc="绿色触发装置（激活治疗）城市（山巅城、水城）",
+ 		model="Role1/Prefab/Npc/npc_550128",
+ 	DevelopAwakePicture=""
+},
+[550130] =
+{
+ 		id=550130,
+ 		name=100011,
+ 		desc="白色触发装置（激活烟雾）城市（山巅城、水城）",
+ 		model="Role1/Prefab/Npc/npc_550129",
+ 	DevelopAwakePicture=""
+},
+[550131] =
+{
+ 		id=550131,
+ 		name=100011,
+ 		desc="紫色触发装置（充能塔、攻击塔激活装置）城市（山巅城、水城）",
+ 		model="Role1/Prefab/Npc/npc_550120",
+ 	DevelopAwakePicture=""
+},
+[550132] =
+{
+ 		id=550132,
+ 		name=100011,
+ 		desc="红色触发装置（激活掩体）室内（星舰、废弃基地）",
+ 		model="Role1/Prefab/Npc/npc_550135",
+ 	DevelopAwakePicture=""
+},
+[550133] =
+{
+ 		id=550133,
+ 		name=100011,
+ 		desc="淡蓝色触发装置（激活抗性）室内（星舰、废弃基地）",
+ 		model="Role1/Prefab/Npc/npc_550132",
+ 	DevelopAwakePicture=""
+},
+[550134] =
+{
+ 		id=550134,
+ 		name=100011,
+ 		desc="黄色触发装置（激活伤害）室内（星舰、废弃基地）",
+ 		model="Role1/Prefab/Npc/npc_550131",
+ 	DevelopAwakePicture=""
+},
+[550135] =
+{
+ 		id=550135,
+ 		name=100011,
+ 		desc="绿色触发装置（激活治疗）室内（星舰、废弃基地）",
+ 		model="Role1/Prefab/Npc/npc_550133",
+ 	DevelopAwakePicture=""
+},
+[550136] =
+{
+ 		id=550136,
+ 		name=100011,
+ 		desc="白色触发装置（激活烟雾）（星舰、废弃基地）",
+ 		model="Role1/Prefab/Npc/npc_550134",
+ 	DevelopAwakePicture=""
+},
+[550137] =
+{
+ 		id=550137,
+ 		name=100011,
+ 		desc="红色触发装置（激活掩体）野外（苔原、森林）",
+ 		model="Role1/Prefab/Npc/npc_550140",
+ 	DevelopAwakePicture=""
+},
+[550138] =
+{
+ 		id=550138,
+ 		name=100011,
+ 		desc="淡蓝色触发装置（激活抗性）野外（苔原、森林）",
+ 		model="Role1/Prefab/Npc/npc_550137",
+ 	DevelopAwakePicture=""
+},
+[550139] =
+{
+ 		id=550139,
+ 		name=100011,
+ 		desc="黄色触发装置（激活伤害）野外（苔原、森林）",
+ 		model="Role1/Prefab/Npc/npc_550136",
+ 	DevelopAwakePicture=""
+},
+[550140] =
+{
+ 		id=550140,
+ 		name=100011,
+ 		desc="绿色触发装置（激活治疗）野外（苔原、森林）",
+ 		model="Role1/Prefab/Npc/npc_550138",
+ 	DevelopAwakePicture=""
+},
+[550141] =
+{
+ 		id=550141,
+ 		name=100011,
+ 		desc="白色触发装置（激活烟雾）野外（苔原、森林）",
+ 		model="Role1/Prefab/Npc/npc_550139",
+ 	DevelopAwakePicture=""
+},
+[1000001] =
+{
+ 		id=1000001,
+ 		name=100011,
+ 		desc="风速线黄（地面）",
+ 		model="Effects1/Battle/WindLine",
+ 	DevelopAwakePicture=""
+},
+[1000002] =
+{
+ 		id=1000002,
+ 		name=100011,
+ 		desc="风速线红（空中）",
+ 		model="Effects1/Battle/WindLine02",
+ 	DevelopAwakePicture=""
+},
+[1000003] =
+{
+ 		id=1000003,
+ 		name=100011,
+ 		desc="反塔宝箱传送",
+ 		model="Effects1/Scene/effect_scene_treasure",
+ 	DevelopAwakePicture=""
+},
+[1000004] =
+{
+ 		id=1000004,
+ 		name=100011,
+ 		desc="反塔基地接收",
+ 		model="Effects1/Scene/effect_scene_treasure01",
+ 	DevelopAwakePicture=""
+},
+[1000101] =
+{
+ 		id=1000101,
+ 		desc="1段升2段时的特效",
+ 		model="Effects1/Skill/Monster/270022/effect_f_monster_270022_skill",
+ 	DevelopAwakePicture=""
+},
+[1000102] =
+{
+ 		id=1000102,
+ 		desc="2段升3段时的特效",
+ 		model="Effects1/Skill/Monster/270022/effect_f_monster_270022_skill",
+ 	DevelopAwakePicture=""
+},
+[50100] =
+{
+ 		id=50100,
+ 		desc="战员A",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/50100",
+ 		drawing="UI/SpritePics/portrait/portrait_body/50100",
+ 	DevelopAwakePicture=""
+},
+[50101] =
+{
+ 		id=50101,
+ 		desc="战员B",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/50101",
+ 		drawing="UI/SpritePics/portrait/portrait_body/50101",
+ 	DevelopAwakePicture=""
+},
+[50102] =
+{
+ 		id=50102,
+ 		desc="艾达",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/50102",
+ 		drawing="UI/SpritePics/portrait/portrait_body/50102",
+ 	DevelopAwakePicture=""
+},
+[50103] =
+{
+ 		id=50103,
+ 		desc="达米拉人A",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/50103",
+ 		drawing="UI/SpritePics/portrait/portrait_body/50103",
+ 	DevelopAwakePicture=""
+},
+[50104] =
+{
+ 		id=50104,
+ 		desc="达米拉人B",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/50104",
+ 		drawing="UI/SpritePics/portrait/portrait_body/50104",
+ 	DevelopAwakePicture=""
+},
+[50105] =
+{
+ 		id=50105,
+ 		desc="葛雷琴",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/50105",
+ 		drawing="UI/SpritePics/portrait/portrait_body/50105",
+ 	DevelopAwakePicture=""
+},
+[50106] =
+{
+ 		id=50106,
+ 		desc="神秘人",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/50106",
+ 		drawing="UI/SpritePics/portrait/portrait_body/50106",
+ 	DevelopAwakePicture=""
+},
+[50107] =
+{
+ 		id=50107,
+ 		desc="艾达",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/50107",
+ 		drawing="UI/SpritePics/portrait/portrait_body/50107",
+ 	DevelopAwakePicture=""
+},
+[50108] =
+{
+ 		id=50108,
+ 		desc="群众",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/50108",
+ 		drawing="UI/SpritePics/portrait/portrait_body/50108",
+ 	DevelopAwakePicture=""
+},
+[50109] =
+{
+ 		id=50109,
+ 		desc="路人A",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/50109",
+ 		drawing="UI/SpritePics/portrait/portrait_body/50109",
+ 	DevelopAwakePicture=""
+},
+[50110] =
+{
+ 		id=50110,
+ 		desc="路人B",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/50110",
+ 		drawing="UI/SpritePics/portrait/portrait_body/50110",
+ 	DevelopAwakePicture=""
+},
+[50111] =
+{
+ 		id=50111,
+ 		desc="东门骅",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/50111",
+ 		drawing="UI/SpritePics/portrait/portrait_body/50111",
+ 	DevelopAwakePicture=""
+},
+[50112] =
+{
+ 		id=50112,
+ 		desc="雇佣兵头子",
+ 		imageWhole="UI/SpritePics/portrait/portrait_body/50112",
+ 		drawing="UI/SpritePics/portrait/portrait_body/50112",
+ 	DevelopAwakePicture=""
+},
+[51100] =
+{
+ 		id=51100,
+ 		name=8051100,
+ 		desc="阿巴阿巴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51100",
+ 	DevelopAwakePicture=""
+},
+[51101] =
+{
+ 		id=51101,
+ 		name=8051100,
+ 		desc="阿巴阿巴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51101",
+ 	DevelopAwakePicture=""
+},
+[51102] =
+{
+ 		id=51102,
+ 		name=8051100,
+ 		desc="阿巴阿巴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51102",
+ 	DevelopAwakePicture=""
+},
+[51103] =
+{
+ 		id=51103,
+ 		name=8051100,
+ 		desc="阿巴阿巴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51103",
+ 	DevelopAwakePicture=""
+},
+[51104] =
+{
+ 		id=51104,
+ 		name=8051100,
+ 		desc="阿巴阿巴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51104",
+ 	DevelopAwakePicture=""
+},
+[51105] =
+{
+ 		id=51105,
+ 		name=8051100,
+ 		desc="阿巴阿巴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51105",
+ 	DevelopAwakePicture=""
+},
+[51106] =
+{
+ 		id=51106,
+ 		name=8051100,
+ 		desc="阿巴阿巴",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51106",
+ 	DevelopAwakePicture=""
+},
+[51107] =
+{
+ 		id=51107,
+ 		name=36000053,
+ 		desc="双尾狐狼",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51107",
+ 	DevelopAwakePicture=""
+},
+[51108] =
+{
+ 		id=51108,
+ 		name=8110002,
+ 		desc="丽贝卡生气",
+ 		icon="UI/SpritePics/head/Monster/110002_angry2",
+ 	DevelopAwakePicture=""
+},
+[51109] =
+{
+ 		id=51109,
+ 		name=8110002,
+ 		desc="丽贝卡哭",
+ 		icon="UI/SpritePics/head/Monster/110002_cry2",
+ 	DevelopAwakePicture=""
+},
+[51110] =
+{
+ 		id=51110,
+ 		name=8110002,
+ 		desc="丽贝卡得意",
+ 		icon="UI/SpritePics/head/Monster/110002_expectant2",
+ 	DevelopAwakePicture=""
+},
+[51111] =
+{
+ 		id=51111,
+ 		name=8110003,
+ 		desc="安息香叹气",
+ 		icon="UI/SpritePics/head/Monster/110003_worry1",
+ 	DevelopAwakePicture=""
+},
+[51112] =
+{
+ 		id=51112,
+ 		name=8110003,
+ 		desc="安息香无语",
+ 		icon="UI/SpritePics/head/Monster/110003_worry2",
+ 	DevelopAwakePicture=""
+},
+[51113] =
+{
+ 		id=51113,
+ 		name=8110005,
+ 		desc="海风藤得意",
+ 		icon="UI/SpritePics/head/Monster/110005_confident2",
+ 	DevelopAwakePicture=""
+},
+[51114] =
+{
+ 		id=51114,
+ 		name=8110005,
+ 		desc="海风藤开心",
+ 		icon="UI/SpritePics/head/Monster/110005_laugh2",
+ 	DevelopAwakePicture=""
+},
+[51115] =
+{
+ 		id=51115,
+ 		name=8110005,
+ 		desc="海风藤半鄙视",
+ 		icon="UI/SpritePics/head/Monster/110005_smile2",
+ 	DevelopAwakePicture=""
+},
+[51116] =
+{
+ 		id=51116,
+ 		name=8110006,
+ 		desc="赫萝克正常",
+ 		icon="UI/SpritePics/head/Monster/110006_serious1",
+ 	DevelopAwakePicture=""
+},
+[51117] =
+{
+ 		id=51117,
+ 		name=8110006,
+ 		desc="赫萝克无语",
+ 		icon="UI/SpritePics/head/Monster/110006_serious2",
+ 	DevelopAwakePicture=""
+},
+[51118] =
+{
+ 		id=51118,
+ 		name=8120002,
+ 		desc="玛蒂尔达敲钟",
+ 		icon="UI/SpritePics/head/Monster/120002_clock2",
+ 	DevelopAwakePicture=""
+},
+[51119] =
+{
+ 		id=51119,
+ 		name=8120002,
+ 		desc="玛蒂尔达喝茶",
+ 		icon="UI/SpritePics/head/Monster/120002_coffee2",
+ 	DevelopAwakePicture=""
+},
+[51120] =
+{
+ 		id=51120,
+ 		name=8051101,
+ 		desc="引导用",
+ 		icon="UI/SpritePics/head/system/ui_head_system_01",
+ 	DevelopAwakePicture=""
+},
+[51121] =
+{
+ 		id=51121,
+ 		name=8110010,
+ 		desc="小满吃东西",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51121",
+ 	DevelopAwakePicture=""
+},
+[51122] =
+{
+ 		id=51122,
+ 		name=8110010,
+ 		desc="小满惊讶",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51122",
+ 	DevelopAwakePicture=""
+},
+[51123] =
+{
+ 		id=51123,
+ 		name=8110010,
+ 		desc="小满微笑",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51123",
+ 	DevelopAwakePicture=""
+},
+[51124] =
+{
+ 		id=51124,
+ 		name=8110004,
+ 		desc="西格德莉法普通",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51124",
+ 	DevelopAwakePicture=""
+},
+[51125] =
+{
+ 		id=51125,
+ 		name=8110004,
+ 		desc="西格德莉法生气",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51125",
+ 	DevelopAwakePicture=""
+},
+[51126] =
+{
+ 		id=51126,
+ 		name=8110004,
+ 		desc="西格德莉法担忧",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51126",
+ 	DevelopAwakePicture=""
+},
+[51127] =
+{
+ 		id=51127,
+ 		name=8130006,
+ 		desc="厄瑞妮笑",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51127",
+ 	DevelopAwakePicture=""
+},
+[51128] =
+{
+ 		id=51128,
+ 		name=8130006,
+ 		desc="厄瑞妮忧伤",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51128",
+ 	DevelopAwakePicture=""
+},
+[51129] =
+{
+ 		id=51129,
+ 		name=8130006,
+ 		desc="厄瑞妮认真",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51129",
+ 	DevelopAwakePicture=""
+},
+[51130] =
+{
+ 		id=51130,
+ 		name=8120004,
+ 		desc="玛乔丽觉醒头像",
+ 		icon="UI/SpritePics/head/Hero/121004",
+ 	DevelopAwakePicture=""
+},
+[51131] =
+{
+ 		id=51131,
+ 		name=8120007,
+ 		desc="泷降觉醒头像",
+ 		icon="UI/SpritePics/head/Hero/121007",
+ 	DevelopAwakePicture=""
+},
+[51132] =
+{
+ 		id=51132,
+ 		name=8120002,
+ 		desc="玛蒂尔达觉醒头像",
+ 		icon="UI/SpritePics/head/Hero/121002",
+ 	DevelopAwakePicture=""
+},
+[51133] =
+{
+ 		id=51133,
+ 		name=8110003,
+ 		desc="安息香普通",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51133",
+ 	DevelopAwakePicture=""
+},
+[51134] =
+{
+ 		id=51134,
+ 		name=8110003,
+ 		desc="安息香笑",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51134",
+ 	DevelopAwakePicture=""
+},
+[51135] =
+{
+ 		id=51135,
+ 		name=8110003,
+ 		desc="安息香担心",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51135",
+ 	DevelopAwakePicture=""
+},
+[51136] =
+{
+ 		id=51136,
+ 		name=8110003,
+ 		desc="安息香惊讶",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51136",
+ 	DevelopAwakePicture=""
+},
+[51137] =
+{
+ 		id=51137,
+ 		name=8110006,
+ 		desc="赫萝克普通",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51137",
+ 	DevelopAwakePicture=""
+},
+[51138] =
+{
+ 		id=51138,
+ 		name=8110005,
+ 		desc="海风藤不满",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51138",
+ 	DevelopAwakePicture=""
+},
+[51139] =
+{
+ 		id=51139,
+ 		name=8110005,
+ 		desc="海风藤担心",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51139",
+ 	DevelopAwakePicture=""
+},
+[51140] =
+{
+ 		id=51140,
+ 		name=8110002,
+ 		desc="丽贝卡害怕",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51140",
+ 	DevelopAwakePicture=""
+},
+[51141] =
+{
+ 		id=51141,
+ 		name=8110002,
+ 		desc="丽贝卡普通",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51141",
+ 	DevelopAwakePicture=""
+},
+[51142] =
+{
+ 		id=51142,
+ 		name=8110006,
+ 		desc="赫萝克笑",
+ 		icon="UI/SpritePics/head/Monster/ui_icon_monster_51142",
+ 	DevelopAwakePicture=""
+}
+}
+
+return {title=title, value=value}

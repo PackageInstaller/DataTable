@@ -1,0 +1,384 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8359430822174271028
+  },
+  "m_Name": "battleGuideStep02",
+  "groups": [
+    {
+      "groupId": 1,
+      "items": [
+        {
+          "stepId": 1,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "点击这里可以快捷返回主界面。",
+            "descLanguageId": 0,
+            "targetName": "Btn_Home",
+            "targetLayerPath": "Fixed/TopBar(Clone)/CommonBack/CommonBack2/Top/Btn_Home",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 1,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 0,
+            "radius": 62,
+            "height": 62,
+            "connectRadius": 20,
+            "offset": {
+              "x": 1.1,
+              "y": 3.3
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 155.0,
+              "y": 165.0
+            },
+            "effectRotation": -83,
+            "uiDialogOffeset": {
+              "x": -9.35,
+              "y": 267.5
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40013,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "废话1",
+          "GMMark": 128
+        },
+        {
+          "stepId": 2,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "本次将进行<color=#FF9900>10次征募</color>。",
+            "descLanguageId": 0,
+            "targetName": "Btn_Home",
+            "targetLayerPath": "Fixed/TopBar(Clone)/CommonBack/CommonBack2/Top/Btn_Home",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 62,
+            "height": 62,
+            "connectRadius": 20,
+            "offset": {
+              "x": 1.1,
+              "y": 3.3
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": 155.0,
+              "y": 165.0
+            },
+            "effectRotation": -83,
+            "uiDialogOffeset": {
+              "x": -9.35,
+              "y": 267.5
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40014,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 100,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击跳转",
+          "GMMark": 129
+        },
+        {
+          "stepId": 3,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "Recruitment",
+            "targetLayerPath": "Normal/MainUI(Clone)/Bg/Panel_R/R/Recruitment",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 167,
+            "height": 80,
+            "connectRadius": 10,
+            "offset": {
+              "x": -45.1,
+              "y": 6.4
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -235.0,
+              "y": 127.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -43.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击征募",
+          "GMMark": 0
+        },
+        {
+          "stepId": 4,
+          "groupId": 1,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "这是总部派发给新任长官的特别补给，本回10次征募，<color=#FF9900>必定获得SSR战员</color>！",
+            "descLanguageId": 0,
+            "targetName": "tsBtn_ten",
+            "targetLayerPath": "Normal/LotteryUI(Clone)/Panel/BtnGroup/tsBtn_ten/tsBtn_ten",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 191,
+            "height": 41,
+            "connectRadius": 10,
+            "offset": {
+              "x": -192.9,
+              "y": -0.4
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -264.0,
+              "y": 123.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 378.4,
+              "y": -204.2
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40015,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 1000,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击征募10次",
+          "GMMark": 130
+        }
+      ],
+      "desc": "新晋征募十连引导",
+      "autoId": 0
+    }
+  ],
+  "preGroups": [
+    {
+      "groupId": 2,
+      "items": [
+        {
+          "stepId": 3,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 0,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "",
+            "descLanguageId": 0,
+            "targetName": "Recruitment",
+            "targetLayerPath": "Normal/MainUI(Clone)/Bg/Panel_R/R/Recruitment",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 167,
+            "height": 80,
+            "connectRadius": 10,
+            "offset": {
+              "x": -45.1,
+              "y": 6.4
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -235.0,
+              "y": 127.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": -43.0,
+              "y": 0.0
+            },
+            "isHero": 1,
+            "actorId": 0,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 0,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 800,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击征募",
+          "GMMark": 0
+        },
+        {
+          "stepId": 4,
+          "groupId": 2,
+          "isFreeGuide": 0,
+          "isPause": 0,
+          "isShowSkipButton": 0,
+          "actionType": 1,
+          "isShowDialog": 1,
+          "isShowMaskAndEffect": 1,
+          "isShowSelectEffect": 1,
+          "uiParam": {
+            "desc": "这是总部派发给新任长官的特别补给，本回10次征募，<color=#FF9900>必定获得SSR战员</color>！",
+            "descLanguageId": 0,
+            "targetName": "tsBtn_ten",
+            "targetLayerPath": "Normal/LotteryUI(Clone)/Panel/BtnGroup/tsBtn_ten/tsBtn_ten",
+            "isSpecialUI": 0,
+            "isClickAnyWhere": 0,
+            "isRect": 1,
+            "shape": 0,
+            "useEffectMark": 1,
+            "radius": 191,
+            "height": 41,
+            "connectRadius": 10,
+            "offset": {
+              "x": -192.9,
+              "y": -0.4
+            },
+            "isShowEffect": 0,
+            "effectSizeOffset": 0,
+            "effectPosOffset": {
+              "x": -264.0,
+              "y": 123.0
+            },
+            "effectRotation": 0,
+            "uiDialogOffeset": {
+              "x": 378.4,
+              "y": -204.2
+            },
+            "isHero": 1,
+            "actorId": 51120,
+            "dialogType": 2,
+            "clickWait": 0,
+            "tipsLanguage": "",
+            "tipsOffset": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "moviePath": "",
+            "soundId": 40015,
+            "abTalkId": 0,
+            "hasTextTypeEffect": 1
+          },
+          "param1": [],
+          "param2": [],
+          "delayTime": 1000,
+          "isFreeClickAfterFinish": 0,
+          "desc": "点击征募10次",
+          "GMMark": 130
+        }
+      ],
+      "desc": "",
+      "autoId": 0
+    }
+  ]
+}

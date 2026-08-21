@@ -1,0 +1,532 @@
+local title = {
+	id = 0,
+	roleMask2 = "",
+	head = "",
+	closeEye = "",
+	openEye = "",
+	closeEyeCoord = {},
+	openEyeCoord = {},
+	roleIllustration = "",
+	text1 = "",
+	text2 = "",
+	titleBgShadow = {},
+	roleMask1 = "",
+	illustrationImage = ""
+}
+
+local value = {
+[140002] =
+{
+ 		id=140002,
+ 		roleMask2="UI/SpritePics/portrait/awake/141002",
+ 		head="UI/SpritePics/portrait/awake/140002/ui_awake_head140002_role",
+ 		closeEye="UI/SpritePics/portrait/awake/140002/ui_awake_head140002_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/140002/ui_awake_head140002_eye2",
+ 		closeEyeCoord={-21100,88000},
+ 		openEyeCoord={-15000,88000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration140002",
+ 		text1="UI/SpritePics/portrait/awake/140002/ui_awake_head140002_text1",
+ 		text2="UI/SpritePics/portrait/awake/140002/ui_awake_head140002_text2",
+ 		titleBgShadow={105,159,221},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/140002",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_141002"
+},
+[110001] =
+{
+ 		id=110001,
+ 		roleMask2="UI/SpritePics/portrait/awake/111001",
+ 		head="UI/SpritePics/portrait/awake/110001/ui_awake_head110001_role",
+ 		closeEye="UI/SpritePics/portrait/awake/110001/ui_awake_head110001_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/110001/ui_awake_head110001_eye2",
+ 		closeEyeCoord={-108100,48100},
+ 		openEyeCoord={-159100,31100},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration110001",
+ 		text1="UI/SpritePics/portrait/awake/110001/ui_awake_head110001_text1",
+ 		text2="UI/SpritePics/portrait/awake/110001/ui_awake_head110001_text2",
+ 		titleBgShadow={255,91,91},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/110001",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_111001"
+},
+[110002] =
+{
+ 		id=110002,
+ 		roleMask2="UI/SpritePics/portrait/awake/111002",
+ 		head="UI/SpritePics/portrait/awake/110002/ui_awake_head110002_role",
+ 		closeEye="UI/SpritePics/portrait/awake/110002/ui_awake_head110002_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/110002/ui_awake_head110002_eye2",
+ 		closeEyeCoord={141000,100000},
+ 		openEyeCoord={131000,93800},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration110002",
+ 		text1="UI/SpritePics/portrait/awake/110002/ui_awake_head110002_text1",
+ 		text2="UI/SpritePics/portrait/awake/110002/ui_awake_head110002_text2",
+ 		titleBgShadow={87,90,118},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/110002",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_111002"
+},
+[110003] =
+{
+ 		id=110003,
+ 		roleMask2="UI/SpritePics/portrait/awake/111003",
+ 		head="UI/SpritePics/portrait/awake/110003/ui_awake_head110003_role",
+ 		closeEye="UI/SpritePics/portrait/awake/110003/ui_awake_head110003_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/110003/ui_awake_head110003_eye2",
+ 		closeEyeCoord={-175000,78000},
+ 		openEyeCoord={-176500,98000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration110003",
+ 		text1="UI/SpritePics/portrait/awake/110003/ui_awake_head110003_text1",
+ 		text2="UI/SpritePics/portrait/awake/110003/ui_awake_head110003_text2",
+ 		titleBgShadow={238,136,145},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/110003",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_111003"
+},
+[110005] =
+{
+ 		id=110005,
+ 		roleMask2="UI/SpritePics/portrait/awake/111005",
+ 		head="UI/SpritePics/portrait/awake/110005/ui_awake_head110005_role",
+ 		closeEye="UI/SpritePics/portrait/awake/110005/ui_awake_head110005_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/110005/ui_awake_head110005_eye2",
+ 		closeEyeCoord={-71500,65000},
+ 		openEyeCoord={-58500,65000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration110005",
+ 		text1="UI/SpritePics/portrait/awake/110005/ui_awake_head110005_text1",
+ 		text2="UI/SpritePics/portrait/awake/110005/ui_awake_head110005_text2",
+ 		titleBgShadow={80,201,164},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/110005",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_111005"
+},
+[110006] =
+{
+ 		id=110006,
+ 		roleMask2="UI/SpritePics/portrait/awake/111006",
+ 		head="UI/SpritePics/portrait/awake/110006/ui_awake_head110006_role",
+ 		closeEye="UI/SpritePics/portrait/awake/110006/ui_awake_head110006_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/110006/ui_awake_head110006_eye2",
+ 		closeEyeCoord={219000,98000},
+ 		openEyeCoord={254000,38000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration110006",
+ 		text1="UI/SpritePics/portrait/awake/110006/ui_awake_head110006_text1",
+ 		text2="UI/SpritePics/portrait/awake/110006/ui_awake_head110006_text2",
+ 		titleBgShadow={194,42,75},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/110006",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_111006"
+},
+[120001] =
+{
+ 		id=120001,
+ 		roleMask2="UI/SpritePics/portrait/awake/121001",
+ 		head="UI/SpritePics/portrait/awake/120001/ui_awake_head120001_role",
+ 		closeEye="UI/SpritePics/portrait/awake/120001/ui_awake_head120001_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/120001/ui_awake_head120001_eye2",
+ 		closeEyeCoord={9000,21000},
+ 		openEyeCoord={0,32000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration120001",
+ 		text1="UI/SpritePics/portrait/awake/120001/ui_awake_head120001_text1",
+ 		text2="UI/SpritePics/portrait/awake/120001/ui_awake_head120001_text2",
+ 		titleBgShadow={216,204,222},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/120001",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_121001"
+},
+[120002] =
+{
+ 		id=120002,
+ 		roleMask2="UI/SpritePics/portrait/awake/121002",
+ 		head="UI/SpritePics/portrait/awake/120002/ui_awake_head120002_role",
+ 		closeEye="UI/SpritePics/portrait/awake/120002/ui_awake_head120002_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/120002/ui_awake_head120002_eye2",
+ 		closeEyeCoord={28000,177000},
+ 		openEyeCoord={44000,187000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration120002",
+ 		text1="UI/SpritePics/portrait/awake/120002/ui_awake_head120002_text1",
+ 		text2="UI/SpritePics/portrait/awake/120002/ui_awake_head120002_text2",
+ 		titleBgShadow={244,182,183},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/120002",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_121002"
+},
+[120003] =
+{
+ 		id=120003,
+ 		roleMask2="UI/SpritePics/portrait/awake/121003",
+ 		head="UI/SpritePics/portrait/awake/120003/ui_awake_head120003_role",
+ 		closeEye="UI/SpritePics/portrait/awake/120003/ui_awake_head120003_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/120003/ui_awake_head120003_eye2",
+ 		closeEyeCoord={173000,168500},
+ 		openEyeCoord={173000,165000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration120003",
+ 		text1="UI/SpritePics/portrait/awake/120003/ui_awake_head120003_text1",
+ 		text2="UI/SpritePics/portrait/awake/120003/ui_awake_head120003_text2",
+ 		titleBgShadow={183,201,30},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/120003",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_121003"
+},
+[120007] =
+{
+ 		id=120007,
+ 		roleMask2="UI/SpritePics/portrait/awake/121007",
+ 		head="UI/SpritePics/portrait/awake/120007/ui_awake_head120007_role",
+ 		closeEye="UI/SpritePics/portrait/awake/120007/ui_awake_head120007_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/120007/ui_awake_head120007_eye2",
+ 		closeEyeCoord={-85700,189300},
+ 		openEyeCoord={-122700,269100},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration120007",
+ 		text1="UI/SpritePics/portrait/awake/120007/ui_awake_head120007_text1",
+ 		text2="UI/SpritePics/portrait/awake/120007/ui_awake_head120007_text2",
+ 		titleBgShadow={230,105,93},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/120007",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_121007"
+},
+[130001] =
+{
+ 		id=130001,
+ 		roleMask2="UI/SpritePics/portrait/awake/131001",
+ 		head="UI/SpritePics/portrait/awake/130001/ui_awake_head130001_role",
+ 		closeEye="UI/SpritePics/portrait/awake/130001/ui_awake_head130001_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/130001/ui_awake_head130001_eye2",
+ 		closeEyeCoord={-55000,167300},
+ 		openEyeCoord={-58800,170300},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration130001",
+ 		text1="UI/SpritePics/portrait/awake/130001/ui_awake_head130001_text1",
+ 		text2="UI/SpritePics/portrait/awake/130001/ui_awake_head130001_text2",
+ 		titleBgShadow={53,128,127},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/130001",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_131001"
+},
+[140001] =
+{
+ 		id=140001,
+ 		roleMask2="UI/SpritePics/portrait/awake/141001",
+ 		head="UI/SpritePics/portrait/awake/140001/ui_awake_head140001_role",
+ 		closeEye="UI/SpritePics/portrait/awake/140001/ui_awake_head140001_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/140001/ui_awake_head140001_eye2",
+ 		closeEyeCoord={-195000,36000},
+ 		openEyeCoord={-192500,-1000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration140001",
+ 		text1="UI/SpritePics/portrait/awake/140001/ui_awake_head140001_text1",
+ 		text2="UI/SpritePics/portrait/awake/140001/ui_awake_head140001_text2",
+ 		titleBgShadow={77,78,91},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/140001",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_141001"
+},
+[110009] =
+{
+ 		id=110009,
+ 		roleMask2="UI/SpritePics/portrait/awake/111009",
+ 		head="UI/SpritePics/portrait/awake/110009/ui_awake_head110009_role",
+ 		closeEye="UI/SpritePics/portrait/awake/110009/ui_awake_head110009_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/110009/ui_awake_head110009_eye2",
+ 		closeEyeCoord={800,16400},
+ 		openEyeCoord={-1200,38660},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration110009",
+ 		text1="UI/SpritePics/portrait/awake/110009/ui_awake_head110009_text1",
+ 		text2="UI/SpritePics/portrait/awake/110009/ui_awake_head110009_text2",
+ 		titleBgShadow={223,154,172},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/110009",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_111009"
+},
+[110010] =
+{
+ 		id=110010,
+ 		roleMask2="UI/SpritePics/portrait/awake/111010",
+ 		head="UI/SpritePics/portrait/awake/110010/ui_awake_head110010_role",
+ 		closeEye="UI/SpritePics/portrait/awake/110010/ui_awake_head110010_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/110010/ui_awake_head110010_eye2",
+ 		closeEyeCoord={-154500,124000},
+ 		openEyeCoord={-166000,146000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration110010",
+ 		text1="UI/SpritePics/portrait/awake/110010/ui_awake_head110010_text1",
+ 		text2="UI/SpritePics/portrait/awake/110010/ui_awake_head110010_text2",
+ 		titleBgShadow={234,70,82},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/110010",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_111010"
+},
+[120004] =
+{
+ 		id=120004,
+ 		roleMask2="UI/SpritePics/portrait/awake/121004",
+ 		head="UI/SpritePics/portrait/awake/120004/ui_awake_head120004_role",
+ 		closeEye="UI/SpritePics/portrait/awake/120004/ui_awake_head120004_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/120004/ui_awake_head120004_eye2",
+ 		closeEyeCoord={-120000,38027},
+ 		openEyeCoord={-74000,127000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration120004",
+ 		text1="UI/SpritePics/portrait/awake/120004/ui_awake_head120004_text1",
+ 		text2="UI/SpritePics/portrait/awake/120004/ui_awake_head120004_text2",
+ 		titleBgShadow={236,53,59},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/120004",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_121004"
+},
+[120008] =
+{
+ 		id=120008,
+ 		roleMask2="UI/SpritePics/portrait/awake/121008",
+ 		head="UI/SpritePics/portrait/awake/120008/ui_awake_head120008_role",
+ 		closeEye="UI/SpritePics/portrait/awake/120008/ui_awake_head120008_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/120008/ui_awake_head120008_eye2",
+ 		closeEyeCoord={124000,168200},
+ 		openEyeCoord={134000,150000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration120008",
+ 		text1="UI/SpritePics/portrait/awake/120008/ui_awake_head120008_text1",
+ 		text2="UI/SpritePics/portrait/awake/120008/ui_awake_head120008_text2",
+ 		titleBgShadow={128,205,252},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/120008",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_121008"
+},
+[120009] =
+{
+ 		id=120009,
+ 		roleMask2="UI/SpritePics/portrait/awake/121009",
+ 		head="UI/SpritePics/portrait/awake/120009/ui_awake_head120009_role",
+ 		closeEye="UI/SpritePics/portrait/awake/120009/ui_awake_head120009_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/120009/ui_awake_head120009_eye2",
+ 		closeEyeCoord={124300,-74500},
+ 		openEyeCoord={124300,-74500},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration120009",
+ 		text1="UI/SpritePics/portrait/awake/120009/ui_awake_head120009_text1",
+ 		text2="UI/SpritePics/portrait/awake/120009/ui_awake_head120009_text2",
+ 		titleBgShadow={146,204,196},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/120009",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_121009"
+},
+[130003] =
+{
+ 		id=130003,
+ 		roleMask2="UI/SpritePics/portrait/awake/131003",
+ 		head="UI/SpritePics/portrait/awake/130003/ui_awake_head130003_role",
+ 		closeEye="UI/SpritePics/portrait/awake/130003/ui_awake_head130003_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/130003/ui_awake_head130003_eye2",
+ 		closeEyeCoord={-9430,-32290},
+ 		openEyeCoord={-11700,-13700},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration130003",
+ 		text1="UI/SpritePics/portrait/awake/130003/ui_awake_head130003_text1",
+ 		text2="UI/SpritePics/portrait/awake/130003/ui_awake_head130003_text2",
+ 		titleBgShadow={147,153,216},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/130003",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_131003"
+},
+[130004] =
+{
+ 		id=130004,
+ 		roleMask2="UI/SpritePics/portrait/awake/131004",
+ 		head="UI/SpritePics/portrait/awake/130004/ui_awake_head130004_role",
+ 		closeEye="UI/SpritePics/portrait/awake/130004/ui_awake_head130004_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/130004/ui_awake_head130004_eye2",
+ 		closeEyeCoord={107400,46200},
+ 		openEyeCoord={105400,46200},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration130004",
+ 		text1="UI/SpritePics/portrait/awake/130004/ui_awake_head130004_text1",
+ 		text2="UI/SpritePics/portrait/awake/130004/ui_awake_head130004_text2",
+ 		titleBgShadow={203,122,84},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/130004",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_131004"
+},
+[130005] =
+{
+ 		id=130005,
+ 		roleMask2="UI/SpritePics/portrait/awake/131005",
+ 		head="UI/SpritePics/portrait/awake/130005/ui_awake_head130005_role",
+ 		closeEye="UI/SpritePics/portrait/awake/130005/ui_awake_head130005_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/130005/ui_awake_head130005_eye2",
+ 		closeEyeCoord={308200,-40500},
+ 		openEyeCoord={314930,-43700},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration130005",
+ 		text1="UI/SpritePics/portrait/awake/130005/ui_awake_head130005_text1",
+ 		text2="UI/SpritePics/portrait/awake/130005/ui_awake_head130005_text2",
+ 		titleBgShadow={129,126,206},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/130005",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_131005"
+},
+[130006] =
+{
+ 		id=130006,
+ 		roleMask2="UI/SpritePics/portrait/awake/131006",
+ 		head="UI/SpritePics/portrait/awake/130006/ui_awake_head130006_role",
+ 		closeEye="UI/SpritePics/portrait/awake/130006/ui_awake_head130006_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/130006/ui_awake_head130006_eye2",
+ 		closeEyeCoord={-67230,-6730},
+ 		openEyeCoord={-67230,-6730},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration130006",
+ 		text1="UI/SpritePics/portrait/awake/130006/ui_awake_head130006_text1",
+ 		text2="UI/SpritePics/portrait/awake/130006/ui_awake_head130006_text2",
+ 		titleBgShadow={115,174,120},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/130006",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_131006"
+},
+[130009] =
+{
+ 		id=130009,
+ 		roleMask2="UI/SpritePics/portrait/awake/131009",
+ 		head="UI/SpritePics/portrait/awake/130009/ui_awake_head130009_role",
+ 		closeEye="UI/SpritePics/portrait/awake/130009/ui_awake_head130009_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/130009/ui_awake_head130009_eye2",
+ 		closeEyeCoord={-19000,99000},
+ 		openEyeCoord={-62700,800},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration130009",
+ 		text1="UI/SpritePics/portrait/awake/130009/ui_awake_head130009_text1",
+ 		text2="UI/SpritePics/portrait/awake/130009/ui_awake_head130009_text2",
+ 		titleBgShadow={95,211,212},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/130009",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_131009"
+},
+[140004] =
+{
+ 		id=140004,
+ 		roleMask2="UI/SpritePics/portrait/awake/141004",
+ 		head="UI/SpritePics/portrait/awake/140004/ui_awake_head140004_role",
+ 		closeEye="UI/SpritePics/portrait/awake/140004/ui_awake_head140004_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/140004/ui_awake_head140004_eye2",
+ 		closeEyeCoord={22500,0},
+ 		openEyeCoord={22500,27200},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration140004",
+ 		text1="UI/SpritePics/portrait/awake/140004/ui_awake_head140004_text1",
+ 		text2="UI/SpritePics/portrait/awake/140004/ui_awake_head140004_text2",
+ 		titleBgShadow={105,159,221},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/140004",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_141004"
+},
+[140006] =
+{
+ 		id=140006,
+ 		roleMask2="UI/SpritePics/portrait/awake/141006",
+ 		head="UI/SpritePics/portrait/awake/140006/ui_awake_head140006_role",
+ 		closeEye="UI/SpritePics/portrait/awake/140006/ui_awake_head140006_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/140006/ui_awake_head140006_eye2",
+ 		closeEyeCoord={-94500,-45500},
+ 		openEyeCoord={-99000,-47000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration140006",
+ 		text1="UI/SpritePics/portrait/awake/140006/ui_awake_head140006_text1",
+ 		text2="UI/SpritePics/portrait/awake/140006/ui_awake_head140006_text2",
+ 		titleBgShadow={70,201,203},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/140006",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_141006"
+},
+[150006] =
+{
+ 		id=150006,
+ 		roleMask2="UI/SpritePics/portrait/awake/151006",
+ 		head="UI/SpritePics/portrait/awake/150006/ui_awake_head150006_role",
+ 		closeEye="UI/SpritePics/portrait/awake/150006/ui_awake_head150006_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/150006/ui_awake_head150006_eye2",
+ 		closeEyeCoord={311000,14000},
+ 		openEyeCoord={311000,14000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration150006",
+ 		text1="UI/SpritePics/portrait/awake/150006/ui_awake_head150006_text1",
+ 		text2="UI/SpritePics/portrait/awake/150006/ui_awake_head150006_text2",
+ 		titleBgShadow={132,118,247},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/150006",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_151006"
+},
+[150004] =
+{
+ 		id=150004,
+ 		roleMask2="UI/SpritePics/portrait/awake/151004",
+ 		head="UI/SpritePics/portrait/awake/150004/ui_awake_head150004_role",
+ 		closeEye="UI/SpritePics/portrait/awake/150004/ui_awake_head150004_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/150004/ui_awake_head150004_eye2",
+ 		closeEyeCoord={-114000,54000},
+ 		openEyeCoord={-114000,54000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration150004",
+ 		text1="UI/SpritePics/portrait/awake/150004/ui_awake_head150004_text1",
+ 		text2="UI/SpritePics/portrait/awake/150004/ui_awake_head150004_text2",
+ 		titleBgShadow={148,84,188},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/150004",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_151004"
+},
+[110012] =
+{
+ 		id=110012,
+ 		roleMask2="UI/SpritePics/portrait/awake/111012",
+ 		head="UI/SpritePics/portrait/awake/110012/ui_awake_head110012_role",
+ 		closeEye="UI/SpritePics/portrait/awake/110012/ui_awake_head110012_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/110012/ui_awake_head110012_eye2",
+ 		closeEyeCoord={-156000,56000},
+ 		openEyeCoord={-156000,56000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration110012",
+ 		text1="UI/SpritePics/portrait/awake/110012/ui_awake_head110012_text1",
+ 		text2="UI/SpritePics/portrait/awake/110012/ui_awake_head110012_text2",
+ 		titleBgShadow={102,172,186},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/110012",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_111012"
+},
+[120013] =
+{
+ 		id=120013,
+ 		roleMask2="UI/SpritePics/portrait/awake/121013",
+ 		head="UI/SpritePics/portrait/awake/120013/ui_awake_head120013_role",
+ 		closeEye="UI/SpritePics/portrait/awake/120013/ui_awake_head120013_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/120013/ui_awake_head120013_eye2",
+ 		closeEyeCoord={199000,36000},
+ 		openEyeCoord={199000,36000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration120013",
+ 		text1="UI/SpritePics/portrait/awake/120013/ui_awake_head120013_text1",
+ 		text2="UI/SpritePics/portrait/awake/120013/ui_awake_head120013_text2",
+ 		titleBgShadow={223,178,107},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/120013",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_121013"
+},
+[110004] =
+{
+ 		id=110004,
+ 		roleMask2="UI/SpritePics/portrait/awake/111004",
+ 		head="UI/SpritePics/portrait/awake/110004/ui_awake_head110004_role",
+ 		closeEye="UI/SpritePics/portrait/awake/110004/ui_awake_head110004_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/110004/ui_awake_head110004_eye2",
+ 		closeEyeCoord={-11000,274000},
+ 		openEyeCoord={-11000,274000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration110004",
+ 		text1="UI/SpritePics/portrait/awake/110004/ui_awake_head110004_text1",
+ 		text2="UI/SpritePics/portrait/awake/110004/ui_awake_head110004_text2",
+ 		titleBgShadow={93,38,216},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/110004",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_111004"
+},
+[150009] =
+{
+ 		id=150009,
+ 		roleMask2="UI/SpritePics/portrait/awake/151009",
+ 		head="UI/SpritePics/portrait/awake/150009/ui_awake_head150009_role",
+ 		closeEye="UI/SpritePics/portrait/awake/150009/ui_awake_head150009_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/150009/ui_awake_head150009_eye2",
+ 		closeEyeCoord={-210000,79000},
+ 		openEyeCoord={-210000,79000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration150009",
+ 		text1="UI/SpritePics/portrait/awake/150009/ui_awake_head150009_text1",
+ 		text2="UI/SpritePics/portrait/awake/150009/ui_awake_head150009_text2",
+ 		titleBgShadow={60,43,36},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/150009",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_151009"
+},
+[150002] =
+{
+ 		id=150002,
+ 		roleMask2="UI/SpritePics/portrait/awake/151002",
+ 		head="UI/SpritePics/portrait/awake/150002/ui_awake_head150002_role",
+ 		closeEye="UI/SpritePics/portrait/awake/150002/ui_awake_head150002_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/150002/ui_awake_head150002_eye2",
+ 		closeEyeCoord={-165000,30000},
+ 		openEyeCoord={-165000,30000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration150002",
+ 		text1="UI/SpritePics/portrait/awake/150002/ui_awake_head150002_text1",
+ 		text2="UI/SpritePics/portrait/awake/150002/ui_awake_head150002_text2",
+ 		titleBgShadow={255,206,226},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/150002",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_151002"
+},
+[150003] =
+{
+ 		id=150003,
+ 		roleMask2="UI/SpritePics/portrait/awake/151003",
+ 		head="UI/SpritePics/portrait/awake/150003/ui_awake_head150003_role",
+ 		closeEye="UI/SpritePics/portrait/awake/150003/ui_awake_head150003_eye1",
+ 		openEye="UI/SpritePics/portrait/awake/150003/ui_awake_head150003_eye2",
+ 		closeEyeCoord={-380000,99000},
+ 		openEyeCoord={-380000,99000},
+ 		roleIllustration="UI/SpritePics/portrait/awake/ui_awake_illustration150003",
+ 		text1="UI/SpritePics/portrait/awake/150003/ui_awake_head150003_text1",
+ 		text2="UI/SpritePics/portrait/awake/150003/ui_awake_head150003_text2",
+ 		titleBgShadow={122,131,227},
+ 		roleMask1="UI/SpritePics/portrait/portrait_body/150003",
+ 	illustrationImage="UI/SpritePics/develop/drawing/ui_develop_drawing_151003"
+}
+}
+
+return {title=title, value=value}

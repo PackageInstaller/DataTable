@@ -1,0 +1,12543 @@
+local title = {
+	id = 0,
+	type = 0,
+	heroId = 0,
+	groupId = 0,
+	stepId = 0,
+	nextStepId = {},
+	speaker = 0,
+	words = {},
+	displayHero = 0,
+	action = 0,
+	reward = {},
+	selectId = 0,
+	task = 0,
+	ui = 0,
+	skip = {},
+	favor = {},
+	itemTask = {},
+	skipWords = 0
+}
+
+local value = {
+[1] =
+{
+ 		id=1,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=65,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400071},
+ 		displayHero=1,
+ 		action=23,
+ 		ui=1,
+ 	skipWords=1
+},
+[2] =
+{
+ 		id=2,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=65,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400072},
+ 		displayHero=1,
+ 		action=24,
+ 		ui=1,
+ 	skipWords=1
+},
+[3] =
+{
+ 		id=3,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=65,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400073},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[4] =
+{
+ 		id=4,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=65,
+ 		stepId=4,
+ 		nextStepId={0,0},
+ 		speaker=1,
+ 		words={43400074,43400075},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[5] =
+{
+ 		id=5,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=69,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400076},
+ 		displayHero=1,
+ 		action=112400,
+ 		ui=1,
+ 	skipWords=1
+},
+[6] =
+{
+ 		id=6,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=69,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400077},
+ 		displayHero=1,
+ 		action=112401,
+ 		ui=1,
+ 	skipWords=1
+},
+[7] =
+{
+ 		id=7,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=69,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400078},
+ 		displayHero=1,
+ 		action=112402,
+ 		ui=1,
+ 	skipWords=1
+},
+[8] =
+{
+ 		id=8,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=69,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400079},
+ 		displayHero=1,
+ 		action=112403,
+ 		ui=1,
+ 	skipWords=1
+},
+[9] =
+{
+ 		id=9,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=73,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400332},
+ 		displayHero=1,
+ 		action=28,
+ 		ui=1,
+ 	skipWords=1
+},
+[10] =
+{
+ 		id=10,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=73,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400333},
+ 		displayHero=1,
+ 		action=29,
+ 		ui=1,
+ 	skipWords=1
+},
+[11] =
+{
+ 		id=11,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=73,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400334},
+ 		displayHero=1,
+ 		action=26,
+ 		ui=1,
+ 	skipWords=1
+},
+[12] =
+{
+ 		id=12,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=73,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={43400335},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[13] =
+{
+ 		id=13,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=73,
+ 		stepId=5,
+ 		nextStepId={0,0},
+ 		speaker=1,
+ 		words={43400336,43400337},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[14] =
+{
+ 		id=14,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=77,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400328},
+ 		displayHero=1,
+ 		action=112404,
+ 		ui=1,
+ 	skipWords=1
+},
+[15] =
+{
+ 		id=15,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=77,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400329},
+ 		displayHero=1,
+ 		action=112405,
+ 		ui=1,
+ 	skipWords=1
+},
+[16] =
+{
+ 		id=16,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=77,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400330},
+ 		displayHero=1,
+ 		action=112406,
+ 		ui=1,
+ 	skipWords=1
+},
+[17] =
+{
+ 		id=17,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=77,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400331},
+ 		displayHero=1,
+ 		action=112407,
+ 		ui=1,
+ 	skipWords=1
+},
+[18] =
+{
+ 		id=18,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=81,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400338},
+ 		displayHero=1,
+ 		action=28,
+ 		ui=1,
+ 	skipWords=1
+},
+[19] =
+{
+ 		id=19,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=81,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400339},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[20] =
+{
+ 		id=20,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=81,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400340},
+ 		displayHero=1,
+ 		action=31,
+ 		ui=1,
+ 	skipWords=1
+},
+[21] =
+{
+ 		id=21,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=81,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={43400341},
+ 		displayHero=1,
+ 		action=30,
+ 		ui=1,
+ 	skipWords=1
+},
+[22] =
+{
+ 		id=22,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=81,
+ 		stepId=5,
+ 		nextStepId={0,0},
+ 		speaker=1,
+ 		words={43400342,43400343},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[23] =
+{
+ 		id=23,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=85,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400344},
+ 		displayHero=1,
+ 		action=112408,
+ 		ui=1,
+ 	skipWords=1
+},
+[24] =
+{
+ 		id=24,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=85,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400345},
+ 		displayHero=1,
+ 		action=112409,
+ 		ui=1,
+ 	skipWords=1
+},
+[25] =
+{
+ 		id=25,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=85,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400346},
+ 		displayHero=1,
+ 		action=112410,
+ 		ui=1,
+ 	skipWords=1
+},
+[26] =
+{
+ 		id=26,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=85,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400347},
+ 		displayHero=1,
+ 		action=112411,
+ 		ui=1,
+ 	skipWords=1
+},
+[27] =
+{
+ 		id=27,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=89,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400348},
+ 		displayHero=1,
+ 		action=26,
+ 		ui=1,
+ 	skipWords=1
+},
+[28] =
+{
+ 		id=28,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=89,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400349},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[29] =
+{
+ 		id=29,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=89,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400350},
+ 		displayHero=1,
+ 		action=28,
+ 		ui=1,
+ 	skipWords=1
+},
+[30] =
+{
+ 		id=30,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=89,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={43400351},
+ 		displayHero=1,
+ 		action=23,
+ 		ui=1,
+ 	skipWords=1
+},
+[31] =
+{
+ 		id=31,
+ 		type=2,
+ 		heroId=110003,
+ 		groupId=89,
+ 		stepId=5,
+ 		nextStepId={0,0},
+ 		speaker=1,
+ 		words={43400352,43400353},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[32] =
+{
+ 		id=32,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=93,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400354},
+ 		displayHero=1,
+ 		action=112412,
+ 		ui=1,
+ 	skipWords=1
+},
+[33] =
+{
+ 		id=33,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=93,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400355},
+ 		displayHero=1,
+ 		action=112413,
+ 		ui=1,
+ 	skipWords=1
+},
+[34] =
+{
+ 		id=34,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=93,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400356},
+ 		displayHero=1,
+ 		action=112414,
+ 		ui=1,
+ 	skipWords=1
+},
+[35] =
+{
+ 		id=35,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=93,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400357},
+ 		displayHero=1,
+ 		action=112415,
+ 		ui=1,
+ 	skipWords=1
+},
+[36] =
+{
+ 		id=36,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=101,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000001},
+ 		displayHero=1,
+ 		action=112284,
+ 		ui=1,
+ 	skipWords=1
+},
+[37] =
+{
+ 		id=37,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=101,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		speaker=1,
+ 		words={53000002},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[38] =
+{
+ 		id=38,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=101,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={53000003},
+ 		displayHero=1,
+ 		action=112285,
+ 		ui=1,
+ 	skipWords=1
+},
+[39] =
+{
+ 		id=39,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=101,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={53000004},
+ 		displayHero=1,
+ 		action=112286,
+ 		ui=1,
+ 	skipWords=1
+},
+[40] =
+{
+ 		id=40,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=101,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={53000005},
+ 		displayHero=1,
+ 		action=112287,
+ 		ui=1,
+ 	skipWords=1
+},
+[41] =
+{
+ 		id=41,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=101,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={53000006},
+ 		displayHero=1,
+ 		action=112288,
+ 		ui=1,
+ 	skipWords=1
+},
+[42] =
+{
+ 		id=42,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=101,
+ 		stepId=7,
+ 		nextStepId={8},
+ 		words={53000007},
+ 		displayHero=1,
+ 		action=112289,
+ 		ui=1,
+ 	skipWords=1
+},
+[43] =
+{
+ 		id=43,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=101,
+ 		stepId=8,
+ 		nextStepId={9,9},
+ 		speaker=1,
+ 		words={53000008,53000009},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[44] =
+{
+ 		id=44,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=101,
+ 		stepId=9,
+ 		nextStepId={10},
+ 		words={53000010},
+ 		displayHero=1,
+ 		action=112290,
+ 		ui=1,
+ 	skipWords=1
+},
+[45] =
+{
+ 		id=45,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=101,
+ 		stepId=10,
+ 		nextStepId={11},
+ 		words={53000011},
+ 		displayHero=1,
+ 		action=112291,
+ 		ui=1,
+ 	skipWords=1
+},
+[46] =
+{
+ 		id=46,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=101,
+ 		stepId=11,
+ 		nextStepId={12,12},
+ 		speaker=1,
+ 		words={53000012,53000013},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[47] =
+{
+ 		id=47,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=101,
+ 		stepId=12,
+ 		nextStepId={0},
+ 		words={53000014},
+ 		displayHero=1,
+ 		action=112292,
+ 		reward={351},
+ 		ui=1,
+ 	skipWords=2
+},
+[48] =
+{
+ 		id=48,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=102,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000015},
+ 		displayHero=1,
+ 		action=112293,
+ 		ui=1,
+ 	skipWords=1
+},
+[49] =
+{
+ 		id=49,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=102,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		speaker=1,
+ 		words={53000016},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[50] =
+{
+ 		id=50,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=102,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={53000017},
+ 		displayHero=1,
+ 		action=112294,
+ 		ui=1,
+ 	skipWords=1
+},
+[51] =
+{
+ 		id=51,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=102,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		speaker=1,
+ 		words={53000018},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[52] =
+{
+ 		id=52,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=102,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={53000019},
+ 		displayHero=1,
+ 		action=112295,
+ 		ui=1,
+ 	skipWords=1
+},
+[53] =
+{
+ 		id=53,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=102,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={53000020},
+ 		displayHero=1,
+ 		action=112296,
+ 		ui=1,
+ 	skipWords=1
+},
+[54] =
+{
+ 		id=54,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=102,
+ 		stepId=7,
+ 		nextStepId={8,8},
+ 		speaker=1,
+ 		words={53000021,53000022},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[55] =
+{
+ 		id=55,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=102,
+ 		stepId=8,
+ 		nextStepId={9},
+ 		words={53000023},
+ 		displayHero=1,
+ 		action=112297,
+ 		ui=1,
+ 	skipWords=1
+},
+[56] =
+{
+ 		id=56,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=102,
+ 		stepId=9,
+ 		nextStepId={0},
+ 		words={53000024},
+ 		displayHero=1,
+ 		action=112298,
+ 		reward={352},
+ 		ui=1,
+ 	skipWords=2
+},
+[57] =
+{
+ 		id=57,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=103,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000025},
+ 		displayHero=1,
+ 		action=112299,
+ 		ui=1,
+ 	skipWords=1
+},
+[58] =
+{
+ 		id=58,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=103,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={53000026},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[59] =
+{
+ 		id=59,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=103,
+ 		stepId=3,
+ 		nextStepId={6},
+ 		words={53000028},
+ 		displayHero=1,
+ 		action=112300,
+ 		ui=1,
+ 	skipWords=1
+},
+[60] =
+{
+ 		id=60,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=103,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={53000031},
+ 		displayHero=1,
+ 		action=112303,
+ 		ui=1,
+ 	skipWords=1
+},
+[61] =
+{
+ 		id=61,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=103,
+ 		stepId=7,
+ 		nextStepId={8},
+ 		words={53000032},
+ 		displayHero=1,
+ 		action=112304,
+ 		ui=1,
+ 	skipWords=1
+},
+[62] =
+{
+ 		id=62,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=103,
+ 		stepId=8,
+ 		nextStepId={9,9},
+ 		speaker=1,
+ 		words={53000033,53000034},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[63] =
+{
+ 		id=63,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=103,
+ 		stepId=9,
+ 		nextStepId={10},
+ 		words={53000035},
+ 		displayHero=1,
+ 		action=112305,
+ 		ui=1,
+ 	skipWords=1
+},
+[64] =
+{
+ 		id=64,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=103,
+ 		stepId=10,
+ 		nextStepId={0},
+ 		words={53000036},
+ 		displayHero=1,
+ 		action=112306,
+ 		reward={353},
+ 		ui=1,
+ 	skipWords=2
+},
+[65] =
+{
+ 		id=65,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=104,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000037},
+ 		displayHero=1,
+ 		action=112307,
+ 		ui=1,
+ 	skipWords=1
+},
+[66] =
+{
+ 		id=66,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=104,
+ 		stepId=2,
+ 		nextStepId={3,3},
+ 		speaker=1,
+ 		words={53000038,53000039},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[67] =
+{
+ 		id=67,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=104,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={53000040},
+ 		displayHero=1,
+ 		action=112308,
+ 		ui=1,
+ 	skipWords=1
+},
+[68] =
+{
+ 		id=68,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=104,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={53000041},
+ 		displayHero=1,
+ 		action=112309,
+ 		ui=1,
+ 	skipWords=1
+},
+[69] =
+{
+ 		id=69,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=104,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		speaker=1,
+ 		words={53000042},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[70] =
+{
+ 		id=70,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=104,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={53000043},
+ 		displayHero=1,
+ 		action=112310,
+ 		ui=1,
+ 	skipWords=1
+},
+[71] =
+{
+ 		id=71,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=104,
+ 		stepId=7,
+ 		nextStepId={8,8},
+ 		speaker=1,
+ 		words={53000044,53000045},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[72] =
+{
+ 		id=72,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=104,
+ 		stepId=8,
+ 		nextStepId={9},
+ 		words={53000046},
+ 		displayHero=1,
+ 		action=112311,
+ 		ui=1,
+ 	skipWords=1
+},
+[73] =
+{
+ 		id=73,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=104,
+ 		stepId=9,
+ 		nextStepId={10},
+ 		words={53000047},
+ 		displayHero=1,
+ 		action=112312,
+ 		ui=1,
+ 	skipWords=1
+},
+[74] =
+{
+ 		id=74,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=104,
+ 		stepId=10,
+ 		nextStepId={0},
+ 		words={53000048},
+ 		displayHero=1,
+ 		action=112313,
+ 		reward={354},
+ 		ui=1,
+ 	skipWords=2
+},
+[75] =
+{
+ 		id=75,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=105,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000049},
+ 		displayHero=1,
+ 		action=112314,
+ 		ui=1,
+ 	skipWords=1
+},
+[76] =
+{
+ 		id=76,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=105,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		speaker=1,
+ 		words={53000050},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[77] =
+{
+ 		id=77,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=105,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={53000051},
+ 		displayHero=1,
+ 		action=112315,
+ 		ui=1,
+ 	skipWords=1
+},
+[78] =
+{
+ 		id=78,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=105,
+ 		stepId=4,
+ 		nextStepId={5,6},
+ 		speaker=1,
+ 		words={53000052,53000053},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[79] =
+{
+ 		id=79,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=105,
+ 		stepId=5,
+ 		nextStepId={7},
+ 		words={53000054},
+ 		displayHero=1,
+ 		action=112316,
+ 		ui=1,
+ 	skipWords=1
+},
+[80] =
+{
+ 		id=80,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=105,
+ 		stepId=6,
+ 		nextStepId={9},
+ 		words={53000055},
+ 		displayHero=1,
+ 		action=112317,
+ 		ui=1,
+ 	skipWords=1
+},
+[81] =
+{
+ 		id=81,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=105,
+ 		stepId=7,
+ 		nextStepId={8},
+ 		words={53000056},
+ 		displayHero=1,
+ 		action=112318,
+ 		ui=1,
+ 	skipWords=1
+},
+[82] =
+{
+ 		id=82,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=105,
+ 		stepId=8,
+ 		nextStepId={10},
+ 		words={53000057},
+ 		displayHero=1,
+ 		action=112319,
+ 		ui=1,
+ 	skipWords=1
+},
+[83] =
+{
+ 		id=83,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=105,
+ 		stepId=9,
+ 		nextStepId={10},
+ 		words={53000058},
+ 		displayHero=1,
+ 		action=112320,
+ 		ui=1,
+ 	skipWords=1
+},
+[84] =
+{
+ 		id=84,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=105,
+ 		stepId=10,
+ 		nextStepId={11},
+ 		words={53000059},
+ 		displayHero=1,
+ 		action=112321,
+ 		ui=1,
+ 	skipWords=1
+},
+[85] =
+{
+ 		id=85,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=105,
+ 		stepId=11,
+ 		nextStepId={12},
+ 		speaker=1,
+ 		words={53000060},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[86] =
+{
+ 		id=86,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=105,
+ 		stepId=12,
+ 		nextStepId={0},
+ 		words={53000061},
+ 		displayHero=1,
+ 		action=112322,
+ 		reward={355},
+ 		ui=1,
+ 	skipWords=2
+},
+[87] =
+{
+ 		id=87,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=106,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000062},
+ 		displayHero=1,
+ 		action=112323,
+ 		ui=1,
+ 	skipWords=1
+},
+[88] =
+{
+ 		id=88,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=106,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={53000063,53000064},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[89] =
+{
+ 		id=89,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=106,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={53000065},
+ 		displayHero=1,
+ 		action=112324,
+ 		ui=1,
+ 	skipWords=1
+},
+[90] =
+{
+ 		id=90,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=106,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={53000066},
+ 		displayHero=1,
+ 		action=112325,
+ 		ui=1,
+ 	skipWords=1
+},
+[91] =
+{
+ 		id=91,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=106,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={53000067},
+ 		displayHero=1,
+ 		action=112326,
+ 		ui=1,
+ 	skipWords=1
+},
+[92] =
+{
+ 		id=92,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=106,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={53000068},
+ 		displayHero=1,
+ 		action=112327,
+ 		ui=1,
+ 	skipWords=1
+},
+[93] =
+{
+ 		id=93,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=106,
+ 		stepId=7,
+ 		nextStepId={8},
+ 		words={53000069},
+ 		displayHero=1,
+ 		action=112328,
+ 		ui=1,
+ 	skipWords=1
+},
+[94] =
+{
+ 		id=94,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=106,
+ 		stepId=8,
+ 		nextStepId={9,10},
+ 		speaker=1,
+ 		words={53000070,53000071},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[95] =
+{
+ 		id=95,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=106,
+ 		stepId=9,
+ 		nextStepId={11},
+ 		words={53000072},
+ 		displayHero=1,
+ 		action=112329,
+ 		ui=1,
+ 	skipWords=1
+},
+[96] =
+{
+ 		id=96,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=106,
+ 		stepId=10,
+ 		nextStepId={11},
+ 		words={53000073},
+ 		displayHero=1,
+ 		action=112330,
+ 		ui=1,
+ 	skipWords=1
+},
+[97] =
+{
+ 		id=97,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=106,
+ 		stepId=11,
+ 		nextStepId={0},
+ 		words={53000074},
+ 		displayHero=1,
+ 		action=112331,
+ 		reward={356},
+ 		ui=1,
+ 	skipWords=2
+},
+[98] =
+{
+ 		id=98,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=107,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000075},
+ 		displayHero=1,
+ 		action=112332,
+ 		ui=1,
+ 	skipWords=1
+},
+[99] =
+{
+ 		id=99,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=107,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={53000076,53000077},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[100] =
+{
+ 		id=100,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=107,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={53000078},
+ 		displayHero=1,
+ 		action=112333,
+ 		ui=1,
+ 	skipWords=1
+},
+[101] =
+{
+ 		id=101,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=107,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={53000079},
+ 		displayHero=1,
+ 		action=112334,
+ 		ui=1,
+ 	skipWords=1
+},
+[102] =
+{
+ 		id=102,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=107,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={53000080},
+ 		displayHero=1,
+ 		action=112335,
+ 		ui=1,
+ 	skipWords=1
+},
+[103] =
+{
+ 		id=103,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=107,
+ 		stepId=6,
+ 		nextStepId={7,7},
+ 		speaker=1,
+ 		words={53000081,53000082},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[104] =
+{
+ 		id=104,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=107,
+ 		stepId=7,
+ 		nextStepId={0},
+ 		words={53000083},
+ 		displayHero=1,
+ 		action=112336,
+ 		reward={357},
+ 		ui=1,
+ 	skipWords=2
+},
+[105] =
+{
+ 		id=105,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=980,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400422},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[106] =
+{
+ 		id=106,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=980,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400423},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[107] =
+{
+ 		id=107,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=980,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={43400424},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[108] =
+{
+ 		id=108,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=981,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400422},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[109] =
+{
+ 		id=109,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=981,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400423},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[110] =
+{
+ 		id=110,
+ 		type=1,
+ 		heroId=110003,
+ 		groupId=981,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={43400424},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[111] =
+{
+ 		id=111,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=982,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400071},
+ 		displayHero=1,
+ 		action=23,
+ 		ui=1,
+ 	skipWords=1
+},
+[112] =
+{
+ 		id=112,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=982,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400072},
+ 		displayHero=1,
+ 		action=24,
+ 		ui=1,
+ 	skipWords=1
+},
+[113] =
+{
+ 		id=113,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=982,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400073},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[114] =
+{
+ 		id=114,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=982,
+ 		stepId=4,
+ 		nextStepId={0,0},
+ 		speaker=1,
+ 		words={43400074,43400075},
+ 		displayHero=1,
+ 		task=80001,
+ 		ui=1,
+ 	skipWords=1
+},
+[115] =
+{
+ 		id=115,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=983,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400076},
+ 		displayHero=1,
+ 		action=30,
+ 		ui=1,
+ 	skipWords=1
+},
+[116] =
+{
+ 		id=116,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=983,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400077},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[117] =
+{
+ 		id=117,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=983,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400078},
+ 		displayHero=1,
+ 		action=23,
+ 		ui=1,
+ 	skipWords=1
+},
+[118] =
+{
+ 		id=118,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=983,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400079},
+ 		displayHero=1,
+ 		action=27,
+ 		ui=1,
+ 	skipWords=1
+},
+[119] =
+{
+ 		id=119,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=984,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400332},
+ 		displayHero=1,
+ 		action=28,
+ 		ui=1,
+ 	skipWords=1
+},
+[120] =
+{
+ 		id=120,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=984,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400333},
+ 		displayHero=1,
+ 		action=29,
+ 		ui=1,
+ 	skipWords=1
+},
+[121] =
+{
+ 		id=121,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=984,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400334},
+ 		displayHero=1,
+ 		action=26,
+ 		ui=1,
+ 	skipWords=1
+},
+[122] =
+{
+ 		id=122,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=984,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={43400335},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[123] =
+{
+ 		id=123,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=984,
+ 		stepId=5,
+ 		nextStepId={0,0},
+ 		speaker=1,
+ 		words={43400336,43400337},
+ 		displayHero=1,
+ 		task=80002,
+ 		ui=1,
+ 	skipWords=1
+},
+[124] =
+{
+ 		id=124,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=985,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400328},
+ 		displayHero=1,
+ 		action=26,
+ 		ui=1,
+ 	skipWords=1
+},
+[125] =
+{
+ 		id=125,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=985,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400329},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[126] =
+{
+ 		id=126,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=985,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400330},
+ 		displayHero=1,
+ 		action=27,
+ 		ui=1,
+ 	skipWords=1
+},
+[127] =
+{
+ 		id=127,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=985,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400331},
+ 		displayHero=1,
+ 		action=24,
+ 		ui=1,
+ 	skipWords=1
+},
+[128] =
+{
+ 		id=128,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=986,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400338},
+ 		displayHero=1,
+ 		action=28,
+ 		ui=1,
+ 	skipWords=1
+},
+[129] =
+{
+ 		id=129,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=986,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400339},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[130] =
+{
+ 		id=130,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=986,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400340},
+ 		displayHero=1,
+ 		action=31,
+ 		ui=1,
+ 	skipWords=1
+},
+[131] =
+{
+ 		id=131,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=986,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={43400341},
+ 		displayHero=1,
+ 		action=30,
+ 		ui=1,
+ 	skipWords=1
+},
+[132] =
+{
+ 		id=132,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=986,
+ 		stepId=5,
+ 		nextStepId={0,0},
+ 		speaker=1,
+ 		words={43400342,43400343},
+ 		displayHero=1,
+ 		task=80003,
+ 		ui=1,
+ 	skipWords=1
+},
+[133] =
+{
+ 		id=133,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=987,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400344},
+ 		displayHero=1,
+ 		action=26,
+ 		ui=1,
+ 	skipWords=1
+},
+[134] =
+{
+ 		id=134,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=987,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400345},
+ 		displayHero=1,
+ 		action=23,
+ 		ui=1,
+ 	skipWords=1
+},
+[135] =
+{
+ 		id=135,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=987,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400346},
+ 		displayHero=1,
+ 		action=27,
+ 		ui=1,
+ 	skipWords=1
+},
+[136] =
+{
+ 		id=136,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=987,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400347},
+ 		displayHero=1,
+ 		action=30,
+ 		ui=1,
+ 	skipWords=1
+},
+[137] =
+{
+ 		id=137,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=988,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400348},
+ 		displayHero=1,
+ 		action=26,
+ 		ui=1,
+ 	skipWords=1
+},
+[138] =
+{
+ 		id=138,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=988,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400349},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[139] =
+{
+ 		id=139,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=988,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400350},
+ 		displayHero=1,
+ 		action=28,
+ 		ui=1,
+ 	skipWords=1
+},
+[140] =
+{
+ 		id=140,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=988,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={43400351},
+ 		displayHero=1,
+ 		action=23,
+ 		ui=1,
+ 	skipWords=1
+},
+[141] =
+{
+ 		id=141,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=988,
+ 		stepId=5,
+ 		nextStepId={0,0},
+ 		speaker=1,
+ 		words={43400352,43400353},
+ 		displayHero=1,
+ 		task=80004,
+ 		ui=1,
+ 	skipWords=1
+},
+[142] =
+{
+ 		id=142,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=989,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400354},
+ 		displayHero=1,
+ 		action=30,
+ 		ui=1,
+ 	skipWords=1
+},
+[143] =
+{
+ 		id=143,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=989,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400355},
+ 		displayHero=1,
+ 		action=23,
+ 		ui=1,
+ 	skipWords=1
+},
+[144] =
+{
+ 		id=144,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=989,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400356},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[145] =
+{
+ 		id=145,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=989,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400357},
+ 		displayHero=1,
+ 		action=27,
+ 		ui=1,
+ 	skipWords=1
+},
+[146] =
+{
+ 		id=146,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=990,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400071},
+ 		displayHero=1,
+ 		action=23,
+ 		ui=1,
+ 	skipWords=1
+},
+[147] =
+{
+ 		id=147,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=990,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400072},
+ 		displayHero=1,
+ 		action=24,
+ 		ui=1,
+ 	skipWords=1
+},
+[148] =
+{
+ 		id=148,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=990,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400073},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[149] =
+{
+ 		id=149,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=990,
+ 		stepId=4,
+ 		nextStepId={0,0},
+ 		speaker=1,
+ 		words={43400074,43400075},
+ 		displayHero=1,
+ 		task=80005,
+ 		ui=1,
+ 	skipWords=1
+},
+[150] =
+{
+ 		id=150,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=991,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400076},
+ 		displayHero=1,
+ 		action=30,
+ 		ui=1,
+ 	skipWords=1
+},
+[151] =
+{
+ 		id=151,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=991,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400077},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[152] =
+{
+ 		id=152,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=991,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400078},
+ 		displayHero=1,
+ 		action=23,
+ 		ui=1,
+ 	skipWords=1
+},
+[153] =
+{
+ 		id=153,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=991,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400079},
+ 		displayHero=1,
+ 		action=27,
+ 		ui=1,
+ 	skipWords=1
+},
+[154] =
+{
+ 		id=154,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=992,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400332},
+ 		displayHero=1,
+ 		action=28,
+ 		ui=1,
+ 	skipWords=1
+},
+[155] =
+{
+ 		id=155,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=992,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400333},
+ 		displayHero=1,
+ 		action=29,
+ 		ui=1,
+ 	skipWords=1
+},
+[156] =
+{
+ 		id=156,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=992,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400334},
+ 		displayHero=1,
+ 		action=26,
+ 		ui=1,
+ 	skipWords=1
+},
+[157] =
+{
+ 		id=157,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=992,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={43400335},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[158] =
+{
+ 		id=158,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=992,
+ 		stepId=5,
+ 		nextStepId={0,0},
+ 		speaker=1,
+ 		words={43400336,43400337},
+ 		displayHero=1,
+ 		task=80006,
+ 		ui=1,
+ 	skipWords=1
+},
+[159] =
+{
+ 		id=159,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=993,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400328},
+ 		displayHero=1,
+ 		action=26,
+ 		ui=1,
+ 	skipWords=1
+},
+[160] =
+{
+ 		id=160,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=993,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400329},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[161] =
+{
+ 		id=161,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=993,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400330},
+ 		displayHero=1,
+ 		action=27,
+ 		ui=1,
+ 	skipWords=1
+},
+[162] =
+{
+ 		id=162,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=993,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400331},
+ 		displayHero=1,
+ 		action=24,
+ 		ui=1,
+ 	skipWords=1
+},
+[163] =
+{
+ 		id=163,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=994,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400338},
+ 		displayHero=1,
+ 		action=28,
+ 		ui=1,
+ 	skipWords=1
+},
+[164] =
+{
+ 		id=164,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=994,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400339},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[165] =
+{
+ 		id=165,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=994,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400340},
+ 		displayHero=1,
+ 		action=31,
+ 		ui=1,
+ 	skipWords=1
+},
+[166] =
+{
+ 		id=166,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=994,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={43400341},
+ 		displayHero=1,
+ 		action=30,
+ 		ui=1,
+ 	skipWords=1
+},
+[167] =
+{
+ 		id=167,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=994,
+ 		stepId=5,
+ 		nextStepId={0,0},
+ 		speaker=1,
+ 		words={43400342,43400343},
+ 		displayHero=1,
+ 		task=80007,
+ 		ui=1,
+ 	skipWords=1
+},
+[168] =
+{
+ 		id=168,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=995,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400344},
+ 		displayHero=1,
+ 		action=26,
+ 		ui=1,
+ 	skipWords=1
+},
+[169] =
+{
+ 		id=169,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=995,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400345},
+ 		displayHero=1,
+ 		action=23,
+ 		ui=1,
+ 	skipWords=1
+},
+[170] =
+{
+ 		id=170,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=995,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400346},
+ 		displayHero=1,
+ 		action=27,
+ 		ui=1,
+ 	skipWords=1
+},
+[171] =
+{
+ 		id=171,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=995,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400347},
+ 		displayHero=1,
+ 		action=30,
+ 		ui=1,
+ 	skipWords=1
+},
+[172] =
+{
+ 		id=172,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=996,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400348},
+ 		displayHero=1,
+ 		action=26,
+ 		ui=1,
+ 	skipWords=1
+},
+[173] =
+{
+ 		id=173,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=996,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400349},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[174] =
+{
+ 		id=174,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=996,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400350},
+ 		displayHero=1,
+ 		action=28,
+ 		ui=1,
+ 	skipWords=1
+},
+[175] =
+{
+ 		id=175,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=996,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={43400351},
+ 		displayHero=1,
+ 		action=23,
+ 		ui=1,
+ 	skipWords=1
+},
+[176] =
+{
+ 		id=176,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=996,
+ 		stepId=5,
+ 		nextStepId={0,0},
+ 		speaker=1,
+ 		words={43400352,43400353},
+ 		displayHero=1,
+ 		task=80008,
+ 		ui=1,
+ 	skipWords=1
+},
+[177] =
+{
+ 		id=177,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=997,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400354},
+ 		displayHero=1,
+ 		action=30,
+ 		ui=1,
+ 	skipWords=1
+},
+[178] =
+{
+ 		id=178,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=997,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400355},
+ 		displayHero=1,
+ 		action=23,
+ 		ui=1,
+ 	skipWords=1
+},
+[179] =
+{
+ 		id=179,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=997,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400356},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[180] =
+{
+ 		id=180,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=997,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400357},
+ 		displayHero=1,
+ 		action=27,
+ 		ui=1,
+ 	skipWords=1
+},
+[181] =
+{
+ 		id=181,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=998,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400348},
+ 		displayHero=1,
+ 		action=26,
+ 		ui=1,
+ 	skipWords=1
+},
+[182] =
+{
+ 		id=182,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=998,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400349},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[183] =
+{
+ 		id=183,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=998,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400350},
+ 		displayHero=1,
+ 		action=28,
+ 		ui=1,
+ 	skipWords=1
+},
+[184] =
+{
+ 		id=184,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=998,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={43400351},
+ 		displayHero=1,
+ 		action=23,
+ 		ui=1,
+ 	skipWords=1
+},
+[185] =
+{
+ 		id=185,
+ 		type=3,
+ 		heroId=110003,
+ 		groupId=998,
+ 		stepId=5,
+ 		nextStepId={0,0},
+ 		speaker=1,
+ 		words={43400352,43400353},
+ 		displayHero=1,
+ 		task=80009,
+ 		ui=1,
+ 	skipWords=1
+},
+[186] =
+{
+ 		id=186,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=999,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400354},
+ 		displayHero=1,
+ 		action=30,
+ 		ui=1,
+ 	skipWords=1
+},
+[187] =
+{
+ 		id=187,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=999,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400355},
+ 		displayHero=1,
+ 		action=23,
+ 		ui=1,
+ 	skipWords=1
+},
+[188] =
+{
+ 		id=188,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=999,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400356},
+ 		displayHero=1,
+ 		action=25,
+ 		ui=1,
+ 	skipWords=1
+},
+[189] =
+{
+ 		id=189,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=999,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400357},
+ 		displayHero=1,
+ 		action=27,
+ 		ui=1,
+ 	skipWords=1
+},
+[190] =
+{
+ 		id=190,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1000,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		words={43600001},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[191] =
+{
+ 		id=191,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1001,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		words={43600002},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[192] =
+{
+ 		id=192,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1002,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		words={43600003},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[193] =
+{
+ 		id=193,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=1,
+ 		nextStepId={2,14},
+ 		speaker=1,
+ 		words={43600005,43600006},
+ 		displayHero=1,
+ 		action=2005,
+ 		ui=1,
+ 	skipWords=1
+},
+[194] =
+{
+ 		id=194,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43600014},
+ 		displayHero=1,
+ 		action=2014,
+ 		ui=1,
+ 	skipWords=1
+},
+[195] =
+{
+ 		id=195,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43600015},
+ 		displayHero=1,
+ 		action=2015,
+ 		ui=1,
+ 	skipWords=1
+},
+[196] =
+{
+ 		id=196,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		speaker=1,
+ 		words={43600016},
+ 		displayHero=1,
+ 		action=2016,
+ 		ui=1,
+ 	skipWords=1
+},
+[197] =
+{
+ 		id=197,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={43600017},
+ 		displayHero=1,
+ 		action=2017,
+ 		ui=1,
+ 	skipWords=1
+},
+[198] =
+{
+ 		id=198,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={43600018},
+ 		displayHero=1,
+ 		action=2018,
+ 		ui=1,
+ 	skipWords=1
+},
+[199] =
+{
+ 		id=199,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=7,
+ 		nextStepId={8},
+ 		speaker=1,
+ 		words={43600019},
+ 		displayHero=1,
+ 		action=2019,
+ 		ui=1,
+ 	skipWords=1
+},
+[200] =
+{
+ 		id=200,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=8,
+ 		nextStepId={9},
+ 		words={43600020},
+ 		displayHero=1,
+ 		action=2020,
+ 		ui=1,
+ 	skipWords=1
+},
+[201] =
+{
+ 		id=201,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=9,
+ 		nextStepId={10},
+ 		words={43600021},
+ 		displayHero=1,
+ 		action=2021,
+ 		ui=1,
+ 	skipWords=1
+},
+[202] =
+{
+ 		id=202,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=10,
+ 		nextStepId={11},
+ 		words={43600022},
+ 		displayHero=1,
+ 		action=2022,
+ 		ui=1,
+ 	skipWords=1
+},
+[203] =
+{
+ 		id=203,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=11,
+ 		nextStepId={12},
+ 		words={43600023},
+ 		displayHero=1,
+ 		action=2023,
+ 		ui=1,
+ 	skipWords=1
+},
+[204] =
+{
+ 		id=204,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=12,
+ 		nextStepId={13},
+ 		words={43600024},
+ 		displayHero=1,
+ 		action=2024,
+ 		ui=1,
+ 	skipWords=1
+},
+[205] =
+{
+ 		id=205,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=13,
+ 		nextStepId={18},
+ 		words={43600025},
+ 		displayHero=1,
+ 		action=2025,
+ 		ui=1,
+ 	skipWords=1
+},
+[206] =
+{
+ 		id=206,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=14,
+ 		nextStepId={15},
+ 		words={43600009},
+ 		displayHero=1,
+ 		action=2009,
+ 		ui=1,
+ 	skipWords=1
+},
+[207] =
+{
+ 		id=207,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=15,
+ 		nextStepId={16},
+ 		words={43600010},
+ 		displayHero=1,
+ 		action=2010,
+ 		ui=1,
+ 	skipWords=1
+},
+[208] =
+{
+ 		id=208,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=16,
+ 		nextStepId={17},
+ 		words={43600011},
+ 		displayHero=1,
+ 		action=2011,
+ 		ui=1,
+ 	skipWords=1
+},
+[209] =
+{
+ 		id=209,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=17,
+ 		nextStepId={2},
+ 		speaker=1,
+ 		words={43600012},
+ 		displayHero=1,
+ 		action=2012,
+ 		ui=1,
+ 	skipWords=1
+},
+[210] =
+{
+ 		id=210,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=18,
+ 		nextStepId={19,20},
+ 		words={43600026,43600027},
+ 		displayHero=1,
+ 		action=2026,
+ 		ui=1,
+ 	skipWords=1
+},
+[211] =
+{
+ 		id=211,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=19,
+ 		nextStepId={21},
+ 		words={43600030},
+ 		displayHero=1,
+ 		action=2030,
+ 		ui=1,
+ 	skipWords=1
+},
+[212] =
+{
+ 		id=212,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=20,
+ 		nextStepId={21},
+ 		words={43600033},
+ 		displayHero=1,
+ 		action=2033,
+ 		ui=1,
+ 	skipWords=1
+},
+[213] =
+{
+ 		id=213,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=21,
+ 		nextStepId={22},
+ 		words={43600035},
+ 		displayHero=1,
+ 		action=2035,
+ 		ui=1,
+ 	skipWords=1
+},
+[214] =
+{
+ 		id=214,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=22,
+ 		nextStepId={23},
+ 		words={43600036},
+ 		displayHero=1,
+ 		action=2036,
+ 		ui=1,
+ 	skipWords=1
+},
+[215] =
+{
+ 		id=215,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1003,
+ 		stepId=23,
+ 		nextStepId={0},
+ 		words={43600037},
+ 		displayHero=1,
+ 		action=2037,
+ 		ui=1,
+ 		skip={1},
+ 	skipWords=1
+},
+[216] =
+{
+ 		id=216,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1004,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		words={43600038},
+ 		displayHero=1,
+ 		action=2038,
+ 		ui=1,
+ 	skipWords=1
+},
+[217] =
+{
+ 		id=217,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1005,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		words={43600039},
+ 		displayHero=1,
+ 		action=2039,
+ 		ui=1,
+ 	skipWords=1
+},
+[218] =
+{
+ 		id=218,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=1,
+ 		nextStepId={2,13},
+ 		speaker=1,
+ 		words={43600040,43600041},
+ 		displayHero=1,
+ 		action=2040,
+ 		ui=1,
+ 	skipWords=1
+},
+[219] =
+{
+ 		id=219,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43600044},
+ 		displayHero=1,
+ 		action=2044,
+ 		ui=1,
+ 	skipWords=1
+},
+[220] =
+{
+ 		id=220,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=3,
+ 		nextStepId={4,4},
+ 		speaker=1,
+ 		words={43600045,43600046},
+ 		displayHero=1,
+ 		action=2045,
+ 		ui=1,
+ 	skipWords=1
+},
+[221] =
+{
+ 		id=221,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={43600047},
+ 		displayHero=1,
+ 		action=2047,
+ 		ui=1,
+ 	skipWords=1
+},
+[222] =
+{
+ 		id=222,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={43600048},
+ 		displayHero=1,
+ 		action=2048,
+ 		ui=1,
+ 	skipWords=1
+},
+[223] =
+{
+ 		id=223,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={43600049},
+ 		displayHero=1,
+ 		action=2049,
+ 		ui=1,
+ 	skipWords=1
+},
+[224] =
+{
+ 		id=224,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=7,
+ 		nextStepId={8},
+ 		words={43600050},
+ 		displayHero=1,
+ 		action=2050,
+ 		ui=1,
+ 	skipWords=1
+},
+[225] =
+{
+ 		id=225,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=8,
+ 		nextStepId={9},
+ 		words={43600051},
+ 		displayHero=1,
+ 		action=2051,
+ 		ui=1,
+ 	skipWords=1
+},
+[226] =
+{
+ 		id=226,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=9,
+ 		nextStepId={10},
+ 		words={43600052},
+ 		displayHero=1,
+ 		action=2052,
+ 		ui=1,
+ 	skipWords=1
+},
+[227] =
+{
+ 		id=227,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=10,
+ 		nextStepId={11,11},
+ 		speaker=1,
+ 		words={43600053,43600054},
+ 		displayHero=1,
+ 		action=2053,
+ 		ui=1,
+ 	skipWords=1
+},
+[228] =
+{
+ 		id=228,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=11,
+ 		nextStepId={12},
+ 		words={43600055},
+ 		displayHero=1,
+ 		action=2055,
+ 		ui=1,
+ 	skipWords=1
+},
+[229] =
+{
+ 		id=229,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=12,
+ 		nextStepId={23},
+ 		words={43600056},
+ 		displayHero=1,
+ 		action=2056,
+ 		ui=1,
+ 	skipWords=1
+},
+[230] =
+{
+ 		id=230,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=13,
+ 		nextStepId={14},
+ 		words={43600059},
+ 		displayHero=1,
+ 		action=2059,
+ 		ui=1,
+ 	skipWords=1
+},
+[231] =
+{
+ 		id=231,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=14,
+ 		nextStepId={15},
+ 		words={43600060},
+ 		displayHero=1,
+ 		action=2060,
+ 		ui=1,
+ 	skipWords=1
+},
+[232] =
+{
+ 		id=232,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=15,
+ 		nextStepId={16},
+ 		speaker=1,
+ 		words={43600061},
+ 		displayHero=1,
+ 		action=2061,
+ 		ui=1,
+ 	skipWords=1
+},
+[233] =
+{
+ 		id=233,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=16,
+ 		nextStepId={17},
+ 		words={43600062},
+ 		displayHero=1,
+ 		action=2062,
+ 		ui=1,
+ 	skipWords=1
+},
+[234] =
+{
+ 		id=234,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=17,
+ 		nextStepId={18},
+ 		words={43600063},
+ 		displayHero=1,
+ 		action=2063,
+ 		ui=1,
+ 	skipWords=1
+},
+[235] =
+{
+ 		id=235,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=18,
+ 		nextStepId={19},
+ 		words={43600064},
+ 		displayHero=1,
+ 		action=2064,
+ 		ui=1,
+ 	skipWords=1
+},
+[236] =
+{
+ 		id=236,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=19,
+ 		nextStepId={20},
+ 		words={43600065},
+ 		displayHero=1,
+ 		action=2065,
+ 		ui=1,
+ 	skipWords=1
+},
+[237] =
+{
+ 		id=237,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=20,
+ 		nextStepId={21},
+ 		words={43600066},
+ 		displayHero=1,
+ 		action=2066,
+ 		ui=1,
+ 	skipWords=1
+},
+[238] =
+{
+ 		id=238,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=21,
+ 		nextStepId={22,22},
+ 		speaker=1,
+ 		words={43600067,43600068},
+ 		displayHero=1,
+ 		action=2067,
+ 		ui=1,
+ 	skipWords=1
+},
+[239] =
+{
+ 		id=239,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=22,
+ 		nextStepId={23},
+ 		words={43600069},
+ 		displayHero=1,
+ 		action=2069,
+ 		ui=1,
+ 	skipWords=1
+},
+[240] =
+{
+ 		id=240,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=23,
+ 		nextStepId={24},
+ 		words={43600072},
+ 		displayHero=1,
+ 		action=2072,
+ 		ui=1,
+ 	skipWords=1
+},
+[241] =
+{
+ 		id=241,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=24,
+ 		nextStepId={25},
+ 		words={43600073},
+ 		displayHero=1,
+ 		action=2073,
+ 		ui=1,
+ 	skipWords=1
+},
+[242] =
+{
+ 		id=242,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1006,
+ 		stepId=25,
+ 		nextStepId={0},
+ 		words={43600074},
+ 		displayHero=1,
+ 		action=2074,
+ 		ui=1,
+ 	skipWords=1
+},
+[243] =
+{
+ 		id=243,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43600075},
+ 		displayHero=1,
+ 		action=2079,
+ 		ui=1,
+ 	skipWords=1
+},
+[244] =
+{
+ 		id=244,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43600076},
+ 		displayHero=1,
+ 		action=2080,
+ 		ui=1,
+ 	skipWords=1
+},
+[245] =
+{
+ 		id=245,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		speaker=1,
+ 		words={43600078},
+ 		displayHero=1,
+ 		action=2082,
+ 		ui=1,
+ 	skipWords=1
+},
+[246] =
+{
+ 		id=246,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={43600079},
+ 		displayHero=1,
+ 		action=2083,
+ 		ui=1,
+ 	skipWords=1
+},
+[247] =
+{
+ 		id=247,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={43600083},
+ 		displayHero=1,
+ 		action=2087,
+ 		ui=1,
+ 	skipWords=1
+},
+[248] =
+{
+ 		id=248,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		speaker=1,
+ 		words={43600084},
+ 		displayHero=1,
+ 		action=2088,
+ 		ui=1,
+ 	skipWords=1
+},
+[249] =
+{
+ 		id=249,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=7,
+ 		nextStepId={8},
+ 		words={43600085},
+ 		displayHero=1,
+ 		action=2089,
+ 		ui=1,
+ 	skipWords=1
+},
+[250] =
+{
+ 		id=250,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=8,
+ 		nextStepId={9},
+ 		words={43600086},
+ 		displayHero=1,
+ 		action=2090,
+ 		ui=1,
+ 	skipWords=1
+},
+[251] =
+{
+ 		id=251,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=9,
+ 		nextStepId={10,10},
+ 		speaker=1,
+ 		words={43600087,43600088},
+ 		displayHero=1,
+ 		action=2091,
+ 		ui=1,
+ 	skipWords=1
+},
+[252] =
+{
+ 		id=252,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=10,
+ 		nextStepId={11},
+ 		words={43600089},
+ 		displayHero=1,
+ 		action=2093,
+ 		ui=1,
+ 	skipWords=1
+},
+[253] =
+{
+ 		id=253,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=11,
+ 		nextStepId={12},
+ 		words={43600090},
+ 		displayHero=1,
+ 		action=2094,
+ 		ui=1,
+ 	skipWords=1
+},
+[254] =
+{
+ 		id=254,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=12,
+ 		nextStepId={13},
+ 		words={43600091},
+ 		displayHero=1,
+ 		action=2095,
+ 		ui=1,
+ 	skipWords=1
+},
+[255] =
+{
+ 		id=255,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=13,
+ 		nextStepId={14,14},
+ 		speaker=1,
+ 		words={43600092,43600093},
+ 		displayHero=1,
+ 		action=2096,
+ 		ui=1,
+ 	skipWords=1
+},
+[256] =
+{
+ 		id=256,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=14,
+ 		nextStepId={15},
+ 		words={43600094},
+ 		displayHero=1,
+ 		action=2098,
+ 		ui=1,
+ 	skipWords=1
+},
+[257] =
+{
+ 		id=257,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=15,
+ 		nextStepId={16},
+ 		words={43600095},
+ 		displayHero=1,
+ 		action=2099,
+ 		ui=1,
+ 	skipWords=1
+},
+[258] =
+{
+ 		id=258,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=16,
+ 		nextStepId={17},
+ 		words={43600096},
+ 		displayHero=1,
+ 		action=2100,
+ 		ui=1,
+ 	skipWords=1
+},
+[259] =
+{
+ 		id=259,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=17,
+ 		nextStepId={18,18},
+ 		speaker=1,
+ 		words={43600097,43600098},
+ 		displayHero=1,
+ 		action=2101,
+ 		ui=1,
+ 	skipWords=1
+},
+[260] =
+{
+ 		id=260,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=18,
+ 		nextStepId={19},
+ 		words={43600099},
+ 		displayHero=1,
+ 		action=2103,
+ 		ui=1,
+ 	skipWords=1
+},
+[261] =
+{
+ 		id=261,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1007,
+ 		stepId=19,
+ 		nextStepId={0},
+ 		words={43600100},
+ 		displayHero=1,
+ 		action=2104,
+ 		ui=1,
+ 	skipWords=1
+},
+[262] =
+{
+ 		id=262,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1008,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		words={43600101},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[263] =
+{
+ 		id=263,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1009,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		words={43600102},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[264] =
+{
+ 		id=264,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1010,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		words={43600103},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[265] =
+{
+ 		id=265,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1011,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		words={43600104},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[266] =
+{
+ 		id=266,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1012,
+ 		stepId=1,
+ 		nextStepId={2,2},
+ 		speaker=1,
+ 		words={43600105,43600106},
+ 		displayHero=1,
+ 		action=2109,
+ 		ui=1,
+ 	skipWords=1
+},
+[267] =
+{
+ 		id=267,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1012,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43600107},
+ 		displayHero=1,
+ 		action=2111,
+ 		ui=1,
+ 	skipWords=1
+},
+[268] =
+{
+ 		id=268,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1012,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43600108},
+ 		displayHero=1,
+ 		action=2112,
+ 		ui=1,
+ 	skipWords=1
+},
+[269] =
+{
+ 		id=269,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1012,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43600109},
+ 		displayHero=1,
+ 		action=2113,
+ 		ui=1,
+ 	skipWords=1
+},
+[270] =
+{
+ 		id=270,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1013,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43600168},
+ 		displayHero=1,
+ 		action=27007,
+ 		task=80010,
+ 		ui=1,
+ 	skipWords=2
+},
+[271] =
+{
+ 		id=271,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1013,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43600169},
+ 		displayHero=1,
+ 		action=27008,
+ 		ui=1,
+ 	skipWords=1
+},
+[272] =
+{
+ 		id=272,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1013,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		speaker=1,
+ 		words={43600170},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[273] =
+{
+ 		id=273,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1013,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43600171},
+ 		displayHero=1,
+ 		action=27009,
+ 		ui=1,
+ 	skipWords=1
+},
+[274] =
+{
+ 		id=274,
+ 		type=12,
+ 		heroId=110003,
+ 		groupId=1014,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[275] =
+{
+ 		id=275,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1015,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43600172},
+ 		displayHero=1,
+ 		action=28201,
+ 		task=80011,
+ 		ui=1,
+ 	skipWords=2
+},
+[276] =
+{
+ 		id=276,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1015,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43600173},
+ 		displayHero=1,
+ 		action=28202,
+ 		ui=1,
+ 	skipWords=1
+},
+[277] =
+{
+ 		id=277,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1015,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43600174},
+ 		displayHero=1,
+ 		action=28203,
+ 		ui=1,
+ 	skipWords=1
+},
+[278] =
+{
+ 		id=278,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1015,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={43600175},
+ 		displayHero=1,
+ 		action=28204,
+ 		ui=1,
+ 	skipWords=1
+},
+[279] =
+{
+ 		id=279,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1015,
+ 		stepId=5,
+ 		nextStepId={6,8},
+ 		speaker=1,
+ 		words={43600176,43600177},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[280] =
+{
+ 		id=280,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1015,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={43600178},
+ 		displayHero=1,
+ 		action=28205,
+ 		ui=1,
+ 	skipWords=1
+},
+[281] =
+{
+ 		id=281,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1015,
+ 		stepId=7,
+ 		nextStepId={0},
+ 		words={43600179},
+ 		displayHero=1,
+ 		action=28206,
+ 		ui=1,
+ 	skipWords=1
+},
+[282] =
+{
+ 		id=282,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1015,
+ 		stepId=8,
+ 		nextStepId={9},
+ 		words={43600180},
+ 		displayHero=1,
+ 		action=28207,
+ 		ui=1,
+ 	skipWords=1
+},
+[283] =
+{
+ 		id=283,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1015,
+ 		stepId=9,
+ 		nextStepId={0},
+ 		words={43600181},
+ 		displayHero=1,
+ 		action=28208,
+ 		ui=1,
+ 	skipWords=1
+},
+[284] =
+{
+ 		id=284,
+ 		type=12,
+ 		heroId=110003,
+ 		groupId=1016,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[285] =
+{
+ 		id=285,
+ 		type=6,
+ 		heroId=110003,
+ 		groupId=1017,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		displayHero=1,
+ 		task=80012,
+ 		ui=1,
+ 	skipWords=1
+},
+[286] =
+{
+ 		id=286,
+ 		type=12,
+ 		heroId=110003,
+ 		groupId=1018,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[287] =
+{
+ 		id=287,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1019,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43600182},
+ 		displayHero=1,
+ 		action=29401,
+ 		task=80013,
+ 		ui=1,
+ 	skipWords=2
+},
+[288] =
+{
+ 		id=288,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1019,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43600183},
+ 		displayHero=1,
+ 		action=29402,
+ 		ui=1,
+ 	skipWords=1
+},
+[289] =
+{
+ 		id=289,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1019,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={43600184},
+ 		displayHero=1,
+ 		action=29403,
+ 		ui=1,
+ 	skipWords=1
+},
+[290] =
+{
+ 		id=290,
+ 		type=12,
+ 		heroId=110003,
+ 		groupId=1020,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[291] =
+{
+ 		id=291,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1021,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		speaker=2,
+ 		words={43600185},
+ 		displayHero=1,
+ 		action=2143,
+ 		ui=1,
+ 	skipWords=1
+},
+[292] =
+{
+ 		id=292,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1021,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		displayHero=1,
+ 		task=80014,
+ 		ui=1,
+ 		itemTask={1402,1,1403,1},
+ 	skipWords=2
+},
+[293] =
+{
+ 		id=293,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1021,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		speaker=2,
+ 		words={43600186},
+ 		displayHero=1,
+ 		action=2132,
+ 		ui=1,
+ 	skipWords=1
+},
+[294] =
+{
+ 		id=294,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1021,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43600187},
+ 		displayHero=1,
+ 		action=2145,
+ 		ui=1,
+ 	skipWords=1
+},
+[295] =
+{
+ 		id=295,
+ 		type=12,
+ 		heroId=110003,
+ 		groupId=1022,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[296] =
+{
+ 		id=296,
+ 		type=6,
+ 		heroId=110003,
+ 		groupId=1023,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		displayHero=1,
+ 		task=80015,
+ 		ui=1,
+ 	skipWords=1
+},
+[297] =
+{
+ 		id=297,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1024,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43600147},
+ 		displayHero=1,
+ 		action=2114,
+ 		ui=1,
+ 	skipWords=1
+},
+[298] =
+{
+ 		id=298,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1024,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43600148},
+ 		displayHero=1,
+ 		action=2119,
+ 		ui=1,
+ 	skipWords=1
+},
+[299] =
+{
+ 		id=299,
+ 		type=4,
+ 		heroId=110003,
+ 		groupId=1024,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={43600149},
+ 		displayHero=1,
+ 		action=2118,
+ 		ui=1,
+ 	skipWords=1
+},
+[300] =
+{
+ 		id=300,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1101,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000001},
+ 		displayHero=1,
+ 		action=2151,
+ 		ui=1,
+ 	skipWords=1
+},
+[301] =
+{
+ 		id=301,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1101,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000002,52000003,52000004},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[302] =
+{
+ 		id=302,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1101,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000005},
+ 		displayHero=1,
+ 		action=2152,
+ 		ui=1,
+ 	skipWords=1
+},
+[303] =
+{
+ 		id=303,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1101,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000006},
+ 		displayHero=1,
+ 		action=2153,
+ 		ui=1,
+ 	skipWords=1
+},
+[304] =
+{
+ 		id=304,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1101,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000007},
+ 		displayHero=1,
+ 		action=2154,
+ 		ui=1,
+ 	skipWords=1
+},
+[305] =
+{
+ 		id=305,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1102,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000009},
+ 		displayHero=1,
+ 		action=2156,
+ 		ui=1,
+ 	skipWords=1
+},
+[306] =
+{
+ 		id=306,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1102,
+ 		stepId=2,
+ 		nextStepId={3,3},
+ 		speaker=1,
+ 		words={52000010,52000011},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[307] =
+{
+ 		id=307,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1102,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000012},
+ 		displayHero=1,
+ 		action=2157,
+ 		ui=1,
+ 	skipWords=1
+},
+[308] =
+{
+ 		id=308,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1103,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000017},
+ 		displayHero=1,
+ 		action=2162,
+ 		ui=1,
+ 	skipWords=1
+},
+[309] =
+{
+ 		id=309,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1103,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000018,52000019},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[310] =
+{
+ 		id=310,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1103,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000020},
+ 		displayHero=1,
+ 		action=2163,
+ 		ui=1,
+ 	skipWords=1
+},
+[311] =
+{
+ 		id=311,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1103,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000021},
+ 		displayHero=1,
+ 		action=2164,
+ 		ui=1,
+ 	skipWords=1
+},
+[312] =
+{
+ 		id=312,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1103,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000022},
+ 		displayHero=1,
+ 		action=2165,
+ 		ui=1,
+ 	skipWords=1
+},
+[313] =
+{
+ 		id=313,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1104,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000029},
+ 		displayHero=1,
+ 		action=2172,
+ 		ui=1,
+ 	skipWords=1
+},
+[314] =
+{
+ 		id=314,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1104,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000030,52000031},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[315] =
+{
+ 		id=315,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1104,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000032},
+ 		displayHero=1,
+ 		action=2173,
+ 		ui=1,
+ 	skipWords=1
+},
+[316] =
+{
+ 		id=316,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1104,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000033},
+ 		displayHero=1,
+ 		action=2174,
+ 		ui=1,
+ 	skipWords=1
+},
+[317] =
+{
+ 		id=317,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1105,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000034},
+ 		displayHero=1,
+ 		action=2175,
+ 		ui=1,
+ 	skipWords=1
+},
+[318] =
+{
+ 		id=318,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1105,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000035,52000036},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[319] =
+{
+ 		id=319,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1105,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000037},
+ 		displayHero=1,
+ 		action=2176,
+ 		ui=1,
+ 	skipWords=1
+},
+[320] =
+{
+ 		id=320,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1105,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000038},
+ 		displayHero=1,
+ 		action=2177,
+ 		ui=1,
+ 	skipWords=1
+},
+[321] =
+{
+ 		id=321,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1106,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000040},
+ 		displayHero=1,
+ 		action=2179,
+ 		ui=1,
+ 	skipWords=1
+},
+[322] =
+{
+ 		id=322,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1106,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000041,52000042},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[323] =
+{
+ 		id=323,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1106,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000043},
+ 		displayHero=1,
+ 		action=2180,
+ 		ui=1,
+ 	skipWords=1
+},
+[324] =
+{
+ 		id=324,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1106,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000044},
+ 		displayHero=1,
+ 		action=2181,
+ 		ui=1,
+ 	skipWords=1
+},
+[325] =
+{
+ 		id=325,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1106,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000045},
+ 		displayHero=1,
+ 		action=2182,
+ 		ui=1,
+ 	skipWords=1
+},
+[326] =
+{
+ 		id=326,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1107,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000048},
+ 		displayHero=1,
+ 		action=2185,
+ 		ui=1,
+ 	skipWords=1
+},
+[327] =
+{
+ 		id=327,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1107,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000049,52000050},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[328] =
+{
+ 		id=328,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1107,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000051},
+ 		displayHero=1,
+ 		action=2186,
+ 		ui=1,
+ 	skipWords=1
+},
+[329] =
+{
+ 		id=329,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1107,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000052},
+ 		displayHero=1,
+ 		action=2187,
+ 		ui=1,
+ 	skipWords=1
+},
+[330] =
+{
+ 		id=330,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1107,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000053},
+ 		displayHero=1,
+ 		action=2188,
+ 		ui=1,
+ 	skipWords=1
+},
+[331] =
+{
+ 		id=331,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1108,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000056},
+ 		displayHero=1,
+ 		action=2191,
+ 		ui=1,
+ 	skipWords=1
+},
+[332] =
+{
+ 		id=332,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1108,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000057,52000058,52000059},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[333] =
+{
+ 		id=333,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1108,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000060},
+ 		displayHero=1,
+ 		action=2192,
+ 		ui=1,
+ 	skipWords=1
+},
+[334] =
+{
+ 		id=334,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1108,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000061},
+ 		displayHero=1,
+ 		action=2193,
+ 		ui=1,
+ 	skipWords=1
+},
+[335] =
+{
+ 		id=335,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1108,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000062},
+ 		displayHero=1,
+ 		action=2194,
+ 		ui=1,
+ 	skipWords=1
+},
+[336] =
+{
+ 		id=336,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1109,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000064},
+ 		displayHero=1,
+ 		action=2196,
+ 		ui=1,
+ 	skipWords=1
+},
+[337] =
+{
+ 		id=337,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1109,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000065,52000066},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[338] =
+{
+ 		id=338,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1109,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000067},
+ 		displayHero=1,
+ 		action=2197,
+ 		ui=1,
+ 	skipWords=1
+},
+[339] =
+{
+ 		id=339,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1109,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000068},
+ 		displayHero=1,
+ 		action=2198,
+ 		ui=1,
+ 	skipWords=1
+},
+[340] =
+{
+ 		id=340,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1109,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000069},
+ 		displayHero=1,
+ 		action=2199,
+ 		ui=1,
+ 	skipWords=1
+},
+[341] =
+{
+ 		id=341,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1109,
+ 		stepId=4,
+ 		nextStepId={7},
+ 		words={52000070},
+ 		displayHero=1,
+ 		action=2200,
+ 		ui=1,
+ 	skipWords=1
+},
+[342] =
+{
+ 		id=342,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1109,
+ 		stepId=7,
+ 		nextStepId={0},
+ 		words={52000071},
+ 		displayHero=1,
+ 		action=2201,
+ 		ui=1,
+ 	skipWords=1
+},
+[343] =
+{
+ 		id=343,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1110,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000075},
+ 		displayHero=1,
+ 		action=2205,
+ 		ui=1,
+ 	skipWords=1
+},
+[344] =
+{
+ 		id=344,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1110,
+ 		stepId=2,
+ 		nextStepId={0},
+ 		words={52000076},
+ 		displayHero=1,
+ 		action=2206,
+ 		ui=1,
+ 	skipWords=1
+},
+[345] =
+{
+ 		id=345,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1111,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000077},
+ 		displayHero=1,
+ 		action=2207,
+ 		ui=1,
+ 	skipWords=1
+},
+[346] =
+{
+ 		id=346,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1111,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000078,52000079,52000080},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[347] =
+{
+ 		id=347,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1111,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000081},
+ 		displayHero=1,
+ 		action=2208,
+ 		ui=1,
+ 	skipWords=1
+},
+[348] =
+{
+ 		id=348,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1111,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000082},
+ 		displayHero=1,
+ 		action=2209,
+ 		ui=1,
+ 	skipWords=1
+},
+[349] =
+{
+ 		id=349,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1111,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000083},
+ 		displayHero=1,
+ 		action=2210,
+ 		ui=1,
+ 	skipWords=1
+},
+[350] =
+{
+ 		id=350,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1111,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000084},
+ 		displayHero=1,
+ 		action=2211,
+ 		ui=1,
+ 	skipWords=1
+},
+[351] =
+{
+ 		id=351,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1201,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000001},
+ 		displayHero=1,
+ 		action=12151,
+ 		ui=1,
+ 	skipWords=1
+},
+[352] =
+{
+ 		id=352,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1201,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000002,52000003,52000004},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[353] =
+{
+ 		id=353,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1201,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000005},
+ 		displayHero=1,
+ 		action=12152,
+ 		ui=1,
+ 	skipWords=1
+},
+[354] =
+{
+ 		id=354,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1201,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000006},
+ 		displayHero=1,
+ 		action=12153,
+ 		ui=1,
+ 	skipWords=1
+},
+[355] =
+{
+ 		id=355,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1201,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000007},
+ 		displayHero=1,
+ 		action=12154,
+ 		ui=1,
+ 	skipWords=1
+},
+[356] =
+{
+ 		id=356,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1202,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000009},
+ 		displayHero=1,
+ 		action=12156,
+ 		ui=1,
+ 	skipWords=1
+},
+[357] =
+{
+ 		id=357,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1202,
+ 		stepId=2,
+ 		nextStepId={3,3},
+ 		speaker=1,
+ 		words={52000010,52000011},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[358] =
+{
+ 		id=358,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1202,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000012},
+ 		displayHero=1,
+ 		action=12157,
+ 		ui=1,
+ 	skipWords=1
+},
+[359] =
+{
+ 		id=359,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1203,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000017},
+ 		displayHero=1,
+ 		action=12162,
+ 		ui=1,
+ 	skipWords=1
+},
+[360] =
+{
+ 		id=360,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1203,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000018,52000019},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[361] =
+{
+ 		id=361,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1203,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000020},
+ 		displayHero=1,
+ 		action=12163,
+ 		ui=1,
+ 	skipWords=1
+},
+[362] =
+{
+ 		id=362,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1203,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000021},
+ 		displayHero=1,
+ 		action=12164,
+ 		ui=1,
+ 	skipWords=1
+},
+[363] =
+{
+ 		id=363,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1203,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000022},
+ 		displayHero=1,
+ 		action=12165,
+ 		ui=1,
+ 	skipWords=1
+},
+[364] =
+{
+ 		id=364,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1204,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000029},
+ 		displayHero=1,
+ 		action=12172,
+ 		ui=1,
+ 	skipWords=1
+},
+[365] =
+{
+ 		id=365,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1204,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000030,52000031},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[366] =
+{
+ 		id=366,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1204,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000032},
+ 		displayHero=1,
+ 		action=12173,
+ 		ui=1,
+ 	skipWords=1
+},
+[367] =
+{
+ 		id=367,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1204,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000033},
+ 		displayHero=1,
+ 		action=12174,
+ 		ui=1,
+ 	skipWords=1
+},
+[368] =
+{
+ 		id=368,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1205,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000034},
+ 		displayHero=1,
+ 		action=12175,
+ 		ui=1,
+ 	skipWords=1
+},
+[369] =
+{
+ 		id=369,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1205,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000035,52000036},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[370] =
+{
+ 		id=370,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1205,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000037},
+ 		displayHero=1,
+ 		action=12176,
+ 		ui=1,
+ 	skipWords=1
+},
+[371] =
+{
+ 		id=371,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1205,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000038},
+ 		displayHero=1,
+ 		action=12177,
+ 		ui=1,
+ 	skipWords=1
+},
+[372] =
+{
+ 		id=372,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1206,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000040},
+ 		displayHero=1,
+ 		action=12179,
+ 		ui=1,
+ 	skipWords=1
+},
+[373] =
+{
+ 		id=373,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1206,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000041,52000042},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[374] =
+{
+ 		id=374,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1206,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000043},
+ 		displayHero=1,
+ 		action=12180,
+ 		ui=1,
+ 	skipWords=1
+},
+[375] =
+{
+ 		id=375,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1206,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000044},
+ 		displayHero=1,
+ 		action=12181,
+ 		ui=1,
+ 	skipWords=1
+},
+[376] =
+{
+ 		id=376,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1206,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000045},
+ 		displayHero=1,
+ 		action=12182,
+ 		ui=1,
+ 	skipWords=1
+},
+[377] =
+{
+ 		id=377,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1207,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000048},
+ 		displayHero=1,
+ 		action=12185,
+ 		ui=1,
+ 	skipWords=1
+},
+[378] =
+{
+ 		id=378,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1207,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000049,52000050},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[379] =
+{
+ 		id=379,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1207,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000051},
+ 		displayHero=1,
+ 		action=12186,
+ 		ui=1,
+ 	skipWords=1
+},
+[380] =
+{
+ 		id=380,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1207,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000052},
+ 		displayHero=1,
+ 		action=12187,
+ 		ui=1,
+ 	skipWords=1
+},
+[381] =
+{
+ 		id=381,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1207,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000053},
+ 		displayHero=1,
+ 		action=12188,
+ 		ui=1,
+ 	skipWords=1
+},
+[382] =
+{
+ 		id=382,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1208,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000056},
+ 		displayHero=1,
+ 		action=12191,
+ 		ui=1,
+ 	skipWords=1
+},
+[383] =
+{
+ 		id=383,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1208,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000057,52000058,52000059},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[384] =
+{
+ 		id=384,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1208,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000060},
+ 		displayHero=1,
+ 		action=12192,
+ 		ui=1,
+ 	skipWords=1
+},
+[385] =
+{
+ 		id=385,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1208,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000061},
+ 		displayHero=1,
+ 		action=12193,
+ 		ui=1,
+ 	skipWords=1
+},
+[386] =
+{
+ 		id=386,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1208,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000062},
+ 		displayHero=1,
+ 		action=12194,
+ 		ui=1,
+ 	skipWords=1
+},
+[387] =
+{
+ 		id=387,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1209,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000064},
+ 		displayHero=1,
+ 		action=12196,
+ 		ui=1,
+ 	skipWords=1
+},
+[388] =
+{
+ 		id=388,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1209,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000065,52000066},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[389] =
+{
+ 		id=389,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1209,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000067},
+ 		displayHero=1,
+ 		action=12197,
+ 		ui=1,
+ 	skipWords=1
+},
+[390] =
+{
+ 		id=390,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1209,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000068},
+ 		displayHero=1,
+ 		action=12198,
+ 		ui=1,
+ 	skipWords=1
+},
+[391] =
+{
+ 		id=391,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1209,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000069},
+ 		displayHero=1,
+ 		action=12199,
+ 		ui=1,
+ 	skipWords=1
+},
+[392] =
+{
+ 		id=392,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1209,
+ 		stepId=4,
+ 		nextStepId={7},
+ 		words={52000070},
+ 		displayHero=1,
+ 		action=12200,
+ 		ui=1,
+ 	skipWords=1
+},
+[393] =
+{
+ 		id=393,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1209,
+ 		stepId=7,
+ 		nextStepId={0},
+ 		words={52000071},
+ 		displayHero=1,
+ 		action=12201,
+ 		ui=1,
+ 	skipWords=1
+},
+[394] =
+{
+ 		id=394,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1210,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000075},
+ 		displayHero=1,
+ 		action=12205,
+ 		ui=1,
+ 	skipWords=1
+},
+[395] =
+{
+ 		id=395,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1210,
+ 		stepId=2,
+ 		nextStepId={0},
+ 		words={52000076},
+ 		displayHero=1,
+ 		action=12206,
+ 		ui=1,
+ 	skipWords=1
+},
+[396] =
+{
+ 		id=396,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1211,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000077},
+ 		displayHero=1,
+ 		action=12207,
+ 		ui=1,
+ 	skipWords=1
+},
+[397] =
+{
+ 		id=397,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1211,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000078,52000079,52000080},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[398] =
+{
+ 		id=398,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1211,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000081},
+ 		displayHero=1,
+ 		action=12208,
+ 		ui=1,
+ 	skipWords=1
+},
+[399] =
+{
+ 		id=399,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1211,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000082},
+ 		displayHero=1,
+ 		action=12209,
+ 		ui=1,
+ 	skipWords=1
+},
+[400] =
+{
+ 		id=400,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1211,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000083},
+ 		displayHero=1,
+ 		action=12210,
+ 		ui=1,
+ 	skipWords=1
+},
+[401] =
+{
+ 		id=401,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1211,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000084},
+ 		displayHero=1,
+ 		action=12211,
+ 		ui=1,
+ 	skipWords=1
+},
+[402] =
+{
+ 		id=402,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1301,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000001},
+ 		displayHero=1,
+ 		action=102151,
+ 		ui=1,
+ 	skipWords=1
+},
+[403] =
+{
+ 		id=403,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1301,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000002,52000003,52000004},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[404] =
+{
+ 		id=404,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1301,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000005},
+ 		displayHero=1,
+ 		action=102152,
+ 		ui=1,
+ 	skipWords=1
+},
+[405] =
+{
+ 		id=405,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1301,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000006},
+ 		displayHero=1,
+ 		action=102153,
+ 		ui=1,
+ 	skipWords=1
+},
+[406] =
+{
+ 		id=406,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1301,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000007},
+ 		displayHero=1,
+ 		action=102154,
+ 		ui=1,
+ 	skipWords=1
+},
+[407] =
+{
+ 		id=407,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1302,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000009},
+ 		displayHero=1,
+ 		action=102156,
+ 		ui=1,
+ 	skipWords=1
+},
+[408] =
+{
+ 		id=408,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1302,
+ 		stepId=2,
+ 		nextStepId={3,3},
+ 		speaker=1,
+ 		words={52000010,52000011},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[409] =
+{
+ 		id=409,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1302,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000012},
+ 		displayHero=1,
+ 		action=102157,
+ 		ui=1,
+ 	skipWords=1
+},
+[410] =
+{
+ 		id=410,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1303,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000017},
+ 		displayHero=1,
+ 		action=102162,
+ 		ui=1,
+ 	skipWords=1
+},
+[411] =
+{
+ 		id=411,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1303,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000018,52000019},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[412] =
+{
+ 		id=412,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1303,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000020},
+ 		displayHero=1,
+ 		action=102163,
+ 		ui=1,
+ 	skipWords=1
+},
+[413] =
+{
+ 		id=413,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1303,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000021},
+ 		displayHero=1,
+ 		action=102164,
+ 		ui=1,
+ 	skipWords=1
+},
+[414] =
+{
+ 		id=414,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1303,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000022},
+ 		displayHero=1,
+ 		action=102165,
+ 		ui=1,
+ 	skipWords=1
+},
+[415] =
+{
+ 		id=415,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1304,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000029},
+ 		displayHero=1,
+ 		action=102172,
+ 		ui=1,
+ 	skipWords=1
+},
+[416] =
+{
+ 		id=416,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1304,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000030,52000031},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[417] =
+{
+ 		id=417,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1304,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000032},
+ 		displayHero=1,
+ 		action=102173,
+ 		ui=1,
+ 	skipWords=1
+},
+[418] =
+{
+ 		id=418,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1304,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000033},
+ 		displayHero=1,
+ 		action=102174,
+ 		ui=1,
+ 	skipWords=1
+},
+[419] =
+{
+ 		id=419,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1305,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000034},
+ 		displayHero=1,
+ 		action=102175,
+ 		ui=1,
+ 	skipWords=1
+},
+[420] =
+{
+ 		id=420,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1305,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000035,52000036},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[421] =
+{
+ 		id=421,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1305,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000037},
+ 		displayHero=1,
+ 		action=102176,
+ 		ui=1,
+ 	skipWords=1
+},
+[422] =
+{
+ 		id=422,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1305,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000038},
+ 		displayHero=1,
+ 		action=102177,
+ 		ui=1,
+ 	skipWords=1
+},
+[423] =
+{
+ 		id=423,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1306,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000040},
+ 		displayHero=1,
+ 		action=102179,
+ 		ui=1,
+ 	skipWords=1
+},
+[424] =
+{
+ 		id=424,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1306,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000041,52000042},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[425] =
+{
+ 		id=425,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1306,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000043},
+ 		displayHero=1,
+ 		action=102180,
+ 		ui=1,
+ 	skipWords=1
+},
+[426] =
+{
+ 		id=426,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1306,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000044},
+ 		displayHero=1,
+ 		action=102181,
+ 		ui=1,
+ 	skipWords=1
+},
+[427] =
+{
+ 		id=427,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1306,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000045},
+ 		displayHero=1,
+ 		action=102182,
+ 		ui=1,
+ 	skipWords=1
+},
+[428] =
+{
+ 		id=428,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1307,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000048},
+ 		displayHero=1,
+ 		action=102185,
+ 		ui=1,
+ 	skipWords=1
+},
+[429] =
+{
+ 		id=429,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1307,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000049,52000050},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[430] =
+{
+ 		id=430,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1307,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000051},
+ 		displayHero=1,
+ 		action=102186,
+ 		ui=1,
+ 	skipWords=1
+},
+[431] =
+{
+ 		id=431,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1307,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000052},
+ 		displayHero=1,
+ 		action=102187,
+ 		ui=1,
+ 	skipWords=1
+},
+[432] =
+{
+ 		id=432,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1307,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000053},
+ 		displayHero=1,
+ 		action=102188,
+ 		ui=1,
+ 	skipWords=1
+},
+[433] =
+{
+ 		id=433,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1308,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000056},
+ 		displayHero=1,
+ 		action=102191,
+ 		ui=1,
+ 	skipWords=1
+},
+[434] =
+{
+ 		id=434,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1308,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000057,52000058,52000059},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[435] =
+{
+ 		id=435,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1308,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000060},
+ 		displayHero=1,
+ 		action=102192,
+ 		ui=1,
+ 	skipWords=1
+},
+[436] =
+{
+ 		id=436,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1308,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000061},
+ 		displayHero=1,
+ 		action=102193,
+ 		ui=1,
+ 	skipWords=1
+},
+[437] =
+{
+ 		id=437,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1308,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000062},
+ 		displayHero=1,
+ 		action=102194,
+ 		ui=1,
+ 	skipWords=1
+},
+[438] =
+{
+ 		id=438,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1309,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000064},
+ 		displayHero=1,
+ 		action=102196,
+ 		ui=1,
+ 	skipWords=1
+},
+[439] =
+{
+ 		id=439,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1309,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000065,52000066},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[440] =
+{
+ 		id=440,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1309,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000067},
+ 		displayHero=1,
+ 		action=102197,
+ 		ui=1,
+ 	skipWords=1
+},
+[441] =
+{
+ 		id=441,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1309,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000068},
+ 		displayHero=1,
+ 		action=102198,
+ 		ui=1,
+ 	skipWords=1
+},
+[442] =
+{
+ 		id=442,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1309,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000069},
+ 		displayHero=1,
+ 		action=102199,
+ 		ui=1,
+ 	skipWords=1
+},
+[443] =
+{
+ 		id=443,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1309,
+ 		stepId=4,
+ 		nextStepId={7},
+ 		words={52000070},
+ 		displayHero=1,
+ 		action=102200,
+ 		ui=1,
+ 	skipWords=1
+},
+[444] =
+{
+ 		id=444,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1309,
+ 		stepId=7,
+ 		nextStepId={0},
+ 		words={52000071},
+ 		displayHero=1,
+ 		action=102201,
+ 		ui=1,
+ 	skipWords=1
+},
+[445] =
+{
+ 		id=445,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1310,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000075},
+ 		displayHero=1,
+ 		action=102205,
+ 		ui=1,
+ 	skipWords=1
+},
+[446] =
+{
+ 		id=446,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1310,
+ 		stepId=2,
+ 		nextStepId={0},
+ 		words={52000076},
+ 		displayHero=1,
+ 		action=102206,
+ 		ui=1,
+ 	skipWords=1
+},
+[447] =
+{
+ 		id=447,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1311,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000077},
+ 		displayHero=1,
+ 		action=102207,
+ 		ui=1,
+ 	skipWords=1
+},
+[448] =
+{
+ 		id=448,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1311,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000078,52000079,52000080},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[449] =
+{
+ 		id=449,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1311,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000081},
+ 		displayHero=1,
+ 		action=102208,
+ 		ui=1,
+ 	skipWords=1
+},
+[450] =
+{
+ 		id=450,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1311,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000082},
+ 		displayHero=1,
+ 		action=102209,
+ 		ui=1,
+ 	skipWords=1
+},
+[451] =
+{
+ 		id=451,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1311,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000083},
+ 		displayHero=1,
+ 		action=102210,
+ 		ui=1,
+ 	skipWords=1
+},
+[452] =
+{
+ 		id=452,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1311,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000084},
+ 		displayHero=1,
+ 		action=102211,
+ 		ui=1,
+ 	skipWords=1
+},
+[453] =
+{
+ 		id=453,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1401,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000001},
+ 		displayHero=1,
+ 		action=112151,
+ 		ui=1,
+ 	skipWords=1
+},
+[454] =
+{
+ 		id=454,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1401,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000002,52000003,52000004},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[455] =
+{
+ 		id=455,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1401,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000005},
+ 		displayHero=1,
+ 		action=112152,
+ 		ui=1,
+ 	skipWords=1
+},
+[456] =
+{
+ 		id=456,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1401,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000006},
+ 		displayHero=1,
+ 		action=112153,
+ 		ui=1,
+ 	skipWords=1
+},
+[457] =
+{
+ 		id=457,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1401,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000007},
+ 		displayHero=1,
+ 		action=112154,
+ 		ui=1,
+ 	skipWords=1
+},
+[458] =
+{
+ 		id=458,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1402,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000009},
+ 		displayHero=1,
+ 		action=112156,
+ 		ui=1,
+ 	skipWords=1
+},
+[459] =
+{
+ 		id=459,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1402,
+ 		stepId=2,
+ 		nextStepId={3,3},
+ 		speaker=1,
+ 		words={52000010,52000011},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[460] =
+{
+ 		id=460,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1402,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000012},
+ 		displayHero=1,
+ 		action=112157,
+ 		ui=1,
+ 	skipWords=1
+},
+[461] =
+{
+ 		id=461,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1403,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000017},
+ 		displayHero=1,
+ 		action=112162,
+ 		ui=1,
+ 	skipWords=1
+},
+[462] =
+{
+ 		id=462,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1403,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000018,52000019},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[463] =
+{
+ 		id=463,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1403,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000020},
+ 		displayHero=1,
+ 		action=112163,
+ 		ui=1,
+ 	skipWords=1
+},
+[464] =
+{
+ 		id=464,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1403,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000021},
+ 		displayHero=1,
+ 		action=112164,
+ 		ui=1,
+ 	skipWords=1
+},
+[465] =
+{
+ 		id=465,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1403,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000022},
+ 		displayHero=1,
+ 		action=112165,
+ 		ui=1,
+ 	skipWords=1
+},
+[466] =
+{
+ 		id=466,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1404,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000029},
+ 		displayHero=1,
+ 		action=112172,
+ 		ui=1,
+ 	skipWords=1
+},
+[467] =
+{
+ 		id=467,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1404,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000030,52000031},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[468] =
+{
+ 		id=468,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1404,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000032},
+ 		displayHero=1,
+ 		action=112173,
+ 		ui=1,
+ 	skipWords=1
+},
+[469] =
+{
+ 		id=469,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1404,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000033},
+ 		displayHero=1,
+ 		action=112174,
+ 		ui=1,
+ 	skipWords=1
+},
+[470] =
+{
+ 		id=470,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1405,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000034},
+ 		displayHero=1,
+ 		action=112175,
+ 		ui=1,
+ 	skipWords=1
+},
+[471] =
+{
+ 		id=471,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1405,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000035,52000036},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[472] =
+{
+ 		id=472,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1405,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000037},
+ 		displayHero=1,
+ 		action=112176,
+ 		ui=1,
+ 	skipWords=1
+},
+[473] =
+{
+ 		id=473,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1405,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000038},
+ 		displayHero=1,
+ 		action=112177,
+ 		ui=1,
+ 	skipWords=1
+},
+[474] =
+{
+ 		id=474,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1406,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000040},
+ 		displayHero=1,
+ 		action=112179,
+ 		ui=1,
+ 	skipWords=1
+},
+[475] =
+{
+ 		id=475,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1406,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000041,52000042},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[476] =
+{
+ 		id=476,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1406,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000043},
+ 		displayHero=1,
+ 		action=112180,
+ 		ui=1,
+ 	skipWords=1
+},
+[477] =
+{
+ 		id=477,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1406,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000044},
+ 		displayHero=1,
+ 		action=112181,
+ 		ui=1,
+ 	skipWords=1
+},
+[478] =
+{
+ 		id=478,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1406,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000045},
+ 		displayHero=1,
+ 		action=112182,
+ 		ui=1,
+ 	skipWords=1
+},
+[479] =
+{
+ 		id=479,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1407,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000048},
+ 		displayHero=1,
+ 		action=112185,
+ 		ui=1,
+ 	skipWords=1
+},
+[480] =
+{
+ 		id=480,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1407,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000049,52000050},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[481] =
+{
+ 		id=481,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1407,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000051},
+ 		displayHero=1,
+ 		action=112186,
+ 		ui=1,
+ 	skipWords=1
+},
+[482] =
+{
+ 		id=482,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1407,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000052},
+ 		displayHero=1,
+ 		action=112187,
+ 		ui=1,
+ 	skipWords=1
+},
+[483] =
+{
+ 		id=483,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1407,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000053},
+ 		displayHero=1,
+ 		action=112188,
+ 		ui=1,
+ 	skipWords=1
+},
+[484] =
+{
+ 		id=484,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1408,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000056},
+ 		displayHero=1,
+ 		action=112191,
+ 		ui=1,
+ 	skipWords=1
+},
+[485] =
+{
+ 		id=485,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1408,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000057,52000058,52000059},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[486] =
+{
+ 		id=486,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1408,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000060},
+ 		displayHero=1,
+ 		action=112192,
+ 		ui=1,
+ 	skipWords=1
+},
+[487] =
+{
+ 		id=487,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1408,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000061},
+ 		displayHero=1,
+ 		action=112193,
+ 		ui=1,
+ 	skipWords=1
+},
+[488] =
+{
+ 		id=488,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1408,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000062},
+ 		displayHero=1,
+ 		action=112194,
+ 		ui=1,
+ 	skipWords=1
+},
+[489] =
+{
+ 		id=489,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1409,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000064},
+ 		displayHero=1,
+ 		action=112196,
+ 		ui=1,
+ 	skipWords=1
+},
+[490] =
+{
+ 		id=490,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1409,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000065,52000066},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[491] =
+{
+ 		id=491,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1409,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000067},
+ 		displayHero=1,
+ 		action=112197,
+ 		ui=1,
+ 	skipWords=1
+},
+[492] =
+{
+ 		id=492,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1409,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000068},
+ 		displayHero=1,
+ 		action=112198,
+ 		ui=1,
+ 	skipWords=1
+},
+[493] =
+{
+ 		id=493,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1409,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000069},
+ 		displayHero=1,
+ 		action=112199,
+ 		ui=1,
+ 	skipWords=1
+},
+[494] =
+{
+ 		id=494,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1409,
+ 		stepId=4,
+ 		nextStepId={7},
+ 		words={52000070},
+ 		displayHero=1,
+ 		action=112200,
+ 		ui=1,
+ 	skipWords=1
+},
+[495] =
+{
+ 		id=495,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1409,
+ 		stepId=7,
+ 		nextStepId={0},
+ 		words={52000071},
+ 		displayHero=1,
+ 		action=112201,
+ 		ui=1,
+ 	skipWords=1
+},
+[496] =
+{
+ 		id=496,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1410,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000075},
+ 		displayHero=1,
+ 		action=112205,
+ 		ui=1,
+ 	skipWords=1
+},
+[497] =
+{
+ 		id=497,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1410,
+ 		stepId=2,
+ 		nextStepId={0},
+ 		words={52000076},
+ 		displayHero=1,
+ 		action=112206,
+ 		ui=1,
+ 	skipWords=1
+},
+[498] =
+{
+ 		id=498,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1411,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000077},
+ 		displayHero=1,
+ 		action=112207,
+ 		ui=1,
+ 	skipWords=1
+},
+[499] =
+{
+ 		id=499,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1411,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000078,52000079,52000080},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[500] =
+{
+ 		id=500,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1411,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000081},
+ 		displayHero=1,
+ 		action=112208,
+ 		ui=1,
+ 	skipWords=1
+},
+[501] =
+{
+ 		id=501,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1411,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000082},
+ 		displayHero=1,
+ 		action=112209,
+ 		ui=1,
+ 	skipWords=1
+},
+[502] =
+{
+ 		id=502,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1411,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000083},
+ 		displayHero=1,
+ 		action=112210,
+ 		ui=1,
+ 	skipWords=1
+},
+[503] =
+{
+ 		id=503,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=1411,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000084},
+ 		displayHero=1,
+ 		action=112211,
+ 		ui=1,
+ 	skipWords=1
+},
+[504] =
+{
+ 		id=504,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1500,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		words={52000089},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[505] =
+{
+ 		id=505,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1501,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		words={52000090},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[506] =
+{
+ 		id=506,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1502,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		words={52000091},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[507] =
+{
+ 		id=507,
+ 		type=5,
+ 		heroId=110003,
+ 		groupId=1503,
+ 		stepId=1,
+ 		nextStepId={0,0},
+ 		speaker=1,
+ 		words={52000092,52000093},
+ 		displayHero=1,
+ 		ui=1,
+ 		skip={1,1},
+ 	skipWords=1
+},
+[508] =
+{
+ 		id=508,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=2001,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000009},
+ 		displayHero=1,
+ 		action=112156,
+ 		ui=1,
+ 	skipWords=1
+},
+[509] =
+{
+ 		id=509,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=2001,
+ 		stepId=2,
+ 		nextStepId={3,3},
+ 		speaker=1,
+ 		words={52000010,52000011},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={30,50},
+ 	skipWords=2
+},
+[510] =
+{
+ 		id=510,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=2001,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000012},
+ 		displayHero=1,
+ 		action=112157,
+ 		ui=1,
+ 	skipWords=1
+},
+[511] =
+{
+ 		id=511,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=2002,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000017},
+ 		displayHero=1,
+ 		action=12162,
+ 		ui=1,
+ 	skipWords=1
+},
+[512] =
+{
+ 		id=512,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=2002,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000018,52000019},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[513] =
+{
+ 		id=513,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=2002,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000020},
+ 		displayHero=1,
+ 		action=12163,
+ 		ui=1,
+ 	skipWords=1
+},
+[514] =
+{
+ 		id=514,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=2002,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000021},
+ 		displayHero=1,
+ 		action=12164,
+ 		ui=1,
+ 	skipWords=1
+},
+[515] =
+{
+ 		id=515,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=2002,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000022},
+ 		displayHero=1,
+ 		action=12165,
+ 		ui=1,
+ 	skipWords=1
+},
+[516] =
+{
+ 		id=516,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3301,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000001},
+ 		displayHero=1,
+ 		action=112284,
+ 		ui=1,
+ 	skipWords=1
+},
+[517] =
+{
+ 		id=517,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3301,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		speaker=1,
+ 		words={53000002},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[518] =
+{
+ 		id=518,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3301,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={53000003},
+ 		displayHero=1,
+ 		action=112285,
+ 		ui=1,
+ 	skipWords=1
+},
+[519] =
+{
+ 		id=519,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3301,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={53000004},
+ 		displayHero=1,
+ 		action=112286,
+ 		ui=1,
+ 	skipWords=1
+},
+[520] =
+{
+ 		id=520,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3301,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={53000005},
+ 		displayHero=1,
+ 		action=112287,
+ 		ui=1,
+ 	skipWords=1
+},
+[521] =
+{
+ 		id=521,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3301,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={53000006},
+ 		displayHero=1,
+ 		action=112288,
+ 		ui=1,
+ 	skipWords=1
+},
+[522] =
+{
+ 		id=522,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3301,
+ 		stepId=7,
+ 		nextStepId={8},
+ 		words={53000007},
+ 		displayHero=1,
+ 		action=112289,
+ 		ui=1,
+ 	skipWords=1
+},
+[523] =
+{
+ 		id=523,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3301,
+ 		stepId=8,
+ 		nextStepId={9,9},
+ 		speaker=1,
+ 		words={53000008,53000009},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[524] =
+{
+ 		id=524,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3301,
+ 		stepId=9,
+ 		nextStepId={10},
+ 		words={53000010},
+ 		displayHero=1,
+ 		action=112290,
+ 		ui=1,
+ 	skipWords=1
+},
+[525] =
+{
+ 		id=525,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3301,
+ 		stepId=10,
+ 		nextStepId={11},
+ 		words={53000011},
+ 		displayHero=1,
+ 		action=112291,
+ 		ui=1,
+ 	skipWords=1
+},
+[526] =
+{
+ 		id=526,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3301,
+ 		stepId=11,
+ 		nextStepId={12,12},
+ 		speaker=1,
+ 		words={53000012,53000013},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[527] =
+{
+ 		id=527,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3301,
+ 		stepId=12,
+ 		nextStepId={0},
+ 		words={53000014},
+ 		displayHero=1,
+ 		action=112292,
+ 		ui=1,
+ 	skipWords=1
+},
+[528] =
+{
+ 		id=528,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3302,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000015},
+ 		displayHero=1,
+ 		action=112293,
+ 		ui=1,
+ 	skipWords=1
+},
+[529] =
+{
+ 		id=529,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3302,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		speaker=1,
+ 		words={53000016},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[530] =
+{
+ 		id=530,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3302,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={53000017},
+ 		displayHero=1,
+ 		action=112294,
+ 		ui=1,
+ 	skipWords=1
+},
+[531] =
+{
+ 		id=531,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3302,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		speaker=1,
+ 		words={53000018},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[532] =
+{
+ 		id=532,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3302,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={53000019},
+ 		displayHero=1,
+ 		action=112295,
+ 		ui=1,
+ 	skipWords=1
+},
+[533] =
+{
+ 		id=533,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3302,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={53000020},
+ 		displayHero=1,
+ 		action=112296,
+ 		ui=1,
+ 	skipWords=1
+},
+[534] =
+{
+ 		id=534,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3302,
+ 		stepId=7,
+ 		nextStepId={8,8},
+ 		speaker=1,
+ 		words={53000021,53000022},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[535] =
+{
+ 		id=535,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3302,
+ 		stepId=8,
+ 		nextStepId={9},
+ 		words={53000023},
+ 		displayHero=1,
+ 		action=112297,
+ 		ui=1,
+ 	skipWords=1
+},
+[536] =
+{
+ 		id=536,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3302,
+ 		stepId=9,
+ 		nextStepId={0},
+ 		words={53000024},
+ 		displayHero=1,
+ 		action=112298,
+ 		ui=1,
+ 	skipWords=1
+},
+[537] =
+{
+ 		id=537,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3303,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000025},
+ 		displayHero=1,
+ 		action=112299,
+ 		ui=1,
+ 	skipWords=1
+},
+[538] =
+{
+ 		id=538,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3303,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={53000026,53000027},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[539] =
+{
+ 		id=539,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3303,
+ 		stepId=3,
+ 		nextStepId={6},
+ 		words={53000028},
+ 		displayHero=1,
+ 		action=112300,
+ 		ui=1,
+ 	skipWords=1
+},
+[540] =
+{
+ 		id=540,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3303,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={53000029},
+ 		displayHero=1,
+ 		action=112301,
+ 		ui=1,
+ 	skipWords=1
+},
+[541] =
+{
+ 		id=541,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3303,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={53000030},
+ 		displayHero=1,
+ 		action=112302,
+ 		ui=1,
+ 	skipWords=1
+},
+[542] =
+{
+ 		id=542,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3303,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={53000031},
+ 		displayHero=1,
+ 		action=112303,
+ 		ui=1,
+ 	skipWords=1
+},
+[543] =
+{
+ 		id=543,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3303,
+ 		stepId=7,
+ 		nextStepId={8},
+ 		words={53000032},
+ 		displayHero=1,
+ 		action=112304,
+ 		ui=1,
+ 	skipWords=1
+},
+[544] =
+{
+ 		id=544,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3303,
+ 		stepId=8,
+ 		nextStepId={9,9},
+ 		speaker=1,
+ 		words={53000033,53000034},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[545] =
+{
+ 		id=545,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3303,
+ 		stepId=9,
+ 		nextStepId={10},
+ 		words={53000035},
+ 		displayHero=1,
+ 		action=112305,
+ 		ui=1,
+ 	skipWords=1
+},
+[546] =
+{
+ 		id=546,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3303,
+ 		stepId=10,
+ 		nextStepId={0},
+ 		words={53000036},
+ 		displayHero=1,
+ 		action=112306,
+ 		ui=1,
+ 	skipWords=1
+},
+[547] =
+{
+ 		id=547,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3304,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000037},
+ 		displayHero=1,
+ 		action=112307,
+ 		ui=1,
+ 	skipWords=1
+},
+[548] =
+{
+ 		id=548,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3304,
+ 		stepId=2,
+ 		nextStepId={3,3},
+ 		speaker=1,
+ 		words={53000038,53000039},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[549] =
+{
+ 		id=549,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3304,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={53000040},
+ 		displayHero=1,
+ 		action=112308,
+ 		ui=1,
+ 	skipWords=1
+},
+[550] =
+{
+ 		id=550,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3304,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={53000041},
+ 		displayHero=1,
+ 		action=112309,
+ 		ui=1,
+ 	skipWords=1
+},
+[551] =
+{
+ 		id=551,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3304,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		speaker=1,
+ 		words={53000042},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[552] =
+{
+ 		id=552,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3304,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={53000043},
+ 		displayHero=1,
+ 		action=112310,
+ 		ui=1,
+ 	skipWords=1
+},
+[553] =
+{
+ 		id=553,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3304,
+ 		stepId=7,
+ 		nextStepId={8,8},
+ 		speaker=1,
+ 		words={53000044,53000045},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[554] =
+{
+ 		id=554,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3304,
+ 		stepId=8,
+ 		nextStepId={9},
+ 		words={53000046},
+ 		displayHero=1,
+ 		action=112311,
+ 		ui=1,
+ 	skipWords=1
+},
+[555] =
+{
+ 		id=555,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3304,
+ 		stepId=9,
+ 		nextStepId={10},
+ 		words={53000047},
+ 		displayHero=1,
+ 		action=112312,
+ 		ui=1,
+ 	skipWords=1
+},
+[556] =
+{
+ 		id=556,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3304,
+ 		stepId=10,
+ 		nextStepId={0},
+ 		words={53000048},
+ 		displayHero=1,
+ 		action=112313,
+ 		ui=1,
+ 	skipWords=1
+},
+[557] =
+{
+ 		id=557,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3305,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000049},
+ 		displayHero=1,
+ 		action=112314,
+ 		ui=1,
+ 	skipWords=1
+},
+[558] =
+{
+ 		id=558,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3305,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		speaker=1,
+ 		words={53000050},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[559] =
+{
+ 		id=559,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3305,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={53000051},
+ 		displayHero=1,
+ 		action=112315,
+ 		ui=1,
+ 	skipWords=1
+},
+[560] =
+{
+ 		id=560,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3305,
+ 		stepId=4,
+ 		nextStepId={5,6},
+ 		speaker=1,
+ 		words={53000052,53000053},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[561] =
+{
+ 		id=561,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3305,
+ 		stepId=5,
+ 		nextStepId={7},
+ 		words={53000054},
+ 		displayHero=1,
+ 		action=112316,
+ 		ui=1,
+ 	skipWords=1
+},
+[562] =
+{
+ 		id=562,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3305,
+ 		stepId=6,
+ 		nextStepId={9},
+ 		words={53000055},
+ 		displayHero=1,
+ 		action=112317,
+ 		ui=1,
+ 	skipWords=1
+},
+[563] =
+{
+ 		id=563,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3305,
+ 		stepId=7,
+ 		nextStepId={8},
+ 		words={53000056},
+ 		displayHero=1,
+ 		action=112318,
+ 		ui=1,
+ 	skipWords=1
+},
+[564] =
+{
+ 		id=564,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3305,
+ 		stepId=8,
+ 		nextStepId={10},
+ 		words={53000057},
+ 		displayHero=1,
+ 		action=112319,
+ 		ui=1,
+ 	skipWords=1
+},
+[565] =
+{
+ 		id=565,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3305,
+ 		stepId=9,
+ 		nextStepId={10},
+ 		words={53000058},
+ 		displayHero=1,
+ 		action=112320,
+ 		ui=1,
+ 	skipWords=1
+},
+[566] =
+{
+ 		id=566,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3305,
+ 		stepId=10,
+ 		nextStepId={11},
+ 		words={53000059},
+ 		displayHero=1,
+ 		action=112321,
+ 		ui=1,
+ 	skipWords=1
+},
+[567] =
+{
+ 		id=567,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3305,
+ 		stepId=11,
+ 		nextStepId={12},
+ 		speaker=1,
+ 		words={53000060},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[568] =
+{
+ 		id=568,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3305,
+ 		stepId=12,
+ 		nextStepId={0},
+ 		words={53000061},
+ 		displayHero=1,
+ 		action=112322,
+ 		ui=1,
+ 	skipWords=1
+},
+[569] =
+{
+ 		id=569,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3306,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000062},
+ 		displayHero=1,
+ 		action=112323,
+ 		ui=1,
+ 	skipWords=1
+},
+[570] =
+{
+ 		id=570,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3306,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={53000063,53000064},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[571] =
+{
+ 		id=571,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3306,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={53000065},
+ 		displayHero=1,
+ 		action=112324,
+ 		ui=1,
+ 	skipWords=1
+},
+[572] =
+{
+ 		id=572,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3306,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={53000066},
+ 		displayHero=1,
+ 		action=112325,
+ 		ui=1,
+ 	skipWords=1
+},
+[573] =
+{
+ 		id=573,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3306,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={53000067},
+ 		displayHero=1,
+ 		action=112326,
+ 		ui=1,
+ 	skipWords=1
+},
+[574] =
+{
+ 		id=574,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3306,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={53000068},
+ 		displayHero=1,
+ 		action=112327,
+ 		ui=1,
+ 	skipWords=1
+},
+[575] =
+{
+ 		id=575,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3306,
+ 		stepId=7,
+ 		nextStepId={8},
+ 		words={53000069},
+ 		displayHero=1,
+ 		action=112328,
+ 		ui=1,
+ 	skipWords=1
+},
+[576] =
+{
+ 		id=576,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3306,
+ 		stepId=8,
+ 		nextStepId={9,10},
+ 		speaker=1,
+ 		words={53000070,53000071},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[577] =
+{
+ 		id=577,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3306,
+ 		stepId=9,
+ 		nextStepId={11},
+ 		words={53000072},
+ 		displayHero=1,
+ 		action=112329,
+ 		ui=1,
+ 	skipWords=1
+},
+[578] =
+{
+ 		id=578,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3306,
+ 		stepId=10,
+ 		nextStepId={11},
+ 		words={53000073},
+ 		displayHero=1,
+ 		action=112330,
+ 		ui=1,
+ 	skipWords=1
+},
+[579] =
+{
+ 		id=579,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3306,
+ 		stepId=11,
+ 		nextStepId={0},
+ 		words={53000074},
+ 		displayHero=1,
+ 		action=112331,
+ 		ui=1,
+ 	skipWords=1
+},
+[580] =
+{
+ 		id=580,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3307,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000075},
+ 		displayHero=1,
+ 		action=112332,
+ 		ui=1,
+ 	skipWords=1
+},
+[581] =
+{
+ 		id=581,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3307,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={53000076,53000077},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[582] =
+{
+ 		id=582,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3307,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={53000078},
+ 		displayHero=1,
+ 		action=112333,
+ 		ui=1,
+ 	skipWords=1
+},
+[583] =
+{
+ 		id=583,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3307,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={53000079},
+ 		displayHero=1,
+ 		action=112334,
+ 		ui=1,
+ 	skipWords=1
+},
+[584] =
+{
+ 		id=584,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3307,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={53000080},
+ 		displayHero=1,
+ 		action=112335,
+ 		ui=1,
+ 	skipWords=1
+},
+[585] =
+{
+ 		id=585,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3307,
+ 		stepId=6,
+ 		nextStepId={7,7},
+ 		speaker=1,
+ 		words={53000081,53000082},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[586] =
+{
+ 		id=586,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3307,
+ 		stepId=7,
+ 		nextStepId={0},
+ 		words={53000083},
+ 		displayHero=1,
+ 		action=112336,
+ 		ui=1,
+ 	skipWords=1
+},
+[587] =
+{
+ 		id=587,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3308,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000015},
+ 		displayHero=1,
+ 		action=112293,
+ 		ui=1,
+ 	skipWords=1
+},
+[588] =
+{
+ 		id=588,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3308,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		speaker=1,
+ 		words={53000016},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[589] =
+{
+ 		id=589,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3308,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={53000017},
+ 		displayHero=1,
+ 		action=112294,
+ 		ui=1,
+ 	skipWords=1
+},
+[590] =
+{
+ 		id=590,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3308,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		speaker=1,
+ 		words={53000018},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[591] =
+{
+ 		id=591,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3308,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={53000019},
+ 		displayHero=1,
+ 		action=112295,
+ 		ui=1,
+ 	skipWords=1
+},
+[592] =
+{
+ 		id=592,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3308,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={53000020},
+ 		displayHero=1,
+ 		action=112296,
+ 		ui=1,
+ 	skipWords=1
+},
+[593] =
+{
+ 		id=593,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3308,
+ 		stepId=7,
+ 		nextStepId={8,8},
+ 		speaker=1,
+ 		words={53000021,53000022},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[594] =
+{
+ 		id=594,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3308,
+ 		stepId=8,
+ 		nextStepId={9},
+ 		words={53000023},
+ 		displayHero=1,
+ 		action=112297,
+ 		ui=1,
+ 	skipWords=1
+},
+[595] =
+{
+ 		id=595,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3308,
+ 		stepId=9,
+ 		nextStepId={0},
+ 		words={53000024},
+ 		displayHero=1,
+ 		action=112298,
+ 		ui=1,
+ 	skipWords=1
+},
+[596] =
+{
+ 		id=596,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3309,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000015},
+ 		displayHero=1,
+ 		action=112293,
+ 		ui=1,
+ 	skipWords=1
+},
+[597] =
+{
+ 		id=597,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3309,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		speaker=1,
+ 		words={53000016},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[598] =
+{
+ 		id=598,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3309,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={53000017},
+ 		displayHero=1,
+ 		action=112294,
+ 		ui=1,
+ 	skipWords=1
+},
+[599] =
+{
+ 		id=599,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3309,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		speaker=1,
+ 		words={53000018},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[600] =
+{
+ 		id=600,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3309,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={53000019},
+ 		displayHero=1,
+ 		action=112295,
+ 		ui=1,
+ 	skipWords=1
+},
+[601] =
+{
+ 		id=601,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3309,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={53000020},
+ 		displayHero=1,
+ 		action=112296,
+ 		ui=1,
+ 	skipWords=1
+},
+[602] =
+{
+ 		id=602,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3309,
+ 		stepId=7,
+ 		nextStepId={8,8},
+ 		speaker=1,
+ 		words={53000021,53000022},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[603] =
+{
+ 		id=603,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3309,
+ 		stepId=8,
+ 		nextStepId={9},
+ 		words={53000023},
+ 		displayHero=1,
+ 		action=112297,
+ 		ui=1,
+ 	skipWords=1
+},
+[604] =
+{
+ 		id=604,
+ 		type=9,
+ 		heroId=110003,
+ 		groupId=3309,
+ 		stepId=9,
+ 		nextStepId={0},
+ 		words={53000024},
+ 		displayHero=1,
+ 		action=112298,
+ 		ui=1,
+ 	skipWords=1
+},
+[605] =
+{
+ 		id=605,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4069,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400076},
+ 		displayHero=1,
+ 		action=112154,
+ 		ui=1,
+ 	skipWords=1
+},
+[606] =
+{
+ 		id=606,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4069,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400077},
+ 		displayHero=1,
+ 		action=112169,
+ 		ui=1,
+ 	skipWords=1
+},
+[607] =
+{
+ 		id=607,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4069,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400078},
+ 		displayHero=1,
+ 		action=112152,
+ 		ui=1,
+ 	skipWords=1
+},
+[608] =
+{
+ 		id=608,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4069,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400079},
+ 		displayHero=1,
+ 		action=112154,
+ 		ui=1,
+ 	skipWords=1
+},
+[609] =
+{
+ 		id=609,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4077,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400328},
+ 		displayHero=1,
+ 		action=112152,
+ 		ui=1,
+ 	skipWords=1
+},
+[610] =
+{
+ 		id=610,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4077,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400329},
+ 		displayHero=1,
+ 		action=112166,
+ 		ui=1,
+ 	skipWords=1
+},
+[611] =
+{
+ 		id=611,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4077,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400330},
+ 		displayHero=1,
+ 		action=112161,
+ 		ui=1,
+ 	skipWords=1
+},
+[612] =
+{
+ 		id=612,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4077,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400331},
+ 		displayHero=1,
+ 		action=112151,
+ 		ui=1,
+ 	skipWords=1
+},
+[613] =
+{
+ 		id=613,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4085,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400344},
+ 		displayHero=1,
+ 		action=112163,
+ 		ui=1,
+ 	skipWords=1
+},
+[614] =
+{
+ 		id=614,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4085,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400345},
+ 		displayHero=1,
+ 		action=112169,
+ 		ui=1,
+ 	skipWords=1
+},
+[615] =
+{
+ 		id=615,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4085,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400346},
+ 		displayHero=1,
+ 		action=112158,
+ 		ui=1,
+ 	skipWords=1
+},
+[616] =
+{
+ 		id=616,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4085,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400347},
+ 		displayHero=1,
+ 		action=112166,
+ 		ui=1,
+ 	skipWords=1
+},
+[617] =
+{
+ 		id=617,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4093,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43400354},
+ 		displayHero=1,
+ 		action=112153,
+ 		ui=1,
+ 	skipWords=1
+},
+[618] =
+{
+ 		id=618,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4093,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={43400355},
+ 		displayHero=1,
+ 		action=112151,
+ 		ui=1,
+ 	skipWords=1
+},
+[619] =
+{
+ 		id=619,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4093,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43400356},
+ 		displayHero=1,
+ 		action=112166,
+ 		ui=1,
+ 	skipWords=1
+},
+[620] =
+{
+ 		id=620,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4093,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={43400357},
+ 		displayHero=1,
+ 		action=112170,
+ 		ui=1,
+ 	skipWords=1
+},
+[621] =
+{
+ 		id=621,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4101,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000001},
+ 		displayHero=1,
+ 		action=2151,
+ 		ui=1,
+ 	skipWords=1
+},
+[622] =
+{
+ 		id=622,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4101,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000002,52000003,52000004},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,40,30},
+ 	skipWords=2
+},
+[623] =
+{
+ 		id=623,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4101,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000005},
+ 		displayHero=1,
+ 		action=2152,
+ 		ui=1,
+ 	skipWords=1
+},
+[624] =
+{
+ 		id=624,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4101,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000006},
+ 		displayHero=1,
+ 		action=2153,
+ 		ui=1,
+ 	skipWords=1
+},
+[625] =
+{
+ 		id=625,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4101,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000007},
+ 		displayHero=1,
+ 		action=2154,
+ 		ui=1,
+ 	skipWords=1
+},
+[626] =
+{
+ 		id=626,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4102,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000009},
+ 		displayHero=1,
+ 		action=2156,
+ 		ui=1,
+ 	skipWords=1
+},
+[627] =
+{
+ 		id=627,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4102,
+ 		stepId=2,
+ 		nextStepId={3,3},
+ 		speaker=1,
+ 		words={52000010,52000011},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={40,30},
+ 	skipWords=2
+},
+[628] =
+{
+ 		id=628,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4102,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000012},
+ 		displayHero=1,
+ 		action=2157,
+ 		ui=1,
+ 	skipWords=1
+},
+[629] =
+{
+ 		id=629,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4103,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000017},
+ 		displayHero=1,
+ 		action=2162,
+ 		ui=1,
+ 	skipWords=1
+},
+[630] =
+{
+ 		id=630,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4103,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000018,52000019},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={45,35},
+ 	skipWords=2
+},
+[631] =
+{
+ 		id=631,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4103,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000020},
+ 		displayHero=1,
+ 		action=2163,
+ 		ui=1,
+ 	skipWords=1
+},
+[632] =
+{
+ 		id=632,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4103,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000021},
+ 		displayHero=1,
+ 		action=2164,
+ 		ui=1,
+ 	skipWords=1
+},
+[633] =
+{
+ 		id=633,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4103,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000022},
+ 		displayHero=1,
+ 		action=2165,
+ 		ui=1,
+ 	skipWords=1
+},
+[634] =
+{
+ 		id=634,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4104,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000029},
+ 		displayHero=1,
+ 		action=2172,
+ 		ui=1,
+ 	skipWords=1
+},
+[635] =
+{
+ 		id=635,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4104,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000030,52000031},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={60,30},
+ 	skipWords=2
+},
+[636] =
+{
+ 		id=636,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4104,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000032},
+ 		displayHero=1,
+ 		action=2173,
+ 		ui=1,
+ 	skipWords=1
+},
+[637] =
+{
+ 		id=637,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4104,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000033},
+ 		displayHero=1,
+ 		action=2174,
+ 		ui=1,
+ 	skipWords=1
+},
+[638] =
+{
+ 		id=638,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4105,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000034},
+ 		displayHero=1,
+ 		action=2175,
+ 		ui=1,
+ 	skipWords=1
+},
+[639] =
+{
+ 		id=639,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4105,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000035,52000036},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,45},
+ 	skipWords=2
+},
+[640] =
+{
+ 		id=640,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4105,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000037},
+ 		displayHero=1,
+ 		action=2176,
+ 		ui=1,
+ 	skipWords=1
+},
+[641] =
+{
+ 		id=641,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4105,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000038},
+ 		displayHero=1,
+ 		action=2177,
+ 		ui=1,
+ 	skipWords=1
+},
+[642] =
+{
+ 		id=642,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4106,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000040},
+ 		displayHero=1,
+ 		action=2179,
+ 		ui=1,
+ 	skipWords=1
+},
+[643] =
+{
+ 		id=643,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4106,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000041,52000042},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,45},
+ 	skipWords=2
+},
+[644] =
+{
+ 		id=644,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4106,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000043},
+ 		displayHero=1,
+ 		action=2180,
+ 		ui=1,
+ 	skipWords=1
+},
+[645] =
+{
+ 		id=645,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4106,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000044},
+ 		displayHero=1,
+ 		action=2181,
+ 		ui=1,
+ 	skipWords=1
+},
+[646] =
+{
+ 		id=646,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4106,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000045},
+ 		displayHero=1,
+ 		action=2182,
+ 		ui=1,
+ 	skipWords=1
+},
+[647] =
+{
+ 		id=647,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4107,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000048},
+ 		displayHero=1,
+ 		action=2185,
+ 		ui=1,
+ 	skipWords=1
+},
+[648] =
+{
+ 		id=648,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4107,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000049,52000050},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={40,55},
+ 	skipWords=2
+},
+[649] =
+{
+ 		id=649,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4107,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000051},
+ 		displayHero=1,
+ 		action=2186,
+ 		ui=1,
+ 	skipWords=1
+},
+[650] =
+{
+ 		id=650,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4107,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000052},
+ 		displayHero=1,
+ 		action=2187,
+ 		ui=1,
+ 	skipWords=1
+},
+[651] =
+{
+ 		id=651,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4107,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000053},
+ 		displayHero=1,
+ 		action=2188,
+ 		ui=1,
+ 	skipWords=1
+},
+[652] =
+{
+ 		id=652,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4108,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000056},
+ 		displayHero=1,
+ 		action=2191,
+ 		ui=1,
+ 	skipWords=1
+},
+[653] =
+{
+ 		id=653,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4108,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000057,52000058,52000059},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={55,60,65},
+ 	skipWords=2
+},
+[654] =
+{
+ 		id=654,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4108,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000060},
+ 		displayHero=1,
+ 		action=2192,
+ 		ui=1,
+ 	skipWords=1
+},
+[655] =
+{
+ 		id=655,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4108,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000061},
+ 		displayHero=1,
+ 		action=2193,
+ 		ui=1,
+ 	skipWords=1
+},
+[656] =
+{
+ 		id=656,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4108,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000062},
+ 		displayHero=1,
+ 		action=2194,
+ 		ui=1,
+ 	skipWords=1
+},
+[657] =
+{
+ 		id=657,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4109,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000064},
+ 		displayHero=1,
+ 		action=2196,
+ 		ui=1,
+ 	skipWords=1
+},
+[658] =
+{
+ 		id=658,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4109,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000065,52000066},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,70},
+ 	skipWords=2
+},
+[659] =
+{
+ 		id=659,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4109,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000067},
+ 		displayHero=1,
+ 		action=2197,
+ 		ui=1,
+ 	skipWords=1
+},
+[660] =
+{
+ 		id=660,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4109,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000068},
+ 		displayHero=1,
+ 		action=2198,
+ 		ui=1,
+ 	skipWords=1
+},
+[661] =
+{
+ 		id=661,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4109,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000069},
+ 		displayHero=1,
+ 		action=2199,
+ 		ui=1,
+ 	skipWords=1
+},
+[662] =
+{
+ 		id=662,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4109,
+ 		stepId=4,
+ 		nextStepId={7},
+ 		words={52000070},
+ 		displayHero=1,
+ 		action=2200,
+ 		ui=1,
+ 	skipWords=1
+},
+[663] =
+{
+ 		id=663,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4109,
+ 		stepId=7,
+ 		nextStepId={0},
+ 		words={52000071},
+ 		displayHero=1,
+ 		action=2201,
+ 		ui=1,
+ 	skipWords=1
+},
+[664] =
+{
+ 		id=664,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4110,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000075},
+ 		displayHero=1,
+ 		action=2205,
+ 		ui=1,
+ 	skipWords=1
+},
+[665] =
+{
+ 		id=665,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4110,
+ 		stepId=2,
+ 		nextStepId={0},
+ 		words={52000076},
+ 		displayHero=1,
+ 		action=2206,
+ 		ui=1,
+ 	skipWords=1
+},
+[666] =
+{
+ 		id=666,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4111,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000077},
+ 		displayHero=1,
+ 		action=2207,
+ 		ui=1,
+ 	skipWords=1
+},
+[667] =
+{
+ 		id=667,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4111,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000078,52000079,52000080},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={55,60,65},
+ 	skipWords=2
+},
+[668] =
+{
+ 		id=668,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4111,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000081},
+ 		displayHero=1,
+ 		action=2208,
+ 		ui=1,
+ 	skipWords=1
+},
+[669] =
+{
+ 		id=669,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4111,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000082},
+ 		displayHero=1,
+ 		action=2209,
+ 		ui=1,
+ 	skipWords=1
+},
+[670] =
+{
+ 		id=670,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4111,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000083},
+ 		displayHero=1,
+ 		action=2210,
+ 		ui=1,
+ 	skipWords=1
+},
+[671] =
+{
+ 		id=671,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4111,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000084},
+ 		displayHero=1,
+ 		action=2211,
+ 		ui=1,
+ 	skipWords=1
+},
+[672] =
+{
+ 		id=672,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4201,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000001},
+ 		displayHero=1,
+ 		action=12151,
+ 		ui=1,
+ 	skipWords=1
+},
+[673] =
+{
+ 		id=673,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4201,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000002,52000003,52000004},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,40,30},
+ 	skipWords=2
+},
+[674] =
+{
+ 		id=674,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4201,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000005},
+ 		displayHero=1,
+ 		action=12152,
+ 		ui=1,
+ 	skipWords=1
+},
+[675] =
+{
+ 		id=675,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4201,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000006},
+ 		displayHero=1,
+ 		action=12153,
+ 		ui=1,
+ 	skipWords=1
+},
+[676] =
+{
+ 		id=676,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4201,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000007},
+ 		displayHero=1,
+ 		action=12154,
+ 		ui=1,
+ 	skipWords=1
+},
+[677] =
+{
+ 		id=677,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4202,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000009},
+ 		displayHero=1,
+ 		action=12156,
+ 		ui=1,
+ 	skipWords=1
+},
+[678] =
+{
+ 		id=678,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4202,
+ 		stepId=2,
+ 		nextStepId={3,3},
+ 		speaker=1,
+ 		words={52000010,52000011},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={40,30},
+ 	skipWords=2
+},
+[679] =
+{
+ 		id=679,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4202,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000012},
+ 		displayHero=1,
+ 		action=12157,
+ 		ui=1,
+ 	skipWords=1
+},
+[680] =
+{
+ 		id=680,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4203,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000017},
+ 		displayHero=1,
+ 		action=12162,
+ 		ui=1,
+ 	skipWords=1
+},
+[681] =
+{
+ 		id=681,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4203,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000018,52000019},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={45,35},
+ 	skipWords=2
+},
+[682] =
+{
+ 		id=682,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4203,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000020},
+ 		displayHero=1,
+ 		action=12163,
+ 		ui=1,
+ 	skipWords=1
+},
+[683] =
+{
+ 		id=683,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4203,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000021},
+ 		displayHero=1,
+ 		action=12164,
+ 		ui=1,
+ 	skipWords=1
+},
+[684] =
+{
+ 		id=684,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4203,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000022},
+ 		displayHero=1,
+ 		action=12165,
+ 		ui=1,
+ 	skipWords=1
+},
+[685] =
+{
+ 		id=685,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4204,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000029},
+ 		displayHero=1,
+ 		action=12172,
+ 		ui=1,
+ 	skipWords=1
+},
+[686] =
+{
+ 		id=686,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4204,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000030,52000031},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={60,30},
+ 	skipWords=2
+},
+[687] =
+{
+ 		id=687,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4204,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000032},
+ 		displayHero=1,
+ 		action=12173,
+ 		ui=1,
+ 	skipWords=1
+},
+[688] =
+{
+ 		id=688,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4204,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000033},
+ 		displayHero=1,
+ 		action=12174,
+ 		ui=1,
+ 	skipWords=1
+},
+[689] =
+{
+ 		id=689,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4205,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000034},
+ 		displayHero=1,
+ 		action=12175,
+ 		ui=1,
+ 	skipWords=1
+},
+[690] =
+{
+ 		id=690,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4205,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000035,52000036},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,45},
+ 	skipWords=2
+},
+[691] =
+{
+ 		id=691,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4205,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000037},
+ 		displayHero=1,
+ 		action=12176,
+ 		ui=1,
+ 	skipWords=1
+},
+[692] =
+{
+ 		id=692,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4205,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000038},
+ 		displayHero=1,
+ 		action=12177,
+ 		ui=1,
+ 	skipWords=1
+},
+[693] =
+{
+ 		id=693,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4206,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000040},
+ 		displayHero=1,
+ 		action=12179,
+ 		ui=1,
+ 	skipWords=1
+},
+[694] =
+{
+ 		id=694,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4206,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000041,52000042},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,45},
+ 	skipWords=2
+},
+[695] =
+{
+ 		id=695,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4206,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000043},
+ 		displayHero=1,
+ 		action=12180,
+ 		ui=1,
+ 	skipWords=1
+},
+[696] =
+{
+ 		id=696,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4206,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000044},
+ 		displayHero=1,
+ 		action=12181,
+ 		ui=1,
+ 	skipWords=1
+},
+[697] =
+{
+ 		id=697,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4206,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000045},
+ 		displayHero=1,
+ 		action=12182,
+ 		ui=1,
+ 	skipWords=1
+},
+[698] =
+{
+ 		id=698,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4207,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000048},
+ 		displayHero=1,
+ 		action=12185,
+ 		ui=1,
+ 	skipWords=1
+},
+[699] =
+{
+ 		id=699,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4207,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000049,52000050},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={40,55},
+ 	skipWords=2
+},
+[700] =
+{
+ 		id=700,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4207,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000051},
+ 		displayHero=1,
+ 		action=12186,
+ 		ui=1,
+ 	skipWords=1
+},
+[701] =
+{
+ 		id=701,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4207,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000052},
+ 		displayHero=1,
+ 		action=12187,
+ 		ui=1,
+ 	skipWords=1
+},
+[702] =
+{
+ 		id=702,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4207,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000053},
+ 		displayHero=1,
+ 		action=12188,
+ 		ui=1,
+ 	skipWords=1
+},
+[703] =
+{
+ 		id=703,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4208,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000056},
+ 		displayHero=1,
+ 		action=12191,
+ 		ui=1,
+ 	skipWords=1
+},
+[704] =
+{
+ 		id=704,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4208,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000057,52000058,52000059},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={55,60,65},
+ 	skipWords=2
+},
+[705] =
+{
+ 		id=705,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4208,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000060},
+ 		displayHero=1,
+ 		action=12192,
+ 		ui=1,
+ 	skipWords=1
+},
+[706] =
+{
+ 		id=706,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4208,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000061},
+ 		displayHero=1,
+ 		action=12193,
+ 		ui=1,
+ 	skipWords=1
+},
+[707] =
+{
+ 		id=707,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4208,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000062},
+ 		displayHero=1,
+ 		action=12194,
+ 		ui=1,
+ 	skipWords=1
+},
+[708] =
+{
+ 		id=708,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4209,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000064},
+ 		displayHero=1,
+ 		action=12196,
+ 		ui=1,
+ 	skipWords=1
+},
+[709] =
+{
+ 		id=709,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4209,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000065,52000066},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,70},
+ 	skipWords=2
+},
+[710] =
+{
+ 		id=710,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4209,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000067},
+ 		displayHero=1,
+ 		action=12197,
+ 		ui=1,
+ 	skipWords=1
+},
+[711] =
+{
+ 		id=711,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4209,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000068},
+ 		displayHero=1,
+ 		action=12198,
+ 		ui=1,
+ 	skipWords=1
+},
+[712] =
+{
+ 		id=712,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4209,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000069},
+ 		displayHero=1,
+ 		action=12199,
+ 		ui=1,
+ 	skipWords=1
+},
+[713] =
+{
+ 		id=713,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4209,
+ 		stepId=4,
+ 		nextStepId={7},
+ 		words={52000070},
+ 		displayHero=1,
+ 		action=12200,
+ 		ui=1,
+ 	skipWords=1
+},
+[714] =
+{
+ 		id=714,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4209,
+ 		stepId=7,
+ 		nextStepId={0},
+ 		words={52000071},
+ 		displayHero=1,
+ 		action=12201,
+ 		ui=1,
+ 	skipWords=1
+},
+[715] =
+{
+ 		id=715,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4210,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000075},
+ 		displayHero=1,
+ 		action=12205,
+ 		ui=1,
+ 	skipWords=1
+},
+[716] =
+{
+ 		id=716,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4210,
+ 		stepId=2,
+ 		nextStepId={0},
+ 		words={52000076},
+ 		displayHero=1,
+ 		action=12206,
+ 		ui=1,
+ 	skipWords=1
+},
+[717] =
+{
+ 		id=717,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4211,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000077},
+ 		displayHero=1,
+ 		action=12207,
+ 		ui=1,
+ 	skipWords=1
+},
+[718] =
+{
+ 		id=718,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4211,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000078,52000079,52000080},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={55,60,65},
+ 	skipWords=2
+},
+[719] =
+{
+ 		id=719,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4211,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000081},
+ 		displayHero=1,
+ 		action=12208,
+ 		ui=1,
+ 	skipWords=1
+},
+[720] =
+{
+ 		id=720,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4211,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000082},
+ 		displayHero=1,
+ 		action=12209,
+ 		ui=1,
+ 	skipWords=1
+},
+[721] =
+{
+ 		id=721,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4211,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000083},
+ 		displayHero=1,
+ 		action=12210,
+ 		ui=1,
+ 	skipWords=1
+},
+[722] =
+{
+ 		id=722,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4211,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000084},
+ 		displayHero=1,
+ 		action=12211,
+ 		ui=1,
+ 	skipWords=1
+},
+[723] =
+{
+ 		id=723,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4301,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000001},
+ 		displayHero=1,
+ 		action=102151,
+ 		ui=1,
+ 	skipWords=1
+},
+[724] =
+{
+ 		id=724,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4301,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000002,52000003,52000004},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,40,30},
+ 	skipWords=2
+},
+[725] =
+{
+ 		id=725,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4301,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000005},
+ 		displayHero=1,
+ 		action=102152,
+ 		ui=1,
+ 	skipWords=1
+},
+[726] =
+{
+ 		id=726,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4301,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000006},
+ 		displayHero=1,
+ 		action=102153,
+ 		ui=1,
+ 	skipWords=1
+},
+[727] =
+{
+ 		id=727,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4301,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000007},
+ 		displayHero=1,
+ 		action=102154,
+ 		ui=1,
+ 	skipWords=1
+},
+[728] =
+{
+ 		id=728,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4302,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000009},
+ 		displayHero=1,
+ 		action=102156,
+ 		ui=1,
+ 	skipWords=1
+},
+[729] =
+{
+ 		id=729,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4302,
+ 		stepId=2,
+ 		nextStepId={3,3},
+ 		speaker=1,
+ 		words={52000010,52000011},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={40,30},
+ 	skipWords=2
+},
+[730] =
+{
+ 		id=730,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4302,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000012},
+ 		displayHero=1,
+ 		action=102157,
+ 		ui=1,
+ 	skipWords=1
+},
+[731] =
+{
+ 		id=731,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4303,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000017},
+ 		displayHero=1,
+ 		action=102162,
+ 		ui=1,
+ 	skipWords=1
+},
+[732] =
+{
+ 		id=732,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4303,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000018,52000019},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={45,35},
+ 	skipWords=2
+},
+[733] =
+{
+ 		id=733,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4303,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000020},
+ 		displayHero=1,
+ 		action=102163,
+ 		ui=1,
+ 	skipWords=1
+},
+[734] =
+{
+ 		id=734,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4303,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000021},
+ 		displayHero=1,
+ 		action=102164,
+ 		ui=1,
+ 	skipWords=1
+},
+[735] =
+{
+ 		id=735,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4303,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000022},
+ 		displayHero=1,
+ 		action=102165,
+ 		ui=1,
+ 	skipWords=1
+},
+[736] =
+{
+ 		id=736,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4304,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000029},
+ 		displayHero=1,
+ 		action=102172,
+ 		ui=1,
+ 	skipWords=1
+},
+[737] =
+{
+ 		id=737,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4304,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000030,52000031},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={60,30},
+ 	skipWords=2
+},
+[738] =
+{
+ 		id=738,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4304,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000032},
+ 		displayHero=1,
+ 		action=102173,
+ 		ui=1,
+ 	skipWords=1
+},
+[739] =
+{
+ 		id=739,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4304,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000033},
+ 		displayHero=1,
+ 		action=102174,
+ 		ui=1,
+ 	skipWords=1
+},
+[740] =
+{
+ 		id=740,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4305,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000034},
+ 		displayHero=1,
+ 		action=102175,
+ 		ui=1,
+ 	skipWords=1
+},
+[741] =
+{
+ 		id=741,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4305,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000035,52000036},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,45},
+ 	skipWords=2
+},
+[742] =
+{
+ 		id=742,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4305,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000037},
+ 		displayHero=1,
+ 		action=102176,
+ 		ui=1,
+ 	skipWords=1
+},
+[743] =
+{
+ 		id=743,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4305,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000038},
+ 		displayHero=1,
+ 		action=102177,
+ 		ui=1,
+ 	skipWords=1
+},
+[744] =
+{
+ 		id=744,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4306,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000040},
+ 		displayHero=1,
+ 		action=102179,
+ 		ui=1,
+ 	skipWords=1
+},
+[745] =
+{
+ 		id=745,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4306,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000041,52000042},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,45},
+ 	skipWords=2
+},
+[746] =
+{
+ 		id=746,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4306,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000043},
+ 		displayHero=1,
+ 		action=102180,
+ 		ui=1,
+ 	skipWords=1
+},
+[747] =
+{
+ 		id=747,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4306,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000044},
+ 		displayHero=1,
+ 		action=102181,
+ 		ui=1,
+ 	skipWords=1
+},
+[748] =
+{
+ 		id=748,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4306,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000045},
+ 		displayHero=1,
+ 		action=102182,
+ 		ui=1,
+ 	skipWords=1
+},
+[749] =
+{
+ 		id=749,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4307,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000048},
+ 		displayHero=1,
+ 		action=102185,
+ 		ui=1,
+ 	skipWords=1
+},
+[750] =
+{
+ 		id=750,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4307,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000049,52000050},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={40,55},
+ 	skipWords=2
+},
+[751] =
+{
+ 		id=751,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4307,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000051},
+ 		displayHero=1,
+ 		action=102186,
+ 		ui=1,
+ 	skipWords=1
+},
+[752] =
+{
+ 		id=752,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4307,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000052},
+ 		displayHero=1,
+ 		action=102187,
+ 		ui=1,
+ 	skipWords=1
+},
+[753] =
+{
+ 		id=753,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4307,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000053},
+ 		displayHero=1,
+ 		action=102188,
+ 		ui=1,
+ 	skipWords=1
+},
+[754] =
+{
+ 		id=754,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4308,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000056},
+ 		displayHero=1,
+ 		action=102191,
+ 		ui=1,
+ 	skipWords=1
+},
+[755] =
+{
+ 		id=755,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4308,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000057,52000058,52000059},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={55,60,65},
+ 	skipWords=2
+},
+[756] =
+{
+ 		id=756,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4308,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000060},
+ 		displayHero=1,
+ 		action=102192,
+ 		ui=1,
+ 	skipWords=1
+},
+[757] =
+{
+ 		id=757,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4308,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000061},
+ 		displayHero=1,
+ 		action=102193,
+ 		ui=1,
+ 	skipWords=1
+},
+[758] =
+{
+ 		id=758,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4308,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000062},
+ 		displayHero=1,
+ 		action=102194,
+ 		ui=1,
+ 	skipWords=1
+},
+[759] =
+{
+ 		id=759,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4309,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000064},
+ 		displayHero=1,
+ 		action=102196,
+ 		ui=1,
+ 	skipWords=1
+},
+[760] =
+{
+ 		id=760,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4309,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000065,52000066},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,70},
+ 	skipWords=2
+},
+[761] =
+{
+ 		id=761,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4309,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000067},
+ 		displayHero=1,
+ 		action=102197,
+ 		ui=1,
+ 	skipWords=1
+},
+[762] =
+{
+ 		id=762,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4309,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000068},
+ 		displayHero=1,
+ 		action=102198,
+ 		ui=1,
+ 	skipWords=1
+},
+[763] =
+{
+ 		id=763,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4309,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000069},
+ 		displayHero=1,
+ 		action=102199,
+ 		ui=1,
+ 	skipWords=1
+},
+[764] =
+{
+ 		id=764,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4309,
+ 		stepId=4,
+ 		nextStepId={7},
+ 		words={52000070},
+ 		displayHero=1,
+ 		action=102200,
+ 		ui=1,
+ 	skipWords=1
+},
+[765] =
+{
+ 		id=765,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4309,
+ 		stepId=7,
+ 		nextStepId={0},
+ 		words={52000071},
+ 		displayHero=1,
+ 		action=102201,
+ 		ui=1,
+ 	skipWords=1
+},
+[766] =
+{
+ 		id=766,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4310,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000075},
+ 		displayHero=1,
+ 		action=102205,
+ 		ui=1,
+ 	skipWords=1
+},
+[767] =
+{
+ 		id=767,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4310,
+ 		stepId=2,
+ 		nextStepId={0},
+ 		words={52000076},
+ 		displayHero=1,
+ 		action=102206,
+ 		ui=1,
+ 	skipWords=1
+},
+[768] =
+{
+ 		id=768,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4311,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000077},
+ 		displayHero=1,
+ 		action=102207,
+ 		ui=1,
+ 	skipWords=1
+},
+[769] =
+{
+ 		id=769,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4311,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000078,52000079,52000080},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={55,60,65},
+ 	skipWords=2
+},
+[770] =
+{
+ 		id=770,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4311,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000081},
+ 		displayHero=1,
+ 		action=102208,
+ 		ui=1,
+ 	skipWords=1
+},
+[771] =
+{
+ 		id=771,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4311,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000082},
+ 		displayHero=1,
+ 		action=102209,
+ 		ui=1,
+ 	skipWords=1
+},
+[772] =
+{
+ 		id=772,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4311,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000083},
+ 		displayHero=1,
+ 		action=102210,
+ 		ui=1,
+ 	skipWords=1
+},
+[773] =
+{
+ 		id=773,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4311,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000084},
+ 		displayHero=1,
+ 		action=102211,
+ 		ui=1,
+ 	skipWords=1
+},
+[774] =
+{
+ 		id=774,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4401,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000001},
+ 		displayHero=1,
+ 		action=112151,
+ 		ui=1,
+ 	skipWords=1
+},
+[775] =
+{
+ 		id=775,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4401,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000002,52000003,52000004},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,40,30},
+ 	skipWords=2
+},
+[776] =
+{
+ 		id=776,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4401,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000005},
+ 		displayHero=1,
+ 		action=112152,
+ 		ui=1,
+ 	skipWords=1
+},
+[777] =
+{
+ 		id=777,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4401,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000006},
+ 		displayHero=1,
+ 		action=112153,
+ 		ui=1,
+ 	skipWords=1
+},
+[778] =
+{
+ 		id=778,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4401,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000007},
+ 		displayHero=1,
+ 		action=112154,
+ 		ui=1,
+ 	skipWords=1
+},
+[779] =
+{
+ 		id=779,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4402,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000009},
+ 		displayHero=1,
+ 		action=112156,
+ 		ui=1,
+ 	skipWords=1
+},
+[780] =
+{
+ 		id=780,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4402,
+ 		stepId=2,
+ 		nextStepId={3,3},
+ 		speaker=1,
+ 		words={52000010,52000011},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={40,30},
+ 	skipWords=2
+},
+[781] =
+{
+ 		id=781,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4402,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000012},
+ 		displayHero=1,
+ 		action=112157,
+ 		ui=1,
+ 	skipWords=1
+},
+[782] =
+{
+ 		id=782,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4403,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000017},
+ 		displayHero=1,
+ 		action=112162,
+ 		ui=1,
+ 	skipWords=1
+},
+[783] =
+{
+ 		id=783,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4403,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000018,52000019},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={45,35},
+ 	skipWords=2
+},
+[784] =
+{
+ 		id=784,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4403,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000020},
+ 		displayHero=1,
+ 		action=112163,
+ 		ui=1,
+ 	skipWords=1
+},
+[785] =
+{
+ 		id=785,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4403,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000021},
+ 		displayHero=1,
+ 		action=112164,
+ 		ui=1,
+ 	skipWords=1
+},
+[786] =
+{
+ 		id=786,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4403,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000022},
+ 		displayHero=1,
+ 		action=112165,
+ 		ui=1,
+ 	skipWords=1
+},
+[787] =
+{
+ 		id=787,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4404,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000029},
+ 		displayHero=1,
+ 		action=112172,
+ 		ui=1,
+ 	skipWords=1
+},
+[788] =
+{
+ 		id=788,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4404,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000030,52000031},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={60,30},
+ 	skipWords=2
+},
+[789] =
+{
+ 		id=789,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4404,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000032},
+ 		displayHero=1,
+ 		action=112173,
+ 		ui=1,
+ 	skipWords=1
+},
+[790] =
+{
+ 		id=790,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4404,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000033},
+ 		displayHero=1,
+ 		action=112174,
+ 		ui=1,
+ 	skipWords=1
+},
+[791] =
+{
+ 		id=791,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4405,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000034},
+ 		displayHero=1,
+ 		action=112175,
+ 		ui=1,
+ 	skipWords=1
+},
+[792] =
+{
+ 		id=792,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4405,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000035,52000036},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,45},
+ 	skipWords=2
+},
+[793] =
+{
+ 		id=793,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4405,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000037},
+ 		displayHero=1,
+ 		action=112176,
+ 		ui=1,
+ 	skipWords=1
+},
+[794] =
+{
+ 		id=794,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4405,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000038},
+ 		displayHero=1,
+ 		action=112177,
+ 		ui=1,
+ 	skipWords=1
+},
+[795] =
+{
+ 		id=795,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4406,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000040},
+ 		displayHero=1,
+ 		action=112179,
+ 		ui=1,
+ 	skipWords=1
+},
+[796] =
+{
+ 		id=796,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4406,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000041,52000042},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,45},
+ 	skipWords=2
+},
+[797] =
+{
+ 		id=797,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4406,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000043},
+ 		displayHero=1,
+ 		action=112180,
+ 		ui=1,
+ 	skipWords=1
+},
+[798] =
+{
+ 		id=798,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4406,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000044},
+ 		displayHero=1,
+ 		action=112181,
+ 		ui=1,
+ 	skipWords=1
+},
+[799] =
+{
+ 		id=799,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4406,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000045},
+ 		displayHero=1,
+ 		action=112182,
+ 		ui=1,
+ 	skipWords=1
+},
+[800] =
+{
+ 		id=800,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4407,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000048},
+ 		displayHero=1,
+ 		action=112185,
+ 		ui=1,
+ 	skipWords=1
+},
+[801] =
+{
+ 		id=801,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4407,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000049,52000050},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={40,55},
+ 	skipWords=2
+},
+[802] =
+{
+ 		id=802,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4407,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000051},
+ 		displayHero=1,
+ 		action=112186,
+ 		ui=1,
+ 	skipWords=1
+},
+[803] =
+{
+ 		id=803,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4407,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000052},
+ 		displayHero=1,
+ 		action=112187,
+ 		ui=1,
+ 	skipWords=1
+},
+[804] =
+{
+ 		id=804,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4407,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000053},
+ 		displayHero=1,
+ 		action=112188,
+ 		ui=1,
+ 	skipWords=1
+},
+[805] =
+{
+ 		id=805,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4408,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000056},
+ 		displayHero=1,
+ 		action=112191,
+ 		ui=1,
+ 	skipWords=1
+},
+[806] =
+{
+ 		id=806,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4408,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000057,52000058,52000059},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={55,60,65},
+ 	skipWords=2
+},
+[807] =
+{
+ 		id=807,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4408,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000060},
+ 		displayHero=1,
+ 		action=112192,
+ 		ui=1,
+ 	skipWords=1
+},
+[808] =
+{
+ 		id=808,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4408,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000061},
+ 		displayHero=1,
+ 		action=112193,
+ 		ui=1,
+ 	skipWords=1
+},
+[809] =
+{
+ 		id=809,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4408,
+ 		stepId=5,
+ 		nextStepId={0},
+ 		words={52000062},
+ 		displayHero=1,
+ 		action=112194,
+ 		ui=1,
+ 	skipWords=1
+},
+[810] =
+{
+ 		id=810,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4409,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000064},
+ 		displayHero=1,
+ 		action=112196,
+ 		ui=1,
+ 	skipWords=1
+},
+[811] =
+{
+ 		id=811,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4409,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={52000065,52000066},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={50,70},
+ 	skipWords=2
+},
+[812] =
+{
+ 		id=812,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4409,
+ 		stepId=3,
+ 		nextStepId={5},
+ 		words={52000067},
+ 		displayHero=1,
+ 		action=112197,
+ 		ui=1,
+ 	skipWords=1
+},
+[813] =
+{
+ 		id=813,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4409,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000068},
+ 		displayHero=1,
+ 		action=112198,
+ 		ui=1,
+ 	skipWords=1
+},
+[814] =
+{
+ 		id=814,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4409,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000069},
+ 		displayHero=1,
+ 		action=112199,
+ 		ui=1,
+ 	skipWords=1
+},
+[815] =
+{
+ 		id=815,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4409,
+ 		stepId=4,
+ 		nextStepId={7},
+ 		words={52000070},
+ 		displayHero=1,
+ 		action=112200,
+ 		ui=1,
+ 	skipWords=1
+},
+[816] =
+{
+ 		id=816,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4409,
+ 		stepId=7,
+ 		nextStepId={0},
+ 		words={52000071},
+ 		displayHero=1,
+ 		action=112201,
+ 		ui=1,
+ 	skipWords=1
+},
+[817] =
+{
+ 		id=817,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4410,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000075},
+ 		displayHero=1,
+ 		action=112205,
+ 		ui=1,
+ 	skipWords=1
+},
+[818] =
+{
+ 		id=818,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4410,
+ 		stepId=2,
+ 		nextStepId={0},
+ 		words={52000076},
+ 		displayHero=1,
+ 		action=112206,
+ 		ui=1,
+ 	skipWords=1
+},
+[819] =
+{
+ 		id=819,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4411,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={52000077},
+ 		displayHero=1,
+ 		action=112207,
+ 		ui=1,
+ 	skipWords=1
+},
+[820] =
+{
+ 		id=820,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4411,
+ 		stepId=2,
+ 		nextStepId={3,4,5},
+ 		speaker=1,
+ 		words={52000078,52000079,52000080},
+ 		displayHero=1,
+ 		ui=1,
+ 		favor={55,60,65},
+ 	skipWords=2
+},
+[821] =
+{
+ 		id=821,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4411,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		words={52000081},
+ 		displayHero=1,
+ 		action=112208,
+ 		ui=1,
+ 	skipWords=1
+},
+[822] =
+{
+ 		id=822,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4411,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={52000082},
+ 		displayHero=1,
+ 		action=112209,
+ 		ui=1,
+ 	skipWords=1
+},
+[823] =
+{
+ 		id=823,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4411,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={52000083},
+ 		displayHero=1,
+ 		action=112210,
+ 		ui=1,
+ 	skipWords=1
+},
+[824] =
+{
+ 		id=824,
+ 		type=10,
+ 		heroId=110003,
+ 		groupId=4411,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={52000084},
+ 		displayHero=1,
+ 		action=112211,
+ 		ui=1,
+ 	skipWords=1
+},
+[825] =
+{
+ 		id=825,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5100,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={43600160},
+ 		displayHero=1,
+ 		action=27001,
+ 		ui=1,
+ 	skipWords=0
+},
+[826] =
+{
+ 		id=826,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5100,
+ 		stepId=2,
+ 		nextStepId={3,6},
+ 		speaker=1,
+ 		words={43600161,43600162},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=0
+},
+[827] =
+{
+ 		id=827,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5100,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={43600163},
+ 		displayHero=1,
+ 		action=27002,
+ 		ui=1,
+ 	skipWords=0
+},
+[828] =
+{
+ 		id=828,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5100,
+ 		stepId=4,
+ 		nextStepId={7},
+ 		words={43600164},
+ 		displayHero=1,
+ 		action=27003,
+ 		ui=1,
+ 	skipWords=0
+},
+[829] =
+{
+ 		id=829,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5100,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={43600165},
+ 		displayHero=1,
+ 		action=27004,
+ 		ui=1,
+ 	skipWords=0
+},
+[830] =
+{
+ 		id=830,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5100,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={43600166},
+ 		displayHero=1,
+ 		action=27005,
+ 		ui=1,
+ 	skipWords=0
+},
+[831] =
+{
+ 		id=831,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5100,
+ 		stepId=7,
+ 		nextStepId={0},
+ 		words={43600167},
+ 		displayHero=1,
+ 		action=27006,
+ 		ui=1,
+ 		skip={1},
+ 	skipWords=0
+},
+[832] =
+{
+ 		id=832,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5101,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={50100008},
+ 		displayHero=1,
+ 		action=112340,
+ 		ui=1,
+ 	skipWords=0
+},
+[833] =
+{
+ 		id=833,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5101,
+ 		stepId=2,
+ 		nextStepId={0},
+ 		words={50100009},
+ 		displayHero=1,
+ 		action=112341,
+ 		ui=1,
+ 	skipWords=0
+},
+[834] =
+{
+ 		id=834,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5102,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={50100010},
+ 		displayHero=1,
+ 		action=112342,
+ 		ui=1,
+ 	skipWords=1
+},
+[835] =
+{
+ 		id=835,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5102,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		speaker=1,
+ 		words={50100011},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[836] =
+{
+ 		id=836,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5102,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={50100012},
+ 		displayHero=1,
+ 		action=112343,
+ 		ui=1,
+ 	skipWords=1
+},
+[837] =
+{
+ 		id=837,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5102,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		speaker=1,
+ 		words={50100013},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[838] =
+{
+ 		id=838,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5102,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={50100014},
+ 		displayHero=1,
+ 		action=112344,
+ 		ui=1,
+ 	skipWords=1
+},
+[839] =
+{
+ 		id=839,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5102,
+ 		stepId=6,
+ 		nextStepId={7,8},
+ 		speaker=1,
+ 		words={50100015,50100016},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[840] =
+{
+ 		id=840,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5102,
+ 		stepId=7,
+ 		nextStepId={9},
+ 		words={50100017},
+ 		displayHero=1,
+ 		action=112345,
+ 		ui=1,
+ 	skipWords=1
+},
+[841] =
+{
+ 		id=841,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5102,
+ 		stepId=8,
+ 		nextStepId={9},
+ 		words={50100017},
+ 		displayHero=1,
+ 		action=112345,
+ 		ui=1,
+ 	skipWords=1
+},
+[842] =
+{
+ 		id=842,
+ 		type=7,
+ 		heroId=110003,
+ 		groupId=5102,
+ 		stepId=9,
+ 		nextStepId={0},
+ 		words={50100018},
+ 		displayHero=1,
+ 		action=112346,
+ 		ui=1,
+ 	skipWords=1
+},
+[843] =
+{
+ 		id=843,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6101,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={50200501},
+ 		displayHero=1,
+ 		action=112416,
+ 		ui=1,
+ 	skipWords=1
+},
+[844] =
+{
+ 		id=844,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6101,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		speaker=1,
+ 		words={50200502},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[845] =
+{
+ 		id=845,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6101,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={50200503},
+ 		displayHero=1,
+ 		action=112417,
+ 		ui=1,
+ 	skipWords=1
+},
+[846] =
+{
+ 		id=846,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6101,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		speaker=1,
+ 		words={50200504},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[847] =
+{
+ 		id=847,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6101,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={50200505},
+ 		displayHero=1,
+ 		action=112418,
+ 		ui=1,
+ 	skipWords=1
+},
+[848] =
+{
+ 		id=848,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6101,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={50200506},
+ 		displayHero=1,
+ 		action=112419,
+ 		ui=1,
+ 	skipWords=1
+},
+[849] =
+{
+ 		id=849,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6101,
+ 		stepId=7,
+ 		nextStepId={8,8},
+ 		speaker=1,
+ 		words={50200507,50200508},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[850] =
+{
+ 		id=850,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6101,
+ 		stepId=8,
+ 		nextStepId={9},
+ 		words={50200509},
+ 		displayHero=1,
+ 		action=112420,
+ 		ui=1,
+ 	skipWords=1
+},
+[851] =
+{
+ 		id=851,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6101,
+ 		stepId=9,
+ 		nextStepId={0},
+ 		words={50200510},
+ 		displayHero=1,
+ 		action=112421,
+ 		ui=1,
+ 	skipWords=1
+},
+[852] =
+{
+ 		id=852,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6102,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={50200601},
+ 		displayHero=1,
+ 		action=112422,
+ 		ui=1,
+ 	skipWords=1
+},
+[853] =
+{
+ 		id=853,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6102,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={50200602,50200603},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[854] =
+{
+ 		id=854,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6102,
+ 		stepId=3,
+ 		nextStepId={6},
+ 		words={50200604},
+ 		displayHero=1,
+ 		action=112423,
+ 		ui=1,
+ 	skipWords=1
+},
+[855] =
+{
+ 		id=855,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6102,
+ 		stepId=4,
+ 		nextStepId={6},
+ 		words={50200605},
+ 		displayHero=1,
+ 		action=112424,
+ 		ui=1,
+ 	skipWords=1
+},
+[856] =
+{
+ 		id=856,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6102,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={50200607},
+ 		displayHero=1,
+ 		action=112425,
+ 		ui=1,
+ 	skipWords=1
+},
+[857] =
+{
+ 		id=857,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6102,
+ 		stepId=7,
+ 		nextStepId={0},
+ 		words={50200608},
+ 		displayHero=1,
+ 		action=112426,
+ 		ui=1,
+ 	skipWords=1
+},
+[858] =
+{
+ 		id=858,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6103,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={50200611},
+ 		displayHero=1,
+ 		action=112431,
+ 		ui=1,
+ 	skipWords=1
+},
+[859] =
+{
+ 		id=859,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6103,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={50200612,50200613},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[860] =
+{
+ 		id=860,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6103,
+ 		stepId=3,
+ 		nextStepId={6},
+ 		words={50200614},
+ 		displayHero=1,
+ 		action=112432,
+ 		ui=1,
+ 	skipWords=1
+},
+[861] =
+{
+ 		id=861,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6103,
+ 		stepId=4,
+ 		nextStepId={5},
+ 		words={50200615},
+ 		displayHero=1,
+ 		action=112433,
+ 		ui=1,
+ 	skipWords=1
+},
+[862] =
+{
+ 		id=862,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6103,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={50200616},
+ 		displayHero=1,
+ 		action=112434,
+ 		ui=1,
+ 	skipWords=1
+},
+[863] =
+{
+ 		id=863,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6103,
+ 		stepId=6,
+ 		nextStepId={0},
+ 		words={50200617},
+ 		displayHero=1,
+ 		action=112435,
+ 		ui=1,
+ 	skipWords=1
+},
+[864] =
+{
+ 		id=864,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6104,
+ 		stepId=1,
+ 		nextStepId={3},
+ 		words={50200621},
+ 		displayHero=1,
+ 		action=112441,
+ 		ui=1,
+ 	skipWords=1
+},
+[865] =
+{
+ 		id=865,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6104,
+ 		stepId=3,
+ 		nextStepId={4,5},
+ 		speaker=1,
+ 		words={50200623,50200624},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[866] =
+{
+ 		id=866,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6104,
+ 		stepId=4,
+ 		nextStepId={7},
+ 		words={50200625},
+ 		displayHero=1,
+ 		action=112443,
+ 		ui=1,
+ 	skipWords=1
+},
+[867] =
+{
+ 		id=867,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6104,
+ 		stepId=5,
+ 		nextStepId={6},
+ 		words={50200626},
+ 		displayHero=1,
+ 		action=112444,
+ 		ui=1,
+ 	skipWords=1
+},
+[868] =
+{
+ 		id=868,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6104,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={50200627},
+ 		displayHero=1,
+ 		action=112445,
+ 		ui=1,
+ 	skipWords=1
+},
+[869] =
+{
+ 		id=869,
+ 		type=11,
+ 		heroId=110003,
+ 		groupId=6104,
+ 		stepId=7,
+ 		nextStepId={0},
+ 		words={50200628},
+ 		displayHero=1,
+ 		action=112446,
+ 		ui=1,
+ 	skipWords=1
+},
+[870] =
+{
+ 		id=870,
+ 		type=13,
+ 		heroId=110003,
+ 		groupId=60101,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={17521081},
+ 		displayHero=1,
+ 		action=87001,
+ 		task=80018,
+ 		ui=1,
+ 	skipWords=1
+},
+[871] =
+{
+ 		id=871,
+ 		type=13,
+ 		heroId=110003,
+ 		groupId=60101,
+ 		stepId=2,
+ 		nextStepId={3},
+ 		words={17521082},
+ 		displayHero=1,
+ 		action=87002,
+ 		ui=1,
+ 	skipWords=1
+},
+[872] =
+{
+ 		id=872,
+ 		type=13,
+ 		heroId=110003,
+ 		groupId=60101,
+ 		stepId=3,
+ 		nextStepId={4},
+ 		words={17521083},
+ 		displayHero=1,
+ 		action=87003,
+ 		ui=1,
+ 	skipWords=1
+},
+[873] =
+{
+ 		id=873,
+ 		type=13,
+ 		heroId=110003,
+ 		groupId=60101,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		words={17521084},
+ 		displayHero=1,
+ 		action=87004,
+ 		ui=1,
+ 	skipWords=1
+},
+[874] =
+{
+ 		id=874,
+ 		type=13,
+ 		heroId=110003,
+ 		groupId=60102,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		speaker=2,
+ 		words={17521087},
+ 		ui=1,
+ 	skipWords=1
+},
+[875] =
+{
+ 		id=875,
+ 		type=13,
+ 		heroId=110003,
+ 		groupId=60102,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=2,
+ 		task=80016,
+ 		ui=1,
+ 		itemTask={1307,1},
+ 	skipWords=2
+},
+[876] =
+{
+ 		id=876,
+ 		type=13,
+ 		heroId=110003,
+ 		groupId=60102,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		speaker=2,
+ 		words={17521088},
+ 		ui=1,
+ 	skipWords=1
+},
+[877] =
+{
+ 		id=877,
+ 		type=13,
+ 		heroId=110003,
+ 		groupId=60102,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		speaker=2,
+ 		words={17521089},
+ 		ui=1,
+ 	skipWords=1
+},
+[878] =
+{
+ 		id=878,
+ 		type=13,
+ 		heroId=110003,
+ 		groupId=60103,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		speaker=2,
+ 		words={17521090},
+ 		ui=1,
+ 	skipWords=1
+},
+[879] =
+{
+ 		id=879,
+ 		type=13,
+ 		heroId=110003,
+ 		groupId=60103,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=2,
+ 		task=80017,
+ 		ui=1,
+ 		itemTask={1306,1},
+ 	skipWords=2
+},
+[880] =
+{
+ 		id=880,
+ 		type=13,
+ 		heroId=110003,
+ 		groupId=60103,
+ 		stepId=3,
+ 		nextStepId={0},
+ 		speaker=2,
+ 		words={17521091},
+ 		ui=1,
+ 	skipWords=1
+},
+[881] =
+{
+ 		id=881,
+ 		type=13,
+ 		heroId=110003,
+ 		groupId=60103,
+ 		stepId=4,
+ 		nextStepId={0},
+ 		speaker=2,
+ 		words={17521092},
+ 		ui=1,
+ 	skipWords=1
+},
+[882] =
+{
+ 		id=882,
+ 		type=14,
+ 		heroId=110003,
+ 		groupId=60104,
+ 		stepId=1,
+ 		nextStepId={2},
+ 		words={53000025},
+ 		displayHero=1,
+ 		action=112299,
+ 		ui=1,
+ 	skipWords=1
+},
+[883] =
+{
+ 		id=883,
+ 		type=14,
+ 		heroId=110003,
+ 		groupId=60104,
+ 		stepId=2,
+ 		nextStepId={3,4},
+ 		speaker=1,
+ 		words={53000026},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[884] =
+{
+ 		id=884,
+ 		type=14,
+ 		heroId=110003,
+ 		groupId=60104,
+ 		stepId=3,
+ 		nextStepId={6},
+ 		words={53000028},
+ 		displayHero=1,
+ 		action=112300,
+ 		ui=1,
+ 	skipWords=1
+},
+[885] =
+{
+ 		id=885,
+ 		type=14,
+ 		heroId=110003,
+ 		groupId=60104,
+ 		stepId=6,
+ 		nextStepId={7},
+ 		words={53000031},
+ 		displayHero=1,
+ 		action=112303,
+ 		ui=1,
+ 	skipWords=1
+},
+[886] =
+{
+ 		id=886,
+ 		type=14,
+ 		heroId=110003,
+ 		groupId=60104,
+ 		stepId=7,
+ 		nextStepId={8},
+ 		words={53000032},
+ 		displayHero=1,
+ 		action=112304,
+ 		ui=1,
+ 	skipWords=1
+},
+[887] =
+{
+ 		id=887,
+ 		type=14,
+ 		heroId=110003,
+ 		groupId=60104,
+ 		stepId=8,
+ 		nextStepId={9,9},
+ 		speaker=1,
+ 		words={53000033,53000034},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[888] =
+{
+ 		id=888,
+ 		type=14,
+ 		heroId=110003,
+ 		groupId=60104,
+ 		stepId=9,
+ 		nextStepId={10},
+ 		words={53000035},
+ 		displayHero=1,
+ 		action=112305,
+ 		ui=1,
+ 	skipWords=1
+},
+[889] =
+{
+ 		id=889,
+ 		type=14,
+ 		heroId=110003,
+ 		groupId=60104,
+ 		stepId=10,
+ 		nextStepId={0},
+ 		words={53000036},
+ 		displayHero=1,
+ 		action=112306,
+ 		reward={353},
+ 		ui=1,
+ 	skipWords=2
+},
+[890] =
+{
+ 		id=890,
+ 		type=15,
+ 		heroId=110003,
+ 		groupId=60105,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+},
+[891] =
+{
+ 		id=891,
+ 		type=15,
+ 		heroId=110003,
+ 		groupId=60106,
+ 		stepId=1,
+ 		nextStepId={0},
+ 		displayHero=1,
+ 		ui=1,
+ 	skipWords=1
+}
+}
+
+return {title=title, value=value}
