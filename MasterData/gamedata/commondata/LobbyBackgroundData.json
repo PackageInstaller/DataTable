@@ -1,0 +1,26 @@
+{
+    "DoNotUseThis": [
+        {
+            "Index": 1,
+            "DefaultCondition": true,
+            "FolderName": "Main",
+            "TextureName": "Main",
+            "CowQueenIndex": "Lobby_CowQueen_01",
+            "ActiveBoundName": [
+                "Lobby_Barrel",
+                "Lobby_Candle",
+                "Lobby_Window",
+                "Lobby_Table",
+                "Lobby_Inn"
+            ]
+        },
+        {
+            "Index": 2,
+            "RequireUnitIndex": 498,
+            "FolderName": "MerryBeach",
+            "TextureName": "Beach",
+            "HideMaid2": true,
+            "CowQueenIndex": "Lobby_CowQueen_02"
+        }
+    ]
+}
