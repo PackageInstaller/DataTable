@@ -1,0 +1,83 @@
+{
+  "__tableName": "Wave_Boss_Info_Data",
+  "__byteLength": 1105,
+  "items": [
+    {
+      "wave_boss_info_id": "split_1",
+      "is_boss_have_prepare": false,
+      "hpbar_path": "Assets/AssetResources/Prefabs/UI/Battle/V4/BattleBossLifeGauge_V4",
+      "boss_hpbar_split": 1,
+      "gauge_trigger_define_id": "0",
+      "gauge_icon": "0",
+      "gauge_style": "0",
+      "gauge_name": "0",
+      "gauge_prefab": "0"
+    },
+    {
+      "wave_boss_info_id": "split_5",
+      "is_boss_have_prepare": false,
+      "hpbar_path": "Assets/AssetResources/Prefabs/UI/Battle/V4/BattleBossLifeGauge_V4",
+      "boss_hpbar_split": 5,
+      "gauge_trigger_define_id": "0",
+      "gauge_icon": "0",
+      "gauge_style": "0",
+      "gauge_name": "0",
+      "gauge_prefab": "0"
+    },
+    {
+      "wave_boss_info_id": "split_10",
+      "is_boss_have_prepare": false,
+      "hpbar_path": "Assets/AssetResources/Prefabs/UI/Battle/V4/BattleBossLifeGauge_V4",
+      "boss_hpbar_split": 10,
+      "gauge_trigger_define_id": "0",
+      "gauge_icon": "0",
+      "gauge_style": "0",
+      "gauge_name": "0",
+      "gauge_prefab": "0"
+    },
+    {
+      "wave_boss_info_id": "split_30",
+      "is_boss_have_prepare": false,
+      "hpbar_path": "Assets/AssetResources/Prefabs/UI/Battle/V4/BattleBossLifeGauge_V4",
+      "boss_hpbar_split": 30,
+      "gauge_trigger_define_id": "0",
+      "gauge_icon": "0",
+      "gauge_style": "0",
+      "gauge_name": "0",
+      "gauge_prefab": "0"
+    },
+    {
+      "wave_boss_info_id": "prepare_split_30",
+      "is_boss_have_prepare": true,
+      "hpbar_path": "Assets/AssetResources/Prefabs/UI/Battle/V4/BattleNemesisLifeGauge_V4",
+      "boss_hpbar_split": 30,
+      "gauge_trigger_define_id": "0",
+      "gauge_icon": "0",
+      "gauge_style": "0",
+      "gauge_name": "0",
+      "gauge_prefab": "0"
+    },
+    {
+      "wave_boss_info_id": "gauge_bar_test_normal",
+      "is_boss_have_prepare": false,
+      "hpbar_path": "Assets/AssetResources/Prefabs/UI/Battle/V4/BattleBossLifeGauge_V4",
+      "boss_hpbar_split": 5,
+      "gauge_trigger_define_id": "define_debuff_defence",
+      "gauge_icon": "Icon_Ultimate_CH0014",
+      "gauge_style": "normal",
+      "gauge_name": "0",
+      "gauge_prefab": "0"
+    },
+    {
+      "wave_boss_info_id": "gauge_bar_test_alert",
+      "is_boss_have_prepare": false,
+      "hpbar_path": "Assets/AssetResources/Prefabs/UI/Battle/V4/BattleBossLifeGauge_V4",
+      "boss_hpbar_split": 5,
+      "gauge_trigger_define_id": "define_debuff_defence",
+      "gauge_icon": "Icon_Ultimate_CH0014",
+      "gauge_style": "alert",
+      "gauge_name": "0",
+      "gauge_prefab": "0"
+    }
+  ]
+}

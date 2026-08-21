@@ -1,0 +1,222 @@
+{
+  "__tableName": "Shop_Data",
+  "__byteLength": 997,
+  "items": [
+    {
+      "shop_id": 1001,
+      "shop_type": "COMMON_SHOP",
+      "shop_sale_type": "CHANGE",
+      "shop_name_id": "system_shop_name_normal",
+      "open_schedule_id": 201,
+      "refresh_reset_id": 8,
+      "refresh_schedule_id": 202,
+      "priority_refresh_dia_type": "NONE",
+      "refresh_dia_type": "NONE",
+      "refresh_dia_id": 2,
+      "refresh_num": 0,
+      "refresh_price": [
+        0
+      ],
+      "sort_order": 1,
+      "is_show": true
+    },
+    {
+      "shop_id": 1002,
+      "shop_type": "COMMON_SHOP",
+      "shop_sale_type": "SINGLE",
+      "shop_name_id": "system_shop_name_piece",
+      "open_schedule_id": 201,
+      "refresh_reset_id": 0,
+      "refresh_schedule_id": 0,
+      "priority_refresh_dia_type": "NONE",
+      "refresh_dia_type": "NONE",
+      "refresh_dia_id": 0,
+      "refresh_num": 0,
+      "refresh_price": [
+        0
+      ],
+      "sort_order": 2,
+      "is_show": true
+    },
+    {
+      "shop_id": 1003,
+      "shop_type": "COMMON_SHOP",
+      "shop_sale_type": "SINGLE",
+      "shop_name_id": "type_game_mode_nemesis",
+      "open_schedule_id": 204,
+      "refresh_reset_id": 9,
+      "refresh_schedule_id": 205,
+      "priority_refresh_dia_type": "NONE",
+      "refresh_dia_type": "NONE",
+      "refresh_dia_id": 0,
+      "refresh_num": 0,
+      "refresh_price": [
+        0
+      ],
+      "sort_order": 3,
+      "is_show": false
+    },
+    {
+      "shop_id": 1004,
+      "shop_type": "COMMON_SHOP",
+      "shop_sale_type": "SINGLE",
+      "shop_name_id": "type_game_mode_arena",
+      "open_schedule_id": 206,
+      "refresh_reset_id": 9,
+      "refresh_schedule_id": 207,
+      "priority_refresh_dia_type": "NONE",
+      "refresh_dia_type": "NONE",
+      "refresh_dia_id": 0,
+      "refresh_num": 0,
+      "refresh_price": [
+        0
+      ],
+      "sort_order": 4,
+      "is_show": true
+    },
+    {
+      "shop_id": 1100,
+      "shop_type": "TOPBAR_SHOP",
+      "shop_sale_type": "SINGLE",
+      "shop_name_id": "system_shop_name_stamina_buy",
+      "open_schedule_id": 201,
+      "refresh_reset_id": 8,
+      "refresh_schedule_id": 207,
+      "priority_refresh_dia_type": "NONE",
+      "refresh_dia_type": "NONE",
+      "refresh_dia_id": 0,
+      "refresh_num": 0,
+      "refresh_price": [
+        0
+      ],
+      "sort_order": 999,
+      "is_show": false
+    },
+    {
+      "shop_id": 3001,
+      "shop_type": "EVENT_SHOP",
+      "shop_sale_type": "SINGLE",
+      "shop_name_id": "system_shop_name_event",
+      "open_schedule_id": 10011,
+      "refresh_reset_id": 0,
+      "refresh_schedule_id": 0,
+      "priority_refresh_dia_type": "NONE",
+      "refresh_dia_type": "NONE",
+      "refresh_dia_id": 0,
+      "refresh_num": 0,
+      "refresh_price": [
+        0
+      ],
+      "sort_order": 0,
+      "is_show": true
+    },
+    {
+      "shop_id": 3002,
+      "shop_type": "EVENT_SHOP",
+      "shop_sale_type": "SINGLE",
+      "shop_name_id": "system_shop_name_event",
+      "open_schedule_id": 10021,
+      "refresh_reset_id": 0,
+      "refresh_schedule_id": 0,
+      "priority_refresh_dia_type": "NONE",
+      "refresh_dia_type": "NONE",
+      "refresh_dia_id": 0,
+      "refresh_num": 0,
+      "refresh_price": [
+        0
+      ],
+      "sort_order": 0,
+      "is_show": true
+    },
+    {
+      "shop_id": 4001,
+      "shop_type": "GACHA_MILEAGE_SHOP",
+      "shop_sale_type": "SINGLE",
+      "shop_name_id": "system_mileageshop",
+      "open_schedule_id": 303,
+      "refresh_reset_id": 0,
+      "refresh_schedule_id": 0,
+      "priority_refresh_dia_type": "NONE",
+      "refresh_dia_type": "NONE",
+      "refresh_dia_id": 0,
+      "refresh_num": 0,
+      "refresh_price": [
+        0
+      ],
+      "sort_order": 0,
+      "is_show": true
+    },
+    {
+      "shop_id": 4002,
+      "shop_type": "GACHA_MILEAGE_SHOP",
+      "shop_sale_type": "SINGLE",
+      "shop_name_id": "system_mileageshop",
+      "open_schedule_id": 304,
+      "refresh_reset_id": 0,
+      "refresh_schedule_id": 0,
+      "priority_refresh_dia_type": "NONE",
+      "refresh_dia_type": "NONE",
+      "refresh_dia_id": 0,
+      "refresh_num": 0,
+      "refresh_price": [
+        0
+      ],
+      "sort_order": 0,
+      "is_show": true
+    },
+    {
+      "shop_id": 4003,
+      "shop_type": "GACHA_MILEAGE_SHOP",
+      "shop_sale_type": "SINGLE",
+      "shop_name_id": "system_mileageshop",
+      "open_schedule_id": 12,
+      "refresh_reset_id": 0,
+      "refresh_schedule_id": 0,
+      "priority_refresh_dia_type": "NONE",
+      "refresh_dia_type": "NONE",
+      "refresh_dia_id": 0,
+      "refresh_num": 0,
+      "refresh_price": [
+        0
+      ],
+      "sort_order": 0,
+      "is_show": true
+    },
+    {
+      "shop_id": 4004,
+      "shop_type": "GACHA_MILEAGE_SHOP",
+      "shop_sale_type": "SINGLE",
+      "shop_name_id": "system_mileageshop",
+      "open_schedule_id": 12,
+      "refresh_reset_id": 0,
+      "refresh_schedule_id": 0,
+      "priority_refresh_dia_type": "NONE",
+      "refresh_dia_type": "NONE",
+      "refresh_dia_id": 0,
+      "refresh_num": 0,
+      "refresh_price": [
+        0
+      ],
+      "sort_order": 0,
+      "is_show": true
+    },
+    {
+      "shop_id": 4005,
+      "shop_type": "GACHA_MILEAGE_SHOP",
+      "shop_sale_type": "SINGLE",
+      "shop_name_id": "system_mileageshop",
+      "open_schedule_id": 12,
+      "refresh_reset_id": 0,
+      "refresh_schedule_id": 0,
+      "priority_refresh_dia_type": "NONE",
+      "refresh_dia_type": "NONE",
+      "refresh_dia_id": 0,
+      "refresh_num": 0,
+      "refresh_price": [
+        0
+      ],
+      "sort_order": 0,
+      "is_show": true
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "__tableName": "Total_Assault_Zone_Data",
+  "__byteLength": 620,
+  "items": [
+    {
+      "zone_id": 70111,
+      "assault_id": 7011,
+      "zone_group_id": 7011,
+      "zone_name_id": "contents_nemesis_np6010_zone_01",
+      "zone_img_path": "Icon_NP6010",
+      "open_zone_id": [
+        0,
+        0
+      ],
+      "enter_cutscene_path": "0"
+    },
+    {
+      "zone_id": 70112,
+      "assault_id": 7011,
+      "zone_group_id": 7011,
+      "zone_name_id": "contents_nemesis_np6010_zone_02",
+      "zone_img_path": "Icon_NP6011",
+      "open_zone_id": [
+        0,
+        0
+      ],
+      "enter_cutscene_path": "0"
+    },
+    {
+      "zone_id": 70113,
+      "assault_id": 7011,
+      "zone_group_id": 7011,
+      "zone_name_id": "contents_nemesis_np6010_zone_03",
+      "zone_img_path": "Icon_NP6012",
+      "open_zone_id": [
+        70111,
+        70112
+      ],
+      "enter_cutscene_path": "Assets\\Skeleton\\Content\\Nemesis\\NP6012\\Enter\\Nemesis_NP6012_Enter"
+    },
+    {
+      "zone_id": 70241,
+      "assault_id": 7024,
+      "zone_group_id": 7024,
+      "zone_name_id": "contents_nemesis_np6010_zone_01",
+      "zone_img_path": "Icon_NP6010",
+      "open_zone_id": [
+        0,
+        0
+      ],
+      "enter_cutscene_path": "0"
+    },
+    {
+      "zone_id": 70242,
+      "assault_id": 7024,
+      "zone_group_id": 7024,
+      "zone_name_id": "contents_nemesis_np6010_zone_02",
+      "zone_img_path": "Icon_NP6011",
+      "open_zone_id": [
+        0,
+        0
+      ],
+      "enter_cutscene_path": "0"
+    },
+    {
+      "zone_id": 70243,
+      "assault_id": 7024,
+      "zone_group_id": 7024,
+      "zone_name_id": "contents_nemesis_np6010_zone_03",
+      "zone_img_path": "Icon_NP6012",
+      "open_zone_id": [
+        70241,
+        70242
+      ],
+      "enter_cutscene_path": "0"
+    }
+  ]
+}

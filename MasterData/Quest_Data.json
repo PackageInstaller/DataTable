@@ -1,0 +1,2976 @@
+{
+  "__tableName": "Quest_Data",
+  "__byteLength": 27684,
+  "items": [
+    {
+      "quest_id": 1,
+      "quest_group_id": 10,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_LOGIN_COUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "",
+      "quest_desc_id": "quest_daily_desc_login",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2,
+      "quest_group_id": 10,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "",
+      "quest_desc_id": "quest_daily_desc_use_stamina_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3,
+      "quest_group_id": 10,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "",
+      "quest_desc_id": "quest_daily_desc_use_energy_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 4,
+      "quest_group_id": 10,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SHOP_PRODUCT_BUY",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "",
+      "quest_desc_id": "quest_daily_desc_buy_stamina_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 5,
+      "quest_group_id": 10,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SHOP_PRODUCT_BUY",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "",
+      "quest_desc_id": "quest_daily_desc_buy_energy_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 6,
+      "quest_group_id": 10,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SHOP_BUY_TIMES",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "",
+      "quest_desc_id": "quest_daily_desc_buy_nomal_shop",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 7,
+      "quest_group_id": 10,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "",
+      "quest_desc_id": "quest_daily_desc_play_date",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 100,
+      "quest_group_id": 30,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_player_levelup",
+      "quest_desc_id": "quest_achievement_desc_player_levelup",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 101,
+      "quest_group_id": 30,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_use_stamina_vitamin",
+      "quest_desc_id": "quest_achievement_desc_use_stamina_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 102,
+      "quest_group_id": 30,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_use_energy_vitamin",
+      "quest_desc_id": "quest_achievement_desc_use_energy_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 103,
+      "quest_group_id": 30,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_use_gold",
+      "quest_desc_id": "quest_achievement_desc_use_gold",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 104,
+      "quest_group_id": 30,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_GET_CHARACTER_COUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_collect_character",
+      "quest_desc_id": "quest_achievement_desc_collect_character",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 105,
+      "quest_group_id": 30,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_GALLERY_GET",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_collect_desire",
+      "quest_desc_id": "quest_achievement_desc_collect_desire",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 106,
+      "quest_group_id": 30,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_GALLERY_GET",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_collect_affection",
+      "quest_desc_id": "quest_achievement_desc_collect_affection",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 107,
+      "quest_group_id": 30,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_QUEST_BASE_REWARD_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_daily_quest_reward_all_clear",
+      "quest_desc_id": "quest_achievement_desc_daily_quest_reward_all_clear",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 906,
+      "quest_group_id": 30,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_clear_zone_6",
+      "quest_desc_id": "quest_achievement_desc_clear_zone_6",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 909,
+      "quest_group_id": 30,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_clear_zone_9",
+      "quest_desc_id": "quest_achievement_desc_clear_zone_9",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 912,
+      "quest_group_id": 30,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_clear_zone_12",
+      "quest_desc_id": "quest_achievement_desc_clear_zone_12",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 200,
+      "quest_group_id": 31,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_CHARACTER_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_character_levelup",
+      "quest_desc_id": "quest_achievement_desc_character_levelup",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 201,
+      "quest_group_id": 31,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_CHARACTER_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_character_rankup_star_2",
+      "quest_desc_id": "quest_achievement_desc_character_rankup_star_2",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 202,
+      "quest_group_id": 31,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_CHARACTER_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_character_rankup_star_3",
+      "quest_desc_id": "quest_achievement_desc_character_rankup_star_3",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 203,
+      "quest_group_id": 31,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_CHARACTER_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_character_rankup_star_4",
+      "quest_desc_id": "quest_achievement_desc_character_rankup_star_4",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 204,
+      "quest_group_id": 31,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_CHARACTER_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_character_rankup_star_5",
+      "quest_desc_id": "quest_achievement_desc_character_rankup_star_5",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 205,
+      "quest_group_id": 31,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_CHARACTER_EQUIPMENT_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_character_equipment_levelup",
+      "quest_desc_id": "quest_achievement_desc_character_equipment_levelup",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 206,
+      "quest_group_id": 31,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_EQUIPMENT_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_character_equipment_rankup_all",
+      "quest_desc_id": "quest_achievement_desc_character_equipment_rankup_all",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 207,
+      "quest_group_id": 31,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_CHARACTER_SKILL_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_character_skill_levelup_all",
+      "quest_desc_id": "quest_achievement_desc_character_skill_levelup_all",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 208,
+      "quest_group_id": 31,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_play_date",
+      "quest_desc_id": "quest_achievement_desc_play_date",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 209,
+      "quest_group_id": 31,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_GIFT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_give_gift",
+      "quest_desc_id": "quest_achievement_desc_give_gift",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 210,
+      "quest_group_id": 31,
+      "quest_use_type": "QUEST_USE_TYPE_ACHIEVEMENT",
+      "quest_complete_type": "COMPLETE_CHARACTER_LOVE_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_achievement_name_character_love_levelup",
+      "quest_desc_id": "quest_achievement_desc_character_love_levelup",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000101,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000102,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000103,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000104,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000105,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000106,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000107,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000108,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000109,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000110,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000111,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000112,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000113,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000114,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000115,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000116,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000117,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000118,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000119,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000120,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000121,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000122,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000123,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000124,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000125,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000126,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000127,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000128,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000129,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 2000130,
+      "quest_group_id": 20001,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_ACCUM_COLLECT_AMOUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "event_complete_goods_accum_collect_amount",
+      "quest_desc_id": "quest_desc_event_tofu_count_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001101,
+      "quest_group_id": 100,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_LOGIN_COUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_login_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001102,
+      "quest_group_id": 100,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "ACCOUNT_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_check_player_level_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001103,
+      "quest_group_id": 100,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAMINA_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_use_chargevalue_stamina_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001104,
+      "quest_group_id": 100,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_use_goods_credit_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001105,
+      "quest_group_id": 100,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STORY_READ",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_check_play_mainstory_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001106,
+      "quest_group_id": 100,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_FRIEND_POINT_SEND",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_send_friend_point_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001107,
+      "quest_group_id": 100,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GACHA_TIMES",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_play_gacha_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001108,
+      "quest_group_id": 100,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_guide_quest_clear_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001201,
+      "quest_group_id": 101,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ITEM_TYPE_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001202,
+      "quest_group_id": 101,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GIFT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001203,
+      "quest_group_id": 101,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_FLIRTING",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001204,
+      "quest_group_id": 101,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001205,
+      "quest_group_id": 101,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_RANK_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001206,
+      "quest_group_id": 101,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_LOVE_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001207,
+      "quest_group_id": 101,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_EQUIPMENT_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001208,
+      "quest_group_id": 101,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001301,
+      "quest_group_id": 102,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_EQUIPMENT_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001302,
+      "quest_group_id": 102,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SKILL_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001303,
+      "quest_group_id": 102,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STORY_READ",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001304,
+      "quest_group_id": 102,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GAME_TYPE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001305,
+      "quest_group_id": 102,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ZONE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001306,
+      "quest_group_id": 102,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001401,
+      "quest_group_id": 103,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ZONE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001402,
+      "quest_group_id": 103,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001403,
+      "quest_group_id": 103,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_LOGIN_COUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001404,
+      "quest_group_id": 103,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "ACCOUNT_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001405,
+      "quest_group_id": 103,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAMINA_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001406,
+      "quest_group_id": 103,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001407,
+      "quest_group_id": 103,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SHOP_BUY_TIMES",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001408,
+      "quest_group_id": 103,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001501,
+      "quest_group_id": 104,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_LOGIN_COUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001502,
+      "quest_group_id": 104,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAMINA_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001503,
+      "quest_group_id": 104,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001504,
+      "quest_group_id": 104,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ITEM_TYPE_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001505,
+      "quest_group_id": 104,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_LOVE_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001506,
+      "quest_group_id": 104,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001507,
+      "quest_group_id": 104,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_EQUIPMENT_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001508,
+      "quest_group_id": 104,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001601,
+      "quest_group_id": 105,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_LOGIN_COUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001602,
+      "quest_group_id": 105,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STORY_READ",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001603,
+      "quest_group_id": 105,
+      "quest_use_type": "NONE",
+      "quest_complete_type": "COMPLETE_ZONE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001604,
+      "quest_group_id": 105,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SKILL_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001605,
+      "quest_group_id": 105,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_EQUIPMENT_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001606,
+      "quest_group_id": 105,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GIFT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001607,
+      "quest_group_id": 105,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_FLIRTING",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001608,
+      "quest_group_id": 105,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001701,
+      "quest_group_id": 106,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_LOGIN_COUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001702,
+      "quest_group_id": 106,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STORY_READ",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001703,
+      "quest_group_id": 106,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ZONE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001704,
+      "quest_group_id": 106,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001705,
+      "quest_group_id": 106,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GIFT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001706,
+      "quest_group_id": 106,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_FLIRTING",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3001707,
+      "quest_group_id": 106,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002101,
+      "quest_group_id": 110,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_LOGIN_COUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002102,
+      "quest_group_id": 110,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "ACCOUNT_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002103,
+      "quest_group_id": 110,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAMINA_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002104,
+      "quest_group_id": 110,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002105,
+      "quest_group_id": 110,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SHOP_BUY_TIMES",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002106,
+      "quest_group_id": 110,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_FRIEND_POINT_SEND",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002107,
+      "quest_group_id": 110,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GACHA_TIMES",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002108,
+      "quest_group_id": 110,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002201,
+      "quest_group_id": 111,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ITEM_TYPE_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002202,
+      "quest_group_id": 111,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GIFT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002203,
+      "quest_group_id": 111,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_FLIRTING",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002204,
+      "quest_group_id": 111,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002205,
+      "quest_group_id": 111,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_RANK_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002206,
+      "quest_group_id": 111,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_LOVE_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002207,
+      "quest_group_id": 111,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_EQUIPMENT_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002208,
+      "quest_group_id": 111,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002301,
+      "quest_group_id": 112,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_EQUIPMENT_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002302,
+      "quest_group_id": 112,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SKILL_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002303,
+      "quest_group_id": 112,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STORY_READ",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002304,
+      "quest_group_id": 112,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GAME_TYPE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002305,
+      "quest_group_id": 112,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ZONE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002306,
+      "quest_group_id": 112,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002401,
+      "quest_group_id": 113,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ZONE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002402,
+      "quest_group_id": 113,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002403,
+      "quest_group_id": 113,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_LOGIN_COUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002404,
+      "quest_group_id": 113,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "ACCOUNT_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002405,
+      "quest_group_id": 113,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAMINA_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002406,
+      "quest_group_id": 113,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002407,
+      "quest_group_id": 113,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SHOP_BUY_TIMES",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002408,
+      "quest_group_id": 113,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002501,
+      "quest_group_id": 114,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_LOGIN_COUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "102",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002502,
+      "quest_group_id": 114,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAMINA_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002503,
+      "quest_group_id": 114,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002504,
+      "quest_group_id": 114,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ITEM_TYPE_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002505,
+      "quest_group_id": 114,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_LOVE_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002506,
+      "quest_group_id": 114,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002507,
+      "quest_group_id": 114,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_EQUIPMENT_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002508,
+      "quest_group_id": 114,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002601,
+      "quest_group_id": 115,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_LOGIN_COUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002602,
+      "quest_group_id": 115,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STORY_READ",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002603,
+      "quest_group_id": 115,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ZONE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002604,
+      "quest_group_id": 115,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SKILL_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002605,
+      "quest_group_id": 115,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_EQUIPMENT_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002606,
+      "quest_group_id": 115,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GIFT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002607,
+      "quest_group_id": 115,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_FLIRTING",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002608,
+      "quest_group_id": 115,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002701,
+      "quest_group_id": 116,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_LOGIN_COUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002702,
+      "quest_group_id": 116,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STORY_READ",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002703,
+      "quest_group_id": 116,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ZONE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002704,
+      "quest_group_id": 116,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002705,
+      "quest_group_id": 116,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GIFT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002706,
+      "quest_group_id": 116,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_FLIRTING",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 3002707,
+      "quest_group_id": 116,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_dummy",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900000,
+      "quest_group_id": 10001,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_QUEST_BASE_REWARD_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_daily_quest_reward_all_clear",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900001,
+      "quest_group_id": 10001,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_use_stamina_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900002,
+      "quest_group_id": 10001,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_use_energy_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900003,
+      "quest_group_id": 10001,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_play_date",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900004,
+      "quest_group_id": 10001,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_use_gold",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900005,
+      "quest_group_id": 10002,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_use_stamina_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900006,
+      "quest_group_id": 10002,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_use_energy_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900007,
+      "quest_group_id": 10002,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_CHARACTER_EQUIPMENT_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_character_equipment_levelup",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900008,
+      "quest_group_id": 10002,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_SKILL_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_character_skill_levelup_all",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900009,
+      "quest_group_id": 10002,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ITEM_TYPE_GAIN",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_gain_character_equipment_piece",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900010,
+      "quest_group_id": 10003,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_clear_stage_event_1001",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900011,
+      "quest_group_id": 10004,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_use_stamina_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900012,
+      "quest_group_id": 10004,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_use_energy_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900013,
+      "quest_group_id": 10004,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_CHARACTER_EQUIPMENT_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_character_equipment_levelup",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900014,
+      "quest_group_id": 10004,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_SKILL_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_character_skill_levelup_all",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900015,
+      "quest_group_id": 10004,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ITEM_TYPE_GAIN",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_gain_character_equipment_piece",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900016,
+      "quest_group_id": 10005,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_clear_stage_event_1001",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900017,
+      "quest_group_id": 10006,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_use_stamina_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900018,
+      "quest_group_id": 10006,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_use_energy_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900019,
+      "quest_group_id": 10006,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_CHARACTER_EQUIPMENT_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_character_equipment_levelup",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900020,
+      "quest_group_id": 10006,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_SKILL_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_character_skill_levelup_all",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900021,
+      "quest_group_id": 10006,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ITEM_TYPE_GAIN",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_gain_character_equipment_piece",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900030,
+      "quest_group_id": 10006,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_play_date",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900022,
+      "quest_group_id": 10007,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_clear_stage_event_1002",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900023,
+      "quest_group_id": 10008,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_use_stamina_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900024,
+      "quest_group_id": 10008,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_use_energy_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900025,
+      "quest_group_id": 10008,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_CHARACTER_EQUIPMENT_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_character_equipment_levelup",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900026,
+      "quest_group_id": 10008,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_SKILL_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_character_skill_levelup_all",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900027,
+      "quest_group_id": 10008,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ITEM_TYPE_GAIN",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_gain_character_equipment_piece",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900031,
+      "quest_group_id": 10008,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_play_date",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900028,
+      "quest_group_id": 10009,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_clear_stage_event_1002",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 900029,
+      "quest_group_id": 10009,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_PVP_TIER",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_pass_mission_complete_arena_tier_silver",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 1000000,
+      "quest_group_id": 20000,
+      "quest_use_type": "QUEST_USE_TYPE_PASS",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "0",
+      "quest_desc_id": "quest_desc_check_player_level_1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 300,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_conquest_1003112",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_conquest_1003112",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 301,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_conquest_1003204",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_conquest_1003204",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 302,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_conquest_1004112",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_conquest_1004112",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 303,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_conquest_1004204",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_conquest_1004204",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 304,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_conquest_1005112",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_conquest_1005112",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 305,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_conquest_1005204",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_conquest_1005204",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 306,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_material_dungeon_3040103",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_material_dungeon_3040101",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 307,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_material_dungeon_3040105",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_material_dungeon_3040103",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 308,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_material_dungeon_3040203",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_material_dungeon_3040201",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 309,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_material_dungeon_3040205",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_material_dungeon_3040203",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 310,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_material_dungeon_3040303",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_material_dungeon_3040301",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 311,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_material_dungeon_3040305",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_material_dungeon_3040303",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 312,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_material_dungeon_3050103",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_material_dungeon_3050101",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 313,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_material_dungeon_3050105",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_material_dungeon_3050103",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 314,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_material_dungeon_3050203",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_material_dungeon_3050201",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 315,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_material_dungeon_3050205",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_material_dungeon_3050203",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 316,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_material_dungeon_3050303",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_material_dungeon_3050301",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 317,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_material_dungeon_3050305",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_material_dungeon_3050303",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 318,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_material_dungeon_3050403",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_material_dungeon_3050401",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 319,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_material_dungeon_3050405",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_material_dungeon_3050403",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 320,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_ascent_4000005",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_ascent_4000005",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 321,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_ascent_4000015",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_ascent_4000015",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 322,
+      "quest_group_id": 120,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_ascent_4000025",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_ascent_4000025",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 323,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_use_stamina_vitamin",
+      "quest_desc_id": "quest_sub_event_desc_use_stamina_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 324,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_use_energy_vitamin",
+      "quest_desc_id": "quest_sub_event_desc_use_energy_vitamin",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 325,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_use_gold",
+      "quest_desc_id": "quest_sub_event_desc_use_gold",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 326,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_BASE_REWARD_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_daily_quest_reward_all_clear",
+      "quest_desc_id": "quest_sub_event_desc_daily_quest_reward_all_clear",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 327,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_skill_levelup_all",
+      "quest_desc_id": "quest_sub_event_desc_character_skill_levelup_all",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 328,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_EQUIPMENT_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_equipment_rankup_rank2",
+      "quest_desc_id": "quest_sub_event_desc_character_equipment_rankup_rank2",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 329,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_EQUIPMENT_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_equipment_levelup",
+      "quest_desc_id": "quest_sub_event_desc_character_equipment_levelup",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 330,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_RANK_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_rankup",
+      "quest_desc_id": "quest_sub_event_desc_character_rankup",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 331,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_ALL_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_play_date",
+      "quest_desc_id": "quest_sub_event_desc_play_date",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 332,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SPEC_CHARACTER_LOVE_LEVEL",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_love_levelup_level5",
+      "quest_desc_id": "quest_sub_event_desc_character_love_levelup_level5",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 333,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SPEC_CHARACTER_LOVE_LEVEL",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_love_levelup_level10",
+      "quest_desc_id": "quest_sub_event_desc_character_love_levelup_level10",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 334,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_SKILL_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_skill_levelup_normal1",
+      "quest_desc_id": "quest_sub_event_desc_character_skill_levelup_normal1",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 335,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_SKILL_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_skill_levelup_normal2",
+      "quest_desc_id": "quest_sub_event_desc_character_skill_levelup_normal2",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 336,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_SKILL_LEVEL_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_skill_levelup_burst",
+      "quest_desc_id": "quest_sub_event_desc_character_skill_levelup_burst",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 337,
+      "quest_group_id": 121,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GACHA_TIMES",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_play_gacha",
+      "quest_desc_id": "quest_sub_event_desc_play_gacha",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 338,
+      "quest_group_id": 122,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STORY_READ",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_play_main_story_101080",
+      "quest_desc_id": "quest_sub_event_desc_play_main_story_101080",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 339,
+      "quest_group_id": 122,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STORY_READ",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_play_main_story_102100",
+      "quest_desc_id": "quest_sub_event_desc_play_main_story_102100",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 340,
+      "quest_group_id": 122,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STORY_READ",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_play_main_story_103120",
+      "quest_desc_id": "quest_sub_event_desc_play_main_story_103120",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 400,
+      "quest_group_id": 130,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_account_levelup",
+      "quest_desc_id": "quest_sub_event_desc_account_levelup_5",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 401,
+      "quest_group_id": 130,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_account_levelup",
+      "quest_desc_id": "quest_sub_event_desc_account_levelup_10",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 402,
+      "quest_group_id": 130,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_account_levelup",
+      "quest_desc_id": "quest_sub_event_desc_account_levelup_15",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 403,
+      "quest_group_id": 130,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_account_levelup",
+      "quest_desc_id": "quest_sub_event_desc_account_levelup_20",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 404,
+      "quest_group_id": 130,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_account_levelup",
+      "quest_desc_id": "quest_sub_event_desc_account_levelup_25",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 405,
+      "quest_group_id": 130,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_account_levelup",
+      "quest_desc_id": "quest_sub_event_desc_account_levelup_30",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 406,
+      "quest_group_id": 130,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_account_levelup",
+      "quest_desc_id": "quest_sub_event_desc_account_levelup_35",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 407,
+      "quest_group_id": 130,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_account_levelup",
+      "quest_desc_id": "quest_sub_event_desc_account_levelup_40",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 408,
+      "quest_group_id": 130,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_account_levelup",
+      "quest_desc_id": "quest_sub_event_desc_account_levelup_45",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 409,
+      "quest_group_id": 130,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_account_levelup",
+      "quest_desc_id": "quest_sub_event_desc_account_levelup_50",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 410,
+      "quest_group_id": 130,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_account_levelup",
+      "quest_desc_id": "quest_sub_event_desc_account_levelup_55",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 411,
+      "quest_group_id": 130,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PLAYER_LV_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_account_levelup",
+      "quest_desc_id": "quest_sub_event_desc_account_levelup_60",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 505,
+      "quest_group_id": 140,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_LEVEL_UP_FIRST",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_levelup_first_level30",
+      "quest_desc_id": "quest_sub_event_desc_character_levelup_first_level30",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 506,
+      "quest_group_id": 140,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_EQUIPMENT_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_equipment_rankup_rank3",
+      "quest_desc_id": "quest_sub_event_desc_character_equipment_rankup_rank3",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 507,
+      "quest_group_id": 140,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_SKILL_LEVEL_UP_FIRST",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_skill_levelup_normal1_level5",
+      "quest_desc_id": "quest_sub_event_desc_character_skill_levelup_normal1_level5",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 508,
+      "quest_group_id": 140,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_SKILL_LEVEL_UP_FIRST",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_skill_levelup_normal2_level5",
+      "quest_desc_id": "quest_sub_event_desc_character_skill_levelup_normal2_level5",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 509,
+      "quest_group_id": 140,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_SKILL_LEVEL_UP_FIRST",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_skill_levelup_burst_level2",
+      "quest_desc_id": "quest_sub_event_desc_character_skill_levelup_burst_level2",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 510,
+      "quest_group_id": 140,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_conquest_1007112",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_conquest_1007112",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 511,
+      "quest_group_id": 140,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_ascent_4000030",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_ascent_4000030",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 512,
+      "quest_group_id": 140,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_suji_event_step1_all_clear",
+      "quest_desc_id": "quest_sub_event_desc_character_suji_event_step1_all_clear",
+      "is_head_quest": true
+    },
+    {
+      "quest_id": 518,
+      "quest_group_id": 141,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_LEVEL_UP_FIRST",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_levelup_first_level60",
+      "quest_desc_id": "quest_sub_event_desc_character_levelup_first_level60",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 519,
+      "quest_group_id": 141,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_EQUIPMENT_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_equipment_rankup_rank4",
+      "quest_desc_id": "quest_sub_event_desc_character_equipment_rankup_rank4",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 520,
+      "quest_group_id": 141,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_SKILL_LEVEL_UP_FIRST",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_skill_levelup_normal1_level7",
+      "quest_desc_id": "quest_sub_event_desc_character_skill_levelup_normal1_level7",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 521,
+      "quest_group_id": 141,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_SKILL_LEVEL_UP_FIRST",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_skill_levelup_normal2_level7",
+      "quest_desc_id": "quest_sub_event_desc_character_skill_levelup_normal2_level7",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 522,
+      "quest_group_id": 141,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_SKILL_LEVEL_UP_FIRST",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_skill_levelup_burst_level3",
+      "quest_desc_id": "quest_sub_event_desc_character_skill_levelup_burst_level3",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 523,
+      "quest_group_id": 141,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_conquest_1006112",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_conquest_1010112",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 524,
+      "quest_group_id": 141,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_clear_stage_ascent_4000040",
+      "quest_desc_id": "quest_sub_event_desc_clear_stage_ascent_4000040",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 525,
+      "quest_group_id": 141,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_suji_event_step2_all_clear",
+      "quest_desc_id": "quest_sub_event_desc_character_suji_event_step2_all_clear",
+      "is_head_quest": true
+    },
+    {
+      "quest_id": 526,
+      "quest_group_id": 141,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_SKILL_LEVEL_UP_FIRST",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_skill_levelup_normal1_level10",
+      "quest_desc_id": "quest_sub_event_desc_character_skill_levelup_normal1_level10",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 527,
+      "quest_group_id": 141,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_SKILL_LEVEL_UP_FIRST",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_skill_levelup_normal2_level10",
+      "quest_desc_id": "quest_sub_event_desc_character_skill_levelup_normal2_level10",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 528,
+      "quest_group_id": 141,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_SKILL_LEVEL_UP_FIRST",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_skill_levelup_burst_level5",
+      "quest_desc_id": "quest_sub_event_desc_character_skill_levelup_burst_level5",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 600,
+      "quest_group_id": 150,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SPEC_CHARACTER_GET",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_gain_character_vitoria",
+      "quest_desc_id": "quest_sub_event_desc_gain_character_vitoria",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 601,
+      "quest_group_id": 150,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_vitoria_rankup_star_4",
+      "quest_desc_id": "quest_sub_event_desc_character_vitoria_rankup_star_4",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 602,
+      "quest_group_id": 150,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_vitoria_rankup_star_5",
+      "quest_desc_id": "quest_sub_event_desc_character_vitoria_rankup_star_5",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 603,
+      "quest_group_id": 150,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SPEC_CHARACTER_LOVE_LEVEL",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_vitoria_love_levelup_level5",
+      "quest_desc_id": "quest_sub_event_desc_character_vitoria_love_levelup_level5",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 604,
+      "quest_group_id": 150,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SPEC_CHARACTER_LOVE_LEVEL",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_vitoria_love_levelup_level10",
+      "quest_desc_id": "quest_sub_event_desc_character_vitoria_love_levelup_level10",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 605,
+      "quest_group_id": 151,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SPEC_CHARACTER_GET",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_gain_character_ch0035",
+      "quest_desc_id": "quest_sub_event_desc_gain_character_ch0035",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 606,
+      "quest_group_id": 151,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_ch0035_rankup_star_4",
+      "quest_desc_id": "quest_sub_event_desc_character_ch0035_rankup_star_4",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 607,
+      "quest_group_id": 151,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_CHARACTER_TIER_UP",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_ch0035_rankup_star_5",
+      "quest_desc_id": "quest_sub_event_desc_character_ch0035_rankup_star_5",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 608,
+      "quest_group_id": 151,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SPEC_CHARACTER_LOVE_LEVEL",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_ch0035_love_levelup_level5",
+      "quest_desc_id": "quest_sub_event_desc_character_ch0035_love_levelup_level5",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 609,
+      "quest_group_id": 151,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_SPEC_CHARACTER_LOVE_LEVEL",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_sub_event_name_character_ch0035_love_levelup_level10",
+      "quest_desc_id": "quest_sub_event_desc_character_ch0035_love_levelup_level10",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 5000,
+      "quest_group_id": 2000,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_LOGIN_COUNT",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "",
+      "quest_desc_id": "quest_desc_sub_event_mission_complete_arena_daily_login",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 5001,
+      "quest_group_id": 2000,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PVP_TIER",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "",
+      "quest_desc_id": "quest_desc_sub_event_mission_complete_arena_tier_silver",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 5002,
+      "quest_group_id": 2000,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PVP_TIER",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "",
+      "quest_desc_id": "quest_desc_sub_event_mission_complete_arena_tier_gold",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 5003,
+      "quest_group_id": 2000,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PVP_TIER",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "",
+      "quest_desc_id": "quest_desc_sub_event_mission_complete_arena_tier_platinum",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 5004,
+      "quest_group_id": 2000,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_PVP_TIER",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "",
+      "quest_desc_id": "quest_desc_sub_event_mission_complete_arena_tier_matser",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 10001,
+      "quest_group_id": 100100,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_main_event_name_clear_stage_event",
+      "quest_desc_id": "quest_main_event_desc_clear_stage_event",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 10007,
+      "quest_group_id": 100110,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_main_event_name_event_quest_all_clear",
+      "quest_desc_id": "quest_main_event_desc_event_quest_all_clear",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 10003,
+      "quest_group_id": 100110,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STORY_READ",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_main_event_name_play_event_story_10101130",
+      "quest_desc_id": "quest_main_event_desc_play_event_story_10101130",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 10004,
+      "quest_group_id": 100110,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_main_event_name_clear_stage_event_10001108",
+      "quest_desc_id": "quest_main_event_desc_clear_stage_event_10001108",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 10005,
+      "quest_group_id": 100110,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_main_event_name_clear_stage_event",
+      "quest_desc_id": "quest_main_event_desc_clear_stage_event",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 10006,
+      "quest_group_id": 100110,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_main_event_name_clear_stage_event",
+      "quest_desc_id": "quest_main_event_desc_clear_stage_event",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 10021,
+      "quest_group_id": 100200,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_main_event_name_clear_stage_event",
+      "quest_desc_id": "quest_main_event_desc_clear_stage_event",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 10022,
+      "quest_group_id": 100210,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STORY_READ",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_main_event_name_play_event_story_10101130",
+      "quest_desc_id": "quest_main_event_desc_play_event_story_10101130",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 10023,
+      "quest_group_id": 100210,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_STAGE_ID",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_main_event_name_clear_stage_event_10001108",
+      "quest_desc_id": "quest_main_event_desc_clear_stage_event_10001108",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 10024,
+      "quest_group_id": 100210,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_main_event_name_clear_stage_event",
+      "quest_desc_id": "quest_main_event_desc_clear_stage_event",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 10025,
+      "quest_group_id": 100210,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_GOODS_USE",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_main_event_name_clear_stage_event",
+      "quest_desc_id": "quest_main_event_desc_clear_stage_event",
+      "is_head_quest": false
+    },
+    {
+      "quest_id": 10026,
+      "quest_group_id": 100210,
+      "quest_use_type": "QUEST_USE_TYPE_QUEST",
+      "quest_complete_type": "COMPLETE_QUEST_GROUP_CLEAR",
+      "quest_check_type": "QUEST_CREATE",
+      "quest_name_id": "quest_main_event_name_event_quest_all_clear",
+      "quest_desc_id": "quest_main_event_desc_event_quest_all_clear",
+      "is_head_quest": false
+    }
+  ]
+}

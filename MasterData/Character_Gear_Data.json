@@ -1,0 +1,86 @@
+{
+  "__tableName": "Character_Gear_Data",
+  "__byteLength": 554,
+  "items": [
+    {
+      "character_gear_id": 1,
+      "name_id": "character_gear_name_001",
+      "desc_id": "character_gear_desc_001",
+      "character_gear_img_prefab": "character_gear_img_Lucia",
+      "character_gear_icon_prefab": "character_gear_icon_Lucia",
+      "level_group_id": 1,
+      "tier_group_id": 1,
+      "option_type": [
+        "PHYSICS_ATTACK",
+        "CRITICAL_POWER_ADD_RESIST",
+        "NONE",
+        "NONE"
+      ],
+      "option_calc_type": [
+        "MULTIPLICATION",
+        "MULTIPLICATION",
+        "NONE",
+        "NONE"
+      ],
+      "option_open_level": [
+        1,
+        20,
+        0,
+        0
+      ],
+      "option_value": [
+        0.1,
+        0.08,
+        0.0,
+        0.0
+      ],
+      "option_levelup_value": [
+        0.01,
+        0.01,
+        0.0,
+        0.0
+      ],
+      "stat_group_id": 1
+    },
+    {
+      "character_gear_id": 2,
+      "name_id": "character_gear_name_002",
+      "desc_id": "character_gear_desc_002",
+      "character_gear_img_prefab": "character_gear_img_Lila",
+      "character_gear_icon_prefab": "character_gear_icon_Lila",
+      "level_group_id": 1,
+      "tier_group_id": 2,
+      "option_type": [
+        "PHYSICS_ATTACK",
+        "HEAL",
+        "NONE",
+        "NONE"
+      ],
+      "option_calc_type": [
+        "MULTIPLICATION",
+        "ADDTION",
+        "NONE",
+        "NONE"
+      ],
+      "option_open_level": [
+        1,
+        20,
+        0,
+        0
+      ],
+      "option_value": [
+        100.0,
+        30.0,
+        0.0,
+        0.0
+      ],
+      "option_levelup_value": [
+        10.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "stat_group_id": 2
+    }
+  ]
+}

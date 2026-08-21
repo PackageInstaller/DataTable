@@ -1,0 +1,50 @@
+{
+  "__tableName": "Charge_Goods_Data",
+  "__byteLength": 602,
+  "items": [
+    {
+      "charge_goods_type": "CHARGE_GOODS_TYPE_STAMINA",
+      "charge_max_count": 14.0,
+      "max_count": 999.0,
+      "repeat_time": 6,
+      "charge_count": 1,
+      "name_id": "system_goods_name_stamina_stamina_vtamins",
+      "desc_id": "system_goods_desc_stamina_stamina_vtamins",
+      "icon_path": "Icon_Goods_Stamina_Stamina_Vitamins",
+      "product_id": 1000
+    },
+    {
+      "charge_goods_type": "CHARGE_GOODS_TYPE_UNDISPUTED_TICKET",
+      "charge_max_count": 10.0,
+      "max_count": 10.0,
+      "repeat_time": 60,
+      "charge_count": 1,
+      "name_id": "goods_name_arena_battle_count",
+      "desc_id": "system_goods_desc_arena",
+      "icon_path": "Icon_Goods_arena",
+      "product_id": 1004
+    },
+    {
+      "charge_goods_type": "CHARGE_GOODS_TYPE_STAMINA_RESERVE",
+      "charge_max_count": 0.0,
+      "max_count": 100.0,
+      "repeat_time": 9,
+      "charge_count": 1,
+      "name_id": "system_goods_name_stamina",
+      "desc_id": "system_goods_desc_stamina",
+      "icon_path": "Icon_Goods_stamina",
+      "product_id": 0
+    },
+    {
+      "charge_goods_type": "CHARGE_GOODS_TYPE_STAMINA_RESERVE_LIVE",
+      "charge_max_count": 80.0,
+      "max_count": 80.0,
+      "repeat_time": 9,
+      "charge_count": 1,
+      "name_id": "system_goods_name_stamina_stamina_vtamins",
+      "desc_id": "system_goods_desc_stamina_stamina_vtamins",
+      "icon_path": "Icon_Goods_Stamina_Stamina_Vitamins",
+      "product_id": 0
+    }
+  ]
+}

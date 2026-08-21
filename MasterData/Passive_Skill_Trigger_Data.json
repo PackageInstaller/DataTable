@@ -1,0 +1,1421 @@
+{
+  "__tableName": "Passive_Skill_Trigger_Data",
+  "__byteLength": 19018,
+  "items": [
+    {
+      "passive_trigger_id": "common_passive_trigger_atk_up_10",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "common_passive_trigger_atk_up_10",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [],
+      "work_group_id": "common_passive_trigger_atk_up_10_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "common_passive_trigger_atk_up_15",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "common_passive_trigger_atk_up_15",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [],
+      "work_group_id": "common_passive_trigger_atk_up_15_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "common_passive_trigger_atk_up_20",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "common_passive_trigger_atk_up_20",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [],
+      "work_group_id": "common_passive_trigger_atk_up_20_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "common_passive_trigger_atk_up_25",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "common_passive_trigger_atk_up_25",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [],
+      "work_group_id": "common_passive_trigger_atk_up_25_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "common_passive_trigger_atk_up_30",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "common_passive_trigger_atk_up_30",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [],
+      "work_group_id": "common_passive_trigger_atk_up_30_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0006_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0006_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0006_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0006_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0006_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0006_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0006_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0006_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0006_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0006_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0006_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0006_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0007_passive_trigger_01_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0007_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_USE_SKILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "1"
+      ],
+      "work_group_id": "ch0007_passive_trigger_common_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0007_passive_trigger_01_02",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0007_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_DISPEL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "define_trigger_ch0007"
+      ],
+      "work_group_id": "ch0007_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0007_passive_trigger_02_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0007_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_USE_SKILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "1"
+      ],
+      "work_group_id": "ch0007_passive_trigger_common_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0007_passive_trigger_02_02",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0007_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_DISPEL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "define_trigger_ch0007"
+      ],
+      "work_group_id": "ch0007_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0007_passive_trigger_03_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0007_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_USE_SKILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "1"
+      ],
+      "work_group_id": "ch0007_passive_trigger_common_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0007_passive_trigger_03_02",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0007_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_DISPEL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "define_trigger_ch0007"
+      ],
+      "work_group_id": "ch0007_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0009_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0009_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0009_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_KILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "2",
+        "14"
+      ],
+      "work_group_id": "ch0009_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0009_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0009_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0009_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_KILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "2",
+        "14"
+      ],
+      "work_group_id": "ch0009_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0009_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0009_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0009_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_KILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "2",
+        "14"
+      ],
+      "work_group_id": "ch0009_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0011_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0011_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0011_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_KILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0011_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0011_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0011_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0011_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_KILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0011_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0011_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0011_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0011_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_KILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0011_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0015_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0015_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0015_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "ENEMY",
+      "trigger_value": [
+        "define_cc_charm"
+      ],
+      "work_group_id": "ch0015_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 10
+    },
+    {
+      "passive_trigger_id": "ch0015_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0015_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0015_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "ENEMY",
+      "trigger_value": [
+        "define_cc_charm"
+      ],
+      "work_group_id": "ch0015_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 10
+    },
+    {
+      "passive_trigger_id": "ch0015_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0015_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0015_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "ENEMY",
+      "trigger_value": [
+        "define_cc_charm"
+      ],
+      "work_group_id": "ch0015_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 10
+    },
+    {
+      "passive_trigger_id": "ch0016_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0016_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0016_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0016_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0016_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0016_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0016_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0016_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0016_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0016_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0016_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0016_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0019_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0019_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0019_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "define_trigger_ch0019"
+      ],
+      "work_group_id": "ch0019_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0019_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0019_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0019_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "define_trigger_ch0019"
+      ],
+      "work_group_id": "ch0019_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0019_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0019_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0019_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "define_trigger_ch0019"
+      ],
+      "work_group_id": "ch0019_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0020_passive_trigger_01_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0020_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_HIT_CRI",
+      "check_target_type": "ENEMY",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0020_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0020_passive_trigger_02_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0020_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_HIT_CRI",
+      "check_target_type": "ENEMY",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0020_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0020_passive_trigger_03_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0020_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_HIT_CRI",
+      "check_target_type": "ENEMY",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0020_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0021_passive_trigger_01_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0021_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_ATTACK",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "1"
+      ],
+      "work_group_id": "ch0021_passive_trigger_01_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0021_passive_trigger_01_02",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0021_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "define_trigger_ch0021_buff"
+      ],
+      "work_group_id": "ch0021_passive_trigger_01_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0021_passive_trigger_02_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0021_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_ATTACK",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "1"
+      ],
+      "work_group_id": "ch0021_passive_trigger_02_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0021_passive_trigger_02_02",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0021_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "define_trigger_ch0021_buff"
+      ],
+      "work_group_id": "ch0021_passive_trigger_02_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0021_passive_trigger_03_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0021_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_ATTACK",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "1"
+      ],
+      "work_group_id": "ch0021_passive_trigger_03_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0021_passive_trigger_03_02",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0021_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "define_trigger_ch0021_buff"
+      ],
+      "work_group_id": "ch0021_passive_trigger_03_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0022_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0022_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0022_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0022_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "ch0022_passive_trigger_01_02",
+      "passive_trigger_desc_id": "ch0022_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0022_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [
+        "define_trigger_ch0022"
+      ],
+      "work_group_id": "midwencorp_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0022_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0022_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0022_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0022_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "ch0022_passive_trigger_02_02",
+      "passive_trigger_desc_id": "ch0022_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0022_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [
+        "define_trigger_ch0022"
+      ],
+      "work_group_id": "midwencorp_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0022_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0022_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0022_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0022_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "ch0022_passive_trigger_03_02",
+      "passive_trigger_desc_id": "ch0022_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0022_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [
+        "define_trigger_ch0022"
+      ],
+      "work_group_id": "midwencorp_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0023_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0023_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0023_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "define_buff_shield_per_hp_rate_caster",
+        "define_buff_shield_per_healpower_caster"
+      ],
+      "work_group_id": "ch0023_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0023_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0023_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0023_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "define_buff_shield_per_hp_rate_caster",
+        "define_buff_shield_per_healpower_caster"
+      ],
+      "work_group_id": "ch0023_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0023_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0023_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0023_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "define_buff_shield_per_hp_rate_caster",
+        "define_buff_shield_per_healpower_caster"
+      ],
+      "work_group_id": "ch0023_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0024_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0024_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0024_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_SUMMON",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0024_passive_summon_trigger_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0024_passive_trigger_01_02",
+      "passive_trigger_desc_id": "ch0024_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0024_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_CATEGORIZE_APPLY",
+      "check_target_type": "FRIENDLY_NOT_SELF",
+      "trigger_value": [
+        "2",
+        "3"
+      ],
+      "work_group_id": "ch0024_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0024_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0024_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0024_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_SUMMON",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0024_passive_summon_trigger_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0024_passive_trigger_02_02",
+      "passive_trigger_desc_id": "ch0024_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0024_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_CATEGORIZE_APPLY",
+      "check_target_type": "FRIENDLY_NOT_SELF",
+      "trigger_value": [
+        "2",
+        "3"
+      ],
+      "work_group_id": "ch0024_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0024_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0024_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0024_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_SUMMON",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0024_passive_summon_trigger_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0024_passive_trigger_03_02",
+      "passive_trigger_desc_id": "ch0024_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0024_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_CATEGORIZE_APPLY",
+      "check_target_type": "FRIENDLY_NOT_SELF",
+      "trigger_value": [
+        "2",
+        "3"
+      ],
+      "work_group_id": "ch0024_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0025_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0025_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0025_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_CATEGORIZE_APPLY",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [
+        "2",
+        "3"
+      ],
+      "work_group_id": "ch0025_passive_trigger_01_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0025_passive_trigger_01_02",
+      "passive_trigger_desc_id": "ch0025_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0025_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_ONETIME_DEFINE_APPLY",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [
+        "define_dispel_trigger_ch0025_02"
+      ],
+      "work_group_id": "ch0025_passive_trigger_01_02_work",
+      "cool_time": 0.0,
+      "limit_count": 10
+    },
+    {
+      "passive_trigger_id": "ch0025_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0025_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0025_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_CATEGORIZE_APPLY",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [
+        "2",
+        "3"
+      ],
+      "work_group_id": "ch0025_passive_trigger_02_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0025_passive_trigger_02_02",
+      "passive_trigger_desc_id": "ch0025_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0025_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_ONETIME_DEFINE_APPLY",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [
+        "define_dispel_trigger_ch0025_02"
+      ],
+      "work_group_id": "ch0025_passive_trigger_02_02_work",
+      "cool_time": 0.0,
+      "limit_count": 10
+    },
+    {
+      "passive_trigger_id": "ch0025_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0025_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0025_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_CATEGORIZE_APPLY",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [
+        "2",
+        "3"
+      ],
+      "work_group_id": "ch0025_passive_trigger_03_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0025_passive_trigger_03_02",
+      "passive_trigger_desc_id": "ch0025_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0025_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_ONETIME_DEFINE_APPLY",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [
+        "define_dispel_trigger_ch0025_02"
+      ],
+      "work_group_id": "ch0025_passive_trigger_03_02_work",
+      "cool_time": 0.0,
+      "limit_count": 10
+    },
+    {
+      "passive_trigger_id": "ch0028_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0028_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0028_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0028_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "ch0028_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0028_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0028_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0028_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "ch0028_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0028_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0028_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0028_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "ch0029_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0029_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0029_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_USE_SKILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "2",
+        "3"
+      ],
+      "work_group_id": "ch0029_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0029_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0029_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0029_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_USE_SKILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "2",
+        "3"
+      ],
+      "work_group_id": "ch0029_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0029_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0029_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0029_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_USE_SKILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "2",
+        "3"
+      ],
+      "work_group_id": "ch0029_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0030_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0030_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0030_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_CATEGORIZE_APPLY",
+      "check_target_type": "FRIENDLY_NOT_SELF",
+      "trigger_value": [
+        "2"
+      ],
+      "work_group_id": "ch0030_passive_trigger_01_work",
+      "cool_time": 10.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0030_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0030_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0030_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_CATEGORIZE_APPLY",
+      "check_target_type": "FRIENDLY_NOT_SELF",
+      "trigger_value": [
+        "2"
+      ],
+      "work_group_id": "ch0030_passive_trigger_02_work",
+      "cool_time": 8.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0030_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0030_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0030_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_CATEGORIZE_APPLY",
+      "check_target_type": "FRIENDLY_NOT_SELF",
+      "trigger_value": [
+        "2"
+      ],
+      "work_group_id": "ch0030_passive_trigger_03_work",
+      "cool_time": 5.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0031_passive_trigger_01_02",
+      "passive_trigger_desc_id": "ch0031_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0031_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0031_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "ch0031_passive_trigger_02_02",
+      "passive_trigger_desc_id": "ch0031_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0031_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0031_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "ch0031_passive_trigger_03_02",
+      "passive_trigger_desc_id": "ch0031_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0031_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_BATTLE_START",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0031_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "ch0034_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0034_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0034_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_HIT",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0034_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "ch0034_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0034_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0034_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_HIT",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0034_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "ch0034_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0034_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0034_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_HIT",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0034_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "ch0035_passive_trigger_01_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0035_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "ENEMY",
+      "trigger_value": [
+        "define_trigger_ch0035_skill02"
+      ],
+      "work_group_id": "ch0035_passive_trigger_common_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0035_passive_trigger_01_02",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0035_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_ACTOR_DEAD",
+      "check_target_type": "SELF",
+      "trigger_value": [],
+      "work_group_id": "ch0035_passive_trigger_common_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0035_passive_trigger_01_03",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0035_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_EXPIRED",
+      "check_target_type": "ENEMY",
+      "trigger_value": [
+        "define_trigger_ch0035"
+      ],
+      "work_group_id": "ch0035_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0035_passive_trigger_02_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0035_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "ENEMY",
+      "trigger_value": [
+        "define_trigger_ch0035_skill02"
+      ],
+      "work_group_id": "ch0035_passive_trigger_common_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0035_passive_trigger_02_02",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0035_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_ACTOR_DEAD",
+      "check_target_type": "SELF",
+      "trigger_value": [],
+      "work_group_id": "ch0035_passive_trigger_common_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0035_passive_trigger_02_03",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0035_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_EXPIRED",
+      "check_target_type": "ENEMY",
+      "trigger_value": [
+        "define_trigger_ch0035"
+      ],
+      "work_group_id": "ch0035_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0035_passive_trigger_03_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0035_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_APPLY",
+      "check_target_type": "ENEMY",
+      "trigger_value": [
+        "define_trigger_ch0035_skill02"
+      ],
+      "work_group_id": "ch0035_passive_trigger_common_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0035_passive_trigger_03_02",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0035_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_ACTOR_DEAD",
+      "check_target_type": "SELF",
+      "trigger_value": [],
+      "work_group_id": "ch0035_passive_trigger_common_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0035_passive_trigger_03_03",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0035_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_EXPIRED",
+      "check_target_type": "ENEMY",
+      "trigger_value": [
+        "define_trigger_ch0035"
+      ],
+      "work_group_id": "ch0035_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0037_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0037_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0037_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_USE_SKILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "2",
+        "3"
+      ],
+      "work_group_id": "ch0037_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0037_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0037_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0037_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_USE_SKILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "2",
+        "3"
+      ],
+      "work_group_id": "ch0037_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0037_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0037_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0037_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_USE_SKILL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "2",
+        "3"
+      ],
+      "work_group_id": "ch0037_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0042_passive_trigger_01_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0042_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_SUMMON_AFTER",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [],
+      "work_group_id": "ch0042_passive_trigger_common_drone_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0042_passive_trigger_02_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0042_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_SUMMON_AFTER",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [],
+      "work_group_id": "ch0042_passive_trigger_common_drone_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0042_passive_trigger_03_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0042_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_SUMMON_AFTER",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [],
+      "work_group_id": "ch0042_passive_trigger_common_drone_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0056_passive_trigger_01_01",
+      "passive_trigger_desc_id": "ch0056_passive_trigger_01_desc",
+      "passive_trigger_group_id": "ch0056_passive_trigger_01",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0056_passive_trigger_01_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0056_passive_trigger_02_01",
+      "passive_trigger_desc_id": "ch0056_passive_trigger_02_desc",
+      "passive_trigger_group_id": "ch0056_passive_trigger_02",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0056_passive_trigger_02_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0056_passive_trigger_03_01",
+      "passive_trigger_desc_id": "ch0056_passive_trigger_03_desc",
+      "passive_trigger_group_id": "ch0056_passive_trigger_03",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "ch0056_passive_trigger_03_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "np6010_passive_trigger",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "np6010_passive_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "passive_common_cc_immune_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "np6011_passive_trigger",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "np6011_passive_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "passive_common_cc_immune_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "np6012_passive_trigger_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "np6012_passive_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "5"
+      ],
+      "work_group_id": "np6012_passive_trigger_01_work_01",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "np6012_passive_trigger_02",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "np6012_passive_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "passive_common_cc_immune_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "np8200_skill09_trigger",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "np8200_passive_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_DISPEL",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "define_buff_shield_per_hp_rate_caster"
+      ],
+      "work_group_id": "np8200_skill09_passive_trigger_work",
+      "cool_time": 0.0,
+      "limit_count": 9999
+    },
+    {
+      "passive_trigger_id": "np8200_cc_immune",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "np8200_passive_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "np8200_skill09_cc_immune_trigger_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "np8200_stun_immune",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "np8200_passive_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "np8200_skill09_stun_immune_trigger_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "np8200_append_stun_immune",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "np8200_passive_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_DURATION_DEFINE_EXPIRED",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "define_cc_stun"
+      ],
+      "work_group_id": "np8200_skill09_stun_immune_trigger_work",
+      "cool_time": 0.0,
+      "limit_count": 9999
+    },
+    {
+      "passive_trigger_id": "np8199_passive_trigger_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "np8199_passive_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "passive_common_cc_immune_work",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "np8199_passive_trigger_02",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "np8199_passive_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "passive_np8199_buff_damage_reduce",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "np8199_passive_trigger_03",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "np8199_passive_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_ACTOR_DEAD",
+      "check_target_type": "FRIENDLY",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "passive_np8199_friendly_dead_check",
+      "cool_time": 0.0,
+      "limit_count": 0
+    },
+    {
+      "passive_trigger_id": "ch0012_npc_prologue_trigger",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "ch0012_npc_prologue_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_HIT",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "0",
+        "0",
+        "0"
+      ],
+      "work_group_id": "passive_common_cc_immune_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "npc_boss_passive_cc_immune_trigger",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "npc_boss_passive_cc_immune",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "passive_common_cc_immune_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "passive_common_immun_knockback_trigger_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "passive_common_immun_knockback_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "0"
+      ],
+      "work_group_id": "passive_common_immun_knockback_trigger_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "prologue_ch0012_passive_trigger_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "prologue_ch0012_passive_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_HIT",
+      "check_target_type": "SELF",
+      "trigger_value": [
+        "12"
+      ],
+      "work_group_id": "prologue_ch0012_passive_trigger_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "prologue_ch0029_passive_trigger_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "prologue_ch0029_passive_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "32"
+      ],
+      "work_group_id": "prologue_ch0029_passive_trigger_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    },
+    {
+      "passive_trigger_id": "prologue_ch0034_passive_trigger_01",
+      "passive_trigger_desc_id": "",
+      "passive_trigger_group_id": "prologue_ch0034_passive_trigger",
+      "passive_trigger_type": "TRIGGER_TYPE_WAVE_START",
+      "check_target_type": "NONE",
+      "trigger_value": [
+        "38.5"
+      ],
+      "work_group_id": "prologue_ch0034_passive_trigger_work",
+      "cool_time": 0.0,
+      "limit_count": 1
+    }
+  ]
+}

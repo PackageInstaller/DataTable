@@ -1,0 +1,36 @@
+{
+  "__tableName": "Event_Zone_Data",
+  "__byteLength": 284,
+  "items": [
+    {
+      "zone_id": 100011,
+      "dungeon_id": 10001,
+      "zone_name_id": "event_story_zone_ev1001_normal",
+      "game_type": "EVENT_STAGE_MODE",
+      "is_skip_able": true,
+      "zone_ordering": 1,
+      "event_zone_type": "EVENT_ZONE_OPERATION",
+      "zone_difficulty": "NORMAL",
+      "zone_img_path": "BgImg_EV1001_Zone_001",
+      "zone_tooltip_id": "event_story_zone_ev1001_normal",
+      "zone_reward_id": 1000003,
+      "schedule_id": 10011,
+      "bonus_group_id": 1001
+    },
+    {
+      "zone_id": 100021,
+      "dungeon_id": 10002,
+      "zone_name_id": "event_story_zone_normal",
+      "game_type": "EVENT_STAGE_MODE",
+      "is_skip_able": true,
+      "zone_ordering": 1,
+      "event_zone_type": "EVENT_ZONE_OPERATION",
+      "zone_difficulty": "NORMAL",
+      "zone_img_path": "BgImg_EV1002_Zone_001",
+      "zone_tooltip_id": "event_story_zone_normal",
+      "zone_reward_id": 1000003,
+      "schedule_id": 10021,
+      "bonus_group_id": 1002
+    }
+  ]
+}

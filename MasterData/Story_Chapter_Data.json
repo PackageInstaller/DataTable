@@ -1,0 +1,95 @@
+{
+  "__tableName": "Story_Chapter_Data",
+  "__byteLength": 1168,
+  "items": [
+    {
+      "chapter_id": 101,
+      "episode_id": 1,
+      "title_cover": "story_chapter_title_01",
+      "name": "story_chapter_name_01",
+      "desc": "story_chapter_desc_01",
+      "reward_group_id": 12000101,
+      "condition_type": [
+        "NONE",
+        "NONE"
+      ],
+      "value": [
+        0,
+        0
+      ],
+      "chapter_image_path": "Assets/AssetResources/Naninovel/Backgrounds/BG_Panoticon_Room/BG_Panoticon_Room.png",
+      "chapter_bgm": "bgm_outgame_006",
+      "chapter_lock": false
+    },
+    {
+      "chapter_id": 102,
+      "episode_id": 1,
+      "title_cover": "story_chapter_title_02",
+      "name": "story_chapter_name_02",
+      "desc": "story_chapter_desc_02",
+      "reward_group_id": 12000101,
+      "condition_type": [
+        "OPEN_STORY_VIEW_CHAPTER_COMPLETE",
+        "OPEN_STORY_STAGE_CLEAR"
+      ],
+      "value": [
+        101,
+        1005112
+      ],
+      "chapter_image_path": "Assets/AssetResources/Naninovel/Backgrounds/BG_BuildingFront/BG_BuildingFront.png",
+      "chapter_bgm": "bgm_outgame_006",
+      "chapter_lock": false
+    },
+    {
+      "chapter_id": 103,
+      "episode_id": 1,
+      "title_cover": "story_chapter_title_03",
+      "name": "story_chapter_name_03",
+      "desc": "story_chapter_desc_03",
+      "reward_group_id": 12000101,
+      "condition_type": [
+        "OPEN_STORY_VIEW_CHAPTER_COMPLETE",
+        "OPEN_STORY_STAGE_CLEAR"
+      ],
+      "value": [
+        102,
+        1007112
+      ],
+      "chapter_image_path": "Assets/AssetResources/Naninovel/Backgrounds/BG_Bunny_Empire/BG_Bunny_Empire.png",
+      "chapter_bgm": "bgm_outgame_006",
+      "chapter_lock": false
+    },
+    {
+      "chapter_id": 10101,
+      "episode_id": 101,
+      "title_cover": "story_chapter_title_00",
+      "name": "event_chapter_name_01_01",
+      "desc": "event_chapter_info_01_01",
+      "reward_group_id": 12000101,
+      "condition_type": [
+        "NONE"
+      ],
+      "value": [],
+      "chapter_image_path": "Assets/AssetResources/Naninovel/Backgrounds/BG_TofuStreet/BG_TofuStreet.png",
+      "chapter_bgm": "bgm_event_001",
+      "chapter_lock": false
+    },
+    {
+      "chapter_id": 10102,
+      "episode_id": 102,
+      "title_cover": "story_chapter_title_00",
+      "name": "event_chapter_name_02_01",
+      "desc": "event_chapter_info_02_01",
+      "reward_group_id": 12000101,
+      "condition_type": [
+        "NONE"
+      ],
+      "value": [
+        0
+      ],
+      "chapter_image_path": "Assets/AssetResources/Naninovel/Backgrounds/BG_Penthouse/BG_Penthouse.png",
+      "chapter_bgm": "bgm_event_002",
+      "chapter_lock": false
+    }
+  ]
+}

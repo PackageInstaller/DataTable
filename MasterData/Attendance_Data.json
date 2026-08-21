@@ -1,0 +1,51 @@
+{
+  "__tableName": "Attendance_Data",
+  "__byteLength": 119,
+  "items": [
+    {
+      "attendance_id": 21001,
+      "attendance_type": "REGULAR",
+      "schedule_id": 1,
+      "is_repeat": true,
+      "base_date": 14,
+      "reward_period_type": "LOG_IN",
+      "is_open": true
+    },
+    {
+      "attendance_id": 22001,
+      "attendance_type": "NEW",
+      "schedule_id": 0,
+      "is_repeat": false,
+      "base_date": 7,
+      "reward_period_type": "TRIGGER",
+      "is_open": false
+    },
+    {
+      "attendance_id": 23001,
+      "attendance_type": "RETURN",
+      "schedule_id": 0,
+      "is_repeat": false,
+      "base_date": 7,
+      "reward_period_type": "TRIGGER",
+      "is_open": false
+    },
+    {
+      "attendance_id": 24001,
+      "attendance_type": "SUB",
+      "schedule_id": 0,
+      "is_repeat": false,
+      "base_date": 7,
+      "reward_period_type": "TRIGGER",
+      "is_open": false
+    },
+    {
+      "attendance_id": 26001,
+      "attendance_type": "SUB",
+      "schedule_id": 1,
+      "is_repeat": false,
+      "base_date": 7,
+      "reward_period_type": "TRIGGER",
+      "is_open": true
+    }
+  ]
+}

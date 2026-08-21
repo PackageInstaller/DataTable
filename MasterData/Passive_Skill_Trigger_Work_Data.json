@@ -1,0 +1,1446 @@
+{
+  "__tableName": "Passive_Skill_Trigger_Work_Data",
+  "__byteLength": 16645,
+  "items": [
+    {
+      "passive_trigger_work_id": "common_passive_trigger_atk_up_10_work",
+      "work_group_id": "common_passive_trigger_atk_up_10_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "common_passive_dispatcher_atk_up_10",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "common_passive_trigger_atk_up_15_work",
+      "work_group_id": "common_passive_trigger_atk_up_15_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "common_passive_dispatcher_atk_up_15",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "common_passive_trigger_atk_up_20_work",
+      "work_group_id": "common_passive_trigger_atk_up_20_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "common_passive_dispatcher_atk_up_20",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "common_passive_trigger_atk_up_25_work",
+      "work_group_id": "common_passive_trigger_atk_up_25_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "common_passive_dispatcher_atk_up_25",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "common_passive_trigger_atk_up_30_work",
+      "work_group_id": "common_passive_trigger_atk_up_30_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "common_passive_dispatcher_atk_up_30",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0006_passive_trigger_01_work_01",
+      "work_group_id": "ch0006_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0006_passive_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0006_passive_trigger_02_work_01",
+      "work_group_id": "ch0006_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0006_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0006_passive_trigger_03_work_01",
+      "work_group_id": "ch0006_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0006_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0007_passive_trigger_common_work_01",
+      "work_group_id": "ch0007_passive_trigger_common_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0007_passive_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0007_passive_trigger_01_work_01",
+      "work_group_id": "ch0007_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0007_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0007_passive_trigger_02_work_01",
+      "work_group_id": "ch0007_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0007_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0007_passive_trigger_03_work_01",
+      "work_group_id": "ch0007_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0007_passive_dispatcher_04",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0009_passive_trigger_01_work_01",
+      "work_group_id": "ch0009_passive_trigger_01_work",
+      "work_rate": 0.6,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "USE_SKILL",
+      "work_value": "0",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0009_passive_trigger_01_work_02",
+      "work_group_id": "ch0009_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0009_passive_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0009_passive_trigger_02_work_01",
+      "work_group_id": "ch0009_passive_trigger_02_work",
+      "work_rate": 0.8,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "USE_SKILL",
+      "work_value": "0",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0009_passive_trigger_02_work_02",
+      "work_group_id": "ch0009_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0009_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0009_passive_trigger_03_work_01",
+      "work_group_id": "ch0009_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "USE_SKILL",
+      "work_value": "0",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0009_passive_trigger_03_work_02",
+      "work_group_id": "ch0009_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0009_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0011_passive_trigger_01_work_01",
+      "work_group_id": "ch0011_passive_trigger_01_work",
+      "work_rate": 0.5,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "USE_SKILL",
+      "work_value": "0",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0011_passive_trigger_02_work_01",
+      "work_group_id": "ch0011_passive_trigger_02_work",
+      "work_rate": 0.7,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "USE_SKILL",
+      "work_value": "0",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0011_passive_trigger_03_work_01",
+      "work_group_id": "ch0011_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "USE_SKILL",
+      "work_value": "0",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0015_passive_trigger_01_work_01",
+      "work_group_id": "ch0015_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0015_passive_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0015_passive_trigger_02_work_01",
+      "work_group_id": "ch0015_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0015_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0015_passive_trigger_03_work_01",
+      "work_group_id": "ch0015_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0015_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0016_passive_trigger_01_work_01",
+      "work_group_id": "ch0016_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0016_passive_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0016_passive_trigger_02_work_01",
+      "work_group_id": "ch0016_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0016_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0016_passive_trigger_03_work_01",
+      "work_group_id": "ch0016_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0016_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0019_passive_trigger_01_work_01",
+      "work_group_id": "ch0019_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0019_passive_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0019_passive_trigger_02_work_01",
+      "work_group_id": "ch0019_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0019_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0019_passive_trigger_03_work_01",
+      "work_group_id": "ch0019_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0019_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0020_passive_trigger_01_work_01",
+      "work_group_id": "ch0020_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0020",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_GREATER_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0020_passive_dispatcher_01",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0020_passive_trigger_02_work_01",
+      "work_group_id": "ch0020_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0020",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_GREATER_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0020_passive_dispatcher_02",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0020_passive_trigger_03_work_01",
+      "work_group_id": "ch0020_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0020",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_GREATER_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0020_passive_dispatcher_03",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0021_passive_trigger_01_01_work_01",
+      "work_group_id": "ch0021_passive_trigger_01_01_work",
+      "work_rate": 0.15,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0021",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_LESS_THAN",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0021_passive_dispatcher_01",
+      "work_target": "TRIGGER_INSTIGATOR"
+    },
+    {
+      "passive_trigger_work_id": "ch0021_passive_trigger_01_02_work_01",
+      "work_group_id": "ch0021_passive_trigger_01_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "HOLDER",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0021_buff",
+        "5"
+      ],
+      "comparison_operator_type": "COMPARISON_GREATER_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0021_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0021_passive_trigger_02_01_work_01",
+      "work_group_id": "ch0021_passive_trigger_02_01_work",
+      "work_rate": 0.2,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0021",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_LESS_THAN",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0021_passive_dispatcher_01",
+      "work_target": "TRIGGER_INSTIGATOR"
+    },
+    {
+      "passive_trigger_work_id": "ch0021_passive_trigger_02_02_work_01",
+      "work_group_id": "ch0021_passive_trigger_02_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "HOLDER",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0021_buff",
+        "5"
+      ],
+      "comparison_operator_type": "COMPARISON_GREATER_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0021_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0021_passive_trigger_03_01_work_01",
+      "work_group_id": "ch0021_passive_trigger_03_01_work",
+      "work_rate": 0.3,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0021",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_LESS_THAN",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0021_passive_dispatcher_01",
+      "work_target": "TRIGGER_INSTIGATOR"
+    },
+    {
+      "passive_trigger_work_id": "ch0021_passive_trigger_03_02_work_01",
+      "work_group_id": "ch0021_passive_trigger_03_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "HOLDER",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0021_buff",
+        "5"
+      ],
+      "comparison_operator_type": "COMPARISON_GREATER_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0021_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0022_passive_trigger_01_work_01",
+      "work_group_id": "ch0022_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0022_passive_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0022_passive_trigger_02_work_01",
+      "work_group_id": "ch0022_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0022_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0022_passive_trigger_03_work_01",
+      "work_group_id": "ch0022_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0022_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "midwencorp_passive_trigger_01_work_01",
+      "work_group_id": "midwencorp_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "midwencorp_passive_dispatcher_01",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "midwencorp_passive_trigger_02_work_01",
+      "work_group_id": "midwencorp_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "midwencorp_passive_dispatcher_02",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "midwencorp_passive_trigger_03_work_01",
+      "work_group_id": "midwencorp_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "midwencorp_passive_dispatcher_03",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0023_passive_trigger_01_work_01",
+      "work_group_id": "ch0023_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0023_passive_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0023_passive_trigger_02_work_01",
+      "work_group_id": "ch0023_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0023_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0023_passive_trigger_03_work_01",
+      "work_group_id": "ch0023_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0023_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0024_passive_summon_trigger_work",
+      "work_group_id": "ch0024_passive_summon_trigger_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0024_passive_summon_trigger",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0024_passive_trigger_01_work_01",
+      "work_group_id": "ch0024_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0024",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_EQUAL_TO",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0024_passive_dispatcher_01",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0024_passive_trigger_02_work_01",
+      "work_group_id": "ch0024_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0024",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_EQUAL_TO",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0024_passive_dispatcher_02",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0024_passive_trigger_03_work_01",
+      "work_group_id": "ch0024_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0024",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_EQUAL_TO",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0024_passive_dispatcher_03",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0025_passive_trigger_01_01_work_01",
+      "work_group_id": "ch0025_passive_trigger_01_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0025_skill02",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_GREATER_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0025_passive_dispatcher_01",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0025_passive_trigger_01_02_work_01",
+      "work_group_id": "ch0025_passive_trigger_01_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0025_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0025_passive_trigger_02_01_work_01",
+      "work_group_id": "ch0025_passive_trigger_02_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0025_skill02",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_GREATER_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0025_passive_dispatcher_01",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0025_passive_trigger_02_02_work_01",
+      "work_group_id": "ch0025_passive_trigger_02_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0025_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0025_passive_trigger_03_01_work_01",
+      "work_group_id": "ch0025_passive_trigger_03_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0025_skill02",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_GREATER_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0025_passive_dispatcher_01",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0025_passive_trigger_03_02_work_01",
+      "work_group_id": "ch0025_passive_trigger_03_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0025_passive_dispatcher_04",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0028_passive_trigger_01_work_01",
+      "work_group_id": "ch0028_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0028_passive_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0028_passive_trigger_02_work_01",
+      "work_group_id": "ch0028_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0028_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0028_passive_trigger_03_work_01",
+      "work_group_id": "ch0028_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0028_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0029_passive_trigger_01_work_01",
+      "work_group_id": "ch0029_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0029_passive_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0029_passive_trigger_02_work_01",
+      "work_group_id": "ch0029_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0029_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0029_passive_trigger_03_work_01",
+      "work_group_id": "ch0029_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0029_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0030_passive_trigger_01_work_01",
+      "work_group_id": "ch0030_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0030_passive_dispatcher_01",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0030_passive_trigger_02_work_01",
+      "work_group_id": "ch0030_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0030_passive_dispatcher_02",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0030_passive_trigger_03_work_01",
+      "work_group_id": "ch0030_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0030_passive_dispatcher_03",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0031_passive_trigger_01_work_01",
+      "work_group_id": "ch0031_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0031_passive_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0031_passive_trigger_02_work_01",
+      "work_group_id": "ch0031_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0031_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0031_passive_trigger_03_work_01",
+      "work_group_id": "ch0031_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0031_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0034_passive_trigger_01_work_01",
+      "work_group_id": "ch0034_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "SELF",
+      "work_check_condition_type": "CHECK_HP",
+      "condition_value": [
+        "30",
+        "0"
+      ],
+      "comparison_operator_type": "COMPARISON_LESS_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0034_passive_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0034_passive_trigger_02_work_01",
+      "work_group_id": "ch0034_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "SELF",
+      "work_check_condition_type": "CHECK_HP",
+      "condition_value": [
+        "30",
+        "0"
+      ],
+      "comparison_operator_type": "COMPARISON_LESS_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0034_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0034_passive_trigger_03_work_01",
+      "work_group_id": "ch0034_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "SELF",
+      "work_check_condition_type": "CHECK_HP",
+      "condition_value": [
+        "30",
+        "0"
+      ],
+      "comparison_operator_type": "COMPARISON_LESS_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0034_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0035_passive_trigger_common_01_work_01",
+      "work_group_id": "ch0035_passive_trigger_common_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0035_passive_dispatcher_common_01",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0035_passive_trigger_common_02_work_01",
+      "work_group_id": "ch0035_passive_trigger_common_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0035_passive_dispatcher_common_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0035_passive_trigger_01_work_01",
+      "work_group_id": "ch0035_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0035_skill02",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_GREATER_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0035_passive_dispatcher_01_work",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0035_passive_trigger_02_work_01",
+      "work_group_id": "ch0035_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0035_skill02",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_GREATER_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0035_passive_dispatcher_02_work",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0035_passive_trigger_03_work_01",
+      "work_group_id": "ch0035_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "TRIGGER_TARGET",
+      "work_check_condition_type": "CHECK_DURATION_DEFINE",
+      "condition_value": [
+        "define_trigger_ch0035_skill02",
+        "1"
+      ],
+      "comparison_operator_type": "COMPARISON_GREATER_OR_EQUAL",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0035_passive_dispatcher_03_work",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0037_passive_trigger_01_work_01",
+      "work_group_id": "ch0037_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0037_passive_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0037_passive_trigger_02_work_01",
+      "work_group_id": "ch0037_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0037_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0037_passive_trigger_03_work_01",
+      "work_group_id": "ch0037_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0037_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0042_passive_trigger_common_drone_work_01",
+      "work_group_id": "ch0042_passive_trigger_common_drone_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0042_passive_common_drone_dispatcher_01",
+      "work_target": "TRIGGER_TARGET"
+    },
+    {
+      "passive_trigger_work_id": "ch0056_passive_trigger_01_work_01",
+      "work_group_id": "ch0056_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0056_passive_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0056_passive_trigger_02_work_01",
+      "work_group_id": "ch0056_passive_trigger_02_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0056_passive_dispatcher_02",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "ch0056_passive_trigger_03_work_01",
+      "work_group_id": "ch0056_passive_trigger_03_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "ch0056_passive_dispatcher_03",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "passive_common_cc_immune_work",
+      "work_group_id": "passive_common_cc_immune_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "passive_common_cc_immune_dispatcher",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "np6012_passive_trigger_01_work_01",
+      "work_group_id": "np6012_passive_trigger_01_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "np6012_groggy_work",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "passive_np8199_buff_damage_reduce_01",
+      "work_group_id": "passive_np8199_buff_damage_reduce",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "passive_np8199_buff_damage_reduce_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "passive_np8199_friendly_dead_check_01",
+      "work_group_id": "passive_np8199_friendly_dead_check",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "passive_np8199_friendly_dead_check_dispatcher_01",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "np8200_skill09_passive_trigger_work",
+      "work_group_id": "np8200_skill09_passive_trigger_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "USE_SKILL",
+      "work_value": "0",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "np8200_stun_immune_work",
+      "work_group_id": "np8200_skill09_stun_immune_trigger_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "passive_common_stun_immune_dispatcher",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "np8200_cc_immune_work",
+      "work_group_id": "np8200_skill09_cc_immune_trigger_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "np8200_passive_cc_immune_dispatcher",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "passive_common_immun_knockback_trigger_work_01",
+      "work_group_id": "passive_common_immun_knockback_trigger_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "passive_common_cc_immune_dispatcher",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "prologue_ch0012_passive_trigger_work_01",
+      "work_group_id": "prologue_ch0012_passive_trigger_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "passive_prologue_skill_check_dispatcher",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "prologue_ch0029_passive_trigger_work_01",
+      "work_group_id": "prologue_ch0029_passive_trigger_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "passive_prologue_skill_check_dispatcher",
+      "work_target": "HOLDER"
+    },
+    {
+      "passive_trigger_work_id": "prologue_ch0034_passive_trigger_work_01",
+      "work_group_id": "prologue_ch0034_passive_trigger_work",
+      "work_rate": 1.0,
+      "check_target_type": "NONE",
+      "work_check_condition_type": "NONE",
+      "condition_value": [
+        "0",
+        "0"
+      ],
+      "comparison_operator_type": "NONE",
+      "passive_trigger_work_type": "SPAWN_DISPATCHER",
+      "work_value": "passive_prologue_bust_cooltime_dispatcher",
+      "work_target": "HOLDER"
+    }
+  ]
+}

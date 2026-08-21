@@ -1,0 +1,41 @@
+{
+  "__tableName": "Skill_Level_Max_Data",
+  "__byteLength": 94,
+  "items": [
+    {
+      "id": 1,
+      "skill_categorize_type": "NORMAL_ATTACK",
+      "is_level_up": true,
+      "max_level": 1,
+      "extra_value_level": 0
+    },
+    {
+      "id": 2,
+      "skill_categorize_type": "SKILL",
+      "is_level_up": true,
+      "max_level": 10,
+      "extra_value_level": 3
+    },
+    {
+      "id": 3,
+      "skill_categorize_type": "BUST",
+      "is_level_up": true,
+      "max_level": 5,
+      "extra_value_level": 2
+    },
+    {
+      "id": 4,
+      "skill_categorize_type": "PASSIVE",
+      "is_level_up": false,
+      "max_level": 1,
+      "extra_value_level": 0
+    },
+    {
+      "id": 5,
+      "skill_categorize_type": "PASSIVE_TRIGGER",
+      "is_level_up": false,
+      "max_level": 1,
+      "extra_value_level": 0
+    }
+  ]
+}

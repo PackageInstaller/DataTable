@@ -1,0 +1,51 @@
+{
+  "__tableName": "Attendance_News_Schedule_Data",
+  "__byteLength": 139,
+  "items": [
+    {
+      "news_schedule_id": 1,
+      "news_group_id": [
+        101,
+        201,
+        301
+      ],
+      "slot_type": [
+        "RECENTLY",
+        "RANDOM",
+        "RANDOM"
+      ],
+      "news_schedule_type": "ALL_TIME",
+      "schedule_id": 1
+    },
+    {
+      "news_schedule_id": 2,
+      "news_group_id": [
+        1001,
+        101,
+        301
+      ],
+      "slot_type": [
+        "RANDOM",
+        "RECENTLY",
+        "RANDOM"
+      ],
+      "news_schedule_type": "EVENT",
+      "schedule_id": 402
+    },
+    {
+      "news_schedule_id": 3,
+      "news_group_id": [
+        1002,
+        101,
+        301
+      ],
+      "slot_type": [
+        "RANDOM",
+        "RECENTLY",
+        "RANDOM"
+      ],
+      "news_schedule_type": "EVENT",
+      "schedule_id": 403
+    }
+  ]
+}

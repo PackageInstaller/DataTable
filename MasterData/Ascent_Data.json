@@ -1,0 +1,26 @@
+{
+  "__tableName": "Ascent_Data",
+  "__byteLength": 121,
+  "items": [
+    {
+      "ascent_id": 4000,
+      "ascent_name_id": "contents_ascent_zone_basic",
+      "ascent_type": "OPEN_ZONE",
+      "open_schedule_id": 0,
+      "zone_open_condition_type": "OPEN_STORY_STAGE_CLEAR",
+      "zone_open_condition_value": [
+        1001112
+      ]
+    },
+    {
+      "ascent_id": 4100,
+      "ascent_name_id": "contents_ascent_zone_core",
+      "ascent_type": "SEASON_ZONE",
+      "open_schedule_id": 4100,
+      "zone_open_condition_type": "OPEN_STORY_STAGE_CLEAR",
+      "zone_open_condition_value": [
+        1002112
+      ]
+    }
+  ]
+}

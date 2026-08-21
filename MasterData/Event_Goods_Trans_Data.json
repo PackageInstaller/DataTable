@@ -1,0 +1,26 @@
+{
+  "__tableName": "Event_Goods_Trans_Data",
+  "__byteLength": 70,
+  "items": [
+    {
+      "event_id": 1001,
+      "check_goods_type": "CHARGE_GOODS",
+      "check_goods_id": 1,
+      "check_goods_req": 40,
+      "ticket_goods_type": "GOODS",
+      "ticket_goods_id": 5001,
+      "ticket_goods_cnt": 1,
+      "trans_max_bound": 99999
+    },
+    {
+      "event_id": 1002,
+      "check_goods_type": "CHARGE_GOODS",
+      "check_goods_id": 1,
+      "check_goods_req": 40,
+      "ticket_goods_type": "GOODS",
+      "ticket_goods_id": 5002,
+      "ticket_goods_cnt": 1,
+      "trans_max_bound": 99999
+    }
+  ]
+}

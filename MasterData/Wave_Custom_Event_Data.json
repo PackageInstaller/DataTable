@@ -1,0 +1,454 @@
+{
+  "__tableName": "Wave_Custom_Event_Data",
+  "__byteLength": 2418,
+  "items": [
+    {
+      "custom_event_id": 11,
+      "custom_event_group_id": 1,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_START_BATTLE",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_INPUT_DISABLED",
+      "event_value": "",
+      "custom_event_chain_id": 12,
+      "use_pause": false,
+      "cancel_enable": true
+    },
+    {
+      "custom_event_id": 12,
+      "custom_event_group_id": 1,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BATTLEDIALOGUE",
+      "event_value": "battledialogue_prologue_01",
+      "custom_event_chain_id": 0,
+      "use_pause": false,
+      "cancel_enable": true
+    },
+    {
+      "custom_event_id": 13,
+      "custom_event_group_id": 1,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_MATCH_SKILL_TRIGGER",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BATTLEDIALOGUE",
+      "event_value": "battledialogue_prologue_02",
+      "custom_event_chain_id": 14,
+      "use_pause": false,
+      "cancel_enable": true
+    },
+    {
+      "custom_event_id": 14,
+      "custom_event_group_id": 1,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BUST_USE_DISABLE",
+      "event_value": "0",
+      "custom_event_chain_id": 15,
+      "use_pause": false,
+      "cancel_enable": true
+    },
+    {
+      "custom_event_id": 15,
+      "custom_event_group_id": 1,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BURST_COOLTIME_CHARGE",
+      "event_value": "34",
+      "custom_event_chain_id": 16,
+      "use_pause": false,
+      "cancel_enable": true
+    },
+    {
+      "custom_event_id": 16,
+      "custom_event_group_id": 1,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_INPUT_ABLED",
+      "event_value": "0",
+      "custom_event_chain_id": 17,
+      "use_pause": false,
+      "cancel_enable": true
+    },
+    {
+      "custom_event_id": 17,
+      "custom_event_group_id": 1,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_PLAY_DIALOGUE",
+      "event_value": "outgame/tutorial/tutorial_prologue_battle",
+      "custom_event_chain_id": 18,
+      "use_pause": true,
+      "cancel_enable": true
+    },
+    {
+      "custom_event_id": 18,
+      "custom_event_group_id": 1,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BUST_USE_ENABLE",
+      "event_value": "",
+      "custom_event_chain_id": 0,
+      "use_pause": false,
+      "cancel_enable": true
+    },
+    {
+      "custom_event_id": 19,
+      "custom_event_group_id": 1,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_MATCH_SKILL_TRIGGER",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.1,
+      "active_event_type": "CUSTOMEVENT_BATTLEDIALOGUE",
+      "event_value": "battledialogue_prologue_03",
+      "custom_event_chain_id": 20,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 20,
+      "custom_event_group_id": 1,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_PAUSE_BATTLE",
+      "event_value": "0",
+      "custom_event_chain_id": 21,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 21,
+      "custom_event_group_id": 1,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 1.5,
+      "active_event_type": "CUSTOMEVENT_STAGE_FORCE_OUTCOME",
+      "event_value": "0",
+      "custom_event_chain_id": 0,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10010000,
+      "custom_event_group_id": 1001000,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_START_BATTLE",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BATTLEDIALOGUE",
+      "event_value": "battledialogue_main_story_01_01_03",
+      "custom_event_chain_id": 0,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10010001,
+      "custom_event_group_id": 1001000,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_BOSS_HP_RATE",
+      "trigger_value": [
+        0.4
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_PAUSE_BATTLE",
+      "event_value": "0",
+      "custom_event_chain_id": 10010002,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10010002,
+      "custom_event_group_id": 1001000,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_PLAY_DIALOGUE",
+      "event_value": "mainstory/new_world/chapter_1/new_world_Chapter01_03_02",
+      "custom_event_chain_id": 10010003,
+      "use_pause": true,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10010003,
+      "custom_event_group_id": 1001000,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 1.0,
+      "active_event_type": "CUSTOMEVENT_STAGE_FORCE_OUTCOME",
+      "event_value": "0",
+      "custom_event_chain_id": 0,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10010100,
+      "custom_event_group_id": 1001010,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_START_BATTLE",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BATTLEDIALOGUE",
+      "event_value": "battledialogue_main_story_01_01_06",
+      "custom_event_chain_id": 10010101,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10010200,
+      "custom_event_group_id": 1001020,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_START_BATTLE",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BATTLEDIALOGUE",
+      "event_value": "battledialogue_main_story_01_01_07",
+      "custom_event_chain_id": 0,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10010201,
+      "custom_event_group_id": 1001020,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_BOSS_HP_RATE",
+      "trigger_value": [
+        0.6
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_PLAY_DIALOGUE",
+      "event_value": "mainstory/new_world/chapter_1/new_world_Chapter01_07_02",
+      "custom_event_chain_id": 0,
+      "use_pause": true,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10010202,
+      "custom_event_group_id": 1001020,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_BOSS_HP_RATE",
+      "trigger_value": [
+        0.3
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_PLAY_DIALOGUE",
+      "event_value": "mainstory/new_world/chapter_1/new_world_Chapter01_07_03",
+      "custom_event_chain_id": 10010203,
+      "use_pause": true,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10010203,
+      "custom_event_group_id": 1001020,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 2.0,
+      "active_event_type": "CUSTOMEVENT_STAGE_FORCE_OUTCOME",
+      "event_value": "0",
+      "custom_event_chain_id": 0,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10020000,
+      "custom_event_group_id": 1002000,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_START_BATTLE",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BATTLEDIALOGUE",
+      "event_value": "battledialogue_main_story_01_02_03",
+      "custom_event_chain_id": 0,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10020100,
+      "custom_event_group_id": 1002010,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_START_BATTLE",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BATTLEDIALOGUE",
+      "event_value": "battledialogue_main_story_01_02_05_01",
+      "custom_event_chain_id": 0,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10020110,
+      "custom_event_group_id": 1002011,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_START_BATTLE",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BATTLEDIALOGUE",
+      "event_value": "battledialogue_main_story_01_02_05_02",
+      "custom_event_chain_id": 10020111,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10020111,
+      "custom_event_group_id": 1002011,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_PLAY_DIALOGUE",
+      "event_value": "mainstory/new_world/chapter_2/new_world_Chapter02_05_02",
+      "custom_event_chain_id": 10020112,
+      "use_pause": true,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10020112,
+      "custom_event_group_id": 1002011,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 1.0,
+      "active_event_type": "CUSTOMEVENT_STAGE_FORCE_OUTCOME",
+      "event_value": "",
+      "custom_event_chain_id": 0,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10020200,
+      "custom_event_group_id": 1002020,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_START_BATTLE",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BATTLEDIALOGUE",
+      "event_value": "battledialogue_main_story_01_02_10_01",
+      "custom_event_chain_id": 0,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10020201,
+      "custom_event_group_id": 1002020,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_BOSS_HP_RATE",
+      "trigger_value": [
+        0.8
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BATTLEDIALOGUE",
+      "event_value": "battledialogue_main_story_01_02_10_02",
+      "custom_event_chain_id": 0,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10030000,
+      "custom_event_group_id": 1003000,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_START_BATTLE",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BATTLEDIALOGUE",
+      "event_value": "battledialogue_main_story_01_03_11_01",
+      "custom_event_chain_id": 0,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10030001,
+      "custom_event_group_id": 1003000,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_BOSS_HP_RATE",
+      "trigger_value": [
+        0.8
+      ],
+      "event_active_delay": 0.0,
+      "active_event_type": "CUSTOMEVENT_BATTLEDIALOGUE",
+      "event_value": "battledialogue_main_story_01_03_11_02",
+      "custom_event_chain_id": 10030002,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10030002,
+      "custom_event_group_id": 1003000,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 8.0,
+      "active_event_type": "CUSTOMEVENT_PAUSE_BATTLE",
+      "event_value": "",
+      "custom_event_chain_id": 10030003,
+      "use_pause": false,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10030003,
+      "custom_event_group_id": 1003000,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 2.0,
+      "active_event_type": "CUSTOMEVENT_PLAY_DIALOGUE",
+      "event_value": "mainstory/new_world/chapter_3/new_world_Chapter03_12_02",
+      "custom_event_chain_id": 10030004,
+      "use_pause": true,
+      "cancel_enable": false
+    },
+    {
+      "custom_event_id": 10030004,
+      "custom_event_group_id": 1003000,
+      "custom_event_trigger_type": "CUSTOMTRIGGER_CHAIN_CUSTOMEVENT",
+      "trigger_value": [
+        0.0
+      ],
+      "event_active_delay": 0.5,
+      "active_event_type": "CUSTOMEVENT_STAGE_FORCE_OUTCOME",
+      "event_value": "battledialogue_main_story_01_03_11_02",
+      "custom_event_chain_id": 0,
+      "use_pause": false,
+      "cancel_enable": false
+    }
+  ]
+}

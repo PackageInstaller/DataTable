@@ -1,0 +1,4191 @@
+{
+  "__tableName": "Skill_Cast_Target_Data_V2",
+  "__byteLength": 26841,
+  "items": [
+    {
+      "cast_target_data_id": "ch0001_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0001_skill01_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0001_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0001_ulti_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0002_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0002_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0002_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0002_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0005_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0005_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0005_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0005_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0006_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0006_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0006_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0006_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0007_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0007_attack_cast_02",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0007_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0007_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0007_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0009_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0009_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0009_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0009_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "NTH_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 2
+    },
+    {
+      "cast_target_data_id": "ch0010_attack_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0010_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0010_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0010_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0011_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0011_skill01_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0011_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "CENTER",
+      "cast_target_select_range": 0.01,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0011_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0011_trigger_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0011_trigger_cast_02",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0011_trigger_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0011_trigger_cast_move_02",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0011_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0011_ulti_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0011_ulti_cast_move_02",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0012_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0012_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0012_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0012_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0013_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0013_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 3
+    },
+    {
+      "cast_target_data_id": "ch0013_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0013_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 3
+    },
+    {
+      "cast_target_data_id": "ch0014_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0014_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 3
+    },
+    {
+      "cast_target_data_id": "ch0014_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0014_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0015_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0015_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0015_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0015_skill02_cast_02",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0015_ulti_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0015_ulti_cast_02",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0016_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0016_skill01_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "PHY_ATK_HIGHEST",
+      "cast_target_select_num": 2
+    },
+    {
+      "cast_target_data_id": "ch0016_skill02_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0016_ulti_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "PHY_ATK_HIGHEST",
+      "cast_target_select_num": 2
+    },
+    {
+      "cast_target_data_id": "ch0017_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0017_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0017_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0017_skill02_cast_move_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0017_skill02_cast_move_02",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0017_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0019_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0019_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0019_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0019_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0020_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0020_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0020_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0020_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0021_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 7.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0021_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0021_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0021_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0021_ulti_cast_02",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "PHY_ATK_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0021_ulti_cast_01_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "PHY_ATK_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0022_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0022_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0022_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0022_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0023_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0023_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0023_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 5.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0023_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0024_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0024_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0024_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0024_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0024_ulti_cast_02",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0025_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0025_skill01_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0025_skill02_cast_01",
+      "cast_target_team_type": "FRIENDLY_NOT_SELF",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0025_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0026_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0026_skill01_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0026_skill02_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0026_ulti_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0027_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0027_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0027_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "NTH_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 2
+    },
+    {
+      "cast_target_data_id": "ch0027_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0027_ulti_cast_02",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0028_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0028_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0028_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0028_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0029_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 8.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0029_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 8.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0029_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0029_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0030_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0030_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0030_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0030_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0031_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0031_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0031_skill02_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0031_ulti_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0032_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0032_skill01_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0032_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0032_ulti_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0033_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 5.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0033_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 5.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0033_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0033_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0034_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0034_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 1.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0034_skill01_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0034_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0034_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0034_ulti_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0035_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0035_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0035_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0035_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0036_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0036_skill01_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0036_skill02_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0036_ulti_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0037_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0037_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0037_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0037_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0038_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0038_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0038_skill01_cast_02",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0038_skill02_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0038_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0038_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0038_ulti_change_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0038_ulti_change_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0039_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0039_skill01_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0039_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "PHY_ATK_HIGHEST",
+      "cast_target_select_num": 2
+    },
+    {
+      "cast_target_data_id": "ch0039_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0040_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0040_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0040_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0040_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0042_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0042_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0042_skill01_cast_02",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0042_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0042_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0043_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0043_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0043_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0043_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0046_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0046_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0046_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0046_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0050_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0050_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0050_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0050_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0052_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "NTH_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0052_attack_change_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "NTH_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0052_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "NTH_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0052_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "NTH_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0052_skill02_change_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "NTH_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0052_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0053_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0053_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0053_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0053_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0054_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0054_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0054_skill02_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "PHY_ATK_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0054_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0054_ulti_cast_02",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0056_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0056_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0056_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0056_attack_change_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0056_skill02_change_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0056_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0057_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0057_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0057_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "PHY_ATK_HIGHEST",
+      "cast_target_select_num": 2
+    },
+    {
+      "cast_target_data_id": "ch0057_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0058_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 5.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0058_skill01_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0058_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 5.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0058_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 5.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0058_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 5.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0062_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0062_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "PHY_DEF_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0062_skill01_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "PHY_DEF_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0062_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "PHY_DEF_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0062_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "ch0063_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0063_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0063_skill01_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0063_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "CENTER",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0063_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "CENTER",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0068_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0068_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0068_skill01_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NTH_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0068_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "ch0068_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "sm0001_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "sm0002_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "sm0002_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "2001000",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "2001010",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "2001020",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "2001030",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "2001040",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "2001060",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "2001070",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0201_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0202_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0203_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0204_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0205_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0206_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0206_skill01_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3001000",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3001010",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "3001020",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3001030",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3001040",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "3001050",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3001100",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3001110",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3001120",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "3001130",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3001140",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3001150",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "3001160",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3001170",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3001180",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "3001200",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3001210",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3001220",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "PHY_ATK_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3001230",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0207_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0207_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0207_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3002030",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "3002040",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "3002050",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0209_attack_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "NTH_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 2
+    },
+    {
+      "cast_target_data_id": "np0209_attack_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0209_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0209_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0210_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0210_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0210_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0211_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0211_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0211_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0212_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0212_skill01_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0212_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0212_skill03_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8199_skill_01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np8199_skill_02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np8199_skill_03_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np8199_skill_04_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np8101_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8102_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8200_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np8200_skill01_cast_02",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8200_skill09_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np_8099_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np_8099_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np_8099_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np_8099_skill03_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0199_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0199_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0199_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 5.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0199_skill03_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0199_skill03_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0199_skill04_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0199_skill05_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0199_skill05_cast_02",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0299_attack_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0299_skill01_cast_00",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0299_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0299_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0299_skill03_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0299_skill04_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0299_skill09_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0301_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.5,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0302_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0303_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0304_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0305_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0306_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0306_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0306_attack_enhanced_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 3
+    },
+    {
+      "cast_target_data_id": "np0307_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0307_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0307_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0308_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0308_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0308_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0309_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0309_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0309_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0310_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0310_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0310_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0311_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0311_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0311_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0312_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0312_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0312_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 3
+    },
+    {
+      "cast_target_data_id": "np0312_skill03_cast_01",
+      "cast_target_team_type": "ALL_UNIT",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 4
+    },
+    {
+      "cast_target_data_id": "np0399_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0399_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0399_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0399_skill03_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0399_skill04_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0399_ulti_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0401_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0402_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0403_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0404_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0405_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0405_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0406_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0406_skill01_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0407_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0407_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0407_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0408_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0408_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0408_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0409_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0409_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0409_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0410_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0410_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0410_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0411_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0411_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0411_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0411_skill03_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0412_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0412_skill01_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0412_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0412_skill03_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0499_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0499_skill01_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0499_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 3
+    },
+    {
+      "cast_target_data_id": "np0499_skill03_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "ALL",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0499_skill03_cast_02",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0499_skill04_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0499_ulti_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0501_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0502_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 5.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0502_attack_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 5.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0503_attack_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0504_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0505_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0506_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0506_skill01_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0507_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0507_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0507_skill01_cast_02",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0508_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0508_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0508_skill01_cast_02",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0508_skill01_cast_move_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "PHY_ATK_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0509_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0509_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0510_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0510_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "NTH_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 3
+    },
+    {
+      "cast_target_data_id": "np0511_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0511_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0511_skill02_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0512_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0512_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0512_skill02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0701_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0702_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0703_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0704_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0705_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0706_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0706_skil01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0710_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0710_skil01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0711_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0711_skil01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0712_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np0712_skil01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "CENTER",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np0712_skil02_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6010_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6010_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6010_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np6010_skill03_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np6010_skill04_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6010_skill05_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6011_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6011_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6011_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np6011_skill03_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np6011_skill04_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "RANDOM",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6011_skill05_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6012_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6012_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_HIGHEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6012_skill02_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np6012_skill03_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np6012_skill04_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np6012_skill05_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np6012_skill06_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np6020_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6020_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np6021_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6021_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 0.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "HP_RATE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6022_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np6022_skill01_cast_01",
+      "cast_target_team_type": "SELF",
+      "cast_target_select_range_type": "NONE",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "NONE",
+      "cast_target_sort_type": "NONE",
+      "cast_target_select_num": 0
+    },
+    {
+      "cast_target_data_id": "np8004_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8005_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8006_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8007_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8008_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8009_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8010_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 3.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8011_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8094_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8094_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8094_skill02_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8095_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8095_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8095_skill02_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8096_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8096_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8096_skill02_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8097_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 4.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8097_skill01_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8097_skill02_cast_01",
+      "cast_target_team_type": "FRIENDLY",
+      "cast_target_select_range_type": "ALL",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    },
+    {
+      "cast_target_data_id": "np8201_attack_cast_01",
+      "cast_target_team_type": "ENEMY",
+      "cast_target_select_range_type": "FRONT",
+      "cast_target_select_range": 99.0,
+      "cast_target_pick_type": "N_TARGET_SELECT",
+      "cast_target_sort_type": "DISTANCE_LOWEST",
+      "cast_target_select_num": 1
+    }
+  ]
+}

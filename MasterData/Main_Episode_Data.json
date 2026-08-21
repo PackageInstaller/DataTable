@@ -1,0 +1,72 @@
+{
+  "__tableName": "Main_Episode_Data",
+  "__byteLength": 706,
+  "items": [
+    {
+      "epi_id": 110001,
+      "epi_name_id": "story_main_name_01_01_01",
+      "epi_sort_id": "story_main_sort_01_01_01",
+      "epi_group_id": 10101,
+      "epi_reward_id": 12000101,
+      "reward_type": "DIA",
+      "pre_epi_id": 0,
+      "entrance_script": "Prologue_01",
+      "outrance_script": "0"
+    },
+    {
+      "epi_id": 110002,
+      "epi_name_id": "story_main_name_01_01_02",
+      "epi_sort_id": "story_main_sort_01_01_02",
+      "epi_group_id": 10101,
+      "epi_reward_id": 12000101,
+      "reward_type": "DIA",
+      "pre_epi_id": 110001,
+      "entrance_script": "Prologue_02",
+      "outrance_script": "0"
+    },
+    {
+      "epi_id": 110003,
+      "epi_name_id": "story_main_name_01_01_03",
+      "epi_sort_id": "story_main_sort_01_01_03",
+      "epi_group_id": 10101,
+      "epi_reward_id": 12000101,
+      "reward_type": "DIA",
+      "pre_epi_id": 110002,
+      "entrance_script": "Prologue_03",
+      "outrance_script": "0"
+    },
+    {
+      "epi_id": 110004,
+      "epi_name_id": "story_main_name_01_01_04",
+      "epi_sort_id": "story_main_sort_01_01_04",
+      "epi_group_id": 10101,
+      "epi_reward_id": 12000101,
+      "reward_type": "DIA",
+      "pre_epi_id": 110003,
+      "entrance_script": "Prologue_04",
+      "outrance_script": "0"
+    },
+    {
+      "epi_id": 110005,
+      "epi_name_id": "story_main_name_01_01_05",
+      "epi_sort_id": "story_main_sort_01_01_05",
+      "epi_group_id": 10101,
+      "epi_reward_id": 12000101,
+      "reward_type": "DIA",
+      "pre_epi_id": 110004,
+      "entrance_script": "Prologue_05",
+      "outrance_script": "0"
+    },
+    {
+      "epi_id": 110006,
+      "epi_name_id": "story_main_name_01_01_06",
+      "epi_sort_id": "story_main_sort_01_01_06",
+      "epi_group_id": 10101,
+      "epi_reward_id": 12000101,
+      "reward_type": "DIA",
+      "pre_epi_id": 110005,
+      "entrance_script": "Prologue_06",
+      "outrance_script": "0"
+    }
+  ]
+}
