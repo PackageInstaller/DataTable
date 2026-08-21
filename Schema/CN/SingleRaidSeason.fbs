@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table SingleRaidSeason {
+  no: int32;
+  season_name_no: int32;
+  season_bg_path: string;
+  season_bg1_path: string;
+}
+
+table SingleRaidSeasonTable {
+  json: [SingleRaidSeason];
+}
+
+root_type SingleRaidSeasonTable;

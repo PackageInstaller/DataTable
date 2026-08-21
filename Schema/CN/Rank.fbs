@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table Rank {
+  no: int32;
+  rank_type: int32;
+  fairy_type: int32;
+  title_sno: int32;
+  amount_sno: int32;
+}
+
+table RankTable {
+  json: [Rank];
+}
+
+root_type RankTable;

@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table HeroOptionRate {
+  no: int32;
+  type: int32;
+  value: int32;
+  rate: int32;
+}
+
+table HeroOptionRateTable {
+  json: [HeroOptionRate];
+}
+
+root_type HeroOptionRateTable;

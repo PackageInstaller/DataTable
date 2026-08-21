@@ -1,0 +1,39 @@
+namespace Tbl;
+
+table Gacha {
+  no: int32;
+  bundle_count: int32;
+  pay_item_no: int32;
+  pay_item_amount: int32;
+  pay_item_bundle_amount: int32;
+  ticket_item_no: int32;
+  ticket_amount: int32;
+  ticket_bundle_amount: int32;
+  gacha_type: int32;
+  gacha_prob_group: int32;
+  ban_group: int32;
+  get_mileage: int32;
+  category_path: string;
+  ui_path: string;
+  banner_path: string;
+  check_stage_no: int32;
+  limit_sno: int32;
+  limit_value: int32;
+  pickup: int32;
+  wishslot_group: int32;
+  gate_type: int32;
+  free_gacha_no: int32;
+  free_gacha_bundle_count: int32;
+  free_gacha_accumulate_count: int32;
+  paid_gacha_no: int32;
+  change_mail_no: int32;
+  change_item: int32;
+  schedule_key_1: string;
+  schedule_key_2: string;
+}
+
+table GachaTable {
+  json: [Gacha];
+}
+
+root_type GachaTable;

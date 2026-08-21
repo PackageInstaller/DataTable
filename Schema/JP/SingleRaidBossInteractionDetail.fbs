@@ -1,0 +1,21 @@
+namespace Tbl;
+
+table SingleRaidBossInteractionDetail {
+  no: int32;
+  interaction_no: int32;
+  hero_no: int32;
+  talk_no_1: int32;
+  talk_no_2: int32;
+  talk_no_3: int32;
+  talk_no_4: int32;
+  talk_no_5: int32;
+  talk_no_6: int32;
+  talk_no_7: int32;
+  talk_no_8: int32;
+}
+
+table SingleRaidBossInteractionDetailTable {
+  json: [SingleRaidBossInteractionDetail];
+}
+
+root_type SingleRaidBossInteractionDetailTable;

@@ -1,0 +1,23 @@
+namespace Tbl;
+
+table TownLevel {
+  level: int32;
+  develop_point: int32;
+  section_open: int32;
+  shop_no: int32;
+  rest_slot: int32;
+  item_no1: int32;
+  item_amount1: int32;
+  item_no2: int32;
+  item_amount2: int32;
+  item_no3: int32;
+  item_amount3: int32;
+  item_no4: int32;
+  item_amount4: int32;
+}
+
+table TownLevelTable {
+  json: [TownLevel];
+}
+
+root_type TownLevelTable;

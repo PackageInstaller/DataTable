@@ -1,0 +1,23 @@
+namespace Tbl;
+
+table EdenUnionConstraint {
+  no: int32;
+  constraint_group: int32;
+  add_level: int32;
+  constraint_type: int32;
+  title_string_no: int32;
+  content_string_no: int32;
+  icon_path: string;
+  value_1: int32;
+  value_2: int32;
+  value_3: int32;
+  value_4: int32;
+  value_5: int32;
+  force_use: int32;
+}
+
+table EdenUnionConstraintTable {
+  json: [EdenUnionConstraint];
+}
+
+root_type EdenUnionConstraintTable;

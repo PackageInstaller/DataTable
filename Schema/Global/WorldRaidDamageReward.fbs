@@ -1,0 +1,23 @@
+namespace Tbl;
+
+table WorldRaidDamageReward {
+  no: int32;
+  raid_no: int32;
+  damage_amount: int64;
+  reward_item1_no: int32;
+  reward_item1_amount: int32;
+  reward_item2_no: int32;
+  reward_item2_amount: int32;
+  reward_item3_no: int32;
+  reward_item3_amount: int32;
+  reward_item4_no: int32;
+  reward_item4_amount: int32;
+  reward_item5_no: int32;
+  reward_item5_amount: int32;
+}
+
+table WorldRaidDamageRewardTable {
+  json: [WorldRaidDamageReward];
+}
+
+root_type WorldRaidDamageRewardTable;

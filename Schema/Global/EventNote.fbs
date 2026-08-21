@@ -1,0 +1,26 @@
+namespace Tbl;
+
+table EventNote {
+  no: int32;
+  event_group: int32;
+  map_path: string;
+  character_path: string;
+  bgm_path: string;
+  phase_gauge: string;
+  play_time: int32;
+  limit_value: int32;
+  enter_price: string;
+  fever_max: int32;
+  fever_gauge: int32;
+  fever_phase: int32;
+  fever_point: int32;
+  fever_auto: int32;
+  fever_attack: int32;
+  time_point: int32;
+}
+
+table EventNoteTable {
+  json: [EventNote];
+}
+
+root_type EventNoteTable;

@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table GuildBuff {
+  no: int32;
+  skill_no: int32;
+  level: int32;
+  skillpoint: int32;
+  buff_type: int32;
+  amount: float;
+  tooltip_sno: int32;
+}
+
+table GuildBuffTable {
+  json: [GuildBuff];
+}
+
+root_type GuildBuffTable;

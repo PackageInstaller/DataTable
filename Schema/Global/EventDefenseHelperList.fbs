@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table EventDefenseHelperList {
+  no: int32;
+  helper_type: int32;
+  hero_no: int32;
+  name_sno: int32;
+  helper_call_string_sno: int32;
+  helper_out_string_sno: int32;
+  helper_open_date: string;
+}
+
+table EventDefenseHelperListTable {
+  json: [EventDefenseHelperList];
+}
+
+root_type EventDefenseHelperListTable;

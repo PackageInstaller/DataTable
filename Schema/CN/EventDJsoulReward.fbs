@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table EventDJsoulReward {
+  no: int32;
+  song_no: int32;
+  item_no_1: int32;
+  item_amount_1: int32;
+  item_no_2: int32;
+  item_amount_2: int32;
+  sp_date: string;
+  sp_item_no: int32;
+  sp_item_amount: int32;
+}
+
+table EventDJsoulRewardTable {
+  json: [EventDJsoulReward];
+}
+
+root_type EventDJsoulRewardTable;

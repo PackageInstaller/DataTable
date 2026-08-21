@@ -1,0 +1,20 @@
+namespace Tbl;
+
+table EventDice {
+  no: int32;
+  event_group: int32;
+  event_number: int32;
+  slot_group: int32;
+  goal_point_group: int32;
+  reward_group: int32;
+  hero_no: int32;
+  bg_path: string;
+  dice_path: string;
+  sound_path: string;
+}
+
+table EventDiceTable {
+  json: [EventDice];
+}
+
+root_type EventDiceTable;

@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table DefaultProfileSetting {
+  no: int32;
+  type: int32;
+  index: int32;
+  name_sno: int32;
+  panel_type: string;
+  contents_limit_no: int32;
+}
+
+table DefaultProfileSettingTable {
+  json: [DefaultProfileSetting];
+}
+
+root_type DefaultProfileSettingTable;

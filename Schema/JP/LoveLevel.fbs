@@ -1,0 +1,35 @@
+namespace Tbl;
+
+table LoveLevel {
+  no: int32;
+  level: int32;
+  hero_type: int32;
+  lovepoint: int32;
+  total_lovepoint: int32;
+  buff1_type: int32;
+  buff1_value: int32;
+  buff2_type: int32;
+  buff2_value: int32;
+  buff3_type: int32;
+  buff3_value: int32;
+  buff4_type: int32;
+  buff4_value: int32;
+  buff5_type: int32;
+  buff5_value: int32;
+  buff1_sno: int32;
+  buff2_sno: int32;
+  buff3_sno: int32;
+  buff4_sno: int32;
+  buff5_sno: int32;
+  attack_rate: int32;
+  defence_rate: int32;
+  hp_rate: int32;
+  reduce_time: int32;
+  increase_recovery: int32;
+}
+
+table LoveLevelTable {
+  json: [LoveLevel];
+}
+
+root_type LoveLevelTable;

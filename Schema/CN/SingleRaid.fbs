@@ -1,0 +1,29 @@
+namespace Tbl;
+
+table SingleRaid {
+  no: int32;
+  level_group: int32;
+  stage_no: int32;
+  guide_sno: int32;
+  story_no: int32;
+  is_special: int32;
+  bg_path: string;
+  event_bg_path: string;
+  bg_position: string;
+  sound_path: string;
+  behavior_1: int32;
+  behavior_2: int32;
+  behavior_3: int32;
+  behavior_4: int32;
+  behavior_5: int32;
+  behavior_6: int32;
+  behavior_7: int32;
+  behavior_8: int32;
+  quest_category: int32;
+}
+
+table SingleRaidTable {
+  json: [SingleRaid];
+}
+
+root_type SingleRaidTable;

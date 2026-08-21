@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table Level {
+  level: int32;
+  gold: int32;
+  mana_dust: int32;
+  mana_crystal: int32;
+  sum_gold: int64;
+  sum_mana_dust: int64;
+  sum_mana_crystal: int32;
+}
+
+table LevelTable {
+  json: [Level];
+}
+
+root_type LevelTable;

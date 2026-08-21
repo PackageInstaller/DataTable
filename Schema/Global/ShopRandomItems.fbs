@@ -1,0 +1,18 @@
+namespace Tbl;
+
+table ShopRandomItems {
+  no: int32;
+  shop_no: int32;
+  draw_box: int32;
+  item_no: int32;
+  item_amount: int32;
+  draw_limit: int32;
+  item_type: int32;
+  draw_weight: int32;
+}
+
+table ShopRandomItemsTable {
+  json: [ShopRandomItems];
+}
+
+root_type ShopRandomItemsTable;

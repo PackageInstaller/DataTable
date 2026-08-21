@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table WorldRaidBoss {
+  raid_no: int32;
+  stage_no: int32;
+  boss_no: int32;
+  guide_sno: int32;
+  story_no: int32;
+  bg_path: string;
+  sound_path: string;
+}
+
+table WorldRaidBossTable {
+  json: [WorldRaidBoss];
+}
+
+root_type WorldRaidBossTable;

@@ -1,0 +1,18 @@
+namespace Tbl;
+
+table EdenUnionSkill {
+  no: int32;
+  hero_no: int32;
+  skill_no: int32;
+  constraint_level1: string;
+  constraint_level2: string;
+  constraint_level3: string;
+  constraint_level4: string;
+  constraint_level5: string;
+}
+
+table EdenUnionSkillTable {
+  json: [EdenUnionSkill];
+}
+
+root_type EdenUnionSkillTable;

@@ -1,0 +1,18 @@
+namespace Tbl;
+
+table SignatureSkill {
+  no: int32;
+  signature_level_1: string;
+  signature_level_2: string;
+  signature_level_3: string;
+  signature_level_4: string;
+  signature_level_5: string;
+  signature_level_6: string;
+  signature_level_7: string;
+}
+
+table SignatureSkillTable {
+  json: [SignatureSkill];
+}
+
+root_type SignatureSkillTable;

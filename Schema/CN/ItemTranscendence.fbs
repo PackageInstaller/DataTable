@@ -1,0 +1,21 @@
+namespace Tbl;
+
+table ItemTranscendence {
+  no: int32;
+  grade_sno: int32;
+  slot_limit_sno: int32;
+  stat_limit_sno: int32;
+  level_limit: int32;
+  material_no_1: int32;
+  material_amount_1: int32;
+  material_no_2: int32;
+  material_amount_2: int32;
+  material_no_2_substitute: int32;
+  material_amount_2_substitute: int32;
+}
+
+table ItemTranscendenceTable {
+  json: [ItemTranscendence];
+}
+
+root_type ItemTranscendenceTable;

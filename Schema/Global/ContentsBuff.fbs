@@ -1,0 +1,28 @@
+namespace Tbl;
+
+table ContentsBuff {
+  no: int32;
+  hero_level_base: int32;
+  attack: float;
+  attack_rate: float;
+  attack_speed: float;
+  defence: float;
+  defence_rate: float;
+  hp: float;
+  hp_rate: float;
+  critical_rate: float;
+  critical_power: float;
+  hit: float;
+  dodge: float;
+  physical_resist: float;
+  magic_resist: float;
+  life_leech: float;
+  battle_power: int32;
+  battle_power_per: float;
+}
+
+table ContentsBuffTable {
+  json: [ContentsBuff];
+}
+
+root_type ContentsBuffTable;

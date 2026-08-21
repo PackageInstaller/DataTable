@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table HelpGuideCategory {
+  no: int32;
+  category_title_icon: string;
+  category_title_sno: int32;
+  is_use: bool;
+}
+
+table HelpGuideCategoryTable {
+  json: [HelpGuideCategory];
+}
+
+root_type HelpGuideCategoryTable;

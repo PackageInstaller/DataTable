@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table GuildEmblem {
+  no: int32;
+  order: int32;
+  hero_no: int32;
+  filename: string;
+}
+
+table GuildEmblemTable {
+  json: [GuildEmblem];
+}
+
+root_type GuildEmblemTable;

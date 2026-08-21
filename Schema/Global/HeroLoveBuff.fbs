@@ -1,0 +1,12 @@
+namespace Tbl;
+
+table HeroLoveBuff {
+  no: int32;
+  type: int32;
+}
+
+table HeroLoveBuffTable {
+  json: [HeroLoveBuff];
+}
+
+root_type HeroLoveBuffTable;

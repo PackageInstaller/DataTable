@@ -1,0 +1,26 @@
+namespace Tbl;
+
+table SkillCode {
+  no: int32;
+  function_key: int32;
+  is_ally: int32;
+  target_key: int32;
+  value: float;
+  duration: float;
+  condition_type: int32;
+  condition_id_1: int32;
+  condition_id_2: int32;
+  condition_id_3: int32;
+  condition_id_4: int32;
+  move_effect_key: int32;
+  fx_path: string;
+  penetration: int32;
+  penetration_rate: float;
+  delay: float;
+}
+
+table SkillCodeTable {
+  json: [SkillCode];
+}
+
+root_type SkillCodeTable;

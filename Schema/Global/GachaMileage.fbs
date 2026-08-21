@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table GachaMileage {
+  no: int32;
+  type: int32;
+  hero_no: int32;
+  name_sno: int32;
+  desc_sno: int32;
+  icon_path: string;
+}
+
+table GachaMileageTable {
+  json: [GachaMileage];
+}
+
+root_type GachaMileageTable;

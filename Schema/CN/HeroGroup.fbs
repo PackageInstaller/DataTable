@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table HeroGroup {
+  name_sno: int32;
+  group_sno: int32;
+  group_desc_sno: int32;
+  icon: string;
+  icon_color: string;
+}
+
+table HeroGroupTable {
+  json: [HeroGroup];
+}
+
+root_type HeroGroupTable;

@@ -1,0 +1,20 @@
+namespace Tbl;
+
+table HeroOption {
+  no: int32;
+  unique: int32;
+  option: int32;
+  level: int32;
+  effect_type: int32;
+  effect_no1: int32;
+  effect_no2: int32;
+  effect_no3: int32;
+  tooltip_sno: int32;
+  icon_path: string;
+}
+
+table HeroOptionTable {
+  json: [HeroOption];
+}
+
+root_type HeroOptionTable;

@@ -1,0 +1,39 @@
+namespace Tbl;
+
+table TowerEnemy {
+  no: int32;
+  hero_no_1: int32;
+  hero_grade_1: int32;
+  level_1: int32;
+  hero_equip_1: int32;
+  ultimate_autosetting_1: int32;
+  hero_no_2: int32;
+  hero_grade_2: int32;
+  level_2: int32;
+  hero_equip_2: int32;
+  ultimate_autosetting_2: int32;
+  hero_no_3: int32;
+  hero_grade_3: int32;
+  level_3: int32;
+  hero_equip_3: int32;
+  ultimate_autosetting_3: int32;
+  hero_no_4: int32;
+  hero_grade_4: int32;
+  level_4: int32;
+  hero_equip_4: int32;
+  ultimate_autosetting_4: int32;
+  hero_no_5: int32;
+  hero_grade_5: int32;
+  level_5: int32;
+  hero_equip_5: int32;
+  ultimate_autosetting_5: int32;
+  formation_type: int32;
+  signature_level: int32;
+  signature_skill_level: int32;
+}
+
+table TowerEnemyTable {
+  json: [TowerEnemy];
+}
+
+root_type TowerEnemyTable;

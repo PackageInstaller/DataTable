@@ -1,0 +1,20 @@
+namespace Tbl;
+
+table EverTalkDesc {
+  no: int32;
+  hide: int8;
+  group_no: int32;
+  love_level: int8;
+  hero_no: int16;
+  talk_type: int16;
+  ui_type: string;
+  speaker_no: int16;
+  talk_index: int16;
+  choice_group: int16;
+}
+
+table EverTalkDescTable {
+  json: [EverTalkDesc];
+}
+
+root_type EverTalkDescTable;

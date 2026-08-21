@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table EventDefensePlayerSetting {
+  no: int32;
+  user_level_value: int32;
+  character_hp: int32;
+  character_damage: string;
+  exp: int32;
+}
+
+table EventDefensePlayerSettingTable {
+  json: [EventDefensePlayerSetting];
+}
+
+root_type EventDefensePlayerSettingTable;

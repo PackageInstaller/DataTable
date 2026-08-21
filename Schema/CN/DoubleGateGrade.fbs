@@ -1,0 +1,24 @@
+namespace Tbl;
+
+table DoubleGateGrade {
+  no: int32;
+  stage_type: int32;
+  stage_grade: int32;
+  global_buff: int32;
+  add_mon_level: int32;
+  suggest_power: int32;
+  add_mon_grade: int32;
+  add_item_grade: int32;
+  add_signature_level: int32;
+  add_signature_skill_level: int32;
+  reward_no: int32;
+  reward_amount: int32;
+  map: string;
+  global_volume: int32;
+}
+
+table DoubleGateGradeTable {
+  json: [DoubleGateGrade];
+}
+
+root_type DoubleGateGradeTable;

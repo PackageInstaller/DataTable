@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table SkillGridPosition {
+  position_no: int32;
+  grid_x: int32;
+  grid_y: int32;
+  rotate: int32;
+}
+
+table SkillGridPositionTable {
+  json: [SkillGridPosition];
+}
+
+root_type SkillGridPositionTable;

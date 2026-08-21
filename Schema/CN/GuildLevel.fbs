@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table GuildLevel {
+  no: int32;
+  need_exp: int32;
+  sum_exp: int32;
+  max_member: int32;
+  have_skill_point: int32;
+}
+
+table GuildLevelTable {
+  json: [GuildLevel];
+}
+
+root_type GuildLevelTable;

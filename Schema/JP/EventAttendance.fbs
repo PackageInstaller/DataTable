@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table EventAttendance {
+  no: int32;
+  group: int32;
+  attendance_order: int32;
+  reward_item: int32;
+  reward_amount: int32;
+  buy_attend_open: int32;
+  buy_attend_cost: int32;
+}
+
+table EventAttendanceTable {
+  json: [EventAttendance];
+}
+
+root_type EventAttendanceTable;

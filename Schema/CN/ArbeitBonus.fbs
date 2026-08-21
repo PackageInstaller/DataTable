@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table ArbeitBonus {
+  no: int32;
+  overstat: int32;
+  bonus_ratio: int32;
+}
+
+table ArbeitBonusTable {
+  json: [ArbeitBonus];
+}
+
+root_type ArbeitBonusTable;

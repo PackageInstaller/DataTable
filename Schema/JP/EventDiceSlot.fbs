@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table EventDiceSlot {
+  no: int32;
+  slot_group: int32;
+  slot_no: int32;
+  slot_type: int32;
+  slot_point_group: int32;
+}
+
+table EventDiceSlotTable {
+  json: [EventDiceSlot];
+}
+
+root_type EventDiceSlotTable;

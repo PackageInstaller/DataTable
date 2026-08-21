@@ -1,0 +1,22 @@
+namespace Tbl;
+
+table ChallengeStage {
+  no: int32;
+  challenge_no_1: int32;
+  reward_group_no_1: int32;
+  challenge_no_2: int32;
+  reward_group_no_2: int32;
+  challenge_no_3: int32;
+  reward_group_no_3: int32;
+  level_limit: int32;
+  buff_no_1: int32;
+  buff_no_2: int32;
+  buff_desc: int32;
+  buff_name: int32;
+}
+
+table ChallengeStageTable {
+  json: [ChallengeStage];
+}
+
+root_type ChallengeStageTable;

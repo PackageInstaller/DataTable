@@ -1,0 +1,45 @@
+namespace Tbl;
+
+table EventRaid {
+  no: int32;
+  event_group: int32;
+  event_number: int32;
+  event_stage_type: int32;
+  battle_view_type: int32;
+  stage_limit_value: int32;
+  is_additional_enter: int32;
+  additional_enter_price: string;
+  stage_limit_sno: int32;
+  stage_name_sno: int32;
+  stage_desc_sno: int32;
+  help_desc_sno: int32;
+  bg_path: string;
+  sound_path: string;
+  hero_no_1: int32;
+  hero_grade_1: int32;
+  level_1: int32;
+  hero_no_2: int32;
+  hero_grade_2: int32;
+  level_2: int32;
+  hero_no_3: int32;
+  hero_grade_3: int32;
+  level_3: int32;
+  hero_no_4: int32;
+  hero_grade_4: int32;
+  level_4: int32;
+  hero_no_5: int32;
+  hero_grade_5: int32;
+  level_5: int32;
+  map: string;
+  formation_type: int32;
+  rental_type: int32;
+  global_volumn: int32;
+  max_hp: int32;
+  battle_time: int32;
+}
+
+table EventRaidTable {
+  json: [EventRaid];
+}
+
+root_type EventRaidTable;

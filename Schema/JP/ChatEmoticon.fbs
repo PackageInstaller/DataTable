@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table ChatEmoticon {
+  no: int32;
+  tab_no: int32;
+  sort_no: int32;
+  img: string;
+  use_anim: int32;
+}
+
+table ChatEmoticonTable {
+  json: [ChatEmoticon];
+}
+
+root_type ChatEmoticonTable;

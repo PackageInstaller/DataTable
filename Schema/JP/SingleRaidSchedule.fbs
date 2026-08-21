@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table SingleRaidSchedule {
+  no: int32;
+  season_no: int32;
+  raid_no: int32;
+  server_check: int32;
+  schedule_key: string;
+}
+
+table SingleRaidScheduleTable {
+  json: [SingleRaidSchedule];
+}
+
+root_type SingleRaidScheduleTable;

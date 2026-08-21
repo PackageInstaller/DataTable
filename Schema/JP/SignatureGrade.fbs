@@ -1,0 +1,20 @@
+namespace Tbl;
+
+table SignatureGrade {
+  no: int32;
+  group: int32;
+  signature_grade: int32;
+  signature_max_level: int32;
+  need_item_no: int32;
+  item_amount: int32;
+  collection_point: int32;
+  icon_bg_path: string;
+  skill_level: int32;
+  signature_bg_effect: string;
+}
+
+table SignatureGradeTable {
+  json: [SignatureGrade];
+}
+
+root_type SignatureGradeTable;

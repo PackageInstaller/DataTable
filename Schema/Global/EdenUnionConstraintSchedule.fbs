@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table EdenUnionConstraintSchedule {
+  no: int32;
+  union_group: int32;
+  constraint_no: int32;
+  open_date: int32;
+}
+
+table EdenUnionConstraintScheduleTable {
+  json: [EdenUnionConstraintSchedule];
+}
+
+root_type EdenUnionConstraintScheduleTable;

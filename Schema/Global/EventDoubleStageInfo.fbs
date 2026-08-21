@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table EventDoubleStageInfo {
+  no: int32;
+  event_group: int32;
+  event_number: int32;
+  stage_limit_value: int32;
+  stage_limit_sno: int32;
+}
+
+table EventDoubleStageInfoTable {
+  json: [EventDoubleStageInfo];
+}
+
+root_type EventDoubleStageInfoTable;

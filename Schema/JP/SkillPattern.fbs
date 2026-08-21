@@ -1,0 +1,62 @@
+namespace Tbl;
+
+table SkillPattern {
+  hero_no: int32;
+  ai_pattern: int32;
+  pattern_1: int32;
+  pattern_2: int32;
+  pattern_3: int32;
+  pattern_4: int32;
+  pattern_5: int32;
+  pattern_6: int32;
+  pattern_7: int32;
+  pattern_8: int32;
+  pattern_9: int32;
+  pattern_10: int32;
+  pattern_11: int32;
+  pattern_12: int32;
+  pattern_13: int32;
+  pattern_14: int32;
+  pattern_15: int32;
+  pattern_16: int32;
+  pattern_17: int32;
+  pattern_18: int32;
+  pattern_19: int32;
+  pattern_20: int32;
+  pattern_21: int32;
+  pattern_22: int32;
+  pattern_23: int32;
+  pattern_24: int32;
+  pattern_25: int32;
+  pattern_26: int32;
+  pattern_27: int32;
+  pattern_28: int32;
+  pattern_29: int32;
+  pattern_30: int32;
+  pattern_31: int32;
+  pattern_32: int32;
+  pattern_33: int32;
+  pattern_34: int32;
+  pattern_35: int32;
+  pattern_36: int32;
+  pattern_37: int32;
+  pattern_38: int32;
+  pattern_39: int32;
+  pattern_40: int32;
+  pattern_41: int32;
+  pattern_42: int32;
+  pattern_43: int32;
+  pattern_44: int32;
+  pattern_45: int32;
+  pattern_46: int32;
+  pattern_47: int32;
+  pattern_48: int32;
+  pattern_49: int32;
+  pattern_50: int32;
+}
+
+table SkillPatternTable {
+  json: [SkillPattern];
+}
+
+root_type SkillPatternTable;

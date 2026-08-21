@@ -1,0 +1,27 @@
+namespace Tbl;
+
+table TownObjet {
+  no: int32;
+  path: string;
+  prefab: string;
+  list_tab: int32;
+  type: int32;
+  type_value: int32;
+  original_slot: int32;
+  buff1: int32;
+  buff2: int32;
+  develop_point: int32;
+  place_limit: int32;
+  hero: int32;
+  castle: int32;
+  furnace: int32;
+  animal_prefab: string;
+  close_motion: string;
+  far_motion: string;
+}
+
+table TownObjetTable {
+  json: [TownObjet];
+}
+
+root_type TownObjetTable;

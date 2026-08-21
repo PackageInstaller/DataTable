@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table EventDefenseHelperSetting {
+  no: int32;
+  helper_type: int32;
+  helper_love_level: int32;
+  helper_love_point: int32;
+  helper_hp: int32;
+  helper_damage: string;
+}
+
+table EventDefenseHelperSettingTable {
+  json: [EventDefenseHelperSetting];
+}
+
+root_type EventDefenseHelperSettingTable;

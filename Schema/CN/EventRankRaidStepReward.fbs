@@ -1,0 +1,25 @@
+namespace Tbl;
+
+table EventRankRaidStepReward {
+  no: int32;
+  event_group: int32;
+  event_number: int32;
+  reward_type: int32;
+  goal_amount: int32;
+  reward_item_no_1: int32;
+  reward_item_amount_1: int32;
+  reward_item_no_2: int32;
+  reward_item_amount_2: int32;
+  reward_item_no_3: int32;
+  reward_item_amount_3: int32;
+  reward_item_no_4: int32;
+  reward_item_amount_4: int32;
+  reward_item_no_5: int32;
+  reward_item_amount_5: int32;
+}
+
+table EventRankRaidStepRewardTable {
+  json: [EventRankRaidStepReward];
+}
+
+root_type EventRankRaidStepRewardTable;

@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table Attendance {
+  no: int32;
+  attendance_group: int32;
+  attendance_order: int32;
+  reward_item: int32;
+  reward_amount: int32;
+  ui_path: string;
+  next_no: int32;
+}
+
+table AttendanceTable {
+  json: [Attendance];
+}
+
+root_type AttendanceTable;

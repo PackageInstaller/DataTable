@@ -1,0 +1,25 @@
+namespace Tbl;
+
+table EventNoteJudge {
+  no: int32;
+  note_type: int32;
+  note_prefeb_path: string;
+  note_duration: float;
+  touch_count: int32;
+  judge_perfect: float;
+  judge_good: float;
+  judge_bad: float;
+  note_phase: int32;
+  phase_perfect: float;
+  phase_good: float;
+  phase_bad: float;
+  point_perfect: int32;
+  point_good: int32;
+  point_bad: int32;
+}
+
+table EventNoteJudgeTable {
+  json: [EventNoteJudge];
+}
+
+root_type EventNoteJudgeTable;

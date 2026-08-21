@@ -1,0 +1,36 @@
+namespace Tbl;
+
+table TalkBubble {
+  hero_no: int32;
+  bubble_talk1: int64;
+  bubble_talk2: int64;
+  bubble_talk3: int64;
+  arbeit_start: int64;
+  arbeit_finish: int64;
+  sad_talk1: int64;
+  sad_talk2: int64;
+  sad_talk3: int64;
+  sad_ani1: string;
+  sad_ani2: string;
+  sad_ani3: string;
+  happy_talk1: int64;
+  happy_talk2: int64;
+  happy_talk3: int64;
+  happy_ani1: string;
+  happy_ani2: string;
+  happy_ani3: string;
+  lovely_talk: int64;
+  lovely_ani: string;
+  hit_reaction1: int32;
+  hit_reaction2: int32;
+  hit_reaction3: int32;
+  hit_reaction_strong1: int32;
+  hit_reaction_strong2: int32;
+  hit_reaction_strong3: int32;
+}
+
+table TalkBubbleTable {
+  json: [TalkBubble];
+}
+
+root_type TalkBubbleTable;

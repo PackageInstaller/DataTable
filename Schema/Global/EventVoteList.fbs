@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table EventVoteList {
+  no: int32;
+  event_group: int32;
+  hero_no: int32;
+  vote_talk_sno: int32;
+}
+
+table EventVoteListTable {
+  json: [EventVoteList];
+}
+
+root_type EventVoteListTable;

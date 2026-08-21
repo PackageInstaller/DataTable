@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table GuideQuest {
+  no: int32;
+  open_stage: int32;
+  complete_item: int32;
+  complete_amount: int32;
+}
+
+table GuideQuestTable {
+  json: [GuideQuest];
+}
+
+root_type GuideQuestTable;

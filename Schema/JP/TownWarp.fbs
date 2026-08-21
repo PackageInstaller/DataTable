@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table TownWarp {
+  no: int32;
+  group: int32;
+  button_sno: int32;
+  position: string;
+  section_limit: int32;
+  img: string;
+}
+
+table TownWarpTable {
+  json: [TownWarp];
+}
+
+root_type TownWarpTable;

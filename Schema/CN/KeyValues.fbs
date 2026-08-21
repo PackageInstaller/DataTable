@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table KeyValues {
+  key_name: string;
+  values_data: string;
+  type: int32;
+}
+
+table KeyValuesTable {
+  json: [KeyValues];
+}
+
+root_type KeyValuesTable;

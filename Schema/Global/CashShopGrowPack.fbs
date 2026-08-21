@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table CashShopGrowPack {
+  no: int32;
+  order: int32;
+  type: int32;
+  name_sno: int32;
+  state_string_sno_1: int32;
+  state_string_sno_2: int32;
+}
+
+table CashShopGrowPackTable {
+  json: [CashShopGrowPack];
+}
+
+root_type CashShopGrowPackTable;

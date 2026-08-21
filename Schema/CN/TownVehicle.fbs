@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table TownVehicle {
+  no: int32;
+  type: int32;
+  path: string;
+  move_speed: float;
+}
+
+table TownVehicleTable {
+  json: [TownVehicle];
+}
+
+root_type TownVehicleTable;

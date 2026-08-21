@@ -1,0 +1,30 @@
+namespace Tbl;
+
+table Signature {
+  no: int32;
+  hero_sno: int32;
+  signature_name_sno: int32;
+  need_item_no: int32;
+  item_amount: int32;
+  icon_path: string;
+  signature_bg_path: string;
+  skill_name_sno: int32;
+  skill_tooltip_sno1: int32;
+  skill_tooltip_sno2: int32;
+  skill_tooltip_sno3: int32;
+  skill_tooltip_sno4: int32;
+  skill_tooltip_sno5: int32;
+  skill_tooltip_sno6: int32;
+  skill_tooltip_sno7: int32;
+  icon_prefab: int32;
+  tooltip_explain_sno: int32;
+  grade_group: int32;
+  level_group: int32;
+  signature_type: int32;
+}
+
+table SignatureTable {
+  json: [Signature];
+}
+
+root_type SignatureTable;

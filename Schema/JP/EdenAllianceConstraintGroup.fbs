@@ -1,0 +1,28 @@
+namespace Tbl;
+
+table EdenAllianceConstraintGroup {
+  no: int32;
+  group_type: int32;
+  mission_group: int32;
+  constraint_1: int32;
+  constraint_2: int32;
+  constraint_3: int32;
+  constraint_4: int32;
+  constraint_5: int32;
+  constraint_6: int32;
+  constraint_7: int32;
+  constraint_8: int32;
+  constraint_9: int32;
+  constraint_10: int32;
+  constraint_11: int32;
+  constraint_12: int32;
+  constraint_13: int32;
+  constraint_14: int32;
+  constraint_15: int32;
+}
+
+table EdenAllianceConstraintGroupTable {
+  json: [EdenAllianceConstraintGroup];
+}
+
+root_type EdenAllianceConstraintGroupTable;

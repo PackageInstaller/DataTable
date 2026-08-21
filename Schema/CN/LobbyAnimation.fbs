@@ -1,0 +1,22 @@
+namespace Tbl;
+
+table LobbyAnimation {
+  no: int32;
+  voice: string;
+  text_sno: int32;
+  type: string;
+  hero_no: int32;
+  actor_no: int32;
+  ani: string;
+  emotion: string;
+  yy: int32;
+  mm: int32;
+  dd: int32;
+  end: int32;
+}
+
+table LobbyAnimationTable {
+  json: [LobbyAnimation];
+}
+
+root_type LobbyAnimationTable;

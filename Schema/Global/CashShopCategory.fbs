@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table CashShopCategory {
+  no: int32;
+  order: int32;
+  name_sno: int32;
+  bg_color: string;
+  name_color: string;
+}
+
+table CashShopCategoryTable {
+  json: [CashShopCategory];
+}
+
+root_type CashShopCategoryTable;

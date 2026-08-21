@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table ArbeitAnime {
+  no: int32;
+  slot: int32;
+  action1: string;
+  action1_item: string;
+  action2: string;
+  action2_item: string;
+}
+
+table ArbeitAnimeTable {
+  json: [ArbeitAnime];
+}
+
+root_type ArbeitAnimeTable;

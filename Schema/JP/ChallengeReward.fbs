@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table ChallengeReward {
+  reward_group_no: int32;
+  reward_item_1: int32;
+  reward_amount_1: int32;
+  reward_item_2: int32;
+  reward_amount_2: int32;
+  reward_item_3: int32;
+  reward_amount_3: int32;
+  reward_item_4: int32;
+  reward_amount_4: int32;
+}
+
+table ChallengeRewardTable {
+  json: [ChallengeReward];
+}
+
+root_type ChallengeRewardTable;

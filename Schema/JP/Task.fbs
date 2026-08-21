@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table Task {
+  index: int32;
+  no: int32;
+  type: int32;
+  behavior: int32;
+  value: int32;
+  point: int32;
+  content_string_sno: int32;
+}
+
+table TaskTable {
+  json: [Task];
+}
+
+root_type TaskTable;

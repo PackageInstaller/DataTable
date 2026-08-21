@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table TalkEmotion {
+  no: int32;
+  actor_no: int32;
+  emotion_name: string;
+  index: int32;
+  weight: int32;
+}
+
+table TalkEmotionTable {
+  json: [TalkEmotion];
+}
+
+root_type TalkEmotionTable;

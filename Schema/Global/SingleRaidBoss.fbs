@@ -1,0 +1,28 @@
+namespace Tbl;
+
+table SingleRaidBoss {
+  no: int32;
+  level_group: int32;
+  boss_no: int32;
+  boss_min_level: int32;
+  boss_max_level: int32;
+  groggy_ratio: float;
+  groggy_desc: int32;
+  formation_type: int32;
+  reward_item1_no: int32;
+  reward_item1_amount: int32;
+  reward_item2_no: int32;
+  reward_item2_amount: int32;
+  reward_item3_no: int32;
+  reward_item3_amount: int32;
+  reward_item4_no: int32;
+  reward_item4_amount: int32;
+  reward_item5_no: int32;
+  reward_item5_amount: int32;
+}
+
+table SingleRaidBossTable {
+  json: [SingleRaidBoss];
+}
+
+root_type SingleRaidBossTable;

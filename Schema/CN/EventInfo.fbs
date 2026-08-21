@@ -1,0 +1,30 @@
+namespace Tbl;
+
+table EventInfo {
+  no: int32;
+  category_type: int32;
+  show_list: int32;
+  event_type: int32;
+  group: int32;
+  event_number: int32;
+  user_type: int32;
+  name_sno: int32;
+  desc_sno: int32;
+  stage_limit: int32;
+  content_unlock_storyno: int32;
+  battle_ticket_item: int32;
+  item_infos: string;
+  event_shop_no: string;
+  date_type: int32;
+  magic_value: string;
+  ui_path: string;
+  banner_path: string;
+  title_path: string;
+  schedule_key: string;
+}
+
+table EventInfoTable {
+  json: [EventInfo];
+}
+
+root_type EventInfoTable;

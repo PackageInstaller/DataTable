@@ -1,0 +1,20 @@
+namespace Tbl;
+
+table ArbeitFairyLevel {
+  no: int32;
+  hero_no: int32;
+  level: int32;
+  exp: int32;
+  knowledge: int32;
+  conversation: int32;
+  handicraft: int32;
+  culture: int32;
+  guts: int32;
+  courage: int32;
+}
+
+table ArbeitFairyLevelTable {
+  json: [ArbeitFairyLevel];
+}
+
+root_type ArbeitFairyLevelTable;

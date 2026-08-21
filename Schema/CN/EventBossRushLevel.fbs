@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table EventBossRushLevel {
+  id: int32;
+  dungeon_type: int32;
+  dungeon_group: int32;
+  dungeon_no: int32;
+  level: int32;
+  level_group_no: int32;
+  formation_min: int32;
+  formation_max: int32;
+  boss_level: int32;
+}
+
+table EventBossRushLevelTable {
+  json: [EventBossRushLevel];
+}
+
+root_type EventBossRushLevelTable;

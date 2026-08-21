@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table HeroWishGachaSlot {
+  no: int32;
+  wishslot_group: int32;
+  wishlist_tier: int32;
+  slot_count: int32;
+  slot_type: int32;
+}
+
+table HeroWishGachaSlotTable {
+  json: [HeroWishGachaSlot];
+}
+
+root_type HeroWishGachaSlotTable;

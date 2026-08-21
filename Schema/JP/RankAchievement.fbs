@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table RankAchievement {
+  no: int32;
+  rank_no: int32;
+  value: int32;
+  item_no: int32;
+  item_amount: int32;
+}
+
+table RankAchievementTable {
+  json: [RankAchievement];
+}
+
+root_type RankAchievementTable;

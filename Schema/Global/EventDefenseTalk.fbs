@@ -1,0 +1,18 @@
+namespace Tbl;
+
+table EventDefenseTalk {
+  no: int32;
+  hide: int32;
+  hero_no: int32;
+  play_time: int32;
+  show_time: int32;
+  script_no_1: int32;
+  script_no_2: int32;
+  script_no_3: int32;
+}
+
+table EventDefenseTalkTable {
+  json: [EventDefenseTalk];
+}
+
+root_type EventDefenseTalkTable;

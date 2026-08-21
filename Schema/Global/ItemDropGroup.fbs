@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table ItemDropGroup {
+  index: int32;
+  no: int32;
+  item_no: int32;
+  amount: int32;
+  drop_rate: int32;
+}
+
+table ItemDropGroupTable {
+  json: [ItemDropGroup];
+}
+
+root_type ItemDropGroupTable;

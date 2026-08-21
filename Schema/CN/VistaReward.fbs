@@ -1,0 +1,23 @@
+namespace Tbl;
+
+table VistaReward {
+  no: int32;
+  reward_group: int32;
+  boss_clear_level: int32;
+  drop_item_no_1: int32;
+  drop_item_amount_1: int32;
+  drop_item_no_2: int32;
+  drop_item_amount_2: int32;
+  drop_item_no_3: int32;
+  drop_item_amount_3: int32;
+  drop_item_no_4: int32;
+  drop_item_amount_4: int32;
+  drop_item_no_5: int32;
+  drop_item_amount_5: int32;
+}
+
+table VistaRewardTable {
+  json: [VistaReward];
+}
+
+root_type VistaRewardTable;

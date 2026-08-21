@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table WorldRaidPartnerBuff {
+  no: int32;
+  sub_class: int32;
+  grade: int32;
+  buff_no: int32;
+  buff_sno: int32;
+  buff_icon: int32;
+}
+
+table WorldRaidPartnerBuffTable {
+  json: [WorldRaidPartnerBuff];
+}
+
+root_type WorldRaidPartnerBuffTable;

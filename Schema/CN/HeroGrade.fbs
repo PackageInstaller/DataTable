@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table HeroGrade {
+  name_sno: int32;
+  hero_grade_value: float;
+  hero_max_level: int32;
+  grade_color: string;
+  collection_point: int32;
+}
+
+table HeroGradeTable {
+  json: [HeroGrade];
+}
+
+root_type HeroGradeTable;

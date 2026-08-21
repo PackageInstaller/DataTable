@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table EventNoteChart {
+  no: int32;
+  event_group: int32;
+  note_id: int32;
+  note_timeline: float;
+  chart: string;
+}
+
+table EventNoteChartTable {
+  json: [EventNoteChart];
+}
+
+root_type EventNoteChartTable;

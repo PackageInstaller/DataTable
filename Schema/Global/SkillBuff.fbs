@@ -1,0 +1,25 @@
+namespace Tbl;
+
+table SkillBuff {
+  no: int32;
+  buff_category: int32;
+  is_important: int32;
+  buff_order: int32;
+  buff_effect: int32;
+  value: double;
+  duration: float;
+  condition_id: int32;
+  group: int32;
+  overlap_limit: int32;
+  fx_path: string;
+  icon_path: string;
+  name: int32;
+  desc: int32;
+  battle_text: int32;
+}
+
+table SkillBuffTable {
+  json: [SkillBuff];
+}
+
+root_type SkillBuffTable;

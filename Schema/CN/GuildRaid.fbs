@@ -1,0 +1,18 @@
+namespace Tbl;
+
+table GuildRaid {
+  no: int32;
+  boss_no: int32;
+  guide_sno: int32;
+  bg_path: string;
+  stage_no: int32;
+  bgm_path: string;
+  practiceroom_view: int32;
+  profile_view: int32;
+}
+
+table GuildRaidTable {
+  json: [GuildRaid];
+}
+
+root_type GuildRaidTable;

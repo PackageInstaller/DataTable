@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table EventDefenseInfo {
+  no: int32;
+  defense_no: int32;
+  limit_value: int32;
+  limit_sno: int32;
+}
+
+table EventDefenseInfoTable {
+  json: [EventDefenseInfo];
+}
+
+root_type EventDefenseInfoTable;

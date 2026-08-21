@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table ChallengeTask {
+  challenge_no: int32;
+  challenge_type: int32;
+  param_1: int32;
+  param_2: int32;
+  content_string: int32;
+}
+
+table ChallengeTaskTable {
+  json: [ChallengeTask];
+}
+
+root_type ChallengeTaskTable;

@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table GachaSignatureMileageReward {
+  no: int32;
+  mileage_no: int32;
+  signature_no: int32;
+  mileage_point: int32;
+  item_no: int32;
+  item_value: int32;
+}
+
+table GachaSignatureMileageRewardTable {
+  json: [GachaSignatureMileageReward];
+}
+
+root_type GachaSignatureMileageRewardTable;

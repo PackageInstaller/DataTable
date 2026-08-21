@@ -1,0 +1,42 @@
+namespace Tbl;
+
+table Stage {
+  no: int32;
+  area_no: int32;
+  stage_no: int32;
+  stage_type: int32;
+  dungeon_no: int32;
+  name_sno: int32;
+  exp: int32;
+  item_no_1: int32;
+  amount_1: int32;
+  item_no_2: int32;
+  amount_2: int32;
+  item_no_3: int32;
+  amount_3: int32;
+  item_no_4: int32;
+  amount_4: int32;
+  ah_exp: int32;
+  ah_item_no_1: int32;
+  ah_amount_1: int32;
+  ah_item_no_2: int32;
+  ah_amount_2: int32;
+  item_drop_group_no: int32;
+  map: string;
+  global_volume: int32;
+  level_type: int32;
+  panel_info1: int32;
+  panel_info2: int32;
+  special_reward: int32;
+  monster_normal: string;
+  monster_elite: string;
+  monster_boss: string;
+  is_raid_battle: int32;
+  battle_time: int32;
+}
+
+table StageTable {
+  json: [Stage];
+}
+
+root_type StageTable;

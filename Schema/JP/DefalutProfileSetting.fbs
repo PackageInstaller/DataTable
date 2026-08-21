@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table DefalutProfileSetting {
+  no: int32;
+  type: int32;
+  index: int32;
+  name_sno: int32;
+  panel_type_offset: string;
+  contents_limit_no: int32;
+}
+
+table DefalutProfileSettingTable {
+  json: [DefalutProfileSetting];
+}
+
+root_type DefalutProfileSettingTable;

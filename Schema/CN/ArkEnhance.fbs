@@ -1,0 +1,24 @@
+namespace Tbl;
+
+table ArkEnhance {
+  no: int32;
+  core_type_01: int32;
+  buff_type_no: int32;
+  core_type_02: int32;
+  core_level: int32;
+  icon_color: string;
+  pay_item_no: int32;
+  pay_amount: int32;
+  condition_value: int32;
+  contents_buff_no: int32;
+  sp_buff_type: int32;
+  sp_buff_value_01: int32;
+  sp_buff_value_02: float;
+  overclock_max_level: int32;
+}
+
+table ArkEnhanceTable {
+  json: [ArkEnhance];
+}
+
+root_type ArkEnhanceTable;

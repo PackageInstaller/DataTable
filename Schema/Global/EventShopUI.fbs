@@ -1,0 +1,20 @@
+namespace Tbl;
+
+table EventShopUI {
+  no: int32;
+  event_type: int32;
+  event_group: int32;
+  event_number: int32;
+  bg_path: string;
+  use_title: int32;
+  shop_name_sno: int32;
+  event_shop_hero: int32;
+  model_viewer_display: int32;
+  model_offset: string;
+}
+
+table EventShopUITable {
+  json: [EventShopUI];
+}
+
+root_type EventShopUITable;

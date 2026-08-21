@@ -1,0 +1,32 @@
+namespace Tbl;
+
+table TalkStage {
+  no: int32;
+  talk_index: int32;
+  no2: int32;
+  no3: int32;
+  no4: int32;
+  no5: int32;
+  no6: int32;
+  no7: int32;
+  no8: int32;
+  no9: int32;
+  no10: int32;
+  no11: int16;
+  no12: int32;
+  no13: int32;
+  no14: int32;
+  no15: int32;
+  no16: int32;
+  no17: int32;
+  no18: int32;
+  no19: int32;
+  no20: int32;
+  animation: string;
+}
+
+table TalkStageTable {
+  json: [TalkStage];
+}
+
+root_type TalkStageTable;

@@ -1,0 +1,18 @@
+namespace Tbl;
+
+table ArenaTimeReward {
+  no: int32;
+  arena_type: int32;
+  rank_from: int32;
+  rank_to: int32;
+  ah_item_no_1: int32;
+  ah_amount_1: int32;
+  ah_item_no_2: int32;
+  ah_amount_2: int32;
+}
+
+table ArenaTimeRewardTable {
+  json: [ArenaTimeReward];
+}
+
+root_type ArenaTimeRewardTable;

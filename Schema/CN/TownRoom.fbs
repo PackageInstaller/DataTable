@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table TownRoom {
+  no: int32;
+  group: int32;
+  hero: int32;
+  floor_sno: int32;
+  pay_item_no1: int32;
+  pay_amount1: int32;
+  pay_item_no2: int32;
+  pay_amount2: int32;
+  resource_path: string;
+}
+
+table TownRoomTable {
+  json: [TownRoom];
+}
+
+root_type TownRoomTable;

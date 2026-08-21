@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table SingleRaidBossGroggyCondition {
+  no: int32;
+  condition_group: int32;
+  condition_buff: int32;
+  value: float;
+}
+
+table SingleRaidBossGroggyConditionTable {
+  json: [SingleRaidBossGroggyCondition];
+}
+
+root_type SingleRaidBossGroggyConditionTable;

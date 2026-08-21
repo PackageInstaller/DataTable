@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table SkillBuffResist {
+  no: int32;
+  buff_value: int32;
+  buff_effect: int32;
+  buff_type: int32;
+  rate: float;
+}
+
+table SkillBuffResistTable {
+  json: [SkillBuffResist];
+}
+
+root_type SkillBuffResistTable;

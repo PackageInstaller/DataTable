@@ -1,0 +1,24 @@
+namespace Tbl;
+
+table EventRankRaidReward {
+  no: int32;
+  event_group: int32;
+  rank_from: int32;
+  rank_to: int32;
+  reward_item_no_1: int32;
+  reward_item_amount_1: int32;
+  reward_item_no_2: int32;
+  reward_item_amount_2: int32;
+  reward_item_no_3: int32;
+  reward_item_amount_3: int32;
+  reward_item_no_4: int32;
+  reward_item_amount_4: int32;
+  reward_item_no_5: int32;
+  reward_item_amount_5: int32;
+}
+
+table EventRankRaidRewardTable {
+  json: [EventRankRaidReward];
+}
+
+root_type EventRankRaidRewardTable;

@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table RaceCounter {
+  no: int32;
+  match_key: string;
+  human: float;
+  furry: float;
+  elf: float;
+  undead: float;
+  angel: float;
+  demon: float;
+  chaos: float;
+}
+
+table RaceCounterTable {
+  json: [RaceCounter];
+}
+
+root_type RaceCounterTable;

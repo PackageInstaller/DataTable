@@ -1,0 +1,24 @@
+namespace Tbl;
+
+table EdenUnion {
+  no: int32;
+  schedule_key: string;
+  union_group: int32;
+  union_rank_group: int32;
+  union_rank_constraint_count: int32;
+  stage_no: int32;
+  name_sno: int32;
+  story_no: int32;
+  bg_path: string;
+  sound_path: string;
+  emblem_path: string;
+  daily_reward: int32;
+  reward_amount: int32;
+  profile_view: int32;
+}
+
+table EdenUnionTable {
+  json: [EdenUnion];
+}
+
+root_type EdenUnionTable;

@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table TripHero {
+  no: int32;
+  hero_no: int32;
+  keyword_no: int32;
+  keyword_talk: int32;
+  favor_point: int32;
+}
+
+table TripHeroTable {
+  json: [TripHero];
+}
+
+root_type TripHeroTable;

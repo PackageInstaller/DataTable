@@ -1,0 +1,28 @@
+namespace Tbl;
+
+table TownMission {
+  no: int32;
+  next: int32;
+  prev: int32;
+  section: int32;
+  type: int32;
+  event: int32;
+  goal: int32;
+  title_sno: int32;
+  desc_sno: int32;
+  objective_sno: int32;
+  notify_sno: int32;
+  finish_sno: int32;
+  reward_no1: int32;
+  reward_amount1: int32;
+  reward_no2: int32;
+  reward_amount2: int32;
+  reward_no3: int32;
+  reward_amount3: int32;
+}
+
+table TownMissionTable {
+  json: [TownMission];
+}
+
+root_type TownMissionTable;

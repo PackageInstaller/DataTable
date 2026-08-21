@@ -1,0 +1,22 @@
+namespace Tbl;
+
+table GuildRaidAffix {
+  no: int32;
+  icon_path: string;
+  string_no: int32;
+  string_content_no: int32;
+  gimmick_type_1: int32;
+  gimmick_value_1: int32;
+  gimmick_type_2: int32;
+  gimmick_value_2: int32;
+  gimmick_type_3: int32;
+  gimmick_value_3: int32;
+  start_date: string;
+  end_date: string;
+}
+
+table GuildRaidAffixTable {
+  json: [GuildRaidAffix];
+}
+
+root_type GuildRaidAffixTable;

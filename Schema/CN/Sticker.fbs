@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table Sticker {
+  no: int32;
+  sticker_point: int32;
+  order: int32;
+}
+
+table StickerTable {
+  json: [Sticker];
+}
+
+root_type StickerTable;

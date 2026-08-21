@@ -1,0 +1,17 @@
+namespace Tbl;
+
+table StringTalk {
+  no: int32;
+  kr: string;
+  en: string;
+  ja: string;
+  zh_tw: string;
+  zh_cn: string;
+  replace: int8;
+}
+
+table StringTalkTable {
+  json: [StringTalk];
+}
+
+root_type StringTalkTable;

@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table SkillMoveEffect {
+  no: int32;
+  motion_type: int32;
+  move_power: float;
+  move_time: float;
+}
+
+table SkillMoveEffectTable {
+  json: [SkillMoveEffect];
+}
+
+root_type SkillMoveEffectTable;

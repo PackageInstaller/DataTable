@@ -1,0 +1,14 @@
+namespace Tbl;
+
+table TownAnimationBubble {
+  no: int32;
+  animation: string;
+  bubble: string;
+  ratio: int32;
+}
+
+table TownAnimationBubbleTable {
+  json: [TownAnimationBubble];
+}
+
+root_type TownAnimationBubbleTable;

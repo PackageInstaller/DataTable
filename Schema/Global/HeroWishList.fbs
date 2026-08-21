@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table HeroWishList {
+  no: int32;
+  hero_check: int32;
+  wishlist_tier: int32;
+  view_type: int32;
+  server_check: int32;
+  open_date: string;
+}
+
+table HeroWishListTable {
+  json: [HeroWishList];
+}
+
+root_type HeroWishListTable;

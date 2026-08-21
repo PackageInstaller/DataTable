@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table ContentsLimit {
+  no: int32;
+  check_stage_no: int32;
+  name_string_sno: int32;
+}
+
+table ContentsLimitTable {
+  json: [ContentsLimit];
+}
+
+root_type ContentsLimitTable;

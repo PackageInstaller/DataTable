@@ -1,0 +1,23 @@
+namespace Tbl;
+
+table EdenAllianceStageBattle {
+  no: int32;
+  group: int32;
+  day: int32;
+  name: int32;
+  hero_1: int32;
+  hero_2: int32;
+  hero_3: int32;
+  hero_4: int32;
+  hero_5: int32;
+  formation_type: int32;
+  map: string;
+  constraint_group_no: int32;
+  battle_time: int32;
+}
+
+table EdenAllianceStageBattleTable {
+  json: [EdenAllianceStageBattle];
+}
+
+root_type EdenAllianceStageBattleTable;

@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table GuildRaidRankReward {
+  no: int32;
+  rank_from: int32;
+  rank_to: int32;
+  reward_item1_no: int32;
+  reward_item1_amount: int32;
+  reward_item2_no: int32;
+  reward_item2_amount: int32;
+  reward_item3_no: int32;
+  reward_item3_amount: int32;
+}
+
+table GuildRaidRankRewardTable {
+  json: [GuildRaidRankReward];
+}
+
+root_type GuildRaidRankRewardTable;

@@ -1,0 +1,13 @@
+namespace Tbl;
+
+table HeroOptionGroup {
+  no: int32;
+  condition: int32;
+  value: int32;
+}
+
+table HeroOptionGroupTable {
+  json: [HeroOptionGroup];
+}
+
+root_type HeroOptionGroupTable;

@@ -1,0 +1,18 @@
+namespace Tbl;
+
+table EventSelectStageBuff {
+  no: int32;
+  event_group: int32;
+  event_number: int32;
+  event_stage_group: int32;
+  buff_group: int32;
+  buff_no: int32;
+  buff_name_sno: int32;
+  tooltip_sno: int32;
+}
+
+table EventSelectStageBuffTable {
+  json: [EventSelectStageBuff];
+}
+
+root_type EventSelectStageBuffTable;

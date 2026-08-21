@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table Evermatch {
+  no: int32;
+  group_no: int32;
+  stage_no: int32;
+  actor_no: int32;
+  img_path: string;
+  start_date: string;
+}
+
+table EvermatchTable {
+  json: [Evermatch];
+}
+
+root_type EvermatchTable;

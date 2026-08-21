@@ -1,0 +1,51 @@
+namespace Tbl;
+
+table Talk {
+  no: int32;
+  hide: int8;
+  group_no: int32;
+  love_level: int8;
+  hero_no: int16;
+  talk_type: int16;
+  ui_type: string;
+  transition_type: string;
+  transition_bg_type: string;
+  speaking: int16;
+  speaker_no: int16;
+  talk_index: int16;
+  choice_group: int16;
+  affinity_point: int16;
+  position_center: int16;
+  motionway_center: int16;
+  ani_center: string;
+  emotion_center: string;
+  position_left: int16;
+  motionway_left: int16;
+  ani_left: string;
+  emotion_left: string;
+  position_right: int16;
+  motionway_right: int16;
+  ani_right: string;
+  emotion_right: string;
+  position_type: int16;
+  position_bg_type: string;
+  opacity: int8;
+  small_port: int16;
+  fx_effect: string;
+  fg_image: string;
+  bg_image: string;
+  light_type: string;
+  bg_movie: string;
+  video: string;
+  cutscene: int32;
+  bg_sound: string;
+  fx_sound: string;
+  voice: string;
+  amb_sound: string;
+}
+
+table TalkTable {
+  json: [Talk];
+}
+
+root_type TalkTable;

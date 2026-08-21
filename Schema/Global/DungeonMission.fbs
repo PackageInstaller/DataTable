@@ -1,0 +1,18 @@
+namespace Tbl;
+
+table DungeonMission {
+  no: int32;
+  mission_group_no: int32;
+  next_mission_no: int32;
+  mission_title_sno: int32;
+  mission_desc_sno: int32;
+  mission_target_sno: int32;
+  mission_count: int32;
+  progress_rate: int32;
+}
+
+table DungeonMissionTable {
+  json: [DungeonMission];
+}
+
+root_type DungeonMissionTable;

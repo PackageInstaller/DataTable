@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table StageArea {
+  no: int32;
+  area_no: int32;
+  name_sno: int32;
+  desc_sno: int32;
+  area_img: string;
+}
+
+table StageAreaTable {
+  json: [StageArea];
+}
+
+root_type StageAreaTable;

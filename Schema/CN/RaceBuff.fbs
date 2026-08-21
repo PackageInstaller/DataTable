@@ -1,0 +1,26 @@
+namespace Tbl;
+
+table RaceBuff {
+  no: int32;
+  attack_rate: float;
+  defence_rate: float;
+  max_hp_rate: float;
+  critical_rate: float;
+  critical_power: float;
+  hit: float;
+  dodge: float;
+  physical_resist: float;
+  magic_resist: float;
+  life_leech: float;
+  attack_speed: float;
+  tooltip: string;
+  icon_path: string;
+  string_title: int32;
+  string_content: int32;
+}
+
+table RaceBuffTable {
+  json: [RaceBuff];
+}
+
+root_type RaceBuffTable;

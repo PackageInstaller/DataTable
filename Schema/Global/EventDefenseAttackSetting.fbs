@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table EventDefenseAttackSetting {
+  no: int32;
+  attack_timeline: string;
+  motion_time: float;
+  attack_type: int32;
+  search_range: float;
+  attack_range: float;
+  angle: int32;
+  attack_width: float;
+  use_rotate: int32;
+}
+
+table EventDefenseAttackSettingTable {
+  json: [EventDefenseAttackSetting];
+}
+
+root_type EventDefenseAttackSettingTable;

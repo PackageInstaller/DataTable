@@ -1,0 +1,22 @@
+namespace Tbl;
+
+table EventDJsoul {
+  no: int32;
+  title_sno: int32;
+  img_path: string;
+  bg_path: string;
+  preview_path: string;
+  bgm_path: string;
+  difficulty_easy: int32;
+  difficulty_normal: int32;
+  difficulty_hard: int32;
+  note_easy: string;
+  note_normal: string;
+  note_hard: string;
+}
+
+table EventDJsoulTable {
+  json: [EventDJsoul];
+}
+
+root_type EventDJsoulTable;

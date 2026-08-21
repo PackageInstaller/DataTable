@@ -1,0 +1,20 @@
+namespace Tbl;
+
+table EventQuest {
+  no: int32;
+  group: int32;
+  event_number: int32;
+  day_order: int32;
+  behavior: int32;
+  value: int32;
+  value2: int32;
+  item_infos: string;
+  content_sno: int32;
+  reset_hour_sno: int32;
+}
+
+table EventQuestTable {
+  json: [EventQuest];
+}
+
+root_type EventQuestTable;

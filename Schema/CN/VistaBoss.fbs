@@ -1,0 +1,16 @@
+namespace Tbl;
+
+table VistaBoss {
+  no: int32;
+  vista_no: int32;
+  boss_no: int32;
+  boss_level: int32;
+  boss_desc_sno: int32;
+  stage_no: int32;
+}
+
+table VistaBossTable {
+  json: [VistaBoss];
+}
+
+root_type VistaBossTable;

@@ -1,0 +1,31 @@
+namespace Tbl;
+
+table ItemStat {
+  index: int32;
+  no: int32;
+  level: int32;
+  exp: int32;
+  sum_exp: int32;
+  attack: int32;
+  defence: int32;
+  max_hp: int32;
+  critical_rate: float;
+  critical_power: float;
+  hit: int32;
+  dodge: int32;
+  physical_resist: float;
+  magic_resist: float;
+  life_leech: float;
+  attack_speed: float;
+  battle_power: int32;
+  attack_rate: float;
+  defence_rate: float;
+  hp_rate: float;
+  battle_power_per: float;
+}
+
+table ItemStatTable {
+  json: [ItemStat];
+}
+
+root_type ItemStatTable;

@@ -1,0 +1,33 @@
+namespace Tbl;
+
+table EventDefenseEnemySetting {
+  no: int32;
+  event_group: int32;
+  prefab_path: string;
+  timeline_path: string;
+  timeline_name: string;
+  model_type: int32;
+  use_boss_slot: int32;
+  monster_type: int32;
+  monster_move_type: int32;
+  max_count: int32;
+  scale: int32;
+  movedelay: int32;
+  movespeed: int32;
+  monster_atk: int32;
+  monster_hp: int32;
+  spawn_start_time: int32;
+  spawn_end_time: int32;
+  spawn_per_sec: int32;
+  spawn_amount: int32;
+  score: int32;
+  exp: int32;
+  item_drop_prob: int32;
+  item_drop_list: string;
+}
+
+table EventDefenseEnemySettingTable {
+  json: [EventDefenseEnemySetting];
+}
+
+root_type EventDefenseEnemySettingTable;

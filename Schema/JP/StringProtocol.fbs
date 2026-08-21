@@ -1,0 +1,19 @@
+namespace Tbl;
+
+table StringProtocol {
+  no: int32;
+  kr: string;
+  en: string;
+  ja: string;
+  zh_tw: string;
+  zh_cn: string;
+  text_dev: string;
+  exception: int32;
+  is_common: int32;
+}
+
+table StringProtocolTable {
+  json: [StringProtocol];
+}
+
+root_type StringProtocolTable;

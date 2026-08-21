@@ -1,0 +1,15 @@
+namespace Tbl;
+
+table SignatureLevelCost {
+  no: int32;
+  race_group: int32;
+  level: int32;
+  item_no: int32;
+  item_amount: int32;
+}
+
+table SignatureLevelCostTable {
+  json: [SignatureLevelCost];
+}
+
+root_type SignatureLevelCostTable;

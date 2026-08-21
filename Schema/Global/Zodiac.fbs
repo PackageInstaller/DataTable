@@ -1,0 +1,22 @@
+namespace Tbl;
+
+table Zodiac {
+  no: int32;
+  zodiac_type: int32;
+  zodiac_type_sno: int32;
+  zodiac_node_no: int32;
+  require_level: int32;
+  require_node_no: string;
+  need_point: int32;
+  buff_type_sno: int32;
+  buff_type_no: int32;
+  item_rate: float;
+  tooltip_sno: int32;
+  contents_buff_no: int32;
+}
+
+table ZodiacTable {
+  json: [Zodiac];
+}
+
+root_type ZodiacTable;
