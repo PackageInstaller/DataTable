@@ -1,0 +1,122 @@
+return {
+  unitList = {
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = true,
+      Camp = 4,
+      UnitID = 20104301,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "0_22004_0",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 0,
+      BornPos = {
+        224.382034,
+        89.79196,
+        282.697662
+      }
+    },
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = true,
+      Camp = 4,
+      UnitID = 20104301,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "0_22004_1",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 0,
+      BornPos = {
+        226.5301,
+        89.16251,
+        282.533569
+      }
+    },
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = true,
+      Camp = 4,
+      UnitID = 20104601,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "0_22004_2",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 0,
+      BornPos = {
+        223.732086,
+        89.85111,
+        280.896484
+      }
+    },
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = true,
+      Camp = 4,
+      UnitID = 20104601,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "0_22004_3",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 0,
+      BornPos = {
+        226.416931,
+        89.15902,
+        279.911926
+      }
+    },
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = true,
+      Camp = 4,
+      UnitID = 20204901,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "0_22004_4",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 0,
+      BornPos = {
+        234.081467,
+        89.30031,
+        279.4933
+      }
+    }
+  },
+  Name = "",
+  Id = 22004,
+  Type = 0
+}

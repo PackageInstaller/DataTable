@@ -1,0 +1,136 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local enough_color = Util.get_unity_color_by_hex(tonumber("F5EDE2", 16))
+local not_enough_color = Util.CommonColor_RedWarm
+
+function ui:on_click_btn()
+  self.v_parent_ui:on_click_slot_item_btn(self.v_slot_data)
+end
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show()
+end
+
+function ui:set_data(slot_data)
+  self.v_slot_data = slot_data
+  self.v_slot_id = slot_data.id
+  local unlock = slot_data.state
+  local can_buy = slot_data.good_state
+  if not unlock or not Util.is_more_than_zero(slot_data.good_id) then
+    self.v_uiobjects.Kong:SetActive(true)
+    self.v_uiobjects.Talent:SetActive(false)
+    self.v_uiobjects.Ornament:SetActive(false)
+    self.v_uiobjects.CurrLayout:SetActive(false)
+    self.v_uiobjects.Purchased:SetActive(false)
+    self.v_uiobjects.Select:SetActive(false)
+    return
+  end
+  self.v_uiobjects.Kong:SetActive(false)
+  self.v_uiobjects.Purchased:SetActive(not can_buy)
+  self.v_uiobjects.CurrLayout:SetActive(can_buy)
+  if self.v_slot_data.good_type == Config.CommonDefine.CURSE_NEW_SHOP_GOOD_TYPE.ABILITY then
+    self:refresh_ability_info()
+  elseif self.v_slot_data.good_type == Config.CommonDefine.CURSE_NEW_SHOP_GOOD_TYPE.ORNAMENTS then
+    self:refresh_ornament_info()
+  end
+  self:refersh_cost_type()
+  self:set_button_listener(self:get_button(), function()
+    self:on_click_btn()
+  end)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refersh_cost_type()
+  local sell_type = self.v_slot_data.sell_type
+  local have_pay_hp = BuffMgr:have_pay_hp_replace_curse_buff()
+  if sell_type == Config.CommonDefine.CURSE_NEW_SHOP_GOOD_SELL_TYPE.ITEM then
+    self.v_uiobjects.CurseIcon:SetActive(false)
+    self.v_uiobjects.HpIcon:SetActive(false)
+    self.v_uiobjects.CurrIcon:SetActive(true)
+    self.v_uicompents.CurrText_txt.text = self.v_buy_cost_cnt
+    local is_enough = Util.check_item_cost_enough(Config.CURSE_GOLD, self.v_buy_cost_cnt)
+    self.v_uicompents.CurrText_txt.color = is_enough and enough_color or not_enough_color
+  elseif sell_type == Config.CommonDefine.CURSE_NEW_SHOP_GOOD_SELL_TYPE.CURSE_VALUE then
+    self.v_uiobjects.CurseIcon:SetActive(not have_pay_hp)
+    self.v_uiobjects.CurrIcon:SetActive(false)
+    self.v_uiobjects.HpIcon:SetActive(have_pay_hp)
+    local cost
+    if have_pay_hp then
+      local hp_value = ChallengeRingPlusMgr:get_consume_hp_value(self.v_curse_cost_cnt)
+      cost = -hp_value / 100 .. "%"
+    else
+      cost = self.v_curse_cost_cnt
+    end
+    self.v_uicompents.CurrText_txt.text = cost
+    self.v_uicompents.CurrText_txt.color = enough_color
+  end
+end
+
+function ui:refresh_ability_info()
+  self.v_uiobjects.Talent:SetActive(true)
+  self.v_uiobjects.Ornament:SetActive(false)
+  local ability_id = self.v_slot_data.good_id
+  local ability_cfg = ShareRes.get_ability_cfg(ability_id)
+  local quality_cfg = ShareRes.get_ability_quality_cfg(ability_cfg.Quality)
+  local genres_cfg = ShareRes.get_genres_cfg(ability_cfg.Sect)
+  ResMgr:load_set_icon(self.v_uicompents.SectIcon_img, genres_cfg.IconPath, nil, true, self)
+  ResMgr:load_set_icon(self.v_uicompents.QualityBg_img, quality_cfg.QualityBg3, nil, true, self)
+  self.v_buy_cost_cnt = ChallengeRingPlusMgr:get_after_discount_price(ability_cfg.BuyCostCnt)
+  self.v_curse_cost_cnt = ChallengeRingPlusMgr:get_after_discount_curse_price(ability_cfg.CurseCostCnt)
+  local ability_upgrade_cfg = ShareRes.get_ability_upgrade_cfg(ability_id, 1)
+  self.v_uicompents.TalentName_txt.text = ability_upgrade_cfg.Name
+  local start_layout_tf = self.v_uiobjects.StarLayout.transform
+  if start_layout_tf.childCount < ability_cfg.Star then
+    for index = start_layout_tf.childCount, ability_cfg.Star do
+      local child_tf = start_layout_tf:GetChild(0)
+      local copy = ResMgr:instantiate(child_tf.gameObject)
+      copy.transform:SetParent(start_layout_tf)
+      copy.transform:ResetAttr()
+    end
+  end
+  for index = 1, start_layout_tf.childCount do
+    local child_tf = start_layout_tf:GetChild(index - 1)
+    if index <= ability_cfg.Star and index <= ability_cfg.Star then
+      child_tf.gameObject:SetActive(true)
+    else
+      child_tf.gameObject:SetActive(false)
+    end
+  end
+  self:set_button("Recommend", function()
+    UIMgr:try_show_ui("equation_show_tips")
+  end)
+  if self.v_slot_data.good_state then
+    local is_recommend, can_lv_up = FateBookMgr:is_recommend_genres(ability_cfg.Sect)
+    self.v_uiobjects.Recommend:SetActive(is_recommend)
+    self.v_uiobjects.RecommendLight:SetActive(can_lv_up)
+  else
+    self.v_uiobjects.Recommend:SetActive(false)
+  end
+end
+
+function ui:refresh_ornament_info()
+  self.v_uiobjects.Recommend:SetActive(false)
+  self.v_uiobjects.Talent:SetActive(false)
+  self.v_uiobjects.Ornament:SetActive(true)
+  local ornament_id = self.v_slot_data.good_id
+  local ornament_cfg = ShareRes.get_ornaments(ornament_id)
+  ResMgr:load_set_icon(self.v_uicompents.OrnQuality_img, BattleOrnamentMgr:get_ornament_bg_icon(ornament_cfg.Quality))
+  ResMgr:load_set_icon(self.v_uicompents.OrnIcon_img, ornament_cfg.Icon)
+  self.v_buy_cost_cnt = ChallengeRingPlusMgr:get_after_discount_price(ornament_cfg.BuyCostCnt)
+  self.v_curse_cost_cnt = ChallengeRingPlusMgr:get_after_discount_curse_price(ornament_cfg.CurseCostCnt)
+end
+
+function ui:set_select(select_id)
+  local is_select = self.v_slot_data.id == select_id
+  self.v_uiobjects.Select:SetActive(is_select)
+  return is_select
+end
+
+return ui

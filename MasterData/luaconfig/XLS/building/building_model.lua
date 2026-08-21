@@ -1,0 +1,97 @@
+local t = {
+  {
+    Id = 1,
+    Position = {
+      0,
+      0,
+      0
+    },
+    PrefabName = "capital_build01a_pre",
+    Rotation = {
+      0,
+      0,
+      0
+    }
+  },
+  {
+    Id = 2,
+    Position = nil,
+    PrefabName = "capital_build01_pre",
+    Rotation = nil
+  },
+  {
+    Id = 3,
+    Position = nil,
+    PrefabName = "capital_build04_pre",
+    Rotation = nil
+  },
+  {
+    Id = 4,
+    Position = nil,
+    PrefabName = "capital_build05_pre",
+    Rotation = nil
+  },
+  {
+    Id = 5,
+    Position = nil,
+    PrefabName = "capital_build05d_pre",
+    Rotation = nil
+  },
+  {
+    Id = 6,
+    Position = nil,
+    PrefabName = "capital_build05e_pre",
+    Rotation = nil
+  },
+  {
+    Id = 7,
+    Position = nil,
+    PrefabName = "capital_build05f_pre",
+    Rotation = nil
+  },
+  {
+    Id = 8,
+    Position = nil,
+    PrefabName = "capital_build06_pre",
+    Rotation = nil
+  },
+  {
+    Id = 9,
+    Position = nil,
+    PrefabName = "capital_area01_pre",
+    Rotation = nil
+  },
+  {
+    Id = 10,
+    Position = nil,
+    PrefabName = "capital_area02_pre",
+    Rotation = nil
+  },
+  [9999] = {
+    Id = 9999,
+    Position = nil,
+    PrefabName = "Capital",
+    Rotation = nil
+  }
+}
+t[2].Position = t[1].Position
+t[2].Rotation = t[1].Rotation
+t[3].Position = t[1].Position
+t[3].Rotation = t[1].Rotation
+t[4].Position = t[1].Position
+t[4].Rotation = t[1].Rotation
+t[5].Position = t[1].Position
+t[5].Rotation = t[1].Rotation
+t[6].Position = t[1].Position
+t[6].Rotation = t[1].Rotation
+t[7].Position = t[1].Position
+t[7].Rotation = t[1].Rotation
+t[8].Position = t[1].Position
+t[8].Rotation = t[1].Rotation
+t[9].Position = t[1].Position
+t[9].Rotation = t[1].Rotation
+t[10].Position = t[1].Position
+t[10].Rotation = t[1].Rotation
+t[9999].Position = t[1].Position
+t[9999].Rotation = t[1].Rotation
+return t

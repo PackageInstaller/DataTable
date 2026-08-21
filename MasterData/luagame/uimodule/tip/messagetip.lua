@@ -1,0 +1,70 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local Timer = Global.timer
+local MODEL = {
+  v_tip_text_panel = {
+    "TipPanel",
+    BIND_TYPE.OBJECT
+  },
+  v_tip_text = {
+    "TipsContent",
+    BIND_TYPE.TEXT
+  },
+  v_tip_image = {
+    "TipImage",
+    BIND_TYPE.IMAGE
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+end
+
+function ui:ui_on_show(tip_text, tip_image_path, tip_data)
+  if self.v_Sequence then
+    self.v_Sequence:Kill(false)
+    self.v_Sequence = nil
+  end
+  self.v_Sequence = Util.create_sequence()
+  local tip = self.v_uicompents.Tips_img.transform
+  local tip_obj = self.v_uiobjects.Tips
+  local localposition = tip_obj.transform.localPosition
+  local x = localposition.x
+  tip_obj.transform:SetLocalPositionA(x, 600, 0)
+  self.v_tip_text_panel.gameObject:SetActive(false)
+  self.v_tip_image.gameObject:SetActive(false)
+  self.v_tip_text.gameObject:SetActive(true)
+  if self.v_timer_index then
+    Timer:remove_timer(self.v_timer_index)
+    self.v_timer_index = nil
+  end
+  tip_image_path = tip_image_path or "UICommon/ty_cs_06c"
+  ResMgr:load_set_icon(self.v_tip_image, tip_image_path)
+  if not tip_data then
+    self.v_tip_image.gameObject:SetActive(true)
+  else
+    self.v_tip_text_panel.gameObject:SetActive(true)
+    local tipval_text = Util.get_text("TipsVal", self.v_tip_text_panel.transform)
+    tipval_text.text = tip_data[1]
+    local tipmsg_text = Util.get_text("TipMsg", self.v_tip_text_panel.transform)
+    tipmsg_text.text = tip_data[2]
+  end
+  self.v_Sequence:SetUpdate(true)
+  self.v_Sequence:Append(tip:DOLocalMoveY(370, 0.8))
+  self.v_Sequence:Append(tip:DOLocalMoveY(370, 0.5))
+  self.v_Sequence:Append(tip:DOLocalMoveY(600, 0.5))
+  self.v_Sequence:AppendCallback(function(...)
+    self:ui_hide()
+  end)
+  self.v_tip_text.text = Util.format_str(tip_text)
+end
+
+function ui:ui_on_hide(...)
+  if self.v_Sequence then
+    self.v_Sequence:Kill(false)
+    self.v_Sequence = nil
+  end
+end
+
+return ui

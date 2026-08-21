@@ -1,0 +1,234 @@
+local ShareRes = require("utils.share_res")
+local FightDefine = require("cs_share.fight_define")
+local attr_is_res = FightDefine.attr_is_res
+local Math = require("base.mathx")
+local _clamp = Math.Clamp
+local M = {}
+M.EFILTER_TYPE = {
+  huo = 1,
+  bing = 2,
+  feng = 3,
+  di = 4,
+  guang = 5,
+  an = 6
+}
+M.EFILTER_DATA = {
+  [M.EFILTER_TYPE.huo] = {btn_name = "huo", index = 1},
+  [M.EFILTER_TYPE.bing] = {btn_name = "bing", index = 2},
+  [M.EFILTER_TYPE.feng] = {btn_name = "feng", index = 3},
+  [M.EFILTER_TYPE.di] = {btn_name = "di", index = 4},
+  [M.EFILTER_TYPE.guang] = {btn_name = "guang", index = 5},
+  [M.EFILTER_TYPE.an] = {btn_name = "an", index = 6}
+}
+local element = ShareRes.create("buddy.buddy_element")
+M.EFILTER_ElEMENT_NAME = {
+  [M.EFILTER_TYPE.huo] = element[1].ElementName,
+  [M.EFILTER_TYPE.bing] = element[2].ElementName,
+  [M.EFILTER_TYPE.feng] = element[3].ElementName,
+  [M.EFILTER_TYPE.di] = element[4].ElementName,
+  [M.EFILTER_TYPE.guang] = element[5].ElementName,
+  [M.EFILTER_TYPE.an] = element[6].ElementName
+}
+M.ESORT_TYPE = {
+  lv = 1,
+  quality = 2,
+  advance = 3
+}
+M.ESORT_TYPE_NAME = {
+  [M.ESORT_TYPE.lv] = Util.format_str("等级顺序"),
+  [M.ESORT_TYPE.quality] = Util.format_str("品质顺序"),
+  [M.ESORT_TYPE.advance] = Util.format_str("进阶顺序")
+}
+M.ORDER_TYPE = {
+  DEFAULT = 1,
+  LV = 2,
+  QUALITY = 3,
+  POWER = 4
+}
+M.ORDER_TYPE2_NAME = {
+  [M.ORDER_TYPE.DEFAULT] = Util.format_str("等级"),
+  [M.ORDER_TYPE.LV] = Util.format_str("等级"),
+  [M.ORDER_TYPE.QUALITY] = Util.format_str("品质"),
+  [M.ORDER_TYPE.POWER] = Util.format_str("战力")
+}
+M.SORT_RULE = {
+  [M.ORDER_TYPE.DEFAULT] = {
+    "break_lv",
+    "lv",
+    "quality",
+    "power"
+  },
+  [M.ORDER_TYPE.LV] = {
+    "break_lv",
+    "lv",
+    "quality",
+    "power"
+  },
+  [M.ORDER_TYPE.QUALITY] = {
+    "quality",
+    "break_lv",
+    "lv",
+    "power"
+  },
+  [M.ORDER_TYPE.POWER] = {
+    "power",
+    "quality",
+    "break_lv",
+    "lv"
+  }
+}
+M.EADVANCE_LV_NAME = {
+  [1] = "js_bat_02a",
+  [2] = "js_bat_02b",
+  [3] = "js_bat_02c",
+  [4] = "js_bat_02d",
+  [5] = "js_bat_02e"
+}
+M.ETIP_TYPE = {
+  lv_tip = 1,
+  use_item_tip = 2,
+  tupo_tip = 3,
+  msg_tip = 4
+}
+M.WEAPON_SELECT_TYPE = {NORMAL = 1, COST = 2}
+M.WEAPON_ATTR_OPEN_TYPE = {
+  CHAR = 1,
+  WEAPON = 2,
+  SELECT = 3
+}
+M.WEAPON_ATTR_ITEM_TEMPLATE_KEY = {
+  [M.WEAPON_ATTR_OPEN_TYPE.CHAR] = "WEAPON_ATTR_ITEM_TEMPLATE_KEY_1",
+  [M.WEAPON_ATTR_OPEN_TYPE.WEAPON] = "WEAPON_ATTR_ITEM_TEMPLATE_KEY_2",
+  [M.WEAPON_ATTR_OPEN_TYPE.SELECT] = "WEAPON_ATTR_ITEM_TEMPLATE_KEY_3"
+}
+M.WEAPON_ATTR_TONGTIAO_BTN_STATE = {
+  [M.WEAPON_ATTR_OPEN_TYPE.CHAR] = 1,
+  [M.WEAPON_ATTR_OPEN_TYPE.WEAPON] = 1,
+  [M.WEAPON_ATTR_OPEN_TYPE.SELECT] = 0
+}
+M.WEAPON_ATTR_TONGTIAO_RED_STATE = {
+  [M.WEAPON_ATTR_OPEN_TYPE.CHAR] = 1,
+  [M.WEAPON_ATTR_OPEN_TYPE.WEAPON] = 0,
+  [M.WEAPON_ATTR_OPEN_TYPE.SELECT] = 0
+}
+M.WEAPON_PANEL_OPEN_TYPE = {ATTR_TONGTIAO = 1, ONLY_TONGTIAO = 2}
+M.CHAR_SELECT_LINE_QUALITY = {
+  [3] = "js_jspzt_03",
+  [4] = "js_jspzt_02",
+  [5] = "js_jspzt_01"
+}
+M.PANEL_TYPE = {
+  ATTR_PANEL = 1,
+  POTENTIAL_PANEL = 2,
+  WEAPON_PANEL = 3,
+  SKILL_PANEL = 4,
+  RECORD_PANEL = 5
+}
+M.COMPLETE_TYPE = {
+  NOT_GET = 0,
+  CAN_GET = 1,
+  IN_PROCESS = 2,
+  DONE = 3,
+  FINISH = 4
+}
+M.TRIGGER_SOUND_TYPE = {
+  GET_CHARACTER = 1,
+  LV_UP = 2,
+  BREAK = 3,
+  GOTO_TEAM = 4,
+  SELECT_CHAR = 5
+}
+M.CHECK_SOUND_PLAY_STATUS = {}
+M.LAST_SELECT_BUDDY_IDX_TYPE = {
+  MAIN = 1,
+  TEAM = 2,
+  AID = 3,
+  PLAYER_SHOW = 4
+}
+M.ENGRAVED_TYPE = {
+  ACTIVATE = 1,
+  STRENGTHEN = 2,
+  ROLL = 3
+}
+M.ENGRAVED_BTN_SHOW = {
+  [M.ENGRAVED_TYPE.ACTIVATE] = {text = "激活"},
+  [M.ENGRAVED_TYPE.STRENGTHEN] = {
+    text = "刻印强化"
+  },
+  [M.ENGRAVED_TYPE.ROLL] = {text = "洗练"}
+}
+M.ENGRAVED_MAX_LV = 4
+
+function M.get_buddy_base_attr(buddy_id, buddy_data)
+  local base_attr = ShareRes.create("buddy.buddy_base_attr")
+  local upgrade_attr = ShareRes.create("buddy.buddy_upgrade_attr")
+  local break_lv = buddy_data.break_lv or 1
+  local advance_lv = buddy_data.advance or 1
+  local talent_lv = buddy_data.talent_lv or 0
+  local lv = buddy_data.lv or 1
+  local nofight_id = ShareRes.create("buddy.buddy")[buddy_id].NoFightId
+  local base_nofight = ShareRes.create("buddy.buddy_base_no_fight_attr")
+  local upgrade_nofight = ShareRes.create("buddy.buddy_upgrade_no_fight_attr")
+  local upgrade_advance = ShareRes.create("buddy.buddy_upgrade_advance_attr")
+  local upgrade_talent_cfg = ShareRes.create("buddy.buddy_talent_new_attr")[buddy_id]
+  local mArgs = {
+    nofight_id = nofight_id,
+    base_nofight = base_nofight,
+    upgrade_nofight = upgrade_nofight,
+    upgrade_advance = upgrade_advance,
+    upgrade_talent_cfg = upgrade_talent_cfg,
+    advance_lv = advance_lv,
+    talent_lv = talent_lv
+  }
+  local last_break_lv = break_lv - 1
+  local last_max_lv = last_break_lv > 0 and ShareRes.get_buddy_max_level(last_break_lv) or 0
+  local attr_lv = lv - last_max_lv
+  local attrs = FightDefine.get_char_attrs(buddy_id, break_lv, attr_lv, base_attr, upgrade_attr, mArgs)
+  return attrs
+end
+
+function M.correction_attr(base_attr)
+  local attr_list = {}
+  for attr_type, attr in pairs(base_attr) do
+    if not attr_is_res(attr_type) then
+      attr_list[attr_type] = M.get_all_attr_value(base_attr, attr_type)
+    end
+  end
+  local res2max = FightDefine.HERO_RES2MAX
+  for res_type, max_type in pairs(res2max) do
+    local value = -1 ~= max_type and _clamp(base_attr[res_type].FIXED, 0, attr_list[max_type]) or 0
+    attr_list[res_type] = value
+  end
+  return attr_list
+end
+
+function M.get_other_effect(attrs, attr_types)
+  if not attrs then
+    return 0
+  end
+  local sum = 0
+  for attr_type, ratio in pairs(attr_types) do
+    sum = sum + attrs[attr_type] * ratio
+  end
+  return sum
+end
+
+M.EMPTY_ATTRS = FightDefine.get_empty_attrs()
+
+function M.get_all_attr_value(base_attr, attr_type, attrs)
+  if attr_is_res(attr_type) then
+    return base_attr[attr_type].FIXED
+  end
+  local additive_attrs = M.EMPTY_ATTRS
+  local module_attrs = M.EMPTY_ATTRS
+  local base_attr, add_attr, module_attr = base_attr[attr_type], additive_attrs[attr_type], module_attrs[attr_type]
+  local fixed_sum = base_attr.FIXED + add_attr.FIXED + module_attr.FIXED
+  local add_ratio = base_attr.RATIO + add_attr.RATIO + module_attr.RATIO
+  local value = fixed_sum * (1 + add_ratio)
+  value = value + M.get_other_effect(attrs, base_attr.OTHER_RATIO)
+  value = value + M.get_other_effect(attrs, add_attr.OTHER_RATIO)
+  value = value + M.get_other_effect(attrs, module_attr.OTHER_RATIO)
+  return value
+end
+
+return M

@@ -1,0 +1,218 @@
+local t = {
+  [201041] = {
+    {
+      Day = 1,
+      DropId = 0,
+      Episode = 201041,
+      Id = 1,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = {}
+    },
+    {
+      Day = 2,
+      DropId = 0,
+      Episode = 201041,
+      Id = 2,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 3,
+      DropId = 0,
+      Episode = 201041,
+      Id = 3,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 4,
+      DropId = 0,
+      Episode = 201041,
+      Id = 4,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 5,
+      DropId = 0,
+      Episode = 201041,
+      Id = 5,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 6,
+      DropId = 0,
+      Episode = 201041,
+      Id = 6,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 7,
+      DropId = 0,
+      Episode = 201041,
+      Id = 7,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    }
+  },
+  [201042] = {
+    {
+      Day = 1,
+      DropId = 0,
+      Episode = 201042,
+      Id = 8,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 2,
+      DropId = 0,
+      Episode = 201042,
+      Id = 9,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 3,
+      DropId = 0,
+      Episode = 201042,
+      Id = 10,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 4,
+      DropId = 0,
+      Episode = 201042,
+      Id = 11,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 5,
+      DropId = 0,
+      Episode = 201042,
+      Id = 12,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 6,
+      DropId = 0,
+      Episode = 201042,
+      Id = 13,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 7,
+      DropId = 0,
+      Episode = 201042,
+      Id = 14,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    }
+  },
+  [201043] = {
+    {
+      Day = 1,
+      DropId = 0,
+      Episode = 201043,
+      Id = 15,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 2,
+      DropId = 0,
+      Episode = 201043,
+      Id = 16,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 3,
+      DropId = 0,
+      Episode = 201043,
+      Id = 17,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 4,
+      DropId = 0,
+      Episode = 201043,
+      Id = 18,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 5,
+      DropId = 0,
+      Episode = 201043,
+      Id = 19,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 6,
+      DropId = 0,
+      Episode = 201043,
+      Id = 20,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    },
+    {
+      Day = 7,
+      DropId = 0,
+      Episode = 201043,
+      Id = 21,
+      IsFree = 1,
+      RewardGroupId = 0,
+      ShowRewardList = nil
+    }
+  }
+}
+t[201041][2].ShowRewardList = t[201041][1].ShowRewardList
+t[201041][3].ShowRewardList = t[201041][1].ShowRewardList
+t[201041][4].ShowRewardList = t[201041][1].ShowRewardList
+t[201041][5].ShowRewardList = t[201041][1].ShowRewardList
+t[201041][6].ShowRewardList = t[201041][1].ShowRewardList
+t[201041][7].ShowRewardList = t[201041][1].ShowRewardList
+t[201042][1].ShowRewardList = t[201041][1].ShowRewardList
+t[201042][2].ShowRewardList = t[201041][1].ShowRewardList
+t[201042][3].ShowRewardList = t[201041][1].ShowRewardList
+t[201042][4].ShowRewardList = t[201041][1].ShowRewardList
+t[201042][5].ShowRewardList = t[201041][1].ShowRewardList
+t[201042][6].ShowRewardList = t[201041][1].ShowRewardList
+t[201042][7].ShowRewardList = t[201041][1].ShowRewardList
+t[201043][1].ShowRewardList = t[201041][1].ShowRewardList
+t[201043][2].ShowRewardList = t[201041][1].ShowRewardList
+t[201043][3].ShowRewardList = t[201041][1].ShowRewardList
+t[201043][4].ShowRewardList = t[201041][1].ShowRewardList
+t[201043][5].ShowRewardList = t[201041][1].ShowRewardList
+t[201043][6].ShowRewardList = t[201041][1].ShowRewardList
+t[201043][7].ShowRewardList = t[201041][1].ShowRewardList
+return t

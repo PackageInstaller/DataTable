@@ -1,0 +1,12 @@
+return {
+  [18] = {
+    ActivityId = 18,
+    MailId = 220007,
+    TaskGroupId = 324
+  },
+  [29] = {
+    ActivityId = 29,
+    MailId = 220007,
+    TaskGroupId = 327
+  }
+}

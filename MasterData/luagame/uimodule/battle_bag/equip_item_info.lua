@@ -1,0 +1,132 @@
+local Base = require("ui.uiobject")
+local Item_Helper = require("utils.item_helper")
+local LayoutRebuilder = UnityEngine.UI.LayoutRebuilder
+local BagCfg = require("gamelogic.character.fight_bag_configs")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_desc = {
+    "Desc",
+    BIND_TYPE.TEXT
+  },
+  v_rare_desc = {
+    "RareDesc",
+    BIND_TYPE.TEXT
+  },
+  v_normal_desc = {
+    "NormalDesc",
+    BIND_TYPE.TEXT
+  },
+  v_none_desc = {
+    "None",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_elements_desc = {
+    [1] = self.v_rare_desc,
+    [2] = self.v_normal_desc
+  }
+end
+
+function ui:ui_on_show(item_data, ...)
+  if not item_data then
+    return
+  end
+  self.v_item_id = item_data.id
+  self.v_item_data = item_data
+  self.v_item_cfg = item_data.Cfg
+  self:_set_attr_desc()
+  self:_set_element_attr_desc()
+end
+
+function ui:ui_on_update()
+end
+
+function ui:_set_attr_desc()
+  if self.v_item_cfg.Arg then
+    self.v_desc.text = self.v_item_cfg.Arg[2]
+  elseif self.v_item_cfg.Desc then
+    self.v_desc.text = self.v_item_cfg.Desc
+  end
+end
+
+function ui:_calc_base_attrs()
+  local attrlist = {}
+  local battle_collection_fixed_entry = ShareRes.create("entry.battle_fixed_entry")
+  for _, v in pairs(self.v_item_cfg.FixedEntry) do
+    local cfg = battle_collection_fixed_entry[v]
+    for _, attrs in pairs(cfg.Attr) do
+      local key = string.format("%s_%s", attrs.Attr, attrs.Type)
+      if not attrlist[key] then
+        attrlist[key] = {
+          attrValue = attrs.Num,
+          attrId = attrs.Attr,
+          attrType = attrs.Type
+        }
+      else
+        attrlist[key].attrValue = attrlist[key].attrValue + attrs.Num
+      end
+    end
+  end
+  local tb = {}
+  for k, v in pairs(attrlist) do
+    table.insert(tb, v)
+  end
+  table.sort(tb, function(a, b)
+    return a.attrId < b.attrId
+  end)
+  return tb
+end
+
+function ui:_get_attr_show_type(attr_id, attr_type)
+  return ShareRes.create("battle.equip_client_show_type", attr_id).show[attr_type]
+end
+
+function ui:_calc_random_attrs()
+  if not self.v_item_data then
+    return {}
+  end
+  if not self.v_item_data.random_entrys then
+    return {}
+  end
+  local attrlist = {}
+  local battle_collection_random_entry = ShareRes.create("entry.battle_random_entry")
+  for _, v in pairs(self.v_item_data.random_entrys) do
+    local cfg = battle_collection_random_entry[v]
+    for _, attrs in pairs(cfg.Attr) do
+      local key = string.format("%s_%s", attrs.Attr, attrs.Type)
+      if not attrlist[key] then
+        attrlist[key] = {
+          attrValue = attrs.Num,
+          attrId = attrs.Attr,
+          attrType = attrs.Type
+        }
+      else
+        attrlist[key].attrValue = attrlist[key].attrValue + attrs.Num
+      end
+    end
+  end
+  local tb = {}
+  for k, v in pairs(attrlist) do
+    table.insert(tb, v)
+  end
+  table.sort(tb, function(a, b)
+    return a.attrId < b.attrId
+  end)
+  return tb
+end
+
+function ui:_set_element_attr_desc()
+  local tb = {}
+  if self.v_item_data.bag_type == BagCfg.BagType.COLLECT then
+    self.v_uiobjects.RareDesc:SetActive(false)
+    self.v_uiobjects.NormalDesc:SetActive(false)
+    self.v_uiobjects.None:SetActive(false)
+    return
+  end
+end
+
+return ui

@@ -1,0 +1,81 @@
+local M = Util.create_class()
+M.ui_dynamic = nil
+M.init_value = 0
+M.curr_value = 0
+M.curr_room_final_value = 0
+M.all_room_final_value = 0
+M.up_speed = 0
+M.up_interval = 1
+M.last_refresh_time = 0
+
+function M:set_progress_display_slider(progress_display_slider)
+  self.slider = progress_display_slider
+  self.progress_text = Util.get_text("ProgressNum/Text", self.slider.gameObject)
+  self.effect_obj = Util.get_child_gameobj("Handle Area/Effect", self.slider.gameObject)
+  if not Util.is_nil(self.effect_obj) then
+    self.handle_obj = Util.get_child_gameobj("Handle Area/Mask/Handle", self.slider.gameObject)
+  end
+end
+
+function M:on_progress_display_open(ui_dynamic, init_value, curr_room_final_value, all_room_final_value, up_speed, up_interval)
+  self.ui_dynamic = ui_dynamic
+  self.init_value = init_value
+  self.curr_value = init_value
+  self.curr_room_final_value = curr_room_final_value
+  self.all_room_final_value = all_room_final_value
+  self.up_speed = up_speed
+  self.up_interval = up_interval
+  if not self.up_interval or self.up_interval < 1 then
+    self.up_interval = 1
+  end
+  self.last_refresh_time = Global.real_time
+  self:refresh_slider()
+end
+
+function M:on_progress_display_update(up_value)
+  self.curr_value = self.curr_value + up_value
+  if self.curr_value > self.curr_room_final_value then
+    self.curr_value = self.curr_room_final_value
+  end
+  self:refresh_slider()
+end
+
+function M:on_progress_display_close()
+  Timer:add_timer("on_progress_display_close_delay", 0.3, function()
+    self.ui_dynamic:on_progress_display_close()
+  end)
+end
+
+function M:on_update()
+  if SceneMgr:get_game_pause() then
+    return
+  end
+  if self.curr_value < self.curr_room_final_value and Global.real_time - self.last_refresh_time >= self.up_interval then
+    self.curr_value = self.curr_value + self.up_speed
+    self.last_refresh_time = Global.real_time
+    self:refresh_slider()
+  end
+end
+
+function M:refresh_slider()
+  local progress = self.curr_value * 100 / self.all_room_final_value
+  self.slider.value = progress / 100
+  local value = math.floor(progress)
+  if value > 100 then
+    value = 100
+  end
+  self.progress_text.text = value .. "%"
+  if self.curr_value == self.all_room_final_value then
+    self:on_progress_display_close()
+    SceneMgr:c2gs_call_scene("on_display_progress_end")
+    BehaviorMgr:call_scene_logic_event_fun("on_display_progress_end")
+  end
+  if not Util.is_nil(self.handle_obj) then
+    self.effect_obj.transform.position = self.handle_obj.transform.position
+  end
+end
+
+function M:on_destroy()
+end
+
+return M

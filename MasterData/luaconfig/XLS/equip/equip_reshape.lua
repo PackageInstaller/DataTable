@@ -1,0 +1,8 @@
+return {
+  {
+    BreakReshapeRatio = 10000,
+    ExpReshapeRatio = 10000,
+    GoldReshapeRatio = 10000,
+    Id = 1
+  }
+}

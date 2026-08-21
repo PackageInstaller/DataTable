@@ -1,0 +1,13 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+
+function M:init_sys()
+  Base.init_sys(self)
+end
+
+function M:open_no_fight_game()
+  local no_fight_game_cfg = ShareRes.create("no_fight_game.no_fight_game_introduce", 1)
+  UIMgr:get_ui("no_fight_game"):ui_show(no_fight_game_cfg)
+end
+
+return M

@@ -1,0 +1,135 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local Math = require("base.mathx")
+local PUZZLE_GAME_STAGE_ITEM_TEMP_KEY = "PUZZLE_GAME_STAGE_ITEM_TEMP_KEY"
+local PuzzleGameStageItem = require("uimodule.activity.puzzle_game.puzzle_game_stage_item")
+
+function ui:on_click_BtnRet1()
+  self:ui_hide()
+end
+
+function ui:on_click_BtnTask()
+  UIMgr:get_ui("puzzle_game_task"):ui_show(self.v_task_group)
+end
+
+function ui:ui_finish_load()
+  self:set_button("BtnRet1", function()
+    self:on_click_BtnRet1()
+  end)
+  self:set_button("BtnTask", function()
+    self:on_click_BtnTask()
+  end)
+  self.v_view_port_width = self.v_uicompents.Viewport_rect.rect.width
+  self.v_item_width = self.v_uicompents.StageTem_rect.rect.width
+  local content_layout_group = Util.get_component(nil, self.v_uiobjects.Content, typeof(UnityEngine.UI.HorizontalLayoutGroup))
+  self.v_spacing = content_layout_group.spacing
+  self.v_left_padding = content_layout_group.padding.left
+  self.v_right_padding = content_layout_group.padding.right
+  self:register_exist_auto_template(PUZZLE_GAME_STAGE_ITEM_TEMP_KEY, self.v_uiobjects.StageTem, self.v_uiobjects.Content)
+end
+
+function ui:ui_on_show(cache_force_idx)
+  self.v_activity_id = PuzzleGameMgr:get_activity_id()
+  self.v_activity_cfg = ShareRes.get_activity_cfg(self.v_activity_id)
+  self:check_close()
+  NoviceMgr:read_novice_activity(self.v_activity_id)
+  local cfg = ShareRes.create("activity.puzzle_game")[self.v_activity_id]
+  if not cfg then
+    Log.Error("拼图小游戏-拼图表 无对应活动id配置：", self.v_activity_id)
+    return
+  end
+  self.v_task_group = cfg.TaskGroupId
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.TaskRed, RedEnum.PUZZLE_GAME_ACT_AWARD)
+  NoviceMgr:mark_act_daily_open(self.v_activity_id)
+  self:show_stage(cache_force_idx)
+  self:refresh_time_remaining()
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
+end
+
+function ui:check_close(force_close)
+  NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name, true == force_close)
+end
+
+function ui:ui_on_hide()
+  self:clear_wrap_items()
+  UIMgr:try_hide_ui("puzzle_game_task")
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.v_activity_id, self.v_force_idx
+end
+
+function ui:show_stage(cache_force_idx)
+  local stage_list = PuzzleGameMgr:get_stage_list(self.v_activity_id)
+  self:give_back_auto_cache(PUZZLE_GAME_STAGE_ITEM_TEMP_KEY)
+  self:clear_wrap_items()
+  self.v_stage_item_list = {}
+  local first_not_pass
+  for idx, stage_data in ipairs(stage_list) do
+    local obj = self:get_auto_cache(PUZZLE_GAME_STAGE_ITEM_TEMP_KEY)
+    local item = PuzzleGameStageItem:ui_wrap_ex(self, obj, true)
+    item:set_data(stage_data)
+    table.insert(self.v_stage_item_list, item)
+    if stage_data.pass_second < 0 and not first_not_pass then
+      first_not_pass = idx
+    end
+  end
+  self.v_force_idx = first_not_pass or #self.v_stage_item_list
+  if not cache_force_idx or cache_force_idx < self.v_force_idx then
+    local visible_width = self.v_left_padding + self.v_force_idx * self.v_item_width + (self.v_force_idx - 1) * self.v_spacing + self.v_right_padding
+    local offset = 0
+    if visible_width > self.v_view_port_width then
+      offset = visible_width - self.v_view_port_width
+    end
+    self.v_uicompents.Content_rect:SetAnchoredPositionA(-offset, 0)
+  end
+end
+
+function ui:clear_wrap_items()
+  if self.v_stage_item_list then
+    for idx = #self.v_stage_item_list, 1, -1 do
+      local item = self.v_stage_item_list[idx]
+      item:ui_hide()
+      item:ui_destroy()
+      self.v_stage_item_list[idx] = nil
+    end
+    self.v_stage_item_list = nil
+  end
+end
+
+function ui:ui_on_update()
+  if not self.v_cache_time then
+    self.v_cache_time = 0
+    return
+  end
+  self.v_cache_time = self.v_cache_time + 0.1
+  if self.v_cache_time > 10 then
+    self.v_cache_time = 0
+    self:refresh_time_remaining()
+  end
+end
+
+function ui:refresh_time_remaining()
+  local activity_data = NoviceMgr:get_novice_activity_data(self.v_activity_id)
+  if not activity_data or not self.v_activity_cfg.StopTime then
+    self.v_uiobjects.Time:SetActiveEx(false)
+    return
+  end
+  local time_length = NoviceMgr:get_time_remaining(self.v_activity_cfg.TimeType, self.v_activity_cfg.StopTime, activity_data.open_time, self.v_activity_cfg.SustainTime)
+  self.v_uiobjects.Time:SetActiveEx(nil ~= time_length)
+  if time_length then
+    self.v_uicompents.TimeNum_txt.text = Date.get_time_formate_2(time_length, true)
+    if 0 == time_length then
+      self:ui_hide()
+    end
+  end
+end
+
+return ui

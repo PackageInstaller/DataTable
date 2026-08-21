@@ -1,0 +1,26 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_confirm_btn = {
+    "ConfirmBtn",
+    BIND_TYPE.BUTTON
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button_listener(self.v_confirm_btn, function()
+    self:ui_hide()
+  end)
+end
+
+function ui:ui_on_show()
+  local right_age_scrollrect = Util.get_scrollrect(nil, self.v_uiobjects.ScrollLayout)
+  right_age_scrollrect.verticalNormalizedPosition = 1
+end
+
+function ui:ui_on_hide()
+end
+
+return ui

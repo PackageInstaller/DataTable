@@ -1,0 +1,46 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local _sformat = string.format
+
+function ui:ui_on_hide()
+end
+
+function ui:set_data(hero, idx)
+  local tog = Util.get_toggle(nil, self.v_object)
+  if not hero then
+    tog.interactable = false
+    return
+  end
+  self.v_idx = idx
+  self.v_buddy_id = hero.buddy_id
+  tog.interactable = true
+  self:set_toggle_listener(tog, function(is_on)
+    if is_on then
+      self.v_parent_ui:on_switch_buddy(self.v_buddy_id)
+    end
+  end)
+  local icon_path = UtilUI.get_hero_images(self.v_buddy_id, 1, hero.fashion_id)
+  ResMgr:load_set_icon(self.v_uicompents.CharIcon_img, icon_path)
+  self.v_uiobjects.Trial:SetActive(self:is_boaddy_trial(self.v_buddy_id) or 1 == hero.buddy_type)
+  self.v_uiobjects.Assist:SetActive(self:is_boddy_assist(self.v_buddy_id))
+end
+
+function ui:on_select(idx)
+  if idx == self.v_idx then
+    local tog = Util.get_toggle(nil, self.v_object)
+    tog.isOn = false
+    tog.isOn = true
+  end
+end
+
+function ui:is_boaddy_trial(buddy_id)
+  local temp = CharacterMgr:get_team_trail_info(buddy_id) or {}
+  return temp.buddy_lock
+end
+
+function ui:is_boddy_assist(buddy_id)
+  local temp = CharacterMgr:get_team_trail_info(buddy_id) or {}
+  return temp.buddy_assist
+end
+
+return ui

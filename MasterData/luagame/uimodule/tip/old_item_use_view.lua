@@ -1,0 +1,72 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:set_button("UseBtn", function()
+    self:_onclick_use_btn()
+  end)
+  self.v_add_btn = self:get_button(nil, self.v_uiobjects.BtnAdd)
+  self:set_button("BtnAdd", function()
+    self:_onclick_add_btn()
+  end)
+  self.v_reduce_btn = self:get_button(nil, self.v_uiobjects.BtnReduce)
+  self:set_button("BtnReduce", function()
+    self:_onclick_reduce_btn()
+  end)
+  self.v_slider = self:get_slider(nil, self.v_uiobjects.Slider)
+  self:set_slider_listener(self.v_slider, function()
+    self:_onclick_slider()
+  end)
+  self.v_use_text = self:get_text(nil, self.v_uiobjects.ItemAmount)
+  self.v_item_id = 0
+  self.v_use_amount = 1
+end
+
+function ui:ui_on_show(data, ...)
+  self.v_item_id = data
+  if not self.v_item_id then
+    return
+  end
+  self:_refresh_view()
+end
+
+function ui:ui_on_hide()
+  self.v_item_id = 0
+  self.v_use_amount = 1
+end
+
+function ui:_refresh_view()
+  self.v_max_num = BagMgr:get_item_num(self.v_item_id)
+  self.v_slider.maxValue = self.v_max_num
+  self.v_slider.minValue = 1
+  self.v_slider.value = 1
+  self:_change_info()
+end
+
+function ui:_change_info()
+  self.v_add_btn.interactable = self.v_use_amount < self.v_max_num
+  self.v_reduce_btn.interactable = self.v_use_amount > 1
+  self.v_use_text.text = math.modf(self.v_use_amount)
+end
+
+function ui:_onclick_use_btn()
+end
+
+function ui:_onclick_add_btn()
+  self.v_use_amount = self.v_use_amount + 1
+  self:_change_info()
+  self.v_slider.value = self.v_use_amount
+end
+
+function ui:_onclick_reduce_btn()
+  self.v_use_amount = self.v_use_amount - 1
+  self:_change_info()
+  self.v_slider.value = self.v_use_amount
+end
+
+function ui:_onclick_slider()
+  self.v_use_amount = self.v_slider.value
+  self:_change_info()
+end
+
+return ui

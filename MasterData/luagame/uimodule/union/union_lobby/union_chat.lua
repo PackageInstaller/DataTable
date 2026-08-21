@@ -1,0 +1,567 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local ChatConfig = require("uimodule.chat.chat_config")
+local ChatItemClass = require("uimodule.chat.chat_item")
+local LoopListClass = require("uimodule.chat.widget.dynamic_loop_list")
+local CT_Timer = Global.ct_timer
+local MODEL = {
+  v_world_chat_title = {
+    "WorldMode",
+    BIND_TYPE.OBJECT
+  },
+  v_guild_chat_title = {
+    "GuildMode",
+    BIND_TYPE.OBJECT
+  },
+  v_no_sys_msg_desc = {
+    "NoSysMsgDesc",
+    BIND_TYPE.OBJECT
+  },
+  v_channel_idx = {
+    "ChanelNum",
+    BIND_TYPE.TEXT
+  },
+  v_channel_name = {
+    "ChanelName",
+    BIND_TYPE.TEXT
+  },
+  v_face_panel = {
+    "FaceWin",
+    BIND_TYPE.OBJECT
+  },
+  v_operate_panel = {
+    "OperatePanel",
+    BIND_TYPE.OBJECT
+  },
+  v_send_txt = {
+    "SendText",
+    BIND_TYPE.TEXT
+  },
+  v_send_btn = {
+    "BtnSend",
+    BIND_TYPE.BUTTON
+  },
+  v_online_num = {
+    "OnlineNum",
+    BIND_TYPE.TEXT
+  },
+  v_unread_msgs = {
+    "UnreadMsg",
+    BIND_TYPE.OBJECT
+  },
+  v_unread_num = {
+    "UnReadNum",
+    BIND_TYPE.TEXT
+  }
+}
+local FACE_ICON_PATH = "UIChat/Face/%s"
+local SYS_REDPOINT_ID = 1
+local EXPAND_HEIGHT = 100
+local CHANNEL_TYPE = ChatConfig.CHANNEL_TYPE
+local UnityEventSystem = UnityEngine.EventSystems.EventSystem
+local GUILD_NUM_UPDATE_INTERVAL = 10
+
+function ui:ui_finish_load()
+  local obj_name = self.v_object.gameObject.name
+  self.template_key = {
+    channel_tog = string.format("%s_%s", "channel_tog", obj_name),
+    face_page_tog = string.format("%s_%s", "face_page_tog", obj_name),
+    face_item = string.format("%s_%s", "face_item", obj_name)
+  }
+  self:init_model(MODEL)
+  self:set_button("BtnFace", function()
+    self:_onclick_face_btn()
+  end)
+  self:set_button("BtnSend", function()
+    self:_onclick_send_btn()
+  end)
+  self:set_button("BtnReturn", function()
+    self:_onclick_out_btn()
+  end)
+  self:set_button("BtnChangeChannel", function()
+    self:_onclick_change_channel_btn()
+  end)
+  self:set_button("ChantMask", function()
+    self:_onclick_change_channel_btn()
+  end)
+  self:set_button("CloseWinBtn", function()
+    self:_onclick_face_btn()
+  end)
+  self:set_button("BtnClear", function()
+    self.v_msg_input.text = ""
+    self.v_send_msg = ""
+    self.v_uiobjects.BtnClear:SetActive(false)
+  end)
+  self.v_uiobjects.BtnClear:SetActive(false)
+  self:set_button("UnreadMsg", function()
+    self:_read_all_msg()
+  end)
+  self:register_exist_auto_template(self.template_key.channel_tog, self.v_uiobjects.ChannelTmp, self.v_uiobjects.PageList)
+  self:_init_face_panel()
+  self.v_channel_input = self:get_inputfield(nil, self.v_uiobjects.ChannelInput)
+  self.v_channel_max = ShareRes.get_game_const("WorldChannelNumLimit") or 999
+  self.v_channel_input.placeholder.text = string.format("1-%s", self.v_channel_max)
+  self:set_inputfield_listener(self.v_channel_input, function()
+    self:_on_channel_start_input()
+  end, function()
+    self:_on_channel_finish_input()
+  end)
+  self.v_msg_input = self:get_inputfield(nil, self.v_uiobjects.Input)
+  self:set_inputfield_listener(self.v_msg_input, function()
+    self:_on_msg_begin_input()
+  end)
+  self.v_send_msg = ""
+  self.v_input_max_len = ShareRes.get_game_const("ChatMsgLenLimit") or 200
+  self.v_msg_input.placeholder.text = Util.format_str("（不超过{1}个字）", self.v_input_max_len)
+  self.v_change_channel_mode = false
+  self.v_scroll_rect = self:get_rect_transform(nil, self.v_uiobjects.ChatScrollView)
+  self.v_old_height = self.v_scroll_rect.sizeDelta.y
+  self.v_chat_list = LoopListClass:new(self, self.v_uiobjects.ChatScrollView, ChatItemClass, nil, function()
+    self:_on_scroll_to_bottom()
+  end)
+  self.v_send_cd = ShareRes.get_game_const("WorldChatCDTTL") or 5
+  self.v_reach_cd_interval = ShareRes.get_game_const("WorldChatRecordTTL") or 3
+  self.v_chat_lv = ShareRes.get_game_const("WorldChatMinLv") or 15
+end
+
+function ui:_init_channel_toggle_list()
+  Log.Error("_init_channel_toggle_list")
+  self.v_channel_tog_list = {}
+  self:give_back_auto_cache(self.template_key.channel_tog, false)
+  for idx, v in ipairs(ChatConfig.CHANNLE_LIST) do
+    local obj = self:get_auto_cache(self.template_key.channel_tog)
+    local tog = self:get_toggle(nil, obj)
+    self.v_channel_tog_list[idx] = tog
+    self:_set_channel_toggle(tog, idx)
+  end
+end
+
+function ui:_set_channel_toggle(togObj, index)
+  local num = self:get_text("Background/PageNum", togObj.gameObject)
+  num.text = string.format("0%s", index)
+  local name = self:get_text("Background/Text", togObj.gameObject)
+  name.text = ChatConfig.CHANNLE_LIST[index][2]
+  local lab = self:get_text("Label", togObj.gameObject)
+  local lab_str = ChatConfig.CHANNLE_LIST[index][1]
+  local red = self:get_child_gameobj("RedPoint", togObj.gameObject)
+  RedPointMgr:bind_redpoint(self, red, ChatConfig.Channnel_red_point[index], SYS_REDPOINT_ID)
+  local lock = self:get_child_gameobj("Lock", togObj.gameObject)
+  local is_locked = false
+  lock:SetActive(is_locked)
+  if is_locked then
+    lab.text = string.format("<color=#68645f>%s</color>", lab_str)
+  end
+  local checkBg = self:get_child_gameobj("Background/Checkmark", togObj.gameObject)
+  togObj.onValueChanged:RemoveAllListeners()
+  togObj.onValueChanged:AddListener(function(isOn)
+    if not is_locked then
+      if isOn then
+        lab.text = string.format("<color=#000000>%s</color>", lab_str)
+      else
+        lab.text = string.format("<color=#c9c5bc>%s</color>", lab_str)
+      end
+    end
+    checkBg:SetActive(isOn)
+    self:_onclick_channel_tog(isOn, index)
+  end)
+end
+
+function ui:_init_face_panel()
+  self.v_face_page_cfg = ShareRes.create("chat.chat_face_page")
+  self.v_face_page_type_cfg = ShareRes.create("chat.chat_face_page_type")
+  self:register_exist_auto_template(self.template_key.face_page_tog, self.v_uiobjects.FAcePageTem, self.v_uiobjects.FacePageList)
+  self:register_exist_auto_template(self.template_key.face_item, self.v_uiobjects.FaceTem, self.v_uiobjects.FaceContent)
+end
+
+function ui:_init_face_page_toggle_list()
+  self.v_face_tog_list = {}
+  self:give_back_auto_cache(self.template_key.face_page_tog, false)
+  local list = {}
+  for _, v in pairs(self.v_face_page_cfg) do
+    if not v.condition or Condition:check_condition(v.condition) == true then
+      table.insert(list, v)
+    end
+  end
+  if 0 == #list then
+    return
+  end
+  table.sort(list, function(a, b)
+    return a.sort_id < b.sort_id
+  end)
+  for idx, v in ipairs(list) do
+    local obj = self:get_auto_cache(self.template_key.face_page_tog)
+    local tog = self:get_toggle(nil, obj)
+    self.v_face_tog_list[idx] = tog
+    self:_set_face_page_toggle(tog, idx, v)
+  end
+end
+
+function ui:_set_face_page_toggle(togObj, index, data)
+  local lab = self:get_text("Label", togObj.gameObject)
+  lab.text = data.page_name
+  togObj.onValueChanged:RemoveAllListeners()
+  togObj.onValueChanged:AddListener(function(isOn)
+    if isOn then
+      lab.text = string.format("<color=black>%s</color>", data.page_name)
+    else
+      lab.text = string.format("<color=white>%s</color>", data.page_name)
+    end
+    self:_onclick_face_page_tog(isOn, index)
+  end)
+end
+
+function ui:ui_on_show(data, ...)
+  self:_refresh_channel_toggle_list()
+  local default_channel = CHANNEL_TYPE.GUILD
+  self.v_read_num = 0
+  self.v_msg_num = 0
+  self.v_last_update_time = 0
+  self.v_channel_tog_list[default_channel].isOn = true
+  self:_onclick_channel_tog(true, default_channel)
+  self.v_show_face_panel = false
+  self:_refresh_face_toggle_panel()
+  self.v_uiobjects.BtnClear:SetActive(false)
+  self:_regist_client_event()
+end
+
+function ui:ui_on_hide()
+  self.v_cur_page_idx = nil
+  self.v_cur_channel = nil
+  self.v_send_msg = ""
+  self.v_show_face_panel = false
+  self.v_chat_list:ui_on_hide()
+  self.v_msg_input.interactable = true
+  self.v_msg_list = nil
+  self.v_channel_input:SetActive(false)
+  self.v_channel_idx:SetActive(true)
+  self.v_channel_name:SetActive(true)
+end
+
+function ui:ui_on_destroy()
+  self.v_chat_list:ui_on_destroy()
+  self.v_channel_tog_list = nil
+  self.v_face_tog_list = nil
+  if self.send_cd_timer then
+    CT_Timer:remove_timer(self.send_cd_timer)
+    self.send_cd_timer = nil
+  end
+end
+
+function ui:ui_on_update(delta_time)
+  if self.v_cur_channel == CHANNEL_TYPE.GUILD then
+    self.v_last_update_time = self.v_last_update_time + delta_time
+    if self.v_last_update_time > GUILD_NUM_UPDATE_INTERVAL then
+      self.v_last_update_time = self.v_last_update_time - GUILD_NUM_UPDATE_INTERVAL
+      UnionMgr:request_union_online_num(function(num)
+        self.v_online_num.text = num
+      end)
+    end
+  else
+    self.v_last_update_time = 0
+  end
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_WORLD_CHAT_MSG_UPDATE, self.response_world_msg_update_event, self)
+  self:bind_auto_mq(Const.MSG_WORLD_CHAT_CHANNEL_UPDATE, self.response_world_channel_update_event, self)
+  self:bind_auto_mq(Const.MSG_SYS_MSG_UPDATE, self.response_sys_msg_update_event, self)
+end
+
+function ui:response_world_msg_update_event(msg)
+  if self.v_cur_channel ~= CHANNEL_TYPE.WORLD then
+    return
+  end
+  self:_refresh_chat_panel()
+end
+
+function ui:response_world_channel_update_event(msg)
+  self.v_msg_list = nil
+  self:_refresh_chat_panel()
+end
+
+function ui:response_sys_msg_update_event()
+  if self.v_cur_channel ~= CHANNEL_TYPE.SYSTEM then
+    return
+  end
+  self:_refresh_chat_panel()
+end
+
+function ui:_refresh_channel_toggle_list()
+  if self.v_cur_channel ~= CHANNEL_TYPE.GUILD then
+    return
+  end
+  self:_init_channel_toggle_list()
+end
+
+function ui:_refresh_chat_panel()
+  local is_world_channel = self.v_cur_channel == CHANNEL_TYPE.WORLD
+  local is_sys_channel = self.v_cur_channel == CHANNEL_TYPE.SYSTEM
+  local is_guild_channel = self.v_cur_channel == CHANNEL_TYPE.GUILD
+  self.v_world_chat_title:SetActive(is_world_channel)
+  self.v_operate_panel:SetActive(not is_sys_channel)
+  self.v_guild_chat_title:SetActive(is_guild_channel)
+  if is_sys_channel then
+    self.v_scroll_rect:SetSizeDeltaHeightA(self.v_old_height + EXPAND_HEIGHT)
+  else
+    self.v_scroll_rect:SetSizeDeltaHeightA(self.v_old_height)
+  end
+  local is_first_show = self.v_msg_list == nil
+  if is_world_channel then
+    self.v_channel_idx.text = ChatMgr:get_world_channel_id()
+    self.v_msg_list = ChatMgr:get_world_chat_list()
+  elseif is_sys_channel then
+    self.v_msg_list = ChatMgr:get_sys_list()
+  elseif is_guild_channel then
+    self.v_msg_list = ChatMgr:get_guild_chat_list()
+  end
+  self:_check_msg_list()
+  local in_bottom = self.v_chat_list:get_visual_end_idx() == self.v_msg_num
+  self.v_msg_num = #self.v_msg_list
+  self.v_no_sys_msg_desc:SetActive(0 == self.v_msg_num)
+  local send_by_mine = self:_get_is_send_by_mine(is_sys_channel)
+  if is_first_show or send_by_mine then
+    self.v_unread_msgs:SetActive(false)
+    self.v_chat_list:refresh_data(self.v_msg_list)
+    self:_read_all_msg()
+  else
+    self.v_chat_list:add_data(self.v_msg_list)
+    self:_set_unread_msg(in_bottom)
+  end
+  RedPointMgr:enable_redpoint(ChatConfig.Channnel_red_point[self.v_cur_channel], false)
+end
+
+function ui:_get_is_send_by_mine(is_sys_channel)
+  if is_sys_channel then
+    return true
+  end
+  if 0 == self.v_msg_num then
+    return false
+  end
+  local last_msg = self.v_msg_list[self.v_msg_num]
+  local speaker = last_msg.speaker
+  if not speaker then
+    return false
+  end
+  return speaker.uuid == Global.player_uuid
+end
+
+function ui:_set_unread_msg(in_bottom)
+  self.v_unread_msgs:SetActive(not in_bottom)
+  if not in_bottom then
+    local num = self.v_msg_num - self.v_read_num
+    local num_str = num > 99 and "+99" or num
+    self.v_unread_num.text = Util.format_str("有{1}条新消息", num_str)
+  else
+    self.v_chat_list:scroll_to_bottom()
+    self.v_read_num = self.v_msg_num
+  end
+end
+
+function ui:_refresh_face_toggle_panel()
+  self.v_face_panel:SetActive(self.v_show_face_panel)
+  if self.v_show_face_panel == false then
+    self.v_cur_page_idx = 0
+    return
+  end
+  self:_refresh_face_toggle_list()
+end
+
+function ui:_refresh_face_toggle_list()
+  self:_init_face_page_toggle_list()
+  if not self.v_face_tog_list[1] then
+    return
+  end
+  self.v_face_tog_list[1].isOn = true
+  self:_onclick_face_page_tog(true, 1)
+end
+
+function ui:_refresh_face_panel()
+  self:give_back_auto_cache(self.template_key.face_item, false)
+  self.v_face_list = self.v_face_page_type_cfg[self.v_cur_page_idx]
+  for i, v in ipairs(self.v_face_list) do
+    local obj = self:get_auto_cache(self.template_key.face_item)
+    self:_set_face_item(obj, v)
+  end
+end
+
+function ui:_set_face_item(obj, data)
+  obj:SetActive(true)
+  local icon = self:get_image("Image", obj)
+  ResMgr:load_set_icon(icon, string.format(FACE_ICON_PATH, data.icon))
+  local btn = self:get_button(nil, obj)
+  btn.onClick:RemoveAllListeners()
+  btn.onClick:AddListener(function()
+    if self.v_in_send_cd == true then
+      Util.show_message_tip(2165)
+      return
+    end
+    if self:_get_can_chat() == false then
+      return
+    end
+    ChatMgr:request_send_world_chat_msg(data.face_character)
+    self:_onclick_face_btn()
+    self:_start_send_cd()
+  end)
+end
+
+function ui:_get_can_chat()
+  if PlayerMgr:get_role_lv() < self.v_chat_lv then
+    local tip = Util.format_str("{1}级后可以发言", self.v_chat_lv)
+    UIMgr:get_ui("uimessagetip"):ui_show(tip)
+    return false
+  end
+  return true
+end
+
+function ui:_onclick_face_btn()
+  if self:_get_can_chat() == false then
+    return
+  end
+  self.v_show_face_panel = not self.v_show_face_panel
+  self.v_msg_input.interactable = not self.v_show_face_panel
+  self:_refresh_face_toggle_panel()
+end
+
+function ui:_on_msg_begin_input()
+  if self:_get_can_chat() == false then
+    self.v_msg_input.text = ""
+    return
+  end
+  self.v_uiobjects.BtnClear:SetActive(true)
+end
+
+function ui:_onclick_send_btn()
+  if self.v_in_send_cd then
+    Util.show_message_tip(2165)
+    return
+  end
+  self.v_send_msg = self.v_msg_input.text
+  if string.len(self.v_send_msg) >= self.v_input_max_len then
+    Util.show_message_tip(2166)
+    return
+  end
+  local space_len = 0
+  for v in string.gmatch(self.v_send_msg, "%s") do
+    space_len = space_len + 1
+  end
+  if space_len == string.len(self.v_send_msg) then
+    Util.show_message_tip(2167)
+    return
+  end
+  ChatMgr:request_send_msg(self.v_cur_channel, self.v_send_msg)
+  self.v_msg_input.text = ""
+  self:_start_send_cd()
+  self.v_uiobjects.BtnClear:SetActive(false)
+end
+
+function ui:_onclick_out_btn()
+  self:ui_hide()
+end
+
+function ui:_onclick_face_page_tog(isOn, index)
+  if self.v_cur_page_idx == index then
+    return
+  end
+  if isOn then
+    self.v_cur_page_idx = index
+    self:_refresh_face_panel()
+  end
+end
+
+function ui:_onclick_channel_tog(isOn, index)
+  if index > CHANNEL_TYPE.WORLD then
+    if isOn then
+      Util.show_message_tip(2168)
+      self.v_channel_tog_list[self.v_cur_channel].isOn = true
+    end
+    return
+  end
+  if index == CHANNEL_TYPE.WORLD and 0 == ChatMgr:get_world_channel_id() then
+    if isOn then
+      Util.show_message_tip(2168)
+      self.v_channel_tog_list[self.v_cur_channel].isOn = true
+    end
+    return
+  end
+  if self.v_cur_channel == index then
+    return
+  end
+  if isOn then
+    self.v_cur_channel = index
+    self.v_msg_list = nil
+    self:_refresh_chat_panel()
+    RedPointMgr:enable_redpoint(ChatConfig.Channnel_red_point[index], false)
+  end
+end
+
+function ui:_onclick_change_channel_btn()
+  self.v_change_channel_mode = not self.v_change_channel_mode
+  self.v_channel_input:SetActive(self.v_change_channel_mode)
+  self.v_channel_idx:SetActive(not self.v_change_channel_mode)
+  self.v_channel_name:SetActive(not self.v_change_channel_mode)
+  self.v_channel_input.text = ""
+  self.v_uiobjects.ChantMask:SetActive(self.v_change_channel_mode)
+  if self.v_change_channel_mode and not UnityEventSystem.current.alreadySelecting then
+    UnityEventSystem.current:SetSelectedGameObject(self.v_channel_input.gameObject)
+  end
+end
+
+function ui:_on_channel_start_input()
+  local new_id = tonumber(self.v_channel_input.text)
+  if not new_id then
+    self.v_channel_input.text = ""
+    return
+  end
+  if new_id >= 1000 then
+    local str = string.sub(self.v_channel_input.text, 1, 3)
+    self.v_channel_input.text = str
+  end
+end
+
+function ui:_on_channel_finish_input()
+  local new_id = tonumber(self.v_channel_input.text)
+  if not new_id then
+    return
+  end
+  if new_id == ChatMgr:get_world_channel_id() then
+    Util.show_message_tip(2171)
+    return
+  end
+  ChatMgr:request_join_world_chat(new_id)
+  self:_onclick_change_channel_btn()
+end
+
+function ui:_start_send_cd()
+  local last_data = ChatMgr:get_my_last_speak(self.v_cur_channel)
+  if last_data and Date.server_time() - last_data.send_time < self.v_reach_cd_interval and self.send_cd_timer == nil then
+    self.send_cd_timer = CT_Timer:add_timer("send_cut_down", self.v_send_cd, function(sec)
+      if sec > 0 then
+        self.v_send_txt.text = string.format("【%ss】", sec)
+        self.v_in_send_cd = true
+        Util.apply_grey(nil, self.v_send_btn, true)
+      else
+        if self.send_cd_timer then
+          CT_Timer:remove_timer(self.send_cd_timer)
+          self.send_cd_timer = nil
+        end
+        self.v_in_send_cd = nil
+        self.v_send_txt.text = Util.format_str("发送")
+        Util.apply_grey(nil, self.v_send_btn, false)
+      end
+    end)
+  end
+end
+
+function ui:_read_all_msg()
+  self.v_chat_list:scroll_to_bottom()
+  self.v_unread_msgs:SetActive(false)
+  self.v_read_num = #self.v_msg_list
+end
+
+function ui:_on_scroll_to_bottom()
+  self.v_unread_msgs:SetActive(false)
+  self.v_read_num = #self.v_msg_list
+end
+
+return ui

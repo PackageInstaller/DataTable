@@ -1,0 +1,7 @@
+return {
+  {
+    Id = 1,
+    ImageRes = "Hero\\1001009_Skin03",
+    SpineId = 40904
+  }
+}

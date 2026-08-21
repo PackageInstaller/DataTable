@@ -1,0 +1,32 @@
+return {
+  {
+    Id = 1,
+    IsPush = false,
+    Sort = 1
+  },
+  {
+    Id = 2,
+    IsPush = true,
+    Sort = 2
+  },
+  {
+    Id = 3,
+    IsPush = true,
+    Sort = 3
+  },
+  {
+    Id = 4,
+    IsPush = true,
+    Sort = 4
+  },
+  {
+    Id = 5,
+    IsPush = true,
+    Sort = 5
+  },
+  {
+    Id = 6,
+    IsPush = true,
+    Sort = 6
+  }
+}

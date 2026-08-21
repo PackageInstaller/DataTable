@@ -1,0 +1,541 @@
+return {
+  {
+    {
+      Condition = {},
+      EntrancePos = {33, -66},
+      Id = 1,
+      Level = 1,
+      ModelIDList = {1},
+      ModelMaterialMap = {
+        capital_area01_m18 = "capital_T4_grass_01_mat",
+        capital_area01_m19 = "capital_T4_grass_01_mat",
+        capital_area01_m20 = "capital_T4_grass_01_mat",
+        capital_area01_m27 = "capital_T4_grass_01_mat",
+        capital_area01_m32 = "capital_T4_grass_01_mat",
+        capital_area01_m4 = "capital_T4_grass_01_mat",
+        capital_area02_m1 = "capital_T4_ground_01_mat",
+        capital_area02_m10 = "capital_T4_ground_01_mat",
+        capital_area02_m2 = "capital_T4_ground_01_mat",
+        capital_area02_m3 = "capital_T4_ground_01_mat",
+        capital_area02_m4 = "capital_T4_ground_01_mat",
+        capital_area02_m5 = "capital_T4_ground_01_mat",
+        capital_area02_m6 = "capital_T4_ground_01_mat",
+        capital_area02_m7 = "capital_T4_ground_01_mat",
+        capital_area02_m8 = "capital_T4_ground_01_mat",
+        capital_area02_m9 = "capital_T4_ground_01_mat"
+      },
+      ModelNameList = {
+        "capital_build01_preLV0"
+      },
+      UIBindingPos = "Binding_capital_build1_1",
+      UnlockEffectDesc = {
+        "外勤站功能解锁",
+        "造物间功能解锁"
+      }
+    },
+    {
+      Condition = {4100000},
+      ConsumeItemCount = 500,
+      ConsumeItemId = 31,
+      EntrancePos = {33, -66},
+      Id = 1,
+      Level = 2,
+      ModelIDList = {2},
+      ModelMaterialMap = {
+        capital_area01_m1 = "capital_T4_grass_01_mat",
+        capital_area01_m18 = "capital_T4_grass_01_mat",
+        capital_area01_m19 = "capital_T4_grass_01_mat",
+        capital_area01_m20 = "capital_T4_grass_01_mat",
+        capital_area01_m27 = "capital_T4_grass_01_mat",
+        capital_area01_m30 = "capital_T4_grass_01_mat",
+        capital_area01_m32 = "capital_T4_grass_01_mat",
+        capital_area01_m4 = "capital_T4_grass_01_mat",
+        capital_area02_m1 = "capital_T4_ground_01_mat",
+        capital_area02_m10 = "capital_T4_ground_01_mat",
+        capital_area02_m2 = "capital_T4_ground_01_mat",
+        capital_area02_m3 = "capital_T4_ground_01_mat",
+        capital_area02_m4 = "capital_T4_ground_01_mat",
+        capital_area02_m5 = "capital_T4_ground_01_mat",
+        capital_area02_m6 = "capital_T4_ground_01_mat",
+        capital_area02_m7 = "capital_T4_ground_01_mat",
+        capital_area02_m9 = "capital_T4_ground_01_mat"
+      },
+      ModelNameList = {
+        "capital_build01_preLV0",
+        "capital_build01_preLV1"
+      },
+      UIBindingPos = "Binding_capital_build1_2",
+      UnlockEffectDesc = {
+        "贸易站解锁"
+      }
+    },
+    {
+      Condition = {4100001},
+      ConsumeItemCount = 1000,
+      ConsumeItemId = 31,
+      EntrancePos = {33, -66},
+      Id = 1,
+      Level = 3,
+      ModelIDList = {2},
+      ModelMaterialMap = {
+        capital_area01_m1 = "capital_T4_grass_01_mat",
+        capital_area01_m18 = "capital_T4_grass_01_mat",
+        capital_area01_m19 = "capital_T4_grass_01_mat",
+        capital_area01_m20 = "capital_T4_grass_01_mat",
+        capital_area01_m27 = "capital_T4_grass_01_mat",
+        capital_area01_m30 = "capital_T4_grass_01_mat",
+        capital_area01_m32 = "capital_T4_grass_01_mat",
+        capital_area01_m4 = "capital_T4_grass_01_mat",
+        capital_area01_m7 = "capital_T4_grass_01_mat",
+        capital_area02_m1 = "capital_T4_ground_01_mat",
+        capital_area02_m10 = "capital_T4_ground_01_mat",
+        capital_area02_m2 = "capital_T4_ground_01_mat",
+        capital_area02_m3 = "capital_T4_ground_01_mat",
+        capital_area02_m5 = "capital_T4_ground_01_mat",
+        capital_area02_m6 = "capital_T4_ground_01_mat",
+        capital_area02_m7 = "capital_T4_ground_01_mat",
+        capital_area02_m9 = "capital_T4_ground_01_mat"
+      },
+      ModelNameList = {
+        "capital_build01_preLV0",
+        "capital_build01_preLV1",
+        "capital_build01_preLV2",
+        "capital_build07b_pre"
+      },
+      UIBindingPos = "Binding_capital_build1_3",
+      UnlockEffectDesc = {
+        "外勤站可提升至Lv.2",
+        "贸易站可提升至Lv.2",
+        "天体果园可提升至Lv.3",
+        "造物间可提升至Lv.3"
+      }
+    },
+    {
+      Condition = {4100002},
+      ConsumeItemCount = 1500,
+      ConsumeItemId = 31,
+      EntrancePos = {72, -53},
+      Id = 1,
+      Level = 4,
+      ModelIDList = {2},
+      ModelMaterialMap = {
+        capital_area01_m1 = "capital_T4_grass_01_mat",
+        capital_area01_m10 = "capital_T4_grass_01_mat",
+        capital_area01_m13 = "capital_T4_grass_01_mat",
+        capital_area01_m18 = "capital_T4_grass_01_mat",
+        capital_area01_m19 = "capital_T4_grass_01_mat",
+        capital_area01_m20 = "capital_T4_grass_01_mat",
+        capital_area01_m24 = "capital_T4_grass_01_mat",
+        capital_area01_m27 = "capital_T4_grass_01_mat",
+        capital_area01_m28 = "capital_T4_grass_01_mat",
+        capital_area01_m30 = "capital_T4_grass_01_mat",
+        capital_area01_m32 = "capital_T4_grass_01_mat",
+        capital_area01_m4 = "capital_T4_grass_01_mat",
+        capital_area01_m7 = "capital_T4_grass_01_mat",
+        capital_area02_m1 = "capital_T4_ground_01_mat",
+        capital_area02_m10 = "capital_T4_ground_01_mat",
+        capital_area02_m2 = "capital_T4_ground_01_mat",
+        capital_area02_m3 = "capital_T4_ground_01_mat",
+        capital_area02_m5 = "capital_T4_ground_01_mat",
+        capital_area02_m6 = "capital_T4_ground_01_mat",
+        capital_area02_m7 = "capital_T4_ground_01_mat",
+        capital_area02_m9 = "capital_T4_ground_01_mat"
+      },
+      ModelNameList = {
+        "capital_build01_preLV0",
+        "capital_build01_preLV1",
+        "capital_build01_preLV2",
+        "capital_build01_preLV3",
+        "capital_build07c_pre"
+      },
+      UIBindingPos = "Binding_capital_build1_4",
+      UnlockEffectDesc = {
+        "贸易站可提升至Lv.3",
+        "天体果园可提升至Lv.4",
+        "造物间可提升至Lv.4"
+      }
+    },
+    {
+      Condition = {4100003},
+      ConsumeItemCount = 2000,
+      ConsumeItemId = 31,
+      EntrancePos = {73, 22},
+      Id = 1,
+      Level = 5,
+      ModelIDList = {2},
+      ModelMaterialMap = {
+        capital_area01_m1 = "capital_T4_grass_01_mat",
+        capital_area01_m10 = "capital_T4_grass_01_mat",
+        capital_area01_m13 = "capital_T4_grass_01_mat",
+        capital_area01_m15 = "capital_T4_grass_01_mat",
+        capital_area01_m17 = "capital_T4_grass_01_mat",
+        capital_area01_m18 = "capital_T4_grass_01_mat",
+        capital_area01_m19 = "capital_T4_grass_01_mat",
+        capital_area01_m20 = "capital_T4_grass_01_mat",
+        capital_area01_m24 = "capital_T4_grass_01_mat",
+        capital_area01_m25 = "capital_T4_grass_01_mat",
+        capital_area01_m27 = "capital_T4_grass_01_mat",
+        capital_area01_m28 = "capital_T4_grass_01_mat",
+        capital_area01_m30 = "capital_T4_grass_01_mat",
+        capital_area01_m32 = "capital_T4_grass_01_mat",
+        capital_area01_m4 = "capital_T4_grass_01_mat",
+        capital_area01_m7 = "capital_T4_grass_01_mat",
+        capital_area01_m8 = "capital_T4_grass_01_mat",
+        capital_area02_m1 = "capital_T4_ground_01_mat",
+        capital_area02_m10 = "capital_T4_ground_01_mat",
+        capital_area02_m2 = "capital_T4_ground_01_mat",
+        capital_area02_m3 = "capital_T4_ground_01_mat",
+        capital_area02_m5 = "capital_T4_ground_01_mat",
+        capital_area02_m6 = "capital_T4_ground_01_mat",
+        capital_area02_m7 = "capital_T4_ground_01_mat",
+        capital_area02_m9 = "capital_T4_ground_01_mat"
+      },
+      ModelNameList = {
+        "capital_build01_preLV0",
+        "capital_build01_preLV1",
+        "capital_build01_preLV2",
+        "capital_build01_preLV3",
+        "capital_build01_preLV4"
+      },
+      UIBindingPos = "Binding_capital_build1_5",
+      UnlockEffectDesc = {
+        "外勤站可提升至Lv.3",
+        "天体果园可提升至Lv.5",
+        "造物间可提升至Lv.5"
+      }
+    }
+  },
+  {
+    {
+      Condition = {},
+      EntrancePos = {65, 91},
+      Id = 2,
+      Level = 1,
+      ModelIDList = {3},
+      ModelNameList = {
+        "capital_build05_preLV1"
+      },
+      UIBindingPos = "Binding_capital_build2_1",
+      UnlockEffectDesc = {
+        "外勤站解锁，可派遣角色完成任务"
+      }
+    },
+    {
+      BuildingUnlockMap = {BuildingType = 1, Level = 3},
+      Condition = {4100012},
+      ConsumeItemCount = 800,
+      ConsumeItemId = 31,
+      EntrancePos = {78, 49},
+      Id = 2,
+      Level = 2,
+      ModelIDList = {4},
+      ModelNameList = {
+        "capital_build05_preLV2",
+        "capital_build05_preLV1",
+        "capital_build07c_pre (1)"
+      },
+      UIBindingPos = "Binding_capital_build2_2",
+      UnlockEffectDesc = {
+        "每日可派遣的A级普通任务提升为2"
+      }
+    },
+    {
+      BuildingUnlockMap = {BuildingType = 1, Level = 5},
+      Condition = {4100014},
+      ConsumeItemCount = 1800,
+      ConsumeItemId = 31,
+      EntrancePos = {115, 30},
+      Id = 2,
+      Level = 3,
+      ModelIDList = {4},
+      ModelMaterialMap = {
+        capital_area01_m24 = "capital_T4_grass_01_mat",
+        capital_area01_m29 = "capital_T4_grass_01_mat"
+      },
+      ModelNameList = {
+        "capital_build05_preLV3",
+        "capital_build05_preLV2",
+        "capital_build05_preLV1",
+        "capital_build07c_pre (1)",
+        "capital_build07a_pre (1)"
+      },
+      UIBindingPos = "Binding_capital_build2_3",
+      UnlockEffectDesc = {
+        "每日增加1个S级普通任务"
+      }
+    }
+  },
+  {
+    {
+      BuildingUnlockMap = {BuildingType = 1, Level = 2},
+      Condition = {4100011},
+      ConsumeItemCount = 400,
+      ConsumeItemId = 31,
+      EntrancePos = {91, -13},
+      Id = 3,
+      Level = 1,
+      ModelIDList = {5},
+      ModelNameList = {
+        "capital_build04_preLV1"
+      },
+      UIBindingPos = "Binding_capital_build3_1",
+      UnlockEffectDesc = {
+        "贸易站1开放，可从贸易中获得奥雷"
+      }
+    },
+    {
+      BuildingUnlockMap = {BuildingType = 1, Level = 3},
+      Condition = {4100012},
+      ConsumeItemCount = 1600,
+      ConsumeItemId = 31,
+      EntrancePos = {91, -13},
+      Id = 3,
+      Level = 2,
+      ModelIDList = {6},
+      ModelMaterialMap = {
+        capital_area01_m11 = "capital_T4_grass_01_mat",
+        capital_area01_m3 = "capital_T4_grass_01_mat"
+      },
+      ModelNameList = {
+        "capital_build04_preLV2",
+        "capital_build04_preLV1"
+      },
+      UIBindingPos = "Binding_capital_build3_2",
+      UnlockEffectDesc = {
+        "贸易站2开放，可从贸易中获得寻知之证·断章、赫菲之火·小"
+      }
+    },
+    {
+      BuildingUnlockMap = {BuildingType = 1, Level = 4},
+      Condition = {4100013},
+      ConsumeItemCount = 2800,
+      ConsumeItemId = 31,
+      EntrancePos = {112, 7},
+      Id = 3,
+      Level = 3,
+      ModelIDList = {6},
+      ModelMaterialMap = {
+        capital_area01_m11 = "capital_T4_grass_01_mat",
+        capital_area01_m14 = "capital_T4_grass_01_mat",
+        capital_area01_m26 = "capital_T4_grass_01_mat",
+        capital_area01_m3 = "capital_T4_grass_01_mat"
+      },
+      ModelNameList = {
+        "capital_build04_preLV3",
+        "capital_build04_preLV2",
+        "capital_build04_preLV1"
+      },
+      UIBindingPos = "Binding_capital_build3_3",
+      UnlockEffectDesc = {
+        "贸易站3开放，可从贸易中获得寻知之证·书页、赫菲之火·中"
+      }
+    }
+  },
+  {
+    {
+      BuildingUnlockMap = {BuildingType = 1, Level = 1},
+      Condition = {4100010},
+      ConsumeItemCount = 200,
+      ConsumeItemId = 31,
+      EntrancePos = {73, -4},
+      Id = 4,
+      Level = 1,
+      ModelIDList = {7},
+      ModelNameList = {
+        "capital_build02a_pre_LV1",
+        "capital_build06_pre"
+      },
+      UIBindingPos = "Binding_capital_build4_1",
+      UnlockEffectDesc = {
+        "明度储存解锁，最高可储存100点明度"
+      }
+    },
+    {
+      BuildingUnlockMap = {BuildingType = 1, Level = 2},
+      Condition = {4100011},
+      ConsumeItemCount = 800,
+      ConsumeItemId = 31,
+      EntrancePos = {90, -11},
+      Id = 4,
+      Level = 2,
+      ModelIDList = {8},
+      ModelMaterialMap = {
+        capital_area01_m33 = "capital_T4_grass_01_mat",
+        capital_area01_m5 = "capital_T4_grass_01_mat"
+      },
+      ModelNameList = {
+        "capital_build02a_pre_LV1",
+        "capital_build06_pre"
+      },
+      UIBindingPos = "Binding_capital_build4_2",
+      UnlockEffectDesc = {
+        "明度储存上限提升为200"
+      }
+    },
+    {
+      BuildingUnlockMap = {BuildingType = 1, Level = 3},
+      Condition = {4100012},
+      ConsumeItemCount = 1800,
+      ConsumeItemId = 31,
+      EntrancePos = {82, 12},
+      Id = 4,
+      Level = 3,
+      ModelIDList = {8},
+      ModelMaterialMap = {
+        capital_area01_m33 = "capital_T4_grass_01_mat",
+        capital_area01_m5 = "capital_T4_grass_01_mat"
+      },
+      ModelNameList = {
+        "capital_build02b_preLV2",
+        "capital_build02a_pre_LV1",
+        "capital_build06_pre",
+        "capital_build07b_pre"
+      },
+      UIBindingPos = "Binding_capital_build4_3",
+      UnlockEffectDesc = {
+        "明度储存上限提升为300"
+      }
+    },
+    {
+      BuildingUnlockMap = {BuildingType = 1, Level = 4},
+      Condition = {4100013},
+      ConsumeItemCount = 3000,
+      ConsumeItemId = 31,
+      EntrancePos = {71, -9},
+      Id = 4,
+      Level = 4,
+      ModelIDList = {8},
+      ModelMaterialMap = {
+        capital_area01_m12 = "capital_T4_grass_01_mat",
+        capital_area01_m16 = "capital_T4_grass_01_mat",
+        capital_area01_m33 = "capital_T4_grass_01_mat",
+        capital_area01_m5 = "capital_T4_grass_01_mat"
+      },
+      ModelNameList = {
+        "capital_build02b_preLV2",
+        "capital_build02a_pre_LV1",
+        "capital_build07c_pre (3)"
+      },
+      UIBindingPos = "Binding_capital_build4_4",
+      UnlockEffectDesc = {
+        "明度储存上限提升为400"
+      }
+    },
+    {
+      BuildingUnlockMap = {BuildingType = 1, Level = 5},
+      Condition = {4100014},
+      ConsumeItemCount = 5000,
+      ConsumeItemId = 31,
+      EntrancePos = {95, 18},
+      Id = 4,
+      Level = 5,
+      ModelIDList = {8},
+      ModelMaterialMap = {
+        capital_area01_m12 = "capital_T4_grass_01_mat",
+        capital_area01_m16 = "capital_T4_grass_01_mat",
+        capital_area01_m33 = "capital_T4_grass_01_mat",
+        capital_area01_m5 = "capital_T4_grass_01_mat"
+      },
+      ModelNameList = {
+        "capital_build02c_preLV3",
+        "capital_build02b_preLV2",
+        "capital_build02a_pre_LV1",
+        "capital_build07a_pre",
+        "capital_build07b_pre",
+        "capital_build07c_pre"
+      },
+      UIBindingPos = "Binding_capital_build4_5",
+      UnlockEffectDesc = {
+        "明度储存上限提升为500"
+      }
+    }
+  },
+  {
+    {
+      Condition = {},
+      EntrancePos = {96, 107},
+      Id = 5,
+      Level = 1,
+      ModelIDList = {9},
+      ModelNameList = {
+        "capital_build03_preLV1"
+      },
+      UIBindingPos = "Binding_capital_build5_1",
+      UnlockEffectDesc = {
+        "造物台开启，可进行材料合成"
+      }
+    },
+    {
+      BuildingUnlockMap = {BuildingType = 1, Level = 2},
+      Condition = {4100011},
+      ConsumeItemCount = 1000,
+      ConsumeItemId = 31,
+      EntrancePos = {96, 107},
+      Id = 5,
+      Level = 2,
+      ModelIDList = {9},
+      ModelMaterialMap = {
+        capital_area01_m2 = "capital_T4_grass_01_mat",
+        capital_area01_m31 = "capital_T4_grass_01_mat"
+      },
+      ModelNameList = {
+        "capital_build03_preLV1",
+        "capital_build07a_pre (3)"
+      },
+      UIBindingPos = "Binding_capital_build5_2",
+      UnlockEffectDesc = {
+        "材料合成消耗的奥雷降低至原价50%"
+      }
+    },
+    {
+      BuildingUnlockMap = {BuildingType = 1, Level = 3},
+      Condition = {4100012},
+      ConsumeItemCount = 2500,
+      ConsumeItemId = 31,
+      EntrancePos = {92, 85},
+      Id = 5,
+      Level = 3,
+      ModelIDList = {9},
+      ModelMaterialMap = {
+        capital_area01_m2 = "capital_T4_grass_01_mat",
+        capital_area01_m21 = "capital_T4_grass_01_mat",
+        capital_area01_m31 = "capital_T4_grass_01_mat",
+        capital_area01_m9 = "capital_T4_grass_01_mat"
+      },
+      ModelNameList = {
+        "capital_build03_preLV2",
+        "capital_build03_preLV1",
+        "capital_build07a_pre (3)"
+      },
+      UIBindingPos = "Binding_capital_build5_3",
+      UnlockEffectDesc = {
+        "材料合成消耗的奥雷降低至原价20%"
+      }
+    },
+    {
+      BuildingUnlockMap = {BuildingType = 1, Level = 4},
+      Condition = {4100013},
+      ConsumeItemCount = 5000,
+      ConsumeItemId = 31,
+      EntrancePos = {132, 106},
+      Id = 5,
+      Level = 4,
+      ModelIDList = {9},
+      ModelMaterialMap = {
+        capital_area01_m2 = "capital_T4_grass_01_mat",
+        capital_area01_m21 = "capital_T4_grass_01_mat",
+        capital_area01_m31 = "capital_T4_grass_01_mat",
+        capital_area01_m9 = "capital_T4_grass_01_mat"
+      },
+      ModelNameList = {
+        "capital_build03_preLV2",
+        "capital_build03_preLV1",
+        "capital_build07a_pre (3)"
+      },
+      UIBindingPos = "Binding_capital_build5_4",
+      UnlockEffectDesc = {
+        "材料合成不再消耗奥雷"
+      }
+    }
+  }
+}

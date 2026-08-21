@@ -1,0 +1,128 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local Timer = Global.timer
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_input_field = {
+    "InputField",
+    BIND_TYPE.INPUT
+  }
+}
+local NAME_MAX_LEN = 9
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  local input_obj = self.v_uicompents.InputField_rect
+  local input = Util.get_component(nil, input_obj, UnityEngine.UI.InputField)
+  self:set_inputfield_listener(input, function()
+    self:_on_check_input_len(input_obj)
+  end, function()
+    self:_on_input_complete(input_obj)
+  end)
+  self:set_button("BtnConfirm", function()
+    self:click_confirm()
+  end)
+end
+
+function ui:click_confirm()
+  local change_name_num = PlayerMgr:get_player_rename_num()
+  if change_name_num and change_name_num > 0 then
+    self:ui_hide()
+    if self.v_callback then
+      self.v_callback()
+      self.v_callback = nil
+    end
+    return
+  end
+  if self.v_is_illegal then
+    self.v_is_illegal = false
+    return
+  end
+  local input_txt = self.v_input_field.text
+  if string.gsub(input_txt, " ", "") == "" then
+    self:update_tip("昵称不允许为空")
+    self.v_input_field.text = ""
+    return
+  end
+  local num = Util.get_string_len(input_txt)
+  if num < 1 then
+    self:update_tip("至少输入1个字")
+    return
+  end
+  PlayerMgr:upgrade_player_name_by_story(input_txt, function(ok, resp)
+    if ok then
+      local msg = MsgGame:mq_publish2(Const.MSG_ON_CHANGE_NAME_SUCCESS)
+      msg.mm_obj = resp.new_name
+      if self.v_callback then
+        self.v_callback()
+        self.v_callback = nil
+      end
+      self:ui_hide()
+    else
+      self.v_input_field.text = ""
+      self:show_change_name_error_code(resp)
+    end
+  end, true)
+end
+
+function ui:show_change_name_error_code(resp)
+  local error_code = resp.errcode
+  local msg = Util.get_error_code_msg(error_code)
+  self:update_tip(msg)
+end
+
+function ui:ui_on_show(callback)
+  self.v_uiobjects.OverStepTips:SetActive(false)
+  self.v_callback = callback
+  self:update_player_name()
+end
+
+function ui:update_tip(tip)
+  self.v_uiobjects.OverStepTips:SetActive(nil ~= tip)
+  self.v_uicompents.Tip_txt.text = tip
+end
+
+function ui:_on_check_input_len(obj)
+  local input = Util.get_component(nil, obj, UnityEngine.UI.InputField)
+  local len = Util.get_string_len(input.text)
+  if len > NAME_MAX_LEN then
+    self:update_tip("不可超过8字")
+  else
+    self:update_tip()
+  end
+end
+
+function ui:_on_input_complete(obj)
+  Word_Censor.check_has_sensitive(self.v_parent_ui:ui_get_name(), name, function(ok, lab)
+    if ok then
+      local input = Util.get_component(nil, obj, UnityEngine.UI.InputField)
+      local len = Util.get_string_len(input.text)
+      if len > NAME_MAX_LEN then
+        self.v_is_illegal = true
+        input.text = Util.get_sub_string_utf8(input.text, NAME_MAX_LEN)
+        input:ActivateInputField()
+        self:update_tip("不可超过8字")
+      else
+        self.v_is_illegal = false
+        self:update_tip()
+      end
+      self.v_input_team_name = input.text
+    end
+  end, "player_rename")
+end
+
+function ui:update_player_name()
+  if not PlayerMgr then
+    return
+  end
+  local name = PlayerMgr:get_player_name()
+  self.v_input_field.text = name or ""
+  self.v_uiobjects.InputMask:SetActive(false)
+  self.v_input_team_name = name
+  local change_name_num = PlayerMgr:get_player_rename_num()
+  if change_name_num and 0 ~= change_name_num then
+    self.v_uiobjects.InputMask:SetActive(true)
+  end
+end
+
+return ui

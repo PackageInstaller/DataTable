@@ -1,0 +1,10 @@
+return {
+  {
+    IconPath = "UIChapter/Weekly_bg_enter",
+    Id = 1
+  },
+  {
+    IconPath = "UIChapter/Weekly_bg_enter2",
+    Id = 2
+  }
+}

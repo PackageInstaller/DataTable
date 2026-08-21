@@ -1,0 +1,31 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local Item_Helper = require("utils.item_helper")
+local ITEM_ICON_PATH = "Icon/Item/"
+local bagConfig = require("gamelogic.character.fight_bag_configs")
+
+function M:set_data(data)
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  local item_btn = self:get_button(nil, self.go)
+  self:set_button_listener(item_btn, function()
+    UIMgr:get_ui("itemTip"):ui_show({
+      item_id = data.id,
+      is_hide_get_way = true
+    })
+  end)
+  local item_cfg = Item_Helper.get_item_cfg(data.id)
+  local ItemQuality_img = ucom.ItemQuality_img
+  ResMgr:load_set_icon(ItemQuality_img, bagConfig.Quality_Img[item_cfg.Quality])
+  local ItemIcon_img = ucom.ItemIcon_img
+  ResMgr:load_set_icon(ItemIcon_img, ITEM_ICON_PATH .. item_cfg.Icon)
+  local ItemAmount_obj = uobj.ItemAmount
+  ItemAmount_obj:SetActive(data.count > 1)
+  local ItemNum_txt = ucom.ItemNum_txt
+  ItemNum_txt.text = Util.format_str("+{1}", data.count)
+end
+
+function M:on_clear()
+end
+
+return M

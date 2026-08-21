@@ -1,0 +1,117 @@
+return {
+  Blood_enemy = {
+    standard_x = 0.81247991323471,
+    standard_y = 0.81247991323471,
+    standard_z = 0.81247991323471
+  },
+  Blood_hero = {
+    standard_x = 1.0,
+    standard_y = 1.0,
+    standard_z = 1.0
+  },
+  Btn_Interact = {
+    standard_x = 1.0,
+    standard_y = 1.0,
+    standard_z = 1.0
+  },
+  Btn_lock7 = {
+    standard_x = 1.0,
+    standard_y = 1.0,
+    standard_z = 1.0
+  },
+  Btn_skill1 = {
+    standard_x = 1.1000000238419,
+    standard_y = 1.1000000238419,
+    standard_z = 1.0
+  },
+  Btn_skill2 = {
+    standard_x = 0.53126001358032,
+    standard_y = 0.53126001358032,
+    standard_z = 0.53126001358032
+  },
+  Btn_skill3 = {
+    standard_x = 0.64999997615814,
+    standard_y = 0.64999997615814,
+    standard_z = 1.0
+  },
+  Btn_skill4 = {
+    standard_x = 0.64999997615814,
+    standard_y = 0.64999997615814,
+    standard_z = 1.0
+  },
+  Btn_skill5 = {
+    standard_x = 0.64999997615814,
+    standard_y = 0.64999997615814,
+    standard_z = 1.0
+  },
+  Btn_skill7 = {
+    standard_x = 1.0,
+    standard_y = 1.0,
+    standard_z = 1.0
+  },
+  Btn_skill8 = {
+    standard_x = 0.64999997615814,
+    standard_y = 0.64999997615814,
+    standard_z = 1.0
+  },
+  BuffHeroList = {
+    standard_x = 1.0,
+    standard_y = 1.0,
+    standard_z = 1.0
+  },
+  ButtonArea = {
+    standard_x = 1.0,
+    standard_y = 1.0,
+    standard_z = 1.0
+  },
+  CancleSkill = {
+    standard_x = 0.89999997615814,
+    standard_y = 0.89999997615814,
+    standard_z = 0.89999997615814
+  },
+  ChangHero1 = {
+    standard_x = 0.85000002384186,
+    standard_y = 0.85000002384186,
+    standard_z = 1.0
+  },
+  ChangHero2 = {
+    standard_x = 0.85000002384186,
+    standard_y = 0.85000002384186,
+    standard_z = 1.0
+  },
+  HBlood = {
+    standard_x = 1.0,
+    standard_y = 1.0,
+    standard_z = 1.0
+  },
+  JoystickArea = {
+    standard_x = 1.0,
+    standard_y = 1.0,
+    standard_z = 1.0
+  },
+  PanelJoystick = {
+    standard_x = 1.0,
+    standard_y = 1.0,
+    standard_z = 1.0
+  },
+  SpSldContent = {
+    standard_x = 1.0,
+    standard_y = 1.0,
+    standard_z = 1.0
+  },
+  TeamHeadArea = {
+    standard_x = 1.0,
+    standard_y = 1.0,
+    standard_z = 1.0
+  },
+  TeamSkill = {
+    standard_x = 1.0,
+    standard_y = 1.0,
+    standard_z = 1.0
+  },
+  TeamSkillCheck = {
+    standard_x = 1.0,
+    standard_y = 1.0,
+    standard_z = 1.0
+  }
+}

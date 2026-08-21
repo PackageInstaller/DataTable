@@ -1,0 +1,419 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local CurseTime = ShareRes.create("activity.curse_corrosion_time", 1).CurseTime
+local CommonDefine = require("cs_share.common_define")
+local BloodHelper = require("uimodule/fight/blood_helper")
+local RATIO = 10000
+local TIMEUITYPE = {
+  LOW = 1,
+  MID = 2,
+  HIGHT = 3
+}
+local dotween = CS.DG.Tweening.DOTweenAnimation
+local color = UnityEngine.Color
+
+function ui:ui_finish_load()
+  self.v_curse_text_tween = self.v_uiobjects.CurseNow:GetComponent(typeof(dotween))
+  self.v_sequences = {}
+  local cg = typeof(UnityEngine.CanvasGroup)
+  self.v_trigger_cg = self.v_uiobjects.Trigger:GetComponent(cg)
+  self.v_cursecumtips_cg = self.v_uiobjects.CurseCumTips:GetComponent(cg)
+  self.v_add_txt_init_pos = self.v_uiobjects.CurseAdd.transform.localPosition
+end
+
+function ui:ui_on_show()
+  self:bind_auto_mq(Const.MSG_ON_CURSE_TIME_START, self.set_data, self)
+  self:bind_auto_mq(Const.MSG_ON_FIGHT_END, self.fight_end, self)
+  self:bind_auto_mq(Const.MSG_SCENE_LOAD_FINISH, self.start_real_time, self)
+  self:bind_auto_mq(Const.MSG_ON_STOP_CURSE_COUNTDOWN, self.set_left_puase_time, self)
+  self:bind_auto_mq(Const.MSG_CURSE_UPDATE, self.update_right_show, self)
+  self:bind_auto_mq(Const.MSG_PRE_TP_ROOM, self.on_hide_ui, self)
+  self:bind_auto_mq(Const.MSG_TP_ROOM_FINISH, self.on_show_ui, self)
+  self:bind_auto_mq(Const.MSG_ON_SHOW_UI, self.on_show_fight_ui, self)
+  self:bind_auto_mq(Const.MSG_ON_HIDE_UI, self.on_hide_fight_ui, self)
+  self:hide_battle_ui()
+  self.v_uiobjects.CurseTips2:SetActive(false)
+  self.v_fight_time = 0
+  self.v_real_time = 0
+  self.v_start_add_time = 0
+  self.v_add_curse_val = 0
+  self.v_uiobjects.CurseCumTips:SetActive(false)
+  self.v_tips_show = false
+  if TowerMgr then
+    self.v_is_continue_tower = TowerMgr:check_continue_tower()
+  end
+  self.v_fight_ui = UIMgr:try_get_visible_ui("fight")
+end
+
+function ui:on_hide_fight_ui(msg)
+  local ui_name = msg.mm_obj
+  if "fight" == ui_name and TowerMgr and TowerMgr:get_fight_type() and TowerMgr:get_fight_type() == CommonDefine.CHALLENGE_TYPE.CURSE_CIRCLE then
+    self.v_uiobjects.CurseTips2:SetActive(false)
+  end
+end
+
+function ui:on_show_fight_ui(msg)
+  local ui_name = msg.mm_obj
+  if "fight" == ui_name and TowerMgr and TowerMgr:get_fight_type() and TowerMgr:get_fight_type() == CommonDefine.CHALLENGE_TYPE.CURSE_CIRCLE and not UIMgr:try_get_visible_ui("challenge_ring_plus") and not ChallengeRingPlusMgr:get_is_on_pre_tp_room() and not ChallengeRingPlusMgr:is_in_start_room() then
+    self.v_uiobjects.CurseTips2:SetActive(true)
+  end
+end
+
+function ui:on_show_ui(msg)
+  if not UIMgr:try_get_visible_ui("challenge_ring_plus") then
+    self.v_uiobjects.CurseTips2:SetActive(true)
+  end
+end
+
+function ui:on_hide_ui(msg)
+  self.v_uiobjects.CurseTips2:SetActive(false)
+end
+
+function ui:ui_on_update(delta_time)
+  self:_update_fight_time(delta_time)
+end
+
+function ui:start_real_time()
+  self.v_real_time = 0
+end
+
+function ui:set_data(msg)
+  self.v_now_value = ChallengeRingPlusMgr:get_curse_val() or 0
+  self.v_is_show = ChallengeRingPlusMgr:is_in_curse_fighting()
+  if ChallengeRingPlusMgr:is_in_start_room() then
+    return
+  end
+  if self.v_is_show or self.v_is_continue_tower then
+    CurseTime = ShareRes.create("activity.curse_corrosion_time", 1).CurseTime
+    local tower = TowerMgr:get_tower()
+    local ring_id = tower:curse_ring_id()
+    local card_index = ChallengeRingPlusMgr.v_cur_select_card_index
+    if not card_index then
+      return
+    end
+    local card_cfg = ChallengeRingPlusMgr:get_card_cfg_info(card_index)
+    if not card_cfg then
+      return
+    end
+    local curse_time_cfg = ShareRes.create("activity.curse_time", ring_id)
+    if not curse_time_cfg then
+      return
+    end
+    local curse_cfg = curse_time_cfg[card_cfg.Type]
+    self.v_curse_cfg = UtilTable.copy_table(curse_cfg)
+    self:deal_curse_cfg()
+    self.v_uiobjects.CurseTips2:SetActive(true)
+    self.v_uiobjects.Speed:SetActive(true)
+    self.v_speed_show = true
+    self.v_uiobjects.Progress:SetActive(true)
+    self.v_progress_show = true
+    self.v_max_curse_add = self.v_curse_cfg[#self.v_curse_cfg].AddCurseVal
+    self.v_is_first_add_max = true
+    self.v_has_it_been_shown = false
+    self.v_uiobjects.CurseCumTips:SetActive(false)
+    self.v_tips_show = false
+  end
+  self.v_fight_time = 0
+  self.v_cur_index = 0
+  self.v_add_curse_val = 0
+  self.v_start_add_time = 0
+  self.v_total_add_curse = 0
+  self.v_curse_is_end = false
+  local tower = TowerMgr:get_tower()
+  if tower then
+    local room = tower:get_room()
+    self.v_is_end = room and room:is_fight_end() or false
+  else
+    self.v_is_end = false
+  end
+  self.v_is_continue_tower = false
+  self:on_set_data()
+  self:_update_right_show()
+end
+
+function ui:update_right_show()
+  if not ChallengeRingPlusMgr:is_in_curse_fighting() then
+    self:_update_right_show()
+  end
+end
+
+function ui:_update_right_show()
+  local debuff_list = ChallengeRingPlusMgr:get_debuff()
+  local debuff_cnt = #debuff_list
+  local now_value = ChallengeRingPlusMgr:get_curse_val()
+  local max_value = ChallengeRingPlusMgr:get_curse_val_limit()
+  self.v_uicompents.ProFill_img.fillAmount = now_value / max_value
+  self.v_uicompents.CurseNow_txt.text = now_value
+  self.v_uicompents.CurseMax_txt.text = max_value
+  for index = 1, ChallengeRingPlusMgr.v_max_curse_num do
+    Util.get_child("Light", self.v_uiobjects["Curse" .. index]):SetActive(index <= debuff_cnt)
+  end
+end
+
+function ui:deal_curse_cfg()
+  local add_time = ChallengeRingPlusMgr:get_curse_delay_time()
+  local add_curse_value_ratio = ChallengeRingPlusMgr:get_per_interval_add_curse_ratio()
+  local curse_interval_ratio = ChallengeRingPlusMgr:get_curse_interval_ratio()
+  local curse_interval_value = ChallengeRingPlusMgr:get_curse_interval_value()
+  for index, cfg_info in ipairs(self.v_curse_cfg) do
+    if index > 1 then
+      self.v_curse_cfg[index].CurseTime = self.v_curse_cfg[index].CurseTime + add_time
+    end
+    self.v_curse_cfg[index].AddCurseVal = math.floor(self.v_curse_cfg[index].AddCurseVal * (RATIO + add_curse_value_ratio) / RATIO)
+  end
+  CurseTime = math.floor(CurseTime * (RATIO + curse_interval_ratio) / RATIO)
+  CurseTime = CurseTime + curse_interval_value
+end
+
+function ui:_update_fight_time(delta_time)
+  if not self.v_curse_cfg or self.v_is_end then
+    return
+  end
+  if SceneMgr:get_game_pause() then
+    return
+  end
+  if self.v_left_pause_time and self.v_left_pause_time > 0 then
+    self.v_left_pause_time = self.v_left_pause_time - delta_time
+  end
+  self.v_fight_time = self.v_fight_time + delta_time
+  self.v_real_time = self.v_real_time + delta_time
+  if self.v_fight_time > self.v_curse_cfg[#self.v_curse_cfg].CurseTime then
+    if self.v_is_first_add_max then
+      local last_curse_cfg = self.v_curse_cfg[#self.v_curse_cfg - 1]
+      self:add_curse_val(last_curse_cfg.AddCurseVal)
+    else
+      self:add_curse_val(self.v_max_curse_add)
+    end
+    if not self.v_curse_is_end then
+      self.v_uicompents.ProFill_img.color = Util.get_unity_color_by_hex(tonumber("ff3030", 16))
+      self.v_uicompents.CruseAddSpeed_txt.text = Util.format_str("每{1}秒+{2}", CurseTime, self.v_max_curse_add)
+      self.v_curse_is_end = true
+    end
+    return
+  end
+  for index, cfg_info in ipairs(self.v_curse_cfg) do
+    if self.v_fight_time < self.v_curse_cfg[index].CurseTime then
+      self:curse_show_left(index - 1, self.v_curse_cfg[index].CurseTime)
+      break
+    end
+  end
+end
+
+function ui:curse_show_left(index, time_node)
+  local last_curse_cfg = self.v_curse_cfg[index - 1]
+  local cur_curse_cfg = self.v_curse_cfg[index]
+  local next_curse_cfg = self.v_curse_cfg[index + 1]
+  if not next_curse_cfg then
+    return
+  end
+  if self.v_cur_index == index then
+    self:add_curse_val(cur_curse_cfg.AddCurseVal)
+  elseif last_curse_cfg then
+    self:add_curse_val(last_curse_cfg.AddCurseVal)
+  end
+  if self.v_cur_index ~= index then
+    self.v_uiobjects.Safe:SetActive(cur_curse_cfg.TimeUIType == TIMEUITYPE.LOW)
+    self.v_uiobjects.CruseAddSpeed:SetActive(cur_curse_cfg.TimeUIType ~= TIMEUITYPE.LOW)
+    self.v_safe_show = cur_curse_cfg.TimeUIType == TIMEUITYPE.LOW
+    self.v_curse_add_speed_show = cur_curse_cfg.TimeUIType ~= TIMEUITYPE.LOW
+    if cur_curse_cfg.TimeUIType == TIMEUITYPE.LOW then
+    elseif cur_curse_cfg.TimeUIType == TIMEUITYPE.MID then
+      self.v_start_add_time = cur_curse_cfg.CurseTime + CurseTime
+    elseif cur_curse_cfg.TimeUIType == TIMEUITYPE.HIGHT then
+    end
+    if not self.v_is_first_add_max and not self.v_has_it_been_shown then
+      self:on_curse_lv_change()
+      self.v_has_it_been_shown = true
+    else
+      self.v_is_first_add_max = false
+    end
+    self.v_cur_index = index
+    self.v_uicompents.CruseAddSpeed_txt.text = Util.format_str("每{1}秒+{2}", CurseTime, cur_curse_cfg.AddCurseVal)
+  end
+  local max_time = time_node - self.v_curse_cfg[index].CurseTime
+  local left_time = math.ceil(time_node - self.v_fight_time)
+  if cur_curse_cfg.TimeUIType == TIMEUITYPE.LOW then
+    self.v_uicompents.Safe_txt.text = left_time
+  end
+end
+
+function ui:add_curse_val(add_val)
+  if self.v_fight_time > self.v_start_add_time then
+    self.v_add_curse_val = self.v_add_curse_val + add_val
+    if ChallengeRingPlusMgr:is_achieve_total_limit() then
+      return
+    end
+    if add_val > 0 then
+      self:on_curse_add(add_val)
+      self.v_total_add_curse = self.v_total_add_curse + add_val
+    end
+    self.v_start_add_time = self.v_start_add_time + CurseTime
+    self.v_now_value = ChallengeRingPlusMgr:get_curse_val() + self.v_add_curse_val
+    self.v_uicompents.ProFill_img.fillAmount = self.v_now_value / ChallengeRingPlusMgr:get_curse_val_limit()
+    self.v_uicompents.CurseNow_txt.text = self.v_now_value
+  end
+end
+
+function ui:fight_end()
+  self:on_fight_end()
+  if 0 == self.v_fight_time then
+    return
+  end
+  self.v_is_end = true
+  SceneMgr:c2gs_call_scene("report_fight_time", self.v_real_time)
+  ChallengeRingPlusMgr:add_fight_time(self.v_real_time)
+  local curse_info = {
+    curse_time = math.floor(self.v_fight_time),
+    add_curse_val = self.v_add_curse_val
+  }
+  ChallengeRingPlusMgr:req_report_curse_info(curse_info)
+end
+
+function ui:set_left_puase_time(msg)
+  local time = msg.mm_x
+  if not self.v_left_pause_time then
+    self.v_left_pause_time = time
+  end
+  if time > self.v_left_pause_time then
+    self.v_left_pause_time = time
+  end
+end
+
+function ui:hide_battle_ui(is_show_battle)
+  local trigger_show, tips_show, speed_show, progress_show, curse_add_show, curse_add_speed_show, safe_show
+  if nil ~= is_show_battle then
+    trigger_show = is_show_battle
+    tips_show = is_show_battle
+    speed_show = is_show_battle
+    progress_show = is_show_battle
+    curse_add_show = is_show_battle
+    curse_add_speed_show = is_show_battle
+    safe_show = is_show_battle
+  else
+    trigger_show = self.v_trigger_show or false
+    tips_show = self.v_tips_show or false
+    speed_show = self.v_speed_show or false
+    progress_show = self.v_progress_show or false
+    curse_add_show = self.v_curse_add_show or false
+    curse_add_speed_show = self.v_curse_add_speed_show or false
+    safe_show = self.v_safe_show or false
+  end
+  self.v_uiobjects.Trigger:SetActive(trigger_show)
+  self.v_uiobjects.CurseCumTips:SetActive(tips_show)
+  self.v_uiobjects.Speed:SetActive(speed_show)
+  self.v_uiobjects.CruseAddSpeed:SetActive(curse_add_speed_show)
+  self.v_uiobjects.Progress:SetActive(progress_show)
+  self.v_uiobjects.CurseAdd:SetActive(curse_add_show)
+  self.v_uiobjects.Safe:SetActive(safe_show)
+end
+
+function ui:hide_or_show_left_ui(is_show, is_show_battle)
+  self:hide_battle_ui(is_show_battle)
+  self.v_uiobjects.CurseTips2:SetActive(is_show)
+end
+
+function ui:create_sequence(key)
+  self.v_sequences[key] = Util.create_sequence()
+  return self.v_sequences[key]
+end
+
+function ui:on_sell_add_curse_orn()
+  local orn_change_value = ChallengeRingPlusMgr:get_sell_orn_curse_value()
+  local now_value = math.max(0, self.v_now_value + orn_change_value)
+  self.v_uicompents.ProFill_img.fillAmount = now_value / ChallengeRingPlusMgr:get_curse_val_limit()
+  self.v_uicompents.CurseNow_txt.text = now_value
+end
+
+function ui:on_set_data()
+  local key = "set_data"
+  local icon = self.v_uiobjects.Icon
+  self:kill_dotween(key)
+  self.v_uiobjects.FlyImg.transform.localPosition = UnityVector3.zero
+  self.v_uiobjects.FlyImg.transform.localScale = UnityVector3.one
+  self.v_uiobjects.FlyImg:SetActive(true)
+  icon:SetActive(false)
+  local Ease = CS.DG.Tweening.Ease
+  local sequence = self:create_sequence(key)
+  sequence:AppendInterval(1)
+  sequence:Join(self.v_uiobjects.FlyImg.transform:DOMove(icon.transform.position, 1):SetEase(Ease.InQuad))
+  local result = icon.transform.sizeDelta / self.v_uiobjects.FlyImg.transform.sizeDelta
+  local v3 = UnityVector3(result.x, result.y, 0)
+  sequence:Join(self.v_uiobjects.FlyImg.transform:DOScale(v3, 1):SetEase(Ease.InQuad))
+  sequence:OnComplete(function()
+    self.v_uiobjects.FlyImg:SetActive(false)
+    icon:SetActive(true)
+  end)
+end
+
+function ui:on_curse_add(add_val)
+  local key = "curse_add"
+  self:kill_dotween(key)
+  self.v_uiobjects.CurseAdd.transform.localPosition = self.v_add_txt_init_pos
+  local sequence = self:create_sequence(key)
+  self.v_uicompents.CurseAdd_txt.text = Util.format_str("+{1}", add_val)
+  self.v_uiobjects.CurseAdd:SetActive(true)
+  self.v_curse_add_show = true
+  sequence:Append(self.v_uicompents.ProFill_img:DOColor(color.red, 0.15))
+  sequence:Join(self.v_uicompents.Icon_img:DOColor(color.red, 0.15))
+  self.v_uiobjects.CurseAdd.transform:DOLocalMoveY(40, 0.6)
+  sequence:Append(self.v_uicompents.ProFill_img:DOColor(color.white, 0.15))
+  sequence:Join(self.v_uicompents.Icon_img:DOColor(color.white, 0.15))
+  sequence:SetLoops(2)
+  sequence:OnComplete(function()
+    self.v_uiobjects.CurseAdd:SetActive(false)
+    self.v_curse_add_show = false
+  end)
+end
+
+function ui:on_curse_lv_change()
+  local key = "curse_lv_change"
+  self:kill_dotween(key)
+  self.v_trigger_show = true
+  self.v_uiobjects.Trigger:SetActive(self.v_trigger_show)
+  local sequence = self:create_sequence(key)
+  sequence:Append(self.v_trigger_cg:DOFade(1, 0.5))
+  sequence:Join(self.v_uicompents.triggerimg_img:DOColor(color.red, 0.5))
+  sequence:Append(self.v_trigger_cg:DOFade(0, 0.5))
+  sequence:OnComplete(function()
+    self.v_uiobjects.Trigger:SetActive(false)
+    self.v_trigger_show = false
+    self.v_uicompents.triggerimg_img.color = color.white
+  end)
+end
+
+function ui:on_fight_end()
+  if self.v_total_add_curse and 0 ~= self.v_total_add_curse and ChallengeRingPlusMgr:is_in_curse_fighting() then
+    self.v_uicompents.CurseCumDesc_txt.text = Util.format_str("超时累计+{1}点迷失值", self.v_total_add_curse)
+    self.v_uiobjects.CurseCumTips:SetActive(true)
+    self.v_tips_show = true
+    self.v_cursecumtips_cg:DOFade(1, 0.5)
+  end
+end
+
+function ui:kill_dotween(key)
+  if key and self.v_sequences and self.v_sequences[key] then
+    self.v_sequences[key]:Kill(false)
+    self.v_sequences[key] = nil
+  elseif not key then
+    for key, sequence in pairs(self.v_sequences) do
+      sequence:Kill(false)
+    end
+    self.v_sequence = {}
+  end
+end
+
+function ui:ui_on_hide()
+  self.v_curse_is_end = false
+  self.v_is_first_add_max = true
+  self.v_has_it_been_shown = false
+  self.v_uiobjects.CurseCumTips:SetActive(false)
+  self.v_tips_show = false
+  self:kill_dotween()
+end
+
+function ui:ui_on_destroy()
+  self.v_curse_text_tween:DOKill()
+  self.v_curse_text_tween = nil
+end
+
+return ui

@@ -1,0 +1,67 @@
+return {
+  [1001] = {
+    BgName = "UIChapter/gecao_bg_enter_gq",
+    EnName = "XXX",
+    EpisodeId = 31011,
+    Id = 1001,
+    Level = 1,
+    LevelName = "简单",
+    Name = "巴别图书馆",
+    RewardGroup = 141102,
+    SuggestLevel = 1000,
+    TaskGroupId = 3001,
+    TitleBg = "UIChapter/gecao_bg_gqct"
+  },
+  [1002] = {
+    BgName = "UIChapter/gecao_bg_enter_gq",
+    EnName = "XXX",
+    EpisodeId = 31012,
+    Id = 1002,
+    Level = 2,
+    LevelName = "普通",
+    Name = "星",
+    RewardGroup = 141103,
+    SuggestLevel = 2000,
+    TaskGroupId = 3002,
+    TitleBg = "UIChapter/gecao_bg_gqct"
+  },
+  [1003] = {
+    BgName = "UIChapter/gecao_bg_enter_gq",
+    EnName = "XXX",
+    EpisodeId = 31013,
+    Id = 1003,
+    Level = 3,
+    LevelName = "困难",
+    Name = "神的进制",
+    RewardGroup = 141104,
+    SuggestLevel = 3000,
+    TaskGroupId = 3001,
+    TitleBg = "UIChapter/gecao_bg_gqct"
+  },
+  [1004] = {
+    BgName = "UIChapter/gecao_bg_enter_gq",
+    EnName = "XXX",
+    EpisodeId = 31041,
+    Id = 1004,
+    Level = 4,
+    LevelName = "地狱",
+    Name = "永夏无实",
+    RewardGroup = 141105,
+    SuggestLevel = 4000,
+    TaskGroupId = 3001,
+    TitleBg = "UIChapter/gecao_bg_gqct"
+  },
+  [1005] = {
+    BgName = "UIChapter/gecao_bg_enter_gq",
+    EnName = "XXX",
+    EpisodeId = 31042,
+    Id = 1005,
+    Level = 5,
+    LevelName = "噩梦",
+    Name = "XXXX",
+    RewardGroup = 141106,
+    SuggestLevel = 4000,
+    TaskGroupId = 3001,
+    TitleBg = "UIChapter/gecao_bg_gqct"
+  }
+}

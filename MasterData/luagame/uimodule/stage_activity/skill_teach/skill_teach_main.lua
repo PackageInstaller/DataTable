@@ -1,0 +1,240 @@
+local Base = require("ui.uibase")
+local commonDef = require("cs_share.common_define")
+local Vec2 = require("base.vec2")
+local Act_ID = commonDef.ACTY_TYPE.BUDDY_TEACH
+local M = Util.create_child_mt(Base)
+local CLICK_TYPE = {CLICK = 1, LONG_CLICK = 2}
+local SKILL_STATE = {SUCCESS = 1, FAILURE = 2}
+local ORIGIN_SIZE_X = 109
+local TARGET_SIZE = Vec2.New(300, 109)
+
+function M:ui_finish_load()
+  self.v_template_key = {
+    skill_item = "skill_item" .. self:ui_get_name()
+  }
+  self:register_exist_auto_template(self.v_template_key.skill_item, self.v_uiobjects.SkillLinkTem, self.v_uiobjects.SkillLink)
+  self.v_complete_group = self:get_canvas_group(nil, self.v_uiobjects.Complete)
+end
+
+function M:ui_on_show()
+  self:_reset_ui()
+  self:_regist_client_event()
+end
+
+function M:ui_on_hide()
+  if self.v_click_sq then
+    self.v_click_sq:Kill(false)
+    self.v_click_sq = nil
+  end
+  if self.v_success_sq then
+    self.v_success_sq:Kill(false)
+    self.v_success_sq = nil
+  end
+  if self.v_result_sq_list then
+    for _, v in pairs(self.v_result_sq_list) do
+      if v then
+        v:Kill(false)
+      end
+    end
+  end
+end
+
+function M:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_START_HERO_SKILL_TEACH, self._response_start_teaching_event, self)
+  self:bind_auto_mq(Const.MSG_ON_CHANGE_SKILL_STATE, self._response_start_skill_event, self)
+  self:bind_auto_mq(Const.MSG_ON_START_LONG_CLICK_SKILL, self._response_start_long_click_event, self)
+  self:bind_auto_mq(Const.MSG_ON_RESTART_HERO_SKILL_TEACH, self._response_restart_teaching_event, self)
+  self:bind_auto_mq(Const.MSG_ON_SHOW_SKILL_TIPS, self._response_show_tips, self)
+  self:bind_auto_mq(Const.MSG_ON_SHOW_UI, self.show_message, self)
+  self:bind_auto_mq(Const.MSG_ON_HIDE_UI, self.hide_message, self)
+end
+
+function M:_response_start_teaching_event(msg)
+  if self.v_success_sq then
+    self.v_success_sq:Kill(false)
+    self.v_success_sq = nil
+    self:_reset_ui()
+  end
+  self.v_uiobjects.SkillLink:SetActive(true)
+  self.v_cur_step = 1
+  self.v_cur_skill_id = msg.mm_x
+  self:_refresh_skill_list(msg.mm_x)
+end
+
+function M:_response_start_skill_event(msg)
+  if not self.v_cur_skill_id then
+    return
+  end
+  local step_id = msg.mm_x
+  if step_id < self.v_cur_step then
+    Log.Error("当前技能步骤self.v_cur_step=", self.v_cur_step, "技能点击步骤为", step_id)
+    return
+  end
+  local state = msg.mm_y == true and SKILL_STATE.SUCCESS or SKILL_STATE.FAILURE
+  self.v_result_sq_list[step_id] = self:_set_skill_data(self.v_skills[step_id].item, step_id, state)
+  local skill_cfg = self.v_skill_cfg[self.v_cur_step]
+  if state == SKILL_STATE.FAILURE and skill_cfg and skill_cfg.Skill_Step == CLICK_TYPE.CLICK and self.v_click_sq then
+    self.v_click_sq:Kill(false)
+    self.v_click_sq = nil
+  end
+  if self.v_cur_step == #self.v_skills and state == SKILL_STATE.SUCCESS then
+    self:_show_result()
+    return
+  end
+  self.v_cur_step = step_id + 1
+  self:_set_skill_indicator()
+end
+
+function M:_response_start_long_click_event(msg)
+  if not self.v_cur_skill_id then
+    return
+  end
+  local cfg = self.v_skill_cfg[self.v_cur_step]
+  if not cfg or cfg.Step_Type == CLICK_TYPE.CLICK then
+    return
+  end
+  if self.v_click_sq then
+    self.v_click_sq:Kill(false)
+    self.v_click_sq = nil
+  end
+  local fillObj = self.v_skills[self.v_cur_step].fill
+  fillObj:SetActive(true)
+  fillObj:SetSizeDeltaWidthA(ORIGIN_SIZE_X)
+  self.v_click_sq = Util.create_sequence()
+  self.v_click_sq:Append(self.v_skills[self.v_cur_step].fill:DOSizeDelta(TARGET_SIZE, cfg.Click_Time))
+end
+
+function M:_response_restart_teaching_event(msg)
+  if self.v_result_sq_list then
+    for _, v in pairs(self.v_result_sq_list) do
+      if v then
+        v:Kill(false)
+      end
+    end
+  end
+  self.v_result_sq_list = {}
+  if self.v_cur_skill_id == msg.mm_x and TowerMgr then
+    TowerMgr:add_teaching_fail_num(self.v_cur_skill_id)
+  end
+  self.v_cur_step = 1
+  self.v_cur_skill_id = msg.mm_x
+  self:_refresh_skill_list(msg.mm_x)
+end
+
+function M:_response_show_tips(msg)
+  if UIMgr:try_get_visible_ui("skill_teach_failure") then
+    return
+  end
+  UIMgr:get_ui("skill_teach_tips"):ui_show(msg.mm_x)
+end
+
+function M:_reset_ui()
+  self.v_uiobjects.SkillLink:SetActive(false)
+  self.v_uiobjects.Complete:SetActive(false)
+  self.v_skills = {}
+  self.v_cur_skill_id = nil
+  if self.v_click_sq then
+    self.v_click_sq:Kill(false)
+    self.v_click_sq = nil
+  end
+  if self.v_success_sq then
+    self.v_success_sq:Kill(false)
+    self.v_success_sq = nil
+  end
+  if self.v_result_sq_list then
+    for _, v in pairs(self.v_result_sq_list) do
+      if v then
+        v:Kill(false)
+      end
+    end
+  end
+  self.v_result_sq_list = {}
+end
+
+function M:show_message(msg)
+  if msg.mm_obj ~= "fight" then
+    return
+  end
+  local canvas = self:get_canvas()
+  canvas.planeDistance = 100
+end
+
+function M:hide_message(msg)
+  if msg.mm_obj ~= "fight" then
+    return
+  end
+  local canvas = self:get_canvas()
+  canvas.planeDistance = 0
+end
+
+function M:_refresh_skill_list(skill_id)
+  local cfg = ShareRes.create("activity.buddy_skill_info", skill_id)
+  if not cfg then
+    Log.Error("read buddy_skill_info failed! skill_id", skill_id)
+    return
+  end
+  self:give_back_auto_cache(self.v_template_key.skill_item, false)
+  self.v_skill_cfg = cfg
+  for i, v in ipairs(cfg) do
+    local item = self:get_auto_cache(self.v_template_key.skill_item)
+    self.v_skills[i] = self:_set_skill_data(item, i)
+  end
+end
+
+function M:_set_skill_data(item, idx, suc_state)
+  local data = self.v_skill_cfg[idx]
+  local icon = self:get_image("Skill/Icon", item)
+  ResMgr:load_set_icon(icon, "Skill/" .. data.Icon)
+  local name = self:get_text("Skill/SkillName", item)
+  name.text = data.Notice
+  local bar = self:get_child_gameobj("Bar", item)
+  bar:SetActive(data.Step_Type == CLICK_TYPE.LONG_CLICK)
+  local click_type = self:get_text("Skill/ClickTypeDesc", item)
+  click_type.text = data.Step_Type == CLICK_TYPE.LONG_CLICK and Util.format_str("长按") or Util.format_str("单击")
+  local fill = self:get_rect_transform("Bar/Fill", item)
+  fill:SetActive(false)
+  local sq
+  local successObj = self:get_child_gameobj("Skill/Ture", item)
+  successObj:SetActive(nil ~= suc_state and suc_state == SKILL_STATE.SUCCESS)
+  local successImg = self:get_child_gameobj("Image", successObj)
+  successImg:SetActive(false)
+  local failureObj = self:get_child_gameobj("Skill/False", item)
+  failureObj:SetActive(nil ~= suc_state and suc_state == SKILL_STATE.FAILURE)
+  local failureImg = self:get_child_gameobj("Image", failureObj)
+  failureImg:SetActive(false)
+  local effect = self:get_child_gameobj("Skill/Effect", item)
+  effect:SetActive(self.v_cur_step == idx)
+  if not suc_state then
+    return {
+      item = item,
+      fill = fill,
+      effect = effect
+    }
+  else
+    return sq
+  end
+end
+
+function M:_set_skill_indicator()
+  for k, v in ipairs(self.v_skills) do
+    v.effect:SetActive(self.v_cur_step == k)
+  end
+end
+
+function M:_show_result()
+  if self.v_cur_skill_id and TowerMgr then
+    TowerMgr:add_teaching_suc_state(self.v_cur_skill_id)
+  end
+  self.v_success_sq = Util.create_sequence()
+  self.v_success_sq:AppendInterval(0.5)
+  self.v_success_sq:AppendCallback(function()
+    self.v_uiobjects.Complete:SetActive(true)
+    self.v_uiobjects.SkillLink:SetActive(false)
+  end)
+  self.v_success_sq:AppendInterval(2)
+  self.v_success_sq:AppendCallback(function()
+    self:_reset_ui()
+  end)
+end
+
+return M

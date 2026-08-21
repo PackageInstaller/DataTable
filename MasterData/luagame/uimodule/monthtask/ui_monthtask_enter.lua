@@ -1,0 +1,73 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local MONTHTASK_ENTER_AWARD_ITEM_KEY = "MONTHTASK_ENTER_AWARD_ITEM_KEY"
+
+function ui:ui_finish_load()
+  self:set_button("BtnEnter", function()
+    local ui_monthtask = UIMgr:get_ui("ui_monthtask")
+    if RedPointMgr:get_redpoint_enable_by_id(RedEnum.PASSPORT_TASK) then
+      ui_monthtask:ui_show(nil, 2)
+    else
+      ui_monthtask:ui_show()
+    end
+    self:ui_destroy()
+  end)
+  self:set_button("BtnMain", function()
+    self:ui_destroy()
+  end)
+  self:set_button("BtnRet1", function()
+    self:ui_destroy()
+  end)
+  self:register_exist_auto_template(MONTHTASK_ENTER_AWARD_ITEM_KEY, self.v_uiobjects.ItemTem, self.v_uiobjects.FreeContent)
+end
+
+function ui:ui_on_show()
+  local passport_id = PassPortMgr:get_passport_data().id
+  local passport_cfg = ShareRes.get_battle_passport_cfg(passport_id)
+  self.v_uicompents.Tips1_txt.text = passport_cfg.Tips[1]
+  self.v_uicompents.Tips2_txt.text = passport_cfg.Tips[2]
+  local rewards_1 = ShareRes.get_award_item_data(passport_cfg.ShowAwardGroupId[1])
+  local rewards_2 = ShareRes.get_award_item_data(passport_cfg.ShowAwardGroupId[2])
+  self:give_back_auto_cache(MONTHTASK_ENTER_AWARD_ITEM_KEY)
+  for _, item_cfg in ipairs(rewards_1) do
+    local item = self:get_auto_cache(MONTHTASK_ENTER_AWARD_ITEM_KEY)
+    self:set_data(item, item_cfg[1], item_cfg[2])
+  end
+  for _, item_cfg in ipairs(rewards_2) do
+    local item = self:get_auto_cache(MONTHTASK_ENTER_AWARD_ITEM_KEY)
+    item.transform:SetParent(self.v_uiobjects.PayContent.transform)
+    self:set_data(item, item_cfg[1], item_cfg[2])
+  end
+  local end_time = passport_cfg.EndTime and Date.get_time_stamp_by_scheme_id(passport_cfg.EndTime) or 0
+  local last_time = end_time - Date.server_time()
+  local time_string = Date.get_time_formate_2(last_time)
+  self.v_uicompents.TimeNum_txt.text = time_string
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(item, item_id, num)
+  local item_quality = Util.get_image("ItemQuality_", item)
+  local item_icon = Util.get_image("ItemIcon_", item)
+  local item_num = Util.get_text("ItemAmount_/Bg/ItemNum_", item)
+  local item_icon_path = ShareRes.get_item_icon_path(item_id)
+  local item_quality_path = ShareRes.get_item_quality_path(item_id)
+  local btn = Util.get_button(nil, item)
+  ResMgr:load_set_icon(item_icon, item_icon_path)
+  ResMgr:load_set_icon(item_quality, item_quality_path)
+  item_num.text = num
+  self:set_button_listener(btn, function()
+    UIMgr:get_ui("itemTip"):ui_show({
+      item_id = item_id,
+      jump_cb = function()
+        self:ui_hide()
+      end
+    })
+  end)
+end
+
+return ui

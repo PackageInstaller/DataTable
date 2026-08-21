@@ -1,0 +1,48 @@
+return {
+  {
+    Condition = {},
+    Id = 1,
+    IfOn = false,
+    MailId = 4,
+    StartTime = 20001
+  },
+  {
+    Condition = {},
+    Id = 2,
+    IfOn = false,
+    MailId = 110011,
+    StartTime = 20002
+  },
+  {
+    Condition = {15010},
+    Id = 3,
+    IfOn = false,
+    MailId = 110012,
+    StartTime = 20003
+  },
+  {
+    Condition = {},
+    Id = 4,
+    IfOn = false,
+    MailId = 100000,
+    StartTime = 20004
+  },
+  {
+    Condition = {999},
+    Id = 5,
+    IfOn = true,
+    MailId = 200001
+  },
+  {
+    Condition = {999},
+    Id = 6,
+    IfOn = true,
+    MailId = 200002
+  },
+  {
+    Condition = {999},
+    Id = 7,
+    IfOn = true,
+    MailId = 200003
+  }
+}

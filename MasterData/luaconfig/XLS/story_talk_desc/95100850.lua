@@ -1,0 +1,2 @@
+local empty = {}
+return {StoryId = 95100850, TalkDatas = empty}

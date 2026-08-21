@@ -1,0 +1,199 @@
+local Util = require("utils.util")
+local M = Util.create_class()
+local LOCK_TIME = 0.2
+local BATTLE_GROUP_MAP = {
+  [Config.UI_QUEUE_GROUP.Fight_Tips] = true
+}
+
+function M:_init()
+  self.v_msg_handles = {}
+  self.v_queue = {}
+  self.v_count_list = {}
+  for _, v in pairs(Config.UI_QUEUE_GROUP) do
+    table.insert(self.v_queue, {})
+    table.insert(self.v_count_list, 0)
+  end
+  self.v_total_count = 0
+  self.v_battle_total_count = 0
+  self.v_open_lock = false
+  self.v_all_view_is_block = false
+  self:sys_mq_bind(Const.MSG_ON_HIDE_UI, self.on_ui_hide_event, self)
+  self:sys_mq_bind(Const.MSG_ON_SHOW_UI, self.on_ui_show_event, self)
+  self:sys_mq_bind(Const.MSG_LOADING_HIDE, self.loading_hide, self)
+end
+
+function M:sys_mq_bind(msg_type, callback, cbdata)
+  local msg_handle = MsgGame:mq_bind(msg_type, callback, cbdata)
+  self.v_msg_handles[msg_handle] = msg_type
+  return msg_handle
+end
+
+function M:on_ui_show_event(msg)
+end
+
+function M:push_ui(group, no_repeat, ui_name, ...)
+  local cfg = Global.uiconfig.ui[ui_name]
+  if cfg.sort_order ~= Config.UI_SORT_ORDER.Tip and cfg.sort_order ~= Config.UI_SORT_ORDER.SeniorTip and UIMgr:_get_is_full_screen_ui(cfg) and "uinotice_tips" ~= ui_name then
+    Log.Error("只能添加tips类型界面，或者非全屏界面！", ui_name)
+    return
+  end
+  local total_count = self:get_cur_scene_queue_total_count()
+  if not group and total_count > 0 then
+    Log.Error("需要指定分组")
+    return
+  end
+  if 0 == total_count then
+    self.v_lock_time = LOCK_TIME
+  end
+  group = group or 3
+  local queue = self.v_queue[group]
+  if no_repeat then
+    for _, v in ipairs(queue) do
+      if v.ui_name == ui_name then
+        return
+      end
+    end
+  end
+  table.insert(queue, {
+    ui_name = ui_name,
+    ui_param = table.pack(...)
+  })
+  self.v_count_list[group] = self.v_count_list[group] + 1
+  self:_add_total_count(group, 1)
+end
+
+function M:_get_ui()
+  local group = 0
+  for i, v in ipairs(self.v_count_list) do
+    if v > 0 and (SceneMgr:check_main_scene() or BATTLE_GROUP_MAP[i]) then
+      group = i
+      break
+    end
+  end
+  local ui_info = self.v_queue[group][1]
+  table.remove(self.v_queue[group], 1)
+  self:_add_total_count(group, -1)
+  self.v_count_list[group] = self.v_count_list[group] - 1
+  UIMgr:get_ui(ui_info.ui_name):ui_show(table.unpack(ui_info.ui_param))
+  self.v_showing_ui = ui_info.ui_name
+end
+
+function M:_check_showing_ui()
+  if self.v_showing_ui then
+    local showing_ui = UIMgr:try_get_ui(self.v_showing_ui)
+    if not showing_ui or showing_ui:is_destroy() or showing_ui:has_inited() and not showing_ui:visible() then
+      self:clear_showing_ui()
+      return false
+    end
+    return true
+  end
+  return false
+end
+
+function M:update(delta_time)
+  local total_count = self:get_cur_scene_queue_total_count()
+  if 0 == total_count then
+    return
+  end
+  if self:_check_showing_ui() then
+    return
+  end
+  if self.v_all_view_is_block then
+    return
+  end
+  if self.v_open_lock then
+    if self.v_lock_time == math.huge then
+      return
+    end
+    if self.v_lock_time >= 0 then
+      self.v_lock_time = self.v_lock_time - delta_time
+    else
+      self.v_open_lock = false
+    end
+    return
+  end
+  self:_get_ui()
+end
+
+function M:clear_showing_ui()
+  self.v_showing_ui = nil
+  if self:get_cur_scene_queue_total_count() <= 0 then
+    MsgGame:mq_publish2(Const.MSG_ON_UIQUEUE_EMPTY)
+  end
+end
+
+function M:on_ui_hide_event(msg)
+  if not self.v_showing_ui then
+    return
+  end
+  if msg.mm_obj == self.v_showing_ui then
+    self:clear_showing_ui()
+  end
+end
+
+function M:set_all_block_state(param)
+  self.v_all_view_is_block = param
+end
+
+function M:loading_hide()
+  if SceneMgr:check_main_scene() then
+    self.v_all_view_is_block = false
+    for group in pairs(BATTLE_GROUP_MAP) do
+      self:clear_target_group_queue(group)
+    end
+    if self.v_open_lock and self.v_lock_time == math.huge then
+      self:set_open_lock_state(false, 0)
+    end
+  end
+  self:refresh_tower_enter_time()
+end
+
+function M:refresh_tower_enter_time()
+  if not TowerMgr then
+    return
+  end
+  local tower = TowerMgr:get_tower()
+  if not tower then
+    return
+  end
+  tower:refresh_enter_time()
+end
+
+function M:set_open_lock_state(param, lock_time)
+  self.v_open_lock = param
+  if lock_time then
+    self.v_lock_time = lock_time
+  end
+end
+
+function M:get_cur_scene_queue_total_count()
+  return SceneMgr:check_main_scene() and self.v_total_count or self.v_battle_total_count
+end
+
+function M:_add_total_count(group, count)
+  if BATTLE_GROUP_MAP[group] then
+    self.v_battle_total_count = self.v_battle_total_count + count
+  else
+    self.v_total_count = self.v_total_count + count
+  end
+end
+
+function M:clear_target_group_queue(group)
+  if self.v_queue[group] then
+    UtilTable.clear_map(self.v_queue[group])
+  end
+  if self.v_count_list[group] then
+    self:_add_total_count(group, -self.v_count_list[group])
+    self.v_count_list[group] = 0
+  end
+end
+
+function M:check_cur_scene_queue_is_empty()
+  return self:get_cur_scene_queue_total_count() <= 0 and not self.v_showing_ui
+end
+
+function M:get_showing_ui_name()
+  return self.v_showing_ui
+end
+
+return M

@@ -1,0 +1,347 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local TASK_STATE = {
+  NOT_RECEIVE = 0,
+  CAN_RECEIVE = 1,
+  RECEIVE = 2,
+  COMPLETE = 3,
+  GET_REWARD = 4
+}
+local GOAL_STATE = {
+  NOT = 0,
+  CAN = 1,
+  HAS = 2
+}
+local COLOR_DIME = tonumber("8c8473", 16)
+local COLOR_LIGHT = tonumber("fff0d5", 16)
+local DOT_POS_Y = 1
+
+function ui:ui_finish_load()
+  self.template_key = {
+    page_tog = string.format("%s_%s", "page_tog", self.v_object.name),
+    reward_tog = string.format("%s_%s", "reward_tog", self.v_object.name),
+    dot_item = string.format("%s_%s", "dot_item", self.v_object.name)
+  }
+  self.v_light_color = Util.get_unity_color_by_hex(COLOR_LIGHT)
+  self.v_dime_color = Util.get_unity_color_by_hex(COLOR_DIME)
+  self.v_toggle_list = {}
+  self.v_tog_id_list = {}
+  self.v_task_group_rect = self:get_rect_transform(nil, self.v_uiobjects.TaskGroupList)
+  self:register_exist_auto_template(self.template_key.page_tog, self.v_uiobjects.TaskGroupTem, self.v_uiobjects.TaskGroupList)
+  self.v_task_list = {}
+  self.v_task_id_list = {}
+  self:register_exist_auto_template(self.template_key.reward_tog, self.v_uiobjects.TaskTem, self.v_uiobjects.Content)
+  self.v_task_cfg = ShareRes.create("newbie.newbie_task_group")
+  table.sort(self.v_task_cfg, function(a, b)
+    return a.Priority > b.Priority
+  end)
+  self.v_slider = self:get_slider(nil, self.v_uiobjects.TaskProgress)
+  self.v_item_obj_list = {}
+  self.v_task_node_list = {}
+  self:register_exist_auto_template(self.template_key.dot_item, self.v_uiobjects.DotItem, self.v_uiobjects.TaskDotList)
+  self.v_dotlist_rect = self:get_rect_transform(nil, self.v_uiobjects.TaskDotList)
+  self.v_total_progress = self:get_text(nil, self.v_uiobjects.TaskFinishNum)
+  self.v_first_dot = self.v_uiobjects.DotOn
+  self.v_novice_days = ShareRes.get_comm_value("NewbieSignInPeriod")
+end
+
+function ui:ui_on_show()
+  self:_refresh_toggle_page()
+  local default_idx = self:_get_default_idx()
+  if self.v_toggle_list[default_idx] then
+    self.v_toggle_list[default_idx].isOn = true
+    self:_on_click_tog_page(default_idx, true)
+  end
+  self:_refresh_task_goal()
+  self:_regist_client_event()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_TASK_UPDATE, self.response_task_update_event, self)
+  self:bind_auto_mq(Const.MSG_ON_TASK_GROUP_UPDATE, self.response_task_group_update_event, self)
+  self:bind_auto_mq(Const.MSG_NOVICE_INFO_UPDATE, self._refresh_task_goal, self)
+end
+
+function ui:response_task_update_event()
+  local default_idx = self.v_cur_idx
+  self.v_cur_idx = 0
+  self:_refresh_toggle_page()
+  if #self.v_toggle_list > 0 then
+    self.v_toggle_list[default_idx].isOn = true
+    self:_on_click_tog_page(default_idx, true)
+  end
+end
+
+function ui:response_task_group_update_event()
+  local default_idx = self.v_cur_idx
+  self.v_cur_idx = 0
+  self:_refresh_toggle_page()
+  if #self.v_toggle_list > 0 then
+    self.v_toggle_list[default_idx].isOn = true
+    self:_on_click_tog_page(default_idx, true)
+  end
+end
+
+function ui:ui_on_hide()
+  self.v_cur_idx = 0
+  for k, v in pairs(self.v_tog_id_list) do
+    RedPointMgr:unbind_redpoint_by_id(self, v, RedEnum.NOVICE_DAILY_TASK)
+  end
+  for k, v in pairs(self.v_task_id_list) do
+    RedPointMgr:unbind_redpoint_by_id(self, v[1], v[2])
+  end
+  self.v_item_obj_list = {}
+  self.v_uiobjects.Content.transform:SetLocalPositionA(0, 0, 0)
+end
+
+function ui:_refresh_toggle_page()
+  self.v_toggle_list = {}
+  for k, v in pairs(self.v_tog_id_list) do
+    RedPointMgr:unbind_redpoint_by_id(self, v, RedEnum.NOVICE_DAILY_TASK)
+  end
+  self.v_tog_id_list = {}
+  self.v_task_group_rect:SetAnchoredPositionA(0, 0)
+  self:give_back_auto_cache(self.template_key.page_tog, false)
+  for i = 1, self.v_novice_days do
+    local task_cfg = self.v_task_cfg[i]
+    local item = self:get_auto_cache(self.template_key.page_tog)
+    self.v_toggle_list[i] = self:_set_task_page_list(item, i, task_cfg)
+  end
+end
+
+function ui:_set_task_page_list(item, idx, data)
+  local name = self:get_text("TaskGroupName", item)
+  name.text = data.FourPieceMagic
+  local lock = self:get_child_gameobj("Lock", item)
+  local notice_str
+  local is_lock = TaskMgr:get_task_group(data.TaskGroupId) == nil
+  local task_group = ShareRes.create("condition.task_group", data.TaskGroupId)
+  if is_lock then
+    local is_condition = true
+    if task_group.PreTaskGroupId then
+      local complete = TaskMgr:get_task_group_state(task_group.PreTaskGroupId) >= TASK_STATE.RECEIVE
+      if not complete then
+        notice_str = data.Name
+        is_condition = false
+      end
+    end
+    if is_condition and data.Condition then
+      local condition = ShareRes.create("condition.condition", data.Condition)
+      notice_str = condition.Desc
+    end
+  end
+  lock:SetActive(is_lock)
+  local child_list = ShareRes.get_task_group(self.v_task_cfg[idx].TaskGroupId)
+  local finish = true
+  for _, v in pairs(child_list) do
+    if TaskMgr:get_task_state(v.Id) < TASK_STATE.GET_REWARD then
+      finish = false
+      break
+    end
+  end
+  local canvas_group = self:get_canvas_group(nil, item)
+  canvas_group.alpha = finish and 0.8 or 1
+  local checkBg = self:get_child_gameobj("Checkmark", item)
+  local tog = self:get_toggle(nil, item)
+  self:set_toggle_listener(tog, function(isOn)
+    checkBg:SetActive(isOn)
+    name.color = isOn and self.v_light_color or self.v_dime_color
+    self:_on_click_tog_page(idx, isOn, notice_str)
+  end)
+  local red_dot = self:get_child_gameobj("RedDot", item)
+  local red_id = RedEnum.NOVICE_DAILY_TASK + idx
+  self.v_tog_id_list[red_id] = red_id
+  RedPointMgr:bind_redpoint(self, red_dot, red_id, RedEnum.NOVICE_DAILY_TASK)
+  return tog
+end
+
+function ui:_on_click_tog_page(idx, isOn, notice_str)
+  if self.v_cur_idx == idx then
+    return
+  end
+  if isOn and notice_str then
+    Util.show_message_tip(notice_str)
+    if self.v_toggle_list[self.v_cur_idx] then
+      self.v_toggle_list[self.v_cur_idx].isOn = true
+    end
+    return
+  end
+  if isOn then
+    self.v_cur_idx = idx
+    self:_refresh_task_content(self.v_task_cfg[idx])
+  end
+end
+
+function ui:_get_default_idx()
+  for i = 1, self.v_novice_days do
+    local task_cfg = self.v_task_cfg[i]
+    local task_list = ShareRes.get_task_group(task_cfg.TaskGroupId)
+    if task_list then
+      for _, info in pairs(task_list) do
+        local state = TaskMgr:get_task_state(info.Id)
+        if state == TASK_STATE.COMPLETE then
+          return i
+        end
+      end
+    end
+  end
+  return 1
+end
+
+function ui:_refresh_task_content(data)
+  self:release_items_by_template_key(self.template_key.reward_tog)
+  for k, v in pairs(self.v_task_id_list) do
+    RedPointMgr:unbind_redpoint_by_id(self, v[1], v[2])
+  end
+  self.v_task_id_list = {}
+  self:give_back_auto_cache(self.template_key.reward_tog, false)
+  local list = ShareRes.get_task_group(data.TaskGroupId)
+  if not list then
+    return
+  end
+  local tb = {}
+  for k, v in pairs(list) do
+    if not v.PreTaskId or TaskMgr:get_task_state(v.PreTaskId) >= TASK_STATE.COMPLETE then
+      table.insert(tb, v)
+    end
+  end
+  table.sort(tb, function(a, b)
+    local state_a = TaskMgr:get_task_state(a.Id)
+    local state_b = TaskMgr:get_task_state(b.Id)
+    local sort_a = self:get_sort_id(state_a)
+    local sort_b = self:get_sort_id(state_b)
+    if sort_a == sort_b then
+      return a.Priority > b.Priority
+    else
+      return sort_a < sort_b
+    end
+  end)
+  for i, v in ipairs(tb) do
+    local item = self:get_auto_cache(self.template_key.reward_tog)
+    self:_set_task_list(item, i, v)
+  end
+end
+
+function ui:get_sort_id(state)
+  if state == TASK_STATE.COMPLETE then
+    return 1
+  elseif state == TASK_STATE.GET_REWARD then
+    return 3
+  else
+    return 2
+  end
+end
+
+function ui:_set_task_list(item, idx, data)
+  local taskName = self:get_text("TaskName", item)
+  taskName.text = data.Name
+  local taskDesc = self:get_text("TaskDesc", item)
+  taskDesc.text = data.Desc
+  local state = TaskMgr:get_task_state(data.Id)
+  local can_get = state == TASK_STATE.COMPLETE
+  local has_get = state == TASK_STATE.GET_REWARD
+  local reward_list = ShareRes.get_award_item_data(data.Award)
+  for i = 1, 6 do
+    local path = "Scroll View/Viewport/ItemList/Item_Obj_" .. tostring(i)
+    local item_obj = self:get_child_gameobj(path, item)
+    local replace_obj = self:get_child_gameobj("Hang", item_obj)
+    local item_num = self:get_text("AmountBg/ItemAmount", item_obj)
+    local has_get_obj = self:get_child_gameobj("Got_", item_obj)
+    local reward_data = reward_list[i]
+    item_obj:SetActive(reward_data)
+    if reward_data then
+      self:create_item_obj(nil, replace_obj, self.template_key.reward_tog, {
+        item_id = reward_data[1],
+        click_cb = function()
+          UIMgr:get_ui("itemTip"):ui_show({
+            item_id = reward_data[1]
+          })
+        end
+      })
+      item_num.text = reward_data[2]
+      has_get_obj:SetActive(has_get)
+      item_num.transform:SetAsLastSibling()
+    end
+  end
+  local task_point = self:get_text("Task_Point", item)
+  local cfg = ShareRes.create("newbie.newbie_task_point", data.Id)
+  if cfg then
+    task_point.text = cfg.Task_Point
+  end
+  local btn = self:get_button("BtnGet", item)
+  self:set_button_listener(btn, function()
+    TaskMgr:submit_task(data.Id)
+  end)
+  local progress = self:get_text("Progress", item)
+  local slider = self:get_slider("ProgressBar", item)
+  local hasGet = self:get_child_gameobj("HasGet", item)
+  local continue = self:get_child_gameobj("BtnContinue", item)
+  continue:SetActive(state < TASK_STATE.COMPLETE)
+  hasGet:SetActive(has_get)
+  btn:SetActive(not has_get and can_get)
+  local taskInfo = TaskMgr:get_task_by_id(data.Id)
+  local taks_pro = taskInfo and taskInfo.progress and #taskInfo.progress > 0 and taskInfo.progress[1].progress or 0
+  local condition_id = data.Condition[1]
+  local total = ShareRes.create("condition.condition", condition_id)
+  if not total then
+    Log.Error("read condition config failure! condition_id=", condition_id)
+  end
+  progress.text = string.format("%d/%d", taks_pro, total.Value)
+  slider.maxValue = total.Value
+  slider.value = taks_pro
+end
+
+function ui:_refresh_task_goal()
+  local task_list = ShareRes.create("newbie.newbie_task_award")
+  local total = 0
+  local cur2 = 0
+  local width = self.v_dotlist_rect.sizeDelta.x
+  local half_width = width / 2
+  self:release_items_by_template_key(self.template_key.dot_item)
+  self:give_back_auto_cache(self.template_key.dot_item, false)
+  local length = #task_list
+  for i, v in ipairs(task_list) do
+    local node = self:get_auto_cache(self.template_key.dot_item)
+    local node_tra = self:get_rect_transform(nil, node)
+    node_tra:SetAnchoredPositionA(width / length * i - half_width, DOT_POS_Y)
+    local state = NoviceMgr:get_goal_task_state(v.Id)
+    local done = self:get_child_gameobj("DotOn", node)
+    local canGet = self:get_child_gameobj("ItemTem/CanGet", node)
+    done:SetActive(state >= GOAL_STATE.CAN)
+    canGet:SetActive(state == GOAL_STATE.CAN)
+    if state >= GOAL_STATE.CAN then
+      cur2 = cur2 + 1
+    end
+    local reward_list = ShareRes.get_award_item_data(v.AwardGoupId)
+    local replace_obj = self:get_child_gameobj("ItemTem/Item_Obj", node)
+    local item_num = self:get_text("ItemTem/ItemAmount", node)
+    self:create_item_obj(nil, replace_obj, self.template_key.dot_item, {
+      item_id = reward_list[1][1],
+      click_cb = function()
+        local task_state = NoviceMgr:get_goal_task_state(v.Id)
+        if task_state == GOAL_STATE.CAN then
+          NoviceMgr:request_get_taks_prog_award(v.Id)
+        else
+          UIMgr:get_ui("itemTip"):ui_show({
+            item_id = reward_list[1][1]
+          })
+        end
+      end
+    })
+    item_num.text = reward_list[1][2]
+    local finish = self:get_child_gameobj("ItemTem/Finish", node)
+    finish:SetActive(state == GOAL_STATE.HAS)
+    local needNum = self:get_text("NeedNum", node)
+    needNum.text = state >= GOAL_STATE.CAN and string.format("<color=#c15e38>%s</color>", v.Progress) or v.Progress
+    if total < v.Progress then
+      total = v.Progress
+    end
+  end
+  local cur = NoviceMgr:get_goal_task_point() or 0
+  self.v_slider.maxValue = total
+  self.v_slider.value = total <= cur and total or cur
+  self.v_total_progress.text = total > cur and string.format("%d/%d", cur, total) or string.format("%d/%d", total, total)
+  self.v_first_dot:SetActive(cur > 0)
+end
+
+return ui

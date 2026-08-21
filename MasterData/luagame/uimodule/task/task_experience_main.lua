@@ -1,0 +1,543 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local _tinsert = table.insert
+local _tsort = table.sort
+local task_experience_key = "task_experience_key"
+local task_experience_conditions_key = "task_experience_conditions_key"
+local task_experience_award_key = "task_experience_award_key"
+local Item_Helper = require("utils.item_helper")
+local ITEM_ICON_PATH = "Icon/Item/"
+local bagConfig = require("gamelogic.character.fight_bag_configs")
+local commonDef = require("cs_share.common_define")
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local Setting_Cfg = require("uimodule.battle_setting.battle_setting_cfg")
+local MODEL = {
+  v_all = {
+    "All",
+    BIND_TYPE.TOGGLE
+  },
+  v_btn_jump = {
+    "BtnJump",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_receive = {
+    "BtnReceive",
+    BIND_TYPE.BUTTON
+  },
+  v_item_obj_com1 = {
+    "ItemObjCom1",
+    BIND_TYPE.BUTTON
+  },
+  v_no_task = {
+    "NoTask",
+    BIND_TYPE.OBJECT
+  },
+  v_page1 = {
+    "Page1",
+    BIND_TYPE.TOGGLE
+  },
+  v_page2 = {
+    "Page2",
+    BIND_TYPE.TOGGLE
+  },
+  v_page3 = {
+    "Page3",
+    BIND_TYPE.TOGGLE
+  },
+  v_page4 = {
+    "Page4",
+    BIND_TYPE.TOGGLE
+  },
+  v_reward_content = {
+    "RewardContent",
+    BIND_TYPE.OBJECT
+  },
+  v_task_condition_item = {
+    "TaskConditionItem",
+    BIND_TYPE.OBJECT
+  },
+  v_task_conditions_content = {
+    "TaskConditionsContent",
+    BIND_TYPE.OBJECT
+  },
+  v_task_info = {
+    "TaskInfo",
+    BIND_TYPE.OBJECT
+  },
+  v_task_list_content = {
+    "TaskListContent",
+    BIND_TYPE.OBJECT
+  },
+  v_task_list = {
+    "TaskList",
+    BIND_TYPE.IMAGE
+  },
+  v_task_title = {
+    "TaskTitle",
+    BIND_TYPE.TEXT
+  },
+  v_task_type_tem = {
+    "TaskTypeTem",
+    BIND_TYPE.OBJECT
+  }
+}
+local TOGGLE_LIST = {
+  [1] = {
+    tog_name = "All",
+    name = "全部",
+    type = 0,
+    tog_show_name = "N E W"
+  },
+  [2] = {tog_name = "Page1", tog_show_name = "A E W"},
+  [3] = {tog_name = "Page2", tog_show_name = "A E W"},
+  [4] = {tog_name = "Page3", tog_show_name = "A E W"},
+  [5] = {tog_name = "Page4", tog_show_name = "A E W"}
+}
+local task_desc_color = {
+  [0] = {color_str = "F5EDE2", alpha = 1},
+  [1] = {color_str = "EFC66E", alpha = 1},
+  [2] = {color_str = "F5EDE2", alpha = 0.2}
+}
+local task_item_tips_color = {
+  select = {color_str = "484243", alpha = 0.8},
+  un_select = {color_str = "F5EDE2", alpha = 0.6}
+}
+local EVENT_TASK_RED_ID = 1101
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  local cfg = ShareRes.create("chain_centre.centre_event_group_desc")
+  local sort_cfg = {}
+  for i, v in pairs(cfg) do
+    _tinsert(sort_cfg, v)
+  end
+  _tsort(sort_cfg, function(a, b)
+    return a.LabelNum < b.LabelNum
+  end)
+  for i, v in ipairs(sort_cfg) do
+    TOGGLE_LIST[i + 1].name = v.TypeName
+    TOGGLE_LIST[i + 1].type = v.TaskType
+    TOGGLE_LIST[i + 1].sort = v.LabelNum
+    TOGGLE_LIST[i + 1].icon_path = v.TypeIMG
+  end
+  self.task_type_info_list = {}
+  for i, v in ipairs(TOGGLE_LIST) do
+    self.task_type_info_list[v.type] = v
+  end
+  self:init_toggle()
+  self:register_exist_auto_template(task_experience_key, self.v_task_type_tem, self.v_task_list_content)
+  self:register_exist_auto_template(task_experience_conditions_key, self.v_task_condition_item, self.v_task_conditions_content)
+  self:register_exist_auto_template(task_experience_award_key, self.v_item_obj_com1, self.v_reward_content)
+  self:set_button_listener(self.v_btn_jump, function()
+    self:jump_other_system_with_condition()
+  end)
+  self:set_button_listener(self.v_btn_receive, function()
+    if not self.curr_select_data then
+      return
+    end
+    TaskMgr:request_get_event_reward(self.curr_select_data.task_info.task_id, nil, function(msg)
+      self:refresh_win_with_get_reward()
+    end)
+  end)
+end
+
+function ui:init_toggle()
+  self.v_tag_toggles = {}
+  for i, v in ipairs(TOGGLE_LIST) do
+    local tog = self:get_toggle(nil, self.v_uiobjects[v.tog_name])
+    table.insert(self.v_tag_toggles, tog)
+    local toggle_obj = tog.gameObject
+    self:refresh_toggle_icon(toggle_obj, v.type)
+    local red_id = TaskMgr:get_all_task_event_red_id() + v.type
+    RedPointMgr:bind_redpoint(self, self:get_child_gameobj("Red", toggle_obj), red_id, EVENT_TASK_RED_ID)
+  end
+  for index, toggle in ipairs(self.v_tag_toggles) do
+    local text = Util.get_text("Text", toggle.transform)
+    text.text = TOGGLE_LIST[index].name
+  end
+  self.v_toggle_tab = ToggleTab:new(self)
+  self.v_toggle_tab:init_by_toggles(self.v_tag_toggles, function(select, last_select, select_toggle, last_select_toggle)
+    self:select_tag_toggle(select, last_select, select_toggle, last_select_toggle)
+  end, 1, false)
+end
+
+function ui:refresh_toggle_icon(toggle_obj, type)
+  if 0 == type then
+    return
+  end
+  local icon = Util.get_image("Image", toggle_obj)
+  local icon_select = Util.get_image("Select/Image", toggle_obj)
+  TaskMgr:set_task_type_icon(icon, type)
+  TaskMgr:set_task_type_icon(icon_select, type)
+end
+
+function ui:ui_on_show()
+end
+
+function ui:refresh_win(curr_toggle_index, need_select_task_id)
+  self.curr_toggle_index = curr_toggle_index or 1
+  self.need_select_task_id = need_select_task_id
+  self:select_tag_toggle(self.curr_toggle_index)
+  self.v_toggle_tab:set_toggle_by_index(self.curr_toggle_index)
+  self:register_event()
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_ON_CENTER_TASK_UPDATE, self.on_task_refresh, self)
+  self:bind_auto_mq(Const.MSG_ON_CENTER_TASK_RECEIVE, self.refresh_win_with_get_reward, self)
+end
+
+function ui:on_task_refresh()
+  self:select_tag_toggle(self.curr_toggle_index)
+end
+
+function ui:refresh_win_with_get_reward()
+  self:select_tag_toggle(self.curr_toggle_index)
+end
+
+function ui:select_tag_toggle(select, last_select, select_toggle, last_select_toggle)
+  self.curr_toggle_index = select
+  self:refresh_ui_task_new_need_select_page(select)
+  local show_list
+  if 1 == select then
+    show_list = TaskMgr:get_task_event_list()
+  else
+    show_list = TaskMgr:get_task_event_list(TOGGLE_LIST[select].type)
+  end
+  local is_need_show_info = false
+  local is_have_task = false
+  if show_list and #show_list > 0 then
+    is_need_show_info = true
+    if self.need_select_task_id then
+      for i, task_data in pairs(show_list) do
+        if task_data.task_cfg.Id == self.need_select_task_id then
+          is_have_task = true
+          break
+        end
+      end
+    end
+  end
+  self.v_no_task.gameObject:SetActive(false == is_need_show_info)
+  self.v_task_info:SetActive(is_need_show_info)
+  self.v_task_list.gameObject:SetActive(is_need_show_info)
+  if is_need_show_info then
+    if not is_have_task then
+      self.need_select_task_id = nil
+    end
+    self:set_need_select_task_id(show_list)
+    self:refresh_list(select, show_list)
+  end
+end
+
+function ui:set_need_select_task_id(show_list)
+  show_list = show_list or TaskMgr:get_task_event_list(TOGGLE_LIST[self.curr_toggle_index].type)
+  if not show_list or 0 == #show_list then
+    return
+  end
+  for i, task_data in pairs(show_list) do
+    if not self.need_select_task_id then
+      self.need_select_task_id = task_data.task_info.task_id
+      break
+    end
+  end
+end
+
+function ui:refresh_list(select, show_list)
+  self.show_title_list = {}
+  self:give_back_auto_cache(task_experience_key)
+  for i, task_data in pairs(show_list) do
+    local task_item = self:get_auto_cache(task_experience_key)
+    self:refresh_task_item_bg(task_data.task_cfg, task_item)
+    self:refresh_task_item_title_info(select, task_data.task_cfg, task_item)
+    self:refresh_task_name_and_desc(task_data.task_cfg, task_item)
+    self:refresh_task_progress(task_data, task_item)
+    self:refresh_task_select_status(task_item, false)
+    self:refresh_task_fight_and_bg_icon(task_data.task_cfg, task_item)
+    if task_data.task_info.task_id == self.need_select_task_id then
+      self:on_task_item_click(task_data, task_item)
+    end
+    local item_btn = Util.get_button("TaskTem_/Content/Unselect_", task_item)
+    self:set_button_listener(item_btn, function()
+      self:on_task_item_click(task_data, task_item)
+    end)
+  end
+end
+
+function ui:refresh_task_item_bg(cfg, task_item_obj)
+  local task_type = cfg.TaskType
+  local task_type_cfg = TaskMgr:get_task_type_cfg(task_type)
+  local task_tem_obj = Util.get_child_gameobj("TaskTem_", task_item_obj)
+  local un_select_bg = Util.get_image("Content/Unselect_", task_tem_obj)
+  local select_bg = Util.get_image("Content/Select_", task_tem_obj)
+  ResMgr:load_set_icon(un_select_bg, task_type_cfg.TypeBg, nil, true)
+  ResMgr:load_set_icon(select_bg, task_type_cfg.TypeSelectBg, nil, true)
+end
+
+function ui:refresh_task_item_title_info(select, cfg, task_item_obj)
+  local title_obj = Util.get_child_gameobj("Title", task_item_obj)
+  local task_type = cfg.TaskType
+  local task_id = cfg.Id
+  if not self.show_title_list[task_type] then
+    self.show_title_list[task_type] = task_id
+  end
+  if self.show_title_list[task_type] == task_id then
+    title_obj:SetActive(true)
+    local task_type_info = self.task_type_info_list[task_type]
+    local task_name_txt = Util.get_text("TypeName_", title_obj)
+    task_name_txt.text = Util.format_str("{1}{2}", task_type_info.name, "任务")
+    local task_icon = Util.get_image("TypeIcon_", title_obj)
+    TaskMgr:set_task_type_icon(task_icon, task_type)
+  else
+    title_obj:SetActive(false)
+  end
+end
+
+function ui:refresh_task_name_and_desc(cfg, task_item_obj)
+  local task_tem_obj = Util.get_child_gameobj("TaskTem_", task_item_obj)
+  local task_name1 = Util.get_text("Content/Unselect_/TaskName1_", task_tem_obj)
+  local task_name2 = Util.get_text("Content/Select_/TaskName2_", task_tem_obj)
+  task_name1.text = cfg.Name
+  task_name2.text = cfg.Name
+  local task_desc = Util.get_text("Content/TaskTips_", task_tem_obj)
+  task_desc.text = cfg.TaskDesc
+end
+
+function ui:refresh_task_item_tips_color(task_item_obj, is_select)
+  local task_tem_obj = Util.get_child_gameobj("TaskTem_", task_item_obj)
+  local task_item_tip = Util.get_text("Content/TaskTips_", task_tem_obj)
+  local behavior_icon = Util.get_image("Content/BehaviorIcon_", task_tem_obj)
+  local tips_color = is_select and task_item_tips_color.select or task_item_tips_color.un_select
+  Util.set_color(task_item_tip, tips_color.color_str, tips_color.alpha)
+  Util.set_color(behavior_icon, tips_color.color_str, tips_color.alpha)
+end
+
+function ui:refresh_task_fight_and_bg_icon(cfg, task_item_obj)
+  local task_type = cfg.TaskType
+  local type_color = TaskMgr:get_task_type_color(task_type)
+  local task_tem_obj = Util.get_child_gameobj("TaskTem_", task_item_obj)
+  local fight_icon = Util.get_image("Content/BehaviorIcon_", task_tem_obj)
+  local line_icon = Util.get_image("Content/Line_", task_tem_obj)
+  ResMgr:load_set_icon(fight_icon, cfg.FightIcon)
+  line_icon.color = type_color
+end
+
+function ui:refresh_task_progress(task_data, task_item_obj)
+  local content_obj = Util.get_child_gameobj("TaskTem_/Content", task_item_obj)
+  local progress_1 = Util.get_child_gameobj("Unselect_/Progress1_", content_obj)
+  local progress_2 = Util.get_child_gameobj("Select_/Progress2_", content_obj)
+  local complete_1 = Util.get_child_gameobj("Unselect_/Complete1_", content_obj)
+  local complete_2 = Util.get_child_gameobj("Select_/Complete2_", content_obj)
+  local is_finish = task_data.task_info.state == commonDef.CENTRE_EVENT_TYPE.Complete
+  progress_1:SetActive(not is_finish)
+  progress_2:SetActive(not is_finish)
+  complete_1:SetActive(is_finish)
+  complete_2:SetActive(is_finish)
+  if not is_finish then
+    local progress_now_txt_1 = Util.get_text("ProgressNow1_", progress_1)
+    local progress_need_txt_1 = Util.get_text("ProgressNeed1_", progress_1)
+    local progress_now_txt_2 = Util.get_text("ProgressNow2_", progress_2)
+    local progress_need_txt_2 = Util.get_text("ProgressNeed2_", progress_2)
+    local finish_count, all_count = TaskMgr:get_task_progress(task_data)
+    progress_now_txt_1.text = finish_count
+    progress_need_txt_1.text = all_count
+    progress_now_txt_2.text = finish_count
+    progress_need_txt_2.text = all_count
+  end
+end
+
+function ui:refresh_task_select_status(task_item_obj, visible)
+  local select_obj = Util.get_child_gameobj("TaskTem_/Content/Select_", task_item_obj)
+  select_obj:SetActive(visible)
+  local select_anim = Util.get_child_gameobj("TaskTem_/Animation/Ani_TaskTypeTem_Select", task_item_obj)
+  local un_select_anim = Util.get_child_gameobj("TaskTem_/Animation/Ani_TaskTypeTem_UnSelect", task_item_obj)
+  select_anim:SetActive(false)
+  un_select_anim:SetActive(false)
+  if visible then
+    select_anim:SetActive(true)
+  else
+    un_select_anim:SetActive(true)
+  end
+  self:refresh_task_item_tips_color(task_item_obj, visible)
+end
+
+function ui:on_task_item_click(task_data, task_item_obj)
+  if self.curr_select_item ~= nil then
+    self:refresh_task_select_status(self.curr_select_item, false)
+  end
+  self.curr_select_item = task_item_obj
+  self.curr_select_data = task_data
+  self:refresh_task_select_status(self.curr_select_item, true)
+  self:refresh_task_right_info(task_data)
+end
+
+function ui:refresh_task_right_info(task_data)
+  local cfg = task_data.task_cfg
+  local task_name1 = Util.get_text("Title/TaskTitle_", self.v_task_info)
+  task_name1.text = cfg.Name
+  self:refresh_task_left_time(cfg)
+  self.need_jump_id = TaskMgr:get_need_jump_id(task_data)
+  self:give_back_auto_cache(task_experience_conditions_key)
+  local in_progress_index = 0
+  for index, v in ipairs(task_data.task_cfg.stepText) do
+    if not v or "" == v then
+    else
+      local condition_item = self:get_auto_cache(task_experience_conditions_key)
+      local progress_info
+      for i, progress in ipairs(task_data.task_info.progress) do
+        if task_data.task_cfg.Condition[index] == progress.id then
+          progress_info = progress
+          break
+        end
+      end
+      if progress_info then
+        local condition_state = TaskMgr:get_condition_state(progress_info)
+        if 0 == in_progress_index and condition_state == commonDef.CONDITION_STATE.DidNotStart then
+          condition_state = commonDef.CONDITION_STATE.InProgress
+          in_progress_index = index
+        end
+        self:refresh_condition_item_info(index, cfg, condition_item, condition_state)
+      end
+    end
+  end
+  self:refresh_award_list(cfg.Award)
+  local task_state = 1
+  local is_finish = task_data.task_info.state == commonDef.CENTRE_EVENT_TYPE.Complete
+  if is_finish then
+    if task_data.task_cfg.Deliver == commonDef.TASK_EVENT_DELIVERY_TYPE.Buddy then
+      task_state = 2
+    else
+      task_state = 3
+    end
+  end
+  self.v_btn_jump.gameObject:SetActive(3 ~= task_state)
+  self.v_btn_receive.gameObject:SetActive(3 == task_state)
+  if 3 ~= task_state then
+    local jump_text = Util.get_text("Text", self.v_btn_jump.gameObject)
+    jump_text.text = "立即前往"
+    if 1 == task_state then
+      if self.need_jump_id > 0 then
+        self.v_btn_jump.interactable = true
+        self:refresh_ui_task_new_need_select_id(cfg.Id)
+      else
+        jump_text.text = "进行中"
+        self.v_btn_jump.interactable = false
+      end
+    else
+      self.task_data = task_data
+      self.v_btn_jump.interactable = true
+    end
+  end
+end
+
+function ui:refresh_task_left_time(cfg)
+  self:remove_timer()
+  if not cfg.EndTime then
+    self.v_uiobjects.LeftTime:SetActive(false)
+    return
+  end
+  self.v_uiobjects.LeftTime:SetActive(true)
+  local time = Date.get_time_stamp_by_scheme_id(cfg.EndTime)
+  local left_time = time - Date.server_time()
+  self.v_uicompents.LeftTime_txt.text = Date.get_time_formate_1(left_time)
+  self:refresh_timer(left_time)
+end
+
+function ui:refresh_timer(left_time)
+  self.v_left_timer = Global.ct_timer:add_timer("ct_tiemr", left_time, function(time)
+    if time <= 0 then
+      self:remove_timer()
+      self.v_uiobjects.LeftTime:SetActive(false)
+      return
+    end
+    self.v_uicompents.LeftTime_txt.text = Date.get_time_formate_1(time)
+  end)
+end
+
+function ui:remove_timer()
+  if self.v_left_timer then
+    Global.ct_timer:remove_timer(self.v_left_timer)
+    self.v_left_timer = nil
+  end
+end
+
+function ui:refresh_ui_task_new_need_select_id(task_id)
+  local ui_task_new = UIMgr:try_get_visible_ui("ui_task_new")
+  if ui_task_new then
+    ui_task_new:set_need_select_task_id(task_id)
+  end
+end
+
+function ui:refresh_ui_task_new_need_select_page(page)
+  local ui_task_new = UIMgr:try_get_visible_ui("ui_task_new")
+  if ui_task_new then
+    ui_task_new:set_need_select_page(page)
+  end
+end
+
+function ui:refresh_condition_item_info(index, cfg, condition_item, condition_state)
+  local desc = Util.get_text("StepDesc_", condition_item)
+  desc.text = cfg.stepText[index]
+  local color_str = task_desc_color[condition_state].color_str
+  local alpha = task_desc_color[condition_state].alpha
+  Util.set_color(desc, color_str, alpha)
+  Util.get_child_gameobj("State/Normal_", condition_item):SetActive(condition_state == commonDef.CONDITION_STATE.DidNotStart)
+  Util.get_child_gameobj("State/Ongoing_", condition_item):SetActive(condition_state == commonDef.CONDITION_STATE.InProgress)
+  Util.get_child_gameobj("State/Complete_", condition_item):SetActive(condition_state == commonDef.CONDITION_STATE.Finished)
+end
+
+function ui:refresh_award_list(award_group_id)
+  local award_list = ShareRes.get_awards(award_group_id)
+  self:give_back_auto_cache(task_experience_award_key)
+  for i, award in ipairs(award_list) do
+    local award_item = self:get_auto_cache(task_experience_award_key)
+    local item_cfg = Item_Helper.get_item_cfg(award.ItemId)
+    local quality_icon = Util.get_image("ItemQuality_", award_item)
+    ResMgr:load_set_icon(quality_icon, bagConfig.Quality_Img[item_cfg.Quality])
+    local item_icon = Util.get_image("ItemIcon_", award_item)
+    local icon_path = ITEM_ICON_PATH .. item_cfg.Icon
+    ResMgr:load_set_icon(item_icon, icon_path)
+    local count_txt = Util.get_text("ItemAmount_/Bg/ItemNum_", award_item)
+    count_txt.text = award.Num
+    local award_btn = Util.get_button(nil, award_item)
+    self:set_button_listener(award_btn, function()
+      UIMgr:get_ui("itemTip"):ui_show({
+        item_id = award.ItemId,
+        jump_cb = function()
+          UIMgr:try_hide_ui("material_stage_info")
+        end
+      })
+    end)
+  end
+end
+
+function ui:jump_other_system_with_condition()
+  if TowerMgr:check_fight_progress() then
+    return
+  end
+  if 0 == self.need_jump_id then
+    UIMgr:go_to_main()
+    return
+  end
+  local jump_cfg = ShareRes.create("sysopen.sys_jump")[self.need_jump_id]
+  local need_download = false
+  if jump_cfg and jump_cfg.param and jump_cfg.param[2] and jump_cfg.param[2] ~= "" and tonumber(jump_cfg.param[2]) > 3 then
+    need_download = true
+  end
+  if Game_AssetBundle and DownloadMgr and not DownloadMgr:check_res_is_integrity() and need_download then
+    local msg = "资源不完整，是否前往下载所有资源"
+    Util.show_notify_popup_message(function()
+      UIMgr:get_ui("battle_setting"):ui_show(Setting_Cfg.PageTag.Download)
+    end, msg, "提示", "确定", "取消", nil, false)
+    return
+  end
+  SysOpenMgr:jump_to_sys(self.need_jump_id, true)
+end
+
+function ui:ui_on_hide()
+  self.curr_select_item = nil
+  self.curr_select_data = nil
+  self:remove_timer()
+end
+
+return ui

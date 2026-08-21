@@ -1,0 +1,106 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local STAGE_SKILL_TEMPLATE = "STAGE_SKILL_TEMPLATE"
+
+function ui:ui_finish_load()
+  self:register_exist_auto_template(STAGE_SKILL_TEMPLATE, self.v_uiobjects.SKillEffectTem, self.v_uiobjects.SKillEffectContent)
+end
+
+function ui:ui_on_show()
+  self.v_scene_skill_data = TowerMgr:get_scene_skill_data()
+  local state_skill_id = self.v_scene_skill_data.id
+  if self.v_scene_skill_data then
+    self:set_ui_info(state_skill_id)
+  else
+    UIMgr:get_ui("uimessagetip"):ui_show(Util.format_str("暂未获取关卡技能"))
+    self:ui_hide()
+    return
+  end
+end
+
+function ui:set_ui_info(effect_skill_id)
+  self.v_scene_skill_cfg = ShareRes.get_scene_skill_cfg(effect_skill_id)
+  self.v_scene_skill_level_cfg = ShareRes.create("battle.scene_skill_level", effect_skill_id)
+  if not self.v_scene_skill_cfg or not self.v_scene_skill_level_cfg then
+    Log.Error(Util.format_str("获取技能:", effect_skill_id, "配置失败"))
+    self:ui_hide()
+    return
+  end
+  self:set_skill_bar_fill_amount()
+  self:set_show_light_count()
+  self:set_skill_effect()
+  self:set_text()
+  self:set_icon()
+end
+
+function ui:set_skill_bar_fill_amount()
+  self.v_uicompents.SkillBarFill_img.fillAmount = math.max(self.v_scene_skill_data.lv - 1, 0) / self.v_uiobjects.LightObj.transform.childCount
+end
+
+function ui:set_icon()
+  ResMgr:load_set_icon(self.v_uicompents.Skill_Icon_img, self.v_scene_skill_level_cfg[self.v_scene_skill_data.lv].IconPath)
+end
+
+function ui:set_text()
+  self.v_uicompents.SkillName_txt.text = self.v_scene_skill_cfg.Name
+  self.v_uicompents.SkillDesc_txt.text = self.v_scene_skill_cfg.Desc
+end
+
+function ui:set_skill_effect()
+  local skill_lv = self.v_scene_skill_data.lv
+  if skill_lv < 0 then
+    self.v_uiobjects.SkillEffectList:SetActive(false)
+  else
+    self.v_uiobjects.SkillEffectList:SetActive(true)
+    self:set_effect_list()
+  end
+end
+
+function ui:set_show_light_count()
+  local skill_lv = self.v_scene_skill_data.lv
+  local root_tf = self.v_uiobjects.LightObj.transform
+  local child_count = root_tf.childCount
+  for index = 1, child_count do
+    local child_tf = root_tf:GetChild(index - 1)
+    if index <= skill_lv then
+      child_tf.gameObject:SetActive(true)
+    else
+      child_tf.gameObject:SetActive(false)
+    end
+  end
+end
+
+function ui:set_effect_list()
+  local skill_lv = self.v_scene_skill_data.lv
+  self:give_back_auto_cache(STAGE_SKILL_TEMPLATE)
+  local F5EDE2, EFC66E, AE9577 = "F5EDE2", "EFC66E", "AE9577"
+  for index, level_cfg in ipairs(self.v_scene_skill_level_cfg) do
+    local obj = self:get_auto_cache(STAGE_SKILL_TEMPLATE)
+    local bg = self:get_child_gameobj("Bg_", obj)
+    local arrow_img = self:get_image("Image", obj)
+    local line_img = self:get_image("Line", obj)
+    local skill_lv_txt = self:get_text("SkillLV", obj)
+    local skill_lv_num = self:get_text("SkillLV/SkillLVNum_", obj)
+    skill_lv_num.text = level_cfg.Lv
+    local skill_effect_desc = self:get_text("SkillEffect_", obj)
+    skill_effect_desc.text = level_cfg.Desc
+    if skill_lv < level_cfg.Lv then
+      Util.set_color(skill_lv_num, F5EDE2, 0.5)
+      Util.set_color(skill_lv_txt, F5EDE2, 0.5)
+      Util.set_color(arrow_img, F5EDE2, 0.5)
+      Util.set_color(line_img, F5EDE2, 0.5)
+      bg.gameObject:SetActive(false)
+    else
+      bg.gameObject:SetActive(true)
+      Util.set_color(skill_lv_num, EFC66E, 1)
+      Util.set_color(skill_lv_txt, EFC66E, 1)
+      Util.set_color(arrow_img, AE9577, 1)
+      Util.set_color(line_img, AE9577, 1)
+    end
+  end
+end
+
+function ui:ui_on_hide()
+end
+
+return ui

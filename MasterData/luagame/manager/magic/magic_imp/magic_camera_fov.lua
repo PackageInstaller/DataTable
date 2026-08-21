@@ -1,0 +1,30 @@
+local Base = require("manager.magic.magic_imp.magic_base")
+local M = Util.create_child_mt(Base)
+
+function M:_init(owner, magic_info)
+  Base._init(self, owner, magic_info)
+end
+
+function M:on_effect()
+  local fov = self.cfg[1]
+  local ease_in = self.cfg[2]
+  local ease_out = self.cfg[3]
+  local set_default_fov = self.cfg[4]
+  local program_lerp_fov = self.cfg[5]
+  local duration = self.cfg.Duration
+  if self.owner:is_hero() then
+    if Global.hero == self.owner then
+      Global.camera:start_fov_offset(fov, ease_in, duration, ease_out, set_default_fov, program_lerp_fov)
+    end
+  else
+    Global.camera:start_fov_offset(fov, ease_in, duration, ease_out, set_default_fov, program_lerp_fov)
+  end
+end
+
+function M:on_remove(magic_map)
+  if next(magic_map) == nil then
+    Global.camera:stop_fov_offset()
+  end
+end
+
+return M

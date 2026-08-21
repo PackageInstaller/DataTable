@@ -1,0 +1,2252 @@
+return {
+  [1001001] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001002] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001003] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001004] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001005] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001006] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001007] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001008] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001009] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001010] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001011] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001012] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001013] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001014] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001015] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001016] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001017] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  },
+  [1001018] = {
+    [0] = {
+      BreakLv = 1,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        15,
+        5000,
+        0
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        8000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          570,
+          1
+        },
+        {
+          20,
+          15,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 10
+    },
+    {
+      BreakLv = 2,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        60,
+        12000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          1430,
+          1
+        },
+        {
+          20,
+          38,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 20
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        105,
+        17500,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          2570,
+          1
+        },
+        {
+          20,
+          68,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    },
+    {
+      BreakLv = 3,
+      CostId = {
+        21000,
+        2,
+        0
+      },
+      CostNum = {
+        30,
+        10000,
+        0
+      },
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        },
+        {
+          20,
+          105,
+          1
+        }
+      },
+      Icon = "Icon/Item/Char_Engrave_02_",
+      Lv = 30
+    }
+  }
+}

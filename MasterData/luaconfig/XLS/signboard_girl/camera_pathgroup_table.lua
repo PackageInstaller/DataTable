@@ -1,0 +1,1810 @@
+return {
+  ["100100102_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100100102_9"
+  },
+  ["100100402_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100100402_9"
+  },
+  ["100100801_100100804"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100100801_100100804"
+  },
+  ["100100802_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100100802_9"
+  },
+  ["100100803_100100801"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100100803_100100801"
+  },
+  ["100100804_100100801"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100100804_100100801"
+  },
+  ["100100901_100100904"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100100901_100100904"
+  },
+  ["100100902_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 11,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100100902_9"
+  },
+  ["100100903_100100901"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100100903_100100901"
+  },
+  ["100100904_100100901"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100100904_100100901"
+  },
+  ["100101001_100101004"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101001_100101004"
+  },
+  ["100101002_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101002_9"
+  },
+  ["100101003_100101001"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101003_100101001"
+  },
+  ["100101004_100101001"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101004_100101001"
+  },
+  ["100101101_100101104"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0.2,
+      0
+    },
+    TrackKey = "100101101_100101104"
+  },
+  ["100101102_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 5,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101102_9"
+  },
+  ["100101103_100101101"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0.2,
+      0
+    },
+    TrackKey = "100101103_100101101"
+  },
+  ["100101104_100101101"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0.2,
+      0
+    },
+    TrackKey = "100101104_100101101"
+  },
+  ["100101201_100101204"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100101201_100101204"
+  },
+  ["100101202_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 11,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101202_9"
+  },
+  ["100101203_100101201"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100101203_100101201"
+  },
+  ["100101204_100101201"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100101204_100101201"
+  },
+  ["100101301_100101304"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = false,
+    StartPointOffset = {
+      0.22,
+      0.1,
+      0.2
+    },
+    TrackKey = "100101301_100101304"
+  },
+  ["100101302_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 5,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101302_9"
+  },
+  ["100101303_100101301"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0.2,
+      0
+    },
+    TrackKey = "100101303_100101301"
+  },
+  ["100101304_100101301"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100101304_100101301"
+  },
+  ["100101401_100101404"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100101401_100101404"
+  },
+  ["100101402_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101402_9"
+  },
+  ["100101403_100101401"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100101403_100101401"
+  },
+  ["100101404_100101401"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101404_100101401"
+  },
+  ["100101501_100101504"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 2,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101501_100101504"
+  },
+  ["100101502_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 6,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101502_9"
+  },
+  ["100101503_100101501"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 2,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101503_100101501"
+  },
+  ["100101504_100101501"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 2,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101504_100101501"
+  },
+  ["100101601_100101604"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100101601_100101604"
+  },
+  ["100101602_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 11,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101602_9"
+  },
+  ["100101603_100101601"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100101603_100101601"
+  },
+  ["100101604_100101601"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100101604_100101601"
+  },
+  ["100101701_100101704"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100101701_100101704"
+  },
+  ["100101702_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 11,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101702_9"
+  },
+  ["100101703_100101701"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100101703_100101701"
+  },
+  ["100101704_100101701"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100101704_100101701"
+  },
+  ["100101801_100101804"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101801_100101804"
+  },
+  ["100101802_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 5,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101802_9"
+  },
+  ["100101803_100101801"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101803_100101801"
+  },
+  ["100101804_100101801"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101804_100101801"
+  },
+  ["100101901_100101904"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101901_100101904"
+  },
+  ["100101902_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 5,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100101902_9"
+  },
+  ["100101903_100101901"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0.2,
+      0
+    },
+    TrackKey = "100101903_100101901"
+  },
+  ["100101904_100101901"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0.2,
+      0
+    },
+    TrackKey = "100101904_100101901"
+  },
+  ["100102001_100102004"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 9,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102001_100102004"
+  },
+  ["100102002_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 7,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102002_9"
+  },
+  ["100102003_100102001"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 9,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102003_100102001"
+  },
+  ["100102004_100102001"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 9,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102004_100102001"
+  },
+  ["100102101_100102104"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102101_100102104"
+  },
+  ["100102102_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102102_9"
+  },
+  ["100102103_100102101"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102103_100102101"
+  },
+  ["100102104_100102101"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102104_100102101"
+  },
+  ["100102201_100102204"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102201_100102204"
+  },
+  ["100102202_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102202_9"
+  },
+  ["100102203_100102201"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102203_100102201"
+  },
+  ["100102204_100102201"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102204_100102201"
+  },
+  ["100102301_100102304"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 10,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102301_100102304"
+  },
+  ["100102302_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 12,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102302_9"
+  },
+  ["100102303_100102301"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 10,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102303_100102301"
+  },
+  ["100102304_100102301"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 10,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102304_100102301"
+  },
+  ["100102401_100102404"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0.4
+    },
+    TrackKey = "100102401_100102404"
+  },
+  ["100102402_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 5,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102402_9"
+  },
+  ["100102403_100102401"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0.2,
+      0
+    },
+    TrackKey = "100102403_100102401"
+  },
+  ["100102404_100102401"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 8,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.4
+    },
+    TrackKey = "100102404_100102401"
+  },
+  ["100102501_100102504"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100102501_100102504"
+  },
+  ["100102502_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 11,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102502_9"
+  },
+  ["100102503_100102501"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100102503_100102501"
+  },
+  ["100102504_100102501"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100102504_100102501"
+  },
+  ["100102601_100102604"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100102601_100102604"
+  },
+  ["100102602_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 11,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102602_9"
+  },
+  ["100102603_100102601"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100102603_100102601"
+  },
+  ["100102604_100102601"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100102604_100102601"
+  },
+  ["100102701_100102704"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100102701_100102704"
+  },
+  ["100102702_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 11,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102702_9"
+  },
+  ["100102703_100102701"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102703_100102701"
+  },
+  ["100102704_100102701"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0.8
+    },
+    TrackKey = "100102704_100102701"
+  },
+  ["100102802_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "100102802_9"
+  },
+  ["10_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 4,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "10_9"
+  },
+  ["1_4"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "1_4"
+  },
+  ["2_9"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "2_9"
+  },
+  ["3_1"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "3_1"
+  },
+  ["4_1"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 1,
+    Reverse = true,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "4_1"
+  },
+  ["9_10"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 4,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_10"
+  },
+  ["9_100100102"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100100102"
+  },
+  ["9_100100402"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100100402"
+  },
+  ["9_100100802"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100100802"
+  },
+  ["9_100100902"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 11,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100100902"
+  },
+  ["9_100101002"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100101002"
+  },
+  ["9_100101102"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 5,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100101102"
+  },
+  ["9_100101202"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 11,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100101202"
+  },
+  ["9_100101302"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 5,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100101302"
+  },
+  ["9_100101402"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100101402"
+  },
+  ["9_100101502"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 6,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100101502"
+  },
+  ["9_100101602"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 11,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100101602"
+  },
+  ["9_100101702"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 11,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100101702"
+  },
+  ["9_100101802"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 5,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100101802"
+  },
+  ["9_100101902"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 5,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100101902"
+  },
+  ["9_100102002"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 7,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100102002"
+  },
+  ["9_100102102"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100102102"
+  },
+  ["9_100102202"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100102202"
+  },
+  ["9_100102302"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 12,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100102302"
+  },
+  ["9_100102402"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 5,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100102402"
+  },
+  ["9_100102502"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 11,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100102502"
+  },
+  ["9_100102602"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 11,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100102602"
+  },
+  ["9_100102702"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 11,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100102702"
+  },
+  ["9_100102802"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_100102802"
+  },
+  ["9_2"] = {
+    EndPointOffset = {
+      0,
+      0,
+      0
+    },
+    PathGroupName = "MainPathGroup_00",
+    PathId = 3,
+    Reverse = false,
+    StartPointOffset = {
+      0,
+      0,
+      0
+    },
+    TrackKey = "9_2"
+  }
+}

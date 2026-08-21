@@ -1,0 +1,201 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local SPINE_RT_VIEW = require("ui.model_rt_view.spine_rt_view")
+local SpineHelper = require("ui.model_rt_view.spine_helper")
+local _randomseed = math.randomseed
+local _random = math.random
+local _time = os.time
+local CT_Timer = Global.ct_timer
+
+function ui:ui_finish_load()
+  self:set_button("BtnRet1", function()
+    self:ui_hide()
+    Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.ui_return_activity_main_in_UI_SOUND)
+  end)
+  self:set_button("BtnMain", function()
+    if SceneMgr:check_main_scene() then
+      UIMgr:go_to_main()
+    end
+  end)
+  self:set_button("ShowHeroBtn", function()
+    if self.v_show_signBoard_view2 then
+      return
+    end
+    Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.return_act_sign_click_UI_SOUND)
+    self:refresh_show_spine(true)
+    if not self.v_anim_data.record_data.play_start then
+      SpineHelper.init_anim_info(self.v_spine_id, self.v_anim_data, SpineHelper.ANIM_TYPE.CLICK)
+    end
+  end)
+  self.v_dialog = Util.get_text("Dialog_Content_/Dialog_", self.v_uiobjects.SignBoard_View2)
+  self.v_time = Util.get_text("Left/TimeNum", self.v_uiobjects.Time)
+end
+
+function ui:ui_on_show(parent_ui)
+  self:register_event()
+  self.v_parent_ui = parent_ui
+  self.v_ret_act_info = NoviceMgr:get_activity_flyback_info()
+  self.v_end_time = self.v_ret_act_info.end_time
+  self.v_sign_award_data = {}
+  self:refresh_data(self.v_sign_award_data)
+  self:reset_ui()
+  self.v_low_update = Global.real_time
+  self.v_anim_data = SpineHelper.get_init_anim_info()
+  self.v_play_spine_state = false
+  self:refresh_show_spine()
+  self:refresh_sign_award()
+  self:refresh_show_time()
+end
+
+function ui:reset_ui()
+  self.v_uiobjects.SignBoard_View2:SetActive(false)
+  local show_heropic = Util.get_child_gameobj("ShowHeroPic", self.v_uiobjects.Mode_signin)
+  show_heropic:SetActive(true)
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.ON_RET_ACT_SIGN_AWARD, self.refresh_sign_award, self)
+end
+
+function ui:ui_on_update()
+  if not self.v_spine_id then
+    return
+  end
+  SpineHelper.check_play_anim(self.v_spine_rt, self.v_anim_data)
+  if self.v_anim_data.record_data.play_start then
+    if not self.v_show_signBoard_view2 then
+      self.v_uiobjects.SignBoard_View2:SetActive(true)
+    end
+    self.v_show_signBoard_view2 = true
+  else
+    if self.v_show_signBoard_view2 then
+      self.v_uiobjects.SignBoard_View2:SetActive(false)
+    end
+    self.v_show_signBoard_view2 = false
+  end
+end
+
+function ui:ui_on_destroy()
+  self:clear_spine_rt()
+end
+
+function ui:ui_on_hide()
+  self:clear_spine_rt()
+  if self.v_reset_timer then
+    CT_Timer:remove_timer(self.v_reset_timer)
+    self.v_reset_timer = nil
+  end
+  if self.v_parent_ui then
+    self.v_parent_ui:play_in_eff()
+  end
+end
+
+function ui:clear_spine_rt()
+  if self.v_spine_rt then
+    self.v_spine_rt:on_destroy()
+    self.v_spine_rt = nil
+  end
+end
+
+function ui:refresh_show_spine(is_click)
+  if is_click and self.v_anim_data.record_data.play_start then
+    return
+  end
+  local cfg = self:get_random_wight_cfg(ShareRes.get_return_activity_sign_spine())
+  self:clear_spine_rt()
+  self.v_dialog.text = cfg.Desc
+  self.v_spine_id = cfg.SpineID
+  if self.v_spine_id then
+    self.v_spine_rt = self.v_spine_rt or SPINE_RT_VIEW:new(self, self.v_uiobjects.ShowHero)
+    SpineHelper.load_char_spine_res(self.v_spine_rt, self.v_spine_id, self.v_uiobjects.ShowHero)
+  end
+end
+
+function ui:refresh_data(data)
+  local cfg = ShareRes.get_return_activity_sign_award()
+  for _, award_group_cfg in pairs(cfg) do
+    data[award_group_cfg.Id] = {}
+    ShareRes.get_award_item_data(award_group_cfg.AwardGroupId, data[award_group_cfg.Id])
+  end
+end
+
+function ui:refresh_sign_award()
+  for idx, data in pairs(self.v_sign_award_data) do
+    self:set_sign_award_info(self.v_uiobjects["Signin" .. idx], data[1], idx)
+  end
+end
+
+function ui:set_sign_award_info(sign_obj, data, sign_day)
+  if nil == sign_obj then
+    return
+  end
+  local item_icon = Util.get_image("ItemIcon", sign_obj)
+  local item_num = Util.get_text("ItemAmount", sign_obj)
+  local item_btn = Util.get_button(nil, sign_obj)
+  local signed = Util.get_child_gameobj("SoldOut", sign_obj)
+  local signed_rare = Util.get_child_gameobj("RareBg", sign_obj)
+  local item_icon_path = ShareRes.get_item_icon_path(data[1])
+  ResMgr:load_set_icon(item_icon, item_icon_path)
+  item_num.text = data[2]
+  self:set_button_listener(item_btn, function()
+    NoviceMgr:request_activity_flyback_sign_award(sign_day)
+  end)
+  local signed_info = self.v_ret_act_info.sign_in_day or 0
+  signed_rare:SetActive(sign_day <= signed_info)
+  if NoviceMgr:get_sign_award_is_get(sign_day) then
+    signed_rare:SetActive(false)
+  end
+  signed:SetActive(NoviceMgr:get_sign_award_is_get(sign_day))
+end
+
+function ui:refresh_show_time()
+  if not self.v_end_time then
+    return
+  end
+  local end_time = self.v_end_time
+  local has_time = Util.is_more_than_zero(end_time)
+  self.v_time.gameObject:SetActive(has_time)
+  if not has_time then
+    return
+  end
+  if self.v_reset_timer then
+    CT_Timer:remove_timer(self.v_reset_timer)
+    self.v_reset_timer = nil
+  end
+  local total_sec = end_time - Date.server_time()
+  if total_sec <= 0 then
+    self.v_time.gameObject:SetActive(false)
+    return
+  end
+  self.v_has_time = true
+  self.v_time.text = Date.get_time_formate_2(total_sec)
+  self.v_reset_timer = CT_Timer:add_timer("ret_act_sgin_reset_timer", total_sec, function(sec)
+    if sec > 0 and self.v_uicompents ~= nil then
+      self.v_time.text = Date.get_time_formate_2(sec)
+    elseif self.v_reset_timer then
+      CT_Timer:remove_timer(self.v_reset_timer)
+      self.v_reset_timer = nil
+    end
+  end)
+end
+
+function ui:get_random_wight_cfg(wight_cfg)
+  local sum_wight = 0
+  for _, wight in ipairs(wight_cfg) do
+    sum_wight = sum_wight + wight.Weight
+  end
+  local select_index = 0
+  local cur_wight = 0
+  _randomseed(_time())
+  local random_wight = _random(1, sum_wight)
+  for _, wight in ipairs(wight_cfg) do
+    cur_wight = cur_wight + wight.Weight
+    select_index = select_index + 1
+    if random_wight <= cur_wight then
+      return wight_cfg[select_index]
+    end
+  end
+  return wight_cfg[select_index]
+end
+
+return ui

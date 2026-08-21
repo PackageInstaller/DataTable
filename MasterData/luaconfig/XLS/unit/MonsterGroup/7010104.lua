@@ -1,0 +1,43 @@
+return {
+  unitList = {
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = false,
+      Camp = 4,
+      UnitID = 20103203,
+      InitPos = "M7",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "0_7010104_0",
+      AutoLevel = 2,
+      Delay = 0.0,
+      MagicId = 5000002
+    },
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = false,
+      Camp = 4,
+      UnitID = 20103601,
+      InitPos = "NPC2",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "0_7010104_1",
+      AutoLevel = 2,
+      Delay = 0.0,
+      MagicId = 5000001
+    }
+  },
+  Name = "",
+  Id = 7010104,
+  Type = 0
+}

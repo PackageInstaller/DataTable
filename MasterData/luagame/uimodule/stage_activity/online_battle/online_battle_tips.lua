@@ -1,0 +1,150 @@
+local Base = require("ui.uibase")
+local OnlineConfig = require("gamelogic.activity.online_config")
+local ui = Util.create_child_mt(Base)
+local CommonDef = require("cs_share.common_define")
+local Act_ID = CommonDef.ACTY_TYPE.ONLINE_BATTLE
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_invite_content = {
+    "InviteText",
+    BIND_TYPE.TEXT
+  },
+  v_end_match = {
+    "EndMatch",
+    BIND_TYPE.TEXT
+  },
+  v_invite = {
+    "Invite",
+    BIND_TYPE.OBJECT
+  },
+  v_matching = {
+    "Matching",
+    BIND_TYPE.OBJECT
+  },
+  v_re_match = {
+    "ReMatch",
+    BIND_TYPE.TEXT
+  },
+  v_return = {
+    "Return",
+    BIND_TYPE.BUTTON
+  },
+  v_time = {
+    "Time",
+    BIND_TYPE.TEXT
+  },
+  v_room = {
+    "Room",
+    BIND_TYPE.OBJECT
+  },
+  v_room_notice = {
+    "RoomNotice",
+    BIND_TYPE.TEXT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnInviteAgree", function()
+    self:_onclick_invite_agree_btn()
+  end)
+  self:set_button("BtnInviteRefuse", function()
+    self:_onclick_invite_refuse_btn()
+  end)
+  self:set_button("BtnMatchBreach", function()
+    self:_onclick_match_agree_btn()
+  end)
+  self:set_button("BtnMatchCancel", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnRoomBreach", function()
+    self:_onclick_room_agree_btn()
+  end)
+  self:set_button("BtnRoomCancel", function()
+    self:ui_hide()
+  end)
+  self:set_button("Return", function()
+    self:ui_hide()
+  end)
+  self.online_cfg = ActivityMgr:invoke(Act_ID, "get_act_cfg")
+end
+
+function ui:ui_on_show(tip_type, param)
+  self.v_tip_type = tip_type
+  self.v_param = param
+  self.v_invite:SetActive(self.v_tip_type == OnlineConfig.Notice_TIPS_TYPE.INVITATION)
+  self.v_matching:SetActive(self.v_tip_type == OnlineConfig.Notice_TIPS_TYPE.MATCH)
+  self.v_room:SetActive(self.v_tip_type == OnlineConfig.Notice_TIPS_TYPE.ROOM)
+  if self.v_tip_type == OnlineConfig.Notice_TIPS_TYPE.MATCH then
+    local match_op = self.v_param.match_op
+    self.v_re_match:SetActive(match_op == OnlineConfig.MATCH_OPERATE.RESTART)
+    self.v_end_match:SetActive(match_op == OnlineConfig.MATCH_OPERATE.BREAK)
+    self.v_join_time = ActivityMgr:invoke(Act_ID, "get_join_match_time")
+    self:_refresh_match_time()
+  elseif self.v_tip_type == OnlineConfig.Notice_TIPS_TYPE.INVITATION then
+    self:_refresh_inviation()
+  else
+    self.v_room_notice.text = self.v_param.lab
+  end
+end
+
+function ui:ui_on_hide()
+  if self.v_enter_sq then
+    self.v_enter_sq:Kill()
+    self.v_enter_sq = nil
+  end
+end
+
+function ui:ui_on_update()
+  if self.v_tip_type ~= OnlineConfig.Notice_TIPS_TYPE.MATCH then
+    return
+  end
+  self:_refresh_match_time()
+end
+
+function ui:_refresh_match_time()
+  local match_time = GlobalTimeMgr:get_unscaled_time() - self.v_join_time
+  if match_time > self.online_cfg.MatchTime then
+    self:ui_hide()
+    return
+  end
+  self.v_time.text = Util.set_str_color(Config.BTN_COLOR.LIGHT_ORANGE, Date.get_print_count_down(match_time))
+end
+
+function ui:_refresh_inviation()
+  self.v_invite_content.text = Util.format_str("<color=#c15e38>{1}</color>邀请你进行<color=#c15e38>{2}</color>", self.v_param.player_name, self.v_param.point_name)
+end
+
+function ui:_onclick_match_agree_btn()
+  local cb = self.v_param.ok_cb
+  if cb then
+    cb()
+  end
+  self:ui_hide()
+end
+
+function ui:_onclick_room_agree_btn()
+  local cb = self.v_param.ok_cb
+  if cb then
+    cb()
+  end
+  self:ui_hide()
+end
+
+function ui:_onclick_invite_agree_btn()
+  local cb = self.v_param.ok_cb
+  if cb then
+    cb()
+  end
+  self:ui_hide()
+end
+
+function ui:_onclick_invite_refuse_btn()
+  local cb = self.v_param.no_cb
+  if cb then
+    cb()
+  end
+  self:ui_hide()
+end
+
+return ui

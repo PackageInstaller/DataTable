@@ -1,0 +1,800 @@
+return {
+  {
+    {
+      EntryGroupId = 1,
+      EntryId = 1,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 1,
+      EntryId = 2,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 1,
+      EntryId = 3,
+      Weight = 100
+    }
+  },
+  {
+    {
+      EntryGroupId = 2,
+      EntryId = 1,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 2,
+      EntryId = 2,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 2,
+      EntryId = 3,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 2,
+      EntryId = 4,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 2,
+      EntryId = 5,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 2,
+      EntryId = 6,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 2,
+      EntryId = 7,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 2,
+      EntryId = 8,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 2,
+      EntryId = 11,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 2,
+      EntryId = 12,
+      Weight = 100
+    }
+  },
+  {
+    {
+      EntryGroupId = 3,
+      EntryId = 1,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 3,
+      EntryId = 2,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 3,
+      EntryId = 3,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 3,
+      EntryId = 9,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 3,
+      EntryId = 10,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 3,
+      EntryId = 11,
+      Weight = 100
+    }
+  },
+  {
+    {
+      EntryGroupId = 4,
+      EntryId = 1,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 4,
+      EntryId = 2,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 4,
+      EntryId = 3,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 4,
+      EntryId = 9,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 4,
+      EntryId = 10,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 4,
+      EntryId = 12,
+      Weight = 100
+    }
+  },
+  {
+    {
+      EntryGroupId = 5,
+      EntryId = 21,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 5,
+      EntryId = 22,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 5,
+      EntryId = 23,
+      Weight = 100
+    }
+  },
+  {
+    {
+      EntryGroupId = 6,
+      EntryId = 21,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 6,
+      EntryId = 22,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 6,
+      EntryId = 23,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 6,
+      EntryId = 24,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 6,
+      EntryId = 25,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 6,
+      EntryId = 26,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 6,
+      EntryId = 27,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 6,
+      EntryId = 28,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 6,
+      EntryId = 31,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 6,
+      EntryId = 32,
+      Weight = 100
+    }
+  },
+  {
+    {
+      EntryGroupId = 7,
+      EntryId = 21,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 7,
+      EntryId = 22,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 7,
+      EntryId = 23,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 7,
+      EntryId = 30,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 7,
+      EntryId = 31,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 7,
+      EntryId = 32,
+      Weight = 100
+    }
+  },
+  {
+    {
+      EntryGroupId = 8,
+      EntryId = 21,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 8,
+      EntryId = 22,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 8,
+      EntryId = 23,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 8,
+      EntryId = 29,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 8,
+      EntryId = 31,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 8,
+      EntryId = 32,
+      Weight = 100
+    }
+  },
+  [11] = {
+    {
+      EntryGroupId = 11,
+      EntryId = 51,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 11,
+      EntryId = 52,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 11,
+      EntryId = 53,
+      Weight = 100
+    }
+  },
+  [12] = {
+    {
+      EntryGroupId = 12,
+      EntryId = 51,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 12,
+      EntryId = 52,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 12,
+      EntryId = 53,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 12,
+      EntryId = 54,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 12,
+      EntryId = 55,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 12,
+      EntryId = 56,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 12,
+      EntryId = 57,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 12,
+      EntryId = 58,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 12,
+      EntryId = 61,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 12,
+      EntryId = 62,
+      Weight = 100
+    }
+  },
+  [13] = {
+    {
+      EntryGroupId = 13,
+      EntryId = 51,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 13,
+      EntryId = 52,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 13,
+      EntryId = 53,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 13,
+      EntryId = 59,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 13,
+      EntryId = 60,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 13,
+      EntryId = 61,
+      Weight = 100
+    }
+  },
+  [14] = {
+    {
+      EntryGroupId = 14,
+      EntryId = 51,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 14,
+      EntryId = 52,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 14,
+      EntryId = 53,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 14,
+      EntryId = 59,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 14,
+      EntryId = 60,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 14,
+      EntryId = 62,
+      Weight = 100
+    }
+  },
+  [15] = {
+    {
+      EntryGroupId = 15,
+      EntryId = 81,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 15,
+      EntryId = 82,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 15,
+      EntryId = 83,
+      Weight = 100
+    }
+  },
+  [16] = {
+    {
+      EntryGroupId = 16,
+      EntryId = 81,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 16,
+      EntryId = 82,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 16,
+      EntryId = 83,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 16,
+      EntryId = 84,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 16,
+      EntryId = 85,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 16,
+      EntryId = 86,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 16,
+      EntryId = 87,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 16,
+      EntryId = 88,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 16,
+      EntryId = 91,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 16,
+      EntryId = 92,
+      Weight = 100
+    }
+  },
+  [17] = {
+    {
+      EntryGroupId = 17,
+      EntryId = 81,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 17,
+      EntryId = 82,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 17,
+      EntryId = 83,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 17,
+      EntryId = 90,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 17,
+      EntryId = 91,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 17,
+      EntryId = 92,
+      Weight = 100
+    }
+  },
+  [18] = {
+    {
+      EntryGroupId = 18,
+      EntryId = 81,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 18,
+      EntryId = 82,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 18,
+      EntryId = 83,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 18,
+      EntryId = 89,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 18,
+      EntryId = 91,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 18,
+      EntryId = 92,
+      Weight = 100
+    }
+  },
+  [21] = {
+    {
+      EntryGroupId = 21,
+      EntryId = 101,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 21,
+      EntryId = 102,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 21,
+      EntryId = 103,
+      Weight = 100
+    }
+  },
+  [22] = {
+    {
+      EntryGroupId = 22,
+      EntryId = 101,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 22,
+      EntryId = 102,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 22,
+      EntryId = 103,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 22,
+      EntryId = 104,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 22,
+      EntryId = 105,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 22,
+      EntryId = 106,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 22,
+      EntryId = 107,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 22,
+      EntryId = 108,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 22,
+      EntryId = 111,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 22,
+      EntryId = 112,
+      Weight = 100
+    }
+  },
+  [23] = {
+    {
+      EntryGroupId = 23,
+      EntryId = 101,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 23,
+      EntryId = 102,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 23,
+      EntryId = 103,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 23,
+      EntryId = 109,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 23,
+      EntryId = 110,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 23,
+      EntryId = 111,
+      Weight = 100
+    }
+  },
+  [24] = {
+    {
+      EntryGroupId = 24,
+      EntryId = 101,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 24,
+      EntryId = 102,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 24,
+      EntryId = 103,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 24,
+      EntryId = 109,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 24,
+      EntryId = 110,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 24,
+      EntryId = 112,
+      Weight = 100
+    }
+  },
+  [25] = {
+    {
+      EntryGroupId = 25,
+      EntryId = 141,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 25,
+      EntryId = 142,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 25,
+      EntryId = 143,
+      Weight = 100
+    }
+  },
+  [26] = {
+    {
+      EntryGroupId = 26,
+      EntryId = 141,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 26,
+      EntryId = 142,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 26,
+      EntryId = 143,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 26,
+      EntryId = 144,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 26,
+      EntryId = 145,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 26,
+      EntryId = 146,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 26,
+      EntryId = 147,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 26,
+      EntryId = 148,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 26,
+      EntryId = 151,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 26,
+      EntryId = 152,
+      Weight = 100
+    }
+  },
+  [27] = {
+    {
+      EntryGroupId = 27,
+      EntryId = 141,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 27,
+      EntryId = 142,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 27,
+      EntryId = 143,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 27,
+      EntryId = 150,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 27,
+      EntryId = 151,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 27,
+      EntryId = 152,
+      Weight = 100
+    }
+  },
+  [28] = {
+    {
+      EntryGroupId = 28,
+      EntryId = 141,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 28,
+      EntryId = 142,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 28,
+      EntryId = 143,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 28,
+      EntryId = 149,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 28,
+      EntryId = 151,
+      Weight = 100
+    },
+    {
+      EntryGroupId = 28,
+      EntryId = 152,
+      Weight = 100
+    }
+  }
+}

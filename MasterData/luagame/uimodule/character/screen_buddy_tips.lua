@@ -1,0 +1,259 @@
+local Base = require("ui.uibase")
+local _tinsert = table.insert
+local ui = Util.create_child_mt(Base)
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local ELEMENT_ITEM_KEY_SELECT = "ELEMENT_ITEM_KEY_SELECT"
+local JOB_ITEM_KEY = "JOB_ITEM_KEY"
+local TAG_ITEM_KEY = "TAG_ITEM_KEY"
+local CHARACTER_CONFIG = require("uimodule.character.character_config")
+local ORDER_TYPE = CHARACTER_CONFIG.ORDER_TYPE
+
+function ui:ui_finish_load()
+  self:set_button("BtnBack", function()
+    self:ui_hide()
+  end)
+  self:set_button("Btn_Cancel", function()
+    self:ui_hide()
+  end)
+  self:set_button("Btn_Close", function()
+    self:ui_hide()
+  end)
+  self:set_button("Btn_Sure", function()
+    self:click_sure()
+  end)
+  self:set_button("Btn_SetDefault", function()
+    self.v_order_type = ORDER_TYPE.DEFAULT
+    self:reset_tog_list()
+  end)
+  self:register_exist_auto_template(ELEMENT_ITEM_KEY_SELECT, self.v_uiobjects.Tag1, self.v_uiobjects.TagType1List)
+  self:register_exist_auto_template(JOB_ITEM_KEY, self.v_uiobjects.Tag2, self.v_uiobjects.TagType2List)
+  self:register_exist_auto_template(TAG_ITEM_KEY, self.v_uiobjects.Tag4, self.v_uiobjects.TagType4List)
+end
+
+function ui:ui_on_show(only_own, use_help_fight, is_operate_inside_list, target_buddy_list, ingore_IsShow)
+  self.v_uicompents.TagList_rect:SetAnchoredPositionA(0, 0)
+  self.v_only_own = only_own
+  self.v_use_help_fight = use_help_fight
+  self.v_is_operate_inside_list = is_operate_inside_list
+  self.v_target_buddy_list = target_buddy_list
+  self.v_ingore_IsShow = ingore_IsShow
+  self:init_toggle_list()
+  self:init_click_list()
+end
+
+function ui:click_sure()
+  local buddy_list
+  local buddy_config = ShareRes.create("buddy.buddy")
+  if self.v_target_buddy_list then
+    buddy_list = UtilTable.copy_table(self.v_target_buddy_list)
+  elseif self.v_only_own then
+    buddy_list = UtilTable.copy_table(CharacterMgr:get_buddy_list_show())
+  elseif self.v_use_help_fight then
+    buddy_list = AssistMgr:get_buddy_list()
+  else
+    buddy_list = {}
+    for _, v in pairs(buddy_config) do
+      if self.v_ingore_IsShow or 1 ~= v.IsShow and CharacterMgr:check_buddy_release(v.Id) then
+        _tinsert(buddy_list, {
+          id = v.Id
+        })
+      end
+    end
+  end
+  local select_list = buddy_list
+  if 0 ~= #self.v_select_attr_list then
+    UtilTable.list_delete_by_func(select_list, function(info)
+      local is_select = UtilTable.contains(self.v_select_attr_list, buddy_config[info.id].Element)
+      return not is_select
+    end)
+  end
+  if 0 ~= #self.v_select_job_list then
+    UtilTable.list_delete_by_func(select_list, function(info)
+      local is_select = UtilTable.contains(self.v_select_job_list, buddy_config[info.id].Job)
+      return not is_select
+    end)
+  end
+  if 0 ~= #self.v_select_tag_list then
+    UtilTable.list_delete_by_func(select_list, function(info)
+      local is_select = false
+      local tags = buddy_config[info.id].Tag
+      if tags then
+        is_select = tags[1] and UtilTable.contains(self.v_select_tag_list, tags[1])
+        is_select = is_select or tags[2] and UtilTable.contains(self.v_select_tag_list, tags[2])
+      end
+      return not is_select
+    end)
+  end
+  if #select_list <= 0 then
+    Util.show_message_tip(2156)
+    return
+  end
+  local attr_list = UtilTable.copy_table(self.v_select_attr_list)
+  local job_list = UtilTable.copy_table(self.v_select_job_list)
+  local tag_list = UtilTable.copy_table(self.v_select_tag_list)
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_BUDDY_CHANGE)
+  msg.mm_x = select_list
+  CharacterMgr:set_screen_condtion_attr(attr_list, job_list, tag_list, self.v_is_operate_inside_list)
+  self:ui_hide()
+end
+
+function ui:init_toggle_list()
+  self:init_element_tog()
+  self:init_job_tog()
+  self:init_tag_tog()
+end
+
+function ui:init_element_tog()
+  self.v_select_attr_list = {}
+  self.v_attr_toggle = {}
+  self.v_idx2element = {}
+  self.v_element2idx = {}
+  self.v_attr_toggle_tab = ToggleTab:new(self)
+  local element_cfg_list = ShareRes.create("buddy.buddy_element")
+  for _, data in ipairs(element_cfg_list) do
+    if 0 ~= data.SortId then
+      local item = self:get_auto_cache(ELEMENT_ITEM_KEY_SELECT)
+      local desc = Util.get_text("Label", item)
+      local desc2 = Util.get_text("Checkmark/Label", item)
+      desc.text = data.ElementName
+      desc2.text = data.ElementName
+      local element_icon = Util.get_image("Icon", item)
+      ResMgr:load_set_icon(element_icon, data.ElementIconPath)
+      local tog = Util.get_toggle(nil, item)
+      tog.isOn = false
+      self.v_attr_toggle_tab:_set_toggle(tog, function()
+        self:click_element_toggle(data.Id)
+      end)
+      _tinsert(self.v_attr_toggle, tog)
+      _tinsert(self.v_idx2element, data.Id)
+      self.v_element2idx[data.Id] = #self.v_idx2element
+    end
+  end
+end
+
+function ui:init_job_tog()
+  self.v_select_job_list = {}
+  self.v_job_toggle = {}
+  self.v_job_toggle_tab = ToggleTab:new(self)
+  local job_cfg_list = ShareRes.create("buddy.buddy_job")
+  for index, data in ipairs(job_cfg_list) do
+    local item = self:get_auto_cache(JOB_ITEM_KEY)
+    local desc = Util.get_text("Label", item)
+    local desc2 = Util.get_text("Checkmark/Label", item)
+    local job_icon = Util.get_image("Icon", item)
+    desc.text = data.Name
+    desc2.text = data.Name
+    ResMgr:load_set_icon(job_icon, data.IconPath)
+    local tog = Util.get_toggle(nil, item)
+    tog.isOn = false
+    self.v_job_toggle_tab:_set_toggle(tog, function()
+      self:click_job_toggle(index)
+    end)
+    _tinsert(self.v_job_toggle, tog)
+  end
+end
+
+function ui:init_tag_tog()
+  self.v_select_tag_list = {}
+  self.v_tag_toggle = {}
+  self.v_tag_toggle_tab = ToggleTab:new(self)
+  local tag_cfg_list = ShareRes.create("buddy.buddy_tag")
+  for index, data in ipairs(tag_cfg_list) do
+    local item = self:get_auto_cache(TAG_ITEM_KEY)
+    local desc = Util.get_text("Label", item)
+    local desc2 = Util.get_text("Checkmark/Label", item)
+    desc.text = data.Name
+    desc2.text = data.Name
+    local tog = Util.get_toggle(nil, item)
+    tog.isOn = false
+    self.v_tag_toggle_tab:_set_toggle(tog, function()
+      self:click_tag_toggle(index)
+    end)
+    _tinsert(self.v_tag_toggle, tog)
+  end
+end
+
+function ui:reset_tog_list()
+  if self.v_attr_toggle then
+    for _, tog in pairs(self.v_attr_toggle) do
+      tog.isOn = false
+    end
+  end
+  if self.v_job_toggle then
+    for _, tog in pairs(self.v_job_toggle) do
+      tog.isOn = false
+    end
+  end
+  if self.v_tag_toggle then
+    for _, tog in pairs(self.v_tag_toggle) do
+      tog.isOn = false
+    end
+  end
+  self.v_select_attr_list = {}
+  self.v_select_job_list = {}
+  self.v_select_tag_list = {}
+end
+
+function ui:ui_on_hide()
+  self:reset_tog_list()
+  self.v_order_type = ORDER_TYPE.DEFAULT
+  self.v_select_attr_list = nil
+  self.v_select_job_list = nil
+  self.v_select_tag_list = nil
+  self.v_order_type_toggle = nil
+  self.v_attr_toggle = nil
+  self.v_job_toggle = nil
+  self.v_tag_toggle = nil
+end
+
+function ui:click_order_type_toggle(index)
+  self.v_order_type = index
+end
+
+function ui:click_element_toggle(element_type)
+  if UtilTable.contains(self.v_select_attr_list, element_type) then
+    UtilTable.list_delete_by_value(self.v_select_attr_list, element_type)
+  else
+    _tinsert(self.v_select_attr_list, element_type)
+  end
+end
+
+function ui:click_job_toggle(job_type)
+  if UtilTable.contains(self.v_select_job_list, job_type) then
+    UtilTable.list_delete_by_value(self.v_select_job_list, job_type)
+  else
+    _tinsert(self.v_select_job_list, job_type)
+  end
+end
+
+function ui:click_tag_toggle(tag_type)
+  if UtilTable.contains(self.v_select_tag_list, tag_type) then
+    UtilTable.list_delete_by_value(self.v_select_tag_list, tag_type)
+  else
+    _tinsert(self.v_select_tag_list, tag_type)
+  end
+end
+
+function ui:init_click_list()
+  local attr_key = self.v_is_operate_inside_list and "v_attr_screen_list_inside_list" or "v_attr_screen_list"
+  if CharacterMgr[attr_key] then
+    for _, val in pairs(CharacterMgr[attr_key]) do
+      local index = self.v_element2idx[val]
+      self.v_attr_toggle[index].isOn = true
+    end
+  end
+  local job_key = self.v_is_operate_inside_list and "v_job_screen_list_inside_list" or "v_job_screen_list"
+  if CharacterMgr[job_key] then
+    for _, val in pairs(CharacterMgr[job_key]) do
+      self.v_job_toggle[val].isOn = true
+    end
+  end
+  local tag_key = self.v_is_operate_inside_list and "v_tag_screen_list_inside_list" or "v_tag_screen_list"
+  if CharacterMgr[tag_key] then
+    for _, val in pairs(CharacterMgr[tag_key]) do
+      self.v_tag_toggle[val].isOn = true
+    end
+  end
+end
+
+return ui

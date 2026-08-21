@@ -1,0 +1,37 @@
+local Base = require("obj.npc")
+local M = Util.create_child_mt(Base)
+
+function M:_init(...)
+  Base._init(self, ...)
+end
+
+function M:update()
+  if self:is_real_finish_init() then
+    self.skill_mgr:update()
+    self.magic_mgr:update()
+    self.fight_hud_mgr:update()
+  end
+  self.time_mgr:update()
+end
+
+function M:low_update()
+  if self:is_real_finish_init() then
+    self.act_effect_ctrl:low_update()
+    self.skill_mgr:low_update()
+    self:low_update_ui_hp()
+    self:sync_lua_position()
+  end
+end
+
+function M:late_update()
+end
+
+function M:is_need_land_height()
+  return false
+end
+
+function M:is_simple_npc()
+  return true
+end
+
+return M

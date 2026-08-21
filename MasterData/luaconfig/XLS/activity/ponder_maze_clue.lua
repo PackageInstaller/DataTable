@@ -1,0 +1,5 @@
+return {
+  {Id = 1, Name = "理性"},
+  {Id = 2, Name = "博识"},
+  {Id = 3, Name = "执念"}
+}

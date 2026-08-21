@@ -1,0 +1,126 @@
+local Base = require("gamelogic.activity.activity")
+local CommonDefine = require("cs_share.common_define")
+local M = Util.create_child_mt(Base)
+local STAGE_STATE = {
+  LOCK = 1,
+  CHALLENGE = 2,
+  PASS = 3
+}
+
+function M:_init(activity_id, config_id)
+  Base._init(self, activity_id)
+  self.v_teach_cfg = ShareRes.create("activity.buddy_teach_floor")
+  self.v_hero_stage_info = {}
+  self.v_point_state_info = {}
+  self.v_show_tips_id = 0
+end
+
+function M:on_buddy_teach_list(data)
+  for key, buddy_teach_data in pairs(data.buddy_teach_list) do
+    self:update_buddy_teach_data(buddy_teach_data)
+  end
+end
+
+function M:on_buddy_teach_data(data)
+  self:update_buddy_teach_data(data.buddy_teach_data)
+end
+
+function M:update_buddy_teach_data(buddy_teach_data)
+  local info = buddy_teach_data
+  local buddy_teach_cfg = ShareRes.get_buddy_teach_cfg_by_point_id(info.id)
+  if buddy_teach_cfg then
+    local buddy_id = buddy_teach_cfg.BuddyID
+    if buddy_id then
+      self.v_hero_stage_info[buddy_id] = info
+    end
+    self.v_point_state_info[info.id] = info
+  else
+    self.v_hero_stage_info[info.id] = info
+  end
+end
+
+function M:get_teach_progress(id)
+  local data, point_id
+  if not self.v_hero_stage_info then
+    return 0
+  elseif self.v_hero_stage_info[id] then
+    point_id = ShareRes.get_teach_point_id_by_buddy_id(id)
+    data = self.v_hero_stage_info[id]
+  elseif self.v_point_state_info[id] then
+    point_id = id
+    data = self.v_point_state_info[point_id]
+  else
+    return 0
+  end
+  local cur_floor_index = data.pass_floor_idx or 0
+  local cur, total = 0, 0
+  local all_floor_cfg = self.v_teach_cfg[point_id]
+  for key, floor_cfg in pairs(all_floor_cfg) do
+    total = total + 1
+    if cur_floor_index >= floor_cfg.FloorIdx then
+      cur = cur + 1
+    end
+  end
+  return math.ceil(cur / total * 100)
+end
+
+function M:get_passed_floor_index(id)
+  local data
+  if not self.v_hero_stage_info then
+    return 0
+  elseif self.v_hero_stage_info[id] then
+    data = self.v_hero_stage_info[id]
+  elseif self.v_point_state_info[id] then
+    data = self.v_point_state_info[id]
+  else
+    return 0
+  end
+  return data.pass_floor_idx or 0
+end
+
+function M:get_floor_has_passed(id, floor_index)
+  local cur_floor_index = self:get_passed_floor_index(id)
+  return floor_index <= cur_floor_index
+end
+
+function M:get_open_teach_point(id)
+  local data
+  if not self.v_hero_stage_info then
+    return false
+  elseif self.v_hero_stage_info[id] then
+    data = self.v_hero_stage_info[id]
+  elseif self.v_point_state_info[id] then
+    data = self.v_point_state_info[id]
+  else
+    return false
+  end
+  return data.activate_type > 1
+end
+
+function M:get_has_pass_all(buddy_id)
+  return self:get_teach_progress(buddy_id) >= 100
+end
+
+function M:get_floor_has_open(buddy_id, floor_index)
+  local passed_floor_index = self:get_passed_floor_index(buddy_id)
+  return floor_index <= passed_floor_index + 1
+end
+
+function M:check_point_has_passed(point_id)
+  if not self.v_point_state_info then
+    return false
+  end
+  if not self.v_point_state_info[point_id] then
+    return false
+  end
+  local cur_floor_index = self.v_point_state_info[point_id].pass_floor_idx or 0
+  local all_floor_cfg = self.v_teach_cfg[point_id]
+  for key, floor_cfg in pairs(all_floor_cfg) do
+    if cur_floor_index < floor_cfg.FloorIdx then
+      return false
+    end
+  end
+  return true
+end
+
+return M

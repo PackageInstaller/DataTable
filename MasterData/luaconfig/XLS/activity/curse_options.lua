@@ -1,0 +1,62 @@
+return {
+  {
+    AbilityDrop = 0,
+    AwardId = 0,
+    Desc = "获得一件随机奇珍",
+    GroupId = 1,
+    Icon = "FateBook/Event_icon_yszf_zcbw",
+    Id = 1,
+    Name = "祖传宝物",
+    OrnamentsDrop = 1
+  },
+  {
+    AbilityDrop = 2001,
+    AwardId = 0,
+    Desc = "获得一个随机蓝色片语",
+    GroupId = 1,
+    Icon = "FateBook/Event_icon_yszf_tzch",
+    Id = 2,
+    Name = "天资聪慧",
+    OrnamentsDrop = 0
+  },
+  {
+    AbilityDrop = 0,
+    AwardId = 16102,
+    Desc = "[光尘]+200",
+    GroupId = 1,
+    Icon = "FateBook/Event_icon_yszf_jsxh",
+    Id = 3,
+    Name = "家世显赫",
+    OrnamentsDrop = 0
+  },
+  {
+    AbilityDrop = 0,
+    AwardId = 16101,
+    Desc = "获得一件随机奇珍，[光尘]+100",
+    GroupId = 2,
+    Icon = "FateBook/Event_icon_yszf_zcbw",
+    Id = 4,
+    Name = "祖传宝物",
+    OrnamentsDrop = 1
+  },
+  {
+    AbilityDrop = 2002,
+    AwardId = 0,
+    Desc = "获得一个随机紫色片语",
+    GroupId = 2,
+    Icon = "FateBook/Event_icon_yszf_tzch",
+    Id = 5,
+    Name = "天资聪慧",
+    OrnamentsDrop = 0
+  },
+  {
+    AbilityDrop = 0,
+    AwardId = 16103,
+    Desc = "[光尘]+300",
+    GroupId = 2,
+    Icon = "FateBook/Event_icon_yszf_jsxh",
+    Id = 6,
+    Name = "家世显赫",
+    OrnamentsDrop = 0
+  }
+}

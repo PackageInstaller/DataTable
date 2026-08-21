@@ -1,0 +1,29 @@
+return {
+  {
+    EntryRandomID = 501,
+    Id = 1,
+    RandomEntryItemCount = 500,
+    RandomEntryItemID = 500001,
+    UpGrade = 5,
+    UpGradeItemCount = 1000,
+    UpGradeItemID = 500001
+  },
+  {
+    EntryRandomID = 501,
+    Id = 2,
+    RandomEntryItemCount = 500,
+    RandomEntryItemID = 500001,
+    UpGrade = 5,
+    UpGradeItemCount = 1000,
+    UpGradeItemID = 500001
+  },
+  {
+    EntryRandomID = 501,
+    Id = 3,
+    RandomEntryItemCount = 500,
+    RandomEntryItemID = 500001,
+    UpGrade = 5,
+    UpGradeItemCount = 1000,
+    UpGradeItemID = 500001
+  }
+}

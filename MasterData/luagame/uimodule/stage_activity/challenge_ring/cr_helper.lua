@@ -1,0 +1,36 @@
+local helper = {}
+local BagCfg = require("gamelogic.character.fight_bag_configs")
+local _tinsert = table.insert
+local CR_ITEM_TYPE = {
+  [8] = true,
+  [9] = true
+}
+
+function helper.get_team_single_attr(attr_id)
+  local list = SceneMgr:get_hero_list()
+  local cal_num = 0
+  for _, hero in pairs(list) do
+    local attrs = hero.attr_mgr:get_attr(attr_id)
+    cal_num = cal_num + attrs
+  end
+  local god_npc = SceneMgr:get_god_npc()
+  local attrs = god_npc.attr_mgr:get_attr(attr_id)
+  cal_num = cal_num + attrs
+  return cal_num
+end
+
+function helper.get_cr_item()
+  local bag = FightBagMgr:get_bag(BagCfg.BagType.ITEM)
+  local cr_item_list = {}
+  for _, data in pairs(bag) do
+    local item_cfg = data.Cfg
+    local father_type = item_cfg.Type
+    local is_cr_item = CR_ITEM_TYPE[father_type]
+    if is_cr_item then
+      _tinsert(cr_item_list, data)
+    end
+  end
+  return cr_item_list
+end
+
+return helper

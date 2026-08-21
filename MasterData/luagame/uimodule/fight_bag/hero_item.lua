@@ -1,0 +1,140 @@
+local Base = require("ui.uiobject")
+local CHAPTER_CONFIG = require("uimodule.chapter.chapter_config")
+local FightDefine = require("cs_share.fight_define")
+local M = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local HERO_ICON_PATH = "ICON/Profile/%s"
+local HERO_FRAME_PATH = "UIChar/%s"
+local ATTR_TYPE = FightDefine.ATTR_TYPE
+
+function M:ui_finish_load()
+  local MODEL = {
+    v_hero_frame = {
+      "HeroPz",
+      BIND_TYPE.IMAGE
+    },
+    v_hero_icon = {
+      "HeroIcon",
+      BIND_TYPE.IMAGE
+    },
+    v_hero_fight_obj = {
+      "HeroFight",
+      BIND_TYPE.OBJECT
+    },
+    v_hero_hp = {
+      "HeroHp",
+      BIND_TYPE.SLIDER
+    },
+    v_hero_dead = {
+      "HeroDie",
+      BIND_TYPE.OBJECT
+    },
+    v_choose = {
+      "Choose",
+      BIND_TYPE.OBJECT
+    }
+  }
+  self:init_model(MODEL)
+  self.v_tog = Util.get_button(nil, self.v_object)
+  self.v_isOn = false
+  Global.listener_mgr:add_listener(self.v_object, self.v_tog.onClick, function()
+    if not self.v_choose.activeSelf then
+      self:onclick_hero()
+    end
+  end)
+end
+
+function M:ui_on_show(data, ...)
+  if not data then
+    return
+  end
+  self.v_fight_pos = data.fight_pos
+  self.v_hero = data.hero
+  self.v_is_copy = data.copy or false
+  self.v_can_click = true
+  self.v_isOn = false
+  self:_refresh_hero_data()
+  self:_regist_client_event()
+end
+
+function M:ui_on_hide()
+end
+
+function M:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_CLICK_FIGHT_EQUIP_TIPS, self.response_click_equip_event, self)
+  self:bind_auto_mq(Const.MSG_ON_CLOSE_FIGHT_EQUIP_TIPS, self.response_close_equip_tip_event, self)
+end
+
+function M:response_hero_attr_change_event(msg)
+  if msg.mm_x == ATTR_TYPE.CHAR_HP or msg.mm_x == ATTR_TYPE.CHAR_HP_SHIELD then
+    self:_refresh_hp()
+  end
+end
+
+function M:response_click_equip_event(msg)
+  self.v_can_click = false
+end
+
+function M:response_close_equip_tip_event(msg)
+  self.v_can_click = true
+end
+
+function M:_refresh_hero_data()
+  local components = self.v_uicompents
+  ResMgr:load_set_icon(self.v_hero_icon, string.format(HERO_ICON_PATH, self.v_hero.buddy_cfg.Icon[1]))
+  ResMgr:load_set_icon(self.v_hero_frame, string.format(HERO_FRAME_PATH, ShareRes.get_buddy_qualityIcon_Small(self.v_hero.buddy_cfg.Quality)))
+  local isFight = Global.hero.id == self.v_hero.id
+  self.v_hero_fight_obj:SetActiveEx(isFight)
+  self.v_choose:SetActiveEx(false)
+  self:onclick_hero(isFight)
+  self:_refresh_hp()
+  local is_dead = self.v_hero:is_die()
+  self.v_hero_dead:SetActiveEx(is_dead)
+  if is_dead then
+    self.v_hero_fight_obj:SetActiveEx(false)
+  end
+end
+
+function M:_refresh_hp()
+  local hp = self.v_hero.attr_mgr:get_attr(ATTR_TYPE.CHAR_HP)
+  local hp_max = self.v_hero.attr_mgr:get_attr(ATTR_TYPE.CHAR_HP_MAX)
+  local shield = self.v_hero.attr_mgr:get_attr(ATTR_TYPE.CHAR_HP_SHIELD)
+  local hp_percent = hp / hp_max
+  self.v_hero_hp.value = hp_percent
+end
+
+function M:onclick_hero(isOn)
+  if self.v_can_click == false then
+    return
+  end
+  if false == self.v_tog.gameObject.activeSelf then
+    return
+  end
+  if nil == isOn then
+    isOn = not self.v_isOn
+  end
+  self.v_choose:SetActiveEx(isOn)
+  if self.v_isOn == isOn then
+    return
+  end
+  self.v_isOn = isOn
+  if true == isOn then
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_CLICK_HERO)
+    msg.mm_obj = {
+      fight_pos = self.v_fight_pos,
+      hero = self.v_hero
+    }
+  end
+end
+
+function M:set_can_click()
+  self.v_can_click = true
+end
+
+function M:set_content_show(show)
+  if self.v_is_copy then
+    self.v_uiobjects.Content:SetActive(show)
+  end
+end
+
+return M

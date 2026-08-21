@@ -1,0 +1,64 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local SKILL_SELECT_BG_PATH = "UIFight/new/Battle_skill_bg_white"
+local SKILL_UNSELECT_BG_PATH = "UIFight/new/Battle_skill_bg_black"
+local Cs_color = UnityEngine.Color
+local SKILL_ICON_SELECT = Cs_color(0, 0, 0, 1)
+local SKILL_ICON_UNSELECT = Cs_color(1, 1, 1, 1)
+
+function M:set_data(src_data)
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  self.v_idx = src_data.idx
+  local desc = Util.format_str(src_data.SkillDesc)
+  local name = Util.format_str(src_data.Name)
+  local level = src_data.SkillLevel
+  local is_pass = src_data.is_pass
+  local select_btn = self:get_button(nil, nil)
+  local skill_icon_bg_img = ucom.Skill_Bg_img
+  local skill_icon_img = ucom.Skill_icon_img
+  local skill_desc_txt = ucom.Skill_desc_txt
+  local desc_obj = uobj.Desc
+  local desc_name_txt = ucom.Desc_name_txt
+  desc_obj:SetActive(false)
+  ResMgr:load_set_icon(skill_icon_bg_img, SKILL_UNSELECT_BG_PATH)
+  skill_desc_txt.text = desc
+  name = Util.format_str(name)
+  if level then
+    local level_content = Util.format_str("({1}级)", level)
+    desc_name_txt.text = name .. level_content
+  else
+    desc_name_txt.text = name
+  end
+  select_btn.interactable = true
+  if not is_pass then
+    select_btn.interactable = false
+  end
+  skill_icon_img.color = SKILL_ICON_UNSELECT
+  self:set_button_listener(select_btn, function()
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_SELECTED_UI_FIGHT_SKILL_ITEM)
+    msg.mm_obj = src_data
+  end)
+end
+
+function M:on_clear()
+  self:unbind_all_auto_mq()
+end
+
+function M:set_selected(is_select)
+  local ucom = self.v_uicompents
+  local skill_icon_bg_img = ucom.Skill_Bg_img
+  local skill_icon_img = ucom.Skill_icon_img
+  local path
+  if is_select then
+    path = SKILL_SELECT_BG_PATH
+    skill_icon_img.color = SKILL_ICON_SELECT
+  else
+    path = SKILL_UNSELECT_BG_PATH
+    skill_icon_img.color = SKILL_ICON_UNSELECT
+  end
+  ResMgr:load_set_icon(skill_icon_bg_img, path)
+  self.v_uiobjects.Desc:SetActive(is_select)
+end
+
+return M

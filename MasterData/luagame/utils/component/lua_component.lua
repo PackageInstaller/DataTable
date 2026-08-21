@@ -1,0 +1,39 @@
+local class = require("utils.component.middle_class")
+local LuaBehaviour = class("LuaBehaviour")
+local typeDict = {}
+setmetatable(typeDict, {
+  __index = function(t, k)
+    t[k] = typeof(k)
+    return t[k]
+  end
+})
+
+function LuaBehaviour:AddDefineList(defineList)
+  self._DefineList = self._DefineList or {}
+  for _, value in pairs(defineList) do
+    table.insert(self._DefineList, {
+      name = value.name,
+      type = typeDict[value.type]
+    })
+  end
+end
+
+if ExecuteInEditorScript then
+  return LuaBehaviour
+end
+local AssistantDict = {
+  Update = typeof(CS.Game.LuaUpdateAssistant),
+  FixedUpdate = typeof(CS.Game.LuaFixedUpdateAssistant),
+  LateUpdate = typeof(CS.Game.LuaLateUpdateAssistant),
+  OnPointerClick = typeof(CS.Game.LuaOnPointerClickAssistant)
+}
+
+function LuaBehaviour:initialize()
+  for funcName, assistant in pairs(AssistantDict) do
+    if self[funcName] then
+      self.gameObject:AddComponent(assistant)
+    end
+  end
+end
+
+return LuaBehaviour

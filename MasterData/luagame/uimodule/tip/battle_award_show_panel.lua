@@ -1,0 +1,80 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BATTLE_AWARD_PANEL_KEY = "BATTLE_AWARD_PANEL_KEY"
+local Item_Helper = require("utils.item_helper")
+local CT_Timer = Global.ct_timer
+
+function ui:ui_finish_load()
+  self:set_button("BtnClose", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(BATTLE_AWARD_PANEL_KEY, self.v_uiobjects.AwardTem, self.v_uiobjects.Content)
+end
+
+function ui:ui_on_show(award_list, treasure_chest_id)
+  self.v_treasure_chest_id = treasure_chest_id
+  self:refresh_item_list(award_list)
+  self.award_list = award_list
+  self:start_auto_close_timer()
+  FunctionalNpcMgr.v_show_battle_award_show_panel = true
+end
+
+function ui:ui_on_hide()
+  self:remove_auto_close_timer()
+  FunctionalNpcMgr.v_show_battle_award_show_panel = false
+  local data = {}
+  data.left_pick_up_award_list = self.award_list
+  data.treasure_chest_id = self.v_treasure_chest_id
+  UIMgr:get_ui("common_battle_tips"):ui_show(data)
+end
+
+function ui:refresh_item_list(award_list)
+  self:give_back_auto_cache(BATTLE_AWARD_PANEL_KEY)
+  for index, award_data in ipairs(award_list) do
+    local item_id = award_data.id
+    local item = self:get_auto_cache(BATTLE_AWARD_PANEL_KEY)
+    local item_obj = Util.get_child_gameobj("ItemObjCom1_", item)
+    local item_quality = Util.get_image("ItemQuality_", item_obj)
+    local item_icon = Util.get_image("ItemIcon_", item_obj)
+    local item_amount = Util.get_text("ItemAmount_/Bg/ItemNum_", item_obj)
+    local item_name = Util.get_text("ItemName_", item)
+    local item_cfg = ShareRes.get_item_cfg(item_id)
+    local quality_path = ShareRes.create("item.item_quality", item_cfg.Quality).QualityIcon
+    ResMgr:load_set_icon(item_quality, "UICommon/" .. quality_path)
+    local icon_path = UtilUI.get_item_icon(item_id)
+    ResMgr:load_set_icon(item_icon, icon_path)
+    item_amount.text = award_data.count
+    item_name.text = item_cfg.Name
+    local item_btn = Util.get_button(nil, item_obj)
+    self:set_button_listener(item_btn, function()
+      UIMgr:get_ui("itemTip"):ui_show({
+        item_id = item_cfg.Id
+      })
+    end)
+  end
+end
+
+function ui:start_auto_close_timer()
+  self.v_uicompents.Tips_txt.text = Util.format_str("点击空白处关闭或{1}秒后关闭", 5)
+  self:remove_auto_close_timer()
+  self.v_auto_close_timer = CT_Timer:add_timer("auto_close_award_panel_timer", 6, function(sec)
+    if sec <= 0 then
+      if self.v_auto_close_timer then
+        CT_Timer:remove_timer(self.v_auto_close_timer)
+        self.v_auto_close_timer = nil
+        self:ui_hide()
+      end
+    else
+      self.v_uicompents.Tips_txt.text = Util.format_str("点击空白处关闭或{1}秒后关闭", sec - 1)
+    end
+  end)
+end
+
+function ui:remove_auto_close_timer()
+  if self.v_auto_close_timer then
+    CT_Timer:remove_timer(self.v_auto_close_timer)
+    self.v_auto_close_timer = nil
+  end
+end
+
+return ui

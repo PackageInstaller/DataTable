@@ -1,0 +1,122 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local Char_Helper = require("uimodule.character.char_helper")
+
+function ui:ui_finish_load()
+  self:bind_auto_mq(Const.ON_CLIMBING_TOWER_TYPE_SELECT, self.on_climbing_tower_type_select, self)
+end
+
+function ui:ui_on_hide()
+  self.v_buddy_info = nil
+end
+
+function ui:set_data(cfg)
+  self.v_cfg = cfg
+  self:refresh_item_name(cfg, self.v_object)
+  self:refresh_item_icon(cfg, self.v_object)
+  local item_btn = Util.get_button(nil, self.v_object)
+  self:refresh_lock()
+  self:refresh_select(self.v_parent_ui:get_select_type())
+  self:set_button_listener(item_btn, function()
+    if self.v_parent_ui:get_select_type() == self.v_cfg.Id then
+      return
+    end
+    local msg = MsgGame:mq_publish2(Const.ON_CLIMBING_TOWER_TYPE_SELECT)
+    msg.mm_x = self
+  end)
+end
+
+function ui:refresh_item_name(cfg, item)
+  local name = Util.get_text("Name_", item)
+  name.text = cfg.Name
+end
+
+function ui:refresh_item_icon(cfg, item)
+  local icon = Util.get_image("Icon_", item)
+  ResMgr:load_set_icon(icon, self.v_cfg.SmallIcon)
+end
+
+function ui:ui_on_show()
+end
+
+function ui:on_climbing_tower_type_select(msg)
+  local item = msg.mm_x
+  self:refresh_select(item:get_cfg().Id)
+end
+
+function ui:refresh_select(select_type)
+  local is_select = select_type == self.v_cfg.Id
+  self.v_uiobjects.SelectBg:SetActive(is_select)
+  self.v_uiobjects.UnSelectBg:SetActive(not is_select)
+  self.v_uiobjects.SelectND1:SetActive(false)
+  self.v_uiobjects.SelectND2:SetActive(false)
+  if is_select then
+    self.v_parent_ui:refresh_select_item(self)
+    if 2 == self.v_cfg.Id then
+      self.v_uiobjects.SelectND2:SetActive(true)
+    else
+      self.v_uiobjects.SelectND1:SetActive(true)
+    end
+  end
+end
+
+function ui:refresh_lock()
+  local condition = self.v_cfg.Condition
+  self.v_is_open = ClimbingTowerMgr:get_climbing_tower_group_is_open(self.v_cfg.Id)
+  self.v_uiobjects.Lock:SetActive(not self.v_is_open)
+  if not self.v_is_open then
+    local cond_cfg = ShareRes.create("condition.condition", condition)
+    if cond_cfg then
+      self.v_tips = cond_cfg.Desc
+    end
+  end
+end
+
+function ui:get_cfg_id()
+  return self.v_cfg.Id
+end
+
+function ui:get_award_group_id()
+  return self.v_cfg.AwardGroup
+end
+
+function ui:get_cfg()
+  return self.v_cfg
+end
+
+function ui:get_is_open()
+  return self.v_is_open
+end
+
+function ui:get_tips()
+  return self.v_tips
+end
+
+function ui:get_big_icon()
+  return self.v_cfg.BigIcon
+end
+
+function ui:is_can_click()
+  if not self.v_is_owner then
+    return false
+  end
+  return true
+end
+
+function ui:set_select_visible(visible)
+  self.v_uiobjects.Select:SetActive(visible)
+end
+
+function ui:get_buddy_id()
+  return self.v_buddy_id
+end
+
+function ui:get_language_index()
+  return self.v_language_index
+end
+
+function ui:get_language()
+  return self.v_language
+end
+
+return ui

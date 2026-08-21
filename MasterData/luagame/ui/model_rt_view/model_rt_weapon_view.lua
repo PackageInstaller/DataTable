@@ -1,0 +1,199 @@
+local Layer = require("utils.layer")
+local Quat = require("base.quat")
+local CSChangeLayer = CSHelper.ChangeLayerRecursively
+local ResPool = Global.res_pool_mgr
+local Vector3 = UnityVector3
+local Space = UnityEngine.Space
+local Base = require("ui.model_rt_view.model_rt_view_new")
+local M = Util.create_child_mt(Base)
+local CSPostProcessBehavior = typeof(UnityEngine.PostProcessing.PostProcessingBehaviour)
+local Pos_Y_Offset = 1000
+
+function M:_init(...)
+  Base._init(self, ...)
+  self.v_weapon_animator = {}
+  self.gameobjs = {}
+  self.cur_weapon = nil
+  self.v_is_rotate = false
+  local x, y, z = self.v_camera_root_transform:GetLocalPositionA3()
+  self.v_camera_root_transform:SetLocalPositionA(x, y + 1000, z)
+  self.v_bg_trans = Util.get_rect_transform("CharacterBg/ShowWeapon_Bg", self.v_canvas_root)
+  local x, y, z = self.v_bg_trans:GetLocalPositionA3()
+  self.v_bg_pos = {x, y}
+  self.v_use_x_offset = false
+  self.v_use_bg_x_offset = true
+end
+
+function M:on_destroy_obj()
+  for _, animator_info in pairs(self.v_weapon_animator) do
+    ResPool:release_res(animator_info)
+  end
+  self.v_weapon_animator = {}
+  for _, gameobj in pairs(self.gameobjs) do
+    if not gameobj:IsNull() then
+      ResPool:release(gameobj)
+    end
+  end
+  self.gameobjs = {}
+  self.cur_weapon = nil
+  self.v_is_rotate = false
+end
+
+function M:on_destroy()
+  Base.on_destroy(self)
+  self:on_destroy_obj()
+end
+
+function M:change_weapon(weapon_id)
+  self:on_destroy_obj()
+  self:init_weapon_info(weapon_id)
+end
+
+function M:change_weapon_by_weapon_res_id(weapon_res_id_list)
+  self:on_destroy_obj()
+  self:init_weapon_info_by_res_id(weapon_res_id_list)
+end
+
+function M:init_weapon_info(weapon_id)
+  if not weapon_id or 0 == weapon_id then
+    return
+  end
+  local weapon_cfg = ShareRes.create("equip.equip", weapon_id)
+  if not weapon_cfg then
+    return
+  end
+  local equip_res_cfg = ShareRes.create("equip.equip_res")
+  for k, weapon_res_id in pairs(weapon_cfg.ResId) do
+    local weapon_res_cfg = equip_res_cfg[weapon_res_id]
+    assert(weapon_res_cfg, "no such weapon_res_cfg " .. weapon_res_id)
+    self:load_model_animator(weapon_res_cfg, k)
+  end
+end
+
+function M:init_weapon_info_by_res_id(weapon_res_id_list)
+  if not weapon_res_id_list then
+    return
+  end
+  local equip_res_cfg = ShareRes.create("equip.equip_res")
+  for k, weapon_res_id in pairs(weapon_res_id_list) do
+    local weapon_res_cfg = equip_res_cfg[weapon_res_id]
+    assert(weapon_res_cfg, "no such weapon_res_cfg " .. weapon_res_id)
+    self:load_model_animator(weapon_res_cfg, k)
+  end
+end
+
+function M:load_model_animator(weapon_res_cfg, index)
+  local attach_point = weapon_res_cfg.AttachPoint
+  local model_cfg = ShareRes.create("character.character_model", weapon_res_cfg.ModelPath .. "_UI")
+  model_cfg = model_cfg or ShareRes.create("character.character_model", weapon_res_cfg.ModelPath)
+  if not model_cfg then
+    Log.Error("模型表没有武器配置:", weapon_res_cfg.ModelPath)
+    return
+  end
+  ResPool:get_animator_async(model_cfg.ControllerPath, function(_, animator_info)
+    local old_animator_info = self.v_weapon_animator[index]
+    if old_animator_info then
+      ResPool:release_res(old_animator_info)
+    end
+    self.v_weapon_animator[index] = animator_info
+    self:load_weapon(weapon_res_cfg, attach_point, index, model_cfg)
+  end)
+end
+
+function M:load_weapon(weapon_cfg, attach_point, index, model_cfg)
+  local prefab_name = model_cfg.ModelPath
+  self.v_is_ui_model = true
+  if not prefab_name:match("_UI$") then
+    prefab_name = weapon_cfg.ModelPath
+    self.v_is_ui_model = false
+  end
+  local position = weapon_cfg.UIPosition
+  local rotation = weapon_cfg.UIRotation
+  local root_pos = weapon_cfg.RootPosition
+  local root_rot = weapon_cfg.RootRotation
+  local simple_view_offset = weapon_cfg.SimpleViewOffset
+  local root_x_offset, bg_x_offset = 0, 0
+  if self.v_use_x_offset and simple_view_offset then
+    root_x_offset, bg_x_offset = simple_view_offset[1], simple_view_offset[2]
+  end
+  if self.v_use_bg_x_offset then
+    self.v_bg_trans:SetLocalPositionA(self.v_bg_pos[1] + bg_x_offset, self.v_bg_pos[2], 0)
+  end
+  ResPoolMgr:get_weapon_no_char_async(prefab_name, function(go)
+    local old_gameobj = self.gameobjs[index]
+    if old_gameobj and not old_gameobj:IsNull() then
+      ResPool:release(old_gameobj)
+    end
+    Util.set_all_mat(go.transform, function(mat)
+      local name = mat.name
+      if "H1001009_Weapon_1_2" == name or "H1001019_Weapon_1_2" == name then
+        mat:SetKeyword("_SHADOW_RECEIVE", true)
+      end
+    end)
+    CSChangeLayer(go.transform, Layer.Layer.UIModelView)
+    go.transform:SetParent(self.v_content_root.transform)
+    if root_pos then
+      self.v_content_root.transform:SetLocalPositionA(root_pos[1] + root_x_offset, root_pos[2] + Pos_Y_Offset, root_pos[3])
+    end
+    if root_rot then
+      self.v_content_root.transform:SetEuler(root_rot[1], root_rot[2], root_rot[3])
+    end
+    local pos_x = position and position[1] or 0.1
+    local pos_y = position and position[2] or 0.89
+    local pos_z = position and position[3] or -1.32
+    go.transform:SetLocalPositionA(pos_x, pos_y, pos_z)
+    if not self.v_is_ui_model then
+      local target_quat = Quat.Euler(-90, 0, 0)
+      if rotation then
+        target_quat = Quat.Euler(rotation[1], rotation[2], rotation[3])
+      end
+      go.transform.localRotation = target_quat
+    end
+    self.gameobjs[index] = go
+    self.cur_weapon = go
+    if 1 == weapon_cfg.PlayAnim then
+      self:init_animator(index)
+    end
+  end)
+end
+
+function M:init_animator(index)
+  if self.v_weapon_animator[index] and self.gameobjs[index] then
+    local animator = self.gameobjs[index]:GetComponent(TypeUnityAnimator)
+    animator.runtimeAnimatorController = self.v_weapon_animator[index].res
+    animator.enabled = true
+    if self.v_is_ui_model then
+      animator:CrossFadeInFixedTime(Config.ACT_DEFINE.WeaponIdle, 0.0)
+    else
+      animator:CrossFadeInFixedTime(Config.ACT_DEFINE.Idle, 0.0)
+    end
+  end
+end
+
+function M:update()
+  if self.cur_weapon and self.v_is_rotate and not self.v_is_ui_model then
+    self.v_content_root.transform:Rotate(Vector3(0, 1, 0), Space.World)
+  end
+end
+
+function M:set_rotate_weapon()
+  self.v_is_rotate = true
+end
+
+function M:set_x_offset()
+  self.v_use_x_offset = true
+end
+
+function M:set_bg_x_offset(enable)
+  self.v_use_bg_x_offset = enable
+end
+
+function M:set_model_visible(value)
+  if self.gameobjs then
+    for i, v in pairs(self.gameobjs) do
+      v:SetActive(value)
+    end
+  end
+end
+
+return M

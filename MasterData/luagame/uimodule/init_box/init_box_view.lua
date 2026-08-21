@@ -1,0 +1,405 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local Vec3 = require("base.vec3")
+local MODEL = {
+  v_blur = {
+    "Blur",
+    BIND_TYPE.RAW_IMAGE
+  },
+  v_box_tip_pos = {
+    "BoxTipPos",
+    BIND_TYPE.OBJECT
+  },
+  v_btn_ret = {
+    "BtnRet",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_cancel = {
+    "Btn_Cancel",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_hero_receive = {
+    "Btn_Hero_Receive",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_receive = {
+    "Btn_Receive",
+    BIND_TYPE.BUTTON
+  },
+  v_hero_list = {
+    "HeroList",
+    BIND_TYPE.OBJECT
+  },
+  v_hero_tip_pos = {
+    "HeroTipPos",
+    BIND_TYPE.OBJECT
+  },
+  v_hero = {
+    "Hero",
+    BIND_TYPE.IMAGE
+  },
+  v_num_text = {
+    "NumText",
+    BIND_TYPE.TEXT
+  },
+  v_received = {
+    "Received",
+    BIND_TYPE.TEXT
+  },
+  v_supply_item_obj = {
+    "SupplyItemObj",
+    BIND_TYPE.IMAGE
+  },
+  v_supply_list = {
+    "SupplyList",
+    BIND_TYPE.OBJECT
+  }
+}
+local INIT_BOX_HERO_ITEM_KEY = "INIT_BOX_HERO_ITEM_KEY"
+local INIT_BOX_SUPPLY_ITEM_KEY = "INIT_BOX_SUPPLY_ITEM_KEY"
+local _insert = table.insert
+local _max = math.max
+local ITEM_OBJ = require("uimodule.battle_bag.battle_item")
+local INIT_BOX_HERO_ITEM = require("uimodule.init_box.init_box_hero_item")
+local CommonDef = require("cs_share.common_define")
+local TipsClass = require("uimodule.battle_bag.item_tips")
+local INIT_BOX_HELPER = require("uimodule.init_box.init_box_helper")
+local OBJ_VISIBLE_TYPE = Config.FIGHT_OBJ_VISIBLE_TYPE
+local BagCfg = require("gamelogic.character.fight_bag_configs")
+local Item_Helper = require("utils.item_helper")
+local RUNE2_SOURCE = CommonDef.RUNE2_SOURCE
+
+function ui:init_template()
+  self:register_exist_auto_template(INIT_BOX_HERO_ITEM_KEY, self.v_uiobjects.Hero, self.v_uiobjects.HeroList)
+  self:register_exist_auto_template(INIT_BOX_SUPPLY_ITEM_KEY, self.v_uiobjects.SupplyItemObj, self.v_supply_list)
+end
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnRet", function()
+    Global.camera:set_npc_focus_pos(true)
+    UIMgr:get_ui("fight"):set_uiobject_visible("Main", true)
+    SceneMgr:set_player_control_on()
+    self:ui_hide()
+  end)
+  self:set_button("Btn_Cancel", function()
+    self:click_cancel_all_item()
+  end)
+  self:set_button("Btn_Receive", function()
+    self:click_get_all_item()
+  end)
+  self:set_button("Btn_Hero_Receive", function()
+    self:click_get_all_hero_item()
+  end)
+  self:init_template()
+  local rect = Util.get_rect_transform(nil, self.v_uiobjects.qiannengList)
+  local anch = rect.anchoredPosition
+  self.v_hero_list_x = anch.x
+  self.v_hero_list_y = anch.y
+  local supply_rect = Util.get_rect_transform(nil, self.v_uiobjects.SupplyListList)
+  local supply_anch = supply_rect.anchoredPosition
+  self.v_supply_list_x = supply_anch.x
+  self.v_supply_list_y = supply_anch.y
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_ON_CLICK_INIT_BOX_ITEM, self.response_click_box_item, self)
+  self:bind_auto_mq(Const.MSG_ON_CLICK_INIT_BOX_HERO_ITEM, self.response_click_hero_box_item, self)
+end
+
+function ui:ui_on_show()
+  SceneMgr:set_player_control_off()
+  self.v_select_item_map = {}
+  self:refresh_hero_box_list()
+  self:refresh_ui()
+  self:check_hero_box_show()
+  self:register_event()
+  UIMgr:get_ui("fight"):set_ui_node_visible("Main", OBJ_VISIBLE_TYPE.BUDDY, true)
+end
+
+function ui:refresh_ui()
+  self.v_select_item_map = {}
+  self:refresh_box_list()
+  self:refresh_hero_box_btn()
+  self:refresh_choose_num()
+end
+
+function ui:refresh_box_list()
+  local uobj = self.v_uiobjects
+  uobj.SupplyListList:SetActive(true)
+  self:set_hero_list_origin_pos()
+  self:give_back_auto_cache(INIT_BOX_SUPPLY_ITEM_KEY)
+  self:clear_supply_item_list()
+  self.v_supply_item_list = {}
+  self.v_selected_num = 0
+  local is_have_item = false
+  local show_item_list = self:_bulid_show_data()
+  local grid_num = _max(#show_item_list, 12)
+  for i = 1, grid_num do
+    local item_data = show_item_list[i]
+    if item_data then
+      is_have_item = true
+      local is_draw = item_data.isDraw
+      if is_draw then
+        self.v_selected_num = self.v_selected_num + 1
+      end
+    end
+    local item_go = self:get_auto_cache(INIT_BOX_SUPPLY_ITEM_KEY)
+    local item_obj = ITEM_OBJ:ui_wrap_ex(self, item_go, true)
+    item_obj:set_data(item_go, show_item_list, i, Config.ITEM_OBJ_TYPE.INIT_BOX)
+    _insert(self.v_supply_item_list, item_obj)
+  end
+  if not is_have_item then
+    uobj.SupplyListList:SetActive(false)
+    self:set_hero_list_middle_pos()
+  end
+  self:set_box_item_btn_state()
+end
+
+function ui:check_hero_box_show()
+  local is_have_init_item = INIT_BOX_HELPER.is_have_init_item_get()
+  self:set_item_list_origin_pos()
+  if not is_have_init_item then
+    self.v_uiobjects.qiannengList:SetActive(false)
+    self:set_item_list_middle_pos()
+  end
+end
+
+function ui:set_box_item_btn_state()
+  local box_select_count = InitBoxMgr:get_box_count()
+  local is_can_draw = box_select_count > 0
+  local uobj = self.v_uiobjects
+  uobj.NumText:SetActive(is_can_draw)
+  uobj.Btn_Cancel:SetActive(is_can_draw)
+  uobj.Btn_Receive:SetActive(is_can_draw)
+  uobj.Received:SetActive(not is_can_draw)
+end
+
+function ui:_bulid_show_data()
+  local item_list = InitBoxMgr:get_init_box_list()
+  local show_item_list = {}
+  for idx, data in pairs(item_list) do
+    local item_id = data.itemId
+    local ran_ans_uuid = data.ran_ans_uuid
+    local count = data.count
+    local is_draw = data.isDraw
+    if Item_Helper.get_is_collect(item_id) then
+      show_item_list[idx] = Item_Helper.build_equip_collect_data(item_id, ran_ans_uuid)
+    else
+      show_item_list[idx] = {}
+    end
+    show_item_list[idx].isDraw = is_draw
+    show_item_list[idx].count = count
+    show_item_list[idx].ran_ans_uuid = ran_ans_uuid
+    show_item_list[idx].id = item_id
+  end
+  return show_item_list
+end
+
+function ui:refresh_hero_box_list()
+  local hero_list = SceneMgr:get_hero_list()
+  self:give_back_auto_cache(INIT_BOX_HERO_ITEM_KEY)
+  self:clear_hero_box_list()
+  self.v_hero_box_list = {}
+  local hero_num = 0
+  for idx, hero in pairs(hero_list) do
+    local go = self:get_auto_cache(INIT_BOX_HERO_ITEM_KEY)
+    local hero_box_obj = INIT_BOX_HERO_ITEM:ui_wrap_ex(self, go, true)
+    hero_box_obj.go = go
+    local hero_cfg = hero.buddy_cfg
+    local hero_id = hero_cfg.Id
+    hero_box_obj:set_data(hero_id, idx)
+    _insert(self.v_hero_box_list, hero_box_obj)
+    hero_num = hero_num + 1
+  end
+  for i = 2, 3 do
+    self.v_uiobjects["Line" .. i]:SetActive(false)
+  end
+  for i = 2, hero_num do
+    self.v_uiobjects["Line" .. i]:SetActive(true)
+  end
+end
+
+function ui:refresh_hero_box_btn()
+  local uobj = self.v_uiobjects
+  local is_get_buddy_item = InitBoxMgr:is_get_buddy_item()
+  local btn_obj = uobj.Btn_Hero_Receive
+  local receive_hero_obj = uobj.HeroReceived
+  local none_obj = uobj.None
+  local is_have = INIT_BOX_HELPER.is_have_init_item_get()
+  btn_obj:SetActive(false)
+  receive_hero_obj:SetActive(false)
+  none_obj:SetActive(false)
+  if not is_have then
+    none_obj:SetActive(true)
+  elseif is_get_buddy_item then
+    receive_hero_obj:SetActive(true)
+  else
+    btn_obj:SetActive(true)
+  end
+end
+
+function ui:ui_on_hide()
+  self:clear_supply_item_list()
+  self:clear_hero_box_list()
+end
+
+function ui:clear_supply_item_list()
+  if self.v_supply_item_list then
+    self:remove_wrap_ui_list(self.v_supply_item_list)
+  end
+end
+
+function ui:clear_hero_box_list()
+  if self.v_hero_box_list then
+    for _, obj in pairs(self.v_hero_box_list) do
+      obj:on_clear()
+    end
+    self:remove_wrap_ui_list(self.v_hero_box_list)
+  end
+end
+
+function ui:refresh_choose_num()
+  local now_num = self:get_now_num()
+  local max_num = self:get_max_num()
+  self.v_uicompents.NumText_txt.text = Util.format_str("选择<color=#ffffffff><size=30> {1}/{2} </size></color>个物品领取", now_num, max_num)
+end
+
+function ui:get_now_num()
+  return UtilTable.hash_lenth(self.v_select_item_map) + self.v_selected_num
+end
+
+function ui:get_max_num()
+  local tower = TowerMgr:get_tower()
+  local tower_id = tower:get_tower_id()
+  local max_count = ShareRes.get_init_box_max_count(tower_id) or 0
+  return max_count
+end
+
+function ui:response_click_box_item(msg)
+  if nil == msg then
+    return
+  end
+  local item_data = msg.mm_x
+  local is_on = msg.mm_y
+  local obj = msg.mm_obj
+  local idx = item_data.index
+  local is_draw = item_data.isDraw
+  local id = item_data.id
+  local ran_ans_uuid = item_data.ran_ans_uuid
+  local count = item_data.count
+  local lua_obj = self.v_supply_item_list[idx]
+  if not is_on and self.v_select_item_map[idx] then
+    self.v_select_item_map[idx] = nil
+  end
+  local now_num = self:get_now_num()
+  local max_num = self:get_max_num()
+  if max_num < now_num + 1 and is_on then
+    lua_obj:disable_tog()
+    Util.show_message_tip(2199)
+    return
+  end
+  if is_on and not self.v_select_item_map[idx] then
+    if is_draw then
+      lua_obj:disable_tog()
+      Util.show_message_tip(2200)
+      return
+    end
+    local cfg = FightBagMgr:get_cfg_by_id(id)
+    if cfg.Type == BagCfg.BATTLE_ITEM_TYPE.RUNE then
+      local cfg = FightBagMgr:get_cfg_by_id(id)
+      local rune_item_data = {
+        item_id = id,
+        uuid = idx,
+        ran_ans_uuid = ran_ans_uuid,
+        count = count
+      }
+      UIMgr:get_ui("ui_rune_set"):ui_show(rune_item_data, RUNE2_SOURCE.INIT_BOX)
+    else
+      Item_Helper.show_battle_tips(id, ran_ans_uuid, {
+        bag_source = BagCfg.BAG_SOURCE.NONE,
+        go = obj,
+        tips_source = BagCfg.TIPS_SOURCE.INIT_BOX,
+        layout = BagCfg.INIT_BOX_LAYOUT.LEFT
+      })
+      self.v_select_item_map[idx] = true
+    end
+  end
+  self:refresh_choose_num()
+end
+
+function ui:response_click_hero_box_item(msg)
+  if nil == msg then
+    return
+  end
+  local item_data = msg.mm_x
+  local obj = msg.mm_obj
+  local id = item_data.id
+  Item_Helper.show_battle_tips(id, nil, {
+    bag_source = BagCfg.BAG_SOURCE.NONE,
+    go = obj,
+    layout = BagCfg.INIT_BOX_LAYOUT.RIGHT,
+    tips_source = BagCfg.TIPS_SOURCE.INIT_BOX
+  })
+end
+
+function ui:click_get_all_item()
+  local now_num = UtilTable.hash_lenth(self.v_select_item_map)
+  if now_num > 0 then
+    local select_list = {}
+    for idx, _ in pairs(self.v_select_item_map) do
+      _insert(select_list, idx)
+    end
+    InitBoxMgr:draw_box(select_list, function()
+      self:refresh_ui()
+    end)
+  else
+    Util.show_message_tip(2201)
+  end
+end
+
+function ui:click_get_all_hero_item()
+  InitBoxMgr:draw_buddy_box(function()
+    self:refresh_ui()
+  end)
+end
+
+function ui:click_cancel_all_item()
+  local now_num = UtilTable.hash_lenth(self.v_select_item_map)
+  if now_num > 0 then
+    self:refresh_ui()
+  else
+    Util.show_message_tip(2201)
+  end
+end
+
+function ui:set_hero_list_middle_pos()
+  local qianneng_obj = self.v_uiobjects.qiannengList
+  local qianneng_rect = Util.get_rect_transform(nil, qianneng_obj)
+  qianneng_rect:SetAnchoredPositionA(0, 0)
+end
+
+function ui:set_hero_list_origin_pos()
+  local qianneng_obj = self.v_uiobjects.qiannengList
+  local qianneng_rect = Util.get_rect_transform(nil, qianneng_obj)
+  qianneng_rect:SetAnchoredPositionA(self.v_hero_list_x, self.v_hero_list_y)
+end
+
+function ui:set_item_list_middle_pos()
+  local supply_list_obj = self.v_uiobjects.SupplyListList
+  local supply_list_rect = Util.get_rect_transform(nil, supply_list_obj)
+  supply_list_rect:SetAnchoredPositionA(0, 0)
+end
+
+function ui:set_item_list_origin_pos()
+  local supply_list_obj = self.v_uiobjects.SupplyListList
+  local supply_list_rect = Util.get_rect_transform(nil, supply_list_obj)
+  supply_list_rect:SetAnchoredPositionA(self.v_supply_list_x, self.v_supply_list_y)
+end
+
+function ui:cache_ui()
+  return true
+end
+
+return ui

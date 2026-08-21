@@ -1,0 +1,304 @@
+local Base = require("ui.uiobject")
+local CHAPTER_CONFIG = require("uimodule.chapter.chapter_config")
+local FightDefine = require("cs_share.fight_define")
+local SHOW_RES_TYPE = CHAPTER_CONFIG.FIGHT_RES_TYPE
+local _floor = math.floor
+local SHOW_OBJ_QUEUE = require("uimodule.stage_activity.challenge_ring.show_obj_queue")
+local CommonDefine = require("cs_share.common_define")
+local RUNE_HELPER = require("gamelogic.activity.rune2_helper")
+local RUNE_COLOR = RUNE_HELPER.RUNE_COLOR
+local RUNE2_TYPE = CommonDefine.RUNE2_TYPE
+local RUNE2_POSITION = CommonDefine.RUNE2_POSITION
+local NOT_HAVE_RUNE = 0
+local M = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local HERO_ICON_PATH = "ICON/Profile/%s"
+local HERO_FRAME_PATH = "UIChar/%s"
+local ATTR_TYPE = FightDefine.ATTR_TYPE
+local RES_ATTR_LIST = {
+  [ATTR_TYPE.CHAR_FIGHT_LINE_BAR] = ATTR_TYPE.CHAR_FIGHT_LINE_BAR,
+  [ATTR_TYPE.CHAR_SP] = ATTR_TYPE.CHAR_SP,
+  [ATTR_TYPE.CHAR_SP_MAX] = ATTR_TYPE.CHAR_SP_MAX,
+  [ATTR_TYPE.CHAR_FIGHT_LINE_BAR_MAX] = ATTR_TYPE.CHAR_FIGHT_LINE_BAR_MAX
+}
+local COLOR1 = tonumber("CC4642", 16)
+local COLOR2 = tonumber("3580B5", 16)
+
+function M:ui_finish_load()
+  local MODEL = {
+    v_hero_frame = {
+      "HeroPz",
+      BIND_TYPE.IMAGE
+    },
+    v_hero_icon = {
+      "HeroIcon",
+      BIND_TYPE.IMAGE
+    },
+    v_hero_hp = {
+      "HeroHp",
+      BIND_TYPE.OBJECT
+    },
+    v_hero_res = {
+      "HeroRes",
+      BIND_TYPE.OBJECT
+    },
+    v_hero_dead = {
+      "HeroDie",
+      BIND_TYPE.OBJECT
+    },
+    v_choose = {
+      "Choose",
+      BIND_TYPE.OBJECT
+    },
+    v_tanlent_num = {
+      "TalentNum",
+      BIND_TYPE.TEXT
+    },
+    v_hero_fight = {
+      "HeroFight",
+      BIND_TYPE.OBJECT
+    },
+    v_mask = {
+      "Mask",
+      BIND_TYPE.OBJECT
+    }
+  }
+  self:init_model(MODEL)
+  self.v_hp_slider = self:get_slider("Slider", self.v_hero_hp)
+  self.v_hp_val = self:get_text("Num", self.v_hero_hp)
+  self.v_res_slider = self:get_slider("Slider", self.v_hero_res)
+  self.v_slider_img = self:get_image("Fill Area/Fill", self.v_res_slider.gameObject)
+  self.v_res_val = self:get_text("Num", self.v_hero_res)
+  self.v_res_name = self:get_text("Title", self.v_hero_res)
+  self.v_tog = self:get_toggle(nil, self.v_object)
+  self.v_canvas_group1 = self:get_canvas_group(nil, self.v_object)
+  self.v_canvas_group2 = self:get_canvas_group(nil, self.v_hero_dead)
+  self.v_color_1 = Util.get_unity_color_by_hex(COLOR1)
+  self.v_color_2 = Util.get_unity_color_by_hex(COLOR2)
+  self.v_heal_show_obj = SHOW_OBJ_QUEUE:ui_wrap_ex(nil, self.v_uiobjects.ShowItemList, true)
+end
+
+function M:ui_on_show(hero, ...)
+  if not hero then
+    return
+  end
+  self.v_hero = hero
+  self.v_can_click = true
+  self.v_use_mode = false
+  self:_refresh_hero_data()
+  self:_regist_client_event()
+end
+
+function M:ui_on_hide()
+  self.v_click_consume_item = false
+  self.v_tog.onValueChanged:RemoveAllListeners()
+  self.v_heal_show_obj:ui_hide(true)
+  MsgGame:mq_publish2(Const.MSG_ON_HERO_ITEM_HIDE)
+end
+
+function M:ui_on_destroy()
+  self.v_heal_show_obj:ui_destroy()
+end
+
+function M:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_HERO_ATTR_CHANGE, self.response_hero_attr_change_event, self)
+  self:bind_auto_mq(Const.MSG_ON_CHOOSE_HERO_ITEM, self.response_choose_hero_event, self)
+  self:bind_auto_mq(Const.MSG_ON_CHOOSE_ALL_HERO_ITEM, self.response_choose_all_hero_event, self)
+  self:bind_auto_mq(Const.MSG_ON_UPDATE_FIGHT_SKILL_LIST, self.response_update_fight_skill_list_event, self)
+  self:bind_auto_mq(Const.MSG_ROLE_DEAD, self._refresh_hero_die_ui, self)
+end
+
+function M:response_update_fight_skill_list_event()
+  self:_refresh_hero_data()
+end
+
+function M:response_choose_hero_event(msg)
+  self.v_use_mode = true
+  local choose = msg.mm_x == self.v_hero.uuid
+  self.v_tog.isOn = choose
+  self:_set_canvas_group(not choose and self.v_use_mode)
+end
+
+function M:response_hero_attr_change_event(msg)
+  if nil == msg then
+    return
+  end
+  local char = msg.mm_obj
+  local uuid = char.uuid
+  if not uuid or self.v_hero.uuid ~= uuid then
+    return
+  end
+  if msg.mm_x == ATTR_TYPE.CHAR_HP then
+    self:_refresh_hp(true)
+  end
+  if RES_ATTR_LIST[msg.mm_x] then
+    self:_refresh_res()
+  end
+end
+
+function M:response_choose_all_hero_event(msg)
+  self.v_use_mode = true
+  local die = self.v_hero:is_die()
+  self:_set_canvas_group(die and self.v_use_mode)
+  if die then
+    return
+  end
+  self.v_tog.isOn = true
+end
+
+function M:_refresh_hero_data(update_change)
+  ResMgr:load_set_icon(self.v_hero_icon, string.format(HERO_ICON_PATH, self.v_hero.buddy_cfg.Icon[1]))
+  ResMgr:load_set_icon(self.v_hero_frame, string.format(HERO_FRAME_PATH, ShareRes.get_buddy_qualityIcon_Small(self.v_hero.buddy_cfg.Quality)))
+  self.v_attr_cfg = ShareRes.create("buddy.attribute_define", self.v_hero.buddy_cfg.ResAttrId)
+  self:_refresh_hp(update_change)
+  self:_refresh_res()
+  self:_refresh_rune_info()
+  self:_refresh_hero_die_ui()
+  self:set_toggle_listener(self.v_tog, function(isOn)
+    self:onclick_hero(isOn)
+  end, false)
+  local isFight = not self.v_hero:is_die() and Global.hero.id == self.v_hero.id
+  self.v_hero_fight:SetActive(isFight)
+  local talent_num = BattleSkillBookMgr:get_skill_num(self.v_hero.buddy_cfg.Id) or 0
+  self.v_uiobjects.TalentBg:SetActive(0 ~= talent_num)
+  self.v_tanlent_num.text = talent_num
+  self:_set_canvas_group(false)
+end
+
+function M:_refresh_hp(is_change)
+  if not self.v_hero.attr_mgr then
+    return
+  end
+  local hp = self.v_hero.attr_mgr:get_attr(ATTR_TYPE.CHAR_HP)
+  local hp_max = self.v_hero.attr_mgr:get_attr(ATTR_TYPE.CHAR_HP_MAX)
+  local hp_percent = hp / hp_max
+  if is_change then
+    self:show_heal_content()
+    self.v_hp_slider:DOValue(hp_percent, 1)
+  else
+    self.v_hp_slider.value = hp_percent
+  end
+  self.v_hp_val.text = math.ceil(hp) .. "/" .. math.ceil(hp_max)
+  self.v_cache_hp = hp
+end
+
+function M:_refresh_res()
+  self:_update_fight_down_res()
+  local attr_name = ShareRes.get_buddy_attr_name(self.v_hero.buddy_cfg.ResAttrId)
+  self.v_res_name.text = attr_name
+end
+
+function M:_update_fight_down_res()
+  local hero_cfg = self.v_hero.character_cfg
+  local character_cfg = ShareRes.create("buddy.buddy", hero_cfg.NpcId)
+  local show_fight_res_type = character_cfg.ShowFightResType
+  if show_fight_res_type == SHOW_RES_TYPE.NONE then
+    return
+  end
+  local res_type, res_max_type
+  local temp_val = 0
+  if show_fight_res_type == SHOW_RES_TYPE.FIGHT_ENERGY then
+    res_type = ATTR_TYPE.CHAR_SP
+    res_max_type = ATTR_TYPE.CHAR_SP_MAX
+    self.v_slider_img.color = self.v_color_2
+  elseif show_fight_res_type == SHOW_RES_TYPE.FIGHT_ANGER then
+    res_type = ATTR_TYPE.CHAR_FIGHT_LINE_BAR
+    res_max_type = ATTR_TYPE.CHAR_FIGHT_LINE_BAR_MAX
+    self.v_slider_img.color = self.v_color_1
+  end
+  local cur_res_val = self.v_hero.attr_mgr:get_attr(res_type)
+  local cur_res_max = self.v_hero.attr_mgr:get_attr(res_max_type)
+  cur_res_val = _floor(cur_res_val)
+  cur_res_max = _floor(cur_res_max)
+  local percent = cur_res_val / cur_res_max
+  self.v_res_slider.value = percent
+  local force_tip = cur_res_val + temp_val .. "/" .. cur_res_max
+  self.v_res_val.text = force_tip
+end
+
+function M:onclick_hero(isOn)
+  if self.v_use_mode then
+    self:_onclick_in_use_mode(isOn)
+  elseif not self.v_can_click then
+    return
+  end
+  if true == isOn then
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_CLICK_RING_HERO_ITEM)
+    msg.mm_obj = self.v_hero
+    msg.mm_x = self.v_use_mode
+  end
+end
+
+function M:_onclick_in_use_mode(isOn)
+  if not self.v_can_click then
+    self.v_tog.isOn = not self.v_hero:is_die()
+    return
+  end
+  self:_set_canvas_group(not isOn and self.v_use_mode)
+end
+
+function M:_set_canvas_group(need)
+end
+
+function M:get_cur_hero()
+  return self.v_hero
+end
+
+function M:set_toggle_value(isOn)
+  self.v_tog.isOn = isOn
+end
+
+function M:set_toggle_group(group)
+  if self.v_tog.group ~= nil and nil ~= group then
+    return
+  end
+  self.v_tog.group = group
+end
+
+function M:set_can_click(click)
+  self.v_can_click = click
+end
+
+function M:reset_tog_state()
+  self.v_use_mode = false
+  self:_set_canvas_group(false)
+  self.v_can_click = true
+  self.v_tog.isOn = false
+end
+
+function M:show_heal_content()
+  local show_tb = FightBagMgr:get_blood_add_list(self.v_hero.uuid)
+  if show_tb and next(show_tb) then
+    self.v_heal_show_obj:set_data(show_tb, 2)
+  end
+end
+
+function M:_refresh_rune_info()
+  local buddy_cfg = self.v_hero.buddy_cfg
+  local rune_type_list = buddy_cfg.RuneType
+  local buddy_id = buddy_cfg.Id
+  local buddy_rune_info = Rune2Mgr:get_rune_buddy_info(buddy_id)
+  local lv = 0
+  local pos = NOT_HAVE_RUNE
+  if buddy_rune_info then
+    lv = buddy_rune_info.level
+    pos = buddy_rune_info.pos
+  end
+  for idx, rune_type in pairs(rune_type_list) do
+    local ball_image = self.v_uicompents["Ball" .. idx .. "_img"]
+    local ball_level_text = self.v_uicompents["BallLevel" .. idx .. "_txt"]
+    ball_level_text.text = ""
+    Rune2Mgr:set_ball_img(ball_image, rune_type)
+    local txt_color = rune_type == RUNE2_TYPE.YELLOW_RUNE and "000000" or "FFFFFF"
+    ball_level_text.color = Util.get_unity_color_by_hex(tonumber(txt_color, 16))
+    if pos ~= NOT_HAVE_RUNE and pos == idx then
+      ball_level_text.text = lv
+    end
+  end
+end
+
+function M:_refresh_hero_die_ui()
+  self.v_hero_dead:SetActiveEx(self.v_hero:is_die())
+end
+
+return M

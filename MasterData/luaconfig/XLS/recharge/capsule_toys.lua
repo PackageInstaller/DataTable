@@ -1,0 +1,20 @@
+return {
+  {
+    IconPath = "UIShop/MonthCard/MonthCard_Egg1",
+    Id = 1,
+    Quality = 1,
+    SpineId = 50022
+  },
+  {
+    IconPath = "UIShop/MonthCard/MonthCard_Egg2",
+    Id = 2,
+    Quality = 2,
+    SpineId = 50021
+  },
+  {
+    IconPath = "UIShop/MonthCard/MonthCard_Egg3",
+    Id = 3,
+    Quality = 3,
+    SpineId = 50020
+  }
+}

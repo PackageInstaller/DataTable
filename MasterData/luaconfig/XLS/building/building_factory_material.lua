@@ -1,0 +1,142 @@
+return {
+  [2] = {
+    BuildingLevel = 1,
+    Capacity = {8000, 0},
+    Id = 2,
+    Level = {1, 0},
+    LevelInfo = {
+      {
+        Capacity = 8000,
+        Level = 1,
+        Speed = 200,
+        SpeedUnit = 6.6666666666667,
+        SpeedUpDuration = 1,
+        TimeUnit = 30
+      }
+    },
+    MaxLevelInfo = {
+      Capacity = 8000,
+      Level = 1,
+      Speed = 200,
+      SpeedUnit = 6.6666666666667,
+      SpeedUpDuration = 1,
+      TimeUnit = 30
+    },
+    MinLevel = 0,
+    Speed = {200, 0},
+    SpeedUpDuration = {1, 0},
+    TimeUnit = {30, 0}
+  },
+  [1001] = {
+    BuildingLevel = 2,
+    Capacity = {10, 0},
+    Id = 1001,
+    Level = {2, 0},
+    LevelInfo = {
+      [2] = {
+        Capacity = 10,
+        Level = 2,
+        Speed = 1,
+        SpeedUnit = 0.033333333333333,
+        SpeedUpDuration = 1,
+        TimeUnit = 30
+      }
+    },
+    MaxLevelInfo = {
+      Capacity = 10,
+      Level = 2,
+      Speed = 1,
+      SpeedUnit = 0.033333333333333,
+      SpeedUpDuration = 1,
+      TimeUnit = 30
+    },
+    MinLevel = 0,
+    Speed = {1, 0},
+    SpeedUpDuration = {1, 0},
+    TimeUnit = {30, 0}
+  },
+  [1002] = {
+    BuildingLevel = 3,
+    Capacity = {10, 0},
+    Id = 1002,
+    Level = {3, 0},
+    LevelInfo = {
+      [3] = {
+        Capacity = 10,
+        Level = 3,
+        Speed = 1,
+        SpeedUnit = 0.0066666666666667,
+        SpeedUpDuration = 1,
+        TimeUnit = 150
+      }
+    },
+    MaxLevelInfo = {
+      Capacity = 10,
+      Level = 3,
+      Speed = 1,
+      SpeedUnit = 0.0066666666666667,
+      SpeedUpDuration = 1,
+      TimeUnit = 150
+    },
+    MinLevel = 0,
+    Speed = {1, 0},
+    SpeedUpDuration = {1, 0},
+    TimeUnit = {150, 0}
+  },
+  [1006] = {
+    BuildingLevel = 2,
+    Capacity = {6, 0},
+    Id = 1006,
+    Level = {2, 0},
+    LevelInfo = {
+      [2] = {
+        Capacity = 6,
+        Level = 2,
+        Speed = 1,
+        SpeedUnit = 0.016666666666667,
+        SpeedUpDuration = 1,
+        TimeUnit = 60
+      }
+    },
+    MaxLevelInfo = {
+      Capacity = 6,
+      Level = 2,
+      Speed = 1,
+      SpeedUnit = 0.016666666666667,
+      SpeedUpDuration = 1,
+      TimeUnit = 60
+    },
+    MinLevel = 0,
+    Speed = {1, 0},
+    SpeedUpDuration = {1, 0},
+    TimeUnit = {60, 0}
+  },
+  [1007] = {
+    BuildingLevel = 3,
+    Capacity = {6, 0},
+    Id = 1007,
+    Level = {3, 0},
+    LevelInfo = {
+      [3] = {
+        Capacity = 6,
+        Level = 3,
+        Speed = 1,
+        SpeedUnit = 0.0041666666666667,
+        SpeedUpDuration = 1,
+        TimeUnit = 240
+      }
+    },
+    MaxLevelInfo = {
+      Capacity = 6,
+      Level = 3,
+      Speed = 1,
+      SpeedUnit = 0.0041666666666667,
+      SpeedUpDuration = 1,
+      TimeUnit = 240
+    },
+    MinLevel = 0,
+    Speed = {1, 0},
+    SpeedUpDuration = {1, 0},
+    TimeUnit = {240, 0}
+  }
+}

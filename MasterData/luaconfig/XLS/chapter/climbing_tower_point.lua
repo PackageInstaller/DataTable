@@ -1,0 +1,100 @@
+return {
+  {
+    Difficulty = 0,
+    Group = 1,
+    Id = 1,
+    Name = "试炼其一·I",
+    PointId = 500101,
+    Serial = 1
+  },
+  {
+    Condition = 5000101,
+    Difficulty = 0,
+    Group = 1,
+    Id = 2,
+    Name = "试炼其一·II",
+    PointId = 500102,
+    PreId = 1,
+    Serial = 2
+  },
+  {
+    Condition = 5000102,
+    Difficulty = 0,
+    Group = 1,
+    Id = 3,
+    Name = "试炼其一·III",
+    PointId = 500103,
+    PreId = 2,
+    Serial = 3
+  },
+  {
+    Condition = 5000103,
+    Difficulty = 0,
+    Group = 1,
+    Id = 4,
+    Name = "试炼其一·IV",
+    PointId = 500104,
+    PreId = 3,
+    Serial = 4
+  },
+  {
+    Condition = 5000104,
+    Difficulty = 1,
+    DifficultyAwardIcon = "Icon/Item/it_01_draw_base",
+    Group = 1,
+    Id = 5,
+    Name = "试炼其一·V",
+    PointId = 500105,
+    PreId = 4,
+    Serial = 5
+  },
+  {
+    Difficulty = 0,
+    Group = 2,
+    Id = 6,
+    Name = "试炼其二·I",
+    PointId = 500106,
+    Serial = 1
+  },
+  {
+    Condition = 5000106,
+    Difficulty = 0,
+    Group = 2,
+    Id = 7,
+    Name = "试炼其二·II",
+    PointId = 500107,
+    PreId = 6,
+    Serial = 2
+  },
+  {
+    Condition = 5000107,
+    Difficulty = 0,
+    Group = 2,
+    Id = 8,
+    Name = "试炼其二·III",
+    PointId = 500108,
+    PreId = 7,
+    Serial = 3
+  },
+  {
+    Condition = 5000108,
+    Difficulty = 0,
+    Group = 2,
+    Id = 9,
+    Name = "试炼其二·IV",
+    PointId = 500109,
+    PreId = 8,
+    Serial = 4
+  },
+  {
+    Condition = 5000109,
+    Difficulty = 1,
+    DifficultyAwardIcon = "Icon/Item/it_01_draw_base",
+    Group = 2,
+    Id = 10,
+    Name = "试炼其二·V",
+    PointId = 500110,
+    PreId = 9,
+    Serial = 5
+  }
+}

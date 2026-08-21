@@ -1,0 +1,62 @@
+local Util = require("utils.util")
+local M = Util.create_class()
+local _tinsert = table.insert
+
+function M:_init(count)
+  self.v_head = 1
+  self.v_tail = 0
+  self.v_count = count
+  self.v_list = {}
+end
+
+function M:push(info)
+  self.v_tail = self.v_tail + 1
+  self.v_list[self.v_tail] = info
+end
+
+function M:pop()
+  local head = self.v_head
+  if head > self.v_tail then
+    return
+  end
+  local info = self.v_list[head]
+  self.v_list[head] = nil
+  self.v_head = self.v_head + 1
+  return info
+end
+
+function M:get_top()
+  local head = self.v_head
+  if head > self.v_tail then
+    return
+  end
+  return self.v_list[head]
+end
+
+function M:get_index(index)
+  index = self.v_head + index
+  if index > self.v_tail then
+    return
+  end
+  return self.v_list[index]
+end
+
+function M:length()
+  return self.v_tail - self.v_head + 1
+end
+
+function M:filter_back_list(callback)
+  if self.v_head > self.v_tail then
+    return
+  end
+  local list = {}
+  for i = self.v_tail, self.v_head, -1 do
+    local info = self.v_list[i]
+    if not callback or callback(info) then
+      _tinsert(list, info)
+    end
+  end
+  return list
+end
+
+return M

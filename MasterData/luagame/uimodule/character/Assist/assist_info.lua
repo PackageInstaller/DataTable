@@ -1,0 +1,46 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local FRIEND_POINT_ITEM_ID = 30
+local MODEL = {
+  v_asset_amount = {
+    "AssetAmount",
+    BIND_TYPE.TEXT
+  },
+  v_award_num = {
+    "AwardNum",
+    BIND_TYPE.TEXT
+  },
+  v_asset_icon = {
+    "AssetIcon",
+    BIND_TYPE.IMAGE
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BgBtn", function()
+    self:ui_hide()
+  end)
+  self:set_button("CloseBtn", function()
+    self:ui_hide()
+  end)
+end
+
+function ui:ui_on_show()
+  local item_config = ShareRes.create("item.item", FRIEND_POINT_ITEM_ID)
+  local item_num = BagMgr:get_item_num(FRIEND_POINT_ITEM_ID)
+  local yesterday_item_num = AssistMgr:get_yesterday_friend_point()
+  ResMgr:load_set_icon(self.v_asset_icon, UtilUI.get_item_icon(FRIEND_POINT_ITEM_ID))
+  self.v_asset_amount.text = item_num
+  local str = yesterday_item_num > 0 and Util.format_str("{1}*{2}", item_config.Name, yesterday_item_num) or Util.format_str("暂无")
+  self.v_award_num.text = str
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+return ui

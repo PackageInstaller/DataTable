@@ -1,0 +1,21 @@
+local EFF_AUDIO_ID_LIST = Config.EFF_AUDIO_ID_LIST
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:response_click_escape()
+  return UIMgr.RESPONCE_ESCAPE_TYPE.ESCAPE_CUSTOM
+end
+
+return ui

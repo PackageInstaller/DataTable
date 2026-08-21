@@ -1,0 +1,247 @@
+return {
+  {
+    BuddyId = 1001001,
+    DropList = {
+      {cnt = 1, id = 101}
+    },
+    Group = 1,
+    Id = 1,
+    ItemId = 2010012,
+    Order = 99
+  },
+  {
+    BuddyId = 1001004,
+    DropList = {
+      {cnt = 1, id = 104}
+    },
+    Group = 1,
+    Id = 2,
+    ItemId = 2010042,
+    Order = 98
+  },
+  {
+    BuddyId = 1001008,
+    DropList = {
+      {cnt = 1, id = 108}
+    },
+    Group = 1,
+    Id = 3,
+    ItemId = 2010082,
+    Order = 97
+  },
+  {
+    BuddyId = 1001010,
+    DropList = {
+      {cnt = 1, id = 110}
+    },
+    Group = 1,
+    Id = 4,
+    ItemId = 2010102,
+    Order = 95
+  },
+  {
+    BuddyId = 1001011,
+    DropList = {
+      {cnt = 1, id = 111}
+    },
+    Group = 1,
+    Id = 5,
+    ItemId = 2010112,
+    Order = 94
+  },
+  {
+    BuddyId = 1001013,
+    DropList = {
+      {cnt = 1, id = 113}
+    },
+    Group = 1,
+    Id = 6,
+    ItemId = 2010132,
+    Order = 92
+  },
+  {
+    BuddyId = 1001014,
+    DropList = {
+      {cnt = 1, id = 114}
+    },
+    Group = 1,
+    Id = 7,
+    ItemId = 2010142,
+    Order = 91
+  },
+  {
+    BuddyId = 1001015,
+    DropList = {
+      {cnt = 1, id = 115}
+    },
+    Group = 1,
+    Id = 8,
+    ItemId = 2010152,
+    Order = 90
+  },
+  {
+    BuddyId = 1001016,
+    DropList = {
+      {cnt = 1, id = 116}
+    },
+    Group = 1,
+    Id = 9,
+    ItemId = 2010162,
+    Order = 89
+  },
+  {
+    BuddyId = 1001017,
+    DropList = {
+      {cnt = 1, id = 117}
+    },
+    Group = 1,
+    Id = 10,
+    ItemId = 2010172,
+    Order = 88
+  },
+  {
+    BuddyId = 1001018,
+    DropList = {
+      {cnt = 1, id = 118}
+    },
+    Group = 1,
+    Id = 11,
+    ItemId = 2010182,
+    Order = 87
+  },
+  {
+    BuddyId = 1001019,
+    DropList = {
+      {cnt = 1, id = 119}
+    },
+    Group = 1,
+    Id = 12,
+    ItemId = 2010192,
+    Order = 86
+  },
+  {
+    BuddyId = 1001020,
+    DropList = {
+      {cnt = 1, id = 120}
+    },
+    Group = 1,
+    Id = 13,
+    ItemId = 2010202,
+    Order = 85
+  },
+  {
+    BuddyId = 1001021,
+    DropList = {
+      {cnt = 1, id = 121}
+    },
+    Group = 1,
+    Id = 14,
+    ItemId = 2010212,
+    Order = 84
+  },
+  {
+    BuddyId = 1001022,
+    DropList = {
+      {cnt = 1, id = 122}
+    },
+    Group = 1,
+    Id = 15,
+    ItemId = 2010222,
+    Order = 83
+  },
+  {
+    BuddyId = 1001014,
+    DropList = {
+      {cnt = 1, id = 2001}
+    },
+    FakePoolId = 2001,
+    Group = 101,
+    Id = 16,
+    ItemId = 1001014,
+    Order = 99,
+    ShowIcon = "Draw/20250316/Draw_hero_glmy_zxlgs",
+    ShowIconOffset = {
+      263,
+      20,
+      0,
+      1
+    },
+    TagIcon = "UIDraw/Draw_yq_glmy"
+  },
+  {
+    BuddyId = 1001016,
+    DropList = {
+      {cnt = 1, id = 2002}
+    },
+    FakePoolId = 2002,
+    Group = 101,
+    Id = 17,
+    ItemId = 1001016,
+    Order = 98,
+    ShowIcon = "Draw/20250316/Draw_hero_glmy_zxwal",
+    ShowIconOffset = {
+      274,
+      20,
+      0,
+      1
+    },
+    TagIcon = "UIDraw/Draw_yq_glmy"
+  },
+  {
+    BuddyId = 1001017,
+    DropList = {
+      {cnt = 1, id = 2003}
+    },
+    FakePoolId = 2003,
+    Group = 101,
+    Id = 18,
+    ItemId = 1001017,
+    Order = 97,
+    ShowIcon = "Draw/20250316/Draw_hero_glmy_zxnanna",
+    ShowIconOffset = {
+      195,
+      20,
+      0,
+      1
+    },
+    TagIcon = "UIDraw/Draw_yq_glmy"
+  },
+  {
+    BuddyId = 1001022,
+    DropList = {
+      {cnt = 1, id = 2004}
+    },
+    FakePoolId = 2004,
+    Group = 101,
+    Id = 19,
+    ItemId = 1001022,
+    Order = 96,
+    ShowIcon = "Draw/20250316/Draw_hero_glmy_zxlichi",
+    ShowIconOffset = {
+      397.6,
+      20,
+      0,
+      1
+    },
+    TagIcon = "UIDraw/Draw_yq_glmy"
+  },
+  {
+    BuddyId = 1001008,
+    DropList = {
+      {cnt = 1, id = 2000}
+    },
+    FakePoolId = 2000,
+    Group = 101,
+    Id = 20,
+    ItemId = 1001008,
+    Order = 95,
+    ShowIcon = "Draw/20250316/Draw_hero_glmy_zxylsa",
+    ShowIconOffset = {
+      263,
+      20,
+      0,
+      1
+    },
+    TagIcon = "UIDraw/Draw_yq_glmy"
+  }
+}

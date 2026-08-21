@@ -1,0 +1,26 @@
+local M = Util.create_class()
+
+function M:_init()
+  self.v_tb = {}
+end
+
+function M:add(true_factor)
+  self.v_tb[true_factor] = true
+end
+
+function M:remove(true_factor)
+  self.v_tb[true_factor] = nil
+end
+
+function M:is_true()
+  if next(self.v_tb) then
+    return true
+  end
+  return false
+end
+
+function M:reset()
+  UtilTable.clear_map(self.v_tb)
+end
+
+return M

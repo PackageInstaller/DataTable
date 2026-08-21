@@ -1,0 +1,64 @@
+local helper = {}
+local UIRunePath = "Skill/%s"
+local CommonDefine = require("cs_share.common_define")
+local RUNE2_TYPE = CommonDefine.RUNE2_TYPE
+local UnityColor = UnityEngine.Color
+helper.RUNE_COLOR = {
+  [RUNE2_TYPE.RED_RUNE] = {
+    color = Util.get_unity_color_by_hex(tonumber("b14646", 16))
+  },
+  [RUNE2_TYPE.YELLOW_RUNE] = {
+    color = Util.get_unity_color_by_hex(tonumber("ffd07b", 16))
+  },
+  [RUNE2_TYPE.BULE_RUNE] = {
+    color = Util.get_unity_color_by_hex(tonumber("6f97ed", 16))
+  }
+}
+helper.RUNE_COLOR_TEMP = UnityColor()
+helper.NONE_RUNE_COLOR = {
+  color = Util.get_unity_color_by_hex(tonumber("bcb4a5", 16))
+}
+helper.RUNE_COLOR_A = {
+  [RUNE2_TYPE.RED_RUNE] = {
+    color = UnityColor(0.6941176470588235, 0.27450980392156865, 0.27450980392156865, 0.2)
+  },
+  [RUNE2_TYPE.YELLOW_RUNE] = {
+    color = UnityColor(1, 0.8156862745098039, 0.4823529411764706, 0.2)
+  },
+  [RUNE2_TYPE.BULE_RUNE] = {
+    color = UnityColor(0.43529411764705883, 0.592156862745098, 0.9294117647058824, 0.2)
+  }
+}
+local RUNE_TYPE_IMAGE_NAME = {
+  [RUNE2_TYPE.RED_RUNE] = "red",
+  [RUNE2_TYPE.YELLOW_RUNE] = "yellow",
+  [RUNE2_TYPE.BULE_RUNE] = "blue"
+}
+helper.DETAIL_ITEM_SHOW_TYPE = {
+  BAG_VIEW = 1,
+  SET_NOW_VIEW = 2,
+  SET_NEXT_VIEW = 3,
+  SUC_VIEW = 4
+}
+helper.TEAM_LV_CHANGE_STATE = {
+  NO_CHANGE = 1,
+  UP = 2,
+  DOWN = 3
+}
+
+function helper.get_rune_icon(icon_name)
+  local path = string.format(UIRunePath, icon_name)
+  return path
+end
+
+function helper.get_buddy_rune_idx_by_type(buddy_id, rune_type)
+  local hero_rune_cfg = ShareRes.get_buddy_rune_cfg(buddy_id)
+  local rune_type_list = hero_rune_cfg.Type
+  for idx, cfg_rune_type in pairs(rune_type_list) do
+    if rune_type == cfg_rune_type then
+      return idx
+    end
+  end
+end
+
+return helper

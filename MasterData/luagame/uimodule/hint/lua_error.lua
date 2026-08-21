@@ -1,0 +1,8 @@
+local M = {}
+
+function M.on_lua_error(err_msg, title)
+  local ui = Global.ui_mgr:get_ui("lua_error")
+  ui:ui_show(err_msg, title)
+end
+
+return M

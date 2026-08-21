@@ -1,0 +1,44 @@
+return {
+  {
+    FourPieceContext = "技能命中时，获得一层buff，最高叠加5层。施放大招时消耗所有buff层数，每层增加技能伤害20%。",
+    FourPieceMagic = 6020006,
+    Id = 1,
+    TwoPieceContext = "技能命中时，获得一层buff，最高叠加5层。施放大招时消耗所有buff层数，每层增加技能伤害8%。",
+    TwoPieceMagic = 6020036
+  },
+  {
+    FourPieceContext = "使用对策技后，下一次普攻伤害增加200%",
+    FourPieceMagic = 6020008,
+    Id = 2,
+    TwoPieceContext = "使用对策技后，下一次普攻伤害增加80%",
+    TwoPieceMagic = 6020037
+  },
+  {
+    FourPieceContext = "使用普攻击杀一个敌人后，下一次技能造成伤害+120%",
+    FourPieceMagic = 6020038,
+    Id = 3,
+    TwoPieceContext = "使用普攻击杀一个敌人后，下一次技能造成伤害+50%",
+    TwoPieceMagic = 6020004
+  },
+  {
+    FourPieceContext = "当单场战斗时间持续到20s时，造成的额外伤害增加80%",
+    FourPieceMagic = 6020012,
+    Id = 4,
+    TwoPieceContext = "当单场战斗时间持续到20s时，造成的额外伤害增加35%",
+    TwoPieceMagic = 6020039
+  },
+  {
+    FourPieceContext = "暴击率+40%,暴击伤害+60%",
+    FourPieceMagic = 6020041,
+    Id = 5,
+    TwoPieceContext = "暴击伤害+60%",
+    TwoPieceMagic = 6020040
+  },
+  [610000] = {
+    FourPieceContext = "无敌",
+    FourPieceMagic = 78,
+    Id = 610000,
+    TwoPieceContext = "无敌",
+    TwoPieceMagic = 76
+  }
+}

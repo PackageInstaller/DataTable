@@ -1,0 +1,272 @@
+return {
+  {
+    [2010012] = {
+      EquipId = 2010012,
+      Id = 1,
+      Priority = 8
+    },
+    [2010042] = {
+      EquipId = 2010042,
+      Id = 1,
+      Priority = 9
+    },
+    [2010082] = {
+      EquipId = 2010082,
+      Id = 1,
+      Priority = 3
+    },
+    [2010092] = {
+      EquipId = 2010092,
+      Id = 1,
+      Priority = 1,
+      Special = true
+    },
+    [2010102] = {
+      EquipId = 2010102,
+      Id = 1,
+      Priority = 10
+    },
+    [2010112] = {
+      EquipId = 2010112,
+      Id = 1,
+      Priority = 11
+    },
+    [2010122] = {
+      BeginTime = 10003,
+      EquipId = 2010122,
+      Id = 1,
+      Priority = 2,
+      Special = true
+    },
+    [2010132] = {
+      EquipId = 2010132,
+      Id = 1,
+      Priority = 12
+    },
+    [2010142] = {
+      EquipId = 2010142,
+      Id = 1,
+      Priority = 5
+    },
+    [2010152] = {
+      EquipId = 2010152,
+      Id = 1,
+      Priority = 13
+    },
+    [2010162] = {
+      EquipId = 2010162,
+      Id = 1,
+      Priority = 6
+    },
+    [2010172] = {
+      EquipId = 2010172,
+      Id = 1,
+      Priority = 4
+    },
+    [2010182] = {
+      EquipId = 2010182,
+      Id = 1,
+      Priority = 14
+    },
+    [2010192] = {
+      EquipId = 2010192,
+      Id = 1,
+      Priority = 15
+    },
+    [2010202] = {
+      EquipId = 2010202,
+      Id = 1,
+      Priority = 16
+    },
+    [2010212] = {
+      EquipId = 2010212,
+      Id = 1,
+      Priority = 17
+    },
+    [2010222] = {
+      EquipId = 2010222,
+      Id = 1,
+      Priority = 7
+    }
+  },
+  {
+    [2010012] = {
+      EquipId = 2010012,
+      Id = 2,
+      Priority = 8
+    },
+    [2010042] = {
+      EquipId = 2010042,
+      Id = 2,
+      Priority = 9
+    },
+    [2010082] = {
+      EquipId = 2010082,
+      Id = 2,
+      Priority = 3
+    },
+    [2010102] = {
+      EquipId = 2010102,
+      Id = 2,
+      Priority = 10
+    },
+    [2010112] = {
+      EquipId = 2010112,
+      Id = 2,
+      Priority = 11
+    },
+    [2010132] = {
+      EquipId = 2010132,
+      Id = 2,
+      Priority = 12
+    },
+    [2010142] = {
+      EquipId = 2010142,
+      Id = 2,
+      Priority = 5
+    },
+    [2010152] = {
+      EquipId = 2010152,
+      Id = 2,
+      Priority = 13
+    },
+    [2010162] = {
+      EquipId = 2010162,
+      Id = 2,
+      Priority = 6
+    },
+    [2010172] = {
+      EquipId = 2010172,
+      Id = 2,
+      Priority = 4
+    },
+    [2010182] = {
+      EquipId = 2010182,
+      Id = 2,
+      Priority = 14
+    },
+    [2010192] = {
+      EquipId = 2010192,
+      Id = 2,
+      Priority = 15
+    },
+    [2010202] = {
+      EquipId = 2010202,
+      Id = 2,
+      Priority = 16
+    },
+    [2010212] = {
+      EquipId = 2010212,
+      Id = 2,
+      Priority = 17
+    },
+    [2010222] = {
+      EquipId = 2010222,
+      Id = 2,
+      Priority = 7
+    },
+    [2010232] = {
+      EquipId = 2010232,
+      Id = 2,
+      Priority = 1,
+      Special = true
+    },
+    [2010242] = {
+      BeginTime = 10009,
+      EquipId = 2010242,
+      Id = 2,
+      Priority = 2,
+      Special = true
+    }
+  },
+  {
+    [2010012] = {
+      EquipId = 2010012,
+      Id = 3,
+      Priority = 8
+    },
+    [2010042] = {
+      EquipId = 2010042,
+      Id = 3,
+      Priority = 9
+    },
+    [2010082] = {
+      EquipId = 2010082,
+      Id = 3,
+      Priority = 3
+    },
+    [2010102] = {
+      EquipId = 2010102,
+      Id = 3,
+      Priority = 10
+    },
+    [2010112] = {
+      EquipId = 2010112,
+      Id = 3,
+      Priority = 11
+    },
+    [2010132] = {
+      EquipId = 2010132,
+      Id = 3,
+      Priority = 12
+    },
+    [2010142] = {
+      EquipId = 2010142,
+      Id = 3,
+      Priority = 5
+    },
+    [2010152] = {
+      EquipId = 2010152,
+      Id = 3,
+      Priority = 13
+    },
+    [2010162] = {
+      EquipId = 2010162,
+      Id = 3,
+      Priority = 6
+    },
+    [2010172] = {
+      EquipId = 2010172,
+      Id = 3,
+      Priority = 4
+    },
+    [2010182] = {
+      EquipId = 2010182,
+      Id = 3,
+      Priority = 14
+    },
+    [2010192] = {
+      EquipId = 2010192,
+      Id = 3,
+      Priority = 15
+    },
+    [2010202] = {
+      EquipId = 2010202,
+      Id = 3,
+      Priority = 16
+    },
+    [2010212] = {
+      EquipId = 2010212,
+      Id = 3,
+      Priority = 17
+    },
+    [2010222] = {
+      EquipId = 2010222,
+      Id = 3,
+      Priority = 7
+    },
+    [2010262] = {
+      EquipId = 2010262,
+      Id = 3,
+      Priority = 1,
+      Special = true
+    },
+    [2010272] = {
+      BeginTime = 10015,
+      EquipId = 2010272,
+      Id = 3,
+      Priority = 2,
+      Special = true
+    }
+  }
+}

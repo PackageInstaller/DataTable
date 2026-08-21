@@ -1,0 +1,292 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local EQUATION_TYPE = Config.CommonDefine.CURSE_ILLUSTRATED_TYPE.EQUATION
+local EQUATION_HORI_ITEM = require("uimodule.stage_activity.fate_book.equation_hori_item")
+local EQUATION_ITEM = require("uimodule.stage_activity.fate_book.equation_item")
+local ccd = require("uimodule.stage_activity.challenge_ring_plus.curse_common_define")
+local EQUATION_OPERATION_TYPE = ccd.EQUATION_OPERATION_TYPE
+local HORICONTENT_EQUATIONTEMS_TEMP_KEY = "HORICONTENT_EQUATIONTEMS_TEMP_KEY"
+local PAGECONTENT_PAGETEM_TEMP_KEY = "PAGECONTENT_PAGETEM_TEMP_KEY"
+local BRANCHCONTENT_BRANCHTEM_TEMP_KEY = "BRANCHCONTENT_BRANCHTEM_TEMP_KEY"
+local BRANCHCONTENT_BRANCHLVTEM_TEMP_KEY = "BRANCHCONTENT_BRANCHLVTEM_TEMP_KEY"
+local BRANCHCONTENT_STAR_TEMP_KEY = "BRANCHCONTENT_STAR_TEMP_KEY"
+local BRANCHCONTENT_SECTTEM_TEMP_KEY = "BRANCHCONTENT_SECTTEM_TEMP_KEY"
+
+function ui:on_click_equation_hori_item(equation_id)
+  if self.v_select_equation_id == equation_id then
+    return
+  end
+  local is_red = FateBookMgr:get_red_state(EQUATION_TYPE, equation_id)
+  if is_red then
+    FateBookMgr:close_redpoint(EQUATION_TYPE, equation_id, true)
+    self.v_equation_hori_item_map[equation_id]:set_red_state()
+    self:check_group_page_redpoint(self.v_select_group_id)
+  end
+  self.v_select_equation_id = equation_id
+  self:after_select_equation()
+  self:refresh_equation_hori_select()
+end
+
+function ui:on_click_page_toggle(isOn, group_id)
+  if not isOn or self.v_select_group_id == group_id then
+    return
+  end
+  self.v_select_group_id = group_id
+  self:after_select_page_obj()
+end
+
+function ui:on_click_BtnAward()
+  local task_group_id = ShareRes.get_curse_illustrated_task_group_by_type_id(EQUATION_TYPE)
+  UIMgr:get_ui("chapter_task"):ui_show(nil, task_group_id, "收集进度")
+end
+
+function ui:on_click_BtnRet1()
+  self:ui_hide()
+end
+
+function ui:ui_finish_load()
+  self:set_button("BtnAward", function()
+    self:on_click_BtnAward()
+  end)
+  self:set_button("BtnRet1", function()
+    self:on_click_BtnRet1()
+  end)
+  self.v_equation_hori_item_map = {}
+  self:register_exist_auto_template(HORICONTENT_EQUATIONTEMS_TEMP_KEY, self.v_uiobjects.EquationTemS, self.v_uiobjects.HoriContent)
+  self:register_exist_auto_template(PAGECONTENT_PAGETEM_TEMP_KEY, self.v_uiobjects.PageTem, self.v_uiobjects.PageContent)
+  self:register_exist_auto_template(BRANCHCONTENT_BRANCHTEM_TEMP_KEY, self.v_uiobjects.BranchTem, self.v_uiobjects.BranchContent)
+  self:register_exist_auto_template(BRANCHCONTENT_BRANCHLVTEM_TEMP_KEY, self.v_uiobjects.BranchLvTem, self.v_uiobjects.BranchContent)
+  self:register_exist_auto_template(BRANCHCONTENT_STAR_TEMP_KEY, self.v_uiobjects.Star, self.v_uiobjects.BranchContent)
+  self:register_exist_auto_template(BRANCHCONTENT_SECTTEM_TEMP_KEY, self.v_uiobjects.SectTem, self.v_uiobjects.BranchContent)
+  self.v_equation_item = EQUATION_ITEM:ui_wrap_ex(self, self.v_uiobjects.EquationTem, true)
+  self.v_page_toggle_group = self:get_toggle_group(nil, self.v_uiobjects.PageContent)
+end
+
+function ui:ui_on_show()
+  self:bind_auto_mq(Const.MSG_ON_TASK_UPDATE, self.refresh_task_redpoint, self)
+  self:refresh_view()
+end
+
+function ui:ui_on_hide()
+  local y = self.v_uicompents.HoriContent_rect.anchoredPosition.y
+  self.v_uicompents.HoriContent_rect:SetAnchoredPositionA(0, y)
+  self.v_select_group_id = nil
+  self.v_select_equation_id = nil
+  self.v_page_toggle_group.enabled = false
+  self.v_page_obj_map = {}
+  self:clear_equation_hori_item_map()
+end
+
+function ui:ui_on_destroy()
+  self.v_equation_item:ui_hide()
+  self.v_equation_item:ui_destroy()
+  self.v_equation_item = nil
+end
+
+function ui:refresh_view()
+  self.v_page_obj_map = {}
+  self:give_back_auto_cache(PAGECONTENT_PAGETEM_TEMP_KEY)
+  self:refresh_illustrated_group_page()
+  self:refresh_task_redpoint()
+end
+
+function ui:refresh_illustrated_group_page()
+  local icon_img, page_name_txt
+  local all_group_cfg = ShareRes.get_curse_equation_illustrated_cfg()
+  local sort_data = {}
+  for key, group_cfg in pairs(all_group_cfg) do
+    sort_data[#sort_data + 1] = group_cfg
+  end
+  table.sort(sort_data, function(a, b)
+    if a.Priority ~= b.Priority then
+      return a.Priority > b.Priority
+    end
+    return false
+  end)
+  local obj, first_tog
+  for key, group_cfg in ipairs(sort_data) do
+    obj = self:get_auto_cache(PAGECONTENT_PAGETEM_TEMP_KEY)
+    local group_id = group_cfg.Id
+    self.v_page_obj_map[group_id] = obj
+    icon_img = self:get_image("Icon", obj)
+    ResMgr:load_set_icon(icon_img, group_cfg.Icon, nil, true, self)
+    page_name_txt = self:get_text("PageName", obj)
+    page_name_txt.text = group_cfg.Name
+    self:check_group_page_redpoint(group_id)
+    local toggle = self:get_toggle(nil, obj)
+    self:set_toggle_listener(toggle, function(isOn)
+      toggle.interactable = not isOn
+      self:on_click_page_toggle(isOn, group_id)
+    end)
+    first_tog = first_tog or toggle
+  end
+  self.v_page_toggle_group.enabled = true
+  first_tog.isOn = false
+  first_tog.isOn = true
+end
+
+function ui:check_group_page_redpoint(group_id)
+  if self.v_page_obj_map[group_id] then
+    local group_cfg = ShareRes.get_curse_equation_illustrated_cfg(group_id)
+    local is_open = false
+    for key, equation_id in pairs(group_cfg.EquationId) do
+      if FateBookMgr:get_red_state(EQUATION_TYPE, equation_id) then
+        is_open = true
+        break
+      end
+    end
+    local redpoint = self:get_child_gameobj("Redpoint", self.v_page_obj_map[group_id])
+    redpoint.gameObject:SetActive(is_open)
+  end
+end
+
+function ui:after_select_page_obj()
+  local group_cfg = ShareRes.get_curse_equation_illustrated_cfg(self.v_select_group_id)
+  ResMgr:load_set_icon(self.v_uicompents.GroupIcon_img, group_cfg.Icon, nil, true, self)
+  self.v_uicompents.GroupName_txt.text = group_cfg.Name
+  self:refresh_equation_hori_info()
+  self.v_uicompents.RefreshEquationPD_pd:ResetPD()
+  self.v_uicompents.RefreshGroupPD_pd:ResetPD()
+  self.v_uicompents.RefreshGroupPD_pd:Play()
+end
+
+function ui:refresh_equation_hori_info()
+  self:clear_equation_hori_item_map()
+  local group_cfg = ShareRes.get_curse_equation_illustrated_cfg(self.v_select_group_id)
+  local total_num = 0
+  local unlock_num = 0
+  local obj, build_data, first_equation_id
+  for key, equation_id in pairs(group_cfg.EquationId) do
+    if FateBookMgr:check_illustrated_is_unlock(EQUATION_TYPE, equation_id) then
+      unlock_num = unlock_num + 1
+    end
+    total_num = total_num + 1
+    obj = self:get_auto_cache(HORICONTENT_EQUATIONTEMS_TEMP_KEY)
+    self.v_equation_hori_item_map[equation_id] = EQUATION_HORI_ITEM:ui_wrap_ex(self, obj, true)
+    build_data = {
+      equation_id = equation_id,
+      click_cb = function()
+        self:on_click_equation_hori_item(equation_id)
+      end
+    }
+    self.v_equation_hori_item_map[equation_id]:set_data(build_data, EQUATION_OPERATION_TYPE.ILLUSTATED)
+    first_equation_id = first_equation_id or equation_id
+  end
+  self.v_refreshing_group = true
+  self:on_click_equation_hori_item(first_equation_id)
+  self.v_refreshing_group = false
+  self.v_uicompents.GroupNum_txt.text = string.format("(%s/%s)", unlock_num, total_num)
+end
+
+function ui:after_select_equation()
+  local x = self.v_uicompents.BranchContent_rect.anchoredPosition.x
+  self.v_uicompents.BranchContent_rect:SetAnchoredPositionA(x, 0)
+  local is_red = FateBookMgr:get_red_state(EQUATION_TYPE, self.v_select_equation_id)
+  local build_data = {
+    equation_id = self.v_select_equation_id,
+    is_red = is_red
+  }
+  self.v_equation_item:set_data(build_data, nil, nil, EQUATION_OPERATION_TYPE.ILLUSTATED)
+  self:give_back_auto_cache(BRANCHCONTENT_BRANCHTEM_TEMP_KEY)
+  self:give_back_auto_cache(BRANCHCONTENT_BRANCHLVTEM_TEMP_KEY)
+  self:give_back_auto_cache(BRANCHCONTENT_STAR_TEMP_KEY)
+  self:give_back_auto_cache(BRANCHCONTENT_SECTTEM_TEMP_KEY)
+  if FateBookMgr:check_illustrated_is_unlock(EQUATION_TYPE, self.v_select_equation_id) then
+    self:refresh_branch_info()
+  else
+    self:refresh_lock_info()
+  end
+  if not self.v_refreshing_group then
+    self.v_uicompents.RefreshEquationPD_pd:ResetPD()
+    self.v_uicompents.RefreshEquationPD_pd:Play()
+  end
+end
+
+function ui:refresh_branch_info()
+  self.v_uiobjects.Content:SetActive(true)
+  self.v_uiobjects.EquationLock:SetActive(false)
+  local equation_id = self.v_select_equation_id
+  local equation_cfg = ShareRes.get_curse_equation_cfg(equation_id)
+  local branch_list = equation_cfg.BranchList
+  local all_branch_cfg, genres_cfg, branch_obj, branch_lv_obj, star_obj, sect_obj, btn, lv_root, star_root, sect_root, branch_txt, branch_name_txt, branch_desc_txt, sect_img, sect_txt
+  local branch_srt = "分支"
+  local sect_info
+  for index, branch_id in pairs(branch_list) do
+    all_branch_cfg = ShareRes.get_curse_equation_branch_cfg(branch_id)
+    branch_obj = self:get_auto_cache(BRANCHCONTENT_BRANCHTEM_TEMP_KEY)
+    branch_txt = self:get_text("Title/BranchText", branch_obj)
+    branch_txt.text = Util.format_str(branch_srt .. index)
+    lv_root = self:get_rect_transform("BranchLvContent", branch_obj)
+    for index, branch_cfg in ipairs(all_branch_cfg) do
+      branch_lv_obj = self:get_auto_cache(BRANCHCONTENT_BRANCHLVTEM_TEMP_KEY)
+      branch_lv_obj.transform:SetParent(lv_root.component)
+      branch_lv_obj.transform:ResetAttr()
+      branch_desc_txt = self:get_text("BranchName_", branch_lv_obj)
+      branch_desc_txt.text = branch_cfg.Name
+      branch_name_txt = self:get_text("BranchDesc_", branch_lv_obj)
+      branch_name_txt.text = branch_cfg.DetailDesc
+      btn = self:get_button(nil, branch_lv_obj)
+      local key_id_list = branch_cfg.KeyIDList
+      self:set_button_listener(btn, function()
+        if UtilTable.is_empty(key_id_list) then
+          return
+        end
+        UIMgr:try_show_ui("keyword_tips_v2", nil, key_id_list)
+      end)
+      star_root = self:get_rect_transform("BranchName_/StarContent_", branch_lv_obj)
+      sect_root = self:get_rect_transform("SectContent", branch_lv_obj)
+      local max_sect_count = #branch_cfg.Sect
+      local max_num = math.max(branch_cfg.Lv, max_sect_count)
+      for i = 1, max_num do
+        if i <= branch_cfg.Lv then
+          star_obj = self:get_auto_cache(BRANCHCONTENT_STAR_TEMP_KEY)
+          star_obj.transform:SetParent(star_root.component)
+          star_obj.transform:ResetAttr()
+        end
+        if i <= max_sect_count then
+          sect_obj = self:get_auto_cache(BRANCHCONTENT_SECTTEM_TEMP_KEY)
+          sect_obj.transform:SetParent(sect_root.component)
+          sect_obj.transform:ResetAttr()
+          sect_img = self:get_image("SectIcon", sect_obj)
+          sect_info = branch_cfg.Sect[i]
+          genres_cfg = ShareRes.get_genres_cfg(sect_info.Sect)
+          ResMgr:load_set_icon(sect_img, genres_cfg.IconPath, nil, true, self)
+          sect_txt = self:get_text("TalentNum", sect_obj)
+          sect_txt.text = sect_info.Count
+        end
+      end
+    end
+  end
+end
+
+function ui:refresh_lock_info()
+  self.v_uiobjects.Content:SetActive(false)
+  self.v_uiobjects.EquationLock:SetActive(true)
+end
+
+function ui:refresh_task_redpoint()
+  local task_group_id = ShareRes.get_curse_illustrated_task_group_by_type_id(EQUATION_TYPE)
+  local have_red = TaskMgr:get_task_group_red(task_group_id)
+  local bg = self:get_child_gameobj("ActBg", self.v_uiobjects.BtnAward)
+  if bg then
+    bg.gameObject:SetActive(have_red)
+  end
+  self.v_uiobjects.RedPoint:SetActive(have_red)
+end
+
+function ui:refresh_equation_hori_select()
+  for key, item in pairs(self.v_equation_hori_item_map) do
+    item:set_select(self.v_select_equation_id)
+  end
+end
+
+function ui:clear_equation_hori_item_map()
+  self:give_back_auto_cache(HORICONTENT_EQUATIONTEMS_TEMP_KEY)
+  for key, item in pairs(self.v_equation_hori_item_map) do
+    item:ui_hide()
+    item:ui_destroy()
+    self.v_equation_hori_item_map[key] = nil
+  end
+end
+
+return ui

@@ -1,0 +1,89 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local GM_SKILL_KEY = "GM_SKILL_LIST"
+local EDITOR_CHAR_SKILL_KEY = "EDITOR_CHAR_SKILL_KEY"
+
+function ui:ui_finish_load()
+  self:set_button("CloseBtn", function()
+    self:ui_destroy()
+  end)
+  self.role_id = 1001001
+  self:register_exist_auto_template(GM_SKILL_KEY, self.v_uiobjects.skillItem, self.v_uiobjects.ItemContnet)
+  self:register_exist_auto_template(EDITOR_CHAR_SKILL_KEY, self.v_uiobjects.CharItem, self.v_uiobjects.CharList)
+end
+
+function ui:ui_on_show()
+  self.item_list = {}
+  self:init_char_list()
+  self:refresh_view()
+  self.v_drag_panel_pos = self.v_uiobjects.DragPanel.transform.localPosition
+  Util.set_drag(self:get_object(), self, function(x, y)
+    self.v_drag_panel_pos.x = self.v_drag_panel_pos.x + x
+    self.v_drag_panel_pos.y = self.v_drag_panel_pos.y + y
+    self.v_uiobjects.DragPanel.transform:SetLocalPositionA(self.v_drag_panel_pos.x, self.v_drag_panel_pos.y, self.v_drag_panel_pos.z)
+  end)
+end
+
+function ui:init_char_list()
+  local char_cfg = ShareRes.create("buddy.buddy")
+  local char_list = {}
+  for _, cfg in pairs(char_cfg) do
+    table.insert(char_list, {
+      id = cfg.Id,
+      name = cfg.Name
+    })
+  end
+  table.sort(char_list, function(a, b)
+    return a.id < b.id
+  end)
+  table.insert(char_list, 1, {id = 0, name = "无"})
+  for _, data in ipairs(char_list) do
+    local item = self:get_auto_cache(EDITOR_CHAR_SKILL_KEY)
+    local desc = Util.get_text("Desc", item)
+    desc.text = data.id .. "/" .. data.name
+    self:set_button_listener(Util.get_button(nil, item), function()
+      self.role_id = data.id
+      self:refresh_view()
+    end)
+  end
+end
+
+function ui:refresh_view()
+  local skill_list = ShareRes.get_buddy_skill_gm_list(self.role_id)
+  for index, skill_info in ipairs(skill_list) do
+    local skill_item = self.item_list[index]
+    if not skill_item then
+      skill_item = self:get_auto_cache(GM_SKILL_KEY)
+      table.insert(self.item_list, skill_item)
+    end
+    Util.get_text("SkillId", skill_item).text = skill_info.id
+    Util.get_text("Name", skill_item).text = skill_info.Name
+    local skill_add_btn = Util.get_button("AddBtn", skill_item)
+    local skill_del_btn = Util.get_button("DelBtn", skill_item)
+    self:set_button_listener(skill_add_btn, function()
+      BattleSkillBookMgr:add_skill(skill_info.id)
+    end)
+    self:set_button_listener(skill_del_btn, function()
+      self:del_skill(skill_info.magic)
+      BattleSkillBookMgr:del_skill(skill_info.id)
+    end)
+  end
+end
+
+function ui:del_skill(magic)
+  local npc_list = SceneMgr:get_all_char()
+  local cur_npc
+  for _, npc in pairs(npc_list) do
+    if npc:is_functional_npc() or npc:is_scene_obj() then
+    elseif self.role_id == npc:get_npc_id() then
+      cur_npc = npc
+    end
+  end
+  for magic_id, _ in pairs(cur_npc.magic_mgr.v_magic_id_map) do
+    if magic_id == magic then
+      cur_npc.magic_mgr.v_magic_id_map[magic_id] = nil
+    end
+  end
+end
+
+return ui

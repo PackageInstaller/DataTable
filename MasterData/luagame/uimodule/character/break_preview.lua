@@ -1,0 +1,313 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BREAK_PRE_STR = "BREAK_PRE_STR"
+local BREAK_PRE_STR_1 = "BREAK_PRE_STR_1"
+local BREAK_ITEM = "BREAK_ITEM"
+local BREAK_REWARD_ITEM = "BREAK_REWARD_ITEM"
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local CONSUMETEM_CLASS = require("uimodule.character.consumeTem")
+local SHOW_TYPE = {CHAR = 1, WEAPON = 2}
+local _max = math.max
+
+function ui:ui_finish_load()
+  self:set_button("BtnLast", function()
+    self:on_cilck_change(-1)
+  end)
+  self:set_button("BtnNext", function()
+    self:on_cilck_change(1)
+  end)
+  self:set_button("BtnRet1", function()
+    self:ui_hide()
+  end)
+  self:set_button("CurrConsume", function()
+    self:on_cilck_coin()
+  end)
+  self:register_exist_auto_template(BREAK_PRE_STR, self.v_uiobjects.Star, self.v_uiobjects.StarLayout)
+  self:register_exist_auto_template(BREAK_PRE_STR_1, self.v_uiobjects.Star1, self.v_uiobjects.StarLayout1)
+  self:register_exist_auto_template(BREAK_ITEM, self.v_uiobjects.ConsumeTem, self.v_uiobjects.Consume)
+  self:register_exist_auto_template(BREAK_REWARD_ITEM, self.v_uiobjects.RewardTem, self.v_uiobjects.RewardLayout)
+  self.v_star_item_list = {}
+  self.v_item_list = {}
+  self.v_select_star_toggle = {}
+  self.v_reward_item_list = {}
+end
+
+function ui:on_cilck_coin()
+  local cur_coin_num = BagMgr:get_item_num(Config.COIN_ITEMID)
+  UIMgr:get_ui("itemTip"):ui_show({
+    item_id = Config.COIN_ITEMID,
+    need_count = self.v_need_coin_cache,
+    curr_count = cur_coin_num,
+    jump_cb = function()
+      self:ui_hide()
+    end
+  })
+end
+
+function ui:on_cilck_change(add)
+  local temp_val = self.v_cur_select_break_lv + add
+  if temp_val <= self.v_max_break_lv and temp_val >= 1 then
+    self.v_cur_select_break_lv = temp_val
+  end
+  self.v_select_star_toggle_tab:set_toggle_by_index(self.v_cur_select_break_lv)
+end
+
+function ui:ui_on_show(data)
+  self.v_data = data
+  self.v_show_type = data.type
+  self.v_buddy_id = data.buddy_id
+  self.v_weapon_uid = data.weapon_uid
+  self.v_fixed_data = data.fixed_data and data.fixed_data or CharacterMgr:get_equip_info(self.v_weapon_uid)
+  self.v_hide_reward = data.hide_reward
+  self.v_hide_own_res = data.hide_own_res
+  self.v_buddy_cfg = ShareRes.get_buddy_cfg(self.v_buddy_id)
+  self:set_show_data()
+  self:update_view()
+  self:bind_auto_mq(Const.MSG_ON_ITEM_UPDATE, self.update_consume_view, self)
+end
+
+function ui:set_show_data()
+  local cur_break_lv = 0
+  local last_reset_break_lv = 0
+  local max_break_lv = 0
+  local break_cfg = {}
+  local max_lv_conditions = {}
+  local buddy_info, weapon_info
+  if self.v_show_type == SHOW_TYPE.CHAR then
+    buddy_info = self.v_fixed_data and self.v_fixed_data or CharacterMgr:get_buddy_by_id(self.v_buddy_id)
+  elseif self.v_show_type == SHOW_TYPE.WEAPON then
+    weapon_info = self.v_fixed_data and self.v_fixed_data or CharacterMgr:get_equip_info(self.v_weapon_uid)
+  end
+  if self.v_show_type == SHOW_TYPE.CHAR then
+    self.v_uicompents.BreakType_txt.text = Util.format_str("突破后角色等级上限提升到")
+    local char_level_cfg = ShareRes.create("buddy.buddy_max_level")
+    break_cfg = ShareRes.create("buddy.buddy_break", buddy_info.id)
+    max_break_lv = #break_cfg - 1
+    cur_break_lv = buddy_info.break_lv - 1
+    last_reset_break_lv = (buddy_info.last_reset_break_lv or 1) - 1
+    for break_lv, info in ipairs(char_level_cfg) do
+      max_lv_conditions[break_lv] = info.MaxLv
+    end
+  elseif self.v_show_type == SHOW_TYPE.WEAPON then
+    self.v_uicompents.BreakType_txt.text = Util.format_str("突破后武器等级上限提升到")
+    local weapon_level_cfg = ShareRes.create("equip.equip_max_level")
+    break_cfg = ShareRes.create("equip.equip_break", weapon_info.id)
+    max_break_lv = #break_cfg - 1
+    cur_break_lv = weapon_info.break_lv - 1
+    for break_lv, info in ipairs(weapon_level_cfg) do
+      max_lv_conditions[break_lv] = info.MaxLv
+    end
+  end
+  self.v_break_cfg = break_cfg
+  self.v_max_break_lv = max_break_lv
+  self.v_cur_break_lv = cur_break_lv
+  self.v_last_reset_break_lv = last_reset_break_lv
+  self.v_max_lv_conditions = max_lv_conditions
+end
+
+function ui:update_view()
+  self:init_star_num()
+end
+
+function ui:init_star_num()
+  self.v_select_star_toggle = {}
+  self.v_star_item_list = {}
+  self:give_back_auto_cache(BREAK_PRE_STR)
+  self:give_back_auto_cache(BREAK_PRE_STR_1)
+  for index = 1, self.v_max_break_lv do
+    local star = self:get_auto_cache(BREAK_PRE_STR)
+    local light_star = Util.get_child_gameobj("Lightup", star)
+    light_star:SetActive(index <= self.v_cur_break_lv)
+    table.insert(self.v_star_item_list, star)
+    local tog = Util.get_toggle(nil, star)
+    table.insert(self.v_select_star_toggle, tog)
+  end
+  local cur_select = self.v_cur_break_lv + 1
+  cur_select = cur_select > self.v_max_break_lv and self.v_max_break_lv or cur_select
+  self.v_select_star_toggle_tab = ToggleTab:new(self)
+  self.v_select_star_toggle_tab:init_by_toggles(self.v_select_star_toggle, function(cur_select)
+    self:click_select_star_toggle(cur_select)
+  end, cur_select)
+  self.v_select_star_toggle_tab:set_toggle_by_index(cur_select)
+  self:click_select_star_toggle(cur_select)
+end
+
+function ui:click_select_star_toggle(cur_select)
+  self.v_cur_select_break_lv = cur_select
+  self.v_select_star_toggle[cur_select].interactable = true
+  self.v_is_break_cur_select = self.v_cur_break_lv >= self.v_cur_select_break_lv
+  self:update_break_cond_view()
+  self:update_consume_view()
+  self:update_btn_show()
+  self:update_reward()
+end
+
+function ui:update_break_cond_view()
+  local is_achieve_break = self.v_cur_break_lv >= self.v_cur_select_break_lv
+  local layout_offset_y = -560
+  local reward_layout_offset_y = -854
+  if is_achieve_break then
+    self.v_uiobjects.BreakCondition:SetActive(false)
+    self.v_uiobjects.AchieveBreak:SetActive(true)
+    self.v_uiobjects.ConditionMask:SetActive(true)
+    self.v_uiobjects.LvAmount:SetActive(false)
+    self.v_uiobjects.TalentUnlock:SetActive(false)
+    self.v_uiobjects.PuzzleUnlock:SetActive(false)
+    self.v_uiobjects.SpineUnlock:SetActiveEx(false)
+  else
+    self.v_uiobjects.BreakCondition:SetActive(true)
+    self.v_uiobjects.AchieveBreak:SetActive(false)
+    self.v_uiobjects.ConditionMask:SetActive(false)
+    self.v_uiobjects.LvAmount:SetActive(not self.v_hide_own_res)
+    if self.v_show_type == SHOW_TYPE.CHAR then
+      local is_buddy_breack_auto_unlock_talent = ShareRes.is_buddy_breack_auto_unlock_talent(self.v_buddy_id, self.v_cur_select_break_lv + 1)
+      self.v_uiobjects.TalentUnlock:SetActive(is_buddy_breack_auto_unlock_talent)
+      local is_first_unlock, is_new_unlock, old_node_num, new_node_num = PuzzleMgr:get_puzzle_change_when_buddy_break(self.v_buddy_id, self.v_cur_select_break_lv + 1)
+      self.v_uiobjects.PuzzleUnlock:SetActive(is_first_unlock or is_new_unlock)
+      if is_first_unlock then
+        self.v_uicompents.PuzzleUnlock_txt.text = Util.format_str("古痕系统解锁")
+        layout_offset_y = -590
+      elseif is_new_unlock then
+        self.v_uicompents.PuzzleUnlock_txt.text = Util.format_str("古痕区域扩增 {1}>{2}", old_node_num, new_node_num)
+        layout_offset_y = -590
+      end
+      if 2 == self.v_cur_select_break_lv and self.v_buddy_cfg.Icon[7] then
+        layout_offset_y = -630
+        reward_layout_offset_y = -884
+        self.v_uiobjects.SpineUnlock:SetActiveEx(true)
+      else
+        self.v_uiobjects.SpineUnlock:SetActiveEx(false)
+      end
+    else
+      self.v_uiobjects.TalentUnlock:SetActive(false)
+      self.v_uiobjects.PuzzleUnlock:SetActive(false)
+      self.v_uiobjects.SpineUnlock:SetActiveEx(false)
+    end
+  end
+  self.v_uicompents.Materials_rect:SetAnchoredPositionA(0, layout_offset_y, 0)
+  self.v_uicompents.Rewards_rect:SetAnchoredPositionA(0, reward_layout_offset_y, 0)
+  local select_break_lv = self.v_cur_select_break_lv
+  local cur_break_lv = self.v_cur_break_lv
+  local cur_lv = self.v_fixed_data.lv
+  local coms = self.v_uicompents
+  coms.NeedLV_txt.text = self.v_max_lv_conditions[select_break_lv + 1]
+  self.v_uiobjects.ConditionLvTem:SetActive(true)
+  coms.ConditionLv_txt.text = self.v_max_lv_conditions[select_break_lv]
+  coms.NeedLv_txt.text = self.v_max_lv_conditions[select_break_lv]
+  if cur_lv < self.v_max_lv_conditions[select_break_lv] then
+    cur_lv = "<color=#e0212c>" .. cur_lv .. "</color>"
+  else
+    cur_lv = self.v_max_lv_conditions[select_break_lv]
+  end
+  coms.CurrentLv_txt.text = cur_lv
+end
+
+function ui:update_btn_show()
+  self.v_uiobjects.BtnLast:SetActive(1 ~= self.v_cur_select_break_lv)
+  self.v_uiobjects.BtnNext:SetActive(self.v_cur_select_break_lv ~= self.v_max_break_lv)
+end
+
+function ui:update_consume_view()
+  self.v_need_coin_cache = nil
+  self:remove_item_list()
+  self:give_back_auto_cache(BREAK_ITEM)
+  local item_id_list = self.v_break_cfg[self.v_cur_select_break_lv].Item
+  local item_need_num_list = self.v_break_cfg[self.v_cur_select_break_lv].ItemCount
+  for index, value in ipairs(item_id_list) do
+    if 0 == item_id_list[index] then
+      return
+    end
+    local item = self:get_auto_cache(BREAK_ITEM)
+    local id = item_id_list[index]
+    local need_num = item_need_num_list[index]
+    local consume_item = CONSUMETEM_CLASS:ui_wrap_ex(self, item, true)
+    local data = {
+      item_id = id,
+      need_num = need_num,
+      is_hide_need_text = self.v_is_break_cur_select or self.v_hide_own_res
+    }
+    consume_item:set_data(data, nil, true)
+    table.insert(self.v_item_list, consume_item)
+  end
+  local need_coin_num = self.v_break_cfg[self.v_cur_select_break_lv].Coin
+  local cur_coin_num = BagMgr:get_item_num(Config.COIN_ITEMID)
+  if need_coin_num > cur_coin_num then
+    cur_coin_num = "<color=#e0212c>" .. cur_coin_num .. "</color>"
+  end
+  self.v_uicompents.CurrNeed_txt.text = need_coin_num
+  self.v_uicompents.CurrNow_txt.text = cur_coin_num
+  self.v_need_coin_cache = need_coin_num
+  local hide_own_res = self.v_is_break_cur_select or self.v_hide_own_res
+  self.v_uiobjects.CurrNow:SetActive(not hide_own_res)
+  self.v_uiobjects.sprit:SetActive(not hide_own_res)
+end
+
+function ui:ui_on_hide()
+  self:remove_item_list()
+  self:remove_reward_item()
+  self.v_break_cfg = nil
+  self.v_max_break_lv = nil
+  self.v_cur_break_lv = nil
+  self.v_max_lv_conditions = nil
+  self.v_fixed_buddy_data = nil
+  if GuideMgr then
+    GuideMgr:check_sys_guide()
+  end
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:remove_item_list()
+  for _, obj in pairs(self.v_item_list) do
+    obj:ui_hide()
+    obj:ui_destroy()
+  end
+  self.v_item_list = {}
+end
+
+function ui:get_cache_data()
+  return self.v_data
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:update_reward()
+  if self.v_hide_reward then
+    self.v_uiobjects.Rewards:SetActive(false)
+    return
+  end
+  self:give_back_auto_cache(BREAK_REWARD_ITEM)
+  self:remove_reward_item()
+  local cfg = self.v_break_cfg[self.v_cur_select_break_lv]
+  if cfg and cfg.BreakRewardID and cfg.BreakRewardID > 0 then
+    local reward = ShareRes.get_award_item_data(cfg.BreakRewardID)
+    if next(reward) then
+      self.v_uiobjects.Rewards:SetActive(true)
+      local is_break_done = self.v_cur_break_lv >= self.v_cur_select_break_lv or self.v_last_reset_break_lv >= self.v_cur_select_break_lv
+      for index, data in ipairs(reward) do
+        local item = self:get_auto_cache(BREAK_REWARD_ITEM)
+        local consume_item = CONSUMETEM_CLASS:ui_wrap_ex(self, item, true)
+        data[3] = is_break_done
+        consume_item:set_data(data, true)
+        table.insert(self.v_reward_item_list, consume_item)
+      end
+    else
+      self.v_uiobjects.Rewards:SetActive(false)
+    end
+  else
+    self.v_uiobjects.Rewards:SetActive(false)
+  end
+end
+
+function ui:remove_reward_item()
+  for key, reward_item in pairs(self.v_reward_item_list) do
+    reward_item:ui_hide()
+    reward_item:ui_destroy()
+    self.v_reward_item_list[key] = nil
+  end
+end
+
+return ui

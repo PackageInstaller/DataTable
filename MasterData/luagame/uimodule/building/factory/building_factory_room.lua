@@ -1,0 +1,335 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BUILDING_CONFIG = require("uimodule.building.building_config")
+local BUILDING_FACTORY_ROOM_ITEM = require("uimodule.building.factory.building_factory_room_item")
+local FACTORY_ROOM_TEM = "FACTORY_ROOM_TEM"
+
+function ui:on_building_data_update(msg)
+  self:refresh_select_factory_info(true)
+end
+
+function ui:on_select_factory_item(factory_id)
+  if self.v_select_factory_id == factory_id then
+    return
+  end
+  if self.v_select_factory_id then
+    self:clear_timer()
+    self.v_last_percent = 0
+    self:clear_product_seq()
+  end
+  self.v_select_factory_id = factory_id
+  self:refresh_select_factory_info()
+  for _, item in pairs(self.v_factory_item_map) do
+    item:on_select_item(self.v_select_factory_id)
+  end
+end
+
+function ui:on_click_return_btn()
+  self:ui_hide()
+end
+
+function ui:on_click_quick_btn()
+  if not self.v_select_factory_id then
+    return
+  end
+  UIMgr:get_ui("building_factory_fast_tips"):ui_show(self.v_select_factory_id)
+end
+
+function ui:on_click_production_btn()
+  if not self.v_select_factory_id then
+    return
+  end
+  UIMgr:get_ui("building_factory_select_tips"):ui_show(self.v_select_factory_id)
+end
+
+function ui:on_click_change_btn()
+  if not self.v_select_factory_id then
+    return
+  end
+  UIMgr:get_ui("building_factory_select_tips"):ui_show(self.v_select_factory_id)
+end
+
+function ui:on_click_recive_btn()
+  if BuildingMgr:factory_room_can_recive(self.v_select_factory_id) then
+    BuildingMgr:requst_factory_gain_award(self.v_select_factory_id)
+  else
+    Util.show_message_tip(2252)
+  end
+end
+
+function ui:ui_finish_load()
+  self.v_select_factory_id = nil
+  self.v_factory_item_map = {}
+  self:set_button("BtnQuickenItem", function()
+    self:on_click_quick_btn()
+  end)
+  self:set_button("BtnRet1", function()
+    self:on_click_return_btn()
+  end)
+  self:set_button("Production", function()
+    self:on_click_production_btn()
+  end)
+  self:set_button("BtnChange", function()
+    self:on_click_change_btn()
+  end)
+  self:set_button("BtnRecive", function()
+    self:on_click_recive_btn()
+  end)
+  self:set_button("BtnAddition", function()
+    self.v_uiobjects.AdditionGroup:SetActive(true)
+    BUILDING_CONFIG.REFRESH_ADDTION_GROUP_FUNC(self, Config.CommonDefine.BUILDING_TYPE.FACTORY)
+  end)
+  self:set_button("BtnCloseTips", function()
+    self.v_uiobjects.AdditionGroup:SetActive(false)
+  end)
+  self:register_exist_auto_template(FACTORY_ROOM_TEM, self.v_uiobjects.ProductRoomTem, self.v_uiobjects.RoomContent)
+end
+
+function ui:ui_on_show()
+  self.v_uiobjects.AdditionGroup:SetActive(false)
+  self:bind_auto_mq(Const.MSG_ON_BUILDING_DATA_UPDATE, self.on_building_data_update, self)
+  self.v_last_percent = 0
+  self:refresh_factory_list()
+end
+
+function ui:ui_on_hide()
+  self:clear_timer()
+  self.v_select_factory_id = nil
+  self:clear_product_seq()
+  self:clear_factory_item()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_factory_list()
+  self:clear_factory_item()
+  local temp_list = {}
+  local data = BuildingMgr:get_building_data(Config.CommonDefine.BUILDING_TYPE.FACTORY)
+  local building_level = data.level
+  for _, factory_data in pairs(data.factory_list) do
+    temp_list[#temp_list + 1] = factory_data
+  end
+  table.sort(data, function(a, b)
+    if a.id ~= b.id then
+      return a.id < b.id
+    else
+      return false
+    end
+  end)
+  local factory_data, obj, item, first_item
+  for index = 1, #temp_list do
+    obj = self:get_auto_cache(FACTORY_ROOM_TEM)
+    factory_data = temp_list[index]
+    item = BUILDING_FACTORY_ROOM_ITEM:ui_wrap_ex(self, obj, true)
+    item:set_data(factory_data, building_level)
+    self.v_factory_item_map[factory_data.id] = item
+    if not first_item and not self.v_select_factory_id then
+      first_item = item
+    end
+  end
+  if first_item then
+    first_item:on_click_btn()
+  elseif self.v_select_factory_id then
+    self.v_factory_item_map[self.v_select_factory_id]:on_click_btn()
+  end
+end
+
+function ui:refresh_select_factory_info(force_reset)
+  self:refresh_factory_main()
+  local data
+  local building_data = BuildingMgr:get_building_data(Config.CommonDefine.BUILDING_TYPE.FACTORY)
+  for factory_id, item in pairs(self.v_factory_item_map) do
+    data = building_data.factory_list[factory_id]
+    if force_reset then
+      item:set_data(data, building_data.level)
+    else
+      item:refresh_material(data, building_data.level)
+    end
+  end
+end
+
+function ui:refresh_factory_main(remain_time)
+  local building_data = BuildingMgr:get_building_data(Config.CommonDefine.BUILDING_TYPE.FACTORY)
+  local factory_data = building_data.factory_list[self.v_select_factory_id]
+  local item_id = factory_data.material_id
+  local in_product = Util.is_more_than_zero(item_id)
+  local is_full = false
+  local misc_cfg = ShareRes.get_building_misc_cfg()
+  local fast_open = BuildingMgr:check_condition(misc_cfg.SpeedUpCondition)
+  if not in_product then
+    self:update_ui_state(in_product, fast_open, is_full)
+    if self:has_in_factory_room() then
+      self:add_timer()
+    end
+    return
+  end
+  local cur_count = self:calculate_current_count(factory_data)
+  local level_info = BuildingMgr:get_factory_material_level_info(self.v_select_factory_id)
+  local max_count = level_info.Capacity
+  is_full = cur_count >= max_count
+  self:update_ui_progress(cur_count, max_count, item_id, is_full)
+  self:handle_timer_and_speeding(factory_data, remain_time)
+  self:update_ui_state(in_product, fast_open, is_full)
+end
+
+function ui:calculate_current_count(factory_data)
+  local fill_time = BuildingMgr:get_fill_factory_slot_time(factory_data.id)
+  if fill_time > 0 then
+    local cur_time = Date.server_time()
+    local factory_time = cur_time - factory_data.start_time
+    local end_time = factory_time - factory_time % 60 + factory_data.start_time
+    return BuildingMgr:cal_for_a_while_factory_material_count(self.v_select_factory_id, end_time)
+  else
+    return BuildingMgr:cal_factory_material_count(self.v_select_factory_id)
+  end
+end
+
+function ui:update_ui_progress(cur_count, max_count, item_id, is_full)
+  self:play_fill_anima(cur_count, max_count)
+  Util.set_color(self.v_uicompents.ProgressFill_img, is_full and "ae9577" or "efc66e")
+  local path = ShareRes.get_item_icon_path(item_id)
+  ResMgr:load_set_icon(self.v_uicompents.ItemIcon_img, path)
+  self.v_uicompents.Now_txt.text = cur_count
+  self.v_uicompents.Max_txt.text = max_count
+end
+
+function ui:handle_timer_and_speeding(factory_data, remain_time)
+  local fill_time = remain_time or BuildingMgr:get_fill_factory_slot_time(factory_data.id)
+  if fill_time > 0 then
+    self:add_timer()
+  else
+    self:clear_timer()
+  end
+  self:update_less_time_text(fill_time)
+end
+
+function ui:update_ui_state(in_product, fast_open, is_full)
+  local objs = self.v_uiobjects
+  local comps = self.v_uicompents
+  comps.ChangeText_txt.text = Util.format_str(in_product and "切换" or "选择")
+  comps.BtnRecive_btn.enabled = in_product
+  objs.BtnQuickenItem:SetActive(fast_open)
+  objs.HomeMax:SetActive(is_full)
+  objs.LessTimeNum:SetActive(in_product and not is_full)
+  objs.InProduct:SetActive(in_product)
+  objs.ProductionNum:SetActive(in_product)
+  objs.BtnQuickenItem:SetActive(in_product)
+  objs.UnProduct:SetActive(not in_product)
+  objs.NoProduction:SetActive(not in_product)
+  objs.NoproductionTips:SetActive(not in_product)
+  objs.Fx_RedSweepglow:SetActive(not in_product)
+end
+
+function ui:refresh_fast_item_icon(speeding)
+  local misc_cfg = ShareRes.get_building_misc_cfg()
+  local cost_item_id = misc_cfg.SpeedUpItemId
+  self.v_uiobjects.QuickenItemIcon:SetActive(speeding)
+  self.v_uiobjects.Add:SetActive(not speeding)
+  self.v_uiobjects.FastArrow:SetActive(speeding)
+  if speeding then
+    local path = ShareRes.get_item_icon_path(cost_item_id)
+    ResMgr:load_set_icon(self.v_uicompents.QuickenItemIcon_img, path)
+  end
+end
+
+function ui:play_fill_anima(cur_count, max_count)
+  local objs, comps = self.v_uiobjects, self.v_uicompents
+  local cur_percent = cur_count / max_count
+  if not self.v_product_seq then
+    if cur_percent - self.v_last_percent > 0.05 then
+      comps.ProgressFill_img.fillAmount = self.v_last_percent
+      self:clear_product_seq()
+      objs.ray:SetActive(true)
+      objs.ray2:SetActive(true)
+      self.v_product_seq = Util.create_sequence()
+      self.v_product_seq:Join(comps.ProgressFill_img:DOFillAmount(cur_percent, 0.5))
+      objs.ray.transform:SetEuler(0, 0, 360 * self.v_last_percent)
+      Util.VEC3_TEMP:Set(0, 0, -360 * cur_percent)
+      self.v_product_seq:Join(objs.ray.transform:DOLocalRotate(Util.VEC3_TEMP, 0.5))
+      self.v_product_seq:OnComplete(function()
+        self:clear_product_seq()
+      end)
+    else
+      comps.ProgressFill_img.fillAmount = cur_percent
+      objs.ray2:SetActive(false)
+    end
+  end
+  self.v_last_percent = cur_percent
+end
+
+function ui:add_timer()
+  self:clear_timer()
+  self.v_update_factory_timer = Timer:add_timer("update_factory_timer", 0.5, self.update_factory_timer, self, nil, 0.5)
+end
+
+function ui:clear_timer()
+  if self.v_update_factory_timer then
+    Timer:remove_timer(self.v_update_factory_timer)
+    self.v_update_factory_timer = nil
+  end
+end
+
+function ui:update_factory_timer()
+  if not self.v_select_factory_id then
+    return false
+  end
+  local refresh_main = false
+  local cur_time = Date.server_time()
+  local start_time = BuildingMgr:get_factory_start_time(self.v_select_factory_id)
+  if start_time then
+    local remain_time = cur_time - start_time
+    local min = math.floor(remain_time % 3600 / 60)
+    if self.v_last_min ~= min then
+      self.v_last_min = min
+      refresh_main = true
+    end
+  end
+  local fill_time = BuildingMgr:get_fill_factory_slot_time(self.v_select_factory_id)
+  if refresh_main then
+    self:refresh_factory_main(fill_time)
+  else
+    self:update_less_time_text(fill_time)
+  end
+  for _, item in pairs(self.v_factory_item_map) do
+    item:update_timer()
+  end
+  return true
+end
+
+function ui:update_less_time_text(time)
+  local str = Date.get_time_formate_5(time, true)
+  self.v_uicompents.LessTimeNum_txt.text = str
+end
+
+function ui:clear_factory_item()
+  self:give_back_auto_cache(FACTORY_ROOM_TEM)
+  for key, item in pairs(self.v_factory_item_map) do
+    item:ui_hide()
+    item:ui_destroy()
+    self.v_factory_item_map[key] = nil
+  end
+end
+
+function ui:clear_product_seq()
+  if self.v_product_seq then
+    self.v_product_seq:Kill(false)
+    self.v_product_seq = nil
+  end
+  self.v_uiobjects.ray:SetActive(false)
+  self.v_uiobjects.ray2:SetActive(false)
+end
+
+function ui:has_in_factory_room()
+  for _, item in pairs(self.v_factory_item_map) do
+    if item:is_in_factory() then
+      return true
+    end
+  end
+end
+
+function ui:cache_ui()
+  return true
+end
+
+return ui

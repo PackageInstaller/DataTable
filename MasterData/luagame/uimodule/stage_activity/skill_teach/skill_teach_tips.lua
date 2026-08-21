@@ -1,0 +1,82 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_close_detail_btn = {
+    "CloseDetailBtn",
+    BIND_TYPE.BUTTON
+  },
+  v_detail_img = {
+    "Detail_Img",
+    BIND_TYPE.IMAGE
+  },
+  v_skill_title = {
+    "SkillTitle",
+    BIND_TYPE.TEXT
+  },
+  v_tec_info = {
+    "TecInfo",
+    BIND_TYPE.TEXT
+  },
+  v_tips_detail_name = {
+    "TipsDetailName",
+    BIND_TYPE.TEXT
+  }
+}
+local SKILL_TEACH_TIPS_COMBOTEM = "SKILL_TEACH_TIPS_COMBOTEM"
+local SKILL_TEACH_TIPS_COMBONOIMAGE = "SKILL_TEACH_TIPS_COMBONOIMAGE"
+local SKILL_TEACH_TIPS_SKILLTEM = "SKILL_TEACH_TIPS_SKILLTEM"
+local COMBO_TEM_CLASS = require("uimodule.battle_bag.combo_item")
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("CloseDetailBtn", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(SKILL_TEACH_TIPS_COMBOTEM, self.v_uiobjects.ComboTem, self.v_uiobjects.ComboContent)
+  self:register_exist_auto_template(SKILL_TEACH_TIPS_COMBONOIMAGE, self.v_uiobjects.ComboNoImage, self.v_uiobjects.ComboContent)
+  local skill_tem = Util.get_child_gameobj("SkillContent_/SkillTem_", self.v_uiobjects.ComboTem)
+  self:register_exist_auto_template(SKILL_TEACH_TIPS_SKILLTEM, skill_tem)
+  self.v_combo_luaobj_list = {}
+end
+
+function ui:ui_on_show(combo_id_list, ...)
+  self:clear_wrap()
+  self:give_back_auto_cache(SKILL_TEACH_TIPS_SKILLTEM)
+  self:give_back_auto_cache(SKILL_TEACH_TIPS_COMBOTEM)
+  self:give_back_auto_cache(SKILL_TEACH_TIPS_COMBONOIMAGE)
+  if type(combo_id_list) ~= "table" then
+    return
+  end
+  for _, combo_id in ipairs(combo_id_list) do
+    local combo_cfg = ShareRes.get_buddy_combo_cfg(combo_id)
+    if combo_cfg then
+      local item = combo_cfg.ComboIcon[1] and self:get_auto_cache(SKILL_TEACH_TIPS_COMBOTEM) or self:get_auto_cache(SKILL_TEACH_TIPS_COMBONOIMAGE)
+      local skill_item_list = {}
+      for i = 1, #combo_cfg.ComboIcon do
+        local skill_item_obj = self:get_auto_cache(SKILL_TEACH_TIPS_SKILLTEM)
+        table.insert(skill_item_list, skill_item_obj)
+      end
+      local lua_obj = COMBO_TEM_CLASS:ui_wrap_ex(self, item, true)
+      table.insert(self.v_combo_luaobj_list, lua_obj)
+      lua_obj:set_data(combo_id, skill_item_list)
+    end
+  end
+end
+
+function ui:ui_on_hide()
+  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.ON_SKILL_TEACH_TIPS_CLOSE, self.v_tips_id)
+end
+
+function ui:ui_on_destroy()
+  self.v_combo_luaobj_list = nil
+end
+
+function ui:clear_wrap()
+  if self.v_combo_luaobj_list then
+    self:remove_wrap_ui_list(self.v_combo_luaobj_list)
+  end
+  UtilTable.clear_list(self.v_combo_luaobj_list)
+end
+
+return ui

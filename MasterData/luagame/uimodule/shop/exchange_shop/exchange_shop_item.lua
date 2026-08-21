@@ -1,0 +1,416 @@
+local Base = require("ui.uiobject")
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local ShopCfg = require("uimodule.shop.shop_config")
+local LayoutRebuilder = UnityEngine.UI.LayoutRebuilder
+local ease_linear = CS.DG.Tweening.Ease.OutQuart
+local LIMIT_TYPES = ShopCfg.EXCHANGE_LIMIT_TYPES
+local CT_Timer = Global.ct_timer
+local M = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local SHOP_TYPE = Shop_Helper.SHOP_TYPE
+local MODEL = {
+  v_bg_on = {
+    "Bg_on",
+    BIND_TYPE.IMAGE
+  },
+  v_limit = {
+    "Limit",
+    BIND_TYPE.OBJECT
+  },
+  v_limit_has_buy = {
+    "HasBuy",
+    BIND_TYPE.TEXT
+  },
+  v_limit_max = {
+    "LimitMax",
+    BIND_TYPE.TEXT
+  },
+  v_limit_mask = {
+    "LimitLessMask",
+    BIND_TYPE.OBJECT
+  },
+  v_quality = {
+    "Pz",
+    BIND_TYPE.IMAGE
+  },
+  v_item_icon = {
+    "ItemIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_item_name = {
+    "ItemName",
+    BIND_TYPE.TEXT
+  },
+  v_stock_mask = {
+    "StockLessMask",
+    BIND_TYPE.OBJECT
+  },
+  v_batch_num = {
+    "Amount",
+    BIND_TYPE.TEXT
+  },
+  v_price = {
+    "Price",
+    BIND_TYPE.OBJECT
+  },
+  v_currency_icon = {
+    "CurrIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_price_num = {
+    "Price_normal",
+    BIND_TYPE.TEXT
+  },
+  v_origin_price_num = {
+    "Price_discount_before",
+    BIND_TYPE.TEXT
+  },
+  v_discount_price_num = {
+    "Price_discount_after",
+    BIND_TYPE.TEXT
+  },
+  v_unlock = {
+    "Unlock",
+    BIND_TYPE.OBJECT
+  },
+  v_unlock_btn = {
+    "Unlock",
+    BIND_TYPE.BUTTON
+  },
+  v_discount_bg = {
+    "Discount",
+    BIND_TYPE.OBJECT
+  },
+  v_discount_desc = {
+    "DiscountNum",
+    BIND_TYPE.TEXT
+  },
+  v_sold_out = {
+    "SoldOut",
+    BIND_TYPE.OBJECT
+  }
+}
+local BUTTOM_TYPE = {
+  PRICE = 1,
+  SOULD_OUT = 2,
+  LOCK = 3,
+  EXPAND = 4,
+  COND_LOCK = 5
+}
+
+function M:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_tog = Util.get_toggle(nil, self.v_object)
+  self.ex_shop_cfg = ShareRes.create("shop.exchange_shop")
+  self.v_canvas_group = self:get_canvas_group("DoFadeArea", self.v_object)
+  self.black_bg_canvas = self:get_canvas_group("BlackBgArea", self.v_object)
+  self.v_limit_txt = self:get_text("Text", self.v_limit)
+  self.v_unlock_txt = self:get_text("Text", self.v_unlock)
+end
+
+function M:ui_on_hide()
+  if self.v_ct_timer then
+    CT_Timer:remove_timer(self.v_ct_timer)
+    self.v_ct_timer = nil
+  end
+  self.v_goods_data = nil
+  if self.v_sq then
+    self.v_sq:Kill()
+  end
+end
+
+function M:set_linked_parent(parent)
+  self.v_linked_parent = parent
+end
+
+function M:set_data(go, data_list, index)
+  self.v_goods_data = data_list[index]
+  self.v_obj = go
+  self.v_goods_idx = index
+  self.v_item_cfg = UtilUI.get_item_cfg(self.v_goods_data.Item)
+  self.v_shop_type = self.ex_shop_cfg[self.v_goods_data.ShopId].Type
+  self.v_canvas_group.alpha = 0
+  self.black_bg_canvas.alpha = 0
+  self.v_item_name.text = self.v_item_cfg.Name
+  ResMgr:load_set_icon(self.v_item_icon, Shop_Helper.get_item_icon(self.v_item_cfg.Id))
+  ResMgr:load_set_icon(self.v_quality, Shop_Helper.get_item_quality_icon(self.v_item_cfg.Quality))
+  local item_quality_cfg = ShareRes.create("item.item_quality", self.v_item_cfg.Quality)
+  local bg_path = item_quality_cfg.ExchangeBgIcon
+  self.v_uicompents.QualityLight_img.color = Util.get_unity_color_by_hex(tonumber(item_quality_cfg.ExchangeColor, 16))
+  ResMgr:load_set_icon(self.v_bg_on, bg_path)
+  self.v_batch_num.text = self.v_goods_data.ItemCnt
+  self:_set_mini_icon()
+  self:_set_head_icon()
+  self:_set_limit_buy_info()
+  self:_set_stock_info()
+  self:_set_discount()
+  self:_set_time()
+  local buttom_type = self:_get_buttom_type()
+  self.v_sold_out:SetActiveEx(buttom_type == BUTTOM_TYPE.SOULD_OUT)
+  local is_lock = buttom_type == BUTTOM_TYPE.LOCK or buttom_type == BUTTOM_TYPE.COND_LOCK
+  self.v_unlock:SetActiveEx(is_lock)
+  local lock_str
+  if buttom_type == BUTTOM_TYPE.LOCK then
+    lock_str = Util.format_str("每日限购")
+  elseif buttom_type == BUTTOM_TYPE.COND_LOCK then
+    local condition = ShareRes.create("condition.condition", self.v_goods_data.Condition)
+    lock_str = condition.Desc
+  end
+  if is_lock then
+    self.v_limit_mask:SetActiveEx(false)
+    self.v_stock_mask:SetActiveEx(false)
+    self.v_unlock_txt.text = lock_str
+  end
+  local show = buttom_type == BUTTOM_TYPE.PRICE or buttom_type == BUTTOM_TYPE.SOULD_OUT or is_lock
+  if show then
+    self:_set_price_info()
+    self.v_price:SetActiveEx(false)
+  end
+  self.v_price:SetActive(false)
+  self.v_price:SetActive(show)
+  LayoutRebuilder.ForceRebuildLayoutImmediate(self:get_rect_transform(nil, self.v_price))
+  Global.listener_mgr:add_listener(self.v_object, self.v_unlock_btn.onClick, function()
+    if lock_str then
+      Util.show_message_tip(lock_str)
+    end
+  end)
+  Global.listener_mgr:add_listener(self.v_object, self.v_tog.onValueChanged, function(isOn)
+    self:_on_click_tog(isOn)
+  end)
+  self.v_tog.isOn = false
+  self:_set_ani(index)
+  self:unbind_all_auto_mq()
+  self:_regist_client_event()
+end
+
+function M:_set_mini_icon()
+  local item_id = self.v_item_cfg.Id
+  local type_config = ShareRes.get_award_type_cfg(item_id)
+  self.v_uiobjects.MiniIconBg:SetActive(false)
+  if type_config.AwardType == Config.AWARD_TYPE.PUZZLE then
+    local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(item_id)
+    local graph_show_cfg = ShareRes.get_buddy_puzzle_graph_show_cfg(puzzle_cfg.GraphID)
+    ResMgr:load_set_icon(self.v_uicompents.MiniIcon_img, graph_show_cfg.SmallIcon, nil, true)
+    self.v_uiobjects.MiniIconBg:SetActive(true)
+  end
+end
+
+function M:_set_head_icon()
+  local buddy_id = self.v_goods_data.BuddyHead or 0
+  self.v_uiobjects.CharTag:SetActiveEx(0 ~= buddy_id)
+  if 0 ~= buddy_id then
+    local path = CharacterMgr:get_buddy_icon_path(buddy_id)
+    ResMgr:load_set_icon(self.v_uicompents.CharIcon_img, path)
+  end
+end
+
+function M:_get_buttom_type()
+  if self.v_shop_type == SHOP_TYPE.BREAK_SHOP and self:_get_can_sale(self.v_goods_data) == false then
+    return BUTTOM_TYPE.LOCK
+  end
+  if self.v_goods_data.Condition and 0 ~= self.v_goods_data.Condition and not ShopMgr:get_goods_data(self.v_goods_data.Id) then
+    return BUTTOM_TYPE.COND_LOCK
+  end
+  if self.v_goods_data.Quota > 0 and self.v_reach_limit == true then
+    return BUTTOM_TYPE.SOULD_OUT
+  end
+  if self.v_goods_data.StockItem > 0 then
+    local stock_has = BagMgr:get_item_num(self.v_goods_data.StockItem)
+    if stock_has < self.v_goods_data.ItemCnt then
+      return BUTTOM_TYPE.EXPAND
+    end
+  end
+  return BUTTOM_TYPE.PRICE
+end
+
+function M:_set_limit_buy_info()
+  local limit_type = -1
+  local quota = self.v_goods_data.Quota
+  if quota and 0 ~= quota then
+    limit_type = self.v_goods_data.ResetType or 0
+  end
+  self.v_reach_limit = false
+  self.v_limit:SetActiveEx(-1 ~= limit_type)
+  if -1 ~= limit_type then
+    self.v_limit_txt.text = LIMIT_TYPES[limit_type] .. ":"
+    local has_buy = ShopMgr:get_buy_amount(self.v_goods_data.Id)
+    local max_buy = self.v_goods_data.Quota
+    has_buy = has_buy > max_buy and max_buy or has_buy
+    self.v_limit_has_buy.text = Shop_Helper.get_num_formate(has_buy)
+    self.v_limit_max.text = Shop_Helper.get_num_formate(max_buy)
+    self.v_reach_limit = has_buy >= max_buy
+  end
+  self.v_limit_mask:SetActiveEx(self.v_reach_limit)
+  LayoutRebuilder.ForceRebuildLayoutImmediate(self:get_rect_transform(nil, self.v_limit))
+end
+
+function M:_set_stock_info()
+  self.v_stock_mask:SetActiveEx(self.v_goods_data.StockItem > 0)
+  if self.v_goods_data.StockItem > 0 then
+    local stock_has = BagMgr:get_item_num(self.v_goods_data.StockItem)
+    self.v_stock_mask:SetActiveEx(stock_has < self.v_goods_data.ItemCnt)
+  end
+end
+
+function M:_set_price_info()
+  ResMgr:load_set_icon(self.v_currency_icon, Shop_Helper.get_item_icon(self.v_goods_data.CostId[1]))
+  local has_discount = self.v_goods_data.Discount > 0 and self.v_price_discount < 100
+  self.v_price_num.gameObject:SetActiveEx(false == has_discount)
+  self.v_origin_price_num.gameObject:SetActiveEx(has_discount)
+  self.v_discount_price_num.gameObject:SetActiveEx(has_discount)
+  local has = BagMgr:get_item_num(self.v_goods_data.CostId[1])
+  local need = self.v_goods_data.CostCnt[1]
+  if has_discount then
+    self.v_origin_price_num.text = need
+    local discount_need = math.ceil(need * (self.v_price_discount / 100))
+    self.v_discount_price_num.text = has >= discount_need and discount_need or string.format("<color=#F56344>%d</color>", discount_need)
+  else
+    self.v_price_num.text = has >= need and need or string.format("<color=#F56344>%d</color>", need)
+  end
+end
+
+function M:_set_discount()
+  local has_discount = self.v_goods_data.Discount > 0
+  self.v_discount_bg:SetActiveEx(has_discount)
+  self.v_price_discount = 100
+  if false == has_discount then
+    return
+  end
+  if self.v_shop_type == SHOP_TYPE.BREAK_SHOP then
+    if self.v_goods_data.StockItem > 0 then
+      local num = ShopMgr:get_stock_amount(self.v_goods_data.StockItem)
+      self.v_price_discount = Shop_Helper.get_break_item_discount(num, self.v_goods_data.DiscountVal)
+    end
+    if 100 == self.v_price_discount then
+      self.v_discount_bg:SetActiveEx(false)
+    else
+      local discount_str = Shop_Helper.format_discount(self.v_price_discount)
+      self.v_discount_desc.text = discount_str
+    end
+  else
+    self.v_price_discount = tonumber(self.v_goods_data.DiscountVal)
+    local discount_str = Shop_Helper.format_discount(self.v_goods_data.DiscountVal)
+    self.v_discount_desc.text = discount_str
+  end
+end
+
+function M:_set_time()
+  local end_time = 0
+  if self.v_goods_data.EndTime then
+    end_time = Date.get_time_stamp_by_scheme_id(self.v_goods_data.EndTime) or 0
+  end
+  local has_time = end_time > 0
+  self.v_uiobjects.Time:SetActive(has_time)
+  if not has_time then
+    return
+  end
+  if self.v_ct_timer then
+    CT_Timer:remove_timer(self.v_reset_timer)
+    self.v_ct_timer = nil
+  end
+  local total_sec = end_time - Date.server_time()
+  if total_sec <= 0 then
+    self.v_uicompents.RemainderTime_txt.text = Date.get_time_formate_2(1)
+    return
+  end
+  self.v_uicompents.RemainderTime_txt.text = Date.get_time_formate_2(total_sec)
+  self.v_ct_timer = CT_Timer:add_timer("exchange_shop_timer", total_sec, function(sec)
+    if sec > 0 then
+      self.v_uicompents.RemainderTime_txt.text = Date.get_time_formate_2(sec)
+    else
+      self.v_uicompents.RemainderTime_txt.text = Date.get_time_formate_2(1)
+    end
+  end)
+end
+
+function M:_get_can_sale(goods_cfg)
+  if goods_cfg.BuddyId and 0 ~= goods_cfg.BuddyId then
+    local buddy_info = CharacterMgr:get_buddy_by_id(goods_cfg.BuddyId)
+    return nil ~= buddy_info
+  end
+  return true
+end
+
+function M:_set_ani(index)
+  if self.v_sq then
+    self.v_sq:Kill()
+  end
+  if not self.v_linked_parent:get_need_ani() then
+    self.v_canvas_group.alpha = 1
+    self.black_bg_canvas.alpha = 1
+    return
+  end
+  local ra = 0 == index % 2 and math.floor(index / 2) - 1 or math.floor(index / 2)
+  self.v_sq = Util.create_sequence()
+  self.v_sq:AppendInterval(0.1 * ra)
+  self.v_sq:Append(self.v_canvas_group:DOFade(1, 0.1))
+  self.v_sq:Join(self.black_bg_canvas:DOFade(1, 0.045):SetEase(ease_linear))
+end
+
+function M:_onclick_get_hero_btn()
+end
+
+function M:_onclick_add_stock_btn()
+  if ShopMgr:get_new_mark(self.v_goods_data.Id) then
+    ShopMgr:request_remove_goods_mark(self.v_goods_data.Id)
+  end
+  local show_param = {
+    tips_type = Config.ITEM_TIPS_TYPE.SHOP,
+    item_id = self.v_goods_data.Item,
+    show_type = Config.ITEM_SHOW_TYPE.SOURCE,
+    param = {
+      goods_cfg = self.v_goods_data
+    }
+  }
+  UIMgr:get_ui("shop_item_tips"):ui_show(show_param)
+end
+
+function M:_on_click_tog(isOn)
+  if self.v_goods_data == nil then
+    return
+  end
+  if isOn and self.v_reach_limit then
+    Util.show_message_tip(2272)
+    return
+  end
+  if true == isOn then
+    if ShopMgr:get_new_mark(self.v_goods_data.Id) then
+      ShopMgr:request_remove_goods_mark(self.v_goods_data.Id)
+    end
+    local show_param = {
+      tips_type = Config.ITEM_TIPS_TYPE.SHOP,
+      item_id = self.v_goods_data.Item,
+      param = {
+        goods_cfg = self.v_goods_data
+      }
+    }
+    UIMgr:get_ui("shop_item_tips"):ui_show(show_param)
+  end
+end
+
+function M:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_ITEM_TIPS_CLOSE, self.response_close_tips_event, self)
+end
+
+function M:response_close_tips_event(msg)
+  if self.v_goods_data == nil then
+    return
+  end
+  if nil ~= self.v_tog then
+    self.v_tog.isOn = false
+  end
+end
+
+function M:play_in_eff()
+  self.v_object:SetActive(true)
+end
+
+function M:eff_init()
+  self.v_object:SetActive(false)
+end
+
+function M:is_visible_item()
+  return self.v_visible
+end
+
+return M

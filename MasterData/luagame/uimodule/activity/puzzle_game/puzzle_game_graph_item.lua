@@ -1,0 +1,158 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:set_button_listener(nil, function()
+    self:on_point_up()
+  end)
+  local obj = self.v_object.gameObject
+  Util.set_start_drag(obj, self, function(x, y)
+    self:drag_start(x, y)
+  end)
+  Util.set_drag(obj, self, function()
+    self:on_drag()
+  end)
+  Util.set_end_drag(obj, self, function()
+    self:drag_end()
+  end)
+  self.v_node_objs = {}
+  for idx = 1, 9 do
+    self.v_node_objs[idx] = self.v_uiobjects["Node" .. idx]
+  end
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(cfg, idx)
+  self.v_uiobjects.Fx_Select:SetActiveEx(false)
+  self.v_graph_cfg = cfg
+  self.v_idx = idx
+  self.v_axes_list = {}
+  for row, v in pairs(cfg.Row) do
+    for _, column in pairs(v) do
+      self.v_axes_list[#self.v_axes_list + 1] = {column, row}
+    end
+  end
+  for i = 1, 9 do
+    local key = "Node" .. i
+    ResMgr:load_set_icon(self.v_uicompents[key .. "_img"], cfg.Icon)
+  end
+  self:show_node()
+  self.v_uiobjects.Content:SetActiveEx(true)
+  self.v_data = {
+    axes_list = self.v_axes_list,
+    icon = cfg.Icon,
+    idx = idx
+  }
+end
+
+function ui:show_node()
+  local active_idx_map = {}
+  for _, axes in ipairs(self.v_axes_list) do
+    local idx = (axes[2] - 1) * 3 + axes[1]
+    active_idx_map[idx] = true
+  end
+  for idx, obj in ipairs(self.v_node_objs) do
+    obj:SetActiveEx(true == active_idx_map[idx])
+  end
+end
+
+function ui:set_content_visible(visible)
+  self.v_uiobjects.Content:SetActiveEx(visible)
+end
+
+function ui:get_content_visible()
+  return self.v_uiobjects.Content.activeSelf
+end
+
+function ui:get_data()
+  return self.v_data, self:get_touch_axes()
+end
+
+function ui:on_point_up()
+  if self.v_parent_ui:is_draging() or not self.v_uiobjects.Content.activeSelf then
+    return
+  end
+  self:do_rotate()
+end
+
+function ui:do_rotate()
+  self.v_uiobjects.Fx_Select:SetActiveEx(false)
+  self.v_uiobjects.Fx_Select:SetActive(true)
+  self:rotate_points(self.v_axes_list)
+  self:show_node()
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.puzzle_set_cube_rot_UI_SOUND)
+end
+
+function ui:drag_start()
+  if self.v_draging or self.v_parent_ui:is_draging() or not self.v_uiobjects.Content.activeSelf then
+    return
+  end
+  self.v_uiobjects.Content:SetActiveEx(false)
+  self.v_draging = true
+  self.v_parent_ui:on_drag_start(self.v_data, self:get_touch_axes())
+end
+
+function ui:on_drag()
+  if self.v_draging then
+    self.v_parent_ui:on_drag()
+  end
+end
+
+function ui:drag_end()
+  if self.v_draging then
+    self.v_draging = false
+    self.v_parent_ui:on_drag_end()
+  end
+end
+
+local order_axes = {
+  2,
+  1,
+  3,
+  5,
+  4,
+  6,
+  8,
+  7,
+  9
+}
+
+function ui:get_touch_axes()
+  local min_order = 9
+  local touch_idx = 9
+  for axes_idx, axes in ipairs(self.v_axes_list) do
+    local order = order_axes[(axes[2] - 1) * 3 + axes[1]]
+    if min_order > order then
+      min_order = order
+      touch_idx = axes_idx
+    end
+  end
+  return touch_idx
+end
+
+function ui.rotate_point(x, y, cx, cy, n)
+  n = n % 4
+  for _ = 1, n do
+    local dx, dy = x - cx, y - cy
+    x, y = cx + dy, cy - dx
+  end
+  return x, y
+end
+
+function ui:rotate_points(points, n, cx, cy)
+  n = n or 1
+  cx, cy = cx or 2, cy or 2
+  for _, point in ipairs(points) do
+    point[1], point[2] = self.rotate_point(point[1], point[2], cx, cy, n)
+  end
+end
+
+return ui

@@ -1,0 +1,6 @@
+return {
+  {Id = 1, MailId = 190001},
+  {Id = 2, MailId = 190002},
+  {Id = 3, MailId = 190003},
+  {Id = 4, MailId = 190004}
+}

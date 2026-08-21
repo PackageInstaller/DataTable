@@ -1,0 +1,19 @@
+local Base = require("manager.magic.magic_imp.magic_base")
+local M = Util.create_child_mt(Base)
+
+function M:_init(owner, magic_info)
+  Base._init(self, owner, magic_info)
+end
+
+function M:on_effect(magic_list)
+  self.owner.magic_mgr:remove_others_by_type(self.magic_type, self)
+  local parm = self.cfg[1]
+  local scale = type(parm) == "table" and parm[self.magic_level] or parm
+  self.owner:change_model_scale(scale or 1, self.cfg[2])
+end
+
+function M:on_remove(magic_mgr, magic_list)
+  self.owner:revert_model_scale(self.cfg[3])
+end
+
+return M

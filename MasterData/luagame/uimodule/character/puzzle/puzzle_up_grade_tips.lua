@@ -1,0 +1,50 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local QUALITY_CFG = ShareRes.create("buddy.buddy_puzzle_quality")
+local ATTR_TEMP_KEY = "PUZZLE_UP_GRADE_TIPS_TEMP_KEY_ATTR"
+
+function ui:ui_finish_load()
+  self:set_button("BtnRet", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(ATTR_TEMP_KEY, self.v_uiobjects.InfoTem, self.v_uiobjects.Infor_list)
+end
+
+function ui:ui_on_show(puzzle_uuid, old_quality)
+  local puzzle_data = PuzzleMgr:get_puzzle_data(puzzle_uuid)
+  local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(puzzle_data.id)
+  local new_quality = puzzle_data.quality
+  self.v_uicompents.PluginsName1_txt.text = puzzle_cfg.Name
+  self.v_uicompents.PluginsName2_txt.text = puzzle_cfg.Name
+  local old_quality_cfg = QUALITY_CFG[old_quality]
+  local new_quality_cfg = QUALITY_CFG[new_quality]
+  Util.set_color(self.v_uicompents.PluginsName1_txt, old_quality_cfg.TxtColor)
+  Util.set_color(self.v_uicompents.PluginsName2_txt, new_quality_cfg.TxtColor)
+  local item_icon_path = ShareRes.get_item_icon_path(puzzle_data.id)
+  ResMgr:load_set_icon(self.v_uicompents.PluginsIcon_img, item_icon_path)
+  ResMgr:load_set_icon(self.v_uicompents.QualityBg_img, new_quality_cfg.QualityBgIcon)
+  self:refresh_attr_list(puzzle_data.attr_list)
+end
+
+function ui:refresh_attr_list(attr_list)
+  self:give_back_auto_cache(ATTR_TEMP_KEY)
+  local attr_id2value = {}
+  for _, attr_cfg_id in ipairs(attr_list) do
+    local attr_cfg = ShareRes.get_buddy_puzzle_attr_cfg(attr_cfg_id)
+    attr_id2value[attr_cfg.AttrId] = (attr_id2value[attr_cfg.AttrId] or 0) + attr_cfg.AttrValue
+  end
+  for _, attr_show_cfg in ipairs(ShareRes.get_buddy_puzzle_attr_show_list()) do
+    local attr_id = attr_show_cfg.AttrId
+    local attr_val = attr_id2value[attr_id]
+    if attr_val then
+      local item = self:get_auto_cache(ATTR_TEMP_KEY)
+      local name_txt = Util.get_text("AttrName", item)
+      local val_txt = Util.get_text("ChangeLayout/LastValue", item)
+      name_txt.text = attr_show_cfg.Desc
+      local is_ration = 1 == attr_show_cfg.AttrType
+      val_txt.text = Util.format_number(attr_val, is_ration)
+    end
+  end
+end
+
+return ui

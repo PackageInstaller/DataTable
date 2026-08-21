@@ -1,0 +1,3035 @@
+return {
+  [500001] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 0,
+    BuyCostId = 0,
+    CodeKey = "BATTLE_COIN",
+    Desc = "散落在命运之书中的神秘微粒。",
+    HeapCount = 1,
+    Icon = "Fight_currency",
+    Id = 500001,
+    MaxCount = 999999,
+    Name = "命轨光尘",
+    Quality = 1,
+    SaleAward = {},
+    ShowPriority = 999,
+    Subtype = 0,
+    Type = 1,
+    WorldDesc = "闪烁淡金微光的细碎光子，彼此之间交织纠缠。其本质是维系因果的基本单位，将其收集可以拼凑出命运的轨迹。"
+  },
+  [500011] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 5,
+    BuyCostId = 500001,
+    CodeKey = "RUNE_EXP1",
+    Desc = "增加生命符文经验",
+    HeapCount = 1,
+    Icon = "SkillBook_life",
+    Id = 500011,
+    MaxCount = 999999,
+    Name = "生命符文经验",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 999,
+    Subtype = 0,
+    Type = 1,
+    WorldDesc = "增加生命符文经验"
+  },
+  [500012] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 5,
+    BuyCostId = 500001,
+    CodeKey = "RUNE_EXP2",
+    Desc = "增加物攻符文经验",
+    HeapCount = 1,
+    Icon = "SkillBook_attack",
+    Id = 500012,
+    MaxCount = 999999,
+    Name = "物攻符文经验",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 999,
+    Subtype = 0,
+    Type = 1,
+    WorldDesc = "增加物攻符文经验"
+  },
+  [500013] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 5,
+    BuyCostId = 500001,
+    CodeKey = "RUNE_EXP3",
+    Desc = "增加魔攻符文经验",
+    HeapCount = 1,
+    Icon = "SkillBook_magic",
+    Id = 500013,
+    MaxCount = 999999,
+    Name = "魔攻符文经验",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 999,
+    Subtype = 0,
+    Type = 1,
+    WorldDesc = "增加魔攻符文经验"
+  },
+  [500014] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 5,
+    BuyCostId = 500001,
+    CodeKey = "RUNE_EXP4",
+    Desc = "增加防御符文经验",
+    HeapCount = 1,
+    Icon = "SkillBook_defense",
+    Id = 500014,
+    MaxCount = 999999,
+    Name = "防御符文经验",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 999,
+    Subtype = 0,
+    Type = 1,
+    WorldDesc = "增加防御符文经验"
+  },
+  [501001] = {
+    Arg = {
+      5001001,
+      1,
+      0,
+      0
+    },
+    BuyCostCnt = 100,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复1个角色的10%最大生命值的血量",
+    HeapCount = 99,
+    Icon = "HpBottle_small",
+    Id = 501001,
+    MaxCount = 99,
+    Name = "血瓶·小",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 30
+    },
+    ShowPriority = 999,
+    Subtype = 1,
+    Type = 2,
+    WorldDesc = "暗灰色元素瓶，是无名旅者的珍宝。借着其中积累元素喝下去，就能恢复生命"
+  },
+  [501002] = {
+    Arg = {
+      5001002,
+      1,
+      0,
+      0
+    },
+    BuyCostCnt = 180,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复1个角色的20%最大生命值的血量",
+    HeapCount = 99,
+    Icon = "HpBottle_medium",
+    Id = 501002,
+    MaxCount = 99,
+    Name = "血瓶·中",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 54
+    },
+    ShowPriority = 1000,
+    Subtype = 1,
+    Type = 2,
+    WorldDesc = "尚未燃烧殆尽的元素，使用后能提升血量。燃烧的元素是旅者的灵魂，尚未烧尽的灵魂能成为新的燃料。以死亡为粮食的话，就对死亡祈祷吧。"
+  },
+  [501003] = {
+    Arg = {
+      5001003,
+      1,
+      0,
+      0
+    },
+    BuyCostCnt = 250,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复1个角色的30%最大生命值的血量",
+    HeapCount = 99,
+    Icon = "HpBottle_large",
+    Id = 501003,
+    MaxCount = 99,
+    Name = "血瓶·大",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 75
+    },
+    ShowPriority = 1001,
+    Subtype = 1,
+    Type = 2,
+    WorldDesc = "英雄们体内留有的元素，是无名旅者未曾得到的物品，因此才会被吸引。能得到元素的力量，提升大量生命。直到死亡为止"
+  },
+  [501004] = {
+    Arg = {
+      5001004,
+      2,
+      0,
+      0
+    },
+    Auto_Use = true,
+    BuyCostCnt = 350,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复全队角色的15%最大生命值的血量",
+    HeapCount = 99,
+    Icon = "HpBottle_small",
+    Id = 501004,
+    MaxCount = 99,
+    Name = "生命药水·小",
+    Quality = 2,
+    SaleAward = {
+      [500001] = 105
+    },
+    ShowPriority = 1002,
+    Subtype = 2,
+    Type = 2,
+    WorldDesc = "鲜红的结晶露滴，拥有大量代表生命的力量，可以恢复大量的生命值。"
+  },
+  [501005] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1200,
+    BuyCostId = 500001,
+    CodeKey = "SKILL_BOOK",
+    Desc = "获得后立即使用，可随机获得1个角色的技能专精",
+    HeapCount = 99,
+    Icon = "Skill_book",
+    Id = 501005,
+    MaxCount = 99,
+    Name = "技能书",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1003,
+    Subtype = 6,
+    Type = 5,
+    WorldDesc = "获得后立即使用，可随机获得1个角色的技能专精"
+  },
+  [501006] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "一支华丽的永生玫瑰，纪念此生的唯一，1999包邮。在商店卖掉可换取大量金钱",
+    HeapCount = 1,
+    Icon = "Immortal_Rose",
+    Id = 501006,
+    MaxCount = 1,
+    Name = "永生玫瑰",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 1999,
+    Subtype = 0,
+    Type = 3,
+    WorldDesc = "只有玫瑰"
+  },
+  [501007] = {
+    Arg = {
+      5001005,
+      1,
+      0,
+      0
+    },
+    BuyCostCnt = 20,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复1个角色的50点魔法值。因为使用的是一次性瓶子，因此使用后直接丢弃，并不能用来装双倍符。",
+    HeapCount = 99,
+    Icon = "MpBottle_small",
+    Id = 501007,
+    MaxCount = 99,
+    Name = "魔瓶·小",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 996,
+    Subtype = 1,
+    Type = 2,
+    WorldDesc = "暗灰色元素瓶，是无名旅者的珍宝。借着其中积累元素喝下去，就能恢复生命"
+  },
+  [501008] = {
+    Arg = {
+      5001006,
+      1,
+      0,
+      0
+    },
+    BuyCostCnt = 35,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复1个角色的100点魔法值。诶嘿嘿嘿嘿，药水来咯。",
+    HeapCount = 99,
+    Icon = "MpBottle_medium",
+    Id = 501008,
+    MaxCount = 99,
+    Name = "魔瓶·中",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 997,
+    Subtype = 1,
+    Type = 2,
+    WorldDesc = "尚未燃烧殆尽的元素，使用后能提升血量。燃烧的元素是旅者的灵魂，尚未烧尽的灵魂能成为新的燃料。以死亡为粮食的话，就对死亡祈祷吧。"
+  },
+  [501009] = {
+    Arg = {
+      5001007,
+      1,
+      0,
+      0
+    },
+    BuyCostCnt = 60,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复1个角色的200点魔法值。TNND为什么不ban猛犸！",
+    HeapCount = 99,
+    Icon = "MpBottle_large",
+    Id = 501009,
+    MaxCount = 99,
+    Name = "魔瓶·大",
+    Quality = 2,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 998,
+    Subtype = 1,
+    Type = 2,
+    WorldDesc = "英雄们体内留有的元素，是无名旅者未曾得到的物品，因此才会被吸引。能得到元素的力量，提升大量生命。直到死亡为止"
+  },
+  [501010] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "可解锁和升级关卡技能",
+    HeapCount = 99,
+    Icon = "HpBottle_medium",
+    Id = 501010,
+    MaxCount = 99,
+    Name = "测试关卡技能1",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1999,
+    Subtype = 0,
+    Type = 3,
+    WorldDesc = "可解锁和升级关卡技能"
+  },
+  [501011] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 501011,
+    MaxCount = 99,
+    Name = "蓝色纯色宝箱",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1004,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [501012] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 501012,
+    MaxCount = 99,
+    Name = "紫、双蓝宝箱",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [501013] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 501013,
+    MaxCount = 99,
+    Name = "紫色纯色宝箱",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1006,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [501014] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 501014,
+    MaxCount = 99,
+    Name = "橙色纯色宝箱",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1007,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [501015] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 501015,
+    MaxCount = 99,
+    Name = "橙、钱宝箱",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1008,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [501016] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 501016,
+    MaxCount = 99,
+    Name = "蓝装、血药、蓝药、钱",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [501017] = {
+    Arg = {
+      5001008,
+      1,
+      0,
+      0
+    },
+    Auto_Use = true,
+    BuyCostCnt = 1500,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复全队角色的15%最大生命值+800的血量",
+    HeapCount = 99,
+    Icon = "HpBottle_small",
+    Id = 501017,
+    MaxCount = 99,
+    Name = "紧急救援装置",
+    Quality = 2,
+    SaleAward = {
+      [500001] = 30
+    },
+    ShowPriority = 999,
+    Subtype = 2,
+    Type = 2,
+    WorldDesc = "没血选这个"
+  },
+  [501018] = {
+    Arg = {
+      5001009,
+      1,
+      0,
+      0
+    },
+    Auto_Use = true,
+    BuyCostCnt = 1500,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复全队角色的12%最大生命值+650的血量，并且恢复200点全部战斗资源",
+    HeapCount = 99,
+    Icon = "HpBottle_small",
+    Id = 501018,
+    MaxCount = 99,
+    Name = "综合救援装置",
+    Quality = 2,
+    SaleAward = {
+      [500001] = 30
+    },
+    ShowPriority = 999,
+    Subtype = 2,
+    Type = 2,
+    WorldDesc = "还行选这个"
+  },
+  [501019] = {
+    Arg = {
+      5001010,
+      1,
+      0,
+      0
+    },
+    Auto_Use = true,
+    BuyCostCnt = 1500,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复全队角色的10%最大生命值+500的血量，并且恢复400点全部战斗资源",
+    HeapCount = 99,
+    Icon = "HpBottle_small",
+    Id = 501019,
+    MaxCount = 99,
+    Name = "战线维持装置",
+    Quality = 2,
+    SaleAward = {
+      [500001] = 30
+    },
+    ShowPriority = 999,
+    Subtype = 2,
+    Type = 2,
+    WorldDesc = "没蓝选这个"
+  },
+  [501020] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "不是宝箱，是格局",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 501020,
+    MaxCount = 99,
+    Name = "顶上宝箱",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "不是宝箱，是格局"
+  },
+  [501021] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "不是宝箱，是格局",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 501021,
+    MaxCount = 99,
+    Name = "顶上宝箱",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "不是宝箱，是格局"
+  },
+  [501022] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "不是宝箱，是格局",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 501022,
+    MaxCount = 99,
+    Name = "顶上宝箱",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "不是宝箱，是格局"
+  },
+  [501023] = {
+    Arg = {
+      5001011,
+      1,
+      0,
+      0
+    },
+    Auto_Use = true,
+    BuyCostCnt = 1500,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复全队角色的10%最大生命值的血量，并且恢复50点全部战斗资源",
+    HeapCount = 99,
+    Icon = "MpBottle_small",
+    Id = 501023,
+    MaxCount = 99,
+    Name = "魔力药水",
+    Quality = 2,
+    SaleAward = {
+      [500001] = 50
+    },
+    ShowPriority = 999,
+    Subtype = 2,
+    Type = 2,
+    WorldDesc = "蔚蓝的结晶露滴，拥有大量代表能量的力量，可以恢复大量的战斗资源。"
+  },
+  [501024] = {
+    Arg = {
+      5001012,
+      1,
+      0,
+      0
+    },
+    Auto_Use = true,
+    BuyCostCnt = 1500,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复全队角色的30%最大生命值的血量，并且恢复25点全部战斗资源",
+    HeapCount = 99,
+    Icon = "HpBottle_group",
+    Id = 501024,
+    MaxCount = 99,
+    Name = "复合型药水",
+    Quality = 2,
+    SaleAward = {
+      [500001] = 50
+    },
+    ShowPriority = 999,
+    Subtype = 2,
+    Type = 2,
+    WorldDesc = "混合着黄色的结晶露滴，拥有代表能量和生命的力量，可以同时恢复战斗资源和生命值。"
+  },
+  [501025] = {
+    Arg = {
+      5001013,
+      1,
+      0,
+      0
+    },
+    Auto_Use = true,
+    BuyCostCnt = 1500,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复全队角色的50%最大生命值的血量",
+    HeapCount = 99,
+    Icon = "HpBottle_medium",
+    Id = 501025,
+    MaxCount = 99,
+    Name = "生命药水·大",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 50
+    },
+    ShowPriority = 999,
+    Subtype = 2,
+    Type = 2,
+    WorldDesc = "鲜红的结晶露滴，拥有大量代表生命的力量，可以恢复大量的生命值。"
+  },
+  [501026] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    Auto_Use = true,
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复全队角色的移动速度",
+    HeapCount = 99,
+    Icon = "MpBottle_small",
+    Id = 501026,
+    MaxCount = 99,
+    Name = "速度恢复药水",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 1999,
+    Subtype = 1,
+    Type = 7,
+    UseSeniorShow = true,
+    WorldDesc = "某人遗留在此处的物品，还有些许用处"
+  },
+  [501027] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复全队角色的闪避能力",
+    HeapCount = 99,
+    Icon = "MpBottle_small",
+    Id = 501027,
+    MaxCount = 99,
+    Name = "躲闪恢复药水",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 1999,
+    Subtype = 0,
+    Type = 3,
+    UseSeniorShow = true,
+    WorldDesc = "某人遗留在此处的物品，还有些许用处"
+  },
+  [501028] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    Auto_Use = true,
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复攻击使怪物硬直的能力",
+    HeapCount = 99,
+    Icon = "HpBottle_group",
+    Id = 501028,
+    MaxCount = 99,
+    Name = "小麦发酵萃取液",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 1999,
+    Subtype = 2,
+    Type = 2,
+    WorldDesc = "“本品为推广向免费试用装，正式产品将于丰登庆典亮相。”\n不知何人遗留在此处的饮料，口感辛辣。"
+  },
+  [501029] = {
+    Arg = {
+      5001014,
+      1,
+      0,
+      0
+    },
+    Auto_Use = true,
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复生命值和使用技能能力",
+    HeapCount = 99,
+    Icon = "HpBottle_medium",
+    Id = 501029,
+    MaxCount = 99,
+    Name = "应急止痛剂",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 1999,
+    Subtype = 2,
+    Type = 2,
+    WorldDesc = "“丰登庆典举办在即，请各工作组严格落实作业安全规范，经济生司指导，为构建应急医疗缓冲体系，风华司将定点配备应急医疗用品。”\n全新的急救药品，或许可以提供点帮助。"
+  },
+  [501030] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    Auto_Use = true,
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "恢复闪避能力与移动速度",
+    HeapCount = 99,
+    Icon = "MpBottle_small",
+    Id = 501030,
+    MaxCount = 99,
+    Name = "仓廪脉动",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 1999,
+    Subtype = 2,
+    Type = 2,
+    WorldDesc = "“丰登庆典举办在即，在上报人员名单的基础上将进行一定额外数量的动能饮料发放，有需要者可视具体情况自行领取。”\n瓶身贴有“丰登庆典活动用品”的标签，似乎是某种维生素饮料。"
+  },
+  [502001] = {
+    Arg = {
+      99,
+      1,
+      0,
+      0
+    },
+    BuyCostCnt = 1800,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "放入背包后，可提升力量+1",
+    HeapCount = 99,
+    Icon = "Stone_strength_s",
+    Id = 502001,
+    MaxCount = 99,
+    Name = "力量晶石",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 1,
+    Type = 4,
+    WorldDesc = "获得它的时候，就是走上力量之路的时候。"
+  },
+  [502002] = {
+    Arg = {
+      100,
+      1,
+      0,
+      0
+    },
+    BuyCostCnt = 1800,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "放入背包后，可提升感知+1",
+    HeapCount = 99,
+    Icon = "Stone_perception_s",
+    Id = 502002,
+    MaxCount = 99,
+    Name = "感知晶石",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 1,
+    Type = 4,
+    WorldDesc = "它能提高你对世界的感知，可是那句话才是真的呢？"
+  },
+  [502003] = {
+    Arg = {
+      101,
+      1,
+      0,
+      0
+    },
+    BuyCostCnt = 1800,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "放入背包后，可提升敏捷+1",
+    HeapCount = 99,
+    Icon = "Stone_agile_s",
+    Id = 502003,
+    MaxCount = 99,
+    Name = "敏捷晶石",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 1,
+    Type = 4,
+    WorldDesc = "你的身体开始能跟得上你的脑子了。"
+  },
+  [502004] = {
+    Arg = {
+      102,
+      1,
+      0,
+      0
+    },
+    BuyCostCnt = 1800,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "放入背包后，可提升体质+1",
+    HeapCount = 99,
+    Icon = "Stone_constitution_s",
+    Id = 502004,
+    MaxCount = 99,
+    Name = "体质晶石",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 1,
+    Type = 4,
+    WorldDesc = "使用时，请保证已沐浴全身，慎防落叶。"
+  },
+  [502005] = {
+    Arg = {
+      103,
+      1,
+      0,
+      0
+    },
+    BuyCostCnt = 1800,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "放入背包后，可提升意志+1",
+    HeapCount = 99,
+    Icon = "Stone_willpower_s",
+    Id = 502005,
+    MaxCount = 99,
+    Name = "意志晶石",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 1,
+    Type = 4,
+    WorldDesc = "只有拥有非凡的意志才能完成奥德赛。"
+  },
+  [502006] = {
+    Arg = {
+      104,
+      1,
+      0,
+      0
+    },
+    BuyCostCnt = 1800,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "放入背包后，可提升幸运+1",
+    HeapCount = 99,
+    Icon = "Stone_lucky_s",
+    Id = 502006,
+    MaxCount = 99,
+    Name = "幸运晶石",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 1,
+    Type = 4,
+    WorldDesc = "圣人遗骸中最关键的部分。"
+  },
+  [502011] = {
+    Arg = {
+      99,
+      2,
+      0,
+      0
+    },
+    BuyCostCnt = 2700,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "放入背包后，可提升力量+2",
+    HeapCount = 99,
+    Icon = "Stone_strength_l",
+    Id = 502011,
+    MaxCount = 99,
+    Name = "力量大结晶",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 1,
+    Type = 4,
+    WorldDesc = "献祭所有，以获得掌握命运的力量。"
+  },
+  [502012] = {
+    Arg = {
+      100,
+      2,
+      0,
+      0
+    },
+    BuyCostCnt = 2700,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "放入背包后，可提升感知+2",
+    HeapCount = 99,
+    Icon = "Stone_perception_l",
+    Id = 502012,
+    MaxCount = 99,
+    Name = "感知大结晶",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 1,
+    Type = 4,
+    WorldDesc = "见真理之门，必须将人的世界唯我，世界为我观去除。"
+  },
+  [502013] = {
+    Arg = {
+      101,
+      2,
+      0,
+      0
+    },
+    BuyCostCnt = 2700,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "放入背包后，可提升敏捷+2",
+    HeapCount = 99,
+    Icon = "Stone_agile_l",
+    Id = 502013,
+    MaxCount = 99,
+    Name = "敏捷大结晶",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 1,
+    Type = 4,
+    WorldDesc = "无工质发动机，真的强。"
+  },
+  [502014] = {
+    Arg = {
+      102,
+      2,
+      0,
+      0
+    },
+    BuyCostCnt = 2700,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "放入背包后，可提升体质+2",
+    HeapCount = 99,
+    Icon = "Stone_constitution_l",
+    Id = 502014,
+    MaxCount = 99,
+    Name = "体质大结晶",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 1,
+    Type = 4,
+    WorldDesc = "剑确实有着斩杀敌人的威力，但能守护自身的鞘才是最为珍贵的。"
+  },
+  [502015] = {
+    Arg = {
+      103,
+      2,
+      0,
+      0
+    },
+    BuyCostCnt = 2700,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "放入背包后，可提升意志+2",
+    HeapCount = 99,
+    Icon = "Stone_willpower_l",
+    Id = 502015,
+    MaxCount = 99,
+    Name = "意志大结晶",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 1,
+    Type = 4,
+    WorldDesc = "钻头，就是意志！"
+  },
+  [502016] = {
+    Arg = {
+      104,
+      2,
+      0,
+      0
+    },
+    BuyCostCnt = 2700,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "放入背包后，可提升幸运+2",
+    HeapCount = 99,
+    Icon = "Stone_lucky_l",
+    Id = 502016,
+    MaxCount = 99,
+    Name = "幸运大结晶",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1009,
+    Subtype = 1,
+    Type = 4,
+    WorldDesc = "增加幸运值，就连美乐帝都能把子弹拐到路人身上。"
+  },
+  [514515] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "打开后可随机获得1个收藏品或道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 514515,
+    MaxCount = 99,
+    Name = "史诗级解谜宝箱",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "打开后可随机获得1个收藏品或道具"
+  },
+  [514516] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "打开后可随机获得1个收藏品或道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 514516,
+    MaxCount = 99,
+    Name = "装备宝箱",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "打开后可随机获得1个收藏品或道具"
+  },
+  [514517] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "打开后可随机获得1个收藏品或道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 514517,
+    MaxCount = 99,
+    Name = "装备宝箱",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "打开后可随机获得1个收藏品或道具"
+  },
+  [514520] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 514520,
+    MaxCount = 99,
+    Name = "挑战之环1级紫装宝箱",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1004,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [514521] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 514521,
+    MaxCount = 99,
+    Name = "挑战之环2级紫装宝箱",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1004,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [514522] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 514522,
+    MaxCount = 99,
+    Name = "挑战之环3级紫装宝箱",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1004,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [514523] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 514523,
+    MaxCount = 99,
+    Name = "挑战之环4级紫装宝箱",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1004,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [514524] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 514524,
+    MaxCount = 99,
+    Name = "挑战之环5级紫装宝箱",
+    Quality = 3,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1004,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [514525] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 514525,
+    MaxCount = 99,
+    Name = "挑战之环1级蓝装宝箱",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [514526] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 514526,
+    MaxCount = 99,
+    Name = "挑战之环2级蓝装宝箱",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [514527] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 514527,
+    MaxCount = 99,
+    Name = "挑战之环3级蓝装宝箱",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [514528] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 514528,
+    MaxCount = 99,
+    Name = "挑战之环4级蓝装宝箱",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [514529] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "宝箱道具",
+    HeapCount = 99,
+    Icon = "Box_gold",
+    Id = 514529,
+    MaxCount = 99,
+    Name = "挑战之环5级蓝装宝箱",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 7,
+    Type = 6,
+    WorldDesc = "宝箱道具"
+  },
+  [520001] = {
+    Arg = {
+      500001,
+      3,
+      5,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "大力砸烂钱罐，获得{1}金币(蓝球等级*5)，蓝球等级越高，砸得越多。",
+    HeapCount = 1,
+    Icon = "Box_gold",
+    Id = 520001,
+    MaxCount = 99,
+    Name = "存钱罐",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 1,
+    Type = 9,
+    WorldDesc = "大力出奇迹"
+  },
+  [520002] = {
+    Arg = {
+      1,
+      1,
+      -1,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "使用后，下一次战斗获得的金币增加红球等级*0.5%",
+    HeapCount = 1,
+    Icon = "Box_gold",
+    Id = 520002,
+    MaxCount = 99,
+    Name = "幸运金币",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 1,
+    Type = 8,
+    WorldDesc = "史高治的幸运金币"
+  },
+  [520003] = {
+    Arg = {
+      2,
+      -1,
+      -1,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "使用血瓶时，效果增加黄球等级*0.25%",
+    HeapCount = 1,
+    Icon = "Box_gold",
+    Id = 520003,
+    MaxCount = 99,
+    Name = "大力水手的菠菜",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    SpecialShow = true,
+    Subtype = 7,
+    Type = 9,
+    WorldDesc = "菠菜治愈一切"
+  },
+  [520004] = {
+    Arg = {
+      3,
+      -1,
+      -1,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "回收血瓶时，获得的金币增加{1}(蓝球等级*1)",
+    HeapCount = 1,
+    Icon = "Box_gold",
+    Id = 520004,
+    MaxCount = 99,
+    Name = "葛朗台的酒桶",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    SpecialShow = true,
+    Subtype = 8,
+    Type = 9,
+    WorldDesc = "来自葛朗台的怨念加成"
+  },
+  [520005] = {
+    Arg = {
+      4,
+      -1,
+      1,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "使当前所有主属性，都变为主属性中最高的主属性的值，1回合后效果消失。",
+    HeapCount = 1,
+    Icon = "Box_gold",
+    Id = 520005,
+    MaxCount = 99,
+    Name = "属性共鸣器",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 1,
+    Type = 8,
+    WorldDesc = "打开后可随机获得1个收藏品或道具"
+  },
+  [520006] = {
+    Arg = {
+      2,
+      50,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "随机替换当前的1+黄球等级/50（向下取整）的牌，并从牌库随机抽取对应数量的卡.",
+    HeapCount = 1,
+    Icon = "Box_gold",
+    Id = 520006,
+    MaxCount = 99,
+    Name = "混沌传送门",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 2,
+    Type = 9,
+    WorldDesc = "打开后可随机获得1个收藏品或道具"
+  },
+  [520007] = {
+    Arg = {
+      3,
+      1,
+      52,
+      522
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "使用时，有蓝球等级*1%的概率，将手牌和卡库中的血泉卡立即替换为大血泉卡。",
+    HeapCount = 1,
+    Icon = "Box_gold",
+    Id = 520007,
+    MaxCount = 99,
+    Name = "泉水挖掘机",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 3,
+    Type = 9,
+    WorldDesc = "打开后可随机获得1个收藏品或道具"
+  },
+  [520008] = {
+    Arg = {
+      1,
+      50,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "使用时，随机复制1+红球等级/50（向下取整）张当前可选的牌，进入当前环的牌库",
+    HeapCount = 1,
+    Icon = "Box_gold",
+    Id = 520008,
+    MaxCount = 99,
+    Name = "幻影道标",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 4,
+    Type = 9,
+    WorldDesc = "打开后可随机获得1个收藏品或道具"
+  },
+  [520009] = {
+    Arg = {
+      2,
+      50,
+      0,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "获得1+黄球等级/50个徽记（向下取整）",
+    HeapCount = 1,
+    Icon = "Box_gold",
+    Id = 520009,
+    MaxCount = 99,
+    Name = "力量徽记",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1
+    },
+    ShowPriority = 1005,
+    Subtype = 5,
+    Type = 9,
+    WorldDesc = "打开后可随机获得1个收藏品或道具"
+  },
+  [520010] = {
+    Arg = {
+      5,
+      1,
+      -1,
+      0
+    },
+    BuyCostCnt = 999999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "使用后，进入选牌阶段时，价值增加75金币，可最高增值蓝球等级/20（向下取整）次，一旦次数超过当前最高值后，每选择一次牌时，价值下降75金币，直至为0。需要在商店出售。",
+    HeapCount = 1,
+    Icon = "Box_gold",
+    Id = 520010,
+    MaxCount = 99,
+    Name = "敏捷债券",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 75
+    },
+    ShowPriority = 1005,
+    Subtype = 6,
+    Type = 9,
+    WorldDesc = "打开后可随机获得1个收藏品或道具"
+  },
+  [530011] = {
+    Arg = {
+      1,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 600,
+    BuyCostId = 500001,
+    CodeKey = "",
+    CurseCostCnt = 50,
+    Desc = "装备后，激活红色符文技能",
+    HeapCount = 1,
+    Icon = "Rune_icon_red1_",
+    Id = 530011,
+    MaxCount = 1,
+    Name = "红色符文",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 1005,
+    Subtype = 0,
+    Type = 10,
+    WorldDesc = "符文相关"
+  },
+  [530012] = {
+    Arg = {
+      2,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 600,
+    BuyCostId = 500001,
+    CodeKey = "",
+    CurseCostCnt = 50,
+    Desc = "装备后，激活黄色符文技能",
+    HeapCount = 1,
+    Icon = "Rune_icon_yellow1_",
+    Id = 530012,
+    MaxCount = 1,
+    Name = "黄色符文",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 1005,
+    Subtype = 0,
+    Type = 10,
+    WorldDesc = "符文相关"
+  },
+  [530013] = {
+    Arg = {
+      3,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 600,
+    BuyCostId = 500001,
+    CodeKey = "",
+    CurseCostCnt = 50,
+    Desc = "装备后，激活蓝色符文技能",
+    HeapCount = 1,
+    Icon = "Rune_icon_blue1_",
+    Id = 530013,
+    MaxCount = 1,
+    Name = "蓝色符文",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 1005,
+    Subtype = 0,
+    Type = 10,
+    WorldDesc = "符文相关"
+  },
+  [540001] = {
+    Arg = {
+      16,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 900,
+    BuyCostId = 500001,
+    CodeKey = "",
+    CurseCostCnt = 80,
+    Desc = "每拥有500【特异币】时，全体攻击力+10%，最高叠3层",
+    HeapCount = 1,
+    Icon = "ChalRing_prop_1_",
+    Id = 540001,
+    MaxCount = 1,
+    Name = "赏金猎人",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 1005,
+    Subtype = 0,
+    Type = 11,
+    WorldDesc = "诅咒饰品"
+  },
+  [540002] = {
+    Arg = {
+      17,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 900,
+    BuyCostId = 500001,
+    CodeKey = "",
+    CurseCostCnt = 80,
+    Desc = "利用陷阱击杀怪物时，额外+30【特异币】",
+    HeapCount = 1,
+    Icon = "ChalRing_prop_2_",
+    Id = 540002,
+    MaxCount = 1,
+    Name = "暗箭",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 1005,
+    Subtype = 0,
+    Type = 11,
+    WorldDesc = "诅咒饰品"
+  },
+  [540003] = {
+    Arg = {
+      18,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 900,
+    BuyCostId = 500001,
+    CodeKey = "",
+    CurseCostCnt = 80,
+    Desc = "【特异币】支付成本-20%",
+    HeapCount = 1,
+    Icon = "ChalRing_prop_3_",
+    Id = 540003,
+    MaxCount = 1,
+    Name = "市场调控",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 1005,
+    Subtype = 0,
+    Type = 11,
+    WorldDesc = "诅咒饰品"
+  },
+  [540004] = {
+    Arg = {
+      19,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 900,
+    BuyCostId = 500001,
+    CodeKey = "",
+    CurseCostCnt = 80,
+    Desc = "【诅咒】支付时，不再支付诅咒，而是支付【全体血量】",
+    HeapCount = 1,
+    Icon = "ChalRing_prop_4_",
+    Id = 540004,
+    MaxCount = 1,
+    Name = "鲜血献祭",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 1005,
+    Subtype = 0,
+    Type = 11,
+    WorldDesc = "诅咒饰品"
+  },
+  [540005] = {
+    Arg = {
+      20,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1500,
+    BuyCostId = 500001,
+    CodeKey = "",
+    CurseCostCnt = 120,
+    Desc = "战斗时，诅咒触发时间+10秒",
+    HeapCount = 1,
+    Icon = "ChalRing_prop_5_",
+    Id = 540005,
+    MaxCount = 1,
+    Name = "时间机器",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 1005,
+    Subtype = 0,
+    Type = 11,
+    WorldDesc = "诅咒饰品"
+  },
+  [540006] = {
+    Arg = {
+      21,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1500,
+    BuyCostId = 500001,
+    CodeKey = "",
+    CurseCostCnt = 120,
+    Desc = "每获得一个诅咒buff，提升5%全体生命值上限，最高3层",
+    HeapCount = 1,
+    Icon = "ChalRing_prop_6_",
+    Id = 540006,
+    MaxCount = 1,
+    Name = "基因改造",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 1005,
+    Subtype = 0,
+    Type = 11,
+    WorldDesc = "诅咒饰品"
+  },
+  [540007] = {
+    Arg = {
+      22,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1500,
+    BuyCostId = 500001,
+    CodeKey = "",
+    CurseCostCnt = 120,
+    Desc = "每次更换符文时，恢复全体血量10%",
+    HeapCount = 1,
+    Icon = "ChalRing_prop_7_",
+    Id = 540007,
+    MaxCount = 1,
+    Name = "再生能源",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 1005,
+    Subtype = 0,
+    Type = 11,
+    WorldDesc = "诅咒饰品"
+  },
+  [540008] = {
+    Arg = {
+      23,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1500,
+    BuyCostId = 500001,
+    CodeKey = "",
+    CurseCostCnt = 120,
+    Desc = "每通过一环时，恢复全体血量20%",
+    HeapCount = 1,
+    Icon = "ChalRing_prop_8_",
+    Id = 540008,
+    MaxCount = 1,
+    Name = "终点补给",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 1005,
+    Subtype = 0,
+    Type = 11,
+    WorldDesc = "诅咒饰品"
+  },
+  [541000] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 0,
+    BuyCostId = 0,
+    CodeKey = "BATTLE_CURSE_CURRENCY",
+    Desc = "沉寂在迷失之环的回响，用以兑换各类祝福。",
+    HeapCount = 999,
+    Icon = "Battle_it_CR_02",
+    Id = 541000,
+    MaxCount = 999,
+    Name = "祝福回响",
+    Quality = 3,
+    SaleAward = {},
+    ShowPriority = 1004,
+    Subtype = 0,
+    Type = 1,
+    WorldDesc = "不论是贤人还是愚人，都无一例外地迷失在了这条不归之路。迷者所知、迷者所见，也被容纳在了无止境的穷举之中，成为了演算的一部分。\n先哲的回响回荡在石币之中，指引着未来的迷者。"
+  },
+  [550011] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 5,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "指针朝向前方的罗盘，用以解锁无尽之旅的累计奖励。",
+    HeapCount = 999999,
+    Icon = "Endless_icon_dj01",
+    Id = 550011,
+    MaxCount = 999999,
+    Name = "罗盘指针",
+    Quality = 5,
+    SaleAward = {},
+    ShowPriority = 999,
+    Subtype = 0,
+    Type = 3,
+    WorldDesc = "如同人类对智慧的渴望，罗盘上的指针永远指向未被探明的方向，仅仅握在手中，就能感受到一往无前的勇气。"
+  },
+  [550012] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 5,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "呈现淡金光芒的碎片，用以兑换无尽之旅的特权效果。",
+    HeapCount = 999999,
+    Icon = "Endless_icon_zzsp",
+    Id = 550012,
+    MaxCount = 999999,
+    Name = "真知碎片",
+    Quality = 5,
+    SaleAward = {},
+    ShowPriority = 999,
+    Subtype = 0,
+    Type = 3,
+    WorldDesc = "黄沙垒起威城，高塔化为尘埃，无尽中的一切无比真切，却又转瞬即逝。能够留下的，唯有目睹的真知。"
+  },
+  [550021] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 5,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "无尽模式-忒休斯号累计奖励所需货币",
+    HeapCount = 999999,
+    Icon = "Endless_icon_dj02",
+    Id = 550021,
+    MaxCount = 999999,
+    Name = "无尽奖励点",
+    Quality = 5,
+    SaleAward = {},
+    ShowPriority = 999,
+    Subtype = 0,
+    Type = 3,
+    WorldDesc = "累计货币，可提升累计奖励等级，领取累计奖励"
+  },
+  [550022] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 5,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "无尽模式-忒休斯号特权解锁所需货币",
+    HeapCount = 999999,
+    Icon = "Char_icon_hgddj",
+    Id = 550022,
+    MaxCount = 999999,
+    Name = "特权点",
+    Quality = 5,
+    SaleAward = {},
+    ShowPriority = 999,
+    Subtype = 0,
+    Type = 3,
+    WorldDesc = "使用特权点，可解锁该章无尽的特权"
+  },
+  [550031] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 5,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "无尽模式-乾累计奖励所需货币",
+    HeapCount = 999999,
+    Icon = "Endless_icon_dj03",
+    Id = 550031,
+    MaxCount = 999999,
+    Name = "无尽奖励点",
+    Quality = 5,
+    SaleAward = {},
+    ShowPriority = 999,
+    Subtype = 0,
+    Type = 3,
+    WorldDesc = "累计货币，可提升累计奖励等级，领取累计奖励"
+  },
+  [550032] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 5,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "无尽模式-乾特权解锁所需货币",
+    HeapCount = 999999,
+    Icon = "Char_icon_hgddj",
+    Id = 550032,
+    MaxCount = 999999,
+    Name = "特权点",
+    Quality = 5,
+    SaleAward = {},
+    ShowPriority = 999,
+    Subtype = 0,
+    Type = 3,
+    WorldDesc = "使用特权点，可解锁该章无尽的特权"
+  },
+  [551001] = {
+    Arg = {
+      101,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "在古代图书馆里，发现的文献。",
+    HeapCount = 1,
+    Icon = "SkillBook_life",
+    Id = 551001,
+    MaxCount = 1,
+    Name = "剧情测试1",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 1999,
+    Subtype = 2,
+    Type = 3,
+    UseSeniorShow = true,
+    WorldDesc = "熟悉巴别图书馆的学者，也许能从中破译出有价值的信息"
+  },
+  [551002] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "在古代图书馆里，发现的文献。",
+    HeapCount = 1,
+    Icon = "SkillBook_attack",
+    Id = 551002,
+    MaxCount = 1,
+    Name = "剧情测试1",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 1999,
+    Subtype = 0,
+    Type = 3,
+    UseSeniorShow = true,
+    WorldDesc = "熟悉巴别图书馆的学者，也许能从中破译出有价值的信息"
+  },
+  [551003] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "在古代图书馆里，发现的文献。",
+    HeapCount = 1,
+    Icon = "SkillBook_magic",
+    Id = 551003,
+    MaxCount = 1,
+    Name = "剧情测试1",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 1999,
+    Subtype = 0,
+    Type = 3,
+    UseSeniorShow = true,
+    WorldDesc = "熟悉巴别图书馆的学者，也许能从中破译出有价值的信息"
+  },
+  [551004] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "在古代图书馆里，发现的文献。",
+    HeapCount = 1,
+    Icon = "SkillBook_defense",
+    Id = 551004,
+    MaxCount = 1,
+    Name = "剧情测试1",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 1999,
+    Subtype = 0,
+    Type = 3,
+    UseSeniorShow = true,
+    WorldDesc = "熟悉巴别图书馆的学者，也许能从中破译出有价值的信息"
+  },
+  [551005] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "在古代图书馆里，发现的文献。",
+    HeapCount = 1,
+    Icon = "SkillBook_life",
+    Id = 551005,
+    MaxCount = 1,
+    Name = "剧情测试1",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 1999,
+    Subtype = 0,
+    Type = 3,
+    UseSeniorShow = true,
+    WorldDesc = "熟悉巴别图书馆的学者，也许能从中破译出有价值的信息"
+  },
+  [551101] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "剧情杀测试道具",
+    HeapCount = 1,
+    Icon = "Box_gold",
+    Id = 551101,
+    MaxCount = 1,
+    Name = "剧情碎片4",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 1999,
+    Subtype = 0,
+    Type = 3,
+    UseSeniorShow = true,
+    WorldDesc = "剧情杀测试道具"
+  },
+  [551102] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "剧情杀测试道具",
+    HeapCount = 1,
+    Icon = "Box_gold",
+    Id = 551102,
+    MaxCount = 1,
+    Name = "剧情碎片5",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 1999,
+    Subtype = 0,
+    Type = 3,
+    UseSeniorShow = true,
+    WorldDesc = "剧情杀测试道具"
+  },
+  [551103] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "剧情杀测试道具",
+    HeapCount = 1,
+    Icon = "Box_gold",
+    Id = 551103,
+    MaxCount = 1,
+    Name = "剧情碎片6",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 1999,
+    Subtype = 0,
+    Type = 3,
+    UseSeniorShow = true,
+    WorldDesc = "剧情杀测试道具"
+  },
+  [552001] = {
+    Arg = {
+      1002001,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "在古代图书馆里，发现的文献。",
+    HeapCount = 1,
+    Icon = "MainLine_Book_02",
+    Id = 552001,
+    MaxCount = 1,
+    Name = "《颇泰赫》",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 999,
+    Subtype = 2,
+    Type = 3,
+    UseSeniorShow = true,
+    WorldDesc = "熟悉巴别图书馆的学者，也许能从中破译出有价值的信息"
+  },
+  [552002] = {
+    Arg = {
+      1002002,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "在古代图书馆里，发现的文献。",
+    HeapCount = 1,
+    Icon = "MainLine_Book_03",
+    Id = 552002,
+    MaxCount = 1,
+    Name = "《利非图》",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 999,
+    Subtype = 2,
+    Type = 3,
+    UseSeniorShow = true,
+    WorldDesc = "熟悉巴别图书馆的学者，也许能从中破译出有价值的信息"
+  },
+  [552003] = {
+    Arg = {
+      1002003,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "在古代图书馆里，发现的文献。",
+    HeapCount = 1,
+    Icon = "MainLine_Book_04",
+    Id = 552003,
+    MaxCount = 1,
+    Name = "《塔哈尔卡》",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 999,
+    Subtype = 2,
+    Type = 3,
+    UseSeniorShow = true,
+    WorldDesc = "熟悉巴别图书馆的学者，也许能从中破译出有价值的信息"
+  },
+  [552004] = {
+    Arg = {
+      1002004,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "在古代图书馆里，发现的文献。",
+    HeapCount = 1,
+    Icon = "MainLine_Book_01",
+    Id = 552004,
+    MaxCount = 1,
+    Name = "《阿肯那顿》",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 999,
+    Subtype = 2,
+    Type = 3,
+    UseSeniorShow = true,
+    WorldDesc = "熟悉巴别图书馆的学者，也许能从中破译出有价值的信息"
+  },
+  [552005] = {
+    Arg = {
+      1002005,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "在古代图书馆里，发现的文献。",
+    HeapCount = 1,
+    Icon = "MainLine_Book_05",
+    Id = 552005,
+    MaxCount = 1,
+    Name = "《沙巴塔卡》",
+    Quality = 4,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 999,
+    Subtype = 2,
+    Type = 3,
+    UseSeniorShow = true,
+    WorldDesc = "熟悉巴别图书馆的学者，也许能从中破译出有价值的信息"
+  },
+  [560101] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_wbyy",
+    Id = 560101,
+    MaxCount = 1,
+    Name = "《完备语言》",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "塔斯尼惊世骇俗的著作之一，按照书中的设计思路，这是一门可以消灭一切误解和歧义的新型语言，其中的所有词汇都经过堪比数学的精确定义，且可以像数字一样进行运算。使用这语言的人交流时将不会再有争论，谁对谁错一算便知。该书自序如下：“操着不同语言的凡人每天源源不断地来打扰我，为了省事，我必须发明一种从现在到永远都可以通用、而且含义不会随着时间流逝变化的语言，我要用它向所有人表达出如下的意思：‘我很忙，不要来烦我。’”但这本书如今只剩下了一半，后半部分被粗暴地撕掉了，扉页上有潦草的亲笔字迹：让凡人理解完备语言比发明完备语言还麻烦十倍。"
+  },
+  [560102] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_zlzmj",
+    Id = 560102,
+    MaxCount = 1,
+    Name = "真理证明机（原型机）",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "塔斯尼的伟大创造之一，一台只需输入命题、便可自动证明或证伪的打字机，其内部结构不明。塔斯尼发明它时取的名字是“多键式自调节韵律催眠器”，它输出证明过程的哒哒声治好了塔斯尼的顽固性失眠。但不久楔文会成员发现它实际上是一台真理证明机，强烈要求塔斯尼把它交出来保存，为报复馆员们夺走了自己心爱的催眠器，塔斯尼给它输入了最后一个命题：“世界上没有这台机器无法证明的命题”。这导致它自诞生年代持续运转至今，并不断输出证明过程，馆员们根本无法将其挪作他用。"
+  },
+  [560103] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_jdfc",
+    Id = 560103,
+    MaxCount = 1,
+    Name = "《奇点方程的一种特殊解，兼论宇宙的生命周期》",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "原标题为《塔斯尼的私人食谱：奇点爆米花》，其中前半部分花费了大量篇幅计算奇点爆炸后早期宇宙的膨胀及冷却模型，并将该模型与玉米粒在微波烤箱内受热膨胀的材料-热力学方程联立，试图算出一个时空坐标，在该坐标上奇点爆炸产生的能量冲击衰减到恰好可以把一袋玉米做成美味的爆米花；后半部分则对如今宇宙中的质量分布和演化过程进行详细考察，推算出了下一次奇点爆炸周期到来的时间。馆员从塔斯尼送往碎纸间的废稿中抢救出了这本著作，并将其改为现在的标题，封底处有塔斯尼的亲笔字迹：食谱失败，下一次奇点爆炸要等太久了。"
+  },
+  [560104] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_blml",
+    Id = 560104,
+    MaxCount = 1,
+    Name = "《悖论目录》",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "一本奇异的书，其开头声明“本书只列出这个图书馆里所有不列出自己书名的书”。按照该声明，若《悖论目录》列出《悖论目录》，则《悖论目录》里就不该有《悖论目录》这一条；但若《悖论目录》不列出《悖论目录》，则《悖论目录》里就该有《悖论目录》这一条。此书的书页似乎无限可分，任意一页纸都可以再搓成两页，因此至今无人能通读整本书，也就无法确认其中是否收录了《悖论目录》本身。"
+  },
+  [560105] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_lmcx",
+    Id = 560105,
+    MaxCount = 1,
+    Name = "《黎曼猜想》证明",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "一页笔记，上面是第365代馆长迈克尔·黎曼对自己提出的“黎曼猜想”的简短证明。整页内容被画上了黑色的大叉，最底下写着“全错了。第366代馆长波恩哈德·阿蒂亚留。”"
+  },
+  [560106] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_hbwyj",
+    Id = 560106,
+    MaxCount = 1,
+    Name = "哈勃望远镜",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "一个特殊的光学望远镜，由第362任馆长卡塞格林·哈勃亲手制作。\n为了能够尽可能地降低大气层对于望远镜的影响，卡塞格林决定制作一个能够在稀薄大气中观测星空的望远镜。他几乎用了一生的时间去攻克与之相关的所有难题，包括但不限于缩略图纸、材料置换、光学感度、精密零件、介质传递……\n\n“好了，现在只剩下一个问题：要怎么做，才能抽干望远镜上方的大气层？”\n                                                        ——卡塞格林·哈勃的墓志铭"
+  },
+  [560203] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_wangzuo",
+    Id = 560203,
+    MaxCount = 1,
+    Name = "安息王座",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "安息君主“懦弱者”弗拉斯特五世的王座，做工精美，镶嵌了大量黄金和宝石。据说继承自古欧贝德帝国时期，“万王之王”大利乌就曾在这把椅子上统治帝国。\n然而，弗拉斯特五世听说雅弗将派大军进攻时，竟主动派遣使者，愿意将这把椅子送给雅弗作为求和礼物。\n远征军统帅卢比孔拒绝了这一请求，图里努斯大帝要求的贡品远比一把椅子更加宝贵。\n"
+  },
+  [560204] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_yinbi",
+    Id = 560204,
+    MaxCount = 1,
+    Name = "图里努斯银币",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "印有图里努斯大帝头像的银币，流通于雅弗及其邻近国家。\n分量十足，做工精致，难以伪造。\n图里努斯曾慷慨地把银币赏赐给无数行商，令他们在异乡将其广为传布。\n“去吧，叫天下人知晓我的财富。”\n即使在安息这样的遥远土地，也有不少人使用着雅弗利尔铸造的钱币。\n许多安息孩童在认识银币上的“图里努斯”字样前，便已熟悉了大帝威严的尊容。\n"
+  },
+  [560205] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_nianjian",
+    Id = 560205,
+    MaxCount = 1,
+    Name = "巴别年鉴",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "一套厚重的纸卷，其上盖有古代楔文会的火漆封印。\n自古以来，楔文会每年均会编纂一本年鉴赠送给欧贝德的君主，作为所受厚待的回报，其中囊括了这一年发生的值得注意的事件，以及对君主治理国家的建议。\n安息时代，楔文会依旧坚持着这一传统，然而送往弗拉斯特五世王庭的年鉴均被悉数退回，完好无损的火漆封印及厚厚的灰尘证明它们从未被那平庸的君主打开过。\n火漆封印旁写有每一卷年鉴的标题，字迹至今依稀可见。最后一卷的标题是《警惕雅弗》。\n"
+  },
+  [560206] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_shiji",
+    Id = 560206,
+    MaxCount = 1,
+    Name = "《东方吟游集》",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "一本羊皮纸诗集，以雅弗语言写成。其中内容据说是古代七名雅弗诗人向东方游历后的见闻，讲述了古老君王的辉煌帝国、通往天空的高塔等种种不可思议之事。\n雅弗孩童都深信，在遥远的东方，有一个用黄金做屋顶、用白银铺地砖的大国。\n当图里努斯皇帝终于下达征兵命令，许多年轻人带着孩提时听过的童话向兵营蜂拥而至，准备以此为线索寻找东方遍地的黄金白银。\n但据后世的楔文会成员考证，此书成书于图里努斯大帝青年时期，且有不少当时宫廷诗人手笔的痕迹。\n图里努斯大帝的深谋远虑，也许远过于常人想象。\n"
+  },
+  [560207] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_fajiaoguan",
+    Id = 560207,
+    MaxCount = 1,
+    Name = "面包发酵罐",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "存放于巴别塔内的一只古代大陶罐，上半部绘有从研磨小麦到面包出炉上桌的整个烘焙流程，下半部刻有楔形文字铭文：\n万王之王大利乌，从孟斐斯取得制作这种非凡食物的配方。\n万王之王大利乌，慷慨将这配方赐予他国土上最聪慧的人们。\n对万王之王大利乌有所馈赠之人，万王之王大利乌必百倍回报。\n"
+  },
+  [560208] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_xingjia",
+    Id = 560208,
+    MaxCount = 1,
+    Name = "长生军绞刑架",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "一具青铜材质绞刑架，高约2.2米，宽约6米，可同时对3-4名犯人行刑。\n绞刑架的一根支柱上嵌有简短铭文：长生军行刑队。\n另一根支柱上嵌有稍长的铭文：让悬吊于此之人警戒后世，对我主有所隐瞒之人，将永远缄默不言。\n"
+  },
+  [560209] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_shoushuxiang",
+    Id = 560209,
+    MaxCount = 1,
+    Name = "青铜手术箱",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "一只古老青铜箱，内置一套金属器械，器械箱子表面刻有古欧贝德皇室纹章，表明其属于皇室财产。\n箱内另附一卷草纸，上有数行用炭棒写成的潦草记录：\n“水银”置入“血管”不能带来长生。\n“黄铜”置入“骨髓”不能带来长生。\n“玛瑙”置入“脊椎”不能带来长生。\n“纯银”置入“胃囊”不能带来长生。\n宫廷旨意：继续尝试。\n"
+  },
+  [560210] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_tapian",
+    Id = 560210,
+    MaxCount = 1,
+    Name = "大瀑布铭文拓片",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "一份古老碑文的莎草纸拓片，保存完好，以古孟斐斯、古欧贝德及另一种模糊不清的语言写成。\n铭文内容如下：\n我，万王之王，受一千位神明眷顾的大利乌，在孟斐斯河大瀑布坠落之处树立这石碑，以纪念我的功绩。\n我征服这河所流经的土地，我捞起沉于这河中的太阳，我的国土边境已到达世界南方尽头。\n我赦免孟斐斯的囚犯，只要他们从此遵守我的律法。\n我赏赐长生军的勇士，任他们挑选土地和财富。\n我释放奴隶，救济乞丐，庇护老人、妇女和幼儿。\n令天下人都知道，我，万王之王，受一千位神明眷顾的大利乌，乃是英雄、勇敢、仁慈、慷慨之人。\n"
+  },
+  [560211] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_taiyangbiji",
+    Id = 560211,
+    MaxCount = 1,
+    Name = "“古代太阳”研究笔记",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "一份写于莎草纸上的古老研究笔记，共分五卷，每卷侧面标题如下：\n《测量（完成）》\n《拆解（失败）》\n《复制（失败）》\n《翻模（完成）》\n《祷言（未完成）》\n《祷言（未完成）》卷末尾有一段潦草的记录：\n十年以来，我们尝试了370种语言，74890个单词，156789个短句。\n古代太阳依旧沉默。\n众神为何缄口不言？\n我们需要时间。但陛下已在塔前召唤我出去。\n愿这研究不会就此中断，但若不幸如此，我必须将这些记录封存，以供后世有朝一日继续研究。\n"
+  },
+  [560212] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 1999,
+    BuyCostId = 500001,
+    CodeKey = "",
+    Desc = "探索主线获得",
+    HeapCount = 1,
+    Icon = "Col_icon_cf",
+    Id = 560212,
+    MaxCount = 1,
+    Name = "《藏锋》",
+    Quality = 5,
+    SaleAward = {
+      [500001] = 1999
+    },
+    ShowPriority = 2999,
+    Subtype = 0,
+    Type = 12,
+    UseSeniorShow = true,
+    WorldDesc = "青的练习之作，上书“藏锋”二字，用以感谢预见者协助她在书法方面取得重大突破。\n宣纸作底，桐木装框，下方盖唯实社印章。虽不具夺人眼球的光鲜色彩，却颇具典雅内敛的古韵，尽显乾特有的文化气质。\n所谓“藏锋”，即“欲右先左，欲上先下”，一笔一划皆需忍耐与筹谋。字如此，人亦然。"
+  },
+  [920001] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 0,
+    BuyCostId = 0,
+    CodeKey = "",
+    Desc = "记录馆员信息的手册，收集一定数量可分别解锁主线第二、三、四章节。",
+    HeapCount = 999,
+    Icon = "MainChapItem03_",
+    Id = 920001,
+    MaxCount = 999,
+    Name = "馆员手册",
+    Quality = 3,
+    SaleAward = {},
+    ShowPriority = 5000,
+    Subtype = 0,
+    Type = 13,
+    WorldDesc = "记录馆员信息的手册，用于解锁故事进程。\n每一位艾弥安步入图书馆时，楔文会都将他的相关信息登场成册。这本手册事无巨细地记录着所属馆员的每一项信息，包括但不限于社会关系、生平过往、喜好兴趣……\n在踏上不归之路前，大多数艾弥安会拿走属于自己的手册，视作与楔文会的最后告别。"
+  },
+  [920002] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 0,
+    BuyCostId = 0,
+    CodeKey = "",
+    Desc = "欧贝德文明的遗珍，收集一定数量可解锁主线第五章节。",
+    HeapCount = 999,
+    Icon = "MainChapItem02",
+    Id = 920002,
+    MaxCount = 999,
+    Name = "欧贝德遗珍",
+    Quality = 3,
+    SaleAward = {},
+    ShowPriority = 5000,
+    Subtype = 0,
+    Type = 13,
+    WorldDesc = "欧贝德文明的遗珍，用于解锁故事进程。\n曾经，欧贝德人皆认为世界中心即是脚下的新月沃土，伯拉河畔的哲人传播智慧的火种，以拦平原的匠人建立雄伟的宫殿，非利士海的水手传颂悠远的诗歌……\n只是时光流逝，一切的一切都逐渐被遗忘在这世界边缘，唯有那座高塔伫立长存。"
+  },
+  [920003] = {
+    Arg = {
+      0,
+      0,
+      0,
+      0
+    },
+    BuyCostCnt = 0,
+    BuyCostId = 0,
+    CodeKey = "",
+    Desc = "蕴含无穷算力的立方，收集一定数量可解锁主线章节。",
+    HeapCount = 999,
+    Icon = "MainChapItem03_",
+    Id = 920003,
+    MaxCount = 999,
+    Name = "默示立方",
+    Quality = 3,
+    SaleAward = {},
+    ShowPriority = 5000,
+    Subtype = 0,
+    Type = 13,
+    WorldDesc = "蕴含无穷算力的立方，用于解锁故事进程。\n莫名出现在图书馆各处，接口与任何现代标准均不相符的神秘存储装置。其中的信息转换为电子编码，只能得到一片噪声般的杂乱信号。\n随着时间流逝，编码将逐渐变为有序状态。许多楔文会学者猜测，其中蕴含的是存在于概率云内的“未来”。当历史前进，模糊的概率随之坍缩为既定事实，这些信息才会允许人类解读。"
+  }
+}

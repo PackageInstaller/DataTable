@@ -1,0 +1,33 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local Char_Helper = require("uimodule.character.char_helper")
+
+function ui:ui_finish_load()
+  local btn = Util.get_button(nil, self.v_object.gameObject)
+  self:set_button_listener(btn, function()
+    self.v_parent_ui:show_char_detail(self.v_buddy_id)
+    self.v_parent_ui:disable_red_point(self.v_buddy_id)
+    self.v_uiobjects.Redpoint:SetActive(false)
+  end)
+end
+
+function ui:set_data(data)
+  local buddy_id = data.id
+  local icon_path = Char_Helper.get_char_select_quality_icon(buddy_id)
+  ResMgr:load_set_icon(self.v_uicompents.Quality_Icon_img, icon_path)
+  icon_path = UtilUI.get_hero_images(buddy_id, 3)
+  ResMgr:load_set_icon(self.v_uicompents.Char_icon_img, icon_path, nil, true, self)
+  icon_path = Char_Helper.get_char_element_icon(buddy_id)
+  ResMgr:load_set_icon(self.v_uicompents.EleIcon_img, icon_path)
+  icon_path = Char_Helper.get_char_job_icon(buddy_id)
+  ResMgr:load_set_icon(self.v_uicompents.JobIcon_img, icon_path)
+  icon_path = Char_Helper.get_char_line_quality_icon(data.quality)
+  ResMgr:load_set_icon(self.v_uicompents.QualityLine_img, icon_path)
+  Char_Helper.set_buddy_quality_star(self.v_uiobjects, data.quality)
+  self.v_uicompents.CharName_txt.text = data.name
+  self.v_uiobjects.Lock:SetActive(not data.own)
+  self.v_uiobjects.Redpoint:SetActive(data.redpoint)
+  self.v_buddy_id = buddy_id
+end
+
+return ui

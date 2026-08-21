@@ -1,0 +1,7 @@
+return {
+  {
+    Id = 1,
+    Param = {1, 3},
+    Type = 1
+  }
+}

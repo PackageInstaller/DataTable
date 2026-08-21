@@ -1,0 +1,102 @@
+local Base = require("ui.uibase")
+local M = Util.create_child_mt(Base)
+M.show_type = 0
+M.total_wave = 0
+M.curr_wave = 0
+
+function M:ui_finish_load()
+  self.content_text = Util.get_text("SafeArea/Root_/Wave/Text", self.v_object)
+end
+
+function M:ui_on_show(wave, show_type)
+  if show_type then
+    self.show_type = show_type
+  end
+  self:bind_auto_mq(Const.KILL_ENEMY_COUNT_REFRESH, self.on_kill_enemy_count_refresh, self)
+  self:refresh_text_with_show_type()
+  self:register_event()
+  self.v_uiobjects.Root:SetActive(true)
+  self:on_get_wave(wave)
+end
+
+function M:on_kill_enemy_count_refresh(msg)
+  self.curr_wave = msg.mm_x
+  self:refresh_curr_value(self.total_wave, self.curr_wave)
+end
+
+function M:refresh_text_with_show_type()
+  if 0 == self.show_type then
+    self.content_text.text = "轮次"
+  elseif 1 == self.show_type then
+    self.content_text.text = "击杀"
+  end
+end
+
+function M:ui_on_hide()
+  self:unbind_all_auto_mq()
+end
+
+function M:on_get_wave(wave)
+  self.total_wave = wave
+  self:refresh_curr_value(wave)
+end
+
+function M:refresh_curr_value(total, curr)
+  if 0 == self.show_type then
+    self.v_uicompents.Now_txt.text = total
+  elseif 1 == self.show_type then
+    if not curr then
+      curr = 0
+      if ChallengeRingPlusMgr then
+        curr = ChallengeRingPlusMgr:get_curr_kill_enemy_count()
+      end
+    end
+    self.v_uicompents.Now_txt.text = string.format("%s/%s", curr, total)
+  end
+end
+
+function M:fight_end()
+  self:ui_hide()
+end
+
+function M:on_game_pause_state_changed(msg)
+  local is_pause = msg.mm_x
+  if is_pause then
+    self.v_uiobjects.Root:SetActive(false)
+  else
+    self.v_uiobjects.Root:SetActive(true)
+  end
+end
+
+function M:on_pre_tp_room()
+  self.v_uiobjects.Root:SetActive(false)
+end
+
+function M:on_tp_toom_finish()
+  self.v_uiobjects.Root:SetActive(true)
+end
+
+function M:on_show_ui(msg)
+  if msg.mm_obj == "fight" then
+    self.v_uiobjects.Root:SetActive(true)
+  end
+end
+
+function M:on_hide_ui(msg)
+  if msg.mm_obj == "fight" then
+    self.v_uiobjects.Root:SetActive(false)
+  end
+end
+
+function M:register_event()
+  self:bind_auto_mq(Const.MSG_ON_FIGHT_END, self.fight_end, self)
+  self:bind_auto_mq(Const.MSG_ON_GAME_PAUSE, self.on_game_pause_state_changed, self)
+  self:bind_auto_mq(Const.MSG_PRE_TP_ROOM, self.on_pre_tp_room, self)
+  self:bind_auto_mq(Const.MSG_TP_ROOM_FINISH, self.on_tp_toom_finish, self)
+  self:bind_auto_mq(Const.MSG_ON_HIDE_UI, self.on_hide_ui, self)
+  self:bind_auto_mq(Const.MSG_ON_SHOW_UI, self.on_show_ui, self)
+  self:bind_auto_mq(Const.MSG_ON_HERO_BORN_ANIM_START, self.on_hide_ui, self)
+  self:bind_auto_mq(Const.MSG_ON_HERO_BORN_ANIM_END, self.on_show_ui, self)
+end
+
+return M

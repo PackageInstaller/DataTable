@@ -1,0 +1,353 @@
+return {
+  [971001] = {
+    DecomposeAwardGroup = 122,
+    Desc = "【振羽辉刃】期间【安祖】每次攻击后，会额外造成一次伤害",
+    Icon = "Char_icon_by_zsby",
+    Id = 971001,
+    Name = "余辉",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [971004] = {
+    DecomposeAwardGroup = 122,
+    Desc = "消除【流电】会造成一次额外的小范围落雷伤害",
+    Icon = "Char_icon_by_zsby",
+    Id = 971004,
+    Name = "激燿",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [971008] = {
+    DecomposeAwardGroup = 122,
+    Desc = "【命定之击】使自身获得伤害增幅",
+    Icon = "Char_icon_by_zsby",
+    Id = 971008,
+    Name = "无休锋刃",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [971009] = {
+    DecomposeAwardGroup = 122,
+    Desc = "【架势】后派生的所有技能获得伤害增幅",
+    Icon = "Char_icon_by_zsby",
+    Id = 971009,
+    Name = "圣者的祈祷",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [971010] = {
+    DecomposeAwardGroup = 122,
+    Desc = "收回伞时身边产生一次小范围水爆，造成伤害，并获得水滴",
+    Icon = "Char_icon_by_zsby",
+    Id = 971010,
+    Name = "未雨绸缪",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [971011] = {
+    DecomposeAwardGroup = 122,
+    Desc = "处于【灯火熠熠】时，暝移动速度增加，并获得伤害增幅",
+    Icon = "Char_icon_by_zsby",
+    Id = 971011,
+    Name = "长明",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [971012] = {
+    DecomposeAwardGroup = 122,
+    Desc = "【斩浪】伤害增加",
+    Icon = "Char_icon_by_zsby",
+    Id = 971012,
+    Name = "锋走龙蛇",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [971014] = {
+    DecomposeAwardGroup = 122,
+    Desc = "释放【回旋组曲】后,音符持续期间萝歌丝攻击力提升",
+    Icon = "Char_icon_by_zsby",
+    Id = 971014,
+    Name = "数乐共鸣",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [971015] = {
+    DecomposeAwardGroup = 122,
+    Desc = "【罪行清算】中，每一次普攻获得伤害提升",
+    Icon = "Char_icon_by_zsby",
+    Id = 971015,
+    Name = "不灭怒火",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [971016] = {
+    DecomposeAwardGroup = 122,
+    Desc = "【余音】伤害提升",
+    Icon = "Char_icon_by_zsby",
+    Id = 971016,
+    Name = "浸没余音",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [971017] = {
+    DecomposeAwardGroup = 122,
+    Desc = "【逐月圆舞】获得伤害增幅，并在最后一刀附加额外伤害",
+    Icon = "Char_icon_by_zsby",
+    Id = 971017,
+    Name = "孤轮连舞",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [971018] = {
+    DecomposeAwardGroup = 122,
+    Desc = "【简易对撞实验】命中能量球时，会额外打出一个能量球，额外能量球撞击造成伤害，并产生爆炸",
+    Icon = "Char_icon_by_zsby",
+    Id = 971018,
+    Name = "动量全垒打",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [971019] = {
+    DecomposeAwardGroup = 122,
+    Desc = "协同攻击命中时，敌人减少防御力，可叠3层，每层持续3秒",
+    Icon = "Char_icon_by_zsby",
+    Id = 971019,
+    Name = "宁莎专属",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [971020] = {
+    DecomposeAwardGroup = 122,
+    Desc = "【明刃】、【暗刃】攻击伤害提升，并提升所获得10终结技能量。",
+    Icon = "Char_icon_by_zsby",
+    Id = 971020,
+    Name = "无实专属",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [971021] = {
+    DecomposeAwardGroup = 122,
+    Desc = "【火力压制】依据阿紫的每点异常专精，额外降低目标伤害抗性。",
+    Icon = "Char_icon_by_zsby",
+    Id = 971021,
+    Name = "阿紫专属",
+    Quality = 6,
+    WorldDesc = ""
+  },
+  [972001] = {
+    DecomposeAwardGroup = 122,
+    Desc = "每次释放普攻，使自身获得【预兆】，每层【预兆】使角色获得2%伤害增幅持续5秒，最多叠加5层",
+    Icon = "Char_icon_by_smts",
+    Id = 972001,
+    Name = "通天之塔·无定",
+    Quality = 5,
+    WorldDesc = ""
+  },
+  [972002] = {
+    DecomposeAwardGroup = 122,
+    Desc = "角色所有技能伤害提升2%，每1秒使用技能命中会为敌人叠加【破碎】持续12秒，最多叠加5层，终结技命中带有【破碎】的单位使终结技伤害提升10%",
+    Icon = "Char_icon_by_smts",
+    Id = 972002,
+    Name = "永恒旋涡·解离",
+    Quality = 5,
+    WorldDesc = ""
+  },
+  [972003] = {
+    DecomposeAwardGroup = 122,
+    Desc = "对敌人造成追击伤害后，会为敌人添加【咒言】，降低敌人6%伤害抗性，持续8秒，这个效果每隔20秒触发一次",
+    Icon = "Char_icon_by_smts",
+    Id = 972003,
+    Name = "众神箴言·追义",
+    Quality = 5,
+    WorldDesc = ""
+  },
+  [972004] = {
+    DecomposeAwardGroup = 122,
+    Desc = "角色离场时，为全队添加【誓刃】，提升10%攻击提升持续15秒，这个效果每隔30秒触发一次",
+    Icon = "Char_icon_by_smts",
+    Id = 972004,
+    Name = "古老誓约·负轭",
+    Quality = 5,
+    WorldDesc = ""
+  },
+  [973001] = {
+    DecomposeAwardGroup = 121,
+    Desc = "每造成10次普攻伤害，角色攻击力提升2.5%持续10秒，提升角色拥有【预兆】时，角色攻击力额外提升2.5%",
+    Icon = "Char_icon_by_smts",
+    Id = 973001,
+    Name = "通天之塔·回环",
+    Quality = 4,
+    WorldDesc = ""
+  },
+  [973002] = {
+    DecomposeAwardGroup = 121,
+    Desc = "触发暴击后，暴击伤害提升10%，持续10秒当角色拥有【预兆】时，额外提升层数*10%暴击伤害",
+    Icon = "Char_icon_by_smts",
+    Id = 973002,
+    Name = "通天之塔·逆流",
+    Quality = 4,
+    WorldDesc = ""
+  },
+  [973003] = {
+    DecomposeAwardGroup = 121,
+    Desc = "分支技能使敌人防御降低2.5%持续12秒，如果目标带【破碎】，敌人防御额外降低2.55%",
+    Icon = "Char_icon_by_smts",
+    Id = 973003,
+    Name = "永恒旋涡·吞噬",
+    Quality = 4,
+    WorldDesc = ""
+  },
+  [973004] = {
+    DecomposeAwardGroup = 121,
+    Desc = "强化伤害提升2.5%，如果目标带【破碎】，强化伤害额外提升2.5%",
+    Icon = "Char_icon_by_smts",
+    Id = 973004,
+    Name = "永恒旋涡·进化",
+    Quality = 4,
+    WorldDesc = ""
+  },
+  [973005] = {
+    DecomposeAwardGroup = 121,
+    Desc = "对敌人造成异常触发时，降低敌人2.5%全异常抗性，当敌人拥有【咒言】时，敌人全异常抗性额外降低2.5%",
+    Icon = "Char_icon_by_smts",
+    Id = 973005,
+    Name = "众神箴言·识己",
+    Quality = 4,
+    WorldDesc = ""
+  },
+  [973006] = {
+    DecomposeAwardGroup = 121,
+    Desc = "处于后台时，对敌人造成的伤害提升2.5%，当敌人拥有【咒言】，伤害额外提升2.5%",
+    Icon = "Char_icon_by_smts",
+    Id = 973006,
+    Name = "众神箴言·守律",
+    Quality = 4,
+    WorldDesc = ""
+  },
+  [973007] = {
+    DecomposeAwardGroup = 121,
+    Desc = "处于后台时，每秒回复2.5点大招能量，有【誓刃】时每秒额外回复2.5点大招能量",
+    Icon = "Char_icon_by_smts",
+    Id = 973007,
+    Name = "古老誓约·祈烛",
+    Quality = 4,
+    WorldDesc = ""
+  },
+  [973008] = {
+    DecomposeAwardGroup = 121,
+    Desc = "自身伤害抗性提高5%，受到伤害时造成25%防御力反伤，每隔5秒触发一次，有【誓刃】时额外反伤25%",
+    Icon = "Char_icon_by_smts",
+    Id = 973008,
+    Name = "古老誓约·荆棘",
+    Quality = 4,
+    WorldDesc = ""
+  },
+  [974001] = {
+    DecomposeAwardGroup = 120,
+    Desc = "生命提升335",
+    Icon = "Char_icon_by_smts",
+    Id = 974001,
+    Name = "原初碎片·沃土",
+    Quality = 3,
+    WorldDesc = ""
+  },
+  [974002] = {
+    DecomposeAwardGroup = 120,
+    Desc = "攻击提升20",
+    Icon = "Char_icon_by_smts",
+    Id = 974002,
+    Name = "原初碎片·尘埃",
+    Quality = 3,
+    WorldDesc = ""
+  },
+  [974003] = {
+    DecomposeAwardGroup = 120,
+    Desc = "防御提升5.7",
+    Icon = "Char_icon_by_smts",
+    Id = 974003,
+    Name = "原初碎片·坚石",
+    Quality = 3,
+    WorldDesc = ""
+  },
+  [974004] = {
+    DecomposeAwardGroup = 120,
+    Desc = "水元素伤害提升3.5%",
+    Icon = "Char_icon_by_smts",
+    Id = 974004,
+    Name = "原初碎片·诸水",
+    Quality = 3,
+    WorldDesc = ""
+  },
+  [974005] = {
+    DecomposeAwardGroup = 120,
+    Desc = "火元素伤害提升3.5%",
+    Icon = "Char_icon_by_smts",
+    Id = 974005,
+    Name = "原初碎片·灰烬",
+    Quality = 3,
+    WorldDesc = ""
+  },
+  [974006] = {
+    DecomposeAwardGroup = 120,
+    Desc = "雷元素伤害提升3.5%",
+    Icon = "Char_icon_by_smts",
+    Id = 974006,
+    Name = "原初碎片·雷光",
+    Quality = 3,
+    WorldDesc = ""
+  },
+  [974007] = {
+    DecomposeAwardGroup = 120,
+    Desc = "光元素伤害提升3.5%",
+    Icon = "Char_icon_by_smts",
+    Id = 974007,
+    Name = "原初碎片·群星",
+    Quality = 3,
+    WorldDesc = ""
+  },
+  [974008] = {
+    DecomposeAwardGroup = 120,
+    Desc = "暗元素伤害提升3.5%",
+    Icon = "Char_icon_by_smts",
+    Id = 974008,
+    Name = "原初碎片·暗海",
+    Quality = 3,
+    WorldDesc = ""
+  },
+  [974009] = {
+    DecomposeAwardGroup = 120,
+    Desc = "异常提升8",
+    Icon = "Char_icon_by_smts",
+    Id = 974009,
+    Name = "原初碎片·迷宫",
+    Quality = 3,
+    WorldDesc = ""
+  },
+  [974010] = {
+    DecomposeAwardGroup = 120,
+    Desc = "暴击提升3%",
+    Icon = "Char_icon_by_smts",
+    Id = 974010,
+    Name = "原初碎片·孤岛",
+    Quality = 3,
+    WorldDesc = ""
+  },
+  [974011] = {
+    DecomposeAwardGroup = 120,
+    Desc = "暴伤提升10%",
+    Icon = "Char_icon_by_smts",
+    Id = 974011,
+    Name = "原初碎片·神殿",
+    Quality = 3,
+    WorldDesc = ""
+  },
+  [974012] = {
+    DecomposeAwardGroup = 120,
+    Desc = "大招充能提升5%",
+    Icon = "Char_icon_by_smts",
+    Id = 974012,
+    Name = "原初碎片·秘迹",
+    Quality = 3,
+    WorldDesc = ""
+  }
+}

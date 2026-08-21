@@ -1,0 +1,202 @@
+local Base = require("ui.uibase")
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local ui = Util.create_child_mt(Base)
+local BUY_PANEL_ADVANCE_AWARD_TEM = "BUY_PANEL_ADVANCE_AWARD_TEM"
+local BUY_PANEL_HIGHEST_AWARD_TEM = "BUY_PANEL_HIGHEST_AWARD_TEM"
+local BUY_PANEL_ADVANCE_IMT_AWARD_TEM = "BUY_PANEL_ADVANCE_IMT_AWARD_TEM"
+local BUY_PANEL_HIGHEST_IMT_AWARD_TEM = "BUY_PANEL_HIGHEST_IMT_AWARD_TEM"
+local icon_path_prefix = "Icon/item/%s"
+local Quality_Img = {
+  [1] = "UICommon/Common_pzk_01",
+  [2] = "UICommon/Common_pzk_02",
+  [3] = "UICommon/Common_pzk_02",
+  [4] = "UICommon/Common_pzk_03",
+  [5] = "UICommon/Common_pzk_04"
+}
+local PASSPORT_TYPE = {ADVANCE = 1, HIGHEST = 2}
+local PASSPORT_JUMP_ID = 22706
+
+function ui:ui_finish_load()
+  self:set_button("BtnRet1", function()
+    if UIMgr:has_ui("recommond_shop") then
+      SysOpenMgr:jump_to_sys(PASSPORT_JUMP_ID, true)
+    else
+      self:ui_hide()
+    end
+  end)
+  self:set_button("BtnMain", function()
+    UIMgr:go_to_main()
+  end)
+  self:set_button("BtnSPOrder", function()
+    self:on_click_buy_passport(PASSPORT_TYPE.ADVANCE)
+  end)
+  self:set_button("BtnExSPOrder", function()
+    self:on_click_buy_passport(PASSPORT_TYPE.HIGHEST)
+  end)
+  local passport_id = PassPortMgr:get_passport_data().id
+  local passport_cfg = ShareRes.get_battle_passport_cfg(passport_id)
+  self:set_button("Tips", function()
+    UIMgr:get_ui("ui_monthtask_award_choice"):ui_show(true, passport_cfg.SelectAwardGroupId)
+  end)
+  self.v_award_group_cfg = ShareRes.create("award.award_group")
+  self.v_battle_passport_key_cfg = ShareRes.create("battle_passport.battle_passport_key")
+  self:register_exist_auto_template(BUY_PANEL_ADVANCE_AWARD_TEM, self.v_uiobjects.SPOrderItem, self.v_uiobjects.SPOrderItem:GetParent())
+  self:register_exist_auto_template(BUY_PANEL_HIGHEST_AWARD_TEM, self.v_uiobjects.ExSPOrderItem, self.v_uiobjects.ExSPOrderItem:GetParent())
+  self:register_exist_auto_template(BUY_PANEL_ADVANCE_IMT_AWARD_TEM, self.v_uiobjects.Left1AwardItem, self.v_uiobjects.Left1AwardList)
+  self:register_exist_auto_template(BUY_PANEL_HIGHEST_IMT_AWARD_TEM, self.v_uiobjects.Right1AwardItem, self.v_uiobjects.Right1AwardList)
+end
+
+function ui:ui_on_show(parent_luaclass)
+  self:bind_auto_mq(Const.MSG_UPDATE_PASSPORT_DATA, self.on_update_passport_data, self)
+  self.v_parent_luaclass = parent_luaclass
+  self:refresh()
+end
+
+function ui:ui_on_hide()
+  if UIMgr:has_ui("recommond_shop") then
+    UIMgr:set_cache_ui_custom_data("ORDER_SELECT", 2)
+  end
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:on_click_buy_passport(type)
+  local cfg
+  if type == PASSPORT_TYPE.ADVANCE then
+    cfg = self.v_battle_passport_key_cfg[PassPortMgr.PASSPORT_KEY_TYPE.NORMAL]
+  else
+    local passport_data = PassPortMgr:get_passport_data()
+    if not passport_data.is_senior then
+      cfg = self.v_battle_passport_key_cfg[PassPortMgr.PASSPORT_KEY_TYPE.SPECIAL]
+    else
+      cfg = self.v_battle_passport_key_cfg[PassPortMgr.PASSPORT_KEY_TYPE.SENIOR]
+    end
+  end
+  RechargeMgr:request_buy_product(cfg, function(is_success)
+  end)
+end
+
+function ui:refresh()
+  local passport_data = PassPortMgr:get_passport_data()
+  self:give_back_auto_cache(BUY_PANEL_ADVANCE_AWARD_TEM)
+  self:give_back_auto_cache(BUY_PANEL_HIGHEST_AWARD_TEM)
+  self:give_back_auto_cache(BUY_PANEL_ADVANCE_IMT_AWARD_TEM)
+  self:give_back_auto_cache(BUY_PANEL_HIGHEST_IMT_AWARD_TEM)
+  local passport_id = passport_data.id
+  local passport_cfg = ShareRes.get_battle_passport_cfg(passport_id)
+  local award_list_cfg = ShareRes.get_awards(passport_cfg.ShowAwardGroup[1])
+  for _, cfg in pairs(award_list_cfg) do
+    local obj = self:get_auto_cache(BUY_PANEL_ADVANCE_AWARD_TEM)
+    self:set_advance_award_data(obj, cfg)
+  end
+  award_list_cfg = ShareRes.get_awards(passport_cfg.BuyAwardGroup[1])
+  for _, cfg in pairs(award_list_cfg) do
+    local obj = self:get_auto_cache(BUY_PANEL_ADVANCE_IMT_AWARD_TEM)
+    self:set_advance_award_data(obj, cfg)
+  end
+  self.v_trigger_unlock_senior = passport_data.is_senior
+  if not passport_data.is_senior then
+    self.v_uicompents.SPOrderCurr_txt.text = string.format("%s%s", Shop_Helper.get_money_symbol(self.v_battle_passport_key_cfg[PassPortMgr.PASSPORT_KEY_TYPE.NORMAL]), Shop_Helper.get_goods_price(self.v_battle_passport_key_cfg[PassPortMgr.PASSPORT_KEY_TYPE.NORMAL]))
+    self.v_uicompents.ExSPOrderCurr_txt.text = string.format("%s%s", Shop_Helper.get_money_symbol(self.v_battle_passport_key_cfg[PassPortMgr.PASSPORT_KEY_TYPE.SPECIAL]), Shop_Helper.get_goods_price(self.v_battle_passport_key_cfg[PassPortMgr.PASSPORT_KEY_TYPE.SPECIAL]))
+    award_list_cfg = ShareRes.get_awards(passport_cfg.BuyAwardGroup[3])
+    for _, cfg in pairs(award_list_cfg) do
+      local obj = self:get_auto_cache(BUY_PANEL_HIGHEST_IMT_AWARD_TEM)
+      self:set_highest_award_data(obj, cfg)
+    end
+    award_list_cfg = ShareRes.get_awards(passport_cfg.ShowAwardGroup[3])
+    for _, cfg in ipairs(award_list_cfg) do
+      local obj = self:get_auto_cache(BUY_PANEL_HIGHEST_AWARD_TEM)
+      self:set_highest_award_data(obj, cfg)
+    end
+  elseif not passport_data.is_special then
+    self.v_uicompents.SPOrderCurr_txt.text = "已购买"
+    self.v_uicompents.ExSPOrderCurr_txt.text = string.format("%s%s", Shop_Helper.get_money_symbol(self.v_battle_passport_key_cfg[PassPortMgr.PASSPORT_KEY_TYPE.SENIOR]), Shop_Helper.get_goods_price(self.v_battle_passport_key_cfg[PassPortMgr.PASSPORT_KEY_TYPE.SENIOR]))
+    self.v_uicompents.BtnSPOrder_btn.interactable = false
+    award_list_cfg = ShareRes.get_awards(passport_cfg.BuyAwardGroup[2])
+    for _, cfg in pairs(award_list_cfg) do
+      local obj = self:get_auto_cache(BUY_PANEL_HIGHEST_IMT_AWARD_TEM)
+      self:set_highest_award_data(obj, cfg)
+    end
+    award_list_cfg = ShareRes.get_awards(passport_cfg.ShowAwardGroup[2])
+    for _, cfg in ipairs(award_list_cfg) do
+      local obj = self:get_auto_cache(BUY_PANEL_HIGHEST_AWARD_TEM)
+      self:set_highest_award_data(obj, cfg)
+    end
+  else
+    self.v_uicompents.SPOrderCurr_txt.text = "已购买"
+    self.v_uicompents.ExSPOrderCurr_txt.text = "已购买"
+    self.v_uicompents.BtnSPOrder_btn.interactable = false
+    self.v_uicompents.BtnExSPOrder_btn.interactable = false
+    award_list_cfg = ShareRes.get_awards(passport_cfg.BuyAwardGroup[3])
+    for _, cfg in pairs(award_list_cfg) do
+      local obj = self:get_auto_cache(BUY_PANEL_HIGHEST_IMT_AWARD_TEM)
+      self:set_highest_award_data(obj, cfg)
+    end
+    award_list_cfg = ShareRes.get_awards(passport_cfg.ShowAwardGroup[3])
+    for _, cfg in ipairs(award_list_cfg) do
+      local obj = self:get_auto_cache(BUY_PANEL_HIGHEST_AWARD_TEM)
+      self:set_highest_award_data(obj, cfg)
+    end
+  end
+end
+
+function ui:on_update_passport_data()
+  local passport_data = PassPortMgr:get_passport_data()
+  if self.v_trigger_unlock_senior == false and passport_data.is_senior then
+    self.v_trigger_unlock_senior = true
+    if self.v_parent_luaclass then
+      self.v_parent_luaclass:trigger_unlock_senior_anim(self.v_trigger_unlock_senior)
+    end
+  end
+  self:refresh()
+  if self.v_parent_luaclass then
+    self.v_parent_luaclass:update_user_data()
+  end
+end
+
+function ui:set_advance_award_data(obj, award_cfg)
+  local item_quality = Util.get_image("ItemQuality_", obj)
+  local icon_img = Util.get_image("ItemIcon_", obj)
+  local item_num = Util.get_text("ItemAmount_/Bg/ItemNum_", obj)
+  local item_name = Util.get_text("SPOrderName_", obj)
+  local item_id = award_cfg.ItemId
+  local item_cfg = ShareRes.get_item_cfg(item_id)
+  local icon_path = string.format(icon_path_prefix, item_cfg.Icon)
+  item_num.text = award_cfg.Num
+  item_name.text = item_cfg.Name
+  ResMgr:load_set_icon(item_quality, Quality_Img[item_cfg.Quality])
+  ResMgr:load_set_icon(icon_img, icon_path)
+  local btn = Util.get_button(nil, obj)
+  self:remove_button_listener(btn)
+  self:set_button_listener(btn, function()
+    UIMgr:get_ui("itemTip"):ui_show({item_id = item_id, is_exist_jump = false})
+  end)
+end
+
+function ui:set_highest_award_data(obj, award_cfg)
+  local item_quality = Util.get_image("ItemQuality_", obj)
+  local icon_img = Util.get_image("ItemIcon_", obj)
+  local item_num = Util.get_text("ItemAmount_/Bg/ItemNum_", obj)
+  local item_name = Util.get_text("Name_", obj)
+  local item_id = award_cfg.ItemId
+  local item_cfg = ShareRes.get_item_cfg(item_id)
+  local icon_path = string.format(icon_path_prefix, item_cfg.Icon)
+  item_num.text = award_cfg.Num
+  if item_name then
+    item_name.text = item_cfg.Name
+  end
+  ResMgr:load_set_icon(item_quality, Quality_Img[item_cfg.Quality])
+  ResMgr:load_set_icon(icon_img, icon_path)
+  local btn = Util.get_button(nil, obj)
+  self:remove_button_listener(btn)
+  self:set_button_listener(btn, function()
+    UIMgr:get_ui("itemTip"):ui_show({item_id = item_id, is_exist_jump = false})
+  end)
+end
+
+return ui

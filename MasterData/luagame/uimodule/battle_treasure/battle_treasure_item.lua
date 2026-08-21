@@ -1,0 +1,374 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local BagCfg = require("gamelogic.character.fight_bag_configs")
+local LayoutRebuilder = UnityEngine.UI.LayoutRebuilder
+local Item_Helper = require("utils.item_helper")
+local GoodsItemClass = require("uimodule.battle_bag.battle_item")
+local EquipInfoClass = require("uimodule.battle_bag.equip_item_info")
+local LIST_ITEM_KEY = "Treasure_Ele_Item"
+local SUIT_ITEM_KEY = "TREASURE_SUIT_ELE_ITEM"
+local util_get_color = Util.get_unity_color_by_hex
+local not_have_suit_color = util_get_color(tonumber("BEBEBE", 16))
+local have_suit_color = util_get_color(tonumber("38E1CB", 16))
+local UICommon2_Icon_Path = "UICommon2/Icon/%s"
+
+function M:ui_finish_load()
+  self.v_item_obj_view = GoodsItemClass:ui_wrap_ex(self, self.v_uiobjects.ItemObj, false)
+  self.v_equip_info_view = EquipInfoClass:ui_wrap_ex(self, self.v_uiobjects.EquipInfo, false)
+  self.v_init = false
+end
+
+function M:set_data(src_data)
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  local is_have_obj = self.v_uiobjects.Have
+  local item_id = src_data.item_id
+  local choose_obj = uobj.Choose
+  local item_obj = uobj.Item
+  self.v_visible = true
+  self.v_idx = src_data.idx
+  self.v_src_data = src_data
+  local select_btn = self:get_button(nil, nil)
+  if choose_obj then
+    choose_obj:SetActive(false)
+  end
+  self:init_template()
+  if nil == item_id then
+    item_obj:SetActive(false)
+    is_have_obj:SetActive(true)
+    return
+  else
+    item_obj:SetActive(true)
+    is_have_obj:SetActive(false)
+  end
+  local item_cfg = Item_Helper.get_item_cfg(item_id)
+  local equip_txt = ucom.EquipDetilContent_txt
+  local item_txt = ucom.ItemDetilContent_txt
+  local equip_obj = uobj.EquipDetilContent
+  local item_detail_obj = uobj.ItemDetilContent
+  local equip_attr_obj = uobj.ItemAttrList
+  local suit_info_obj = uobj.SuitInfoList
+  local JobBg_obj = uobj.JobBg
+  local SuitNum_obj = uobj.SuitNum
+  local normal_effect_obj = uobj.NormalEffect
+  local item_level_txt = ucom.ItemLevel_txt
+  local item_level_obj = uobj.ItemLevel
+  JobBg_obj:SetActive(false)
+  SuitNum_obj:SetActive(false)
+  local suit_btn_obj = uobj.suit_btn
+  equip_attr_obj:SetActive(false)
+  suit_info_obj:SetActive(false)
+  normal_effect_obj:SetActive(false)
+  item_level_obj:SetActive(false)
+  self.v_equip_info_view:set_enable(false)
+  self:refresh_item_obj()
+  local item_name_txt = ucom.ItemName_txt
+  item_name_txt.text = item_cfg.Name
+  local is_equip = Item_Helper.get_is_equip_collect(item_id)
+  local is_rune = Item_Helper.get_is_rune_item(item_id)
+  if is_equip then
+    item_detail_obj:SetActive(false)
+    equip_obj:SetActive(true)
+    equip_txt.text = item_cfg.Magic_Desc
+    if item_cfg.FixedEntry then
+      local fixed_entry_id = item_cfg.FixedEntry[1]
+      if fixed_entry_id then
+        self:refresh_fixed_entry_ui(fixed_entry_id, equip_attr_obj)
+      end
+    end
+    local Type = item_cfg.Type
+    local Arg = item_cfg.Arg
+    if Type == BagCfg.CollectType.COMMON then
+      equip_obj:SetActive(true)
+      local normal_desc = Arg[2]
+      self:refresh_desc_ui(normal_desc, item_cfg)
+    elseif Type == BagCfg.CollectType.SUIT then
+      suit_info_obj:SetActive(true)
+      local suit_id = Arg[1]
+      equip_obj:SetActive(false)
+      SuitNum_obj:SetActive(true)
+      self:refresh_suit_ui(suit_id)
+    elseif Type == BagCfg.CollectType.EQUIP then
+      self:refresh_new_equip_info()
+      equip_attr_obj:SetActive(false)
+      item_level_obj:SetActive(true)
+      local level = item_cfg.Level
+      local color_content = Util.set_str_color(Config.BTN_COLOR.LIGHT_ORANGE, level)
+      item_level_txt.text = Util.format_str("等级：{1}", color_content)
+    end
+    ucom.Effect_Text_txt.gameObject.transform:SetAsLastSibling()
+    equip_obj.transform:SetAsLastSibling()
+  else
+    item_detail_obj:SetActive(true)
+    suit_btn_obj:SetActive(false)
+    equip_obj:SetActive(false)
+    item_txt.text = Util.format_str("描述：\n\n{1}", item_cfg.Desc)
+    if self.v_uicompents.ItemSubType_txt then
+      local type_img = self.v_uicompents.TypeIcon_img
+      local type_icon_name
+      if is_rune then
+        type_icon_name = "Battle_icon_fw"
+      else
+        type_icon_name = "Common_icon_consume"
+      end
+      local icon_path = string.format(UICommon2_Icon_Path, type_icon_name)
+      ResMgr:load_set_icon(type_img, icon_path)
+      local sub_name
+      if is_rune then
+        sub_name = "符文"
+      else
+        sub_name = "消耗品"
+      end
+      self.v_uicompents.ItemSubType_txt.text = Util.format_str(sub_name)
+    end
+  end
+  self:set_button_listener(select_btn, function()
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_SELECTED_TREASURE_ITEM)
+    msg.mm_obj = src_data
+  end)
+  NextFrameMgr:add_next_update(self.refresh_suit_info_content, self)
+end
+
+function M:suit_effect_text(two_piece, four_piece, suit_num)
+  if two_piece then
+    local suit_ele_obj = self:get_auto_cache(SUIT_ITEM_KEY .. self.v_idx)
+    local suit_dec = Util.get_text("SuitDesc", suit_ele_obj)
+    local suit_detail = Util.get_text("SuitDetilContent", suit_ele_obj)
+    suit_dec.text = Util.format_str("两件套效果")
+    suit_detail.text = Util.format_str(two_piece)
+    if suit_num > 1 then
+      self:set_suit_active_color(suit_dec, suit_detail)
+    else
+      self:set_suit_unactive_color(suit_dec, suit_detail)
+    end
+  end
+  if four_piece then
+    local suit_ele_obj = self:get_auto_cache(SUIT_ITEM_KEY .. self.v_idx)
+    local suit_dec = Util.get_text("SuitDesc", suit_ele_obj)
+    local suit_detail = Util.get_text("SuitDetilContent", suit_ele_obj)
+    suit_dec.text = Util.format_str("四件套效果")
+    suit_detail.text = Util.format_str(four_piece)
+    if suit_num > 3 then
+      self:set_suit_active_color(suit_dec, suit_detail)
+    else
+      self:set_suit_unactive_color(suit_dec, suit_detail)
+    end
+  end
+end
+
+function M:set_suit_active_color(suit_dec, suit_detail)
+  suit_dec.color = have_suit_color
+  suit_detail.color = have_suit_color
+end
+
+function M:set_suit_unactive_color(suit_dec, suit_detail)
+  suit_dec.color = not_have_suit_color
+  suit_detail.color = not_have_suit_color
+end
+
+function M:_set_job_attr_detail(job_attr_id)
+  local desc = ""
+  local cfg = ShareRes.create("battle.battle_collection_job_entry", job_attr_id)
+  for _, v in ipairs(cfg) do
+    local attr_str = ""
+    local engough = true
+    for i = 1, 2 do
+      if v.AttrId[i] then
+        engough = engough and Item_Helper.get_job_attr_enough(v.AttrId[i], v.Level[i])
+        attr_str = string.format("%s%sLv.%d", attr_str, ShareRes.equip_attr_str(v.AttrId[i]), v.Level[i])
+      else
+        attr_str = string.format("%s     ", attr_str)
+      end
+    end
+    local color_str = self:set_job_color(engough)
+    if "" == desc then
+      desc = string.format("%s%s%s%s</color>", desc, color_str, attr_str, v.Desc)
+    else
+      desc = string.format([[
+%s
+%s%s%s</color>]], desc, color_str, attr_str, v.Desc)
+    end
+  end
+  return desc
+end
+
+function M:set_job_color(engough)
+  return engough and "<color=#38E1CB>" or "<color=#BEBEBE>"
+end
+
+function M:on_clear()
+  self:unbind_all_auto_mq()
+  self:give_back_all_auto_cache(LIST_ITEM_KEY .. self.v_idx)
+  self:unregister_template(LIST_ITEM_KEY .. self.v_idx)
+  self:give_back_all_auto_cache(SUIT_ITEM_KEY .. self.v_idx)
+  self:unregister_template(SUIT_ITEM_KEY .. self.v_idx)
+  self.v_src_data = nil
+end
+
+function M:set_selected(is_select)
+  self.v_uiobjects.Choose:SetActive(is_select)
+end
+
+function M:refresh_suit_info_content()
+  local rect = Util.get_rect_transform(nil, self.v_uiobjects.SuitInfoContent)
+  LayoutRebuilder.ForceRebuildLayoutImmediate(rect)
+end
+
+function M:init_template()
+  if not self.v_init then
+    self:register_exist_auto_template(LIST_ITEM_KEY .. self.v_idx, self.v_uiobjects.EleAttr, self.v_uiobjects.EleContent)
+    self:register_exist_auto_template(SUIT_ITEM_KEY .. self.v_idx, self.v_uiobjects.SuitInfoItem, self.v_uiobjects.SuitInfoContent)
+  end
+end
+
+function M:refresh_item_obj()
+  local src_data = self.v_src_data
+  local item_id = src_data.item_id
+  local ran_ans_uuid = src_data.ran_ans_uuid
+  local idx = src_data.idx
+  local item_count = src_data.item_count
+  local item_data
+  if Item_Helper.get_is_rune_item(item_id) then
+    item_data = Item_Helper.build_treasure_rune_data(src_data)
+  else
+    item_data = Item_Helper.build_equip_collect_data(item_id, ran_ans_uuid)
+  end
+  self.v_item_param = {
+    show_num = src_data.item_count,
+    item_data = item_data
+  }
+  self.v_item_obj_view:set_enable(true, item_id, self.v_item_param)
+end
+
+function M:refresh_new_equip_info()
+  local ucom = self.v_uicompents
+  local src_data = self.v_src_data
+  local item_id = src_data.item_id
+  local ran_ans_uuid = src_data.ran_ans_uuid
+  local item_data = Item_Helper.build_equip_collect_data(item_id, ran_ans_uuid)
+  self.v_equip_info_view:set_enable(true, item_data)
+  local equip_cfg = ShareRes.get_battle_equip_cfg(item_id)
+  local equip_type = equip_cfg.Arg[1]
+  if equip_type == BagCfg.EQUIP_TYPE.ATTACK then
+    ucom.ItemSubType_txt.text = Util.format_str("攻击")
+  else
+    ucom.ItemSubType_txt.text = Util.format_str("防御")
+  end
+end
+
+function M:refresh_fixed_entry_ui(fixed_entry_id)
+  local uobj = self.v_uiobjects
+  local ucom = self.v_uicompents
+  if fixed_entry_id then
+    uobj.ItemAttrList:SetActive(true)
+    local fixed_tags = ShareRes.create("entry.battle_fixed_entry", fixed_entry_id)
+    if fixed_tags then
+      local fixed_attr = fixed_tags.Attr
+      uobj.NormalEffect:SetActive(true)
+      ucom.NormalEffect_txt.text = Util.format_str("通用增幅")
+      for _, attr_data in pairs(fixed_attr) do
+        local ele_obj = self:get_auto_cache(LIST_ITEM_KEY .. self.v_idx)
+        local name, value = UtilUI.get_equip_attr_str(attr_data.Attr, attr_data.Type, attr_data.Num)
+        Util.get_text("EleName", ele_obj).text = name
+        Util.get_text("EleNum", ele_obj).text = value
+      end
+    end
+  end
+end
+
+function M:refresh_desc_ui(normal_desc, item_cfg)
+  local effect_desc
+  local ucom = self.v_uicompents
+  if not normal_desc then
+    self.v_uiobjects.JobBg:SetActive(true)
+    local talent_level = Item_Helper.get_job_level(item_cfg.Id)
+    for i = 1, 3 do
+      if i <= talent_level then
+        ucom["Lv" .. i .. "_img"].color = util_get_color(tonumber("FFFFFF", 16))
+      else
+        ucom["Lv" .. i .. "_img"].color = util_get_color(tonumber("000000", 16))
+      end
+    end
+    effect_desc = Util.format_str("意志增幅(受职业等级影响)")
+    normal_desc = Util.format_str(self:_set_job_attr_detail(item_cfg.CareerDesc))
+    if ucom.ItemSubType_txt then
+      local type_img = ucom.TypeIcon_img
+      local icon_path = string.format(UICommon2_Icon_Path, "Common_icon_star_02")
+      ResMgr:load_set_icon(type_img, icon_path)
+      ucom.ItemSubType_txt.text = Util.format_str("天赋")
+    end
+  else
+    effect_desc = Util.format_str("效果")
+    normal_desc = Util.format_str(normal_desc)
+    if ucom.ItemSubType_txt then
+      local type_img = ucom.TypeIcon_img
+      local icon_path = string.format(UICommon2_Icon_Path, "Common_icon_star_02")
+      ResMgr:load_set_icon(type_img, icon_path)
+      ucom.ItemSubType_txt.text = Util.format_str("收藏品")
+    end
+  end
+  ucom.Effect_Text_txt.text = effect_desc
+  ucom.EquipDetilContent_txt.text = normal_desc
+end
+
+function M:refresh_suit_ui(suit_id)
+  local ucom = self.v_uicompents
+  local suit_cfg = ShareRes.create("battle.battle_collection_suit", suit_id)
+  local suit_type_cfg = ShareRes.create("battle.battle_collection_suit_type", suit_id)
+  local suit_num = 0
+  for _, data in pairs(suit_type_cfg) do
+    local has = FightBagMgr:get_had_item_by_id(data.Id)
+    if has then
+      suit_num = suit_num + 1
+    end
+  end
+  local suit_max_num = #suit_type_cfg
+  for i = 1, 4 do
+    if i <= suit_num then
+      ucom["Star" .. i .. "_img"].color = util_get_color(tonumber("FFFFFF", 16))
+    else
+      ucom["Star" .. i .. "_img"].color = util_get_color(tonumber("000000", 16))
+    end
+  end
+  ucom.SuitInfoNum_txt.text = Util.format_str("套装详情(当前{1}/{2})", suit_num, suit_max_num)
+  local tb = {
+    [2] = {
+      name = "two_piece",
+      suit_field = "TwoPieceContext",
+      job_field = "TwoPieceCareerDesc"
+    },
+    [4] = {
+      name = "four_piece",
+      suit_field = "FourPieceContext",
+      job_field = "FourPieceCareerDesc"
+    }
+  }
+  for _, v in pairs(tb) do
+    local desc = ""
+    if suit_cfg[v.suit_field] then
+      desc = suit_cfg[v.suit_field]
+    end
+    if suit_cfg[v.job_field] then
+      if "" == desc then
+        desc = self:_set_job_attr_detail(suit_cfg[v.job_field])
+      else
+        desc = string.format([[
+%s
+%s]], desc, self:_set_job_attr_detail(suit_cfg[v.job_field]))
+      end
+    end
+    self.v_src_data[v.name] = desc
+  end
+  local two_piece = self.v_src_data.two_piece
+  local four_piece = self.v_src_data.four_piece
+  self:suit_effect_text(two_piece, four_piece, suit_num)
+  local sub_type_txt = ucom.ItemSubType_txt
+  if sub_type_txt then
+    local type_img = ucom.TypeIcon_img
+    local icon_path = string.format(UICommon2_Icon_Path, "Common_icon_suit")
+    ResMgr:load_set_icon(type_img, icon_path)
+    sub_type_txt.text = Util.format_str("套装")
+  end
+end
+
+return M

@@ -1,0 +1,159 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local Talent_Cfg = require("uimodule.battle_talent.battle_talent_cfg")
+local TALENT_POINT_PREFIX = "UITalent/%s"
+local Cs_color = UnityEngine.Color
+local util_get_color = Util.get_unity_color_by_hex
+local acess_color = Cs_color(1, 1, 1, 0.23529411764705882)
+local unselect_color = Cs_color(1, 1, 1, 0.0784313725490196)
+local select_color = util_get_color(tonumber("75caff", 16))
+local active_color = Cs_color(1, 1, 1, 1)
+local bg_unselect = Cs_color(1, 1, 1, 0.0392156862745098)
+local bg_select = Cs_color(1, 1, 1, 1)
+local line_unselect = Cs_color(1, 1, 1, 0.0392156862745098)
+local line_select = Cs_color(1, 1, 1, 1)
+local BLACK = Cs_color(0, 0, 0, 1)
+local WHITE = Cs_color(1, 1, 1, 1)
+
+function M:set_data(src_data)
+  self.v_src_data = src_data
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  local point_cfg = src_data.point_cfg
+  local point_id = src_data.point_id
+  self.v_idx = src_data.idx
+  if not point_cfg then
+    uobj.BgObj:SetActive(false)
+    return
+  else
+    uobj.BgObj:SetActive(true)
+  end
+  local talent_name = point_cfg.Name
+  local icon_path = string.format(TALENT_POINT_PREFIX, point_cfg.Icon)
+  local line = src_data.line
+  local sub_list = src_data.sub_list
+  local talent_name_txt = ucom.TalentName_txt
+  local talent_icon_img = ucom.Ta1Icon_img
+  local talent_icon_rect = ucom.Ta1Icon_rect
+  local lock_content_obj = uobj.LockContent
+  local talent_name_obj = uobj.TalentName
+  local talent_lock_obj = uobj.Ta1Lock
+  local choose_obj = uobj.Ta1Choose
+  local sub_list_obj = uobj.SubList
+  local talent_icon_obj = uobj.Ta1Icon
+  local talent_icon_bg_obj = uobj.Ta1Icon_bg
+  local is_lock = point_cfg.lock
+  lock_content_obj:SetActive(is_lock)
+  talent_name_obj:SetActive(not is_lock)
+  talent_lock_obj:SetActive(is_lock)
+  choose_obj:SetActive(is_lock)
+  sub_list_obj:SetActive(not is_lock)
+  talent_icon_obj:SetActive(not is_lock)
+  talent_icon_bg_obj:SetActive(not is_lock)
+  if is_lock then
+    local ItemCount = point_cfg.ItemCount
+    local lock_submit_btn = ucom.LockSubmit_btn
+    uobj.LockContent:SetActive(true)
+    choose_obj:SetActive(false)
+    ucom.CostNum_txt.text = ItemCount
+    self:set_button_listener(lock_submit_btn, function()
+      MsgGame:mq_publish2(Const.MSG_ON_UNLOCK_TALENT_TREE)
+    end)
+    return
+  end
+  local select_btn = self:get_button(nil, nil)
+  self:set_button_listener(select_btn, function()
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_TALENT_ITEM_SELECTED)
+    msg.mm_obj = src_data
+  end)
+  talent_name_txt.text = Util.format_str(talent_name)
+  self:change_state()
+  for i = 1, 5 do
+    uobj["Line" .. i]:SetActive(false)
+  end
+  for line_num, _ in pairs(line) do
+    uobj["Line" .. line_num]:SetActive(true)
+  end
+  local item_key = "Sub_Talent_Item" .. self.v_idx
+  self:register_exist_auto_template(item_key, uobj.SubTem, uobj.SubTemContent)
+  for _, sub_point in ipairs(sub_list) do
+    local item = self:get_auto_cache(item_key)
+    local sub_on_obj = Util.get_child_gameobj("SubOn", item)
+    sub_on_obj:SetActive(false)
+    local state = sub_point.state
+    local img = Util.get_image(nil, item)
+    local color = acess_color
+    if state == Talent_Cfg.TALENT_POINT_STATE.UNSELECT then
+      color = unselect_color
+    elseif state == Talent_Cfg.TALENT_POINT_STATE.ACTIVE then
+      color = active_color
+      sub_on_obj:SetActive(true)
+    end
+    img.color = color
+  end
+end
+
+function M:on_clear()
+  self:unbind_all_auto_mq()
+  self:unregister_all_auto_template()
+  self.v_src_data = nil
+end
+
+function M:change_state()
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  local talent_icon_img = ucom.Ta1Icon_img
+  local talent_name_txt = ucom.TalentName_txt
+  local talent_lock_obj = self.v_uiobjects.Lock
+  local talent_bg_img = ucom.Ta1Icon_bg_img
+  local state = self.v_src_data.state
+  local point_id = self.v_src_data.point_id
+  local line = self.v_src_data.line
+  talent_lock_obj:SetActive(false)
+  local color = unselect_color
+  if state == Talent_Cfg.TALENT_POINT_STATE.ACESS then
+    talent_bg_img.color = bg_unselect
+    color = acess_color
+    talent_icon_img.color = WHITE
+  elseif state == Talent_Cfg.TALENT_POINT_STATE.UNSELECT then
+    talent_bg_img.color = bg_unselect
+    talent_lock_obj:SetActive(true)
+    talent_icon_img.color = WHITE
+  elseif state == Talent_Cfg.TALENT_POINT_STATE.ACTIVE then
+    talent_bg_img.color = bg_select
+    color = active_color
+    talent_icon_img.color = BLACK
+  end
+  talent_name_txt.color = color
+  for line_num, is_light in pairs(line) do
+    if is_light then
+      ucom["Line" .. line_num .. "_img"].color = line_select
+    else
+      ucom["Line" .. line_num .. "_img"].color = line_unselect
+    end
+  end
+  if not self.v_src_data.Not_Lock then
+    talent_lock_obj:SetActive(true)
+    talent_icon_img.color = unselect_color
+    talent_name_txt.color = unselect_color
+  end
+end
+
+function M:set_selected(is_select)
+  local uobj = self.v_uiobjects
+  local talent_icon_img = self.v_uicompents.Ta1Icon_img
+  local talent_name_txt = self.v_uicompents.TalentName_txt
+  local point_cfg = self.v_src_data.point_cfg
+  if not point_cfg or point_cfg.lock then
+    return
+  end
+  uobj.Ta1Choose:SetActive(is_select)
+  if is_select then
+    talent_icon_img.color = select_color
+    talent_name_txt.color = select_color
+  else
+    self:change_state()
+  end
+end
+
+return M

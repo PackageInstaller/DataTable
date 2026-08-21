@@ -1,0 +1,16 @@
+return {
+  {
+    EquationId = {
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    },
+    Icon = "UIEvent03/Event_icon_lpall",
+    Id = 1,
+    Name = "全部片段",
+    Priority = 1
+  }
+}

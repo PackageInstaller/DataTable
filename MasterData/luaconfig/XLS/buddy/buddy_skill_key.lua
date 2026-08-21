@@ -1,0 +1,512 @@
+return {
+  [100101] = {
+    BuddyId = 1001001,
+    Id = 100101,
+    TaskGroup = {}
+  },
+  [100102] = {
+    BuddyId = 1001001,
+    Id = 100102,
+    TaskGroup = {}
+  },
+  [100103] = {
+    BuddyId = 1001001,
+    Id = 100103,
+    TaskGroup = {}
+  },
+  [100104] = {
+    BuddyId = 1001001,
+    Id = 100104,
+    TaskGroup = {}
+  },
+  [100105] = {
+    BuddyId = 1001001,
+    Id = 100105,
+    TaskGroup = {}
+  },
+  [100106] = {
+    BuddyId = 1001001,
+    Id = 100106,
+    TaskGroup = {}
+  },
+  [100201] = {
+    BuddyId = 1001002,
+    Id = 100201,
+    TaskGroup = {}
+  },
+  [100202] = {
+    BuddyId = 1001002,
+    Id = 100202,
+    TaskGroup = {}
+  },
+  [100203] = {
+    BuddyId = 1001002,
+    Id = 100203,
+    TaskGroup = {}
+  },
+  [100204] = {
+    BuddyId = 1001002,
+    Id = 100204,
+    TaskGroup = {}
+  },
+  [100205] = {
+    BuddyId = 1001002,
+    Id = 100205,
+    TaskGroup = {}
+  },
+  [100206] = {
+    BuddyId = 1001002,
+    Id = 100206,
+    TaskGroup = {}
+  },
+  [100301] = {
+    BuddyId = 1001003,
+    Id = 100301,
+    TaskGroup = {}
+  },
+  [100302] = {
+    BuddyId = 1001003,
+    Id = 100302,
+    TaskGroup = {}
+  },
+  [100303] = {
+    BuddyId = 1001003,
+    Id = 100303,
+    TaskGroup = {}
+  },
+  [100304] = {
+    BuddyId = 1001003,
+    Id = 100304,
+    TaskGroup = {}
+  },
+  [100305] = {
+    BuddyId = 1001003,
+    Id = 100305,
+    TaskGroup = {}
+  },
+  [100306] = {
+    BuddyId = 1001003,
+    Id = 100306,
+    TaskGroup = {}
+  },
+  [100401] = {
+    BuddyId = 1001004,
+    Id = 100401,
+    TaskGroup = {}
+  },
+  [100402] = {
+    BuddyId = 1001004,
+    Id = 100402,
+    TaskGroup = {}
+  },
+  [100403] = {
+    BuddyId = 1001004,
+    Id = 100403,
+    TaskGroup = {}
+  },
+  [100404] = {
+    BuddyId = 1001004,
+    Id = 100404,
+    TaskGroup = {}
+  },
+  [100405] = {
+    BuddyId = 1001004,
+    Id = 100405,
+    TaskGroup = {}
+  },
+  [100406] = {
+    BuddyId = 1001004,
+    Id = 100406,
+    TaskGroup = {}
+  },
+  [100501] = {
+    BuddyId = 1001005,
+    Id = 100501,
+    TaskGroup = {}
+  },
+  [100502] = {
+    BuddyId = 1001005,
+    Id = 100502,
+    TaskGroup = {}
+  },
+  [100503] = {
+    BuddyId = 1001005,
+    Id = 100503,
+    TaskGroup = {}
+  },
+  [100504] = {
+    BuddyId = 1001005,
+    Id = 100504,
+    TaskGroup = {}
+  },
+  [100505] = {
+    BuddyId = 1001005,
+    Id = 100505,
+    TaskGroup = {}
+  },
+  [100506] = {
+    BuddyId = 1001005,
+    Id = 100506,
+    TaskGroup = {}
+  },
+  [100601] = {
+    BuddyId = 1001006,
+    Id = 100601,
+    TaskGroup = {}
+  },
+  [100602] = {
+    BuddyId = 1001006,
+    Id = 100602,
+    TaskGroup = {}
+  },
+  [100603] = {
+    BuddyId = 1001006,
+    Id = 100603,
+    TaskGroup = {}
+  },
+  [100604] = {
+    BuddyId = 1001006,
+    Id = 100604,
+    TaskGroup = {}
+  },
+  [100605] = {
+    BuddyId = 1001006,
+    Id = 100605,
+    TaskGroup = {}
+  },
+  [100606] = {
+    BuddyId = 1001006,
+    Id = 100606,
+    TaskGroup = {}
+  },
+  [100701] = {
+    BuddyId = 1001007,
+    Id = 100701,
+    TaskGroup = {}
+  },
+  [100702] = {
+    BuddyId = 1001007,
+    Id = 100702,
+    TaskGroup = {}
+  },
+  [100703] = {
+    BuddyId = 1001007,
+    Id = 100703,
+    TaskGroup = {}
+  },
+  [100704] = {
+    BuddyId = 1001007,
+    Id = 100704,
+    TaskGroup = {}
+  },
+  [100705] = {
+    BuddyId = 1001007,
+    Id = 100705,
+    TaskGroup = {}
+  },
+  [100706] = {
+    BuddyId = 1001007,
+    Id = 100706,
+    TaskGroup = {}
+  },
+  [100801] = {
+    BuddyId = 1001008,
+    Id = 100801,
+    TaskGroup = {}
+  },
+  [100802] = {
+    BuddyId = 1001008,
+    Id = 100802,
+    TaskGroup = {}
+  },
+  [100803] = {
+    BuddyId = 1001008,
+    Id = 100803,
+    TaskGroup = {}
+  },
+  [100804] = {
+    BuddyId = 1001008,
+    Id = 100804,
+    TaskGroup = {}
+  },
+  [100805] = {
+    BuddyId = 1001008,
+    Id = 100805,
+    TaskGroup = {}
+  },
+  [100806] = {
+    BuddyId = 1001008,
+    Id = 100806,
+    TaskGroup = {}
+  },
+  [100901] = {
+    BuddyId = 1001009,
+    Id = 100901,
+    TaskGroup = {}
+  },
+  [100902] = {
+    BuddyId = 1001009,
+    Id = 100902,
+    TaskGroup = {}
+  },
+  [100903] = {
+    BuddyId = 1001009,
+    Id = 100903,
+    TaskGroup = {}
+  },
+  [100904] = {
+    BuddyId = 1001009,
+    Id = 100904,
+    TaskGroup = {}
+  },
+  [100905] = {
+    BuddyId = 1001009,
+    Id = 100905,
+    TaskGroup = {}
+  },
+  [100906] = {
+    BuddyId = 1001009,
+    Id = 100906,
+    TaskGroup = {}
+  },
+  [101001] = {
+    BuddyId = 1001010,
+    Id = 101001,
+    TaskGroup = {}
+  },
+  [101002] = {
+    BuddyId = 1001010,
+    Id = 101002,
+    TaskGroup = {}
+  },
+  [101003] = {
+    BuddyId = 1001010,
+    Id = 101003,
+    TaskGroup = {}
+  },
+  [101004] = {
+    BuddyId = 1001010,
+    Id = 101004,
+    TaskGroup = {}
+  },
+  [101005] = {
+    BuddyId = 1001010,
+    Id = 101005,
+    TaskGroup = {}
+  },
+  [101006] = {
+    BuddyId = 1001010,
+    Id = 101006,
+    TaskGroup = {}
+  },
+  [101101] = {
+    BuddyId = 1001011,
+    Id = 101101,
+    TaskGroup = {}
+  },
+  [101102] = {
+    BuddyId = 1001011,
+    Id = 101102,
+    TaskGroup = {}
+  },
+  [101103] = {
+    BuddyId = 1001011,
+    Id = 101103,
+    TaskGroup = {}
+  },
+  [101104] = {
+    BuddyId = 1001011,
+    Id = 101104,
+    TaskGroup = {}
+  },
+  [101105] = {
+    BuddyId = 1001011,
+    Id = 101105,
+    TaskGroup = {}
+  },
+  [101106] = {
+    BuddyId = 1001011,
+    Id = 101106,
+    TaskGroup = {}
+  },
+  [101201] = {
+    BuddyId = 1001012,
+    Id = 101201,
+    TaskGroup = {}
+  },
+  [101202] = {
+    BuddyId = 1001012,
+    Id = 101202,
+    TaskGroup = {}
+  },
+  [101203] = {
+    BuddyId = 1001012,
+    Id = 101203,
+    TaskGroup = {}
+  },
+  [101204] = {
+    BuddyId = 1001012,
+    Id = 101204,
+    TaskGroup = {}
+  },
+  [101205] = {
+    BuddyId = 1001012,
+    Id = 101205,
+    TaskGroup = {}
+  },
+  [101206] = {
+    BuddyId = 1001012,
+    Id = 101206,
+    TaskGroup = {}
+  },
+  [101301] = {
+    BuddyId = 1001013,
+    Id = 101301,
+    TaskGroup = {}
+  },
+  [101302] = {
+    BuddyId = 1001013,
+    Id = 101302,
+    TaskGroup = {}
+  },
+  [101303] = {
+    BuddyId = 1001013,
+    Id = 101303,
+    TaskGroup = {}
+  },
+  [101304] = {
+    BuddyId = 1001013,
+    Id = 101304,
+    TaskGroup = {}
+  },
+  [101305] = {
+    BuddyId = 1001013,
+    Id = 101305,
+    TaskGroup = {}
+  },
+  [101306] = {
+    BuddyId = 1001013,
+    Id = 101306,
+    TaskGroup = {}
+  },
+  [101401] = {
+    BuddyId = 1001014,
+    Id = 101401,
+    TaskGroup = {}
+  },
+  [101402] = {
+    BuddyId = 1001014,
+    Id = 101402,
+    TaskGroup = {}
+  },
+  [101403] = {
+    BuddyId = 1001014,
+    Id = 101403,
+    TaskGroup = {}
+  },
+  [101404] = {
+    BuddyId = 1001014,
+    Id = 101404,
+    TaskGroup = {}
+  },
+  [101405] = {
+    BuddyId = 1001014,
+    Id = 101405,
+    TaskGroup = {}
+  },
+  [101406] = {
+    BuddyId = 1001014,
+    Id = 101406,
+    TaskGroup = {}
+  },
+  [101501] = {
+    BuddyId = 1001015,
+    Id = 101501,
+    TaskGroup = {}
+  },
+  [101502] = {
+    BuddyId = 1001015,
+    Id = 101502,
+    TaskGroup = {}
+  },
+  [101503] = {
+    BuddyId = 1001015,
+    Id = 101503,
+    TaskGroup = {}
+  },
+  [101504] = {
+    BuddyId = 1001015,
+    Id = 101504,
+    TaskGroup = {}
+  },
+  [101505] = {
+    BuddyId = 1001015,
+    Id = 101505,
+    TaskGroup = {}
+  },
+  [101506] = {
+    BuddyId = 1001015,
+    Id = 101506,
+    TaskGroup = {}
+  },
+  [101601] = {
+    BuddyId = 1001016,
+    Id = 101601,
+    TaskGroup = {}
+  },
+  [101602] = {
+    BuddyId = 1001016,
+    Id = 101602,
+    TaskGroup = {}
+  },
+  [101603] = {
+    BuddyId = 1001016,
+    Id = 101603,
+    TaskGroup = {}
+  },
+  [101604] = {
+    BuddyId = 1001016,
+    Id = 101604,
+    TaskGroup = {}
+  },
+  [101605] = {
+    BuddyId = 1001016,
+    Id = 101605,
+    TaskGroup = {}
+  },
+  [101606] = {
+    BuddyId = 1001016,
+    Id = 101606,
+    TaskGroup = {}
+  },
+  [101701] = {
+    BuddyId = 1001017,
+    Id = 101701,
+    TaskGroup = {}
+  },
+  [101702] = {
+    BuddyId = 1001017,
+    Id = 101702,
+    TaskGroup = {}
+  },
+  [101703] = {
+    BuddyId = 1001017,
+    Id = 101703,
+    TaskGroup = {}
+  },
+  [101704] = {
+    BuddyId = 1001017,
+    Id = 101704,
+    TaskGroup = {}
+  },
+  [101705] = {
+    BuddyId = 1001017,
+    Id = 101705,
+    TaskGroup = {}
+  },
+  [101706] = {
+    BuddyId = 1001017,
+    Id = 101706,
+    TaskGroup = {}
+  }
+}

@@ -1,0 +1,196 @@
+local Base = require("ui.uiobject")
+local Vec2 = require("base.vec2")
+local Vec3 = require("base.vec3")
+local MAP_HELPER = require("uimodule.fight_map.fight_map_helper")
+local M = Util.create_child_mt(Base)
+local MAP_ICON_PATH = "UIMap/%s"
+
+function M:ui_finish_load()
+  self.v_room_type_cfg = ShareRes.create("tower.tower_room_type")
+  self.v_rect = self:get_rect_transform(nil, nil)
+  self.v_is_small = false
+  self.v_point_list = {}
+  self.v_active_lines = {}
+  self.v_no_active_lines = {}
+  local str = ""
+  for i = 1, 4 do
+    str = "LineActiveTemp" .. i
+    table.insert(self.v_active_lines, self.v_uiobjects[str])
+    str = "LineNotTemp" .. i .. "_img"
+    table.insert(self.v_no_active_lines, self.v_uicompents[str])
+    str = "WayPoint" .. i .. "_img"
+    table.insert(self.v_point_list, self.v_uicompents[str])
+  end
+  self.v_is_here = false
+  self:set_button("RoomNotBg", function()
+    self:_onclick_room()
+  end)
+  self.v_group = self:get_canvas_group(nil, self.v_object)
+end
+
+function M:ui_on_show()
+  self:_regist_client_event()
+end
+
+function M:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_BATTLE_TASK_UPDATE, self._on_battle_task_update, self)
+end
+
+function M:_on_battle_task_update(msg)
+  self:_set_task_data()
+end
+
+function M:set_data(data, is_small, need_tween)
+  self:_reset_obj()
+  self.roomData = data
+  if is_small then
+    self.v_is_small = is_small
+  end
+  self.v_uiobjects.Here.gameObject:SetActive(false)
+  if not is_small and data then
+    local tower = TowerMgr:get_tower()
+    local isIn = tower:get_room_num() == self.roomData.RoomNum
+    self.v_is_here = isIn
+    if not self.v_is_small and isIn then
+      self:_set_npc_dir()
+      self.v_uiobjects.Here.gameObject:SetActive(true)
+    end
+  end
+  if self.roomData == nil then
+    return
+  end
+  self.v_uiobjects.RoomType:SetActive(true)
+  if not self.v_is_small and self.v_is_here then
+    self.v_uiobjects.RoomType:SetActive(false)
+  end
+  local components = self.v_uicompents
+  components.OutRoomType_img.gameObject:SetActiveEx(false)
+  local typeData = self.v_room_type_cfg[self.roomData.RoomType]
+  if nil == typeData then
+    Log.Error("获取房间类型配置失败，请检查配置， roomType = ", self.roomData.RoomType)
+    return
+  end
+  if nil ~= typeData.icon and typeData.icon ~= "" then
+    ResMgr:load_set_icon(components.RoomType_img, string.format(MAP_ICON_PATH, typeData.icon))
+  end
+  local width = 0
+  local height = 0
+  if self.v_is_small == false then
+    width = 4736.0
+    height = -2664.0
+  else
+    width = 2208.0
+    height = -1242.0
+  end
+  local position = self.roomData.WindowPos
+  if self.v_is_small then
+    self.v_rect:SetAnchoredPositionA(position[1] * width, position[2] * height)
+  else
+    self.v_rect:SetAnchoredPositionA(position[1] * width + 800, position[2] * height - 500)
+  end
+  if need_tween then
+    self.v_group.alpha = 0
+  end
+  self:_set_task_data()
+end
+
+function M:get_is_player_in()
+  return self.v_is_here
+end
+
+function M:_set_npc_dir()
+  local map_angle = MAP_HELPER.get_map_angle()
+  local cur_dir = Global.hero:get_dir()
+  if map_angle then
+    cur_dir = cur_dir - map_angle
+  end
+  CSHelper.SetEuler(self.v_uicompents.Here_rect, 0, 0, -cur_dir)
+end
+
+function M:_reset_obj()
+  local components = self.v_uicompents
+  components.RoomType_img.gameObject:SetActiveEx(false)
+  components.OutRoomType_img.gameObject:SetActiveEx(true)
+  self.v_uiobjects.TaskIcon:SetActive(false)
+  for _, v in pairs(self.v_active_lines) do
+    v:SetActive(false)
+  end
+  for _, v in pairs(self.v_no_active_lines) do
+    v:SetActive(false)
+  end
+end
+
+function M:set_line(connect_data, target_room)
+  local scrDir = connect_data.SrcDir
+  local tower = TowerMgr:get_tower()
+  local line_obj = (-1 == connect_data.TargetRoomNum or tower:is_pass_room(connect_data.TargetRoomNum) == true) and self.v_active_lines[scrDir] or self.v_no_active_lines[scrDir]
+  line_obj:SetActive(true)
+  local line_rect = self:get_rect_transform(nil, line_obj)
+  line_rect.sizeDelta = Vec2.New(1, 5)
+  local start_pos = line_obj.transform.position
+  local end_pos = target_room:get_port_postion(connect_data.TargetDir)
+  local dir = end_pos - start_pos
+  local length = Vec3.Magnitude(dir)
+  local factor = self.v_parent_ui.scale_factor
+  line_rect.sizeDelta = Vec2.New(length / factor, 5)
+end
+
+function M:get_port_postion(port)
+  return self.v_point_list[port].transform.position
+end
+
+function M:get_room_world_position()
+  return self.v_rect.position
+end
+
+function M:set_pos(pos, is_anchored)
+  if is_anchored then
+    self.v_rect:SetAnchoredPositionA(pos.x, pos.y)
+  else
+    self.v_rect:SetPositionA(pos.x, pos.y, pos.z)
+  end
+end
+
+function M:_onclick_room()
+  if TowerMgr.v_is_cut_pnl then
+    return
+  end
+  if self.v_is_small == true then
+    return
+  end
+  if self.v_is_small == true then
+    return
+  end
+  local tower = TowerMgr:get_tower()
+  local is_pass_room = tower:is_pass_room(self.roomData.RoomNum)
+  local is_maze_room = tower:is_maze_room(self.roomData.RoomNum)
+  if is_pass_room and is_maze_room then
+    Util.show_message_tip(2190)
+    return
+  end
+  Util.show_message_tip(2191)
+end
+
+function M:play_tween()
+  self.v_group:DOFade(1, 2)
+end
+
+function M:_set_task_data()
+  self.v_uiobjects.TaskIcon:SetActive(false)
+  if not self.roomData then
+    return
+  end
+  local relate_list = BattleTaskMgr:check_task_relation_room(self.roomData.LogicNum)
+  local task_id = next(relate_list)
+  if nil ~= task_id then
+    local task_cfg = ShareRes.create("battle.battle_task", task_id)
+    if not task_cfg then
+      return
+    end
+    local type_cfg = ShareRes.get_battle_task_type_cfg(task_cfg.Type)
+    self.v_uiobjects.TaskIcon:SetActive(true)
+    ResMgr:load_set_icon(self.v_uicompents.TaskIcon_img, type_cfg.IconPath)
+  end
+end
+
+return M

@@ -1,0 +1,161 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local CONTRIBUTE_SHOP_SOURCE_ITEM_KEY = "CONTRIBUTE_SHOP_SOURCE_ITEM_KEY"
+local SHOW_TYPE = Config.ITEM_SHOW_TYPE
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_discount_bg = {
+    "DiscountBg",
+    BIND_TYPE.OBJECT
+  },
+  v_stock = {
+    "Stock",
+    BIND_TYPE.OBJECT
+  },
+  v_star_need = {
+    "StarNeed",
+    BIND_TYPE.OBJECT
+  },
+  v_item_quality = {
+    "Pz",
+    BIND_TYPE.IMAGE
+  },
+  v_item_name = {
+    "Item_name",
+    BIND_TYPE.TEXT
+  },
+  v_item_num = {
+    "Item_amount",
+    BIND_TYPE.TEXT
+  },
+  v_item_desc = {
+    "Item_detilTitle",
+    BIND_TYPE.TEXT
+  },
+  v_item_w_desc = {
+    "Item_detil",
+    BIND_TYPE.TEXT
+  },
+  v_source_btn = {
+    "SourceBtn",
+    BIND_TYPE.OBJECT
+  },
+  v_detail_btn = {
+    "DetailBtn",
+    BIND_TYPE.OBJECT
+  },
+  v_getway = {
+    "GetWayList",
+    BIND_TYPE.OBJECT
+  },
+  v_getway_item = {
+    "GetWayTem",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("Return", function()
+    self:ui_hide()
+  end)
+  self:set_button("SourceBtn", function()
+    self:onclick_source_btn()
+  end)
+  self:set_button("DetailBtn", function()
+    self:onclick_detail_btn()
+  end)
+  self:register_exist_auto_template(CONTRIBUTE_SHOP_SOURCE_ITEM_KEY, self.v_getway_item, self.v_getway)
+  self.v_show_type = SHOW_TYPE.DETAIL
+  self.v_buy_panel = self.v_panels.contribute_shop_buy_view:get_object()
+end
+
+function ui:ui_on_show(shop_cfg, buy_count)
+  self.v_shop_cfg = shop_cfg
+  self.v_buy_count = buy_count
+  self.v_item_id = shop_cfg.ItemID
+  self.v_item_cfg = UtilUI.get_item_cfg(self.v_item_id)
+  self:hide_other_obj()
+  self:refresh_tip_view()
+end
+
+function ui:ui_on_hide()
+  self.v_show_type = SHOW_TYPE.DETAIL
+  self.v_item_id = nil
+  self.v_item_obj = nil
+end
+
+function ui:hide_other_obj()
+  self.v_discount_bg:SetActive(false)
+  self.v_stock:SetActive(false)
+  self.v_star_need:SetActive(false)
+end
+
+function ui:refresh_tip_view()
+  self.v_item_name.text = UtilUI.get_item_name(self.v_item_id)
+  self.v_item_num.text = BagMgr:get_item_num(self.v_item_id)
+  if not self.v_item_obj then
+    self.v_item_obj = self:create_item_obj(nil, self.v_item_quality.gameObject, nil, {
+      item_id = self.v_item_id
+    })
+  else
+    self.v_item_obj:ui_show({
+      item_id = self.v_item_id
+    })
+  end
+  self:refresh_right_view()
+end
+
+function ui:refresh_right_view()
+  local has_source
+  if self.v_item_cfg.Jump then
+    local k, v = next(self.v_item_cfg.Jump)
+    has_source = 0 ~= v
+  end
+  self.v_source_btn:SetActive(false)
+  self.v_detail_btn:SetActive(false)
+  self.v_item_desc:SetActive(self.v_show_type == SHOW_TYPE.DETAIL)
+  self.v_item_w_desc:SetActive(self.v_show_type == SHOW_TYPE.DETAIL)
+  self.v_getway:SetActive(self.v_show_type == SHOW_TYPE.SOURCE)
+  if self.v_show_type == SHOW_TYPE.DETAIL then
+    self.v_panels.contribute_shop_buy_view:set_enable(true, self.v_shop_cfg, self.v_buy_count)
+    self.v_buy_panel:SetActive(true)
+    self.v_item_desc.text = self.v_item_cfg.Desc
+    self.v_item_w_desc.text = self.v_item_cfg.WorldDesc
+  else
+    self.v_buy_panel:SetActive(false)
+    self:refresh_source_view()
+  end
+end
+
+function ui:refresh_source_view()
+  self:give_back_auto_cache(CONTRIBUTE_SHOP_SOURCE_ITEM_KEY, false)
+  local jump = self.v_item_cfg.Jump
+  for k, v in pairs(jump) do
+    if 0 ~= v then
+      local cfg = ShareRes.create("sysopen.sys_jump", v)
+      local obj = self:get_auto_cache(CONTRIBUTE_SHOP_SOURCE_ITEM_KEY)
+      local title = self:get_text("GetWay_name", obj)
+      title.text = cfg.title
+      local desc = self:get_text("GetWay_detil", obj)
+      desc.text = cfg.source_desc
+      local btn = self:get_button(nil, obj)
+      Global.listener_mgr:add_listener(self.v_object, btn.onClick, function()
+        self:ui_hide()
+        SysOpenMgr:jump_to_sys(v, true)
+      end)
+    end
+  end
+end
+
+function ui:onclick_source_btn()
+  self.v_show_type = SHOW_TYPE.SOURCE
+  self:refresh_tip_view()
+end
+
+function ui:onclick_detail_btn()
+  self.v_show_type = SHOW_TYPE.DETAIL
+  self:refresh_tip_view()
+end
+
+return ui

@@ -1,0 +1,39 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local UnityColor = UnityEngine.Color
+local TextColor = {
+  FinishColor = UnityColor(1, 0.8549019607843137, 0.615686274509804, 255),
+  NotFinishColor = UnityColor(1, 0.9411764705882353, 0.8352941176470589, 0.4)
+}
+local Condition_Type = {
+  MinFloor = 1,
+  MinBeHit = 2,
+  HealthMoreThan = 3,
+  MinPassTime = 4
+}
+
+function M:set_data(data)
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  uobj.Complete:SetActive(data.status)
+  local arg = data.arg and data.arg[1]
+  local str = arg or ""
+  if data.task_type == Condition_Type.HealthMoreThan and arg then
+    local percent_health = arg / 100
+    percent_health = math.max(percent_health, 1)
+    str = string.format("%d", percent_health) .. "%"
+  end
+  local cfg = ShareRes.get_gecao_star_desc_cfg(data.task_type)
+  ucom.TargetDesc_txt.text = Util.format_str(cfg.ConditionDesc, str)
+  local color = TextColor.FinishColor
+  if not data.status then
+    color = TextColor.NotFinishColor
+  end
+  ucom.TargetDesc_txt.color = color
+  ucom.Complete_img.color = color
+end
+
+function M:on_clear()
+end
+
+return M

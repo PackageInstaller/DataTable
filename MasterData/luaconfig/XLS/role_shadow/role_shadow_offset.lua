@@ -1,0 +1,1602 @@
+return {
+  H1001001_UI = {
+    KB3 = {
+      Id = 1,
+      RoleId = "H1001001_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 2,
+      RoleId = "H1001001_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001004_UI = {
+    KB3 = {
+      Id = 7,
+      RoleId = "H1001004_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 8,
+      RoleId = "H1001004_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001008_UI = {
+    KB3 = {
+      Id = 11,
+      RoleId = "H1001008_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 12,
+      RoleId = "H1001008_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001009_UI = {
+    KB3 = {
+      Id = 15,
+      RoleId = "H1001009_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 16,
+      RoleId = "H1001009_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001010_UI = {
+    KB3 = {
+      Id = 23,
+      RoleId = "H1001010_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 24,
+      RoleId = "H1001010_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001011_UI = {
+    KB3 = {
+      Id = 27,
+      RoleId = "H1001011_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 28,
+      RoleId = "H1001011_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001012_UI = {
+    KB3 = {
+      Id = 31,
+      RoleId = "H1001012_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 32,
+      RoleId = "H1001012_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001013_UI = {
+    KB3 = {
+      Id = 35,
+      RoleId = "H1001013_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 36,
+      RoleId = "H1001013_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001014_UI = {
+    KB3 = {
+      Id = 39,
+      RoleId = "H1001014_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 40,
+      RoleId = "H1001014_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001015_UI = {
+    KB3 = {
+      Id = 43,
+      RoleId = "H1001015_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 44,
+      RoleId = "H1001015_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001016_UI = {
+    KB3 = {
+      Id = 47,
+      RoleId = "H1001016_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 48,
+      RoleId = "H1001016_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001017_UI = {
+    KB3 = {
+      Id = 53,
+      RoleId = "H1001017_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 54,
+      RoleId = "H1001017_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001018_UI = {
+    KB3 = {
+      Id = 57,
+      RoleId = "H1001018_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 58,
+      RoleId = "H1001018_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001019_UI = {
+    KB3 = {
+      Id = 61,
+      RoleId = "H1001019_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 62,
+      RoleId = "H1001019_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001020_UI = {
+    KB3 = {
+      Id = 65,
+      RoleId = "H1001020_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 66,
+      RoleId = "H1001020_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001021_UI = {
+    KB3 = {
+      Id = 71,
+      RoleId = "H1001021_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 72,
+      RoleId = "H1001021_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001022_UI = {
+    KB3 = {
+      Id = 75,
+      RoleId = "H1001022_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 76,
+      RoleId = "H1001022_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001023_UI = {
+    KB3 = {
+      Id = 79,
+      RoleId = "H1001023_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 80,
+      RoleId = "H1001023_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001024_UI = {
+    KB3 = {
+      Id = 83,
+      RoleId = "H1001024_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 84,
+      RoleId = "H1001024_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001026_UI = {
+    KB3 = {
+      Id = 87,
+      RoleId = "H1001026_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 88,
+      RoleId = "H1001026_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001027_UI = {
+    KB3 = {
+      Id = 93,
+      RoleId = "H1001027_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 94,
+      RoleId = "H1001027_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001028_UI = {
+    KB3 = {
+      Id = 95,
+      RoleId = "H1001028_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 96,
+      RoleId = "H1001028_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001029_UI = {
+    KB3 = {
+      Id = 97,
+      RoleId = "H1001029_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 98,
+      RoleId = "H1001029_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001030_UI = {
+    KB3 = {
+      Id = 99,
+      RoleId = "H1001030_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 100,
+      RoleId = "H1001030_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001101_UI = {
+    KB3 = {
+      Id = 3,
+      RoleId = "H1001101_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 4,
+      RoleId = "H1001101_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001104_UI = {
+    KB3 = {
+      Id = 9,
+      RoleId = "H1001104_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 10,
+      RoleId = "H1001104_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001108_UI = {
+    KB3 = {
+      Id = 13,
+      RoleId = "H1001108_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 14,
+      RoleId = "H1001108_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001109_UI = {
+    KB3 = {
+      Id = 17,
+      RoleId = "H1001109_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 18,
+      RoleId = "H1001109_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001110_UI = {
+    KB3 = {
+      Id = 25,
+      RoleId = "H1001110_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 26,
+      RoleId = "H1001110_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001111_UI = {
+    KB3 = {
+      Id = 29,
+      RoleId = "H1001111_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 30,
+      RoleId = "H1001111_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001112_UI = {
+    KB3 = {
+      Id = 33,
+      RoleId = "H1001112_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 34,
+      RoleId = "H1001112_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001113_UI = {
+    KB3 = {
+      Id = 37,
+      RoleId = "H1001113_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 38,
+      RoleId = "H1001113_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001114_UI = {
+    KB3 = {
+      Id = 41,
+      RoleId = "H1001114_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 42,
+      RoleId = "H1001114_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001115_UI = {
+    KB3 = {
+      Id = 45,
+      RoleId = "H1001115_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 46,
+      RoleId = "H1001115_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001116_UI = {
+    KB3 = {
+      Id = 49,
+      RoleId = "H1001116_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 50,
+      RoleId = "H1001116_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001117_UI = {
+    KB3 = {
+      Id = 55,
+      RoleId = "H1001117_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 56,
+      RoleId = "H1001117_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001118_UI = {
+    KB3 = {
+      Id = 59,
+      RoleId = "H1001118_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 60,
+      RoleId = "H1001118_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001119_UI = {
+    KB3 = {
+      Id = 63,
+      RoleId = "H1001119_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 64,
+      RoleId = "H1001119_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001120_UI = {
+    KB3 = {
+      Id = 67,
+      RoleId = "H1001120_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 68,
+      RoleId = "H1001120_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001121_UI = {
+    KB3 = {
+      Id = 73,
+      RoleId = "H1001121_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 74,
+      RoleId = "H1001121_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001122_UI = {
+    KB3 = {
+      Id = 77,
+      RoleId = "H1001122_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 78,
+      RoleId = "H1001122_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001123_UI = {
+    KB3 = {
+      Id = 81,
+      RoleId = "H1001123_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 82,
+      RoleId = "H1001123_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001124_UI = {
+    KB3 = {
+      Id = 85,
+      RoleId = "H1001124_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 86,
+      RoleId = "H1001124_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1001126_UI = {
+    KB3 = {
+      Id = 89,
+      RoleId = "H1001126_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 90,
+      RoleId = "H1001126_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1002101_UI = {
+    KB3 = {
+      Id = 5,
+      RoleId = "H1002101_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 6,
+      RoleId = "H1002101_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1002216_UI = {
+    KB3 = {
+      Id = 51,
+      RoleId = "H1002216_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 52,
+      RoleId = "H1002216_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1002220_UI = {
+    KB3 = {
+      Id = 69,
+      RoleId = "H1002220_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 70,
+      RoleId = "H1002220_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1002309_UI = {
+    KB3 = {
+      Id = 19,
+      RoleId = "H1002309_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 20,
+      RoleId = "H1002309_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1002326_UI = {
+    KB3 = {
+      Id = 91,
+      RoleId = "H1002326_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 92,
+      RoleId = "H1002326_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  },
+  H1003209_UI = {
+    KB3 = {
+      Id = 21,
+      RoleId = "H1003209_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB3"
+    },
+    KB4 = {
+      Id = 22,
+      RoleId = "H1003209_UI",
+      ShadowCamOffset = {
+        0,
+        -1,
+        4.6
+      },
+      ShadowCamTarOffset = {
+        0,
+        0,
+        0
+      },
+      UiName = "KB4"
+    }
+  }
+}

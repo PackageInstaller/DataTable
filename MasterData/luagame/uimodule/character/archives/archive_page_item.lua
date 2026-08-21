@@ -1,0 +1,54 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+
+function M:set_data(data)
+  self.v_data = data
+  ResMgr:load_set_icon(self.v_uicompents.Image_img, data.Photo, function()
+    self:fix_scale()
+  end, true)
+end
+
+function M:fix_scale()
+  local def_pos = self.v_data.DefaultPos
+  local def_scale = self.v_data.DefaultScale
+  local image = self.v_uicompents.Image_img
+  local image_trans = self.v_uicompents.Image_rect
+  image:SetNativeSize()
+  local rect_trans = self:get_rect_transform("")
+  local img_height = image.overrideSprite.rect.height
+  local rect_height = rect_trans.rect.height
+  local img_width = image.overrideSprite.rect.width
+  local rect_width = rect_trans.rect.width
+  self.v_min_scale = rect_height / img_height
+  if rect_width < img_width * self.v_min_scale then
+    self.v_min_scale = rect_width / img_width
+  end
+  local scale = self.v_min_scale
+  if def_scale and def_scale > self.v_min_scale then
+    scale = def_scale
+  end
+  image_trans:SetLocalScaleA(scale, scale, scale)
+  if def_pos then
+    image_trans:SetLocalPositionA(def_pos[1], def_pos[2], 0)
+  else
+    image_trans:SetLocalPositionA(0, 0, 0)
+  end
+  self.v_fix_scale = scale
+end
+
+function M:get_fix_scale()
+  return self.v_fix_scale or 1
+end
+
+function M:get_min_scale()
+  return self.v_min_scale or 1
+end
+
+function M:get_image_trans()
+  return self.v_uicompents.Image_rect
+end
+
+function M:on_clear()
+end
+
+return M

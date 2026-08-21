@@ -1,0 +1,80 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local CommonDefind = require("cs_share.common_define")
+local NOTICE_TYPE = CommonDefind.NOTICE_TYPE
+local Cs_color = UnityEngine.Color
+local Select_color_title = Util.get_unity_color_by_hex(tonumber("484243", 16))
+local Unselect_color_title = Util.get_unity_color_by_hex(tonumber("F5EDE2", 16))
+local Select_color = Util.get_unity_color_by_hex(tonumber("292929", 16))
+local Unselect_color = Util.get_unity_color_by_hex(tonumber("C9C5BC", 16))
+
+function M:set_data(src_data)
+  self.v_src_data = src_data
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  if src_data.cdn_index then
+    ucom.Title_txt.text = src_data.title
+  else
+    ucom.Title_txt.text = ShareRes.get_notice_txt_by_id(src_data.title)
+  end
+  if src_data.type == NOTICE_TYPE.ACTIVITY then
+    uobj.Date:SetActive(false)
+    uobj.RedPoint:SetActive(0 == src_data.is_read)
+  elseif src_data.type == NOTICE_TYPE.SYSTEM then
+    uobj.Date:SetActive(false)
+    ucom.Month_txt.text = Util.format_str("{1}月", src_data.month)
+    ucom.Day_txt.text = src_data.day
+    if src_data.is_read == nil then
+      uobj.RedPoint:SetActive(false)
+    else
+      uobj.RedPoint:SetActive(not src_data.is_read)
+    end
+  end
+  uobj.Choose:SetActive(false)
+  local select_btn = self:get_button(nil, nil)
+  self:set_button_listener(select_btn, function()
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_SELECTED_NOTICE_ITEM)
+    msg.mm_obj = src_data
+  end)
+end
+
+function M:on_clear()
+  self:unbind_all_auto_mq()
+end
+
+function M:set_selected(is_select)
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  local data = self.v_src_data
+  uobj.Choose:SetActive(is_select)
+  uobj.Ani_UINotice_Secte:SetActive(is_select)
+  uobj.Ani_UINotice_UnSecte:SetActive(not is_select)
+  ucom.Title_txt.color = is_select and Select_color_title or Unselect_color_title
+  if data.type == NOTICE_TYPE.ACTIVITY or data.is_config then
+    if is_select then
+      if 0 == data.is_read then
+        data.is_read = 1
+        uobj.RedPoint:SetActive(false)
+        NoticeMgr:update_local_notice_read(data.id)
+      end
+    else
+      uobj.RedPoint:SetActive(0 == data.is_read)
+    end
+  elseif data.type == NOTICE_TYPE.SYSTEM then
+    if data.is_read == nil then
+      return
+    end
+    if is_select then
+      if not data.is_read then
+        NoticeMgr:upgrade_notice_read(data.uuid, function()
+          data.is_read = true
+          uobj.RedPoint:SetActive(false)
+        end)
+      end
+    else
+      uobj.RedPoint:SetActive(not data.is_read)
+    end
+  end
+end
+
+return M

@@ -1,0 +1,135 @@
+local Behavior = require("manager.fight.behavior")
+local CSUnityColor = UnityEngine.Color
+local CSResLoader = CS.ResLoader
+local ease_linear = CS.DG.Tweening.Ease.Linear
+local STORY_CONFIG = require("uimodule.story.story_config")
+local STEP_TYPE = STORY_CONFIG.STEP_TYPE
+local SPECIAL_STRING_FUN = STORY_CONFIG.SPECIAL_STRING_FUN
+local STEP_PLAY_TYPE = STORY_CONFIG.STEP_PLAY_TYPE
+local _find = string.find
+local _gsub = string.gsub
+local Math = require("base.mathx")
+local _clamp = Math.Clamp
+local UP_SPEED = STORY_CONFIG.UP_SPEED
+local SPEED_DEFAULT = STORY_CONFIG.SPEED_DEFAULT
+local CLICK_SPEED = STORY_CONFIG.CLICK_SPEED
+local LOGIC_FRAME = Config.LOGIC_FRAME
+local M = Util.create_class()
+
+function M:_init(lua_obj, step_cfg, step_type, step_play_type, story_id, story_speed, step_all_cfg)
+  self.v_lua_obj = lua_obj
+  self.v_uiobjects = lua_obj.v_uiobjects
+  self.v_uicompents = lua_obj.v_uicompents
+  self.v_step_cfg = step_cfg
+  self.v_step_type = step_type
+  self.v_play_step_type = step_play_type or STEP_PLAY_TYPE.DEFAULT
+  self.v_story_id = story_id
+  self.v_sequence_list = {}
+  self.v_is_complete = false
+  self.v_story_speed = story_speed
+  self.v_step_all_cfg = step_all_cfg
+end
+
+function M:update()
+end
+
+function M:on_destroy()
+  self:clean_sequence()
+end
+
+function M:click_btn()
+end
+
+function M:speed_up(target_speed)
+  local speed = target_speed and target_speed or UP_SPEED
+  for _, sequence in pairs(self.v_sequence_list) do
+    sequence.timeScale = speed
+  end
+end
+
+function M:speed_none(target_speed)
+  local speed = target_speed and target_speed or SPEED_DEFAULT
+  for _, sequence in pairs(self.v_sequence_list) do
+    sequence.timeScale = speed
+  end
+end
+
+function M:set_speed(speed)
+  speed = speed or 1
+  self.v_story_speed = speed
+  for _, sequence in pairs(self.v_sequence_list) do
+    sequence.timeScale = speed
+  end
+end
+
+function M:down_btn()
+  for _, sequence in pairs(self.v_sequence_list) do
+    sequence.timeScale = CLICK_SPEED
+  end
+end
+
+function M:up_btn()
+  for _, sequence in pairs(self.v_sequence_list) do
+    sequence.timeScale = self.v_story_speed
+  end
+end
+
+function M:click_auto_btn()
+end
+
+function M:on_comfirm_skip()
+end
+
+function M:get_new_sequence(key)
+  local sequence = Util.create_sequence()
+  if self.v_sequence_list[key] then
+    self.v_sequence_list[key]:Kill(false)
+    self.v_sequence_list[key] = nil
+  end
+  sequence:SetUpdate(true)
+  self.v_sequence_list[key] = sequence
+  sequence.timeScale = self.v_story_speed
+  return sequence
+end
+
+function M:clean_sequence()
+  self.v_sequence_list = self.v_sequence_list or {}
+  for key, sequence in pairs(self.v_sequence_list) do
+    sequence:Kill(false)
+  end
+  self.v_sequence_list = {}
+end
+
+function M:image_grey(img_obj, grey_cfg_val)
+  if not grey_cfg_val or grey_cfg_val <= 0 then
+    return
+  end
+  local grey_val = grey_cfg_val / 255
+  local color = CSUnityColor(grey_val, grey_val, grey_val, 1)
+  img_obj.color = color
+end
+
+function M:replace_talk_content(content)
+  local new_desc = self.v_lua_obj:replace_talk_content(content)
+  return new_desc or ""
+end
+
+function M:complete()
+  self.v_is_complete = true
+  if not self.v_play_step_type or self.v_play_step_type == STEP_PLAY_TYPE.DEFAULT then
+    self.v_lua_obj:step_complete(self.v_step_type)
+  elseif self.v_play_step_type == STEP_PLAY_TYPE.INSERT_PLAY then
+    self.v_lua_obj:insert_step_complete(self.v_step_type)
+  end
+end
+
+function M:is_complete()
+  return self.v_is_complete
+end
+
+function M:print_error_info(tip)
+  local cur_step_id = self.v_lua_obj:get_cur_step_id()
+  Log.Error("步骤发生错误，当前步骤id = ", cur_step_id, tip)
+end
+
+return M

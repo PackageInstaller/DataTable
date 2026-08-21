@@ -1,0 +1,126 @@
+local empty = {}
+return
+{
+  StoryId = 2201108,
+  AlphaEffectEnd = true,
+  Steps = {
+    {
+      UseSpineRes = true,
+      WorldDicId = -1,
+      Talking = {
+        Level = 2,
+        ShowEffect = {
+          AnimTime = 0.6
+        },
+        HideEffect = {
+          Enable = true,
+          AnimTime = 0.6
+        },
+        BackgroundBlurType = 1,
+        SceneTalkPosY = -340.0,
+        HeadInfo = {
+          ShowEffect = {
+            AnimTime = 0.6
+          },
+          HideEffect = {
+            AnimTime = 0.6
+          }
+        },
+        NoteTextPos = 1,
+        BgTalkPos = empty,
+        BgTalkSetPos = empty,
+      }
+    },
+    {
+      AutoPlay = true,
+      UseSpineRes = true,
+      StepCD = 1.0,
+      WorldDicId = -1,
+      Talking = {
+        Level = 2,
+        ShowEffect = {
+          Enable = true,
+          AnimTime = 0.6
+        },
+        HideEffect = {
+          AnimTime = 0.6
+        },
+        FadeTime = 4.0,
+        CharName = "5001191",
+        SceneTalkPosY = -340.0,
+        HeadInfo = {
+          ShowEffect = {
+            AnimTime = 0.6
+          },
+          HideEffect = {
+            AnimTime = 0.6
+          }
+        },
+        Content = "2201108_1",
+        NoteTextPos = 1,
+        BgTalkPos = empty,
+        BgTalkSetPos = empty,
+      }
+    },
+    {
+      UseSpineRes = true,
+      StepCD = 1.0,
+      WorldDicId = -1,
+      Talking = {
+        Level = 2,
+        ShowEffect = {
+          Enable = true,
+          AnimTime = 0.6
+        },
+        HideEffect = {
+          AnimTime = 0.6
+        },
+        SceneTalkPosY = -340.0,
+        HeadInfo = {
+          ShowEffect = {
+            AnimTime = 0.6
+          },
+          HideEffect = {
+            AnimTime = 0.6
+          }
+        },
+        Content = "2201108_2",
+        hasStyledText = true,
+        ContentLength = 10,
+        NoteTextPos = 1,
+        BgTalkPos = empty,
+        BgTalkSetPos = empty,
+      }
+    },
+    {
+      UseSpineRes = true,
+      StepCD = 1.0,
+      WorldDicId = -1,
+      Talking = {
+        Level = 2,
+        ShowEffect = {
+          Enable = true,
+          AnimTime = 0.6
+        },
+        HideEffect = {
+          AnimTime = 0.6
+        },
+        SceneTalkPosY = -340.0,
+        HeadInfo = {
+          ShowEffect = {
+            AnimTime = 0.6
+          },
+          HideEffect = {
+            AnimTime = 0.6
+          }
+        },
+        Content = "2201108_3",
+        hasStyledText = true,
+        ContentLength = 25,
+        NoteTextPos = 1,
+        BgTalkPos = empty,
+        BgTalkSetPos = empty,
+      }
+    }
+  },
+}

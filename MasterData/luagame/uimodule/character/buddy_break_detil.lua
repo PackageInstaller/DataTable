@@ -1,0 +1,132 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local BUDDY_BREAK_INFO_ITEM_KEY = "BUDDY_BREAK_INFO_ITEM_KEY"
+local MODEL = {}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_max_star_count = self.v_uiobjects.StarList.transform.childCount
+  self:register_exist_auto_template(BUDDY_BREAK_INFO_ITEM_KEY, self.v_uiobjects.InfoTem, self.v_uiobjects.Infor_list)
+end
+
+function ui:ui_on_show(buddy_id, award_list)
+  self:set_button("BtnRet", function()
+    self:ui_hide()
+  end)
+  self.v_award_list = award_list
+  self:refresh(buddy_id)
+  self:update_hero_icon(buddy_id)
+end
+
+function ui:ui_on_hide()
+  if self.v_award_list and next(self.v_award_list) then
+    UIMgr:get_ui("award_show_panel"):ui_show(self.v_award_list)
+  end
+  self.v_award_list = nil
+  if GuideMgr then
+    GuideMgr:check_sys_guide()
+  end
+end
+
+local highlight_color_key = "<color=#866F46>"
+local normal_color_key = "<color=#484243>"
+
+function ui:refresh(buddy_id)
+  local buddy_info = CharacterMgr:get_buddy_by_id(buddy_id)
+  local break_lv = buddy_info.break_lv
+  local max_level = ShareRes.get_buddy_max_level(break_lv - 1)
+  local last_attr = CharacterMgr.cal_buddy_attr(buddy_info.id, break_lv - 1, max_level, buddy_info.advance)
+  local new_attr = CharacterMgr.cal_buddy_attr(buddy_info.id, break_lv, buddy_info.lv, buddy_info.advance)
+  local show_buddy_attr_cfg = ShareRes.get_show_buddy_attr_cfg(buddy_id)
+  assert("show_buddy_attr_cfg", "ATTR CFG NULL = " .. buddy_id)
+  self:give_back_auto_cache(BUDDY_BREAK_INFO_ITEM_KEY)
+  local is_buddy_breack_auto_unlock_talent = ShareRes.is_buddy_breack_auto_unlock_talent(buddy_info.id, buddy_info.break_lv)
+  if is_buddy_breack_auto_unlock_talent then
+    self:update_attr_item_talent()
+  end
+  self:update_attr_item_puzzle(buddy_id, break_lv)
+  if 3 == break_lv and ShareRes.get_buddy_cfg(buddy_id).Icon[7] then
+    self:update_attr_item_spine()
+  end
+  local attr_list = {}
+  for key, attr_id in pairs(show_buddy_attr_cfg.BaseAttr) do
+    attr_list[attr_id] = true
+  end
+  for key, value in pairs(last_attr) do
+    local attr_id = Config.FightDefine.CONFIG_NAME_ATTR_ID[key]
+    if attr_list[attr_id] and value ~= new_attr[key] then
+      local item = self:get_auto_cache(BUDDY_BREAK_INFO_ITEM_KEY)
+      local AttrName = Util.get_text("AttrName", item)
+      AttrName.text = Util.set_str_color(normal_color_key, ShareRes.get_buddy_attr_name(attr_id))
+      Util.get_child_gameobj("ChangeLayout", item):SetActive(true)
+      local LastValue = Util.get_text("ChangeLayout/LastValue", item)
+      local NowValue = Util.get_text("ChangeLayout/NowValue", item)
+      if attr_id == Config.FightDefine.ATTR_TYPE.CHAR_CRIT_ATK_PER then
+        NowValue.text = string.format("%.2f%s", new_attr[key] / 100, "%")
+        LastValue.text = string.format("%.2f%s", value / 100, "%")
+      else
+        NowValue.text = new_attr[key]
+        LastValue.text = value
+      end
+    end
+  end
+  self.v_uicompents.Last_Lv_txt.text = break_lv - 2
+  self.v_uicompents.New_Lv_txt.text = break_lv - 1
+  break_lv = break_lv - 1
+  local max_break_lv = ShareRes.get_role_max_break_lv(buddy_id)
+  for i = 1, self.v_max_star_count do
+    local star_obj = self.v_uiobjects["Break" .. i]
+    local parent = star_obj.transform.parent.gameObject
+    if i <= max_break_lv then
+      parent:SetActive(true)
+      star_obj.gameObject:SetActive(i <= break_lv)
+    else
+      parent:SetActive(false)
+    end
+  end
+end
+
+function ui:update_attr_item_talent()
+  local attr_ui = self:get_auto_cache(BUDDY_BREAK_INFO_ITEM_KEY)
+  Util.get_child_gameobj("ChangeLayout", attr_ui):SetActive(false)
+  Util.get_text("AttrName", attr_ui).text = Util.set_str_color(highlight_color_key, Util.format_str("天赋解锁"))
+end
+
+function ui:update_attr_item_spine()
+  local attr_ui = self:get_auto_cache(BUDDY_BREAK_INFO_ITEM_KEY)
+  Util.get_child_gameobj("ChangeLayout", attr_ui):SetActive(false)
+  Util.get_text("AttrName", attr_ui).text = Util.set_str_color(highlight_color_key, Util.format_str("突破映像解锁"))
+end
+
+function ui:update_attr_item_puzzle(buddy_id, new_break_lv)
+  local is_first_unlock, is_new_unlock, old_node_num, new_node_num = PuzzleMgr:get_puzzle_change_when_buddy_break(buddy_id, new_break_lv)
+  if not is_first_unlock and not is_new_unlock then
+    return
+  end
+  local attr_ui = self:get_auto_cache(BUDDY_BREAK_INFO_ITEM_KEY)
+  Util.get_child_gameobj("ChangeLayout", attr_ui):SetActive(is_new_unlock)
+  Util.get_text("AttrName", attr_ui).text = Util.set_str_color(highlight_color_key, Util.format_str(is_first_unlock and "古痕系统解锁" or "古痕区域扩增"))
+  if is_new_unlock then
+    Util.get_text("ChangeLayout/LastValue", attr_ui).text = old_node_num
+    Util.get_text("ChangeLayout/NowValue", attr_ui).text = new_node_num
+  end
+end
+
+function ui:refresh_attr_view(attr_ui, show)
+  attr_ui:SetActive(not show)
+end
+
+function ui:update_hero_icon(buddy_id)
+  local ucom = self.v_uicompents
+  local hero_img = ucom.hero_img
+  local hero_shadow_img = ucom.shadow_img
+  local hero_icon = UtilUI.get_hero_images(buddy_id, Config.HERO_ICON_LV.HD_FULL_IMG)
+  if not hero_icon then
+    return
+  end
+  ResMgr:load_set_icon(hero_img, hero_icon, nil, true, self)
+  ResMgr:load_set_icon(hero_shadow_img, hero_icon, nil, true, self)
+end
+
+return ui

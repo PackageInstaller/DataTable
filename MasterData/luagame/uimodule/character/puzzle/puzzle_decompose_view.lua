@@ -1,0 +1,190 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local ImageType = TypeUnityUIImage
+local RectTransformUtility = UnityEngine.RectTransformUtility
+local Input = UnityEngine.Input
+local Vec2 = require("base.vec2")
+local PuzzleHelper = require("uimodule.character.puzzle.puzzle_helper")
+local PREVIEW_COLOR_LEGAL = Util.get_unity_color_by_hex(tonumber("efc66e", 16), 0.6)
+local PREVIEW_COLOR_ILLEGAL = Util.get_unity_color_by_hex(tonumber("d74343", 16), 0.6)
+local TEMPLATE_KEY_AWARD = "CHAR_PUZZLE_TEMPLATE_KEY_DEC_AWARD"
+local ITEM_OBJ_COM = require("uimodule.item.item_obj_com")
+
+function ui:ui_finish_load()
+  self:set_button("BtnDecompose", function()
+    self:on_click_decompose()
+  end)
+  self:set_button("BtnQuickDec", function()
+    UIMgr:get_ui("puzzle_batch_decompose_panel"):ui_show()
+  end)
+  self:set_button("Quality", function()
+    if self.v_uuid == self.v_parent_ui.v_temp_selected_uuid then
+      self.v_parent_ui.v_temp_selected_uuid = nil
+    else
+      self.v_parent_ui.v_temp_selected_uuid = self.v_uuid
+    end
+    Util.show_puzzle_tip(self.v_parent_ui.v_temp_selected_uuid, {
+      offset = Config.PUZZLE_TIPS_OFFSET.MAP_ITEM,
+      show_up_lv_btn = false,
+      show_remove_btn = true,
+      show_select_btn = false,
+      remove_cb = function()
+        self:change_selected_item()
+        local msg = MsgGame:mq_publish2(Const.MSG_ON_CHOOSE_PUZZLE_ITEM)
+        msg.mm_x = nil
+      end
+    })
+  end)
+  self:set_button("BtnUnload", function()
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_CHOOSE_PUZZLE_ITEM)
+    msg.mm_x = nil
+  end)
+  self:register_exist_auto_template(TEMPLATE_KEY_AWARD, self.v_uiobjects.ItemObjCom1, self.v_uiobjects.GetContent)
+end
+
+function ui:on_click_decompose()
+  if not self.v_cost_enough then
+    return
+  end
+  PuzzleMgr:decompose_puzzle({
+    self.v_uuid
+  }, function()
+    if self.v_fake_item_list and #self.v_fake_item_list > 0 then
+      UIMgr:get_ui("award_show_panel"):ui_show(self.v_fake_item_list)
+    end
+    self:reset_view()
+  end)
+end
+
+function ui:ui_on_show(uuid)
+  self:change_selected_item(uuid)
+  if uuid then
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_CHOOSE_PUZZLE_ITEM)
+    msg.mm_x = uuid
+  end
+end
+
+function ui:ui_on_hide()
+  self:clear_award_item()
+end
+
+function ui:reset_view()
+  self.v_uiobjects.PluginsInfo:SetActive(false)
+  self.v_uiobjects.Empty:SetActive(true)
+  self.v_uiobjects.AwardEmpty:SetActive(true)
+  self.v_uiobjects.CurrGet:SetActive(false)
+  self.v_cost_enough = false
+  Util.apply_grey_ex(self.v_uiobjects.BtnDecompose, true)
+  self:clear_award_item()
+end
+
+function ui:change_selected_item(uuid)
+  self.v_fake_item_list = {}
+  self.v_uuid = uuid
+  local puzzle_data = PuzzleMgr:get_puzzle_data(uuid)
+  if not uuid or not puzzle_data then
+    self:reset_view()
+    return
+  end
+  if not puzzle_data then
+    return
+  end
+  self.v_uiobjects.PluginsInfo:SetActive(true)
+  self.v_uiobjects.Empty:SetActive(false)
+  self.v_uiobjects.AwardEmpty:SetActive(false)
+  local item_id = puzzle_data.id
+  local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(item_id)
+  local item_icon_path = ShareRes.get_item_icon_path(item_id)
+  local item_quality_path = ShareRes.get_quality_path(puzzle_data.quality)
+  ResMgr:load_set_icon(self.v_uicompents.Icon_img, item_icon_path)
+  ResMgr:load_set_icon(self.v_uicompents.Quality_img, item_quality_path)
+  self.v_uicompents.PluginsName_txt.text = puzzle_cfg.Name
+  if puzzle_cfg.EntryId then
+    local entry_cfg = ShareRes.get_buddy_puzzle_entry_cfg(puzzle_cfg.EntryId, puzzle_data.quality)
+    self.v_uicompents.EffectName_txt.text = entry_cfg.Name
+  else
+    self.v_uicompents.EffectName_txt.text = ""
+  end
+  local dec_cfg = ShareRes.create("buddy.buddy_puzzle_quality", puzzle_data.quality)
+  local cost_count = dec_cfg.DecomposeCount or 0
+  if 0 ~= cost_count then
+    local cost_id = dec_cfg.DecomposeId
+    local own_num = BagMgr:get_item_num(cost_id)
+    local cost_icon_path = ShareRes.get_item_icon_path(cost_id)
+    ResMgr:load_set_icon(self.v_uicompents.CurrIcon_img, cost_icon_path)
+    self.v_uicompents.CurrNum_txt.text = string.format("<color=#%s>%s</color>", cost_count > own_num and "e0212c" or "F5EDE2", cost_count)
+    self.v_cost_enough = cost_count <= own_num
+  else
+    self.v_cost_enough = true
+  end
+  self.v_uiobjects.CurrGet:SetActive(0 ~= cost_count)
+  Util.apply_grey_ex(self.v_uiobjects.BtnDecompose, not self.v_cost_enough)
+  self:clear_award_item()
+  self.v_award_item_list = {}
+  if 3 == puzzle_data.quality then
+    local temp_awards = ShareRes.get_awards(puzzle_cfg.DecomposeAwardId)
+    for _, award in ipairs(temp_awards) do
+      local obj = self:get_auto_cache(TEMPLATE_KEY_AWARD)
+      local item = ITEM_OBJ_COM:ui_wrap_ex(self, obj, true)
+      item:set_data(award, true)
+      table.insert(self.v_award_item_list, item)
+    end
+    return
+  end
+  local unit_num = puzzle_cfg.AttrCount
+  local counter = 1
+  local temp_attr_list_list = {}
+  local temp_attr_list = {}
+  local attr_list = puzzle_data.attr_list
+  for _, attr_id in ipairs(attr_list) do
+    if 1 == counter then
+      temp_attr_list = {}
+      temp_attr_list_list[#temp_attr_list_list + 1] = temp_attr_list
+    end
+    temp_attr_list[#temp_attr_list + 1] = attr_id
+    counter = counter + 1
+    if unit_num < counter then
+      counter = 1
+    end
+  end
+  for _, _attr_list in ipairs(temp_attr_list_list) do
+    local fake_puzzle_data = {
+      id = item_id,
+      quality = 3,
+      attr_list = _attr_list
+    }
+    local fake_item_data = {
+      id = item_id,
+      count = 1,
+      cb = function()
+        Util.show_puzzle_tip(self.v_uuid, {
+          offset = Config.PUZZLE_TIPS_OFFSET.MAP_ITEM,
+          show_up_lv_btn = false,
+          show_remove_btn = false,
+          show_select_btn = false,
+          puzzle_data = fake_puzzle_data
+        })
+      end
+    }
+    local obj = self:get_auto_cache(TEMPLATE_KEY_AWARD)
+    local item = ITEM_OBJ_COM:ui_wrap_ex(self, obj, true)
+    item:set_data(fake_item_data)
+    table.insert(self.v_award_item_list, item)
+    table.insert(self.v_fake_item_list, {id = item_id, count = 1})
+  end
+end
+
+function ui:clear_award_item()
+  self:give_back_auto_cache(TEMPLATE_KEY_AWARD)
+  if self.v_award_item_list and #self.v_award_item_list > 0 then
+    for i = #self.v_award_item_list, 1, -1 do
+      local item = self.v_award_item_list[i]
+      item:ui_hide()
+      item:ui_destroy()
+      self.v_award_item_list[i] = nil
+    end
+  end
+  self.v_award_item_list = nil
+end
+
+return ui

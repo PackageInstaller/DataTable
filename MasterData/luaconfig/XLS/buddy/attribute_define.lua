@@ -1,0 +1,98 @@
+return {
+  [4] = {
+    AttrId = 4,
+    AttrName = "生命",
+    IconName = "Char_icon_sm",
+    Name = "hp"
+  },
+  [5] = {
+    AttrId = 5,
+    AttrName = "精力上限",
+    IconName = "icon_attributes_xy",
+    Name = "max_energy"
+  },
+  [19] = {
+    AttrId = 19,
+    AttrName = "驻场精力回复",
+    IconName = "icon_attributes_xy",
+    Name = "on_ground_cvenergy"
+  },
+  [20] = {
+    AttrId = 20,
+    AttrName = "攻击力",
+    IconName = "Char_icon_gj",
+    Name = "attack"
+  },
+  [21] = {
+    AttrId = 21,
+    AttrName = "穿透",
+    IconName = "Char_icon_gj_tg",
+    Name = "penetrate"
+  },
+  [22] = {
+    AttrId = 22,
+    AttrName = "防御力",
+    IconName = "Char_icon_fy",
+    Name = "defense"
+  },
+  [23] = {
+    AttrId = 23,
+    AttrName = "元素异常专精",
+    IconName = "icon_attributes_gz",
+    Name = "abnormal_pure_essence"
+  },
+  [30] = {
+    AttrId = 30,
+    AttrName = "水伤害增幅",
+    IconName = "icon_attributes_mj",
+    Name = "elmeftadd2"
+  },
+  [31] = {
+    AttrId = 31,
+    AttrName = "火伤害增幅",
+    IconName = "icon_attributes_mj",
+    Name = "elmeftadd3"
+  },
+  [32] = {
+    AttrId = 32,
+    AttrName = "雷伤害增幅",
+    IconName = "icon_attributes_mj",
+    Name = "elmeftadd4"
+  },
+  [33] = {
+    AttrId = 33,
+    AttrName = "光伤害增幅",
+    IconName = "icon_attributes_mj",
+    Name = "elmeftadd5"
+  },
+  [34] = {
+    AttrId = 34,
+    AttrName = "暗伤害增幅",
+    IconName = "icon_attributes_mj",
+    Name = "elmeftadd6"
+  },
+  [76] = {
+    AttrId = 76,
+    AttrName = "暴击率",
+    IconName = "Char_icon_gj_tg",
+    Name = "crit_atk_per"
+  },
+  [78] = {
+    AttrId = 78,
+    AttrName = "暴击伤害",
+    IconName = "Char_icon_gj_tg",
+    Name = "crit_dmg_atk_per"
+  },
+  [147] = {
+    AttrId = 147,
+    AttrName = "终结技额外充能",
+    IconName = "icon_attributes_xy",
+    Name = "get_extra_ex_energy_ratio"
+  },
+  [154] = {
+    AttrId = 154,
+    AttrName = "离场精力回复",
+    IconName = "icon_attributes_xy",
+    Name = "back_ground_cvenergy"
+  }
+}

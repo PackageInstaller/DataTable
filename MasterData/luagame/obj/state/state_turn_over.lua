@@ -1,0 +1,85 @@
+local Base = require("obj.state.state_obj_base")
+local Math = require("base.mathx")
+local M = Util.create_child_mt(Base)
+local ACT_DEFINE = Config.ACT_DEFINE
+local STATE_NAME = Config.STATE_NAME
+
+function M:state_on_enter(...)
+  Base.state_on_enter(self, ...)
+  self.v_action = ACT_DEFINE.TurnOver
+  self.v_owner.role_move_ctrl:_on_hit_down_end()
+  local dir = self.v_owner:get_dir()
+  if not Math.almost_zero2(Global.camera_joystick_x, Global.camera_joystick_y) then
+    dir = (Math.get_angle2A(Global.camera_joystick_y, Global.camera_joystick_x) + 180) % 360
+  end
+  self.v_owner:set_target_dir(dir)
+  self.v_state_manager:try_action(self.v_action, 0, self._on_action_finish, self)
+  local cur_time = self.v_owner.time_mgr:get_time()
+  local forbit_time = ShareRes.get_comm_value("TurnOverStunTime")
+  local god_mode_time = ShareRes.get_comm_value("TurnOverGodModeTime")
+  self.v_can_transit_time = cur_time + forbit_time
+  self.v_exit_god_time = cur_time + god_mode_time
+  self.v_cast_skill_event_trigger = false
+  self.v_owner:set_godmode(true, "turn_over")
+end
+
+function M:in_forbid_time()
+  local cur_time = self.v_owner.time_mgr:get_time()
+  return cur_time < self.v_can_transit_time
+end
+
+function M:_on_action_finish()
+  self.v_state_manager:exit_state(STATE_NAME.turnover)
+end
+
+function M:_check_remove_god_mode()
+  local cur_time = self.v_owner.time_mgr:get_time()
+  if cur_time >= self.v_exit_god_time then
+    self.v_owner:set_godmode(false, "turn_over")
+  end
+end
+
+function M:_check_in_forbid_time()
+  if not (not self.v_cast_skill_event_trigger and self.v_owner:is_hero()) or self:in_forbid_time() then
+    return
+  end
+  NextFrameMgr:add_next_update_order(BehaviorMgr.call_behavior_fun, BehaviorMgr, self.v_owner, BehaviorMgr.EVENTS.ON_ROLE_BEHIT_STATE_CHANGE, Config.BEHIT_STATE_TYPE.TURN_OVER_CAN_CAST)
+  self.v_cast_skill_event_trigger = true
+end
+
+local FORBID_STATE = {
+  [STATE_NAME.move] = true,
+  [STATE_NAME.run] = true,
+  [STATE_NAME.jump] = true,
+  [STATE_NAME.attack] = true
+}
+
+function M:state_can_transit(state_name)
+  local is_in_forbit_time = self:in_forbid_time()
+  if FORBID_STATE[state_name] and is_in_forbit_time then
+    return false
+  end
+  return Base.state_can_transit(self, state_name)
+end
+
+function M:state_can_reenter()
+  return false
+end
+
+function M:state_on_leave()
+  self:_check_in_forbid_time()
+  Base.state_on_leave(self)
+  self.v_owner:set_godmode(false, "turn_over")
+end
+
+function M:state_update()
+  Base.state_update(self)
+  self:_check_remove_god_mode()
+  self:_check_in_forbid_time()
+end
+
+function M:state_get_name()
+  return STATE_NAME.turnover
+end
+
+return M

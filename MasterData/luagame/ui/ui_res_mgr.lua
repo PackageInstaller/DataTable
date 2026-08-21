@@ -1,0 +1,112 @@
+local Util = require("utils.util")
+local ItemHelper = require("utils.item_helper")
+local M = Util.create_class()
+local ResPool = Global.res_pool_mgr
+local Item_Type = {Main = 1, Battle = 2}
+local Dynamic_res_dic = {
+  [Item_Type.Main] = "ItemObj",
+  [Item_Type.Battle] = "BattleItemObj_"
+}
+local ItemClass = {
+  [Item_Type.Main] = require("uimodule.item.item_obj"),
+  [Item_Type.Battle] = require("uimodule.battle_bag.battle_item")
+}
+
+function M:_init()
+  self.v_item_res_list = {}
+  self.v_template_list = {}
+end
+
+function M:_get_item(item_type)
+  return ResPool:get_ui_obj(Dynamic_res_dic[item_type])
+end
+
+function M:release_all_item_res(ui)
+  local list = self.v_item_res_list[ui]
+  if list and next(list) ~= nil then
+    for _, uiobj in pairs(list) do
+      uiobj:ui_hide()
+      uiobj:ui_destroy()
+      ResPool:release(uiobj:get_lua_object())
+    end
+    self.v_item_res_list[ui] = nil
+  end
+  list = self.v_template_list[ui]
+  if list and next(list) ~= nil then
+    for template_key, v in pairs(list) do
+      for _, uiobj in pairs(v) do
+        uiobj:ui_hide()
+        uiobj:ui_destroy()
+        ResPool:release(uiobj:get_lua_object())
+      end
+    end
+    self.v_template_list[ui] = nil
+  end
+end
+
+function M:release_items_by_template_key(ui, template_key)
+  local list = self.v_template_list[ui]
+  if not (list and next(list)) or not list[template_key] then
+    return
+  end
+  for _, uiobj in pairs(list[template_key]) do
+    uiobj:ui_hide()
+    uiobj:ui_destroy()
+    ResPool:release(uiobj:get_lua_object())
+  end
+  list[template_key] = nil
+end
+
+function M:create_obj(parent_ui, parent, replace_obj, template_key, item_param, ...)
+  local item_type = ItemHelper.get_is_battle_item(item_param.item_id) and Item_Type.Battle or Item_Type.Main
+  local item = self:_get_item(item_type)
+  self:_adjust_item(item, parent, replace_obj, item_param)
+  local class = ItemClass[item_type]
+  local ui = class:ui_wrap(nil, item, true)
+  if item_type ~= Item_Type.Battle then
+    ui:set_data(item_param)
+  else
+    ui:set_battle_item_data(item_param.item_id, item_param.param)
+  end
+  local list
+  if template_key then
+    if not self.v_template_list[parent_ui] then
+      self.v_template_list[parent_ui] = {}
+    end
+    if not self.v_template_list[parent_ui][template_key] then
+      self.v_template_list[parent_ui][template_key] = {}
+    end
+    list = self.v_template_list[parent_ui][template_key]
+  else
+    if not self.v_item_res_list[parent_ui] then
+      self.v_item_res_list[parent_ui] = {}
+    end
+    list = self.v_item_res_list[parent_ui]
+  end
+  table.insert(list, ui)
+  return ui
+end
+
+function M:_adjust_item(item, parent, replace_obj, param)
+  local tra = item.transform
+  if parent then
+    tra:SetParent(parent.transform, false)
+    if replace_obj then
+      local replace_position = replace_obj.transform.localPosition
+      tra:SetLocalPositionA(replace_position.x, replace_position.y, replace_position.z)
+      self:_adjust_item_scale(tra, replace_obj)
+    end
+  elseif replace_obj then
+    tra:SetParent(replace_obj.transform, false)
+    tra:SetLocalPositionA(0, 0, 0)
+    self:_adjust_item_scale(tra, replace_obj)
+  end
+end
+
+function M:_adjust_item_scale(item_tra, replace_obj)
+  local origin = Util.get_rect_transform(nil, replace_obj)
+  local scale = origin.rect.width / 100
+  item_tra:SetLocalScaleA(scale, scale, scale)
+end
+
+return M

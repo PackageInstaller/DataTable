@@ -1,0 +1,41 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:on_click_btn()
+  self.v_parent_ui:on_click_option_btn(self.v_option_id)
+end
+
+function ui:ui_finish_load()
+  self:set_button_listener(self:get_button(), function()
+    self:on_click_btn()
+  end)
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(option_id)
+  self.v_option_id = option_id
+  local cfg = ShareRes.get_curse_option_cfg(option_id)
+  self.v_uicompents.AwardDesc_txt.text = cfg.Desc
+  self.v_uicompents.AwardName_txt.text = cfg.Name
+  ResMgr:load_set_icon(self.v_uicompents.AwardIcon_img, cfg.Icon, nil, true, self)
+end
+
+function ui:set_select(option_id)
+  if self.v_option_id == option_id then
+    self.v_uicompents.SelectPd_pd:ResetPD()
+    self.v_uicompents.SelectPd_pd:Play()
+    self.v_uiobjects.Select:SetActive(true)
+  else
+    self.v_uiobjects.Select:SetActive(false)
+  end
+end
+
+return ui

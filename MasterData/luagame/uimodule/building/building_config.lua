@@ -1,0 +1,49 @@
+local M = {}
+M.BUILDING_DISPATCH_TYPE = {NORMAL = 0, BATCH = 1}
+M.BUILDING_DISPATCH_TASK_TYPE = {
+  NORMAL = 1,
+  SPECIAL = 2,
+  BRANCH = 3,
+  BOX = 4
+}
+M.BUILDING_ROOT_MODEL_ID = 9999
+M.BUILDING_DEFAULT_MODEL = {
+  Capital = true,
+  CapitalSceneEffect = true,
+  SkyBox = true,
+  Light = true,
+  LV0 = true,
+  LV1 = true,
+  LV2 = true,
+  LV3 = true,
+  LV4 = true
+}
+M.BUILDING_WORK_TAG = {
+  NONE = 0,
+  WORKING = 1,
+  UNWORKING = 2,
+  CAN_GET_SOMETHING = 3
+}
+M.BUILDING_USE_ITEM = {
+  PLAYER_SP_ITEMID = Config.PLAYER_SP_ITEMID,
+  ITEM_31 = 31,
+  ITEM_1016 = 1016
+}
+
+function M.REFRESH_ADDTION_GROUP_FUNC(uiobj, building_type)
+  local buidling_cfg = ShareRes.get_building_cfg(building_type)
+  local building_lv = BuildingMgr:get_building_level(building_type)
+  uiobj.v_uicompents.Build_txt.text = buidling_cfg.Name
+  uiobj.v_uicompents.BuildLv_txt.text = Config.NUM_2_ROMAN[building_lv]
+  local effect_str
+  for i = building_lv, 1, -1 do
+    local buidling_lv_cfg = ShareRes.get_building_level_cfg(building_type, i)
+    effect_str = buidling_lv_cfg.UnlockEffectDesc[1]
+    if not Util.is_empty(effect_str) then
+      break
+    end
+  end
+  uiobj.v_uicompents.Effect_txt.text = effect_str
+end
+
+return M

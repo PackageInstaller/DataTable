@@ -1,0 +1,148 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local FATE_BOOK_TASK_ITEM_KEY = "FATE_BOOK_TASK_ITEM_KEY"
+local FATE_BOOK_TASK_REWARD_ITEM_KEY = "FATE_BOOK_TASK_REWARD_ITEM_KEY"
+local TASK_CONFIG = require("gamelogic.task.task_config")
+local TASK_STATE = TASK_CONFIG.TASK_STATE
+local CHAPTER_TASK_ITEM = require("uimodule.chapter.chapter_task_item")
+local STATE_TO_COLOR = {
+  [true] = "484243",
+  [false] = "F5EDE1"
+}
+
+function ui:click_get_award_btn(task_id)
+  local task_data = TaskMgr:get_task_by_id(task_id)
+  if task_data.state ~= TASK_STATE.receive then
+    return
+  end
+  TaskMgr:submit_task(task_id, function()
+    if not self:visible() or not self:has_inited() then
+      return
+    end
+    self:refresh_task_list()
+  end)
+end
+
+function ui:click_get_all_btn()
+  self.v_get_task_id_list = {}
+  for task_id, _ in pairs(self.v_task_data) do
+    local task_data = TaskMgr:get_task_by_id(task_id)
+    if task_data and task_data.state == TASK_STATE.receive then
+      table.insert(self.v_get_task_id_list, task_id)
+    end
+  end
+  TaskMgr:submit_task_list(self.v_get_task_id_list, function()
+    if not self:visible() or not self:has_inited() then
+      return
+    end
+    self:refresh_task_list()
+  end)
+end
+
+function ui:ui_finish_load()
+  self:set_button("BtnAllReceive", function()
+    self:click_get_all_btn()
+  end)
+  self:set_button("BtnRet1", function()
+    self:ui_hide()
+  end)
+  self.v_task_data = {}
+  self:register_exist_auto_template(FATE_BOOK_TASK_ITEM_KEY, self.v_uiobjects.CtTem, self.v_uiobjects.TaskContent)
+  self:register_exist_auto_template(FATE_BOOK_TASK_REWARD_ITEM_KEY, self.v_uiobjects.AwardItem, self.v_uiobjects.AwardContent)
+end
+
+function ui:ui_on_show()
+  self:bind_auto_mq(Const.MSG_ON_TASK_UPDATE, self.refresh_task_list, self)
+  self:refresh_task_list()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_task_list()
+  self:give_back_auto_cache(FATE_BOOK_TASK_ITEM_KEY)
+  self:give_back_auto_cache(FATE_BOOK_TASK_REWARD_ITEM_KEY)
+  local main_cfg = ChallengeRingPlusMgr:get_main_cfg()
+  self.v_task_group_id = main_cfg.WeekTaskGroup
+  if not Util.is_more_than_zero(self.v_task_group_id) then
+    return
+  end
+  local task_list = ShareRes.get_task_group(self.v_task_group_id)
+  if not task_list then
+    return
+  end
+  local new_task_data = {}
+  local is_have_task_receive = false
+  local task_count, suc_task_count = 0, 0
+  for _, task in pairs(task_list) do
+    local task_data = TaskMgr:get_task_by_id(task.Id)
+    if task_data then
+      task_count = task_count + 1
+      if task_data.state == TASK_STATE.receive then
+        is_have_task_receive = true
+        task_data.sort_index = 0
+      elseif task_data.state == TASK_STATE.received then
+        suc_task_count = suc_task_count + 1
+        task_data.sort_index = 2
+      else
+        task_data.sort_index = 1
+      end
+      task_data.task_group_cfg = task
+      table.insert(new_task_data, task_data)
+    end
+  end
+  self.v_uiobjects.BtnAllReceive:SetActive(is_have_task_receive)
+  self.v_uicompents.ProgressNow_txt.text = suc_task_count
+  self.v_uicompents.ProgressMax_txt.text = task_count
+  table.sort(new_task_data, function(a, b)
+    local a_priority = a.task_cfg.Priority
+    local b_priority = b.task_cfg.Priority
+    if a.sort_index == b.sort_index then
+      if a_priority == b_priority then
+        return a.id < b.id
+      else
+        return a_priority < b_priority
+      end
+    end
+    return a.sort_index < b.sort_index
+  end)
+  self:clear_task_item()
+  for _, task in pairs(new_task_data) do
+    local task_id = task.id
+    local task_data = TaskMgr:get_task_by_id(task_id)
+    if task_data then
+      local task_ui = self:get_auto_cache(FATE_BOOK_TASK_ITEM_KEY)
+      local item = CHAPTER_TASK_ITEM:ui_wrap_ex(self, task_ui, true)
+      item:set_data(task_id)
+      item:refresh_task_item()
+      item:refresh_task_get_state()
+      self.v_task_data[task_id] = item
+    end
+  end
+  local task_content_obj = Util.get_rect_transform(nil, self.v_uiobjects.TaskContent)
+  local x = task_content_obj.anchoredPosition.x
+  task_content_obj.transform:SetAnchoredPositionA(x, 0)
+end
+
+function ui:clear_task_item()
+  self:give_back_auto_cache(FATE_BOOK_TASK_ITEM_KEY)
+  self:give_back_auto_cache(FATE_BOOK_TASK_REWARD_ITEM_KEY)
+  for key, item in pairs(self.v_task_data) do
+    item:ui_hide()
+    item:ui_destroy()
+    self.v_task_data[key] = nil
+  end
+end
+
+function ui:get_award_item()
+  return self:get_auto_cache(FATE_BOOK_TASK_REWARD_ITEM_KEY)
+end
+
+function ui:get_color(is_receive)
+  return STATE_TO_COLOR[is_receive]
+end
+
+return ui

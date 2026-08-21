@@ -1,0 +1,31 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local Timer = Global.timer
+local MODEL = {}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("Return", function()
+    self:ui_hide()
+  end)
+end
+
+function ui:ui_on_show(item_id)
+  local item_cfg = ShareRes.get_item_cfg(item_id)
+  local item_icon = self.v_uicompents.Titem_icon_img
+  local path = string.format("Icon/Item/%s", item_cfg.Icon)
+  ResMgr:load_set_icon(item_icon, path)
+  local item_name = self.v_uicompents.Titem_name_txt
+  item_name.text = item_cfg.Name
+  local item_detil = self.v_uicompents.Item_detil_txt
+  item_detil.text = item_cfg.Desc
+  local item_amount = self.v_uicompents.Item_amount_txt
+  local item_num = BagMgr:get_item_num(item_id)
+  item_amount.text = item_num
+end
+
+function ui:ui_on_hide()
+end
+
+return ui

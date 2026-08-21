@@ -1,0 +1,46 @@
+local LoopListClass = require("ui.widget.infinite_loop_list")
+local ItemClass = require("uimodule.union.invite_message.union_invite_item")
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_invite_list = {
+    "InviteList",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_list_view = LoopListClass:new(self, self.v_invite_list, ItemClass)
+end
+
+function ui:ui_on_show()
+  UnionMgr:request_get_join_union_invitations(function()
+    self:_set_invite_list()
+  end)
+  self:_regist_client_event()
+end
+
+function ui:ui_on_hide()
+  self.v_list_view:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+  self.v_list_view:ui_on_destroy()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_REFUSE_UNION_INVATION, self._set_invite_list, self)
+end
+
+function ui:_set_invite_list()
+  local list = UnionMgr:get_invitation_list()
+  table.sort(list, function(a, b)
+    return a.invite_time > b.invite_time
+  end)
+  self.v_uiobjects.NoInvite:SetActive(0 == #list)
+  self.v_list_view:refresh_data(list)
+end
+
+return ui

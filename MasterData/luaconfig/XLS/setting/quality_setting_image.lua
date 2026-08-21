@@ -1,0 +1,38 @@
+return {
+  {
+    Id = 1,
+    Image = {
+      "InitailSet/jq_bg_hzxz_fsj_pic1",
+      "InitailSet/jq_bg_hzxz_fsj_pic1",
+      "InitailSet/jq_bg_hzxz_fsj_pic2",
+      "InitailSet/jq_bg_hzxz_fsj_pic3",
+      "InitailSet/jq_bg_hzxz_fsj_pic4"
+    },
+    ImageReflect = {
+      "InitailSet/jq_bg_hzxz_dy2",
+      "InitailSet/jq_bg_hzxz_dy2",
+      "InitailSet/jq_bg_hzxz_dy2",
+      "InitailSet/jq_bg_hzxz_dy2",
+      "InitailSet/jq_bg_hzxz_dy2"
+    },
+    ViewType = 1
+  },
+  {
+    Id = 2,
+    Image = {
+      "InitailSet/jq_bg_hzxz_gj_pic1",
+      "InitailSet/jq_bg_hzxz_gj_pic1",
+      "InitailSet/jq_bg_hzxz_gj_pic2",
+      "InitailSet/jq_bg_hzxz_gj_pic3",
+      "InitailSet/jq_bg_hzxz_gj_pic4"
+    },
+    ImageReflect = {
+      "InitailSet/jq_bg_hzxz_dy1",
+      "InitailSet/jq_bg_hzxz_dy1",
+      "InitailSet/jq_bg_hzxz_dy1",
+      "InitailSet/jq_bg_hzxz_dy1",
+      "InitailSet/jq_bg_hzxz_dy1"
+    },
+    ViewType = 2
+  }
+}

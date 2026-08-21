@@ -1,0 +1,14 @@
+local Base = require("manager.magic.magic_imp.magic_base")
+local M = Util.create_child_mt(Base)
+
+function M:_init(owner, magic_info)
+  Base._init(self, owner, magic_info)
+end
+
+function M:on_effect(magic_list)
+end
+
+function M.on_trigger_effect(magic_mgr, magic_map)
+end
+
+return M

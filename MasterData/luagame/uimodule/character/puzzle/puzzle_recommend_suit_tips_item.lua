@@ -1,0 +1,46 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+
+function M:ui_finish_load()
+  self:set_button("QualityBg", function()
+    self:on_click()
+  end)
+end
+
+function M:on_click()
+  if self.v_data then
+    Util.show_puzzle_tip(self.v_data.uuid)
+  elseif self.v_puzzle_id then
+    UIMgr:get_ui("itemTip"):ui_show({
+      item_id = self.v_puzzle_id,
+      jump_cb = function()
+        self:ui_hide()
+      end
+    })
+  end
+end
+
+function M:ui_on_hide()
+  self.v_data = nil
+end
+
+function M:set_data(data, puzzle_id)
+  self.v_data = data
+  self.v_puzzle_id = puzzle_id
+  local quality = self.v_data and self.v_data.quality
+  quality = quality or ShareRes.get_buddy_puzzle_cfg(puzzle_id).Quality
+  local item_icon_path = ShareRes.get_item_icon_path(puzzle_id)
+  local item_quality_path = ShareRes.get_quality_path(quality)
+  ResMgr:load_set_icon(self.v_uicompents.Icon_img, item_icon_path)
+  ResMgr:load_set_icon(self.v_uicompents.QualityBg_img, item_quality_path)
+  self.v_attr_num = self.v_data and self.v_data.count or 0
+  self.v_uiobjects.NoPlugins:SetActive(self.v_data == nil)
+  self.v_uicompents.Num_txt.text = self.v_attr_num
+end
+
+function M:set_attr_num_show(is_show)
+  self.v_uiobjects.NumBg:SetActive(is_show and 0 ~= self.v_attr_num)
+  self.v_uiobjects.NoAttrTag:SetActive(is_show and 0 == self.v_attr_num)
+end
+
+return M

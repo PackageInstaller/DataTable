@@ -1,0 +1,837 @@
+local Base = require("gamelogic.base_system")
+local _tinsert = table.insert
+local _tsort = table.sort
+local CommonDefine = require("cs_share.common_define")
+local RELIC_ENTRY_TYPE = CommonDefine.RELIC_ENTRY_TYPE
+local Timer = Global.timer
+local SORT_TYPE = {
+  quality = 1,
+  lv = 2,
+  time = 3
+}
+local SORT_RULE = {
+  [SORT_TYPE.quality] = {
+    "quality",
+    "lv",
+    "id"
+  },
+  [SORT_TYPE.lv] = {
+    "lv",
+    "quality",
+    "id"
+  },
+  [SORT_TYPE.time] = {
+    "time",
+    "quality",
+    "lv",
+    "id"
+  }
+}
+local M = Util.create_child_mt(Base)
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_all_relic_map = {}
+  self.v_buddy_relic_map = {}
+  self:reset_filter()
+end
+
+function M:on_reconnect()
+  self.v_all_relic_map = {}
+  self.v_buddy_relic_map = {}
+  self:reset_filter()
+end
+
+function M:reset_filter()
+  self.v_is_drop = false
+  self.v_sort_type = SORT_TYPE.quality
+  self.v_filter_slot = nil
+  self.v_filter_quality = nil
+  self.v_filter_attr = nil
+  self.v_filter_suit = nil
+  self.v_filter_exclude_uuid = nil
+  self.v_filter_include_exp_item = nil
+end
+
+function M:set_relic_data(relic_data)
+  local uuid = relic_data.uuid
+  self.v_all_relic_map[uuid] = relic_data
+  local owner_id = relic_data.buddy_id or 0
+  if 0 ~= owner_id then
+    local relic_id = relic_data.id
+    local relic_cfg = ShareRes.get_relic_cfg(relic_id)
+    local slot_idx = relic_cfg.Slot
+    self:build_relic_info(owner_id, slot_idx).data = relic_data
+  end
+end
+
+function M:set_slot_unlock(unlock_slot_id)
+  local slot_cfg = ShareRes.create("relic.relic_slot", unlock_slot_id)
+  local owner_id = slot_cfg.BuddyId
+  local slot_idx = slot_cfg.Slot
+  self:build_relic_info(owner_id, slot_idx).unlock = true
+end
+
+function M:is_buddy_slot_unlock(buddy_id, slot_idx)
+  return self:get_relic_info_by_buddy_slot(buddy_id, slot_idx).unlock == true
+end
+
+function M:build_relic_info(buddy_id, slot_idx)
+  if not self.v_buddy_relic_map[buddy_id] then
+    self.v_buddy_relic_map[buddy_id] = {}
+  end
+  if not self.v_buddy_relic_map[buddy_id][slot_idx] then
+    self.v_buddy_relic_map[buddy_id][slot_idx] = {}
+  end
+  return self.v_buddy_relic_map[buddy_id][slot_idx]
+end
+
+function M:get_relic_info_by_buddy_slot(buddy_id, slot_idx)
+  if not self.v_buddy_relic_map[buddy_id] then
+    return {}
+  end
+  if not self.v_buddy_relic_map[buddy_id][slot_idx] then
+    return {}
+  end
+  return self.v_buddy_relic_map[buddy_id][slot_idx]
+end
+
+function M:get_relic_uuid_by_buddy_slot(buddy_id, slot_idx)
+  if not buddy_id or 0 == buddy_id then
+    return nil
+  end
+  local info = self:get_relic_info_by_buddy_slot(buddy_id, slot_idx)
+  if info and info.data then
+    return info.data.uuid
+  end
+  return nil
+end
+
+function M:get_buddy_relic(buddy_id)
+  local relics = self.v_buddy_relic_map[buddy_id]
+  if not relics or not next(relics) then
+    return nil
+  end
+  return relics
+end
+
+function M:update_relic_lock(uuid, is_lock)
+  local relic_data = self.v_all_relic_map[uuid]
+  if relic_data then
+    relic_data.lock = is_lock and 1 or 0
+    local old_owner_id = relic_data.buddy_id
+    if 0 ~= old_owner_id then
+      local slot_idx = ShareRes.get_relic_cfg(relic_data.id).Slot
+      local buddy_map_data = self:build_relic_info(old_owner_id, slot_idx).data
+      if buddy_map_data then
+        buddy_map_data.lock = is_lock and 1 or 0
+      end
+    end
+  end
+end
+
+function M:on_gs2c_relic_list(data)
+  for _, relic_data in pairs(data.relics) do
+    local uuid = relic_data.uuid
+    self.v_all_relic_map[uuid] = relic_data
+    local owner_id = relic_data.buddy_id or 0
+    if 0 ~= owner_id then
+      local relic_id = relic_data.id
+      local relic_cfg = ShareRes.get_relic_cfg(relic_id)
+      local slot_idx = relic_cfg.Slot
+      self:build_relic_info(owner_id, slot_idx).data = relic_data
+    end
+  end
+  for _, unlock_slot_id in pairs(data.slots) do
+    self:set_slot_unlock(unlock_slot_id)
+  end
+  MsgGame:mq_publish2(Const.MSG_ON_RELIC_UPDATE)
+end
+
+function M:on_gs2c_relic_update(data)
+  local net_data = data.relic
+  local slot_idx = ShareRes.get_relic_cfg(net_data.id).Slot
+  local uuid = net_data.uuid
+  local owner_id = net_data.buddy_id
+  if 0 ~= owner_id then
+    local owner_old_relic_data = self:get_relic_info_by_buddy_slot(owner_id, slot_idx).data
+    if owner_old_relic_data then
+      local owner_old_uuid = owner_old_relic_data.uuid
+      if self.v_all_relic_map[owner_old_uuid] then
+        self.v_all_relic_map[owner_old_uuid].buddy_id = 0
+      end
+    end
+    self:build_relic_info(owner_id, slot_idx).data = net_data
+  end
+  local old_relic_data = self.v_all_relic_map[uuid]
+  if old_relic_data then
+    local old_owner_id = old_relic_data.buddy_id
+    if 0 ~= old_owner_id then
+      self:build_relic_info(old_owner_id, slot_idx).data = nil
+    end
+  end
+  self.v_all_relic_map[uuid] = net_data
+  if 0 ~= owner_id then
+    self:build_relic_info(owner_id, slot_idx).data = net_data
+  end
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_RELIC_UPDATE)
+  msg.mm_x = uuid
+end
+
+function M:req_c2gs_relic_up_level(uuid, exp_item_list, relic_item_list, callback)
+  Network:call("c2gs_relic_up_level", {
+    uuid = uuid,
+    exp_item_list = exp_item_list,
+    relic_item_list = relic_item_list
+  }, function(ok, resp)
+    if ok then
+      self:remove_relics(relic_item_list)
+    end
+    if callback then
+      callback(ok)
+    end
+  end)
+end
+
+function M:remove_relics(relic_item_list)
+  if not relic_item_list then
+    return
+  end
+  for i, uuid in ipairs(relic_item_list) do
+    local old_relic_data = self.v_all_relic_map[uuid]
+    if old_relic_data then
+      local old_owner_id = old_relic_data.buddy_id
+      if 0 ~= old_owner_id then
+        local slot_idx = ShareRes.get_relic_cfg(old_relic_data.id).Slot
+        self:build_relic_info(old_owner_id, slot_idx).data = nil
+      end
+    end
+    self.v_all_relic_map[uuid] = nil
+  end
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_RELIC_UPDATE)
+end
+
+function M:req_c2gs_relic_reflush_entry(uuid, entry_id, relic_item_list, callback)
+  Network:call("c2gs_relic_reflush_entry", {
+    uuid = uuid,
+    entry_id = entry_id,
+    relic_item_list = relic_item_list
+  }, function(ok, resp)
+    if ok then
+      self:remove_relics(relic_item_list)
+      if callback then
+        callback()
+      end
+    end
+  end)
+end
+
+function M:req_c2gs_relic_repeat_entry(uuid, entry_id, callback)
+  Network:call("c2gs_relic_repeat_entry", {uuid = uuid, entry_id = entry_id}, function(ok, resp)
+    if ok and callback then
+      callback()
+    end
+  end)
+end
+
+function M:req_c2gs_relic_remove_temp_entry(uuid, entry_id, callback)
+  Network:call("c2gs_relic_remove_temp_entry", {uuid = uuid, entry_id = entry_id}, function(ok, resp)
+    if ok and callback then
+      callback()
+    end
+  end)
+end
+
+function M:on_gs2c_relic_slot_unlock(resp)
+  self:set_slot_unlock(resp.id)
+  MsgGame:mq_publish2(Const.MSG_ON_RELIC_UPDATE)
+end
+
+function M:req_lock_relic(uuid, callback)
+  Network:call("c2gs_relic_lock", {uuid = uuid}, function(ok, resp)
+    if ok then
+      self:update_relic_lock(uuid, true)
+      if callback then
+        callback()
+      end
+      local msg = MsgGame:mq_publish2(Const.MSG_ON_RELIC_LOCK_UPDATE)
+      msg.mm_x = uuid
+    end
+  end)
+end
+
+function M:req_unlock_relic(uuid, callback)
+  Network:call("c2gs_relic_unlock", {uuid = uuid}, function(ok, resp)
+    if ok then
+      self:update_relic_lock(uuid, false)
+      if callback then
+        callback()
+      end
+      local msg = MsgGame:mq_publish2(Const.MSG_ON_RELIC_LOCK_UPDATE)
+      msg.mm_x = uuid
+    end
+  end)
+end
+
+function M:req_wear_relic(uuid, buddy_id)
+  Network:call("c2gs_relic_inlay", {uuid = uuid, buddy_id = buddy_id}, function(ok, resp)
+    if ok then
+    end
+  end)
+end
+
+function M:req_take_off_relic(uuid, callback)
+  Network:call("c2gs_relic_cancel_inlay", {uuid = uuid}, function(ok, resp)
+    if ok and callback then
+      callback()
+    end
+  end)
+end
+
+function M:get_all_relic_data()
+  return self.v_all_relic_map
+end
+
+function M:get_all_relic_data_list()
+  local list = {}
+  for _, v in pairs(self.v_all_relic_map) do
+    _tinsert(list, v)
+  end
+  return list
+end
+
+function M:get_all_relic_data()
+  return self.v_all_relic_map
+end
+
+function M:get_relic_data_by_uuid(uuid)
+  return self.v_all_relic_map[uuid]
+end
+
+function M:check_new_entry_by_uuid(relic_uuid)
+  local relic_data = self:get_relic_data_by_uuid(relic_uuid)
+  if relic_data then
+    for _, entry in ipairs(relic_data.entrys) do
+      if entry.new_entry_id and 0 ~= entry.new_entry_id then
+        return true
+      end
+    end
+  end
+  return false
+end
+
+function M:check_new_entry_by_buddy_slot(buddy_id, slot_idx)
+  local relic_info = self:get_relic_info_by_buddy_slot(buddy_id, slot_idx)
+  local relic_data = relic_info.data
+  if not relic_info.unlock or not relic_data then
+    return false
+  end
+  if relic_data.entrys then
+    for _, entry in ipairs(relic_data.entrys) do
+      if entry.new_entry_id and 0 ~= entry.new_entry_id then
+        return true
+      end
+    end
+  end
+  return false
+end
+
+function M:check_buddy_slot_has_free_relic(if_exclude_using, buddy_id, slot_idx)
+  local relic_info = self:get_relic_info_by_buddy_slot(buddy_id, slot_idx)
+  local relic_data = relic_info.data
+  if not relic_info.unlock or nil ~= relic_data then
+    return false
+  end
+  return self:check_filter_suc(if_exclude_using, nil, slot_idx)
+end
+
+function M:check_filter_suc(if_exclude_using, exclude_uuid, filter_slot, filter_suit, filter_attr, filter_attr_quality)
+  for _, relic_data in pairs(self.v_all_relic_map) do
+    local relic_cfg = ShareRes.get_relic_cfg(relic_data.id)
+    if self:check_pass_exclude_using_filter(relic_data.buddy_id, if_exclude_using) and self:check_pass_exclude_uuid_filter(relic_data.uuid, exclude_uuid) and self:check_pass_slot_filter(relic_cfg.Slot, filter_slot) and self:check_pass_quality_filter(relic_cfg.Quality, filter_attr_quality) and self:check_pass_suit_filter(relic_cfg.SuitId, filter_suit) and self:check_pass_attr_filter(relic_data.entrys, filter_attr) then
+      return true
+    end
+  end
+  return false
+end
+
+function M:check_pass_exclude_using_filter(buddy_id, if_exclude_using)
+  if not if_exclude_using then
+    return true
+  end
+  return not buddy_id or 0 == buddy_id
+end
+
+function M:check_pass_exclude_uuid_filter(uuid, exclude_uuid)
+  if not exclude_uuid then
+    return true
+  end
+  return exclude_uuid ~= uuid
+end
+
+function M:check_pass_slot_filter(slot_idx, filter_slot)
+  if not filter_slot then
+    return true
+  end
+  return slot_idx == filter_slot or 0 == filter_slot
+end
+
+function M:check_pass_quality_filter(quality, filter_quality)
+  if not filter_quality then
+    return true
+  end
+  return quality == filter_quality
+end
+
+function M:check_pass_suit_filter(suit_id, filter_suit)
+  if not filter_suit then
+    return true
+  end
+  return true == filter_suit[suit_id]
+end
+
+function M:check_pass_attr_filter(entrys, filter_attr)
+  if not filter_attr then
+    return true
+  end
+  for key, entry in pairs(entrys) do
+    local relic_entry_cfg = ShareRes.create("relic.relic_entry", entry.entry_id)
+    print(key, relic_entry_cfg.AttrId, filter_attr[relic_entry_cfg.AttrId])
+    if filter_attr[relic_entry_cfg.AttrId] then
+      return true
+    end
+  end
+  return false
+end
+
+function M:get_filter_sort_list(filter_slot, exclude_uuid, need_quality, if_add_exp_item, first_uuid)
+  local list = {}
+  for _, relic_data in pairs(self.v_all_relic_map) do
+    local relic_cfg = ShareRes.get_relic_cfg(relic_data.id)
+    if self:check_pass_exclude_uuid_filter(relic_data.uuid, exclude_uuid) and self:check_pass_slot_filter(relic_cfg.Slot, filter_slot) and self:check_pass_quality_filter(relic_cfg.Quality, need_quality) and self:check_pass_suit_filter(relic_cfg.SuitId, self.v_filter_suit) and self:check_pass_attr_filter(relic_data.entrys, self.v_filter_attr) then
+      local owner_id = relic_data.buddy_id or 0
+      _tinsert(list, {
+        relic_uuid = relic_data.uuid,
+        is_exp_item = false,
+        is_wear = 0 ~= owner_id,
+        id = relic_data.id,
+        lv = relic_data.lv,
+        time = relic_data.create_time,
+        quality = relic_cfg.Quality
+      })
+    end
+  end
+  if if_add_exp_item then
+    local relic_cfg = ShareRes.create("relic.relic_item")
+    for exp_item_id, _ in pairs(relic_cfg) do
+      local own_num = BagMgr:get_item_num(exp_item_id)
+      local quality = ShareRes.get_item_quality(exp_item_id)
+      if own_num > 0 then
+        _tinsert(list, {
+          exp_item_id = exp_item_id,
+          is_exp_item = true,
+          quality = quality
+        })
+      end
+    end
+  end
+  local sort_rule = SORT_RULE[self.v_sort_type or SORT_TYPE.quality]
+  table.sort(list, function(a, b)
+    if first_uuid then
+      if a.relic_uuid == first_uuid then
+        return true
+      elseif b.relic_uuid == first_uuid then
+        return false
+      end
+    end
+    if a.is_exp_item ~= b.is_exp_item then
+      return a.is_exp_item
+    elseif a.is_exp_item then
+      return a.quality > b.quality
+    end
+    for _, key in ipairs(sort_rule) do
+      if a[key] ~= b[key] then
+        local is_drop = self.v_is_drop
+        if "time" == key then
+          is_drop = not is_drop
+        end
+        if is_drop then
+          return a[key] < b[key]
+        else
+          return a[key] > b[key]
+        end
+      end
+    end
+    if do_sort_wear_state and a.is_wear ~= b.is_wear then
+      return a.is_wear
+    end
+    return a.relic_uuid > b.relic_uuid
+  end)
+  return list
+end
+
+function M:is_slot_unlock(slot_id, buddy_id, slot_idx)
+  if slot_idx then
+    slot_id = ShareRes.get_relic_buddy_slot_id(buddy_id, slot_idx)
+  end
+  return self.v_unlock_slot_map[slot_id] ~= nil
+end
+
+function M:is_buddy_empty(buddy_id)
+  local buddy_relic = self:get_buddy_relic(buddy_id)
+  if not buddy_relic then
+    return true
+  end
+  for _, relic_info in pairs(buddy_relic) do
+    if relic_info.unlock and relic_info.data then
+      return false
+    end
+  end
+  return true
+end
+
+function M:get_attr_list_by_buddy(buddy_id)
+  local buddy_relic = self:get_buddy_relic(buddy_id)
+  if not buddy_relic then
+    return nil
+  end
+  local attr_list = {}
+  local attrs_id2_val = {}
+  for _, relic_info in pairs(buddy_relic) do
+    local data = relic_info.data
+    if relic_info.unlock and data then
+      local relic_lv = data.lv
+      local entrys = data.entrys
+      for _, entry in pairs(entrys) do
+        local attr_id, val = self:calculate_attr(relic_lv, entry.entry_id, entry.type)
+        attrs_id2_val[attr_id] = attrs_id2_val[attr_id] and attrs_id2_val[attr_id] + val or val
+      end
+    end
+  end
+  for attr_id, val in pairs(attrs_id2_val) do
+    _tinsert(attr_list, {attr_id = attr_id, val = val})
+  end
+  if next(attr_list) then
+    _tsort(attr_list, function(a, b)
+      return a.attr_id < b.attr_id
+    end)
+  end
+  return attr_list
+end
+
+function M:calculate_attr(relic_lv, entry_id, entry_type)
+  local relic_entry_cfg = ShareRes.create("relic.relic_entry", entry_id)
+  assert(relic_entry_cfg, "不存在词条配置" .. entry_id)
+  local attr_id, val = relic_entry_cfg.AttrId, relic_entry_cfg.BaseAttr
+  if entry_type == RELIC_ENTRY_TYPE.PRINCIPAL then
+    val = val + relic_lv * relic_entry_cfg.LevelAttr
+  end
+  return attr_id, val
+end
+
+function M:get_active_suit_list_by_buddy(buddy_id)
+  local buddy_relic = self:get_buddy_relic(buddy_id)
+  if not buddy_relic then
+    return nil
+  end
+  local suit_counter = {}
+  for slot_idx = 1, 4 do
+    local relic_info = buddy_relic[slot_idx]
+    local relic_data = relic_info and relic_info.data
+    if relic_info and relic_info.unlock and relic_data then
+      local relic_cfg = ShareRes.get_relic_cfg(relic_data.id)
+      local suit_id = relic_cfg.SuitId
+      if not suit_counter[suit_id] then
+        suit_counter[suit_id] = {count = 1, sort = slot_idx}
+      else
+        suit_counter[suit_id].count = suit_counter[suit_id].count + 1
+      end
+    end
+  end
+  local suit_id2_list = {}
+  for suit_id, data in pairs(suit_counter) do
+    local suit_cfg = ShareRes.create("relic.relic_suit", suit_id)
+    assert(suit_cfg, "不存在套装配置" .. suit_id)
+    for count_key, cfg in pairs(suit_cfg.Suit) do
+      if count_key <= data.count then
+        if not suit_id2_list[suit_id] then
+          suit_id2_list[suit_id] = {
+            active_suit = {count_key},
+            sort = data.sort
+          }
+        else
+          _tinsert(suit_id2_list[suit_id].active_suit, count_key)
+        end
+      end
+    end
+  end
+  local suit_list = {}
+  for suit_id, v in pairs(suit_id2_list) do
+    _tinsert(suit_list, {
+      suit_id = suit_id,
+      active_suit = v.active_suit,
+      sort = v.sort
+    })
+  end
+  if next(suit_list) then
+    _tsort(suit_list, function(a, b)
+      return a.sort < b.sort
+    end)
+  end
+  return suit_list
+end
+
+function M:get_suit_active_count(relic_uuid)
+  local relic_data = self:get_relic_data_by_uuid(relic_uuid)
+  local buddy_id = relic_data.buddy_id or 0
+  if 0 == buddy_id then
+    return 0
+  end
+  local buddy_relic = self:get_buddy_relic(buddy_id)
+  if not buddy_relic then
+    return 0
+  end
+  local relic_cfg = ShareRes.get_relic_cfg(relic_data.id)
+  local suit_id = relic_cfg.SuitId
+  local count = 0
+  for _, relic_info in pairs(buddy_relic) do
+    local _relic_data = relic_info.data
+    if _relic_data and _relic_data.id then
+      local _relic_cfg = ShareRes.get_relic_cfg(_relic_data.id)
+      if _relic_cfg.SuitId == suit_id then
+        count = count + 1
+      end
+    end
+  end
+  return count
+end
+
+function M:get_suit_active_count_ex(suit_id, buddy_id)
+  local buddy_relic = self:get_buddy_relic(buddy_id)
+  if not buddy_relic then
+    return 0
+  end
+  local count = 0
+  for _, relic_info in pairs(buddy_relic) do
+    local _relic_data = relic_info.data
+    if _relic_data and _relic_data.id then
+      local _relic_cfg = ShareRes.get_relic_cfg(_relic_data.id)
+      if _relic_cfg.SuitId == suit_id then
+        count = count + 1
+      end
+    end
+  end
+  return count
+end
+
+function M:get_relic_red_by_buddy(buddy_id)
+  local ENGRAVED_SYS_ID = 37
+  if not SysOpenMgr:get_sys_is_open(ENGRAVED_SYS_ID) then
+    return false
+  end
+  for idx = 1, 4 do
+    if self:check_buddy_slot_has_free_relic(true, buddy_id, idx) then
+      return true
+    end
+    if self:check_new_entry_by_buddy_slot(buddy_id, idx) then
+      return true
+    end
+  end
+  return false
+end
+
+function M:get_relic_suit_data_by_buddy_id(buddy_id)
+  local buddy_relic = self:get_buddy_relic(buddy_id)
+  if not buddy_relic then
+    return
+  end
+  local suit = {}
+  local all_relic_cfg = ShareRes.create("relic.relic")
+  local relic_cfg
+  for _, relic_info in pairs(buddy_relic) do
+    local relic_data = relic_info.data
+    if relic_data and relic_data.id then
+      relic_cfg = all_relic_cfg[relic_data.id]
+      local suit_id = relic_cfg.SuitId
+      suit[suit_id] = (suit[relic_cfg.SuitId] or 0) + 1
+    end
+  end
+  return suit
+end
+
+function M:get_relic_suit_data_by_fixed_id(fixed_id)
+  local fixed_buddy_cfg = ShareRes.get_fixed_buddy_config(fixed_id)
+  if not fixed_buddy_cfg then
+    return
+  end
+  local relic_data_list = fixed_buddy_cfg.Relic
+  if not relic_data_list or not next(relic_data_list) then
+    return
+  end
+  local suit = {}
+  local all_relic_cfg = ShareRes.create("relic.relic")
+  local relic_cfg
+  for _, data in pairs(relic_data_list) do
+    relic_cfg = all_relic_cfg[data.RelicId]
+    local suit_id = relic_cfg.SuitId
+    suit[suit_id] = (suit[suit_id] or 0) + 1
+  end
+  return suit
+end
+
+function M:add_relic_attr_into_map(buddy_id, attr_map)
+  local buddy_relic = self:get_buddy_relic(buddy_id)
+  if not buddy_relic then
+    return attr_map
+  end
+  for _, relic_info in pairs(buddy_relic) do
+    local data = relic_info.data
+    if relic_info.unlock and data then
+      local relic_lv = data.lv
+      local entrys = data.entrys
+      for _, entry in pairs(entrys) do
+        local attr_id, val = self:calculate_attr(relic_lv, entry.entry_id, entry.type)
+        attr_map[attr_id] = attr_map[attr_id] and attr_map[attr_id] + val or val
+      end
+    end
+  end
+  return attr_map
+end
+
+function M:add_simple_relic_attr_into_map(simple_relics, attr_map)
+  local relic_datas = simple_relics
+  if not relic_datas then
+    return attr_map
+  end
+  for _, data in pairs(relic_datas) do
+    if data then
+      local relic_lv = data.lv
+      for _, entry_id in pairs(data.prc_entry) do
+        local attr_id, val = RelicMgr:calculate_attr(relic_lv, entry_id, 1)
+        attr_map[attr_id] = attr_map[attr_id] and attr_map[attr_id] + val or val
+      end
+      for _, entry_id in pairs(data.aux_entry) do
+        local attr_id, val = RelicMgr:calculate_attr(relic_lv, entry_id, 2)
+        attr_map[attr_id] = attr_map[attr_id] and attr_map[attr_id] + val or val
+      end
+    end
+  end
+  return attr_map
+end
+
+function M:get_attrs_by_buddy(buddy_id)
+  local buddy_relic = self:get_buddy_relic(buddy_id)
+  if not buddy_relic then
+    return nil
+  end
+  local attr_map = {}
+  for _, relic_info in pairs(buddy_relic) do
+    local data = relic_info.data
+    if relic_info.unlock and data then
+      local relic_lv = data.lv
+      local entrys = data.entrys
+      for _, entry in pairs(entrys) do
+        local attr_id, val = self:calculate_attr(relic_lv, entry.entry_id, entry.type)
+        attr_map[attr_id] = attr_map[attr_id] and attr_map[attr_id] + val or val
+      end
+    end
+  end
+  return attr_map
+end
+
+function M:get_attrs_by_simple_relic(simple_relics)
+  local relic_datas = simple_relics
+  local attr_map = {}
+  if not relic_datas then
+    return attr_map
+  end
+  for _, data in pairs(relic_datas) do
+    if data then
+      local relic_lv = data.lv
+      if data.prc_entry then
+        for _, entry_id in pairs(data.prc_entry) do
+          local attr_id, val = self:calculate_attr(relic_lv, entry_id, 1)
+          attr_map[attr_id] = attr_map[attr_id] and attr_map[attr_id] + val or val
+        end
+      end
+      if data.aux_entry then
+        for _, entry_id in pairs(data.aux_entry) do
+          local attr_id, val = self:calculate_attr(relic_lv, entry_id, 2)
+          attr_map[attr_id] = attr_map[attr_id] and attr_map[attr_id] + val or val
+        end
+      end
+    end
+  end
+  return attr_map
+end
+
+function M:build_simple_relic_data(buddy_id)
+  local relic_data, relic_slot = {}, {}
+  for slot = 1, 4 do
+    local info = self:get_relic_info_by_buddy_slot(buddy_id, slot)
+    local raw_data = self:get_relic_info_by_buddy_slot(buddy_id, slot).data
+    if raw_data then
+      local simple_relic = {}
+      simple_relic.id = raw_data.id
+      simple_relic.lv = raw_data.lv
+      simple_relic.prc_entry = {}
+      simple_relic.aux_entry = {}
+      for _, entry in ipairs(raw_data.entrys) do
+        if 1 == entry.type then
+          _tinsert(simple_relic.prc_entry, entry.entry_id)
+        else
+          _tinsert(simple_relic.aux_entry, entry.entry_id)
+        end
+      end
+      _tinsert(relic_data, simple_relic)
+      if info.unlock then
+        local buddy_slot_id = ShareRes.get_relic_buddy_slot_id(buddy_id, slot)
+        _tinsert(relic_slot, buddy_slot_id)
+      end
+    end
+  end
+  return relic_data, relic_slot
+end
+
+function M:get_simple_relic_magic(simple_relics)
+  if not simple_relics then
+    return nil
+  end
+  local suit_counter = {}
+  for _, relic_data in ipairs(simple_relics) do
+    local relic_cfg = ShareRes.get_relic_cfg(relic_data.id)
+    local suit_id = relic_cfg.SuitId
+    if not suit_counter[suit_id] then
+      suit_counter[suit_id] = 1
+    else
+      suit_counter[suit_id] = suit_counter[suit_id] + 1
+    end
+  end
+  local magic_list = {}
+  for suit_id, count in pairs(suit_counter) do
+    local suit_cfg = ShareRes.create("relic.relic_suit", suit_id)
+    for count_key, cfg in pairs(suit_cfg.Suit) do
+      if count_key <= count then
+        _tinsert(magic_list, cfg.Magic)
+      end
+    end
+  end
+  return magic_list
+end
+
+function M:get_different_relic_count()
+  if not self.v_all_relic_map then
+    return 0
+  end
+  local count = 0
+  local list = {}
+  for index, relic_data in pairs(self.v_all_relic_map) do
+    if not list[relic_data.id] then
+      count = count + 1
+      list[relic_data.id] = 1
+    end
+  end
+  return count
+end
+
+return M

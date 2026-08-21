@@ -1,0 +1,506 @@
+return {
+  {
+    AttrId = 4,
+    BaseAttr = 335,
+    Desc = "生命+335",
+    Id = 1,
+    LevelAttr = 81
+  },
+  {
+    AttrId = 20,
+    BaseAttr = 20,
+    Desc = "攻击+20",
+    Id = 2,
+    LevelAttr = 4.8
+  },
+  {
+    AttrId = 22,
+    BaseAttr = 11.4,
+    Desc = "防御+11.4",
+    Id = 3,
+    LevelAttr = 2.6
+  },
+  {
+    AttrId = 30,
+    BaseAttr = 350.0,
+    Desc = "水伤害增幅+3.5%",
+    Id = 4,
+    LevelAttr = 84.5
+  },
+  {
+    AttrId = 31,
+    BaseAttr = 350.0,
+    Desc = "火伤害增幅+3.5%",
+    Id = 5,
+    LevelAttr = 84.5
+  },
+  {
+    AttrId = 32,
+    BaseAttr = 350.0,
+    Desc = "雷伤害增幅+3.5%",
+    Id = 6,
+    LevelAttr = 84.5
+  },
+  {
+    AttrId = 33,
+    BaseAttr = 350.0,
+    Desc = "光伤害增幅+3.5%",
+    Id = 7,
+    LevelAttr = 84.5
+  },
+  {
+    AttrId = 34,
+    BaseAttr = 350.0,
+    Desc = "暗伤害增幅+3.5%",
+    Id = 8,
+    LevelAttr = 84.5
+  },
+  {
+    AttrId = 76,
+    BaseAttr = 200,
+    Desc = "暴击率+2%",
+    Id = 9,
+    LevelAttr = 100
+  },
+  {
+    AttrId = 78,
+    BaseAttr = 600,
+    Desc = "暴击伤害+6%",
+    Id = 10,
+    LevelAttr = 300
+  },
+  {
+    AttrId = 23,
+    BaseAttr = 12,
+    Desc = "异常专精+12",
+    Id = 11,
+    LevelAttr = 3
+  },
+  {
+    AttrId = 147,
+    BaseAttr = 500,
+    Desc = "充能+5%",
+    Id = 12,
+    LevelAttr = 120
+  },
+  [21] = {
+    AttrId = 4,
+    BaseAttr = 335,
+    Desc = "生命+335",
+    Id = 21,
+    LevelAttr = 0
+  },
+  [22] = {
+    AttrId = 20,
+    BaseAttr = 20,
+    Desc = "攻击+20",
+    Id = 22,
+    LevelAttr = 0
+  },
+  [23] = {
+    AttrId = 22,
+    BaseAttr = 11.4,
+    Desc = "防御+11.4",
+    Id = 23,
+    LevelAttr = 0
+  },
+  [24] = {
+    AttrId = 30,
+    BaseAttr = 350.0,
+    Desc = "水伤害增幅+3.5%",
+    Id = 24,
+    LevelAttr = 0
+  },
+  [25] = {
+    AttrId = 31,
+    BaseAttr = 350.0,
+    Desc = "火伤害增幅+3.5%",
+    Id = 25,
+    LevelAttr = 0
+  },
+  [26] = {
+    AttrId = 32,
+    BaseAttr = 350.0,
+    Desc = "雷伤害增幅+3.5%",
+    Id = 26,
+    LevelAttr = 0
+  },
+  [27] = {
+    AttrId = 33,
+    BaseAttr = 350.0,
+    Desc = "光伤害增幅+3.5%",
+    Id = 27,
+    LevelAttr = 0
+  },
+  [28] = {
+    AttrId = 34,
+    BaseAttr = 350.0,
+    Desc = "暗伤害增幅+3.5%",
+    Id = 28,
+    LevelAttr = 0
+  },
+  [29] = {
+    AttrId = 76,
+    BaseAttr = 200,
+    Desc = "暴击率+2%",
+    Id = 29,
+    LevelAttr = 0
+  },
+  [30] = {
+    AttrId = 78,
+    BaseAttr = 600,
+    Desc = "暴击伤害+6%",
+    Id = 30,
+    LevelAttr = 0
+  },
+  [31] = {
+    AttrId = 23,
+    BaseAttr = 12,
+    Desc = "异常专精+12",
+    Id = 31,
+    LevelAttr = 0
+  },
+  [32] = {
+    AttrId = 147,
+    BaseAttr = 500,
+    Desc = "充能+5%",
+    Id = 32,
+    LevelAttr = 0
+  },
+  [51] = {
+    AttrId = 4,
+    BaseAttr = 201,
+    Desc = "生命+201",
+    Id = 51,
+    LevelAttr = 48.6
+  },
+  [52] = {
+    AttrId = 20,
+    BaseAttr = 12,
+    Desc = "攻击+12",
+    Id = 52,
+    LevelAttr = 2.88
+  },
+  [53] = {
+    AttrId = 22,
+    BaseAttr = 6.84,
+    Desc = "防御+6.84",
+    Id = 53,
+    LevelAttr = 1.56
+  },
+  [54] = {
+    AttrId = 30,
+    BaseAttr = 210.0,
+    Desc = "水伤害增幅+2.1%",
+    Id = 54,
+    LevelAttr = 50.7
+  },
+  [55] = {
+    AttrId = 31,
+    BaseAttr = 210.0,
+    Desc = "火伤害增幅+2.1%",
+    Id = 55,
+    LevelAttr = 50.7
+  },
+  [56] = {
+    AttrId = 32,
+    BaseAttr = 210.0,
+    Desc = "雷伤害增幅+2.1%",
+    Id = 56,
+    LevelAttr = 50.7
+  },
+  [57] = {
+    AttrId = 33,
+    BaseAttr = 210.0,
+    Desc = "光伤害增幅+2.1%",
+    Id = 57,
+    LevelAttr = 50.7
+  },
+  [58] = {
+    AttrId = 34,
+    BaseAttr = 210.0,
+    Desc = "暗伤害增幅+2.1%",
+    Id = 58,
+    LevelAttr = 50.7
+  },
+  [59] = {
+    AttrId = 76,
+    BaseAttr = 120,
+    Desc = "暴击率+1.2%",
+    Id = 59,
+    LevelAttr = 60
+  },
+  [60] = {
+    AttrId = 78,
+    BaseAttr = 360,
+    Desc = "暴击伤害+3.6%",
+    Id = 60,
+    LevelAttr = 180
+  },
+  [61] = {
+    AttrId = 23,
+    BaseAttr = 8,
+    Desc = "异常专精+8",
+    Id = 61,
+    LevelAttr = 2
+  },
+  [62] = {
+    AttrId = 147,
+    BaseAttr = 300,
+    Desc = "充能+3%",
+    Id = 62,
+    LevelAttr = 72
+  },
+  [81] = {
+    AttrId = 4,
+    BaseAttr = 201,
+    Desc = "生命+201",
+    Id = 81,
+    LevelAttr = 0
+  },
+  [82] = {
+    AttrId = 20,
+    BaseAttr = 12,
+    Desc = "攻击+12",
+    Id = 82,
+    LevelAttr = 0
+  },
+  [83] = {
+    AttrId = 22,
+    BaseAttr = 6.84,
+    Desc = "防御+6.84",
+    Id = 83,
+    LevelAttr = 0
+  },
+  [84] = {
+    AttrId = 30,
+    BaseAttr = 210.0,
+    Desc = "水伤害增幅+2.1%",
+    Id = 84,
+    LevelAttr = 0
+  },
+  [85] = {
+    AttrId = 31,
+    BaseAttr = 210.0,
+    Desc = "火伤害增幅+2.1%",
+    Id = 85,
+    LevelAttr = 0
+  },
+  [86] = {
+    AttrId = 32,
+    BaseAttr = 210.0,
+    Desc = "雷伤害增幅+2.1%",
+    Id = 86,
+    LevelAttr = 0
+  },
+  [87] = {
+    AttrId = 33,
+    BaseAttr = 210.0,
+    Desc = "光伤害增幅+2.1%",
+    Id = 87,
+    LevelAttr = 0
+  },
+  [88] = {
+    AttrId = 34,
+    BaseAttr = 210.0,
+    Desc = "暗伤害增幅+2.1%",
+    Id = 88,
+    LevelAttr = 0
+  },
+  [89] = {
+    AttrId = 76,
+    BaseAttr = 120,
+    Desc = "暴击率+1.2%",
+    Id = 89,
+    LevelAttr = 0
+  },
+  [90] = {
+    AttrId = 78,
+    BaseAttr = 360,
+    Desc = "暴击伤害+3.6%",
+    Id = 90,
+    LevelAttr = 0
+  },
+  [91] = {
+    AttrId = 23,
+    BaseAttr = 8,
+    Desc = "异常专精+8",
+    Id = 91,
+    LevelAttr = 0
+  },
+  [92] = {
+    AttrId = 147,
+    BaseAttr = 300,
+    Desc = "充能+3%",
+    Id = 92,
+    LevelAttr = 0
+  },
+  [101] = {
+    AttrId = 4,
+    BaseAttr = 100.5,
+    Desc = "生命+100.5",
+    Id = 101,
+    LevelAttr = 24.3
+  },
+  [102] = {
+    AttrId = 20,
+    BaseAttr = 6,
+    Desc = "攻击+6",
+    Id = 102,
+    LevelAttr = 1.44
+  },
+  [103] = {
+    AttrId = 22,
+    BaseAttr = 3.42,
+    Desc = "防御+3.42",
+    Id = 103,
+    LevelAttr = 0.78
+  },
+  [104] = {
+    AttrId = 30,
+    BaseAttr = 105.0,
+    Desc = "水伤害增幅+1.05%",
+    Id = 104,
+    LevelAttr = 25.35
+  },
+  [105] = {
+    AttrId = 31,
+    BaseAttr = 105.0,
+    Desc = "火伤害增幅+1.05%",
+    Id = 105,
+    LevelAttr = 25.35
+  },
+  [106] = {
+    AttrId = 32,
+    BaseAttr = 105.0,
+    Desc = "雷伤害增幅+1.05%",
+    Id = 106,
+    LevelAttr = 25.35
+  },
+  [107] = {
+    AttrId = 33,
+    BaseAttr = 105.0,
+    Desc = "光伤害增幅+1.05%",
+    Id = 107,
+    LevelAttr = 25.35
+  },
+  [108] = {
+    AttrId = 34,
+    BaseAttr = 105.0,
+    Desc = "暗伤害增幅+1.05%",
+    Id = 108,
+    LevelAttr = 25.35
+  },
+  [109] = {
+    AttrId = 76,
+    BaseAttr = 60,
+    Desc = "暴击率+0.6%",
+    Id = 109,
+    LevelAttr = 30
+  },
+  [110] = {
+    AttrId = 78,
+    BaseAttr = 180,
+    Desc = "暴击伤害+1.8%",
+    Id = 110,
+    LevelAttr = 90
+  },
+  [111] = {
+    AttrId = 23,
+    BaseAttr = 4,
+    Desc = "异常专精+4",
+    Id = 111,
+    LevelAttr = 1
+  },
+  [112] = {
+    AttrId = 147,
+    BaseAttr = 150,
+    Desc = "充能+1.5%",
+    Id = 112,
+    LevelAttr = 36
+  },
+  [141] = {
+    AttrId = 4,
+    BaseAttr = 100.5,
+    Desc = "生命+100.5",
+    Id = 141,
+    LevelAttr = 0
+  },
+  [142] = {
+    AttrId = 20,
+    BaseAttr = 6,
+    Desc = "攻击+6",
+    Id = 142,
+    LevelAttr = 0
+  },
+  [143] = {
+    AttrId = 22,
+    BaseAttr = 3.42,
+    Desc = "防御+3.42",
+    Id = 143,
+    LevelAttr = 0
+  },
+  [144] = {
+    AttrId = 30,
+    BaseAttr = 105.0,
+    Desc = "水伤害增幅+1.05%",
+    Id = 144,
+    LevelAttr = 0
+  },
+  [145] = {
+    AttrId = 31,
+    BaseAttr = 105.0,
+    Desc = "火伤害增幅+1.05%",
+    Id = 145,
+    LevelAttr = 0
+  },
+  [146] = {
+    AttrId = 32,
+    BaseAttr = 105.0,
+    Desc = "雷伤害增幅+1.05%",
+    Id = 146,
+    LevelAttr = 0
+  },
+  [147] = {
+    AttrId = 33,
+    BaseAttr = 105.0,
+    Desc = "光伤害增幅+1.05%",
+    Id = 147,
+    LevelAttr = 0
+  },
+  [148] = {
+    AttrId = 34,
+    BaseAttr = 105.0,
+    Desc = "暗伤害增幅+1.05%",
+    Id = 148,
+    LevelAttr = 0
+  },
+  [149] = {
+    AttrId = 76,
+    BaseAttr = 60,
+    Desc = "暴击率+0.6%",
+    Id = 149,
+    LevelAttr = 0
+  },
+  [150] = {
+    AttrId = 78,
+    BaseAttr = 180,
+    Desc = "暴击伤害+1.8%",
+    Id = 150,
+    LevelAttr = 0
+  },
+  [151] = {
+    AttrId = 23,
+    BaseAttr = 4,
+    Desc = "异常专精+4",
+    Id = 151,
+    LevelAttr = 0
+  },
+  [152] = {
+    AttrId = 147,
+    BaseAttr = 150,
+    Desc = "充能+1.5%",
+    Id = 152,
+    LevelAttr = 0
+  }
+}

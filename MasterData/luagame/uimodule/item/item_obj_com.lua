@@ -1,0 +1,73 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local Item_Helper = require("utils.item_helper")
+local bagConfig = require("gamelogic.character.fight_bag_configs")
+
+function ui:ui_wrap(parent, gameobj)
+  self = Base.ui_wrap(self, parent, gameobj)
+  self.v_object:SetActive(true)
+  return self
+end
+
+function ui:ui_finish_load(parent, gameobj)
+  self.v_btn = Util.get_button(nil, self.v_object)
+end
+
+function ui:set_data(item_data, set_default_cb, hide_amount, is_exist_jump)
+  local item_id = item_data.id or item_data[1] or item_data.ItemId
+  local lower_limit = item_data.count or item_data[2] or item_data.Num
+  local upper_limit = item_data.limit or item_data[3] or item_data.Limit
+  hide_amount = hide_amount or item_data.hide_amount
+  local coms = self.v_uicompents
+  local objs = self.v_uiobjects
+  objs.ItemIcon:SetActive(false)
+  objs.ItemQuality:SetActive(false)
+  local icon_path, quality_path = UtilUI.get_item_icon(item_id, true)
+  ResMgr:load_set_icon(coms.ItemQuality_img, quality_path, function()
+    objs.ItemQuality:SetActive(true)
+  end)
+  ResMgr:load_set_icon(coms.ItemIcon_img, icon_path, function()
+    objs.ItemIcon:SetActive(true)
+  end)
+  self:set_item_amount(hide_amount, lower_limit, upper_limit)
+  local item_click_cb = item_data.cb
+  self:set_cb(item_click_cb, set_default_cb, item_id, is_exist_jump)
+  if item_data.after_set_data then
+    item_data.after_set_data(self, item_data)
+  end
+end
+
+function ui:set_item_amount(hide_amount, lower_limit, upper_limit)
+  if not hide_amount then
+    if 1 == lower_limit and lower_limit == upper_limit then
+      self.v_uiobjects.ItemAmount:SetActive(false)
+    else
+      self.v_uiobjects.ItemAmount:SetActive(true)
+      local show_count = Util.get_award_show_count(lower_limit, upper_limit)
+      self.v_uicompents.ItemNum_txt.text = show_count
+    end
+  else
+    self.v_uiobjects.ItemAmount:SetActive(false)
+  end
+end
+
+function ui:set_cb(item_click_cb, set_default_cb, item_id, is_exist_jump)
+  if item_click_cb or set_default_cb then
+    if not self.v_btn then
+      self.v_btn = self:get_button()
+    end
+    self:set_button_listener(self.v_btn, item_click_cb or function()
+      UIMgr:get_ui("itemTip"):ui_show({item_id = item_id, is_exist_jump = is_exist_jump})
+    end)
+  end
+end
+
+function ui:set_count(count)
+  self.v_uicompents.ItemNum_txt.text = count
+end
+
+function ui:set_count_active(active)
+  self.v_uicompents.ItemNum:SetActive(active)
+end
+
+return ui

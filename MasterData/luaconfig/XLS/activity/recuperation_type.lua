@@ -1,0 +1,66 @@
+return {
+  {
+    Bg = "FateBook/Event_bg_zbpyh_rkd_xx",
+    Desc = "恢复全队生命值，参数1填magicID，参数2填magic等级",
+    Icon = "FateBook/Event_icon_zbpyh_xx",
+    Id = 1,
+    LimitDesc = "你已休整完备",
+    Name = "休息"
+  },
+  {
+    Bg = "FateBook/Event_bg_zbpyh_rkd_yx",
+    Desc = "获得一个片语，参数1配片语掉落id",
+    Icon = "FateBook/Event_icon_zbpyh_yx",
+    Id = 2,
+    LimitDesc = "你已有所感悟",
+    Name = "学习"
+  },
+  {
+    Bg = "FateBook/Event_bg_zbpyh_rkd_ts",
+    Desc = "获得一件随机的奇珍，参数配置奇珍掉落id",
+    Icon = "FateBook/Event_icon_zbpyh_ts",
+    Id = 3,
+    LimitDesc = "你已寻获珍品",
+    Name = "探索"
+  },
+  {
+    Bg = "FateBook/Event_bg_zbpyh_rkd_yx",
+    Desc = "强化一个片语，从背包中随三个给玩家选择",
+    Icon = "FateBook/Event_icon_zbpyh_yx",
+    Id = 4,
+    LimitDesc = "你已拾起往事",
+    Name = "锻炼"
+  },
+  {
+    Bg = "FateBook/Event_bg_zbpyh_rkd_yx",
+    Desc = "强化一个片语，有单独的页面和功能，功能参数不填",
+    Icon = "FateBook/Event_icon_zbpyh_yx",
+    Id = 5,
+    LimitDesc = "你已拾起往事",
+    Name = "定向锻炼"
+  },
+  {
+    Bg = "FateBook/Event_bg_zbpyh_rkd_xx",
+    Desc = "减少迷失值，功能参数配置减少迷失值数量",
+    Icon = "FateBook/Event_icon_zbpyh_xx",
+    Id = 6,
+    LimitDesc = "你已休整完备",
+    Name = "休息"
+  },
+  [8] = {
+    Bg = "FateBook/Event_bg_zbpyh_rkd_xx",
+    Desc = "复活，并治疗万分比生命，参数1配治疗万分比",
+    Icon = "FateBook/Event_icon_zbpyh_xx",
+    Id = 8,
+    LimitDesc = "你已休整完备",
+    Name = "复活"
+  },
+  [9] = {
+    Bg = "FateBook/Event_bg_zbpyh_rkd_xx",
+    Desc = "治疗万分比生命，参数1配治疗magic",
+    Icon = "FateBook/Event_icon_zbpyh_xx",
+    Id = 9,
+    LimitDesc = "你已休整完备",
+    Name = "治疗"
+  }
+}

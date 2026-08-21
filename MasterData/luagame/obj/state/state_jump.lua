@@ -1,0 +1,60 @@
+local Base = require("obj.state.state_obj_base")
+local Layer = require("utils.layer")
+local M = Util.create_child_mt(Base)
+local STATE_NAME = Config.STATE_NAME
+local JUMP_START = 1
+local JUMP_LOOP = 2
+local JUMP_END = 3
+local JUMP_START_ACTION = "jumpa"
+local JUMP_LOOP_ACTION = "jumpb"
+local JUMP_END_ACTION = "jumpc"
+local INIT_DOWN_SPEED = 0
+local INIT_UP_SPEED = 9
+local JUMP_UP_TIME = 0.35
+local ADD_SPEED = 24
+local JUMP_END_HEIGHT = 0
+local MIN_UP_SPEED = 0.3
+
+function M:state_on_enter()
+  Base.state_on_enter(self)
+  self.v_jump_stage = JUMP_START
+  self.v_jump_time = 0
+  if self.v_owner:is_player() then
+    self.v_owner:fade_hide_simple_shadow()
+  end
+  self.v_state_manager:try_action(JUMP_START_ACTION, nil, nil, function()
+    if self.v_jump_stage == JUMP_START then
+      self.v_jump_stage = JUMP_LOOP
+      self.v_state_manager:try_action(JUMP_LOOP_ACTION)
+    end
+  end)
+end
+
+function M:state_on_leave()
+  Base.state_on_leave(self)
+  if self.v_owner:is_player() then
+    self.v_owner:fade_show_simple_shadow()
+  end
+  self.v_jump_stage = nil
+  self.v_jump_end = nil
+  self.v_jump_time = nil
+  self.v_can_leave_state = nil
+end
+
+function M:state_update()
+  Base.state_update(self)
+end
+
+function M:state_can_reenter()
+  return false
+end
+
+function M:state_get_name()
+  return STATE_NAME.jump
+end
+
+function M:state_can_leave()
+  return self.v_can_leave_state
+end
+
+return M

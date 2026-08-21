@@ -1,0 +1,107 @@
+local Base = require("manager.magic.magic_imp.magic_base")
+local M = Util.create_child_mt(Base)
+local FightConfig = require("uimodule.fight.fight_config")
+local VALUE_TYPE = FightConfig.VALUE_TYPE
+
+function M:_init(owner, magic_info)
+  Base._init(self, owner, magic_info)
+end
+
+local CHANGE_TYPE = {
+  CHANGE_TOUGH_LV = 1,
+  SET_CUR_TOUGH_LV = 2,
+  SET_CAN_RECOVER_TOUGH_MAX_LV = 3,
+  SET_OUT_FIGHT_RECOVER_COUNT_DOWN = 4,
+  RESET_TOUGHNESS_PARAM = 5,
+  CHANGE_TOUGH_VALUE = 6,
+  CHANGE_FORCE_RECOVER_TIME = 7
+}
+local CHANGE_FUNC_NAME = {
+  [CHANGE_TYPE.CHANGE_TOUGH_LV] = "change_tough_lv",
+  [CHANGE_TYPE.SET_CUR_TOUGH_LV] = "set_cur_tough_lv",
+  [CHANGE_TYPE.SET_CAN_RECOVER_TOUGH_MAX_LV] = "set_can_recover_tough_max_lv",
+  [CHANGE_TYPE.SET_OUT_FIGHT_RECOVER_COUNT_DOWN] = "set_out_fight_recover_count_down",
+  [CHANGE_TYPE.RESET_TOUGHNESS_PARAM] = "reset_toughness_param",
+  [CHANGE_TYPE.CHANGE_TOUGH_VALUE] = "change_tough_value",
+  [CHANGE_TYPE.CHANGE_FORCE_RECOVER_TIME] = "set_tough_force_recover_time"
+}
+
+function M:change_tough_lv()
+  self.record_lv = self.owner:get_cur_tough_level()
+  self.owner:change_tough_lv(self.cfg[2])
+end
+
+function M:set_cur_tough_lv()
+  self.record_lv = self.owner:get_cur_tough_level()
+  self.owner:set_cur_tough_lv(self.cfg[2])
+end
+
+function M:set_can_recover_tough_max_lv()
+  self.owner:clear_can_recover_tough_max_lv()
+  self.owner:set_can_recover_tough_max_lv(self.cfg[2])
+end
+
+function M:set_out_fight_recover_count_down()
+  self.record_count_down = self.owner:get_out_fight_recover_count_down()
+  self.owner:set_out_fight_recover_count_down(self.cfg[2])
+end
+
+function M:reset_toughness_param()
+  self.owner:reset_toughness_param(self.cfg[2])
+end
+
+function M:change_tough_value()
+  local value_type = self.cfg[3]
+  local change_type = self.cfg[4]
+  local value = change_type == Config.ATTR_SET_TYPE.REPLACE and self.cfg[2] or -self.cfg[2]
+  local change_value = 0
+  local tough_info = self.owner:get_toughness_info()
+  local cur_level = tough_info.cur_tough_level
+  local level_down_limit = tough_info.lv_down_values[cur_level - 1] or 0
+  local cur_tough_value = tough_info.cur_tough_value
+  local max_tough_value = tough_info.lv_down_values[cur_level]
+  if value_type == VALUE_TYPE.CURRENT_VALUE_RATIO then
+    local cur_level_tough_value = cur_tough_value - level_down_limit
+    change_value = cur_level_tough_value * value / Config.RATIO_TO_NUM
+  elseif value_type == VALUE_TYPE.MAX_VALUE_RATIO then
+    local cur_level_max_tough_value = max_tough_value - level_down_limit
+    change_value = cur_level_max_tough_value * value / Config.RATIO_TO_NUM
+  elseif value_type == VALUE_TYPE.FIXED_VALUE then
+    change_value = value
+  end
+  if change_type == Config.ATTR_SET_TYPE.REPLACE then
+    change_value = cur_tough_value - level_down_limit - change_value
+  end
+  if change_value > 0 then
+    self.owner:change_tough_value(change_value)
+  elseif change_value < 0 then
+    self.owner:recover_tough(math.abs(change_value))
+  end
+end
+
+function M:set_tough_force_recover_time()
+  local force_recover_time = self.cfg[2]
+  self.owner:set_tough_force_recover_time(force_recover_time)
+end
+
+function M:on_effect()
+end
+
+function M:on_effect_after()
+  local change_type = self.cfg[1]
+  if not change_type or not self.owner:is_have_tough() then
+    return
+  end
+  local func_name = CHANGE_FUNC_NAME[change_type]
+  if self[func_name] then
+    self[func_name](self)
+  end
+  local msg = MsgGame:mq_publish2(Const.MSG_TOUGHNESS_CHANGE)
+  msg.mm_x = self.owner.uuid
+  msg.mm_y = Config.TOUGH_CHANGE_TYPE.TOUGH_VALUE_CHANGE
+end
+
+function M:on_remove(magic_map)
+end
+
+return M

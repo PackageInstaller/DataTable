@@ -1,0 +1,103 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local TASK_STATE = {
+  NOT_RECEIVE = 0,
+  CAN_RECEIVE = 1,
+  RECEIVE = 2,
+  COMPLETE = 3,
+  GET_REWARD = 4
+}
+local MAX_ITEM_NUM = 3
+
+function ui:ui_finish_load()
+  self:set_button("BtnJump", function()
+    if self.v_task_can_jump then
+      SysOpenMgr:jump_to_sys(self.v_task_jump, true)
+    end
+  end)
+  self:set_button("BtnRecive", function()
+    self:on_click_task()
+  end)
+end
+
+function ui:set_data(go, data_list, index)
+  self.v_task_cfg = data_list[index]
+  self.v_task_id = self.v_task_cfg.Id
+  self.v_task_award_group = self.v_task_cfg.Award
+  self.v_task_jump = self.v_task_cfg.Jump
+  self.v_task_can_jump = 0 ~= self.v_task_jump
+  self.v_task_status = TaskMgr:get_task_state(self.v_task_id)
+  self.v_uiobjects.BtnJump:SetActive(false)
+  self.v_uiobjects.BtnRecive:SetActive(false)
+  self.v_uiobjects.Finish:SetActive(false)
+  self.v_uiobjects.UnFinish:SetActive(false)
+  if self.v_task_status == TASK_STATE.GET_REWARD then
+    self.v_uiobjects.Finish:SetActive(true)
+  elseif self.v_task_status == TASK_STATE.COMPLETE then
+    self.v_uiobjects.BtnRecive:SetActive(true)
+  elseif self.v_task_can_jump then
+    self.v_uiobjects.BtnJump:SetActive(true)
+  else
+    self.v_uiobjects.UnFinish:SetActive(true)
+  end
+  self.v_uicompents.TaskDesc_txt.text = self.v_task_cfg.Desc
+  self.v_award_list = ShareRes.get_award_item_data(self.v_task_award_group)
+  self.v_uiobjects.ItemObjCom1:SetActive(false)
+  self.v_uiobjects.ItemObjCom2:SetActive(false)
+  self.v_uiobjects.ItemObjCom3:SetActive(false)
+  if self.v_award_list then
+    self:set_award_info(self.v_uiobjects.ItemObjCom1, self.v_award_list[1])
+    self:set_award_info(self.v_uiobjects.ItemObjCom2, self.v_award_list[2])
+    self:set_award_info(self.v_uiobjects.ItemObjCom3, self.v_award_list[3])
+  end
+  self.v_task_data = TaskMgr:get_task_by_id(self.v_task_id)
+  if self.v_task_data then
+    local condition_id = self.v_task_cfg.Condition[1]
+    local condition_cfg = ShareRes.get_battle_task_condition_cfg(condition_id)
+    local need_num = condition_cfg.Value
+    local now_num = self.v_task_data.condition[condition_id]
+    if need_num < now_num then
+      now_num = need_num
+    end
+    self.v_uicompents.TaskProgress_txt.text = string.format("  (%s/%s)", now_num, need_num)
+  else
+    self.v_uicompents.TaskProgress_txt.text = ""
+  end
+end
+
+function ui:set_award_info(set_obj, data)
+  if nil == data then
+    return
+  end
+  set_obj:SetActive(true)
+  local item_btn = self:get_button(nil, set_obj)
+  local item_id_param = data[1]
+  local item_num_param = data[2]
+  self:set_button_listener(item_btn, function()
+    UIMgr:get_ui("itemTip"):ui_show({item_id = item_id_param})
+  end)
+  local ItemQuality_img = Util.get_image("ItemQuality_", set_obj)
+  ResMgr:load_set_icon(ItemQuality_img, UtilUI.get_item_quality_icon(item_id_param))
+  local ItemIcon_img = Util.get_image("ItemIcon_", set_obj)
+  ResMgr:load_set_icon(ItemIcon_img, UtilUI.get_item_icon(item_id_param))
+  local ItemAmount_obj = Util.get_child_gameobj("ItemAmount_", set_obj)
+  ItemAmount_obj:SetActive(item_num_param > 1)
+  local ItemNum_txt = Util.get_text("ItemAmount_/Bg/ItemNum_", set_obj)
+  ItemNum_txt.text = item_num_param
+  local mask_obj = Util.get_child_gameobj("Mask_", set_obj)
+  mask_obj:SetActive(self.v_task_status == TASK_STATE.GET_REWARD)
+end
+
+function ui:set_linked_parent(parent_ui)
+  self.v_parent_ui = parent_ui
+end
+
+function ui:on_click_task()
+  if self.v_task_data.state == TASK_STATE.COMPLETE then
+    TaskMgr:submit_task(self.v_task_id, function()
+      self.v_parent_ui:refresh_show()
+    end)
+  end
+end
+
+return ui

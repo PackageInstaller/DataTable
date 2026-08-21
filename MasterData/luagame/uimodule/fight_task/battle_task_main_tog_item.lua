@@ -1,0 +1,39 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local Group_State = {
+  Tracking = 1,
+  Processing = 2,
+  Complete = 3
+}
+
+function ui:set_data(data, complete_num, all_num)
+  self.v_data = data
+  local group_id = data.group_id
+  local group_cfg = ShareRes.get_battle_task_group_cfg(group_id)
+  if not group_cfg then
+    Log.Error("缺少任务组配置，任务组id =", group_id)
+    return
+  end
+  local state = data.state
+  local is_track = state == Group_State.Tracking
+  local is_complete = state >= Group_State.Complete
+  local ui_obj = self.v_uiobjects
+  local ui_cmp = self.v_uicompents
+  ui_obj.Going:SetActive(is_track)
+  ui_obj.Normal:SetActive(not is_track)
+  ui_obj.Complete:SetActive(is_complete)
+  ui_obj.SelectedGoing:SetActive(is_track)
+  ui_obj.SelectedNormal:SetActive(not is_track)
+  if is_track then
+    ui_cmp.ProgressGoingText_txt.text = Util.format_str("{1}/{2}", complete_num, all_num)
+    ui_cmp.GroupNameGoing_txt.text = group_cfg.GroupName
+  else
+    ui_obj.ProgressNormal:SetActive(not is_complete)
+    ui_cmp.GroupNameNormal_txt.text = group_cfg.GroupName
+    if not is_complete then
+      ui_cmp.ProgressNormal_txt.text = Util.format_str("进行中{1}/{2}", complete_num, all_num)
+    end
+  end
+end
+
+return ui

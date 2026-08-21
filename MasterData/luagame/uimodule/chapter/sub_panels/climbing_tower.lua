@@ -1,0 +1,22 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local commonDef = require("cs_share.common_define")
+local ACTY_TYPE = commonDef.ACTY_TYPE
+local ActivityCfg = require("gamelogic.activity.activity_config")
+local ACTY_TYPE_TO_SYSID = ActivityCfg.ACTY_TYPE_TO_SYSID
+
+function ui:ui_finish_load()
+  self:set_button("BtnStart", function()
+    if SysOpenMgr:get_sys_is_open(ACTY_TYPE_TO_SYSID[ACTY_TYPE.CLIMBING_TOWER], true) then
+      UIMgr:get_ui("ui_climbing_tower_main"):ui_show()
+    else
+      Util.show_message_tip(2148)
+    end
+  end)
+end
+
+function ui:ui_on_show()
+  self.v_uicompents.Desc_txt.text = ShareRes.get_gameplay_desc("ClimbingTowerDesc")
+end
+
+return ui

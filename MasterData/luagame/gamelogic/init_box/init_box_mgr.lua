@@ -1,0 +1,73 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+local INIT_BOX_HELPER = require("uimodule.init_box.init_box_helper")
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_init_box_list = {}
+  self.v_box_count = 0
+  self.v_is_get_buddy_item = false
+  self:sys_mq_bind(Const.MSG_ON_CAMERA_REACH_TARGET_POS, self.response_camera_reach_pos, self)
+end
+
+function M:on_get_init_box_info(data)
+  self.v_init_box_list = data.box_list
+  self.v_box_count = data.box_count
+  self.v_is_get_buddy_item = data.is_get_buddy_item
+  local is_have = INIT_BOX_HELPER.is_have_init_item_get()
+  if not is_have then
+    self.v_is_get_buddy_item = true
+  end
+end
+
+function M:draw_box(index_list, cb)
+  Network:call("c2gs_draw_box", {index_list = index_list}, function(ok, resp)
+    if ok then
+      self.v_box_count = resp.box_count
+      self:refresh_box_list(resp.box_list)
+      if cb then
+        cb()
+      end
+      MsgGame:mq_publish2(Const.MSG_ON_INIT_BOX_DRAW_END)
+    end
+  end)
+end
+
+function M:refresh_box_list(box_list)
+  for _, data in pairs(box_list) do
+    local item_idx = data.index
+    self.v_init_box_list[item_idx] = data
+  end
+end
+
+function M:draw_buddy_box(cb)
+  Network:call("c2gs_draw_box_buddy_item", {}, function(ok)
+    if ok and cb then
+      self.v_is_get_buddy_item = true
+      MsgGame:mq_publish2(Const.MSG_ON_INIT_BOX_DRAW_END)
+      cb()
+    end
+  end)
+end
+
+function M:get_init_box_list()
+  return self.v_init_box_list
+end
+
+function M:get_box_count()
+  return self.v_box_count
+end
+
+function M:is_get_buddy_item()
+  return self.v_is_get_buddy_item
+end
+
+function M:is_get_thing_end()
+  return self.v_is_get_buddy_item and 0 == self.v_box_count
+end
+
+function M:response_camera_reach_pos()
+  UIMgr:get_ui("ui_init_box"):ui_show()
+end
+
+return M

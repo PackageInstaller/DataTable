@@ -1,0 +1,50 @@
+local M = Util.create_class()
+local Layer = require("utils.layer")
+local Terrain = Layer.LayerMask.Terrain
+
+function M:_init(missile)
+  self.v_char = missile:get_owner()
+  self.v_missile = missile
+  self.v_time_scale = 1
+  self.missile_cfg = missile.missile_cfg
+  self.v_ground_destroy_height = missile.missile_cfg.GroundDestroyHeight
+  self.char_trans = self.v_char.transform
+  local target_pos = self.v_missile:get_pos_or_target_pos()
+  if self.v_ground_destroy_height then
+    local have_terrain, terrain_height = Util.raycast(target_pos.x, target_pos.z, Terrain, target_pos.y + 2, 20)
+    if have_terrain then
+      self.v_terrain_height = terrain_height
+    else
+      Log.Error("子弹落地销毁   获取地面高度失败, missile_id", self.missile_cfg.Id, target_pos.x, target_pos.z, debug.traceback())
+    end
+  end
+end
+
+function M:update()
+end
+
+function M:set_speed()
+end
+
+function M:set_time_scale(time_scale)
+  self.v_time_scale = time_scale
+end
+
+function M:set_params(params)
+end
+
+function M:check_ground_destroy()
+  if self.v_missile.v_is_die then
+    return
+  end
+  local temp_vec3 = Util.VEC3_TEMP
+  temp_vec3:Set(self.v_missile:get_pos())
+  local redu = temp_vec3.y - self.v_terrain_height
+  if redu <= self.v_ground_destroy_height then
+    temp_vec3.y = self.v_terrain_height + self.v_ground_destroy_height
+    self.v_missile:stop()
+    self.v_missile:set_pos_vec(temp_vec3)
+  end
+end
+
+return M

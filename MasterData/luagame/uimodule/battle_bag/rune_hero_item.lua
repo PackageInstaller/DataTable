@@ -1,0 +1,137 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local RUNE_HELPER = require("gamelogic.activity.rune2_helper")
+local CommonDefine = require("cs_share.common_define")
+local RUNE2_TYPE = CommonDefine.RUNE2_TYPE
+local NOT_HAVE_RUNE = 0
+local RUNE_COLOR = RUNE_HELPER.RUNE_COLOR
+local BALL_LIGHT_ICON_PATH = {
+  "UIRune/UIRune_txfw_yk_red",
+  "UIRune/UIRune_txfw_yk_yellow",
+  "UIRune/UIRune_txfw_yk_blue"
+}
+
+function ui:ui_on_hide()
+  self.v_idx = nil
+  self.v_hero = nil
+  self.v_buddy_cfg = nil
+  self.v_buddy_id = nil
+  self.v_buddy_rune_info = nil
+end
+
+function ui:set_data(hero, idx, select_rune_type)
+  local tog = Util.get_toggle(nil, self.v_object)
+  local uobj = self.v_uiobjects
+  local have_char_obj = uobj.HaveChar
+  local now_char_obj = uobj.NoChar
+  now_char_obj:SetActive(false)
+  have_char_obj:SetActive(true)
+  if not hero then
+    now_char_obj:SetActive(true)
+    have_char_obj:SetActive(false)
+    tog.interactable = false
+    return
+  end
+  self.v_hero = hero
+  self.v_idx = idx
+  self.v_select_rune_type = select_rune_type
+  self.v_buddy_cfg = hero.buddy_cfg
+  self.v_buddy_id = hero.buddy_cfg.Id
+  self:refresh_ui()
+  tog.interactable = true
+  if self.v_idx then
+    self:set_toggle_listener(tog, function(is_on)
+      local parent = self.v_parent_ui
+      if parent.v_hero and parent.v_hero.buddy_cfg.Id == self.v_buddy_id then
+        return
+      end
+      local msg = MsgGame:mq_publish2(Const.MSG_ON_SELECT_RUNE_HERO_ITEM)
+      msg.mm_x = self.v_idx
+      msg.mm_obj = hero
+    end)
+  end
+end
+
+function ui:refresh_ui()
+  if not self.v_hero then
+    return
+  end
+  self.v_buddy_rune_info = Rune2Mgr:get_rune_buddy_info(self.v_buddy_id)
+  self:refresh_hero_name()
+  self:refresh_hero_ball_info()
+  self:refresh_hero_state()
+  self:refresh_hero_icon()
+end
+
+function ui:refresh_hero_icon()
+  local buddy_id = self.v_hero.buddy_cfg.Id
+  local hero_icon = UtilUI.get_hero_images(buddy_id, 1)
+  if not hero_icon then
+    return
+  end
+  local char_icon = self.v_uicompents.CharIcon_img
+  ResMgr:load_set_icon(char_icon, hero_icon)
+end
+
+function ui:refresh_hero_state()
+  local uobj = self.v_uiobjects
+  uobj.Mask:SetActive(self.v_hero:is_anim_die_end())
+  uobj.Death:SetActive(self.v_hero:is_anim_die_end())
+end
+
+function ui:refresh_hero_mask(is_on)
+  local uobj = self.v_uiobjects
+  uobj.Mask:SetActive(self.v_hero:is_anim_die_end() or is_on)
+end
+
+function ui:refresh_hero_name()
+  self.v_uicompents.CharName_txt.text = self.v_buddy_cfg.Name
+end
+
+function ui:refresh_hero_ball_info()
+  local rune_type_list = self.v_buddy_cfg.RuneType
+  local lv = 0
+  local pos = NOT_HAVE_RUNE
+  if self.v_buddy_rune_info then
+    lv = self.v_buddy_rune_info.level
+    pos = self.v_buddy_rune_info.pos
+  end
+  for index = 1, 3 do
+    self.v_uiobjects["Star" .. index]:SetActive(false)
+  end
+  for idx, rune_type in pairs(rune_type_list) do
+    local max_lv = 3
+    if self.v_select_rune_type and self.v_select_rune_type == rune_type then
+      max_lv = ShareRes.get_buddy_rune_max_lv(self.v_buddy_id, rune_type)
+    end
+    for index = 1, max_lv do
+      local star = self.v_uiobjects["Star" .. index]
+      local star_light = Util.get_child("Light", star)
+      star:SetActive(true)
+      star_light.gameObject:SetActive(index <= lv)
+    end
+    local ball_image = self.v_uicompents["Ball" .. idx .. "_img"]
+    Rune2Mgr:set_ball_img(ball_image, rune_type)
+    local light = Util.get_image("Light", ball_image.gameObject)
+    if pos == idx and lv > 0 then
+      ResMgr:load_set_icon(light, BALL_LIGHT_ICON_PATH[rune_type])
+      light.gameObject:SetActive(true)
+    else
+      light.gameObject:SetActive(false)
+    end
+  end
+end
+
+function ui:on_select(idx)
+  if self.v_idx and idx == self.v_idx then
+    local tog = Util.get_toggle(nil, self.v_object)
+    tog.isOn = false
+    tog.isOn = true
+  end
+end
+
+function ui:reborn()
+  self:refresh_hero_state()
+end
+
+return ui

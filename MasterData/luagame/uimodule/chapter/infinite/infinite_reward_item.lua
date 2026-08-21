@@ -1,0 +1,190 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local RELEASE_INFINITE_REWARD_ITEM_KEY = "RELEASE_INFINITE_REWARD_ITEM_KEY"
+local REWARD_STATE = {
+  NONE = 1,
+  CAN_RECEIVE = 2,
+  RECEIVED = 3
+}
+local MODEL = {
+  v_complete_frame = {
+    "CompleteFrame",
+    BIND_TYPE.OBJECT
+  },
+  v_progress_bar = {
+    "ProgressBar",
+    BIND_TYPE.OBJECT
+  },
+  v_bar_fill = {
+    "BarFill",
+    BIND_TYPE.OBJECT
+  },
+  v_reward_lv = {
+    "RewardLv",
+    BIND_TYPE.TEXT
+  },
+  v_lv_mask = {
+    "LvMask",
+    BIND_TYPE.OBJECT
+  },
+  v_is_get = {
+    "IsGet",
+    BIND_TYPE.OBJECT
+  },
+  v_loop_reward_bar = {
+    "LoopRewardBar",
+    BIND_TYPE.OBJECT
+  },
+  v_loop_reward_bar_fill = {
+    "RewardBarFill",
+    BIND_TYPE.IMAGE
+  },
+  v_loop_now_exp = {
+    "LoopExpNow",
+    BIND_TYPE.TEXT
+  },
+  v_loop_need_exp = {
+    "LoopExpNeed",
+    BIND_TYPE.TEXT
+  },
+  v_item_quality = {
+    "ItemQuality",
+    BIND_TYPE.OBJECT
+  },
+  v_item_num = {
+    "ItemNum",
+    BIND_TYPE.TEXT
+  },
+  v_btn_get = {
+    "BtnGet",
+    BIND_TYPE.OBJECT
+  },
+  v_arrow_layout = {
+    "ArrowLayout",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnGet", function()
+    Network:call("c2gs_get_infinite_addition_award", {
+      infinite_id = self.v_infinite_id,
+      level = self.v_award_cfg.Level
+    }, function(ok, resp)
+      if ok then
+        ChapterMgr:remove_inf_reward_lv(self.v_infinite_id, resp.removed_award_lv)
+        self.v_parent_ui:refresh_base_info()
+        self:refresh_reward_state()
+      end
+    end)
+  end)
+end
+
+function ui:ui_on_show(infinite_id, award_cfg)
+  self.v_infinite_id = infinite_id
+  self.v_award_cfg = award_cfg
+  self.v_award_group_cfg_list = ChapterMgr:get_inf_award_group_cfg_list(infinite_id)
+  self:init_reward_item_info()
+  self:refresh_reward_state()
+end
+
+function ui:ui_on_hide()
+  self.v_item_state = nil
+end
+
+function ui:init_reward_item_info()
+  self.v_progress_bar:SetActive(not self.v_award_cfg.IsLoop)
+  self.v_reward_lv.text = self.v_award_cfg.IsLoop and "∞" or self.v_award_cfg.Level
+  self:release_items_by_template_key(RELEASE_INFINITE_REWARD_ITEM_KEY)
+  local reward_list = ShareRes.get_award_item_data(self.v_award_cfg.AwardGroup)
+  self.reward_data = reward_list[1]
+  self:create_item_obj(nil, self.v_item_quality, RELEASE_INFINITE_REWARD_ITEM_KEY, {
+    item_id = self.reward_data[1],
+    click_cb = function()
+      UIMgr:get_ui("itemTip"):ui_show({
+        item_id = self.reward_data[1]
+      })
+    end
+  })
+  self.v_item_num.text = self.reward_data[2]
+end
+
+function ui:refresh_reward_state()
+  local infinite_info = ChapterMgr:get_inf_chapter_data(self.v_infinite_id)
+  local current_lv = infinite_info.addition_award_lv or 0
+  local cfg_lv = self.v_award_cfg.Level
+  local is_loop = self.v_award_cfg.IsLoop
+  local can_receive_award_ids = infinite_info.addition_award_ids
+  local state
+  local next_lv_cfg = self.v_award_group_cfg_list[current_lv + 1]
+  if nil == next_lv_cfg then
+    next_lv_cfg = self.v_award_group_cfg_list[current_lv]
+  end
+  self.v_bar_fill:SetActive(current_lv > cfg_lv or next_lv_cfg.IsLoop)
+  self.v_loop_reward_bar:SetActive(is_loop)
+  if not is_loop then
+    if can_receive_award_ids and next(can_receive_award_ids) then
+      for _, lv in pairs(can_receive_award_ids) do
+        if cfg_lv == lv then
+          state = REWARD_STATE.CAN_RECEIVE
+          break
+        end
+      end
+    end
+    if nil == state then
+      if current_lv >= cfg_lv then
+        state = REWARD_STATE.RECEIVED
+      else
+        state = REWARD_STATE.NONE
+      end
+    end
+  else
+    local infinite_cfg = ShareRes.get_inf_chapter_cfg(self.v_infinite_id)
+    local now_exp = BagMgr:get_item_num(infinite_cfg.CostId)
+    local cost_exp = self.v_award_cfg.CostCnt
+    if not next_lv_cfg.IsLoop then
+      state = REWARD_STATE.NONE
+      self.v_loop_now_exp.text = 0
+      self.v_loop_need_exp.text = cost_exp
+      self.v_loop_reward_bar_fill.fillAmount = 0
+    else
+      if now_exp < cost_exp then
+        state = REWARD_STATE.NONE
+        self.v_item_num.text = self.reward_data[2]
+      else
+        state = REWARD_STATE.CAN_RECEIVE
+        local multi_factor = math.floor(now_exp / cost_exp)
+        self.v_item_num.text = self.reward_data[2] * multi_factor
+      end
+      self.v_loop_now_exp.text = now_exp
+      self.v_loop_need_exp.text = cost_exp
+      self.v_loop_reward_bar_fill.fillAmount = now_exp / cost_exp
+    end
+  end
+  if state == REWARD_STATE.NONE then
+    self.v_complete_frame:SetActive(false)
+    self.v_btn_get:SetActive(false)
+    self.v_is_get:SetActive(false)
+    self.v_lv_mask:SetActive(true)
+  elseif state == REWARD_STATE.CAN_RECEIVE then
+    self.v_complete_frame:SetActive(true)
+    self.v_arrow_layout:SetActive(not is_loop)
+    self.v_btn_get:SetActive(true)
+    self.v_is_get:SetActive(false)
+    self.v_lv_mask:SetActive(false)
+  elseif state == REWARD_STATE.RECEIVED then
+    self.v_complete_frame:SetActive(false)
+    self.v_btn_get:SetActive(false)
+    self.v_is_get:SetActive(true)
+    self.v_lv_mask:SetActive(false)
+  end
+  self.v_item_state = state
+end
+
+function ui:get_item_state()
+  return self.v_item_state
+end
+
+return ui

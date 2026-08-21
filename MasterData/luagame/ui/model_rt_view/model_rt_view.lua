@@ -1,0 +1,482 @@
+local tinsert = table.insert
+local tremove = table.remove
+local floor = math.floor
+local CSShadow = CS.Game.Shadow
+local TypeMeshRenderer = typeof(UnityEngine.MeshRenderer)
+local CSResLoader = CS.ResLoader
+local UnityRenderTexture = UnityEngine.RenderTexture
+local UnityCamera = UnityEngine.Camera
+local UnityRawImage = UnityEngine.UI.RawImage
+local TypeModelRtView = typeof(CS.ModelRtView)
+local Timer = Global.timer
+local UnityQualitySetting = UnityEngine.QualitySettings
+local CSChangeLayer = CSHelper.ChangeLayerRecursively
+local Layer = require("utils.layer")
+local ResPool = Global.res_pool_mgr
+local ACT_DEFINE = Config.ACT_DEFINE
+local MAX_MODEL_VIEW_COUNT = 20
+local _lerp = require("base.mathx").lerp_number
+local M = Util.create_class()
+local _abs = math.abs
+local SCENE_EFFECT_NAME = "MainSceneEffect"
+local ANTIALIASING = 0
+local NormalDistZ = 0.61
+local ShortDistZ = 0.2
+
+function M:_init(ui, ui_image, layer, no_drag, team_pos, need_shadow)
+  self.v_ui = ui
+  self.v_ui_root = ui:get_object()
+  self.v_need_shadow = need_shadow
+  self.ui_image = ui_image
+  self.v_npc_load_list = {}
+  self.v_npc_loaded_list = {}
+  self.v_team_pos = team_pos
+  CSShadow.Init()
+  CSShadow.ShadowLayer = Layer.LayerMask.Character
+  CSShadow.RenderOrder = 0
+  self.v_is_enlarge = false
+  self.is_no_drag = no_drag
+  self.v_target_pos_z = 0.61
+  self.v_target_pos_y = 0
+  self.v_pos_z = 0.61
+  self.v_pos_y = 0
+  local obj = UnityFind(SCENE_EFFECT_NAME) or ResMgr:load_gameobj(Path.get_res_path(SCENE_EFFECT_NAME))
+  obj.name = SCENE_EFFECT_NAME
+  local info = obj:GetComponent(typeof(CS.SceneIllumination))
+  self.v_light_info = info.IlluminationInfo
+  self.v_closer_lerp = false
+  self.v_ui_name = self:_get_parent_ui_name()
+  if not self.v_ui_name then
+    Log.Error("model_rt_view can't find parent ui name")
+  end
+  self.v_msg_handles = {}
+  self:_regist_client_event()
+end
+
+function M:bind_auto_mq(msg_type, callback, cbdata)
+  local msg_handle = MsgGame:mq_bind(msg_type, callback, cbdata)
+  self.v_msg_handles[msg_handle] = msg_type
+  return msg_handle
+end
+
+function M:all_mq_unbind()
+  for msg_handle, _ in pairs(self.v_msg_handles) do
+    MsgGame:mq_unbind(msg_handle)
+  end
+  self.v_msg_handles = {}
+end
+
+function M:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_HIDE_UI, self._response_hide_ui_event, self)
+  self:bind_auto_mq(Const.MSG_ON_SHOW_UI, self._response_show_ui_event, self)
+  self:bind_auto_mq(Const.MSG_ON_WEAPON_LOADED, self._on_weapon_loaded, self)
+  self:bind_auto_mq(Const.MSG_ON_UI_BE_COVERED, self._response_hide_ui_event, self)
+  self:bind_auto_mq(Const.MSG_ON_UI_APPEAR, self._response_show_ui_event, self)
+end
+
+function M:on_create()
+  if self.v_model_root then
+    return
+  end
+  local count = Global.ui_mgr.MODEL_VIEW_COUNT
+  count = count + 1
+  Global.ui_mgr.MODEL_VIEW_COUNT = count
+  local path = CSResLoader.GetFullPath("UIModelRtView")
+  self.v_model_root = ResMgr:load_gameobj(path, nil, true)
+  self.v_model_root.transform:SetPositionA(2000 + count * 10, 0, 0)
+  self.v_content_root = Util.get_child_gameobj("ContentRoot", self.v_model_root)
+  self.v_camera_root = Util.get_child_gameobj("CameraRoot", self.v_model_root)
+  self.v_camera = Util.get_component("CameraRoot", self.v_model_root, UnityCamera)
+  self.v_raw_image = Util.get_component(nil, self.ui_image, UnityRawImage)
+  self.v_model_control = Util.get_component(nil, self.v_model_root, typeof(CS.ModelRtView))
+  self.v_model_rt_view = Util.get_component(nil, self.v_model_root, TypeModelRtView)
+  self.v_xmove_cache = 0
+  self:_create_rt()
+  if self.v_need_shadow then
+    self:set_light_dir(-50, -80, 50, 0)
+  end
+  self:register_drag_event()
+end
+
+function M:refresh_show_img(ui_image)
+  self.v_raw_image = Util.get_component(nil, ui_image, UnityRawImage)
+  self.ui_image = ui_image
+  self.v_rt = nil
+  self:_create_rt()
+end
+
+function M:register_drag_event()
+  if self.is_no_drag then
+    return
+  end
+  Util.set_drag(self.ui_image.gameObject, self.v_ui_root, function(x, y)
+    self.v_xmove_cache = self.v_xmove_cache - x
+  end)
+end
+
+function M:set_plane_shadow_light_dir(x, y, z, w)
+  x = x or -50
+  y = y or -80
+  z = z or 50
+  w = w or 0
+  self.v_model_rt_view:SetPlaneShadowLightDir(x, y, z, w)
+end
+
+function M:set_light_dir(x, y, z, w)
+  if self.v_not_set_light then
+    return
+  end
+  self.v_is_set_light = true
+  CompExtensions.SetShaderGlobalVector("_PlaneShadowLightDir", x, y, z, w)
+end
+
+function M:_create_rt()
+  if not self.v_rt then
+    local rect = self.v_raw_image.rectTransform.rect
+    local factor = math.min(Global.screen_factor, 2)
+    local rt_width = floor(rect.width * factor)
+    local rt_height = floor(rect.height * factor)
+    local max = math.max(rt_width, rt_height)
+    if max > 2048 then
+      rt_width = floor(rt_width * (2048 / max))
+      rt_height = floor(rt_height * (2048 / max))
+      max = math.max(rt_width, rt_height)
+    end
+    self.v_rt = CompExtensions.GetSpineRT(rt_width, rt_height)
+    self.v_raw_image.texture = self.v_rt
+    self.v_camera.targetTexture = self.v_rt
+    if max > 2048 then
+      Log.Error("RT尺寸过大", max, debug.traceback())
+    end
+  end
+end
+
+function M:_destroy_rt()
+  if self.v_rt then
+    UnityRenderTexture.ReleaseTemporary(self.v_rt)
+    self.v_rt = nil
+  end
+  if self.v_raw_image then
+    self.v_raw_image.texture = nil
+    self.v_raw_image = nil
+  end
+  CSShadow.ReleaseShadowCamera()
+end
+
+function M:on_destroy()
+  if self.v_model_root then
+    ResMgr:destroy_gameobj(self.v_model_root)
+    self.v_model_root = nil
+  end
+  self:remove_all_npc()
+  self:_destroy_rt()
+  self.v_cur_npc_luaobj = nil
+  if self.v_load_test_model then
+    ResMgr:destroy_gameobj(self.v_load_test_model)
+    self.v_load_test_model = nil
+  end
+  self:all_mq_unbind()
+  self.v_light_info = nil
+end
+
+function M:update_light(char_dir)
+  char_dir = (char_dir - 180) % 360
+  self.v_tar_light_dir = 0
+  if char_dir > 30 and char_dir < 150 then
+    self.v_tar_light_dir = 70
+  elseif char_dir > 210 and char_dir < 315 then
+    self.v_tar_light_dir = -70
+  end
+  local dir = self.v_light_info.GlobalCharacterLightDir
+  self.v_light_info.GlobalCharacterLightDir = _lerp(dir, self.v_tar_light_dir, 0.03)
+  CS.SceneIlluminationInfo.Apply(self.v_light_info)
+end
+
+function M:update()
+  if not self.v_ui:visible() then
+    return
+  end
+  local list = self.v_npc_loaded_list
+  local temp = self.v_xmove_cache
+  self.v_xmove_cache = _lerp(self.v_xmove_cache, 0, 0.09)
+  self.v_content_root.transform:Rotate(0, temp - self.v_xmove_cache, 0)
+  if list and 1 == UtilTable.hash_lenth(list) then
+    local trans = list[1].transform
+    local _, angle_y = trans:GetEulerAnglesA3()
+    self:update_light(angle_y)
+    CSShadow.RenderShadowMap(trans, true)
+  end
+  for k, npc in pairs(list) do
+    npc.act_ctrl:update()
+  end
+  if self.v_is_lerp_pos then
+    self.v_content_root.transform:SetLocalPositionA(0, self.v_target_pos_y, self.v_target_pos_z)
+    self.v_is_lerp_pos = false
+  end
+  if self.v_cur_npc_luaobj then
+    self.v_cur_npc_luaobj.act_effect_ctrl:low_update()
+  end
+end
+
+function M:remove_all_npc()
+  self.v_npc_load_list = {}
+  for k, v in pairs(self.v_npc_loaded_list) do
+    self:remove_npc(v)
+  end
+  self.v_npc_loaded_list = {}
+end
+
+function M:remove_npc(npc)
+  if npc.animator_info then
+    ResPool:release_res(npc.animator_info)
+  end
+  local gameobj = npc.gameobj
+  gameobj.transform:SetKeyWordAll("_SHADOW_RECEIVE", false)
+  npc:on_destroy_luaobj()
+  npc:on_destroy_gameobj()
+  ResPool:release(gameobj)
+end
+
+function M:set_npc_pos_z()
+  self.v_is_enlarge = not self.v_is_enlarge
+  local dist = self.v_is_child and ShortDistZ or NormalDistZ
+  self.v_target_pos_z = self.v_is_enlarge and -1 or dist
+  self.v_is_lerp_pos = true
+  if not self.v_is_enlarge then
+    self.v_target_pos_y = 0
+  end
+  return self.v_is_enlarge
+end
+
+function M:set_npc_pos_y(pos_y)
+  local npc = self.v_cur_npc
+  if npc:IsNull() then
+    return
+  end
+  self.v_target_pos_y = pos_y - 0.5
+  self.v_is_lerp_pos = true
+end
+
+function M:on_loaded_npc(npc_info)
+  self.v_npc_load_list[npc_info.index] = nil
+  self.v_npc_loaded_list[npc_info.index] = npc_info.npc
+end
+
+function M:is_loading()
+  return self.v_is_loading
+end
+
+function M:load_npc(model_id, npc_id, is_reload, x, y, z, hide_weapon)
+  if self.v_is_loading then
+    return
+  end
+  if is_reload then
+    self:remove_all_npc()
+  end
+  x = x or 0
+  y = y or 0
+  z = z or 0
+  self.v_is_child = "H1001007" == model_id
+  self:reset_npc_pos_z()
+  local count = #self.v_npc_load_list
+  local npc = require("obj.hero"):new()
+  npc:set_pos(x, y, z)
+  if self.v_team_pos then
+    npc:set_team_pos(self.v_team_pos)
+  end
+  local character_cfg = ShareRes.get_character_cfg(npc_id)
+  npc.character_cfg = character_cfg
+  local model_cfg = ShareRes.create("character.character_model", model_id .. "_UI")
+  model_cfg = model_cfg or ShareRes.create("character.character_model", model_id)
+  npc.model_cfg = model_cfg
+  local npc_info = {
+    index = count + 1,
+    npc = npc
+  }
+  self.v_npc_load_list[npc_info.index] = npc_info
+  self.v_is_loading = true
+  self:load_model_animator(npc, npc_info, hide_weapon)
+end
+
+function M:load_model_animator(npc, npc_info, hide_weapon)
+  npc:before_load_gameobj()
+  ResPool:get_animator_async(npc.model_cfg.ControllerPath, function(_, animator_info)
+    if npc:is_destroy() or not self.v_npc_load_list[npc_info.index] then
+      ResPool:release_res(animator_info)
+      return
+    end
+    npc.runtime_animator = animator_info.res
+    npc.animator_info = animator_info
+    self:load_gameobj_async(npc, npc_info, hide_weapon)
+  end)
+end
+
+function M:load_gameobj_async(npc, npc_info, hide_weapon)
+  local model_id = npc.model_cfg.ModelPath
+  ResPool:get_model_async(model_id, function(gameobj)
+    if npc:is_destroy() or not self.v_npc_load_list[npc_info.index] then
+      ResPool:release(gameobj)
+      if npc.animator_info then
+        ResPool:release_res(npc.animator_info)
+      end
+      return
+    end
+    local trans = gameobj.transform
+    npc:init_ui_model_gameobj(gameobj, trans, self.v_content_root.transform, hide_weapon)
+    trans:SetEulerY(180)
+    npc.act_ctrl:try_action(ACT_DEFINE.Idle, 0, nil, nil, true)
+    npc.char_renderers:enable_effect(Config.CHAR_EFFECT.SHADOW, true)
+    Util.set_all_mat(trans, function(mat)
+      local not_need_shadow = string.match(mat.name, "face") or string.match(mat.name, "eye")
+      mat:SetKeyword("_SHADOW_RECEIVE", not not_need_shadow)
+    end)
+    self.v_model_control:UpdateRendererProperty(gameobj)
+    if self.v_is_set_light then
+      npc.char_renderers:enable_effect(Config.CHAR_EFFECT.PLANE_SHADOW, true)
+    end
+    self.v_cur_npc = gameobj
+    self.v_cur_npc_luaobj = npc_info.npc
+    self.v_is_enlarge = false
+    self:on_loaded_npc(npc_info)
+    self.v_is_loading = false
+    if self.v_next_load then
+      self.v_next_load()
+      self.v_next_load = nil
+    end
+    if self.v_is_show_effect then
+      local effect_param = npc_info.npc.act_effect_ctrl.create_effect_param()
+      effect_param.prefab_name = self.v_effect_name
+      effect_param.parent = self.v_content_root.transform
+      self.v_show_effct_id = npc_info.npc.act_effect_ctrl:play_effect(effect_param)
+      self.v_is_show_effect = false
+    end
+  end)
+end
+
+function M:_on_weapon_loaded(msg)
+  local tbl = msg.mm_obj
+  for _, npc in pairs(self.v_npc_loaded_list) do
+    if npc == tbl then
+      self.v_model_control:UpdateRendererProperty(npc.gameobj)
+      if self.v_is_set_light then
+        npc.char_renderers:update_effect()
+      end
+      break
+    end
+  end
+end
+
+function M:load_test_model(model_id)
+  if self.v_load_test_model then
+    ResMgr:destroy_gameobj(self.v_load_test_model)
+    self.v_load_test_model = nil
+  end
+  self.v_content_root_transform:ResetAttr()
+  ResPool:get_model_async(model_id, function(gameobj)
+    local trans = gameobj.transform
+    CSChangeLayer(trans, Layer.Layer.UIModelView)
+    trans:SetParent(self.v_content_root_transform)
+    trans:ResetAttr()
+    trans:SetEulerY(180)
+    self.v_load_test_model = gameobj
+    self.v_model_control:UpdateRendererProperty(gameobj)
+    self.v_model_z = 0
+    self.v_model_y = 0
+  end)
+end
+
+function M:set_test_model_pos_y(pos_y)
+  if not self.v_load_test_model or self.v_load_test_model:IsNull() then
+    return
+  end
+  self.v_model_y = pos_y - 0.5
+  self.v_content_root.transform:SetLocalPositionA(0, self.v_model_y, self.v_model_z)
+end
+
+function M:set_test_model_pos_z()
+  self.v_is_closer = not self.v_is_closer
+  self.v_closer_z = self.v_is_closer and -1 or 0
+  self.v_closer_lerp = true
+  return self.v_is_closer
+end
+
+function M:update_test_model()
+  if not self.v_load_test_model or self.v_load_test_model:IsNull() then
+    return
+  end
+  local temp = self.v_xmove_cache
+  self.v_xmove_cache = _lerp(self.v_xmove_cache, 0, 0.09)
+  self.v_content_root.transform:Rotate(0, temp - self.v_xmove_cache, 0)
+  if list and 1 == UtilTable.hash_lenth(list) then
+    local trans = self.v_load_test_model.transform
+    local _, angle_y = trans:GetEulerAnglesA3()
+    self:update_light(angle_y)
+    CSShadow.RenderShadowMap(trans, true)
+  end
+  if not self.v_closer_lerp then
+    return
+  end
+  self.v_model_z = _lerp(self.v_model_z, self.v_closer_z, 0.1)
+  self.v_model_y = _lerp(self.v_model_y, 0, 0.1)
+  self.v_content_root.transform:SetLocalPositionA(0, self.v_model_y, self.v_model_z)
+  if _abs(self.v_model_z - self.v_closer_z) < 0.01 then
+    self.v_closer_lerp = false
+  end
+end
+
+function M:reset_npc_pos_z()
+  local dist = self.v_is_child and ShortDistZ or NormalDistZ
+  self.v_is_enlarge = false
+  self.v_target_pos_z = dist
+  self.v_is_lerp_pos = true
+  self.v_target_pos_y = 0
+end
+
+function M:_get_parent_ui_name()
+  local cur_ui = self.v_ui
+  while nil ~= cur_ui do
+    if cur_ui.ui_get_name then
+      return cur_ui:ui_get_name()
+    else
+      cur_ui = cur_ui.v_parent_ui
+    end
+  end
+end
+
+function M:set_rt_enable(enable)
+  self.v_camera_root:SetActive(enable)
+end
+
+function M:_response_hide_ui_event(msg)
+  if not self.v_ui_name or msg.mm_obj ~= self.v_ui_name then
+    return
+  end
+  if not self.v_model_root then
+    return
+  end
+  self.v_camera_root:SetActive(false)
+end
+
+function M:_response_show_ui_event(msg)
+  local show_camera_ui = msg.mm_y
+  if not self.v_ui_name then
+    return
+  end
+  if msg.mm_obj ~= self.v_ui_name and (not show_camera_ui or show_camera_ui ~= self.v_ui_name) then
+    return
+  end
+  if not self.v_model_root then
+    return
+  end
+  self.v_camera_root:SetActive(true)
+end
+
+function M:is_play_show_effect(is_show, effect_name)
+  if self.v_show_effct_id then
+    self.v_cur_npc_luaobj.act_effect_ctrl:stop_effect(self.v_show_effct_id)
+  end
+  self.v_is_show_effect = is_show
+  self.v_effect_name = effect_name
+end
+
+return M

@@ -1,0 +1,128 @@
+local Base = require("ui.uiobject")
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local ShopCfg = require("uimodule.shop.shop_config")
+local ui = Util.create_child_mt(Base)
+local CT_Timer = Global.ct_timer
+local LIMIT_TYPES = ShopCfg.GIFT_LIMIT_TYPES
+local TIPS_TYPE = ShopCfg.GIFT_TIPS_TYPE
+
+function ui:ui_finish_load()
+  self.v_click_btn = self:get_button(nil, self.v_object)
+  self:set_button_listener(self.v_click_btn, function()
+    if self.v_is_blank then
+      return
+    end
+    if self.v_reach_limit then
+      return
+    end
+    if not self.v_is_product_valid then
+      return
+    end
+    if self.v_check_open then
+      UIMgr:get_ui("gift_shop_tips"):ui_show(TIPS_TYPE.DETAIL, self.v_gift_cfg)
+    end
+  end)
+end
+
+function ui:set_data(go, data_list, index)
+  self.v_gift_cfg = data_list[index]
+  self.v_is_blank = next(self.v_gift_cfg) == nil
+  if self.v_is_blank then
+    self:close_all_chirld(self.v_object)
+    return
+  end
+  self.v_is_product_valid = not RechargeMgr:is_recharge_product(self.v_gift_cfg) or RechargeMgr:is_product_valid(self.v_gift_cfg)
+  if not self.v_is_product_valid then
+    self:close_all_chirld(self.v_object)
+    return
+  end
+  self.v_reach_limit = Shop_Helper.check_sold_out(self.v_gift_cfg)
+  self.v_check_open = Shop_Helper.check_gift_open(self.v_gift_cfg)
+  self:_set_goods_info()
+  self:_set_limit_info()
+  self:_set_discount()
+  self:_set_soud_out()
+end
+
+function ui:close_all_chirld(obj)
+  if Util.is_nil(obj) then
+    return
+  end
+  local chirld_len = obj.gameObject.transform.childCount
+  for i = 0, chirld_len - 1 do
+    local item_obj = obj.gameObject.transform:GetChild(i)
+    item_obj:SetActive(false)
+  end
+end
+
+local enough_color = Util.CommonColor_White
+local not_enough_color = Util.CommonColor_RedWarm
+
+function ui:_set_goods_info()
+  ResMgr:load_set_icon(self.v_uicompents.GiftIcon_img, self.v_gift_cfg.Icon)
+  self.v_uicompents.GiftName_txt.text = self.v_gift_cfg.Name
+  self.v_uiobjects.CurrNum:SetActive(true)
+  self.v_uiobjects.Icon:SetActive(not self.v_gift_cfg.ShowPrice and self.v_gift_cfg.CostItem)
+  if self.v_gift_cfg.ShowPrice then
+    local price = Shop_Helper.get_goods_price(self.v_gift_cfg)
+    self.v_uicompents.CurrNum_txt.text = string.format("<size=20>%s</size> %s", Shop_Helper.get_money_symbol(self.v_gift_cfg), price)
+    self.v_uicompents.CurrNum_txt.color = enough_color
+  elseif self.v_gift_cfg.CostItem then
+    ResMgr:load_set_icon(self.v_uicompents.CurrIcon_img, Shop_Helper.get_item_icon(self.v_gift_cfg.CostItem))
+    local is_enough = BagMgr:get_cost_enough(self.v_gift_cfg.CostItem, self.v_gift_cfg.CostItemNum)
+    self.v_uicompents.CurrNum_txt.text = self.v_gift_cfg.CostItemNum
+    self.v_uicompents.CurrNum_txt.color = is_enough and enough_color or not_enough_color
+  else
+    self.v_uicompents.CurrNum_txt.text = Util.format_str("免费")
+    self.v_uicompents.CurrNum_txt.color = enough_color
+  end
+end
+
+function ui:_set_limit_info()
+  local is_limit = self.v_gift_cfg.BuyLimit ~= nil
+  self.v_uiobjects.LimitLayout:SetActive(is_limit)
+  if not is_limit then
+    return
+  end
+  self.v_uicompents.LimitText_txt.text = self.v_gift_cfg.ResetType and LIMIT_TYPES[self.v_gift_cfg.ResetType] or Util.format_str("限购")
+  local now_limit = RechargeMgr:get_gift_buy_count(self.v_gift_cfg.Id)
+  local max_limit = self.v_gift_cfg.BuyLimit
+  self.v_uicompents.LimitNum_txt.text = string.format("%s/%s", now_limit, max_limit)
+end
+
+function ui:_set_discount()
+  local has_tag = self.v_gift_cfg.ShowTag
+  self.v_uiobjects.DiscountBg:SetActive(has_tag)
+  if not has_tag then
+    return
+  end
+  local tag_cfg = ShareRes.create("recharge.gift_tag", self.v_gift_cfg.ShowTag)
+  if tag_cfg.TagBgIcon == "" then
+    self.v_uiobjects.DiscountBg:SetActive(false)
+    return
+  end
+  ResMgr:load_set_icon(self.v_uicompents.DiscountBg_img, tag_cfg.TagBgIcon, nil, false)
+  self.v_uiobjects.DiscountNum:SetActive(self.v_gift_cfg.Discount)
+  if self.v_gift_cfg.Discount then
+    local lab = self.v_gift_cfg.Discount
+    self.v_uicompents.Discount_txt.text = lab
+    self.v_uiobjects.DiscountDesc.gameObject:SetActive(false)
+  else
+    local lab = tag_cfg.Name
+    self.v_uicompents.DiscountDesc_txt.text = lab
+    self.v_uiobjects.DiscountDesc.gameObject:SetActive(true)
+  end
+end
+
+function ui:_set_soud_out()
+  local btn = Util.get_button(nil, self.v_object)
+  if Shop_Helper.check_sold_out(self.v_gift_cfg) then
+    btn.enabled = false
+    self.v_uiobjects.SoldOut:SetActive(true)
+  else
+    btn.enabled = true
+    self.v_uiobjects.SoldOut:SetActive(false)
+  end
+end
+
+return ui

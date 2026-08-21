@@ -1,0 +1,19 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local ITEM_ICON_PATH = "Icon/BattleItem/%s"
+local BagConfig = require("gamelogic.character.fight_bag_configs")
+
+function ui:ui_on_show()
+  self:refresh_currency()
+end
+
+function ui:refresh_currency()
+  local moneyId = BagConfig.SHOW_CURRENCY[1]
+  local cfg = FightBagMgr:get_cfg_by_id(moneyId)
+  local moneyIcon = Util.get_image("CurrencyIcon", self.v_object)
+  ResMgr:load_set_icon(moneyIcon, string.format(ITEM_ICON_PATH, cfg.Icon))
+  local moneyTxt = Util.get_text("CurrencyVal", self.v_object)
+  moneyTxt.text = CharacterMgr:get_res_val(moneyId)
+end
+
+return ui

@@ -1,0 +1,78 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_wrap(parent, gameobj)
+  self = Base.ui_wrap(self, parent, gameobj)
+  self.v_object:SetActive(true)
+  return self
+end
+
+function ui:ui_finish_load()
+  self:set_enable(true)
+  self.v_tag_type_tips = {
+    TagRotate = Util.get_child_gameobj("TagIcon/TagRotate", self.v_object_transform),
+    TagSpecific = Util.get_child_gameobj("TagIcon/TagSpecific", self.v_object_transform)
+  }
+  self.v_name_txt = self:get_text("TagIcon/TagName", self.v_object_transform)
+  self.v_red_obj = Util.get_child_gameobj("TagIcon/RedPoint", self.v_object_transform)
+  self.v_custom_red_obj = Util.get_child_gameobj("TagIcon/CustomRedPoint", self.v_object_transform)
+  self.v_ani_out = Util.get_child_gameobj("Animation/Ani_SubTagTpl_Out", self.v_object_transform)
+  self.v_ani_in = Util.get_child_gameobj("Animation/Ani_SubTagTpl_In", self.v_object_transform)
+  self.v_red_id = nil
+end
+
+local Custom_Tag_Type = 4
+
+function ui:set_info(pool_id)
+  self.v_pool_id = pool_id
+  local pool_config = ShareRes.get_drawcard_pool(pool_id)
+  self.v_object.gameObject.name = pool_config.UI or "SubTagTpl"
+  local tips_name = pool_config.TagTipsName
+  for key, obj in pairs(self.v_tag_type_tips) do
+    obj:SetActiveEx(key == tips_name)
+  end
+  self.v_name_txt.text = pool_config.Name
+  self.v_pool_config = pool_config
+  self:set_tag_icon()
+  self:set_selected(false)
+  local uidrawcard = UIMgr:get_ui("uidrawcard")
+  local parent_red_id = DrawCardMgr:get_entry_red_id()
+  if self.v_red_id ~= nil then
+    RedPointMgr:unbind_redpoint_by_id(uidrawcard, self.v_red_id, parent_red_id)
+  end
+  self.v_red_id = self.v_pool_id
+  RedPointMgr:bind_redpoint(uidrawcard, self.v_red_obj, self.v_red_id, parent_red_id)
+  self.v_custom_red_obj:SetActive(DrawCardMgr:check_selectable_item_any_new(self.v_pool_id))
+end
+
+function ui:set_tag_icon()
+  local tag_icon = self:get_image("TagIcon", self.v_object_transform)
+  local tag_mask_icon = self:get_image("TagIcon/UnSelectMask", self.v_object_transform)
+  local path
+  if self.v_pool_config.Type == Custom_Tag_Type then
+    path = DrawCardMgr:get_selectable_pool_choose_tag_icon(self.v_pool_config.Group, self.v_pool_id)
+  end
+  path = path or string.format("UIDraw/%s", self.v_pool_config.TagIcon)
+  ResMgr:load_set_icon(tag_icon, path)
+  ResMgr:load_set_icon(tag_mask_icon, path)
+end
+
+function ui:set_selected(selected)
+  self.v_ani_out:SetActiveEx(not selected)
+  self.v_ani_in:SetActiveEx(selected)
+end
+
+function ui:get_info()
+  return self.v_pool_id
+end
+
+function ui:ui_on_hide()
+  if self.v_red_id ~= nil then
+    local uidrawcard = UIMgr:get_ui("uidrawcard")
+    local parent_red_id = DrawCardMgr:get_entry_red_id()
+    RedPointMgr:unbind_redpoint_by_id(uidrawcard, self.v_red_id, parent_red_id)
+    self.v_red_id = nil
+  end
+end
+
+return ui

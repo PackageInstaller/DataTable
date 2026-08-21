@@ -1,0 +1,188 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local CHAR_SELECT_CLASS = require("uimodule.character.char_inside_list_select_item")
+local CharacterConfig = require("uimodule.character.character_config")
+local _insert = table.insert
+local GridLayoutGroup = UnityEngine.UI.GridLayoutGroup
+local CHAR_SELECT_KEY = "CHARACTER_LIST_ITEM_KEY"
+local ORDER_TYPE2_NAME = CharacterConfig.ORDER_TYPE2_NAME
+local ORDER_TYPE = CharacterConfig.ORDER_TYPE
+local SORT_RULE = CharacterConfig.SORT_RULE
+
+function ui:ui_finish_load()
+  self:set_button("BtnClose", function()
+    if self.v_is_closing then
+      return
+    end
+    self.v_is_closing = true
+    self.v_parent_ui:show_char_list(false)
+    self:remove_delay_close_timer()
+    self.v_delay_close_timer = Timer:add_timer("delay_enter_chapter_timer", 0.35, function()
+      self.v_is_closing = false
+      self:set_enable(false)
+    end)
+  end)
+  self:set_button("Btn_screen", function()
+    if self.v_is_closing then
+      return
+    end
+    UIMgr:get_ui("screen_buddy_tips"):ui_show(true, false, true)
+  end)
+  self:set_button("BtnSort", function()
+    if self.v_is_closing then
+      return
+    end
+    UIMgr:get_ui("sort_buddy_tips"):ui_show(true)
+  end)
+  self:set_button("ScreenUpDown", function()
+    if self.v_is_closing then
+      return
+    end
+    CharacterMgr.v_is_drop_inside_list = not CharacterMgr.v_is_drop_inside_list
+    local rot_z = CharacterMgr.v_is_drop_inside_list and 0 or 180
+    self.v_uicompents.ScreenUpDown_rect:SetEuler(0, 0, rot_z)
+    self:refresh_char_select_list()
+  end)
+  self.v_content_grid_layout_group = Util.get_component(nil, self.v_uiobjects.CharContent, typeof(GridLayoutGroup))
+  self:register_exist_auto_template(CHAR_SELECT_KEY, self.v_uiobjects.CharTem, self.v_uiobjects.CharContent)
+end
+
+function ui:ui_on_show()
+  self.v_is_closing = false
+  self:refresh_char_select_list()
+  self:bind_auto_mq(Const.MSG_ON_BUDDY_CHANGE, self.refresh_char_select_list, self)
+end
+
+function ui:ui_on_hide()
+  self:clear_wrap_item()
+  self:remove_delay_close_timer()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:remove_delay_close_timer()
+  if self.v_delay_close_timer then
+    Timer:remove_timer(self.v_delay_close_timer)
+    self.v_delay_close_timer = nil
+  end
+end
+
+function ui:clear_wrap_item()
+  if self.v_all_buddy_item_list then
+    for _, buddy_item in pairs(self.v_all_buddy_item_list) do
+      buddy_item.obj:ui_destroy()
+      buddy_item.obj = nil
+    end
+    self.v_all_buddy_item_list = nil
+  end
+end
+
+function ui:refresh_char_select_list()
+  self:set_screen_list()
+  self.v_buddy_id = CharacterMgr.v_last_select_buddy_id
+  local select_idx = self:get_buddy_idx_by_id(self.v_buddy_id)
+  self:clear_wrap_item()
+  self.v_all_buddy_item_list = {}
+  self:give_back_auto_cache(CHAR_SELECT_KEY)
+  for idx, screen_buddy_data in ipairs(self.v_screen_list) do
+    local item = self:get_auto_cache(CHAR_SELECT_KEY)
+    local buddy_id = screen_buddy_data.id
+    local select_obj = CHAR_SELECT_CLASS:ui_wrap_ex(self, item, true)
+    select_obj.go = item
+    select_obj:set_linked_parent(self)
+    select_obj:set_data(screen_buddy_data)
+    select_obj:disable_tog()
+    local insert_data = {
+      id = buddy_id,
+      obj = select_obj,
+      buddy_info = screen_buddy_data
+    }
+    _insert(self.v_all_buddy_item_list, insert_data)
+    if select_idx == idx then
+      select_obj:enable_tog()
+    end
+  end
+  local total_row = math.ceil(#self.v_all_buddy_item_list / 4)
+  local move_row = math.ceil(select_idx / 4) - 1
+  if move_row > total_row - 5 then
+    move_row = 0
+  end
+  local offset = self.v_content_grid_layout_group.spacing.y + self.v_content_grid_layout_group.cellSize.y
+  self.v_uicompents.CharContent_rect:SetAnchoredPositionA(0, move_row * offset)
+end
+
+function ui:set_screen_list()
+  local v_order_type = CharacterMgr.v_screen_type_inside_list or ORDER_TYPE.DEFAULT
+  self.v_uicompents.ScreenText_txt.text = ORDER_TYPE2_NAME[v_order_type]
+  local element_list = CharacterMgr.v_attr_screen_list_inside_list
+  local job_list = CharacterMgr.v_job_screen_list_inside_list
+  local tag_list = CharacterMgr.v_tag_screen_list_inside_list
+  self.v_screen_list = {}
+  local buddy_config = ShareRes.create("buddy.buddy")
+  local own_list = UtilTable.copy_table(CharacterMgr:get_buddy_map())
+  for _, info in pairs(own_list) do
+    local cfg = buddy_config[info.id]
+    if 1 ~= cfg.IsShow and CharacterMgr:check_buddy_release(info.id) then
+      local element_cond = not element_list or 0 == #element_list or UtilTable.contains(element_list, cfg.Element)
+      local job_cond = not job_list or 0 == #job_list or UtilTable.contains(job_list, cfg.Job)
+      local tag_cond = not tag_list or 0 == #tag_list or cfg.Tag and (UtilTable.contains(tag_list, cfg.Tag[1]) or UtilTable.contains(tag_list, cfg.Tag[2]))
+      if element_cond and job_cond and tag_cond then
+        info.element = cfg.Element
+        info.fashion_id = FashionMgr:get_fashion_wearing_id(info.id)
+        _insert(self.v_screen_list, info)
+      end
+    end
+  end
+  if self.v_all_buddy_item_list then
+    for _, item in ipairs(self.v_all_buddy_item_list) do
+      item.obj:disable_tog()
+    end
+  end
+  self:sort_type(v_order_type)
+end
+
+function ui:sort_type(v_order_type)
+  local sort_rule = SORT_RULE[v_order_type]
+  table.sort(self.v_screen_list, function(info_a, info_b)
+    for _, type in ipairs(sort_rule) do
+      if info_a[type] ~= info_b[type] then
+        if CharacterMgr.v_is_drop_inside_list then
+          return info_a[type] < info_b[type]
+        else
+          return info_a[type] > info_b[type]
+        end
+      end
+    end
+  end)
+end
+
+function ui:get_buddy_idx_by_id(buddy_id)
+  if self.v_screen_list then
+    for i, v in ipairs(self.v_screen_list) do
+      if v.id == buddy_id then
+        return i
+      end
+    end
+  end
+  return 1
+end
+
+function ui:on_click_buddy(buddy_id)
+  if self.v_is_closing then
+    return
+  end
+  if buddy_id == CharacterMgr.v_last_select_buddy_id then
+    return
+  end
+  self.v_parent_ui:change_buddy(buddy_id)
+  if self.v_all_buddy_item_list then
+    for _, item in ipairs(self.v_all_buddy_item_list) do
+      if item.id ~= buddy_id then
+        item.obj:disable_tog()
+      end
+    end
+  end
+end
+
+return ui

@@ -1,0 +1,229 @@
+local t = {
+  [1001001] = {
+    Id = 1001001,
+    LibraryData15 = {
+      100100101,
+      100100102,
+      100100103,
+      100100104,
+      100100105,
+      100100106,
+      100100107
+    },
+    LibraryData16 = {100178},
+    LibraryData17 = {100178},
+    LibraryData18 = {
+      100100111,
+      100100112,
+      100100411,
+      100100711
+    },
+    LibraryData19 = {100100121, 100100122},
+    LibraryData20 = {100100131, 100100132}
+  },
+  [1001002] = {
+    Id = 1001002,
+    LibraryData15 = {
+      100100201,
+      100100202,
+      100100203,
+      100100217,
+      100100219
+    },
+    LibraryData16 = {100178},
+    LibraryData17 = {100178},
+    LibraryData18 = {10100206},
+    LibraryData19 = {10100208},
+    LibraryData20 = {10100216, 10100218}
+  },
+  [1001003] = {
+    Id = 1001003,
+    LibraryData15 = {
+      100100301,
+      100100302,
+      100100303,
+      100100304,
+      100100305,
+      100100306,
+      100100307,
+      100100308
+    },
+    LibraryData16 = {100178},
+    LibraryData17 = {100178},
+    LibraryData18 = {100100309},
+    LibraryData19 = {100100312},
+    LibraryData20 = {100100315}
+  },
+  [1001004] = {
+    Id = 1001004,
+    LibraryData15 = {100100411},
+    LibraryData16 = {100178},
+    LibraryData17 = {100178},
+    LibraryData18 = {100100411},
+    LibraryData19 = {100178},
+    LibraryData20 = {100178}
+  },
+  [1001005] = {
+    Id = 1001005,
+    LibraryData15 = {
+      100100501,
+      100100502,
+      100100503,
+      100100504,
+      100100505
+    },
+    LibraryData16 = {100178},
+    LibraryData17 = {100178},
+    LibraryData18 = {100100506, 100100507},
+    LibraryData19 = {100178},
+    LibraryData20 = {100178}
+  },
+  [1001006] = {
+    Id = 1001006,
+    LibraryData15 = {100100605},
+    LibraryData16 = {},
+    LibraryData17 = nil,
+    LibraryData18 = {100100605},
+    LibraryData19 = nil,
+    LibraryData20 = nil
+  },
+  [1001007] = {
+    Id = 1001007,
+    LibraryData15 = {100100712, 100100715},
+    LibraryData16 = nil,
+    LibraryData17 = nil,
+    LibraryData18 = {100100712, 100100715},
+    LibraryData19 = nil,
+    LibraryData20 = nil
+  },
+  [1001008] = {
+    Id = 1001008,
+    LibraryData15 = {100100812, 100100813},
+    LibraryData16 = nil,
+    LibraryData17 = nil,
+    LibraryData18 = {100100812, 100100813},
+    LibraryData19 = nil,
+    LibraryData20 = nil
+  },
+  [1001009] = {
+    Id = 1001009,
+    LibraryData15 = {
+      100100910,
+      100100911,
+      100100964
+    },
+    LibraryData16 = {100100964},
+    LibraryData17 = nil,
+    LibraryData18 = {100100910, 100100911},
+    LibraryData19 = nil,
+    LibraryData20 = nil
+  },
+  [1001010] = {
+    Id = 1001010,
+    LibraryData15 = {
+      100101011,
+      100101012,
+      100101013,
+      100101047,
+      100101053
+    },
+    LibraryData16 = nil,
+    LibraryData17 = nil,
+    LibraryData18 = {100101051, 100101052},
+    LibraryData19 = {100101061},
+    LibraryData20 = {
+      100101071,
+      100101072,
+      100101073,
+      100101074
+    }
+  },
+  [1001011] = {
+    Id = 1001011,
+    LibraryData15 = {100101111, 100101112},
+    LibraryData16 = nil,
+    LibraryData17 = nil,
+    LibraryData18 = {100101111, 100101112},
+    LibraryData19 = nil,
+    LibraryData20 = nil
+  },
+  [1001012] = {
+    Id = 1001012,
+    LibraryData15 = {100101206, 100101207},
+    LibraryData16 = nil,
+    LibraryData17 = nil,
+    LibraryData18 = {100101206, 100101207},
+    LibraryData19 = nil,
+    LibraryData20 = nil
+  },
+  [1001014] = {
+    Id = 1001014,
+    LibraryData15 = {
+      100101401,
+      100101402,
+      100101403,
+      100101404
+    },
+    LibraryData16 = nil,
+    LibraryData17 = nil,
+    LibraryData18 = {100101411, 100101412},
+    LibraryData19 = {100101421},
+    LibraryData20 = {100101431100100992}
+  },
+  [1001015] = {
+    Id = 1001015,
+    LibraryData15 = nil,
+    LibraryData16 = nil,
+    LibraryData17 = nil,
+    LibraryData18 = nil,
+    LibraryData19 = nil,
+    LibraryData20 = nil
+  },
+  [1001016] = {
+    Id = 1001016,
+    LibraryData15 = nil,
+    LibraryData16 = nil,
+    LibraryData17 = nil,
+    LibraryData18 = nil,
+    LibraryData19 = {100101631},
+    LibraryData20 = nil
+  }
+}
+t[1001006].LibraryData17 = t[1001006].LibraryData16
+t[1001006].LibraryData19 = t[1001006].LibraryData16
+t[1001006].LibraryData20 = t[1001006].LibraryData16
+t[1001007].LibraryData16 = t[1001006].LibraryData16
+t[1001007].LibraryData17 = t[1001006].LibraryData16
+t[1001007].LibraryData19 = t[1001006].LibraryData16
+t[1001007].LibraryData20 = t[1001006].LibraryData16
+t[1001008].LibraryData16 = t[1001006].LibraryData16
+t[1001008].LibraryData17 = t[1001006].LibraryData16
+t[1001008].LibraryData19 = t[1001006].LibraryData16
+t[1001008].LibraryData20 = t[1001006].LibraryData16
+t[1001009].LibraryData17 = t[1001006].LibraryData16
+t[1001009].LibraryData19 = t[1001006].LibraryData16
+t[1001009].LibraryData20 = t[1001006].LibraryData16
+t[1001010].LibraryData16 = t[1001006].LibraryData16
+t[1001010].LibraryData17 = t[1001006].LibraryData16
+t[1001011].LibraryData16 = t[1001006].LibraryData16
+t[1001011].LibraryData17 = t[1001006].LibraryData16
+t[1001011].LibraryData19 = t[1001006].LibraryData16
+t[1001011].LibraryData20 = t[1001006].LibraryData16
+t[1001012].LibraryData16 = t[1001006].LibraryData16
+t[1001012].LibraryData17 = t[1001006].LibraryData16
+t[1001012].LibraryData19 = t[1001006].LibraryData16
+t[1001012].LibraryData20 = t[1001006].LibraryData16
+t[1001014].LibraryData16 = t[1001006].LibraryData16
+t[1001014].LibraryData17 = t[1001006].LibraryData16
+t[1001015].LibraryData15 = t[1001006].LibraryData16
+t[1001015].LibraryData16 = t[1001006].LibraryData16
+t[1001015].LibraryData17 = t[1001006].LibraryData16
+t[1001015].LibraryData18 = t[1001006].LibraryData16
+t[1001015].LibraryData19 = t[1001006].LibraryData16
+t[1001015].LibraryData20 = t[1001006].LibraryData16
+t[1001016].LibraryData15 = t[1001006].LibraryData16
+t[1001016].LibraryData16 = t[1001006].LibraryData16
+t[1001016].LibraryData17 = t[1001006].LibraryData16
+t[1001016].LibraryData18 = t[1001006].LibraryData16
+t[1001016].LibraryData20 = t[1001006].LibraryData16
+return t

@@ -1,0 +1,56 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local ORN_TEMPLATE = "ORN_TEMPLATE"
+local ORN_VIEW_ITEM = require("uimodule.battle_bag.orn_view_item")
+
+function ui:ui_finish_load()
+  self.v_orn_item_list = {}
+  ORN_TEMPLATE = ORN_TEMPLATE .. self.v_parent_ui:ui_get_name()
+  self:register_exist_auto_template(ORN_TEMPLATE, self.v_uiobjects.OrnTem, self.v_uiobjects.OrnLayout)
+end
+
+function ui:click_close_orntips_btn()
+end
+
+function ui:click_ornaments_item(index)
+end
+
+function ui:ui_on_show(ornaments_list)
+  ornaments_list = ornaments_list or BattleOrnamentMgr:get_ornaments_list()
+  if not ornaments_list then
+    return
+  end
+  self.v_ornaments_list = UtilTable.copy_table(ornaments_list)
+  self:set_orn_data()
+end
+
+function ui:set_orn_data()
+  self:give_back_auto_cache(ORN_TEMPLATE)
+  self:remove_all_orn_item()
+  local no_orn = true
+  for index, ornament_data in ipairs(self.v_ornaments_list) do
+    if ornament_data.item_id then
+      local orn_obj = self:get_auto_cache(ORN_TEMPLATE)
+      local item = ORN_VIEW_ITEM:ui_wrap(self, orn_obj, true)
+      item:set_data(ornament_data.item_id)
+      self.v_orn_item_list[index] = item
+      no_orn = false
+    end
+  end
+  self.v_uiobjects.OrnList:SetActive(not no_orn)
+  self.v_uiobjects.NoOrn:SetActive(no_orn)
+end
+
+function ui:remove_all_orn_item()
+  for key, item in pairs(self.v_orn_item_list) do
+    item:ui_hide()
+    item:ui_destroy()
+    self.v_orn_item_list[key] = nil
+  end
+end
+
+function ui:ui_on_hide()
+  self:remove_all_orn_item()
+end
+
+return ui

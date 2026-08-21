@@ -1,0 +1,180 @@
+local Base = require("ui.uiobject")
+local Player_Hero_Helper = require("uimodule.friend.player_hero_info.player_hero_helper")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local Timer = Global.timer
+local _min = math.min
+local _tinsert = table.insert
+local _sformat = string.format
+local dotween = CS.DG.Tweening.DOTweenAnimation
+local SKILL_CONTENT_ITEM = "SKILL_CONTENT_ITEM_PLAYER"
+local Prop_Name_To_Show_Name = {
+  hp = "血量",
+  sparmor = "霸体值",
+  energy = "能量",
+  cvenergy = "能量恢复",
+  exenergy = "大招能量",
+  cvexenergy = "大招能量恢复",
+  attack = "物理攻击",
+  beacon_level = "信标等级",
+  penetrate = "穿防",
+  defense = "防御"
+}
+local UNLOCK_COLOR = Util.get_unity_color_by_hex(tonumber("FFFFFF", 16))
+local LOCK_COLOR = Util.get_unity_color_by_hex(tonumber("858585", 16))
+local MODEL = {
+  v_advance_icon = {
+    "AdvanceIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_down = {
+    "Down",
+    BIND_TYPE.OBJECT
+  },
+  v_img_no = {
+    "ImgNo",
+    BIND_TYPE.IMAGE
+  },
+  v_img_sure = {
+    "ImgSure",
+    BIND_TYPE.IMAGE
+  },
+  v_skill_content = {
+    "SkillContent",
+    BIND_TYPE.OBJECT
+  },
+  v_temp = {
+    "Temp",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_page_tween = self.v_object:GetComponent(typeof(dotween))
+  self:register_exist_auto_template(SKILL_CONTENT_ITEM, self.v_temp, self.v_skill_content)
+end
+
+function ui:ui_on_show()
+  self.v_page_tween:DORewind()
+  self.v_page_tween:DOPlay()
+  self.v_uicompents.SkillContent_rect:SetAnchoredPositionA(0, 0, 0)
+  self.v_down:SetActive(false)
+  self:update_info()
+end
+
+function ui:update_info()
+  self.v_buddy_info = Player_Hero_Helper.get_hero_data()
+  self:update_cur_cfg()
+  self:update_fun()
+end
+
+function ui:update_cur_cfg()
+  local advance_skill_cfg = ShareRes.create("buddy.buddy_advance", self.v_buddy_info.id)
+  self.v_role_cur_lv = self.v_buddy_info.advance
+  self.v_role_next_lv = self.v_role_cur_lv + 1
+  self.v_next_lv_cfg = advance_skill_cfg[self.v_role_next_lv]
+  self.v_arrive_max_lv = false
+  if self.v_next_lv_cfg then
+    local cur_show_lv = advance_skill_cfg[self.v_role_cur_lv].ShowLv
+    local next_show_lv = advance_skill_cfg[self.v_role_next_lv].ShowLv
+    if cur_show_lv < next_show_lv then
+      self.v_can_play_lv_eff = true
+    else
+      self.v_can_play_lv_eff = false
+    end
+  else
+    self.v_arrive_max_lv = true
+  end
+  self.v_role_lv_cfg = {}
+  self.v_first_lock_node = nil
+  self.v_cur_unlock_node = 1
+  local str_unlock = "<color=#FFFFFF>%s</color>"
+  local str_lock = "<color=#858585>%s</color>"
+  local skill_up = Util.get_i18n("技能等级") .. " +%s"
+  for _, lv_cfg in ipairs(advance_skill_cfg) do
+    local index = lv_cfg.ShowLv
+    self.v_role_lv_cfg[index] = self.v_role_lv_cfg[index] or {
+      lv_num = index,
+      lv_name = lv_cfg.SkillName,
+      is_lock = false,
+      desc = nil,
+      color = LOCK_COLOR
+    }
+    local skill_desc = ""
+    if lv_cfg.SkillDesc and "" ~= lv_cfg.SkillDesc then
+      skill_desc = lv_cfg.SkillDesc
+    elseif lv_cfg.UpSkillLv > 0 then
+      skill_desc = _sformat(skill_up, lv_cfg.UpSkillLv)
+    else
+      local add_value = 0
+      skill_desc, add_value = self:get_prop_desc(lv_cfg.Lv)
+      if add_value > 0 then
+        skill_desc = Util.get_i18n(skill_desc) .. " +" .. add_value
+      end
+    end
+    if lv_cfg.Lv <= self.v_role_cur_lv then
+      skill_desc = _sformat(str_unlock, skill_desc)
+      self.v_role_lv_cfg[index].is_lock = true
+      self.v_role_lv_cfg[index].color = UNLOCK_COLOR
+      self.v_cur_unlock_node = index
+    else
+      self.v_first_lock_node = self.v_first_lock_node or index
+      skill_desc = _sformat(str_lock, skill_desc)
+    end
+    if self.v_role_lv_cfg[index].desc then
+      self.v_role_lv_cfg[index].desc = self.v_role_lv_cfg[index].desc .. "\n" .. skill_desc
+    else
+      self.v_role_lv_cfg[index].desc = skill_desc
+    end
+  end
+  self.v_first_lock_node = self.v_first_lock_node or 1
+end
+
+function ui:get_prop_desc(lv)
+  local cfg = ShareRes.create("buddy.buddy_upgrade_advance_attr", self.v_buddy_info.id)[lv]
+  for prop_name, _ in pairs(Prop_Name_To_Show_Name) do
+    if cfg[prop_name] > 0 then
+      return Prop_Name_To_Show_Name[prop_name], cfg[prop_name]
+    end
+  end
+  return "", 0
+end
+
+function ui:update_fun()
+  self:update_skill_title()
+  self:update_skill_content()
+end
+
+function ui:update_skill_title()
+  local advance_icon_cfg = ShareRes.create("buddy.buddy_advance_icon", self.v_role_cur_lv)
+  local icon_name = advance_icon_cfg.AdvacneAfter
+  local icon_path = string.format("%s", icon_name)
+  ResMgr:load_set_icon(self.v_advance_icon, icon_path, nil, true)
+end
+
+function ui:update_skill_content()
+  self.v_uicompents.AdvanceLv_txt.text = self.v_cur_unlock_node - 1
+  self.v_uiobjects.AdvanceLvNode:SetActive(0 ~= self.v_cur_unlock_node - 1)
+  self:give_back_auto_cache(SKILL_CONTENT_ITEM)
+  self.v_ui_effect = {}
+  for index, cfg in ipairs(self.v_role_lv_cfg) do
+    if index > 1 then
+      local ui = self:get_auto_cache(SKILL_CONTENT_ITEM)
+      local Arrow = Util.get_child_gameobj("Arrow", ui)
+      local LvText = Util.get_text("Text", ui)
+      local Desc = Util.get_text("Desc", ui)
+      local LvNum = Util.get_text("LvNum", ui)
+      local LvName = Util.get_text("LvName", ui)
+      Arrow:SetActive(index == self.v_first_lock_node)
+      Desc.text = cfg.desc
+      LvNum.text = cfg.lv_num - 1
+      LvName.text = cfg.lv_name
+      LvNum.color = cfg.color
+      LvName.color = cfg.color
+      LvText.color = cfg.color
+    end
+  end
+end
+
+return ui

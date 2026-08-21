@@ -1,0 +1,14 @@
+local helper = {}
+
+function helper.get_map_angle()
+  local camera = Global.camera
+  if camera then
+    local camera_cfg = camera:get_camera_cfg()
+    if camera_cfg then
+      local z_angle = camera_cfg.DefaultYAngle
+      return z_angle
+    end
+  end
+end
+
+return helper

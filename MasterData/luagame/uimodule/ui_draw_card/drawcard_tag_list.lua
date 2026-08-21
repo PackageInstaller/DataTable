@@ -1,0 +1,105 @@
+local SubTagItem = require("uimodule.ui_draw_card.drawcard_sub_tag_item")
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local Base = require("ui.uiobject")
+local _tinsert = table.insert
+local ui = Util.create_child_mt(Base)
+local SUB_TAG_TEMPLATE_KEY = "DRAWCARD_SUB_TAG_TEMPLATE_KEY"
+
+function ui:ui_wrap(parent, gameobj)
+  self = Base.ui_wrap(self, parent, gameobj)
+  return self
+end
+
+function ui:ui_finish_load()
+  self.v_sub_items = {}
+  self.v_cur_select_sub_item = nil
+  self.v_cur_select_index = 1
+  self:register_exist_auto_template(SUB_TAG_TEMPLATE_KEY, self.v_uiobjects.SubTagTpl, self.v_uiobjects.TagContent)
+  self:set_enable(true)
+end
+
+function ui:set_data(data_list)
+  self.v_data_list = data_list
+  self:_refresh_sub_tag_list()
+end
+
+function ui:ui_on_hide()
+  self.v_cur_select_sub_item = nil
+end
+
+function ui:try_select(pool_id)
+  if type(pool_id) == "string" then
+    pool_id = tonumber(pool_id)
+  end
+  for idx, data in ipairs(self.v_data_list) do
+    if pool_id == data.pool_id then
+      self.v_sub_tag_toggles:set_toggle_by_index(idx)
+      return
+    end
+  end
+end
+
+function ui:set_select_cb(cb)
+  self.v_on_select_cb = cb
+end
+
+function ui:_refresh_sub_tag_list()
+  local data = self.v_data_list
+  self:give_back_auto_cache(SUB_TAG_TEMPLATE_KEY)
+  if #data <= 0 then
+    return
+  end
+  self.v_sub_items = {}
+  local toggles = {}
+  local obj, item
+  for i, pool_data in ipairs(data) do
+    obj = self:get_auto_cache(SUB_TAG_TEMPLATE_KEY)
+    item = SubTagItem:ui_wrap(nil, obj)
+    self.v_sub_items[i] = item
+    item:set_info(pool_data.pool_id)
+    _tinsert(toggles, self:get_toggle(nil, obj))
+  end
+  self.v_sub_tag_toggles = ToggleTab:new(self)
+  self.v_sub_tag_toggles:init_by_toggles(toggles, function(idx)
+    self:_on_click_sub_tag(idx)
+  end)
+  self:_select_sub_tag(1)
+end
+
+function ui:_on_click_sub_tag(idx)
+  self:_select_sub_tag(idx)
+end
+
+function ui:_select_sub_tag(idx)
+  if self.v_cur_select_index then
+    local last_item = self.v_sub_items[self.v_cur_select_index]
+    if last_item then
+      last_item:set_selected(false)
+    end
+  end
+  local item = self.v_sub_items[idx]
+  item:set_selected(true)
+  self.v_cur_select_sub_item = item
+  self.v_cur_select_index = idx
+  self.v_on_select_cb(item:get_info())
+end
+
+function ui:last_or_next_index(is_click_next)
+  local len = #self.v_sub_items
+  local after_index
+  if is_click_next then
+    if self.v_cur_select_index == len then
+      after_index = 1
+    else
+      after_index = self.v_cur_select_index + 1
+    end
+  elseif 1 == self.v_cur_select_index then
+    after_index = len
+  else
+    after_index = self.v_cur_select_index - 1
+  end
+  self.v_sub_tag_toggles:set_toggle_by_index(after_index)
+  return after_index, len
+end
+
+return ui

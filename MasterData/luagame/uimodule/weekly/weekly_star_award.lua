@@ -1,0 +1,134 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local REWARD_ITEM = require("uimodule.weekly.star_reward_item")
+local MODEL = {}
+local _sformat = string.format
+local HURDLE_STAR_REWARD = "HURDLE_STAR_REWARD"
+local HURDLE_STAR_REWARD_ITEM = "HURDLE_STAR_REWARD_ITEM"
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnClose", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(HURDLE_STAR_REWARD, self.v_uiobjects.AwardTem, self.v_uiobjects.AwardList)
+  self:register_exist_auto_template(HURDLE_STAR_REWARD_ITEM, self.v_uiobjects.ItemObjCom1, self.v_uiobjects.AwardContent)
+end
+
+function ui:ui_update()
+end
+
+function ui:ui_on_show(hurdle_id)
+  self:bind_auto_mq(Const.MSG_ON_WEEKLY_GET_STAR_REWARD_SUC, self.msg_update_reward, self)
+  self.v_hurdle_cfg = ShareRes.get_weekly_hundle_cfg(hurdle_id)
+  Util.assert(self.v_hurdle_cfg, "ERROR 备战关卡缺少配置" .. hurdle_id)
+  local name = self.v_hurdle_cfg.EpiName
+  self.v_uicompents.StageNum_txt.text = name
+  self.v_item_list = {}
+  self.v_wrap_list = {}
+  self:init_award_list()
+end
+
+function ui:ui_on_hide()
+  self:remove_wrap_list()
+end
+
+function ui:remove_wrap_list()
+  for _, obj in pairs(self.v_wrap_list) do
+    self:remove_wrap_ui(obj)
+  end
+  self.v_wrap_list = {}
+end
+
+function ui:init_award_list()
+  local star_cfg = self.v_hurdle_cfg.StarCondition
+  local star_num = #star_cfg
+  local hurdle_id = self.v_hurdle_cfg.EpiID
+  local start_reward_cfg = self.v_hurdle_cfg.StarReward
+  self:give_back_auto_cache(HURDLE_STAR_REWARD)
+  self:give_back_auto_cache(HURDLE_STAR_REWARD_ITEM)
+  for idx = 1, star_num do
+    local item = self:get_auto_cache(HURDLE_STAR_REWARD)
+    local reward_id = start_reward_cfg[idx]
+    self:update_reward_info(item, reward_id)
+    self:update_item_view(item, idx)
+    self:update_reward_state(item, idx)
+    self.v_item_list[idx] = item
+    local btn_receive = Util.get_button("BtnRecive", item)
+    self:set_button_listener(btn_receive, function()
+      WeeklyMgr:get_hurdle_star_award(hurdle_id, idx)
+    end)
+  end
+end
+
+function ui:msg_update_reward(msg)
+  local hurdle_id = msg.mm_obj
+  local idx = msg.mm_x
+  local item = self.v_item_list[idx]
+  if not item then
+    return
+  end
+  self:update_reward_state(item, idx)
+end
+
+function ui:update_item_view(item, idx)
+  local cfg = self.v_hurdle_cfg
+  local star_num = #cfg.StarCondition
+  local desc_path = "StarContent/Star%s/Light%s"
+  for i = 1, 3 do
+    local star_obj = Util.get_child_gameobj("StarContent/Star" .. i, item)
+    star_obj:SetActive(false)
+  end
+  local index = 1
+  local is_show_light_obj = idx >= index
+  local path = _sformat(desc_path, index, index)
+  local light_obj = Util.get_child_gameobj(path, item)
+  light_obj:SetActive(is_show_light_obj)
+  local star_obj = Util.get_child_gameobj("StarContent/Star" .. index, item)
+  star_obj:SetActive(true)
+end
+
+function ui:update_reward_info(item, reward_id)
+  local reward_cfg = ShareRes.get_award_item_data(reward_id)
+  local parent = Util.get_child_gameobj("AwardContent_", item)
+  for _, data in ipairs(reward_cfg) do
+    local award_ui = self:get_auto_cache(HURDLE_STAR_REWARD_ITEM)
+    award_ui.transform:SetParent(parent.transform)
+    local item_lua_obj = REWARD_ITEM:ui_wrap_ex(self, award_ui, false)
+    item_lua_obj:set_enable(true, data)
+    table.insert(self.v_wrap_list, item_lua_obj)
+  end
+end
+
+function ui:update_reward_state(item, idx)
+  local cfg = self.v_hurdle_cfg
+  local all_star_num = #cfg.StarCondition
+  local hurdle_id = cfg.EpiID
+  local star_map = WeeklyMgr:get_hurdle_star_map(hurdle_id)
+  local get_star_award_map = WeeklyMgr:get_hurdle_star_reward_map(hurdle_id)
+  local receive_btn = Util.get_child_gameobj("BtnRecive", item)
+  local icon_complete_obj = Util.get_child_gameobj("IconComplete", item)
+  icon_complete_obj:SetActiveEx(false)
+  local complete_obj = Util.get_child_gameobj("Complete", receive_btn)
+  local in_complete_obj = Util.get_child_gameobj("InComplete", receive_btn)
+  complete_obj:SetActiveEx(false)
+  in_complete_obj:SetActiveEx(false)
+  local is_get = get_star_award_map[idx]
+  if star_map[idx] then
+    receive_btn:SetActiveEx(not is_get)
+    complete_obj:SetActiveEx(not is_get)
+    icon_complete_obj:SetActiveEx(is_get)
+  else
+    receive_btn:SetActiveEx(true)
+    complete_obj:SetActiveEx(false)
+    in_complete_obj:SetActiveEx(true)
+    local now_txt_obj = Util.get_text("StarNow", in_complete_obj)
+    now_txt_obj.text = idx
+    local all_txt_obj = Util.get_text("StarNeed", in_complete_obj)
+    all_txt_obj.text = all_star_num
+  end
+  local mask = Util.get_child_gameobj("Mask", item)
+  mask:SetActive(is_get)
+end
+
+return ui

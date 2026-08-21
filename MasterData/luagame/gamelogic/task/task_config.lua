@@ -1,0 +1,16 @@
+local ShareRes = require("utils.share_res")
+local common_def = require("cs_share.common_define")
+local M = {}
+M.TASK_STATE = {
+  none = 2,
+  receive = 3,
+  received = 4,
+  noactive = 6,
+  expire = 7
+}
+M.GETSTATETYPE_ORDER = {
+  [M.TASK_STATE.receive] = 1,
+  [M.TASK_STATE.none] = 2,
+  [M.TASK_STATE.received] = 3
+}
+return M

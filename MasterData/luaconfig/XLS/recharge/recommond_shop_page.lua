@@ -1,0 +1,15 @@
+return {
+  {
+    Id = 1,
+    RecommendName = "推荐礼包"
+  },
+  {
+    IconShow = 1,
+    Id = 2,
+    RecommendName = "时装特惠"
+  },
+  {
+    Id = 3,
+    RecommendName = "推荐测试3"
+  }
+}

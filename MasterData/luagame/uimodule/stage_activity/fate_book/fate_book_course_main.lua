@@ -1,0 +1,90 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local COURSE_CHAPTER_ITEM_TEMP = "COURSE_CHAPTER_ITEM_TEMP"
+local POS_NAME = {
+  [1] = "Pos1_",
+  [2] = "Pos2_",
+  [3] = "Pos3_"
+}
+local POS_NAME_LENGTH = #POS_NAME
+
+function ui:ui_finish_load()
+  self:set_button("BtnRet1", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(COURSE_CHAPTER_ITEM_TEMP, self.v_uiobjects.ChapTem, self.v_uiobjects.ChapContent)
+end
+
+function ui:ui_on_show()
+  self:refresh_chapter_list()
+end
+
+function ui:ui_on_hide()
+  self:give_back_auto_cache(COURSE_CHAPTER_ITEM_TEMP)
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_chapter_list()
+  local all_cfg = ShareRes.get_curse_course_chapter_cfg()
+  self:give_back_auto_cache(COURSE_CHAPTER_ITEM_TEMP)
+  local obj, icon, lock, name, pos, content, btn, condition, redpoint, pos_index, all_node
+  for index, cfg in ipairs(all_cfg) do
+    all_node = ShareRes.get_curse_course_node_by_chapter_id(cfg.Id)
+    if not all_node or not next(all_node) then
+      Log.Error("历程章节获取节点数据失败，章节ID：", cfg.Id)
+      return
+    end
+    obj = self:get_auto_cache(COURSE_CHAPTER_ITEM_TEMP)
+    if not Util.is_empty(cfg.ChapterIconPath) then
+      icon = self:get_image("Content_/ChapIcon", obj)
+      ResMgr:load_set_icon(icon, cfg.ChapterIconPath)
+    end
+    lock = self:get_child_gameobj("Content_/Lock_", obj)
+    local is_unlock = FateBookMgr:check_curse_chpater_is_unlock(cfg.Id)
+    lock:SetActive(not is_unlock)
+    local condition_str
+    if not is_unlock then
+      condition = self:get_text("Text", lock)
+      condition_str = self:get_condition_str(cfg)
+      condition.text = condition_str
+    end
+    name = self:get_text("Content_/Name/ChapName_", obj)
+    name.text = cfg.Name
+    pos_index = (index - 1) % POS_NAME_LENGTH + 1
+    pos = self:get_child_gameobj(POS_NAME[pos_index], obj)
+    content = self:get_child_gameobj("Content_", obj)
+    content.transform.localPosition = pos.transform.localPosition
+    name = self:get_text("Content_/Name/ChapName_", obj)
+    name.text = cfg.Name
+    redpoint = self:get_child_gameobj("Content_/Name/RedPoint_", obj)
+    redpoint:SetActive(FateBookMgr:check_curse_chpater_is_red(cfg.Id))
+    btn = self:get_button(nil, obj)
+    self:set_button_listener(btn, function()
+      if not is_unlock then
+        if condition_str then
+          Util.show_message_tip(condition_str)
+        else
+          Util.show_message_tip(2243)
+        end
+        return
+      end
+      UIMgr:get_ui("fate_book_course"):ui_show(cfg.Id)
+    end)
+  end
+end
+
+function ui:get_condition_str(cfg)
+  for key, condition in ipairs(cfg.Condition) do
+    if condition > 0 and not FateBookMgr:check_course_condition_pass(condition) then
+      return ShareRes.get_condition_desc(condition)
+    end
+  end
+end
+
+function ui:cache_ui()
+  return true
+end
+
+return ui

@@ -1,0 +1,20 @@
+return {
+  {
+    Id = 1,
+    Preview = "UIAchievement/Achievement_bg_light01_",
+    QualityBgIcon = "UICommon\\Common_pzk_02",
+    Qualitybox = "UICommon/Achievement_dk_lv01_"
+  },
+  {
+    Id = 2,
+    Preview = "UIAchievement/Achievement_bg_light02_",
+    QualityBgIcon = "UICommon\\Common_pzk_03",
+    Qualitybox = "UICommon/Achievement_dk_lv02_"
+  },
+  {
+    Id = 3,
+    Preview = "UIAchievement/Achievement_bg_light03_",
+    QualityBgIcon = "UICommon\\Common_pzk_04",
+    Qualitybox = "UICommon/Achievement_dk_lv03_"
+  }
+}

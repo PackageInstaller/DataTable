@@ -1,0 +1,170 @@
+local Base = require("gamelogic.base_system")
+local BagCfg = require("gamelogic.character.fight_bag_configs")
+local FightDefine = require("cs_share.fight_define")
+local CommonDefine = require("cs_share.common_define")
+local AttrSyncHelper = require("uimodule.fight_bag.sync_attr_helper")
+local M = Util.create_child_mt(Base)
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_rune_cfg = ShareRes.create("battle.battle_rune")
+  self.v_rune_info = {}
+  self.v_rune_max_lv = {}
+  self.v_rune_exp = {}
+end
+
+function M:on_reconnect()
+  self:clear_rune_info()
+end
+
+function M:response_bag_update_event(msg)
+  self:init_rune_info()
+  local upgrade = false
+  for _, v in pairs(self.v_rune_cfg) do
+    local lv, cur_exp = self:_calc_rune_lv(v.Id)
+    if self.v_rune_exp[v.Id] == cur_exp then
+    elseif self.v_rune_info[v.Id] then
+      if self.v_rune_info[v.Id] == self.v_rune_max_lv[v.Id] then
+        do
+          local str = Util.format_str("{1}等级已满", v.Name)
+          Util.show_message_tip(str)
+          self.v_rune_exp[v.Id] = cur_exp
+        end
+      else
+        local diff = cur_exp - self.v_rune_exp[v.Id]
+        if diff > 0 then
+          local str = Util.format_str("{1}经验增加{2}", v.Name, diff)
+          Util.show_message_tip(str)
+          self.v_rune_exp[v.Id] = cur_exp
+        end
+        if lv > self.v_rune_info[v.Id] then
+          local ui = UIMgr:try_get_visible_ui("rune_upgrade_tips")
+          if ui then
+            ui:ui_hide()
+          end
+          UIMgr:get_ui("rune_upgrade_tips"):ui_show(v.Id, self.v_rune_info[v.Id], lv)
+          self.v_rune_info[v.Id] = lv
+          upgrade = true
+        end
+      end
+    else
+      Log.Error("get rune level failure, rune_id=", v.Id)
+    end
+  end
+  if not upgrade then
+    return
+  end
+  self:_set_rune_attrs()
+end
+
+function M:init_rune_info()
+  if next(self.v_rune_info) ~= nil then
+    return
+  end
+  for _, v in pairs(self.v_rune_cfg) do
+    local info = self:_get_rune_item_info(v.Id)
+    self.v_rune_info[v.Id] = info.lv
+    self.v_rune_exp[v.Id] = info.exp
+    self.v_rune_max_lv[v.Id] = info.max_lv
+  end
+  self:_set_rune_attrs(true)
+end
+
+function M:update_rune_info()
+  self:response_bag_update_event()
+end
+
+function M:get_rune_level(rune_id)
+  return self.v_rune_info[rune_id] or 0
+end
+
+function M:clear_rune_info()
+  self.v_rune_info = {}
+  self.v_rune_max_lv = {}
+  self.v_rune_exp = {}
+end
+
+function M:_get_rune_item_info(rune_id)
+  local num = self:get_rune_exp(rune_id)
+  local lvCfg = ShareRes.create("battle.battle_rune_level_by_parent", rune_id)
+  if 0 == num then
+    return {
+      lv = 0,
+      max_lv = #lvCfg,
+      exp = 0
+    }
+  end
+  local lv = 0
+  for _, v in ipairs(lvCfg) do
+    if num >= v.Exp then
+      lv = v.Level
+    end
+  end
+  return {
+    lv = lv,
+    max_lv = #lvCfg,
+    exp = num
+  }
+end
+
+function M:_calc_rune_lv(rune_id)
+  local num = self:get_rune_exp(rune_id)
+  if 0 == num then
+    return 0, 0
+  end
+  local lvCfg = ShareRes.create("battle.battle_rune_level_by_parent", rune_id)
+  local lv = 0
+  for _, v in ipairs(lvCfg) do
+    if num >= v.Exp then
+      lv = v.Level
+    end
+  end
+  return lv, num
+end
+
+function M:get_rune_exp(rune_id)
+  local id = BagCfg.RUNE_EXP[rune_id]
+  if not id then
+    Log.Error("get rune item id by rune id failure, rune_id=", rune_id)
+    return 0
+  end
+  return CharacterMgr:get_res_val(id)
+end
+
+function M:_set_rune_attrs(init)
+  local attr_list = self:_calc_attrs(self.v_rune_info)
+  AttrSyncHelper.sync_module_attrs(CommonDefine.MODULE_ATTR_TYPE.RUNE, attr_list, init)
+end
+
+function M:_calc_attrs(rune_info)
+  local attr_list = {}
+  for rune_id, rune_lv in pairs(rune_info) do
+    if rune_lv > 0 then
+      local cfg1 = ShareRes.create("battle.battle_rune_level_by_parent", rune_id)
+      if not cfg1 then
+        Log.Error("read battle_rune_level_by_parent failure, rune_id=", rune_id)
+        return
+      end
+      local lvCfg = cfg1[rune_lv]
+      if not lvCfg then
+        Log.Error("read battle_rune_level_by_parent failure, rune_id=", rune_id, "rune_lv=", rune_lv)
+        return
+      end
+      local attr_cfg = ShareRes.create("entry.battle_fixed_entry", lvCfg.FixedEntry)
+      if attr_cfg then
+        for _, entry in pairs(attr_cfg.Attr) do
+          local tarSuffix = 1 == entry.Type and "FIXED" or "RATIO"
+          local tmpTable = attr_list[entry.Attr]
+          if not tmpTable then
+            tmpTable = FightDefine.init_single_attr()
+            attr_list[entry.Attr] = tmpTable
+          end
+          tmpTable[tarSuffix] = tmpTable[tarSuffix] + entry.Num
+        end
+      end
+    end
+  end
+  return attr_list
+end
+
+return M

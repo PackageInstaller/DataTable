@@ -1,0 +1,440 @@
+local M = Util.create_class()
+local LocalStorage = require("utils.localstorage")
+local PLATFORM = Config.PLATFORM
+local CSSDKManager = CS.Game.SDKManager
+local UnityWebRequest = UnityEngine.Networking.UnityWebRequest
+local Json = require("utils.json")
+
+function M:_Init()
+  self.v_is_use_sdk = LocalStorage:is_use_sdk_login()
+  if SDKType == Config.SDK_TYPE.UG_SDK then
+    self.v_platform = PLATFORM.UGSDK
+  elseif SDKType == Config.SDK_TYPE.HIVE_SDK then
+    self.v_platform = PLATFORM.HIVESDK
+  else
+    self.v_platform = PLATFORM.TSISDK
+  end
+  self.v_sdk_user_id = nil
+  Util.bind_msg(self, Const.MSG_LOGIN_FAILED, self.on_login_game_server_failed, self)
+  self.v_products = {}
+  self.v_is_simulator = CS.Game.SDKManager.IsSimulator()
+  self.v_is_support_key_mouse = CS.Game.SDKManager.IsSupportKeyMouse()
+  self.v_is_google_play_games = CS.GoogleDeviceUtilities.IsGooglePlayGames
+  self.v_has_keyboard = CS.GoogleDeviceUtilities.HasKeyboard
+  self.v_is_tablet = CS.DeviceDetectionUtility.IsTablet()
+  self.v_is_abroad_branch = false
+  self.v_is_guest_account = false
+end
+
+function M:on_destroy()
+  Util.unbind_all_msg(self)
+end
+
+function M:had_sdk_login()
+  return self.v_sdk_user_id ~= nil
+end
+
+function M:update()
+end
+
+function M:_check_valid()
+  return self:is_use_sdk()
+end
+
+function M:get_platform()
+  if not self:_check_valid() then
+    return PLATFORM.TOURIST
+  end
+  return self.v_platform
+end
+
+function M:is_use_sdk()
+  if UNITY_EDITOR then
+    return false
+  end
+  if GAME_RELEASE and not PUBLISH_GM then
+    return true
+  end
+  return self.v_is_use_sdk
+end
+
+function M:set_is_use_sdk(is_use_sdk)
+  self.v_is_use_sdk = is_use_sdk
+end
+
+function M:is_logining()
+  return self.v_is_logining
+end
+
+function M:set_is_logining(is_logining)
+  self.v_is_logining = is_logining
+end
+
+function M:is_android_simulator()
+  return CSSDKManager.IsSimulator()
+end
+
+function M:get_sub_channel_id()
+end
+
+function M:check_sensitive(content)
+  return false, content
+end
+
+function M:on_game_server_auth_success(info)
+end
+
+function M:enter_login()
+  self.v_sdk_user_id = nil
+end
+
+function M:enter_game()
+end
+
+function M:create_role()
+end
+
+function M:level_up()
+end
+
+function M:game_login()
+end
+
+function M:quit_application()
+  UnityEngine.Application.Quit()
+end
+
+function M:exit_game()
+end
+
+function M:logout(is_account_deleted, on_sdk_logout_success)
+  Util.assert(false, "not implement")
+end
+
+function M:login()
+  Util.assert(false, "not implement")
+end
+
+function M:on_login_game_server_failed()
+  self.v_sdk_user_id = nil
+end
+
+function M:on_sdk_login_success(sdk_response)
+  MsgGame:mq_publish2(Const.MSG_ON_SDK_LOGIN)
+  SDKTrack:set_shushu_user_datas()
+  Global.gamemode:trace_sdk_login_ok()
+end
+
+function M:on_sdk_logout_success(sdk_response)
+  MsgGame:mq_publish2(Const.MSG_ON_SDK_LOGOUT)
+  SDKTrack:trace_logout()
+  self.v_sdk_user_id = nil
+  if PlayerMgr then
+    PlayerMgr:logout_game_server()
+  end
+end
+
+function M:get_sdk_account()
+  return self.v_sdk_user_id
+end
+
+function M:check_restore()
+end
+
+function M:buy_product(config, cb)
+  Util.assert(false, "not implement!")
+end
+
+function M:open_notice()
+  if not self:_check_valid() then
+    return
+  end
+  local url = self:get_notice_url()
+  Coroutine.start(function()
+    local request = UnityWebRequest.Get(url)
+    request.timeout = 5
+    coroutine.yield(request:SendWebRequest())
+    if Util.is_net_work_error(request) then
+      Log.Error("request.error：" .. request.error, url, request.responseCode)
+      request:Dispose()
+      return
+    else
+      if not Global.gamemode:gmode_is_login() then
+        return
+      end
+      local data = Json.decode(request.downloadHandler.text)
+      if data and "" ~= data and #data > 0 then
+        UIMgr:get_ui("ui_notice_login"):ui_show(data)
+      end
+    end
+  end)
+end
+
+function M:get_login_game_server_url(host)
+  Util.assert(false, "not implement")
+end
+
+function M:add_login_request_params(body)
+  if ENABLE_TA_TRACK then
+    body.distinct_id = CSSDKManager.GetDistinctId()
+  end
+end
+
+function M:get_server_list_json_url()
+  local url = "https://fxcdn.mingzhougame.com/server-list/server_list.json?time=" .. Date.server_time()
+  return url
+end
+
+function M:get_notice_url(picture)
+  local file = picture or "maintenance_notice.json"
+  local url = "https://cdnblackbeacon.mtiancity.com/notice/%s/%s?time=" .. Date.server_time()
+  if GAME_DEBUG then
+    url = string.format(url, "debug", file)
+  else
+    url = string.format(url, "release", file)
+  end
+  return url
+end
+
+function M:track_adjust_event(event_name)
+end
+
+function M:is_enable_del_player_timer_check()
+  return false
+end
+
+function M:is_enable_feedback_in_login()
+  return true
+end
+
+function M:is_enable_player_id_txt_in_login()
+  return false
+end
+
+function M:is_enable_no_sdk_login_in_publish_gm()
+  return false
+end
+
+function M:is_enable_qrcode_login()
+  return false
+end
+
+function M:_init_default_products()
+  self.v_products = ShareRes.create("all_recharge_key")
+end
+
+function M:request_product_info(callback)
+  self:init_products()
+  if callback then
+    callback()
+  end
+end
+
+function M:init_products()
+  if not self:is_use_sdk() then
+    self:_init_default_products()
+  end
+end
+
+function M:get_product_show_price_str(config)
+  return "￥" .. self:get_product_price(config)
+end
+
+function M:get_product_price(config)
+  if not self:is_product_valid(config) then
+    return "Invalid"
+  end
+  local product_id = self:get_sdkkey(config)
+  Util.assert(self.v_products[product_id], "product not valid! product_id=", product_id, "please make sure it exist in all_recharge_key.lua or Hive Console")
+  return self.v_products[product_id].ShowPrice
+end
+
+function M:is_product_valid(config)
+  local product_id = self:get_sdkkey(config)
+  if self.v_products == nil or not product_id then
+    return false
+  end
+  local is_valid = self.v_products[product_id] ~= nil
+  if not is_valid then
+    Log.Error("product not valid! product_id=", product_id, "please make sure it exist in all_recharge_key.lua or Hive Console")
+  end
+  return is_valid
+end
+
+function M:get_currency_symbol(config)
+  return "￥"
+end
+
+function M:is_show_user_center_btn_in_more_entry()
+  return true
+end
+
+function M:is_show_join_qq_btn_in_more_entry()
+  return false
+end
+
+function M:is_show_privacy_policy_btn_in_more_entry()
+  return false
+end
+
+function M:is_show_community_btn_in_more_entry()
+  return false
+end
+
+function M:is_show_exchange_code_btn_in_more_entry()
+  return not IS_STAGING
+end
+
+function M:is_show_help_center_btn_in_more_entry()
+  return true
+end
+
+function M:is_show_delete_account_btn_in_more_entry()
+  return false
+end
+
+function M:is_enable_ta_story_track()
+  return true
+end
+
+function M:is_enable_ta_guide_track()
+  return true
+end
+
+function M:is_enable_notification_setting()
+  return false
+end
+
+function M:is_enable_account_setting()
+  return false
+end
+
+function M:is_enable_select_server()
+  return GAME_DEBUG or PUBLISH_GM or UNITY_EDITOR
+end
+
+function M:open_privacy_policy()
+end
+
+function M:open_community()
+end
+
+function M:open_help_center()
+end
+
+function M:open_web_view(url)
+  if url and "" ~= url then
+    CSSDKManager.OpenURL(url)
+  end
+end
+
+function M:open_exchange_code()
+  UIMgr:get_ui("player_exchange_code"):ui_show()
+end
+
+function M:open_user_center()
+end
+
+function M:set_remote_push(is_agree_notice, is_agree_night)
+end
+
+function M:request_notification_permission()
+end
+
+function M:is_korea_user()
+  return UnityEngine.Application.systemLanguage == UnityEngine.SystemLanguage.Korean
+end
+
+function M:get_sdkkey(config)
+  return config and config.sdkkey and config.sdkkey[1]
+end
+
+function M:show_review(close_callback)
+  if nil ~= close_callback then
+    close_callback()
+  end
+end
+
+function M:display_banner(close_callback)
+  if nil ~= close_callback then
+    close_callback()
+  end
+end
+
+function M:show_news(close_callback)
+  if nil ~= close_callback then
+    close_callback()
+  end
+end
+
+function M:show_exit_game_popup()
+  Util.show_notify_popup_message(function()
+    self:quit_application()
+  end, "确定要退出游戏吗？", "退出游戏")
+end
+
+function M:is_show_delete_account_in_more_entry()
+  return false
+end
+
+function M:show_delete_account_popup()
+  Util.show_notify_popup_message(nil, "如需注销账户，请联系官方客服邮箱：\nmobbcs@tiancity.com", "账户注销", "确定", nil, nil, true)
+end
+
+function M:is_simulator()
+  return self.v_is_simulator
+end
+
+function M:is_support_key_mouse()
+  return self.v_is_support_key_mouse
+end
+
+function M:is_google_play_games()
+  return self.v_is_google_play_games
+end
+
+function M:has_keyboard()
+  return self.v_has_keyboard
+end
+
+function M:is_tablet()
+  return self.v_is_tablet
+end
+
+function M:is_abroad_branch()
+  return self.v_is_abroad_branch
+end
+
+function M:connect_idp(idp_type, callback)
+end
+
+function M:is_idp_connected(idp_type)
+  return false
+end
+
+function M:is_guest_account()
+  return self.v_is_guest_account
+end
+
+function M:clear_sensitive_cache()
+end
+
+function M:is_auto_login_game_after_login_sdk()
+  return false
+end
+
+function M:check_sdk_notice_is_show()
+  return false
+end
+
+function M:do_delete_account(callback)
+  if callback then
+    callback(false)
+  end
+end
+
+function M:is_third_party_channel()
+  return false
+end
+
+return M

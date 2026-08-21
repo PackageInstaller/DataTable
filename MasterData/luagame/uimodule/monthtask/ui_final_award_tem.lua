@@ -1,0 +1,53 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local num_text = "%u+"
+local ward_text = "当前可领:%s"
+
+function ui:ui_wrap()
+end
+
+function ui:ui_finish_load()
+  self:set_button("BtnTreasureBox", function()
+    self:on_click_award()
+  end)
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:on_click_award()
+  if self.v_data.exp >= self.v_data.max_exp then
+    local param = {
+      award_group_id = self.v_data.award_id,
+      gift_count = self.v_gift_count,
+      parent = self.v_parent_ui
+    }
+    UIMgr:get_ui("ui_monthtask_final_award_tips"):ui_show(param)
+  end
+end
+
+function ui:set_data(param)
+  self.v_data = param
+  self.v_uicompents.Lv_txt.text = string.format(num_text, param.lv)
+  local exp = 0
+  if self.v_parent_ui:get_user_data().lv >= param.lv then
+    exp = param.exp
+  end
+  self.v_uicompents.ExpNow_txt.text = exp
+  self.v_uicompents.ExpMax_txt.text = param.max_exp
+  local fillamount = exp / param.max_exp
+  self.v_uicompents.ExpFill_img.fillAmount = fillamount
+  local is_redpoint = false
+  if fillamount >= 1 then
+    is_redpoint = true
+  end
+  self.v_uiobjects.RedPoint:SetActive(is_redpoint)
+  self.v_uiobjects.IconRecive:SetActive(is_redpoint)
+  self.v_gift_count = math.floor(exp / param.max_exp)
+  self.v_uicompents.HaveGot_txt.text = string.format(ward_text, self.v_gift_count)
+end
+
+return ui

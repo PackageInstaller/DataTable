@@ -1,0 +1,95 @@
+local Base = require("ui.uibase")
+local LoopListClass = require("ui.widget.infinite_loop_list")
+local GoodsItemClass = require("uimodule.shop.recharge_shop.recharge_shop_item")
+local AssetBarView = require("ui.asset_bar.asset_bar")
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local INTERVAL_TIME = 0.1
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self.v_goods_view = LoopListClass:new(self, self.v_uiobjects.ScrollView, GoodsItemClass)
+  self.v_asset_bar = AssetBarView:new(self, self.v_uiobjects.AssetBar)
+end
+
+function ui:ui_on_show()
+  self:_refresh_asset()
+  local list = ShareRes.create("recharge.recharge_money")
+  local valid_list = {}
+  for _, item in pairs(list) do
+    if RechargeMgr:is_recharge_product(item) then
+      if RechargeMgr:is_product_valid(item) then
+        table.insert(valid_list, item)
+      else
+        Log.Error("recharge_shop request_product_info not find product_id=", item.sdkkey)
+      end
+    else
+      table.insert(valid_list, item)
+    end
+  end
+  table.sort(valid_list, function(a, b)
+    return a.Priority > b.Priority
+  end)
+  self.v_goods_view:refresh_data(valid_list)
+  if self.v_sequence then
+    self.v_sequence:Kill(false)
+    self.v_sequence = nil
+  end
+  if self.v_visible then
+    self.v_sequence = Util.create_sequence()
+    local all_itmes = self.v_goods_view:get_all_uis()
+    for _, ui_item in pairs(all_itmes) do
+      if ui_item:is_visible_item() then
+        ui_item:eff_init()
+        self.v_sequence:AppendCallback(function()
+          ui_item:play_in_eff()
+        end)
+        self.v_sequence:AppendInterval(INTERVAL_TIME)
+      end
+    end
+  end
+end
+
+function ui:ui_on_hide()
+  self.v_goods_view:ui_on_hide()
+  self.v_asset_bar:on_hide()
+  if self.v_sequence then
+    self.v_sequence:Kill(false)
+    self.v_sequence = nil
+  end
+end
+
+function ui:ui_on_destroy()
+  self.v_asset_bar:on_destory()
+  self.v_goods_view:ui_on_destroy()
+end
+
+function ui:_refresh_asset()
+  local list = Shop_Helper.get_asset_list({
+    Config.GILTGOLD_ITEMID
+  })
+  self.v_asset_bar:reset_config(list)
+  self.v_asset_bar:on_create()
+end
+
+function ui:reopen()
+end
+
+function ui:set_open_exchange_on_hide(is_open_exchange, is_open_charg)
+  self.v_open_exchange_on_hide = is_open_exchange
+  self.v_open_charg_on_hide = is_open_charg
+  
+  function self.v_parent_panel.return_cb()
+    self:do_open_exchange_on_hide()
+  end
+end
+
+function ui:do_open_exchange_on_hide()
+  if self.v_open_exchange_on_hide then
+    local dia_exchange = UIMgr:get_ui("dia_exchange")
+    dia_exchange:ui_show()
+    dia_exchange:set_open_charg_on_hide(self.v_open_charg_on_hide)
+    self.v_open_exchange_on_hide = nil
+  end
+end
+
+return ui

@@ -1,0 +1,76 @@
+local empty = {}
+return {
+  Events = {
+    {
+      ConditionActions = {
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = {
+            {
+              FadeIn = 0.5,
+              Hold = 1.0,
+              FadeOut = 0.5,
+              Type = 59,
+              Timeout = 0.0
+            },
+            {
+              TreasureChestId = 10232,
+              PosKey = "B1",
+              Rotation = 180,
+              IsPlayEffectAndSound = true,
+              IsCanOpen = true,
+              CustomEventName = "boxEnd10232",
+              Type = 124,
+              Timeout = 1.0,
+              TimeoutKey = "woTgdYZp"
+            }
+          },
+          ValidInTower = false
+        },
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = {
+            {
+              FadeIn = 0.5,
+              Hold = 1.0,
+              FadeOut = 0.5,
+              Type = 59,
+              Timeout = 0.0
+            },
+            {
+              TreasureChestId = 10232,
+              PosKey = "B1",
+              Rotation = 180,
+              IsPlayEffectAndSound = true,
+              IsCanOpen = true,
+              CustomEventName = "boxEnd10232",
+              Type = 124,
+              Timeout = 1.0,
+              TimeoutKey = "tLUfIgfU"
+            }
+          },
+          ValidInTower = false
+        }
+      },
+      Type = 22,
+      ConditionVariable = "",
+      IsNotCondition = false,
+      IsForeverVariable = false
+    }
+  },
+  MonsterRefreshCfg = {
+    Weight = 100,
+    MonsterLockEnemyCount = 0,
+    MonsterGroupId = 0,
+    MonsterWave = 0,
+    MonsterCount = 0,
+    SendWave = false,
+    WaveStyle = 0,
+    EndPerform = true
+  },
+  FinishiConditionDict = empty,
+  mDefaultStartTime = true,
+  mDefaultEndTime = true
+}

@@ -1,0 +1,169 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local _tinsert = table.insert
+local TASK_ITEM_KEY = "MUSIC_GAME_TASK_ITEM_KEY"
+local TASK_AWARD_ITEM_KEY = "MUSIC_GAME_TASK_AWARD_ITEM_KEY"
+local _insert = table.insert
+local TASK_CONFIG = require("gamelogic.task.task_config")
+local TASK_STATE = TASK_CONFIG.TASK_STATE
+local STATE_TO_COLOR = {
+  [true] = "e2ddd1",
+  [false] = "484243"
+}
+local TASK_ITEM = require("uimodule.activity.music_game.music_game_task_item")
+
+function ui:ui_finish_load()
+  self:set_button("BtnRet1", function()
+    self:ui_hide()
+  end)
+  self:set_toggle("Page1", function(isOn)
+    if isOn and 1 ~= self.v_cur_page then
+      self:refresh_list(1)
+      self.v_uicompents.Page2_tog.isOn = false
+      self.v_uicompents.Page1_tog.interactable = false
+      self.v_uicompents.Page2_tog.interactable = true
+    end
+  end, true)
+  self:set_toggle("Page2", function(isOn)
+    if isOn and 2 ~= self.v_cur_page then
+      self:refresh_list(2)
+      self.v_uicompents.Page1_tog.isOn = false
+      self.v_uicompents.Page1_tog.interactable = true
+      self.v_uicompents.Page2_tog.interactable = false
+    end
+  end, true)
+  self.v_task_items = {}
+  self:register_exist_auto_template(TASK_ITEM_KEY, self.v_uiobjects.TaskTem, self.v_uiobjects.Content)
+  self:register_exist_auto_template(TASK_AWARD_ITEM_KEY, self.v_uiobjects.ItemObjCom1, self.v_uiobjects.AwardContent)
+end
+
+function ui:ui_on_show(activity_id, page)
+  self.v_cur_page = nil
+  self.v_activity_id = activity_id
+  page = page or 1
+  self:init_task_cfg()
+  if 1 == page then
+    self.v_uicompents.Page1_tog.isOn = false
+    self.v_uicompents.Page1_tog.isOn = true
+  else
+    self.v_uicompents.Page2_tog.isOn = false
+    self.v_uicompents.Page2_tog.isOn = true
+  end
+  self.v_blocker = false
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.PageRed1, RedEnum.MUSIC_GAME_ACT_TASK_AWARD_1)
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.PageRed2, RedEnum.MUSIC_GAME_ACT_TASK_AWARD_2)
+  self:bind_auto_mq(Const.MSG_ON_TASK_UPDATE, self.refresh_list, self)
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
+end
+
+function ui:check_close()
+  NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name, true)
+end
+
+function ui:ui_on_hide()
+  self:clear_task_item()
+  self.v_not_show_progress = nil
+  self.v_group_id = nil
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:init_task_cfg()
+  local act_cfg = ShareRes.get_music_game_act_cfg(self.v_activity_id)
+  self.v_task_list = {}
+  self.v_task_list[1] = ShareRes.get_task_group(act_cfg.TaskGroupId)
+  self.v_task_list[2] = ShareRes.get_task_group(act_cfg.HardTaskGroupId)
+  if not self.v_task_list[1] or not self.v_task_list[2] then
+    Log.Error("音游获取任务配置失败，任务组:", act_cfg.TaskGroupId, act_cfg.HardTaskGroupId)
+  end
+end
+
+function ui:refresh_list(page)
+  page = page or self.v_cur_page
+  if not (page and self.v_task_list) or not self.v_task_list[page] then
+    return
+  end
+  self.v_cur_page = page
+  local new_task_data = {}
+  for _, task in pairs(self.v_task_list[page]) do
+    local task_data = TaskMgr:get_task_by_id(task.Id)
+    if task_data then
+      if task_data.state == TASK_STATE.receive then
+        task_data.sort_index = 0
+      elseif task_data.state == TASK_STATE.received then
+        task_data.sort_index = 2
+      else
+        task_data.sort_index = 1
+      end
+      _tinsert(new_task_data, task_data)
+    end
+  end
+  table.sort(new_task_data, function(a, b)
+    local a_priority = a.task_cfg.Priority
+    local b_priority = b.task_cfg.Priority
+    if a.sort_index == b.sort_index then
+      if a_priority == b_priority then
+        return a.id < b.id
+      else
+        return a_priority < b_priority
+      end
+    end
+    return a.sort_index < b.sort_index
+  end)
+  self:clear_task_item()
+  for _, task in pairs(new_task_data) do
+    local task_id = task.id
+    local task_data = TaskMgr:get_task_by_id(task_id)
+    if task_data then
+      local task_ui = self:get_auto_cache(TASK_ITEM_KEY)
+      local item = TASK_ITEM:ui_wrap_ex(self, task_ui, true)
+      item:set_data(task_id)
+      self.v_task_items[task_id] = item
+    end
+  end
+  self.v_uicompents.Content_rect:SetAnchoredPositionA(0, 0)
+end
+
+function ui:click_get_award_btn(task_id)
+  local task_data = TaskMgr:get_task_by_id(task_id)
+  if task_data.state ~= TASK_STATE.receive then
+    return
+  end
+  TaskMgr:submit_task(task_id, function()
+    self:refresh_list()
+  end)
+end
+
+function ui:click_get_all_btn()
+  self.v_get_task_id_list = {}
+  for task_id, _ in pairs(self.v_task_items) do
+    local task_data = TaskMgr:get_task_by_id(task_id)
+    if task_data and task_data.state == TASK_STATE.receive then
+      _insert(self.v_get_task_id_list, task_id)
+    end
+  end
+  TaskMgr:submit_task_list(self.v_get_task_id_list, function()
+    self:refresh_list()
+  end)
+end
+
+function ui:get_color(is_receive)
+  return STATE_TO_COLOR[is_receive]
+end
+
+function ui:clear_task_item()
+  self:give_back_auto_cache(TASK_ITEM_KEY)
+  self:give_back_auto_cache(TASK_AWARD_ITEM_KEY)
+  for key, item in pairs(self.v_task_items) do
+    item:ui_hide()
+    item:ui_destroy()
+    self.v_task_items[key] = nil
+  end
+end
+
+function ui:get_award_item()
+  return self:get_auto_cache(TASK_AWARD_ITEM_KEY)
+end
+
+return ui

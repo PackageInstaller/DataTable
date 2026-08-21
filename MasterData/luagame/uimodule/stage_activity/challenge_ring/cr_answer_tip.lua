@@ -1,0 +1,153 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_currency_obj = {
+    "CurrencyObj",
+    BIND_TYPE.OBJECT
+  },
+  v_exit_obj = {
+    "ExitObj",
+    BIND_TYPE.BUTTON
+  },
+  v_max_ring_num_txt = {
+    "MaxRingNum",
+    BIND_TYPE.TEXT
+  },
+  v_now_ring_num_txt = {
+    "NowRingNum",
+    BIND_TYPE.TEXT
+  },
+  v_now_round_num_txt = {
+    "NowRoundNum",
+    BIND_TYPE.TEXT
+  },
+  v_pass_tower_obj = {
+    "PassTowerObj",
+    BIND_TYPE.BUTTON
+  },
+  v_reward_show_obj = {
+    "RewardShowObj",
+    BIND_TYPE.BUTTON
+  },
+  v_ring_num_obj = {
+    "RingNumObj",
+    BIND_TYPE.OBJECT
+  },
+  v_round_num_obj = {
+    "RoundNumObj",
+    BIND_TYPE.OBJECT
+  },
+  v_save_and_exit_obj = {
+    "SaveAndExitObj",
+    BIND_TYPE.BUTTON
+  },
+  vinterval = {
+    "interval",
+    BIND_TYPE.TEXT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("ExitObj", function()
+    self:tp_next_floor()
+  end)
+  self:set_button("SaveAndExitObj", function()
+    self:stay()
+  end)
+  self:set_button("PassTowerObj", function()
+    self:exit()
+  end)
+  self:set_button("RewardShowObj", function()
+    self:show_award()
+  end)
+end
+
+function ui:ui_on_show()
+  local select_card_info = ChallengeRingMgr:get_select_card_info()
+  self.v_select_card_idx = select_card_info.card_list_idx
+  local tower = TowerMgr:get_tower()
+  local tower_id = tower:get_tower_id()
+  local ring_by_tower = ShareRes.create("activity.rings_of_challenge_ring_by_tower", tower_id)
+  local now_round = ChallengeRingMgr:get_cur_round()
+  local now_ring_num = ChallengeRingMgr:get_cur_ring_num()
+  local stay_obj = self.v_uiobjects.SaveAndExitObj
+  local exit_obj = self.v_uiobjects.ExitObj
+  local stay_txt = Util.get_text("Text", stay_obj)
+  local exit_txt = Util.get_text("Text", exit_obj)
+  exit_txt.text = Util.format_str("前往下一层")
+  stay_txt.text = Util.format_str("暂时停留")
+  self.v_now_round = now_round
+  self.v_now_ring_num = now_ring_num
+  self.v_max_ring_num = #ring_by_tower
+  if self.v_now_ring_num >= self.v_max_ring_num then
+    self.v_now_ring_num = self.v_max_ring_num
+    self:pass_tower_btn_state(true)
+  else
+    self:pass_tower_btn_state(false)
+  end
+  self.v_now_ring_num_txt.text = self.v_now_ring_num
+  self.v_max_ring_num_txt.text = self.v_max_ring_num
+  self.v_now_round_num_txt.text = self.v_now_round
+end
+
+function ui:pass_tower_btn_state(is_pass)
+  self.v_uiobjects.PassTowerObj:SetActive(is_pass)
+  self.v_uiobjects.ExitObj:SetActive(not is_pass)
+end
+
+function ui:ui_on_hide()
+  self.v_select_card_idx = nil
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_ring_num()
+end
+
+function ui:tp_next_floor()
+  ChallengeRingMgr:on_ring_card_end()
+  self:call_floor_finished()
+  MsgGame:mq_publish2(Const.MSG_ON_CR_GO_NEXT_LAYER)
+  local tower = TowerMgr:get_tower()
+  tower.v_is_first_enter_floor = true
+end
+
+function ui:call_floor_finished()
+  local hero_list = SceneMgr:get_hero_list()
+  local wait_hero_list = {}
+  local tower = TowerMgr:get_tower()
+  for uuid, hero in pairs(hero_list) do
+    if uuid ~= Global.hero_uuid then
+      table.insert(wait_hero_list, hero)
+    end
+  end
+  local floor_num = ChallengeRingMgr:get_cur_ring_num() or 1
+  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.ON_FLOOR_FINISHED, Global.hero, wait_hero_list[1], wait_hero_list[2], floor_num)
+end
+
+function ui:stay()
+  ChallengeRingMgr:on_refresh_door_card()
+  ChallengeRingMgr:reset_selecting_card_state()
+  MsgGame:mq_publish2(Const.MSG_ON_CR_STAY_LAYER)
+end
+
+function ui:exit()
+  MsgGame:mq_publish2(Const.MSG_ON_CR_PASS_TOWER)
+  ChallengeRingMgr:on_ring_card_end(function()
+    UIMgr:get_ui("fight_settlement"):ui_show()
+  end)
+end
+
+function ui:show_award()
+  local award_list = ChallengeRingMgr:get_cur_ring_award()
+  if not award_list or not next(award_list) then
+    Util.show_message_tip(2281)
+    return
+  end
+  UIMgr:get_ui("award_show_panel"):ui_show(award_list)
+end
+
+return ui

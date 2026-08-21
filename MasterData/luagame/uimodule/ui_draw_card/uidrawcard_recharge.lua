@@ -1,0 +1,206 @@
+local AssetBarView = require("ui.asset_bar.asset_bar")
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local enough_color = Util.CommonColor_White
+local not_enough_color = Util.CommonColor_RedWarm
+local ItemState = {
+  One = 1,
+  Two = 2,
+  Three = 3
+}
+local MODEL = {
+  v_warming = {
+    "Warming",
+    BIND_TYPE.TEXT
+  },
+  v_btn_cancel = {
+    "Cancel",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_confirm = {
+    "Confirm",
+    BIND_TYPE.BUTTON
+  },
+  v_use_dia1 = {
+    "UseDia1",
+    BIND_TYPE.OBJECT
+  },
+  v_dia_bg1 = {
+    "DiaBg1",
+    BIND_TYPE.IMAGE
+  },
+  v_dia_icon1 = {
+    "DiaIcon1",
+    BIND_TYPE.IMAGE
+  },
+  v_dia_num1 = {
+    "DiaNum1",
+    BIND_TYPE.TEXT
+  },
+  v_use_dia2 = {
+    "UseDia2",
+    BIND_TYPE.OBJECT
+  },
+  v_dia_bg2 = {
+    "DiaBg2",
+    BIND_TYPE.IMAGE
+  },
+  v_dia_icon2 = {
+    "DiaIcon2",
+    BIND_TYPE.IMAGE
+  },
+  v_dia_num2 = {
+    "DiaNum2",
+    BIND_TYPE.TEXT
+  },
+  v_draw_item = {
+    "DrawItem",
+    BIND_TYPE.OBJECT
+  },
+  v_draw_bg = {
+    "DrawBg",
+    BIND_TYPE.IMAGE
+  },
+  v_draw_icon = {
+    "DrawIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_draw_num = {
+    "DrawNum",
+    BIND_TYPE.TEXT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button_listener(self.v_btn_cancel, function()
+    self:ui_hide()
+  end)
+  self:set_button_listener(self.v_btn_confirm, function()
+    self:_onclick_confirm()
+  end)
+  self.v_asset_bar = AssetBarView:new(self, self.v_uiobjects.AssetBar)
+end
+
+function ui:ui_on_show(cost_id, lack_cnt, exchange_cost_id, exchange_cost_cnt, next_exchange_cost_id, next_exchange_cost_cnt, callback)
+  self.v_callback = callback
+  self.v_is_enough = false
+  self.v_item_state = nil
+  self.v_draw_item:SetActive(true)
+  ResMgr:load_set_icon(self.v_draw_bg, UtilUI.get_item_quality_icon(cost_id))
+  ResMgr:load_set_icon(self.v_draw_icon, UtilUI.get_item_icon(cost_id))
+  self.v_draw_num.text = lack_cnt
+  local cost_name = ShareRes.get_item_cfg(cost_id).Name
+  if nil ~= exchange_cost_id and nil == next_exchange_cost_id then
+    self.v_item_state = ItemState.One
+    self.v_use_dia1:SetActive(true)
+    self.v_use_dia2:SetActive(false)
+    ResMgr:load_set_icon(self.v_dia_bg1, UtilUI.get_item_quality_icon(exchange_cost_id))
+    ResMgr:load_set_icon(self.v_dia_icon1, UtilUI.get_item_icon(exchange_cost_id))
+    self.v_dia_num1.text = exchange_cost_cnt
+    local is_enough = BagMgr:get_cost_enough(exchange_cost_id, exchange_cost_cnt)
+    self.v_dia_num1.color = is_enough and enough_color or not_enough_color
+    local exchange_cost_name = ShareRes.get_item_cfg(exchange_cost_id).Name
+    self.v_warming.text = Util.format_str("是否使用{1}{2}{3}{4}兑换{5}{6}{7}{8}", "<color=#c15e38>", exchange_cost_cnt, exchange_cost_name, "</color>", "<color=#c15e38>", lack_cnt, cost_name, "</color>")
+  elseif nil ~= exchange_cost_id and nil ~= next_exchange_cost_id then
+    self.v_item_state = ItemState.Two
+    self.v_use_dia1:SetActive(true)
+    self.v_use_dia2:SetActive(true)
+    ResMgr:load_set_icon(self.v_dia_bg1, UtilUI.get_item_quality_icon(next_exchange_cost_id))
+    ResMgr:load_set_icon(self.v_dia_icon1, UtilUI.get_item_icon(next_exchange_cost_id))
+    self.v_dia_num1.text = next_exchange_cost_cnt
+    local is_enough = BagMgr:get_cost_enough(next_exchange_cost_id, next_exchange_cost_cnt)
+    self.v_dia_num1.color = is_enough and enough_color or not_enough_color
+    ResMgr:load_set_icon(self.v_dia_bg2, UtilUI.get_item_quality_icon(exchange_cost_id))
+    ResMgr:load_set_icon(self.v_dia_icon2, UtilUI.get_item_icon(exchange_cost_id))
+    self.v_dia_num2.text = exchange_cost_cnt
+    is_enough = BagMgr:get_cost_enough(exchange_cost_id, exchange_cost_cnt)
+    self.v_dia_num2.color = is_enough and enough_color or not_enough_color
+    local next_exchange_cost_name = ShareRes.get_item_cfg(next_exchange_cost_id).Name
+    local exchange_cost_name = ShareRes.get_item_cfg(exchange_cost_id).Name
+    self.v_warming.text = Util.format_str("是否使用{1}{2}{3}{4}{5}{6}{7}兑换{8}{9}{10}{11}", "<color=#c15e38>", next_exchange_cost_cnt, next_exchange_cost_name, "+", exchange_cost_cnt, exchange_cost_name, "</color>", "<color=#c15e38>", lack_cnt, cost_name, "</color>")
+    self.v_is_enough = next_exchange_cost_cnt <= BagMgr:get_item_num(next_exchange_cost_id)
+  elseif nil == exchange_cost_id and nil ~= next_exchange_cost_id then
+    self.v_item_state = ItemState.Three
+    self.v_use_dia1:SetActive(true)
+    self.v_use_dia2:SetActive(false)
+    ResMgr:load_set_icon(self.v_dia_bg1, UtilUI.get_item_quality_icon(next_exchange_cost_id))
+    ResMgr:load_set_icon(self.v_dia_icon1, UtilUI.get_item_icon(next_exchange_cost_id))
+    self.v_dia_num1.text = next_exchange_cost_cnt
+    local is_enough = BagMgr:get_cost_enough(next_exchange_cost_id, next_exchange_cost_cnt)
+    self.v_dia_num1.color = is_enough and enough_color or not_enough_color
+    local next_exchange_cost_name = ShareRes.get_item_cfg(next_exchange_cost_id).Name
+    self.v_warming.text = Util.format_str("是否使用{1}{2}{3}{4}兑换{5}{6}{7}{8}", "<color=#c15e38>", next_exchange_cost_cnt, next_exchange_cost_name, "</color>", "<color=#c15e38>", lack_cnt, cost_name, "</color>")
+    self.v_is_enough = next_exchange_cost_cnt <= BagMgr:get_item_num(next_exchange_cost_id)
+  end
+  self.v_uiobjects.AssetBar:SetActive(false)
+  self:do_after_show_cb()
+  self.v_is_show_done = true
+end
+
+function ui:set_after_show_cb(cb)
+  if self.v_is_show_done then
+    cb()
+    self.v_after_show_cb = nil
+  else
+    self.v_after_show_cb = cb
+  end
+end
+
+function ui:do_after_show_cb()
+  if self.v_after_show_cb then
+    self.v_after_show_cb()
+    self.v_after_show_cb = nil
+  end
+end
+
+function ui:show_asset_bar_by_id_list(id_list)
+  self:set_after_show_cb(function()
+    self.v_uiobjects.AssetBar:SetActive(true)
+    self.v_asset_bar:reset_by_id_list(id_list)
+    self.v_asset_bar:on_create()
+  end)
+end
+
+function ui:show_asset_bar_by_config(config)
+  self:set_after_show_cb(function()
+    self.v_uiobjects.AssetBar:SetActive(true)
+    self.v_asset_bar:reset_config(config)
+    self.v_asset_bar:on_create()
+  end)
+end
+
+function ui:ui_on_hide()
+  self.v_callback = nil
+  self.v_is_enough = false
+  self.v_item_state = nil
+  self.v_is_show_done = false
+  self.v_after_show_cb = nil
+  self.v_asset_bar:on_hide()
+end
+
+function ui:ui_on_destroy()
+  self.v_asset_bar:on_destory()
+end
+
+function ui:_onclick_confirm()
+  if self.v_item_state == ItemState.One then
+    if self.v_callback then
+      self.v_callback()
+    end
+    self:ui_hide()
+  elseif self.v_item_state == ItemState.Two then
+    if self.v_callback then
+      self.v_callback(self.v_is_enough)
+    end
+    self:ui_hide()
+  elseif self.v_item_state == ItemState.Three then
+    if self.v_callback then
+      self.v_callback(self.v_is_enough)
+    end
+    self:ui_hide()
+  end
+end
+
+return ui

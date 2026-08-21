@@ -1,0 +1,113 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local commonDef = require("cs_share.common_define")
+local NOTICE_AWARD_ITEM_KEY = "NOTICE_AWARD_ITEM_KEY"
+local _sformat = string.format
+local CURSE_BOX_STATE = commonDef.CURSE_BOX_STATE
+local icon_path_prefix = "Icon/item/%s"
+local Quality_Img = {
+  [1] = "UICommon/Common_pzk_01",
+  [2] = "UICommon/Common_pzk_02",
+  [3] = "UICommon/Common_pzk_02",
+  [4] = "UICommon/Common_pzk_03",
+  [5] = "UICommon/Common_pzk_04"
+}
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_obj_recive = {
+    "BtnRecive",
+    BIND_TYPE.OBJECT
+  },
+  v_obj_geted = {
+    "BtnGeted",
+    BIND_TYPE.OBJECT
+  },
+  v_obj_cant_get = {
+    "BtnCantGet",
+    BIND_TYPE.OBJECT
+  },
+  v_item_obj_com = {
+    "ItemObjCom",
+    BIND_TYPE.OBJECT
+  },
+  v_award_layout = {
+    "AwardLayout",
+    BIND_TYPE.OBJECT
+  },
+  v_title = {
+    "Title",
+    BIND_TYPE.TEXT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BgBtn", function()
+    self:ui_hide()
+  end)
+  self:set_button("CloseBtn", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnRecive", function()
+    self:recive_award()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(NOTICE_AWARD_ITEM_KEY, self.v_item_obj_com, self.v_award_layout)
+end
+
+function ui:ui_on_show(title, award_group_id, state, get_award_func)
+  self.v_get_award_func = get_award_func
+  self.v_title.text = title or "奖励"
+  self.v_can_get_award = false
+  self.v_obj_recive:SetActive(false)
+  self.v_obj_geted:SetActive(false)
+  self.v_obj_cant_get:SetActive(false)
+  if state == CURSE_BOX_STATE.LOCK then
+    self.v_obj_cant_get:SetActive(true)
+  elseif state == CURSE_BOX_STATE.FINISH then
+    self.v_obj_recive:SetActive(true)
+    self.v_can_get_award = true
+  elseif state == CURSE_BOX_STATE.GET_AWARD then
+    self.v_obj_geted:SetActive(true)
+  end
+  local award_item_id_list = ShareRes.get_award_item_data(award_group_id)
+  self:give_back_auto_cache(NOTICE_AWARD_ITEM_KEY)
+  for _, award_data in ipairs(award_item_id_list) do
+    local item_cfg = ShareRes.get_item_cfg(award_data[1])
+    local item_obj = self:get_auto_cache(NOTICE_AWARD_ITEM_KEY)
+    local item_quality = Util.get_image("ItemQuality_", item_obj)
+    local item_icon = Util.get_image("ItemIcon_", item_obj)
+    local item_amount = Util.get_text("ItemAmount_/Bg/ItemNum_", item_obj)
+    local item_btn = Util.get_button(nil, item_obj)
+    ResMgr:load_set_icon(item_quality, Quality_Img[item_cfg.Quality])
+    ResMgr:load_set_icon(item_icon, _sformat(icon_path_prefix, item_cfg.Icon))
+    item_amount.text = award_data[2]
+    self:set_button_listener(item_btn, function()
+      UIMgr:get_ui("itemTip"):ui_show({
+        item_id = item_cfg.Id,
+        is_exist_jump = false
+      })
+    end)
+  end
+  self:bind_auto_mq(Const.MSG_ON_RING_BOX_UPDATE, self.update_btn_state, self)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:update_btn_state()
+  self.v_obj_recive:SetActive(false)
+  self.v_obj_geted:SetActive(true)
+  self.v_obj_cant_get:SetActive(false)
+end
+
+function ui:recive_award()
+  if self.v_can_get_award and self.v_get_award_func then
+    self.v_get_award_func()
+  end
+end
+
+return ui

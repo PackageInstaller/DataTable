@@ -1,0 +1,62 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show()
+  self.v_uiobjects.SkinMask:SetActive(false)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(cfg, index)
+  self.v_uiobjects.CharBg:SetActive(false)
+  self.v_uiobjects.HeroSkinIcon:SetActive(false)
+  self.v_uiobjects.WeaponBg:SetActive(true)
+  self.v_uiobjects.WeaponSkinIcon:SetActive(true)
+  self.v_fashion_cfg = cfg
+  self.v_is_default_weapon_fashion = false
+  self.v_index = index
+  ResMgr:load_set_icon(self.v_uicompents.WeaponSkinIcon_img, cfg.Illustration, nil, true, self)
+  local rect_transform = Util.get_rect_transform(nil, self.v_uiobjects.WeaponSkinIcon)
+  rect_transform:SetAnchoredPositionA(cfg.Pos[1], cfg.Pos[2])
+  rect_transform:SetLocalEuler(0, 0, cfg.Rot)
+  rect_transform:SetLocalScaleA(cfg.Scale)
+end
+
+function ui:set_data_by_weapon_cfg(cfg, index)
+  self.v_uiobjects.CharBg:SetActive(false)
+  self.v_uiobjects.HeroSkinIcon:SetActive(false)
+  self.v_uiobjects.WeaponBg:SetActive(true)
+  self.v_uiobjects.WeaponSkinIcon:SetActive(true)
+  self.v_is_default_weapon_fashion = true
+  self.v_index = index
+  local path = UtilUI.get_weapon_tex(cfg.Painting[2])
+  ResMgr:load_set_icon(self.v_uicompents.WeaponSkinIcon_img, path, nil, true, self)
+  local rect_transform = Util.get_rect_transform(nil, self.v_uiobjects.WeaponSkinIcon)
+  rect_transform:SetAnchoredPositionA(cfg.FashionTransform[1], cfg.FashionTransform[2])
+  rect_transform:SetLocalEuler(0, 0, cfg.FashionTransform[3])
+  rect_transform:SetLocalScaleA(cfg.FashionTransform[4])
+end
+
+function ui:set_discount(gift_cfg)
+end
+
+function ui:set_mask()
+  local has_fashion = self.v_is_default_weapon_fashion and true or FashionMgr:has_weapon_fashion(self.v_fashion_cfg.Id)
+  self.v_uiobjects.SkinMask:SetActive(not has_fashion)
+end
+
+function ui:set_red()
+end
+
+function ui:get_index()
+  return self.v_index
+end
+
+return ui

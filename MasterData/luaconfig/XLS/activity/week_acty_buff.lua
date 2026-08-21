@@ -1,0 +1,31 @@
+return {
+  {BuffList = 7000001, Id = 1},
+  {BuffList = 7000002, Id = 2},
+  {BuffList = 7000003, Id = 3},
+  {BuffList = 7000004, Id = 4},
+  {BuffList = 7000005, Id = 5},
+  {BuffList = 7000006, Id = 6},
+  {BuffList = 7000007, Id = 7},
+  {BuffList = 7000008, Id = 8},
+  {
+    BuffList = {7000007, 7000008},
+    Id = 9
+  },
+  {BuffList = 7000009, Id = 10},
+  {BuffList = 70000201, Id = 11},
+  {BuffList = 70000202, Id = 12},
+  {BuffList = 70000203, Id = 13},
+  {BuffList = 70000204, Id = 14},
+  {BuffList = 70000205, Id = 15},
+  {BuffList = 70000206, Id = 16},
+  {BuffList = 70000207, Id = 17},
+  {BuffList = 70000208, Id = 18},
+  {BuffList = 70000209, Id = 19},
+  {BuffList = 70000210, Id = 20},
+  {BuffList = 70000211, Id = 21},
+  {BuffList = 70000212, Id = 22},
+  {BuffList = 70000213, Id = 23},
+  {BuffList = 70000214, Id = 24},
+  {BuffList = 70000215, Id = 25},
+  {BuffList = 70000216, Id = 26}
+}

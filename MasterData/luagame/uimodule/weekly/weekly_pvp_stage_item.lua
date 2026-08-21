@@ -1,0 +1,81 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local WEEKLY_CFG = require("gamelogic.weekly.weekly_config")
+local WEEKLY_RES_PATH = WEEKLY_CFG.TEXTURE_PATH
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+  if self.v_effect_obj then
+    self.v_parent_ui:give_back_effect_obj(self.v_element_id, self.v_effect_obj)
+    self.v_effect_obj = nil
+  end
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:on_click_btn()
+  self.v_parent_ui:on_select_episode(self.v_episode_id)
+end
+
+function ui:set_data(episode_data)
+  local episode_id = episode_data.epi_id
+  local is_open = episode_data.is_open
+  local coms = self.v_uicompents
+  local objs = self.v_uiobjects
+  local episode_cfg = ShareRes.get_weekly_pvp_epi_cfg(episode_id)
+  if not episode_cfg then
+    Log.Error("获取pvp关卡信息失败, id :", episode_id)
+    return
+  end
+  coms.StageName_txt.text = episode_cfg.EpiName
+  local color = is_open and "ffffff" or "3C3C3C"
+  Util.set_color(coms.StageIcon_img, color)
+  ResMgr:load_set_icon(coms.StageIcon_img, WEEKLY_RES_PATH .. episode_cfg.BgENter, nil, true, self)
+  objs.Lock:SetActive(not is_open)
+  Util.apply_grey_ex(objs.Bg1, not is_open)
+  Util.apply_grey_ex(objs.Bg2, not is_open)
+  self:set_button_listener(self:get_button(), function()
+    self:on_click_btn()
+  end)
+  self.v_uiobjects.Select:SetActive(false)
+  self.v_episode_id = episode_id
+  self.v_element_id = episode_cfg.EffectJoint
+  self.v_effect_obj = self.v_parent_ui:get_effect_obj(self.v_element_id)
+  if self.v_effect_obj then
+    self.v_effect_obj.transform:SetParent(self:get_object_transform(), false)
+    self.v_effect_obj.transform.localPosition = UnityVector3.zero
+  end
+  self:refresh_curr_star(is_open, episode_data)
+end
+
+function ui:on_select_episode(select_episode_id)
+  local is_select = self.v_episode_id == select_episode_id
+  self.v_uiobjects.Select:SetActive(is_select)
+  self.v_uiobjects.LowerBg:SetActive(not is_select)
+end
+
+function ui:refresh_curr_star(is_open, episode_data)
+  self.v_uiobjects.Star:SetActive(is_open)
+  for i = 1, 3 do
+    self.v_uiobjects["Light" .. i]:SetActive(false)
+  end
+  if is_open and episode_data.epi_star then
+    local star_count = 0
+    for i, condition_index in pairs(episode_data.epi_star) do
+      if condition_index > 0 then
+        star_count = star_count + 1
+      end
+    end
+    for i = 1, star_count do
+      self.v_uiobjects["Light" .. i]:SetActive(true)
+    end
+  end
+end
+
+return ui

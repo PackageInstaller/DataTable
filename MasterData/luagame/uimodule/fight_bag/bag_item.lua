@@ -1,0 +1,98 @@
+local Base = require("ui.uiobject")
+local bagConfig = require("gamelogic.character.fight_bag_configs")
+local M = Util.create_child_mt(Base)
+local EQUIP_QUALITY_PREFIX = "Icon/BattleCommon/Ba_%dx"
+local ITEM_TYPE_PATH = "Icon/BattleItem/%s"
+local EQUIP_TYPE_PATH = "Icon/BattleWeapon/%s"
+
+function M:ui_finish_load()
+  self.selected_tag_obj = self.v_uicompents.Choose_img.gameObject
+  self.selected_tag_obj:SetActiveEx(false)
+  self.v_tog = Util.get_toggle(nil, self.v_object)
+end
+
+function M:ui_on_hide()
+  self.v_item_data = nil
+  self.v_item_ob = nil
+  self.v_index = nil
+end
+
+function M:set_data(go, data_list, index)
+  self.v_item_data = data_list[index]
+  self.v_item_obj = go
+  self.v_index = index
+  local components = self.v_uicompents
+  local is_collect = self.v_item_data.bag_type == bagConfig.BagType.COLLECT
+  components.ItemPz_img.color = bagConfig.Quality_Color[self.v_item_data.Quality]
+  local path = is_collect and EQUIP_TYPE_PATH or ITEM_TYPE_PATH
+  ResMgr:load_set_icon(components.ItemIcon_img, string.format(path, self.v_item_data.Icon))
+  local had_count = FightBagMgr:get_grid_stack_num(self.v_item_data.uuid)
+  components.Amount_txt.text = had_count
+  Global.listener_mgr:add_listener(self.v_object, self.v_tog.onValueChanged, function(isOn)
+    self:_on_click_tog(isOn)
+  end)
+  self.v_tog.isOn = false
+  self:unbind_all_auto_mq()
+  self:_regist_client_event()
+end
+
+function M:_set_compund_flag()
+  if FightBagMgr:get_is_collect_by_uuid(self.v_item_data.uuid) == false then
+    self.v_uicompents.ItemTipHe_img.gameObject:SetActiveEx(false)
+    return
+  end
+  local child = self.v_item_data.ChildEquip
+  local need_child = UtilUI.get_child_num(child)
+  local had_child = UtilUI.check_had_child(child)
+  self.v_uicompents.ItemTipHe_img.gameObject:SetActiveEx(0 ~= need_child and need_child == had_child)
+end
+
+function M:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_CLOSE_FIGHT_ITEM_TIPS, self.response_close_equip_tip_event, self)
+end
+
+function M:response_close_equip_tip_event(msg)
+  if self.v_item_data == nil then
+    return
+  end
+  if nil ~= self.v_tog then
+    self.v_tog.isOn = false
+  end
+end
+
+function M:_on_click_tog(isOn)
+  if self.v_item_data == nil then
+    return
+  end
+  self.selected_tag_obj:SetActiveEx(isOn)
+  if true == isOn then
+    if self:_get_is_finish_fight() == false then
+      Util.show_message_tip(2108)
+      return
+    end
+    local bag_pos = self.v_object_transform.position
+    if self.v_item_data.bag_type == bagConfig.BagType.COLLECT then
+      UIMgr:get_ui("fight_item_tips"):ui_show({
+        item_id = self.v_item_data.Id,
+        bag_pos = bag_pos
+      })
+    else
+      local msg = MsgGame:mq_publish2(Const.MSG_ON_CLICK_FIGHT_ITEM_TIPS)
+      msg.mm_obj = {
+        item_data = self.v_item_data,
+        bag_pos = bag_pos
+      }
+    end
+  end
+end
+
+function M:_get_is_finish_fight()
+  if FightBagMgr:get_force_use_bag() then
+    return true
+  end
+  local tower = TowerMgr:get_tower()
+  local is_pass = tower:is_pass_room(tower:get_room_num())
+  return is_pass
+end
+
+return M

@@ -1,0 +1,83 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local Char_Helper = require("uimodule.character.char_helper")
+local BUILDING_CONFIG = require("uimodule.building.building_config")
+local ONE_KEY_CHAR_TEMP = "ONE_KEY_CHAR_TEMP"
+
+function ui:on_click_Char1()
+end
+
+function ui:on_click_TargetClue()
+  UIMgr:get_ui("itemTip"):ui_show({
+    item_id = self.v_clue_id
+  })
+end
+
+function ui:ui_finish_load()
+  self:set_button("Char1", function()
+    self:on_click_Char1()
+  end)
+  self:set_button("TargetClue", function()
+    self:on_click_TargetClue()
+  end)
+  self.v_temp_key = tostring(self) .. ONE_KEY_CHAR_TEMP
+  self:register_exist_auto_template(self.v_temp_key, self.v_uiobjects.Char1, self.v_uiobjects.CharContent)
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(task_id, clue_id, slot_data_list, task_type)
+  self.v_clue_id = clue_id
+  local task_cfg = ShareRes.get_adventrue_task_cfg(task_id)
+  local quality_cfg = ShareRes.get_adventrue_task_quality_cfg(task_cfg.Quality)
+  ResMgr:load_set_icon(self.v_uicompents.QualityImage_img, quality_cfg.QualityBgPath)
+  self.v_uiobjects.Bird:SetActive(task_type == BUILDING_CONFIG.BUILDING_DISPATCH_TASK_TYPE.BRANCH)
+  self.v_uicompents.TaskName_txt.text = task_cfg.Name
+  self.v_uicompents.Time_txt.text = Date.get_time_formate_4(quality_cfg.Time * 3600, true)
+  local path = ShareRes.get_item_icon_path(clue_id)
+  ResMgr:load_set_icon(self.v_uicompents.TargetClue_img, path)
+  if slot_data_list then
+    for _, slot_data in ipairs(slot_data_list) do
+      local is_ban = slot_data.is_ban
+      local is_must_select = slot_data.fixed_char_id ~= nil
+      local obj = self:get_auto_cache(self.v_temp_key)
+      local ban = self:get_child_gameobj("Ban_", obj)
+      local char_icon = self:get_image("CharIcon_", obj)
+      local char_id = slot_data.char_id
+      ban:SetActive(is_ban)
+      char_icon.gameObject:SetActive(not is_ban and nil ~= char_id)
+      if not is_ban then
+        local no_dispatch = self:get_child_gameobj("NoDispatch_", obj)
+        local ele_icon = self:get_image("CharIcon_/EleIcon_", obj)
+        local must_tag = self:get_child_gameobj("CharIcon_/MustTag_", obj)
+        local has_char = nil ~= char_id
+        ele_icon.gameObject:SetActive(nil ~= slot_data.element_id or has_char)
+        if slot_data.element_id then
+          local element_cfg = ShareRes.get_element_cfg(slot_data.element_id)
+          ResMgr:load_set_icon(ele_icon, element_cfg.ElementIconPath)
+        elseif has_char then
+          local element_path = Char_Helper.get_char_element_icon(char_id)
+          ResMgr:load_set_icon(ele_icon, element_path)
+        end
+        if has_char then
+          local head_icon = UtilUI.get_hero_images(char_id, 1)
+          ResMgr:load_set_icon(char_icon, head_icon)
+          must_tag:SetActive(is_must_select)
+          no_dispatch:SetActive(BuildingMgr:check_char_is_dispatch(char_id))
+        else
+          no_dispatch:SetActive(false)
+          must_tag.gameObject:SetActive(false)
+        end
+      end
+    end
+  end
+end
+
+return ui

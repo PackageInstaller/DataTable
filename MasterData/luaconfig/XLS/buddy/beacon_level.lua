@@ -1,0 +1,42 @@
+return {
+  [0] = {
+    DamageBoost = "0",
+    Id = 0,
+    InjuryReduction = "0"
+  },
+  {
+    DamageBoost = "0",
+    Id = 1,
+    InjuryReduction = "0"
+  },
+  {
+    DamageBoost = "5",
+    Id = 2,
+    InjuryReduction = "5"
+  },
+  {
+    DamageBoost = "10",
+    Id = 3,
+    InjuryReduction = "10"
+  },
+  {
+    DamageBoost = "15",
+    Id = 4,
+    InjuryReduction = "15"
+  },
+  {
+    DamageBoost = "20",
+    Id = 5,
+    InjuryReduction = "20"
+  },
+  {
+    DamageBoost = "25",
+    Id = 6,
+    InjuryReduction = "25"
+  },
+  {
+    DamageBoost = "30",
+    Id = 7,
+    InjuryReduction = "30"
+  }
+}

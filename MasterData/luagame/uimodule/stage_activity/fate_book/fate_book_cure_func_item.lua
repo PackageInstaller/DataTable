@@ -1,0 +1,67 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+  self.v_hero_id = nil
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(hero, need_anima)
+  local has_hero = nil ~= hero
+  local is_die = has_hero and hero:is_die()
+  self.v_uiobjects.Char:SetActive(has_hero)
+  self.v_uiobjects.NoChar:SetActive(not is_die)
+  self.v_uiobjects.DeathBg:SetActive(is_die)
+  self.v_uiobjects.Death:SetActive(is_die)
+  self.v_uiobjects.Hp:SetActive(has_hero)
+  local btn = self:get_button()
+  btn.enabled = has_hero
+  if has_hero then
+    local hero_id = hero:get_npc_id()
+    local uuid = hero.uuid
+    self.v_uuid = uuid
+    self.v_hero_id = hero_id
+    local fashion_id = hero:get_fashion_id()
+    local path = UtilUI.get_hero_images(hero_id, 3, fashion_id)
+    ResMgr:load_set_icon(self.v_uicompents.CharIcon_img, path, nil, true, self)
+    self:refresh_hp(hero, need_anima)
+    self:set_button_listener(btn, function()
+      self.v_parent_ui:on_click_hero_btn(uuid)
+    end)
+    local color_str = is_die and "808080" or "FFFFFF"
+    Util.set_color(self.v_uicompents.CharIcon_img, color_str)
+  end
+  self:set_select()
+end
+
+function ui:set_select(uuid)
+  local is_select = self.v_uuid ~= nil and self.v_uuid == uuid
+  self.v_uiobjects.SelectBg:SetActive(is_select)
+  self.v_uiobjects.Select:SetActive(is_select)
+end
+
+function ui:refresh_hp(hero, need_anima)
+  local hp = hero.attr_mgr:get_hp()
+  local hp_max = hero.attr_mgr:get_max_hp()
+  local percent = hp / hp_max
+  if need_anima and self.v_last_percent ~= percent then
+    self.v_uicompents.BarFill_img.fillAmount = percent
+    self.v_uicompents.BarGreen_img.fillAmount = percent
+  else
+    self.v_uicompents.BarFill_img.fillAmount = percent
+    self.v_uicompents.BarGreen_img.fillAmount = percent
+  end
+  self.v_uicompents.HpNow_txt.text = math.ceil(hp)
+  self.v_uicompents.HpMax_txt.text = math.ceil(hp_max)
+  self.v_last_percent = percent
+end
+
+return ui

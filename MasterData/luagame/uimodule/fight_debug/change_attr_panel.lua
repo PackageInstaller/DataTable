@@ -1,0 +1,144 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local Seri = require("seri")
+local BIND_TYPE = Config.BIND_TYPE
+local TEMPLATE_KEY = {BASE_ITEM = "BASE_ITEM", ADD_ITEM = "ADD_ITEM"}
+local ATTR_TYPE = {FIXED = "FIXED", RATIO = "RATIO"}
+local ATTR_TYPE_NAME = {FIXED = "固定值", RATIO = "万分比"}
+local VALUE_TYPE = {FIXED = 1, RATIO = 2}
+local RATIO_TEMP = "%.4f"
+local SET_TYPE = Config.ATTR_SET_TYPE
+local GROUP_TYPE = Config.ATTR_GROUP_TYPE
+local FightDefine = require("cs_share.fight_define")
+
+function ui:ui_finish_load()
+  local base_temp = self.v_uiobjects.Base_Attr_Item
+  self:register_exist_auto_template(TEMPLATE_KEY.BASE_ITEM, base_temp, base_temp.transform.parent.gameObject)
+  local add_temp = self.v_uiobjects.Add_Attr_Item
+  self:register_exist_auto_template(TEMPLATE_KEY.ADD_ITEM, add_temp, add_temp.transform.parent.gameObject)
+  self.v_attr_input = self:get_inputfield(nil, self.v_uiobjects.InputField)
+  self:set_inputfield_listener(self.v_attr_input, nil, function()
+    self:_refresh_list()
+  end)
+  self:set_button("CloseBtn", function()
+    self:ui_hide()
+  end)
+  self.v_drag_panel = self.v_uiobjects.DragPanel
+end
+
+function ui:ui_on_show(data, ...)
+  self.v_unit = data
+  self:_set_drag()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:_set_drag()
+  self.v_drag_panel_pos = self.v_drag_panel.transform.localPosition
+  Util.set_drag(self:get_object(), self, function(x, y)
+    self.v_drag_panel_pos.x = self.v_drag_panel_pos.x + x
+    self.v_drag_panel_pos.y = self.v_drag_panel_pos.y + y
+    self.v_drag_panel.transform:SetLocalPositionA(self.v_drag_panel_pos.x, self.v_drag_panel_pos.y, self.v_drag_panel_pos.z)
+  end)
+end
+
+function ui:_refresh_list()
+  if not self.v_unit then
+    return
+  end
+  local list = self.v_unit.attr_mgr.attrs
+  local base = self.v_unit.attr_mgr:get_base_attrs()
+  local additive = self.v_unit.attr_mgr:get_group_attrs(GROUP_TYPE.MODULE_ATTR)
+  local cur_attr_id = tonumber(self.v_attr_input.text)
+  if not cur_attr_id then
+    return
+  end
+  self:give_back_auto_cache(TEMPLATE_KEY.BASE_ITEM, false)
+  if not base[cur_attr_id] then
+    return
+  end
+  for calc_type, v in pairs(base[cur_attr_id]) do
+    if type(v) ~= "number" or FightDefine.attr_is_res(cur_attr_id) and calc_type == ATTR_TYPE.RATIO then
+    else
+      local obj = self:get_auto_cache(TEMPLATE_KEY.BASE_ITEM)
+      self:_set_data(obj, calc_type, v, GROUP_TYPE.BASE)
+    end
+  end
+  self:give_back_auto_cache(TEMPLATE_KEY.ADD_ITEM, false)
+  if not additive[cur_attr_id] then
+    return
+  end
+  for calc_type, v in pairs(additive[cur_attr_id]) do
+    if type(v) ~= "number" or FightDefine.attr_is_res(cur_attr_id) and calc_type == ATTR_TYPE.RATIO then
+    else
+      local obj = self:get_auto_cache(TEMPLATE_KEY.ADD_ITEM)
+      self:_set_data(obj, calc_type, v, GROUP_TYPE.ADDITIVE)
+    end
+  end
+end
+
+function ui:_set_data(obj, attr_type, attr_value, group)
+  local cur_attr_id = tonumber(self.v_attr_input.text)
+  local attr_lab = self:get_text("AttrValue", obj)
+  local value = ""
+  if attr_type == ATTR_TYPE.FIXED then
+    value = attr_value
+  else
+    value = attr_value
+  end
+  attr_lab.text = string.format("%s：%s", ShareRes.equip_attr_str(cur_attr_id) or "XX", value)
+  local attr_type_lab = self:get_text("Type", obj)
+  attr_type_lab.text = ATTR_TYPE_NAME[attr_type]
+  local input = self:get_inputfield("NewInput", obj)
+  input.text = ""
+  local setBtn = self:get_button("Set", obj)
+  setBtn.onClick:RemoveAllListeners()
+  setBtn.onClick:AddListener(function()
+    self:_onclick_set_attr_btn(group, attr_type, input)
+  end)
+end
+
+function ui:_onclick_set_attr_btn(group, attr_type, input)
+  local cur_attr_id = tonumber(self.v_attr_input.text)
+  local new_value = tonumber(input.text)
+  if nil == new_value then
+    return
+  end
+  if not self.v_unit then
+    return
+  end
+  local max = self.v_unit.attr_mgr:get_attr_max(cur_attr_id)
+  if max and new_value > max then
+    Log.Error("该属性的最大值是", max)
+    input.text = ""
+    return
+  end
+  Log.Info("修改attr_id=", cur_attr_id, "属性为value=", new_value, " 值类型是type=", VALUE_TYPE[attr_type], " 所属组group=", group)
+  if Util.is_client_only() then
+    self.v_unit.attr_mgr:set_cur_attr(group, cur_attr_id, new_value, VALUE_TYPE[attr_type], SET_TYPE.REPLACE)
+    self:_refresh_list()
+  else
+    local args_map = {
+      uuid = PlayerMgr:get_player_uid(),
+      event_type = Config.MagicDefine.MAGIC_CUSTOM_EVENTS_DEFINE_TYPE.CHANGE_ATTR,
+      arg = {
+        [1] = group,
+        [2] = cur_attr_id,
+        [3] = new_value,
+        [4] = VALUE_TYPE[attr_type],
+        [5] = SET_TYPE.REPLACE
+      }
+    }
+    local request = {
+      instruct = "add_custom_event_magic",
+      args_map = Seri.packstring(args_map)
+    }
+    Network:call("c2gs_execute_instruct", request, function(ok, resp)
+      Log.Info(ok, resp.result)
+      self:_refresh_list()
+    end)
+  end
+end
+
+return ui

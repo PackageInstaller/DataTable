@@ -1,0 +1,33 @@
+local CommonDef = require("cs_share.common_define")
+local Base = require("manager.magic.magic_imp.magic_base")
+local M = Util.create_child_mt(Base)
+
+function M:_init(owner, magic_info)
+  Base._init(self, owner, magic_info)
+  self.behavior_file = self.cfg[1]
+end
+
+function M:on_effect()
+  local is_building = MagicReporter:is_building_report()
+  MagicReporter:push_action_start(is_building, CommonDef.MAGIC_ACTION_TYPE.on_magic_effect)
+  BehaviorMgr:load(self.behavior_file, self.owner)
+  MagicReporter:push_action_end(is_building, CommonDef.MAGIC_ACTION_TYPE.on_magic_effect)
+end
+
+function M:on_remove(magic_map)
+  local is_building = MagicReporter:is_building_report()
+  MagicReporter:push_action_start(is_building, CommonDef.MAGIC_ACTION_TYPE.on_magic_remove)
+  local is_remove_all = true
+  for k, magic in pairs(magic_map) do
+    if self.behavior_file == magic.behavior_file then
+      is_remove_all = false
+      break
+    end
+  end
+  if is_remove_all then
+    BehaviorMgr:remove(self.behavior_file, self.owner)
+  end
+  MagicReporter:push_action_end(is_building, CommonDef.MAGIC_ACTION_TYPE.on_magic_remove)
+end
+
+return M

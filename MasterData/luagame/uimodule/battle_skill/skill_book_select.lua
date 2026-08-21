@@ -1,0 +1,85 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local OBJ_VISIBLE_TYPE = Config.FIGHT_OBJ_VISIBLE_TYPE
+local SaticSv = require("ui.widget.static_scroll_view")
+local SvItem = require("uimodule.battle_skill.skill_select_item")
+local BIND_TYPE = Config.BIND_TYPE
+local _unity_color = Util.get_unity_color_by_hex
+local icon_path_prefix = "Icon/item/%s"
+local _tinsert = table.insert
+
+function ui:ui_finish_load()
+  self:set_button("BtnReturn", function()
+    UIMgr:get_ui("fight"):set_uiobject_visible("Main", true)
+    self:ui_hide()
+  end)
+  self:set_button("BtnSelect", function()
+    self:click_submit_btn()
+  end)
+  self.v_choose_panel_list = SaticSv:new(self, self.v_uiobjects.SkillList, SvItem, "SKILL_BOOK_ITEM")
+end
+
+function ui:ui_on_show(cb)
+  self.v_callback = cb
+  self.v_select_list = BattleSkillBookMgr:get_select_skill_ids()
+  self.select_item_data = nil
+  self:refresh_view()
+  self:register_event()
+  MsgGame:mq_publish2(Const.MSG_ON_OPEN_DROP_UI)
+end
+
+function ui:ui_on_hide()
+  if self.v_callback then
+    self.v_callback()
+  end
+  self.select_item_data = nil
+  self.v_treasure_list = nil
+  self.v_choose_panel_list:clear()
+  self.v_callback = nil
+  MsgGame:mq_publish2(Const.MSG_ON_CLOSE_DROP_UI)
+end
+
+function ui:ui_on_destroy()
+  self.v_choose_panel_list = nil
+end
+
+function ui:refresh_view()
+  local total_skill_cfg = ShareRes.create("battle.battle_skill")
+  local skill_list = {}
+  for _, skill_id in ipairs(self.v_select_list) do
+    local cfg = total_skill_cfg[skill_id]
+    local buddy_id = cfg.BuddyId
+    local icon = UtilUI.get_hero_images(buddy_id, 3)
+    local temp = {buddy_icon = icon, skill_cfg = cfg}
+    _tinsert(skill_list, temp)
+  end
+  self.v_choose_panel_list:update_list(skill_list)
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_ON_BATTLE_SKILL_SELECTED, self.select_skill_item, self)
+  self:bind_auto_mq(Const.MSG_ON_UPDATE_SKILL_SELECTED_DATA, self.refresh_view, self)
+end
+
+function ui:select_skill_item(msg)
+  if nil == msg or nil == msg.mm_obj then
+    return
+  end
+  self.select_item_data = msg.mm_obj
+  local idx = msg.mm_obj.idx
+  local selected_item = self.v_choose_panel_list:get_item_by_idx(idx)
+  self.v_choose_panel_list:on_select_change(selected_item)
+end
+
+function ui:click_submit_btn()
+  if not self.select_item_data then
+    Util.show_message_tip(2133)
+    return
+  end
+  local idx = self.select_item_data.idx
+  self.select_item_data = nil
+  BattleSkillBookMgr:select_battle_skill(idx)
+  self:ui_hide()
+end
+
+return ui

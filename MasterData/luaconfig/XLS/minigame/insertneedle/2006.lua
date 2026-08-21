@@ -1,0 +1,20 @@
+local empty = {}
+return {
+  note = empty,
+  awardId = 0,
+  spacing = 2.0,
+  uiType = 3,
+  moveType = 1,
+  isLeftStart = true,
+  isDubbleBtn = false,
+  speed = 5.0,
+  nodeNum = 21,
+  nodesA = {
+    {3, 2},
+    {9, 1},
+    {14, 3},
+    {19, 2}
+  },
+  nodesB = empty,
+  id = 2006
+}

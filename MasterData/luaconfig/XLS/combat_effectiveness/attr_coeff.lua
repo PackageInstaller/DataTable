@@ -1,0 +1,72 @@
+return {
+  [4] = {
+    CalType = 3,
+    Coeff = 10,
+    Id = 4
+  },
+  [20] = {
+    CalType = 1,
+    Coeff = 0.07,
+    Id = 20
+  },
+  [21] = {
+    CalType = 5,
+    Coeff = {1500, 2000},
+    Id = 21
+  },
+  [22] = {
+    CalType = 4,
+    Coeff = 2000,
+    Id = 22
+  },
+  [23] = {
+    CalType = 3,
+    Coeff = 7.5,
+    Id = 23
+  },
+  [29] = {
+    CalType = 3,
+    Coeff = 1,
+    Id = 29
+  },
+  [30] = {
+    CalType = 3,
+    Coeff = 1,
+    Id = 30
+  },
+  [31] = {
+    CalType = 3,
+    Coeff = 1,
+    Id = 31
+  },
+  [32] = {
+    CalType = 3,
+    Coeff = 1,
+    Id = 32
+  },
+  [33] = {
+    CalType = 3,
+    Coeff = 1,
+    Id = 33
+  },
+  [34] = {
+    CalType = 3,
+    Coeff = 1,
+    Id = 34
+  },
+  [76] = {
+    CalType = 2,
+    Coeff = 1,
+    Id = 76
+  },
+  [78] = {
+    CalType = 2,
+    Coeff = 1,
+    Id = 78
+  },
+  [147] = {
+    CalType = 3,
+    Coeff = 0.35,
+    Id = 147
+  }
+}

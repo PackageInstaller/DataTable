@@ -1,0 +1,255 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local RUNE_HELPER = require("gamelogic.activity.rune2_helper")
+local RUNE_BAG_HERO_ITEM_CLASS = require("uimodule.battle_bag.rune_hero_item")
+local Quaternion = UnityEngine.Quaternion
+local CommonDefine = require("cs_share.common_define")
+local RUNE2_TYPE = CommonDefine.RUNE2_TYPE
+local NOT_HAVE_RUNE = 0
+local RUNE_COLOR = RUNE_HELPER.RUNE_COLOR
+local ITEM_STATE = {
+  ADD = 1,
+  CHANGE = 2,
+  MISMATCH = 3,
+  LvUp = 4,
+  MaxLv = 5
+}
+local TAG_LIST = {
+  NEW = 1,
+  CHANGE = 2,
+  DEATH = 3
+}
+local LV_NEXT_TEXT_COLOR = {
+  NOT_CHANGE = Util.get_unity_color_by_hex(tonumber("ffffff", 16)),
+  DOWN = Util.get_unity_color_by_hex(tonumber("e0212c", 16)),
+  UP_NUM = Util.get_unity_color_by_hex(tonumber("ffd07b", 16)),
+  UP_ICON = Util.get_unity_color_by_hex(tonumber("fff0d5", 16))
+}
+local TAG_UI_NAME = {
+  [ITEM_STATE.ADD] = "Tag_New",
+  [ITEM_STATE.LvUp] = "Tag_LvUp",
+  [ITEM_STATE.MaxLv] = "Tag_MaxLv",
+  [ITEM_STATE.CHANGE] = "Tag_Change",
+  [ITEM_STATE.MISMATCH] = "Tag_Death"
+}
+
+function ui:ui_finish_load()
+  self:set_button("BtnDetail", function()
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_OPEN_RUNE_SET_HERO_DETAIL)
+    msg.mm_obj = self.v_hero
+  end)
+end
+
+function ui:ui_on_hide()
+  self.v_idx = nil
+  self.v_hero = nil
+  self.v_rune_item = nil
+  self.v_drop_uuid = nil
+  self.v_buddy_cfg = nil
+  self.v_hero_uuid = nil
+  if self.char_icon_ob then
+    self:remove_wrap_ui_list(self.char_icon_ob)
+    self.char_icon_ob = nil
+  end
+  self.v_is_rune_lv_max = false
+end
+
+function ui:set_data(hero, drop_item, idx)
+  self.v_hero = hero
+  self.v_hero_is_daed = self.v_hero:is_die()
+  self.v_hero_uuid = hero.uuid
+  self.v_buddy_cfg = self.v_hero.buddy_cfg
+  self.v_buddy_id = hero.buddy_cfg.Id
+  self.v_idx = idx
+  self.v_rune_item = drop_item
+  self.v_drop_uuid = drop_item.uuid
+  if not self.v_rune_item then
+    Log.Error("rune item is not exist")
+    return
+  end
+  self.v_rune_item_id = self.v_rune_item.item_id
+  local rune_cfg = ShareRes.get_battle_item_cfg(self.v_rune_item_id)
+  self.v_next_rune_type = rune_cfg.Arg[1]
+  self.v_rune_info = Rune2Mgr:get_rune_buddy_info(self.v_buddy_id)
+  self.v_hero_rune_cfg = ShareRes.get_buddy_rune_cfg(self.v_buddy_id)
+  self.v_hero_rune_list_cfg = ShareRes.get_buddy_rune_list_cfg(self.v_buddy_id)
+  self.v_now_rune_type = RUNE2_TYPE.NONE
+  if self.v_rune_info then
+    local rune_condition_lv = self.v_rune_info.level
+    local pos = self.v_rune_info.pos
+    local rune_type = ShareRes.get_buddy_rune_type(self.v_buddy_id, pos)
+    self.v_now_rune_cfg = ShareRes.get_buddy_rune_list_cfg(self.v_buddy_id, rune_type, rune_condition_lv)
+    self.v_now_rune_type = rune_type
+  end
+  self.v_is_rune_lv_max = Rune2Mgr:is_rune_lv_max(self.v_buddy_id, self.v_next_rune_type)
+  self.v_hero_rune_list = hero.buddy_cfg.RuneType
+  self.v_is_select = false
+  self.v_uiobjects.BtnCompelet:SetActive(false)
+  self:get_next_rune_pos()
+  self:refresh_change_state()
+  self:refresh_level_change()
+  self:refresh_rune_type()
+  self:refresh_hero_icon()
+  self:refresh_rune_info()
+  local btn = Util.get_button(nil, self.v_object)
+  self:set_button_listener(btn, function()
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_SELECT_RUNE_SET_HERO_ITEM)
+    msg.mm_x = self.v_idx
+    msg.mm_obj = self.v_hero_uuid
+  end)
+end
+
+function ui:refresh_change_state()
+  local is_have_rune = true
+  local cur_rune_type
+  if not self.v_rune_info then
+    is_have_rune = false
+  else
+    cur_rune_type = self.v_rune_info.rune_type
+  end
+  self.v_hero_item_state = ITEM_STATE.MISMATCH
+  local item_rune_type = self.v_next_rune_type
+  local pos = ShareRes.get_buddy_pos_by_rune_type(self.v_buddy_id, item_rune_type)
+  if pos then
+    if Rune2Mgr:is_rune_lv_max(self.v_buddy_id, item_rune_type) then
+      self.v_hero_item_state = ITEM_STATE.MaxLv
+    elseif is_have_rune then
+      self.v_hero_item_state = cur_rune_type == item_rune_type and ITEM_STATE.LvUp or ITEM_STATE.CHANGE
+    else
+      self.v_hero_item_state = ITEM_STATE.ADD
+    end
+  end
+  for tag_state, ui_name in pairs(TAG_UI_NAME) do
+    self.v_uiobjects[ui_name]:SetActive(tag_state == self.v_hero_item_state)
+  end
+  self:refresh_change_state_ui()
+end
+
+function ui:refresh_rune_type()
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  uobj.ShowTypeNext:SetActive(true)
+  uobj.TypeNextBg:SetActive(true)
+  local now_name = Util.format_str("无")
+  local next_name = Util.format_str("无")
+  local lv_map = ShareRes.get_buddy_rune_lv_map(self.v_buddy_id, self.v_next_rune_type)
+  if self.v_rune_info then
+    local rune_name = ""
+    if lv_map and lv_map[self.v_nowlv] then
+      rune_name = lv_map[self.v_nowlv].SkillName
+    end
+    now_name = Util.format_str(rune_name)
+  end
+  local pos = ShareRes.get_buddy_pos_by_rune_type(self.v_buddy_id, self.v_next_rune_type)
+  if pos then
+  end
+  if lv_map and lv_map[self.v_nextlv] then
+    next_name = Util.format_str(lv_map[self.v_nextlv].SkillName)
+  end
+  ucom.TypeNow_txt.text = now_name
+  ucom.TypeNext_txt.text = next_name
+  if self.v_hero_item_state == ITEM_STATE.MISMATCH then
+    uobj.ShowTypeNext:SetActive(false)
+    uobj.TypeNextBg:SetActive(false)
+  end
+  local now_color = RUNE_COLOR[self.v_now_rune_type] and RUNE_COLOR[self.v_now_rune_type].color or RUNE_HELPER.NONE_RUNE_COLOR.color
+  local next_color = RUNE_COLOR[self.v_next_rune_type] and RUNE_COLOR[self.v_next_rune_type].color or RUNE_HELPER.NONE_RUNE_COLOR.color
+  if self.v_is_rune_lv_max then
+    uobj.ShowTypeNext:SetActive(false)
+    uobj.TypeNextBg:SetActive(false)
+  end
+  ucom.TypeNowBg_img.color = now_color
+  ucom.TypeNextBg_img.color = next_color
+end
+
+function ui:refresh_level_change()
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  local rune_lv_now_txt = ucom.RuneLVNow_txt
+  local rune_lv_next_txt = ucom.RuneLVNext_txt
+  self.v_nowlv = Rune2Mgr:get_rune_type_level(self.v_buddy_id)
+  if not self.v_now_rune_type or self.v_next_rune_type ~= self.v_now_rune_type then
+    self.v_nextlv = 1
+  else
+    local max_lv = ShareRes.get_buddy_rune_max_lv(self.v_buddy_id, self.v_now_rune_type)
+    self.v_nextlv = max_lv > self.v_nowlv + 1 and self.v_nowlv + 1 or max_lv
+  end
+  local next_num_color = LV_NEXT_TEXT_COLOR.NOT_CHANGE
+  local next_icon_color = LV_NEXT_TEXT_COLOR.NOT_CHANGE
+  local angle = 0
+  if self.v_nextlv > self.v_nowlv then
+    next_num_color = LV_NEXT_TEXT_COLOR.UP_NUM
+    next_icon_color = LV_NEXT_TEXT_COLOR.UP_ICON
+  elseif self.v_nextlv < self.v_nowlv then
+    next_num_color = LV_NEXT_TEXT_COLOR.DOWN
+    next_icon_color = LV_NEXT_TEXT_COLOR.DOWN
+    angle = 180
+  end
+  rune_lv_now_txt.text = self.v_nowlv
+  rune_lv_next_txt.text = self.v_nextlv
+  rune_lv_next_txt.color = next_num_color
+  ucom.ChangeIcon_img.color = next_icon_color
+  uobj.RuneLVChange:SetActive(self.v_hero_item_state ~= ITEM_STATE.MISMATCH and not self.v_is_rune_lv_max)
+  uobj.RuneLVNext:SetActive(self.v_hero_item_state ~= ITEM_STATE.MISMATCH and not self.v_is_rune_lv_max)
+  if self.v_nowlv > self.v_nextlv then
+    uobj.ChangeIcon:SetActive(self.v_hero_item_state ~= ITEM_STATE.MISMATCH)
+    uobj.ChangeIcon.transform.localRotation = Quaternion.Euler(UnityVector3(0, 0, 0))
+  elseif self.v_nowlv < self.v_nextlv then
+    uobj.ChangeIcon:SetActive(self.v_hero_item_state ~= ITEM_STATE.MISMATCH)
+    uobj.ChangeIcon.transform.localRotation = Quaternion.Euler(UnityVector3(0, 0, 180))
+  else
+    uobj.ChangeIcon:SetActive(false)
+  end
+  uobj.ChangeIcon:SetActive(self.v_hero_item_state ~= ITEM_STATE.MISMATCH and self.v_nowlv ~= self.v_nextlv)
+  uobj.ChangeIcon.transform:SetEuler(0, 0, angle)
+end
+
+function ui:refresh_rune_info()
+  for idx, rune_type in pairs(self.v_hero_rune_list) do
+    local rune_type_image = self.v_uicompents["RuneType" .. idx .. "_img"]
+    rune_type_image.color = RUNE_COLOR[rune_type].color
+    local rune_level_text = self.v_uicompents["RuneLV" .. idx .. "_txt"]
+    local level = ""
+    if self.v_rune_info and self.v_rune_info.pos == idx then
+      level = self.v_rune_info.level
+    end
+    rune_level_text.text = level
+    local txt_color = rune_type == RUNE2_TYPE.YELLOW_RUNE and "000000" or "FFFFFF"
+    rune_level_text.color = Util.get_unity_color_by_hex(tonumber(txt_color, 16))
+  end
+end
+
+function ui:refresh_hero_icon()
+  local char_image = self.v_uicompents.CharIcon_img
+  local hero_icon = UtilUI.get_hero_images(self.v_buddy_id, 1)
+  if not hero_icon then
+    return
+  end
+  ResMgr:load_set_icon(char_image, hero_icon)
+  self.char_icon_obj = RUNE_BAG_HERO_ITEM_CLASS:ui_wrap_ex(self, self.v_uiobjects.CharTem, true)
+  self.char_icon_obj:set_data(self.v_hero, nil, self.v_next_rune_type)
+end
+
+function ui:get_next_rune_pos()
+  self.v_next_pos_idx = NOT_HAVE_RUNE
+  for pos_idx, now_rune_type in pairs(self.v_hero_rune_list) do
+    if now_rune_type == self.v_next_rune_type then
+      self.v_next_pos_idx = pos_idx
+      break
+    end
+  end
+end
+
+function ui:on_select(idx)
+  local is_select = idx == self.v_idx
+  self.v_is_select = is_select
+  self.v_uiobjects.BtnCompelet:SetActive(is_select)
+end
+
+function ui:refresh_change_state_ui()
+  self.v_uiobjects.Mask:SetActive(self.v_hero:is_die() or self.v_hero_item_state == ITEM_STATE.MISMATCH or self.v_is_rune_lv_max)
+  self.v_uiobjects.Death:SetActive(self.v_hero:is_die())
+  self.v_uiobjects.BtnDetail:SetActive(self.v_hero_item_state ~= ITEM_STATE.MISMATCH)
+end
+
+return ui

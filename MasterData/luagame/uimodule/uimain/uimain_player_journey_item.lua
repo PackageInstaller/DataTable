@@ -1,0 +1,57 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local JOURNEY_STATE = Config.CommonDefine.JOURNEY_STATE
+local Item_Helper = require("utils.item_helper")
+local MODEL = {
+  v_lv_num1 = {
+    "LvNum1",
+    BIND_TYPE.TEXT
+  },
+  v_lv_num2 = {
+    "LvNum2",
+    BIND_TYPE.TEXT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_btn = Util.get_button(nil, self.v_object)
+end
+
+function ui:set_data(item, datas, index)
+  self.v_data = datas[index]
+  self.v_state = self.v_data.state
+  self.v_selected = self.v_data.selected
+  self.v_unlock = self.v_data.unlock
+  self.v_id = self.v_data.Id
+  self:set_button_listener(self.v_btn, function()
+    if not self.v_selected then
+      local msg = MsgGame:mq_publish2(Const.MSG_ON_JOURNEY_ITEM_CLICK)
+      msg.mm_x = index
+      self:set_selected(true)
+    end
+  end)
+  self:refresh_view()
+end
+
+function ui:set_selected(selected)
+  self.v_selected = selected
+  self:refresh_view()
+end
+
+function ui:refresh_view()
+  self.v_uiobjects.Select:SetActive(self.v_selected)
+  self.v_uiobjects.UnSelect:SetActive(not self.v_selected)
+  local idx = self.v_selected and "2" or "1"
+  self.v_uiobjects["Lock" .. idx]:SetActive(not self.v_unlock)
+  self.v_uiobjects["LvNum" .. idx]:SetActive(self.v_unlock)
+  self.v_uiobjects["Got" .. idx]:SetActive(self.v_state == JOURNEY_STATE.GAINED)
+  self["v_lv_num" .. idx].text = self.v_data.ContentText
+  local is_complete = self.v_state == JOURNEY_STATE.COMPLETE
+  self.v_uiobjects.Ani_Select:SetActive(not is_complete and self.v_selected)
+  self.v_uiobjects.Complete:SetActive(is_complete and self.v_selected)
+  self.v_uiobjects.FX_UI_Uncom_Lizi:SetActive(is_complete and not self.v_selected)
+end
+
+return ui

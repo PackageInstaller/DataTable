@@ -1,0 +1,44 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local CSInput = UnityEngine.Input
+
+function ui:ui_finish_load()
+  self:register_effect_status("FX_UI_click")
+end
+
+function ui:ui_on_update()
+  if CSInput.GetMouseButtonDown(0) then
+    local cur_pos_x, cur_pos_y, _ = CSHelper.GetMousePosition()
+    local result_pos_x, result_pos_y = CSHelper.ScreenPointToLocalPointInRectangle(self.v_object.transform, cur_pos_x, cur_pos_y, self:get_canvas().worldCamera)
+    self.v_uiobjects.FX_UI_click.transform:SetLocalPositionA(result_pos_x, result_pos_y, 0)
+    self:play_effect("FX_UI_click")
+    if not Global.sound_mgr then
+      return
+    end
+    local is_interactive = CSHelper.IsInteractiveUI()
+    if is_interactive then
+      self:clear_ui_click_sound_timer()
+      self.v_ui_click_sound_timer = Timer:add_timer("ui_click_sound_timer", 0.1, function()
+        if not Global.sound_mgr:get_ui_sound_state() then
+          Global.sound_mgr:play_click_select_sound()
+        end
+      end)
+    else
+      Global.sound_mgr:play_click_noselect_sound()
+    end
+  end
+end
+
+function ui:clear_ui_click_sound_timer()
+  if self.v_ui_click_sound_timer then
+    Timer:remove_timer(self.v_ui_click_sound_timer)
+    self.v_ui_click_sound_timer = nil
+  end
+end
+
+function ui:play_effect(effect_name)
+  local effect = self:get_effect(effect_name)
+  effect.effect_status:RestartAll(effect.obj, true)
+end
+
+return ui

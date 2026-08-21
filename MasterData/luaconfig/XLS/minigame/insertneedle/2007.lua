@@ -1,0 +1,27 @@
+local empty = {}
+return {
+  note = "薪个人番外-3170301插针小游戏",
+  awardId = 0,
+  spacing = 2.0,
+  uiType = 2,
+  uiTypeIcon = empty,
+  uiTypeEffect = 2,
+  moveType = 1,
+  isLeftStart = true,
+  isDubbleBtn = false,
+  useOrder = false,
+  useIcon = false,
+  speed = 5.0,
+  nodeNum = 21,
+  nodesA = {
+    {3, 4},
+    {11, 2},
+    {17, 3}
+  },
+  nodesB = empty,
+  orderA = empty,
+  orderB = empty,
+  iconA = empty,
+  iconB = empty,
+  id = 2007
+}

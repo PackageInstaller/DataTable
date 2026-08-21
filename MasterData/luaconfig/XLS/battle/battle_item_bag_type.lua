@@ -1,0 +1,4 @@
+return {
+  [8] = {bag_type = 8, group = 1},
+  [9] = {bag_type = 9, group = 2}
+}

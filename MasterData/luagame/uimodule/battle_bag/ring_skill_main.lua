@@ -1,0 +1,260 @@
+local Base = require("ui.uibase")
+local CHAPTER_CONFIG = require("uimodule.chapter.chapter_config")
+local SaticSv = require("ui.widget.static_scroll_view")
+local SvItem = require("uimodule.battle_bag.skill_item")
+local FightDefine = require("cs_share.fight_define")
+local HeroItemClass = require("uimodule.battle_bag.hero_item")
+local CommonDef = require("cs_share.common_define")
+local LayoutRebuilder = UnityEngine.UI.LayoutRebuilder
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local _insert = table.insert
+local _sort = table.sort
+local _floor = math.floor
+local Skill_Type = {normal = 1, mastery = 2}
+local ATTR_TYPE = FightDefine.ATTR_TYPE
+local SHOW_HERO_ATTR = {
+  [1] = FightDefine.ATTR_TYPE.CHAR_HP_MAX,
+  [2] = FightDefine.ATTR_TYPE.CHAR_SP_MAX,
+  [3] = FightDefine.ATTR_TYPE.CHAR_ATTACK,
+  [4] = FightDefine.ATTR_TYPE.CHAR_PENETRATE,
+  [5] = FightDefine.ATTR_TYPE.CHAR_DEFENSE
+}
+local SHOW_RES_TYPE = CHAPTER_CONFIG.FIGHT_RES_TYPE
+local MODEL = {
+  v_tips_rect = {
+    "TipsContent",
+    BIND_TYPE.TRANSFORM
+  },
+  v_skill_name = {
+    "Desc_name",
+    BIND_TYPE.TEXT
+  },
+  v_skill_desc = {
+    "Desc_txt",
+    BIND_TYPE.TEXT
+  },
+  v_no_skill_desc = {
+    "NOSkillDesc",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnRet", function()
+    self:ui_hide()
+  end)
+  self:set_button("SkillTips", function()
+    self.v_uiobjects.SkillTips:SetActive(false)
+    if self.v_skill_show_list then
+      self.v_skill_show_list:refresh_items()
+    end
+  end)
+  self.v_template = {
+    skill_item = "skill_item" .. self:ui_get_name(),
+    attr_item = "attr_item" .. self:ui_get_name()
+  }
+  self:register_exist_auto_template(self.v_template.attr_item, self.v_uiobjects.AttrItem, self.v_uiobjects.AttrContent)
+  self.v_skill_show_list = SaticSv:new(self, self.v_uiobjects.SkillContent, SvItem, self.v_template.skill_item)
+  self.v_hero_view = {}
+  for i = 1, 3 do
+    local obj = self.v_uiobjects["Hero" .. i]
+    self.v_hero_view[i] = HeroItemClass:ui_wrap(self, obj, false)
+  end
+  self.v_tog_group = self:get_toggle_group(nil, self.v_uiobjects.HeroView)
+end
+
+function ui:ui_on_show(formation_type, hero)
+  self.v_formation_type = formation_type or CommonDef.FORMATION_TYPE.CHAL_RING_TEAM
+  self.v_hero = hero
+  self:_refresh_hero()
+  self:_refresh_skill()
+  self:_regist_client_event()
+end
+
+function ui:ui_on_hide()
+  for _, ui in pairs(self.v_hero_view) do
+    ui:set_enable(false)
+  end
+  self.v_skill_show_list:clear()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_CLICK_RING_HERO_ITEM, self.response_click_hero_event, self)
+  self:bind_auto_mq(Const.MSG_ON_CLICK_RING_SKILL_ITEM, self.response_click_skill_event, self)
+end
+
+function ui:response_click_hero_event(msg)
+  if msg.mm_obj.buddy_cfg.Id == self.v_hero.buddy_cfg.Id then
+    return
+  end
+  self.v_hero = msg.mm_obj
+  self:_refresh_skill()
+end
+
+function ui:response_click_skill_event(msg)
+  if nil == msg or nil == msg.mm_x then
+    return
+  end
+  local skill_data = msg.mm_x
+  local skill_cfg = skill_data.skill_cfg
+  if not skill_cfg then
+    return
+  end
+  local go = skill_data.go
+  self.v_uiobjects.SkillTips:SetActive(true)
+  local name = skill_cfg.Name
+  if skill_cfg.SkillLevel then
+    name = name .. Util.format_str("等级{1}", skill_cfg.SkillLevel)
+  end
+  self.v_skill_name.text = name
+  self.v_skill_desc.text = skill_cfg.SkillDesc
+  local tips_content = self.v_uiobjects.TipsContent
+  tips_content.transform.position = go.transform.position
+  local rect = Util.get_rect_transform(nil, tips_content)
+  local x = rect.anchoredPosition.x + 288
+  local y = rect.anchoredPosition.y
+  rect:SetAnchoredPositionA(x, y)
+end
+
+function ui:_refresh_hero()
+  local list = SceneMgr:get_hero_list()
+  local cur_fight_pos, team_list = FormationMgr:get_formation_info_by_id(self.v_formation_type)
+  local idx = 0
+  for _, team in ipairs(team_list) do
+    if team.buddy_id > 0 then
+      for _, hero in pairs(list) do
+        if hero.buddy_cfg.Id == team.buddy_id then
+          self.v_hero_view[team.pos]:set_enable(true, hero)
+          if self.v_hero.uuid == hero.uuid then
+            idx = team.pos
+          end
+        end
+      end
+    else
+      self.v_hero_view[team.pos]:set_enable(false)
+    end
+  end
+  for _, ui in pairs(self.v_hero_view) do
+    ui:set_can_click(true)
+  end
+  self.v_hero_view[idx]:set_toggle_value(true)
+end
+
+function ui:_refresh_skill()
+  self.v_uiobjects.SkillTips:SetActive(false)
+  local icon = UtilUI.get_hero_images(self.v_hero.buddy_cfg.Id, Config.HERO_ICON_LV.HALF_IMG)
+  ResMgr:load_set_icon(self.v_uicompents.HeroIcon_img, icon, nil, true, self)
+  local skill_count = BattleSkillBookMgr:get_skill_num(self.v_hero.buddy_cfg.Id)
+  self.v_no_skill_desc:SetActive(0 == skill_count)
+  self.v_uiobjects.SkillList:SetActive(skill_count > 0)
+  if skill_count > 0 then
+    self:_set_battle_skill_info()
+  end
+  self:_set_attr_list()
+end
+
+function ui:_set_battle_skill_info()
+  self.v_skill_list = BattleSkillBookMgr:get_skill_list()
+  local all_skill_cfg = ShareRes.create("battle.battle_skill")
+  local skill_group = {}
+  for idx, skill_id in pairs(self.v_skill_list) do
+    local skill_cfg = all_skill_cfg[skill_id]
+    local group_num = skill_cfg.SkillGroup
+    local now_level = skill_cfg.SkillLevel
+    local buddy_id = skill_cfg.BuddyId
+    if group_num and buddy_id == self.v_hero.buddy_cfg.Id then
+      skill_group = skill_group or {}
+      local group = skill_group[group_num]
+      if not group then
+        skill_group[group_num] = {
+          skill_id = skill_id,
+          idx = idx,
+          level = now_level
+        }
+      elseif now_level > group.level then
+        group.skill_id = skill_id
+        group.idx = idx
+        group.level = now_level
+      end
+    end
+  end
+  local skill_list = {}
+  for _, data in pairs(skill_group) do
+    _insert(skill_list, data)
+  end
+  _sort(skill_list, function(a, b)
+    return a.idx < b.idx
+  end)
+  local show_list = {}
+  local max_col = 3
+  for i = 1, 5 do
+    local temp = {}
+    local row = _floor((i - 1) / 3) + 1
+    local col = 0 == i % max_col and max_col or i % max_col
+    temp.row = row
+    temp.col = col
+    if not skill_list[i] then
+      _insert(show_list, temp)
+    else
+      local skill_id = skill_list[i].skill_id
+      temp.skill_cfg = all_skill_cfg[skill_id]
+      _insert(show_list, temp)
+    end
+  end
+  self.v_skill_show_list:update_list(show_list)
+end
+
+function ui:refresh_context()
+  local rect = Util.get_rect_transform(nil, self.v_uiobjects.TipsContent)
+  LayoutRebuilder.ForceRebuildLayoutImmediate(rect)
+end
+
+function ui:_set_attr_list()
+  if not self.v_hero then
+    return
+  end
+  local buddy_cfg = self.v_hero.buddy_cfg
+  local cur_char_id = buddy_cfg.ModelId
+  local attr_list = self.v_hero.attr_mgr.attrs
+  local equip_attr = FightBagMgr:get_hero_equip_attr_list()
+  self:give_back_auto_cache(self.v_template.attr_item, false)
+  self.old_attr_list = {}
+  local character_cfg = ShareRes.create("buddy.buddy", buddy_cfg.Id)
+  local show_fight_res_type = character_cfg.ShowFightResType
+  if show_fight_res_type == SHOW_RES_TYPE.FIGHT_ENERGY then
+    SHOW_HERO_ATTR[2] = ATTR_TYPE.CHAR_SP_MAX
+  elseif show_fight_res_type == SHOW_RES_TYPE.FIGHT_ANGER then
+    SHOW_HERO_ATTR[2] = ATTR_TYPE.CHAR_FIGHT_LINE_BAR_MAX
+  end
+  local show_list = {}
+  for k, v in pairs(SHOW_HERO_ATTR) do
+    show_list[v] = {attr_id = v, sort_id = k}
+  end
+  local count = 6
+  for k, v in pairs(equip_attr) do
+    if nil == show_list[k] then
+      count = count + 1
+      show_list[k] = {attr_id = k, sort_id = count}
+    end
+  end
+  local tb = {}
+  for k, v in pairs(show_list) do
+    table.insert(tb, v)
+  end
+  table.sort(tb, function(a, b)
+    return a.sort_id < b.sort_id
+  end)
+  for _, v in pairs(tb) do
+    local attrId = v.attr_id
+    local obj = self:get_auto_cache(self.v_template.attr_item)
+    local name = ShareRes.equip_attr_str(attrId) or "XX"
+    local attrName = self:get_text("AttrName", obj)
+    attrName.text = name
+    local attrValue = self:get_text("AttrValue", obj)
+    attrValue.text = math.ceil(attr_list[attrId])
+  end
+end
+
+return ui

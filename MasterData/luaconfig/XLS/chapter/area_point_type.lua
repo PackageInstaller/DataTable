@@ -1,0 +1,14 @@
+return {
+  {
+    Id = 1,
+    TypeIconPath = "UIChapter2/20230906/Stage_icon_zd"
+  },
+  {
+    Id = 2,
+    TypeIconPath = "UIChapter2/20230906/Stage_icon_jq"
+  },
+  {
+    Id = 3,
+    TypeIconPath = "UIChapter2/20230906/Stage_icon_jjzd"
+  }
+}

@@ -1,0 +1,31 @@
+return {
+  [0] = {
+    arder_idle = 1.0,
+    ui_idle_2 = 0.1,
+    ui_idle = 1.0,
+    ui_idle_1 = 0.1,
+    uimain_interact1 = 0.5,
+    uimain_interact2 = 0.5,
+    uimain_interact3 = 0.5,
+    uimain_interact4 = 0.5,
+    uimain_interact5 = 0.5,
+    uimain_interact6 = 0.5,
+    uimain_UpgradedFavorability1 = 0.5,
+    uimain_UpgradedFavorability2 = 0.5,
+    uimain_UpgradedFavorability3 = 0.5,
+    uimain_UpgradedFavorability4 = 0.5,
+    uimain_thank = 0.5,
+    uimain_QuickClick = 0.5,
+    weapon_idle = 1.0,
+    uimain_idle = 0.8,
+    uimain_interact10 = 1.0,
+    uimain_interact12 = 1.0,
+    uimain_interact9 = 1.0,
+    uimain_interact11 = 1.0,
+    uimain_interact8 = 1.0,
+    uimain_interact7 = 1.0,
+    uimain_interact13 = 1.0,
+    uimain_Login = 0.5,
+    uimain_LongTimeIdle = 0.5
+  }
+}

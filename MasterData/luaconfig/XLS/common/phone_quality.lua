@@ -1,0 +1,450 @@
+return {
+  {
+    Level = 1,
+    desc = "骁龙1-4",
+    id = 1,
+    sName = "MSM7"
+  },
+  {
+    Level = 1,
+    id = 2,
+    sName = "APQ8055"
+  },
+  {
+    Level = 1,
+    id = 3,
+    sName = "MSM8255"
+  },
+  {
+    Level = 1,
+    id = 4,
+    sName = "MSM8655"
+  },
+  {
+    Level = 1,
+    id = 5,
+    sName = "MSM8255T"
+  },
+  {
+    Level = 1,
+    id = 6,
+    sName = "MSM8655T"
+  },
+  {
+    Level = 1,
+    id = 7,
+    sName = "APQ8055"
+  },
+  {
+    Level = 1,
+    id = 8,
+    sName = "MSM8625"
+  },
+  {
+    Level = 1,
+    id = 9,
+    sName = "MSM8260A"
+  },
+  {
+    Level = 1,
+    id = 10,
+    sName = "MSM8260A Pro"
+  },
+  {
+    Level = 1,
+    id = 11,
+    sName = "MSM8660A"
+  },
+  {
+    Level = 1,
+    id = 12,
+    sName = "MSM8960"
+  },
+  {
+    Level = 1,
+    id = 13,
+    sName = "MSM8960T"
+  },
+  {
+    Level = 1,
+    id = 14,
+    sName = "APQ8064"
+  },
+  {
+    Level = 1,
+    id = 15,
+    sName = "MSM8255T"
+  },
+  {
+    Level = 1,
+    id = 16,
+    sName = "MSM7630"
+  },
+  {
+    Level = 1,
+    id = 17,
+    sName = "MSM8260"
+  },
+  {
+    Level = 1,
+    id = 18,
+    sName = "MSM8660"
+  },
+  {
+    Level = 1,
+    id = 19,
+    sName = "MSM7230"
+  },
+  {
+    Level = 1,
+    desc = "骁龙200-400",
+    id = 20,
+    sName = "MSM8909 v2"
+  },
+  {
+    Level = 1,
+    id = 21,
+    sName = "MSM8909"
+  },
+  {
+    Level = 1,
+    id = 22,
+    sName = "MSM8208"
+  },
+  {
+    Level = 1,
+    id = 23,
+    sName = "MSM8x12"
+  },
+  {
+    Level = 1,
+    id = 24,
+    sName = "MSM8x10"
+  },
+  {
+    Level = 1,
+    id = 25,
+    sName = "MSM8x25Q"
+  },
+  {
+    Level = 1,
+    id = 26,
+    sName = "MSM8940"
+  },
+  {
+    Level = 1,
+    id = 27,
+    sName = "MSM8937"
+  },
+  {
+    Level = 1,
+    id = 28,
+    sName = "MSM8920"
+  },
+  {
+    Level = 1,
+    id = 29,
+    sName = "MSM8917"
+  },
+  {
+    Level = 1,
+    id = 30,
+    sName = "MSM8929"
+  },
+  {
+    Level = 1,
+    id = 31,
+    sName = "MSM8916 v2"
+  },
+  {
+    Level = 1,
+    id = 32,
+    sName = "MSM8916"
+  },
+  {
+    Level = 1,
+    id = 33,
+    sName = "MSM8x30"
+  },
+  {
+    Level = 1,
+    id = 34,
+    sName = "MSM8x26"
+  },
+  {
+    Level = 2,
+    desc = "骁龙600",
+    id = 35,
+    sName = "APQ8064T"
+  },
+  {
+    Level = 2,
+    id = 36,
+    sName = "MSM8936"
+  },
+  {
+    Level = 2,
+    id = 37,
+    sName = "MSM8939"
+  },
+  {
+    Level = 2,
+    id = 38,
+    sName = "MSM8939 v2"
+  },
+  {
+    Level = 2,
+    id = 39,
+    sName = "MSM8952"
+  },
+  {
+    Level = 2,
+    id = 40,
+    sName = "MSM8953"
+  },
+  {
+    Level = 2,
+    id = 41,
+    sName = "MSM8953 Pro"
+  },
+  {
+    Level = 2,
+    id = 42,
+    sName = "MSM8956"
+  },
+  {
+    Level = 2,
+    id = 43,
+    sName = "MSM8976"
+  },
+  {
+    Level = 2,
+    id = 44,
+    sName = "MSM8976 Pro"
+  },
+  {
+    Level = 4,
+    desc = "2018年",
+    id = 45,
+    sName = "SDM670"
+  },
+  {
+    Level = 4,
+    desc = "2020年 662",
+    id = 46,
+    sName = "SM6115"
+  },
+  {
+    Level = 4,
+    desc = "2019年 665",
+    id = 47,
+    sName = "SM6125"
+  },
+  {
+    Level = 4,
+    desc = "2019年 675",
+    id = 48,
+    sName = "SM6150"
+  },
+  {
+    Level = 4,
+    desc = "2020年 678",
+    id = 49,
+    sName = "SM6150-AC"
+  },
+  {
+    Level = 4,
+    desc = "2020年 680",
+    id = 50,
+    sName = "SM6225"
+  },
+  {
+    Level = 4,
+    desc = "2020年 690",
+    id = 51,
+    sName = "SM6350"
+  },
+  {
+    Level = 4,
+    desc = "2020年 695",
+    id = 52,
+    sName = "SM6375"
+  },
+  {
+    Level = 4,
+    desc = "骁龙700",
+    id = 53,
+    sName = "SDM710"
+  },
+  {
+    Level = 4,
+    id = 54,
+    sName = "SDM712"
+  },
+  {
+    Level = 4,
+    id = 55,
+    sName = "SM7125"
+  },
+  {
+    Level = 4,
+    id = 56,
+    sName = "SM7150-AA"
+  },
+  {
+    Level = 4,
+    id = 57,
+    sName = "SM7150-AC"
+  },
+  {
+    Level = 4,
+    id = 58,
+    sName = "SM7225"
+  },
+  {
+    Level = 4,
+    id = 59,
+    sName = "SM7250-AA"
+  },
+  {
+    Level = 4,
+    id = 60,
+    sName = "SM7250-AB"
+  },
+  {
+    Level = 4,
+    id = 61,
+    sName = "SM7250-AC"
+  },
+  {
+    Level = 4,
+    id = 62,
+    sName = "SM7325"
+  },
+  {
+    Level = 4,
+    id = 63,
+    sName = "SM7325-AE"
+  },
+  {
+    Level = 4,
+    id = 64,
+    sName = "SM7350"
+  },
+  {
+    Level = 5,
+    desc = "骁龙800",
+    id = 65,
+    sName = "APQ8074AA"
+  },
+  {
+    Level = 5,
+    id = 66,
+    sName = "MSM8274AA"
+  },
+  {
+    Level = 5,
+    id = 67,
+    sName = "MSM8674AA"
+  },
+  {
+    Level = 5,
+    id = 68,
+    sName = "MSM8974AA"
+  },
+  {
+    Level = 5,
+    id = 69,
+    sName = "MSM8274AB"
+  },
+  {
+    Level = 5,
+    id = 70,
+    sName = "MSM8674AB v3"
+  },
+  {
+    Level = 5,
+    id = 71,
+    sName = "MSM8974AB v3"
+  },
+  {
+    Level = 5,
+    id = 72,
+    sName = "MSM8274AC v3"
+  },
+  {
+    Level = 5,
+    id = 73,
+    sName = "MSM8974AC v3"
+  },
+  {
+    Level = 5,
+    id = 74,
+    sName = "APQ8084"
+  },
+  {
+    Level = 5,
+    id = 75,
+    sName = "MSM8992"
+  },
+  {
+    Level = 5,
+    id = 76,
+    sName = "MSM8994"
+  },
+  {
+    Level = 5,
+    id = 77,
+    sName = "MSM8994v2"
+  },
+  {
+    Level = 5,
+    id = 78,
+    sName = "MSM8996"
+  },
+  {
+    Level = 5,
+    id = 79,
+    sName = "MSM8998"
+  },
+  {
+    Level = 5,
+    id = 80,
+    sName = "SDM845"
+  },
+  {
+    Level = 5,
+    id = 81,
+    sName = "SM8150"
+  },
+  {
+    Level = 5,
+    id = 82,
+    sName = "SM8250"
+  },
+  {
+    Level = 5,
+    id = 83,
+    sName = "SM8350"
+  },
+  {
+    Level = 5,
+    id = 84,
+    sName = "MSM8998"
+  },
+  {
+    Level = 5,
+    id = 85,
+    sName = "SDM850"
+  },
+  {
+    Level = 5,
+    id = 86,
+    sName = "SC7180"
+  },
+  {
+    Level = 5,
+    id = 87,
+    sName = "SC8180"
+  }
+}

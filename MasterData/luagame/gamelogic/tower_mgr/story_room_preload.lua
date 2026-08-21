@@ -1,0 +1,21 @@
+local Base = require("gamelogic.tower_mgr.room_preload")
+local M = Util.create_child_mt(Base)
+
+function M:_init(preload_cfg, callback, is_new_floor, archive_video_id)
+  Base._init(self, preload_cfg, callback, is_new_floor)
+  self:init_archive_video_preload(archive_video_id)
+end
+
+function M:init_archive_video_preload(archive_video_id)
+  local archive_video_cfg = ShareRes.get_archive_video_cfg(archive_video_id)
+  if not archive_video_cfg or not Util.is_empty(archive_video_cfg.SceneLogicID) then
+    return
+  end
+  local story_id = archive_video_cfg.PoltId
+  if story_id <= 0 then
+    return
+  end
+  self:get_story_res({story_id})
+end
+
+return M

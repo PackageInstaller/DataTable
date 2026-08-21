@@ -1,0 +1,33 @@
+local Base = require("manager.magic.magic_imp.magic_base")
+local M = Util.create_child_mt(Base)
+
+function M:_init(owner, magic_info)
+  Base._init(self, owner, magic_info)
+end
+
+function M:on_effect()
+  local target_val = self.cfg[1]
+  local set_type = self.cfg[2] or 0
+  local lerp_val = self.cfg[3] or 1
+  local dutch_max_val = self.cfg[4] or 180
+  local dutch_min_val = self.cfg[5] or -180
+  local duration = self.cfg.Duration
+  local parms_data = {
+    target_val = target_val,
+    set_type = set_type,
+    lerp_val = lerp_val,
+    dutch_max_val = dutch_max_val,
+    dutch_min_val = dutch_min_val,
+    duration = duration,
+    magic_id = self.magic_id
+  }
+  Global.camera:start_ct_camera_dutch_offset(parms_data)
+end
+
+function M:on_remove(magic_map)
+  if next(magic_map) == nil then
+    Global.camera:stop_ct_camera_dutch_offset()
+  end
+end
+
+return M

@@ -1,0 +1,155 @@
+local M = Util.create_class()
+local Vec3 = require("base.vec3")
+local Vec2 = require("base.vec2")
+local mathX = require("base.mathx")
+local prefab_name = "UI_Hud_Navigation"
+local NAVIGATION_WIDTH_RATIO = 0.7
+local NAVIGATION_HEIGHT_RATIO = 0.6
+local COLOR = {WHITE = "FFFFFF", RED = "FF0000"}
+local bottom_left = Vec2.New()
+local bottom_right = Vec2.New()
+local top_left = Vec2.New()
+local top_right = Vec2.New()
+local center = Vec2.New()
+local rect_vec_list = {}
+local WARNING_DURATION = 1.0
+
+function M:_init(dynamic_ui, target_pos, char_pos)
+  self.v_is_destroy = false
+  self.v_dynamic_ui = dynamic_ui
+  self.v_is_visible = false
+  self.v_is_loading_complete = false
+  local width = self.v_dynamic_ui:get_rect_size_delta_x() * NAVIGATION_WIDTH_RATIO
+  local height = self.v_dynamic_ui:get_rect_size_delta_y() * NAVIGATION_HEIGHT_RATIO
+  bottom_left:Set((self.v_dynamic_ui:get_rect_size_delta_x() - width) / 2, (self.v_dynamic_ui:get_rect_size_delta_y() - height) / 2)
+  bottom_right:Set(bottom_left.x + width, bottom_left.y)
+  top_left:Set(bottom_left.x, bottom_left.y + height)
+  top_right:Set(top_left.x + width, top_left.y)
+  center:Set(self.v_dynamic_ui:get_rect_size_delta_x() / 2, self.v_dynamic_ui:get_rect_size_delta_y() / 2)
+  table.insert(rect_vec_list, bottom_left)
+  table.insert(rect_vec_list, top_left)
+  table.insert(rect_vec_list, top_right)
+  table.insert(rect_vec_list, bottom_right)
+  local go = ResPoolMgr:get_ui_effect(prefab_name)
+  self:finish_load(go)
+  if target_pos and char_pos then
+    self:update(target_pos, char_pos, true)
+  end
+end
+
+local temp_target_vec3 = Vec3.New()
+local screen_pos = Vec2.New()
+local center_to_screen_vec = Vec2.New()
+local lerp_factor = 10
+
+function M:update(target_pos, char_pos, no_lerp)
+  if self.v_is_loading_complete then
+    local distance = Vec3.Distance(target_pos, char_pos)
+    self.v_distance_txt.text = string.format("%.1fm", distance)
+    temp_target_vec3:Set(target_pos.x, target_pos.y, target_pos.z)
+    local viewport_point_x, viewport_point_y, viewport_point_z = Global.camera:get_camera():WorldToViewPointA(temp_target_vec3:Get())
+    screen_pos.x = self.v_dynamic_ui:get_rect_size_delta_x() * viewport_point_x
+    screen_pos.y = self.v_dynamic_ui:get_rect_size_delta_y() * viewport_point_y
+    local should_show_arrow = false
+    local is_in_rectangle
+    if not self:is_in_rectangle(screen_pos) then
+      for i = 1, 4 do
+        local begin_point = rect_vec_list[i]
+        local end_point = 4 == i and rect_vec_list[1] or rect_vec_list[i + 1]
+        if mathX.get_line_intersection(begin_point, end_point, center, screen_pos, screen_pos) then
+          break
+        end
+      end
+      should_show_arrow = true
+      is_in_rectangle = false
+    else
+      is_in_rectangle = true
+    end
+    if viewport_point_z < 0 then
+      screen_pos.x = self.v_dynamic_ui:get_rect_size_delta_x() - screen_pos.x
+      screen_pos.y = bottom_left.y
+      should_show_arrow = true
+    end
+    if should_show_arrow then
+      center_to_screen_vec:Set(screen_pos.x - center.x, screen_pos.y - center.y)
+      center_to_screen_vec:SetNormalize()
+      local arrow_angle = Vec2.SignedAngleRaw(Vec2.up, center_to_screen_vec)
+      self.v_rotate_root.transform:SetEuler(0, 0, arrow_angle)
+      self.v_distance_obj.transform:SetLocalEuler(0, 0, -arrow_angle - 90)
+    else
+      self.v_rotate_root.transform:SetEuler(0, 0, 0)
+      self.v_distance_obj.transform:SetLocalEuler(0, 0, -90)
+    end
+    if not is_in_rectangle then
+      if not self.v_last_screen_pos then
+        self.v_last_screen_pos = Vec2.New(screen_pos.x, screen_pos.y)
+      end
+      if not no_lerp then
+        screen_pos.x = mathX.lerp_number(self.v_last_screen_pos.x, screen_pos.x, lerp_factor * GlobalTimeMgr:get_dt_time())
+        screen_pos.y = mathX.lerp_number(self.v_last_screen_pos.y, screen_pos.y, lerp_factor * GlobalTimeMgr:get_dt_time())
+      end
+    end
+    self.v_arrow_obj:SetActive(should_show_arrow)
+    self.v_rect_transform:SetAnchoredPosition3DA(screen_pos.x, screen_pos.y, 0)
+    if self.v_last_screen_pos then
+      self.v_last_screen_pos:Set(screen_pos.x, screen_pos.y)
+    end
+  end
+end
+
+function M:new_update(target_pos, char_pos, is_hide)
+  self:set_visible(not is_hide)
+  if self.v_warning_state_on then
+    self.v_warning_duration = self.v_warning_duration + GlobalTimeMgr:get_dt_time()
+    if self.v_warning_duration > WARNING_DURATION then
+      self.v_warning_state_on = false
+    end
+  end
+  if self.v_is_visible then
+    local color = self.v_warning_state_on and COLOR.RED or COLOR.WHITE
+    Util.set_color(self.v_point_img, color)
+    self:update(target_pos, char_pos)
+  end
+end
+
+function M:warning()
+  self.v_warning_state_on = true
+  self.v_warning_duration = 0
+end
+
+function M:on_destroy()
+  ResPoolMgr:release(self.v_gameobject)
+end
+
+function M:is_in_rectangle(screen_pos)
+  local result = screen_pos.x > bottom_left.x and screen_pos.x < bottom_right.x and screen_pos.y > bottom_left.y and screen_pos.y < top_left.y and true or false
+  return result
+end
+
+function M:finish_load(go)
+  self.v_gameobject = go
+  local navigation_root_trans = self.v_dynamic_ui:get_navigation_root_trans()
+  self.v_gameobject.transform:SetParent(navigation_root_trans, false)
+  self.v_distance_obj = Util.get_child_gameobj("FreeViewGuideTem_/Arrow/Distance", go)
+  self.v_distance_txt = Util.get_text("FreeViewGuideTem_/Arrow/Distance/DistanceNum", go)
+  self.v_rotate_root = Util.get_child_gameobj("FreeViewGuideTem_", go)
+  self.v_arrow_obj = Util.get_child_gameobj("FreeViewGuideTem_/Arrow/Arrow2", go)
+  self.v_point_img = Util.get_image("FreeViewGuideTem_/Point", go)
+  self.v_rect_transform = Util.get_rect_transform(nil, self.v_gameobject)
+  self.v_rect_transform:SetAnchoredPositionA(9999, 9999)
+  self.v_is_loading_complete = true
+end
+
+function M:set_visible(is_visible)
+  if self.v_is_visible ~= is_visible then
+    self.v_is_visible = is_visible
+    if self.v_gameobject then
+      self.v_gameobject:SetActive(is_visible)
+      if not is_visible then
+        self.v_last_screen_pos = nil
+      end
+    end
+  end
+end
+
+return M

@@ -1,0 +1,84 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local Timer = Global.timer
+local _insert = table.insert
+local _remove = table.remove
+local BATTLE_TASK_CFG = require("uimodule.fight_task.battle_task_config")
+local NOTICE_TYPE = BATTLE_TASK_CFG.NOTICE_TYPE
+local NOTICE_IMG_RES = {
+  [NOTICE_TYPE.BATTLE_TASK_RECEIVE] = "Battle_zs_jqrw",
+  [NOTICE_TYPE.BATTLE_TASK_COMPLETE] = "Battle_zs_rwwc"
+}
+local MODEL = {}
+
+function ui:ui_finish_load()
+  self.v_play_effect_list = {}
+  self:init_model(MODEL)
+end
+
+function ui:ui_on_show(effect_type)
+  self.v_is_notice_play = false
+  self:battle_task_receive_or_complete(effect_type)
+end
+
+function ui:ui_on_hide()
+  if self.v_notice_seqence then
+    self.v_notice_seqence:Kill()
+    self.v_notice_seqence = nil
+  end
+  self.v_play_effect_list = {}
+end
+
+function ui:battle_task_receive_or_complete(effect_type)
+  if #self.v_play_effect_list <= 0 then
+    _insert(self.v_play_effect_list, effect_type)
+  elseif 1 == #self.v_play_effect_list and self.v_play_effect_list[1] ~= effect_type then
+    _insert(self.v_play_effect_list, effect_type)
+  else
+    return
+  end
+  self:play_notice_effect()
+end
+
+function ui:play_notice_effect()
+  if self.v_is_notice_play then
+    return
+  end
+  if self.v_notice_seqence then
+    self.v_notice_seqence:Kill()
+    self.v_notice_seqence = nil
+  end
+  self.v_is_notice_play = true
+  local effect_type = self.v_play_effect_list[1]
+  local img = self.v_uicompents.NoticeContent_img
+  local img_res = NOTICE_IMG_RES[effect_type]
+  local img_path = "UIFight/new/" .. img_res
+  ResMgr:load_set_icon(img, img_path)
+  local canvas = self.v_uiobjects.NoticeContent:GetComponent("CanvasGroup")
+  canvas.alpha = 0
+  local rect = self.v_uicompents.Notice_rect
+  rect.transform:SetLocalScaleA(0, 0.1, 1)
+  self.v_uiobjects.Notice:SetActive(true)
+  local notice_canvas = self.v_uiobjects.Notice:GetComponent("CanvasGroup")
+  notice_canvas.alpha = 1
+  self.v_notice_seqence = Util.create_sequence()
+  self.v_notice_seqence:SetUpdate(true)
+  self.v_notice_seqence:Append(rect.transform:DOScaleX(1, 0.1))
+  self.v_notice_seqence:Append(rect.transform:DOScaleY(1, 0.1))
+  self.v_notice_seqence:Append(canvas:DOFade(1, 0.1))
+  self.v_notice_seqence:AppendInterval(1)
+  self.v_notice_seqence:Append(notice_canvas:DOFade(0, 0.5))
+  self.v_notice_seqence:OnComplete(function()
+    self.v_uiobjects.Notice:SetActive(false)
+    self.v_is_notice_play = false
+    _remove(self.v_play_effect_list, 1)
+    if #self.v_play_effect_list > 0 then
+      self:play_notice_effect()
+      return
+    end
+    self:ui_hide()
+  end)
+end
+
+return ui

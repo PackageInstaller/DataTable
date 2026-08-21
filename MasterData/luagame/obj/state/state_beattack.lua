@@ -1,0 +1,129 @@
+local Base = require("obj.state.state_obj_base")
+local M = Util.create_child_mt(Base)
+local STATE_NAME = Config.STATE_NAME
+local BEHIT_TYEP = Config.BEHIT_TYEP
+local BEHIT_INTERRUPT_TYPE = Config.BEHIT_INTERRUPT_TYPE
+local BEHIT_ACTION = Config.BEHIT_ACTION
+local BEHIT_MOVE_TIME = "CharBehitTime"
+local BEHIT_COUNTER_TIME = "CharBehitToCounter"
+local BEHIT_SKILL_TIME = "CharBehitToSkill"
+
+function M:_init(...)
+  Base._init(self, ...)
+  self.v_behit2move_time = ShareRes.get_comm_value(BEHIT_MOVE_TIME)
+  self.v_behit2counter_time = ShareRes.get_comm_value(BEHIT_COUNTER_TIME)
+  self.v_behit2skill_time = ShareRes.get_comm_value(BEHIT_SKILL_TIME)
+  self.v_is_hero = self.v_owner:is_hero()
+end
+
+function M:state_get_name()
+  return Config.STATE_NAME.beattack
+end
+
+function M:state_update_value(missile, missile_cfg, hit_type)
+  Base.state_update_value(self)
+  local missile_owner = missile:get_owner()
+  self.v_owner:face_to_obj(missile_owner)
+  if missile_cfg then
+    hit_type = hit_type or missile_cfg.Type
+    if hit_type == BEHIT_TYEP.COMBO_HIT_LEFT_START then
+      self:on_combo_hit(BEHIT_TYEP.LEFT_SMALL)
+    elseif hit_type == BEHIT_TYEP.COMBO_HIT_RIGHT_START then
+      self:on_combo_hit(BEHIT_TYEP.RIGHT_SMALL)
+    else
+      if self.v_owner:is_hero() then
+        hit_type = 1 == hit_type % 2 and BEHIT_TYEP.LEFT_SMALL or BEHIT_TYEP.RIGHT_SMALL
+      end
+      self.v_action = BEHIT_ACTION[hit_type]
+      self.v_last_hit_dir = nil
+    end
+  else
+    Log.Error("受击状态机获取子弹配置失败", debug.traceback())
+    self.v_action = BEHIT_TYEP.LEFT_SMALL
+    self.v_last_hit_dir = nil
+  end
+  self.v_time = missile_cfg.Time
+  if self.v_is_hero then
+    local motion_cfg = self.v_owner.motion_cfg
+    local action_cfg = motion_cfg[self.v_action]
+    if action_cfg then
+      local anim_len = Util.frame2realtime(action_cfg.TotalFrame, action_cfg.TailLength)
+      self.v_time = anim_len
+    end
+  end
+  self.v_can_quit = false
+  self.v_owner.skill_mgr:abort(Config.SKILL_ABORT_TYPE.FOECE | Config.SKILL_ABORT_TYPE.BEHIT_ABORT)
+  self.v_owner.act_ctrl:try_action(self.v_action, 0)
+  self.v_interrupt_timer = 0
+  self.v_behit2counter_trigger = false
+  self.v_behit2skill_move_trigger = false
+  if self.v_owner:is_hero() then
+    BehaviorMgr:call_behavior_fun(self.v_owner, BehaviorMgr.EVENTS.ON_ROLE_BEHIT_STATE_CHANGE, Config.BEHIT_STATE_TYPE.ENTER_BEHIT)
+  end
+end
+
+function M:state_update()
+  Base.state_update(self)
+  local dt = self.v_owner.time_mgr:get_dt_time()
+  self.v_time = self.v_time - dt
+  self.v_interrupt_timer = self.v_interrupt_timer + dt
+  if self.v_time < 0 then
+    self.v_can_quit = true
+  end
+  if not self.v_owner.act_ctrl:is_in_action(0, self.v_action) then
+    self.v_state_manager:exit_state(STATE_NAME.beattack)
+  end
+  if self.v_owner:is_hero() then
+    self:update_behavior_event_trigger()
+  end
+end
+
+function M:update_behavior_event_trigger()
+  if self.v_interrupt_timer > self.v_behit2counter_time and not self.v_behit2counter_trigger then
+    NextFrameMgr:add_next_update_order(BehaviorMgr.call_behavior_fun, BehaviorMgr, self.v_owner, BehaviorMgr.EVENTS.ON_ROLE_BEHIT_STATE_CHANGE, Config.BEHIT_STATE_TYPE.BEHIT_CAN_COUNTER)
+    self.v_behit2counter_trigger = true
+  end
+  if self.v_interrupt_timer > self.v_behit2skill_time and not self.v_behit2skill_move_trigger then
+    NextFrameMgr:add_next_update_order(BehaviorMgr.call_behavior_fun, BehaviorMgr, self.v_owner, BehaviorMgr.EVENTS.ON_ROLE_BEHIT_STATE_CHANGE, Config.BEHIT_STATE_TYPE.BEHIT_CAN_CAST)
+    self.v_behit2skill_move_trigger = true
+  end
+end
+
+function M:can_quit()
+  return self.v_can_quit
+end
+
+function M:can_interrupt(interrupt_type)
+  if interrupt_type == BEHIT_INTERRUPT_TYPE.MOVE then
+    if self.v_interrupt_timer > self.v_behit2move_time then
+      return true
+    end
+  elseif interrupt_type == BEHIT_INTERRUPT_TYPE.SKILL then
+    if self.v_interrupt_timer > self.v_behit2skill_time then
+      return true
+    end
+  elseif interrupt_type == BEHIT_INTERRUPT_TYPE.COUNTER and self.v_interrupt_timer > self.v_behit2counter_time then
+    return true
+  end
+  return false
+end
+
+function M:state_can_transit(state_name, param)
+  if not self.v_can_quit then
+    return Base.state_can_transit(self, state_name)
+  end
+  return true
+end
+
+function M:on_combo_hit(bit_hit_type)
+  if not self.v_last_hit_dir then
+    self.v_last_hit_dir = bit_hit_type
+    self.v_action = BEHIT_ACTION[bit_hit_type]
+  else
+    local temp = self.v_last_hit_dir % 2
+    self.v_last_hit_dir = 0 ~= temp and self.v_last_hit_dir + 1 or self.v_last_hit_dir - 1
+    self.v_action = BEHIT_ACTION[self.v_last_hit_dir]
+  end
+end
+
+return M

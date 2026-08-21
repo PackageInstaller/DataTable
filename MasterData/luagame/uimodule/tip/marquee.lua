@@ -1,0 +1,200 @@
+local Base = require("ui.uibase")
+local Vec2 = require("base.vec2")
+local TWEEN_EASE_LINEAR = CS.DG.Tweening.Ease.Linear
+local STATE = {
+  SCROLL = 1,
+  WAIT = 2,
+  SWITCH_NEXT = 3
+}
+local SCROLL_DELAY, SCROLL_SPEED, STAY_TIME
+local DOWN_POS_Y = -88
+local SWITCH_TIME = 0.6
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_tips = {
+    "Tips",
+    BIND_TYPE.TRANSFORM
+  },
+  v_mask = {
+    "Mask",
+    BIND_TYPE.TRANSFORM
+  },
+  v_txt1 = {
+    "Txt1",
+    BIND_TYPE.TEXT
+  },
+  v_txt2 = {
+    "Txt2",
+    BIND_TYPE.TEXT
+  },
+  v_default_area = {
+    "DefaultArea",
+    BIND_TYPE.TRANSFORM
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  SCROLL_DELAY = ShareRes.get_system_comm_value("MarqueeScrollDelay") or 0.5
+  STAY_TIME = ShareRes.get_system_comm_value("MarqueeStayTime") or 3
+  SCROLL_SPEED = ShareRes.get_system_comm_value("MarqueeScrollSpeed") or 50
+  self.v_width = self.v_mask.rect.width
+  self.v_height = self.v_tips.sizeDelta.y
+end
+
+function ui:ui_on_show()
+  self:_reset()
+end
+
+function ui:ui_on_hide()
+  self:_clear_sequence()
+end
+
+function ui:ui_on_update(dt)
+  if self.v_loop_time > 0 then
+    local pass_time = Global.real_time - self.v_start_time
+    if pass_time >= self.v_loop_time then
+      self.v_loop_time = -1
+      self:_set_state(STATE.SWITCH_NEXT)
+      return
+    end
+  end
+end
+
+function ui:refresh_area(area, check_replay)
+  if area then
+    self:_do_refresh_area(area.pos, area.width, check_replay)
+  else
+    local pos = self.v_default_area.position
+    local width = self.v_default_area.rect.width
+    self:_do_refresh_area(pos, width, check_replay)
+  end
+end
+
+function ui:_do_refresh_area(pos, width, check_replay)
+  if nil == check_replay then
+    check_replay = true
+  end
+  local pre_pos = self.v_tips.position
+  self.v_tips:SetPositionA(pos.x, pos.y, pre_pos.z)
+  self.v_tips.sizeDelta = Vec2.New(width, self.v_height)
+  self.v_width = self.v_mask.rect.width
+  if check_replay and (self.v_state == STATE.WAIT or self.v_state == STATE.SCROLL) then
+    self:_update_txt(self.v_cur_txt, self.v_cur_content, 0)
+    self:_set_state(STATE.SCROLL)
+  end
+end
+
+function ui:_clear_sequence()
+  if self.v_sequence then
+    self.v_sequence:Kill(false)
+    self.v_sequence = nil
+  end
+end
+
+function ui:_update_txt(txt, content, y)
+  txt.text = content
+  local cur_width = txt.preferredWidth
+  if cur_width <= self.v_width then
+    local center_x = (self.v_width - cur_width) * 0.5
+    txt.transform:SetLocalPositionA(center_x, y, 0)
+  else
+    txt.transform:SetLocalPositionA(0, y, 0)
+  end
+end
+
+function ui:_do_scroll()
+  local cur_width = self.v_cur_txt.preferredWidth
+  if cur_width <= self.v_width then
+    self:_set_state(STATE.WAIT)
+    return
+  end
+  local move_obj = self:get_rect_transform(nil, self.v_cur_txt.transform)
+  local target_x = self.v_width - cur_width
+  local cost_time = math.abs(target_x) / SCROLL_SPEED
+  self.v_sequence = Util.create_sequence()
+  self.v_sequence:AppendInterval(SCROLL_DELAY)
+  self.v_sequence:Append(move_obj:DOAnchorPosX(target_x, cost_time):SetEase(TWEEN_EASE_LINEAR))
+  self.v_sequence:OnComplete(function()
+    self:_set_state(STATE.WAIT)
+  end)
+end
+
+function ui:_do_wait()
+  self.v_sequence = Util.create_sequence()
+  self.v_sequence:AppendInterval(STAY_TIME)
+  self.v_sequence:OnComplete(function()
+    self:_set_state(STATE.SWITCH_NEXT)
+  end)
+end
+
+function ui:_do_switch_next()
+  if self.v_loop_time > 0 then
+    self:_update_txt(self.v_cur_txt, self.v_cur_content, 0)
+    self:_set_state(STATE.SCROLL)
+    return
+  end
+  local next_msg = MarqueeMgr:pop_msg()
+  if nil == next_msg then
+    self:ui_hide()
+    return
+  end
+  self:_update_cur_info(next_msg)
+  self:_update_txt(self.v_next_txt, self.v_cur_content, DOWN_POS_Y)
+  local move_obj_down = self:get_rect_transform(nil, self.v_next_txt.transform)
+  local move_obj_up = self:get_rect_transform(nil, self.v_cur_txt.transform)
+  self.v_sequence = Util.create_sequence()
+  self.v_sequence:Append(move_obj_down:DOAnchorPosY(0, SWITCH_TIME))
+  self.v_sequence:Join(move_obj_up:DOAnchorPosY(math.abs(DOWN_POS_Y), SWITCH_TIME))
+  self.v_sequence:OnComplete(function()
+    local tmp = self.v_next_txt
+    self.v_next_txt = self.v_cur_txt
+    self.v_cur_txt = tmp
+    self:_set_state(STATE.SCROLL)
+  end)
+end
+
+function ui:remove_msg(msg_index)
+  if not self.v_cur_msg_index or self.v_cur_msg_index ~= msg_index then
+    return
+  end
+  if 0 == MarqueeMgr:get_msg_count() then
+    self:ui_hide()
+  else
+    self:_reset()
+  end
+end
+
+function ui:_set_state(state)
+  self.v_state = state
+  self:_clear_sequence()
+  if state == STATE.SCROLL then
+    self:_do_scroll()
+  elseif state == STATE.WAIT then
+    self:_do_wait()
+  else
+    self:_do_switch_next()
+  end
+end
+
+function ui:_update_cur_info(msg)
+  self.v_cur_content = msg.content
+  self.v_loop_time = msg.loop_time
+  self.v_cur_msg_index = msg.msg_index
+  self.v_start_time = Global.real_time
+end
+
+function ui:_reset()
+  local cur_area = MarqueeMgr:get_cur_area()
+  self:refresh_area(cur_area, false)
+  self.v_cur_txt = self.v_txt1
+  self.v_next_txt = self.v_txt2
+  self.v_cur_txt.transform:SetLocalPositionA(0, 0, 0)
+  self.v_next_txt.transform:SetLocalPositionA(0, DOWN_POS_Y, 0)
+  self:_update_cur_info(MarqueeMgr:pop_msg())
+  self:_update_txt(self.v_cur_txt, self.v_cur_content, 0)
+  self:_set_state(STATE.SCROLL)
+end
+
+return ui

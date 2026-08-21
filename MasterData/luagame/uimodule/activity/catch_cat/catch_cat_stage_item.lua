@@ -1,0 +1,70 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local active_color = Util.get_unity_color_by_hex(tonumber("f5ede2", 16))
+local lock_color = Util.get_unity_color_by_hex(tonumber("909090", 16))
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(data, activity_id)
+  self.v_activity_id = activity_id
+  local cfg = data.cfg
+  local idx = data.idx
+  local is_odd = 0 ~= idx % 2
+  local suffix = is_odd and "1" or "2"
+  self.v_uiobjects.Content1:SetActive(is_odd)
+  self.v_uiobjects.Content2:SetActive(not is_odd)
+  if is_odd then
+    self.v_uiobjects.Line1:SetActive(1 ~= idx)
+  end
+  self.v_uicompents["StageNum" .. suffix .. "_txt"].text = cfg.NumTxt
+  ResMgr:load_set_icon(self.v_uicompents["StageIcon" .. suffix .. "_img"], cfg.Icon)
+  local open_time = cfg.OpenTime and Date.get_time_stamp_by_scheme_id(cfg.OpenTime) or 0
+  local pre_stage_id = cfg.FrontGameId
+  local is_open = open_time <= Date:server_time()
+  local is_pre_stage_done = not pre_stage_id or CatchCatMgr:is_stage_passed(pre_stage_id)
+  local is_unlock = is_open and is_pre_stage_done
+  local is_done = CatchCatMgr:is_stage_passed(cfg.Id)
+  local is_new = CatchCatMgr:is_stage_new(cfg.Id)
+  local name_txt = self.v_uicompents["StageName" .. suffix .. "_txt"]
+  local str
+  if not is_open then
+    str = os.date("%m.%d解锁", open_time)
+  elseif not is_pre_stage_done then
+    str = "通关前置关卡"
+  else
+    str = cfg.Name
+  end
+  name_txt.text = str
+  name_txt.color = is_unlock and active_color or lock_color
+  Util.apply_grey_ex(self.v_uiobjects["Bg" .. suffix], not is_unlock)
+  self.v_uiobjects["Lock" .. suffix]:SetActive(not is_unlock)
+  self.v_uiobjects["Finish" .. suffix]:SetActive(is_done)
+  self.v_uiobjects["RedPoint" .. suffix]:SetActive(is_new)
+  self:set_button_listener(nil, function()
+    self:on_click(cfg)
+  end)
+end
+
+function ui:on_click(cfg)
+  local open_time = cfg.OpenTime and Date.get_time_stamp_by_scheme_id(cfg.OpenTime) or 0
+  if open_time > Date:server_time() then
+    Util.show_message_tip(os.date("%m.%d解锁", open_time))
+    return
+  elseif cfg.FrontGameId and not CatchCatMgr:is_stage_passed(cfg.FrontGameId) then
+    Util.show_message_tip(2347)
+    return
+  end
+  UIMgr:get_ui("catch_cat_battle_panel"):ui_show(cfg, false, self.v_activity_id)
+end
+
+return ui

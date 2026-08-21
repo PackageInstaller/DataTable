@@ -1,0 +1,206 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local AllCustomerCfg = ShareRes.create("activity.barbecue_customer")
+local FoodItem = require("uimodule.activity.barbecue_game.barbecue_game_menu_food_item")
+local GREEN = "9df174"
+local RED = "ff7777"
+local Patience_SYS = 110
+
+function ui:on_click_Btn()
+  if self.v_story_id then
+    StoryMgr:on_start(self.v_story_id)
+    self.v_story_id = nil
+  end
+  if self.v_is_special then
+    self.v_uiobjects.EmojiSpecial:SetActiveEx(false)
+    self.v_uiobjects.Order:SetActiveEx(true)
+    self.v_is_special = nil
+  end
+  self.v_parent_ui:on_click_customer(self.v_idx)
+end
+
+function ui:ui_finish_load()
+  self:set_button("Btn", function()
+    self:on_click_Btn()
+  end)
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+  self.v_left_time = nil
+  self.v_duraction = nil
+  self:remove_delay_hide_timer()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_idx(idx)
+  self.v_idx = idx
+end
+
+function ui:set_selected(selected)
+  self.v_uiobjects.Selected:SetActiveEx(selected)
+end
+
+function ui:get_selected()
+  return self.v_uiobjects.Selected.activeSelf
+end
+
+function ui:get_food(food_id, from_trans)
+  if self.v_delay_hide_timer then
+    return
+  end
+  if not self.v_food_items or self.v_is_special then
+    return false
+  end
+  for _, item in ipairs(self.v_food_items) do
+    if item:try_match(food_id, from_trans) then
+      return true
+    end
+  end
+end
+
+function ui:check_finish()
+  if not self.v_food_items then
+    return true
+  end
+  for _, item in ipairs(self.v_food_items) do
+    if item:is_finish() then
+      return false
+    end
+  end
+  return true
+end
+
+function ui:set_new_customer(id)
+  self.v_id = id
+  self.v_cfg = AllCustomerCfg[id]
+  self.v_buddy_id = self.v_cfg.BuddyId
+  self.v_story_id = self.v_cfg.StoryId
+  self.v_is_special = 1 == self.v_cfg.IsSpecial
+  ResMgr:load_set_icon(self.v_uicompents.CharImg_img, self.v_cfg.Icon, nil, true)
+  self.v_uiobjects.EmojiSuc:SetActive(false)
+  self.v_uiobjects.Emojifail:SetActive(false)
+  self.v_uiobjects.EmojiSpecial:SetActiveEx(self.v_is_special)
+  self.v_uiobjects.Order:SetActiveEx(not self.v_is_special)
+  self.v_uiobjects.Ani_Order_Out:SetActiveEx(false)
+  self.v_uiobjects.GetScoreTips:SetActiveEx(false)
+  self.v_uiobjects.Selected:SetActiveEx(false)
+  self.v_uiobjects.Ani_Char_Out:SetActive(false)
+  self.v_uicompents.Progress_img.fillAmount = 1
+  Util.set_color(self.v_uicompents.Progress_img, GREEN)
+  self.v_turn_red = false
+  local sys_val = BarbecueGameMgr:get_val_by_sys_id(Patience_SYS)
+  self.v_left_time = self.v_cfg.Duration * (1 + sys_val / 100)
+  self.v_duraction = self.v_left_time
+  self:reset_food_items()
+  self:set_enable(true)
+end
+
+function ui:init_food_items()
+  self:clear_wrap_food_items()
+  self.v_food_items = {}
+  for i = 1, 3 do
+    local obj = self.v_uiobjects["Food" .. i]
+    local item = FoodItem:ui_wrap_ex(self, obj, false)
+    self.v_food_items[i] = item
+  end
+end
+
+function ui:reset_food_items()
+  if not self.v_food_items then
+    self:init_food_items()
+  end
+  for _, item in ipairs(self.v_food_items) do
+    item:set_enable(false)
+  end
+  local type = self.v_cfg.Type
+  if 1 == type then
+    for idx, food_id in ipairs(self.v_cfg.Foods) do
+      self.v_food_items[idx]:set_food(food_id, self.v_cfg.FoodsCount[idx])
+    end
+  elseif 2 == type then
+    for idx, mat_id in ipairs(self.v_cfg.Materials) do
+      self.v_food_items[idx]:set_material(mat_id, self.v_cfg.MaterialsCount[idx])
+    end
+  elseif 3 == type then
+    self.v_food_items[1]:set_any_food(self.v_cfg.AnyFoodsCount)
+  end
+end
+
+function ui:clear_wrap_food_items()
+  if not self.v_food_items then
+    return
+  end
+  for idx = #self.v_food_items, 1, -1 do
+    self.v_food_items[idx]:ui_destroy()
+    self.v_food_items[idx] = nil
+  end
+  self.v_food_items = nil
+end
+
+function ui:get_score(score)
+  self.v_uiobjects.GetScoreTips:SetActiveEx(false)
+  self.v_uiobjects.GetScoreTips:SetActive(true)
+  self.v_uicompents.ScoreTxt_txt.text = score
+  self.v_parent_ui:add_score(score)
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.barbeque_game_get_score_UI_SOUND)
+  if self:check_all_done() then
+    self:do_hide(true)
+  end
+end
+
+function ui:do_hide(suc)
+  self:remove_delay_hide_timer()
+  self.v_uiobjects.Order:SetActive(false)
+  self.v_uiobjects.EmojiSuc:SetActive(suc)
+  self.v_uiobjects.Emojifail:SetActive(not suc)
+  self.v_uiobjects.Ani_Char_Out:SetActive(true)
+  self.v_delay_hide_timer = Timer:add_timer("bbq_customer_delay_hide_timer", 0.5, function()
+    self:set_enable(false)
+  end)
+end
+
+function ui:check_all_done()
+  if not self.v_food_items then
+    return
+  end
+  for _, item in ipairs(self.v_food_items) do
+    if item.v_num and item.v_num > 0 then
+      return false
+    end
+  end
+  return true
+end
+
+function ui:remove_delay_hide_timer()
+  if self.v_delay_hide_timer then
+    Timer:remove_timer(self.v_delay_hide_timer)
+    self.v_delay_hide_timer = nil
+  end
+end
+
+function ui:pass_ct(delta_time)
+  if not self.v_left_time or self.v_left_time <= 0 or self.v_delay_hide_timer or self.v_is_special then
+    return
+  end
+  self.v_left_time = self.v_left_time - delta_time
+  local val = self.v_left_time / self.v_duraction
+  self.v_uicompents.Progress_img.fillAmount = val
+  if not self.v_turn_red and val < 0.5 then
+    self.v_turn_red = true
+    Util.set_color(self.v_uicompents.Progress_img, RED)
+  end
+  if self.v_left_time <= 0 then
+    self:do_hide(false)
+  end
+end
+
+function ui:get_left_time()
+  return self.v_left_time or 1000
+end
+
+return ui

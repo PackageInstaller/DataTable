@@ -1,0 +1,9 @@
+return {
+  {AwardGroupId = 25100, Id = 1},
+  {AwardGroupId = 25101, Id = 2},
+  {AwardGroupId = 25102, Id = 3},
+  {AwardGroupId = 25103, Id = 4},
+  {AwardGroupId = 25104, Id = 5},
+  {AwardGroupId = 25105, Id = 6},
+  {AwardGroupId = 25106, Id = 7}
+}

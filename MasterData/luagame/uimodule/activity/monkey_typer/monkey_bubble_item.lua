@@ -1,0 +1,63 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local UPGRADE_TYPE = Config.CommonDefine.MONKEY_TYPEWRITER_UPGRADE_TYPE
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(activity_id, idx)
+  self.v_activity_id = activity_id
+  self.v_uiobjects.TalkBubble:SetActiveEx(false)
+  self.v_uiobjects.NumberBubble:SetActiveEx(false)
+end
+
+function ui:do_play()
+  self:set_enable(false)
+  self:set_enable(true)
+  local random_val = math.random(1, 10)
+  local is_talk = 0 ~= random_val % 2
+  self.v_uiobjects.TalkBubble:SetActiveEx(is_talk)
+  self.v_uiobjects.NumberBubble:SetActiveEx(not is_talk)
+  if is_talk then
+    self.v_uiobjects.Ani_TalkBubble_In:SetActiveEx(false)
+    self.v_uiobjects.Ani_TalkBubble_Out:SetActiveEx(false)
+    self.v_uiobjects.Ani_TalkBubble_In:SetActiveEx(true)
+    self.v_uicompents.TalkText_txt.text = self:get_talk_str()
+  else
+    local number_str = self:get_number_str()
+    for index = 1, 3 do
+      self.v_uicompents["Num" .. index .. "_txt"].text = number_str
+    end
+  end
+end
+
+function ui:get_number_str()
+  local monkey_speed = MonkeyTyperMgr:get_upgrade_value_by_type(self.v_activity_id, UPGRADE_TYPE.MONKEY_VELOCITY)
+  return string.format("+%s", monkey_speed)
+end
+
+function ui:get_talk_str()
+  local lv = MonkeyTyperMgr:get_level_by_type(self.v_activity_id, UPGRADE_TYPE.MONKEY_COUNT)
+  local cfg = ShareRes.create("activity.monkey_typewriter_random")[lv]
+  local group_id
+  if cfg then
+    group_id = cfg.TxtGroupID
+  else
+    group_id = 1
+  end
+  local txt_cfg = ShareRes.create("activity.monkey_typewriter_random_txt")[group_id]
+  local total_str_num = #txt_cfg
+  local random_talk_idx = math.random(1, total_str_num)
+  return txt_cfg[random_talk_idx].Txt
+end
+
+return ui

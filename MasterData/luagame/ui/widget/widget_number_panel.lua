@@ -1,0 +1,164 @@
+local Base = require("ui.uiobject")
+local date = require("utils.date")
+local ChangeNum = require("ui.widget.widget_change_num")
+local TYPE = Config.BIND_TYPE
+local _floor = math.floor
+local _insert = table.insert
+local Math = require("base.mathx")
+local NUMBER_BTN = "NumberPanel/%d"
+local model = {
+  v_return_btn = {
+    TYPE.BUTTON,
+    "NumberPanel/Return"
+  },
+  v_sure_btn = {
+    TYPE.BUTTON,
+    "NumberPanel/Sure"
+  },
+  v_number_root = {
+    TYPE.OBJECT,
+    "NumberPanel"
+  },
+  v_num_text = {
+    TYPE.TEXT,
+    "TextCount"
+  }
+}
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_wrap(...)
+  self = Base.ui_wrap(self, ...)
+  self:init_model(model)
+  self:set_button_listener(self.v_return_btn, self.v_object, function()
+    self:_on_back_event()
+  end)
+  self:set_button_listener(self.v_sure_btn, self.v_object, function()
+    self:_on_sure_event()
+  end)
+  Util.set_click(nil, self.v_num_text.gameObject, self.v_object, function()
+    self:_on_show_nums_panel()
+  end)
+  self.v_widget_change_num = ChangeNum:new(self)
+  for i = 0, 9 do
+    self:add_button(string.format(NUMBER_BTN, i), nil, self.v_object, function()
+      self:_on_number_event(i)
+    end)
+  end
+  return self
+end
+
+function ui:ui_on_show(callback_func, callback_param, cur_num, max_num, min_num, step_num)
+  self.v_callback_func = callback_func
+  self.v_callback_param = callback_param
+  self.v_max_num = max_num or 9999
+  self.v_min_num = min_num or 0
+  self.v_step_num = step_num or 1
+  self.v_cur_num = cur_num or 0
+  self.v_pre_num = self.v_cur_num
+  self.v_widget_change_num:init_by_value(self.v_object, function(cbdata, change_value)
+    self.v_cur_num = change_value
+    self:_on_change_number()
+  end, nil, self.v_cur_num, self.v_step_num, self.v_max_num, self.v_min_num)
+  self.v_number_root:SetActive(false)
+  self:_on_change_number()
+end
+
+function ui:update_item_info(cur_num, max_num, min_num, step_num)
+  self.v_cur_num = cur_num
+  self.v_max_num = max_num
+  self.v_step_num = step_num or self.v_step_num
+  self.v_min_num = min_num or self.v_min_num
+  self.v_number_root:SetActive(false)
+  self:_on_change_number()
+end
+
+function ui:_get_default_num()
+  if self.v_max_num > 0 then
+    return 1
+  else
+    return 0
+  end
+end
+
+function ui:_convert_num_to_tab(num)
+  if not num then
+    return nil
+  end
+  local num_tab = {}
+  if 0 == num then
+    num_tab = {0}
+  else
+    while num > 0 do
+      local temp = num - _floor(num / 10) * 10
+      _insert(num_tab, temp)
+      num = _floor(num / 10)
+    end
+  end
+  local tabs = {}
+  local num_count = #num_tab
+  for i = num_count, 1, -1 do
+    tabs[num_count - i + 1] = num_tab[i]
+  end
+  return tabs
+end
+
+function ui:_convert_tab_to_num(tab)
+  assert(tab)
+  if 0 == #tab then
+    return 0
+  end
+  local num = 0
+  for _, v in pairs(tab) do
+    num = num * 10 + v
+  end
+  return num
+end
+
+function ui:_on_show_nums_panel()
+  self.v_number_root:SetActive(true)
+end
+
+function ui:_on_number_event(num)
+  self.v_nums = self:_convert_num_to_tab(self.v_cur_num) or {}
+  local count = #self.v_nums
+  self.v_nums[count + 1] = num
+  self.v_cur_num = self:_convert_tab_to_num(self.v_nums)
+  self:_on_change_number()
+end
+
+function ui:_on_back_event()
+  self.v_nums = self:_convert_num_to_tab(self.v_cur_num) or {}
+  local len = #self.v_nums
+  if 0 == len then
+    return
+  end
+  self.v_nums[len] = nil
+  self.v_cur_num = self:_convert_tab_to_num(self.v_nums)
+  self:_on_change_number()
+end
+
+function ui:_on_sure_event()
+  self.v_number_root:SetActive(false)
+  self.v_cur_num = self.v_cur_num or 0
+  self:_on_change_number()
+end
+
+function ui:_check_num()
+  if self.v_cur_num == nil then
+    return
+  end
+  self.v_cur_num = Math.Clamp(self.v_cur_num, self.v_min_num, self.v_max_num)
+end
+
+function ui:_on_change_number()
+  self:_check_num()
+  if self.v_cur_num ~= self.v_pre_num then
+    if self.v_callback_func then
+      self.v_callback_func(self.v_callback_param, self.v_cur_num)
+    end
+    self.v_pre_num = self.v_cur_num
+  end
+  self.v_widget_change_num:set_values(self.v_cur_num, self.v_step_num, self.v_max_num, self.v_min_num)
+end
+
+return ui

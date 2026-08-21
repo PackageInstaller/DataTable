@@ -1,0 +1,71 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local EFFECT_NAME = "Effect"
+local weekly_pvp_difficulty_choose_key = "weekly_pvp_difficulty_choose_key"
+local choose_item = require("uimodule.weekly.weekly_pvp_difficulty_choose_item")
+
+function ui:ui_finish_load()
+  self:set_button("BtnClose", function()
+    self:on_btn_close_click()
+  end)
+  self:register_exist_auto_template(weekly_pvp_difficulty_choose_key, self.v_uiobjects.Item, self.v_uiobjects.Content)
+end
+
+function ui:on_btn_close_click()
+  local curr_difficulty = WeeklyMgr:get_cur_pvp_segment()
+  if 0 == curr_difficulty then
+    Util.show_message_tip(2245)
+    return
+  end
+  self:ui_hide()
+end
+
+function ui:click_top_rank_btn()
+end
+
+function ui:click_protect_tips_btn()
+end
+
+function ui:click_rank_detail_btn()
+end
+
+function ui:ui_on_show()
+  self.pvp_activity_config = ShareRes.get_weekly_pvp_activity_cfg()
+  local max_choose_count = self.pvp_activity_config.ChangeSegmentCnt
+  local choose_count = WeeklyMgr:get_pvp_difficulty_choose_count()
+  self.v_uicompents.ChooseNumLess_txt.text = tostring(choose_count)
+  self.v_uicompents.ChooseNumLimit_txt.text = tostring(max_choose_count)
+  local open_list = WeeklyMgr:get_pvp_open_difficulty_list()
+  local all_difficulty_cfg = ShareRes.get_week_acty_segment_cfg()
+  local all_data = {}
+  local curr_difficulty = WeeklyMgr:get_cur_pvp_segment()
+  for index, cfg in ipairs(all_difficulty_cfg) do
+    local data = {}
+    if open_list and index <= #open_list or 1 == index then
+      data.is_open = true
+    else
+      data.is_open = false
+    end
+    data.cfg = cfg
+    table.insert(all_data, data)
+  end
+  for key, data in ipairs(all_data) do
+    local obj = self:get_auto_cache(weekly_pvp_difficulty_choose_key)
+    local item_lua_obj = choose_item:ui_wrap_ex(self, obj, true)
+    item_lua_obj:set_data(data, curr_difficulty)
+  end
+  self:register_event()
+end
+
+function ui:register_event()
+  Util.bind_msg(self, Const.MSG_ON_WEEKLY_PVP_DIFFICULTY_CHANGE, self.on_difficulty_change, self)
+end
+
+function ui:on_difficulty_change()
+  self:ui_hide()
+end
+
+function ui:ui_on_hide()
+end
+
+return ui

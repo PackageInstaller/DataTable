@@ -1,0 +1,167 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_item_quality = {
+    "Item_Quality",
+    BIND_TYPE.IMAGE
+  },
+  v_item_num = {
+    "Item_Num",
+    BIND_TYPE.TEXT
+  },
+  v_item_name = {
+    "Item_Name",
+    BIND_TYPE.TEXT
+  },
+  v_item_desc = {
+    "Item_Desc",
+    BIND_TYPE.TEXT
+  },
+  v_reduce_btn = {
+    "Reduce_Btn",
+    BIND_TYPE.BUTTON
+  },
+  v_add_btn = {
+    "Add_Btn",
+    BIND_TYPE.BUTTON
+  },
+  v_slider = {
+    "Slider",
+    BIND_TYPE.SLIDER
+  },
+  v_use_item_amount = {
+    "Use_Item_Amount",
+    BIND_TYPE.TEXT
+  },
+  v_cancel_btn = {
+    "Cancel_Btn",
+    BIND_TYPE.BUTTON
+  },
+  v_confirm_btn = {
+    "Confirm_Btn",
+    BIND_TYPE.BUTTON
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button_listener(self.v_reduce_btn, function()
+    self:_onclick_reduce_btn()
+  end)
+  self:set_button_listener(self.v_add_btn, function()
+    self:_onclick_add_btn()
+  end)
+  self:set_slider_listener(self.v_slider, function()
+    self:_onclick_slider()
+  end)
+  self:set_button_listener(self.v_cancel_btn, function()
+    self:_onclick_cancel_btn()
+  end)
+  self:set_button_listener(self.v_confirm_btn, function()
+    self:_onclick_confirm_btn()
+  end)
+  self.v_item_id = 0
+  self.v_use_amount = 1
+  self.v_item_cfg = nil
+end
+
+function ui:ui_on_show(data, ...)
+  self.v_item_id = data.item_id
+  self.v_item_uuid = data.item_uuid
+  if not self.v_item_id then
+    return
+  end
+  self.v_item_cfg = UtilUI.get_item_cfg(self.v_item_id)
+  self:_refresh_view()
+end
+
+function ui:ui_on_hide()
+  self.v_item_id = 0
+  self.v_use_amount = 1
+  self.v_item_cfg = nil
+  self.v_item_obj = nil
+end
+
+function ui:_refresh_view()
+  self.v_item_desc.text = self.v_item_cfg.Desc
+  self.v_item_name.text = UtilUI.get_item_name(self.v_item_id)
+  self.v_item_num.text = Util.format_str("持有:{1}", BagMgr:get_item_num(self.v_item_id))
+  if not self.v_item_obj then
+    self.v_item_obj = self:create_item_obj(nil, self.v_item_quality.gameObject, nil, {
+      item_id = self.v_item_id
+    })
+  else
+    self.v_item_obj:ui_show({
+      item_id = self.v_item_id
+    })
+  end
+  self.v_max_num = BagMgr:get_item_num(self.v_item_id)
+  self:_init_slider_state()
+  self:_change_info()
+end
+
+function ui:_init_slider_state()
+  if 1 == self.v_max_num then
+    self.v_slider.minValue = 0
+    self.v_slider.maxValue = 1
+    self.v_slider.interactable = false
+  else
+    self.v_slider.minValue = 1
+    self.v_slider.maxValue = self.v_max_num
+    self.v_slider.interactable = true
+  end
+  self.v_slider.value = 1
+end
+
+function ui:_change_info()
+  self.v_add_btn.interactable = self.v_use_amount < self.v_max_num
+  self.v_reduce_btn.interactable = self.v_use_amount > 1
+  self.v_use_item_amount.text = math.modf(self.v_use_amount)
+end
+
+function ui:_onclick_reduce_btn()
+  self.v_use_amount = self.v_use_amount - 1
+  self.v_slider.value = self.v_use_amount
+  self:_change_info()
+end
+
+function ui:_onclick_add_btn()
+  self.v_use_amount = self.v_use_amount + 1
+  self.v_slider.value = self.v_use_amount
+  self:_change_info()
+end
+
+function ui:_onclick_slider()
+  self.v_use_amount = self.v_slider.value
+  self:_change_info()
+end
+
+function ui:_onclick_cancel_btn()
+  self.v_parent_ui:close_item_use_view()
+end
+
+function ui:_onclick_confirm_btn()
+  if not self.v_item_cfg then
+    return
+  end
+  local consume_list = {
+    bag_type = self.v_item_cfg.Type,
+    item_list = {
+      {
+        uuid = self.v_item_uuid,
+        count = self.v_use_amount
+      }
+    }
+  }
+  BagMgr:request_use_item(consume_list, function(ok)
+    if ok then
+      Util.show_message_tip(2070)
+      self.v_parent_ui:ui_hide()
+    else
+      self.v_parent_ui:ui_hide()
+    end
+  end)
+end
+
+return ui

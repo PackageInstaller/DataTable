@@ -1,0 +1,166 @@
+local Player_Hero_Helper = require("uimodule.friend.player_hero_info.player_hero_helper")
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_content = {
+    "Content",
+    BIND_TYPE.OBJECT
+  },
+  v_icon_list = {
+    "IconList",
+    BIND_TYPE.OBJECT
+  },
+  v_item_tpl = {
+    "ItemTpl",
+    BIND_TYPE.OBJECT
+  },
+  v_rate_list = {
+    "RateList",
+    BIND_TYPE.OBJECT
+  },
+  v_rate_tpl = {
+    "RateTpl",
+    BIND_TYPE.OBJECT
+  },
+  v_scroll_layout = {
+    "ScrollLayout",
+    BIND_TYPE.OBJECT
+  }
+}
+local QUALITY_IMG = {
+  [0] = "UIDraw/Draw_db_ckxq_js_n03",
+  [3] = "UIDraw/Draw_db_ckxq_js_n03",
+  [4] = "UIDraw/Draw_db_ckxq_js_n02",
+  [5] = "UIDraw/Draw_db_ckxq_js_n01"
+}
+local QUALITY_IMG_MASK = {
+  [0] = "UIDraw/Draw_db_ckxq_js_n03zz",
+  [3] = "UIDraw/Draw_db_ckxq_js_n03zz",
+  [4] = "UIDraw/Draw_db_ckxq_js_n02zz",
+  [5] = "UIDraw/Draw_db_ckxq_js_n01zz"
+}
+local DRAWCARD_DROP_RULE_ICON_TEMPLATE_KEY = "DRAWCARD_DROP_RULE_ICON_TEMPLATE_KEY"
+local DRAWCARD_DROP_RULE_RATE_TEMPLATE_KEY = "DRAWCARD_DROP_RULE_RATE_TEMPLATE_KEY"
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:register_exist_auto_template(DRAWCARD_DROP_RULE_ICON_TEMPLATE_KEY, self.v_item_tpl, self.v_icon_list)
+  self:register_exist_auto_template(DRAWCARD_DROP_RULE_RATE_TEMPLATE_KEY, self.v_rate_tpl, self.v_rate_list)
+end
+
+function ui:ui_on_show()
+  local scroll_scrollrect = Util.get_scrollrect(nil, self.v_scroll_layout)
+  scroll_scrollrect.verticalNormalizedPosition = 1
+end
+
+function ui:set_data(group_id, pool_id)
+  self.v_group_id = group_id
+  self.v_pool_id = pool_id
+  self:_refresh_item_list()
+  self:_refresh_rate_list()
+end
+
+function ui:_refresh_item_list()
+  self:give_back_auto_cache(DRAWCARD_DROP_RULE_ICON_TEMPLATE_KEY)
+  local pool_id = self:get_fake_pool_id() or self.v_pool_id
+  local config = ShareRes.get_draw_preview(pool_id)
+  if nil == config then
+    return
+  end
+  local up_dic = {}
+  if config.UpItems and #config.UpItems > 0 then
+    for _, up_id in ipairs(config.UpItems) do
+      up_dic[up_id] = true
+    end
+  end
+  local obj
+  if config.OtherItems and #config.OtherItems > 0 then
+    for _, item_id in ipairs(config.OtherItems) do
+      obj = self:get_auto_cache(DRAWCARD_DROP_RULE_ICON_TEMPLATE_KEY)
+      self:_refresh_icon_item(obj, item_id, up_dic[item_id])
+    end
+  end
+end
+
+local CLICK_FUNC = {
+  [0] = function(item_id)
+    UIMgr:get_ui("itemTip"):ui_show({item_id = item_id})
+  end,
+  [Config.AWARD_TYPE.CHARA] = function(item_id)
+    Player_Hero_Helper.build_fake_buddy(item_id)
+    UIMgr:get_ui("player_hero"):ui_show()
+  end,
+  [Config.AWARD_TYPE.EQUIP] = function(item_id)
+    UIMgr:get_ui("char_weapon", true):ui_show(nil, nil, nil, item_id)
+  end
+}
+
+function ui:_refresh_icon_item(obj, item_id, is_up)
+  local btn = self:get_button(nil, obj)
+  local name_txt = self:get_text("Name", obj)
+  local quality_bg = self:get_image("Quality", obj)
+  local quality_bg_mask = self:get_image("Quality2", obj)
+  local char_icon = self:get_image("Mask/CharIcon", obj)
+  name_txt.text = UtilUI.get_item_name(item_id)
+  local quality = UtilUI.get_item_qulity(item_id)
+  ResMgr:load_set_icon(quality_bg, QUALITY_IMG[quality] or QUALITY_IMG[0])
+  ResMgr:load_set_icon(quality_bg_mask, QUALITY_IMG_MASK[quality] or QUALITY_IMG_MASK[0])
+  local type_config = Util.get_item_type_cfg(item_id)
+  if type_config.AwardType == Config.AWARD_TYPE.CHARA then
+    local buddy_cfg = ShareRes.get_buddy_cfg(item_id)
+    ResMgr:load_set_icon(char_icon, string.format("Icon/Profile/%s", buddy_cfg.Icon[2]))
+  else
+    ResMgr:load_set_icon(char_icon, UtilUI.get_item_icon(item_id))
+  end
+  char_icon:SetNativeSize()
+  self:_adjust_icon_scale(obj)
+  local func = CLICK_FUNC[type_config.AwardType] or CLICK_FUNC[0]
+  self:set_button_listener(btn, function()
+    func(item_id)
+  end)
+  local up_obj = self:get_child_gameobj("Up", obj)
+  up_obj:SetActiveEx(is_up)
+end
+
+function ui:_adjust_icon_scale(obj)
+  local origin = Util.get_rect_transform("Mask/CharIcon", obj)
+  local scale = 150 / origin.rect.width
+  origin:SetLocalScaleA(scale, scale, scale)
+end
+
+function ui:_refresh_rate_list()
+  self:give_back_auto_cache(DRAWCARD_DROP_RULE_RATE_TEMPLATE_KEY)
+  local config_tbl = ShareRes.create("draw.draw_rate_desc")
+  local obj
+  for _, config in pairs(config_tbl) do
+    if config.PoolID == self.v_pool_id then
+      obj = self:get_auto_cache(DRAWCARD_DROP_RULE_RATE_TEMPLATE_KEY)
+      self:_refresh_rate_item(obj, config)
+    end
+  end
+end
+
+function ui:_refresh_rate_item(obj, config)
+  local name_txt = self:get_text("Name", obj)
+  local value_txt = self:get_text("Value", obj)
+  local up_obj = self:get_child_gameobj("Up", value_txt.gameObject)
+  name_txt.text = config.Name
+  value_txt.text = config.RateStr
+  up_obj:SetActiveEx(config.IsUp)
+end
+
+function ui:get_fake_pool_id()
+  local pool_vo = DrawCardMgr:get_pool_vo(self.v_group_id, self.v_pool_id)
+  if nil == pool_vo then
+    return
+  end
+  local choose_id = pool_vo.choose_id
+  if not choose_id or 0 == choose_id then
+    return
+  end
+  local choose_cfg = ShareRes.create("draw.draw_pool_choose_group", choose_id)
+  return choose_cfg.FakePoolId
+end
+
+return ui

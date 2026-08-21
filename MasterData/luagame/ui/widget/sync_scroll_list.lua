@@ -1,0 +1,112 @@
+local Base = require("ui.widget.static_scroll_view")
+local M = Util.create_child_mt(Base)
+local TWEEN_EASE_OUT_EXPO = CS.DG.Tweening.Ease.OutExpo
+
+function M:_init(parent_ui, scroll_rect_ex, content_gameobj, template_class, template_key, template_index)
+  Base._init(self, parent_ui, content_gameobj, template_class, template_key)
+  self.v_is_horizontal = scroll_rect_ex.horizontal
+  self.v_content_trans = scroll_rect_ex.content.transform
+  self.v_scroll_rect = scroll_rect_ex
+  template_index = template_index or 0
+  local template = self.v_content_trans:GetChild(template_index).gameObject
+  local templatex, templatey = template.transform:GetSizeDeltaA()
+  self.v_cell_size = self.v_is_horizontal and templatex or templatey
+  self.v_cur_idx = 1
+  self.v_control_scroll = true
+  parent_ui:set_scrollrect_ex_listener(scroll_rect_ex, function(offset)
+    self.v_start_pos = self.v_is_horizontal and offset.x or offset.y
+    self.v_is_rolling = true
+  end, nil, function(offset)
+    self.v_is_rolling = false
+    self.v_end_pos = self.v_is_horizontal and offset.x or offset.y
+    local half_cell = self.v_cell_size / 2
+    local can_scroll = false
+    local is_right = false
+    if self.v_is_horizontal then
+      is_right = self.v_end_pos > self.v_start_pos
+    else
+      is_right = self.v_end_pos < self.v_start_pos
+    end
+    if math.abs(self.v_end_pos - self.v_start_pos) < 1 / self.v_data_length / 2 then
+      can_scroll = true
+    elseif is_right and self.v_cur_idx < #self.v_items then
+      self.v_cur_idx = self.v_cur_idx + 1
+      can_scroll = true
+    elseif not is_right and self.v_cur_idx > 1 then
+      self.v_cur_idx = self.v_cur_idx - 1
+      can_scroll = true
+    end
+    if not can_scroll then
+      return
+    end
+    scroll_rect_ex.enabled = false
+    local sequence = Util.create_sequence()
+    if self.v_is_horizontal then
+      sequence:Append(self.v_content_trans:DOAnchorPosX(self.v_cur_idx * -self.v_cell_size + half_cell, 0.2):SetEase(TWEEN_EASE_OUT_EXPO))
+    else
+      sequence:Append(self.v_content_trans:DOAnchorPosY(self.v_cur_idx * self.v_cell_size - half_cell, 0.2):SetEase(TWEEN_EASE_OUT_EXPO))
+    end
+    sequence:OnComplete(function()
+      scroll_rect_ex.enabled = true
+      sequence:Kill(false)
+      sequence = nil
+    end)
+    self:on_select_change(self.v_items[self.v_cur_idx])
+  end)
+end
+
+function M:control_scroll(flag)
+  if flag then
+    self.v_control_scroll = true
+    self.v_scroll_rect.enabled = true
+  else
+    self.v_control_scroll = false
+    self.v_scroll_rect.enabled = false
+  end
+end
+
+function M:scroll_to_index_for_horizontal(index, use_time_param)
+  self.v_cur_idx = index
+  self.v_scroll_rect.enabled = false
+  if self.v_sequence then
+    self.v_sequence:Kill(false)
+    self.v_sequence = nil
+  end
+  local use_time = use_time_param or 0.8
+  self.v_sequence = Util.create_sequence()
+  if self.v_is_horizontal then
+    self.v_sequence:Append(self.v_content_trans:DOAnchorPosX(self.v_cur_idx * -self.v_cell_size + self.v_cell_size / 2, use_time):SetEase(TWEEN_EASE_OUT_EXPO))
+  else
+    self.v_sequence:Append(self.v_content_trans:DOAnchorPosY(self.v_cur_idx * self.v_cell_size - self.v_cell_size / 2, use_time):SetEase(TWEEN_EASE_OUT_EXPO))
+  end
+  self.v_sequence:OnComplete(function()
+    if not Util.is_nil(self.v_scroll_rect) then
+      self.v_scroll_rect.enabled = true
+    end
+    self.v_sequence:Kill(false)
+    self.v_sequence = nil
+  end)
+  self:on_select_change(self.v_items[self.v_cur_idx])
+end
+
+function M:get_cur_select_idx()
+  return self.v_cur_idx or 1
+end
+
+function M:scroll_is_rolling()
+  return self.v_is_rolling
+end
+
+function M:update_list(res_list)
+  self:clear()
+  if not res_list then
+    return
+  end
+  local length = #res_list
+  for i = 1, length do
+    self:add_item(res_list[i], i)
+  end
+  self.v_data_length = length
+end
+
+return M

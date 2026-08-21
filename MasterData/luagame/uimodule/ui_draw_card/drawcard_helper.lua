@@ -1,0 +1,39 @@
+local helper = {}
+helper.POOL_TYPE = {
+  PERMANENT = 1,
+  TIME_LIMIT = 2,
+  CNT_LIMIT = 3,
+  EQUIP_CHOOSE = 4
+}
+local ITEM_TYPE_NAME_MAP = {
+  [Config.AWARD_TYPE.CHARA] = "角色",
+  [Config.AWARD_TYPE.EQUIP] = "武器",
+  [Config.AWARD_TYPE.ITEM] = "道具"
+}
+
+function helper.get_item_type_str(item_id)
+  local type_config = Util.get_item_type_cfg(item_id)
+  local item_type = type_config.AwardType
+  local name = ITEM_TYPE_NAME_MAP[item_type] or "道具"
+  return Util.format_str(name)
+end
+
+function helper.get_item_name(item_id)
+  local type_config = Util.get_item_type_cfg(item_id)
+  local item_type = type_config.AwardType
+  if item_type == Config.AWARD_TYPE.CHARA then
+    local buddy_config = ShareRes.get_buddy_cfg(item_id)
+    return buddy_config.Name
+  elseif item_type == Config.AWARD_TYPE.EQUIP then
+    local equip_cfg = ShareRes.get_equip(item_id)
+    return equip_cfg.Name
+  else
+    local item_config = ShareRes.get_item_cfg(item_id)
+    if item_config then
+      return item_config.Name
+    end
+  end
+  return ""
+end
+
+return helper

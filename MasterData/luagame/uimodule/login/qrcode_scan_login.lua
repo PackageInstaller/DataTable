@@ -1,0 +1,100 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local Json = require("utils.json")
+local QR_CODE_URL = "https://telauth.tiancity.com/webcenter/QrCode"
+local QR_CODE_LISTENER_URL = "https://telauth.tiancity.com/webcenter/QrCodeListener"
+local LISTEN_INTERVAL = 3
+
+function ui:ui_finish_load()
+  self:set_button_listener(self.v_uicompents.BgClose_btn, function()
+    if not self.v_is_in_loading_state then
+      self:ui_hide()
+    end
+  end)
+  self:set_button_listener(self.v_uicompents.BtnClose_btn, function()
+    if not self.v_is_in_loading_state then
+      self:ui_hide()
+    end
+  end)
+  self:set_button_listener(self.v_uicompents.BtnRetry_btn, function()
+    self:fetch_qrcode()
+  end)
+end
+
+function ui:ui_on_show()
+  self.v_last_listen_time = math.maxinteger
+  self.v_login_success = false
+  self.v_is_in_loading_state = false
+  self:fetch_qrcode()
+end
+
+function ui:fetch_qrcode()
+  self:to_loading_state()
+  local time = Date.server_time()
+  local request_url = string.format("%s?siteid=030&t=%s", QR_CODE_URL, time)
+  CSHelper.RequestSpriteAndTCATQK(request_url, function(sp, tcatqk)
+    self.v_uicompents.Code_img.sprite = sp
+    self.v_tcatqk = tcatqk
+    self.v_last_listen_time = Global.real_time
+    self:to_show_code_state()
+  end)
+end
+
+function ui:to_loading_state()
+  self.v_is_in_loading_state = true
+  self.v_uiobjects.Loading:SetActive(true)
+  self.v_uiobjects.Code:SetActive(false)
+  self.v_uiobjects.BtnRetry:SetActive(false)
+end
+
+function ui:to_retry_state()
+  self.v_is_in_loading_state = false
+  self.v_uiobjects.Loading:SetActive(false)
+  self.v_uiobjects.Code:SetActive(false)
+  self.v_uiobjects.BtnRetry:SetActive(true)
+end
+
+function ui:to_show_code_state()
+  self.v_is_in_loading_state = false
+  self.v_uiobjects.Loading:SetActive(false)
+  self.v_uiobjects.Code:SetActive(true)
+  self.v_uiobjects.BtnRetry:SetActive(false)
+end
+
+function ui:qrcode_login_success(token)
+  self.v_login_success = true
+  local json_str = string.format("{\"sdkVerName\":\"P1.0\",\"channelSdkVerName\":\"P1.0\",\"channelSdkVerCustom\":1,\"userId\":\"\",\"userToken\":\"%s\"}", token)
+  local tsi_custom = CSHelper.ToBase64String(json_str)
+  SDKManager:on_sdk_login_success(tsi_custom)
+  SDKManager:set_is_logining(false)
+  self:ui_hide()
+end
+
+function ui:ui_on_update()
+  local now = Global.real_time
+  if now - self.v_last_listen_time >= LISTEN_INTERVAL and not self.v_login_success and not self.v_is_in_loading_state then
+    self.v_last_listen_time = now
+    self:listen_login_status()
+  end
+end
+
+function ui:listen_login_status()
+  local request_url = string.format("%s?&qk=%s&t=%s", QR_CODE_LISTENER_URL, self.v_tcatqk, Date.server_time())
+  CSHelper.RequestContent(request_url, function(content)
+    if nil == content then
+      Log.Error("listen_login_status error")
+      self:to_retry_state()
+    else
+      local data = Json.decode(content)
+      local token = data.token
+      if 1 == data.code then
+        self:qrcode_login_success(token)
+      elseif 2 == data.code then
+      elseif 3 == data.code then
+        self:to_retry_state()
+      end
+    end
+  end)
+end
+
+return ui

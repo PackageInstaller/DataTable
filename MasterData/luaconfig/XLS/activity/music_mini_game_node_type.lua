@@ -1,0 +1,26 @@
+return {
+  {
+    AnimSuffix = 1,
+    CircleEnd = 1,
+    Id = 1,
+    JudgeEnd = 1.2,
+    JudgeStart = 0.7,
+    TipsDuration = 0.5
+  },
+  {
+    AnimSuffix = 2,
+    CircleEnd = 1.5,
+    Id = 2,
+    JudgeEnd = 1.7,
+    JudgeStart = 1.2,
+    TipsDuration = 0.8
+  },
+  {
+    AnimSuffix = 3,
+    CircleEnd = 1.8,
+    Id = 3,
+    JudgeEnd = 2,
+    JudgeStart = 1.5,
+    TipsDuration = 1
+  }
+}

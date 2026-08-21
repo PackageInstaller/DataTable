@@ -1,0 +1,14 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:set_button("BgClose", function()
+    self:ui_hide()
+  end)
+end
+
+function ui:ui_on_show(texture)
+  ResMgr:load_set_icon(self.v_uicompents.UIBoxImage_img, texture, nil, true, self)
+end
+
+return ui

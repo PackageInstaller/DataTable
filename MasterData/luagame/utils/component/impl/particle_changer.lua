@@ -1,0 +1,40 @@
+local class = require("utils.component.middle_class")
+local LuaComponent = require("utils.component.lua_component")
+local M = class("ParticleChanger", LuaComponent)
+M:AddDefineList({
+  {
+    name = "particle",
+    type = CS.UnityEngine.ParticleSystem
+  },
+  {
+    name = "isChangeColor",
+    type = CS.System.Boolean
+  },
+  {
+    name = "startColor",
+    type = CS.UnityEngine.Color
+  },
+  {
+    name = "isChangeColorOverTime",
+    type = CS.System.Boolean
+  },
+  {
+    name = "colorOverLifeTime",
+    type = CS.UnityEngine.ParticleSystem.MinMaxGradient
+  }
+})
+if ExecuteInEditorScript then
+  return M
+end
+
+function M:OnEnable()
+  if self.isChangeColor then
+    self.particle:Clear()
+    self.particle:SetStartColor(self.startColor)
+  end
+  if self.isChangeColorOverTime then
+    self.particle:SetColorOverLifetime(self.colorOverLifeTime)
+  end
+end
+
+return M

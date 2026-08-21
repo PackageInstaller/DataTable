@@ -1,0 +1,6 @@
+local M = {}
+M.BT_SUCCESS = 0
+M.BT_FAILURE = 1
+M.BT_RUNNING = 2
+M.BT_INVALID = 3
+return M

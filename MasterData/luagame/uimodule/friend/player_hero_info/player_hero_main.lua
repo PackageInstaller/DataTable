@@ -1,0 +1,174 @@
+local Base = require("ui.uiobject")
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local _tinsert = table.insert
+local CHARACTER_CONFIG = require("uimodule.character.character_config")
+local WEAPON_SELECT_TYPE = CHARACTER_CONFIG.WEAPON_SELECT_TYPE
+local Player_Hero_Helper = require("uimodule.friend.player_hero_info.player_hero_helper")
+local ATTR_PANEL = 1
+local POTENTIAL_PANEL = 2
+local WEAPON_PANEL = 3
+local SKILL_PANEL = 4
+local PUZZLE = 5
+local SHOW_CHAR_RT = {
+  [ATTR_PANEL] = true,
+  [WEAPON_PANEL] = true,
+  [POTENTIAL_PANEL] = true
+}
+local PAGE_SYS_OPEN = {
+  [PUZZLE] = 58
+}
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_left_panel = {
+    "Left",
+    BIND_TYPE.OBJECT
+  },
+  v_page_obj = {
+    "Page",
+    BIND_TYPE.OBJECT
+  },
+  v_asset_bar = {
+    "AssetBar",
+    BIND_TYPE.OBJECT
+  }
+}
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnCharRet", function()
+    if self.v_parent_ui.v_return_cb then
+      self.v_parent_ui.v_return_cb()
+    end
+    self.v_parent_ui:ui_hide()
+    self.v_last_page = nil
+  end)
+  self.v_uiobjects.BtnEnhance:SetActive(false)
+  self.v_uiobjects.AssetBar:SetActive(false)
+  self.v_last_page = nil
+  self.v_page_panels = {
+    [ATTR_PANEL] = self.v_parent_ui:get_panel("player_hero_attr"),
+    [WEAPON_PANEL] = self.v_parent_ui:get_panel("player_weapon_attr"),
+    [POTENTIAL_PANEL] = self.v_parent_ui:get_panel("player_hero_potential"),
+    [SKILL_PANEL] = self.v_parent_ui:get_panel("player_hero_skill"),
+    [PUZZLE] = self.v_parent_ui:get_panel("player_hero_puzzle")
+  }
+  self.v_uiobjects.RedAttr:SetActive(false)
+  self.v_uiobjects.RedSkill:SetActive(false)
+  self.v_uiobjects.RedWeapon:SetActive(false)
+  self.v_uiobjects.RedPlugins:SetActive(false)
+  self.v_uiobjects.RedQianneng:SetActive(false)
+  self.v_attr_eff = Util.get_child_gameobj("Animation/Ani_VX_CharaAttr_IN", self.v_parent_ui.v_object)
+  self.v_Qianneng_eff = Util.get_child_gameobj("Animation/Ani_VX_QiannengPanel_IN", self.v_parent_ui.v_object)
+  self.v_Weapon_eff = Util.get_child_gameobj("Animation/Ani_VX_WeaponAttr_IN", self.v_parent_ui.v_object)
+  self.v_Skiil_eff = Util.get_child_gameobj("Animation/Ani_VX_Skill_IN", self.v_parent_ui.v_object)
+  self.v_come_in_eff = {
+    self.v_attr_eff,
+    self.v_Qianneng_eff,
+    self.v_Weapon_eff,
+    self.v_Skiil_eff,
+    nil
+  }
+  self.v_skill_in_eff = Util.get_child_gameobj("Animation/Ani_VX_SkillPannel_IN", self.v_parent_ui.v_object)
+  self.v_skill_out_eff = Util.get_child_gameobj("Animation/Ani_VX_SkillPannel_Out", self.v_parent_ui.v_object)
+end
+
+function ui:ui_on_show()
+  self.v_uiobjects.BtnIntroduce:SetActive(false)
+  self.v_buddy_id = Player_Hero_Helper.get_hero_id()
+  local last_page = CharacterMgr:get_last_select_page()
+  self:_init_page_list(last_page)
+  self:check_puzzle_unlock()
+  self:_on_click_page(last_page or 1, true)
+  self.v_skill_in_eff:SetActive(false)
+  self.v_skill_out_eff:SetActive(true)
+  self.v_uiobjects.BtnCharList:SetActive(false)
+end
+
+function ui:ui_on_hide()
+  self.v_last_page = nil
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:_init_page_list(last_page)
+  last_page = last_page or 1
+  local pages = {}
+  _tinsert(pages, Util.get_toggle("Attr", self.v_page_obj))
+  _tinsert(pages, Util.get_toggle("Qianneng", self.v_page_obj))
+  _tinsert(pages, Util.get_toggle("Weapon", self.v_page_obj))
+  _tinsert(pages, Util.get_toggle("Skill", self.v_page_obj))
+  _tinsert(pages, Util.get_toggle("Plugins", self.v_page_obj))
+  self.v_toggle_list = pages
+  self.v_page_toggle_tab = ToggleTab:new(self)
+  self.v_page_toggle_tab:init_by_toggles(pages, function(idx)
+    self:_on_click_page(idx)
+  end)
+  self.v_page_toggle_tab:set_color("FFFFFF", "FFFFFF")
+  self:update_left_view(true)
+  self.v_page_toggle_tab:set_toggle_by_index(last_page)
+end
+
+function ui:update_left_view(show)
+  self.v_left_panel.gameObject:SetActive(show)
+end
+
+function ui:_on_click_page(page, is_refresh)
+  if page == self.v_last_page and not is_refresh then
+    return
+  end
+  if not self.v_page_panels[page] then
+    return
+  end
+  if page == PUZZLE and not self.v_can_click_puzzle_tog then
+    self.v_page_toggle_tab:set_toggle_by_index(self.v_last_page)
+    Util.show_message_tip("未解锁")
+    return
+  end
+  if self.v_come_in_eff and next(self.v_come_in_eff) then
+    for i = 1, #self.v_come_in_eff do
+      self.v_come_in_eff[i]:SetActive(false)
+    end
+    if self.v_come_in_eff[page] then
+      self.v_come_in_eff[page]:SetActive(true)
+    end
+  end
+  for idx, panel in pairs(self.v_page_panels) do
+    panel:set_enable(idx == page)
+  end
+  self.v_last_page = page
+  CharacterMgr:set_last_select_page(page)
+  self.v_uiobjects.RBWeapon:SetActive(false)
+  self.v_parent_ui:show_char_image(SHOW_CHAR_RT[page])
+  if SHOW_CHAR_RT[page] then
+    self.v_parent_ui:change_char_view(page, self.v_buddy_id)
+  end
+  self.v_uiobjects.BtnCharRet:SetActiveEx(page ~= SKILL_PANEL)
+  self.v_uiobjects.BtnMain:SetActiveEx(page ~= SKILL_PANEL)
+  self.v_parent_ui:set_open_callback()
+end
+
+function ui:check_puzzle_unlock()
+  local hero_data = Player_Hero_Helper.get_hero_data()
+  local is_map_unlock = false
+  local condition_id = ShareRes.get_buddy_puzzle_map_unlock_cond(self.v_buddy_id)
+  local condition = ShareRes.create("condition.condition", condition_id)
+  if hero_data and condition.Type == 1071 and condition.Param then
+    local break_lv = condition.Param[2]
+    local buddy_lv = condition.Param[3]
+    is_map_unlock = break_lv <= hero_data.break_lv and buddy_lv <= hero_data.lv
+  else
+    Log.Error("插件地图解锁条件配置错误，请检查condition_id=", condition_id, debug.traceback())
+  end
+  local show_tog = hero_data.uuid ~= nil and hero_data and nil ~= hero_data.puzzle_graph
+  local puzzle_tog_obj = self.v_toggle_list[PUZZLE].gameObject
+  puzzle_tog_obj:SetActive(show_tog)
+  if show_tog then
+    Util.apply_grey_ex(puzzle_tog_obj, not is_map_unlock)
+    self.v_uiobjects.LockPlugins:SetActive(not is_map_unlock)
+  end
+  self.v_can_click_puzzle_tog = show_tog and is_map_unlock
+end
+
+return ui

@@ -1,0 +1,30 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_input_field = {
+    "InputField",
+    BIND_TYPE.INPUT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("Submit", function()
+    local cdkey = self.v_input_field.text
+    PlayerMgr:use_cdkey(cdkey)
+    self:ui_hide()
+  end)
+  self:set_button("Cancel", function()
+    self:ui_hide()
+  end)
+  self:set_button("BgReturn", function()
+    self:ui_hide()
+  end)
+end
+
+function ui:ui_on_hide()
+  self.v_input_field.text = ""
+end
+
+return ui

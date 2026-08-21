@@ -1,0 +1,33 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local UnityColor = UnityEngine.Color
+local Condition_Type = Config.Condition_Type
+local TextColor = {
+  FinishColor = UnityColor(0.1607843137254902, 0.1607843137254902, 0.1607843137254902, 1),
+  NotFinishColor = UnityColor(0.1607843137254902, 0.1607843137254902, 0.1607843137254902, 0.7)
+}
+
+function M:set_data(data)
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  local finished = data.is_finish
+  uobj.Complete:SetActive(finished)
+  local arg = data.arg
+  if data.ConditionType == Condition_Type.HealthMoreThan then
+    local percent_health = data.arg / 100
+    percent_health = math.max(percent_health, 1)
+    arg = string.format("%d", percent_health) .. "%"
+  end
+  ucom.TargetDesc_txt.text = Util.format_str(data.ConditionDesc, arg)
+  local color = TextColor.FinishColor
+  if not finished then
+    color = TextColor.NotFinishColor
+  end
+  ucom.TargetDesc_txt.color = color
+  ucom.Complete_img.color = color
+end
+
+function M:on_clear()
+end
+
+return M

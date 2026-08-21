@@ -1,0 +1,26 @@
+return {
+  {
+    IconPath = {
+      "UIActMaze/Battle/ysysr_icon_sjtb1",
+      "UIActMaze/Battle/ysysr_icon_sjtb1",
+      "UIActMaze/Battle/ysysr_icon_sjtb1"
+    },
+    Id = 1
+  },
+  {
+    IconPath = {
+      "UIActMaze/Battle/ysysr_icon_sjtb2",
+      "UIActMaze/Battle/ysysr_icon_sjtb2",
+      "UIActMaze/Battle/ysysr_icon_sjtb2"
+    },
+    Id = 2
+  },
+  {
+    IconPath = {
+      "UIActMaze/Battle/ysysr_icon_sjtb3",
+      "UIActMaze/Battle/ysysr_icon_sjtb3",
+      "UIActMaze/Battle/ysysr_icon_sjtb3"
+    },
+    Id = 3
+  }
+}

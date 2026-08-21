@@ -1,0 +1,1538 @@
+return {
+  [10009] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 3,
+    Id = 10009,
+    Name = "戒律：忠于言语",
+    Quality = 3,
+    Sect = 1,
+    Star = 3,
+    Tag = "圣誓"
+  },
+  [10010] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 10010,
+    Name = "戒律：无私奉献",
+    Quality = 3,
+    Sect = 1,
+    Star = 3,
+    Tag = "圣誓"
+  },
+  [10011] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 10011,
+    Name = "戒律：异端肃清",
+    Quality = 3,
+    Sect = 1,
+    Star = 3,
+    Tag = "圣誓"
+  },
+  [10012] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 10012,
+    Name = "教条：无怜悯",
+    Quality = 2,
+    Sect = 1,
+    Star = 2,
+    Tag = "圣誓"
+  },
+  [10013] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 10013,
+    Name = "教条：无慈悲",
+    Quality = 2,
+    Sect = 1,
+    Star = 2,
+    Tag = "圣誓"
+  },
+  [10014] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 10014,
+    Name = "教条：绝不畏敌",
+    Quality = 2,
+    Sect = 1,
+    Star = 2,
+    Tag = "圣誓"
+  },
+  [10015] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 10015,
+    Name = "教条：捍卫荣誉",
+    Quality = 2,
+    Sect = 1,
+    Star = 2,
+    Tag = "圣誓"
+  },
+  [10016] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 10016,
+    Name = "教条：信任同伴",
+    Quality = 2,
+    Sect = 1,
+    Star = 2,
+    Tag = "圣誓"
+  },
+  [10017] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 10017,
+    Name = "美德：守护弱者",
+    Quality = 1,
+    Sect = 1,
+    Star = 1,
+    Tag = "圣誓"
+  },
+  [10018] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 10018,
+    Name = "美德：坚持",
+    Quality = 1,
+    Sect = 1,
+    Star = 1,
+    Tag = "圣誓"
+  },
+  [10019] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 10019,
+    Name = "美德：分享善念",
+    Quality = 1,
+    Sect = 1,
+    Star = 1,
+    Tag = "圣誓"
+  },
+  [10020] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 10020,
+    Name = "美德：御邪",
+    Quality = 1,
+    Sect = 1,
+    Star = 1,
+    Tag = "圣誓"
+  },
+  [10021] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 10021,
+    Name = "美德：对抗不公",
+    Quality = 1,
+    Sect = 1,
+    Star = 1,
+    Tag = "圣誓"
+  },
+  [10022] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 10022,
+    Name = "美德：秉持纯洁",
+    Quality = 1,
+    Sect = 1,
+    Star = 1,
+    Tag = "圣誓"
+  },
+  [10023] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 10023,
+    Name = "美德：践行责任",
+    Quality = 1,
+    Sect = 1,
+    Star = 1,
+    Tag = "圣誓"
+  },
+  [10024] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 10024,
+    Name = "美德：信念",
+    Quality = 1,
+    Sect = 1,
+    Star = 1,
+    Tag = "圣誓"
+  },
+  [20009] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 3,
+    Id = 20009,
+    Name = "原理：时制熵增",
+    Quality = 3,
+    Sect = 2,
+    Star = 3,
+    Tag = "时沙"
+  },
+  [20010] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 20010,
+    Name = "原理：剧变节点",
+    Quality = 3,
+    Sect = 2,
+    Star = 3,
+    Tag = "时沙"
+  },
+  [20011] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 20011,
+    Name = "原理：逆时干涉",
+    Quality = 3,
+    Sect = 2,
+    Star = 3,
+    Tag = "时沙"
+  },
+  [20012] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 20012,
+    Name = "理论：回归效应",
+    Quality = 2,
+    Sect = 2,
+    Star = 2,
+    Tag = "时沙"
+  },
+  [20013] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 20013,
+    Name = "理论：时间透支假说",
+    Quality = 2,
+    Sect = 2,
+    Star = 2,
+    Tag = "时沙"
+  },
+  [20014] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 20014,
+    Name = "理论：缓时刷新",
+    Quality = 2,
+    Sect = 2,
+    Star = 2,
+    Tag = "时沙"
+  },
+  [20015] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 20015,
+    Name = "理论：可控时域",
+    Quality = 2,
+    Sect = 2,
+    Star = 2,
+    Tag = "时沙"
+  },
+  [20016] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 20016,
+    Name = "理论：并协原理",
+    Quality = 2,
+    Sect = 2,
+    Star = 2,
+    Tag = "时沙"
+  },
+  [20017] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 20017,
+    Name = "衍生：循环空间",
+    Quality = 1,
+    Sect = 2,
+    Star = 1,
+    Tag = "时沙"
+  },
+  [20018] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 20018,
+    Name = "衍生：粒子加速",
+    Quality = 1,
+    Sect = 2,
+    Star = 1,
+    Tag = "时沙"
+  },
+  [20019] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 20019,
+    Name = "衍生：触发式时缓",
+    Quality = 1,
+    Sect = 2,
+    Star = 1,
+    Tag = "时沙"
+  },
+  [20020] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 20020,
+    Name = "衍生：触发式迁时",
+    Quality = 1,
+    Sect = 2,
+    Star = 1,
+    Tag = "时沙"
+  },
+  [20021] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 20021,
+    Name = "衍生：复叠加态",
+    Quality = 1,
+    Sect = 2,
+    Star = 1,
+    Tag = "时沙"
+  },
+  [20022] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 20022,
+    Name = "衍生：预见竭时",
+    Quality = 1,
+    Sect = 2,
+    Star = 1,
+    Tag = "时沙"
+  },
+  [20023] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 20023,
+    Name = "衍生：缓时膨胀",
+    Quality = 1,
+    Sect = 2,
+    Star = 1,
+    Tag = "时沙"
+  },
+  [20024] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 20024,
+    Name = "衍生：缓时侵蚀",
+    Quality = 1,
+    Sect = 2,
+    Star = 1,
+    Tag = "时沙"
+  },
+  [30009] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 3,
+    Id = 30009,
+    Name = "御灾：生息如水",
+    Quality = 3,
+    Sect = 3,
+    Star = 3,
+    Tag = "永夏"
+  },
+  [30010] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 3,
+    Id = 30010,
+    Name = "御灾：以泉施灾",
+    Quality = 3,
+    Sect = 3,
+    Star = 3,
+    Tag = "永夏"
+  },
+  [30011] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 3,
+    Id = 30011,
+    Name = "御灾：雨后春笋",
+    Quality = 3,
+    Sect = 3,
+    Star = 3,
+    Tag = "永夏"
+  },
+  [30012] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 30012,
+    Name = "水利：十年究其成",
+    Quality = 2,
+    Sect = 3,
+    Star = 2,
+    Tag = "永夏"
+  },
+  [30013] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 30013,
+    Name = "水利：万世席其利",
+    Quality = 2,
+    Sect = 3,
+    Star = 2,
+    Tag = "永夏"
+  },
+  [30014] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 30014,
+    Name = "水利：风助疗型",
+    Quality = 2,
+    Sect = 3,
+    Star = 2,
+    Tag = "永夏"
+  },
+  [30015] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 30015,
+    Name = "水利：洪涝将至",
+    Quality = 2,
+    Sect = 3,
+    Star = 2,
+    Tag = "永夏"
+  },
+  [30016] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 30016,
+    Name = "水利：祸水东引",
+    Quality = 2,
+    Sect = 3,
+    Star = 2,
+    Tag = "永夏"
+  },
+  [30017] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 30017,
+    Name = "天时：肆水惊雷",
+    Quality = 1,
+    Sect = 3,
+    Star = 1,
+    Tag = "永夏"
+  },
+  [30018] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 30018,
+    Name = "天时：健行奔驰",
+    Quality = 1,
+    Sect = 3,
+    Star = 1,
+    Tag = "永夏"
+  },
+  [30019] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 30019,
+    Name = "天时：形亡化渊",
+    Quality = 1,
+    Sect = 3,
+    Star = 1,
+    Tag = "永夏"
+  },
+  [30020] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 30020,
+    Name = "天时：祸之临行",
+    Quality = 1,
+    Sect = 3,
+    Star = 1,
+    Tag = "永夏"
+  },
+  [30021] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 30021,
+    Name = "天时：疗会贯通",
+    Quality = 1,
+    Sect = 3,
+    Star = 1,
+    Tag = "永夏"
+  },
+  [30022] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 30022,
+    Name = "天时：亡骸之利",
+    Quality = 1,
+    Sect = 3,
+    Star = 1,
+    Tag = "永夏"
+  },
+  [30023] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 30023,
+    Name = "天时：祸不单行",
+    Quality = 1,
+    Sect = 3,
+    Star = 1,
+    Tag = "永夏"
+  },
+  [30024] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 30024,
+    Name = "天时：火上浇油",
+    Quality = 1,
+    Sect = 3,
+    Star = 1,
+    Tag = "永夏"
+  },
+  [40009] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 3,
+    Id = 40009,
+    Name = "框架：预先放款",
+    Quality = 3,
+    Sect = 4,
+    Star = 3,
+    Tag = "巨企"
+  },
+  [40010] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 3,
+    Id = 40010,
+    Name = "框架：多重保障制度",
+    Quality = 3,
+    Sect = 4,
+    Star = 3,
+    Tag = "巨企"
+  },
+  [40011] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 3,
+    Id = 40011,
+    Name = "框架：强效激励计划",
+    Quality = 3,
+    Sect = 4,
+    Star = 3,
+    Tag = "巨企"
+  },
+  [40012] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 40012,
+    Name = "细则：补充激励手段",
+    Quality = 2,
+    Sect = 4,
+    Star = 2,
+    Tag = "巨企"
+  },
+  [40013] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 40013,
+    Name = "细则：续约条款",
+    Quality = 2,
+    Sect = 4,
+    Star = 2,
+    Tag = "巨企"
+  },
+  [40014] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 40014,
+    Name = "细则：双保险",
+    Quality = 2,
+    Sect = 4,
+    Star = 2,
+    Tag = "巨企"
+  },
+  [40015] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 40015,
+    Name = "细则：防护补贴",
+    Quality = 2,
+    Sect = 4,
+    Star = 2,
+    Tag = "巨企"
+  },
+  [40016] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 40016,
+    Name = "细则：体检福利",
+    Quality = 2,
+    Sect = 4,
+    Star = 2,
+    Tag = "巨企"
+  },
+  [40017] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 40017,
+    Name = "服务：双倍酬劳",
+    Quality = 1,
+    Sect = 4,
+    Star = 1,
+    Tag = "巨企"
+  },
+  [40018] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 40018,
+    Name = "服务：临时医疗",
+    Quality = 1,
+    Sect = 4,
+    Star = 1,
+    Tag = "巨企"
+  },
+  [40019] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 40019,
+    Name = "服务：延命护理",
+    Quality = 1,
+    Sect = 4,
+    Star = 1,
+    Tag = "巨企"
+  },
+  [40020] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 40020,
+    Name = "服务：危机救援",
+    Quality = 1,
+    Sect = 4,
+    Star = 1,
+    Tag = "巨企"
+  },
+  [40021] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 40021,
+    Name = "服务：放射性扫描",
+    Quality = 1,
+    Sect = 4,
+    Star = 1,
+    Tag = "巨企"
+  },
+  [40022] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 40022,
+    Name = "服务：搏击教练",
+    Quality = 1,
+    Sect = 4,
+    Star = 1,
+    Tag = "巨企"
+  },
+  [40023] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 40023,
+    Name = "服务：健康顾问",
+    Quality = 1,
+    Sect = 4,
+    Star = 1,
+    Tag = "巨企"
+  },
+  [40024] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 40024,
+    Name = "服务：优质客户签约",
+    Quality = 1,
+    Sect = 4,
+    Star = 1,
+    Tag = "巨企"
+  },
+  [50009] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 3,
+    Id = 50009,
+    Name = "专利：清敌优化",
+    Quality = 3,
+    Sect = 5,
+    Star = 3,
+    Tag = "神谕"
+  },
+  [50010] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 3,
+    Id = 50010,
+    Name = "专利：多弹头设计",
+    Quality = 3,
+    Sect = 5,
+    Star = 3,
+    Tag = "神谕"
+  },
+  [50011] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 3,
+    Id = 50011,
+    Name = "专利：精准回收",
+    Quality = 3,
+    Sect = 5,
+    Star = 3,
+    Tag = "神谕"
+  },
+  [50012] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 50012,
+    Name = "改良：战获回收",
+    Quality = 2,
+    Sect = 5,
+    Star = 2,
+    Tag = "神谕"
+  },
+  [50013] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 50013,
+    Name = "改良：对敌数据解析",
+    Quality = 2,
+    Sect = 5,
+    Star = 2,
+    Tag = "神谕"
+  },
+  [50014] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 50014,
+    Name = "改良：急救改装",
+    Quality = 2,
+    Sect = 5,
+    Star = 2,
+    Tag = "神谕"
+  },
+  [50015] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 50015,
+    Name = "改良：试做引雷",
+    Quality = 2,
+    Sect = 5,
+    Star = 2,
+    Tag = "神谕"
+  },
+  [50016] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 50016,
+    Name = "改良：物资再利用",
+    Quality = 2,
+    Sect = 5,
+    Star = 2,
+    Tag = "神谕"
+  },
+  [50017] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 50017,
+    Name = "假想：物质转化",
+    Quality = 1,
+    Sect = 5,
+    Star = 1,
+    Tag = "神谕"
+  },
+  [50018] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 50018,
+    Name = "假想：简易挂载",
+    Quality = 1,
+    Sect = 5,
+    Star = 1,
+    Tag = "神谕"
+  },
+  [50019] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 50019,
+    Name = "假想：触发式陷阱",
+    Quality = 1,
+    Sect = 5,
+    Star = 1,
+    Tag = "神谕"
+  },
+  [50020] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 50020,
+    Name = "假想：集团作战",
+    Quality = 1,
+    Sect = 5,
+    Star = 1,
+    Tag = "神谕"
+  },
+  [50021] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 50021,
+    Name = "假想：乾式机关",
+    Quality = 1,
+    Sect = 5,
+    Star = 1,
+    Tag = "神谕"
+  },
+  [50022] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 50022,
+    Name = "假想：治疗粒子",
+    Quality = 1,
+    Sect = 5,
+    Star = 1,
+    Tag = "神谕"
+  },
+  [50023] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 50023,
+    Name = "假想：妙手测试版",
+    Quality = 1,
+    Sect = 5,
+    Star = 1,
+    Tag = "神谕"
+  },
+  [50024] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 50024,
+    Name = "假想：光学传导",
+    Quality = 1,
+    Sect = 5,
+    Star = 1,
+    Tag = "神谕"
+  },
+  [60009] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 3,
+    Id = 60009,
+    Name = "武装优化：精英车组",
+    Quality = 3,
+    Sect = 6,
+    Star = 3,
+    Tag = "铸雷"
+  },
+  [60010] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 3,
+    Id = 60010,
+    Name = "武装优化：过穿补偿",
+    Quality = 3,
+    Sect = 6,
+    Star = 3,
+    Tag = "铸雷"
+  },
+  [60011] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 3,
+    Id = 60011,
+    Name = "武装优化：齐射循环",
+    Quality = 3,
+    Sect = 6,
+    Star = 3,
+    Tag = "铸雷"
+  },
+  [60012] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 60012,
+    Name = "组件：重型弹鼓供弹",
+    Quality = 2,
+    Sect = 6,
+    Star = 2,
+    Tag = "铸雷"
+  },
+  [60013] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 60013,
+    Name = "组件：爆破反应装甲",
+    Quality = 2,
+    Sect = 6,
+    Star = 2,
+    Tag = "铸雷"
+  },
+  [60014] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 60014,
+    Name = "组件：蜂窝式装甲",
+    Quality = 2,
+    Sect = 6,
+    Star = 2,
+    Tag = "铸雷"
+  },
+  [60015] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 60015,
+    Name = "组件：燃气涡轮",
+    Quality = 2,
+    Sect = 6,
+    Star = 2,
+    Tag = "铸雷"
+  },
+  [60016] = {
+    BuyCostCnt = 300,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 2,
+    Id = 60016,
+    Name = "组件：动能穿甲弹",
+    Quality = 2,
+    Sect = 6,
+    Star = 2,
+    Tag = "铸雷"
+  },
+  [60017] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 60017,
+    Name = "作战：预填装",
+    Quality = 1,
+    Sect = 6,
+    Star = 1,
+    Tag = "铸雷"
+  },
+  [60018] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 60018,
+    Name = "改进：枪口制退",
+    Quality = 1,
+    Sect = 6,
+    Star = 1,
+    Tag = "铸雷"
+  },
+  [60019] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 60019,
+    Name = "改进：起爆装置改良",
+    Quality = 1,
+    Sect = 6,
+    Star = 1,
+    Tag = "铸雷"
+  },
+  [60020] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 60020,
+    Name = "改进：火力自动化",
+    Quality = 1,
+    Sect = 6,
+    Star = 1,
+    Tag = "铸雷"
+  },
+  [60021] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 60021,
+    Name = "改进：装填流程优化",
+    Quality = 1,
+    Sect = 6,
+    Star = 1,
+    Tag = "铸雷"
+  },
+  [60022] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 60022,
+    Name = "改进：协同性训练",
+    Quality = 1,
+    Sect = 6,
+    Star = 1,
+    Tag = "铸雷"
+  },
+  [60023] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 60023,
+    Name = "改进：近地支援",
+    Quality = 1,
+    Sect = 6,
+    Star = 1,
+    Tag = "铸雷"
+  },
+  [60024] = {
+    BuyCostCnt = 200,
+    BuyCostId = 500001,
+    ConditionArg = {
+      0,
+      0,
+      0
+    },
+    CurseCostCnt = 1,
+    Id = 60024,
+    Name = "改进：发射管冷却",
+    Quality = 1,
+    Sect = 6,
+    Star = 1,
+    Tag = "铸雷"
+  }
+}

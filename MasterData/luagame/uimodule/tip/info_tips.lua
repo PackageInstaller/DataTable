@@ -1,0 +1,35 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local INFO_TIPS_ITEM = "INFO_TIPS_ITEM"
+
+function ui:ui_finish_load()
+  self:set_button("BtnBgClose", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnClose", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(INFO_TIPS_ITEM, self.v_uiobjects.TipsTem, self.v_uiobjects.Content)
+end
+
+function ui:ui_on_show(tips_id)
+  self.v_info_tips_cfg = ShareRes.get_info_tips_cfg(tips_id)
+  self:set_data()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:set_data()
+  self.v_uicompents.Title_txt.text = self.v_info_tips_cfg.Title
+  self:give_back_auto_cache(INFO_TIPS_ITEM)
+  for index = 1, #self.v_info_tips_cfg.SubTitle do
+    local tip_item = self:get_auto_cache(INFO_TIPS_ITEM)
+    local item_title = Util.get_text("Title/Title_", tip_item)
+    local item_content = Util.get_text("TipsDesc_", tip_item)
+    item_title.text = self.v_info_tips_cfg.SubTitle[index]
+    item_content.text = self.v_info_tips_cfg.SubContent[index]
+  end
+end
+
+return ui

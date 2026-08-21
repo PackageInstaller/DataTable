@@ -1,0 +1,92 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_rank_list = {}
+  self.v_mine_rank_list = {}
+  self.v_count = 0
+  self.v_rank_desc_list = {
+    [Config.CommonDefine.RANK_NAME.NEW_INFINITE_SCORE] = {
+      score_name = "总积分",
+      difficulty_name = "难度系数",
+      is_show_difficulty_icon = true
+    },
+    [Config.CommonDefine.RANK_NAME.BOSS_FIGHT] = {
+      score_name = "时间",
+      difficulty_name = "BOSS",
+      is_show_difficulty_icon = false
+    }
+  }
+end
+
+function M:request_rank_list(rank_name, flag, start_pos, show_count, total_count, is_init, callback)
+  local request_name = Util.format_str("{1}-{2}", rank_name, flag)
+  local body = {
+    rank_name = request_name,
+    start_pos = start_pos,
+    count = show_count
+  }
+  self.v_count = self.v_count + 1
+  Network:protect_call("c2gs_get_rank_list", body, function(ok, resp)
+    if ok then
+      self:refresh_rank_data(resp, is_init)
+      self.v_count = self.v_count - 1
+      if 0 == self.v_count and callback then
+        callback()
+      end
+    end
+  end)
+end
+
+function M:refresh_rank_data(resp, is_init)
+  local rank_info = resp.rank_list
+  local rank_name = rank_info.rank_name
+  if is_init then
+    self.v_rank_list[rank_name] = {}
+    self.v_rank_list[rank_name] = rank_info
+  else
+    for _, data in ipairs(rank_info.rank_list) do
+      self.v_rank_list[rank_name].rank_list[data.rank] = data
+    end
+  end
+  MsgGame:mq_publish2(Const.MSG_ON_RANK_UPDATE)
+end
+
+function M:get_rank_info(rank_name)
+  return self.v_rank_list[rank_name]
+end
+
+function M:get_full_rank_name(rank_name, flag)
+  return Util.format_str("{1}-{2}", rank_name, flag)
+end
+
+function M:get_new_rank_title(flag, name, show_count, total_count, refresh_type, boss_name)
+  show_count = show_count or 100
+  total_count = total_count or 500
+  return {
+    flag = flag,
+    name = name,
+    boss_name = boss_name,
+    show_count = show_count,
+    total_count = total_count,
+    refresh_type = refresh_type
+  }
+end
+
+function M:get_rank_desc_info(rank_name)
+  return self.v_rank_desc_list[rank_name]
+end
+
+function M:get_score(rank_name, score)
+  if rank_name == Config.CommonDefine.RANK_NAME.NEW_INFINITE_SCORE then
+    return score >= 0 and score or "--"
+  elseif rank_name == Config.CommonDefine.RANK_NAME.BOSS_FIGHT then
+    if score <= 0 then
+      return "--"
+    end
+    return Date.get_time_desc(score, false)
+  end
+end
+
+return M

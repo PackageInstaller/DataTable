@@ -1,0 +1,472 @@
+return {
+  {
+    Abnormal = 2,
+    Auxiliary = 1,
+    Bg_Pos = {
+      0,
+      -392,
+      0
+    },
+    BuddyID = 1001009,
+    Damage = 5,
+    Detail_Bg_Pos = {
+      184,
+      184,
+      0
+    },
+    Detail_Hero_Bg = "HeroTeaching_bg_1001012_",
+    Difficulty = 4,
+    EndTime = "2024/4/25 18:00:00",
+    EpisodeIds = {
+      10030901,
+      10030902,
+      10030903,
+      10030904
+    },
+    Hero_Bg = "HeroTeaching_db_js03",
+    Icon = "Act01_EnterBg",
+    Id = 1,
+    Lock_Notice = "暂未获取该角色",
+    Motor = 3,
+    Sort = 996,
+    StageName = "铂鸢教学",
+    StartTime = "2022/4/21 18:00:00",
+    Survive = 3,
+    Tips = {
+      100901,
+      100902,
+      100903,
+      100904
+    }
+  },
+  {
+    Abnormal = 2,
+    Auxiliary = 1,
+    Bg_Pos = {
+      0,
+      -398.8,
+      0
+    },
+    BuddyID = 1001008,
+    Damage = 4,
+    Detail_Bg_Pos = {
+      288,
+      -5,
+      0
+    },
+    Detail_Hero_Bg = "HeroTeaching_bg_1001012_",
+    Difficulty = 2,
+    EndTime = "2024/4/25 18:00:00",
+    EpisodeIds = {
+      10030801,
+      10030802,
+      10030803,
+      10030804
+    },
+    Hero_Bg = "HeroTeaching_db_js01",
+    Icon = "Act01_EnterBg",
+    Id = 2,
+    Lock_Notice = "暂未获取该角色",
+    Motor = 4,
+    Sort = 997,
+    StageName = "伊蕾什安教学",
+    StartTime = "2022/4/21 18:00:00",
+    Survive = 3,
+    Tips = {
+      100801,
+      100802,
+      100803,
+      100805
+    }
+  },
+  {
+    Abnormal = 4,
+    Auxiliary = 3,
+    Bg_Pos = {
+      0,
+      -398.8,
+      0
+    },
+    BuddyID = 1001001,
+    Damage = 3,
+    Detail_Bg_Pos = {
+      288,
+      -5,
+      0
+    },
+    Detail_Hero_Bg = "HeroTeaching_bg_1001012_",
+    Difficulty = 2,
+    EndTime = "2024/4/25 18:00:00",
+    EpisodeIds = {
+      10030301,
+      10030302,
+      10030303,
+      10030304
+    },
+    Hero_Bg = "HeroTeaching_db_js01",
+    Icon = "Act01_EnterBg",
+    Id = 3,
+    Lock_Notice = "暂未获取该角色",
+    Motor = 2,
+    Sort = 998,
+    StageName = "零教学",
+    StartTime = "2022/4/21 18:00:00",
+    Survive = 2,
+    Tips = {
+      100101,
+      100102,
+      100103,
+      100104
+    }
+  },
+  {
+    Abnormal = 2,
+    Auxiliary = 3,
+    Bg_Pos = {
+      0,
+      -398.8,
+      0
+    },
+    BuddyID = 1001011,
+    Damage = 3,
+    Detail_Bg_Pos = {
+      288,
+      -5,
+      0
+    },
+    Detail_Hero_Bg = "HeroTeaching_bg_1001012_",
+    Difficulty = 3,
+    EndTime = "2024/4/25 18:00:00",
+    EpisodeIds = {
+      10031101,
+      10031102,
+      10031103
+    },
+    Hero_Bg = "HeroTeaching_db_js02",
+    Icon = "Act01_EnterBg",
+    Id = 4,
+    Lock_Notice = "暂未获取该角色",
+    Motor = 3,
+    Sort = 994,
+    StageName = "暝教学",
+    StartTime = "2022/4/21 18:00:00",
+    Survive = 3,
+    Tips = {
+      101101,
+      101102,
+      101103
+    }
+  },
+  {
+    Abnormal = 2,
+    Auxiliary = 4,
+    Bg_Pos = {
+      0,
+      -398.8,
+      0
+    },
+    BuddyID = 1001014,
+    Damage = 3,
+    Detail_Bg_Pos = {
+      288,
+      -5,
+      0
+    },
+    Detail_Hero_Bg = "HeroTeaching_bg_1001012_",
+    Difficulty = 3,
+    EndTime = "2024/4/25 18:00:00",
+    EpisodeIds = {
+      10031401,
+      10031402,
+      10031403
+    },
+    Hero_Bg = "HeroTeaching_db_js01",
+    Icon = "Act01_EnterBg",
+    Id = 5,
+    Lock_Notice = "暂未获取该角色",
+    Motor = 3,
+    Sort = 993,
+    StageName = "萝歌丝教学",
+    StartTime = "2022/4/21 18:00:00",
+    Survive = 2,
+    Tips = {
+      101401,
+      101402,
+      101403
+    }
+  },
+  {
+    Abnormal = 3,
+    Auxiliary = 3,
+    Bg_Pos = {
+      0,
+      -398.8,
+      0
+    },
+    BuddyID = 1001016,
+    Damage = 3,
+    Detail_Bg_Pos = {
+      288,
+      -5,
+      0
+    },
+    Detail_Hero_Bg = "HeroTeaching_bg_1001012_",
+    Difficulty = 3,
+    EndTime = "2024/4/25 18:00:00",
+    EpisodeIds = {
+      10031601,
+      10031602,
+      10031603,
+      10031604,
+      10031605
+    },
+    Hero_Bg = "HeroTeaching_db_js01",
+    Icon = "Act01_EnterBg",
+    Id = 6,
+    Lock_Notice = "暂未获取该角色",
+    Motor = 2,
+    Sort = 992,
+    StageName = "薇奥拉教学",
+    StartTime = "2022/4/21 18:00:00",
+    Survive = 2,
+    Tips = {
+      101601,
+      101602,
+      101603,
+      101604,
+      101605
+    }
+  },
+  {
+    Abnormal = 2,
+    Auxiliary = 1,
+    Bg_Pos = {
+      0,
+      -398.8,
+      0
+    },
+    BuddyID = 1001015,
+    Damage = 3,
+    Detail_Bg_Pos = {
+      288,
+      -5,
+      0
+    },
+    Detail_Hero_Bg = "HeroTeaching_bg_1001012_",
+    Difficulty = 3,
+    EndTime = "2024/4/25 18:00:00",
+    EpisodeIds = {
+      10031501,
+      10031502,
+      10031503
+    },
+    Hero_Bg = "HeroTeaching_db_js01",
+    Icon = "Act02_EnterBg",
+    Id = 7,
+    Lock_Notice = "暂未获取该角色",
+    Motor = 3,
+    Sort = 991,
+    StageName = "沙玛什教学",
+    StartTime = "2022/4/21 18:00:00",
+    Survive = 4,
+    Tips = {
+      101501,
+      101502,
+      101503,
+      101504
+    }
+  },
+  {
+    Abnormal = 2,
+    Auxiliary = 3,
+    Bg_Pos = {
+      0,
+      -398.8,
+      0
+    },
+    BuddyID = 1001017,
+    Damage = 3,
+    Detail_Bg_Pos = {
+      288,
+      -5,
+      0
+    },
+    Detail_Hero_Bg = "HeroTeaching_bg_1001012_",
+    Difficulty = 5,
+    EndTime = "2024/4/25 18:00:00",
+    EpisodeIds = {
+      10031701,
+      10031702,
+      10031703
+    },
+    Hero_Bg = "HeroTeaching_db_js01",
+    Icon = "Act02_EnterBg",
+    Id = 8,
+    Lock_Notice = "暂未获取该角色",
+    Motor = 3,
+    Sort = 990,
+    StageName = "南娜教学",
+    StartTime = "2022/4/21 18:00:00",
+    Survive = 2,
+    Tips = {
+      101701,
+      101702,
+      101703,
+      101704
+    }
+  },
+  {
+    Abnormal = 3,
+    Auxiliary = 4,
+    Bg_Pos = {
+      0,
+      -398.8,
+      0
+    },
+    BuddyID = 1001018,
+    Damage = 3,
+    Detail_Bg_Pos = {
+      288,
+      -5,
+      0
+    },
+    Detail_Hero_Bg = "HeroTeaching_bg_1001012_",
+    Difficulty = 4,
+    EndTime = "2024/4/25 18:00:00",
+    EpisodeIds = {
+      10031801,
+      10031803,
+      10031804
+    },
+    Hero_Bg = "HeroTeaching_db_js01",
+    Icon = "Act01_EnterBg",
+    Id = 9,
+    Lock_Notice = "暂未获取该角色",
+    Motor = 2,
+    Sort = 989,
+    StageName = "恩基教学",
+    StartTime = "2022/4/21 18:00:00",
+    Survive = 2,
+    Tips = {
+      101801,
+      101803,
+      101804
+    }
+  },
+  {
+    Abnormal = 2,
+    Auxiliary = 1,
+    Bg_Pos = {
+      0,
+      -398.8,
+      0
+    },
+    BuddyID = 1001004,
+    Damage = 4,
+    Detail_Bg_Pos = {
+      288,
+      -5,
+      0
+    },
+    Detail_Hero_Bg = "HeroTeaching_bg_1001012_",
+    Difficulty = 2,
+    EndTime = "2024/4/25 18:00:00",
+    EpisodeIds = {
+      10030401,
+      10030402,
+      10030403,
+      10030404
+    },
+    Hero_Bg = "HeroTeaching_db_js02",
+    Icon = "Act02_EnterBg",
+    Id = 10,
+    Lock_Notice = "暂未获取该角色",
+    Motor = 5,
+    Sort = 988,
+    StageName = "薪教学",
+    StartTime = "2022/4/21 18:00:00",
+    Survive = 2,
+    Tips = {
+      100401,
+      100402,
+      100403,
+      100404
+    }
+  },
+  {
+    Abnormal = 3,
+    Auxiliary = 3,
+    Bg_Pos = {
+      0,
+      -398.8,
+      0
+    },
+    BuddyID = 1001010,
+    Damage = 3,
+    Detail_Bg_Pos = {
+      288,
+      -5,
+      0
+    },
+    Detail_Hero_Bg = "HeroTeaching_bg_1001012_",
+    Difficulty = 2,
+    EndTime = "2024/4/25 18:00:00",
+    EpisodeIds = {
+      10031001,
+      10031002,
+      10031003
+    },
+    Hero_Bg = "HeroTeaching_db_js03",
+    Icon = "Act02_EnterBg",
+    Id = 11,
+    Lock_Notice = "暂未获取该角色",
+    Motor = 4,
+    Sort = 987,
+    StageName = "阿斯蒂教学",
+    StartTime = "2022/4/21 18:00:00",
+    Survive = 2,
+    Tips = {
+      101001,
+      101002,
+      101003
+    }
+  },
+  {
+    Abnormal = 3,
+    Auxiliary = 1,
+    Bg_Pos = {
+      0,
+      -398.8,
+      0
+    },
+    BuddyID = 1001012,
+    Damage = 5,
+    Detail_Bg_Pos = {
+      288,
+      -5,
+      0
+    },
+    Detail_Hero_Bg = "HeroTeaching_bg_1001012_",
+    Difficulty = 3,
+    EndTime = "2024/4/25 18:00:00",
+    EpisodeIds = {
+      10031201,
+      10031202,
+      10031203
+    },
+    Hero_Bg = "HeroTeaching_db_js02",
+    Icon = "Act01_EnterBg",
+    Id = 12,
+    Lock_Notice = "暂未获取该角色",
+    Motor = 3,
+    Sort = 986,
+    StageName = "青教学",
+    StartTime = "2022/4/21 18:00:00",
+    Survive = 2,
+    Tips = {
+      101201,
+      101202,
+      101203
+    }
+  }
+}

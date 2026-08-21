@@ -1,0 +1,30 @@
+return {
+  unitList = {
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = false,
+      Camp = 4,
+      UnitID = 3002013,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "1_320000002_0",
+      AutoLevel = 0,
+      Delay = 0.0,
+      MagicId = 0,
+      BornPos = {
+        -3.69103312,
+        -1.32420955E-5,
+        -44.00453
+      }
+    }
+  },
+  Name = "",
+  Id = 320000002,
+  Type = 1
+}

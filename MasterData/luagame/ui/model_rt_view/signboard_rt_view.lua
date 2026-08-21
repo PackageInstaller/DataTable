@@ -1,0 +1,208 @@
+local Vec3 = require("base.vec3")
+local Quat = require("base.quat")
+local change_pos_speed = 8
+local change_angle_speed = 16
+local Math = require("base.mathx")
+local Layer = require("utils.layer")
+local CSChangeLayer = CSHelper.ChangeLayerRecursively
+local Base = require("ui.model_rt_view.model_rt_view")
+local M = Util.create_child_mt(Base)
+
+function M:_init(...)
+  Base._init(self, ...)
+  self.v_not_set_light = true
+  self.v_effect_is_play = false
+  self.v_tmp_quat = Quat.Euler(0, 0, 0)
+  self.v_camera_is_fast = false
+  self.v_model_is_fast = true
+end
+
+function M:update()
+  if not SignBoardGirlMgr:is_can_update() then
+    return
+  end
+  Base.update(self)
+  self:camera_update()
+  self:model_update()
+  self:_play_anim()
+  self:_play_effect()
+end
+
+function M:load_signboard_npc_param(pos_x, pos_y, pos_z, rot_x, rot_y, rot_z)
+  self.v_npc_pos = Vec3.New(pos_x, pos_y, pos_z)
+  self.v_npc_rot = Vec3.New(rot_x, rot_y, rot_z)
+end
+
+function M:change_camera_pos(x, y, z)
+  self.v_target_pos = Vec3.New(x, y, z)
+end
+
+function M:change_camera_angle(y)
+  self.v_target_angle = y
+end
+
+function M:set_camera_param(x, y, z, angle)
+  local trans = self.v_camera.transform
+  trans:SetLocalPositionA(x, y, z)
+  trans:SetEulerY(angle)
+end
+
+function M:camera_update()
+  if not SignBoardGirlMgr:is_camera_can_update() then
+    return
+  end
+  local trans = self.v_camera.transform
+  local target = self.v_target_pos
+  if not target then
+    return
+  end
+  if self.v_camera_is_fast then
+    trans:SetLocalPositionA(target.x, target.y, target.z)
+    trans:SetEulerY(self.v_target_angle)
+    return
+  end
+  local dt_time = self:get_dt()
+  local posx, posy, posz = trans:GetLocalPositionA3()
+  local _, angle_y = trans:GetLocalEulerAnglesA3()
+  local pos_x = Math.lerp_number(posx, target.x, dt_time * change_pos_speed)
+  local pos_y = Math.lerp_number(posy, target.y, dt_time * change_pos_speed)
+  local pos_z = Math.lerp_number(posz, target.z, dt_time * change_pos_speed)
+  local target_angle = Math.lerp_angle(angle_y, self.v_target_angle, dt_time * change_angle_speed)
+  trans:SetLocalPositionA(pos_x, pos_y, pos_z)
+  trans:SetEulerY(target_angle)
+end
+
+function M:model_update()
+  if not SignBoardGirlMgr:is_camera_can_update() then
+    return
+  end
+  local npc = self.v_cur_npc
+  if not npc or npc:IsNull() then
+    return
+  end
+  if not self.v_npc_pos or not self.v_npc_rot then
+    return
+  end
+  local pos = self.v_npc_pos
+  local rot = self.v_npc_rot
+  local tran = npc.transform
+  if self.v_model_is_fast then
+    self.v_tmp_quat:SetEuler(rot.x, rot.y, rot.z)
+    tran:SetLocalPositionA(pos.x, pos.y, pos.z)
+    tran.rotation = self.v_tmp_quat
+    return
+  end
+  local dt_time = self:get_dt()
+  local angle_x, angle_y, angle_z = tran:GetLocalEulerAnglesA3()
+  local target_angle_x = Math.lerp_angle(angle_x, rot.x, dt_time * change_angle_speed)
+  local target_angle_y = Math.lerp_angle(angle_y, rot.y, dt_time * change_angle_speed)
+  local target_angle_z = Math.lerp_angle(angle_z, rot.z, dt_time * change_angle_speed)
+  tran:SetEuler(target_angle_x, target_angle_y, target_angle_z)
+  tran:SetLocalPositionA(pos.x, pos.y, pos.z)
+end
+
+function M:get_dt()
+  return GlobalTimeMgr:get_dt_time()
+end
+
+function M:play_anim(anim_name)
+  self.v_npc_anim = anim_name
+end
+
+function M:_play_anim()
+  local npc_go = self.v_cur_npc
+  if not npc_go or npc_go:IsNull() then
+    return
+  end
+  local npc_luaobj = self.v_cur_npc_luaobj
+  if not npc_luaobj or not npc_luaobj:is_real_finish_init() then
+    return
+  end
+  if not self.v_npc_anim then
+    return
+  end
+  npc_luaobj.act_ctrl:try_action(self.v_npc_anim, 0)
+  self.v_npc_anim = nil
+end
+
+function M:set_view_param(buddy_id, type, camera_is_fast, model_is_fast, fashion_id)
+  local buddy_view_cfg = ShareRes.get_show_buddy_pos_info(buddy_id, fashion_id)
+  local default_view_cfg = ShareRes.get_show_buddy_pos_info(0)
+  local model_rot = default_view_cfg[type].ModelRotation
+  local camera_pos = default_view_cfg[type].CameraPosition
+  local camera_rot = default_view_cfg[type].CameraRotation
+  if buddy_view_cfg and buddy_view_cfg[type] then
+    if buddy_view_cfg[type].ModelRotation then
+      model_rot = buddy_view_cfg[type].ModelRotation
+    end
+    if buddy_view_cfg[type].CameraPosition then
+      camera_pos = buddy_view_cfg[type].CameraPosition
+    end
+    if buddy_view_cfg[type].CameraRotation then
+      camera_rot = buddy_view_cfg[type].CameraRotation
+    end
+  end
+  self.v_camera_is_fast = camera_is_fast
+  self.v_model_is_fast = model_is_fast
+  self:load_signboard_npc_param(0, 0, 0, model_rot[1], model_rot[2], model_rot[3])
+  self:change_camera_pos(camera_pos[1], camera_pos[2], camera_pos[3])
+  self:change_camera_angle(camera_rot[1], camera_rot[2], camera_rot[3])
+end
+
+function M:play_effect(effect_name, duration)
+  if Util.is_empty(effect_name) then
+    return
+  end
+  self.v_npc_effect_name_list = Util.split_str(effect_name, "|")
+  self.duration = duration
+end
+
+function M:_play_effect()
+  if self.v_effect_is_play then
+    return
+  end
+  local npc_go = self.v_cur_npc
+  if not npc_go or npc_go:IsNull() then
+    return
+  end
+  local npc_luaobj = self.v_cur_npc_luaobj
+  if not npc_luaobj or not npc_luaobj:is_real_finish_init() then
+    return
+  end
+  if Util.is_empty(self.v_npc_effect_name_list) then
+    return
+  end
+  self.v_effect_is_play = true
+  local attach_point = Util.get_child_gameobj(npc_go.transform.name .. "/" .. self.v_npc_effect_name_list[2], self.v_content_root)
+  local effect_param = npc_luaobj.act_effect_ctrl.create_effect_param()
+  effect_param.prefab_name = self.v_npc_effect_name_list[1]
+  effect_param.parent = attach_point.transform
+  
+  function effect_param.load_callback()
+    CSChangeLayer(attach_point.transform, Layer.Layer.UIModelView)
+    self.effect_trans = attach_point.transform:GetChild(attach_point.transform.childCount - 1)
+  end
+  
+  self.effect_id = npc_luaobj.act_effect_ctrl:play_effect(effect_param)
+  self.v_remove_effect_timer = Timer:add_timer("remove_signboard_girl_action_effect", self.duration, function()
+    CSChangeLayer(self.effect_trans, Layer.Layer.Default)
+    npc_luaobj.act_effect_ctrl:stop_effect(self.effect_id)
+    self.v_effect_is_play = false
+    self.effect_trans = nil
+  end)
+  self.v_npc_effect_name_list = nil
+end
+
+function M:stop_effect()
+  if not (self.v_cur_npc_luaobj and self.v_cur_npc_luaobj:is_real_finish_init()) or not self.effect_trans then
+    return
+  end
+  CSChangeLayer(self.effect_trans, Layer.Layer.Default)
+  self.v_cur_npc_luaobj.act_effect_ctrl:stop_effect(self.effect_id)
+  self.v_effect_is_play = false
+  self.v_npc_effect_name_list = nil
+  self.effect_trans = nil
+  Timer:remove_timer(self.v_remove_effect_timer)
+end
+
+return M

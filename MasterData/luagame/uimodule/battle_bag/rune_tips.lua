@@ -1,0 +1,81 @@
+local Base = require("ui.uibase")
+local M = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local color1 = tonumber("c3beb6", 16)
+local color2 = tonumber("f0ebe4", 16)
+local color3 = tonumber("979797", 16)
+local larger_content_color = Util.get_unity_color_by_hex(color1)
+local larger_lv_color = Util.get_unity_color_by_hex(color2)
+local not_larger_color = Util.get_unity_color_by_hex(color3)
+local MODEL = {
+  v_rune_icon = {
+    "Icon",
+    BIND_TYPE.IMAGE
+  },
+  v_rune_name = {
+    "Name",
+    BIND_TYPE.TEXT
+  },
+  v_rune_lv = {
+    "LevelVal",
+    BIND_TYPE.TEXT
+  }
+}
+local ICON_PATH = "Icon/BattleRune/%s"
+
+function M:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("Return", function()
+    self:ui_hide()
+  end)
+  self.v_template = "level" .. self:ui_get_name()
+  self:register_exist_auto_template(self.v_template, self.v_uiobjects.LevelItem, self.v_uiobjects.LevelList)
+end
+
+function M:ui_on_show(rune_id, ...)
+  self.v_rune_id = rune_id
+  self:_refresh_rune_info()
+  self:_refresh_rune_upgrade_info()
+end
+
+function M:ui_on_hide()
+end
+
+function M:_regist_client_event()
+end
+
+function M:_refresh_rune_info()
+  local rune_cfg = ShareRes.create("battle.battle_rune", self.v_rune_id)
+  ResMgr:load_set_icon(self.v_rune_icon, string.format(ICON_PATH, rune_cfg.Icon))
+  self.v_rune_name.text = rune_cfg.Name
+  self.v_rune_lv.text = self.v_rune_level
+end
+
+function M:_refresh_rune_upgrade_info()
+  local lvCfg = ShareRes.create("battle.battle_rune_level_by_parent", self.v_rune_id)
+  self:give_back_auto_cache(self.v_template, false)
+  for i, v in ipairs(lvCfg) do
+    local obj = self:get_auto_cache(self.v_template)
+    self:_set_data(obj, v)
+  end
+end
+
+function M:_set_data(obj, data)
+  local level = self:get_text("Level", obj)
+  local larger = self.v_rune_level >= data.Level
+  local lv_color = not_larger_color
+  local content_color = not_larger_color
+  if larger then
+    lv_color = larger_lv_color
+    content_color = larger_content_color
+  end
+  local lv = string.format("LV.%d", data.Level)
+  level.text = lv
+  level.color = lv_color
+  local desc = self:get_text("Desc", obj)
+  local desc_str = data.AttrName .. data.AttrValue
+  desc.text = desc_str
+  desc.color = content_color
+end
+
+return M

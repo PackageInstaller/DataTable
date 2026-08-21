@@ -1,0 +1,108 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local Math = require("base.mathx")
+local CACHE_CAT_STAGE_ITEM_TEMP_KEY = "CACHE_CAT_STAGE_ITEM_TEMP_KEY"
+local CatchCatStageItem = require("uimodule.activity.catch_cat.catch_cat_stage_item")
+
+function ui:on_click_BtnRet1()
+  self:ui_hide()
+end
+
+function ui:on_click_BtnTask()
+  UIMgr:get_ui("chapter_task"):ui_show(nil, self.v_task_group, "活动奖励", true, true)
+end
+
+function ui:ui_finish_load()
+  self:set_button("BtnRet1", function()
+    self:on_click_BtnRet1()
+  end)
+  self:set_button("BtnTask", function()
+    self:on_click_BtnTask()
+  end)
+  self.v_content_vertical_layout_group = Util.get_component(nil, self.v_uiobjects.StageContent, typeof(UnityEngine.UI.VerticalLayoutGroup))
+  self:register_exist_auto_template(CACHE_CAT_STAGE_ITEM_TEMP_KEY, self.v_uiobjects.StageTem, self.v_uiobjects.StageContent)
+end
+
+function ui:ui_on_show(task_activity_id)
+  self.v_activity_id = task_activity_id
+  local cfg = ShareRes.create("activity.kitten_escape_task")[task_activity_id]
+  if not cfg then
+    Log.Error("任务活动表无对应id配置：", task_activity_id)
+    return
+  end
+  self.v_task_group = cfg.TaskGroup
+  self:show_stage()
+  self:check_close(true)
+  NoviceMgr:mark_act_daily_open(self.v_activity_id)
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.RedPoint, RedEnum.CATCA_CAT_ACT_AWARD)
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
+end
+
+function ui:check_close(force_close)
+  NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name, true == force_close)
+end
+
+function ui:ui_on_hide()
+  CatchCatMgr:force_read_all()
+  self:clear_wrap_items()
+  UIMgr:try_hide_ui("chapter_task")
+  UIMgr:try_hide_ui("ui_introduce")
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.v_activity_id
+end
+
+function ui:show_stage(force_to_top)
+  local stage_list = CatchCatMgr:get_stage_list(self.v_activity_id)
+  self:give_back_auto_cache(CACHE_CAT_STAGE_ITEM_TEMP_KEY)
+  self:clear_wrap_items()
+  self.v_stage_item_list = {}
+  local first_not_pass
+  for idx, stage_data in ipairs(stage_list) do
+    local obj = self:get_auto_cache(CACHE_CAT_STAGE_ITEM_TEMP_KEY)
+    local item = CatchCatStageItem:ui_wrap_ex(self, obj, true)
+    item:set_data(stage_data, self.v_activity_id)
+    table.insert(self.v_stage_item_list, item)
+    if not CatchCatMgr:is_stage_passed(stage_data.id) and not first_not_pass then
+      first_not_pass = idx
+    end
+  end
+  local force_idx = 1
+  if first_not_pass then
+    local cfg = stage_list[first_not_pass].cfg
+    local open_time = cfg.OpenTime and Date.get_time_stamp_by_scheme_id(cfg.OpenTime) or 0
+    local pre_stage_id = cfg.FrontGameId
+    local is_open = open_time <= Date:server_time()
+    local is_pre_stage_done = not pre_stage_id or CatchCatMgr:is_stage_passed(pre_stage_id)
+    local is_unlock = is_open and is_pre_stage_done
+    force_idx = is_unlock and first_not_pass or first_not_pass - 1
+  end
+  local move_row, offset = 0, 0
+  if not force_to_top then
+    move_row = Math.Clamp(force_idx - 2, 0, #self.v_stage_item_list - 3)
+    offset = self.v_content_vertical_layout_group.spacing + self.v_uicompents.StageTem_rect.rect.height
+  end
+  self.v_uicompents.StageContent_rect:SetAnchoredPositionA(0, move_row * offset)
+end
+
+function ui:clear_wrap_items()
+  if self.v_stage_item_list then
+    for idx = #self.v_stage_item_list, 1, -1 do
+      local item = self.v_stage_item_list[idx]
+      item:ui_hide()
+      item:ui_destroy()
+      self.v_stage_item_list[idx] = nil
+    end
+    self.v_stage_item_list = nil
+  end
+end
+
+return ui

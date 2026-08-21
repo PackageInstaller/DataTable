@@ -1,0 +1,474 @@
+return {
+  [101] = {
+    GroupId = 101,
+    GroupName = "限时挑战"
+  },
+  [102] = {
+    GroupId = 102,
+    GroupName = "限时挑战"
+  },
+  [103] = {
+    GroupId = 103,
+    GroupName = "限时挑战"
+  },
+  [104] = {
+    GroupId = 104,
+    GroupName = "限时挑战"
+  },
+  [105] = {
+    GroupId = 105,
+    GroupName = "限时挑战"
+  },
+  [304] = {
+    GroupId = 304,
+    GroupName = "无限厕纸（支线）"
+  },
+  [306] = {
+    GroupId = 306,
+    GroupName = " 终极目标（支线）"
+  },
+  [307] = {
+    GroupId = 307,
+    GroupName = "歌颂吾主Part1（支线）"
+  },
+  [308] = {
+    GroupId = 308,
+    GroupName = "歌颂吾主Part2（支线）"
+  },
+  [309] = {
+    GroupId = 309,
+    GroupName = "歌颂吾主Part3（支线）"
+  },
+  [310] = {
+    GroupId = 310,
+    GroupName = "安息宝藏（支线）"
+  },
+  [312] = {
+    GroupId = 312,
+    GroupName = "提丰与桑丘（支线）"
+  },
+  [313] = {
+    GroupId = 313,
+    GroupName = "上下求索（支线）"
+  },
+  [314] = {GroupId = 314, GroupName = "探路者"},
+  [315] = {
+    GroupId = 315,
+    GroupName = "苦痛之路"
+  },
+  [316] = {GroupId = 316, GroupName = "见证者"},
+  [1001] = {GroupId = 1001, GroupName = "异变"},
+  [1002] = {GroupId = 1002, GroupName = "显现"},
+  [1003] = {GroupId = 1003, GroupName = "幻昼"},
+  [1011] = {
+    GroupId = 1011,
+    GroupName = "巴别图书馆-1"
+  },
+  [1012] = {
+    GroupId = 1012,
+    GroupName = "巴别图书馆-2"
+  },
+  [1013] = {
+    GroupId = 1013,
+    GroupName = "巴别图书馆-3"
+  },
+  [1014] = {
+    GroupId = 1014,
+    GroupName = "巴别图书馆-4"
+  },
+  [1015] = {
+    GroupId = 1015,
+    GroupName = "现代图书馆-5（主线1-6迭代）"
+  },
+  [1021] = {
+    GroupId = 1021,
+    GroupName = "古代图书馆-1"
+  },
+  [1022] = {
+    GroupId = 1022,
+    GroupName = "古代图书馆-2"
+  },
+  [1023] = {
+    GroupId = 1023,
+    GroupName = "古代图书馆-3"
+  },
+  [1031] = {
+    GroupId = 1031,
+    GroupName = "未来图书馆-1"
+  },
+  [1032] = {
+    GroupId = 1032,
+    GroupName = "未来图书馆-2"
+  },
+  [1033] = {
+    GroupId = 1033,
+    GroupName = "阻止阿顿"
+  },
+  [1041] = {
+    GroupId = 1041,
+    GroupName = "永夏无实-上（1）"
+  },
+  [1042] = {
+    GroupId = 1042,
+    GroupName = "永夏无实-上（2）"
+  },
+  [1043] = {
+    GroupId = 1043,
+    GroupName = "永夏无实-上（3）"
+  },
+  [1044] = {
+    GroupId = 1044,
+    GroupName = "永夏无实-上（4）"
+  },
+  [1045] = {
+    GroupId = 1045,
+    GroupName = "永夏无实-上（5）"
+  },
+  [1046] = {
+    GroupId = 1046,
+    GroupName = "永夏无实-上（6）"
+  },
+  [1047] = {
+    GroupId = 1047,
+    GroupName = "永夏无实-上（7）"
+  },
+  [1048] = {
+    GroupId = 1048,
+    GroupName = "永夏无实-上（8）"
+  },
+  [1049] = {
+    GroupId = 1049,
+    GroupName = "永夏无实-上（9）"
+  },
+  [1051] = {
+    GroupId = 1051,
+    GroupName = "永夏无实-下（1）"
+  },
+  [1052] = {
+    GroupId = 1052,
+    GroupName = "永夏无实-下（2）"
+  },
+  [1053] = {
+    GroupId = 1053,
+    GroupName = "永夏无实-下（3）"
+  },
+  [1054] = {
+    GroupId = 1054,
+    GroupName = "永夏无实-下（4）"
+  },
+  [1055] = {
+    GroupId = 1055,
+    GroupName = "永夏无实-下（5）"
+  },
+  [1056] = {
+    GroupId = 1056,
+    GroupName = "永夏无实-下（6）"
+  },
+  [1057] = {
+    GroupId = 1057,
+    GroupName = "永夏无实-下（7）"
+  },
+  [1058] = {
+    GroupId = 1058,
+    GroupName = "永夏无实-下（8）"
+  },
+  [1059] = {
+    GroupId = 1059,
+    GroupName = "永夏无实-下（9）"
+  },
+  [1061] = {
+    GroupId = 1061,
+    GroupName = "千秋作古1"
+  },
+  [1062] = {
+    GroupId = 1062,
+    GroupName = "千秋作古2"
+  },
+  [1063] = {
+    GroupId = 1063,
+    GroupName = "千秋作古3"
+  },
+  [1064] = {
+    GroupId = 1064,
+    GroupName = "千秋作古4"
+  },
+  [1065] = {
+    GroupId = 1065,
+    GroupName = "千秋作古5"
+  },
+  [1066] = {
+    GroupId = 1066,
+    GroupName = "千秋作古6"
+  },
+  [1067] = {
+    GroupId = 1067,
+    GroupName = "千秋作古7"
+  },
+  [1068] = {
+    GroupId = 1068,
+    GroupName = "千秋作古8"
+  },
+  [1069] = {
+    GroupId = 1069,
+    GroupName = "千秋作古9"
+  },
+  [2001] = {GroupId = 2001, GroupName = "无形者"},
+  [2011] = {
+    GroupId = 2011,
+    GroupName = "离开未知扇区"
+  },
+  [2012] = {
+    GroupId = 2012,
+    GroupName = "调查书架"
+  },
+  [2013] = {
+    GroupId = 2013,
+    GroupName = "收集塔斯尼的相关信息"
+  },
+  [2014] = {
+    GroupId = 2014,
+    GroupName = "在馆长藏和它的附近寻找恩基留下的文献"
+  },
+  [2015] = {
+    GroupId = 2015,
+    GroupName = "探索迷宫1"
+  },
+  [2016] = {
+    GroupId = 2016,
+    GroupName = "探索迷宫2"
+  },
+  [2017] = {
+    GroupId = 2017,
+    GroupName = "探索迷宫3"
+  },
+  [2018] = {
+    GroupId = 2018,
+    GroupName = "探索迷宫4"
+  },
+  [2022] = {
+    GroupId = 2022,
+    GroupName = "离开未知扇区"
+  },
+  [3001] = {
+    GroupId = 3001,
+    GroupName = "沟通的艺术part1（支线）"
+  },
+  [3002] = {
+    GroupId = 3002,
+    GroupName = "沟通的艺术part2（支线）"
+  },
+  [3003] = {
+    GroupId = 3003,
+    GroupName = "真理催眠机（支线）"
+  },
+  [3051] = {
+    GroupId = 3051,
+    GroupName = "双子与流星"
+  },
+  [3052] = {
+    GroupId = 3052,
+    GroupName = "双子与流星"
+  },
+  [3053] = {
+    GroupId = 3053,
+    GroupName = "双子与流星"
+  },
+  [9001] = {GroupId = 9001, GroupName = "异变"},
+  [9002] = {GroupId = 9002, GroupName = "异变"},
+  [9003] = {GroupId = 9003, GroupName = "异变"},
+  [9004] = {GroupId = 9004, GroupName = "异变"},
+  [9005] = {GroupId = 9005, GroupName = "异变"},
+  [9006] = {GroupId = 9006, GroupName = "异变"},
+  [9021] = {GroupId = 9021, GroupName = "显现"},
+  [9022] = {GroupId = 9022, GroupName = "显现"},
+  [9023] = {GroupId = 9023, GroupName = "显现"},
+  [9024] = {GroupId = 9024, GroupName = "显现"},
+  [9025] = {GroupId = 9025, GroupName = "显现"},
+  [9031] = {GroupId = 9031, GroupName = "幻昼"},
+  [9032] = {GroupId = 9032, GroupName = "幻昼"},
+  [9033] = {GroupId = 9033, GroupName = "幻昼"},
+  [9034] = {GroupId = 9034, GroupName = "幻昼"},
+  [9035] = {GroupId = 9035, GroupName = "幻昼"},
+  [9036] = {GroupId = 9036, GroupName = "幻昼"},
+  [9988] = {
+    GroupId = 9988,
+    GroupName = "任务组测试"
+  },
+  [10000] = {
+    GroupId = 10000,
+    GroupName = "多目标条件"
+  },
+  [10111] = {
+    GroupId = 10111,
+    GroupName = "主线挑战1"
+  },
+  [10131] = {
+    GroupId = 10131,
+    GroupName = "寻找起源图书馆的入口"
+  },
+  [10132] = {
+    GroupId = 10132,
+    GroupName = "太阳的臣民"
+  },
+  [10151] = {GroupId = 10151, GroupName = "差分机"},
+  [10211] = {
+    GroupId = 10211,
+    GroupName = "古代图书馆-1-2"
+  },
+  [10213] = {
+    GroupId = 10213,
+    GroupName = "卡律布狄斯的真相"
+  },
+  [10410] = {
+    GroupId = 10410,
+    GroupName = "永夏无实-上（10）"
+  },
+  [10511] = {
+    GroupId = 10511,
+    GroupName = "永夏无实-下（1）"
+  },
+  [10610] = {
+    GroupId = 10610,
+    GroupName = "千秋作古10"
+  },
+  [21101] = {
+    GroupId = 21101,
+    GroupName = "1  无尽一层"
+  },
+  [21102] = {
+    GroupId = 21102,
+    GroupName = "2  无尽二层"
+  },
+  [21103] = {
+    GroupId = 21103,
+    GroupName = "3  无尽三层"
+  },
+  [21111] = {
+    GroupId = 21111,
+    GroupName = "无尽支线1"
+  },
+  [21112] = {
+    GroupId = 21112,
+    GroupName = "无尽支线"
+  },
+  [32001] = {
+    GroupId = 32001,
+    GroupName = "暝个人番外-1"
+  },
+  [32002] = {
+    GroupId = 32002,
+    GroupName = "暝个人番外-2"
+  },
+  [32003] = {
+    GroupId = 32003,
+    GroupName = "暝个人番外-3"
+  },
+  [32004] = {
+    GroupId = 32004,
+    GroupName = "暝个人番外-4"
+  },
+  [32005] = {
+    GroupId = 32005,
+    GroupName = "暝个人番外-5"
+  },
+  [32101] = {
+    GroupId = 32101,
+    GroupName = "南娜番外1"
+  },
+  [32102] = {
+    GroupId = 32102,
+    GroupName = "南娜番外2"
+  },
+  [32103] = {
+    GroupId = 32103,
+    GroupName = "南娜番外3"
+  },
+  [32104] = {
+    GroupId = 32104,
+    GroupName = "南娜番外4"
+  },
+  [32901] = {
+    GroupId = 32901,
+    GroupName = "郁离番外1"
+  },
+  [32902] = {
+    GroupId = 32902,
+    GroupName = "郁离番外2"
+  },
+  [32903] = {
+    GroupId = 32903,
+    GroupName = "郁离番外3"
+  },
+  [32904] = {
+    GroupId = 32904,
+    GroupName = "郁离番外4"
+  },
+  [32905] = {
+    GroupId = 32905,
+    GroupName = "郁离番外5"
+  },
+  [66601] = {
+    GroupId = 66601,
+    GroupName = "肉鸽子玩法 弹幕"
+  },
+  [66603] = {
+    GroupId = 66603,
+    GroupName = "肉鸽子玩法 平台闯关"
+  },
+  [66604] = {
+    GroupId = 66604,
+    GroupName = "肉鸽子玩法 平台生存"
+  },
+  [66609] = {
+    GroupId = 66609,
+    GroupName = "肉鸽子玩法 躲激光"
+  },
+  [66611] = {
+    GroupId = 66611,
+    GroupName = "肉鸽子玩法 打地鼠"
+  },
+  [66612] = {
+    GroupId = 66612,
+    GroupName = "肉鸽子玩法 打金币怪"
+  },
+  [66613] = {
+    GroupId = 66613,
+    GroupName = "肉鸽子玩法 击球打怪"
+  },
+  [104101] = {
+    GroupId = 104101,
+    GroupName = "乾1塔任务"
+  },
+  [1021011] = {
+    GroupId = 1021011,
+    GroupName = "浮波线一"
+  },
+  [1021012] = {
+    GroupId = 1021012,
+    GroupName = "浮波线二"
+  },
+  [1021013] = {
+    GroupId = 1021013,
+    GroupName = "浮波线三"
+  },
+  [1021021] = {
+    GroupId = 1021021,
+    GroupName = "康帕斯线一"
+  },
+  [1021022] = {
+    GroupId = 1021022,
+    GroupName = "康帕斯线二"
+  },
+  [1021023] = {
+    GroupId = 1021023,
+    GroupName = "康帕斯线三"
+  },
+  [1021024] = {
+    GroupId = 1021024,
+    GroupName = "康帕斯线四"
+  },
+  [1021025] = {
+    GroupId = 1021025,
+    GroupName = "康帕斯线五"
+  }
+}

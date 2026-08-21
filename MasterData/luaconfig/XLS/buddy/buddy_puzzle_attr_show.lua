@@ -1,0 +1,86 @@
+return {
+  {
+    AttrId = 4,
+    AttrType = 1,
+    Desc = "生命",
+    Id = 1,
+    Order = 1
+  },
+  {
+    AttrId = 20,
+    AttrType = 1,
+    Desc = "攻击",
+    Id = 2,
+    Order = 2
+  },
+  {
+    AttrId = 22,
+    AttrType = 1,
+    Desc = "防御",
+    Id = 3,
+    Order = 3
+  },
+  {
+    AttrId = 21,
+    AttrType = 1,
+    Desc = "穿透",
+    Id = 4,
+    Order = 4
+  },
+  {
+    AttrId = 23,
+    AttrType = 0,
+    Desc = "元素异常专精",
+    Id = 5,
+    Order = 5
+  },
+  {
+    AttrId = 30,
+    AttrType = 1,
+    Desc = "水伤害增幅",
+    Id = 6,
+    Order = 9
+  },
+  {
+    AttrId = 31,
+    AttrType = 1,
+    Desc = "火伤害增幅",
+    Id = 7,
+    Order = 10
+  },
+  {
+    AttrId = 32,
+    AttrType = 1,
+    Desc = "雷伤害增幅",
+    Id = 8,
+    Order = 11
+  },
+  {
+    AttrId = 33,
+    AttrType = 1,
+    Desc = "光伤害增幅",
+    Id = 9,
+    Order = 12
+  },
+  {
+    AttrId = 34,
+    AttrType = 1,
+    Desc = "暗伤害增幅",
+    Id = 10,
+    Order = 13
+  },
+  {
+    AttrId = 76,
+    AttrType = 1,
+    Desc = "暴击率",
+    Id = 11,
+    Order = 6
+  },
+  {
+    AttrId = 78,
+    AttrType = 1,
+    Desc = "暴击伤害",
+    Id = 12,
+    Order = 7
+  }
+}

@@ -1,0 +1,100 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local ATTR_TEMP_KEY = "PUZZLE_PUZZLE_REFINE_SELECTED_ATTR_TEMP_KEY"
+
+function ui:send_change_attr_selected(reset)
+  if reset then
+    self.v_attr_cfg_id = nil
+  else
+    self.v_attr_cfg_id = self:get_selected_attr_cfg_id()
+  end
+  local msg = MsgGame:mq_publish2(Const.MSG_CHANGE_PUZZLE_REFINE_SELECTED_ATTR)
+  msg.mm_obj = {
+    idx = self.v_idx,
+    uuid = self.v_uuid,
+    selected_id = self.v_attr_cfg_id
+  }
+  self:ui_hide()
+end
+
+function ui:ui_finish_load()
+  self:set_button("BtnBack", function()
+    self:send_change_attr_selected()
+  end)
+  self:set_button("Btn_Cancel", function()
+    self:send_change_attr_selected(true)
+  end)
+  self:set_button("Btn_Close", function()
+    self:send_change_attr_selected()
+  end)
+  self:set_button("Btn_Sure", function()
+    self:send_change_attr_selected()
+  end)
+  self:register_exist_auto_template(ATTR_TEMP_KEY, self.v_uiobjects.TagTem, self.v_uiobjects.TagList)
+end
+
+function ui:ui_on_show(idx, uuid, selected_attr_map, cur_attr_cfg_id)
+  self.v_idx = idx
+  self.v_uuid = uuid
+  self.v_selected_attr_map = selected_attr_map
+  self.v_attr_cfg_id = cur_attr_cfg_id
+  if cur_attr_cfg_id then
+    self.v_selected_attr_map[cur_attr_cfg_id] = nil
+  end
+  self.v_puzzle_data = PuzzleMgr:get_puzzle_data(uuid)
+  if not self.v_puzzle_data then
+    self:ui_hide()
+    return
+  end
+  self:init_attr_list()
+end
+
+function ui:init_attr_list()
+  local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(self.v_puzzle_data.id)
+  local attr_group_id = puzzle_cfg.AttrGroupId
+  local attr_cfg_id_map = ShareRes.create("buddy.buddy_puzzle_group_attrid", attr_group_id)
+  local attr_id2cfg_map = {}
+  for _, attr_cfg in pairs(attr_cfg_id_map) do
+    attr_id2cfg_map[attr_cfg.AttrId] = attr_cfg
+  end
+  self.v_attr_item_list = {}
+  self:give_back_auto_cache(ATTR_TEMP_KEY)
+  for _, attr_show_cfg in ipairs(ShareRes.get_buddy_puzzle_attr_show_list()) do
+    local attr_id = attr_show_cfg.AttrId
+    local attr_cfg = attr_id2cfg_map[attr_id]
+    if not attr_cfg then
+    else
+      local attr_cfg_id = attr_cfg.Id
+      local item = self:get_auto_cache(ATTR_TEMP_KEY)
+      local txt1 = Util.get_text("Name", item)
+      local txt2 = Util.get_text("Checkmark/Label", item)
+      local tog = Util.get_toggle(nil, item)
+      tog.isOn = attr_cfg_id == self.v_attr_cfg_id
+      local name = ShareRes.get_attr_name(attr_id)
+      txt1.text = name
+      txt2.text = name
+      self.v_attr_item_list[#self.v_attr_item_list + 1] = {attr_cfg_id = attr_cfg_id, tog = tog}
+      local icon = Util.get_image("Icon", item)
+      local icon_name = ShareRes.get_attr_icon(attr_id)
+      if icon_name then
+        Util.load_attr_icon(icon, icon_name)
+      end
+      local is_used = self.v_selected_attr_map[attr_cfg_id] == true
+      tog.interactable = not is_used
+      Util.get_child_gameobj("Mask", item):SetActiveEx(is_used)
+    end
+  end
+end
+
+function ui:get_selected_attr_cfg_id()
+  if not self.v_attr_item_list then
+    return
+  end
+  for _, item in ipairs(self.v_attr_item_list) do
+    if item.tog.isOn == true then
+      return item.attr_cfg_id
+    end
+  end
+end
+
+return ui

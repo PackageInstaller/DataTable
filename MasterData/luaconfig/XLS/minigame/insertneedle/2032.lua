@@ -1,0 +1,28 @@
+local empty = {}
+return {
+  note = "宝箱三章",
+  awardId = 0,
+  spacing = 2.0,
+  uiType = 3,
+  uiTypeIcon = empty,
+  moveType = 1,
+  isLeftStart = true,
+  isDubbleBtn = false,
+  useOrder = false,
+  useIcon = false,
+  speed = 6.0,
+  nodeNum = 24,
+  nodesA = {
+    {1, 3},
+    {5, 3},
+    {13, 3},
+    {17, 2},
+    {20, 3}
+  },
+  nodesB = empty,
+  orderA = empty,
+  orderB = empty,
+  iconA = empty,
+  iconB = empty,
+  id = 2032
+}

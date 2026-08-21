@@ -1,0 +1,49 @@
+local Vector3 = require("base.vec3")
+local Base = require("manager.fight.movement.missile_movement")
+local LayerMask = require("utils.layer").LayerMask
+local M = Util.create_child_mt(Base)
+
+function M:_init(missile, lineparams)
+  Base._init(self, missile)
+  local missile_cfg = self.missile_cfg
+  self.v_line_param = lineparams or missile_cfg.lineparams
+  self:set_params(self.v_line_param)
+end
+
+function M:set_params(params)
+  self.v_start_transfrom = self.v_char:get_setting_point(params[1]) or self.v_char.transform
+  local pos_offset = params[2] or Vector3.zero
+  local local_rotation = params[3] or Vector3.zero
+  self.v_max_len = params[4] or 10
+  self.v_start_x = self.missile_cfg.SizeX
+  self.v_start_y = self.missile_cfg.SizeY
+  self.v_start_z = self.missile_cfg.SizeZ
+  self.v_hit_layer_mask = LayerMask.SceneBlock
+  if self.v_char:is_hero() then
+    self.v_hit_layer_mask = self.v_hit_layer_mask | LayerMask.NPC
+  else
+    self.v_hit_layer_mask = self.v_hit_layer_mask | LayerMask.Character
+  end
+  local trans = self.missile_cfg.transform
+  trans:SetParent(self.v_start_transfrom, true)
+  trans:SetLocalPositionA(pos_offset.x, pos_offset.y, pos_offset.z)
+  trans.localEulerAngles = local_rotation
+  self.v_missle_trans = trans
+end
+
+function M:update()
+  local pos = self.v_missile:get_pos_vec3()
+  local dir_x, dir_y, dir_z = self.v_missle_trans:GetForwardA()
+  local len = self.v_max_len
+  local hit = CSHelper.RayCast2(pos.x, pos.y, pos.z, dir_x, dir_y, dir_z, self.v_max_len, self.v_hit_layer_mask)
+  self.v_char:set_target_dir(dir_y, true)
+  if hit.collider then
+    len = hit.distance
+  end
+  self.v_missle_trans:SetLocalScaleA(self.v_start_x, self.v_start_y, len)
+  if self.v_ground_destroy_height and self.v_terrain_height then
+    self:check_ground_destroy()
+  end
+end
+
+return M

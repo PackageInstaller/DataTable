@@ -1,0 +1,70 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self.v_toggle = Util.get_toggle(nil, self.v_object)
+  self:set_toggle_listener(self.v_toggle, function(is_on)
+    if is_on then
+      self:click_char()
+    end
+  end)
+end
+
+function ui:ui_on_hide()
+  self.v_buddy_info = nil
+end
+
+function ui:set_linked_parent(parent)
+  self.v_linked_parent = parent
+end
+
+function ui:set_data(buddy_info)
+  self.v_buddy_info = buddy_info
+  self.v_buddy_id = buddy_info.id
+  self.v_buddy_cfg = ShareRes.get_buddy_cfg(self.v_buddy_id)
+  self:refresh_quailty_icon()
+  self:refresh_element_icon()
+  self:refresh_char_icon()
+  self:refresh_lv_num()
+end
+
+function ui:refresh_quailty_icon()
+  local qual_val = self.v_buddy_cfg.Quality
+  local icon_path = ShareRes.get_buddy_qualityIcon_small_square(qual_val)
+  ResMgr:load_set_icon(self.v_uicompents.QualityBg_img, icon_path)
+end
+
+function ui:refresh_element_icon()
+  local icon_path = ShareRes.get_element_cfg(self.v_buddy_cfg.Element).ElementIconPath
+  ResMgr:load_set_icon(self.v_uicompents.EleIcon_img, icon_path)
+end
+
+function ui:refresh_char_icon()
+  local icon_path = UtilUI.get_hero_images(self.v_buddy_id, 1, self.v_buddy_info.fashion_id)
+  ResMgr:load_set_icon(self.v_uicompents.CharIcon_img, icon_path)
+end
+
+function ui:refresh_lv_num()
+  self.v_uicompents.LvTxt_txt.text = self.v_buddy_info.lv
+end
+
+function ui:click_char()
+  local can_change_buddy = self.v_linked_parent.v_parent_ui.v_panel_character_main:check_change_buddy(self.v_buddy_id)
+  if not can_change_buddy then
+    self.v_toggle.isOn = false
+    return
+  end
+  self.v_linked_parent:on_click_buddy(self.v_buddy_id)
+  self.v_toggle.isOn = true
+end
+
+function ui:enable_tog()
+  self.v_toggle.isOn = false
+  self.v_toggle.isOn = true
+end
+
+function ui:disable_tog()
+  self.v_toggle.isOn = false
+end
+
+return ui

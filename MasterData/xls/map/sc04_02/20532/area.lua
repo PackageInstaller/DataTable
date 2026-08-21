@@ -1,0 +1,325 @@
+local empty = {}
+return
+{
+  Areas = {
+    {
+      Key = "1000",
+      Tag = "zhangai1",
+      Group = 0,
+      Color = { 0.0, 0.912988663, 1.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.06, 4.17, -409.27002 },
+      Size = { 5.08, 2.6, 1.0 },
+      Show = true
+    },
+    {
+      Key = "r1s6弹球",
+      Tag = "r1s5",
+      Group = 0,
+      Color = { 0.6039216, 0.7372549, 0.384313762, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.401346743, 3.90850973, 60.0 },
+      Size = { 5.94, 2.65, 2.64 },
+      Show = true
+    },
+    {
+      Key = "R17弹幕",
+      Tag = "R17",
+      Group = 0,
+      Color = { 1.0, 0.0, 0.0980157852, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -0.300013661, 4.56857, -50.0 },
+      Size = { 5.94, 2.65, 2.64 },
+      Show = true
+    },
+    {
+      Key = "R21激光",
+      Tag = "R21",
+      Group = 0,
+      Color = { 1.0, 0.0, 0.0980392247, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 4.56857, -605.0 },
+      Size = { 6.0, 2.65, 2.64 },
+      Show = true
+    },
+    {
+      Key = "R24激光",
+      Tag = "R24",
+      Group = 0,
+      Color = { 1.0, 0.0, 0.0980392247, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 4.56857, -480.0 },
+      Size = { 5.94, 2.65, 2.64 },
+      Show = true
+    },
+    {
+      Key = "R19弹幕",
+      Tag = "R19",
+      Group = 0,
+      Color = { 1.0, 0.0, 0.0980392247, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 4.56857, -666.0 },
+      Size = { 5.94, 2.65, 2.64 },
+      Show = true
+    },
+    {
+      Key = "R22弹幕2",
+      Tag = "R22",
+      Group = 0,
+      Color = { 1.0, 0.0, 0.0980392247, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -0.300013661, 4.56857, -534.0 },
+      Size = { 5.94, 2.65, 2.64 },
+      Show = true
+    },
+    {
+      Key = "R23弹幕3",
+      Tag = "R23",
+      Group = 0,
+      Color = { 1.0, 0.0, 0.0980392247, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 4.56857, -510.0 },
+      Size = { 5.94, 2.65, 2.64 },
+      Show = true
+    },
+    {
+      Key = "r2s8弹球x3",
+      Tag = "r2s8",
+      Group = 0,
+      Color = { 1.0, 0.0, 0.0980392247, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -0.300013661, 4.56857, -414.08 },
+      Size = { 5.94, 2.65, 2.64 },
+      Show = true
+    },
+    {
+      Key = "r2s9弹球x4",
+      Tag = "r2s9",
+      Group = 0,
+      Color = { 1.0, 0.0, 0.0980392247, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -0.300013661, 4.56857, -359.6 },
+      Size = { 5.94, 2.65, 2.64 },
+      Show = true
+    },
+    {
+      Key = "tp1",
+      Tag = "tp",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -58.4, 0.0, -254.2 },
+      Size = { 1.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "tp2",
+      Tag = "tp",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -58.4, 0.0, -254.2 },
+      Size = { 1.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "tp3",
+      Tag = "tp",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -58.4, 0.0, -254.2 },
+      Size = { 1.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "tp4",
+      Tag = "tp",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -58.4, 0.0, -254.2 },
+      Size = { 1.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "wall1",
+      Tag = "wallblock",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -58.4, 5.0, -166.900024 },
+      Size = { 1.0, 10.0, 1250.0 },
+      Show = true
+    },
+    {
+      Key = "wall2",
+      Tag = "wallblock",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 57.1, 5.0, -166.900024 },
+      Size = { 1.0, 10.0, 1250.0 },
+      Show = true
+    },
+    {
+      Key = "wall3",
+      Tag = "wallblock",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -0.6500015, 5.0, 458.099976 },
+      Size = { 115.5, 10.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "wall4",
+      Tag = "wallblock",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -0.6500015, 5.0, -791.9 },
+      Size = { 115.5, 10.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "yuanpan1",
+      Tag = empty,
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -0.0424199328, 4.05, -15.05 },
+      Size = { 6.9, 3.45, 20.82 },
+      Show = true
+    },
+    {
+      Key = "zihui1",
+      Tag = "zihui",
+      Group = 0,
+      Color = { 0.6039216, 0.7372549, 0.384313762, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.401346743, 3.90850973, 166.2 },
+      Size = { 5.94, 2.65, 2.64 },
+      Show = true
+    },
+    {
+      Key = "zihui2",
+      Tag = "zihui",
+      Group = 0,
+      Color = { 1.0, 0.0, 0.0980392247, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { -0.300013661, 4.56857, -310.9 },
+      Size = { 5.94, 2.65, 2.64 },
+      Show = true
+    },
+    {
+      Key = "R11弹球",
+      Tag = "R11",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 4.040506, -120.0 },
+      Size = { 4.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "R12弹球",
+      Tag = "R12",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 4.040506, -110.0 },
+      Size = { 4.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "R13激光",
+      Tag = "R13",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 4.040506, -80.0 },
+      Size = { 4.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "R14弹幕",
+      Tag = "R14",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 4.040506, -175.0 },
+      Size = { 4.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "R15",
+      Tag = "R15",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 4.040506, 5.0 },
+      Size = { 4.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "R16",
+      Tag = "R16",
+      Group = 0,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 4.040506, -700.0 },
+      Size = { 4.0, 1.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "R20弹球",
+      Tag = "R20",
+      Group = 0,
+      Color = { 1.0, 0.0, 0.0980392247, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 4.56857, -568.0 },
+      Size = { 5.94, 2.65, 2.64 },
+      Show = true
+    },
+    {
+      Key = "R25弹幕",
+      Tag = "R25",
+      Group = 0,
+      Color = { 1.0, 0.0, 0.0980392247, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 0.0, 4.56857, -465.0 },
+      Size = { 5.94, 2.65, 2.64 },
+      Show = true
+    }
+  },
+}

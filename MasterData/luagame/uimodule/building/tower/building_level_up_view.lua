@@ -1,0 +1,133 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BUILDINGT_LEVEL_DESC_TEMP = "BUILDINGT_LEVEL_DESC_TEMP"
+
+function ui:on_click_close_btn()
+  if self.v_on_hide_pd then
+    self.v_uicompents.Ani_UIHomeLvUp_LvUpTips_Out_pd:ResetPD()
+    self:on_out_pd_stop()
+  else
+    self.v_on_hide_pd = true
+    self.v_uicompents.Ani_UIHomeLvUp_LvUpTips_Out_pd:RePlayPD()
+  end
+end
+
+function ui:on_click_unlock_btn()
+  if not BuildingMgr:building_level_up_check(self.v_building_type, self.v_target_level, true) then
+    return
+  end
+  BuildingMgr:requst_building_lv_up(self.v_building_type, function()
+    if not self:visible() or not self.v_parent_ui:has_inited() then
+      return
+    end
+    self:on_click_close_btn()
+    self.v_parent_ui:get_panel("level_up_suc_view"):set_enable(true, self.v_building_type, self.v_target_level)
+  end)
+end
+
+function ui:on_out_pd_stop()
+  self.v_on_hide_pd = false
+  self:set_enable(false)
+end
+
+function ui:ui_finish_load()
+  self:set_button("BgClose", function()
+    self:on_click_close_btn()
+  end)
+  self:set_button("BtnClose", function()
+    self:on_click_close_btn()
+  end)
+  self:set_button("BtnUnLock", function()
+    self:on_click_unlock_btn()
+  end)
+  self:set_playable_stopped_action(self.v_uicompents.Ani_UIHomeLvUp_LvUpTips_Out_pd, function()
+    self:on_out_pd_stop()
+  end)
+  self:register_exist_auto_template(BUILDINGT_LEVEL_DESC_TEMP, self.v_uiobjects.DescTem, self.v_uiobjects.DescContent)
+end
+
+function ui:ui_on_show(building_type, target_level)
+  self.v_building_type = building_type
+  self.v_target_level = target_level
+  self:refresh_view()
+end
+
+function ui:ui_on_hide()
+  self:clear_desc_item()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_view()
+  self:clear_desc_item()
+  local max_level = ShareRes.get_building_max_level(self.v_building_type)
+  self.v_target_level_cfg = ShareRes.get_building_level_cfg(self.v_building_type, math.min(self.v_target_level, max_level))
+  self:refresh_effect_desc()
+  self:refresh_condition_desc()
+  self:refresh_button_state()
+  self:refresh_cost_item()
+end
+
+function ui:refresh_effect_desc()
+  local count = 0
+  if self.v_target_level_cfg.UnlockEffectDesc then
+    for key, desc in ipairs(self.v_target_level_cfg.UnlockEffectDesc) do
+      local obj = self:get_auto_cache(BUILDINGT_LEVEL_DESC_TEMP)
+      obj.transform:SetParent(self.v_uicompents.UnLockEffect_rect)
+      local text = self:get_text(nil, obj)
+      text.text = desc
+      Util.change_component_alpha2(text, 1)
+      count = count + 1
+    end
+  end
+  self.v_uiobjects.UnLockEffect:SetActive(count > 0)
+end
+
+function ui:refresh_condition_desc()
+  local count = 0
+  if self.v_target_level_cfg.Condition then
+    for key, condition in ipairs(self.v_target_level_cfg.Condition) do
+      if Util.is_more_than_zero(condition) then
+        local obj = self:get_auto_cache(BUILDINGT_LEVEL_DESC_TEMP)
+        obj.transform:SetParent(self.v_uicompents.UnLockCondition_rect)
+        local text = self:get_text(nil, obj)
+        text.text = ShareRes.get_condition_desc(condition)
+        Util.change_component_alpha2(text, Condition:check_condition(condition) and 1 or 0.5)
+        count = count + 1
+      end
+    end
+  end
+  self.v_uiobjects.UnLockCondition:SetActive(count > 0)
+end
+
+function ui:refresh_button_state()
+  local cur_level = BuildingMgr:get_building_level(self.v_building_type)
+  local is_unlock = cur_level >= self.v_target_level
+  local can_level_up = not is_unlock and BuildingMgr:building_level_up_check(self.v_building_type, self.v_target_level) and self.v_target_level - cur_level <= 1
+  self.v_uiobjects.BtnUnLock:SetActive(not is_unlock and can_level_up)
+  self.v_uiobjects.BtnLock:SetActive(not is_unlock and not can_level_up)
+  self.v_uiobjects.UnLocked:SetActive(is_unlock)
+end
+
+function ui:refresh_cost_item()
+  local is_need_cost = Util.is_more_than_zero(self.v_target_level_cfg.ConsumeItemId) and Util.is_more_than_zero(self.v_target_level_cfg.ConsumeItemCount)
+  self.v_uiobjects.Curr:SetActive(is_need_cost)
+  if is_need_cost then
+    local cur_count = BagMgr:get_item_num(self.v_target_level_cfg.ConsumeItemId)
+    local cur_count_str = cur_count
+    if cur_count < self.v_target_level_cfg.ConsumeItemCount then
+      cur_count_str = "<color=#e0212c>" .. cur_count .. "</color>"
+    end
+    self.v_uicompents.CurrNow_txt.text = cur_count_str
+    self.v_uicompents.CurrNeed_txt.text = self.v_target_level_cfg.ConsumeItemCount
+    local icon_path = ShareRes.get_item_icon_path(self.v_target_level_cfg.ConsumeItemId)
+    ResMgr:load_set_icon(self.v_uicompents.CurrIcon_img, icon_path)
+  end
+end
+
+function ui:clear_desc_item()
+  self:give_back_auto_cache(BUILDINGT_LEVEL_DESC_TEMP)
+end
+
+return ui

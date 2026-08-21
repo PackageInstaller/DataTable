@@ -1,0 +1,44 @@
+return {
+  {
+    Arg = {50},
+    Id = 1,
+    Jump = 12105,
+    Name = "新手寻访",
+    SaveType = 1
+  },
+  {
+    Arg = {90, 300},
+    Id = 2,
+    Jump = 12105,
+    Name = "常驻角色",
+    SaveType = 2
+  },
+  {
+    Arg = {90, 300},
+    Id = 3,
+    Jump = 12105,
+    Name = "自选武器",
+    SaveType = 2
+  },
+  {
+    Arg = {90, 300},
+    Id = 4,
+    Jump = 12105,
+    Name = "限定角色",
+    SaveType = 2
+  },
+  {
+    Arg = {90, 300},
+    Id = 5,
+    Jump = 12105,
+    Name = "限定武器",
+    SaveType = 2
+  },
+  {
+    Arg = {90, 300},
+    Id = 6,
+    Jump = 12105,
+    Name = "常驻up",
+    SaveType = 2
+  }
+}

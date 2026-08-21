@@ -1,0 +1,93 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local Vec3 = require("base.vec3")
+local MatCfg = ShareRes.create("activity.barbecue_materail")
+local MenuCfg = ShareRes.create("activity.barbecue_menu")
+
+function ui:ui_finish_load()
+  self.v_rect_width, self.v_rect_height = self.v_object_transform:GetRectWH()
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+  self:clear_tween()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:get_free()
+  return self.v_is_free
+end
+
+function ui:set_idx(idx)
+  self.v_idx = idx
+  self.v_object_transform:SetAsLastSibling()
+  self.v_uiobjects.Icon1:SetActiveEx(false)
+  self.v_uiobjects.Icon2:SetActiveEx(false)
+  self:set_enable(true)
+end
+
+function ui:set_mat_id(mat_id, from_trans)
+  local cfg = MatCfg[mat_id]
+  self.v_mat_id = mat_id
+  self.v_uiobjects.Icon2:SetActiveEx(true)
+  ResMgr:load_set_icon(self.v_uicompents.Icon2_img, cfg.Icon)
+  self:clear_icon2_tween()
+  self.v_uicompents.Icon2_rect:SetPositionA(from_trans:GetPositionA())
+  self.v_icon2_tween = self.v_uicompents.Icon2_rect:DOLocalMove(Vec3.zero, 0.3):OnComplete(function()
+    ResMgr:load_set_icon(self.v_uicompents.Icon1_img, cfg.PrepareIcon)
+    self.v_uiobjects.Icon1:SetActiveEx(true)
+    self.v_uiobjects.Icon2:SetActiveEx(false)
+    if 3 == mat_id then
+      Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.barbeque_game_put_cup_UI_SOUND)
+    else
+      Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.barbeque_game_put_plate_UI_SOUND)
+    end
+  end)
+end
+
+function ui:set_next_mat_id(next_mat_id, result_food_id, from_trans)
+  local cfg = MatCfg[next_mat_id]
+  ResMgr:load_set_icon(self.v_uicompents.Icon2_img, cfg.Icon)
+  self.v_uiobjects.Icon2:SetActiveEx(true)
+  self:clear_icon2_tween()
+  self.v_uicompents.Icon2_rect:SetPositionA(from_trans:GetPositionA())
+  self.v_icon2_tween = self.v_uicompents.Icon2_rect:DOLocalMove(Vec3.zero, 0.3):OnComplete(function()
+    ResMgr:load_set_icon(self.v_uicompents.Icon1_img, MenuCfg[result_food_id].Icon)
+    self.v_uiobjects.Icon2:SetActiveEx(false)
+    self.v_parent_ui:move_result_mat_to_customer(result_food_id, self.v_object_transform)
+    self:do_hide()
+  end)
+end
+
+function ui:do_hide()
+  self:clear_icon1_tween()
+  self.v_icon1_tween = self.v_uicompents.Icon1_rect:DOLocalMove(Vec3.zero, 0.2):OnComplete(function()
+    self.v_uiobjects.Icon1:SetActiveEx(false)
+    self.v_parent_ui:release_dish(self.v_idx)
+  end)
+end
+
+function ui:clear_tween()
+  self:clear_icon1_tween()
+  self:clear_icon2_tween()
+end
+
+function ui:clear_icon1_tween()
+  if self.v_icon1_tween then
+    self.v_icon1_tween:Kill()
+    self.v_icon1_tween = nil
+  end
+end
+
+function ui:clear_icon2_tween()
+  if self.v_icon2_tween then
+    self.v_icon2_tween:Kill()
+    self.v_icon2_tween = nil
+  end
+end
+
+return ui

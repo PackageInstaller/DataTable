@@ -1,0 +1,36 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local LIFE_TIME = ShareRes.get_comm_value("LogoLifeTime") or 0
+local CSKeyCode = UnityEngine.KeyCode
+local CSInput = UnityEngine.Input
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show(cb)
+  self.v_playAni_timer = Timer:add_timer("playAni", LIFE_TIME, function()
+    self:play_ani()
+    if cb then
+      cb()
+    end
+  end)
+end
+
+function ui:ui_on_hide()
+  if self.v_playAni_timer then
+    Timer:remove_timer(self.v_playAni_timer)
+    self.v_playAni_timer = nil
+  end
+end
+
+function ui:ui_update()
+  if CSInput.GetKey(CSKeyCode.Escape) then
+    self:ui_hide()
+  end
+end
+
+function ui:play_ani()
+  self:ui_hide()
+end
+
+return ui

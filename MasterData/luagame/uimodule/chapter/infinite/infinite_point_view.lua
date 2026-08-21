@@ -1,0 +1,182 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local TASK_CONFIG = require("gamelogic.task.task_config")
+local TASK_STATE = TASK_CONFIG.TASK_STATE
+local CommonDef = require("cs_share.common_define")
+local MODEL = {
+  v_task_content = {
+    "TaskContent",
+    BIND_TYPE.TEXT
+  },
+  v_now_privilege = {
+    "PrivilegeNow",
+    BIND_TYPE.TEXT
+  },
+  v_max_privilege = {
+    "PrivilegeMax",
+    BIND_TYPE.TEXT
+  },
+  v_now_reward_lv = {
+    "RewardLvNow",
+    BIND_TYPE.TEXT
+  },
+  v_reward_bar_fill = {
+    "RewardBarFill",
+    BIND_TYPE.IMAGE
+  },
+  v_suggest_combat = {
+    "SuggestCombat",
+    BIND_TYPE.TEXT
+  },
+  v_history_floor = {
+    "HistoryFloor",
+    BIND_TYPE.TEXT
+  },
+  v_max_floor = {
+    "MaxFloor",
+    BIND_TYPE.TEXT
+  },
+  v_task_red_point = {
+    "TaskRedPoint",
+    BIND_TYPE.OBJECT
+  },
+  v_privilege_red_point = {
+    "PrivilegeRedPoint",
+    BIND_TYPE.OBJECT
+  },
+  v_reward_red_point = {
+    "RewardRedPoint",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnTask", function()
+    UIMgr:get_ui("infinite_task"):ui_show(self.v_infinite_id)
+  end)
+  self:set_button("BtnPrivilege", function()
+    UIMgr:get_ui("infinite_privilege"):ui_show(self.v_infinite_id)
+  end)
+  self:set_button("BtnAdditionReward", function()
+    UIMgr:get_ui("infinite_reward"):ui_show(self.v_infinite_id)
+  end)
+  self:set_button("BtnRankingList", function()
+    ChapterMgr:request_inf_chapter_rank(self.v_infinite_id)
+  end)
+  self:set_button("BtnFight", function()
+    if TowerMgr:check_fight_progress() then
+      return
+    end
+    local infinite_cfg = ShareRes.get_inf_chapter_cfg(self.v_infinite_id)
+    local point_cfg = ShareRes.get_chapter_point_cfg(infinite_cfg.EpisodeId)
+    if point_cfg.FightCost and point_cfg.FightCost[1] > BagMgr:get_item_num(Config.PLAYER_SP_ITEMID) then
+      UIMgr:get_ui("uimessagetip"):ui_show(Util.format_str("体力不足"))
+      UIMgr:get_ui("uiforcerecharg"):ui_show()
+      return
+    end
+    UIMgr:get_ui("team"):ui_show(self.v_infinite_id, infinite_cfg.EpisodeId, CommonDef.CHALLENGE_TYPE.INFINITE)
+  end)
+end
+
+function ui:ui_on_show(infinite_id)
+  self:bind_auto_mq(Const.MSG_CHAPTER_RANK_UPDATE, self.on_open_rank, self)
+  self.v_infinite_id = infinite_id
+  self:refresh_view_info()
+  self:refresh_red_point()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:refresh_view_info()
+  self:refresh_task_info()
+  self:refresh_privilege_unlock_count()
+  self:refresh_reward_info()
+  self:refresh_history_floor_info_and_combat()
+end
+
+function ui:refresh_task_info()
+  local task_list = ChapterMgr:get_inf_task_cfg_list(self.v_infinite_id)
+  local can_get = false
+  local cannot_get = false
+  local show_task_cfg
+  for _, task_cfg in pairs(task_list) do
+    local task_state = TaskMgr:get_task_state(task_cfg.Id)
+    if task_state == TASK_STATE.receive then
+      show_task_cfg = task_cfg
+      can_get = true
+      break
+    elseif task_state == TASK_STATE.none then
+      show_task_cfg = task_cfg
+      cannot_get = true
+      break
+    end
+  end
+  if can_get or cannot_get then
+    self.v_task_content.text = show_task_cfg.Desc
+  else
+    self.v_task_content.text = Util.format_str("已完成")
+  end
+end
+
+function ui:refresh_privilege_unlock_count()
+  self.v_now_privilege.text = ChapterMgr:get_inf_privilege_unlock_count(self.v_infinite_id)
+  self.v_max_privilege.text = ChapterMgr:get_inf_privilege_group_len(self.v_infinite_id)
+end
+
+function ui:refresh_reward_info()
+  local infinite_cfg = ShareRes.get_inf_chapter_cfg(self.v_infinite_id)
+  self.award_group_cfg_list = {}
+  local group_cfg = ShareRes.create("chapter.infinite_addition_award", infinite_cfg.AdditionAwardGroup)
+  for _, cfg in pairs(group_cfg) do
+    table.insert(self.award_group_cfg_list, cfg)
+  end
+  table.sort(self.award_group_cfg_list, function(a, b)
+    return a.Level < b.Level
+  end)
+  local infinite_info = ChapterMgr:get_inf_chapter_data(self.v_infinite_id)
+  local current_lv = infinite_info.addition_award_lv or 0
+  local next_lv_cfg = self.award_group_cfg_list[current_lv + 1]
+  if nil == next_lv_cfg then
+    next_lv_cfg = self.award_group_cfg_list[current_lv]
+  end
+  local now_exp = BagMgr:get_item_num(infinite_cfg.CostId)
+  local max_exp = next_lv_cfg.CostCnt
+  self.v_now_reward_lv.text = current_lv
+  self.v_reward_bar_fill.fillAmount = now_exp / max_exp
+end
+
+function ui:refresh_history_floor_info_and_combat()
+  self.v_history_floor.text = ChapterMgr:get_inf_history_max_floor(self.v_infinite_id)
+  self.v_max_floor.text = ChapterMgr:get_inf_cfg_max_floor(self.v_infinite_id)
+  local infinite_cfg = ShareRes.get_inf_chapter_cfg(self.v_infinite_id)
+  local chapter_point_cfg = ShareRes.create("chapter.chapter_point", infinite_cfg.EpisodeId)
+  self.v_suggest_combat.text = chapter_point_cfg.RecomFightVal
+end
+
+function ui:on_open_rank(msg)
+  local rank_info = msg.mm_x
+  UIMgr:get_ui("infinite_rank"):ui_show(self.v_infinite_id, rank_info)
+end
+
+function ui:refresh_red_point()
+  self:refresh_task_red_point()
+  self:refresh_privilege_red_point()
+  self:refresh_reward_red_point()
+end
+
+function ui:refresh_task_red_point()
+  self.v_task_red_point:SetActive(ChapterMgr:get_inf_task_red_point_state(self.v_infinite_id))
+end
+
+function ui:refresh_privilege_red_point()
+  self.v_privilege_red_point:SetActive(ChapterMgr:get_inf_privilege_red_point_state(self.v_infinite_id))
+end
+
+function ui:refresh_reward_red_point()
+  self.v_reward_red_point:SetActive(ChapterMgr:get_inf_reward_red_point_state(self.v_infinite_id))
+end
+
+return ui

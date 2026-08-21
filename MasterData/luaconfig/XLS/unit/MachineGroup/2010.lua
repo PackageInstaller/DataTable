@@ -1,0 +1,54 @@
+local empty = {}
+return {
+  unitList = {
+    {
+      Rotate = 22.2408714,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = false,
+      Camp = 4,
+      UnitID = 30010199,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "1_2010_0",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 0,
+      BornPos = {
+        1.62836313,
+        2.04449258E-4,
+        -30.5250015
+      }
+    },
+    {
+      Rotate = 334.777252,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = false,
+      Camp = 4,
+      UnitID = 30010198,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "1_2010_1",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 0,
+      BornPos = {
+        1.84,
+        2.04449258E-4,
+        -33.38
+      }
+    }
+  },
+  Name = "",
+  Id = 2010,
+  Type = 1
+}

@@ -1,0 +1,27 @@
+local vec3 = require("base.vec3")
+local M = {}
+local temp = {
+  x = true,
+  y = true,
+  z = true
+}
+
+function M.New(x, y, z)
+  local v = {}
+  local tempVec3 = vec3.New()
+  setmetatable(v, {
+    __index = function(table, key)
+      local value = tempVec3[key]
+      return value
+    end,
+    __newindex = function(table, key, value)
+      if temp and Global.vec3_debug_open then
+        Log.Error("key", key, "value", value, debug.traceback())
+      end
+      tempVec3[key] = value
+    end
+  })
+  return v
+end
+
+return M

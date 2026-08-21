@@ -1,0 +1,58 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local commonDef = require("cs_share.common_define")
+local ACTY_TYPE = commonDef.ACTY_TYPE
+local ActivityCfg = require("gamelogic.activity.activity_config")
+local ACTY_TYPE_TO_SYSID = ActivityCfg.ACTY_TYPE_TO_SYSID
+
+function ui:ui_finish_load()
+  self:set_button("BtnStart", function()
+    if SysOpenMgr:get_sys_is_open(ACTY_TYPE_TO_SYSID[ACTY_TYPE.WEEK_ACTY], true) and ActivityMgr:get_activity_is_open(ACTY_TYPE.WEEK_ACTY) then
+      if WeeklyMgr:check_weekly_pvp_opn() then
+        UIMgr:get_ui("weekly_pvp_detail_stage1"):ui_show()
+      else
+        UIMgr:get_ui("weekly_select"):ui_show()
+      end
+    else
+      Util.show_message_tip(2148)
+    end
+  end)
+end
+
+function ui:ui_on_show()
+  self:refresh_view()
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.challenge_select_tog_UI_SOUND)
+end
+
+function ui:refresh_view()
+  local is_sys_open = SysOpenMgr:get_sys_is_open(ACTY_TYPE_TO_SYSID[ACTY_TYPE.WEEK_ACTY], false)
+  local is_activity_open = ActivityMgr:get_activity_is_open(ACTY_TYPE.WEEK_ACTY)
+  if not is_sys_open or not is_activity_open then
+    return
+  end
+  local cfg = ShareRes.get_weekly_pvp_activity_cfg()
+  self.v_uicompents.Desc_txt.text = cfg.ChapterDesc
+  local is_pvp_open = WeeklyMgr:check_weekly_pvp_opn()
+  self.v_uiobjects.PVP:SetActive(is_pvp_open)
+  self.v_uiobjects.PVE:SetActive(not is_pvp_open)
+  if is_pvp_open then
+    local star = WeeklyMgr:get_pvp_curr_star()
+    self.v_uiobjects.PVPRankNum:SetActive(0 == star)
+    self.v_uiobjects.PVPProgress:SetActive(star > 0)
+    if 0 == star then
+      self.v_uicompents.PVPRankNum_txt.text = "未参与"
+    else
+      local total_star = WeeklyMgr:get_pvp_total_star()
+      self.v_uicompents.PVPProgressNow_txt.text = star
+      self.v_uicompents.PVPProgressMax_txt.text = total_star
+    end
+    return
+  end
+  local now_star = WeeklyMgr:get_now_star()
+  local total_star = WeeklyMgr:get_total_star()
+  self.v_uicompents.Slider_sld.value = now_star / total_star
+  self.v_uicompents.ProgressNow_txt.text = now_star
+  self.v_uicompents.ProgressMax_txt.text = total_star
+end
+
+return ui

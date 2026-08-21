@@ -1,0 +1,100 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_stock_layout = {
+    "StockLayout",
+    BIND_TYPE.OBJECT
+  },
+  v_stock_num = {
+    "StockNum",
+    BIND_TYPE.TEXT
+  },
+  v_item_name = {
+    "ItemName",
+    BIND_TYPE.TEXT
+  },
+  v_item_quality = {
+    "ItemQuality",
+    BIND_TYPE.IMAGE
+  },
+  v_item_icon = {
+    "ItemIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_item_num = {
+    "ItemNum",
+    BIND_TYPE.TEXT
+  },
+  v_cost_icon = {
+    "CostIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_cost_num = {
+    "CostNum",
+    BIND_TYPE.TEXT
+  },
+  v_sold_out = {
+    "SoldOut",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button_listener(Util.get_button(nil, self:get_object()), function()
+    if not self.v_is_sold_out then
+      UIMgr:get_ui("chal_ring_plus_contri_shop_item_tips"):ui_show(self.v_shop_cfg, self.v_buy_count)
+    else
+      Util.show_message_tip(1103)
+    end
+  end)
+end
+
+function ui:ui_on_show(shop_cfg, buy_count)
+  self.v_shop_cfg = shop_cfg
+  self.v_buy_count = buy_count
+  self:init_base_info()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:init_base_info()
+  if not self.v_shop_cfg then
+    return
+  end
+  local item_cfg = UtilUI.get_item_cfg(self.v_shop_cfg.ItemID)
+  self.v_item_name.text = item_cfg.Name
+  ResMgr:load_set_icon(self.v_item_icon, Shop_Helper.get_item_icon(item_cfg.Id))
+  ResMgr:load_set_icon(self.v_item_quality, Shop_Helper.get_item_quality_icon(item_cfg.Quality))
+  self.v_item_num.text = self.v_shop_cfg.ItemNum
+  ResMgr:load_set_icon(self.v_cost_icon, UtilUI.get_item_icon(self.v_shop_cfg.CostItem))
+  self.v_cost_num.text = self.v_shop_cfg.CostNum
+  self:set_state()
+end
+
+function ui:set_state()
+  if self.v_buy_count < self.v_shop_cfg.BuyLimit then
+    self.v_sold_out:SetActive(false)
+    self.v_stock_layout:SetActive(true)
+    self.v_stock_num.text = self.v_shop_cfg.BuyLimit - self.v_buy_count
+    self.v_is_sold_out = false
+  else
+    self.v_sold_out:SetActive(true)
+    self.v_stock_layout:SetActive(false)
+    self.v_is_sold_out = true
+  end
+end
+
+function ui:refresh_state(shop_list)
+  local data = shop_list[self.v_shop_cfg.Id]
+  if not data then
+    return
+  end
+  self.v_buy_count = data.buy_cnt
+  self:set_state()
+end
+
+return ui

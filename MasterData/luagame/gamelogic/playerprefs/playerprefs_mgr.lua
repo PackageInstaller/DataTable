@@ -1,0 +1,70 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+local PlayerPrefs = UnityEngine.PlayerPrefs
+M.PlayerUUID_Record = Global.player_uuid
+M.BoardSpecialRedPlayedKey = "board_special_red_state" .. Global.player_uuid
+M.BoardSpecialRedPlayedCache = -1
+
+function M:get_board_story_key(event_id, npc_id, story_id)
+  return Util.format_str("{1}/{2}/{3}", event_id, npc_id, story_id)
+end
+
+function M:get_board_story_played(event_id, npc_id, story_id)
+  local key = self:get_board_story_key(event_id, npc_id, story_id)
+  return 1 == PlayerPrefs.GetInt(key, 0)
+end
+
+function M:set_board_story_played(event_id, npc_id, story_id, value)
+  local key = self:get_board_story_key(event_id, npc_id, story_id)
+  return PlayerPrefs.SetInt(key, value)
+end
+
+function M:delete_board_story_played(event_id, npc_id, story_id)
+  local key = self:get_board_story_key(event_id, npc_id, story_id)
+  return PlayerPrefs.DeleteKey(key)
+end
+
+function M:get_board_special_red_played()
+  if -1 == self.BoardSpecialRedPlayedCache or self.PlayerUUID_Record ~= Global.player_uuid then
+    self.PlayerUUID_Record = Global.player_uuid
+    self.BoardSpecialRedPlayedKey = "board_special_red_state" .. Global.player_uuid
+    self.BoardSpecialRedPlayedCache = PlayerPrefs.GetInt(self.BoardSpecialRedPlayedKey, 0)
+  end
+  return 1 == self.BoardSpecialRedPlayedCache
+end
+
+function M:set_board_special_red_played()
+  self.BoardSpecialRedPlayedCache = 1
+  return PlayerPrefs.SetInt(self.BoardSpecialRedPlayedKey, 1)
+end
+
+function M:get_curr_period_endless_enter_finish_key()
+  return Util.format_str("curr_period_endless_enter_finish_key/{1}", Global.player_uuid)
+end
+
+function M:get_curr_period_endless_enter_finish()
+  return PlayerPrefs.GetFloat(self:get_curr_period_endless_enter_finish_key(), 0)
+end
+
+function M:set_curr_period_endless_enter_finish(curr_time)
+  return PlayerPrefs.SetFloat(self:get_curr_period_endless_enter_finish_key(), curr_time)
+end
+
+function M:get_endless_ratio_select_key(group_id, infinite_id)
+  return Util.format_str("curr_period_endless_enter_finish_key/{1}/{2}/{3}", Global.player_uuid, group_id, infinite_id)
+end
+
+function M:get_endless_ratio(group_id, infinite_id)
+  return PlayerPrefs.GetInt(self:get_endless_ratio_select_key(group_id, infinite_id), 0)
+end
+
+function M:set_endless_ratio(group_id, infinite_id, entry_id)
+  entry_id = entry_id or 0
+  local old_entry_id = self:get_endless_ratio(group_id, infinite_id)
+  if entry_id == old_entry_id then
+    entry_id = 0
+  end
+  return PlayerPrefs.SetInt(self:get_endless_ratio_select_key(group_id, infinite_id), entry_id)
+end
+
+return M

@@ -1,0 +1,26 @@
+return {
+  {
+    Count = 0,
+    Id = 1,
+    RatioTxt = "1倍",
+    Score = 200
+  },
+  {
+    Count = 3,
+    Id = 2,
+    RatioTxt = "1.5倍",
+    Score = 300
+  },
+  {
+    Count = 6,
+    Id = 3,
+    RatioTxt = "2倍",
+    Score = 400
+  },
+  {
+    Count = 10,
+    Id = 4,
+    RatioTxt = "3倍",
+    Score = 600
+  }
+}

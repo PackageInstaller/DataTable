@@ -1,0 +1,20 @@
+return {
+  [3] = {
+    Id = 3,
+    QualityBgArchive = "UIArchive/UIEquip/Plugins/Archive_gh_bg_cjd1",
+    QualityBgIcon = "UICharacter/Plugins/js_bg_cj_sjtc_sr",
+    TxtColor = "9abbff"
+  },
+  [4] = {
+    Id = 4,
+    QualityBgArchive = "UIArchive/UIEquip/Plugins/Archive_gh_bg_cjd2",
+    QualityBgIcon = "UICharacter/Plugins/js_bg_cj_sjtc_sr",
+    TxtColor = "b2a8ff"
+  },
+  [5] = {
+    Id = 5,
+    QualityBgArchive = "UIArchive/UIEquip/Plugins/Archive_gh_bg_cjd3",
+    QualityBgIcon = "UICharacter/Plugins/js_bg_cj_sjtc_ssr",
+    TxtColor = "efc66e"
+  }
+}

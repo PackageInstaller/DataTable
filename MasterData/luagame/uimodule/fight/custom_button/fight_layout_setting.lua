@@ -1,0 +1,684 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local LAYOUT_ITEM_KEY = "LAYOUT_ITEM_KEY"
+local Fight_Layout_Cfg = require("uimodule.fight.custom_button.fight_layout_cfg")
+local LayoutRebuilder = UnityEngine.UI.LayoutRebuilder
+local CONTROL_CONTENT_PD = {
+  control_content = {
+    [true] = "ControlContentOpen_pd",
+    [false] = "ControlContentClose_pd"
+  }
+}
+local _floor = math.floor
+local layout_update_mode = {
+  Init = 1,
+  Add = 2,
+  INDEX = 3,
+  Delete = 4
+}
+
+function ui:on_click_AddPlan()
+  if not self.v_is_change then
+    self:add_layout(true)
+  else
+    Util.show_conform_tip("是否将此次修改设为新增方案", nil, nil, function()
+      self:add_layout(false)
+    end, function()
+      self:add_layout(true)
+    end)
+  end
+end
+
+function ui:on_click_BtnReturn()
+  if not self.v_is_change then
+    BattleSettingMgr:save_select_layout_index(self.v_use_idx)
+    self:ui_hide()
+  else
+    Util.show_conform_tip("是否保存所有修改至当前方案", nil, nil, function()
+      BattleSettingMgr:save_select_layout_index(self.v_use_idx)
+      self:ui_hide()
+    end, function()
+      local overlap = self.v_panel_fight_panel:check_all_overlap(true)
+      if not overlap then
+        self.v_panel_fight_panel:on_save_layout2()
+        self:ui_hide()
+      end
+    end)
+  end
+end
+
+function ui:save_layout()
+  local overlap = self.v_panel_fight_panel:check_all_overlap(true)
+  if not overlap then
+    self.v_panel_fight_panel:on_save_layout2()
+  end
+end
+
+function ui:on_click_BtnSave()
+  if self:has_overlap(true) then
+    Util.show_message_tip(2268)
+    return
+  end
+  if self:has_change() then
+    Util.show_conform_tip("是否保存修改", nil, nil, nil, function()
+      self:click_bg()
+      self:save_layout()
+    end)
+    return
+  else
+    Util.show_message_tip(2267)
+  end
+end
+
+function ui:reset_layout()
+  self.v_panel_fight_panel:reset_layout_data()
+  self:change_save_interactable(false)
+  self:on_overlap_state_change(false)
+end
+
+function ui:on_click_BtnReSet()
+  Util.show_notify_popup_message(function()
+    self:reset_layout()
+  end, "确认是否重置当前方案", "提示", "确定", "取消", nil, false)
+end
+
+function ui:on_click_FlipTog(isOn)
+  self.v_panel_fight_panel:flip_layout(isOn)
+end
+
+function ui:add_dir_button_listener(dir, btn_go)
+  Util.set_point_up(nil, btn_go, self, function()
+    self:regulate_location(dir, Fight_Layout_Cfg.dir_btn_state.TOUCH_UP)
+  end)
+  Util.set_longpress(nil, btn_go, self, function()
+    self:regulate_location(dir, Fight_Layout_Cfg.dir_btn_state.LONGPRESS)
+    self.v_is_long_press = true
+  end)
+  local btn = self:get_button(nil, btn_go)
+  self:set_button_listener(btn, function()
+    if self.v_is_long_press then
+      self.v_is_long_press = false
+    else
+      self:regulate_location(dir, Fight_Layout_Cfg.dir_btn_state.CLICK)
+    end
+  end)
+end
+
+function ui:ui_finish_load()
+  self.v_origin_control_pos_x, self.v_origin_control_pos_y = self.v_uicompents.ControlContent_rect:GetAnchoredPositionA()
+  self.v_detail_control_pos_x, self.v_detail_control_pos_y = self.v_uicompents.SingleControl_rect:GetAnchoredPositionA()
+  self:set_long_press(false)
+  self.v_panel_fight_panel = self:get_panel("fight_panel")
+  self.v_change_name_panel = self:get_panel("change_name")
+  self.v_control_content = self:get_panel("control_content")
+  self.v_detail_content = self:get_panel("detail_content")
+  self.v_ui_root = ui:get_lua_object()
+  self:set_button("GetScale", function()
+    self:record_all()
+    self.v_panel_fight_panel:standard_scale_save()
+  end)
+  self:set_button("PlanSelected", function()
+    self:click_plan_list()
+  end)
+  self:set_button("PrintLocalData", function()
+    self:print_local_data()
+  end)
+  self:set_button("AddPlan", function()
+    self:on_click_AddPlan()
+  end)
+  self:set_button("ClearCustom", function()
+    self.v_panel_fight_panel:clear_playerprefs_data()
+  end)
+  self:set_button("SaveInitLayout", function()
+    local input_text = self:get_inputfield(nil, self.v_uiobjects.InputField)
+    local index = tonumber(input_text.text) or self.v_use_idx
+    if not index then
+      return
+    end
+    local info = ShareRes.get_fight_layout_config(index)
+    if not info then
+      Log.Error("保存失败，不存在", index, "号配置")
+      return
+    end
+    self.v_panel_fight_panel:save_cur_layout_original_data(info)
+  end)
+  self:set_button("CreateInitLayout", function()
+    local cfg = ShareRes.get_fight_layout_config()
+    local index = #cfg + 1
+    local file_name = "btn_layout.layout" .. index
+    local layout_name = "默认配置" .. index
+    self.v_panel_fight_panel:save_init_layout_data(file_name, layout_name, index, false)
+  end)
+  self:set_button("Setting_Bg", function()
+    self:click_bg()
+  end)
+  self:set_setting_bg()
+  self:register_exist_auto_template(LAYOUT_ITEM_KEY, self.v_uiobjects.Plan1, self.v_uiobjects.PlanList)
+end
+
+function ui:ui_on_show()
+  self.v_uicompents.ControlContent_rect:SetAnchoredPositionA(self.v_origin_control_pos_x, self.v_origin_control_pos_y)
+  self.v_uicompents.SingleControl_rect:SetAnchoredPositionA(self.v_detail_control_pos_x, self.v_detail_control_pos_y)
+  self.v_use_idx = 1
+  self.v_is_first_show = true
+  self:change_save_interactable(false)
+  self.v_is_overlap = false
+  self.v_child_show_state = {control_content = true, detail_content = false}
+  self.v_panel_fight_panel:set_enable(true)
+  self:check_gm_state()
+  self:update_layout_item(layout_update_mode.Init)
+  self:revert_operation_content()
+  self:register_event()
+end
+
+function ui:ui_on_hide()
+  self.v_panel_fight_panel:set_enable(false)
+  self.v_change_name_panel:set_enable(false)
+  self.v_control_content:set_enable(false)
+  self.v_detail_content:set_enable(false)
+  self.v_layout_rect_list = {}
+  self.v_use_idx = nil
+  if self.v_stopped_cb then
+    self.v_uicompents.Ani_UISetting_button_Close_pd:stopped("-", self.v_stopped_cb)
+    self.v_stopped_cb = nil
+  end
+  self.v_tog_list = nil
+end
+
+function ui:ui_on_destroy()
+  self.v_panel_fight_panel = nil
+  self.v_change_name_panel = nil
+  self.v_control_content = nil
+  self.v_detail_content = nil
+end
+
+function ui:set_setting_bg()
+  local bg = self.v_uiobjects.Setting_Bg
+  local safe_panel_rect = self.v_panel_fight_panel:get_rect_transform("SafeArea")
+  bg:SetActive(true)
+  bg.transform:SetParent(self.v_panel_fight_panel:get_object_transform())
+  local old_index = safe_panel_rect:GetSiblingIndex()
+  bg.transform:SetSiblingIndex(old_index > 1 and old_index - 1 or 1)
+end
+
+function ui:check_gm_state()
+  local ui_obj = self.v_uiobjects
+  local is_client_only = Util.is_client_only()
+  ui_obj.ClearCustom:SetActive(is_client_only)
+  ui_obj.GetScale:SetActive(is_client_only)
+  ui_obj.PrintLocalData:SetActive(is_client_only)
+end
+
+function ui:response_ui_show()
+  if self.v_is_first_show then
+    self:set_fight_panel_sort_order()
+    self:change_control_panel_z()
+    self.v_is_first_show = false
+  end
+end
+
+function ui:set_fight_panel_sort_order()
+  local father_obj = self:get_object()
+  local father_canvas = self:get_canvas(nil, father_obj)
+  father_canvas.sortingOrder = father_canvas.sortingOrder + 1
+  local fight_obj = self.v_panel_fight_panel:get_object()
+  local fight_canvas = self:get_canvas(nil, fight_obj)
+  fight_canvas.sortingOrder = father_canvas.sortingOrder - 1
+end
+
+function ui:change_control_panel_z()
+  local control_obj = self.v_uiobjects.ControlMain
+  local rect = Util.get_rect_transform(nil, control_obj)
+  local x, y = rect:GetLocalPositionA3()
+  local z_offset = -10
+  rect:SetLocalPositionA(x, y, z_offset)
+end
+
+function ui:click_plan_list()
+  local plan_obj = self.v_uiobjects.PlanList
+  local img_z_rota
+  if plan_obj.activeInHierarchy then
+    plan_obj:SetActive(false)
+    img_z_rota = 0
+  else
+    plan_obj:SetActive(true)
+    img_z_rota = 180
+  end
+  self.v_uiobjects.PlanSelectedImg.transform:SetEuler(0, 0, img_z_rota)
+end
+
+function ui:update_layout_item(mode, tog_idx)
+  self:give_back_auto_cache(LAYOUT_ITEM_KEY)
+  self.v_layout_rect_list = {}
+  self.v_tog_list = {}
+  local tog_list = self.v_tog_list
+  local use_idx = tog_idx or 1
+  local init_btn_list = BattleSettingMgr:get_btn_layout_list()
+  for _, layout_info in pairs(init_btn_list) do
+    local idx = layout_info.idx
+    local name = layout_info.name
+    local layout_item = self:get_auto_cache(LAYOUT_ITEM_KEY)
+    local rect = self:get_rect_transform(nil, layout_item)
+    self.v_layout_rect_list[idx] = rect
+    local tog = Util.get_toggle(nil, layout_item)
+    table.insert(tog_list, tog)
+    local label = Util.get_text("Label", layout_item)
+    label.text = name
+    local change_name_obj = Util.get_child_gameobj("BtnChange", layout_item)
+    local change_name_btn = Util.get_button("BtnChange", layout_item)
+    local delete_obj = Util.get_child_gameobj("BtnDelete", layout_item)
+    local delete_btn = Util.get_button("BtnDelete", layout_item)
+    change_name_obj:SetActive(true)
+    self:set_button_listener(change_name_btn, function()
+      local change_name = self:get_panel("change_name")
+      change_name:set_enable(true, layout_info, idx)
+    end)
+    if layout_info.is_custom == Fight_Layout_Cfg.layout_custom.origin then
+      delete_obj:SetActive(false)
+      self:change_save_interactable(false)
+      self:set_toggle_listener(tog, function(is_on)
+        if is_on then
+          self:change_init_layout_index(idx)
+        end
+      end)
+    elseif layout_info.is_custom == Fight_Layout_Cfg.layout_custom.custom then
+      delete_obj:SetActive(true)
+      self:set_toggle_listener(tog, function(is_on)
+        if is_on then
+          self:change_custom_layout_index(idx)
+        end
+      end)
+      self:set_button_listener(delete_btn, function()
+        Util.show_conform_tip("是否删除该按钮布局", nil, nil, nil, function()
+          self:delete_layout(idx)
+        end)
+      end)
+    end
+    if layout_info.is_use == Fight_Layout_Cfg.layout_is_use.using then
+      use_idx = idx
+    end
+  end
+  self.v_uiobjects.AddPlan.transform:SetAsLastSibling()
+  local length = #tog_list
+  local on_tog
+  if length > 0 then
+    if mode == layout_update_mode.Add then
+      use_idx = length
+      on_tog = tog_list[length]
+    elseif mode == layout_update_mode.INDEX then
+      local tog = tog_list[tog_idx]
+      on_tog = tog
+    elseif mode == layout_update_mode.Delete then
+      local tog = tog_list[use_idx]
+      on_tog = tog
+    else
+      on_tog = tog_list[use_idx]
+    end
+  end
+  if on_tog then
+    on_tog.isOn = false
+    on_tog.isOn = true
+  end
+  self.v_uicompents.PlanSelectedText_txt.text = init_btn_list[use_idx] and init_btn_list[use_idx].name
+  self:set_use_index(use_idx)
+  self:refresh_plan_list()
+end
+
+function ui:change_init_layout(now_layout)
+  self:change_save_interactable(false)
+  self.v_panel_fight_panel:set_layout_data(now_layout)
+  self.v_uiobjects.PlanList:SetActive(false)
+end
+
+function ui:back_last_select_plan()
+  if self.v_tog_list[self.v_use_idx] then
+    self.v_tog_list[self.v_use_idx]:SetIsOnWithoutNotify(false)
+    self.v_tog_list[self.v_use_idx]:SetIsOnWithoutNotify(true)
+  end
+  self.v_uiobjects.PlanList:SetActive(false)
+end
+
+function ui:on_change_select_layout()
+  self:on_overlap_state_change(false)
+end
+
+function ui:confirm_select_init_plan(index)
+  self:on_change_select_layout()
+  self.v_use_idx = index
+  local info = BattleSettingMgr:get_btn_layout_info_by_index(index)
+  self.v_uicompents.PlanSelectedText_txt.text = info and info.name
+  self:change_save_interactable(false)
+  self:change_init_layout(info)
+  self.v_uiobjects.PlanList:SetActive(false)
+end
+
+function ui:change_init_layout_index(index)
+  if self.v_is_change then
+    Util.show_conform_tip("切换方案会导致当前方案未保存的设置丢失，是否继续切换", nil, nil, function()
+      self:back_last_select_plan()
+    end, function()
+      self:confirm_select_init_plan(index)
+    end)
+    return
+  end
+  self:confirm_select_init_plan(index)
+end
+
+function ui:init_original_layout()
+  self.v_panel_fight_panel:init_original_layout()
+end
+
+function ui:change_custom_layout(now_layout)
+  self:change_save_interactable(false)
+  local border_offset = now_layout.border_offset
+  self.v_control_content:change_custom_layout(border_offset)
+  self.v_panel_fight_panel:set_layout_data(now_layout)
+end
+
+function ui:confirm_select_custom_plan(index)
+  self:on_change_select_layout()
+  self.v_use_idx = index
+  local info = BattleSettingMgr:get_btn_layout_info_by_index(index)
+  self.v_uicompents.PlanSelectedText_txt.text = info and info.name
+  self:change_custom_layout(info)
+  self:change_save_interactable(false)
+  self.v_uiobjects.PlanList:SetActive(false)
+end
+
+function ui:change_custom_layout_index(index)
+  if self.v_is_change then
+    Util.show_conform_tip("切换方案会导致当前方案未保存的设置丢失，是否继续切换", nil, nil, function()
+      self:back_last_select_plan()
+    end, function()
+      self:confirm_select_custom_plan(index)
+    end)
+    return
+  end
+  self:confirm_select_custom_plan(index)
+end
+
+function ui:change_save_interactable(is_change)
+  self.v_is_change = is_change
+  for _, child in pairs(self.v_panels) do
+    if child.change_save_interactable then
+      child:change_save_interactable()
+    end
+  end
+end
+
+function ui:on_overlap_state_change(is_overlap)
+  self.v_is_overlap = is_overlap
+  for _, child in pairs(self.v_panels) do
+    if child.on_overlap_state_change then
+      child:on_overlap_state_change()
+    end
+  end
+end
+
+function ui:has_change()
+  return self.v_is_change
+end
+
+function ui:has_overlap(illume)
+  if illume and self.v_is_overlap then
+    self.v_panel_fight_panel:check_all_overlap(false)
+  end
+  return self.v_is_overlap
+end
+
+function ui:change_btn_sld_open(msg)
+  if nil == msg then
+    return
+  end
+  local type = msg.mm_y
+  if type == Fight_Layout_Cfg.choose_sld_type.btn_scale then
+    self.v_detail_content:change_btn_sld_open()
+  end
+end
+
+function ui:add_layout(is_add_new)
+  local custom_list = BattleSettingMgr:load_local_btn_layout_data()
+  local length = UtilTable.hash_lenth(custom_list)
+  if length >= Fight_Layout_Cfg.custom_layout_max_num then
+    Util.show_message_tip(2223)
+    return
+  end
+  self.v_panel_fight_panel:add_custom_layout_data(is_add_new)
+  self:update_layout_item(layout_update_mode.Add)
+  self:refresh_plan_list()
+end
+
+function ui:delete_layout(idx)
+  local new_index
+  if idx < self.v_use_idx then
+    new_index = self.v_use_idx - 1
+  elseif self.v_use_idx == idx then
+    new_index = 1
+  else
+    new_index = self.v_use_idx
+  end
+  self.v_panel_fight_panel:delete_custom_layout_data(idx)
+  BattleSettingMgr:save_select_layout_index(new_index)
+  self:update_layout_item(layout_update_mode.Delete, nil)
+  self:refresh_plan_list()
+end
+
+function ui:refresh_plan_list()
+  LayoutRebuilder.ForceRebuildLayoutImmediate(self.v_uicompents.PlanList_rect)
+end
+
+function ui:record_all()
+  self.v_panel_fight_panel:record_all()
+end
+
+function ui:click_btn_scale_sld(sld_value)
+  self.v_panel_fight_panel:click_btn_scale_sld(sld_value)
+end
+
+function ui:click_btn_end_drag()
+  if self.v_panel_fight_panel:get_select_state() then
+    self.v_panel_fight_panel:click_btn_scale_end_drag()
+  end
+end
+
+function ui:click_border_begin_drag()
+  self.v_panel_fight_panel:click_border_begin_drag()
+end
+
+function ui:click_border_offset_sld(sld_value)
+  self.v_offset_sld_value = sld_value
+  self:change_save_interactable(true)
+  self.v_panel_fight_panel:right_border_offset(sld_value)
+end
+
+function ui:change_btn_scale_sld(msg)
+  if nil == msg then
+    return
+  end
+  local value = msg.mm_x
+  local type = msg.mm_y
+  if type == Fight_Layout_Cfg.choose_sld_type.btn_scale then
+    self.v_detail_content:change_btn_scale_sld(value)
+  end
+end
+
+function ui:change_border_sld(msg)
+  if nil == msg then
+    return
+  end
+  local value = msg.mm_x
+  local type = msg.mm_y
+  if type == Fight_Layout_Cfg.choose_sld_type.border_offset then
+    self.v_control_content:change_custom_layout(value)
+  end
+end
+
+function ui:change_position_data(msg)
+  if nil == msg then
+    return
+  end
+  local value = msg.mm_obj
+  local type = msg.mm_y
+  if type == Fight_Layout_Cfg.choose_sld_type.position_data then
+    local x = _floor(value.x)
+    local y = _floor(value.y)
+    self.v_detail_content:change_position_data(x, y)
+  end
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_ON_SETTING_CHOOSE_UI, self.change_btn_scale_sld, self)
+  self:bind_auto_mq(Const.MSG_ON_SETTING_CHOOSE_UI, self.change_btn_sld_open, self)
+  self:bind_auto_mq(Const.MSG_ON_SETTING_CHOOSE_UI, self.change_border_sld, self)
+  self:bind_auto_mq(Const.MSG_ON_SETTING_CHOOSE_UI, self.change_position_data, self)
+  self:bind_auto_mq(Const.MSG_ON_CHANGE_LAYOUT_NAME, self.change_layout_name, self)
+  self:bind_auto_mq(Const.MSG_ON_SHOW_UI, self.response_ui_show, self)
+end
+
+function ui:regulate_location(dir, state)
+  self.v_panel_fight_panel:regulate_location(dir, state)
+end
+
+function ui:change_layout_name(msg)
+  if nil == msg or nil == msg.mm_obj or msg.mm_obj.name == "" then
+    return
+  end
+  local data = msg.mm_obj
+  local name = data.name
+  local idx = data.idx
+  local init_btn_list = BattleSettingMgr:get_btn_layout_list()
+  if nil == init_btn_list[idx] then
+    Log.Error("idx error", idx, init_btn_list)
+    return
+  end
+  local info = init_btn_list[idx]
+  info.name = name
+  BattleSettingMgr:save_select_layout_index(idx)
+  if info.is_custom == Fight_Layout_Cfg.layout_custom.origin then
+    self.v_panel_fight_panel:save_init_layout_data(info.file_name, name, info)
+  end
+  self:update_layout_item(layout_update_mode.INDEX, idx)
+end
+
+function ui:print_local_data()
+  local init_btn_list = BattleSettingMgr:get_btn_layout_list()
+  for _, data in pairs(init_btn_list) do
+    Log.Info(data)
+  end
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:click_bg()
+  self:change_operation_content("control_content")
+  self.v_uiobjects.PlanList:SetActive(false)
+  self.v_panel_fight_panel:on_click_bg()
+  self.v_detail_content:change_btn_sld_close()
+  self.v_detail_content:reset_position_data()
+end
+
+function ui:on_click_open_window_btn()
+  self.v_uiobjects.BtnOpenWin:SetActive(false)
+  self.v_uiobjects.ControlContent:SetActive(true)
+end
+
+function ui:on_click_close_window_btn()
+  if not self.v_stopped_cb then
+    function self.v_stopped_cb()
+      self.v_uiobjects.BtnOpenWin:SetActive(true)
+      
+      self.v_uiobjects.ControlContent:SetActive(false)
+    end
+    
+    self.v_uicompents.Ani_UISetting_button_Close_pd:stopped("+", self.v_stopped_cb)
+  end
+  self.v_uicompents.Ani_UISetting_button_Close_pd:ResetPD()
+  self.v_uiobjects.BtnOpenWin:SetActive(true)
+  self.v_uicompents.Ani_UISetting_button_Close_pd:Play()
+end
+
+function ui:hide_operation_content()
+  self.v_hide_operation_content = true
+  self.v_cur_show_opertion_content = nil
+  for name in pairs(self.v_child_show_state) do
+    local child = self:get_panel(name)
+    local visible = child:visible()
+    if child then
+      child:set_enable(false)
+    end
+    self.v_child_show_state[name] = visible
+  end
+  self.v_uiobjects.BtnShow:SetActive(true)
+end
+
+function ui:revert_operation_content()
+  self.v_hide_operation_content = false
+  for name, visible in pairs(self.v_child_show_state) do
+    local child = self:get_panel(name)
+    if visible and child then
+      child:set_enable(visible)
+      self.v_cur_show_opertion_content = name
+      break
+    end
+  end
+  self.v_uiobjects.BtnShow:SetActive(false)
+end
+
+function ui:change_operation_content(content_name)
+  if self.v_cur_show_opertion_content == content_name and not self.v_hide_operation_content then
+    return
+  end
+  self.v_hide_operation_content = false
+  local is_select
+  for name in pairs(self.v_child_show_state) do
+    local child = self:get_panel(name)
+    is_select = content_name == name
+    child:set_enable(is_select)
+    if is_select then
+      self.v_child_show_state[name] = is_select
+      self.v_cur_show_opertion_content = content_name
+    end
+    self:play_content_pd(name, is_select)
+  end
+  self.v_uiobjects.BtnShow:SetActive(false)
+end
+
+function ui:set_long_press(long_press)
+  self.v_is_long_press = long_press
+end
+
+function ui:get_long_press()
+  return self.v_is_long_press
+end
+
+function ui:set_use_index(index)
+  self.v_use_idx = index
+end
+
+function ui:set_plan_list_obj_parent(rect)
+  self.v_uicompents.PlanListObj_rect:SetParent(rect)
+  self.v_uicompents.PlanListObj_rect:ResetAttr()
+  self.v_uiobjects.PlanListObj:SetActive(true)
+  local width = rect:GetRectWH()
+  self.v_uicompents.PlanListObj_rect:SetSizeDeltaWidthA(width)
+  self.v_uicompents.PlanList_rect:SetSizeDeltaWidthA(width)
+  for key, layout_rect in pairs(self.v_layout_rect_list) do
+    layout_rect:SetSizeDeltaWidthA(width)
+  end
+end
+
+function ui:play_content_pd(content_name, open)
+  if not CONTROL_CONTENT_PD[content_name] then
+    return
+  end
+  for key, pd_name in pairs(CONTROL_CONTENT_PD[content_name]) do
+    self.v_uicompents[pd_name]:ResetPD()
+    if open == key then
+      self.v_uicompents[pd_name]:Play()
+    end
+  end
+end
+
+return ui

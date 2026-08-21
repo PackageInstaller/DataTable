@@ -1,0 +1,386 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local Math = require("base.mathx")
+local AwardItemKey = "MATERIAL_START_TIPS_AWARD_PREVIEW_ITEM_KEY"
+local ITEM_OBJ_COM = require("uimodule.item.item_obj_com")
+local Item_Helper = require("utils.item_helper")
+local one_vit_to_exp = 0
+local rate_lock_tips = ""
+local NODE_TAG_NAME = {
+  [-1] = "Tag_",
+  [0] = "Tag0_",
+  [1] = "Tag1_",
+  [2] = "Tag2_",
+  [3] = "Tag3_",
+  [4] = "Tag4_"
+}
+local VIEW_TYPE = {NORMAL = 1, SWEEP = 2}
+local FIGHT_TEXT = {
+  "开始战斗",
+  "扫荡"
+}
+local multi_tog_white = Util.get_unity_color_by_hex(tonumber("f5ede2", 16))
+local multi_tog_grey = Util.get_unity_color_by_hex(tonumber("484243", 16))
+local TOGGLE_TYPE_UIFORCERECHARG = {
+  ITEM = 1,
+  DIAMOND = 2,
+  WAREHOUSE_EXCHANGE = 3
+}
+
+function ui:ui_finish_load()
+  self:set_button("CloseBtn", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnFullClose", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnSetTimeLock", function()
+    Util.show_message_tip(rate_lock_tips)
+  end)
+  self:set_button("BtnAdd", function()
+    local num = ChapterMaterialMgr:get_curr_multiple_num()
+    num = self:clamp_num(num + 1)
+    ChapterMaterialMgr:set_curr_multiple_num(num)
+    self:refresh()
+  end)
+  self:set_button("BtnReduce", function()
+    local num = ChapterMaterialMgr:get_curr_multiple_num()
+    num = self:clamp_num(num - 1)
+    ChapterMaterialMgr:set_curr_multiple_num(num)
+    self:refresh()
+  end)
+  self:set_button("BtnStart", function()
+    if not self.v_is_enough_energe then
+      local default_select
+      if self:check_open_vit_storage() and self:check_no_vit_item() then
+        default_select = TOGGLE_TYPE_UIFORCERECHARG.WAREHOUSE_EXCHANGE
+      end
+      UIMgr:get_ui("uiforcerecharg"):ui_show(default_select, self.v_need_sp_count)
+      UIMgr:get_ui("uimessagetip"):ui_show(Util.format_str("明度不足"))
+      return
+    end
+    if self.v_view_type == VIEW_TYPE.NORMAL then
+      self.v_parent_ui:click_fight_btn()
+    elseif self.v_view_type == VIEW_TYPE.SWEEP then
+      local episode_id = self.v_chapter_cfg.EpisodeId
+      local drop_id
+      if self.v_chapter_cfg.SelectDropID then
+        local select_drop_cfg = ShareRes.create("chapter.chapter_material_select_drop_id", self.v_chapter_cfg.SelectDropID)
+        drop_id = select_drop_cfg.DropID[ChapterMaterialMgr:get_cur_drop_select_index()]
+      else
+        drop_id = self.v_chapter_cfg.DropID
+      end
+      local multi = ChapterMaterialMgr:get_curr_multiple_num()
+      ChapterMaterialMgr:material_episode_sweep(episode_id, drop_id, multi, function(resp)
+        self.v_parent_ui:do_hide(true)
+        UIMgr:get_ui("not_progress_battle_suc_settle"):ui_show(nil, nil, nil, nil, {
+          chapter_id = self.v_chapter_cfg.Id,
+          episode_id = episode_id,
+          hero_list = resp.battle_buddy_data,
+          award_list = resp.award_list
+        })
+      end)
+    end
+    self:ui_hide()
+  end)
+  one_vit_to_exp = ShareRes.get_comm_value("OneVitToExp")
+  self.v_input_field = Util.get_inputfield(nil, self.v_uiobjects.SetTimeInput)
+  self:set_inputfield_listener(self.v_input_field, nil, function()
+    local num = tonumber(self.v_input_field.text)
+    if not num then
+      return
+    end
+    num = self:clamp_num(num)
+    ChapterMaterialMgr:set_curr_multiple_num(num)
+    self:refresh()
+  end)
+  self.v_item_list = {}
+  self.v_parent_ui = UIMgr:try_get_ui("material_stage_info")
+  self:register_exist_auto_template(AwardItemKey, self.v_uiobjects.ItemObjCom1, self.v_uiobjects.Content)
+  self.v_tog_multi_obj = self.v_uiobjects.Muti
+  self.v_tog_multi_tog = self.v_uicompents.Muti_tog
+end
+
+function ui:ui_on_show(type, chapter_cfg)
+  self.v_chapter_cfg = chapter_cfg
+  self.v_view_type = type
+  ChapterMaterialMgr:set_curr_multiple_num(1)
+  self:refresh()
+  self:bind_auto_mq(Const.MSG_ON_PLAYER_SP_UPDATE, self.refresh, self)
+end
+
+function ui:ui_on_update()
+  self.v_update_interval_for_multi = self.v_update_interval_for_multi or Global.real_time
+  if Global.real_time - self.v_update_interval_for_multi > 1 then
+    self.v_update_interval_for_multi = Global.real_time
+    local is_start, activity_id = NoviceMgr:is_double_challenge_start(Config.CommonDefine.DOUBLE_TYPE.MATERIAL)
+    if is_start ~= self.v_is_start then
+      self:show_award()
+    end
+  end
+end
+
+function ui:ui_on_hide()
+  self:clear_award_item()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:show_award()
+  local is_start, activity_id = NoviceMgr:is_double_challenge_start(Config.CommonDefine.DOUBLE_TYPE.MATERIAL)
+  local remaining_count, multiplier
+  self.v_is_start = is_start
+  self.v_uiobjects.Muti:SetActive(is_start)
+  if is_start then
+    local cfg = ShareRes.get_double_challenge_cfg(activity_id)
+    local use_count = NoviceMgr:get_double_challenge_count(activity_id)
+    multiplier = cfg.Double
+    remaining_count = cfg.Limit - use_count
+    self.v_uicompents.MutiTimes_txt.text = multiplier .. "倍"
+    self.v_uicompents.LessNum_txt.text = remaining_count
+    self.v_uicompents.MaxNum_txt.text = cfg.Limit
+  end
+  local total_award_list = {}
+  local exp_cfg = ShareRes.get_item_cfg(ChapterMaterialMgr.exp_item_id)
+  local fight_cost = ChapterMaterialMgr:get_fight_cost(self.v_chapter_cfg.EpisodeId)
+  local count = fight_cost * ChapterMaterialMgr:get_curr_multiple_num() * one_vit_to_exp
+  local exp_data = {
+    reward_type = ChapterMaterialMgr.exp,
+    reward = {
+      id = exp_cfg.Id,
+      count = count
+    },
+    id = exp_cfg.Id
+  }
+  table.insert(total_award_list, exp_data)
+  if UIMgr:get_ui("material_stage"):get_select_drop_state() then
+    local select_drop_id = self.v_chapter_cfg.SelectDropID
+    local select_drop_cfg = ShareRes.create("chapter.chapter_material_select_drop_id", select_drop_id)
+    local _, select_index, _ = UIMgr:get_ui("material_stage"):get_select_drop_param()
+    local award_list = ShareRes.get_awards(select_drop_cfg.AwardShowID[select_index])
+    for i, v in pairs(award_list) do
+      local data = {}
+      data.reward_type = ChapterMaterialMgr.other
+      local count = v.Num * ChapterMaterialMgr:get_curr_multiple_num()
+      local limit = (v.Limit or v.Num) * ChapterMaterialMgr:get_curr_multiple_num()
+      if self.v_use_multi_tog then
+        count = is_start and count + math.min(ChapterMaterialMgr:get_curr_multiple_num(), remaining_count) * v.Num * (multiplier - 1) or count
+        limit = is_start and limit + math.min(ChapterMaterialMgr:get_curr_multiple_num(), remaining_count) * (v.Limit or v.Num) * (multiplier - 1) or limit
+      end
+      data.reward = {
+        id = v.ItemId,
+        count = count,
+        limit = limit
+      }
+      data.id = v.ItemId
+      table.insert(total_award_list, data)
+    end
+  else
+    local other_list = ShareRes.get_awards(self.v_chapter_cfg.AwardShowID)
+    for i, v in pairs(other_list) do
+      local data = {}
+      data.reward_type = ChapterMaterialMgr.other
+      local count = v.Num * ChapterMaterialMgr:get_curr_multiple_num()
+      local limit = (v.Limit or v.Num) * ChapterMaterialMgr:get_curr_multiple_num()
+      if self.v_use_multi_tog then
+        count = is_start and count + math.min(ChapterMaterialMgr:get_curr_multiple_num(), remaining_count) * v.Num * (multiplier - 1) or count
+        limit = is_start and limit + math.min(ChapterMaterialMgr:get_curr_multiple_num(), remaining_count) * (v.Limit or v.Num) * (multiplier - 1) or limit
+      end
+      data.reward = {
+        id = v.ItemId,
+        count = count,
+        limit = limit
+      }
+      data.id = v.ItemId
+      table.insert(total_award_list, data)
+    end
+  end
+  if #total_award_list > 0 then
+    for _, data in ipairs(total_award_list) do
+      data.priority = Item_Helper.get_item_cfg(data.reward.id).Priority or 0
+    end
+    table.sort(total_award_list, function(a, b)
+      if a.reward_type ~= b.reward_type then
+        return a.reward_type < b.reward_type
+      end
+      return a.priority < b.priority
+    end)
+  end
+  self:clear_award_item()
+  local complete
+  for index, data in ipairs(total_award_list) do
+    complete = data.reward_type == ChapterMaterialMgr.first_pass_received
+    self:set_award_item(data, complete)
+  end
+end
+
+function ui:refresh()
+  local epi_cfg = ShareRes.create("chapter.chapter_point", self.v_chapter_cfg.EpisodeId)
+  self.v_uicompents.StageName_txt.text = epi_cfg.PointName
+  self.v_uicompents.BtnStartText_txt.text = FIGHT_TEXT[self.v_view_type]
+  self.v_is_enough_energe = self:check_vit_is_enough()
+  local line = Util.get_text("Text", self.v_uiobjects.StartEnergy)
+  if self.v_is_enough_energe then
+    Util.set_color(self.v_uicompents.StartEnergy_txt, "FFFFFF", 1)
+    Util.set_color(line, "FFFFFF", 1)
+  else
+    Util.set_color(self.v_uicompents.StartEnergy_txt, "FF0000", 1)
+    Util.set_color(line, "FF0000", 1)
+  end
+  if self.v_view_type == VIEW_TYPE.NORMAL then
+    local condition = self.v_chapter_cfg.RateOpenCondition
+    if not Condition:check_condition(condition) then
+      self.v_uiobjects.BtnSetTimeLock:SetActive(true)
+      rate_lock_tips = ShareRes.create("condition.condition", condition).Desc
+      self.v_uicompents.SetTimeCondition_txt.text = rate_lock_tips
+    else
+      self.v_uiobjects.BtnSetTimeLock:SetActive(false)
+    end
+  elseif self.v_view_type == VIEW_TYPE.SWEEP then
+    self.v_uiobjects.BtnSetTimeLock:SetActive(false)
+  end
+  self.v_input_field.text = ChapterMaterialMgr:get_curr_multiple_num()
+  self:show_award()
+  self:set_multi_use_tog()
+  self:set_needed_info()
+  local fight_cost = ChapterMaterialMgr:get_fight_cost(self.v_chapter_cfg.EpisodeId) * ChapterMaterialMgr:get_curr_multiple_num()
+  self.v_uicompents.StartEnergy_txt.text = tostring(fight_cost)
+end
+
+function ui:clamp_num(num)
+  return Math.Clamp(num, 1, ShareRes.get_comm_value("ChallengMultiple"))
+end
+
+function ui:clear_award_item()
+  self:give_back_auto_cache(AwardItemKey)
+  for key, item in pairs(self.v_item_list) do
+    item:ui_hide()
+    item:ui_destroy()
+    self.v_item_list[key] = nil
+  end
+end
+
+function ui:set_award_item(data, complete)
+  function data.reward.cb()
+    UIMgr:get_ui("itemTip"):ui_show({
+      item_id = data.reward.id,
+      
+      is_hide_get_way = true
+    })
+  end
+  
+  local obj = self:get_auto_cache(AwardItemKey)
+  local item = ITEM_OBJ_COM:ui_wrap(self, obj)
+  item:set_data(data.reward)
+  local tag_obj
+  for key, value in pairs(NODE_TAG_NAME) do
+    tag_obj = self:get_child_gameobj(value, obj)
+    if tag_obj then
+      if data.type and key == data.type then
+        tag_obj.gameObject:SetActive(true)
+        if -1 == data.type then
+          self:get_text("TagName_", tag_obj).text = Util.format_str("首通")
+        end
+      else
+        tag_obj.gameObject:SetActive(false)
+      end
+    end
+  end
+  local cmp_obj = self:get_child_gameobj("Complete_", obj)
+  cmp_obj.gameObject:SetActive(complete)
+  local tag_cmp_obj = self:get_child_gameobj("TagComplete_", obj)
+  tag_cmp_obj.gameObject:SetActive(complete)
+  table.insert(self.v_item_list, item)
+end
+
+function ui:check_vit_is_enough()
+  local sp_count = BagMgr:get_item_num(Config.PLAYER_SP_ITEMID)
+  local need_sp_count = ChapterMaterialMgr:get_fight_cost(self.v_chapter_cfg.EpisodeId) * ChapterMaterialMgr:get_curr_multiple_num()
+  self.v_need_sp_count = need_sp_count - sp_count
+  return sp_count >= need_sp_count
+end
+
+function ui:check_no_vit_item()
+  local res = true
+  local item_type_config = ShareRes.create("item.item_subtype").stamina_item
+  local type_id = item_type_config.TypeId
+  local sub_type_id = item_type_config.SubtypeId
+  local list_vit = BagMgr:get_item_list_by_type(type_id, sub_type_id, 2)
+  for _, item_info in ipairs(list_vit) do
+    local item_id = item_info.id
+    local item_count = item_info.count
+    if item_count > 0 then
+      res = false
+    end
+  end
+  return res
+end
+
+function ui:check_open_vit_storage()
+  return BuildingMgr:get_building_level(Config.CommonDefine.BUILDING_TYPE.STAMINA) > 0
+end
+
+function ui:set_multi_use_tog()
+  if not self.v_is_start then
+    return
+  end
+  self:set_toggle_listener(self.v_tog_multi_tog, function(is_on)
+    self:set_text_color(is_on)
+  end)
+  local chapter_id = self.v_chapter_cfg.Id
+  local cfg = ShareRes.get_material_epi_cfg(chapter_id)
+  local save_select = ChapterMaterialMgr:get_multi_use_tog(chapter_id)
+  if nil == save_select then
+    save_select = 1 == cfg.MultiSelect
+  end
+  ChapterMaterialMgr:set_ingore_multiple_num(not save_select)
+  self.v_use_multi_tog = save_select
+  self.v_tog_multi_tog.isOn = save_select
+  self:show_award()
+  self:set_toggle_listener(self.v_tog_multi_tog, function(is_on)
+    if self.v_is_start then
+      self.v_use_multi_tog = is_on
+      ChapterMaterialMgr:set_multi_use_tog(chapter_id, self.v_use_multi_tog)
+      ChapterMaterialMgr:set_ingore_multiple_num(not self.v_use_multi_tog)
+      self:show_award()
+      MsgGame:mq_publish2(Const.ON_MATERIAL_MUTI_TOG)
+    end
+    self:set_text_color(is_on)
+  end)
+end
+
+function ui:set_text_color(is_on)
+  if is_on then
+    self.v_uicompents.MutiTimes_txt.color = multi_tog_white
+    self.v_uicompents.MutiText_txt.color = multi_tog_white
+    self.v_uicompents.LessNum_txt.color = multi_tog_white
+    self.v_uicompents.MutiSep_txt.color = multi_tog_white
+    self.v_uicompents.MaxNum_txt.color = multi_tog_white
+  else
+    self.v_uicompents.MutiTimes_txt.color = multi_tog_grey
+    self.v_uicompents.MutiText_txt.color = multi_tog_grey
+    self.v_uicompents.LessNum_txt.color = multi_tog_grey
+    self.v_uicompents.MutiSep_txt.color = multi_tog_grey
+    self.v_uicompents.MaxNum_txt.color = multi_tog_grey
+  end
+end
+
+function ui:set_needed_info()
+  local lack_id, lack_count = ChapterMaterialMgr:try_get_lack_item()
+  local show_lack_info = nil ~= lack_id and 0 ~= lack_count
+  self.v_uiobjects.MustImage:SetActiveEx(show_lack_info)
+  if not show_lack_info then
+    return
+  end
+  local own_count = BagMgr:get_item_num(lack_id)
+  local synthesis_count = BagMgr:cal_can_synthesis_count(lack_id)
+  local total = own_count + synthesis_count
+  self.v_uiobjects.SynthesisTips:SetActive(synthesis_count > 0 and lack_count <= total)
+  self.v_uicompents.ItemName_txt.text = ShareRes.get_item_name(lack_id)
+  self.v_uicompents.MustNum_txt.text = lack_count
+  self.v_uicompents.CurrentNum_txt.text = total
+  self.v_uicompents.CurrentNum_txt.color = lack_count <= total and Util.CommonColor_White or Util.CommonColor_RedWarm
+end
+
+return ui

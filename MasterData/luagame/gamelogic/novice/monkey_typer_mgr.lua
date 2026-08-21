@@ -1,0 +1,299 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+local QUESTION_STATU = Config.CommonDefine.MONKEY_TYPEWRITER_QUESTION_STATE
+local UPGRADE_TYPE = Config.CommonDefine.MONKEY_TYPEWRITER_UPGRADE_TYPE
+
+function M:init_sys()
+  Base.init_sys(self)
+  self:reset_data()
+end
+
+function M:on_reconnect()
+  self:reset_data()
+end
+
+function M:reset_data()
+  self.v_upgrade_infos = {}
+  self.v_question_states = {}
+  self.v_font_count_record = {}
+  self.v_counted_unit_times = {}
+  self.v_question_cfg_list = {}
+end
+
+function M:gs2c_monkey_typewriter_info(data)
+  local activity_id = data.activity_id
+  if activity_id then
+    self.v_activity_id = activity_id
+  end
+  if not self.v_upgrade_infos[activity_id] then
+    self.v_upgrade_infos[activity_id] = {}
+  end
+  if data.upgrade_infos then
+    for _, v in pairs(data.upgrade_infos) do
+      self.v_upgrade_infos[activity_id][v.type] = v.level
+    end
+  end
+  if not self.v_question_states[activity_id] then
+    self.v_question_states[activity_id] = {}
+  end
+  if data.question_states then
+    for _, v in pairs(data.question_states) do
+      self.v_question_states[activity_id][v.question_id] = v
+      if v.state ~= QUESTION_STATU.PARSING then
+        self.v_font_count_record[activity_id] = 0
+        self.v_counted_unit_times[activity_id] = 0
+      end
+    end
+  end
+  self:refresh_overheat_red()
+  MsgGame:mq_publish2(Const.MSG_ON_MONKEY_TYPER_QUESTION_UPDATE)
+end
+
+function M:req_upgrade(activity_id, upgrade_type, cb)
+  Network:call("c2gs_monkey_typewriter_upgrade", {activity_id = activity_id, upgrade_type = upgrade_type}, function(ok, resp)
+    if ok then
+      local level = resp.level
+      if upgrade_type == UPGRADE_TYPE.TYPE_WRITER_HOT and self:is_overheat(activity_id) then
+        local new_max = self:get_max_count_times_by_lv(activity_id, level)
+        self.v_counted_unit_times[activity_id] = new_max
+        self:refresh_overheat_red()
+      end
+      self.v_upgrade_infos[activity_id][upgrade_type] = level
+      MsgGame:mq_publish2(Const.MSG_ON_MONKEY_TYPER_SIMPLE_DATA_UPDATE)
+    end
+    if cb then
+      cb(ok)
+    end
+  end)
+end
+
+function M:req_start_question(activity_id, question_id, cb)
+  Network:call("c2gs_monkey_typewriter_parse_question", {activity_id = activity_id, question_id = question_id}, function(ok, resp)
+    if ok then
+      self.v_font_count_record[activity_id] = 0
+      self.v_counted_unit_times[activity_id] = 0
+      self:refresh_overheat_red()
+    end
+    if cb then
+      cb()
+    end
+  end)
+end
+
+function M:req_refresh_question(activity_id)
+  local question_id, question_state = self:get_last_question_data(activity_id)
+  if question_state ~= QUESTION_STATU.PARSING then
+    return
+  end
+  Network:call("c2gs_monkey_typewriter_next_collect_notice", {activity_id = activity_id, question_id = question_id}, function(ok, resp)
+    if ok then
+      self.v_font_count_record[activity_id] = resp.font_count
+      self.v_counted_unit_times[activity_id] = resp.hot_count
+      MsgGame:mq_publish2(Const.MSG_ON_MONKEY_TYPER_SIMPLE_DATA_UPDATE)
+      self:refresh_overheat_red()
+    end
+  end)
+end
+
+function M:gs2c_monkey_typewriter_font_count_notice(data)
+  local activity_id = data.activity_id
+  if activity_id then
+    self.v_activity_id = activity_id
+  end
+  self.v_font_count_record[activity_id] = data.font_count
+  self.v_counted_unit_times[activity_id] = data.hot_count
+  MsgGame:mq_publish2(Const.MSG_ON_MONKEY_TYPER_DATA_UPDATE)
+  self:refresh_overheat_red()
+end
+
+function M:req_reset_overheat_typer(activity_id)
+  Network:call("c2gs_monkey_typewriter_click_typewriter", {activity_id = activity_id}, function(ok, resp)
+    if ok then
+      self.v_counted_unit_times[activity_id] = 0
+      MsgGame:mq_publish2(Const.MSG_ON_MONKEY_TYPER_SIMPLE_DATA_UPDATE)
+      self:refresh_overheat_red()
+    end
+  end)
+end
+
+function M:req_click_typer(activity_id, cb)
+  Network:call("c2gs_monkey_typewriter_add_font", {activity_id = activity_id}, function(ok, resp)
+    if ok then
+      self.v_font_count_record[activity_id] = resp.font_count
+      MsgGame:mq_publish2(Const.MSG_ON_MONKEY_TYPER_SIMPLE_DATA_UPDATE)
+    end
+    if cb then
+      cb(ok)
+    end
+  end)
+end
+
+function M:req_finish_question(activity_id, question_id, cb)
+  if self.v_question_states[activity_id] and self.v_question_states[activity_id][question_id] and self.v_question_states[activity_id][question_id].state ~= QUESTION_STATU.COMPLETE then
+    if cb then
+      cb()
+    end
+    return
+  end
+  Network:call("c2gs_monkey_typewriter_get_question_award", {activity_id = activity_id, question_id = question_id}, function(ok, resp)
+    if ok and cb then
+      cb()
+    end
+  end)
+end
+
+function M:get_level_by_type(activity_id, type)
+  if self.v_upgrade_infos and self.v_upgrade_infos[activity_id] and self.v_upgrade_infos[activity_id][type] then
+    return self.v_upgrade_infos[activity_id][type]
+  end
+  return 1
+end
+
+function M:get_upgrade_value_by_type(activity_id, type)
+  local lv = self:get_level_by_type(activity_id, type)
+  local cfg_list = ShareRes.get_monkey_typer_upgrade_cfg(activity_id, type)
+  lv = lv > #cfg_list and #cfg_list or lv
+  return cfg_list[lv].Value, cfg_list[lv].CustomParam
+end
+
+function M:get_over_heat_progress(activity_id)
+  local counted_unit_times = self:get_counted_unit_times(activity_id)
+  local max_count_times = self:get_upgrade_value_by_type(activity_id, UPGRADE_TYPE.TYPE_WRITER_HOT)
+  return counted_unit_times, max_count_times
+end
+
+function M:get_question_state(activity_id, question_id)
+  local question_states = self.v_question_states[activity_id]
+  if not question_states then
+    return
+  end
+  if not question_states[question_id] then
+    return
+  end
+  return question_states[question_id].state
+end
+
+function M:get_last_question_data(activity_id)
+  local question_states = self.v_question_states[activity_id]
+  if not question_states then
+    return
+  end
+  local question_cfg_list = self:get_question_cfg_list(activity_id)
+  local last_question = question_cfg_list[1].QuestionId
+  for _, cfg in ipairs(question_cfg_list) do
+    local id = cfg.QuestionId
+    if question_states[id] then
+      last_question = id
+    end
+  end
+  local last_question_data = question_states[last_question]
+  if last_question_data then
+    return last_question_data.question_id, last_question_data.state
+  end
+end
+
+function M:get_font_count(activity_id)
+  return self.v_font_count_record and self.v_font_count_record[activity_id] or 0
+end
+
+function M:update_font_count(activity_id, count)
+  self.v_font_count_record[activity_id] = count
+end
+
+function M:get_counted_unit_times(activity_id)
+  return self.v_counted_unit_times[activity_id] or 0
+end
+
+function M:update_counted_unit_times(activity_id, times)
+  self.v_counted_unit_times[activity_id] = times
+end
+
+function M:is_overheat(activity_id)
+  if not (self.v_upgrade_infos and self.v_upgrade_infos[activity_id]) or not self.v_upgrade_infos[activity_id][UPGRADE_TYPE.TYPE_WRITER_HOT] then
+    return false
+  end
+  local max_count_unit_times = self:get_upgrade_value_by_type(activity_id, UPGRADE_TYPE.TYPE_WRITER_HOT)
+  local counted_unit_times = self:get_counted_unit_times(activity_id)
+  return max_count_unit_times <= counted_unit_times
+end
+
+function M:get_max_count_times_by_lv(activity_id, lv)
+  local cfg_list = ShareRes.get_monkey_typer_upgrade_cfg(activity_id, UPGRADE_TYPE.TYPE_WRITER_HOT)
+  lv = lv > #cfg_list and #cfg_list or lv
+  return cfg_list[lv].Value
+end
+
+function M:get_first_question_cfg(activity_id)
+  local cfgs = ShareRes.create("activity.monkey_typewriter_question")[activity_id]
+  if not cfgs then
+    Log.Error("猴子打字机 问题表无对应配置，活动id：", activity_id)
+    return
+  end
+  for _, cfg in ipairs(cfgs) do
+    if cfg.PreQuestionId == nil then
+      return cfg
+    end
+  end
+end
+
+function M:get_new_question_cfg(activity_id)
+  local cfgs = ShareRes.create("activity.monkey_typewriter_question")[activity_id]
+  if not cfgs then
+    Log.Error("猴子打字机 问题表无对应配置，活动id：", activity_id)
+    return
+  end
+  for _, cfg in ipairs(cfgs) do
+    if cfg.PreQuestionId == nil then
+      return cfg
+    end
+  end
+end
+
+function M:get_question_cfg_list(activity_id)
+  if self.v_question_cfg_list[activity_id] then
+    return self.v_question_cfg_list[activity_id]
+  end
+  local cfgs = ShareRes.create("activity.monkey_typewriter_question")[activity_id]
+  if not cfgs then
+    Log.Error("猴子打字机 问题表无对应配置，活动id：", activity_id)
+    return
+  end
+  local pre_question
+  local pre_id_to_question = {}
+  for _, cfg in ipairs(cfgs) do
+    if not pre_question and cfg.PreQuestionId == nil then
+      pre_question = cfg
+    end
+    if cfg.PreQuestionId then
+      pre_id_to_question[cfg.PreQuestionId] = cfg
+    end
+  end
+  if not pre_question then
+    Log.Error("猴子打字机 问题表无初始问题，活动id：", activity_id)
+    return
+  end
+  local pre_id = pre_question.QuestionId
+  local question_cfg_list = {pre_question}
+  while pre_id_to_question[pre_id] do
+    pre_question = pre_id_to_question[pre_id]
+    question_cfg_list[#question_cfg_list + 1] = pre_question
+    pre_id = pre_question.QuestionId
+    if #question_cfg_list > #cfgs then
+      break
+    end
+  end
+  self.v_question_cfg_list[activity_id] = question_cfg_list
+  return question_cfg_list
+end
+
+function M:refresh_overheat_red()
+  local activity_id = self.v_activity_id
+  local red = false
+  local is_active = NoviceMgr:get_novice_activity_active(activity_id)
+  if is_active then
+    red = self:is_overheat(activity_id)
+  end
+  RedPointMgr:enable_redpoint(RedEnum.MONKEY_TYPER_OVERHEAT, red)
+end
+
+return M

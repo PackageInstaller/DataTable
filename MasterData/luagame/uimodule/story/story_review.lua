@@ -1,0 +1,118 @@
+local Base = require("ui.uiobject")
+local Vec2 = require("base.vec2")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_content = {
+    "ReviewContent",
+    BIND_TYPE.OBJECT
+  },
+  v_temple = {
+    "DialogueTem",
+    BIND_TYPE.OBJECT
+  }
+}
+local _floor = math.floor
+local _ceil = math.ceil
+local SINGLE_TEXT_WIDTH = 30
+local SINGLE_TEXT_HIGHT = 43
+local BASE_OFFSETX = -15
+local BASE_OFFSETY = 6
+local STORY_TALK_ITEM_KEY = "STORY_TALK_ITEM_KEY"
+local LayoutRebuilder = UnityEngine.UI.LayoutRebuilder
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("ReviewBackBtn", function()
+    self:click_back_btn()
+  end)
+  self:register_exist_auto_template(STORY_TALK_ITEM_KEY, self.v_temple, self.v_content)
+end
+
+function ui:click_back_btn()
+  self:set_enable(false)
+end
+
+function ui:ui_on_show(hide_cb)
+  self.v_hide_cb = hide_cb
+  self.v_talk_list = self.v_parent_ui:get_cache_talk_data()
+  Log.Info(self.v_talk_list)
+  self:init_talk_list()
+end
+
+function ui:ui_on_hide()
+  if self.v_hide_cb and type(self.v_hide_cb) == "function" then
+    self.v_hide_cb()
+  end
+  self.v_hide_cb = nil
+end
+
+function ui:init_talk_list()
+  self:give_back_auto_cache(STORY_TALK_ITEM_KEY)
+  for index, data in ipairs(self.v_talk_list) do
+    local item = self:get_auto_cache(STORY_TALK_ITEM_KEY)
+    local is_branch = data.is_branch
+    local sound_name = data.sound
+    local branch_bg = Util.get_child_gameobj("DiaCharName/PlayerTalk", item)
+    local sound_play_btn = Util.get_button("DiaCharName/Voice", item)
+    branch_bg:SetActive(is_branch)
+    sound_play_btn.gameObject:SetActive(nil ~= sound_name and "" ~= sound_name)
+    self:set_button_listener(sound_play_btn, function()
+      if Global.sound_mgr then
+        Global.sound_mgr:voice_stop()
+        Global.sound_mgr:play_sound_by_id(sound_name)
+      end
+    end)
+    local is_end = index == #self.v_talk_list
+    if not is_branch then
+      self:update_talk_view(data, item, is_end)
+    else
+      self:update_branch_view(data, item)
+    end
+    local talk_title_obj = Util.get_child_gameobj("DiaCharName/TalkTitle", item)
+    talk_title_obj:SetActive(is_end)
+  end
+  local scroll = Util.get_scrollrect(nil, self.v_uiobjects.ScrollContent)
+  scroll.verticalNormalizedPosition = 0
+end
+
+function ui:update_talk_view(data, item, is_end)
+  local talk_txt = Util.get_text("DiaContent", item)
+  local desc = self.v_parent_ui:replace_talk_content(data.desc)
+  talk_txt.text = desc
+  if data.txt_alignment then
+    talk_txt.alignment = data.txt_alignment
+  end
+  local color = is_end and "fff0d5" or "ffffff"
+  talk_txt.color = Util.get_unity_color_by_hex(tonumber(color, 16))
+  local name_txt = Util.get_text("DiaCharName", item)
+  name_txt.text = data.name
+  local note_obj = Util.get_child_gameobj("Note", talk_txt.gameObject)
+  if data.UseNoteText then
+    local set_pos = data.NoteTextPos
+    local txt_rect = Util.get_rect_transform(nil, talk_txt.gameObject)
+    local note_rect = Util.get_rect_transform(nil, note_obj)
+    local note_txt = Util.get_text(nil, note_obj)
+    local width = txt_rect.rect.size.x
+    local set_num = set_pos
+    local txt_num = _floor(width / SINGLE_TEXT_WIDTH)
+    local txt_row = _floor(set_num / txt_num)
+    note_rect.anchoredPosition = Vec2.New(SINGLE_TEXT_WIDTH * (set_num - txt_row * txt_num) + BASE_OFFSETX, -(txt_row * SINGLE_TEXT_HIGHT) + BASE_OFFSETY)
+    note_obj:SetActive(true)
+    note_txt.text = LanguageMgr:get_story_text(data.NoteText)
+  else
+    note_obj:SetActive(false)
+  end
+end
+
+function ui:update_branch_view(data, item)
+  local talk_txt = Util.get_text("DiaContent", item)
+  talk_txt.text = data.desc
+  talk_txt.color = Util.get_unity_color_by_hex(tonumber("dd7a39", 16))
+  local name_txt = Util.get_text("DiaCharName", item)
+  name_txt.text = ""
+  local note_obj = Util.get_child_gameobj("Note", talk_txt.gameObject)
+  note_obj:SetActive(false)
+end
+
+return ui

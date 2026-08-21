@@ -1,0 +1,237 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local commonDef = require("cs_share.common_define")
+local CHALLENGE_RING_DIFFCULTY_ITEM = "CHALLENGE_RING_DIFFCULTY_ITEM"
+local event_system = UnityEngine.EventSystems
+local event_trigger = event_system.EventTrigger
+local event_entry = event_trigger.Entry
+local space_offset = 68
+local STAGE_STATE = {LOCK = 1, UNLOCK = 2}
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_difficulty_content = {
+    "ChalRingDifficultyContent",
+    BIND_TYPE.OBJECT
+  },
+  v_difficulty_tem = {
+    "ChalRingDifficultyTem",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:init_drag_data()
+  self:set_button("BtnReturn", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnLast", function()
+    self:on_click_last_or_next(false)
+  end)
+  self:set_button("BtnNext", function()
+    self:on_click_last_or_next(true)
+  end)
+  self:register_exist_auto_template(CHALLENGE_RING_DIFFCULTY_ITEM, self.v_difficulty_tem, self.v_difficulty_content)
+end
+
+function ui:ui_on_show(index)
+  self:refresh_stage()
+  self:reset_pos_and_select_state(index)
+  self:refresh_drag_content()
+end
+
+function ui:ui_on_hide()
+  self:clear_drag()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:on_click_last_or_next(is_click_next)
+  local xoffset
+  local temp_x = self.v_content_rect_trans.anchoredPosition.x
+  local temp_y = self.v_content_rect_trans.anchoredPosition.y
+  xoffset = is_click_next and -1 * self.v_every_cell_offset or self.v_every_cell_offset
+  local finally_x = temp_x + xoffset
+  if finally_x >= 0 then
+    finally_x = 0
+  elseif finally_x <= -1 * (#self.v_items - 1) * self.v_every_cell_offset then
+    finally_x = -1 * (#self.v_items - 1) * self.v_every_cell_offset
+  end
+  self.v_content_rect_trans:SetAnchoredPositionA(finally_x, temp_y)
+  self:set_all_item_select_state()
+end
+
+function ui:reset_pos_and_select_state(index)
+  self.v_content_rect_trans:SetAnchoredPositionA(-1 * self.v_index2posx[index], self.v_content_start_y)
+  self:set_all_item_select_state()
+end
+
+function ui:init_drag_data()
+  self.v_items = {}
+  self.v_pos2item = {}
+  self.v_index2posx = {}
+  self.v_content_rect_trans = Util.get_rect_transform(nil, self.v_difficulty_content)
+  self.v_content_start_x = self.v_content_rect_trans.anchoredPosition.x
+  self.v_content_start_y = self.v_content_rect_trans.anchoredPosition.y
+  self.v_cell_rect_trans = Util.get_rect_transform(nil, self.v_difficulty_tem)
+  self.v_cell_start_pos_x = self.v_cell_rect_trans.anchoredPosition.x
+  self.v_cell_start_pos_y = self.v_cell_rect_trans.anchoredPosition.y
+  self.v_cell_size_x = self.v_cell_rect_trans.sizeDelta.x
+  self.v_cell_size_y = self.v_cell_rect_trans.sizeDelta.y
+  self.v_every_cell_offset = self.v_cell_size_x + space_offset
+end
+
+function ui:refresh_stage()
+  self:give_back_auto_cache(CHALLENGE_RING_DIFFCULTY_ITEM, false)
+  local main_cfg = ChallengeRingPlusMgr:get_main_cfg()
+  for index, episode_id in ipairs(main_cfg.EpisodeIds) do
+    local obj = self:get_auto_cache(CHALLENGE_RING_DIFFCULTY_ITEM)
+    local obj_trans = obj.transform
+    local x = self.v_cell_start_pos_x + (index - 1) * self.v_every_cell_offset
+    local y = obj_trans.anchoredPosition.y
+    obj.name = "item" .. index
+    obj_trans:SetAnchoredPositionA(x, y)
+    self.v_items[index] = obj
+    self.v_pos2item[x] = obj
+    self.v_index2posx[index] = x
+    self:set_stage_info(obj, episode_id, index)
+  end
+end
+
+function ui:set_stage_info(item, episode_id, index)
+  local stage_cfg = ShareRes.get_chapter_point_cfg(episode_id)
+  local stage_name = self:get_text("StageName", item)
+  stage_name.text = stage_cfg.PointName
+  local treasure_box_num = self:get_text("BoxText/TreasureBoxNum", item)
+  treasure_box_num.text = ChallengeRingPlusMgr:get_max_treasure_box_num(index)
+  local lock_layout = self:get_child_gameobj("LockLayout", item)
+  local mask = self:get_child_gameobj("Mask", item)
+  local state
+  if index <= ChallengeRingPlusMgr:get_acty_level() + 1 then
+    state = STAGE_STATE.UNLOCK
+    lock_layout:SetActive(false)
+    mask:SetActive(false)
+  else
+    state = STAGE_STATE.LOCK
+    lock_layout:SetActive(true)
+    mask:SetActive(true)
+  end
+  if state == STAGE_STATE.LOCK then
+    local unlock_condition = self:get_text("LockLayout/UnlockCondition", item)
+    local str = string.format("通关%s关后解锁", ShareRes.get_chapter_point_cfg(stage_cfg.FrontPointId).PointName)
+    unlock_condition.text = Util.format_str(str)
+  end
+  local btn = self:get_button(nil, item)
+  self:set_button_listener(btn, function()
+    if state == STAGE_STATE.LOCK then
+      if stage_cfg.FrontPointId and stage_cfg.FrontPointId > 0 then
+        local str = string.format("通关%s关后解锁", ShareRes.get_chapter_point_cfg(stage_cfg.FrontPointId).PointName)
+        local content = Util.format_str(str)
+        UIMgr:get_ui("uimessagetip"):ui_show(content)
+      end
+    else
+      self:ui_hide()
+      local msg = MsgGame:mq_publish2(Const.MSG_ON_CHANGE_RING_DIFFICULTY)
+      msg.mm_obj = episode_id
+      ChallengeRingPlusMgr:save_local_difficulty_level_data(episode_id)
+    end
+  end)
+end
+
+function ui:refresh_drag_content()
+  local trigger = Util.get_component(nil, self.v_difficulty_content, event_trigger)
+  self.v_trigger_com = trigger
+  self.v_pre_x = nil
+  self.v_speed = 0.6
+  self:begin_drag()
+  self:on_draging()
+  self:end_drag()
+end
+
+function ui:begin_drag()
+  local entrybegindrag = event_entry()
+  entrybegindrag.eventID = Config.EVENT_TRIGGER_TYPE.BeginDrag
+  entrybegindrag.callback:AddListener(function(data)
+    local x = data.position.x
+    self.v_pre_x = x
+  end)
+  self.v_trigger_com.triggers:Add(entrybegindrag)
+end
+
+function ui:on_draging()
+  local content_rect = self.v_content_rect_trans
+  local entrydrag = event_entry()
+  entrydrag.eventID = Config.EVENT_TRIGGER_TYPE.Drag
+  entrydrag.callback:AddListener(function(data)
+    self:set_all_item_select_state()
+    local x = data.position.x
+    local xoffset = (x - self.v_pre_x) * self.v_speed
+    local temp_x = content_rect.anchoredPosition.x
+    local temp_y = content_rect.anchoredPosition.y
+    local finally_x = temp_x + xoffset
+    if finally_x >= 0 then
+      finally_x = 0
+    elseif finally_x <= -1 * (#self.v_items - 1) * self.v_every_cell_offset then
+      finally_x = -1 * (#self.v_items - 1) * self.v_every_cell_offset
+    end
+    content_rect:SetAnchoredPositionA(finally_x, temp_y)
+    self.v_pre_x = x
+  end)
+  self.v_trigger_com.triggers:Add(entrydrag)
+end
+
+function ui:end_drag(content_rect)
+  local entry_end_drag = event_entry()
+  entry_end_drag.eventID = Config.EVENT_TRIGGER_TYPE.EndDrag
+  entry_end_drag.callback:AddListener(function()
+    self:on_select()
+  end)
+  self.v_trigger_com.triggers:Add(entry_end_drag)
+end
+
+function ui:on_select()
+  local select_item, finally_x, temp_y = self:get_select_item()
+  self.v_content_rect_trans:SetAnchoredPositionA(finally_x, temp_y)
+  self:set_item_select_state(select_item, true)
+end
+
+function ui:get_select_item()
+  local temp_x = self.v_content_rect_trans.anchoredPosition.x
+  local temp_y = self.v_content_rect_trans.anchoredPosition.y
+  local half_cell_width = math.floor(self.v_cell_size_x / 2)
+  local num = math.floor((-1 * temp_x + half_cell_width) / self.v_every_cell_offset)
+  local finally_x = self.v_cell_start_pos_x - num * self.v_every_cell_offset
+  return self.v_pos2item[-1 * finally_x], finally_x, temp_y
+end
+
+function ui:set_item_select_state(item, is_select)
+  local choose = self:get_child_gameobj("Choose", item)
+  choose:SetActive(is_select)
+end
+
+function ui:set_all_item_select_state()
+  local select_item = self:get_select_item()
+  self:set_item_select_state(select_item, true)
+  for k, item in pairs(self.v_items) do
+    if item.transform.name ~= select_item.transform.name then
+      self:set_item_select_state(item, false)
+    end
+  end
+end
+
+function ui:clear_drag()
+  for _, trigger_event in pairs(self.v_trigger_com.triggers) do
+    trigger_event.callback:RemoveAllListeners()
+  end
+  self.v_trigger_com.triggers:Clear()
+  UtilTable.clear_list(self.v_items)
+  UtilTable.clear_map(self.v_pos2item)
+  UtilTable.clear_map(self.v_index2posx)
+end
+
+return ui

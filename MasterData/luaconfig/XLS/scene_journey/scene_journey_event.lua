@@ -1,0 +1,92 @@
+return {
+  {
+    Compulsory = 2,
+    Condition = 500001,
+    FinishCondition = 500010,
+    Id = 1,
+    IgnoreSignboardSoundStepId = 3,
+    SettleBtnState = 2,
+    Sort = 1,
+    SpaceTimeChangeState = 0,
+    Weight = 100
+  },
+  {
+    Compulsory = 0,
+    Condition = 500002,
+    FinishCondition = 500011,
+    Id = 2,
+    IgnoreSignboardSoundStepId = 3,
+    SettleBtnState = 0,
+    Sort = 2,
+    SpaceTimeChangeState = 0,
+    Weight = 200
+  },
+  {
+    Compulsory = 1,
+    Condition = 500005,
+    Id = 3,
+    SettleBtnState = 2,
+    Sort = 3,
+    SpaceTimeChangeState = 0,
+    Weight = 300
+  },
+  {
+    Compulsory = 1,
+    Condition = 500006,
+    Id = 4,
+    IgnoreFashion = 1,
+    PreEventId = 3,
+    SettleBtnState = 1,
+    Sort = 4,
+    SpaceTimeChangeState = 1,
+    Weight = 400
+  },
+  {
+    Compulsory = 0,
+    Condition = 500012,
+    FinishCondition = 500007,
+    Id = 5,
+    SettleBtnState = 0,
+    Sort = 5,
+    SpaceTimeChangeState = 1,
+    Weight = 500
+  },
+  {
+    Compulsory = 0,
+    Condition = 500013,
+    FinishCondition = 500008,
+    Id = 6,
+    SettleBtnState = 0,
+    Sort = 6,
+    SpaceTimeChangeState = 1,
+    Weight = 600
+  },
+  {
+    Compulsory = 1,
+    Condition = 500015,
+    Id = 7,
+    SettleBtnState = 2,
+    Sort = 7,
+    SpaceTimeChangeState = 0,
+    Weight = 700
+  },
+  {
+    Compulsory = 0,
+    Condition = 500016,
+    FinishCondition = 500018,
+    Id = 8,
+    SettleBtnState = 0,
+    Sort = 8,
+    SpaceTimeChangeState = 0,
+    Weight = 350
+  },
+  {
+    Compulsory = 1,
+    Id = 9,
+    IgnoreEvent = 1,
+    SettleBtnState = 0,
+    Sort = 0,
+    SpaceTimeChangeState = 0,
+    Weight = 900
+  }
+}

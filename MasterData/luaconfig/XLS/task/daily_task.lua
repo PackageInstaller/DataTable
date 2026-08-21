@@ -1,0 +1,27 @@
+return {
+  {
+    Id = 1,
+    Name = "每日登录",
+    TaskId = 21021
+  },
+  {
+    Id = 2,
+    Name = "消耗40明度",
+    TaskId = 21028
+  },
+  {
+    Id = 3,
+    Name = "消耗100明度",
+    TaskId = 21029
+  },
+  {
+    Id = 4,
+    Name = "消耗200明度",
+    TaskId = 21024
+  },
+  {
+    Id = 5,
+    Name = "进行1次检索",
+    TaskId = 21025
+  }
+}

@@ -1,0 +1,155 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local FightConfig = require("uimodule.fight.fight_config")
+local SKILL_LINK_CHARGE_STAGE = FightConfig.SKILL_LINK_CHARGE_STAGE
+local SKILL_LINK_STAGE = FightConfig.SKILL_LINK_STAGE
+local TWEEN_TYPE = {
+  FILL_TWEEN = 1,
+  POINTER_TWEEN = 2,
+  RESTART_FILL = 3,
+  RESTART_POINTER = 4
+}
+local STAGE1_EFFECT_MAP = {
+  Fx_ChargeBg_Chongneng_1 = "ChargeBgEffect",
+  Fx_BurstBg_1 = "BurstBgEffect"
+}
+local STAGE2_EFFECT_MAP = {
+  Fx_ChargeBg_Chongneng_2 = "ChargeBgEffect",
+  Fx_BurstBg_2 = "BurstBgEffect"
+}
+local DOTWEEN_ID = {START = 1, END = 2}
+
+function ui:charge_bg_on_complete()
+  if self.v_close_charge_bg then
+    self.v_close_charge_bg = nil
+    self.v_uiobjects.ChargeBg:SetActive(false)
+  end
+  if self.v_close_stage then
+    self:set_enable(false)
+  end
+end
+
+function ui:burst_bg_on_complete()
+  if self.v_close_burst_bg then
+    self.v_close_burst_bg = nil
+    self.v_uiobjects.BurstBg:SetActive(false)
+  end
+  if self.v_close_stage then
+    self:set_enable(false)
+  end
+end
+
+function ui:create_dotween()
+  self.v_charge_bg_show_dot = self.v_uicompents.ChargeBg_cg:DOFade(1, 1)
+  self.v_charge_bg_show_dot:ChangeStartValue(0)
+  self.v_charge_bg_show_dot:SetAutoKill(false)
+  self.v_charge_bg_show_dot:Pause()
+  self.v_charge_bg_show_dot:OnRewind(function()
+    self:charge_bg_on_complete()
+  end)
+  self.v_burst_bg_show_seq = Util.create_sequence()
+  local dot = self.v_uicompents.BurstBg_cg:DOFade(1, 1)
+  dot:ChangeStartValue(0)
+  self.v_burst_bg_show_seq:Join(dot)
+  dot = self.v_uicompents.BurstBg_rect:DOScale(1, 1)
+  dot:ChangeStartValueVec3A(0.6, 0.6, 0.6)
+  self.v_burst_bg_show_seq:Join(dot)
+  dot = self.v_uicompents.BurstBg_rect:DOLocalMoveA(20.9, -93, 0, 1, 20.9, -115, 0)
+  self.v_burst_bg_show_seq:Join(dot)
+  self.v_burst_bg_show_seq:SetAutoKill(false)
+  self.v_burst_bg_show_seq:Pause()
+  self.v_burst_bg_show_seq:OnRewind(function()
+    self:burst_bg_on_complete()
+  end)
+end
+
+function ui:ui_finish_load()
+  self:create_dotween()
+  self.v_effect_map = {}
+end
+
+function ui:ui_on_show()
+  self.v_close_stage = nil
+end
+
+function ui:ui_on_hide()
+  self.v_close_stage = nil
+  self.v_close_burst = nil
+  self.v_close_burst_bg = nil
+  self.v_close_charge_bg = nil
+end
+
+function ui:ui_on_destroy()
+  if self.v_charge_bg_show_dot then
+    self.v_charge_bg_show_dot:Kill()
+    self.v_charge_bg_show_dot = nil
+  end
+  if self.v_burst_bg_show_seq then
+    self.v_burst_bg_show_seq:Kill()
+    self.v_burst_bg_show_seq = nil
+  end
+  if self.v_burst_show_dot then
+    self.v_burst_show_dot:Kill()
+    self.v_burst_show_dot = nil
+  end
+end
+
+function ui:init_stage_data(stage, charge_stage)
+  self.v_ult_stage = stage
+  self.v_ult_charge_stage = charge_stage
+  if self.v_ult_stage == SKILL_LINK_STAGE.ONE then
+    self.v_parent_ui:show_effect_map(STAGE1_EFFECT_MAP, self.v_uicompents)
+  else
+    self.v_parent_ui:show_effect_map(STAGE2_EFFECT_MAP, self.v_uicompents)
+  end
+end
+
+function ui:set_data(stage, charge_stage)
+  self.v_ult_stage = stage
+  self.v_ult_charge_stage = charge_stage
+  self:refresh_ui_state()
+end
+
+function ui:refresh_ui_state()
+  local charge_stage = self.v_ult_charge_stage
+  local charging, burst = charge_stage == SKILL_LINK_CHARGE_STAGE.CHARGING, charge_stage == SKILL_LINK_CHARGE_STAGE.BURST
+  local charging_time_scale = self.v_ult_stage == SKILL_LINK_STAGE.ONE and 4 or 2
+  if burst then
+    self.v_uiobjects.BurstBg:SetActive(true)
+    self.v_burst_bg_show_seq.timeScale = 1
+    self.v_burst_bg_show_seq:SetDelay(0.25)
+    self.v_close_burst_bg = nil
+    self.v_burst_bg_show_seq:Restart()
+  else
+    self:play_burst_bg_show_seq_back_wards()
+  end
+  if charging then
+    self.v_uiobjects.ChargeBg:SetActive(true)
+    self.v_close_charge_bg = nil
+    self.v_charge_bg_show_dot.timeScale = 1
+    self.v_charge_bg_show_dot:SetDelay(0.25)
+    self.v_charge_bg_show_dot:Restart()
+  else
+    self.v_charge_bg_show_dot:Complete()
+    self.v_charge_bg_show_dot.timeScale = charging_time_scale
+    self.v_charge_bg_show_dot:SetDelay(0)
+    self.v_charge_bg_show_dot:PlayBackwards()
+  end
+end
+
+function ui:play_end_tween_and_hide()
+  self.v_close_stage = true
+  self:play_burst_bg_show_seq_back_wards()
+end
+
+function ui:play_burst_bg_show_seq_back_wards()
+  self.v_close_burst_bg = nil
+  self.v_burst_bg_show_seq:Complete()
+  local burst_time_scale = self.v_ult_stage == SKILL_LINK_STAGE.ONE and 2 or 4
+  self.v_burst_bg_show_seq.timeScale = burst_time_scale
+  self.v_burst_bg_show_seq:SetDelay(0)
+  self.v_burst_bg_show_seq:PlayBackwards()
+  self.v_close_burst_bg = true
+end
+
+return ui

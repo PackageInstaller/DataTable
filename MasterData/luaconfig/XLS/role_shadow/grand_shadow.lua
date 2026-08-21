@@ -1,0 +1,262 @@
+return {
+  H1001001_UI = {
+    hight = -0.2,
+    id = "H1001001_UI",
+    rot = 3
+  },
+  H1001004_UI = {
+    hight = -0.2,
+    id = "H1001004_UI",
+    rot = 3
+  },
+  H1001008_UI = {
+    hight = -0.2,
+    id = "H1001008_UI",
+    rot = 3
+  },
+  H1001009_UI = {
+    hight = -0.2,
+    id = "H1001009_UI",
+    rot = 3
+  },
+  H1001010_UI = {
+    hight = -0.2,
+    id = "H1001010_UI",
+    rot = 3
+  },
+  H1001011_UI = {
+    hight = -0.2,
+    id = "H1001011_UI",
+    rot = 3
+  },
+  H1001012_UI = {
+    hight = -0.2,
+    id = "H1001012_UI",
+    rot = 3
+  },
+  H1001013_UI = {
+    hight = -0.2,
+    id = "H1001013_UI",
+    rot = 3
+  },
+  H1001014_UI = {
+    hight = -0.2,
+    id = "H1001014_UI",
+    rot = 3
+  },
+  H1001015_UI = {
+    hight = -0.2,
+    id = "H1001015_UI",
+    rot = 3
+  },
+  H1001016_UI = {
+    hight = -0.2,
+    id = "H1001016_UI",
+    rot = 3
+  },
+  H1001017_UI = {
+    hight = -0.2,
+    id = "H1001017_UI",
+    rot = 3
+  },
+  H1001018_UI = {
+    hight = -0.2,
+    id = "H1001018_UI",
+    rot = 3
+  },
+  H1001019_UI = {
+    hight = -0.2,
+    id = "H1001019_UI",
+    rot = 3
+  },
+  H1001020_UI = {
+    hight = -0.2,
+    id = "H1001020_UI",
+    rot = 3
+  },
+  H1001021_UI = {
+    hight = -0.2,
+    id = "H1001021_UI",
+    rot = 3
+  },
+  H1001022_UI = {
+    hight = -0.2,
+    id = "H1001022_UI",
+    rot = 3
+  },
+  H1001023_UI = {
+    hight = -0.2,
+    id = "H1001023_UI",
+    rot = 3
+  },
+  H1001024_UI = {
+    hight = -0.2,
+    id = "H1001024_UI",
+    rot = 3
+  },
+  H1001025_UI = {
+    hight = -0.2,
+    id = "H1001025_UI",
+    rot = 3
+  },
+  H1001026_UI = {
+    hight = -0.2,
+    id = "H1001026_UI",
+    rot = 3
+  },
+  H1001027_UI = {
+    hight = -0.2,
+    id = "H1001027_UI",
+    rot = 3
+  },
+  H1001028_UI = {
+    hight = -0.2,
+    id = "H1001028_UI",
+    rot = 3
+  },
+  H1001029_UI = {
+    hight = -0.2,
+    id = "H1001029_UI",
+    rot = 3
+  },
+  H1001030_UI = {
+    hight = -0.2,
+    id = "H1001030_UI",
+    rot = 3
+  },
+  H1001101_UI = {
+    hight = -0.2,
+    id = "H1001101_UI",
+    rot = 3
+  },
+  H1001104_UI = {
+    hight = -0.2,
+    id = "H1001104_UI",
+    rot = 3
+  },
+  H1001108_UI = {
+    hight = -0.2,
+    id = "H1001108_UI",
+    rot = 3
+  },
+  H1001109_UI = {
+    hight = -0.2,
+    id = "H1001109_UI",
+    rot = 3
+  },
+  H1001110_UI = {
+    hight = -0.2,
+    id = "H1001110_UI",
+    rot = 3
+  },
+  H1001111_UI = {
+    hight = -0.2,
+    id = "H1001111_UI",
+    rot = 3
+  },
+  H1001112_UI = {
+    hight = -0.2,
+    id = "H1001112_UI",
+    rot = 3
+  },
+  H1001113_UI = {
+    hight = -0.2,
+    id = "H1001113_UI",
+    rot = 3
+  },
+  H1001114_UI = {
+    hight = -0.2,
+    id = "H1001114_UI",
+    rot = 3
+  },
+  H1001115_UI = {
+    hight = -0.2,
+    id = "H1001115_UI",
+    rot = 3
+  },
+  H1001116_UI = {
+    hight = -0.2,
+    id = "H1001116_UI",
+    rot = 3
+  },
+  H1001117_UI = {
+    hight = -0.2,
+    id = "H1001117_UI",
+    rot = 3
+  },
+  H1001118_UI = {
+    hight = -0.2,
+    id = "H1001118_UI",
+    rot = 3
+  },
+  H1001119_UI = {
+    hight = -0.2,
+    id = "H1001119_UI",
+    rot = 3
+  },
+  H1001120_UI = {
+    hight = -0.2,
+    id = "H1001120_UI",
+    rot = 3
+  },
+  H1001121_UI = {
+    hight = -0.2,
+    id = "H1001121_UI",
+    rot = 3
+  },
+  H1001122_UI = {
+    hight = -0.2,
+    id = "H1001122_UI",
+    rot = 3
+  },
+  H1001123_UI = {
+    hight = -0.2,
+    id = "H1001123_UI",
+    rot = 3
+  },
+  H1001124_UI = {
+    hight = -0.2,
+    id = "H1001124_UI",
+    rot = 3
+  },
+  H1001126_UI = {
+    hight = -0.2,
+    id = "H1001126_UI",
+    rot = 3
+  },
+  H1001127_UI = {
+    hight = -0.2,
+    id = "H1001127_UI",
+    rot = 3
+  },
+  H1002101_UI = {
+    hight = -0.2,
+    id = "H1002101_UI",
+    rot = 3
+  },
+  H1002216_UI = {
+    hight = -0.2,
+    id = "H1002216_UI",
+    rot = 3
+  },
+  H1002220_UI = {
+    hight = -0.2,
+    id = "H1002220_UI",
+    rot = 3
+  },
+  H1002309_UI = {
+    hight = -0.2,
+    id = "H1002309_UI",
+    rot = 3
+  },
+  H1002326_UI = {
+    hight = -0.2,
+    id = "H1002326_UI",
+    rot = 3
+  },
+  H1003209_UI = {
+    hight = -0.2,
+    id = "H1003209_UI",
+    rot = 3
+  }
+}

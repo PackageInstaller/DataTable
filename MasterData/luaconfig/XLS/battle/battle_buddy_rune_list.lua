@@ -1,0 +1,1250 @@
+return {
+  [1001001] = {
+    {
+      {
+        BuddyId = 1001001,
+        Condition = 1,
+        Effect = {1001801},
+        Id = 1001001101,
+        Image = "Rune_red_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "【幻日之辉】强化状态下，每段攻击额外释放一道【辉刃】，造成25%伤害",
+        SkillName = "光纬之锋I",
+        Type = 1
+      },
+      {
+        BuddyId = 1001001,
+        Condition = 50,
+        Effect = {1001807},
+        Id = 1001001102,
+        Image = "Rune_red_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "【幻日之辉】强化状态下，每道【辉刃】命中后会标记敌人1次，同一个敌人被标记4次后，移除标记，造成65%伤害",
+        SkillName = "光纬之锋Ⅱ",
+        Type = 1
+      },
+      {
+        BuddyId = 1001001,
+        Condition = 100,
+        Effect = {1001808},
+        Id = 1001001103,
+        Image = "Rune_red_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "【幻日之辉】状态中【微光】的消耗速度降低，【辉刃】伤害提升10%",
+        SkillName = "光纬之锋Ⅲ",
+        Type = 1
+      }
+    },
+    [3] = {
+      {
+        BuddyId = 1001001,
+        Condition = 1,
+        Effect = {1001821},
+        Id = 1001001201,
+        Image = "Rune_blue_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "【星爆】范围变为扇形",
+        SkillName = "光冕I",
+        Type = 3
+      },
+      {
+        BuddyId = 1001001,
+        Condition = 50,
+        Effect = {1001824},
+        Id = 1001001202,
+        Image = "Rune_blue_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "强化【星爆】命中目标会让目标光属性抗性降低10%",
+        SkillName = "光冕Ⅱ",
+        Type = 3
+      },
+      {
+        BuddyId = 1001001,
+        Condition = 100,
+        Effect = {1001825},
+        Id = 1001001203,
+        Image = "Rune_blue_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "【光冕Ⅱ】提供的光属性抗性降低效果提高至20%",
+        SkillName = "光冕Ⅲ",
+        Type = 3
+      }
+    }
+  },
+  [1001002] = {
+    [2] = {
+      {
+        BuddyId = 1001002,
+        Condition = 1,
+        Effect = {6021029},
+        Id = 1001002201,
+        Image = "Rune_yellow_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "防御力+5%",
+        SkillName = "光明壁垒",
+        Type = 2
+      },
+      {
+        BuddyId = 1001002,
+        Condition = 50,
+        Effect = {6021030},
+        Id = 1001002202,
+        Image = "Rune_yellow_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "防御力+10%",
+        SkillName = "光明壁垒",
+        Type = 2
+      },
+      {
+        BuddyId = 1001002,
+        Condition = 100,
+        Effect = {6021032},
+        Id = 1001002203,
+        Image = "Rune_yellow_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "防御力+20%",
+        SkillName = "光明壁垒",
+        Type = 2
+      }
+    },
+    [3] = {
+      {
+        BuddyId = 1001002,
+        Condition = 1,
+        Effect = {6021015},
+        Id = 1001002301,
+        Image = "Rune_red_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "额外伤害+10%",
+        SkillName = "大光波",
+        Type = 3
+      },
+      {
+        BuddyId = 1001002,
+        Condition = 50,
+        Effect = {6021014},
+        Id = 1001002302,
+        Image = "Rune_red_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "额外伤害+20%",
+        SkillName = "大光波",
+        Type = 3
+      },
+      {
+        BuddyId = 1001002,
+        Condition = 100,
+        Effect = {6021012},
+        Id = 1001002303,
+        Image = "Rune_red_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "额外伤害+40%",
+        SkillName = "大光波",
+        Type = 3
+      }
+    }
+  },
+  [1001003] = {
+    {
+      {
+        BuddyId = 1001003,
+        Condition = 1,
+        Effect = {6021015},
+        Id = 1001003101,
+        Image = "Rune_red_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "额外伤害+10%",
+        SkillName = "大光波",
+        Type = 1
+      },
+      {
+        BuddyId = 1001003,
+        Condition = 50,
+        Effect = {6021014},
+        Id = 1001003102,
+        Image = "Rune_red_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "额外伤害+20%",
+        SkillName = "大光波",
+        Type = 1
+      },
+      {
+        BuddyId = 1001003,
+        Condition = 100,
+        Effect = {6021012},
+        Id = 1001003103,
+        Image = "Rune_red_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "额外伤害+40%",
+        SkillName = "大光波",
+        Type = 1
+      }
+    },
+    [3] = {
+      {
+        BuddyId = 1001003,
+        Condition = 1,
+        Effect = {6021029},
+        Id = 1001003301,
+        Image = "Rune_yellow_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "防御力+5%",
+        SkillName = "光明壁垒",
+        Type = 3
+      },
+      {
+        BuddyId = 1001003,
+        Condition = 50,
+        Effect = {6021030},
+        Id = 1001003302,
+        Image = "Rune_yellow_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "防御力+10%",
+        SkillName = "光明壁垒",
+        Type = 3
+      },
+      {
+        BuddyId = 1001003,
+        Condition = 100,
+        Effect = {6021032},
+        Id = 1001003303,
+        Image = "Rune_yellow_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "防御力+20%",
+        SkillName = "光明壁垒",
+        Type = 3
+      }
+    }
+  },
+  [1001004] = {
+    [2] = {
+      {
+        BuddyId = 1001004,
+        Condition = 1,
+        Effect = {6021015},
+        Id = 1001004201,
+        Image = "Rune_yellow_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "额外伤害+10%",
+        SkillName = "仟袅",
+        Type = 2
+      },
+      {
+        BuddyId = 1001004,
+        Condition = 50,
+        Effect = {6021014},
+        Id = 1001004202,
+        Image = "Rune_yellow_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "额外伤害+20%",
+        SkillName = "仟袅",
+        Type = 2
+      },
+      {
+        BuddyId = 1001004,
+        Condition = 100,
+        Effect = {6021012},
+        Id = 1001004203,
+        Image = "Rune_yellow_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "额外伤害+40%",
+        SkillName = "仟袅",
+        Type = 2
+      }
+    },
+    [3] = {
+      {
+        BuddyId = 1001004,
+        Condition = 1,
+        Effect = {6021029},
+        Id = 1001004301,
+        Image = "Rune_blue_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "防御力+5%",
+        SkillName = "离子",
+        Type = 3
+      },
+      {
+        BuddyId = 1001004,
+        Condition = 50,
+        Effect = {6021030},
+        Id = 1001004302,
+        Image = "Rune_blue_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "防御力+10%",
+        SkillName = "离子",
+        Type = 3
+      },
+      {
+        BuddyId = 1001004,
+        Condition = 100,
+        Effect = {6021032},
+        Id = 1001004303,
+        Image = "Rune_blue_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "防御力+20%",
+        SkillName = "离子",
+        Type = 3
+      }
+    }
+  },
+  [1001007] = {
+    {
+      {
+        BuddyId = 1001007,
+        Condition = 1,
+        Effect = {6021015},
+        Id = 1001007101,
+        Image = "Rune_red_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "额外伤害+10%",
+        SkillName = "量子之海",
+        Type = 1
+      },
+      {
+        BuddyId = 1001007,
+        Condition = 50,
+        Effect = {6021014},
+        Id = 1001007102,
+        Image = "Rune_red_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "额外伤害+20%",
+        SkillName = "量子之海",
+        Type = 1
+      },
+      {
+        BuddyId = 1001007,
+        Condition = 100,
+        Effect = {6021012},
+        Id = 1001007103,
+        Image = "Rune_red_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "额外伤害+40%",
+        SkillName = "量子之海",
+        Type = 1
+      }
+    },
+    [3] = {
+      {
+        BuddyId = 1001007,
+        Condition = 1,
+        Effect = {6021029},
+        Id = 1001007301,
+        Image = "Rune_blue_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "防御力+5%",
+        SkillName = "浮壁",
+        Type = 3
+      },
+      {
+        BuddyId = 1001007,
+        Condition = 50,
+        Effect = {6021030},
+        Id = 1001007302,
+        Image = "Rune_blue_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "防御力+10%",
+        SkillName = "浮壁",
+        Type = 3
+      },
+      {
+        BuddyId = 1001007,
+        Condition = 100,
+        Effect = {6021032},
+        Id = 1001007303,
+        Image = "Rune_blue_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "防御力+20%",
+        SkillName = "浮壁",
+        Type = 3
+      }
+    }
+  },
+  [1001008] = {
+    {
+      {
+        BuddyId = 1001008,
+        Condition = 1,
+        Effect = {1008121},
+        Id = 1001008201,
+        Image = "Rune_red_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "释放【命定之击】时会召唤一个幻影额外进行一次【命定之击】，造成100%伤害。幻影攻击会额外积攒【幽邃之域】能量。",
+        SkillName = "如影随形I",
+        Type = 1
+      },
+      {
+        BuddyId = 1001008,
+        Condition = 50,
+        Effect = {1008122},
+        Id = 1001008202,
+        Image = "Rune_red_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "【幽邃之域】期间的所有【命定之击】都可以召唤幻影，幻影【命定之击】造成100%伤害。",
+        SkillName = "如影随形II",
+        Type = 1
+      },
+      {
+        BuddyId = 1001008,
+        Condition = 100,
+        Effect = {1008123},
+        Id = 1001008203,
+        Image = "Rune_red_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "旋转镰刀伤害，幻影【命定之击】伤害提升50%",
+        SkillName = "如影随形III",
+        Type = 1
+      }
+    },
+    [3] = {
+      {
+        BuddyId = 1001008,
+        Condition = 1,
+        Effect = {1008131},
+        Id = 1001008101,
+        Image = "Rune_blue_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "消耗镰刀后会在原地留下幻影镰刀。幻影镰刀造成的伤害和旋转镰刀相同，持续3秒",
+        SkillName = "幽光镰影I",
+        Type = 3
+      },
+      {
+        BuddyId = 1001008,
+        Condition = 50,
+        Effect = {1008132},
+        Id = 1001008102,
+        Image = "Rune_blue_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "幻影镰刀消失时（包括换人消失）和【幽邃之域】期间的命定之击触发时，会引发范围伤害，造成100%伤害，敌人10%暗属性抗性",
+        SkillName = "幽光镰影II",
+        Type = 3
+      },
+      {
+        BuddyId = 1001008,
+        Condition = 100,
+        Effect = {1008133},
+        Id = 1001008103,
+        Image = "Rune_blue_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "降低暗属性抗性效果提升至20%",
+        SkillName = "幽光镰影III",
+        Type = 3
+      }
+    }
+  },
+  [1001009] = {
+    {
+      {
+        BuddyId = 1001009,
+        Condition = 1,
+        Effect = {1009201},
+        Id = 1001009301,
+        Image = "Rune_red_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "【花舞】改为连续横扫结束时，使用大剑将敌人卷起扣落，造成一次大范围爆炸，共造成710%伤害，并附加灼烧",
+        SkillName = "剑旋舞步I",
+        Type = 1
+      },
+      {
+        BuddyId = 1001009,
+        Condition = 50,
+        Effect = {1009208},
+        Id = 1001009302,
+        Image = "Rune_red_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "【花舞】转圈期间造成的伤害越多（以伤害次数计算），终结伤害越高",
+        SkillName = "剑旋舞步II",
+        Type = 1
+      },
+      {
+        BuddyId = 1001009,
+        Condition = 100,
+        Effect = {1009209},
+        Id = 1001009303,
+        Image = "Rune_red_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "【繁花怒放】伤害提升100%",
+        SkillName = "剑旋舞步III",
+        Type = 1
+      }
+    },
+    [3] = {
+      {
+        BuddyId = 1001009,
+        Condition = 1,
+        Effect = {1009101},
+        Id = 1001009101,
+        Image = "Rune_blue_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "对【散花】命中的敌人额外造成一次普攻第一段的攻击伤害，并向身前拉回，降低其15%火元素伤害抗性，持续8秒",
+        SkillName = "无垢之火I",
+        Type = 3
+      },
+      {
+        BuddyId = 1001009,
+        Condition = 50,
+        Effect = {1009112},
+        Id = 1001009102,
+        Image = "Rune_blue_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "【散花】以及【落花】发动时额外召唤两把【飞刃】，【散花】可对侧边的敌人造成280%伤害，【落花】对所有敌人额外造成200%伤害",
+        SkillName = "无垢之火II",
+        Type = 3
+      },
+      {
+        BuddyId = 1001009,
+        Condition = 100,
+        Effect = {1009113},
+        Id = 1001009103,
+        Image = "Rune_blue_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "【无垢之火I】【散花】拉回的攻击命中敌人后，降低火属性伤害抗性的效果提升至30%",
+        SkillName = "无垢之火III",
+        Type = 3
+      }
+    }
+  },
+  [1001010] = {
+    [2] = {
+      {
+        BuddyId = 1001010,
+        Condition = 1,
+        Effect = {6021029},
+        Id = 1001010201,
+        Image = "Rune_yellow_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "防御力+5%",
+        SkillName = "气定",
+        Type = 2
+      },
+      {
+        BuddyId = 1001010,
+        Condition = 50,
+        Effect = {6021030},
+        Id = 1001010202,
+        Image = "Rune_yellow_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "防御力+10%",
+        SkillName = "气定",
+        Type = 2
+      },
+      {
+        BuddyId = 1001010,
+        Condition = 100,
+        Effect = {6021032},
+        Id = 1001010203,
+        Image = "Rune_yellow_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "防御力+20%",
+        SkillName = "气定",
+        Type = 2
+      }
+    },
+    [3] = {
+      {
+        BuddyId = 1001010,
+        Condition = 1,
+        Effect = {6021015},
+        Id = 1001010301,
+        Image = "Rune_blue_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "额外伤害+10%",
+        SkillName = "星散",
+        Type = 3
+      },
+      {
+        BuddyId = 1001010,
+        Condition = 50,
+        Effect = {6021014},
+        Id = 1001010302,
+        Image = "Rune_blue_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "额外伤害+20%",
+        SkillName = "星散",
+        Type = 3
+      },
+      {
+        BuddyId = 1001010,
+        Condition = 100,
+        Effect = {6021012},
+        Id = 1001010303,
+        Image = "Rune_blue_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "额外伤害+40%",
+        SkillName = "星散",
+        Type = 3
+      }
+    }
+  },
+  [1001011] = {
+    {
+      {
+        BuddyId = 1001011,
+        Condition = 1,
+        Effect = {1011181},
+        Id = 1001011301,
+        Image = "Rune_red_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "【斩断】【魂线】后，下一次连接的【魂线】升级为【魂络】。释放【阴阳阵】时无需判定距离直接【斩断】【魂络】，并使产生的【灯焰】造成的伤害附带30%【伤害加深】",
+        SkillName = "灯火熠熠I",
+        Type = 1
+      },
+      {
+        BuddyId = 1001011,
+        Condition = 50,
+        Effect = {1011182},
+        Id = 1001011302,
+        Image = "Rune_red_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "【斩断】【魂络】使产生的【灯焰】附带的【伤害加深】提高至60%",
+        SkillName = "灯火熠熠II",
+        Type = 1
+      },
+      {
+        BuddyId = 1001011,
+        Condition = 100,
+        Effect = {1011183},
+        Id = 1001011303,
+        Image = "Rune_red_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "【斩断】【魂络】额外使自身获得持续3秒的50%【伤害加深】效果",
+        SkillName = "灯火熠熠III",
+        Type = 1
+      }
+    },
+    {
+      {
+        BuddyId = 1001011,
+        Condition = 1,
+        Effect = {1011181},
+        Id = 1001011201,
+        Image = "Rune_yellow_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "【斩断】【魂线】后召唤一个【影灯】，存在7秒。角色攻击时，【影灯】会追加攻击：发射6枚【灯焰】，每枚【灯焰】造成6%伤害，并使目标火属性抗性降低0.4%，持续3.5秒。降低抗性的效果独立计算持续时间，最多同时叠加30层。",
+        SkillName = "灯影幢幢I",
+        Type = 2
+      },
+      {
+        BuddyId = 1001011,
+        Condition = 50,
+        Effect = {1011182},
+        Id = 1001011202,
+        Image = "Rune_yellow_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "【影灯】存在时间提升至14秒，火属性抗性降低效果持续时间提升至7秒。",
+        SkillName = "灯影幢幢II",
+        Type = 2
+      },
+      {
+        BuddyId = 1001011,
+        Condition = 100,
+        Effect = {1011183},
+        Id = 1001011203,
+        Image = "Rune_yellow_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "每枚【灯焰】造成的火属性抗性降低效果提升至0.8%。",
+        SkillName = "灯影幢幢III",
+        Type = 2
+      }
+    }
+  },
+  [1001012] = {
+    {
+      {
+        BuddyId = 1001012,
+        Condition = 1,
+        Effect = {6021015},
+        Id = 1001012101,
+        Image = "Rune_red_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "额外伤害+10%",
+        SkillName = "开山",
+        Type = 1
+      },
+      {
+        BuddyId = 1001012,
+        Condition = 50,
+        Effect = {6021014},
+        Id = 1001012102,
+        Image = "Rune_red_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "额外伤害+20%",
+        SkillName = "开山",
+        Type = 1
+      },
+      {
+        BuddyId = 1001012,
+        Condition = 100,
+        Effect = {6021012},
+        Id = 1001012103,
+        Image = "Rune_red_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "额外伤害+40%",
+        SkillName = "开山",
+        Type = 1
+      }
+    },
+    [3] = {
+      {
+        BuddyId = 1001012,
+        Condition = 1,
+        Effect = {6021029},
+        Id = 1001012301,
+        Image = "Rune_blue_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "防御力+5%",
+        SkillName = "龙纹护体",
+        Type = 3
+      },
+      {
+        BuddyId = 1001012,
+        Condition = 50,
+        Effect = {6021030},
+        Id = 1001012302,
+        Image = "Rune_blue_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "防御力+10%",
+        SkillName = "龙纹护体",
+        Type = 3
+      },
+      {
+        BuddyId = 1001012,
+        Condition = 100,
+        Effect = {6021032},
+        Id = 1001012303,
+        Image = "Rune_blue_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "防御力+20%",
+        SkillName = "龙纹护体",
+        Type = 3
+      }
+    }
+  },
+  [1001013] = {
+    {
+      {
+        BuddyId = 1001013,
+        Condition = 1,
+        Effect = {1013604},
+        Id = 1001013101,
+        Image = "Rune_red_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "释放【非锻造式捶打】【蓄力】攻击后，会进入【工匠之火】的【蓄力】状态，期间可以连续点按普攻键充能，【蓄力】结束后猛击地面，造成1200%伤害。\n充能次数足够多时，这次伤害会提高至1800%。",
+        SkillName = "工匠之火I",
+        Type = 1
+      },
+      {
+        BuddyId = 1001013,
+        Condition = 50,
+        Effect = {1013605},
+        Id = 1001013102,
+        Image = "Rune_red_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "依据场上敌人中火属性反应叠加层数最高者的层数，在【工匠之火I】释放期间提高角色的火属性伤害加成。1/2/3/4/5层火属性反应分别提供7%/9%/11%/13%/15%的火属性伤害加成",
+        SkillName = "工匠之火II",
+        Type = 1
+      },
+      {
+        BuddyId = 1001013,
+        Condition = 100,
+        Effect = {1013606},
+        Id = 1001013103,
+        Image = "Rune_red_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "【非锻造式捶打】和【工匠之火】技能期间赫菲获得10%火属性伤害加成",
+        SkillName = "工匠之火III",
+        Type = 1
+      }
+    },
+    [3] = {
+      {
+        BuddyId = 1001013,
+        Condition = 1,
+        Effect = {1013601},
+        Id = 1001013301,
+        Image = "Rune_blue_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "【蓄力】后砸的区域不再产生二次爆炸，而是留下一个持续伤害的【蒸腾热汽】，站在该区域中的友军获得火属性伤害提升10%",
+        SkillName = "铸炉的热力I",
+        Type = 3
+      },
+      {
+        BuddyId = 1001013,
+        Condition = 50,
+        Effect = {1013602},
+        Id = 1001013302,
+        Image = "Rune_blue_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "【蒸腾热汽】区域会产生风压持续吸附怪物",
+        SkillName = "铸炉的热力II",
+        Type = 3
+      },
+      {
+        BuddyId = 1001013,
+        Condition = 100,
+        Effect = {1013603},
+        Id = 1001013303,
+        Image = "Rune_blue_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "【蒸腾热汽】区域持续时间提升，火属性伤害加成提升至20%",
+        SkillName = "铸炉的热力III",
+        Type = 3
+      }
+    }
+  },
+  [1001014] = {
+    {
+      {
+        BuddyId = 1001014,
+        Condition = 1,
+        Effect = {1014181},
+        Id = 1001014301,
+        Image = "Rune_red_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "【弦音】每次激活时，获得6%【伤害加深】，持续3秒",
+        SkillName = "正弦演奏法I",
+        Type = 1
+      },
+      {
+        BuddyId = 1001014,
+        Condition = 50,
+        Effect = {1014182},
+        Id = 1001014302,
+        Image = "Rune_red_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "【音波方程】的精力消耗减少。释放【变奏推演·和弦】后，【弦音】有50%几率跳跃至【重弦】",
+        SkillName = "正弦演奏法II",
+        Type = 1
+      },
+      {
+        BuddyId = 1001014,
+        Condition = 100,
+        Effect = {1014183},
+        Id = 1001014303,
+        Image = "Rune_red_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "【正弦演奏法I】获得的【伤害加深】属性提升至15%",
+        SkillName = "正弦演奏法III",
+        Type = 1
+      }
+    },
+    {
+      {
+        BuddyId = 1001014,
+        Condition = 1,
+        Effect = {1014181},
+        Id = 1001014201,
+        Image = "Rune_yellow_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "【重弦】激活【弦音】时，会触发【数理音符】跟随在角色身边，持续向外产生音波，共3次，间隔2秒，每次造成200%伤害。每第3次音波会对命中敌人造成光元素反应",
+        SkillName = "和声织体I",
+        Type = 2
+      },
+      {
+        BuddyId = 1001014,
+        Condition = 50,
+        Effect = {1014182},
+        Id = 1001014202,
+        Image = "Rune_yellow_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "【和声织体I】产生的第3次音波范围增大",
+        SkillName = "和声织体II",
+        Type = 2
+      },
+      {
+        BuddyId = 1001014,
+        Condition = 100,
+        Effect = {1014183},
+        Id = 1001014203,
+        Image = "Rune_yellow_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "当存在【数理音符】效果时，使用【重弦】会使音波剩余的攻击次数增加3次，最大6次",
+        SkillName = "和声织体III",
+        Type = 2
+      }
+    }
+  },
+  [1001015] = {
+    {
+      {
+        BuddyId = 1001015,
+        Condition = 1,
+        Effect = {1015181},
+        Id = 1001015301,
+        Image = "Rune_red_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "【罪行清算】期间，长按普攻可以发动【裁断】，造成450%伤害",
+        SkillName = "永恒白昼I",
+        Type = 1
+      },
+      {
+        BuddyId = 1001015,
+        Condition = 50,
+        Effect = {1015182},
+        Id = 1001015302,
+        Image = "Rune_red_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "【裁断】会使怒气在短时间内消耗速度减半",
+        SkillName = "永恒白昼II",
+        Type = 1
+      },
+      {
+        BuddyId = 1001015,
+        Condition = 100,
+        Effect = {1015183},
+        Id = 1001015303,
+        Image = "Rune_red_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "【罪行清算】期间获得20%伤害加深",
+        SkillName = "永恒白昼III",
+        Type = 1
+      }
+    },
+    [3] = {
+      {
+        BuddyId = 1001015,
+        Condition = 1,
+        Effect = {1015181},
+        Id = 1001015201,
+        Image = "Rune_blue_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "砸碎石碑造成的伤害提高至250%，并消耗所有【怒气】，使全队获得10%光属性伤害加成，持续5秒",
+        SkillName = "公正回响I",
+        Type = 3
+      },
+      {
+        BuddyId = 1001015,
+        Condition = 50,
+        Effect = {1015182},
+        Id = 1001015202,
+        Image = "Rune_blue_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "【公正回响I】效果持续时间提升至10秒",
+        SkillName = "公正回响II",
+        Type = 3
+      },
+      {
+        BuddyId = 1001015,
+        Condition = 100,
+        Effect = {1015183},
+        Id = 1001015203,
+        Image = "Rune_blue_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "【公正回响I】全队光属性伤害加成效果提升至20%",
+        SkillName = "公正回响III",
+        Type = 3
+      }
+    }
+  },
+  [1001016] = {
+    {
+      {
+        BuddyId = 1001016,
+        Condition = 1,
+        Effect = {1016121},
+        Id = 1001016301,
+        Image = "Rune_red_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "【如芒顿弓】改为【沉湎独奏】：消耗所有能量开始演奏，期间无法使用普攻和其他技能，自身被音能量包裹，对周围敌人每秒造成300%伤害，引爆触碰到的【音域】造成大范围伤害，【音域】剩余时间越长伤害越高",
+        SkillName = "沉湎独奏I",
+        Type = 1
+      },
+      {
+        BuddyId = 1001016,
+        Condition = 50,
+        Effect = {1016122},
+        Id = 1001016302,
+        Image = "Rune_red_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "【沉湎独奏】期间，每3秒自身附近随机位置形成一个音域",
+        SkillName = "沉湎独奏II",
+        Type = 1
+      },
+      {
+        BuddyId = 1001016,
+        Condition = 100,
+        Effect = {1016123},
+        Id = 1001016303,
+        Image = "Rune_red_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "【沉湎独奏II】的音域生成间隔降低至1.5秒",
+        SkillName = "沉湎独奏III",
+        Type = 1
+      }
+    },
+    {
+      {
+        BuddyId = 1001016,
+        Condition = 1,
+        Effect = {1016131},
+        Id = 1001016201,
+        Image = "Rune_yellow_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "【如芒顿弓】改为圆形攻击，对【音域】触发【转调】后，将自动向外扩散一个与半重叠的【原调音域】，【转调音域】和【原调音域】都不可再次扩散",
+        SkillName = "弥散回声I",
+        Type = 2
+      },
+      {
+        BuddyId = 1001016,
+        Condition = 50,
+        Effect = {1016132},
+        Id = 1001016202,
+        Image = "Rune_yellow_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "【音域】造成伤害的间隔时间减半",
+        SkillName = "弥散回声II",
+        Type = 2
+      },
+      {
+        BuddyId = 1001016,
+        Condition = 100,
+        Effect = {1016133},
+        Id = 1001016203,
+        Image = "Rune_yellow_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "提升【音域】的范围",
+        SkillName = "弥散回声III",
+        Type = 2
+      }
+    }
+  },
+  [1001017] = {
+    [2] = {
+      {
+        BuddyId = 1001017,
+        Condition = 1,
+        Effect = {1017181},
+        Id = 1001017201,
+        Image = "Rune_yellow_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "防御力+5%",
+        SkillName = "测试配置",
+        Type = 2
+      },
+      {
+        BuddyId = 1001017,
+        Condition = 50,
+        Effect = {1017182},
+        Id = 1001017202,
+        Image = "Rune_yellow_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "防御力+10%",
+        SkillName = "测试配置",
+        Type = 2
+      },
+      {
+        BuddyId = 1001017,
+        Condition = 100,
+        Effect = {1017183},
+        Id = 1001017203,
+        Image = "Rune_yellow_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "防御力+20%",
+        SkillName = "测试配置",
+        Type = 2
+      }
+    },
+    [3] = {
+      {
+        BuddyId = 1001017,
+        Condition = 1,
+        Effect = {1017181},
+        Id = 1001017301,
+        Image = "Rune_blue_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "额外伤害+10%",
+        SkillName = "测试配置",
+        Type = 3
+      },
+      {
+        BuddyId = 1001017,
+        Condition = 50,
+        Effect = {1017182},
+        Id = 1001017302,
+        Image = "Rune_blue_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "额外伤害+20%",
+        SkillName = "测试配置",
+        Type = 3
+      },
+      {
+        BuddyId = 1001017,
+        Condition = 100,
+        Effect = {1017183},
+        Id = 1001017303,
+        Image = "Rune_blue_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "额外伤害+40%",
+        SkillName = "测试配置",
+        Type = 3
+      }
+    }
+  },
+  [1001018] = {
+    [2] = {
+      {
+        BuddyId = 1001018,
+        Condition = 1,
+        Effect = {1017181},
+        Id = 1001018201,
+        Image = "Rune_yellow_com1",
+        Level = 1,
+        Name = "辅助",
+        SkillDesc = "防御力+5%",
+        SkillName = "测试配置",
+        Type = 2
+      },
+      {
+        BuddyId = 1001018,
+        Condition = 50,
+        Effect = {1017182},
+        Id = 1001018202,
+        Image = "Rune_yellow_com1",
+        Level = 2,
+        Name = "辅助",
+        SkillDesc = "防御力+10%",
+        SkillName = "测试配置",
+        Type = 2
+      },
+      {
+        BuddyId = 1001018,
+        Condition = 100,
+        Effect = {1017183},
+        Id = 1001018203,
+        Image = "Rune_yellow_com1",
+        Level = 3,
+        Name = "辅助",
+        SkillDesc = "防御力+20%",
+        SkillName = "测试配置",
+        Type = 2
+      }
+    },
+    [3] = {
+      {
+        BuddyId = 1001018,
+        Condition = 1,
+        Effect = {1017181},
+        Id = 1001018301,
+        Image = "Rune_blue_com1",
+        Level = 1,
+        Name = "进攻",
+        SkillDesc = "额外伤害+10%",
+        SkillName = "测试配置",
+        Type = 3
+      },
+      {
+        BuddyId = 1001018,
+        Condition = 50,
+        Effect = {1017182},
+        Id = 1001018302,
+        Image = "Rune_blue_com1",
+        Level = 2,
+        Name = "进攻",
+        SkillDesc = "额外伤害+20%",
+        SkillName = "测试配置",
+        Type = 3
+      },
+      {
+        BuddyId = 1001018,
+        Condition = 100,
+        Effect = {1017183},
+        Id = 1001018303,
+        Image = "Rune_blue_com1",
+        Level = 3,
+        Name = "进攻",
+        SkillDesc = "额外伤害+40%",
+        SkillName = "测试配置",
+        Type = 3
+      }
+    }
+  }
+}

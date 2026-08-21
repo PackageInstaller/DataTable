@@ -1,0 +1,274 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local CommonDef = require("cs_share.common_define")
+local Item_Helper = require("utils.item_helper")
+local ITEM_ICON_PATH = "Icon/Item/"
+local bagConfig = require("gamelogic.character.fight_bag_configs")
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local AssetBarView = require("ui.asset_bar.asset_bar")
+local MODEL = {
+  v_award_list = {
+    "AwardList",
+    BIND_TYPE.IMAGE
+  },
+  v_btn_back = {
+    "BtnBack",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_fight_cost_txt = {
+    "BtnFightCostTxt",
+    BIND_TYPE.TEXT
+  },
+  v_btn_fight_cost = {
+    "BtnFightCost",
+    BIND_TYPE.OBJECT
+  },
+  v_btn_fight = {
+    "BtnFight",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_jump = {
+    "BtnJump",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_play = {
+    "BtnPlay",
+    BIND_TYPE.BUTTON
+  },
+  v_multi_select_root = {
+    "MultiSelectRoot",
+    BIND_TYPE.IMAGE
+  },
+  v_btn_story_drop = {
+    "BtnStoryDrop",
+    BIND_TYPE.BUTTON
+  },
+  v_challenge_desc = {
+    "ChallengeDesc",
+    BIND_TYPE.TEXT
+  },
+  v_content = {
+    "Content",
+    BIND_TYPE.OBJECT
+  },
+  v_item_obj_com1 = {
+    "ItemObjCom1",
+    BIND_TYPE.BUTTON
+  },
+  v_no_award = {
+    "NoAward",
+    BIND_TYPE.IMAGE
+  },
+  v_stage_desc = {
+    "StageDesc",
+    BIND_TYPE.TEXT
+  },
+  v_stage_id = {
+    "StageID",
+    BIND_TYPE.TEXT
+  },
+  v_stage_name = {
+    "StageName",
+    BIND_TYPE.TEXT
+  },
+  v_target_content = {
+    "TargetContent",
+    BIND_TYPE.OBJECT
+  },
+  v_target_tem = {
+    "TargetTem",
+    BIND_TYPE.OBJECT
+  },
+  v_target = {
+    "Target",
+    BIND_TYPE.OBJECT
+  },
+  v_type_icon = {
+    "TypeIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_zhanli_num = {
+    "ZhanliNum",
+    BIND_TYPE.TEXT
+  },
+  v_zhanli = {
+    "Zhanli",
+    BIND_TYPE.OBJECT
+  }
+}
+local POINT_TAG_NAME = {
+  [0] = "首通",
+  [1] = "一星",
+  [2] = "二星",
+  [3] = "三星"
+}
+local NODE_TAG_NAME = {
+  [-1] = "Tag_",
+  [0] = "Tag0_",
+  [1] = "Tag1_",
+  [2] = "Tag2_",
+  [3] = "Tag3_",
+  [4] = "Tag4_"
+}
+local linear_stage_info_condition_key = "linear_stage_info_condition_key"
+local linear_stage_info_award_key = "linear_stage_info_award_key"
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnBack", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnFight", function()
+    UIMgr:get_ui("team"):ui_show(self.info.cfg.Id, self.info.cfg.PointId, CommonDef.CHALLENGE_TYPE.LINEAR)
+    self:ui_hide()
+  end)
+  self.v_asset_bar = AssetBarView:new(self, self.v_uiobjects.AssetBar)
+  self:register_exist_auto_template(linear_stage_info_condition_key, self.v_uiobjects.TargetTem, self.v_uiobjects.TargetContent)
+  self:register_exist_auto_template(linear_stage_info_award_key, self.v_uiobjects.ItemObjCom1, self.v_uiobjects.Content)
+end
+
+function ui:ui_on_show(info)
+  local list = Shop_Helper.get_asset_list({
+    Config.PLAYER_SP_ITEMID
+  })
+  self.v_asset_bar:reset_config(list)
+  self.v_asset_bar:on_create()
+  self:refresh_title(info)
+  self:refresh_condition(info)
+  self:refresh_award(info)
+  self.v_multi_select_root.gameObject:SetActive(false)
+  self.v_btn_story_drop.gameObject:SetActive(false)
+  self.v_uiobjects.NoClick:SetActive(false)
+  local point_cfg = ShareRes.get_chapter_point_cfg(info.cfg.PointId)
+  local fight_cost = point_cfg.FightCost[1] or point_cfg.FightCost[2]
+  if fight_cost and fight_cost > 0 then
+    self.v_btn_fight_cost.gameObject:SetActive(true)
+    self.v_btn_fight_cost_txt.text = fight_cost
+  else
+    self.v_btn_fight_cost.gameObject:SetActive(false)
+  end
+  self.v_btn_jump.gameObject:SetActive(false)
+end
+
+function ui:refresh_title(info)
+  self.info = info
+  local group_id = info.cfg.Group
+  local cfg = ShareRes.create("chapter.linear", group_id)
+  self.v_stage_id.text = info.cfg.Difficulty
+  local episode_cfg = ShareRes.get_chapter_point_cfg(info.cfg.PointId)
+  self.v_stage_name.text = episode_cfg.PointName
+  self.v_zhanli:SetActive(true)
+  self.v_zhanli_num.text = episode_cfg.RecomFightVal or 0
+end
+
+function ui:refresh_condition(info)
+  self:give_back_auto_cache(linear_stage_info_condition_key)
+  self.v_uiobjects.Target:SetActive(true)
+  local cond_list = ShareRes.get_point_star_condition(info.cfg.PointId)
+  for index, condition_id in ipairs(cond_list) do
+    if condition_id > 0 then
+      local item = self:get_auto_cache(linear_stage_info_condition_key)
+      local cfg = ShareRes.get_point_star_condition_cfg(condition_id)
+      if cfg then
+        local desc_txt = Util.get_text("TargetDesc", item)
+        local temp = cfg.ConditionDesc
+        local arg = cfg.Arg[1]
+        if cfg.ConditionType == Config.Condition_Type.HealthMoreThan then
+          local percent_health = arg / 100
+          percent_health = math.max(percent_health, 1)
+          arg = string.format("%d", percent_health) .. "%"
+        end
+        temp = Util.format_str(temp, arg)
+        desc_txt.text = temp
+        local complete = LinearMgr:get_condition_is_finish(info.cfg.Id, index)
+        local comp_img = Util.get_image("Complete", item)
+        comp_img:SetActive(complete)
+        local temp_color = desc_txt.color
+        temp_color.a = complete and 1 or 0.3
+        desc_txt.color = temp_color
+      end
+    end
+  end
+end
+
+function ui:refresh_award(info)
+  local point_id = info.cfg.PointId
+  local data_list = {}
+  ShareRes.get_point_award2(point_id, data_list, true)
+  ShareRes.get_point_star_award2(point_id, data_list)
+  ShareRes.get_hard_node_type_five_award2(point_id, data_list)
+  local curr_star = LinearMgr:get_star(info.cfg.Id)
+  for index, data in pairs(data_list) do
+    data.received = curr_star >= data.star
+    if 0 == curr_star then
+      data.received = false
+    end
+  end
+  table.sort(data_list, function(a, b)
+    if a.received ~= b.received then
+      return b.received
+    end
+    if a.star ~= b.star then
+      return a.star < b.star
+    end
+    return false
+  end)
+  self.v_no_award.gameObject:SetActive(not data_list or 0 == #data_list)
+  self:give_back_auto_cache(linear_stage_info_award_key)
+  for index, data in ipairs(data_list) do
+    self:set_award_item(data, false)
+  end
+end
+
+function ui:set_award_item(data)
+  local obj = self:get_auto_cache(linear_stage_info_award_key)
+  local item_quality = Util.get_image("ItemQuality_", obj)
+  local item_icon = Util.get_image("ItemIcon_", obj)
+  local item_count = Util.get_text("ItemAmount_/Bg/ItemNum_", obj)
+  local item_tag_complete = Util.get_child_gameobj("TagComplete_", obj)
+  local item_complete = Util.get_child_gameobj("Complete_", obj)
+  item_tag_complete:SetActive(data.received)
+  item_complete:SetActive(data.received)
+  local tag_obj
+  for key, value in pairs(NODE_TAG_NAME) do
+    tag_obj = self:get_child_gameobj(value, obj)
+    if tag_obj then
+      tag_obj.gameObject:SetActive(true)
+      local text = self:get_text("TagName_", tag_obj)
+      text.text = POINT_TAG_NAME[data.star]
+    end
+  end
+  local item_id = data.id or data[1] or data.ItemId
+  local count = data.count or data[2] or data.Num
+  local item_cfg = Item_Helper.get_item_cfg(item_id)
+  ResMgr:load_set_icon(item_quality, bagConfig.Quality_Img[item_cfg.Quality])
+  local icon_path = ITEM_ICON_PATH .. item_cfg.Icon
+  ResMgr:load_set_icon(item_icon, icon_path)
+  item_count.text = count
+  local item_btn = Util.get_button(nil, obj)
+  self:set_button_listener(item_btn, function()
+    UIMgr:get_ui("itemTip"):ui_show({item_id = item_id, is_hide_get_way = true})
+  end)
+end
+
+function ui:refresh_anim(index)
+end
+
+function ui:ui_on_hide()
+  self.v_asset_bar:on_hide()
+end
+
+function ui:ui_on_destroy()
+  self.v_asset_bar:on_destory()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.group_id
+end
+
+return ui

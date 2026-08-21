@@ -1,0 +1,17 @@
+return {
+  {
+    Condition = {},
+    Id = 1,
+    Name = "章节1"
+  },
+  {
+    Condition = {50020100},
+    Id = 2,
+    Name = "章节2"
+  },
+  {
+    Condition = {50030100},
+    Id = 3,
+    Name = "章节3"
+  }
+}

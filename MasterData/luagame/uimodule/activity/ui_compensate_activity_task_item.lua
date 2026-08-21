@@ -1,0 +1,80 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local COMPENSATE_AWARD_ITEM_TEMP_KEY = "COMPENSATE_AWARD_ITEM_TEMP_KEY"
+local SaticSv = require("ui.widget.static_scroll_view")
+local COMPENSATE_TASK_AWARD_ITEM = require("uimodule.activity.ui_compensate_activity_task_award_item")
+local Jump_Helper = require("gamelogic.sys_open.jump_helper")
+local TASK_STATE = Config.TASK_STATE
+
+function ui:set_data(task_cfg)
+  self.v_task_id = task_cfg.Id
+  self.v_task_cfg = task_cfg
+  self:refresh_task_state()
+  local cur_value, target_value = TaskMgr:get_task_progress_value_by_id(self.v_task_id)
+  if target_value <= cur_value then
+    self.v_uicompents.Now_txt.text = target_value
+  else
+    self.v_uicompents.Now_txt.text = cur_value
+  end
+  self.v_uicompents.Need_txt.text = target_value
+  self.v_award_item_list = {}
+  self.v_award_item_list = ShareRes.get_awards(task_cfg.Award)
+  self.v_static_sv = SaticSv:new(self, self.v_uiobjects.AwardContent, COMPENSATE_TASK_AWARD_ITEM, self.v_task_id .. COMPENSATE_AWARD_ITEM_TEMP_KEY)
+  self.v_static_sv:update_list(self.v_award_item_list)
+end
+
+function ui:refresh_task_state()
+  local task_state = TaskMgr:get_task_state(self.v_task_id)
+  local cur_time = Date.server_time()
+  local is_unlock
+  local date = self.v_task_cfg.BeginTime and Date.get_time_stamp_by_scheme_id(self.v_task_cfg.BeginTime) or 0
+  if date then
+    local dif_time = date - cur_time
+    is_unlock = dif_time <= 0
+  else
+    is_unlock = true
+  end
+  local received, comp
+  self.v_uiobjects.TaskDesc:SetActive(is_unlock)
+  if is_unlock then
+    received = task_state == TASK_STATE.GET_REWARD
+    comp = task_state == Config.CommonDefine.TaskState.Complete or task_state == Config.CommonDefine.TaskState.GotAward
+    self.v_uicompents.TaskDesc_txt.text = self.v_task_cfg.Desc
+  else
+    comp = false
+  end
+  local if_Jump = Util.is_more_than_zero(self.v_task_cfg.Jump)
+  self:set_button("BtnJump", function()
+    if not self.v_task_cfg or not if_Jump then
+      return
+    end
+    SysOpenMgr:jump_to_sys(self.v_task_cfg.Jump, true)
+  end)
+  self.v_show_red_point = is_unlock and comp and not received
+  self.v_uiobjects.Finish:SetActive(is_unlock and comp and received)
+  local red_point = self.v_uiobjects.Red
+  RedPointMgr:bind_redpoint(self, red_point, RedEnum.COMPENSATE_TASK_AWARD + self.v_task_id, RedEnum.COMPENSATE_TASK)
+  self.v_uiobjects.BtnRecive:SetActive(is_unlock and comp and not received)
+  self.v_uiobjects.BtnJump:SetActive(is_unlock and not comp and if_Jump)
+  self.v_uiobjects.UnComplete:SetActive(is_unlock and not comp)
+  self:set_button("BtnRecive", function()
+    TaskMgr:submit_task(self.v_task_id, function()
+      self.v_parent_ui:refresh_task_view()
+    end)
+  end)
+  RedPointMgr:enable_dynamic_redpoint(RedEnum.COMPENSATE_TASK_AWARD + self.v_task_id, RedEnum.COMPENSATE_TASK, self.v_show_red_point)
+end
+
+function ui:clear_static_view()
+  if self.v_static_sv then
+    self.v_static_sv:clear()
+    self.v_static_sv = nil
+  end
+end
+
+function ui:on_clear()
+  self:clear_static_view()
+  RedPointMgr:unbind_redpoint_by_id(self, RedEnum.COMPENSATE_TASK_AWARD + self.v_task_cfg.idx, RedEnum.COMPENSATE_TASK)
+end
+
+return ui

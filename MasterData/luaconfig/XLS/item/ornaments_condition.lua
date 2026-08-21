@@ -1,0 +1,17 @@
+return {
+  {
+    Arg = {1},
+    ConditionType = 1,
+    Id = 1
+  },
+  {
+    Arg = {10005},
+    ConditionType = 2,
+    Id = 2
+  },
+  {
+    Arg = {666042},
+    ConditionType = 3,
+    Id = 3
+  }
+}

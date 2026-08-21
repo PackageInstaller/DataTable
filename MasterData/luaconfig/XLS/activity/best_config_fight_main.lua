@@ -1,0 +1,14 @@
+return {
+  {
+    ActyTimeId = 2,
+    EpisodeIds = {
+      20010101,
+      20010102,
+      20010103
+    },
+    Icon = "UIChapter/Chapter_gqfm_dpzz",
+    Id = 1,
+    Name = "顶配作战",
+    TaskGroupId = 200101
+  }
+}

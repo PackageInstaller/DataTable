@@ -1,0 +1,556 @@
+local M = Util.create_class()
+local BATTLE_TASK_CFG = require("uimodule.fight_task.battle_task_config")
+local FIGHT_TASK_ITEM = require("uimodule.fight.fight_task_item")
+local TASK_STATE = BATTLE_TASK_CFG.TASK_STATE
+local TASK_TYPE = BATTLE_TASK_CFG.TASK_TYPE
+local _insert = table.insert
+local _remove = table.remove
+local complete_icon_path = "UIFight/new/Battle_icon_wc"
+local MQ_CONST_TO_FUNC_NAME = {
+  [Const.MSG_NAVIGATOR_EFFECT_SHOW_STATE_CHANGE] = "update_task_navigator_eff",
+  [Const.MSG_ON_SYNC_FIGHT_PROGRESS] = "update_task_condition_progress",
+  [Const.MSG_ON_BATTLE_TASK_UPDATE] = "update_task_condition_progress",
+  [Const.MSG_ON_CHANGE_TRACK_BATTLE_TASK_ID] = "on_change_track_battle_task_id",
+  [Const.MSG_ON_TOWER_DATA_UPDATE] = "update_task_condition_progress"
+}
+local TypeCustomDOTween = typeof(CS.CustomDOTween)
+local ANIM_CD = ShareRes.get_comm_value("FightTaskAnimCD")
+local TASK_GUID_INFO = ShareRes.get_comm_string_value("BattleTaskGuidId")
+local TASK_GUID_ID, TASK_GUID_TIME, TASK_GUID_SHOW_TIME
+
+function M:_init(lua_obj)
+  self.v_lua_obj = lua_obj
+  self.v_uiobjects = lua_obj.v_uiobjects
+  self.v_uicompents = lua_obj.v_uicompents
+  self.v_mq_handles = {}
+  self.v_play_effect_list = {}
+  self.v_cache_cond_obj_list = {}
+  self.v_task_item_list = {}
+  self.v_cg = self.v_uiobjects.BattleTask:GetComponent("CanvasGroup")
+  self.v_battle_task_visible = self.v_uiobjects.BattleTask.activeSelf
+  self.v_click_point_visible = self.v_uiobjects.Clickpoint.activeSelf
+  self.v_active_yuan_dotween = Util.get_component(nil, self.v_uiobjects.ActiveYuan, TypeCustomDOTween)
+  self.v_click_point_dotween = Util.get_component(nil, self.v_uiobjects.Clickpoint, TypeCustomDOTween)
+  self.v_click_point_dotween.component:SetCompleteCallBack(function()
+    local navigator_suc = Global.camera:get_camera_mode() ~= Config.CAMERA_VIEW_TYPE.DEPRESSION or Global.hero:get_navigator_suc()
+    self.v_click_point_visible = not SceneMgr:global_hero_is_destroyed() and Global.hero:get_navigator_tp_show() and navigator_suc
+    self.v_click_point:SetActive(self.v_click_point_visible)
+  end)
+  self.v_task_type_icon_dotween = Util.get_component(nil, self.v_uiobjects.TaskTypeIcon, TypeCustomDOTween)
+  local active_1_obj = Util.get_child_gameobj("Active_1", self.v_uiobjects.Active)
+  self.v_active_1_dotween = Util.get_component(nil, active_1_obj, TypeCustomDOTween)
+  local list = Util.split_str(TASK_GUID_INFO, "&")
+  TASK_GUID_TIME = tonumber(list[1])
+  TASK_GUID_ID = tonumber(list[2])
+  TASK_GUID_SHOW_TIME = tonumber(list[3])
+end
+
+function M:init_view()
+  self.v_click_point = self.v_uiobjects.Clickpoint
+  self.v_uiobjects.TaskNavigator:SetActive(true)
+  self.v_uiobjects.TaskMainBtn:SetActive(true)
+  self.v_uiobjects.ReceiveOrComplete:SetActive(false)
+  self.v_uiobjects.ConditionTem:SetActive(false)
+  self:update_task_view()
+  self:unbind_msg()
+  self:init_msg()
+  self:update_task_condition_progress()
+end
+
+function M:on_hide()
+  if self.v_sequence then
+    self.v_sequence:Kill()
+    self.v_sequence = nil
+  end
+  if self.v_task_cd_anim then
+    self.v_task_cd_anim:Kill()
+    self.v_task_cd_anim = nil
+  end
+  self:unbind_msg()
+end
+
+function M:on_destroy()
+  self:destroy_contidion_obj()
+  self.v_cg = nil
+  self.v_lua_obj = nil
+  self.v_uiobjects = nil
+  self.v_uicompents = nil
+  self.v_play_effect_list = nil
+  self.v_cache_cond_obj_list = nil
+  self:unbind_msg()
+  self:clear_dotween_timer()
+end
+
+function M:update()
+  self:update_task_visible()
+  self:check_trigger_task_guid()
+  self:check_stop_task_guid()
+end
+
+function M:check_play_task_anim()
+  if not self.v_battle_task_visible then
+    return
+  end
+  local now_time = Global.real_time
+  self.v_time = self.v_time or now_time
+  if now_time - self.v_time <= ANIM_CD then
+    return
+  end
+  self.v_time = now_time
+  self:creat_anim_sequence()
+end
+
+function M:check_show_task_guid_view()
+  if not TowerMgr then
+    return
+  end
+  local tower = TowerMgr:get_tower()
+  if not tower then
+    return
+  end
+  if not tower:is_pass_room() then
+    return
+  end
+  if tower and tower:is_maze_room() then
+    return
+  end
+  if not BattleTaskMgr or not BattleTaskMgr:is_track_main_task() then
+    return
+  end
+  if StoryMgr and StoryMgr:is_playing_story() and not StoryMgr:check_cur_step_captions_talk() then
+    return
+  end
+  if TimeLineSeqPlayer.IS_PLAY_TIMELINE then
+    return
+  end
+  return true
+end
+
+function M:reset_guid_cd_time()
+  self.v_guid_time = nil
+  if GuideMgr and self.v_is_guid_start then
+    GuideMgr:force_finish_fixed_guide(TASK_GUID_ID)
+  end
+  self.v_is_guid_start = false
+end
+
+function M:check_trigger_task_guid()
+  if not self.v_battle_task_visible then
+    return
+  end
+  if not TASK_GUID_TIME or not TASK_GUID_ID then
+    return
+  end
+  if not self:check_show_task_guid_view() then
+    return
+  end
+  local now_time = Global.real_time
+  self.v_guid_time = self.v_guid_time or now_time
+  if now_time - self.v_guid_time <= TASK_GUID_TIME then
+    return
+  end
+  self.v_guid_time = now_time
+  self.v_is_guid_start = true
+  if GuideMgr then
+    GuideMgr:enter_guide(TASK_GUID_ID)
+  end
+end
+
+function M:check_stop_task_guid()
+  if not self.v_is_guid_start then
+    return
+  end
+  local now_time = Global.real_time
+  if now_time - self.v_guid_time <= TASK_GUID_SHOW_TIME then
+    return
+  end
+  self.v_is_guid_start = false
+  if GuideMgr then
+    GuideMgr:force_finish_fixed_guide(TASK_GUID_ID)
+  end
+end
+
+function M:creat_anim_sequence()
+  if self.v_task_cd_anim then
+    self.v_task_cd_anim:Kill()
+    self.v_task_cd_anim = nil
+  end
+  self.v_sequence = Util.create_sequence()
+  self.v_sequence:Append(self.v_cg:DOFade(0, 1))
+  self.v_sequence:Append(self.v_cg:DOFade(1, 1))
+  self.v_sequence:OnComplete(function()
+    self.v_sequence = nil
+  end)
+end
+
+function M:init_msg()
+  for const, func_name in pairs(MQ_CONST_TO_FUNC_NAME) do
+    if self[func_name] then
+      self.v_mq_handles[const] = MsgGame:mq_bind(const, self[func_name], self)
+    end
+  end
+end
+
+function M:unbind_msg()
+  for key, handle in pairs(self.v_mq_handles) do
+    MsgGame:mq_unbind(handle)
+    self.v_mq_handles[key] = nil
+  end
+end
+
+function M:update_task_view()
+  if not self.v_lua_obj.v_visible then
+    return
+  end
+  if not BattleTaskMgr then
+    return
+  end
+  local task_list = BattleTaskMgr:get_task()
+  local task_len = UtilTable.hash_lenth(task_list)
+  if 0 == task_len then
+    return
+  end
+  local track_task_id = BattleTaskMgr:get_track_task_id()
+  if not track_task_id or 0 == track_task_id then
+    return
+  end
+  self.v_track_task_id = track_task_id
+  local task_item = BattleTaskMgr:get_task(track_task_id)
+  local task_cfg = task_item.v_task_cfg
+  if not task_cfg then
+    return
+  end
+  self:update_task_navigator_state()
+  local type = task_cfg.Type
+  local type_cfg = ShareRes.get_battle_task_type_cfg(type)
+  if type_cfg and type_cfg.IconPath then
+    local path = type_cfg.IconPath
+    ResMgr:load_set_icon(self.v_uicompents.TaskTypeIcon_img, path)
+  end
+  self:update_task_pro()
+  self:update_visible()
+end
+
+function M:update_task_visible()
+end
+
+function M:update_visible()
+  local is_visible = false
+  if BattleTaskMgr then
+    local track_task_id = BattleTaskMgr:get_track_task_id()
+    is_visible = track_task_id and 0 ~= track_task_id
+    if is_visible and not self.v_battle_task_visible then
+      self.v_time = Global.real_time
+    end
+  end
+  if self.v_battle_task_visible == is_visible then
+    return
+  end
+  self.v_uiobjects.BattleTask:SetActiveEx(is_visible)
+  self.v_battle_task_visible = is_visible
+end
+
+function M:update_task_pro()
+  if self.v_is_play then
+    return
+  end
+  if self.v_track_task_id == nil then
+    return
+  end
+  local task_item = BattleTaskMgr:get_task(self.v_track_task_id)
+  if not task_item then
+    return
+  end
+  local task_cfg = task_item.v_task_cfg
+  local condition_list = task_cfg.Condition
+  local all_pro = 0
+  local cur_pro = 0
+  for _, condition_id in ipairs(condition_list) do
+    if 0 ~= condition_id then
+      local con_cfg = ShareRes.get_battle_task_condition_cfg(condition_id)
+      if 1 == _ then
+        all_pro = con_cfg.Value
+      end
+      local progress = task_item:get_task_progress(condition_id)
+      cur_pro = cur_pro + progress
+    end
+  end
+  self.v_uicompents.TaskName_txt.text = task_cfg.Name
+  self:set_content_height()
+  return
+end
+
+function M:set_content_height()
+end
+
+function M:battle_task_receive_or_complete(task_id)
+  _insert(self.v_play_effect_list, task_id)
+  self.v_task_type_icon_dotween:Restart()
+  self:play_anim()
+end
+
+function M:play_anim()
+  if self.v_is_play then
+    return
+  end
+  if self.v_sequence then
+    self.v_sequence:Kill()
+    self.v_sequence = nil
+  end
+  local content_canvas = self.v_uiobjects.TaskNavigator:GetComponent("CanvasGroup")
+  local receive_or_complete_canvas = self.v_uiobjects.ReceiveOrComplete:GetComponent("CanvasGroup")
+  local task_id = self.v_play_effect_list[1]
+  if not task_id then
+    self.v_uiobjects.ReceiveOrComplete:SetActive(false)
+    self:update_task_pro()
+    self.v_sequence = Util.create_sequence()
+    self.v_sequence:Append(content_canvas:DOFade(1, 0.2))
+    self.v_sequence:OnComplete(function()
+    end)
+    return
+  end
+  _remove(self.v_play_effect_list, 1)
+  local task_obj = BattleTaskMgr:get_task(task_id)
+  if task_obj then
+    self.v_uiobjects.ReceiveOrComplete:SetActive(true)
+    local task_cfg = task_obj:get_task_cfg()
+    if task_obj:get_state() == TASK_STATE.COMPLETE or task_obj:get_state() == TASK_STATE.GET_REWARD then
+      ResMgr:load_set_icon(self.v_uicompents.ReceiveOrCompleteTypeIcon_img, complete_icon_path)
+      self.v_uicompents.ReceiveOrCompleteName_txt.text = task_cfg.Name
+    else
+      local track_task_id = BattleTaskMgr:get_track_task_id()
+      local track_task = BattleTaskMgr:get_task(track_task_id)
+      if track_task then
+        local track_task_cfg = track_task:get_task_cfg()
+        if task_cfg.Group == track_task_cfg.Group and task_cfg.Type == TASK_TYPE.MAIN and track_task_cfg.Type == TASK_TYPE.MAIN then
+          self:play_anim()
+          return
+        end
+      end
+      local type = task_cfg.Type
+      local type_cfg = ShareRes.get_battle_task_type_cfg(type)
+      if type_cfg and type_cfg.IconPath then
+        local path = type_cfg.IconPath
+        ResMgr:load_set_icon(self.v_uicompents.ReceiveOrCompleteTypeIcon_img, path)
+      end
+      self.v_uicompents.ReceiveOrCompleteName_txt.text = Util.format_str("新任务：") .. task_cfg.Name
+    end
+    self:set_content_height()
+    self.v_is_play = true
+    self.v_sequence = Util.create_sequence()
+    self.v_sequence:Append(content_canvas:DOFade(0, 0.2))
+    self.v_sequence:Join(receive_or_complete_canvas:DOFade(1, 0.2))
+    self.v_sequence:AppendInterval(1)
+    self.v_sequence:Append(receive_or_complete_canvas:DOFade(0, 0.2))
+    self.v_sequence:OnComplete(function()
+      self.v_is_play = false
+      self:play_anim()
+    end)
+  end
+end
+
+function M:update_task_navigator_state()
+  if SceneMgr:global_hero_is_destroyed() then
+    return
+  end
+  local navigator_suc = Global.camera:get_camera_mode() ~= Config.CAMERA_VIEW_TYPE.DEPRESSION or Global.hero:get_navigator_suc()
+  local click_point_visible = not SceneMgr:global_hero_is_destroyed() and Global.hero:get_navigator_tp_show() and navigator_suc
+  if self.v_click_point_visible ~= click_point_visible then
+    local dot_index = click_point_visible and 0 or 1
+    self.v_click_point_dotween.component:Restart(dot_index)
+    self.v_click_point_visible = click_point_visible
+    self.v_click_point:SetActive(self.v_click_point_visible)
+    if self.v_click_point_visible then
+      self:update_task_navigator_eff()
+    else
+      self:set_active_effect(false, true)
+    end
+  end
+end
+
+function M:get_click_point_status()
+  return self.v_click_point_visible
+end
+
+function M:update_task_navigator_eff()
+  local navigator_suc = Global.camera:get_camera_mode() ~= Config.CAMERA_VIEW_TYPE.DEPRESSION or Global.hero:get_navigator_suc()
+  if not SceneMgr:global_hero_is_destroyed() and Global.hero:get_navigator_tp_show() and navigator_suc then
+    local isNavEffShow = Global.hero:is_show_navigator_effect()
+    self:set_active_effect(isNavEffShow)
+  end
+end
+
+function M:set_active_effect(visible, skip_effect)
+  if visible then
+    self:clear_dotween_timer()
+    self.v_active_1_dotween.component:Pause()
+    self.v_active_yuan_dotween.component:Restart()
+    self.v_uiobjects.Active:SetActive(visible)
+  else
+    self.v_active_yuan_dotween.component:Pause()
+    self.v_uicompents.ActiveYuan_rect:SetRotationA(0, 0, 0)
+    self.v_active_1_dotween.component:Restart(1)
+    if skip_effect then
+      self.v_uiobjects.Active:SetActive(visible)
+      self:clear_dotween_timer()
+    else
+      self.v_active_1_dotween_timer = Timer:add_timer(nil, 1.0, function()
+        if self.v_uiobjects then
+          self.v_uiobjects.Active:SetActive(visible)
+          self:clear_dotween_timer()
+        end
+      end)
+    end
+  end
+  self.v_uiobjects.UnActive:SetActive(not visible)
+end
+
+function M:on_change_track_battle_task_id(msg)
+  local old_track_task_id = msg and msg.mm_x
+  if old_track_task_id then
+    local task_cfg = ShareRes.get_battle_task_cfg(old_track_task_id)
+    if task_cfg then
+      for key, condition_id in pairs(task_cfg.Condition) do
+        if self.v_task_item_list[condition_id] then
+          self.v_task_item_list[condition_id]:ui_hide()
+          self.v_task_item_list[condition_id]:ui_destroy()
+          self.v_task_item_list[condition_id] = nil
+        end
+      end
+    end
+  end
+  self:update_task_condition_progress()
+end
+
+function M:update_task_condition_progress()
+  local check_tower_task = true
+  local point_id, progress
+  if TowerMgr then
+    progress = TowerMgr:get_tower_progress()
+    if not progress then
+      check_tower_task = false
+    end
+    point_id = progress.episode_id
+    if not point_id then
+      check_tower_task = false
+    end
+  else
+    check_tower_task = false
+  end
+  self:update_visible()
+  if self.v_battle_task_visible then
+    self:update_track_task_condition()
+  end
+  if check_tower_task then
+    self:update_tower_task_condition(progress)
+  end
+end
+
+function M:update_track_task_condition()
+  local task_item = BattleTaskMgr:get_track_task_item()
+  local have_con_obj = false
+  if task_item then
+    local task_cfg = task_item.v_task_cfg
+    if task_cfg then
+      local cond_cfg
+      for key, condition_id in pairs(task_cfg.Condition) do
+        if condition_id > 0 then
+          cond_cfg = ShareRes.get_battle_task_condition_cfg(condition_id)
+          self:set_track_task_info(self.v_uiobjects.TaskCondition, cond_cfg, task_item)
+          have_con_obj = true
+        end
+      end
+    end
+  end
+  self.v_uiobjects.TaskCondition:SetActive(have_con_obj)
+end
+
+function M:update_tower_task_condition(progress)
+  local tower_task = progress.tower_task
+  local have_con_obj = false
+  if not tower_task then
+    self.v_uiobjects.StarCondition:SetActive(have_con_obj)
+    return
+  end
+  local cond_cfg
+  for index, task_data in pairs(tower_task) do
+    if task_data.task_id and task_data.task_id > 0 then
+      cond_cfg = ShareRes.get_point_star_condition_cfg(task_data.task_id)
+      self:set_tower_task_info(self.v_uiobjects.StarCondition, cond_cfg, task_data)
+      have_con_obj = true
+    end
+  end
+  self.v_uiobjects.StarCondition:SetActive(have_con_obj)
+end
+
+function M:hide_all_condition_obj()
+  for key, item in pairs(self.v_task_item_list) do
+    item:ui_destroy()
+    self.v_task_item_list[key] = nil
+  end
+end
+
+function M:destroy_contidion_obj()
+  self:hide_all_condition_obj()
+  for key, obj in pairs(self.v_cache_cond_obj_list) do
+    if not obj:IsNull() then
+      ResMgr:destroy_gameobj(obj)
+    end
+    self.v_cache_cond_obj_list[key] = nil
+  end
+end
+
+function M:get_condition_obj(root)
+  local unactive_obj
+  for index, obj in ipairs(self.v_cache_cond_obj_list) do
+    if not obj.activeSelf then
+      unactive_obj = obj
+      break
+    end
+  end
+  if not unactive_obj then
+    local index = #self.v_cache_cond_obj_list + 1
+    local objs = self.v_uiobjects
+    unactive_obj = ResMgr:instantiate(objs.ConditionTem)
+    unactive_obj.transform:SetParent(root.transform)
+    unactive_obj.transform:ResetAttr()
+    self.v_cache_cond_obj_list[index] = unactive_obj
+  end
+  return unactive_obj
+end
+
+function M:set_track_task_info(root, cfg, task_item)
+  if not self.v_task_item_list[cfg.Id] then
+    local obj = self:get_condition_obj(root)
+    self.v_task_item_list[cfg.Id] = FIGHT_TASK_ITEM:ui_wrap_ex(nil, obj, true)
+  end
+  self.v_task_item_list[cfg.Id]:set_track_task_data(cfg, task_item)
+end
+
+function M:set_tower_task_info(root, cfg, task_data)
+  if not self.v_task_item_list[cfg.Id] then
+    local obj = self:get_condition_obj(root)
+    self.v_task_item_list[cfg.Id] = FIGHT_TASK_ITEM:ui_wrap_ex(nil, obj, true)
+  end
+  self.v_task_item_list[cfg.Id]:set_tower_task_data(cfg, task_data)
+end
+
+function M:refresh_fight_task_ui(is_normal)
+  local bg_path = "UIFight/20240227/Fight_bg_rw_msd"
+  local point_bg_path = "UIFight/20240227/Fight_bg_rw_yd2"
+  if not is_normal then
+    bg_path = "UISPStageBattle1/Fight_db_zbrw"
+    point_bg_path = "UISPStageBattle1/Fight_db_zbdw"
+  end
+  ResMgr:load_set_icon(self.v_uicompents.BattleTaskBg_img, bg_path)
+  ResMgr:load_set_icon(self.v_uicompents.Clickpoint_img, point_bg_path)
+end
+
+function M:clear_dotween_timer()
+  if self.v_active_1_dotween_timer then
+    Timer:remove_timer(self.v_active_1_dotween_timer)
+    self.v_active_1_dotween_timer = nil
+  end
+end
+
+return M

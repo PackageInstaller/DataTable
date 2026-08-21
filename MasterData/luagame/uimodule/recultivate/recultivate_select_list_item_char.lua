@@ -1,0 +1,60 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local Char_Helper = require("uimodule.character.char_helper")
+
+function ui:ui_finish_load()
+  self:set_button_listener(Util.get_button(nil, self.v_object), function()
+    self:on_click()
+  end)
+end
+
+function ui:ui_on_hide()
+  self.v_buddy_info = nil
+end
+
+function ui:set_data(buddy_info)
+  self.v_buddy_info = buddy_info
+  self.v_buddy_id = buddy_info.id
+  self.v_buddy_cfg = ShareRes.get_buddy_cfg(self.v_buddy_id)
+  self:refresh_quailty_icon()
+  self:refresh_element_icon()
+  self:refresh_char_icon()
+  self:refresh_lv_num()
+end
+
+function ui:refresh_quailty_icon()
+  local qual_val = self.v_buddy_cfg.Quality
+  local icon_path = ShareRes.get_buddy_qualityIcon_small_square(qual_val)
+  ResMgr:load_set_icon(self.v_uicompents.QualityBg_img, icon_path)
+end
+
+function ui:refresh_element_icon()
+  local icon_path = ShareRes.get_element_cfg(self.v_buddy_cfg.Element).ElementIconPath
+  ResMgr:load_set_icon(self.v_uicompents.EleIcon_img, icon_path)
+end
+
+function ui:refresh_char_icon()
+  local icon_path = UtilUI.get_hero_images(self.v_buddy_id, 1, self.v_buddy_info.fashion_id)
+  ResMgr:load_set_icon(self.v_uicompents.CharIcon_img, icon_path)
+end
+
+function ui:refresh_lv_num()
+  self.v_uicompents.LvTxt_txt.text = self.v_buddy_info.lv
+  local advance_lv = self.v_buddy_info.advance
+  self.v_uiobjects.Advance:SetActiveEx(advance_lv > 1)
+  if advance_lv > 1 then
+    local char_advance_icon = Char_Helper.get_char_advance_icon(advance_lv)
+    ResMgr:load_set_icon(self.v_uicompents.AdvanceNum_img, char_advance_icon, nil, true)
+  end
+end
+
+function ui:on_click()
+  self.v_parent_ui:on_click_buddy(self.v_buddy_id)
+  self:set_selected(true)
+end
+
+function ui:set_selected(is_selected)
+  self.v_uiobjects.Select_Loop:SetActiveEx(is_selected)
+end
+
+return ui

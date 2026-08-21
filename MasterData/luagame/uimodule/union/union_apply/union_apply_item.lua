@@ -1,0 +1,75 @@
+local Base = require("ui.uiobject")
+local UnionCfg = require("uimodule.union.union_config")
+local UnionHelper = require("uimodule.union.union_helper")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_btn_accept = {
+    "BtnAccept",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_refuse = {
+    "BtnRefuse",
+    BIND_TYPE.BUTTON
+  },
+  v_player_id = {
+    "PlayerID",
+    BIND_TYPE.TEXT
+  },
+  v_player_lv = {
+    "PlayerLV",
+    BIND_TYPE.TEXT
+  },
+  v_player_name = {
+    "PlayerName",
+    BIND_TYPE.TEXT
+  },
+  v_profile = {
+    "Profile",
+    BIND_TYPE.IMAGE
+  }
+}
+local HANDLE_TYPE = UnionCfg.HANDLE_APPLY_TYPE
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnAccept", function()
+    self:_onclick_accept_btn()
+  end)
+  self:set_button("BtnRefuse", function()
+    self:_onclick_refuse_btn()
+  end)
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+  Util.enable_btn(self.v_btn_accept)
+end
+
+function ui:set_data(go, data_list, index)
+  self.v_player_data = data_list[index].applicant_info
+  self.v_player_name.text = self.v_player_data.name
+  self.v_player_id.text = self.v_player_data.uuid
+  self.v_player_lv.text = self.v_player_data.lv
+  ResMgr:load_set_icon(self.v_profile, UnionHelper.get_player_icon_path(self.v_player_data.icon))
+  self.v_is_full = UnionMgr:get_is_union_full()
+  if self.v_is_full then
+    Util.apply_grey(nil, self.v_btn_accept, true)
+  end
+end
+
+function ui:_onclick_accept_btn()
+  if self.v_is_full then
+    Util.show_message_tip(2301)
+    return
+  end
+  UnionMgr:request_handle_union_apply(HANDLE_TYPE.ACCEPT, self.v_player_data.uuid)
+end
+
+function ui:_onclick_refuse_btn()
+  UnionMgr:request_handle_union_apply(HANDLE_TYPE.REFUSE, self.v_player_data.uuid)
+end
+
+return ui

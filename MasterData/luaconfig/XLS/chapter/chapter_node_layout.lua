@@ -1,0 +1,6 @@
+return {
+  {Id = 1, LayoutPoint = "1,3"},
+  {Id = 2, LayoutPoint = "1,4"},
+  {Id = 3, LayoutPoint = "1,5"},
+  [300] = {Id = 300, LayoutPoint = "1,5"}
+}

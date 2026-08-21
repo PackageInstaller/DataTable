@@ -1,0 +1,112 @@
+local SkipListNode = Util.create_class()
+
+function SkipListNode:_init(level, key, value)
+  self.level = level
+  self.key = key
+  self.value = value
+  self.forward = {}
+end
+
+local ROBABILITY = 0.5
+local M = Util.create_class()
+
+function M:_init(max_level)
+  self.max_level = max_level
+  local header = SkipListNode:new(self.max_level, nil, nil)
+  self.header = header
+  self.level = 1
+  self.length = 0
+  self.last_inserted = nil
+end
+
+function M:random_level()
+  local level = 1
+  while math.random() < ROBABILITY and level < self.max_level do
+    level = level + 1
+  end
+  return level
+end
+
+local TEMP_UPDATE_LIST = {}
+
+function M:get_current_node(key)
+  UtilTable.clear_map(TEMP_UPDATE_LIST)
+  local current = self.header
+  for i = self.level, 1, -1 do
+    while current and current.forward[i] and key > current.forward[i].key do
+      current = current.forward[i]
+    end
+    TEMP_UPDATE_LIST[i] = current
+  end
+  current = TEMP_UPDATE_LIST[1]
+  return current
+end
+
+function M:insert(key, value)
+  local current = self:get_current_node(key)
+  if current and current.key == key then
+    current.value = value
+    return
+  end
+  local new_level = self:random_level()
+  if new_level > self.level then
+    for i = self.level, new_level do
+      TEMP_UPDATE_LIST[i] = self.header
+    end
+    self.level = new_level
+  end
+  local new_node = SkipListNode:new(new_level, key, value)
+  for i = 1, new_level do
+    new_node.forward[i] = TEMP_UPDATE_LIST[i].forward[i]
+    TEMP_UPDATE_LIST[i].forward[i] = new_node
+  end
+  self.length = self.length + 1
+  self.last_inserted = new_node
+end
+
+function M:get_last_inserted()
+  if self.last_inserted then
+    return self.last_inserted.key, self.last_inserted.value
+  end
+end
+
+function M:delete(key)
+  local current = self:get_current_node(key)
+  local target = current.forward[1]
+  if target and target.key == key then
+    for i = 1, self.level do
+      if TEMP_UPDATE_LIST[i].forward[i] ~= target then
+        break
+      end
+      TEMP_UPDATE_LIST[i].forward[i] = target.forward[i]
+    end
+    if self.last_inserted == target then
+      if self.length > 1 then
+        self.last_inserted = TEMP_UPDATE_LIST[1]
+      else
+        self.last_inserted = nil
+      end
+    end
+    while self.level > 1 and not self.header.forward[self.level] do
+      self.level = self.level - 1
+    end
+    self.length = self.length - 1
+  end
+end
+
+function M:find(key)
+  local current = self.header
+  for i = self.level, 1, -1 do
+    while current.forward[i] and key > current.forward[i].key do
+      current = current.forward[i]
+    end
+  end
+  current = current.forward[1]
+  if current and current.key == key then
+    return current.value
+  else
+    return nil
+  end
+end
+
+return M

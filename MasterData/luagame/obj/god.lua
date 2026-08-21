@@ -1,0 +1,273 @@
+local Base = require("obj.role")
+local FightDefine = require("cs_share.fight_define")
+local ATTR_TYPE = FightDefine.ATTR_TYPE
+local CommDefine = require("cs_share.common_define")
+local M = Util.create_child_mt(Base)
+
+function M:_init(...)
+  Base._init(self, ...)
+  self.v_effect_skill_index = 1
+  self.v_syc_attr_data = {}
+  self.v_module_attrs = {}
+  self.v_overall_shield = {}
+  self.v_overall_shield_magic_ids = {}
+end
+
+function M:presetup(...)
+  Base.presetup(self)
+  self:add_component("state_manager", require("obj.state.manager.hero_state_manager"):new(self))
+end
+
+function M:_on_load_file_finish(behavior)
+  Base._on_load_file_finish(self, behavior)
+  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.ON_GOD_BORN, self)
+  MsgGame:mq_publish2(Const.MSG_GOD_BORN)
+end
+
+function M:on_init_gameobj(...)
+  Base.on_init_gameobj(self, ...)
+end
+
+function M:on_destroy()
+  Base.on_destroy_luaobj(self)
+  Base.on_destroy(self)
+  if self.gameobj and self.gameobj.gameObject and not self.gameobj.gameObject:IsNull() then
+    UnityDestroy(self.gameobj.gameObject)
+  end
+  self.v_overall_shield = nil
+  self.v_overall_shield_magic_ids = nil
+end
+
+function M:update(dt)
+  self.update_start = true
+  if self:is_real_finish_init() then
+    self.state_manager:update()
+    self.skill_mgr:update()
+    self.magic_mgr:update()
+  end
+  self.time_mgr:update()
+  self.update_start = false
+  if Global.hero then
+    self.v_position = Global.hero:get_pos_vec3()
+  end
+end
+
+function M:is_real_finish_init()
+  return true
+end
+
+function M:get_camp()
+  assert(self.camp, "camp not inited")
+  return self.camp
+end
+
+function M:set_camp(camp)
+  if camp then
+    self.camp = camp
+  end
+end
+
+function M:is_god()
+  return true
+end
+
+function M:is_air()
+  return true
+end
+
+function M:get_base_attrs()
+  local monster_base_attr = ShareRes.create("monster.monster_base_attr")
+  local monster_upgrade_attr = ShareRes.create("monster.monster_upgrade_attr")
+  local id = self.character_cfg.AttribId
+  local attrs = FightDefine.get_monster_attrs(id, self.v_level, monster_base_attr, monster_upgrade_attr)
+  attrs[ATTR_TYPE.CHAR_SP_MAX].FIXED = self.character_cfg.powerMax
+  self:get_tower_energy_max_val(attrs)
+  self.v_is_get_attr = true
+  for attr_id, data in pairs(attrs) do
+    data.FIXED = self.v_syc_attr_data[attr_id] or data.FIXED
+  end
+  self:add_privilege_attr(attrs)
+  return attrs
+end
+
+function M:add_privilege_attr(attrs)
+  if Util.is_client_only() then
+    return
+  end
+  if not ChapterMgr then
+    return
+  end
+  local privilege_attr_list = ChapterMgr:get_god_attr_list()
+  if privilege_attr_list and next(privilege_attr_list) then
+    for attr_id, attr_info in pairs(privilege_attr_list) do
+      if attrs[attr_id] then
+        attrs[attr_id].FIXED = attrs[attr_id].FIXED + attr_info.FIXED
+        attrs[attr_id].RATIO = attrs[attr_id].RATIO + attr_info.RATIO
+      end
+    end
+  end
+end
+
+function M:refresh_scene_skill_info()
+  local id = self.character_cfg.AttribId
+  local skill_data, entry_attrs = TowerMgr:get_scene_skill_data()
+  assert(skill_data, "ERROR NO GODNPC INFO ID = " .. id)
+  if self.v_level ~= skill_data.lv then
+    self:set_level(skill_data.lv)
+  end
+  self:update_module_attrs(CommDefine.MODULE_ATTR_TYPE.SCENE_SKILL, entry_attrs, true)
+  self:add_scene_skill_magic()
+end
+
+function M:set_sync_attr_data(attr)
+  self.v_syc_attr_data = attr or {}
+  if self.v_is_get_attr then
+    self.attr_mgr:init_attr()
+  end
+end
+
+function M:write_sync_attr()
+  if self.v_syc_attr_data then
+    local VALUE_TYPE = CommDefine.VALUE_TYPE
+    local SET_TYPE = Config.ATTR_SET_TYPE
+    local ATTR_GROUP_TYPE = Config.ATTR_GROUP_TYPE
+    for attr_id, attr_value in pairs(self.v_syc_attr_data) do
+      self.attr_mgr:set_cur_attr(ATTR_GROUP_TYPE.BASE, attr_id, attr_value, VALUE_TYPE.FIXED, SET_TYPE.REPLACE, nil, {ignoreDie = true})
+    end
+    SceneMgr:c2gs_call_scene("task_effect_scene_common_attr")
+  end
+end
+
+function M:update_module_attrs(module_type, attrs, sync)
+  if self.v_module_attrs[module_type] then
+    for _, single_attr in pairs(self.v_module_attrs[module_type]) do
+      FightDefine.push_single_attr_temp(single_attr)
+    end
+  end
+  self.v_module_attrs[module_type] = attrs
+  if sync then
+    self:sync_module_attrs()
+  end
+end
+
+function M:sync_module_attrs()
+  if self.attr_mgr then
+    self.attr_mgr:update_module_attrs()
+  end
+  if StateReport then
+    StateReport:sync_module_attrs(self.uuid)
+  end
+end
+
+function M:get_module_attrs()
+  local newAttrs = {}
+  for t, attrs in pairs(self.v_module_attrs) do
+    for attrType, attr in pairs(attrs) do
+      local total_attr = newAttrs[attrType]
+      if not total_attr then
+        total_attr = FightDefine.init_single_attr()
+        newAttrs[attrType] = total_attr
+      end
+      FightDefine.single_attr_add(total_attr, attr)
+    end
+  end
+  return newAttrs
+end
+
+function M:get_tower_energy_max_val(attrs)
+  if not TowerMgr then
+    return
+  end
+  local tower = TowerMgr:get_tower()
+  local tower_id = tower:get_tower_id()
+  local tower_cfg = ShareRes.create("tower.tower", tower_id)
+  local energy_id = tower_cfg.EnergyId
+  if not energy_id or 0 == energy_id then
+    return
+  end
+  local energy_cfg = ShareRes.get_tower_energy_cfg(energy_id)
+  if not energy_cfg then
+    return
+  end
+end
+
+function M:creat_god_obj()
+  local go = Global.res_mgr:create_emptygameobj("_GOD_NPC", true)
+  self.gameobj = go
+  self.transform = go.transform
+  self.skill_mgr:init_energy()
+  self:write_sync_attr()
+end
+
+function M:get_dir()
+  local dir = self.v_skill_dir and self.v_skill_dir or Global.hero:get_dir()
+  self.v_skill_dir = nil
+  return dir
+end
+
+function M:set_target_dir(dir, force)
+  self.v_skill_dir = dir
+end
+
+function M:replace_skill_index(index)
+  self.v_effect_skill_index = index
+end
+
+function M:get_effect_skill_id()
+  local skill_id_list = ShareRes.get_skill_list(self.character_cfg.NpcId)
+  return skill_id_list[self.v_effect_skill_index]
+end
+
+function M:add_overall_shield(owner_uuid, magic_id, shield_value)
+  local index = #self.v_overall_shield_magic_ids + 1
+  local shield_key = owner_uuid .. magic_id
+  local info = self.v_overall_shield[shield_key]
+  if not info then
+    self.v_overall_shield_magic_ids[index] = shield_key
+    info = {
+      shield_value = shield_value,
+      magic_id = magic_id,
+      uuid = owner_uuid,
+      index = index
+    }
+    self.v_overall_shield[shield_key] = info
+  else
+    info.shield_value = shield_value
+  end
+end
+
+function M:get_overall_shield()
+  return self.v_overall_shield_magic_ids, self.v_overall_shield
+end
+
+function M:del_overall_shield(uuid, magic_id)
+  local shield_key = uuid .. magic_id
+  local info = self.v_overall_shield[shield_key]
+  if not info or not info.index then
+    return
+  end
+  table.remove(self.v_overall_shield_magic_ids, info.index)
+  self.v_overall_shield[shield_key] = nil
+  local s_key, s_info
+  for i = 1, #self.v_overall_shield_magic_ids do
+    s_key = self.v_overall_shield_magic_ids[i]
+    s_info = self.v_overall_shield[s_key]
+    if s_info then
+      s_info.index = i
+    end
+  end
+end
+
+function M:get_overall_shield_value()
+  local total_shield_value = 0
+  for key, info in pairs(self.v_overall_shield) do
+    total_shield_value = total_shield_value + info.shield_value
+  end
+  return total_shield_value
+end
+
+function M:is_need_land_height()
+  return false
+end
+
+return M

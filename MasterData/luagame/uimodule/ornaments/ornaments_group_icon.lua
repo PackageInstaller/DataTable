@@ -1,0 +1,20 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:on_clear()
+end
+
+function ui:ui_finish_load()
+end
+
+function ui:set_data(data)
+  local icon = self.v_uicompents.Icon_img
+  if 0 == data.group_id then
+    self:ui_hide()
+    return
+  end
+  local group_cfg = ShareRes.get_ornaments_group(data.group_id)
+  ResMgr:load_set_icon(icon, group_cfg.Icon)
+end
+
+return ui

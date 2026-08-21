@@ -1,0 +1,170 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local Char_Helper = require("uimodule.character.char_helper")
+local _tinsert = table.insert
+local _tsort = table.sort
+local TEMPLATE_KEY_DATA_ITEM = "CHAR_SKILL_SUC_PNL_TEMPLATE_KEY_DATA_ITEM"
+local SCROLL_VIEW_HEIGHT = 170
+local MODEL = {
+  v_blur = {
+    "Blur",
+    BIND_TYPE.RAW_IMAGE
+  },
+  v_btn_ret = {
+    "BtnRet",
+    BIND_TYPE.BUTTON
+  },
+  v_last_lv = {
+    "Last_Lv",
+    BIND_TYPE.TEXT
+  },
+  v_lv = {
+    "Lv",
+    BIND_TYPE.OBJECT
+  },
+  v_new_lv = {
+    "New_Lv",
+    BIND_TYPE.TEXT
+  },
+  v_skill_icon = {
+    "SkillIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_skill_name = {
+    "SkillName",
+    BIND_TYPE.TEXT
+  },
+  v_skill_type = {
+    "SkillType",
+    BIND_TYPE.TEXT
+  },
+  v_skill = {
+    "Skill",
+    BIND_TYPE.OBJECT
+  },
+  v_talent_icon = {
+    "TalentIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_talent_type = {
+    "TalentType",
+    BIND_TYPE.TEXT
+  },
+  v_talent = {
+    "Talent",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnRet", function()
+    self:ui_hide()
+  end)
+  self:set_button("Description", function()
+    self:try_show_keyword()
+  end)
+  self.v_description_rect_transform = Util.get_rect_transform(nil, self.v_uiobjects.Description)
+  self.v_description_scroll = Util.get_scrollrect(nil, self.v_uiobjects.ScrollView)
+  Global.listener_mgr:add_listener(self.v_object, self.v_description_scroll.onValueChanged, function()
+    self:on_scroll_value_changed()
+  end)
+  self:register_exist_auto_template(TEMPLATE_KEY_DATA_ITEM, self.v_uiobjects.DataTem, self.v_uiobjects.DataContent)
+  self.v_tmp_text = self.v_uiobjects.Description:GetComponent(typeof(CS.TMPro.TMP_Text))
+end
+
+function ui:ui_on_show(buddy_id, skill_id, skill_lv, talent_lv)
+  local is_skill = nil ~= skill_id
+  self.v_uiobjects.Skill_UpText:SetActive(false)
+  self.v_uiobjects.Talent_UpText:SetActive(false)
+  self.v_lv:SetActive(is_skill)
+  self.v_skill:SetActive(is_skill)
+  self.v_talent:SetActive(not is_skill)
+  if is_skill then
+    self.v_uiobjects.Skill_UpText:SetActive(true)
+    self:show_skill_info(skill_id, skill_lv)
+  else
+    self.v_uiobjects.Talent_UpText:SetActive(true)
+    self:show_talent_info(buddy_id, talent_lv)
+  end
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+  Global.listener_mgr:remove_listener(nil, self.v_description_scroll.onValueChanged)
+end
+
+function ui:on_scroll_value_changed()
+  if not self.v_show_arrow then
+    return
+  end
+  local pos_y = SCROLL_VIEW_HEIGHT + self.v_description_rect_transform.anchoredPosition.y
+  self.v_uiobjects.Arrow:SetActive(pos_y < self.v_tmp_text.preferredHeight)
+end
+
+function ui:show_skill_info(skill_id, skill_lv)
+  local skill_detail_cfg = ShareRes.get_buddy_skill_details_cfg(skill_id)
+  self.v_skill_type.text = skill_detail_cfg.SkillTypeName
+  self.v_skill_name.text = skill_detail_cfg.Name
+  Util.load_skill_icon(skill_detail_cfg.Icon, self.v_skill_icon)
+  local old_lv_cfg = ShareRes.get_buddy_skill_lv_cfg(skill_id, skill_lv)
+  local lv_cfg = ShareRes.get_buddy_skill_lv_cfg(skill_id, skill_lv + 1)
+  self:_show_data_items(old_lv_cfg, lv_cfg)
+  self.v_tmp_text.text = skill_detail_cfg.Desc
+  self.v_keyword_list = skill_detail_cfg.Keywords
+  self.v_show_arrow = self.v_tmp_text.preferredHeight > SCROLL_VIEW_HEIGHT
+  self.v_uiobjects.Arrow:SetActive(self.v_show_arrow)
+  self.v_last_lv.text = skill_lv
+  self.v_new_lv.text = skill_lv + 1
+  self.v_uiobjects.New_Lv:SetActive(false)
+  self.v_uiobjects.New_Lv:SetActive(true)
+end
+
+function ui:_show_data_items(old_lv_cfg, lv_cfg)
+  self:give_back_auto_cache(TEMPLATE_KEY_DATA_ITEM)
+  local data_name_list = lv_cfg.DataTxt
+  if not data_name_list or 0 == #data_name_list then
+    return
+  end
+  for idx, name in ipairs(data_name_list) do
+    local item = self:get_auto_cache(TEMPLATE_KEY_DATA_ITEM)
+    Util.get_text("DateName", item).text = name
+    local old_val_txt = Util.get_text("BeforeDateNum", item)
+    local new_val_txt = Util.get_text("AfterDateNum", item)
+    local arrow_obj = Util.get_child_gameobj("Arrow", item)
+    local old_val = old_lv_cfg.DataVal[idx]
+    local new_val = lv_cfg.DataVal[idx]
+    arrow_obj:SetActive(old_val ~= new_val)
+    new_val_txt.gameObject:SetActive(old_val ~= new_val)
+    old_val_txt.text = old_val
+    new_val_txt.text = new_val
+  end
+end
+
+function ui:show_talent_info(buddy_id, talent_lv)
+  local talent_detail_cfg = ShareRes.get_buddy_talent_lv_cfg_list(buddy_id)[talent_lv + 1]
+  self.v_talent_type.text = string.format("[%s]", talent_detail_cfg.Type)
+  Util.load_talent_icon(talent_detail_cfg.Icon, self.v_talent_icon)
+  self.v_keyword_list = talent_detail_cfg.Keywords
+  local attr_desc = CharacterMgr:get_talent_attr_desc(buddy_id, talent_lv)
+  if talent_detail_cfg.Desc and talent_detail_cfg.Desc ~= "" then
+    if attr_desc then
+      self.v_tmp_text.text = talent_detail_cfg.Desc .. "\n" .. attr_desc
+    else
+      self.v_tmp_text.text = talent_detail_cfg.Desc
+    end
+  else
+    self.v_tmp_text.text = attr_desc
+  end
+end
+
+function ui:try_show_keyword()
+  if self.v_keyword_list then
+    UIMgr:try_show_ui("keyword_tips_v2", nil, self.v_keyword_list)
+  end
+end
+
+return ui

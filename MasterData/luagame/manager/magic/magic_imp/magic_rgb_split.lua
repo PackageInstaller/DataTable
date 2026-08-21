@@ -1,0 +1,18 @@
+local Base = require("manager.magic.magic_imp.magic_base")
+local M = Util.create_child_mt(Base)
+
+function M:_init(owner, magic_info)
+  Base._init(self, owner, magic_info)
+  self.effect_mgr = Global.scene_mgr:get_scene_effect_mgr()
+end
+
+function M:on_effect()
+  local cfg = self.cfg
+  self.effect_mgr:show_rgb_split(cfg.Delay, cfg.Duration, cfg.Power, cfg.Inteval, cfg.px, cfg.py, cfg.pz)
+end
+
+function M:on_remove(magic_list)
+  self.effect_mgr:stop_rgb_split()
+end
+
+return M

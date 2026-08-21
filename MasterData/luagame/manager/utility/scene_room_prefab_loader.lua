@@ -1,0 +1,80 @@
+local M = Util.create_class()
+
+function M:_init()
+  self.v_loaded_prefabs = {}
+  Util.bind_msg(self, Const.MSG_ON_LEAVE_ROOM, self._clear_prefabs, self)
+end
+
+function M:load_prefab(name, parent_name)
+  local loaded_prefab = self.v_loaded_prefabs[name]
+  if loaded_prefab and not loaded_prefab:IsNull() then
+    ResPoolMgr:release(loaded_prefab)
+  end
+  local obj = ResPoolMgr:get_timeline(name)
+  if nil == obj or obj:IsNull() then
+    Log.Error("加载Prefab失败 ", name)
+    return
+  end
+  local obj_trans = obj.transform
+  if parent_name then
+    local parent_obj = self:_get_parent_obj(parent_name)
+    if not parent_obj then
+      Log.Error("找不到绑定的节点", parent_name)
+      return
+    end
+    obj_trans:SetParent(parent_obj.transform, false)
+  end
+  obj_trans:SetPositionA(0, 0, 0)
+  local scene_logic = SceneMgr:get_scene_logic()
+  if scene_logic then
+    scene_logic:add_scene_timeline_trans(name, obj_trans)
+  end
+  obj_trans:PlayTimeLineSeq(function()
+    if scene_logic then
+      scene_logic:remove_scene_timeline_trans(name)
+    end
+    BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.ON_TIMELINE_END, name)
+    SceneMgr:c2gs_call_scene(BehaviorMgr.EVENTS.ON_TIMELINE_END, name)
+    BehaviorMgr:call_scene_logic_event_fun(BehaviorMgr.EVENTS.ON_TIMELINE_END, name)
+  end)
+  self.v_loaded_prefabs[name] = obj
+end
+
+function M:release_prefab(name)
+  for key, obj in pairs(self.v_loaded_prefabs) do
+    if name == key then
+      ResPoolMgr:release(obj)
+    end
+  end
+  self.v_loaded_prefabs[name] = nil
+end
+
+function M:_clear_prefabs()
+  for _, obj in pairs(self.v_loaded_prefabs) do
+    if obj and not obj:IsNull() then
+      ResPoolMgr:release(obj)
+    end
+  end
+  UtilTable.clear_map(self.v_loaded_prefabs)
+end
+
+function M:_get_parent_obj(name)
+  local root_container = SceneMgr:get_root_container()
+  if not root_container then
+    return
+  end
+  local obj = root_container:Get(name)
+  if obj and not obj:IsNull() then
+    return obj
+  end
+  local group_ctrl_container = SceneMgr:get_group_ctrl_container()
+  if not group_ctrl_container then
+    return
+  end
+  obj = group_ctrl_container:Get(name)
+  if obj and not obj:IsNull() then
+    return obj
+  end
+end
+
+return M

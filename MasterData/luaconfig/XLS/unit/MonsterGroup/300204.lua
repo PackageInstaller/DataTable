@@ -1,0 +1,7 @@
+local empty = {}
+return {
+  unitList = empty,
+  Name = "",
+  Id = 300204,
+  Type = 0
+}

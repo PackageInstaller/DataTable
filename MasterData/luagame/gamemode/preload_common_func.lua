@@ -1,0 +1,86 @@
+local M = {}
+local PRELOAD_RES_TYPE
+local EFFECT_MAX_PRELOAD_NUM = 5
+local PRELOAD_OBJ
+local collider_preload_func = {
+  [Config.MISSILE_SHAPE.RECT] = "load_boxcollider",
+  [Config.MISSILE_SHAPE.CIRCLE] = "load_capsulecollider",
+  [Config.MISSILE_SHAPE.SPHERE] = "load_spherecollider"
+}
+local anglular_collider_preload_func = {
+  [Config.MISSILE_SHAPE.SECTOR] = "load_sectorcollider",
+  [Config.MISSILE_SHAPE.ANNULAR] = "load_sectorcollider"
+}
+local TEMP_COLLIDER_LOAD_MAP
+local SPLITTER = ","
+local ANGLE_MAP
+
+function M.set_common_param(preload_obj, preload_res_type)
+  TEMP_COLLIDER_LOAD_MAP = {}
+  PRELOAD_OBJ = preload_obj
+  PRELOAD_RES_TYPE = preload_res_type
+  ANGLE_MAP = UtilTable.list2map(Config.SECTOR_COLLIDER_DEGREE)
+end
+
+function M.get_collider_preload(char_id)
+  local collider_type_list = ShareRes.get_character_preload_collider_type_list(char_id)
+  if collider_type_list then
+    for _, str in pairs(collider_type_list) do
+      if not TEMP_COLLIDER_LOAD_MAP[str] then
+        local temp_data = Util.split_str(str, SPLITTER)
+        local insert_data = {
+          collider_type = tonumber(temp_data[1]),
+          need_multi = tonumber(temp_data[2]),
+          angle = tonumber(temp_data[3]),
+          type = PRELOAD_RES_TYPE.COLLIDER
+        }
+        M.push_need_load_data(insert_data)
+        TEMP_COLLIDER_LOAD_MAP[str] = true
+      end
+    end
+  end
+end
+
+function M.push_need_load_data(insert_data)
+  local res_type = insert_data.type
+  local prefab_name = insert_data.prefab_name
+  if prefab_name and (res_type == PRELOAD_RES_TYPE.UI_EFFECT or res_type == PRELOAD_RES_TYPE.EFFECT) then
+    local count_map = PRELOAD_OBJ.v_load_effect_count_map
+    local cur_count = count_map[prefab_name] or 0
+    local remain_count = EFFECT_MAX_PRELOAD_NUM - cur_count
+    if remain_count <= 0 then
+      return
+    end
+    local num = insert_data.num or 1
+    local fix_count = math.min(num, remain_count)
+    insert_data.num = fix_count
+    count_map[prefab_name] = cur_count + fix_count
+  end
+  PRELOAD_OBJ.v_need_load_res_num = PRELOAD_OBJ.v_need_load_res_num + 1
+  PRELOAD_OBJ.v_preload_res_list:push(insert_data)
+end
+
+function M.load_collider(res_data)
+  local collider_type = res_data.collider_type
+  local need_multi = Util.is_more_than_zero(res_data.need_multi)
+  local angle = res_data.angle or 360
+  if not ANGLE_MAP[angle] then
+    PRELOAD_OBJ:update_load_progress()
+    return
+  end
+  local collider_list = {}
+  for _ = 1, 2 do
+    local collider
+    local load_func_name = collider_preload_func[collider_type] or anglular_collider_preload_func[collider_type]
+    if load_func_name and SceneMgr[load_func_name] then
+      collider = SceneMgr[load_func_name](SceneMgr, nil, need_multi, angle)
+    end
+    collider_list[#collider_list + 1] = collider
+  end
+  for i = 1, #collider_list do
+    ResPoolMgr:release(collider_list[i])
+  end
+  PRELOAD_OBJ:update_load_progress()
+end
+
+return M

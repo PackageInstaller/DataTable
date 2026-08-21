@@ -1,0 +1,13 @@
+local empty = {}
+return {
+  Events = empty,
+  MonsterRefreshCfg = {
+    Weight = 100,
+    MonsterGroupId = 0,
+    MonsterWave = 0,
+    MonsterCount = 0,
+    SendWave = false,
+    WaveStyle = 0
+  },
+  FinishiConditionDict = empty
+}

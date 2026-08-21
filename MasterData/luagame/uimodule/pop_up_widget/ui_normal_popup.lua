@@ -1,0 +1,41 @@
+local Base = require("uimodule.pop_up_widget.ui_popup_base")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:set_button("BtnCloseBg", function()
+    Base:manual_close()
+  end)
+  self:set_button("BtnJump", function()
+    PopUpWindowMgr:jump_out(self.v_jump_id)
+  end)
+end
+
+function ui:ui_on_show(widget_id)
+  self.v_widget_id = widget_id
+  self.v_widget_cfg = ShareRes.get_pop_widget_cfg(widget_id)
+  self.v_jump_id = self.v_widget_cfg.Arg[1]
+  self.v_uicompents.TogDontEject_tog.isOn = false
+  if self.v_widget_cfg.EndTime then
+    self.v_uiobjects.Time:SetActive(true)
+    local time_dur = Date.get_time_stamp_by_scheme_id(self.v_widget_cfg.EndTime) - Date.server_time()
+    local days = math.ceil(time_dur / 86400)
+    self.v_uicompents.TimeLess_txt.text = string.format("剩余%d天", days)
+  else
+    self.v_uiobjects.Time:SetActive(false)
+  end
+end
+
+function ui:ui_on_update()
+end
+
+function ui:ui_on_hide()
+  if self.v_widget_cfg.RepeatPop and self.v_widget_cfg.DailyRepeatPop and not self.v_uicompents.TogDontEject_tog.isOn then
+  else
+    PopUpWindowMgr:pop_widget_up(self.v_widget_id)
+  end
+end
+
+function ui:ui_on_destroy()
+end
+
+return ui

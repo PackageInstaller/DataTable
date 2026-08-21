@@ -1,0 +1,88 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local PRORITY_ICON_PREFIX = "UICommon/Event_spk_0"
+local QUALITY_TO_IDX = {
+  [1] = 4,
+  [2] = 3,
+  [3] = 3,
+  [4] = 2,
+  [5] = 1
+}
+local MODEL = {
+  v_icon = {
+    "Icon",
+    BIND_TYPE.IMAGE
+  },
+  v_quality = {
+    "Quality",
+    BIND_TYPE.IMAGE
+  },
+  v_red_point = {
+    "RedPoint",
+    BIND_TYPE.OBJECT
+  },
+  v_lock = {
+    "Lock",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_botton = self:get_button()
+  self:set_button_listener(self.v_botton, function(is_on)
+    self:_on_click_button()
+  end)
+end
+
+function ui:set_data(cfg, parent)
+  local ORNAMENT_TYPE = Config.CommonDefine.CURSE_ILLUSTRATED_TYPE.ORNAMENT
+  self.v_ornament_id = cfg.Id
+  self.v_is_unlock = FateBookMgr:check_illustrated_is_unlock(ORNAMENT_TYPE, self.v_ornament_id)
+  self.v_show_point = false
+  ResMgr:load_set_icon(self.v_quality, PRORITY_ICON_PREFIX .. QUALITY_TO_IDX[cfg.Quality])
+  ResMgr:load_set_icon(self.v_icon, cfg.Icon)
+  self.v_lock:SetActive(not self.v_is_unlock)
+  self.v_red_point:SetActive(false)
+  self:set_selected(false)
+  if 1 == #parent:get_items() then
+    self:_on_click_button()
+  end
+  self.v_is_red = FateBookMgr:get_red_state(ORNAMENT_TYPE, self.v_ornament_id)
+  self.v_uiobjects.RedPoint:SetActive(self.v_is_red)
+end
+
+function ui:on_clear()
+end
+
+function ui:select_item()
+end
+
+function ui:on_refresh()
+  self.v_red_point:SetActive(false)
+end
+
+function ui:_on_click_button()
+  if self.v_ornament_id then
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_ORNAMENT_SELECT)
+    msg.mm_obj = self
+  end
+end
+
+function ui:refresh_red()
+  if self.v_is_red then
+    FateBookMgr:close_redpoint(Config.CommonDefine.CURSE_ILLUSTRATED_TYPE.ORNAMENT, self.v_ornament_id, true)
+    self.v_is_red = false
+    self.v_uiobjects.RedPoint:SetActive(self.v_is_red)
+  end
+end
+
+function ui:set_selected(is_select)
+  self.v_uiobjects.Select:SetActive(is_select)
+  if is_select then
+    self:refresh_red()
+  end
+end
+
+return ui

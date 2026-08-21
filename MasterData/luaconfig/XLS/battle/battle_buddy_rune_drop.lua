@@ -1,0 +1,218 @@
+return {
+  [1001] = {
+    EnterID = 501,
+    Id = 1001,
+    Lower = 1,
+    Upper = 10
+  },
+  [1002] = {
+    EnterID = 501,
+    Id = 1002,
+    Lower = 5,
+    Upper = 25
+  },
+  [1003] = {
+    EnterID = 501,
+    Id = 1003,
+    Lower = 10,
+    Upper = 50
+  },
+  [1004] = {
+    EnterID = 501,
+    Id = 1004,
+    Lower = 25,
+    Upper = 75
+  },
+  [1005] = {
+    EnterID = 501,
+    Id = 1005,
+    Lower = 50,
+    Upper = 125
+  },
+  [2001] = {
+    EnterID = 601,
+    Id = 2001,
+    Lower = 25,
+    Upper = 25
+  },
+  [2002] = {
+    EnterID = 601,
+    Id = 2002,
+    Lower = 50,
+    Upper = 50
+  },
+  [2003] = {
+    EnterID = 601,
+    Id = 2003,
+    Lower = 75,
+    Upper = 75
+  },
+  [2004] = {
+    EnterID = 601,
+    Id = 2004,
+    Lower = 100,
+    Upper = 100
+  },
+  [3001] = {
+    EnterID = 501,
+    Id = 3001,
+    Lower = 20,
+    Upper = 40
+  },
+  [3002] = {
+    EnterID = 501,
+    Id = 3002,
+    Lower = 25,
+    Upper = 50
+  },
+  [3003] = {
+    EnterID = 501,
+    Id = 3003,
+    Lower = 40,
+    Upper = 50
+  },
+  [3004] = {
+    EnterID = 501,
+    Id = 3004,
+    Lower = 40,
+    Upper = 60
+  },
+  [3005] = {
+    EnterID = 501,
+    Id = 3005,
+    Lower = 40,
+    Upper = 60
+  },
+  [3006] = {
+    EnterID = 501,
+    Id = 3006,
+    Lower = 45,
+    Upper = 65
+  },
+  [3007] = {
+    EnterID = 501,
+    Id = 3007,
+    Lower = 50,
+    Upper = 70
+  },
+  [3008] = {
+    EnterID = 501,
+    Id = 3008,
+    Lower = 50,
+    Upper = 70
+  },
+  [3009] = {
+    EnterID = 501,
+    Id = 3009,
+    Lower = 50,
+    Upper = 70
+  },
+  [3010] = {
+    EnterID = 501,
+    Id = 3010,
+    Lower = 55,
+    Upper = 75
+  },
+  [3011] = {
+    EnterID = 501,
+    Id = 3011,
+    Lower = 60,
+    Upper = 80
+  },
+  [3012] = {
+    EnterID = 501,
+    Id = 3012,
+    Lower = 60,
+    Upper = 80
+  },
+  [3013] = {
+    EnterID = 501,
+    Id = 3013,
+    Lower = 65,
+    Upper = 85
+  },
+  [3014] = {
+    EnterID = 501,
+    Id = 3014,
+    Lower = 70,
+    Upper = 90
+  },
+  [3015] = {
+    EnterID = 501,
+    Id = 3015,
+    Lower = 70,
+    Upper = 90
+  },
+  [3016] = {
+    EnterID = 501,
+    Id = 3016,
+    Lower = 85,
+    Upper = 95
+  },
+  [3017] = {
+    EnterID = 501,
+    Id = 3017,
+    Lower = 85,
+    Upper = 95
+  },
+  [3018] = {
+    EnterID = 501,
+    Id = 3018,
+    Lower = 100,
+    Upper = 100
+  },
+  [3019] = {
+    EnterID = 501,
+    Id = 3019,
+    Lower = 100,
+    Upper = 100
+  },
+  [3020] = {
+    EnterID = 501,
+    Id = 3020,
+    Lower = 100,
+    Upper = 100
+  },
+  [4001] = {
+    EnterID = 601,
+    Id = 4001,
+    Lower = 10,
+    Upper = 10
+  },
+  [4002] = {
+    EnterID = 601,
+    Id = 4002,
+    Lower = 20,
+    Upper = 20
+  },
+  [4003] = {
+    EnterID = 601,
+    Id = 4003,
+    Lower = 30,
+    Upper = 30
+  },
+  [4004] = {
+    EnterID = 601,
+    Id = 4004,
+    Lower = 40,
+    Upper = 40
+  },
+  [4005] = {
+    EnterID = 601,
+    Id = 4005,
+    Lower = 50,
+    Upper = 50
+  },
+  [4006] = {
+    EnterID = 601,
+    Id = 4006,
+    Lower = 60,
+    Upper = 60
+  },
+  [4007] = {
+    EnterID = 601,
+    Id = 4007,
+    Lower = 70,
+    Upper = 70
+  }
+}

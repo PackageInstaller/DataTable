@@ -1,0 +1,80 @@
+local Base = require("ui.uibase")
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local PAGE_TYPE = {PREVIEW = 1, ITEM = 2}
+local PAGE_TEXT = {
+  [PAGE_TYPE.PREVIEW] = Util.format_str("奖励预览")
+}
+local PAGE_UI = {
+  [PAGE_TYPE.PREVIEW] = "chapter_material_reward"
+}
+local MODEL = {
+  v_preview_toggle = {
+    "Page_reward",
+    BIND_TYPE.TOGGLE
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnReturn", function()
+    self:ui_hide()
+  end)
+end
+
+function ui:ui_on_show(chapter_id)
+  self.v_uicompents.TitleName_txt.text = Util.format_str("材料本")
+  self.v_uiobjects.Page_collection:SetActive(false)
+  self.v_uiobjects.PageDebris_story:SetActive(false)
+  self.v_chapter_id = chapter_id
+  self:init_toggle()
+end
+
+function ui:ui_on_hide()
+  self.v_tag_select = nil
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:init_toggle()
+  self.v_tag_toggles = {
+    self.v_preview_toggle,
+    self.v_item_toggle
+  }
+  for index, toggle in ipairs(self.v_tag_toggles) do
+    local text = Util.get_text("PageName", toggle.transform)
+    text.text = PAGE_TEXT[index]
+  end
+  self.v_toggle_tab = ToggleTab:new(self)
+  self.v_toggle_tab:init_by_toggles(self.v_tag_toggles, function(select, last_select, select_toggle, last_select_toggle)
+    self:on_click_tog(select, last_select, select_toggle, last_select_toggle)
+  end, PAGE_TYPE.PREVIEW)
+  self:on_click_tog(PAGE_TYPE.PREVIEW)
+end
+
+function ui:on_click_tog(select, last_select, select_toggle, last_select_toggle)
+  if select == self.v_tag_select then
+    return
+  end
+  for index, toggle in ipairs(self.v_tag_toggles) do
+    local text = Util.get_text("PageName", toggle.transform)
+    local color = index == select and "070707" or "FFFFFF"
+    text.color = Util.get_unity_color_by_hex(tonumber(color, 16))
+  end
+  if PAGE_UI[self.v_tag_select] then
+    local ui_name = PAGE_UI[self.v_tag_select]
+    local ui = UIMgr:get_ui(ui_name)
+    if ui then
+      ui:ui_hide()
+    end
+  end
+  local show_ui_name = PAGE_UI[select]
+  if show_ui_name then
+    UIMgr:get_ui(show_ui_name):ui_show(self.v_chapter_id)
+  end
+  self.v_tag_select = select
+end
+
+return ui

@@ -1,0 +1,112 @@
+local Base = require("ui.uiobject")
+local ELEMENT_TYPE = Config.FightDefine.ELEMENT_TYPE
+local SHOW_TEXT_ELEMENT = {
+  [ELEMENT_TYPE.THUNDER] = true,
+  [ELEMENT_TYPE.DARK] = true
+}
+local BUFF_TYPE = {ELEMENT = 1, NORMAL = 2}
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+  if self.v_fill_tween then
+    self.v_fill_tween:Kill(false)
+    self.v_fill_tween = nil
+  end
+  self.v_magic = nil
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(magic)
+  self.v_cur_level = nil
+  self.v_magic = magic
+  self.v_magic_id = magic.magic_id
+  self.v_type = BUFF_TYPE.NORMAL
+  local magic_cfg = ShareRes.get_magic_cfg(magic.magic_id)
+  local coms = self.v_uicompents
+  if magic_cfg.logic.each_frame_update and magic.duration > 0 and magic.left_duration > 0 then
+    self:update_fillamount(magic.left_duration / magic.duration)
+    self:update_ui_visible(coms.BuffFill_img, true)
+  else
+    self:update_ui_visible(coms.BuffFill_img, false)
+  end
+  if not Util.is_empty(magic_cfg.logic.Icon) and self.v_icon_path ~= magic_cfg.logic.Icon then
+    ResMgr:load_set_icon(coms.BuffIcon_img, magic_cfg.logic.Icon)
+    self.v_icon_path = magic_cfg.logic.Icon
+  end
+  self:update_level()
+  self:update_ui_visible(self.v_object, true)
+end
+
+function ui:update_fillamount(percent)
+  self.v_uicompents.BuffFill_img.fillAmount = percent
+end
+
+function ui:update_level()
+  if not self.v_magic then
+    return
+  end
+  local level
+  if self.v_element_id and SHOW_TEXT_ELEMENT[self.v_element_id] then
+    level = self.v_magic.owner.element_abnormal_mgr:get_element_magic_count(self.v_element_id)
+  else
+    level = self.v_magic.owner.magic_mgr:get_magic_num(self.v_magic.magic_id)
+  end
+  if level ~= self.v_cur_level then
+    if self.v_magic.cfg.Limit > 1 then
+      self.v_uicompents.BuffText_txt.text = level
+      self:update_ui_visible(self.v_uicompents.BuffText_txt, true)
+    else
+      self:update_ui_visible(self.v_uicompents.BuffText_txt, false)
+    end
+    self.v_cur_level = level
+  end
+end
+
+function ui:set_element_buff_data(element_id, cd_time)
+  local cfg = ShareRes.get_element_cfg(element_id)
+  if not cfg then
+    Log.Error("元素id", element_id, "获取不到配置")
+    return
+  end
+  local element_icon_path = cfg.ElementWeakIconPath
+  ResMgr:load_set_icon(self.v_uicompents.BuffIcon_img, element_icon_path[1][1])
+  self:update_ui_visible(self.v_uiobjects.BuffFill, true)
+  self:update_ui_visible(self.v_uiobjects.BuffText, false)
+  self:update_ui_visible(self.v_object, true)
+  self.v_uicompents.BuffFill_img.fillAmount = 1
+  local Ease = CS.DG.Tweening.Ease
+  self.v_fill_tween = self.v_uicompents.BuffFill_img:DOFillAmount(0, cd_time)
+  self.v_fill_tween:SetEase(Ease.Linear)
+  self.v_fill_tween:OnComplete(function()
+    self.v_fill_tween = nil
+  end)
+end
+
+function ui:get_magic()
+  return self.v_magic
+end
+
+function ui:get_magic_id()
+  return self.v_magic_id
+end
+
+function ui:on_game_pause_state_change(pause)
+  if not self.v_fill_tween then
+    return
+  end
+  if pause then
+    self.v_fill_tween:Pause()
+  else
+    self.v_fill_tween:Play()
+  end
+end
+
+return ui

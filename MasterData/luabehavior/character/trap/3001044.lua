@@ -1,0 +1,62 @@
+local M = Util.create_class()
+
+function M:_init(npc)
+  self.skill01 = {
+    300104401,
+    4,
+    0,
+    0,
+    0,
+    get_skill_cfg(300104401).CastTime,
+    get_skill_cfg(300104401).AfterTime
+  }
+  self.skill02 = {
+    300104402,
+    9999,
+    0,
+    0,
+    0,
+    get_skill_cfg(300104402).CastTime,
+    get_skill_cfg(300104402).AfterTime
+  }
+  self.control = 0
+  set_can_searched(npc, false)
+  enable_shadow(npc, false)
+end
+
+function M:skill_logic(skill_instant_ID)
+  if skill_instant_ID == self.skill01 and 1 ~= self.control then
+    return
+  end
+  if get_npc_time(self.npc) > skill_instant_ID[3] then
+    abort_skill(self.npc)
+    cast_skill(self.npc, nil, skill_instant_ID[1], nil, nil)
+    skill_instant_ID[3] = get_npc_time(self.npc) + skill_instant_ID[2]
+  end
+end
+
+function M:on_frame()
+  self:skill_logic(self.skill01)
+  self:skill_logic(self.skill02)
+  if is_pass_room() then
+    abort_skill(self.npc)
+    self.control = 9
+  end
+end
+
+function M:on_skill_hit(npc, skill_id, hit_target, hit_type)
+  if npc == self.npc and 9 ~= self.control and 300104402 == skill_id then
+    abort_skill(self.npc)
+    self.control = 1
+  end
+end
+
+function M:on_skill_end(npc, skill_id)
+  if 300104401 == skill_id then
+    abort_skill(self.npc)
+    cast_skill(self.npc, nil, 300104402, nil, nil)
+    self.control = 0
+  end
+end
+
+return M

@@ -1,0 +1,6 @@
+local M = Global.util.create_class()
+
+function M:_init()
+end
+
+return M

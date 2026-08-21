@@ -1,0 +1,23 @@
+local Base = require("obj.behavior.uicomponent_char")
+local M = Util.create_child_mt(Base)
+
+function M:on_destroy_gameobj(...)
+  Base.on_destroy_gameobj(self, ...)
+  self:on_destroy()
+end
+
+function M:on_char_gameobj_loaded()
+  if self.v_char:is_teleport_area() then
+    return
+  end
+  if not self.v_char:get_config().fake_npc then
+    if not self.v_char:is_treasure_box() then
+      self:add_headbar(self.v_char.attr_mgr.name)
+    elseif self.v_char:get_config().is_display_name then
+      self:add_headbar(self.v_char.attr_mgr.name)
+    end
+  end
+  self:set_headbar_image(self.v_char.quest_bar_sprite_name)
+end
+
+return M

@@ -1,0 +1,80 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local MAX_NUM = 20
+
+function ui:ui_finish_load()
+  self:set_button("ClearBtn", function()
+    JournalMgr:clear_skill_journal()
+    self.v_select = 1
+    self:refresh_view()
+  end)
+  self:set_button("LeftBtn", function()
+    self.v_select = math.max(1, self.v_select - 1)
+    self:refresh_view()
+  end)
+  self:set_button("RightBtn", function()
+    self.v_select = math.min(self.v_select + 1, MAX_NUM)
+    self:refresh_view()
+  end)
+  self:set_button("CloseBtn", function()
+    self:ui_hide()
+  end)
+  self:set_button("FilterBtn", function()
+    UIMgr:get_ui("uifightdebugfilter"):ui_show(function(npc)
+      JournalMgr:filter_skill(npc)
+      self.v_select = 1
+      self:refresh_view()
+    end)
+  end)
+  self.v_select = 1
+end
+
+function ui:ui_on_show()
+  self:refresh_view()
+  self:bind_auto_mq(Const.MSG_SKILL_JOURNAL_REFRESH, self.refresh_view, self)
+  local drag_panel = self.v_uiobjects.DragPanel
+  self.drag_panel_pos = drag_panel.transform.localPosition
+  Util.set_drag(self:get_object(), self, function(x, y)
+    self.drag_panel_pos.x = self.drag_panel_pos.x + x
+    self.drag_panel_pos.y = self.drag_panel_pos.y + y
+    drag_panel.transform:SetLocalPositionA(self.drag_panel_pos.x, self.drag_panel_pos.y, self.drag_panel_pos.z)
+  end)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:refresh_view()
+  self:refresh_journal()
+  self:refrehs_page()
+end
+
+function ui:refresh_journal()
+  if not JournalMgr then
+    return
+  end
+  local skill_journal_list = JournalMgr:get_filted_skill_journal()
+  local skill_journal = skill_journal_list[self.v_select]
+  if nil == skill_journal then
+    skill_journal = {
+      npc_id = "暂无记录",
+      skill_id = "暂无记录",
+      skill_type = "暂无记录",
+      animation = "暂无记录",
+      super_attack = "暂无记录",
+      super_take_beat = "暂无记录"
+    }
+  end
+  self.v_uicompents.NpcIdTxt_txt.text = skill_journal.npc_id
+  self.v_uicompents.SkillIdTxt_txt.text = skill_journal.skill_id
+  self.v_uicompents.SkillTypeTxt_txt.text = skill_journal.skill_type
+  self.v_uicompents.AnimationTxt_txt.text = skill_journal.animation
+  self.v_uicompents.SuperAttackTxt_txt.text = skill_journal.super_attack
+  self.v_uicompents.SuperTakeBeatTxt_txt.text = skill_journal.super_take_beat
+end
+
+function ui:refrehs_page()
+  self.v_uicompents.JournalAmountTxt_txt.text = string.format("%s/%s", self.v_select, MAX_NUM)
+end
+
+return ui

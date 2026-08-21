@@ -1,0 +1,177 @@
+return {
+  [3011] = {
+    [1001001] = {
+      BuddyId = 1001001,
+      ItemId = 3011,
+      RepeatFavor = 50
+    }
+  },
+  [3014] = {
+    [1001004] = {
+      BuddyId = 1001004,
+      ItemId = 3014,
+      RepeatFavor = 50
+    }
+  },
+  [3018] = {
+    [1001008] = {
+      BuddyId = 1001008,
+      ItemId = 3018,
+      RepeatFavor = 50
+    }
+  },
+  [3019] = {
+    [1001009] = {
+      BuddyId = 1001009,
+      ItemId = 3019,
+      RepeatFavor = 50
+    }
+  },
+  [3020] = {
+    [1001010] = {
+      BuddyId = 1001010,
+      ItemId = 3020,
+      RepeatFavor = 50
+    }
+  },
+  [3021] = {
+    [1001011] = {
+      BuddyId = 1001011,
+      ItemId = 3021,
+      RepeatFavor = 50
+    }
+  },
+  [3022] = {
+    [1001012] = {
+      BuddyId = 1001012,
+      ItemId = 3022,
+      RepeatFavor = 50
+    }
+  },
+  [3023] = {
+    [1001013] = {
+      BuddyId = 1001013,
+      ItemId = 3023,
+      RepeatFavor = 50
+    }
+  },
+  [3024] = {
+    [1001014] = {
+      BuddyId = 1001014,
+      ItemId = 3024,
+      RepeatFavor = 50
+    }
+  },
+  [3025] = {
+    [1001015] = {
+      BuddyId = 1001015,
+      ItemId = 3025,
+      RepeatFavor = 50
+    }
+  },
+  [3026] = {
+    [1001016] = {
+      BuddyId = 1001016,
+      ItemId = 3026,
+      RepeatFavor = 50
+    }
+  },
+  [3027] = {
+    [1001017] = {
+      BuddyId = 1001017,
+      ItemId = 3027,
+      RepeatFavor = 50
+    }
+  },
+  [3028] = {
+    [1001018] = {
+      BuddyId = 1001018,
+      ItemId = 3028,
+      RepeatFavor = 50
+    }
+  },
+  [3029] = {
+    [1001019] = {
+      BuddyId = 1001019,
+      ItemId = 3029,
+      RepeatFavor = 50
+    }
+  },
+  [3030] = {
+    [1001020] = {
+      BuddyId = 1001020,
+      ItemId = 3030,
+      RepeatFavor = 50
+    }
+  },
+  [3031] = {
+    [1001021] = {
+      BuddyId = 1001021,
+      ItemId = 3031,
+      RepeatFavor = 50
+    }
+  },
+  [3032] = {
+    [1001022] = {
+      BuddyId = 1001022,
+      ItemId = 3032,
+      RepeatFavor = 50
+    }
+  },
+  [3033] = {
+    [1001023] = {
+      BuddyId = 1001023,
+      ItemId = 3033,
+      RepeatFavor = 50
+    }
+  },
+  [3034] = {
+    [1001024] = {
+      BuddyId = 1001024,
+      ItemId = 3034,
+      RepeatFavor = 50
+    }
+  },
+  [3035] = {
+    [1001025] = {
+      BuddyId = 1001025,
+      ItemId = 3035,
+      RepeatFavor = 50
+    }
+  },
+  [3036] = {
+    [1001026] = {
+      BuddyId = 1001026,
+      ItemId = 3036,
+      RepeatFavor = 50
+    }
+  },
+  [3037] = {
+    [1001027] = {
+      BuddyId = 1001027,
+      ItemId = 3037,
+      RepeatFavor = 50
+    }
+  },
+  [3038] = {
+    [1001028] = {
+      BuddyId = 1001028,
+      ItemId = 3038,
+      RepeatFavor = 50
+    }
+  },
+  [3039] = {
+    [1001029] = {
+      BuddyId = 1001029,
+      ItemId = 3039,
+      RepeatFavor = 50
+    }
+  },
+  [3040] = {
+    [1001030] = {
+      BuddyId = 1001030,
+      ItemId = 3040,
+      RepeatFavor = 50
+    }
+  }
+}

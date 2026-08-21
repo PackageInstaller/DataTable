@@ -1,0 +1,32 @@
+return {
+  [60201] = {
+    EventDesc = "释放技能后5秒内，下一次普攻伤害增加",
+    event_cfg = {},
+    logic_cfg = {
+      100197,
+      0,
+      type = 1
+    },
+    type = 4
+  },
+  [60202] = {
+    EventDesc = "释放技能后普攻发出额外一道剑气",
+    event_cfg = {},
+    logic_cfg = {
+      100198,
+      0,
+      type = 1
+    },
+    type = 4
+  },
+  [60203] = {
+    EventDesc = "释放技能后普攻发出额外五道剑气",
+    event_cfg = {},
+    logic_cfg = {
+      100199,
+      0,
+      type = 1
+    },
+    type = 4
+  }
+}

@@ -1,0 +1,107 @@
+return {
+  [1001001] = {
+    Camp = 1001,
+    Desc = "功能1",
+    Id = 1001001,
+    RootName = "hero6",
+    WorldDesc = "世界观描述1"
+  },
+  [1001004] = {
+    Camp = 3001,
+    Desc = "功能4",
+    Id = 1001004,
+    RootName = "hero16",
+    WorldDesc = "世界观描述4"
+  },
+  [1001008] = {
+    Camp = 1001,
+    Desc = "功能8",
+    Id = 1001008,
+    RootName = "hero7",
+    WorldDesc = "世界观描述8"
+  },
+  [1001009] = {
+    Camp = 4001,
+    Desc = "功能9",
+    Id = 1001009,
+    RootName = "hero10",
+    WorldDesc = "世界观描述9"
+  },
+  [1001010] = {
+    Camp = 4001,
+    Desc = "功能10",
+    Id = 1001010,
+    RootName = "hero11",
+    WorldDesc = "世界观描述10"
+  },
+  [1001011] = {
+    Camp = 3001,
+    Desc = "功能10",
+    Id = 1001011,
+    RootName = "hero15",
+    WorldDesc = "世界观描述10"
+  },
+  [1001012] = {
+    Camp = 3001,
+    Desc = "功能10",
+    Id = 1001012,
+    RootName = "hero17",
+    WorldDesc = "世界观描述10"
+  },
+  [1001014] = {
+    Camp = 2001,
+    Desc = "功能7",
+    Id = 1001014,
+    RootName = "hero2",
+    WorldDesc = "世界观描述7"
+  },
+  [1001015] = {
+    Camp = 1001,
+    Desc = "功能10",
+    Id = 1001015,
+    RootName = "hero5",
+    WorldDesc = "世界观描述10"
+  },
+  [1001016] = {
+    Camp = 1001,
+    Desc = "功能10",
+    Id = 1001016,
+    RootName = "hero4",
+    WorldDesc = "世界观描述10"
+  },
+  [1001017] = {
+    Camp = 1001,
+    Desc = "功能10",
+    Id = 1001017,
+    RootName = "hero8",
+    WorldDesc = "世界观描述10"
+  },
+  [1001018] = {
+    Camp = 1001,
+    Desc = "功能10",
+    Id = 1001018,
+    RootName = "hero19",
+    WorldDesc = "世界观描述10"
+  },
+  [1001019] = {
+    Camp = 1001,
+    Desc = "功能10",
+    Id = 1001019,
+    RootName = "hero20",
+    WorldDesc = "世界观描述10"
+  },
+  [1001020] = {
+    Camp = 3001,
+    Desc = "功能10",
+    Id = 1001020,
+    RootName = "hero18",
+    WorldDesc = "世界观描述10"
+  },
+  [1001021] = {
+    Camp = 3001,
+    Desc = "功能10",
+    Id = 1001021,
+    RootName = "hero21",
+    WorldDesc = "世界观描述10"
+  }
+}

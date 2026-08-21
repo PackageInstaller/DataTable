@@ -1,0 +1,57 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local player_card_path_prefix = "CardBG/%s"
+local MODEL = {
+  v_card_icon = {
+    "CardIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_choose = {
+    "Choose",
+    BIND_TYPE.OBJECT
+  },
+  v_lock = {
+    "Lock",
+    BIND_TYPE.OBJECT
+  },
+  v_used = {
+    "Used",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+end
+
+function ui:set_data(go, data_list, idx)
+  local data = data_list[idx]
+  self.v_idx = idx
+  local icon_path = string.format(player_card_path_prefix, data.cfg.Icon)
+  ResMgr:load_set_icon(self.v_card_icon, icon_path, nil, true)
+  self.v_lock:SetActive(not data.is_unlock)
+  self.v_used:SetActive(data.is_use)
+  self.v_select_tog = self:get_toggle(nil, nil)
+  if data_list.cur_select == idx then
+    self.v_choose:SetActive(true)
+  else
+    self.v_choose:SetActive(false)
+  end
+  self:set_toggle_listener(self.v_select_tog, function(is_on)
+    if is_on then
+      local msg = MsgGame:mq_publish2(Const.MSG_ON_VISITING_CARD_SELECT)
+      msg.mm_x = idx
+      self.v_choose:SetActive(true)
+    else
+      self.v_choose:SetActive(false)
+    end
+  end)
+end
+
+function ui:on_click_tog()
+  self.v_select_tog.isOn = false
+  self.v_select_tog.isOn = true
+end
+
+return ui

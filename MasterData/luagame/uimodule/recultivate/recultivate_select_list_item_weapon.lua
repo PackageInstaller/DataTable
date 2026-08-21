@@ -1,0 +1,63 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:set_button_listener(Util.get_button(nil, self.v_object), function()
+    self:on_click()
+  end)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:set_data(item, data, idx)
+  local equip_info = data[idx]
+  self.v_weapon_uuid = equip_info.uuid
+  local id = equip_info.id
+  local lv = equip_info.lv
+  self.v_uicompents.Lv_txt.text = lv
+  local break_lv = equip_info.break_lv
+  local max_break_lv = #ShareRes.create("equip.equip_break", id)
+  for i = 1, 5 do
+    self.v_uiobjects["StarBg" .. i]:SetActiveEx(i < max_break_lv)
+    self.v_uiobjects["Star" .. i]:SetActiveEx(i < break_lv)
+  end
+  self.v_uiobjects.Advance:SetActiveEx(false)
+  local equip_cfg = ShareRes.get_equip(equip_info.id)
+  local path = string.format("Icon/Item/%s", equip_cfg.Icon)
+  ResMgr:load_set_icon(self.v_uicompents.Icon_img, path)
+  local quality_cfg = ShareRes.get_equip_icon_cfg(equip_cfg.Quality)
+  local quality_path = string.format("UICommon/%s", quality_cfg.Quality_Bg)
+  ResMgr:load_set_icon(self.v_uicompents.Quality_img, quality_path)
+  self.v_uiobjects.Lock:SetActiveEx(1 == equip_info.lock)
+  self:refresh_owner_icon(equip_info.owner)
+  self:set_selected(false)
+end
+
+function ui:refresh_owner_icon(buddy_id)
+  self.v_uiobjects.wear_layout:SetActiveEx(buddy_id and 0 ~= buddy_id)
+  if buddy_id and 0 ~= buddy_id then
+    local buddy_info = CharacterMgr:get_buddy_by_id(buddy_id)
+    local icon_path = UtilUI.get_hero_images(buddy_id, 1, buddy_info.fashion_id)
+    ResMgr:load_set_icon(self.v_uicompents.hero_head_icon_img, icon_path)
+  end
+end
+
+function ui:on_click()
+  self.v_linked_parent:on_click_weapon(self.v_weapon_uuid)
+  self:set_selected(true)
+end
+
+function ui:set_selected(is_selected)
+  self.v_uiobjects.Choose:SetActiveEx(is_selected)
+end
+
+function ui:update_item_selected(uuid)
+  self.v_uiobjects.Choose:SetActiveEx(self.v_weapon_uuid == uuid)
+end
+
+function ui:set_linked_parent(parent)
+  self.v_linked_parent = parent
+end
+
+return ui

@@ -1,0 +1,175 @@
+local Base = require("ui.uiobject")
+local Fight_Layout_Cfg = require("uimodule.fight.custom_button.fight_layout_cfg")
+local SliderEX = CS.SliderEX
+local ui = Util.create_child_mt(Base)
+
+function ui:on_click_BtnHide()
+  self.v_parent_ui:hide_operation_content()
+end
+
+function ui:on_click_BtnReSet()
+  if self.v_parent_ui:has_change() then
+    Util.show_conform_tip("确认是否重置当前方案", nil, nil, nil, function()
+      self.v_parent_ui:reset_layout()
+      self.v_parent_ui:click_bg()
+    end)
+    return
+  else
+    Util.show_message_tip(2267)
+  end
+end
+
+function ui:on_click_BtnReturn()
+  if self.v_parent_ui:has_overlap() then
+    Util.show_message_tip(2268)
+    return
+  end
+  if self.v_parent_ui:has_change() then
+    Util.show_conform_tip("是否保存修改", nil, nil, function()
+      self.v_parent_ui:click_bg()
+    end, function()
+      self.v_parent_ui:save_layout()
+      self.v_parent_ui:click_bg()
+    end)
+    return
+  end
+  self.v_parent_ui:click_bg()
+end
+
+function ui:on_click_BtnSave()
+  if self.v_parent_ui:has_overlap() then
+    Util.show_message_tip(2268)
+    return
+  end
+  if self.v_parent_ui:has_change() then
+    Util.show_conform_tip("是否保存修改", nil, nil, nil, function()
+      self.v_parent_ui:click_bg()
+      self.v_parent_ui:save_layout()
+    end)
+    return
+  else
+    Util.show_message_tip(2267)
+  end
+end
+
+function ui:on_drag_view()
+  local cur_pos = self.v_drag_listener.Pos
+  local x, y = cur_pos.x, cur_pos.y
+  self:set_view_pos(x, y)
+  local control_content = self.v_parent_ui:get_panel("control_content")
+  control_content:set_view_pos(x, y)
+end
+
+function ui:set_view_pos(x, y)
+  local trans = self:get_object_transform()
+  trans:SetLocalPositionA(x, y, 0)
+end
+
+local DIR_BTN_LIST = {
+  "BtnLeft",
+  "BtnUp",
+  "BtnRight",
+  "BtnDown"
+}
+
+function ui:init_listener()
+  for dir, btn_name in pairs(DIR_BTN_LIST) do
+    self.v_parent_ui:add_dir_button_listener(dir, self.v_uiobjects[btn_name])
+  end
+  self.v_scale_sld_ex = Util.get_component(nil, self.v_uiobjects.BtnScaleSlider, typeof(SliderEX))
+  self:set_slider_listener(self.v_scale_sld_ex, function()
+    self:click_btn_scale_sld()
+  end)
+  Global.listener_mgr:add_listener(self.v_object, self.v_scale_sld_ex.onEndDrag, function()
+    self:click_btn_end_drag()
+  end)
+end
+
+function ui:ui_finish_load()
+  self.v_name = "detail_content"
+  self:set_button("BtnHide", function()
+    self:on_click_BtnHide()
+  end)
+  self:set_button("BtnReSet", function()
+    self:on_click_BtnReSet()
+  end)
+  self:set_button("BtnReturn", function()
+    self:on_click_BtnReturn()
+  end)
+  self:set_button("BtnSave", function()
+    self:on_click_BtnSave()
+  end)
+  local btn = self.v_uiobjects.DragBtn
+  local root = self.v_parent_ui:get_object()
+  Util.set_start_drag2(btn, root, function()
+    self:on_drag_view()
+  end)
+  Util.set_drag2(btn, root, function()
+    self:on_drag_view()
+  end)
+  Util.set_end_drag2(btn, root, function()
+    self:on_drag_view()
+  end)
+  self.v_drag_listener = self:get_component(nil, btn, CS.Game.DragEventListener2)
+  self:init_listener()
+end
+
+function ui:ui_on_show()
+  self.v_parent_ui:set_plan_list_obj_parent(self.v_uicompents.PlanListNode_rect)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_view()
+end
+
+function ui:change_save_interactable()
+  self:set_btn_gray()
+end
+
+function ui:on_overlap_state_change()
+  self:set_btn_gray()
+end
+
+function ui:set_btn_gray()
+  local has_change, has_overlap = self.v_parent_ui:has_change(), self.v_parent_ui:has_overlap()
+  Util.apply_grey_ex(self.v_uiobjects.BtnSave, not has_change or true == has_overlap)
+  Util.apply_grey_ex(self.v_uiobjects.BtnReSet, not has_change)
+  Util.apply_grey_ex(self.v_uiobjects.BtnReturn, true == has_overlap)
+end
+
+function ui:click_btn_scale_sld()
+  local sld_value = self.v_scale_sld_ex.value
+  self.v_uicompents.BtnScaleData_txt.text = string.format("%d%%", Fight_Layout_Cfg.btn_scale_sld_min + sld_value)
+  self.v_parent_ui:click_btn_scale_sld(sld_value)
+end
+
+function ui:click_btn_end_drag()
+  self.v_parent_ui:click_btn_end_drag()
+end
+
+function ui:change_btn_sld_close()
+  self.v_scale_sld_ex.interactable = false
+end
+
+function ui:change_btn_sld_open()
+  self.v_scale_sld_ex.interactable = true
+end
+
+function ui:change_btn_scale_sld(value)
+  self.v_scale_sld_ex.value = value
+end
+
+function ui:change_position_data(x, y)
+  self.v_uicompents.PositionData_txt.text = string.format("(%d,%d)", x, y)
+end
+
+function ui:reset_position_data()
+  self.v_uicompents.PositionData_txt.text = "(0,0)"
+end
+
+return ui

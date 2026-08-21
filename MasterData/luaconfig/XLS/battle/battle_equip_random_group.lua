@@ -1,0 +1,245 @@
+return {
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 1
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 2
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 3
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 4
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 5
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 6
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 7
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 8
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 9
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 10
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 11
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 12
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 13
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 14
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 15
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 16
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 17
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 18
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 19
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 20
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 21
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 22
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 23
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 24
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 25
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 26
+  },
+  {
+    Entry = {
+      {Entry = 1, Weight = 100},
+      {Entry = 2, Weight = 100},
+      {Entry = 3, Weight = 100},
+      {Entry = 4, Weight = 100}
+    },
+    Id = 27
+  }
+}

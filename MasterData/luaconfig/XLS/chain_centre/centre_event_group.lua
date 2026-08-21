@@ -1,0 +1,722 @@
+return {
+  {
+    {
+      Award = 30101,
+      Condition = {
+        5012001,
+        5012002,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_fight",
+      GroupId = 1,
+      Id = 3001,
+      Jump = 0,
+      Name = "沟通的艺术",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "总要有人出来进行对接工作的。",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        ""
+      },
+      stepJump = {
+        18101,
+        18102,
+        0,
+        0
+      },
+      stepText = {
+        "解决薇奥拉、伊蕾什安、沙玛什的难题。",
+        "解决楔文会馆员的沟通难题。",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012005,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 2,
+      Id = 3002,
+      Jump = 0,
+      Name = "终极目标",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "安啾试图与你心意相通，感恩吧。",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18105,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "弄明白安啾的意思，并为它达成目标。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012003,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 3,
+      Id = 3011,
+      Jump = 0,
+      Name = "真理催眠机",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "恩基的失眠病再次发作……",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18103,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "为恩基找回他的催眠设备。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012004,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 4,
+      Id = 3012,
+      Jump = 0,
+      Name = "无限厕纸",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "打字机需要无限多的纸张才能工作……",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18104,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "为恩基找到他口中的“无限厕纸”。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30100,
+      Condition = {
+        5012006,
+        5012007,
+        5012008,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 5,
+      Id = 4001,
+      Jump = 0,
+      Name = "歌颂吾主",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "长生军永远忠于万王之王。",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_fight",
+        "UITask/20230725/task_icon_s_title_build",
+        "UITask/20230725/task_icon_s_title_talk",
+        ""
+      },
+      stepJump = {
+        18106,
+        18107,
+        18108,
+        0
+      },
+      stepText = {
+        "寻找菲鲁兹队长。",
+        "寻找长生军士兵。",
+        "替菲鲁兹队长找齐清单上的材料。",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012009,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 6,
+      Id = 4002,
+      Jump = 0,
+      Name = "安息宝藏",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "古代的艾弥安有事相求。",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_fight",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18109,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "寻找安息帝国的宝藏。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012010,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 7,
+      Id = 5001,
+      Jump = 0,
+      Name = "探路者",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "踏上不归之路之前，还有其他工作……",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18113,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "解决横冲直撞的演算单元。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012011,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 8,
+      Id = 5011,
+      Jump = 0,
+      Name = "上下求索",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "十年研究心血不可毁于一旦。",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18111,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "协助古代艾弥安收集阿顿的研究资料。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012012,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 9,
+      Id = 5021,
+      Jump = 0,
+      Name = "苦痛之路",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "怎么会有人在办公区域安装致命激光？",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18114,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "为身体柔弱的艾弥安取回重要的研究资料。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012013,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 10,
+      Id = 5031,
+      Jump = 0,
+      Name = "见证者",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "见证一名长生军的远征。",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18112,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "帮助长生军收集歌颂其主伟业的拓片。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012014,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 11,
+      Id = 5041,
+      Jump = 0,
+      Name = "提丰与桑丘",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "档案馆丢失了一件藏品。",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18110,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "取回哈勃望远镜。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012015,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 12,
+      Id = 5051,
+      Jump = 0,
+      Name = "论迹不论心",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "宵禁期间，可不是做“这种事”的时候……",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18115,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "找到“失踪”的人。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012016,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 13,
+      Id = 5061,
+      Jump = 0,
+      Name = "藏锋",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "青与广场地书冠军仅剩一步之遥。",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18116,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "协助青练习书法。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012017,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 14,
+      Id = 5062,
+      Jump = 0,
+      Name = "青御城一日游·上",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "我与阿紫在青御城的漫长一日。",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18117,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "陪阿紫拍摄vlog。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012018,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 15,
+      Id = 5063,
+      Jump = 0,
+      Name = "青御城一日游·下",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "我与阿紫在青御城的漫长一日。",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18118,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "顺利完成天黎族的祭祖仪式彩排。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012019,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 16,
+      Id = 5064,
+      Jump = 0,
+      Name = "主播男孩重度依赖",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "黎蚩，如果你被绑架了就眨眨眼。",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18119,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "引导黎蚩完成带货直播。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012020,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 17,
+      Id = 5065,
+      Jump = 0,
+      Name = "料理薪王",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "薪，这个食材搭配真的没问题吗？",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18120,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "协助薪收集食材。",
+        "",
+        "",
+        ""
+      }
+    }
+  },
+  {
+    {
+      Award = 30102,
+      Condition = {
+        5012021,
+        0,
+        0,
+        0
+      },
+      Deliver = 3,
+      FightIcon = "UITask/20240104/task_icon_s_title_build",
+      GroupId = 18,
+      Id = 5066,
+      Jump = 0,
+      Name = "论心不论迹",
+      OpenConditon = {0, 0},
+      OpenType = 1,
+      Sort = 1,
+      TaskDesc = "燃放烟花应该不是什么禁止事项吧？",
+      TaskType = 2,
+      stepIcon = {
+        "UITask/20230725/task_icon_s_title_build",
+        "",
+        "",
+        ""
+      },
+      stepJump = {
+        18121,
+        0,
+        0,
+        0
+      },
+      stepText = {
+        "帮男子运送烟花。",
+        "",
+        "",
+        ""
+      }
+    }
+  }
+}

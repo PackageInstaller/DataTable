@@ -1,0 +1,31 @@
+local empty = {}
+return {
+  unitList = {
+    {
+      Rotate = 190.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = false,
+      Camp = 4,
+      UnitID = 3140101,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 1,
+      IsChange = false,
+      UnitKey = "1_1402_0",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 0,
+      BornPos = {
+        0.4465518,
+        13.69981,
+        6.965645
+      }
+    }
+  },
+  Name = "",
+  Id = 1402,
+  Type = 1
+}

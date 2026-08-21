@@ -1,0 +1,62 @@
+local Util = require("utils.util")
+local Application = UnityEngine.Application
+local M = Util.create_class()
+local SAVE_INTERVAL = 120
+local OUTPUT_PATH = Application.persistentDataPath .. "/code_used_img.txt"
+
+function M:_init()
+  self.v_img_dic = {}
+  self.v_img_list = {}
+  self.v_time = 0
+  self.v_open = false
+end
+
+function M:open_collect()
+  self.v_open = true
+  self:_read_list()
+end
+
+function M:collect_img(img_path)
+  if not self.v_img_dic[img_path] then
+    self.v_img_dic[img_path] = img_path
+    table.insert(self.v_img_list, img_path)
+  end
+end
+
+function M:update()
+  if not self.v_open then
+    return
+  end
+  self.v_time = self.v_time + Global.delta_time
+  if self.v_time > SAVE_INTERVAL then
+    self.v_time = self.v_time - SAVE_INTERVAL
+    self:_write_list()
+  end
+end
+
+function M:_write_list()
+  local f = io.open(OUTPUT_PATH, "w")
+  if not f then
+    Log.Error("打开文件失败", OUTPUT_PATH)
+    return
+  end
+  Log.Info("收集到的图片写入文件成功！")
+  local str = table.concat(self.v_img_list, "\n")
+  f:write(str)
+  f:close()
+end
+
+function M:_read_list()
+  local f = io.open(OUTPUT_PATH, "r")
+  if not f then
+    return
+  end
+  local content = f:read("*all")
+  f:close()
+  self.v_img_list = Util.split_str(content, "\n")
+  for i, v in ipairs(self.v_img_list) do
+    self.v_img_dic[v] = v
+  end
+end
+
+return M

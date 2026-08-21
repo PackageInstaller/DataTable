@@ -1,0 +1,225 @@
+local Base = require("ui.uibase")
+local LoopListClass = require("ui.widget.infinite_loop_list")
+local GoodsItemClass = require("uimodule.shop.gift_shop.gift_shop_item")
+local AssetBarView = require("ui.asset_bar.asset_bar")
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local ShopCfg = require("uimodule.shop.shop_config")
+local INTERVAL_TIME = 0.1
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_asset_bar = {
+    "AssetBar",
+    BIND_TYPE.OBJECT
+  },
+  v_gift_tem = {
+    "GiftTem",
+    BIND_TYPE.IMAGE
+  },
+  v_page_list = {
+    "PageList",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_tog_list = {}
+  local page_list = {}
+  for _, v in pairs(ShareRes.create("recharge.gift_shop_page")) do
+    table.insert(page_list, v)
+  end
+  table.sort(page_list, function(a, b)
+    return a.Priority > b.Priority
+  end)
+  for i, v in ipairs(page_list) do
+    local tog_obj = self.v_uiobjects["Page_" .. i]
+    local tog = self:get_toggle(nil, tog_obj)
+    self.v_tog_list[i] = tog
+    self:set_toggle_listener(tog, function(isOn)
+      self:_on_click_tog(i, isOn)
+    end)
+    if ShopCfg.GIFT_SHOP_SHELF[i].RedId then
+      local redObj = self:get_child_gameobj("RedPoint", tog.gameObject)
+      RedPointMgr:bind_redpoint(self, redObj, ShopCfg.GIFT_SHOP_SHELF[i].RedId)
+    end
+  end
+  self.v_goods_view = LoopListClass:new(self, self.v_uiobjects.GoodsView, GoodsItemClass)
+  self.v_asset_bar = AssetBarView:new(self, self.v_asset_bar)
+  self.v_page_canvas = self:get_canvas_group(nil, self.v_page_list)
+end
+
+function ui:ui_on_show(shelves_type, gift_cfg, ...)
+  RechargeMgr:_check_gift_redpoint()
+  self:_set_toggle()
+  shelves_type = shelves_type or ShopCfg.DEF_SHOP_SHELF
+  if self.v_tog_list[shelves_type].gameObject.activeSelf then
+    self.v_default_idx = shelves_type
+  end
+  self.v_default_idx = self.v_default_idx or 1
+  self.v_tog_list[self.v_default_idx].isOn = true
+  self:_on_click_tog(self.v_default_idx, true)
+  self.v_cur_tog_index = self.v_default_idx
+  self:_refresh_asset()
+  if gift_cfg then
+    local not_force = gift_cfg.not_force_to_gift
+    if not_force then
+      gift_cfg = gift_cfg.gift_cfg
+    end
+    local goods_id = gift_cfg.Id
+    for i, v in ipairs(self.v_goods_list) do
+      if goods_id == v.Id then
+        self.v_goods_view:scroll_to_item(i)
+        if not not_force then
+          self.v_goods_view:get_item_ui(i):force_onclick()
+        end
+      end
+    end
+  end
+  self:_regist_client_event()
+end
+
+function ui:ui_on_hide()
+  self.v_page_canvas.alpha = 0
+  self.v_cur_tog_index = nil
+  self.v_default_idx = nil
+  self.v_goods_view:ui_on_hide()
+  self.v_asset_bar:on_hide()
+  if self.v_sequence then
+    self.v_sequence:Kill(false)
+    self.v_sequence = nil
+  end
+end
+
+function ui:ui_on_destroy()
+  self.v_asset_bar:on_destory()
+  self.v_goods_view:ui_on_destroy()
+end
+
+function ui:_set_toggle()
+  for _, v in pairs(self.v_tog_list) do
+    v:SetActive(false)
+  end
+  for i, v in pairs(ShareRes.create("recharge.gift_shop_type")) do
+    local count = 0
+    for _, t in ipairs(v) do
+      local is_open = Shop_Helper.check_gift_open(t, true)
+      if is_open then
+        if Shop_Helper.check_sold_out(t) then
+          if 1 == t.SoldoutShow then
+            count = count + 1
+          end
+        else
+          count = count + 1
+        end
+      end
+      if count > 0 and self.v_tog_list[i] then
+        self.v_tog_list[i]:SetActive(true)
+        if not self.v_default_idx then
+          self.v_default_idx = i
+        end
+        break
+      end
+    end
+  end
+end
+
+function ui:_refresh_asset()
+  local list = Shop_Helper.get_asset_list({
+    Config.GILTGOLD_ITEMID
+  })
+  self.v_asset_bar:reset_config(list)
+  self.v_asset_bar:on_create()
+end
+
+function ui:_on_click_tog(index, isOn)
+  if self.v_cur_tog_index == index or not isOn then
+    return
+  end
+  self.v_cur_tog_index = index
+  self:_set_goods(index)
+end
+
+function ui:_set_goods(index)
+  self.v_goods_list = {}
+  for _, v in ipairs(ShareRes.create("recharge.gift_shop_type", index)) do
+    local is_open = Shop_Helper.check_gift_open(v, true)
+    local is_product_valid = not RechargeMgr:is_recharge_product(v) or RechargeMgr:is_product_valid(v)
+    if is_open and is_product_valid then
+      if Shop_Helper.check_sold_out(v) then
+        if 1 == v.SoldoutShow then
+          table.insert(self.v_goods_list, v)
+        end
+      else
+        table.insert(self.v_goods_list, v)
+      end
+    end
+  end
+  table.sort(self.v_goods_list, function(a, b)
+    local out_a = Shop_Helper.check_sold_out(a) and 1 or 0
+    local out_b = Shop_Helper.check_sold_out(b) and 1 or 0
+    if out_a == out_b then
+      if a.Priority == b.Priority then
+        return a.Id > b.Id
+      else
+        return a.Priority > b.Priority
+      end
+    else
+      return out_a < out_b
+    end
+  end)
+  self.v_need_ani = true
+  self.v_goods_view:refresh_data(self.v_goods_list)
+  self.v_need_ani = false
+  self.v_uiobjects.NoShopItem:SetActiveEx(0 == #self.v_goods_list)
+  if self.v_sequence then
+    self.v_sequence:Kill(false)
+    self.v_sequence = nil
+  end
+  if self.v_visible then
+    Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.shop_item_refresh_UI_SOUND)
+  end
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_GIFT_INFO_UPDATE, self._response_buy_result, self)
+  self:bind_auto_mq(Const.MSG_ON_TIME_CUT_FINISH, self._response_buy_result, self)
+end
+
+function ui:_response_buy_result(msg)
+  local def_idx = self:_check_toggles()
+  if not def_idx then
+    self:_set_goods(self.v_cur_tog_index)
+  else
+    self.v_tog_list[def_idx].isOn = true
+    self:_on_click_tog(def_idx, true)
+  end
+end
+
+function ui:_check_toggles()
+  local show_count = 0
+  for i, v in ipairs(self.v_tog_list) do
+    if v.gameObject.activeSelf then
+      show_count = show_count + 1
+    end
+  end
+  self:_set_toggle()
+  local def_idx = 0
+  for i, v in ipairs(self.v_tog_list) do
+    if v.gameObject.activeSelf then
+      show_count = show_count - 1
+      if 0 == def_idx then
+        def_idx = i
+      end
+    end
+  end
+  if 0 ~= show_count then
+    return def_idx
+  end
+end
+
+function ui:get_need_ani()
+  return self.v_need_ani
+end
+
+return ui

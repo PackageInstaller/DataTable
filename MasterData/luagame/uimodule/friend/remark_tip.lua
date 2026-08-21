@@ -1,0 +1,54 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local Timer = Global.timer
+local MODEL = {}
+local NOTE_MAX_LEN = ShareRes.get_system_comm_value("FriendNoteMaxLen")
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  local input = Util.get_component(nil, self.v_uicompents.Remark_input_rect, UnityEngine.UI.InputField)
+  self.v_input = input
+  self:set_inputfield_listener(input, function()
+    self:_on_check_input_len(input)
+  end)
+  self:set_button("BtnCancel", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnBack", function()
+    self:ui_hide()
+  end)
+  self:set_button("CloseBtn", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnConfirm", function()
+    if self.v_cur_name == input.text then
+      return
+    end
+    local len = Util.get_string_len(input.text)
+    FriendMgr:set_friend_note(self.v_select_uuid, input.text)
+    self:ui_hide()
+  end)
+end
+
+function ui:ui_on_show(select_uuid)
+  self.v_select_uuid = select_uuid
+  local friend_info = FriendMgr:get_friend_info_by_id(select_uuid)
+  local name = friend_info.note
+  self.v_cur_name = name
+  self.v_input.text = name
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:_on_check_input_len(input)
+  local len = Util.get_string_len(input.text)
+  if len > NOTE_MAX_LEN then
+    input.text = self.v_input_name
+    return
+  end
+  self.v_input_name = input.text
+end
+
+return ui

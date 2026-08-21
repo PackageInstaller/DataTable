@@ -1,0 +1,115 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local INFINITE_TASK_ITEM_CLASS = require("uimodule.chapter.infinite.infinite_task_item")
+local INFINITE_TASK_ITEM_KEY = "INFINITE_TASK_ITEM_KEY"
+local TASK_CONFIG = require("gamelogic.task.task_config")
+local TASK_STATE = TASK_CONFIG.TASK_STATE
+local MODEL = {
+  v_task_content = {
+    "TaskContent",
+    BIND_TYPE.OBJECT
+  },
+  v_task_template = {
+    "TaskTem",
+    BIND_TYPE.OBJECT
+  },
+  v_history_floor = {
+    "HistoryFloor",
+    BIND_TYPE.TEXT
+  },
+  v_max_floor = {
+    "MaxFloor",
+    BIND_TYPE.TEXT
+  },
+  v_task_scroll = {
+    "TaskScroll",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnReturn", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(INFINITE_TASK_ITEM_KEY, self.v_task_template, self.v_task_content)
+end
+
+function ui:ui_on_show(infinite_id)
+  self.v_infinite_id = infinite_id
+  self:refresh_task_content()
+  self:refresh_scroll_pos()
+end
+
+function ui:ui_on_hide()
+  self:remove_wrap_list()
+  self.v_item_width = nil
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.v_infinite_id
+end
+
+function ui:refresh_task_content()
+  self:give_back_auto_cache(INFINITE_TASK_ITEM_KEY)
+  local task_list = ChapterMgr:get_inf_task_cfg_list(self.v_infinite_id)
+  self.v_task_item_list = {}
+  for i, task_cfg in ipairs(task_list) do
+    local task_item = self:get_auto_cache(INFINITE_TASK_ITEM_KEY)
+    local task_item_lua_obj = INFINITE_TASK_ITEM_CLASS:ui_wrap_ex(self, task_item, false)
+    task_item_lua_obj:set_enable(true, task_cfg)
+    table.insert(self.v_task_item_list, task_item_lua_obj)
+    if not self.v_item_width then
+      local item_rect = Util.get_rect_transform(nil, task_item)
+      self.v_item_width = item_rect.rect.width
+    end
+  end
+  self.v_history_floor.text = ChapterMgr:get_inf_history_max_floor(self.v_infinite_id)
+  self.v_max_floor.text = ChapterMgr:get_inf_cfg_max_floor(self.v_infinite_id)
+end
+
+function ui:refresh_scroll_pos()
+  local task_scroll = Util.get_scrollrect(nil, self.v_task_scroll)
+  local len = #self.v_task_item_list
+  local is_can_receive = false
+  local is_none = false
+  local item_index = 1
+  for index, item_lua_obj in ipairs(self.v_task_item_list) do
+    local state = item_lua_obj:get_item_state()
+    if state then
+      if state == TASK_STATE.receive then
+        is_can_receive = true
+        item_index = index
+        break
+      elseif state == TASK_STATE.none then
+        is_none = true
+        item_index = index
+        break
+      end
+    end
+  end
+  if not is_can_receive and not is_none then
+    item_index = len
+  end
+  if 1 == item_index then
+    task_scroll.horizontalNormalizedPosition = 0
+  elseif item_index >= len - 2 and len >= item_index then
+    task_scroll.horizontalNormalizedPosition = 1
+  else
+    task_scroll.horizontalNormalizedPosition = item_index / (len - 1)
+  end
+end
+
+function ui:remove_wrap_list()
+  for _, obj in pairs(self.v_task_item_list) do
+    self:remove_wrap_ui(obj)
+  end
+  self.v_task_item_list = {}
+end
+
+return ui

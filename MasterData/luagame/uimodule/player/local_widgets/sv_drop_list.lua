@@ -1,0 +1,37 @@
+local Base = require("ui.widget.static_scroll_view")
+local M = Util.create_child_mt(Base)
+local GridLayoutGroup = UnityEngine.UI.GridLayoutGroup
+local Vec2 = require("base.vec2")
+
+function M:_init(parent_ui, scroll_rect_ex, template_class, template_key)
+  local content_gameobj = scroll_rect_ex.content.gameObject
+  Base._init(self, parent_ui, content_gameobj, template_class, template_key)
+  parent_ui:set_scrollrect_ex_listener(scroll_rect_ex, nil, nil, function()
+    local gridlayout = Util.get_component(nil, content_gameobj, typeof(GridLayoutGroup))
+    local celly = gridlayout.cellSize.y
+    local top = gridlayout.padding.top
+    local y = self.v_content_transform.anchoredPosition.y
+    local num = math.floor((y + top) / celly)
+    local idx = num + 1
+    self.v_content_transform.anchoredPosition = Vec2.New(0, num * celly)
+    self.v_items[idx]:set_selected()
+  end)
+end
+
+function M:update_list(limit_tb, digit)
+  self:clear()
+  local num = limit_tb.max - limit_tb.min + 1
+  if limit_tb.max < 0 then
+    return
+  end
+  for i = 1, num do
+    local temp = {
+      num = limit_tb.min + i - 1,
+      digit = digit
+    }
+    self:add_item(temp, i)
+  end
+  self.v_content_transform.anchoredPosition = Vec2.zero
+end
+
+return M

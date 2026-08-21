@@ -1,0 +1,62 @@
+return {
+  Id = 2010540103,
+  CameraPinchType = 1,
+  IsCorrect = true,
+  CameraViewType = 1,
+  CameraShakeType = 1,
+  OffsetReference = 1,
+  CamSpeedLimit = 10.0,
+  BattleCamDistLimit = {
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  },
+  GearCameraVal = {
+    50.0,
+    50.0,
+    1.0,
+    1.0
+  },
+  DefaultCorrectVal = {
+    0.05,
+    5.0,
+    10.0
+  },
+  AtkCorrectVal = {
+    4.5,
+    0.005,
+    0.5,
+    3.0
+  },
+  MoveCorrectVal = 5.0,
+  CoordinateType = 1,
+  DefaultXAngle = 11.4,
+  DefaultYAngle = 75.4,
+  DefaultZAngle = -22.8,
+  DefaultZPOs = 0.65,
+  DefaultYPOs = 4.76,
+  DefaultXPOs = -0.5,
+  DefaultDistance = 25.82,
+  DefaultHeight = 4.65,
+  DefalutFOV = 47,
+  CheckFocusHit = true,
+  FocusMinDistance = 0.1,
+  FocusMaxDistance = 100.0,
+  OutFocusMaxDistance = 100.0,
+  OutFocusMinDistance = 0.1,
+  FocusMaxAngle = 60,
+  DefaultToFocusDuration = 3.5,
+  FocusToDefaultDuration = 3.5,
+  FocusHeroLerpVal = 5.0,
+  SetCameraDuration = 120.0,
+  AimedOffset = {
+    1.0,
+    1.0,
+    0.0
+  },
+  AimedLerpVal = 0.1,
+  AimedAngleX = {20.0, -20.0},
+  AimedAngleY = {180.0, 180.0},
+  AimedSpeed = 0.5
+}

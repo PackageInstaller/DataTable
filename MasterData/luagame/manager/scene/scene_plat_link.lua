@@ -1,0 +1,32 @@
+local ScenePlatLinkPoint = require("manager.scene.scene_plat_link_pt")
+local M = Util.create_class()
+
+function M:_init(cs_link_obj, platform)
+  self.v_cs_link_obj = cs_link_obj
+  self.v_plat = platform
+  self.v_start_point = ScenePlatLinkPoint:new(cs_link_obj.Start, self, true)
+  self.v_end_point = ScenePlatLinkPoint:new(cs_link_obj.End, self, false)
+end
+
+function M:clear()
+  self.v_start_point:clear()
+  self.v_end_point:clear()
+end
+
+function M:get_plat()
+  return self.v_plat
+end
+
+function M:get_start_point()
+  return self.v_start_point
+end
+
+function M:get_end_point()
+  return self.v_end_point
+end
+
+function M:is_same_plat(link)
+  return self.v_plat == link.v_plat
+end
+
+return M

@@ -1,0 +1,38 @@
+return {
+  {
+    LabelNum = 1,
+    TaskType = 1,
+    TypeBg = "Task/task_db_lbwxz_mx",
+    TypeIMG = "UITask/20240104/task_icon_ll_mx",
+    TypeIconColor = "ff9e9e",
+    TypeName = "历程",
+    TypeSelectBg = "Task/task_db_lbxz_mx"
+  },
+  {
+    LabelNum = 2,
+    TaskType = 2,
+    TypeBg = "Task/task_db_lbwxz_tx",
+    TypeIMG = "UITask/20240104/task_icon_ll_tx",
+    TypeIconColor = "ceaaff",
+    TypeName = "支线",
+    TypeSelectBg = "Task/task_db_lbxz_tx"
+  },
+  {
+    LabelNum = 3,
+    TaskType = 3,
+    TypeBg = "Task/task_db_lbwxz_rc",
+    TypeIMG = "UITask/20240104/task_icon_ll_rc",
+    TypeIconColor = "96c5ff",
+    TypeName = "基建",
+    TypeSelectBg = "Task/task_db_lbxz_rc"
+  },
+  {
+    LabelNum = 4,
+    TaskType = 4,
+    TypeBg = "Task/task_db_lbwxz_qt",
+    TypeIMG = "UITask/20240104/task_icon_ll_qt",
+    TypeIconColor = "d7ffc9",
+    TypeName = "其他",
+    TypeSelectBg = "Task/task_db_lbxz_qt"
+  }
+}

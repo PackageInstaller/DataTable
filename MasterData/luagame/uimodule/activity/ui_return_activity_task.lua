@@ -1,0 +1,208 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local LoopListClass = require("ui.widget.infinite_loop_list")
+local TaskItemClass = require("uimodule.activity.ui_return_activity_task_item")
+local SaticSv = require("ui.widget.static_scroll_view")
+local UI_RETURN_ACT_AWARD_TEM_KEY = "UI_RETURN_ACT_AWARD_TEM_KEY"
+local CT_Timer = Global.ct_timer
+local TASK_STATE = {
+  NOT_RECEIVE = 0,
+  CAN_RECEIVE = 1,
+  RECEIVE = 2,
+  COMPLETE = 3,
+  GET_REWARD = 4
+}
+local TASK_STATE_PRO = {
+  [TASK_STATE.COMPLETE] = 1,
+  [TASK_STATE.CAN_RECEIVE] = 2,
+  [TASK_STATE.NOT_RECEIVE] = 3,
+  [TASK_STATE.RECEIVE] = 4,
+  [TASK_STATE.GET_REWARD] = 5
+}
+local COLOR_WHITE = Util.get_unity_color_by_hex(tonumber("ffffff", 16))
+local COLOR_GREY = Util.get_unity_color_by_hex(tonumber("a8a8a8", 16))
+
+function ui:ui_finish_load()
+  self:set_button("BtnClose", function()
+    self:ui_hide()
+  end)
+  self:set_button("CloseBg", function()
+    self:ui_hide()
+  end)
+  self:set_toggle_listener(self.v_uicompents.Page1_tog, function(is_on)
+    if is_on then
+      self.v_task_view:refresh_data(self.v_hold_task_data)
+    end
+  end)
+  self:set_toggle_listener(self.v_uicompents.Page2_tog, function(is_on)
+    if is_on then
+      self.v_task_view:refresh_data(self.v_day_task_data)
+    end
+  end)
+  self.v_task_view = LoopListClass:new(self, self.v_uiobjects.TaskView, TaskItemClass)
+  self:register_exist_auto_template(UI_RETURN_ACT_AWARD_TEM_KEY, self.v_uiobjects.ActiveAwardTem, self.v_uiobjects.ActiveAwardContent)
+end
+
+function ui:ui_on_show()
+  self.v_ret_act_info = NoviceMgr:get_activity_flyback_info()
+  self.v_end_time = self.v_ret_act_info.end_time
+  self.v_is_hide = false
+  self.v_hold_task_data = {}
+  self.v_day_task_data = {}
+  self.v_task_status = {}
+  self:refresh_data()
+  self:refresh_show_time()
+  self.v_uicompents.Page1_tog.isOn = false
+  self.v_uicompents.Page1_tog.isOn = true
+  self:refresh_award()
+  self:bind_auto_mq(Const.ON_RET_ACT_SIGN_AWARD, self.refresh_show, self)
+  self:bind_auto_mq(Const.MSG_ON_TASK_UPDATE, self.refresh_show_by_task, self)
+end
+
+function ui:ui_on_hide()
+  self.v_is_hide = true
+  self.v_task_view:ui_on_hide()
+  if self.v_reset_timer then
+    CT_Timer:remove_timer(self.v_reset_timer)
+    self.v_reset_timer = nil
+  end
+end
+
+function ui:refresh_award()
+  self:give_back_auto_cache(UI_RETURN_ACT_AWARD_TEM_KEY)
+  local cfg = ShareRes.get_return_activity_task_progress()
+  local progress_item_id = ShareRes.get_return_activity_hold_task().ProgressItemId
+  local progress_item_num = BagMgr:get_item_num(progress_item_id)
+  local progress_item_total_num = 0
+  local ret_info = NoviceMgr:get_activity_flyback_info()
+  ResMgr:load_set_icon(self.v_uicompents.ActiveIcon_img, UtilUI.get_item_icon(progress_item_id))
+  self.v_uicompents.ActiveText_txt.text = progress_item_num
+  for index, data in ipairs(cfg) do
+    local obj = self:get_auto_cache(UI_RETURN_ACT_AWARD_TEM_KEY)
+    local complete_bg = Util.get_child_gameobj("CompleteBg_", obj)
+    local item_bg = Util.get_image("ItemIcon_", obj)
+    local item_num = Util.get_text("AmountBg/Amount_", obj)
+    local finish_bg = Util.get_child_gameobj("Finish_", obj)
+    local item_btn = Util.get_button(nil, obj)
+    if progress_item_total_num < data.ItemCount then
+      progress_item_total_num = data.ItemCount
+    end
+    local complete = false
+    local complete_and_get = false
+    if progress_item_num >= data.ItemCount then
+      complete = true
+    end
+    complete_and_get = nil ~= ret_info and 1 == (ret_info.progress_reward_bit >> index - 1) % 2
+    complete_bg:SetActive(complete)
+    finish_bg:SetActive(complete_and_get)
+    local aw_img = Util.get_image("CompleteBg_", obj)
+    local amount1 = Util.get_text("AmountBg/X_", obj)
+    if complete_and_get then
+      aw_img.color = COLOR_GREY
+      item_num.color = COLOR_GREY
+      amount1.color = COLOR_GREY
+      item_bg.color = COLOR_GREY
+    elseif complete then
+      aw_img.color = COLOR_WHITE
+      item_num.color = COLOR_WHITE
+      amount1.color = COLOR_WHITE
+      item_bg.color = COLOR_WHITE
+    else
+      aw_img.color = COLOR_GREY
+      item_num.color = COLOR_GREY
+      amount1.color = COLOR_GREY
+      item_bg.color = COLOR_GREY
+    end
+    local award = ShareRes.get_award_item_data(data.AwardGroupId)
+    local first_award = award[1]
+    ResMgr:load_set_icon(item_bg, UtilUI.get_item_icon(first_award[1]))
+    item_num.text = first_award[2]
+    self:set_button_listener(item_btn, function()
+      if complete and not complete_and_get then
+        NoviceMgr:get_flyback_gain_progress_award(index)
+      else
+        UIMgr:get_ui("itemTip"):ui_show({
+          item_id = first_award[1]
+        })
+      end
+    end)
+  end
+  self.v_uicompents.ProgressBarFill_img.fillAmount = progress_item_num / progress_item_total_num
+end
+
+function ui:ui_on_destroy()
+  self.v_task_view:ui_on_destroy()
+end
+
+function ui:refresh_show()
+  self:refresh_data()
+  self:refresh_award()
+  self.v_task_view:reload_data()
+end
+
+function ui:refresh_show_by_task()
+  self:refresh_data()
+  self:refresh_award()
+  self.v_task_view:refresh_data(self.v_hold_task_data)
+end
+
+function ui:refresh_data()
+  local hold_data_map = ShareRes.get_task_group(ShareRes.get_return_activity_hold_task().TaskGroupId)
+  self.v_hold_task_data = UtilTable.map2list(hold_data_map, function(a, b)
+    local task_state_a = TaskMgr:get_task_state(a.Id)
+    local task_state_b = TaskMgr:get_task_state(b.Id)
+    local task_state_a_pro = TASK_STATE_PRO[task_state_a] or 0
+    local task_state_b_pro = TASK_STATE_PRO[task_state_b] or 0
+    local a_priority = a.Priority
+    local b_priority = b.Priority
+    if task_state_a_pro ~= task_state_b_pro then
+      return task_state_a_pro < task_state_b_pro
+    elseif a_priority ~= b_priority then
+      return a_priority < b_priority
+    elseif a.Id ~= b.Id then
+      return a.Id < b.Id
+    else
+      return false
+    end
+  end)
+  self.v_day_task_data = {}
+end
+
+function ui:get_task_state(task_id)
+  return self.v_task_status[task_id]
+end
+
+function ui:refresh_show_time()
+  if not self.v_end_time then
+    return
+  end
+  local end_time = self.v_end_time
+  local has_time = Util.is_more_than_zero(end_time)
+  self.v_uiobjects.Time:SetActive(has_time)
+  if not has_time then
+    return
+  end
+  if self.v_reset_timer then
+    CT_Timer:remove_timer(self.v_reset_timer)
+    self.v_reset_timer = nil
+  end
+  local total_sec = end_time - Date.server_time()
+  if total_sec <= 0 then
+    self.v_uiobjects.Time:SetActive(false)
+    return
+  end
+  self.v_has_time = true
+  self.v_uicompents.Time_txt.text = Date.get_time_formate_2(total_sec)
+  self.v_reset_timer = CT_Timer:add_timer("ret_act_task_reset_timer", total_sec, function(sec)
+    if self:visible() then
+      if sec > 0 and self.v_uicompents ~= nil then
+        self.v_uicompents.Time_txt.text = Date.get_time_formate_2(sec)
+      elseif self.v_reset_timer then
+        CT_Timer:remove_timer(self.v_reset_timer)
+        self.v_reset_timer = nil
+      end
+    end
+  end)
+end
+
+return ui

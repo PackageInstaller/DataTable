@@ -1,0 +1,50 @@
+return {
+  {
+    FourPieceMagic = "阶段一",
+    Id = 1,
+    Priority = 7,
+    TaskGroupId = 201
+  },
+  {
+    Condition = 23001,
+    FourPieceMagic = "阶段二",
+    Id = 2,
+    Priority = 6,
+    TaskGroupId = 202
+  },
+  {
+    Condition = 23002,
+    FourPieceMagic = "阶段三",
+    Id = 3,
+    Priority = 5,
+    TaskGroupId = 203
+  },
+  {
+    Condition = 23003,
+    FourPieceMagic = "阶段四",
+    Id = 4,
+    Priority = 4,
+    TaskGroupId = 204
+  },
+  {
+    Condition = 23004,
+    FourPieceMagic = "阶段五",
+    Id = 5,
+    Priority = 3,
+    TaskGroupId = 205
+  },
+  {
+    Condition = 23005,
+    FourPieceMagic = "阶段六",
+    Id = 6,
+    Priority = 2,
+    TaskGroupId = 206
+  },
+  {
+    Condition = 23006,
+    FourPieceMagic = "阶段七",
+    Id = 7,
+    Priority = 1,
+    TaskGroupId = 207
+  }
+}

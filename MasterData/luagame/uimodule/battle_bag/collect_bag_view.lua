@@ -1,0 +1,125 @@
+local Base = require("ui.uiobject")
+local LoopListClass = require("ui.widget.infinite_loop_list")
+local GoodsItemClass = require("uimodule.battle_bag.battle_item")
+local BagCfg = require("gamelogic.character.fight_bag_configs")
+local Item_Helper = require("utils.item_helper")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self.v_talent_list = LoopListClass:new(self, self.v_uiobjects.TanlentItemList, GoodsItemClass)
+  self.v_suit_list = LoopListClass:new(self, self.v_uiobjects.SuitItemList, GoodsItemClass)
+end
+
+function ui:ui_on_show()
+  self:_refresh_talent_list_view()
+  self:_regist_client_event()
+  self:_refresh_collect_list_view()
+end
+
+function ui:ui_on_hide()
+  self.v_talent_list:ui_on_hide()
+  self.v_suit_list:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+  self.v_talent_list:ui_on_destroy()
+  self.v_suit_list:ui_on_destroy()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_FIGHT_BAG_UPDATE, self.response_bag_update_event, self)
+end
+
+function ui:response_bag_update_event()
+  self:_refresh_talent_list_view()
+  self:_refresh_collect_list_view()
+end
+
+function ui:_refresh_talent_list_view()
+  local list = FightBagMgr:get_bag(BagCfg.BagType.COLLECT)
+  local talent_list = {}
+  for _, item in pairs(list) do
+    if item.Cfg.Type == BagCfg.CollectType.COMMON then
+      table.insert(talent_list, item)
+    end
+  end
+  table.sort(talent_list, function(a, b)
+    local a_lv = Item_Helper.get_job_level(a.Cfg.Id) or 0
+    local b_lv = Item_Helper.get_job_level(b.Cfg.Id) or 0
+    if a_lv == b_lv then
+      if a.Cfg.ShowPriority == b.Cfg.ShowPriority then
+        return a.Quality > b.Quality
+      else
+        return a.Cfg.ShowPriority > b.Cfg.ShowPriority
+      end
+    else
+      return a_lv > b_lv
+    end
+  end)
+  local cur_length = #talent_list
+  local total
+  if 0 == cur_length then
+    total = 18
+  else
+    total = math.ceil(cur_length / 18) * 18
+  end
+  for i = cur_length + 1, total do
+    table.insert(talent_list, {})
+  end
+  self.v_talent_list:refresh_data(talent_list)
+end
+
+function ui:_refresh_collect_list_view()
+  local list = FightBagMgr:get_bag(BagCfg.BagType.COLLECT)
+  local suit_list = {}
+  for _, item in pairs(list) do
+    if item.Cfg.Type == BagCfg.CollectType.SUIT then
+      table.insert(suit_list, item)
+    end
+  end
+  table.sort(suit_list, function(a, b)
+    local a_num = self:_get_suit_num(a.Cfg)
+    local b_num = self:_get_suit_num(b.Cfg)
+    if a_num == b_num then
+      if a.Cfg.ShowPriority == b.Cfg.ShowPriority then
+        return a.Quality > b.Quality
+      else
+        return a.Cfg.ShowPriority > b.Cfg.ShowPriority
+      end
+    else
+      return a_num > b_num
+    end
+  end)
+  local cur_length = #suit_list
+  local total
+  if 0 == cur_length then
+    total = 9
+  else
+    total = math.ceil(cur_length / 9) * 9
+  end
+  for i = cur_length + 1, total do
+    table.insert(suit_list, {})
+  end
+  self.v_suit_list:refresh_data(suit_list)
+end
+
+function ui:_get_suit_num(item_cfg)
+  local arg = item_cfg.Arg[1]
+  if not arg then
+    return 0
+  end
+  local suit_cfg = ShareRes.create("battle.battle_collection_suit_type", arg)
+  if not suit_cfg then
+    return 0
+  end
+  local num = 0
+  for i, v in ipairs(suit_cfg) do
+    local has = FightBagMgr:get_had_item_by_id(v.Id)
+    if has then
+      num = num + 1
+    end
+  end
+  return num
+end
+
+return ui

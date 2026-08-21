@@ -1,0 +1,216 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local Timer = Global.timer
+local INPUT_FIELD = UnityEngine.UI.InputField
+local TypeMeshRenderer = typeof(UnityEngine.MeshRenderer)
+local BIND_TYPE = Config.BIND_TYPE
+local _tinsert = table.insert
+local MODEL = {
+  v_camera_content = {
+    "CameraContent",
+    BIND_TYPE.OBJECT
+  },
+  v_camera_template = {
+    "CameraTemp",
+    BIND_TYPE.OBJECT
+  }
+}
+local GM_CAMERA_KEY = "GM_CAMERA_KEY"
+local BTN_TYPE = {
+  SCENE = 1,
+  CAMERA = 2,
+  TERRAIN = 3
+}
+local GM_TERRAIN_KEY = "GM_TERRAIN_KEY"
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("Close", function()
+    self:ui_destroy()
+  end)
+  self:set_button("SwitchScene", function()
+    self:click_btn(BTN_TYPE.SCENE)
+  end)
+  self:set_button("Camera", function()
+    self:click_btn(BTN_TYPE.CAMERA)
+  end)
+  self:set_button("Terrain", function()
+    self:click_btn(BTN_TYPE.TERRAIN)
+  end)
+  self:set_button("ChangeBtn", function()
+    self:change_scene()
+  end)
+  self:set_button("ChangeCamera", function()
+    self:change_camera()
+  end)
+  self:set_button("GetCharPos", function()
+    self:get_char_pos()
+  end)
+  self:set_button("CreateTerrain", function()
+    self:create_terrain()
+  end)
+  self:set_button("CameraBtn", function()
+    self.v_uiobjects.CameraList:SetActive(true)
+  end)
+  self:set_button("CameraList", function()
+    self.v_uiobjects.CameraList:SetActive(false)
+  end)
+  self:register_exist_auto_template(GM_TERRAIN_KEY, self.v_uiobjects.TerrainTemplate, self.v_uiobjects.TerrainList)
+  self:register_exist_auto_template(GM_CAMERA_KEY, self.v_camera_template, self.v_camera_content)
+end
+
+function ui:click_btn(btn_type)
+  self.v_uiobjects.ChangeScene:SetActive(btn_type == BTN_TYPE.SCENE)
+  self.v_uiobjects.SceneContent:SetActive(btn_type == BTN_TYPE.CAMERA)
+  self.v_uiobjects.TerrainContent:SetActive(btn_type == BTN_TYPE.TERRAIN)
+  if btn_type == BTN_TYPE.TERRAIN then
+    self:update_terrain_list()
+  end
+end
+
+function ui:ui_on_show()
+  self.v_uiobjects.ChangeScene:SetActive(true)
+  self.v_uiobjects.SceneContent:SetActive(false)
+  self.v_uiobjects.TerrainContent:SetActive(false)
+  self.v_uiobjects.CameraList:SetActive(false)
+  self:init_camera_list()
+  self:get_char_pos(true)
+  self:click_btn(BTN_TYPE.SCENE)
+  self.v_terrain_list = SceneMgr:get_terrain_list()
+  self.v_terrain_index = 1
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:change_scene()
+  local input = Util.get_component(nil, self.v_uiobjects.SceneId, INPUT_FIELD)
+  local scene_id = tonumber(input.text)
+  if not scene_id then
+    Log.Error("填写正确的房间id")
+    return
+  end
+  if not SceneMgr then
+    return
+  end
+  self:set_born_pos_key()
+  SceneMgr:gm_enter_room(scene_id, true)
+end
+
+function ui:set_born_pos_key()
+  local input = Util.get_component(nil, self.v_uiobjects.BornKey, INPUT_FIELD)
+  local born_key = input.text
+  if Util.is_empty(born_key) then
+    return
+  end
+  SceneMgr:set_gm_enter_born_key(born_key)
+end
+
+function ui:set_char_pos()
+  if not Global.hero then
+    return
+  end
+  local input = Util.get_component(nil, self.v_uiobjects.PosX, INPUT_FIELD)
+  local posx = tonumber(input.text)
+  input = Util.get_component(nil, self.v_uiobjects.PosY, INPUT_FIELD)
+  local posy = tonumber(input.text)
+  input = Util.get_component(nil, self.v_uiobjects.PosZ, INPUT_FIELD)
+  local posz = tonumber(input.text)
+  if not (posx and posy) or not posz then
+    Log.Error("填写正确的坐标")
+    return
+  end
+  Global.hero:set_pos(posx, posy, posz)
+end
+
+function ui:change_camera()
+  local input = Util.get_component(nil, self.v_uiobjects.CameraId, INPUT_FIELD)
+  local camera_id = tonumber(input.text)
+  if not camera_id then
+    Log.Error("填写正确的摄像机id")
+    return
+  end
+  Global.camera:set_scene_camera(camera_id)
+end
+
+function ui:get_char_pos(is_reset)
+  if not Global.hero then
+    return
+  end
+  local pos_x, pos_y, pos_z = Global.hero:get_pos()
+  if is_reset then
+    pos_x = 0
+    pos_y = 0
+    pos_z = 0
+  end
+  self.v_uicompents.XVal_txt.text = pos_x
+  self.v_uicompents.YVal_txt.text = pos_y
+  self.v_uicompents.ZVal_txt.text = pos_z
+end
+
+function ui:create_terrain()
+  local res_name = "GMTerrain"
+  local input = Util.get_component(nil, self.v_uiobjects.TerrainX, INPUT_FIELD)
+  local scale_x = tonumber(input.text)
+  input = Util.get_component(nil, self.v_uiobjects.TerrainY, INPUT_FIELD)
+  local scale_y = tonumber(input.text)
+  input = Util.get_component(nil, self.v_uiobjects.TerrainZ, INPUT_FIELD)
+  local scale_z = tonumber(input.text)
+  local pos_x, pos_y, pos_z = Global.hero:get_pos()
+  ResPoolMgr:get_world_model_async(res_name, function(game_object)
+    local cur_num = #self.v_terrain_list
+    game_object.name = "Terrain" .. self.v_terrain_index
+    game_object.transform:SetPositionA(pos_x, pos_y - 0.45, pos_z)
+    game_object.transform:SetLocalScaleA(scale_x, scale_y, scale_z)
+    SceneMgr:cache_gm_terrain(game_object)
+    self:update_terrain_list()
+    self.v_terrain_index = self.v_terrain_index + 1
+  end)
+end
+
+function ui:update_terrain_list()
+  self:give_back_auto_cache(GM_TERRAIN_KEY)
+  for index, terrain in ipairs(self.v_terrain_list) do
+    local obj = self:get_auto_cache(GM_TERRAIN_KEY)
+    local name_txt = Util.get_text("Name", obj)
+    name_txt.text = terrain.name
+    self:show_terrain_scale(terrain, false)
+    local btn = Util.get_button("Remove", obj)
+    self:set_button_listener(btn, function()
+      SceneMgr:remove_terrain(index)
+      self:update_terrain_list()
+    end)
+    btn = Util.get_button("ShowScale", obj)
+    self:set_button_listener(btn, function()
+      self:show_terrain_scale(terrain, true)
+    end)
+  end
+end
+
+function ui:show_terrain_scale(item_obj, is_enable)
+  local type_mesh_render = item_obj:GetComponent(TypeRenderer)
+  Global.log.Debug("type_mesh_render = ", type_mesh_render)
+  type_mesh_render.enabled = is_enable
+end
+
+function ui:init_camera_list()
+  self:give_back_auto_cache(GM_CAMERA_KEY)
+  local camera_cfg = ShareRes.create("camera.camera")
+  for camera_id, data in pairs(camera_cfg) do
+    local obj = self:get_auto_cache(GM_CAMERA_KEY)
+    local desc_txt = Util.get_text("Desc", obj)
+    desc_txt.text = "相机id" .. data.Id .. "：" .. data.Name
+    local btn = Util.get_button(nil, obj)
+    self:set_button_listener(btn, function()
+      self:update_select_camera(camera_id)
+      self.v_uiobjects.CameraList:SetActive(false)
+    end)
+  end
+end
+
+function ui:update_select_camera(camera_id)
+  local input = Util.get_component(nil, self.v_uiobjects.CameraId, INPUT_FIELD)
+  input.text = camera_id
+end
+
+return ui

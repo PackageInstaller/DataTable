@@ -1,0 +1,341 @@
+local Base = require("ui.uibase")
+local AssetBarView = require("ui.asset_bar.asset_bar")
+local LoopListClass = require("ui.widget.infinite_loop_list")
+local GoodsItemClass = require("uimodule.shop.exchange_shop.exchange_shop_item")
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local ShopCfg = require("uimodule.shop.shop_config")
+local INTERVAL_TIME = 0.05
+local ui = Util.create_child_mt(Base)
+local CT_Timer = Global.ct_timer
+local TEMPLATE_KEY = {
+  TOGGLE_ITEM = "TOGGLE_ITEM",
+  ASSET_ITEM = "ASSET_ITEM"
+}
+local IMAGE_PATH = ""
+local SHOP_TYPE = Shop_Helper.SHOP_TYPE
+local SHOP_RESET_TYPE = ShopCfg.SHOP_RESET_TYPE
+local ONE_DAY_SECS = 86400
+local COLOR_1 = tonumber("BCB4A5", 16)
+local COLOR_2 = tonumber("FFDA9D", 16)
+local CUR_PAGE = 1
+
+function ui:ui_finish_load()
+  local data = ShareRes.create("shop.exchange_shop")
+  self.v_tog_list = {}
+  self.v_shop_cfg = {}
+  for k, v in pairs(data) do
+    if 1 == v.ShowInShop then
+      table.insert(self.v_shop_cfg, v)
+    end
+  end
+  table.sort(self.v_shop_cfg, function(a, b)
+    return a.SortId > b.SortId
+  end)
+  for i, v in ipairs(self.v_shop_cfg) do
+    local tog = self:get_toggle(nil, self.v_uiobjects["ShopTem_" .. i])
+    self.v_tog_list[v.Id] = tog
+    self:_set_toggle_data(tog, v)
+  end
+  self.v_only_need_tog = self:get_toggle(nil, self.v_uiobjects.OnlyInNeed)
+  self:set_toggle("OnlyInNeed", function(isOn)
+    self:_onclick_need_tog(isOn)
+  end, false)
+  self.v_only_unlock_tog = self:get_toggle(nil, self.v_uiobjects.OnlyUnlock)
+  self:set_toggle("OnlyUnlock", function(isOn)
+    self:_onclick_unlock_tog(isOn)
+  end, false)
+  self:set_button("BtnExpend", function()
+    self:_onclick_expend_btn()
+  end)
+  self.v_cutdown_time_lab = self:get_text(nil, self.v_uiobjects.RefreshTime)
+  self.v_goods_view = LoopListClass:new(self, self.v_uiobjects.ItemList, GoodsItemClass, function(offset, total_distance)
+    self:scroll_change_event(offset, total_distance)
+  end)
+  self.v_asset_bar = AssetBarView:new(self, self.v_uiobjects.AssetBar)
+  self.v_cur_shop_idx = nil
+  self.v_default_shop_id = nil
+  self.v_cur_shop_data = nil
+  self.v_cur_shop_type = nil
+  self.v_color_1 = Util.get_unity_color_by_hex(COLOR_1)
+  self.v_color_2 = Util.get_unity_color_by_hex(COLOR_2)
+  self.v_page_canvas = self:get_canvas_group(nil, self.v_uiobjects.ShopList)
+end
+
+function ui:ui_on_show(shelves_type, goods_id, ...)
+  self:_refresh_toggle_list()
+  if shelves_type then
+    self.v_default_shop_id = shelves_type
+  end
+  if goods_id then
+    self.v_cur_goods_id = goods_id
+  end
+  self:_onclick_tog(self.v_default_shop_id, true)
+  self.v_tog_list[self.v_default_shop_id].isOn = true
+  self:_regist_client_event()
+  self.v_page_canvas.alpha = 1
+end
+
+function ui:ui_on_hide()
+  self.v_page_canvas.alpha = 0
+  self.v_only_need = false
+  self.v_only_can_buy = false
+  self.v_cur_shop_idx = nil
+  self.v_default_shop_id = nil
+  self.v_cur_shop_data = nil
+  self.v_cur_shop_type = nil
+  self.v_goods_view:ui_on_hide()
+  self.v_only_need_tog.isOn = false
+  self.v_only_unlock_tog.isOn = false
+  self.v_asset_bar:on_hide()
+  if self.v_sequence then
+    self.v_sequence:Kill(false)
+    self.v_sequence = nil
+  end
+end
+
+function ui:ui_on_destroy()
+  self.v_asset_bar:on_destory()
+  self.v_goods_view:ui_on_destroy()
+end
+
+function ui:reopen(shelves_type, goods_id, ...)
+  if goods_id then
+    self.v_cur_goods_id = goods_id
+  end
+  if shelves_type and self.v_default_shop_id == shelves_type then
+    return
+  end
+  self.v_cur_shop_idx = nil
+  self:_onclick_tog(self.v_default_shop_id, true)
+  self.v_tog_list[self.v_default_shop_id].isOn = true
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_EXCHANGE_GOODS_UPDATE, self.response_shop_update_event, self)
+  self:bind_auto_mq(Const.MSG_ON_ITEM_UPDATE, self.response_bag_update_event, self)
+  self:bind_auto_mq(Const.MSG_ON_SERVER_STOCK_UPDATE, self.response_bag_update_event, self)
+  self:bind_auto_mq(Const.MSG_ON_COIN_UPDATE, self.response_bag_update_event, self)
+  self:bind_auto_mq(Const.MSG_ON_DIAMOND_UPDATE, self.response_bag_update_event, self)
+  self:bind_auto_mq(Const.MSG_ON_PLAYER_SP_UPDATE, self.response_bag_update_event, self)
+  self:bind_auto_mq(Const.MSG_ON_DP_UPDATE, self.response_bag_update_event, self)
+end
+
+function ui:response_shop_update_event(msg)
+  local last = self.v_cur_shop_idx
+  self.v_cur_shop_idx = 0
+  self:_refresh_toggle_list()
+  self.v_tog_list[last].isOn = true
+  self:_onclick_tog(last, true, true)
+end
+
+function ui:response_bag_update_event(msg)
+  if self.v_goods_view then
+    self.v_goods_view:reload_data()
+  end
+end
+
+function ui:_refresh_toggle_list()
+  for k, v in ipairs(self.v_shop_cfg) do
+    if self:_get_shop_is_unlock(v) then
+      self.v_tog_list[v.Id].gameObject:SetActiveEx(true)
+      if not self.v_default_shop_id then
+        self.v_default_shop_id = v.Id
+      end
+    else
+      self.v_tog_list[v.Id].gameObject:SetActiveEx(false)
+    end
+  end
+end
+
+function ui:_set_toggle_data(tog, data)
+  local obj = tog.gameObject
+  self:get_text("TagName", obj).text = data.Name
+  self:get_text("Select/selectTxt", obj).text = data.Name
+  local new_mark = self:get_text("New", obj)
+  new_mark.gameObject:SetActiveEx(ShopMgr:get_shop_new_mark(data.Id))
+  local tog = self:get_toggle(nil, obj)
+  Global.listener_mgr:add_listener(tog, tog.onValueChanged, function(isOn)
+    self:_onclick_tog(data.Id, isOn)
+  end)
+  return tog
+end
+
+function ui:_get_shop_is_unlock(data)
+  if 0 == data.ShowInShop then
+    return false
+  end
+  if data.Page ~= CUR_PAGE then
+    return false
+  end
+  local time = Date.server_time()
+  local start_time = data.StartTime and Date.get_time_stamp_by_scheme_id(data.StartTime)
+  if start_time and time < start_time then
+    return false
+  end
+  local end_time = data.EndTime and Date.get_time_stamp_by_scheme_id(data.EndTime)
+  if end_time and time > end_time then
+    return false
+  end
+  if data.Condition and 0 ~= data.Condition and not ShopMgr:get_shop_cond_state(data.Id) then
+    return false
+  end
+  return true
+end
+
+function ui:_onclick_tog(index, isOn, ignore_tog)
+  if self.v_cur_shop_idx == index then
+    return
+  end
+  if isOn then
+    self.v_cur_shop_idx = index
+    if not ignore_tog then
+      self.v_only_need_tog.isOn = false
+      self.v_only_unlock_tog.isOn = false
+    end
+    local data = ShareRes.create("shop.exchange_shop")
+    self.v_cur_shop_data = data[self.v_cur_shop_idx]
+    self.v_cur_shop_type = self.v_cur_shop_data.Type
+    self:_refresh_Asset()
+    self:_refresh_goods_list()
+    self:_refresh_top_tog()
+  end
+end
+
+function ui:_refresh_Asset()
+  local key, value = next(self.v_cur_shop_data.ItemId)
+  if 0 ~= value then
+    local list = Shop_Helper.get_asset_list(self.v_cur_shop_data.ItemId)
+    self.v_asset_bar:reset_config(list)
+  else
+    self.v_asset_bar:reset_config()
+  end
+  self.v_asset_bar:on_create()
+end
+
+function ui:_refresh_top_tog()
+  self.v_uiobjects.OnlyInNeed.gameObject:SetActiveEx(self.v_cur_shop_type == SHOP_TYPE.BREAK_SHOP)
+  self.v_uiobjects.OnlyUnlock.gameObject:SetActiveEx(self.v_cur_shop_type == SHOP_TYPE.BREAK_SHOP)
+  self.v_uiobjects.BtnExpend.gameObject:SetActiveEx(self.v_cur_shop_data.WindId > 0)
+end
+
+function ui:_refresh_goods_list()
+  self.v_goods_list = ShopMgr:get_goods_list(self.v_cur_shop_idx, self.v_cur_shop_type, self.v_only_need, self.v_only_can_buy)
+  if not self.v_goods_list then
+    return
+  end
+  self.v_uiobjects.Unmatch.gameObject:SetActiveEx(self.v_cur_shop_type == SHOP_TYPE.BREAK_SHOP and next(self.v_goods_list) == nil)
+  self.v_need_ani = true
+  self.v_goods_view:refresh_data(self.v_goods_list)
+  self.v_need_ani = false
+  self.v_uiobjects.NoShopItem:SetActiveEx(0 == #self.v_goods_list)
+  self.v_goods_view:stop_scroll()
+  if self.v_sequence then
+    self.v_sequence:Kill(false)
+    self.v_sequence = nil
+  end
+  if self.v_visible then
+    self.v_sequence = Util.create_sequence()
+    local all_itmes = self.v_goods_view:get_all_uis()
+    for _, ui_item in pairs(all_itmes) do
+      if ui_item:is_visible_item() then
+        ui_item:eff_init()
+        self.v_sequence:AppendCallback(function()
+          ui_item:play_in_eff()
+        end)
+        self.v_sequence:AppendInterval(INTERVAL_TIME)
+      end
+    end
+    Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.shop_item_refresh_UI_SOUND)
+  end
+end
+
+function ui:_onclick_need_tog(isOn)
+  self.v_only_need = isOn
+  self:_refresh_goods_list()
+end
+
+function ui:_onclick_unlock_tog(isOn)
+  self.v_only_can_buy = isOn
+  self:_refresh_goods_list()
+end
+
+function ui:_onclick_expend_btn()
+  UIMgr:get_ui("expand_stock_tips"):ui_show(self.v_cur_shop_idx)
+end
+
+function ui:_get_reset_time(shop_data)
+  if 0 == shop_data.ResetType then
+    return 0
+  end
+  if shop_data.ResetType == SHOP_RESET_TYPE.DAILY then
+    return self:_get_daily_reset_time()
+  elseif shop_data.ResetType == SHOP_RESET_TYPE.WEEKLY then
+    return self:_get_weekly_reset_time(shop_data.ResetValue)
+  elseif shop_data.ResetType == SHOP_RESET_TYPE.MONTHLY then
+    return self:_get_monthly_reset_time()
+  else
+    return 0
+  end
+end
+
+function ui:_get_daily_reset_time()
+  local date = os.date("!*t", Date.server_time())
+  local next_reset_date
+  local daily_reset_hour = Global.daily_reset_hour
+  if daily_reset_hour > date.hour then
+    return Date.to_timestamp({
+      year = date.year,
+      month = date.month,
+      day = date.day,
+      hour = daily_reset_hour,
+      min = 0,
+      sec = 0
+    })
+  else
+    next_reset_date = os.date("!*t", Date.server_time() + ONE_DAY_SECS)
+    return Date.to_timestamp({
+      year = next_reset_date.year,
+      month = next_reset_date.month,
+      day = next_reset_date.day,
+      hour = daily_reset_hour,
+      min = 0,
+      sec = 0
+    })
+  end
+end
+
+function ui:_get_weekly_reset_time(day)
+  if 0 == day then
+    day = 2
+  end
+  local next_day_time = self:_get_daily_reset_time()
+  local date = os.date("!*t", next_day_time)
+  if date.wday - 1 == day then
+    return next_day_time
+  end
+  local days = day < date.wday and day + 7 - date.wday or day - date.wday
+  return next_day_time + (days + 1) * ONE_DAY_SECS
+end
+
+function ui:_get_monthly_reset_time()
+  local date = os.date("!*t", Date.server_time())
+  local new_year = 12 == date.month and date.year + 1 or date.year
+  local new_month = 12 == date.month and 1 or date.month + 1
+  return Date.to_timestamp({
+    year = new_year,
+    month = new_month,
+    day = 1,
+    hour = Global.daily_reset_hour,
+    min = 0,
+    sec = 2
+  })
+end
+
+function ui:scroll_change_event(offset, total_distance)
+end
+
+function ui:get_need_ani()
+  return self.v_need_ani
+end
+
+return ui

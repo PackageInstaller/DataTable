@@ -1,0 +1,646 @@
+return {
+  [101] = {
+    ActionIdList = {1},
+    EventId = 1,
+    Id = 101,
+    Params = {},
+    Step = 1
+  },
+  [102] = {
+    ActionId = 7,
+    EventId = 1,
+    Id = 102,
+    Params = {"100100806", "100002"},
+    Step = 2
+  },
+  [103] = {
+    ActionId = 8,
+    EventId = 1,
+    Id = 103,
+    InteractionActionId = 6,
+    Params = {"100003"},
+    Step = 3
+  },
+  [104] = {
+    ActionIdList = {9},
+    EventId = 1,
+    Id = 104,
+    Params = {},
+    Step = 4
+  },
+  [201] = {
+    ActionIdList = {1},
+    EventId = 2,
+    Id = 201,
+    Params = {},
+    Step = 1
+  },
+  [202] = {
+    ActionId = 7,
+    EventId = 2,
+    Id = 202,
+    Params = {"100100806", "100004"},
+    Step = 2
+  },
+  [203] = {
+    ActionId = 8,
+    EventId = 2,
+    Id = 203,
+    InteractionActionId = 6,
+    Params = {"100005"},
+    Step = 3
+  },
+  [204] = {
+    ActionIdList = {9},
+    EventId = 2,
+    Id = 204,
+    Params = {},
+    Step = 4
+  },
+  [1001] = {
+    ActionIdList = {1},
+    EventId = 3,
+    Id = 1001,
+    Params = {},
+    Step = 1
+  },
+  [1002] = {
+    ActionIdList = {18},
+    EventId = 3,
+    Id = 1002,
+    Params = {},
+    Step = 2
+  },
+  [1003] = {
+    ActionId = 13,
+    EventId = 3,
+    Id = 1003,
+    Params = {
+      "0.3",
+      "0.1",
+      "0.3",
+      "1"
+    },
+    Step = 2
+  },
+  [1004] = {
+    ActionId = 5,
+    EventId = 3,
+    Id = 1004,
+    Params = {"1001001201", "1"},
+    Step = 3
+  },
+  [1005] = {
+    ActionId = 6,
+    EventId = 3,
+    Id = 1005,
+    Params = {"100006"},
+    Step = 4
+  },
+  [1006] = {
+    ActionId = 8,
+    EventId = 3,
+    Id = 1006,
+    InteractionActionId = 6,
+    Params = {"100007"},
+    Step = 5
+  },
+  [1007] = {
+    ActionIdList = {9},
+    EventId = 3,
+    Id = 1007,
+    Params = {},
+    Step = 6
+  },
+  [1008] = {
+    ActionId = 13,
+    EventId = 3,
+    Id = 1008,
+    Params = {
+      "0.3",
+      "0.1",
+      "0.3",
+      "1"
+    },
+    Step = 7
+  },
+  [1009] = {
+    ActionIdList = {19},
+    EventId = 3,
+    Id = 1009,
+    Params = {},
+    Step = 8
+  },
+  [2001] = {
+    ActionIdList = {1},
+    EventId = 4,
+    Id = 2001,
+    Params = {},
+    Step = 1
+  },
+  [2002] = {
+    ActionId = 13,
+    EventId = 4,
+    Id = 2002,
+    Params = {
+      "0.3",
+      "0.1",
+      "0.3",
+      "1"
+    },
+    Step = 2
+  },
+  [2003] = {
+    ActionIdList = {18},
+    EventId = 4,
+    Id = 2003,
+    Params = {},
+    Step = 3
+  },
+  [2004] = {
+    ActionId = 24,
+    EventId = 4,
+    Id = 2004,
+    Params = {"1"},
+    Step = 3
+  },
+  [2005] = {
+    ActionId = 26,
+    EventId = 4,
+    Id = 2005,
+    Params = {
+      "Root/TL_Animation/Xiangkuangposui_01"
+    },
+    Step = 3
+  },
+  [2006] = {
+    ActionId = 26,
+    EventId = 4,
+    Id = 2006,
+    Params = {
+      "Root/TL_Animation/Xiangkuangposui_02"
+    },
+    Step = 3
+  },
+  [2007] = {
+    ActionId = 26,
+    EventId = 4,
+    Id = 2007,
+    Params = {
+      "Root/TL_Animation/ZhizhangFuyuan_01"
+    },
+    Step = 3
+  },
+  [2008] = {
+    ActionId = 28,
+    EventId = 4,
+    Id = 2008,
+    Params = {"7"},
+    Step = 3
+  },
+  [2009] = {
+    ActionId = 21,
+    EventId = 4,
+    Id = 2009,
+    Params = {"0"},
+    Step = 3
+  },
+  [2010] = {
+    ActionId = 5,
+    EventId = 4,
+    Id = 2010,
+    Params = {"1001001201", "1"},
+    Step = 4
+  },
+  [2011] = {
+    ActionId = 6,
+    EventId = 4,
+    Id = 2011,
+    Params = {"100008"},
+    Step = 5
+  },
+  [2012] = {
+    ActionId = 8,
+    EventId = 4,
+    Id = 2012,
+    InteractionActionId = 6,
+    Params = {"100009"},
+    Step = 6
+  },
+  [2013] = {
+    ActionId = 20,
+    DelayTime = 1,
+    EventId = 4,
+    Id = 2013,
+    Params = {
+      "Root/TL_Animation/Xiangkuangposui_01",
+      "Root/Levelobj/Main_xiangkuang_/main_xiangkuang_ani/main_xiangkuang_3",
+      [4] = "Sound_Sc03_glass_fix",
+      [5] = "Sound_Sc03_glass_break"
+    },
+    Step = 7
+  },
+  [2014] = {
+    ActionId = 20,
+    DelayTime = 1,
+    EventId = 4,
+    Id = 2014,
+    Params = {
+      "Root/TL_Animation/ZhizhangFuyuan_01",
+      "Root/Scene/Prop/main_prp_08_b_pre (2)",
+      [4] = "Sound_Sc03_paper_fix",
+      [5] = "Sound_Sc03_paper_flap"
+    },
+    Step = 8
+  },
+  [2015] = {
+    ActionId = 20,
+    DelayTime = 1,
+    EventId = 4,
+    Id = 2015,
+    Params = {
+      "Root/TL_Animation/Xiangkuangposui_02",
+      "Root/Levelobj/Main_xiangkuang_/main_xiangkuang_ani/main_xiangkuang_0",
+      [4] = "Sound_Sc03_glass_fix",
+      [5] = "Sound_Sc03_glass_break"
+    },
+    Step = 9
+  },
+  [2016] = {
+    ActionId = 15,
+    EventId = 4,
+    Id = 2016,
+    Params = {"1005", "0.5"},
+    Step = 10
+  },
+  [2017] = {
+    ActionId = 6,
+    DelayTime = 1.5,
+    EventId = 4,
+    Id = 2017,
+    Params = {"100010"},
+    Step = 11
+  },
+  [2018] = {
+    ActionIdList = {25},
+    EventId = 4,
+    Id = 2018,
+    Params = {},
+    Step = 12
+  },
+  [2019] = {
+    ActionId = 6,
+    DelayTime = 1.5,
+    EventId = 4,
+    Id = 2019,
+    Params = {"100011"},
+    Step = 13
+  },
+  [2020] = {
+    ActionId = 22,
+    EventId = 4,
+    Id = 2020,
+    Params = {
+      "0",
+      "1.7",
+      "3"
+    },
+    Step = 13
+  },
+  [2021] = {
+    ActionId = 23,
+    EventId = 4,
+    Id = 2021,
+    Params = {"0"},
+    Step = 14
+  },
+  [2022] = {
+    ActionIdList = {9},
+    EventId = 4,
+    Id = 2022,
+    Params = {},
+    Step = 14
+  },
+  [2023] = {
+    ActionId = 13,
+    EventId = 4,
+    Id = 2023,
+    Params = {
+      "0.3",
+      "0.1",
+      "0.3",
+      "1"
+    },
+    Step = 15
+  },
+  [2024] = {
+    ActionId = 24,
+    EventId = 4,
+    Id = 2024,
+    Params = {"0"},
+    Step = 16
+  },
+  [2025] = {
+    ActionId = 28,
+    EventId = 4,
+    Id = 2025,
+    Params = {},
+    Step = 16
+  },
+  [2026] = {
+    ActionId = 21,
+    EventId = 4,
+    Id = 2026,
+    Params = {"1"},
+    Step = 16
+  },
+  [2027] = {
+    ActionIdList = {19},
+    EventId = 4,
+    Id = 2027,
+    Params = {},
+    Step = 16
+  },
+  [3001] = {
+    ActionId = 22,
+    EventId = 5,
+    Id = 3001,
+    Params = {
+      "1",
+      "1.7",
+      "20"
+    },
+    Step = 1
+  },
+  [4001] = {
+    ActionId = 24,
+    EventId = 6,
+    Id = 4001,
+    Params = {"1"},
+    Step = 1
+  },
+  [5001] = {
+    ActionId = 29,
+    EventId = 7,
+    Id = 5001,
+    Params = {
+      "LC_Chapter_05_end_part1.usm",
+      "1.777778"
+    },
+    Step = 1
+  },
+  [5002] = {
+    ActionId = 34,
+    EventId = 7,
+    Id = 5002,
+    Params = {"1"},
+    Step = 1
+  },
+  [5003] = {
+    ActionIdList = {2},
+    DelayTime = 5,
+    EventId = 7,
+    Id = 5003,
+    Params = {},
+    Step = 1
+  },
+  [5004] = {
+    ActionIdList = {3},
+    EventId = 7,
+    Id = 5004,
+    Params = {},
+    Step = 1
+  },
+  [5005] = {
+    ActionId = 21,
+    EventId = 7,
+    Id = 5005,
+    Params = {"0"},
+    Step = 1
+  },
+  [5006] = {
+    ActionId = 31,
+    DelayTime = 5,
+    EventId = 7,
+    Id = 5006,
+    Params = {
+      "1",
+      "LC_Chapter_05_end_part2.mp4",
+      "1"
+    },
+    Step = 1
+  },
+  [5007] = {
+    ActionId = 30,
+    EventId = 7,
+    Id = 5007,
+    Params = {"0"},
+    Step = 1
+  },
+  [5008] = {
+    ActionIdList = {36},
+    EventId = 7,
+    Id = 5008,
+    Params = {},
+    Step = 1
+  },
+  [5009] = {
+    ActionId = 35,
+    DelayTime = 37,
+    EventId = 7,
+    Id = 5009,
+    Params = {
+      "Root/Change_/Change_Rain/TL/Timeline_mainevent_5_15_1",
+      [3] = "1",
+      [4] = "1",
+      [5] = "Sound_LC_Chapter_05_start,1|Sound_LC_Chapter_05_amb,2"
+    },
+    Step = 1
+  },
+  [5010] = {
+    ActionId = 6,
+    EventId = 7,
+    Id = 5010,
+    Params = {"100013"},
+    Step = 2
+  },
+  [5011] = {
+    ActionId = 32,
+    EventId = 7,
+    Id = 5011,
+    Params = {
+      "Root/Change_/Change_Rain/TL/Timeline_mainevent_5_15_2",
+      "5",
+      "0"
+    },
+    Step = 3
+  },
+  [5012] = {
+    ActionId = 29,
+    EventId = 7,
+    Id = 5012,
+    Params = {
+      "LC_Chapter_05_end_part2.usm",
+      "1.777778"
+    },
+    Step = 4
+  },
+  [5013] = {
+    ActionId = 13,
+    EventId = 7,
+    Id = 5013,
+    Params = {
+      "0.3",
+      "0.1",
+      "0.3",
+      "1"
+    },
+    Step = 5
+  },
+  [5014] = {
+    ActionId = 6,
+    EventId = 7,
+    Id = 5014,
+    Params = {"10050602"},
+    Step = 6
+  },
+  [5015] = {
+    ActionId = 6,
+    EventId = 7,
+    Id = 5015,
+    Params = {"10050603"},
+    Step = 7
+  },
+  [5016] = {
+    ActionIdList = {25},
+    EventId = 7,
+    Id = 5016,
+    Params = {},
+    Step = 8
+  },
+  [5017] = {
+    ActionId = 34,
+    EventId = 7,
+    Id = 5017,
+    Params = {"0"},
+    Step = 8
+  },
+  [5018] = {
+    ActionIdList = {12},
+    EventId = 7,
+    Id = 5018,
+    Params = {},
+    Step = 8
+  },
+  [5019] = {
+    ActionIdList = {11},
+    EventId = 7,
+    Id = 5019,
+    Params = {},
+    Step = 8
+  },
+  [5020] = {
+    ActionId = 21,
+    EventId = 7,
+    Id = 5020,
+    Params = {"1"},
+    Step = 8
+  },
+  [5021] = {
+    ActionId = 31,
+    EventId = 7,
+    Id = 5021,
+    Params = {"0"},
+    Step = 8
+  },
+  [5022] = {
+    ActionId = 30,
+    EventId = 7,
+    Id = 5022,
+    Params = {"1"},
+    Step = 8
+  },
+  [5023] = {
+    ActionIdList = {37},
+    DelayTime = 1,
+    EventId = 7,
+    Id = 5023,
+    Params = {"1"},
+    Step = 9
+  },
+  [6001] = {
+    ActionIdList = {1},
+    EventId = 8,
+    Id = 6001,
+    Params = {},
+    Step = 1
+  },
+  [6002] = {
+    ActionId = 5,
+    EventId = 8,
+    Id = 6002,
+    Params = {"1008", "1"},
+    Step = 2
+  },
+  [6003] = {
+    ActionId = 8,
+    EventId = 8,
+    Id = 6003,
+    InteractionActionId = 6,
+    Params = {"100015"},
+    Step = 3
+  },
+  [6004] = {
+    ActionIdList = {9},
+    EventId = 8,
+    Id = 6004,
+    Params = {},
+    Step = 4
+  },
+  [9001] = {
+    ActionIdList = {1},
+    EventId = 9,
+    Id = 9001,
+    Params = {},
+    Step = 1
+  },
+  [9002] = {
+    ActionIdList = {18},
+    EventId = 9,
+    Id = 9002,
+    Params = {},
+    Step = 2
+  },
+  [9003] = {
+    ActionId = 6,
+    EventId = 9,
+    Id = 9003,
+    Params = {"100016"},
+    Step = 3
+  },
+  [9004] = {
+    ActionId = 38,
+    EventId = 9,
+    Id = 9004,
+    Params = {
+      "ui_birthday_tips"
+    },
+    Step = 4
+  },
+  [9005] = {
+    ActionId = 39,
+    EventId = 9,
+    Id = 9005,
+    Params = {
+      "ui_birthday_tips"
+    },
+    Step = 5
+  },
+  [9006] = {
+    ActionIdList = {19},
+    EventId = 9,
+    Id = 9006,
+    Params = {},
+    Step = 6
+  }
+}

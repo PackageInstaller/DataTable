@@ -1,0 +1,629 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local PAGE_ITEM_CLASS = require("uimodule.character.char_archive_page_item")
+local CHAR_HELPER = require("uimodule.character.char_helper")
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local PAGE_STYLE = {
+  [1] = "PageStyle_1",
+  [2] = "PageStyle_2",
+  [3] = "PageStyle_3",
+  [4] = "PageStyle_4",
+  [5] = "PageStyle_5"
+}
+local STATE = {CLOSE = 0, OPEN = 1}
+local READ_STATE = {NOT = 0, READED = 1}
+local MODEL = {
+  v_button_return = {
+    "Button_return",
+    BIND_TYPE.BUTTON
+  },
+  v_con_list = {
+    "ConList",
+    BIND_TYPE.OBJECT
+  },
+  v_contem = {
+    "Contem",
+    BIND_TYPE.IMAGE
+  },
+  v_contents = {
+    "Contents",
+    BIND_TYPE.OBJECT
+  },
+  v_cv = {
+    "Cv",
+    BIND_TYPE.IMAGE
+  },
+  v_end_lock = {
+    "EndLock",
+    BIND_TYPE.IMAGE
+  },
+  v_infor = {
+    "Infor",
+    BIND_TYPE.OBJECT
+  },
+  v_luxiang = {
+    "Luxiang",
+    BIND_TYPE.TOGGLE
+  },
+  v_max_page = {
+    "MaxPage",
+    BIND_TYPE.TEXT
+  },
+  v_now_page = {
+    "NowPage",
+    BIND_TYPE.TEXT
+  },
+  v_page_number = {
+    "PageNumber",
+    BIND_TYPE.TEXT
+  },
+  v_painter = {
+    "Painter",
+    BIND_TYPE.IMAGE
+  },
+  v_txt_content = {
+    "Txt_Content",
+    BIND_TYPE.TEXT
+  },
+  v_voice_content = {
+    "VoiceContent",
+    BIND_TYPE.IMAGE
+  },
+  v_change_group1 = {
+    "ChangeGroup1",
+    BIND_TYPE.BUTTON
+  },
+  v_change_group2 = {
+    "ChangeGroup2",
+    BIND_TYPE.BUTTON
+  },
+  v_change_group3 = {
+    "ChangeGroup3",
+    BIND_TYPE.BUTTON
+  },
+  v_change_group4 = {
+    "ChangeGroup4",
+    BIND_TYPE.BUTTON
+  }
+}
+local CHAR_ARCHIVE_CONTENT_KEY = "CHAR_ARCHIVE_CONTENT_KEY"
+local CONTENT_ITEM_CLASS = require("uimodule.character.char_archive_content_item")
+local _insert = table.insert
+local _min = math.min
+local _max = math.max
+local PAGE_TYPE = {
+  CATALOG = 1,
+  CONTENT = 2,
+  END = 3
+}
+local TAB_START_INDEX = 1
+local TAB_END_INDEX = 4
+local ArchiveChangePageDistance = "ArchiveChangePageDistance"
+local CHANGE_PAGE_DIS = ShareRes.get_system_comm_value(ArchiveChangePageDistance)
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_panel_voice = self:get_panel("char_voice")
+  self:set_button("Button_return", function()
+    self:ui_hide()
+  end)
+  self:set_button("Btn_LastPage", function()
+    self:click_pre_page()
+  end)
+  self:set_button("Btn_NextPage", function()
+    self:click_next_page()
+  end)
+  self:set_button("VideoLock", function()
+    Util.show_message_tip(2148)
+  end)
+  self:init_template()
+  for i = TAB_START_INDEX, TAB_END_INDEX do
+    self:set_button_listener(self["v_change_group" .. i], function()
+      self:click_choose_group_button(i)
+    end)
+  end
+  self:init_page_style()
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.InfoRed, RedEnum.CHAR_CV_INFO)
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.VoiceRed, RedEnum.CHAR_CV_VOICE)
+  self.v_content_pnl = {"InfoPnl", "VoicePnl"}
+end
+
+function ui:init_template()
+  self:register_exist_auto_template(CHAR_ARCHIVE_CONTENT_KEY, self.v_uiobjects.Contem, self.v_uiobjects.ConList)
+end
+
+function ui:init_page_list()
+  self.v_group_idx2page_num = {}
+  self.v_page_list = {
+    [1] = {
+      state = PAGE_TYPE.CATALOG
+    }
+  }
+  local have_archive_group = {}
+  for archive_id, _ in pairs(self.v_archive_data) do
+    have_archive_group[archive_id] = true
+  end
+  for group_idx, group_data in ipairs(self.v_archive_group) do
+    local group_id = group_data.ID
+    if have_archive_group[group_id] then
+      local page_list = ShareRes.get_buddy_archive_page_list(group_id)
+      local now_length = #self.v_page_list + 1
+      self.v_group_idx2page_num[group_idx] = now_length
+      for _, page_cfg in ipairs(page_list) do
+        local page_data = {
+          state = PAGE_TYPE.CONTENT,
+          page_cfg = page_cfg,
+          group_idx = group_idx
+        }
+        _insert(self.v_page_list, page_data)
+      end
+    end
+  end
+  local length = #self.v_page_list
+  self.v_page_list[length].state = PAGE_TYPE.END
+  self.v_now_page_num = 1
+  self.v_max_page_num = length
+end
+
+function ui:init_page_style()
+  self.v_page_obj_list = {}
+  for _, ui_name in ipairs(PAGE_STYLE) do
+    local item_go = self.v_uiobjects[ui_name]
+    local item_obj = PAGE_ITEM_CLASS:ui_wrap_ex(self, item_go, false)
+    item_obj.go = item_go
+    _insert(self.v_page_obj_list, item_obj)
+  end
+end
+
+function ui:ui_on_show(buddy_id)
+  self.v_buddy_id = buddy_id
+  self.v_archive_group = ShareRes.get_buddy_archive_groups(self.v_buddy_id)
+  self.v_archive_overview = ShareRes.get_buddy_archive_overview(self.v_buddy_id)
+  self.v_group_idx = 1
+  self:reset_cover_alpha()
+  self:refresh_archive_data()
+  self:refresh_archive_cover()
+  self:refresh_archive_bottom_info()
+  self:init_page_list()
+  self:init_group_btn_state()
+  self:refresh_page_num()
+  self:refresh_page()
+  self:refresh_btn_red()
+  self:refresh_hero_icon()
+  self:refresh_char_favors(buddy_id)
+  local change_area = self.v_uiobjects.ChangePageArea
+  Util.set_start_drag(change_area, self, function(x)
+    self.v_area_start_posx = x
+  end)
+  Util.set_end_drag(change_area, self, function(x, y)
+    self:check_need_change_page(x, y)
+  end)
+  self:init_tog()
+  CharacterMgr:on_update_archive_voice_red(buddy_id)
+end
+
+function ui:init_tog()
+  self.v_content_tog = {}
+  table.insert(self.v_content_tog, self.v_uicompents.Ziliao_tog)
+  table.insert(self.v_content_tog, self.v_uicompents.Yuyin_tog)
+  self.v_content_tog_tab = ToggleTab:new(self)
+  self.v_content_tog_tab:init_by_toggles(self.v_content_tog, function(cur_select)
+    self:click_select_toggle(cur_select)
+  end, 1)
+  self:click_select_toggle(1)
+end
+
+function ui:click_select_toggle(pnl_index)
+  self.v_pnl_index = pnl_index
+  self.v_uiobjects.VoiceContent:SetActive(false)
+  for index, pnl_name in ipairs(self.v_content_pnl) do
+    self.v_uiobjects[pnl_name]:SetActive(pnl_index == index)
+  end
+  if self.v_content_pnl[pnl_index] == "VoicePnl" then
+    self.v_panel_voice:show_pnl(self.v_buddy_id)
+    self:cover_alpha_show_anim(true)
+  else
+    self.v_panel_voice:hide_pnl()
+    self:init_page_list()
+    self:refresh_page_num()
+    self:refresh_page()
+  end
+end
+
+function ui:ui_on_hide()
+  self:clear_content_list()
+  self:clear_next_group_ui()
+  self:clear_alpha_show_anim()
+  self:clear_voice_content_anim()
+  self:clear_favors_anim()
+  self.v_panel_voice:hide_pnl()
+  self.v_group_btn_map = nil
+  self.v_page_list = nil
+  self.v_archive_overview = nil
+  self.v_archive_group = nil
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:click_next_page()
+  self.v_now_page_num = self.v_now_page_num + 1
+  self.v_now_page_num = _min(self.v_max_page_num, self.v_now_page_num)
+  if 2 == self.v_pnl_index then
+    self:refresh_page_num()
+    self.v_panel_voice:change_page()
+    self.v_panel_voice:set_cur_page(self.v_now_page_num)
+  else
+    self:change_page()
+  end
+end
+
+function ui:click_pre_page()
+  self.v_now_page_num = self.v_now_page_num - 1
+  self.v_now_page_num = _max(self.v_now_page_num, 1)
+  if 2 == self.v_pnl_index then
+    self:refresh_page_num()
+    self.v_panel_voice:change_page()
+    self.v_panel_voice:set_cur_page(self.v_now_page_num)
+  else
+    self:change_page()
+  end
+end
+
+function ui:change_page()
+  self:refresh_page_num()
+  self:refresh_page()
+end
+
+function ui:refresh_page()
+  local uobj = self.v_uiobjects
+  self.v_contents:SetActive(false)
+  self.v_infor:SetActive(false)
+  uobj.EndLock:SetActive(false)
+  local page_data = self.v_page_list[self.v_now_page_num]
+  local page_cfg, archive_id, read_state
+  if page_data.page_cfg then
+    page_cfg = page_data.page_cfg
+    archive_id = page_cfg.GroupId
+    read_state = self.v_archive_data[archive_id].state
+  end
+  if read_state == READ_STATE.NOT then
+    CharacterMgr:on_update_archive_state(self.v_buddy_id, archive_id, function()
+      self:refresh_btn_red()
+    end)
+  end
+  local group_idx = page_data.group_idx
+  self.v_group_idx = group_idx
+  self:refresh_button_ui(group_idx)
+  if page_data.state == PAGE_TYPE.CATALOG then
+    self:refresh_catalog_ui()
+  elseif page_data.state == PAGE_TYPE.CONTENT then
+    self:show_and_refresh_page_ui(page_cfg)
+  elseif page_data.state == PAGE_TYPE.END then
+    self:show_and_refresh_page_ui(page_cfg)
+    self:refresh_end_lock_ui()
+  end
+  self:cover_alpha_show_anim(page_data.state == PAGE_TYPE.CATALOG)
+end
+
+function ui:show_and_refresh_page_ui(page_cfg)
+  self.v_infor:SetActive(true)
+  self:refresh_page_ui(page_cfg)
+end
+
+function ui:refresh_catalog_ui()
+  local uobj = self.v_uiobjects
+  self.v_contents:SetActive(true)
+  local char_archive_group = self.v_archive_group
+  self:clear_content_list()
+  self.v_content_obj_list = {}
+  self:give_back_auto_cache(CHAR_ARCHIVE_CONTENT_KEY)
+  for group_idx, group_data in ipairs(char_archive_group) do
+    local item = self:get_auto_cache(CHAR_ARCHIVE_CONTENT_KEY)
+    local content_obj = CONTENT_ITEM_CLASS:ui_wrap_ex(self, item, true)
+    content_obj.go = item
+    local archive_id = group_data.ID
+    local state, is_have_group
+    if self.v_archive_data[archive_id] then
+      is_have_group = true
+      state = self.v_archive_data[archive_id].state
+    end
+    local content_data = {
+      group_idx = group_idx,
+      state = state,
+      is_have = is_have_group,
+      group_data = group_data
+    }
+    _insert(self.v_content_obj_list, content_obj)
+    content_obj:set_data(content_data)
+  end
+end
+
+function ui:refresh_page_ui(page_cfg)
+  local style_id = page_cfg.StyleId
+  local text_list = page_cfg.Text
+  local icon_list = page_cfg.Icon
+  local group_id = page_cfg.GroupId
+  local page_data = {
+    style_id = style_id,
+    text_list = text_list,
+    icon_list = icon_list,
+    group_id = group_id
+  }
+  self:refresh_infor_page(page_data)
+end
+
+function ui:refresh_page_group(group_idx)
+  local page_num = self.v_group_idx2page_num[group_idx]
+  self.v_now_page_num = page_num
+  self:refresh_page_num()
+  self:refresh_page()
+end
+
+function ui:refresh_page_num()
+  self.v_now_page.text = self.v_now_page_num
+  self.v_max_page.text = self.v_max_page_num
+  self:refresh_change_page_btn()
+end
+
+function ui:refresh_change_page_btn()
+  local uobj = self.v_uiobjects
+  uobj.Btn_NextPage:SetActive(self.v_now_page_num < self.v_max_page_num)
+  uobj.Btn_LastPage:SetActive(self.v_now_page_num > 1)
+end
+
+function ui:refresh_infor_page(page_data)
+  local style_id = page_data.style_id
+  for idx, obj in ipairs(self.v_page_obj_list) do
+    obj:set_enable(idx == style_id)
+    if idx == style_id then
+      obj:set_data(page_data)
+    end
+  end
+end
+
+function ui:refresh_end_lock_ui()
+  self:clear_next_group_ui()
+  local max_length = #self.v_archive_group
+  if max_length < self.v_group_idx + 1 then
+    return
+  end
+  local next_group_idx = self.v_group_idx + 1
+  local group_data = self.v_archive_group[next_group_idx]
+  if group_data then
+    local lock_obj = self.v_uiobjects.EndLock
+    lock_obj:SetActive(true)
+    self.v_next_group_obj = CONTENT_ITEM_CLASS:ui_wrap_ex(self, lock_obj, true)
+    self.v_next_group_obj.go = lock_obj
+    local group_id = group_data.ID
+    local archive_data = self.v_archive_data[group_id]
+    local is_have_group, state
+    if archive_data then
+      is_have_group = true
+      state = archive_data.state
+    end
+    local content_data = {
+      group_idx = next_group_idx,
+      state = state,
+      is_have = is_have_group,
+      group_data = group_data
+    }
+    self.v_next_group_obj:set_data(content_data)
+  end
+end
+
+function ui:click_choose_group_button(group_idx)
+  self.v_group_idx = group_idx
+  self:refresh_page_group(self.v_group_idx)
+end
+
+function ui:init_group_btn_state()
+  for i = TAB_START_INDEX, TAB_END_INDEX do
+    local obj = self.v_uiobjects["ChangeGroup" .. i]
+    obj:SetActive(false)
+  end
+  self:refresh_group_btn_state()
+end
+
+function ui:refresh_group_btn_state()
+  self.v_group_btn_map = {}
+  for group_idx, group_data in ipairs(self.v_archive_group) do
+    local group_id = group_data.ID
+    local is_have_group = self.v_archive_data[group_id]
+    if is_have_group then
+      local obj = self.v_uiobjects["ChangeGroup" .. group_idx]
+      if obj then
+        local select_obj = Util.get_child_gameobj("select", obj)
+        local bg_obj = Util.get_child_gameobj("bg", obj)
+        select_obj:SetActive(false)
+        bg_obj:SetActive(true)
+        self.v_group_btn_map[group_idx] = obj
+        obj:SetActive(true)
+      end
+    end
+  end
+end
+
+function ui:refresh_btn_red()
+  for now_group_idx, btn_obj in pairs(self.v_group_btn_map) do
+    local group_data = self.v_archive_group[now_group_idx]
+    local id = group_data.ID
+    local archive_data = self.v_archive_data[id]
+    local red_obj = Util.get_child_gameobj("red", btn_obj)
+    local state = archive_data.state
+    red_obj:SetActive(false)
+    if state == STATE.CLOSE then
+      red_obj:SetActive(true)
+    end
+  end
+end
+
+function ui:refresh_button_ui(group_idx)
+  for now_group_idx, btn_obj in pairs(self.v_group_btn_map) do
+    local select_obj = Util.get_child_gameobj("select", btn_obj)
+    local bg_obj = Util.get_child_gameobj("bg", btn_obj)
+    if group_idx == now_group_idx then
+      select_obj:SetActive(true)
+      bg_obj:SetActive(false)
+    else
+      select_obj:SetActive(false)
+      bg_obj:SetActive(true)
+    end
+  end
+end
+
+function ui:clear_content_list()
+  if self.v_content_obj_list then
+    self:remove_wrap_ui_list(self.v_content_obj_list)
+    self.v_content_obj_list = nil
+  end
+end
+
+function ui:refresh_archive_data()
+  self.v_archive_data = {}
+  local archive_list = CharacterMgr:get_buddy_archive_data(self.v_buddy_id)
+  for _, data in pairs(archive_list) do
+    local id = data.archive_id
+    self.v_archive_data[id] = data
+  end
+end
+
+function ui:refresh_hero_icon()
+  local buddy_id = self.v_buddy_id
+  local ucom = self.v_uicompents
+  local hero_img = ucom.hero_img
+  local hero_shadow_img = ucom.shadow_img
+  local hero_icon = UtilUI.get_hero_images(buddy_id, Config.HERO_ICON_LV.HD_FULL_IMG)
+  if not hero_icon then
+    return
+  end
+  ResMgr:load_set_icon(hero_img, hero_icon, nil, true, self)
+  ResMgr:load_set_icon(hero_shadow_img, hero_icon, nil, true, self)
+  self:refresh_hero_icon_pos()
+end
+
+function ui:refresh_hero_icon_pos()
+  local cover_show_obj = self.v_uiobjects.HeroCoverShow
+  local rect = Util.get_rect_transform(nil, cover_show_obj)
+  local offset_posx = self.v_archive_overview.OffsetX
+  local offset_posy = self.v_archive_overview.OffsetY
+  rect:SetAnchoredPositionA(offset_posx, offset_posy)
+end
+
+function ui:clear_next_group_ui()
+  if self.v_next_group_obj then
+    self.v_next_group_obj:ui_destroy()
+    self.v_next_group_obj = nil
+  end
+end
+
+function ui:refresh_archive_cover()
+  local cover_img = self.v_uicompents.cover_img
+  local cover_name = self.v_archive_overview.Cover
+  local date = self.v_archive_overview.Date
+  local code = self.v_archive_overview.Code
+  local icon_path = CHAR_HELPER.get_archive_cover_icon_path(cover_name)
+  ResMgr:load_set_icon(cover_img, icon_path, nil, true)
+  self.v_uicompents.Date_txt.text = date
+  self.v_uicompents.Code_txt.text = code
+end
+
+function ui:cover_alpha_show_anim(is_on)
+  local cover_show_obj = self.v_uiobjects.HeroCoverShow
+  local cover_canvas = cover_show_obj:GetComponent("CanvasGroup")
+  self:clear_alpha_show_anim()
+  self.v_cover_alpha_show_seq = Util.create_sequence()
+  self.v_cover_alpha_show_seq:Append(cover_canvas:DOFade(is_on and 1 or 0, 0.5))
+  self:show_favors_anim(is_on and 1 or 0)
+end
+
+function ui:reset_cover_alpha()
+  local cover_show_obj = self.v_uiobjects.HeroCoverShow
+  local cover_canvas = cover_show_obj:GetComponent("CanvasGroup")
+  cover_canvas.alpha = 0
+end
+
+function ui:clear_alpha_show_anim()
+  if self.v_cover_alpha_show_seq then
+    self.v_cover_alpha_show_seq:Kill()
+    self.v_cover_alpha_show_seq = nil
+  end
+end
+
+function ui:check_need_change_page(now_x)
+  local dis = now_x - self.v_area_start_posx
+  if dis > CHANGE_PAGE_DIS then
+    self:click_pre_page()
+  elseif dis < -CHANGE_PAGE_DIS then
+    self:click_next_page()
+  end
+end
+
+function ui:refresh_archive_bottom_info()
+  local buddy_cfg = ShareRes.get_buddy_cfg(self.v_buddy_id)
+  local painter = buddy_cfg.Painter
+  local cv = buddy_cfg.CV
+  local painter_text = self.v_uicompents.PainterName_txt
+  local cv_text = self.v_uicompents.CVName_txt
+  painter_text.text = Util.format_str(painter)
+  cv_text.text = Util.format_str(cv)
+end
+
+function ui:refresh_char_favors(buddy_id)
+  local buddy_info = CharacterMgr:get_buddy_by_id(buddy_id)
+  local favor_lv = buddy_info.favor_lv or 0
+  local favor_exp = buddy_info.favor_exp or 0
+  local favors_cfg = ShareRes.get_favor_lv_cfg(buddy_id, favor_lv)
+  local is_max = favor_lv == ShareRes.get_max_favor_lv(buddy_id)
+  local favors_state = favors_cfg.Stage
+  self.v_uiobjects.FavorsNotFull:SetActive(not is_max)
+  self.v_uiobjects.FavorsFull:SetActive(is_max)
+  self.v_uicompents.FavorsState_txt.text = favors_state
+  self.v_uicompents.FavorsLv_txt.text = favor_lv
+  if is_max then
+    self.v_uicompents.FavorsFill_img.fillAmount = 1
+    return
+  end
+  local need_exp = favors_cfg.Exp
+  self.v_uicompents.FavorsFill_img.fillAmount = favor_exp / need_exp
+  self.v_uicompents.FavorsNow_txt.text = favor_exp
+  self.v_uicompents.FavorsMax_txt.text = need_exp
+end
+
+function ui:set_voice_content(content)
+  self.v_uicompents.Txt_Content_txt.text = content
+  self.v_uiobjects.VoiceContent:SetActive(true)
+end
+
+function ui:show_voice_content_anim(alpha)
+  local show_obj = self.v_uiobjects.VoiceContent
+  local cover_canvas = show_obj:GetComponent("CanvasGroup")
+  self:clear_voice_content_anim()
+  self.v_voice_content_alpha_show_seq = Util.create_sequence()
+  self.v_voice_content_alpha_show_seq:Append(cover_canvas:DOFade(alpha, 0.5))
+end
+
+function ui:clear_voice_content_anim()
+  if self.v_voice_content_alpha_show_seq then
+    self.v_voice_content_alpha_show_seq:Kill()
+    self.v_voice_content_alpha_show_seq = nil
+  end
+end
+
+function ui:show_favors_anim(alpha)
+  local show_obj = self.v_uiobjects.Favors
+  local cover_canvas = show_obj:GetComponent("CanvasGroup")
+  self:clear_favors_anim()
+  self.v_favors_alpha_show_seq = Util.create_sequence()
+  self.v_favors_alpha_show_seq:Append(cover_canvas:DOFade(alpha, 0.5))
+end
+
+function ui:clear_favors_anim()
+  if self.v_favors_alpha_show_seq then
+    self.v_favors_alpha_show_seq:Kill()
+    self.v_favors_alpha_show_seq = nil
+  end
+end
+
+return ui

@@ -1,0 +1,184 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_photo_list = {}
+  self.v_frame_data_map = {}
+end
+
+function M:on_reconnect()
+end
+
+function M:on_gs2c_chartlet_list(data)
+  if data.chartlets then
+    self.v_photo_list = data.chartlets
+  end
+  if data.chartlet_frames then
+    self.v_frame_data_map = {}
+    for _, _data in pairs(data.chartlet_frames) do
+      self.v_frame_data_map[_data.frame_id] = _data
+    end
+  end
+end
+
+function M:on_gs2c_chartlet_update(data)
+  local new_id = data.chartlet_id
+  for _, id in ipairs(self.v_photo_list) do
+    if id == new_id then
+      return
+    end
+  end
+  self.v_photo_list[#self.v_photo_list + 1] = new_id
+end
+
+function M:on_gs2c_chartlet_frame_update(data)
+  self.v_frame_data_map = {}
+  for _, _data in pairs(data.chartlet_frames) do
+    self.v_frame_data_map[_data.frame_id] = _data
+  end
+end
+
+function M:req_save_photo(callback)
+  local data = self:get_temp_data_to_save()
+  Network:call("c2gs_chartlet_up", {chartlet_frames = data}, function(ok, resp)
+    if callback then
+      callback(ok)
+    end
+  end)
+end
+
+function M:get_photo_list()
+  return self.v_photo_list
+end
+
+function M:check_own_photo(photo_id)
+  for _, id in pairs(self.v_photo_list) do
+    if photo_id == id then
+      return true
+    end
+  end
+  return false
+end
+
+function M:get_frame_data_by_photo(photo_id, is_temp)
+  local frame_data_map = is_temp and self.v_temp_frame_data_map or self.v_frame_data_map
+  for _, frame_data in pairs(frame_data_map) do
+    if frame_data.id == photo_id then
+      return frame_data
+    end
+  end
+  return nil
+end
+
+function M:get_frame_data(frame_id, is_temp)
+  local frame_data_map = is_temp and self.v_temp_frame_data_map or self.v_frame_data_map
+  return frame_data_map[frame_id]
+end
+
+function M:get_photo_id_by_frame_id(frame_id, is_temp)
+  local frame_data = self:get_frame_data(frame_id, is_temp)
+  if frame_data then
+    return frame_data.id
+  end
+end
+
+function M:get_scale_by_frame_id(frame_id, is_temp)
+  local frame_data = self:get_frame_data(frame_id, is_temp)
+  if frame_data then
+    return frame_data.scale or 1
+  end
+  return 1
+end
+
+function M:get_offset_by_frame_id(frame_id, is_temp)
+  local frame_data = self:get_frame_data(frame_id, is_temp)
+  if frame_data then
+    return frame_data.offset_x or 0, frame_data.offset_y or 0
+  end
+  return 0, 0
+end
+
+function M:init_temp_data()
+  self.v_temp_frame_data_map = UtilTable.copy_table(self.v_frame_data_map)
+end
+
+function M:set_frame_use_photo(frame_id, photo_id, scale, offset_x, offset_y)
+  if not frame_id then
+    return
+  end
+  if not photo_id or 0 == photo_id then
+    self.v_temp_frame_data_map[frame_id] = nil
+    return
+  end
+  for _frame_id, data in pairs(self.v_temp_frame_data_map) do
+    if _frame_id ~= frame_id and data.id == photo_id then
+      self.v_temp_frame_data_map[_frame_id] = nil
+    end
+  end
+  self.v_temp_frame_data_map[frame_id] = {
+    id = photo_id,
+    frame_id = frame_id,
+    scale = scale,
+    offset_x = offset_x,
+    offset_y = offset_y
+  }
+end
+
+function M:if_need_save_temp_data()
+  return not UtilTable.deep_compare(self.v_frame_data_map, self.v_temp_frame_data_map)
+end
+
+function M:get_temp_data_to_save()
+  local data = {}
+  if self.v_temp_frame_data_map then
+    for _, temp_data in pairs(self.v_temp_frame_data_map) do
+      if 0 ~= temp_data.id then
+        data[#data + 1] = temp_data
+      end
+    end
+  end
+  return data
+end
+
+function M:update_frame_mat(mesh_render, mesh_filter, frame_id, use_temp, force_photo_id)
+  if Util.is_nil(mesh_render) then
+    return
+  end
+  local photo_id = force_photo_id or self:get_photo_id_by_frame_id(frame_id, use_temp)
+  local show_photo = photo_id and 0 ~= photo_id
+  mesh_render:SetActive(show_photo)
+  if show_photo then
+    local scale = self:get_scale_by_frame_id(frame_id, use_temp)
+    local offset_x, offset_y = self:get_offset_by_frame_id(frame_id, use_temp)
+    local photo_path = ShareRes.get_photo_path(photo_id)
+    if not photo_path then
+      return
+    end
+    ResMgr:load_set_mat_texture(mesh_render, photo_path, function(_mesh_render)
+      local meshBounds = mesh_filter.mesh.bounds
+      local mesh_size_x = math.abs(meshBounds.max.x - meshBounds.min.x)
+      local mesh_size_y = math.abs(meshBounds.max.y - meshBounds.min.y)
+      local frame_ratio = mesh_size_x / mesh_size_y
+      if 5 == frame_id then
+        frame_ratio = 1 / frame_ratio
+      end
+      local texture = _mesh_render.material.mainTexture
+      local image_ratio = texture.width / texture.height
+      local base_scale
+      if frame_ratio < image_ratio then
+        base_scale = UnityVector2(frame_ratio / image_ratio, 1)
+      else
+        base_scale = UnityVector2(1, image_ratio / frame_ratio)
+      end
+      _mesh_render.material.mainTextureScale = base_scale / scale
+      local mat_center_offset_x = (1 - base_scale.x / scale) / 2
+      local mat_center_offset_y = (1 - base_scale.y / scale) / 2
+      local mat_offset_x = mat_center_offset_x * (1 - offset_x)
+      local mat_offset_y = mat_center_offset_y * (1 - offset_y)
+      _mesh_render.material.mainTextureOffset = UnityVector2(mat_offset_x, mat_offset_y)
+    end)
+  end
+end
+
+return M

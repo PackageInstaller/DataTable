@@ -1,0 +1,88 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local TMPTEXTTYPE = typeof(CS.TMPro.TMP_Text)
+local ORDER_VIEW_AWARD_ITEM_KEY = "ORDER_VIEW_AWARD_ITEM_KEY"
+
+function ui:ui_finish_load()
+  self.v_OrderDesc1 = self.v_uiobjects.OrderDesc1:GetComponent(TMPTEXTTYPE)
+  self.v_OrderDesc2 = self.v_uiobjects.OrderDesc2:GetComponent(TMPTEXTTYPE)
+  self:set_button("BtnOrder", function()
+    if SysOpenMgr:get_is_ui_open("ui_monthtask", true) then
+      RechargeMgr:request_product_info(function()
+        UIMgr:get_ui("ui_monthtask_buy"):ui_show()
+      end)
+    end
+  end)
+  self:set_button("BtnBoxDetail", function()
+    local passport_id = PassPortMgr:get_passport_data().id
+    local passport_cfg = ShareRes.get_battle_passport_cfg(passport_id)
+    UIMgr:get_ui("ui_monthtask_award_choice"):ui_show(true, passport_cfg.SelectAwardGroupId)
+  end)
+  self:register_exist_auto_template(ORDER_VIEW_AWARD_ITEM_KEY, self.v_uiobjects.ItemObjCom1, self.v_uiobjects.AwardContentLong)
+end
+
+function ui:ui_on_show()
+  local order_cfg = ShareRes.get_battle_passport_cfg()
+  local cur_time = Date.server_time()
+  local desc1 = ""
+  local desc2 = ""
+  local desc3 = ""
+  for _, data in pairs(order_cfg) do
+    local begin_time = data.BeginTime and Date.get_time_stamp_by_scheme_id(data.BeginTime) or 0
+    local end_time = data.EndTime and Date.get_time_stamp_by_scheme_id(data.EndTime) or 0
+    if begin_time and cur_time <= end_time then
+      desc1 = data.OrderDesc1
+      desc2 = data.OrderDesc2
+      local user_data = PassPortMgr:get_passport_data()
+      local passport_cfg = ShareRes.get_battle_passport_cfg(user_data.id)
+      local time_stamp = passport_cfg.EndTime and Date.get_time_stamp_by_scheme_id(passport_cfg.EndTime) or 0
+      desc3 = Global.date.get_time_formate_2(time_stamp - Global.date.server_time())
+    end
+  end
+  self.v_OrderDesc1.text = desc1
+  self.v_OrderDesc2.text = desc2
+  self.v_uicompents.OrderTimeNum_txt.text = desc3
+  local passport_data = PassPortMgr:get_passport_data()
+  local battle_passport_cfg = ShareRes.get_battle_passport_cfg(passport_data.id)
+  local award_group_id = battle_passport_cfg.RecommendAwardGroupId
+  local award_list = ShareRes.get_awards(award_group_id)
+  for _, award in ipairs(award_list) do
+    local item_cfg = ShareRes.get_item_cfg(award.ItemId)
+    award.Quality = item_cfg.Quality
+    award.Priority = item_cfg.Priority
+  end
+  table.sort(award_list, function(a, b)
+    if a.Quality ~= b.Quality then
+      return a.Quality > b.Quality
+    end
+    if a.Priority ~= b.Priority then
+      return a.Priority > b.Priority
+    end
+    return a.ItemId > b.ItemId
+  end)
+  self:give_back_auto_cache(ORDER_VIEW_AWARD_ITEM_KEY)
+  for _, award_cfg in ipairs(award_list) do
+    local item_obj = self:get_auto_cache(ORDER_VIEW_AWARD_ITEM_KEY)
+    local item_quality = Util.get_image("ItemQuality_", item_obj)
+    local item_icon = Util.get_image("ItemIcon_", item_obj)
+    local item_amount = Util.get_text("ItemAmount_/Bg/ItemNum_", item_obj)
+    local item_icon_path = ShareRes.get_item_icon_path(award_cfg.ItemId)
+    local item_quality_path = ShareRes.get_item_quality_path(award_cfg.ItemId)
+    local ItemAmount = Util.get_child_gameobj("ItemAmount_", item_obj)
+    ItemAmount:SetActiveEx(true)
+    ResMgr:load_set_icon(item_icon, item_icon_path)
+    ResMgr:load_set_icon(item_quality, item_quality_path)
+    local btn = Util.get_button(nil, item_obj)
+    self:set_button_listener(btn, function()
+      UIMgr:get_ui("itemTip"):ui_show({
+        item_id = award_cfg.ItemId,
+        is_exist_jump = false
+      })
+    end)
+  end
+end
+
+function ui:ui_on_hide()
+end
+
+return ui

@@ -1,0 +1,130 @@
+local empty = {}
+return {
+  Events = {
+    {
+      ConditionActions = {
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = {
+            {
+              Key = "1",
+              SyncValType = 2,
+              Value = true,
+              selectIdx = 2,
+              ValidInTower = true,
+              IsTmpVariable = false,
+              Type = 23,
+              Timeout = 0.0
+            },
+            {
+              PosKey = "A19",
+              Rotation = 0,
+              NPCId = 320002,
+              NPCName = "1",
+              Type = 0,
+              Timeout = 0.5,
+              TimeoutKey = "VhfOPdIQ"
+            }
+          },
+          ValidInTower = false
+        },
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = {
+            {
+              Key = "2",
+              SyncValType = 2,
+              Value = true,
+              selectIdx = 2,
+              ValidInTower = true,
+              IsTmpVariable = false,
+              Type = 23,
+              Timeout = 0.0
+            },
+            {
+              PosKey = "A19",
+              Rotation = 0,
+              NPCId = 320002,
+              NPCName = "1",
+              Type = 0,
+              Timeout = 0.5,
+              TimeoutKey = "capVgbyu"
+            }
+          },
+          ValidInTower = false
+        },
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = {
+            {
+              Key = "3",
+              SyncValType = 2,
+              Value = true,
+              selectIdx = 2,
+              ValidInTower = true,
+              IsTmpVariable = false,
+              Type = 23,
+              Timeout = 0.0
+            },
+            {
+              PosKey = "A19",
+              Rotation = 0,
+              NPCId = 320002,
+              NPCName = "1",
+              Type = 0,
+              Timeout = 0.5,
+              TimeoutKey = "zOuguiyG"
+            }
+          },
+          ValidInTower = false
+        },
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = {
+            {
+              Key = "4",
+              SyncValType = 2,
+              Value = true,
+              selectIdx = 2,
+              ValidInTower = true,
+              IsTmpVariable = false,
+              Type = 23,
+              Timeout = 0.0
+            },
+            {
+              PosKey = "A19",
+              Rotation = 0,
+              NPCId = 320002,
+              NPCName = "1",
+              Type = 0,
+              Timeout = 0.5,
+              TimeoutKey = "PfNIrBSi"
+            }
+          },
+          ValidInTower = false
+        }
+      },
+      Type = 22,
+      ConditionVariable = "",
+      IsNotCondition = false,
+      IsForeverVariable = false
+    }
+  },
+  MonsterRefreshCfg = {
+    Weight = 100,
+    MonsterLockEnemyCount = 0,
+    MonsterGroupId = 0,
+    MonsterWave = 0,
+    MonsterCount = 0,
+    SendWave = false,
+    WaveStyle = 0,
+    EndPerform = true
+  },
+  FinishiConditionDict = empty,
+  mDefaultStartTime = true,
+  mDefaultEndTime = true
+}

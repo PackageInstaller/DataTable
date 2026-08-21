@@ -1,0 +1,138 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_boss_challenge_data_map = {}
+end
+
+function M:on_boss_fight_list(data)
+  self.v_boss_challenge_data_map = data.boss_fights
+end
+
+function M:on_boss_fight_update(data)
+  local challenge_data = data.boss_fight
+  self.v_boss_challenge_data_map[challenge_data.id] = challenge_data
+end
+
+function M:get_boss_challenge_episode_data(id)
+  return self.v_boss_challenge_data_map[id]
+end
+
+function M:get_challenge_episode_data(challenge_id, episode_id)
+  if self.v_boss_challenge_data_map[challenge_id] then
+    local challenge_data = self.v_boss_challenge_data_map[challenge_id]
+    local episode_data = challenge_data.boss_fight_episodes[episode_id]
+    return episode_data
+  end
+end
+
+function M:get_all_challenge_episode_data()
+  local temp_data_list = {}
+  for key, challenge_data in pairs(self.v_boss_challenge_data_map) do
+    temp_data_list[#temp_data_list + 1] = challenge_data
+  end
+  return temp_data_list
+end
+
+function M:get_boss_challenge_is_unlock(id)
+  local data = self.v_boss_challenge_data_map[id]
+  return nil ~= data and data.unlocked and data.unlocked > 0
+end
+
+function M:get_challenge_episode_is_unlock(challenge_id, episode_id)
+  if self.v_boss_challenge_data_map[challenge_id] then
+    return self:get_challenge_episode_data(challenge_id, episode_id) ~= nil
+  end
+  return false
+end
+
+function M:get_challenge_episode_is_suc(challenge_id, episode_id)
+  local pass_time = self:get_challenge_episode_pass_time(challenge_id, episode_id)
+  return pass_time and pass_time > -1
+end
+
+function M:get_challenge_episode_pass_time(challenge_id, episode_id)
+  local episode_data = self:get_challenge_episode_data(challenge_id, episode_id)
+  return episode_data and episode_data.pass_time
+end
+
+function M:get_show_id_list()
+  local temp_data_list = {}
+  for key, challenge_data in pairs(self.v_boss_challenge_data_map) do
+    temp_data_list[#temp_data_list + 1] = challenge_data.id
+  end
+  table.sort(temp_data_list, function(a, b)
+    local a_cfg = ShareRes.get_boss_fight_cfg(a)
+    local b_cfg = ShareRes.get_boss_fight_cfg(b)
+    if not a_cfg then
+      Log.Error("获取boss副本配置失败，ID：", a)
+      return
+    end
+    if not b_cfg then
+      Log.Error("获取boss副本配置失败，ID：", a)
+      return
+    end
+    if a_cfg.Sort ~= b_cfg.Sort then
+      return a_cfg.Sort < b_cfg.Sort
+    end
+    return false
+  end)
+  return temp_data_list
+end
+
+function M:check_is_reset_boos(data)
+  if data and data.boss_fight_episodes then
+    for idx, cfg_temp in pairs(data.boss_fight_episodes) do
+      if cfg_temp.is_version_reset then
+        return true
+      end
+    end
+  end
+end
+
+function M:set_is_reset_boos(data)
+  if data and data.boss_fight_episodes then
+    for idx, cfg_temp in pairs(data.boss_fight_episodes) do
+      cfg_temp.is_version_reset = false
+    end
+  end
+end
+
+function M:get_reset_show_id_list()
+  local temp_data_list = {}
+  for key, challenge_data in pairs(self.v_boss_challenge_data_map) do
+    if self:check_is_reset_boos(challenge_data) then
+      temp_data_list[#temp_data_list + 1] = challenge_data.id
+    end
+  end
+  table.sort(temp_data_list, function(a, b)
+    local a_cfg = ShareRes.get_boss_fight_cfg(a)
+    local b_cfg = ShareRes.get_boss_fight_cfg(b)
+    if not a_cfg then
+      Log.Error("获取boss副本配置失败，ID：", a)
+      return
+    end
+    if not b_cfg then
+      Log.Error("获取boss副本配置失败，ID：", a)
+      return
+    end
+    if a_cfg.Sort ~= b_cfg.Sort then
+      return a_cfg.Sort < b_cfg.Sort
+    end
+    return false
+  end)
+  return temp_data_list
+end
+
+function M:boss_reset_click()
+  Network:call("c2gs_read_boss_fight_reset_data", {}, function(ok)
+    if ok then
+      for key_temp, challenge_data in pairs(self.v_boss_challenge_data_map) do
+        self:set_is_reset_boos(challenge_data)
+      end
+    end
+  end)
+end
+
+return M

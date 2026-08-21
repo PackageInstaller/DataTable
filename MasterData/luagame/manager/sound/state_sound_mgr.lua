@@ -1,0 +1,62 @@
+local M = Util.create_class()
+
+function M:_init()
+end
+
+function M:trigger_char_state_by_id(char, state_id)
+  if not char then
+    return
+  end
+  if not char:is_hero() then
+    return
+  end
+  local char_id = char.character_cfg.AttribId
+  self:play_state_sound(char_id, state_id)
+end
+
+function M:trigger_char_state_by_name(char, state_name)
+  if not char then
+    return
+  end
+  if not char:is_hero() then
+    return
+  end
+  local char_id = char.character_cfg.AttribId
+  local state_data = Config.STATE_NAME_TO_ID[state_name]
+  if not state_data then
+    return
+  end
+  local state_id = state_data.id
+  self:play_state_sound(char_id, state_id)
+end
+
+function M:trigger_fight_state_by_id(state_id, buddy_id)
+  local char = Global.hero
+  if not char then
+    return
+  end
+  local char_id = buddy_id
+  char_id = char_id or char.character_cfg.AttribId
+  self:play_state_sound(char_id, state_id)
+end
+
+function M:play_state_sound(char_id, state_id)
+  local state_sound_cfg = ShareRes.get_state_sound_config(char_id, state_id)
+  if not state_sound_cfg then
+    return
+  end
+  local random_weight = state_sound_cfg.RandomWeigth
+  local random_index = Util.get_random_weight(random_weight)
+  if not random_index then
+    return
+  end
+  local sound_id = state_sound_cfg.SoundId[random_index]
+  if not sound_id or "" == sound_id then
+    return
+  end
+  if Global.sound_mgr then
+    Global.sound_mgr:play_sound_by_id(sound_id)
+  end
+end
+
+return M

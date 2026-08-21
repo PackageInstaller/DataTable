@@ -1,0 +1,82 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local Char_Helper = require("uimodule.character.char_helper")
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_hide()
+  self.v_buddy_info = nil
+end
+
+function ui:set_data(data)
+  self.v_buddy = data.buddy
+  self.v_buddy_id = data.id
+  self.v_is_owner = data.own
+  self.v_uiobjects.Select:SetActive(false)
+  self.v_uiobjects.Redpoint:SetActive(false)
+  self:refresh_quality()
+  self:refresh_char_icon()
+  self:refresh_element()
+  self:refresh_job()
+  self:refresh_language()
+  self.v_uicompents.CharName_txt.text = self.v_buddy.Name
+  self.v_uiobjects.Lock:SetActive(not data.own)
+end
+
+function ui:refresh_quality()
+  local line_icon_path = Char_Helper.get_char_line_quality_icon(self.v_buddy.Quality)
+  ResMgr:load_set_icon(self.v_uicompents.QualityLine_img, line_icon_path)
+  local icon_path = Char_Helper.get_char_select_quality_icon(self.v_buddy_id)
+  ResMgr:load_set_icon(self.v_uicompents.Quality_Icon_img, icon_path)
+end
+
+function ui:refresh_char_icon()
+  local icon_path = UtilUI.get_hero_images(self.v_buddy_id, 3)
+  ResMgr:load_set_icon(self.v_uicompents.Char_icon_img, icon_path, nil, true, self)
+end
+
+function ui:refresh_element()
+  local element_cfg = ShareRes.get_element_cfg(self.v_buddy.Element)
+  ResMgr:load_set_icon(self.v_uicompents.EleIcon_img, element_cfg.ElementIconPath)
+end
+
+function ui:refresh_job()
+  local job_cfg = ShareRes.get_job_cfg(self.v_buddy.Job)
+  ResMgr:load_set_icon(self.v_uicompents.JobIcon_img, job_cfg.IconPath)
+end
+
+function ui:refresh_language()
+  self.v_language = CharacterMgr:get_buddy_cv_language(self.v_buddy_id)
+  self.v_language_index = Config.CommonDefine.LANGUAGE_INDEX[self.v_language]
+  self.v_uicompents.LanguageText_txt.text = LanguageMgr:get_code_text(Config.CommonDefine.LANGUAGE_CV_ID[self.v_language])
+  self.v_parent_ui:refresh_right_language_text(self.v_uicompents.LanguageText_txt.text)
+end
+
+function ui:ui_on_show()
+end
+
+function ui:is_can_click()
+  if not self.v_is_owner then
+    return false
+  end
+  return true
+end
+
+function ui:set_select_visible(visible)
+  self.v_uiobjects.Select:SetActive(visible)
+end
+
+function ui:get_buddy_id()
+  return self.v_buddy_id
+end
+
+function ui:get_language_index()
+  return self.v_language_index
+end
+
+function ui:get_language()
+  return self.v_language
+end
+
+return ui

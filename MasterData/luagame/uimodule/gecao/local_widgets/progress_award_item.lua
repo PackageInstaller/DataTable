@@ -1,0 +1,21 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+
+function M:set_data(data)
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  ucom.Num_txt.text = data.Id
+  local status = ChapterMgr:is_cut_grass_star_box_can_get(data.Id)
+  uobj.Light:SetActive(1 == status)
+  uobj.Got:SetActive(2 == status)
+  local btn = self:get_button(nil, self.go)
+  self:set_button_listener(btn, function()
+    local tip_data = {status = status, cfg = data}
+    UIMgr:get_ui("gecao_award_tip"):ui_show(tip_data)
+  end)
+end
+
+function M:on_clear()
+end
+
+return M

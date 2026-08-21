@@ -1,0 +1,32 @@
+local Node = {}
+Node.__index = Node
+
+function Node:new(x, y, default_cfg)
+  local node = setmetatable({}, Node)
+  node.x = x
+  node.y = y
+  node.g = 0
+  node.h = 0
+  node.f = 0
+  node.parent = nil
+  node.cfg = default_cfg
+  node.walkable = true
+  node.is_exit = false
+  return node
+end
+
+function Node:set_cfg(cfg)
+  self.cfg = cfg
+  self:reset_walkable()
+end
+
+function Node:reset_walkable()
+  self.walkable = Config.CATCH_CAT_GRID_WALKABLE[self.cfg.Type]
+  self.is_exit = Config.CATCH_CAT_GRID_TYPE.EXIT == self.cfg.Type
+end
+
+function Node:change_walkable(walkable)
+  self.walkable = walkable
+end
+
+return Node

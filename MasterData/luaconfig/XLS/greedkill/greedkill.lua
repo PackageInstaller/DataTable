@@ -1,0 +1,326 @@
+return {
+  [10001] = {
+    {
+      GreedKillId = 10001,
+      Id = 1,
+      Layer = 1,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 250
+    },
+    {
+      GreedKillId = 10001,
+      Id = 2,
+      Layer = 2,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 500
+    },
+    {
+      GreedKillId = 10001,
+      Id = 3,
+      Layer = 3,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 750
+    },
+    {
+      GreedKillId = 10001,
+      Id = 4,
+      Layer = 4,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 1000
+    },
+    {
+      GreedKillId = 10001,
+      Id = 5,
+      Layer = 5,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 1250
+    },
+    {
+      GreedKillId = 10001,
+      Id = 6,
+      Layer = 6,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 1500
+    },
+    {
+      GreedKillId = 10001,
+      Id = 7,
+      Layer = 7,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 1750
+    },
+    {
+      GreedKillId = 10001,
+      Id = 8,
+      Layer = 8,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 2000
+    },
+    {
+      GreedKillId = 10001,
+      Id = 9,
+      Layer = 9,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 2250
+    },
+    {
+      GreedKillId = 10001,
+      Id = 10,
+      Layer = 10,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 2500
+    },
+    {
+      GreedKillId = 10001,
+      Id = 11,
+      Layer = 11,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 2500
+    },
+    {
+      GreedKillId = 10001,
+      Id = 12,
+      Layer = 12,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 2500
+    },
+    {
+      GreedKillId = 10001,
+      Id = 13,
+      Layer = 13,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 2500
+    },
+    {
+      GreedKillId = 10001,
+      Id = 14,
+      Layer = 14,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 2500
+    },
+    {
+      GreedKillId = 10001,
+      Id = 15,
+      Layer = 15,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 2500
+    },
+    {
+      GreedKillId = 10001,
+      Id = 16,
+      Layer = 16,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 2500
+    },
+    {
+      GreedKillId = 10001,
+      Id = 17,
+      Layer = 17,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 2500
+    },
+    {
+      GreedKillId = 10001,
+      Id = 18,
+      Layer = 18,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 2500
+    },
+    {
+      GreedKillId = 10001,
+      Id = 19,
+      Layer = 19,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 2500
+    },
+    {
+      GreedKillId = 10001,
+      Id = 20,
+      Layer = 20,
+      MagicList = {1999201},
+      Text = "造成全伤害",
+      ValueText = 2500
+    }
+  },
+  [10002] = {
+    {
+      GreedKillId = 10002,
+      Id = 21,
+      Layer = 1,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 375
+    },
+    {
+      GreedKillId = 10002,
+      Id = 22,
+      Layer = 2,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 750
+    },
+    {
+      GreedKillId = 10002,
+      Id = 23,
+      Layer = 3,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 1125
+    },
+    {
+      GreedKillId = 10002,
+      Id = 24,
+      Layer = 4,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 1500
+    },
+    {
+      GreedKillId = 10002,
+      Id = 25,
+      Layer = 5,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 1875
+    },
+    {
+      GreedKillId = 10002,
+      Id = 26,
+      Layer = 6,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 2250
+    },
+    {
+      GreedKillId = 10002,
+      Id = 27,
+      Layer = 7,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 2625
+    },
+    {
+      GreedKillId = 10002,
+      Id = 28,
+      Layer = 8,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 3000
+    },
+    {
+      GreedKillId = 10002,
+      Id = 29,
+      Layer = 9,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 3375
+    },
+    {
+      GreedKillId = 10002,
+      Id = 30,
+      Layer = 10,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 3750
+    },
+    {
+      GreedKillId = 10002,
+      Id = 31,
+      Layer = 11,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 3750
+    },
+    {
+      GreedKillId = 10002,
+      Id = 32,
+      Layer = 12,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 3750
+    },
+    {
+      GreedKillId = 10002,
+      Id = 33,
+      Layer = 13,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 3750
+    },
+    {
+      GreedKillId = 10002,
+      Id = 34,
+      Layer = 14,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 3750
+    },
+    {
+      GreedKillId = 10002,
+      Id = 35,
+      Layer = 15,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 3750
+    },
+    {
+      GreedKillId = 10002,
+      Id = 36,
+      Layer = 16,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 3750
+    },
+    {
+      GreedKillId = 10002,
+      Id = 37,
+      Layer = 17,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 3750
+    },
+    {
+      GreedKillId = 10002,
+      Id = 38,
+      Layer = 18,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 3750
+    },
+    {
+      GreedKillId = 10002,
+      Id = 39,
+      Layer = 19,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 3750
+    },
+    {
+      GreedKillId = 10002,
+      Id = 40,
+      Layer = 20,
+      MagicList = {1999204},
+      Text = "造成全伤害",
+      ValueText = 3750
+    }
+  }
+}

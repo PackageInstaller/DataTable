@@ -1,0 +1,63 @@
+local M = Util.create_class()
+
+function M:_init(pool_name, long_free_count, resource_root)
+  local root = Global.res_mgr:create_emptygameobj(pool_name, true, true)
+  root.transform:SetParent(resource_root.tranform, true)
+  self.v_name = pool_name
+  self.v_root_transform = root.transform
+  self.root = self.v_root_transform
+  self.v_long_free_count = long_free_count
+  self.v_used_count = 0
+  self.v_free_count = 0
+  self.v_free_objs = {}
+end
+
+function M:on_use_obj()
+  self.v_used_count = self.v_used_count + 1
+end
+
+function M:release_obj(obj)
+  if self.v_free_count >= self.v_long_free_count then
+    ResPoolMgr:release_from_lru(obj)
+    return
+  end
+  self.v_free_count = self.v_free_count + 1
+  self.v_free_objs[self.v_free_count] = obj
+end
+
+function M:pop_from_free_list()
+  if self.v_free_count > 0 then
+    local obj = self.v_free_objs[self.v_free_count]
+    self.v_free_count = self.v_free_count - 1
+    return obj
+  end
+  return nil
+end
+
+function M:clear()
+  for _, obj in ipairs(self.v_free_objs) do
+    ResPoolMgr:on_destroy_gameobj(obj)
+    ResMgr:destroy_gameobj(obj)
+  end
+  self.v_free_objs = {}
+  self.v_free_count = 0
+  self.v_used_count = 0
+end
+
+function M:is_effect_pool()
+  return false
+end
+
+function M:is_res_pool()
+  return false
+end
+
+function M:get_name()
+  return self.v_name
+end
+
+function M:is_simple()
+  return true
+end
+
+return M

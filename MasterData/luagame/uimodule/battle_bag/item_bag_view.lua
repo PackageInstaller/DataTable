@@ -1,0 +1,48 @@
+local Base = require("ui.uiobject")
+local GoodsItemClass = require("uimodule.battle_bag.battle_item")
+local BagCfg = require("gamelogic.character.fight_bag_configs")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show()
+  self:_refresh_list_view()
+  self:_regist_client_event()
+end
+
+function ui:ui_on_hide()
+  self.v_bag_list:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+  self.v_bag_list:ui_on_destroy()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_FIGHT_BAG_UPDATE, self.response_bag_update_event, self)
+end
+
+function ui:response_bag_update_event()
+  self:_refresh_list_view()
+end
+
+function ui:_refresh_list_view()
+  local list = FightBagMgr:get_bag(BagCfg.BagType.ITEM)
+  local item_list = {}
+  for _, item in pairs(list) do
+    table.insert(item_list, item)
+  end
+  table.sort(item_list, function(a, b)
+    if a.Quality == b.Quality then
+      return a.Cfg.ShowPriority > b.Cfg.ShowPriority
+    else
+      return a.Quality > b.Quality
+    end
+  end)
+  local num = #item_list
+  self.v_uiobjects.NoItemDesc:SetActive(0 == num)
+  self.v_bag_list:refresh_data(item_list)
+end
+
+return ui

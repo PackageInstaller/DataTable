@@ -1,0 +1,18 @@
+return {
+  {
+    Group = {
+      1,
+      2,
+      3,
+      4
+    },
+    Id = 1,
+    MaxLevelBuffId = 1023,
+    MaxValue = {
+      5,
+      5,
+      5,
+      5
+    }
+  }
+}

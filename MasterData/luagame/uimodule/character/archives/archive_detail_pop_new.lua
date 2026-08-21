@@ -1,0 +1,370 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local SPINE_RT_VIEW = require("ui.model_rt_view.spine_rt_view")
+local CommonDef = require("cs_share.common_define")
+local SIGNBOARD_PARAM = Config.SIGNBOARD_PARAM
+local Vec2 = require("base.vec2")
+local SpineHelper = require("ui.model_rt_view.spine_helper")
+local MODEL = {
+  v_btn_main = {
+    "BtnMain",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_ret1 = {
+    "BtnRet1",
+    BIND_TYPE.BUTTON
+  },
+  v_char_icon = {
+    "CharIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_file_story_type1 = {
+    "FileStoryType1",
+    BIND_TYPE.OBJECT
+  },
+  v_file_story_type2 = {
+    "FileStoryType2",
+    BIND_TYPE.OBJECT
+  },
+  v_file_story_type3 = {
+    "FileStoryType3",
+    BIND_TYPE.OBJECT
+  },
+  v_left_info = {
+    "LeftInfo",
+    BIND_TYPE.OBJECT
+  },
+  v_lock_obj = {
+    "LockObj",
+    BIND_TYPE.OBJECT
+  },
+  v_page_parent = {
+    "PageParent",
+    BIND_TYPE.OBJECT
+  },
+  v_page_tem = {
+    "PageTem",
+    BIND_TYPE.BUTTON
+  },
+  v_title = {
+    "Title",
+    BIND_TYPE.TEXT
+  },
+  v_type_pos = {
+    "TypePos",
+    BIND_TYPE.OBJECT
+  },
+  v_un_lock_obj = {
+    "UnLockObj",
+    BIND_TYPE.OBJECT
+  },
+  villustration = {
+    "illustration",
+    BIND_TYPE.IMAGE
+  }
+}
+local archive_detail_pop_toggle_key = "archive_detail_pop_toggle_key"
+local curr_select_index = -1
+local curr_select_toggle_item
+local READ_STATE = {NOT = 0, READED = 1}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnRet1", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(archive_detail_pop_toggle_key, self.v_page_tem, self.v_page_parent)
+  local type_pos_trans = self.v_type_pos.transform
+  local child_count = type_pos_trans.childCount
+  self.style_obj_list = {}
+  for i = 1, child_count do
+    local path = Util.format_str("FileStoryType{1}_", i)
+    local obj = Util.get_child_gameobj(path, self.v_type_pos)
+    self.style_obj_list[i] = obj
+  end
+  self:set_button("CharSpineBtn", function()
+    if self.v_anim_data.record_data.play_start then
+      if self.v_anim_data.record_data.play_interrupt then
+        SpineHelper.init_anim_info(self.v_spine_id, self.v_anim_data, SpineHelper.ANIM_TYPE.CLICK)
+      end
+    else
+      SpineHelper.init_anim_info(self.v_spine_id, self.v_anim_data, SpineHelper.ANIM_TYPE.CLICK)
+    end
+  end)
+end
+
+function ui:on_go_to_main()
+  local uimain = UIMgr:get_ui("uimain")
+  if uimain then
+    uimain:ui_show()
+    uimain:change_model_view_param(SIGNBOARD_PARAM.NORMAL, true)
+  end
+end
+
+function ui:ui_on_show(buddy_id)
+  self.v_low_update = Global.real_time
+  self.v_anim_data = SpineHelper.get_init_anim_info()
+  self.v_buddy_id = buddy_id
+  local cfg_list = ShareRes.create("buddy.buddy_archives")
+  local toggle_cfg_list = {}
+  for i, cfg in pairs(cfg_list) do
+    if cfg.BuddyID == buddy_id then
+      table.insert(toggle_cfg_list, cfg)
+    end
+  end
+  table.sort(toggle_cfg_list, function(a, b)
+    return a.Priority < b.Priority
+  end)
+  self:refresh_archive_data()
+  curr_select_index = 1
+  self:refresh_toggle_list(toggle_cfg_list)
+end
+
+function ui:refresh_toggle_list(toggle_list)
+  self.show_title_list = {}
+  self:give_back_auto_cache(archive_detail_pop_toggle_key)
+  for index, toggle_cfg in pairs(toggle_list) do
+    local toggle_item = self:get_auto_cache(archive_detail_pop_toggle_key)
+    self:refresh_toggle_item(index, toggle_cfg, toggle_item)
+  end
+end
+
+function ui:refresh_toggle_item(index, toggle_cfg, toggle_item)
+  local is_lock, have_red = self:check_is_lock(toggle_cfg)
+  local lock_obj = Util.get_child_gameobj("LockObj_", toggle_item)
+  local un_lock_obj = Util.get_child_gameobj("UnLockObj_", toggle_item)
+  lock_obj:SetActive(is_lock)
+  un_lock_obj:SetActive(not is_lock)
+  if is_lock then
+    local lock_paage_num = Util.get_text("PageNum", lock_obj)
+    lock_paage_num.text = CommonDef.ROME_NUM[index]
+  else
+    local un_lock_paage_num = Util.get_text("PageNum", un_lock_obj)
+    un_lock_paage_num.text = CommonDef.ROME_NUM[index]
+    self:refresh_red(toggle_item, have_red)
+  end
+  local page_btn = Util.get_button(nil, toggle_item)
+  self:set_button_listener(page_btn, function()
+    if is_lock then
+      self:on_lock_click(toggle_cfg)
+      return
+    end
+    if curr_select_index ~= index then
+      self:on_page_click(index, toggle_cfg, toggle_item)
+    end
+  end)
+  if curr_select_index == index then
+    self:on_page_click(index, toggle_cfg, toggle_item)
+  end
+end
+
+function ui:on_page_click(index, toggle_cfg, toggle_item)
+  self:un_select_curr_item()
+  self:set_toggle_item_select(toggle_item, true)
+  curr_select_toggle_item = toggle_item
+  curr_select_index = index
+  self:refresh_panel(toggle_cfg)
+  local read_state
+  local archive_id = toggle_cfg.ID
+  local archive_info = self.v_archive_data[archive_id]
+  if archive_info then
+    read_state = archive_info.state
+  end
+  if read_state == READ_STATE.NOT then
+    CharacterMgr:on_update_archive_state(self.v_buddy_id, archive_id, function()
+      self:refresh_red(toggle_item, false)
+      MsgGame:mq_publish2(Const.MSG_ON_BUDDY_ARCHIVE_READ)
+    end)
+  end
+end
+
+function ui:refresh_red(toggle_item, have_red)
+  local un_lock_obj = Util.get_child_gameobj("UnLockObj_", toggle_item)
+  local red_obj = Util.get_child_gameobj("RedPoint", un_lock_obj)
+  red_obj:SetActive(have_red)
+end
+
+function ui:on_lock_click(toggle_cfg)
+  local event = toggle_cfg.Event
+  local arg = toggle_cfg.Arg
+  if event == CommonDef.ARCHIVE_CONDITION.UPGRADE and arg then
+    Util.show_message_tip(2323, arg - 1)
+  elseif event == CommonDef.ARCHIVE_CONDITION.FAVOR and arg then
+    Util.show_message_tip(2324, arg)
+  elseif event == CommonDef.ARCHIVE_CONDITION.EPISODE and arg then
+    local chapter_cfg = ShareRes.get_chapter_point_cfg(arg)
+    Util.show_message_tip(2325, chapter_cfg.PointName)
+  end
+end
+
+function ui:un_select_curr_item()
+  if curr_select_toggle_item then
+    self:set_toggle_item_select(curr_select_toggle_item, false)
+    curr_select_toggle_item = nil
+  end
+end
+
+function ui:set_toggle_item_select(toggle_item, visible)
+  local select = Util.get_child_gameobj("UnLockObj_/Select", toggle_item)
+  select:SetActive(visible)
+end
+
+function ui:check_is_lock(toggle_cfg)
+  local archive_data = self.v_archive_data[toggle_cfg.ID]
+  local lock = true
+  local state
+  if archive_data then
+    lock = false
+    state = archive_data.state
+  end
+  local have_red = 0 == state
+  return lock, have_red
+end
+
+function ui:refresh_archive_data()
+  self.v_archive_data = {}
+  local archive_list = CharacterMgr:get_buddy_archive_data(self.v_buddy_id)
+  if not archive_list then
+    return
+  end
+  for _, data in pairs(archive_list) do
+    local id = data.archive_id
+    self.v_archive_data[id] = data
+  end
+end
+
+function ui:refresh_panel(toggle_cfg)
+  for i = 1, #self.style_obj_list do
+    self.style_obj_list[i]:SetActive(toggle_cfg.Style == i)
+  end
+  self.v_left_info.gameObject:SetActive(false)
+  self.v_char_icon.gameObject:SetActive(false)
+  self.v_uiobjects.CharSpine:SetActive(false)
+  local obj = self.style_obj_list[toggle_cfg.Style]
+  self.v_spine_id = nil
+  if 1 == toggle_cfg.Style then
+    self:refresh_style_1(toggle_cfg, obj)
+  elseif 2 == toggle_cfg.Style then
+    self:refresh_style_2(toggle_cfg, obj)
+  elseif 3 == toggle_cfg.Style then
+    self:refresh_style_3(toggle_cfg, obj)
+  end
+end
+
+function ui:refresh_style_1(toggle_cfg, obj)
+  local buddy_cfg = ShareRes.get_buddy_archive_overview(toggle_cfg.BuddyID)
+  local name = Util.get_text("Form/Text1_", obj)
+  local place_of_birth = Util.get_text("Form/Text2_", obj)
+  local height = Util.get_text("Form/Text3_", obj)
+  local weight = Util.get_text("Form/Text4_", obj)
+  local data_of_birth = Util.get_text("Form/Text5_", obj)
+  local desc = Util.get_text("Scroll View/Viewport/Content/Text6_", obj)
+  local content_rect = Util.get_rect_transform("Scroll View/Viewport/Content", obj)
+  self:reset_text_parent_pos(content_rect)
+  name.text = buddy_cfg.RealName
+  place_of_birth.text = buddy_cfg.PlaceOfBirth
+  height.text = buddy_cfg.Height
+  weight.text = buddy_cfg.BodyWeight
+  data_of_birth.text = buddy_cfg.Date
+  desc.text = toggle_cfg.Desc
+  self.v_char_icon.gameObject:SetActive(true)
+  local icon = UtilUI.get_hero_images(self.v_buddy_id, 5)
+  ResMgr:load_set_icon(self.v_char_icon, icon, nil, true)
+  local overciew_cfg = ShareRes.get_buddy_archive_overview(toggle_cfg.BuddyID)
+  local offset_x, offset_y = overciew_cfg.OffsetX, overciew_cfg.OffsetY
+  local rect = self:get_rect_transform(nil, self.v_char_icon)
+  rect.anchoredPosition = Vec2.New(offset_x, offset_y)
+  self.v_spine_id = ShareRes.get_random_spineid_bygroupid(toggle_cfg.SpineGroupID)
+  if self.v_spine_id then
+    self:clear_spine_rt()
+    self.v_anim_interval = SpineHelper.get_anim_interval(self.v_spine_id)
+    self.v_single_anim_delay = SpineHelper.get_single_anim_delay(self.v_spine_id)
+    self.v_spine_rt = self.v_spine_rt or SPINE_RT_VIEW:new(self, self.v_uiobjects.CharSpine)
+    SpineHelper.load_char_spine_res(self.v_spine_rt, self.v_spine_id, self.v_uiobjects.CharSpine)
+    self.v_char_icon.gameObject:SetActive(false)
+  end
+end
+
+function ui:refresh_style_2(toggle_cfg, obj)
+  self.v_title.text = toggle_cfg.TitleName
+  self:refresh_left_bg(toggle_cfg)
+  local right_title = Util.get_text("TItle/Text1_", obj)
+  local month = Util.get_text("TItle/Text2_", obj)
+  local day = Util.get_text("TItle/Text3_", obj)
+  local title = Util.get_text("Scroll View/Viewport/Content/Title/Text4_", obj)
+  local desc = Util.get_text("Scroll View/Viewport/Content/Text5_", obj)
+  local content_rect = Util.get_rect_transform("Scroll View/Viewport/Content", obj)
+  self:reset_text_parent_pos(content_rect)
+  local title_image = Util.get_image("TItle/Image1_", obj)
+  right_title.text = toggle_cfg.SecondRightTitle
+  month.text = toggle_cfg.SecondRightMonth
+  day.text = toggle_cfg.SecondRightDay
+  title.text = toggle_cfg.TitleName
+  desc.text = toggle_cfg.Desc
+  ResMgr:load_set_icon(title_image, toggle_cfg.SecondTitleIcon, nil, true)
+end
+
+function ui:refresh_style_3(toggle_cfg, obj)
+  self.v_left_info.gameObject:SetActive(true)
+  self.v_title.text = toggle_cfg.TitleName
+  local desc = Util.get_text("Scroll View/Viewport/Content/Text1_", obj)
+  local content_rect = Util.get_rect_transform("Scroll View/Viewport/Content", obj)
+  self:reset_text_parent_pos(content_rect)
+  desc.text = toggle_cfg.Desc
+  self:refresh_left_bg(toggle_cfg)
+end
+
+function ui:reset_text_parent_pos(content_rect)
+  if Util.is_nil(content_rect) then
+    return
+  end
+  content_rect:DOAnchorPosY(0, 0)
+end
+
+function ui:refresh_left_bg(toggle_cfg)
+  if toggle_cfg.LefgBgIcon and toggle_cfg.LefgBgIcon ~= "" then
+    self.v_left_info.gameObject:SetActive(true)
+    ResMgr:load_set_icon(self.villustration, toggle_cfg.LefgBgIcon, nil, true)
+  end
+end
+
+function ui:ui_on_hide()
+  self:un_select_curr_item()
+  self:clear_spine_rt()
+end
+
+function ui:ui_on_update()
+  if not self.v_spine_id then
+    return
+  end
+  if Global.real_time - self.v_low_update < SpineHelper.UPDATE_TIME then
+    return
+  end
+  self.v_low_update = Global.real_time
+  if self.v_anim_data.record_data.play_end then
+    self.v_start_time = self.v_start_time or Global.real_time
+    if self.v_anim_interval and Global.real_time - self.v_start_time > self.v_anim_interval then
+      SpineHelper.init_anim_info(self.v_spine_id, self.v_anim_data, SpineHelper.ANIM_TYPE.INTERVAL)
+    elseif self.v_single_anim_delay and Global.real_time - self.v_start_time > self.v_single_anim_delay then
+      SpineHelper.init_anim_info(self.v_spine_id, self.v_anim_data, SpineHelper.ANIM_TYPE.SINGLE)
+      self.v_single_anim_delay = nil
+    end
+  else
+    self.v_start_time = Global.real_time
+  end
+  SpineHelper.check_play_anim(self.v_spine_rt, self.v_anim_data)
+end
+
+function ui:ui_on_destroy()
+  self:clear_spine_rt()
+end
+
+function ui:clear_spine_rt()
+  if self.v_spine_rt then
+    self.v_spine_rt:on_destroy()
+    self.v_spine_rt = nil
+  end
+end
+
+return ui

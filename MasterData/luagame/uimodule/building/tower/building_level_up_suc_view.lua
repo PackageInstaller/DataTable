@@ -1,0 +1,81 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BUILDINGT_LEVEL_SUC_DESC_TEMP = "BUILDINGT_LEVEL_SUC_DESC_TEMP"
+
+function ui:on_click_close_btn()
+  if self.v_on_hide_pd then
+    self.v_uicompents.Ani_UIHomeLvUp_LvUpSuc_Out_pd:ResetPD()
+    self:on_out_pd_stop()
+  else
+    self.v_on_hide_pd = true
+    self.v_uicompents.Ani_UIHomeLvUp_LvUpSuc_Out_pd:RePlayPD()
+  end
+end
+
+function ui:on_out_pd_stop()
+  self.v_on_hide_pd = false
+  self:set_enable(false)
+end
+
+function ui:ui_finish_load()
+  self:set_button("BgClose", function()
+    self:on_click_close_btn()
+  end)
+  self:set_playable_stopped_action(self.v_uicompents.Ani_UIHomeLvUp_LvUpSuc_Out_pd, function()
+    self:on_out_pd_stop()
+  end)
+  self:register_exist_auto_template(BUILDINGT_LEVEL_SUC_DESC_TEMP, self.v_uiobjects.DescTem, self.v_uiobjects.DescContent)
+end
+
+function ui:ui_on_show(building_type, target_level)
+  self.v_building_type = building_type
+  self.v_target_level = target_level
+  self:refresh_view()
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.building_tower_update_UI_SOUND)
+end
+
+function ui:ui_on_hide()
+  self:clear_desc_item()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_view()
+  self.v_target_level_cfg = ShareRes.get_building_level_cfg(self.v_building_type, self.v_target_level)
+  self:clear_desc_item()
+  self:refresh_effect_desc()
+  self:refresh_level_info()
+end
+
+function ui:refresh_effect_desc()
+  if self.v_target_level_cfg.UnlockEffectDesc then
+    for key, desc in ipairs(self.v_target_level_cfg.UnlockEffectDesc) do
+      local obj = self:get_auto_cache(BUILDINGT_LEVEL_SUC_DESC_TEMP)
+      obj.transform:SetParent(self.v_uicompents.DescContent_rect)
+      local text = self:get_text(nil, obj)
+      text.text = desc
+      Util.change_component_alpha2(text, 1)
+    end
+  end
+end
+
+function ui:refresh_level_info()
+  local is_unlock = self.v_target_level <= 1
+  self.v_uiobjects.UnlockSuc:SetActive(is_unlock)
+  self.v_uiobjects.LevelUpSuc:SetActive(not is_unlock)
+  if is_unlock then
+    self.v_uicompents.Title_txt.text = Util.format_str("解锁成功")
+    self.v_uicompents.Title_txt.text = Util.format_str("【{1}】解锁", ShareRes.get_building_cfg(self.v_building_type).Name)
+  else
+    self.v_uicompents.Title_txt.text = Util.format_str("升级成功")
+    self.v_uicompents.Last_Lv_txt.text = self.v_target_level - 1
+    self.v_uicompents.New_Lv_txt.text = self.v_target_level
+  end
+end
+
+function ui:clear_desc_item()
+  self:give_back_auto_cache(BUILDINGT_LEVEL_SUC_DESC_TEMP)
+end
+
+return ui

@@ -1,0 +1,158 @@
+local const = require("const")
+local UnityTime = UnityEngine.Time
+local M = {}
+
+function M:init()
+  self.o_gmode_dirty = false
+  self.o_gmode_cur_mode = nil
+  self.v_modemap = {
+    [const.MODE_CHECK_UPDATE] = self:_load_mode("gamemode.check_update_mode"),
+    [const.MODE_RELOAD] = self:_load_mode("gamemode.reload_mode")
+  }
+end
+
+function M:gmode_init()
+  self.v_modemap[const.MODE_LOGIN] = self:_load_mode("gamemode.login_mode")
+  self.v_modemap[const.MODE_GAME] = self:_load_mode("gamemode.game_mode")
+  self.v_modemap[const.MODE_LOAD_SCENE] = self:_load_mode("gamemode.load_scene_mode")
+  self.v_modemap[const.MODE_TEST_GAME] = self:_load_mode("gamemode.test_game_mode")
+end
+
+function M:gmode_set_mode(mode, cb)
+  self.o_gmode_dirty = true
+  self.v_next_mode = mode
+  local next_mode = self.v_modemap[mode]
+  if next_mode then
+    next_mode:gd_pre_enter()
+  end
+  self.v_gamemode_changed_cb = cb
+end
+
+function M:gmode_current()
+  return self.o_gmode_cur_mode
+end
+
+function M:gmode_update_mode()
+  if self.o_gmode_dirty then
+    self.o_gmode_dirty = false
+    local mode = self.v_next_mode
+    local cb = self.v_gamemode_changed_cb
+    self.v_next_mode = nil
+    self.v_gamemode_changed_cb = nil
+    self:_set_mode(mode, cb)
+  end
+end
+
+function M:gmode_update(delta_time)
+  self:gmode_update_mode()
+  if self.o_gmode_cur_mode and not self.o_gmode_dirty then
+    self.o_gmode_cur_mode:gd_update(delta_time)
+  end
+end
+
+function M:gmode_low_update(delta_time)
+  if self.o_gmode_cur_mode then
+    self.o_gmode_cur_mode:gd_low_update(delta_time)
+  end
+end
+
+function M:gmode_late_update()
+  if self.o_gmode_cur_mode then
+    self.o_gmode_cur_mode:gd_late_update()
+  end
+end
+
+function M:gmode_fixed_update()
+  if self.o_gmode_cur_mode then
+    self.o_gmode_cur_mode:gd_fixed_update()
+  end
+end
+
+function M:gmode_is_reload()
+  return self.o_gmode_name == const.MODE_RELOAD
+end
+
+function M:gmode_is_check_update()
+  return self.o_gmode_name == const.MODE_CHECK_UPDATE
+end
+
+function M:gmode_is_login()
+  return self.o_gmode_name == const.MODE_LOGIN
+end
+
+function M:gmode_is_test_game()
+  return self.o_gmode_name == const.MODE_TEST_GAME
+end
+
+function M:gmode_is_game()
+  return self.o_gmode_name == const.MODE_GAME
+end
+
+function M:gmode_is_loadscene()
+  return self.o_gmode_name == const.MODE_LOAD_SCENE
+end
+
+function M:gmode_is_leaving()
+  return self.v_is_leaving_mode
+end
+
+function M:get_load_scene_mode()
+  return self.v_modemap[const.MODE_LOAD_SCENE]
+end
+
+function M:_load_mode(path)
+  local mode = require(path)
+  mode:gd_init()
+  return mode
+end
+
+function M:_set_mode(mode, cb)
+  local old_mode = self.o_gmode_cur_mode
+  if old_mode then
+    self.v_is_leaving_mode = true
+    old_mode:gd_on_leave(mode)
+    self.v_is_leaving_mode = false
+  end
+  self.o_gmode_cur_mode = assert(self.v_modemap[mode], mode)
+  self.o_gmode_name = mode
+  self.o_gmode_cur_mode:gd_on_enter()
+  if cb then
+    cb(self.o_gmode_cur_mode)
+  end
+end
+
+function M:cur_mode_task_finish()
+  if not self.o_gmode_cur_mode then
+    return
+  end
+  self.o_gmode_cur_mode:cur_task_finish()
+end
+
+function M:set_check_update_finish_time()
+  self.v_finish_time = UnityTime.realtimeSinceStartup
+end
+
+function M:get_check_update_finish_time()
+  return self.v_finish_time
+end
+
+function M:trace_sdk_login_ok()
+  if not self:gmode_is_login() then
+    return
+  end
+  self.o_gmode_cur_mode:login_trace_data("连接账号服成功", 100010)
+end
+
+function M:set_is_tp_next_floor(is_tp_next_floor)
+  self.v_is_tp_next_floor = is_tp_next_floor
+end
+
+function M:get_is_tp_next_floor()
+  return self.v_is_tp_next_floor
+end
+
+function M:gmode_is_main()
+  return SceneMgr and SceneMgr:check_main_scene()
+end
+
+return M

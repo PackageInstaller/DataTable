@@ -1,0 +1,726 @@
+return {
+  [1011] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 3,
+        Value = -2,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [1021] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7001021,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [1031] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7001031,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [1041] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7001041,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [1051] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7001051,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 4,
+        Value = -200,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [1052] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7001052,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 4,
+        Value = -150,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [1061] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7001061,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 4,
+        Value = -100,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [1062] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7001062,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 3,
+        Value = 1,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [1071] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7001071,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 4,
+        Value = -100,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [1072] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7001072,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 4,
+        Value = -100,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [1081] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 3,
+        Value = -3,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 4,
+        Value = -150,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [1091] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7001091,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 3,
+        Value = -5,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [1101] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 4,
+        Value = -100,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [1102] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 3,
+        Value = 1,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [11101] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011101,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [11102] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 4,
+        Value = 100,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [11201] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 3,
+        Value = 1,
+        Weight = -1
+      }
+    },
+    OptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011201,
+        Weight = 60
+      }
+    },
+    TotalWeight = 60,
+    TriggerCount = 1
+  },
+  [11202] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 3,
+        Value = 1,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [11301] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011301,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 3,
+        Value = 1,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [11302] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 3,
+        Value = 1,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 4,
+        Value = 150,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [11401] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011401,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 3,
+        Value = 5,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [11501] = {
+    MastOptionEffect = {},
+    OptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011501,
+        Weight = 50
+      },
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011502,
+        Weight = 30
+      },
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011503,
+        Weight = 20
+      }
+    },
+    TotalWeight = 100,
+    TriggerCount = 1
+  },
+  [11601] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011601,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011602,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [11701] = {
+    MastOptionEffect = {
+      {
+        Count = 10,
+        Id = 4,
+        Value = -50,
+        Weight = -1
+      }
+    },
+    OptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011701,
+        Weight = 20
+      },
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011702,
+        Weight = 15
+      },
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011703,
+        Weight = 5
+      },
+      {
+        Count = 1,
+        Id = 4,
+        Value = 10,
+        Weight = 60
+      }
+    },
+    TotalWeight = 100,
+    TriggerCount = 10
+  },
+  [11801] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011801,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [11901] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011901,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [12001] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7012001,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [12101] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7012101,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7012102,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [12201] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 3,
+        Value = -5,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 4,
+        Value = -300,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [12202] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 3,
+        Value = 3,
+        Weight = -1
+      }
+    },
+    OptionEffect = {
+      {
+        Count = 1,
+        Id = 4,
+        Value = 500,
+        Weight = 1
+      }
+    },
+    TotalWeight = 1,
+    TriggerCount = 1
+  },
+  [12301] = {
+    MastOptionEffect = {},
+    OptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011701,
+        Weight = 20
+      },
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011702,
+        Weight = 15
+      },
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7011703,
+        Weight = 5
+      },
+      {
+        Count = 1,
+        Id = 4,
+        Value = 10,
+        Weight = 60
+      }
+    },
+    TotalWeight = 100,
+    TriggerCount = 3
+  },
+  [12302] = {
+    MastOptionEffect = {},
+    OptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7012302,
+        Weight = 1
+      }
+    },
+    TotalWeight = 1,
+    TriggerCount = 1
+  },
+  [12401] = {
+    MastOptionEffect = {},
+    OptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7012401,
+        Weight = 1
+      }
+    },
+    TotalWeight = 1,
+    TriggerCount = 1
+  },
+  [12402] = {
+    MastOptionEffect = {},
+    OptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7012402,
+        Weight = 1
+      }
+    },
+    TotalWeight = 1,
+    TriggerCount = 1
+  },
+  [12403] = {
+    MastOptionEffect = {},
+    OptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7012403,
+        Weight = 1
+      }
+    },
+    TotalWeight = 1,
+    TriggerCount = 1
+  },
+  [12501] = {
+    MastOptionEffect = {},
+    OptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7012501,
+        Weight = 1
+      }
+    },
+    TotalWeight = 1,
+    TriggerCount = 1
+  },
+  [12601] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7012601,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7000060,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [12701] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7012701,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7000030,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [12702] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7012702,
+        Weight = -1
+      },
+      {
+        Count = 1,
+        Id = 1,
+        Value = 7000060,
+        Weight = -1
+      }
+    },
+    OptionEffect = {},
+    TotalWeight = 0,
+    TriggerCount = 1
+  },
+  [1240301] = {
+    MastOptionEffect = {},
+    OptionEffect = {
+      {
+        Count = 1,
+        Id = 2,
+        Value = 200330201,
+        Weight = 1
+      }
+    },
+    TotalWeight = 1,
+    TriggerCount = 1
+  },
+  [1280101] = {
+    MastOptionEffect = {
+      {
+        Count = 1,
+        Id = 6,
+        Value = 2,
+        Weight = -1
+      }
+    },
+    OptionEffect = {
+      {
+        Count = 1,
+        Id = 4,
+        Value = -10,
+        Weight = 1
+      }
+    },
+    TotalWeight = 1,
+    TriggerCount = 1
+  },
+  [1280201] = {
+    MastOptionEffect = {},
+    OptionEffect = {
+      {
+        Count = 1,
+        Id = 4,
+        Value = 100,
+        Weight = 1
+      }
+    },
+    TotalWeight = 1,
+    TriggerCount = 1
+  }
+}

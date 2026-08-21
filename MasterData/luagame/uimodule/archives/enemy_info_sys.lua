@@ -1,0 +1,122 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local ENEMY_ITEM_KEY = "ENEMY_ITEM_KEY"
+local ENEMY_PAGE_TOG = "ENEMY_PAGE_TOG"
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local UIArchivePath = "UIArchive/%s"
+
+function ui:ui_finish_load()
+  self:set_button("BtnRet1", function()
+    self.v_is_init = true
+    self.v_select_tag_toggle_tab:set_toggle_by_index(1)
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(ENEMY_PAGE_TOG, self.v_uiobjects.PageItem, self.v_uiobjects.PageList)
+  self:register_exist_auto_template(ENEMY_ITEM_KEY, self.v_uiobjects.EnemyItem, self.v_uiobjects.EnemyList)
+  self.v_show_tag_index = 1
+  self.v_is_init = true
+end
+
+function ui:ui_on_show(brand)
+  if self.v_is_init then
+    self.v_show_tag_index = 1
+    self.v_is_init = false
+  end
+  self:init_tog()
+end
+
+function ui:init_tog()
+  self.v_tog_list = UtilTable.copy_table(ShareRes.create("archives.monster_arch_level"))
+  self.v_select_tag_toggle = {}
+  self.v_tog_red_list = {}
+  UtilTable.list_delete_by_func(self.v_tog_list, function(info)
+    local is_show = ShareRes.get_enemy_list_cfg(info.Id)
+    return not is_show
+  end)
+  for _, data in ipairs(self.v_tog_list) do
+    local item = self:get_auto_cache(ENEMY_PAGE_TOG)
+    local desc = Util.get_text("PageName", item)
+    local red_point = Util.get_child_gameobj("Redpoint", desc.gameObject)
+    red_point:SetActive(ArchiveMgr:update_enemy_tag_red(data.Id))
+    desc.text = data.Name
+    local tog = Util.get_toggle(nil, item)
+    table.insert(self.v_select_tag_toggle, tog)
+    table.insert(self.v_tog_red_list, red_point)
+  end
+  self.v_select_tag_toggle_tab = ToggleTab:new(self)
+  self.v_select_tag_toggle_tab:init_by_toggles(self.v_select_tag_toggle, function(cur_select)
+    self:click_select_toggle(cur_select)
+  end, self.v_show_tag_index, false)
+  self:click_select_toggle(self.v_show_tag_index)
+end
+
+function ui:click_select_toggle(index)
+  self.v_show_tag_id = self.v_tog_list[index].Id
+  self.v_show_tag_index = index
+  self:update_enemy_show()
+end
+
+function ui:update_tag_show(cur_index)
+  for index, tog in pairs(self.v_select_tag_toggle) do
+    local tog_text_Eng = Util.get_text("TextEng", tog.gameObject)
+    local page_name = Util.get_text("PageName", tog.gameObject)
+    tog_text_Eng.color = index == cur_index and ArchiveMgr.v_en_color or ArchiveMgr.v_en_un_color
+    page_name.color = index == cur_index and ArchiveMgr.v_color or ArchiveMgr.v_un_color
+  end
+end
+
+function ui:update_enemy_show()
+  local show_list = ShareRes.get_enemy_list_cfg(self.v_show_tag_id)
+  show_list = show_list or {}
+  self:give_back_auto_cache(ENEMY_ITEM_KEY)
+  for _, data in ipairs(show_list) do
+    local enemy_ishide = ShareRes.get_enemy_cfg(data.id).IsHide
+    if 1 == enemy_ishide then
+      goto lbl_33
+    else
+      local item = self:get_auto_cache(ENEMY_ITEM_KEY)
+      self:set_item_data(item, data)
+    end
+    ::lbl_33::
+  end
+end
+
+function ui:set_item_data(item, data)
+  local enemy_cfg = ShareRes.get_enemy_cfg(data.id)
+  local unlock_go = Util.get_child("unLock", item)
+  local lock_go = Util.get_child("lock", item)
+  local enemy_name = Util.get_text("EnemyName", unlock_go)
+  local enemy_icon = Util.get_image("IconMask/EnemyIcon", unlock_go)
+  local red_point = Util.get_image("Redpoint", unlock_go)
+  lock_go:SetActive(ArchiveMgr.v_enemy_info_list[data.id].lock)
+  unlock_go:SetActive(not ArchiveMgr.v_enemy_info_list[data.id].lock)
+  red_point:SetActive(ArchiveMgr.v_enemy_info_list[data.id].red_state)
+  enemy_name.text = enemy_cfg.Name
+  local icon_path = string.format(UIArchivePath, enemy_cfg.HeadIcon)
+  ResMgr:load_set_icon(enemy_icon, icon_path, nil, true)
+  self:set_button_listener(Util.get_button(nil, item), function()
+    if ArchiveMgr.v_enemy_info_list[data.id].red_state then
+      ArchiveMgr.v_enemy_info_list[data.id].red_state = false
+      ArchiveMgr:req_click_action(ArchiveMgr.CommonDefind.ARCH_TYPE.ENEMY_INFORMATION, data.id, function()
+        ArchiveMgr:update_enemy_tag_red(self.v_tog_list[self.v_show_tag_index].Id)
+      end)
+    end
+    if ArchiveMgr.v_enemy_info_list[data.id].lock then
+      Util.show_message_tip(2105)
+      return
+    end
+    if ArchiveMgr:is_to_achieve_Condition(data.ConditionID, true, data.id) then
+      UIMgr:get_ui("enemy_info"):ui_show(data.id)
+    end
+  end)
+end
+
+function ui:ui_on_hide()
+  self.v_select_tag_toggle = nil
+end
+
+function ui:cache_ui()
+  return true
+end
+
+return ui

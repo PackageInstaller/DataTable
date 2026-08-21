@@ -1,0 +1,2322 @@
+return {
+  [10009] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "成员获得护盾时，若未拥有<color=#476DBB>【圣光护盾】</color>，则立即获得<color=#476DBB>【圣光护盾】</color>，每25秒触发一次",
+      Grade = 1,
+      Id = 10009,
+      KeyIDList = {60005},
+      Name = "戒律：忠于言语",
+      buff = 0,
+      magic = 6171111
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "成员获得护盾时，若未拥有<color=#476DBB>【圣光护盾】</color>，则立即获得<color=#476DBB>【圣光护盾】</color>，每20秒触发一次",
+      Grade = 2,
+      Id = 10009,
+      KeyIDList = {60005},
+      Name = "戒律：忠于言语+",
+      buff = 0,
+      magic = 6171111
+    }
+  },
+  [10010] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "成员释放终结技时，失去所有护盾，并造成一次基于2500%防御力的范围伤害",
+      Grade = 1,
+      Id = 10010,
+      Name = "戒律：无私奉献",
+      buff = 0,
+      magic = 6171112
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "成员释放终结技时，失去所有护盾，并造成一次基于3500%防御力的范围伤害",
+      Grade = 2,
+      Id = 10010,
+      Name = "戒律：无私奉献+",
+      buff = 0,
+      magic = 6171112
+    }
+  },
+  [10011] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "<color=#476DBB>【反击】</color>伤害随机累计少量光、暗异常；敌人触发光元素异常时产生<color=#476DBB>【神圣之环】</color>、敌人触发暗元素异常时产生<color=#476DBB>【苦痛之环】</color>",
+      Grade = 1,
+      Id = 10011,
+      KeyIDList = {
+        60002,
+        60003,
+        60004
+      },
+      Name = "戒律：异端肃清",
+      buff = 0,
+      magic = 6171113
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "<color=#476DBB>【反击】</color>伤害随机累计光、暗异常；敌人触发光元素异常时产生<color=#476DBB>【神圣之环】</color>、敌人触发暗元素异常时产生<color=#476DBB>【苦痛之环】</color>",
+      Grade = 2,
+      Id = 10011,
+      KeyIDList = {
+        60002,
+        60003,
+        60004
+      },
+      Name = "戒律：异端肃清+",
+      buff = 0,
+      magic = 6171113
+    }
+  },
+  [10012] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员每造成20次<color=#476DBB>【反击】</color>伤害，产生<color=#476DBB>【神圣之环】</color>",
+      Grade = 1,
+      Id = 10012,
+      KeyIDList = {60002, 60003},
+      Name = "教条：无怜悯",
+      buff = 0,
+      magic = 6171121
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员每造成15次<color=#476DBB>【反击】</color>伤害，产生<color=#476DBB>【神圣之环】</color>",
+      Grade = 2,
+      Id = 10012,
+      KeyIDList = {60002, 60003},
+      Name = "教条：无怜悯+",
+      buff = 0,
+      magic = 6171121
+    }
+  },
+  [10013] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员每造成20次<color=#476DBB>【反击】</color>伤害，产生<color=#476DBB>【苦痛之环】</color>",
+      Grade = 1,
+      Id = 10013,
+      KeyIDList = {60002, 60004},
+      Name = "教条：无慈悲",
+      buff = 0,
+      magic = 6171122
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员每造成15次<color=#476DBB>【反击】</color>伤害，产生<color=#476DBB>【苦痛之环】</color>",
+      Grade = 2,
+      Id = 10013,
+      KeyIDList = {60002, 60004},
+      Name = "教条：无慈悲+",
+      buff = 0,
+      magic = 6171122
+    }
+  },
+  [10014] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员获得护盾时，提升基于80%防御力的攻击力，持续10秒",
+      Grade = 1,
+      Id = 10014,
+      Name = "教条：绝不畏敌",
+      buff = 0,
+      magic = 6171123
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员获得护盾时，提升基于120%防御力的攻击力，持续10秒",
+      Grade = 2,
+      Id = 10014,
+      Name = "教条：绝不畏敌+",
+      buff = 0,
+      magic = 6171123
+    }
+  },
+  [10015] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "造成追击伤害后，对相同目标<color=#476DBB>【反击】</color>，每3秒可触发一次",
+      Grade = 1,
+      Id = 10015,
+      KeyIDList = {60002},
+      Name = "教条：捍卫荣誉",
+      buff = 0,
+      magic = 6171124
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "造成追击伤害后，对相同目标<color=#476DBB>【反击】</color>，每3秒可触发一次；<color=#476DBB>【反击】</color>伤害倍率提升至150%",
+      Grade = 2,
+      Id = 10015,
+      KeyIDList = {60002},
+      Name = "教条：捍卫荣誉+",
+      buff = 0,
+      magic = 6171124
+    }
+  },
+  [10016] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员释放连携技时，获得基于450%防御力的护盾，每个成员每10秒可触发一次",
+      Grade = 1,
+      Id = 10016,
+      Name = "教条：信任同伴",
+      buff = 0,
+      magic = 6171125
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员释放连携技时，获得基于650%防御力的护盾，每个成员每10秒可触发一次",
+      Grade = 2,
+      Id = 10016,
+      Name = "教条：信任同伴+",
+      buff = 0,
+      magic = 6171125
+    }
+  },
+  [10017] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员获得护盾时，获得1层<color=#476DBB>【守誓】</color>",
+      Grade = 1,
+      Id = 10017,
+      KeyIDList = {60001},
+      Name = "美德：守护弱者",
+      buff = 0,
+      magic = 6171131
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员获得护盾时，获得2层<color=#476DBB>【守誓】</color>",
+      Grade = 2,
+      Id = 10017,
+      KeyIDList = {60001},
+      Name = "美德：守护弱者+",
+      buff = 0,
+      magic = 6171131
+    }
+  },
+  [10018] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员造成追击伤害时，获得1层<color=#476DBB>【守誓】</color>，每3秒可触发一次",
+      Grade = 1,
+      Id = 10018,
+      KeyIDList = {60001},
+      Name = "美德：坚持",
+      buff = 0,
+      magic = 6171132
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员造成追击伤害时，获得1层<color=#476DBB>【守誓】</color>，每1.5秒可触发一次",
+      Grade = 2,
+      Id = 10018,
+      KeyIDList = {60001},
+      Name = "美德：坚持+",
+      buff = 0,
+      magic = 6171132
+    }
+  },
+  [10019] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "场上成员恢复生命时，后台成员也会恢复相同的生命值",
+      Grade = 1,
+      Id = 10019,
+      Name = "美德：分享善念",
+      buff = 0,
+      magic = 6171133
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "场上成员恢复生命时，后台成员也会恢复相同的生命值，且会获得50%受治疗增幅，持续10秒",
+      Grade = 2,
+      Id = 10019,
+      Name = "美德：分享善念+",
+      buff = 0,
+      magic = 6171133
+    }
+  },
+  [10020] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "后台成员恢复生命时，场上成员获得当前已损生命值50%的护盾，该效果每20秒触发一次",
+      Grade = 1,
+      Id = 10020,
+      Name = "美德：御邪",
+      buff = 0,
+      magic = 6171134
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "后台成员恢复生命时，场上成员获得当前已损生命值75%的护盾，该效果每20秒触发一次",
+      Grade = 2,
+      Id = 10020,
+      Name = "美德：御邪+",
+      buff = 0,
+      magic = 6171134
+    }
+  },
+  [10021] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "没有护盾时，友方单位每次受到敌人攻击都会对攻击者造成一次<color=#476DBB>【反击】</color>伤害",
+      Grade = 1,
+      Id = 10021,
+      KeyIDList = {60002},
+      Name = "美德：对抗不公",
+      buff = 0,
+      magic = 6171135
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "没有护盾时，友方单位每次受到敌人攻击都会对攻击者造成一次<color=#476DBB>【反击】</color>伤害；<color=#476DBB>【反击】</color>伤害提升至150%",
+      Grade = 2,
+      Id = 10021,
+      KeyIDList = {60002},
+      Name = "美德：对抗不公+",
+      buff = 0,
+      magic = 6171135
+    }
+  },
+  [10022] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "拥有护盾时，友方单位每次受到敌人攻击都会对攻击者造成一次<color=#476DBB>【反击】</color>伤害",
+      Grade = 1,
+      Id = 10022,
+      KeyIDList = {60002},
+      Name = "美德：秉持纯洁",
+      buff = 0,
+      magic = 6171136
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "拥有护盾时，友方单位每次受到敌人攻击都会对攻击者造成一次<color=#476DBB>【反击】</color>伤害；<color=#476DBB>【反击】</color>伤害提升至150%",
+      Grade = 2,
+      Id = 10022,
+      KeyIDList = {60002},
+      Name = "美德：秉持纯洁+",
+      buff = 0,
+      magic = 6171136
+    }
+  },
+  [10023] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员满生命值时，攻击敌人可获得基于80%防御力的护盾，持续5秒",
+      Grade = 1,
+      Id = 10023,
+      Name = "美德：践行责任",
+      buff = 0,
+      magic = 6171137
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员满生命值时，攻击敌人可获得基于120%防御力的护盾，持续5秒",
+      Grade = 2,
+      Id = 10023,
+      Name = "美德：践行责任+",
+      buff = 0,
+      magic = 6171137
+    }
+  },
+  [10024] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员拥有护盾时，对敌人的削韧提升30%",
+      Grade = 1,
+      Id = 10024,
+      Name = "美德：信念",
+      buff = 0,
+      magic = 6171138
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员拥有护盾时，对敌人的削韧提升45%",
+      Grade = 2,
+      Id = 10024,
+      Name = "美德：信念+",
+      buff = 0,
+      magic = 6171138
+    }
+  },
+  [20009] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "攻击处于<color=#476DBB>【静止】</color>效果的敌人时，每次伤害使成员获得1%终结技能量；成员每次获得终结技能量，额外获得6%终结伤害增幅，可叠加20层，1秒内未获得新的叠层则逐层失效",
+      Grade = 1,
+      Id = 20009,
+      KeyIDList = {60013},
+      Name = "原理：时制熵增",
+      buff = 0,
+      magic = 6170612
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "攻击处于<color=#476DBB>【静止】</color>效果的敌人时，每次伤害使成员获得1%终结技能量；成员每次获得终结技能量，额外获得9%终结伤害增幅，可叠加20层，1秒内未获得新的叠层则逐层失效",
+      Grade = 2,
+      Id = 20009,
+      KeyIDList = {60013},
+      Name = "原理：时制熵增+",
+      buff = 0,
+      magic = 6170612
+    }
+  },
+  [20010] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "成员释放技能后6秒内，普通攻击提高5%攻击速度，可叠加6层。满层时每次普攻命中敌人，成员获得1层<color=#476DBB>【预知】</color>",
+      Grade = 1,
+      Id = 20010,
+      KeyIDList = {60011},
+      Name = "原理：剧变节点",
+      buff = 0,
+      magic = 6170613
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "成员释放技能后6秒内，普通攻击提高5%攻击速度，可叠加6层。满层时每次普攻命中敌人，成员获得2层<color=#476DBB>【预知】</color>",
+      Grade = 2,
+      Id = 20010,
+      KeyIDList = {60011},
+      Name = "原理：剧变节点+",
+      buff = 0,
+      magic = 6170613
+    }
+  },
+  [20011] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "敌人触发元素异常时在场成员获得<color=#476DBB>【回溯】</color>；<color=#476DBB>【回溯】</color>效果持续时间提升至12秒",
+      Grade = 1,
+      Id = 20011,
+      KeyIDList = {60012},
+      Name = "原理：逆时干涉",
+      buff = 0,
+      magic = 6170614
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "敌人触发元素异常时全体成员获得<color=#476DBB>【回溯】</color>；<color=#476DBB>【回溯】</color>效果持续时间提升至12秒",
+      Grade = 2,
+      Id = 20011,
+      KeyIDList = {60012},
+      Name = "原理：逆时干涉+",
+      buff = 0,
+      magic = 6170614
+    }
+  },
+  [20012] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员获得<color=#476DBB>【回溯】</color>时，恢复1格精力，每当精力恢复1格时，成员普攻、技能、终结技会触发一次额外攻击，可充能4层",
+      Grade = 1,
+      Id = 20012,
+      KeyIDList = {60012},
+      Name = "理论：回归效应",
+      buff = 0,
+      magic = 6170621
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员获得<color=#476DBB>【回溯】</color>时，恢复2格精力，每当精力恢复1格时，成员普攻、技能、终结技会触发一次额外攻击，可充能4层",
+      Grade = 2,
+      Id = 20012,
+      KeyIDList = {60012},
+      Name = "理论：回归效应+",
+      buff = 0,
+      magic = 6170621
+    }
+  },
+  [20013] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "若拥有<color=#476DBB>【预知】</color>，非普攻攻击时会消耗一层<color=#476DBB>【预知】</color>，使伤害提高50%",
+      Grade = 1,
+      Id = 20013,
+      KeyIDList = {60011},
+      Name = "理论：时间透支假说",
+      buff = 0,
+      magic = 6170622
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "若拥有<color=#476DBB>【预知】</color>，非普攻攻击时会消耗一层<color=#476DBB>【预知】</color>，使伤害提高75%",
+      Grade = 2,
+      Id = 20013,
+      KeyIDList = {60011},
+      Name = "理论：时间透支假说+",
+      buff = 0,
+      magic = 6170622
+    }
+  },
+  [20014] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "若技能命中处于<color=#476DBB>【静止】</color>状态的敌人，成员获得15%冷却加速，持续5秒，可叠加5层",
+      Grade = 1,
+      Id = 20014,
+      KeyIDList = {60013},
+      Name = "理论：缓时刷新",
+      buff = 0,
+      magic = 6170623
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "若技能命中处于<color=#476DBB>【静止】</color>状态的敌人，成员获得20%冷却加速，持续5秒，可叠加5层",
+      Grade = 2,
+      Id = 20014,
+      KeyIDList = {60013},
+      Name = "理论：缓时刷新+",
+      buff = 0,
+      magic = 6170623
+    }
+  },
+  [20015] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "终结技释放结束时，自动对全场释放一次流派技能<color=#476DBB>【维时之沙】</color>，每15秒可触发一次",
+      Grade = 1,
+      Id = 20015,
+      Name = "理论：可控时域",
+      buff = 0,
+      magic = 6170624
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "终结技释放结束时，自动对全场释放一次流派技能<color=#476DBB>【维时之沙】</color>，每15秒可触发一次",
+      Grade = 2,
+      Id = 20015,
+      Name = "理论：可控时域+",
+      buff = 0,
+      magic = 6170624
+    }
+  },
+  [20016] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员终结技命中处于异常状态的敌人时，会对其添加一层当前已经处于激活的同元素异常标记",
+      Grade = 1,
+      Id = 20016,
+      Name = "理论：并协原理",
+      buff = 0,
+      magic = 6170625
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员终结技命中处于异常状态的敌人时，会对其添加一层当前已经处于激活的同元素异常标记",
+      Grade = 2,
+      Id = 20016,
+      Name = "理论：并协原理+",
+      buff = 0,
+      magic = 6170625
+    }
+  },
+  [20017] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员持有<color=#476DBB>【回溯】</color>效果的时间每达到12秒，流派技能<color=#476DBB>【维时之沙】</color>恢复一层充能",
+      Grade = 1,
+      Id = 20017,
+      KeyIDList = {60012},
+      Name = "衍生：循环空间",
+      buff = 0,
+      magic = 6170631
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员持有<color=#476DBB>【回溯】</color>效果的时间每达到12秒，关卡技能恢复一层充能",
+      Grade = 2,
+      Id = 20017,
+      KeyIDList = {60012},
+      Name = "衍生：循环空间+",
+      buff = 0,
+      magic = 6170631
+    }
+  },
+  [20018] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "有敌人死亡时，若成员拥有<color=#476DBB>【预知】</color>，则获得3%终结技能量",
+      Grade = 1,
+      Id = 20018,
+      KeyIDList = {60011},
+      Name = "衍生：粒子加速",
+      buff = 0,
+      magic = 6170632
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "有敌人死亡时，若成员拥有<color=#476DBB>【预知】</color>，则获得5%终结技能量",
+      Grade = 2,
+      Id = 20018,
+      KeyIDList = {60011},
+      Name = "衍生：粒子加速+",
+      buff = 0,
+      magic = 6170632
+    }
+  },
+  [20019] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "完美闪避、看破敌人攻击时，获得<color=#476DBB>【回溯】</color>效果",
+      Grade = 1,
+      Id = 20019,
+      KeyIDList = {60012},
+      Name = "衍生：触发式时缓",
+      buff = 0,
+      magic = 6170633
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "完美闪避、看破敌人攻击时，获得<color=#476DBB>【回溯】</color>效果，并回复20%已损失生命值",
+      Grade = 2,
+      Id = 20019,
+      KeyIDList = {60012},
+      Name = "衍生：触发式时缓+",
+      buff = 0,
+      magic = 6170633
+    }
+  },
+  [20020] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "触发完美闪避，或成员释放闪避反击时，获得1层<color=#476DBB>【预知】</color>效果。",
+      Grade = 1,
+      Id = 20020,
+      KeyIDList = {60011},
+      Name = "衍生：触发式迁时",
+      buff = 0,
+      magic = 6170634
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "触发完美闪避，或成员释放闪避反击时，获得2层<color=#476DBB>【预知】</color>效果。",
+      Grade = 2,
+      Id = 20020,
+      KeyIDList = {60011},
+      Name = "衍生：触发式迁时+",
+      buff = 0,
+      magic = 6170634
+    }
+  },
+  [20021] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "敌人处于<color=#476DBB>【静止】</color>时，若对其再次施加<color=#476DBB>【静止】</color>效果，则对其造成一次基于200%攻击力的常规伤害",
+      Grade = 1,
+      Id = 20021,
+      KeyIDList = {60013},
+      Name = "衍生：复叠加态",
+      buff = 0,
+      magic = 6170635
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "敌人处于<color=#476DBB>【静止】</color>时，若对其再次施加<color=#476DBB>【静止】</color>效果，则对其造成一次基于300%攻击力的常规伤害",
+      Grade = 2,
+      Id = 20021,
+      KeyIDList = {60013},
+      Name = "衍生：复叠加态+",
+      buff = 0,
+      magic = 6170635
+    }
+  },
+  [20022] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "若在场成员拥有<color=#476DBB>【预知】</color>，则自动消耗一层<color=#476DBB>【预知】</color>，重置队伍内所有成员的所有技能冷却。每30秒触发一次。",
+      Grade = 1,
+      Id = 20022,
+      KeyIDList = {60011},
+      Name = "衍生：预见竭时",
+      buff = 0,
+      magic = 6170636
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "若在场成员拥有<color=#476DBB>【预知】</color>，重置队伍内所有成员的所有技能冷却。每30秒触发一次。",
+      Grade = 2,
+      Id = 20022,
+      KeyIDList = {60011},
+      Name = "衍生：预见竭时+",
+      buff = 0,
+      magic = 6170636
+    }
+  },
+  [20023] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "对处于<color=#476DBB>【静止】</color>效果的敌人攻击命中10次后，引发一次爆炸，造成150%攻击力的伤害，同时提供大量异常累积，每次释放流派技能<color=#476DBB>【维时之沙】</color>只会触发一次",
+      Grade = 1,
+      Id = 20023,
+      IsGodMagic = true,
+      KeyIDList = {60013},
+      Name = "衍生：缓时膨胀",
+      buff = 0,
+      magic = 6170637
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "对处于<color=#476DBB>【静止】</color>效果的敌人攻击命中10次后，引发一次爆炸，造成220%攻击力的伤害，同时提供大量异常累积，每次释放流派技能<color=#476DBB>【维时之沙】</color>只会触发一次",
+      Grade = 2,
+      Id = 20023,
+      IsGodMagic = true,
+      KeyIDList = {60013},
+      Name = "衍生：缓时膨胀+",
+      buff = 0,
+      magic = 6170637
+    }
+  },
+  [20024] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "处于<color=#476DBB>【静止】</color>效果的敌人，异常抗性降低30%",
+      Grade = 1,
+      Id = 20024,
+      KeyIDList = {60013},
+      Name = "衍生：缓时侵蚀",
+      buff = 0,
+      magic = 6170638
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "处于<color=#476DBB>【静止】</color>效果的敌人，异常抗性降低45%",
+      Grade = 2,
+      Id = 20024,
+      KeyIDList = {60013},
+      Name = "衍生：缓时侵蚀+",
+      buff = 0,
+      magic = 6170638
+    }
+  },
+  [30009] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "成员生命值增加或减少时，在移动的路径上生成<color=#476DBB>【源流】</color>区域，每12秒触发一次；<color=#476DBB>【源流】</color>每秒使其中的敌人降低5%防御力，可叠加10层",
+      Grade = 1,
+      Id = 30009,
+      KeyIDList = {60022},
+      Name = "御灾：生息如水",
+      buff = 0,
+      magic = 6170911
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "成员生命值增加或减少时，在移动的路径上生成<color=#476DBB>【源流】</color>区域，每8秒触发一次；<color=#476DBB>【源流】</color>每秒使其中的敌人降低5%防御力，可叠加10层",
+      Grade = 2,
+      Id = 30009,
+      KeyIDList = {60022},
+      Name = "御灾：生息如水+",
+      buff = 0,
+      magic = 6170911
+    }
+  },
+  [30010] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "当敌人被施加<color=#476DBB>【灾】</color>状态时，随机为该敌人施加3种不同的异常标记，每个敌人每10秒可触发一次",
+      Grade = 1,
+      Id = 30010,
+      KeyIDList = {60021},
+      Name = "御灾：以泉施灾",
+      buff = 0,
+      magic = 6170912
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "当敌人被施加<color=#476DBB>【灾】</color>状态时，随机为该敌人施加3种不同的异常标记，每个敌人每5秒可触发一次",
+      Grade = 2,
+      Id = 30010,
+      KeyIDList = {60021},
+      Name = "御灾：以泉施灾+",
+      buff = 0,
+      magic = 6170912
+    }
+  },
+  [30011] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "受到治疗时，基于成员当前移动速度超过基础移动速度的比例，获得相等的伤害增幅、冷却加速，持续5秒",
+      Grade = 1,
+      Id = 30011,
+      Name = "御灾：雨后春笋",
+      buff = 0,
+      magic = 6170913
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "受到治疗时，基于成员当前移动速度超过基础移动速度的比例，获得相等的伤害增幅、冷却加速，持续10秒",
+      Grade = 2,
+      Id = 30011,
+      Name = "御灾：雨后春笋+",
+      buff = 0,
+      magic = 6170913
+    }
+  },
+  [30012] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "<color=#476DBB>【源流】</color>会对我方单位施加<color=#476DBB>【灾】</color>状态，每秒造成0.5%最大生命值的伤害，持续5秒，受到此伤害时，成员增加5%最大生命值，每场战斗最多可通过这种方式触发5次，战斗结束后清除",
+      Grade = 1,
+      Id = 30012,
+      KeyIDList = {60021, 60022},
+      Name = "水利：十年究其成",
+      buff = 0,
+      magic = 6170921
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "<color=#476DBB>【源流】</color>会对我方单位施加<color=#476DBB>【灾】</color>状态，每秒造成0.5%最大生命值的伤害，持续5秒，受到此伤害时，成员增加7.5%最大生命值，每场战斗最多可通过这种方式触发5次，战斗结束后清除",
+      Grade = 2,
+      Id = 30012,
+      KeyIDList = {60021, 60022},
+      Name = "水利：十年究其成+",
+      buff = 0,
+      magic = 6170921
+    }
+  },
+  [30013] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "<color=#476DBB>【源流】</color>每次对敌人造成伤害时，成员提高20点元素异常精通，每场战斗可触发5次，战斗结束后失效",
+      Grade = 1,
+      Id = 30013,
+      KeyIDList = {60022},
+      Name = "水利：万世席其利",
+      buff = 0,
+      magic = 6170922
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "<color=#476DBB>【源流】</color>每次对敌人造成伤害时，成员提高30点元素异常精通，每场战斗可触发5次，战斗结束后失效",
+      Grade = 2,
+      Id = 30013,
+      KeyIDList = {60022},
+      Name = "水利：万世席其利+",
+      buff = 0,
+      magic = 6170922
+    }
+  },
+  [30014] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "当在场成员在移动速度超过基础移速时移动，会恢复全队3%的最大生命值，每2秒可触发一次",
+      Grade = 1,
+      Id = 30014,
+      Name = "水利：风助疗型",
+      buff = 0,
+      magic = 6170923
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "当在场成员在移动速度超过基础移速时移动，会恢复全队3%的最大生命值，每1秒可触发一次",
+      Grade = 2,
+      Id = 30014,
+      Name = "水利：风助疗型+",
+      buff = 0,
+      magic = 6170923
+    }
+  },
+  [30015] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "所有敌人受到<color=#476DBB>【灾】</color>的伤害提升20%，受到<color=#476DBB>【源流】</color>的伤害额外提升30%",
+      Grade = 1,
+      Id = 30015,
+      KeyIDList = {60021, 60022},
+      Name = "水利：洪涝将至",
+      buff = 0,
+      magic = 6170924
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "所有敌人受到<color=#476DBB>【灾】</color>的伤害提升30%，受到<color=#476DBB>【源流】</color>的伤害额外提升45%",
+      Grade = 2,
+      Id = 30015,
+      KeyIDList = {60021, 60022},
+      Name = "水利：洪涝将至+",
+      buff = 0,
+      magic = 6170924
+    }
+  },
+  [30016] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "任何单位获得<color=#476DBB>【灾】</color>状态时，在场成员造成的元素异常积累值提升20%，持续10秒，重复获得时刷新持续时间",
+      Grade = 1,
+      Id = 30016,
+      KeyIDList = {60021},
+      Name = "水利：祸水东引",
+      buff = 0,
+      magic = 6170925
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "任何单位获得<color=#476DBB>【灾】</color>状态时，在场成员造成的元素异常积累值提升30%，持续10秒，重复获得时刷新持续时间",
+      Grade = 2,
+      Id = 30016,
+      KeyIDList = {60021},
+      Name = "水利：祸水东引+",
+      buff = 0,
+      magic = 6170925
+    }
+  },
+  [30017] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员完美闪避时会在地面产生<color=#476DBB>【源流】</color>区域，成员位于<color=#476DBB>【源流】</color>区域中时，获得30%雷伤害增幅和水伤害增幅",
+      Grade = 1,
+      Id = 30017,
+      KeyIDList = {60022},
+      Name = "天时：肆水惊雷",
+      buff = 0,
+      magic = 6170931
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员完美闪避时会在地面产生<color=#476DBB>【源流】</color>区域，成员位于<color=#476DBB>【源流】</color>区域中时，获得45%雷伤害增幅和水伤害增幅",
+      Grade = 2,
+      Id = 30017,
+      KeyIDList = {60022},
+      Name = "天时：肆水惊雷+",
+      buff = 0,
+      magic = 6170931
+    }
+  },
+  [30018] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "在场成员受到治疗时提升5%移动速度，持续10秒，可叠加4层",
+      Grade = 1,
+      Id = 30018,
+      Name = "天时：健行奔驰",
+      buff = 0,
+      magic = 6170932
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "在场成员受到治疗时提升7.5%移动速度，持续10秒，可叠加4层",
+      Grade = 2,
+      Id = 30018,
+      Name = "天时：健行奔驰+",
+      buff = 0,
+      magic = 6170932
+    }
+  },
+  [30019] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "敌人死亡时，在地面产生<color=#476DBB>【源流】</color>区域，冷却10秒；<color=#476DBB>【源流】</color>区域内的敌人所有动作速度降低25%",
+      Grade = 1,
+      Id = 30019,
+      KeyIDList = {60022},
+      Name = "天时：形亡化渊",
+      buff = 0,
+      magic = 6170933
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "敌人死亡时，在地面产生<color=#476DBB>【源流】</color>区域，冷却10秒；<color=#476DBB>【源流】</color>区域内的敌人所有动作速度降低40%",
+      Grade = 2,
+      Id = 30019,
+      KeyIDList = {60022},
+      Name = "天时：形亡化渊+",
+      buff = 0,
+      magic = 6170933
+    }
+  },
+  [30020] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员的异常积累值提升10%，触发元素异常时产生<color=#476DBB>【源流】</color>区域，冷却10秒；<color=#476DBB>【源流】</color>区域内成员提升20%移动速度",
+      Grade = 1,
+      Id = 30020,
+      KeyIDList = {60022},
+      Name = "天时：祸之临行",
+      buff = 0,
+      magic = 6170934
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员的异常积累值提升15%，触发元素异常时产生<color=#476DBB>【源流】</color>区域，冷却10秒；<color=#476DBB>【源流】</color>区域内成员提升20%移动速度",
+      Grade = 2,
+      Id = 30020,
+      KeyIDList = {60022},
+      Name = "天时：祸之临行+",
+      buff = 0,
+      magic = 6170934
+    }
+  },
+  [30021] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "在场成员受到治疗或获得护盾时，提升20%元素异常精通，持续4秒",
+      Grade = 1,
+      Id = 30021,
+      Name = "天时：疗会贯通",
+      buff = 0,
+      magic = 6170935
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "在场成员受到治疗或获得护盾时，提升30%元素异常精通，持续4秒",
+      Grade = 2,
+      Id = 30021,
+      Name = "天时：疗会贯通+",
+      buff = 0,
+      magic = 6170935
+    }
+  },
+  [30022] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "若单位死亡时带有<color=#476DBB>【灾】</color>，在场成员获得10%最大生命值的治疗",
+      Grade = 1,
+      Id = 30022,
+      KeyIDList = {60021},
+      Name = "天时：亡骸之利",
+      buff = 0,
+      magic = 6170936
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "若单位死亡时带有<color=#476DBB>【灾】</color>，在场成员获得15%最大生命值的治疗",
+      Grade = 2,
+      Id = 30022,
+      KeyIDList = {60021},
+      Name = "天时：亡骸之利+",
+      buff = 0,
+      magic = 6170936
+    }
+  },
+  [30023] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "处于元素异常状态下的敌人，防御力降低15%，持续5秒",
+      Grade = 1,
+      Id = 30023,
+      Name = "天时：祸不单行",
+      buff = 0,
+      magic = 6170937
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "处于元素异常状态下的敌人，防御力降低25%，持续5秒",
+      Grade = 2,
+      Id = 30023,
+      Name = "天时：祸不单行+",
+      buff = 0,
+      magic = 6170937
+    }
+  },
+  [30024] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "场上成员受到敌人的伤害时，对该敌人施加1层凝滞标记，每个敌人每10秒可触发一次",
+      Grade = 1,
+      Id = 30024,
+      Name = "天时：火上浇油",
+      buff = 0,
+      magic = 6170938
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "场上成员受到敌人的伤害时，对该敌人施加2层凝滞标记，每个敌人每10秒可触发一次",
+      Grade = 2,
+      Id = 30024,
+      Name = "天时：火上浇油+",
+      buff = 0,
+      magic = 6170938
+    }
+  },
+  [40009] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "战斗开始时，全队获得1层<color=#476DBB>【激励】</color>；成员普攻命中敌人时，额外造成基于成员1%已损失生命值的伤害，该伤害会随狂怒层数提高，每2秒可触发一次 ",
+      Grade = 1,
+      Id = 40009,
+      KeyIDList = {60031},
+      Name = "框架：预先放款",
+      buff = 0,
+      magic = 6170711
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "战斗开始时，全队获得2层<color=#476DBB>【激励】</color>；成员普攻命中敌人时，额外造成基于成员1%已损失生命值的伤害，该伤害会随狂怒层数提高，每2秒可触发一次 ",
+      Grade = 2,
+      Id = 40009,
+      KeyIDList = {60031},
+      Name = "框架：预先放款+",
+      buff = 0,
+      magic = 6170711
+    }
+  },
+  [40010] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "每消耗1格精力，获得1层<color=#476DBB>【合约】</color>；每层<color=#476DBB>【合约】</color>额外提供20%暴击伤害",
+      Grade = 1,
+      Id = 40010,
+      KeyIDList = {60032},
+      Name = "框架：多重保障制度",
+      buff = 0,
+      magic = 6170712
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "每消耗1格精力，获得2层<color=#476DBB>【合约】</color>；每层<color=#476DBB>【合约】</color>额外提供20%暴击伤害",
+      Grade = 2,
+      Id = 40010,
+      KeyIDList = {60032},
+      Name = "框架：多重保障制度+",
+      buff = 0,
+      magic = 6170712
+    }
+  },
+  [40011] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "成员每次击破韧性时，获得2层<color=#476DBB>【激励】</color>，且在接下来5秒内普攻攻速提升50%",
+      Grade = 1,
+      Id = 40011,
+      KeyIDList = {60031},
+      Name = "框架：强效激励计划",
+      buff = 0,
+      magic = 6170713
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "成员每次击破韧性时，获得2层<color=#476DBB>【激励】</color>和1层<color=#476DBB>【合约】</color>，且在接下来5秒内普攻攻速提升50%",
+      Grade = 2,
+      Id = 40011,
+      KeyIDList = {60031, 60032},
+      Name = "框架：强效激励计划+",
+      buff = 0,
+      magic = 6170713
+    }
+  },
+  [40012] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员暴击时，恢复自身3%最大生命值，且暴击率超过100%的部分，每有1%暴击率提升5%暴击伤害",
+      Grade = 1,
+      Id = 40012,
+      KeyIDList = {60032},
+      Name = "细则：补充激励手段",
+      buff = 0,
+      magic = 6170721
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员暴击时，恢复自身5%最大生命值，且暴击率超过80%的部分，每有1%暴击率提升5%暴击伤害",
+      Grade = 2,
+      Id = 40012,
+      KeyIDList = {60032},
+      Name = "细则：补充激励手段+",
+      buff = 0,
+      magic = 6170721
+    }
+  },
+  [40013] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员每次获得<color=#476DBB>【激励】</color>时，额外获得1层<color=#476DBB>【合约】</color>",
+      Grade = 1,
+      Id = 40013,
+      KeyIDList = {60031, 60032},
+      Name = "细则：续约条款",
+      buff = 0,
+      magic = 6170722
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员每次获得<color=#476DBB>【激励】</color>时，额外获得1层<color=#476DBB>【合约】</color>,并获得持续3秒的攻击力15%提升，不可叠加",
+      Grade = 2,
+      Id = 40013,
+      KeyIDList = {60031, 60032},
+      Name = "细则：续约条款+",
+      buff = 0,
+      magic = 6170722
+    }
+  },
+  [40014] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "每当有单位死亡时，在场成员获得1层<color=#476DBB>【合约】</color>；若成员同时持有<color=#476DBB>【合约】</color>和<color=#476DBB>【激励】</color>，普攻的暴击率提升50%",
+      Grade = 1,
+      Id = 40014,
+      KeyIDList = {60031, 60032},
+      Name = "细则：双保险",
+      buff = 0,
+      magic = 6170723
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "每当有单位死亡时，在场成员获得1层<color=#476DBB>【合约】</color>；若成员同时持有<color=#476DBB>【合约】</color>和<color=#476DBB>【激励】</color>，普攻的暴击率提升100%",
+      Grade = 2,
+      Id = 40014,
+      KeyIDList = {60031, 60032},
+      Name = "细则：双保险+",
+      buff = 0,
+      magic = 6170723
+    }
+  },
+  [40015] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "生命值大于50%的成员每次使用技能时，失去3%生命值，并获得一层<color=#476DBB>【激励】</color>",
+      Grade = 1,
+      Id = 40015,
+      KeyIDList = {60031},
+      Name = "细则：防护补贴",
+      buff = 0,
+      magic = 6170724
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "生命值大于50%的成员每次使用技能时，失去3%生命值，并获得一层<color=#476DBB>【激励】</color>；每层<color=#476DBB>【激励】</color>额外提升成员5%防御力",
+      Grade = 2,
+      Id = 40015,
+      KeyIDList = {60031},
+      Name = "细则：防护补贴+",
+      buff = 0,
+      magic = 6170724
+    }
+  },
+  [40016] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员生命值发生变动时，下次普攻伤害翻倍，每秒可触发1次",
+      Grade = 1,
+      Id = 40016,
+      Name = "细则：体检福利",
+      buff = 0,
+      magic = 6170725
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员生命值发生变动时，下次伤害翻倍，每秒可触发1次",
+      Grade = 2,
+      Id = 40016,
+      Name = "细则：体检福利+",
+      buff = 0,
+      magic = 6170725
+    }
+  },
+  [40017] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员每次受到伤害时，获得1层<color=#476DBB>【激励】</color>",
+      Grade = 1,
+      Id = 40017,
+      KeyIDList = {60031},
+      Name = "服务：双倍酬劳",
+      buff = 0,
+      magic = 6170731
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员每次受到伤害时，获得2层<color=#476DBB>【激励】</color>",
+      Grade = 2,
+      Id = 40017,
+      KeyIDList = {60031},
+      Name = "服务：双倍酬劳+",
+      buff = 0,
+      magic = 6170731
+    }
+  },
+  [40018] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "当成员生命值到达40%以下时，普攻命中后恢复2.5%最大生命值，每秒可触发一次",
+      Grade = 1,
+      Id = 40018,
+      Name = "服务：临时医疗",
+      buff = 0,
+      magic = 6170732
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "当成员生命值到达40%以下时，普攻命中后恢复3.5%最大生命值，每秒可触发一次",
+      Grade = 2,
+      Id = 40018,
+      Name = "服务：临时医疗+",
+      buff = 0,
+      magic = 6170732
+    }
+  },
+  [40019] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员获得<color=#476DBB>【激励】</color>后普攻命中时，基于20%攻击力提高成员的生命上限，可叠加5层，战斗结束后失效",
+      Grade = 1,
+      Id = 40019,
+      KeyIDList = {60031},
+      Name = "服务：延命护理",
+      buff = 0,
+      magic = 6170733
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员获得<color=#476DBB>【激励】</color>后普攻命中时，基于30%攻击力提高成员的生命上限，可叠加5层，战斗结束后失效",
+      Grade = 2,
+      Id = 40019,
+      KeyIDList = {60031},
+      Name = "服务：延命护理+",
+      buff = 0,
+      magic = 6170733
+    }
+  },
+  [40020] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员受到致命伤害前，进入持续3秒的无敌状态，且每秒恢复20%生命值。该效果一场战斗只能触发一次",
+      Grade = 1,
+      Id = 40020,
+      IsGodMagic = true,
+      Name = "服务：危机救援",
+      buff = 0,
+      magic = 6170734
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员受到致命伤害前，进入持续3秒的无敌状态，且每秒恢复30%生命值。该效果一场战斗只能触发一次",
+      Grade = 2,
+      Id = 40020,
+      IsGodMagic = true,
+      Name = "服务：危机救援+",
+      buff = 0,
+      magic = 6170734
+    }
+  },
+  [40021] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员生命值低于40%时，提高20%穿透",
+      Grade = 1,
+      Id = 40021,
+      Name = "服务：放射性扫描",
+      buff = 0,
+      magic = 6170735
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员生命值低于40%时，提高30%穿透",
+      Grade = 2,
+      Id = 40021,
+      Name = "服务：放射性扫描+",
+      buff = 0,
+      magic = 6170735
+    }
+  },
+  [40022] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员获得15%削韧增幅，持有<color=#476DBB>【合约】</color>的成员额外提升15%削韧增幅",
+      Grade = 1,
+      Id = 40022,
+      KeyIDList = {60032},
+      Name = "服务：搏击教练",
+      buff = 0,
+      magic = 6170736
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员获得20%削韧增幅，持有<color=#476DBB>【合约】</color>的成员额外提升20%削韧增幅",
+      Grade = 2,
+      Id = 40022,
+      KeyIDList = {60032},
+      Name = "服务：搏击教练+",
+      buff = 0,
+      magic = 6170736
+    }
+  },
+  [40023] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员精力满时，暴击率提升15%，普攻拥有霸体",
+      Grade = 1,
+      Id = 40023,
+      Name = "服务：健康顾问",
+      buff = 0,
+      magic = 6170737
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员精力满时，暴击率提升15%，暴击伤害提升30%，且普攻拥有霸体",
+      Grade = 2,
+      Id = 40023,
+      Name = "服务：健康顾问+",
+      buff = 0,
+      magic = 6170737
+    }
+  },
+  [40024] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员每次暴击时，获得一层<color=#476DBB>【合约】</color>，每3秒最多触发1次",
+      Grade = 1,
+      Id = 40024,
+      KeyIDList = {60032},
+      Name = "服务：优质客户签约",
+      buff = 0,
+      magic = 6170738
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员每次暴击时，获得一层<color=#476DBB>【合约】</color>，每1.5秒最多触发1次",
+      Grade = 2,
+      Id = 40024,
+      KeyIDList = {60032},
+      Name = "服务：优质客户签约+",
+      buff = 0,
+      magic = 6170738
+    }
+  },
+  [50009] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "我方所有成员对被击破韧性而眩晕的敌人伤害提升100%，<color=#476DBB>【机关】</color>若攻击了被击破韧性而眩晕敌人，则刷新自身存续时间",
+      Grade = 1,
+      Id = 50009,
+      KeyIDList = {60041},
+      Name = "专利：清敌优化",
+      buff = 0,
+      magic = 6170811
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "我方所有成员对被击破韧性而眩晕的敌人伤害提升150%，<color=#476DBB>【机关】</color>若攻击了被击破韧性而眩晕敌人，则刷新自身存续时间",
+      Grade = 2,
+      Id = 50009,
+      KeyIDList = {60041},
+      Name = "专利：清敌优化+",
+      buff = 0,
+      magic = 6170811
+    }
+  },
+  [50010] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "敌人触发元素超载时，会在原地生成一个<color=#476DBB>【机关】</color><color=#476DBB>【智算型炮塔】</color>；<color=#476DBB>【机关】</color><color=#476DBB>【智算型炮塔】</color>攻击时发射多颗追踪子弹，命中敌人后造成小范围伤害，重复命中同一名敌人时伤害提升，场上最多依此生成2个<color=#476DBB>【机关】</color><color=#476DBB>【智算型炮塔】</color>，持续10秒",
+      Grade = 1,
+      Id = 50010,
+      KeyIDList = {60041},
+      Name = "专利：多弹头设计",
+      buff = 0,
+      magic = 6170812
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "敌人触发元素超载时，会在原地生成一个<color=#476DBB>【机关】</color><color=#476DBB>【智算型炮塔】</color>；<color=#476DBB>【机关】</color><color=#476DBB>【智算型炮塔】</color>属性提升20%，攻击时发射多颗追踪子弹，命中敌人后造成小范围伤害，重复命中同一名敌人时伤害提升，场上最多依此生成2个<color=#476DBB>【机关】</color><color=#476DBB>【智算型炮塔】</color>，持续10秒",
+      Grade = 2,
+      Id = 50010,
+      KeyIDList = {60041},
+      Name = "专利：多弹头设计+",
+      buff = 0,
+      magic = 6170812
+    }
+  },
+  [50011] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "战斗开始时获得3层<color=#476DBB>【锁定物资】</color>，攻击怪物时若其身上没有<color=#476DBB>【物资回收】</color>标记，则会消耗1层<color=#476DBB>【锁定物资】</color>并给怪物附加<color=#476DBB>【物资回收】</color>标记；每次召唤出机关时，会将<color=#476DBB>【锁定物资】</color>复原至3层",
+      Grade = 1,
+      Id = 50011,
+      KeyIDList = {60043, 60042},
+      Name = "专利：精准回收",
+      buff = 617003,
+      magic = 6170813
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "战斗开始时获得5层<color=#476DBB>【锁定物资】</color>，攻击怪物时若其身上没有<color=#476DBB>【物资回收】</color>标记，则会消耗1层<color=#476DBB>【锁定物资】</color>并给怪物附加<color=#476DBB>【物资回收】</color>标记；每次召唤出机关时，会将<color=#476DBB>【锁定物资】</color>复原至5层",
+      Grade = 2,
+      Id = 50011,
+      KeyIDList = {60043, 60042},
+      Name = "专利：精准回收+",
+      buff = 617003,
+      magic = 6170813
+    }
+  },
+  [50012] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员的终结技或<color=#476DBB>【机关】</color>命中敌人后有30%的概率给目标施加<color=#476DBB>【物资回收】</color>标记，持续3秒；敌人挂上<color=#476DBB>【物资回收】</color>标记期间会降低敌人30%的全元素抗性，若击杀携带<color=#476DBB>【物资回收】</color>标记的目标，则会获得50光尘",
+      Grade = 1,
+      Id = 50012,
+      KeyIDList = {60042},
+      Name = "改良：战获回收",
+      buff = 617003,
+      magic = 6170821
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员的终结技或<color=#476DBB>【机关】</color>命中敌人后有50%的概率给目标施加<color=#476DBB>【物资回收】</color>标记，持续3秒；敌人挂上<color=#476DBB>【物资回收】</color>标记期间会降低敌人30%的全元素抗性，若击杀携带<color=#476DBB>【物资回收】</color>标记的目标，则会获得50光尘",
+      Grade = 2,
+      Id = 50012,
+      KeyIDList = {60042},
+      Name = "改良：战获回收+",
+      buff = 617003,
+      magic = 6170821
+    }
+  },
+  [50013] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员使用终结技后，会在原地生成一个<color=#476DBB>【机关】</color><color=#476DBB>【旋转解析光束】</color>；激光命中敌人时会生成一个<color=#476DBB>【数据】</color>，每4秒触发一次；成员触碰到<color=#476DBB>【数据】</color>时回复1格精力和20终结技能量；场上只能存在一个旋转激光，持续10秒",
+      Grade = 1,
+      Id = 50013,
+      KeyIDList = {60041},
+      Name = "改良：对敌数据解析",
+      buff = 0,
+      magic = 6170822
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员使用终结技后，会在原地生成一个<color=#476DBB>【机关】</color><color=#476DBB>【旋转解析光束】</color>；激光命中敌人时会生成一个<color=#476DBB>【数据】</color>，每4秒触发一次；成员触碰到<color=#476DBB>【数据】</color>时回复2格精力和40终结技能量；场上只能存在一个旋转激光，持续10秒",
+      Grade = 2,
+      Id = 50013,
+      KeyIDList = {60041},
+      Name = "改良：对敌数据解析+",
+      buff = 0,
+      magic = 6170822
+    }
+  },
+  [50014] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "<color=#476DBB>【机关】</color>损坏时，会向成员发射一束治疗子弹，治疗成员7%已损失生命值",
+      Grade = 1,
+      Id = 50014,
+      KeyIDList = {60041},
+      Name = "改良：急救改装",
+      buff = 0,
+      magic = 6170823
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "<color=#476DBB>【机关】</color>损坏时，会向成员发射一束治疗子弹，治疗成员12%已损失生命值",
+      Grade = 2,
+      Id = 50014,
+      KeyIDList = {60041},
+      Name = "改良：急救改装+",
+      buff = 0,
+      magic = 6170823
+    }
+  },
+  [50015] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "当成员对附加元素异常的敌人造成伤害时，会对其劈下一道雷电，积累雷元素异常并造成攻击力200%的伤害，每个敌人有10秒冷却",
+      Grade = 1,
+      Id = 50015,
+      Name = "改良：试做引雷",
+      buff = 0,
+      magic = 6170824
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "当成员对附加元素异常的敌人造成伤害时，会对其劈下一道雷电，积累雷元素异常并造成攻击力400%的伤害，每个敌人有10秒冷却",
+      Grade = 2,
+      Id = 50015,
+      Name = "改良：试做引雷+",
+      buff = 0,
+      magic = 6170824
+    }
+  },
+  [50016] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "在战斗中获得光尘后，所有友方单位的下一次攻击会基于相对于上次攻击时的光尘增加量提升伤害，每10点光尘提升5%，最高30%",
+      Grade = 1,
+      Id = 50016,
+      Name = "改良：物资再利用",
+      buff = 0,
+      magic = 6170825
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "在战斗中获得光尘后，所有友方单位的下一次攻击会固定提升30%伤害",
+      Grade = 2,
+      Id = 50016,
+      Name = "改良：物资再利用+",
+      buff = 0,
+      magic = 6170825
+    }
+  },
+  [50017] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "<color=#476DBB>【机关】</color>攻击命中敌人时有30%的概率获得5个光尘，基于成员暴击率超过50%的部分提升机关触发概率，最多提升20%",
+      Grade = 1,
+      Id = 50017,
+      KeyIDList = {60041},
+      Name = "假想：物质转化",
+      buff = 617001,
+      magic = 6170831
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "<color=#476DBB>【机关】</color>攻击命中敌人时有50%的概率获得5个光尘，基于成员暴击率超过50%的部分提升机关触发概率，最多提升20%",
+      Grade = 2,
+      Id = 50017,
+      KeyIDList = {60041},
+      Name = "假想：物质转化+",
+      buff = 617001,
+      magic = 6170831
+    }
+  },
+  [50018] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "通过任意途径获得的光尘数量增加50%，但成员防御力降低20%",
+      Grade = 1,
+      Id = 50018,
+      Name = "假想：简易挂载",
+      buff = 617004,
+      magic = 6170832
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "通过任意途径获得的光尘数量增加50%，但成员防御力降低10%",
+      Grade = 2,
+      Id = 50018,
+      Name = "假想：简易挂载+",
+      buff = 617004,
+      magic = 6170832
+    }
+  },
+  [50019] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员造成元素异常后，会在目标原地生成<color=#476DBB>【机关】</color><color=#476DBB>【刃式陷阱】</color>，持续10秒，周期性地对碰到的敌人造成<color=#476DBB>【灾】</color>伤害",
+      Grade = 1,
+      Id = 50019,
+      KeyIDList = {60041, 60021},
+      Name = "假想：触发式陷阱",
+      buff = 0,
+      magic = 6170833
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员造成元素异常后，会在目标原地生成<color=#476DBB>【机关】</color><color=#476DBB>【刃式陷阱】</color>，持续10秒，周期性地对碰到的敌人造成<color=#476DBB>【灾】</color>伤害；<color=#476DBB>【机关】</color><color=#476DBB>【刃式陷阱】</color>属性提高20%",
+      Grade = 2,
+      Id = 50019,
+      KeyIDList = {60041, 60021},
+      Name = "假想：触发式陷阱+",
+      buff = 0,
+      magic = 6170833
+    }
+  },
+  [50020] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "每有一个不同的友军对敌人进行攻击后，降低敌人3%伤害抗性",
+      Grade = 1,
+      Id = 50020,
+      Name = "假想：集团作战",
+      buff = 0,
+      magic = 6170834
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "每有一个不同的友军对敌人进行攻击后，降低敌人4.5%伤害抗性",
+      Grade = 2,
+      Id = 50020,
+      Name = "假想：集团作战+",
+      buff = 0,
+      magic = 6170834
+    }
+  },
+  [50021] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员精力满时使用重击，会在原地放置存在10秒的<color=#476DBB>【机关】</color><color=#476DBB>【乾式机巧】</color>，提升附近友军30%攻击力。",
+      Grade = 1,
+      Id = 50021,
+      KeyIDList = {60041},
+      Name = "假想：乾式机关",
+      buff = 0,
+      magic = 6170835
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "成员精力满时使用重击，会在原地放置存在10秒的<color=#476DBB>【机关】</color><color=#476DBB>【乾式机巧】</color>，提升附近友军30%攻击力。",
+      Grade = 2,
+      Id = 50021,
+      KeyIDList = {60041},
+      Name = "假想：乾式机关+",
+      buff = 0,
+      magic = 6170835
+    }
+  },
+  [50022] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "<color=#476DBB>【机关】</color>每6秒会释放一次范围治疗波，治疗成员3%已损失生命值",
+      Grade = 1,
+      Id = 50022,
+      KeyIDList = {60041},
+      Name = "假想：治疗粒子",
+      buff = 0,
+      magic = 6170836
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "<color=#476DBB>【机关】</color>每6秒会释放一次范围治疗波，治疗成员5%已损失生命值",
+      Grade = 2,
+      Id = 50022,
+      KeyIDList = {60041},
+      Name = "假想：治疗粒子+",
+      buff = 0,
+      magic = 6170836
+    }
+  },
+  [50023] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "每场战斗每个友方单位的第一次攻击命中时会获得5个光尘",
+      Grade = 1,
+      Id = 50023,
+      IsGodMagic = true,
+      Name = "假想：妙手测试版",
+      buff = 617001,
+      magic = 6170837
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "每场战斗每个友方单位的第一次攻击命中时会获得8个光尘",
+      Grade = 2,
+      Id = 50023,
+      IsGodMagic = true,
+      Name = "假想：妙手测试版+",
+      buff = 617002,
+      magic = 6170837
+    }
+  },
+  [50024] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "<color=#476DBB>【机关】</color>互相距离较远时，两者之间产生一道激光，对碰到的敌人造成攻击力30%的伤害",
+      Grade = 1,
+      Id = 50024,
+      KeyIDList = {60041},
+      Name = "假想：光学传导",
+      buff = 0,
+      magic = 6170838
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "<color=#476DBB>【机关】</color>互相距离较远时，两者之间产生一道激光，对碰到的敌人造成攻击力45%的伤害",
+      Grade = 2,
+      Id = 50024,
+      KeyIDList = {60041},
+      Name = "假想：光学传导+",
+      buff = 0,
+      magic = 6170838
+    }
+  },
+  [60009] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "成员释放技能命中敌人后，累计1层<color=#476DBB>【锁定】</color>，并有5%的概率累计5层<color=#476DBB>【锁定】</color>",
+      Grade = 1,
+      Id = 60009,
+      KeyIDList = {60052, 60053},
+      Name = "武装优化：精英车组",
+      buff = 0,
+      magic = 6171020
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "成员释放技能命中敌人后，累计1层<color=#476DBB>【锁定】</color>，并有10%的概率累计5层<color=#476DBB>【锁定】</color>",
+      Grade = 2,
+      Id = 60009,
+      KeyIDList = {60052, 60053},
+      Name = "武装优化：精英车组+",
+      buff = 0,
+      magic = 6171020
+    }
+  },
+  [60010] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "若成员暴击伤害超过200%时，每次因暴击而击杀敌人后，会尝试搜寻周围敌人。若搜寻到的目标为普通敌人则直接击杀；若目标为精英敌人则对其造成一次基于攻击力4000%的伤害，并削空韧性；此次攻击如果暴击且击杀敌人则不会再次触发该效果。",
+      Grade = 1,
+      Id = 60010,
+      Name = "武装优化：过穿补偿",
+      buff = 0,
+      magic = 6171019
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "若成员暴击伤害超过150%时，每次因暴击而击杀敌人后，会尝试搜寻周围敌人。若搜寻到的目标为普通敌人则直接击杀；若目标为精英敌人则对其造成一次基于攻击力4000%的伤害，并削空韧性；此次攻击如果暴击且击杀敌人则不会再次触发该效果。",
+      Grade = 2,
+      Id = 60010,
+      Name = "武装优化：过穿补偿+",
+      buff = 0,
+      magic = 6171019
+    }
+  },
+  [60011] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "普攻命中获得<color=#476DBB>【锁定】</color>的概率额外提升5% ；且<color=#476DBB>【锁定】</color>满层时消耗所有<color=#476DBB>【锁定】</color>同时射出三次<color=#476DBB>【轰鸣镭射】</color>",
+      Grade = 1,
+      Id = 60011,
+      KeyIDList = {60052, 60053},
+      Name = "武装优化：齐射循环",
+      buff = 0,
+      magic = 6171018
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 300,
+      Desc = "普攻命中获得<color=#476DBB>【锁定】</color>的概率额外提升10% ；且<color=#476DBB>【锁定】</color>满层时消耗所有<color=#476DBB>【锁定】</color>同时射出三次<color=#476DBB>【轰鸣镭射】</color>",
+      Grade = 2,
+      Id = 60011,
+      KeyIDList = {60052, 60053},
+      Name = "武装优化：齐射循环+",
+      buff = 0,
+      magic = 6171018
+    }
+  },
+  [60012] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "<color=#476DBB>【索敌】</color>期间获得30%伤害增幅，普通攻击命中累积<color=#476DBB>【锁定】</color>的概率提升至30%",
+      Grade = 1,
+      Id = 60012,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Name = "组件：重型弹鼓供弹",
+      buff = 0,
+      magic = 6171017
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "<color=#476DBB>【索敌】</color>期间获得50%伤害增幅，普通攻击命中累积<color=#476DBB>【锁定】</color>的概率提升至30%",
+      Grade = 2,
+      Id = 60012,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Name = "组件：重型弹鼓供弹+",
+      buff = 0,
+      magic = 6171017
+    }
+  },
+  [60013] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "每当成员拥有护盾且拥有<color=#476DBB>【锁定】</color>时，下一次成员受到攻击后释放<color=#476DBB>【轰鸣镭射】</color>，造成追击伤害，该效果每5秒触发一次",
+      Grade = 1,
+      Id = 60013,
+      KeyIDList = {60052, 60053},
+      Name = "组件：爆破反应装甲",
+      buff = 0,
+      magic = 6171016
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "每当成员拥有护盾且拥有<color=#476DBB>【锁定】</color>时，下一次成员受到攻击后释放<color=#476DBB>【轰鸣镭射】</color>，造成追击伤害，该效果每2.5秒触发一次",
+      Grade = 2,
+      Id = 60013,
+      KeyIDList = {60052, 60053},
+      Name = "组件：爆破反应装甲+",
+      buff = 0,
+      magic = 6171016
+    }
+  },
+  [60014] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "<color=#476DBB>【索敌】</color>开始后在场成员获得5秒无敌，若<color=#476DBB>【索敌】</color>结束成员低于30%最大生命值，则场下成员失去80%当前生命值",
+      Grade = 1,
+      Id = 60014,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Name = "组件：蜂窝式装甲",
+      buff = 0,
+      magic = 6171015
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "<color=#476DBB>【索敌】</color>开始后在场成员获得7.5秒无敌，若<color=#476DBB>【索敌】</color>结束成员低于30%最大生命值，则场下成员失去30%当前生命值",
+      Grade = 2,
+      Id = 60014,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Name = "组件：蜂窝式装甲+",
+      buff = 0,
+      magic = 6171015
+    }
+  },
+  [60015] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员生命值低于30%且未处于<color=#476DBB>【索敌】</color>时，造成的每次伤害都有10%的概率直接进入5秒的<color=#476DBB>【索敌】</color>状态，<color=#476DBB>【索敌】</color>期间无法触发该效果",
+      Grade = 1,
+      Id = 60015,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Name = "组件：燃气涡轮",
+      buff = 0,
+      magic = 6171014
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "成员生命值低于30%且未处于<color=#476DBB>【索敌】</color>时，造成的每次伤害都有20%的概率直接进入5秒的<color=#476DBB>【索敌】</color>状态，<color=#476DBB>【索敌】</color>期间无法触发该效果",
+      Grade = 2,
+      Id = 60015,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Name = "组件：燃气涡轮+",
+      buff = 0,
+      magic = 6171014
+    }
+  },
+  [60016] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "<color=#476DBB>【锁定】</color>满层后可触发2次效果，不再由普攻而是由追击伤害触发",
+      Grade = 1,
+      Id = 60016,
+      KeyIDList = {60052, 60053},
+      Name = "组件：动能穿甲弹",
+      buff = 0,
+      magic = 6171013
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 180,
+      Desc = "<color=#476DBB>【锁定】</color>满层后可触发3次效果，不再由普攻而是由追击伤害触发",
+      Grade = 2,
+      Id = 60016,
+      KeyIDList = {60052, 60053},
+      Name = "组件：动能穿甲弹+",
+      buff = 0,
+      magic = 6171013
+    }
+  },
+  [60017] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "<color=#476DBB>【索敌】</color>期间成员普攻命中会额外获得少量终结技能量",
+      Grade = 1,
+      Id = 60017,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Name = "作战：预填装",
+      buff = 0,
+      magic = 6171012
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "<color=#476DBB>【索敌】</color>期间成员普攻命中会额外获得大量终结技能量",
+      Grade = 2,
+      Id = 60017,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Name = "作战：预填装+",
+      buff = 0,
+      magic = 6171012
+    }
+  },
+  [60018] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "<color=#476DBB>【连携爆发】</color>后赋予5秒<color=#476DBB>【索敌】</color>状态",
+      Grade = 1,
+      Id = 60018,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Name = "改进：枪口制退",
+      buff = 0,
+      magic = 6171010
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "<color=#476DBB>【连携爆发】</color>后赋予10秒<color=#476DBB>【索敌】</color>状态",
+      Grade = 2,
+      Id = 60018,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Name = "改进：枪口制退+",
+      buff = 0,
+      magic = 6171010
+    }
+  },
+  [60019] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "若成员未处于<color=#476DBB>【索敌】</color>时成员技能暴击，有15%概率直接进入3秒<color=#476DBB>【索敌】</color>状态",
+      Grade = 1,
+      Id = 60019,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Name = "改进：起爆装置改良",
+      buff = 0,
+      magic = 6171009
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "若成员未处于<color=#476DBB>【索敌】</color>时成员技能暴击，有30%概率直接进入3秒<color=#476DBB>【索敌】</color>状态",
+      Grade = 2,
+      Id = 60019,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Name = "改进：起爆装置改良+",
+      buff = 0,
+      magic = 6171009
+    }
+  },
+  [60020] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "若成员未处于<color=#476DBB>【索敌】</color>时成员普攻暴击时，有10%概率直接进入3秒<color=#476DBB>【索敌】</color>状态",
+      Grade = 1,
+      Id = 60020,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Name = "改进：火力自动化",
+      buff = 0,
+      magic = 6171008
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "若成员未处于<color=#476DBB>【索敌】</color>时成员普攻暴击时，有20%概率直接进入3秒<color=#476DBB>【索敌】</color>状态",
+      Grade = 2,
+      Id = 60020,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Name = "改进：火力自动化+",
+      buff = 0,
+      magic = 6171008
+    }
+  },
+  [60021] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "所有的追击类攻击都会有5%的概率累计一层<color=#476DBB>【锁定】</color>",
+      Grade = 1,
+      Id = 60021,
+      KeyIDList = {60052, 60053},
+      Name = "改进：装填流程优化",
+      buff = 0,
+      magic = 6171007
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "所有的追击类攻击都会有10%的概率累计一层<color=#476DBB>【锁定】</color>",
+      Grade = 2,
+      Id = 60021,
+      KeyIDList = {60052, 60053},
+      Name = "改进：装填流程优化+",
+      buff = 0,
+      magic = 6171007
+    }
+  },
+  [60022] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "<color=#476DBB>【连携爆发】</color>期间，前台成员造成的伤害均有2.5%概率累计一层<color=#476DBB>【锁定】</color>",
+      Grade = 1,
+      Id = 60022,
+      KeyIDList = {60052, 60053},
+      Name = "改进：协同性训练",
+      buff = 0,
+      magic = 6171006
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "<color=#476DBB>【连携爆发】</color>期间，前台成员造成的伤害均有5%概率累计一层<color=#476DBB>【锁定】</color>",
+      Grade = 2,
+      Id = 60022,
+      KeyIDList = {60052, 60053},
+      Name = "改进：协同性训练+",
+      buff = 0,
+      magic = 6171006
+    }
+  },
+  [60023] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "释放<color=#476DBB>【轰鸣镭射】</color>后，提升全队60%追击类技能伤害增幅，持续20秒",
+      Grade = 1,
+      Id = 60023,
+      KeyIDList = {60053},
+      Name = "改进：近地支援",
+      buff = 0,
+      magic = 6171005
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "释放<color=#476DBB>【轰鸣镭射】</color>后，提升全队100%追击类技能伤害增幅，持续20秒",
+      Grade = 2,
+      Id = 60023,
+      KeyIDList = {60053},
+      Name = "改进：近地支援+",
+      buff = 0,
+      magic = 6171005
+    }
+  },
+  [60024] = {
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "释放终结技时，关卡技能冷却时间缩短10秒",
+      Grade = 1,
+      Id = 60024,
+      Name = "改进：发射管冷却",
+      buff = 0,
+      magic = 6171004
+    },
+    {
+      CostItem = 500001,
+      CostItemCount = 120,
+      Desc = "释放终结技或关卡技能时，关卡技能冷却时间缩短10秒",
+      Grade = 2,
+      Id = 60024,
+      Name = "改进：发射管冷却+",
+      buff = 0,
+      magic = 6171004
+    }
+  }
+}

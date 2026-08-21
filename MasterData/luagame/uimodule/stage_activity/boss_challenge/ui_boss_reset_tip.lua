@@ -1,0 +1,46 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local _tinsert = table.insert
+local BOSS_CHAL_RESET_TEMP_KEY = "BOSS_CHAL_RESET_TEMP_KEY"
+
+function ui:ui_finish_load()
+  self:set_button("BgClose", function()
+    self:on_click_close()
+  end)
+  self:register_exist_auto_template(BOSS_CHAL_RESET_TEMP_KEY, self.v_uiobjects.BossItemBox, self.v_uiobjects.Content)
+end
+
+function ui:on_click_close()
+  BossChallengeMgr:boss_reset_click()
+  self:ui_hide()
+end
+
+function ui:ui_on_show(reset_list)
+  self.v_reset_list = reset_list
+  self:refresh_reset_tem()
+end
+
+function ui:refresh_reset_tem()
+  self:give_back_auto_cache(BOSS_CHAL_RESET_TEMP_KEY)
+  for idx, challenge_id in ipairs(self.v_reset_list) do
+    local challenge_cfg = ShareRes.get_boss_fight_cfg(challenge_id)
+    if challenge_cfg then
+      local temp_obj = self:get_auto_cache(BOSS_CHAL_RESET_TEMP_KEY)
+      self:set_single_item(temp_obj, challenge_cfg)
+    end
+  end
+end
+
+function ui:set_single_item(obj, cfg)
+  local boss_icon = self:get_image("Boss", obj)
+  local boss_bg = self:get_rect_transform("bossBg", obj)
+  local child
+  local FrameIconPath = cfg.FrameIconPath
+  ResMgr:load_set_icon(boss_icon, cfg.IconPath, nil, true, self)
+  for i = 0, boss_bg.childCount - 1 do
+    child = boss_bg:GetChild(i)
+    child.gameObject:SetActive(string.find(FrameIconPath, child.name) ~= nil)
+  end
+end
+
+return ui

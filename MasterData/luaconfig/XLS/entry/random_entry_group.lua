@@ -1,0 +1,58 @@
+return {
+  [101] = {
+    GroupId = 1001,
+    Id = 101,
+    Probability = {
+      600,
+      400,
+      200
+    }
+  },
+  [201] = {
+    GroupId = 1001,
+    Id = 201,
+    Probability = {
+      500,
+      400,
+      300
+    }
+  },
+  [301] = {
+    GroupId = 2001,
+    Id = 301,
+    Probability = {
+      [0] = 2000,
+      400,
+      400,
+      400
+    }
+  },
+  [401] = {
+    GroupId = 2001,
+    Id = 401,
+    Probability = {
+      300,
+      400,
+      500
+    }
+  },
+  [501] = {
+    GroupId = 3001,
+    Id = 501,
+    Probability = {
+      4500,
+      3500,
+      2000
+    }
+  },
+  [601] = {
+    GroupId = 3001,
+    Id = 601,
+    Probability = {
+      [0] = 100,
+      0,
+      0,
+      0
+    }
+  }
+}

@@ -1,0 +1,39 @@
+local M = {}
+M.UI_SHOW_CONFIG = {
+  BtnNovice = "change_state_obj",
+  BtnSign = "change_state_obj",
+  BtnNotice = "change_state_obj",
+  BtnFriend = "change_state_obj",
+  BtnRenwu = "change_state_obj",
+  BtnShangcheng = "change_state_obj",
+  BtnChouka = "change_state_obj",
+  Btn_character = "change_state_obj",
+  Btn_Union = "change_state_obj",
+  Btn_Bag = "change_state_obj",
+  BtnBoxpot = "change_state_obj",
+  BtnMail = "change_state_obj",
+  BtnBuilding = "change_btn_visible",
+  BtnMonthTask = "change_btn_visible",
+  BtnMainLine = "change_btn_visible",
+  BtnActMain = "change_btn_visible"
+}
+M.UI_STATE = {open = "NotLockObj", close = "LockObj"}
+M.UI_SHOW_CONFIG_FUN = {
+  hide_total_obj = function(open, parent_obj)
+    parent_obj:SetActive(open)
+  end,
+  change_state_obj = function(open, parent_obj)
+    local state = open and "open" or "close"
+    local ui_state = M.UI_STATE
+    for state_name, ui_path in pairs(ui_state) do
+      local obj = Util.get_child_gameobj(ui_path, parent_obj)
+      if obj then
+        obj:SetActive(state == state_name)
+      end
+    end
+  end,
+  change_btn_visible = function(open, btn_obj)
+    btn_obj:SetActive(open)
+  end
+}
+return M

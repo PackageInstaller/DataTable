@@ -1,0 +1,127 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local CommonDef = require("cs_share.common_define")
+local SaticSv = require("ui.widget.static_scroll_view")
+local AwardItem = require("uimodule.linear.ui_linear_award_item")
+local Item_Helper = require("utils.item_helper")
+local MODEL = {
+  v_bg_btn = {
+    "BgBtn",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_close = {
+    "BtnClose",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_get = {
+    "BtnGet",
+    BIND_TYPE.BUTTON
+  },
+  v_got = {
+    "Got",
+    BIND_TYPE.TEXT
+  },
+  v_item_obj_com1 = {
+    "ItemObjCom1",
+    BIND_TYPE.BUTTON
+  },
+  v_un_finish = {
+    "UnFinish",
+    BIND_TYPE.TEXT
+  }
+}
+local STATE_TO_COLOR = {
+  [true] = "484243",
+  [false] = "F5EDE1"
+}
+local linear_award_list_key = "linear_award_list_key"
+local linear_award_item_key = "linear_award_item_key"
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button_listener(self.v_btn_close, function()
+    self:ui_hide()
+  end)
+  self:set_button_listener(self.v_bg_btn, function()
+    self:ui_hide()
+  end)
+  self.v_task_data = {}
+  self:register_exist_auto_template(linear_award_list_key, self.v_uiobjects.CtTem, self.v_uiobjects.Content)
+  self:register_exist_auto_template(linear_award_item_key, self.v_uiobjects.AwardItem, self.v_uiobjects.AwardContent)
+end
+
+function ui:ui_on_show(group_id)
+  self.star_cfg_list = LinearMgr:get_group_award_cfg_list(group_id)
+  self.curr_star = LinearMgr:get_group_star(group_id)
+  self:refresh_panel(self.star_cfg_list)
+  self:register_event()
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_ON_LINEAR_STAR_AWARD_RECEIVE, self.on_linear_award_receive, self)
+end
+
+function ui:on_linear_award_receive()
+  self:refresh_panel(self.star_cfg_list)
+end
+
+function ui:refresh_panel(star_cfg_list)
+  local sorted_list = {}
+  for i, cfg in pairs(star_cfg_list) do
+    table.insert(sorted_list, cfg)
+  end
+  table.sort(sorted_list, function(a, b)
+    local a_state = LinearMgr:get_group_award_finished(a.GroupId, a.StarNum)
+    local b_state = LinearMgr:get_group_award_finished(b.GroupId, b.StarNum)
+    if a_state == b_state then
+      return a.StarNum < b.StarNum
+    end
+    return b_state
+  end)
+  self:clear_task_item()
+  self:refresh_award_list(sorted_list)
+end
+
+function ui:refresh_award_list(star_cfg_list)
+  self.sv_list = {}
+  self:give_back_auto_cache(linear_award_list_key)
+  for i, cfg in ipairs(star_cfg_list) do
+    local item_obj = self:get_auto_cache(linear_award_list_key)
+    local item = AwardItem:ui_wrap_ex(self, item_obj, true)
+    item:set_data(self.curr_star, cfg)
+    item:refresh_task_item()
+    self.v_task_data[cfg.Id] = item
+  end
+end
+
+function ui:ui_on_hide()
+  self:clear_task_item()
+end
+
+function ui:clear_task_item()
+  self:give_back_auto_cache(linear_award_list_key)
+  self:give_back_auto_cache(linear_award_item_key)
+  for key, item in pairs(self.v_task_data) do
+    item:ui_hide()
+    self:remove_wrap_ui(item)
+    self.v_task_data[key] = nil
+  end
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_color(is_receive)
+  return STATE_TO_COLOR[is_receive]
+end
+
+function ui:get_award_item()
+  return self:get_auto_cache(linear_award_item_key)
+end
+
+return ui

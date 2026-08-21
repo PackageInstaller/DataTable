@@ -1,0 +1,24 @@
+return {
+  [33] = {
+    AccurateConsumeCount = 10,
+    AccurateConsumeId = 40,
+    AwardItemCount = 1,
+    AwardItemId = 40,
+    ConsumeCount = 1,
+    ConsumeId = 39,
+    CoreAwardId = 3,
+    CoreMaxCount = 300,
+    Id = 33,
+    MapGenerateId = {
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    },
+    RuleText = "面对这些从天而降的神秘礼物，可爱的贴心的无所不能的掌握精准狙击的安啾不能再坐视不管了！安啾，与你心意相通——别担心，你只需点击发射，安啾会出手搞定剩下的一切。",
+    TaskGroupId = 1001
+  }
+}

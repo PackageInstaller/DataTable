@@ -1,0 +1,391 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local AssetBarView = require("ui.asset_bar.asset_bar")
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local commonDef = require("cs_share.common_define")
+local BLESSING_ITEM_CLASS = require("uimodule.stage_activity.challenge_ring_plus.challenge_ring_plus_blessing_item")
+local CHALLENGE_RING_BLESS_ITEM = "CHALLENGE_RING_BLESS_ITEM"
+local CHALLENGE_RING_BLESS_POS_ITEM = "CHALLENGE_RING_BLESS_POS_ITEM"
+local BLESS_ITEM_STATE = {
+  UNLOCK = 3,
+  LOCK = 2,
+  WEAR = 1
+}
+local BLESS_EFFECT_STATE = {
+  NORMAL = "NORMAL",
+  UNLOCK = "UNLOCK",
+  LEVEL_UP = "LEVEL_UP"
+}
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_bless_item_scroll = {
+    "BlessItemScroll",
+    BIND_TYPE.OBJECT
+  },
+  v_bless_content = {
+    "BlessingContent",
+    BIND_TYPE.OBJECT
+  },
+  v_bless_tem = {
+    "BlessingTem",
+    BIND_TYPE.OBJECT
+  },
+  v_bless_name = {
+    "BlessingName",
+    BIND_TYPE.TEXT
+  },
+  v_bless_desc = {
+    "BlessDesc",
+    BIND_TYPE.TEXT
+  },
+  v_next_lv_layout = {
+    "NextLvLayout",
+    BIND_TYPE.OBJECT
+  },
+  v_next_lv_desc = {
+    "NextLvDesc",
+    BIND_TYPE.TEXT
+  },
+  v_btn_upgrade = {
+    "BtnUpgrade",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_unlock = {
+    "BtnUnlock",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_equip = {
+    "BtnEquip",
+    BIND_TYPE.OBJECT
+  },
+  v_btn_replace = {
+    "BtnReplace",
+    BIND_TYPE.OBJECT
+  },
+  v_btn_discharge = {
+    "BtnDischarge",
+    BIND_TYPE.OBJECT
+  },
+  v_bless_pos_content = {
+    "BlessingPosContent",
+    BIND_TYPE.OBJECT
+  },
+  v_bless_pos_tem = {
+    "BlessingPosTem",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnReturn", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnUpgrade", function()
+    if not self.v_is_can_upgrade then
+      Util.show_message_tip(2115)
+      return
+    end
+    ChallengeRingPlusMgr:request_upgrade_bless(self.v_bless_id, function()
+      self:refresh_all_item_info()
+    end)
+  end)
+  self:set_button("BtnUnlock", function()
+    if not self.v_is_can_unlock then
+      Util.show_message_tip(2115)
+      return
+    end
+    ChallengeRingPlusMgr:request_upgrade_bless(self.v_bless_id, function()
+      self:refresh_all_item_info()
+    end)
+  end)
+  self:set_button("BtnEquip", function()
+    ChallengeRingPlusMgr:request_equip_bless(self.v_bless_id, self.v_select_pos_id, function()
+      self:refresh_all_item_info()
+      self:refresh_pos_info()
+    end)
+  end)
+  self:set_button("BtnReplace", function()
+    ChallengeRingPlusMgr:request_equip_bless(self.v_bless_id, self.v_select_pos_id, function()
+      self:refresh_all_item_info()
+      self:refresh_pos_info()
+    end)
+  end)
+  self:set_button("BtnDischarge", function()
+    ChallengeRingPlusMgr:request_discharge_bless(self.v_select_pos_id, function()
+      self:refresh_all_item_info()
+      self:refresh_pos_info()
+    end)
+  end)
+  self.v_asset_bar = AssetBarView:new(self, self.v_uiobjects.AssetBar)
+  self:register_exist_auto_template(CHALLENGE_RING_BLESS_ITEM, self.v_bless_tem, self.v_bless_content)
+  self:register_exist_auto_template(CHALLENGE_RING_BLESS_POS_ITEM, self.v_bless_pos_tem, self.v_bless_pos_content)
+end
+
+function ui:ui_on_show()
+  self.v_old_bless_list = UtilTable.copy_table(ChallengeRingPlusMgr:get_bless_list())
+  self:refresh_all_item_info(true)
+  self:init_pos_item_info()
+  self:set_asset_bar_info()
+  self:set_scroll_rect_pos()
+end
+
+function ui:ui_on_hide()
+  self.v_asset_bar:on_hide()
+  self.v_select_pos_id = nil
+  self.v_select_bless_index = nil
+  self.v_sort_after_bless_group = nil
+  self:reset_pos_tog_state()
+  self:remove_wrap_list()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:set_asset_bar_info()
+  local list = Shop_Helper.get_asset_list({
+    self.v_cost_item_id
+  })
+  self.v_asset_bar:reset_config(list)
+  self.v_asset_bar:on_create()
+end
+
+function ui:set_scroll_rect_pos()
+  self.v_item_scroll_rect = Util.get_scrollrect(nil, self.v_bless_item_scroll)
+  self.v_item_scroll_rect.verticalNormalizedPosition = 1
+end
+
+function ui:refresh_all_item_info(is_first)
+  self:give_back_auto_cache(CHALLENGE_RING_BLESS_ITEM, false)
+  self:remove_wrap_list()
+  self.v_bless_item_list = {}
+  local main_cfg = ChallengeRingPlusMgr:get_main_cfg()
+  local bless_group = ChallengeRingPlusMgr:get_bless_group(main_cfg.BlessGroupID)
+  local bless_list = ChallengeRingPlusMgr:get_bless_list()
+  local bless_pos_list = ChallengeRingPlusMgr:get_bless_pos_list()
+  local is_change = false
+  self:set_sort_after_bless_group(is_first, bless_group, bless_list, bless_pos_list)
+  for index, cfg in ipairs(self.v_sort_after_bless_group) do
+    local data = bless_list[cfg.BlessId]
+    local old_data = self.v_old_bless_list[cfg.BlessId]
+    local item = self:get_auto_cache(CHALLENGE_RING_BLESS_ITEM)
+    local item_lua_obj = BLESSING_ITEM_CLASS:ui_wrap_ex(self, item, false)
+    local is_wear = false
+    for _, bless_pos_data in pairs(bless_pos_list) do
+      if bless_pos_data.bless_id and bless_pos_data.bless_id == cfg.BlessId then
+        is_wear = true
+        break
+      end
+    end
+    local bless_current_lv_cfg = ChallengeRingPlusMgr:get_bless_lv_cfg(cfg.BlessId, data.level)
+    local bless_next_lv_cfg = ChallengeRingPlusMgr:get_bless_lv_cfg(cfg.BlessId, data.level + 1)
+    local bless_max_lv = ChallengeRingPlusMgr:get_bless_max_lv(cfg.BlessId)
+    local effect_state = BLESS_EFFECT_STATE.NORMAL
+    if data.level ~= old_data.level then
+      if 0 == old_data.level then
+        effect_state = BLESS_EFFECT_STATE.UNLOCK
+      else
+        effect_state = BLESS_EFFECT_STATE.LEVEL_UP
+      end
+      is_change = true
+    end
+    item_lua_obj:set_enable(true, bless_current_lv_cfg, bless_next_lv_cfg, is_wear, bless_max_lv, index, effect_state)
+    table.insert(self.v_bless_item_list, item_lua_obj)
+  end
+  if is_first then
+    self.v_bless_item_list[1]:force_onclick()
+  else
+    self.v_bless_item_list[self.v_select_bless_index]:force_onclick()
+  end
+  if is_change then
+    self.v_old_bless_list = UtilTable.copy_table(bless_list)
+  end
+end
+
+function ui:set_sort_after_bless_group(is_first, bless_group, bless_list, bless_pos_list)
+  if is_first then
+    self.v_sort_after_bless_group = UtilTable.copy_table(bless_group)
+    for index, cfg in ipairs(self.v_sort_after_bless_group) do
+      local data = bless_list[cfg.BlessId]
+      if 0 == data.level then
+        cfg.state = BLESS_ITEM_STATE.LOCK
+      else
+        cfg.state = BLESS_ITEM_STATE.UNLOCK
+      end
+      for _, bless_pos_data in pairs(bless_pos_list) do
+        if bless_pos_data.bless_id and bless_pos_data.bless_id == cfg.BlessId then
+          cfg.state = BLESS_ITEM_STATE.WEAR
+          break
+        end
+      end
+    end
+    table.sort(self.v_sort_after_bless_group, function(a, b)
+      if a.state == b.state then
+        if a.Priority == b.Priority then
+          return a.Id < b.Id
+        else
+          return a.Priority < b.Priority
+        end
+      else
+        return a.state > b.state
+      end
+    end)
+  end
+end
+
+function ui:init_pos_item_info()
+  self:give_back_auto_cache(CHALLENGE_RING_BLESS_POS_ITEM, false)
+  self.v_pos_tog_list = {}
+  self.v_pos_item_list = {}
+  local default_select_pos
+  local bless_pos_list = ChallengeRingPlusMgr:get_bless_pos_list()
+  local bless_bag_pos_cfg = ShareRes.create("activity.curse_ring_bless_bag_pos")
+  for index, cfg in ipairs(bless_bag_pos_cfg) do
+    local pos_item = self:get_auto_cache(CHALLENGE_RING_BLESS_POS_ITEM)
+    local data = bless_pos_list[cfg.Id]
+    local icon_obj = self:get_child_gameobj("BlessingIcon", pos_item)
+    local icon_img = self:get_image("BlessingIcon", pos_item)
+    local lock_obj = self:get_child_gameobj("Lock", pos_item)
+    if data.is_lock then
+      icon_obj:SetActive(false)
+      lock_obj:SetActive(true)
+    else
+      if data.bless_id then
+        icon_obj:SetActive(true)
+        local bless_list = ChallengeRingPlusMgr:get_bless_list()
+        local bless_data = bless_list[data.bless_id]
+        local bless_lv_cfg = ChallengeRingPlusMgr:get_bless_lv_cfg(data.bless_id, bless_data.level)
+        ResMgr:load_set_icon(icon_img, bless_lv_cfg.Icon)
+      else
+        icon_obj:SetActive(false)
+        if nil == default_select_pos then
+          default_select_pos = index
+        end
+      end
+      lock_obj:SetActive(false)
+    end
+    local tog = Util.get_toggle(nil, pos_item)
+    self:set_toggle_listener(tog, function(isOn)
+      self:on_click_pos_tog(isOn, data.is_lock, data.pos_id, cfg.Condition)
+    end)
+    self.v_pos_tog_list[data.pos_id] = tog
+    self.v_pos_item_list[index] = pos_item
+  end
+  if default_select_pos then
+    self.v_pos_tog_list[default_select_pos].isOn = true
+  end
+end
+
+function ui:on_click_pos_tog(isOn, is_lock, pos_id, condition_id)
+  self.v_pos_tog_list[pos_id].interactable = not isOn
+  if not isOn then
+    return
+  end
+  if is_lock then
+    if self.v_select_pos_id == nil then
+      self.v_pos_tog_list[pos_id].isOn = false
+    else
+      self.v_pos_tog_list[self.v_select_pos_id].isOn = true
+    end
+    Util.show_message_tip(ShareRes.get_condition_desc(condition_id))
+    return
+  end
+  self.v_select_pos_id = pos_id
+  self:refresh_all_item_info()
+end
+
+function ui:refresh_current_select_item_info(bless_current_lv_cfg, bless_next_lv_cfg, is_wear, bless_index)
+  self.v_select_bless_index = bless_index
+  if bless_current_lv_cfg then
+    self.v_bless_name.text = bless_current_lv_cfg.Name
+    self.v_bless_desc.text = bless_current_lv_cfg.Desc
+    self.v_bless_id = bless_current_lv_cfg.Id
+    self.v_cost_item_id = bless_current_lv_cfg.CostItem
+    self.v_btn_unlock.gameObject:SetActive(false)
+    if self.v_select_pos_id then
+      local bless_pos_list = ChallengeRingPlusMgr:get_bless_pos_list()
+      local bless_pos_data = bless_pos_list[self.v_select_pos_id]
+      local can_discharge = false
+      if bless_pos_data.bless_id and bless_pos_data.bless_id == self.v_bless_id then
+        can_discharge = true
+      end
+      self.v_btn_equip:SetActive(not is_wear and not bless_pos_data.bless_id)
+      self.v_btn_replace:SetActive(is_wear or bless_pos_data.bless_id)
+      self.v_btn_discharge:SetActive(is_wear and can_discharge)
+    else
+      self.v_btn_equip:SetActive(false)
+      self.v_btn_replace:SetActive(false)
+      self.v_btn_discharge:SetActive(false)
+    end
+    if bless_next_lv_cfg then
+      self.v_btn_upgrade.gameObject:SetActive(true)
+      self.v_is_can_upgrade = BagMgr:get_item_num(bless_next_lv_cfg.CostItem) >= bless_next_lv_cfg.CostCnt
+      if bless_current_lv_cfg.UpgradeDesc ~= "" then
+        self.v_next_lv_layout:SetActive(true)
+        self.v_next_lv_desc.text = bless_current_lv_cfg.UpgradeDesc
+      else
+        self.v_next_lv_layout:SetActive(false)
+      end
+    else
+      self.v_btn_upgrade.gameObject:SetActive(false)
+      self.v_next_lv_layout:SetActive(false)
+    end
+  else
+    self.v_bless_name.text = bless_next_lv_cfg.Name
+    self.v_bless_desc.text = bless_next_lv_cfg.Desc
+    self.v_bless_id = bless_next_lv_cfg.Id
+    self.v_cost_item_id = bless_next_lv_cfg.CostItem
+    self.v_btn_upgrade.gameObject:SetActive(false)
+    self.v_btn_unlock.gameObject:SetActive(true)
+    self.v_is_can_unlock = BagMgr:get_item_num(bless_next_lv_cfg.CostItem) >= bless_next_lv_cfg.CostCnt
+    self.v_btn_equip:SetActive(false)
+    self.v_btn_replace:SetActive(false)
+    self.v_btn_discharge:SetActive(false)
+    self.v_next_lv_layout:SetActive(false)
+  end
+end
+
+function ui:refresh_pos_info()
+  local bless_pos_list = ChallengeRingPlusMgr:get_bless_pos_list()
+  local bless_bag_pos_cfg = ShareRes.create("activity.curse_ring_bless_bag_pos")
+  for index, cfg in ipairs(bless_bag_pos_cfg) do
+    local data = bless_pos_list[cfg.Id]
+    local pos_item = self.v_pos_item_list[index]
+    local icon_obj = self:get_child_gameobj("BlessingIcon", pos_item)
+    local icon_img = self:get_image("BlessingIcon", pos_item)
+    local lock_obj = self:get_child_gameobj("Lock", pos_item)
+    if data.is_lock then
+      icon_obj:SetActive(false)
+      lock_obj:SetActive(true)
+    else
+      if data.bless_id then
+        icon_obj:SetActive(true)
+        local bless_list = ChallengeRingPlusMgr:get_bless_list()
+        local bless_data = bless_list[data.bless_id]
+        local bless_lv_cfg = ChallengeRingPlusMgr:get_bless_lv_cfg(data.bless_id, bless_data.level)
+        ResMgr:load_set_icon(icon_img, bless_lv_cfg.Icon)
+      else
+        icon_obj:SetActive(false)
+      end
+      lock_obj:SetActive(false)
+    end
+  end
+end
+
+function ui:reset_pos_tog_state()
+  for _, tog in pairs(self.v_pos_tog_list) do
+    tog.isOn = false
+  end
+end
+
+function ui:remove_wrap_list()
+  if self.v_bless_item_list then
+    for _, obj in pairs(self.v_bless_item_list) do
+      self:remove_wrap_ui(obj)
+    end
+    self.v_bless_item_list = nil
+  end
+end
+
+return ui

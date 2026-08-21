@@ -1,0 +1,96 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_camera_obj = {
+    "Camera",
+    BIND_TYPE.OBJECT
+  },
+  v_click_bg = {
+    "ClickBg",
+    BIND_TYPE.BUTTON
+  }
+}
+local Camera = typeof(UnityEngine.Camera)
+local Layer = require("utils.layer")
+local Input = UnityEngine.Input
+local MaxHitLen = 100
+local Vec2 = require("base.vec2")
+local DEFUALT_CAMERA_POSITION = "DefualtPosition"
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+end
+
+function ui:ui_on_show(container)
+  local defualt_camera_pos_obj = container:Get(DEFUALT_CAMERA_POSITION)
+  if nil == defualt_camera_pos_obj then
+    Log.Error("can't find defualt camera position gameobject in scene!")
+    return
+  end
+  self.v_container = container
+  local defualt_camera_pos_trans = defualt_camera_pos_obj.transform
+  self.v_camera = self.v_camera_obj:GetComponent(Camera)
+  self.v_camera_trans = self.v_camera_obj.transform
+  self.v_camera_trans.position = defualt_camera_pos_trans.position
+  self.v_camera_trans.rotation = defualt_camera_pos_trans.rotation
+end
+
+function ui:get_camera_rotation()
+  return self.v_camera_trans.rotation
+end
+
+function ui:get_camera_euler_angles()
+  return self.v_camera_trans.eulerAngles
+end
+
+function ui:move_camera_to_pos(pos, time, cb)
+  self.v_camera_trans:DOMove(pos, time):OnComplete(function()
+    self.v_is_camera_moving = false
+    if cb then
+      cb()
+    end
+  end)
+end
+
+function ui:move_camera_to_scene_obj_position(obj_name, time, cb)
+  local cam_pos_obj = self.v_container:Get(obj_name)
+  if not cam_pos_obj then
+    Log.Error("can't find ", obj_name)
+    return
+  end
+  self.v_is_camera_moving = true
+  self:move_camera_to_pos(cam_pos_obj.transform.position, time, cb)
+end
+
+function ui:move_camera_to_defualt_position(time, cb)
+  self:move_camera_to_scene_obj_position(DEFUALT_CAMERA_POSITION, time, cb)
+end
+
+function ui:get_click_obj(layer, max_ray_len)
+  if self.v_is_camera_moving then
+    return
+  end
+  layer = layer or Layer.LayerMask.UIModelView
+  max_ray_len = max_ray_len or MaxHitLen
+  local temp_pos = Vec2.New(Input.mousePosition.x, Input.mousePosition.y)
+  local ray = self.v_camera:ScreenPointToRay(temp_pos)
+  local dir = ray.direction
+  local org = ray.origin
+  local is_hit, obj = CSHelper.RayCastGameObject(org.x, org.y, org.z, dir.x, dir.y, dir.z, max_ray_len, layer)
+  if is_hit and nil ~= obj then
+    return obj
+  end
+end
+
+function ui:world_to_screen_pos(x, y, z)
+  return self.v_camera:WorldToScreenPointA(x, y, z)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+return ui

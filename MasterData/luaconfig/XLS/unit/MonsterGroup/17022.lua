@@ -1,0 +1,145 @@
+return {
+  unitList = {
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = true,
+      Camp = 4,
+      UnitID = 20204301,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "0_17022_0",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 40104404,
+      BornPos = {
+        -3.37044287,
+        3.00066376,
+        -163.818848
+      }
+    },
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = true,
+      Camp = 4,
+      UnitID = 20204301,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "0_17022_1",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 40104404,
+      BornPos = {
+        4.350636,
+        3.00066376,
+        -163.61702
+      }
+    },
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = true,
+      Camp = 4,
+      UnitID = 20204301,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "0_17022_2",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 40104404,
+      BornPos = {
+        4.13086748,
+        3.00066376,
+        -161.988174
+      }
+    },
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = true,
+      Camp = 4,
+      UnitID = 20104501,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "0_17022_3",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 40104404,
+      BornPos = {
+        6.796773,
+        3.00066376,
+        -163.591476
+      }
+    },
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = true,
+      Camp = 4,
+      UnitID = 20104501,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "0_17022_4",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 40104404,
+      BornPos = {
+        -6.140415,
+        3.00066376,
+        -164.255814
+      }
+    },
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      IsLookAtRole = true,
+      Camp = 4,
+      UnitID = 20104501,
+      InitPos = "M1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "0_17022_5",
+      AutoLevel = 1,
+      Delay = 0.0,
+      MagicId = 40104404,
+      BornPos = {
+        -6.19170666,
+        3.00066376,
+        -162.177841
+      }
+    }
+  },
+  Name = "",
+  Id = 17022,
+  Type = 0
+}

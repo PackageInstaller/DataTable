@@ -1,0 +1,265 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local bagConfig = require("gamelogic.character.fight_bag_configs")
+local CommonDefine = require("cs_share.common_define")
+local CURSE_CARD_TYPE = CommonDefine.CURSE_CARD_TYPE
+local CHAL_TYPE2FORMN_TYPE = CommonDefine.CHAL_TYPE2FORMN_TYPE
+local CURSE_OBJ_CALSS = require("uimodule.stage_activity.challenge_ring_plus.curse_obj")
+local CHALLENGE_RING_CHAR_LIST_CLASS = require("uimodule.stage_activity.challenge_ring_plus.challene_ring_plus_char_list")
+local CHALLENGE_RING_RUNE_FORGE_INFO_CLASS = require("uimodule.stage_activity.challenge_ring_plus.challene_ring_plus_rune_forge_info")
+local CHALLENGE_RING_RUNE_FORGE_ROOM_CHAR_HEAD = "CHALLENGE_RING_RUNE_FORGE_ROOM_CHAR_HEAD"
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_char_content = {
+    "CharContent",
+    BIND_TYPE.OBJECT
+  },
+  v_char_tem = {
+    "CharTem",
+    BIND_TYPE.OBJECT
+  },
+  v_team_rune_lv = {
+    "TeamRuneLv",
+    BIND_TYPE.TEXT
+  },
+  v_rune_forge_info = {
+    "RuneForgeInfo",
+    BIND_TYPE.OBJECT
+  },
+  v_show_char = {
+    "ShowChar",
+    BIND_TYPE.IMAGE
+  },
+  v_char_mask = {
+    "CharMask",
+    BIND_TYPE.IMAGE
+  },
+  v_gold_need = {
+    "GoldNeed",
+    BIND_TYPE.TEXT
+  },
+  v_curse_need = {
+    "CurseNeed",
+    BIND_TYPE.TEXT
+  },
+  v_curse_obj = {
+    "CurseObj",
+    BIND_TYPE.OBJECT
+  },
+  v_asset_item = {
+    "AssetItem",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnReturn", function()
+    if self.v_is_click_pay then
+      ChallengeRingPlusMgr:req_remove_card(function()
+        self:ui_hide()
+      end)
+    else
+      self:ui_hide()
+    end
+  end)
+  self:set_button("BtnPayGold", function()
+    self:on_click_pay_btn(false)
+  end)
+  self:set_button("BtnPayCurse", function()
+    self:on_click_pay_btn(true)
+  end)
+  self:register_exist_auto_template(CHALLENGE_RING_RUNE_FORGE_ROOM_CHAR_HEAD, self.v_char_tem, self.v_char_content)
+end
+
+function ui:ui_on_show(type, forge_id)
+  self.v_type = type
+  self.v_forge_id = forge_id
+  self.v_hero = Global.hero
+  self.v_forge_cfg = ShareRes.create("activity.curse_forge", self.v_forge_id)
+  self.v_is_click_pay = false
+  self:bind_event()
+  self:set_curse_view()
+  self:refresh_currency()
+  self:set_char_list_view()
+end
+
+function ui:ui_on_hide()
+  self.v_current_skill_tog_index = nil
+  self:clear_wrap_char_list()
+  self:clear_wrap_rune_forge_info()
+  self:clear_wrap_curse_obj()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:bind_event()
+  self:bind_auto_mq(Const.MSG_ON_SELECT_CURSE_RUNE_HERO_HEAD, self.response_click_hero_head, self)
+  self:bind_auto_mq(Const.MSG_ON_FIGHT_DIAMOND_UPDATE, self.refresh_currency, self)
+end
+
+function ui:set_curse_view()
+  self.v_curse_view = CURSE_OBJ_CALSS:ui_wrap(self, self.v_curse_obj, false)
+  self.v_curse_view:set_enable(true)
+end
+
+function ui:refresh_currency()
+  local moneyId = bagConfig.SHOW_CURRENCY[1]
+  local cfg = FightBagMgr:get_cfg_by_id(moneyId)
+  local moneyIcon = Util.get_image("Label", self.v_asset_item)
+  ResMgr:load_set_icon(moneyIcon, UtilUI.get_battle_item_icon(cfg.Id))
+  local moneyTxt = Util.get_text("Aomunt", self.v_asset_item)
+  moneyTxt.text = CharacterMgr:get_res_val(moneyId)
+end
+
+function ui:set_char_list_view()
+  self:give_back_auto_cache(CHALLENGE_RING_RUNE_FORGE_ROOM_CHAR_HEAD, false)
+  local fight_info = TowerMgr:get_fight_info()
+  local fight_type = fight_info.type
+  local formation_type = CHAL_TYPE2FORMN_TYPE[fight_type]
+  local cur_id = FormationMgr:get_formation_use_id(formation_type, fight_type)
+  local _, team_list = FormationMgr:get_formation_info_by_id(formation_type, cur_id, fight_type)
+  local team_rune_sum_lv = 0
+  self:clear_wrap_char_list()
+  self.v_char_list = {}
+  local now_uuid = self.v_hero.uuid
+  local select_idx = 1
+  for index, data in ipairs(team_list) do
+    local buddy_id = data.buddy_id
+    if buddy_id > 0 then
+      local char_head_obj = self:get_auto_cache(CHALLENGE_RING_RUNE_FORGE_ROOM_CHAR_HEAD)
+      local char_head_lua_obj = CHALLENGE_RING_CHAR_LIST_CLASS:ui_wrap_ex(self, char_head_obj, true)
+      local hero = SceneMgr:get_hero_by_id(buddy_id)
+      if hero.uuid == now_uuid then
+        select_idx = index
+      end
+      char_head_lua_obj:set_data(hero, self.v_type)
+      team_rune_sum_lv = team_rune_sum_lv + char_head_lua_obj:get_rune_lv()
+      self.v_char_list[index] = char_head_lua_obj
+    end
+  end
+  self.v_team_rune_lv.text = team_rune_sum_lv
+  self.v_char_list[select_idx]:force_onclick()
+end
+
+function ui:response_click_hero_head(msg)
+  if not msg then
+    return
+  end
+  self.v_hero = msg.mm_obj
+  self:refresh_hero_ui()
+end
+
+function ui:refresh_hero_ui()
+  self:refresh_hero_image()
+  self:refresh_rune_forge_info()
+  self:refresh_pay_btn_info()
+end
+
+function ui:refresh_hero_image()
+  local buddy_id = self.v_hero.buddy_cfg.Id
+  local hero_icon = UtilUI.get_hero_images(buddy_id, Config.HERO_ICON_LV.HD_FULL_IMG)
+  if not hero_icon then
+    return
+  end
+  ResMgr:load_set_icon(self.v_show_char, hero_icon, nil, true, self)
+  ResMgr:load_set_icon(self.v_char_mask, hero_icon, nil, true, self)
+  self.v_char_mask.gameObject:SetActive(self.v_hero and self.v_hero:is_die())
+end
+
+function ui:refresh_rune_forge_info()
+  self:clear_wrap_rune_forge_info()
+  self.v_rune_forge_lua_obj = CHALLENGE_RING_RUNE_FORGE_INFO_CLASS:ui_wrap_ex(self, self.v_rune_forge_info, true)
+  self.v_rune_forge_lua_obj:set_data(self.v_hero, self.v_type, self.v_forge_id, self.v_current_skill_tog_index)
+end
+
+function ui:refresh_pay_btn_info()
+  local buddy_rune_info = Rune2Mgr:get_rune_buddy_info(self.v_hero.buddy_cfg.Id)
+  if buddy_rune_info then
+    self.v_gold_need.text = ChallengeRingPlusMgr:get_after_discount_price(self.v_forge_cfg.CoinCnt)
+    self.v_curse_need.text = self.v_forge_cfg.CurseCnt
+  else
+    self.v_gold_need.text = 0
+    self.v_curse_need.text = 0
+  end
+end
+
+function ui:refresh_team_rune_lv()
+  local team_rune_sum_lv = 0
+  for _, char_head_lua_obj in pairs(self.v_char_list) do
+    char_head_lua_obj:refresh_info()
+    team_rune_sum_lv = team_rune_sum_lv + char_head_lua_obj:get_rune_lv()
+  end
+  self.v_team_rune_lv.text = team_rune_sum_lv
+end
+
+function ui:set_current_skill_tog_index(index)
+  self.v_current_skill_tog_index = index
+end
+
+function ui:clear_wrap_char_list()
+  if self.v_char_list then
+    for _, obj in pairs(self.v_char_list) do
+      self:remove_wrap_ui(obj)
+    end
+    self.v_char_list = nil
+  end
+end
+
+function ui:clear_wrap_rune_forge_info()
+  if self.v_rune_forge_lua_obj then
+    self.v_rune_forge_lua_obj:ui_hide()
+    self:remove_wrap_ui(self.v_rune_forge_lua_obj)
+    self.v_rune_forge_lua_obj = nil
+  end
+end
+
+function ui:clear_wrap_curse_obj()
+  self:remove_wrap_ui(self.v_curse_view)
+  self.v_curse_view = nil
+end
+
+function ui:on_click_pay_btn(is_use_curse)
+  if not self.v_hero then
+    Util.show_message_tip(1086)
+    return
+  end
+  local buddy_rune_info = Rune2Mgr:get_rune_buddy_info(self.v_hero.buddy_cfg.Id)
+  if not buddy_rune_info then
+    Util.show_message_tip(2284)
+    return
+  end
+  if is_use_curse then
+    if not ChallengeRingPlusMgr:is_can_buy(self.v_forge_cfg.CurseCnt) then
+      Util.show_message_tip(2115)
+      return
+    end
+  else
+    local moneyId = bagConfig.SHOW_CURRENCY[1]
+    local cost_num = ChallengeRingPlusMgr:get_after_discount_price(self.v_forge_cfg.CoinCnt)
+    if cost_num > CharacterMgr:get_res_val(moneyId) then
+      Util.show_message_tip(2115)
+      return
+    end
+  end
+  if self.v_type == CURSE_CARD_TYPE.FORGE_UPGRADE then
+    ChallengeRingPlusMgr:request_rune_forge_upgrade(self.v_hero.uuid, is_use_curse, function()
+      self.v_is_click_pay = true
+      self:refresh_hero_ui()
+      self:refresh_team_rune_lv()
+    end)
+  elseif self.v_type == CURSE_CARD_TYPE.FORGE_ENTRY then
+    ChallengeRingPlusMgr:request_rune_forge_entry(self.v_hero.uuid, is_use_curse, function()
+      self.v_is_click_pay = true
+      self:refresh_hero_ui()
+      self:refresh_team_rune_lv()
+    end)
+  end
+end
+
+return ui

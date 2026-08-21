@@ -1,0 +1,2 @@
+local empty = {}
+return empty

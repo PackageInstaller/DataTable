@@ -1,0 +1,37 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local player_icon_path_prefix = "Icon/Profile/%s"
+
+function M:set_data(src_data)
+  self.v_src_data = src_data
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  local select_btn = self:get_button(nil, nil)
+  local profile_img = ucom.Profile_img
+  local choose_obj = uobj.Choose
+  local used_obj = uobj.Used
+  local lock_obj = uobj.Lock
+  local avatar_cfg = src_data.avatar_cfg
+  local is_use = src_data.is_use
+  local un_get = src_data.un_get
+  local icon_path = string.format(player_icon_path_prefix, avatar_cfg.Icon)
+  ResMgr:load_set_icon(profile_img, icon_path)
+  choose_obj:SetActive(false)
+  used_obj:SetActive(is_use)
+  lock_obj:SetActive(un_get)
+  self:set_button_listener(select_btn, function()
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_SELECTED_PLAYER_AVATAR_ITEM)
+    msg.mm_obj = src_data
+  end)
+end
+
+function M:on_clear()
+  self:unbind_all_auto_mq()
+end
+
+function M:set_selected(is_select)
+  local uobj = self.v_uiobjects
+  uobj.Choose:SetActive(is_select)
+end
+
+return M

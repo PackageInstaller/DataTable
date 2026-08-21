@@ -1,0 +1,52 @@
+local lrc4 = require("rc4.c")
+local crypt = require("crypt")
+local CryptoTypePlain = 1
+local CryptoTypeRC4 = 2
+local CompressionTypePlain = 1
+local CompressionTypeLZ4 = 2
+local M = Util.create_class()
+M.CryptoTypePlain = CryptoTypePlain
+M.CryptoTypeRC4 = CryptoTypeRC4
+M.CompressionTypePlain = CompressionTypePlain
+M.CompressionTypeLZ4 = CompressionTypeLZ4
+
+function M:_init()
+  self.v_encode_tb = {}
+end
+
+function M:init_rc4_cryptor(key)
+  self.v_secret_writer = lrc4.rc4(key)
+  self.v_secret_reader = lrc4.rc4(key)
+end
+
+function M:pack_c2s(req_encode, proto_id, crypto_type)
+  crypto_type = crypto_type or self.v_secret_writer and CryptoTypeRC4 or CryptoTypePlain
+  local compress_type = CompressionTypePlain
+  local temp = self.v_encode_tb
+  temp[1] = string.pack(">I8", Global.player_uuid)
+  temp[2] = string.pack(">I8", proto_id)
+  temp[3] = req_encode
+  local data = table.concat(temp, "")
+  if crypto_type == CryptoTypeRC4 then
+    data = self.v_secret_writer:crypt(data)
+  elseif crypto_type ~= CryptoTypePlain then
+    error(string.format("decrypt %s not implement now", crypto_type))
+  end
+  assert(compress_type == CompressionTypePlain, string.format("decompress %s not implement now", compress_type))
+  return string.pack("B", crypto_type) .. string.pack("B", compress_type) .. data
+end
+
+function M:unpack_s2c(encode)
+  local crypto_type, next_pos = string.unpack("B", encode)
+  local compress_type, next_pos = string.unpack("B", encode, next_pos)
+  local data = encode:sub(next_pos)
+  if crypto_type == CryptoTypeRC4 then
+    data = self.v_secret_reader:crypt(data)
+  elseif crypto_type ~= CryptoTypePlain then
+    error(string.format("decrypt %s not implement now", crypto_type))
+  end
+  assert(compress_type == CompressionTypePlain, string.format("decompress %s not implement now", compress_type))
+  return data
+end
+
+return M

@@ -1,0 +1,157 @@
+local Base = require("ui.widget.widget_base")
+local M = Util.create_child_mt(Base)
+
+function M:_init(parent_ui, scroll_gameobj, template_class)
+  self.v_parent_ui = parent_ui
+  self.v_scroll_gameobj = scroll_gameobj
+  self.v_scrollviewex = scroll_gameobj:GetComponent(typeof(CS.Game.ScrollViewEx2))
+  assert(self.v_scrollviewex, "should have ScrollViewEx2 component !!")
+  self.v_scrollret = scroll_gameobj:GetComponent(typeof(UnityEngine.UI.ScrollRect))
+  local com = self.v_scrollret.content:GetComponent(typeof(UnityEngine.UI.LayoutGroup))
+  if com and com.enabled then
+    Log.Error("使用ScrollViewEx2，需要关闭布局组件！")
+    return
+  end
+  local fitter = self.v_scrollret.content:GetComponent(typeof(UnityEngine.UI.ContentSizeFitter))
+  if fitter and fitter.enabled then
+    Log.Error("使用ScrollViewEx2，需要关闭自适应组件！")
+    return
+  end
+  self.v_cell_gameobj_list = {}
+  local dict = self.v_scrollviewex:GetCurrentCellIndexDict()
+  for index, obj in pairs(dict) do
+    self.v_cell_gameobj_list[#self.v_cell_gameobj_list + 1] = obj
+  end
+  self.v_scrollviewex:SetIndexChangeAction(function(obj, insert_index, move_index)
+    self:_update_scrollview_cell(move_index, insert_index, obj)
+  end)
+  self.ItemClass = template_class
+  self.v_data = nil
+  self.v_items = {}
+  self.v_need_item_parent_ui = nil
+end
+
+function M:refresh_data(list)
+  self:_clear_uis()
+  self.v_data = list
+  self.v_data_count = #list
+end
+
+function M:reload_data(list)
+  self.v_data = list
+  self.v_data_count = #list
+  local data_index
+  for index, item in pairs(self.v_items) do
+    if index < 0 then
+      local remainder = -index % self.v_data_count
+      data_index = 0 ~= remainder and -remainder + self.v_data_count + 1 or 1
+    else
+      data_index = index + 1
+      data_index = data_index % self.v_data_count
+      if 0 == data_index then
+        data_index = self.v_data_count
+      end
+    end
+    item:set_data(self.v_data[data_index])
+  end
+end
+
+function M:_update_scrollview_cell(move_index, insert_index, obj)
+  self:remove_item(move_index)
+  self:create_item(insert_index, obj)
+end
+
+function M:create_item(index, obj)
+  local item = self.v_items[index]
+  if not item then
+    item = self.ItemClass:ui_wrap_ex(self.v_parent_ui, obj, true)
+    self.v_items[index] = item
+  end
+  local data_index
+  if index < 0 then
+    local remainder = -index % self.v_data_count
+    data_index = 0 ~= remainder and -remainder + self.v_data_count + 1 or 1
+  else
+    data_index = index + 1
+    data_index = data_index % self.v_data_count
+    if 0 == data_index then
+      data_index = self.v_data_count
+    end
+  end
+  item:set_data(self.v_data[data_index])
+end
+
+function M:remove_item(index)
+  local move_item = self.v_items[index]
+  if move_item then
+    move_item:ui_hide(true)
+    move_item:ui_destroy()
+    if self.v_parent_ui then
+      self.v_parent_ui:remove_wrap_ui(move_item)
+    end
+    self.v_items[index] = nil
+  end
+end
+
+function M:set_scroll_value_chang(cb)
+  self.v_scrollviewex:SetScrollChangeEvent(cb)
+end
+
+function M:get_item_ui(index)
+  return self.v_items[index]
+end
+
+function M:get_all_uis()
+  return self.v_items
+end
+
+function M:refresh_show_list()
+  local dict = self.v_scrollviewex:GetCurrentCellIndexDict()
+  for index, obj in pairs(dict) do
+    self:_update_scrollview_cell(index, index, obj)
+  end
+end
+
+function M:scroll_to_item(index)
+end
+
+function M:get_is_in_view(index)
+  local item = self.v_items[index]
+  if not item or item:is_destroy() then
+    return false
+  end
+  local rect = Util.get_rect_transform(nil, item:get_object())
+  return Util.is_rect_in_screen(rect)
+end
+
+function M:get_cell_gameobj_list()
+  return self.v_cell_gameobj_list
+end
+
+function M:_clear_uis()
+  if self.v_items then
+    for k, v in pairs(self.v_items) do
+      v:ui_hide(true)
+      v:ui_destroy()
+    end
+  end
+  self.v_items = {}
+end
+
+function M:ui_on_hide()
+  self:_clear_uis()
+end
+
+function M:ui_on_destroy()
+  self:_clear_uis()
+  self.v_items = nil
+  self.v_need_item_parent_ui = nil
+  self.v_cell_gameobj_list = nil
+  self.v_scrollviewex:ClearListener()
+end
+
+function M:clear_listener()
+  self.v_scrollviewex:SetScrollChangeEvent(nil)
+end
+
+return M

@@ -1,0 +1,202 @@
+local Math = require("base.mathx")
+local Quat = require("base.quat")
+local Vec3 = require("base.vec3")
+local CSDebug = UnityEngine.Debug
+local Color = UnityEngine.Color
+local CSVector3 = UnityVector3
+local _clamp = Math.Clamp
+local _lerp = Math.lerp_number
+local _abs = math.abs
+local _tinsert = table.insert
+local FightDefine = require("cs_share.fight_define")
+local ATTR_TYPE = FightDefine.ATTR_TYPE
+local M = Util.create_class()
+
+function M:_init(camera_lua)
+  self.v_camera = camera_lua
+  self.v_camera_transform = camera_lua.v_camera_transform
+  self.v_focal_offset = Vec3.New(0, 0, 0)
+  self:creat_camera_aimed_parents()
+  self:init_camera_aimed_ui()
+end
+
+function M:on_release()
+  if self.v_god_attr_change_handle then
+    MsgGame:mq_unbind(self.v_god_attr_change_handle)
+    self.v_god_attr_change_handle = nil
+  end
+  if self.v_camera_aimed_trans.gameObject and not self.v_camera_aimed_trans.gameObject:IsNull() then
+    UnityDestroy(self.v_camera_aimed_trans.gameObject)
+    self.v_camera_aimed_trans = nil
+  end
+  if self.camera_aimed_ui and not self.camera_aimed_ui.gameObject:IsNull() then
+    ResPoolMgr:release(self.camera_aimed_ui)
+    self.camera_aimed_ui = nil
+  end
+end
+
+function M:init_camera_cfg(camera_cfg)
+  self.v_camera_cfg = camera_cfg
+end
+
+function M:creat_camera_aimed_parents()
+  local go = UnityGameObject()
+  UnityGameObject.DontDestroyOnLoad(go)
+  go.name = "CameraAimedPoint"
+  self.v_camera_aimed_trans = go.transform
+end
+
+function M:clear_division_ui()
+  self.v_division = self.v_division or {}
+  for _, obj in pairs(self.v_division) do
+    ResMgr:destroy_gameobj(obj)
+  end
+  self.v_division = {}
+end
+
+function M:init_camera_aimed_ui()
+  local res_name = "CameraAimed"
+  local parent = Global.ui_mgr:get_group_root("GroupNormal")
+  ResPoolMgr:get_ui_effect_async(res_name, function(go)
+    if not parent then
+      ResPoolMgr:release(go)
+      return
+    end
+    go.transform:SetParent(parent.transform, true)
+    go:ResetAttr()
+    go:SetActive(false)
+    self.camera_aimed_ui = go
+    local canvas = Util.get_canvas(nil, go)
+    canvas.worldCamera = Global.ui_mgr.root_camera
+    self.v_slider_content = Util.get_rect_transform("SafeArea/SliderContent", go)
+    self.v_slider_val = Util.get_image("Val", self.v_slider_content)
+    self.v_division_img = Util.get_image("Division", self.v_slider_content)
+    self.v_slider_content.gameObject:SetActive(false)
+  end)
+end
+
+function M:set_strength_ui_visible(is_show)
+  if self.v_slider_content then
+    self.v_slider_content.gameObject:SetActive(is_show)
+  end
+end
+
+function M:get_aimed_pos()
+  return self.v_aimed_x, self.v_aimed_y
+end
+
+function M:_format_angle(angle, min_val, max_val)
+  min_val = min_val or -180
+  max_val = max_val or 180
+  while angle < min_val or angle > max_val do
+    if angle < min_val then
+      angle = angle + 360
+    elseif max_val < angle then
+      angle = angle - 360
+    end
+  end
+  return angle
+end
+
+function M:open_camera_aimed()
+  self.v_is_aimed = true
+  self:set_strength_ui_visible(false)
+  local animed_offset = self.v_camera_cfg.AimedOffset
+  self.v_focal_offset.x = animed_offset[1] or 0
+  self.v_focal_offset.y = animed_offset[2] or 0
+  self.v_focal_offset.z = animed_offset[3] or 0
+  local camera_euler = self.v_camera_transform.rotation.eulerAngles
+  local euler_x, euler_y, euler_z = camera_euler.x, camera_euler.y, camera_euler.z
+  euler_x = self:_format_angle(euler_x)
+  euler_y = self:_format_angle(euler_y)
+  self.v_camera_transform:SetParent(self.v_camera_aimed_trans)
+  self.v_aimed_x = euler_x
+  self.v_aimed_y = euler_y
+  self.v_aimed_init_angle = 0
+  if 1 == self.v_camera_cfg.CoordinateType then
+    self.v_aimed_init_angle = self.v_camera_cfg.DefaultYAngle
+  elseif 2 == self.v_camera_cfg.CoordinateType then
+    self.v_aimed_init_angle = self.v_camera.v_char_init_euler_y + self.v_camera_cfg.DefaultYAngle
+  elseif 3 == self.v_camera_cfg.CoordinateType then
+    self.v_aimed_init_angle = self.v_camera.v_char_init_euler_y
+  end
+  local aimed_anglex = self.v_camera_cfg.AimedAngleX
+  local aimed_angley = self.v_camera_cfg.AimedAngleY
+  self.v_aimed_x = _clamp(self.v_aimed_x, aimed_anglex[2], aimed_anglex[1])
+  if 0 ~= #aimed_angley then
+    self.v_aimed_y = _clamp(self.v_aimed_y, self.v_aimed_init_angle + aimed_angley[2], self.v_aimed_init_angle + aimed_angley[1])
+  end
+  Global.hero:set_target_dir(euler_y, true)
+  self.v_camera_transform.localRotation = Quat.Euler(0, 0, 0)
+  if self.camera_aimed_ui then
+    self.camera_aimed_ui:SetActive(true)
+  end
+end
+
+function M:close_camera_aimed()
+  if self.v_god_attr_change_handle then
+    MsgGame:mq_unbind(self.v_god_attr_change_handle)
+    self.v_god_attr_change_handle = nil
+  end
+  self:set_strength_ui_visible(false)
+  self.v_focal_offset.x = 0
+  self.v_focal_offset.y = 0
+  self.v_focal_offset.z = 0
+  self.v_aimed_x = nil
+  self.v_aimed_y = nil
+  if self.camera_aimed_ui then
+    self.camera_aimed_ui:SetActive(false)
+  end
+  self.v_is_aimed = false
+end
+
+function M:update_aimed_pos(rotation_x, rotation_y)
+  local dir = Global.hero:get_dir()
+  self.v_aimed_x = self.v_aimed_x or 0
+  self.v_aimed_x = self.v_aimed_x - rotation_x
+  local aimed_anglex = self.v_camera_cfg.AimedAngleX
+  local aimed_angley = self.v_camera_cfg.AimedAngleY
+  self.v_aimed_x = _clamp(self.v_aimed_x, aimed_anglex[2], aimed_anglex[1])
+  self.v_aimed_y = self.v_aimed_y or dir
+  self.v_aimed_y = self.v_aimed_y + rotation_y
+  if 0 ~= #aimed_angley then
+    self.v_aimed_y = _clamp(self.v_aimed_y, self.v_aimed_init_angle + aimed_angley[2], self.v_aimed_init_angle + aimed_angley[1])
+  end
+end
+
+local cur_local_pos = Vec3.New()
+local camera_trans_quat = Quat.New()
+
+function M:camera_aimed_follow_hero()
+  if not self.v_camera_cfg then
+    return
+  end
+  local pos_x, pos_y, pos_z = Global.hero:get_pos()
+  self.v_camera_aimed_trans:SetPositionA(pos_x, pos_y, pos_z)
+  camera_trans_quat:GetTransRotation(self.v_camera_transform)
+  local lerp_val = self.v_camera_cfg.AimedLerpVal or 0.1
+  if self.v_aimed_x and self.v_aimed_y then
+    local target = Quat.Euler(self.v_aimed_x, self.v_aimed_y, 0)
+    camera_trans_quat = Quat.Slerp(camera_trans_quat, target, lerp_val)
+  end
+  Quat.SetTransRotation(self.v_camera_aimed_trans, camera_trans_quat)
+  if not self.v_is_aimed then
+    return
+  end
+  cur_local_pos.x, cur_local_pos.y, cur_local_pos.z = self.v_camera_transform:GetLocalPositionA3()
+  if not self.v_aimed_pos then
+    self.v_aimed_pos = Vec3.New(0, 0, 0)
+  end
+  self.v_camera:get_new_pos_val(self.v_aimed_pos, cur_local_pos, self.v_focal_offset, lerp_val)
+  Util.VEC3_TEMP:Set()
+  Util.VEC3_TEMP:Add(self.v_focal_offset)
+  Util.VEC3_TEMP:Add(self.v_camera:get_raw_shake_pos())
+  self.v_camera_transform:SetLocalPositionA(Util.VEC3_TEMP:Get())
+  Global.hero:set_target_dir(self.v_aimed_y)
+  if UNITY_EDITOR and Global.debug then
+    local camera_pos = self.v_camera_transform.position
+    CSDebug.DrawLine(camera_pos, self.v_camera_transform.forward * 50, Color.red, 0.3)
+  end
+end
+
+return M

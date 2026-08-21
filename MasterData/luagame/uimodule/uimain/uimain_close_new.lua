@@ -1,0 +1,617 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local commonDef = require("cs_share.common_define")
+local Item_Helper = require("utils.item_helper")
+local ITEM_ICON_PATH = "Icon/Item/"
+local bagConfig = require("gamelogic.character.fight_bag_configs")
+local mathx = require("base.mathx")
+local ease_helper = require("base.ease_helper")
+local vertical_layout_group = UnityEngine.UI.VerticalLayoutGroup
+local LoopListClass = require("ui.widget.infinite_loop_list")
+local ITEM_OBJ_COM = require("uimodule.item.item_obj_com")
+local PLAYER_JOURNEY_ITEM = require("uimodule.uimain.uimain_player_journey_item")
+local PLAYER_JOURNEY_AWARD_ITEM = "PLAYER_JOURNEY_AWARD_ITEM"
+local JOURNEY_STATE = Config.CommonDefine.JOURNEY_STATE
+local MODEL = {
+  v_branch_item = {
+    "BranchItem",
+    BIND_TYPE.OBJECT
+  },
+  v_branch_list = {
+    "Branch_List",
+    BIND_TYPE.OBJECT
+  },
+  v_btn_bird = {
+    "BtnBird",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_journey = {
+    "BtnJourney",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_ret1 = {
+    "BtnRet1",
+    BIND_TYPE.BUTTON
+  },
+  v_button_pannel = {
+    "ButtonPannel",
+    BIND_TYPE.OBJECT
+  },
+  v_char_bg = {
+    "CharBg",
+    BIND_TYPE.IMAGE
+  },
+  v_char_head_bg = {
+    "CharHeadBg",
+    BIND_TYPE.IMAGE
+  },
+  v_char_head_icon = {
+    "CharHeadIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_close_panel = {
+    "ClosePanel",
+    BIND_TYPE.OBJECT
+  },
+  v_note = {
+    "Note",
+    BIND_TYPE.TEXT
+  },
+  v_shake_talk_part = {
+    "ShakeTalkPart",
+    BIND_TYPE.OBJECT
+  },
+  v_sign_board_view1 = {
+    "SignBoard_View1",
+    BIND_TYPE.IMAGE
+  },
+  v_sign_board_view2 = {
+    "SignBoard_View2",
+    BIND_TYPE.OBJECT
+  },
+  v_talk = {
+    "Talk",
+    BIND_TYPE.OBJECT
+  },
+  v_talk_content = {
+    "Talk_content",
+    BIND_TYPE.TEXT
+  },
+  v_talk_name = {
+    "Talk_name",
+    BIND_TYPE.TEXT
+  },
+  v_talk_next = {
+    "Talk_next",
+    BIND_TYPE.IMAGE
+  }
+}
+local mascot_event_item_key = "mascot_event_item_key"
+local mascot_event_item_item_key = "mascot_event_item_item_key"
+local mascot_task_item_award_key = "mascot_task_item_award_key"
+local mascot_event_talk_item_key = "mascot_event_talk_item_key"
+local RIGHT_TOGGLE_LIST = {
+  [1] = {tog_name = "TogTips"},
+  [2] = {tog_name = "TogTask"}
+}
+local Allow_Rotation = {
+  right = UnityVector3(0, 0, 0),
+  top = UnityVector3(0, 0, 90),
+  bottom = UnityVector3(0, 0, 270)
+}
+local tem_width
+local adsorption_factor = 0.2
+local limit_velocity = 100
+local padding_left = 254.875
+local space = 30
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnRet1", function()
+    self.v_uimain:lerp_to_far_camera()
+    self:ui_destroy()
+  end)
+  self:set_button("BtnReceive", function()
+    if self.v_cur_select_idx and self.v_data_list[self.v_cur_select_idx] then
+      PlayerJourneyMgr:req_journey_gain_reward(self.v_data_list[self.v_cur_select_idx].Id)
+    end
+  end)
+  self:init_toggle()
+  self.v_note.gameObject:SetActive(false)
+  self.bird_red = Util.get_child_gameobj("BtnBird/Red", self.v_btn_bird.gameObject)
+  self.journey_red = Util.get_child_gameobj("BtnBird/Red", self.v_btn_journey.gameObject)
+  self.v_title_group_height = Util.get_rect_transform("TitleGroup", self.v_uiobjects.TalkItembox).rect.height
+  local group = self.v_uiobjects.TalkItembox:GetComponent(typeof(vertical_layout_group))
+  self.v_talk_item_box_spacing = group.spacing
+  self.v_one_message_tem_height = self:get_layout_element("Title1_", self.v_uiobjects.MessageTem1).minHeight
+  self.v_content_rect_trans = Util.get_rect_transform(nil, self.v_uiobjects.ItemContent1)
+  self.v_content_init_pos_x, self.v_content_init_pos_y = self.v_content_rect_trans:GetAnchoredPositionA()
+  self:register_exist_auto_template(mascot_event_item_key, self.v_uiobjects.TalkItembox, self.v_uiobjects.ItemContent1)
+  self:register_exist_auto_template(mascot_event_item_item_key, self.v_uiobjects.MessageTem1, self.v_uiobjects.ItemContent1)
+  tem_width = self.v_uicompents.LvTem_rect:GetRectWH()
+  self.v_loop_list = LoopListClass:new(self, self.v_uiobjects.LvList, PLAYER_JOURNEY_ITEM, function()
+    local content_x = self.v_uicompents.LvContent_rect:GetAnchoredPositionA()
+    local x = self.v_loop_list_rect:GetAnchoredPositionA()
+    local relative_x = x - 32.625 - content_x
+    local delta = 999999
+    local raw_delta, index
+    for i, item in pairs(self.v_loop_list.v_items) do
+      local item_x = item.v_object_transform:GetAnchoredPositionA() + tem_width * 0.5
+      local temp_delta = math.abs(relative_x - item_x)
+      if delta > temp_delta then
+        index = i
+        delta = temp_delta
+        raw_delta = relative_x - item_x
+      end
+    end
+    self.v_loop_list.v_items[index]:set_selected(true)
+    self:on_select_item(index)
+    self.v_target_archor_x = content_x + raw_delta
+  end)
+  self.v_loop_list_rect = Util.get_rect_transform(nil, self.v_uiobjects.LvList)
+  local _, temp_y = self.v_uicompents.LvContent_rect:GetAnchoredPositionA()
+  self.v_target_archor_y = temp_y
+  self.v_loop_list:register_OnEndDrag(function()
+    self.v_is_draging = false
+  end)
+  self.v_loop_list:register_OnBeginDrag(function()
+    self.v_adsorption = false
+    self.v_is_draging = true
+  end)
+  self:register_exist_auto_template(PLAYER_JOURNEY_AWARD_ITEM, self.v_uiobjects.AwardTem, self.v_uiobjects.AwardContent)
+end
+
+function ui:on_bird_click()
+  self:refresh_talk_panel(true)
+end
+
+function ui:on_journey_click()
+  self:refresh_talk_panel(true)
+end
+
+function ui:init_toggle()
+  self.v_tag_toggles = {}
+  self.v_toggle_tab = ToggleTab:new(self)
+  for i, v in ipairs(RIGHT_TOGGLE_LIST) do
+    local tog = self:get_toggle(nil, self.v_uiobjects[v.tog_name])
+    table.insert(self.v_tag_toggles, tog)
+  end
+  self.v_toggle_tab:init_by_toggles(self.v_tag_toggles, function(select, last_select, select_toggle, last_select_toggle)
+    self:select_tag_toggle(select, last_select, select_toggle, last_select_toggle)
+  end, 1, false)
+end
+
+function ui:select_tag_toggle(select, last_select, select_toggle, last_select_toggle)
+  self.select_index = select
+  if 1 == self.select_index then
+    self:on_bird_click()
+  elseif 2 == self.select_index then
+    self:on_journey_click()
+  end
+end
+
+function ui:ui_on_show(select_index)
+  SignBoardGirlMgr:enable_check_stand_by(false)
+  self.v_uimain = UIMgr:get_ui("uimain")
+  self.v_uimain:set_control_sign_board(true)
+  self.v_model_view = self.v_uimain:get_model_view()
+  self.v_uimain:set_model_view_visible(true)
+  self:set_btn_visible(not select_index)
+  self:refresh_talk_panel(select_index)
+  self:register_event()
+  self.bird_npc_id = TaskMgr:get_bird_npc_id()
+  self.v_model_view:hide_other_model(self.bird_npc_id)
+  self:refresh_player_journey_redpoint()
+  self:refresh_mascot_task_red()
+  self:set_default_toggle_index(select_index)
+  self:set_board_camera_pos(TaskMgr:get_zoom_bird_board_id(), false)
+  if 1 == select_index then
+    self:on_bird_click()
+  elseif 2 == select_index then
+    self:on_journey_click()
+  end
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_ON_CENTER_MASCOT_UPDATE, self.on_mascot_refresh, self)
+  self:bind_auto_mq(Const.MSG_ON_JOURNEY_UPDATE, self.refresh_player_journey_redpoint, self)
+  self:bind_auto_mq(Const.MSG_ON_MASCOT_CLICK, self.refresh_mascot_dialog, self)
+  self:bind_auto_mq(Const.MSG_ON_JOURNEY_ITEM_CLICK, self.on_select_item_msg, self)
+  self:bind_auto_mq(Const.MSG_ON_SHOW_UI, self.on_ui_show_event, self)
+end
+
+function ui:set_default_toggle_index(select_index)
+  if not select_index then
+    local mascot_event_list = TaskMgr:get_show_mascot_list()
+    if mascot_event_list and #mascot_event_list > 0 then
+      self.select_index = 2
+    else
+      self.select_index = 1
+    end
+  else
+    self.select_index = select_index
+  end
+  self.v_toggle_tab:set_toggle_by_index(self.select_index)
+end
+
+function ui:refresh_player_journey_redpoint()
+  local red = PlayerJourneyMgr:get_journey_red()
+  self.journey_red:SetActive(red)
+  MsgGame:mq_publish2(Const.MSG_ON_MAIN_MASCOT_RED_UPDATE)
+  self:refresh_journey_award()
+end
+
+function ui:refresh_mascot_task_red()
+  local mascot_event_list = TaskMgr:get_show_mascot_list()
+  local is_has_task = #mascot_event_list > 0
+  self.bird_red:SetActive(is_has_task)
+  MsgGame:mq_publish2(Const.MSG_ON_MAIN_MASCOT_RED_UPDATE)
+end
+
+function ui:set_board_camera_pos(board_id, is_fast)
+  if not self.v_uimain then
+    return
+  end
+  self.v_uimain:change_center_event_model_view_param(board_id, is_fast)
+end
+
+function ui:set_to_normal_camera_pos()
+  self:set_board_camera_pos(TaskMgr:get_mascot_board_id(), false)
+end
+
+function ui:on_mascot_refresh()
+  self:refresh_talk_panel(true)
+end
+
+function ui:set_btn_visible(visible)
+  self.v_button_pannel:SetActive(visible)
+end
+
+function ui:refresh_mascot_dialog(msg)
+  local desc = msg.mm_x
+  if not desc then
+    self.v_uiobjects.SignBoard_View2:SetActive(false)
+    return
+  end
+  self.v_uiobjects.SignBoard_View2:SetActive(true)
+  local dialog = Util.get_text("Dialog_Content_/Dialog_", self.v_uiobjects.SignBoard_View2)
+  dialog.text = Util.check_replace_player_name(desc)
+end
+
+function ui:refresh_talk_panel(visible)
+  self.v_uiobjects.Branch_List:SetActive(false)
+  self.v_uiobjects.SignBoard_View1:SetActive(false)
+  self.v_uiobjects.TalkPannel:SetActive(true)
+  self.v_uiobjects.TalkScroll:SetActive(false)
+  self.v_talk:SetActive(visible)
+  self:set_btn_visible(not visible)
+  if not visible then
+    return
+  end
+  if 1 == self.select_index then
+    self.v_uiobjects.Journey:SetActive(false)
+    self:refresh_Tips_info()
+  else
+    self.v_uiobjects.Journey:SetActive(true)
+    self.v_uiobjects.NoTalk:SetActive(false)
+  end
+end
+
+function ui:refresh_journey_award()
+  self.v_data_list = PlayerJourneyMgr:get_journey_list()
+  local count = self.v_data_list and #self.v_data_list or 0
+  if 0 == count then
+    return
+  end
+  self.v_cur_select_idx = PlayerJourneyMgr:get_first_not_gained_lv()
+  for idx, v in pairs(self.v_data_list) do
+    v.selected = idx == self.v_cur_select_idx
+  end
+  self.v_loop_list:refresh_data(self.v_data_list)
+  local x = -(self.v_cur_select_idx - 1) * (tem_width + space)
+  self.v_loop_list:scroll_to_item(self.v_cur_select_idx - 1)
+  self.v_uicompents.LvContent_rect:SetAnchoredPositionA(x, self.v_target_archor_y)
+  self:on_select_item(self.v_cur_select_idx)
+end
+
+function ui:on_ui_show_event(msg)
+  if not msg then
+    return
+  end
+  local ui_name = msg.mm_obj
+  if "uidrawcard_movie" == ui_name then
+    self:ui_hide()
+  end
+end
+
+function ui:on_select_item_msg(msg)
+  local id = msg.mm_x
+  if id ~= self.v_cur_select_idx then
+    local x = -(id - 1) * (tem_width + space)
+    self.v_uicompents.LvContent_rect:SetAnchoredPositionA(x, self.v_target_archor_y)
+  end
+  self:on_select_item(id)
+end
+
+function ui:on_select_item(id)
+  if id ~= self.v_cur_select_idx then
+    local item = self.v_loop_list:get_item_ui(self.v_cur_select_idx)
+    if item then
+      item:set_selected(false)
+    end
+    self.v_data_list[self.v_cur_select_idx].selected = false
+    self.v_cur_select_idx = id
+  end
+  self.v_data_list[id].selected = true
+  self:_refresh_view()
+end
+
+function ui:_refresh_view()
+  local data = self.v_data_list[self.v_cur_select_idx]
+  self.v_uicompents.AwardName_txt.text = data.Title
+  self.v_uicompents.Condition_txt.text = ShareRes.get_condition_desc(data.Condition)
+  self.v_uiobjects.BtnReceive:SetActive(data.state == JOURNEY_STATE.COMPLETE)
+  self.v_uiobjects.UnComplete:SetActive(data.state == JOURNEY_STATE.UNCOMPLETE)
+  self.v_uiobjects.Got:SetActive(data.state == JOURNEY_STATE.GAINED)
+  self.v_uiobjects.Condition:SetActive(data.state == JOURNEY_STATE.UNCOMPLETE)
+  self.v_uiobjects.Award:SetActive(data.unlock)
+  if data.unlock then
+    self:_refresh_award(data.AwardGroup)
+  end
+end
+
+function ui:_refresh_award(award_group)
+  self:give_back_auto_cache(PLAYER_JOURNEY_AWARD_ITEM)
+  local award_list = ShareRes.get_awards(award_group)
+  if not award_list then
+    return
+  end
+  for _, v in ipairs(award_list) do
+    local award_item = self:get_auto_cache(PLAYER_JOURNEY_AWARD_ITEM)
+    local item_obj = ITEM_OBJ_COM:ui_wrap(self, award_item)
+    local data = {
+      id = v.ItemId,
+      count = v.Num,
+      cb = function()
+        UIMgr:get_ui("itemTip"):ui_show({
+          item_id = v.ItemId
+        })
+      end
+    }
+    item_obj:set_data(data)
+  end
+end
+
+function ui:refresh_Tips_info()
+  local mascot_max_show_count = TaskMgr:get_mascot_max_show_count()
+  local agency_data_list = TaskMgr:get_mascot_agency_list()
+  local need_show_agency_list = {}
+  for index = 1, mascot_max_show_count do
+    local cfg = agency_data_list[index]
+    if not cfg then
+      break
+    end
+    table.insert(need_show_agency_list, cfg)
+  end
+  local tips_type_list = {}
+  for i, cfg in pairs(need_show_agency_list) do
+    if not tips_type_list[cfg.TipsType] then
+      tips_type_list[cfg.TipsType] = {}
+    end
+    table.insert(tips_type_list[cfg.TipsType], cfg)
+  end
+  local is_has_task = #need_show_agency_list > 0
+  self.v_uiobjects.NoTalk:SetActive(not is_has_task)
+  self.v_uiobjects.TalkScroll:SetActive(is_has_task)
+  self:give_back_auto_cache(mascot_event_item_key)
+  self:give_back_auto_cache(mascot_event_item_item_key)
+  if self.v_type_select_state_list then
+    self.v_old_type_select_state_list = self.v_type_select_state_list
+  end
+  self.v_type_select_state_list = {}
+  self.v_type_item_list = {}
+  self.v_title_item_list = {}
+  local is_selected = false
+  self.v_last_obj_list = {}
+  local last_obj
+  for tips_type, cfg_list in pairs(tips_type_list) do
+    local item_obj = self:get_auto_cache(mascot_event_item_key)
+    item_obj.name = "TaskItem_" .. tips_type
+    local tips_type_cfg = ShareRes.create("chain_centre.mascot_agency_type")[tips_type]
+    self:refresh_tips_title_info(item_obj, tips_type_cfg, #cfg_list)
+    if last_obj then
+      self.v_last_obj_list[item_obj.name] = last_obj
+    end
+    last_obj = item_obj
+    local item_list = {}
+    local is_select = false
+    if not self.v_old_type_select_state_list or self.v_old_type_select_state_list[tips_type] == nil then
+      if not is_selected then
+        is_selected = true
+        is_select = true
+        self.v_type_select_state_list[tips_type] = true
+      else
+        self.v_type_select_state_list[tips_type] = false
+      end
+    else
+      is_select = self.v_old_type_select_state_list[tips_type]
+      self.v_type_select_state_list[tips_type] = is_select
+    end
+    self.v_title_item_list[tips_type] = item_obj
+    self:refresh_tips_title_select_state(item_obj, is_select)
+    for _, cfg in pairs(cfg_list) do
+      local item_item_obj = self:get_auto_cache(mascot_event_item_item_key)
+      item_item_obj.transform:SetParent(item_obj.transform)
+      self:refresh_tips_item_info(item_item_obj, cfg, is_select)
+      item_list[#item_list + 1] = item_item_obj
+      item_item_obj:SetActive(is_select)
+    end
+    self.v_type_item_list[tips_type] = item_list
+  end
+end
+
+function ui:refresh_item_item_anim(item_item_obj, is_in)
+  local in_anim_obj = Util.get_child_gameobj("Title1_/Bg/Ani_TalkScroll_In_", item_item_obj)
+  local out_anim_obj = Util.get_child_gameobj("Title1_/Bg/Ani_TalkScroll_Out_", item_item_obj)
+  if is_in then
+    item_item_obj:SetActive(true)
+  end
+  in_anim_obj:SetActive(is_in)
+  out_anim_obj:SetActive(not is_in)
+  if not is_in then
+    item_item_obj:SetActive(is_in)
+    in_anim_obj:SetActive(true)
+  end
+end
+
+function ui:refresh_tips_title_info(item_obj, cfg, task_num)
+  local bird_image = Util.get_image("TitleGroup/BirdImage", item_obj)
+  ResMgr:load_set_icon(bird_image, cfg.Icon)
+  local title_name = Util.get_text("TitleGroup/TalkGroup/Title", item_obj)
+  title_name.text = cfg.Name
+  local title_num = Util.get_text("TitleGroup/TalkGroup/TalkNum1_", item_obj)
+  title_num.text = task_num
+  local red_obj = Util.get_child_gameobj("TitleGroup/RedDot1", item_obj)
+  red_obj:SetActive(false)
+  local title_btn = Util.get_button("TitleGroup/Select1_", item_obj)
+  local normal_btn = Util.get_button("TitleGroup/Normal1_", item_obj)
+  self:set_button_listener(title_btn, function()
+    self:on_title_click(item_obj, cfg, task_num)
+  end)
+  self:set_button_listener(normal_btn, function()
+    self:on_title_click(item_obj, cfg, task_num)
+  end)
+end
+
+function ui:on_title_click(item_obj, cfg, task_num)
+  if not self.v_type_select_state_list then
+    return
+  end
+  if self.v_type_select_state_list[cfg.Id] then
+    self:refresh_tips_list_visible(cfg.Id, false)
+    return
+  end
+  self:refresh_tips_list_visible(cfg.Id, true)
+  local pos_x, pos_y = Util.get_rect_transform(nil, item_obj):GetAnchoredPositionA()
+  local all_child_height = (self.v_one_message_tem_height + self.v_talk_item_box_spacing) * task_num
+  local x, y = self.v_content_rect_trans:GetAnchoredPositionA()
+  if not self.v_viewport_height then
+    self.v_viewport_height = Util.get_rect_transform(nil, self.v_uiobjects.TalkScroll).rect.height
+  end
+  local _, last_item_obj_pos_y
+  local last_obj = self.v_last_obj_list[item_obj.name]
+  if last_obj then
+    _, last_item_obj_pos_y = Util.get_rect_transform(nil, last_obj):GetAnchoredPositionA()
+    last_item_obj_pos_y = math.abs(last_item_obj_pos_y)
+  end
+  pos_y = math.abs(pos_y)
+  self:clear_timer()
+  self.v_timer = Timer:add_timer("delay", 0.05, function()
+    if all_child_height >= self.v_viewport_height or last_item_obj_pos_y and last_item_obj_pos_y >= self.v_viewport_height then
+      self.v_content_rect_trans:SetAnchoredPositionA(self.v_content_init_pos_x, last_item_obj_pos_y)
+    elseif pos_y + all_child_height > self.v_viewport_height then
+      self.v_content_rect_trans:SetAnchoredPositionA(self.v_content_init_pos_x, y + all_child_height)
+    end
+  end)
+end
+
+function ui:clear_timer()
+  if self.v_timer then
+    Timer:remove_timer(self.v_timer)
+    self.v_timer = nil
+  end
+end
+
+function ui:refresh_tips_list_visible(tips_type, is_visible)
+  self.v_type_select_state_list[tips_type] = is_visible
+  self:refresh_item_list_visible(tips_type, is_visible)
+  self:refresh_tips_title_select_state(self.v_title_item_list[tips_type], is_visible)
+end
+
+function ui:refresh_tips_title_select_state(item_obj, is_select)
+  local select_obj = Util.get_child_gameobj("TitleGroup/Select1_", item_obj)
+  local normal_obj = Util.get_child_gameobj("TitleGroup/Normal1_", item_obj)
+  select_obj:SetActive(is_select)
+  normal_obj:SetActive(not is_select)
+end
+
+function ui:refresh_tips_item_info(item_item_obj, cfg, is_select)
+  local jump_icon = Util.get_image("Title1_/Bg/IconGroup/JumpIcon1_", item_item_obj)
+  ResMgr:load_set_icon(jump_icon, cfg.Icon)
+  local title_desc = Util.get_text("Title1_/TitleDesc1_", item_item_obj)
+  title_desc.text = cfg.Text
+  local recommend_obj = Util.get_child_gameobj("Title1_/Bg/RecommendI_", item_item_obj)
+  recommend_obj:SetActive(1 == cfg.HindLevel)
+  local in_anim_obj = Util.get_child_gameobj("Title1_/Bg/Ani_TalkScroll_In_", item_item_obj)
+  local out_anim_obj = Util.get_child_gameobj("Title1_/Bg/Ani_TalkScroll_Out_", item_item_obj)
+  in_anim_obj:SetActive(is_select)
+  out_anim_obj:SetActive(not is_select)
+  local btn = Util.get_button("Title1_", item_item_obj)
+  self:set_button_listener(btn, function()
+    SysOpenMgr:jump_to_sys(cfg.Jump, true)
+  end)
+end
+
+function ui:refresh_item_list_visible(tips_type, visible)
+  if not self.v_type_item_list then
+    return
+  end
+  local list = self.v_type_item_list[tips_type]
+  if not list then
+    return
+  end
+  for _, obj in pairs(list) do
+    self:refresh_item_item_anim(obj, visible)
+  end
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.select_index
+end
+
+function ui:ui_on_hide()
+  if self.v_uimain then
+    self.v_uimain:set_control_sign_board(false)
+  end
+  if self.v_model_view then
+    self.v_model_view:show_other_model(self.bird_npc_id)
+  end
+  self:clear_timer()
+end
+
+function ui:ui_on_destroy()
+  self.v_loop_list:ui_on_destroy()
+end
+
+function ui:ui_on_update()
+  if self.v_adsorption then
+    self:adsorption()
+    return
+  end
+  if not self.v_is_draging and self.v_target_archor_x then
+    local velocity_x = math.abs(self.v_loop_list:get_velocity())
+    if velocity_x < limit_velocity then
+      self.v_loop_list:stop_movement()
+      self.v_adsorption = true
+    end
+  end
+end
+
+function ui:adsorption()
+  local x = self.v_uicompents.LvContent_rect:GetAnchoredPositionA()
+  x = mathx.lerp_number(x, self.v_target_archor_x, adsorption_factor)
+  if math.abs(x - self.v_target_archor_x) < 1 then
+    x = self.v_target_archor_x
+    self.v_adsorption = false
+    self.v_target_archor_x = nil
+  end
+  self.v_uicompents.LvContent_rect:SetAnchoredPositionA(x, self.v_target_archor_y)
+end
+
+return ui

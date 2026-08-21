@@ -1,0 +1,130 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local CommonDef = require("cs_share.common_define")
+local ARCHOVE_CHAR_STORY_ITME = "ARCHOVE_CHAR_STORY_ITME"
+local _tsort = table.sort
+local _tinsert = table.insert
+local DEFAULT_TOG = 1
+
+function ui:ui_finish_load()
+  self:register_exist_auto_template(ARCHOVE_CHAR_STORY_ITME, self.v_uiobjects.StoryPageTem, self.v_uiobjects.StoryPageTem.transform.parent.gameObject)
+end
+
+function ui:ui_on_show(buddy_id)
+  self.v_buddy_id = buddy_id
+  self.v_curr_select_index = 1
+  local cfg_list = ShareRes.create("buddy.buddy_archives")
+  local toggle_cfg_list = {}
+  for idx, cfg in pairs(cfg_list) do
+    if cfg.BuddyID == buddy_id then
+      _tinsert(toggle_cfg_list, cfg)
+    end
+  end
+  _tsort(toggle_cfg_list, function(a, b)
+    return a.Priority < b.Priority
+  end)
+  self:refresh_archive_data()
+  self:refresh_toggle_list(toggle_cfg_list)
+  if self.v_default_tog then
+    self.v_default_tog.isOn = false
+    self.v_default_tog.isOn = true
+  end
+end
+
+function ui:refresh_archive_data()
+  self.v_archive_data = {}
+  local archive_list = CharacterMgr:get_buddy_archive_data(self.v_buddy_id)
+  if not archive_list then
+    return
+  end
+  for _, data in pairs(archive_list) do
+    local id = data.archive_id
+    self.v_archive_data[id] = data
+  end
+end
+
+function ui:refresh_toggle_list(toggle_list)
+  self.v_tog_list = {}
+  self:give_back_auto_cache(ARCHOVE_CHAR_STORY_ITME)
+  for index, toggle_cfg in pairs(toggle_list) do
+    local toggle_item = self:get_auto_cache(ARCHOVE_CHAR_STORY_ITME)
+    self:refresh_toggle_item(index, toggle_cfg, toggle_item)
+  end
+end
+
+function ui:refresh_toggle_item(index, toggle_cfg, toggle_item)
+  local is_lock, have_red = self:check_is_lock(toggle_cfg)
+  local lock_obj = Util.get_child_gameobj("Lock", toggle_item)
+  local un_lock_obj = Util.get_child_gameobj("BgNormal", toggle_item)
+  lock_obj:SetActive(is_lock)
+  un_lock_obj:SetActive(not is_lock)
+  local lock_paage_num = Util.get_text("Num", toggle_item)
+  lock_paage_num.text = CommonDef.ROME_NUM[index]
+  local page_tog = Util.get_toggle(nil, toggle_item)
+  self:set_toggle_listener(page_tog, function(isOn)
+    if not isOn then
+      return
+    end
+    if is_lock then
+      self:on_lock_click(index, toggle_cfg)
+      return
+    end
+    if self.v_curr_select_index ~= index then
+      self:on_page_click(index, toggle_cfg, toggle_item)
+    end
+  end)
+  if self.v_curr_select_index == index then
+    self:on_page_click(index, toggle_cfg, toggle_item)
+  end
+  _tinsert(self.v_tog_list, page_tog)
+  if index == DEFAULT_TOG then
+    self.v_default_tog = page_tog
+  end
+end
+
+function ui:check_is_lock(toggle_cfg)
+  local archive_data = self.v_archive_data[toggle_cfg.ID]
+  local lock = true
+  local state
+  if archive_data then
+    lock = false
+    state = archive_data.state
+  end
+  local have_red = 0 == state
+  return lock, have_red
+end
+
+function ui:on_lock_click(index, toggle_cfg)
+  self.v_curr_select_index = index
+  self.v_uiobjects.StoryDesc:SetActive(false)
+  self.v_uiobjects.StoryLock:SetActive(true)
+  local event = toggle_cfg.Event
+  local arg = toggle_cfg.Arg
+  if event == CommonDef.ARCHIVE_CONDITION.UPGRADE and arg then
+    self.v_uicompents.LockDesc_txt.text = Util.format_str("突破{1}后解锁", arg - 1)
+  elseif event == CommonDef.ARCHIVE_CONDITION.FAVOR and arg then
+    self.v_uicompents.LockDesc_txt.text = Util.format_str("好感度Lv{1}级解锁", arg)
+  elseif event == CommonDef.ARCHIVE_CONDITION.EPISODE and arg then
+    local chapter_cfg = ShareRes.get_chapter_point_cfg(arg)
+    self.v_uicompents.LockDesc_txt.text = Util.format_str("通关{1}后解锁", chapter_cfg.PointName)
+  end
+end
+
+function ui:on_page_click(index, toggle_cfg)
+  self.v_curr_select_index = index
+  self.v_uicompents.StoryDesc_txt.text = toggle_cfg.Desc
+  self.v_uiobjects.StoryLock:SetActive(false)
+  self.v_uiobjects.StoryDesc:SetActive(true)
+end
+
+function ui:ui_on_hide()
+  if self.v_tog_list then
+    for _, tog in pairs(self.v_tog_list) do
+      tog.isOn = false
+    end
+  end
+  self.v_curr_select_index = nil
+  self.v_default_tog = nil
+end
+
+return ui

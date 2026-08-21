@@ -1,0 +1,36 @@
+local Base = require("manager.magic.magic_imp.magic_base")
+local M = Util.create_child_mt(Base)
+
+function M:_init(owner, magic_info)
+  Base._init(self, owner, magic_info)
+end
+
+function M:on_effect()
+  if self.owner:is_hero() and not self.owner:check_in_control() then
+    return
+  end
+  if type(self.cfg[1]) == "string" then
+    Global.camera:new_shake(self.cfg[1], self.cfg[2], self.cfg[3], self.cfg[4], self.owner, self.cfg[5], self:get_timescale_type())
+    return
+  end
+  local params = self.cfg[2]
+  local amplitude, atten, freq, duration = params[1], params[2], params[3], params[4]
+  local cam_type = Global.camera:get_view_type()
+  local camera_shake_type = Global.camera:get_camera_shake_type()
+  local correct = self.cfg[3]
+  if cam_type == Config.CAMERA_VIEW_TYPE.SHOULDER or camera_shake_type == Config.CAMERA_SHAKE_TYPE.OTS and correct then
+    amplitude = amplitude * correct[1]
+    atten = atten * correct[2]
+    freq = freq * correct[3]
+    duration = duration * correct[4]
+  end
+  Global.camera:shake(self.cfg[1], amplitude, atten, freq, duration, self.cfg[4])
+end
+
+function M:on_remove(magic_map)
+  if next(magic_map) == nil and Global.camera then
+    Global.camera:stop_shake_by_mutual(self.cfg[4], self.cfg[6] and 1 == self.cfg[6])
+  end
+end
+
+return M

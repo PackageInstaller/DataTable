@@ -1,0 +1,72 @@
+return {
+  {
+    ActivitySummerBgIcon = "ActivitySummer/xhyx_db_shop_di03",
+    Color = "8e807c",
+    ExchangeBgIcon = "UIShop/20231130/Shop_db_lb_gray",
+    ExchangeColor = "8e807c",
+    ExchangeColorIcon = "UIShop/20231130/Shop_bg_lbdw_gray",
+    GiftBoxBgIcon = "UIShop/20250319/Shop_db_lb_sblue",
+    Quality = 1,
+    QualityBgIcon = "UIShop/20231130/Shop_bg_lbdw_gray",
+    QualityIcon = "Common_pzk_01",
+    RelicCircleBgBigIcon = "UIChar_Engrave/2023.12.16/Char_bg_ghdb_big03",
+    RelicCircleBgIcon = "UIChar_Engrave/2023.12.16/Char_bg_ghdb_03",
+    TxtColor = "678CD6"
+  },
+  {
+    ActivitySummerBgIcon = "ActivitySummer/xhyx_db_shop_di02",
+    Color = "499963",
+    ExchangeBgIcon = "UIShop/20231130/Shop_db_lb_blue",
+    ExchangeColor = "678cd6",
+    ExchangeColorIcon = "UIShop/20231130/Shop_bg_lbdw_blue",
+    GiftBoxBgIcon = "UIShop/20250319/Shop_db_lb_sblue",
+    Quality = 2,
+    QualityBgIcon = "UIShop/20231130/Shop_bg_lbdw_blue",
+    QualityIcon = "Common_pzk_05",
+    RelicCircleBgBigIcon = "UIChar_Engrave/2023.12.16/Char_bg_ghdb_big03",
+    RelicCircleBgIcon = "UIChar_Engrave/2023.12.16/Char_bg_ghdb_03",
+    TxtColor = "678CD6"
+  },
+  {
+    ActivitySummerBgIcon = "ActivitySummer/xhyx_db_shop_di03",
+    Color = "62aad3",
+    ExchangeBgIcon = "UIShop/20231130/Shop_db_lb_blue",
+    ExchangeColor = "678cd6",
+    ExchangeColorIcon = "UIShop/20231130/Shop_bg_lbdw_blue",
+    GiftBoxBgIcon = "UIShop/20250319/Shop_db_lb_sblue",
+    Quality = 3,
+    QualityBgIcon = "UIShop/20231130/Shop_bg_lbdw_blue",
+    QualityIcon = "Common_pzk_02",
+    RelicCircleBgBigIcon = "UIChar_Engrave/2023.12.16/Char_bg_ghdb_big03",
+    RelicCircleBgIcon = "UIChar_Engrave/2023.12.16/Char_bg_ghdb_03",
+    TxtColor = "678CD6"
+  },
+  {
+    ActivitySummerBgIcon = "ActivitySummer/xhyx_db_shop_di02",
+    Color = "cb70d9",
+    ExchangeBgIcon = "UIShop/20231130/Shop_db_lb_purple",
+    ExchangeColor = "9366d9",
+    ExchangeColorIcon = "UIShop/20231130/Shop_bg_lbdw_purple",
+    GiftBoxBgIcon = "UIShop/20250319/Shop_db_lb_spurple",
+    Quality = 4,
+    QualityBgIcon = "UIShop/20231130/Shop_bg_lbdw_purple",
+    QualityIcon = "Common_pzk_03",
+    RelicCircleBgBigIcon = "UIChar_Engrave/2023.12.16/Char_bg_ghdb_big02",
+    RelicCircleBgIcon = "UIChar_Engrave/2023.12.16/Char_bg_ghdb_02",
+    TxtColor = "9366D9"
+  },
+  {
+    ActivitySummerBgIcon = "ActivitySummer/xhyx_db_shop_di01",
+    Color = "f79934",
+    ExchangeBgIcon = "UIShop/20231130/Shop_db_lb_gold",
+    ExchangeColor = "efc66e",
+    ExchangeColorIcon = "UIShop/20231130/Shop_bg_lbdw_gold",
+    GiftBoxBgIcon = "UIShop/20250319/Shop_db_lb_sgold",
+    Quality = 5,
+    QualityBgIcon = "UIShop/20231130/Shop_bg_lbdw_gold",
+    QualityIcon = "Common_pzk_04",
+    RelicCircleBgBigIcon = "UIChar_Engrave/2023.12.16/Char_bg_ghdb_big01",
+    RelicCircleBgIcon = "UIChar_Engrave/2023.12.16/Char_bg_ghdb_01",
+    TxtColor = "D9A24E"
+  }
+}

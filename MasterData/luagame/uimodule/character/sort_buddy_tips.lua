@@ -1,0 +1,87 @@
+local Base = require("ui.uibase")
+local _tinsert = table.insert
+local ui = Util.create_child_mt(Base)
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local CHARACTER_CONFIG = require("uimodule.character.character_config")
+local ORDER_TYPE = CHARACTER_CONFIG.ORDER_TYPE
+
+function ui:ui_finish_load()
+  self:set_button("BtnBack", function()
+    self:ui_hide()
+  end)
+  self:set_button("Btn_Cancel", function()
+    self:ui_hide()
+  end)
+  self:set_button("Btn_Close", function()
+    self:ui_hide()
+  end)
+  self:set_button("Btn_Sure", function()
+    self:click_sure()
+  end)
+  self:set_button("Btn_SetDefault", function()
+    self.v_order_type = ORDER_TYPE.DEFAULT
+    self.v_order_type_toggle[ORDER_TYPE.DEFAULT].isOn = true
+  end)
+end
+
+function ui:ui_on_show(is_operate_inside_list)
+  self.v_is_operate_inside_list = is_operate_inside_list
+  self:init_toggle_list()
+  self:init_click_list()
+end
+
+function ui:click_sure()
+  local order_type = self.v_order_type
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_BUDDY_CHANGE)
+  msg.mm_y = order_type
+  CharacterMgr:set_screen_condtion_sort(order_type, self.v_is_operate_inside_list)
+  self:ui_hide()
+end
+
+function ui:init_toggle_list()
+  self.v_tog_group_type = self:get_toggle_group(nil, self.v_uiobjects.OrderType)
+  self:init_order_type_tog()
+end
+
+function ui:init_order_type_tog()
+  self.v_tog_group_type.allowSwitchOff = true
+  if not self.v_order_type then
+    self.v_order_type = ORDER_TYPE.DEFAULT
+  end
+  if not self.v_order_type_toggle then
+    self.v_order_type_toggle = {}
+    _tinsert(self.v_order_type_toggle, self.v_uicompents.LV_tog)
+    _tinsert(self.v_order_type_toggle, self.v_uicompents.Default_tog)
+    _tinsert(self.v_order_type_toggle, self.v_uicompents.Quanilty_tog)
+    _tinsert(self.v_order_type_toggle, self.v_uicompents.Fight_tog)
+  end
+  self.v_order_type_toggle_tab = ToggleTab:new(self)
+  for index, toggle in ipairs(self.v_order_type_toggle) do
+    if index == self.v_order_type then
+      toggle.isOn = true
+    end
+    self.v_order_type_toggle_tab:_set_toggle(toggle, function()
+      self:click_order_type_toggle(index)
+    end)
+  end
+  self.v_uiobjects.Default:SetActive(false)
+end
+
+function ui:ui_on_hide()
+  self.v_order_type = ORDER_TYPE.DEFAULT
+  self.v_order_type_toggle = nil
+end
+
+function ui:click_order_type_toggle(index)
+  self.v_order_type = index
+end
+
+function ui:init_click_list()
+  local screen_type_key = self.v_is_operate_inside_list and "v_screen_type_inside_list" or "v_screen_type"
+  if CharacterMgr[screen_type_key] then
+    self.v_order_type_toggle[CharacterMgr[screen_type_key]].isOn = true
+  end
+  self.v_tog_group_type.allowSwitchOff = false
+end
+
+return ui

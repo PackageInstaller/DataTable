@@ -1,0 +1,91 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local SELECT_COLOR = {
+  [true] = {color = "DFBD91", a = 0.4},
+  [false] = {color = "292929", a = 0.6}
+}
+local SELECT_TEXT_COLOR = {
+  [true] = {color = "FFFFFF", a = 1},
+  [false] = {color = "AE9577", a = 1}
+}
+local INFINITE_EPISODE_TYPE = Config.CommonDefine.INFINITE_EPISODE_TYPE
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show()
+end
+
+function ui:set_data(infinite_cfg)
+  self.v_infinite_id = infinite_cfg.Id
+  local btn = self:get_button()
+  self:set_button_listener(btn.component, function()
+    self:on_click_btn()
+  end)
+  self:refresh_infinite(infinite_cfg)
+end
+
+function ui:refresh_infinite(infinite_cfg)
+  self.v_infinite_cfg = infinite_cfg
+  self.v_is_unlock = ChapterEndlessMgr:get_endless_is_unlock(self.v_infinite_id)
+  if self.v_is_unlock then
+    self.v_uiobjects.LockIcon:SetActive(false)
+    self.v_uiobjects.StageIcon:SetActive(true)
+    self.v_uiobjects.Content:SetActive(true)
+    self.v_uiobjects.Lock:SetActive(false)
+    local point_cfg = ShareRes.get_chapter_point_cfg(infinite_cfg.EpisodeId)
+    self.v_uicompents.StageName_txt.text = point_cfg.PointName
+    self:refresh_score()
+  else
+    self.v_uiobjects.LockIcon:SetActive(true)
+    self.v_uiobjects.StageIcon:SetActive(false)
+    self.v_uiobjects.Content:SetActive(false)
+    self.v_uiobjects.Lock:SetActive(true)
+    self.v_uicompents.Condition_txt.text = ShareRes.get_condition_desc(infinite_cfg.Condition)
+  end
+  self.v_point_id = infinite_cfg.EpisodeId
+  self.v_point_type = infinite_cfg.Type
+  self:refresh_score_text()
+  self:on_select_point()
+end
+
+function ui:refresh_score()
+  if not self.v_is_unlock then
+    return
+  end
+  self.v_uicompents.ScoreNum_txt.text = ChapterEndlessMgr:get_endless_score(self.v_infinite_id)
+end
+
+function ui:refresh_score_text()
+  self.v_uicompents.ScoreText_txt.text = self.v_point_type == INFINITE_EPISODE_TYPE.ALWAYS and "当前积分" or "本期积分"
+end
+
+function ui:on_select_point(select_infinite_id, is_first)
+  local is_select = select_infinite_id == self.v_infinite_id
+  self.v_uiobjects.SelectIcon:SetActive(is_select)
+  local selfct_color = SELECT_COLOR[is_select]
+  local select_text_color = SELECT_TEXT_COLOR[is_select]
+  Util.set_color(self.v_uicompents.Bg_img, selfct_color.color, selfct_color.a)
+  Util.set_color(self.v_uicompents.StageIcon_img, select_text_color.color, select_text_color.a)
+  Util.set_color(self.v_uicompents.StageName_txt, select_text_color.color, select_text_color.a)
+end
+
+function ui:on_click_btn(is_first)
+  if not self.v_is_unlock then
+    return
+  end
+  self.v_parent_ui:on_select_point(self.v_infinite_id, self.v_point_id, nil, is_first)
+  self.v_parent_ui:refresh_btn_rank_visible(self.v_infinite_cfg.IsOpenRank)
+end
+
+function ui:is_need_open_rank()
+  return self.v_infinite_cfg.IsOpenRank
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+return ui

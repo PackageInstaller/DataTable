@@ -1,0 +1,56 @@
+local Base = require("manager.fight.movement.missile_movement")
+local _atan = math.atan
+local mathx = require("base.mathx")
+local _dist_vec2A = mathx.dist_vec2A
+local rad2deg = 180 / math.pi
+local M = Util.create_child_mt(Base)
+
+function M:_init(missile, lineparams)
+  Base._init(self, missile)
+  local params = lineparams or self.missile_cfg.lineparams
+  self:set_params(params)
+end
+
+function M:set_params(params)
+  self.v_speed = params[1] or 0
+  self.v_acc = params[2] or 0
+  self.v_track_time = params[3] or 0
+  self.v_stop_len = params[4] or 0
+  self.v_cur_follow_time = 0
+end
+
+function M:update()
+  local t_pos = self.v_missile:get_pos_or_target_pos()
+  if not t_pos then
+    return
+  end
+  local dt = self.v_char.time_mgr:get_dt_time()
+  self.v_track_time = self.v_track_time - dt
+  self.v_cur_follow_time = self.v_cur_follow_time + dt
+  if self.v_track_time <= 0 then
+    return
+  end
+  local sx, sz = self.v_char:get_pos2()
+  local tx, tz = t_pos.x, t_pos.z
+  local dir_x, dir_z = Util.normalize2(tx - sx, tz - sz)
+  local speed = self:get_speed()
+  local dx = dir_x * speed * dt
+  local dz = dir_z * speed * dt
+  local len = math.sqrt(dx * dx + dz * dz)
+  if _dist_vec2A(sx, sz, tx, tz) < self.v_stop_len or len < self.v_speed * dt * 0.999 then
+    self.v_cur_follow_time = 0
+    return
+  end
+  local pos = self.v_missile:get_pos_vec3()
+  self.v_missile:set_pos(pos.x + dx, pos.y, pos.z + dz)
+  self.v_missile:set_target_dir(_atan(dir_x, dir_z) * rad2deg % 360, true)
+  if self.v_ground_destroy_height and self.v_terrain_height then
+    self:check_ground_destroy()
+  end
+end
+
+function M:get_speed()
+  return (self.v_speed + self.v_acc * self.v_cur_follow_time) * self.v_time_scale * self.v_missile:get_owner_time_scale()
+end
+
+return M

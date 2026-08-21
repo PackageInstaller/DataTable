@@ -1,0 +1,57 @@
+return {
+  {
+    AdvacneAfter = "Char/Char_qn_icon_qn0",
+    AdvacneBefore = "Char_icon_potential_0_1",
+    Lv = 1
+  },
+  {
+    AdvacneAfter = "Char/Char_qn_icon_qn1",
+    AdvacneBefore = "Char_icon_potential_0_1",
+    Lv = 2
+  },
+  {
+    AdvacneAfter = "Char/Char_qn_icon_qn2",
+    AdvacneBefore = "Char_icon_potential_1_2",
+    Lv = 3
+  },
+  {
+    AdvacneAfter = "Char/Char_qn_icon_qn3",
+    AdvacneBefore = "Char_icon_potential_1_2",
+    Lv = 4
+  },
+  {
+    AdvacneAfter = "Char/Char_qn_icon_qn4",
+    AdvacneBefore = "Char_icon_potential_2_3",
+    Lv = 5
+  },
+  {
+    AdvacneAfter = "Char/Char_qn_icon_qn5",
+    AdvacneBefore = "Char_icon_potential_2_3",
+    Lv = 6
+  },
+  {
+    AdvacneAfter = "Char/Char_qn_icon_qn6",
+    AdvacneBefore = "Char_icon_potential_3_4",
+    Lv = 7
+  },
+  {
+    AdvacneAfter = "Char/Char_qn_icon_qn7",
+    AdvacneBefore = "Char_icon_potential_4_5",
+    Lv = 8
+  },
+  {
+    AdvacneAfter = "Char/Char_qn_icon_qn7",
+    AdvacneBefore = "Char_icon_potential_4_5",
+    Lv = 9
+  },
+  {
+    AdvacneAfter = "Char/Char_qn_icon_qn7",
+    AdvacneBefore = "Char_icon_potential_4_5",
+    Lv = 10
+  },
+  {
+    AdvacneAfter = "Char/Char_qn_icon_qn7",
+    AdvacneBefore = "Char_icon_potential_4_5",
+    Lv = 11
+  }
+}

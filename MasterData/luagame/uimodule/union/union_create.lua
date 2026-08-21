@@ -1,0 +1,227 @@
+local ItemHelper = require("utils.item_helper")
+local UnionHelper = require("uimodule.union.union_helper")
+local UnionCfg = require("uimodule.union.union_config")
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_apply_join = {
+    "ApplyJoin",
+    BIND_TYPE.TOGGLE
+  },
+  v_btn_create = {
+    "BtnCreate",
+    BIND_TYPE.BUTTON
+  },
+  v_cost_curr = {
+    "CostCurr",
+    BIND_TYPE.IMAGE
+  },
+  v_curr_num = {
+    "CurrNum",
+    BIND_TYPE.TEXT
+  },
+  v_cost_desc = {
+    "CostDesc",
+    BIND_TYPE.TEXT
+  },
+  v_desc_limit = {
+    "DescLimit",
+    BIND_TYPE.TEXT
+  },
+  v_direct_join = {
+    "DirectJoin",
+    BIND_TYPE.TOGGLE
+  },
+  v_icon = {
+    "Icon",
+    BIND_TYPE.IMAGE
+  },
+  v_name_limit = {
+    "NameLimit",
+    BIND_TYPE.TEXT
+  },
+  v_union_name_input = {
+    "NameInput",
+    BIND_TYPE.INPUT
+  },
+  v_union_slogan_input = {
+    "SloganInput",
+    BIND_TYPE.INPUT
+  },
+  v_set_up_info = {
+    "SetUpInfo",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnCreate", function()
+    self:_onclick_create_btn()
+  end)
+  self:set_inputfield_listener(self.v_union_name_input, function()
+    self:_on_name_input()
+  end, function()
+    self:_on_name_input_end()
+  end)
+  self:set_inputfield_listener(self.v_union_slogan_input, function()
+    self:_on_slogan_input()
+  end, function()
+    self:_on_slogan_input_end()
+  end)
+  self:set_toggle_listener(self.v_apply_join, function(isOn)
+    self:_onclick_apply_tog(isOn)
+  end)
+  self:set_toggle_listener(self.v_direct_join, function(isOn)
+    self:_onclick_jion_tog(isOn)
+  end)
+  self:set_button("CostCurr", function()
+    self:_onclick_cost_money()
+  end)
+  self.template_key = "UNITON_ICON" .. self:ui_get_name()
+  local content = self.v_uiobjects.IconTemp.transform.parent
+  self:register_exist_auto_template(self.template_key, self.v_uiobjects.IconTemp, content)
+end
+
+function ui:ui_on_show()
+  self.v_union_cfg = ShareRes.create("guild.guild_upgrade", 1)
+  self:_set_characters_num()
+  self:_set_cost_info()
+  self:_set_icon_list()
+  self:_set_join_type()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:_set_characters_num()
+  self.v_name_max_len = ShareRes.get_system_comm_value("GuildNameMaxLen")
+  self.v_desc_max_len = ShareRes.get_system_comm_value("GuildIdeaMaxLen")
+  self.v_name_limit.text = string.format("0/%s", self.v_name_max_len)
+  self.v_desc_limit.text = string.format("0/%s", self.v_desc_max_len)
+  self.v_union_name_input.text = ""
+  self.v_union_slogan_input.text = ""
+  self.v_union_name = ""
+  self.v_union_desc = ""
+end
+
+function ui:_set_cost_info()
+  local item_cfg = ItemHelper.get_item_cfg(self.v_union_cfg.Cost)
+  ResMgr:load_set_icon(self.v_cost_curr, string.format("Icon/Item/%s", item_cfg.Icon))
+  local has = BagMgr:get_item_num(self.v_union_cfg.Cost)
+  local need = self.v_union_cfg.CostNum
+  local color = has >= need and "<color=white>%s</color>" or "<color=red>%s</color>"
+  self.v_curr_num.text = string.format(color, need)
+  self.v_cost_desc.text = Util.format_str("消耗{1}：", item_cfg.Name)
+end
+
+function ui:_set_icon_list()
+  local list = ShareRes.create("guild.guild_icon")
+  self:give_back_auto_cache(self.template_key, false)
+  for i, v in ipairs(list) do
+    local item = self:get_auto_cache(self.template_key)
+    local icon = self:get_image("Bg/Icon", item)
+    ResMgr:load_set_icon(icon, v.name)
+    local tog = self:get_toggle(nil, item)
+    self:set_toggle_listener(tog, function(isOn)
+      if isOn then
+        self.v_union_icon = v.Id
+        ResMgr:load_set_icon(self.v_icon, v.name)
+      end
+    end)
+    NextFrameMgr:add(function()
+      tog.isOn = 1 == i
+      if 1 == i then
+        self.v_union_icon = v.Id
+        ResMgr:load_set_icon(self.v_icon, v.name)
+      end
+    end)
+  end
+end
+
+function ui:_set_join_type()
+  self.v_join_mode = UnionCfg.JOIN_MODE.PASS
+  self.v_apply_join.isOn = false
+  self.v_direct_join.isOn = true
+end
+
+function ui:_onclick_create_btn()
+  local has = BagMgr:get_item_num(self.v_union_cfg.Cost)
+  local need = self.v_union_cfg.CostNum
+  if has < need then
+    Util.show_message_tip(2106)
+    return
+  end
+  if not self.v_union_name or self.v_union_name == "" then
+    Util.show_message_tip(2239)
+    return
+  end
+  UnionMgr:request_create_union(self.v_union_icon, self.v_union_name, self.v_union_desc, self.v_join_mode, function(error_code)
+    if 0 == error_code then
+      Util.show_message_tip(2240)
+    elseif 1714 == error_code then
+      self.v_union_name_input.text = ""
+      self.v_union_name = ""
+    elseif 1715 == error_code then
+      self.v_union_slogan_input.text = ""
+      self.v_union_desc = ""
+    end
+  end)
+end
+
+function ui:_on_name_input()
+  local new_str = UnionHelper.filter_special_char(self.v_union_name_input.text)
+  self.v_union_name_input.text = new_str
+  local len = Util.get_string_len(self.v_union_name_input.text)
+  self.v_name_limit.text = string.format("%s/%s", len, self.v_name_max_len)
+  if len > self.v_name_max_len then
+    local tip = Util.format_str("不可超过{1}字", self.v_name_max_len)
+    UIMgr:get_ui("uimessagetip"):ui_show(tip)
+    local old_str = self.v_union_name_input.text
+    local new_str = Util.get_sub_string_utf8(old_str, self.v_name_max_len)
+    self.v_union_name_input.text = new_str
+  end
+end
+
+function ui:_on_name_input_end()
+  self.v_union_name = self.v_union_name_input.text
+end
+
+function ui:_on_slogan_input()
+  local new_str = UnionHelper.filter_special_char(self.v_union_slogan_input.text)
+  self.v_union_slogan_input.text = new_str
+  local len = Util.get_string_len(self.v_union_slogan_input.text)
+  self.v_desc_limit.text = string.format("%s/%s", len, self.v_desc_max_len)
+  if len > self.v_desc_max_len then
+    local tip = Util.format_str("不可超过{1}字", self.v_desc_max_len)
+    UIMgr:get_ui("uimessagetip"):ui_show(tip)
+    local old_str = self.v_union_slogan_input.text
+    local new_str = Util.get_sub_string_utf8(old_str, self.v_desc_max_len)
+    self.v_union_slogan_input.text = new_str
+  end
+end
+
+function ui:_on_slogan_input_end()
+  self.v_union_desc = self.v_union_slogan_input.text
+end
+
+function ui:_onclick_apply_tog(isOn)
+  if isOn then
+    self.v_join_mode = UnionCfg.JOIN_MODE.CHAIRMAN_APPROVAL
+  end
+end
+
+function ui:_onclick_jion_tog(isOn)
+  if isOn then
+    self.v_join_mode = UnionCfg.JOIN_MODE.PASS
+  end
+end
+
+function ui:_onclick_cost_money()
+  UIMgr:get_ui("itemTip"):ui_show({
+    item_id = self.v_union_cfg.Cost
+  })
+end
+
+return ui

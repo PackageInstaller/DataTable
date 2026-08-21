@@ -1,0 +1,44 @@
+return {
+  [11001] = {
+    BgName = "UIChapter/gecao_bg_enter_gq",
+    EnglishName = "BIAN YUAN",
+    EpisodeId = 20090901,
+    Id = 11001,
+    Level = 1,
+    LevelName = "简单",
+    Name = "边缘",
+    OpenID = 0,
+    OpenStar = 0,
+    RewardGroup = 450151,
+    SuggestLevel = 9000,
+    TitleBg = "UIChapter/gecao_bg_gqct"
+  },
+  [11002] = {
+    BgName = "UIChapter/gecao_bg_enter_gq",
+    EnglishName = "QIAN CENG",
+    EpisodeId = 20090902,
+    Id = 11002,
+    Level = 2,
+    LevelName = "普通",
+    Name = "浅层",
+    OpenID = 11001,
+    OpenStar = 3,
+    RewardGroup = 450152,
+    SuggestLevel = 12500,
+    TitleBg = "UIChapter/gecao_bg_gqct"
+  },
+  [11003] = {
+    BgName = "UIChapter/gecao_bg_enter_gq",
+    EnglishName = "LIU YU",
+    EpisodeId = 20090903,
+    Id = 11003,
+    Level = 3,
+    LevelName = "困难",
+    Name = "流域",
+    OpenID = 11002,
+    OpenStar = 3,
+    RewardGroup = 450153,
+    SuggestLevel = 14500,
+    TitleBg = "UIChapter/gecao_bg_gqct"
+  }
+}

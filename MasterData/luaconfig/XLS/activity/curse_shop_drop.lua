@@ -1,0 +1,460 @@
+return {
+  [10101] = {
+    [666001] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 1,
+      ItemId = 666001,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666002] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 2,
+      ItemId = 666002,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666003] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 3,
+      ItemId = 666003,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666004] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 4,
+      ItemId = 666004,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666005] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 5,
+      ItemId = 666005,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666006] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 6,
+      ItemId = 666006,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666007] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 7,
+      ItemId = 666007,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666008] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 8,
+      ItemId = 666008,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666009] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 9,
+      ItemId = 666009,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666010] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 10,
+      ItemId = 666010,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666011] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 11,
+      ItemId = 666011,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666012] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 12,
+      ItemId = 666012,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666013] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 13,
+      ItemId = 666013,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666014] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 14,
+      ItemId = 666014,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666015] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 15,
+      ItemId = 666015,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666016] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 16,
+      ItemId = 666016,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666017] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 17,
+      ItemId = 666017,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666018] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 18,
+      ItemId = 666018,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666019] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 19,
+      ItemId = 666019,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666020] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 20,
+      ItemId = 666020,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666021] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 21,
+      ItemId = 666021,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666022] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 22,
+      ItemId = 666022,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666023] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 23,
+      ItemId = 666023,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666024] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 24,
+      ItemId = 666024,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666025] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 25,
+      ItemId = 666025,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666026] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 26,
+      ItemId = 666026,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666027] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 27,
+      ItemId = 666027,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666028] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 28,
+      ItemId = 666028,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666029] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 29,
+      ItemId = 666029,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666030] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 30,
+      ItemId = 666030,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666031] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 31,
+      ItemId = 666031,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666032] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 32,
+      ItemId = 666032,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666033] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 33,
+      ItemId = 666033,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666034] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 34,
+      ItemId = 666034,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666035] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 35,
+      ItemId = 666035,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666036] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 36,
+      ItemId = 666036,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666037] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 37,
+      ItemId = 666037,
+      ItemNum = 1,
+      Weight = 100
+    },
+    [666038] = {
+      Arg = {
+        0,
+        0,
+        0
+      },
+      DropID = 10101,
+      Id = 38,
+      ItemId = 666038,
+      ItemNum = 1,
+      Weight = 100
+    }
+  }
+}

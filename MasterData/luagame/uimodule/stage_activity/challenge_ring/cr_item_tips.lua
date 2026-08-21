@@ -1,0 +1,241 @@
+local Base = require("ui.uiobject")
+local BagCfg = require("gamelogic.character.fight_bag_configs")
+local Item_Helper = require("uimodule.fight_bag.fight_item_helper")
+local bagConfig = require("gamelogic.character.fight_bag_configs")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local ITEM_QUALITY_PATH = "Icon/BattleCommon/Ba_%dx"
+local ITEM_ICON_PATH = "Icon/BattleItem/%s"
+local ITEM_SIZE = {150, 150}
+local MODEL = {
+  v_action_obj = {
+    "ActionObj",
+    BIND_TYPE.BUTTON
+  },
+  v_action_text = {
+    "ActionText",
+    BIND_TYPE.TEXT
+  },
+  v_add = {
+    "Add",
+    BIND_TYPE.TEXT
+  },
+  v_desc1 = {
+    "Desc1",
+    BIND_TYPE.TEXT
+  },
+  v_desc2 = {
+    "Desc2",
+    BIND_TYPE.TEXT
+  },
+  v_desc_list = {
+    "DescList",
+    BIND_TYPE.OBJECT
+  },
+  v_desc_tmp1 = {
+    "DescTmp1",
+    BIND_TYPE.TEXT
+  },
+  v_desc_tmp2 = {
+    "DescTmp2",
+    BIND_TYPE.TEXT
+  },
+  v_desc_tmp3 = {
+    "DescTmp3",
+    BIND_TYPE.TEXT
+  },
+  v_desc = {
+    "Desc",
+    BIND_TYPE.TEXT
+  },
+  v_info_panel = {
+    "InfoPanel",
+    BIND_TYPE.OBJECT
+  },
+  v_item_desc1 = {
+    "ItemDesc1",
+    BIND_TYPE.TEXT
+  },
+  v_item_desc2 = {
+    "ItemDesc2",
+    BIND_TYPE.TEXT
+  },
+  v_item_desc3 = {
+    "ItemDesc3",
+    BIND_TYPE.TEXT
+  },
+  v_item_info = {
+    "ItemInfo",
+    BIND_TYPE.OBJECT
+  },
+  v_item_name = {
+    "ItemName",
+    BIND_TYPE.TEXT
+  },
+  v_item_obj = {
+    "ItemObj",
+    BIND_TYPE.IMAGE
+  },
+  v_item_price = {
+    "ItemPrice",
+    BIND_TYPE.TEXT
+  },
+  v_item_tips = {
+    "ItemTips",
+    BIND_TYPE.OBJECT
+  },
+  v_item_type = {
+    "ItemType",
+    BIND_TYPE.TEXT
+  },
+  v_mask = {
+    "Mask",
+    BIND_TYPE.BUTTON
+  },
+  v_price_obj = {
+    "PriceObj",
+    BIND_TYPE.OBJECT
+  },
+  v_suit_info = {
+    "SuitInfo",
+    BIND_TYPE.OBJECT
+  },
+  v_suit_mask = {
+    "SuitMask",
+    BIND_TYPE.OBJECT
+  },
+  v_suit_name1 = {
+    "SuitName1",
+    BIND_TYPE.TEXT
+  },
+  v_suit_name2 = {
+    "SuitName2",
+    BIND_TYPE.TEXT
+  },
+  v_suit_name3 = {
+    "SuitName3",
+    BIND_TYPE.TEXT
+  },
+  v_suit_name4 = {
+    "SuitName4",
+    BIND_TYPE.TEXT
+  },
+  v_suit_panel = {
+    "SuitPanel",
+    BIND_TYPE.IMAGE
+  },
+  v_suit_pos = {
+    "SuitPos",
+    BIND_TYPE.OBJECT
+  },
+  v_suit_tmp1 = {
+    "SuitTmp1",
+    BIND_TYPE.TEXT
+  },
+  v_suit_tmp2 = {
+    "SuitTmp2",
+    BIND_TYPE.TEXT
+  },
+  v_talent_info = {
+    "TalentInfo",
+    BIND_TYPE.OBJECT
+  },
+  v_talent_mask = {
+    "TalentMask",
+    BIND_TYPE.OBJECT
+  },
+  v_talent_pos = {
+    "TalentPos",
+    BIND_TYPE.OBJECT
+  },
+  v_use_panel = {
+    "UsePanel",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("Mask", function()
+    self:_onclick_close_btn()
+  end)
+  self:set_button("ActionObj", function()
+    self:_onclick_action_btn()
+  end)
+end
+
+function ui:ui_on_show(item_cfg)
+  self:set_data(item_cfg)
+  self:_regist_client_event()
+end
+
+function ui:_regist_client_event()
+end
+
+function ui:set_data(item_data)
+  self.v_data = item_data
+  self.v_item_idx = item_data.item_idx
+  local item_id = item_data.item_id
+  local item_count = item_data.item_count
+  local battle_item_cfg = ShareRes.get_battle_item_cfg(item_id)
+  local battle_equip_cfg = ShareRes.get_battle_equip_cfg(item_id)
+  self.v_uiobjects.ItemInfo:SetActive(false)
+  self.v_uiobjects.TalentInfo:SetActive(false)
+  self.v_uiobjects.SuitInfo:SetActive(false)
+  Util.load_ui_new_battle_item(self.v_uiobjects.ItemObj, item_id, item_count)
+  self.v_item_name.text = item_data.Name
+  for tpye_name, type_idx in pairs(bagConfig) do
+    if type_idx == item_data.Type then
+      self.v_item_type.text = tpye_name
+      break
+    end
+  end
+  local item_cfg
+  if battle_item_cfg then
+    self.v_uiobjects.ItemInfo:SetActive(true)
+    item_cfg = battle_item_cfg
+    self.v_desc1.text = item_cfg.WorldDesc
+  elseif battle_equip_cfg then
+    item_cfg = battle_equip_cfg
+    local collection_type = item_cfg.Type
+    local is_career = item_cfg.CareerDesc
+    if collection_type == bagConfig.CollectType.COMMON then
+      self.v_uiobjects.ItemDesc1:SetActive(false)
+      self.v_uiobjects.ItemDesc2:SetActive(false)
+      if is_career then
+        self.v_uiobjects.ItemDesc2:SetActive(true)
+        local joy_entry_cfg = ShareRes.create("battle.battle_collection_job_entry", is_career)
+        if item_cfg.FixedEntry[1] then
+          local fixed_entry = ShareRes.create("battle.battle_equip_fixed_entry", item_cfg.FixedEntry[1])
+          self.v_desc = fixed_entry.Context
+        end
+        if joy_entry_cfg then
+          self.v_uiobjects.TalentInfo:SetActive(true)
+          for i, data in ipairs(joy_entry_cfg) do
+            self["v_desc_tmp" .. i].text = data.Desc
+          end
+        end
+      else
+        self.v_uiobjects.ItemDesc1:SetActive(true)
+        self.v_desc.text = item_cfg.Arg[2]
+      end
+    elseif collection_type == bagConfig.CollectType.SUIT then
+      local suit_id = item_cfg.Arg[1]
+      local joy_entry_cfg = ShareRes.create("battle.battle_collection_suit", suit_id)
+      Util.get_text("Desc", self.v_suit_tmp1).text = joy_entry_cfg.TwoPieceContext
+      Util.get_text("Desc", self.v_suit_tmp2).text = joy_entry_cfg.FourPieceContext
+    end
+  end
+  self.v_item_price.text = item_count * item_cfg.BuyCostCnt
+end
+
+function ui:_onclick_close_btn()
+  self:set_enable(false)
+end
+
+function ui:_onclick_action_btn()
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_BUY_ITEM)
+  msg.mm_x = self.v_item_idx
+end
+
+return ui

@@ -1,0 +1,72 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+
+function M:set_data(info)
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  self.index = info.index
+  local data = info.data
+  ucom.Select_img.gameObject:SetActive(false)
+  ucom.Option_img.gameObject:SetActive(true)
+  local icon_index = data[1]
+  local index_data = SceneEventMgr.icon_list[icon_index]
+  if not index_data then
+    Log.Error("多语言文本异常,字符串拆分后的第一个字符串无法转为纯数字, 拆分后的结果：", data)
+  end
+  ResMgr:load_set_icon(ucom.OptionIcon1_img, index_data.choose)
+  ucom.OptionTitle_txt.text = data[2]
+  ucom.OptionDesc_txt.text = data[3]
+  ResMgr:load_set_icon(ucom.SelectIcon1_img, index_data.choose)
+  ucom.SelectTitle_txt.text = data[2]
+  ucom.SelectDesc_txt.text = data[3]
+  self:set_button_listener(ucom.Option_btn, function()
+    ucom.Option_img:SetActive(false)
+    SceneEventMgr:set_temp_choose_option_index(self.index)
+    if Global.sound_mgr then
+      Global.sound_mgr:play_event_change_sound()
+    end
+    MsgGame:mq_publish2(Const.ON_SCENE_OPTION_CHOOSE)
+  end)
+  self:set_button_listener(ucom.Select_btn, function(msg)
+    SceneEventMgr:set_choose_option_index(self.index)
+    if Global.sound_mgr then
+      Global.sound_mgr:play_event_confirm_sound()
+    end
+    MsgGame:mq_publish2(Const.ON_SCENE_OPTION_CHOOSE_OVER)
+  end)
+  self:register_event()
+  local timeline_parent = Util.get_child("Animation", ucom.OptionDesc_txt.gameObject.transform.parent.parent.gameObject)
+  self.no_choose_timeline_obj = Util.get_child("Ani_VX_Option_SelectTimeline", timeline_parent)
+  self.choose_timeline_obj = Util.get_child("Ani_VX_UIEvent_SelectTimeline", timeline_parent)
+  self.no_choose_re_timeline_obj = Util.get_child("Ani_Option_Select_Re", timeline_parent)
+  self.choose_re_timeline_obj = Util.get_child("Ani_UIEvent_Select_Re", timeline_parent)
+  self.no_choose_re_timeline_obj:SetActive(true)
+  self.choose_re_timeline_obj:SetActive(true)
+end
+
+function M:on_scene_option_choose()
+  local ucom = self.v_uicompents
+  local index = SceneEventMgr:get_temp_choose_option_index()
+  if index == self.index then
+    ucom.Select_img.gameObject:SetActive(true)
+    self.no_choose_timeline_obj:SetActive(true)
+    self.choose_timeline_obj:SetActive(true)
+    self.no_choose_re_timeline_obj:SetActive(false)
+    self.choose_re_timeline_obj:SetActive(false)
+  else
+    ucom.Option_img:SetActive(true)
+    ucom.Select_img.gameObject:SetActive(false)
+    self.no_choose_re_timeline_obj:SetActive(true)
+    self.choose_re_timeline_obj:SetActive(true)
+  end
+end
+
+function M:register_event()
+  self:bind_auto_mq(Const.ON_SCENE_OPTION_CHOOSE, self.on_scene_option_choose, self)
+end
+
+function M:on_clear()
+  self:unbind_all_auto_mq()
+end
+
+return M

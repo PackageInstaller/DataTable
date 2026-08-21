@@ -1,0 +1,63 @@
+local Math = require("base.mathx")
+local _clamp = Math.Clamp
+local _lerp = Math.lerp_number
+local _abs = math.abs
+local SET_TYPE = {REPLACE = 0, OPERATION = 1}
+local M = Util.create_class()
+
+function M:_init(camera_lua)
+  self.v_camera = camera_lua
+  self.v_cinema_virtal_camera = camera_lua.v_cinimachine_vc
+  self.v_camera_obj = camera_lua.v_camera_obj
+end
+
+function M:on_release()
+end
+
+function M:late_update()
+  if not self.v_dutch_effect_data then
+    return
+  end
+  self:update_dutch_val()
+end
+
+function M:start_dutch_effect(params_data)
+  self.v_dutch_effect_data = params_data
+  local dutch_data = self.v_dutch_effect_data
+  local target_val = dutch_data.target_val
+  local set_type = dutch_data.set_type
+  self.v_target_val = target_val
+  local cur_dutch = self.v_cinema_virtal_camera.m_Lens.Dutch
+  if set_type == SET_TYPE.OPERATION then
+    self.v_target_val = cur_dutch + target_val
+  end
+end
+
+function M:stop_dutch_effect()
+end
+
+function M:update_dutch_val()
+  if not self.v_cinema_virtal_camera or self.v_cinema_virtal_camera:IsNull() then
+    return
+  end
+  if not self.v_dutch_effect_data then
+    return
+  end
+  local dutch_data = self.v_dutch_effect_data
+  local target_val = dutch_data.target_val
+  local lerp_val = dutch_data.lerp_val
+  local dutch_max_val = dutch_data.dutch_max_val
+  local dutch_min_val = dutch_data.dutch_min_val
+  local cur_dutch_val = self.v_cinema_virtal_camera.m_Lens.Dutch
+  local time = self.v_camera:get_dt()
+  lerp_val = time * lerp_val
+  local new_val = _lerp(cur_dutch_val, self.v_target_val, lerp_val)
+  if _abs(new_val - self.v_target_val) <= 0.05 then
+    new_val = self.v_target_val
+    self.v_dutch_effect_data = nil
+  end
+  new_val = _clamp(new_val, dutch_min_val, dutch_max_val)
+  CSHelper.SetLensDutch(self.v_cinema_virtal_camera, self.v_camera_obj, new_val)
+end
+
+return M

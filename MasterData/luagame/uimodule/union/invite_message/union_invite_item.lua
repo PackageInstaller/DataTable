@@ -1,0 +1,105 @@
+local Base = require("ui.uiobject")
+local UnionCfg = require("uimodule.union.union_config")
+local UnionHelper = require("uimodule.union.union_helper")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_guide_profile = {
+    "GuideProfile",
+    BIND_TYPE.IMAGE
+  },
+  v_member_num = {
+    "MemberNum",
+    BIND_TYPE.TEXT
+  },
+  v_player_name = {
+    "PlayerName",
+    BIND_TYPE.TEXT
+  },
+  v_player_profile = {
+    "PlayerProfile",
+    BIND_TYPE.IMAGE
+  },
+  v_union_name = {
+    "UnionName",
+    BIND_TYPE.TEXT
+  },
+  v_guide_slogan = {
+    "guideSlogan",
+    BIND_TYPE.TEXT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnAccept", function()
+    self:_onclick_accept_btn()
+  end)
+  self:set_button("BtnRefuse", function()
+    self:_onclick_refuse_btn()
+  end)
+  self.v_canvas = self:get_canvas_group(nil, self.v_object)
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+  if self.v_sq then
+    self.v_sq:Kill(false)
+    self.v_sq = nil
+  end
+end
+
+function ui:set_data(go, data_list, index)
+  self.v_union_info = data_list[index].guild_info
+  self.v_invite_time = data_list[index].invite_time
+  self.v_player_info = data_list[index].inviter_info
+  self.v_invite_uuid = data_list[index].invite_uuid
+  self.v_canvas.alpha = 1
+  self.v_player_name.text = self.v_player_info.name
+  ResMgr:load_set_icon(self.v_player_profile, UnionHelper.get_player_icon_path(self.v_player_info.icon))
+  self.v_union_name.text = self.v_union_info.name
+  self.v_guide_slogan.text = self.v_union_info.idea
+  self.v_member_num.text = string.format("%s/%s", self.v_union_info.member_num, self.v_union_info.member_num_limit)
+  ResMgr:load_set_icon(self.v_guide_profile, UnionHelper.get_union_icon_path(self.v_union_info.icon))
+end
+
+function ui:_onclick_accept_btn()
+  local is_full = self.v_union_info.member_num >= self.v_union_info.member_num_limit
+  if is_full then
+    Util.show_message_tip(2298)
+    MsgGame:mq_publish2(Const.MSG_ON_REFUSE_UNION_INVATION)
+    return
+  end
+  if Date.server_time() - self.v_invite_time > UnionCfg.INVATION_OUTTIME then
+    Util.show_message_tip(2299)
+    MsgGame:mq_publish2(Const.MSG_ON_REFUSE_UNION_INVATION)
+    return
+  end
+  UnionMgr:request_handle_invitaion(UnionCfg.HANDLE_INVITE_TYPE.ACCEPT, self.v_invite_uuid, function(ok)
+    if ok then
+      Util.show_message_tip(2300)
+    else
+      MsgGame:mq_publish2(Const.MSG_ON_REFUSE_UNION_INVATION)
+    end
+  end)
+end
+
+function ui:_onclick_refuse_btn()
+  UnionMgr:request_handle_invitaion(UnionCfg.HANDLE_INVITE_TYPE.REFUSE, self.v_invite_uuid, function(ok)
+    self:play_animation()
+  end)
+end
+
+function ui:play_animation()
+  self.v_sq = Util.create_sequence()
+  self.v_sq:Append(self.v_canvas:DOFade(0, 0.2))
+  self.v_sq:AppendCallback(function()
+    MsgGame:mq_publish2(Const.MSG_ON_REFUSE_UNION_INVATION)
+    self.v_sq:Kill(false)
+    self.v_sq = nil
+  end)
+end
+
+return ui

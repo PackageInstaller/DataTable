@@ -1,0 +1,205 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local _tinsert = table.insert
+local WEEKLY_PVP_STAR_ITEM_KEY = "WEEKLY_PVP_STAR_ITEM_KEY"
+local WEEKLY_PVP_STAR_AWARD_ITEM_KEY = "WEEKLY_PVP_STAR_AWARD_ITEM_KEY"
+local _insert = table.insert
+local MODEL = {
+  v_task_list = {
+    "TaskContent",
+    BIND_TYPE.OBJECT
+  },
+  v_task_item = {
+    "CtTem",
+    BIND_TYPE.OBJECT
+  },
+  v_award_list = {
+    "AwardContent",
+    BIND_TYPE.OBJECT
+  },
+  v_award_item = {
+    "AwardItem",
+    BIND_TYPE.OBJECT
+  }
+}
+local TASK_CONFIG = require("gamelogic.task.task_config")
+local TASK_STATE = TASK_CONFIG.TASK_STATE
+local STATE_TO_COLOR = {
+  [true] = "484243",
+  [false] = "F5EDE1"
+}
+local WEEKLY_PVP_AWARD_ITEM = require("uimodule.weekly.weekly_pvp_star_award_item")
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnClose", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnReturn", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnRetX", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnAllGet", function()
+    WeeklyMgr:request_week_acty_pvp_periods_award()
+  end)
+  self.v_task_data = {}
+  self:register_exist_auto_template(WEEKLY_PVP_STAR_ITEM_KEY, self.v_task_item, self.v_task_list)
+  self:register_exist_auto_template(WEEKLY_PVP_STAR_AWARD_ITEM_KEY, self.v_award_item, self.v_award_list)
+end
+
+function ui:ui_on_show(difficulty)
+  if not difficulty or 0 == difficulty then
+    difficulty = WeeklyMgr:get_cur_pvp_segment()
+  end
+  if not difficulty or 0 == difficulty then
+    difficulty = 1
+  end
+  self.v_difficulty = difficulty
+  self:refresh_data(difficulty)
+  self:register_event()
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_ON_WEEKLY_PVP_AWARD_GET, self.refresh_data, self)
+end
+
+function ui:refresh_data()
+  self.select_cfg_list = WeeklyMgr:get_award_cfg_list_with_difficulty(self.v_difficulty)
+  local award_state_list = WeeklyMgr:get_star_award_list_by_state(self.v_difficulty)
+  local curr_all_star = WeeklyMgr:get_periods_max_star()
+  self:clear_task_item()
+  table.sort(award_state_list, function(a, b)
+    if a.state ~= b.state then
+      return a.state < b.state
+    end
+    return a.cfg.Fraction < b.cfg.Fraction
+  end)
+  for index, data in ipairs(award_state_list) do
+    local task_ui = self:get_auto_cache(WEEKLY_PVP_STAR_ITEM_KEY)
+    local item = WEEKLY_PVP_AWARD_ITEM:ui_wrap_ex(self, task_ui, true)
+    item:set_data(data.cfg, curr_all_star)
+    self.v_task_data[index] = item
+  end
+  self:refresh_reward_state()
+  self:refresh_get_all_btn_state()
+end
+
+function ui:refresh_get_all_btn_state()
+  local is_can_get_star_award = WeeklyMgr:get_star_award_red_state()
+  self.v_uiobjects.BtnAllGet:SetActive(is_can_get_star_award)
+end
+
+function ui:refresh_reward_state()
+  local is_get = WeeklyMgr:is_all_get_pvp_award(self.select_cfg_list)
+  self.v_uiobjects.AllGot:SetActive(is_get)
+  self.v_uiobjects.BtnAllGet:SetActive(not is_get)
+end
+
+function ui:ui_on_hide()
+  self:unbind_all_auto_mq()
+  self:clear_task_item()
+  self.v_not_show_progress = nil
+  self.v_group_id = nil
+  self.v_dp_ui_list = nil
+  self:clear_dp_ui_item_list()
+end
+
+function ui:refresh_normal_task()
+  self.v_task_list = self:get_task_list()
+  self:refresh_dp_ui()
+  self:refresh_task_list()
+end
+
+function ui:refresh_dp_ui()
+  self:refresh_target_ui()
+end
+
+function ui:get_task_list()
+  local task_list
+  local chapter_cfg = ShareRes.get_chapter_cfg(self.v_chapter_id)
+  local task_group_id = chapter_cfg.TaskGroupId
+  if self.v_group_id then
+    if self.v_chapter_id then
+      task_list = ShareRes.get_chapter_stage_group_task_cfg(task_group_id, self.v_group_id)
+      if not task_list then
+        Log.Error("获取任务配置失败，章节，任务组:", self.v_chapter_id, self.v_group_id)
+        return
+      end
+    else
+      task_list = ShareRes.get_task_group(self.v_group_id)
+      if not task_list then
+        Log.Error("获取任务配置失败，任务组:", self.v_group_id)
+        return
+      end
+    end
+  else
+    task_list = ShareRes.get_chapter_task_cfg(task_group_id)
+    if not task_list then
+      Log.Error("获取任务配置失败，章节:", self.v_chapter_id)
+      return
+    end
+  end
+  return task_list
+end
+
+function ui:clear_dp_ui_item_list()
+  if self.v_dp_ui_item_list then
+    self:remove_wrap_ui_list(self.v_dp_ui_item_list)
+  end
+end
+
+function ui:refresh_target_ui()
+  if not self.v_not_show_progress then
+    if not self.v_task_list then
+      return
+    end
+    local total_task_count, task_complete_num = 0, 0
+    for key, cfg in pairs(self.v_task_list) do
+      if TaskMgr:get_task_state(cfg.Id) >= TASK_STATE.receive then
+        task_complete_num = task_complete_num + 1
+      end
+      total_task_count = total_task_count + 1
+    end
+    local percent = task_complete_num / total_task_count
+    self.v_uicompents.StNowDPAmount_txt.text = math.floor(percent * 100) .. "%"
+    self.v_uicompents.DpBarFill_img.fillAmount = percent
+  end
+  self.v_uiobjects.TaskProgress:SetActive(self.v_not_show_progress ~= true)
+  self.v_uiobjects.TaskTitle:SetActive(self.v_not_show_progress == true)
+end
+
+function ui:click_get_all_btn()
+  self.v_get_task_id_list = {}
+  for task_id, _ in pairs(self.v_task_data) do
+    local task_data = TaskMgr:get_task_by_id(task_id)
+    if task_data and task_data.state == TASK_STATE.receive then
+      _insert(self.v_get_task_id_list, task_id)
+    end
+  end
+  TaskMgr:submit_task_list(self.v_get_task_id_list, function()
+    self:refresh_task_list()
+  end)
+end
+
+function ui:get_color(is_receive)
+  return STATE_TO_COLOR[is_receive]
+end
+
+function ui:clear_task_item()
+  self:give_back_auto_cache(WEEKLY_PVP_STAR_ITEM_KEY)
+  self:give_back_auto_cache(WEEKLY_PVP_STAR_AWARD_ITEM_KEY)
+  for key, item in pairs(self.v_task_data) do
+    item:ui_hide()
+    item:ui_destroy()
+    self.v_task_data[key] = nil
+  end
+end
+
+function ui:get_award_item()
+  return self:get_auto_cache(WEEKLY_PVP_STAR_AWARD_ITEM_KEY)
+end
+
+return ui

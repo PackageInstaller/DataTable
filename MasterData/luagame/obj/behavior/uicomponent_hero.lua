@@ -1,0 +1,61 @@
+local Base = require("obj.behavior.uicomponent_char")
+local M = Util.create_child_mt(Base)
+
+function M:add_headbar(...)
+  Base.add_headbar(self, ...)
+  self:mgr_bind_auto_mq(Const.MSG_GUILD_GET_DATA, M._on_update_guild_icon, self)
+  self:mgr_bind_auto_mq(Const.MSG_GUILD_JOIN, M._on_update_guild_icon, self)
+  self:mgr_bind_auto_mq(Const.MSG_GUILD_LEAVE, M._on_update_guild_icon, self)
+  if GuildSys and GuildSys:is_activated() then
+    self:_on_update_guild_icon()
+  end
+end
+
+function M:_on_update_guild_icon()
+  if GuildSys:is_in_guild() then
+    local data = GuildSys:get_guild_data()
+    local flag_style_idx = data.flag_style_idx
+    local flag_color_idx = data.flag_color_idx
+    local flag_word = data.flag_word
+    self:_update_guild_icon(flag_style_idx, flag_color_idx, flag_word)
+  else
+    self:clean_flag()
+  end
+end
+
+function M:update_headbar_text(...)
+  Base.update_headbar_text(self, ...)
+  if self.v_headbar then
+    self:_on_update_guild_icon()
+  end
+end
+
+function M:add_debug_headbar()
+  if not self.v_debug_headbar then
+    local height = self.v_char:get_real_height() + 2
+    self.v_debug_headbar, self.v_debug_headbar_bind = Global.headbar_mgr:get_head_debug_info(self.v_char, height)
+    self.v_debug_headbar_text = Util.get_text("Text", self.v_debug_headbar)
+  end
+end
+
+function M:on_disable()
+  Base.on_disable(self)
+  if self.v_debug_headbar then
+    self.v_debug_headbar:SetActive(false)
+  end
+end
+
+function M:clean_up()
+  Base.clean_up(self)
+  if self.v_debug_headbar then
+    Global.headbar_mgr:release_head_debug_info(self.v_debug_headbar, self.v_debug_headbar_bind)
+  end
+end
+
+function M:set_debug_headbar_text(text)
+  if self.v_debug_headbar_text then
+    self.v_debug_headbar_text.text = text
+  end
+end
+
+return M

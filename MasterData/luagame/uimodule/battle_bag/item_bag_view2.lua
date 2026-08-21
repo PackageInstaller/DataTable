@@ -1,0 +1,69 @@
+local Base = require("ui.uiobject")
+local BagCfg = require("gamelogic.character.fight_bag_configs")
+local BAG_ITEM2_KEY = "BAG_ITEM2_KEY"
+local BAG_ITEM2_CLASS = require("uimodule.battle_bag.battle_item2")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:register_exist_auto_template(BAG_ITEM2_KEY, self.v_uiobjects.BattleItem, self.v_uiobjects.BagListContent)
+end
+
+function ui:ui_on_show()
+  self:_refresh_list_view()
+  self:_regist_client_event()
+end
+
+function ui:ui_on_hide()
+  self:clear_bag_item_ui_wrap()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_FIGHT_BAG_UPDATE, self.response_bag_update_event, self)
+end
+
+function ui:response_bag_update_event()
+  self:_refresh_list_view()
+end
+
+function ui:_refresh_list_view()
+  local list = FightBagMgr:get_bag(BagCfg.BagType.ITEM)
+  local item_list = {}
+  for _, item in pairs(list) do
+    table.insert(item_list, item)
+  end
+  table.sort(item_list, function(a, b)
+    if a.Quality == b.Quality then
+      return a.Cfg.ShowPriority > b.Cfg.ShowPriority
+    else
+      return a.Quality > b.Quality
+    end
+  end)
+  local num = #item_list
+  self.v_uiobjects.NoItemDesc:SetActive(0 == num)
+  self:clear_bag_item_ui_wrap()
+  self:give_back_all_auto_cache(BAG_ITEM2_KEY)
+  self.v_bag_item_list = {}
+  for idx, item in pairs(item_list) do
+    local item_go = self:get_auto_cache(BAG_ITEM2_KEY)
+    local lua_obj = BAG_ITEM2_CLASS:ui_wrap_ex(self, item_go, true)
+    self.v_bag_item_list[idx] = {}
+    self.v_bag_item_list[idx].go = item_go
+    self.v_bag_item_list[idx].lua_obj = lua_obj
+    lua_obj:set_data(item)
+  end
+end
+
+function ui:clear_bag_item_ui_wrap()
+  if self.v_bag_item_list then
+    for _, data in pairs(self.v_bag_item_list) do
+      local lua_obj = data.lua_obj
+      self:remove_wrap_ui(lua_obj)
+    end
+    self.v_bag_item_list = nil
+  end
+end
+
+return ui

@@ -1,0 +1,17 @@
+return {
+  {
+    Condition = 0,
+    Id = 1,
+    Name = "贸易站1"
+  },
+  {
+    Condition = 4100020,
+    Id = 2,
+    Name = "贸易站2"
+  },
+  {
+    Condition = 4100021,
+    Id = 3,
+    Name = "贸易站3"
+  }
+}

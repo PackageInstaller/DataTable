@@ -1,0 +1,85 @@
+local Util = require("utils.util")
+local Timer = require("utils.timer")
+local M = Util.create_child_mt(Timer)
+local SECOND_PER_FRAME = 0.1
+local FRAME_RATE = 1 / SECOND_PER_FRAME
+local TIMER_COUNTER = 1
+local INNER_BARRIER = false
+
+function M:_init()
+  Timer._init(self)
+  self.v_current_sec = 0
+  self.v_timer_list = {}
+end
+
+function M:remove_timer(index)
+  assert(index, "nil index found")
+  local slot = self.v_index_slot_map[index]
+  if slot then
+    slot[index] = nil
+    self.v_index_slot_map[index] = nil
+    self.v_timer_list[index] = nil
+  else
+    return false
+  end
+end
+
+function M:add_timer(desc, expires, cb, arg1, arg2, cycle)
+  TIMER_COUNTER = TIMER_COUNTER + 1
+  cycle = cycle or 0
+  local info = {
+    id = TIMER_COUNTER,
+    expires = math.floor((expires + self.v_elapse_time) * FRAME_RATE) + self.v_current_frame_idx,
+    sec = expires + self.v_current_sec,
+    arg1 = arg1,
+    arg2 = arg2,
+    callback = cb,
+    cycle = cycle * FRAME_RATE,
+    desc = desc
+  }
+  self.v_timer_list[TIMER_COUNTER] = info
+  self:_internal_add_timer(self.v_wheels, self.v_current_frame_idx, self.v_index_slot_map, info)
+  return TIMER_COUNTER
+end
+
+function M:update(elapse)
+  self.v_elapse_time = self.v_elapse_time + elapse
+  while self.v_elapse_time > SECOND_PER_FRAME do
+    self.v_elapse_time = self.v_elapse_time - SECOND_PER_FRAME
+    local wheel = self.v_wheels[1]
+    local wheel_idx = 1
+    while wheel.index >= wheel.bound do
+      wheel.index = 0
+      wheel_idx = wheel_idx + 1
+      wheel = self.v_wheels[wheel_idx]
+      self:cascade_timers(wheel)
+    end
+    wheel = self.v_wheels[1]
+    local slot = wheel[wheel.index]
+    for idx, timer in pairs(slot) do
+      local remain_time = timer.sec - self.v_current_sec
+      INNER_BARRIER = true
+      local result = timer.callback(remain_time, timer.arg1, timer.arg2, timer.id)
+      INNER_BARRIER = false
+      self:remove_timer(idx)
+      if timer.cycle > 0 and result then
+        timer.expires = timer.expires + timer.cycle
+        self:_internal_add_timer(self.v_wheels, self.v_current_frame_idx, self.v_index_slot_map, timer)
+      end
+    end
+    local timer_list = self.v_timer_list
+    if 0 == self.v_current_frame_idx % 10 and next(timer_list) ~= nil then
+      for _, timer in pairs(timer_list) do
+        local remain_time = timer.sec - self.v_current_sec
+        INNER_BARRIER = true
+        timer.callback(remain_time, timer.arg1, timer.arg2, timer.id)
+        INNER_BARRIER = false
+      end
+    end
+    self.v_current_sec = math.floor(self.v_current_frame_idx / FRAME_RATE)
+    self.v_current_frame_idx = self.v_current_frame_idx + 1
+    wheel.index = wheel.index + 1
+  end
+end
+
+return M

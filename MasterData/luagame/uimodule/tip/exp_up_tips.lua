@@ -1,0 +1,146 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_exp_bar_fill = {
+    "EXPBarFill",
+    BIND_TYPE.IMAGE
+  },
+  v_exp_max = {
+    "ExpMax",
+    BIND_TYPE.TEXT
+  },
+  v_exp_now = {
+    "ExpNow",
+    BIND_TYPE.TEXT
+  },
+  v_before_lv = {
+    "BeforeLv",
+    BIND_TYPE.TEXT
+  },
+  v_player_lv = {
+    "PlayerLV",
+    BIND_TYPE.TEXT
+  },
+  v_main = {
+    "Main",
+    BIND_TYPE.OBJECT
+  },
+  v_ani_uiexpup_in = {
+    "Ani_UIExpUp_IN",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_safe_area_canvas = self:get_canvas_group("SafeArea", self.v_object)
+end
+
+function ui:ui_on_show(param)
+  self.v_param = param
+  if param.new_lv == nil or nil == param.old_exp or nil == param.new_exp then
+    self:ui_hide()
+    return
+  end
+  self:_regist_client_event()
+  self:show_view()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_SHOW_UI, self._on_show_ui, self)
+  self:bind_auto_mq(Const.MSG_ON_HIDE_UI, self._on_hide_ui, self)
+end
+
+function ui:_on_show_ui(msg)
+  if msg.mm_obj == "not_progress_battle_suc_settle" then
+    self:show_view()
+  end
+end
+
+function ui:_on_hide_ui(msg)
+  if msg.mm_obj == "not_progress_battle_suc_settle" then
+    self:ui_hide()
+  end
+end
+
+function ui:show_view()
+  local new_lv = self.v_param.new_lv
+  local old_lv = self.v_param.old_lv or new_lv
+  local old_exp = self.v_param.old_exp
+  local new_exp = self.v_param.new_exp
+  local need_exp = self:get_player_lv_need_exp(new_lv)
+  self.v_before_lv.text = old_lv
+  self.v_player_lv.text = new_lv
+  self.v_exp_now.text = new_exp
+  self.v_exp_max.text = need_exp
+  if self.v_Sequence then
+    self.v_Sequence:Kill(false)
+    self.v_Sequence = nil
+  end
+  self.v_Sequence = Util.create_sequence()
+  if new_lv > old_lv then
+    self:play_tween(need_exp, 0, new_exp)
+  else
+    self:play_tween(need_exp, old_exp, new_exp)
+  end
+  self.v_old_lv = old_lv
+  self.v_new_lv = new_lv
+  self.v_need_exp = need_exp
+  self.v_new_exp = new_exp
+end
+
+function ui:play_tween(need_exp, start_exp, end_exp)
+  local start_val = start_exp / need_exp
+  local end_val = end_exp / need_exp
+  self.v_exp_bar_fill.fillAmount = start_val
+  self.v_ani_uiexpup_in:SetActive(false)
+  self.v_ani_uiexpup_in:SetActive(true)
+  self.v_Sequence:AppendInterval(0.35)
+  local tween = self.v_exp_bar_fill:DOFillAmount(end_val, 1)
+  self.v_Sequence:Append(tween)
+  self.v_Sequence:AppendInterval(3)
+  self.v_Sequence:AppendCallback(function()
+    self:ui_hide()
+  end)
+end
+
+function ui:get_player_lv_need_exp(lv)
+  local player_level_cfg = ShareRes.create("player.player_upgrade", lv)
+  return player_level_cfg.NeedEXP
+end
+
+function ui:ui_on_hide()
+  if self.v_Sequence then
+    self.v_Sequence:Kill(false)
+    self.v_Sequence = nil
+  end
+end
+
+function ui:ui_be_transparent(flag)
+  if not self.v_safe_area_canvas then
+    return
+  end
+  if flag then
+    if self.v_Sequence then
+      self.v_Sequence:Kill(false)
+      self.v_Sequence = nil
+    end
+    self.v_ani_uiexpup_in:SetActive(false)
+    self.v_safe_area_canvas.alpha = 0
+  else
+    self.v_safe_area_canvas.alpha = 1
+    if self.v_Sequence then
+      self.v_Sequence:Kill(false)
+      self.v_Sequence = nil
+    end
+    self.v_Sequence = Util.create_sequence()
+    if self.v_old_lv < self.v_new_lv then
+      self:play_tween(self.v_need_exp, 0, self.v_new_lv)
+    else
+      self:play_tween(self.v_need_exp, self.v_old_lv, self.v_new_lv)
+    end
+  end
+end
+
+return ui

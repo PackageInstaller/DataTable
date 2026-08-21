@@ -1,0 +1,20 @@
+return {
+  {
+    DefaultName = {
+      "存档1",
+      "存档2",
+      "存档3"
+    },
+    Id = 1,
+    Limit = 3,
+    TimeLimit = 1,
+    TimeParam = 0
+  },
+  {
+    DefaultName = {},
+    Id = 2,
+    Limit = 3,
+    TimeLimit = 1,
+    TimeParam = 2
+  }
+}

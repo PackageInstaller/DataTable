@@ -1,0 +1,65 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local Item_Helper = require("utils.item_helper")
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_empty_icon = {
+    "EmptyIcon",
+    BIND_TYPE.OBJECT
+  },
+  v_ornament_icon = {
+    "OrnamentIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_bg_img = {
+    "OrnBg",
+    BIND_TYPE.IMAGE
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_btn = Util.get_button(nil, self.v_object)
+  self:set_button_listener(self.v_btn, function()
+    self:on_click_btn()
+  end)
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(pos, id)
+  self.v_pos = pos
+  self.v_item_id = id
+  self:set_base_info()
+end
+
+function ui:set_base_info()
+  if self.v_item_id then
+    self.v_empty_icon:SetActive(false)
+    self.v_ornament_icon.gameObject:SetActive(true)
+    self.v_bg_img.gameObject:SetActive(true)
+    local ornament_cfg = ShareRes.create("item.ornaments", self.v_item_id)
+    if not ornament_cfg and self.v_item_id then
+      Log.Error("饰品表中没有ID为：", self.v_item_id, "的配置信息")
+    end
+    ResMgr:load_set_icon(self.v_bg_img, BattleOrnamentMgr:get_ornament_bg_icon(ornament_cfg.Quality))
+    ResMgr:load_set_icon(self.v_ornament_icon, ornament_cfg.Icon)
+  else
+    self.v_bg_img.gameObject:SetActive(false)
+    self.v_empty_icon:SetActive(true)
+    self.v_ornament_icon.gameObject:SetActive(false)
+  end
+end
+
+function ui:on_click_btn()
+  self.v_parent_ui:refresh_select_ornament_pos_info(self.v_pos, self.v_item_id)
+end
+
+return ui

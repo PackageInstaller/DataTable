@@ -1,0 +1,280 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local _tinsert = table.insert
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local AssetBarView = require("ui.asset_bar.asset_bar")
+local commonDef = require("cs_share.common_define")
+local ACTY_TYPE = commonDef.ACTY_TYPE
+local ActivityCfg = require("gamelogic.activity.activity_config")
+local ACTY_TYPE_TO_SYSID = ActivityCfg.ACTY_TYPE_TO_SYSID
+local BUDDY_TEACH_SYS_ID = ACTY_TYPE_TO_SYSID[ACTY_TYPE.BUDDY_TEACH]
+local MODEL = {}
+local CHAPTER_PAGE_MODEL = {
+  MAIN_LINE = 1,
+  MATERIAL = 2,
+  CHALLENG = 3,
+  WEEKLY = 4
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnReturn", function()
+    self:clear_cache_data()
+    self:ui_hide()
+  end)
+  self:set_button("BtnMain", function()
+    if not SceneMgr:check_main_scene() then
+      UIMgr:get_ui("uimessagetip"):ui_show(Util.format_str("当前场景不可回到主界面"))
+    else
+      self:clear_cache_data()
+      UIMgr:go_to_main()
+    end
+  end)
+  self.v_asset_bar = AssetBarView:new(self, self.v_uiobjects.AssetBar)
+end
+
+function ui:ui_on_show(page, sub_page_cache)
+  self:_regist_client_event()
+  self:init_page_list(page or 1, sub_page_cache)
+  self:_set_cannot_touch()
+  self:_refresh_sys_state()
+  self:refresh_main_line_red_point()
+  self:refresh_weekly_red_point()
+  ChapterMaterialMgr:check_red()
+  self.v_asset_bar:reset_by_id_list({
+    Config.PLAYER_SP_ITEMID
+  })
+  self.v_asset_bar:on_create()
+  UIMgr:try_hide_team_ui()
+  self:refresh_challenge_red_point()
+  ChapterMaterialMgr:try_clear_lack_item_cache()
+end
+
+function ui:ui_on_hide()
+  self.v_chapter_data = nil
+  self:remove_cannot_touch_timer()
+  self.v_asset_bar:on_hide()
+end
+
+function ui:ui_on_destroy()
+  self.v_asset_bar:on_destory()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_NEW_SYS_OPEN, self._refresh_sys_state, self)
+  self:bind_auto_mq(Const.MSG_ACTIVITY_OPEN, self._refresh_sys_state, self)
+  self:bind_auto_mq(Const.MSG_ACTIVITY_CLOSE, self._refresh_sys_state, self)
+  self:bind_auto_mq(Const.MSG_ON_WEEKLY_REFRESH_HURDLE_DATA, self.refresh_weekly_red_point, self)
+end
+
+function ui:init_page_list(page, sub_page_cache)
+  self.v_tog_info = {
+    [CHAPTER_PAGE_MODEL.MAIN_LINE] = {
+      tog_name = "PageMainline",
+      ui_name = "chapter_mainline"
+    },
+    [CHAPTER_PAGE_MODEL.MATERIAL] = {
+      tog_name = "PageMaterial",
+      sys_id = 43,
+      ui_name = "chapter_material",
+      red_id = Global.red_enum.MATERIAL_BTN_RED
+    },
+    [CHAPTER_PAGE_MODEL.CHALLENG] = {
+      tog_name = "PageChallenge",
+      sys_id = BUDDY_TEACH_SYS_ID,
+      ui_name = "chapter_challenge",
+      red_id = Global.red_enum.FIGHT_CHALLENGE_RED
+    },
+    [CHAPTER_PAGE_MODEL.WEEKLY] = {
+      tog_name = "PageWeekly",
+      sys_id = 51,
+      ui_name = "chapter_weekly_act"
+    }
+  }
+  local pages = {}
+  self.v_sys_lock_list = {}
+  for i, v in ipairs(self.v_tog_info) do
+    local tog = self:get_toggle(nil, self.v_uiobjects[v.tog_name])
+    _tinsert(pages, tog)
+    local normal_icon = self:get_child_gameobj("Icon/Icon", tog.gameObject)
+    local lock_icon = self:get_child_gameobj("Icon/Lock", tog.gameObject)
+    normal_icon:SetActive(true)
+    lock_icon:SetActive(false)
+    if v.sys_id then
+      self.v_sys_lock_list[v.sys_id] = {normal_icon = normal_icon, lock_icon = lock_icon}
+    end
+    local red_obj = Util.get_child_gameobj("PageRed", tog.gameObject)
+    if red_obj then
+      if v.red_id then
+        RedPointMgr:bind_redpoint(self, red_obj, v.red_id)
+      else
+        red_obj:SetActive(false)
+      end
+      if i == CHAPTER_PAGE_MODEL.MAIN_LINE then
+        self.main_line_red_point = red_obj
+      elseif i == CHAPTER_PAGE_MODEL.WEEKLY then
+        self.weekly_red_point = red_obj
+      elseif i == CHAPTER_PAGE_MODEL.CHALLENG then
+        self.challenge_red_point = red_obj
+      end
+    end
+    local select_ani_path = string.format("Animation/UIChapter1_%s_Select", v.tog_name)
+    local unselect_ani_path = string.format("Animation/UIChapter1_%s_UnSelect", v.tog_name)
+    v.select_ani = Util.get_child_gameobj(select_ani_path, tog.gameObject)
+    v.unselect_ani = Util.get_child_gameobj(unselect_ani_path, tog.gameObject)
+    v.select_ani:SetActive(false)
+    v.unselect_ani:SetActive(false)
+    v.icon = Util.get_image("Icon/Icon", tog.gameObject)
+    v.lock_icon = Util.get_image("Icon/Lock", tog.gameObject)
+    v.lable = Util.get_text("Label", tog.gameObject)
+    local color = page == i and "F5EDE2" or "806F58"
+    Util.set_color(v.icon, color)
+    Util.set_color(v.lable, color)
+    Util.set_color(v.lock_icon, color)
+  end
+  self.v_is_init = true
+  self.v_toggle_list = pages
+  self.v_page_toggle_tab = ToggleTab:new(self)
+  self.v_page_toggle_tab:init_by_toggles(pages, function(page)
+    self:switch_page(page, nil, true)
+  end, page)
+  self:switch_page(page, sub_page_cache)
+  local is_start, activity_id = NoviceMgr:is_double_challenge_start(commonDef.DOUBLE_TYPE.FATEBOOK)
+  local multi_obj = Util.get_child_gameobj("Multi", self.v_uiobjects.PageWeekly)
+  multi_obj:SetActive(is_start)
+  if is_start then
+    local multi_times_txt = Util.get_text("MultiTimes", multi_obj)
+    multi_times_txt.text = ShareRes.get_double_challenge_cfg(activity_id).Double .. "倍"
+  end
+  is_start, activity_id = NoviceMgr:is_double_challenge_start(commonDef.DOUBLE_TYPE.MATERIAL)
+  multi_obj = Util.get_child_gameobj("Multi", self.v_uiobjects.PageMaterial)
+  multi_obj:SetActive(is_start)
+  if is_start then
+    local multi_times_txt = Util.get_text("MultiTimes", multi_obj)
+    multi_times_txt.text = ShareRes.get_double_challenge_cfg(activity_id).Double .. "倍"
+  end
+end
+
+function ui:_set_cannot_touch()
+  self:remove_cannot_touch_timer()
+  self.v_uiobjects.Cannot_Touch_Bg:SetActive(true)
+  self.v_cannot_touch_timer = Timer:add_timer("cannot_touch_timer", 0.5, function()
+    self.v_uiobjects.Cannot_Touch_Bg:SetActive(false)
+  end)
+end
+
+function ui:remove_cannot_touch_timer()
+  if self.v_cannot_touch_timer then
+    Timer:remove_timer(self.v_cannot_touch_timer)
+    self.v_cannot_touch_timer = nil
+  end
+end
+
+function ui:get_cache_data()
+  if self.v_current_page_ui and self.v_current_page_ui.get_cache then
+    local sub_page_cache = self.v_current_page_ui:get_cache()
+    return self.v_current_page, sub_page_cache
+  end
+  return self.v_current_page
+end
+
+function ui:clear_cache_data()
+  if self.v_current_page_ui and self.v_current_page_ui.clear_cache then
+    self.v_current_page_ui:clear_cache()
+  end
+end
+
+function ui:switch_toggle(page)
+  for k, v in pairs(self.v_toggle_list) do
+    v.isOn = page == k
+  end
+  self:switch_page(page)
+end
+
+function ui:switch_page(page, page_param, is_tog_act)
+  if self.v_is_init and is_tog_act then
+    return
+  end
+  self.v_is_init = false
+  if self.v_tog_info[page].sys_id and not SysOpenMgr:get_sys_is_open(self.v_tog_info[page].sys_id, true) then
+    self:switch_toggle(self.v_current_page)
+    return
+  end
+  self:clear_cache_data()
+  local ui = UIMgr:get_ui(self.v_tog_info[page].ui_name)
+  ui:ui_show(page_param)
+  self.v_current_page_ui = ui
+  for page_idx, v in pairs(self.v_tog_info) do
+    if page_idx ~= page and v.ui_name then
+      UIMgr:try_hide_ui(v.ui_name)
+    end
+  end
+  if self.v_current_page ~= page then
+    local tog_info
+    if self.v_current_page then
+      tog_info = self.v_tog_info[self.v_current_page]
+      tog_info.unselect_ani:SetActive(true)
+      tog_info.select_ani:SetActive(false)
+      Util.set_color(tog_info.icon, "806F58")
+      Util.set_color(tog_info.lock_icon, "806F58")
+      Util.set_color(tog_info.lable, "806F58")
+    end
+    tog_info = self.v_tog_info[page]
+    tog_info.unselect_ani:SetActive(false)
+    tog_info.select_ani:SetActive(true)
+    Util.set_color(tog_info.icon, "F5EDE2")
+    Util.set_color(tog_info.lock_icon, "F5EDE2")
+    Util.set_color(tog_info.lable, "F5EDE2")
+  end
+  self.v_current_page = page
+end
+
+function ui:_refresh_sys_state()
+  for sys_id, v in pairs(self.v_sys_lock_list) do
+    local open = SysOpenMgr:get_sys_is_open(sys_id)
+    v.normal_icon:SetActiveEx(open)
+    v.lock_icon:SetActiveEx(not open)
+  end
+end
+
+function ui:refresh_main_line_red_point()
+  local is_have_red = false
+  local chapter_data = ShareRes.get_chapter_cfg()
+  local chapter_iid
+  for _, data in pairs(chapter_data) do
+    local chapter_id = data.Id
+    chapter_iid = nil
+    if ChapterMgr:check_chapter_is_unlock(data.Id) then
+      if not Util.is_more_than_zero(data.OriginalChapter) or ChapterMgr:check_in_preopen_chapter(data.Id) then
+        chapter_iid = chapter_id
+      end
+      if chapter_iid and TaskMgr:get_chapter_task_red(chapter_id) then
+        is_have_red = true
+        break
+      end
+    end
+  end
+  local new_chapter_data = ChapterMgr:get_new_chapter_open_data()
+  is_have_red = is_have_red or 1 == new_chapter_data.is_new
+  self.main_line_red_point:SetActive(is_have_red)
+end
+
+function ui:refresh_weekly_red_point()
+  local is_have_red, is_sys_lock = WeeklyMgr:get_entry_red()
+  is_have_red = is_have_red or ClimbingTowerMgr:get_is_need_show_red()
+  self.weekly_red_point:SetActive(is_have_red)
+end
+
+function ui:refresh_challenge_red_point()
+  local is_have_red = ChapterEndlessMgr:get_endless_red_state()
+  if not self.challenge_red_point.activeSelf then
+    self.challenge_red_point:SetActive(is_have_red)
+  end
+end
+
+return ui

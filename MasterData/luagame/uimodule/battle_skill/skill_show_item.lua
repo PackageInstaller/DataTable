@@ -1,0 +1,77 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local SKILL_BOOK_ICON_PATH = "UISkillBook/%s"
+local CHAR_HELPER = require("uimodule.character.char_helper")
+local util_get_color = Util.get_unity_color_by_hex
+local color_first = util_get_color(tonumber("BF9046", 16))
+local color_second = util_get_color(tonumber("BF4646", 16))
+local color_third = util_get_color(tonumber("396CA5", 16))
+local TEAM_INDEX = {
+  First = 1,
+  Second = 2,
+  Third = 3
+}
+local LIST_ROW = {First = 1, Second = 2}
+
+function M:set_data(src_data)
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  local skill_cfg = src_data.skill_cfg
+  self.v_idx = src_data.idx
+  local skill_icon = ucom.SkillIcon_img
+  local skill_type_txt = ucom.Skill_type_txt
+  local skill_desc_txt = ucom.Desc_txt_txt
+  local skill_name_txt = ucom.Desc_name_txt
+  local skill_desc_obj = uobj.Desc
+  local TeamBg_img = ucom.TeamBg_img
+  local skill_tem_rect = ucom.SkillTem_rect
+  local xoffset = 65
+  if src_data.list_idx == LIST_ROW.First then
+    skill_tem_rect:SetAnchoredPositionA(0, 0)
+  else
+    skill_tem_rect:SetAnchoredPositionA(xoffset, 0)
+  end
+  local select_btn = self:get_button(nil, nil)
+  local icon_name = skill_cfg.Icon
+  local skill_id = skill_cfg.SkillId
+  local skill_icon_path = CHAR_HELPER.get_battle_skill_icon(skill_id)
+  local icon_path = string.format(skill_icon_path, icon_name)
+  local skill_name = Util.format_str(skill_cfg.Name)
+  local skill_level = skill_cfg.SkillLevel
+  local skill_desc = Util.format_str(skill_cfg.SkillDesc)
+  local pos_id = src_data.pos_id
+  skill_desc_obj:SetActive(false)
+  ResMgr:load_set_icon(skill_icon, icon_path)
+  skill_type_txt.text = pos_id
+  skill_desc_txt.text = skill_desc
+  if skill_level then
+    local level_content = Util.format_str("({1}级)", skill_level)
+    skill_name_txt.text = skill_name .. level_content
+  else
+    skill_name_txt.text = skill_name
+  end
+  local color
+  if pos_id == TEAM_INDEX.First then
+    color = color_first
+  elseif pos_id == TEAM_INDEX.Second then
+    color = color_second
+  elseif pos_id == TEAM_INDEX.Third then
+    color = color_third
+  end
+  TeamBg_img.color = color
+  self:set_button_listener(select_btn, function()
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_PAUSE_SKILL_ITEM_SELECTED)
+    msg.mm_obj = src_data
+  end)
+end
+
+function M:on_clear()
+  self:unbind_all_auto_mq()
+  self.v_idx = nil
+end
+
+function M:set_selected(is_select)
+  self.v_uiobjects.Desc:SetActive(is_select)
+end
+
+return M

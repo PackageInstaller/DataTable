@@ -1,0 +1,190 @@
+return {
+  [1111] = {
+    {
+      CurseId = 101,
+      Id = 501,
+      Sort = 1,
+      StartRoomId = 200110001,
+      TowerId = 1111
+    },
+    {
+      CurseId = 101,
+      Id = 502,
+      Sort = 2,
+      StartRoomId = 200110002,
+      TowerId = 1111
+    },
+    {
+      CurseId = 101,
+      Id = 503,
+      Sort = 3,
+      StartRoomId = 200110002,
+      TowerId = 1111
+    }
+  },
+  [2111] = {
+    {
+      CurseId = 101,
+      Id = 1011,
+      Sort = 1,
+      StartRoomId = 200110001,
+      TowerId = 2111
+    },
+    {
+      CurseId = 101,
+      Id = 1012,
+      Sort = 2,
+      StartRoomId = 200110002,
+      TowerId = 2111
+    },
+    {
+      CurseId = 101,
+      Id = 1013,
+      Sort = 3,
+      StartRoomId = 200110002,
+      TowerId = 2111
+    }
+  },
+  [2112] = {
+    {
+      CurseId = 101,
+      Id = 1021,
+      Sort = 1,
+      StartRoomId = 200110001,
+      TowerId = 2112
+    },
+    {
+      CurseId = 101,
+      Id = 1022,
+      Sort = 2,
+      StartRoomId = 200110002,
+      TowerId = 2112
+    },
+    {
+      CurseId = 101,
+      Id = 1023,
+      Sort = 3,
+      StartRoomId = 200110002,
+      TowerId = 2112
+    }
+  },
+  [2121] = {
+    {
+      CurseId = 101,
+      Id = 1111,
+      Sort = 1,
+      StartRoomId = 200110006,
+      TowerId = 2121
+    }
+  },
+  [2211] = {
+    {
+      CurseId = 101,
+      Id = 2011,
+      Sort = 1,
+      StartRoomId = 200110001,
+      TowerId = 2211
+    },
+    {
+      CurseId = 101,
+      Id = 2012,
+      Sort = 2,
+      StartRoomId = 200220001,
+      TowerId = 2211
+    },
+    {
+      CurseId = 101,
+      Id = 2013,
+      Sort = 3,
+      StartRoomId = 200220001,
+      TowerId = 2211
+    }
+  },
+  [2212] = {
+    {
+      CurseId = 101,
+      Id = 2021,
+      Sort = 1,
+      StartRoomId = 200110001,
+      TowerId = 2212
+    },
+    {
+      CurseId = 101,
+      Id = 2022,
+      Sort = 2,
+      StartRoomId = 200220001,
+      TowerId = 2212
+    },
+    {
+      CurseId = 101,
+      Id = 2023,
+      Sort = 3,
+      StartRoomId = 200220001,
+      TowerId = 2212
+    }
+  },
+  [2221] = {
+    {
+      CurseId = 101,
+      Id = 2111,
+      Sort = 1,
+      StartRoomId = 200110006,
+      TowerId = 2221
+    }
+  },
+  [2311] = {
+    {
+      CurseId = 101,
+      Id = 3011,
+      Sort = 1,
+      StartRoomId = 200110001,
+      TowerId = 2311
+    },
+    {
+      CurseId = 101,
+      Id = 3012,
+      Sort = 2,
+      StartRoomId = 200330001,
+      TowerId = 2311
+    },
+    {
+      CurseId = 101,
+      Id = 3013,
+      Sort = 3,
+      StartRoomId = 200330001,
+      TowerId = 2311
+    }
+  },
+  [2312] = {
+    {
+      CurseId = 101,
+      Id = 3021,
+      Sort = 1,
+      StartRoomId = 200110001,
+      TowerId = 2312
+    },
+    {
+      CurseId = 101,
+      Id = 3022,
+      Sort = 2,
+      StartRoomId = 200330001,
+      TowerId = 2312
+    },
+    {
+      CurseId = 101,
+      Id = 3023,
+      Sort = 3,
+      StartRoomId = 200330001,
+      TowerId = 2312
+    }
+  },
+  [2321] = {
+    {
+      CurseId = 101,
+      Id = 3111,
+      Sort = 1,
+      StartRoomId = 200110006,
+      TowerId = 2321
+    }
+  }
+}

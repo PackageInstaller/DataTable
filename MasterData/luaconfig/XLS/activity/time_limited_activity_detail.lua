@@ -1,0 +1,135 @@
+return {
+  {
+    ActivityId = 25,
+    Id = 1,
+    Node = 1,
+    Param = {"30"},
+    Type = 4
+  },
+  {
+    ActivityId = 25,
+    Id = 2,
+    Node = 2,
+    Param = {"23"},
+    Type = 3
+  },
+  {
+    ActivityId = 25,
+    Id = 3,
+    Node = 3,
+    Param = {"29"},
+    Type = 5
+  },
+  {
+    ActivityId = 25,
+    Id = 4,
+    Node = 4,
+    Param = {"92061"},
+    Type = 1
+  },
+  {
+    ActivityId = 25,
+    Id = 5,
+    Node = 5,
+    Param = {"6", "15"},
+    Type = 2
+  },
+  {
+    ActivityId = 25,
+    Id = 6,
+    Node = 5,
+    Param = {"6", "16"},
+    Type = 2
+  },
+  {
+    ActivityId = 25,
+    Id = 7,
+    Node = 7,
+    Param = {"9910075"},
+    Type = 1
+  },
+  {
+    ActivityId = 25,
+    Id = 8,
+    Node = 8,
+    Param = {"10071"},
+    Type = 1
+  },
+  {
+    ActivityId = 34,
+    Id = 9,
+    Node = 1,
+    Param = {"35"},
+    Type = 6
+  },
+  {
+    ActivityId = 34,
+    Id = 10,
+    Node = 2,
+    Param = {"36"},
+    Type = 7
+  },
+  {
+    ActivityId = 34,
+    Id = 11,
+    Node = 3,
+    Param = {"37"},
+    Type = 8
+  },
+  {
+    ActivityId = 34,
+    Id = 12,
+    Node = 4,
+    Param = {"38", "1007"},
+    Type = 9
+  },
+  {
+    ActivityId = 42,
+    Id = 13,
+    Node = 1,
+    Param = {"92071"},
+    Type = 1
+  },
+  {
+    ActivityId = 42,
+    Id = 14,
+    Node = 2,
+    Param = {"6", "23"},
+    Type = 2
+  },
+  {
+    ActivityId = 42,
+    Id = 15,
+    Node = 2,
+    Param = {"6", "27"},
+    Type = 2
+  },
+  {
+    ActivityId = 42,
+    Id = 16,
+    Node = 3,
+    Param = {"11001"},
+    Type = 1
+  },
+  {
+    ActivityId = 42,
+    Id = 17,
+    Node = 4,
+    Param = {"39"},
+    Type = 13
+  },
+  {
+    ActivityId = 42,
+    Id = 18,
+    Node = 5,
+    Param = {"41"},
+    Type = 12
+  },
+  {
+    ActivityId = 42,
+    Id = 19,
+    Node = 6,
+    Param = {"34"},
+    Type = 11
+  }
+}

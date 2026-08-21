@@ -1,0 +1,36 @@
+return {
+  [1001001] = {
+    event = "技能开始",
+    event_arg1 = "",
+    event_arg2 = 0,
+    event_arg3 = 0,
+    event_arg4 = 0,
+    event_arg5 = 0,
+    event_arg6 = 0,
+    id = 1001001,
+    logic = "执行效果",
+    logic_arg1 = "1",
+    logic_arg2 = 100,
+    logic_arg3 = 0,
+    logic_arg4 = 0,
+    logic_arg5 = 0,
+    logic_arg6 = 0
+  },
+  [1001002] = {
+    event = "受到伤害",
+    event_arg1 = "",
+    event_arg2 = 0,
+    event_arg3 = 0,
+    event_arg4 = 0,
+    event_arg5 = 0,
+    event_arg6 = 0,
+    id = 1001002,
+    logic = "执行子弹",
+    logic_arg1 = "1",
+    logic_arg2 = 1,
+    logic_arg3 = 0,
+    logic_arg4 = 0,
+    logic_arg5 = 0,
+    logic_arg6 = 0
+  }
+}

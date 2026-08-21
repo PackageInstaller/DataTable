@@ -1,0 +1,135 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local TEMP_KEY = "UIDRAWCARD_SELECT_PANEL_CHAR_TEMP_KEY"
+local char_item = require("uimodule.ui_draw_card.uidrawcard_select_panel_char_item")
+
+function ui:ui_finish_load()
+  self:set_button("BtnRet1", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnChoose", function()
+    self:on_choose()
+  end)
+  self:register_exist_auto_template(TEMP_KEY, self.v_uiobjects.CharTem, self.v_uiobjects.CharContent)
+end
+
+function ui:check_pool_status(force_hide)
+  force_hide = true == force_hide
+  local pool_vo = DrawCardMgr:get_pool_vo(self.v_group_id, self.v_pool_id)
+  if not pool_vo then
+    local confirmCb
+    if not force_hide then
+      function confirmCb()
+        self:ui_hide()
+      end
+    end
+    NextFrameMgr:add_next_update(function()
+      if force_hide then
+        self:ui_hide()
+      end
+      Util.show_notify_popup_message(confirmCb, "活动已结束", nil, "确定", nil, nil, true)
+    end)
+    return true
+  end
+end
+
+function ui:ui_on_show(pool_id)
+  self.v_pool_config = ShareRes.get_drawcard_pool(pool_id)
+  if 4 ~= self.v_pool_config.Type then
+    return
+  end
+  self.v_pool_id = pool_id
+  self.v_group_id = self.v_pool_config.Group
+  if self:check_pool_status(true) then
+    return
+  end
+  local pool_vo = DrawCardMgr:get_pool_vo(self.v_group_id, self.v_pool_id)
+  self.v_choose_id = pool_vo.choose_id
+  self:refresh_list()
+  self:refresh_btn_state()
+  self:bind_auto_mq(Const.MSG_DRAW_GROUP_LIST_UPDATE, self.check_pool_status, self)
+end
+
+function ui:on_choose()
+  if not self.v_choose_id or 0 == self.v_choose_id then
+    return
+  end
+  DrawCardMgr:send_draw_choose_id(self.v_group_id, self.v_pool_id, self.v_choose_id, function()
+    self:ui_hide()
+  end)
+end
+
+function ui:set_choose_id(choose_id)
+  self.v_choose_id = choose_id
+  self:refresh_btn_state()
+end
+
+function ui:get_choose_id()
+  return self.v_choose_id
+end
+
+function ui:refresh_list()
+  local choose_group_cfg = ShareRes.create("draw.draw_pool_choose_group")
+  local data_list = {}
+  local choose_group_id = self.v_pool_config.Arg[1]
+  for _, cfg in ipairs(choose_group_cfg) do
+    if choose_group_id == cfg.Group then
+      local begin_time = cfg.BeginTime and Date.get_time_stamp_by_scheme_id(cfg.BeginTime)
+      if not begin_time or begin_time < Date.server_time() then
+        data_list[#data_list + 1] = cfg
+      end
+    end
+  end
+  table.sort(data_list, function(a, b)
+    if a.Order ~= b.Order then
+      return a.Order > b.Order
+    end
+    return a.Id < b.Id
+  end)
+  self:remove_wrap_items()
+  self.v_wrap_item_list = {}
+  self:give_back_auto_cache(TEMP_KEY)
+  local delay = 0
+  for _, cfg in pairs(data_list) do
+    local is_selected = cfg.Id == self.v_choose_id
+    local buddy_item = self:get_auto_cache(TEMP_KEY)
+    local item_lua_obj = char_item:ui_wrap_ex(self, buddy_item, true)
+    item_lua_obj:set_data(cfg, is_selected, delay)
+    table.insert(self.v_wrap_item_list, item_lua_obj)
+    delay = delay + 0.08
+  end
+end
+
+function ui:refresh_btn_state()
+  local no_choose = not self.v_choose_id or 0 == self.v_choose_id
+  Util.apply_grey_ex(self.v_uiobjects.BtnChoose, no_choose)
+  if self.v_wrap_item_list then
+    for _, item in pairs(self.v_wrap_item_list) do
+      item:refresh_select()
+    end
+  end
+end
+
+function ui:remove_wrap_items()
+  if self.v_wrap_item_list then
+    for _, item in pairs(self.v_wrap_item_list) do
+      item:ui_hide()
+      item:ui_destroy()
+    end
+    self.v_wrap_item_list = nil
+  end
+end
+
+function ui:ui_on_hide()
+  self:remove_wrap_items()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.v_pool_id
+end
+
+return ui

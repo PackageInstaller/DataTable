@@ -1,0 +1,154 @@
+local Math = require("base.mathx")
+local _cs_is_path_possible = CS.Pathfinding.PathUtilities.IsPathPossible
+local AstarHelper = CS.Game.AstarHelper
+local M = Util.create_class()
+
+function M:_init(cs_link_point, link, is_start_point)
+  self.v_link = link
+  self.v_is_start_point = is_start_point
+  self.v_belong_region = link:get_plat():get_region()
+  self.v_cs_link_pt_tf = cs_link_point
+  self.v_link_region = nil
+  self.v_cs_pg_point = nil
+  self.v_cs_gg_point = nil
+  self.v_last_gg_x = 0
+  self.v_last_gg_z = 0
+end
+
+function M:is_connect_to_link_pt(link_pt)
+  if not (self.v_cs_pg_point and link_pt) or not link_pt.v_cs_pg_point then
+    return false
+  end
+  return _cs_is_path_possible(self.v_cs_pg_point, link_pt.v_cs_pg_point)
+end
+
+function M:clear()
+  self.v_cs_gg_point = nil
+  self.v_cs_pg_point = nil
+  self.v_cs_link_pt_tf = nil
+end
+
+local _abs = math.abs
+
+function M:_update_gg_point(force)
+  local gg = self.v_link_region:get_gg()
+  local target_curx, y, target_curz = self.v_cs_link_pt_tf:GetPositionA()
+  if not force and _abs(target_curx - self.v_last_gg_x) <= 0.5 and _abs(target_curx - self.v_last_gg_x) <= 0.5 then
+    return
+  end
+  local worldx, worldz = self.v_link_region:transform_pos_for_gg(target_curx, target_curz)
+  self.v_cs_gg_point = AstarHelper.GetNearestGrid1(worldx, y, worldz, gg, false, true)
+  self.v_last_gg_x, self.v_last_gg_z = target_curx, target_curz
+end
+
+function M:get_link()
+  return self.v_link
+end
+
+function M:set_pg_point(cs_pg_point, y)
+  self.v_cs_pg_point = cs_pg_point
+  self.v_y = y
+  if UNITY_EDITOR and GAME_DEBUG then
+    self.v_cs_link_pt_tf.gameObject.name = "" .. y
+  end
+end
+
+function M:get_dynamic_region()
+  if self.v_is_start_point then
+    return self.v_belong_region
+  else
+    return self.v_link_region
+  end
+end
+
+function M:get_opposite_point()
+  if self.v_is_start_point then
+    return self.v_link:get_end_point()
+  else
+    return self.v_link:get_start_point()
+  end
+end
+
+function M:get_belong_region()
+  return self.v_belong_region
+end
+
+function M:is_start_point()
+  return self.v_is_start_point
+end
+
+function M:get_pg_point()
+  return self.v_cs_pg_point
+end
+
+function M:get_gg_point()
+  return self.v_cs_gg_point
+end
+
+function M:get_points()
+  return self.v_cs_pg_point, self.v_cs_gg_point
+end
+
+function M:check_init()
+  if not self.v_is_start_point then
+    return
+  end
+  if self.v_cs_gg_point == nil or self.v_cs_gg_point.Destroyed then
+    local gg = self.v_belong_region:get_gg()
+    local target_curx, y, target_curz = self.v_cs_link_pt_tf:GetPositionA()
+    local worldx, worldz = self.v_belong_region:transform_pos_for_gg(target_curx, target_curz)
+    self.v_cs_gg_point = AstarHelper.GetNearestGrid1(worldx, y, worldz, gg, false, true)
+  end
+end
+
+function M:get_pos_in_region(region)
+  local tf = self.v_cs_link_pt_tf
+  local x, y, z = tf:GetPositionA()
+  local worldx, worldz = region:transform_pos_for_gg(x, z)
+  return worldx, y, worldz
+end
+
+function M:check_region()
+  local scene_map = SceneMgr:get_scene_map()
+  local x, _, z = self.v_cs_link_pt_tf:GetPositionA()
+  local region = scene_map:get_region_at_pos(x, z)
+  if region == self.v_link_region then
+    if nil ~= region then
+      self:_update_gg_point(false)
+    end
+    return
+  end
+  local pre_region = self.v_link_region
+  self.v_link_region = region
+  self.v_cs_gg_point = nil
+  if nil == region then
+    pre_region:remove_temp_link(self.v_link)
+  else
+    if nil ~= pre_region then
+      pre_region:remove_temp_link(self.v_link)
+    end
+    self:_update_gg_point(true)
+    region:add_temp_link(self.v_link)
+  end
+end
+
+function M:get_y()
+  return self.v_y
+end
+
+function M:get_tf()
+  return self.v_cs_link_pt_tf
+end
+
+function M:get_tf_world_pos2()
+  local x, _, z = self.v_cs_link_pt_tf:GetPositionA()
+  return x, z
+end
+
+function M:get_tf_dis_to_another(point)
+  local x, _, z = self.v_cs_link_pt_tf:GetPositionA()
+  local tx, _, tz = point.v_cs_link_pt_tf:GetPositionA()
+  return Math.square_distance2(x, z, tx, tz)
+end
+
+return M

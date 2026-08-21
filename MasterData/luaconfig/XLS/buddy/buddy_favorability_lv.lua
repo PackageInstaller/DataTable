@@ -1,0 +1,938 @@
+return {
+  [0] = {
+    {
+      BuddyId = 0,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 0,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 10105,
+      BuddyId = 0,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 0,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 0,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001001] = {
+    {
+      BuddyId = 1001001,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001001,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39101,
+      BuddyId = 1001001,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001001,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001001,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001004] = {
+    {
+      BuddyId = 1001004,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001004,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39104,
+      BuddyId = 1001004,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001004,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001004,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001008] = {
+    {
+      BuddyId = 1001008,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001008,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39108,
+      BuddyId = 1001008,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001008,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001008,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001009] = {
+    {
+      BuddyId = 1001009,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001009,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39109,
+      BuddyId = 1001009,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001009,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001009,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001010] = {
+    {
+      BuddyId = 1001010,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001010,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39110,
+      BuddyId = 1001010,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001010,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001010,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001011] = {
+    {
+      BuddyId = 1001011,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001011,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39111,
+      BuddyId = 1001011,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001011,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001011,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001012] = {
+    {
+      BuddyId = 1001012,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001012,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39112,
+      BuddyId = 1001012,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001012,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001012,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001013] = {
+    {
+      BuddyId = 1001013,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001013,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39113,
+      BuddyId = 1001013,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001013,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001013,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001014] = {
+    {
+      BuddyId = 1001014,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001014,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39114,
+      BuddyId = 1001014,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001014,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001014,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001015] = {
+    {
+      BuddyId = 1001015,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001015,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39115,
+      BuddyId = 1001015,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001015,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001015,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001016] = {
+    {
+      BuddyId = 1001016,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001016,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39116,
+      BuddyId = 1001016,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001016,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001016,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001017] = {
+    {
+      BuddyId = 1001017,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001017,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39117,
+      BuddyId = 1001017,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001017,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001017,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001018] = {
+    {
+      BuddyId = 1001018,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001018,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39118,
+      BuddyId = 1001018,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001018,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001018,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001019] = {
+    {
+      BuddyId = 1001019,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001019,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39119,
+      BuddyId = 1001019,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001019,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001019,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001020] = {
+    {
+      BuddyId = 1001020,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001020,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39120,
+      BuddyId = 1001020,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001020,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001020,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001021] = {
+    {
+      BuddyId = 1001021,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001021,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39121,
+      BuddyId = 1001021,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001021,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001021,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001022] = {
+    {
+      BuddyId = 1001022,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001022,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39122,
+      BuddyId = 1001022,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001022,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001022,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001023] = {
+    {
+      BuddyId = 1001023,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001023,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39123,
+      BuddyId = 1001023,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001023,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001023,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001024] = {
+    {
+      BuddyId = 1001024,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001024,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39124,
+      BuddyId = 1001024,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001024,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001024,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001025] = {
+    {
+      BuddyId = 1001025,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001025,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39125,
+      BuddyId = 1001025,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001025,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001025,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001026] = {
+    {
+      BuddyId = 1001026,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001026,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39126,
+      BuddyId = 1001026,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001026,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001026,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001027] = {
+    {
+      BuddyId = 1001027,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001027,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39127,
+      BuddyId = 1001027,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001027,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001027,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001028] = {
+    {
+      BuddyId = 1001028,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001028,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39127,
+      BuddyId = 1001028,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001028,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001028,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001029] = {
+    {
+      BuddyId = 1001029,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001029,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39127,
+      BuddyId = 1001029,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001029,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001029,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  },
+  [1001030] = {
+    {
+      BuddyId = 1001030,
+      Exp = 50,
+      Lv = 1,
+      Stage = "陌生"
+    },
+    {
+      AwardGroupId = 39001,
+      BuddyId = 1001030,
+      Exp = 100,
+      Lv = 2,
+      Stage = "同事"
+    },
+    {
+      AwardGroupId = 39127,
+      BuddyId = 1001030,
+      Exp = 180,
+      Lv = 3,
+      Stage = "朋友"
+    },
+    {
+      AwardGroupId = 39002,
+      BuddyId = 1001030,
+      Exp = 270,
+      Lv = 4,
+      Stage = "信任"
+    },
+    {
+      AwardGroupId = 39003,
+      BuddyId = 1001030,
+      Exp = 0,
+      Lv = 5,
+      Stage = "亲密"
+    }
+  }
+}

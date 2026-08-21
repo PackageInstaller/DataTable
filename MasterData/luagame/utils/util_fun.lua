@@ -1,0 +1,40 @@
+local Util = require("utils.util")
+local M = Util.create_class()
+M.CICLE_FUN_TYPE = {
+  CAST_MAGIC = 1,
+  CAST_SKILL = 2,
+  CAST_MISSILE = 3
+}
+local TrackBacks = {}
+
+function M:_init()
+  self.v_fun_call_count = {}
+end
+
+function M:call_event_fun(type, fun, ...)
+  local call_count = self.v_fun_call_count[type] or 0
+  call_count = call_count + 1
+  self.v_fun_call_count[type] = call_count
+  if UNITY_EDITOR and GAME_DEBUG and call_count > 1 then
+    local trackbacks = TrackBacks[type] or {}
+    trackbacks[call_count] = debug.traceback()
+  end
+  if call_count > 5 then
+    Log.Error("环形堆栈调用 类型:", type, debug.traceback())
+    if TrackBacks[type] then
+      for id, trackback in pairs(TrackBacks[type]) do
+        Log.Error("环形堆栈调用 类型:", type, id, trackback)
+      end
+      TrackBacks[type] = nil
+    end
+    return
+  end
+  local ret = fun(...)
+  self.v_fun_call_count[type] = 0
+  if UNITY_EDITOR and GAME_DEBUG then
+    TrackBacks[type] = nil
+  end
+  return ret
+end
+
+return M

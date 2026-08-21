@@ -1,0 +1,159 @@
+local empty = {}
+return {
+  Events = {
+    {
+      ConditionActions = {
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = {
+            {
+              PosKey = "B1",
+              IsOpen = true,
+              CameraStyle = 0,
+              Duration = 3.0,
+              StopLuaScript = false,
+              BackToDefault = true,
+              HideUI = false,
+              HasOTSConfig = false,
+              OTSCameraStyle = 0,
+              OTSDuration = 0.0,
+              Type = 62,
+              Timeout = 2.0,
+              TimeoutKey = "bzCvHoSA"
+            },
+            {
+              FadeIn = 0.5,
+              Hold = 1.0,
+              FadeOut = 0.5,
+              IsWhite = false,
+              Type = 59,
+              Timeout = 0.0
+            },
+            {
+              TreasureChestId = 10218,
+              PosKey = "LB1",
+              Rotation = 0,
+              IsPlayEffectAndSound = true,
+              IsCanOpen = true,
+              CustomEventName = "",
+              Type = 124,
+              Timeout = 1.0,
+              TimeoutKey = "QbqIeKYX"
+            },
+            {
+              TimelineName = "Timeline_Box10207Start",
+              IsPlay = false,
+              Type = 110,
+              Timeout = 1.0,
+              TimeoutKey = "FLCtJZOi"
+            },
+            {
+              TimelineName = "Timeline_Box10207End",
+              IsPlay = true,
+              Type = 110,
+              Timeout = 1.0,
+              TimeoutKey = "JgocdhvJ"
+            },
+            {Type = 61, Timeout = 0.0},
+            {
+              Type = 60,
+              Timeout = 5.0,
+              TimeoutKey = "EfbHavEB"
+            },
+            {
+              GroupID = 3,
+              Type = 87,
+              Timeout = 0.0
+            },
+            {
+              TreasureChestId = 10219,
+              PosKey = "LB2",
+              Rotation = 0,
+              IsPlayEffectAndSound = true,
+              IsCanOpen = true,
+              CustomEventName = "",
+              Type = 124,
+              Timeout = 1.0,
+              TimeoutKey = "pxthacbk"
+            },
+            {
+              TreasureChestId = 10220,
+              PosKey = "LB3",
+              Rotation = 0,
+              IsPlayEffectAndSound = true,
+              IsCanOpen = true,
+              CustomEventName = "",
+              Type = 124,
+              Timeout = 1.0,
+              TimeoutKey = "OqqBFOMe"
+            },
+            {
+              TreasureChestId = 10221,
+              PosKey = "LB4",
+              Rotation = 0,
+              IsPlayEffectAndSound = true,
+              IsCanOpen = true,
+              CustomEventName = "",
+              Type = 124,
+              Timeout = 1.0,
+              TimeoutKey = "kCqoFWRu"
+            },
+            {
+              TreasureChestId = 10207,
+              PosKey = "B1",
+              Rotation = 0,
+              IsPlayEffectAndSound = true,
+              IsCanOpen = true,
+              CustomEventName = "BOXEND10207",
+              Type = 124,
+              Timeout = 1.0,
+              TimeoutKey = "cRYlqapv"
+            }
+          },
+          ValidInTower = false
+        },
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = {
+            {
+              PosKey = "BOXSTORY1",
+              Rotation = 0,
+              NPCId = 102071,
+              NPCName = "1",
+              Type = 0,
+              Timeout = 0.2,
+              TimeoutKey = "aiGPRIQf"
+            },
+            {
+              NPCId = 102071,
+              NPCName = "1",
+              Type = 1,
+              Timeout = 0.1,
+              TimeoutKey = "cxVsZlWq"
+            }
+          },
+          ValidInTower = false
+        }
+      },
+      Type = 22,
+      ConditionVariable = "",
+      IsNotCondition = false,
+      IsForeverVariable = false
+    }
+  },
+  MonsterRefreshCfg = {
+    Weight = 100,
+    MonsterLockEnemyCount = 0,
+    MonsterGroupId = 0,
+    MonsterWave = 0,
+    MonsterCount = 0,
+    SendWave = false,
+    WaveStyle = 0,
+    EndPerform = true
+  },
+  FinishiConditionDict = empty,
+  mDefaultStartTime = true,
+  mDefaultEndTime = true
+}

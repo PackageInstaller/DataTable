@@ -1,0 +1,89 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local UPGRADE_ITEM_KEY = "BBQ_UPGRADE_ITEM_KEY"
+local UPGRADE_ITEM = require("uimodule.activity.barbecue_game.barbecue_game_upgrade_item")
+local UpgradeCfg = ShareRes.create("activity.barbecue_stall_sys_update")
+
+function ui:ui_finish_load()
+  self:set_button("BtnRetX", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnClose", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(UPGRADE_ITEM_KEY, self.v_uiobjects.UpgradeTem, self.v_uiobjects.UpgradeContent)
+end
+
+function ui:ui_on_show()
+  self:refresh_view()
+end
+
+function ui:ui_on_hide()
+  self:clear_wrap_item()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_view()
+  local data_list = {}
+  for key, cfg in pairs(UpgradeCfg) do
+    local sys_id = cfg.EffectSys
+    local cur_lv = BarbecueGameMgr:get_sys_lv(sys_id)
+    local is_finish = BarbecueGameMgr:is_sys_upgrade_finish(cfg.Id) == true
+    if cfg.LimitationLv == cur_lv or is_finish and cur_lv > cfg.LimitationLv then
+      data_list[#data_list + 1] = {
+        id = cfg.Id,
+        sys_id = sys_id,
+        is_finish = is_finish,
+        limit_lv = cfg.LimitationLv,
+        after_lv = cfg.UpdateAfterGrade,
+        cfg = cfg
+      }
+    end
+  end
+  table.sort(data_list, function(a, b)
+    if a.is_finish ~= b.is_finish then
+      return b.is_finish
+    end
+    if a.sys_id ~= b.sys_id then
+      return a.sys_id < b.sys_id
+    end
+    if a.is_finish then
+      if a.limit_lv ~= b.limit_lv then
+        return a.limit_lv < b.limit_lv
+      end
+      if a.after_lv ~= b.after_lv then
+        return a.after_lv < b.after_lv
+      end
+    else
+      if a.limit_lv ~= b.limit_lv then
+        return a.limit_lv > b.limit_lv
+      end
+      if a.after_lv ~= b.after_lv then
+        return a.after_lv > b.after_lv
+      end
+    end
+    return a.id < a.id
+  end)
+  self:give_back_auto_cache(UPGRADE_ITEM_KEY)
+  self:clear_wrap_item()
+  self.v_item_list = {}
+  for i, data in ipairs(data_list) do
+    local obj = self:get_auto_cache(UPGRADE_ITEM_KEY)
+    local item = UPGRADE_ITEM:ui_wrap_ex(self, obj, true)
+    item:set_data(data)
+    self.v_item_list[i] = item
+  end
+end
+
+function ui:clear_wrap_item()
+  if self.v_item_list then
+    for key, item in pairs(self.v_item_list) do
+      item:ui_destroy()
+      self.v_item_list[key] = nil
+    end
+  end
+end
+
+return ui

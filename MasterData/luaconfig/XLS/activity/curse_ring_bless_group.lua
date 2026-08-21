@@ -1,0 +1,38 @@
+return {
+  {
+    BlessId = 1004,
+    GroupID = 101,
+    Id = 1,
+    Priority = 4
+  },
+  {
+    BlessId = 1005,
+    GroupID = 101,
+    Id = 2,
+    Priority = 5
+  },
+  {
+    BlessId = 1006,
+    GroupID = 101,
+    Id = 3,
+    Priority = 6
+  },
+  {
+    BlessId = 1009,
+    GroupID = 101,
+    Id = 4,
+    Priority = 10
+  },
+  {
+    BlessId = 1012,
+    GroupID = 101,
+    Id = 5,
+    Priority = 11
+  },
+  {
+    BlessId = 1013,
+    GroupID = 101,
+    Id = 6,
+    Priority = 12
+  }
+}

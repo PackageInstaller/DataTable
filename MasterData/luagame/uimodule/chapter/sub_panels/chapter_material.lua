@@ -1,0 +1,243 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local LayoutRebuilder = UnityEngine.UI.LayoutRebuilder
+local horizon_group = UnityEngine.UI.HorizontalLayoutGroup
+local _tinsert = table.insert
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local commonDef = require("cs_share.common_define")
+local ACTY_TYPE = commonDef.ACTY_TYPE
+local ActivityCfg = require("gamelogic.activity.activity_config")
+local ACTY_TYPE_TO_SYSID = ActivityCfg.ACTY_TYPE_TO_SYSID
+local BUDDY_TEACH_SYS_ID = ACTY_TYPE_TO_SYSID[ACTY_TYPE.BUDDY_TEACH]
+local MATERIAL_PAGE_KEY = "CHAPTER_MATERIAL_PAGE_KEY"
+local MATERIAL_CHAPTER_ITEM_KEY = "CHAPTER_MATERIAL_CHAPTER_ITEM_KEY"
+local MODEL = {
+  v_scroll_rect = {
+    "StageList",
+    BIND_TYPE.SCROLL
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:register_exist_auto_template(MATERIAL_PAGE_KEY, self.v_uiobjects.PageTem, self.v_uiobjects.PageContent)
+  self:register_exist_auto_template(MATERIAL_CHAPTER_ITEM_KEY, self.v_uiobjects.StageTem, self.v_uiobjects.StageContent)
+  self:set_scrollrect_listener(self.v_scroll_rect, function()
+    local width = self.v_uicompents.StageContent_rect:GetSizeDeltaA()
+    local pos = self.v_uicompents.StageContent_rect.anchoredPosition.x
+    self.v_uiobjects.ScrollTip:SetActiveEx(width + pos > 100)
+  end)
+end
+
+function ui:ui_on_show(tab_idx)
+  self:init_left_tab_cfg()
+  self:init_left_tab_list(tab_idx or 1)
+  self:refresh_left_tab_open()
+  self:bind_auto_mq(Const.MSG_ON_DAILY_RESET, self.refresh_chapter_list_data, self)
+end
+
+function ui:ui_on_hide()
+  self:unbind_red()
+end
+
+function ui:unbind_red()
+  if self.v_chapter_show_list then
+    for i, v in ipairs(self.v_chapter_show_list) do
+      RedPointMgr:unbind_redpoint_by_id(self, v.cfg.MaterialType, Global.red_enum.MATERIAL_BTN_RED)
+    end
+  end
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.v_cache_tab_idx
+end
+
+function ui:get_cache()
+  return self.v_cache_tab_idx
+end
+
+function ui:clear_cache()
+  self.v_cache_tab_idx = nil
+end
+
+function ui:init_left_tab_cfg()
+  local page_cfg = ShareRes.create("chapter.chapter_material_page")
+  self.v_left_tab_list = {}
+  for _, v in pairs(page_cfg) do
+    if 1 == v.IfShow then
+      self.v_left_tab_list[#self.v_left_tab_list + 1] = {cfg = v}
+    end
+  end
+  table.sort(self.v_left_tab_list, function(a, b)
+    return a.cfg.Order < b.cfg.Order
+  end)
+end
+
+function ui:init_left_tab_list(tab_idx)
+  self:give_back_auto_cache(MATERIAL_PAGE_KEY)
+  local toggle_list = {}
+  for i, v in ipairs(self.v_left_tab_list) do
+    local item = self:get_auto_cache(MATERIAL_PAGE_KEY)
+    local tog = Util.get_toggle(nil, item)
+    _tinsert(toggle_list, tog)
+    v.tog_obj = tog.gameObject
+    local cond_done = Condition:check_condition(v.cfg.Condition)
+    v.tog_obj:SetActiveEx(cond_done)
+    local red_obj = self:get_child_gameobj("PageName/Redpoint", tog.gameObject)
+    red_obj:SetActive(false)
+    RedPointMgr:bind_redpoint(self, red_obj, v.cfg.PageType, Global.red_enum.MATERIAL_PAGE_RED)
+    local icon = self:get_image("Icon", v.tog_obj)
+    ResMgr:load_set_icon(icon, v.cfg.Icon)
+    local name = Util.get_text("PageName", v.tog_obj)
+    name.text = v.cfg.Name
+  end
+  self.v_page_toggle_tab = ToggleTab:new(self)
+  self.v_page_toggle_tab:init_by_toggles(toggle_list, function(idx)
+    self:switch_page(idx)
+  end, tab_idx)
+  self:switch_page(tab_idx)
+end
+
+function ui:check_tab_idx_open(tab_idx)
+  local cond_id
+  local tab = self.v_left_tab_list[tab_idx]
+  if tab and tab.cfg then
+    cond_id = tab.cfg.Condition
+  end
+  if not cond_id or 0 == cond_id then
+    return tab_idx
+  end
+  if Condition:check_condition(cond_id) then
+    return tab_idx
+  else
+    for i, v in ipairs(self.v_left_tab_list) do
+      cond_id = v.cfg.Condition
+      if not cond_id or 0 == cond_id then
+        return i
+      end
+      if Condition:check_condition(cond_id) then
+        return i
+      end
+    end
+  end
+end
+
+function ui:refresh_left_tab_open()
+  for _, v in ipairs(self.v_left_tab_list) do
+    local cond_done = Condition:check_condition(v.cfg.Condition)
+    v.tog_obj:SetActiveEx(cond_done)
+  end
+end
+
+function ui:switch_page(_tab_idx)
+  local tab_idx = self:check_tab_idx_open(_tab_idx)
+  if not tab_idx then
+    Log.Error("没有开放的副本页,请确策划保系统开启后有开启的页签", tab_idx)
+    return
+  end
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.chapter_refresh_UI_SOUND)
+  self.v_current_tab_idx = tab_idx
+  local page_type = self.v_left_tab_list[tab_idx].cfg.PageType
+  self:refresh_chapter_list_ui(page_type)
+  if not self.v_cache_tab_idx then
+    self.v_uicompents.StageContent_rect:SetLocalPositionA(0, 0, 0)
+  end
+  self.v_cache_tab_idx = nil
+  self:refresh_chapter_list_data()
+end
+
+function ui:refresh_chapter_list_ui(page_type)
+  self:unbind_red()
+  self.v_chapter_show_list = {}
+  local chapter_data = ShareRes.get_chapter_material_type_cfg()
+  for _, data in pairs(chapter_data) do
+    if data.PageType == page_type and 1 == data.IfShow then
+      _tinsert(self.v_chapter_show_list, {cfg = data})
+    end
+  end
+  table.sort(self.v_chapter_show_list, function(a, b)
+    return a.cfg.Order < b.cfg.Order
+  end)
+  self:give_back_auto_cache(MATERIAL_CHAPTER_ITEM_KEY)
+  local is_start, activity_id = NoviceMgr:is_double_challenge_start(Config.CommonDefine.DOUBLE_TYPE.MATERIAL)
+  for i, v in ipairs(self.v_chapter_show_list) do
+    local item = self:get_auto_cache(MATERIAL_CHAPTER_ITEM_KEY)
+    v.item_obj = item.gameObject
+    v.item_trans = item.transform
+    local cfg = v.cfg
+    local is_up = 0 ~= i % 2
+    Util.get_child_gameobj("Animation/AfterIN/Ani_UIStageMaterial_Loop_1_Up", item):SetActiveEx(is_up)
+    Util.get_child_gameobj("Animation/AfterIN/Ani_UIStageMaterial_Loop_1_Down", item):SetActiveEx(not is_up)
+    Util.get_playabledirector("Animation/Ani_UIStageMaterial_In_1", item):Play()
+    local _, pos_y, _ = Util.get_rect_transform(is_up and "UpRoot_" or "DownRoot_", item):GetLocalPositionA3()
+    Util.get_rect_transform("Content_", item):SetLocalPositionA(0, pos_y, 0)
+    v.btn = Util.get_button(nil, item)
+    local bg_img = Util.get_image("Content_/Bg", item)
+    v.bg_outline_obj = Util.get_child_gameobj("Content_/Bg/Mask01", item)
+    v.icon_canvas_group = Util.get_canvas_group("Content_/IconRoot_", item)
+    local icon_img = Util.get_image("Content_/IconRoot_/Icon_", item)
+    local name_img = Util.get_image("Content_/IconRoot_/TextImage_", item)
+    local desc_txt = Util.get_text("Content_/Tips/Tips_", item)
+    local red_obj = Util.get_child_gameobj("Content_/RedPoint_", item)
+    local act_tip_obj = Util.get_child_gameobj("Content_/ActTips", item)
+    v.lock_obj = Util.get_child_gameobj("Content_/Lock_", item)
+    v.lock_cond_txt = Util.get_text("Content_/Lock_/Condition_", item)
+    v.eff_obj = Util.get_child_gameobj("Animation/Ani_UIStageMaterial_Loop", item)
+    ResMgr:load_set_icon(bg_img, cfg.BgIcon, nil, true, self)
+    ResMgr:load_set_icon(icon_img, cfg.ItemIcon, nil, true, self)
+    ResMgr:load_set_icon(name_img, cfg.TextIcon, nil, true, self)
+    desc_txt.text = cfg.NoConditionTips
+    act_tip_obj:SetActiveEx(false)
+    RedPointMgr:bind_redpoint(self, red_obj, cfg.MaterialType, Global.red_enum.MATERIAL_BTN_RED)
+    local multi_obj = Util.get_child_gameobj("Content_/Multi", item)
+    multi_obj:SetActive(is_start)
+    if is_start then
+      local multi_times_txt = Util.get_text("MultiTimes", multi_obj)
+      multi_times_txt.text = ShareRes.get_double_challenge_cfg(activity_id).Double .. "倍"
+    end
+  end
+  LayoutRebuilder.ForceRebuildLayoutImmediate(self.v_uicompents.StageContent_rect)
+  local width = self.v_uicompents.StageContent_rect:GetSizeDeltaA()
+  local pos = self.v_uicompents.StageContent_rect.anchoredPosition.x
+  self.v_uiobjects.ScrollTip:SetActiveEx(width + pos > 100)
+end
+
+function ui:refresh_chapter_list_data()
+  for tab_idx, v in ipairs(self.v_chapter_show_list) do
+    local cfg = v.cfg
+    local open, tip = ChapterMaterialMgr:is_material_type_cond_done(cfg.Id)
+    local is_condition_tips = true
+    if open then
+      local day_open, day_open_tip = ChapterMaterialMgr:is_material_type_day_open(cfg.Id)
+      if not day_open then
+        open = false
+        is_condition_tips = false
+      end
+    end
+    v.lock_cond_txt.text = tip
+    v.eff_obj:SetActive(open)
+    v.lock_obj:SetActive(not open)
+    v.bg_outline_obj:SetActive(open)
+    Util.apply_grey_ex(v.item_obj, not open)
+    v.icon_canvas_group.alpha = open and 1 or 0.8
+    self:set_button_listener(v.btn, function()
+      if not open then
+        if not is_condition_tips then
+          Util.show_message_tip(2349)
+        else
+          Util.show_message_tip(tip)
+        end
+      end
+      ChapterMaterialMgr:request_click_new_material_epi(cfg.MaterialType)
+      self.v_cache_tab_idx = self.v_current_tab_idx
+      UIMgr:get_ui("material_stage"):ui_show(cfg.MaterialType)
+    end)
+  end
+end
+
+return ui

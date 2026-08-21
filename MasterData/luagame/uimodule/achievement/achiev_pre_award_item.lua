@@ -1,0 +1,178 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local Item_Helper = require("utils.item_helper")
+local normal_color = Util.get_unity_color_by_hex(tonumber("292929", 16))
+local finish_color = Util.get_unity_color_by_hex(tonumber("806f58", 16))
+local MODEL = {
+  v_complete = {
+    "Complete",
+    BIND_TYPE.OBJECT
+  },
+  v_title_obj = {
+    "TitleObj",
+    BIND_TYPE.OBJECT
+  },
+  v_member_title = {
+    "MemberTitle",
+    BIND_TYPE.OBJECT
+  },
+  v_course_title = {
+    "CourseTitle",
+    BIND_TYPE.OBJECT
+  },
+  v_condition_txt = {
+    "Condition",
+    BIND_TYPE.TEXT
+  },
+  v_lv_member = {
+    "MemberLv",
+    BIND_TYPE.TEXT
+  },
+  v_lv_course = {
+    "CourseLv",
+    BIND_TYPE.TEXT
+  },
+  v_bg_member = {
+    "MemberTitle",
+    BIND_TYPE.IMAGE
+  },
+  v_bg_course = {
+    "CourseTitle",
+    BIND_TYPE.IMAGE
+  },
+  v_name_member = {
+    "MemberName",
+    BIND_TYPE.TEXT
+  },
+  v_name_course = {
+    "CourseName",
+    BIND_TYPE.TEXT
+  },
+  v_icon_member = {
+    "MemberEyes",
+    BIND_TYPE.IMAGE
+  },
+  v_icon_course = {
+    "CourseIcon2",
+    BIND_TYPE.IMAGE
+  },
+  v_quality_bg_member = {
+    "QualityBg2",
+    BIND_TYPE.IMAGE
+  },
+  v_quality_bg_course = {
+    "QualityBg1",
+    BIND_TYPE.IMAGE
+  },
+  v_award_content = {
+    "AwardContent",
+    BIND_TYPE.OBJECT
+  }
+}
+local PAGE_IDX = {MEMBER = 1, COURSE = 2}
+local ITEM_TYPE = {TITLE = 19}
+local SaticSv = require("ui.widget.static_scroll_view")
+local AwardItemClass = require("uimodule.gecao.local_widgets.item_obj_com1")
+local AwardItemKey = "ACHIEVEMENT_AWARD_ITEM"
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("ItemAward", function()
+  end)
+end
+
+function ui:set_data(data)
+  self.v_data = data
+  self.v_state = self.v_data.state
+  self.v_progress_id = self.v_data.id
+  local achievement_group_id = ShareRes.get_progress_task_location(self.v_data.id).GroupId
+  local achievement_group_cfg = ShareRes.get_achievement_group_cfg(achievement_group_id)
+  self.v_classify = achievement_group_cfg.Classify
+  if 0 == self.v_state then
+    self.v_complete:SetActive(false)
+  else
+    self.v_complete:SetActive(true)
+  end
+  local award_type = ShareRes.create("item.award_type", ITEM_TYPE.TITLE)
+  local id_begine = award_type.IdBegin
+  local id_end = award_type.IdEnd
+  local award_list = ShareRes.get_achievement_award(self.v_progress_id)
+  local item_id = award_list[1][1]
+  if id_begine <= item_id and id_end >= item_id then
+    self.v_title_obj:SetActive(true)
+    self.v_award_content:SetActive(false)
+    if self.v_classify == PAGE_IDX.MEMBER then
+      self.v_member_title:SetActive(true)
+      self.v_course_title:SetActive(false)
+      self.v_suffix = "_member"
+    elseif self.v_classify == PAGE_IDX.COURSE then
+      self.v_member_title:SetActive(false)
+      self.v_course_title:SetActive(true)
+      self.v_suffix = "_course"
+    end
+    local title_cfg = ShareRes.get_title(item_id)
+    local title_quality_path_cfg = ShareRes.get_title_quality_path(title_cfg.Quality)
+    self["v_lv" .. self.v_suffix].text = title_cfg.Level
+    self["v_lv" .. self.v_suffix].gameObject:SetActive(1 == title_cfg.ShowLevel)
+    self["v_name" .. self.v_suffix].text = Util.get_i18n(title_cfg.Name)
+    ResMgr:load_set_icon(self["v_icon" .. self.v_suffix], title_cfg.BaseMapPreview)
+    ResMgr:load_set_icon(self["v_bg" .. self.v_suffix], title_cfg.BaseMap)
+    ResMgr:load_set_icon(self["v_quality_bg" .. self.v_suffix], title_quality_path_cfg.Qualitybox)
+  else
+    if not self.v_static_sv then
+      self.v_static_sv = SaticSv:new(self, self.v_award_content, AwardItemClass, data.id .. AwardItemKey)
+    end
+    self:refresh_award_list(award_list)
+  end
+  self.v_condition_txt.text = ShareRes.get_condition_desc(ShareRes.get_achievement_progress_condition(self.v_progress_id))
+  self.v_condition_txt.color = 0 == self.v_state and normal_color or finish_color
+  self.v_uicompents.point_img.color = 0 == self.v_state and normal_color or finish_color
+  local line_obj = Util.get_child_gameobj("Line", self.v_uiobjects.Secend)
+  if line_obj then
+    line_obj:SetActive(1 ~= data.idx)
+  end
+end
+
+function ui:refresh_award_list(award_list)
+  local new_award_list = {}
+  for key, value in pairs(award_list) do
+    local tb = {
+      ItemId = value[1],
+      Num = value[2]
+    }
+    table.insert(new_award_list, tb)
+  end
+  table.sort(new_award_list, function(a, b)
+    local cfg_a = Item_Helper.get_item_cfg(a.ItemId)
+    local cfg_b = Item_Helper.get_item_cfg(b.ItemId)
+    if not cfg_a or not cfg_b then
+      return false
+    end
+    if cfg_a.Quality == cfg_b.Quality then
+      if cfg_a.Priority == cfg_b.Priority then
+        return a.ItemId > b.ItemId
+      else
+        return cfg_a.Priority > cfg_b.Priority
+      end
+    else
+      return cfg_a.Quality > cfg_b.Quality
+    end
+  end)
+  self.v_static_sv:update_list(new_award_list)
+  self.v_title_obj:SetActive(false)
+  self.v_award_content:SetActive(true)
+end
+
+function ui:clear_static_view()
+  if self.v_static_sv then
+    self.v_static_sv:clear()
+    self.v_static_sv = nil
+  end
+end
+
+function ui:on_clear()
+  self:clear_static_view()
+end
+
+return ui

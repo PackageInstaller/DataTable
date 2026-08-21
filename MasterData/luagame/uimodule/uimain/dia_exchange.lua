@@ -1,0 +1,188 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local AssetBarView = require("ui.asset_bar.asset_bar")
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local SHOW_STR = "是否消耗<color=#{1}>{2}</color>{3}兑换<color=#{4}>{5}</color>{6}"
+local SHOW_STR_COLOR = ShareRes.get_comm_string_value("ItemExchangeNumColor") or "EC7F00"
+local ITEM_ID = {
+  Config.DIAMOND_ITEMID,
+  Config.GILTGOLD_ITEMID
+}
+local ITEM_CFG = {
+  UtilUI.get_item_cfg(ITEM_ID[1]),
+  UtilUI.get_item_cfg(ITEM_ID[2])
+}
+
+function ui:ui_finish_load()
+  self:set_button("Add_Btn", function()
+    self:on_click_add_btn()
+  end)
+  self:set_button("Back", function()
+    self:ui_hide()
+  end)
+  self:set_button("Cancel", function()
+    self:ui_hide()
+  end)
+  self:set_button("Confirm", function()
+    self:on_click_confirm_btn()
+  end)
+  self:set_button("Reduce_Btn", function()
+    self:on_click_reduce_btn()
+  end)
+  self:set_slider_listener(self.v_uicompents.Slider_sld, function()
+    self:onclick_slider()
+  end)
+  self.v_asset_bar = AssetBarView:new(self, self.v_uiobjects.AssetBar)
+end
+
+function ui:on_click_add_btn()
+  if self.v_cur_exchange_num + 1 > self.v_can_exchange_max_num then
+    return
+  end
+  self.v_cur_exchange_num = self.v_cur_exchange_num + 1
+  self.v_uicompents.Slider_sld.value = self.v_cur_exchange_num
+  self:update_exchange_num()
+end
+
+function ui:on_click_reduce_btn()
+  if self.v_cur_exchange_num - 1 < 1 then
+    self.v_uicompents.Slider_sld.value = 0
+    return
+  end
+  self.v_cur_exchange_num = self.v_cur_exchange_num - 1
+  self.v_uicompents.Slider_sld.value = self.v_cur_exchange_num
+  self:update_exchange_num()
+end
+
+function ui:on_click_confirm_btn()
+  if self.v_can_exchange_max_num < 1 then
+    local tip = Util.format_str("当前{1}不足，是否前往充值", ITEM_CFG[2].Name)
+    Util.show_conform_tip(tip, nil, nil, nil, function()
+      if SysOpenMgr:get_is_ui_open("recharge_shop", true) then
+        SysOpenMgr:jump_to_sys(12106, true)
+      end
+      self.v_open_charg_on_hide = nil
+      self:ui_hide()
+      UIMgr:try_hide_ui("ui_chapter_detail_info")
+    end)
+    return
+  end
+  local exchange_config = CharacterMgr:get_exchange_config(Config.EXCHANGE_TYPE.DEFAULT, ITEM_ID[1], ITEM_ID[2])
+  CharacterMgr:request_exchange_item(exchange_config.Id, self.v_cur_exchange_num, function()
+    Util.show_message_tip(2229)
+    self:ui_hide()
+  end)
+end
+
+function ui:onclick_slider()
+  self.v_cur_exchange_num = math.floor(self.v_uicompents.Slider_sld.value)
+  self:update_exchange_num()
+end
+
+function ui:ui_on_show()
+  self:show_item()
+  self:update_exchange_num()
+  local list = Shop_Helper.get_asset_list({
+    ITEM_ID[1],
+    ITEM_ID[2]
+  })
+  self.v_asset_bar:reset_config(list)
+  self.v_asset_bar:on_create()
+end
+
+function ui:show_item()
+  local cfg = CharacterMgr:get_exchange_config(Config.EXCHANGE_TYPE.DEFAULT, ITEM_ID[1], ITEM_ID[2])
+  local material_id = cfg.Material[1]
+  local target_id = cfg.TargetId
+  local material_icon_path = UtilUI.get_item_icon(ITEM_ID[2])
+  local target_icon_path = UtilUI.get_item_icon(ITEM_ID[1])
+  local material_quality = UtilUI.get_item_quality_icon(ITEM_ID[2])
+  local target_quality = UtilUI.get_item_quality_icon(ITEM_ID[1])
+  ResMgr:load_set_icon(self.v_uicompents.useIcon_img, material_icon_path)
+  ResMgr:load_set_icon(self.v_uicompents.getIcon_img, target_icon_path)
+  ResMgr:load_set_icon(self.v_uicompents.useQuaBg_img, material_quality)
+  ResMgr:load_set_icon(self.v_uicompents.getQuaBg_img, target_quality)
+  local material_item_num = BagMgr:get_item_num(ITEM_ID[2])
+  local left_time = CharacterMgr:get_exchange_remain_time(cfg.Id)
+  self.v_can_exchange_max_num = math.floor(material_item_num / cfg.Num[1] * cfg.Count)
+  if left_time < self.v_can_exchange_max_num then
+    self.v_can_exchange_max_num = left_time
+  end
+  local max_value = 0 == self.v_can_exchange_max_num and 1 or self.v_can_exchange_max_num
+  self.v_uicompents.ChargeMax_txt.text = max_value
+  self.v_uicompents.Slider_sld.maxValue = max_value
+  self.v_cur_exchange_num = 0
+  local own_num = BagMgr:get_item_num(ITEM_ID[2])
+  self.v_uicompents.ItemNow_txt.text = own_num
+  self.v_uicompents.ItemNow_txt.color = own_num > 0 and Util.CommonColor_White or Util.CommonColor_RedWarm
+  if self.v_can_exchange_max_num > 0 then
+    self.v_uicompents.Slider_sld.interactable = true
+    self.v_cur_exchange_num = 1
+    self.v_uicompents.Slider_sld.value = 0
+  else
+    self.v_uicompents.Slider_sld.interactable = false
+    self.v_uicompents.Slider_sld.value = 1
+  end
+  self:update_exchange_num()
+end
+
+function ui:update_exchange_num()
+  self.v_cur_exchange_num = self.v_cur_exchange_num > 1 and self.v_cur_exchange_num or 1
+  local cfg = CharacterMgr:get_exchange_config(Config.EXCHANGE_TYPE.DEFAULT, ITEM_ID[1], ITEM_ID[2])
+  local cfg1 = ITEM_CFG[1]
+  local cfg2 = ITEM_CFG[2]
+  local need_count = self.v_cur_exchange_num * cfg.Num[1]
+  local get_count = self.v_cur_exchange_num * cfg.Count
+  self.v_uicompents.ItemNeed_txt.text = need_count
+  self.v_uicompents.ChargeStr_txt.text = Util.format_str(SHOW_STR, SHOW_STR_COLOR, need_count, cfg2.Name, SHOW_STR_COLOR, get_count, cfg1.Name)
+  self.v_uicompents.ItemNow_txt.text = BagMgr:get_item_num(ITEM_ID[2])
+  self.v_uicompents.GetNum_txt.text = get_count
+  local max_value = 0 == self.v_can_exchange_max_num and 1 or self.v_can_exchange_max_num
+  self.v_uicompents.Slider_sld.minValue = 1
+  self.v_uicompents.Slider_sld.maxValue = max_value
+  if max_value <= self.v_cur_exchange_num then
+    Util.apply_grey_ex(self.v_uiobjects.Add_Btn, true)
+    self.v_uicompents.Add_Btn_btn.enabled = false
+  else
+    Util.apply_grey_ex(self.v_uiobjects.Add_Btn, false)
+    self.v_uicompents.Add_Btn_btn.enabled = true
+  end
+  if self.v_cur_exchange_num <= 1 then
+    Util.apply_grey_ex(self.v_uiobjects.Reduce_Btn, true)
+    self.v_uicompents.Reduce_Btn_btn.enabled = false
+  else
+    Util.apply_grey_ex(self.v_uiobjects.Reduce_Btn, false)
+    self.v_uicompents.Reduce_Btn_btn.enabled = true
+  end
+  if 1 == self.v_can_exchange_max_num then
+    self.v_uicompents.Slider_sld.interactable = false
+    self.v_uicompents.Slider_sld.value = 1
+    self.v_uicompents.Slider_sld.minValue = 0
+  else
+    self.v_uicompents.Slider_sld.value = self.v_cur_exchange_num
+  end
+end
+
+function ui:ui_on_hide()
+  if self.v_asset_bar then
+    self.v_asset_bar:on_hide()
+  end
+  if self.v_open_charg_on_hide then
+    UIMgr:get_ui("uiforcerecharg"):ui_show()
+  end
+  self.v_open_charg_on_hide = nil
+end
+
+function ui:ui_on_destroy()
+  if self.v_asset_bar then
+    self.v_asset_bar:on_destory()
+    self.v_asset_bar = nil
+  end
+end
+
+function ui:set_open_charg_on_hide(is_open)
+  self.v_open_charg_on_hide = is_open
+end
+
+return ui

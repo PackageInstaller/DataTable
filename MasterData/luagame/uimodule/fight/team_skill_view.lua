@@ -1,0 +1,124 @@
+local Base = require("ui.uiobject")
+local FightDefine = require("cs_share.fight_define")
+local ui = Util.create_child_mt(Base)
+local ATTR_TYPE = FightDefine.ATTR_TYPE
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_cur = {
+    "Cur",
+    BIND_TYPE.IMAGE
+  },
+  v_arrow = {
+    "Arrow",
+    BIND_TYPE.OBJECT
+  }
+}
+local ATTR_CHANGE_FUNCS = {
+  [ATTR_TYPE.TEAM_SKILL_ENERGY] = function(self, msg)
+    self:_update_team_skill()
+  end
+}
+local ATTR_CHANGE_CHCHE = {}
+local ATTR_CHANGE_INTERVAL = 0.1
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_delta_time = 0
+  self.v_percent = 0
+  self.v_cur.fillAmount = 0
+  self.v_anmatior = self:get_animator(nil, self.v_arrow)
+  self.v_state_info = self.v_anmatior:GetCurrentAnimatorStateInfo(0)
+end
+
+function ui:ui_on_show()
+  self.v_percent = 0
+  self.v_cur.fillAmount = 0
+  self.v_anmatior.speed = 0
+  self.v_anmatior:Play("TeamSkillArrow")
+  self:_update_team_skill()
+  self:bind_auto_mq(Const.MSG_GOD_ATTR_CHANGE, self.on_update_god_attr, self)
+end
+
+function ui:ui_on_update(delta_time)
+  self.v_delta_time = self.v_delta_time + delta_time
+  if self.v_delta_time > ATTR_CHANGE_INTERVAL then
+    self.v_delta_time = self.v_delta_time - ATTR_CHANGE_INTERVAL
+    if next(ATTR_CHANGE_CHCHE) ~= nil then
+      self:_do_update_god_attr()
+      ATTR_CHANGE_CHCHE = {}
+    end
+  end
+  self:_play_ani()
+end
+
+function ui:ui_on_hide()
+  self.v_cur.fillAmount = 0
+  self.v_anmatior.speed = 0
+end
+
+function ui:on_update_god_attr(msg)
+  ATTR_CHANGE_CHCHE[msg.mm_x] = msg.mm_x
+end
+
+function ui:_do_update_god_attr()
+  for _, attr_id in pairs(ATTR_CHANGE_CHCHE) do
+    local func = ATTR_CHANGE_FUNCS[attr_id]
+    if func then
+      func(self)
+    end
+  end
+end
+
+function ui:_update_team_skill()
+  local god_npc = SceneMgr:get_god_npc()
+  if not god_npc then
+    return
+  end
+  local cur = god_npc.attr_mgr:get_attr(ATTR_TYPE.TEAM_SKILL_ENERGY)
+  local max = god_npc.attr_mgr:get_attr(ATTR_TYPE.TEAM_SKILL_ENERGY_MAX)
+  if 0 == max then
+    return
+  end
+  self.v_anmatior.speed = 1
+  self.v_percent = cur / max
+  self.v_cur.fillAmount = self.v_percent
+  self.v_anmatior:Play("TeamSkillArrow", -1, math.min(0.99, self.v_percent))
+  if 1 == self.v_percent then
+    self.v_parent_ui:update_qte_skill_state()
+  end
+end
+
+function ui:_play_ani()
+  if self.v_object.activeInHierarchy then
+    local currentTime = self.v_anmatior:GetCurrentAnimatorStateInfo(0).normalizedTime
+    if math.abs(currentTime - self.v_percent) > 0.05 then
+      self.v_anmatior:Play("TeamSkillArrow", -1, math.min(0.99, self.v_percent))
+    elseif 0 ~= self.v_anmatior.speed then
+      self.v_anmatior.speed = 0
+    end
+  end
+  if 0 == self.v_anmatior.speed or 0 == self.v_percent then
+    self:_reset_ani()
+    return
+  end
+  local currentTime = self.v_anmatior:GetCurrentAnimatorStateInfo(0).normalizedTime
+  if math.abs(currentTime - self.v_percent) < 0.05 or math.abs(currentTime - 0.99) < 0.09 then
+    self.v_anmatior.speed = 0
+  elseif currentTime > 1 then
+    self.v_anmatior:Play("TeamSkillArrow", -1, 1)
+    self.v_anmatior.speed = 0
+  end
+end
+
+function ui:_reset_ani()
+  if 1 == self.v_anmatior.speed then
+    self.v_anmatior:Play("TeamSkillArrow", -1, 0)
+    self.v_anmatior.speed = 0
+  end
+end
+
+function ui:get_skill_percent()
+  return self.v_percent
+end
+
+return ui

@@ -1,0 +1,4 @@
+return {
+  {Condition = 0, Id = 1},
+  {Condition = 0, Id = 2}
+}

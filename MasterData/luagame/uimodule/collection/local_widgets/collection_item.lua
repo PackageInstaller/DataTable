@@ -1,0 +1,34 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+
+function M:ui_finish_load()
+  self.v_out_line = self.v_uiobjects.Icon:GetComponent(typeof(UnityEngine.UI.Outline))
+end
+
+function M:set_data(data)
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  uobj.Lock:SetActive(data.is_lock)
+  uobj.Red:SetActive(data.have_red)
+  if data.is_lock then
+    ucom.Icon_img.color = UnityEngine.Color(0, 0, 0, 1)
+    self.v_out_line.enabled = true
+  else
+    ucom.Icon_img.color = UnityEngine.Color(1, 1, 1, 1)
+    self.v_out_line.enabled = false
+  end
+  ResMgr:load_set_icon(ucom.Icon_img, UtilUI.get_item_icon(data.id))
+  local btn = self:get_button(nil, uobj.Button)
+  self:set_button_listener(btn, function()
+    UIMgr:get_ui("collection_tip"):ui_show(data.id, data.is_lock)
+    uobj.Red:SetActive(false)
+    Network:call("c2gs_click_collection_id", {
+      collection_id = data.id
+    }, nil)
+  end)
+end
+
+function M:on_clear()
+end
+
+return M

@@ -1,0 +1,6592 @@
+return {
+  {
+    Action = "uimain_idle",
+    BuddyId = 0,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 1,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "默认通用"
+  },
+  {
+    Action = "uimain_idle",
+    BuddyId = 0,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 2,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "默认通用"
+  },
+  {
+    Action = "uimain_idle",
+    BuddyId = 0,
+    CameraPos = {
+      0.97,
+      1.35,
+      5.5
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 3,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "默认通用"
+  },
+  {
+    Action = "uimain_idle",
+    BuddyId = 0,
+    CameraPos = {
+      0.97,
+      1.35,
+      5.5
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 4,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "默认通用"
+  },
+  {
+    Action = "uimain_idle",
+    BuddyId = 0,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 5,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "桌子右侧的NPC默认"
+  },
+  {
+    Action = "uimain_idle",
+    BuddyId = 0,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 6,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "桌子左侧的NPC默认"
+  },
+  {
+    Action = "uimain_idle",
+    BuddyId = 0,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 7,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "默认通用"
+  },
+  {
+    Action = "uimain_idle",
+    BuddyId = 0,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 8,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "默认通用"
+  },
+  [1001] = {
+    Action = "",
+    BuddyId = 0,
+    CameraPos = {
+      -0.0032,
+      1.626,
+      3.525
+    },
+    CameraRot = {
+      2.691,
+      179.434,
+      1.786
+    },
+    Event = 5,
+    FOV = 29.3,
+    Id = 1001,
+    ModelPos = {
+      0,
+      0,
+      0
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "场景历程修复初始镜头"
+  },
+  [1002] = {
+    Action = "",
+    BuddyId = 0,
+    CameraPos = {
+      -0.0035,
+      1.626,
+      3.525
+    },
+    CameraRot = {
+      -14.7,
+      129.6,
+      1.786
+    },
+    Event = 5,
+    FOV = 35,
+    Id = 1002,
+    ModelPos = {
+      0,
+      0,
+      0
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "场景历程修复镜头1"
+  },
+  [1003] = {
+    Action = "",
+    BuddyId = 0,
+    CameraPos = {
+      -0.0035,
+      1.626,
+      3.525
+    },
+    CameraRot = {
+      7.1,
+      158.56,
+      1.786
+    },
+    Event = 5,
+    FOV = 35,
+    Id = 1003,
+    ModelPos = {
+      0,
+      0,
+      0
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "场景历程修复镜头2"
+  },
+  [1004] = {
+    Action = "",
+    BuddyId = 0,
+    CameraPos = {
+      -0.0035,
+      1.626,
+      3.525
+    },
+    CameraRot = {
+      -9.9,
+      224.89,
+      1.786
+    },
+    Event = 5,
+    FOV = 35,
+    Id = 1004,
+    ModelPos = {
+      0,
+      0,
+      0
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "场景历程修复镜头3"
+  },
+  [1005] = {
+    Action = "",
+    BuddyId = 0,
+    CameraPos = {
+      -4.49,
+      2.54,
+      3.59
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 5,
+    FOV = 31.3,
+    Id = 1005,
+    ModelPos = {
+      0,
+      0,
+      0
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "画框拉近"
+  },
+  [1006] = {
+    Action = "uimain_idle",
+    BuddyId = 1001008,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 6,
+    FOV = 51,
+    Id = 1006,
+    ModelPos = {
+      0.033,
+      0,
+      1.833
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "伊蕾什安"
+  },
+  [1007] = {
+    Action = "uimain_idle",
+    BuddyId = 1001008,
+    CameraPos = {
+      0,
+      4.79,
+      8.6
+    },
+    CameraRot = {
+      -3.644,
+      180,
+      0
+    },
+    Event = 6,
+    FOV = 50,
+    Id = 1007,
+    ModelPos = {
+      0.033,
+      0,
+      1.833
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "下雨场景镜头"
+  },
+  [1008] = {
+    Action = "uimain_idle",
+    BuddyId = 10010012,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 6,
+    FOV = 51,
+    Id = 1008,
+    ModelPos = {
+      -2.58,
+      -0.07,
+      1.45
+    },
+    ModelRot = {
+      0,
+      30,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "光零引导"
+  },
+  [100100102] = {
+    Action = "uimain_idle",
+    BuddyId = 1001001,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100100102,
+    ModelPos = {
+      1.115,
+      0,
+      1.612
+    },
+    ModelRot = {
+      0,
+      -50.4,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "零"
+  },
+  [100100105] = {
+    Action = "uimain_idle",
+    BuddyId = 1001001,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100100105,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "零"
+  },
+  [100100106] = {
+    Action = "uimain_idle",
+    BuddyId = 1001001,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100100106,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "零"
+  },
+  [100100107] = {
+    Action = "uimain_idle",
+    BuddyId = 1001001,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100100107,
+    ModelPos = {
+      1.115,
+      0,
+      1.612
+    },
+    ModelRot = {
+      0,
+      -50.4,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "零"
+  },
+  [100100108] = {
+    Action = "uimain_idle",
+    BuddyId = 1001001,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100100108,
+    ModelPos = {
+      1.115,
+      0,
+      1.612
+    },
+    ModelRot = {
+      0,
+      -50.4,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "零"
+  },
+  [100100205] = {
+    Action = "uimain_idle",
+    BuddyId = 1001002,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100100205,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "徒花"
+  },
+  [100100206] = {
+    Action = "uimain_idle",
+    BuddyId = 1001002,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100100206,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "徒花"
+  },
+  [100100302] = {
+    Action = "uimain_idle",
+    BuddyId = 1001003,
+    CameraPos = {
+      -1.89,
+      1.2,
+      3.97
+    },
+    CameraRot = {
+      0,
+      139,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100100302,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "火石"
+  },
+  [100100305] = {
+    Action = "uimain_idle",
+    BuddyId = 1001003,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100100305,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "火石"
+  },
+  [100100306] = {
+    Action = "uimain_idle",
+    BuddyId = 1001003,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100100306,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "火石"
+  },
+  [100100307] = {
+    Action = "uimain_idle",
+    BuddyId = 1001003,
+    CameraPos = {
+      -1.89,
+      1.2,
+      3.97
+    },
+    CameraRot = {
+      0,
+      139,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100100307,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "火石"
+  },
+  [100100308] = {
+    Action = "uimain_idle",
+    BuddyId = 1001003,
+    CameraPos = {
+      -1.89,
+      1.2,
+      3.97
+    },
+    CameraRot = {
+      0,
+      139,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100100308,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "火石"
+  },
+  [100100402] = {
+    Action = "uimain_idle",
+    BuddyId = 1001004,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100100402,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -49.2,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "薪"
+  },
+  [100100405] = {
+    Action = "uimain_idle",
+    BuddyId = 1001004,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100100405,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "薪"
+  },
+  [100100406] = {
+    Action = "uimain_idle",
+    BuddyId = 1001004,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100100406,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "薪"
+  },
+  [100100407] = {
+    Action = "uimain_idle",
+    BuddyId = 1001004,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100100407,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -49.2,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "薪"
+  },
+  [100100408] = {
+    Action = "uimain_idle",
+    BuddyId = 1001004,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100100408,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -49.2,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "薪"
+  },
+  [100100505] = {
+    Action = "uimain_idle",
+    BuddyId = 1001005,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100100505,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "柯尔特"
+  },
+  [100100506] = {
+    Action = "uimain_idle",
+    BuddyId = 1001005,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100100506,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "柯尔特"
+  },
+  [100100605] = {
+    Action = "uimain_idle",
+    BuddyId = 1001006,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100100605,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "康帕丝"
+  },
+  [100100606] = {
+    Action = "uimain_idle",
+    BuddyId = 1001006,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100100606,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "康帕丝"
+  },
+  [100100702] = {
+    Action = "uimain_idle",
+    BuddyId = 1001007,
+    CameraPos = {
+      -1.89,
+      1.2,
+      3.97
+    },
+    CameraRot = {
+      0,
+      139,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100100702,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "浮波"
+  },
+  [100100705] = {
+    Action = "uimain_idle",
+    BuddyId = 1001007,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100100705,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "浮波"
+  },
+  [100100706] = {
+    Action = "uimain_idle",
+    BuddyId = 1001007,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100100706,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "浮波"
+  },
+  [100100707] = {
+    Action = "uimain_idle",
+    BuddyId = 1001007,
+    CameraPos = {
+      -1.89,
+      1.2,
+      3.97
+    },
+    CameraRot = {
+      0,
+      139,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100100707,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "浮波"
+  },
+  [100100708] = {
+    Action = "uimain_idle",
+    BuddyId = 1001007,
+    CameraPos = {
+      -1.89,
+      1.2,
+      3.97
+    },
+    CameraRot = {
+      0,
+      139,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100100708,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "浮波"
+  },
+  [100100801] = {
+    Action = "uimain_idle",
+    BuddyId = 1001008,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100100801,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "伊蕾什安"
+  },
+  [100100802] = {
+    Action = "uimain_idle",
+    BuddyId = 1001008,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100100802,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -54.8,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "伊蕾什安"
+  },
+  [100100803] = {
+    Action = "uimain_idle",
+    BuddyId = 1001008,
+    CameraPos = {
+      0.97,
+      1.35,
+      5.5
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100100803,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "伊蕾什安"
+  },
+  [100100804] = {
+    Action = "uimain_idle",
+    BuddyId = 1001008,
+    CameraPos = {
+      0.97,
+      1.35,
+      5.5
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100100804,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "伊蕾什安"
+  },
+  [100100805] = {
+    Action = "uimain_idle",
+    BuddyId = 1001008,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100100805,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "伊蕾什安"
+  },
+  [100100806] = {
+    Action = "uimain_idle",
+    BuddyId = 1001008,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 6,
+    FOV = 51,
+    Id = 100100806,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "伊蕾什安"
+  },
+  [100100807] = {
+    Action = "uimain_idle",
+    BuddyId = 1001008,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100100807,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -54.8,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "伊蕾什安"
+  },
+  [100100808] = {
+    Action = "uimain_idle",
+    BuddyId = 1001008,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100100808,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -54.8,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "伊蕾什安"
+  },
+  [100100901] = {
+    Action = "uimain_idle",
+    BuddyId = 1001009,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100100901,
+    ModelPos = {
+      1,
+      0,
+      1.6
+    },
+    ModelRot = {
+      0,
+      -12,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "铂鸢"
+  },
+  [100100902] = {
+    Action = "uimain_idle",
+    BuddyId = 1001009,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100100902,
+    ModelPos = {
+      1.22,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -55.66,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "铂鸢"
+  },
+  [100100903] = {
+    Action = "uimain_idle",
+    BuddyId = 1001009,
+    CameraPos = {
+      0.97,
+      1.35,
+      6.3
+    },
+    CameraRot = {
+      1.975,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100100903,
+    ModelPos = {
+      1,
+      0,
+      1.6
+    },
+    ModelRot = {
+      0,
+      -12,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "铂鸢"
+  },
+  [100100904] = {
+    Action = "uimain_idle",
+    BuddyId = 1001009,
+    CameraPos = {
+      0.97,
+      1.35,
+      6.3
+    },
+    CameraRot = {
+      1.975,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100100904,
+    ModelPos = {
+      1,
+      0,
+      1.6
+    },
+    ModelRot = {
+      0,
+      -12,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "铂鸢"
+  },
+  [100100905] = {
+    Action = "uimain_idle",
+    BuddyId = 1001009,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100100905,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "铂鸢"
+  },
+  [100100906] = {
+    Action = "uimain_idle",
+    BuddyId = 1001009,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100100906,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "铂鸢"
+  },
+  [100100907] = {
+    Action = "uimain_idle",
+    BuddyId = 1001009,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100100907,
+    ModelPos = {
+      1.22,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -55.66,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "铂鸢"
+  },
+  [100100908] = {
+    Action = "uimain_idle",
+    BuddyId = 1001009,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100100908,
+    ModelPos = {
+      1.22,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -55.66,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "铂鸢"
+  },
+  [100101001] = {
+    Action = "uimain_idle",
+    BuddyId = 1001010,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100101001,
+    ModelPos = {
+      1,
+      0,
+      1.8
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "阿斯蒂"
+  },
+  [100101002] = {
+    Action = "uimain_idle",
+    BuddyId = 1001010,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100101002,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -49,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "阿斯蒂"
+  },
+  [100101003] = {
+    Action = "uimain_idle",
+    BuddyId = 1001010,
+    CameraPos = {
+      0.97,
+      1.35,
+      5.5
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100101003,
+    ModelPos = {
+      1,
+      0,
+      1.8
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "阿斯蒂"
+  },
+  [100101004] = {
+    Action = "uimain_idle",
+    BuddyId = 1001010,
+    CameraPos = {
+      0.97,
+      1.35,
+      5.5
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100101004,
+    ModelPos = {
+      1,
+      0,
+      1.8
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "阿斯蒂"
+  },
+  [100101005] = {
+    Action = "uimain_idle",
+    BuddyId = 1001010,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100101005,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "阿斯蒂"
+  },
+  [100101006] = {
+    Action = "uimain_idle",
+    BuddyId = 1001010,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100101006,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "阿斯蒂"
+  },
+  [100101007] = {
+    Action = "uimain_idle",
+    BuddyId = 1001010,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100101007,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -49,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "阿斯蒂"
+  },
+  [100101008] = {
+    Action = "uimain_idle",
+    BuddyId = 1001010,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100101008,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -49,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "阿斯蒂"
+  },
+  [100101101] = {
+    Action = "uimain_idle",
+    BuddyId = 1001011,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100101101,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "暝"
+  },
+  [100101102] = {
+    Action = "uimain_idle",
+    BuddyId = 1001011,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100101102,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -49.8,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "暝"
+  },
+  [100101103] = {
+    Action = "uimain_idle",
+    BuddyId = 1001011,
+    CameraPos = {
+      0.97,
+      1.29,
+      4.6
+    },
+    CameraRot = {
+      4.682,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100101103,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "暝"
+  },
+  [100101104] = {
+    Action = "uimain_idle",
+    BuddyId = 1001011,
+    CameraPos = {
+      0.97,
+      1.29,
+      4.6
+    },
+    CameraRot = {
+      4.682,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100101104,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "暝"
+  },
+  [100101105] = {
+    Action = "uimain_idle",
+    BuddyId = 1001011,
+    CameraPos = {
+      -1.72,
+      1.15,
+      4
+    },
+    CameraRot = {
+      3,
+      190,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100101105,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "暝"
+  },
+  [100101106] = {
+    Action = "uimain_idle",
+    BuddyId = 1001011,
+    CameraPos = {
+      3,
+      1.13,
+      4
+    },
+    CameraRot = {
+      3.3,
+      190,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100101106,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "暝"
+  },
+  [100101107] = {
+    Action = "uimain_idle",
+    BuddyId = 1001011,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100101107,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -49.8,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "暝"
+  },
+  [100101108] = {
+    Action = "uimain_idle",
+    BuddyId = 1001011,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100101108,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -49.8,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "暝"
+  },
+  [100101201] = {
+    Action = "uimain_idle",
+    BuddyId = 1001012,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100101201,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "青"
+  },
+  [100101202] = {
+    Action = "uimain_idle",
+    BuddyId = 1001012,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100101202,
+    ModelPos = {
+      1.15,
+      0,
+      1.5
+    },
+    ModelRot = {
+      1.67,
+      -30.288,
+      1.4
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "青"
+  },
+  [100101203] = {
+    Action = "uimain_idle",
+    BuddyId = 1001012,
+    CameraPos = {
+      0.97,
+      1.35,
+      6.3
+    },
+    CameraRot = {
+      1.975,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100101203,
+    ModelPos = {
+      1,
+      0,
+      1.6
+    },
+    ModelRot = {
+      0,
+      -12,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "青"
+  },
+  [100101204] = {
+    Action = "uimain_idle",
+    BuddyId = 1001012,
+    CameraPos = {
+      0.97,
+      1.35,
+      6.3
+    },
+    CameraRot = {
+      1.975,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100101204,
+    ModelPos = {
+      1,
+      0,
+      1.6
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "青"
+  },
+  [100101205] = {
+    Action = "uimain_idle",
+    BuddyId = 1001012,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100101205,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "青"
+  },
+  [100101206] = {
+    Action = "uimain_idle",
+    BuddyId = 1001012,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100101206,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "青"
+  },
+  [100101207] = {
+    Action = "uimain_idle",
+    BuddyId = 1001012,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100101207,
+    ModelPos = {
+      1.15,
+      0,
+      1.5
+    },
+    ModelRot = {
+      1.67,
+      -30.288,
+      1.4
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "青"
+  },
+  [100101208] = {
+    Action = "uimain_idle",
+    BuddyId = 1001012,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100101208,
+    ModelPos = {
+      1.15,
+      0,
+      1.5
+    },
+    ModelRot = {
+      1.67,
+      -30.288,
+      1.4
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "青"
+  },
+  [100101301] = {
+    Action = "uimain_idle",
+    BuddyId = 1001013,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100101301,
+    ModelPos = {
+      1.05,
+      0,
+      1.7
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "赫菲"
+  },
+  [100101302] = {
+    Action = "uimain_idle",
+    BuddyId = 1001013,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100101302,
+    ModelPos = {
+      1.17,
+      0,
+      1.56
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "赫菲"
+  },
+  [100101303] = {
+    Action = "uimain_idle",
+    BuddyId = 1001013,
+    CameraPos = {
+      0.97,
+      1.29,
+      4.6
+    },
+    CameraRot = {
+      4.682,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100101303,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "赫菲"
+  },
+  [100101304] = {
+    Action = "uimain_idle",
+    BuddyId = 1001013,
+    CameraPos = {
+      0.97,
+      1.29,
+      4.6
+    },
+    CameraRot = {
+      4.682,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100101304,
+    ModelPos = {
+      1.15,
+      0,
+      1.8
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "赫菲"
+  },
+  [100101305] = {
+    Action = "uimain_idle",
+    BuddyId = 1001013,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100101305,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "赫菲"
+  },
+  [100101306] = {
+    Action = "uimain_idle",
+    BuddyId = 1001013,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100101306,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "赫菲"
+  },
+  [100101307] = {
+    Action = "uimain_idle",
+    BuddyId = 1001013,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100101307,
+    ModelPos = {
+      1.17,
+      0,
+      1.56
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "赫菲"
+  },
+  [100101308] = {
+    Action = "uimain_idle",
+    BuddyId = 1001013,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100101308,
+    ModelPos = {
+      1.17,
+      0,
+      1.56
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "赫菲"
+  },
+  [100101401] = {
+    Action = "uimain_idle",
+    BuddyId = 1001014,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100101401,
+    ModelPos = {
+      1,
+      0,
+      1.75
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "萝歌丝"
+  },
+  [100101402] = {
+    Action = "uimain_idle",
+    BuddyId = 1001014,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100101402,
+    ModelPos = {
+      1.115,
+      0,
+      1.612
+    },
+    ModelRot = {
+      0,
+      -50,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "萝歌丝"
+  },
+  [100101403] = {
+    Action = "uimain_idle",
+    BuddyId = 1001014,
+    CameraPos = {
+      0.97,
+      1.35,
+      6.3
+    },
+    CameraRot = {
+      1.975,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100101403,
+    ModelPos = {
+      1,
+      0,
+      1.75
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "萝歌丝"
+  },
+  [100101404] = {
+    Action = "uimain_idle",
+    BuddyId = 1001014,
+    CameraPos = {
+      0.97,
+      1.35,
+      6.3
+    },
+    CameraRot = {
+      1.975,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100101404,
+    ModelPos = {
+      1,
+      0,
+      1.75
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "萝歌丝"
+  },
+  [100101405] = {
+    Action = "uimain_idle",
+    BuddyId = 1001014,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100101405,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "萝歌丝"
+  },
+  [100101406] = {
+    Action = "uimain_idle",
+    BuddyId = 1001014,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100101406,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "萝歌丝"
+  },
+  [100101407] = {
+    Action = "uimain_idle",
+    BuddyId = 1001014,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100101407,
+    ModelPos = {
+      1.115,
+      0,
+      1.612
+    },
+    ModelRot = {
+      0,
+      -50,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "萝歌丝"
+  },
+  [100101408] = {
+    Action = "uimain_idle",
+    BuddyId = 1001014,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100101408,
+    ModelPos = {
+      1.115,
+      0,
+      1.612
+    },
+    ModelRot = {
+      0,
+      -50,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "萝歌丝"
+  },
+  [100101501] = {
+    Action = "uimain_idle",
+    BuddyId = 1001015,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100101501,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "沙玛什"
+  },
+  [100101502] = {
+    Action = "uimain_idle",
+    BuddyId = 1001015,
+    CameraPos = {
+      -1.223,
+      1.8,
+      4.353
+    },
+    CameraRot = {
+      5.6,
+      141.2,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 21.5,
+    Id = 100101502,
+    ModelPos = {
+      1.6,
+      0,
+      1.49
+    },
+    ModelRot = {
+      0,
+      -40,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "沙玛什"
+  },
+  [100101503] = {
+    Action = "uimain_idle",
+    BuddyId = 1001015,
+    CameraPos = {
+      0.97,
+      1.69,
+      6.2
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100101503,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "沙玛什"
+  },
+  [100101504] = {
+    Action = "uimain_idle",
+    BuddyId = 1001015,
+    CameraPos = {
+      0.97,
+      1.69,
+      6.2
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100101504,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "沙玛什"
+  },
+  [100101505] = {
+    Action = "uimain_idle",
+    BuddyId = 1001015,
+    CameraPos = {
+      -1.58,
+      1.5,
+      5.2
+    },
+    CameraRot = {
+      2,
+      188.5,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100101505,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "沙玛什"
+  },
+  [100101506] = {
+    Action = "uimain_idle",
+    BuddyId = 1001015,
+    CameraPos = {
+      3.25,
+      1.6,
+      5.1
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100101506,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "沙玛什"
+  },
+  [100101507] = {
+    Action = "uimain_idle",
+    BuddyId = 1001015,
+    CameraPos = {
+      -1.223,
+      1.8,
+      4.353
+    },
+    CameraRot = {
+      5.6,
+      141.2,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 21.5,
+    Id = 100101507,
+    ModelPos = {
+      1.6,
+      0,
+      1.49
+    },
+    ModelRot = {
+      0,
+      -40,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "沙玛什"
+  },
+  [100101508] = {
+    Action = "uimain_idle",
+    BuddyId = 1001015,
+    CameraPos = {
+      -1.223,
+      1.8,
+      4.353
+    },
+    CameraRot = {
+      5.6,
+      141.2,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 21.5,
+    Id = 100101508,
+    ModelPos = {
+      1.6,
+      0,
+      1.49
+    },
+    ModelRot = {
+      0,
+      -40,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "沙玛什"
+  },
+  [100101601] = {
+    Action = "uimain_idle",
+    BuddyId = 1001016,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100101601,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "薇奥拉"
+  },
+  [100101602] = {
+    Action = "uimain_idle",
+    BuddyId = 1001016,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100101602,
+    ModelPos = {
+      1.115,
+      0,
+      1.612
+    },
+    ModelRot = {
+      0,
+      -54,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "薇奥拉"
+  },
+  [100101603] = {
+    Action = "uimain_idle",
+    BuddyId = 1001016,
+    CameraPos = {
+      0.97,
+      1.35,
+      6.3
+    },
+    CameraRot = {
+      1.975,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100101603,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "薇奥拉"
+  },
+  [100101604] = {
+    Action = "uimain_idle",
+    BuddyId = 1001016,
+    CameraPos = {
+      0.97,
+      1.35,
+      6.3
+    },
+    CameraRot = {
+      1.975,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100101604,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "薇奥拉"
+  },
+  [100101605] = {
+    Action = "uimain_idle",
+    BuddyId = 1001016,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100101605,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "薇奥拉"
+  },
+  [100101606] = {
+    Action = "uimain_idle",
+    BuddyId = 1001016,
+    CameraPos = {
+      3,
+      1.35,
+      4.11
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100101606,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "薇奥拉"
+  },
+  [100101607] = {
+    Action = "uimain_idle",
+    BuddyId = 1001016,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100101607,
+    ModelPos = {
+      1.115,
+      0,
+      1.612
+    },
+    ModelRot = {
+      0,
+      -54,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "薇奥拉"
+  },
+  [100101608] = {
+    Action = "uimain_idle",
+    BuddyId = 1001016,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100101608,
+    ModelPos = {
+      1.115,
+      0,
+      1.612
+    },
+    ModelRot = {
+      0,
+      -54,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "薇奥拉"
+  },
+  [100101701] = {
+    Action = "uimain_idle",
+    BuddyId = 1001017,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100101701,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "南娜"
+  },
+  [100101702] = {
+    Action = "uimain_idle",
+    BuddyId = 1001017,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100101702,
+    ModelPos = {
+      1.13,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -50,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "南娜"
+  },
+  [100101703] = {
+    Action = "uimain_idle",
+    BuddyId = 1001017,
+    CameraPos = {
+      0.97,
+      1.35,
+      5.5
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100101703,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "南娜"
+  },
+  [100101704] = {
+    Action = "uimain_idle",
+    BuddyId = 1001017,
+    CameraPos = {
+      0.97,
+      1.35,
+      5.5
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100101704,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "南娜"
+  },
+  [100101705] = {
+    Action = "uimain_idle",
+    BuddyId = 1001017,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100101705,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "南娜"
+  },
+  [100101706] = {
+    Action = "uimain_idle",
+    BuddyId = 1001017,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100101706,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "南娜"
+  },
+  [100101707] = {
+    Action = "uimain_idle",
+    BuddyId = 1001017,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100101707,
+    ModelPos = {
+      1.13,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -50,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "南娜"
+  },
+  [100101708] = {
+    Action = "uimain_idle",
+    BuddyId = 1001017,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100101708,
+    ModelPos = {
+      1.13,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -50,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "南娜"
+  },
+  [100101801] = {
+    Action = "uimain_idle",
+    BuddyId = 1001018,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100101801,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "恩基"
+  },
+  [100101802] = {
+    Action = "uimain_idle",
+    BuddyId = 1001018,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100101802,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -53,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "恩基"
+  },
+  [100101803] = {
+    Action = "uimain_idle",
+    BuddyId = 1001018,
+    CameraPos = {
+      0.97,
+      1.09,
+      4.6
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100101803,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "恩基"
+  },
+  [100101804] = {
+    Action = "uimain_idle",
+    BuddyId = 1001018,
+    CameraPos = {
+      0.97,
+      1.09,
+      4.6
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100101804,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "恩基"
+  },
+  [100101805] = {
+    Action = "uimain_idle",
+    BuddyId = 1001018,
+    CameraPos = {
+      -1.72,
+      1.15,
+      4
+    },
+    CameraRot = {
+      3,
+      190,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100101805,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "恩基"
+  },
+  [100101806] = {
+    Action = "uimain_idle",
+    BuddyId = 1001018,
+    CameraPos = {
+      3,
+      1.13,
+      4
+    },
+    CameraRot = {
+      3.3,
+      190,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100101806,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "恩基"
+  },
+  [100101807] = {
+    Action = "uimain_idle",
+    BuddyId = 1001018,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100101807,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -53,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "恩基"
+  },
+  [100101808] = {
+    Action = "uimain_idle",
+    BuddyId = 1001018,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100101808,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -53,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "恩基"
+  },
+  [100101901] = {
+    Action = "uimain_idle",
+    BuddyId = 1001019,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100101901,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "宁莎"
+  },
+  [100101902] = {
+    Action = "uimain_idle",
+    BuddyId = 1001019,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100101902,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -53,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "宁莎"
+  },
+  [100101903] = {
+    Action = "uimain_idle",
+    BuddyId = 1001019,
+    CameraPos = {
+      0.97,
+      1.29,
+      4.6
+    },
+    CameraRot = {
+      4.682,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100101903,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "宁莎"
+  },
+  [100101904] = {
+    Action = "uimain_idle",
+    BuddyId = 1001019,
+    CameraPos = {
+      0.97,
+      1.29,
+      4.6
+    },
+    CameraRot = {
+      4.682,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100101904,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "宁莎"
+  },
+  [100101907] = {
+    Action = "uimain_idle",
+    BuddyId = 1001019,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100101907,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -53,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "宁莎"
+  },
+  [100101908] = {
+    Action = "uimain_idle",
+    BuddyId = 1001019,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100101908,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -53,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "宁莎"
+  },
+  [100102001] = {
+    Action = "uimain_idle",
+    BuddyId = 1001020,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100102001,
+    ModelPos = {
+      1,
+      0,
+      1.7
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "无实"
+  },
+  [100102002] = {
+    Action = "uimain_idle",
+    BuddyId = 1001020,
+    CameraPos = {
+      -1.773,
+      1.6,
+      4.082
+    },
+    CameraRot = {
+      4.3,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100102002,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "无实"
+  },
+  [100102003] = {
+    Action = "uimain_idle",
+    BuddyId = 1001020,
+    CameraPos = {
+      0.97,
+      1.4,
+      6.2
+    },
+    CameraRot = {
+      0.647,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100102003,
+    ModelPos = {
+      1,
+      0,
+      1.7
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "无实"
+  },
+  [100102004] = {
+    Action = "uimain_idle",
+    BuddyId = 1001020,
+    CameraPos = {
+      0.97,
+      1.4,
+      6.2
+    },
+    CameraRot = {
+      0.647,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100102004,
+    ModelPos = {
+      1,
+      0,
+      1.7
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "无实"
+  },
+  [100102007] = {
+    Action = "uimain_idle",
+    BuddyId = 1001020,
+    CameraPos = {
+      -1.773,
+      1.6,
+      4.082
+    },
+    CameraRot = {
+      4.3,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100102007,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "无实"
+  },
+  [100102008] = {
+    Action = "uimain_idle",
+    BuddyId = 1001020,
+    CameraPos = {
+      -1.773,
+      1.6,
+      4.082
+    },
+    CameraRot = {
+      4.3,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100102008,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "无实"
+  },
+  [100102101] = {
+    Action = "uimain_idle",
+    BuddyId = 1001021,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100102101,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "阿紫"
+  },
+  [100102102] = {
+    Action = "uimain_idle",
+    BuddyId = 1001021,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100102102,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "阿紫"
+  },
+  [100102103] = {
+    Action = "uimain_idle",
+    BuddyId = 1001021,
+    CameraPos = {
+      0.97,
+      1.35,
+      5.5
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100102103,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "阿紫"
+  },
+  [100102104] = {
+    Action = "uimain_idle",
+    BuddyId = 1001021,
+    CameraPos = {
+      0.97,
+      1.35,
+      5.5
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100102104,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "阿紫"
+  },
+  [100102107] = {
+    Action = "uimain_idle",
+    BuddyId = 1001021,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100102107,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "阿紫"
+  },
+  [100102108] = {
+    Action = "uimain_idle",
+    BuddyId = 1001021,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100102108,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "阿紫"
+  },
+  [100102201] = {
+    Action = "uimain_idle",
+    BuddyId = 1001022,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100102201,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "黎蚩"
+  },
+  [100102202] = {
+    Action = "uimain_idle",
+    BuddyId = 1001022,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100102202,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "黎蚩"
+  },
+  [100102203] = {
+    Action = "uimain_idle",
+    BuddyId = 1001022,
+    CameraPos = {
+      0.97,
+      1.35,
+      5.5
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100102203,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "黎蚩"
+  },
+  [100102204] = {
+    Action = "uimain_idle",
+    BuddyId = 1001022,
+    CameraPos = {
+      0.97,
+      1.35,
+      5.5
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100102204,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "黎蚩"
+  },
+  [100102207] = {
+    Action = "uimain_idle",
+    BuddyId = 1001022,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100102207,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "黎蚩"
+  },
+  [100102208] = {
+    Action = "uimain_idle",
+    BuddyId = 1001022,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100102208,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "黎蚩"
+  },
+  [100102301] = {
+    Action = "uimain_idle",
+    BuddyId = 1001023,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100102301,
+    ModelPos = {
+      1.05,
+      0,
+      1.7
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "姬夏"
+  },
+  [100102302] = {
+    Action = "uimain_idle",
+    BuddyId = 1001023,
+    CameraPos = {
+      -1.773,
+      1.68,
+      4.082
+    },
+    CameraRot = {
+      5,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100102302,
+    ModelPos = {
+      1.22,
+      0,
+      1.589
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "姬夏"
+  },
+  [100102303] = {
+    Action = "uimain_idle",
+    BuddyId = 1001023,
+    CameraPos = {
+      0.97,
+      1.68,
+      6.2
+    },
+    CameraRot = {
+      3.093,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100102303,
+    ModelPos = {
+      1.05,
+      0,
+      1.7
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "姬夏"
+  },
+  [100102304] = {
+    Action = "uimain_idle",
+    BuddyId = 1001023,
+    CameraPos = {
+      0.97,
+      1.68,
+      6.2
+    },
+    CameraRot = {
+      3.093,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100102304,
+    ModelPos = {
+      1.05,
+      0,
+      1.7
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "姬夏"
+  },
+  [100102307] = {
+    Action = "uimain_idle",
+    BuddyId = 1001023,
+    CameraPos = {
+      -1.773,
+      1.68,
+      4.082
+    },
+    CameraRot = {
+      5,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100102307,
+    ModelPos = {
+      1.22,
+      0,
+      1.589
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "姬夏"
+  },
+  [100102308] = {
+    Action = "uimain_idle",
+    BuddyId = 1001023,
+    CameraPos = {
+      -1.773,
+      1.68,
+      4.082
+    },
+    CameraRot = {
+      5,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100102308,
+    ModelPos = {
+      1.22,
+      0,
+      1.589
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "姬夏"
+  },
+  [100102401] = {
+    Action = "uimain_idle",
+    BuddyId = 1001024,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100102401,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "郁离"
+  },
+  [100102402] = {
+    Action = "uimain_idle",
+    BuddyId = 1001024,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100102402,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -53,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "郁离"
+  },
+  [100102403] = {
+    Action = "uimain_idle",
+    BuddyId = 1001024,
+    CameraPos = {
+      0.97,
+      1.29,
+      4.6
+    },
+    CameraRot = {
+      4.682,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100102403,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "郁离"
+  },
+  [100102404] = {
+    Action = "uimain_idle",
+    BuddyId = 1001024,
+    CameraPos = {
+      0.97,
+      1.29,
+      4.6
+    },
+    CameraRot = {
+      4.682,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100102404,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "郁离"
+  },
+  [100102407] = {
+    Action = "uimain_idle",
+    BuddyId = 1001024,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100102407,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -53,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "郁离"
+  },
+  [100102408] = {
+    Action = "uimain_idle",
+    BuddyId = 1001024,
+    CameraPos = {
+      -1.767,
+      1.13,
+      4.073
+    },
+    CameraRot = {
+      2,
+      136.13,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100102408,
+    ModelPos = {
+      1.2,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -53,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "郁离"
+  },
+  [100102501] = {
+    Action = "uimain_idle",
+    BuddyId = 1001025,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100102501,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "巴拉莱卡"
+  },
+  [100102502] = {
+    Action = "uimain_idle",
+    BuddyId = 1001025,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100102502,
+    ModelPos = {
+      1.22,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -55.66,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "巴拉莱卡"
+  },
+  [100102503] = {
+    Action = "uimain_idle",
+    BuddyId = 1001025,
+    CameraPos = {
+      0.97,
+      1.35,
+      6.3
+    },
+    CameraRot = {
+      1.975,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100102503,
+    ModelPos = {
+      1,
+      0,
+      1.6
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "巴拉莱卡"
+  },
+  [100102504] = {
+    Action = "uimain_idle",
+    BuddyId = 1001025,
+    CameraPos = {
+      0.97,
+      1.35,
+      6.3
+    },
+    CameraRot = {
+      1.975,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100102504,
+    ModelPos = {
+      1,
+      0,
+      1.6
+    },
+    ModelRot = {
+      0,
+      -12,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "巴拉莱卡"
+  },
+  [100102505] = {
+    Action = "uimain_idle",
+    BuddyId = 1001025,
+    CameraPos = {
+      -1.65,
+      1.25,
+      4.5
+    },
+    CameraRot = {
+      2,
+      189,
+      0
+    },
+    Event = 5,
+    FOV = 22,
+    Id = 100102505,
+    ModelPos = {
+      -2.2,
+      0,
+      1.252
+    },
+    ModelRot = {
+      0,
+      25,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "女仆"
+  },
+  [100102506] = {
+    Action = "uimain_idle",
+    BuddyId = 1001025,
+    CameraPos = {
+      3,
+      1.3,
+      4
+    },
+    CameraRot = {
+      2.2,
+      189,
+      0
+    },
+    Event = 6,
+    FOV = 22,
+    Id = 100102506,
+    ModelPos = {
+      2.6,
+      0,
+      1.212
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "女仆"
+  },
+  [100102507] = {
+    Action = "uimain_idle",
+    BuddyId = 1001025,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100102507,
+    ModelPos = {
+      1.22,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -55.66,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "巴拉莱卡"
+  },
+  [100102508] = {
+    Action = "uimain_idle",
+    BuddyId = 1001025,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100102508,
+    ModelPos = {
+      1.22,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -55.66,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "巴拉莱卡"
+  },
+  [100102601] = {
+    Action = "uimain_idle",
+    BuddyId = 1001026,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100102601,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "菲娜米娜"
+  },
+  [100102602] = {
+    Action = "uimain_idle",
+    BuddyId = 1001026,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100102602,
+    ModelPos = {
+      1.22,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -49,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "菲娜米娜"
+  },
+  [100102603] = {
+    Action = "uimain_idle",
+    BuddyId = 1001026,
+    CameraPos = {
+      0.97,
+      1.35,
+      6.3
+    },
+    CameraRot = {
+      1.975,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100102603,
+    ModelPos = {
+      1,
+      0,
+      1.6
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "菲娜米娜"
+  },
+  [100102604] = {
+    Action = "uimain_idle",
+    BuddyId = 1001026,
+    CameraPos = {
+      0.97,
+      1.35,
+      6.3
+    },
+    CameraRot = {
+      1.975,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100102604,
+    ModelPos = {
+      1,
+      0,
+      1.6
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "菲娜米娜"
+  },
+  [100102607] = {
+    Action = "uimain_idle",
+    BuddyId = 1001026,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100102607,
+    ModelPos = {
+      1.22,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -49,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "菲娜米娜"
+  },
+  [100102608] = {
+    Action = "uimain_idle",
+    BuddyId = 1001026,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100102608,
+    ModelPos = {
+      1.22,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -49,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "菲娜米娜"
+  },
+  [100102701] = {
+    Action = "uimain_idle",
+    BuddyId = 1001027,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100102701,
+    ModelPos = {
+      1,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "金缕"
+  },
+  [100102702] = {
+    Action = "uimain_idle",
+    BuddyId = 1001027,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100102702,
+    ModelPos = {
+      1.22,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -55.66,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "金缕"
+  },
+  [100102703] = {
+    Action = "uimain_idle",
+    BuddyId = 1001027,
+    CameraPos = {
+      0.97,
+      1.35,
+      6.3
+    },
+    CameraRot = {
+      1.975,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100102703,
+    ModelPos = {
+      1,
+      0,
+      1.6
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "金缕"
+  },
+  [100102704] = {
+    Action = "uimain_idle",
+    BuddyId = 1001027,
+    CameraPos = {
+      0.97,
+      1.35,
+      6.3
+    },
+    CameraRot = {
+      1.975,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100102704,
+    ModelPos = {
+      1,
+      0,
+      1.6
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "金缕"
+  },
+  [100102707] = {
+    Action = "uimain_idle",
+    BuddyId = 1001027,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100102707,
+    ModelPos = {
+      1.22,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -55.66,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "金缕"
+  },
+  [100102708] = {
+    Action = "uimain_idle",
+    BuddyId = 1001027,
+    CameraPos = {
+      -1.773,
+      1.616,
+      4.082
+    },
+    CameraRot = {
+      4.964,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100102708,
+    ModelPos = {
+      1.22,
+      0,
+      1.5
+    },
+    ModelRot = {
+      0,
+      -55.66,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "金缕"
+  },
+  [100102801] = {
+    Action = "uimain_idle",
+    BuddyId = 1001028,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 1,
+    FOV = 51,
+    Id = 100102801,
+    ModelPos = {
+      1,
+      0,
+      1.78
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "塞西莉娅"
+  },
+  [100102802] = {
+    Action = "uimain_idle",
+    BuddyId = 1001028,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 2,
+    FOV = 18,
+    Id = 100102802,
+    ModelPos = {
+      1.4,
+      0,
+      1.6
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "塞西莉娅"
+  },
+  [100102803] = {
+    Action = "uimain_idle",
+    BuddyId = 1001028,
+    CameraPos = {
+      0.97,
+      1.35,
+      5.5
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 3,
+    FOV = 15,
+    Id = 100102803,
+    ModelPos = {
+      1,
+      0,
+      1.78
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "塞西莉娅"
+  },
+  [100102804] = {
+    Action = "uimain_idle",
+    BuddyId = 1001028,
+    CameraPos = {
+      0.97,
+      1.35,
+      5.5
+    },
+    CameraRot = {
+      2.2,
+      180,
+      0
+    },
+    DOF = "DOF",
+    Event = 4,
+    FOV = 15,
+    Id = 100102804,
+    ModelPos = {
+      1,
+      0,
+      1.78
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "塞西莉娅"
+  },
+  [100102807] = {
+    Action = "uimain_idle",
+    BuddyId = 1001028,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 7,
+    FOV = 18,
+    Id = 100102807,
+    ModelPos = {
+      1.4,
+      0,
+      1.6
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "塞西莉娅"
+  },
+  [100102808] = {
+    Action = "uimain_idle",
+    BuddyId = 1001028,
+    CameraPos = {
+      -1.773,
+      1.4,
+      4.082
+    },
+    CameraRot = {
+      2.63,
+      136.49,
+      0
+    },
+    DOF = "DOF_Charater+Default",
+    Event = 8,
+    FOV = 18,
+    Id = 100102808,
+    ModelPos = {
+      1.4,
+      0,
+      1.6
+    },
+    ModelRot = {
+      0,
+      -45,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "塞西莉娅"
+  },
+  [1001001101] = {
+    Action = "uimain_idle",
+    BuddyId = 10010011,
+    CameraPos = {
+      -1.71,
+      1.6,
+      3.4
+    },
+    CameraRot = {
+      10,
+      173.6,
+      0
+    },
+    Event = 5,
+    FOV = 20,
+    Id = 1001001101,
+    ModelPos = {
+      -1.0348,
+      1.0795,
+      0.4443
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1.25,
+      1.25,
+      1.25
+    },
+    Name = "鸟"
+  },
+  [1001001102] = {
+    Action = "",
+    BuddyId = 10010011,
+    CameraPos = {
+      -1.01,
+      1.39,
+      2.1
+    },
+    CameraRot = {
+      7.24,
+      -172.3,
+      1.34
+    },
+    Event = 5,
+    FOV = 22.2,
+    Id = 1001001102,
+    ModelPos = {
+      0,
+      0,
+      0
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1.25,
+      1.25,
+      1.25
+    },
+    Name = "鸟拉近"
+  },
+  [1001001103] = {
+    Action = "",
+    BuddyId = 0,
+    CameraPos = {
+      -1.93,
+      1.751,
+      2.566
+    },
+    CameraRot = {
+      21.12,
+      177.92,
+      0
+    },
+    Event = 5,
+    FOV = 20,
+    Id = 1001001103,
+    ModelPos = {
+      0,
+      0,
+      0
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "历程奖励"
+  },
+  [1001001201] = {
+    Action = "uimain_idle",
+    BuddyId = 10010012,
+    CameraPos = {
+      0,
+      2.3,
+      7.8
+    },
+    CameraRot = {
+      0,
+      180,
+      0
+    },
+    Event = 6,
+    FOV = 51,
+    Id = 1001001201,
+    ModelPos = {
+      0.025,
+      -0.029,
+      1.982
+    },
+    ModelRot = {
+      0,
+      0,
+      0
+    },
+    ModelScale = {
+      1,
+      1,
+      1
+    },
+    Name = "光人预留"
+  }
+}

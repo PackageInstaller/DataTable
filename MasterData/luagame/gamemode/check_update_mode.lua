@@ -1,0 +1,157 @@
+local Base = require("gamemode.base")
+local CSCheckUpdate = CS.GameToLua.CheckUpdate
+local CSLuaService = CS.GameToLua.LuaService
+local UI_SORT_ORDER = {
+  MainView = 0,
+  System = 10,
+  Tip = 50,
+  Dialog = 90,
+  Tutorial = 130,
+  Special = 170,
+  Alert = 200,
+  Click = 300
+}
+local M = setmetatable({}, Base)
+M.__index = M
+
+function M:gd_init()
+  Base.gd_init(self)
+end
+
+function M:gd_update(delta_time)
+  Base.gd_update(self, delta_time)
+  if not self.v_has_load_res then
+    return
+  end
+  if CSCheckUpdate.s_IsFinish then
+    if self.v_is_need_download_res then
+      Global.gamemode:gmode_set_mode(Const.MODE_RELOAD)
+    else
+      Global.gamemode:gmode_set_mode(Const.MODE_LOGIN)
+    end
+  else
+    CSCheckUpdate.OnUpdate()
+  end
+end
+
+function M:do_check_update()
+  if UNITY_EDITOR or UNITY_WEBGL then
+    return
+  end
+  CSCheckUpdate.CustomCheckUpdate()
+end
+
+function M:gd_on_enter()
+  Base.gd_on_enter(self)
+  UIMgr:try_destory_ui("fight")
+  if SceneMgr then
+    SceneMgr:clear_scene()
+  end
+  if Global.custom_checkupdate_ctx_id then
+    Global.custom_checkupdate_ctx_id = Global.custom_checkupdate_ctx_id + 1
+  end
+  if not GAME_HOTUPDATE then
+    Global.gamemode:gmode_set_mode(Const.MODE_LOGIN)
+    return
+  end
+  self.v_has_enter = true
+  self.v_has_load_res = false
+  self.v_login_logo = nil
+  self.v_loading_ui = nil
+  self.v_notify_ui = nil
+  self.v_download_tips_ui = nil
+  self.v_is_need_download_res = true
+  self:_on_load_res()
+  UnityEngine.Screen.sleepTimeout = -1
+end
+
+function M:load_res()
+  local loginlogo_prefab_path = "assets/product/ui/prefab/uiloginlogo.prefab"
+  local loading_prefab_path = "assets/product/ui/prefab/uidownloading.prefab"
+  local notify_prefab_path = "assets/product/ui/prefab/tips/noticetips.prefab"
+  local download_tips_prefab_path = "assets/product/ui/prefab/tips/uidownloadtips.prefab"
+  ResMgr:load_gameobj_async(loginlogo_prefab_path, nil, true, function(_, gameobj)
+    self.v_login_logo = gameobj
+    self:_on_load_res()
+  end)
+  ResMgr:load_gameobj_async(loading_prefab_path, nil, true, function(_, gameobj)
+    self.v_loading_ui = gameobj
+    self:_on_load_res()
+  end)
+  ResMgr:load_gameobj_async(download_tips_prefab_path, nil, true, function(_, gameobj)
+    self.v_download_tips_ui = gameobj
+    self.v_download_tips_ui.gameObject:SetActive(false)
+    self:_on_load_res()
+  end)
+  ResMgr:load_gameobj_async(notify_prefab_path, nil, true, function(_, gameobj)
+    self.v_notify_ui = gameobj
+    local notify_canvas = self.v_notify_ui.gameObject:GetComponent(typeof(UnityEngine.Canvas))
+    notify_canvas.sortingOrder = UI_SORT_ORDER.Alert
+    self.v_notify_ui.gameObject:SetActive(false)
+    self:_on_load_res()
+  end)
+end
+
+function M:clear_res()
+  if self.v_login_logo then
+    ResMgr:destroy_gameobj(self.v_login_logo)
+  end
+  if self.v_loading_ui then
+    ResMgr:destroy_gameobj(self.v_loading_ui)
+  end
+  if self.v_notify_ui then
+    ResMgr:destroy_gameobj(self.v_notify_ui)
+  end
+  if self.v_download_tips_ui then
+    ResMgr:destroy_gameobj(self.v_download_tips_ui)
+  end
+  self.v_has_load_res = nil
+  self.v_login_logo = nil
+  self.v_loading_ui = nil
+  self.v_notify_ui = nil
+  self.v_download_tips_ui = nil
+end
+
+function M:gd_on_leave()
+  Base.gd_on_leave(self)
+  UnityEngine.Screen.sleepTimeout = -2
+  if not self.v_has_enter then
+    return
+  end
+  self.v_has_enter = false
+  if not self.v_is_need_download_res then
+    CSCheckUpdate.OnLeave()
+    self:clear_res()
+  end
+end
+
+function M:_on_load_res()
+  if self.v_is_need_download_res then
+    self.v_has_load_res = true
+    if Global.sound_mgr then
+      Global.sound_mgr:bgm_stop()
+    end
+    Util.clear_all_res()
+    if Global.reload_camera then
+      Global.reload_camera:SetActive(true)
+    else
+      local obj = UnityGameObject("ReloadCamera")
+      Global.reload_camera = obj
+      UnityGameObject.DontDestroyOnLoad(obj)
+      local camera = obj:AddComponent(typeof(UnityEngine.Camera))
+      camera.depth = 100
+      camera.cullingMask = 0
+      camera.clearFlags = UnityEngine.CameraClearFlags.SolidColor
+      camera.backgroundColor = UnityEngine.Color.black
+    end
+    CSCheckUpdate.OnEnter(Util.get_patch_uuid())
+  elseif self.v_loading_ui and self.v_notify_ui and self.v_login_logo and self.v_download_tips_ui then
+    self.v_has_load_res = true
+    if Global.sound_mgr then
+      Global.sound_mgr:bgm_stop()
+    end
+    CSCheckUpdate.OnEnter(Util.get_patch_uuid(), self.v_login_logo.gameObject, self.v_loading_ui.gameObject, self.v_notify_ui.gameObject, self.v_download_tips_ui.gameObject)
+  end
+end
+
+return M

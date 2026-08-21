@@ -1,0 +1,98 @@
+local UnionHelper = require("uimodule.union.union_helper")
+local UnionCfg = require("uimodule.union.union_config")
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_btn_appyling = {
+    "BtnApplying",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_apply = {
+    "BtnApply",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_jion = {
+    "BtnJoin",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_full = {
+    "BtnFull",
+    BIND_TYPE.BUTTON
+  },
+  v_profile = {
+    "Profile",
+    BIND_TYPE.IMAGE
+  },
+  v_slogan = {
+    "Slogan",
+    BIND_TYPE.TEXT
+  },
+  v_union_name = {
+    "UnionName",
+    BIND_TYPE.TEXT
+  }
+}
+local STATE = UnionCfg.JOIN_STATE
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnApply", function()
+    self:_onclick_apply_btn()
+  end)
+  self:set_button("BtnApplying", function()
+    Util.show_message_tip(2312)
+  end)
+  self:set_button("BtnJoin", function()
+    self:_onclick_jion_btn()
+  end)
+  self:set_button("BtnFull", function()
+    Util.show_message_tip(2313)
+  end)
+end
+
+function ui:ui_on_show(union_info, index, ...)
+  self.v_union_data = union_info
+  self.v_index = index
+  if not self.v_union_data then
+    return
+  end
+  self:_set_union_info()
+  self:_set_operate_btns()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:_set_union_info()
+  self.v_union_name.text = self.v_union_data.name
+  self.v_slogan.text = self.v_union_data.idea
+  ResMgr:load_set_icon(self.v_profile, UnionHelper.get_union_icon_path(self.v_union_data.icon))
+end
+
+function ui:_set_operate_btns()
+  local state = UnionHelper.get_join_state(self.v_union_data)
+  self.v_btn_appyling:SetActive(state == STATE.APPLYING)
+  self.v_btn_apply:SetActive(state == STATE.APPLY)
+  self.v_btn_jion:SetActive(state == STATE.JOIN)
+  self.v_btn_full:SetActive(state == STATE.FULL)
+end
+
+function ui:_onclick_apply_btn()
+  UnionMgr:request_join_union(self.v_union_data.gid, function(ok)
+    if ok then
+      Util.show_message_tip(2310)
+      self.v_parent_ui:refresh_union_data(self.v_index)
+    end
+  end)
+end
+
+function ui:_onclick_jion_btn()
+  UnionMgr:request_join_union(self.v_union_data.gid, function(ok)
+    if ok then
+      self.v_parent_ui:refresh_union_data(self.v_index)
+    end
+  end)
+end
+
+return ui

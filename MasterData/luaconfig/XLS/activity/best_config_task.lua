@@ -1,0 +1,65 @@
+return {
+  [20010101] = {
+    GroupId = 200101,
+    IconName = "Stage_bg_black_04",
+    Id = 20010101,
+    Priority = 1,
+    TaskName = "在 01-1中获得25000分"
+  },
+  [20010102] = {
+    GroupId = 200101,
+    IconName = "Stage_bg_black_04",
+    Id = 20010102,
+    Priority = 2,
+    TaskName = "在 01-1中获得80000分"
+  },
+  [20010103] = {
+    GroupId = 200101,
+    IconName = "Stage_bg_black_04",
+    Id = 20010103,
+    Priority = 3,
+    TaskName = "在 01-1中获得140000分"
+  },
+  [20010104] = {
+    GroupId = 200101,
+    IconName = "Stage_bg_black_04",
+    Id = 20010104,
+    Priority = 4,
+    TaskName = "在 01-2中获得25000分"
+  },
+  [20010105] = {
+    GroupId = 200101,
+    IconName = "Stage_bg_black_04",
+    Id = 20010105,
+    Priority = 5,
+    TaskName = "在 01-2中获得80000分"
+  },
+  [20010106] = {
+    GroupId = 200101,
+    IconName = "Stage_bg_black_04",
+    Id = 20010106,
+    Priority = 6,
+    TaskName = "在 01-2中获得140000分"
+  },
+  [20010107] = {
+    GroupId = 200101,
+    IconName = "Stage_bg_black_04",
+    Id = 20010107,
+    Priority = 7,
+    TaskName = "在 01-3中获得25000分"
+  },
+  [20010108] = {
+    GroupId = 200101,
+    IconName = "Stage_bg_black_04",
+    Id = 20010108,
+    Priority = 8,
+    TaskName = "在 01-3中获得80000分"
+  },
+  [20010109] = {
+    GroupId = 200101,
+    IconName = "Stage_bg_black_04",
+    Id = 20010109,
+    Priority = 9,
+    TaskName = "在 01-3中获得140000分"
+  }
+}

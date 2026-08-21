@@ -1,0 +1,12 @@
+return {
+  BattleCurrencyId = 500001,
+  BattleSkillBookId = 501005,
+  BoardBackground = 0,
+  BoardId = 1001001,
+  Heroine = 1001001,
+  MailImportantCnt = 30,
+  MailMaxCnt = 100,
+  ProFileInitId = 700051,
+  RenameCostId = 99,
+  RenameCostNum = 1
+}

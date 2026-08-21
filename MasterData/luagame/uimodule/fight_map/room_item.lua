@@ -1,0 +1,60 @@
+local Base = require("ui.uiobject")
+local SceneDefine = require("cs_share.scene_define")
+local Vec3 = require("base.vec3")
+local Vec2 = require("base.vec2")
+local MAP_HELPER = require("uimodule.fight_map.fight_map_helper")
+local ui = Util.create_child_mt(Base)
+local MAP_ICON_PATH = "UIMap/%s"
+local TREAT_ROOM_TYPE = 15
+
+function ui:ui_finish_load()
+  self.v_button = self.v_object.gameObject:GetComponent(TypeUnityUIButton)
+end
+
+function ui:ui_on_show()
+  self.v_ui_pause_v2 = UIMgr:get_ui("fight_pause_common_v2")
+end
+
+function ui:ui_on_hide()
+  self.v_ui_pause_v2 = nil
+end
+
+function ui:set_data(room_cfg, room_num)
+  self.v_room_cfg = room_cfg
+  self.v_room_num = room_num
+  self:set_button_listener(self.v_button, function()
+    self.v_ui_pause_v2:on_select_item(self.v_room_num, self.v_room_cfg)
+  end)
+  self:refresh()
+end
+
+function ui:refresh()
+  local tower = TowerMgr:get_tower()
+  if not tower then
+    return
+  end
+  local room_info = tower:get_tower_floor_room_info(self.v_room_num)
+  local isIn = tower:get_room_num() == self.v_room_num
+  local select_room_num = self.v_ui_pause_v2:get_select_room_num()
+  local is_select = select_room_num == self.v_room_num
+  local is_pass = room_info.status == Config.ROOM_STATE_PASS
+  local show = is_pass or isIn
+  local coms = self.v_uicompents
+  coms.PlaceName1_txt.text = self.v_room_cfg.RoomName
+  coms.PlaceName2_txt.text = show and self.v_room_cfg.RoomName or "？？？"
+  coms.Here_img.gameObject:SetActive(isIn)
+  local temp_color = coms.Icon2_img.color
+  temp_color.a = show and 1 or 0.4
+  coms.Icon2_img.color = temp_color
+  coms.PlaceName2_txt.color = temp_color
+  self.v_uiobjects.UnSelect:SetActive(not is_select)
+  self.v_uiobjects.Select:SetActive(is_select)
+  self.v_button.enabled = show
+end
+
+function ui:on_select_item(is_select)
+  self.v_uiobjects.UnSelect:SetActive(not is_select)
+  self.v_uiobjects.Select:SetActive(is_select)
+end
+
+return ui

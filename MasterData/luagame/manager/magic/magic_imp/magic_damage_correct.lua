@@ -1,0 +1,60 @@
+local Base = require("manager.magic.magic_imp.magic_base")
+local M = Util.create_child_mt(Base)
+local DAMAGE_CORRECT_EFFECT_TYPE = Config.MagicDefine.DAMAGE_CORRECT_EFFECT_TYPE
+
+function M:_init(owner, magic_info)
+  Base._init(self, owner, magic_info)
+end
+
+function M:on_effect(magic_list)
+  self.trigger_effect_count = 0
+  self.trigger_skill_count = 0
+  self.change_value = self.cfg[2][self.magic_level]
+  if not self.change_value then
+    local level_max = #self.cfg[2]
+    self.change_value = self.cfg[2][level_max]
+  end
+  local effect_time
+  if self.cfg[3] == DAMAGE_CORRECT_EFFECT_TYPE.MAGIC_LIFE then
+    effect_time = -1
+  elseif self.cfg[3] == DAMAGE_CORRECT_EFFECT_TYPE.EFFECT_COUNT then
+    effect_time = self.cfg[4]
+  else
+    effect_time = 1
+  end
+  self.init_effect_time = effect_time
+  self.effect_time = effect_time
+end
+
+function M.on_trigger_effect(magic_mgr, magic_map, magic_info, skill_type, element_type)
+  local value = 0
+  local remove_map = {}
+  local limit_table, effect_skill_id, effect_missile_id, effect_magic_id
+  for _, magic in pairs(magic_map) do
+    limit_table = magic.cfg[1]
+    if limit_table then
+      effect_skill_id, effect_missile_id, effect_magic_id = limit_table[1], limit_table[2], limit_table[3]
+    else
+      effect_skill_id, effect_missile_id, effect_magic_id = nil, nil, nil
+    end
+    if (not effect_skill_id or effect_skill_id == magic.owner_skill_id) and (not (effect_missile_id and magic.owner_missile) or effect_missile_id == magic.owner_missile.missile_id) and (not effect_magic_id or effect_magic_id == magic.magic_id) then
+      local change_value = magic.change_value or 0
+      value = value + change_value
+      if magic.init_effect_time >= 0 then
+        magic.effect_time = magic.effect_time - 1
+        if magic.effect_time <= 0 then
+          remove_map[magic.rtid] = magic
+        end
+      end
+    end
+  end
+  if next(remove_map) then
+    M.remove_magic_on_effect(magic_mgr, remove_map)
+  end
+  return value / 10000
+end
+
+function M:on_remove(magic_list)
+end
+
+return M

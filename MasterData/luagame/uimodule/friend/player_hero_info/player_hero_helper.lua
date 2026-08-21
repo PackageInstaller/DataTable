@@ -1,0 +1,254 @@
+local _tinsert = table.insert
+local _tsort = table.sort
+local CommonDefine = require("cs_share.common_define")
+local helper = {}
+
+function helper.set_hero_data(data, is_self, is_fake, is_assist)
+  helper.hero_info = data
+  helper.is_fake = is_fake
+  helper.is_assist = true == is_assist
+  helper.is_robot = data.type and data.type == CommonDefine.ASSIST_BUDDY_TYPE.ROBOT
+  helper.set_relic(is_self)
+  helper.set_hero_attr()
+  helper.set_hero_weapon_attr(is_self)
+end
+
+function helper.get_hero_id()
+  return helper.hero_info.id
+end
+
+function helper.get_hero_data()
+  return helper.hero_info
+end
+
+function helper.get_refine_data()
+  local data = {}
+  data.lv = helper.hero_info.refine_lv or 0
+  data.entry_id = helper.hero_info.refine_entry
+  return data
+end
+
+function helper.get_use_weapon_id()
+  if helper.hero_info and helper.hero_info.weapon_info then
+    return helper.hero_info.weapon_info.id
+  end
+end
+
+function helper.set_hero_attr()
+  local buddy_info = helper.hero_info
+  helper.hero_info.attrs = CharacterMgr.cal_buddy_attr(buddy_info.id, buddy_info.break_lv, buddy_info.lv, buddy_info.advance)
+end
+
+function helper.set_hero_weapon_attr(is_self)
+  local buddy_info = helper.hero_info
+  local weapon_info = buddy_info.weapon_info
+  helper.hero_info.weapon_info.attrs = CharacterMgr.cal_equip_attr(weapon_info.id, weapon_info.break_lv, weapon_info.lv)
+end
+
+function helper.get_hero_exp_info()
+  local buddy_info = helper.hero_info
+  local buddy_level_cfgs = ShareRes.create("buddy.buddy_level")
+  local level_info = buddy_level_cfgs[buddy_info.break_lv]
+  if not level_info[buddy_info.lv + 1] then
+    level_info = buddy_level_cfgs[buddy_info.break_lv + 1]
+  end
+  local next_exp = not level_info and buddy_info.exp or level_info[buddy_info.lv + 1].Exp
+  return buddy_info.exp, next_exp
+end
+
+function helper.get_hero_weapon_exp_info()
+  local buddy_info = helper.hero_info
+  local weapon_info = buddy_info.weapon_info
+  local break_lv = weapon_info.break_lv
+  local lv = weapon_info.lv
+  local equip_cfg = ShareRes.create("equip.equip", weapon_info.id)
+  local quality = equip_cfg.Quality
+  local equip_level_cfgs = ShareRes.get_equip_lv_up_cfg(quality)
+  local equip_level_info = equip_level_cfgs[break_lv]
+  local can_up = false
+  local need_break = false
+  local cur_break_max_lv = ShareRes.get_equip_max_level(break_lv)
+  if lv < cur_break_max_lv then
+    can_up = true
+  elseif equip_level_cfgs[break_lv + 1] then
+    need_break = true
+  end
+  local get_lv = can_up and lv + 1 or lv
+  return weapon_info.exp, equip_level_info[get_lv].Exp, can_up, need_break
+end
+
+function helper.set_relic(is_self)
+  if is_self then
+    helper.hero_info.relic_data, helper.hero_info.relic_slot = RelicMgr:build_simple_relic_data(helper.hero_info.id)
+  end
+  helper.relic_attr_list = helper.build_relic_attr_list()
+  helper.relic_suit_list = helper.build_relic_suit_list()
+end
+
+function helper.get_relic_data(idx)
+  local relic_datas = helper.hero_info.relic_data
+  if relic_datas then
+    for _, relic_data in ipairs(relic_datas) do
+      local slot_idx = ShareRes.get_relic_cfg(relic_data.id).Slot
+      if slot_idx == idx then
+        return relic_data
+      end
+    end
+  end
+end
+
+function helper.get_relic_empty()
+  local relic_datas = helper.hero_info.relic_data
+  if not relic_datas or next(relic_datas) == nil then
+    return true
+  end
+end
+
+function helper.get_relic_slot_unlock(idx)
+  local buddy_info = helper.hero_info
+  local buddy_slot_id = ShareRes.get_relic_buddy_slot_id(buddy_info.id, idx)
+  local relic_slot = helper.hero_info.relic_slot
+  if relic_slot then
+    for k, v in pairs(relic_slot) do
+      if buddy_slot_id == v then
+        return true
+      end
+    end
+  end
+  return false
+end
+
+function helper.get_relic_attr_list()
+  return helper.relic_attr_list
+end
+
+function helper.get_relic_suit_list()
+  return helper.relic_suit_list
+end
+
+function helper.build_relic_attr_list()
+  local relic_datas = helper.hero_info.relic_data
+  if not relic_datas then
+    return nil
+  end
+  local attr_list = {}
+  local attrs_id2_val = {}
+  for _, data in pairs(relic_datas) do
+    if data then
+      local relic_lv = data.lv
+      for _, entry_id in pairs(data.prc_entry) do
+        local attr_id, val = RelicMgr:calculate_attr(relic_lv, entry_id, 1)
+        attrs_id2_val[attr_id] = attrs_id2_val[attr_id] and attrs_id2_val[attr_id] + val or val
+      end
+      for _, entry_id in pairs(data.aux_entry) do
+        local attr_id, val = RelicMgr:calculate_attr(relic_lv, entry_id, 2)
+        attrs_id2_val[attr_id] = attrs_id2_val[attr_id] and attrs_id2_val[attr_id] + val or val
+      end
+    end
+  end
+  for attr_id, val in pairs(attrs_id2_val) do
+    _tinsert(attr_list, {attr_id = attr_id, val = val})
+  end
+  if next(attr_list) then
+    _tsort(attr_list, function(a, b)
+      return a.attr_id < b.attr_id
+    end)
+  end
+  return attr_list
+end
+
+function helper.build_relic_suit_list()
+  local relic_datas = helper.hero_info.relic_data
+  if not relic_datas then
+    return nil
+  end
+  local suit_counter = {}
+  for index, relic_data in ipairs(relic_datas) do
+    local relic_cfg = ShareRes.get_relic_cfg(relic_data.id)
+    local suit_id = relic_cfg.SuitId
+    if not suit_counter[suit_id] then
+      suit_counter[suit_id] = {count = 1, sort = index}
+    else
+      suit_counter[suit_id].count = suit_counter[suit_id].count + 1
+    end
+  end
+  local suit_id2_list = {}
+  for suit_id, data in pairs(suit_counter) do
+    local suit_cfg = ShareRes.create("relic.relic_suit", suit_id)
+    assert(suit_cfg, "不存在套装配置" .. suit_id)
+    for count_key, cfg in pairs(suit_cfg.Suit) do
+      if count_key <= data.count then
+        if not suit_id2_list[suit_id] then
+          suit_id2_list[suit_id] = {
+            active_suit = {count_key},
+            sort = data.sort
+          }
+        else
+          _tinsert(suit_id2_list[suit_id].active_suit, count_key)
+        end
+      end
+    end
+  end
+  local suit_list = {}
+  for suit_id, v in pairs(suit_id2_list) do
+    _tinsert(suit_list, {
+      suit_id = suit_id,
+      active_suit = v.active_suit,
+      sort = v.sort
+    })
+  end
+  if next(suit_list) then
+    _tsort(suit_list, function(a, b)
+      return a.sort < b.sort
+    end)
+  end
+  return suit_list
+end
+
+function helper.build_fake_buddy(buddy_id)
+  local buddy_info = {}
+  local buddy_cfg = ShareRes.get_buddy_cfg(buddy_id)
+  buddy_info.id = buddy_id
+  buddy_info.lv = 1
+  buddy_info.break_lv = 1
+  buddy_info.advance = 1
+  buddy_info.talent_lv = 0
+  buddy_info.exp = 0
+  local weapon_info = {}
+  weapon_info.id = buddy_cfg.WeaponInitId
+  weapon_info.lv = 1
+  weapon_info.break_lv = 1
+  weapon_info.advance = 1
+  weapon_info.exp = 0
+  weapon_info.gemstone_list = {}
+  buddy_info.weapon_info = weapon_info
+  local buddy_skill_cfg = ShareRes.get_buddy_skill_list_cfg(buddy_id)
+  local skill_list = {}
+  for _, skill_id in ipairs(buddy_skill_cfg) do
+    skill_list[#skill_list + 1] = {id = skill_id, lv = 1}
+  end
+  buddy_info.skill = skill_list
+  helper.set_hero_data(buddy_info, nil, true)
+end
+
+function helper.switch_fake_buddy_to_min_lv()
+  local hero_info = helper.hero_info
+  hero_info.lv = 1
+  hero_info.break_lv = 1
+  hero_info.advance = 1
+  hero_info.talent_lv = 0
+  helper.set_hero_data(hero_info, nil, true)
+end
+
+function helper.switch_fake_buddy_to_max_lv()
+  local hero_info = helper.hero_info
+  local max_break_lv = ShareRes.get_buddy_max_break_level()
+  hero_info.break_lv = max_break_lv
+  hero_info.lv = ShareRes.get_buddy_max_level(max_break_lv)
+  local advance_skill_cfg = ShareRes.create("buddy.buddy_advance", hero_info.id)
+  hero_info.advance = #advance_skill_cfg + 1
+  hero_info.talent_lv = 6
+  helper.set_hero_data(hero_info, nil, true)
+end
+
+return helper

@@ -1,0 +1,279 @@
+local Base = require("ui.uiobject")
+local bagConfig = require("gamelogic.character.fight_bag_configs")
+local Item_Helper = require("utils.item_helper")
+local M = Util.create_child_mt(Base)
+local ITEM_TYPE_PATH = "Icon/BattleItem/%s"
+local EQUIP_TYPE_PATH = "Icon/BattleWeapon/%s"
+local BLACK_COLOR = tonumber("000000", 16)
+local WHITE_COLOR = tonumber("ffffff", 16)
+local ITEM_OBJ_TYPE = Config.ITEM_OBJ_TYPE
+local ITEM_OBJ_FUN = {
+  [ITEM_OBJ_TYPE.INIT_BOX] = "init_box_extend_refresh",
+  [ITEM_OBJ_TYPE.INIT_BOX_HERO_ITEM] = "ib_hero_item_extend_refresh",
+  [ITEM_OBJ_TYPE.CR_SHOP] = "cr_shop_item_extend_refresh"
+}
+
+function M:ui_finish_load()
+  self.selected_tag_obj = self.v_uicompents.Choose_img.gameObject
+  self.selected_tag_obj:SetActiveEx(false)
+  self.v_tog = Util.get_toggle(nil, self.v_object)
+  self.v_white_color = Util.get_unity_color_by_hex(WHITE_COLOR)
+  self.v_black_color = Util.get_unity_color_by_hex(BLACK_COLOR)
+  self.v_is_tips = false
+  self.v_element_imgs = {
+    self.v_uiobjects.Element1,
+    self.v_uiobjects.Element2
+  }
+end
+
+function M:ui_on_show(item_id, param, type)
+  if not item_id or not param then
+    return
+  end
+  if not param then
+    Log.Error("item_id = ", item_id)
+    Log.Error(debug.traceback())
+  end
+  self.v_item_id = item_id
+  self.v_item_cfg = param.item_data and param.item_data.Cfg or Item_Helper.get_item_cfg(self.v_item_id)
+  self.v_show_num = param.show_num
+  if param.item_data then
+    self.v_item_data = param.item_data
+  end
+  self.v_click_cb = param.click_cb
+  self.v_param = param
+  self.v_type = type
+  self:_refresh_data(type)
+end
+
+function M:set_data(go, data_list, index, type)
+  self.v_item_data = data_list[index]
+  self.v_item_obj = go
+  self.v_index = index or 1
+  self.v_type = type
+  if self.v_item_data and next(self.v_item_data) then
+    local item_num = self.v_item_data.item_num
+    if item_num then
+      self.v_show_num = item_num
+    end
+    self.v_item_id = self.v_item_data.id
+    self.v_item_cfg = self.v_item_data.Cfg and self.v_item_data.Cfg or Item_Helper.get_item_cfg(self.v_item_data.id)
+  end
+  self.v_is_in_bag = true
+  self:_refresh_data(type)
+end
+
+function M:set_battle_item_data(item_id, param)
+  self:ui_on_show(item_id, param)
+end
+
+function M:ui_on_hide()
+  self:unbind_all_auto_mq()
+  self.v_item_data = nil
+  self.v_item_ob = nil
+  self.v_index = nil
+  self.v_is_tips = false
+end
+
+function M:_refresh_data(type)
+  if self.v_item_id == nil then
+    self:_set_default_ui()
+    return
+  end
+  Util.get_image(nil, self.v_object).enabled = false
+  local components = self.v_uicompents
+  self.v_uiobjects.ItemQuality:SetActive(true)
+  self.v_uiobjects.ItemIcon:SetActive(true)
+  local is_collect = Item_Helper.get_is_collect(self.v_item_id)
+  local is_rune = Item_Helper.get_is_rune_item(self.v_item_id)
+  ResMgr:load_set_icon(components.ItemQuality_img, bagConfig.Quality_Img[self.v_item_cfg.Quality])
+  local path = is_collect and EQUIP_TYPE_PATH or ITEM_TYPE_PATH
+  ResMgr:load_set_icon(components.ItemIcon_img, string.format(path, self.v_item_cfg.Icon))
+  self.v_uiobjects.ItemAmount:SetActive(false)
+  self.v_uiobjects.IsConsume:SetActive(false)
+  self.v_uiobjects.SuitNum:SetActive(false)
+  self.v_uiobjects.JobBg:SetActive(false)
+  self.v_uiobjects.Elements:SetActive(false)
+  self.selected_tag_obj:SetActiveEx(true)
+  if is_collect then
+    self:_set_collection_info()
+  elseif is_rune then
+    self:_set_rune_info()
+  else
+    self:_set_item_info()
+  end
+  self.v_can_tog = false
+  Global.listener_mgr:add_listener(self.v_object, self.v_tog.onValueChanged, function(isOn)
+    self:_on_click_tog(isOn, type)
+  end)
+  self.v_tog.isOn = false
+  self.v_can_tog = true
+  if type then
+    self:extend_refresh_ui(type)
+  end
+  local is_show = self.v_is_in_bag and not is_collect and FightBagMgr:is_new_item(self.v_item_data.uuid)
+  if self.v_param and self.v_param.is_show_new_tag then
+    is_show = true
+  end
+  self.v_uiobjects.IsNew:SetActive(is_show)
+  self:unbind_all_auto_mq()
+  self:_regist_client_event()
+  self.v_object_name = self.v_object.name
+  if self.v_parent_ui then
+    self.v_parent_name = self.v_parent_ui.v_object.name
+  end
+end
+
+function M:_set_default_ui()
+  self.v_uiobjects.ItemQuality:SetActive(false)
+  self.v_uiobjects.ItemIcon:SetActive(false)
+  self.v_uiobjects.ItemAmount:SetActive(false)
+  self.v_uiobjects.JobBg:SetActive(false)
+  self.v_uiobjects.SuitNum:SetActive(false)
+  self.v_uiobjects.Elements:SetActive(false)
+end
+
+function M:_set_item_info()
+  local had_count = self.v_show_num or FightBagMgr:get_grid_stack_num(self.v_item_data.uuid)
+  if self.v_type == ITEM_OBJ_TYPE.INIT_BOX then
+    had_count = self.v_item_data.count
+  end
+  if 0 == had_count then
+    return
+  end
+  self.v_uiobjects.ItemAmount:SetActive(true)
+  self.v_uicompents.ItemNum_txt.text = had_count
+  local is_son = self.v_item_cfg.Type == bagConfig.CONSUMABLES_ITEM_TYPE.Type and self.v_item_cfg.Subtype == bagConfig.CONSUMABLES_ITEM_TYPE.SubType
+  self.v_uiobjects.IsConsume:SetActive(is_son)
+end
+
+function M:_set_rune_info()
+  self.v_uiobjects.ItemAmount:SetActive(true)
+  local ran_ans_uuid = self.v_item_data.ran_ans_uuid
+  local ran_ans_data = FightBagMgr:get_preview_random_entries(ran_ans_uuid)
+  self.v_uicompents.ItemNum_txt.text = Util.format_str("等级:{1}", 1)
+end
+
+function M:_set_collection_info()
+  self.selected_tag_obj:SetActive(false)
+  self.v_uiobjects.ItemAmount:SetActive(false)
+end
+
+function M:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_CLOSE_RING_BAG_ITEM_TIPS, self.response_close_equip_tip_event, self)
+end
+
+function M:response_close_equip_tip_event(msg)
+  if self.v_item_data == nil then
+    return
+  end
+  if self.v_type == ITEM_OBJ_TYPE.INIT_BOX or self.v_type == ITEM_OBJ_TYPE.INIT_BOX_HERO_ITEM then
+    return
+  end
+  if nil ~= self.v_tog then
+    self.v_tog.isOn = false
+  end
+end
+
+function M:_on_click_tog(isOn, type)
+  if not self.v_can_tog then
+    return
+  end
+  if not self.v_item_id then
+    return
+  end
+  if type then
+    self:_onclick_box_item(isOn, type)
+    return
+  end
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_CLICK_RING_BAG_ITEM)
+  msg.mm_x = self.v_item_data
+  msg.mm_y = isOn
+  msg.mm_obj = self.v_object
+  if self.v_item_data then
+    FightBagMgr:request_read_new_item(self.v_item_id, self.v_item_data.uuid, function()
+      self.v_uiobjects.IsNew:SetActive(false)
+    end)
+  end
+  if not self.v_param then
+    return
+  end
+  if self.v_param.is_click then
+    Item_Helper.show_battle_tips(self.v_item_id, nil, self.v_param)
+  elseif self.v_param.click_cb then
+    self.v_param.click_cb()
+  end
+end
+
+function M:extend_refresh_ui(type)
+  self.selected_tag_obj:SetActive(false)
+  for type_idx, fun_name in pairs(ITEM_OBJ_FUN) do
+    if type == type_idx then
+      self[fun_name](self)
+      break
+    end
+  end
+end
+
+function M:init_box_extend_refresh()
+  local uobj = self.v_uiobjects
+  local is_draw = self.v_item_data.isDraw
+  uobj.IsGet:SetActive(is_draw)
+  uobj.Mask:SetActive(is_draw)
+end
+
+function M:ib_hero_item_extend_refresh()
+  local advance_lv = self.v_item_data.advance_lv
+  local hero_advance_lv = self.v_item_data.hero_advance_lv
+  local advance_icon_cfg = ShareRes.create("buddy.buddy_advance_icon", advance_lv)
+  local icon_path = advance_icon_cfg.AdvacneAfter
+  local potential_img = self.v_uicompents.PotentiaIcon_img
+  ResMgr:load_set_icon(potential_img, icon_path, nil, true)
+  self.v_uiobjects.Mask:SetActive(false)
+  self.v_uiobjects.IsGet:SetActive(false)
+  if advance_lv > hero_advance_lv then
+    self.v_uiobjects.Mask:SetActive(true)
+  else
+    local is_get = InitBoxMgr:is_get_buddy_item()
+    if is_get then
+      self.v_uiobjects.Mask:SetActive(true)
+      self.v_uiobjects.IsGet:SetActive(true)
+    end
+  end
+end
+
+function M:cr_shop_item_extend_refresh()
+  self.selected_tag_obj:SetActiveEx(false)
+end
+
+function M:disable_tog()
+  self.v_tog.isOn = false
+end
+
+function M:_get_is_finish_fight()
+  if FightBagMgr:get_force_use_bag() then
+    return true
+  end
+  local tower = TowerMgr:get_tower()
+  local is_pass = tower:is_pass_room(tower:get_room_num())
+  return is_pass
+end
+
+function M:_onclick_box_item(isOn, type)
+  if type == ITEM_OBJ_TYPE.INIT_BOX then
+    self.v_item_data.index = self.v_index
+    local is_draw = self.v_item_data.isDraw
+    local is_need_show = not is_draw and isOn
+    self.v_uiobjects.Choose2:SetActiveEx(is_need_show)
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_CLICK_INIT_BOX_ITEM)
+    msg.mm_x = self.v_item_data
+    msg.mm_y = isOn
+    msg.mm_obj = self.v_object
+  elseif type == ITEM_OBJ_TYPE.INIT_BOX_HERO_ITEM then
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_CLICK_INIT_BOX_HERO_ITEM)
+    msg.mm_x = self.v_item_data
+    msg.mm_obj = self.v_object
+  end
+end
+
+return M

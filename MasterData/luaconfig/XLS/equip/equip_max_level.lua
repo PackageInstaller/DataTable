@@ -1,0 +1,8 @@
+return {
+  {BreakLv = 1, MaxLv = 20},
+  {BreakLv = 2, MaxLv = 40},
+  {BreakLv = 3, MaxLv = 60},
+  {BreakLv = 4, MaxLv = 70},
+  {BreakLv = 5, MaxLv = 80},
+  {BreakLv = 6, MaxLv = 90}
+}

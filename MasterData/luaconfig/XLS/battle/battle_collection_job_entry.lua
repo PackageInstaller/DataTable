@@ -1,0 +1,1038 @@
+return {
+  [606101] = {
+    {
+      AttrId = {99},
+      Desc = "物理攻击+5%",
+      DescId = 606101,
+      FixedEntry = 607101,
+      Id = 1,
+      Level = {1}
+    },
+    {
+      AttrId = {99},
+      Desc = "物理攻击+5%",
+      DescId = 606101,
+      FixedEntry = 607101,
+      Id = 2,
+      Level = {2}
+    },
+    {
+      AttrId = {99},
+      Desc = "物理攻击+5%",
+      DescId = 606101,
+      FixedEntry = 607101,
+      Id = 3,
+      Level = {3}
+    }
+  },
+  [606102] = {
+    {
+      AttrId = {99},
+      Desc = "额外伤害加成+2.5%",
+      DescId = 606102,
+      FixedEntry = 607102,
+      Id = 4,
+      Level = {1}
+    },
+    {
+      AttrId = {99},
+      Desc = "额外伤害加成+2.5%",
+      DescId = 606102,
+      FixedEntry = 607102,
+      Id = 5,
+      Level = {2}
+    },
+    {
+      AttrId = {99},
+      Desc = "额外伤害加成+2.5%",
+      DescId = 606102,
+      FixedEntry = 607102,
+      Id = 6,
+      Level = {3}
+    }
+  },
+  [606103] = {
+    {
+      AttrId = {99},
+      Desc = "修正霸体伤害率+10%",
+      DescId = 606103,
+      FixedEntry = 607103,
+      Id = 7,
+      Level = {1}
+    },
+    {
+      AttrId = {99},
+      Desc = "修正霸体伤害率+10%",
+      DescId = 606103,
+      FixedEntry = 607103,
+      Id = 8,
+      Level = {2}
+    },
+    {
+      AttrId = {99},
+      Desc = "修正霸体伤害率+10%",
+      DescId = 606103,
+      FixedEntry = 607103,
+      Id = 9,
+      Level = {3}
+    }
+  },
+  [606104] = {
+    {
+      AttrId = {99},
+      Desc = "物理效果增幅+5%",
+      DescId = 606104,
+      FixedEntry = 607104,
+      Id = 10,
+      Level = {1}
+    },
+    {
+      AttrId = {99},
+      Desc = "物理效果增幅+5%",
+      DescId = 606104,
+      FixedEntry = 607104,
+      Id = 11,
+      Level = {2}
+    },
+    {
+      AttrId = {99},
+      Desc = "物理效果增幅+5%",
+      DescId = 606104,
+      FixedEntry = 607104,
+      Id = 12,
+      Level = {3}
+    }
+  },
+  [606105] = {
+    {
+      AttrId = {99},
+      Desc = "暴击伤害+8%",
+      DescId = 606105,
+      FixedEntry = 607105,
+      Id = 13,
+      Level = {1}
+    },
+    {
+      AttrId = {99},
+      Desc = "暴击伤害+8%",
+      DescId = 606105,
+      FixedEntry = 607105,
+      Id = 14,
+      Level = {2}
+    },
+    {
+      AttrId = {99},
+      Desc = "暴击伤害+8%",
+      DescId = 606105,
+      FixedEntry = 607105,
+      Id = 15,
+      Level = {3}
+    }
+  },
+  [606191] = {
+    {
+      AttrId = {99},
+      Desc = "生命上限+8%",
+      DescId = 606191,
+      FixedEntry = 607191,
+      Id = 91,
+      Level = {1}
+    },
+    {
+      AttrId = {99},
+      Desc = "生命上限+20%",
+      DescId = 606191,
+      FixedEntry = 607192,
+      Id = 92,
+      Level = {2}
+    },
+    {
+      AttrId = {99},
+      Desc = "生命上限+36%",
+      DescId = 606191,
+      FixedEntry = 607193,
+      Id = 93,
+      Level = {3}
+    }
+  },
+  [606192] = {
+    {
+      AttrId = {99},
+      Desc = "魔法、怒气、能量恢复+3%",
+      DescId = 606192,
+      FixedEntry = 607194,
+      Id = 94,
+      Level = {1}
+    },
+    {
+      AttrId = {99},
+      Desc = "魔法、怒气、能量恢复+7.5%",
+      DescId = 606192,
+      FixedEntry = 607195,
+      Id = 95,
+      Level = {2}
+    },
+    {
+      AttrId = {99},
+      Desc = "魔法、怒气、能量恢复+13.5%",
+      DescId = 606192,
+      FixedEntry = 607196,
+      Id = 96,
+      Level = {3}
+    }
+  },
+  [606201] = {
+    {
+      AttrId = {102},
+      Desc = "生命上限+8%",
+      DescId = 606201,
+      FixedEntry = 607201,
+      Id = 16,
+      Level = {1}
+    },
+    {
+      AttrId = {102},
+      Desc = "生命上限+8%",
+      DescId = 606201,
+      FixedEntry = 607201,
+      Id = 17,
+      Level = {2}
+    },
+    {
+      AttrId = {102},
+      Desc = "生命上限+8%",
+      DescId = 606201,
+      FixedEntry = 607201,
+      Id = 18,
+      Level = {3}
+    }
+  },
+  [606202] = {
+    {
+      AttrId = {102},
+      Desc = "额外伤害减免+2%",
+      DescId = 606202,
+      FixedEntry = 607202,
+      Id = 19,
+      Level = {1}
+    },
+    {
+      AttrId = {102},
+      Desc = "额外伤害减免+2%",
+      DescId = 606202,
+      FixedEntry = 607202,
+      Id = 20,
+      Level = {2}
+    },
+    {
+      AttrId = {102},
+      Desc = "额外伤害减免+2%",
+      DescId = 606202,
+      FixedEntry = 607202,
+      Id = 21,
+      Level = {3}
+    }
+  },
+  [606203] = {
+    {
+      AttrId = {102},
+      Desc = "修正霸体伤害率+10%",
+      DescId = 606203,
+      FixedEntry = 607203,
+      Id = 22,
+      Level = {1}
+    },
+    {
+      AttrId = {102},
+      Desc = "修正霸体伤害率+10%",
+      DescId = 606203,
+      FixedEntry = 607203,
+      Id = 23,
+      Level = {2}
+    },
+    {
+      AttrId = {102},
+      Desc = "修正霸体伤害率+10%",
+      DescId = 606203,
+      FixedEntry = 607203,
+      Id = 24,
+      Level = {3}
+    }
+  },
+  [606204] = {
+    {
+      AttrId = {102},
+      Desc = "物理效果抗性+4%",
+      DescId = 606204,
+      FixedEntry = 607204,
+      Id = 25,
+      Level = {1}
+    },
+    {
+      AttrId = {102},
+      Desc = "物理效果抗性+4%",
+      DescId = 606204,
+      FixedEntry = 607204,
+      Id = 26,
+      Level = {2}
+    },
+    {
+      AttrId = {102},
+      Desc = "物理效果抗性+4%",
+      DescId = 606204,
+      FixedEntry = 607204,
+      Id = 27,
+      Level = {3}
+    }
+  },
+  [606205] = {
+    {
+      AttrId = {102},
+      Desc = "受到治疗效果+6%",
+      DescId = 606205,
+      FixedEntry = 607205,
+      Id = 28,
+      Level = {1}
+    },
+    {
+      AttrId = {102},
+      Desc = "受到治疗效果+6%",
+      DescId = 606205,
+      FixedEntry = 607205,
+      Id = 29,
+      Level = {2}
+    },
+    {
+      AttrId = {102},
+      Desc = "受到治疗效果+6%",
+      DescId = 606205,
+      FixedEntry = 607205,
+      Id = 30,
+      Level = {3}
+    }
+  },
+  [606301] = {
+    {
+      AttrId = {100},
+      Desc = "魔法攻击+5%",
+      DescId = 606301,
+      FixedEntry = 607301,
+      Id = 31,
+      Level = {1}
+    },
+    {
+      AttrId = {100},
+      Desc = "魔法攻击+5%",
+      DescId = 606301,
+      FixedEntry = 607301,
+      Id = 32,
+      Level = {2}
+    },
+    {
+      AttrId = {100},
+      Desc = "魔法攻击+5%",
+      DescId = 606301,
+      FixedEntry = 607301,
+      Id = 33,
+      Level = {3}
+    }
+  },
+  [606302] = {
+    {
+      AttrId = {100},
+      Desc = "额外伤害加成+2.5%",
+      DescId = 606302,
+      FixedEntry = 607302,
+      Id = 34,
+      Level = {1}
+    },
+    {
+      AttrId = {100},
+      Desc = "额外伤害加成+2.5%",
+      DescId = 606302,
+      FixedEntry = 607302,
+      Id = 35,
+      Level = {2}
+    },
+    {
+      AttrId = {100},
+      Desc = "额外伤害加成+2.5%",
+      DescId = 606302,
+      FixedEntry = 607302,
+      Id = 36,
+      Level = {3}
+    }
+  },
+  [606303] = {
+    {
+      AttrId = {100},
+      Desc = "额外异常增加+4%",
+      DescId = 606303,
+      FixedEntry = 607303,
+      Id = 37,
+      Level = {1}
+    },
+    {
+      AttrId = {100},
+      Desc = "额外异常增加+4%",
+      DescId = 606303,
+      FixedEntry = 607303,
+      Id = 38,
+      Level = {2}
+    },
+    {
+      AttrId = {100},
+      Desc = "额外异常增加+4%",
+      DescId = 606303,
+      FixedEntry = 607303,
+      Id = 39,
+      Level = {3}
+    }
+  },
+  [606304] = {
+    {
+      AttrId = {100},
+      Desc = "暴击率+3.5%",
+      DescId = 606304,
+      FixedEntry = 607304,
+      Id = 40,
+      Level = {1}
+    },
+    {
+      AttrId = {100},
+      Desc = "暴击率+3.5%",
+      DescId = 606304,
+      FixedEntry = 607304,
+      Id = 41,
+      Level = {2}
+    },
+    {
+      AttrId = {100},
+      Desc = "暴击率+3.5%",
+      DescId = 606304,
+      FixedEntry = 607304,
+      Id = 42,
+      Level = {3}
+    }
+  },
+  [606305] = {
+    {
+      AttrId = {100},
+      Desc = "魔法/怒气/能量恢复+3%",
+      DescId = 606305,
+      FixedEntry = 607305,
+      Id = 43,
+      Level = {1}
+    },
+    {
+      AttrId = {100},
+      Desc = "魔法/怒气/能量恢复+3%",
+      DescId = 606305,
+      FixedEntry = 607305,
+      Id = 44,
+      Level = {2}
+    },
+    {
+      AttrId = {100},
+      Desc = "魔法/怒气/能量恢复+3%",
+      DescId = 606305,
+      FixedEntry = 607305,
+      Id = 45,
+      Level = {3}
+    }
+  },
+  [606391] = {
+    {
+      AttrId = {100},
+      Desc = "魔法攻击+5%",
+      DescId = 606391,
+      FixedEntry = 607391,
+      Id = 97,
+      Level = {1}
+    },
+    {
+      AttrId = {100},
+      Desc = "魔法攻击+12.5%",
+      DescId = 606391,
+      FixedEntry = 607392,
+      Id = 98,
+      Level = {2}
+    },
+    {
+      AttrId = {100},
+      Desc = "魔法攻击+22.5%",
+      DescId = 606391,
+      FixedEntry = 607393,
+      Id = 99,
+      Level = {3}
+    }
+  },
+  [606392] = {
+    {
+      AttrId = {100},
+      Desc = "额外伤害加成+2.5%",
+      DescId = 606392,
+      FixedEntry = 607394,
+      Id = 100,
+      Level = {1}
+    },
+    {
+      AttrId = {100},
+      Desc = "额外伤害加成+6.25%",
+      DescId = 606392,
+      FixedEntry = 607395,
+      Id = 101,
+      Level = {2}
+    },
+    {
+      AttrId = {100},
+      Desc = "额外伤害加成+11.25%",
+      DescId = 606392,
+      FixedEntry = 607396,
+      Id = 102,
+      Level = {3}
+    }
+  },
+  [606401] = {
+    {
+      AttrId = {101},
+      Desc = "物理、魔法防御+5%",
+      DescId = 606401,
+      FixedEntry = 607401,
+      Id = 46,
+      Level = {1}
+    },
+    {
+      AttrId = {101},
+      Desc = "物理、魔法防御+5%",
+      DescId = 606401,
+      FixedEntry = 607401,
+      Id = 47,
+      Level = {2}
+    },
+    {
+      AttrId = {101},
+      Desc = "物理、魔法防御+5%",
+      DescId = 606401,
+      FixedEntry = 607401,
+      Id = 48,
+      Level = {3}
+    }
+  },
+  [606402] = {
+    {
+      AttrId = {101},
+      Desc = "额外伤害减免+2%",
+      DescId = 606402,
+      FixedEntry = 607402,
+      Id = 49,
+      Level = {1}
+    },
+    {
+      AttrId = {101},
+      Desc = "额外伤害减免+2%",
+      DescId = 606402,
+      FixedEntry = 607402,
+      Id = 50,
+      Level = {2}
+    },
+    {
+      AttrId = {101},
+      Desc = "额外伤害减免+2%",
+      DescId = 606402,
+      FixedEntry = 607402,
+      Id = 51,
+      Level = {3}
+    }
+  },
+  [606403] = {
+    {
+      AttrId = {101},
+      Desc = "暴击伤害+8%",
+      DescId = 606403,
+      FixedEntry = 607403,
+      Id = 52,
+      Level = {1}
+    },
+    {
+      AttrId = {101},
+      Desc = "暴击伤害+8%",
+      DescId = 606403,
+      FixedEntry = 607403,
+      Id = 53,
+      Level = {2}
+    },
+    {
+      AttrId = {101},
+      Desc = "暴击伤害+8%",
+      DescId = 606403,
+      FixedEntry = 607403,
+      Id = 54,
+      Level = {3}
+    }
+  },
+  [606404] = {
+    {
+      AttrId = {101},
+      Desc = "魔法、怒气、能量消耗-3%",
+      DescId = 606404,
+      FixedEntry = 607404,
+      Id = 55,
+      Level = {1}
+    },
+    {
+      AttrId = {101},
+      Desc = "魔法、怒气、能量消耗-3%",
+      DescId = 606404,
+      FixedEntry = 607404,
+      Id = 56,
+      Level = {2}
+    },
+    {
+      AttrId = {101},
+      Desc = "魔法、怒气、能量消耗-3%",
+      DescId = 606404,
+      FixedEntry = 607404,
+      Id = 57,
+      Level = {3}
+    }
+  },
+  [606405] = {
+    {
+      AttrId = {101},
+      Desc = "暴击率+3.5%",
+      DescId = 606405,
+      FixedEntry = 607405,
+      Id = 58,
+      Level = {1}
+    },
+    {
+      AttrId = {101},
+      Desc = "暴击率+3.5%",
+      DescId = 606405,
+      FixedEntry = 607405,
+      Id = 59,
+      Level = {2}
+    },
+    {
+      AttrId = {101},
+      Desc = "暴击率+3.5%",
+      DescId = 606405,
+      FixedEntry = 607405,
+      Id = 60,
+      Level = {3}
+    }
+  },
+  [606491] = {
+    {
+      AttrId = {101},
+      Desc = "魔法、怒气、能量消耗-3%",
+      DescId = 606491,
+      FixedEntry = 607491,
+      Id = 103,
+      Level = {1}
+    },
+    {
+      AttrId = {101},
+      Desc = "魔法、怒气、能量消耗-7.5%",
+      DescId = 606491,
+      FixedEntry = 607491,
+      Id = 104,
+      Level = {2}
+    },
+    {
+      AttrId = {101},
+      Desc = "魔法、怒气、能量消耗-13.5%",
+      DescId = 606491,
+      FixedEntry = 607491,
+      Id = 105,
+      Level = {3}
+    }
+  },
+  [606492] = {
+    {
+      AttrId = {101},
+      Desc = "暴击率+3.5%",
+      DescId = 606492,
+      FixedEntry = 607492,
+      Id = 106,
+      Level = {1}
+    },
+    {
+      AttrId = {101},
+      Desc = "暴击率+8.75%",
+      DescId = 606492,
+      FixedEntry = 607492,
+      Id = 107,
+      Level = {2}
+    },
+    {
+      AttrId = {101},
+      Desc = "暴击率+15.75%",
+      DescId = 606492,
+      FixedEntry = 607492,
+      Id = 108,
+      Level = {3}
+    }
+  },
+  [606501] = {
+    {
+      AttrId = {103},
+      Desc = "生命上限+4% 物理、魔法防御+2.5%",
+      DescId = 606501,
+      FixedEntry = 607501,
+      Id = 61,
+      Level = {1}
+    },
+    {
+      AttrId = {103},
+      Desc = "生命上限+4% 物理、魔法防御+2.5%",
+      DescId = 606501,
+      FixedEntry = 607501,
+      Id = 62,
+      Level = {2}
+    },
+    {
+      AttrId = {103},
+      Desc = "生命上限+4% 物理、魔法防御+2.5%",
+      DescId = 606501,
+      FixedEntry = 607501,
+      Id = 63,
+      Level = {3}
+    }
+  },
+  [606502] = {
+    {
+      AttrId = {103},
+      Desc = "额外伤害减免+2%",
+      DescId = 606502,
+      FixedEntry = 607502,
+      Id = 64,
+      Level = {1}
+    },
+    {
+      AttrId = {103},
+      Desc = "额外伤害减免+2%",
+      DescId = 606502,
+      FixedEntry = 607502,
+      Id = 65,
+      Level = {2}
+    },
+    {
+      AttrId = {103},
+      Desc = "额外伤害减免+2%",
+      DescId = 606502,
+      FixedEntry = 607502,
+      Id = 66,
+      Level = {3}
+    }
+  },
+  [606503] = {
+    {
+      AttrId = {103},
+      Desc = "物理效果抗性+4%",
+      DescId = 606503,
+      FixedEntry = 607503,
+      Id = 67,
+      Level = {1}
+    },
+    {
+      AttrId = {103},
+      Desc = "物理效果抗性+4%",
+      DescId = 606503,
+      FixedEntry = 607503,
+      Id = 68,
+      Level = {2}
+    },
+    {
+      AttrId = {103},
+      Desc = "物理效果抗性+4%",
+      DescId = 606503,
+      FixedEntry = 607503,
+      Id = 69,
+      Level = {3}
+    }
+  },
+  [606504] = {
+    {
+      AttrId = {103},
+      Desc = "暴击率+3.5%",
+      DescId = 606504,
+      FixedEntry = 607504,
+      Id = 70,
+      Level = {1}
+    },
+    {
+      AttrId = {103},
+      Desc = "暴击率+3.5%",
+      DescId = 606504,
+      FixedEntry = 607504,
+      Id = 71,
+      Level = {2}
+    },
+    {
+      AttrId = {103},
+      Desc = "暴击率+3.5%",
+      DescId = 606504,
+      FixedEntry = 607504,
+      Id = 72,
+      Level = {3}
+    }
+  },
+  [606505] = {
+    {
+      AttrId = {103},
+      Desc = "受到治疗效果+6%",
+      DescId = 606505,
+      FixedEntry = 607505,
+      Id = 73,
+      Level = {1}
+    },
+    {
+      AttrId = {103},
+      Desc = "受到治疗效果+6%",
+      DescId = 606505,
+      FixedEntry = 607505,
+      Id = 74,
+      Level = {2}
+    },
+    {
+      AttrId = {103},
+      Desc = "受到治疗效果+6%",
+      DescId = 606505,
+      FixedEntry = 607505,
+      Id = 75,
+      Level = {3}
+    }
+  },
+  [606601] = {
+    {
+      AttrId = {104},
+      Desc = "物理攻击+2.5%   魔法攻击+2.5%",
+      DescId = 606601,
+      FixedEntry = 607601,
+      Id = 76,
+      Level = {1}
+    },
+    {
+      AttrId = {104},
+      Desc = "物理攻击+2.5%   魔法攻击+2.5%",
+      DescId = 606601,
+      FixedEntry = 607601,
+      Id = 77,
+      Level = {2}
+    },
+    {
+      AttrId = {104},
+      Desc = "物理攻击+2.5%   魔法攻击+2.5%",
+      DescId = 606601,
+      FixedEntry = 607601,
+      Id = 78,
+      Level = {3}
+    }
+  },
+  [606602] = {
+    {
+      AttrId = {104},
+      Desc = "额外伤害加成+2.5%",
+      DescId = 606602,
+      FixedEntry = 607602,
+      Id = 79,
+      Level = {1}
+    },
+    {
+      AttrId = {104},
+      Desc = "额外伤害加成+2.5%",
+      DescId = 606602,
+      FixedEntry = 607602,
+      Id = 80,
+      Level = {2}
+    },
+    {
+      AttrId = {104},
+      Desc = "额外伤害加成+2.5%",
+      DescId = 606602,
+      FixedEntry = 607602,
+      Id = 81,
+      Level = {3}
+    }
+  },
+  [606603] = {
+    {
+      AttrId = {104},
+      Desc = "额外异常增加+4%",
+      DescId = 606603,
+      FixedEntry = 607603,
+      Id = 82,
+      Level = {1}
+    },
+    {
+      AttrId = {104},
+      Desc = "额外异常增加+4%",
+      DescId = 606603,
+      FixedEntry = 607603,
+      Id = 83,
+      Level = {2}
+    },
+    {
+      AttrId = {104},
+      Desc = "额外异常增加+4%",
+      DescId = 606603,
+      FixedEntry = 607603,
+      Id = 84,
+      Level = {3}
+    }
+  },
+  [606604] = {
+    {
+      AttrId = {104},
+      Desc = "元素效果抗性+4%",
+      DescId = 606604,
+      FixedEntry = 607604,
+      Id = 85,
+      Level = {1}
+    },
+    {
+      AttrId = {104},
+      Desc = "元素效果抗性+4%",
+      DescId = 606604,
+      FixedEntry = 607604,
+      Id = 86,
+      Level = {2}
+    },
+    {
+      AttrId = {104},
+      Desc = "元素效果抗性+4%",
+      DescId = 606604,
+      FixedEntry = 607604,
+      Id = 87,
+      Level = {3}
+    }
+  },
+  [606605] = {
+    {
+      AttrId = {104},
+      Desc = "暴击伤害+8%",
+      DescId = 606605,
+      FixedEntry = 607605,
+      Id = 88,
+      Level = {1}
+    },
+    {
+      AttrId = {104},
+      Desc = "暴击伤害+8%",
+      DescId = 606605,
+      FixedEntry = 607605,
+      Id = 89,
+      Level = {2}
+    },
+    {
+      AttrId = {104},
+      Desc = "暴击伤害+8%",
+      DescId = 606605,
+      FixedEntry = 607605,
+      Id = 90,
+      Level = {3}
+    }
+  },
+  [621001] = {
+    {
+      AttrId = {102},
+      Desc = "生命上限+25%",
+      DescId = 621001,
+      FixedEntry = 621001,
+      Id = 109,
+      Level = {1}
+    }
+  },
+  [621002] = {
+    {
+      AttrId = {102},
+      Desc = "生命上限+50%",
+      DescId = 621002,
+      FixedEntry = 621002,
+      Id = 110,
+      Level = {2}
+    }
+  },
+  [621003] = {
+    {
+      AttrId = {102},
+      Desc = "生命上限+75%",
+      DescId = 621003,
+      FixedEntry = 621003,
+      Id = 111,
+      Level = {3}
+    }
+  },
+  [621004] = {
+    {
+      AttrId = {102},
+      Desc = "生命上限+100%",
+      DescId = 621004,
+      FixedEntry = 621004,
+      Id = 112,
+      Level = {4}
+    }
+  },
+  [621005] = {
+    {
+      AttrId = {102},
+      Desc = "生命上限+125%",
+      DescId = 621005,
+      FixedEntry = 621005,
+      Id = 113,
+      Level = {5}
+    }
+  },
+  [621011] = {
+    {
+      AttrId = {100},
+      Desc = "攻击+20%",
+      DescId = 621011,
+      FixedEntry = 621011,
+      Id = 114,
+      Level = {1}
+    }
+  },
+  [621012] = {
+    {
+      AttrId = {100},
+      Desc = "攻击+40%",
+      DescId = 621012,
+      FixedEntry = 621012,
+      Id = 115,
+      Level = {2}
+    }
+  },
+  [621013] = {
+    {
+      AttrId = {100},
+      Desc = "攻击+60%",
+      DescId = 621013,
+      FixedEntry = 621013,
+      Id = 116,
+      Level = {3}
+    }
+  },
+  [621014] = {
+    {
+      AttrId = {100},
+      Desc = "攻击+80%",
+      DescId = 621014,
+      FixedEntry = 621014,
+      Id = 117,
+      Level = {4}
+    }
+  },
+  [621015] = {
+    {
+      AttrId = {100},
+      Desc = "攻击+100%",
+      DescId = 621015,
+      FixedEntry = 621015,
+      Id = 118,
+      Level = {5}
+    }
+  }
+}

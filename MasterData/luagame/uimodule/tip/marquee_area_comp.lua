@@ -1,0 +1,23 @@
+local class = require("utils.component.middle_class")
+local LuaComponent = require("utils.component.lua_component")
+local Comp = class("MarqueeAreaComp", LuaComponent)
+Comp:AddDefineList({
+  {
+    name = "ref_rect",
+    type = UnityRectTransform
+  }
+})
+if ExecuteInEditorScript then
+  return Comp
+end
+
+function Comp:OnEnable()
+  local size = Util.get_rect_transform_size(self.ref_rect)
+  MarqueeMgr:push_area(self.gameObject:GetInstanceID(), self.ref_rect.position, size.x)
+end
+
+function Comp:OnDisable()
+  MarqueeMgr:pop_area(self.gameObject:GetInstanceID())
+end
+
+return Comp

@@ -1,0 +1,548 @@
+return {
+  [3] = {
+    {
+      Exp = 1000,
+      Gold = 519,
+      Level = 1,
+      Quality = 3
+    },
+    {
+      Exp = 1100,
+      Gold = 570,
+      Level = 2,
+      Quality = 3
+    },
+    {
+      Exp = 1200,
+      Gold = 622,
+      Level = 3,
+      Quality = 3
+    },
+    {
+      Exp = 1300,
+      Gold = 674,
+      Level = 4,
+      Quality = 3
+    },
+    {
+      Exp = 1400,
+      Gold = 726,
+      Level = 5,
+      Quality = 3
+    },
+    {
+      Exp = 1500,
+      Gold = 778,
+      Level = 6,
+      Quality = 3
+    },
+    {
+      Exp = 1600,
+      Gold = 830,
+      Level = 7,
+      Quality = 3
+    },
+    {
+      Exp = 1700,
+      Gold = 881,
+      Level = 8,
+      Quality = 3
+    },
+    {
+      Exp = 1800,
+      Gold = 933,
+      Level = 9,
+      Quality = 3
+    },
+    {
+      Exp = 2000,
+      Gold = 1037,
+      Level = 10,
+      Quality = 3
+    },
+    {
+      Exp = 2200,
+      Gold = 1141,
+      Level = 11,
+      Quality = 3
+    },
+    {
+      Exp = 2400,
+      Gold = 1244,
+      Level = 12,
+      Quality = 3
+    },
+    {
+      Exp = 2600,
+      Gold = 1348,
+      Level = 13,
+      Quality = 3
+    },
+    {
+      Exp = 2800,
+      Gold = 1452,
+      Level = 14,
+      Quality = 3
+    },
+    {
+      Exp = 3000,
+      Gold = 1556,
+      Level = 15,
+      Quality = 3
+    },
+    {
+      Exp = 3200,
+      Gold = 1659,
+      Level = 16,
+      Quality = 3
+    },
+    {
+      Exp = 3400,
+      Gold = 1763,
+      Level = 17,
+      Quality = 3
+    },
+    {
+      Exp = 3600,
+      Gold = 1867,
+      Level = 18,
+      Quality = 3
+    },
+    {
+      Exp = 3800,
+      Gold = 1970,
+      Level = 19,
+      Quality = 3
+    },
+    {
+      Exp = 4000,
+      Gold = 2074,
+      Level = 20,
+      Quality = 3
+    },
+    {
+      Exp = 4400,
+      Gold = 2281,
+      Level = 21,
+      Quality = 3
+    },
+    {
+      Exp = 4800,
+      Gold = 2489,
+      Level = 22,
+      Quality = 3
+    },
+    {
+      Exp = 5200,
+      Gold = 2696,
+      Level = 23,
+      Quality = 3
+    },
+    {
+      Exp = 5600,
+      Gold = 2904,
+      Level = 24,
+      Quality = 3
+    },
+    {
+      Exp = 6000,
+      Gold = 3111,
+      Level = 25,
+      Quality = 3
+    },
+    {
+      Exp = 6400,
+      Gold = 3318,
+      Level = 26,
+      Quality = 3
+    },
+    {
+      Exp = 6800,
+      Gold = 3526,
+      Level = 27,
+      Quality = 3
+    },
+    {
+      Exp = 7200,
+      Gold = 3733,
+      Level = 28,
+      Quality = 3
+    },
+    {
+      Exp = 8000,
+      Gold = 4148,
+      Level = 29,
+      Quality = 3
+    },
+    {
+      Exp = 0,
+      Gold = 0,
+      Level = 30,
+      Quality = 3
+    }
+  },
+  [4] = {
+    {
+      Exp = 1000,
+      Gold = 519,
+      Level = 1,
+      Quality = 4
+    },
+    {
+      Exp = 1100,
+      Gold = 570,
+      Level = 2,
+      Quality = 4
+    },
+    {
+      Exp = 1200,
+      Gold = 622,
+      Level = 3,
+      Quality = 4
+    },
+    {
+      Exp = 1300,
+      Gold = 674,
+      Level = 4,
+      Quality = 4
+    },
+    {
+      Exp = 1400,
+      Gold = 726,
+      Level = 5,
+      Quality = 4
+    },
+    {
+      Exp = 1500,
+      Gold = 778,
+      Level = 6,
+      Quality = 4
+    },
+    {
+      Exp = 1600,
+      Gold = 830,
+      Level = 7,
+      Quality = 4
+    },
+    {
+      Exp = 1700,
+      Gold = 881,
+      Level = 8,
+      Quality = 4
+    },
+    {
+      Exp = 1800,
+      Gold = 933,
+      Level = 9,
+      Quality = 4
+    },
+    {
+      Exp = 2000,
+      Gold = 1037,
+      Level = 10,
+      Quality = 4
+    },
+    {
+      Exp = 2200,
+      Gold = 1141,
+      Level = 11,
+      Quality = 4
+    },
+    {
+      Exp = 2400,
+      Gold = 1244,
+      Level = 12,
+      Quality = 4
+    },
+    {
+      Exp = 2600,
+      Gold = 1348,
+      Level = 13,
+      Quality = 4
+    },
+    {
+      Exp = 2800,
+      Gold = 1452,
+      Level = 14,
+      Quality = 4
+    },
+    {
+      Exp = 3000,
+      Gold = 1556,
+      Level = 15,
+      Quality = 4
+    },
+    {
+      Exp = 3200,
+      Gold = 1659,
+      Level = 16,
+      Quality = 4
+    },
+    {
+      Exp = 3400,
+      Gold = 1763,
+      Level = 17,
+      Quality = 4
+    },
+    {
+      Exp = 3600,
+      Gold = 1867,
+      Level = 18,
+      Quality = 4
+    },
+    {
+      Exp = 3800,
+      Gold = 1970,
+      Level = 19,
+      Quality = 4
+    },
+    {
+      Exp = 4000,
+      Gold = 2074,
+      Level = 20,
+      Quality = 4
+    },
+    {
+      Exp = 4400,
+      Gold = 2281,
+      Level = 21,
+      Quality = 4
+    },
+    {
+      Exp = 4800,
+      Gold = 2489,
+      Level = 22,
+      Quality = 4
+    },
+    {
+      Exp = 5200,
+      Gold = 2696,
+      Level = 23,
+      Quality = 4
+    },
+    {
+      Exp = 5600,
+      Gold = 2904,
+      Level = 24,
+      Quality = 4
+    },
+    {
+      Exp = 6000,
+      Gold = 3111,
+      Level = 25,
+      Quality = 4
+    },
+    {
+      Exp = 6400,
+      Gold = 3318,
+      Level = 26,
+      Quality = 4
+    },
+    {
+      Exp = 6800,
+      Gold = 3526,
+      Level = 27,
+      Quality = 4
+    },
+    {
+      Exp = 7200,
+      Gold = 3733,
+      Level = 28,
+      Quality = 4
+    },
+    {
+      Exp = 8000,
+      Gold = 4148,
+      Level = 29,
+      Quality = 4
+    },
+    {
+      Exp = 0,
+      Gold = 0,
+      Level = 30,
+      Quality = 4
+    }
+  },
+  [5] = {
+    {
+      Exp = 1000,
+      Gold = 519,
+      Level = 1,
+      Quality = 5
+    },
+    {
+      Exp = 1100,
+      Gold = 570,
+      Level = 2,
+      Quality = 5
+    },
+    {
+      Exp = 1200,
+      Gold = 622,
+      Level = 3,
+      Quality = 5
+    },
+    {
+      Exp = 1300,
+      Gold = 674,
+      Level = 4,
+      Quality = 5
+    },
+    {
+      Exp = 1400,
+      Gold = 726,
+      Level = 5,
+      Quality = 5
+    },
+    {
+      Exp = 1500,
+      Gold = 778,
+      Level = 6,
+      Quality = 5
+    },
+    {
+      Exp = 1600,
+      Gold = 830,
+      Level = 7,
+      Quality = 5
+    },
+    {
+      Exp = 1700,
+      Gold = 881,
+      Level = 8,
+      Quality = 5
+    },
+    {
+      Exp = 1800,
+      Gold = 933,
+      Level = 9,
+      Quality = 5
+    },
+    {
+      Exp = 2000,
+      Gold = 1037,
+      Level = 10,
+      Quality = 5
+    },
+    {
+      Exp = 2200,
+      Gold = 1141,
+      Level = 11,
+      Quality = 5
+    },
+    {
+      Exp = 2400,
+      Gold = 1244,
+      Level = 12,
+      Quality = 5
+    },
+    {
+      Exp = 2600,
+      Gold = 1348,
+      Level = 13,
+      Quality = 5
+    },
+    {
+      Exp = 2800,
+      Gold = 1452,
+      Level = 14,
+      Quality = 5
+    },
+    {
+      Exp = 3000,
+      Gold = 1556,
+      Level = 15,
+      Quality = 5
+    },
+    {
+      Exp = 3200,
+      Gold = 1659,
+      Level = 16,
+      Quality = 5
+    },
+    {
+      Exp = 3400,
+      Gold = 1763,
+      Level = 17,
+      Quality = 5
+    },
+    {
+      Exp = 3600,
+      Gold = 1867,
+      Level = 18,
+      Quality = 5
+    },
+    {
+      Exp = 3800,
+      Gold = 1970,
+      Level = 19,
+      Quality = 5
+    },
+    {
+      Exp = 4000,
+      Gold = 2074,
+      Level = 20,
+      Quality = 5
+    },
+    {
+      Exp = 4400,
+      Gold = 2281,
+      Level = 21,
+      Quality = 5
+    },
+    {
+      Exp = 4800,
+      Gold = 2489,
+      Level = 22,
+      Quality = 5
+    },
+    {
+      Exp = 5200,
+      Gold = 2696,
+      Level = 23,
+      Quality = 5
+    },
+    {
+      Exp = 5600,
+      Gold = 2904,
+      Level = 24,
+      Quality = 5
+    },
+    {
+      Exp = 6000,
+      Gold = 3111,
+      Level = 25,
+      Quality = 5
+    },
+    {
+      Exp = 6400,
+      Gold = 3318,
+      Level = 26,
+      Quality = 5
+    },
+    {
+      Exp = 6800,
+      Gold = 3526,
+      Level = 27,
+      Quality = 5
+    },
+    {
+      Exp = 7200,
+      Gold = 3733,
+      Level = 28,
+      Quality = 5
+    },
+    {
+      Exp = 8000,
+      Gold = 4148,
+      Level = 29,
+      Quality = 5
+    },
+    {
+      Exp = 0,
+      Gold = 0,
+      Level = 30,
+      Quality = 5
+    }
+  }
+}

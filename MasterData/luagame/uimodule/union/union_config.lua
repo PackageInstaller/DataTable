@@ -1,0 +1,83 @@
+local commonDef = require("cs_share.common_define")
+local config = {}
+config.JOIN_STATE = {
+  FULL = 1,
+  JOIN = 2,
+  APPLY = 3,
+  APPLYING = 4
+}
+config.UNION_TITLE = commonDef.GUILD_POSITION_TYPE
+config.PLAYER_LOGIN_STATE = {ONLINE = 0, OFFLINE = 1}
+config.MEMBER_LIST_UPDATE_INTERVAL = 60
+config.INVITE_LIST_REFRESH_CD = 5
+config.INVITE_STATE = {
+  NONE = 0,
+  INVITED = 1,
+  IN_UNION = 2
+}
+config.JOIN_MODE = commonDef.GUILD_VERIFY_TYPE
+config.INVATION_OUTTIME = 172800
+config.UNION_ICON_PATH = "%s"
+config.CHANGE_UNION_TYPE = {
+  NAME = 1,
+  SLOGAN = 2,
+  ICON = 3,
+  JOIN_MODE = 4
+}
+config.HANDLE_INVITE_TYPE = {ACCEPT = 1, REFUSE = 2}
+config.HANDLE_APPLY_TYPE = {ACCEPT = 1, REFUSE = 2}
+config.MEMBER_LEAVE_TYPE = {ACTIVE = 1, PASSIVE = 2}
+config.CHANGE_INFO_PRPTO_TYPE = {
+  [config.CHANGE_UNION_TYPE.NAME] = {
+    proto_name = "c2gs_guild_rename",
+    send_key = "new_name",
+    info_key = "name"
+  },
+  [config.CHANGE_UNION_TYPE.SLOGAN] = {
+    proto_name = "c2gs_guild_change_idea",
+    send_key = "new_idea",
+    info_key = "idea"
+  },
+  [config.CHANGE_UNION_TYPE.ICON] = {
+    proto_name = "c2gs_guild_change_icon",
+    send_key = "icon",
+    info_key = "icon"
+  },
+  [config.CHANGE_UNION_TYPE.JOIN_MODE] = {
+    proto_name = "c2gs_guild_change_verify_type",
+    send_key = "verify_type",
+    info_key = "verify_type"
+  }
+}
+config.HANDLE_INVITE_PROTO_TYPE = {
+  [config.HANDLE_INVITE_TYPE.ACCEPT] = {
+    proto_name = "c2gs_guild_accept_invite",
+    send_key = "invite_uuid",
+    event_key = Const.MSG_ON_ACCEPT_UNION_INVATION
+  },
+  [config.HANDLE_INVITE_TYPE.REFUSE] = {
+    proto_name = "c2gs_guild_refuse_invite",
+    send_key = "invite_uuid",
+    event_key = Const.MSG_ON_REFUSE_UNION_INVATION
+  }
+}
+config.HANDLE_APPLY_PROTO_TYPE = {
+  [config.HANDLE_APPLY_TYPE.ACCEPT] = {
+    proto_name = "c2gs_guild_accept_join",
+    send_key = "target_uuid"
+  },
+  [config.HANDLE_APPLY_TYPE.REFUSE] = {
+    proto_name = "c2gs_guild_refuse_join",
+    send_key = "target_uuid"
+  }
+}
+config.GUILD_AUTH_LIST = commonDef.GUILD_AUTH_LIST
+config.UNION_PAGES = {
+  SEARCH = 1,
+  CREATE = 2,
+  INVITATAION = 3,
+  MEMBER = 4,
+  INVITE = 5,
+  APPLICATION = 6
+}
+return config

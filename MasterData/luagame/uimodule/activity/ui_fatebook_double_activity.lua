@@ -1,0 +1,48 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:set_button("BtnJump", function()
+    SysOpenMgr:jump_to_sys(self.v_jump_id, true)
+  end)
+end
+
+function ui:ui_on_show(activity_id)
+  self.v_activity_id = activity_id
+  self:refresh()
+end
+
+function ui:ui_on_update()
+  self:update_time_remaining()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:ui_on_hide()
+end
+
+local not_enough_color = Util.CommonColor_RedWarm
+local enough_color = Util.get_unity_color_by_hex(tonumber("F5EDE2", 16))
+
+function ui:refresh()
+  local double_challenge_cfg = ShareRes.get_double_challenge_cfg(self.v_activity_id)
+  self.v_jump_id = double_challenge_cfg.JumpId
+  local activity_cfg = ShareRes.get_activity_cfg(self.v_activity_id)
+  self.v_end_time = Date.get_time_stamp_by_scheme_id(activity_cfg.StopTime) or 0
+  local less_num = double_challenge_cfg.Limit - NoviceMgr:get_double_challenge_count(self.v_activity_id)
+  self.v_uicompents.Desc_txt.text = double_challenge_cfg.GamePlayDesc
+  self.v_uicompents.MaxNum_txt.text = double_challenge_cfg.Limit
+  self.v_uicompents.LessNum_txt.text = less_num
+  self.v_uicompents.LessNum_txt.color = less_num > 0 and enough_color or not_enough_color
+  self:update_time_remaining()
+  RedPointMgr:enable_redpoint(RedEnum.FATEBOOK_DOUBLE_CHALLENGE, false)
+end
+
+function ui:update_time_remaining()
+  local time_length = self.v_end_time - Date.server_time()
+  time_length = math.max(time_length, 0)
+  self.v_uicompents.LessTime_txt.text = Util.format_str("{1}天{2}时", math.floor(time_length / 86400), math.floor(time_length % 86400 / 3600))
+end
+
+return ui

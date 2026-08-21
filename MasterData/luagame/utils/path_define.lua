@@ -1,0 +1,64 @@
+local Application = UnityEngine.Application
+local M = {}
+M.version = "version"
+M.version_md5 = "update_version_md5.md5"
+M.update_version_md5 = "update_version_md5"
+M.platform = ""
+if UNITY_EDITOR then
+  M.update_dir = Application.persistentDataPath .. "/update/"
+  M.download_dir = Application.persistentDataPath .. "/download/"
+  M.updown_fight_log_dir = string.gsub(Application.dataPath, "Assets", "FightLog.log")
+  if Game_LocalBundle then
+    M.package_dir = Application.dataPath .. "/../../../AssetBundle/Win/"
+  else
+    M.package_dir = Application.streamingAssetsPath .. "/assetbundles/"
+  end
+  M.platform = "Editor"
+elseif UNITY_IOS then
+  M.update_dir = Application.persistentDataPath .. "/Library/update/"
+  M.download_dir = Application.persistentDataPath .. "/Library/download/"
+  M.package_dir = Application.streamingAssetsPath .. "/assetbundles/"
+  M.platform = "iOS"
+  M.updown_log_dir = Application.persistentDataPath .. "/debug/FX.log"
+  M.updown_fight_log_dir = Application.persistentDataPath .. "/debug/FightLog.log"
+elseif UNITY_ANDROID then
+  M.update_dir = Application.persistentDataPath .. "/update/"
+  M.download_dir = Application.persistentDataPath .. "/download/"
+  M.package_dir = Application.streamingAssetsPath .. "/assetbundles/"
+  M.platform = "Android"
+  M.updown_log_dir = Application.persistentDataPath .. "/debug/FX.log"
+  M.updown_fight_log_dir = Application.persistentDataPath .. "/debug/FightLog.log"
+elseif UNITY_STANDALONE_WIN then
+  M.update_dir = Application.streamingAssetsPath .. "/update/"
+  M.download_dir = Application.streamingAssetsPath .. "/download/"
+  M.package_dir = Application.streamingAssetsPath .. "/assetbundles/"
+  M.platform = "Win"
+  M.updown_log_dir = Application.streamingAssetsPath .. "/debug/FX.log"
+  M.updown_fight_log_dir = Application.streamingAssetsPath .. "/debug/FightLog.log"
+else
+  M.update_dir = Application.persistentDataPath .. "/update/"
+  M.download_dir = Application.persistentDataPath .. "/download/"
+  M.package_dir = Application.streamingAssetsPath .. "/assetbundles/"
+  M.updown_fight_log_dir = string.gsub(Application.dataPath, "Assets", "FightLog.log")
+  M.platform = "Unknown"
+end
+M.package_sound_dir = M.package_dir
+if UNITY_ANDROID then
+  M.package_sound_dir = "assetbundles/"
+end
+M.local_version_file = M.update_dir .. "update_version_md5"
+M.remote_version_md5 = M.update_dir .. "remote_version_md5"
+M.bundle_version_file = "bundle_version_md5"
+M.btn_layout_dir = "../../Config/lua_client/XLS/btn_layout/"
+M.ring_pos_dir = "../../Config/lua_client/XLS/ring_plus_pos/"
+M.config_dir = "../../Config/lua_client/XLS/"
+
+function M.requrie_assettobundle()
+  return Global.share_res.create_bundleref("assettobundle")
+end
+
+function M.requrie_bundle_deps()
+  return Global.share_res.create_bundleref("bundle_deps")
+end
+
+return M

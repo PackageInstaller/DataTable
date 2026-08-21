@@ -1,0 +1,12 @@
+return {
+  {
+    HitWallId = 1,
+    HitWallMagicList = {1006331},
+    HitWallName = "撞墙后触发伤害"
+  },
+  {
+    HitWallId = 2,
+    HitWallMissileList = {10019990101},
+    HitWallName = "撞墙后NPC反弹"
+  }
+}

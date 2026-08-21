@@ -1,0 +1,8 @@
+local Base = require("gamelogic.tower_mgr.tower")
+local M = Util.create_child_mt(Base)
+
+function M:_init(...)
+  Base._init(self, ...)
+end
+
+return M

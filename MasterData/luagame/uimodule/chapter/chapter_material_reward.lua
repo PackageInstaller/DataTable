@@ -1,0 +1,56 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local CHAPTER_MATERIAL_FLOOR_KEY = "CHAPTER_MATERIAL_FLOOR_KEY"
+local MAX_ITEM = 4
+local MAX_FLOOR_REWARD = 20
+local MODEL = {
+  v_floor_content_obj = {
+    "Content",
+    BIND_TYPE.OBJECT
+  },
+  v_floor_obj = {
+    "FloorTem",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:register_exist_auto_template(CHAPTER_MATERIAL_FLOOR_KEY, self.v_floor_obj, self.v_floor_content_obj)
+end
+
+function ui:ui_on_show(id)
+  local chapter_cfg = ShareRes.create("chapter.chapter_material", id)
+  self.v_uicompents.Detil_txt.text = chapter_cfg.Desc
+  local reward_cfg = ShareRes.create("chapter.chapter_material_reward")
+  for i = 1, MAX_FLOOR_REWARD do
+    local index = id * 1000 + i
+    if not reward_cfg[index] then
+      break
+    end
+    self:show_floor_reward(reward_cfg[index])
+  end
+end
+
+function ui:show_floor_reward(reward_cfg)
+  local floor_item = self:get_auto_cache(CHAPTER_MATERIAL_FLOOR_KEY)
+  Util.get_text("FloorNum_", floor_item).text = reward_cfg.Desc
+  for i = 1, MAX_ITEM do
+    local item = Util.get_child("ItemList_/ItemTem" .. i, floor_item)
+    local reward_info = reward_cfg.reward_list[i]
+    if not reward_info then
+      item:SetActive(false)
+    else
+      local item_id = reward_info[1]
+      item:SetActive(true)
+      Util.load_ui_item(item, item_id, reward_info[2])
+      local btn = Util.get_button(nil, item)
+      self:set_button_listener(btn, function()
+        UIMgr:get_ui("itemTip"):ui_show({item_id = item_id})
+      end)
+    end
+  end
+end
+
+return ui

@@ -1,0 +1,20 @@
+local Base = require("manager.magic.magic_imp.magic_base")
+local M = Util.create_child_mt(Base)
+
+function M:_init(owner, magic_info)
+  Base._init(self, owner, magic_info)
+end
+
+function M:on_effect()
+  if Global.sound_mgr then
+    Global.sound_mgr:start_snapshot_sound(self.cfg[1], self.cfg[2])
+  end
+end
+
+function M:on_remove()
+  if Global.sound_mgr then
+    Global.sound_mgr:stop_snap_shot_sound()
+  end
+end
+
+return M

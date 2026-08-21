@@ -1,0 +1,114 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local MAX_SHOW_COUNT = 5
+local HEIGHT = 1.7
+
+function ui:ui_finish_load()
+  self.v_tips_cgs = {}
+  for index = 1, 5 do
+    self.v_tips_cgs[index] = self.v_uiobjects["PickDropTip" .. index]:GetComponent(typeof(UnityEngine.CanvasGroup))
+  end
+  self.v_tips_cgs[6] = self.v_uiobjects.CurseGetTip1:GetComponent(typeof(UnityEngine.CanvasGroup))
+end
+
+function ui:ui_on_show()
+  self.follow = false
+  self.v_show_item_data_list = {}
+  self.sequences = {}
+  self.v_uiobjects.FollowNode:SetActive(true)
+end
+
+function ui:ui_on_hide()
+  self:clear_sequences()
+  self.follow = false
+end
+
+function ui:set_data(item_data)
+  table.insert(self.v_show_item_data_list, item_data)
+  local index = #self.v_show_item_data_list
+  if index > MAX_SHOW_COUNT then
+    table.remove(self.v_show_item_data_list, 1)
+    if self.sequences and self.sequences[1] then
+      self.sequences[1]:Kill(false)
+      table.remove(self.sequences, 1)
+    end
+  end
+  self:show_new_tip(item_data, index)
+end
+
+function ui:show_new_tip(item_data, index)
+  ChallengeRingPlusMgr:set_is_drop_tips_show(true)
+  self.follow = true
+  local cfg = ShareRes.get_battle_item_cfg(item_data.item_id)
+  local tips_tf = self.v_uiobjects["PickDropTip" .. index].transform
+  local DropIcon_img = Util.get_image("DropIcon", tips_tf)
+  local DropCount_txt = Util.get_text("DropCount", tips_tf)
+  ResMgr:load_set_icon(DropIcon_img, "Icon/BattleItem/" .. cfg.Icon)
+  DropCount_txt.text = "+" .. item_data.count
+  tips_tf:SetLocalPositionA(0, 0, 0)
+  tips_tf.gameObject:SetActive(true)
+  self:set_dotween(tips_tf, item_data.uuid, index)
+end
+
+function ui:show_curse_tip(add_val)
+  self.follow = true
+  local tips_tf = self.v_uiobjects.CurseGetTip1.transform
+  tips_tf:SetLocalPositionA(0, 0, 0)
+  tips_tf.gameObject:SetActive(true)
+  local DropCount_txt = Util.get_text("DropCount", tips_tf)
+  DropCount_txt.text = "+" .. add_val
+  self:set_dotween(tips_tf, nil, 6)
+end
+
+function ui:set_tips_position()
+  Util.set_ui_follow_npc(self.v_uicompents.FollowNode_rect, Global.hero, HEIGHT, "HpBar")
+end
+
+function ui:set_dotween(tips_tf, uuid, index)
+  if self.sequences and self.sequences[index] then
+    self.sequences[index]:Kill(false)
+    self.sequences[index] = nil
+  end
+  self.sequences[index] = Util.create_sequence()
+  self.sequences[index]:Append(tips_tf:DOMoveY(1, 1.5))
+  self.sequences[index]:Join(self.v_tips_cgs[index]:DOFade(0, 1.5))
+  self.sequences[index]:OnComplete(function()
+    self.follow = false
+    tips_tf:SetActive(false)
+    self.v_tips_cgs[index].alpha = 1
+    tips_tf:SetLocalPositionA(0, 0, 0)
+    if uuid then
+      self:check_is_dotween_done(uuid)
+    end
+    ChallengeRingPlusMgr:set_is_drop_tips_show(false)
+  end)
+end
+
+function ui:check_is_dotween_done(uuid)
+  for index = #self.v_show_item_data_list, 1, -1 do
+    if self.v_show_item_data_list[index].uuid == uuid then
+      table.remove(self.v_show_item_data_list, index)
+    end
+  end
+end
+
+function ui:clear_sequences()
+  if self.sequences then
+    for key, sequence in pairs(self.sequences) do
+      sequence:Kill(false)
+    end
+    self.sequences = {}
+  end
+end
+
+function ui:ui_on_update()
+  if self.follow then
+    self:set_tips_position()
+  end
+end
+
+function ui:add_curse(add_val)
+  self:show_curse_tip(add_val)
+end
+
+return ui

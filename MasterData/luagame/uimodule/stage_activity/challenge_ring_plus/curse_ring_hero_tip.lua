@@ -1,0 +1,195 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local FightDefine = require("cs_share.fight_define")
+local ATTR_TYPE = FightDefine.ATTR_TYPE
+local is_first_show = true
+
+function ui:ui_finish_load()
+  self.v_hero_contents = {}
+  self.show_node = self.v_uiobjects.ShowNode
+  self.hide_node = self.v_uiobjects.HideNode
+end
+
+function ui:ui_on_show(need_dotween)
+  self.v_is_show_tips = false
+  self:refresh_data(need_dotween)
+end
+
+function ui:ui_on_hide()
+  if self.sequence then
+    self.sequence:Kill()
+    self.sequence = nil
+    self.v_is_tweening = false
+  end
+  self.v_hero_list = SceneMgr:get_hero_list()
+  if not self.v_hero_list then
+    return
+  end
+  self:_set_red_fill(false)
+end
+
+function ui:_add_listner()
+  self:bind_auto_mq(Const.MSG_HERO_ATTR_CHANGE, self.on_hero_attr_change, self)
+  self:bind_auto_mq(Const.MSG_ROLE_DEAD, self.on_hero_dead, self)
+end
+
+function ui:on_hero_dead(msg)
+  local hero = msg.mm_obj
+  if hero and hero.uuid then
+    if not self.v_uiobjects.CRHeroTips.activeInHierarchy then
+      self.v_uiobjects.CRHeroTips:SetActive(true)
+    end
+    if self.v_hero_contents[hero.uuid] and self.v_hero_contents[hero.uuid].death_go then
+      self.v_hero_contents[hero.uuid].death_go:SetActive(hero.v_is_die)
+    else
+      self:refresh_data()
+    end
+    self:dotween()
+  end
+end
+
+function ui:on_hero_attr_change(msg)
+  if 1 == msg.mm_x and msg.mm_obj then
+    local hero = msg.mm_obj
+    if self.v_hero_contents[hero.uuid] then
+      self:_set_content(hero, self.v_hero_contents[hero.uuid])
+    else
+      self:refresh_data()
+    end
+    self:dotween()
+  end
+end
+
+function ui:on_battle_pause_show()
+  if not self:visible() then
+    self:ui_show()
+  end
+  self.v_uiobjects.CRHeroTips.transform.position = self.show_node.transform.position
+end
+
+function ui:on_battle_pause_hide()
+  self.v_uiobjects.CRHeroTips.transform.position = self.hide_node.transform.position
+end
+
+function ui:_refresh()
+  local index = 1
+  for i = 1, 3 do
+    self.v_uiobjects["HeroTem" .. i]:SetActive(false)
+  end
+  for uuid, hero_info in pairs(self.v_hero_list) do
+    self.v_hero_contents[uuid] = {}
+    self.v_hero_contents[uuid].bar_fill_red = self.v_uicompents["HpBarFillRed" .. index .. "_img"]
+    self.v_hero_contents[uuid].bar_fill = self.v_uicompents["HpBarFill" .. index .. "_img"]
+    self.v_hero_contents[uuid].hero_icon = self.v_uicompents["HeroIcon" .. index .. "_img"]
+    self.v_hero_contents[uuid].death_go = self.v_uiobjects["Death" .. index]
+    self.v_hero_contents[uuid].hp_max = self.v_uicompents["HpMax" .. index .. "_txt"]
+    self.v_hero_contents[uuid].hp_now = self.v_uicompents["HpNow" .. index .. "_txt"]
+    self.v_uiobjects["HeroTem" .. index]:SetActive(true)
+    local content = self.v_hero_contents[uuid]
+    self:_set_content(hero_info, content)
+    index = index + 1
+  end
+end
+
+function ui:_set_content(hero_info, content)
+  local fashion_id = hero_info:get_fashion_id()
+  local icon_path = UtilUI.get_hero_images(hero_info.id, 1, fashion_id)
+  local hp, hp_max, hp_per = self:get_hp_info(hero_info)
+  if is_first_show then
+    content.bar_fill_red.fillAmount = hp_per
+    self.v_do_fill_amount_time = 0.7
+  else
+    self.v_do_fill_amount_time = 0.5
+  end
+  content.bar_fill.fillAmount = hp_per
+  content.death_go:SetActive(hero_info.v_is_die)
+  content.hp_max.text = hp_max
+  content.hp_now.text = hp
+  ResMgr:load_set_icon(content.hero_icon, icon_path)
+end
+
+function ui:ui_wrap(parent, gameobj, show_node, hide_node)
+  self = Base.ui_wrap(self, parent, gameobj)
+  self.show_node = show_node
+  self.hide_node = hide_node
+  self.v_uiobjects.CRHeroTips.transform.position = self.hide_node.transform.position
+  self.v_uiobjects.CRHeroTips:SetActive(false)
+  return self
+end
+
+function ui:refresh_data(need_dotween)
+  self.v_hero_list = SceneMgr:get_hero_list()
+  if not self.v_hero_list then
+    return
+  end
+  self:_refresh()
+  if is_first_show then
+    is_first_show = false
+  end
+  self:set_position()
+  if not need_dotween then
+    self:set_position()
+  else
+    self:dotween()
+  end
+end
+
+function ui:set_position()
+  self.v_uiobjects.CRHeroTips.transform.position = self.show_node.transform.position
+  self:_set_red_fill(false)
+end
+
+function ui:dotween()
+  if self.sequence then
+    self.v_is_tweening = false
+    self.sequence:Kill()
+    self.sequence = nil
+  end
+  local Ease = CS.DG.Tweening.Ease
+  if not self.v_is_show_tips then
+    self.v_uiobjects.CRHeroTips.transform.position = self.hide_node.transform.position
+  end
+  local total_dist = UnityVector3.Distance(self.show_node.transform.position, self.hide_node.transform.position)
+  local cur_dist = UnityVector3.Distance(self.v_uiobjects.CRHeroTips.transform.position, self.show_node.transform.position)
+  local move_time = cur_dist / total_dist * 0.3
+  self.sequence = Util.create_sequence()
+  self.v_is_tweening = true
+  self.sequence:AppendCallback(function()
+    self.v_is_show_tips = true
+  end)
+  self.v_uiobjects.CRHeroTips.transform.position = self.show_node.transform.position
+  self.sequence:Append(self.v_uiobjects.CRHeroTips.transform:DOMove(self.show_node.transform.position, move_time):SetEase(Ease.InQuad))
+  if not self.v_is_show_tips then
+    self.sequence:AppendInterval(0.5)
+  end
+  self.sequence:AppendCallback(function()
+    self:_set_red_fill(true)
+  end)
+  self.sequence:AppendInterval(2)
+  self.sequence:Append(self.v_uiobjects.CRHeroTips.transform:DOMove(self.hide_node.transform.position, 0.5):SetEase(Ease.InQuad))
+  self.sequence:OnComplete(function()
+    self.v_is_tweening = false
+    self:ui_hide()
+    self.v_is_show_tips = false
+  end)
+end
+
+function ui:_set_red_fill(is_dotween)
+  for key, hero_info in pairs(self.v_hero_list) do
+    local hp, hp_max, hp_per = self:get_hp_info(hero_info)
+    if is_dotween then
+      self.v_hero_contents[hero_info.uuid].bar_fill_red:DOFillAmount(hp_per, self.v_do_fill_amount_time)
+    else
+      self.v_hero_contents[hero_info.uuid].bar_fill_red.fillAmount = hp_per
+    end
+  end
+end
+
+function ui:get_hp_info(hero_info)
+  local hp = math.ceil(hero_info.attr_mgr:get_attr(ATTR_TYPE.CHAR_HP))
+  local hp_max = math.ceil(hero_info.attr_mgr:get_attr(ATTR_TYPE.CHAR_HP_MAX))
+  local hp_per = hp / hp_max
+  return hp, hp_max, hp_per
+end
+
+return ui

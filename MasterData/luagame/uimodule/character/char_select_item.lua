@@ -1,0 +1,202 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local Char_Helper = require("uimodule.character.char_helper")
+local CommonDefine = require("cs_share.common_define")
+
+function ui:ui_finish_load()
+  self.v_toggle = Util.get_toggle(nil, self.v_object)
+  self:set_toggle_listener(self.v_toggle, function(is_on)
+    if is_on then
+      self:click_char()
+    end
+  end)
+  self:set_button("NoOwnMask", function()
+    if self.v_is_week_pvp then
+      Util.show_message_tip(2149)
+    elseif not self._if_own_char then
+      Util.show_message_tip(2094)
+    elseif self.v_is_fixed then
+      Util.show_message_tip(2150)
+    else
+      Util.show_message_tip(2151)
+    end
+  end)
+end
+
+function ui:ui_on_hide()
+  self.v_buddy_info = nil
+  self.v_team_data = nil
+end
+
+function ui:set_data(buddy_info, team_data, select_data)
+  self.v_buddy_info = buddy_info.info
+  self.v_robot_info = buddy_info.robot_info
+  local info = self.v_buddy_info or self.v_robot_info
+  if info then
+    self._if_own_char = true
+    self.v_lv_data = info.lv
+    self.v_break_lv_data = info.break_lv
+    self.v_fashion_id = info.fashion_id
+  else
+    self._if_own_char = false
+    self.v_lv_data = 0
+    self.v_break_lv_data = 0
+    self.v_fashion_id = nil
+  end
+  self.v_buddy_id = buddy_info.id
+  self.v_robot_id = buddy_info.robot_id
+  self.v_buddy_cfg = ShareRes.get_buddy_cfg(self.v_buddy_id)
+  self.v_quality_data = self.v_buddy_cfg.Quality
+  self.v_team_data = team_data
+  self.v_select_data = select_data
+  self.v_is_ban = buddy_info.is_ban
+  self.v_is_fixed = true == buddy_info.is_fixed
+  self.v_is_in_team = true == buddy_info.is_in_team
+  self.v_is_weekly_limit = false
+  self.v_is_week_pvp = team_data and team_data.formation_type == CommonDefine.FORMATION_TYPE.WEEK_ACTY_PVP_TEAM
+  if self.v_is_week_pvp and WeeklyMgr:get_is_pvp_used(buddy_info.id) then
+    self.v_is_ban = true
+    self.v_is_weekly_limit = true
+  end
+  self.v_object.name = self.v_buddy_id
+  self:refresh_quailty_icon()
+  self:refresh_char_icon()
+  self:refresh_lv_num()
+  self:refresh_advance_icon()
+  self:refresh_red_icon()
+  self:refresh_element_icon()
+  self:refresh_job_icon()
+  self:set_select_effect(false)
+  self:refresh_select_state()
+  self.v_toggle.interactable = self._if_own_char
+  local show_not_own = not self._if_own_char
+  local show_team_limit = not show_not_own and (self.v_is_ban or self.v_is_fixed and not self.v_is_in_team)
+  local show_mask = show_not_own or show_team_limit
+  self.v_uiobjects.NoOwnMask:SetActive(show_mask)
+  self.v_uiobjects.TeamLimit:SetActive(show_team_limit and not self.v_is_weekly_limit)
+  self.v_uiobjects.WeeklyLimit:SetActive(self.v_is_weekly_limit)
+  self.v_uiobjects.NoOwn:SetActive(show_not_own)
+  self.v_uiobjects.BottomInfo:SetActive(not show_not_own)
+  self.v_uiobjects.Team:SetActive(self.v_is_in_team)
+  self.v_uiobjects.TrialTips:SetActive(nil ~= self.v_robot_id)
+end
+
+function ui:refresh_quailty_icon()
+  local icon_path = Char_Helper.get_char_select_quality_icon(self.v_buddy_id)
+  ResMgr:load_set_icon(self.v_uicompents.Quality_Icon_img, icon_path)
+  local qual_val = self.v_quality_data
+  local line_icon_path = Char_Helper.get_char_line_quality_icon(qual_val)
+  ResMgr:load_set_icon(self.v_uicompents.QualityLine_img, line_icon_path)
+end
+
+function ui:refresh_element_icon()
+  local icon_path = Char_Helper.get_char_element_icon(self.v_buddy_id)
+  ResMgr:load_set_icon(self.v_uicompents.EleIcon_img, icon_path)
+end
+
+function ui:refresh_job_icon()
+  local icon_path = Char_Helper.get_char_job_icon(self.v_buddy_id)
+  ResMgr:load_set_icon(self.v_uicompents.JobIcon_img, icon_path)
+end
+
+function ui:refresh_char_icon()
+  local icon_path = UtilUI.get_hero_images(self.v_buddy_id, 3, self.v_fashion_id)
+  ResMgr:load_set_icon(self.v_uicompents.Char_icon_img, icon_path, nil, true, self)
+end
+
+function ui:refresh_char_name()
+  local name = self.v_buddy_cfg.Name
+  self.v_char_name.text = name
+end
+
+function ui:refresh_break_icon()
+  for i = 1, 3 do
+    local star_obj = self["v_break_" .. i]
+    star_obj:SetActive(i < self.v_break_lv_data)
+  end
+end
+
+function ui:refresh_lv_num()
+  self.v_uicompents.LvNum_txt.text = self.v_lv_data
+end
+
+function ui:refresh_advance_icon()
+  self.v_uiobjects.AdvanceBg:SetActive(false)
+end
+
+function ui:refresh_red_icon()
+  local is_show_new = false
+  local is_show_red = false
+  if self._if_own_char and not self.v_team_data then
+    local is_first = self.v_buddy_info.firstclick
+    if not is_first and not CharacterMgr.v_not_show_sys_red then
+      is_show_new = true
+    end
+    if self._if_own_char then
+      if CharacterMgr:update_level_red(self.v_buddy_id) then
+        is_show_red = true
+      elseif CharacterMgr:check_potential_red(self.v_buddy_id) then
+        is_show_red = true
+      end
+      self.v_uiobjects.Red:SetActive(not is_show_new and is_show_red)
+    else
+      self.v_uiobjects.Red:SetActive(false)
+    end
+  else
+    self.v_uiobjects.Red:SetActive(false)
+  end
+  self.v_uiobjects.New:SetActive(is_show_new)
+end
+
+function ui:get_red_status()
+  return self.v_uiobjects.Red.activeSelf
+end
+
+function ui:click_char()
+  if not self._if_own_char then
+    return
+  end
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_CHAR_SELECT)
+  msg.mm_x = self.v_buddy_id
+  msg.mm_y = self.v_robot_id
+  if not self.v_robot_id and self.v_buddy_info and not CharacterMgr.v_not_show_sys_red and not self.v_buddy_info.firstclick then
+    CharacterMgr:req_first_click_buddy(self.v_buddy_id)
+    self.v_buddy_info.firstclick = true
+    self:refresh_red_icon()
+  end
+end
+
+function ui:enable_tog()
+  self.v_toggle.isOn = false
+  self.v_toggle.isOn = self._if_own_char
+  return self._if_own_char
+end
+
+function ui:disable_tog()
+  self.v_toggle.isOn = false
+end
+
+function ui:refresh_select_state()
+  if not self.v_select_data then
+    self.v_uiobjects.Selected:SetActive(false)
+    return
+  end
+  local is_show = false
+  for _, id in ipairs(self.v_select_data.select_list) do
+    if id == self.v_buddy_id then
+      is_show = true
+      break
+    end
+  end
+  self.v_uiobjects.Selected:SetActive(is_show and self._if_own_char)
+end
+
+function ui:set_select_effect(is_show)
+  self.v_uiobjects.Selected_Dotween:SetActive(is_show and self._if_own_char)
+  self.v_toggle.interactable = not is_show
+  if not is_show then
+    self.v_toggle.isOn = false
+  end
+end
+
+return ui

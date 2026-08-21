@@ -1,0 +1,242 @@
+return {
+  [1001] = {
+    Group = 1,
+    Id = 1001,
+    Magic = {6031070},
+    MagicDesc = {
+      "光元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1002] = {
+    Group = 1,
+    Id = 1002,
+    Magic = {6031071},
+    MagicDesc = {
+      "雷元素异常专精提升<color=green>50%</color>"
+    }
+  },
+  [1003] = {
+    Group = 1,
+    Id = 1003,
+    Magic = {6031072},
+    MagicDesc = {
+      "水元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1004] = {
+    Group = 1,
+    Id = 1004,
+    Magic = {6031073},
+    MagicDesc = {
+      "光元素异常专精提升<color=green>50%</color>"
+    }
+  },
+  [1005] = {
+    Group = 1,
+    Id = 1005,
+    Magic = {6031074},
+    MagicDesc = {
+      "火元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1006] = {
+    Group = 1,
+    Id = 1006,
+    Magic = {6031075},
+    MagicDesc = {
+      "暗元素异常专精提升<color=green>50%</color>"
+    }
+  },
+  [1007] = {
+    Group = 1,
+    Id = 1007,
+    Magic = {6031076},
+    MagicDesc = {
+      "雷元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1008] = {
+    Group = 1,
+    Id = 1008,
+    Magic = {6031077},
+    MagicDesc = {
+      "暗元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1009] = {
+    Group = 1,
+    Id = 1009,
+    Magic = {6031078},
+    MagicDesc = {
+      "火元素异常专精提升<color=green>50%</color>"
+    }
+  },
+  [1010] = {
+    Group = 1,
+    Id = 1010,
+    Magic = {6031079},
+    MagicDesc = {
+      "水元素异常专精提升<color=green>50%</color>"
+    }
+  },
+  [1011] = {
+    Group = 2,
+    Id = 1011,
+    Magic = {6031070},
+    MagicDesc = {
+      "光元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1012] = {
+    Group = 2,
+    Id = 1012,
+    Magic = {6031071},
+    MagicDesc = {
+      "雷元素异常专精提升<color=green>50%</color>"
+    }
+  },
+  [1013] = {
+    Group = 2,
+    Id = 1013,
+    Magic = {6031072},
+    MagicDesc = {
+      "水元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1014] = {
+    Group = 2,
+    Id = 1014,
+    Magic = {6031073},
+    MagicDesc = {
+      "光元素异常专精提升<color=green>50%</color>"
+    }
+  },
+  [1015] = {
+    Group = 2,
+    Id = 1015,
+    Magic = {6031074},
+    MagicDesc = {
+      "火元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1016] = {
+    Group = 2,
+    Id = 1016,
+    Magic = {6031075},
+    MagicDesc = {
+      "暗元素异常专精提升<color=green>50%</color>"
+    }
+  },
+  [1017] = {
+    Group = 2,
+    Id = 1017,
+    Magic = {6031076},
+    MagicDesc = {
+      "雷元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1018] = {
+    Group = 2,
+    Id = 1018,
+    Magic = {6031077},
+    MagicDesc = {
+      "暗元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1019] = {
+    Group = 2,
+    Id = 1019,
+    Magic = {6031078},
+    MagicDesc = {
+      "火元素异常专精提升<color=green>50%</color>"
+    }
+  },
+  [1020] = {
+    Group = 2,
+    Id = 1020,
+    Magic = {6031079},
+    MagicDesc = {
+      "水元素异常专精提升<color=green>50%</color>"
+    }
+  },
+  [1021] = {
+    Group = 3,
+    Id = 1021,
+    Magic = {6031070},
+    MagicDesc = {
+      "光元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1022] = {
+    Group = 3,
+    Id = 1022,
+    Magic = {6031071},
+    MagicDesc = {
+      "雷元素异常专精提升<color=green>50%</color>"
+    }
+  },
+  [1023] = {
+    Group = 3,
+    Id = 1023,
+    Magic = {6031072},
+    MagicDesc = {
+      "水元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1024] = {
+    Group = 3,
+    Id = 1024,
+    Magic = {6031073},
+    MagicDesc = {
+      "光元素异常专精提升<color=green>50%</color>"
+    }
+  },
+  [1025] = {
+    Group = 3,
+    Id = 1025,
+    Magic = {6031074},
+    MagicDesc = {
+      "火元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1026] = {
+    Group = 3,
+    Id = 1026,
+    Magic = {6031075},
+    MagicDesc = {
+      "暗元素异常专精提升<color=green>50%</color>"
+    }
+  },
+  [1027] = {
+    Group = 3,
+    Id = 1027,
+    Magic = {6031076},
+    MagicDesc = {
+      "雷元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1028] = {
+    Group = 3,
+    Id = 1028,
+    Magic = {6031077},
+    MagicDesc = {
+      "暗元素伤害提升<color=green>30%</color>"
+    }
+  },
+  [1029] = {
+    Group = 3,
+    Id = 1029,
+    Magic = {6031078},
+    MagicDesc = {
+      "火元素异常专精提升<color=green>50%</color>"
+    }
+  },
+  [1030] = {
+    Group = 3,
+    Id = 1030,
+    Magic = {6031079},
+    MagicDesc = {
+      "水元素异常专精提升<color=green>50%</color>"
+    }
+  }
+}

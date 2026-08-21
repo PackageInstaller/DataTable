@@ -1,0 +1,245 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_black_bg = {
+    "BlackBg",
+    BIND_TYPE.BUTTON
+  },
+  v_left_btn = {
+    "LeftBtn",
+    BIND_TYPE.BUTTON
+  },
+  v_page_content = {
+    "PageContent",
+    BIND_TYPE.OBJECT
+  },
+  v_page_item = {
+    "PageItem",
+    BIND_TYPE.BUTTON
+  },
+  v_page_sv_ex = {
+    "PageSVEx",
+    BIND_TYPE.SCROLL
+  },
+  v_page = {
+    "Page",
+    BIND_TYPE.TEXT
+  },
+  v_right_btn = {
+    "RightBtn",
+    BIND_TYPE.BUTTON
+  }
+}
+local PageItem = require("uimodule.character.archives.archive_page_item")
+local PageListClass = require("ui.widget.page_scroll_view")
+local ARCHIVE_PAGE_ITEM_KEY = "ARCHIVE_PAGE_ITEM_KEY"
+local Input = UnityEngine.Input
+local Vec3 = require("base.vec3")
+local mathx = require("base.mathx")
+local _distance2 = mathx.distance2
+local _tsort = table.sort
+local _abs = math.abs
+
+function ui:ui_finish_load()
+  self.TuochSpeed = 2
+  self.Max = 3
+  self.Min = 0.5
+  self.v_screen_center_x = Global.screen_width / 2
+  self.v_screen_center_y = Global.screen_height / 2
+  self:init_model(MODEL)
+  self:set_button("BlackBg", function()
+    self:ui_hide()
+  end)
+  self:set_button("LeftBtn", function()
+    self.v_page_list:last_page()
+    self:fix_scale()
+  end)
+  self:set_button("RightBtn", function()
+    self.v_page_list:next_page()
+    self:fix_scale()
+  end)
+  Util.set_point_down(nil, self.v_uiobjects.LeftBtn, self, function()
+    self.v_is_touch_btn = true
+  end)
+  Util.set_point_down(nil, self.v_uiobjects.RightBtn, self, function()
+    self.v_is_touch_btn = true
+  end)
+  self.v_page_list = PageListClass:new(self, self.v_page_sv_ex, self.v_page_item, PageItem, ARCHIVE_PAGE_ITEM_KEY, 0, function(idx)
+    self:refresh_page(idx)
+  end)
+  self.v_page_content_trans = self.v_uicompents.PageContent_rect
+end
+
+function ui:ui_on_show(archive_id)
+  self.v_id = archive_id
+  local list = ShareRes.get_buddy_archive_page_list(archive_id)
+  _tsort(list, function(a, b)
+    return a.SortOrder < b.SortOrder
+  end)
+  self.v_page_list:update_list(list)
+  self:refresh_page(1)
+end
+
+function ui:ui_on_hide()
+  self.v_page_list:clear()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_page(idx)
+  local all_count = self.v_page_list:get_item_count()
+  self.v_page.text = string.format("%s/%s", idx, all_count)
+  self.v_left_btn:SetActive(idx > 1)
+  self.v_right_btn:SetActive(idx < all_count)
+  local cur_item = self.v_page_list:get_cur_item()
+  if cur_item then
+    self.Min = cur_item:get_min_scale()
+  end
+end
+
+function ui:ui_on_update()
+  self:_check_touch()
+end
+
+function ui:set_scroll_enable(enabled)
+  self.v_page_sv_ex.enabled = enabled
+end
+
+function ui:_check_touch()
+  if 1 == Input.touchCount then
+    if self.v_is_touch_btn then
+      return
+    end
+    self.v_page_sv_ex.enabled = false
+    self.v_dis_cache = nil
+    self.v_mid_x_cache = nil
+    self.v_mid_y_cache = nil
+    local cur_item = self.v_page_list:get_cur_item()
+    if not cur_item then
+      return
+    end
+    local touch_0_pos = Input.GetTouch(0).position
+    if self.v_one_touch_cache then
+      local offset_x = touch_0_pos.x - self.v_one_touch_cache.x
+      local offset_y = touch_0_pos.y - self.v_one_touch_cache.y
+      self:move_img(cur_item, offset_x, offset_y, false)
+    end
+    self.v_one_touch_cache = touch_0_pos
+  elseif 2 == Input.touchCount then
+    self.v_page_sv_ex.enabled = false
+    self.v_one_touch_cache = nil
+    local cur_item = self.v_page_list:get_cur_item()
+    if not cur_item then
+      return
+    end
+    local item_trans = cur_item:get_image_trans()
+    local touch_0_pos = Input.GetTouch(0).position
+    local touch_1_pos = Input.GetTouch(1).position
+    local orig_scale = item_trans.localScale.x
+    local new_dis = _distance2(touch_0_pos.x, touch_0_pos.y, touch_1_pos.x, touch_1_pos.y)
+    if not self.v_dis_cache then
+      self.v_dis_cache = new_dis
+      return
+    end
+    local scale_add = (new_dis - self.v_dis_cache) / 1000 * self.TuochSpeed
+    local new_scale = orig_scale + scale_add
+    if new_scale > self.Max and scale_add > 0 then
+      new_scale = self.Max
+      scale_add = 0
+    elseif new_scale < self.Min and scale_add < 0 then
+      new_scale = self.Min
+      scale_add = 0
+    end
+    item_trans:SetLocalScaleA(new_scale, new_scale, new_scale)
+    self.v_dis_cache = new_dis
+    self.v_need_force_center = new_scale < cur_item:get_min_scale()
+    if not self.v_mid_x_cache then
+      self.v_mid_x_cache = (touch_0_pos.x + touch_1_pos.x) / 2
+      self.v_mid_y_cache = (touch_0_pos.y + touch_1_pos.y) / 2
+    end
+    local offset_x = (self.v_screen_center_x - self.v_mid_x_cache) * scale_add
+    local offset_y = (self.v_screen_center_y - self.v_mid_y_cache) * scale_add
+    self:move_img(cur_item, offset_x, offset_y, true)
+  else
+    self.v_is_touch_btn = false
+    self.v_one_touch_cache = nil
+    self.v_dis_cache = nil
+    self.v_mid_x_cache = nil
+    self.v_mid_y_cache = nil
+    if self.v_need_force_center then
+      self.v_need_force_center = false
+      local cur_item = self.v_page_list:get_cur_item()
+      if not cur_item then
+        return
+      end
+      cur_item:get_image_trans():SetLocalPositionA(0, 0, 0)
+    end
+    if self.v_need_check_do_anim then
+      self.v_need_check_do_anim = false
+      local need_fix_img_scale = self.v_page_list:check_do_anim(0.25)
+      if need_fix_img_scale then
+        self:fix_scale()
+      end
+    end
+  end
+end
+
+function ui:fix_scale()
+  local items = self.v_page_list:get_items()
+  for _, v in pairs(items) do
+    v:fix_scale()
+  end
+end
+
+function ui:move_img(cur_item, add_offset_x, add_offset_y, dont_move_content)
+  local content_trans = cur_item:get_object_transform()
+  local image_trans = cur_item:get_image_trans()
+  local scale = image_trans.localScale.x
+  local content_wide = content_trans.sizeDelta.x
+  local content_high = content_trans.sizeDelta.y
+  local image_wide = image_trans.sizeDelta.x * scale
+  local image_high = image_trans.sizeDelta.y * scale
+  local new_pos_x
+  if content_wide > image_wide then
+    new_pos_x = 0
+    self.v_need_check_do_anim = true
+  else
+    new_pos_x = image_trans.localPosition.x + add_offset_x
+    if add_offset_x > 0 then
+      local max_offset_x = (image_wide - content_wide) / 2
+      if new_pos_x >= max_offset_x then
+        new_pos_x = max_offset_x
+        self.v_need_check_do_anim = true
+      end
+    elseif add_offset_x < 0 then
+      local min_offset_x = (content_wide - image_wide) / 2
+      if new_pos_x <= min_offset_x then
+        new_pos_x = min_offset_x
+        self.v_need_check_do_anim = true
+      end
+    end
+  end
+  local new_pos_y
+  if content_high > image_high then
+    new_pos_y = 0
+  else
+    new_pos_y = image_trans.localPosition.y + add_offset_y
+    if add_offset_y > 0 then
+      local max_offset_y = (image_high - content_high) / 2
+      if not (new_pos_y < max_offset_y) or not new_pos_y then
+        new_pos_y = max_offset_y
+      end
+    elseif add_offset_y < 0 then
+      local min_offset_y = (content_high - image_high) / 2
+      new_pos_y = new_pos_y > min_offset_y and new_pos_y or min_offset_y
+    end
+  end
+  image_trans:SetLocalPositionA(new_pos_x, new_pos_y, 0)
+  if self.v_need_check_do_anim and not dont_move_content then
+    self.v_page_content_trans:SetLocalPositionA(self.v_page_content_trans.localPosition.x + add_offset_x, 0, 0)
+  end
+end
+
+return ui

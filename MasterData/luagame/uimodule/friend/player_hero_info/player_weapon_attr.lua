@@ -1,0 +1,220 @@
+local Base = require("ui.uiobject")
+local CHAR_HELPER = require("uimodule.character.char_helper")
+local CHARACTER_CONFIG = require("uimodule.character.character_config")
+local FightDefine = require("cs_share.fight_define")
+local Player_Hero_Helper = require("uimodule.friend.player_hero_info.player_hero_helper")
+local CommonDef = require("cs_share.common_define")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local EQUIP_ATTR_BUDDY_KEY = "EQUIP_ATTR_BUDDY_KEY"
+local STAR_START_IDX = 1
+local WEAPON_MODEL = {
+  v_attr_content = {
+    "AttrContent",
+    BIND_TYPE.OBJECT
+  },
+  v_attr_temp = {
+    "AttrTemp",
+    BIND_TYPE.OBJECT
+  },
+  v_btn_change = {
+    "BtnChange",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_weapon_break_pre = {
+    "BtnWeaponBreakPre",
+    BIND_TYPE.BUTTON
+  },
+  v_equip_name = {
+    "Equip_name",
+    BIND_TYPE.TEXT
+  },
+  v_equip_quality = {
+    "Equip_quality",
+    BIND_TYPE.IMAGE
+  },
+  v_exp_max = {
+    "ExpMax",
+    BIND_TYPE.TEXT
+  },
+  v_exp_now = {
+    "ExpNow",
+    BIND_TYPE.TEXT
+  },
+  v_exp_silder = {
+    "Exp_Silder",
+    BIND_TYPE.IMAGE
+  },
+  v_lock = {
+    "Lock",
+    BIND_TYPE.BUTTON
+  },
+  v_lv_max = {
+    "LvMax",
+    BIND_TYPE.TEXT
+  },
+  v_lv_now = {
+    "LvNow",
+    BIND_TYPE.TEXT
+  },
+  v_star_layout = {
+    "StarLayout",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(WEAPON_MODEL)
+  self.v_skill_root = Util.get_child_gameobj("TongtiaoSkill", self.v_object)
+  if self.v_uiobjects.BtnWeaponBreakPre then
+    self:set_button("BtnWeaponBreakPre", function()
+      local data = {
+        weapon_uid = self.v_equip_info.uuid,
+        type = 2,
+        fixed_data = self.v_equip_info,
+        hide_own_res = true
+      }
+      UIMgr:get_ui("break_preview"):ui_show(data)
+    end)
+  end
+  self:get_uiobject("Lock"):SetActive(false)
+  self.v_open_type = self.v_parent_ui.v_weapon_attr_open_type
+  self.v_template_key = CHARACTER_CONFIG.WEAPON_ATTR_ITEM_TEMPLATE_KEY[self.v_open_type] .. "_PLAYER"
+  self:register_exist_auto_template(self.v_template_key, self.v_attr_temp, self.v_attr_content)
+  self.v_max_star_count = self.v_uiobjects.StarLayout.transform.childCount
+end
+
+function ui:ui_on_show()
+  self.v_buddy_info = Player_Hero_Helper.get_hero_data()
+  self.v_equip_info = self.v_buddy_info.weapon_info
+  self:refresh_equip_info(self.v_equip_info)
+  if self.v_uiobjects.ScrollView then
+    self:get_layout_element(nil, self.v_uiobjects.SkillDesc).minHeight = self.v_uicompents.ScrollView_rect.rect.height + 1
+  end
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:refresh_equip_info(equip_info)
+  self.v_equip_info = equip_info
+  local equip_id = equip_info.id
+  local equip_cfg = ShareRes.create("equip.equip", equip_id)
+  local exp, max_exp, can_up, need_break = Player_Hero_Helper.get_hero_weapon_exp_info()
+  local level = equip_info.lv
+  if not can_up then
+    exp = "-"
+    max_exp = need_break and "-" or "-<color=#ff3030>[MAX]</color>"
+  end
+  self.v_lv_now.text = level
+  self.v_lv_max.text = ShareRes.get_equip_max_level(equip_info.break_lv)
+  self.v_exp_now.text = exp
+  self.v_exp_max.text = max_exp
+  self.v_exp_silder.fillAmount = can_up and exp / max_exp or 1
+  self.v_equip_name.text = Util.format_quality_txt_color(equip_cfg.Name, equip_cfg.Quality)
+  local quality_cfg = ShareRes.get_equip_icon_cfg(equip_cfg.Quality)
+  local path = string.format("UICommon/%s", quality_cfg.QualityIcon)
+  ResMgr:load_set_icon(self.v_equip_quality, path)
+  local break_lv = equip_info.break_lv
+  break_lv = break_lv - 1
+  local max_star_num = CHAR_HELPER.get_equip_max_break_star_num(equip_id)
+  for i = STAR_START_IDX, self.v_max_star_count do
+    local star_obj = self.v_uiobjects["Star" .. i]
+    if star_obj then
+      star_obj.gameObject:SetActive(false)
+      if i <= max_star_num then
+        star_obj.gameObject:SetActive(true)
+        Util.get_child_gameobj("Lightup", star_obj.gameObject):SetActive(i <= break_lv)
+      end
+    end
+  end
+  if Player_Hero_Helper.is_fake then
+    self.v_uiobjects.BtnWeaponBreakPre:SetActive(false)
+  else
+    self.v_uiobjects.BtnWeaponBreakPre:SetActive(true)
+  end
+  self:refresh_attr_list(equip_info)
+  self:refresh_cur_skill(equip_info)
+end
+
+function ui:refresh_attr_list(equip_info)
+  self.v_equip_info = equip_info
+  self:give_back_auto_cache(self.v_template_key)
+  local attrs = equip_info.attrs
+  local curr_equip_cfg = ShareRes.create("equip.equip", equip_info.id)
+  local attr_key_list = {}
+  for i, v in pairs(curr_equip_cfg.BaseAttrList) do
+    local attr_cfg = ShareRes.get_buddy_attr_cfg(v)
+    attr_key_list[#attr_key_list + 1] = attr_cfg.Name
+  end
+  if 0 == #attr_key_list then
+    attr_key_list = {"hp", "attack"}
+  end
+  for index, attr_key in ipairs(attr_key_list) do
+    local attrs_value = attrs[attr_key]
+    attrs_value = attrs_value or 0
+    local attr_ui = self:get_auto_cache(self.v_template_key)
+    self:update_attr_item(attr_ui, attr_key, index, attrs_value)
+  end
+end
+
+function ui:update_attr_item(attr_ui, attr_key, index, attr_value)
+  local attr_id = FightDefine.CONFIG_NAME_ATTR_ID[attr_key]
+  local attr_cfg = ShareRes.get_buddy_attr_cfg(attr_id)
+  assert(attr_cfg, "ATTR_CFG NULL = " .. attr_id)
+  local attr_name_txt = Util.get_text("AttrName", attr_ui)
+  local attr_name = ShareRes.get_buddy_attr_name(attr_id)
+  attr_name_txt.text = attr_name
+  local attr_icon = Util.get_image("AttrIcon", attr_ui)
+  Util.load_attr_icon(attr_icon, attr_cfg.IconName)
+  local is_ration = ShareRes.get_is_ration_attr(attr_id)
+  local attr_val_txt = Util.get_text("AttrVal", attr_ui)
+  attr_val_txt.text = Util.format_number(attr_value, is_ration)
+  local bg_img = Util.get_image("Bg", attr_ui)
+  bg_img:SetActive(0 ~= index % 2)
+end
+
+local desc_format_str = [[
+<color=#D56D2E>+%s %s</color>
+%s]]
+local desc_format_str_percent = [[
+<color=#D56D2E>+%s%% %s</color>
+%s]]
+
+function ui:refresh_cur_skill(equip_info)
+  local advance_lv = equip_info.advance
+  local advance_cfg = ShareRes.create("equip.equip_advance", equip_info.id)
+  local skill_id = advance_cfg[advance_lv].SkillId
+  local skill_cfg = ShareRes.create("equip.equip_skill_level", skill_id)
+  local no_skill = nil == skill_cfg or skill_cfg.Name == ""
+  local no_attr = 0 == skill_cfg.AttrId or 0 == skill_cfg.AttrValue
+  if no_skill and no_attr then
+    self.v_uicompents.SkillName_txt.text = Util.format_str("无同调技能")
+    self.v_uicompents.SkillLvNum_txt.text = ""
+    self.v_uicompents.SkillDesc_txt.text = ""
+    self.v_uiobjects.SkillLvMax:SetActive(false)
+    if skill_cfg then
+      local skill_now_level = skill_cfg.Lv
+      local skill_max_lv = ShareRes.get_weapon_skill_max_lv(equip_info.id)
+      self.v_uiobjects.SkillLvMax:SetActive(skill_now_level == skill_max_lv)
+    end
+    return
+  end
+  local skill_now_level = skill_cfg.Lv
+  local skill_max_lv = ShareRes.get_weapon_skill_max_lv(equip_info.id)
+  self.v_uicompents.SkillName_txt.text = skill_cfg.Name
+  self.v_uicompents.SkillLvNum_txt.text = Util.format_str("Lv.{1}", skill_now_level)
+  if not no_attr then
+    local attribute_name = ShareRes.get_attr_name(skill_cfg.AttrId)
+    local attribute_isratio = ShareRes.get_is_ration_attr(skill_cfg.AttrId)
+    local isratio = attribute_isratio or 1 == skill_cfg.AttrType
+    local value = isratio and skill_cfg.AttrValue / 100 or skill_cfg.AttrValue
+    local format_key = isratio and desc_format_str_percent or desc_format_str
+    self.v_uicompents.SkillDesc_txt.text = string.format(format_key, value, attribute_name, skill_cfg.Desc)
+  else
+    self.v_uicompents.SkillDesc_txt.text = skill_cfg.Desc
+  end
+  self.v_uiobjects.SkillLvMax:SetActive(skill_now_level == skill_max_lv)
+end
+
+return ui

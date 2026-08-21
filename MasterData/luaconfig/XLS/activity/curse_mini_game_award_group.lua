@@ -1,0 +1,38 @@
+return {
+  {
+    AbilityDrop = 0,
+    AwardText = "挑战完成，+150[光尘]",
+    Bg = "UIEvent03/20240331/Event_bg_xyxtc_level1",
+    Id = 1,
+    ImagePath = "UIEvent03/20240331/Event_icon_xyxtc_1",
+    OrnametsDrop = 0,
+    RoomDrop = 16010
+  },
+  {
+    AbilityDrop = 1001,
+    AwardText = "挑战完成，+250[光尘]，获得一个片语",
+    Bg = "UIEvent03/20240331/Event_bg_xyxtc_level2",
+    Id = 2,
+    ImagePath = "UIEvent03/20240331/Event_icon_xyxtc_2",
+    OrnametsDrop = 0,
+    RoomDrop = 16011
+  },
+  {
+    AbilityDrop = 1001,
+    AwardText = "挑战完成，+350[光尘]，获得一个片语和一件奇珍",
+    Bg = "UIEvent03/20240331/Event_bg_xyxtc_level3",
+    Id = 3,
+    ImagePath = "UIEvent03/20240331/Event_icon_xyxtc_3",
+    OrnametsDrop = 1,
+    RoomDrop = 16012
+  },
+  {
+    AbilityDrop = 0,
+    AwardText = "挑战失败",
+    Bg = "UIEvent03/20240331/Event_bg_xyxtc_level4",
+    Id = 4,
+    ImagePath = "UIEvent03/20240331/Event_icon_xyxtc_4",
+    OrnametsDrop = 0,
+    RoomDrop = 0
+  }
+}

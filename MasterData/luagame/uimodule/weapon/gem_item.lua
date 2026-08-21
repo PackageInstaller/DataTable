@@ -1,0 +1,78 @@
+local Base = require("ui.uiobject")
+local LayoutRebuilder = UnityEngine.UI.LayoutRebuilder
+local M = Util.create_child_mt(Base)
+
+function M:ui_finish_load()
+  self.v_btn = Util.get_button(nil, self.v_object)
+end
+
+function M:ui_on_hide()
+  self.v_data = nil
+end
+
+function M:set_linked_parent(parent)
+  self.v_linked_parent = parent
+end
+
+function M:on_data_update(msg)
+  if self.v_data and msg and msg.mm_x == self.v_data.uuid then
+    self.v_data = GemStoneMgr:get_gem_data(self.v_data.uuid)
+    self:update_ui()
+  end
+end
+
+function M:set_data(go, data_list, index)
+  self:bind_auto_mq(Const.MSG_ON_GEM_UPDATE, self.on_data_update, self)
+  self.v_data = data_list[index]
+  self.v_index = index
+  self:update_ui()
+  self:set_button_listener(self.v_btn, function()
+    local msg = MsgGame:mq_publish2(Const.MSG_CLICK_GEM_LIST)
+    msg.mm_x = self.v_data.uuid
+  end)
+end
+
+function M:update_ui()
+  local uicom = self.v_uicompents
+  local icon_path, quality_path = UtilUI.get_item_images(self.v_data.id)
+  ResMgr:load_set_icon(uicom.QualityBg_img, quality_path)
+  ResMgr:load_set_icon(uicom.Icon_img, icon_path)
+  local owner = GemStoneMgr:get_gem_owner(self.v_data.uuid)
+  if 0 ~= owner then
+    local path = CharacterMgr:get_buddy_icon_path(owner)
+    ResMgr:load_set_icon(uicom.HeroIcon_img, path)
+  end
+  self.v_uiobjects.Wear:SetActive(0 ~= owner)
+  self.v_uiobjects.Lock:SetActive(false)
+  self.v_uiobjects.Lv:SetActive(true)
+  uicom.Lv_txt.text = Util.format_str("LV.{1}", self.v_data.level)
+  self.v_uiobjects.DarkMask:SetActive(self:is_dark())
+  self:update_selected()
+end
+
+function M:update_selected()
+  local is_selected = self:is_selected()
+  self.v_uiobjects.Select:SetActiveEx(is_selected)
+  return is_selected
+end
+
+function M:is_selected()
+  if self.v_data and self.v_linked_parent then
+    return self.v_data.uuid == self.v_linked_parent.v_left_selected_gem_uuid
+  end
+  return false
+end
+
+function M:is_dark()
+  if self.v_data and self.v_linked_parent then
+    local is_repeat = self.v_linked_parent:is_repeat_right_unselected_gem(self.v_data.id)
+    return is_repeat or self.v_data.quality > self.v_linked_parent:get_right_selected_gem_pos_quality()
+  end
+  return false
+end
+
+function M:is_visible_item()
+  return self.v_visible
+end
+
+return M

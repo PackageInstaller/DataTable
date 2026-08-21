@@ -1,0 +1,154 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local ccd = require("uimodule.stage_activity.challenge_ring_plus.curse_common_define")
+local EQUATION_OPERATION_TYPE = ccd.EQUATION_OPERATION_TYPE
+
+function ui:get_ability_count(genres_id)
+  if self.v_opeartion_type == EQUATION_OPERATION_TYPE.FILE_VIEW then
+    return self.v_data.ability_count_map[genres_id] or 0
+  else
+    return GenresMgr:get_ability_count(genres_id)
+  end
+end
+
+function ui:_refresh_sect_layout(obj_map, i, genres_id, ability_need_count)
+  local child = obj_map["Sect" .. i]
+  if not child then
+    return
+  end
+  local genres_cfg, sect_icon_img, talent_need_txt, talent_cur_txt
+  if genres_id and ability_need_count then
+    genres_cfg = ShareRes.get_genres_cfg(genres_id)
+    sect_icon_img = self:get_image(nil, obj_map["SectIcon" .. i])
+    ResMgr:load_set_icon(sect_icon_img, genres_cfg.IconPath, nil, true, self)
+    talent_need_txt = self:get_text(nil, obj_map["TalentNeed" .. i])
+    talent_need_txt.text = ability_need_count
+    talent_cur_txt = self:get_text(nil, obj_map["TalentNum" .. i])
+    local cur_count = self:get_ability_count(genres_id)
+    local enough = ability_need_count <= cur_count
+    local color_str = enough and "476DBB" or "D74343"
+    talent_cur_txt.text = cur_count
+    Util.set_color(talent_cur_txt, color_str)
+    child.gameObject:SetActive(true)
+  else
+    child.gameObject:SetActive(false)
+  end
+end
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(data, opeartion_type)
+  self.v_data = data
+  self.v_opeartion_type = data.opeartion_type or opeartion_type
+  if self.v_data.click_cb then
+    self:set_button_listener(nil, self.v_data.click_cb)
+  end
+  local equation_id = self.v_data.equation_id
+  local equation_cfg = ShareRes.get_curse_equation_cfg(equation_id)
+  ResMgr:load_set_icon(self.v_uicompents.Icon_img, equation_cfg.Icon, nil, true, self)
+  self.v_uicompents.Name_txt.text = equation_cfg.Name
+  local is_quick = self.v_opeartion_type == EQUATION_OPERATION_TYPE.QUICK_VIEW
+  local is_illustated = self.v_opeartion_type == EQUATION_OPERATION_TYPE.ILLUSTATED
+  self.v_uiobjects.SectLayout:SetActive(is_quick or self.v_opeartion_type == EQUATION_OPERATION_TYPE.FILE_VIEW)
+  self.v_uiobjects.LvIcon:SetActive(is_quick)
+  self.v_uiobjects.Select:SetActive(is_quick)
+  self.v_uiobjects.HandBookState:SetActive(is_illustated)
+  if is_quick then
+    self.v_uiobjects.Select:SetActive(false)
+    self.v_uiobjects.RedPoint:SetActive(false)
+    self:refresh_quick()
+    self:set_button_active(true)
+  end
+  if is_illustated then
+    self:refresh_illustated()
+  end
+  if self.v_opeartion_type == EQUATION_OPERATION_TYPE.FILE_VIEW then
+    self:refresh_file_view()
+  end
+end
+
+function ui:refresh_file_view()
+  self:refresh_quick()
+  self:set_button_active(false)
+end
+
+function ui:refresh_illustated()
+  local equation_id = self.v_data.equation_id
+  local is_unlock = FateBookMgr:check_illustrated_is_unlock(Config.CommonDefine.CURSE_ILLUSTRATED_TYPE.EQUATION, equation_id)
+  local unlock_str, alpha
+  if is_unlock then
+    unlock_str = "已收录"
+    alpha = 1
+  else
+    unlock_str = "未收录"
+    alpha = 0.9
+    self.v_uicompents.Name_txt.text = "？？？"
+  end
+  Util.change_component_alpha2(self.v_uicompents.Bg_img, alpha)
+  self:set_red_state()
+  self.v_uicompents.HandBookState_txt.text = unlock_str
+end
+
+function ui:refresh_quick()
+  local equation_id = self.v_data.equation_id
+  local equation_cfg = ShareRes.get_curse_equation_cfg(equation_id)
+  local sect_count = self.v_uicompents.SectLayout_rect.childCount
+  local star_count = self.v_uicompents.LvIcon_rect.childCount
+  local level = self.v_data.level
+  local next_level = level
+  local sect_info_list, star_obj, light_obj
+  local light_name = "Light"
+  if self.v_data and Util.is_more_than_zero(self.v_data.branch_id) then
+    local all_branch_cfg = ShareRes.get_curse_equation_branch_cfg(self.v_data.branch_id)
+    next_level = math.min(#all_branch_cfg, next_level + 1)
+    sect_info_list = all_branch_cfg[next_level] and all_branch_cfg[next_level].Sect or equation_cfg.Sect
+  else
+    sect_info_list = equation_cfg.Sect
+  end
+  local max_num = math.max(sect_count, star_count)
+  for i = 1, max_num do
+    if i <= sect_count then
+      local sect_info = sect_info_list[i]
+      local genres_id, ability_need_count
+      if sect_info then
+        genres_id, ability_need_count = sect_info.Sect, sect_info.Count
+      end
+      self:_refresh_sect_layout(self.v_uiobjects, i, genres_id, ability_need_count)
+    end
+    if i <= star_count then
+      star_obj = self.v_uicompents.LvIcon_rect:GetChild(i - 1)
+      light_obj = self:get_child_gameobj(light_name, star_obj)
+      light_obj.gameObject:SetActive(i <= level)
+    end
+  end
+end
+
+function ui:set_select(select_equation)
+  if self.v_opeartion_type == EQUATION_OPERATION_TYPE.ILLUSTATED then
+    self.v_uiobjects.Select:SetActive(select_equation == self.v_data.equation_id)
+  end
+end
+
+function ui:set_button_active(active)
+  self:get_button().interactable = active
+end
+
+function ui:set_red_state()
+  local is_red = FateBookMgr:get_red_state(Config.CommonDefine.CURSE_ILLUSTRATED_TYPE.EQUATION, self.v_data.equation_id)
+  self.v_uiobjects.RedPoint:SetActive(is_red)
+end
+
+function ui:on_clear()
+end
+
+return ui

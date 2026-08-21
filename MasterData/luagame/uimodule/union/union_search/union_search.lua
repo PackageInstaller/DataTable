@@ -1,0 +1,115 @@
+local LoopListClass = require("ui.widget.infinite_loop_list")
+local ItemClass = require("uimodule.union.union_search.union_search_item")
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_search_panel = {
+    "Search",
+    BIND_TYPE.OBJECT
+  },
+  v_input = {
+    "SearchInput",
+    BIND_TYPE.INPUT
+  },
+  v_union_scroll = {
+    "UnionScroll",
+    BIND_TYPE.OBJECT
+  },
+  v_no_union = {
+    "NoGuild",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnClear", function()
+    self:_onclick_clear_btn()
+  end)
+  self:set_button("BtnSearch", function()
+    self:_onclick_search_btn()
+  end)
+  self:set_inputfield_listener(self.v_input, function()
+    self:_on_input()
+  end, function()
+    self:_on_input_end()
+  end)
+  self.v_list_view = LoopListClass:new(self, self.v_union_scroll, ItemClass, nil, true)
+end
+
+function ui:ui_on_show()
+  self.v_search_target = ""
+  self.v_uiobjects.BtnClear:SetActive(false)
+  UnionMgr:request_get_recommend_unions(function(list)
+    self:_set_no_union_visible(0 == #list)
+    self.v_list_view:refresh_data(list)
+  end)
+  self:_regist_client_event()
+end
+
+function ui:ui_on_hide()
+  self.v_list_view:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+  self.v_list_view:ui_on_destroy()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_CHOOSE_UNION_ITEM, self._response_choose_union, self)
+end
+
+function ui:_set_no_union_visible(no_union)
+  self.v_no_union:SetActive(no_union)
+  self.v_search_panel:SetActive(not no_union)
+  self.v_union_scroll:SetActive(not no_union)
+end
+
+function ui:_response_choose_union(msg)
+  self.v_panels.union_search_info:set_enable(false)
+  self.v_panels.union_search_info:set_enable(true, msg.mm_obj, msg.mm_x)
+  for i, v in ipairs(self.v_list_view:get_all_uis()) do
+    v:set_select_bg(i == msg.mm_x)
+  end
+end
+
+function ui:_onclick_clear_btn()
+  local need_refresh = self.v_search_target ~= nil and self.v_search_target ~= ""
+  self.v_search_target = ""
+  self.v_input.text = ""
+  self.v_uiobjects.BtnClear:SetActive(false)
+  if not need_refresh then
+    return
+  end
+  local list = UnionMgr:get_union_list()
+  self.v_list_view:refresh_data(list)
+end
+
+function ui:_onclick_search_btn()
+  if self.v_search_target and self.v_search_target ~= "" then
+    UnionMgr:request_search_recommend_unions(self.v_search_target, function(list)
+      self.v_list_view:refresh_data(list)
+    end)
+  end
+end
+
+function ui:_on_input()
+  local len = Util.get_string_len(self.v_input.text)
+  self.v_uiobjects.BtnClear:SetActive(len > 0)
+end
+
+function ui:_on_input_end()
+  self.v_search_target = self.v_input.text
+end
+
+function ui:refresh_union_data(index)
+  local data_list = UnionMgr:get_union_list()
+  local child_ui = self.v_list_view:get_item_ui(index)
+  if child_ui then
+    child_ui:set_data(nil, data_list, index)
+    child_ui:force_click_tog(true)
+  end
+end
+
+return ui

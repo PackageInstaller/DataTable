@@ -1,0 +1,21 @@
+local cfg = {}
+cfg.BATTLE_TALENT_TREE_CFG_PATH = "fight_talent/fight_talent_tree"
+cfg.BATTLE_TALENT_POINT_CFG_PATH = "fight_talent/fight_talent_point"
+cfg.BATTLE_TALENT_ATTRS_CFG_PATH = "fight_talent/fight_talent_attrs"
+cfg.BUDDY_JOB_CFG_PATH = "buddy/buddy_job"
+cfg.BUDDY_CFG_PATH = "buddy/buddy"
+cfg.BATTLE_TALENT_ITEM_KEY = "BATTLE_TALENT_ITEM_KEY"
+cfg.BATTLE_TALENT_CONTEXT_ITEM_KEY = "BATTLE_TALENT_CONTEXT_ITEM_KEY"
+cfg.JOB_TOGGLE = {
+  First = 1,
+  Second = 2,
+  Third = 3
+}
+cfg.TALENT_POINT_STATE = {
+  ACESS = 1,
+  UNSELECT = 2,
+  ACTIVE = 3
+}
+cfg.TALENT_POINT_TYPE = {MAIN = 1, SUB = 2}
+cfg.TALENT_TREE_STATE = {NOT_ACT = 0, ACT = 1}
+return cfg

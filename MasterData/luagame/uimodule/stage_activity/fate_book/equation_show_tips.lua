@@ -1,0 +1,64 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local ccd = require("uimodule.stage_activity.challenge_ring_plus.curse_common_define")
+local EQUATIONSHOWTIPS_TEMP = "EQUATIONSHOWTIPS_TEMP"
+local EQUATION_ITEM = require("uimodule.stage_activity.fate_book.equation_item")
+
+function ui:on_click_CloseBg()
+  self:ui_hide()
+end
+
+function ui:on_click_EquationTem()
+end
+
+function ui:ui_finish_load()
+  self:set_button("CloseBg", function()
+    self:on_click_CloseBg()
+  end)
+  self:set_button("EquationTem", function()
+    self:on_click_EquationTem()
+  end)
+  self:register_exist_auto_template(EQUATIONSHOWTIPS_TEMP, self.v_uiobjects.EquationTem, self.v_uiobjects.EquationContent)
+  self:get_auto_cache(EQUATIONSHOWTIPS_TEMP)
+  self:give_back_auto_cache(EQUATIONSHOWTIPS_TEMP)
+  self.v_equation_item_map = {}
+end
+
+function ui:ui_on_show()
+  self:refresh_view()
+end
+
+function ui:ui_on_hide()
+  self:clear_equation_item()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_view()
+  self:clear_equation_item()
+  local equation_data_map = FateBookMgr:get_equation_data_map()
+  local build_data
+  for equation_id, equation_data in pairs(equation_data_map) do
+    local obj = self:get_auto_cache(EQUATIONSHOWTIPS_TEMP)
+    self.v_equation_item_map[equation_id] = EQUATION_ITEM:ui_wrap_ex(self, obj, true)
+    build_data = {
+      equation_id = equation_id,
+      level = equation_data.level,
+      branch_id = equation_data.branch_id,
+      key = equation_id
+    }
+    self.v_equation_item_map[equation_id]:set_data(build_data, true, true, ccd.EQUATION_OPERATION_TYPE.SHOW_TIPS)
+  end
+end
+
+function ui:clear_equation_item()
+  self:give_back_auto_cache(EQUATIONSHOWTIPS_TEMP)
+  for key, equation_item in pairs(self.v_equation_item_map) do
+    equation_item:ui_hide()
+    equation_item:ui_destroy()
+    self.v_equation_item_map[key] = nil
+  end
+end
+
+return ui

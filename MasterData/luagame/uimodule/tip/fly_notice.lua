@@ -1,0 +1,118 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local MOVE_DIR = {
+  X = 1,
+  Y = 2,
+  Z = 3
+}
+
+function ui:ui_finish_load()
+  self.v_notice_tra = self.v_uiobjects.Notice.transform
+  self.v_notice_fade_obj = self:get_canvas_group(nil, self.v_notice_tra.parent)
+  self.v_notcie_lab = self:get_text(nil, self.v_uiobjects.Label)
+end
+
+function ui:ui_on_show(fly_data, ...)
+  self.v_tween_obj_list = {}
+  self.v_sq = Util.create_sequence()
+  for _, v in ipairs(fly_data.actions) do
+    if self[v.action] then
+      self[v.action](self, self.v_sq, v.param)
+    end
+  end
+  self.v_sq:AppendCallback(function()
+    self:ui_hide()
+  end)
+end
+
+function ui:ui_on_hide()
+  if self.v_sq then
+    self.v_sq:Kill(false)
+    self.v_sq = nil
+  end
+  for _, v in pairs(self.v_tween_obj_list) do
+    v:SetActive(false)
+  end
+  self.v_tween_obj_list = nil
+end
+
+function ui:_get_tween_obj(param)
+  local tween_obj
+  if param.tween_obj_name then
+    tween_obj = self[param.tween_obj_name].transform
+  elseif param.tween_obj then
+    tween_obj = param.tween_obj
+  else
+    Log.Error("there is't a tweeen obj exist")
+  end
+  tween_obj:SetActive(true)
+  table.insert(self.v_tween_obj_list, tween_obj)
+  return tween_obj
+end
+
+function ui:do_inverval(sq, param)
+  sq:AppendInterval(param.interval)
+end
+
+function ui:do_local_move(sq, param)
+  local tween_obj = self:_get_tween_obj(param)
+  if not tween_obj then
+    return
+  end
+  if param.start then
+    tween_obj.transform:SetLocalPositionA(param.start.x, param.start.y, param.start.z)
+  end
+  local dir = param.dir
+  local target = param.target
+  local interval = param.interval
+  if MOVE_DIR.X == dir then
+    sq:Append(tween_obj.transform:DOLocalMoveX(target, interval))
+  elseif MOVE_DIR.Y == dir then
+    sq:Append(tween_obj.transform:DOLocalMoveY(target, interval))
+  elseif MOVE_DIR.Z == dir then
+    sq:Append(tween_obj.transform:DOLocalMoveZ(target, interval))
+  end
+end
+
+function ui:do_move(sq, param)
+  local tween_obj = self:_get_tween_obj(param)
+  if not tween_obj then
+    return
+  end
+  if param.start then
+    tween_obj.transform:SetPositionA(param.start.x, param.start.y, param.start.z)
+  end
+  local dir = param.dir
+  local target = param.target
+  local interval = param.interval
+  if MOVE_DIR.X == dir then
+    sq:Append(tween_obj.transform:DOMoveX(target, interval))
+  elseif MOVE_DIR.Y == dir then
+    sq:Append(tween_obj.transform:DOMoveY(target, interval))
+  elseif MOVE_DIR.Z == dir then
+    sq:Append(tween_obj.transform:DOMoveZ(target, interval))
+  end
+end
+
+function ui:do_fade(sq, param)
+  local tween_obj = self:_get_tween_obj(param)
+  if not tween_obj then
+    return
+  end
+  local canvas_group = self:get_canvas_group(nil, tween_obj)
+  if not canvas_group then
+    Log.Error("tween_obj don't exist canvas group")
+    return
+  end
+  if param.start_alpha then
+    canvas_group.alpha = param.start_alpha
+  else
+    canvas_group.alpha = 1
+  end
+  sq:Append(canvas_group:DOFade(param.target, param.interval))
+end
+
+function ui:do_scale()
+end
+
+return ui

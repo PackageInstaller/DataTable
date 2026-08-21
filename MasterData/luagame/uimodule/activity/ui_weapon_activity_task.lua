@@ -1,0 +1,87 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local UI_WEAPON_ACTIVITY_TASK_ITEM = require("uimodule.activity.ui_weapon_activity_task_item")
+local TASKCONTENT_TASKTEM_TEMP_KEY = "TASKCONTENT_TASKTEM_TEMP_KEY"
+
+function ui:on_click_BgClose()
+  self:ui_hide()
+end
+
+function ui:on_click_BtnClose()
+  self:ui_hide()
+end
+
+function ui:ui_finish_load()
+  self:set_button("BgClose", function()
+    self:on_click_BgClose()
+  end)
+  self:set_button("BtnClose", function()
+    self:on_click_BtnClose()
+  end)
+  self:register_exist_auto_template(TASKCONTENT_TASKTEM_TEMP_KEY, self.v_uiobjects.TaskTem, self.v_uiobjects.TaskContent)
+  self.v_activity_task_item = {}
+end
+
+function ui:ui_on_show(task_group_id, activity_id)
+  self.v_task_group_id = task_group_id
+  self.v_activity_id = activity_id
+  self:refresh_view()
+  self:check_close()
+  self:bind_auto_mq(Const.MSG_NOVICE_ACTIVITY_CLOSE, self.check_close, self)
+end
+
+function ui:check_close()
+  local is_active = NoviceMgr:get_novice_activity_active(self.v_activity_id)
+  if not is_active then
+    self:ui_hide()
+  end
+end
+
+function ui:ui_on_hide()
+  self:clear_task_item()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_view()
+  self:clear_task_item()
+  local task_map = ShareRes.get_task_group(self.v_task_group_id)
+  local task_list = UtilTable.map2list(task_map, function(a, b)
+    local a_priority = a.Priority
+    local b_priority = b.Priority
+    if a_priority ~= b_priority then
+      return a_priority < b_priority
+    elseif a.Id ~= b.Id then
+      return a.Id < b.Id
+    else
+      return false
+    end
+  end)
+  local suc_count, all_count = TaskMgr:get_task_group_count(self.v_task_group_id)
+  for index, task_cfg in ipairs(task_list) do
+    local obj = self:get_auto_cache(TASKCONTENT_TASKTEM_TEMP_KEY)
+    self.v_activity_task_item[task_cfg.Id] = UI_WEAPON_ACTIVITY_TASK_ITEM:ui_wrap_ex(self, obj, true)
+    self.v_activity_task_item[task_cfg.Id]:set_data(task_cfg.Id)
+  end
+  self.v_uicompents.TaskNum_txt.text = string.format("(%d/%d)", suc_count, all_count)
+end
+
+function ui:clear_task_item()
+  self:give_back_auto_cache(TASKCONTENT_TASKTEM_TEMP_KEY)
+  for key, item in pairs(self.v_activity_task_item) do
+    item:ui_hide()
+    item:ui_destroy()
+    self.v_activity_task_item[key] = nil
+  end
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.v_task_group_id, self.v_activity_id
+end
+
+return ui

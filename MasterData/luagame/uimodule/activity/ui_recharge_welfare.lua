@@ -1,0 +1,99 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local Shop_Helper = require("uimodule.shop.shop_helper")
+
+function ui:ui_finish_load()
+  self:set_button("BtnReCharge", function()
+    self:on_click_recharge()
+  end)
+  self:set_button("BtnRule", function()
+    self:on_click_rule()
+  end)
+end
+
+function ui:ui_on_show()
+  self:refresh()
+end
+
+function ui:refresh()
+  local recharge_money = RechargeMgr:get_recharge_money()
+  self.v_uicompents.RechargeNum_txt.text = "￥" .. recharge_money
+  local item_cfg = ShareRes.get_item_cfg(5)
+  local item_name = Util.get_text("ItemName", self.v_uiobjects.Dia)
+  item_name.text = item_cfg.Name
+  local item_icon = Util.get_image("Icon", self.v_uiobjects.Dia)
+  local icon_path = ShareRes.get_item_icon_path(5)
+  ResMgr:load_set_icon(item_icon, icon_path)
+  local range_cfg = ShareRes.get_recharge_welfare_range_cfg()
+  local sum = 0
+  for _, bound in ipairs(range_cfg) do
+    if recharge_money <= bound.LowerBound then
+      break
+    end
+    local n = recharge_money > bound.UpperBound and bound.UpperBound - bound.LowerBound or recharge_money - bound.LowerBound
+    sum = sum + n * bound.Ratio
+  end
+  local item_count = Util.get_text("AmountBg/Amount", self.v_uiobjects.Dia)
+  sum = math.ceil(sum)
+  item_count.text = sum
+  local item_id = tonumber(ShareRes.get_recharge_welfare_const_cfg(1))
+  item_cfg = ShareRes.get_item_cfg(item_id)
+  icon_path = ShareRes.get_item_icon_path(item_id)
+  local max_count = tonumber(ShareRes.get_recharge_welfare_const_cfg(2))
+  local recharge_module_data = RechargeMgr:get_recharge_module_data()
+  local card_count = 0
+  for _, value in ipairs(recharge_module_data.history_recharge_key) do
+    if value.product_key == "tc.bb.3000monthcard1" then
+      card_count = value.recharge_count
+      break
+    end
+  end
+  card_count = max_count < card_count and max_count or card_count
+  self:set_node(self.v_uiobjects.MonthCard, icon_path, card_count, item_cfg.Name, card_count < 1)
+  local passport_data = PassPortMgr:get_passport_data()
+  item_id = tonumber(ShareRes.get_recharge_welfare_const_cfg(3))
+  local level = 0
+  if passport_data.is_senior then
+    level = level + 1
+    if passport_data.is_special then
+      level = level + 1
+      item_id = tonumber(ShareRes.get_recharge_welfare_const_cfg(4))
+    end
+  end
+  item_cfg = ShareRes.get_item_cfg(item_id)
+  icon_path = ShareRes.get_item_icon_path(item_id)
+  local num
+  if 0 ~= level then
+    local cfg = ShareRes.get_battle_passport_key_cfg(level)
+    num = string.format("%s%s", Shop_Helper.get_money_symbol(cfg), Shop_Helper.get_goods_price(cfg))
+  end
+  self:set_node(self.v_uiobjects.Order, icon_path, num, item_cfg.Name, 0 == level)
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:set_node(node, icon_path, num, name, set_gray)
+  local icon = Util.get_image("Icon", node)
+  local amount_bg = Util.get_child_gameobj("AmountBg", node)
+  local item_name = Util.get_text("ItemName", node)
+  local amount = Util.get_text("AmountBg/Amount", node)
+  ResMgr:load_set_icon(icon, icon_path)
+  item_name.text = name
+  amount.text = num
+  amount_bg:SetActive(not set_gray)
+  Util.apply_grey_ex(node, set_gray)
+end
+
+function ui:on_click_recharge()
+  SysOpenMgr:jump_to_sys(12106, true)
+end
+
+function ui:on_click_rule()
+  UIMgr:get_ui("info_tips"):ui_show(1)
+end
+
+return ui

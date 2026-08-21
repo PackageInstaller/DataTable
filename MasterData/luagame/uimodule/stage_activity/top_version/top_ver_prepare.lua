@@ -1,0 +1,208 @@
+local Base = require("ui.uibase")
+local CHAPTER_CONFIG = require("uimodule.chapter.chapter_config")
+local CommonDef = require("cs_share.common_define")
+local CHAR_HELPER = require("uimodule.character.char_helper")
+local ui = Util.create_child_mt(Base)
+local TOP_VER_SKILL_DESC_ITEM = "TOP_VER_SKILL_DESC_ITEM"
+local Act_ID = CommonDef.ACTY_TYPE.BEST_CONFIG_FIGHT
+local LayoutRebuilder = UnityEngine.UI.LayoutRebuilder
+local FORCE_UPDATE_TIME = 6
+
+function ui:ui_finish_load()
+  self:set_button("BtnReturn", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnConfirm", function()
+    self:_onclick_conform_btn()
+  end)
+  self:set_button("BtnChange", function()
+    self:_onclick_change_btn()
+  end)
+  self.v_skill_items = {}
+  for i = 1, 6 do
+    self.v_skill_items[i] = self.v_uiobjects["SkillTog" .. i]
+  end
+  self:register_exist_auto_template(TOP_VER_SKILL_DESC_ITEM, self.v_uiobjects.SkillDescItem, self.v_uiobjects.Content)
+  self.v_content_rect = self:get_rect_transform(nil, self.v_uiobjects.Content)
+end
+
+function ui:ui_on_show(stage_id, buddy_id, team_pos, ...)
+  self.v_stage_id = stage_id
+  self.v_buddy_id = buddy_id
+  self.v_team_pos = team_pos
+  self.v_fight_type = CommonDef.CHALLENGE_TYPE.BEST_CONF
+  self.v_formation_type = CommonDef.CHAL_TYPE2FORMN_TYPE[self.v_fight_type]
+  self.v_select_list = {}
+  self.v_equipd_skill = ActivityMgr:invoke(Act_ID, "get_hero_skill_list", self.v_stage_id, self.v_buddy_id)
+  self.v_tog_list = {}
+  self.v_left_point = 0
+  self.v_part_check_list = {}
+  self.v_update_cnt = 0
+  self:_get_hero_skills()
+  for _, v in pairs(self.v_equipd_skill) do
+    local info = ShareRes.create("activity.best_config_fight_skill", v)
+    table.insert(self.v_select_list, info)
+  end
+  self:_refresh_areas()
+  self:_refresh_hero_info()
+  self:_refresh_point()
+  self:_refresh_skill_info()
+end
+
+function ui:ui_on_update()
+  if self.v_update_cnt < FORCE_UPDATE_TIME then
+    self:_enable_tog()
+    LayoutRebuilder.ForceRebuildLayoutImmediate(self.v_content_rect)
+    self.v_update_cnt = self.v_update_cnt + 1
+  end
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:_get_hero_skills()
+  local list = ShareRes.create("activity.best_config_fight_skill_by_buddy", self.v_buddy_id)
+  self.v_skills = {}
+  for _, v in pairs(list) do
+    table.insert(self.v_skills, v)
+  end
+  table.sort(self.v_skills, function(a, b)
+    return a.Id < b.Id
+  end)
+end
+
+function ui:_refresh_areas()
+  self.v_auto_set = true
+  self.v_tog_list = {}
+  for idx, v in ipairs(self.v_skills) do
+    self:_set_skills(self.v_skill_items[idx], idx)
+  end
+  self.v_auto_set = false
+end
+
+function ui:_set_skills(obj, part_idx)
+  local skill_id = self.v_skills[part_idx].Id
+  local skill_cfg = ShareRes.create("battle.battle_skill", skill_id)
+  if not skill_cfg then
+    Log.Error("read battle_skill failure! skill_id=", skill_id)
+    return
+  end
+  local skill_icon = self:get_image("Icon", obj)
+  local icon_path = CHAR_HELPER.get_char_battle_skill_icon(skill_id)
+  ResMgr:load_set_icon(skill_icon, icon_path)
+  local info = self.v_skills[part_idx]
+  local point = self:get_text("Left/Point", obj)
+  point.text = info.PointPrice
+  local tog = self:get_toggle(nil, obj)
+  local selected = false
+  for _, v in ipairs(self.v_select_list) do
+    if v.Id == skill_id then
+      selected = true
+      break
+    end
+  end
+  local checkBg = self:get_child_gameobj("Checkmark/Choose", obj)
+  checkBg:SetActive(selected)
+  self:set_toggle_listener(tog, function(isOn)
+    if self.v_auto_set then
+      return
+    end
+    checkBg:SetActive(isOn)
+    self:_onclick_skill_item(isOn, part_idx)
+  end, selected)
+end
+
+function ui:_enable_tog()
+  for k, v in pairs(self.v_tog_list) do
+    k.canvasRenderer:SetAlpha(v)
+  end
+end
+
+function ui:_onclick_skill_item(isOn, part_idx)
+  local info = self.v_skills[part_idx]
+  if isOn then
+    table.insert(self.v_select_list, 1, info)
+  else
+    for i, v in ipairs(self.v_select_list) do
+      if v.Id == info.Id then
+        table.remove(self.v_select_list, i)
+        break
+      end
+    end
+  end
+  self:_refresh_areas()
+  self:_refresh_point()
+  self:_refresh_skill_info()
+end
+
+function ui:_refresh_skill_info()
+  self:give_back_auto_cache(TOP_VER_SKILL_DESC_ITEM, false)
+  for _, v in ipairs(self.v_select_list) do
+    local obj = self:get_auto_cache(TOP_VER_SKILL_DESC_ITEM)
+    local cfg = ShareRes.create("battle.battle_skill", v.Id)
+    local desc_obj = self:get_child_gameobj("DescList/SkillDesc1", obj)
+    desc_obj:SetActive(true)
+    local desc = self:get_text("SkillContent", desc_obj)
+    desc.text = string.format("%s：%s", cfg.Name, cfg.SkillDesc)
+  end
+  LayoutRebuilder.ForceRebuildLayoutImmediate(self.v_content_rect)
+  self.v_update_cnt = 0
+end
+
+function ui:_refresh_point()
+  local total = 0
+  for _, v in pairs(self.v_select_list) do
+    total = total + v.PointPrice
+  end
+  local stage_cfg = ShareRes.create("activity.best_config_fight_episode", self.v_stage_id)
+  self.v_left_point = stage_cfg.Point[self.v_team_pos] - total
+  self.v_uicompents.LeftPoint_txt.text = self.v_left_point < 0 and Util.set_str_color(Config.HLIGHT_COLOR.RED, self.v_left_point) or self.v_left_point
+end
+
+function ui:_refresh_hero_info()
+  local img = UtilUI.get_hero_images(self.v_buddy_id, 1)
+  ResMgr:load_set_icon(self.v_uicompents.CharIcon_img, img)
+end
+
+function ui:_onclick_conform_btn()
+  if self.v_left_point < 0 then
+    Util.show_message_tip(2297)
+    return
+  end
+  local tb = {}
+  for k, v in pairs(self.v_select_list) do
+    table.insert(tb, v.Id)
+  end
+  ActivityMgr:invoke(Act_ID, "request_set_best_conf_skill", self.v_stage_id, self.v_buddy_id, tb)
+  self:ui_hide()
+end
+
+function ui:_onclick_change_btn()
+  local select_buddy_id, pos_data = self:get_select_buddy_id(self.v_team_pos)
+  local cur_id = FormationMgr:get_formation_use_id(self.v_formation_type, self.v_fight_type)
+  local param_info = {
+    select_pos = self.v_team_pos,
+    formation_type = self.v_formation_type,
+    select_team_id = cur_id,
+    select_buddy_id = select_buddy_id,
+    pos_data = pos_data,
+    point_id = self.v_stage_id,
+    use_fixed_char_pool = false
+  }
+  UIMgr:get_ui("character_enter"):ui_show(param_info)
+end
+
+function ui:get_select_buddy_id(pos)
+  local cur_id = FormationMgr:get_formation_use_id(self.v_formation_type, self.v_fight_type)
+  local starting_pos, pos_data = FormationMgr:get_formation_info_by_id(self.v_formation_type, cur_id, self.v_fight_type)
+  if not pos_data then
+    return
+  end
+  for _, slot in pairs(pos_data) do
+    if slot.pos == pos and 0 ~= slot.buddy_id then
+      return slot.buddy_id, pos_data
+    end
+  end
+end
+
+return ui

@@ -1,0 +1,577 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+local PuzzleCfg = ShareRes.create("buddy.buddy_puzzle")
+local EquipCfg = ShareRes.create("equip.equip")
+local CommonDefind = require("cs_share.common_define")
+local LocalStorage = require("utils.localstorage")
+local ARCH_STATUS = {LOCK = 1, OPEN = 2}
+M.CommonDefind = CommonDefind
+local GESTURE_TYPE = {ON = 1, UNDER = 2}
+local CAMP_LIST = {
+  [1001] = {
+    id = 1001,
+    red_id = RedEnum.ARCHIVES_CONCERN_NET_CAMP1
+  },
+  [2001] = {
+    id = 2001,
+    red_id = RedEnum.ARCHIVES_CONCERN_NET_CAMP2
+  },
+  [3001] = {
+    id = 3001,
+    red_id = RedEnum.ARCHIVES_CONCERN_NET_CAMP3
+  },
+  [4001] = {
+    id = 4001,
+    red_id = RedEnum.ARCHIVES_CONCERN_NET_CAMP4
+  }
+}
+local COLOR_TYPE = {
+  TagNameSelect = {
+    color = Util.get_unity_color_by_hex(tonumber("fff0d5", 16)),
+    a = 1
+  },
+  TagNameUnSelect = {
+    color = Util.get_unity_color_by_hex(tonumber("bcb4a5", 16)),
+    a = 0.6
+  },
+  TagEnNameSelect = {
+    color = Util.get_unity_color_by_hex(tonumber("bcb4a5", 16)),
+    a = 0.6
+  },
+  TagEnNameUnSelect = {
+    color = Util.get_unity_color_by_hex(tonumber("bcb4a6", 16)),
+    a = 0.30196078431372547
+  }
+}
+local ACHIVE_RED_TO_UINAME = {
+  [RedEnum.ARCHIVES_CONCERN_NET] = "char_map",
+  [RedEnum.ARCHIVES_WORLD_DICTIONARY] = "world_dic",
+  [RedEnum.ARCHIVES_FASHION] = "fashion_book",
+  [RedEnum.ARCHIVES_ENEMY_INFORMATION] = "enemy_info_sys",
+  [RedEnum.ARCHIVES_MOVE_VIDEO] = "archive_story",
+  [RedEnum.ARCHIVES_ALBUM_SYS] = "archive_photo",
+  [RedEnum.ARCHIVES_EQUIP_SYS_FIRST] = "ui_archive_equip"
+}
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_fashion_list_with_time = {}
+  self.v_arch_open_list = nil
+  self.v_concern_net_list = nil
+  self.v_world_dic_list = nil
+  self.v_enemy_info_list = nil
+  self.v_move_video_list = nil
+  self.v_album_list = nil
+  self.v_all_server_sorce_info_list = {}
+  self.v_is_save_fasion_operation = false
+  self.v_un_color = COLOR_TYPE.TagNameUnSelect.color
+  self.v_un_color.a = COLOR_TYPE.TagNameUnSelect.a
+  self.v_color = COLOR_TYPE.TagNameSelect.color
+  self.v_color.a = COLOR_TYPE.TagNameSelect.a
+  self.v_en_color = COLOR_TYPE.TagEnNameSelect.color
+  self.v_en_color.a = COLOR_TYPE.TagEnNameSelect.a
+  self.v_en_un_color = COLOR_TYPE.TagEnNameUnSelect.color
+  self.v_en_un_color.a = COLOR_TYPE.TagEnNameUnSelect.a
+  self:on_set_red_unable()
+end
+
+function M:on_set_red_unable()
+  RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_CONCERN_NET_CAMP1, false)
+  RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_CONCERN_NET_CAMP2, false)
+  RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_CONCERN_NET_CAMP3, false)
+  RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_CONCERN_NET_CAMP4, false)
+  RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_WORLD_DICTIONARY, false)
+  RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_ENEMY_INFORMATION, false)
+  RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_MOVE_VIDEO, false)
+  RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_ALBUM_SYS, false)
+end
+
+function M:active_red(red_id)
+  if not red_id then
+    return
+  end
+  local storage_key = string.format("archive_red_%s_", red_id)
+  LocalStorage:save_int(storage_key, 0, true)
+  RedPointMgr:enable_redpoint(red_id, true)
+end
+
+function M:clear_red(red_id)
+  if not red_id then
+    return
+  end
+  local storage_key = string.format("archive_red_%s_", red_id)
+  LocalStorage:save_int(storage_key, 1, true)
+  RedPointMgr:enable_redpoint(red_id, false)
+end
+
+function M:update_red_state()
+  for red_id, ui_name in pairs(ACHIVE_RED_TO_UINAME) do
+    local is_open = SysOpenMgr:get_is_ui_open(ui_name)
+    local storage_key = string.format("archive_red_%s_", red_id)
+    local had_click = 1 == LocalStorage:load_int(storage_key, 0, true)
+    if is_open and had_click and red_id == RedEnum.ARCHIVES_FASHION then
+      FashionMgr:enable_fashion_red_point()
+    else
+      RedPointMgr:enable_redpoint(red_id, is_open and not had_click)
+    end
+  end
+end
+
+function M:update_concern_net_red()
+  for id, info in pairs(CAMP_LIST) do
+    self:update_concern_net_camp_red(info.id)
+  end
+end
+
+function M:update_concern_net_camp_red(camp_id)
+  local is_show_red = false
+  local char_data = ShareRes.create("archives.concern_net")
+  for char_id, info in pairs(char_data) do
+    if info.Camp == camp_id and self.v_concern_net_list[char_id] and self.v_concern_net_list[char_id].red_state then
+      is_show_red = true
+      break
+    end
+  end
+  RedPointMgr:enable_redpoint(CAMP_LIST[camp_id].red_id, is_show_red)
+  return is_show_red
+end
+
+function M:upadte_dic_red()
+  do return end
+  local is_show_red = false
+  for key, info in pairs(self.v_world_dic_list) do
+    if info.red_state then
+      is_show_red = true
+      break
+    end
+  end
+  RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_WORLD_DICTIONARY, is_show_red)
+end
+
+function M:update_dic_title_red(title_id)
+  if title_id then
+    local dic_list = ShareRes.get_dictionary_content_cfg(title_id)
+    if dic_list then
+      for _, info in pairs(dic_list) do
+        if self.v_world_dic_list[info.Id].red_state then
+          return true
+        end
+      end
+    else
+      Log.Error("配置中无此词典页签Id对应的词条--", title_id)
+    end
+  end
+end
+
+function M:update_enemy_red()
+  local is_show_red = false
+  for id, info in pairs(self.v_enemy_info_list) do
+    if info.red_state then
+      is_show_red = true
+      break
+    end
+  end
+  RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_ENEMY_INFORMATION, is_show_red)
+end
+
+function M:update_enemy_tag_red(type)
+  local is_show_red = false
+  local enemy_list = ShareRes.get_enemy_list_cfg(type)
+  for _, info in pairs(enemy_list) do
+    if self.v_enemy_info_list[info.id] and self.v_enemy_info_list[info.id].red_state then
+      is_show_red = true
+      break
+    end
+  end
+  return is_show_red
+end
+
+function M:update_voideo_red()
+  local is_show_red = false
+  for key, info in pairs(self.v_move_video_list) do
+    if info.red_state then
+      is_show_red = true
+    end
+  end
+  RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_MOVE_VIDEO, is_show_red)
+  return is_show_red
+end
+
+function M:update_voieo_group_red(data)
+  local is_show_red = false
+  local list = ShareRes.create("archives.video_list_group", data.Id)
+  if not self:is_to_achieve_Condition(data.ConditionID, false) then
+    return false
+  end
+  if list then
+    for key, info in pairs(list) do
+      if self.v_move_video_list[info.Id] and self.v_move_video_list[info.Id].red_state then
+        is_show_red = true
+        break
+      end
+    end
+  end
+  return is_show_red
+end
+
+function M:check_is_open(tag_id)
+end
+
+function M:get_voieo_group_unlock_num(group_id)
+  local num = 0
+  local list = ShareRes.create("archives.video_list_group", group_id)
+  if list then
+    for key, info in pairs(list) do
+      if self.v_move_video_list[info.Id] and not self.v_move_video_list[info.Id].lock_state then
+        num = num + 1
+      end
+    end
+  end
+  return num
+end
+
+function M:update_voieo_title_red(tag_id)
+  local is_show_red = false
+  local group_id_list = ShareRes.get_archive_group_cfg(tag_id)
+  if group_id_list then
+    for key, info in pairs(group_id_list) do
+      if self:update_voieo_group_red(info) then
+        is_show_red = true
+        break
+      end
+    end
+  end
+  return is_show_red
+end
+
+function M:update_photo_red()
+  local is_show_red = false
+  for key, info in pairs(self.v_album_list) do
+    if info.red_state then
+      is_show_red = true
+      break
+    end
+  end
+  RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_ALBUM_SYS, is_show_red)
+  return is_show_red
+end
+
+function M:update_photo_title_red(title_id)
+  if self.v_album_list == nil then
+    return
+  end
+  local is_show_red = false
+  local title_id_list = ShareRes.get_archive_photo_title_cfg(title_id)
+  for key, info in ipairs(title_id_list) do
+    if nil ~= self.v_album_list[info.Id] and self.v_album_list[info.Id].red_state then
+      is_show_red = true
+    end
+  end
+  return is_show_red
+end
+
+function M:is_to_achieve_Condition(condition_list, is_show_tips)
+  local tb = {}
+  local is_achieve = true
+  local not_achieve_condition_id = 0
+  if not condition_list then
+    return is_achieve
+  end
+  for _, v in pairs(condition_list) do
+    if 0 ~= v then
+      is_achieve = Condition:check_condition(v, false)
+      if is_achieve then
+        break
+      end
+      if 0 == not_achieve_condition_id then
+        not_achieve_condition_id = v
+      end
+    end
+  end
+  if not is_achieve and is_show_tips then
+    Condition:check_condition(not_achieve_condition_id, true)
+  end
+  return is_achieve
+end
+
+function M:is_unlock_archive_equip(weapon_id)
+  if self.v_archive_equip_list then
+    return self.v_archive_equip_list[weapon_id] ~= nil
+  end
+  return false
+end
+
+function M:is_redpoint_archive_equip(weapon_id)
+  if self.v_archive_equip_list then
+    return self.v_archive_equip_list[weapon_id]
+  end
+  return false
+end
+
+function M:is_unlock_archive_puzzle(id)
+  if self.v_archive_puzzle_list then
+    return self.v_archive_puzzle_list[id] ~= nil
+  end
+  return false
+end
+
+function M:is_redpoint_archive_puzzle(id)
+  if self.v_archive_puzzle_list then
+    return self.v_archive_puzzle_list[id]
+  end
+  return false
+end
+
+function M:on_arch_open_list(data)
+end
+
+function M:on_update_arch_open(data)
+end
+
+function M:on_concern_net_list(data)
+  self.v_concern_net_list = data.concern_buddy_list
+end
+
+function M:on_concern_net_data(data)
+  local id = data.concern_buddy_data.id
+  self.v_concern_net_list[id] = data.concern_buddy_data
+  local char_data = ShareRes.create("archives.concern_net", id)
+  if data.concern_buddy_data and data.concern_buddy_data.red_state then
+    self:active_red(RedEnum.ARCHIVES_CONCERN_NET)
+  end
+end
+
+function M:on_world_dictionary_list(data)
+  self.v_world_dic_list = data.world_dictionary_list
+end
+
+function M:on_world_dictionary_data(data)
+  self.v_world_dic_list[data.world_dictionary_data.id] = data.world_dictionary_data
+end
+
+function M:on_enemy_information_list(data)
+  self.v_enemy_info_list = data.enemy_information_list
+end
+
+function M:on_enemy_information_data(data)
+  self.v_enemy_info_list[data.enemy_information_data.id] = data.enemy_information_data
+  if data.enemy_information_data and data.enemy_information_data.red_state then
+    self:active_red(RedEnum.ARCHIVES_ENEMY_INFORMATION)
+  end
+end
+
+function M:on_enemy_information_server_data(data)
+  self.v_all_server_sorce_info_list = data.enemy_information_list
+end
+
+function M:on_move_video_list(data)
+  self.v_move_video_list = data.move_video_list
+end
+
+function M:on_move_video_data(data)
+  self.v_move_video_list[data.move_video_data.id] = data.move_video_data
+  if data.move_video_data and data.move_video_data.red_state then
+    self:active_red(RedEnum.ARCHIVES_MOVE_VIDEO)
+  end
+end
+
+function M:on_album_list(data)
+  self.v_album_list = data.album_list
+end
+
+function M:on_album_data(data)
+  self.v_album_list[data.album_data.id] = data.album_data
+  if data.album_data and data.album_data.red_state then
+    self:active_red(RedEnum.ARCHIVES_ALBUM_SYS)
+  end
+end
+
+function M:on_archive_equip_list(data)
+  self.v_archive_equip_list = {}
+  for idx, arch_data in pairs(data.equip_arch_list) do
+    if self:check_archive_equip_show(arch_data.id) then
+      self.v_archive_equip_list[arch_data.id] = arch_data.red_state
+    end
+  end
+  RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_EQUIP_SYS_EQUIP, self:check_archive_equip_any_red())
+end
+
+function M:on_archive_equip_data(data)
+  local arch_data = data.equip_arch_data
+  self.v_archive_equip_list = self.v_archive_equip_list or {}
+  self.v_archive_equip_list[arch_data.id] = arch_data.red_state
+  if self:check_archive_equip_show(arch_data.id) and arch_data.red_state then
+    RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_EQUIP_SYS_EQUIP, true)
+  end
+end
+
+function M:check_archive_equip_show(id)
+  local cfg = EquipCfg[id]
+  if not cfg then
+    Log.error("获取武器配置失败,id:", id)
+    return false
+  end
+  if not cfg.ShowInArchive then
+    return false
+  end
+  local buddy_id = cfg.BuddyID
+  if not buddy_id then
+    Log.error("请检查武器表BuddyID字段,不可为空,武器id:", id)
+    return false
+  end
+  return ShareRes.get_buddy_is_show(buddy_id) and CharacterMgr:check_buddy_release(buddy_id)
+end
+
+function M:check_archive_equip_any_red()
+  if self.v_archive_equip_list then
+    for id, state in pairs(self.v_archive_equip_list) do
+      if state and self:check_archive_equip_show(id) then
+        return true
+      end
+    end
+  end
+  return false
+end
+
+function M:disable_all_equip_red()
+  local id_list = {}
+  for id, state in pairs(self.v_archive_equip_list) do
+    if state then
+      id_list[#id_list + 1] = id
+    end
+  end
+  if next(id_list) then
+    ArchiveMgr:req_click_action_all(ArchiveMgr.CommonDefind.ARCH_TYPE.EQUIP_SYS, id_list)
+    RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_EQUIP_SYS_EQUIP, false)
+  end
+end
+
+function M:on_archive_puzzle_list(data)
+  self.v_archive_puzzle_list = {}
+  for idx, arch_data in pairs(data.puzzle_arch_list) do
+    if self:check_archive_puzzle_show(arch_data.id) then
+      self.v_archive_puzzle_list[arch_data.id] = arch_data.red_state
+    end
+  end
+  RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_EQUIP_SYS_PUZZLE, self:check_archive_puzzle_any_red())
+end
+
+function M:on_archive_puzzle_data(data)
+  local arch_data = data.puzzle_arch_data
+  if not self:check_archive_puzzle_show(arch_data.id) then
+    return
+  end
+  self.v_archive_puzzle_list = self.v_archive_puzzle_list or {}
+  self.v_archive_puzzle_list[arch_data.id] = arch_data.red_state
+  if arch_data and arch_data.red_state then
+    RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_EQUIP_SYS_PUZZLE, true)
+  end
+end
+
+function M:check_archive_puzzle_show(id)
+  local cfg = PuzzleCfg[id]
+  return cfg and cfg.ShowInArchive
+end
+
+function M:check_archive_puzzle_any_red()
+  if self.v_archive_puzzle_list then
+    for id, state in pairs(self.v_archive_puzzle_list) do
+      if state and self:check_archive_puzzle_show(id) then
+        return true
+      end
+    end
+  end
+  return false
+end
+
+function M:disable_all_puzzle_red()
+  if not self.v_archive_puzzle_list then
+    return
+  end
+  local id_list = {}
+  for id, state in ipairs(self.v_archive_puzzle_list) do
+    if state then
+      id_list[#id_list + 1] = id
+    end
+  end
+  if next(id_list) then
+    ArchiveMgr:req_click_action_all(ArchiveMgr.CommonDefind.ARCH_TYPE.PUZZLE_SYS, id_list)
+    RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_EQUIP_SYS_PUZZLE, false)
+  end
+end
+
+function M:req_click_action(type, data_id, callback)
+  Network:call("c2gs_click_action", {arch_type = type, id = data_id}, function(ok)
+    if ok then
+      if type == CommonDefind.ARCH_TYPE.CONCERN_NET then
+        self.v_concern_net_list[data_id].red_state = false
+        local char_data = ShareRes.create("archives.concern_net", data_id)
+      elseif type == CommonDefind.ARCH_TYPE.WORLD_DICTIONARY then
+        self.v_world_dic_list[data_id].red_state = false
+      elseif type == CommonDefind.ARCH_TYPE.ENEMY_INFORMATION then
+        self.v_enemy_info_list[data_id].red_state = false
+        local enemy_data = ShareRes.get_enemy_cfg(data_id)
+      elseif type == CommonDefind.ARCH_TYPE.MOVE_VIDEO then
+        self.v_move_video_list[data_id].red_state = false
+      elseif type == CommonDefind.ARCH_TYPE.ALBUM_SYS then
+        self.v_album_list[data_id].red_state = false
+      elseif type == CommonDefind.ARCH_TYPE.EQUIP_SYS then
+        self.v_archive_equip_list[data_id] = false
+        RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_EQUIP_SYS_EQUIP, self:check_archive_equip_any_red())
+      elseif type == CommonDefind.ARCH_TYPE.PUZZLE_SYS then
+        self.v_archive_puzzle_list[data_id] = false
+        RedPointMgr:enable_redpoint(RedEnum.ARCHIVES_EQUIP_SYS_PUZZLE, self:check_archive_puzzle_any_red())
+      end
+      if callback then
+        callback()
+      end
+    end
+  end)
+end
+
+function M:req_click_action_all(type, data_id_tb)
+  if data_id_tb and next(data_id_tb) then
+    Network:call("c2gs_batch_click_action", {arch_type = type, id_list = data_id_tb}, function(ok)
+    end)
+    for tb_idx, tb_data in pairs(data_id_tb) do
+      if type == CommonDefind.ARCH_TYPE.CONCERN_NET then
+        self.v_concern_net_list[tb_data].red_state = false
+      elseif type == CommonDefind.ARCH_TYPE.EQUIP_SYS then
+        self.v_archive_equip_list[tb_data] = false
+      elseif type == CommonDefind.ARCH_TYPE.PUZZLE_SYS then
+        self.v_archive_puzzle_list[tb_data] = false
+      end
+    end
+  end
+end
+
+function M:req_set_monster_score(enemy_id, monsterScore)
+  Network:call("c2gs_enemy_monster_setscore", {id = enemy_id, score = monsterScore}, function(ok)
+    if ok then
+      Util.show_message_tip(2327)
+    else
+      Util.show_message_tip(2328)
+    end
+  end)
+end
+
+function M:req_set_monster_true(enemy_id, type, cb)
+  local last_gesture = self.v_enemy_info_list[enemy_id].gesture_type
+  Network:call("c2gs_enemy_monster_setgesture", {id = enemy_id, gesture_type = type}, function(ok)
+    if ok and cb then
+      cb()
+    end
+    if ok then
+      Util.show_message_tip(2327)
+    else
+      Util.show_message_tip(2328)
+    end
+  end)
+end
+
+function M:unlock_world_dic_list(dic_list_id)
+  Network:call("c2gs_world_dictionary_finish", {id = dic_list_id}, function(ok)
+  end)
+end
+
+return M

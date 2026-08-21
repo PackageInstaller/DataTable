@@ -1,0 +1,92 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local TEMPLATE_KEY = {
+  CUR_UNIT_ITEM = "CUR_UNIT_ITEM",
+  ATTR_ITEM = "ATTR_ITEM"
+}
+
+function M:ui_finish_load()
+  local unit_temp = self.v_uiobjects.Npc_Item
+  self:register_exist_auto_template(TEMPLATE_KEY.CUR_UNIT_ITEM, unit_temp, unit_temp.transform.parent.gameObject)
+  local attr_temp = self.v_uiobjects.Attr_Item
+  self:register_exist_auto_template(TEMPLATE_KEY.ATTR_ITEM, attr_temp, attr_temp.transform.parent.gameObject)
+  self.v_search_input = self:get_inputfield(nil, self.v_uiobjects.SearchInput)
+  self.v_search_attr = false
+  self:set_inputfield_listener(self.v_search_input, nil, function()
+    self:_on_input_complete()
+  end)
+  self:set_button("SearchBtn", function()
+    self:_onclick_search_btn()
+  end)
+end
+
+function M:ui_on_show()
+  self:_refresh_cur_unit_list()
+end
+
+function M:ui_on_hide()
+end
+
+function M:_regist_client_event()
+end
+
+function M:_refresh_cur_unit_list()
+  local npc_list = SceneMgr:get_all_npc()
+  local hero_list = SceneMgr:get_hero_list()
+  self:give_back_auto_cache(TEMPLATE_KEY.CUR_UNIT_ITEM, false)
+  if nil ~= hero_list and nil ~= next(hero_list) then
+    for hero_uuid, hero in pairs(hero_list) do
+      self:_set_data(hero)
+    end
+  end
+  if nil ~= npc_list and nil ~= next(npc_list) then
+    for npc_uuid, npc in pairs(npc_list) do
+      self:_set_data(npc)
+    end
+  end
+end
+
+function M:_refresh_attr_list(unit)
+  self:give_back_auto_cache(TEMPLATE_KEY.ATTR_ITEM, false)
+  local list = unit.attr_mgr.attrs
+  for attr_id, attr_val in pairs(list) do
+    local obj = self:get_auto_cache(TEMPLATE_KEY.ATTR_ITEM)
+    local attr_lab = self:get_text("AttrValue", obj)
+    attr_lab.text = string.format("%s：%s", ShareRes.equip_attr_str(attr_id) or "XX", math.floor(attr_val))
+    local input = self:get_inputfield("NewAttrValue", obj)
+    local setBtn = self:get_button("SetBtn", obj)
+    setBtn.onClick:RemoveAllListeners()
+    setBtn.onClick:AddListener(function()
+      self:_onclick_set_attr_btn(unit, attr_id, input)
+    end)
+  end
+end
+
+function M:_set_data(unit)
+  local obj = self:get_auto_cache(TEMPLATE_KEY.CUR_UNIT_ITEM)
+  local name = self:get_text("Text", obj)
+  name.text = unit:get_name()
+  local unitBtn = self:get_button(nil, obj)
+  unitBtn.onClick:RemoveAllListeners()
+  unitBtn.onClick:AddListener(function()
+    self:_refresh_attr_list(unit)
+  end)
+end
+
+function M:_on_input_complete()
+  self.v_search_attr = self.v_search_input.text
+end
+
+function M:_onclick_search_btn()
+end
+
+function M:_onclick_set_attr_btn(unit, attr_id, input)
+  local str = input.text
+  local list = Util.split_str(str, ",")
+  for i = 1, 3 do
+    unit:set_cur_attr(GROUP_TYPE.MODULE_ATTR, attr_id, list[i], VALUE_TYPE.RATIO, SET_TYPE.REPLACE)
+  end
+end
+
+return M

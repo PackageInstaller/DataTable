@@ -1,0 +1,602 @@
+return {
+  Cam_H1001001_born = {
+    "Sound_H1001001_show_born",
+    "Voice_H1001001_show_born"
+  },
+  Cam_H1001001_exskill_1_S = {
+    "Sound_Cam_H1001001_exskill_1_S"
+  },
+  Cam_H1001001_exskill_2_S = {
+    "Sound_Cam_H1001001_exskill_2_S"
+  },
+  Cam_H1001001_finish_1 = {
+    "Sound_H1001001_show_finish",
+    "Voice_H1001001_show_finish"
+  },
+  Cam_H1001004_born = {
+    "Sound_H1001004_show_born",
+    "Voice_H1001004_show_born"
+  },
+  Cam_H1001004_finish = {
+    "Sound_H1001004_show_finish",
+    "Voice_H1001004_show_finish"
+  },
+  Cam_H1001008_born = {
+    "Sound_H1001008_show_born",
+    "Voice_H1001008_show_born"
+  },
+  Cam_H1001008_finish = {
+    "Sound_H1001008_show_finish",
+    "Voice_H1001008_show_finish"
+  },
+  Cam_H1001009_born = {
+    "Sound_H1001009_show_born",
+    "Voice_H1001009_show_born"
+  },
+  Cam_H1001009_finish = {
+    "Sound_H1001009_show_finish",
+    "Voice_H1001009_show_finish"
+  },
+  Cam_H1001010_born = {
+    "Sound_H1001010_show_born",
+    "Voice_H1001010_show_born"
+  },
+  Cam_H1001010_finish = {
+    "Sound_H1001010_show_finish",
+    "Voice_H1001010_show_finish"
+  },
+  Cam_H1001011_born = {
+    "Sound_H1001011_show_born",
+    "Voice_H1001011_show_born"
+  },
+  Cam_H1001011_finish = {
+    "Sound_H1001011_show_finish",
+    "Voice_H1001011_show_finish"
+  },
+  Cam_H1001012_born = {
+    "Voice_H1001012_show_born",
+    "Sound_H1001012_show_born"
+  },
+  Cam_H1001012_finish = {
+    "Voice_H1001012_show_finish",
+    "Sound_H1001012_show_finish"
+  },
+  Cam_H1001013_born = {
+    "Voice_H1001013_show_born",
+    "Sound_H1001013_show_born"
+  },
+  Cam_H1001013_finish = {
+    "Sound_H1001013_show_finish",
+    "Voice_H1001013_show_finish"
+  },
+  Cam_H1001014_born = {
+    "Voice_H1001014_show_born",
+    "Sound_H1001014_show_born"
+  },
+  Cam_H1001014_finish = {
+    "Voice_H1001014_show_finish",
+    "Sound_H1001014_show_finish"
+  },
+  Cam_H1001015_born = {
+    "Sound_H1001015_born",
+    "Voice_H1001015_show_born"
+  },
+  Cam_H1001015_finish = {
+    "Sound_H1001015_finish",
+    "Voice_H1001015_show_finish"
+  },
+  Cam_H1001016_born = {
+    "Voice_H1001016_show_born",
+    "Sound_H1001016_show_born"
+  },
+  Cam_H1001016_finish = {
+    "Voice_H1001016_show_finish",
+    "Sound_H1001016_show_finish"
+  },
+  Cam_H1001017_born = {
+    "Sound_H1001017_show_born",
+    "Voice_H1001017_show_born"
+  },
+  Cam_H1001017_finish = {
+    "Sound_H1001017_show_finish",
+    "Voice_H1001017_show_finish"
+  },
+  Cam_H1001018_born = {
+    "Sound_H1001018_show_born",
+    "Voice_H1001018_show_born"
+  },
+  Cam_H1001018_finish = {
+    "Voice_H1001018_show_finish",
+    "Sound_H1001018_show_finish"
+  },
+  Cam_H1001019_born = {
+    "Sound_H1001019_show_born",
+    "Voice_H1001019_show_born"
+  },
+  Cam_H1001019_finish = {
+    "Sound_H1001019_show_finish",
+    "Voice_H1001019_show_finish"
+  },
+  Cam_H1001020_born = {
+    "Sound_H1001020_show_born",
+    "Voice_H1001020_show_born"
+  },
+  Cam_H1001020_finish = {
+    "Sound_H1001020_show_finish",
+    "Voice_H1001020_show_finish"
+  },
+  Cam_H1001021_born = {
+    "Sound_H1001021_show_born",
+    "Voice_H1001021_show_born"
+  },
+  Cam_H1001021_finish = {
+    "Sound_H1001021_show_finish",
+    "Voice_H1001021_show_finish"
+  },
+  Cam_H1001022_born = {
+    "Sound_H1001022_show_born",
+    "Voice_H1001022_show_born"
+  },
+  Cam_H1001022_finish = {
+    "Voice_H1001022_show_finish",
+    "Sound_H1001022_show_finish"
+  },
+  Cam_H1001023_born = {
+    "Sound_H1001023_show_born",
+    "Voice_H1001023_show_born"
+  },
+  Cam_H1001023_finish = {
+    "Sound_H1001023_show_finish",
+    "Voice_H1001023_show_finish"
+  },
+  Cam_H1001024_born = {
+    "Sound_H1001024_show_born",
+    "Voice_H1001024_show_born"
+  },
+  Cam_H1001024_finish = {
+    "Sound_H1001024_show_finish",
+    "Voice_H1001024_show_finish"
+  },
+  Cam_H1001025_born = {
+    "Sound_H1001025_show_born",
+    "Voice_H1001025_show_born"
+  },
+  Cam_H1001025_finish = {
+    "Sound_H1001025_show_finish",
+    "Voice_H1001025_show_finish"
+  },
+  Cam_H1002309_born = {
+    "Sound_H1002309_show_born",
+    "Voice_H1002309_show_born"
+  },
+  Cam_H1002309_finish = {
+    "Sound_H1002309_show_finish",
+    "Voice_H1002309_show_finish"
+  },
+  Timeline_main_1_0 = {
+    "Sound_Timeline_main_1"
+  },
+  timeline0_1up = {
+    "Sound_timeline0_1up"
+  },
+  timeline0_2_drop = {
+    "timeline0_2drop"
+  },
+  timeline0_2down = {
+    "timeline0_2down"
+  },
+  TIMELINE0_1_3_0 = {
+    "Sound_TIMELINE0_1_3_0"
+  },
+  TIMELINE0_3_1_0 = {
+    "Sound_TIMELINE0_3_1_0",
+    "Voice_TIMELINE0_3_1_0"
+  },
+  TIMELINE0_4_1_0 = {
+    "Sound_TIMELINE0_4_1_0",
+    "Voice_TIMELINE0_4_1_0"
+  },
+  TIMELINE1_1_1 = {
+    "Sound_Sc01_tl01"
+  },
+  TIMELINE1_1_1_0 = {
+    "Sound_TIMELINE1_1_1_0",
+    "Voice_TIMELINE1_1_1_0"
+  },
+  timeline1_3_daozhuan = {
+    "Sound_timeline1_3_daozhuan"
+  },
+  timeline1_3_henji = {
+    "Sound_CameraMove2"
+  },
+  timeline1_4_weizhishanqu = {
+    "Sound_CameraMove1"
+  },
+  timeline_1_4_dianti = {
+    "Sound_timeline_1_4_dianti"
+  },
+  timeline_sound_10110701 = {
+    "sound_10110701"
+  },
+  timeline1_2ningsha = {
+    "Sound_timeline1_2ningsha"
+  },
+  timeline2_1 = {
+    "Sound_timeline2_1"
+  },
+  timeline_pingzhang = {
+    "Sound_timeline_pingzhang"
+  },
+  timeline1_3_anmen = {
+    "Sound_Sc01_04_anmen2"
+  },
+  TIMELINE1_BOSS_0 = {
+    "Sound_TIMELINE1_BOSS"
+  },
+  timeline_10150101 = {
+    "Sound_timeline_10150101"
+  },
+  Timeline2_boss_0 = {
+    "Sound_Timeline2_boss_0"
+  },
+  timeline_n0203 = {
+    "Sound_Sc02_06"
+  },
+  TIMELINE2_1_1_2 = {
+    "Sound_Timeline2_1_1_2",
+    "Voice_Timeline2_1_1_2"
+  },
+  timeline_B0213 = {
+    "Sound_B0213"
+  },
+  ["2-1-2Timeline"] = {
+    "Sound_Sc03_12"
+  },
+  ["3-2-4Timeline"] = {
+    "Sound_3-2-4Timeline"
+  },
+  ["3-2-6Timeline"] = {
+    "Sound_3-2-6Timeline"
+  },
+  ["4-1-2Timeline"] = {
+    "Sound_4-1-2Timeline"
+  },
+  tl_10007 = {
+    "Sound_tl_10007"
+  },
+  tl_100073 = {
+    "Sound_tl_100073"
+  },
+  timeline2_3_2 = {
+    "Sound_timeline2_3_2"
+  },
+  timeline_32C2 = {
+    "Sound_Sc03_22"
+  },
+  timeline_32j4 = {
+    "Sound_timeline_32j4"
+  },
+  timeline_32j6 = {
+    "Sound_timeline_32j6"
+  },
+  timeline_32j8 = {
+    "Sound_timeline_32j8"
+  },
+  timeline_32j9 = {
+    "Sound_timeline_32j9"
+  },
+  ZX05_on = {
+    "Sound_ZX05_on"
+  },
+  TIMELINE3_1_1_0 = {
+    "Sound_Timeline3_1_1_0"
+  },
+  TIMELINE3_BOSS_0 = {
+    "Sound_Timeline3_boss_0"
+  },
+  timeline3_3_1 = {
+    "Sound_Sc03_timeline3_3_1"
+  },
+  TIMELINE3_3_3_0 = {
+    "Sound_Sc03_TIMELINE3_3_3_0"
+  },
+  timeline3_3daota = {
+    "Sound_Sc03_tl103304"
+  },
+  timeline3_3men = {
+    "Sound_timeline3_3men"
+  },
+  timeline3_3pingtai = {
+    "Sound_timeline3_3pingtai"
+  },
+  ["timeline3_3shimen 1"] = {
+    "Sound3_3shimen"
+  },
+  timeline3_3shimen = {
+    "Sound_timeline3_3shimen3"
+  },
+  timeline_n04051 = {
+    "Sound_timeline_n04051"
+  },
+  ["timeline_n14101-1"] = {
+    "Sound_timeline_n14101-1"
+  },
+  TIMELINE5_1_1_0 = {
+    "Sound_TIMELINE5_1_1_0"
+  },
+  TIMELINE5_2_1_0 = {
+    "Voice_TIMELINE5_2_1_0",
+    "Sound_TIMELINE5_2_1_0"
+  },
+  TIMELINE6_1_1 = {
+    "Sound_TIMELINE6_1_1_0",
+    "Voice_TIMELINE6_1_1_0"
+  },
+  TIMELINE6_1_1_0 = {
+    "Sound_TIMELINE6_1_1_0",
+    "Voice_TIMELINE6_1_1_0"
+  },
+  TIMELINE6_2_1_0 = {
+    "Sound_TIMELINE6_2_1_0",
+    "Voice_TIMELINE6_2_1_0"
+  },
+  TIMELINE6_BOSS_0 = {
+    "Sound_TIMELINE6_BOSS_0"
+  },
+  timeline_10660202 = {
+    "Sound_timeline_10660202"
+  },
+  TL_breakpath1 = {
+    "Sound_TL_breakpath1"
+  },
+  TL_breakpath2 = {
+    "Sound_TL_breakpath2"
+  },
+  TL_DamBreak = {
+    "Sound_DamBreak"
+  },
+  TIMELINE7_1_1_0 = {
+    "Sound_TIMELINE7_1_1_0",
+    "Voice_TIMELINE7_1_1_0"
+  },
+  TIMELINE7_2_1 = {
+    "Sound_TIMELINE7_2_1_0"
+  },
+  TIMELINE7_2_1_0 = {
+    "Sound_TIMELINE7_2_1_0"
+  },
+  TIMELINE7_2_2_0 = {
+    "Voice_TIMELINE7_2_2_0",
+    "Sound_TIMELINE7_2_2_0"
+  },
+  TIMELINE7_3_1_0 = {
+    "Sound_TIMELINE7_3_1_0",
+    "Voice_TIMELINE7_3_1_0"
+  },
+  timeline_1070901 = {
+    "Sound_timeline_1070901"
+  },
+  timeline_1071301 = {
+    "Sound_timeline_1071301"
+  },
+  TL_luoshi2 = {
+    "Sound_tl_luoshi2"
+  },
+  Test291001001 = {
+    "Sound_H1001001_show_ult",
+    "Voice_H1001001_show_ult_LTR"
+  },
+  Test291001004 = {
+    "Sound_H1001004_show_ult",
+    "Voice_H1001004_show_ult_LTR"
+  },
+  Test291001008 = {
+    "Sound_H1001008_show_ult",
+    "Voice_H1001008_show_ult_LTR"
+  },
+  Test291001009 = {
+    "Sound_H1001009_show_ult",
+    "Voice_H1001009_show_ult_1_LTR"
+  },
+  Test291001010 = {
+    "Sound_H1001010_show_ult",
+    "Voice_H1001010_show_ult_LTR"
+  },
+  Test291001011 = {
+    "Sound_H1001011_show_ult",
+    "Voice_H1001011_show_ult_LTR"
+  },
+  Test291001012 = {
+    "Sound_H1001012_show_ult",
+    "Voice_H1001012_show_ult_RTL"
+  },
+  Test291001013 = {
+    "Sound_H1001013_show_ult",
+    "Voice_H1001013_show_ult_RTL"
+  },
+  Test291001014 = {
+    "Sound_H1001014_show_ult",
+    "Voice_H1001014_show_ult_LTR"
+  },
+  Test291001015 = {
+    "Sound_H1001015_qte_show",
+    "Voice_H1001015_show_ult_LTR"
+  },
+  Test291001016 = {
+    "Sound_H1001016_show_ult",
+    "Voice_H1001016_show_ult_RTL"
+  },
+  Test291001017 = {
+    "Sound_H1001017_show_ult",
+    "Voice_H1001017_show_ult_RTL"
+  },
+  Test291001018 = {
+    "Voice_H1001018_show_ult_LTR",
+    "Sound_H1001018_qte_skill"
+  },
+  Test291001019 = {
+    "Voice_H1001019_show_ult",
+    "Sound_H1001019_show_ult"
+  },
+  Test291001020 = {
+    "Sound_H1001020_qte_show",
+    "Voice_H1001020_show_ult"
+  },
+  Test291001021 = {
+    "Sound_H1001021_show_ult",
+    "Voice_H1001021_show_ult_LTR"
+  },
+  Test291001022 = {
+    "Sound_H1001022_show_ult_skill8_3"
+  },
+  Test291001022_1 = {
+    "Sound_H1001022_show_skill8_1",
+    "Voice_H1001022_show_skill8_1"
+  },
+  Test291001023 = {
+    "Sound_H1001023_show_ult",
+    "Voice_H1001023_show_ult_RTL"
+  },
+  Test291001024 = {
+    "Sound_H1001024_show_ult",
+    "Voice_H1001024_show_ult_RTL"
+  },
+  Test291001025 = {
+    "Sound_H1001025_show_ult",
+    "Voice_H1001025_show_ult_LTR"
+  },
+  Test291002309 = {
+    "Sound_H1002309_show_ult",
+    "Voice_H1002309_show_ult_1_LTR"
+  },
+  TL_breakpath3 = {
+    "Sound_TL_breakpath3"
+  },
+  ["boyuanPV_大招出场动画"] = {
+    "Sound_H1001009_show_ult",
+    "Voice_H1001009_show_ult_1_LTR"
+  },
+  PV_H1001001_born_TC_CS06C1 = {
+    "Sound_H1001001_show_born",
+    "Voice_H1001001_show_born"
+  },
+  PV_H1001001_finish_1_TC = {
+    "Sound_H1001001_show_finish",
+    "Voice_H1001001_show_finish"
+  },
+  ["QingPV_大招QTE"] = {
+    "Sound_H1001012_show_ult",
+    "Voice_H1001012_show_ult_RTL"
+  },
+  scene_timeline_71601 = {
+    "Sound_timeline_71601"
+  },
+  scene_timeline_71602 = {
+    "Sound_timeline_71602"
+  },
+  Timeline_328014 = {
+    "Sound_Timeline_328014"
+  },
+  storytimeline_1000007 = {
+    "Sound_Timeline_main_1",
+    "Sound_storytimeline_1000007_step1",
+    "Sound_storytimeline_1000007_step3",
+    "Sound_storytimeline_1000007_step5"
+  },
+  storytimeline_4061205 = {
+    "Sound_storytimeline4061205_step1",
+    "Sound_storytimeline4061205_step2",
+    "Sound_storytimeline4061205_step3",
+    "Sound_storytimeline4061205_step4",
+    "Sound_storytimeline4061205_step5",
+    "Sound_storytimeline4061205_step6",
+    "Sound_storytimeline4061205_step7",
+    "Sound_storytimeline4061205_step8",
+    "Sound_storytimeline4061205_step9",
+    "Sound_storytimeline4061205_step10",
+    "Sound_storytimeline4061205_step11",
+    "Sound_storytimeline4061205_step12",
+    "Sound_storytimeline4061205_step13",
+    "Sound_storytimeline4061205_step14"
+  },
+  storytimeline_4072201 = {
+    "Sound_storytimeline_4072201_step1",
+    "Sound_storytimeline_4072201_step2",
+    "Sound_storytimeline_4072201_step3",
+    "Sound_storytimeline_4072201_step4",
+    "Sound_storytimeline_4072201_step5"
+  },
+  storytimeline_100101022 = {
+    "Sound_storytimeline_100101022_step2"
+  },
+  storytimeline_100103112 = {
+    "3-11nanna_53",
+    "3-11nanna_55",
+    "3-11nanna_60",
+    "3-11nanna_54"
+  },
+  storytimeline_1001040501 = {
+    "Sound_storytimeline_1001040501_step1",
+    "Sound_storytimeline_1001040501_step2",
+    "Sound_storytimeline_1001040501_step3",
+    "Sound_storytimeline_1001040501_step5",
+    "Sound_storytimeline_1001040501_step5.5",
+    "Sound_storytimeline_1001040501_step9"
+  },
+  storytimeline_1001040502 = {
+    "Sound_storytimeline_1001040502_step1"
+  },
+  storytimeline_1001041002 = {
+    "Sound_storytimeline_1001041002_step3",
+    "Sound_storytimeline_1001041002_step4"
+  },
+  storytimeline_1001050501 = {
+    "Sound_storytimeline_1001050501_step3",
+    "Sound_storytimeline_1001050501_step4"
+  },
+  storytimeline_1001051102 = {
+    "Sound_storytimeline_1001051102_step0",
+    "Sound_storytimeline_1001051102_step1",
+    "Sound_storytimeline_1001051102_step2",
+    "Sound_storytimeline_1001051102_step3"
+  },
+  storytimeline_1001060501 = {
+    "Sound_storytimeline_1001060501_step2",
+    "Sound_storytimeline_1001060501_step3",
+    "Sound_storytimeline_1001060501_step4.5",
+    "Sound_storytimeline_1001060501_step6"
+  },
+  storytimeline_1001060602 = {
+    "Sound_storytimeline_1001060602_step1"
+  },
+  storytimeline_1001061601 = {
+    "Sound_storytimeline_1001061601_step1",
+    "Sound_storytimeline_1001061601_step2"
+  },
+  storytimeline_1001061902 = {
+    "Sound_storytimeline_1001061902_step2"
+  },
+  storytimeline_1001071301 = {
+    "7-13lichi_3",
+    "7-13azi_1",
+    "7-13xin_2",
+    "7-13azi_2",
+    "7-13xin_3",
+    "7-13ming_1",
+    "7-13ling_2",
+    "7-13ming_2"
+  },
+  storytimeline_1001071501 = {
+    "7-15xin_1",
+    "7-15ming_1",
+    "7-15azi_1",
+    "7-15xin_2",
+    "7-15azi_2",
+    "7-15ming_4",
+    "7-15azi_7",
+    "7-15ming_5"
+  },
+  storytimeline_1001071902 = {
+    "Sound_timeline_1001071902"
+  }
+}

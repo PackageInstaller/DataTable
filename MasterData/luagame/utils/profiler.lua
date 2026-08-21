@@ -1,0 +1,18 @@
+local LuaProfiler = CS.Game.LuaProfiler
+local M = {}
+local _name_map = {}
+
+function M.BeginSample(name)
+  local id = _name_map[name]
+  if not id then
+    id = LuaProfiler.GetID(name)
+    _name_map[name] = id
+  end
+  LuaProfiler.BeginSample(id)
+end
+
+function M.EndSample()
+  LuaProfiler.EndSample()
+end
+
+return M

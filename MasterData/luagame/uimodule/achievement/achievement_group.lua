@@ -1,0 +1,266 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local LoopListClass = require("ui.widget.infinite_loop_list")
+local ACHIEVEMENT_ITEM_CLASS = require("uimodule.achievement.achievement_item")
+local TASK_CONFIG = require("gamelogic.task.task_config")
+local GETSTATETYPE_ORDER = TASK_CONFIG.GETSTATETYPE_ORDER
+local TASK_STATE = TASK_CONFIG.TASK_STATE
+local _tinsert = table.insert
+local _tsort = table.sort
+local INTERVAL_TIME = 0.05
+local util_get_color = Util.get_unity_color_by_hex
+local toggle_select_color = util_get_color(tonumber("fff0d5", 16))
+local toggle_unselect_color = util_get_color(tonumber("bcb4a5", 16))
+local ACHIEVEMENT_TEM_KEY = "ACHIEVEMENT_TEM_KEY"
+local PAGE_IDX = {
+  MEMBER = 1,
+  COURSE = 2,
+  MEMBER_EN_NAME = "M E M B E R",
+  COURSE_EN_NAME = "C O U R S E"
+}
+local PAGE_RED = {false, false}
+local MODEL = {
+  v_achievement_tem = {
+    "AchievementTem",
+    BIND_TYPE.OBJECT
+  },
+  v_all = {
+    "All",
+    BIND_TYPE.TEXT
+  },
+  v_btn_main = {
+    "BtnMain",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_ret1 = {
+    "BtnRet1",
+    BIND_TYPE.BUTTON
+  },
+  v_member = {
+    "Member",
+    BIND_TYPE.TOGGLE
+  },
+  v_course = {
+    "Course",
+    BIND_TYPE.TOGGLE
+  },
+  v_now = {
+    "Now",
+    BIND_TYPE.TEXT
+  },
+  v_tag_list = {
+    "TagList",
+    BIND_TYPE.OBJECT
+  },
+  v_content = {
+    "Content",
+    BIND_TYPE.OBJECT
+  },
+  v_achievement_group_scrollview = {
+    "AchievementGroupScrollView",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnRet1", function()
+    self:ui_hide()
+  end)
+  self.v_pages = {}
+  _tinsert(self.v_pages, self.v_member)
+  _tinsert(self.v_pages, self.v_course)
+  self.v_page_toggle_tab = ToggleTab:new(self)
+  self.v_page_toggle_tab:init_by_toggles(self.v_pages, function(idx)
+    self:_on_click_page(idx)
+  end, 0, false)
+  self.v_select_idx = nil
+  self.v_member_red_dot = Util.get_child_gameobj("TagName/Redpoint", self.v_member.gameObject)
+  self.v_course_red_dot = Util.get_child_gameobj("TagName/Redpoint", self.v_course.gameObject)
+  self.v_achievement_group_loop_list = LoopListClass:new(self, self.v_achievement_group_scrollview, ACHIEVEMENT_ITEM_CLASS)
+  PlayerMgr:get_achievement_complete_time_form_server()
+  self.v_member_list = {}
+  self.v_course_list = {}
+end
+
+function ui:ui_on_show(index)
+  self.v_achievement_group_loop_list:stop_scroll()
+  index = index or 1
+  self:refresh_list()
+  Util.get_rect_transform(nil, self.v_content):SetAnchoredPositionA(0, 0, 0)
+  self.v_page_toggle_tab:set_toggle_by_index(index)
+  self:refresh_ui()
+  self:register_event()
+  self.v_select_idx = index
+  if self.v_refresh_timer then
+    Timer:remove_timer(self.v_refresh_timer)
+    self.v_refresh_timer = nil
+  else
+    self.v_refresh_timer = Timer:add_timer("achievement_group_refresh", 0.1, function()
+      self:get_achievement_data()
+    end)
+  end
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_ON_GET_ACHIEVEMENT_AWARD, self.refresh_ui, self)
+  self:bind_auto_mq(Const.MSG_ON_GET_NEW_ACHIEVEMENT_GROUP, self.get_achievement_data, self)
+  self:bind_auto_mq(Const.MSG_ON_GET_ACHIEVEMENT_AWARD, self.refresh_tem, self)
+  self:bind_auto_mq(Const.MSG_ON_GET_ACHIEVEMENT_GROUP_AWARD, self.refresh_tem, self)
+  self:bind_auto_mq(Const.MSG_ON_GET_ACHIEVEMENT_COMPLETE_TIME, self.refresh_tem, self)
+end
+
+function ui:refresh_tem()
+  self:refresh_list(self.v_select_idx or 1)
+end
+
+function ui:_on_click_page(idx)
+  if self.v_select_idx == idx then
+    return
+  end
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.switch_achievement_UI_SOUND)
+  self.v_select_idx = idx
+  self:refresh_list(idx)
+  for idx, page in pairs(self.v_pages) do
+    local color_en_name = Util.get_text("TagEnName", page.gameObject)
+    if idx == PAGE_IDX.MEMBER then
+      color_en_name.text = PAGE_IDX.MEMBER_EN_NAME
+    elseif idx == PAGE_IDX.COURSE then
+      color_en_name.text = PAGE_IDX.COURSE_EN_NAME
+    end
+  end
+  local select_page = self.v_page_toggle_tab:get_toggle_by_index(idx)
+  local color_en_name = Util.get_text("TagEnName", select_page.gameObject)
+  if idx == PAGE_IDX.MEMBER then
+    color_en_name.text = "-" .. PAGE_IDX.MEMBER_EN_NAME .. "-"
+  elseif idx == PAGE_IDX.COURSE then
+    color_en_name.text = "-" .. PAGE_IDX.COURSE_EN_NAME .. "-"
+  end
+end
+
+function ui:refresh_list(idx)
+  local data = {}
+  if idx == PAGE_IDX.MEMBER then
+    data = self.v_member_list
+  elseif idx == PAGE_IDX.COURSE then
+    data = self.v_course_list
+  end
+  self.v_achievement_group_loop_list:refresh_data(data)
+  if self.v_sequence then
+    self.v_sequence:Kill(false)
+    self.v_sequence = nil
+  end
+  if self.v_visible then
+    self.v_sequence = Util.create_sequence()
+    local all_itmes = self.v_achievement_group_loop_list:get_all_uis()
+    for _, ui_item in pairs(all_itmes) do
+      if ui_item:is_visible_item() then
+        ui_item:eff_init()
+        self.v_sequence:AppendCallback(function()
+          ui_item:play_in_eff()
+        end)
+        self.v_sequence:AppendInterval(INTERVAL_TIME)
+      end
+    end
+  end
+end
+
+function ui:refresh_ui()
+  PAGE_RED[PAGE_IDX.MEMBER] = false
+  PAGE_RED[PAGE_IDX.COURSE] = false
+  local complete_num = 0
+  local total_num = 0
+  local all_achievements = ShareRes.get_achievements()
+  for k, v in pairs(all_achievements) do
+    local task_data = TaskMgr:get_task_by_id(v.TaskId)
+    if task_data then
+      if task_data.state == TASK_STATE.receive then
+        complete_num = complete_num + 1
+        PAGE_RED[ShareRes.get_achievement_group_cfg(v.GroupId).Classify] = true
+      elseif task_data.state == TASK_STATE.received then
+        complete_num = complete_num + 1
+      end
+      total_num = total_num + 1
+    end
+  end
+  for k1, v1 in pairs(ShareRes.get_achievement_group_cfg()) do
+    local progress_task = PlayerMgr:get_achievement_list(k1)
+    if progress_task then
+      for k2, v2 in pairs(progress_task) do
+        if 1 == v2.state then
+          PAGE_RED[v1.Classify] = true
+        end
+      end
+    end
+  end
+  self.v_now.text = complete_num
+  self.v_all.text = total_num
+  if PlayerMgr:get_achievement_red_point_state() then
+    PAGE_RED[PAGE_IDX.MEMBER] = true
+  end
+  self.v_member_red_dot:SetActive(PAGE_RED[PAGE_IDX.MEMBER])
+  self.v_course_red_dot:SetActive(PAGE_RED[PAGE_IDX.COURSE])
+end
+
+function ui:get_achievement_data()
+  local achievement_groups = PlayerMgr:get_achievement_list()
+  self.v_member_list = {}
+  self.v_course_list = {}
+  for k, v in pairs(achievement_groups) do
+    local group_cfg = ShareRes.get_achievement_group_cfg(k)
+    if group_cfg.Classify == PAGE_IDX.MEMBER then
+      if group_cfg.Id and ShareRes.get_buddy_is_show(group_cfg.Id) and CharacterMgr:check_buddy_release(group_cfg.Id) then
+        _tinsert(self.v_member_list, group_cfg)
+      end
+    elseif group_cfg.Classify == PAGE_IDX.COURSE then
+      _tinsert(self.v_course_list, group_cfg)
+    end
+  end
+  table.sort(self.v_member_list, function(a, b)
+    if b.Priority == a.Priority then
+      return a.Id < b.Id
+    end
+    return b.Priority < a.Priority
+  end)
+  table.sort(self.v_course_list, function(a, b)
+    if b.Priority == a.Priority then
+      return a.Id < b.Id
+    end
+    return b.Priority < a.Priority
+  end)
+  self:refresh_list(self.v_select_idx or 1)
+  self:refresh_ui()
+end
+
+function ui:ui_on_hide()
+  if self.v_achievement_group_loop_list then
+    self.v_achievement_group_loop_list:ui_on_hide()
+  end
+  if self.v_sequence then
+    self.v_sequence:Kill(false)
+    self.v_sequence = nil
+  end
+  if self.v_refresh_timer then
+    Timer:remove_timer(self.v_refresh_timer)
+    self.v_refresh_timer = nil
+  end
+  PlayerMgr:refresh_achievement_red_point()
+end
+
+function ui:ui_on_destroy()
+  if self.v_achievement_group_loop_list then
+    self.v_achievement_group_loop_list:ui_on_destroy()
+  end
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.v_select_idx
+end
+
+return ui

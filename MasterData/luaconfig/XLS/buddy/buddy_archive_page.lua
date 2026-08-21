@@ -1,0 +1,891 @@
+local t = {
+  [10010010101] = {
+    DefaultPos = {0, 0},
+    DefaultScale = 0,
+    GroupId = 100100101,
+    Id = 10010010101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010010201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100102,
+    Id = 10010010201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010010301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100103,
+    Id = 10010010301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010010401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100104,
+    Id = 10010010401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010020101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100201,
+    Id = 10010020101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010020201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100202,
+    Id = 10010020201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010020301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100203,
+    Id = 10010020301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010020401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100204,
+    Id = 10010020401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010030101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100301,
+    Id = 10010030101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010030201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100302,
+    Id = 10010030201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010030301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100303,
+    Id = 10010030301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010030401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100304,
+    Id = 10010030401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010040101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100401,
+    Id = 10010040101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010040102] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100401,
+    Id = 10010040102,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010040201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100402,
+    Id = 10010040201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010040202] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100402,
+    Id = 10010040202,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010040203] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100402,
+    Id = 10010040203,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 3
+  },
+  [10010040301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100403,
+    Id = 10010040301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010040302] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100403,
+    Id = 10010040302,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010040401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100404,
+    Id = 10010040401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010040402] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100404,
+    Id = 10010040402,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010050101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100501,
+    Id = 10010050101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010050201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100502,
+    Id = 10010050201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010050301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100503,
+    Id = 10010050301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010050401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100504,
+    Id = 10010050401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010060101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100601,
+    Id = 10010060101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010060201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100602,
+    Id = 10010060201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010060301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100603,
+    Id = 10010060301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010060401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100604,
+    Id = 10010060401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010070101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100701,
+    Id = 10010070101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010070201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100702,
+    Id = 10010070201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010070202] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100702,
+    Id = 10010070202,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010070301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100703,
+    Id = 10010070301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010070401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100704,
+    Id = 10010070401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010080101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100801,
+    Id = 10010080101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010080201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100802,
+    Id = 10010080201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010080301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100803,
+    Id = 10010080301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010080401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100804,
+    Id = 10010080401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010090101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100901,
+    Id = 10010090101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010090201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100902,
+    Id = 10010090201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010090202] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100902,
+    Id = 10010090202,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010090203] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100902,
+    Id = 10010090203,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 3
+  },
+  [10010090301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100903,
+    Id = 10010090301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010090302] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100903,
+    Id = 10010090302,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010090401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100904,
+    Id = 10010090401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010090402] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100100904,
+    Id = 10010090402,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010100101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101001,
+    Id = 10010100101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010100201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101002,
+    Id = 10010100201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010100202] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101002,
+    Id = 10010100202,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010100301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101003,
+    Id = 10010100301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010100401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101004,
+    Id = 10010100401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010100402] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101004,
+    Id = 10010100402,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010110101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101101,
+    Id = 10010110101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010110201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101102,
+    Id = 10010110201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010110202] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101102,
+    Id = 10010110202,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010110301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101103,
+    Id = 10010110301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010110302] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101103,
+    Id = 10010110302,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010110401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101104,
+    Id = 10010110401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010120101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101201,
+    Id = 10010120101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010120201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101202,
+    Id = 10010120201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010120301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101203,
+    Id = 10010120301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010120401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101204,
+    Id = 10010120401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010130101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101301,
+    Id = 10010130101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010130201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101302,
+    Id = 10010130201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010130202] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101302,
+    Id = 10010130202,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010130203] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101302,
+    Id = 10010130203,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 3
+  },
+  [10010130301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101303,
+    Id = 10010130301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010130302] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101303,
+    Id = 10010130302,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010130401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101304,
+    Id = 10010130401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010130402] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101304,
+    Id = 10010130402,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010130403] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101304,
+    Id = 10010130403,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 3
+  },
+  [10010130404] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101304,
+    Id = 10010130404,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 4
+  },
+  [10010140101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101401,
+    Id = 10010140101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010140201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101402,
+    Id = 10010140201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010140202] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101402,
+    Id = 10010140202,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010140203] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101402,
+    Id = 10010140203,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 3
+  },
+  [10010140301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101403,
+    Id = 10010140301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010140302] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101403,
+    Id = 10010140302,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010140303] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101403,
+    Id = 10010140303,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 3
+  },
+  [10010140401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101404,
+    Id = 10010140401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010150101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101501,
+    Id = 10010150101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010150102] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101501,
+    Id = 10010150102,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010150201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101502,
+    Id = 10010150201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010150301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101503,
+    Id = 10010150301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010150401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101504,
+    Id = 10010150401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010150402] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101504,
+    Id = 10010150402,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 2
+  },
+  [10010160101] = {
+    DefaultPos = {0, -357.5},
+    DefaultScale = 1,
+    GroupId = 100101601,
+    Id = 10010160101,
+    Photo = "Char/CharFile_100101611",
+    SortOrder = 1
+  },
+  [10010160201] = {
+    DefaultPos = {0, -485},
+    DefaultScale = 1,
+    GroupId = 100101602,
+    Id = 10010160201,
+    Photo = "Char/CharFile_100101621",
+    SortOrder = 1
+  },
+  [10010160301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101603,
+    Id = 10010160301,
+    Photo = "Char/CharFile_100101631",
+    SortOrder = 1
+  },
+  [10010160302] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101603,
+    Id = 10010160302,
+    Photo = "Char/CharFile_100101632",
+    SortOrder = 2
+  },
+  [10010170101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101701,
+    Id = 10010170101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010170201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101702,
+    Id = 10010170201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010170301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101703,
+    Id = 10010170301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010170401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101704,
+    Id = 10010170401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010180101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101801,
+    Id = 10010180101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010180201] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101802,
+    Id = 10010180201,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010180301] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101803,
+    Id = 10010180301,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010180401] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101804,
+    Id = 10010180401,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  },
+  [10010190101] = {
+    DefaultPos = nil,
+    DefaultScale = 0,
+    GroupId = 100101901,
+    Id = 10010190101,
+    Photo = "Char/CharFile_Test",
+    SortOrder = 1
+  }
+}
+t[10010010201].DefaultPos = t[10010010101].DefaultPos
+t[10010010301].DefaultPos = t[10010010101].DefaultPos
+t[10010010401].DefaultPos = t[10010010101].DefaultPos
+t[10010020101].DefaultPos = t[10010010101].DefaultPos
+t[10010020201].DefaultPos = t[10010010101].DefaultPos
+t[10010020301].DefaultPos = t[10010010101].DefaultPos
+t[10010020401].DefaultPos = t[10010010101].DefaultPos
+t[10010030101].DefaultPos = t[10010010101].DefaultPos
+t[10010030201].DefaultPos = t[10010010101].DefaultPos
+t[10010030301].DefaultPos = t[10010010101].DefaultPos
+t[10010030401].DefaultPos = t[10010010101].DefaultPos
+t[10010040101].DefaultPos = t[10010010101].DefaultPos
+t[10010040102].DefaultPos = t[10010010101].DefaultPos
+t[10010040201].DefaultPos = t[10010010101].DefaultPos
+t[10010040202].DefaultPos = t[10010010101].DefaultPos
+t[10010040203].DefaultPos = t[10010010101].DefaultPos
+t[10010040301].DefaultPos = t[10010010101].DefaultPos
+t[10010040302].DefaultPos = t[10010010101].DefaultPos
+t[10010040401].DefaultPos = t[10010010101].DefaultPos
+t[10010040402].DefaultPos = t[10010010101].DefaultPos
+t[10010050101].DefaultPos = t[10010010101].DefaultPos
+t[10010050201].DefaultPos = t[10010010101].DefaultPos
+t[10010050301].DefaultPos = t[10010010101].DefaultPos
+t[10010050401].DefaultPos = t[10010010101].DefaultPos
+t[10010060101].DefaultPos = t[10010010101].DefaultPos
+t[10010060201].DefaultPos = t[10010010101].DefaultPos
+t[10010060301].DefaultPos = t[10010010101].DefaultPos
+t[10010060401].DefaultPos = t[10010010101].DefaultPos
+t[10010070101].DefaultPos = t[10010010101].DefaultPos
+t[10010070201].DefaultPos = t[10010010101].DefaultPos
+t[10010070202].DefaultPos = t[10010010101].DefaultPos
+t[10010070301].DefaultPos = t[10010010101].DefaultPos
+t[10010070401].DefaultPos = t[10010010101].DefaultPos
+t[10010080101].DefaultPos = t[10010010101].DefaultPos
+t[10010080201].DefaultPos = t[10010010101].DefaultPos
+t[10010080301].DefaultPos = t[10010010101].DefaultPos
+t[10010080401].DefaultPos = t[10010010101].DefaultPos
+t[10010090101].DefaultPos = t[10010010101].DefaultPos
+t[10010090201].DefaultPos = t[10010010101].DefaultPos
+t[10010090202].DefaultPos = t[10010010101].DefaultPos
+t[10010090203].DefaultPos = t[10010010101].DefaultPos
+t[10010090301].DefaultPos = t[10010010101].DefaultPos
+t[10010090302].DefaultPos = t[10010010101].DefaultPos
+t[10010090401].DefaultPos = t[10010010101].DefaultPos
+t[10010090402].DefaultPos = t[10010010101].DefaultPos
+t[10010100101].DefaultPos = t[10010010101].DefaultPos
+t[10010100201].DefaultPos = t[10010010101].DefaultPos
+t[10010100202].DefaultPos = t[10010010101].DefaultPos
+t[10010100301].DefaultPos = t[10010010101].DefaultPos
+t[10010100401].DefaultPos = t[10010010101].DefaultPos
+t[10010100402].DefaultPos = t[10010010101].DefaultPos
+t[10010110101].DefaultPos = t[10010010101].DefaultPos
+t[10010110201].DefaultPos = t[10010010101].DefaultPos
+t[10010110202].DefaultPos = t[10010010101].DefaultPos
+t[10010110301].DefaultPos = t[10010010101].DefaultPos
+t[10010110302].DefaultPos = t[10010010101].DefaultPos
+t[10010110401].DefaultPos = t[10010010101].DefaultPos
+t[10010120101].DefaultPos = t[10010010101].DefaultPos
+t[10010120201].DefaultPos = t[10010010101].DefaultPos
+t[10010120301].DefaultPos = t[10010010101].DefaultPos
+t[10010120401].DefaultPos = t[10010010101].DefaultPos
+t[10010130101].DefaultPos = t[10010010101].DefaultPos
+t[10010130201].DefaultPos = t[10010010101].DefaultPos
+t[10010130202].DefaultPos = t[10010010101].DefaultPos
+t[10010130203].DefaultPos = t[10010010101].DefaultPos
+t[10010130301].DefaultPos = t[10010010101].DefaultPos
+t[10010130302].DefaultPos = t[10010010101].DefaultPos
+t[10010130401].DefaultPos = t[10010010101].DefaultPos
+t[10010130402].DefaultPos = t[10010010101].DefaultPos
+t[10010130403].DefaultPos = t[10010010101].DefaultPos
+t[10010130404].DefaultPos = t[10010010101].DefaultPos
+t[10010140101].DefaultPos = t[10010010101].DefaultPos
+t[10010140201].DefaultPos = t[10010010101].DefaultPos
+t[10010140202].DefaultPos = t[10010010101].DefaultPos
+t[10010140203].DefaultPos = t[10010010101].DefaultPos
+t[10010140301].DefaultPos = t[10010010101].DefaultPos
+t[10010140302].DefaultPos = t[10010010101].DefaultPos
+t[10010140303].DefaultPos = t[10010010101].DefaultPos
+t[10010140401].DefaultPos = t[10010010101].DefaultPos
+t[10010150101].DefaultPos = t[10010010101].DefaultPos
+t[10010150102].DefaultPos = t[10010010101].DefaultPos
+t[10010150201].DefaultPos = t[10010010101].DefaultPos
+t[10010150301].DefaultPos = t[10010010101].DefaultPos
+t[10010150401].DefaultPos = t[10010010101].DefaultPos
+t[10010150402].DefaultPos = t[10010010101].DefaultPos
+t[10010160301].DefaultPos = t[10010010101].DefaultPos
+t[10010160302].DefaultPos = t[10010010101].DefaultPos
+t[10010170101].DefaultPos = t[10010010101].DefaultPos
+t[10010170201].DefaultPos = t[10010010101].DefaultPos
+t[10010170301].DefaultPos = t[10010010101].DefaultPos
+t[10010170401].DefaultPos = t[10010010101].DefaultPos
+t[10010180101].DefaultPos = t[10010010101].DefaultPos
+t[10010180201].DefaultPos = t[10010010101].DefaultPos
+t[10010180301].DefaultPos = t[10010010101].DefaultPos
+t[10010180401].DefaultPos = t[10010010101].DefaultPos
+t[10010190101].DefaultPos = t[10010010101].DefaultPos
+return t

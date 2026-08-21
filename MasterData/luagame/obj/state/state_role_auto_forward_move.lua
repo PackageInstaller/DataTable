@@ -1,0 +1,25 @@
+local Base = require("obj.state.state_role_move")
+local Math = require("base.mathx")
+local M = Util.create_child_mt(Base)
+local ROLE_TRUN_ANGLE_UPPER_LIMIT = ShareRes.get_comm_value("RoleTrunAngleUpperLimit")
+local ROLE_TRUN_ANGLE_LOWER_LIMIT = ShareRes.get_comm_value("RoleTrunAngleLowerLimit")
+
+function M:move_by_dir(dirx, dirz, force_runing)
+  local x, z = self.v_owner:get_pos2()
+  local dir = Math.get_lookat_dir(x, z, x + dirx, z + dirz)
+  if dir > 180 then
+    dir = dir - 360
+  end
+  if dir > ROLE_TRUN_ANGLE_UPPER_LIMIT then
+    dirx, dirz = Util.cal_after_correct_dir_x_y(dirx, dirz, dir - ROLE_TRUN_ANGLE_UPPER_LIMIT)
+  elseif dir < ROLE_TRUN_ANGLE_LOWER_LIMIT then
+    dirx, dirz = Util.cal_after_correct_dir_x_y(dirx, dirz, dir - ROLE_TRUN_ANGLE_LOWER_LIMIT)
+  end
+  Base.move_by_dir(self, dirx, dirz, force_runing)
+end
+
+function M:state_get_name()
+  return Config.STATE_NAME.auto_forward_move
+end
+
+return M

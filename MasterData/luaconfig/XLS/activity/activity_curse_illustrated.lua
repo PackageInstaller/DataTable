@@ -1,0 +1,22 @@
+return {
+  {
+    Name = "片语图鉴",
+    RewardTaskGroup = 80031,
+    Type = 1
+  },
+  {
+    Name = "奇珍图鉴",
+    RewardTaskGroup = 80032,
+    Type = 2
+  },
+  {
+    Name = "事件图鉴",
+    RewardTaskGroup = 80033,
+    Type = 3
+  },
+  {
+    Name = "片段图鉴",
+    RewardTaskGroup = 80034,
+    Type = 4
+  }
+}

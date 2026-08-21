@@ -1,0 +1,187 @@
+return {
+  {
+    BaseScore = 1,
+    BgDetailRes = "Endlessfield_bg_gqjm_jd01",
+    BgRes = "Endlessfield_bg_bzq_xjd01",
+    BuffDesc = {
+      "获得30%光伤害增幅",
+      ""
+    },
+    BuffGroupId = 5,
+    DamageScore = 0,
+    EpiID = 20100002,
+    EpiName = "第1关",
+    FixedSecondScore = 800,
+    Id = 1,
+    LiveScore = 30,
+    OpenCondition = 0,
+    Pos = 1,
+    RuneGroupId = 2,
+    SecondScore = 60,
+    StarCondition = {
+      660004,
+      660005,
+      660006
+    },
+    StarReward = {},
+    UnLockEpiFraction = 0,
+    UnLockEpiStar = 0,
+    UnLockEpiStarNum = 0,
+    WaveScore = 0
+  },
+  {
+    BaseScore = 1,
+    BgDetailRes = "Endlessfield_bg_gqjm_jd02",
+    BgRes = "Endlessfield_bg_bzq_xjd02",
+    BuffDesc = {
+      "获得30%暗伤害增幅",
+      ""
+    },
+    BuffGroupId = 6,
+    DamageScore = 0,
+    EpiID = 20100003,
+    EpiName = "第2关",
+    FixedSecondScore = 800,
+    Id = 2,
+    LiveScore = 30,
+    OpenCondition = 660029,
+    Pos = 2,
+    RuneGroupId = 3,
+    SecondScore = 60,
+    StarCondition = {
+      660007,
+      660008,
+      660009
+    },
+    StarReward = {},
+    UnLockEpiFraction = 0,
+    UnLockEpiId = 20100002,
+    UnLockEpiStar = 1,
+    UnLockEpiStarNum = 1,
+    WaveScore = 0
+  },
+  {
+    BaseScore = 1,
+    BgDetailRes = "Endlessfield_bg_gqjm_jd03",
+    BgRes = "Endlessfield_bg_bzq_xjd03",
+    BuffDesc = {
+      "获得30%雷伤害增幅",
+      ""
+    },
+    BuffGroupId = 4,
+    DamageScore = 0,
+    EpiID = 20100004,
+    EpiName = "第3关",
+    FixedSecondScore = 800,
+    Id = 3,
+    LiveScore = 30,
+    OpenCondition = 660030,
+    Pos = 3,
+    RuneGroupId = 4,
+    SecondScore = 60,
+    StarCondition = {
+      660010,
+      660011,
+      660012
+    },
+    StarReward = {},
+    UnLockEpiFraction = 0,
+    UnLockEpiId = 20100003,
+    UnLockEpiStar = 1,
+    UnLockEpiStarNum = 1,
+    WaveScore = 0
+  },
+  {
+    BaseScore = 1,
+    BgDetailRes = "Endlessfield_bg_gqjm_jd04",
+    BgRes = "Endlessfield_bg_bzq_xjd04",
+    BuffDesc = {
+      "获得30%水伤害增幅",
+      ""
+    },
+    BuffGroupId = 2,
+    DamageScore = 0,
+    EpiID = 20100005,
+    EpiName = "第4关",
+    FixedSecondScore = 800,
+    Id = 4,
+    LiveScore = 30,
+    OpenCondition = 660031,
+    Pos = 4,
+    RuneGroupId = 5,
+    SecondScore = 60,
+    StarCondition = {
+      660013,
+      660014,
+      660015
+    },
+    StarReward = {},
+    UnLockEpiFraction = 0,
+    UnLockEpiId = 20100004,
+    UnLockEpiStar = 1,
+    UnLockEpiStarNum = 1,
+    WaveScore = 0
+  },
+  {
+    BaseScore = 1,
+    BgDetailRes = "Endlessfield_bg_gqjm_jd05",
+    BgRes = "Endlessfield_bg_bzq_xjd05",
+    BuffDesc = {
+      "获得30%火伤害增幅",
+      ""
+    },
+    BuffGroupId = 3,
+    DamageScore = 0,
+    EpiID = 20100006,
+    EpiName = "第5关",
+    FixedSecondScore = 800,
+    Id = 5,
+    LiveScore = 30,
+    OpenCondition = 660032,
+    Pos = 5,
+    RuneGroupId = 6,
+    SecondScore = 60,
+    StarCondition = {
+      660016,
+      660017,
+      660018
+    },
+    StarReward = {},
+    UnLockEpiFraction = 0,
+    UnLockEpiId = 20100005,
+    UnLockEpiStar = 1,
+    UnLockEpiStarNum = 1,
+    WaveScore = 0
+  },
+  {
+    BaseScore = 1,
+    BgDetailRes = "Endlessfield_bg_gqjm_jd06",
+    BgRes = "Endlessfield_bg_bzq_xjd06",
+    BuffDesc = {
+      "获得50%伤害抗性",
+      ""
+    },
+    BuffGroupId = 10,
+    DamageScore = 0,
+    EpiID = 20100007,
+    EpiName = "第6关",
+    FixedSecondScore = 800,
+    Id = 6,
+    LiveScore = 30,
+    OpenCondition = 660033,
+    Pos = 6,
+    RuneGroupId = 7,
+    SecondScore = 60,
+    StarCondition = {
+      660019,
+      660020,
+      660021
+    },
+    StarReward = {},
+    UnLockEpiFraction = 0,
+    UnLockEpiId = 20100006,
+    UnLockEpiStar = 1,
+    UnLockEpiStarNum = 1,
+    WaveScore = 0
+  }
+}

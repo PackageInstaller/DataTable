@@ -1,0 +1,116 @@
+local Base = require("ui.uibase")
+local Math = require("base.mathx")
+local ease = require("base.ease_helper")
+local ui = Util.create_child_mt(Base)
+local CommonDefine = require("cs_share.common_define")
+local ALPHA = 230
+local DURATION = 0.5
+
+function ui:ui_finish_load()
+  self.v_anim_list = {}
+  table.insert(self.v_anim_list, {
+    obj = self.v_uiobjects.Ani_SwitchScreen,
+    tips = "双指推拉可切换<color=#ffd07b>自由</color>/<color=#ffd07b>俯视</color>视角"
+  })
+  table.insert(self.v_anim_list, {
+    obj = self.v_uiobjects.Ani_DragScreen,
+    tips = "左右滑动移动镜头"
+  })
+end
+
+function ui:ui_on_show(show_type, custom_event_name)
+  if not Global.hero or not Global.camera then
+    self:ui_hide()
+    return
+  end
+  self.v_show_type = show_type
+  self.v_custom_event_name = custom_event_name
+  if not show_type then
+    self.v_show_type = CommonDefine.SHOW_FINGER_GUIDE_TYPE.Scale
+  end
+  for index, info in ipairs(self.v_anim_list) do
+    info.obj:SetActive(index == self.v_show_type)
+  end
+  self.v_hero_tra = Global.hero:get_transform()
+  self.v_camera_tra = Global.camera:get_camera_trans()
+  self.v_alpha_start = ALPHA
+  self.v_alpha_end = ALPHA
+  self.v_duration = 0
+  self:register_event()
+  self.v_uicompents.Tips_txt.text = self.v_anim_list[self.v_show_type].tips
+  if self.v_show_type == CommonDefine.SHOW_FINGER_GUIDE_TYPE.LeftRightDrag then
+    self.v_anim_list[self.v_show_type].obj.transform:SetTimelineSeqEndCB(function()
+      self:hide_ui_and_cell_drag_event()
+    end)
+  end
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_ON_PINCH_SWITCH_CAMERA_BEGIN, self.on_camera_pinch_begin, self)
+  self:bind_auto_mq(Const.MSG_ON_PINCH_SWITCH_CAMERA_END, self.on_camera_pinch_end, self)
+  self:bind_auto_mq(Const.MSG_ON_PINCH_SWITCH_CAMERA, self.on_camera_changed, self)
+  self:bind_auto_mq(Const.MSG_ON_PINCH_SWIPE_CAMERA_END, self.on_camera_swipe_end, self)
+end
+
+function ui:ui_on_update(delta_time)
+  if self.v_show_type ~= CommonDefine.SHOW_FINGER_GUIDE_TYPE.Scale then
+    return
+  end
+  local t = ease.ease_in_out_sine(Math.Clamp01(self.v_duration / DURATION))
+  self.v_duration = self.v_duration + delta_time
+  self.v_alpha_cur = Math.lerp_number(self.v_alpha_start, self.v_alpha_end, t)
+  Util.change_component_alpha(self.v_uicompents.Mask_img, self.v_alpha_cur)
+  if not Global.hero or not Global.camera then
+    self:ui_hide()
+    return
+  end
+  self:set_part_ui_visible(true)
+  local showing_pc = UNITY_EDITOR or SDKManager:is_google_play_games() or UNITY_STANDALONE_WIN
+  local showing_type = self.v_show_type == CommonDefine.SHOW_FINGER_GUIDE_TYPE.Scale
+  if showing_pc and showing_type then
+    self:set_part_ui_visible(false)
+  end
+end
+
+function ui:set_part_ui_visible(visible)
+  self.v_uiobjects.FingerImageL:SetActive(visible)
+  self.v_uiobjects.FingerImageR:SetActive(visible)
+  self.v_uiobjects.PCTips:SetActive(not visible)
+  self.v_uiobjects.Tips:SetActive(visible)
+end
+
+function ui:ui_on_hide()
+  self:unbind_all_auto_mq()
+end
+
+function ui:on_camera_pinch_begin()
+  self.v_duration = 0
+  self.v_alpha_start = ALPHA
+  self.v_alpha_end = 0
+end
+
+function ui:on_camera_pinch_end()
+  self.v_duration = 0
+  self.v_alpha_start = self.v_alpha_cur
+  self.v_alpha_end = ALPHA
+end
+
+function ui:on_camera_changed()
+  self:ui_hide()
+end
+
+function ui:on_camera_swipe_end(msg)
+  local swipe_direction = msg.mm_x
+  if swipe_direction >= 1 and swipe_direction <= 2 then
+    self:hide_ui_and_cell_drag_event()
+  end
+end
+
+function ui:hide_ui_and_cell_drag_event()
+  self:ui_hide()
+  if self.v_custom_event_name then
+    BehaviorMgr:call_scene_logic_event_fun("on_finger_drag_end", self.v_custom_event_name)
+  end
+end
+
+return ui

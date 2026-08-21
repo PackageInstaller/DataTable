@@ -1,0 +1,9 @@
+local M = {}
+M.READ_DIR = {FORWARD = 1, BACK = 0}
+M.READ_STA = {
+  NORMAL = 0,
+  MIN = 1,
+  MAX = 2,
+  SPEC = 3
+}
+return M

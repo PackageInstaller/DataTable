@@ -1,0 +1,117 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local icon_path_prefix = "Icon/item/%s"
+local Quality_Img = {
+  [1] = "UICommon/Common_pzk_01",
+  [2] = "UICommon/Common_pzk_02",
+  [3] = "UICommon/Common_pzk_02",
+  [4] = "UICommon/Common_pzk_03",
+  [5] = "UICommon/Common_pzk_04"
+}
+local award_background_png = "Zhanlin_db_kzjl_02.png"
+local AWARD_TYPE = {
+  none = 1,
+  receive = 2,
+  received = 3
+}
+local bg_png = {
+  "UIOrder/Zhanlin_db_kzjl_01",
+  "UIOrder/Zhanlin_db_kzjl_02"
+}
+
+function ui:ui_finish_load()
+  self.v_senior_award_obj_list = {
+    self.v_uiobjects.SPAward1,
+    self.v_uiobjects.SPAward2
+  }
+  self.v_senior_award_btn_list = {
+    self.v_uicompents.SPAward1_btn,
+    self.v_uicompents.SPAward2_btn
+  }
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(param, parent, special)
+  self.v_parent_luaclass = parent
+  self.v_uicompents.Lv_txt.text = param.Level
+  local normal_award_list = ShareRes.get_awards(param.Award)
+  local Senior_award_list = ShareRes.get_awards(param.SeniorAward)
+  self.v_uiobjects.BasicAward:SetActive(false)
+  self.v_uiobjects.SPAward1:SetActive(false)
+  self.v_uiobjects.SPAward2:SetActive(false)
+  if not special then
+    local idx = param.is_cur_level and 2 or 1
+    ResMgr:load_set_icon(self.v_uicompents.Bg_img, bg_png[idx])
+  end
+  if normal_award_list then
+    for index, value in ipairs(normal_award_list) do
+      local item_id = value.ItemId
+      local item_cfg = ShareRes.get_item_cfg(item_id)
+      local icon_path = string.format(icon_path_prefix, item_cfg.Icon)
+      local item_quality = Util.get_image("ItemQuality", self.v_uiobjects.BasicAward)
+      local icon_img = Util.get_image("ItemIcon", self.v_uiobjects.BasicAward)
+      ResMgr:load_set_icon(item_quality, Quality_Img[item_cfg.Quality])
+      ResMgr:load_set_icon(icon_img, icon_path)
+      local amount_txt = Util.get_text("Amount", self.v_uiobjects.BasicAward)
+      amount_txt.text = value.Num
+      self.v_uiobjects.BasicAward:SetActive(true)
+      local got_obj = Util.get_child_gameobj("Got", self.v_uiobjects.BasicAward)
+      local redpoint_obj = Util.get_child_gameobj("RedPoint", self.v_uiobjects.BasicAward)
+      local lock_obj = Util.get_child_gameobj("Lock", self.v_uiobjects.BasicAward)
+      got_obj:SetActive(param.normal_state == AWARD_TYPE.received)
+      redpoint_obj:SetActive(param.normal_state == AWARD_TYPE.receive)
+      lock_obj:SetActive(param.normal_state == AWARD_TYPE.none)
+      self:set_button_listener(self.v_uicompents.BasicAward_btn, function()
+        if self.v_parent_luaclass:get_user_data().lv < index then
+          UIMgr:get_ui("itemTip"):ui_show({item_id = item_id})
+        else
+          PassPortMgr:request_get_passport_award(param.Level, function()
+            self.v_parent_luaclass:update_user_data()
+            got_obj:SetActive(true)
+            redpoint_obj:SetActive(false)
+            lock_obj:SetActive(false)
+          end)
+        end
+      end)
+    end
+  end
+  if Senior_award_list then
+    for index, value in ipairs(Senior_award_list) do
+      local item_id = value.ItemId
+      local item_cfg = ShareRes.get_item_cfg(item_id)
+      local icon_path = string.format(icon_path_prefix, item_cfg.Icon)
+      local item_quality = Util.get_image("ItemQuality", self.v_senior_award_obj_list[index])
+      local icon_img = Util.get_image("ItemIcon", self.v_senior_award_obj_list[index])
+      ResMgr:load_set_icon(item_quality, Quality_Img[item_cfg.Quality])
+      ResMgr:load_set_icon(icon_img, icon_path)
+      local amount_txt = Util.get_text("Amount", self.v_senior_award_obj_list[index])
+      amount_txt.text = value.Num
+      self.v_senior_award_obj_list[index]:SetActive(true)
+      local got_obj = Util.get_child_gameobj("Got", self.v_senior_award_obj_list[index])
+      local redpoint_obj = Util.get_child_gameobj("RedPoint", self.v_senior_award_obj_list[index])
+      local lock_obj = Util.get_child_gameobj("Lock", self.v_senior_award_obj_list[index])
+      got_obj:SetActive(param.senior_state == AWARD_TYPE.received)
+      redpoint_obj:SetActive(param.senior_state == AWARD_TYPE.receive and param.is_senior)
+      lock_obj:SetActive(param.senior_state == AWARD_TYPE.none or not param.is_senior)
+      self:set_button_listener(self.v_senior_award_btn_list[index], function()
+        if self.v_parent_luaclass:get_user_data().lv < index or not param.is_senior then
+          UIMgr:get_ui("itemTip"):ui_show({item_id = item_id})
+        else
+          PassPortMgr:request_get_passport_award(param.Level, function()
+            self.v_parent_luaclass:update_user_data()
+            got_obj:SetActive(true)
+            redpoint_obj:SetActive(false)
+            lock_obj:SetActive(false)
+          end)
+        end
+      end)
+    end
+  end
+end
+
+return ui

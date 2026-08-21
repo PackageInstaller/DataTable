@@ -1,0 +1,68 @@
+return {
+  [101] = {
+    BigIcon = "Char/Plugins/js_bg_cj_sx_shape_big1",
+    GraphId = 101,
+    Order = 1,
+    SmallIcon = "Char/Plugins/js_bg_cj_sx_shape_small1"
+  },
+  [102] = {
+    BigIcon = "Char/Plugins/js_bg_cj_sx_shape_big2",
+    GraphId = 102,
+    Order = 2,
+    SmallIcon = "Char/Plugins/js_bg_cj_sx_shape_small2"
+  },
+  [103] = {
+    BigIcon = "Char/Plugins/js_bg_cj_sx_shape_big3",
+    GraphId = 103,
+    Order = 3,
+    SmallIcon = "Char/Plugins/js_bg_cj_sx_shape_small3"
+  },
+  [104] = {
+    BigIcon = "Char/Plugins/js_bg_cj_sx_shape_big4",
+    GraphId = 104,
+    Order = 4,
+    SmallIcon = "Char/Plugins/js_bg_cj_sx_shape_small4"
+  },
+  [105] = {
+    BigIcon = "Char/Plugins/js_bg_cj_sx_shape_big5",
+    GraphId = 105,
+    Order = 5,
+    SmallIcon = "Char/Plugins/js_bg_cj_sx_shape_small5"
+  },
+  [106] = {
+    BigIcon = "Char/Plugins/js_bg_cj_sx_shape_big6",
+    GraphId = 106,
+    Order = 6,
+    SmallIcon = "Char/Plugins/js_bg_cj_sx_shape_small6"
+  },
+  [107] = {
+    BigIcon = "Char/Plugins/js_bg_cj_sx_shape_big10",
+    GraphId = 107,
+    Order = 7,
+    SmallIcon = "Char/Plugins/js_bg_cj_sx_shape_small10"
+  },
+  [108] = {
+    BigIcon = "Char/Plugins/js_bg_cj_sx_shape_big7",
+    GraphId = 108,
+    Order = 8,
+    SmallIcon = "Char/Plugins/js_bg_cj_sx_shape_small7"
+  },
+  [109] = {
+    BigIcon = "Char/Plugins/js_bg_cj_sx_shape_big8",
+    GraphId = 109,
+    Order = 9,
+    SmallIcon = "Char/Plugins/js_bg_cj_sx_shape_small8"
+  },
+  [110] = {
+    BigIcon = "Char/Plugins/js_bg_cj_sx_shape_big11",
+    GraphId = 110,
+    Order = 11,
+    SmallIcon = "Char/Plugins/js_bg_cj_sx_shape_small11"
+  },
+  [113] = {
+    BigIcon = "Char/Plugins/js_bg_cj_sx_shape_big13",
+    GraphId = 113,
+    Order = 13,
+    SmallIcon = "Char/Plugins/js_bg_cj_sx_shape_small13"
+  }
+}

@@ -1,0 +1,95 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local ELEMENT_JOB_ITEMS_KEY = "ELEMENT_JOB_ITEMS_KEY"
+local PageType = Global.config.CHAR_TIP_PAGE_TYPE
+local TOGGLE_LIST = {
+  [1] = {tog_name = "TogEle"},
+  [2] = {tog_name = "TogJob"}
+}
+
+function ui:ui_finish_load()
+  self:set_button("FullBgBtn", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnClose", function()
+    self:ui_hide()
+  end)
+  self:init_toggle()
+  self:register_exist_auto_template(ELEMENT_JOB_ITEMS_KEY, self.v_uiobjects.DescTem, self.v_uiobjects.Content)
+end
+
+function ui:init_toggle()
+  self.v_tag_toggles = {}
+  for i, v in ipairs(TOGGLE_LIST) do
+    local tog = self:get_toggle(nil, self.v_uiobjects[v.tog_name])
+    self:refresh_toggle_text_alpha(tog, 0.5)
+    table.insert(self.v_tag_toggles, tog)
+  end
+  self.v_toggle_tab = ToggleTab:new(self)
+  self.v_toggle_tab:init_by_toggles(self.v_tag_toggles, function(select)
+    if self.v_cur_select == select then
+      return
+    end
+    self:refresh_view(select)
+  end, 2, false)
+end
+
+function ui:ui_on_show(buddy_id, type)
+  type = type or PageType.ELEMENT
+  self.v_buddy_cfg = ShareRes.get_buddy_cfg(buddy_id)
+  local element_cfgs = UtilTable.copy_table(ShareRes.create("buddy.buddy_element"))
+  for i = #element_cfgs, 1, -1 do
+    if 0 == element_cfgs[i].SortId then
+      table.remove(element_cfgs, i)
+    end
+  end
+  local job_cfgs = UtilTable.copy_table(ShareRes.create("buddy.buddy_job"))
+  table.sort(element_cfgs, function(a, b)
+    local a1 = a.Id == self.v_buddy_cfg.Element and 0 or a.Id
+    local b1 = b.Id == self.v_buddy_cfg.Element and 0 or b.Id
+    return a1 < b1
+  end)
+  table.sort(job_cfgs, function(a, b)
+    local a1 = a.Id == self.v_buddy_cfg.Job and 0 or a.Id
+    local b1 = b.Id == self.v_buddy_cfg.Job and 0 or b.Id
+    return a1 < b1
+  end)
+  self.v_cfgs = {}
+  self.v_cfgs[PageType.ELEMENT] = element_cfgs
+  self.v_cfgs[PageType.JOB] = job_cfgs
+  self:refresh_view(type)
+  self.v_toggle_tab:set_toggle_by_index(type)
+end
+
+function ui:refresh_toggle_text_alpha(toggle, alpha)
+  local text = Util.get_text("Text", toggle.transform)
+  local color = text.color
+  color.a = alpha
+  text.color = color
+end
+
+function ui:refresh_view(select)
+  local content_rect = self.v_uicompents.Content_rect
+  content_rect:SetAnchoredPositionA(content_rect.anchoredPosition.x, 0)
+  self:give_back_auto_cache(ELEMENT_JOB_ITEMS_KEY)
+  for i, config in ipairs(self.v_cfgs[select]) do
+    local color_name = 1 == i and "f5ede2" or "292929"
+    local color_desc = 1 == i and "f5ede2" or "484243"
+    local item = self:get_auto_cache(ELEMENT_JOB_ITEMS_KEY)
+    if select == PageType.ELEMENT then
+      Util.get_text("Name", item).text = string.format("<color=#%s>%s</color>", color_name, config.ElementName)
+      ResMgr:load_set_icon(Util.get_image("EleIcon", item), config.ElementIconPath)
+    else
+      Util.get_text("Name", item).text = string.format("<color=#%s>%s</color>", color_name, config.Name)
+      ResMgr:load_set_icon(Util.get_image("JobIcon", item), config.IconPath)
+    end
+    Util.get_text("Desc", item).text = string.format("<color=#%s>%s</color>", color_desc, config.Desc)
+    Util.get_child_gameobj("JobIcon", item):SetActive(select == PageType.JOB)
+    Util.get_child_gameobj("EleIcon", item):SetActive(select == PageType.ELEMENT)
+    Util.get_child_gameobj("NowBg", item):SetActive(1 == i)
+  end
+  self.v_cur_select = select
+end
+
+return ui

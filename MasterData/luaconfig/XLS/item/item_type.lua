@@ -1,0 +1,5 @@
+return {
+  consumable = 2,
+  currency = 1,
+  material = 3
+}

@@ -1,0 +1,96 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local MAX_NUM = 50
+
+function ui:ui_finish_load()
+  self:set_button("ClearBtn", function()
+    JournalMgr:clear_abnormal_journal()
+    self.v_select = 1
+    self:refresh_view()
+  end)
+  self:set_button("LeftBtn", function()
+    self.v_select = math.max(1, self.v_select - 1)
+    self:refresh_view()
+  end)
+  self:set_button("RightBtn", function()
+    self.v_select = math.min(self.v_select + 1, MAX_NUM)
+    self:refresh_view()
+  end)
+  self:set_button("CloseBtn", function()
+    self:ui_hide()
+  end)
+  self:set_button("FilterBtn", function()
+    UIMgr:get_ui("uifightdebugfilter"):ui_show(function(npc)
+      JournalMgr:filter_hurt(npc)
+      self.v_select = 1
+      self:refresh_view()
+    end)
+  end)
+  self.v_select = 1
+end
+
+function ui:ui_on_show()
+  self:refresh_view()
+  self:bind_auto_mq(Const.MSG_ABNORMAL_JOURNA_REFRESH, self.refresh_view, self)
+  local drag_panel = self.v_uiobjects.DragPanel
+  self.drag_panel_pos = drag_panel.transform.localPosition
+  Util.set_drag(self:get_object(), self, function(x, y)
+    self.drag_panel_pos.x = self.drag_panel_pos.x + x
+    self.drag_panel_pos.y = self.drag_panel_pos.y + y
+    drag_panel.transform:SetLocalPositionA(self.drag_panel_pos.x, self.drag_panel_pos.y, self.drag_panel_pos.z)
+  end)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:refresh_view()
+  self:refresh_journal()
+  self:refrehs_page()
+end
+
+function ui:refresh_journal()
+  if not JournalMgr then
+    return
+  end
+  local abnormal_journal_list = JournalMgr:get_filted_abnormal_journal()
+  local abnormal_journal = abnormal_journal_list[self.v_select]
+  if nil == abnormal_journal then
+    abnormal_journal = {
+      attack_id = "暂无记录",
+      target_id = "暂无记录",
+      hurt_Id = "暂无记录",
+      hurt_level = "暂无记录",
+      hurt_sign = "暂无记录",
+      hurt_element_type = "暂无记录",
+      hurt_value = "暂无记录",
+      atk = "暂无记录",
+      element_increase = "暂无记录",
+      extra_damage = "暂无记录",
+      damage_mul = "暂无记录",
+      def = "暂无记录",
+      element_resistance = "暂无记录",
+      extra_reduction = "暂无记录"
+    }
+  end
+  self.v_uicompents.AttackIdTxt_txt.text = abnormal_journal.attack_id
+  self.v_uicompents.TargetIdTxt_txt.text = abnormal_journal.target_id
+  self.v_uicompents.HurtIdTxt_txt.text = abnormal_journal.hurt_Id
+  self.v_uicompents.HurtLevelTxt_txt.text = abnormal_journal.hurt_level
+  self.v_uicompents.HurtSignTxt_txt.text = abnormal_journal.hurt_sign
+  self.v_uicompents.HurtElementTypeTxt_txt.text = abnormal_journal.hurt_element_type
+  self.v_uicompents.HurtValueTxt_txt.text = abnormal_journal.hurt_value
+  self.v_uicompents.AtkAbEnhanceTxt_txt.text = abnormal_journal.element_increase
+  self.v_uicompents.DefAbCurTxt_txt.text = abnormal_journal.cur_value
+  self.v_uicompents.DefAbMaxTxt_txt.text = abnormal_journal.max_value
+  self.v_uicompents.DefAbCdTxt_txt.text = abnormal_journal.cd
+  self.v_uicompents.DefTxt_txt.text = abnormal_journal.def
+  self.v_uicompents.DefAbResiTxt_txt.text = abnormal_journal.element_resistance
+  self.v_uicompents.ExtraReductionTxt_txt.text = abnormal_journal.extra_reduction
+end
+
+function ui:refrehs_page()
+  self.v_uicompents.JournalAmountTxt_txt.text = string.format("%s/%s", self.v_select, MAX_NUM)
+end
+
+return ui

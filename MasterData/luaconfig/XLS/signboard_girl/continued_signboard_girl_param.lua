@@ -1,0 +1,102 @@
+return {
+  [1001001] = {
+    BuddyId = 1001001,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001002] = {
+    BuddyId = 1001002,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001003] = {
+    BuddyId = 1001003,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001004] = {
+    BuddyId = 1001004,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001005] = {
+    BuddyId = 1001005,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001006] = {
+    BuddyId = 1001006,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001007] = {
+    BuddyId = 1001007,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001008] = {
+    BuddyId = 1001008,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001009] = {
+    BuddyId = 1001009,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001010] = {
+    BuddyId = 1001010,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001011] = {
+    BuddyId = 1001011,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001012] = {
+    BuddyId = 1001012,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001013] = {
+    BuddyId = 1001013,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001014] = {
+    BuddyId = 1001014,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001015] = {
+    BuddyId = 1001015,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001016] = {
+    BuddyId = 1001016,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001017] = {
+    BuddyId = 1001017,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001018] = {
+    BuddyId = 1001018,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [1001025] = {
+    BuddyId = 1001025,
+    ContinuedCD = 0.5,
+    ContinuedNum = 5
+  },
+  [10010011] = {
+    BuddyId = 10010011,
+    ContinuedCD = 1,
+    ContinuedNum = 10
+  }
+}

@@ -1,0 +1,572 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+local TASK_CONFIG = require("gamelogic.task.task_config")
+local TASK_STATE = TASK_CONFIG.TASK_STATE
+local Seri = require("seri")
+local LocalStorage = require("utils.localstorage")
+local PASSPORTIDKEY = "PASSPORTIDKEY"
+local AWARD_TYPE = {
+  none = 1,
+  receive = 2,
+  received = 3
+}
+M.PASSPORT_KEY_TYPE = {
+  NORMAL = 1,
+  SENIOR = 2,
+  SPECIAL = 3
+}
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_normal_award_got_map = {}
+  self.v_normal_select_award_got_map = {}
+  self.v_senior_award_got_map = {}
+  self.v_senior_select_award_got_map = {}
+  self.v_select_award_list = {}
+  self.v_all_normal_select_award_list = {}
+  self.v_all_senior_select_award_list = {}
+  self.v_passport_change_trigger = false
+  self:sys_mq_bind(Const.MSG_ON_TASK_UPDATE, self.update_task_red_point_tree, self)
+  self:sys_mq_bind(Const.MSG_ON_TASK_UPDATE, self.update_random_task_red_point, self)
+end
+
+function M:on_update_passport_data(data)
+  self.v_passport_data = data
+  if 0 == self.v_passport_data.id then
+    return
+  end
+  local passport_id = LocalStorage:load_int(PASSPORTIDKEY, 0, true)
+  if self.v_passport_data.id ~= passport_id then
+    self.v_passport_change_trigger = true
+  end
+  UtilTable.clear_map(self.v_normal_award_got_map)
+  UtilTable.clear_map(self.v_normal_select_award_got_map)
+  UtilTable.clear_map(self.v_senior_award_got_map)
+  UtilTable.clear_map(self.v_senior_select_award_got_map)
+  for _, value in ipairs(self.v_passport_data.reward_id) do
+    self.v_normal_award_got_map[value] = true
+  end
+  for _, value in ipairs(self.v_passport_data.select_reward_id) do
+    self.v_normal_select_award_got_map[value] = true
+  end
+  for _, value in ipairs(self.v_passport_data.senior_reward_id) do
+    self.v_senior_award_got_map[value] = true
+  end
+  for _, value in ipairs(self.v_passport_data.special_select_reward_id) do
+    self.v_senior_select_award_got_map[value] = true
+  end
+  UtilTable.clear_list(self.v_all_normal_select_award_list)
+  UtilTable.clear_list(self.v_all_senior_select_award_list)
+  local battle_passport_cfg = ShareRes.get_battle_passport_cfg(self.v_passport_data.id)
+  local battle_passport_group = ShareRes.get_battle_passport_group_cfg(battle_passport_cfg.Group)
+  for index, value in ipairs(battle_passport_group) do
+    if value.SelectAward then
+      local data = {
+        lv = index,
+        award = value.SelectAward
+      }
+      table.insert(self.v_all_normal_select_award_list, data)
+    end
+    if value.SelectSeniorAward then
+      local data = {
+        lv = index,
+        award = value.SelectSeniorAward
+      }
+      table.insert(self.v_all_senior_select_award_list, data)
+    end
+  end
+  self:update_red_point_tree()
+  MsgGame:mq_publish2(Const.MSG_UPDATE_PASSPORT_DATA)
+end
+
+function M:on_update_passport_exp_lv(data)
+  if 0 == self.v_passport_data.id then
+    return
+  end
+  self.v_passport_data.exp = data.exp
+  self.v_passport_data.lv = data.lv
+  self.v_passport_data.exp_week_get = data.exp_week_get
+  self:update_task_red_point_tree()
+  self:update_random_task_red_point()
+  MsgGame:mq_publish2(Const.MSG_UPDATE_PASSPORT_EXP_LV)
+end
+
+function M:on_update_random_task(data)
+  if 0 == self.v_passport_data.id then
+    return
+  end
+  self.v_passport_random_task_list = data
+  self:update_random_task_red_point()
+  MsgGame:mq_publish2(Const.MSG_UPDATE_PASSPORT_TASK)
+end
+
+function M:request_get_passport_award(lv, callback)
+  local send_data = {lv = lv}
+  Network:protect_call("c2gs_get_battle_pass_lv_reward", send_data, function(ok, resp)
+    if true == ok and 0 == resp.errcode then
+      self.v_passport_data.reward_id = resp.reward_id
+      self.v_passport_data.senior_reward_id = resp.senior_reward_id
+      for _, value in ipairs(self.v_passport_data.reward_id) do
+        self.v_normal_award_got_map[value] = true
+      end
+      for _, value in ipairs(self.v_passport_data.senior_reward_id) do
+        self.v_senior_award_got_map[value] = true
+      end
+      if callback then
+        callback()
+      end
+      PassPortMgr:update_red_point_tree()
+    end
+  end)
+end
+
+function M:request_get_all_passport_award(callback)
+  Network:protect_call("c2gs_one_touch_get_battle_pass_reward", {}, function(ok, resp)
+    if true == ok and 0 == resp.errcode then
+      self.v_passport_data.reward_id = resp.reward_id
+      self.v_passport_data.senior_reward_id = resp.senior_reward_id
+      for _, value in ipairs(self.v_passport_data.reward_id) do
+        self.v_normal_award_got_map[value] = true
+      end
+      for _, value in ipairs(self.v_passport_data.senior_reward_id) do
+        self.v_senior_award_got_map[value] = true
+      end
+      callback()
+      PassPortMgr:update_red_point_tree()
+    end
+  end)
+end
+
+function M:request_buy_passport_level(count, callback)
+  local send_data = {count = count}
+  Network:protect_call("c2gs_buy_battle_pass_grade", send_data, function(ok, resp)
+    if true == ok and 0 == resp.errcode then
+      callback()
+      PassPortMgr:update_red_point_tree()
+    end
+  end)
+end
+
+function M:request_get_final_award(callback)
+  Network:protect_call("c2gs_battle_pass_circulate_reward", {}, function(ok, resp)
+    if true == ok and 0 == resp.errcode then
+      if callback then
+        callback()
+      end
+      PassPortMgr:update_red_point_tree()
+    end
+  end)
+end
+
+function M:request_buy_passport(sdk_key, callback)
+  local request = {
+    instruct = "recharge_sdkkey",
+    args_map = Seri.packstring({
+      uuid = Global.player_uuid,
+      sdk_key = sdk_key
+    })
+  }
+  Network:protect_call("c2gs_execute_instruct", request, function(ok, resp)
+    if true == ok and callback then
+      callback()
+    end
+  end)
+end
+
+function M:request_receive_all(callback)
+  Network:protect_call("c2gs_get_battle_pass_task_reward", {}, function(ok, resp)
+    if true == ok and 0 == resp.errcode and callback then
+      callback()
+    end
+  end)
+end
+
+function M:request_get_battle_pass_select_award(lv, award_id, is_senior, callback)
+  local request = {
+    lv = lv,
+    reward_id = award_id,
+    is_senior = is_senior
+  }
+  Network:protect_call("c2gs_get_battle_pass_special_reward", request, function(ok, resp)
+    if true == ok and 0 == resp.errcode then
+      if is_senior then
+        self.v_senior_select_award_got_map[lv] = true
+      else
+        self.v_normal_select_award_got_map[lv] = true
+      end
+      if callback then
+        callback()
+      end
+      self:update_red_point_tree()
+    end
+  end)
+end
+
+function M:get_passport_data()
+  return self.v_passport_data
+end
+
+function M:get_root_redpoint_state()
+  return self.v_root_node.is_on
+end
+
+function M:get_passport_random_task_list()
+  return self.v_passport_random_task_list
+end
+
+function M:get_award_got_map()
+  return self.v_normal_award_got_map, self.v_senior_award_got_map, self.v_normal_select_award_got_map, self.v_senior_select_award_got_map
+end
+
+function M:update_red_point_tree()
+  local passport_cfg = ShareRes.get_battle_passport_cfg(self.v_passport_data.id)
+  local passport_group = ShareRes.get_battle_passport_group_cfg(passport_cfg.Group)
+  local award_part_redpoint = false
+  for _, param in ipairs(passport_group) do
+    if param.Level <= self.v_passport_data.lv then
+      if 0 ~= param.Award and not self.v_normal_award_got_map[param.Level] then
+        award_part_redpoint = true
+        break
+      end
+    else
+      break
+    end
+    if self:is_senior() and 0 ~= param.SeniorAward and not self.v_senior_award_got_map[param.Level] then
+      award_part_redpoint = true
+      break
+    end
+  end
+  if not award_part_redpoint then
+    for _, param in ipairs(self.v_all_normal_select_award_list) do
+      if param.lv <= self.v_passport_data.lv then
+        if not self.v_normal_select_award_got_map[param.lv] then
+          award_part_redpoint = true
+          break
+        end
+      else
+        break
+      end
+    end
+    if self:is_senior() then
+      for _, param in ipairs(self.v_all_senior_select_award_list) do
+        if param.lv <= self.v_passport_data.lv then
+          if not self.v_senior_select_award_got_map[param.lv] then
+            award_part_redpoint = true
+            break
+          end
+        else
+          break
+        end
+      end
+    end
+  end
+  if self.v_passport_data.lv >= #passport_group and self.v_passport_data.exp >= passport_cfg.CirculateExp then
+    award_part_redpoint = true
+  end
+  RedPointMgr:enable_redpoint(RedEnum.PASSPORT_AWARD, award_part_redpoint)
+  self:update_task_red_point_tree()
+end
+
+function M:update_task_red_point_tree()
+  if 0 == self.v_passport_data.id then
+    return
+  end
+  local task_list
+  task_list = ShareRes.create("task.daily_task")
+  local daily_award_list = ShareRes.create("task.daily_task_reward")
+  local daily_redpoint = false
+  for index, config in ipairs(task_list) do
+    local task_id = config.TaskId
+    local task_info = TaskMgr:get_task_by_id(task_id)
+    if task_info then
+      local task_state = task_info.state
+      if task_state == TASK_STATE.receive then
+        daily_redpoint = true
+      end
+    end
+  end
+  local daily_award_is_all_received = true
+  for index, config in ipairs(daily_award_list) do
+    local task_id = config.TaskId
+    local task_info = TaskMgr:get_task_by_id(task_id)
+    if task_info then
+      local task_state = task_info.state
+      if task_state == TASK_STATE.receive then
+        daily_redpoint = true
+      end
+      if task_state ~= TASK_STATE.received then
+        daily_award_is_all_received = false
+      end
+    end
+  end
+  RedPointMgr:enable_redpoint(RedEnum.PASSPORT_DAILY_TASK, daily_redpoint)
+  task_list = ShareRes.create("task.weekly_task")
+  local weekly_award_list = ShareRes.create("task.weekly_task_reward")
+  local weekly_redpoint = false
+  for index, config in ipairs(task_list) do
+    local task_id = config.TaskId
+    local task_info = TaskMgr:get_task_by_id(task_id)
+    if task_info then
+      local task_state = task_info.state
+      if task_state == TASK_STATE.receive then
+        weekly_redpoint = true
+      end
+    end
+  end
+  local weekly_award_is_all_received = true
+  for index, config in ipairs(weekly_award_list) do
+    local task_id = config.TaskId
+    local task_info = TaskMgr:get_task_by_id(task_id)
+    if task_info then
+      local task_state = task_info.state
+      if task_state == TASK_STATE.receive then
+        weekly_redpoint = true
+      end
+      if task_state ~= TASK_STATE.received then
+        weekly_award_is_all_received = false
+      end
+    end
+  end
+  RedPointMgr:enable_redpoint(RedEnum.PASSPORT_WEEKLY_TASK, weekly_redpoint)
+  local passport_cfg = ShareRes.get_battle_passport_cfg(self.v_passport_data.id)
+  local task_group_id = passport_cfg.TaskGroup
+  task_list = ShareRes.get_task_group_cfg(task_group_id)
+  local passport_task_redpoint = false
+  for index, config in pairs(task_list) do
+    local task_id = index
+    local task_info = TaskMgr:get_task_by_id(task_id)
+    if task_info and task_info.state == TASK_STATE.receive then
+      passport_task_redpoint = true
+    end
+  end
+  RedPointMgr:enable_redpoint(RedEnum.PASSPORT_RANDOM_TASK, passport_task_redpoint)
+  self.has_award = daily_redpoint or weekly_redpoint or passport_task_redpoint
+  if self.v_passport_data.exp_week_get >= passport_cfg.WeekGetMaxExp and daily_award_is_all_received and weekly_award_is_all_received then
+    self:hide_all_task_redpoint()
+    return
+  end
+end
+
+function M:update_random_task_red_point()
+  if 0 == self.v_passport_data.id then
+    return
+  end
+  if not self.v_passport_random_task_list then
+    return
+  end
+  local daily_award_list = ShareRes.create("task.daily_task_reward")
+  local daily_award_is_all_received = true
+  for index, config in ipairs(daily_award_list) do
+    local task_id = config.TaskId
+    local task_info = TaskMgr:get_task_by_id(task_id)
+    if task_info then
+      local task_state = task_info.state
+      if task_state ~= TASK_STATE.received then
+        daily_award_is_all_received = false
+      end
+    end
+  end
+  local daily_redpoint = false
+  local daily_task_list = self.v_passport_random_task_list.daily_task_ids
+  for _, task_id in ipairs(daily_task_list) do
+    local task_info = TaskMgr:get_task_by_id(task_id)
+    if task_info then
+      local task_state = task_info.state
+      if task_state == TASK_STATE.receive then
+        daily_redpoint = true
+      end
+    end
+  end
+  local pre_daily_redpoint = RedPointMgr:get_redpoint_enable_by_id(RedEnum.PASSPORT_DAILY_TASK)
+  RedPointMgr:enable_redpoint(RedEnum.PASSPORT_DAILY_TASK, daily_redpoint and true or pre_daily_redpoint)
+  local weekly_award_list = ShareRes.create("task.weekly_task_reward")
+  local weekly_award_is_all_received = true
+  for index, config in ipairs(weekly_award_list) do
+    local task_id = config.TaskId
+    local task_info = TaskMgr:get_task_by_id(task_id)
+    if task_info then
+      local task_state = task_info.state
+      if task_state ~= TASK_STATE.received then
+        weekly_award_is_all_received = false
+      end
+    end
+  end
+  local weekly_redpoint = false
+  local weekly_task_list = self.v_passport_random_task_list.week_task_ids
+  for _, task_id in ipairs(weekly_task_list) do
+    local task_info = TaskMgr:get_task_by_id(task_id)
+    if task_info then
+      local task_state = task_info.state
+      if task_state == TASK_STATE.receive then
+        weekly_redpoint = true
+      end
+    end
+  end
+  local pre_weekly_redpoint = RedPointMgr:get_redpoint_enable_by_id(RedEnum.PASSPORT_WEEKLY_TASK)
+  RedPointMgr:enable_redpoint(RedEnum.PASSPORT_WEEKLY_TASK, weekly_redpoint and true or pre_weekly_redpoint)
+  self.has_award = daily_redpoint or weekly_redpoint or self.has_award
+  local passport_cfg = ShareRes.get_battle_passport_cfg(self.v_passport_data.id)
+  if self.v_passport_data.exp_week_get >= passport_cfg.WeekGetMaxExp and daily_award_is_all_received and weekly_award_is_all_received then
+    self:hide_all_task_redpoint()
+    return
+  end
+end
+
+function M:hide_all_task_redpoint()
+  RedPointMgr:enable_redpoint(RedEnum.PASSPORT_DAILY_TASK, false)
+  RedPointMgr:enable_redpoint(RedEnum.PASSPORT_WEEKLY_TASK, false)
+  RedPointMgr:enable_redpoint(RedEnum.PASSPORT_RANDOM_TASK, false)
+end
+
+function M:is_senior()
+  return self.v_passport_data and self.v_passport_data.is_senior
+end
+
+function M:get_lv()
+  return self.v_passport_data and self.v_passport_data.lv
+end
+
+function M:get_passport_change_trigger()
+  return self.v_passport_change_trigger
+end
+
+function M:reset_passport_change_trigger()
+  self.v_passport_change_trigger = false
+  LocalStorage:save_int(PASSPORTIDKEY, self.v_passport_data.id, true)
+end
+
+function M:get_select_award_list()
+  return self.v_select_award_list
+end
+
+function M:clear_select_award_list()
+  UtilTable.clear_list(self.v_select_award_list)
+end
+
+function M:get_lv_award(lv)
+  local battle_passport_cfg = ShareRes.get_battle_passport_cfg(self.v_passport_data.id)
+  local cfg = ShareRes.get_battle_passport_group_cfg(battle_passport_cfg.Group)[lv]
+  local is_senior = self:is_senior()
+  local has_normal_award = 0 ~= cfg.Award and cfg.Award or nil
+  local has_senior_normal_award
+  if is_senior then
+    has_senior_normal_award = 0 ~= cfg.SeniorAward and cfg.SeniorAward or nil
+  end
+  local need_to_send_message
+  if has_normal_award and not need_to_send_message then
+    need_to_send_message = not self.v_normal_award_got_map[lv]
+  end
+  if has_senior_normal_award and not need_to_send_message then
+    need_to_send_message = not self.v_senior_award_got_map[lv]
+  end
+  if need_to_send_message then
+    self:request_get_passport_award(lv, function()
+      local ui_monthtask = UIMgr:get_ui("ui_monthtask")
+      if ui_monthtask then
+        ui_monthtask:update_user_data()
+      end
+      if cfg.SelectAward and not self.v_normal_select_award_got_map[lv] then
+        local select_award_data = {
+          selectAwardGroupId = cfg.SelectAward,
+          lv = lv,
+          is_senior = false
+        }
+        table.insert(self.v_select_award_list, select_award_data)
+      end
+      if is_senior and cfg.SelectSeniorAward and not self.v_senior_select_award_got_map[lv] then
+        local select_award_data = {
+          selectAwardGroupId = cfg.SelectSeniorAward,
+          lv = lv,
+          is_senior = true
+        }
+        table.insert(self.v_select_award_list, select_award_data)
+      end
+      self:show_select_award_ui()
+    end)
+  else
+    if cfg.SelectAward and not self.v_normal_select_award_got_map[lv] then
+      local select_award_data = {
+        selectAwardGroupId = cfg.SelectAward,
+        lv = lv,
+        is_senior = false
+      }
+      table.insert(self.v_select_award_list, select_award_data)
+    end
+    if is_senior and cfg.SelectSeniorAward and not self.v_senior_select_award_got_map[lv] then
+      local select_award_data = {
+        selectAwardGroupId = cfg.SelectSeniorAward,
+        lv = lv,
+        is_senior = true
+      }
+      table.insert(self.v_select_award_list, select_award_data)
+    end
+    self:show_select_award_ui()
+  end
+end
+
+function M:show_select_award_ui()
+  if not UtilTable.is_empty(self.v_select_award_list) then
+    local select_award_data = self.v_select_award_list[1]
+    UIMgr:get_ui("ui_monthtask_award_choice"):ui_show(false, select_award_data.selectAwardGroupId, select_award_data.lv, select_award_data.is_senior)
+    table.remove(self.v_select_award_list, 1)
+  else
+    return false
+  end
+end
+
+function M:receive_all_select_award()
+  for index, value in ipairs(self.v_all_normal_select_award_list) do
+    if value.lv <= self.v_passport_data.lv and not self.v_normal_select_award_got_map[value.lv] then
+      local select_award_data = {
+        selectAwardGroupId = value.award,
+        lv = value.lv,
+        is_senior = false
+      }
+      table.insert(self.v_select_award_list, select_award_data)
+    end
+  end
+  for index, value in ipairs(self.v_all_senior_select_award_list) do
+    if self:is_senior() and value.lv <= self.v_passport_data.lv and not self.v_senior_select_award_got_map[value.lv] then
+      local select_award_data = {
+        selectAwardGroupId = value.award,
+        lv = value.lv,
+        is_senior = true
+      }
+      table.insert(self.v_select_award_list, select_award_data)
+    end
+  end
+  return self:show_select_award_ui()
+end
+
+function M:get_daily_active_score()
+  local task_list = UtilTable.copy_table(ShareRes.create("task.daily_task"))
+  local passport_random_task_list = self:get_passport_random_task_list()
+  if not passport_random_task_list then
+    return 0
+  end
+  local random_task = passport_random_task_list.daily_task_ids
+  for _, task_id in ipairs(random_task) do
+    local temp = {
+      Id = #task_list + 1,
+      TaskId = task_id
+    }
+    table.insert(task_list, temp)
+  end
+  local active_score = 0
+  local award_config = ShareRes.create("award.award")
+  local award_group = ShareRes.create("award.award_group")
+  local task_config = ShareRes.create("condition.task")
+  for _, config in ipairs(task_list) do
+    local task_id = config.TaskId
+    local task_info = TaskMgr:get_task_by_id(task_id)
+    local task_state = task_info.state
+    local award_id = award_group[task_config[task_id].Award][1]
+    local award_num = award_config[award_id].Num
+    if task_state == TASK_STATE.received then
+      active_score = active_score + award_num
+    end
+  end
+  return active_score
+end
+
+return M

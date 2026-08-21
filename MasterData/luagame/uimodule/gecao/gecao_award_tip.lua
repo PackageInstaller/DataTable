@@ -1,0 +1,97 @@
+local Base = require("ui.uibase")
+local M = Util.create_child_mt(Base)
+local SaticSv = require("ui.widget.static_scroll_view")
+local AwardTipItem = require("uimodule.gecao.local_widgets.item_obj_com1")
+local AwardTipItemKey = "GECAO_AWARD_TIP_ITEM_KEY"
+local _sort = table.sort
+local _insert = table.insert
+local Item_Helper = require("utils.item_helper")
+local Award_Status = {
+  CantGet = 0,
+  CanGet = 1,
+  Geted = 2
+}
+
+function M:ui_finish_load()
+  self:set_button("BgBtn", function()
+    self:ui_hide()
+  end)
+  self:set_button("CloseBtn", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnRecive", function()
+    self:on_click_recive()
+  end)
+  local uobj = self.v_uiobjects
+  self.v_static_sv = SaticSv:new(self, uobj.AwardLayout, AwardTipItem, AwardTipItemKey)
+end
+
+function M:ui_on_show(data)
+  self.v_data = data
+  local uobj = self.v_uiobjects
+  local status = data.status or Award_Status.CantGet
+  uobj.BtnCantGet:SetActive(status == Award_Status.CantGet)
+  uobj.BtnRecive:SetActive(status == Award_Status.CanGet)
+  uobj.BtnGeted:SetActive(status == Award_Status.Geted)
+  local ucom = self.v_uicompents
+  local award_cfg = data.cfg
+  ucom.Title_txt.text = Util.format_str("{1}星奖励", award_cfg.Id)
+  local award_list = ShareRes.get_awards(award_cfg.AwardGroup)
+  self:sort_award_list(award_list)
+  self.v_award_list = award_list
+  self.v_static_sv:update_list(self.v_award_list)
+end
+
+function M:sort_award_list(award_list)
+  _sort(award_list, function(a, b)
+    local cfg_a = Item_Helper.get_item_cfg(a.ItemId)
+    local cfg_b = Item_Helper.get_item_cfg(b.ItemId)
+    if not cfg_a or not cfg_b then
+      return false
+    end
+    if cfg_a.Quality == cfg_b.Quality then
+      if cfg_a.Priority == cfg_b.Priority then
+        return a.id > b.id
+      else
+        return cfg_a.Priority > cfg_b.Priority
+      end
+    else
+      return cfg_a.Quality > cfg_b.Quality
+    end
+  end)
+end
+
+function M:ui_on_hide()
+  self.v_static_sv:clear()
+end
+
+function M:ui_on_destroy()
+  self.v_static_sv = nil
+end
+
+function M:show_award()
+  if self.v_award_list and UtilTable.hash_lenth(self.v_award_list) > 0 then
+    local award_list = {}
+    for index, value in ipairs(self.v_award_list) do
+      local id = value.ItemId
+      local count = value.Num
+      _insert(award_list, {id = id, count = count})
+    end
+    UIMgr:get_ui("award_show_panel"):ui_show(award_list)
+  end
+end
+
+function M:on_click_recive()
+  Network:call("c2gs_receive_cut_grass_star_reward", {
+    star_num = self.v_data.cfg.Id
+  }, function(ok, resp)
+    if ok then
+      ChapterMgr:update_cut_grass_box_data(resp.star_box_list)
+      MsgGame:mq_publish2(Const.MSG_ON_GECAO_GET_AWARD)
+      self:show_award()
+      self:ui_hide()
+    end
+  end)
+end
+
+return M

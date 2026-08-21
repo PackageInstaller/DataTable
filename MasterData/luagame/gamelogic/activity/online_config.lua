@@ -1,0 +1,16 @@
+local config = {}
+local CommonDefine = require("cs_share.common_define")
+local ROOM_CHANGE_TYPE = CommonDefine.ROOM_CHANGE_TYPE
+local ROOM_ABOUT_MAP = CommonDefine.ROOM_ABOUT_MAP
+config.Quick_TIPS_TYPE = {MATCH = 1, INVITATION = 2}
+config.Notice_TIPS_TYPE = {
+  MATCH = 1,
+  INVITATION = 2,
+  ROOM = 3
+}
+config.MATCH_OPERATE = {BREAK = 1, RESTART = 2}
+config.MEMBER_TITLE = {
+  MEMBER = ROOM_ABOUT_MAP.POS_MAP.MENBER_POS,
+  LEADER = ROOM_ABOUT_MAP.POS_MAP.CAPATIN_POS
+}
+return config

@@ -1,0 +1,274 @@
+return {
+  {
+    DiscountCnt = 0,
+    DropId = {
+      110010,
+      110014,
+      110000,
+      110000,
+      110000,
+      110000,
+      110003,
+      220004
+    },
+    FirstDiscount = 100,
+    Id = 1,
+    RefreshId = 1
+  },
+  {
+    DiscountCnt = 0,
+    DropId = {
+      400003,
+      501005,
+      110000,
+      110000,
+      110000,
+      110000,
+      110003,
+      220004
+    },
+    FirstDiscount = 100,
+    Id = 2,
+    RefreshId = 2
+  },
+  {
+    DiscountCnt = 0,
+    DropId = {
+      110010,
+      110015,
+      110000,
+      110000,
+      110000,
+      110000,
+      110000,
+      220004
+    },
+    FirstDiscount = 100,
+    Id = 3,
+    RefreshId = 2
+  },
+  {
+    DiscountCnt = 0,
+    DropId = {
+      400003,
+      110013,
+      110000,
+      110000,
+      110001,
+      110001,
+      110002,
+      220004
+    },
+    FirstDiscount = 50,
+    Id = 4,
+    RefreshId = 1
+  },
+  {
+    DiscountCnt = 0,
+    DropId = {
+      400003,
+      110013,
+      110000,
+      110000,
+      110001,
+      110001,
+      110002,
+      220004
+    },
+    FirstDiscount = 50,
+    Id = 5,
+    RefreshId = 1
+  },
+  [1001] = {
+    DiscountCnt = 0,
+    DropId = {
+      530011,
+      530012,
+      530013,
+      110010,
+      110013,
+      0,
+      0,
+      0
+    },
+    FirstDiscount = 100,
+    Id = 1001,
+    RefreshId = 2
+  },
+  [1002] = {
+    DiscountCnt = 0,
+    DropId = {
+      530021,
+      530022,
+      530023,
+      110010,
+      110013,
+      0,
+      0,
+      0
+    },
+    FirstDiscount = 100,
+    Id = 1002,
+    RefreshId = 2
+  },
+  [1003] = {
+    DiscountCnt = 0,
+    DropId = {
+      530031,
+      530032,
+      530033,
+      110010,
+      110013,
+      0,
+      0,
+      0
+    },
+    FirstDiscount = 100,
+    Id = 1003,
+    RefreshId = 2
+  },
+  [1004] = {
+    DiscountCnt = 0,
+    DropId = {
+      530041,
+      530042,
+      530043,
+      110010,
+      110013,
+      0,
+      0,
+      0
+    },
+    FirstDiscount = 100,
+    Id = 1004,
+    RefreshId = 2
+  },
+  [1005] = {
+    DiscountCnt = 0,
+    DropId = {
+      530051,
+      530052,
+      530053,
+      110010,
+      110013,
+      0,
+      0,
+      0
+    },
+    FirstDiscount = 100,
+    Id = 1005,
+    RefreshId = 2
+  },
+  [2071] = {
+    DiscountCnt = 0,
+    DropId = {
+      400003,
+      110013,
+      110000,
+      110000,
+      110001,
+      110001,
+      110002,
+      604502
+    },
+    FirstDiscount = 100,
+    Id = 2071,
+    RefreshId = 1
+  },
+  [2072] = {
+    DiscountCnt = 0,
+    DropId = {
+      400003,
+      110013,
+      110000,
+      110000,
+      110001,
+      110001,
+      110002,
+      604504
+    },
+    FirstDiscount = 100,
+    Id = 2072,
+    RefreshId = 1
+  },
+  [2077] = {
+    DiscountCnt = 0,
+    DropId = {
+      390040,
+      390041,
+      390042,
+      501005,
+      110010,
+      110014,
+      110014,
+      0
+    },
+    FirstDiscount = 100,
+    Id = 2077,
+    RefreshId = 2
+  },
+  [2078] = {
+    DiscountCnt = 0,
+    DropId = {
+      390043,
+      390044,
+      390045,
+      501005,
+      110010,
+      110014,
+      110014,
+      0
+    },
+    FirstDiscount = 100,
+    Id = 2078,
+    RefreshId = 2
+  },
+  [2079] = {
+    DiscountCnt = 0,
+    DropId = {
+      390046,
+      390047,
+      390048,
+      501005,
+      110010,
+      110014,
+      110014,
+      0
+    },
+    FirstDiscount = 100,
+    Id = 2079,
+    RefreshId = 2
+  },
+  [2080] = {
+    DiscountCnt = 0,
+    DropId = {
+      390049,
+      390050,
+      390051,
+      501005,
+      110012,
+      110015,
+      110015,
+      0
+    },
+    FirstDiscount = 100,
+    Id = 2080,
+    RefreshId = 2
+  },
+  [2081] = {
+    DiscountCnt = 0,
+    DropId = {
+      390052,
+      390053,
+      390054,
+      501005,
+      110012,
+      110015,
+      110015,
+      0
+    },
+    FirstDiscount = 100,
+    Id = 2081,
+    RefreshId = 2
+  }
+}

@@ -1,0 +1,782 @@
+return {
+  [101] = {
+    {
+      FixedGrid = {},
+      FloorIdx = 1,
+      Id = 101,
+      KeyId = 1,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 2},
+        {101002, 1},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 2,
+      Id = 101,
+      KeyId = 2,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 2},
+        {101002, 1},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 3,
+      Id = 101,
+      KeyId = 3,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 2},
+        {101002, 1},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 4,
+      Id = 101,
+      KeyId = 4,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 2},
+        {101002, 1},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {
+        {
+          3,
+          4,
+          101003
+        },
+        {
+          5,
+          7,
+          2
+        },
+        {
+          3,
+          7,
+          101001
+        }
+      },
+      FloorIdx = 5,
+      Id = 101,
+      KeyId = 5,
+      MonsterLimit = 2,
+      RandomGrid = {},
+      Type = 2
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 6,
+      Id = 101,
+      KeyId = 6,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 1},
+        {101002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 7,
+      Id = 101,
+      KeyId = 7,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 1},
+        {101002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 8,
+      Id = 101,
+      KeyId = 8,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 1},
+        {101002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 9,
+      Id = 101,
+      KeyId = 9,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 1},
+        {101002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {
+        {
+          3,
+          4,
+          101004
+        },
+        {
+          5,
+          7,
+          9
+        },
+        {
+          3,
+          7,
+          101002
+        }
+      },
+      FloorIdx = 10,
+      Id = 101,
+      KeyId = 10,
+      MonsterLimit = 2,
+      RandomGrid = {},
+      Type = 2
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 11,
+      Id = 101,
+      KeyId = 11,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 2},
+        {101002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 12,
+      Id = 101,
+      KeyId = 12,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 2},
+        {101002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 13,
+      Id = 101,
+      KeyId = 13,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 2},
+        {101002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 14,
+      Id = 101,
+      KeyId = 14,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 2},
+        {101002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {
+        {
+          3,
+          4,
+          101005
+        },
+        {
+          5,
+          7,
+          2
+        },
+        {
+          3,
+          7,
+          101002
+        }
+      },
+      FloorIdx = 15,
+      Id = 101,
+      KeyId = 15,
+      MonsterLimit = 2,
+      RandomGrid = {},
+      Type = 2
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 16,
+      Id = 101,
+      KeyId = 16,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 2},
+        {101002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 17,
+      Id = 101,
+      KeyId = 17,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 2},
+        {101002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 18,
+      Id = 101,
+      KeyId = 18,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 2},
+        {101002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 19,
+      Id = 101,
+      KeyId = 19,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {101001, 2},
+        {101002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {
+        {
+          3,
+          4,
+          101006
+        },
+        {
+          5,
+          7,
+          9
+        },
+        {
+          3,
+          7,
+          101002
+        }
+      },
+      FloorIdx = 20,
+      Id = 101,
+      KeyId = 20,
+      MonsterLimit = 2,
+      RandomGrid = {},
+      Type = 2
+    }
+  },
+  [102] = {
+    {
+      FixedGrid = {},
+      FloorIdx = 1,
+      Id = 102,
+      KeyId = 21,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 2},
+        {102002, 1},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 2,
+      Id = 102,
+      KeyId = 22,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 2},
+        {102002, 1},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 3,
+      Id = 102,
+      KeyId = 23,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 2},
+        {102002, 1},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 4,
+      Id = 102,
+      KeyId = 24,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 2},
+        {102002, 1},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {
+        {
+          3,
+          4,
+          102003
+        },
+        {
+          5,
+          7,
+          2
+        },
+        {
+          3,
+          7,
+          102001
+        }
+      },
+      FloorIdx = 5,
+      Id = 102,
+      KeyId = 25,
+      MonsterLimit = 2,
+      RandomGrid = {},
+      Type = 2
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 6,
+      Id = 102,
+      KeyId = 26,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 1},
+        {102002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 7,
+      Id = 102,
+      KeyId = 27,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 1},
+        {102002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 8,
+      Id = 102,
+      KeyId = 28,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 1},
+        {102002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 9,
+      Id = 102,
+      KeyId = 29,
+      MonsterLimit = 3,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 1},
+        {102002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {
+        {
+          3,
+          4,
+          102004
+        },
+        {
+          5,
+          7,
+          9
+        },
+        {
+          3,
+          7,
+          102002
+        }
+      },
+      FloorIdx = 10,
+      Id = 102,
+      KeyId = 30,
+      MonsterLimit = 2,
+      RandomGrid = {},
+      Type = 2
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 11,
+      Id = 102,
+      KeyId = 31,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 2},
+        {102002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 12,
+      Id = 102,
+      KeyId = 32,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 2},
+        {102002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 13,
+      Id = 102,
+      KeyId = 33,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 2},
+        {102002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 14,
+      Id = 102,
+      KeyId = 34,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 2},
+        {102002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {
+        {
+          3,
+          4,
+          102005
+        },
+        {
+          5,
+          7,
+          2
+        },
+        {
+          3,
+          7,
+          102002
+        }
+      },
+      FloorIdx = 15,
+      Id = 102,
+      KeyId = 35,
+      MonsterLimit = 2,
+      RandomGrid = {},
+      Type = 2
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 16,
+      Id = 102,
+      KeyId = 36,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 2},
+        {102002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 17,
+      Id = 102,
+      KeyId = 37,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 2},
+        {102002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 18,
+      Id = 102,
+      KeyId = 38,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 2},
+        {102002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {},
+      FloorIdx = 19,
+      Id = 102,
+      KeyId = 39,
+      MonsterLimit = 4,
+      RandomGrid = {
+        {1, 1},
+        {2, 1},
+        {5, 1},
+        {102001, 2},
+        {102002, 2},
+        {10, 6},
+        {11, 1},
+        {4, 1}
+      },
+      Type = 1
+    },
+    {
+      FixedGrid = {
+        {
+          3,
+          4,
+          102006
+        },
+        {
+          5,
+          7,
+          9
+        },
+        {
+          3,
+          7,
+          102002
+        }
+      },
+      FloorIdx = 20,
+      Id = 102,
+      KeyId = 40,
+      MonsterLimit = 2,
+      RandomGrid = {},
+      Type = 2
+    }
+  }
+}

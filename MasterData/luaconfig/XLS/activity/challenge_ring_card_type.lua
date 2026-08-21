@@ -1,0 +1,62 @@
+return {
+  {
+    Icon = "Battle_maps_icon_mobs",
+    Id = 1,
+    Name = "小怪",
+    ShowPriority = 90
+  },
+  {
+    Icon = "Battle_maps_icon_monster",
+    Id = 2,
+    Name = "精英",
+    ShowPriority = 80
+  },
+  {
+    Icon = "Battle_maps_icon_challenge",
+    Id = 3,
+    Name = "挑战",
+    ShowPriority = 70
+  },
+  {
+    Icon = "Battle_maps_icon_boss",
+    Id = 4,
+    Name = "领袖",
+    ShowPriority = 20
+  },
+  [51] = {
+    Icon = "Battle_maps_icon_box",
+    Id = 51,
+    Name = "宝箱",
+    ShowPriority = 60
+  },
+  [52] = {
+    Icon = "Battle_maps_icon_treatment",
+    Id = 52,
+    Name = "回血",
+    ShowPriority = 40
+  },
+  [53] = {
+    Icon = "Battle_maps_icon_shop",
+    Id = 53,
+    Name = "商店",
+    ShowPriority = 30
+  },
+  [54] = {
+    Icon = "Ring_icon_cardget",
+    Id = 54,
+    Name = "获取",
+    ShowPriority = 50
+  },
+  [55] = {
+    Icon = "Ring_icon_cardnumber",
+    Id = 55,
+    Name = "门",
+    ShowPriority = 10
+  },
+  [56] = {
+    Icon = "Battle_maps_icon_strengthen",
+    Id = 56,
+    Name = "铸造牌",
+    ShowPriority = 1
+  }
+}

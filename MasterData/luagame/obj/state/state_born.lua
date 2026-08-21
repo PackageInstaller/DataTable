@@ -1,0 +1,16 @@
+local Base = require("obj.state.state_obj_base")
+local STATE_NAME = Config.STATE_NAME
+local M = Util.create_child_mt(Base)
+
+function M:state_on_enter(action)
+  Base.state_on_enter(self)
+  self.v_state_manager:try_action(action, nil, nil, nil, function()
+    self.v_state_manager:to_idle_state(true)
+  end)
+end
+
+function M:state_get_name()
+  return STATE_NAME.born
+end
+
+return M

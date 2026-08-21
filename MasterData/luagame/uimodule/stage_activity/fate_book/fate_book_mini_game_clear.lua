@@ -1,0 +1,63 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local MINI_GAME_CONDITION_TEMP = "MINI_GAME_CONDITION_TEMP"
+
+function ui:ui_finish_load()
+  self:set_button("Mask", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(MINI_GAME_CONDITION_TEMP, self.v_uiobjects.ConditionTem, self.v_uiobjects.ConditionContent)
+end
+
+function ui:ui_on_show(task_item)
+  self:refresh_condition(task_item)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_condition()
+  local mini_game_id = ChallengeRingPlusMgr:get_select_mini_game_id()
+  local mini_game_cfg = ShareRes.get_curse_mini_game_cfg(mini_game_id)
+  if not mini_game_cfg then
+    Log.Error("获取小游戏配置失败", mini_game_id, debug.traceback())
+    return
+  end
+  local suc_start_count = 0
+  local task_id = mini_game_cfg.TaskId
+  local task_item = ChallengeRingPlusMgr:get_record_mini_game_task_item()
+  local task_cfg = ShareRes.get_battle_task_cfg(task_id)
+  if task_cfg then
+    local cond_cfg, comp, obj, star_light, desc_txt
+    for start_count, condition_id in ipairs(task_cfg.Condition) do
+      if condition_id > 0 then
+        comp = nil ~= task_item and task_item:check_condition_complete(condition_id)
+        cond_cfg = ShareRes.get_battle_task_condition_cfg(condition_id)
+        obj = self:get_auto_cache(MINI_GAME_CONDITION_TEMP)
+        star_light = self:get_child_gameobj("StarLight", obj)
+        star_light.gameObject:SetActive(comp)
+        desc_txt = self:get_text("ConditionDesc", obj)
+        desc_txt.text = cond_cfg.Desc
+        if comp and start_count > suc_start_count then
+          suc_start_count = suc_start_count + 1
+        end
+      end
+    end
+  end
+  local start_name = mini_game_cfg.GroupName[suc_start_count]
+  self.v_uicompents.Evaluate_txt.text = start_name
+  local drop_group_id = mini_game_cfg.DropGroupId[suc_start_count]
+  if Util.is_more_than_zero(drop_group_id) then
+    local group_cfg = ShareRes.get_curse_mini_game_award_group_cfg(drop_group_id)
+    ResMgr:load_set_icon(self.v_uicompents.AwardIcon_img, group_cfg.ImagePath)
+    ResMgr:load_set_icon(self.v_uicompents.EvaluateBg_img, group_cfg.Bg)
+    self.v_uicompents.AwardDesc_txt.text = group_cfg.AwardText
+  else
+    Log.Error("获取奖励配置失败, 当前星级", suc_start_count, debug.traceback())
+  end
+end
+
+return ui

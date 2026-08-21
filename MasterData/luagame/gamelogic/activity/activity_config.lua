@@ -1,0 +1,58 @@
+local commonDef = require("cs_share.common_define")
+local ACTY_TYPE = commonDef.ACTY_TYPE
+local config = {}
+config.ACTY_TYPE = {
+  [ACTY_TYPE.BEST_CONFIG_FIGHT] = {
+    activity_id = ACTY_TYPE.BEST_CONFIG_FIGHT,
+    class = "gamelogic.activity.top_version_act"
+  },
+  [ACTY_TYPE.CHALLENGE_RING] = {
+    activity_id = ACTY_TYPE.CHALLENGE_RING,
+    class = "gamelogic.activity.challenge_ring.challenge_ring_act"
+  },
+  [ACTY_TYPE.BUDDY_TEACH] = {
+    activity_id = ACTY_TYPE.BUDDY_TEACH,
+    class = "gamelogic.activity.skill_teach_act"
+  },
+  [ACTY_TYPE.ONLINE_BATTLE] = {
+    activity_id = ACTY_TYPE.ONLINE_BATTLE,
+    class = "gamelogic.activity.online_battle_act"
+  },
+  [ACTY_TYPE.CURSE_CIRCLE] = {
+    activity_id = ACTY_TYPE.CURSE_CIRCLE,
+    class = "gamelogic.activity.curse_ring_act"
+  },
+  [ACTY_TYPE.WEEK_ACTY] = {
+    activity_id = ACTY_TYPE.WEEK_ACTY,
+    class = "gamelogic.activity.weekly_act"
+  }
+}
+config.ACTY_TYPE_TO_SYSID = {
+  [ACTY_TYPE.BEST_CONFIG_FIGHT] = 2001,
+  [ACTY_TYPE.CHALLENGE_RING] = 2002,
+  [ACTY_TYPE.BUDDY_TEACH] = 2003,
+  [ACTY_TYPE.ONLINE_BATTLE] = 2004,
+  [ACTY_TYPE.CURSE_CIRCLE] = 2005,
+  [ACTY_TYPE.CUT_GRASS] = 2006,
+  [ACTY_TYPE.WEEK_ACTY] = 42,
+  [ACTY_TYPE.CLIMBING_TOWER] = 65
+}
+config.SYSID_TO_ACTY_TYPE = {
+  [2001] = ACTY_TYPE.BEST_CONFIG_FIGHT,
+  [2002] = ACTY_TYPE.CHALLENGE_RING,
+  [2003] = ACTY_TYPE.BUDDY_TEACH,
+  [2004] = ACTY_TYPE.ONLINE_BATTLE,
+  [2005] = ACTY_TYPE.CURSE_CIRCLE,
+  [42] = ACTY_TYPE.WEEK_ACTY,
+  [65] = ACTY_TYPE.CLIMBING_TOWER
+}
+config.ACTY_CFG = {
+  [ACTY_TYPE.BEST_CONFIG_FIGHT] = ShareRes.create("activity.best_config_fight_main"),
+  [ACTY_TYPE.CHALLENGE_RING] = ShareRes.create("activity.challenge_ring_main")
+}
+config.ACTY_STATE = {
+  UNOPEN = 0,
+  PLAY_OPEN = 1,
+  ACTY_OPEN = 2
+}
+return config

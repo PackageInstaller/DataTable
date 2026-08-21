@@ -1,0 +1,82 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local NUM_2_TRAD_CHINESE = Config.NUM_2_TRAD_CHINESE
+local MODEL = {
+  v_condition = {
+    "Condition",
+    BIND_TYPE.TEXT
+  },
+  v_lock = {
+    "Lock",
+    BIND_TYPE.IMAGE
+  },
+  v_text = {
+    "Text",
+    BIND_TYPE.TEXT
+  }
+}
+local ARCHIVE_EVENT = {
+  ADD = "ADD",
+  UPGRADE = "UPGRADE",
+  FAVOR = "FAVOR"
+}
+local STATE = {CLOSE = 0, OPEN = 1}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  local btn = Util.get_button(nil, self.v_object)
+  self:set_button_listener(btn, function()
+    self:click_content_item()
+  end)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(content_data)
+  self.v_content_data = content_data
+  self.v_group_idx = content_data.group_idx
+  self.v_state = content_data.state
+  self.v_is_have = content_data.is_have
+  self.v_group_data = content_data.group_data
+  self:refresh_title()
+  self:refresh_lock()
+  self:refresh_condition()
+end
+
+function ui:refresh_title()
+  self.v_text.text = Util.format_str(self.v_group_data.Name)
+end
+
+function ui:refresh_lock()
+  self.v_uiobjects.Lock:SetActive(true)
+  self.v_uiobjects.Condition:SetActive(true)
+  if self.v_is_have then
+    self.v_uiobjects.Lock:SetActive(false)
+    self.v_uiobjects.Condition:SetActive(false)
+  end
+end
+
+function ui:refresh_condition()
+  local event = self.v_group_data.Event
+  local arg = self.v_group_data.Arg
+  local condition_txt = self.v_uicompents.Condition_txt
+  if event == ARCHIVE_EVENT.ADD then
+    condition_txt.text = ""
+  elseif event == ARCHIVE_EVENT.UPGRADE and arg then
+    condition_txt.text = Util.format_str("突破{1}后解锁", arg - 1)
+  elseif event == ARCHIVE_EVENT.FAVOR and arg then
+    condition_txt.text = Util.format_str("好感度Lv{1}级解锁", arg)
+  end
+end
+
+function ui:click_content_item()
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_CHOOSE_ARCHIVE_GROUP)
+  msg.mm_x = self.v_group_idx
+end
+
+return ui

@@ -1,0 +1,137 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_stage_datas = {}
+  self.v_probation_buddys = {}
+  self.v_cache_read_stages = {}
+  Util.bind_msg(self, Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.refresh_redpoint, self)
+end
+
+function M:on_reconnect()
+  self.v_stage_datas = {}
+end
+
+function M:gs2c_kitten_escape_list(data)
+  self.v_stage_datas = data.kittens
+  for id, stage_data in pairs(self.v_stage_datas) do
+    if not stage_data.is_new then
+      self.v_cache_read_stages[id] = true
+    end
+  end
+  self:refresh_redpoint()
+end
+
+function M:gs2c_kitten_escape_update(data)
+  local stage = data.kitten
+  self.v_stage_datas[stage.id] = stage
+  if not stage.is_new then
+    self.v_cache_read_stages[stage.id] = true
+  end
+  self:refresh_redpoint()
+end
+
+function M:req_read_stage(id)
+  if self.v_stage_datas[id] and not self.v_stage_datas[id].is_new then
+    return
+  end
+  Network:call("c2gs_kitten_escape_clicked_red", {id = id}, function(ok, resp)
+    if ok and self.v_stage_datas[id] then
+      self.v_stage_datas[id].is_new = false
+      self.v_cache_read_stages[id] = true
+    end
+  end)
+end
+
+function M:req_complete_stage(id, cb)
+  Network:protect_call("c2gs_kitten_escape_complete", {id = id}, function(ok, resp)
+    if ok then
+      local is_new = self.v_stage_datas[id].is_new
+      self.v_stage_datas[id] = {
+        id = id,
+        passed = true,
+        is_new = is_new
+      }
+      self:req_read_stage(id)
+      if cb then
+        cb()
+      end
+    end
+  end)
+end
+
+function M:is_stage_passed(id)
+  local stage_data = self.v_stage_datas and self.v_stage_datas[id]
+  return stage_data and stage_data.passed
+end
+
+function M:get_stage_list(activity_id)
+  local cfgs = ShareRes.create("activity.kitten_escape")[activity_id]
+  if not cfgs then
+    Log.Error("围住小猫表无对应所属活动id配置：", activity_id)
+    return {}
+  end
+  local stage_list = {}
+  for _, cfg in pairs(cfgs) do
+    local idx = #stage_list + 1
+    stage_list[idx] = {
+      idx = idx,
+      id = cfg.Id,
+      cfg = cfg
+    }
+  end
+  table.sort(stage_list, function(a, b)
+    return a.cfg.Order < b.cfg.Order
+  end)
+  return stage_list
+end
+
+function M:get_next_stage_cfg(stage_cfg)
+  local activity_id = stage_cfg.ActivityId
+  local stage_list = self:get_stage_list(activity_id)
+  for i, stage in ipairs(stage_list) do
+    if stage.id == stage_cfg.Id then
+      if stage_list[i + 1] then
+        return stage_list[i + 1].cfg
+      else
+        return nil
+      end
+    end
+  end
+  return nil
+end
+
+function M:refresh_redpoint()
+  local show_red = false
+  local is_open = NoviceMgr:get_catch_cat_activity_open()
+  if is_open and self.v_stage_datas then
+    for id, stage_data in pairs(self.v_stage_datas) do
+      if stage_data.is_new and not self.v_cache_read_stages[id] then
+        show_red = true
+        break
+      end
+    end
+  end
+  RedPointMgr:enable_redpoint(RedEnum.CATCA_CAT_ACT_STAGE_NEW_OPEN, show_red)
+end
+
+function M:force_read_all()
+  RedPointMgr:enable_redpoint(RedEnum.CATCA_CAT_ACT_STAGE_NEW_OPEN, false)
+  for id, stage_data in pairs(self.v_stage_datas) do
+    if stage_data.is_new then
+      self.v_cache_read_stages[id] = true
+    end
+  end
+end
+
+function M:is_stage_new(id)
+  if self.v_cache_read_stages[id] then
+    return false
+  end
+  if self.v_stage_datas[id] and self.v_stage_datas[id].is_new then
+    return true
+  end
+end
+
+return M

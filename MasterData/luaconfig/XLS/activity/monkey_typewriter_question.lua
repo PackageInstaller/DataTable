@@ -1,0 +1,57 @@
+return {
+  [16] = {
+    {
+      ActivityId = 16,
+      Answer = "您已经知道了这个问题的答案，然而在下一秒这个答案就作废了，因为人们正在出生、死亡、失踪、流离……",
+      FontCount = 25000,
+      QuestionDesc = "欧贝德存在多少名人类？",
+      QuestionId = 1,
+      QuestionName = "问题1"
+    },
+    {
+      ActivityId = 16,
+      Answer = "您已经知道了这个问题的答案，但为了世界和平，您最好还是不要公布结果——极致的美有时也是一种暴力。",
+      FontCount = 360000,
+      PreQuestionId = 1,
+      QuestionDesc = "世界上最美的诗是什么？",
+      QuestionId = 2,
+      QuestionName = "问题2"
+    },
+    {
+      ActivityId = 16,
+      Answer = "您已经知道了这个问题的答案，而真相就是人类是喜欢犯错的动物……您不会活成一本指导手册的，不是吗？",
+      FontCount = 5100000,
+      PreQuestionId = 2,
+      QuestionDesc = "如何才能度过完美的一生？",
+      QuestionId = 3,
+      QuestionName = "问题3"
+    },
+    {
+      ActivityId = 16,
+      Answer = "您已经知道了这个问题的答案，现在来实践吧……噢，看样子我们的人质等不起如此漫长的演算时间，他们都不见了。",
+      FontCount = 87000000,
+      PreQuestionId = 3,
+      QuestionDesc = "电车问题的最优解是什么？",
+      QuestionId = 4,
+      QuestionName = "问题4"
+    },
+    {
+      ActivityId = 16,
+      Answer = "您已经知道了这个问题的答案，不论您相信自由意志还是决定论，恐怕您都要失望了。",
+      FontCount = 1900000000,
+      PreQuestionId = 4,
+      QuestionDesc = "人拥有自由意志吗？",
+      QuestionId = 5,
+      QuestionName = "问题5"
+    },
+    {
+      ActivityId = 16,
+      Answer = "糟糕！您似乎是落入了一个陷阱。无限的打字机对上无限的答案，这是莫比乌斯环——答案确实存在，但您也只能无限逼近它，而非真正抵达它。",
+      FontCount = 43000000000,
+      PreQuestionId = 5,
+      QuestionDesc = "宇宙的答案是什么？",
+      QuestionId = 6,
+      QuestionName = "问题6"
+    }
+  }
+}

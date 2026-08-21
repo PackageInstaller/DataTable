@@ -1,0 +1,130 @@
+local Base = require("uimodule.story.step_base")
+local M = Util.create_child_mt(Base)
+local UnityTime = UnityEngine.Time
+local _insert = table.insert
+local _remove = table.remove
+
+function M:_init(...)
+  Base._init(self, ...)
+  self.v_time = UnityTime.realtimeSinceStartup
+  self.v_delay_cb_list = {}
+end
+
+function M:on_destroy()
+  Base.on_destroy(self)
+  for index = #self.v_delay_cb_list, 1, -1 do
+    local data = self.v_delay_cb_list[index]
+    if data.cb then
+      data.cb()
+    end
+  end
+end
+
+function M:update()
+  Base.update(self)
+  local now_time = UnityTime.realtimeSinceStartup
+  for index = #self.v_delay_cb_list, 1, -1 do
+    local data = self.v_delay_cb_list[index]
+    if now_time - self.v_time >= data.delay_time then
+      if data.cb then
+        data.cb()
+      end
+      _remove(self.v_delay_cb_list, index)
+    end
+  end
+end
+
+function M:start()
+  local step_cfg = self.v_step_cfg
+  self.v_loop_sound_data = {}
+  local sound_list = step_cfg.SoundDatas
+  if #sound_list <= 0 then
+    self:complete()
+    return
+  end
+  self.v_start_time = UnityTime.realtimeSinceStartup
+  self.v_end_time = 0
+  for _, sound_data in ipairs(sound_list) do
+    self:dispose_sound_data(sound_data)
+  end
+end
+
+function M:dispose_sound_data(sound_data)
+  local is_bgm = sound_data.IsBGM
+  local sound_res = sound_data.Sound
+  local is_show_sound = sound_data.ShowSound
+  local is_hide_sound = sound_data.HideSound
+  local is_adjust_sound = sound_data.AdjustSound
+  local is_loop = sound_data.IsLoop
+  if is_bgm then
+    is_loop = nil
+  end
+  local sound_volume = sound_data.SoundVolume
+  local fade_in_time = sound_data.FadeInTime
+  local fade_out_time = sound_data.FadeOutTime
+  local adjust_time = sound_data.AdjustTime
+  local fixed_start_time = sound_data.FixedStartTime
+  local delay_time = sound_data.Delay
+  local is_block_switch = sound_data.IsBlockSwitch
+  local block_id = sound_data.BlockID
+  if is_block_switch then
+    Global.sound_mgr:switch_block(sound_res, block_id)
+    self:complete()
+    return
+  end
+  if not fade_in_time or not fade_out_time then
+    self:print_error_info("剧情id = ", StoryMgr:get_cur_play_story_id())
+    return
+  end
+  local all_time = math.max(fade_in_time, fade_out_time) + delay_time
+  self.v_end_time = math.max(self.v_end_time, all_time)
+  local cb
+  if is_show_sound then
+    function cb()
+      local curr_step_insert = self:get_curr_step_insert()
+      
+      if not curr_step_insert or is_bgm then
+        if is_bgm and self.v_lua_obj ~= nil then
+          local story_cfg = self.v_lua_obj:get_story_cfg()
+          if nil ~= story_cfg then
+            Global.sound_mgr:storycontrol_ui_switch_bgm(story_cfg.KeepBgm)
+          end
+        end
+        Global.sound_mgr:play_story_sound(is_bgm, sound_res, is_loop, fade_in_time, sound_volume, fixed_start_time)
+      end
+      self:complete()
+    end
+  elseif is_hide_sound then
+    function cb()
+      if is_bgm then
+        Global.sound_mgr:storycontrol_ui_switch_bgm(false)
+      end
+      Global.sound_mgr:stop_story_sound(is_bgm, sound_res, fade_out_time)
+      self:complete()
+    end
+  elseif is_adjust_sound then
+    function cb()
+      Global.sound_mgr:adjust_story_sound_volume(sound_volume, adjust_time)
+      
+      self:complete()
+    end
+  end
+  if delay_time and delay_time > 0 then
+    local data = {delay_time = delay_time, cb = cb}
+    _insert(self.v_delay_cb_list, data)
+  else
+    cb()
+  end
+end
+
+function M:get_curr_step_insert()
+  if not self.v_step_all_cfg then
+    return
+  end
+  if not self.v_step_all_cfg.Insert then
+    return
+  end
+  return self.v_step_all_cfg.Insert.AnimRes
+end
+
+return M

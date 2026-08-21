@@ -1,0 +1,147 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local ADVENTRUE_CLUE_GROUP_TEMP_SELECT = "ADVENTRUE_CLUE_GROUP_TEMP_SELECT"
+local ADVENTRUE_CHAR_TEMP_SELECT = "ADVENTRUE_CHAR_TEMP_SELECT"
+local ADVENTRUE_CLUE_AWARD_TEMP_SELECT = "ADVENTRUE_CLUE_AWARD_TEMP_SELECT"
+local ITEM_OBJ_COM = require("uimodule.item.item_obj_com")
+local TIPS_CULE_ITEM = require("uimodule.building.adventrue.building_adventrue_tips_clue_item")
+
+function ui:on_operat_clue(is_add, clue_id)
+  if self.v_select_clue_id == clue_id then
+    return
+  end
+  self.v_select_clue_id = clue_id
+  self:after_operat_clue()
+end
+
+function ui:after_operat_clue()
+  self:refresh_buddy_info_and_desc()
+  self:refresh_clue_award_info()
+  for clue_id, item in pairs(self.v_tips_clue_item_map) do
+    item:on_select(self.v_select_clue_id == clue_id and 1 or 0)
+  end
+end
+
+function ui:on_click_confirm_btn()
+  BuildingMgr:record_adventrue_clue_select(self.v_task_type, self.v_task_index, self.v_select_clue_id)
+  local building_adventrue_room = UIMgr:try_get_visible_ui("building_adventrue_room")
+  if building_adventrue_room then
+    building_adventrue_room:after_select_clue()
+  end
+  self:ui_hide()
+end
+
+function ui:ui_finish_load()
+  self:set_button("BgClose", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnClose", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnConfirm", function()
+    self:on_click_confirm_btn()
+  end)
+  self.v_tips_clue_item_map = {}
+  self.v_award_item_list = {}
+  self:register_exist_auto_template(ADVENTRUE_CLUE_GROUP_TEMP_SELECT, self.v_uiobjects.CuleGroupTem, self.v_uiobjects.CuleGroupContent)
+  self:register_exist_auto_template(ADVENTRUE_CHAR_TEMP_SELECT, self.v_uiobjects.CharTem, self.v_uiobjects.CharContent)
+  self:register_exist_auto_template(ADVENTRUE_CLUE_AWARD_TEMP_SELECT, self.v_uiobjects.AwardTem, self.v_uiobjects.AwardContent)
+end
+
+function ui:ui_on_show(task_type, task_index)
+  self.v_task_type, self.v_task_index = task_type, task_index
+  self.v_select_clue_id = BuildingMgr:get_adventrue_clue_select(self.v_task_type, self.v_task_index)
+  self:refresh_clue_info()
+  self:refresh_buddy_info_and_desc()
+  self:refresh_clue_award_info()
+end
+
+function ui:ui_on_hide()
+  BuildingMgr:remove_check_all_clue_expier_timer()
+  self:clear_tips_clue_item()
+  self:clear_award_item()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_clue_info()
+  self:clear_tips_clue_item()
+  local clue_cfgs = ShareRes.get_building_clue_cfg()
+  local temp_list = {}
+  for key, cfg in pairs(clue_cfgs) do
+    temp_list[#temp_list + 1] = cfg.Id
+  end
+  table.sort(temp_list, function(a, b)
+    if a ~= b then
+      return a < b
+    else
+      return false
+    end
+  end)
+  local obj
+  for index, clue_id in ipairs(temp_list) do
+    self.v_select_clue_id = self.v_select_clue_id or clue_id
+    obj = self:get_auto_cache(ADVENTRUE_CLUE_GROUP_TEMP_SELECT)
+    self.v_tips_clue_item_map[clue_id] = TIPS_CULE_ITEM:ui_wrap_ex(self, obj, true)
+    self.v_tips_clue_item_map[clue_id]:set_data_on_select_clue(clue_id, self.v_select_clue_id == clue_id)
+  end
+end
+
+function ui:refresh_buddy_info_and_desc()
+  self:give_back_auto_cache(ADVENTRUE_CHAR_TEMP_SELECT)
+  local cfg = ShareRes.get_building_clue_cfg(self.v_select_clue_id)
+  self.v_uicompents.ClueDesc_txt.text = cfg.WorldDesc
+  self.v_uicompents.ClueName_txt.text = cfg.Name
+  for index, buddy_id in ipairs(cfg.AddWeightBuddy) do
+    if ShareRes.get_buddy_is_show(buddy_id) and CharacterMgr:check_buddy_release(buddy_id) then
+      local obj = self:get_auto_cache(ADVENTRUE_CHAR_TEMP_SELECT)
+      local icon_img = self:get_image("CharMask/CharIcon", obj)
+      local path = UtilUI.get_hero_images(buddy_id, 1)
+      ResMgr:load_set_icon(icon_img, path)
+    end
+  end
+end
+
+function ui:refresh_clue_award_info()
+  self:clear_award_item()
+  local data_list = {}
+  local cfg = ShareRes.get_building_clue_cfg(self.v_select_clue_id)
+  ShareRes.get_item_obj_use_award_list(cfg.AwardId, data_list)
+  for index, data in ipairs(data_list) do
+    function data.cb()
+      UIMgr:get_ui("itemTip"):ui_show({
+        item_id = data.id,
+        
+        jump_cb = function()
+          self:ui_hide()
+        end
+      })
+    end
+    
+    local obj = self:get_auto_cache(ADVENTRUE_CLUE_AWARD_TEMP_SELECT)
+    local item = ITEM_OBJ_COM:ui_wrap_ex(self, obj, true)
+    item:set_data(data)
+    self.v_award_item_list[index] = item
+  end
+end
+
+function ui:clear_tips_clue_item()
+  self:give_back_auto_cache(ADVENTRUE_CLUE_GROUP_TEMP_SELECT)
+  for key, item in pairs(self.v_tips_clue_item_map) do
+    item:ui_hide()
+    item:ui_destroy()
+    self.v_tips_clue_item_map[key] = nil
+  end
+end
+
+function ui:clear_award_item()
+  self:give_back_auto_cache(ADVENTRUE_CLUE_AWARD_TEMP_SELECT)
+  for key, item in pairs(self.v_award_item_list) do
+    item:ui_hide()
+    item:ui_destroy()
+    self.v_award_item_list[key] = nil
+  end
+end
+
+return ui

@@ -1,0 +1,172 @@
+local Base = require("gamelogic.tower_mgr.tower")
+local M = Util.create_child_mt(Base)
+local RING_BY_TOWER_CFG_PATH = "activity.rings_of_curse_ring_by_tower"
+local _max = math.max
+
+function M:_init(...)
+  Base._init(self, ...)
+end
+
+function M:update_tower_info(tower_info)
+  self.v_tower_info = tower_info
+  local floor_idx = self.v_tower_info.cur_floor_idx
+  self:update_floor_info(floor_idx)
+end
+
+function M:enter_next_floor()
+  local floor_num = self:get_tower_cur_floor_num()
+  self:update_fight_state(false)
+  SceneMgr:set_scene_show(false, function()
+    self:on_enter_floor(floor_num)
+  end)
+end
+
+function M:update_fight_state(is_show)
+  local ui_fight = UIMgr:try_get_visible_ui("fight")
+  if ui_fight and not ui_fight.v_object:IsNull() then
+    ui_fight.v_object:SetActive(is_show)
+  end
+end
+
+function M:on_enter()
+  self:enter_base_logic()
+  self:on_enter_ring(#self.v_tower_info.floor_list, true)
+end
+
+function M:on_enter_ring(floor, is_first)
+  if is_first then
+    floor = _max(self.v_tower_info.cur_floor_idx, 1)
+  end
+  if not self:update_floor_info(floor) then
+    return
+  end
+  self.floor_enter_count = self.floor_enter_count + 1
+  local enter_room_num = 0
+  if floor == self.v_tower_info.cur_floor_idx then
+    enter_room_num = self.v_tower_info.cur_room_num or 0
+  end
+  self.v_ring_list_cfg = ShareRes.create(RING_BY_TOWER_CFG_PATH, self.v_tower_id)
+  if not self.v_ring_list_cfg then
+    Log.Error("诅咒之环配置不存在, 塔id = ", self.v_tower_id)
+  end
+  if enter_room_num < 1 then
+    local start_room_id = self.v_ring_list_cfg[floor].StartRoomId
+    if not start_room_id then
+      Log.Error("起始房间不存在, floor idx = ", floor)
+    end
+    enter_room_num = self:get_tower_room_num(start_room_id)
+  end
+  self:enter_room(enter_room_num, 0, is_first)
+end
+
+function M:update_floor_info(floor)
+  local floor_info = self:get_floor_Info(floor)
+  if not floor_info then
+    return false
+  end
+  self.v_floor_num = floor
+  self.v_floor_info = floor_info
+  self.v_floor_status = floor_info.status
+  self.v_floor_room_map = self.v_floor_info.room_tbl
+  self.v_room_num = 0
+  self:init_room_status()
+  self.v_cur_floor_drop_cfg = self:_get_tower_born_magic_list()
+  return true
+end
+
+function M:on_tp_room(room_num)
+  self:remove_invincible_on_tp_room()
+  UIMgr:try_hide_ui("fate_book_event_card")
+  UIMgr:try_hide_ui("challenge_ring_plus")
+  UIMgr:try_hide_ui("fate_book_quick_view")
+  self:enter_room(room_num, 0)
+end
+
+function M:get_tower_room_num(room_id)
+  local result_num = 1
+  for _, data in pairs(self.v_floor_room_map) do
+    local room_num = data.room_num
+    local now_room_id = data.room_id
+    if room_id == now_room_id then
+      result_num = room_num
+      break
+    end
+  end
+  return result_num
+end
+
+function M:on_exit()
+  UIMgr:try_destory_ui("fate_book_quick_view")
+  Base.on_exit(self)
+  ChallengeRingPlusMgr:exit_tower()
+  FateBookMgr:exit_tower()
+  GenresMgr:exit_tower()
+end
+
+function M:is_fight_room(room_num)
+  local room_id = self.v_floor_room_map[room_num].room_id
+  local room_cfg = ShareRes.create("tower.tower_room", room_id)
+  return Util.is_fight_room(room_cfg.Type)
+end
+
+function M:get_tower_pass()
+  return false
+end
+
+function M:tp_next_floor()
+  self:on_enter_floor(self.v_floor_num + 1)
+end
+
+function M:check_pass_all_room()
+  return false
+end
+
+function M:get_max_floor()
+  return #self.v_ring_list_cfg
+end
+
+function M:curse_ring_id()
+  return self.v_ring_list_cfg[self.v_floor_num].CurseId
+end
+
+function M:cur_room_is_pass()
+  local cur_room = self.v_room_num
+  if cur_room < 1 then
+    cur_room = 0
+  end
+  if not self.v_floor_room_map[cur_room] then
+    return true
+  end
+  return 1 == self.v_floor_room_map[cur_room].status
+end
+
+local INVINCIBLE_MAGIC1 = 1999332
+local INVINCIBLE_MAGIC2 = 1999333
+
+function M:add_invincible_on_pass_room()
+  local hero_list = SceneMgr:get_hero_list()
+  for _, hero in pairs(hero_list) do
+    hero.magic_mgr:add_magic(hero, INVINCIBLE_MAGIC1)
+    hero.magic_mgr:add_magic(hero, INVINCIBLE_MAGIC2)
+  end
+end
+
+function M:remove_invincible_on_tp_room()
+  local hero_list = SceneMgr:get_hero_list()
+  for _, hero in pairs(hero_list) do
+    hero.magic_mgr:remove_magic_by_id(INVINCIBLE_MAGIC1)
+    hero.magic_mgr:remove_magic_by_id(INVINCIBLE_MAGIC2)
+  end
+end
+
+function M:on_pass_room(is_win)
+  Base.on_pass_room(self)
+  ChallengeRingPlusMgr:on_fight_end(is_win)
+  local scene_item_mgr = SceneMgr:get_scene_item_mgr()
+  scene_item_mgr:create_award_point(self.v_room_num)
+  if is_win then
+    self:add_invincible_on_pass_room()
+  end
+end
+
+return M

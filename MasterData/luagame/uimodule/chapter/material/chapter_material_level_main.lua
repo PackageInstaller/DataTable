@@ -1,0 +1,282 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local _tinsert = table.insert
+local _tsort = table.sort
+local LEVEL_ITEM_KEY = "CHAPTER_MATERIAL_LEVEL_ITEM_KEY"
+local AWARD_ITEM_KEY = "HAPTER_MATERIAL_AWARD_ITEM_KEY"
+local LevelSv = require("uimodule.chapter.material.material_scroll_view")
+local LevelItem = require("uimodule.chapter.material.material_level_item")
+local AssetBarView = require("ui.asset_bar.asset_bar")
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local Scroll_Anim_Time = 0.5
+local one_item_delay_time = 0.1
+local MODEL = {
+  v_btn_ele_drop_rule = {
+    "BtnEleDropRule",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_main = {
+    "BtnMain",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_return = {
+    "BtnReturn",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_select_ele = {
+    "BtnSelectEle",
+    BIND_TYPE.IMAGE
+  },
+  v_change = {
+    "Change",
+    BIND_TYPE.BUTTON
+  },
+  v_ele_icon1 = {
+    "EleIcon1",
+    BIND_TYPE.IMAGE
+  },
+  v_ele_icon2 = {
+    "EleIcon2",
+    BIND_TYPE.IMAGE
+  },
+  v_ele_icon = {
+    "EleIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_level_content = {
+    "LevelContent",
+    BIND_TYPE.OBJECT
+  },
+  v_level_list = {
+    "LevelList",
+    BIND_TYPE.IMAGE
+  },
+  v_level_template = {
+    "LevelTemplate",
+    BIND_TYPE.BUTTON
+  },
+  v_viewport = {
+    "Viewport",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnReturn", function()
+    self.v_is_click_return = true
+    self:ui_hide()
+  end)
+  local uobj = self.v_uiobjects
+  self.v_level_sv = LevelSv:new(self, uobj.LevelList, uobj.LevelContent, LevelItem, LEVEL_ITEM_KEY)
+  local view_port_rect = self:get_rect_transform(nil, uobj.Viewport)
+  self.v_view_port_width = view_port_rect.rect.width
+  self.v_asset_bar = AssetBarView:new(self, self.v_uiobjects.AssetBar)
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:ui_on_show(epi_id)
+  self.need_select_epi_id = epi_id
+  self.need_select_delay_time = 0
+  local list = Shop_Helper.get_asset_list({
+    Config.PLAYER_SP_ITEMID
+  })
+  self.v_asset_bar:reset_config(list)
+  self.v_asset_bar:on_create()
+  self.cur_time = 0
+  self.material_type = ChapterMaterialMgr:get_chapter_material_level_type()
+  self.day_of_week = ChapterMaterialMgr:get_day_of_week()
+  self.element_cfg_list = ChapterMaterialMgr:get_today_element_list()
+  self.drop_sign = ChapterMaterialMgr:get_material_is_drop_sign(ChapterMaterialMgr:get_chapter_material_level_type())
+  self:remove_sequences(false)
+  self:refresh_view()
+  local time = self.v_level_sv:get_anim_time()
+  self:register_event()
+  self.v_btn_ele_drop_rule:SetActive(false)
+  self.v_btn_select_ele:SetActive(false)
+  local is_choose_epi_info_nil = ChapterMaterialMgr:is_choose_epi_info_nil(self.material_type)
+  self:update_element_info(nil)
+  self:set_button_listener(self.v_change, function()
+    UIMgr:get_ui("material_select_element_drop"):ui_show()
+  end)
+  self:set_button_listener(self.v_btn_ele_drop_rule, function()
+    UIMgr:get_ui("element_drop_main"):ui_show(self.day_of_week)
+  end)
+  if self.drop_sign == ChapterMaterialMgr.drop_sign then
+    local is_need_show = ChapterMaterialMgr:is_need_show_auto_select()
+    if true == is_need_show then
+      local result = is_choose_epi_info_nil
+      if false == result then
+        result = ChapterMaterialMgr:check_is_same_week()
+      end
+      if true == result then
+        UIMgr:get_ui("material_select_element_drop"):ui_show()
+      end
+    end
+  end
+  Timer:add_timer("select_item_with_epi_id", self.need_select_delay_time, function()
+    self:select_item_with_epi_id()
+  end)
+end
+
+function ui:update_element_info(msg)
+  if self.drop_sign ~= ChapterMaterialMgr.drop_sign then
+    return
+  end
+  local len = #self.element_cfg_list
+  if len > 2 then
+    local select_element_id = ChapterMaterialMgr:get_select_element_id()
+    self.v_btn_select_ele:SetActive(true)
+    local path = self:get_now_select_icon_path(select_element_id)
+    ResMgr:load_set_icon(self.v_ele_icon, path)
+  else
+    self.v_btn_ele_drop_rule:SetActive(true)
+    for i = 1, len do
+      local imagePath = string.format("EleIcon%s_", i)
+      local image = Util.get_image(imagePath, self.v_btn_ele_drop_rule.gameObject)
+      ResMgr:load_set_icon(image, self.element_cfg_list[i].ElementIconPath)
+    end
+  end
+end
+
+function ui:get_now_select_icon_path(now_select_id)
+  local element_cfg_list = ShareRes.create("buddy.buddy_element")
+  for i, v in pairs(element_cfg_list) do
+    if v.Id == now_select_id then
+      return v.ElementIconPath
+    end
+  end
+end
+
+function ui:ui_on_hide()
+  self.v_chapter_data = nil
+  self:remove_sequences(true)
+  self:remove_cannot_touch_timer()
+  self.cur_time = nil
+  self.v_level_sv:clear()
+  self:unbind_all_auto_mq()
+  self.v_asset_bar:on_hide()
+end
+
+function ui:ui_on_destroy()
+  self.v_level_sv = nil
+  self.v_select_item_index = nil
+  self.v_asset_bar:on_destory()
+end
+
+function ui:refresh_view()
+  self:refresh_level_sv()
+end
+
+function ui:select_item_with_epi_id()
+  if not self.need_select_epi_id then
+    return
+  end
+  local type_cfg_list = ShareRes.get_chapter_material_list_with_type(self.material_type)
+  if not type_cfg_list then
+    return
+  end
+  local need_select_data
+  for _, data in pairs(type_cfg_list) do
+    if data.Id == self.need_select_epi_id then
+      need_select_data = data
+      break
+    end
+  end
+  if need_select_data then
+    self:move_level_item_to_first(need_select_data)
+  end
+  self.need_select_epi_id = nil
+end
+
+function ui:refresh_level_sv()
+  local type_cfg_list = ShareRes.get_chapter_material_list_with_type(self.material_type)
+  if not type_cfg_list then
+    return
+  end
+  local item_list = {}
+  for _, data in pairs(type_cfg_list) do
+    _tinsert(item_list, data)
+    self.need_select_delay_time = self.need_select_delay_time + one_item_delay_time
+  end
+  table.sort(item_list, function(a, b)
+    return a.Id < b.Id
+  end)
+  self.v_level_sv:update_list(item_list)
+end
+
+function ui:set_cannot_touch(time)
+  self:remove_cannot_touch_timer()
+  self.v_uiobjects.Cannot_Touch_Bg:SetActive(true)
+  self.v_cannot_touch_timer = Timer:add_timer("cannot_touch_timer", time, function()
+    self.v_uiobjects.Cannot_Touch_Bg:SetActive(false)
+  end)
+end
+
+function ui:remove_cannot_touch_timer()
+  if self.v_cannot_touch_timer then
+    Timer:remove_timer(self.v_cannot_touch_timer)
+    self.v_cannot_touch_timer = nil
+  end
+end
+
+function ui:move_level_item_to_first(data)
+  local index = data.index
+  self.v_select_item_index = index
+  local item = self.v_level_sv:get_item_at_index(index)
+  local item_obj = item.go
+  local width = item:get_width()
+  self.v_move_item_obj = item_obj
+  local uobj = self.v_uiobjects
+  local scrollRect = self:get_scrollrect(nil, uobj.LevelList)
+  scrollRect.movementType = 0
+  self.v_content_pos_x = uobj.LevelContent.transform.anchoredPosition.x
+  local horizontal_grp = uobj.LevelContent:GetComponent(typeof(UnityEngine.UI.HorizontalLayoutGroup))
+  local item_width = horizontal_grp.spacing + width
+  local content_target_pos_x = -1 * (index - 1) * item_width
+  local move_width = self.v_content_pos_x - content_target_pos_x
+  local rate = move_width / self.v_view_port_width
+  self.v_anim_time = Scroll_Anim_Time * rate
+  UIMgr:get_ui("material_stage_info"):ui_show(data, item_obj, self.v_anim_time)
+  local sequence = Util.create_sequence()
+  sequence:Append(uobj.LevelContent.transform:DOAnchorPosX(content_target_pos_x, self.v_anim_time))
+  table.insert(self.v_sequences, sequence)
+end
+
+function ui:revert_scroll(alpha)
+  local item_canvas = self:get_canvas_group(nil, self.v_move_item_obj)
+  item_canvas.alpha = alpha
+  local uobj = self.v_uiobjects
+  local scrollRect = self:get_scrollrect(nil, uobj.LevelList)
+  scrollRect.movementType = 1
+end
+
+function ui:move_level_item_to_src_pos()
+  local pos_x = self.v_content_pos_x or 0
+  local uobj = self.v_uiobjects
+  local sequence = Util.create_sequence()
+  sequence:Append(uobj.LevelContent.transform:DOAnchorPosX(pos_x, self.v_anim_time or Scroll_Anim_Time))
+  table.insert(self.v_sequences, sequence)
+end
+
+function ui:remove_sequences(is_nil)
+  if self.v_sequences then
+    for k, sequence in pairs(self.v_sequences) do
+      sequence:Kill(false)
+    end
+  end
+  if is_nil then
+  end
+  self.v_sequences = {}
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_UPDATE_MATERIAL_SELECT_ELEMENT, self.update_element_info, self)
+  self:bind_auto_mq(Const.MSG_UPDATE_MATERIAL_LEVEL_INFO, self.refresh_view, self)
+end
+
+return ui

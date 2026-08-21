@@ -1,0 +1,434 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local SHOP_TYPE = Shop_Helper.SHOP_TYPE
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_shop_goods_list = {}
+  self.v_reset_time = {}
+  self.v_stock_list = {}
+  self.v_new_goods = {}
+  self.v_ex_shop_cfg = ShareRes.create("shop.exchange_shop")
+  self.v_ex_goods_cfg = ShareRes.create("shop.exchange_goods")
+end
+
+function M:on_reconnect()
+  self.v_shop_goods_list = {}
+  self.v_reset_time = {}
+  self.v_stock_list = {}
+  self.v_new_goods = {}
+end
+
+function M:on_get_ex_shop_data(data)
+  self.v_shop_goods_list = {}
+  if data.shop_list then
+    for _, shop_data in pairs(data.shop_list) do
+      if not self.v_shop_goods_list[shop_data.shop_id] then
+        self.v_shop_goods_list[shop_data.shop_id] = {}
+      end
+      self.v_reset_time[shop_data.shop_id] = shop_data.reset_time
+      for _, t in pairs(shop_data.goods_list) do
+        self.v_shop_goods_list[shop_data.shop_id][t.id] = t
+      end
+    end
+  end
+  MsgGame:mq_publish2(Const.MSG_ON_EXCHANGE_GOODS_UPDATE)
+end
+
+function M:on_get_ex_shop_goods_update(data)
+  if not self.v_shop_goods_list[data.shop_id] then
+    self.v_shop_goods_list[data.shop_id] = {}
+  end
+  self.v_reset_time[data.shop_id] = data.reset_time
+  for _, t in pairs(data.goods_list) do
+    self.v_shop_goods_list[data.shop_id][t.id] = t
+  end
+  MsgGame:mq_publish2(Const.MSG_ON_EXCHANGE_GOODS_UPDATE)
+end
+
+function M:on_reset_ex_shop_data(data)
+  if not self.v_shop_goods_list[data.shop_id] then
+    self.v_shop_goods_list[data.shop_id] = {}
+  end
+  self.v_reset_time[data.shop_id] = data.reset_time
+  for _, t in pairs(data.goods_list) do
+    self.v_shop_goods_list[data.shop_id][t.id] = t
+  end
+  MsgGame:mq_publish2(Const.MSG_ON_EXCHANGE_GOODS_UPDATE)
+end
+
+function M:on_ex_shop_goods_unlock(data)
+  if not self.v_shop_goods_list[data.shop_id] then
+    self.v_shop_goods_list[data.shop_id] = {}
+  end
+  self.v_shop_goods_list[data.shop_id][data.goods.id] = data.goods
+  MsgGame:mq_publish2(Const.MSG_ON_EXCHANGE_GOODS_UPDATE)
+end
+
+function M:on_ex_shop_goods_expire(data)
+  if not self.v_shop_goods_list[data.shop_id] then
+    Log.Error("当前商店类型shop_id=", data.shop_id, "不存在！")
+    return
+  end
+  if not self.v_shop_goods_list[data.shop_id][data.goods_id] then
+    Log.Error("当前商品goods_id=", data.goods_id, "不存在！")
+    return
+  end
+  self.v_shop_goods_list[data.shop_id][data.goods_id] = nil
+  MsgGame:mq_publish2(Const.MSG_ON_EXCHANGE_GOODS_UPDATE)
+end
+
+function M:on_ex_shop_expire(data)
+  if not self.v_shop_goods_list[data.shop_id] then
+    Log.Error("当前商店类型shop_id=", data.shop_id, "不存在！")
+    return
+  end
+  self.v_shop_goods_list[data.shop_id] = nil
+  MsgGame:mq_publish2(Const.MSG_ON_EXCHANGE_GOODS_UPDATE)
+end
+
+function M:on_stock_item_update(data)
+  if data.item_list then
+    for k, v in pairs(data.item_list) do
+      self.v_stock_list[v.id] = v.count
+    end
+  end
+  MsgGame:mq_publish2(Const.MSG_ON_SERVER_STOCK_UPDATE)
+end
+
+function M:on_goods_mark_update(data)
+  if not self.v_new_goods[data.shop_id] then
+    self.v_new_goods[data.shop_id] = {}
+  end
+  for k, v in pairs(data.goods_id_list) do
+    self.v_new_goods[data.shop_id][v] = v
+  end
+  if not self.v_shop_goods_list[data.shop_id] then
+    Log.Error("当前商店类型shop_id=", data.shop_id, "不存在！")
+    return
+  end
+  for k, v in pairs(data.goods_id_list) do
+    local goods_data = self.v_shop_goods_list[data.shop_id][v]
+    if not goods_data then
+      Log.Error("当前商品goods_id=", v, "不存在！")
+    end
+    goods_data.new = true
+  end
+  MsgGame:mq_publish2(Const.MSG_ON_SERVER_STOCK_UPDATE)
+end
+
+function M:on_limit_goods_can_buy(shop_id)
+  local goods_list = ShopMgr:get_goods_list(shop_id, SHOP_TYPE.COOMMON_SHOP)
+  if not goods_list then
+    return false
+  end
+  local data = ShareRes.create("shop.exchange_shop")[shop_id]
+  local _, item_id = next(data.ItemId)
+  local is_can_buy = false
+  for _, cfg in pairs(goods_list) do
+    if not cfg.RedDotShow or 0 == cfg.RedDotShow then
+    else
+      is_can_buy = self:get_is_can_buy_goods_red(cfg, SHOP_TYPE.COOMMON_SHOP)
+      if is_can_buy then
+        break
+      end
+    end
+  end
+  return is_can_buy
+end
+
+function M:request_buy_ex_shop_goods(goods_id, buy_cnt, callback)
+  local cfg = self.v_ex_goods_cfg[goods_id]
+  if not cfg then
+    Log.Error("读取兑换商品配置失败，商品id=", goods_id)
+    return
+  end
+  local shop_id = cfg.ShopId
+  local lCost = {}
+  if cfg.CostId then
+    for _, id in pairs(cfg.CostId) do
+      if id == Config.DIAMOND_ITEMID and BagMgr:get_item_num(Config.GILTGOLD_ITEMID) < 0 then
+        Util.show_notify_popup_message(nil, Util.get_tips_with_error_code(2366), "提示", "确定", nil, nil, true)
+        if callback then
+          callback(shop_id, goods_id)
+        end
+        return
+      end
+    end
+  end
+  Network:call("c2gs_buy_exchange_goods", {
+    shop_id = shop_id,
+    goods_id = goods_id,
+    buy_cnt = buy_cnt
+  }, function(ok, resp)
+    if not ok then
+      if callback then
+        callback(resp.shop_id, resp.goods)
+      end
+      return
+    end
+    if not self.v_shop_goods_list[resp.shop_id] then
+      self.v_shop_goods_list[resp.shop_id] = {}
+    end
+    self.v_shop_goods_list[resp.shop_id][resp.goods.id] = resp.goods
+    if callback then
+      callback(resp.shop_id, resp.goods)
+    end
+    MsgGame:mq_publish2(Const.MSG_ON_EXCHANGE_GOODS_UPDATE)
+  end)
+end
+
+function M:request_remove_goods_mark(goods_id)
+  local cfg = self.v_ex_goods_cfg[goods_id]
+  if not cfg then
+    Log.Error("读取兑换商品配置失败，商品id=", goods_id)
+    return
+  end
+  local shop_id = cfg.ShopId
+  Network:call("c2gs_remove_exchange_goods_new_mask", {shop_id = shop_id, goods_id = goods_id}, function(ok, resp)
+    if not ok then
+      return
+    end
+    if not self.v_shop_goods_list[shop_id] then
+      Log.Error("当前的商店没有new标签数据，商店id=", shop_id)
+      return
+    end
+    local goods_data = self.v_shop_goods_list[shop_id][goods_id]
+    if not goods_data then
+      Log.Error("当前商品goods_id=", goods_id, "不存在！")
+      return
+    end
+    goods_data.new = false
+    MsgGame:mq_publish2(Const.MSG_ON_EXCHANGE_GOODS_UPDATE)
+  end)
+end
+
+function M:get_buy_amount(goods_id)
+  local cfg = self.v_ex_goods_cfg[goods_id]
+  if nil == cfg then
+    Log.Error("读取兑换商品配置失败，商品id=", goods_id)
+    return 0
+  end
+  if not self.v_shop_goods_list[cfg.ShopId] then
+    return 0
+  end
+  local data = self.v_shop_goods_list[cfg.ShopId][goods_id]
+  if not data then
+    return 0
+  end
+  return data.buy_cnt
+end
+
+function M:get_goods_data(goods_id)
+  local cfg = self.v_ex_goods_cfg[goods_id]
+  if nil == cfg then
+    Log.Error("读取兑换商品配置失败，商品id=", goods_id)
+    return
+  end
+  if not self.v_shop_goods_list[cfg.ShopId] then
+    return
+  end
+  local data = self.v_shop_goods_list[cfg.ShopId][goods_id]
+  if not data then
+    return
+  end
+  return data
+end
+
+function M:get_reset_time(shop_id)
+  if not self.v_reset_time[shop_id] then
+    return 0
+  end
+  return self.v_reset_time[shop_id]
+end
+
+function M:get_stock_amount(item_id)
+  return self.v_stock_list[item_id] or 0
+end
+
+function M:get_new_mark(goods_id)
+  local data = self:get_goods_data(goods_id)
+  if not data then
+    return false
+  end
+  return data.new
+end
+
+function M:get_shop_new_mark(shop_id)
+  if not self.v_shop_goods_list[shop_id] then
+    return false
+  end
+  for goods_id, goods_data in pairs(self.v_shop_goods_list[shop_id]) do
+    if goods_data.new then
+      return true
+    end
+  end
+  return false
+end
+
+function M:get_shop_cond_state(shop_id)
+  if self.v_shop_goods_list[shop_id] and next(self.v_shop_goods_list[shop_id]) ~= nil then
+    return true
+  end
+  return false
+end
+
+function M:get_goods_can_sale(goods_cfg)
+  local time = Date.server_time()
+  local start_time = goods_cfg.StartTime and Date.get_time_stamp_by_scheme_id(goods_cfg.StartTime)
+  if start_time and time < start_time then
+    return false
+  end
+  local end_time = goods_cfg.EndTime and Date.get_time_stamp_by_scheme_id(goods_cfg.EndTime)
+  if end_time and time > end_time then
+    return false
+  end
+  if goods_cfg.BuddyId and 0 ~= goods_cfg.BuddyId and not CharacterMgr:check_buddy_release(goods_cfg.BuddyId) then
+    return false
+  end
+  return true
+end
+
+function M:get_goods_list(shop_type_id, curr_shop_type, only_need, only_can_buy)
+  local data = ShareRes.create("shop.exchange_goods_type")
+  local list = data[shop_type_id]
+  if nil == list then
+    return
+  end
+  local goods_list = {}
+  for k, goods_cfg in pairs(list) do
+    if self:get_goods_can_sale(goods_cfg) then
+      local show = true
+      if only_need and self:get_is_needed_goods(goods_cfg) == false then
+        show = false
+      end
+      if only_can_buy and false == self:get_is_can_buy_goods(goods_cfg, curr_shop_type) then
+        show = false
+      end
+      if show then
+        table.insert(goods_list, goods_cfg)
+      end
+    end
+  end
+  if nil ~= next(goods_list) then
+    table.sort(goods_list, function(a, b)
+      return self:sort_goods(a, b, curr_shop_type)
+    end)
+  end
+  return goods_list
+end
+
+function M:sort_goods(goods_a, goods_b, curr_shop_type)
+  if curr_shop_type == SHOP_TYPE.COOMMON_SHOP then
+    local sold_out_a = self:get_is_sold_out(goods_a)
+    local sold_out_b = self:get_is_sold_out(goods_b)
+    if sold_out_a ~= sold_out_b then
+      return sold_out_b
+    end
+    local unlock_a = self:get_is_unlock_goods(goods_a, curr_shop_type)
+    local unlock_b = self:get_is_unlock_goods(goods_b, curr_shop_type)
+    if unlock_a ~= unlock_b then
+      return unlock_a
+    end
+    if goods_a.SortId ~= goods_b.SortId then
+      return goods_a.SortId > goods_b.SortId
+    end
+    return goods_a.Id < goods_b.Id
+  else
+    local sold_out_a = self:get_is_sold_out(goods_a) and 0 or 1
+    local sold_out_b = self:get_is_sold_out(goods_b) and 0 or 1
+    if sold_out_a == sold_out_b then
+      local unlock_a = self:get_is_unlock_goods(goods_a, curr_shop_type) and 1 or 0
+      local unlock_b = self:get_is_unlock_goods(goods_b, curr_shop_type) and 1 or 0
+      if unlock_a == unlock_b then
+        local item_a = ShareRes.create("item.item", goods_a.Item)
+        local item_b = ShareRes.create("item.item", goods_b.Item)
+        local quality_a = item_a and item_a.Quality or 0
+        local quality_b = item_b and item_b.Quality or 0
+        if quality_a == quality_b then
+          if goods_a.SortId == goods_b.SortId then
+            return goods_a.Id < goods_b.Id
+          else
+            return goods_a.SortId > goods_b.SortId
+          end
+        else
+          return quality_a > quality_b
+        end
+      else
+        return unlock_a > unlock_b
+      end
+    else
+      return sold_out_a > sold_out_b
+    end
+  end
+end
+
+function M:get_is_needed_goods(goods_cfg, curr_shop_type)
+  if curr_shop_type == SHOP_TYPE.COOMMON_SHOP then
+    return true
+  end
+  local enough = Shop_Helper.check_break_mat_enough(goods_cfg.Item, goods_cfg.BuddyId)
+  return false == enough
+end
+
+function M:get_is_can_buy_goods_red(goods_cfg, curr_shop_type)
+  local is_can_buy = self:get_is_can_buy_goods(goods_cfg, curr_shop_type)
+  if not is_can_buy then
+    return false
+  end
+  local has = BagMgr:get_item_num(goods_cfg.CostId[1])
+  local price = goods_cfg.CostCnt[1]
+  local has_discount = goods_cfg.Discount > 0 and goods_cfg.Discount < 100
+  if has_discount then
+    price = math.ceil(price * (goods_cfg.Discount / 100))
+  end
+  return has >= price
+end
+
+function M:get_is_can_buy_goods(goods_cfg, curr_shop_type)
+  return self:get_is_unlock_goods(goods_cfg, curr_shop_type) == true and self:get_is_sold_out(goods_cfg) == false and false == self:get_is_less_stock(goods_cfg)
+end
+
+function M:get_is_unlock_goods(goods_cfg, curr_shop_type)
+  if curr_shop_type == SHOP_TYPE.COOMMON_SHOP then
+    return true
+  end
+  local buddy_info = CharacterMgr:get_buddy_by_id(goods_cfg.BuddyId)
+  return nil ~= buddy_info
+end
+
+function M:get_is_sold_out(goods_cfg)
+  if 0 == goods_cfg.Quota then
+    return false
+  end
+  local has_buy = ShopMgr:get_buy_amount(goods_cfg.Id)
+  return has_buy >= goods_cfg.Quota
+end
+
+function M:get_is_less_stock(goods_cfg)
+  if 0 == goods_cfg.StockItem then
+    return false
+  end
+  return 0 == BagMgr:get_item_num(goods_cfg.StockItem)
+end
+
+function M:get_shop_limit_currency(shop_id)
+  local goods_list = self:get_goods_list(shop_id)
+  local cost_currency = 0
+  local total_currency = 0
+  for _, cfg in pairs(goods_list) do
+    if not cfg.Quota or 0 == cfg.Quota then
+    else
+      local price_discount = tonumber(cfg.DiscountVal)
+      local has_discount = cfg.Discount > 0 and price_discount < 100
+      local single_price = has_discount and math.ceil(cfg.CostCnt[1] * (price_discount / 100)) or cfg.CostCnt[1]
+      local buy_count = self:get_buy_amount(cfg.Id)
+      cost_currency = cost_currency + buy_count * single_price
+      total_currency = total_currency + cfg.Quota * single_price
+    end
+  end
+  return cost_currency, total_currency
+end
+
+return M

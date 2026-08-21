@@ -1,0 +1,36 @@
+return {
+  [22] = {
+    ActivityId = 22,
+    AwardDayLimit = 7,
+    AwardGroupId = 900170,
+    Desc = "啾啾！是谁家贴心小鸟特意为预见者准备了专属的礼物？是我！哼哼！",
+    MailId = 120002,
+    Name = "时隙追光",
+    PreOrLast = 1,
+    RuleTextId = 8,
+    SpineDesc = {
+      "啾啾！是谁家贴心小鸟特意为预见者准备了专属的礼物？是我！哼哼！",
+      "啾啾！贴心的小鸟不允许你比别人落后，快点领取你应得的礼物吧！",
+      "啾啾！为什么可爱小鸟要准备礼物？这是你的专属礼物，哪有那么多为什么！"
+    },
+    SpineId = 51000,
+    TaskGroupId = 22800
+  },
+  [24] = {
+    ActivityId = 24,
+    AwardDayLimit = 7,
+    AwardGroupId = 900170,
+    Desc = "啾啾！是谁家贴心小鸟特意为预见者准备了专属的礼物？是我！哼哼！",
+    MailId = 120002,
+    Name = "时隙追光",
+    PreOrLast = 2,
+    RuleTextId = 8,
+    SpineDesc = {
+      "啾啾！是谁家贴心小鸟特意为预见者准备了专属的礼物？是我！哼哼！",
+      "啾啾！贴心的小鸟不允许你比别人落后，快点领取你应得的礼物吧！",
+      "啾啾！为什么可爱小鸟要准备礼物？这是你的专属礼物，哪有那么多为什么！"
+    },
+    SpineId = 51000,
+    TaskGroupId = 22801
+  }
+}

@@ -1,0 +1,13 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local FLY_EMBLEM_EFFECT = "Fx_UI_Card_06"
+
+function ui:ui_finish_load()
+  self:register_effect(FLY_EMBLEM_EFFECT)
+end
+
+function ui:play_fly_effect()
+  self:play_effect(FLY_EMBLEM_EFFECT)
+end
+
+return ui

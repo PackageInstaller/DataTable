@@ -1,0 +1,1180 @@
+return {
+  [3001037] = {
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0101",
+      Id = 3001037,
+      Lv = 1,
+      Magic = 4010161,
+      Name = "",
+      Param = {501010, 1},
+      Quality = 3,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3001037,
+      Lv = 2,
+      Magic = 4010162,
+      Name = "",
+      Param = {501010, 2},
+      Quality = 3,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3001037,
+      Lv = 3,
+      Magic = 4010163,
+      Name = "",
+      Param = {501010, 3},
+      Quality = 3,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3001037,
+      Lv = 4,
+      Magic = 4010164,
+      Name = "",
+      Param = {501010, 4},
+      Quality = 4,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3001037,
+      Lv = 5,
+      Magic = 4010165,
+      Name = "",
+      Param = {501010, 5},
+      Quality = 4,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3001037,
+      Lv = 6,
+      Magic = 4010166,
+      Name = "",
+      Param = {501010, 6},
+      Quality = 4,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3001037,
+      Lv = 7,
+      Magic = 4010167,
+      Name = "",
+      Param = {501010, 7},
+      Quality = 5,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3001037,
+      Lv = 8,
+      Magic = 4010168,
+      Name = "",
+      Param = {501010, 8},
+      Quality = 5,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3001037,
+      Lv = 9,
+      Magic = 4010169,
+      Name = "",
+      Param = {501010, 9},
+      Quality = 5,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3001037,
+      Lv = 10,
+      Magic = 4010170,
+      Name = "",
+      Param = {501010, 10},
+      Quality = 5,
+      Type = 1
+    }
+  },
+  [3001039] = {
+    {
+      Desc = "对目标位置释放一个时停球",
+      FixedEntry = 601001,
+      IconPath = "Skill/Fight_skill_dazhao",
+      Id = 3001039,
+      Lv = 1,
+      Magic = 0,
+      Name = "时停球1",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 2
+    },
+    {
+      Desc = "多次打击被时停的目标，可以造成过载；过载会在时停结束时产生一次高伤害爆炸",
+      FixedEntry = 601001,
+      IconPath = "Skill/Fight_skill_dazhao",
+      Id = 3001039,
+      Lv = 2,
+      Magic = 3001039030,
+      Name = "时停球2",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 2
+    },
+    {
+      Desc = "释放时停球时，立刻对时停球内的一个目标造成一次过载",
+      FixedEntry = 601001,
+      IconPath = "Skill/Fight_skill_dazhao",
+      Id = 3001039,
+      Lv = 3,
+      Magic = 3001039031,
+      Name = "时停球3",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 2
+    },
+    {
+      Desc = "完美闪避时自动对攻击者释放时停球，存在内置CD",
+      FixedEntry = 601001,
+      IconPath = "Skill/Fight_skill_dazhao",
+      Id = 3001039,
+      Lv = 4,
+      Magic = 3001039032,
+      Name = "时停球4",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 2
+    },
+    {
+      Desc = "敌人的远程攻击触碰到时停球时会被弹回",
+      FixedEntry = 601001,
+      IconPath = "Skill/Fight_skill_dazhao",
+      Id = 3001039,
+      Lv = 5,
+      Magic = 3001039033,
+      Name = "时停球5",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 2
+    },
+    {
+      Desc = "触发弹回时，恢复吊坠技能冷却",
+      FixedEntry = 601001,
+      IconPath = "Skill/Fight_skill_dazhao",
+      Id = 3001039,
+      Lv = 6,
+      Magic = 3001039034,
+      Name = "时停球6",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 2
+    },
+    {
+      Desc = "每定住一个敌人可以为时停技能量表充能，满充能后可释放一次全局时停",
+      FixedEntry = 601001,
+      IconPath = "Skill/Fight_skill_dazhao",
+      Id = 3001039,
+      Lv = 7,
+      Magic = 3001039035,
+      Name = "时停球7",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 2
+    },
+    {
+      Desc = "全局时停会缓慢自动充能",
+      FixedEntry = 601001,
+      IconPath = "Skill/Fight_skill_dazhao",
+      Id = 3001039,
+      Lv = 8,
+      Magic = 3001039035,
+      Name = "时停球8",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 2
+    }
+  },
+  [3001061] = {
+    {
+      Desc = "参看过去的残影",
+      FixedEntry = 601001,
+      IconPath = "Skill/Fight_skill_dazhao",
+      Id = 3001061,
+      Lv = 1,
+      Magic = 0,
+      Name = "聚光镜",
+      Param = {0, 0},
+      Quality = 1,
+      Type = 2
+    }
+  },
+  [3001063] = {
+    {
+      Desc = "拂雾青灯可以吸收青化雾，成功吸收青化雾会使关卡技能变为释放清洁的冰雾。",
+      FixedEntry = 601001,
+      IconPath = "Skill/Fight_skill_dazhao",
+      Id = 3001063,
+      Lv = 1,
+      Magic = 0,
+      Name = "拂雾青灯1",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 2
+    },
+    {
+      Desc = "拂雾青灯吸收浓缩青化雾后，再次释放将会在自身周边小范围产生一次爆炸，此爆炸能够破坏暗水晶",
+      FixedEntry = 601001,
+      IconPath = "Skill/Fight_skill_dazhao",
+      Id = 3001063,
+      Lv = 2,
+      Magic = 0,
+      Name = "拂雾青灯2",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 2
+    },
+    {
+      Desc = "使用拂雾青灯吸收青化雾后，吹拂并命中旋转门电源，将会冻结整个旋转门，同时切断拉杆对旋转门的控制",
+      FixedEntry = 601001,
+      IconPath = "Skill/Fight_skill_dazhao",
+      Id = 3001063,
+      Lv = 3,
+      Magic = 0,
+      Name = "拂雾青灯3",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 2
+    }
+  },
+  [3001104] = {
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0101",
+      Id = 3001104,
+      Lv = 1,
+      Magic = 4010161,
+      Name = "",
+      Param = {501010, 1},
+      Quality = 3,
+      Type = 1
+    }
+  },
+  [3101000] = {
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0101",
+      Id = 3101000,
+      Lv = 1,
+      Magic = 4010161,
+      Name = "",
+      Param = {501010, 1},
+      Quality = 3,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101000,
+      Lv = 2,
+      Magic = 4010162,
+      Name = "",
+      Param = {501010, 2},
+      Quality = 3,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101000,
+      Lv = 3,
+      Magic = 4010163,
+      Name = "",
+      Param = {501010, 3},
+      Quality = 3,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101000,
+      Lv = 4,
+      Magic = 4010164,
+      Name = "",
+      Param = {501010, 4},
+      Quality = 4,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101000,
+      Lv = 5,
+      Magic = 4010165,
+      Name = "",
+      Param = {501010, 5},
+      Quality = 4,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101000,
+      Lv = 6,
+      Magic = 4010166,
+      Name = "",
+      Param = {501010, 6},
+      Quality = 4,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101000,
+      Lv = 7,
+      Magic = 4010167,
+      Name = "",
+      Param = {501010, 7},
+      Quality = 5,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101000,
+      Lv = 8,
+      Magic = 4010168,
+      Name = "",
+      Param = {501010, 8},
+      Quality = 5,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101000,
+      Lv = 9,
+      Magic = 4010169,
+      Name = "",
+      Param = {501010, 9},
+      Quality = 5,
+      Type = 1
+    },
+    {
+      Desc = "全队载体不显示",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101000,
+      Lv = 10,
+      Magic = 4010170,
+      Name = "",
+      Param = {501010, 10},
+      Quality = 5,
+      Type = 1
+    }
+  },
+  [3101001] = {
+    {
+      Desc = "当场上角色进行攻击时，会产生残破的气刃连携攻击，造成100%攻击力的物理伤害",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0101",
+      Id = 3101001,
+      Lv = 1,
+      Magic = 4010161,
+      Name = "",
+      Param = {501010, 1},
+      Quality = 3,
+      Type = 1
+    },
+    {
+      Desc = "当场上角色进行攻击时，会产生残破的气刃连携攻击，造成200%攻击力的物理伤害",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101001,
+      Lv = 2,
+      Magic = 4010162,
+      Name = "",
+      Param = {501010, 2},
+      Quality = 3,
+      Type = 1
+    },
+    {
+      Desc = "当场上角色进行攻击时，会产生残破的气刃连携攻击，造成300%攻击力的物理伤害",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101001,
+      Lv = 3,
+      Magic = 4010163,
+      Name = "",
+      Param = {501010, 3},
+      Quality = 3,
+      Type = 1
+    },
+    {
+      Desc = "当场上角色进行攻击时，会产生残破的气刃连携攻击，造成400%攻击力的物理伤害",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101001,
+      Lv = 4,
+      Magic = 4010164,
+      Name = "",
+      Param = {501010, 4},
+      Quality = 4,
+      Type = 1
+    },
+    {
+      Desc = "当场上角色进行攻击时，会产生残破的气刃连携攻击，造成500%攻击力的物理伤害",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101001,
+      Lv = 5,
+      Magic = 4010165,
+      Name = "",
+      Param = {501010, 5},
+      Quality = 4,
+      Type = 1
+    },
+    {
+      Desc = "当场上角色进行攻击时，会产生残破的气刃连携攻击，造成600%攻击力的物理伤害",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101001,
+      Lv = 6,
+      Magic = 4010166,
+      Name = "",
+      Param = {501010, 6},
+      Quality = 4,
+      Type = 1
+    },
+    {
+      Desc = "当场上角色进行攻击时，会产生残破的气刃连携攻击，造成700%攻击力的物理伤害",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101001,
+      Lv = 7,
+      Magic = 4010167,
+      Name = "",
+      Param = {501010, 7},
+      Quality = 5,
+      Type = 1
+    },
+    {
+      Desc = "当场上角色进行攻击时，会产生残破的气刃连携攻击，造成800%攻击力的物理伤害",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101001,
+      Lv = 8,
+      Magic = 4010168,
+      Name = "",
+      Param = {501010, 8},
+      Quality = 5,
+      Type = 1
+    },
+    {
+      Desc = "当场上角色进行攻击时，会产生残破的气刃连携攻击，造成900%攻击力的物理伤害",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101001,
+      Lv = 9,
+      Magic = 4010169,
+      Name = "",
+      Param = {501010, 9},
+      Quality = 5,
+      Type = 1
+    },
+    {
+      Desc = "当场上角色进行攻击时，会产生残破的气刃连携攻击，造成1000%攻击力的物理伤害",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101001,
+      Lv = 10,
+      Magic = 4010170,
+      Name = "",
+      Param = {501010, 10},
+      Quality = 5,
+      Type = 1
+    }
+  },
+  [3101002] = {
+    {
+      Desc = "释放后，将在冰火刃之间切换，冰刃造成100%冰属性伤害，并击破怪物火盾；火刃造成100%火属性伤害并击破怪物冰盾",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0101",
+      Id = 3101002,
+      Lv = 1,
+      Magic = 4010161,
+      Name = "",
+      Param = {501010, 1},
+      Quality = 3,
+      Type = 1
+    },
+    {
+      Desc = "释放后，将在冰火刃之间切换，冰刃造成200%冰属性伤害，并击破怪物火盾；火刃造成200%火属性伤害并击破怪物冰盾",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101002,
+      Lv = 2,
+      Magic = 4010162,
+      Name = "",
+      Param = {501010, 2},
+      Quality = 3,
+      Type = 1
+    },
+    {
+      Desc = "释放后，将在冰火刃之间切换，冰刃造成300%冰属性伤害，并击破怪物火盾；火刃造成300%火属性伤害并击破怪物冰盾",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101002,
+      Lv = 3,
+      Magic = 4010163,
+      Name = "",
+      Param = {501010, 3},
+      Quality = 3,
+      Type = 1
+    },
+    {
+      Desc = "释放后，将在冰火刃之间切换，冰刃造成400%冰属性伤害，并击破怪物火盾；火刃造成400%火属性伤害并击破怪物冰盾",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101002,
+      Lv = 4,
+      Magic = 4010164,
+      Name = "",
+      Param = {501010, 4},
+      Quality = 4,
+      Type = 1
+    },
+    {
+      Desc = "释放后，将在冰火刃之间切换，冰刃造成500%冰属性伤害，并击破怪物火盾；火刃造成500%火属性伤害并击破怪物冰盾",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101002,
+      Lv = 5,
+      Magic = 4010165,
+      Name = "",
+      Param = {501010, 5},
+      Quality = 4,
+      Type = 1
+    },
+    {
+      Desc = "释放后，将在冰火刃之间切换，冰刃造成600%冰属性伤害，并击破怪物火盾；火刃造成600%火属性伤害并击破怪物冰盾",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101002,
+      Lv = 6,
+      Magic = 4010166,
+      Name = "",
+      Param = {501010, 6},
+      Quality = 4,
+      Type = 1
+    },
+    {
+      Desc = "释放后，将在冰火刃之间切换，冰刃造成700%冰属性伤害，并击破怪物火盾；火刃造成700%火属性伤害并击破怪物冰盾",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101002,
+      Lv = 7,
+      Magic = 4010167,
+      Name = "",
+      Param = {501010, 7},
+      Quality = 5,
+      Type = 1
+    },
+    {
+      Desc = "释放后，将在冰火刃之间切换，冰刃造成800%冰属性伤害，并击破怪物火盾；火刃造成800%火属性伤害并击破怪物冰盾",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101002,
+      Lv = 8,
+      Magic = 4010168,
+      Name = "",
+      Param = {501010, 8},
+      Quality = 5,
+      Type = 1
+    },
+    {
+      Desc = "释放后，将在冰火刃之间切换，冰刃造成900%冰属性伤害，并击破怪物火盾；火刃造成900%火属性伤害并击破怪物冰盾",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101002,
+      Lv = 9,
+      Magic = 4010169,
+      Name = "",
+      Param = {501010, 9},
+      Quality = 5,
+      Type = 1
+    },
+    {
+      Desc = "释放后，将在冰火刃之间切换，冰刃造成1000%冰属性伤害，并击破怪物火盾；火刃造成1000%火属性伤害并击破怪物冰盾",
+      FixedEntry = 601001,
+      IconPath = "Icon/BattleWeapon/3x0102",
+      Id = 3101002,
+      Lv = 10,
+      Magic = 4010170,
+      Name = "",
+      Param = {501010, 10},
+      Quality = 5,
+      Type = 1
+    }
+  },
+  [3290001] = {
+    {
+      Desc = "长按技能键，人物的移速会越跑越快！",
+      FixedEntry = 601001,
+      IconPath = "Skill/Fight_skill_dazhao",
+      Id = 3290001,
+      Lv = 1,
+      Magic = 0,
+      Name = "加速跑",
+      Param = {0, 0},
+      Quality = 3,
+      Type = 2
+    }
+  },
+  [6070001] = {
+    {
+      Desc = "对周围造成一次基于护盾值30%范围伤害，冷却时间6秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001007_pro_2",
+      Id = 6070001,
+      Lv = 1,
+      Magic = 0,
+      Name = "雅约之颂",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "在[雅约之颂]释放前，为全队添加生命值上限10%的护盾",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001007_pro_2",
+      Id = 6070001,
+      Lv = 2,
+      Magic = 0,
+      Name = "至善者的洗礼",
+      Param = {1, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "[雅约之颂]的冷却时间缩短至4秒",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001007_pro_2",
+      Id = 6070001,
+      Lv = 3,
+      Magic = 0,
+      Name = "至恶者的绝罚",
+      Param = {2, 0},
+      Quality = 5,
+      Type = 4
+    }
+  },
+  [6070011] = {
+    {
+      Desc = "对目标位置释放时停，冷却时间10秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Stage_GP_Skill_1",
+      Id = 6070011,
+      Lv = 1,
+      Magic = 0,
+      Name = "维时之沙",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "多次打击被时停的目标，可以造成过载；过载会在时停结束时产生一次爆炸，造成200%伤害",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Stage_GP_Skill_1",
+      Id = 6070011,
+      Lv = 2,
+      Magic = 0,
+      Name = "沙上建塔",
+      Param = {1, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "[维时之沙]冷却时间减少至8秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Stage_GP_Skill_1",
+      Id = 6070011,
+      Lv = 3,
+      Magic = 0,
+      Name = "历久弥新",
+      Param = {2, 0},
+      Quality = 5,
+      Type = 4
+    }
+  },
+  [6070021] = {
+    {
+      Desc = "全队治疗10%生命值，冷却时间12秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001007_pro_1",
+      Id = 6070021,
+      Lv = 1,
+      Magic = 0,
+      Name = "天池琼露",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "[天池琼露]释放后一段时间内，每秒持续恢复2%生命值。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001007_pro_1",
+      Id = 6070021,
+      Lv = 2,
+      Magic = 0,
+      Name = "长生久视",
+      Param = {1, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "[天池琼露]的冷却时间缩短至8秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001007_pro_1",
+      Id = 6070021,
+      Lv = 3,
+      Magic = 0,
+      Name = "白驹过隙",
+      Param = {2, 0},
+      Quality = 5,
+      Type = 4
+    }
+  },
+  [6070031] = {
+    {
+      Desc = "对全场敌人造成60%伤害，冷却时间8秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001006_exskill",
+      Id = 6070031,
+      Lv = 1,
+      Magic = 0,
+      Name = "昭昭星命",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "[昭昭星命]对生命值50%以下的单位伤害提升100%",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001006_exskill",
+      Id = 6070031,
+      Lv = 2,
+      Magic = 0,
+      Name = "赢者通吃",
+      Param = {1, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "[昭昭星命]的冷却时间缩短至5秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001006_exskill",
+      Id = 6070031,
+      Lv = 3,
+      Magic = 0,
+      Name = "自由贸易",
+      Param = {2, 0},
+      Quality = 5,
+      Type = 4
+    }
+  },
+  [6070041] = {
+    {
+      Desc = "召唤一个能量体，一段时间内每次攻击命中能量体将会进行追加攻击，造成25%伤害。冷却时间15秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001007_pro_2",
+      Id = 6070041,
+      Lv = 1,
+      Magic = 0,
+      Name = "天外轰雷",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "能量体对50%生命值以上的单位，伤害提高100%。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001007_pro_2",
+      Id = 6070041,
+      Lv = 2,
+      Magic = 0,
+      Name = "可控涡流",
+      Param = {1, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "[天外轰雷]的冷却时间缩短至10秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001007_pro_2",
+      Id = 6070041,
+      Lv = 3,
+      Magic = 0,
+      Name = "超载电荷",
+      Param = {2, 0},
+      Quality = 5,
+      Type = 4
+    }
+  },
+  [6070051] = {
+    {
+      Desc = "使用后，使所有敌人五种元素异常弱点计量值大量增加，冷却时间9秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001007_pro_2",
+      Id = 6070051,
+      Lv = 1,
+      Magic = 0,
+      Name = "诸神伟力",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "每触发一个元素异常效果，会额外触发一种不同的元素异常。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001007_pro_2",
+      Id = 6070051,
+      Lv = 2,
+      Magic = 0,
+      Name = "潘多拉的魔盒",
+      Param = {1, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "[诸神伟力]的冷却时间缩短至6秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_H1001007_pro_2",
+      Id = 6070051,
+      Lv = 3,
+      Magic = 0,
+      Name = "神使的聪颖",
+      Param = {2, 0},
+      Quality = 5,
+      Type = 4
+    }
+  },
+  [6170691] = {
+    {
+      Desc = "使一片区域内时间停滞，对敌人造成<color=#476DBB>【静止】</color>效果持续6秒，并立即产生一次<color=#476DBB>【回溯】</color>，获得10层<color=#476DBB>【预知】</color>。\n冷却时间35秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Stage_GP_Skill_1",
+      Id = 6170691,
+      KeyIDList = {
+        60013,
+        60011,
+        60012
+      },
+      Lv = 1,
+      Magic = 0,
+      Name = "维时之沙",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "技能可充能1次，冷却时间降低至30秒，作用范围扩大。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Stage_GP_Skill_1",
+      Id = 6170691,
+      Lv = 2,
+      Magic = 0,
+      Name = "维时纯零矢量",
+      Param = {1, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "作用范围扩大至全场，时停时间延长至10秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Stage_GP_Skill_1",
+      Id = 6170691,
+      Lv = 3,
+      Magic = 0,
+      Name = "维时类空分量",
+      Param = {2, 0},
+      Quality = 5,
+      Type = 4
+    }
+  },
+  [6170791] = {
+    {
+      Desc = "造成范围爆炸，每命中一名敌人获得一层<color=#476DBB>【合约】</color>，随后进入持续6秒的强化状态：提升20%防御力，50%精力额外回复，30%受治疗增幅，50%冷却加速，并受到总计15%最大生命值，不会致死的<color=#476DBB>【灾】</color>伤害，结束时恢复15%已损失生命值；强化期间每次受到伤害时获得一层<color=#476DBB>【激励】</color>。\n冷却时间35秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_3",
+      Id = 6170791,
+      KeyIDList = {
+        60031,
+        60032,
+        60021
+      },
+      Lv = 1,
+      Magic = 0,
+      Name = "秘密契约",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "强化状态提供的数值提升，冷却时间降低至30秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_3",
+      Id = 6170791,
+      Lv = 2,
+      Magic = 0,
+      Name = "追加条款",
+      Param = {1, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "强化状态持续时间均延长至10秒，技能可充能一次。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_3",
+      Id = 6170791,
+      Lv = 3,
+      Magic = 0,
+      Name = "长效合同",
+      Param = {2, 0},
+      Quality = 5,
+      Type = 4
+    }
+  },
+  [6170891] = {
+    {
+      Desc = "在指定位置放置可存在10秒的<color=#476DBB>【机关】</color><color=#476DBB>【智算型炮塔】</color>，按一定比例继承释放者的属性，并自动攻击附近的敌人。\n技能可充能2次，冷却时间15秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_2",
+      Id = 6170891,
+      KeyIDList = {60041},
+      Lv = 1,
+      Magic = 0,
+      Name = "神谕机工",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "<color=#476DBB>【机关】</color><color=#476DBB>【智算型炮塔】</color>子弹可追踪敌人，发射速度略微提升。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_2",
+      Id = 6170891,
+      Lv = 2,
+      Magic = 0,
+      Name = "制导优化",
+      Param = {1, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "技能可充能5次，场上最多放置3个<color=#476DBB>【机关】</color><color=#476DBB>【智算型炮塔】</color>。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_2",
+      Id = 6170891,
+      Lv = 3,
+      Magic = 0,
+      Name = "轻量化设计",
+      Param = {2, 0},
+      Quality = 5,
+      Type = 4
+    }
+  },
+  [6170991] = {
+    {
+      Desc = "生成一个<color=#476DBB>【源流】</color>区域，持续10秒，对其中敌人施加<color=#476DBB>【灾】</color>状态，每秒造成60%攻击力的<color=#476DBB>【灾】</color>伤害，位于其中的成员每秒恢复10%最大生命值。\n冷却时间40秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_4",
+      Id = 6170991,
+      KeyIDList = {60022},
+      Lv = 1,
+      Magic = 0,
+      Name = "永夏源流",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "技能可充能1次，冷却时间降低至30秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_4",
+      Id = 6170991,
+      Lv = 2,
+      Magic = 0,
+      Name = "永夏富源",
+      Param = {1, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "技能产生的<color=#476DBB>【源流】</color>区域持续时间延长5秒，且跟随成员移动。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_4",
+      Id = 6170991,
+      Lv = 3,
+      Magic = 0,
+      Name = "永夏永世",
+      Param = {2, 0},
+      Quality = 5,
+      Type = 4
+    }
+  },
+  [6171091] = {
+    {
+      Desc = "献祭后台队友50%当前生命值，使在场角色获得持续10秒的<color=#476DBB>【索敌】</color>状态，并立刻射出一道大范围<color=#476DBB>【轰鸣镭射】</color>，对路径上的敌人造成伤害和韧性削减。\n冷却时间35秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_6",
+      Id = 6171091,
+      KeyIDList = {
+        60051,
+        60052,
+        60053
+      },
+      Lv = 1,
+      Magic = 0,
+      Name = "轰鸣镭射",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "<color=#476DBB>【轰鸣镭射】</color>伤害提升，伤害间隔更短。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_6",
+      Id = 6171091,
+      Lv = 2,
+      Magic = 0,
+      Name = "火力间隔修正",
+      Param = {1, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "充能时间减少至30秒，<color=#476DBB>【索敌】</color>持续时间延长至15秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_6",
+      Id = 6171091,
+      Lv = 3,
+      Magic = 0,
+      Name = "战备流程优化",
+      Param = {2, 0},
+      Quality = 5,
+      Type = 4
+    }
+  },
+  [6171191] = {
+    {
+      Desc = "基于场上成员300%防御力生成一个持续15秒的<color=#476DBB>【圣光护盾】</color>，<color=#476DBB>【圣光护盾】</color>存在期间每0.5秒对身边敌人进行一次<color=#476DBB>【反击】</color>。\n冷却时间40秒。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_5",
+      Id = 6171191,
+      KeyIDList = {60002, 60005},
+      Lv = 1,
+      Magic = 0,
+      Name = "圣誓守护",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "技能可充能一次，<color=#476DBB>【圣光护盾】</color>生成时基于防御力的系数提高至500%。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_5",
+      Id = 6171191,
+      Lv = 2,
+      Magic = 0,
+      Name = "守护誓言",
+      Param = {1, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "<color=#476DBB>【圣光护盾】</color>破碎时或持续时间结束时，额外造成一次基于500%防御力的<color=#476DBB>【反击】</color>伤害。",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_5",
+      Id = 6171191,
+      Lv = 3,
+      Magic = 0,
+      Name = "进击誓言",
+      Param = {2, 0},
+      Quality = 5,
+      Type = 4
+    }
+  },
+  [6171291] = {
+    {
+      Desc = "？？？",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_5",
+      Id = 6171291,
+      Lv = 1,
+      Magic = 0,
+      Name = "一刀999",
+      Param = {0, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "？？？",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_5",
+      Id = 6171291,
+      Lv = 2,
+      Magic = 0,
+      Name = "一刀999",
+      Param = {1, 0},
+      Quality = 5,
+      Type = 4
+    },
+    {
+      Desc = "？？？",
+      FixedEntry = 601001,
+      IconPath = "Skill/UI_Rogue_StageSkill_5",
+      Id = 6171291,
+      Lv = 3,
+      Magic = 0,
+      Name = "一刀999",
+      Param = {2, 0},
+      Quality = 5,
+      Type = 4
+    }
+  }
+}

@@ -1,0 +1,110 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local SaticSv = require("ui.widget.static_scroll_view")
+local SvItem = require("uimodule.battle_treasure.battle_treasure_item")
+local Item_Helper = require("utils.item_helper")
+local BagCfg = require("gamelogic.character.fight_bag_configs")
+local LIST_ITEM_KEY = "TREASURE_BOX_CHOOSE_ITEM"
+
+function ui:ui_finish_load()
+  self:set_button("BtnReturn", function()
+    self:ui_hide()
+  end)
+  self:set_button("Submit", function()
+    if self.select_item_data ~= nil then
+      if self.v_equip_select_cb then
+        self.v_equip_select_cb(true)
+        return
+      end
+      BattleTreasureBoxMgr:choose_battle_treasure_box(self.select_item_data.idx)
+      self:ui_hide()
+    else
+      Util.show_message_tip(2137)
+    end
+  end)
+  self:set_button("CloseBtn", function()
+    self.v_uiobjects.CloseBtn:SetActive(false)
+    self:refresh_view()
+  end)
+  self.v_uiobjects.RoleSkillInfo:SetActive(false)
+  self.v_uiobjects.Refresh:SetActive(false)
+  self.v_choose_panel_list = SaticSv:new(self, self.v_uiobjects.ChooseContent, SvItem, LIST_ITEM_KEY)
+end
+
+function ui:ui_on_show()
+  self.select_item_data = nil
+  self:refresh_view()
+  self:register_event()
+  MsgGame:mq_publish2(Const.MSG_ON_OPEN_DROP_UI)
+end
+
+function ui:ui_on_hide()
+  self.select_item_data = nil
+  self.v_treasure_box_list = nil
+  self.v_choose_panel_list:clear()
+  MsgGame:mq_publish2(Const.MSG_ON_CLOSE_DROP_UI)
+end
+
+function ui:ui_on_destroy()
+  self.v_choose_panel_list = nil
+end
+
+function ui:refresh_view()
+  self.select_item_data = nil
+  self.v_treasure_box_list = BattleTreasureBoxMgr:get_treasure_box_list()
+  self.v_choose_panel_list:update_list(self.v_treasure_box_list)
+  self.v_uiobjects.suit_info:SetActive(false)
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_ON_SELECTED_TREASURE_ITEM, self.select_treasure_box_item, self)
+  self:bind_auto_mq(Const.MSG_OB_OPEN_TREASURE_SUIT, self.open_close_btn, self)
+end
+
+function ui:open_close_btn(msg)
+  if nil == msg or nil == msg.mm_obj then
+    return
+  end
+  local xoffset = 200
+  local x = msg.mm_obj.x
+  local data = msg.mm_obj.data
+  local uobj = self.v_uiobjects
+  local ucom = self.v_uicompents
+  uobj.suit_info:SetActive(true)
+  local suit_rect = ucom.suit_info_rect
+  local y = suit_rect.anchoredPosition.y
+  suit_rect:SetAnchoredPositionA(x + xoffset, y)
+  ucom.two_suit_txt.text = data.two_piece
+  ucom.four_suit_txt.text = data.four_piece
+  self.v_uiobjects.CloseBtn:SetActive(true)
+end
+
+function ui:select_treasure_box_item(msg)
+  if nil == msg or nil == msg.mm_obj then
+    return
+  end
+  self.select_item_data = msg.mm_obj
+  local idx = msg.mm_obj.idx
+  local selected_item = self.v_choose_panel_list:get_item_by_idx(idx)
+  self.v_choose_panel_list:on_select_change(selected_item)
+  if not Item_Helper.get_is_equip_collect(msg.mm_obj.item_id) then
+    return
+  end
+  
+  function self.v_equip_select_cb(is_need)
+    BattleTreasureBoxMgr:choose_battle_equip_treasure_box(self.select_item_data.idx, is_need)
+    self:ui_hide()
+  end
+  
+  local has_equip = FightBagMgr:has_same_type_equip(msg.mm_obj.item_id)
+  if not has_equip then
+    return
+  end
+  local param = {
+    tips_source = BagCfg.TIPS_SOURCE.OTHER,
+    get_cb = self.v_equip_select_cb
+  }
+  Item_Helper.show_battle_tips(msg.mm_obj.item_id, msg.mm_obj.ran_ans_uuid, param)
+end
+
+return ui

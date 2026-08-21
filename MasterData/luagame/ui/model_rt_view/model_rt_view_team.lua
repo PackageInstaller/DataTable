@@ -1,0 +1,873 @@
+local M = Util.create_class()
+local CSGameMgr = CS.Game.GameMgr
+local CSShadow = CS.Game.Shadow
+local CSResLoader = CS.ResLoader
+local UnityCamera = UnityEngine.Camera
+local UnityQualitySetting = UnityEngine.QualitySettings
+local UnityShader = UnityEngine.Shader
+local UnityColor = UnityEngine.Color
+local SHADERID_CHARACTER_LIGHT_OFFSET = "_CharacterLightOffset"
+local SHADERID_CHARACTER_LIGHT_POS = "_MainSceneLightPos"
+local MAIN_SCENE_LIGHTON = UnityShader.PropertyToID("_MainSceneLightOn")
+local MAIN_SCENE_SHOW_ID = UnityShader.PropertyToID("_MAIN_SCENE_SHOW")
+local CUSTOM_ROLE_LIGHT = "_CUSTOM_ROLE_LIGHT"
+local TypeDynamicBoneController = typeof(CS.Game.DynamicBoneController)
+local LightColor = UnityColor(1, 1, 1, 1)
+local AmbientColor = UnityColor(1, 1, 1, 1)
+local LightIntensity = 1
+local LightDirX = 30
+local LightDirY = -30
+local COUNT = 0
+local PARAM_TYPE = 7
+local SCENE_EFFECT_NAME = "SceneEffect"
+local ANTIALIASING = 0
+local Layer = require("utils.layer")
+local ResPool = Global.res_pool_mgr
+local ACT_DEFINE = Config.ACT_DEFINE
+local _lerp = require("base.mathx").lerp_number
+local _slower = string.lower
+local _abs = math.abs
+local TypeCharacterUtil = typeof(CS.Game.CharacterUtil)
+local SceneIlluminationInfo = CS.SceneIlluminationInfo
+local SceneIllumination = CS.SceneIllumination
+
+function M:_init(callback, play_idle_anim, viewport_rect)
+  self.v_npc_load_list = {}
+  self.v_npc_loaded_map = {}
+  self.v_npc_delete_list = {}
+  self.v_npc_effect_id_list = {}
+  self.v_waiting_queue = {}
+  self.v_content_rot_y = 0
+  self.v_is_visible = true
+  self.v_is_loading = true
+  self.v_viewport_rect = viewport_rect
+  self.v_play_idle_anim = play_idle_anim
+  self.v_callback = callback
+  local res_name = "UIModelRtViewTeam"
+  local path = CSResLoader.GetFullPath(res_name)
+  ResMgr:load_gameobj_async(path, nil, true, function(_, go)
+    self.v_model_root = go
+    self:do_init()
+  end)
+end
+
+function M:do_init()
+  if self.v_callback then
+    self.v_callback()
+  end
+  local trans = self.v_model_root.transform
+  self.v_cid = self.v_model_root:GetInstanceID()
+  trans:SetParent(Global.ui_mgr:get_wcanvas_transform(), false)
+  trans:SetPositionA(0, 0, 0)
+  self.v_team_bg = Util.get_child_gameobj("TeamBg", self.v_model_root)
+  if self.v_team_bg then
+    self.v_team_bg:SetActive(true)
+  end
+  self.v_content_list = {}
+  for pos = 1, 3 do
+    local content_root = Util.get_child_gameobj("Content" .. pos, self.v_model_root)
+    local model_root_trans = Util.get_child_gameobj("Model", content_root).transform
+    local camera = Util.get_component("Camera", content_root, UnityCamera)
+    local bg_obj = Util.get_child_gameobj("BgCamera/Canvas/HeroBg" .. pos, self.v_model_root)
+    local tbl = {
+      content_root = content_root,
+      model_root_trans = model_root_trans,
+      camera = camera,
+      camera_obj = camera.gameObject,
+      bg_obj = bg_obj
+    }
+    table.insert(self.v_content_list, tbl)
+    content_root:SetActive(true)
+    bg_obj:SetActive(true)
+  end
+  CSShadow.Init()
+  CSShadow.ShadowLayer = Layer.LayerMask.Character
+  CSShadow.RenderOrder = 0
+  local obj = UnityFind(SCENE_EFFECT_NAME) or ResMgr:load_gameobj(Path.get_res_path(SCENE_EFFECT_NAME))
+  obj.name = SCENE_EFFECT_NAME
+  local info = obj:GetComponent(typeof(SceneIllumination))
+  self.v_light_info = info.IlluminationInfo
+  self:register_event()
+  for _, content in ipairs(self.v_content_list) do
+    CSGameMgr.SetCameraObj(self.v_content_list[#self.v_content_list].camera_obj)
+    SceneIlluminationInfo.Apply(self.v_light_info)
+  end
+  Global.render_mgr:set_post_process_param(ShareRes.get_post_process_cfg_by_ui_name("team"))
+  self:set_camera_viewport()
+  self:on_load_done()
+  local anti = 4
+  if UNITY_EDITOR then
+    anti = 8
+  end
+  if Global.render_mgr:get_cur_quality_level() < 3.5 then
+    anti = 2
+  end
+  Global.render_mgr:set_unity_antiAliasing(anti)
+end
+
+function M:register_event()
+  Util.bind_msg(self, Const.MSG_ON_WEAPON_LOADED, self._on_weapon_loaded, self)
+  Util.bind_msg(self, Const.MSG_ON_SET_LIGHT_INFO, self._set_light_info, self)
+end
+
+function M:update()
+  if not self.v_is_visible then
+    return
+  end
+  local list = self.v_npc_loaded_map
+  for _, npc in pairs(list) do
+    npc.act_ctrl:update()
+  end
+  for _, npc in pairs(list) do
+    local trans = npc.transform
+    local _, angle_y = trans:GetEulerAnglesA3()
+    self:update_light(angle_y)
+    local npc_id = npc.character_cfg.NpcId
+    local shadow_cfg = ShareRes.get_role_shadow_cfg(npc.model_cfg.ModelId)
+    if shadow_cfg then
+      CSShadow.RenderShadowMap2(trans, true, 1, true, shadow_cfg.CameraHeight, shadow_cfg.LookAtHeight)
+    else
+      CSShadow.RenderShadowMap2(trans, true)
+    end
+  end
+  if self.v_cur_npc_luaobj then
+    self:update_effect_param()
+    self.v_cur_npc_luaobj.act_effect_ctrl:low_update()
+  end
+end
+
+function M:on_load_done()
+  self.v_is_loading = false
+  if self.v_waiting_queue and #self.v_waiting_queue > 0 then
+    local param = self.v_waiting_queue[#self.v_waiting_queue]
+    table.remove(self.v_waiting_queue, #self.v_waiting_queue)
+    self:load_npc(param)
+  end
+end
+
+function M:load_npc(params)
+  if not params.model_index then
+    local count = COUNT + 1
+    COUNT = count % 100
+    params.model_index = count
+  end
+  if self.v_is_loading then
+    if not self.v_waiting_queue then
+      self.v_waiting_queue = {}
+    end
+    table.insert(self.v_waiting_queue, 1, params)
+    return params.model_index
+  end
+  self.v_is_loading = true
+  local model_id = params.model_id
+  local npc_id = params.npc_id
+  local is_reload = params.is_reload
+  local hide_weapon = params.hide_weapon
+  local cb = params.cb
+  local team_pos = params.team_pos
+  local fixed_id = params.fixed_id
+  local use_weapon_id = params.use_weapon_id
+  local use_weapon_res = params.use_weapon_res
+  if is_reload then
+    self:remove_all_npc()
+  end
+  self.v_model_id = model_id
+  local npc = require("obj.hero"):new()
+  if team_pos then
+    npc:set_team_pos(team_pos)
+  end
+  local character_cfg = ShareRes.get_character_cfg(npc_id)
+  npc.character_cfg = character_cfg
+  local model_cfg = ShareRes.create("character.character_model", model_id .. "_UI")
+  model_cfg = model_cfg or ShareRes.create("character.character_model", model_id)
+  npc.model_cfg = model_cfg
+  local npc_info = {
+    index = params.model_index,
+    npc = npc,
+    npc_id = npc_id
+  }
+  npc.cid = self.v_cid
+  npc.effect_owner = self.v_model_root
+  self.v_npc_load_list[npc_info.index] = npc_info
+  self.v_is_loading = true
+  self:load_model_animator(npc, npc_info, hide_weapon, cb, fixed_id, use_weapon_id, use_weapon_res)
+  return params.model_index
+end
+
+function M:load_model_animator(npc, npc_info, hide_weapon, cb, fixed_id, use_weapon_id, use_weapon_res)
+  npc:before_load_gameobj()
+  ResPool:get_animator_async(npc.model_cfg.ControllerPath, function(_, animator_info)
+    if not (not npc:is_destroy() and self.v_npc_load_list[npc_info.index]) or self.v_npc_delete_list[npc_info.index] then
+      ResPool:release_res(animator_info)
+      self:on_load_done()
+      return
+    end
+    npc.runtime_animator = animator_info.res
+    npc.animator_info = animator_info
+    self:load_gameobj_async(npc, npc_info, hide_weapon, cb, fixed_id, use_weapon_id, use_weapon_res)
+  end)
+end
+
+function M:set_trans_mat(trans)
+  Util.set_all_mat(trans, function(mat)
+    local name = _slower(mat.name)
+    local not_need_shadow = string.match(name, "eye")
+    mat:SetKeyword("_SHADOW_RECEIVE", not not_need_shadow)
+  end)
+end
+
+function M:set_all_character_mat(gameobj, enable)
+  if Util.is_nil(gameobj) then
+    return
+  end
+  self.v_gameobj = gameobj
+  local character_util = gameobj:TryAddComponent(TypeCharacterUtil)
+  character_util:ChangeAllCharacterMat(enable)
+end
+
+function M:load_gameobj_async(npc, npc_info, hide_weapon, cb, fixed_id, use_weapon_id, use_weapon_res)
+  local model_id = npc.model_cfg.ModelPath
+  local team_pos = npc:get_team_pos()
+  ResPool:get_model_async(model_id, function(gameobj)
+    CSHelper.ChangeLayerRecursively(gameobj.transform, Layer.Layer.Default)
+    gameobj:SetActive(true)
+    local npc_info = self.v_npc_load_list[npc_info.index]
+    if not (not npc:is_destroy() and npc_info) or self.v_npc_delete_list[npc_info.index] then
+      ResPool:release(gameobj)
+      if npc.animator_info then
+        ResPool:release_res(npc.animator_info)
+      end
+      self:on_load_done()
+      return
+    end
+    local trans = gameobj.transform
+    local content = self.v_content_list[team_pos]
+    local _params = {
+      hide_weapon = hide_weapon,
+      fixed_char_id = fixed_id,
+      use_attach_model = true,
+      use_weapon_id = use_weapon_id,
+      is_out_battle = true,
+      use_weapon_res = use_weapon_res
+    }
+    npc:init_ui_model_gameobj(gameobj, trans, content.model_root_trans, _params)
+    if self.v_is_visible then
+      content.content_root:SetActive(true)
+    end
+    trans:SetLocalPositionA(0, 0, 0)
+    trans:SetLocalEuler(0, 0, 0)
+    trans:SetLocalScaleA(1, 1, 1)
+    npc.char_renderers:enable_effect(Config.CHAR_EFFECT.SHADOW, true)
+    self:set_trans_mat(trans)
+    self:set_all_character_mat(gameobj, true)
+    self:set_dynamic_bone_enable(gameobj, false)
+    if self.v_is_set_light then
+      npc.char_renderers:enable_effect(Config.CHAR_EFFECT.PLANE_SHADOW, true)
+    end
+    self.v_cur_npc = gameobj
+    self.v_cur_npc_luaobj = npc_info.npc
+    self.v_cur_index = npc_info.index
+    self.v_is_enlarge = false
+    self:on_loaded_npc(npc_info)
+    self.v_is_loading = false
+    local _, stop_anim, _, stop_effect = CharacterMgr:get_hero_approach_anim(npc:get_npc_id(), PARAM_TYPE)
+    local anim = stop_anim and stop_anim or ACT_DEFINE.Idle
+    npc:try_load_attach_model_by_act(anim, function()
+      CSHelper.ChangeLayerRecursively(gameobj.transform, Layer.Layer.Character)
+      npc.act_ctrl:try_action(anim, 0, nil, nil, true, nil, 0)
+      self.v_effect_param = stop_effect and UtilTable.copy_table(stop_effect)
+      if cb then
+        cb()
+      end
+    end)
+    self:on_load_done()
+  end)
+end
+
+function M:play_hero_approach_anim(npc, npc_id)
+  local _, stop_anim, _, stop_effect = CharacterMgr:get_hero_approach_anim(npc_id, PARAM_TYPE)
+  local anim = stop_anim and stop_anim or ACT_DEFINE.Idle
+  npc:try_load_attach_model_by_act(anim, function()
+    npc.act_ctrl:try_action(anim, 0, nil, nil, true, nil, 0)
+    self.v_effect_param = stop_effect and UtilTable.copy_table(stop_effect)
+  end)
+end
+
+function M:on_loaded_npc(npc_info)
+  local index = npc_info.index
+  self.v_npc_load_list[index] = nil
+  self.v_npc_loaded_map[index] = npc_info.npc
+  local npc_id = npc_info.npc_id
+  self:refresh_mat_set(npc_id)
+end
+
+function M:_on_weapon_loaded(msg)
+  local tbl = msg.mm_obj
+  local weapon = msg.mm_x
+  for _, npc in pairs(self.v_npc_loaded_map) do
+    if npc == tbl then
+      if self.v_is_set_light then
+        npc.char_renderers:update_effect()
+      end
+      break
+    end
+  end
+  self:reset_weapon_local_pos(weapon.go, weapon.res_id)
+  local npc_id = tbl.character_cfg.NpcId
+  self:refresh_mat_set(npc_id)
+end
+
+function M:remove_all_npc()
+  self.v_npc_load_list = {}
+  for _, v in pairs(self.v_npc_loaded_map) do
+    self:remove_npc(v)
+  end
+  self.v_npc_loaded_map = {}
+end
+
+function M:remove_npc_by_index(model_idx)
+  if self.v_npc_load_list[model_idx] then
+    self.v_npc_delete_list[model_idx] = true
+    return
+  end
+  local npc = self.v_npc_loaded_map[model_idx]
+  self:remove_npc(npc)
+  self.v_npc_loaded_map[model_idx] = nil
+end
+
+function M:remove_npc(npc)
+  if not npc then
+    return
+  end
+  npc.act_ctrl:stop_action_sound()
+  local team_pos = npc:get_team_pos()
+  if npc.animator_info then
+    ResPool:release_res(npc.animator_info)
+  end
+  local gameobj = npc.gameobj
+  self:set_all_character_mat(gameobj, false)
+  gameobj.transform:SetKeyWordAll("_SHADOW_RECEIVE", false)
+  npc:on_destroy_luaobj()
+  npc:on_destroy_gameobj()
+  if self.v_cur_npc_luaobj == npc then
+    self.v_cur_npc_luaobj = nil
+  end
+  ResPool:release(gameobj)
+end
+
+function M:on_destroy()
+  Global.render_mgr:set_unity_antiAliasing(0)
+  self.v_waiting_queue = nil
+  if self.v_hide_node_go_list then
+    for key, go in pairs(self.v_hide_node_go_list) do
+      if not go:IsNull() then
+        go:SetActive(true)
+      end
+    end
+  end
+  self.v_hide_node_go_list = {}
+  if self.v_model_root then
+    ResMgr:destroy_gameobj(self.v_model_root)
+    self.v_model_root = nil
+  end
+  self:remove_all_npc()
+  self.v_cur_npc_luaobj = nil
+  self.v_cur_index = nil
+  self.v_effect_param = nil
+  self.v_npc_delete_list = {}
+  Util.unbind_all_msg(self)
+  local info = SceneIllumination:GetInfo()
+  if info then
+    SceneIlluminationInfo.ApplyCharacterLightDir(info.GlobalCharacterLightDir)
+    SceneIlluminationInfo.ApplyCharacterLightColor(info.GlobalCharacterLightColor, info.GlobalCharacterLightIntensity)
+    local env_char_ambient_id = UnityShader.PropertyToID("_EnvCharacterAmbientColor")
+    UnityShader.SetGlobalColor(env_char_ambient_id, info.GlobalCharacterAmbientColor)
+  end
+  self.v_bg_go = nil
+  self.v_job_bg = nil
+  CSShadow.CloseRenderShadowMap2()
+  self.v_light_info = nil
+end
+
+function M:set_visible(is_on)
+  if is_on then
+    local anti = 4
+    if UNITY_EDITOR then
+      anti = 8
+    end
+    if Global.render_mgr:get_cur_quality_level() < 3.5 then
+      anti = 2
+    end
+    Global.render_mgr:set_unity_antiAliasing(anti)
+  else
+    Global.render_mgr:set_unity_antiAliasing(0)
+  end
+  self.v_is_visible = is_on
+  for _, content in ipairs(self.v_content_list) do
+    content.content_root:SetActive(is_on)
+    if is_on then
+      CSGameMgr.SetCameraObj(content.camera_obj)
+    end
+  end
+  if self.v_team_bg then
+    self.v_team_bg:SetActive(is_on)
+  end
+  if is_on then
+    Global.render_mgr:set_post_process_param(ShareRes.get_post_process_cfg_by_ui_name("team"))
+    self:refresh_mat_set()
+  end
+  if is_on and self.v_gameobj then
+    self:set_all_character_mat(self.v_gameobj, true)
+  end
+  local list = self.v_npc_loaded_map
+  for _, npc in pairs(list) do
+    local trans = npc.transform
+    Util.set_all_mat(trans, function(mat)
+      local name = _slower(mat.name)
+      local need_shadow = string.match(name, "face") ~= nil
+      mat:SetKeyword("_SHADOW_RECEIVE", need_shadow)
+    end)
+    if is_on then
+      self:play_hero_approach_anim(npc, npc:get_npc_id())
+    end
+  end
+end
+
+function M:is_play_show_effect(is_show, effect_name)
+  if self.v_show_effct_id and self.v_cur_npc_luaobj then
+    self.v_cur_npc_luaobj.act_effect_ctrl:stop_effect(self.v_show_effct_id)
+  end
+  self.v_is_show_effect = is_show
+  self.v_effect_name = effect_name
+end
+
+function M:set_camera_viewport()
+  if not self.v_viewport_rect then
+    return
+  end
+  for pos, v in ipairs(self.v_viewport_rect) do
+    self.v_content_list[pos].camera.rect = v
+  end
+end
+
+function M:update_light(char_dir)
+  char_dir = (char_dir - 180) % 360
+  self.v_tar_light_dir = 0
+  if char_dir > 30 and char_dir < 150 then
+    self.v_tar_light_dir = 10
+  elseif char_dir > 210 and char_dir < 315 then
+    self.v_tar_light_dir = -10
+  end
+  local dir = self.v_light_info.GlobalCharacterLightDir
+  if _abs(self.v_tar_light_dir - dir) > 175 then
+    dir = self.v_tar_light_dir
+  end
+  self.v_light_info.GlobalCharacterLightDir = _lerp(dir, self.v_tar_light_dir, 0.01)
+  SceneIlluminationInfo.Apply(self.v_light_info)
+end
+
+function M:_set_light_info(msg)
+  if msg and self.v_light_info then
+    self.v_light_info.GlobalCharacterLightDir = msg.mm_x
+    SceneIlluminationInfo.Apply(self.v_light_info)
+  end
+end
+
+function M:set_light_dir(x, y, z, w)
+  self.v_is_set_light = true
+  SceneIlluminationInfo.ApplyCharacterLightDir(LightDirY, LightDirX)
+  SceneIlluminationInfo.ApplyCharacterLightColor(LightColor, LightIntensity)
+  local plane_shadow_id = UnityShader.PropertyToID("_PlaneShadowLightDir")
+  local env_char_ambient_id = UnityShader.PropertyToID("_EnvCharacterAmbientColor")
+  CompExtensions.SetShaderGlobalVector(plane_shadow_id, x, y, z, w)
+  CompExtensions.SetShaderGlobalVector(env_char_ambient_id, AmbientColor)
+end
+
+function M:set_camera_param(camera_param, pos)
+  if self.v_content_list[pos] then
+    local cam = self.v_content_list[pos].camera
+    local trans = cam.transform
+    trans:SetLocalPositionA(camera_param.pos_x, camera_param.pos_y, camera_param.pos_z)
+    trans:SetEuler(camera_param.rot_x, camera_param.rot_y, camera_param.rot_z)
+    if camera_param.clip_near then
+      cam.nearClipPlane = camera_param.clip_near
+      cam.farClipPlane = camera_param.clip_far
+    end
+    if camera_param.fov then
+      cam.fieldOfView = camera_param.fov
+    end
+  end
+end
+
+function M:set_model_param(model_param, pos)
+  if self.v_content_list[pos] then
+    local trans = self.v_content_list[pos].model_root_trans
+    trans:SetLocalPositionA(model_param.pos_x, model_param.pos_y, model_param.pos_z)
+    trans:SetEuler(model_param.rot_x, model_param.rot_y, model_param.rot_z)
+  end
+end
+
+function M:set_view_param(buddy_id, pos, fashion_id)
+  local buddy_view_cfg = ShareRes.get_show_buddy_pos_info(buddy_id, fashion_id)
+  buddy_view_cfg = buddy_view_cfg and buddy_view_cfg[PARAM_TYPE]
+  local default_view_cfg = ShareRes.get_show_buddy_pos_info(0)[PARAM_TYPE]
+  local model_rot = default_view_cfg.ModelRotation
+  local camera_pos = default_view_cfg.CameraPosition
+  local camera_rot = default_view_cfg.CameraRotation
+  local camera_fov = default_view_cfg.CameraFOV
+  local camera_clipping = default_view_cfg.CameraClipping
+  self.v_closest_camera_pos = default_view_cfg.ClosestCameraPosition
+  self.v_farthest_camera_pos = default_view_cfg.FarthestCameraPosition
+  if buddy_view_cfg then
+    if buddy_view_cfg.ModelRotation then
+      model_rot = buddy_view_cfg.ModelRotation
+    end
+    if buddy_view_cfg.CameraPosition then
+      camera_pos = buddy_view_cfg.CameraPosition
+    end
+    if buddy_view_cfg.CameraRotation then
+      camera_rot = buddy_view_cfg.CameraRotation
+    end
+    if buddy_view_cfg.CameraFOV then
+      camera_fov = buddy_view_cfg.CameraFOV
+    end
+    if buddy_view_cfg.CameraRotation then
+      camera_clipping = buddy_view_cfg.CameraClipping
+    end
+    if buddy_view_cfg.ClosestCameraPosition then
+      self.v_closest_camera_pos = buddy_view_cfg.ClosestCameraPosition
+    end
+    if buddy_view_cfg.FarthestCameraPosition then
+      self.v_farthest_camera_pos = buddy_view_cfg.FarthestCameraPosition
+    end
+  end
+  local npc_param = {
+    pos_x = 0,
+    pos_y = 0,
+    pos_z = 0,
+    rot_x = model_rot[1],
+    rot_y = model_rot[2],
+    rot_z = model_rot[3]
+  }
+  local camera_param = {
+    pos_x = camera_pos[1],
+    pos_y = camera_pos[2],
+    pos_z = camera_pos[3],
+    rot_x = camera_rot[1],
+    rot_y = camera_rot[2],
+    rot_z = camera_rot[3]
+  }
+  if camera_fov then
+    camera_param.fov = camera_fov
+  end
+  if camera_clipping then
+    camera_param.clip_near = camera_clipping[1]
+    camera_param.clip_far = camera_clipping[2]
+  end
+  self:set_camera_param(camera_param, pos)
+  self:set_model_param(npc_param, pos)
+end
+
+function M:hide_model_node(is_hide_weapon)
+  if not self.v_cur_npc_luaobj or self.v_cur_npc_luaobj.character_cfg.NpcId ~= 1001015 then
+    if self.v_hide_node_go_list and is_hide_weapon then
+      for _, go in pairs(self.v_hide_node_go_list) do
+        if not go:IsNull() then
+          go:SetActive(true)
+        end
+      end
+    end
+    return
+  end
+  local body_node_list = {}
+  if is_hide_weapon then
+    body_node_list = {"body5", "body6"}
+  else
+    body_node_list = {"body5"}
+  end
+  self.v_hide_node_go_list = {}
+  for key, body_node_name in pairs(body_node_list) do
+    local body_node = Util.get_child_gameobj(body_node_name, self.v_cur_npc.transform)
+    if body_node then
+      body_node:SetActive(false)
+      table.insert(self.v_hide_node_go_list, body_node)
+    end
+  end
+end
+
+function M:hide_weapon_node(go, res_id)
+  if string.find(go.name, "H1001015_Weapon") then
+    local animator = go:GetComponent(TypeUnityAnimator)
+    animator.enabled = false
+    go:ResetAttr()
+  else
+    return
+  end
+  if not self.v_hide_node_go_list then
+    self.v_hide_node_go_list = {}
+  end
+  local weapon_node_list = {
+    "H1001015_Weapon_3"
+  }
+  local weapon_go = go
+  for index, weapon_node_name in pairs(weapon_node_list) do
+    local weapon_node = Util.get_child_gameobj(weapon_node_name, weapon_go.transform)
+    if weapon_node then
+      weapon_node:SetActive(false)
+      table.insert(self.v_hide_node_go_list, weapon_node)
+    end
+  end
+end
+
+function M:reset_weapon_local_pos(go, res_id)
+  if string.find(go.name, "H1001004_Weapon") then
+    local animator = go:GetComponent(TypeUnityAnimator)
+    animator.enabled = false
+    go:ResetAttr()
+  else
+    return
+  end
+end
+
+function M:is_visible()
+  return self.v_is_visible
+end
+
+function M:get_npc_with_npc_id(npc_id)
+  for idx, npc in pairs(self.v_npc_loaded_map) do
+    if npc:get_npc_id() == npc_id then
+      return npc
+    end
+  end
+  return nil
+end
+
+function M:get_npc_index_with_npc_id(npc_id)
+  for idx, npc in pairs(self.v_npc_loaded_map) do
+    if npc:get_npc_id() == npc_id then
+      return idx
+    end
+  end
+  return nil
+end
+
+function M:get_npc_info_with_obj(obj)
+  local obj_instance_id = obj:GetInstanceID()
+  for index, npc in pairs(self.v_npc_loaded_map) do
+    local npc_instance_id = npc:get_gameobj():GetInstanceID()
+    if obj_instance_id == npc_instance_id then
+      return index, npc
+    end
+  end
+  return nil
+end
+
+function M:delete_model(npc_id)
+  local need_remove_index = self:get_model_index(npc_id)
+  if need_remove_index and need_remove_index > 0 then
+    self:remove_npc_by_index(need_remove_index)
+  end
+end
+
+function M:refresh_model_pos(npc_id, model_pos)
+  local npc = self:get_npc_with_npc_id(npc_id)
+  if not npc then
+    return
+  end
+  npc:set_pos(model_pos[1], model_pos[2], model_pos[3])
+end
+
+function M:get_npc_loaded_map()
+  return self.v_npc_loaded_map
+end
+
+function M:get_model_index(npc_id)
+  local index
+  for idx, npc in pairs(self.v_npc_loaded_map) do
+    if npc:get_npc_id() == npc_id then
+      index = idx
+      break
+    end
+  end
+  return index
+end
+
+function M:set_dynamic_bone_enable(gameobj, enable)
+  if Util.is_nil(gameobj) then
+    return
+  end
+  local dynamic_bone_controller = gameobj:TryAddComponent(TypeDynamicBoneController)
+  if enable then
+    dynamic_bone_controller:RestoreOriginalBlendWeights()
+  else
+    dynamic_bone_controller:SetBlendWeightZero()
+  end
+end
+
+function M:refresh_mat_set(npc_id)
+  local cur_ui_name = "character_enter"
+  UnityShader.SetGlobalFloat(MAIN_SCENE_SHOW_ID, 1)
+  self:light_mat_set(cur_ui_name, npc_id)
+  self:point_light_mat_set(cur_ui_name, npc_id)
+end
+
+function M:light_mat_set(ui_name, npc_id)
+  ui_name = ui_name or UIMgr:get_cur_show_ui_name()
+  local npc_list = self.v_npc_loaded_map
+  UnityShader.SetGlobalFloat(CUSTOM_ROLE_LIGHT, 1)
+  for _, npc in pairs(npc_list) do
+    local trans = npc.transform
+    local _npc_id = npc.character_cfg.NpcId
+    if npc_id and npc_id ~= _npc_id then
+    else
+      local light_cfg = ShareRes.get_character_light_by_id(npc.model_cfg.ModelId)
+      if light_cfg then
+        local light_offset = light_cfg[ui_name]
+        if light_offset then
+          Util.set_all_mat(trans, function(mat)
+            local Ind = light_offset[4]
+            local x = light_offset[1] * Ind
+            local y = light_offset[2] * Ind
+            local z = light_offset[3] * Ind
+            mat:SetMatVector(SHADERID_CHARACTER_LIGHT_OFFSET, x, y, z)
+          end)
+        end
+      end
+    end
+  end
+end
+
+function M:point_light_mat_set(ui_name, npc_id)
+  ui_name = ui_name or UIMgr:get_cur_show_ui_name()
+  local npc_list = self.v_npc_loaded_map
+  for _, npc in pairs(npc_list) do
+    local trans = npc.transform
+    local _npc_id = npc.character_cfg.NpcId
+    if npc_id and npc_id ~= _npc_id then
+    else
+      local light_cfg = ShareRes.get_character_edge_light_by_id(npc.model_cfg.ModelId)
+      if light_cfg then
+        local light_pos = light_cfg[ui_name]
+        if light_pos then
+          Util.set_all_mat(trans, function(mat)
+            local mat_name = _slower(mat.name)
+            local is_body = string.match(mat_name, "body(%d+)")
+            local is_face = string.match(mat_name, "face") ~= nil
+            local is_eye = nil ~= string.match(mat_name, "eye")
+            local is_hair = nil ~= string.match(mat_name, "hair")
+            local is_weapon = nil ~= string.match(mat_name, "weapon")
+            local set_cfg
+            if is_body then
+              set_cfg = light_pos["body" .. is_body]
+            elseif is_face then
+              set_cfg = light_pos.face
+            elseif is_eye then
+              set_cfg = light_pos.eye
+            elseif is_hair then
+              set_cfg = light_pos.hair
+            elseif is_weapon then
+              set_cfg = light_pos.weapon
+            end
+            if not set_cfg or not next(set_cfg) then
+              set_cfg = light_pos.defaultLightInfo
+            end
+            if set_cfg and next(set_cfg) then
+              local char_pos = trans.position
+              mat:SetMatVector(SHADERID_CHARACTER_LIGHT_POS, set_cfg[1] + char_pos.x, set_cfg[2] + char_pos.y, set_cfg[3] + char_pos.z, set_cfg[4])
+              mat:SetFloat(MAIN_SCENE_LIGHTON, 1.0)
+            else
+              mat:SetFloat(MAIN_SCENE_LIGHTON, 0)
+            end
+          end)
+        else
+          Util.set_all_mat(trans, function(mat)
+            mat:SetFloat(MAIN_SCENE_LIGHTON, 0)
+          end)
+        end
+      end
+    end
+  end
+end
+
+function M:refresh_npc_weapon(npc_id)
+  for _, npc in pairs(self.v_npc_loaded_map) do
+    if npc:get_npc_id() == npc_id then
+      npc.weapon_mgr:ui_model_init_weapon()
+      return
+    end
+  end
+end
+
+function M:play_act_effect(idx, effect, point, not_set_gameobj, set_effect_root)
+  local npc = self.v_cur_npc_luaobj
+  if not npc then
+    return
+  end
+  local param = npc.act_effect_ctrl:create_effect_param()
+  param.prefab_name = effect
+  if set_effect_root then
+    param.parent = self.v_effect_root and self.v_effect_root.transform
+  else
+    param.attach_point = point
+  end
+  
+  function param.load_callback(go)
+    CSHelper.ChangeLayerRecursively(go.transform, Layer.Layer.Character)
+  end
+  
+  local effect_id
+  
+  function param.callback()
+    if self.v_npc_effect_id_list[idx] and self.v_npc_effect_id_list[idx][effect_id] then
+      self.v_npc_effect_id_list[idx][effect_id] = nil
+    end
+  end
+  
+  if param.attach_point and not not_set_gameobj then
+    local go = npc:get_setting_point(param.attach_point)
+    param.effect_gameobj = go
+  end
+  effect_id = npc.act_effect_ctrl:play_attach_effect(param, npc)
+  self.v_npc_effect_id_list[idx] = self.v_npc_effect_id_list[idx] or {}
+  self.v_npc_effect_id_list[idx][effect_id] = effect_id
+end
+
+function M:clear_effect_by_effect_ctl()
+  for npc_index, effect_ids in pairs(self.v_npc_effect_id_list) do
+    local npc = self.v_npc_loaded_map[npc_index]
+    if not Util.is_destroy(npc) then
+      for key, effect_id in pairs(effect_ids) do
+        npc.act_effect_ctrl:stop_effect(effect_id)
+      end
+      npc.cid = self.v_cid
+      npc.effect_owner = self.v_model_root
+    end
+    self.v_npc_effect_id_list[npc_index] = nil
+  end
+end
+
+function M:update_effect_param()
+  if not self.v_is_visible then
+    return
+  end
+  local frame, effect_param
+  local npc = self.v_cur_npc_luaobj
+  if not npc then
+    return
+  end
+  effect_param = self.v_effect_param
+  if effect_param and npc:get_gameobj_active() and npc.act_ctrl then
+    frame = npc.act_ctrl:get_last_frame() or 0
+    for key, param in pairs(effect_param) do
+      if frame >= param.frame then
+        self:play_act_effect(self.v_cur_index, param.effect_name, param.attach_point, true)
+        effect_param[key] = nil
+        if not next(effect_param) then
+          self.v_effect_param = nil
+        end
+      end
+    end
+  end
+end
+
+return M

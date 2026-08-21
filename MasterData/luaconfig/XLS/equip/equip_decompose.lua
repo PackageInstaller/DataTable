@@ -1,0 +1,37 @@
+return {
+  {
+    BreakLossRatio = 5000,
+    ExpLossRatio = 5000,
+    GoldLossRatio = 5000,
+    Id = 1,
+    Quality = 1
+  },
+  {
+    BreakLossRatio = 5000,
+    ExpLossRatio = 5000,
+    GoldLossRatio = 5000,
+    Id = 2,
+    Quality = 2
+  },
+  {
+    BreakLossRatio = 5000,
+    ExpLossRatio = 5000,
+    GoldLossRatio = 5000,
+    Id = 3,
+    Quality = 3
+  },
+  {
+    BreakLossRatio = 6000,
+    ExpLossRatio = 6000,
+    GoldLossRatio = 6000,
+    Id = 4,
+    Quality = 4
+  },
+  {
+    BreakLossRatio = 7000,
+    ExpLossRatio = 7000,
+    GoldLossRatio = 7000,
+    Id = 5,
+    Quality = 5
+  }
+}

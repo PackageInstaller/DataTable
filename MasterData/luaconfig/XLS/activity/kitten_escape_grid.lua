@@ -1,0 +1,1650 @@
+return {
+  {
+    [10001] = {
+      GridGroup = 1,
+      Id = 10001,
+      Pos = {1, 11},
+      Type = 1
+    },
+    [10002] = {
+      GridGroup = 1,
+      Id = 10002,
+      Pos = {3, 11},
+      Type = 1
+    },
+    [10003] = {
+      GridGroup = 1,
+      Id = 10003,
+      Pos = {5, 11},
+      Type = 1
+    },
+    [10004] = {
+      GridGroup = 1,
+      Id = 10004,
+      Pos = {7, 11},
+      Type = 1
+    },
+    [10005] = {
+      GridGroup = 1,
+      Id = 10005,
+      Pos = {9, 11},
+      Type = 1
+    },
+    [10006] = {
+      GridGroup = 1,
+      Id = 10006,
+      Pos = {2, 4},
+      Type = 1
+    },
+    [10007] = {
+      GridGroup = 1,
+      Id = 10007,
+      Pos = {2, 8},
+      Type = 1
+    },
+    [10008] = {
+      GridGroup = 1,
+      Id = 10008,
+      Pos = {3, 3},
+      Type = 1
+    },
+    [10009] = {
+      GridGroup = 1,
+      Id = 10009,
+      Pos = {3, 4},
+      Type = 1
+    },
+    [10010] = {
+      GridGroup = 1,
+      Id = 10010,
+      Pos = {3, 7},
+      Type = 1
+    },
+    [10011] = {
+      GridGroup = 1,
+      Id = 10011,
+      Pos = {3, 8},
+      Type = 1
+    },
+    [10012] = {
+      GridGroup = 1,
+      Id = 10012,
+      Pos = {7, 3},
+      Type = 1
+    },
+    [10013] = {
+      GridGroup = 1,
+      Id = 10013,
+      Pos = {7, 4},
+      Type = 1
+    },
+    [10014] = {
+      GridGroup = 1,
+      Id = 10014,
+      Pos = {7, 7},
+      Type = 1
+    },
+    [10015] = {
+      GridGroup = 1,
+      Id = 10015,
+      Pos = {7, 8},
+      Type = 1
+    },
+    [10016] = {
+      GridGroup = 1,
+      Id = 10016,
+      Pos = {8, 4},
+      Type = 1
+    },
+    [10017] = {
+      GridGroup = 1,
+      Id = 10017,
+      Pos = {8, 8},
+      Type = 1
+    },
+    [10018] = {
+      GridGroup = 1,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 10018,
+      Pos = {1, 5},
+      Type = 2
+    },
+    [10019] = {
+      GridGroup = 1,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 10019,
+      Pos = {1, 6},
+      Type = 2
+    },
+    [10020] = {
+      GridGroup = 1,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 10020,
+      Pos = {4, 1},
+      Type = 2
+    },
+    [10021] = {
+      GridGroup = 1,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 10021,
+      Pos = {4, 11},
+      Type = 2
+    },
+    [10022] = {
+      GridGroup = 1,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 10022,
+      Pos = {5, 1},
+      Type = 2
+    },
+    [10023] = {
+      GridGroup = 1,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 10023,
+      Pos = {5, 10},
+      Type = 2
+    },
+    [10024] = {
+      GridGroup = 1,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 10024,
+      Pos = {6, 1},
+      Type = 2
+    },
+    [10025] = {
+      GridGroup = 1,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 10025,
+      Pos = {6, 11},
+      Type = 2
+    },
+    [10026] = {
+      GridGroup = 1,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 10026,
+      Pos = {9, 5},
+      Type = 2
+    },
+    [10027] = {
+      GridGroup = 1,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 10027,
+      Pos = {9, 6},
+      Type = 2
+    }
+  },
+  {
+    [20001] = {
+      GridGroup = 2,
+      Id = 20001,
+      Pos = {1, 11},
+      Type = 1
+    },
+    [20002] = {
+      GridGroup = 2,
+      Id = 20002,
+      Pos = {3, 11},
+      Type = 1
+    },
+    [20003] = {
+      GridGroup = 2,
+      Id = 20003,
+      Pos = {5, 11},
+      Type = 1
+    },
+    [20004] = {
+      GridGroup = 2,
+      Id = 20004,
+      Pos = {7, 11},
+      Type = 1
+    },
+    [20005] = {
+      GridGroup = 2,
+      Id = 20005,
+      Pos = {9, 11},
+      Type = 1
+    },
+    [20006] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 20006,
+      Pos = {3, 6},
+      Type = 1
+    },
+    [20007] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 20007,
+      Pos = {4, 7},
+      Type = 1
+    },
+    [20008] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20008,
+      Pos = {1, 1},
+      Type = 2
+    },
+    [20009] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20009,
+      Pos = {1, 2},
+      Type = 2
+    },
+    [20010] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20010,
+      Pos = {1, 9},
+      Type = 2
+    },
+    [20011] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20011,
+      Pos = {1, 10},
+      Type = 2
+    },
+    [20012] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20012,
+      Pos = {2, 1},
+      Type = 2
+    },
+    [20013] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20013,
+      Pos = {2, 11},
+      Type = 2
+    },
+    [20014] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20014,
+      Pos = {4, 6},
+      Type = 2
+    },
+    [20015] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20015,
+      Pos = {5, 5},
+      Type = 2
+    },
+    [20016] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20016,
+      Pos = {5, 6},
+      Type = 2
+    },
+    [20017] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20017,
+      Pos = {6, 6},
+      Type = 2
+    },
+    [20018] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20018,
+      Pos = {8, 1},
+      Type = 2
+    },
+    [20019] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20019,
+      Pos = {8, 11},
+      Type = 2
+    },
+    [20020] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20020,
+      Pos = {9, 1},
+      Type = 2
+    },
+    [20021] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20021,
+      Pos = {9, 2},
+      Type = 2
+    },
+    [20022] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20022,
+      Pos = {9, 9},
+      Type = 2
+    },
+    [20023] = {
+      GridGroup = 2,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 20023,
+      Pos = {9, 10},
+      Type = 2
+    }
+  },
+  {
+    [30001] = {
+      GridGroup = 3,
+      Id = 30001,
+      Pos = {1, 11},
+      Type = 1
+    },
+    [30002] = {
+      GridGroup = 3,
+      Id = 30002,
+      Pos = {3, 11},
+      Type = 1
+    },
+    [30003] = {
+      GridGroup = 3,
+      Id = 30003,
+      Pos = {5, 11},
+      Type = 1
+    },
+    [30004] = {
+      GridGroup = 3,
+      Id = 30004,
+      Pos = {7, 11},
+      Type = 1
+    },
+    [30005] = {
+      GridGroup = 3,
+      Id = 30005,
+      Pos = {9, 11},
+      Type = 1
+    },
+    [30006] = {
+      GridGroup = 3,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 30006,
+      Pos = {5, 3},
+      Type = 1
+    },
+    [30007] = {
+      GridGroup = 3,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 30007,
+      Pos = {3, 6},
+      Type = 1
+    },
+    [30008] = {
+      GridGroup = 3,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 30008,
+      Pos = {2, 6},
+      Type = 2
+    },
+    [30009] = {
+      GridGroup = 3,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 30009,
+      Pos = {4, 2},
+      Type = 2
+    },
+    [30010] = {
+      GridGroup = 3,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 30010,
+      Pos = {5, 8},
+      Type = 2
+    },
+    [30011] = {
+      GridGroup = 3,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 30011,
+      Pos = {7, 4},
+      Type = 2
+    },
+    [30012] = {
+      GridGroup = 3,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 30012,
+      Pos = {9, 8},
+      Type = 2
+    }
+  },
+  {
+    [40001] = {
+      GridGroup = 4,
+      Id = 40001,
+      Pos = {1, 11},
+      Type = 1
+    },
+    [40002] = {
+      GridGroup = 4,
+      Id = 40002,
+      Pos = {3, 11},
+      Type = 1
+    },
+    [40003] = {
+      GridGroup = 4,
+      Id = 40003,
+      Pos = {5, 11},
+      Type = 1
+    },
+    [40004] = {
+      GridGroup = 4,
+      Id = 40004,
+      Pos = {7, 11},
+      Type = 1
+    },
+    [40005] = {
+      GridGroup = 4,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 40005,
+      Pos = {2, 4},
+      Type = 1
+    },
+    [40006] = {
+      GridGroup = 4,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 40006,
+      Pos = {2, 7},
+      Type = 1
+    },
+    [40007] = {
+      GridGroup = 4,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 40007,
+      Pos = {5, 2},
+      Type = 1
+    },
+    [40008] = {
+      GridGroup = 4,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 40008,
+      Pos = {5, 8},
+      Type = 1
+    },
+    [40009] = {
+      GridGroup = 4,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 40009,
+      Pos = {8, 4},
+      Type = 1
+    },
+    [40010] = {
+      GridGroup = 4,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 40010,
+      Pos = {8, 7},
+      Type = 1
+    },
+    [40011] = {
+      GridGroup = 4,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 40011,
+      Pos = {1, 3},
+      Type = 2
+    },
+    [40012] = {
+      GridGroup = 4,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 40012,
+      Pos = {1, 7},
+      Type = 2
+    },
+    [40013] = {
+      GridGroup = 4,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 40013,
+      Pos = {5, 1},
+      Type = 2
+    },
+    [40014] = {
+      GridGroup = 4,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 40014,
+      Pos = {5, 9},
+      Type = 2
+    },
+    [40015] = {
+      GridGroup = 4,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 40015,
+      Pos = {9, 3},
+      Type = 2
+    },
+    [40016] = {
+      GridGroup = 4,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 40016,
+      Pos = {9, 7},
+      Type = 2
+    }
+  },
+  {
+    [50001] = {
+      GridGroup = 5,
+      Id = 50001,
+      Pos = {1, 11},
+      Type = 1
+    },
+    [50002] = {
+      GridGroup = 5,
+      Id = 50002,
+      Pos = {3, 11},
+      Type = 1
+    },
+    [50003] = {
+      GridGroup = 5,
+      Id = 50003,
+      Pos = {5, 11},
+      Type = 1
+    },
+    [50004] = {
+      GridGroup = 5,
+      Id = 50004,
+      Pos = {7, 11},
+      Type = 1
+    },
+    [50009] = {
+      GridGroup = 5,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 50009,
+      Pos = {1, 3},
+      Type = 2
+    },
+    [50010] = {
+      GridGroup = 5,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 50010,
+      Pos = {1, 8},
+      Type = 2
+    },
+    [50013] = {
+      GridGroup = 5,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 50013,
+      Pos = {5, 3},
+      Type = 2
+    },
+    [50014] = {
+      GridGroup = 5,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 50014,
+      Pos = {5, 8},
+      Type = 2
+    },
+    [50017] = {
+      GridGroup = 5,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 50017,
+      Pos = {9, 3},
+      Type = 2
+    },
+    [50018] = {
+      GridGroup = 5,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 50018,
+      Pos = {9, 8},
+      Type = 2
+    }
+  },
+  {
+    [60001] = {
+      GridGroup = 6,
+      Id = 60001,
+      Pos = {1, 11},
+      Type = 1
+    },
+    [60002] = {
+      GridGroup = 6,
+      Id = 60002,
+      Pos = {3, 11},
+      Type = 1
+    },
+    [60003] = {
+      GridGroup = 6,
+      Id = 60003,
+      Pos = {5, 11},
+      Type = 1
+    },
+    [60004] = {
+      GridGroup = 6,
+      Id = 60004,
+      Pos = {7, 11},
+      Type = 1
+    },
+    [60005] = {
+      GridGroup = 6,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 60005,
+      Pos = {1, 4},
+      Type = 2
+    },
+    [60006] = {
+      GridGroup = 6,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 60006,
+      Pos = {1, 5},
+      Type = 2
+    },
+    [60007] = {
+      GridGroup = 6,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 60007,
+      Pos = {1, 6},
+      Type = 2
+    },
+    [60008] = {
+      GridGroup = 6,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 60008,
+      Pos = {1, 7},
+      Type = 2
+    },
+    [60009] = {
+      GridGroup = 6,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 60009,
+      Pos = {4, 1},
+      Type = 2
+    },
+    [60010] = {
+      GridGroup = 6,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 60010,
+      Pos = {4, 11},
+      Type = 2
+    },
+    [60011] = {
+      GridGroup = 6,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 60011,
+      Pos = {5, 1},
+      Type = 2
+    },
+    [60012] = {
+      GridGroup = 6,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 60012,
+      Pos = {5, 10},
+      Type = 2
+    },
+    [60013] = {
+      GridGroup = 6,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 60013,
+      Pos = {6, 1},
+      Type = 2
+    },
+    [60014] = {
+      GridGroup = 6,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 60014,
+      Pos = {6, 11},
+      Type = 2
+    },
+    [60015] = {
+      GridGroup = 6,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 60015,
+      Pos = {9, 4},
+      Type = 2
+    },
+    [60016] = {
+      GridGroup = 6,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 60016,
+      Pos = {9, 5},
+      Type = 2
+    },
+    [60017] = {
+      GridGroup = 6,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 60017,
+      Pos = {9, 6},
+      Type = 2
+    },
+    [60018] = {
+      GridGroup = 6,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 60018,
+      Pos = {9, 7},
+      Type = 2
+    }
+  },
+  {
+    [70001] = {
+      GridGroup = 7,
+      Id = 70001,
+      Pos = {1, 11},
+      Type = 1
+    },
+    [70002] = {
+      GridGroup = 7,
+      Id = 70002,
+      Pos = {3, 11},
+      Type = 1
+    },
+    [70003] = {
+      GridGroup = 7,
+      Id = 70003,
+      Pos = {5, 11},
+      Type = 1
+    },
+    [70004] = {
+      GridGroup = 7,
+      Id = 70004,
+      Pos = {7, 11},
+      Type = 1
+    },
+    [70005] = {
+      GridGroup = 7,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 70005,
+      Pos = {1, 10},
+      Type = 2
+    },
+    [70006] = {
+      GridGroup = 7,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 70006,
+      Pos = {2, 11},
+      Type = 2
+    },
+    [70007] = {
+      GridGroup = 7,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 70007,
+      Pos = {3, 10},
+      Type = 2
+    },
+    [70008] = {
+      GridGroup = 7,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 70008,
+      Pos = {4, 11},
+      Type = 2
+    },
+    [70009] = {
+      GridGroup = 7,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 70009,
+      Pos = {5, 10},
+      Type = 2
+    },
+    [70010] = {
+      GridGroup = 7,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 70010,
+      Pos = {6, 11},
+      Type = 2
+    },
+    [70011] = {
+      GridGroup = 7,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 70011,
+      Pos = {7, 10},
+      Type = 2
+    },
+    [70012] = {
+      GridGroup = 7,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 70012,
+      Pos = {8, 11},
+      Type = 2
+    },
+    [70013] = {
+      GridGroup = 7,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 70013,
+      Pos = {9, 10},
+      Type = 2
+    }
+  },
+  {
+    [80001] = {
+      GridGroup = 8,
+      Id = 80001,
+      Pos = {1, 11},
+      Type = 1
+    },
+    [80002] = {
+      GridGroup = 8,
+      Id = 80002,
+      Pos = {3, 11},
+      Type = 1
+    },
+    [80003] = {
+      GridGroup = 8,
+      Id = 80003,
+      Pos = {5, 11},
+      Type = 1
+    },
+    [80004] = {
+      GridGroup = 8,
+      Id = 80004,
+      Pos = {7, 11},
+      Type = 1
+    },
+    [80005] = {
+      GridGroup = 8,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 80005,
+      Pos = {5, 5},
+      Type = 1
+    },
+    [80006] = {
+      GridGroup = 8,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 80006,
+      Pos = {5, 6},
+      Type = 1
+    },
+    [80010] = {
+      GridGroup = 8,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 80010,
+      Pos = {4, 5},
+      Type = 2
+    },
+    [80011] = {
+      GridGroup = 8,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 80011,
+      Pos = {4, 6},
+      Type = 2
+    },
+    [80012] = {
+      GridGroup = 8,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 80012,
+      Pos = {4, 7},
+      Type = 2
+    },
+    [80013] = {
+      GridGroup = 8,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 80013,
+      Pos = {5, 4},
+      Type = 2
+    },
+    [80014] = {
+      GridGroup = 8,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 80014,
+      Pos = {5, 7},
+      Type = 2
+    },
+    [80015] = {
+      GridGroup = 8,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 80015,
+      Pos = {6, 5},
+      Type = 2
+    },
+    [80016] = {
+      GridGroup = 8,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 80016,
+      Pos = {6, 6},
+      Type = 2
+    },
+    [80017] = {
+      GridGroup = 8,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 80017,
+      Pos = {6, 7},
+      Type = 2
+    }
+  },
+  {
+    [90001] = {
+      GridGroup = 9,
+      Id = 90001,
+      Pos = {1, 11},
+      Type = 1
+    },
+    [90002] = {
+      GridGroup = 9,
+      Id = 90002,
+      Pos = {3, 11},
+      Type = 1
+    },
+    [90003] = {
+      GridGroup = 9,
+      Id = 90003,
+      Pos = {5, 11},
+      Type = 1
+    },
+    [90004] = {
+      GridGroup = 9,
+      Id = 90004,
+      Pos = {7, 11},
+      Type = 1
+    },
+    [90005] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 90005,
+      Pos = {1, 1},
+      Type = 2
+    },
+    [90006] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 90006,
+      Pos = {1, 5},
+      Type = 2
+    },
+    [90007] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 90007,
+      Pos = {1, 6},
+      Type = 2
+    },
+    [90008] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 90008,
+      Pos = {1, 10},
+      Type = 2
+    },
+    [90009] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 90009,
+      Pos = {5, 1},
+      Type = 2
+    },
+    [90010] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 90010,
+      Pos = {5, 5},
+      Type = 2
+    },
+    [90011] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 90011,
+      Pos = {5, 6},
+      Type = 2
+    },
+    [90012] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 90012,
+      Pos = {5, 10},
+      Type = 2
+    },
+    [90013] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 90013,
+      Pos = {9, 1},
+      Type = 2
+    },
+    [90014] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 90014,
+      Pos = {9, 5},
+      Type = 2
+    },
+    [90015] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 90015,
+      Pos = {9, 6},
+      Type = 2
+    },
+    [90016] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 90016,
+      Pos = {2, 6},
+      Type = 1
+    },
+    [90017] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 90017,
+      Pos = {4, 6},
+      Type = 1
+    },
+    [90018] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 90018,
+      Pos = {6, 6},
+      Type = 1
+    },
+    [90019] = {
+      GridGroup = 9,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 90019,
+      Pos = {8, 6},
+      Type = 1
+    }
+  },
+  {
+    [100001] = {
+      GridGroup = 10,
+      Id = 100001,
+      Pos = {1, 11},
+      Type = 1
+    },
+    [100002] = {
+      GridGroup = 10,
+      Id = 100002,
+      Pos = {3, 11},
+      Type = 1
+    },
+    [100003] = {
+      GridGroup = 10,
+      Id = 100003,
+      Pos = {5, 11},
+      Type = 1
+    },
+    [100004] = {
+      GridGroup = 10,
+      Id = 100004,
+      Pos = {7, 11},
+      Type = 1
+    },
+    [100005] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 100005,
+      Pos = {1, 1},
+      Type = 2
+    },
+    [100006] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 100006,
+      Pos = {1, 5},
+      Type = 2
+    },
+    [100007] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 100007,
+      Pos = {1, 6},
+      Type = 2
+    },
+    [100008] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 100008,
+      Pos = {1, 10},
+      Type = 2
+    },
+    [100009] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 100009,
+      Pos = {5, 1},
+      Type = 2
+    },
+    [100010] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 100010,
+      Pos = {5, 5},
+      Type = 2
+    },
+    [100011] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 100011,
+      Pos = {5, 6},
+      Type = 2
+    },
+    [100012] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 100012,
+      Pos = {5, 10},
+      Type = 2
+    },
+    [100013] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 100013,
+      Pos = {9, 1},
+      Type = 2
+    },
+    [100014] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 100014,
+      Pos = {9, 5},
+      Type = 2
+    },
+    [100015] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 100015,
+      Pos = {9, 6},
+      Type = 2
+    },
+    [100016] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 100016,
+      Pos = {2, 6},
+      Type = 1
+    },
+    [100017] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 100017,
+      Pos = {3, 10},
+      Type = 1
+    },
+    [100018] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 100018,
+      Pos = {4, 5},
+      Type = 1
+    },
+    [100020] = {
+      GridGroup = 10,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 100020,
+      Pos = {7, 1},
+      Type = 1
+    }
+  },
+  {
+    [110001] = {
+      GridGroup = 11,
+      Id = 110001,
+      Pos = {1, 11},
+      Type = 1
+    },
+    [110002] = {
+      GridGroup = 11,
+      Id = 110002,
+      Pos = {3, 11},
+      Type = 1
+    },
+    [110003] = {
+      GridGroup = 11,
+      Id = 110003,
+      Pos = {5, 11},
+      Type = 1
+    },
+    [110004] = {
+      GridGroup = 11,
+      Id = 110004,
+      Pos = {7, 11},
+      Type = 1
+    },
+    [110005] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110005,
+      Pos = {1, 1},
+      Type = 2
+    },
+    [110006] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110006,
+      Pos = {1, 5},
+      Type = 2
+    },
+    [110007] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110007,
+      Pos = {1, 6},
+      Type = 2
+    },
+    [110008] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110008,
+      Pos = {1, 10},
+      Type = 2
+    },
+    [110009] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110009,
+      Pos = {2, 1},
+      Type = 2
+    },
+    [110010] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110010,
+      Pos = {2, 11},
+      Type = 2
+    },
+    [110011] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110011,
+      Pos = {8, 11},
+      Type = 2
+    },
+    [110012] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110012,
+      Pos = {9, 1},
+      Type = 2
+    },
+    [110013] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110013,
+      Pos = {8, 1},
+      Type = 2
+    },
+    [110014] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110014,
+      Pos = {9, 5},
+      Type = 2
+    },
+    [110015] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110015,
+      Pos = {9, 6},
+      Type = 2
+    },
+    [110016] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110016,
+      Pos = {9, 10},
+      Type = 2
+    },
+    [110017] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110017,
+      Pos = {3, 10},
+      Type = 2
+    },
+    [110018] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110018,
+      Pos = {4, 11},
+      Type = 2
+    },
+    [110019] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110019,
+      Pos = {5, 10},
+      Type = 2
+    },
+    [110020] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110020,
+      Pos = {6, 11},
+      Type = 2
+    },
+    [110021] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110021,
+      Pos = {7, 10},
+      Type = 2
+    },
+    [110022] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110022,
+      Pos = {3, 1},
+      Type = 2
+    },
+    [110023] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110023,
+      Pos = {4, 1},
+      Type = 2
+    },
+    [110024] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110024,
+      Pos = {5, 1},
+      Type = 2
+    },
+    [110025] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110025,
+      Pos = {6, 1},
+      Type = 2
+    },
+    [110026] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 110026,
+      Pos = {7, 1},
+      Type = 2
+    },
+    [110027] = {
+      GridGroup = 11,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 110027,
+      Pos = {1, 2},
+      Type = 1
+    }
+  },
+  {
+    [120001] = {
+      GridGroup = 12,
+      Id = 120001,
+      Pos = {1, 11},
+      Type = 1
+    },
+    [120002] = {
+      GridGroup = 12,
+      Id = 120002,
+      Pos = {3, 11},
+      Type = 1
+    },
+    [120003] = {
+      GridGroup = 12,
+      Id = 120003,
+      Pos = {5, 11},
+      Type = 1
+    },
+    [120004] = {
+      GridGroup = 12,
+      Id = 120004,
+      Pos = {7, 11},
+      Type = 1
+    },
+    [120005] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120005,
+      Pos = {1, 1},
+      Type = 2
+    },
+    [120006] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120006,
+      Pos = {1, 2},
+      Type = 2
+    },
+    [120007] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120007,
+      Pos = {1, 3},
+      Type = 2
+    },
+    [120008] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120008,
+      Pos = {1, 4},
+      Type = 2
+    },
+    [120009] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120009,
+      Pos = {1, 5},
+      Type = 2
+    },
+    [120010] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120010,
+      Pos = {1, 6},
+      Type = 2
+    },
+    [120011] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120011,
+      Pos = {1, 7},
+      Type = 2
+    },
+    [120012] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120012,
+      Pos = {1, 8},
+      Type = 2
+    },
+    [120013] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120013,
+      Pos = {1, 9},
+      Type = 2
+    },
+    [120014] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120014,
+      Pos = {1, 10},
+      Type = 2
+    },
+    [120015] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120015,
+      Pos = {2, 1},
+      Type = 2
+    },
+    [120016] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120016,
+      Pos = {3, 1},
+      Type = 2
+    },
+    [120017] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120017,
+      Pos = {4, 1},
+      Type = 2
+    },
+    [120018] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120018,
+      Pos = {5, 1},
+      Type = 2
+    },
+    [120019] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120019,
+      Pos = {6, 1},
+      Type = 2
+    },
+    [120020] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120020,
+      Pos = {7, 1},
+      Type = 2
+    },
+    [120021] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120021,
+      Pos = {8, 1},
+      Type = 2
+    },
+    [120022] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120022,
+      Pos = {9, 1},
+      Type = 2
+    },
+    [120023] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120023,
+      Pos = {9, 2},
+      Type = 2
+    },
+    [120024] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120024,
+      Pos = {9, 3},
+      Type = 2
+    },
+    [120025] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120025,
+      Pos = {9, 4},
+      Type = 2
+    },
+    [120026] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120026,
+      Pos = {9, 5},
+      Type = 2
+    },
+    [120027] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120027,
+      Pos = {9, 6},
+      Type = 2
+    },
+    [120028] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120028,
+      Pos = {9, 7},
+      Type = 2
+    },
+    [120029] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120029,
+      Pos = {9, 8},
+      Type = 2
+    },
+    [120030] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120030,
+      Pos = {9, 9},
+      Type = 2
+    },
+    [120031] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120031,
+      Pos = {9, 10},
+      Type = 2
+    },
+    [120032] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120032,
+      Pos = {2, 11},
+      Type = 2
+    },
+    [120033] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120033,
+      Pos = {3, 10},
+      Type = 2
+    },
+    [120034] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120034,
+      Pos = {4, 11},
+      Type = 2
+    },
+    [120035] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120035,
+      Pos = {5, 10},
+      Type = 2
+    },
+    [120036] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120036,
+      Pos = {6, 11},
+      Type = 2
+    },
+    [120037] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120037,
+      Pos = {7, 10},
+      Type = 2
+    },
+    [120038] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_escape",
+      Id = 120038,
+      Pos = {8, 11},
+      Type = 2
+    },
+    [120039] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 120039,
+      Pos = {2, 4},
+      Type = 1
+    },
+    [120040] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 120040,
+      Pos = {2, 8},
+      Type = 1
+    },
+    [120042] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 120042,
+      Pos = {8, 4},
+      Type = 1
+    },
+    [120043] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 120043,
+      Pos = {8, 8},
+      Type = 1
+    },
+    [120044] = {
+      GridGroup = 12,
+      Icon = "ActEnjiEscape/EJdtw_bg_game_zaw",
+      Id = 120044,
+      Pos = {8, 6},
+      Type = 1
+    }
+  }
+}

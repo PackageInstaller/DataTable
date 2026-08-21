@@ -1,0 +1,116 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local _tinsert = table.insert
+local ARCHIVE_PAGE_CONFIG = {
+  [1] = {
+    ui_tog = "Basic_tog",
+    panel_name = "archive_basic_info",
+    show_model = true,
+    camera_page = 1
+  },
+  [2] = {
+    ui_tog = "Voice_tog",
+    panel_name = "archive_char_voice",
+    show_model = true,
+    camera_page = 1
+  },
+  [3] = {
+    ui_tog = "Story_tog",
+    panel_name = "archive_char_story",
+    show_model = true,
+    camera_page = 1
+  },
+  [4] = {
+    ui_tog = "Qianneng_tog",
+    panel_name = "archive_char_advance",
+    show_model = true,
+    camera_page = 2
+  },
+  [5] = {
+    ui_tog = "Skill_tog",
+    panel_name = "archive_char_skill",
+    show_model = false,
+    camera_page = 1
+  }
+}
+local SELECT_COLOR = Util.get_unity_color_by_hex(tonumber("ffffff", 16))
+local UN_SELECT_COLOR = Util.get_unity_color_by_hex(tonumber("806F58", 16))
+local BASIC_TOG = 1
+local VOICE_TOG = 2
+local STORY_TOG = 3
+
+function ui:ui_finish_load()
+  self:set_button("BtnCharRet", function()
+    self.v_parent_ui:close_char_detail()
+  end)
+  self.v_page_togs = {}
+  self.v_page_panels = {}
+  self.v_page_name = {}
+  for idx, cfg in ipairs(ARCHIVE_PAGE_CONFIG) do
+    local tog = self.v_uicompents[cfg.ui_tog]
+    local panel = self.v_parent_ui:get_panel(cfg.panel_name)
+    local page_name = Util.get_text("PageName", tog.gameObject)
+    _tinsert(self.v_page_togs, tog)
+    _tinsert(self.v_page_panels, panel)
+    _tinsert(self.v_page_name, page_name)
+    self:set_toggle_listener(tog, function(isOn)
+      if isOn then
+        self:click_page_tog(idx)
+      end
+    end)
+  end
+end
+
+function ui:click_page_tog(page)
+  if self.v_cur_select_page == page then
+    return
+  end
+  if not self.v_page_panels[page] then
+    return
+  end
+  self.v_cur_select_page = page
+  if ARCHIVE_PAGE_CONFIG[page].show_model then
+    self.v_parent_ui:show_model()
+    self.v_parent_ui:change_char_view(ARCHIVE_PAGE_CONFIG[page].camera_page, self.v_buddy_id, BASIC_TOG == page)
+  else
+    self.v_parent_ui:hide_model()
+  end
+  for idx, panel in pairs(self.v_page_panels) do
+    panel:set_enable(idx == page, self.v_buddy_id)
+    local page_name = self.v_page_name[idx]
+    if idx == page then
+      page_name.color = SELECT_COLOR
+    else
+      page_name.color = UN_SELECT_COLOR
+    end
+  end
+end
+
+function ui:ui_on_show(buddy_id)
+  if not buddy_id then
+    return
+  end
+  self.v_buddy_id = buddy_id
+  self.v_cur_select_page = nil
+  local DEFAULT_SELECT = 1
+  self.v_page_togs[DEFAULT_SELECT].isOn = false
+  self.v_page_togs[DEFAULT_SELECT].isOn = true
+  local data = self.v_parent_ui:get_click_char_data(buddy_id)
+  self.v_own = data.own
+  if self.v_own then
+    self.v_page_togs[VOICE_TOG].gameObject:SetActive(true)
+    self.v_page_togs[STORY_TOG].gameObject:SetActive(true)
+  else
+    self.v_page_togs[VOICE_TOG].gameObject:SetActive(false)
+    self.v_page_togs[STORY_TOG].gameObject:SetActive(false)
+  end
+end
+
+function ui:ui_on_hide()
+  self.v_cur_select_page = nil
+  for idx, panel in pairs(self.v_page_panels) do
+    panel:set_enable(false)
+  end
+end
+
+return ui

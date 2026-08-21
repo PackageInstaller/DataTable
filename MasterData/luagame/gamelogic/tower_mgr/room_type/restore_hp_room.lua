@@ -1,0 +1,96 @@
+local Base = require("gamelogic.tower_mgr.room")
+local Vec3 = require("base.vec3")
+local Room = Util.create_child_mt(Base)
+local Math = require("base.mathx")
+local SceneDef = require("cs_share.scene_define")
+
+function Room:_init(...)
+  Base._init(self, ...)
+  self.v_contact_distance = ShareRes.get_comm_value("NPCInteractRange")
+end
+
+function Room:register_event()
+  Base.register_event(self)
+  Util.bind_msg(self, Const.MSG_ON_UPDATE_RESTORE_HP_OBJ, self.update_fun_obj, self)
+end
+
+function Room:release()
+  Base.release(self)
+  self.v_restore_contact = nil
+  self:remove_restore_obj()
+end
+
+function Room:update()
+  self:hero_contact_fun_obj()
+end
+
+function Room:hero_contact_fun_obj()
+  if self.v_room_function_obj ~= nil then
+    local contact_dis = self.v_contact_distance or 0
+    local fun_obj = self.v_room_function_obj
+    local hero_pos = Global.hero:get_pos_vec3()
+    local hero_x = hero_pos.x
+    local hero_z = hero_pos.z
+    local treasure_x = fun_obj.transform.position.x
+    local treasure_z = fun_obj.transform.position.z
+    local distance = Math.distance2(hero_x, hero_z, treasure_x, treasure_z)
+    if contact_dis > distance and not self.v_restore_contact then
+      local msg = MsgGame:mq_publish2(Const.MSG_TOG_SPECIAL_AREA)
+      msg.mm_x = SceneDef.AREA_TYPE.restore_hp
+      msg.mm_y = true
+      self.v_restore_contact = true
+    end
+    if contact_dis <= distance and self.v_restore_contact then
+      local msg = MsgGame:mq_publish2(Const.MSG_TOG_SPECIAL_AREA)
+      msg.mm_x = SceneDef.AREA_TYPE.restore_hp
+      msg.mm_y = false
+      self.v_restore_contact = false
+    end
+  end
+end
+
+function Room:setup()
+  self:_setup()
+end
+
+function Room:_setup()
+  self:update_fun_obj()
+end
+
+function Room:update_fun_obj()
+  local scene_logic = SceneMgr:get_scene_logic()
+  local center_x, center_y, center_z = scene_logic:get_pos_key_position("center")
+  local room_function_obj
+  local room_info = self.v_tower:get_tower_floor_room_info(self.v_room_num)
+  local is_restore = room_info.is_restore_hp
+  if not is_restore then
+    if self.v_room_function_obj then
+      return
+    end
+    room_function_obj = ResMgr:load_gameobj(Path.get_res_path("Fx_cure_idel"), nil, true)
+    room_function_obj.name = "rest"
+    room_function_obj.transform.position = Vec3.New(center_x, center_y, center_z)
+    self.v_room_function_obj = room_function_obj
+  else
+    self:remove_restore_obj()
+  end
+end
+
+function Room:remove_restore_obj()
+  if self.v_room_function_obj and not self.v_room_function_obj:IsNull() then
+    ResMgr:destroy_gameobj(self.v_room_function_obj)
+  end
+  self.v_room_function_obj = nil
+end
+
+function Room:is_restore_hp_room()
+  return true
+end
+
+function Room:is_restore()
+  local room_info = self.v_tower:get_tower_floor_room_info(self.v_room_num)
+  local is_restore = room_info.is_restore_hp
+  return is_restore
+end
+
+return Room

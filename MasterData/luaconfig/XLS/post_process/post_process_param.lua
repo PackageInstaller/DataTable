@@ -1,0 +1,62 @@
+return {
+  {
+    BloomModelEnable = 1,
+    Bound = 1.6,
+    CenterX = 0.5,
+    CenterY = 0.5,
+    ChanelOffset = {
+      0,
+      0,
+      0
+    },
+    Color = "000000",
+    ConfigId = 1,
+    DarkCornerModelEnable = 1,
+    FilterScaler = 2,
+    Inner = 0.8,
+    LutContribute = 0.25,
+    LutEnable = 1,
+    RGBSplitEnable = 1,
+    Threshold = 0.45
+  },
+  {
+    BloomModelEnable = 1,
+    Bound = 1.6,
+    CenterX = 0.5,
+    CenterY = 0.5,
+    ChanelOffset = {
+      0,
+      0,
+      0
+    },
+    Color = "000000",
+    ConfigId = 2,
+    DarkCornerModelEnable = 0,
+    FilterScaler = 2,
+    Inner = 0.8,
+    LutContribute = 0,
+    LutEnable = 1,
+    RGBSplitEnable = 1,
+    Threshold = 0.5
+  },
+  {
+    BloomModelEnable = 1,
+    Bound = 1.6,
+    CenterX = 0.5,
+    CenterY = 0.5,
+    ChanelOffset = {
+      0,
+      0,
+      0
+    },
+    Color = "000000",
+    ConfigId = 3,
+    DarkCornerModelEnable = 1,
+    FilterScaler = 2,
+    Inner = 0.8,
+    LutContribute = 0.25,
+    LutEnable = 1,
+    RGBSplitEnable = 1,
+    Threshold = 0.65
+  }
+}

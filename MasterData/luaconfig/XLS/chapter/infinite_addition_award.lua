@@ -1,0 +1,318 @@
+return {
+  [3011] = {
+    {
+      AwardGroup = 300101,
+      CostCnt = 50,
+      Id = 3011,
+      IsLoop = false,
+      Level = 1
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 100,
+      Id = 3011,
+      IsLoop = false,
+      Level = 2
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 150,
+      Id = 3011,
+      IsLoop = false,
+      Level = 3
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 200,
+      Id = 3011,
+      IsLoop = false,
+      Level = 4
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 250,
+      Id = 3011,
+      IsLoop = false,
+      Level = 5
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 300,
+      Id = 3011,
+      IsLoop = false,
+      Level = 6
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 350,
+      Id = 3011,
+      IsLoop = false,
+      Level = 7
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3011,
+      IsLoop = false,
+      Level = 8
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 450,
+      Id = 3011,
+      IsLoop = false,
+      Level = 9
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 500,
+      Id = 3011,
+      IsLoop = false,
+      Level = 10
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 500,
+      Id = 3011,
+      IsLoop = true,
+      Level = 11
+    }
+  },
+  [3012] = {
+    {
+      AwardGroup = 300101,
+      CostCnt = 100,
+      Id = 3012,
+      IsLoop = false,
+      Level = 1
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 100,
+      Id = 3012,
+      IsLoop = false,
+      Level = 2
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 200,
+      Id = 3012,
+      IsLoop = false,
+      Level = 3
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 200,
+      Id = 3012,
+      IsLoop = false,
+      Level = 4
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 200,
+      Id = 3012,
+      IsLoop = false,
+      Level = 5
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3012,
+      IsLoop = false,
+      Level = 6
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3012,
+      IsLoop = false,
+      Level = 7
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3012,
+      IsLoop = false,
+      Level = 8
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3012,
+      IsLoop = false,
+      Level = 9
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3012,
+      IsLoop = false,
+      Level = 10
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3012,
+      IsLoop = true,
+      Level = 11
+    }
+  },
+  [3013] = {
+    {
+      AwardGroup = 300101,
+      CostCnt = 100,
+      Id = 3013,
+      IsLoop = false,
+      Level = 1
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 100,
+      Id = 3013,
+      IsLoop = false,
+      Level = 2
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 200,
+      Id = 3013,
+      IsLoop = false,
+      Level = 3
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 200,
+      Id = 3013,
+      IsLoop = false,
+      Level = 4
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 200,
+      Id = 3013,
+      IsLoop = false,
+      Level = 5
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3013,
+      IsLoop = false,
+      Level = 6
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3013,
+      IsLoop = false,
+      Level = 7
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3013,
+      IsLoop = false,
+      Level = 8
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3013,
+      IsLoop = false,
+      Level = 9
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3013,
+      IsLoop = false,
+      Level = 10
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3013,
+      IsLoop = true,
+      Level = 11
+    }
+  },
+  [3014] = {
+    {
+      AwardGroup = 300101,
+      CostCnt = 100,
+      Id = 3014,
+      IsLoop = false,
+      Level = 1
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 100,
+      Id = 3014,
+      IsLoop = false,
+      Level = 2
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 200,
+      Id = 3014,
+      IsLoop = false,
+      Level = 3
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 200,
+      Id = 3014,
+      IsLoop = false,
+      Level = 4
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 200,
+      Id = 3014,
+      IsLoop = false,
+      Level = 5
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3014,
+      IsLoop = false,
+      Level = 6
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3014,
+      IsLoop = false,
+      Level = 7
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3014,
+      IsLoop = false,
+      Level = 8
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3014,
+      IsLoop = false,
+      Level = 9
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3014,
+      IsLoop = false,
+      Level = 10
+    },
+    {
+      AwardGroup = 300101,
+      CostCnt = 400,
+      Id = 3014,
+      IsLoop = true,
+      Level = 11
+    }
+  }
+}

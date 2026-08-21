@@ -1,0 +1,96 @@
+local Base = require("ui.uiobject")
+local DayAwardItem = require("uimodule.shop.recommond_shop.day_award_item")
+local FIRST_RECHARGE_AWARD_TEM_KEY = "FIRST_RECHARGE_AWARD_TEM_KEY"
+local FirstRechargeJumpId = ShareRes.get_comm_value("FirstRechargeJumpId")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self.v_item_list = {}
+  self:set_button("BtnCharge", function()
+    SysOpenMgr:jump_to_sys(FirstRechargeJumpId, true)
+  end)
+  self:set_button("BtnFreeAward", function()
+    local can_get_free_award = RechargeMgr:can_get_free_first_recharge_award()
+    if can_get_free_award then
+      RechargeMgr:req_get_free_first_recharge_award()
+    end
+  end)
+  self:set_button("BtnRecive", function()
+    local can_get_award = RechargeMgr:can_get_first_recharge_award()
+    if can_get_award then
+      RechargeMgr:req_get_first_recharge_award()
+    end
+  end)
+  self:register_exist_auto_template(FIRST_RECHARGE_AWARD_TEM_KEY, self.v_uiobjects.AwardTem, self.v_uiobjects.AwardList)
+end
+
+function ui:ui_on_show()
+  self.v_award_cfg = ShareRes.create("recharge.firse_recharge_award")
+  self:bind_auto_mq(Const.MSG_ON_FIRST_RECHARGE_AWARD_UPDATE, self.update_view, self)
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.recommond_shop_tog1_UI_SOUND)
+  self:update_view(true)
+end
+
+function ui:ui_on_hide()
+  self:clear_squence()
+  self:clear_wrap_item()
+end
+
+function ui:update_view(delay_show)
+  self:_set_awards(delay_show)
+  self:_set_btns()
+end
+
+function ui:_set_awards(delay_show)
+  self:clear_wrap_item()
+  self:give_back_auto_cache(FIRST_RECHARGE_AWARD_TEM_KEY)
+  for day, _ in ipairs(self.v_award_cfg) do
+    local obj = self:get_auto_cache(FIRST_RECHARGE_AWARD_TEM_KEY)
+    local item = DayAwardItem:ui_wrap_ex(self, obj, not delay_show)
+    item:set_data(day)
+    table.insert(self.v_item_list, item)
+  end
+  if delay_show then
+    self:clear_squence()
+    self.v_sequence = Util.create_sequence()
+    for i, item in ipairs(self.v_item_list) do
+      self.v_sequence:InsertCallback(0.05 * (i - 1), function()
+        item:set_enable_ex(true)
+      end)
+    end
+  end
+end
+
+function ui:clear_squence()
+  if self.v_sequence then
+    self.v_sequence:Kill(false)
+    self.v_sequence = nil
+  end
+end
+
+function ui:clear_wrap_item()
+  if self.v_item_list then
+    for key, item in pairs(self.v_item_list) do
+      item:ui_hide()
+      self:remove_wrap_ui(item)
+      self.v_item_list[key] = nil
+    end
+  end
+end
+
+function ui:_set_btns()
+  local has_free_award = ShareRes.get_first_recharge_free_award() ~= nil
+  self.v_uiobjects.BtnFreeAward:SetActive(has_free_award)
+  if has_free_award then
+    local can_get_free_award = RechargeMgr:can_get_free_first_recharge_award()
+    self.v_uiobjects.ReciveIcon:SetActive(can_get_free_award)
+    self.v_uiobjects.GotIcon:SetActive(not can_get_free_award)
+  end
+  local can_get_award = RechargeMgr:can_get_first_recharge_award()
+  local is_first_recharge_done = RechargeMgr:is_first_recharge_done()
+  self.v_uiobjects.BtnCharge:SetActive(not is_first_recharge_done)
+  self.v_uiobjects.BtnRecive:SetActive(can_get_award)
+  self.v_uiobjects.Recived:SetActive(is_first_recharge_done and not can_get_award)
+end
+
+return ui

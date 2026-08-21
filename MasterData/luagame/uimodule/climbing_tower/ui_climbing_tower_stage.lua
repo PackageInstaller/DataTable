@@ -1,0 +1,76 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local CommonDef = require("cs_share.common_define")
+local climbing_tower_stage_key = "climbing_tower_stage_key"
+local ITEM_CLASS = require("uimodule.climbing_tower.ui_climbing_tower_stage_item")
+
+function ui:ui_finish_load()
+  self:set_button("BtnRet1", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnMain", function()
+    UIMgr:go_to_main()
+  end)
+  self:register_exist_auto_template(climbing_tower_stage_key, self.v_uiobjects.StageTem, self.v_uiobjects.Content)
+end
+
+function ui:ui_on_show(group_id, select_id)
+  self.group_id = group_id
+  local list = ClimbingTowerMgr:get_climbing_tower_list(self.group_id)
+  self.v_select_id = select_id or ClimbingTowerMgr:get_new_stage_id(self.group_id)
+  if not self.v_select_id then
+    self.v_select_id = list[1].data.id
+  end
+  local show_left = false
+  self:give_back_auto_cache(climbing_tower_stage_key)
+  self:clear_warp_stage_item()
+  self.v_stage_item_list = {}
+  for i, climbing_tower_info in ipairs(list) do
+    show_left = not show_left
+    local item_obj = self:get_auto_cache(climbing_tower_stage_key)
+    local item = ITEM_CLASS:ui_wrap_ex(self, item_obj, true)
+    item:set_data(climbing_tower_info, show_left)
+    table.insert(self.v_stage_item_list, item)
+  end
+end
+
+function ui:get_select_id()
+  return self.v_select_id
+end
+
+function ui:refresh_select_item(item)
+  self.v_select_item = item
+  self.v_select_id = item:get_cfg_id()
+end
+
+function ui:refresh_anim(index)
+end
+
+function ui:ui_on_hide()
+  self:clear_warp_stage_item()
+  UIMgr:try_hide_ui("ui_chapter_detail_info")
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.group_id, self.v_select_id
+end
+
+function ui:clear_warp_stage_item()
+  if self.v_stage_item_list then
+    for key, item in pairs(self.v_stage_item_list) do
+      item:ui_destroy()
+      self.v_stage_item_list[key] = nil
+    end
+    self.v_stage_item_list = nil
+  end
+end
+
+return ui

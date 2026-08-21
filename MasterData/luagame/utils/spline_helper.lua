@@ -1,0 +1,49 @@
+local vec3 = require("base.vec3")
+local mathx = require("base.mathx")
+local M = Util.create_class()
+local temp_vec3_00 = vec3.New()
+local temp_vec3_01 = vec3.New()
+local temp_vec3_02 = vec3.New()
+local temp_vec3_03 = vec3.New()
+
+function M:_init()
+end
+
+function M.bezier3(p0, p1, p2, p3, t)
+  t = mathx.Clamp01(t)
+  local d = 1 - t
+  temp_vec3_00:Set(p0:Get())
+  temp_vec3_00:Mul(d ^ 3)
+  temp_vec3_01:Set(p1:Get())
+  temp_vec3_01:Mul(3 * d ^ 2 * t)
+  temp_vec3_02:Set(p2:Get())
+  temp_vec3_02:Mul(3 * d * t ^ 2)
+  temp_vec3_03:Set(p3:Get())
+  temp_vec3_03:Mul(t ^ 3)
+  temp_vec3_00:Add(temp_vec3_01)
+  temp_vec3_00:Add(temp_vec3_02)
+  temp_vec3_00:Add(temp_vec3_03)
+  return temp_vec3_00:Get()
+end
+
+function M.bezier_tangent3(p0, p1, p2, p3, t)
+  t = mathx.Clamp01(t)
+  local f0 = -3 * t ^ 2 + 6 * t - 3
+  local f1 = 9 * t ^ 2 - 12 * t + 3
+  local f2 = -9 * t ^ 2 + 6 * t
+  local f3 = 3 * t ^ 2
+  temp_vec3_00:Set(p0:Get())
+  temp_vec3_00:Mul(f0)
+  temp_vec3_01:Set(p1:Get())
+  temp_vec3_01:Mul(f1)
+  temp_vec3_02:Set(p2:Get())
+  temp_vec3_02:Mul(f2)
+  temp_vec3_03:Set(p3:Get())
+  temp_vec3_03:Mul(f3)
+  temp_vec3_00:Add(temp_vec3_01)
+  temp_vec3_00:Add(temp_vec3_02)
+  temp_vec3_00:Add(temp_vec3_03)
+  return temp_vec3_00:Get()
+end
+
+return M

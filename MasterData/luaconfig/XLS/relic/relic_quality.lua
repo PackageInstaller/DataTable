@@ -1,0 +1,17 @@
+return {
+  [3] = {
+    Exp = "Char_bg_ghdb_big03",
+    Id = 3,
+    Level = "Char_bg_ghdb_03"
+  },
+  [4] = {
+    Exp = "Char_bg_ghdb_big02",
+    Id = 4,
+    Level = "Char_bg_ghdb_02"
+  },
+  [5] = {
+    Exp = "Char_bg_ghdb_big01",
+    Id = 5,
+    Level = "Char_bg_ghdb_01"
+  }
+}

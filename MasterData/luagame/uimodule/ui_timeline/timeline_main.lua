@@ -1,0 +1,144 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_pan_btn = {
+    "PanBtn",
+    BIND_TYPE.BUTTON
+  },
+  v_skip_btn = {
+    "SkipBtn",
+    BIND_TYPE.BUTTON
+  }
+}
+local CSKeyCode = UnityEngine.KeyCode
+local INPUT_CODE = Config.INPUT_CODE
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  local components = self.v_uicompents
+  self.v_can_hide = false
+  self.v_skip_tween = components.SkipBtn_btn:GetComponent(typeof(CS.DG.Tweening.DOTweenAnimation))
+  self.v_hide_skip = true
+  self:set_button("PanBtn", function()
+    if not self.v_can_hide then
+      self.v_uiobjects.SkipBtn:SetActive(false)
+      return
+    end
+    if self.v_fading_out then
+      return
+    end
+    self.v_uiobjects.SkipBtn:SetActive(true)
+    self.v_hide_skip = not self.v_hide_skip
+    if self.v_hide_skip then
+      self.v_skip_tween:DOPlayBackwards()
+    else
+      self.v_skip_tween:DOPlayForward()
+    end
+  end)
+  self:set_button("SkipBtn", function()
+    if not self.v_can_hide then
+      self.v_uiobjects.SkipBtn:SetActive(false)
+      return
+    end
+    if not self.v_hide_skip then
+      self:fade_out()
+      TimeLineSeqPlayer.need_fade_out = false
+    end
+  end)
+end
+
+function ui:fade_out()
+  self.v_fading_out = true
+  self.v_hide_skip = true
+  self.v_skip_tween:DOPlayBackwards()
+  self:play_back_tween(true)
+end
+
+function ui:play_back_tween(is_enter)
+  local canvas_group = self.v_uiobjects.PanBtn:GetComponent("CanvasGroup")
+  local target_alpha = is_enter and 1 or 0
+  local duration = is_enter and 0.1 or 1
+  canvas_group.alpha = is_enter and 0 or 1
+  if self.v_sequence then
+    self.v_sequence:Kill()
+    self.v_sequence = nil
+  end
+  if is_enter then
+    Cinemachine:update_settings(nil, 0)
+    TimeLineSeqPlayer.stop(true)
+    self:play_back_tween()
+  else
+    local sequence = Util.create_sequence()
+    self.v_sequence = sequence
+    sequence:Append(canvas_group:DOFade(target_alpha, duration)):SetDelay(0.5)
+    sequence:OnComplete(function()
+      self:ui_hide()
+    end)
+  end
+end
+
+function ui:ui_on_show(can_hide, is_show_ui)
+  local canvas_group = self.v_uiobjects.PanBtn:GetComponent("CanvasGroup")
+  canvas_group.alpha = 0
+  self.v_fading_out = false
+  self.v_can_hide = can_hide
+  self.is_show_ui = is_show_ui
+  local pan_image = self.v_pan_btn.gameObject:GetComponent(TypeUnityUIImage)
+  if false == self.v_can_hide and true == is_show_ui then
+    pan_image.raycastTarget = false
+  else
+    pan_image.raycastTarget = true
+  end
+  if self.v_can_hide then
+    self.v_uiobjects.SkipBtn:SetActive(true)
+  else
+    self.v_uiobjects.SkipBtn:SetActive(false)
+  end
+  if Global.camera then
+    Global.camera:set_camera_effect_root_active(false)
+  end
+  if TowerMgr:is_on_enter_room() then
+    SceneMgr:set_curtain_show(false)
+  end
+  local is_show_key = UNITY_EDITOR or SDKManager:is_google_play_games() or UNITY_STANDALONE_WIN
+  local local_setting_info = BattleSettingMgr:get_local_setting_info()
+  local setting_value = 1 == local_setting_info.gpg_button_show
+  self.v_uiobjects.PCTouchC:SetActive(is_show_key and setting_value)
+  if is_show_key then
+    self:bind_auto_mq(Const.MSG_KEY_UP, self._response_key_up, self)
+  end
+end
+
+function ui:ui_on_hide()
+  if self.v_sequence then
+    self.v_sequence:Kill()
+    self.v_sequence = nil
+  end
+  self.v_can_hide = false
+  if Global.camera then
+    Global.camera:set_camera_effect_root_active(true)
+  end
+  if TowerMgr and TowerMgr:is_on_enter_room() then
+    SceneMgr:set_curtain_show(true)
+  end
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:_response_key_up(msg)
+  local input_code = msg.mm_x
+  if input_code == CSKeyCode.C then
+    if not self.v_can_hide then
+      self.v_uiobjects.SkipBtn:SetActive(false)
+      return
+    end
+    if not self.v_hide_skip then
+      self:fade_out()
+      TimeLineSeqPlayer.need_fade_out = false
+    end
+  end
+end
+
+return ui

@@ -1,0 +1,39 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_btn_return = {
+    "BtnReturn",
+    BIND_TYPE.BUTTON
+  },
+  v_nor_task_obj = {
+    "NorTaskObj",
+    BIND_TYPE.OBJECT
+  },
+  v_rune_obj = {
+    "RuneObj",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_rune_panel = self:get_panel("rune")
+  self.v_skill_panel = self:get_panel("skill")
+  self:set_button("BtnReturn", function()
+    MsgGame:mq_publish2(Const.MSG_BUDDY_BASE_SKILL_LVUP)
+    self:ui_hide()
+  end)
+end
+
+function ui:ui_on_show(data)
+  if data.is_rune_skill then
+    self.v_rune_panel:set_enable(true, data)
+    self.v_skill_panel:set_enable(false)
+  else
+    self.v_rune_panel:set_enable(false)
+    self.v_skill_panel:set_enable(true, data)
+  end
+end
+
+return ui

@@ -1,0 +1,7 @@
+return {
+  {
+    DailyRewardId = 1031,
+    Id = 1,
+    NormalRewardId = 3
+  }
+}

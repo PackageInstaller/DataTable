@@ -1,0 +1,289 @@
+return {
+  {
+    BranchList = {1, 2},
+    BriefDesc = "一次片段BriefDesc",
+    DetailDesc = "一次片段DetailDesc",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb1",
+    Id = 1,
+    IsGodMagic = true,
+    KeyIDList = {101},
+    MagicId = 0,
+    Name = "一次片段",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 1,
+        Sect = 1
+      }
+    }
+  },
+  {
+    BranchList = {3, 4},
+    BriefDesc = "二次片段BriefDesc",
+    DetailDesc = "二次片段DetailDesc",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb1",
+    Id = 2,
+    IsGodMagic = true,
+    KeyIDList = {102},
+    MagicId = 0,
+    Name = "二次片段",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 1,
+        Sect = 2
+      }
+    }
+  },
+  {
+    BranchList = {5, 6},
+    BriefDesc = "三次片段BriefDesc",
+    DetailDesc = "三次片段DetailDesc",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb1",
+    Id = 3,
+    KeyIDList = {103},
+    MagicId = 0,
+    Name = "三次片段",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 1,
+        Sect = 3
+      }
+    }
+  },
+  {
+    BranchList = {7, 8},
+    BriefDesc = "一次片段BriefDesc",
+    DetailDesc = "一次片段DetailDesc",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb1",
+    Id = 4,
+    KeyIDList = {104},
+    MagicId = 0,
+    Name = "一次片段",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 1,
+        Sect = 4
+      }
+    }
+  },
+  {
+    BranchList = {9, 10},
+    BriefDesc = "二次片段BriefDesc",
+    DetailDesc = "二次片段DetailDesc",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb1",
+    Id = 5,
+    KeyIDList = {401},
+    MagicId = 0,
+    Name = "二次片段",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 1,
+        Sect = 5
+      }
+    }
+  },
+  {
+    BranchList = {11, 12},
+    BriefDesc = "三次片段BriefDesc",
+    DetailDesc = "三次片段DetailDesc",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb1",
+    Id = 6,
+    KeyIDList = {402},
+    MagicId = 0,
+    Name = "三次片段",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 1,
+        Sect = 6
+      }
+    }
+  },
+  {
+    BranchList = {13, 14},
+    BriefDesc = "一次片段BriefDesc",
+    DetailDesc = "一次片段DetailDesc",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb1",
+    Id = 7,
+    KeyIDList = {403},
+    MagicId = 0,
+    Name = "一次片段",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 1,
+        Sect = 1
+      }
+    }
+  },
+  {
+    BranchList = {15, 16},
+    BriefDesc = "二次片段BriefDesc",
+    DetailDesc = "二次片段DetailDesc",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb1",
+    Id = 8,
+    KeyIDList = {801},
+    MagicId = 0,
+    Name = "二次片段",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 1,
+        Sect = 2
+      }
+    }
+  },
+  {
+    BranchList = {17, 18},
+    BriefDesc = "三次片段BriefDesc",
+    DetailDesc = "三次片段DetailDesc",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb1",
+    Id = 9,
+    KeyIDList = {802},
+    MagicId = 0,
+    Name = "三次片段",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 1,
+        Sect = 3
+      }
+    }
+  },
+  [11] = {
+    BranchList = {1101, 1102},
+    BriefDesc = "造成<color=#476DBB>【静止】</color>效果时，产生【黑洞】对其中敌人造成伤害和元素异常累积，并向中心吸附敌人。",
+    DetailDesc = "造成<color=#476DBB>【静止】</color>效果时，产生持续5秒的【黑洞】，根据释放者元素类型对其中敌人造成基于50%攻击力的伤害和少量元素异常累积，并向中心吸附敌人；该效果每20秒可触发一次。",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb1",
+    Id = 11,
+    IsGodMagic = true,
+    KeyIDList = {60013},
+    MagicId = 6170601,
+    Name = "时沙X永夏",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 3,
+        Sect = 2
+      },
+      {
+        AddWeight = 100,
+        Count = 3,
+        Sect = 3
+      }
+    }
+  },
+  [12] = {
+    BranchList = {1201, 1202},
+    BriefDesc = "成员释放技能时命中时降下剑雨，造成伤害。",
+    DetailDesc = "成员释放技能时命中时降下3波剑雨，每波造成3次基于30%攻击力的常规伤害，每6秒可触发一次。",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb2",
+    Id = 12,
+    MagicId = 6170701,
+    Name = "巨企X时沙",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 3,
+        Sect = 4
+      },
+      {
+        AddWeight = 100,
+        Count = 3,
+        Sect = 2
+      }
+    }
+  },
+  [13] = {
+    BranchList = {1301, 1302},
+    BriefDesc = "当敌人被施加<color=#476DBB>【灾】</color>状态时，在其原地生成一个<color=#476DBB>【机关】</color>【鹤像】，产生扩散的水波降低周围敌人的异常累积抗性和异常持续伤害抗性，并造成短暂的减速。",
+    DetailDesc = "当敌人被施加<color=#476DBB>【灾】</color>状态时，在其所在位置生成一个<color=#476DBB>【机关】</color>【鹤像】，产生向外扩散的水波，降低周围敌人20%异常累积抗性和异常持续伤害抗性，并造成短暂的减速。释放完成后，<color=#476DBB>【机关】</color>【鹤像】消失。",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb3",
+    Id = 13,
+    KeyIDList = {60021, 60041},
+    MagicId = 6170901,
+    Name = "永夏X神谕",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 3,
+        Sect = 3
+      },
+      {
+        AddWeight = 100,
+        Count = 3,
+        Sect = 5
+      }
+    }
+  },
+  [14] = {
+    BranchList = {1401, 1402},
+    BriefDesc = "使用流派技能时，召唤巨型防护罩，其中的所有友方单位获得护盾。",
+    DetailDesc = "使用流派技能时，召唤持续15秒的巨型防护罩，其中的所有友方单位会获得100%防御力的护盾（多次进出无法重复获得护盾），场上只可存在1个防护罩。",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb4",
+    Id = 14,
+    IsGodMagic = true,
+    MagicId = 6170801,
+    Name = "神谕X圣誓",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 3,
+        Sect = 5
+      },
+      {
+        AddWeight = 100,
+        Count = 3,
+        Sect = 1
+      }
+    }
+  },
+  [15] = {
+    BranchList = {1501, 1502},
+    BriefDesc = "场上成员受到伤害，或生命值较低时触发暴击，有概率获得【乱射】效果；\n【乱射】：每3秒自动射击周围敌人，持续10秒；换人后失去该效果",
+    DetailDesc = "场上成员受到伤害，或生命值低于20%时触发暴击，有50%的概率获得【乱射】效果；\n【乱射】：每3秒自动射击周围敌人，持续10秒；换人后失去该效果",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb5",
+    Id = 15,
+    MagicId = 6171022,
+    Name = "铸雷X巨企",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 3,
+        Sect = 6
+      },
+      {
+        AddWeight = 100,
+        Count = 3,
+        Sect = 4
+      }
+    }
+  },
+  [16] = {
+    BranchList = {1601, 1602},
+    BriefDesc = "成员生命值较低，或【圣光】护盾被击碎时，落下一把【誓言之枪】；\n【誓言之枪】：范围内成员每受到攻击会落下【裁决之枪】对敌人造成光元素<color=#476DBB>【反击】</color>伤害。",
+    DetailDesc = "成员生命值下降至30%以下，或【圣光】护盾被击碎时，落下一把【誓言之枪】，每30秒触发一次；\n【誓言之枪】：持续10秒，期间处于其范围内的成员每受到攻击则会落下【裁决之枪】对锁定敌人造成400%基于成员防御力的光元素<color=#476DBB>【反击】</color>伤害。",
+    Icon = "FateBook/EquationIcon/Event_icon_fc_fctb6",
+    Id = 16,
+    IsGodMagic = true,
+    KeyIDList = {60002},
+    MagicId = 6171101,
+    Name = "圣誓X铸雷",
+    Sect = {
+      {
+        AddWeight = 100,
+        Count = 3,
+        Sect = 1
+      },
+      {
+        AddWeight = 100,
+        Count = 3,
+        Sect = 6
+      }
+    }
+  }
+}

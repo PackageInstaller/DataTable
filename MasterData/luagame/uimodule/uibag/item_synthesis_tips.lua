@@ -1,0 +1,237 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BagCfg = require("uimodule.uibag.uibag_configs")
+local BIND_TYPE = Config.BIND_TYPE
+local QUALITY_ICON_PREFIX = "UICommon/"
+local ICON_PREFIX = "Icon/Item/%s"
+local _max = math.max
+local _min = math.min
+local _mfloor = math.floor
+local _ceil = math.ceil
+local MAX_DURATION = BagCfg.MAX_ITEM_DURATION
+local btn_isactive = true
+local MODEL = {
+  v_bg_btn = {
+    "BgBtn",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_add = {
+    "BtnAdd",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_reduce = {
+    "BtnReduce",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_synthesis = {
+    "BtnSynthesis",
+    BIND_TYPE.BUTTON
+  },
+  v_close_btn = {
+    "CloseBtn",
+    BIND_TYPE.BUTTON
+  },
+  v_consume1 = {
+    "Consume1",
+    BIND_TYPE.OBJECT
+  },
+  v_consume2 = {
+    "Consume2",
+    BIND_TYPE.OBJECT
+  },
+  v_consume3 = {
+    "Consume3",
+    BIND_TYPE.OBJECT
+  },
+  v_operate_panel = {
+    "OperatePanel",
+    BIND_TYPE.OBJECT
+  },
+  v_slider = {
+    "Slider",
+    BIND_TYPE.SLIDER
+  },
+  v_synthesis = {
+    "Synthesis",
+    BIND_TYPE.OBJECT
+  },
+  v_synthesis_num_txt = {
+    "SynthesisNum",
+    BIND_TYPE.TEXT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_consume_ui = {}
+  self.v_consume_item_ui = {}
+  self.v_consume_ui[1] = self:get_child_ui_wrap(self.v_consume1)
+  self.v_consume_ui[2] = self:get_child_ui_wrap(self.v_consume2)
+  self.v_consume_ui[3] = self:get_child_ui_wrap(self.v_consume3)
+  self.v_consume_item_ui[1] = self:get_child_ui_wrap(self.v_consume_ui[1]:get_uiobject("ItemObjCom"))
+  self.v_consume_item_ui[2] = self:get_child_ui_wrap(self.v_consume_ui[2]:get_uiobject("ItemObjCom"))
+  self.v_consume_item_ui[3] = self:get_child_ui_wrap(self.v_consume_ui[3]:get_uiobject("ItemObjCom"))
+  self.v_synthesis_ui = self:get_child_ui_wrap(self.v_synthesis)
+  self.v_item_obj_ui = self:get_child_ui_wrap(self.v_synthesis_ui:get_uiobject("ItemObjCom1"))
+  self.v_synthesis_num = 1
+  self.v_update_holdNum = {}
+  self:set_button("BgBtn", function()
+  end)
+  self:set_button("BtnAdd", function()
+    self:add_or_reduce(1)
+  end)
+  self:set_button("BtnReduce", function()
+    self:add_or_reduce(-1)
+  end)
+  self:set_button("BtnSynthesis", function()
+    if self.v_synthesis_maxnum < 1 then
+      return
+    end
+    MsgGame:mq_publish2(Const.MSG_BAG_ITEM_SELECT_CHANGE)
+    local send_data = {
+      cid = self.v_cid,
+      num = self.v_synthesis_num
+    }
+    BagMgr:item_synthesis(send_data)
+  end)
+  self:set_button("CloseBtn", function()
+    self:ui_hide()
+  end)
+  self:set_slider_listener(self.v_slider, function()
+    self:change_synthesis_num(_mfloor(self.v_synthesis_maxnum * self.v_slider.value + 0.5))
+  end)
+end
+
+function ui:item_synthesis_callback()
+  self:update_date(self.v_synthesis_num)
+  self:set_slider_value(1 / self.v_synthesis_maxnum)
+  self:change_synthesis_num(_mfloor(self.v_synthesis_maxnum * self.v_slider.value + 0.5))
+end
+
+function ui:ui_on_show(data, item_synthesis)
+  self:bind_auto_mq(Const.MSG_ON_ITEM_SYNTHESIS, self.item_synthesis_callback, self)
+  self.v_item_synthesis = item_synthesis
+  self.v_synthesis_maxnum = MAX_DURATION
+  local materialInfos = data.materialInfos
+  for i = 1, #self.v_consume_ui do
+    if materialInfos[i] then
+      self.v_consume_ui[i].v_object:SetActive(true)
+      local materialInfo = materialInfos[i]
+      local components = self.v_consume_item_ui[i].v_uicompents
+      local icon_path = ShareRes.create("item.item_quality", materialInfo.quality).QualityIcon
+      self.v_consume_ui[i].v_uicompents.ItemName_txt.text = materialInfo.name
+      components.ItemNow_txt.text = materialInfo.HoldNum
+      components.ItemNeed_txt.text = materialInfo.Num
+      ResMgr:load_set_icon(components.ItemQuality_img, QUALITY_ICON_PREFIX .. icon_path)
+      ResMgr:load_set_icon(components.ItemIcon_img, string.format(ICON_PREFIX, materialInfo.icon))
+      self.v_synthesis_maxnum = _min(self.v_synthesis_maxnum, _mfloor(materialInfo.HoldNum / materialInfo.Num))
+      self.v_update_holdNum[i] = {}
+      self.v_update_holdNum[i].num_txt = components.ItemNow_txt
+      self.v_update_holdNum[i].hold_num = materialInfo.HoldNum
+      self.v_update_holdNum[i].consume_num = materialInfo.Num
+    else
+      self.v_consume_ui[i].v_object:SetActive(false)
+    end
+  end
+  local targetInfo = data.targetInfo
+  self.v_synthesis_ui.v_uicompents.ItemName_txt.text = targetInfo.name
+  local components = self.v_item_obj_ui.v_uicompents
+  local icon_path = ShareRes.create("item.item_quality", targetInfo.quality).QualityIcon
+  components.ItemNum_txt.text = targetInfo.Count
+  ResMgr:load_set_icon(components.ItemQuality_img, QUALITY_ICON_PREFIX .. icon_path)
+  ResMgr:load_set_icon(components.ItemIcon_img, string.format(ICON_PREFIX, targetInfo.icon))
+  self.v_data = data
+  self.v_target_id = targetInfo.id
+  self.v_target_count = targetInfo.Count
+  self.v_cid = targetInfo.Id
+  self.v_not_show_award = data.IgnoreAwardMsg
+  self:set_slider_value(0)
+  self:set_slider_value(1 / self.v_synthesis_maxnum)
+  self:set_btn_unactive()
+end
+
+function ui:set_btn_unactive()
+  if self.v_synthesis_maxnum <= 0 and btn_isactive then
+    btn_isactive = false
+    self.v_slider.enabled = false
+    self.v_btn_add.enabled = false
+    self.v_btn_reduce.enabled = false
+    self.v_btn_synthesis.enabled = false
+    self.v_uicompents.BtnAdd_img.color = Util.get_unity_color_by_hex(tonumber("cfcbbf", 16))
+    self.v_uicompents.BtnReduce_img.color = Util.get_unity_color_by_hex(tonumber("cfcbbf", 16))
+    Util.disable_btn(self.v_btn_synthesis, true)
+  elseif self.v_synthesis_maxnum > 0 and not btn_isactive then
+    btn_isactive = true
+    self.v_slider.enabled = true
+    self.v_btn_add.enabled = true
+    self.v_btn_reduce.enabled = true
+    self.v_btn_synthesis.enabled = true
+    self.v_uicompents.BtnAdd_img.color = Util.get_unity_color_by_hex(tonumber("ffffff", 16))
+    self.v_uicompents.BtnReduce_img.color = Util.get_unity_color_by_hex(tonumber("ffffff", 16))
+    Util.enable_btn(self.v_btn_synthesis)
+  end
+  if self.v_synthesis_maxnum <= 1 then
+    self.v_slider.enabled = false
+  else
+    self.v_slider.enabled = true
+  end
+end
+
+function ui:change_synthesis_num(synthesis_num)
+  if 0 == synthesis_num and self.v_synthesis_maxnum > 0 then
+    self:set_slider_value(1 / self.v_synthesis_maxnum)
+    return
+  end
+  if 0 == synthesis_num then
+    self.v_synthesis_num_txt.color = Util.get_unity_color_by_hex(tonumber("FF0000", 16))
+  else
+    self.v_synthesis_num_txt.color = Util.get_unity_color_by_hex(tonumber("292929", 16))
+  end
+  self.v_synthesis_num = synthesis_num
+  self.v_synthesis_num_txt.text = self.v_synthesis_num
+  self.v_item_obj_ui.v_uicompents.ItemNum_txt.text = self.v_synthesis_num * self.v_target_count
+  self:update_consume_holdNum()
+end
+
+function ui:add_or_reduce(add_or_reduce)
+  self.v_slider.value = self.v_slider.value + add_or_reduce / self.v_synthesis_maxnum
+end
+
+function ui:set_slider_value(value)
+  self.v_slider.value = value
+end
+
+function ui:update_consume_holdNum()
+  for i = 1, #self.v_update_holdNum do
+    local show_num = self.v_update_holdNum[i].hold_num - self.v_update_holdNum[i].consume_num * self.v_synthesis_num
+    self.v_update_holdNum[i].num_txt.text = _max(show_num, 0)
+    if show_num <= 0 then
+      self.v_update_holdNum[i].num_txt.color = Util.get_unity_color_by_hex(tonumber("FF0000", 16))
+    else
+      self.v_update_holdNum[i].num_txt.color = Util.get_unity_color_by_hex(tonumber("FFFFFF", 16))
+    end
+  end
+end
+
+function ui:get_child_ui_wrap(gameobj)
+  local childUIWarp = Util.create_child_mt(Base)
+  childUIWarp = childUIWarp:ui_wrap(nil, gameobj)
+  childUIWarp.v_object:SetActive(true)
+  return childUIWarp
+end
+
+function ui:update_date(synthesis_num)
+  local materialInfos = self.v_data.materialInfos
+  for i = 1, #materialInfos do
+    local materialInfo = materialInfos[i]
+    materialInfo.HoldNum = materialInfo.HoldNum - materialInfo.Num * synthesis_num
+    self.v_update_holdNum[i].hold_num = materialInfo.HoldNum
+    self.v_synthesis_maxnum = self.v_synthesis_maxnum - self.v_synthesis_num
+  end
+  if self.v_item_synthesis then
+    self.v_item_synthesis:update_all()
+  end
+  self:set_btn_unactive()
+end
+
+return ui

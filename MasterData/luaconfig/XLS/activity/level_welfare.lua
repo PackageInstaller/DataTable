@@ -1,0 +1,38 @@
+return {
+  {
+    ActivityId = 7,
+    AwardGroupId = 20090,
+    Id = 1,
+    Level = 5
+  },
+  {
+    ActivityId = 7,
+    AwardGroupId = 20091,
+    Id = 2,
+    Level = 15
+  },
+  {
+    ActivityId = 7,
+    AwardGroupId = 20092,
+    Id = 3,
+    Level = 25
+  },
+  {
+    ActivityId = 7,
+    AwardGroupId = 20093,
+    Id = 4,
+    Level = 35
+  },
+  {
+    ActivityId = 7,
+    AwardGroupId = 20094,
+    Id = 5,
+    Level = 45
+  },
+  {
+    ActivityId = 7,
+    AwardGroupId = 20095,
+    Id = 6,
+    Level = 55
+  }
+}

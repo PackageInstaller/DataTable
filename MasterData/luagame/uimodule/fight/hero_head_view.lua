@@ -1,0 +1,522 @@
+local Base = require("ui.uiobject")
+local HeadClass = require("uimodule.fight.team_hero_head")
+local SwitchHeroHelper = require("gamelogic.switch_hero.swtich_hero")
+local FightDefine = require("cs_share.fight_define")
+local CHAPTER_CONFIG = require("uimodule.chapter.chapter_config")
+local TEAM_ENERGY_TEMPLETE = "TEAM_ENERGY_TEMPLETE"
+local ui = Util.create_child_mt(Base)
+local INPUT_CODE = Config.INPUT_CODE
+local QTE_SHOW_SKILL_IDX = 7
+local SWITHC_ATK_SKILL_IDX = 8
+local KEYCODE2POS = {
+  [INPUT_CODE.QTE1] = 1,
+  [INPUT_CODE.QTE2] = 2,
+  [INPUT_CODE.OPERATE_CHAR1] = 3,
+  [INPUT_CODE.QTE_UltSkill_1] = 4,
+  [INPUT_CODE.QTE_UltSkill_2] = 5
+}
+local DEFAULT_STARTING_POS = CHAPTER_CONFIG.DEFAULT_STARTING_POS
+local MAX_EFFECT_PRIORITY = 5
+
+function ui:ui_finish_load()
+  self.v_heads = {}
+  self.v_qte_max_priority = {}
+  self.v_qte_effect_priority_map = {}
+  for i = 1, 2 do
+    table.insert(self.v_heads, HeadClass:ui_wrap_ex(self, self.v_uiobjects["ChangHero" .. i], false))
+    self.v_heads[i].v_name = "team_hero_head" .. i
+  end
+  self:register_exist_auto_template(TEAM_ENERGY_TEMPLETE, self.v_uiobjects.EnergyTem, self.v_uiobjects.TempleteRoot)
+  self.v_switch_down_block = false
+end
+
+function ui:preload()
+  local hero_list = SceneMgr:get_hero_list()
+  if hero_list then
+    local max_energy_count = 0
+    local cur_count
+    for _, hero in pairs(hero_list) do
+      cur_count = hero:get_show_point_count()
+      max_energy_count = math.max(max_energy_count, cur_count or 0)
+    end
+    for _ = 1, max_energy_count * 2 do
+      self:get_auto_cache(TEAM_ENERGY_TEMPLETE)
+    end
+    self:give_back_auto_cache(TEAM_ENERGY_TEMPLETE)
+  end
+end
+
+function ui:ui_on_show()
+  self.v_qet_skills = {}
+  self.v_out_atk_skills = {}
+  self:force_reset_head_info()
+  self:_regist_client_event()
+  for i = 1, 2 do
+    local head = self.v_heads[i]
+    head:set_forbid_switch_hero_effect_visible(false)
+  end
+end
+
+function ui:ui_on_update(delta_time)
+end
+
+function ui:ui_on_low_update(delta_time)
+  for _, v in pairs(self.v_heads) do
+    v:ui_on_low_update(delta_time)
+  end
+  self:update_forbid_switch_hero_time()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_REPLACE_TEAM_POS_CHAR, self.response_change_hero_team_pos, self)
+  self:bind_auto_mq(Const.MSG_DO_SWITCH_HERO, self._response_do_switch_hero, self)
+  self:bind_auto_mq(Const.MSG_ON_FORCED_CHANGE_CHAR, self._response_forced_switch_hero, self)
+  self:bind_auto_mq(Const.MSG_UI_FIGHT_INPUT_CODE, self._response_input, self)
+  self:bind_auto_mq(Const.MSG_ON_GO_OUT_ROLE, self._response_on_go_out_role, self)
+  self:bind_auto_mq(Const.MSG_ON_FORBID_SWITCH_HERO, self.refresh_forbid_switch_hero_state, self)
+end
+
+function ui:check_switch_hero(keycode, force)
+  if SceneMgr:check_is_switching_hero() then
+    return
+  end
+  if not force and not SceneMgr:check_switch_hero() then
+    return
+  end
+  local hero = self:get_hero_by_poskey(keycode)
+  if not (hero and hero.can_show_up) or hero:is_die() then
+    return
+  end
+  local pos = KEYCODE2POS[keycode]
+  if not force and self:_get_in_switch_cd(pos) then
+    return
+  end
+  local state_mgr = Global.hero.state_manager
+  local die_state = state_mgr:get_die_state()
+  if state_mgr:is_die_state() and die_state:in_animation() and not force then
+    return
+  end
+  return true
+end
+
+function ui:do_switch_hero(keycode, force)
+  if not self:check_switch_hero(keycode, force) then
+    return
+  end
+  self.v_switch_down_block = true
+  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.ON_INPUT, keycode)
+end
+
+function ui:force_switch_hero(keycode, force)
+  if not self:check_switch_hero(keycode, force) then
+    return
+  end
+  local hero = self:get_hero_by_poskey(keycode)
+  SceneMgr:change_hero_state(hero, Config.HERO_STATE.IN_CONTROL, keycode, true)
+end
+
+function ui:get_team_skill_percent()
+  return self.v_parent_ui:get_team_skill_percent()
+end
+
+function ui:force_update_head()
+  for _, head in pairs(self.v_heads) do
+    if head:visible() then
+      local hero = SceneMgr:get_hero_by_uuid(head.hero_uuid)
+      head:set_hero_head(hero)
+      self:update_single_head_qte_effect(head)
+      head:update_hero_hp()
+    end
+  end
+end
+
+function ui:update_hero_head_hp()
+  for _, head in pairs(self.v_heads) do
+    if head:visible() then
+      head:update_hero_hp()
+    end
+  end
+end
+
+function ui:get_hero_by_poskey(key)
+  local idx = KEYCODE2POS[key]
+  local temp_head = self.v_heads[idx]
+  if temp_head and temp_head.hero_uuid then
+    return SceneMgr:get_hero_by_uuid(temp_head.hero_uuid)
+  elseif Global.hero:get_is_robot_hero() then
+    local _, hero = next(SceneMgr:get_hero_list())
+    return hero
+  end
+end
+
+function ui:get_keycode_by_uuid(uuid)
+  for i, temp_head in pairs(self.v_heads) do
+    if temp_head.hero_uuid == uuid then
+      for keycode, index in pairs(KEYCODE2POS) do
+        if index == i then
+          return keycode
+        end
+      end
+    end
+  end
+end
+
+function ui:get_qet_skill_energy()
+  local skill = self.v_qet_skills[Global.hero.uuid]
+  return skill.cur_energy, skill.max_energy
+end
+
+function ui:update_normal_atk_energy(delta_time)
+  for _, v in pairs(self.v_heads) do
+    if v:visible() then
+      v:update_normal_atk_energy(delta_time)
+    end
+  end
+end
+
+function ui:reset_head_cd()
+  for _, v in pairs(self.v_heads) do
+    if v:visible() then
+      v:reset_head_cd()
+    end
+  end
+end
+
+function ui:force_reset_head_info()
+  for _, v in pairs(self.v_heads) do
+    v:set_enable(false)
+  end
+  self:_update_hero_team_pos()
+end
+
+function ui:response_hero_go_out()
+  self.v_skill_mgr = Global.hero.skill_mgr
+  local attr_mgr = Global.hero.attr_mgr
+  self.v_parent_ui:update_fight_skill_list()
+  self.v_switch_up_block = nil
+  self.v_parent_ui:refresh()
+end
+
+function ui:_update_hero_team_pos()
+  local hero_list = SceneMgr:get_hero_list()
+  local pos = 1
+  for uuid, hero in pairs(hero_list) do
+    if uuid ~= Global.hero_uuid then
+      self.v_heads[pos]:set_enable(true, hero)
+      pos = pos + 1
+    end
+    local hero_uuid2skill_list = BattleSkillBookMgr:get_hero_btn_skill_map()
+    local skill_list = hero_uuid2skill_list[uuid]
+    if skill_list then
+      self.v_qet_skills[uuid] = skill_list[QTE_SHOW_SKILL_IDX]
+      self.v_out_atk_skills[uuid] = skill_list[SWITHC_ATK_SKILL_IDX]
+    end
+  end
+end
+
+function ui:_get_in_switch_cd(pos)
+  local head = self.v_heads[pos]
+  return head:in_switch_cd() or head:in_qet_cd() or head:is_on_charge()
+end
+
+function ui:_inner_switch_hero(head)
+end
+
+function ui:response_change_hero_team_pos(msg)
+  self:_update_hero_team_pos()
+  local uuid = msg.mm_x
+  local not_refresh_parent = msg.mm_y
+  if not_refresh_parent then
+    return
+  end
+  self.v_parent_ui:update_fight_skill_list(uuid)
+end
+
+function ui:response_hero_go_background(hero, keycode, reset)
+  self.v_switch_down_block = nil
+  local idx = KEYCODE2POS[keycode]
+  local temp_head = self.v_heads[idx]
+  local hero_uuid = temp_head and temp_head:get_target_hero_uuid()
+  if hero_uuid ~= hero.uuid or reset then
+    local old_hero = SceneMgr:get_hero_by_uuid(hero.uuid)
+    temp_head:set_hero_head(old_hero, reset)
+    self:update_single_head_qte_effect(temp_head)
+    if not reset then
+      temp_head:in_switch_cd(true)
+    end
+  end
+  self.v_parent_ui:reset_btn_update_state()
+  self.v_parent_ui:check_cur_hero_skill_update()
+end
+
+function ui:_response_do_switch_hero(msg)
+end
+
+function ui:_response_forced_switch_hero()
+  for _, v in pairs(self.v_heads) do
+    if v:visible() then
+      local hero = SceneMgr:get_hero_by_uuid(v.hero_uuid)
+      if hero and hero:get_team_pos() == DEFAULT_STARTING_POS then
+        self:do_switch_hero(v.keycode)
+        return
+      end
+    end
+  end
+end
+
+function ui:_response_input(msg)
+  local keycode = msg.mm_x
+  local qte_idx = KEYCODE2POS[keycode]
+  if not qte_idx or 3 == qte_idx then
+  elseif qte_idx < 3 then
+    self:do_switch_hero(keycode)
+  else
+    local hero = self.v_heads[qte_idx - 3]:get_hero()
+    if hero and self:get_ult_skill_enabled(hero.uuid) then
+      hero:set_by_ult_change(true)
+      self:do_switch_hero(keycode - 43)
+    end
+  end
+end
+
+function ui:_response_on_go_out_role(msg)
+  self:force_reset_head_info()
+end
+
+function ui:_response_cast_skill(msg)
+  if not Global.hero or Global.hero:is_die() then
+    return
+  end
+  local skill_id = msg.mm_x
+  local uuid = Global.hero.uuid
+  if self.v_qet_skills[uuid].skill_id == skill_id then
+    for _, v in pairs(self.v_heads) do
+      if v:visible() then
+        v:in_qet_cd(true)
+      end
+    end
+  elseif self.v_out_atk_skills[uuid].skill_id == skill_id then
+    for _, v in pairs(self.v_heads) do
+      if v:visible() then
+        v:in_switch_cd(true)
+      end
+    end
+  end
+end
+
+function ui:refresh_forbid_switch_hero_state()
+  local hero_list = SceneMgr:get_hero_list()
+  if not hero_list or not next(hero_list) then
+    return
+  end
+  local is_switch = SceneMgr:check_switch_hero()
+  for i = 1, 2 do
+    local head = self.v_heads[i]
+    head:set_forbid_switch_hero_effect_visible(self:check_show_forbid_switch_view(i) and not is_switch)
+  end
+end
+
+function ui:check_show_forbid_switch_view(idx)
+  local head = self.v_heads[idx]
+  if head:visible() then
+    local hero = SceneMgr:get_hero_by_uuid(head.hero_uuid)
+    if hero and hero:is_die() then
+      return false
+    end
+  end
+  return true
+end
+
+function ui:update_forbid_switch_hero_time()
+  local is_switch = SceneMgr:check_switch_hero()
+  if is_switch then
+    return
+  end
+  if not BuffMgr then
+    return
+  end
+  local trigger_time, life_time = BuffMgr:get_forbid_switch_hero_time()
+  if not trigger_time or not life_time then
+    return
+  end
+  local percent = trigger_time / life_time
+  for i = 1, 2 do
+    local head = self.v_heads[i]
+    head:set_forbid_switch_hero_effect_visible(self:check_show_forbid_switch_view(i) and not is_switch)
+    head.v_uicompents.ForbidSwitchHero_img.fillAmount = percent
+  end
+end
+
+function ui:on_charge_start(keycode)
+  local pos = KEYCODE2POS[keycode]
+  local head = self.v_heads[pos]
+  head:on_charge_start()
+end
+
+function ui:set_charge_info(keycode, cd_param)
+  local pos = KEYCODE2POS[keycode]
+  local head = self.v_heads[pos]
+  head:set_charge_info(cd_param)
+end
+
+function ui:on_charge_done(keycode)
+  local pos = KEYCODE2POS[keycode]
+  local head = self.v_heads[pos]
+  head:on_charge_done()
+end
+
+function ui:ui_on_destroy()
+  self.v_heads = nil
+  self.v_skill_mgr = nil
+end
+
+function ui:reset_heal_effect()
+  if self.v_heads then
+    for key, head in pairs(self.v_heads) do
+      head:reset_heal_effect()
+    end
+  end
+end
+
+function ui:set_ult_skill_enabled(uuid, enabled)
+  if self.v_heads then
+    for key, head in pairs(self.v_heads) do
+      if uuid == head.hero_uuid then
+        head:set_ult_skill_enabled(enabled)
+        break
+      end
+    end
+  end
+end
+
+function ui:init_ult_skill_enabled(uuid, enabled)
+  if self.v_heads then
+    for key, head in pairs(self.v_heads) do
+      if uuid == head.hero_uuid then
+        head:init_ult_skill_enabled(enabled)
+        break
+      end
+    end
+  end
+end
+
+function ui:get_ult_skill_enabled(uuid)
+  return self.v_parent_ui:get_ult_skill_enabled(uuid)
+end
+
+function ui:change_ult_effect(uuid, state)
+  for key, head in pairs(self.v_heads) do
+    if uuid == head.hero_uuid then
+      head:change_ult_effect(state)
+      break
+    end
+  end
+end
+
+function ui:get_energy_obj()
+  return self:get_auto_cache(TEAM_ENERGY_TEMPLETE)
+end
+
+function ui:give_back_energy_obj(obj)
+  if obj:IsNull() then
+    return
+  end
+  obj.transform:SetParent(self.v_uiobjects.TempleteRoot.transform)
+  if self.v_auto_cache_to_key[obj] then
+    self:give_back_auto_cache_obj(TEAM_ENERGY_TEMPLETE, obj)
+  end
+end
+
+function ui:recover_head_max_energy()
+  for k, head in pairs(self.v_heads) do
+    head:recover_max_energy()
+  end
+end
+
+function ui:update_single_head_qte_effect(head)
+  local cur_priority, priority_map, uuid, qte_effect
+  uuid = head.hero_uuid
+  priority_map = self.v_qte_effect_priority_map[uuid]
+  if priority_map then
+    cur_priority = self.v_qte_max_priority[head.hero_uuid]
+    if cur_priority and priority_map[cur_priority] then
+      qte_effect = priority_map[cur_priority]
+    end
+  end
+  if qte_effect then
+    head:set_active_qte_effect(qte_effect)
+  else
+    head:release_qte_effect_by_fade(qte_effect)
+  end
+end
+
+function ui:update_qte_effect()
+  for key, head in pairs(self.v_heads) do
+    self:update_single_head_qte_effect(head)
+  end
+end
+
+function ui:clear_qte_effect(uuid)
+  self.v_qte_effect_priority_map[uuid] = nil
+  self.v_qte_max_priority[uuid] = nil
+end
+
+function ui:set_qte_effect_active(uuid, priority, enable, effect_name)
+  priority = math.min(priority, MAX_EFFECT_PRIORITY)
+  local priority_map = self.v_qte_effect_priority_map[uuid] or {}
+  if not self.v_qte_effect_priority_map[uuid] then
+    self.v_qte_effect_priority_map[uuid] = priority_map
+  end
+  local target_head
+  for key, head in pairs(self.v_heads) do
+    if uuid == head.hero_uuid then
+      target_head = head
+      break
+    end
+  end
+  local need_release = false
+  local cur_priority = self.v_qte_max_priority[uuid] or -1
+  local next_proprity = self.v_qte_max_priority[uuid] or -1
+  if enable then
+    if priority >= cur_priority then
+      if priority_map[cur_priority] and priority_map[cur_priority] ~= effect_name then
+        need_release = true
+      end
+      self.v_qte_max_priority[uuid] = priority
+      next_proprity = priority
+    else
+      next_proprity = cur_priority
+    end
+    priority_map[priority] = effect_name
+  else
+    if cur_priority == priority and priority_map[priority] then
+      need_release = true
+    end
+    priority_map[priority] = nil
+    for i = MAX_EFFECT_PRIORITY, 1, -1 do
+      if priority_map[i] then
+        next_proprity = i
+        break
+      end
+    end
+  end
+  if next_proprity and priority_map[next_proprity] then
+    if target_head then
+      if need_release then
+        target_head:release_qte_effect()
+      end
+      target_head:set_active_qte_effect(priority_map[next_proprity])
+    end
+    self.v_qte_max_priority[uuid] = next_proprity
+  else
+    if target_head and need_release then
+      target_head:release_qte_effect_by_fade()
+    end
+    self.v_qte_max_priority[uuid] = -1
+  end
+end
+
+return ui

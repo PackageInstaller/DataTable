@@ -1,0 +1,183 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local INFINITE_REWARD_ITEM_CLASS = require("uimodule.chapter.infinite.infinite_reward_item")
+local INFINITE_REWARD_ITEM_KEY = "INFINITE_REWARD_ITEM_KEY"
+local REWARD_STATE = {
+  NONE = 1,
+  CAN_RECEIVE = 2,
+  RECEIVED = 3
+}
+local MODEL = {
+  v_reward_lv = {
+    "RewardLvNum",
+    BIND_TYPE.TEXT
+  },
+  v_max_obj = {
+    "MaxObj",
+    BIND_TYPE.OBJECT
+  },
+  v_exp_layout = {
+    "ExpLayout",
+    BIND_TYPE.OBJECT
+  },
+  v_now_exp = {
+    "ExpNow",
+    BIND_TYPE.TEXT
+  },
+  v_max_exp = {
+    "ExpMax",
+    BIND_TYPE.TEXT
+  },
+  v_exp_bar_img = {
+    "ExpBarFill",
+    BIND_TYPE.IMAGE
+  },
+  v_reward_tem = {
+    "RewardTem",
+    BIND_TYPE.OBJECT
+  },
+  v_reward_content = {
+    "RewardContent",
+    BIND_TYPE.OBJECT
+  },
+  v_btn_all_get = {
+    "BtnAllGet",
+    BIND_TYPE.BUTTON
+  },
+  v_all_get_desc = {
+    "AllGetDesc",
+    BIND_TYPE.TEXT
+  },
+  v_reward_scroll = {
+    "RewardScroll",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnAllGet", function()
+    Network:call("c2gs_get_infinite_addition_award", {
+      infinite_id = self.v_infinite_id,
+      level = 0
+    }, function(ok, resp)
+      if ok then
+        ChapterMgr:remove_inf_reward_lv(self.v_infinite_id, resp.removed_award_lv)
+        self:refresh_base_info()
+        self:refresh_reward_item_info()
+      end
+    end)
+  end)
+  self:set_button("ItemBtn", function()
+    local infinite_cfg = ShareRes.get_inf_chapter_cfg(self.v_infinite_id)
+    UIMgr:get_ui("itemTip"):ui_show({
+      item_id = infinite_cfg.CostId
+    })
+  end)
+  self:register_exist_auto_template(INFINITE_REWARD_ITEM_KEY, self.v_reward_tem, self.v_reward_content)
+end
+
+function ui:ui_on_show(infinite_id)
+  self.v_infinite_id = infinite_id
+  self.v_award_group_cfg_list = ChapterMgr:get_inf_award_group_cfg_list(self.v_infinite_id)
+  self:refresh_base_info()
+  self:refresh_reward_item_info()
+  self:refresh_scroll_pos()
+end
+
+function ui:ui_on_hide()
+  self:remove_wrap_list()
+  self:unregister_template(INFINITE_REWARD_ITEM_KEY)
+end
+
+function ui:refresh_base_info()
+  local infinite_cfg = ShareRes.get_inf_chapter_cfg(self.v_infinite_id)
+  local infinite_info = ChapterMgr:get_inf_chapter_data(self.v_infinite_id)
+  local can_receive_award_ids = infinite_info.addition_award_ids
+  local current_lv = infinite_info.addition_award_lv or 0
+  self.v_reward_lv.text = current_lv
+  local next_lv_cfg = self.v_award_group_cfg_list[current_lv + 1]
+  if nil == next_lv_cfg then
+    next_lv_cfg = self.v_award_group_cfg_list[current_lv]
+  end
+  local now_exp = BagMgr:get_item_num(infinite_cfg.CostId)
+  local max_exp = next_lv_cfg.CostCnt
+  if not next_lv_cfg.IsLoop then
+    self.v_exp_layout:SetActive(true)
+    self.v_max_obj:SetActive(false)
+    self.v_all_get_desc.gameObject:SetActive(false)
+    self.v_now_exp.text = now_exp
+    self.v_max_exp.text = max_exp
+    self.v_exp_bar_img.fillAmount = now_exp / max_exp
+  else
+    self.v_exp_layout:SetActive(false)
+    self.v_max_obj:SetActive(true)
+    self.v_all_get_desc.gameObject:SetActive(true)
+    local content = string.format("每%d点可领取一份", max_exp)
+    self.v_all_get_desc.text = Util.format_str(content)
+    self.v_exp_bar_img.fillAmount = 1
+  end
+  local light_img = self:get_child_gameobj("Image", self.v_btn_all_get.gameObject)
+  local mask_img = self:get_child_gameobj("Mask", self.v_btn_all_get.gameObject)
+  if can_receive_award_ids then
+    if next(can_receive_award_ids) or now_exp >= max_exp then
+      self.v_btn_all_get.interactable = true
+      light_img:SetActive(true)
+      mask_img:SetActive(false)
+    else
+      self.v_btn_all_get.interactable = false
+      light_img:SetActive(false)
+      mask_img:SetActive(true)
+    end
+  else
+    self.v_btn_all_get.interactable = false
+    light_img:SetActive(false)
+    mask_img:SetActive(true)
+  end
+end
+
+function ui:refresh_reward_item_info()
+  self:give_back_auto_cache(INFINITE_REWARD_ITEM_KEY)
+  self.v_reward_item_list = {}
+  for _, award_cfg in ipairs(self.v_award_group_cfg_list) do
+    local reward_item = self:get_auto_cache(INFINITE_REWARD_ITEM_KEY)
+    local reward_item_lua_obj = INFINITE_REWARD_ITEM_CLASS:ui_wrap_ex(self, reward_item, false)
+    reward_item_lua_obj:set_enable(true, self.v_infinite_id, award_cfg)
+    table.insert(self.v_reward_item_list, reward_item_lua_obj)
+  end
+end
+
+function ui:refresh_scroll_pos()
+  local item_index = 1
+  for index, item_lua_obj in ipairs(self.v_reward_item_list) do
+    local state = item_lua_obj:get_item_state()
+    if state then
+      if state == REWARD_STATE.CAN_RECEIVE then
+        item_index = index
+        break
+      elseif state == REWARD_STATE.NONE then
+        item_index = index
+        break
+      end
+    end
+  end
+  local reward_scroll_rect = Util.get_scrollrect(nil, self.v_reward_scroll)
+  local len = #self.v_reward_item_list
+  if 1 == item_index then
+    reward_scroll_rect.horizontalNormalizedPosition = 0
+  elseif item_index >= len - 2 and item_index <= len then
+    reward_scroll_rect.horizontalNormalizedPosition = 1
+  else
+    reward_scroll_rect.horizontalNormalizedPosition = item_index / (len - 1)
+  end
+end
+
+function ui:remove_wrap_list()
+  for _, obj in pairs(self.v_reward_item_list) do
+    self:remove_wrap_ui(obj)
+  end
+  self.v_reward_item_list = {}
+end
+
+return ui

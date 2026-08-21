@@ -1,0 +1,331 @@
+local Base = require("ui.uiobject")
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local ShopCfg = require("uimodule.shop.shop_config")
+local ui = Util.create_child_mt(Base)
+local CT_Timer = Global.ct_timer
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_buy_limit = {
+    "BuyLimit",
+    BIND_TYPE.OBJECT
+  },
+  v_curr_icon = {
+    "CurrIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_discount_num = {
+    "DiscountNum",
+    BIND_TYPE.OBJECT
+  },
+  v_discount_bg = {
+    "DiscountBg",
+    BIND_TYPE.IMAGE
+  },
+  v_discount = {
+    "Discount",
+    BIND_TYPE.TEXT
+  },
+  v_discount_desc = {
+    "DiscountDesc",
+    BIND_TYPE.TEXT
+  },
+  v_gift_name = {
+    "GiftName",
+    BIND_TYPE.TEXT
+  },
+  v_icon = {
+    "Icon",
+    BIND_TYPE.IMAGE
+  },
+  v_limit_type = {
+    "LimitDesc",
+    BIND_TYPE.TEXT
+  },
+  v_limit_max = {
+    "LimitMax",
+    BIND_TYPE.TEXT
+  },
+  v_limit_now = {
+    "LimitNow",
+    BIND_TYPE.TEXT
+  },
+  v_price_num = {
+    "PriceNum",
+    BIND_TYPE.TEXT
+  },
+  v_price = {
+    "Price",
+    BIND_TYPE.OBJECT
+  },
+  v_remaining_time = {
+    "RemainingTime",
+    BIND_TYPE.TEXT
+  },
+  v_time = {
+    "time",
+    BIND_TYPE.OBJECT
+  }
+}
+local LIMIT_TYPES = ShopCfg.GIFT_LIMIT_TYPES
+local TIPS_TYPE = ShopCfg.GIFT_TIPS_TYPE
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_tog = Util.get_toggle(nil, self.v_object)
+  self:set_toggle_listener(self.v_tog, function(isOn)
+    self:_on_click_tog(isOn)
+  end)
+  self.v_canvas_group = self:get_canvas_group(nil, self.v_object)
+end
+
+function ui:ui_on_show(cfg, ...)
+  if not cfg then
+    return
+  end
+end
+
+function ui:ui_on_hide()
+  if self.v_reset_timer then
+    CT_Timer:remove_timer(self.v_reset_timer)
+    self.v_reset_timer = nil
+  end
+  if self.v_sq then
+    self.v_sq:Kill()
+  end
+end
+
+function ui:set_linked_parent(parent)
+  self.v_linked_parent = parent
+end
+
+function ui:set_data(go, data_list, index)
+  self.v_gift_cfg = data_list[index]
+  self.v_is_blank = next(self.v_gift_cfg) == nil
+  if self.v_is_blank then
+    self.v_uiobjects.DefaultBg:SetActive(true)
+    self.v_uiobjects.SkinContent:SetActive(false)
+    self.v_uiobjects.GiftBg:SetActive(false)
+    return
+  end
+  self.v_canvas_group.alpha = 0
+  self.v_reach_limit = Shop_Helper.check_sold_out(self.v_gift_cfg)
+  self:_set_goods_info()
+  self:_set_limit_info()
+  self:_set_time()
+  self:_set_discount()
+  self:_set_soldout()
+  self:_set_redpoint()
+  self.v_tog.isOn = false
+  self:_set_ani(index)
+  self:_set_eff_obj()
+  self:_regist_client_event()
+end
+
+local enough_color = Util.CommonColor_White
+local not_enough_color = Util.CommonColor_RedWarm
+
+function ui:_set_goods_info()
+  ResMgr:load_set_icon(self.v_icon, self.v_gift_cfg.Icon)
+  self.v_gift_name.text = self.v_gift_cfg.Name
+  local condition_pass = Condition:check_condition(self.v_gift_cfg.Condition)
+  self.v_price:SetActive(condition_pass)
+  self.v_curr_icon:SetActive(condition_pass and not self.v_gift_cfg.ShowPrice and self.v_gift_cfg.CostItem)
+  self.v_uiobjects.Condition:SetActive(not condition_pass)
+  if not condition_pass then
+    self.v_uicompents.Condition_txt.text = self.v_gift_cfg.LockDesc
+  elseif self.v_gift_cfg.ShowPrice then
+    local price = Shop_Helper.get_goods_price(self.v_gift_cfg)
+    self.v_price_num.text = string.format("<size=20>%s</size> %s", Shop_Helper.get_money_symbol(self.v_gift_cfg), price)
+    self.v_price_num.color = enough_color
+  elseif self.v_gift_cfg.CostItem then
+    ResMgr:load_set_icon(self.v_curr_icon, Shop_Helper.get_item_icon(self.v_gift_cfg.CostItem))
+    local is_enough = BagMgr:get_cost_enough(self.v_gift_cfg.CostItem, self.v_gift_cfg.CostItemNum)
+    self.v_price_num.text = self.v_gift_cfg.CostItemNum
+    self.v_price_num.color = is_enough and enough_color or not_enough_color
+  else
+    self.v_price_num.text = Util.format_str("免费")
+    self.v_price_num.color = enough_color
+  end
+end
+
+function ui:_set_limit_info()
+  local is_limit = self.v_gift_cfg.BuyLimit ~= nil
+  self.v_buy_limit:SetActive(is_limit)
+  if not is_limit then
+    return
+  end
+  self.v_limit_type.text = self.v_gift_cfg.ResetType and LIMIT_TYPES[self.v_gift_cfg.ResetType] or Util.format_str("限购")
+  self.v_limit_now.text = RechargeMgr:get_gift_buy_count(self.v_gift_cfg.Id)
+  self.v_limit_max.text = self.v_gift_cfg.BuyLimit
+end
+
+function ui:_set_time()
+  if self.v_reach_limit then
+    self.v_time:SetActive(false)
+    return
+  end
+  local end_time = self.v_gift_cfg.EndTime and Date.get_time_stamp_by_scheme_id(self.v_gift_cfg.EndTime) or 0
+  local has_time = Util.is_more_than_zero(end_time)
+  self.v_time:SetActive(has_time)
+  if not has_time then
+    return
+  end
+  if self.v_reset_timer then
+    CT_Timer:remove_timer(self.v_reset_timer)
+    self.v_reset_timer = nil
+  end
+  local total_sec = end_time - Date.server_time()
+  if total_sec <= 0 then
+    self.v_time:SetActive(false)
+    return
+  end
+  self.v_has_time = true
+  self.v_remaining_time.text = Date.get_time_formate_2(total_sec)
+  self.v_reset_timer = CT_Timer:add_timer("reset_timer", total_sec, function(sec)
+    if sec > 0 then
+      self.v_remaining_time.text = Date.get_time_formate_2(sec)
+    else
+      if self.v_reset_timer then
+        CT_Timer:remove_timer(self.v_reset_timer)
+        self.v_reset_timer = nil
+      end
+      MsgGame:mq_publish2(Const.MSG_ON_TIME_CUT_FINISH)
+    end
+  end)
+end
+
+function ui:_set_discount()
+  local has_tag = self.v_gift_cfg.ShowTag
+  self.v_discount_bg:SetActive(has_tag)
+  self.v_uiobjects.TitleBg:SetActive(self.v_has_time or has_tag)
+  local item_quality_cfg = ShareRes.create("item.item_quality", self.v_gift_cfg.GiftQuality)
+  if self.v_uicompents.GiftBg_img then
+    local bg_path = item_quality_cfg.GiftBoxBgIcon
+    self.v_uicompents.QualityLight_img.color = Util.get_unity_color_by_hex(tonumber(item_quality_cfg.ExchangeColor, 16))
+    ResMgr:load_set_icon(self.v_uicompents.GiftBg_img, bg_path)
+  end
+  if not has_tag then
+    return
+  end
+  local tag_cfg = ShareRes.create("recharge.gift_tag", self.v_gift_cfg.ShowTag)
+  if tag_cfg.TagBgIcon == "" then
+    self.v_discount_bg:SetActive(false)
+    return
+  end
+  ResMgr:load_set_icon(self.v_discount_bg, tag_cfg.TagBgIcon, nil, false)
+  self.v_discount_num:SetActive(self.v_gift_cfg.Discount)
+  if self.v_gift_cfg.Discount then
+    local lab = self.v_gift_cfg.Discount
+    self.v_discount.text = lab
+    self.v_discount_desc.gameObject:SetActive(false)
+  else
+    local lab = tag_cfg.Name
+    self.v_discount_desc.text = lab
+    self.v_discount_desc.gameObject:SetActive(true)
+  end
+end
+
+function ui:_set_soldout()
+  if not self.v_reach_limit then
+    self.v_canvas_group.alpha = 1
+    self.v_uiobjects.SoldOut:SetActive(false)
+    return
+  end
+  self.v_canvas_group.alpha = 0.5
+  self.v_uiobjects.SoldOut:SetActive(true)
+  self.v_discount_bg:SetActive(false)
+end
+
+function ui:_set_redpoint()
+  if not self.v_uiobjects.RedPoint then
+    return
+  end
+  self.v_uiobjects.RedPoint:SetActive(not self.v_reach_limit and not self.v_gift_cfg.CostItem and not self.v_gift_cfg.ShowPrice)
+end
+
+function ui:_set_eff_obj()
+  local blur_obj = Util.get_child_gameobj("Fx_GiftBg_Blue", self.v_uiobjects.GiftBg)
+  local pur_obj = Util.get_child_gameobj("Fx_GiftBg_Pur", self.v_uiobjects.GiftBg)
+  local gold_obj = Util.get_child_gameobj("Fx_GiftBg_Gold", self.v_uiobjects.GiftBg)
+  if not blur_obj then
+    return
+  end
+  blur_obj:SetActive(false)
+  pur_obj:SetActive(false)
+  gold_obj:SetActive(false)
+  if not self.v_reach_limit and self.v_gift_cfg.GiftQuality ~= nil then
+    if self.v_gift_cfg.GiftQuality <= 3 then
+      blur_obj:SetActive(true)
+    elseif self.v_gift_cfg.GiftQuality <= 4 then
+      pur_obj:SetActive(true)
+    elseif self.v_gift_cfg.GiftQuality <= 5 then
+      gold_obj:SetActive(true)
+    end
+  end
+end
+
+function ui:_set_ani(index)
+  if self.v_sq then
+    self.v_sq:Kill()
+  end
+  if not self.v_linked_parent:get_need_ani() then
+    self.v_canvas_group.alpha = 1
+    return
+  end
+  local ra = 0 == index % 2 and math.floor(index / 2) - 1 or math.floor(index / 2)
+  self.v_sq = Util.create_sequence()
+  self.v_sq:AppendInterval(0.1 * ra)
+  self.v_sq:Append(self.v_canvas_group:DOFade(1, 0.1))
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_HIDE_UI, self._response_hide_ui, self)
+end
+
+function ui:_response_hide_ui(msg)
+  local ui_name = msg.mm_obj
+  if "gift_shop_tips" ~= ui_name then
+    return
+  end
+  if not self.v_visible then
+    return
+  end
+  self.v_tog.isOn = false
+end
+
+function ui:_on_click_tog(isOn)
+  if self.v_reach_limit then
+    return
+  end
+  if not isOn then
+    return
+  end
+  if self.v_uiobjects.SkinContent then
+    if self.v_is_blank then
+      return
+    end
+    UIMgr:try_hide_ui("gift_shop_tips")
+    Shop_Helper.jump_to_gift_shop(self.v_gift_cfg)
+  else
+    UIMgr:get_ui("gift_shop_tips"):ui_show(TIPS_TYPE.DETAIL, self.v_gift_cfg)
+  end
+end
+
+function ui:force_onclick()
+  self.v_tog.isOn = true
+  self:_on_click_tog(true)
+end
+
+function ui:play_in_eff()
+  self.v_object:SetActive(true)
+end
+
+function ui:eff_init()
+  self.v_object:SetActive(false)
+end
+
+function ui:is_visible_item()
+  return self.v_visible
+end
+
+return ui

@@ -1,0 +1,292 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local CharSpecialImagePath = "UICharSpecial/%s/%s"
+local CharSpecialSliderItemKey = "CharSpecialSliderItemKey"
+local CharSpecialRecordItemKey = "CharSpecialRecordItemKey"
+local SliderNormalImage = "test1"
+local SliderActiveImage = "test"
+local _tinsert = table.insert
+local SliderAcitveImageList = {
+  [0] = "Fight_roleui_02",
+  "Fight_roleui_001",
+  "Fight_roleui_002",
+  "Fight_roleui_003",
+  "Fight_roleui_001",
+  "Fight_roleui_002",
+  "Fight_roleui_003"
+}
+local RecordAcitveImageList = {
+  [0] = "test0",
+  "Fight_roleui_icon_yf01",
+  "Fight_roleui_icon_yf2",
+  "Fight_roleui_icon_yf03",
+  "Fight_roleui_icon_yf01",
+  "Fight_roleui_icon_yf2",
+  "Fight_roleui_icon_yf03"
+}
+local ItemType = {
+  None = 0,
+  Blue = 1,
+  Purple = 2,
+  Orange = 3,
+  BlueVirtual = 4,
+  PurpleVirtual = 5,
+  OrangeVirtual = 6
+}
+local CHAR_ENERGY1 = 201
+local CHAR_ENERGY2 = 202
+local CAST_SKILL_LIST = {
+  [100101441] = true,
+  [100101442] = true,
+  [100101443] = true
+}
+local RESET_ADD_RECORD_MAGIC_ID = 1014182
+local SPECIAL_RECORD_MAGIC_ID = 1014191
+local FULL_ENENGY_CAST_SKILL = 100101444
+
+function ui:ui_finish_load()
+  self:set_slider_attr_ids(CHAR_ENERGY1, CHAR_ENERGY2)
+  self.v_slider_item_num = 3
+  self.v_record_item_num = 3
+  self.v_slider_now_val = 0
+  self.v_now_area_record_idx = 1
+  self.v_slider_now_area_idx = 1
+  self.v_slider_com = self:get_slider(nil, self.v_uiobjects.SliderArea)
+  self.v_now_character_id = 1001014
+  self:init_slide()
+  self:init_slider_area_data()
+  self:init_record_area_data()
+end
+
+function ui:ui_on_show()
+  self:refresh_slider_area_ui()
+  self:refresh_slider_val()
+  self:refresh_record_area_ui()
+  self:register_event()
+end
+
+function ui:init_slide()
+  local area_val = 1 / self.v_slider_item_num
+  self.v_slider_area_val_list = {
+    [0] = 0
+  }
+  for i = 1, self.v_slider_item_num - 1 do
+    self.v_slider_area_val_list[i] = i * area_val
+  end
+  self.v_slider_area_val_list[self.v_slider_item_num] = 1
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_HERO_ATTR_CHANGE, self.response_hero_attr_change, self)
+end
+
+function ui:refresh_slider_val()
+  local now_val = Global.hero.attr_mgr:get_attr(self.v_slider_min_attr_id)
+  local max_val = Global.hero.attr_mgr:get_attr(self.v_slider_max_attr_id)
+  local result_val = now_val / max_val
+  self:change_now_slider_val(result_val)
+end
+
+function ui:response_hero_attr_change(msg)
+  if not msg then
+    return
+  end
+  local attr_type = msg.mm_x
+  if self.v_slider_min_attr_id == attr_type then
+    local now_val = Global.hero.attr_mgr:get_attr(attr_type)
+    local max_val = Global.hero.attr_mgr:get_attr(self.v_slider_max_attr_id)
+    local result_val = now_val / max_val
+    self:change_now_slider_val(result_val)
+  end
+end
+
+function ui:response_hero_cast_skill(msg)
+  if not msg then
+    return
+  end
+  local skill_id = msg.mm_x
+  if CAST_SKILL_LIST[skill_id] then
+    self:add_record_area(self.v_slider_now_area_idx)
+  end
+  if skill_id == FULL_ENENGY_CAST_SKILL then
+    self:reset_record_area_list()
+  end
+end
+
+function ui:set_slider_attr_ids(min_val_attr_id, max_val_attr_id)
+  self.v_slider_min_attr_id = min_val_attr_id
+  self.v_slider_max_attr_id = max_val_attr_id
+end
+
+function ui:clear_slider_attr_ids()
+  self.v_slider_min_attr_id = nil
+  self.v_slider_max_attr_id = nil
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+  self.v_record_item_list = nil
+  self.v_slider_item_list = nil
+  self.v_slider_area_val_list = nil
+  self.v_slider_com = nil
+end
+
+function ui:init_slider_area_data()
+  self.v_slider_item_list = {}
+  for i = 1, self.v_slider_item_num do
+    local init_type
+    if i > 1 then
+      init_type = ItemType.None
+    else
+      init_type = i
+    end
+    self.v_slider_item_list[i] = {type = init_type}
+  end
+end
+
+function ui:refresh_slider_area_ui()
+  for i = 1, self.v_slider_item_num do
+    local slider_item_go = self.v_uiobjects["SliderItem" .. i]
+    local lua_go = self.v_slider_item_list[i]
+    lua_go.go = slider_item_go
+    local type = lua_go.type
+    self:change_item_ui(slider_item_go, type)
+  end
+end
+
+function ui:init_record_area_data()
+  self.v_record_item_list = {}
+  for i = 1, self.v_record_item_num do
+    self.v_record_item_list[i] = {
+      type = ItemType.None
+    }
+  end
+end
+
+function ui:refresh_record_area_ui()
+  for i = 1, self.v_record_item_num do
+    local record_item_go = self.v_uiobjects["RecordItem" .. i]
+    local lua_go = self.v_record_item_list[i]
+    lua_go.go = record_item_go
+    local type = lua_go.type
+    self:change_record_item_ui(record_item_go, type)
+  end
+end
+
+function ui:add_record_area(data)
+  if self.v_now_area_record_idx > self.v_record_item_num then
+    return
+  end
+  local now_idx = self.v_now_area_record_idx
+  local item = self.v_record_item_list[now_idx]
+  local pre_idx = now_idx - 1
+  local pre_item = self.v_record_item_list[pre_idx]
+  local go = item.go
+  if not pre_item or pre_item.type ~= data then
+    item.type = data
+    self:change_record_item_ui(go, data)
+    self.v_now_area_record_idx = self.v_now_area_record_idx + 1
+  end
+end
+
+function ui:change_record_area(idx, data)
+  if idx <= 0 or idx > self.v_record_item_num then
+    Log.Error("idx is not exist!")
+    return
+  end
+  local type = data
+  local go = self.v_record_item_list[idx].go
+  self.v_record_item_list[idx].type = type
+  self:change_record_item_ui(go, type)
+end
+
+function ui:remove_record_area(idx)
+  if idx <= 0 or idx > self.v_record_item_num then
+    Log.Error("idx is not exist!")
+    return
+  end
+  local go = self.v_record_item_list[idx].go
+  self.v_record_item_list[idx].type = ItemType.None
+  self:change_record_item_ui(go, ItemType.None)
+end
+
+function ui:get_record_area(idx)
+  return self.v_record_item_list[idx]
+end
+
+function ui:get_silder_area_idx()
+  for i = 1, self.v_record_item_num do
+    local area_min_val = self.v_slider_area_val_list[i - 1]
+    local area_max_val = self.v_slider_area_val_list[i]
+    if area_min_val <= self.v_slider_now_val and area_max_val >= self.v_slider_now_val then
+      return i
+    end
+  end
+end
+
+function ui:change_now_slider_val(new_val)
+  self.v_slider_now_val = new_val
+  local new_area_idx = self:get_silder_area_idx(new_val)
+  if self.v_slider_now_area_idx and self.v_slider_now_area_idx ~= new_area_idx then
+    self:change_slider_item(self.v_slider_now_area_idx, false)
+  end
+  self.v_slider_now_area_idx = new_area_idx
+  self:change_slider_item(new_area_idx, true)
+  self.v_slider_com.value = new_val
+end
+
+function ui:change_slider_item(idx, is_show)
+  if idx <= 0 or idx > self.v_slider_item_num then
+    Log.Error("idx is not exist!")
+    return
+  end
+  local item = self.v_slider_item_list[idx]
+  local go = item.go
+  local change_type
+  if is_show then
+    change_type = idx
+  else
+    change_type = ItemType.None
+  end
+  self.v_slider_item_list[idx].type = change_type
+  self:change_item_ui(go, change_type)
+end
+
+function ui:change_item_ui(go, type)
+end
+
+function ui:change_record_item_ui(go, type)
+  if type == ItemType.None then
+    go:SetActive(false)
+    return
+  end
+  go:SetActive(true)
+  local image_com = Util.get_image("Icon", go)
+  local image_name = RecordAcitveImageList[type]
+  local icon_path = string.format(CharSpecialImagePath, self.v_now_character_id, image_name)
+  ResMgr:load_set_icon(image_com, icon_path)
+end
+
+function ui:reset_record_area_list()
+  for _, item in pairs(self.v_record_item_list) do
+    local type = ItemType.None
+    item.type = type
+    local go = item.go
+    self:change_record_item_ui(go, type)
+  end
+  self.v_now_area_record_idx = 1
+end
+
+function ui:change_data(data)
+  for i = 1, self.v_record_item_num do
+    local type = 0
+    if data[i] then
+      type = data[i]
+    end
+    self:change_record_area(i, type)
+  end
+end
+
+return ui

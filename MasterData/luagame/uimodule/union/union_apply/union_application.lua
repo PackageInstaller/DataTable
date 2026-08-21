@@ -1,0 +1,82 @@
+local Base = require("ui.uibase")
+local LoopListClass = require("ui.widget.infinite_loop_list")
+local ItemClass = require("uimodule.union.union_apply.union_apply_item")
+local UnionCfg = require("uimodule.union.union_config")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_apply_join = {
+    "ApplyJoin",
+    BIND_TYPE.TOGGLE
+  },
+  v_direct_join = {
+    "DirectJoin",
+    BIND_TYPE.TOGGLE
+  }
+}
+local JOIN_MODE = UnionCfg.CHANGE_UNION_TYPE.JOIN_MODE
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_toggle_listener(self.v_apply_join, function(isOn)
+    self:_onclick_apply_jion(isOn)
+  end)
+  self:set_toggle_listener(self.v_direct_join, function(isOn)
+    self:_onclick_direct_jion(isOn)
+  end)
+  self.v_list_view = LoopListClass:new(self, self.v_uiobjects.ApplyScroll, ItemClass, nil, true)
+end
+
+function ui:ui_on_show()
+  self.v_join_mode = UnionMgr:get_union_join_mode()
+  local need_apply = self.v_join_mode == UnionCfg.JOIN_MODE.CHAIRMAN_APPROVAL
+  self.v_apply_join.isOn = need_apply
+  self.v_direct_join.isOn = not need_apply
+  UnionMgr:request_get_join_union_applicants(function()
+    self:_set_apply_list()
+  end)
+  self:_regist_client_event()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_UNION_APPLY_HANDLED, self._response_handle_apply, self)
+end
+
+function ui:ui_on_hide()
+  self.v_list_view:ui_on_hide()
+  self.v_join_mode = nil
+end
+
+function ui:ui_on_destroy()
+  self.v_list_view:ui_on_destroy()
+end
+
+function ui:_set_apply_list()
+  UnionMgr:get_is_union_full()
+  local list = UnionMgr:get_join_union_appliants()
+  table.sort(list, function(a, b)
+    return a.apply_time > b.apply_time
+  end)
+  self.v_uiobjects.NoApply:SetActive(0 == #list)
+  self.v_list_view:refresh_data(list)
+end
+
+function ui:_onclick_apply_jion(isOn)
+  if isOn and self.v_join_mode ~= UnionCfg.JOIN_MODE.CHAIRMAN_APPROVAL then
+    self.v_join_mode = UnionCfg.JOIN_MODE.CHAIRMAN_APPROVAL
+    UnionMgr:request_change_union_info(JOIN_MODE, UnionCfg.JOIN_MODE.CHAIRMAN_APPROVAL)
+  end
+end
+
+function ui:_onclick_direct_jion(isOn)
+  if isOn and self.v_join_mode ~= UnionCfg.JOIN_MODE.PASS then
+    self.v_join_mode = UnionCfg.JOIN_MODE.PASS
+    UnionMgr:request_change_union_info(JOIN_MODE, UnionCfg.JOIN_MODE.PASS)
+  end
+end
+
+function ui:_response_handle_apply()
+  self:_set_apply_list()
+end
+
+return ui

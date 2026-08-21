@@ -1,0 +1,39 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show()
+end
+
+function ui:set_data(obj, list, index)
+  local data = list[index]
+  local clue_id = data.id
+  local icon_path, quality_path = UtilUI.get_item_icon(clue_id, true)
+  local cur_time = Date.server_time()
+  local time_str = Date.get_time_desc(data.expire_time - cur_time, true)
+  local clue_icon = self.v_uicompents.ClueIcon_img
+  local bg_icon = self.v_uicompents.QualityBg_img
+  local time_txt = self.v_uicompents.Time_txt
+  self:set_button_listener(nil, function()
+    UIMgr:get_ui("itemTip"):ui_show({
+      item_id = data.id,
+      is_hide_get_way = true,
+      jump_cb = function()
+        self.v_parent_ui:ui_hide()
+      end
+    })
+  end)
+  time_txt.text = time_str
+  ResMgr:load_set_icon(clue_icon, icon_path)
+  ResMgr:load_set_icon(bg_icon, quality_path)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+return ui

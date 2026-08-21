@@ -1,0 +1,1773 @@
+local t = {
+  [601001] = {
+    BuyCostCnt = 250,
+    BuyCostId = 500001,
+    ChildEquip = {},
+    Event = {},
+    FixedEntry = {601001},
+    Icon = "1x0101",
+    Id = 601001,
+    Magic = {},
+    Magic_Desc = "",
+    Name = "攻击组件",
+    NewType = 1,
+    Parents = {
+      602001,
+      602005,
+      602006,
+      602007,
+      602011,
+      602012,
+      602013
+    },
+    Quality = 3,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 99,
+    Skill = {}
+  },
+  [601002] = {
+    BuyCostCnt = 250,
+    BuyCostId = 500001,
+    ChildEquip = {},
+    Event = {},
+    FixedEntry = {601002},
+    Icon = "1x0102",
+    Id = 601002,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "异常组件",
+    NewType = 1,
+    Parents = {
+      602002,
+      602005,
+      602008,
+      602009,
+      602011,
+      602014,
+      602015
+    },
+    Quality = 3,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 98,
+    Skill = {}
+  },
+  [601003] = {
+    BuyCostCnt = 250,
+    BuyCostId = 500001,
+    ChildEquip = {},
+    Event = {},
+    FixedEntry = {601003},
+    Icon = "1x0103",
+    Id = 601003,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "能量组件",
+    NewType = 1,
+    Parents = {
+      602003,
+      602006,
+      602008,
+      602010,
+      602012,
+      602014,
+      602016
+    },
+    Quality = 3,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 97,
+    Skill = {}
+  },
+  [601004] = {
+    BuyCostCnt = 250,
+    BuyCostId = 500001,
+    ChildEquip = {},
+    Event = {},
+    FixedEntry = {601004},
+    Icon = "1x0104",
+    Id = 601004,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "暴击组件",
+    NewType = 1,
+    Parents = {
+      602004,
+      602007,
+      602009,
+      602010,
+      602013,
+      602015,
+      602016
+    },
+    Quality = 3,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 96,
+    Skill = {}
+  },
+  [601101] = {
+    BuyCostCnt = 250,
+    BuyCostId = 500001,
+    ChildEquip = {},
+    Event = {},
+    FixedEntry = {601101},
+    Icon = "1x0201",
+    Id = 601101,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "防御组件",
+    NewType = 2,
+    Parents = {
+      602113,
+      602112,
+      602101,
+      602105,
+      602106,
+      602107,
+      602111
+    },
+    Quality = 3,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 95,
+    Skill = {}
+  },
+  [601102] = {
+    BuyCostCnt = 250,
+    BuyCostId = 500001,
+    ChildEquip = {},
+    Event = {},
+    FixedEntry = {601102},
+    Icon = "1x0202",
+    Id = 601102,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "血量组件",
+    NewType = 2,
+    Parents = {
+      602115,
+      602114,
+      602102,
+      602105,
+      602108,
+      602109,
+      602111
+    },
+    Quality = 3,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 94,
+    Skill = {}
+  },
+  [601103] = {
+    BuyCostCnt = 250,
+    BuyCostId = 500001,
+    ChildEquip = {},
+    Event = {},
+    FixedEntry = {601103},
+    Icon = "1x0203",
+    Id = 601103,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "治疗组件",
+    NewType = 2,
+    Parents = {
+      602116,
+      602114,
+      602112,
+      602103,
+      602106,
+      602108,
+      602110
+    },
+    Quality = 3,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 93,
+    Skill = {}
+  },
+  [601104] = {
+    BuyCostCnt = 250,
+    BuyCostId = 500001,
+    ChildEquip = {},
+    Event = {},
+    FixedEntry = {601104},
+    Icon = "1x0204",
+    Id = 601104,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "移速组件",
+    NewType = 2,
+    Parents = {
+      602116,
+      602115,
+      602113,
+      602104,
+      602107,
+      602109,
+      602110
+    },
+    Quality = 3,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 200
+    },
+    ShowPriority = 92,
+    Skill = {}
+  },
+  [602001] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601001, 601001},
+    Event = {},
+    FixedEntry = {602001},
+    Icon = "2x010101",
+    Id = 602001,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "攻击组件·攻",
+    NewType = 1,
+    Parents = {
+      603008,
+      603011,
+      603006
+    },
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 91,
+    Skill = {}
+  },
+  [602002] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601002, 601002},
+    Event = {},
+    FixedEntry = {602002},
+    Icon = "2x010202",
+    Id = 602002,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "异常组件·异",
+    NewType = 1,
+    Parents = {603010},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 90,
+    Skill = {}
+  },
+  [602003] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601003, 601003},
+    Event = {},
+    FixedEntry = {602003},
+    Icon = "2x010303",
+    Id = 602003,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "能量组件·能",
+    NewType = 1,
+    Parents = {
+      603008,
+      603007,
+      603005
+    },
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 89,
+    Skill = {}
+  },
+  [602004] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601004, 601004},
+    Event = {},
+    FixedEntry = {602004},
+    Icon = "2x010404",
+    Id = 602004,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "暴击组件·暴",
+    NewType = 1,
+    Parents = {603009, 603016},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 88,
+    Skill = {}
+  },
+  [602005] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601001, 601002},
+    Event = {},
+    FixedEntry = {602005},
+    Icon = "2x010102",
+    Id = 602005,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "攻击组件·异",
+    NewType = 1,
+    Parents = {603013},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 87,
+    Skill = {}
+  },
+  [602006] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601001, 601003},
+    Event = {},
+    FixedEntry = {602006},
+    Icon = "2x010103",
+    Id = 602006,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "攻击组件·能",
+    NewType = 1,
+    Parents = {
+      603004,
+      603003,
+      603002
+    },
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 86,
+    Skill = {}
+  },
+  [602007] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601001, 601004},
+    Event = {},
+    FixedEntry = {602007},
+    Icon = "2x010104",
+    Id = 602007,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "攻击组件·暴",
+    NewType = 1,
+    Parents = {
+      603012,
+      603004,
+      603003
+    },
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 85,
+    Skill = {}
+  },
+  [602008] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601002, 601003},
+    Event = {},
+    FixedEntry = {602008},
+    Icon = "2x010203",
+    Id = 602008,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "异常组件·能",
+    NewType = 1,
+    Parents = {},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 84,
+    Skill = {}
+  },
+  [602009] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601002, 601004},
+    Event = {},
+    FixedEntry = {602009},
+    Icon = "2x010204",
+    Id = 602009,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "异常组件·暴",
+    NewType = 1,
+    Parents = {},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 83,
+    Skill = {}
+  },
+  [602010] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601003, 601004},
+    Event = {},
+    FixedEntry = {602010},
+    Icon = "2x010304",
+    Id = 602010,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "能量组件·暴",
+    NewType = 1,
+    Parents = {603015, 603006},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 82,
+    Skill = {}
+  },
+  [602011] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601002, 601001},
+    Event = {},
+    FixedEntry = {602011},
+    Icon = "2x010201",
+    Id = 602011,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "异常组件·攻",
+    NewType = 1,
+    Parents = {603013},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 81,
+    Skill = {}
+  },
+  [602012] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601003, 601001},
+    Event = {},
+    FixedEntry = {602012},
+    Icon = "2x010301",
+    Id = 602012,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "能量组件·攻",
+    NewType = 1,
+    Parents = {603014, 603015},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 80,
+    Skill = {}
+  },
+  [602013] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601004, 601001},
+    Event = {},
+    FixedEntry = {602013},
+    Icon = "2x010401",
+    Id = 602013,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "暴击组件·攻",
+    NewType = 1,
+    Parents = {603014, 603001},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 79,
+    Skill = {}
+  },
+  [602014] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601003, 601002},
+    Event = {},
+    FixedEntry = {602014},
+    Icon = "2x010302",
+    Id = 602014,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "能量组件·异",
+    NewType = 1,
+    Parents = {},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 78,
+    Skill = {}
+  },
+  [602015] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601004, 601002},
+    Event = {},
+    FixedEntry = {602015},
+    Icon = "2x010402",
+    Id = 602015,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "暴击组件·异",
+    NewType = 1,
+    Parents = {},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 77,
+    Skill = {}
+  },
+  [602016] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601004, 601003},
+    Event = {},
+    FixedEntry = {602016},
+    Icon = "2x010403",
+    Id = 602016,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "暴击组件·能",
+    NewType = 1,
+    Parents = {603005, 603002},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 76,
+    Skill = {}
+  },
+  [602017] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {},
+    Event = {},
+    FixedEntry = {602017},
+    Icon = "2x0101pro",
+    Id = 602017,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "总攻击组件",
+    NewType = 1,
+    Parents = {
+      603011,
+      603016,
+      603007
+    },
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 75,
+    Skill = {}
+  },
+  [602018] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {},
+    Event = {},
+    FixedEntry = {602018},
+    Icon = "2x0102pro",
+    Id = 602018,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "总异常组件",
+    NewType = 1,
+    Parents = {603010},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 74,
+    Skill = {}
+  },
+  [602019] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {},
+    Event = {},
+    FixedEntry = {602019},
+    Icon = "2x0104pro",
+    Id = 602019,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "暴击伤害组件",
+    NewType = 1,
+    Parents = {
+      603009,
+      603012,
+      603001
+    },
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 73,
+    Skill = {}
+  },
+  [602101] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601101, 601101},
+    Event = {},
+    FixedEntry = {602101},
+    Icon = "2x020101",
+    Id = 602101,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "防御组件·防",
+    NewType = 2,
+    Parents = {603102, 603110},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 72,
+    Skill = {}
+  },
+  [602102] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601102, 601102},
+    Event = {},
+    FixedEntry = {602102},
+    Icon = "2x020202",
+    Id = 602102,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "血量组件·血",
+    NewType = 2,
+    Parents = {603101, 603115},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 71,
+    Skill = {}
+  },
+  [602103] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601103, 601103},
+    Event = {},
+    FixedEntry = {602103},
+    Icon = "2x020303",
+    Id = 602103,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "治疗组件·疗",
+    NewType = 2,
+    Parents = {603103, 603106},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 70,
+    Skill = {}
+  },
+  [602104] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601104, 601104},
+    Event = {},
+    FixedEntry = {602104},
+    Icon = "2x020404",
+    Id = 602104,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "移速组件·速",
+    NewType = 2,
+    Parents = {603104, 603112},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 69,
+    Skill = {}
+  },
+  [602105] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601101, 601102},
+    Event = {},
+    FixedEntry = {602105},
+    Icon = "2x020102",
+    Id = 602105,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "防御组件·血",
+    NewType = 2,
+    Parents = {603103, 603108},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 68,
+    Skill = {}
+  },
+  [602106] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601101, 601103},
+    Event = {},
+    FixedEntry = {602106},
+    Icon = "2x020103",
+    Id = 602106,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "防御组件·疗",
+    NewType = 2,
+    Parents = {610000, 603116},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 67,
+    Skill = {}
+  },
+  [602107] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601101, 601104},
+    Event = {},
+    FixedEntry = {602107},
+    Icon = "2x020104",
+    Id = 602107,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "防御组件·速",
+    NewType = 2,
+    Parents = {603114},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 66,
+    Skill = {}
+  },
+  [602108] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601102, 601103},
+    Event = {},
+    FixedEntry = {602108},
+    Icon = "2x020203",
+    Id = 602108,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "血量组件·疗",
+    NewType = 2,
+    Parents = {603102, 603106},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 65,
+    Skill = {}
+  },
+  [602109] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601102, 601104},
+    Event = {},
+    FixedEntry = {602109},
+    Icon = "2x020204",
+    Id = 602109,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "血量组件·速",
+    NewType = 2,
+    Parents = {603109, 603110},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 64,
+    Skill = {}
+  },
+  [602110] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601103, 601104},
+    Event = {},
+    FixedEntry = {602110},
+    Icon = "2x020304",
+    Id = 602110,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "治疗组件·速",
+    NewType = 2,
+    Parents = {603112},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 63,
+    Skill = {}
+  },
+  [602111] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601102, 601101},
+    Event = {},
+    FixedEntry = {602111},
+    Icon = "2x020201",
+    Id = 602111,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "血量组件·防",
+    NewType = 2,
+    Parents = {603109, 603113},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 62,
+    Skill = {}
+  },
+  [602112] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601103, 601101},
+    Event = {},
+    FixedEntry = {602112},
+    Icon = "2x020301",
+    Id = 602112,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "治疗组件·防",
+    NewType = 2,
+    Parents = {603108, 603113},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 61,
+    Skill = {}
+  },
+  [602113] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601104, 601101},
+    Event = {},
+    FixedEntry = {602113},
+    Icon = "2x020401",
+    Id = 602113,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "移速组件·防",
+    NewType = 2,
+    Parents = {603107, 603114},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 60,
+    Skill = {}
+  },
+  [602114] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601103, 601102},
+    Event = {},
+    FixedEntry = {602114},
+    Icon = "2x020302",
+    Id = 602114,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "治疗组件·血",
+    NewType = 2,
+    Parents = {603111},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 59,
+    Skill = {}
+  },
+  [602115] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601104, 601102},
+    Event = {},
+    FixedEntry = {602115},
+    Icon = "2x020402",
+    Id = 602115,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "移速组件·血",
+    NewType = 2,
+    Parents = {603101, 603105},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 58,
+    Skill = {}
+  },
+  [602116] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {601104, 601103},
+    Event = {},
+    FixedEntry = {602116},
+    Icon = "2x020403",
+    Id = 602116,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "移速组件·疗",
+    NewType = 2,
+    Parents = {603105, 603107},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 57,
+    Skill = {}
+  },
+  [602117] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {},
+    Event = {},
+    FixedEntry = {602117},
+    Icon = "2x0201pro",
+    Id = 602117,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "总防御组件",
+    NewType = 2,
+    Parents = {603104, 603115},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 56,
+    Skill = {}
+  },
+  [602118] = {
+    BuyCostCnt = 500,
+    BuyCostId = 500001,
+    ChildEquip = {},
+    Event = {},
+    FixedEntry = {602118},
+    Icon = "2x0203pro",
+    Id = 602118,
+    Magic = nil,
+    Magic_Desc = "",
+    Name = "治疗加成组件",
+    NewType = 2,
+    Parents = {610000, 603116},
+    Quality = 4,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 400
+    },
+    ShowPriority = 55,
+    Skill = {}
+  },
+  [603001] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602013, 602019},
+    Event = {},
+    FixedEntry = {603001},
+    Icon = "3x0101",
+    Id = 603001,
+    Magic = {6020003},
+    Magic_Desc = "对满血的敌人造成伤害增加100%",
+    Name = "红石斧",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 54,
+    Skill = {}
+  },
+  [603002] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602016, 602006},
+    Event = {},
+    FixedEntry = {603002},
+    Icon = "3x0102",
+    Id = 603002,
+    Magic = {6020027},
+    Magic_Desc = "造成伤害时，30%概率触发一次雷击，攻击力10%伤害，同一个目标每0.5秒只能触发一次",
+    Name = "雷击锤",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 53,
+    Skill = {}
+  },
+  [603003] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602007, 602006},
+    Event = {},
+    FixedEntry = {603003},
+    Icon = "3x0103",
+    Id = 603003,
+    Magic = {6020004},
+    Magic_Desc = "使用普攻击杀一个敌人后，下一次技能造成伤害+30%",
+    Name = "山德拉之眼",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 52,
+    Skill = {}
+  },
+  [603004] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602006, 602007},
+    Event = {},
+    FixedEntry = {603004},
+    Icon = "3x0104",
+    Id = 603004,
+    Magic = {6020005},
+    Magic_Desc = "每造成五次有效伤害，下一次普攻附加攻击力25%的异常伤害",
+    Name = "日冕",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 51,
+    Skill = {}
+  },
+  [603005] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602003, 602016},
+    Event = {},
+    FixedEntry = {603005},
+    Icon = "3x0105",
+    Id = 603005,
+    Magic = {6020006},
+    Magic_Desc = "技能命中时，获得一层buff，最高叠加5层。施放大招时消耗所有buff层数，每层增加技能伤害5%。",
+    Name = "增压击锤",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 50,
+    Skill = {}
+  },
+  [603006] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602010, 602001},
+    Event = {},
+    FixedEntry = {603006},
+    Icon = "3x0106",
+    Id = 603006,
+    Magic = {6020007},
+    Magic_Desc = "当目标拥有霸体值时，额外对霸体造成攻击力3%的属性伤害",
+    Name = "机关弩",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 49,
+    Skill = {}
+  },
+  [603007] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602003, 602017},
+    Event = {},
+    FixedEntry = {603007},
+    Icon = "3x0107",
+    Id = 603007,
+    Magic = {6020008},
+    Magic_Desc = "使用对策技后，增加下一次的普攻伤害",
+    Name = "震荡铁锤",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 48,
+    Skill = {}
+  },
+  [603008] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602001, 602003},
+    Event = {},
+    FixedEntry = {603008},
+    Icon = "3x0108",
+    Id = 603008,
+    Magic = {6020009},
+    Magic_Desc = "技能的释放速度-25%，伤害增加50%",
+    Name = "海德之牙",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 47,
+    Skill = {}
+  },
+  [603009] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602004, 602019},
+    Event = {},
+    FixedEntry = {603009},
+    Icon = "3x0109",
+    Id = 603009,
+    Magic = {6020010},
+    Magic_Desc = "怪物血量低于25%时，普通攻击造成额外的属性伤害",
+    Name = "狂暴之刃",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 46,
+    Skill = {}
+  },
+  [603010] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602002, 602018},
+    Event = {},
+    FixedEntry = {603010},
+    Icon = "3x0110",
+    Id = 603010,
+    Magic = {6020011},
+    Magic_Desc = "进入战斗时，额外伤害增加40%，效果在20秒内逐渐衰减至0%",
+    Name = "十字军",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 45,
+    Skill = {}
+  },
+  [603011] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602001, 602017},
+    Event = {},
+    FixedEntry = {603011},
+    Icon = "3x0111",
+    Id = 603011,
+    Magic = {6020012},
+    Magic_Desc = "当单场战斗时间持续到20s时，造成的额外伤害增加40%",
+    Name = "螺旋钥匙",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 44,
+    Skill = {}
+  },
+  [603012] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602007, 602019},
+    Event = {},
+    FixedEntry = {603012},
+    Icon = "3x0112",
+    Id = 603012,
+    Magic = {6020013},
+    Magic_Desc = "当与敌人之间的距离达到10米时，造成的所有伤害+30%",
+    Name = "黄金火铳",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 43,
+    Skill = {}
+  },
+  [603013] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602005, 602011},
+    Event = {},
+    FixedEntry = {603013},
+    Icon = "3x0113",
+    Id = 603013,
+    Magic = {6020014},
+    Magic_Desc = "造成技能伤害后强化下次普攻，造成普攻伤害后强化下次技能攻击，只能存在一项",
+    Name = "祝福之弓",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 42,
+    Skill = {}
+  },
+  [603014] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602013, 602012},
+    Event = {},
+    FixedEntry = {603014},
+    Icon = "3x0114",
+    Id = 603014,
+    Magic = {6020015},
+    Magic_Desc = "生命值低于30%时，攻击力+30%",
+    Name = "亡命者之刃",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 41,
+    Skill = {}
+  },
+  [603015] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602012, 602010},
+    Event = {},
+    FixedEntry = {603015},
+    Icon = "3x0115",
+    Id = 603015,
+    Magic = {6020016},
+    Magic_Desc = "攻击目标施加【流血】效果，造成1%/s最大生命值的持续伤害，持续3s，可刷新",
+    Name = "炼金弯刀",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 40,
+    Skill = {}
+  },
+  [603016] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602004, 602017},
+    Event = {},
+    FixedEntry = {603016},
+    Icon = "3x0116",
+    Id = 603016,
+    Magic = {6020034},
+    Magic_Desc = "进入下一个关卡时，清除大招的能量，按比例回复生命值，一次恢复最高恢复75%",
+    Name = "铁铲铲",
+    NewType = 1,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 39,
+    Skill = {}
+  },
+  [603101] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602115, 602102},
+    Event = {},
+    FixedEntry = {603101},
+    Icon = "3x0201",
+    Id = 603101,
+    Magic = {6020028},
+    Magic_Desc = "进入另一个关卡时，若生命值低于15%，则回复至15%",
+    Name = "林克护甲",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 38,
+    Skill = {}
+  },
+  [603102] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602101, 602108},
+    Event = {},
+    FixedEntry = {603102},
+    Icon = "3x0202",
+    Id = 603102,
+    Magic = {6020033},
+    Magic_Desc = "击杀怪物时，获得大招能量点魔法值",
+    Name = "战技之盾",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 37,
+    Skill = {}
+  },
+  [603103] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602103, 602105},
+    Event = {},
+    FixedEntry = {603103},
+    Icon = "3x0203",
+    Id = 603103,
+    Magic = {6020017},
+    Magic_Desc = "受到致命伤害时，回复50%最大生命值的生命并无敌1s",
+    Name = "亡灵护戒",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 36,
+    Skill = {}
+  },
+  [603104] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602104, 602117},
+    Event = {},
+    FixedEntry = {603104},
+    Icon = "3x0204",
+    Id = 603104,
+    Magic = {6020018},
+    Magic_Desc = "移动速度+20%",
+    Name = "骑兵之靴",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 35,
+    Skill = {}
+  },
+  [603105] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602116, 602115},
+    Event = {},
+    FixedEntry = {603105},
+    Icon = "3x0205",
+    Id = 603105,
+    Magic = {6020019},
+    Magic_Desc = "受伤时，对范围内的敌人造成10%的减速和虚弱效果，虚弱持续3s，减速最多40%",
+    Name = "森之妖精",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 34,
+    Skill = {}
+  },
+  [603106] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602108, 602103},
+    Event = {},
+    FixedEntry = {603106},
+    Icon = "3x0206",
+    Id = 603106,
+    Magic = {6020032},
+    Magic_Desc = "受到致命伤时，消耗全部能量，根据能量多少恢复血量",
+    Name = "逆鳞铠甲",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 33,
+    Skill = {}
+  },
+  [603107] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602113, 602116},
+    Event = {},
+    FixedEntry = {603107},
+    Icon = "3x0207",
+    Id = 603107,
+    Magic = {6020020},
+    Magic_Desc = "击杀怪物时，获得最大生命值3%的护盾值，最高叠加至最大生命值的30%",
+    Name = "蓄能护手",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 32,
+    Skill = {}
+  },
+  [603108] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602105, 602112},
+    Event = {},
+    FixedEntry = {603108},
+    Icon = "3x0208",
+    Id = 603108,
+    Magic = {6020021},
+    Magic_Desc = "每有25%的能量储备，增加5%防御力",
+    Name = "徒手之盾",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 31,
+    Skill = {}
+  },
+  [603109] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602111, 602109},
+    Event = {},
+    FixedEntry = {603109},
+    Icon = "3x0209",
+    Id = 603109,
+    Magic = {6020022},
+    Magic_Desc = "击破霸体时，5s内增加自身50%的攻击力，冷却20s",
+    Name = "斯加德护卫",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 30,
+    Skill = {}
+  },
+  [603110] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602109, 602101},
+    Event = {},
+    FixedEntry = {603110},
+    Icon = "3x0210",
+    Id = 603110,
+    Magic = {6020023},
+    Magic_Desc = "每秒对自身范围x米内的敌人造成固定x点属性伤害。",
+    Name = "诅咒之铠",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 29,
+    Skill = {}
+  },
+  [603111] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602114, 602114},
+    Event = {},
+    FixedEntry = {603111},
+    Icon = "3x0211",
+    Id = 603111,
+    Magic = {6020031},
+    Magic_Desc = "每完成一个房间，回复角色最大生命值2%的生命。",
+    Name = "游侠护甲",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 28,
+    Skill = {}
+  },
+  [603112] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602110, 602104},
+    Event = {},
+    FixedEntry = {603112},
+    Icon = "3x0212",
+    Id = 603112,
+    Magic = {6020024},
+    Magic_Desc = "生命低于30%时，获得0.5s无敌，冷却30s，血量大于50%时补充一次使用次数",
+    Name = "刻耳柏洛斯",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 27,
+    Skill = {}
+  },
+  [603113] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602112, 602111},
+    Event = {},
+    FixedEntry = {603113},
+    Icon = "3x0213",
+    Id = 603113,
+    Magic = {6020029},
+    Magic_Desc = "受到伤害减少40%，但使当前生命值减半，并使当前生命值不会回复超过最大生命值的50%。",
+    Name = "冰川之铠",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 26,
+    Skill = {}
+  },
+  [603114] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602107, 602113},
+    Event = {},
+    FixedEntry = {603114},
+    Icon = "3x0214",
+    Id = 603114,
+    Magic = {6020030},
+    Magic_Desc = "受到攻击时，使自身防御力增加10%，持续3秒，最多叠加3层。",
+    Name = "愚钝者之铠",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 25,
+    Skill = {}
+  },
+  [603115] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602102, 602117},
+    Event = {},
+    FixedEntry = {603115},
+    Icon = "3x0215",
+    Id = 603115,
+    Magic = {6020025},
+    Magic_Desc = "血量高于90%时，攻击力+30%",
+    Name = "哈迪斯",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 24,
+    Skill = {}
+  },
+  [603116] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602106, 602118},
+    Event = {},
+    FixedEntry = {603116},
+    Icon = "3x0216",
+    Id = 603116,
+    Magic = {6020026},
+    Magic_Desc = "当血量低于50%时，获得攻击力10%的吸血效果",
+    Name = "魔药学徒",
+    NewType = 2,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 23,
+    Skill = {}
+  },
+  [610000] = {
+    BuyCostCnt = 1000,
+    BuyCostId = 500001,
+    ChildEquip = {602106, 602118},
+    Event = {},
+    FixedEntry = {609999, 610000},
+    Icon = "3x0216",
+    Id = 610000,
+    Magic = {6020026},
+    Magic_Desc = "当血量低于50%时，获得攻击力10%的吸血效果",
+    Name = "BOOM_GM",
+    NewType = 3,
+    Parents = {},
+    Quality = 5,
+    RandomGroupId = {},
+    SaleAward = {
+      [500001] = 800
+    },
+    ShowPriority = 1,
+    Skill = {}
+  }
+}
+t[601002].Magic = t[601001].Magic
+t[601003].Magic = t[601001].Magic
+t[601004].Magic = t[601001].Magic
+t[601101].Magic = t[601001].Magic
+t[601102].Magic = t[601001].Magic
+t[601103].Magic = t[601001].Magic
+t[601104].Magic = t[601001].Magic
+t[602001].Magic = t[601001].Magic
+t[602002].Magic = t[601001].Magic
+t[602003].Magic = t[601001].Magic
+t[602004].Magic = t[601001].Magic
+t[602005].Magic = t[601001].Magic
+t[602006].Magic = t[601001].Magic
+t[602007].Magic = t[601001].Magic
+t[602008].Magic = t[601001].Magic
+t[602009].Magic = t[601001].Magic
+t[602010].Magic = t[601001].Magic
+t[602011].Magic = t[601001].Magic
+t[602012].Magic = t[601001].Magic
+t[602013].Magic = t[601001].Magic
+t[602014].Magic = t[601001].Magic
+t[602015].Magic = t[601001].Magic
+t[602016].Magic = t[601001].Magic
+t[602017].Magic = t[601001].Magic
+t[602018].Magic = t[601001].Magic
+t[602019].Magic = t[601001].Magic
+t[602101].Magic = t[601001].Magic
+t[602102].Magic = t[601001].Magic
+t[602103].Magic = t[601001].Magic
+t[602104].Magic = t[601001].Magic
+t[602105].Magic = t[601001].Magic
+t[602106].Magic = t[601001].Magic
+t[602107].Magic = t[601001].Magic
+t[602108].Magic = t[601001].Magic
+t[602109].Magic = t[601001].Magic
+t[602110].Magic = t[601001].Magic
+t[602111].Magic = t[601001].Magic
+t[602112].Magic = t[601001].Magic
+t[602113].Magic = t[601001].Magic
+t[602114].Magic = t[601001].Magic
+t[602115].Magic = t[601001].Magic
+t[602116].Magic = t[601001].Magic
+t[602117].Magic = t[601001].Magic
+t[602118].Magic = t[601001].Magic
+return t

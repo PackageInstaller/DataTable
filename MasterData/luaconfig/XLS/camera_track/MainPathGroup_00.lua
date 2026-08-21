@@ -1,0 +1,215 @@
+local empty = {}
+return {
+  PathGroupName = "MainPathGroup_00",
+  AnimatorControllerPath = "Assets/Product/Camera/CameraTrack/Controller/MainPathGroupController_00.controller",
+  AnimatorControllerFileName = "MainPathGroupController_00.controller",
+  pathDatas = {
+    {
+      AnimationState = "MainClip00",
+      AnimationStateReverse = "MainClip00_Inverse",
+      ClipLength = 1.83333337,
+      ClipReverseLength = 1.85,
+      Resolution = 20,
+      Id = 1,
+      WayPointList = {
+        0.97,
+        1.35,
+        5.5,
+        0.5,
+        1.8,
+        6.4,
+        0.0,
+        2.3,
+        7.8
+      }
+    },
+    {
+      AnimationState = "MainClip15",
+      AnimationStateReverse = "MainClip15_Inverse",
+      ClipLength = 1.83333337,
+      ClipReverseLength = 1.85,
+      Resolution = 20,
+      Id = 2,
+      WayPointList = {
+        0.97,
+        1.92485118,
+        6.2,
+        0.8378141,
+        2.14934826,
+        5.37099457,
+        0.0,
+        2.3,
+        7.8
+      }
+    },
+    {
+      AnimationState = "MainCloseToDeskClip00",
+      AnimationStateReverse = "MainCloseToDeskClip00_Inverse",
+      ClipLength = 1.0,
+      ClipReverseLength = 1.0,
+      Resolution = 20,
+      Id = 3,
+      WayPointList = {
+        -1.773,
+        1.4,
+        4.082,
+        -0.8741714,
+        1.83854759,
+        1.92275631
+      }
+    },
+    {
+      AnimationState = "MainClipDeskVinyl",
+      AnimationStateReverse = "MainClipDeskVinyl_Inverse",
+      ClipLength = 0.6666667,
+      ClipReverseLength = 0.6666667,
+      Resolution = 20,
+      Id = 4,
+      WayPointList = {
+        -0.651040435,
+        1.66458023,
+        1.47592676,
+        -0.8741714,
+        1.83854759,
+        1.92275631
+      }
+    },
+    {
+      AnimationState = "MainCloseToDeskClip11",
+      AnimationStateReverse = "MainCloseToDeskClip11_Inverse",
+      ClipLength = 1.0,
+      ClipReverseLength = 1.01666665,
+      Resolution = 20,
+      Id = 5,
+      WayPointList = {
+        -1.767,
+        1.13,
+        4.073,
+        -0.8741714,
+        1.83854759,
+        1.92275631
+      }
+    },
+    {
+      AnimationState = "MainCloseToDeskClip15",
+      AnimationStateReverse = "MainCloseToDeskClip15_Inverse",
+      ClipLength = 1.0,
+      ClipReverseLength = 1.01666665,
+      Resolution = 20,
+      Id = 6,
+      WayPointList = {
+        -1.223,
+        1.8,
+        4.353,
+        -0.8741714,
+        1.83854759,
+        1.92275631
+      }
+    },
+    {
+      AnimationState = "MainCloseToDeskClip20",
+      AnimationStateReverse = "MainCloseToDeskClip20_Inverse",
+      ClipLength = 1.0,
+      ClipReverseLength = 1.01666665,
+      Resolution = 20,
+      Id = 7,
+      WayPointList = {
+        -1.772895,
+        1.608703,
+        4.08222,
+        -0.8741714,
+        1.83854759,
+        1.92275631
+      }
+    },
+    {
+      AnimationState = "MainClip11",
+      AnimationStateReverse = "MainClip11_Inverse",
+      ClipLength = 1.83333337,
+      ClipReverseLength = 1.85,
+      Resolution = 20,
+      Id = 8,
+      WayPointList = {
+        0.97,
+        1.09,
+        4.6,
+        0.5,
+        1.8,
+        6.4,
+        0.0,
+        2.3,
+        7.8
+      }
+    },
+    {
+      AnimationState = "MainClip20",
+      AnimationStateReverse = "MainClip20_Inverse",
+      ClipLength = 1.95,
+      ClipReverseLength = 1.85,
+      Resolution = 20,
+      Id = 9,
+      WayPointList = {
+        0.97,
+        1.4,
+        6.2,
+        0.8378,
+        2.149,
+        5.489233,
+        0.0,
+        2.3,
+        7.8
+      }
+    },
+    {
+      AnimationState = "MainClip23",
+      AnimationStateReverse = "MainClip23_Inverse",
+      ClipLength = 1.83333337,
+      ClipReverseLength = 1.85,
+      Resolution = 20,
+      Id = 10,
+      WayPointList = {
+        0.97,
+        1.68,
+        6.2,
+        0.8378,
+        2.149,
+        5.489233,
+        0.0,
+        2.3,
+        7.8
+      }
+    },
+    {
+      AnimationState = "MainCloseToDeskClip16",
+      AnimationStateReverse = "MainCloseToDeskClip16_Inverse",
+      ClipLength = 1.0,
+      ClipReverseLength = 1.0,
+      Resolution = 20,
+      Id = 11,
+      WayPointList = {
+        -1.773,
+        1.608503,
+        4.082,
+        -0.8741714,
+        1.838548,
+        1.922756
+      }
+    },
+    {
+      AnimationState = "MainCloseToDeskClip23",
+      AnimationStateReverse = "MainCloseToDeskClip23_Inverse",
+      ClipLength = 1.0,
+      ClipReverseLength = 1.0,
+      Resolution = 20,
+      Id = 12,
+      WayPointList = {
+        -1.76847,
+        1.681582,
+        4.091499,
+        -0.8741714,
+        1.838548,
+        1.922756
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+local Base = require("ui.uiobject")
+local LoopListClass = require("ui.widget.infinite_loop_list")
+local GoodsItemClass = require("uimodule.shop.gift_shop.gift_shop_item")
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local ShopCfg = require("uimodule.shop.shop_config")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+
+function ui:ui_finish_load()
+  self:set_button("BtnRetX", function()
+    UIMgr:try_hide_ui("gift_shop_tips")
+  end)
+  self.v_goods_view = LoopListClass:new(self, self.v_uiobjects.GoodsList, GoodsItemClass)
+end
+
+function ui:ui_on_show()
+  self:_set_goods()
+  self:_regist_client_event()
+end
+
+function ui:ui_on_hide()
+  self.v_goods_view:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+  self.v_goods_view:ui_on_destroy()
+end
+
+function ui:_set_goods()
+  local list = {}
+  for i = 1, 3 do
+    local cfg = ShareRes.create("recharge.gift_shop_type")[i]
+    if cfg then
+      for _, v in ipairs(cfg) do
+        if Shop_Helper.check_gift_has_special_item(v, ShopCfg.SKIN_COUPON_ID) then
+          local show = Shop_Helper.check_gift_open(v) and not Shop_Helper.check_sold_out(v)
+          if show then
+            table.insert(list, v)
+          end
+        end
+      end
+    end
+  end
+  table.sort(list, function(a, b)
+    local out_a = Shop_Helper.check_sold_out(a) and 1 or 0
+    local out_b = Shop_Helper.check_sold_out(b) and 1 or 0
+    if out_a == out_b then
+      if a.Priority == b.Priority then
+        return a.Id > b.Id
+      else
+        return a.Priority > b.Priority
+      end
+    else
+      return out_a < out_b
+    end
+  end)
+  if #list < 3 then
+    for i = #list + 1, 3 do
+      table.insert(list, {})
+    end
+  end
+  self.v_need_ani = true
+  self.v_goods_view:refresh_data(list)
+  self.v_need_ani = false
+end
+
+function ui:get_need_ani()
+  return self.v_need_ani
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_TIME_CUT_FINISH, self._response_buy_result, self)
+end
+
+function ui:_response_buy_result()
+  self:_set_goods()
+end
+
+return ui

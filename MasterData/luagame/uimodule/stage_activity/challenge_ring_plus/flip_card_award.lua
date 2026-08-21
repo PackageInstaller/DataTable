@@ -1,0 +1,53 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local CARD_AWARD_KEY = "FLIP_CARD_AWARD_KEY"
+local Item_Helper = require("utils.item_helper")
+local ITEM_ICON_PATH = "Icon/Item/"
+local bagConfig = require("gamelogic.character.fight_bag_configs")
+local ITEM_OBJ_COM = require("uimodule.item.item_obj_com")
+
+function ui:ui_finish_load()
+  self.v_item_list = {}
+  self:set_button("CloseBtn", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(CARD_AWARD_KEY, self.v_uiobjects.ItemObjCom1, self.v_uiobjects.AwardContent)
+end
+
+function ui:ui_on_show(reward_list)
+  self:show_award(reward_list)
+end
+
+function ui:ui_on_hide()
+  for key, item in pairs(self.v_item_list) do
+    item:ui_hide()
+    self:remove_wrap_ui(item)
+  end
+  self.v_item_list = {}
+  UIMgr:try_hide_ui("flip_card")
+end
+
+function ui:show_award(reward_list)
+  if not reward_list then
+    return
+  end
+  self:give_back_auto_cache(CARD_AWARD_KEY)
+  for index, data in ipairs(reward_list) do
+    local item = self:get_auto_cache(CARD_AWARD_KEY)
+    local award_data = {
+      id = data.id,
+      count = data.count,
+      cb = function()
+        UIMgr:get_ui("itemTip"):ui_show({
+          item_id = data.id,
+          is_hide_get_way = true
+        })
+      end
+    }
+    self.v_item_list[index] = ITEM_OBJ_COM:ui_wrap(self, item)
+    self.v_item_list[index]:set_data(award_data)
+  end
+  BagMgr.flip_card_award_list = nil
+end
+
+return ui

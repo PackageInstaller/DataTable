@@ -1,0 +1,112 @@
+return {
+  AllVolume = {
+    StringValue = "AisacControl_04",
+    Value = 0,
+    key = "AllVolume"
+  },
+  BgmFadeInOutVolume = {
+    StringValue = "AisacControl_03",
+    Value = 0,
+    key = "BgmFadeInOutVolume"
+  },
+  BgmVolume = {
+    StringValue = "AisacControl_00",
+    Value = 0,
+    key = "BgmVolume"
+  },
+  Bus1Reverb = {
+    StringValue = "AisacControl_08",
+    Value = 0,
+    key = "Bus1Reverb"
+  },
+  CharacterLevelUp = {
+    StringValue = "sound_upgrade_role",
+    Value = 0,
+    key = "CharacterLevelUp"
+  },
+  ClickSound = {
+    StringValue = "Sound_click_the_mark",
+    Value = 0,
+    key = "ClickSound"
+  },
+  ClickSoundEmpty = {
+    StringValue = "Sound_click_the_empty",
+    Value = 0,
+    key = "ClickSoundEmpty"
+  },
+  HiCut_Voice = {
+    StringValue = "AisacControl_07",
+    Value = 0,
+    key = "HiCut_Voice"
+  },
+  LevelUp = {
+    StringValue = "sound_upgrade_role",
+    Value = 0,
+    key = "LevelUp"
+  },
+  LinkTimeSphere = {
+    StringValue = "AisacControl_14",
+    Value = 0,
+    key = "LinkTimeSphere"
+  },
+  LoginBgm = {
+    StringValue = "bgm_chapter_login",
+    Value = 0,
+    key = "LoginBgm"
+  },
+  PauseVolume = {
+    StringValue = "AisacControl_05",
+    Value = 0,
+    key = "PauseVolume"
+  },
+  RewardVictory = {
+    StringValue = "sound_reward_victory",
+    Value = 0,
+    key = "RewardVictory"
+  },
+  SfxVolume = {
+    StringValue = "AisacControl_01",
+    Value = 0,
+    key = "SfxVolume"
+  },
+  SignInSuc = {
+    StringValue = "sound_signin",
+    Value = 0,
+    key = "SignInSuc"
+  },
+  SkillVolume = {
+    StringValue = "AisacControl_06",
+    Value = 0,
+    key = "SkillVolume"
+  },
+  SpaceTimeChange = {
+    StringValue = "AisacControl_10",
+    Value = 0,
+    key = "SpaceTimeChange"
+  },
+  UISFXVolume = {
+    StringValue = "AisacControl_15",
+    Value = 0,
+    key = "UISFXVolume"
+  },
+  ULT_VoiceLTRFade = {
+    StringValue = "AisacControl_13",
+    Value = 0,
+    key = "ULT_VoiceLTRFade"
+  },
+  ULT_VoiceRTLFade = {
+    StringValue = "AisacControl_12",
+    Value = 0,
+    key = "ULT_VoiceRTLFade"
+  },
+  VoiceVolume = {
+    StringValue = "AisacControl_02",
+    Value = 0,
+    key = "VoiceVolume"
+  },
+  WeaponLevelUp = {
+    StringValue = "sound_upgrade_weapon",
+    Value = 0,
+    key = "WeaponLevelUp"
+  }
+}

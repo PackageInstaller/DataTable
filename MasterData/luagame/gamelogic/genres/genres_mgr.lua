@@ -1,0 +1,301 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+local curse_com_def = require("uimodule.stage_activity.challenge_ring_plus.curse_common_define")
+
+function M:exit_tower()
+  UtilTable.clear_map(self.v_genres_map)
+  UtilTable.clear_map(self.v_ability_map)
+  self.v_have_pop_skill_lv_up_tips = false
+  self.v_last_skill_lv = 1
+end
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_genres_map = {}
+  self.v_ability_map = {}
+  self:sys_mq_bind(Const.MSG_CHANGE_SCENE_SKILL, self.on_scene_skill_change, self)
+  self.v_have_pop_skill_lv_up_tips = false
+  self.v_last_skill_lv = 1
+end
+
+function M:on_scene_skill_change(msg)
+  if not (msg.mm_x and TowerMgr:get_tower()) or TowerMgr:get_fight_type() ~= Config.CommonDefine.CHALLENGE_TYPE.CURSE_CIRCLE or ChallengeRingPlusMgr:is_quick_fight() then
+    return
+  end
+  local scene_skill_data = TowerMgr:get_scene_skill_data()
+  local scene_skill_level = scene_skill_data and scene_skill_data.lv
+  if not self.v_have_pop_skill_lv_up_tips then
+    self.v_have_pop_skill_lv_up_tips = true
+    self.v_last_skill_lv = scene_skill_level
+    return
+  end
+  if scene_skill_level then
+    if scene_skill_level > self.v_last_skill_lv then
+      UIMgr:add_ui_queue_no_repeat(Config.UI_QUEUE_GROUP.Fight_Tips, "scene_skill_lv_up_tips", scene_skill_data)
+    end
+    self.v_last_skill_lv = scene_skill_level
+  end
+end
+
+function M:on_update_genres_data(data)
+  self.v_genres_map = {}
+  self.v_ability_map = {}
+  local sect_module = data.sect_module
+  for index, genres_data in pairs(sect_module) do
+    self.v_genres_map[genres_data.sect_id] = genres_data
+    for key, ability_data in pairs(genres_data.sect_ability) do
+      self.v_ability_map[ability_data.ability_id] = ability_data
+    end
+  end
+  MsgGame:mq_publish2(Const.MSG_ON_GENRES_UPDATE)
+end
+
+function M:on_update_ability_data(data)
+  local ability_data = data.ability_data
+  local ability_id = ability_data.ability_id
+  local ability_cfg = ShareRes.get_ability_cfg(ability_id)
+  if not ability_cfg then
+    Log.Error("获取能力配置失败, 能力id:", ability_id)
+    return
+  end
+  local genres_id = ability_cfg.Sect
+  local genres_data = self.v_genres_map[genres_id]
+  if not genres_data then
+    Log.Error("获取流派数据失败", debug.traceback())
+    return
+  end
+  local have_ability
+  for key, sect_ability_data in pairs(genres_data.sect_ability) do
+    if ability_data.ability_id == sect_ability_data.ability_id then
+      genres_data.sect_ability[key] = ability_data
+      have_ability = true
+      break
+    end
+  end
+  if not have_ability then
+    table.insert(genres_data.sect_ability, ability_data)
+  end
+  self.v_ability_map[ability_data.ability_id] = ability_data
+  MsgGame:mq_publish2(Const.MSG_ON_GENRES_UPDATE)
+  data.award_type = curse_com_def.SOURCE_TO_AWARD_TIP[data.update_reason]
+  ChallengeRingPlusMgr:check_need_push_update_queue(data)
+end
+
+function M:on_buff_ability_drop(data)
+  data.data_type = curse_com_def.CURSE_CHOOSE_ITEM_TYPE.BUFF_ABILITY
+  ChallengeRingPlusMgr:drop_award_data_enqueue(data)
+  ChallengeRingPlusMgr:try_choose_drop_award()
+end
+
+function M:get_genres_data(genres_id)
+  return self.v_genres_map[genres_id]
+end
+
+function M:get_genres_by_ability_id(ability_id)
+  local ability_cfg = ShareRes.get_ability_cfg(ability_id)
+  return self.v_genres_map[ability_cfg.Sect]
+end
+
+function M:get_main_genres()
+  for key, data in pairs(self.v_genres_map) do
+    if data.sect_type == Config.CommonDefine.SECT_TYPE.MAIN_SECT then
+      return data
+    end
+  end
+end
+
+function M:get_main_genres_id()
+  for key, data in pairs(self.v_genres_map) do
+    if data.sect_type == Config.CommonDefine.SECT_TYPE.MAIN_SECT then
+      return data.sect_id
+    end
+  end
+end
+
+function M:get_ability_count(genres_id)
+  if genres_id and 0 ~= genres_id then
+    local genres_data = self.v_genres_map[genres_id]
+    if genres_data then
+      return UtilTable.hash_lenth(genres_data.sect_ability)
+    else
+      return 0
+    end
+  else
+    local count = 0
+    for key, genres_data in pairs(self.v_genres_map) do
+      count = count + UtilTable.hash_lenth(genres_data.sect_ability)
+    end
+    return count
+  end
+end
+
+function M:get_genres_map()
+  return self.v_genres_map
+end
+
+function M:get_ability_grade(ability_id)
+  if self.v_ability_map[ability_id] then
+    return self.v_ability_map[ability_id].ability_grade
+  end
+  Log.Error("获取能力数据失败，能力ID:", ability_id, debug.traceback())
+  return 1
+end
+
+function M:has_ability(ability_id)
+  return self.v_ability_map[ability_id] ~= nil
+end
+
+function M:get_show_ability_list(genres_id)
+  if 0 ~= genres_id then
+    local genres_data = UtilTable.copy_table(self:get_genres_data(genres_id))
+    local list = genres_data.sect_ability
+    return list
+  else
+    local all_data = GenresMgr:get_genres_map()
+    local sort_list = {}
+    for _, genres_data in pairs(all_data) do
+      for _, data in pairs(genres_data.sect_ability) do
+        table.insert(sort_list, data)
+      end
+    end
+    return sort_list
+  end
+end
+
+function M:get_ability_count_by_param(genres_id, quality, count)
+  local ability_id, ability_cfg
+  local ability_count = 0
+  for key, ability_data in pairs(self.v_ability_map) do
+    ability_id = ability_data.ability_id
+    if not Util.is_more_than_zero(genres_id) and not Util.is_more_than_zero(quality) then
+      ability_count = ability_count + 1
+    else
+      ability_cfg = ShareRes.get_ability_cfg(ability_id)
+      if Util.is_more_than_zero(genres_id) and Util.is_more_than_zero(quality) then
+        if ability_cfg.Sect == genres_id and ability_cfg.Quality == quality then
+          ability_count = ability_count + 1
+        end
+      elseif Util.is_more_than_zero(genres_id) then
+        if ability_cfg.Sect == genres_id then
+          ability_count = ability_count + 1
+        end
+      elseif Util.is_more_than_zero(quality) and ability_cfg.Quality == quality then
+        ability_count = ability_count + 1
+      end
+    end
+    if count <= ability_count then
+      return true
+    end
+  end
+  return false
+end
+
+function M:select_drop_ability(ability_index, uuid, cb)
+  Network:call("c2gs_mosaic_ability_by_drop", {ability_index = ability_index}, function(ok, response)
+    if ok then
+      if uuid then
+        ChallengeRingPlusMgr:remove_award_data_on_queue(uuid)
+      end
+      local card_info = ChallengeRingPlusMgr:update_card_ability_drop_data(response)
+      if card_info and card_info.ability_drop_data and not UtilTable.is_empty(card_info.ability_drop_data.ability_drop) then
+        local copy_data = {
+          ability_drop_data = UtilTable.copy_table(card_info.ability_drop_data),
+          data_type = curse_com_def.CURSE_CHOOSE_ITEM_TYPE.ABILITY,
+          uuid = card_info.ability_drop_data.uuid
+        }
+        ChallengeRingPlusMgr:drop_award_data_enqueue(copy_data)
+      end
+      if cb then
+        cb(card_info)
+      end
+    end
+  end)
+end
+
+function M:select_buff_ability(uuid, index, cb)
+  Network:call("c2gs_select_buff_ability", {uuid = uuid, index = index}, function(ok, response)
+    if ok then
+      if uuid then
+        ChallengeRingPlusMgr:remove_award_data_on_queue(uuid)
+      end
+      if response and response.ability_drop_data and not UtilTable.is_empty(response.ability_drop_data.ability_drop) then
+        response.data_type = curse_com_def.CURSE_CHOOSE_ITEM_TYPE.BUFF_ABILITY
+        response.uuid = uuid
+        ChallengeRingPlusMgr:drop_award_data_enqueue(response)
+      end
+      if cb then
+        cb(response)
+      end
+    end
+  end)
+end
+
+function M:refresh_drop_ability(cb)
+  Network:call("c2gs_refresh_ability_drop_list", {}, function(ok)
+    if ok and cb then
+      local card_info = ChallengeRingPlusMgr:get_cur_card_info()
+      local copy_data = {
+        ability_drop_data = UtilTable.copy_table(card_info.ability_drop_data),
+        data_type = curse_com_def.CURSE_CHOOSE_ITEM_TYPE.ABILITY,
+        uuid = card_info.ability_drop_data.uuid
+      }
+      ChallengeRingPlusMgr:replace_award_data_on_queue(copy_data)
+      cb(copy_data)
+    end
+  end)
+end
+
+function M:refresh_task_ability_drop(task_id, cb)
+  Network:call("c2gs_curse_refresh_task_ability_drop", {task_id = task_id}, function(ok)
+    if ok then
+      local curse_task = ChallengeRingPlusMgr:get_curse_task(task_id)
+      local copy_data
+      if curse_task then
+        copy_data = UtilTable.copy_table(curse_task)
+        copy_data.data_type = curse_com_def.CURSE_CHOOSE_ITEM_TYPE.TASK_ABILITY_AWARD
+        copy_data.uuid = copy_data.ability_drop_data.uuid
+      end
+      ChallengeRingPlusMgr:replace_award_data_on_queue(copy_data)
+      if cb then
+        cb(copy_data)
+      end
+    end
+  end)
+end
+
+function M:refresh_buff_ability(uuid, cb)
+  Network:call("c2gs_flush_buff_ability_drop", {uuid = uuid}, function(ok, response)
+    if ok and cb then
+      cb(response)
+    end
+  end)
+end
+
+function M:request_choose_options_ability(index, uuid, cb)
+  Network:call("c2gs_curse_choose_options_ability", {index = index}, function(ok, resp)
+    if ok then
+      if uuid then
+        ChallengeRingPlusMgr:remove_award_data_on_queue(uuid)
+      end
+      if resp.ability_drop_data then
+        if UtilTable.is_empty(resp.ability_drop_data.ability_drop) then
+          MsgGame:mq_publish2(Const.MSG_ON_FATE_BOOK_CHECK_NEXT_START_STEP)
+        else
+          resp.data_type = curse_com_def.CURSE_CHOOSE_ITEM_TYPE.OPTION_ABILITY
+          resp.uuid = resp.ability_drop_data.uuid
+          ChallengeRingPlusMgr:drop_award_data_enqueue(resp)
+        end
+      end
+      if cb then
+        cb(resp)
+      end
+    end
+  end)
+end
+
+function M:request_upgrade_ability(recuperation_id, arg1, cb)
+  local arg = {arg1}
+  ChallengeRingPlusMgr:request_use_recuperation_func(recuperation_id, arg, false, cb)
+end
+
+return M

@@ -1,0 +1,85 @@
+local Json = require("utils.json")
+local UnityWebRequest = UnityEngine.Networking.UnityWebRequest
+local UploadHandlerRaw = UnityEngine.Networking.UploadHandlerRaw
+local DownloadHandlerBuffer = UnityEngine.Networking.DownloadHandlerBuffer
+local lower = string.lower
+local format = string.format
+local _sgsub = string.gsub
+local _sformat = string.format
+local _tconcat = table.concat
+local M = {}
+local SDKSVR_URL = "https://fx-sensitive.mingzhougame.com/checktext"
+local TIME_OUT = 500
+local SUCCESS_CODE = 200
+local CHECK_PASS = "PASS"
+local CHECK_SHIELD = "SHIELD"
+local CHECK_MUTE = "MUTE"
+local APP_KEY = "OV5oF7ggHPTjfHqg"
+local POST_BODY = {text = ""}
+local CommonDef = require("cs_share.common_define")
+
+function M.check_has_sensitive(ui_name, content, callback, check_sensitive_ui_map_name)
+  if not SDKManager:is_use_sdk() then
+    callback(true, content)
+    return
+  end
+  if SDKType == Config.SDK_TYPE.HIVE_SDK then
+    SDKManager:check_sensitive(content, callback, check_sensitive_ui_map_name)
+  else
+    local has_sensitive, filtered_content = SDKManager:check_sensitive(content)
+    if has_sensitive then
+      Util.show_message_tip(1722)
+      Network:call("c2gs_prohibit_words_tsi_log", {
+        text = content,
+        trigger_id = CommonDef.EXAMINE_TEXT_REASON_ID_MAP[check_sensitive_ui_map_name]
+      }, function(ok, resp)
+      end)
+    end
+    callback(not has_sensitive, filtered_content)
+  end
+end
+
+function M._build_post_body(content, text_type)
+  POST_BODY.text = content
+  local body = {}
+  for k, v in pairs(POST_BODY) do
+    body[#body + 1] = _sformat("%s=%s", M.escape(k), M.escape(v))
+  end
+  local sBody = _tconcat(body, "&")
+  return sBody
+end
+
+function M.escape(s)
+  return (_sgsub(s, "([^A-Za-z0-9_])", function(c)
+    return _sformat("%%%02X", string.byte(c))
+  end))
+end
+
+function M._process_result(error, ui_name, ret, callback)
+  if error then
+    M._process_failure_result(ui_name, callback)
+    return
+  end
+  Log.Info("check result ", ret)
+  if ret.RiskLevel ~= CHECK_PASS then
+    Util.show_message_tip(1722)
+  end
+  if callback then
+    if ui_name and not UIMgr:try_get_visible_ui(ui_name) then
+      return
+    end
+    callback(ret.RiskLevel == CHECK_PASS, ret.Text)
+  end
+end
+
+function M._process_failure_result(ui_name, callback)
+  if not callback then
+    return
+  end
+  if ui_name and not UIMgr:try_get_visible_ui(ui_name) then
+    return
+  end
+  callback(true, "")
+end
+
+return M

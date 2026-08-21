@@ -1,0 +1,10 @@
+return {
+  {
+    GroupId = 1,
+    GroupName = "基础属性"
+  },
+  {
+    GroupId = 2,
+    GroupName = "元素增幅"
+  }
+}

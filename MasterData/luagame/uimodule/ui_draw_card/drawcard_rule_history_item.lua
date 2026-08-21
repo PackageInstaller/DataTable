@@ -1,0 +1,42 @@
+local Base = require("ui.uiobject")
+local Helper = require("uimodule.ui_draw_card.drawcard_helper")
+local BagCfg = require("gamelogic.character.fight_bag_configs")
+local M = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_mark_icon = {
+    "MarkIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_name = {
+    "Name",
+    BIND_TYPE.TEXT
+  },
+  v_time = {
+    "Time",
+    BIND_TYPE.TEXT
+  },
+  v_type = {
+    "Type",
+    BIND_TYPE.TEXT
+  }
+}
+
+function M:ui_finish_load()
+  self:init_model(MODEL)
+end
+
+function M:set_data(go, datas, idx)
+  local record_vo = datas[idx]
+  local time = record_vo.time
+  local item_id = record_vo.id
+  self.v_name.text = Helper.get_item_name(item_id)
+  self.v_type.text = Helper.get_item_type_str(item_id)
+  self.v_time.text = os.date("!%Y-%m-%d %H:%M:%S", time)
+  local quality = UtilUI.get_item_qulity(item_id)
+  self.v_name.color = BagCfg.Quality_Color[quality]
+  self.v_type.color = BagCfg.Quality_Color[quality]
+  self.v_time.color = BagCfg.Quality_Color[quality]
+end
+
+return M

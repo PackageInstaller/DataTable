@@ -1,0 +1,28 @@
+local empty = {}
+return {
+  note = empty,
+  awardId = 0,
+  spacing = 3.0,
+  uiType = 3,
+  uiTypeIcon = "UIBattleGame3/唯实社",
+  uiTypeEffect = 1,
+  moveType = 3,
+  isLeftStart = true,
+  isDubbleBtn = false,
+  useOrder = false,
+  useIcon = false,
+  speed = 8.0,
+  nodeNum = 20,
+  nodesA = {
+    {2, 2},
+    {8, 2},
+    {13, 3},
+    {18, 2}
+  },
+  nodesB = empty,
+  orderA = empty,
+  orderB = empty,
+  iconA = empty,
+  iconB = empty,
+  id = 2040
+}

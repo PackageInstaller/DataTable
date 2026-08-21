@@ -1,0 +1,55 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local ITEM_OBJ_COM = require("uimodule.item.item_obj_com")
+local ITEM_TEMP_KEY = "RECULTIVATE_TIPS_ITEM_TEMP_KEY"
+
+function M:ui_finish_load()
+  self:set_button("ResetBtn", function()
+    local is_show = self.v_parent_ui:on_skill_btn_click()
+    self:set_arrow_dir(is_show)
+  end)
+  self.v_item_temp_key = ITEM_TEMP_KEY .. tostring(self)
+  self:register_exist_auto_template(self.v_item_temp_key, self.v_uiobjects.ItemObjCom1, self.v_uiobjects.ListContent)
+end
+
+function M:ui_on_show()
+end
+
+function M:set_type(txt, is_skill)
+  self.v_uicompents.Name_txt.text = txt
+  self.v_uiobjects.ResetBtn:SetActiveEx(true == is_skill)
+  self:set_arrow_dir(false)
+end
+
+function M:set_arrow_dir(is_show)
+  local dir = is_show and 180 or 0
+  self.v_uicompents.ResetBtn_rect:SetLocalEulerY(dir)
+end
+
+function M:set_item_list(item_list)
+  self:give_back_auto_cache(self.v_item_temp_key)
+  self:clear_wrap_items()
+  if item_list then
+    self.v_item_list = {}
+    for i, data in ipairs(item_list) do
+      local obj = self:get_auto_cache(self.v_item_temp_key)
+      local item = ITEM_OBJ_COM:ui_wrap_ex(self, obj, true)
+      item:set_data(data, true, nil, false)
+      table.insert(self.v_item_list, item)
+    end
+  end
+  self:set_enable(0 ~= #item_list)
+end
+
+function M:clear_wrap_items()
+  if self.v_item_list then
+    for idx = #self.v_item_list, 1, -1 do
+      local item = self.v_item_list[idx]
+      item:ui_destroy()
+      self.v_item_list[idx] = nil
+    end
+    self.v_item_list = nil
+  end
+end
+
+return M

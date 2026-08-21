@@ -1,0 +1,29 @@
+local empty = {}
+return {
+  note = "第五章插针1",
+  awardId = 0,
+  spacing = 2.0,
+  uiType = 2,
+  uiTypeIcon = empty,
+  uiTypeEffect = 2,
+  moveType = 1,
+  isLeftStart = true,
+  isDubbleBtn = false,
+  useOrder = false,
+  useIcon = false,
+  speed = 5.0,
+  nodeNum = 21,
+  nodesA = {
+    {5, 1},
+    {10, 2},
+    {7, 1},
+    {17, 2},
+    {14, 1}
+  },
+  nodesB = empty,
+  orderA = empty,
+  orderB = empty,
+  iconA = empty,
+  iconB = empty,
+  id = 2002
+}

@@ -1,0 +1,45 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local FASHION_ITEM_KEY = "FASHION_ITEM_KEY"
+local FASHION_ITEM_CLASS = require("uimodule.archives.fashion_item")
+
+function ui:ui_finish_load()
+  self.v_index = self.v_object:GetInstanceID()
+  self:register_exist_auto_template(FASHION_ITEM_KEY .. self.v_index, self.v_uiobjects.FashionItem, self.v_uiobjects.FashionItemList)
+  self.v_fashion_item_list = {}
+end
+
+function ui:set_data(data)
+  self:remove_wrap_list()
+  for _, info in ipairs(data.list) do
+    local item = self:get_auto_cache(FASHION_ITEM_KEY .. self.v_index)
+    local obj = FASHION_ITEM_CLASS:ui_wrap_ex(self, item, true)
+    obj:set_data(info, data)
+    table.insert(self.v_fashion_item_list, obj)
+  end
+  self.v_uiobjects.EnTitleName:SetActive(data.brand_id)
+  local color = Util.get_unity_color_by_hex(tonumber(data.bg_color, 16))
+  color.a = data.a / 255
+  self.v_uicompents.TitleBg_img.color = color
+  if data.brand_id then
+    self.v_uicompents.EnTitleName_txt.text = data.brand_enname
+    self.v_uicompents.TitleName_txt.text = data.brand_name
+  end
+  if data.buddy_id then
+    self.v_uicompents.TitleName_txt.text = data.buddy_name
+  end
+end
+
+function ui:ui_on_hide()
+  self:remove_wrap_list()
+  self:unregister_template(FASHION_ITEM_KEY .. self.v_index)
+end
+
+function ui:remove_wrap_list()
+  for _, obj in pairs(self.v_fashion_item_list) do
+    self:remove_wrap_ui(obj)
+  end
+  self.v_fishion_time_list = {}
+end
+
+return ui

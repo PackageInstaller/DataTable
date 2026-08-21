@@ -1,0 +1,157 @@
+local Base = require("ui.uiobject")
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local Item_Helper = require("utils.item_helper")
+local ShopCfg = require("uimodule.shop.shop_config")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_card_bg = {
+    "Bg",
+    BIND_TYPE.IMAGE
+  },
+  v_buy_btn = {
+    "BuyBtn",
+    BIND_TYPE.BUTTON
+  },
+  v_random_award_btn = {
+    "RandomAward",
+    BIND_TYPE.BUTTON
+  },
+  v_desc = {
+    "Desc",
+    BIND_TYPE.TEXT
+  },
+  v_give_icon = {
+    "GiveIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_give_num = {
+    "GiveNum",
+    BIND_TYPE.TEXT
+  },
+  v_give_name = {
+    "GiveName",
+    BIND_TYPE.TEXT
+  },
+  v_goods_icon = {
+    "GoodsIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_goods_name = {
+    "GoodsName",
+    BIND_TYPE.TEXT
+  },
+  v_goods_num = {
+    "GoodsNum",
+    BIND_TYPE.TEXT
+  },
+  v_got_flag = {
+    "GotFlag",
+    BIND_TYPE.TEXT
+  },
+  v_price = {
+    "Price",
+    BIND_TYPE.TEXT
+  },
+  v_reamin_days = {
+    "ReaminDays",
+    BIND_TYPE.TEXT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BuyBtn", function()
+    self:_onclick_buy_btn()
+  end)
+  self:set_button("RandomAward", function()
+    self:_onclick_random_award_btn()
+  end)
+  self:set_button("TipsBtn", function()
+    self:_onclick_tips()
+  end)
+  self.v_card_canvas = self:get_canvas_group(nil, self.v_object)
+end
+
+function ui:ui_on_show()
+  self.v_card_cfg = ShareRes.create("recharge.monthly_card", ShopCfg.DF_CARD_TYPE)
+  self:_set_card_bg()
+  self:_set_card_days()
+  self:_set_card_info()
+  self:_regist_client_event()
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.recommond_shop_tog2_UI_SOUND)
+end
+
+function ui:ui_on_hide()
+  self.v_card_canvas.alpha = 0
+end
+
+function ui:_set_card_bg()
+end
+
+function ui:_set_card_days()
+  local has_card = RechargeMgr:get_has_buy_card(self.v_card_cfg.Type)
+  if has_card then
+    self.v_uiobjects.RemainDayBg:SetActive(true)
+    local remain_days = RechargeMgr:get_month_card_remain_days(self.v_card_cfg.Type)
+    self.v_reamin_days.text = Util.format_str("剩余{1}", string.format("<color=#ffd07b>%s天</color>", remain_days))
+    local has_get = RechargeMgr:get_has_recive_reward_today(self.v_card_cfg.Type)
+    if has_get then
+      self.v_got_flag.text = Util.format_str("(已领取)")
+    else
+      self.v_got_flag.text = ""
+    end
+  else
+    self.v_uiobjects.RemainDayBg:SetActive(false)
+    self.v_reamin_days.text = "未生效"
+    self.v_got_flag.text = ""
+  end
+end
+
+function ui:_set_card_info()
+  self.v_price.text = string.format("%s <size=110>%s</size>", Shop_Helper.get_money_symbol(self.v_card_cfg), Shop_Helper.get_goods_price(self.v_card_cfg))
+  local rewards = ShareRes.get_award_item_data(self.v_card_cfg.NormalAwardGroupId)
+  local item_cfg = Item_Helper.get_item_cfg(rewards[1][1])
+  ResMgr:load_set_icon(self.v_goods_icon, Shop_Helper.get_item_icon(rewards[1][1]))
+  self.v_goods_name.text = item_cfg.Name
+  self.v_goods_num.text = rewards[1][2]
+  local extra_rewards = self:_get_award_items(self.v_card_cfg.DailyAwardId)
+  local extra_item_cfg = Item_Helper.get_item_cfg(extra_rewards[1])
+  ResMgr:load_set_icon(self.v_give_icon, Shop_Helper.get_item_icon(extra_rewards[1]))
+  self.v_give_name.text = extra_item_cfg.Name
+  self.v_give_num.text = extra_rewards[2]
+end
+
+function ui:_get_award_items(award_id)
+  local awardid2item = ShareRes.create("award.award", award_id)
+  return {
+    awardid2item.ItemId,
+    awardid2item.Num
+  }
+end
+
+function ui:_onclick_buy_btn()
+  local remain_days = RechargeMgr:get_month_card_remain_days(self.v_card_cfg.Type)
+  if remain_days + self.v_card_cfg.Duration > self.v_card_cfg.Limit then
+    Util.show_message_tip(2274)
+    return
+  end
+  ScreenMaskMgr:open_one_tag(self.v_object.name, 1, false)
+  RechargeMgr:request_buy_product(self.v_card_cfg, function()
+    ScreenMaskMgr:close_one_tag(self.v_object.name)
+  end)
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_CARD_INFO_UPDATE, self._set_card_days, self)
+end
+
+function ui:_onclick_tips()
+  UIMgr:get_ui("info_tips"):ui_show(2)
+end
+
+function ui:_onclick_random_award_btn()
+  UIMgr:get_ui("ui_month_card_random_award_tips"):ui_show()
+end
+
+return ui

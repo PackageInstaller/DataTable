@@ -1,0 +1,56 @@
+return {
+  {
+    DefaultModelIDList = {1},
+    DefaultModelMaterialMap = {
+      capital_area01_m1 = "capital_T4_ground_01_mat"
+    },
+    DefaultModelNameList = {
+      "capital_build01_preLV0",
+      "capital_build06_pre"
+    },
+    DefaultUIBindingPos = "Binding_capital_build1_1",
+    IconPath = "Home/LvUp/Build_icon_upgrade_bbt",
+    Id = 1,
+    Name = "巴别塔"
+  },
+  {
+    DefaultModelIDList = {3},
+    DefaultModelNameList = {
+      "capital_build05_preLV1"
+    },
+    DefaultUIBindingPos = "Binding_capital_build2_1",
+    IconPath = "Home/LvUp/Build_icon_upgrade_pq",
+    Id = 2,
+    Name = "外勤站"
+  },
+  {
+    DefaultModelIDList = {5},
+    DefaultModelNameList = {
+      "capital_build04_preLV1"
+    },
+    DefaultUIBindingPos = "Binding_capital_build3_1",
+    IconPath = "Home/LvUp/Build_icon_upgrade_scs",
+    Id = 3,
+    Name = "贸易站"
+  },
+  {
+    DefaultModelIDList = {7},
+    DefaultModelNameList = {
+      "capital_build02a_pre_LV1"
+    },
+    DefaultUIBindingPos = "Binding_capital_build4_1",
+    IconPath = "Home/LvUp/Build_icon_upgrade_tlcc",
+    Id = 4,
+    Name = "天体果园"
+  },
+  {
+    DefaultModelIDList = {9},
+    DefaultModelNameList = {
+      "capital_build03_preLV1"
+    },
+    DefaultUIBindingPos = "Binding_capital_build5_1",
+    IconPath = "Home/LvUp/Build_icon_upgrade_hcs",
+    Id = 5,
+    Name = "造物间"
+  }
+}

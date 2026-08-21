@@ -1,0 +1,145 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local AssetBarView = require("ui.asset_bar.asset_bar")
+local Shop_Helper = require("uimodule.shop.shop_helper")
+local commonDef = require("cs_share.common_define")
+local Act_ID = commonDef.ACTY_TYPE.CURSE_CIRCLE
+local CONTRIBUTE_SHOP_ITEM_CLASS = require("uimodule.stage_activity.challenge_ring_plus.challenge_ring_plus_contribute_shop_item")
+local CHALLENGE_RING_CONTRIBUTE_SHOP_ITEM = "CHALLENGE_RING_CONTRIBUTE_SHOP_ITEM"
+local ONE_DAY_SEC = 86400
+local ONE_HOUR_SEC = 3600
+local ONE_MINUTE_SEC = 60
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_remain_time_num = {
+    "RemainTimeNum",
+    BIND_TYPE.TEXT
+  },
+  v_shop_item_content = {
+    "ShopItemContent",
+    BIND_TYPE.OBJECT
+  },
+  v_shop_item_tem = {
+    "ShopItemTem",
+    BIND_TYPE.OBJECT
+  },
+  v_item_list = {
+    "ItemList",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnReturn", function()
+    self.v_is_click_return = true
+    self:ui_hide()
+  end)
+  self:set_button("BtnTreasureBox", function()
+    UIMgr:get_ui("card_pack"):ui_show()
+  end)
+  self.v_asset_bar = AssetBarView:new(self, self.v_uiobjects.AssetBar)
+  self:register_exist_auto_template(CHALLENGE_RING_CONTRIBUTE_SHOP_ITEM, self.v_shop_item_tem, self.v_shop_item_content)
+end
+
+function ui:ui_on_show()
+  self:bind_event()
+  self:set_remain_time()
+  self:set_shop_list()
+  self:set_asset_bar_info()
+  self:generate_all_item()
+  self:set_scroll_rect_pos()
+end
+
+function ui:ui_on_hide()
+  self.v_asset_bar:on_hide()
+  self.v_shop_cfg_list = nil
+  self:remove_wrap_list()
+  if self.v_is_click_return == false then
+    self.v_horizontal_value = self.v_item_list_scroll_rect.horizontalNormalizedPosition
+  end
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:bind_event()
+  self:bind_auto_mq(Const.MSG_ON_BUY_RING_CONTRI_SHOP_GOODS, self.refresh_all_item_state, self)
+end
+
+function ui:set_scroll_rect_pos()
+  self.v_item_list_scroll_rect = Util.get_scrollrect(nil, self.v_item_list)
+  if self.v_is_click_return == true or self.v_is_click_return == nil then
+    self.v_item_list_scroll_rect.horizontalNormalizedPosition = 0
+    self.v_is_click_return = false
+  else
+    self.v_item_list_scroll_rect.horizontalNormalizedPosition = self.v_horizontal_value or 0
+  end
+end
+
+function ui:set_remain_time()
+  self.v_remain_time_num.text = self:time_format(ActivityMgr:invoke(Act_ID, "get_remain_time"))
+end
+
+function ui:time_format(time)
+  local remain_time, hour_num
+  local day_num = math.floor(time / ONE_DAY_SEC)
+  if day_num >= 1 then
+    remain_time = time - day_num * ONE_DAY_SEC
+    hour_num = math.floor(remain_time / ONE_HOUR_SEC)
+    return Util.format_str("{1}天{2}时", day_num, hour_num)
+  else
+    hour_num = math.floor(time / ONE_HOUR_SEC)
+    remain_time = time - hour_num * ONE_HOUR_SEC
+    local minute_num = math.floor(remain_time / ONE_MINUTE_SEC)
+    return Util.format_str("{1}时{2}分", hour_num, minute_num)
+  end
+end
+
+function ui:set_shop_list()
+  local main_cfg = ChallengeRingPlusMgr:get_main_cfg()
+  self.v_shop_cfg_list = ShareRes.create("activity.curse_ring_good_group", main_cfg.ShopID)
+end
+
+function ui:set_asset_bar_info()
+  local list = Shop_Helper.get_asset_list({
+    self.v_shop_cfg_list[1].CostItem
+  })
+  self.v_asset_bar:reset_config(list)
+  self.v_asset_bar:on_create()
+end
+
+function ui:generate_all_item()
+  self:give_back_auto_cache(CHALLENGE_RING_CONTRIBUTE_SHOP_ITEM, false)
+  self.v_contribute_shop_item_list = {}
+  local shop_list = ChallengeRingPlusMgr:get_contribute_shop_list()
+  for _, shop_cfg in ipairs(self.v_shop_cfg_list) do
+    local data = shop_list[shop_cfg.Id]
+    if data then
+      local item = self:get_auto_cache(CHALLENGE_RING_CONTRIBUTE_SHOP_ITEM)
+      local item_lua_obj = CONTRIBUTE_SHOP_ITEM_CLASS:ui_wrap_ex(self, item, false)
+      item_lua_obj:set_enable(true, shop_cfg, data.buy_cnt)
+      table.insert(self.v_contribute_shop_item_list, item_lua_obj)
+    end
+  end
+end
+
+function ui:remove_wrap_list()
+  for _, obj in pairs(self.v_contribute_shop_item_list) do
+    self:remove_wrap_ui(obj)
+  end
+  self.v_contribute_shop_item_list = {}
+end
+
+function ui:refresh_all_item_state()
+  local shop_list = ChallengeRingPlusMgr:get_contribute_shop_list()
+  for _, item_lua_obj in ipairs(self.v_contribute_shop_item_list) do
+    item_lua_obj:refresh_state(shop_list)
+  end
+end
+
+return ui

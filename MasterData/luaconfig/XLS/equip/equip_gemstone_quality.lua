@@ -1,0 +1,64 @@
+return {
+  {
+    DecomposeAwardGroup = 120,
+    Id = 1,
+    LockColor = "aec9ff",
+    QualityIcon = "UICharacter/2023.12.11/Char_bg_wqby_dk_small_blue",
+    QualityIconBig = "UICharacter/2023.12.11/Char_bg_wqby_dk_big_blue",
+    QualitySquareIcon = "UICharacter/2023.12.11/Char_bg_wqby_dian_blue",
+    QualitySquarePos = {1}
+  },
+  {
+    DecomposeAwardGroup = 120,
+    Id = 2,
+    LockColor = "aec9ff",
+    QualityIcon = "UICharacter/2023.12.11/Char_bg_wqby_dk_small_blue",
+    QualityIconBig = "UICharacter/2023.12.11/Char_bg_wqby_dk_big_blue",
+    QualitySquareIcon = "UICharacter/2023.12.11/Char_bg_wqby_dian_blue",
+    QualitySquarePos = {1}
+  },
+  {
+    DecomposeAwardGroup = 120,
+    Id = 3,
+    LockColor = "aec9ff",
+    QualityIcon = "UICharacter/2023.12.11/Char_bg_wqby_dk_small_blue",
+    QualityIconBig = "UICharacter/2023.12.11/Char_bg_wqby_dk_big_blue",
+    QualitySquareIcon = "UICharacter/2023.12.11/Char_bg_wqby_dian_blue",
+    QualitySquarePos = {1}
+  },
+  {
+    DecomposeAwardGroup = 121,
+    Id = 4,
+    LockColor = "c8a5ff",
+    QualityIcon = "UICharacter/2023.12.11/Char_bg_wqby_dk_small_purple",
+    QualityIconBig = "UICharacter/2023.12.11/Char_bg_wqby_dk_big_purple",
+    QualitySquareIcon = "UICharacter/2023.12.11/Char_bg_wqby_dian_purple",
+    QualitySquarePos = {1, 3}
+  },
+  {
+    DecomposeAwardGroup = 122,
+    Id = 5,
+    LockColor = "ffdca6",
+    QualityIcon = "UICharacter/2023.12.11/Char_bg_wqby_dk_small_gold",
+    QualityIconBig = "UICharacter/2023.12.11/Char_bg_wqby_dk_big_gold",
+    QualitySquareIcon = "UICharacter/2023.12.11/Char_bg_wqby_dian_golde",
+    QualitySquarePos = {
+      1,
+      2,
+      4
+    }
+  },
+  {
+    DecomposeAwardGroup = 122,
+    Id = 6,
+    LockColor = "ffdca6",
+    QualityIcon = "UICharacter/2023.12.11/Char_bg_wqby_dk_small_gold",
+    QualityIconBig = "UICharacter/2023.12.11/Char_bg_wqby_dk_big_gold",
+    QualitySquareIcon = "UICharacter/2023.12.11/Char_bg_wqby_dian_golde",
+    QualitySquarePos = {
+      1,
+      2,
+      4
+    }
+  }
+}

@@ -1,0 +1,141 @@
+return {
+  {
+    AbnorMagicId = 1999995,
+    BeHitEffect = "Fx_Common_BeHit",
+    Desc = "攻击造成物理伤害",
+    ElementIconPath = "Icon/Element/Battle_sicon_Normal",
+    ElementIconPath_Tab = "Icon/Element/tb_icon_Normal",
+    ElementName = "物理",
+    ElementWeakIconPath = {
+      {
+        "UIFight/Icon/UI__Weakness_Fire1"
+      },
+      {
+        "UIFight/Icon/UI__Weakness_Fire2"
+      }
+    },
+    FontTypeName = "FontElement_1",
+    Id = 1,
+    SortId = 0
+  },
+  {
+    AbnorMagicId = 1999990,
+    BeHitEffect = "Fx_Common_BeHit_water",
+    DamageEffect = "Fx_Abnormal_Water_3",
+    Desc = "攻击造成水元素伤害，使敌人积累水元素异常；异常积累满后使敌人受到伤害并进入凝滞状态，被短暂地冻结。",
+    ElementIconPath = "Icon/Element/Battle_sicon_ice",
+    ElementIconPath_Tab = "Icon/Element/tb_icon_bing",
+    ElementName = "水元素",
+    ElementWeakIconPath = {
+      {
+        "UIFight/Icon/UI__Weakness_Water1"
+      },
+      {
+        "UIFight/Icon/UI__Weakness_Water2"
+      }
+    },
+    FontTypeName = "FontElement_2",
+    Id = 2,
+    SortId = 1,
+    TriggerEffect = "Fx_Abnormal_Water_1",
+    TriggerEffectJoint = "HitCase"
+  },
+  {
+    AbnorMagicId = 1999991,
+    BeHitEffect = "Fx_Common_BeHit_fire",
+    DamageEffect = "Fx_Abnormal_Fire_3",
+    DamageEffectJoint = "HitCase",
+    Desc = "攻击造成火元素伤害，使敌人积累火元素异常；异常积累满后使敌人受到伤害并进入灼烧状态，期间持续受到固定伤害。",
+    ElementIconPath = "Icon/Element/Battle_sicon_fire",
+    ElementIconPath_Tab = "Icon/Element/tb_icon_huo",
+    ElementName = "火元素",
+    ElementWeakIconPath = {
+      {
+        "UIFight/Icon/UI__Weakness_Fire1"
+      },
+      {
+        "UIFight/Icon/UI__Weakness_Fire2"
+      }
+    },
+    FontTypeName = "FontElement_3",
+    Id = 3,
+    SortId = 2,
+    TriggerEffect = "Fx_Abnormal_Fire_1",
+    TriggerEffectJoint = "HitCase"
+  },
+  {
+    AbnorMagicId = 1999992,
+    BeHitEffect = "Fx_Common_BeHit_thunder",
+    DamageEffect = "Fx_Abnormal_Thunder_3",
+    DamageEffectJoint = "HitCase",
+    Desc = "攻击造成雷元素伤害，使敌人积累雷元素异常；异常积累满后使敌人受到伤害并进入雷噪状态，期间每当受到攻击时额外遭受雷击。",
+    ElementIconPath = "Icon/Element/Battle_sicon_thunder",
+    ElementIconPath_Tab = "Icon/Element/tb_icon_thunder",
+    ElementName = "雷元素",
+    ElementWeakIconPath = {
+      {
+        "UIFight/Icon/UI__Weakness_Thunder1"
+      },
+      {
+        "UIFight/Icon/UI__Weakness_Thunder2"
+      }
+    },
+    FontTypeName = "FontElement_4",
+    Id = 4,
+    SortId = 3,
+    TriggerEffect = "Fx_Abnormal_Thunder_1",
+    TriggerEffectJoint = "HitCase"
+  },
+  {
+    AbnorMagicId = 1999993,
+    BeHitEffect = "Fx_Common_BeHit_light",
+    DelayEffect = {
+      "Fx_Abnormal_Light_3",
+      "8"
+    },
+    DelayEffectJoint = "effectpoint_ground",
+    Desc = "攻击造成光元素伤害，使敌人积累光元素异常；异常积累满后使敌人受到伤害并进入眩光状态，持续结束时再次受到高额伤害（敌人剩余生命低于该伤害时将提前结算）。",
+    ElementIconPath = "Icon/Element/Battle_sicon_light",
+    ElementIconPath_Tab = "Icon/Element/tb_icon_guang",
+    ElementName = "光元素",
+    ElementWeakIconPath = {
+      {
+        "UIFight/Icon/UI__Weakness_Light1"
+      },
+      {
+        "UIFight/Icon/UI__Weakness_Light2"
+      }
+    },
+    FontTypeName = "FontElement_5",
+    Id = 5,
+    SortId = 4,
+    TriggerEffect = "Fx_Abnormal_Light_1",
+    TriggerEffectJoint = "HitCase"
+  },
+  {
+    AbnorMagicId = 1999994,
+    BeHitEffect = "Fx_Common_BeHit_dark",
+    DelayEffect = {
+      "Fx_Abnormal_Dark_3",
+      "10"
+    },
+    DelayEffectJoint = "HitCase",
+    Desc = "攻击造成暗元素伤害，使敌人积累暗元素异常；异常积累满后使敌人受到伤害并进入暗蚀状态，持续结束时敌人基于状态期间受到的总伤害，再次受到结算伤害（敌人剩余生命低于此伤害时将提前结算）。",
+    ElementIconPath = "Icon/Element/Battle_sicon_dark",
+    ElementIconPath_Tab = "Icon/Element/tb_icon_an",
+    ElementName = "暗元素",
+    ElementWeakIconPath = {
+      {
+        "UIFight/Icon/UI__Weakness_Dark1"
+      },
+      {
+        "UIFight/Icon/UI__Weakness_Dark2"
+      }
+    },
+    FontTypeName = "FontElement_6",
+    Id = 6,
+    SortId = 5,
+    TriggerEffect = "Fx_Abnormal_Dark_1",
+    TriggerEffectJoint = "HitCase"
+  }
+}

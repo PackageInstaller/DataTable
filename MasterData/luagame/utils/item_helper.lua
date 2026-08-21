@@ -1,0 +1,341 @@
+local BagCfg = require("gamelogic.character.fight_bag_configs")
+local CommonDefine = require("cs_share.common_define")
+local RUNE2_TYPE = CommonDefine.RUNE2_TYPE
+local ITEM_Cfg = {
+  item = {cfg_path = "item.item", func_name = "_set_item"},
+  buddy = {
+    cfg_path = "buddy.buddy",
+    func_name = "_set_buddy"
+  },
+  equip = {
+    cfg_path = "equip.equip",
+    func_name = "_set_equip"
+  },
+  battle_item = {
+    cfg_path = "battle.battle_item",
+    func_name = "_set_equip"
+  },
+  battle_collection = {
+    cfg_path = "battle.battle_collection",
+    func_name = "_set_equip"
+  },
+  buddy_fashion = {
+    cfg_path = "buddy.buddy_fashion",
+    func_name = "_set_fashion"
+  },
+  ornaments = {
+    cfg_path = "item.ornaments",
+    func_name = "_set_ornaments"
+  },
+  title = {
+    cfg_path = "title.title",
+    func_name = "_set_title"
+  },
+  business_card = {
+    cfg_path = "player.business_card",
+    func_name = "_set_business_card"
+  },
+  relic = {
+    cfg_path = "relic.relic",
+    func_name = "_set_relic"
+  },
+  gemstone = {
+    cfg_path = "equip.equip_gemstone",
+    func_name = "_gemstone"
+  }
+}
+local Battle_Item_Type = {
+  [7] = 7,
+  [8] = 8,
+  [9] = 9
+}
+local HEAL_ITEM_TYPE = {
+  [2] = {SINGLE = 1, TEAM_HEAL = 2}
+}
+local RADIO_BUFF_TYPE = {
+  [BagCfg.ITEM_BUFF_TYPE.BATTLE_ADD_MONEY] = BagCfg.ITEM_BUFF_TYPE.BATTLE_ADD_MONEY,
+  [BagCfg.ITEM_BUFF_TYPE.ENHANCE_ATTR_MAGIC] = BagCfg.ITEM_BUFF_TYPE.ENHANCE_ATTR_MAGIC
+}
+local helper = {}
+helper.Effect_Range = {Single = 1, Team = 2}
+
+function helper.get_item_cfg(item_id)
+  return ShareRes.get_item_cfg(item_id)
+end
+
+function helper.get_is_gem_item(item_id)
+  for idx, v in pairs(ShareRes.create("item.award_type")) do
+    if item_id >= v.IdBegin and item_id <= v.IdEnd then
+      return v.BagType == Config.BAG_TYPE.GEMSTONE
+    end
+  end
+end
+
+function helper.get_is_battle_item(item_id)
+  for idx, v in pairs(ShareRes.create("item.award_type")) do
+    if item_id >= v.IdBegin and item_id <= v.IdEnd then
+      if Battle_Item_Type[idx] then
+        return true
+      end
+      return false
+    end
+  end
+end
+
+function helper.get_is_collect(item_id)
+  for _, v in pairs(ShareRes.create("item.award_type")) do
+    if item_id >= v.IdBegin and item_id <= v.IdEnd then
+      return v.BagType == Config.BAG_TYPE.FIGHT_WEAPON
+    end
+  end
+  return false
+end
+
+function helper.get_is_consume(item_id)
+  local cfg = helper.get_item_cfg(item_id)
+  return cfg.Type == BagCfg.CONSUMABLES_ITEM_TYPE.Type and cfg.Subtype == BagCfg.CONSUMABLES_ITEM_TYPE.SubType
+end
+
+function helper.get_effect_range(item_id)
+  local cfg = helper.get_item_cfg(item_id)
+  local is_consume = cfg.Type == BagCfg.CONSUMABLES_ITEM_TYPE.Type and cfg.Subtype == BagCfg.CONSUMABLES_ITEM_TYPE.SubType
+  if is_consume then
+    return cfg.Arg[2]
+  end
+end
+
+function helper.get_job_level(item_id)
+  local item_cfg = helper.get_item_cfg(item_id)
+  if not item_cfg.CareerDesc then
+    return 0
+  end
+  local cfg = ShareRes.create("battle.battle_collection_job_entry", item_cfg.CareerDesc)
+  if not cfg then
+    return 0
+  end
+  local level = 0
+  for i, v in ipairs(cfg) do
+    local engough = true
+    for k = 1, 2 do
+      if v.AttrId[k] and engough then
+        engough = helper.get_job_attr_enough(v.AttrId[k], v.Level[k])
+      end
+    end
+    if not engough then
+      return level
+    end
+    level = i
+  end
+  return level
+end
+
+function helper.get_is_equip_collect(item_id)
+  local cfg = helper.get_item_cfg(item_id)
+  return helper.get_is_collect(item_id) and cfg.Type == BagCfg.CollectType.EQUIP
+end
+
+function helper.get_is_rune_item(item_id)
+  local cfg = helper.get_item_cfg(item_id)
+  return cfg.Type == BagCfg.BATTLE_ITEM_TYPE.RUNE
+end
+
+function helper.build_collect_data(data)
+  local collect_data = {}
+  collect_data.id = data.id
+  collect_data.uuid = data.uuid or 0
+  collect_data.count = data.count or 1
+  collect_data.create_time = data.create_time
+  collect_data.entry_list = data.entry_list
+  collect_data.magic_list = data.magic_list
+  collect_data.equip_grid = 0
+  collect_data.bag_type = BagCfg.BagType.COLLECT
+  local cfg = helper.get_item_cfg(data.id)
+  collect_data.Name = cfg.Name
+  collect_data.Id = cfg.Id
+  collect_data.Quality = cfg.Quality
+  collect_data.Icon = cfg.Icon
+  collect_data.Cfg = cfg
+  return collect_data
+end
+
+function helper.build_item_data(data)
+  local item_data = {}
+  item_data.id = data.id
+  item_data.uuid = data.uuid or 0
+  item_data.count = data.count or 1
+  item_data.entry_list = data.entry_list
+  item_data.magic_list = data.magic_list
+  item_data.bag_type = 0
+  item_data.rune2_data = data.rune2_data
+  local cfg = helper.get_item_cfg(data.id)
+  item_data.Name = cfg.Name
+  item_data.Id = cfg.Id
+  item_data.Type = cfg.Type
+  item_data.Quality = cfg.Quality
+  item_data.Icon = cfg.Icon
+  item_data.Cfg = cfg
+  return item_data
+end
+
+function helper.build_rune_data(data)
+  local rune_data = {}
+  rune_data.id = data.id
+  rune_data.uuid = data.uuid or 0
+  rune_data.count = data.count or 1
+  rune_data.create_time = data.create_time
+  rune_data.random_entrys = data.random_entrys
+  rune_data.bag_type = 0
+  rune_data.rune2_data = data.rune2_data
+  rune_data.ran_ans_uuid = data.ran_ans_uuid
+  local cfg = helper.get_item_cfg(data.id)
+  rune_data.Name = cfg.Name
+  rune_data.Id = cfg.Id
+  rune_data.Type = cfg.Type
+  rune_data.Quality = cfg.Quality
+  rune_data.Icon = cfg.Icon
+  rune_data.Cfg = cfg
+  return rune_data
+end
+
+function helper.show_battle_tips(item_id, ran_ans_uuid, param)
+  if helper.get_is_collect(item_id) then
+    param.item_data = helper.build_equip_collect_data(item_id, ran_ans_uuid)
+  end
+  if param.item_data.Type == BagCfg.BATTLE_ITEM_TYPE.MAIN_COLLECTION then
+    UIMgr:get_ui("collection_tip"):ui_show(item_id)
+  else
+    UIMgr:get_ui("battle_item_tips"):ui_show(item_id, param)
+  end
+end
+
+function helper.build_equip_collect_data(item_id, ran_ans_uuid)
+  local entries = FightBagMgr:get_preview_random_entries(ran_ans_uuid)
+  local item_data = helper.build_collect_data({
+    id = item_id,
+    uuid = 0,
+    random_entrys = entries and entries.random_entrys or {},
+    random_magic_entries = entries and entries.random_magic_entries or {}
+  })
+  return item_data
+end
+
+function helper.build_treasure_rune_data(data)
+  local item_data = helper.build_rune_data({
+    id = data.item_id,
+    uuid = data.idx,
+    ran_ans_uuid = data.ran_ans_uuid,
+    count = data.item_count
+  })
+  return item_data
+end
+
+function helper.get_is_use_item(item_id)
+  local cfg = helper.get_item_cfg(item_id)
+  if BagCfg.USE_ITEM_TYPE[cfg.Type] then
+    for _, v in pairs(BagCfg.USE_ITEM_TYPE[cfg.Type]) do
+      if cfg.Subtype == v then
+        return true
+      end
+    end
+  end
+  return false
+end
+
+function helper.check_use_story_item(item_id)
+  local cfg = helper.get_item_cfg(item_id)
+  if cfg and cfg.Type == BagCfg.Type.STORY then
+    local use_sub_type = BagCfg.USE_ITEM_TYPE[cfg.Type]
+    if use_sub_type then
+      for _, val in pairs(use_sub_type) do
+        if val == cfg.Subtype then
+          return true, cfg.Arg[1]
+        end
+      end
+    end
+  end
+  return false
+end
+
+local READ_BUFF_TYPE = {
+  [9] = {
+    [6] = 6,
+    [7] = 7,
+    [8] = 8
+  },
+  [8] = {
+    [1] = 1
+  }
+}
+local READ_ARG_TYPE = {
+  [9] = {
+    [1] = 1
+  }
+}
+
+function helper.get_item_buff_cfg(item_id)
+  if not helper.get_is_battle_item(item_id) then
+    return
+  end
+  local item_cfg = helper.get_item_cfg(item_id)
+  local Type = item_cfg.Type
+  local SubType = item_cfg.Subtype
+  if READ_BUFF_TYPE[Type] and READ_BUFF_TYPE[Type][SubType] then
+    return ShareRes.create("battle.battle_buff", item_cfg.Arg[1])
+  elseif READ_ARG_TYPE[Type] and READ_ARG_TYPE[Type][SubType] then
+    return
+  end
+end
+
+function helper.get_item_effect(item_id, item_cfg)
+  if not helper.get_is_battle_item(item_id) then
+    return
+  end
+  local Type = item_cfg.Type
+  local SubType = item_cfg.Subtype
+  if READ_BUFF_TYPE[Type] and READ_BUFF_TYPE[Type][SubType] then
+    return helper.get_buff_effect(item_cfg.Arg[1])
+  elseif READ_ARG_TYPE[Type] and READ_ARG_TYPE[Type][SubType] then
+    return helper.get_new_rune_lv(item_cfg.Arg[2]) * item_cfg.Arg[3]
+  end
+end
+
+function helper.get_buff_effect(buff_id)
+  local buff_cfg = ShareRes.create("battle.battle_buff", buff_id)
+  if not buff_cfg then
+    Log.Error("buff_cfg is nil, buff_id =", buff_id)
+    return
+  end
+  if 0 == buff_cfg.Arg[2] then
+    return
+  end
+  local total_attr = helper.get_new_rune_lv(buff_cfg.Arg[2])
+  if RADIO_BUFF_TYPE[buff_cfg.Type] then
+    return math.floor(total_attr * buff_cfg.Arg[3] / 10000) .. "%"
+  else
+    return math.floor(total_attr * buff_cfg.Arg[3])
+  end
+end
+
+local RUNE_TYPE_NAME = {
+  [RUNE2_TYPE.RED_RUNE] = "red",
+  [RUNE2_TYPE.YELLOW_RUNE] = "yellow",
+  [RUNE2_TYPE.BULE_RUNE] = "blue"
+}
+
+function helper.get_new_rune_lv(rune_type)
+  local tb = Rune2Mgr:get_ball_level()
+  return tb[RUNE_TYPE_NAME[rune_type]] or 0
+end
+
+function helper.is_team_heal_item(item_id)
+  local cfg = helper.get_item_cfg(item_id)
+  local type = cfg.Type
+  local heal_type = cfg.Arg[2]
+  local is_heal_type = HEAL_ITEM_TYPE[type]
+  if is_heal_type and is_heal_type.TEAM_HEAL == heal_type then
+    return true
+  end
+  return false
+end
+
+return helper

@@ -1,0 +1,710 @@
+return {
+  {
+    [1001001] = {
+      CDTime = 0,
+      CharacterId = 1001001,
+      Id = 10010011,
+      SoundId = "100100101_1",
+      TriggerType = 1
+    },
+    [1001004] = {
+      CDTime = 0,
+      CharacterId = 1001004,
+      Id = 10010041,
+      SoundId = "100100401_1",
+      TriggerType = 1
+    },
+    [1001008] = {
+      CDTime = 0,
+      CharacterId = 1001008,
+      Id = 10010081,
+      SoundId = "100100801_1",
+      TriggerType = 1
+    },
+    [1001009] = {
+      CDTime = 0,
+      CharacterId = 1001009,
+      Id = 10010091,
+      SoundId = "100100901_1",
+      TriggerType = 1
+    },
+    [1001010] = {
+      CDTime = 0,
+      CharacterId = 1001010,
+      Id = 10010101,
+      SoundId = "100101001_1",
+      TriggerType = 1
+    },
+    [1001011] = {
+      CDTime = 0,
+      CharacterId = 1001011,
+      Id = 10010111,
+      SoundId = "100101101_1",
+      TriggerType = 1
+    },
+    [1001012] = {
+      CDTime = 0,
+      CharacterId = 1001012,
+      Id = 10010121,
+      SoundId = "100101201_1",
+      TriggerType = 1
+    },
+    [1001013] = {
+      CDTime = 0,
+      CharacterId = 1001013,
+      Id = 10010131,
+      SoundId = "100101301_1",
+      TriggerType = 1
+    },
+    [1001014] = {
+      CDTime = 0,
+      CharacterId = 1001014,
+      Id = 10010141,
+      SoundId = "100101401_1",
+      TriggerType = 1
+    },
+    [1001015] = {
+      CDTime = 0,
+      CharacterId = 1001015,
+      Id = 10010151,
+      SoundId = "100101501_1",
+      TriggerType = 1
+    },
+    [1001016] = {
+      CDTime = 0,
+      CharacterId = 1001016,
+      Id = 10010161,
+      SoundId = "100101601_1",
+      TriggerType = 1
+    },
+    [1001017] = {
+      CDTime = 0,
+      CharacterId = 1001017,
+      Id = 10010171,
+      SoundId = "100101701_1",
+      TriggerType = 1
+    },
+    [1001018] = {
+      CDTime = 0,
+      CharacterId = 1001018,
+      Id = 10010181,
+      SoundId = "100101801_1",
+      TriggerType = 1
+    },
+    [1001019] = {
+      CDTime = 0,
+      CharacterId = 1001019,
+      Id = 10010191,
+      SoundId = "100101901_1",
+      TriggerType = 1
+    },
+    [1001020] = {
+      CDTime = 0,
+      CharacterId = 1001020,
+      Id = 10010201,
+      SoundId = "100102001_1",
+      TriggerType = 1
+    },
+    [1001021] = {
+      CDTime = 0,
+      CharacterId = 1001021,
+      Id = 10010211,
+      SoundId = "100102101_1",
+      TriggerType = 1
+    },
+    [1001022] = {
+      CDTime = 0,
+      CharacterId = 1001022,
+      Id = 10010221,
+      SoundId = "100102201_1",
+      TriggerType = 1
+    },
+    [1001023] = {
+      CDTime = 0,
+      CharacterId = 1001023,
+      Id = 10010231,
+      SoundId = "100102301_1",
+      TriggerType = 1
+    },
+    [1001024] = {
+      CDTime = 0,
+      CharacterId = 1001024,
+      Id = 10010241,
+      SoundId = "100102401_1",
+      TriggerType = 1
+    },
+    [1001025] = {
+      CDTime = 0,
+      CharacterId = 1001025,
+      Id = 10010251,
+      SoundId = "100102501_1",
+      TriggerType = 1
+    },
+    [1001026] = {
+      CDTime = 0,
+      CharacterId = 1001026,
+      Id = 10010261,
+      SoundId = "100102601_1",
+      TriggerType = 1
+    },
+    [1001027] = {
+      CDTime = 0,
+      CharacterId = 1001027,
+      Id = 10010271,
+      SoundId = "100102701_1",
+      TriggerType = 1
+    },
+    [1001028] = {
+      CDTime = 0,
+      CharacterId = 1001028,
+      Id = 10010281,
+      SoundId = "100102801_1",
+      TriggerType = 1
+    },
+    [1001029] = {
+      CDTime = 0,
+      CharacterId = 1001029,
+      Id = 10010291,
+      SoundId = "100102901_1",
+      TriggerType = 1
+    },
+    [1001030] = {
+      CDTime = 0,
+      CharacterId = 1001030,
+      Id = 10010301,
+      SoundId = "100103001_1",
+      TriggerType = 1
+    }
+  },
+  {
+    [1001001] = {
+      CDTime = 0,
+      CharacterId = 1001001,
+      Id = 10010012,
+      SoundId = "100100102",
+      TriggerType = 2
+    },
+    [1001004] = {
+      CDTime = 0,
+      CharacterId = 1001004,
+      Id = 10010042,
+      SoundId = "100100402",
+      TriggerType = 2
+    },
+    [1001008] = {
+      CDTime = 0,
+      CharacterId = 1001008,
+      Id = 10010082,
+      SoundId = "100100802",
+      TriggerType = 2
+    },
+    [1001009] = {
+      CDTime = 0,
+      CharacterId = 1001009,
+      Id = 10010092,
+      SoundId = "100100902",
+      TriggerType = 2
+    },
+    [1001010] = {
+      CDTime = 0,
+      CharacterId = 1001010,
+      Id = 10010102,
+      SoundId = "100101002",
+      TriggerType = 2
+    },
+    [1001011] = {
+      CDTime = 0,
+      CharacterId = 1001011,
+      Id = 10010112,
+      SoundId = "100101102",
+      TriggerType = 2
+    },
+    [1001012] = {
+      CDTime = 0,
+      CharacterId = 1001012,
+      Id = 10010122,
+      SoundId = "100101202",
+      TriggerType = 2
+    },
+    [1001013] = {
+      CDTime = 0,
+      CharacterId = 1001013,
+      Id = 10010132,
+      SoundId = "100101302",
+      TriggerType = 2
+    },
+    [1001014] = {
+      CDTime = 0,
+      CharacterId = 1001014,
+      Id = 10010142,
+      SoundId = "100101402",
+      TriggerType = 2
+    },
+    [1001015] = {
+      CDTime = 0,
+      CharacterId = 1001015,
+      Id = 10010152,
+      SoundId = "100101502",
+      TriggerType = 2
+    },
+    [1001016] = {
+      CDTime = 0,
+      CharacterId = 1001016,
+      Id = 10010162,
+      SoundId = "100101602",
+      TriggerType = 2
+    },
+    [1001017] = {
+      CDTime = 0,
+      CharacterId = 1001017,
+      Id = 10010172,
+      SoundId = "100101702",
+      TriggerType = 2
+    },
+    [1001018] = {
+      CDTime = 0,
+      CharacterId = 1001018,
+      Id = 10010182,
+      SoundId = "100101802",
+      TriggerType = 2
+    },
+    [1001019] = {
+      CDTime = 0,
+      CharacterId = 1001019,
+      Id = 10010192,
+      SoundId = "100101902",
+      TriggerType = 2
+    },
+    [1001020] = {
+      CDTime = 0,
+      CharacterId = 1001020,
+      Id = 10010202,
+      SoundId = "100102002",
+      TriggerType = 2
+    },
+    [1001021] = {
+      CDTime = 0,
+      CharacterId = 1001021,
+      Id = 10010212,
+      SoundId = "100102102",
+      TriggerType = 2
+    },
+    [1001022] = {
+      CDTime = 0,
+      CharacterId = 1001022,
+      Id = 10010222,
+      SoundId = "100102202",
+      TriggerType = 2
+    },
+    [1001023] = {
+      CDTime = 0,
+      CharacterId = 1001023,
+      Id = 10010232,
+      SoundId = "100102302",
+      TriggerType = 2
+    },
+    [1001024] = {
+      CDTime = 0,
+      CharacterId = 1001024,
+      Id = 10010242,
+      SoundId = "100102402",
+      TriggerType = 2
+    },
+    [1001025] = {
+      CDTime = 0,
+      CharacterId = 1001025,
+      Id = 10010252,
+      SoundId = "100102502",
+      TriggerType = 2
+    },
+    [1001026] = {
+      CDTime = 0,
+      CharacterId = 1001026,
+      Id = 10010262,
+      SoundId = "100102602",
+      TriggerType = 2
+    },
+    [1001027] = {
+      CDTime = 0,
+      CharacterId = 1001027,
+      Id = 10010272,
+      SoundId = "100102702",
+      TriggerType = 2
+    },
+    [1001028] = {
+      CDTime = 0,
+      CharacterId = 1001028,
+      Id = 10010282,
+      SoundId = "100102802",
+      TriggerType = 2
+    },
+    [1001029] = {
+      CDTime = 0,
+      CharacterId = 1001029,
+      Id = 10010292,
+      SoundId = "100102902",
+      TriggerType = 2
+    },
+    [1001030] = {
+      CDTime = 0,
+      CharacterId = 1001030,
+      Id = 10010302,
+      SoundId = "100103002",
+      TriggerType = 2
+    }
+  },
+  {
+    [1001001] = {
+      CDTime = 0,
+      CharacterId = 1001001,
+      Id = 10010013,
+      SoundId = "100100103",
+      TriggerType = 3
+    },
+    [1001004] = {
+      CDTime = 0,
+      CharacterId = 1001004,
+      Id = 10010043,
+      SoundId = "100100403",
+      TriggerType = 3
+    },
+    [1001008] = {
+      CDTime = 0,
+      CharacterId = 1001008,
+      Id = 10010083,
+      SoundId = "100100803",
+      TriggerType = 3
+    },
+    [1001009] = {
+      CDTime = 0,
+      CharacterId = 1001009,
+      Id = 10010093,
+      SoundId = "100100903",
+      TriggerType = 3
+    },
+    [1001010] = {
+      CDTime = 0,
+      CharacterId = 1001010,
+      Id = 10010103,
+      SoundId = "100101003",
+      TriggerType = 3
+    },
+    [1001011] = {
+      CDTime = 0,
+      CharacterId = 1001011,
+      Id = 10010113,
+      SoundId = "100101103",
+      TriggerType = 3
+    },
+    [1001012] = {
+      CDTime = 0,
+      CharacterId = 1001012,
+      Id = 10010123,
+      SoundId = "100101203",
+      TriggerType = 3
+    },
+    [1001013] = {
+      CDTime = 0,
+      CharacterId = 1001013,
+      Id = 10010133,
+      SoundId = "100101303",
+      TriggerType = 3
+    },
+    [1001014] = {
+      CDTime = 0,
+      CharacterId = 1001014,
+      Id = 10010143,
+      SoundId = "100101403",
+      TriggerType = 3
+    },
+    [1001015] = {
+      CDTime = 0,
+      CharacterId = 1001015,
+      Id = 10010153,
+      SoundId = "100101503",
+      TriggerType = 3
+    },
+    [1001016] = {
+      CDTime = 0,
+      CharacterId = 1001016,
+      Id = 10010163,
+      SoundId = "100101603",
+      TriggerType = 3
+    },
+    [1001017] = {
+      CDTime = 0,
+      CharacterId = 1001017,
+      Id = 10010173,
+      SoundId = "100101703",
+      TriggerType = 3
+    },
+    [1001018] = {
+      CDTime = 0,
+      CharacterId = 1001018,
+      Id = 10010183,
+      SoundId = "100101803",
+      TriggerType = 3
+    },
+    [1001019] = {
+      CDTime = 0,
+      CharacterId = 1001019,
+      Id = 10010193,
+      SoundId = "100101903",
+      TriggerType = 3
+    },
+    [1001020] = {
+      CDTime = 0,
+      CharacterId = 1001020,
+      Id = 10010203,
+      SoundId = "100102003",
+      TriggerType = 3
+    },
+    [1001021] = {
+      CDTime = 0,
+      CharacterId = 1001021,
+      Id = 10010213,
+      SoundId = "100102103",
+      TriggerType = 3
+    },
+    [1001022] = {
+      CDTime = 0,
+      CharacterId = 1001022,
+      Id = 10010223,
+      SoundId = "100102203",
+      TriggerType = 3
+    },
+    [1001023] = {
+      CDTime = 0,
+      CharacterId = 1001023,
+      Id = 10010233,
+      SoundId = "100102303",
+      TriggerType = 3
+    },
+    [1001024] = {
+      CDTime = 0,
+      CharacterId = 1001024,
+      Id = 10010243,
+      SoundId = "100102403",
+      TriggerType = 3
+    },
+    [1001025] = {
+      CDTime = 0,
+      CharacterId = 1001025,
+      Id = 10010253,
+      SoundId = "100102503",
+      TriggerType = 3
+    },
+    [1001026] = {
+      CDTime = 0,
+      CharacterId = 1001026,
+      Id = 10010263,
+      SoundId = "100102603",
+      TriggerType = 3
+    },
+    [1001027] = {
+      CDTime = 0,
+      CharacterId = 1001027,
+      Id = 10010273,
+      SoundId = "100102703",
+      TriggerType = 3
+    },
+    [1001028] = {
+      CDTime = 0,
+      CharacterId = 1001028,
+      Id = 10010283,
+      SoundId = "100102803",
+      TriggerType = 3
+    },
+    [1001029] = {
+      CDTime = 0,
+      CharacterId = 1001029,
+      Id = 10010293,
+      SoundId = "100102903",
+      TriggerType = 3
+    },
+    [1001030] = {
+      CDTime = 0,
+      CharacterId = 1001030,
+      Id = 10010303,
+      SoundId = "100103003",
+      TriggerType = 3
+    }
+  },
+  {
+    [1001001] = {
+      CDTime = 0,
+      CharacterId = 1001001,
+      Id = 10010014,
+      SoundId = "100100104",
+      TriggerType = 4
+    },
+    [1001004] = {
+      CDTime = 0,
+      CharacterId = 1001004,
+      Id = 10010044,
+      SoundId = "100100404",
+      TriggerType = 4
+    },
+    [1001008] = {
+      CDTime = 0,
+      CharacterId = 1001008,
+      Id = 10010084,
+      SoundId = "100100804",
+      TriggerType = 4
+    },
+    [1001009] = {
+      CDTime = 0,
+      CharacterId = 1001009,
+      Id = 10010094,
+      SoundId = "100100904",
+      TriggerType = 4
+    },
+    [1001010] = {
+      CDTime = 0,
+      CharacterId = 1001010,
+      Id = 10010104,
+      SoundId = "100101004",
+      TriggerType = 4
+    },
+    [1001011] = {
+      CDTime = 0,
+      CharacterId = 1001011,
+      Id = 10010114,
+      SoundId = "100101104",
+      TriggerType = 4
+    },
+    [1001012] = {
+      CDTime = 0,
+      CharacterId = 1001012,
+      Id = 10010124,
+      SoundId = "100101204",
+      TriggerType = 4
+    },
+    [1001013] = {
+      CDTime = 0,
+      CharacterId = 1001013,
+      Id = 10010134,
+      SoundId = "100101304",
+      TriggerType = 4
+    },
+    [1001014] = {
+      CDTime = 0,
+      CharacterId = 1001014,
+      Id = 10010144,
+      SoundId = "100101404",
+      TriggerType = 4
+    },
+    [1001015] = {
+      CDTime = 0,
+      CharacterId = 1001015,
+      Id = 10010154,
+      SoundId = "100101504",
+      TriggerType = 4
+    },
+    [1001016] = {
+      CDTime = 0,
+      CharacterId = 1001016,
+      Id = 10010164,
+      SoundId = "100101604",
+      TriggerType = 4
+    },
+    [1001017] = {
+      CDTime = 0,
+      CharacterId = 1001017,
+      Id = 10010174,
+      SoundId = "100101704",
+      TriggerType = 4
+    },
+    [1001018] = {
+      CDTime = 0,
+      CharacterId = 1001018,
+      Id = 10010184,
+      SoundId = "100101804",
+      TriggerType = 4
+    },
+    [1001019] = {
+      CDTime = 0,
+      CharacterId = 1001019,
+      Id = 10010194,
+      SoundId = "100101904",
+      TriggerType = 4
+    },
+    [1001020] = {
+      CDTime = 0,
+      CharacterId = 1001020,
+      Id = 10010204,
+      SoundId = "100102004",
+      TriggerType = 4
+    },
+    [1001021] = {
+      CDTime = 0,
+      CharacterId = 1001021,
+      Id = 10010214,
+      SoundId = "100102104",
+      TriggerType = 4
+    },
+    [1001022] = {
+      CDTime = 0,
+      CharacterId = 1001022,
+      Id = 10010224,
+      SoundId = "100102204",
+      TriggerType = 4
+    },
+    [1001023] = {
+      CDTime = 0,
+      CharacterId = 1001023,
+      Id = 10010234,
+      SoundId = "100102304",
+      TriggerType = 4
+    },
+    [1001024] = {
+      CDTime = 0,
+      CharacterId = 1001024,
+      Id = 10010244,
+      SoundId = "100102404",
+      TriggerType = 4
+    },
+    [1001025] = {
+      CDTime = 0,
+      CharacterId = 1001025,
+      Id = 10010254,
+      SoundId = "100102504",
+      TriggerType = 4
+    },
+    [1001026] = {
+      CDTime = 0,
+      CharacterId = 1001026,
+      Id = 10010264,
+      SoundId = "100102604",
+      TriggerType = 4
+    },
+    [1001027] = {
+      CDTime = 0,
+      CharacterId = 1001027,
+      Id = 10010274,
+      SoundId = "100102704",
+      TriggerType = 4
+    },
+    [1001028] = {
+      CDTime = 0,
+      CharacterId = 1001028,
+      Id = 10010284,
+      SoundId = "100102804",
+      TriggerType = 4
+    },
+    [1001029] = {
+      CDTime = 0,
+      CharacterId = 1001029,
+      Id = 10010294,
+      SoundId = "100102904",
+      TriggerType = 4
+    },
+    [1001030] = {
+      CDTime = 0,
+      CharacterId = 1001030,
+      Id = 10010304,
+      SoundId = "100103004",
+      TriggerType = 4
+    }
+  }
+}

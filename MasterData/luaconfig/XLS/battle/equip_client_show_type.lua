@@ -1,0 +1,418 @@
+return {
+  {
+    attr_id = 1,
+    show = {1, 2}
+  },
+  {
+    attr_id = 2,
+    show = {1, 2}
+  },
+  {
+    attr_id = 3,
+    show = {1, 2}
+  },
+  {
+    attr_id = 4,
+    show = {1, 2}
+  },
+  {
+    attr_id = 5,
+    show = {1, 2}
+  },
+  {
+    attr_id = 6,
+    show = {1, 2}
+  },
+  {
+    attr_id = 7,
+    show = {1, 2}
+  },
+  {
+    attr_id = 8,
+    show = {1, 2}
+  },
+  {
+    attr_id = 9,
+    show = {1, 2}
+  },
+  {
+    attr_id = 10,
+    show = {1, 2}
+  },
+  {
+    attr_id = 11,
+    show = {1, 2}
+  },
+  {
+    attr_id = 12,
+    show = {1, 2}
+  },
+  {
+    attr_id = 13,
+    show = {1, 2}
+  },
+  {
+    attr_id = 14,
+    show = {1, 2}
+  },
+  {
+    attr_id = 15,
+    show = {1, 2}
+  },
+  {
+    attr_id = 16,
+    show = {1, 2}
+  },
+  {
+    attr_id = 17,
+    show = {1, 2}
+  },
+  {
+    attr_id = 18,
+    show = {1, 2}
+  },
+  {
+    attr_id = 19,
+    show = {1, 2}
+  },
+  {
+    attr_id = 20,
+    show = {1, 2}
+  },
+  {
+    attr_id = 21,
+    show = {1, 2}
+  },
+  {
+    attr_id = 22,
+    show = {1, 2}
+  },
+  {
+    attr_id = 23,
+    show = {1, 2}
+  },
+  {
+    attr_id = 24,
+    show = {2, 2}
+  },
+  {
+    attr_id = 25,
+    show = {2, 2}
+  },
+  {
+    attr_id = 26,
+    show = {2, 2}
+  },
+  {
+    attr_id = 27,
+    show = {2, 2}
+  },
+  {
+    attr_id = 28,
+    show = {2, 2}
+  },
+  {
+    attr_id = 29,
+    show = {2, 2}
+  },
+  {
+    attr_id = 30,
+    show = {2, 2}
+  },
+  {
+    attr_id = 31,
+    show = {2, 2}
+  },
+  {
+    attr_id = 32,
+    show = {2, 2}
+  },
+  {
+    attr_id = 33,
+    show = {2, 2}
+  },
+  {
+    attr_id = 34,
+    show = {2, 2}
+  },
+  {
+    attr_id = 35,
+    show = {2, 2}
+  },
+  {
+    attr_id = 36,
+    show = {2, 2}
+  },
+  {
+    attr_id = 37,
+    show = {2, 2}
+  },
+  {
+    attr_id = 38,
+    show = {2, 2}
+  },
+  {
+    attr_id = 39,
+    show = {2, 2}
+  },
+  {
+    attr_id = 40,
+    show = {2, 2}
+  },
+  {
+    attr_id = 41,
+    show = {2, 2}
+  },
+  {
+    attr_id = 42,
+    show = {2, 2}
+  },
+  {
+    attr_id = 43,
+    show = {2, 2}
+  },
+  {
+    attr_id = 44,
+    show = {2, 2}
+  },
+  {
+    attr_id = 45,
+    show = {2, 2}
+  },
+  {
+    attr_id = 46,
+    show = {2, 2}
+  },
+  {
+    attr_id = 47,
+    show = {2, 2}
+  },
+  {
+    attr_id = 48,
+    show = {2, 2}
+  },
+  {
+    attr_id = 49,
+    show = {2, 2}
+  },
+  {
+    attr_id = 50,
+    show = {2, 2}
+  },
+  {
+    attr_id = 51,
+    show = {2, 2}
+  },
+  {
+    attr_id = 52,
+    show = {2, 2}
+  },
+  {
+    attr_id = 53,
+    show = {1, 2}
+  },
+  {
+    attr_id = 54,
+    show = {1, 2}
+  },
+  {
+    attr_id = 55,
+    show = {1, 2}
+  },
+  {
+    attr_id = 56,
+    show = {1, 2}
+  },
+  {
+    attr_id = 57,
+    show = {1, 2}
+  },
+  {
+    attr_id = 58,
+    show = {1, 2}
+  },
+  {
+    attr_id = 59,
+    show = {2, 2}
+  },
+  {
+    attr_id = 60,
+    show = {2, 2}
+  },
+  {
+    attr_id = 61,
+    show = {2, 2}
+  },
+  {
+    attr_id = 62,
+    show = {2, 2}
+  },
+  {
+    attr_id = 63,
+    show = {2, 2}
+  },
+  {
+    attr_id = 64,
+    show = {2, 2}
+  },
+  {
+    attr_id = 65,
+    show = {2, 2}
+  },
+  {
+    attr_id = 66,
+    show = {2, 2}
+  },
+  {
+    attr_id = 67,
+    show = {2, 2}
+  },
+  {
+    attr_id = 68,
+    show = {2, 2}
+  },
+  {
+    attr_id = 69,
+    show = {1, 2}
+  },
+  {
+    attr_id = 70,
+    show = {1, 2}
+  },
+  {
+    attr_id = 71,
+    show = {1, 2}
+  },
+  {
+    attr_id = 72,
+    show = {1, 2}
+  },
+  {
+    attr_id = 73,
+    show = {1, 2}
+  },
+  {
+    attr_id = 74,
+    show = {1, 2}
+  },
+  {
+    attr_id = 75,
+    show = {1, 2}
+  },
+  {
+    attr_id = 76,
+    show = {2, 2}
+  },
+  {
+    attr_id = 77,
+    show = {2, 2}
+  },
+  {
+    attr_id = 78,
+    show = {2, 2}
+  },
+  {
+    attr_id = 79,
+    show = {2, 2}
+  },
+  {
+    attr_id = 80,
+    show = {2, 2}
+  },
+  {
+    attr_id = 81,
+    show = {1, 2}
+  },
+  {
+    attr_id = 82,
+    show = {2, 2}
+  },
+  {
+    attr_id = 83,
+    show = {2, 2}
+  },
+  {
+    attr_id = 84,
+    show = {1, 1}
+  },
+  {
+    attr_id = 85,
+    show = {1, 1}
+  },
+  {
+    attr_id = 86,
+    show = {1, 1}
+  },
+  {
+    attr_id = 87,
+    show = {1, 1}
+  },
+  {
+    attr_id = 88,
+    show = {2, 2}
+  },
+  {
+    attr_id = 89,
+    show = {1, 1}
+  },
+  {
+    attr_id = 90,
+    show = {2, 2}
+  },
+  {
+    attr_id = 91,
+    show = {1, 1}
+  },
+  {
+    attr_id = 92,
+    show = {2, 2}
+  },
+  {
+    attr_id = 93,
+    show = {1, 1}
+  },
+  {
+    attr_id = 94,
+    show = {2, 2}
+  },
+  {
+    attr_id = 95,
+    show = {1, 1}
+  },
+  {
+    attr_id = 96,
+    show = {2, 2}
+  },
+  {
+    attr_id = 97,
+    show = {1, 1}
+  },
+  {
+    attr_id = 98,
+    show = {2, 2}
+  },
+  {
+    attr_id = 99,
+    show = {1, 1}
+  },
+  {
+    attr_id = 100,
+    show = {1, 1}
+  },
+  {
+    attr_id = 101,
+    show = {1, 1}
+  },
+  {
+    attr_id = 102,
+    show = {1, 1}
+  },
+  {
+    attr_id = 103,
+    show = {1, 1}
+  },
+  {
+    attr_id = 104,
+    show = {1, 1}
+  }
+}

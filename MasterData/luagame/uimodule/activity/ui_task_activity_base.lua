@@ -1,0 +1,137 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local ITEM_OBJ_CLASS = require("uimodule.item.item_obj_com")
+local TASK_ACTIVITY_ITEM_TEMP_KEY = "TASK_ACTIVITY_ITEM_TEMP_KEY"
+local Jump_Helper = require("gamelogic.sys_open.jump_helper")
+
+function ui:ui_finish_load()
+  self:set_button("BtnJump", function()
+    SysOpenMgr:jump_to_sys(self.v_jump_id, true)
+  end)
+  self.v_award_temp_key = TASK_ACTIVITY_ITEM_TEMP_KEY .. tostring(self)
+  self:register_exist_auto_template(self.v_award_temp_key, self.v_uiobjects.ItemObjCom1, self.v_uiobjects.Content)
+  if self.v_activity_red_id then
+    RedPointMgr:bind_redpoint(self, self.v_uiobjects.RedPoint, self.v_activity_red_id)
+  end
+  self.v_show_award_count = true
+end
+
+function ui:ui_on_show(task_activity_id)
+  self.v_activity_id = task_activity_id
+  local cfg = ShareRes.create("activity.activity_task")[task_activity_id]
+  if not cfg then
+    Log.Error("任务活动表无对应id配置：", task_activity_id)
+    return
+  end
+  self.v_activity_cfg = ShareRes.get_activity_cfg(self.v_activity_id)
+  self.v_activity_task_cfg = cfg
+  self.v_jump_id = cfg.JumpId
+  self.v_award_group = cfg.AwardGroupId
+  self.v_task_group = cfg.TaskGroup
+  self:refresh_view()
+  NoviceMgr:read_novice_activity(self.v_activity_id)
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.refresh_view, self)
+end
+
+function ui:refresh_view()
+  self:update_info()
+end
+
+function ui:ui_on_hide()
+  self:clear_wrap_award()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:ui_on_update()
+  if self.v_uiobjects.LessTime then
+    self:refresh_time_remaining()
+  end
+end
+
+function ui:update_info()
+  self:refresh_award()
+  self:refresh_task_info()
+  self:check_jump()
+end
+
+function ui:check_jump()
+  local cfg = Jump_Helper.get_jump_cfg(self.v_activity_task_cfg.JumpId)
+  local can_jump = not cfg.condition or Condition:check_condition(cfg.condition)
+  if not can_jump then
+    self.v_uicompents.UnLockDesc_txt.text = ShareRes.get_condition_desc(cfg.condition)
+  end
+  self.v_uiobjects.BtnJump:SetActive(can_jump)
+  self.v_uiobjects.Lock:SetActive(not can_jump)
+end
+
+function ui:refresh_award()
+  if not self.v_award_group then
+    return
+  end
+  self:give_back_auto_cache(self.v_award_temp_key)
+  self:clear_wrap_award()
+  self.v_item_list = {}
+  local awards = {}
+  ShareRes.get_item_obj_use_award_list(self.v_award_group, awards)
+  for _, award_data in ipairs(awards) do
+    local item_obj = self:get_auto_cache(self.v_award_temp_key)
+    local item = ITEM_OBJ_CLASS:ui_wrap_ex(self, item_obj, true)
+    item:set_data(award_data, true)
+    table.insert(self.v_item_list, item)
+  end
+end
+
+function ui:clear_wrap_award()
+  if self.v_item_list then
+    for key, item in pairs(self.v_item_list) do
+      item:ui_hide()
+      item:ui_destroy()
+      self.v_item_list[key] = nil
+    end
+    self.v_item_list = nil
+  end
+end
+
+function ui:refresh_time_remaining()
+  if not self.v_activity_cfg then
+    return
+  end
+  local activity_data = NoviceMgr:get_novice_activity_data(self.v_activity_id)
+  if not activity_data then
+    return
+  end
+  local time_length = NoviceMgr:get_time_remaining(self.v_activity_cfg.TimeType, self.v_activity_cfg.StopTime, activity_data.open_time, self.v_activity_cfg.SustainTime)
+  self.v_uiobjects.LessTime:SetActiveEx(nil ~= time_length)
+  if time_length then
+    self.v_uicompents.LessTime_txt.text = Date.get_time_format_7(time_length)
+  end
+end
+
+function ui:refresh_task_info()
+  if self.v_uicompents.Desc_txt then
+    self.v_uicompents.Desc_txt.text = self.v_activity_task_cfg.Desc
+  end
+  if self.v_task_group and self.v_uicompents.TaskDesc_txt then
+    local str
+    if self.v_check_group_first then
+      local task_id_list = self.v_task_group and ShareRes.get_task_group_cfg(self.v_task_group)
+      local task_id = task_id_list and next(task_id_list)
+      if task_id then
+        local task_cfg = ShareRes.get_task_cfg(task_id)
+        self.v_uicompents.TaskDesc_txt.text = task_cfg.Desc
+        local cur_value, target_value = TaskMgr:get_task_progress_by_id(task_id)
+        str = string.format("(%d/%d)", cur_value, target_value)
+      end
+    else
+      local task_group_cfg = ShareRes.create("condition.task_group", self.v_task_group)
+      self.v_uicompents.TaskDesc_txt.text = task_group_cfg.Desc
+      local cur_value, target_value = TaskMgr:get_task_group_count(self.v_task_group)
+      str = string.format("(%d/%d)", cur_value, target_value)
+    end
+    self.v_uicompents.TaskProgress_txt.text = str
+  end
+end
+
+return ui

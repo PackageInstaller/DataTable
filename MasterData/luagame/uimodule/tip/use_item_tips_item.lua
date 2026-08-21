@@ -1,0 +1,58 @@
+local ITEM_OBJ_COM = require("uimodule.item.item_obj_com")
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:set_data(item_data, is_select)
+  self.v_count = item_data.Num
+  self.v_is_select = is_select
+  if self.v_is_select then
+    self.v_input_field = Util.get_inputfield(nil, self.v_uiobjects.Input)
+    self:set_button("ItemObjCom1", function()
+      UIMgr:get_ui("item_tips_small"):ui_show(item_data.ItemId, self.v_uiobjects.ItemObjCom1.transform)
+    end)
+    self:set_button("BtnDel", function()
+      self.v_parent_ui:on_operation_item(false, item_data)
+      self:refresh_select_cuont(item_data.Id)
+    end)
+    self:set_button("BtnAdd", function()
+      self.v_parent_ui:on_operation_item(true, item_data)
+      self:refresh_select_cuont(item_data.Id)
+    end)
+    self:set_inputfield_listener(self.v_input_field, nil, function()
+      local num = tonumber(self.v_input_field.text)
+      if not num then
+        return
+      end
+      self.v_parent_ui:on_operation_item_num(num, item_data)
+      self:refresh_select_cuont(item_data.Id)
+    end)
+    self:refresh_select_cuont(item_data.Id)
+  end
+  self.v_uicompents.ItemName_txt.text = item_data.Name
+  self.v_item_obj_com = ITEM_OBJ_COM:ui_wrap(self, self.v_uiobjects.ItemObjCom1, true)
+  self.v_item_obj_com:set_data(item_data)
+end
+
+function ui:refresh_select_cuont(award_id)
+  local select_count = self.v_parent_ui:get_cur_select_award_count(award_id)
+  self.v_uiobjects.SelectBg:SetActive(select_count > 0)
+  self:set_name_color(select_count > 0)
+  self.v_input_field.text = select_count
+end
+
+function ui:reset_select_cuont()
+  self.v_uiobjects.SelectBg:SetActive(false)
+  self.v_input_field.text = 0
+  self:set_name_color(false)
+end
+
+function ui:set_name_color(is_select)
+  Util.set_color(self.v_uicompents.ItemName_txt, is_select and "F5EDE2" or "484243")
+end
+
+function ui:set_multi(multi)
+  self.v_multi = multi
+  self.v_item_obj_com:set_count(math.floor(self.v_count * self.v_multi))
+end
+
+return ui

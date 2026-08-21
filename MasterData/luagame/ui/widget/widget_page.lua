@@ -1,0 +1,99 @@
+local Base = require("ui.widget.widget_base")
+local M = Util.create_child_mt(Base)
+local Math = require("base.mathx")
+
+function M:_init(ui)
+  Base._init(self)
+  self.v_ui = ui
+end
+
+function M:init_page(data_arr, callback, cur_page, per_page_data_count, btn_left, btn_right, auto_grey)
+  self:dispose()
+  self.v_data = data_arr
+  self.v_callback = callback
+  self.v_cur_page = cur_page
+  self.v_left_btn = btn_left
+  self.v_right_btn = btn_right
+  self.v_auto_grey = auto_grey or true
+  self.v_per_page_count = per_page_data_count
+  self.v_max_page = math.ceil(#data_arr / per_page_data_count)
+  self.v_cur_page = Math.Clamp(self.v_cur_page, 1, self.v_max_page)
+  self:_init_components()
+end
+
+function M:get_max_page()
+  return self.v_max_page
+end
+
+function M:set_page(page_count, force)
+  if not force and self.v_cur_page == page_count then
+    return
+  end
+  self:_apply_callback(page_count)
+end
+
+function M:get_cur_page_data()
+  self.v_cur_page = Math.Clamp(self.v_cur_page, 1, self.v_max_page)
+  local ret_data = {}
+  local start_page = (self.v_cur_page - 1) * self.v_per_page_count + 1
+  local end_page = self.v_cur_page * self.v_per_page_count
+  for i = start_page, end_page do
+    table.insert(ret_data, self.v_data[i])
+  end
+  return ret_data
+end
+
+function M:dispose()
+  if self.v_right_btn then
+    self.v_right_btn.onClick:RemoveAllListeners()
+  end
+  if self.v_left_btn then
+    self.v_left_btn.onClick:RemoveAllListeners()
+  end
+end
+
+function M:_init_components()
+  Global.listener_mgr:add_listener(self, self.v_right_btn.onClick, function()
+    self:_on_click_right_btn()
+  end)
+  Global.listener_mgr:add_listener(self, self.v_left_btn.onClick, function()
+    self:_on_click_left_btn()
+  end)
+  self:_update()
+end
+
+function M:_on_click_left_btn()
+  if 1 == self.v_cur_page then
+    return
+  end
+  self.v_cur_page = self.v_cur_page - 1
+  self:_apply_callback()
+end
+
+function M:_on_click_right_btn()
+  if self.v_cur_page >= self.v_max_page then
+    return
+  end
+  self.v_cur_page = self.v_cur_page + 1
+  self:_apply_callback()
+end
+
+function M:_update()
+  Util.enable_btn(self.v_left_btn)
+  Util.enable_btn(self.v_right_btn)
+  if 1 == self.v_cur_page then
+    Util.disable_btn(self.v_left_btn, self.v_auto_grey)
+  end
+  if self.v_cur_page == self.v_max_page then
+    Util.disable_btn(self.v_right_btn, self.v_auto_grey)
+  end
+end
+
+function M:_apply_callback()
+  self.v_cur_page = Math.Clamp(self.v_cur_page, 1, self.v_max_page)
+  self:_update()
+  local ret_data = self:get_cur_page_data()
+  Util.apply_callback(self.v_callback, ret_data)
+end
+
+return M

@@ -1,0 +1,124 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+local DEBUG = false
+local Treasure_Item = {
+  [6] = {
+    [7] = true
+  }
+}
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_treasure_box_list = {}
+  self.v_is_used = false
+end
+
+function M:on_battle_treasure_box_list(data)
+  self.v_treasure_box_list = data.treasure_list
+end
+
+function M:_reconnect()
+  self:reset_use_state()
+end
+
+function M:check_have_treasure_box_list()
+  if next(self.v_treasure_box_list) ~= nil then
+    self.v_is_used = true
+    self:open_treasure_box()
+  end
+end
+
+function M:open_treasure_box()
+  UIMgr:get_ui("uitreasure_box"):ui_show()
+end
+
+function M:is_need_open_treasure_box_ui()
+  return self:is_have_treasure_box_list() or self:is_have_treasure_box()
+end
+
+function M:use_treasure_box()
+  if self:is_have_treasure_box_list() then
+    self:open_treasure_box()
+    return true
+  end
+  local uuid = self:is_have_treasure_box()
+  if uuid then
+    local send_data = {
+      item_list = {
+        {uuid = uuid, count = 1},
+        hero_uuid = nil
+      }
+    }
+    self.v_is_used = true
+    self.v_has_used = true
+    Network:call("c2gs_use_battle_items", send_data, function(ok)
+      if ok then
+        self:check_have_treasure_box_list()
+      end
+    end)
+    return true
+  end
+  return false
+end
+
+function M:is_have_treasure_box()
+  local bag = FightBagMgr:get_bag(8)
+  local uuid
+  for _, data in pairs(bag) do
+    local item_cfg = data.Cfg
+    local father_type = item_cfg.Type
+    local sub_type = item_cfg.Subtype
+    local is_type_have = Treasure_Item[father_type]
+    if is_type_have and is_type_have[sub_type] then
+      uuid = data.uuid
+      break
+    end
+  end
+  return uuid
+end
+
+function M:is_have_treasure_box_list()
+  return self.v_treasure_box_list and next(self.v_treasure_box_list) ~= nil
+end
+
+function M:choose_battle_treasure_box(index)
+  self.v_treasure_box_list = {}
+  Network:call("c2gs_select_treasure_box", {index = index}, function(ok)
+    if ok then
+      Util.show_message_tip(2051)
+      self.v_is_used = false
+      SceneMgr:c2gs_call_scene("on_treasure_box_received")
+    end
+  end)
+end
+
+function M:choose_battle_equip_treasure_box(index, is_need)
+  self.v_treasure_box_list = {}
+  FightBagMgr:request_operate_equip_item("c2gs_select_treasure_box", {index = index}, is_need, function()
+    Util.show_message_tip(2051)
+    self.v_is_used = false
+    SceneMgr:c2gs_call_scene("on_treasure_box_received")
+  end)
+end
+
+function M:get_treasure_box_list()
+  return self.v_treasure_box_list
+end
+
+function M:is_choose_treasure_box()
+  return self.v_is_used
+end
+
+function M:reset_use_state()
+  self.v_is_used = false
+end
+
+function M:get_has_use_treasure()
+  return self.v_has_used
+end
+
+function M:exit_tower()
+  self.v_has_used = false
+end
+
+return M

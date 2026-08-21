@@ -1,0 +1,33 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+
+function ui:on_click_BtnJump()
+  SysOpenMgr:jump_to_sys(23000, true)
+end
+
+function ui:ui_finish_load()
+  self:set_button("BtnJump", function()
+    self:on_click_BtnJump()
+  end)
+end
+
+function ui:ui_on_show(activity_id)
+  local pool_id = 2
+  local act_cfg = ShareRes.get_activity_cfg(activity_id)
+  local next_choose_config = DrawCardMgr:get_next_choose_config(pool_id)
+  if not next_choose_config then
+    return
+  end
+  local draw_count = DrawCardMgr:get_curr_card_pool_draw_count(pool_id)
+  self.v_uicompents.NeedNum_txt.text = next_choose_config.Count
+  self.v_uicompents.NowNum_txt.text = draw_count > next_choose_config.Count and next_choose_config.Count or draw_count
+  self.v_uicompents.Desc_txt.text = Util.format_str(act_cfg.Desc, next_choose_config.Count)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+return ui

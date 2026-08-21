@@ -1,0 +1,84 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local Char_Helper = require("uimodule.character.char_helper")
+local ADD_WEIGHT_STR = "{1}概率+{2}%"
+
+function ui:on_click_item(slot_index)
+  local is_dispatch = BuildingMgr:check_char_is_dispatch(self.v_char_uuid or self.v_char_id)
+  if is_dispatch then
+    return
+  end
+  return self.v_parent_ui:on_click_char_item(self.v_char_id, self.v_char_uuid, self.v_char_index, self.v_char_element_id, slot_index)
+end
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(char_id, uuid, index, element_id, under_way)
+  self.v_char_uuid = uuid
+  self.v_char_id = char_id
+  self.v_char_index = index
+  self.v_char_element_id = element_id
+  local buddy_cfg = ShareRes.get_buddy_cfg(char_id)
+  local head_icon = UtilUI.get_hero_images(char_id, 1)
+  local quality_icon = Char_Helper.get_char_icon_quality(char_id, Config.CHAR_QUALITY_TYPE.SMALL)
+  local element_icon = Char_Helper.get_char_element_icon(char_id)
+  local job_icon = Char_Helper.get_char_job_icon(char_id)
+  ResMgr:load_set_icon(self.v_uicompents.QualityBg_img, quality_icon)
+  ResMgr:load_set_icon(self.v_uicompents.CharIcon_img, head_icon)
+  ResMgr:load_set_icon(self.v_uicompents.Ele_img, element_icon)
+  ResMgr:load_set_icon(self.v_uicompents.Occupation_img, job_icon)
+  self.v_uicompents.CharName_txt.text = buddy_cfg.Name
+  local has_add_ratio = self.v_parent_ui:get_add_task_ratio(char_id, buddy_cfg.Quality) > 0
+  self.v_uiobjects.AddIcon:SetActive(has_add_ratio)
+  local buddy_to_clue_cfg = ShareRes.get_building_buddy_to_clue_cfg(char_id)
+  local str, temp_str
+  if buddy_to_clue_cfg then
+    for clue_id in pairs(buddy_to_clue_cfg) do
+      local cfg = ShareRes.get_building_clue_cfg(clue_id)
+      local misc_cfg = ShareRes.get_building_misc_cfg()
+      local weight = (misc_cfg.AddWeight[buddy_cfg.Quality] or 0) * 0.01
+      local _, float = math.modf(weight)
+      if Util.almost_zero(float) then
+        weight = math.floor(weight)
+      end
+      temp_str = Util.format_str(ADD_WEIGHT_STR, cfg.Name, weight)
+      str = str and str .. ", " .. temp_str or temp_str
+    end
+  end
+  if str then
+    self.v_uicompents.CharDesc_txt.text = str
+    self.v_uiobjects.CharDesc:SetActive(true)
+  else
+    self.v_uiobjects.CharDesc:SetActive(false)
+  end
+  local is_dispatch = BuildingMgr:check_char_is_dispatch(self.v_char_uuid or self.v_char_id)
+  self.v_uiobjects.Dispatched:SetActive(is_dispatch)
+  self.v_uiobjects.HlepFight:SetActive(self.v_char_uuid ~= nil)
+  self:set_button_listener(self:get_button(), function()
+    self:on_click_item()
+  end)
+end
+
+function ui:get_id_info()
+  return self.v_char_id, self.v_char_uuid
+end
+
+function ui:on_select_char()
+  local is_dispatch = BuildingMgr:check_char_is_dispatch(self.v_char_uuid or self.v_char_id)
+  self.v_uiobjects.Selected:SetActive(not is_dispatch and self.v_parent_ui:check_is_select(self.v_char_id, self.v_char_uuid))
+  local buddy_cfg = ShareRes.get_buddy_cfg(self.v_char_id)
+  local is_must_select = not is_dispatch and self.v_parent_ui:is_designated_role(self.v_char_id, buddy_cfg.Element, buddy_cfg.Job)
+  self.v_uiobjects.Must:SetActive(is_must_select)
+end
+
+return ui

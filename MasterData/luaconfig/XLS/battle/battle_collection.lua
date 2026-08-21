@@ -1,0 +1,110 @@
+return {
+  [601001] = {
+    BuyCostCnt = 180,
+    BuyCostId = 500001,
+    Desc = "类型1-加25%血上限",
+    EffectArg = {
+      {621001}
+    },
+    EffectType = {1},
+    HeapCount = 1,
+    Icon = "Pz1_03",
+    Id = 601001,
+    Name = "不朽之血Ⅰ",
+    Quality = 2,
+    SaleAward = {
+      [500001] = 60
+    },
+    ShowPriority = 1
+  },
+  [601002] = {
+    BuyCostCnt = 180,
+    BuyCostId = 500001,
+    Desc = "类型1-加25%血上限和20%攻击",
+    EffectArg = {
+      {621001, 621011}
+    },
+    EffectType = {1},
+    HeapCount = 1,
+    Icon = "3x0110",
+    Id = 601002,
+    Name = "诸神手术台Ⅰ",
+    Quality = 2,
+    SaleAward = {
+      [500001] = 60
+    },
+    ShowPriority = 2
+  },
+  [601003] = {
+    BuyCostCnt = 180,
+    BuyCostId = 500001,
+    Desc = "类型2-加magic脚本-打印11111",
+    EffectArg = {
+      {6020029}
+    },
+    EffectType = {2},
+    HeapCount = 1,
+    Icon = "Pz1_01",
+    Id = 601003,
+    Name = "祭坛奉录Ⅰ",
+    Quality = 2,
+    SaleAward = {
+      [500001] = 60
+    },
+    ShowPriority = 3
+  },
+  [601004] = {
+    BuyCostCnt = 180,
+    BuyCostId = 500001,
+    Desc = "类型2-修改速率加速",
+    EffectArg = {
+      {602402}
+    },
+    EffectType = {1},
+    HeapCount = 1,
+    Icon = "3x0208",
+    Id = 601004,
+    Name = "古神天文钟Ⅰ",
+    Quality = 2,
+    SaleAward = {
+      [500001] = 60
+    },
+    ShowPriority = 4
+  },
+  [601005] = {
+    BuyCostCnt = 180,
+    BuyCostId = 500001,
+    Desc = "类型3-解锁小地图预览",
+    EffectArg = {
+      {602401}
+    },
+    EffectType = {1},
+    HeapCount = 1,
+    Icon = "Pz3_03",
+    Id = 601005,
+    Name = "埃利什的手杖Ⅰ",
+    Quality = 2,
+    SaleAward = {
+      [500001] = 60
+    },
+    ShowPriority = 5
+  },
+  [601006] = {
+    BuyCostCnt = 180,
+    BuyCostId = 500001,
+    Desc = "类型4-商店栏位+2",
+    EffectArg = {
+      {2}
+    },
+    EffectType = {4},
+    HeapCount = 1,
+    Icon = "3x0103",
+    Id = 601006,
+    Name = "花园之叶Ⅰ",
+    Quality = 2,
+    SaleAward = {
+      [500001] = 60
+    },
+    ShowPriority = 6
+  }
+}

@@ -1,0 +1,16 @@
+return {
+  [1001] = {
+    Args = {10, 0},
+    CoinCnt = 400,
+    CurseCnt = 80,
+    Id = 1001,
+    Type = 1
+  },
+  [1002] = {
+    Args = {501, 0},
+    CoinCnt = 100,
+    CurseCnt = 20,
+    Id = 1002,
+    Type = 2
+  }
+}

@@ -1,0 +1,667 @@
+return {
+  ["Cannot connect to destination host"] = {
+    id = 18,
+    lang1 = "网络无法连接",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "Cannot connect to destination host"
+  },
+  ["Cannot resolve destination host"] = {
+    id = 17,
+    lang1 = "无法解析地址",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "Cannot resolve destination host"
+  },
+  ["{1}折"] = {
+    id = 12,
+    lang1 = "{1}折",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "{1}折"
+  },
+  ["{1}数量不足"] = {
+    id = 10032,
+    lang1 = "{1}数量不足",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "{1}数量不足"
+  },
+  ["{1}月{2}日"] = {
+    id = 25,
+    lang1 = "{1}月{2}日",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "{1}月{2}日"
+  },
+  ["{1}未完成"] = {
+    id = 44,
+    lang1 = "{1}未完成",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "{1}未完成"
+  },
+  ["{1}条新消息"] = {
+    id = 21,
+    lang1 = "{1}条新消息",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "{1}条新消息"
+  },
+  ["{1}道具已经溢出，是否继续购买？"] = {
+    id = 10033,
+    lang1 = "{1}道具已经溢出，是否继续购买？",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "{1}道具已经溢出，是否继续购买？"
+  },
+  ["【任务】{1}未完成"] = {
+    id = 43,
+    lang1 = "【任务】{1}未完成",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "【任务】{1}未完成"
+  },
+  ["仓库"] = {
+    id = 10007,
+    lang1 = "仓库",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "仓库"
+  },
+  ["你是{1}"] = {
+    id = 20002,
+    lang1 = "你是{1}",
+    lang2 = "xxx{1}",
+    lang3 = "xxx{1}",
+    langkey = "你是{1}"
+  },
+  ["光"] = {
+    id = 8,
+    lang1 = "光",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "光"
+  },
+  ["全部"] = {
+    id = 10012,
+    lang1 = "全部",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "全部"
+  },
+  ["其他"] = {
+    id = 10015,
+    lang1 = "其他",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "其他"
+  },
+  ["冰"] = {
+    id = 5,
+    lang1 = "冰",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "冰"
+  },
+  ["减少"] = {
+    id = 43,
+    lang1 = "减少",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "减少"
+  },
+  ["出售"] = {
+    id = 10017,
+    lang1 = "出售",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "出售"
+  },
+  ["分解"] = {
+    id = 10006,
+    lang1 = "分解",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "分解"
+  },
+  ["剧情物品"] = {
+    id = 30005,
+    lang1 = "剧情物品",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "剧情物品"
+  },
+  ["升到{1}星仍需<color=red>{2}</color>个"] = {
+    id = 10031,
+    lang1 = "升到{1}星仍需<color=red>{2}</color>个",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "升到{1}星仍需<color=red>{2}</color>个"
+  },
+  ["升序"] = {
+    id = 10001,
+    lang1 = "升序",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "升序"
+  },
+  ["升阶顺序"] = {
+    id = 30003,
+    lang1 = "升阶顺序",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "升阶顺序"
+  },
+  ["卸下"] = {
+    id = 10029,
+    lang1 = "卸下",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "卸下"
+  },
+  ["取消"] = {
+    id = 1,
+    lang1 = "取消",
+    lang2 = "cancel",
+    lang3 = "キャンセル",
+    langkey = "取消"
+  },
+  ["品质顺序"] = {
+    id = 30002,
+    lang1 = "品质顺序",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "品质顺序"
+  },
+  ["在线"] = {
+    id = 22,
+    lang1 = "在线",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "在线"
+  },
+  ["地"] = {
+    id = 6,
+    lang1 = "地",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "地"
+  },
+  ["培养"] = {
+    id = 10014,
+    lang1 = "培养",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "培养"
+  },
+  ["增加"] = {
+    id = 42,
+    lang1 = "增加",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "增加"
+  },
+  ["已突破"] = {
+    id = 10036,
+    lang1 = "已突破",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "已突破"
+  },
+  ["已经达到最大数量！"] = {
+    id = 10026,
+    lang1 = "已经达到最大数量！",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "已经达到最大数量！"
+  },
+  ["已进入世界频道{1}，在线人数：{2}"] = {
+    id = 33,
+    lang1 = "已进入世界频道{1}，在线人数：{2}",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "已进入世界频道{1}，在线人数：{2}"
+  },
+  ["已选择武器数量：{1}"] = {
+    id = 10016,
+    lang1 = "已选择武器数量：{1}",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "已选择武器数量：{1}"
+  },
+  ["当前暂无聊天信息"] = {
+    id = 35,
+    lang1 = "当前暂无聊天信息",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "当前暂无聊天信息"
+  },
+  ["我是{1}我要去{2}"] = {
+    id = 20001,
+    lang1 = "我是{1}我要去{2}",
+    lang2 = "xxx{1}xxx{2}",
+    lang3 = "xxx{1}xxx{2}",
+    langkey = "我是{1}我要去{2}"
+  },
+  ["战斗未结束，不能操作！"] = {
+    id = 10021,
+    lang1 = "战斗未结束，不能操作！",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "战斗未结束，不能操作！"
+  },
+  ["房间未通关，无法直接传送！"] = {
+    id = 11,
+    lang1 = "房间未通关，无法直接传送！",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "房间未通关，无法直接传送！"
+  },
+  ["攻击"] = {
+    id = 10019,
+    lang1 = "攻击",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "攻击"
+  },
+  ["效果"] = {
+    id = 44,
+    lang1 = "效果",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "效果"
+  },
+  ["效果（受职业等级影响）"] = {
+    id = 45,
+    lang1 = "效果（受职业等级影响）",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "效果（受职业等级影响）"
+  },
+  ["断线重连中，是否重新连接？"] = {
+    id = 10,
+    lang1 = "断线重连中，是否重新连接？",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "断线重连中，是否重新连接？"
+  },
+  ["无尽塔奖励预览描述"] = {
+    id = 14,
+    lang1 = "通过探索超级爬塔，可以获得角色库存道具，扩充本商店中各个角色的突破材料库存。挑战层数越高的爬塔，可获得品阶更高的角色库存道具。",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "无尽塔奖励预览描述"
+  },
+  ["星期一"] = {
+    id = 27,
+    lang1 = "星期一",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "星期一"
+  },
+  ["星期三"] = {
+    id = 29,
+    lang1 = "星期三",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "星期三"
+  },
+  ["星期二"] = {
+    id = 28,
+    lang1 = "星期二",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "星期二"
+  },
+  ["星期五"] = {
+    id = 31,
+    lang1 = "星期五",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "星期五"
+  },
+  ["星期六"] = {
+    id = 32,
+    lang1 = "星期六",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "星期六"
+  },
+  ["星期四"] = {
+    id = 30,
+    lang1 = "星期四",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "星期四"
+  },
+  ["星期日"] = {
+    id = 26,
+    lang1 = "星期日",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "星期日"
+  },
+  ["星级"] = {
+    id = 10009,
+    lang1 = "星级",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "星级"
+  },
+  ["昨天 {1}"] = {
+    id = 24,
+    lang1 = "昨天 {1}",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "昨天 {1}"
+  },
+  ["是否解除屏蔽“{1}”"] = {
+    id = 46,
+    lang1 = "是否解除屏蔽“<color=#c15e38>{1}</color>”",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "是否解除屏蔽“{1}”"
+  },
+  ["暗"] = {
+    id = 9,
+    lang1 = "暗",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "暗"
+  },
+  ["最少使用数量不能为0！"] = {
+    id = 10027,
+    lang1 = "最少使用数量不能为1！",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "最少使用数量不能为0！"
+  },
+  ["最近"] = {
+    id = 10011,
+    lang1 = "最近",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "最近"
+  },
+  ["武器"] = {
+    id = 10003,
+    lang1 = "武器",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "武器"
+  },
+  ["消耗"] = {
+    id = 10013,
+    lang1 = "消耗",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "消耗"
+  },
+  ["消耗品"] = {
+    id = 30004,
+    lang1 = "消耗品",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "消耗品"
+  },
+  ["火"] = {
+    id = 4,
+    lang1 = "火",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "火"
+  },
+  ["物品"] = {
+    id = 10004,
+    lang1 = "物品",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "物品"
+  },
+  ["确定"] = {
+    id = 2,
+    lang1 = "确定",
+    lang2 = "confirm",
+    lang3 = "確定",
+    langkey = "确定"
+  },
+  ["确认删除该好友"] = {
+    id = 48,
+    lang1 = "确认移除该好友？",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "确认删除该好友"
+  },
+  ["确认拉黑?(拉黑后不在接收对方消息，无法组队)"] = {
+    id = 47,
+    lang1 = "确认拉黑?\n(拉黑后不再接收对方消息，且无法组队)",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "确认拉黑?(拉黑后不在接收对方消息，无法组队)"
+  },
+  ["碎片"] = {
+    id = 10005,
+    lang1 = "碎片",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "碎片"
+  },
+  ["离线"] = {
+    id = 23,
+    lang1 = "离线",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "离线"
+  },
+  ["移动"] = {
+    id = 10018,
+    lang1 = "移动",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "移动"
+  },
+  ["穿戴成功"] = {
+    id = 16,
+    lang1 = "穿戴成功",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "穿戴成功"
+  },
+  ["第一天"] = {
+    id = 36,
+    lang1 = "第一天",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "第一天"
+  },
+  ["第七天"] = {
+    id = 42,
+    lang1 = "第七天",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "第七天"
+  },
+  ["第三天"] = {
+    id = 38,
+    lang1 = "第三天",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "第三天"
+  },
+  ["第二天"] = {
+    id = 37,
+    lang1 = "第二天",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "第二天"
+  },
+  ["第五天"] = {
+    id = 40,
+    lang1 = "第五天",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "第五天"
+  },
+  ["第六天"] = {
+    id = 41,
+    lang1 = "第六天",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "第六天"
+  },
+  ["第四天"] = {
+    id = 39,
+    lang1 = "第四天",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "第四天"
+  },
+  ["等级"] = {
+    id = 10010,
+    lang1 = "等级",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "等级"
+  },
+  ["等级顺序"] = {
+    id = 30001,
+    lang1 = "等级顺序",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "等级顺序"
+  },
+  ["获取{1}*{2}"] = {
+    id = 10037,
+    lang1 = "获取{1}*{2}",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "获取{1}*{2}"
+  },
+  ["装备"] = {
+    id = 10028,
+    lang1 = "装备",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "装备"
+  },
+  ["装备已卸下"] = {
+    id = 10024,
+    lang1 = "装备已卸下",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "装备已卸下"
+  },
+  ["装备穿戴成功"] = {
+    id = 10023,
+    lang1 = "装备穿戴成功",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "装备穿戴成功"
+  },
+  ["角色提升到{1}星{2}级可以突破"] = {
+    id = 10035,
+    lang1 = "角色提升到{1}星{2}级可以突破",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "角色提升到{1}星{2}级可以突破"
+  },
+  ["角色提升到{1}级可以突破"] = {
+    id = 10034,
+    lang1 = "角色提升到{1}级可以突破",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "角色提升到{1}级可以突破"
+  },
+  ["该装备已经被其他角色穿戴，无法重复穿戴！！"] = {
+    id = 10022,
+    lang1 = "该装备已经被其他角色穿戴，无法重复穿戴！！",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "该装备已经被其他角色穿戴，无法重复穿戴！！"
+  },
+  ["请从背包选择装备进行穿戴！"] = {
+    id = 10030,
+    lang1 = "请从背包选择装备进行穿戴！",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "请从背包选择装备进行穿戴！"
+  },
+  ["请输入内容"] = {
+    id = 19,
+    lang1 = "请输入内容",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "请输入内容"
+  },
+  ["购买成功！"] = {
+    id = 13,
+    lang1 = "购买成功！",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "购买成功！"
+  },
+  ["达到{1}后开启"] = {
+    id = 15,
+    lang1 = "达到{1}后开启",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "达到{1}后开启"
+  },
+  ["返回"] = {
+    id = 3,
+    lang1 = "返回",
+    lang2 = "back",
+    lang3 = "戻る",
+    langkey = "返回"
+  },
+  ["道具使用成功"] = {
+    id = 10025,
+    lang1 = "道具使用成功",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "道具使用成功"
+  },
+  ["防御"] = {
+    id = 10020,
+    lang1 = "防御",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "防御"
+  },
+  ["降序"] = {
+    id = 10002,
+    lang1 = "降序",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "降序"
+  },
+  ["预览"] = {
+    id = 10008,
+    lang1 = "预览",
+    lang2 = "xxx",
+    lang3 = "xxx",
+    langkey = "预览"
+  },
+  ["频道已满"] = {
+    id = 34,
+    lang1 = "频道已满",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "频道已满"
+  },
+  ["风"] = {
+    id = 7,
+    lang1 = "风",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "风"
+  },
+  ["（不超过{1}个字）"] = {
+    id = 20,
+    lang1 = "（不超过{1}个字）",
+    lang2 = "xx",
+    lang3 = "xx",
+    langkey = "（不超过{1}个字）"
+  }
+}

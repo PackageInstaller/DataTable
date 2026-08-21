@@ -1,0 +1,137 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local MAX_NUM = 50
+local RATION_IN = Config.NUM_TO_RATIO
+
+function ui:ui_finish_load()
+  self:set_button("ClearBtn", function()
+    self.v_select = 1
+    JournalMgr:clear_hurt_journal()
+    self:refresh_view()
+  end)
+  self:set_button("LeftBtn", function()
+    self.v_select = math.max(1, self.v_select - 1)
+    self:refresh_view()
+  end)
+  self:set_button("RightBtn", function()
+    self.v_select = math.min(self.v_select + 1, MAX_NUM)
+    self:refresh_view()
+  end)
+  self:set_button("CloseBtn", function()
+    self:ui_hide()
+  end)
+  self:set_button("FilterBtn", function()
+    UIMgr:get_ui("uifightdebugfilter"):ui_show(function(npc)
+      JournalMgr:filter_hurt(npc)
+      self.v_select = 1
+      self:refresh_page()
+    end)
+  end)
+  self.v_select = 1
+end
+
+function ui:ui_on_show()
+  self:refresh_view()
+  self:bind_auto_mq(Const.MSG_HURT_JOURNA_REFRESH, self.refresh_view, self)
+  local drag_panel = self.v_uiobjects.DragPanel
+  self.drag_panel_pos = drag_panel.transform.localPosition
+  Util.set_drag(self:get_object(), self, function(x, y)
+    self.drag_panel_pos.x = self.drag_panel_pos.x + x
+    self.drag_panel_pos.y = self.drag_panel_pos.y + y
+    drag_panel.transform:SetLocalPositionA(self.drag_panel_pos.x, self.drag_panel_pos.y, self.drag_panel_pos.z)
+  end)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:refresh_view()
+  self:refresh_journal()
+  self:refresh_page()
+end
+
+function ui:refresh_journal()
+  if not JournalMgr then
+    return
+  end
+  local hurt_journal_list = JournalMgr:get_filted_hurt_journal()
+  local hurt_journal
+  if hurt_journal_list then
+    hurt_journal = hurt_journal_list[self.v_select]
+  end
+  local default_text = "暂无信息"
+  if nil == hurt_journal then
+    hurt_journal = {
+      attack_id = default_text,
+      target_id = default_text,
+      hurt_Id = default_text,
+      hurt_level = default_text,
+      skill_type = default_text,
+      element_type = default_text,
+      hurt_value = default_text,
+      cirt_info = default_text,
+      hurt_increase = default_text,
+      hurt_decrease = default_text,
+      kill_level_fix = default_text,
+      base_hurt_src_info = default_text,
+      base_hurt_def_info = default_text,
+      base_hurt_increase = default_text,
+      base_hurt_decrease = default_text,
+      base_hurt_add = default_text,
+      base_hurt_block = default_text,
+      element_hurt_src_info = default_text,
+      element_hurt_def_info = default_text,
+      element_hurt_increase = default_text,
+      element_hurt_decrease = default_text,
+      element_hurt_add = default_text,
+      element_hurt_block = default_text
+    }
+  end
+  local components = self.v_uicompents
+  components.AttackIdTxt_txt.text = hurt_journal.attack_id
+  components.TargetIdTxt_txt.text = hurt_journal.target_id
+  components.HurtIdTxt_txt.text = hurt_journal.hurt_Id
+  components.HurtLevelTxt_txt.text = hurt_journal.hurt_level
+  components.HurtSignTxt_txt.text = hurt_journal.skill_type
+  components.HurtElementTypeTxt_txt.text = hurt_journal.element_type
+  components.HurtValueTxt_txt.text = hurt_journal.hurt_value
+  components.FixHurtValueTxt_txt.text = hurt_journal.fix_value
+  components.CritTxt_txt.text = hurt_journal.cirt_info
+  components.HurtIncreaseTxt_txt.text = hurt_journal.hurt_increase
+  components.HurtDecreaseTxt_txt.text = hurt_journal.hurt_decrease
+  components.KillLevelTxt_txt.text = hurt_journal.kill_level_fix
+  components.AtkTxt_txt.text = hurt_journal.base_hurt_src_info
+  components.AtkFactorTxt_txt.text = hurt_journal.base_hurt_src_factor
+  components.DefValueTxt_txt.text = hurt_journal.base_hurt_def_info
+  components.ElementIncreseTxt_txt.text = hurt_journal.base_hurt_increase
+  components.ElementdecreseTxt_txt.text = hurt_journal.base_hurt_decrease
+  components.DamageAddTxt_txt.text = hurt_journal.base_hurt_add
+  components.DamageBlockTxt_txt.text = hurt_journal.base_hurt_add
+  components.AtkTxt2_txt.text = hurt_journal.element_hurt_src_info
+  components.AtkFactorTxt2_txt.text = hurt_journal.element_hurt_src_factor
+  components.DefValueTxt2_txt.text = hurt_journal.element_hurt_def_info
+  components.DamageAddTxt2_txt.text = hurt_journal.element_hurt_add
+  components.DamageBlockTxt2_txt.text = hurt_journal.element_hurt_block
+  components.AttackId1Txt_txt.text = hurt_journal.attack_id
+  components.AttackerAtkTxt_txt.text = hurt_journal.attack_atk
+  components.PenetrateTxt_txt.text = hurt_journal.penetrate
+  components.EffectTypeTxt_txt.text = hurt_journal.effect_type
+  components.AtkIncreaseTxt_txt.text = hurt_journal.atk_increase
+  components.AtkDmgIncreaseTxt_txt.text = hurt_journal.atk_dmg_increase
+  components.AtkIncrease2Txt_txt.text = hurt_journal.atk_increase2
+  components.SpecialDmgFromTxt_txt.text = hurt_journal.special_dmg_from
+  components.TargetIdTxt2_txt.text = hurt_journal.target_id
+  components.DamageBlockTxt2_txt.text = hurt_journal.damage_block
+  components.DefDecreaseTxt2_txt.text = hurt_journal.def_decrease
+  components.DefDmgResiTxt2_txt.text = hurt_journal.def_dmg_resi
+  components.DefDecrease2Txt2_txt.text = hurt_journal.def_decrease2
+  components.DefTxt2_txt.text = hurt_journal.def
+  components.DamageAddTxt_txt.text = hurt_journal.atk_attach_dmg
+  components.DmgCritTxt_txt.text = hurt_journal.dmg_crit
+end
+
+function ui:refresh_page()
+  self.v_uicompents.JournalAmountTxt_txt.text = string.format("%s/%s", self.v_select, MAX_NUM)
+end
+
+return ui

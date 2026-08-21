@@ -1,0 +1,61 @@
+local Base = require("obj.state.state_obj_base")
+local ACT_DEFINE = Config.ACT_DEFINE
+local MOVE_TYPE = Config.ROLE_MOVE_TYPE
+local M = Util.create_child_mt(Base)
+
+function M:state_on_leave()
+  Base.state_on_leave(self)
+  self.v_state = nil
+  self.v_owner.role_move_ctrl:stop_move()
+end
+
+function M:_get_act()
+  local move_type = self.v_owner:get_move_type()
+  local act
+  if move_type == MOVE_TYPE.run then
+    act = ACT_DEFINE.Run
+  elseif move_type == MOVE_TYPE.forward then
+    act = ACT_DEFINE.Walk
+  elseif move_type == MOVE_TYPE.back then
+    act = ACT_DEFINE.Walkb
+  elseif move_type == MOVE_TYPE.left then
+    act = ACT_DEFINE.Walkl
+  elseif move_type == MOVE_TYPE.right then
+    act = ACT_DEFINE.Walkr
+  end
+  return act
+end
+
+function M:state_update_value()
+  local act = self:_get_act()
+  self.v_state_manager:try_action(act, 0, nil, nil, true)
+end
+
+function M:state_update()
+  Base.state_update(self)
+  return true
+end
+
+function M:stop_move()
+  local action = ACT_DEFINE.Idle2
+  self.v_action = action
+  self.v_owner.role_move_ctrl:stop_move()
+  self.v_state_manager:try_action(action, 0)
+  self.v_state_manager:exit_state(Config.STATE_NAME.move)
+end
+
+function M:move_by_dir(dirx, dirz)
+  self.v_action = self:_get_act()
+  self.v_state_manager:try_action(self.v_action, 0, nil, nil, true)
+  self.v_owner.role_move_ctrl:move_by_dir(dirx, dirz)
+end
+
+function M:state_get_name()
+  return Config.STATE_NAME.move
+end
+
+function M:state_can_coexist(state_name, ...)
+  return false
+end
+
+return M

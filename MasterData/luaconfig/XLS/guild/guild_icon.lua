@@ -1,0 +1,37 @@
+return {
+  {
+    Id = 1,
+    icon_name = "AA",
+    name = "tx_g_01_"
+  },
+  {
+    Id = 2,
+    icon_name = "AA",
+    name = "tx_g_04_"
+  },
+  {
+    Id = 3,
+    icon_name = "AA",
+    name = "tx_g_07_"
+  },
+  {
+    Id = 4,
+    icon_name = "AA",
+    name = "tx_g_08_"
+  },
+  {
+    Id = 5,
+    icon_name = "AA",
+    name = "tx_g_09_"
+  },
+  {
+    Id = 6,
+    icon_name = "AA",
+    name = "tx_g_11_"
+  },
+  {
+    Id = 7,
+    icon_name = "AA",
+    name = "tx_g_12_"
+  }
+}

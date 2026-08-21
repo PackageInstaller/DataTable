@@ -1,0 +1,4988 @@
+return {
+  [1001001] = {
+    {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 1,
+      Probability = 90
+    },
+    {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 2,
+      Probability = 90
+    },
+    {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 3,
+      Probability = 150
+    },
+    {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 4,
+      Probability = 150
+    },
+    {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 5,
+      Probability = 150
+    },
+    {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 6,
+      Probability = 108
+    },
+    {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 7,
+      Probability = 108
+    },
+    {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 8,
+      Probability = 108
+    },
+    {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 9,
+      Probability = 108
+    },
+    {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 10,
+      Probability = 108
+    },
+    {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 11,
+      Probability = 75
+    },
+    {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 12,
+      Probability = 75
+    },
+    {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 13,
+      Probability = 75
+    },
+    {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 14,
+      Probability = 75
+    },
+    {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 15,
+      Probability = 75
+    },
+    {
+      EffectList = {
+        {
+          33,
+          1000,
+          1
+        }
+      },
+      Id = 16,
+      Probability = 75
+    },
+    {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 17,
+      Probability = 20
+    },
+    {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 18,
+      Probability = 20
+    },
+    {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 19,
+      Probability = 20
+    },
+    {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 20,
+      Probability = 20
+    },
+    {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 21,
+      Probability = 20
+    },
+    {
+      EffectList = {
+        {
+          33,
+          1200,
+          1
+        }
+      },
+      Id = 22,
+      Probability = 20
+    },
+    {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 23,
+      Probability = 20
+    },
+    {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 24,
+      Probability = 20
+    },
+    {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 25,
+      Probability = 20
+    }
+  },
+  [1001002] = {
+    [26] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 26,
+      Probability = 90
+    },
+    [27] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 27,
+      Probability = 90
+    },
+    [28] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 28,
+      Probability = 150
+    },
+    [29] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 29,
+      Probability = 150
+    },
+    [30] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 30,
+      Probability = 150
+    },
+    [31] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 31,
+      Probability = 108
+    },
+    [32] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 32,
+      Probability = 108
+    },
+    [33] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 33,
+      Probability = 108
+    },
+    [34] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 34,
+      Probability = 108
+    },
+    [35] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 35,
+      Probability = 108
+    },
+    [36] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 36,
+      Probability = 75
+    },
+    [37] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 37,
+      Probability = 75
+    },
+    [38] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 38,
+      Probability = 75
+    },
+    [39] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 39,
+      Probability = 75
+    },
+    [40] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 40,
+      Probability = 75
+    },
+    [41] = {
+      EffectList = {
+        {
+          34,
+          1000,
+          1
+        }
+      },
+      Id = 41,
+      Probability = 75
+    },
+    [42] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 42,
+      Probability = 20
+    },
+    [43] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 43,
+      Probability = 20
+    },
+    [44] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 44,
+      Probability = 20
+    },
+    [45] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 45,
+      Probability = 20
+    },
+    [46] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 46,
+      Probability = 20
+    },
+    [47] = {
+      EffectList = {
+        {
+          34,
+          1200,
+          1
+        }
+      },
+      Id = 47,
+      Probability = 20
+    },
+    [48] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 48,
+      Probability = 20
+    },
+    [49] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 49,
+      Probability = 20
+    },
+    [50] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 50,
+      Probability = 20
+    }
+  },
+  [1001003] = {
+    [51] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 51,
+      Probability = 90
+    },
+    [52] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 52,
+      Probability = 90
+    },
+    [53] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 53,
+      Probability = 150
+    },
+    [54] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 54,
+      Probability = 150
+    },
+    [55] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 55,
+      Probability = 150
+    },
+    [56] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 56,
+      Probability = 108
+    },
+    [57] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 57,
+      Probability = 108
+    },
+    [58] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 58,
+      Probability = 108
+    },
+    [59] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 59,
+      Probability = 108
+    },
+    [60] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 60,
+      Probability = 108
+    },
+    [61] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 61,
+      Probability = 75
+    },
+    [62] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 62,
+      Probability = 75
+    },
+    [63] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 63,
+      Probability = 75
+    },
+    [64] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 64,
+      Probability = 75
+    },
+    [65] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 65,
+      Probability = 75
+    },
+    [66] = {
+      EffectList = {
+        {
+          31,
+          1000,
+          1
+        }
+      },
+      Id = 66,
+      Probability = 75
+    },
+    [67] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 67,
+      Probability = 20
+    },
+    [68] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 68,
+      Probability = 20
+    },
+    [69] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 69,
+      Probability = 20
+    },
+    [70] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 70,
+      Probability = 20
+    },
+    [71] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 71,
+      Probability = 20
+    },
+    [72] = {
+      EffectList = {
+        {
+          31,
+          1200,
+          1
+        }
+      },
+      Id = 72,
+      Probability = 20
+    },
+    [73] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 73,
+      Probability = 20
+    },
+    [74] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 74,
+      Probability = 20
+    },
+    [75] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 75,
+      Probability = 20
+    }
+  },
+  [1001004] = {
+    [76] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 76,
+      Probability = 90
+    },
+    [77] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 77,
+      Probability = 90
+    },
+    [78] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 78,
+      Probability = 150
+    },
+    [79] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 79,
+      Probability = 150
+    },
+    [80] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 80,
+      Probability = 150
+    },
+    [81] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 81,
+      Probability = 108
+    },
+    [82] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 82,
+      Probability = 108
+    },
+    [83] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 83,
+      Probability = 108
+    },
+    [84] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 84,
+      Probability = 108
+    },
+    [85] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 85,
+      Probability = 108
+    },
+    [86] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 86,
+      Probability = 75
+    },
+    [87] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 87,
+      Probability = 75
+    },
+    [88] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 88,
+      Probability = 75
+    },
+    [89] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 89,
+      Probability = 75
+    },
+    [90] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 90,
+      Probability = 75
+    },
+    [91] = {
+      EffectList = {
+        {
+          32,
+          1000,
+          1
+        }
+      },
+      Id = 91,
+      Probability = 75
+    },
+    [92] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 92,
+      Probability = 20
+    },
+    [93] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 93,
+      Probability = 20
+    },
+    [94] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 94,
+      Probability = 20
+    },
+    [95] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 95,
+      Probability = 20
+    },
+    [96] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 96,
+      Probability = 20
+    },
+    [97] = {
+      EffectList = {
+        {
+          32,
+          1200,
+          1
+        }
+      },
+      Id = 97,
+      Probability = 20
+    },
+    [98] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 98,
+      Probability = 20
+    },
+    [99] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 99,
+      Probability = 20
+    },
+    [100] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 100,
+      Probability = 20
+    }
+  },
+  [1001005] = {
+    [101] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 101,
+      Probability = 90
+    },
+    [102] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 102,
+      Probability = 90
+    },
+    [103] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 103,
+      Probability = 150
+    },
+    [104] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 104,
+      Probability = 150
+    },
+    [105] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 105,
+      Probability = 150
+    },
+    [106] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 106,
+      Probability = 108
+    },
+    [107] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 107,
+      Probability = 108
+    },
+    [108] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 108,
+      Probability = 108
+    },
+    [109] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 109,
+      Probability = 108
+    },
+    [110] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 110,
+      Probability = 108
+    },
+    [111] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 111,
+      Probability = 75
+    },
+    [112] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 112,
+      Probability = 75
+    },
+    [113] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 113,
+      Probability = 75
+    },
+    [114] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 114,
+      Probability = 75
+    },
+    [115] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 115,
+      Probability = 75
+    },
+    [116] = {
+      EffectList = {
+        {
+          34,
+          1000,
+          1
+        }
+      },
+      Id = 116,
+      Probability = 75
+    },
+    [117] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 117,
+      Probability = 20
+    },
+    [118] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 118,
+      Probability = 20
+    },
+    [119] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 119,
+      Probability = 20
+    },
+    [120] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 120,
+      Probability = 20
+    },
+    [121] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 121,
+      Probability = 20
+    },
+    [122] = {
+      EffectList = {
+        {
+          34,
+          1200,
+          1
+        }
+      },
+      Id = 122,
+      Probability = 20
+    },
+    [123] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 123,
+      Probability = 20
+    },
+    [124] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 124,
+      Probability = 20
+    },
+    [125] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 125,
+      Probability = 20
+    }
+  },
+  [1001006] = {
+    [126] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 126,
+      Probability = 90
+    },
+    [127] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 127,
+      Probability = 90
+    },
+    [128] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 128,
+      Probability = 150
+    },
+    [129] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 129,
+      Probability = 150
+    },
+    [130] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 130,
+      Probability = 150
+    },
+    [131] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 131,
+      Probability = 108
+    },
+    [132] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 132,
+      Probability = 108
+    },
+    [133] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 133,
+      Probability = 108
+    },
+    [134] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 134,
+      Probability = 108
+    },
+    [135] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 135,
+      Probability = 108
+    },
+    [136] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 136,
+      Probability = 75
+    },
+    [137] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 137,
+      Probability = 75
+    },
+    [138] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 138,
+      Probability = 75
+    },
+    [139] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 139,
+      Probability = 75
+    },
+    [140] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 140,
+      Probability = 75
+    },
+    [141] = {
+      EffectList = {
+        {
+          30,
+          1000,
+          1
+        }
+      },
+      Id = 141,
+      Probability = 75
+    },
+    [142] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 142,
+      Probability = 20
+    },
+    [143] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 143,
+      Probability = 20
+    },
+    [144] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 144,
+      Probability = 20
+    },
+    [145] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 145,
+      Probability = 20
+    },
+    [146] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 146,
+      Probability = 20
+    },
+    [147] = {
+      EffectList = {
+        {
+          30,
+          1200,
+          1
+        }
+      },
+      Id = 147,
+      Probability = 20
+    },
+    [148] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 148,
+      Probability = 20
+    },
+    [149] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 149,
+      Probability = 20
+    },
+    [150] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 150,
+      Probability = 20
+    }
+  },
+  [1001007] = {
+    [151] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 151,
+      Probability = 90
+    },
+    [152] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 152,
+      Probability = 90
+    },
+    [153] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 153,
+      Probability = 150
+    },
+    [154] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 154,
+      Probability = 150
+    },
+    [155] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 155,
+      Probability = 150
+    },
+    [156] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 156,
+      Probability = 108
+    },
+    [157] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 157,
+      Probability = 108
+    },
+    [158] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 158,
+      Probability = 108
+    },
+    [159] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 159,
+      Probability = 108
+    },
+    [160] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 160,
+      Probability = 108
+    },
+    [161] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 161,
+      Probability = 75
+    },
+    [162] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 162,
+      Probability = 75
+    },
+    [163] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 163,
+      Probability = 75
+    },
+    [164] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 164,
+      Probability = 75
+    },
+    [165] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 165,
+      Probability = 75
+    },
+    [166] = {
+      EffectList = {
+        {
+          30,
+          1000,
+          1
+        }
+      },
+      Id = 166,
+      Probability = 75
+    },
+    [167] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 167,
+      Probability = 20
+    },
+    [168] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 168,
+      Probability = 20
+    },
+    [169] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 169,
+      Probability = 20
+    },
+    [170] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 170,
+      Probability = 20
+    },
+    [171] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 171,
+      Probability = 20
+    },
+    [172] = {
+      EffectList = {
+        {
+          30,
+          1200,
+          1
+        }
+      },
+      Id = 172,
+      Probability = 20
+    },
+    [173] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 173,
+      Probability = 20
+    },
+    [174] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 174,
+      Probability = 20
+    },
+    [175] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 175,
+      Probability = 20
+    }
+  },
+  [1001008] = {
+    [176] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 176,
+      Probability = 90
+    },
+    [177] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 177,
+      Probability = 90
+    },
+    [178] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 178,
+      Probability = 150
+    },
+    [179] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 179,
+      Probability = 150
+    },
+    [180] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 180,
+      Probability = 150
+    },
+    [181] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 181,
+      Probability = 108
+    },
+    [182] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 182,
+      Probability = 108
+    },
+    [183] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 183,
+      Probability = 108
+    },
+    [184] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 184,
+      Probability = 108
+    },
+    [185] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 185,
+      Probability = 108
+    },
+    [186] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 186,
+      Probability = 75
+    },
+    [187] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 187,
+      Probability = 75
+    },
+    [188] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 188,
+      Probability = 75
+    },
+    [189] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 189,
+      Probability = 75
+    },
+    [190] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 190,
+      Probability = 75
+    },
+    [191] = {
+      EffectList = {
+        {
+          34,
+          1000,
+          1
+        }
+      },
+      Id = 191,
+      Probability = 75
+    },
+    [192] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 192,
+      Probability = 20
+    },
+    [193] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 193,
+      Probability = 20
+    },
+    [194] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 194,
+      Probability = 20
+    },
+    [195] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 195,
+      Probability = 20
+    },
+    [196] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 196,
+      Probability = 20
+    },
+    [197] = {
+      EffectList = {
+        {
+          34,
+          1200,
+          1
+        }
+      },
+      Id = 197,
+      Probability = 20
+    },
+    [198] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 198,
+      Probability = 20
+    },
+    [199] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 199,
+      Probability = 20
+    },
+    [200] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 200,
+      Probability = 20
+    }
+  },
+  [1001009] = {
+    [201] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 201,
+      Probability = 90
+    },
+    [202] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 202,
+      Probability = 90
+    },
+    [203] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 203,
+      Probability = 150
+    },
+    [204] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 204,
+      Probability = 150
+    },
+    [205] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 205,
+      Probability = 150
+    },
+    [206] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 206,
+      Probability = 108
+    },
+    [207] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 207,
+      Probability = 108
+    },
+    [208] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 208,
+      Probability = 108
+    },
+    [209] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 209,
+      Probability = 108
+    },
+    [210] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 210,
+      Probability = 108
+    },
+    [211] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 211,
+      Probability = 75
+    },
+    [212] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 212,
+      Probability = 75
+    },
+    [213] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 213,
+      Probability = 75
+    },
+    [214] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 214,
+      Probability = 75
+    },
+    [215] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 215,
+      Probability = 75
+    },
+    [216] = {
+      EffectList = {
+        {
+          31,
+          1000,
+          1
+        }
+      },
+      Id = 216,
+      Probability = 75
+    },
+    [217] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 217,
+      Probability = 20
+    },
+    [218] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 218,
+      Probability = 20
+    },
+    [219] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 219,
+      Probability = 20
+    },
+    [220] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 220,
+      Probability = 20
+    },
+    [221] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 221,
+      Probability = 20
+    },
+    [222] = {
+      EffectList = {
+        {
+          31,
+          1200,
+          1
+        }
+      },
+      Id = 222,
+      Probability = 20
+    },
+    [223] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 223,
+      Probability = 20
+    },
+    [224] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 224,
+      Probability = 20
+    },
+    [225] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 225,
+      Probability = 20
+    }
+  },
+  [1001010] = {
+    [226] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 226,
+      Probability = 90
+    },
+    [227] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 227,
+      Probability = 90
+    },
+    [228] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 228,
+      Probability = 150
+    },
+    [229] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 229,
+      Probability = 150
+    },
+    [230] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 230,
+      Probability = 150
+    },
+    [231] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 231,
+      Probability = 108
+    },
+    [232] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 232,
+      Probability = 108
+    },
+    [233] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 233,
+      Probability = 108
+    },
+    [234] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 234,
+      Probability = 108
+    },
+    [235] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 235,
+      Probability = 108
+    },
+    [236] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 236,
+      Probability = 75
+    },
+    [237] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 237,
+      Probability = 75
+    },
+    [238] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 238,
+      Probability = 75
+    },
+    [239] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 239,
+      Probability = 75
+    },
+    [240] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 240,
+      Probability = 75
+    },
+    [241] = {
+      EffectList = {
+        {
+          30,
+          1000,
+          1
+        }
+      },
+      Id = 241,
+      Probability = 75
+    },
+    [242] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 242,
+      Probability = 20
+    },
+    [243] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 243,
+      Probability = 20
+    },
+    [244] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 244,
+      Probability = 20
+    },
+    [245] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 245,
+      Probability = 20
+    },
+    [246] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 246,
+      Probability = 20
+    },
+    [247] = {
+      EffectList = {
+        {
+          30,
+          1200,
+          1
+        }
+      },
+      Id = 247,
+      Probability = 20
+    },
+    [248] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 248,
+      Probability = 20
+    },
+    [249] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 249,
+      Probability = 20
+    },
+    [250] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 250,
+      Probability = 20
+    }
+  },
+  [1001011] = {
+    [251] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 251,
+      Probability = 90
+    },
+    [252] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 252,
+      Probability = 90
+    },
+    [253] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 253,
+      Probability = 150
+    },
+    [254] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 254,
+      Probability = 150
+    },
+    [255] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 255,
+      Probability = 150
+    },
+    [256] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 256,
+      Probability = 108
+    },
+    [257] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 257,
+      Probability = 108
+    },
+    [258] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 258,
+      Probability = 108
+    },
+    [259] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 259,
+      Probability = 108
+    },
+    [260] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 260,
+      Probability = 108
+    },
+    [261] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 261,
+      Probability = 75
+    },
+    [262] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 262,
+      Probability = 75
+    },
+    [263] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 263,
+      Probability = 75
+    },
+    [264] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 264,
+      Probability = 75
+    },
+    [265] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 265,
+      Probability = 75
+    },
+    [266] = {
+      EffectList = {
+        {
+          31,
+          1000,
+          1
+        }
+      },
+      Id = 266,
+      Probability = 75
+    },
+    [267] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 267,
+      Probability = 20
+    },
+    [268] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 268,
+      Probability = 20
+    },
+    [269] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 269,
+      Probability = 20
+    },
+    [270] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 270,
+      Probability = 20
+    },
+    [271] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 271,
+      Probability = 20
+    },
+    [272] = {
+      EffectList = {
+        {
+          31,
+          1200,
+          1
+        }
+      },
+      Id = 272,
+      Probability = 20
+    },
+    [273] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 273,
+      Probability = 20
+    },
+    [274] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 274,
+      Probability = 20
+    },
+    [275] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 275,
+      Probability = 20
+    }
+  },
+  [1001012] = {
+    [276] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 276,
+      Probability = 90
+    },
+    [277] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 277,
+      Probability = 90
+    },
+    [278] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 278,
+      Probability = 150
+    },
+    [279] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 279,
+      Probability = 150
+    },
+    [280] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 280,
+      Probability = 150
+    },
+    [281] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 281,
+      Probability = 108
+    },
+    [282] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 282,
+      Probability = 108
+    },
+    [283] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 283,
+      Probability = 108
+    },
+    [284] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 284,
+      Probability = 108
+    },
+    [285] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 285,
+      Probability = 108
+    },
+    [286] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 286,
+      Probability = 75
+    },
+    [287] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 287,
+      Probability = 75
+    },
+    [288] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 288,
+      Probability = 75
+    },
+    [289] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 289,
+      Probability = 75
+    },
+    [290] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 290,
+      Probability = 75
+    },
+    [291] = {
+      EffectList = {
+        {
+          30,
+          1000,
+          1
+        }
+      },
+      Id = 291,
+      Probability = 75
+    },
+    [292] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 292,
+      Probability = 20
+    },
+    [293] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 293,
+      Probability = 20
+    },
+    [294] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 294,
+      Probability = 20
+    },
+    [295] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 295,
+      Probability = 20
+    },
+    [296] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 296,
+      Probability = 20
+    },
+    [297] = {
+      EffectList = {
+        {
+          30,
+          1200,
+          1
+        }
+      },
+      Id = 297,
+      Probability = 20
+    },
+    [298] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 298,
+      Probability = 20
+    },
+    [299] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 299,
+      Probability = 20
+    },
+    [300] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 300,
+      Probability = 20
+    }
+  },
+  [1001013] = {
+    [301] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 301,
+      Probability = 90
+    },
+    [302] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 302,
+      Probability = 90
+    },
+    [303] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 303,
+      Probability = 150
+    },
+    [304] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 304,
+      Probability = 150
+    },
+    [305] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 305,
+      Probability = 150
+    },
+    [306] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 306,
+      Probability = 108
+    },
+    [307] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 307,
+      Probability = 108
+    },
+    [308] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 308,
+      Probability = 108
+    },
+    [309] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 309,
+      Probability = 108
+    },
+    [310] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 310,
+      Probability = 108
+    },
+    [311] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 311,
+      Probability = 75
+    },
+    [312] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 312,
+      Probability = 75
+    },
+    [313] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 313,
+      Probability = 75
+    },
+    [314] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 314,
+      Probability = 75
+    },
+    [315] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 315,
+      Probability = 75
+    },
+    [316] = {
+      EffectList = {
+        {
+          31,
+          1000,
+          1
+        }
+      },
+      Id = 316,
+      Probability = 75
+    },
+    [317] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 317,
+      Probability = 20
+    },
+    [318] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 318,
+      Probability = 20
+    },
+    [319] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 319,
+      Probability = 20
+    },
+    [320] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 320,
+      Probability = 20
+    },
+    [321] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 321,
+      Probability = 20
+    },
+    [322] = {
+      EffectList = {
+        {
+          31,
+          1200,
+          1
+        }
+      },
+      Id = 322,
+      Probability = 20
+    },
+    [323] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 323,
+      Probability = 20
+    },
+    [324] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 324,
+      Probability = 20
+    },
+    [325] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 325,
+      Probability = 20
+    }
+  },
+  [1001014] = {
+    [326] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 326,
+      Probability = 90
+    },
+    [327] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 327,
+      Probability = 90
+    },
+    [328] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 328,
+      Probability = 150
+    },
+    [329] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 329,
+      Probability = 150
+    },
+    [330] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 330,
+      Probability = 150
+    },
+    [331] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 331,
+      Probability = 108
+    },
+    [332] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 332,
+      Probability = 108
+    },
+    [333] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 333,
+      Probability = 108
+    },
+    [334] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 334,
+      Probability = 108
+    },
+    [335] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 335,
+      Probability = 108
+    },
+    [336] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 336,
+      Probability = 75
+    },
+    [337] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 337,
+      Probability = 75
+    },
+    [338] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 338,
+      Probability = 75
+    },
+    [339] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 339,
+      Probability = 75
+    },
+    [340] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 340,
+      Probability = 75
+    },
+    [341] = {
+      EffectList = {
+        {
+          33,
+          1000,
+          1
+        }
+      },
+      Id = 341,
+      Probability = 75
+    },
+    [342] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 342,
+      Probability = 20
+    },
+    [343] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 343,
+      Probability = 20
+    },
+    [344] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 344,
+      Probability = 20
+    },
+    [345] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 345,
+      Probability = 20
+    },
+    [346] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 346,
+      Probability = 20
+    },
+    [347] = {
+      EffectList = {
+        {
+          33,
+          1200,
+          1
+        }
+      },
+      Id = 347,
+      Probability = 20
+    },
+    [348] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 348,
+      Probability = 20
+    },
+    [349] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 349,
+      Probability = 20
+    },
+    [350] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 350,
+      Probability = 20
+    }
+  },
+  [1001015] = {
+    [351] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 351,
+      Probability = 90
+    },
+    [352] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 352,
+      Probability = 90
+    },
+    [353] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 353,
+      Probability = 150
+    },
+    [354] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 354,
+      Probability = 150
+    },
+    [355] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 355,
+      Probability = 150
+    },
+    [356] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 356,
+      Probability = 108
+    },
+    [357] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 357,
+      Probability = 108
+    },
+    [358] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 358,
+      Probability = 108
+    },
+    [359] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 359,
+      Probability = 108
+    },
+    [360] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 360,
+      Probability = 108
+    },
+    [361] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 361,
+      Probability = 75
+    },
+    [362] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 362,
+      Probability = 75
+    },
+    [363] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 363,
+      Probability = 75
+    },
+    [364] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 364,
+      Probability = 75
+    },
+    [365] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 365,
+      Probability = 75
+    },
+    [366] = {
+      EffectList = {
+        {
+          33,
+          1000,
+          1
+        }
+      },
+      Id = 366,
+      Probability = 75
+    },
+    [367] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 367,
+      Probability = 20
+    },
+    [368] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 368,
+      Probability = 20
+    },
+    [369] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 369,
+      Probability = 20
+    },
+    [370] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 370,
+      Probability = 20
+    },
+    [371] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 371,
+      Probability = 20
+    },
+    [372] = {
+      EffectList = {
+        {
+          33,
+          1200,
+          1
+        }
+      },
+      Id = 372,
+      Probability = 20
+    },
+    [373] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 373,
+      Probability = 20
+    },
+    [374] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 374,
+      Probability = 20
+    },
+    [375] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 375,
+      Probability = 20
+    }
+  },
+  [1001016] = {
+    [376] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 376,
+      Probability = 90
+    },
+    [377] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 377,
+      Probability = 90
+    },
+    [378] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 378,
+      Probability = 150
+    },
+    [379] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 379,
+      Probability = 150
+    },
+    [380] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 380,
+      Probability = 150
+    },
+    [381] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 381,
+      Probability = 108
+    },
+    [382] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 382,
+      Probability = 108
+    },
+    [383] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 383,
+      Probability = 108
+    },
+    [384] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 384,
+      Probability = 108
+    },
+    [385] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 385,
+      Probability = 108
+    },
+    [386] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 386,
+      Probability = 75
+    },
+    [387] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 387,
+      Probability = 75
+    },
+    [388] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 388,
+      Probability = 75
+    },
+    [389] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 389,
+      Probability = 75
+    },
+    [390] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 390,
+      Probability = 75
+    },
+    [391] = {
+      EffectList = {
+        {
+          32,
+          1000,
+          1
+        }
+      },
+      Id = 391,
+      Probability = 75
+    },
+    [392] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 392,
+      Probability = 20
+    },
+    [393] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 393,
+      Probability = 20
+    },
+    [394] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 394,
+      Probability = 20
+    },
+    [395] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 395,
+      Probability = 20
+    },
+    [396] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 396,
+      Probability = 20
+    },
+    [397] = {
+      EffectList = {
+        {
+          32,
+          1200,
+          1
+        }
+      },
+      Id = 397,
+      Probability = 20
+    },
+    [398] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 398,
+      Probability = 20
+    },
+    [399] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 399,
+      Probability = 20
+    },
+    [400] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 400,
+      Probability = 20
+    }
+  },
+  [1001017] = {
+    [401] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 401,
+      Probability = 90
+    },
+    [402] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 402,
+      Probability = 90
+    },
+    [403] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 403,
+      Probability = 150
+    },
+    [404] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 404,
+      Probability = 150
+    },
+    [405] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 405,
+      Probability = 150
+    },
+    [406] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 406,
+      Probability = 108
+    },
+    [407] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 407,
+      Probability = 108
+    },
+    [408] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 408,
+      Probability = 108
+    },
+    [409] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 409,
+      Probability = 108
+    },
+    [410] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 410,
+      Probability = 108
+    },
+    [411] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 411,
+      Probability = 75
+    },
+    [412] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 412,
+      Probability = 75
+    },
+    [413] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 413,
+      Probability = 75
+    },
+    [414] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 414,
+      Probability = 75
+    },
+    [415] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 415,
+      Probability = 75
+    },
+    [416] = {
+      EffectList = {
+        {
+          34,
+          1000,
+          1
+        }
+      },
+      Id = 416,
+      Probability = 75
+    },
+    [417] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 417,
+      Probability = 20
+    },
+    [418] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 418,
+      Probability = 20
+    },
+    [419] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 419,
+      Probability = 20
+    },
+    [420] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 420,
+      Probability = 20
+    },
+    [421] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 421,
+      Probability = 20
+    },
+    [422] = {
+      EffectList = {
+        {
+          34,
+          1200,
+          1
+        }
+      },
+      Id = 422,
+      Probability = 20
+    },
+    [423] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 423,
+      Probability = 20
+    },
+    [424] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 424,
+      Probability = 20
+    },
+    [425] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 425,
+      Probability = 20
+    }
+  },
+  [1001018] = {
+    [426] = {
+      EffectList = {
+        {
+          4,
+          2000,
+          1
+        }
+      },
+      Id = 426,
+      Probability = 90
+    },
+    [427] = {
+      EffectList = {
+        {
+          20,
+          40,
+          1
+        }
+      },
+      Id = 427,
+      Probability = 90
+    },
+    [428] = {
+      EffectList = {
+        {
+          4,
+          3000,
+          1
+        }
+      },
+      Id = 428,
+      Probability = 150
+    },
+    [429] = {
+      EffectList = {
+        {
+          20,
+          60,
+          1
+        }
+      },
+      Id = 429,
+      Probability = 150
+    },
+    [430] = {
+      EffectList = {
+        {
+          26,
+          400,
+          1
+        }
+      },
+      Id = 430,
+      Probability = 150
+    },
+    [431] = {
+      EffectList = {
+        {
+          4,
+          4000,
+          1
+        }
+      },
+      Id = 431,
+      Probability = 108
+    },
+    [432] = {
+      EffectList = {
+        {
+          20,
+          80,
+          1
+        }
+      },
+      Id = 432,
+      Probability = 108
+    },
+    [433] = {
+      EffectList = {
+        {
+          26,
+          600,
+          1
+        }
+      },
+      Id = 433,
+      Probability = 108
+    },
+    [434] = {
+      EffectList = {
+        {
+          76,
+          1500,
+          1
+        }
+      },
+      Id = 434,
+      Probability = 108
+    },
+    [435] = {
+      EffectList = {
+        {
+          78,
+          3000,
+          1
+        }
+      },
+      Id = 435,
+      Probability = 108
+    },
+    [436] = {
+      EffectList = {
+        {
+          4,
+          5000,
+          1
+        }
+      },
+      Id = 436,
+      Probability = 75
+    },
+    [437] = {
+      EffectList = {
+        {
+          20,
+          100,
+          1
+        }
+      },
+      Id = 437,
+      Probability = 75
+    },
+    [438] = {
+      EffectList = {
+        {
+          26,
+          800,
+          1
+        }
+      },
+      Id = 438,
+      Probability = 75
+    },
+    [439] = {
+      EffectList = {
+        {
+          76,
+          2000,
+          1
+        }
+      },
+      Id = 439,
+      Probability = 75
+    },
+    [440] = {
+      EffectList = {
+        {
+          78,
+          4000,
+          1
+        }
+      },
+      Id = 440,
+      Probability = 75
+    },
+    [441] = {
+      EffectList = {
+        {
+          30,
+          1000,
+          1
+        }
+      },
+      Id = 441,
+      Probability = 75
+    },
+    [442] = {
+      EffectList = {
+        {
+          4,
+          6000,
+          1
+        }
+      },
+      Id = 442,
+      Probability = 20
+    },
+    [443] = {
+      EffectList = {
+        {
+          20,
+          120,
+          1
+        }
+      },
+      Id = 443,
+      Probability = 20
+    },
+    [444] = {
+      EffectList = {
+        {
+          26,
+          1000,
+          1
+        }
+      },
+      Id = 444,
+      Probability = 20
+    },
+    [445] = {
+      EffectList = {
+        {
+          76,
+          2500,
+          1
+        }
+      },
+      Id = 445,
+      Probability = 20
+    },
+    [446] = {
+      EffectList = {
+        {
+          78,
+          5000,
+          1
+        }
+      },
+      Id = 446,
+      Probability = 20
+    },
+    [447] = {
+      EffectList = {
+        {
+          30,
+          1200,
+          1
+        }
+      },
+      Id = 447,
+      Probability = 20
+    },
+    [448] = {
+      EffectList = {
+        {
+          130,
+          1000,
+          1
+        }
+      },
+      Id = 448,
+      Probability = 20
+    },
+    [449] = {
+      EffectList = {
+        {
+          131,
+          1000,
+          1
+        }
+      },
+      Id = 449,
+      Probability = 20
+    },
+    [450] = {
+      EffectList = {
+        {
+          132,
+          1000,
+          1
+        }
+      },
+      Id = 450,
+      Probability = 20
+    }
+  }
+}

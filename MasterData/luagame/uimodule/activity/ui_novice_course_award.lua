@@ -1,0 +1,206 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local JOURNEY_STATE = Config.CommonDefine.JOURNEY_STATE
+local SPINE_RT_VIEW = require("ui.model_rt_view.spine_rt_view")
+local SpineHelper = require("ui.model_rt_view.spine_helper")
+local NOVICE_COURSE_AWARD_KEY = "NOVICE_COURSE_AWARD_KEY"
+local novice_course_item = require("uimodule.activity.ui_novice_course_award_item")
+local special_cfg_index = 1
+local MODEL = {
+  v_char_spine = {
+    "CharSpine",
+    BIND_TYPE.OBJECT
+  },
+  v_btn_receive = {
+    "BtnReceive",
+    BIND_TYPE.OBJECT
+  },
+  v_btn_icon = {
+    "BtnIcon",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_un_complete = {
+    "BtnUnComplete",
+    BIND_TYPE.OBJECT
+  },
+  v_can_receive = {
+    "CanReceive",
+    BIND_TYPE.OBJECT
+  },
+  v_have_got = {
+    "HaveGot",
+    BIND_TYPE.OBJECT
+  },
+  v_chap_icon = {
+    "ChapIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_chap_name = {
+    "ChapName",
+    BIND_TYPE.TEXT
+  },
+  v_chap_num = {
+    "ChapNum",
+    BIND_TYPE.TEXT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnReceive", function()
+    NoviceMgr:request_get_activity_journey(special_cfg_index)
+  end)
+  self:set_button("ChapTem", function()
+    ChapterMgr:go_to_new_chapter_node()
+  end)
+  self:set_button("BtnCharSpine", function()
+    if self.v_anim_data.record_data.play_start then
+      if self.v_anim_data.record_data.play_interrupt then
+        SpineHelper.init_anim_info(self.v_spine_id, self.v_anim_data, SpineHelper.ANIM_TYPE.CLICK)
+      end
+    else
+      SpineHelper.init_anim_info(self.v_spine_id, self.v_anim_data, SpineHelper.ANIM_TYPE.CLICK)
+    end
+  end)
+  local item_rect = Util.get_rect_transform(nil, self.v_uiobjects.StageAwardTem)
+  self.v_item_width = item_rect.rect.width
+  self.v_content_rect = Util.get_rect_transform(nil, self.v_uiobjects.Content)
+  self.v_content_init_x, self.v_content_init_y = self.v_content_rect:GetAnchoredPositionA()
+  self:register_exist_auto_template(NOVICE_COURSE_AWARD_KEY, self.v_uiobjects.StageAwardTem, self.v_uiobjects.Content)
+end
+
+function ui:ui_on_show()
+  self.v_low_update = Global.real_time
+  self.v_start_time = Global.real_time
+  self.v_anim_data = SpineHelper.get_init_anim_info()
+  self:bind_auto_mq(Const.MSG_ON_UPDATE_JOURNEY_GAIN, self.refresh, self)
+  self:refresh()
+end
+
+function ui:ui_on_hide()
+  self:clear_spine_rt()
+end
+
+function ui:refresh()
+  self:clear_spine_rt()
+  self.v_spine_id = self.v_spine_id or ShareRes.get_course_award(1).SpineID
+  if self.v_spine_id then
+    self.v_anim_interval = SpineHelper.get_anim_interval(self.v_spine_id)
+    self.v_spine_rt = self.v_spine_rt or SPINE_RT_VIEW:new(self, self.v_char_spine)
+    SpineHelper.load_char_spine_res(self.v_spine_rt, self.v_spine_id, self.v_char_spine)
+  end
+  self.v_show_red_point = false
+  self:refresh_award_list()
+  local btn_flag = NoviceMgr:get_activity_journey_state(special_cfg_index)
+  self.v_btn_receive:SetActive(btn_flag == JOURNEY_STATE.COMPLETE)
+  self.v_btn_un_complete:SetActive(btn_flag == JOURNEY_STATE.UNCOMPLETE)
+  self.v_can_receive:SetActive(btn_flag == JOURNEY_STATE.COMPLETE)
+  self.v_have_got:SetActive(btn_flag == JOURNEY_STATE.GAINED)
+  self:set_button_listener(self.v_btn_icon, function()
+    local stage_cfg = ShareRes.get_course_award(special_cfg_index)
+    local award_cfg = ShareRes.get_award_item_data(stage_cfg.AwardGroup)[1]
+    UIMgr:get_ui("char_weapon", true):ui_show(nil, nil, nil, award_cfg[1])
+  end)
+  if btn_flag == JOURNEY_STATE.COMPLETE then
+    self.v_show_red_point = true
+  end
+  RedPointMgr:enable_redpoint(RedEnum.NOVICE_COURSE_AWARD, self.v_show_red_point)
+  self.v_chapter_id = ChapterMgr:get_mainline_chapter_id()
+  if self.v_chapter_id then
+    local chapter_icon_cfg = ShareRes.get_course_award_chapter_cfg(self.v_chapter_id)
+    local chapter_cfg = ShareRes.get_chapter_cfg(self.v_chapter_id)
+    if chapter_icon_cfg and not Util.is_empty(chapter_icon_cfg.ChapterIcon) then
+      ResMgr:load_set_icon(self.v_chap_icon, chapter_icon_cfg.ChapterIcon, nil, true)
+    end
+    if chapter_cfg then
+      self.v_chap_name.text = chapter_cfg.Name
+      if chapter_cfg.SerialNum then
+        self.v_chap_num.text = "0" .. chapter_cfg.SerialNum
+      end
+      self.v_uicompents.ChapterNum_txt.text = chapter_cfg.ClientNum
+    end
+  end
+end
+
+function ui:refresh_award_list()
+  self:give_back_auto_cache(NOVICE_COURSE_AWARD_KEY)
+  local stage_cfg = ShareRes.get_course_award()
+  local need_scroll_to_index = 0
+  local total_count = 0
+  for index, cfg in pairs(stage_cfg) do
+    if 1 == index then
+    else
+      local obj = self:get_auto_cache(NOVICE_COURSE_AWARD_KEY)
+      local task_item = novice_course_item:ui_wrap(self, obj)
+      task_item:set_data(cfg)
+      local state = NoviceMgr:get_activity_journey_state(cfg.Id)
+      total_count = total_count + 1
+      if state ~= JOURNEY_STATE.GAINED and 0 == need_scroll_to_index then
+        need_scroll_to_index = index - 1
+      end
+    end
+  end
+  if total_count <= 4 then
+    return
+  end
+  if need_scroll_to_index < 1 then
+    need_scroll_to_index = 1
+  end
+  if need_scroll_to_index > total_count - 3 then
+    need_scroll_to_index = total_count - 3
+  end
+  self.v_content_rect:SetAnchoredPositionA(-1 * self.v_item_width * (need_scroll_to_index - 1), self.v_content_init_y)
+end
+
+function ui:show_red_point()
+  self.v_show_red_point = true
+end
+
+function ui:set_stage_award(obj, index)
+end
+
+function ui:set_award_item(obj, item_icon_path, item_quality_path, item_num)
+  local item_icon = Util.get_image("ItemIcon_", obj)
+  local item_quality = Util.get_image("ItemQuality_", obj)
+  local item_num_txt = Util.get_text("ItemAmount_/Bg/ItemNum_", obj)
+  ResMgr:load_set_icon(item_icon, item_icon_path)
+  ResMgr:load_set_icon(item_quality, item_quality_path)
+  item_num_txt.text = item_num
+end
+
+function ui:get_stage_award(index)
+  NoviceMgr:request_get_activity_journey(index)
+end
+
+function ui:ui_on_destroy()
+  self:clear_spine_rt()
+end
+
+function ui:clear_spine_rt()
+  if self.v_spine_rt then
+    self.v_spine_rt:on_destroy()
+    self.v_spine_rt = nil
+  end
+end
+
+function ui:ui_on_update()
+  if not self.v_spine_id then
+    return
+  end
+  if Global.real_time - self.v_low_update < SpineHelper.UPDATE_TIME then
+    return
+  end
+  self.v_low_update = Global.real_time
+  if self.v_anim_data.record_data.play_end then
+    self.v_start_time = self.v_start_time or Global.real_time
+    if self.v_anim_interval and Global.real_time - self.v_start_time > self.v_anim_interval then
+      SpineHelper.init_anim_info(self.v_spine_id, self.v_anim_data, SpineHelper.ANIM_TYPE.INTERVAL)
+    end
+  else
+    self.v_start_time = Global.real_time
+  end
+  SpineHelper.check_play_anim(self.v_spine_rt, self.v_anim_data)
+end
+
+return ui

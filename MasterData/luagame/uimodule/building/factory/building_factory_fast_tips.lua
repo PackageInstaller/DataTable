@@ -1,0 +1,152 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local FACTORY_FAST_TIP = "FACTORY_FAST_TIP"
+local Math = require("base.mathx")
+
+function ui:on_click_close_btn()
+  self:ui_hide()
+end
+
+function ui:ui_finish_load()
+  self:set_button("BgClose", function()
+    self:on_click_close_btn()
+  end)
+  self:set_button("BtnAdd", function()
+    self:operation_count(true)
+  end)
+  self:set_button("BtnClose", function()
+    self:on_click_close_btn()
+  end)
+  self:set_button("BtnMax", function()
+    self.v_select_use_count = self:get_max_use_count()
+    self:refresh_count()
+  end)
+  self:set_button("BtnReduce", function()
+    self:operation_count(false)
+  end)
+  self:set_button("BtnStartQuicken", function()
+    if not self.v_factory_id or self.v_select_use_count <= 0 or not self:check_can_use() then
+      return
+    end
+    BuildingMgr:requst_factory_fast(self.v_factory_id, self.v_select_use_count, function()
+      if self:visible() then
+        self:ui_hide()
+      end
+    end)
+  end)
+  self:register_exist_auto_template(FACTORY_FAST_TIP, self.v_uiobjects.Tips, self.v_uiobjects.TipsContent)
+  self:set_slider_listener(self.v_uicompents.SetNumSlider_sld, function()
+    local value = self.v_uicompents.SetNumSlider_sld.value
+    self:refresh_count(value)
+  end)
+end
+
+function ui:ui_on_show(factory_id)
+  self.v_factory_id = factory_id
+  self.v_level_info = BuildingMgr:get_factory_material_level_info(self.v_factory_id)
+  self:update_cost_item_info()
+end
+
+function ui:ui_on_hide()
+  self.v_cost_item_id = nil
+  self.v_single_cost_count = nil
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:update_cost_item_info()
+  local misc_cfg = ShareRes.get_building_misc_cfg()
+  self.v_cost_item_id = misc_cfg.SpeedUpItemId
+  self.v_fast_time_limit = misc_cfg.FastLimit * 3600
+  self.v_single_cost_count = misc_cfg.SpeedUpItemCount
+  self.v_select_use_count = self:get_max_use_count()
+  local item_name = ShareRes.get_item_name(self.v_cost_item_id)
+  local icon_path = ShareRes.get_item_icon_path(self.v_cost_item_id)
+  self.v_uicompents.ItemName_txt.text = item_name
+  self.v_uicompents.ItemNum_txt.text = BagMgr:get_item_num(self.v_cost_item_id)
+  ResMgr:load_set_icon(self.v_uicompents.QuickenItemIcon_img, icon_path)
+  local strs = Util.split_str(misc_cfg.SpeedUpViewTip, "|")
+  local obj, txt
+  for _, str in ipairs(strs) do
+    obj = self:get_auto_cache(FACTORY_FAST_TIP)
+    txt = self:get_text(nil, obj)
+    txt.text = str
+  end
+  obj = self:get_auto_cache(FACTORY_FAST_TIP)
+  txt = self:get_text(nil, obj)
+  local fill_time = BuildingMgr:get_fill_factory_slot_time(self.v_factory_id)
+  local str = Date.get_time_formate_5(fill_time)
+  txt.text = Util.format_str(string.format("满仓剩余时间：<color=#d56d2e>%s</color>", str))
+  self:refresh_count()
+end
+
+local enough_color = Util.get_unity_color_by_hex(tonumber("292929", 16))
+local not_enough_color = Util.CommonColor_RedWarm
+
+function ui:refresh_count(value)
+  local max_value = self:get_max_use_count()
+  local cost_num = self.v_select_use_count * self.v_single_cost_count
+  if 1 ~= max_value then
+    self.v_uicompents.SetNumSlider_sld.minValue = 1
+    self.v_uicompents.SetNumSlider_sld.interactable = true
+  else
+    self.v_uicompents.SetNumSlider_sld.minValue = 0
+    self.v_uicompents.SetNumSlider_sld.interactable = false
+  end
+  self.v_uicompents.SetNumSlider_sld.maxValue = max_value
+  if value then
+    self.v_select_use_count = math.floor(value)
+  else
+    self.v_uicompents.SetNumSlider_sld:SetValueWithoutNotify(self.v_select_use_count)
+  end
+  self.v_uicompents.SetItemNum_txt.text = cost_num
+  self.v_uicompents.SetItemNum_txt.color = BagMgr:get_cost_enough(self.v_cost_item_id, cost_num) and enough_color or not_enough_color
+  self:refresh_speedup_time()
+end
+
+function ui:refresh_speedup_time()
+  local unit_speedup_time = self.v_level_info and self.v_level_info.SpeedUpDuration or 0
+  self.v_uicompents.TimeNow_txt.text = unit_speedup_time * self.v_select_use_count
+  self.v_uicompents.TimeMax_txt.text = unit_speedup_time * self:get_max_use_count()
+end
+
+function ui:operation_count(is_add)
+  local cur_count = self.v_select_use_count
+  local target_count = is_add and cur_count + 1 or cur_count - 1
+  if target_count < 1 or target_count > self:get_max_use_count() then
+    return
+  end
+  self.v_select_use_count = target_count
+  self:refresh_count()
+end
+
+function ui:get_max_use_count()
+  return math.min(BuildingMgr:get_max_use_fast_count(self.v_factory_id), math.floor(BagMgr:get_item_num(self.v_cost_item_id) / self.v_single_cost_count))
+end
+
+function ui:check_can_use()
+  if self.v_select_use_count <= 0 then
+    return
+  end
+  local can_use_count = self:get_max_use_count()
+  if can_use_count < self.v_select_use_count then
+    Util.show_message_tip(2251)
+    return false
+  end
+  if BagMgr:get_item_num(self.v_cost_item_id) < self.v_select_use_count then
+    local item_name = ShareRes.get_item_name(self.v_cost_item_id)
+    Util.show_message_tip(2314, item_name)
+    return false
+  end
+  return true
+end
+
+function ui:check_is_over_time(use_count)
+  local fill_time = BuildingMgr:get_fill_factory_slot_time(self.v_factory_id)
+  local level_info = BuildingMgr:get_factory_material_level_info(self.v_factory_id)
+  local total_fast_time = level_info.SpeedUpDuration * 3600 * use_count
+  return fill_time < total_fast_time
+end
+
+return ui

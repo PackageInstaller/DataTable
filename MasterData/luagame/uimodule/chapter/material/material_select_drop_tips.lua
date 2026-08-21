@@ -1,0 +1,105 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local LocalStorage = require("utils.localstorage")
+local SELECT_DROP_ITEM = "CHAPTER_MATERIAL_SELECT_DROP_ITEM"
+local TEXT_COLOR = {BRIGHT = "f5ede1", DARK = "292929"}
+
+function ui:ui_finish_load()
+  self:set_button("BtnFullClose", function()
+    self:try_hide()
+  end)
+  self:set_button("BtnClose", function()
+    self:try_hide()
+  end)
+  self:set_button("BtnConfirm", function()
+    if self.v_is_modify then
+      self:save()
+    end
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(SELECT_DROP_ITEM, self.v_uiobjects.DropTem, self.v_uiobjects.Content)
+end
+
+function ui:ui_on_show(select_drop_group_id, select_index, chapter_id)
+  self.v_is_modify = false
+  self.v_cur_select_index = select_index
+  self.v_select_drop_group_id = select_drop_group_id
+  self.v_chapter_id = chapter_id
+  self.v_local_select_data = LocalStorage:load_table(ChapterMaterialMgr.LOCAL_MATERIAL_SELECT_DROP_KEY, true)
+  local cfg = ShareRes.create("chapter.chapter_material_select_drop_group", select_drop_group_id)
+  self:give_back_auto_cache(SELECT_DROP_ITEM)
+  self.v_toggle_list = {}
+  for index, icon_path in ipairs(cfg.Icon) do
+    local item = self:get_auto_cache(SELECT_DROP_ITEM)
+    self:set_data(item, index, cfg)
+  end
+  self.v_toggle_list[self.v_cur_select_index].isOn = true
+end
+
+function ui:ui_on_hide()
+  for _, toggle in ipairs(self.v_toggle_list) do
+    self:remove_toggle_listener(toggle)
+  end
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:save()
+  self.v_local_select_data[self.v_chapter_id] = self.v_cur_select_index
+  LocalStorage:save_table(ChapterMaterialMgr.LOCAL_MATERIAL_SELECT_DROP_KEY, self.v_local_select_data, true)
+  ChapterMaterialMgr:set_cur_drop_select_index(self.v_cur_select_index)
+  local ui_material_stage = UIMgr:try_get_visible_ui("material_stage")
+  if ui_material_stage then
+    ui_material_stage:update_local_select_data()
+    ui_material_stage:set_title()
+  end
+  local ui_material_stage_info = UIMgr:try_get_visible_ui("material_stage_info")
+  if ui_material_stage_info then
+    ui_material_stage_info:show_award()
+  end
+end
+
+function ui:set_data(item, index, cfg)
+  local now_obj = Util.get_child_gameobj("Now", item)
+  local drop_icon = Util.get_image("DropIcon", item)
+  local drop_name = Util.get_text("DropName", item)
+  local select_toggle = Util.get_toggle(nil, item)
+  table.insert(self.v_toggle_list, select_toggle)
+  if self.v_cur_select_index == index then
+    Util.set_color(drop_name, TEXT_COLOR.BRIGHT)
+  else
+    Util.set_color(drop_name, TEXT_COLOR.DARK)
+  end
+  ResMgr:load_set_icon(drop_icon, cfg.Icon[index])
+  drop_name.text = cfg.IconDesc[index]
+  self:set_toggle_listener(select_toggle, function(is_on)
+    if is_on then
+      self.v_cur_select_index = index
+      if self.v_local_select_data[self.v_chapter_id] ~= self.v_cur_select_index then
+        self.v_is_modify = true
+      else
+        self.v_is_modify = false
+      end
+      Util.set_color(drop_name, TEXT_COLOR.BRIGHT)
+    else
+      Util.set_color(drop_name, TEXT_COLOR.DARK)
+    end
+    now_obj:SetActive(is_on)
+  end)
+end
+
+function ui:try_hide()
+  if self.v_is_modify then
+    UIMgr:get_ui("uinotice_tips"):ui_show(function()
+      self:save()
+      self:ui_hide()
+    end, function()
+      self:ui_hide()
+    end, "是否保存自选掉落并关闭")
+  else
+    self:ui_hide()
+  end
+end
+
+return ui

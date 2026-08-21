@@ -1,0 +1,473 @@
+return {
+  [101] = {
+    Id = 101,
+    dropID = 14500,
+    fixedItem = {
+      {
+        1001,
+        1,
+        25,
+        26
+      },
+      {
+        1006,
+        1,
+        9
+      },
+      {
+        1020,
+        1,
+        21,
+        22
+      },
+      {
+        1010,
+        1,
+        21,
+        22
+      },
+      {
+        2,
+        1,
+        4520
+      }
+    },
+    itemCount = 10,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [102] = {
+    Id = 102,
+    dropID = 14501,
+    fixedItem = {
+      {
+        1001,
+        1,
+        28,
+        29
+      },
+      {
+        1006,
+        1,
+        10
+      },
+      {
+        1020,
+        1,
+        24
+      },
+      {
+        1010,
+        1,
+        24
+      },
+      {
+        2,
+        1,
+        5020
+      }
+    },
+    itemCount = 20,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [103] = {
+    Id = 103,
+    dropID = 14502,
+    fixedItem = {
+      {
+        1001,
+        1,
+        25,
+        26
+      },
+      {
+        1006,
+        1,
+        10,
+        11
+      },
+      {
+        1020,
+        1,
+        25,
+        26
+      },
+      {
+        1010,
+        1,
+        25,
+        26
+      },
+      {
+        2,
+        1,
+        5270
+      }
+    },
+    itemCount = 30,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [104] = {
+    Id = 104,
+    dropID = 14503,
+    fixedItem = {
+      {
+        1001,
+        1,
+        47
+      },
+      {
+        1006,
+        1,
+        16,
+        17
+      },
+      {
+        1020,
+        1,
+        40
+      },
+      {
+        1010,
+        1,
+        40
+      },
+      {
+        2,
+        1,
+        8290
+      }
+    },
+    itemCount = 60,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [105] = {
+    Id = 105,
+    dropID = 14500,
+    fixedItem = {},
+    itemCount = 120,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [111] = {
+    Id = 111,
+    dropID = 14500,
+    fixedItem = {},
+    itemCount = 10,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [112] = {
+    Id = 112,
+    dropID = 14511,
+    fixedItem = {
+      {
+        1002,
+        1,
+        5,
+        6
+      },
+      {
+        1007,
+        1,
+        2
+      },
+      {
+        1021,
+        1,
+        1
+      },
+      {
+        1011,
+        1,
+        1
+      },
+      {
+        2,
+        1,
+        5020
+      }
+    },
+    itemCount = 20,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [113] = {
+    Id = 113,
+    dropID = 14512,
+    fixedItem = {
+      {
+        1002,
+        1,
+        6
+      },
+      {
+        1007,
+        1,
+        2
+      },
+      {
+        1021,
+        1,
+        1
+      },
+      {
+        1011,
+        1,
+        1
+      },
+      {
+        2,
+        1,
+        5270
+      }
+    },
+    itemCount = 30,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [114] = {
+    Id = 114,
+    dropID = 14513,
+    fixedItem = {
+      {
+        1002,
+        1,
+        9,
+        10
+      },
+      {
+        1007,
+        1,
+        3,
+        4
+      },
+      {
+        1021,
+        1,
+        2
+      },
+      {
+        1011,
+        1,
+        2
+      },
+      {
+        2,
+        1,
+        8290
+      }
+    },
+    itemCount = 60,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [115] = {
+    Id = 115,
+    dropID = 14514,
+    fixedItem = {
+      {
+        1002,
+        0,
+        33
+      },
+      {
+        1007,
+        0,
+        6,
+        7
+      },
+      {
+        1020,
+        0,
+        22
+      },
+      {
+        1010,
+        0,
+        11
+      },
+      {
+        2,
+        0,
+        16560
+      }
+    },
+    itemCount = 120,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [121] = {
+    Id = 121,
+    dropID = 14500,
+    fixedItem = {},
+    itemCount = 10,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [122] = {
+    Id = 122,
+    dropID = 14500,
+    fixedItem = {},
+    itemCount = 20,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [123] = {
+    Id = 123,
+    dropID = 14522,
+    fixedItem = {
+      {
+        1003,
+        1,
+        1,
+        2
+      },
+      {
+        1007,
+        1,
+        2
+      },
+      {
+        1021,
+        1,
+        1
+      },
+      {
+        1011,
+        1,
+        1
+      },
+      {
+        2,
+        1,
+        5520
+      }
+    },
+    itemCount = 30,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [124] = {
+    Id = 124,
+    dropID = 14523,
+    fixedItem = {
+      {
+        1003,
+        1,
+        2,
+        3
+      },
+      {
+        1007,
+        1,
+        2
+      },
+      {
+        1021,
+        1,
+        2
+      },
+      {
+        1011,
+        1,
+        2
+      },
+      {
+        2,
+        1,
+        8660
+      }
+    },
+    itemCount = 60,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [125] = {
+    Id = 125,
+    dropID = 14524,
+    fixedItem = {
+      {
+        1003,
+        0,
+        8,
+        9
+      },
+      {
+        1007,
+        0,
+        7
+      },
+      {
+        1020,
+        0,
+        23
+      },
+      {
+        1010,
+        0,
+        11,
+        12
+      },
+      {
+        2,
+        0,
+        17280
+      }
+    },
+    itemCount = 120,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [201] = {
+    Id = 201,
+    dropID = 14524,
+    fixedItem = {},
+    itemCount = 120,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [202] = {
+    Id = 202,
+    dropID = 14524,
+    fixedItem = {},
+    itemCount = 120,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [203] = {
+    Id = 203,
+    dropID = 14524,
+    fixedItem = {},
+    itemCount = 120,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [204] = {
+    Id = 204,
+    dropID = 14524,
+    fixedItem = {},
+    itemCount = 120,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [205] = {
+    Id = 205,
+    dropID = 14524,
+    fixedItem = {},
+    itemCount = 120,
+    itemID = 4,
+    probabilityItem = {}
+  },
+  [206] = {
+    Id = 206,
+    dropID = 14524,
+    fixedItem = {},
+    itemCount = 120,
+    itemID = 4,
+    probabilityItem = {}
+  }
+}

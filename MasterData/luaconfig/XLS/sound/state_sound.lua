@@ -1,0 +1,1916 @@
+return {
+  [1001001] = {
+    [3] = {
+      CharID = 1001001,
+      Index = 1,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ling-25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001001,
+      Index = 2,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ling-26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001001,
+      Index = 3,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ling-24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001001,
+      Index = 4,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ling-19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001001,
+      Index = 5,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ling-20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001004] = {
+    [3] = {
+      CharID = 1001004,
+      Index = 6,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "xin-25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001004,
+      Index = 7,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "xin-32",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001004,
+      Index = 8,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "xin-24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001004,
+      Index = 9,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "xin-19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001004,
+      Index = 10,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "xin-20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001008] = {
+    [3] = {
+      CharID = 1001008,
+      Index = 11,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "yileishian25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001008,
+      Index = 12,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "yileishian26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001008,
+      Index = 13,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "yileishian24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001008,
+      Index = 14,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "yileishian19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001008,
+      Index = 15,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "yileishian20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001009] = {
+    [3] = {
+      CharID = 1001009,
+      Index = 16,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "boyuan25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001009,
+      Index = 17,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "boyuan26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001009,
+      Index = 18,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "boyuan24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001009,
+      Index = 19,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "boyuan19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001009,
+      Index = 20,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "boyuan20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001010] = {
+    [3] = {
+      CharID = 1001010,
+      Index = 21,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "asidi25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001010,
+      Index = 22,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "asidi26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001010,
+      Index = 23,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "asidi24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001010,
+      Index = 24,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "asidi19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001010,
+      Index = 25,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "asidi20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001011] = {
+    [3] = {
+      CharID = 1001011,
+      Index = 26,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ming_25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001011,
+      Index = 27,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ming_26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001011,
+      Index = 28,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ming_24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001011,
+      Index = 29,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ming_19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001011,
+      Index = 30,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ming_20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001012] = {
+    [3] = {
+      CharID = 1001012,
+      Index = 31,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "qing-25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001012,
+      Index = 32,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "qing-26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001012,
+      Index = 33,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "qing-24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001012,
+      Index = 34,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "qing-19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001012,
+      Index = 35,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "qing-20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001013] = {
+    [3] = {
+      CharID = 1001013,
+      Index = 36,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "hefei_25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001013,
+      Index = 37,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "hefei_26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001013,
+      Index = 38,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "hefei_24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001013,
+      Index = 39,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "hefei_19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001013,
+      Index = 40,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "hefei_20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001014] = {
+    [3] = {
+      CharID = 1001014,
+      Index = 41,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "luogesi_25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001014,
+      Index = 42,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "luogesi_26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001014,
+      Index = 43,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "luogesi_24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001014,
+      Index = 44,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "luogesi_19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001014,
+      Index = 45,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "luogesi_20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001015] = {
+    [3] = {
+      CharID = 1001015,
+      Index = 46,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "shamashi-25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001015,
+      Index = 47,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "shamashi-26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001015,
+      Index = 48,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "shamashi-24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001015,
+      Index = 49,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "shamashi-19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001015,
+      Index = 50,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "shamashi-20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001016] = {
+    [3] = {
+      CharID = 1001016,
+      Index = 51,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "weiaola-25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001016,
+      Index = 52,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "weiaola-26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001016,
+      Index = 53,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "weiaola-24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001016,
+      Index = 54,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "weiaola-19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001016,
+      Index = 55,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "weiaola-20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001017] = {
+    [3] = {
+      CharID = 1001017,
+      Index = 56,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "nanna-25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001017,
+      Index = 57,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "nanna-26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001017,
+      Index = 58,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "nanna-24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001017,
+      Index = 59,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "nanna-19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001017,
+      Index = 60,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "nanna-20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001018] = {
+    [3] = {
+      CharID = 1001018,
+      Index = 61,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "enji-25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001018,
+      Index = 62,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "enji-26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001018,
+      Index = 63,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "enji-24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001018,
+      Index = 64,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "enji-19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001018,
+      Index = 65,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "enji-20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001019] = {
+    [3] = {
+      CharID = 1001019,
+      Index = 66,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ningsha-25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001019,
+      Index = 67,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ningsha-26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001019,
+      Index = 68,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ningsha-24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001019,
+      Index = 69,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ningsha-19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001019,
+      Index = 70,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "ningsha-20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001020] = {
+    [3] = {
+      CharID = 1001020,
+      Index = 71,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "wushi_25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001020,
+      Index = 72,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "wushi_26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001020,
+      Index = 73,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "wushi_24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001020,
+      Index = 74,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "wushi_19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001020,
+      Index = 75,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "wushi_20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001021] = {
+    [3] = {
+      CharID = 1001021,
+      Index = 76,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "azi_26",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001021,
+      Index = 77,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "azi_27",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001021,
+      Index = 78,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "azi_25",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001021,
+      Index = 79,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "azi_19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001021,
+      Index = 80,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "azi_20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001022] = {
+    [3] = {
+      CharID = 1001022,
+      Index = 81,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "lichi_25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001022,
+      Index = 82,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "lichi_26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001022,
+      Index = 83,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "lichi_24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001022,
+      Index = 84,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "lichi_19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001022,
+      Index = 85,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "lichi_20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001023] = {
+    [3] = {
+      CharID = 1001023,
+      Index = 86,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "jixia_25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001023,
+      Index = 87,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "jixia_26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001023,
+      Index = 88,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "jixia_24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001023,
+      Index = 89,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "jixia_19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001023,
+      Index = 90,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "jixia_20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001024] = {
+    [3] = {
+      CharID = 1001024,
+      Index = 91,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "yuli_25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001024,
+      Index = 92,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "yuli_26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001024,
+      Index = 93,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "yuli_24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001024,
+      Index = 94,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "yuli_19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001024,
+      Index = 95,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "yuli_20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001025] = {
+    [3] = {
+      CharID = 1001025,
+      Index = 96,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "balalaika_25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001025,
+      Index = 97,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "balalaika_26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001025,
+      Index = 98,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "balalaika_24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001025,
+      Index = 99,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "balalaika_19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001025,
+      Index = 100,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "balalaika_20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001026] = {
+    [3] = {
+      CharID = 1001026,
+      Index = 101,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "feinamina_25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001026,
+      Index = 102,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "feinamina_26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001026,
+      Index = 103,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "feinamina_24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001026,
+      Index = 104,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "feinamina_19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001026,
+      Index = 105,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "feinamina_20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  },
+  [1001027] = {
+    [3] = {
+      CharID = 1001027,
+      Index = 106,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "jinlv_25",
+        "",
+        "",
+        ""
+      },
+      StateId = 3
+    },
+    [5] = {
+      CharID = 1001027,
+      Index = 107,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "jinlv_26",
+        "",
+        "",
+        ""
+      },
+      StateId = 5
+    },
+    [15] = {
+      CharID = 1001027,
+      Index = 108,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "jinlv_24",
+        "",
+        "",
+        ""
+      },
+      StateId = 15
+    },
+    [101] = {
+      CharID = 1001027,
+      Index = 109,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "jinlv_19",
+        "",
+        "",
+        ""
+      },
+      StateId = 101
+    },
+    [102] = {
+      CharID = 1001027,
+      Index = 110,
+      RandomWeigth = {
+        100,
+        0,
+        0,
+        0
+      },
+      SoundId = {
+        "jinlv_20",
+        "",
+        "",
+        ""
+      },
+      StateId = 102
+    }
+  }
+}

@@ -1,0 +1,96 @@
+local empty = {}
+return
+{
+  Areas = {
+    {
+      Key = "wall1",
+      Tag = "wallblock",
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 11.3499985, 190.528778, 43.8649979 },
+      Size = { 1.0, 10.0, 63.25 },
+      Show = true
+    },
+    {
+      Key = "wall2",
+      Tag = "wallblock",
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 103.6, 190.528778, 43.8649979 },
+      Size = { 1.0, 10.0, 63.25 },
+      Show = true
+    },
+    {
+      Key = "wall3",
+      Tag = "wallblock",
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 57.475, 190.528778, 75.49 },
+      Size = { 92.25, 10.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "wall4",
+      Tag = "wallblock",
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 57.475, 190.528778, 12.2399979 },
+      Size = { 92.25, 10.0, 1.0 },
+      Show = true
+    },
+    {
+      Key = "tp1",
+      Tag = "tp",
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 59.0834732, 178.36, 69.53182 },
+      Size = { 4.55, 2.21, 4.0 },
+      Show = true
+    },
+    {
+      Key = "tp2",
+      Tag = "tp",
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 17.7730865, 195.666382, 35.4099274 },
+      Size = { 1.09, 1.0, 4.87 },
+      Show = true
+    },
+    {
+      Key = "tp3",
+      Tag = "tp",
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 70.10362, 178.870224, 15.99334 },
+      Size = { 3.98, 1.0, 2.0 },
+      Show = true
+    },
+    {
+      Key = "tp4",
+      Tag = "tp",
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 101.63, 185.88, 60.031456 },
+      Size = { 2.63, 1.0, 5.7 },
+      Show = true
+    },
+    {
+      Key = "camera1",
+      Tag = empty,
+      Color = { 1.0, 1.0, 0.0, 0.5 },
+      Cells = empty,
+      BoxCells = empty,
+      Position = { 65.34736, 184.775177, 69.52324 },
+      Size = { 1.0, 1.0, 3.7 },
+      Show = true
+    }
+  },
+}

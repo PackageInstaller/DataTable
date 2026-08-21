@@ -1,0 +1,89 @@
+local Base = require("gamelogic.tower_mgr.room")
+local Room = Util.create_child_mt(Base)
+local Math = require("base.mathx")
+local SceneDef = require("cs_share.scene_define")
+
+function Room:_init(...)
+  Base._init(self, ...)
+  self.v_contact_distance = ShareRes.get_comm_value("NPCInteractRange")
+end
+
+function Room:register_event()
+  Base.register_event(self)
+  Util.bind_msg(self, Const.MSG_ON_OPEN_TREASURE, self.open_treasure, self)
+  Util.bind_msg(self, Const.MSG_ON_SELECTED_TREASURE_SUCCESS, self.selected_treasure, self)
+end
+
+function Room:release()
+  Base.release(self)
+  self.v_room_function_obj = nil
+  self.v_treasure_obtained = nil
+  self.v_treasure_contact = nil
+end
+
+function Room:update()
+  self:hero_contact_treasure()
+end
+
+function Room:hero_contact_treasure()
+  if self.v_room_function_obj ~= nil then
+    local contact_dis = self.v_contact_distance or 0
+    local treasure_obj = self.v_room_function_obj
+    local hero_pos = Global.hero:get_pos_vec3()
+    local hero_x = hero_pos.x
+    local hero_z = hero_pos.z
+    local treasure_x, treasure_z = treasure_obj:get_pos2()
+    local distance = Math.distance2(hero_x, hero_z, treasure_x, treasure_z)
+    if contact_dis > distance and not self.v_treasure_obtained and not self.v_treasure_contact then
+      local msg = MsgGame:mq_publish2(Const.MSG_TOG_SPECIAL_AREA)
+      msg.mm_x = SceneDef.AREA_TYPE.treasure
+      msg.mm_y = true
+      self.v_treasure_contact = true
+    end
+    if contact_dis <= distance and self.v_treasure_contact then
+      local msg = MsgGame:mq_publish2(Const.MSG_TOG_SPECIAL_AREA)
+      msg.mm_x = SceneDef.AREA_TYPE.treasure
+      msg.mm_y = false
+      self.v_treasure_contact = false
+    end
+  end
+end
+
+function Room:setup()
+  self:_setup()
+end
+
+function Room:_setup()
+  local room_map = self.v_tower:get_tower_floor_room_map()
+  local is_obtained = room_map[self.v_room_num].is_obtained
+  local scene_logic = SceneMgr:get_scene_logic()
+  local center_x, center_y, center_z = scene_logic:get_pos_key_position("center")
+  local radius_scale = ShareRes.get_comm_value("TreasureBodyRadius")
+  local room_function_obj = SceneMgr:create_scene_obj(center_x, center_y, center_z, radius_scale, "T3002001", function(npc_lua)
+    npc_lua:player_anim("idle", is_obtained)
+  end)
+  self.v_room_function_obj = room_function_obj
+  self.v_treasure_obtained = is_obtained
+end
+
+function Room:open_treasure()
+  UIMgr:get_ui("fight"):set_uiobject_visible("Main", false)
+  local treasure_obj = self.v_room_function_obj
+  treasure_obj:player_anim("interact", nil, function()
+    BattleTreasureMgr:open_battle_treasure()
+  end)
+  self.v_treasure_obtained = true
+end
+
+function Room:selected_treasure(msg)
+  UIMgr:get_ui("fight"):set_uiobject_visible("Main", true)
+  self.v_room_function_obj:player_anim("idle", true)
+  self.v_tower:update_room_status(Config.ROOM_TYPE.TREASURE, true)
+  SceneMgr:set_player_control_on()
+end
+
+function Room:is_treasure_room()
+  return true
+end
+
+return Room

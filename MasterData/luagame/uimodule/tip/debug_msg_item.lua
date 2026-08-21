@@ -1,0 +1,19 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+
+function M:ui_finish_load()
+  self:set_button("BtnInfo", function()
+    local msg_detail = UtilTable.format_table(self.v_data.msg_info)
+    Global.lua_error.on_lua_error(msg_detail, "消息内容")
+  end)
+end
+
+function M:ui_on_hide()
+end
+
+function M:set_data(go, data_list, index)
+  self.v_data = data_list[index]
+  self.v_uicompents.lbTime_txt.text = self.v_data.msg
+end
+
+return M

@@ -1,0 +1,56 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local CHAR_HELPER = require("uimodule.character.char_helper")
+local LayoutRebuilder = UnityEngine.UI.LayoutRebuilder
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(page_data)
+  self.v_page_data = page_data
+  self.v_text_list = page_data.text_list
+  self.v_icon_list = page_data.icon_list
+  self.v_group_id = page_data.group_id
+  self:refresh_text()
+  self:refresh_icon()
+  self:refresh_title()
+  self:refresh_context()
+end
+
+function ui:refresh_text()
+  for idx, data in ipairs(self.v_text_list) do
+    local show_text = self.v_uicompents["Text" .. idx .. "_txt"]
+    if show_text then
+      show_text.text = data
+    end
+  end
+end
+
+function ui:refresh_icon()
+  for idx, data in ipairs(self.v_icon_list) do
+    local show_icon = self.v_uicompents["Icon" .. idx .. "_img"]
+    if show_icon then
+      local icon_path = CHAR_HELPER.get_page_icon(data)
+      ResMgr:load_set_icon(show_icon, icon_path)
+    end
+  end
+end
+
+function ui:refresh_title()
+  local archive_data = ShareRes.get_buddy_archives_cfg(self.v_group_id)
+  local title_text = self.v_uicompents.title_text_txt
+  if title_text and archive_data then
+    local title_name = archive_data.Name
+    title_text.text = title_name
+  end
+end
+
+function ui:refresh_context()
+  local rect = Util.get_rect_transform(nil, self.v_uiobjects.TextList)
+  LayoutRebuilder.ForceRebuildLayoutImmediate(rect)
+end
+
+return ui

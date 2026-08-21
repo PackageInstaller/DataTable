@@ -1,0 +1,62 @@
+local Base = require("ui.uibase")
+local LocalStorage = require("utils.localstorage")
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local ui = Util.create_child_mt(Base)
+local _tinsert = table.insert
+local TOGGLE_KEY = "ToggleServerList"
+
+function ui:ui_finish_load()
+  local server_list_obj = self:get_uiobject("ServerList")
+  local template_obj = self:get_uiobject("Template")
+  self:set_button("Return", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(TOGGLE_KEY, template_obj, server_list_obj)
+end
+
+function ui:ui_on_show()
+  Base.ui_on_show(self)
+  local toggles = {}
+  self.v_servrt_list = ServerList:get_server_list()
+  if not self.v_servrt_list then
+    return
+  end
+  for _, server_info in ipairs(self.v_servrt_list) do
+    local toggle = self:get_auto_cache(TOGGLE_KEY)
+    _tinsert(toggles, Util.get_toggle(nil, toggle))
+    local name = server_info.name
+    local ip = server_info.IP
+    local txt
+    if GAME_RELEASE then
+      txt = name
+    else
+      txt = name .. "(" .. Util.get_subfix(ip) .. ")"
+    end
+    name = txt
+    Util.get_text("ServerName", toggle).text = name
+  end
+  local default_idx = ServerList:get_default_server_id()
+  self.v_toggles = toggles
+  self.v_toggle_tab = ToggleTab:new(self)
+  self.v_toggle_tab:init_by_toggles(toggles, function(idx)
+    self:_on_click_toggle(idx)
+  end, default_idx)
+  self:_on_click_toggle(default_idx, true)
+end
+
+function ui:ui_on_hide()
+  self.v_toggles = nil
+  self.v_toggle_tab = nil
+end
+
+function ui:_on_click_toggle(idx, default_select)
+  Global.connect_info = self.v_servrt_list[idx]
+  LocalStorage:save_int(Config.SELECTED_SERVER_KEY, idx)
+  local msg = MsgGame:mq_publish2(Const.MSG_SELECT_SERVER)
+  msg.mm_obj = idx
+  if not default_select then
+    self:ui_hide()
+  end
+end
+
+return ui

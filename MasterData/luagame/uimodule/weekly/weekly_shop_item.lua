@@ -1,0 +1,103 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local MODEL = {}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("ItemObjCom1", function()
+    Util.show_item_tip(self.v_shop_cfg.Item)
+  end)
+  local btn = Util.get_button(nil, self.v_object)
+  self:set_button_listener(btn, function()
+    self:click_buy()
+  end)
+end
+
+function ui:click_buy()
+  local show_param = {
+    tips_type = Config.ITEM_TIPS_TYPE.SHOP,
+    item_id = self.v_shop_cfg.Item,
+    param = {
+      goods_cfg = self.v_shop_cfg
+    }
+  }
+  UIMgr:get_ui("shop_item_tips"):ui_show(show_param)
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:set_data(shop_cfg)
+  self.v_shop_cfg = shop_cfg
+  self:update_shop_view()
+end
+
+function ui:update_shop_view()
+  local cfg = self.v_shop_cfg
+  local discount_val = cfg.Discount
+  self.v_uiobjects.DiscountTips:SetActive(0 ~= discount_val)
+  self.v_uiobjects.PriceBefore:SetActive(0 ~= discount_val)
+  if 0 ~= discount_val then
+    self.v_uicompents.Discount_txt.text = self:get_discount_desc()
+  end
+  local item_id = cfg.Item
+  local num = cfg.ItemCnt
+  local item_cfg = ShareRes.get_item_cfg(item_id)
+  local path = UtilUI.get_item_icon(item_id)
+  ResMgr:load_set_icon(self.v_uicompents.ItemIcon_img, path)
+  local icon_path = ShareRes.create("item.item_quality", item_cfg.Quality).QualityIcon
+  local quality_path = string.format("UICommon/%s", icon_path)
+  ResMgr:load_set_icon(self.v_uicompents.ItemQuality_img, quality_path)
+  self.v_uicompents.ItemNum_txt.text = num
+  local limit_obj = Util.get_child_gameobj("LimitLayout", self.v_uicompents.LimitNum_txt.transform.parent.parent.gameObject)
+  limit_obj:SetActive(cfg.Quota > 0)
+  self.v_uicompents.LimitNum_txt.text = cfg.Quota
+  self.v_uicompents.ItemName_txt.text = item_cfg.Name
+  self.v_uicompents.SoldOut_img.gameObject:SetActive(false)
+  if cfg.Quota > 0 then
+    local has_buy = ShopMgr:get_buy_amount(cfg.Id)
+    local limit_max_buy = math.floor((cfg.Quota - has_buy) / cfg.ItemCnt)
+    if 0 == limit_max_buy then
+      self.v_uicompents.SoldOut_img.gameObject:SetActive(true)
+    end
+  end
+  local cost_id = cfg.CostId[1]
+  local cost_num = cfg.CostCnt[1]
+  local price_val = self:_get_goods_price()
+  self.v_uicompents.PriceBefore_txt.text = cost_num
+  self.v_uicompents.PriceNum_txt.text = price_val
+  local path = UtilUI.get_item_icon(cost_id)
+  ResMgr:load_set_icon(self.v_uicompents.CurrIcon_img, path)
+end
+
+function ui:_get_goods_price()
+  local shop_cfg = self.v_shop_cfg
+  local has_discount = shop_cfg.Discount > 0
+  local need = shop_cfg.CostCnt[1]
+  if has_discount then
+    if 1 == shop_cfg.Discount then
+      return math.ceil(need * (shop_cfg.DiscountVal / 100))
+    else
+      local num = ShopMgr:get_stock_amount(self.v_stock_id)
+      local discount = Shop_Helper.get_break_item_discount(num, self.v_goods_cfg.DiscountVal)
+      return math.ceil(need * (discount / 100))
+    end
+  end
+  return need
+end
+
+function ui:get_discount_desc()
+  local shop_cfg = self.v_shop_cfg
+  local result = shop_cfg.DiscountVal / 10
+  local str = tostring(result)
+  local str_list = Util.split_str(str, ".")
+  if #str_list >= 2 and "0" == str_list[2] then
+    str = str_list[1]
+  end
+  return str .. "折"
+end
+
+return ui

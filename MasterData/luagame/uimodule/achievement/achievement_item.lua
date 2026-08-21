@@ -1,0 +1,300 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local _tinsert = table.insert
+local _mfloor = math.floor
+local _time = os.date
+local TASK_CONFIG = require("gamelogic.task.task_config")
+local GETSTATETYPE_ORDER = TASK_CONFIG.GETSTATETYPE_ORDER
+local TASK_STATE = TASK_CONFIG.TASK_STATE
+local BG_PREFIX = "UICommon/"
+local ITEM_TYPE = {TITLE = 19}
+local MODEL = {
+  v_obj_member = {
+    "MemberObj",
+    BIND_TYPE.OBJECT
+  },
+  v_obj_course = {
+    "CourseObj",
+    BIND_TYPE.OBJECT
+  },
+  v_name_member = {
+    "MemberName",
+    BIND_TYPE.TEXT
+  },
+  v_name_course = {
+    "CourseName",
+    BIND_TYPE.TEXT
+  },
+  v_en_name_member = {
+    "EnName",
+    BIND_TYPE.TEXT
+  },
+  v_en_name_course = {
+    "EnCourseName",
+    BIND_TYPE.TEXT
+  },
+  v_lock_member = {
+    "MemberLock",
+    BIND_TYPE.OBJECT
+  },
+  v_lock_course = {
+    "CourseLock",
+    BIND_TYPE.OBJECT
+  },
+  v_bar_member = {
+    "MemberBar",
+    BIND_TYPE.IMAGE
+  },
+  v_bar_course = {
+    "CourseBar",
+    BIND_TYPE.IMAGE
+  },
+  v_complete_time_member = {
+    "CompleteMemberTime",
+    BIND_TYPE.TEXT
+  },
+  v_complete_member = {
+    "CompleteMember",
+    BIND_TYPE.OBJECT
+  },
+  v_complete_time_course = {
+    "CompleteCourseTime",
+    BIND_TYPE.TEXT
+  },
+  v_complete_course = {
+    "CompleteCourse",
+    BIND_TYPE.OBJECT
+  },
+  v_title_member = {
+    "MemberTitle",
+    BIND_TYPE.OBJECT
+  },
+  v_title_course = {
+    "CourseTitle",
+    BIND_TYPE.OBJECT
+  },
+  v_lv_member = {
+    "MemberLv",
+    BIND_TYPE.TEXT
+  },
+  v_lv_course = {
+    "CourseLv",
+    BIND_TYPE.TEXT
+  },
+  v_bar_fill_member = {
+    "MemberBarFill",
+    BIND_TYPE.IMAGE
+  },
+  v_progress_member = {
+    "MemberProgress",
+    BIND_TYPE.TEXT
+  },
+  v_bar_fill_course = {
+    "CourseBarFill",
+    BIND_TYPE.IMAGE
+  },
+  v_progress_course = {
+    "CourseProgress",
+    BIND_TYPE.TEXT
+  },
+  v_icon1_course = {
+    "CourseIcon1",
+    BIND_TYPE.IMAGE
+  },
+  v_icon1_member = {
+    "MemberIcon",
+    BIND_TYPE.IMAGE
+  },
+  v_icon_member = {
+    "MemberEyes",
+    BIND_TYPE.IMAGE
+  },
+  v_icon_course = {
+    "CourseIcon2",
+    BIND_TYPE.IMAGE
+  },
+  v_quality_bg_member = {
+    "QualityBg2",
+    BIND_TYPE.IMAGE
+  },
+  v_quality_bg_course = {
+    "QualityBg1",
+    BIND_TYPE.IMAGE
+  },
+  v_bg_member = {
+    "MemberTitle",
+    BIND_TYPE.IMAGE
+  },
+  v_bg_course = {
+    "CourseTitle",
+    BIND_TYPE.IMAGE
+  },
+  v_red_point = {
+    "Redpoint",
+    BIND_TYPE.OBJECT
+  },
+  v_new = {
+    "New",
+    BIND_TYPE.OBJECT
+  },
+  v_ani_vx_in = {
+    "Ani_VX_GroupScrollView_IN",
+    BIND_TYPE.OBJECT
+  },
+  v_ani_vx_hide = {
+    "Ani_VX_GroupScrollView_Hide",
+    BIND_TYPE.OBJECT
+  }
+}
+local PAGE_IDX = {MEMBER = 1, COURSE = 2}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_btn = self:get_button(nil, nil)
+  self:set_button_listener(self.v_btn, function()
+    UIMgr:get_ui("achievement_detail"):ui_show({
+      group_id = self.v_achievement_group_id
+    }, true)
+    PlayerMgr:save_achievement_red_point(self.v_achievement_group_id)
+  end)
+end
+
+function ui:set_data(go, data_list, index)
+  local data = data_list[index]
+  self.v_achievement_group_id = data.Id
+  self.v_all_achievements = PlayerMgr:get_achievements_dict(data.Id) or {}
+  self.v_suffix = ""
+  if data.Classify == PAGE_IDX.MEMBER then
+    self.v_suffix = "_member"
+    self.v_obj_member:SetActive(true)
+    self.v_obj_course:SetActive(false)
+    self.v_page_idx = PAGE_IDX.MEMBER
+    ResMgr:load_set_icon(self.v_icon1_member, data.Photo, nil, true)
+  elseif data.Classify == PAGE_IDX.COURSE then
+    self.v_suffix = "_course"
+    self.v_obj_member:SetActive(false)
+    self.v_obj_course:SetActive(true)
+    self.v_page_idx = PAGE_IDX.COURSE
+    ResMgr:load_set_icon(self.v_icon1_course, data.Photo, nil, true)
+  end
+  self["v_name" .. self.v_suffix].text = data.Name
+  self["v_en_name" .. self.v_suffix].text = data.EnName
+  self:refresh_ui(data)
+  self.v_btn.enabled = false
+  if PlayerMgr:whether_achievement_complete_time() then
+    self.v_btn.enabled = true
+  end
+end
+
+function ui:refresh_ui(data)
+  self.v_progress_task = PlayerMgr:get_achievement_list(data.Id)
+  self.v_now_achievement_group_receive = {}
+  self.v_now_achievement_group_received = {}
+  local has_award = false
+  for i = 1, #self.v_all_achievements do
+    local task_data = TaskMgr:get_task_by_id(self.v_all_achievements[i].TaskId)
+    if task_data then
+      local order = GETSTATETYPE_ORDER[task_data.state]
+      if order == GETSTATETYPE_ORDER[TASK_STATE.receive] then
+        _tinsert(self.v_now_achievement_group_receive, self.v_all_achievements[i])
+        has_award = true
+      elseif order == GETSTATETYPE_ORDER[TASK_STATE.received] then
+        _tinsert(self.v_now_achievement_group_received, self.v_all_achievements[i])
+      end
+    end
+  end
+  local progress = self.v_progress_task or {}
+  for i = 1, #progress do
+    if 1 == progress[i].state then
+      has_award = true
+    end
+  end
+  self.v_red_point:SetActive(has_award)
+  self.v_new:SetActive(false)
+  if data.Classify == PAGE_IDX.MEMBER then
+    local record_data = PlayerMgr:load_achievement_red_point()
+    if not record_data[data.Id] then
+      self.v_red_point:SetActive(false)
+      self.v_new:SetActive(true)
+    else
+      self.v_new:SetActive(false)
+    end
+  end
+  if self.v_achievement_group_id then
+    PlayerMgr:save_achievement_red_point(self.v_achievement_group_id)
+  end
+  local award_type = ShareRes.create("item.award_type", ITEM_TYPE.TITLE)
+  local id_begine = award_type.IdBegin
+  local id_end = award_type.IdEnd
+  self.v_title = nil
+  self.v_title_complete = nil
+  self.v_finish_time = nil
+  for i = 1, #progress do
+    if 0 ~= progress[i].id then
+      local item = ShareRes.get_achievement_award(progress[i].id)
+      local item_id = item[1][1]
+      if id_begine <= item_id and id_end >= item_id then
+        if self.v_title == nil then
+          self.v_title = item_id
+        end
+        if 2 == self.v_progress_task[i].state then
+          self.v_title = item_id
+          self.v_title_complete = true
+          self.v_finish_time = _time("!%Y.%m.%d", self.v_progress_task[i].finish_time)
+        end
+      end
+    end
+  end
+  self.v_title_member:SetActive(false)
+  self.v_title_course:SetActive(false)
+  if self.v_title then
+    self["v_title" .. self.v_suffix]:SetActive(true)
+    if self.v_title_complete then
+      self["v_lock" .. self.v_suffix]:SetActive(false)
+      self["v_quality_bg" .. self.v_suffix]:SetActive(true)
+    else
+      self["v_lock" .. self.v_suffix]:SetActive(true)
+      self["v_quality_bg" .. self.v_suffix]:SetActive(false)
+    end
+    local title_cfg = ShareRes.get_title(self.v_title)
+    local title_quality_path_cfg = ShareRes.get_title_quality_path(title_cfg.Quality)
+    self["v_lv" .. self.v_suffix].text = title_cfg.Level
+    self["v_lv" .. self.v_suffix].gameObject:SetActive(1 == title_cfg.ShowLevel)
+    ResMgr:load_set_icon(self["v_icon" .. self.v_suffix], title_cfg.BaseMapPreview)
+    ResMgr:load_set_icon(self["v_bg" .. self.v_suffix], title_cfg.BaseMap)
+    ResMgr:load_set_icon(self["v_quality_bg" .. self.v_suffix], title_quality_path_cfg.Qualitybox)
+  end
+  if 1 == data.IsRoutine then
+    self["v_bar" .. self.v_suffix].gameObject:SetActive(false)
+    self["v_complete" .. self.v_suffix]:SetActive(nil ~= self.v_finish_time)
+    self["v_complete_time" .. self.v_suffix].text = self.v_finish_time
+  else
+    self["v_bar" .. self.v_suffix].gameObject:SetActive(true)
+    self["v_complete" .. self.v_suffix]:SetActive(false)
+    local percent_complete = (#self.v_now_achievement_group_receive + #self.v_now_achievement_group_received) / #self.v_all_achievements
+    self["v_bar_fill" .. self.v_suffix].fillAmount = percent_complete
+    self["v_progress" .. self.v_suffix].text = _mfloor(percent_complete * 100) .. "%"
+    if 1 == percent_complete then
+      self["v_bar" .. self.v_suffix].gameObject:SetActive(false)
+      self["v_complete" .. self.v_suffix]:SetActive(true)
+      self["v_complete_time" .. self.v_suffix].text = _time("!%Y.%m.%d", progress[#progress].finish_time)
+    end
+  end
+end
+
+function ui:play_in_eff()
+  self.v_object:SetActive(true)
+  self.v_ani_vx_in:SetActive(false)
+  self.v_ani_vx_in:SetActive(true)
+end
+
+function ui:eff_init()
+  self.v_object:SetActive(false)
+end
+
+function ui:is_visible_item()
+  return self.v_visible
+end
+
+return ui

@@ -1,0 +1,276 @@
+local Base = require("ui.uibase")
+local TipsClass = require("uimodule.battle_bag.item_tips")
+local Item_Helper = require("utils.item_helper")
+local BagCfg = require("gamelogic.character.fight_bag_configs")
+local GoodsItemClass = require("uimodule.battle_bag.battle_item")
+local CurrencyItemClass = require("uimodule.battle_bag.battle_currency_item")
+local M = Util.create_child_mt(Base)
+local Info_Left_Offset = {-325.5, -192.6}
+local Info_Right_Offset = {416, -192.6}
+local Item_Left_Offset = {-420, 210.8}
+local Item_Right_Offset = {321.5, 210.8}
+local Left_Offset = -358
+local Right_Offset = 437
+local OPERATE_TYPE = {
+  NONE = 1,
+  EXCHANGE = 2,
+  REPLACE = 3
+}
+
+function M:ui_finish_load()
+  self.v_info_rect = self:get_rect_transform(nil, self.v_uiobjects.ItemTips1)
+  self.v_other_info_rect = self:get_rect_transform(nil, self.v_uiobjects.ItemTips2)
+  self.v_item_rect = self:get_rect_transform(nil, self.v_uiobjects.ItemObj1)
+  self.v_other_item_rect = self:get_rect_transform(nil, self.v_uiobjects.ItemObj2)
+  self.v_info_view = TipsClass:ui_wrap(self, self.v_uiobjects.ItemTips1, false)
+  self.v_other_info_view = TipsClass:ui_wrap(self, self.v_uiobjects.ItemTips2, false)
+  self.v_item_view = GoodsItemClass:ui_wrap(self, self.v_uiobjects.ItemObj1, false)
+  self.v_other_item_view = GoodsItemClass:ui_wrap(self, self.v_uiobjects.ItemObj2, false)
+  self.v_currency_view = CurrencyItemClass:ui_wrap_ex(self, self.v_uiobjects.CRCurrency, false)
+  self:set_button("CloseBtn", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnRet", function()
+    self:ui_hide()
+  end)
+  self:set_button("ExchangeBtn", function()
+    self:_onclick_exchange_btn()
+  end)
+  self:set_button("ReplaceBtn", function()
+    self:_onclick_replace_btn()
+  end)
+  self:set_button("SoldBtn", function()
+    self:_onclick_sold_btn()
+  end)
+  self.v_sold_rect = self:get_rect_transform(nil, self.v_uiobjects.SoldBtn)
+  self.v_exchange_rect = self:get_rect_transform(nil, self.v_uiobjects.ExchangeBtn)
+end
+
+function M:ui_on_show(item_id, param, ...)
+  self.v_item_id = item_id
+  self.v_item_param = param
+  self.v_info_view:set_enable(true, item_id, param)
+  self:_refresh_data(item_id, param)
+  self:_regist_client_event()
+  if param.need_pause then
+    SceneMgr:set_game_pause(true)
+  end
+end
+
+function M:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_CLOSE_RING_BAG_ITEM_TIPS, self._response_close_tips_event, self)
+end
+
+function M:_response_close_tips_event()
+  self:ui_hide()
+end
+
+function M:ui_on_hide()
+  self.v_wearing_id = nil
+  self.v_wearing_param = nil
+  if self.v_sq_list then
+    for _, v in ipairs(self.v_sq_list) do
+      v:Kill(false)
+    end
+    self.v_sq_list = nil
+  end
+  self.v_in_ani = false
+  if self.v_item_param.need_pause then
+    SceneMgr:set_game_pause(false)
+  end
+end
+
+function M:_refresh_data(item_id, param)
+  self.v_info_view:set_enable(true, item_id, param)
+  self:_set_default_ui()
+  self:_set_operate_ui(item_id, param)
+  self:_set_other_item(item_id, param)
+  self:_set_equip_price()
+  self:_set_tips_pos()
+end
+
+function M:_set_default_ui()
+  self.v_other_info_view:set_enable(false)
+  self.v_item_view:set_enable(false)
+  self.v_other_item_view:set_enable(false)
+  self.v_info_rect:SetAnchoredPositionA(0, 0, 0)
+end
+
+function M:_set_other_item(item_id, param)
+  self.v_uiobjects.Compare:SetActive(self.v_operate_type ~= OPERATE_TYPE.NONE)
+  if self.v_operate_type == OPERATE_TYPE.NONE then
+    return
+  end
+  self.v_info_view:set_enable(false)
+  self.v_item_view:set_enable(true, item_id, param)
+  self.v_info_view:set_enable(true, item_id, param)
+  self.v_other_item_view:set_enable(true, self.v_wearing_id, self.v_wearing_param)
+  self.v_other_info_view:set_enable(true, self.v_wearing_id, self.v_wearing_param)
+  self:_layout_panel()
+  self.v_left = {
+    [1] = Info_Left_Offset[1],
+    [2] = Item_Left_Offset[1],
+    item_data = self.v_wearing_param.item_data
+  }
+  self.v_right = {
+    [1] = Info_Right_Offset[1],
+    [2] = Item_Right_Offset[1],
+    item_data = self.v_item_param.item_data
+  }
+  self.v_in_ani = false
+end
+
+function M:_set_operate_ui(item_id, param)
+  self.v_operate_type = self:_get_operate_type(item_id, param)
+  self.v_uiobjects.CloseBtn:SetActive(self.v_operate_type ~= OPERATE_TYPE.EXCHANGE)
+  self.v_uiobjects.ExchangeBtn:SetActive(self.v_operate_type == OPERATE_TYPE.EXCHANGE)
+  self.v_uiobjects.SoldBtn:SetActive(self.v_operate_type == OPERATE_TYPE.EXCHANGE)
+  self.v_currency_view:set_enable(self.v_operate_type == OPERATE_TYPE.REPLACE)
+  self.v_uiobjects.ReplaceBtn:SetActive(self.v_operate_type == OPERATE_TYPE.REPLACE)
+  self.v_uiobjects.SoldPanel:SetActive(self.v_operate_type == OPERATE_TYPE.REPLACE)
+  self.v_uiobjects.BuyPanel:SetActive(self.v_operate_type == OPERATE_TYPE.REPLACE)
+end
+
+function M:_get_operate_type(item_id, param)
+  self.v_tip_source = param.tips_source and param.tips_source or BagCfg.TIPS_SOURCE.BAG
+  if self.v_tip_source == BagCfg.TIPS_SOURCE.BAG then
+    return OPERATE_TYPE.NONE
+  end
+  local is_equip_collect = Item_Helper.get_is_equip_collect(item_id)
+  if not is_equip_collect then
+    return OPERATE_TYPE.NONE
+  end
+  self.v_wearing_id, self.v_wearing_param = self:_get_wearing_equip(item_id, param)
+  if self.v_tip_source == BagCfg.TIPS_SOURCE.SHOP then
+    if param.has_buy then
+      return OPERATE_TYPE.NONE
+    end
+    return self.v_wearing_id and OPERATE_TYPE.REPLACE or OPERATE_TYPE.NONE
+  else
+    return self.v_wearing_id and OPERATE_TYPE.EXCHANGE or OPERATE_TYPE.NONE
+  end
+  if self.v_tip_source == BagCfg.TIPS_SOURCE.INIT_BOX then
+    return OPERATE_TYPE.NONE
+  end
+  return OPERATE_TYPE.REPLACE
+end
+
+function M:_get_wearing_equip(item_id, param)
+  local item_data = FightBagMgr:get_wearing_equip(item_id)
+  if not item_data then
+    return
+  end
+  local new_param = UtilTable.copy_table(param)
+  new_param.item_data = item_data
+  return item_data.id, new_param
+end
+
+function M:_layout_panel()
+  self.v_other_info_rect:SetAnchoredPositionA(Info_Left_Offset[1], Info_Left_Offset[2], 0)
+  self.v_info_rect:SetAnchoredPositionA(Info_Right_Offset[1], Info_Right_Offset[2], 0)
+  self.v_other_item_rect:SetAnchoredPositionA(Item_Left_Offset[1], Item_Left_Offset[2], 0)
+  self.v_item_rect:SetAnchoredPositionA(Item_Right_Offset[1], Item_Right_Offset[2], 0)
+  self.v_tween_list = {
+    [1] = self.v_other_info_rect,
+    [2] = self.v_info_rect,
+    [3] = self.v_other_item_rect,
+    [4] = self.v_item_rect
+  }
+end
+
+function M:_set_equip_price()
+  if self.v_operate_type == OPERATE_TYPE.NONE then
+    return
+  end
+  if self.v_operate_type == OPERATE_TYPE.EXCHANGE then
+    self.v_uicompents.ItemPrice_txt.text = BattleShopMgr:get_sell_price_by_item_id(self.v_right.item_data.id)
+  else
+    self.v_uicompents.SoldPrice_txt.text = BattleShopMgr:get_sell_price_by_item_id(self.v_left.item_data.id)
+    self.v_buy_price = BattleShopMgr:get_buy_price_by_item_id(self.v_right.item_data.id) * 1
+    self.v_uicompents.BuyPrice_txt.text = self.v_buy_price
+  end
+end
+
+function M:_set_tips_pos()
+  if self.v_tip_source == BagCfg.TIPS_SOURCE.INIT_BOX then
+    self:_change_layout()
+  end
+end
+
+function M:_change_layout()
+  local pos_obj = self.v_uiobjects.MiddlePos
+  local pos_cfg = self.v_item_param.layout
+  if pos_cfg == BagCfg.INIT_BOX_LAYOUT.LEFT then
+    pos_obj = self.v_uiobjects.LeftPos
+  elseif pos_cfg == BagCfg.INIT_BOX_LAYOUT.RIGHT then
+    pos_obj = self.v_uiobjects.RightPos
+  end
+  self:set_info_pos(pos_obj)
+end
+
+function M:set_info_pos(pos_obj)
+  local rect = Util.get_rect_transform(nil, pos_obj)
+  local anch_pos = rect.anchoredPosition
+  self.v_info_rect:SetAnchoredPositionA(anch_pos.x, anch_pos.y, 0)
+end
+
+function M:_play_exchange_ani()
+  self.v_in_ani = true
+  local temp = self.v_left
+  self.v_left = self.v_right
+  self.v_right = temp
+  if self.v_sq_list then
+    for _, v in ipairs(self.v_sq_list) do
+      v:Kill(false)
+    end
+    self.v_sq_list = nil
+  end
+  self.v_sq_list = {}
+  for i, v in ipairs(self.v_tween_list) do
+    self.v_sq_list[i] = Util.create_sequence()
+    local idx = i > 2 and 2 or 1
+    local target = 1 == i % 2 and self.v_left[idx] or self.v_right[idx]
+    self.v_sq_list[i]:Append(v:DOAnchorPosX(target, 0.5))
+    self.v_sq_list[i]:AppendCallback(function()
+      self.v_in_ani = false
+    end)
+  end
+end
+
+function M:_onclick_exchange_btn()
+  if self.v_in_ani then
+    return
+  end
+  FightBagMgr:preview_equip(self.v_right.item_data, self.v_left.item_data)
+  self:_play_exchange_ani()
+  self:_set_equip_price()
+end
+
+function M:_onclick_replace_btn()
+  if self.v_in_ani then
+    return
+  end
+  if self.v_buy_price > CharacterMgr:get_res_val(BagCfg.CURRENCY[1]) then
+    Util.show_message_tip(2106)
+    self:ui_hide()
+    return
+  end
+  BattleShopMgr:buy_battle_shop_equip_item(self.v_item_param.buy_idx, true, function()
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_SHOP_ITEM_BUY)
+    msg.mm_x = self.v_item_param.buy_idx
+  end)
+  self:ui_hide()
+end
+
+function M:_onclick_sold_btn()
+  if self.v_in_ani then
+    return
+  end
+  local callback = self.v_item_param.get_cb
+  if callback then
+    callback(0 ~= self.v_right.item_data.bag_type, self.v_item_param.cb_data)
+  end
+  self:ui_hide()
+end
+
+return M

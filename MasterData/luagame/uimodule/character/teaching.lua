@@ -1,0 +1,53 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:set_button("BtnRetX", function()
+    self:ui_hide()
+  end)
+  self:set_button("Btn_Last", function()
+    if 1 == self.v_cur_index then
+      return
+    end
+    self.v_cur_index = self.v_cur_index - 1
+    self:update_view()
+  end)
+  self:set_button("Btn_Next", function()
+    if self.v_cur_index == #self.v_data_list then
+      return
+    end
+    self.v_cur_index = self.v_cur_index + 1
+    self:update_view()
+  end)
+end
+
+function ui:ui_on_show(data_list)
+  if not data_list or 0 == #data_list then
+    Log.Error("无任何数据-----")
+    return
+  end
+  self.v_data_list = data_list
+  self.v_cur_index = 1
+  self:update_view()
+end
+
+function ui:update_view()
+  self:update_btn()
+  local guidid = self.v_data_list[self.v_cur_index].id
+  local data = ShareRes.get_graphic_guide_cfg(guidid)
+  ResMgr:load_set_icon(self.v_uicompents.GuideImg_img, data.picture, nil, true, self)
+  self.v_uicompents.GuideTitle_txt.text = Util.keep_newline(data.title)
+  self.v_uicompents.GuideDes_txt.text = Util.keep_newline(data.text)
+end
+
+function ui:update_btn()
+  if 1 == #self.v_data_list then
+    self.v_uiobjects.Btn_Last:SetActive(false)
+    self.v_uiobjects.Btn_Next:SetActive(false)
+    return
+  end
+  self.v_uiobjects.Btn_Last:SetActive(1 ~= self.v_cur_index)
+  self.v_uiobjects.Btn_Next:SetActive(self.v_cur_index ~= #self.v_data_list)
+end
+
+return ui

@@ -1,0 +1,126 @@
+local Base = require("obj.state.state_obj_base")
+local M = Util.create_child_mt(Base)
+local ACT_DEFINE = Config.ACT_DEFINE
+local STATE_NAME = Config.STATE_NAME
+local NONE = 0
+local STUN_START = 1
+local STUNNING = 2
+local STUN_END = 3
+local STUN_ANIMATION_GROUP = {
+  [1] = {
+    StunStart = ACT_DEFINE.StunStart,
+    Stun = ACT_DEFINE.Stun,
+    StunEnd = ACT_DEFINE.StunEnd
+  },
+  [2] = {
+    StunStart = ACT_DEFINE.StunStart2,
+    Stun = ACT_DEFINE.Stun2,
+    StunEnd = ACT_DEFINE.StunEnd2
+  },
+  [3] = {
+    StunStart = ACT_DEFINE.StunStart3,
+    Stun = ACT_DEFINE.Stun3,
+    StunEnd = ACT_DEFINE.StunEnd3
+  }
+}
+
+function M:_init(owner, state_manager)
+  Base._init(self, owner, state_manager)
+  self.v_duration = 0
+end
+
+function M:state_on_enter()
+  Base.state_on_enter(self)
+  self.enter_stun_start = true
+  self.stun_is_end = false
+  if self.v_duration <= 0 then
+    self:exit_stun()
+  end
+end
+
+function M:state_on_leave()
+  Base.state_on_leave(self)
+  self.stun_is_end = false
+  self.exist_armor = nil
+  self.v_owner:set_stun(false)
+  if self.v_exit_cb then
+    self.v_exit_cb(self.v_owner)
+    self.v_exit_cb = nil
+  end
+end
+
+function M:state_get_name()
+  return STATE_NAME.stun
+end
+
+function M:state_update_value(duration, exit_cb)
+  self.v_duration = self.v_duration + duration
+  if exit_cb then
+    self.v_exit_cb = exit_cb
+  end
+  if self.v_state ~= STUN_START then
+    self.v_state = STUN_START
+    local stun_animation_group_id = self.v_owner:get_stun_animation_group_id()
+    self.v_state_manager:try_action(STUN_ANIMATION_GROUP[stun_animation_group_id].StunStart, 0, function()
+      self.v_state = STUNNING
+      self.v_owner:set_stun(true)
+      self.v_state_manager:try_action(STUN_ANIMATION_GROUP[stun_animation_group_id].Stun, 0, nil, nil, true)
+    end)
+  end
+end
+
+function M:state_update()
+  if self.v_state ~= STUN_END then
+    local dt = self.v_owner.time_mgr:get_dt_time()
+    self.v_duration = self.v_duration - dt
+    if self.v_duration <= 0 then
+      self:exit_stun()
+    end
+  end
+end
+
+function M:exit_stun()
+  if self.v_state == STUNNING then
+    if self.v_exit_cb then
+      self.v_exit_cb(self.v_owner)
+      self.v_exit_cb = nil
+    end
+    self.v_duration = 0
+    self.stun_is_end = true
+    self.v_state = STUN_END
+    local stun_animation_group_id = self.v_owner:get_stun_animation_group_id()
+    self.v_state_manager:try_action(STUN_ANIMATION_GROUP[stun_animation_group_id].StunEnd, 0, function()
+      if self.v_state == STUN_START then
+        self.stun_is_end = false
+        return
+      end
+      self.v_state_manager:exit_state(STATE_NAME.stun)
+    end)
+  end
+end
+
+function M:on_stun_attack()
+  local index = math.random(1, 2)
+  if not self.stun_is_end and self.v_state == STUNNING then
+    local stun_animation_group_id = self.v_owner:get_stun_animation_group_id()
+    if 1 == index then
+      self.v_state_manager:try_action(ACT_DEFINE.StunHitL, 0, function()
+        self.v_state_manager:try_action(STUN_ANIMATION_GROUP[stun_animation_group_id].Stun, 0, nil, nil, true)
+      end)
+    else
+      self.v_state_manager:try_action(ACT_DEFINE.StunHitR, 0, function()
+        self.v_state_manager:try_action(STUN_ANIMATION_GROUP[stun_animation_group_id].Stun, 0, nil, nil, true)
+      end)
+    end
+  end
+end
+
+function M:can_move()
+  return false
+end
+
+function M:is_in_stun_start()
+  return self.v_state == STUN_START
+end
+
+return M

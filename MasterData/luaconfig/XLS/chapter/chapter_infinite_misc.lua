@@ -1,0 +1,18 @@
+return {
+  DefaultCoeff = 1,
+  FlushCycle = 14,
+  ForbidTime = -60,
+  IntegralFormula = {
+    450,
+    150,
+    130,
+    0.7
+  },
+  QuickFightTip = "扫荡通关",
+  RankArea = 500,
+  RankLimit = 1,
+  RankNum = 100,
+  RewardTaskGroup = 3011,
+  StartTime = 1699372800,
+  SweepDiscount = 7000
+}

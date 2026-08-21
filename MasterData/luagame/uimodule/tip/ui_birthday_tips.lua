@@ -1,0 +1,51 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIRTHDAY_AWARD_ITEM_KEY = "BIRTHDAY_AWARD_ITEM_KEY"
+local ITEM_OBJ_CLASS = require("uimodule.item.item_obj_com")
+local BIRTHDAY_MAIL_ID = ShareRes.get_comm_value("BrithMail")
+
+function ui:ui_finish_load()
+  self:set_button("BtnClose", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(BIRTHDAY_AWARD_ITEM_KEY, self.v_uiobjects.ItemObjCom1, self.v_uiobjects.AwardContent)
+end
+
+function ui:ui_on_show()
+  self:refresh_award()
+end
+
+function ui:ui_on_hide()
+  self:clear_wrap_items()
+end
+
+function ui:refresh_award()
+  self:clear_wrap_items()
+  self.v_award_item_list = {}
+  local awards = {}
+  local mail_cfg = ShareRes.create("mail_template.mail_template", BIRTHDAY_MAIL_ID)
+  if not mail_cfg then
+    Log.Error("公共配置BrithMail 邮件Id获取配置失败:", BIRTHDAY_MAIL_ID)
+    return
+  end
+  ShareRes.get_item_obj_use_award_list(mail_cfg.RewardGroup, awards)
+  for _, award_data in ipairs(awards) do
+    local obj = self:get_auto_cache(BIRTHDAY_AWARD_ITEM_KEY)
+    local item = ITEM_OBJ_CLASS:ui_wrap_ex(self, obj, true)
+    item:set_data(award_data, true, false, false)
+    table.insert(self.v_award_item_list, item)
+  end
+end
+
+function ui:clear_wrap_items()
+  if self.v_award_item_list then
+    for idx = #self.v_award_item_list, 1, -1 do
+      local item = self.v_award_item_list[idx]
+      item:ui_destroy()
+      self.v_award_item_list[idx] = nil
+    end
+    self.v_award_item_list = nil
+  end
+end
+
+return ui

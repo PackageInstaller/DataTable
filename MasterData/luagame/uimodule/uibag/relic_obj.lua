@@ -1,0 +1,149 @@
+local Base = require("ui.uiobject")
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local BagCfg = require("uimodule.uibag.uibag_configs")
+local _tinsert = table.insert
+local DrawDown_texts = {
+  "最  近",
+  "品  质",
+  "等  级"
+}
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_btn_close_draw_down = {
+    "BtnCloseDrawDown",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_engrave_draw_down = {
+    "BtnEngraveDrawDown",
+    BIND_TYPE.BUTTON
+  },
+  v_engrave_down_content = {
+    "EngraveDownContent",
+    BIND_TYPE.IMAGE
+  },
+  v_engrave_screen = {
+    "EngraveScreen",
+    BIND_TYPE.OBJECT
+  },
+  v_engrave_select = {
+    "EngraveSelect",
+    BIND_TYPE.OBJECT
+  },
+  v_part0 = {
+    "Part0",
+    BIND_TYPE.TOGGLE
+  },
+  v_part1 = {
+    "Part1",
+    BIND_TYPE.TOGGLE
+  },
+  v_part2 = {
+    "Part2",
+    BIND_TYPE.TOGGLE
+  },
+  v_part3 = {
+    "Part3",
+    BIND_TYPE.TOGGLE
+  },
+  v_part4 = {
+    "Part4",
+    BIND_TYPE.TOGGLE
+  },
+  v_weapon_tog_level = {
+    "WeaponTogLevel",
+    BIND_TYPE.TOGGLE
+  },
+  v_weapon_tog_quality = {
+    "WeaponTogQuality",
+    BIND_TYPE.TOGGLE
+  },
+  v_weapon_tog_recent = {
+    "WeaponTogRecent",
+    BIND_TYPE.TOGGLE
+  },
+  v_down_content = {
+    "EngraveDownContent",
+    BIND_TYPE.OBJECT
+  },
+  v_close_down_obj = {
+    "BtnCloseDrawDown",
+    BIND_TYPE.OBJECT
+  },
+  v_darw_down_obj = {
+    "BtnEngraveDrawDown",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+end
+
+function ui:ui_on_show()
+  self.v_slot_idx = self.v_parent_ui:get_relic_page_slot()
+  self:init_slot_tab()
+  self.v_sort_type = self.v_parent_ui:get_relic_page_sort_type()
+  self:init_sort_tab()
+  self:update_dorp_down(false)
+  self:update_direct_btn()
+end
+
+function ui:ui_on_hide()
+  if self.v_remove_dynamic_effect_timer then
+    Timer:remove_timer(self.v_remove_dynamic_effect_timer)
+  end
+  self.v_remove_dynamic_effect_timer = nil
+end
+
+function ui:init_sort_tab()
+  local pages = {}
+  _tinsert(pages, self.v_weapon_tog_recent)
+  _tinsert(pages, self.v_weapon_tog_quality)
+  _tinsert(pages, self.v_weapon_tog_level)
+  local sort_direct_btn = Util.get_button("Button_direct", self.v_engrave_select)
+  self.v_direct_up = sort_direct_btn.gameObject:FindChild("Direct_up")
+  self.v_direct_down = sort_direct_btn.gameObject:FindChild("Direct_down")
+  self:set_button_listener(sort_direct_btn, function()
+    self.v_parent_ui:set_relic_page_sort_ascend()
+    self:update_direct_btn()
+  end)
+  self:set_button_listener(self.v_btn_engrave_draw_down, function()
+    self:update_dorp_down(not self.v_down_content.activeInHierarchy)
+  end)
+  self:set_button_listener(self.v_btn_close_draw_down, function()
+    self:update_dorp_down(false)
+  end)
+  self.v_weapon_select_toggle_tab = ToggleTab:new(self)
+  self.v_weapon_select_toggle_tab:init_by_toggles(pages, function(cur_select, pre_select, cur_toggle, pre_toggle)
+    self.v_parent_ui:set_relic_page_sort_type(cur_select)
+    self:update_dorp_down(false)
+  end, self.v_sort_type, false)
+end
+
+function ui:init_slot_tab()
+  local pages = {}
+  for i = 0, 4 do
+    _tinsert(pages, self["v_part" .. i])
+  end
+  self.v_slot_toggle_tab = ToggleTab:new(self)
+  self.v_slot_toggle_tab:init_by_toggles(pages, function(cur_select, pre_select, cur_toggle, pre_toggle)
+    self.v_parent_ui:set_relic_page_slot(cur_select - 1)
+  end, self.v_slot_idx + 1, false)
+end
+
+function ui:update_dorp_down(show_content)
+  local sort_type = self.v_parent_ui:get_relic_page_sort_type()
+  Util.get_text("Text", self.v_darw_down_obj).text = Util.format_str(DrawDown_texts[sort_type])
+  Util.get_child_gameobj("Select", self.v_darw_down_obj):SetActive(show_content)
+  self.v_down_content:SetActive(show_content)
+  self.v_close_down_obj:SetActive(show_content)
+end
+
+function ui:update_direct_btn()
+  local is_sort_ascend = self.v_parent_ui:get_relic_page_sort_ascend()
+  self.v_direct_up.gameObject:SetActive(is_sort_ascend)
+  self.v_direct_down.gameObject:SetActive(not is_sort_ascend)
+end
+
+return ui

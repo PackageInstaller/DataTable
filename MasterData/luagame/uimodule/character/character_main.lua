@@ -1,0 +1,292 @@
+local Base = require("ui.uiobject")
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local _tinsert = table.insert
+local CHARACTER_CONFIG = require("uimodule.character.character_config")
+local WEAPON_SELECT_TYPE = CHARACTER_CONFIG.WEAPON_SELECT_TYPE
+local ATTR_PANEL = 1
+local POTENTIAL_PANEL = 2
+local WEAPON_PANEL = 3
+local SKILL_PANEL = 4
+local PUZZLE = 5
+local SHOW_CHAR_RT = {
+  [ATTR_PANEL] = true,
+  [WEAPON_PANEL] = true,
+  [POTENTIAL_PANEL] = true
+}
+local PAGE_SYS_OPEN = {
+  [PUZZLE] = 58
+}
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_left_panel = {
+    "Left",
+    BIND_TYPE.OBJECT
+  },
+  v_page_obj = {
+    "Page",
+    BIND_TYPE.OBJECT
+  },
+  v_asset_bar = {
+    "AssetBar",
+    BIND_TYPE.OBJECT
+  }
+}
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnCharRet", function()
+    local ui_character_enter = UIMgr:try_get_ui("character_enter")
+    if ui_character_enter then
+      ui_character_enter:select_char(self.v_buddy_id)
+    end
+    UIMgr:get_ui("character"):ui_hide()
+  end)
+  self:set_button("BtnReplace", function()
+    self:ui_hide()
+    self.v_parent_ui:show_char_image(false)
+    UIMgr:get_ui("char_weapon_select"):ui_show(nil, self.v_buddy_id, WEAPON_SELECT_TYPE.NORMAL)
+  end)
+  self:set_button("BtnEnhance", function()
+    UIMgr:get_ui("weapon_detail"):ui_show(self.v_buddy_id)
+  end)
+  self:set_button("BtnCharList", function()
+    self:show_char_list(true)
+  end)
+  self.v_last_page = nil
+  self.v_page_panels = {
+    [ATTR_PANEL] = self.v_parent_ui:get_panel("char_attr"),
+    [WEAPON_PANEL] = self.v_parent_ui:get_panel("weapon_attr"),
+    [POTENTIAL_PANEL] = self.v_parent_ui:get_panel("potential"),
+    [SKILL_PANEL] = self.v_parent_ui:get_panel("skill"),
+    [PUZZLE] = self.v_parent_ui:get_panel("puzzle")
+  }
+  self.v_uiobjects.AssetBar:SetActive(false)
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.RedAttr, RedEnum.CHAR_UP)
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.RedWeaponEnhance, RedEnum.CHAR_EQUIP_STRENGTHEN_BTN)
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.RedWeapon, RedEnum.CHAR_EQUIP_PAGE)
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.RedWeaponReplace, RedEnum.CHAR_EQUIP_REPLACE_BTN)
+  self.v_attr_eff = Util.get_child_gameobj("Animation/Ani_VX_CharaAttr_IN", self.v_parent_ui.v_object)
+  self.v_Qianneng_eff = Util.get_child_gameobj("Animation/Ani_VX_QiannengPanel_IN", self.v_parent_ui.v_object)
+  self.v_Weapon_eff = Util.get_child_gameobj("Animation/Ani_VX_WeaponAttr_IN", self.v_parent_ui.v_object)
+  self.v_Skiil_eff = Util.get_child_gameobj("Animation/Ani_VX_Skill_IN", self.v_parent_ui.v_object)
+  self.v_come_in_eff = {
+    self.v_attr_eff,
+    self.v_Qianneng_eff,
+    self.v_Weapon_eff,
+    self.v_Skiil_eff,
+    nil
+  }
+  self.v_skill_in_eff = Util.get_child_gameobj("Animation/Ani_VX_SkillPannel_IN", self.v_parent_ui.v_object)
+  self.v_skill_out_eff = Util.get_child_gameobj("Animation/Ani_VX_SkillPannel_Out", self.v_parent_ui.v_object)
+  self.v_list_in_eff = Util.get_child_gameobj("Animation/Ani_CharList_In", self.v_parent_ui.v_object)
+  self.v_list_out_eff = Util.get_child_gameobj("Animation/Ani_CharList_Out", self.v_parent_ui.v_object)
+end
+
+local Page2Idx = {
+  [ATTR_PANEL] = 1,
+  [POTENTIAL_PANEL] = 2,
+  [WEAPON_PANEL] = 3,
+  [SKILL_PANEL] = 4,
+  [PUZZLE] = 5
+}
+
+function ui:ui_before_show()
+  self:set_button("BtnIntroduce", function()
+    UIMgr:get_ui("ui_introduce"):ui_show(self, Page2Idx[self.v_last_page])
+  end)
+end
+
+function ui:ui_on_show()
+  self:bind_auto_mq(Const.MSG_BUDDY_DATA_UPDATE, self.refresh_red, self)
+  self:bind_auto_mq(Const.MSG_BUDDY_DATA_UPDATE, self.refresh_puzzle_red, self)
+  self:bind_auto_mq(Const.MSG_BUDDY_DATA_UPDATE, self.check_puzzle_unlock, self)
+  self:bind_auto_mq(Const.MSG_ROLE_RES_CHANGE, self.refresh_red, self)
+  self:bind_auto_mq(Const.MSG_ON_BUDDY_TO_ADVANCE_ITEM, self.refresh_advance_red, self)
+  self:bind_auto_mq(Const.MSG_NEW_SYS_OPEN, self.refresh_sys_state, self)
+  self:bind_auto_mq(Const.MSG_INSIDE_LIST_CHANGE_BUDDY, self.change_buddy, self)
+  self:bind_auto_mq(Const.MSG_ON_MODEL_VIEW_NPC_LOADED, self.on_npc_loaded, self)
+  self:update_data()
+  local last_page = CharacterMgr:get_last_select_page()
+  self:_init_page_list(last_page)
+  self:_on_click_page(last_page or 1, true)
+  self:refresh_sys_state()
+  self.v_skill_in_eff:SetActive(false)
+  self.v_skill_out_eff:SetActive(true)
+  self.v_uiobjects.BtnCharList:SetActive(true)
+  self.v_uiobjects.BtnIntroduce:SetActive(true)
+end
+
+function ui:show_char_list(is_show)
+  if is_show then
+    if self.v_parent_ui and self.v_parent_ui.v_panel_character_list then
+      self.v_parent_ui:stop_touch_rotate()
+      self.v_parent_ui.v_panel_character_list:set_enable(true)
+      self.v_list_in_eff:SetActive(false)
+      self.v_list_in_eff:SetActive(true)
+    end
+  else
+    self.v_parent_ui:reset_touch_rotate()
+    self.v_list_out_eff:SetActive(false)
+    self.v_list_out_eff:SetActive(true)
+  end
+end
+
+function ui:change_buddy()
+  self:update_data()
+  self:_on_click_page(self.v_last_page or 1, true)
+end
+
+function ui:ui_on_hide()
+  self.v_last_page = nil
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:_init_page_list(last_page)
+  last_page = last_page or 1
+  local pages = {}
+  _tinsert(pages, Util.get_toggle("Attr", self.v_page_obj))
+  _tinsert(pages, Util.get_toggle("Qianneng", self.v_page_obj))
+  _tinsert(pages, Util.get_toggle("Weapon", self.v_page_obj))
+  _tinsert(pages, Util.get_toggle("Skill", self.v_page_obj))
+  _tinsert(pages, Util.get_toggle("Plugins", self.v_page_obj))
+  self.v_toggle_list = pages
+  self.v_page_toggle_tab = ToggleTab:new(self)
+  self.v_page_toggle_tab:init_by_toggles(pages, function(idx)
+    self:_on_click_page(idx)
+  end, nil, false)
+  self.v_page_toggle_tab:set_color("FFFFFF", "FFFFFF")
+  self:update_left_view(true)
+  self.v_page_toggle_tab:set_toggle_by_index(last_page)
+end
+
+function ui:update_left_view(show)
+  self.v_left_panel.gameObject:SetActive(show)
+end
+
+function ui:refresh_advance_red()
+  local is_show_red = CharacterMgr:check_potential_red(self.v_buddy_id)
+  self.v_uiobjects.RedQianneng.gameObject:SetActive(is_show_red)
+end
+
+function ui:_on_click_page(page, is_refresh)
+  if page == self.v_last_page and not is_refresh then
+    return
+  end
+  if not self.v_page_panels[page] then
+    return
+  end
+  local sys_open_id = PAGE_SYS_OPEN[page]
+  if sys_open_id and not SysOpenMgr:get_sys_is_open(sys_open_id, true) then
+    self.v_page_toggle_tab:set_toggle_by_index(self.v_last_page)
+    return
+  end
+  if page == PUZZLE and not PuzzleMgr:check_buddy_puzzle_map_unlock(self.v_buddy_id, true) then
+    self.v_page_toggle_tab:set_toggle_by_index(self.v_last_page)
+    return
+  end
+  if self.v_come_in_eff and next(self.v_come_in_eff) then
+    for i = 1, #self.v_come_in_eff do
+      self.v_come_in_eff[i]:SetActive(false)
+    end
+    if self.v_come_in_eff[page] then
+      self.v_come_in_eff[page]:SetActive(true)
+    end
+  end
+  for idx, panel in pairs(self.v_page_panels) do
+    panel:set_enable(idx == page, self.v_buddy_id)
+  end
+  CharacterMgr:set_last_select_page(page)
+  self.v_last_page = page
+  self.v_uiobjects.RBWeapon:SetActive(page == WEAPON_PANEL)
+  self.v_parent_ui:change_page(page)
+  if page ~= WEAPON_PANEL then
+    self.v_page_panels[page]:refresh(self.v_buddy_id)
+  else
+    self.v_parent_ui:update_weapon_view(self.v_buddy_id)
+    self.v_page_panels[page]:refresh(nil, self.v_buddy_id)
+    self:refresh_BtnEnhance()
+  end
+  self.v_parent_ui:show_char_image(SHOW_CHAR_RT[page])
+  if SHOW_CHAR_RT[page] then
+    self.v_parent_ui:change_char_view(page, self.v_buddy_id)
+  end
+  self.v_uiobjects.BtnCharRet:SetActiveEx(page ~= SKILL_PANEL)
+  self.v_uiobjects.BtnMain:SetActiveEx(page ~= SKILL_PANEL)
+  self.v_parent_ui:set_open_callback()
+end
+
+function ui:on_npc_loaded(msg)
+  if msg.mm_x == self.v_buddy_id and self.v_last_page and SHOW_CHAR_RT[self.v_last_page] then
+    self.v_parent_ui:change_char_view(self.v_last_page, self.v_buddy_id)
+  end
+end
+
+function ui:check_change_buddy(buddy_id)
+  return self.v_last_page ~= PUZZLE or PuzzleMgr:check_buddy_puzzle_map_unlock(buddy_id, true)
+end
+
+function ui:refresh_BtnEnhance()
+  self.v_uiobjects.BtnEnhance:SetActive(true)
+  self.v_uiobjects.WeaponEnhanceTxt:SetActive(true)
+  self.v_uiobjects.WeaponBreakTxt:SetActive(false)
+end
+
+function ui:update_data()
+  self.v_buddy_id = CharacterMgr.v_last_select_buddy_id
+  self.v_cur_buddy_info = CharacterMgr:get_buddy_by_id(self.v_buddy_id)
+  if self.v_cur_buddy_info == nil or self.v_buddy_id == nil then
+    UIMgr:get_ui("character"):ui_hide()
+    return
+  end
+  self:refresh_red()
+  self:refresh_puzzle_red()
+end
+
+function ui:refresh_sys_state(msg)
+  local new_open_id = msg and msg.mm_obj
+  for key, sys_open_id in pairs(PAGE_SYS_OPEN) do
+    if (not new_open_id or new_open_id == key) and self.v_toggle_list[key] then
+      local is_open = SysOpenMgr:get_sys_is_open(sys_open_id)
+      local go = self.v_toggle_list[key].gameObject
+      go:SetActive(is_open)
+      if is_open and key == PUZZLE then
+        self.v_puzzle_tog_obj = go
+        self:check_puzzle_unlock()
+      end
+    end
+  end
+end
+
+function ui:check_puzzle_unlock()
+  if not self.v_uiobjects.LockPlugins then
+    return
+  end
+  local is_map_unlock = PuzzleMgr:check_buddy_puzzle_map_unlock(self.v_buddy_id)
+  if self.v_puzzle_tog_obj then
+    Util.apply_grey_ex(self.v_puzzle_tog_obj, not is_map_unlock)
+  end
+  self.v_uiobjects.LockPlugins:SetActive(not is_map_unlock)
+end
+
+function ui:refresh_red()
+  self:refresh_advance_red()
+end
+
+function ui:refresh_puzzle_red()
+  local sys_open = SysOpenMgr:get_sys_is_open(PAGE_SYS_OPEN[PUZZLE])
+  local is_show_red = sys_open and PuzzleMgr:is_any_free_puzzle_can_fit(self.v_buddy_id)
+  self.v_uiobjects.RedPlugins:SetActive(is_show_red)
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return nil, self.v_last_page
+end
+
+return ui

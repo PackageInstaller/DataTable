@@ -1,0 +1,17 @@
+return {
+  [3] = {
+    BaseExp = 1000,
+    ExpPercent = 8000,
+    Id = 3
+  },
+  [4] = {
+    BaseExp = 2000,
+    ExpPercent = 8000,
+    Id = 4
+  },
+  [5] = {
+    BaseExp = 4000,
+    ExpPercent = 8000,
+    Id = 5
+  }
+}

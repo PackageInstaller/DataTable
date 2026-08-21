@@ -1,0 +1,65 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local HERO_TEM_TEMPLATE_ITEM = "HERO_TEM_TEMPLATE_ITEM"
+local hero_icon_path = "Icon/Profile/%s"
+local util_color = Util.get_unity_color_by_hex
+local not_use_tip_color = "FF2A2A"
+local use_tip_color = "349AD9"
+local test_tip_color = "67FF75"
+local not_use_icon_color = "808080"
+local use_icon_color = "FFFFFF"
+
+function ui:ui_finish_load()
+  self:set_button("ReturnBg", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(HERO_TEM_TEMPLATE_ITEM, self.v_uiobjects.HeroTem, self.v_uiobjects.HeroTemContent)
+end
+
+function ui:ui_on_show(hero_skill_info)
+  self:give_back_auto_cache(HERO_TEM_TEMPLATE_ITEM)
+  for _, data in pairs(hero_skill_info) do
+    local hero_item = self:get_auto_cache(HERO_TEM_TEMPLATE_ITEM)
+    local skill_name = data.skill_name
+    local is_use = data.is_use
+    local is_have = data.is_have
+    local lv = data.final_lv
+    local hero_name = data.hero_name
+    local hero_icon = data.hero_icon
+    local desc = data.desc
+    local hero_icon_img = Util.get_image("HeroIcon", hero_item)
+    local hero_name_txt = Util.get_text("HeroName", hero_item)
+    local hero_skill_txt = Util.get_text("HeroSkill", hero_item)
+    local tip_txt = Util.get_text("Tips_skill", hero_item)
+    local tip_unlock_obj = Util.get_child_gameobj("HeroIcon/Tips_unlock", hero_item)
+    if is_use then
+      hero_icon_img.color = util_color(use_icon_color)
+      local is_fixed, _, is_long_chapter_fixed, floor_id = ChapterMgr:check_cur_fight_fixed_team()
+      if is_fixed then
+        tip_txt.text = Util.format_str("试用生效中")
+        tip_txt.color = util_color(test_tip_color)
+      else
+        tip_txt.text = Util.format_str("生效中")
+        tip_txt.color = util_color(use_tip_color)
+      end
+    else
+      tip_txt.color = util_color(not_use_tip_color)
+      hero_icon_img.color = util_color(not_use_icon_color)
+      tip_txt.text = Util.format_str("未生效")
+    end
+    if is_have then
+      tip_unlock_obj:SetActive(false)
+    else
+      tip_unlock_obj:SetActive(true)
+    end
+    hero_name_txt.text = hero_name
+    hero_skill_txt.text = Util.format_str("{1}Lv{2} : {3}", skill_name, lv, desc)
+    ResMgr:load_set_icon(hero_icon_img, string.format(hero_icon_path, hero_icon))
+  end
+end
+
+function ui:cache_ui()
+  return true
+end
+
+return ui

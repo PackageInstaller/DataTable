@@ -1,0 +1,78 @@
+local M = {
+  v_roles = {},
+  v_last_query_timestamp = {}
+}
+local MaxRequerySeconds = 300
+
+function M:query_target_base(uuids, cb)
+  Network:call_no_waiting("query_target_detail", {uuids = uuids}, function(ok, resp)
+    if ok then
+      local timestamp = Date.server_time()
+      if resp.roles then
+        for _, role in pairs(resp.roles) do
+          self.v_roles[role.uuid] = role
+          self.v_last_query_timestamp[role.uuid] = timestamp
+        end
+      end
+      if cb then
+        cb(self.v_roles)
+      end
+    end
+  end)
+end
+
+function M:check_requery(uuid)
+  local timestamp = self.v_last_query_timestamp[uuid]
+  if not timestamp then
+    return true
+  end
+  return Date.server_time() - timestamp > MaxRequerySeconds
+end
+
+function M:get_players_info(uuids, cb, is_realtime)
+  local quuids = {}
+  for _, uuid in ipairs(uuids) do
+    if not self.v_roles[uuid] or is_realtime or self:check_requery(uuid) then
+      table.insert(quuids, uuid)
+    end
+  end
+  if #quuids > 0 then
+    self:query_target_base(quuids, cb)
+  elseif cb then
+    cb(self.v_roles)
+  end
+end
+
+function M:get_players_detail(uuids, cb)
+  Network:call_no_waiting("query_target_detail", {uuids = uuids}, function(ok, resp)
+    if ok then
+      local roles = {}
+      if resp.roles then
+        for _, role in pairs(resp.roles) do
+          roles[role.uuid] = role
+        end
+      end
+      if cb then
+        cb(roles)
+      end
+    end
+  end)
+end
+
+function M:set_online_status(uuid, online)
+  local role = self.v_roles[uuid]
+  if not role then
+    return
+  end
+  role.online = online
+end
+
+function M:set_player_lv(uuid, lv)
+  local role = self.v_roles[uuid]
+  if not role then
+    return
+  end
+  role.lv = lv
+end
+
+return M

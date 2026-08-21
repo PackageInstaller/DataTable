@@ -1,0 +1,157 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local MODEL = {}
+local REWARD_ITEM = require("uimodule.weekly.star_reward_item")
+local _sformat = string.format
+local WEEKLY_RES_PATH = "WeeklyAct1/"
+local HURDLE_TARGET_ITEM = "HURDLE_TARGET_ITEM"
+local CommonDef = require("cs_share.common_define")
+local ENEMYPREVIEWITEM = require("uimodule.ui_common_item.enemy_preview_item")
+local COLOR_TRAGET_SUC = UnityEngine.Color(1.0, 1.0, 1.0, 0.4)
+local COLOR_TARGET_NO_SUC = UnityEngine.Color(1.0, 1.0, 1.0, 0.2)
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnRet", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnMain", function()
+    UIMgr:go_to_main()
+  end)
+  self:set_button("BtnEnemyShow", function()
+    self:on_click_enemy_preview_item(1)
+  end)
+  self:set_button("BtnFight", function()
+    if TowerMgr:check_fight_progress() then
+      return
+    end
+    local type = WeeklyMgr:get_battle_type()
+    UIMgr:get_ui("team"):ui_show(nil, self.v_hurdle_id, type)
+  end)
+  self.v_enemy_preview_item_list = {}
+  self:register_exist_auto_template(HURDLE_TARGET_ITEM, self.v_uiobjects.TargetTem, self.v_uiobjects.TargetContent)
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.v_hurdle_id
+end
+
+function ui:ui_update()
+end
+
+function ui:ui_on_show(hurdle_id)
+  self.v_hurdle_id = hurdle_id
+  self.v_hurdle_cfg = ShareRes.get_weekly_hundle_cfg(hurdle_id)
+  Util.assert(self.v_hurdle_cfg, "缺失关卡配置, 关卡配置id = " .. hurdle_id)
+  self.v_wrap_list = {}
+  self:init_hurdle_info()
+end
+
+function ui:ui_on_hide()
+  self:hide_all_enemytem()
+  self:remove_wrap_list()
+end
+
+function ui:remove_wrap_list()
+  for _, obj in pairs(self.v_wrap_list) do
+    self:remove_wrap_ui(obj)
+  end
+  self.v_wrap_list = {}
+end
+
+function ui:init_hurdle_info()
+  local cfg = self.v_hurdle_cfg
+  local bg_detail_res = WEEKLY_RES_PATH .. cfg.BgDetailRes
+  ResMgr:load_set_icon(self.v_uicompents.StageIcon_img, bg_detail_res, nil, true)
+  self.v_uicompents.StageName_txt.text = cfg.EpiName
+  local buff_desc_cfg = cfg.BuffDesc
+  for i = 1, 2 do
+    local obj = self.v_uiobjects["Buff" .. i]
+    obj:SetActive(false)
+    local desc = buff_desc_cfg[i]
+    if desc and "" ~= desc then
+      obj:SetActive(true)
+      local desc_txt = self.v_uicompents["Buff" .. i .. "_txt"]
+      desc_txt.text = desc
+    end
+  end
+  self:give_back_auto_cache(HURDLE_TARGET_ITEM)
+  self:update_hurdle_detail()
+  self:init_target_view()
+  self:update_enemy_info()
+end
+
+function ui:update_hurdle_detail()
+  local hurdle_data = WeeklyMgr:get_hurdle_data(self.v_hurdle_id)
+  if not hurdle_data then
+    return
+  end
+  self.v_uicompents.ScoreNum_txt.text = hurdle_data.fraction_num
+end
+
+function ui:update_enemy_info()
+  local enemy_cfg = ShareRes.get_chapter_point_cfg(self.v_hurdle_id)
+  self.v_enemyPreviewList = enemy_cfg.EnemyPreviewList
+  self.v_uiobjects.BtnEnemyShow:SetActiveEx(self.v_enemyPreviewList ~= nil)
+  if not self.v_enemyPreviewList then
+    return
+  end
+  for index, value in ipairs(enemy_cfg.EnemyPreviewList) do
+    if index > #self.v_enemy_preview_item_list then
+      local obj = ResMgr:load_gameobj(Path.get_language_full_prefab_path("prefab/widget/EnemyTem_.prefab"), nil, nil)
+      obj.transform:SetParent(self.v_uiobjects.EnemyList.transform, false)
+      local enemytem_lua_obj = ENEMYPREVIEWITEM:ui_wrap_ex(self, obj, false)
+      table.insert(self.v_enemy_preview_item_list, enemytem_lua_obj)
+      local button_com = self:get_button(nil, obj)
+      self:set_button_listener(button_com, function()
+        self:on_click_enemy_preview_item(index)
+      end)
+    end
+    self.v_enemy_preview_item_list[index]:set_data(value)
+    self.v_enemy_preview_item_list[index].v_object:SetActive(true)
+  end
+end
+
+function ui:hide_all_enemytem()
+  for _, obj in ipairs(self.v_enemy_preview_item_list) do
+    obj.v_object:SetActive(false)
+  end
+end
+
+function ui:on_click_enemy_preview_item(selectIdx)
+  if not self.v_enemyPreviewList then
+    return
+  end
+  UIMgr:get_ui("enemy_info_tips"):ui_show(selectIdx, self.v_enemyPreviewList)
+end
+
+function ui:init_target_view()
+  local cfg = self.v_hurdle_cfg
+  local target_cfg = ShareRes.get_point_star_condition(cfg.EpiID)
+  if nil == target_cfg then
+    return
+  end
+  for idx, condition_id in ipairs(target_cfg) do
+    local item = self:get_auto_cache(HURDLE_TARGET_ITEM)
+    self:update_target_info(item, idx, condition_id)
+  end
+end
+
+function ui:update_target_info(item, idx, condition_id)
+  local star_map = WeeklyMgr:get_hurdle_star_map(self.v_hurdle_id)
+  local is_suc = star_map[idx]
+  local suc_obj = Util.get_child_gameobj("Complete", item)
+  suc_obj:SetActiveEx(is_suc)
+  local condition_txt = Util.get_text("TargetDesc", item)
+  condition_txt.text = ShareRes.get_point_star_condition_desc(condition_id)
+  condition_txt.color = is_suc and COLOR_TRAGET_SUC or COLOR_TARGET_NO_SUC
+end
+
+function ui:msg_update_hurdle_info()
+end
+
+return ui

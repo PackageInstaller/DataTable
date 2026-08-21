@@ -1,0 +1,11 @@
+return {
+  [0] = {Id = 0, only_had = false},
+  {Id = 1, only_had = false},
+  {Id = 2, only_had = false},
+  {
+    Id = 3,
+    immu_all = {2},
+    only_had = false
+  },
+  {Id = 4, only_had = true}
+}

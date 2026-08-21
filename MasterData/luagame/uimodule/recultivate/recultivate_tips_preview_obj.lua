@@ -1,0 +1,72 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local Char_Helper = require("uimodule.character.char_helper")
+
+function M:set_data(target_id, is_weapon, is_preview)
+  if is_weapon then
+    self:set_weapon_data(target_id, is_preview)
+  else
+    self:set_char_data(target_id, is_preview)
+  end
+  self:set_enable(true)
+end
+
+function M:set_weapon_data(weapon_uuid, is_preview)
+  local equip_info = CharacterMgr:get_equip_info(weapon_uuid)
+  local id = equip_info.id
+  local break_cfg = ShareRes.create("equip.equip_break", id)
+  local lv = is_preview and 1 or equip_info.lv
+  self.v_uicompents.Lv_txt.text = lv
+  local break_lv = is_preview and 1 or equip_info.break_lv
+  local max_break_lv = #break_cfg
+  for i = 1, 5 do
+    self.v_uiobjects["StarBg" .. i]:SetActiveEx(i < max_break_lv)
+    self.v_uiobjects["Star" .. i]:SetActiveEx(i < break_lv)
+  end
+  self.v_uiobjects.Advance:SetActiveEx(false)
+  local equip_cfg = ShareRes.get_equip(id)
+  local path = string.format("Icon/Item/%s", equip_cfg.Icon)
+  ResMgr:load_set_icon(self.v_uicompents.HeadIcon_img, path)
+  local quality_cfg = ShareRes.get_equip_icon_cfg(equip_cfg.Quality)
+  local quality_path = string.format("UICommon/%s", quality_cfg.Quality_Bg)
+  ResMgr:load_set_icon(self.v_uicompents.QualityIcon_img, quality_path)
+  self.v_uiobjects.Lock:SetActiveEx(1 == equip_info.lock)
+  self:refresh_owner_icon(equip_info.owner)
+end
+
+function M:refresh_owner_icon(buddy_id)
+  self.v_uiobjects.wear_layout:SetActiveEx(buddy_id and 0 ~= buddy_id)
+  if buddy_id and 0 ~= buddy_id then
+    local buddy_info = CharacterMgr:get_buddy_by_id(buddy_id)
+    local icon_path = UtilUI.get_hero_images(buddy_id, 1, buddy_info.fashion_id)
+    ResMgr:load_set_icon(self.v_uicompents.hero_head_icon_img, icon_path)
+  end
+end
+
+function M:set_char_data(buddy_id, is_preview)
+  local buddy_info = CharacterMgr:get_buddy_by_id(buddy_id)
+  local break_cfg = ShareRes.create("buddy.buddy_break", buddy_id)
+  local lv = is_preview and 1 or buddy_info.lv
+  self.v_uicompents.Lv_txt.text = lv
+  local break_lv = is_preview and 1 or buddy_info.break_lv
+  local max_break_lv = #break_cfg
+  for i = 1, 5 do
+    self.v_uiobjects["StarBg" .. i]:SetActiveEx(i < max_break_lv)
+    self.v_uiobjects["Star" .. i]:SetActiveEx(i < break_lv)
+  end
+  local advance_lv = buddy_info.advance
+  self.v_uiobjects.Advance:SetActiveEx(advance_lv > 1)
+  if advance_lv > 1 then
+    local char_advance_icon = Char_Helper.get_char_advance_icon(advance_lv)
+    ResMgr:load_set_icon(self.v_uicompents.AdvanceNum_img, char_advance_icon, nil, true)
+  end
+  local path = UtilUI.get_hero_images(buddy_id, 1, buddy_info.fashion_id)
+  ResMgr:load_set_icon(self.v_uicompents.HeadIcon_img, path)
+  local buddy_cfg = ShareRes.get_buddy_cfg(buddy_id)
+  local quality_path = ShareRes.get_buddy_qualityIcon_small_square(buddy_cfg.Quality)
+  ResMgr:load_set_icon(self.v_uicompents.QualityIcon_img, quality_path)
+  self.v_uiobjects.wear_layout:SetActiveEx(false)
+  self.v_uiobjects.Lock:SetActiveEx(false)
+end
+
+return M

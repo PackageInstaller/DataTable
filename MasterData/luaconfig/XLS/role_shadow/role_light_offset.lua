@@ -1,0 +1,866 @@
+return {
+  H1001001_UI = {
+    Id = "H1001001_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.15,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1001008_UI = {
+    Id = "H1001008_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      0,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      -0.12,
+      0,
+      0,
+      1
+    }
+  },
+  H1001009_UI = {
+    Id = "H1001009_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      0,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      -0.2,
+      0,
+      0,
+      1
+    }
+  },
+  H1001011_UI = {
+    Id = "H1001011_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.12,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1001012_UI = {
+    Id = "H1001012_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.13,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      -0.09,
+      0,
+      0,
+      1
+    }
+  },
+  H1001016_UI = {
+    Id = "H1001016_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.14,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1001019_UI = {
+    Id = "H1001019_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      0.1,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1001020_UI = {
+    Id = "H1001020_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.09,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1001021_UI = {
+    Id = "H1001021_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      0.1,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1001022_UI = {
+    Id = "H1001022_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      0,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      -0.21,
+      0,
+      0,
+      1
+    }
+  },
+  H1001023_UI = {
+    Id = "H1001023_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.15,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      -0.2,
+      0,
+      0,
+      1
+    }
+  },
+  H1001025_UI = {
+    Id = "H1001025_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.09,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1001026_UI = {
+    Id = "H1001026_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.1,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      -0.3,
+      0,
+      0,
+      1
+    }
+  },
+  H1001028_UI = {
+    Id = "H1001028_UI",
+    character = {
+      0.46,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      0.27,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0.43,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1001101_UI = {
+    Id = "H1001101_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.15,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1001108_UI = {
+    Id = "H1001108_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      0,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      -0.12,
+      0,
+      0,
+      1
+    }
+  },
+  H1001109_UI = {
+    Id = "H1001109_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      0,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      -0.2,
+      0,
+      0,
+      1
+    }
+  },
+  H1001111_UI = {
+    Id = "H1001111_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.12,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1001112_UI = {
+    Id = "H1001112_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.13,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      -0.09,
+      0,
+      0,
+      1
+    }
+  },
+  H1001116_UI = {
+    Id = "H1001116_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.14,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1001119_UI = {
+    Id = "H1001119_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      0.1,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1001120_UI = {
+    Id = "H1001120_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.09,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1001121_UI = {
+    Id = "H1001121_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      0.1,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1001122_UI = {
+    Id = "H1001122_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      0,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      -0.21,
+      0,
+      0,
+      1
+    }
+  },
+  H1001123_UI = {
+    Id = "H1001123_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.15,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      -0.2,
+      0,
+      0,
+      1
+    }
+  },
+  H1001126_UI = {
+    Id = "H1001126_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.1,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      -0.3,
+      0,
+      0,
+      1
+    }
+  },
+  H1002101_UI = {
+    Id = "H1002101_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.15,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1002216_UI = {
+    Id = "H1002216_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.14,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1002220_UI = {
+    Id = "H1002220_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.09,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1002309_UI = {
+    Id = "H1002309_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.09,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  },
+  H1002326_UI = {
+    Id = "H1002326_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.1,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      -0.3,
+      0,
+      0,
+      1
+    }
+  },
+  H1003209_UI = {
+    Id = "H1003209_UI",
+    character = {
+      0,
+      0,
+      0,
+      1
+    },
+    character_enter = {
+      -0.45,
+      0,
+      0,
+      1
+    },
+    ui_fashionable_dress = {
+      0,
+      0,
+      0,
+      1
+    },
+    uimain_close = {
+      0,
+      0,
+      0,
+      1
+    }
+  }
+}

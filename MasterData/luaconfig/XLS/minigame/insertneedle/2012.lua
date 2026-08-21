@@ -1,0 +1,34 @@
+local empty = {}
+return {
+  note = empty,
+  awardId = 0,
+  spacing = 2.0,
+  uiType = 4,
+  uiTypeIcon = empty,
+  moveType = 1,
+  isLeftStart = true,
+  isDubbleBtn = false,
+  useOrder = true,
+  useIcon = true,
+  speed = 6.0,
+  nodeNum = 21,
+  nodesA = {
+    {3, 2},
+    {10, 2},
+    {14, 2}
+  },
+  nodesB = empty,
+  orderA = {
+    1,
+    3,
+    2
+  },
+  orderB = empty,
+  iconA = {
+    "Fight_icon_tb1",
+    "Fight_icon_tb4",
+    "Fight_icon_tb2"
+  },
+  iconB = empty,
+  id = 2012
+}

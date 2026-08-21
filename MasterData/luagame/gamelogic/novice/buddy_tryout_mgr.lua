@@ -1,0 +1,164 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+local AWARD_STATUS = Config.CommonDefine.BUDDY_PROBATION_AWARD_STATUS
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_probation_buddys = {}
+end
+
+function M:on_reconnect()
+  self.v_probation_buddys = {}
+end
+
+function M:on_gs2c_probation_buddy_list(data)
+  self.v_probation_buddys = data.probation_buddy_list
+  self:refresh_redpoint()
+  MsgGame:mq_publish2(Const.MSG_ON_BUDDY_TRYOUT_LIST_UPDATE)
+end
+
+function M:on_gs2c_close_probation_buddy(data)
+  local close_id = data.probation_buddy_id
+  for idx, _data in pairs(self.v_probation_buddys) do
+    if _data.id == close_id then
+      self.v_probation_buddys[idx] = nil
+      self:refresh_redpoint()
+      MsgGame:mq_publish2(Const.MSG_ON_BUDDY_TRYOUT_LIST_UPDATE)
+      break
+    end
+  end
+  local cfg = ShareRes.get_buddy_tryout_cfg(close_id)
+  if cfg then
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_CHECK_EXIT_TEAM_VIEW)
+    msg.mm_x = cfg.EpisodeId
+  end
+end
+
+function M:on_gs2c_update_probation_buddy_data(data)
+  local new_data = data.probation_buddy_data
+  for idx, _data in pairs(self.v_probation_buddys) do
+    if _data.id == new_data.id then
+      self.v_probation_buddys[idx] = new_data
+      self:refresh_redpoint()
+      local msg = MsgGame:mq_publish2(Const.MSG_ON_BUDDY_TRYOUT_DATA_UPDATE)
+      msg.mm_x = new_data.id
+      return
+    end
+  end
+  self.v_probation_buddys[#self.v_probation_buddys + 1] = new_data
+  self:refresh_redpoint()
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_BUDDY_TRYOUT_DATA_UPDATE)
+  msg.mm_x = new_data.id
+end
+
+function M:req_get_award(id)
+  Network:call("c2gs_get_probation_award", {id = id}, function(ok, resp)
+  end)
+end
+
+function M:req_do_read(id)
+  if self.v_probation_buddys then
+    for _, data in pairs(self.v_probation_buddys) do
+      if data.id == id then
+        if data.is_new then
+          Network:call("c2gs_probation_buddy_state_change", {id = id}, function(ok, resp)
+          end)
+        end
+        return
+      end
+    end
+  end
+end
+
+function M:get_buddy_list()
+  local list = {}
+  if self.v_probation_buddys then
+    for _, data in pairs(self.v_probation_buddys) do
+      local cfg = ShareRes.get_buddy_tryout_cfg(data.id)
+      if cfg then
+        local insert_data = {
+          id = data.id,
+          award_status = data.award_status,
+          is_new = data.is_new,
+          cfg = cfg
+        }
+        table.insert(list, insert_data)
+      end
+    end
+  end
+  return list
+end
+
+function M:get_buddy_data(id)
+  if self.v_probation_buddys then
+    for _, data in pairs(self.v_probation_buddys) do
+      if data.id == id then
+        return data
+      end
+    end
+  end
+end
+
+function M:get_award_status(id)
+  local data = self:get_buddy_data(id)
+  local status = data and data.award_status
+  return status or AWARD_STATUS.NOT_ACTIVE_AWARD
+end
+
+local SYS_ID = 63
+
+function M:refresh_redpoint()
+  local show_red = false
+  local is_open = SysOpenMgr:get_sys_is_open(SYS_ID)
+  if is_open and self.v_probation_buddys then
+    for _, data in pairs(self.v_probation_buddys) do
+      if data.is_new or data.award_status == AWARD_STATUS.ACTIVE_AWARD then
+        show_red = true
+        break
+      end
+    end
+  end
+  RedPointMgr:enable_redpoint(RedEnum.BUDDY_TRYOUT, show_red)
+  if self:check_activity_finish() then
+    MsgGame:mq_publish2(Const.MSG_NOVICE_ACTIVITY_CLOSE)
+  end
+end
+
+function M:check_activity_open()
+  local is_open = SysOpenMgr:get_sys_is_open(SYS_ID)
+  return is_open and self.v_probation_buddys ~= nil and nil ~= next(self.v_probation_buddys)
+end
+
+function M:check_activity_finish()
+  if self:check_activity_open() then
+    for _, data in pairs(self.v_probation_buddys) do
+      if data.is_new or data.award_status ~= AWARD_STATUS.GET_AWARD then
+        return false
+      end
+    end
+  end
+  return true
+end
+
+function M:get_current_page_bg()
+  if self.v_probation_buddys then
+    local first_buddy_cfg
+    for _, data in pairs(self.v_probation_buddys) do
+      local cfg = ShareRes.get_buddy_tryout_cfg(data.id)
+      if cfg then
+        if not first_buddy_cfg then
+          first_buddy_cfg = cfg
+        elseif cfg.Priority > first_buddy_cfg.Priority then
+          first_buddy_cfg = cfg
+        elseif cfg.Priority == first_buddy_cfg.Priority and cfg.Id > first_buddy_cfg.Id then
+          first_buddy_cfg = cfg
+        end
+      end
+    end
+    if first_buddy_cfg then
+      return first_buddy_cfg.BannerPath
+    end
+  end
+end
+
+return M

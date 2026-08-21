@@ -1,0 +1,64 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local _tinsert = table.insert
+local CHAPTER_CONFIG = require("uimodule.chapter.chapter_config")
+local CommonDef = require("cs_share.common_define")
+
+function ui:ui_finish_load()
+  self:set_button("BtnReturn", function()
+    self:ui_hide()
+  end)
+  self:set_button("DataPreview", function()
+    UIMgr:get_ui("chapter_material_record"):ui_show(self.v_material_id)
+  end)
+  self:set_button("TowerEntrance", function()
+    UIMgr:get_ui("point_detail"):ui_show(self.v_material_id, self.v_material_cfg.EpisodeId, CommonDef.CHALLENGE_TYPE.MATERIAL)
+  end)
+  self:set_button("Store", function()
+    assert(self.v_material_cfg, "NO MaterialCfg = " .. self.v_material_id)
+    local jump_id = self.v_material_cfg.JumpId
+    SysOpenMgr:jump_to_sys(jump_id, true)
+  end)
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.v_material_id
+end
+
+function ui:ui_on_show(id)
+  self.v_material_id = id
+  self.v_material_cfg = ShareRes.get_chapter_material_cfg(id)
+  self:update_view()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:update_view()
+  local material_record_data = ChapterMgr:get_material_data_by_id(self.v_material_id)
+  local uicompents = self.v_uicompents
+  local cur_floor = 0
+  local max_floor = 0
+  local cur_collect = 0
+  if material_record_data then
+    cur_floor = material_record_data.curr_pass_floor
+    max_floor = material_record_data.history_max_floor
+  end
+  uicompents.CurFloor_txt.text = Util.format_str("{1}", cur_floor)
+  uicompents.MaxFloor_txt.text = Util.format_str("{1}层", max_floor)
+  uicompents.ChapName_txt.text = self.v_material_cfg.Name
+  local progress = math.floor(max_floor / self.v_material_cfg.MaxProgress * 10)
+  for i = 1, 10 do
+    self.v_uiobjects["PointTem" .. i]:SetActive(i <= progress)
+  end
+  self.v_uiobjects.CurFloor:SetActive(cur_floor > 0)
+  local path = string.format("Icon/Item/%s", self.v_material_cfg.Icon)
+  ResMgr:load_set_icon(self.v_uicompents.TowerIcon_img, path)
+end
+
+return ui

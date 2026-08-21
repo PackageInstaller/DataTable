@@ -1,0 +1,15 @@
+local ShareRes = require("utils.share_res")
+local FightDefine = require("cs_share.fight_define")
+local UnityColor = UnityEngine.Color
+local M = {}
+M.RANK_ICON_PATH = "UIWeekact1/"
+M.TEXTURE_PATH = "WeeklyAct1/"
+M.PREFIX_ICON_PATH = "Icon/Profile/%s"
+M.RANK_NO_STR = "No.%d"
+M.stage_desc = "第{1}阶段"
+M.pvp_reset_tips = "本关卡的星数记录将归零，并解锁已锁定的角色，是否确认重置？"
+M.RANK_TYPE = {mine_rank = 0, top_rank = 1}
+M.SHOW_CURRENCY = {
+  [1] = 401
+}
+return M

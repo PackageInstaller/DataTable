@@ -1,0 +1,30 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(cfg)
+  local EVENT_TYPE = Config.CommonDefine.CURSE_ILLUSTRATED_TYPE.EVENT
+  ResMgr:load_set_icon(self.v_uicompents.EventIcon_img, cfg.IconPath, nil, true, self)
+  local event_id = cfg.Id
+  local is_unlock = FateBookMgr:check_illustrated_is_unlock(EVENT_TYPE, event_id)
+  self.v_uiobjects.Lock:SetActive(not is_unlock)
+  self.v_is_red = FateBookMgr:get_red_state(EVENT_TYPE, event_id)
+  self.v_uiobjects.RedPoint:SetActive(self.v_is_red)
+  self.v_uicompents.EventName_txt.text = is_unlock and cfg.Name or "未收录"
+end
+
+function ui:on_clear()
+end
+
+return ui

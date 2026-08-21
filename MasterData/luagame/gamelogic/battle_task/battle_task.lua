@@ -1,0 +1,221 @@
+local M = Util.create_class()
+local BATTLE_TASK_CFG = require("uimodule.fight_task.battle_task_config")
+local TASK_STATE = BATTLE_TASK_CFG.TASK_STATE
+local COMPLETE_STATE = {SUCCESS = 1, FAILURE = 2}
+local COUNT_TYPE = {TIME = 1, ROOM = 2}
+local SECOND_PER_FRAME = 10
+local CONDITION_TYPE = 100002
+
+function M:_init(task_info)
+  self.task_id = task_info.id
+  self.v_task_cfg = ShareRes.create("battle.battle_task", self.task_id)
+  if not self.v_task_cfg then
+    Log.Error("read battle task failure! task_id=", self.task_id)
+    return
+  end
+  self.task_progress = {}
+  for _, v in pairs(task_info.progress) do
+    self.task_progress[v.id] = v.progress
+  end
+  self.task_state = 0
+  self.v_cnt_magic_id = 0
+  self.v_elapse_time = 0
+  self:_init_task(task_info)
+end
+
+function M:_init_task(task_info)
+  self:update_task_info(task_info, true)
+end
+
+function M:release_task()
+  self:_set_associated_magic(true)
+  self:_set_reward_magic(true)
+  self:_remove_cnt_magic()
+end
+
+function M:update(delta_time)
+  if self.v_remain_time then
+    self.v_elapse_time = self.v_elapse_time + delta_time
+    if self.v_elapse_time > SECOND_PER_FRAME then
+      self.v_remain_time = self.v_remain_time - SECOND_PER_FRAME
+      self.v_elapse_time = 0
+      self:_update_cnt_magic()
+    end
+  end
+end
+
+function M:update_task_info(task_info, is_init)
+  if task_info.state ~= self.task_state then
+    self:_update_task_state(task_info.state, is_init)
+  end
+  self:_update_task_progress(task_info.progress)
+  self:_update_count(task_info.dur_value)
+end
+
+function M:set_task_failure()
+  self:_set_associated_magic(true)
+  self:_remove_cnt_magic()
+  Util.show_message_tip(2054)
+end
+
+function M:_update_count(dur_value)
+  if self.task_state >= TASK_STATE.COMPLETE then
+    return
+  end
+  if self.v_task_cfg.DurationType == COUNT_TYPE.TIME then
+    self.v_remain_time = dur_value - BattleTaskMgr:get_fight_time()
+  else
+    local con_id = self.v_task_cfg.Condition[1]
+    if con_id then
+      local con_cfg = ShareRes.create("battle.battle_condition", con_id)
+      if con_cfg and con_cfg.Type == CONDITION_TYPE then
+        self.v_cur_rooms = self.task_progress[con_id] or 0
+      end
+    end
+  end
+  self:_update_cnt_magic()
+end
+
+function M:_update_task_progress(progress)
+  for _, v in pairs(progress) do
+    self.task_progress[v.id] = v.progress
+  end
+end
+
+function M:_update_task_state(state, is_init)
+  self.task_state = state
+  if self.task_state == TASK_STATE.RECEIVE then
+    self:_set_associated_magic()
+  elseif self.task_state >= TASK_STATE.COMPLETE then
+    self:_set_associated_magic(true)
+    self:_set_reward_magic()
+    self:_remove_cnt_magic()
+    if not is_init then
+      local msg = MsgGame:mq_publish2(Const.MSG_ON_BATTLE_TASK_RECEIVE_OR_COMPLETE)
+      msg.mm_x = self.task_id
+      msg.mm_y = TASK_STATE.COMPLETE
+    end
+  end
+end
+
+function M:_update_cnt_magic()
+  local magic_id = 0
+  if not self.v_task_cfg.ShowBuff then
+    return
+  end
+  local len = #self.v_task_cfg.ShowBuff
+  if self.v_task_cfg.DurationType == COUNT_TYPE.TIME then
+    local idx = len - math.ceil(self.v_remain_time / 60) + 1
+    magic_id = self.v_task_cfg.ShowBuff[idx] or self.v_task_cfg.ShowBuff[len]
+  else
+    local idx = self.v_cur_rooms + 1
+    magic_id = self.v_task_cfg.ShowBuff[idx] or self.v_task_cfg.ShowBuff[len]
+  end
+  if magic_id > 0 and self.v_cnt_magic_id ~= magic_id then
+    self:_set_heros_magic(magic_id)
+    self:_set_heros_magic(self.v_cnt_magic_id, true)
+    self.v_cnt_magic_id = magic_id
+    MsgGame:mq_publish2(Const.MSG_ON_BATTLE_TASK_CNT_UPDATE)
+  end
+end
+
+function M:_remove_cnt_magic()
+  if self.v_cnt_magic_id > 0 then
+    self:_set_heros_magic(self.v_cnt_magic_id, true)
+    self.v_cnt_magic_id = 0
+    self.v_remain_time = nil
+  end
+end
+
+function M:_set_associated_magic(is_remove)
+  if self.v_task_cfg.BornMagic > 0 then
+    self:_set_heros_magic(self.v_task_cfg.BornMagic, is_remove)
+  end
+end
+
+function M:_set_reward_magic(is_remove)
+  if self.v_task_cfg.Magic > 0 then
+    self:_set_heros_magic(self.v_task_cfg.Magic, is_remove)
+  end
+end
+
+function M:_set_heros_magic(magic_id, is_remove)
+  local hero_list = SceneMgr:get_hero_list()
+  if not hero_list then
+    return
+  end
+  if 0 == magic_id then
+    return
+  end
+  for _, hero in pairs(hero_list) do
+    if is_remove then
+      hero.magic_mgr:remove_first_magic(magic_id)
+    else
+      hero.magic_mgr:add_magic(hero, magic_id)
+    end
+  end
+end
+
+function M:_get_condition_type(condition_id)
+  local con_cfg = ShareRes.create("battle.battle_condition", condition_id)
+  local type_cfg = ShareRes.create("battle.battle_condition_type", con_cfg.Type)
+  return con_cfg, type_cfg
+end
+
+function M:get_is_processing()
+  return self.task_state == TASK_STATE.RECEIVE
+end
+
+function M:get_is_complete()
+  return self.task_state >= TASK_STATE.COMPLETE
+end
+
+function M:get_cnt_magic()
+  return self.v_cnt_magic_id
+end
+
+function M:get_task_cfg()
+  return self.v_task_cfg
+end
+
+function M:get_task_progress(condition_id)
+  if self:get_is_complete() then
+    local condition_cfg = self:_get_condition_type(condition_id)
+    local target_progress = condition_cfg.Value
+    return target_progress
+  end
+  return self.task_progress[condition_id] or 0
+end
+
+function M:get_task_id()
+  return self.task_id
+end
+
+function M:get_state()
+  return self.task_state
+end
+
+function M:get_sort_val()
+  return self.v_task_cfg.Sort
+end
+
+function M:check_condition_complete(condition_id)
+  if self:get_is_complete() then
+    return true
+  end
+  local condition_cfg, type_cfg = self:_get_condition_type(condition_id)
+  Util.assert(condition_cfg, "缺少局内任务条件配置，条件id = " .. condition_id)
+  local target_progress = condition_cfg.Value
+  local cur_progress = self:get_task_progress(condition_id)
+  if 0 == type_cfg.CompareType then
+    return target_progress <= cur_progress
+  elseif 1 == type_cfg.CompareType then
+    return target_progress >= cur_progress
+  elseif 2 == type_cfg.CompareType then
+    return target_progress < cur_progress
+  elseif 3 == type_cfg.CompareType then
+    return target_progress > cur_progress
+  end
+end
+
+return M

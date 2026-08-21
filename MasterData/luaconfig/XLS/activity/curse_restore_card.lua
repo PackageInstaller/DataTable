@@ -1,0 +1,8 @@
+return {
+  [1001] = {
+    BuyCnt = 5,
+    CostCnt = 10,
+    Id = 1001,
+    MagicId = 4010002
+  }
+}

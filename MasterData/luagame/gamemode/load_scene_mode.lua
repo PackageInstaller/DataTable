@@ -1,0 +1,326 @@
+local Base = require("gamemode.base")
+local Const = require("const")
+local M = setmetatable({}, Base)
+M.__index = M
+local AUTO_UPDATE_PROGRESS_IDX = 4
+local LODING_TEXT_IDX = 3
+local fight_preload = require("gamemode.fight_preload")
+
+function M:gd_init()
+  Base.gd_init(self)
+  fight_preload:set_scene_mod(self)
+  self.v_init_tasks = {
+    {
+      self._load_scene,
+      1,
+      "加载场景数据",
+      true,
+      true
+    },
+    {
+      self._preload_res,
+      1,
+      "加载资源",
+      true
+    },
+    {
+      self.update_preload_data,
+      1,
+      "加载资源",
+      true
+    },
+    {
+      self.update_room_preload_data,
+      1,
+      "加载房间资源",
+      true
+    },
+    {
+      self._create_battle_team,
+      1,
+      "创建角色实例",
+      true
+    },
+    {
+      self._create_default_ui,
+      1,
+      "加载战斗UI",
+      true
+    },
+    {
+      self._progress_end,
+      1,
+      "加载结束，进入场景中",
+      true
+    }
+  }
+  self.v_sum_progress = 1
+  self.v_cur_progress = 0
+end
+
+function M:gd_next_task()
+  Base.gd_next_task(self)
+  if self.v_init_tasks[self.v_cur_task_idx] and self.v_init_tasks[self.v_cur_task_idx][AUTO_UPDATE_PROGRESS_IDX] then
+    self:_set_target_progress()
+  end
+end
+
+function M:gd_pre_enter()
+  Base.gd_pre_enter(self)
+  self:_create_loading_pnl()
+end
+
+function M:gd_on_enter()
+  if Global.scene_mgr then
+    Global.scene_mgr.loading = true
+  end
+  Global.is_enter_room_failed = false
+  Base.gd_on_enter(self)
+  MsgGame:mq_publish2(Const.MSG_SCENE_LEAVE)
+  self.v_need_preload_effects = {}
+  self:_init_progress()
+  Log.Info("enter load_scene_mode------------------")
+end
+
+function M:_create_loading_pnl()
+  local ui = Global.ui_mgr:get_ui("loading")
+  ui:ui_show(true)
+  self:_set_target_progress(0, "加载场景中")
+  if not SceneMgr:check_main_scene() then
+    UIMgr:cache_hide_ui()
+  end
+  SceneMgr:after_enter_loading()
+  UIMgr:hide_other_uis("loading")
+end
+
+function M:_set_target_progress(progress, str)
+  progress = progress or self:_get_cur_max_progress()
+  local ui = Global.ui_mgr:get_ui("loading")
+  if self.v_load_end_back then
+    ui:load_end(self.v_load_end_back)
+  end
+  str = str or self:_get_cur_task_info()
+  ui:update_text(Util.format_str(str))
+  ui:update_progress()
+end
+
+function M:gd_on_leave()
+  Base.gd_on_leave(self)
+  if Global.gamemode:get_is_tp_next_floor() and not SceneMgr:global_hero_is_destroyed() then
+    local skill_mgr = Global.hero.skill_mgr
+    if skill_mgr and not skill_mgr:is_in_fight_end_skill() and not skill_mgr:is_in_born_skill() then
+      Global.hero.state_manager:to_idle_state()
+    end
+  end
+  if Global.scene_mgr then
+    Global.scene_mgr.loading = false
+  end
+  if Global.ui_mgr then
+    Global.ui_mgr:reset_disable_camera_count()
+  end
+  MsgGame:mq_publish2(Const.MSG_SCENE_ENTER)
+  self.v_preload_effect_start_time = nil
+  self.v_need_preload_effects = nil
+  Global.gamemode:set_is_tp_next_floor(false)
+  self.v_room_preload = nil
+  if Global.load_effect_bundle_num then
+    Log.Error("加载特效Bundle数量：", Global.load_effect_bundle_num)
+    Global.load_effect_bundle_num = nil
+  end
+end
+
+function M:gd_update(delta_time)
+  Base.gd_update(self, delta_time)
+  if self:_exec_task() then
+    Global.gamemode:gmode_set_mode(Const.MODE_GAME)
+  end
+end
+
+function M:_load_scene()
+  if 0 == self.dummy_cnt then
+    self.dummy_cnt = self.dummy_cnt + 1
+    local scene_cfg = Global.scene_mgr:get_tartget_scene_config()
+    SceneLoader:load_scene(scene_cfg)
+    return false
+  elseif SceneLoader:is_load_scene_done() then
+    return true
+  end
+end
+
+function M:_init_progress()
+  self:init_fight_preload_res()
+  local all_progress = 0
+  for idx, info in ipairs(self.v_init_tasks) do
+    if not info[5] then
+      all_progress = all_progress + 1
+    end
+  end
+  if fight_preload then
+    local res_progress = fight_preload:get_load_progress()
+    all_progress = all_progress + res_progress
+  end
+  if self.v_room_preload then
+    local res_progress = self.v_room_preload:get_load_progress()
+    all_progress = all_progress + res_progress
+  end
+  self.v_sum_progress = all_progress
+  self.v_cur_progress = 0
+end
+
+function M:add_res_progress()
+  self.v_cur_progress = self.v_cur_progress + 1
+end
+
+function M:_get_cur_max_progress()
+  local progress = self.v_cur_progress / self.v_sum_progress
+  return progress
+end
+
+function M:get_is_loading_finish()
+  return not self.v_in_pre_enter and self.v_cur_progress == self.v_sum_progress
+end
+
+function M:_get_cur_task_info()
+  local add_info = Util.format_str("({1}/{2})", self.v_cur_task_idx, #self.v_init_tasks)
+  if self.v_init_tasks[self.v_cur_task_idx] then
+    return self.v_init_tasks[self.v_cur_task_idx][LODING_TEXT_IDX] .. add_info
+  end
+  return self.v_init_tasks[self.v_cur_task_idx - 1][LODING_TEXT_IDX] .. add_info
+end
+
+function M:_on_load_res()
+  if not Global.gamemode:gmode_is_loadscene() or not self.v_load_scene_task_id == self.v_cur_task_idx then
+    return
+  end
+  self.v_need_preload_res = self.v_need_preload_res - 1
+  if self.v_need_preload_res <= 0 then
+    self:gd_next_task()
+  end
+end
+
+function M:_preload_res()
+  local now_time = GlobalTimeMgr:get_unscaled_time()
+  if 0 == self.dummy_cnt then
+    self.dummy_cnt = self.dummy_cnt + 1
+    self.v_need_preload_res = 0
+    self.v_load_scene_task_id = self.v_cur_task_idx
+    self.v_start_time = now_time
+    self:_preload_material()
+    return false
+  elseif now_time - self.v_start_time >= 3 then
+    self.v_cur_progress = self.v_cur_progress + 1
+    return true
+  end
+  return false
+end
+
+function M:_preload_material()
+  self.v_need_preload_res = self.v_need_preload_res + #Config.PRELOAD_MATS
+  for _, mat in ipairs(Config.PRELOAD_MATS) do
+    local path = Path.get_mat_path(mat)
+    ResMgr:load_res(path, UnityMaterial)
+  end
+end
+
+function M:_load_addtive_scene()
+  if 0 == self.dummy_cnt then
+    self.dummy_cnt = self.dummy_cnt + 1
+    SceneLoader:init_scene_boundingbox()
+    SceneLoader:update()
+  else
+    return not SceneLoader:has_loading_addtive_scene()
+  end
+end
+
+function M:init_fight_preload_res()
+  if not fight_preload then
+    return
+  end
+  fight_preload:init_preload_res_data()
+end
+
+function M:update_preload_data()
+  if 0 == self.dummy_cnt then
+    self.dummy_cnt = self.dummy_cnt + 1
+    TimeLineSeqPlayer.release_all_timeline()
+  end
+  if not fight_preload then
+    return true
+  end
+  return fight_preload:update_preload_res()
+end
+
+function M:update_room_preload_data()
+  if Util.is_story_only() then
+    self.v_cur_progress = self.v_cur_progress + 1
+    return true
+  end
+  if 0 == self.dummy_cnt then
+    self.dummy_cnt = self.dummy_cnt + 1
+  end
+  if not self.v_room_preload then
+    self:add_res_progress()
+    return true
+  end
+  return self.v_room_preload:update_preload_res()
+end
+
+function M:_create_battle_team()
+  if SceneMgr:check_main_scene() then
+    self.v_cur_progress = self.v_cur_progress + 1
+    return true
+  end
+  if Util.is_story_only() then
+    self.v_cur_progress = self.v_cur_progress + 1
+    return true
+  end
+  if 0 == self.dummy_cnt then
+    self.dummy_cnt = self.dummy_cnt + 1
+  end
+  SceneMgr:check_create_hero()
+  self.v_cur_progress = self.v_cur_progress + 1
+  return true
+end
+
+function M:_create_default_ui()
+  if SceneMgr:check_main_scene() then
+    self.v_cur_progress = self.v_cur_progress + 1
+    UIMgr:revert_cache_ui()
+    return true
+  end
+  if Util.is_story_only() then
+    self.v_cur_progress = self.v_cur_progress + 1
+    return true
+  end
+  if 0 == self.dummy_cnt then
+    self.dummy_cnt = self.dummy_cnt + 1
+  end
+  local ui = UIMgr:get_ui("fight")
+  if ui:get_ui_obj() then
+    self.v_cur_progress = self.v_cur_progress + 1
+    return true
+  end
+  return false
+end
+
+function M:_progress_end()
+  if 0 == self.dummy_cnt then
+    self.dummy_cnt = self.dummy_cnt + 1
+    Global.scene_mgr:on_load_scene()
+    Global.ui_mgr:revert_cache_ui_after_load()
+    return false
+  end
+  self.v_cur_progress = self.v_cur_progress + 1
+  return true
+end
+
+function M:is_load()
+  if Util.is_client_only() then
+    return true
+  end
+  if SceneMgr:check_main_scene() then
+    return true
+  end
+end
+
+return M

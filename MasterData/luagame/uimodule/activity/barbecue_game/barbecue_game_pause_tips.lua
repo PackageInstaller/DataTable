@@ -1,0 +1,33 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:set_button("BtnExit", function()
+    UIMgr:try_get_visible_ui("barbecue_game_main_panel"):show_main_view()
+    self:ui_hide()
+  end)
+  self:set_button("BtnGoOn", function()
+    UIMgr:try_get_visible_ui("barbecue_game_main_panel"):continue_ct()
+    self:ui_hide()
+  end)
+  self:set_button("BtnRestart", function()
+    UIMgr:try_get_visible_ui("barbecue_game_main_panel"):enter_stage(self.v_stage_id)
+    self:ui_hide()
+  end)
+end
+
+function ui:ui_on_show(stage_cfg, score)
+  self.v_stage_id = stage_cfg.Id
+  self.v_uicompents.StageName_txt.text = stage_cfg.Name
+  self.v_uicompents.CurrentScore_txt.text = score
+  self.v_uicompents.TargetScore_txt.text = stage_cfg.TargetScore
+  local is_special = stage_cfg.TargetScore == nil
+  self.v_uiobjects.StageTarget:SetActive(not is_special)
+  self.v_uiobjects.SpecialBg:SetActive(is_special)
+  self.v_uiobjects.NormalBg:SetActive(not is_special)
+end
+
+function ui:ui_on_hide()
+end
+
+return ui

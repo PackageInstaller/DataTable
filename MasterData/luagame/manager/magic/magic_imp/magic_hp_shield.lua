@@ -1,0 +1,91 @@
+local Base = require("manager.magic.magic_imp.magic_base")
+local FightDefine = require("cs_share.fight_define")
+local ATTR_TYPE = FightDefine.ATTR_TYPE
+local M = Util.create_child_mt(Base)
+
+function M:_init(owner, magic_info)
+  Base._init(self, owner, magic_info)
+end
+
+local VALUE_TYPE = {FIXED = 1, RATIO = 2}
+local RATIO_IN = 1.0E-4
+
+function M:on_effect()
+  local magic_target = self.owner
+  local magic_info = self.magic_info
+  local attacker = magic_info.attacker
+  local value = self.cfg[1][self.magic_level] or self.cfg[1][1]
+  local value_type = self.cfg[2]
+  local tar_ratio_type = self.cfg[3]
+  local shield_value
+  if value_type == VALUE_TYPE.FIXED then
+    shield_value = math.floor(value)
+  else
+    local tar_attr = attacker.attr_mgr:get_attr(tar_ratio_type)
+    shield_value = math.floor(value * RATIO_IN * tar_attr)
+  end
+  shield_value = math.floor(shield_value * (1 + attacker.attr_mgr:get_attr(ATTR_TYPE.SHIELD_ADDITIVE) * RATIO_IN))
+  if self.owner:is_hero() then
+    local god_npc = SceneMgr:get_god_npc()
+    if not god_npc then
+      Log.Error("场上无GodNpc，护盾Magic必须有GodNpc才能生效，若为单机模式请先添加GodNpc")
+      return
+    end
+    god_npc:add_overall_shield(self.owner.uuid, self.magic_id, shield_value)
+  else
+    self.v_shield_value = shield_value
+  end
+  self.v_client_shield_value = shield_value
+end
+
+function M:on_effect_after()
+  local magic_target = self.owner
+  local magic_info = self.magic_info
+  local attacker = magic_info.attacker
+  local EVENTS = BehaviorMgr.EVENTS
+  BehaviorMgr:call_event_fun(EVENTS.AFTER_SHIELD, attacker, magic_target, self.magic_id, self.v_client_shield_value)
+  BehaviorMgr:call_behavior_fun(attacker, EVENTS.AFTER_SHIELD_SELF, magic_target, magic_info.magic_id, self.v_client_shield_value)
+  BehaviorMgr:call_behavior_fun(magic_target, EVENTS.AFTER_SHIELD_TARGET, attacker, magic_info.magic_id, self.v_client_shield_value)
+  self.owner:set_shield_num_dirty()
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_ROLE_SHIELD_CHANGE)
+  msg.mm_x = self.owner:is_hero()
+  msg.mm_obj = self.owner.uuid
+end
+
+function M:correct_magic_val(damage)
+  local blocked_value = damage < self.v_shield_value and damage or self.v_shield_value
+  self.v_shield_value = math.floor(self.v_shield_value - blocked_value)
+  if self.v_shield_value <= 0 then
+    M.remove_magic_on_effect(self.owner.magic_mgr, {self})
+  end
+  return damage - blocked_value, blocked_value
+end
+
+function M:get_shield_val()
+  return self.v_shield_value
+end
+
+function M:on_remove()
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_ROLE_SHIELD_CHANGE)
+  msg.mm_x = self.owner:is_hero()
+  msg.mm_obj = self.owner.uuid
+  if self.owner:is_hero() then
+    local god_npc = SceneMgr:get_god_npc()
+    if not god_npc then
+      return
+    end
+    god_npc:del_overall_shield(self.owner.uuid, self.magic_id)
+  end
+end
+
+function M:on_effect_before()
+  local magic_target = self.owner
+  local magic_info = self.magic_info
+  local attacker = magic_info.attacker
+  local EVENTS = BehaviorMgr.EVENTS
+  BehaviorMgr:call_event_fun(EVENTS.BEFORE_SHIELD, attacker, magic_target, self.magic_id)
+  BehaviorMgr:call_behavior_fun(attacker, EVENTS.BEFORE_SHIELD_SELF, magic_target, magic_info.magic_id)
+  BehaviorMgr:call_behavior_fun(magic_target, EVENTS.BEFORE_SHIELD_TARGET, attacker, magic_info.magic_id)
+end
+
+return M

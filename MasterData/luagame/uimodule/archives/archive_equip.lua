@@ -1,0 +1,101 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local PUZZLE_SYS_ID = 58
+local PageEquip = 1
+local PagePuzzle = 2
+local TogPages = {
+  [PageEquip] = {
+    tog_name = "PageWeapon_tog",
+    view = "equip_view",
+    red_obj = "RedpointPageWeapon",
+    red_id = RedEnum.ARCHIVES_EQUIP_SYS_EQUIP
+  },
+  [PagePuzzle] = {
+    tog_name = "PagePlugins_tog",
+    view = "puzzle_view",
+    red_obj = "RedpointPagePlugin",
+    red_id = RedEnum.ARCHIVES_EQUIP_SYS_PUZZLE
+  }
+}
+
+function ui:ui_finish_load()
+  self.v_cur_page = nil
+  self:set_button("BtnRet1", function()
+    self:on_go_to_main()
+    self:ui_hide()
+  end)
+  self.v_tog_list = {}
+  for i, v in ipairs(TogPages) do
+    local tog = self.v_uicompents[v.tog_name]
+    self.v_tog_list[i] = tog
+    self:set_toggle_listener(tog, function(isOn)
+      if isOn and self.v_cur_page and self.v_cur_page ~= i then
+        self:refresh_page(i)
+      end
+    end, true)
+    RedPointMgr:bind_redpoint(self, self.v_uiobjects[v.red_obj], v.red_id)
+  end
+end
+
+function ui:on_go_to_main()
+  for _, v in pairs(self.v_panels) do
+    if v.disable_all_red_point then
+      v:disable_all_red_point()
+    end
+  end
+end
+
+function ui:refresh_page(page)
+  self.v_cur_page = page
+  if self.v_sub_param and self.v_sub_param.last_page ~= page then
+    self.v_sub_param = nil
+  end
+  for i, v in ipairs(TogPages) do
+    self:set_panel_enable(v.view, page == i, self.v_sub_param)
+    self.v_uicompents[v.tog_name].interactable = page ~= i
+  end
+end
+
+function ui:ui_on_show(page, sub_param)
+  self.v_cur_page = nil
+  self.v_sub_param = sub_param
+  page = page or 1
+  self.v_tog_list[page].isOn = true
+  self:refresh_page(page)
+  self.v_uiobjects.PagePlugins:SetActive(SysOpenMgr:get_sys_is_open(PUZZLE_SYS_ID))
+end
+
+function ui:record_sub_param(sub_param)
+  self.v_sub_param = {
+    last_page = self.v_cur_pag,
+    param = sub_param
+  }
+end
+
+function ui:get_puzzle_red()
+  local original_weapon_info = ShareRes.get_equip()
+  for _, cfg in pairs(original_weapon_info) do
+    if not cfg.BuddyID then
+    elseif ShareRes.get_buddy_is_show(cfg.BuddyID) and cfg.ShowInArchive and CharacterMgr:check_buddy_release(cfg.BuddyID) and ArchiveMgr:is_redpoint_archive_equip(cfg.Id) then
+      return true
+    end
+  end
+  return false
+end
+
+function ui:ui_on_hide()
+  self.v_cur_page = nil
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.v_cur_page, self.v_sub_param
+end
+
+return ui

@@ -1,0 +1,1164 @@
+return {
+  [1001001] = {
+    [100100101] = {
+      AppointId = 0,
+      BuddyId = 1001001,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100101,
+      Weight = 10000
+    },
+    [100100102] = {
+      AppointId = 0,
+      BuddyId = 1001001,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100102,
+      Weight = 10000
+    },
+    [100100103] = {
+      AppointId = 0,
+      BuddyId = 1001001,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100103,
+      Weight = 10000
+    },
+    [100100104] = {
+      AppointId = 0,
+      BuddyId = 1001001,
+      CategoryId = 1,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100104,
+      Weight = 10000
+    },
+    [100100105] = {
+      AppointId = 0,
+      BuddyId = 1001001,
+      CategoryId = 2,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100105,
+      Weight = 10000
+    },
+    [100100106] = {
+      AppointId = 0,
+      BuddyId = 1001001,
+      CategoryId = 3,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100106,
+      Weight = 10000
+    },
+    [100100107] = {
+      AppointId = 0,
+      BuddyId = 1001001,
+      CategoryId = 4,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100107,
+      Weight = 10000
+    },
+    [100100108] = {
+      AppointId = 1,
+      BuddyId = 1001001,
+      CategoryId = 5,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100108,
+      Weight = 5000
+    },
+    [100100109] = {
+      AppointId = 1,
+      BuddyId = 1001001,
+      CategoryId = 6,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100109,
+      Weight = 5000
+    }
+  },
+  [1001002] = {
+    [100100201] = {
+      AppointId = 0,
+      BuddyId = 1001002,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100201,
+      Weight = 10000
+    },
+    [100100202] = {
+      AppointId = 0,
+      BuddyId = 1001002,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100202,
+      Weight = 10000
+    },
+    [100100203] = {
+      AppointId = 0,
+      BuddyId = 1001002,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100203,
+      Weight = 10000
+    },
+    [100100204] = {
+      AppointId = 0,
+      BuddyId = 1001002,
+      CategoryId = 1,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100204,
+      Weight = 10000
+    },
+    [100100205] = {
+      AppointId = 0,
+      BuddyId = 1001002,
+      CategoryId = 2,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100205,
+      Weight = 10000
+    },
+    [100100206] = {
+      AppointId = 0,
+      BuddyId = 1001002,
+      CategoryId = 3,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100206,
+      Weight = 10000
+    },
+    [100100207] = {
+      AppointId = 0,
+      BuddyId = 1001002,
+      CategoryId = 4,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100207,
+      Weight = 10000
+    },
+    [100100208] = {
+      AppointId = 1,
+      BuddyId = 1001002,
+      CategoryId = 5,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100208,
+      Weight = 5000
+    },
+    [100100209] = {
+      AppointId = 1,
+      BuddyId = 1001002,
+      CategoryId = 6,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100209,
+      Weight = 5000
+    }
+  },
+  [1001003] = {
+    [100100301] = {
+      AppointId = 0,
+      BuddyId = 1001003,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100301,
+      Weight = 10000
+    },
+    [100100302] = {
+      AppointId = 0,
+      BuddyId = 1001003,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100302,
+      Weight = 10000
+    },
+    [100100303] = {
+      AppointId = 0,
+      BuddyId = 1001003,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100303,
+      Weight = 10000
+    },
+    [100100304] = {
+      AppointId = 0,
+      BuddyId = 1001003,
+      CategoryId = 1,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100304,
+      Weight = 10000
+    },
+    [100100305] = {
+      AppointId = 0,
+      BuddyId = 1001003,
+      CategoryId = 2,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100305,
+      Weight = 10000
+    },
+    [100100306] = {
+      AppointId = 0,
+      BuddyId = 1001003,
+      CategoryId = 3,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100306,
+      Weight = 10000
+    },
+    [100100307] = {
+      AppointId = 0,
+      BuddyId = 1001003,
+      CategoryId = 4,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100307,
+      Weight = 10000
+    },
+    [100100308] = {
+      AppointId = 1,
+      BuddyId = 1001003,
+      CategoryId = 5,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100308,
+      Weight = 5000
+    },
+    [100100309] = {
+      AppointId = 1,
+      BuddyId = 1001003,
+      CategoryId = 6,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100309,
+      Weight = 5000
+    }
+  },
+  [1001004] = {
+    [100100401] = {
+      AppointId = 0,
+      BuddyId = 1001004,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100401,
+      Weight = 10000
+    },
+    [100100402] = {
+      AppointId = 0,
+      BuddyId = 1001004,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100402,
+      Weight = 10000
+    },
+    [100100403] = {
+      AppointId = 0,
+      BuddyId = 1001004,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100403,
+      Weight = 10000
+    },
+    [100100404] = {
+      AppointId = 0,
+      BuddyId = 1001004,
+      CategoryId = 1,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100404,
+      Weight = 10000
+    },
+    [100100405] = {
+      AppointId = 0,
+      BuddyId = 1001004,
+      CategoryId = 2,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100405,
+      Weight = 10000
+    },
+    [100100406] = {
+      AppointId = 0,
+      BuddyId = 1001004,
+      CategoryId = 3,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100406,
+      Weight = 10000
+    },
+    [100100407] = {
+      AppointId = 0,
+      BuddyId = 1001004,
+      CategoryId = 4,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100407,
+      Weight = 10000
+    },
+    [100100408] = {
+      AppointId = 1,
+      BuddyId = 1001004,
+      CategoryId = 5,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100408,
+      Weight = 5000
+    },
+    [100100409] = {
+      AppointId = 1,
+      BuddyId = 1001004,
+      CategoryId = 6,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100409,
+      Weight = 5000
+    }
+  },
+  [1001005] = {
+    [100100501] = {
+      AppointId = 0,
+      BuddyId = 1001005,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100501,
+      Weight = 10000
+    },
+    [100100502] = {
+      AppointId = 0,
+      BuddyId = 1001005,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100502,
+      Weight = 10000
+    },
+    [100100503] = {
+      AppointId = 0,
+      BuddyId = 1001005,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100503,
+      Weight = 10000
+    },
+    [100100504] = {
+      AppointId = 0,
+      BuddyId = 1001005,
+      CategoryId = 1,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100504,
+      Weight = 10000
+    },
+    [100100505] = {
+      AppointId = 0,
+      BuddyId = 1001005,
+      CategoryId = 2,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100505,
+      Weight = 10000
+    },
+    [100100506] = {
+      AppointId = 0,
+      BuddyId = 1001005,
+      CategoryId = 3,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100506,
+      Weight = 10000
+    },
+    [100100507] = {
+      AppointId = 0,
+      BuddyId = 1001005,
+      CategoryId = 4,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100507,
+      Weight = 10000
+    },
+    [100100508] = {
+      AppointId = 1,
+      BuddyId = 1001005,
+      CategoryId = 5,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100508,
+      Weight = 5000
+    },
+    [100100509] = {
+      AppointId = 1,
+      BuddyId = 1001005,
+      CategoryId = 6,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100509,
+      Weight = 5000
+    }
+  },
+  [1001006] = {
+    [100100601] = {
+      AppointId = 0,
+      BuddyId = 1001006,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100601,
+      Weight = 10000
+    },
+    [100100602] = {
+      AppointId = 0,
+      BuddyId = 1001006,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100602,
+      Weight = 10000
+    },
+    [100100603] = {
+      AppointId = 0,
+      BuddyId = 1001006,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100603,
+      Weight = 10000
+    },
+    [100100604] = {
+      AppointId = 0,
+      BuddyId = 1001006,
+      CategoryId = 1,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100604,
+      Weight = 10000
+    },
+    [100100605] = {
+      AppointId = 0,
+      BuddyId = 1001006,
+      CategoryId = 2,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100605,
+      Weight = 10000
+    },
+    [100100606] = {
+      AppointId = 0,
+      BuddyId = 1001006,
+      CategoryId = 3,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100606,
+      Weight = 10000
+    },
+    [100100607] = {
+      AppointId = 0,
+      BuddyId = 1001006,
+      CategoryId = 4,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100607,
+      Weight = 10000
+    },
+    [100100608] = {
+      AppointId = 1,
+      BuddyId = 1001006,
+      CategoryId = 5,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100608,
+      Weight = 5000
+    },
+    [100100609] = {
+      AppointId = 1,
+      BuddyId = 1001006,
+      CategoryId = 6,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100609,
+      Weight = 5000
+    }
+  },
+  [1001007] = {
+    [100100701] = {
+      AppointId = 0,
+      BuddyId = 1001007,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100701,
+      Weight = 10000
+    },
+    [100100702] = {
+      AppointId = 0,
+      BuddyId = 1001007,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100702,
+      Weight = 10000
+    },
+    [100100703] = {
+      AppointId = 0,
+      BuddyId = 1001007,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100703,
+      Weight = 10000
+    },
+    [100100704] = {
+      AppointId = 0,
+      BuddyId = 1001007,
+      CategoryId = 1,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100704,
+      Weight = 10000
+    },
+    [100100705] = {
+      AppointId = 0,
+      BuddyId = 1001007,
+      CategoryId = 2,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100705,
+      Weight = 10000
+    },
+    [100100706] = {
+      AppointId = 0,
+      BuddyId = 1001007,
+      CategoryId = 3,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100706,
+      Weight = 10000
+    },
+    [100100707] = {
+      AppointId = 0,
+      BuddyId = 1001007,
+      CategoryId = 4,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100707,
+      Weight = 10000
+    },
+    [100100708] = {
+      AppointId = 1,
+      BuddyId = 1001007,
+      CategoryId = 5,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100708,
+      Weight = 5000
+    },
+    [100100709] = {
+      AppointId = 1,
+      BuddyId = 1001007,
+      CategoryId = 6,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100709,
+      Weight = 5000
+    }
+  },
+  [1001008] = {
+    [100100801] = {
+      AppointId = 0,
+      BuddyId = 1001008,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100801,
+      Weight = 10000
+    },
+    [100100802] = {
+      AppointId = 0,
+      BuddyId = 1001008,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100802,
+      Weight = 10000
+    },
+    [100100803] = {
+      AppointId = 0,
+      BuddyId = 1001008,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100803,
+      Weight = 10000
+    },
+    [100100804] = {
+      AppointId = 0,
+      BuddyId = 1001008,
+      CategoryId = 1,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100804,
+      Weight = 10000
+    },
+    [100100805] = {
+      AppointId = 0,
+      BuddyId = 1001008,
+      CategoryId = 2,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100805,
+      Weight = 10000
+    },
+    [100100806] = {
+      AppointId = 0,
+      BuddyId = 1001008,
+      CategoryId = 3,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100806,
+      Weight = 10000
+    },
+    [100100807] = {
+      AppointId = 0,
+      BuddyId = 1001008,
+      CategoryId = 4,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100807,
+      Weight = 10000
+    },
+    [100100808] = {
+      AppointId = 1,
+      BuddyId = 1001008,
+      CategoryId = 5,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100808,
+      Weight = 5000
+    },
+    [100100809] = {
+      AppointId = 1,
+      BuddyId = 1001008,
+      CategoryId = 6,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100809,
+      Weight = 5000
+    }
+  },
+  [1001009] = {
+    [100100901] = {
+      AppointId = 0,
+      BuddyId = 1001009,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100901,
+      Weight = 10000
+    },
+    [100100902] = {
+      AppointId = 0,
+      BuddyId = 1001009,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100902,
+      Weight = 10000
+    },
+    [100100903] = {
+      AppointId = 0,
+      BuddyId = 1001009,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100100903,
+      Weight = 10000
+    },
+    [100100904] = {
+      AppointId = 0,
+      BuddyId = 1001009,
+      CategoryId = 1,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100904,
+      Weight = 10000
+    },
+    [100100905] = {
+      AppointId = 0,
+      BuddyId = 1001009,
+      CategoryId = 2,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100905,
+      Weight = 10000
+    },
+    [100100906] = {
+      AppointId = 0,
+      BuddyId = 1001009,
+      CategoryId = 3,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100906,
+      Weight = 10000
+    },
+    [100100907] = {
+      AppointId = 0,
+      BuddyId = 1001009,
+      CategoryId = 4,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100100907,
+      Weight = 10000
+    },
+    [100100908] = {
+      AppointId = 1,
+      BuddyId = 1001009,
+      CategoryId = 5,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100908,
+      Weight = 5000
+    },
+    [100100909] = {
+      AppointId = 1,
+      BuddyId = 1001009,
+      CategoryId = 6,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100100909,
+      Weight = 5000
+    }
+  },
+  [1001010] = {
+    [100101001] = {
+      AppointId = 0,
+      BuddyId = 1001010,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101001,
+      Weight = 10000
+    },
+    [100101002] = {
+      AppointId = 0,
+      BuddyId = 1001010,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101002,
+      Weight = 10000
+    },
+    [100101003] = {
+      AppointId = 0,
+      BuddyId = 1001010,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101003,
+      Weight = 10000
+    },
+    [100101004] = {
+      AppointId = 0,
+      BuddyId = 1001010,
+      CategoryId = 1,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101004,
+      Weight = 10000
+    },
+    [100101005] = {
+      AppointId = 0,
+      BuddyId = 1001010,
+      CategoryId = 2,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101005,
+      Weight = 10000
+    },
+    [100101006] = {
+      AppointId = 0,
+      BuddyId = 1001010,
+      CategoryId = 3,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101006,
+      Weight = 10000
+    },
+    [100101007] = {
+      AppointId = 0,
+      BuddyId = 1001010,
+      CategoryId = 4,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101007,
+      Weight = 10000
+    },
+    [100101008] = {
+      AppointId = 1,
+      BuddyId = 1001010,
+      CategoryId = 5,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100101008,
+      Weight = 5000
+    },
+    [100101009] = {
+      AppointId = 1,
+      BuddyId = 1001010,
+      CategoryId = 6,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100101009,
+      Weight = 5000
+    }
+  },
+  [1001011] = {
+    [100101101] = {
+      AppointId = 0,
+      BuddyId = 1001011,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101101,
+      Weight = 10000
+    },
+    [100101102] = {
+      AppointId = 0,
+      BuddyId = 1001011,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101102,
+      Weight = 10000
+    },
+    [100101103] = {
+      AppointId = 0,
+      BuddyId = 1001011,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101103,
+      Weight = 10000
+    },
+    [100101104] = {
+      AppointId = 0,
+      BuddyId = 1001011,
+      CategoryId = 1,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101104,
+      Weight = 10000
+    },
+    [100101105] = {
+      AppointId = 0,
+      BuddyId = 1001011,
+      CategoryId = 2,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101105,
+      Weight = 10000
+    },
+    [100101106] = {
+      AppointId = 0,
+      BuddyId = 1001011,
+      CategoryId = 3,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101106,
+      Weight = 10000
+    },
+    [100101107] = {
+      AppointId = 0,
+      BuddyId = 1001011,
+      CategoryId = 4,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101107,
+      Weight = 10000
+    },
+    [100101108] = {
+      AppointId = 1,
+      BuddyId = 1001011,
+      CategoryId = 5,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100101108,
+      Weight = 5000
+    },
+    [100101109] = {
+      AppointId = 1,
+      BuddyId = 1001011,
+      CategoryId = 6,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100101109,
+      Weight = 5000
+    }
+  },
+  [1001012] = {
+    [100101201] = {
+      AppointId = 0,
+      BuddyId = 1001012,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101201,
+      Weight = 10000
+    },
+    [100101202] = {
+      AppointId = 0,
+      BuddyId = 1001012,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101202,
+      Weight = 10000
+    },
+    [100101203] = {
+      AppointId = 0,
+      BuddyId = 1001012,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101203,
+      Weight = 10000
+    },
+    [100101204] = {
+      AppointId = 0,
+      BuddyId = 1001012,
+      CategoryId = 1,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101204,
+      Weight = 10000
+    },
+    [100101205] = {
+      AppointId = 0,
+      BuddyId = 1001012,
+      CategoryId = 2,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101205,
+      Weight = 10000
+    },
+    [100101206] = {
+      AppointId = 0,
+      BuddyId = 1001012,
+      CategoryId = 3,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101206,
+      Weight = 10000
+    },
+    [100101207] = {
+      AppointId = 0,
+      BuddyId = 1001012,
+      CategoryId = 4,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101207,
+      Weight = 10000
+    },
+    [100101208] = {
+      AppointId = 1,
+      BuddyId = 1001012,
+      CategoryId = 5,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100101208,
+      Weight = 5000
+    },
+    [100101209] = {
+      AppointId = 1,
+      BuddyId = 1001012,
+      CategoryId = 6,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100101209,
+      Weight = 5000
+    }
+  },
+  [1001013] = {
+    [100101301] = {
+      AppointId = 0,
+      BuddyId = 1001013,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101301,
+      Weight = 10000
+    },
+    [100101302] = {
+      AppointId = 0,
+      BuddyId = 1001013,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101302,
+      Weight = 10000
+    },
+    [100101303] = {
+      AppointId = 0,
+      BuddyId = 1001013,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101303,
+      Weight = 10000
+    },
+    [100101304] = {
+      AppointId = 0,
+      BuddyId = 1001013,
+      CategoryId = 1,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101304,
+      Weight = 10000
+    },
+    [100101305] = {
+      AppointId = 0,
+      BuddyId = 1001013,
+      CategoryId = 2,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101305,
+      Weight = 10000
+    },
+    [100101306] = {
+      AppointId = 0,
+      BuddyId = 1001013,
+      CategoryId = 3,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101306,
+      Weight = 10000
+    },
+    [100101307] = {
+      AppointId = 0,
+      BuddyId = 1001013,
+      CategoryId = 4,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101307,
+      Weight = 10000
+    },
+    [100101308] = {
+      AppointId = 1,
+      BuddyId = 1001013,
+      CategoryId = 5,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100101308,
+      Weight = 5000
+    },
+    [100101309] = {
+      AppointId = 1,
+      BuddyId = 1001013,
+      CategoryId = 6,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100101309,
+      Weight = 5000
+    }
+  },
+  [1001014] = {
+    [100101401] = {
+      AppointId = 0,
+      BuddyId = 1001014,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101401,
+      Weight = 10000
+    },
+    [100101402] = {
+      AppointId = 0,
+      BuddyId = 1001014,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101402,
+      Weight = 10000
+    },
+    [100101403] = {
+      AppointId = 0,
+      BuddyId = 1001014,
+      CategoryId = 0,
+      GroupId = 0,
+      Level = 0,
+      SkillId = 100101403,
+      Weight = 10000
+    },
+    [100101404] = {
+      AppointId = 0,
+      BuddyId = 1001014,
+      CategoryId = 1,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101404,
+      Weight = 10000
+    },
+    [100101405] = {
+      AppointId = 0,
+      BuddyId = 1001014,
+      CategoryId = 2,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101405,
+      Weight = 10000
+    },
+    [100101406] = {
+      AppointId = 0,
+      BuddyId = 1001014,
+      CategoryId = 3,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101406,
+      Weight = 10000
+    },
+    [100101407] = {
+      AppointId = 0,
+      BuddyId = 1001014,
+      CategoryId = 4,
+      GroupId = 0,
+      Level = 1,
+      SkillId = 100101407,
+      Weight = 10000
+    },
+    [100101408] = {
+      AppointId = 1,
+      BuddyId = 1001014,
+      CategoryId = 5,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100101408,
+      Weight = 5000
+    },
+    [100101409] = {
+      AppointId = 1,
+      BuddyId = 1001014,
+      CategoryId = 6,
+      GroupId = 1,
+      Level = 1,
+      SkillId = 100101409,
+      Weight = 5000
+    }
+  }
+}

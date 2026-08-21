@@ -1,0 +1,9 @@
+local M = Util.create_class()
+
+function M:_init()
+end
+
+function M:debug()
+end
+
+return M

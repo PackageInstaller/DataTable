@@ -1,0 +1,606 @@
+return {
+  {
+    ActivityId = 18,
+    EpicPassTime = 40,
+    Id = 1,
+    MapGraphId = 1,
+    OpenDay = 0,
+    PassTime = 60,
+    SortId = 1,
+    SubGraph = {
+      101,
+      102,
+      103
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 40,
+    FrontEpisodeId = 1,
+    Id = 2,
+    MapGraphId = 2,
+    OpenDay = 0,
+    PassTime = 60,
+    SortId = 2,
+    SubGraph = {
+      201,
+      202,
+      203
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 45,
+    FrontEpisodeId = 2,
+    Id = 3,
+    MapGraphId = 3,
+    OpenDay = 1,
+    PassTime = 60,
+    SortId = 3,
+    SubGraph = {
+      301,
+      302,
+      303,
+      304
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 45,
+    FrontEpisodeId = 3,
+    Id = 4,
+    MapGraphId = 4,
+    OpenDay = 1,
+    PassTime = 60,
+    SortId = 4,
+    SubGraph = {
+      401,
+      402,
+      403,
+      404
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 45,
+    FrontEpisodeId = 4,
+    Id = 5,
+    MapGraphId = 5,
+    OpenDay = 2,
+    PassTime = 60,
+    SortId = 5,
+    SubGraph = {
+      501,
+      502,
+      503,
+      504
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 45,
+    FrontEpisodeId = 5,
+    Id = 6,
+    MapGraphId = 6,
+    OpenDay = 2,
+    PassTime = 90,
+    SortId = 6,
+    SubGraph = {
+      601,
+      602,
+      603,
+      604,
+      605
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 45,
+    FrontEpisodeId = 6,
+    Id = 7,
+    MapGraphId = 7,
+    OpenDay = 3,
+    PassTime = 90,
+    SortId = 7,
+    SubGraph = {
+      701,
+      702,
+      703,
+      704,
+      705
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 45,
+    FrontEpisodeId = 7,
+    Id = 8,
+    MapGraphId = 8,
+    OpenDay = 3,
+    PassTime = 90,
+    SortId = 8,
+    SubGraph = {
+      801,
+      802,
+      803,
+      804,
+      805
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 45,
+    FrontEpisodeId = 8,
+    Id = 9,
+    MapGraphId = 9,
+    OpenDay = 4,
+    PassTime = 90,
+    SortId = 9,
+    SubGraph = {
+      901,
+      902,
+      903,
+      904,
+      905
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 45,
+    FrontEpisodeId = 9,
+    Id = 10,
+    MapGraphId = 10,
+    OpenDay = 4,
+    PassTime = 90,
+    SortId = 10,
+    SubGraph = {
+      1001,
+      1002,
+      1003,
+      1004,
+      1005
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 60,
+    FrontEpisodeId = 10,
+    Id = 11,
+    MapGraphId = 11,
+    OpenDay = 5,
+    PassTime = 120,
+    SortId = 11,
+    SubGraph = {
+      1101,
+      1102,
+      1103,
+      1104,
+      1105,
+      1106
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 60,
+    FrontEpisodeId = 11,
+    Id = 12,
+    MapGraphId = 12,
+    OpenDay = 5,
+    PassTime = 120,
+    SortId = 12,
+    SubGraph = {
+      1201,
+      1202,
+      1203,
+      1204,
+      1205,
+      1206
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 45,
+    FrontEpisodeId = 12,
+    Id = 13,
+    MapGraphId = 13,
+    OpenDay = 6,
+    PassTime = 60,
+    SortId = 13,
+    SubGraph = {
+      1301,
+      1302,
+      1303,
+      1304
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 45,
+    FrontEpisodeId = 13,
+    Id = 14,
+    MapGraphId = 14,
+    OpenDay = 6,
+    PassTime = 90,
+    SortId = 14,
+    SubGraph = {
+      1401,
+      1402,
+      1403,
+      1404,
+      1405
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 45,
+    FrontEpisodeId = 14,
+    Id = 15,
+    MapGraphId = 15,
+    OpenDay = 7,
+    PassTime = 90,
+    SortId = 15,
+    SubGraph = {
+      1501,
+      1502,
+      1503,
+      1504,
+      1505
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 60,
+    FrontEpisodeId = 15,
+    Id = 16,
+    MapGraphId = 16,
+    OpenDay = 7,
+    PassTime = 120,
+    SortId = 16,
+    SubGraph = {
+      1601,
+      1602,
+      1603,
+      1604,
+      1605,
+      1606
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 60,
+    FrontEpisodeId = 16,
+    Id = 17,
+    MapGraphId = 17,
+    OpenDay = 8,
+    PassTime = 120,
+    SortId = 17,
+    SubGraph = {
+      1701,
+      1702,
+      1703,
+      1704,
+      1705,
+      1706
+    }
+  },
+  {
+    ActivityId = 18,
+    EpicPassTime = 60,
+    FrontEpisodeId = 17,
+    Id = 18,
+    MapGraphId = 18,
+    OpenDay = 8,
+    PassTime = 120,
+    SortId = 18,
+    SubGraph = {
+      1801,
+      1802,
+      1803,
+      1804,
+      1805,
+      1806
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 40,
+    Id = 19,
+    MapGraphId = 1,
+    OpenDay = 0,
+    PassTime = 60,
+    SortId = 1,
+    SubGraph = {
+      101,
+      102,
+      103
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 40,
+    FrontEpisodeId = 19,
+    Id = 20,
+    MapGraphId = 2,
+    OpenDay = 0,
+    PassTime = 60,
+    SortId = 2,
+    SubGraph = {
+      201,
+      202,
+      203
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 45,
+    FrontEpisodeId = 20,
+    Id = 21,
+    MapGraphId = 3,
+    OpenDay = 1,
+    PassTime = 60,
+    SortId = 3,
+    SubGraph = {
+      301,
+      302,
+      303,
+      304
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 45,
+    FrontEpisodeId = 21,
+    Id = 22,
+    MapGraphId = 4,
+    OpenDay = 1,
+    PassTime = 60,
+    SortId = 4,
+    SubGraph = {
+      401,
+      402,
+      403,
+      404
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 45,
+    FrontEpisodeId = 22,
+    Id = 23,
+    MapGraphId = 5,
+    OpenDay = 2,
+    PassTime = 60,
+    SortId = 5,
+    SubGraph = {
+      501,
+      502,
+      503,
+      504
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 45,
+    FrontEpisodeId = 23,
+    Id = 24,
+    MapGraphId = 6,
+    OpenDay = 2,
+    PassTime = 90,
+    SortId = 6,
+    SubGraph = {
+      601,
+      602,
+      603,
+      604,
+      605
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 45,
+    FrontEpisodeId = 24,
+    Id = 25,
+    MapGraphId = 7,
+    OpenDay = 3,
+    PassTime = 90,
+    SortId = 7,
+    SubGraph = {
+      701,
+      702,
+      703,
+      704,
+      705
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 45,
+    FrontEpisodeId = 25,
+    Id = 26,
+    MapGraphId = 8,
+    OpenDay = 3,
+    PassTime = 90,
+    SortId = 8,
+    SubGraph = {
+      801,
+      802,
+      803,
+      804,
+      805
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 45,
+    FrontEpisodeId = 26,
+    Id = 27,
+    MapGraphId = 9,
+    OpenDay = 4,
+    PassTime = 90,
+    SortId = 9,
+    SubGraph = {
+      901,
+      902,
+      903,
+      904,
+      905
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 45,
+    FrontEpisodeId = 27,
+    Id = 28,
+    MapGraphId = 10,
+    OpenDay = 4,
+    PassTime = 90,
+    SortId = 10,
+    SubGraph = {
+      1001,
+      1002,
+      1003,
+      1004,
+      1005
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 60,
+    FrontEpisodeId = 28,
+    Id = 29,
+    MapGraphId = 11,
+    OpenDay = 5,
+    PassTime = 120,
+    SortId = 11,
+    SubGraph = {
+      1101,
+      1102,
+      1103,
+      1104,
+      1105,
+      1106
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 60,
+    FrontEpisodeId = 29,
+    Id = 30,
+    MapGraphId = 12,
+    OpenDay = 5,
+    PassTime = 120,
+    SortId = 12,
+    SubGraph = {
+      1201,
+      1202,
+      1203,
+      1204,
+      1205,
+      1206
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 45,
+    FrontEpisodeId = 30,
+    Id = 31,
+    MapGraphId = 13,
+    OpenDay = 6,
+    PassTime = 60,
+    SortId = 13,
+    SubGraph = {
+      1301,
+      1302,
+      1303,
+      1304
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 45,
+    FrontEpisodeId = 31,
+    Id = 32,
+    MapGraphId = 14,
+    OpenDay = 6,
+    PassTime = 90,
+    SortId = 14,
+    SubGraph = {
+      1401,
+      1402,
+      1403,
+      1404,
+      1405
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 45,
+    FrontEpisodeId = 32,
+    Id = 33,
+    MapGraphId = 15,
+    OpenDay = 7,
+    PassTime = 90,
+    SortId = 15,
+    SubGraph = {
+      1501,
+      1502,
+      1503,
+      1504,
+      1505
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 60,
+    FrontEpisodeId = 33,
+    Id = 34,
+    MapGraphId = 16,
+    OpenDay = 7,
+    PassTime = 120,
+    SortId = 16,
+    SubGraph = {
+      1601,
+      1602,
+      1603,
+      1604,
+      1605,
+      1606
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 60,
+    FrontEpisodeId = 34,
+    Id = 35,
+    MapGraphId = 17,
+    OpenDay = 8,
+    PassTime = 120,
+    SortId = 17,
+    SubGraph = {
+      1701,
+      1702,
+      1703,
+      1704,
+      1705,
+      1706
+    }
+  },
+  {
+    ActivityId = 29,
+    EpicPassTime = 60,
+    FrontEpisodeId = 35,
+    Id = 36,
+    MapGraphId = 18,
+    OpenDay = 8,
+    PassTime = 120,
+    SortId = 18,
+    SubGraph = {
+      1801,
+      1802,
+      1803,
+      1804,
+      1805,
+      1806
+    }
+  }
+}

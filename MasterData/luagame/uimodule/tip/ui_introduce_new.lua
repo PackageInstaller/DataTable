@@ -1,0 +1,151 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local UI_INTRODUCE_INDEX_ITEM_KEY = "UI_INTRODUCE_INDEX_ITEM_KEY"
+local CSUnityEngine = UnityEngine
+local CSInput = CSUnityEngine.Input
+local TouchPhase = CSUnityEngine.TouchPhase
+
+function ui:ui_finish_load()
+  self:set_button("BtnRetX", function()
+    self:ui_hide()
+  end)
+  self:set_button("Btn_Last", function()
+    self:change_page(-1)
+  end)
+  self:set_button("Btn_Next", function()
+    self:change_page(1)
+  end)
+  self:set_button("Btn_Back", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(UI_INTRODUCE_INDEX_ITEM_KEY, self.v_uiobjects.PageIndexTem, self.v_uiobjects.PageIndex)
+end
+
+function ui:ui_on_show(data, index, custom_key)
+  local prafab_name = data.v_object_transform.name
+  local cfg_key = custom_key and custom_key or prafab_name
+  local switch_cfg = ShareRes.create("graphic_guide.graphic_guide_switch", cfg_key)
+  if nil == switch_cfg then
+    if custom_key then
+      UIMgr:get_ui("uimessagetip"):ui_show(Util.format_str("待策划配置"))
+      Log.Error("Introduce按钮使用了自定义key:", custom_key)
+      self:ui_hide()
+      return
+    elseif nil == data.v_parent_ui then
+      UIMgr:get_ui("uimessagetip"):ui_show(Util.format_str("待策划配置"))
+      Log.Error("Introduce按钮对应预制名为:", prafab_name, index)
+      self:ui_hide()
+      return
+    else
+      switch_cfg = ShareRes.create("graphic_guide.graphic_guide_switch", data.v_parent_ui.v_object_transform.name)
+      if nil == switch_cfg then
+        UIMgr:get_ui("uimessagetip"):ui_show(Util.format_str("待策划配置"))
+        Log.Error("Introduce按钮对应预制名为:", prafab_name, index)
+        self:ui_hide()
+        return
+      end
+    end
+  end
+  self.v_uiobjects.Guide_RawImg:SetActive(false)
+  self.v_uiobjects.Guide_Img:SetActive(true)
+  self.v_cur_step = 1
+  self.v_switch_cfg = switch_cfg
+  self.v_keep_show_close_btn = true
+  self:refresh_data(data, index)
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:refresh_data(data, index)
+  local group_id_list = self.v_switch_cfg.GroupId
+  local group_idx = 1 == #group_id_list and 1 or index or data.v_page_toggle_tab.v_cur_select
+  local group_id = group_id_list[group_idx]
+  local guide_id_cfg_list = ShareRes.create("graphic_guide.graphic_guide_outside_by_ground", group_id)
+  table.sort(guide_id_cfg_list, function(a, b)
+    return a.sort < b.sort
+  end)
+  self.v_guide_id_count = #guide_id_cfg_list
+  self.v_guide_id_cfg_list = guide_id_cfg_list
+  self:give_back_auto_cache(UI_INTRODUCE_INDEX_ITEM_KEY, false)
+  self.v_index_tem_list = {}
+  if 1 ~= self.v_guide_id_count then
+    for idx = 1, self.v_guide_id_count do
+      local index_obj = self:get_auto_cache(UI_INTRODUCE_INDEX_ITEM_KEY)
+      self.v_index_tem_list[idx] = index_obj
+    end
+  end
+  self:refresh_view()
+end
+
+function ui:change_page(val)
+  self.v_cur_step = self.v_cur_step + val
+  if self.v_cur_step < 1 then
+    self.v_cur_step = 1
+  elseif self.v_cur_step > self.v_guide_id_count then
+    self.v_cur_step = self.v_guide_id_count
+  end
+  self:refresh_view()
+end
+
+function ui:refresh_view()
+  if self.v_cur_step == self.v_guide_id_count then
+    self.v_keep_show_close_btn = true
+  end
+  self.v_uiobjects.Btn_Back:SetActive(self.v_keep_show_close_btn or self.v_cur_step == self.v_guide_id_count)
+  self.v_uiobjects.Btn_Last:SetActive(self.v_cur_step > 1)
+  self.v_uiobjects.Btn_Next:SetActive(self.v_cur_step < self.v_guide_id_count)
+  local guide_id = self.v_guide_id_cfg_list[self.v_cur_step].id
+  local guide_info_cfg = ShareRes.create("graphic_guide.graphic_guide_outside", guide_id)
+  self.v_uicompents.Guide_Title_txt.text = guide_info_cfg.title
+  self.v_uicompents.Guide_Des_txt.text = guide_info_cfg.text
+  ResMgr:load_set_icon(self.v_uicompents.Guide_Img_img, guide_info_cfg.picture, nil, true, self)
+  self:refresh_page_index_tips()
+end
+
+function ui:refresh_page_index_tips()
+  for i, index_obj in ipairs(self.v_index_tem_list) do
+    self:get_child_gameobj("Select", index_obj):SetActiveEx(i == self.v_cur_step)
+  end
+end
+
+function ui:ui_update()
+  if UNITY_EDITOR then
+    if CSInput.GetMouseButtonDown(0) then
+      self.v_touch_cache_x = CSInput.mousePosition.x
+    elseif CSInput.GetMouseButton(0) then
+      self.v_touch_cache_x_end = CSInput.mousePosition.x
+    elseif CSInput.GetMouseButtonUp(0) and self.v_touch_cache_x and self.v_touch_cache_x_end then
+      local dis = self.v_touch_cache_x_end - self.v_touch_cache_x
+      self:check_drag(dis)
+      self.v_touch_cache_x = nil
+      self.v_touch_cache_x_end = nil
+    end
+  elseif CSInput.touchCount > 0 then
+    local touch_1 = CSInput.GetTouch(0)
+    local touch_1_pos = touch_1.position
+    if touch_1.phase == TouchPhase.Began then
+      self.v_touch_cache_x = touch_1_pos.x
+    elseif touch_1.phase == TouchPhase.Moved then
+      self.v_touch_cache_x_end = CSInput.mousePosition.x
+    elseif touch_1.phase == TouchPhase.Ended and self.v_touch_cache_x and self.v_touch_cache_x_end then
+      local dis = self.v_touch_cache_x_end - self.v_touch_cache_x
+      self:check_drag(dis)
+      self.v_touch_cache_x = nil
+      self.v_touch_cache_x_end = nil
+    end
+  end
+end
+
+function ui:check_drag(dis)
+  if dis > 400 then
+    self:change_page(-1)
+  elseif dis < -400 then
+    self:change_page(1)
+  end
+end
+
+return ui

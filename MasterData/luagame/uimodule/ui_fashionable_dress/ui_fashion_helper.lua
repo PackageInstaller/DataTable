@@ -1,0 +1,18 @@
+local helper = {}
+local UISkinPath = "UISkin/TestStandDraw/%s"
+
+function helper.get_fashion_brand_icon(brand_id)
+  local brand_cfg = ShareRes.get_fashion_brand_cfg(brand_id)
+  local icon_name = brand_cfg.logo
+  local icon_path = string.format(UISkinPath, icon_name)
+  return icon_path
+end
+
+function helper.get_fashion_brand_bg_icon(brand_id)
+  local brand_cfg = ShareRes.get_fashion_brand_cfg(brand_id)
+  local icon_name = brand_cfg.logoBg
+  local icon_path = string.format(UISkinPath, icon_name)
+  return icon_path
+end
+
+return helper

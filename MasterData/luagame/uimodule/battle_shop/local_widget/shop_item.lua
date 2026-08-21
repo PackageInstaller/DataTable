@@ -1,0 +1,110 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local ITEM_QUALITY_PREFIX = "Icon/BattleCommon/Ba_%dx"
+local ITEM_TYPE_PREFIX = "Icon/BattleItem/%s"
+local EQUIP_TYPE_PREFIX = "Icon/BattleWeapon/%s"
+local BATTLE_ITEM_QUALITY_PATH = "UICommon2/Com/Common_qualitybox_new"
+local util_get_color = Util.get_unity_color_by_hex
+local _ceil = math.ceil
+
+function M:ui_finish_load()
+  self.selected_tag_obj = self.v_uicompents.Choose_img.gameObject
+  self.selected_tag_obj:SetActiveEx(false)
+  self.v_tog = Util.get_toggle(nil, self.v_object)
+end
+
+function M:ui_on_hide()
+  self.v_data = nil
+  self.v_item_data = nil
+  self.v_item_cfg = nil
+  self.v_item_ob = nil
+  self.v_tog = nil
+end
+
+function M:set_data(go, data_list, index)
+  local discount_cnt = BattleShopMgr:get_first_discount_cnt() or 0
+  local data = data_list[index]
+  local components = self.v_uicompents
+  local uobj = self.v_uiobjects
+  self.v_data = data
+  self.v_item_data = data.item_data
+  self.v_item_cfg = data.item_cfg
+  self.v_item_obj = go
+  self.v_is_on = false
+  local buy_cost = self.v_item_cfg.BuyCostCnt
+  local down_percent = "-50%"
+  local price_down_before = buy_cost
+  local price_down_now = _ceil(buy_cost * 0.5)
+  local buy_num = self.v_item_data.count
+  local item_price_obj = uobj.ItemPrice
+  local item_price_down_obj = uobj.PriceDown
+  local down_percent_txt = components.DownPercent_txt
+  local price_down_before_txt = components.PriceDownBefore_txt
+  local price_down_now_txt = components.PriceDownNow_txt
+  local icon_path = ""
+  local color
+  if self.v_data.buy == true then
+    components.Bought_rect.gameObject:SetActive(true)
+    color = util_get_color(tonumber("999999", 16))
+  else
+    color = util_get_color(tonumber("FFFFFF", 16))
+  end
+  components.ItemIcon_img.color = color
+  components.ItemQaulity_img.color = color
+  components.ItemAmount_txt.color = color
+  components.ItemPrice_txt.color = color
+  components.CoinIcon_img.color = color
+  if FightBagMgr:get_is_collect_by_id(self.v_item_data.id) then
+    icon_path = string.format(EQUIP_TYPE_PREFIX, self.v_item_cfg.Icon)
+  elseif FightBagMgr:get_is_item_by_id(self.v_item_data.id) then
+    icon_path = string.format(ITEM_TYPE_PREFIX, self.v_item_cfg.Icon)
+  end
+  local quailty_num = self.v_item_cfg.Quality
+  local quality_path = BATTLE_ITEM_QUALITY_PATH
+  local quailty_color = util_get_color(tonumber("62AAD3", 16))
+  if 4 == quailty_num then
+    quailty_color = util_get_color(tonumber("CB70D9", 16))
+  elseif 5 == quailty_num then
+    quailty_color = util_get_color(tonumber("F79934", 16))
+  end
+  ResMgr:load_set_icon(components.ItemQaulity_img, quality_path)
+  components.ItemQaulity_img.color = quailty_color
+  ResMgr:load_set_icon(components.ItemIcon_img, icon_path)
+  components.ItemAmount_txt.text = "X" .. buy_num
+  item_price_obj:SetActive(true)
+  item_price_down_obj:SetActive(false)
+  if self.v_data.buy ~= nil then
+    if discount_cnt > 0 then
+      item_price_obj:SetActive(false)
+      item_price_down_obj:SetActive(true)
+      down_percent_txt.text = down_percent
+      price_down_before_txt.text = price_down_before * buy_num
+      price_down_now_txt.text = price_down_now * buy_num
+    else
+      components.ItemPrice_txt.text = buy_cost * buy_num
+    end
+  else
+    self.v_uiobjects.ItemAmountObj:SetActive(true)
+    local currency_id = ShareRes.get_single_key_define("BattleCurrencyId")
+    components.ItemPrice_txt.text = self.v_item_cfg.SaleAward[currency_id]
+  end
+  Global.listener_mgr:add_listener(self.v_object, self.v_tog.onValueChanged, function(isOn)
+    self:on_click_tog(isOn)
+  end)
+end
+
+function M:on_click_tog(isOn)
+  if self.v_is_on == isOn then
+    return
+  end
+  self.v_is_on = isOn
+  self.v_tog.isOn = isOn
+  self.selected_tag_obj:SetActiveEx(isOn)
+  if true == isOn then
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_CLICK_ITEM_TIPS)
+    msg.mm_obj = self.v_data
+    msg.mm_x = self.v_tog
+  end
+end
+
+return M

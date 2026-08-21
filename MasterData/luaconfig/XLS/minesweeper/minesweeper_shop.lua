@@ -1,0 +1,32 @@
+return {
+  {
+    {
+      AwardParam = 10,
+      AwardType = 2,
+      ConsumeCount = 300,
+      ConsumeId = 1,
+      Icon = "UIActMine/Icon/slrg_game_icon_tl",
+      Id = 1,
+      Name = "体力+10",
+      ShopId = 1
+    },
+    {
+      AwardParam = 150,
+      AwardType = 3,
+      ConsumeCount = 300,
+      ConsumeId = 1,
+      Icon = "UIActMine/Icon/slrg_game_icon_jf",
+      Id = 2,
+      Name = "战功+150",
+      ShopId = 1
+    },
+    {
+      AwardParam = 5,
+      AwardType = 4,
+      ConsumeCount = 300,
+      ConsumeId = 1,
+      Id = 3,
+      ShopId = 1
+    }
+  }
+}

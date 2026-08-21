@@ -1,0 +1,82 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local ADVANCED_NAME_LEVEL = 1
+local BRANCH_NAME = "分支效果"
+local ADVANCED_NAME = "进阶效果"
+local UNLOCK_COLOR = "FFD07B"
+local LOCK_COLOR = "FFFFFF"
+
+function ui:refresh_sect_layout(compents, i, genres_id, ability_need_count, ability_count_map)
+  local child = self.v_uiobjects["Sect" .. i]
+  if not child then
+    return
+  end
+  local genres_cfg, talent_cur_txt
+  if genres_id and ability_need_count then
+    genres_cfg = ShareRes.get_genres_cfg(genres_id)
+    ResMgr:load_set_icon(compents["SectIcon" .. i .. "_img"], genres_cfg.IconPath, nil, true, self)
+    compents["TalentNeed" .. i .. "_txt"].text = ability_need_count
+    talent_cur_txt = compents["TalentNum" .. i .. "_txt"]
+    local cur_count = GenresMgr:get_ability_count(genres_id)
+    if ability_count_map then
+      cur_count = ability_count_map[genres_id] or 0
+    end
+    local enough = ability_need_count <= cur_count
+    local color_str = enough and "476DBB" or "D74343"
+    talent_cur_txt.text = cur_count
+    Util.set_color(talent_cur_txt, color_str)
+    child.gameObject:SetActive(true)
+  else
+    child.gameObject:SetActive(false)
+  end
+end
+
+function ui.refresh_desc_color(desc_txt, is_lock)
+  if is_lock then
+    Util.set_color(desc_txt, LOCK_COLOR, 0.5)
+  else
+    Util.set_color(desc_txt, UNLOCK_COLOR, 1)
+  end
+end
+
+function ui:on_click_BtnKeyWord()
+  self.v_parent_ui:on_click_BtnKeyWord(self.v_key_id_list)
+end
+
+function ui:ui_finish_load()
+  self:set_button("BasicEffectDesc", function()
+    self:on_click_BtnKeyWord()
+  end)
+end
+
+function ui:set_data(branch_cfg, show_brief_info, is_lock)
+  self.v_uiobjects.BasicEffectDesc:SetActive(true)
+  self.v_uiobjects.BranchLock:SetActive(is_lock)
+  local desc = show_brief_info and branch_cfg.BriefDesc or branch_cfg.DetailDesc
+  self.v_uicompents.BasicEffectDesc_txt.text = desc
+  self.v_key_id_list = branch_cfg.KeyIDList
+  local sect = branch_cfg.Sect
+  self.v_uicompents.LvNum_txt.text = branch_cfg.Lv
+  local sect_info
+  self.v_uicompents.BranchTitleText_txt.text = branch_cfg.Lv > ADVANCED_NAME_LEVEL and ADVANCED_NAME or BRANCH_NAME
+  for child_index = 1, self.v_uicompents.SectLayout_rect.childCount do
+    sect_info = sect[child_index]
+    local genres_id, ability_need_count
+    if sect_info then
+      genres_id, ability_need_count = sect_info.Sect, sect_info.Count
+    end
+    ui.refresh_sect_layout(self, self.v_uicompents, child_index, genres_id, ability_need_count)
+    ui.refresh_desc_color(self.v_uicompents.BasicEffectDesc_txt, is_lock)
+  end
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+return ui

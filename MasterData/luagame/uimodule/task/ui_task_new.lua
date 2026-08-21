@@ -1,0 +1,147 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local BIND_TYPE = Config.BIND_TYPE
+local TASK_HELPER = require("uimodule.task.task_helper")
+local MAIN_TASK_RED_ID = 9
+local MODEL = {
+  v_asset_bar = {
+    "AssetBar",
+    BIND_TYPE.OBJECT
+  },
+  v_blur = {
+    "Blur",
+    BIND_TYPE.RAW_IMAGE
+  },
+  v_btn_introduce = {
+    "BtnIntroduce",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_main = {
+    "BtnMain",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_return = {
+    "BtnReturn",
+    BIND_TYPE.BUTTON
+  },
+  v_page_sp_task = {
+    "PageSpTask",
+    BIND_TYPE.TOGGLE
+  },
+  v_page_task = {
+    "PageTask",
+    BIND_TYPE.TOGGLE
+  },
+  v_sp_task = {
+    "SPTask",
+    BIND_TYPE.OBJECT
+  },
+  v_task = {
+    "Task",
+    BIND_TYPE.OBJECT
+  }
+}
+local RIGHT_TOGGLE_LIST = {
+  [1] = {
+    tog_name = "PageSpTask",
+    name = "历练",
+    tog_show_name = "N E W",
+    redpoint_id = 1101
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnReturn", function()
+    self:ui_hide()
+  end)
+  self.task_active = self:get_panel("task_active")
+  self.task_experience = self:get_panel("task_experience")
+  self:init_toggle()
+end
+
+function ui:init_toggle()
+  self.v_tag_toggles = {}
+  for i, v in ipairs(RIGHT_TOGGLE_LIST) do
+    local tog = self:get_toggle(nil, self.v_uiobjects[v.tog_name])
+    table.insert(self.v_tag_toggles, tog)
+    if v.redpoint_id then
+      RedPointMgr:bind_redpoint(self, self:get_child_gameobj("Red", tog.gameObject), v.redpoint_id, MAIN_TASK_RED_ID)
+    end
+  end
+  for index, toggle in ipairs(self.v_tag_toggles) do
+    local text = Util.get_text("Text", toggle.transform)
+    text.text = RIGHT_TOGGLE_LIST[index].name
+  end
+  self.v_toggle_tab = ToggleTab:new(self)
+  self.v_toggle_tab:init_by_toggles(self.v_tag_toggles, function(select, last_select, select_toggle, last_select_toggle)
+    self:select_tag_toggle(select, last_select, select_toggle, last_select_toggle)
+  end, 1, false)
+end
+
+function ui:refresh_anim(index)
+  local sp_task_anim = Util.get_child_gameobj("Animation/Ani_SPTask_IN", self.v_object)
+  local normal_task_naim = Util.get_child_gameobj("Animation/Ani_Task_IN", self.v_object)
+  sp_task_anim:SetActive(false)
+  normal_task_naim:SetActive(false)
+  if 1 == index then
+    sp_task_anim:SetActive(true)
+  else
+    normal_task_naim:SetActive(true)
+  end
+end
+
+function ui:refresh_task_info()
+end
+
+function ui:refresh_sp_task_info()
+end
+
+function ui:ui_on_show(init_idx, task_id, page)
+  self.select_index = 1
+  self.need_select_task_id = task_id
+  self.need_select_page = page
+  self.v_toggle_tab:set_toggle_by_index(self.select_index)
+  self:select_tag_toggle(self.select_index)
+end
+
+function ui:select_tag_toggle(select, last_select, select_toggle, last_select_toggle)
+  self.select_index = select
+  self.task_active:set_enable(2 == select)
+  self.task_experience:set_enable(1 == select)
+  if 1 == select then
+    self.task_experience:refresh_win(self:get_need_select_page(), self.need_select_task_id)
+  end
+  self:refresh_anim(select)
+end
+
+function ui:set_need_select_page(page)
+  self.need_select_page = page
+end
+
+function ui:get_need_select_page()
+  return self.need_select_page
+end
+
+function ui:set_need_select_task_id(task_id)
+  self.need_select_task_id = task_id
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.select_index, self.need_select_task_id, self.need_select_page
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+  self.v_tag_toggles = nil
+  self.v_toggle_tab = nil
+end
+
+return ui

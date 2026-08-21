@@ -1,0 +1,108 @@
+local Base = require("ui.widget.widget_base")
+local M = Util.create_child_mt(Base)
+local Math = require("base.mathx")
+local PATH_TEXT_NUM = "TextCount"
+local PATH_BTN_ADD = "Right"
+local PATH_BTN_MIN = "Left"
+local MAX_VALUE = 9999
+local MIN_VALUE = 0
+local STEP_VALUE = 1
+
+function M:_init(ui)
+  Base._init(self)
+  self.v_ui = ui
+  return self
+end
+
+function M:init_by_value(parent_obj, callback, callback_data, cur_value, step_value, max_value, min_value, num_calc_func)
+  self:dispose()
+  assert(parent_obj)
+  self:_init_by_obj(Util.get_child(PATH_TEXT_NUM, parent_obj), Util.get_child(PATH_BTN_ADD, parent_obj), Util.get_child(PATH_BTN_MIN, parent_obj), callback, callback_data)
+  self:_init_values(cur_value, step_value, max_value, min_value, num_calc_func)
+end
+
+function M:_init_values(cur_value, step_value, max_value, min_value, num_calc_func)
+  self.v_cur_value = cur_value
+  self.v_step_value = step_value or STEP_VALUE
+  self.v_max_value = max_value or MAX_VALUE
+  self.v_min_value = min_value or MIN_VALUE
+  self.v_num_calc_func = num_calc_func
+  self:_check_values()
+end
+
+function M:_init_by_obj(obj_text, obj_add, obj_min, callback, cb_data)
+  self.v_callback = callback
+  self.v_callback_data = cb_data
+  assert(obj_add)
+  assert(obj_min)
+  assert(obj_text)
+  self.v_txt_num = Util.get_text(nil, obj_text)
+  self.v_btn_add = Util.get_button(nil, obj_add)
+  self.v_btn_min = Util.get_button(nil, obj_min)
+  Util.set_click(nil, self.v_btn_add.gameObject, self, function()
+    self:_on_click_add()
+  end)
+  Util.set_click(nil, self.v_btn_min.gameObject, self, function()
+    self:_on_click_min()
+  end)
+end
+
+function M:set_values(cur_value, step_value, max_value, min_value)
+  self.v_cur_value = cur_value or self.v_cur_value
+  self.v_step_value = step_value or self.v_step_value
+  self.v_max_value = max_value or self.v_max_value
+  self.v_min_value = min_value or self.v_min_value
+  self:_check_values()
+end
+
+function M:get_cur_value()
+  return self.v_cur_value
+end
+
+function M:dispose()
+  if self.v_btn_add then
+    Util.remove_click(nil, self.v_btn_add.gameObject, self.v_ui:get_object())
+  end
+  if self.v_btn_min then
+    Util.remove_click(nil, self.v_btn_min.gameObject, self.v_ui:get_object())
+  end
+  self.v_callback = nil
+  self.v_btn_add = nil
+  self.v_btn_min = nil
+  self.v_txt_num = nil
+  self.v_callback_data = nil
+  self.v_num_calc_func = nil
+end
+
+function M:_check_values(change_value, fire_callback)
+  if change_value then
+    change_value = Math.Clamp(change_value, self.v_min_value, self.v_max_value)
+    if change_value == self.v_cur_value then
+      return
+    else
+      self.v_cur_value = change_value
+    end
+  else
+    self.v_cur_value = Math.Clamp(self.v_cur_value, self.v_min_value, self.v_max_value)
+  end
+  local value = self.v_cur_value
+  if self.v_num_calc_func then
+    value = self.v_num_calc_func(self.v_cur_value)
+  end
+  self.v_txt_num.text = value
+  if fire_callback then
+    Util.apply_callback(self.v_callback, self.v_callback_data, self.v_cur_value)
+  end
+end
+
+function M:_on_click_add()
+  local value = self.v_cur_value + self.v_step_value
+  self:_check_values(value, true)
+end
+
+function M:_on_click_min()
+  local value = self.v_cur_value - self.v_step_value
+  self:_check_values(value, true)
+end
+
+return M

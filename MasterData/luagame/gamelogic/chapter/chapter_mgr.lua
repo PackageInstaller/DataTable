@@ -1,0 +1,2339 @@
+local Base = require("gamelogic.base_system")
+local _tinsert = table.insert
+local M = Util.create_child_mt(Base)
+local LocalStorage = require("utils.localstorage")
+local CommonDefine = require("cs_share.common_define")
+local FightDefine = require("cs_share.fight_define")
+local VALUE_TYPE = CommonDefine.VALUE_TYPE
+local INFINITE_EFFECT_TYPE = CommonDefine.INFINITE_EFFECT_TYPE
+local TASK_CONFIG = require("gamelogic.task.task_config")
+local TASK_STATE = TASK_CONFIG.TASK_STATE
+local ActivityCfg = require("gamelogic.activity.activity_config")
+local ACTY_TYPE = CommonDefine.ACTY_TYPE
+local ACTY_TYPE_TO_SYSID = ActivityCfg.ACTY_TYPE_TO_SYSID
+local RANK_REFRESH_TIME = CommonDefine.RANK_REFRESH_TIME
+local RANK_NAME = CommonDefine.RANK_NAME
+local _os_time = os.time
+local EPISODE = {NONE = 0, COMPLETE = 1}
+local PREHEAT_TYPE = {NORMAL = 0, COUNT_DOWN = 1}
+local PREHEAT_GROUP_TYPE = {NORMAL = 1, COUNT_DOWN = 2}
+local SYSTEM_FIRST_OPEN_RED_KEY = "SYSTEM_FIRST_OPEN_RED_KEY"
+local SYSTEM_FIRST_OPEN_RED = {
+  [ACTY_TYPE_TO_SYSID[ACTY_TYPE.CUT_GRASS]] = SYSTEM_FIRST_OPEN_RED_KEY .. ACTY_TYPE.CUT_GRASS .. Global.player_uuid
+}
+
+function M:exit_tower()
+  self.v_long_chapter_record_node_map = nil
+  self.v_chapter_max_save_node_id = 0
+  self.v_long_chapter_record_node_index = nil
+end
+
+function M:init_sys()
+  Base.init_sys(self)
+  self:reset_data()
+  self:register_events()
+end
+
+function M:on_reconnect()
+  self:reset_data()
+end
+
+function M:reset_data()
+  self.v_lock_preheat_map = LocalStorage:load_table(Config.PREHEAT_RECORD_KEY, true) or {}
+  self.v_throw_id_dict = {}
+  self.v_chapter_node_data_dict = {}
+  self.v_chapter_node_data_map = {}
+  self.v_chapter_map = {}
+  self.v_material_map = {}
+  self.v_preheat_map = {}
+  self.v_preheat_group_map = {}
+  self.v_new_chapter_open_data = {}
+  self.v_all_new_chapter_open_data = {}
+  self.v_inf_chapter_map = {}
+  self.v_rank_request_time = 0
+  self.v_inf_chapter_rank = {}
+  self.v_episode_data = {}
+  self.v_episode_archives_info = {}
+  self.v_cur_infinite_id_list = {}
+  self.v_cut_grass_info = {}
+  self.v_cut_grass_epi_map = {}
+  self.v_long_chapter_record_node_map = nil
+  self.v_chapter_max_save_node_id = 0
+end
+
+function M:register_events()
+  Util.bind_msg(self, Const.MSG_NEW_SYS_OPEN, self.on_new_system_open, self)
+end
+
+function M:on_new_system_open(msg)
+  local sys_id = msg.mm_obj
+  local sys_red_key = SYSTEM_FIRST_OPEN_RED[sys_id]
+  if sys_red_key then
+    LocalStorage:save_int(sys_red_key, 1)
+  end
+end
+
+function M:is_system_first_red(acty_type)
+  local sys_id = ACTY_TYPE_TO_SYSID[acty_type]
+  local sys_red_key = SYSTEM_FIRST_OPEN_RED[sys_id]
+  if sys_red_key then
+    return LocalStorage:load_int(sys_red_key, 0) > 0
+  end
+end
+
+function M:on_enter_system(acty_type)
+  local sys_id = ACTY_TYPE_TO_SYSID[acty_type]
+  local sys_red_key = SYSTEM_FIRST_OPEN_RED[sys_id]
+  if sys_red_key then
+    return LocalStorage:save_int(sys_red_key, 0)
+  end
+end
+
+function M:on_ret_chapter_list(chapter_data)
+  self.v_chapter_map = {}
+  for key, data in pairs(chapter_data.chapter_list) do
+    self.v_chapter_map[data.id] = data
+  end
+  local newest_length = #chapter_data.chapter_list
+  self.v_new_chapter_open_data = self:load_local_new_chapter_open_data()
+  if UtilTable.hash_lenth(self.v_new_chapter_open_data) > 0 then
+    if newest_length > self.v_new_chapter_open_data.length then
+      local point_info = self:get_lastest_main_point_info()
+      if point_info then
+        self.v_new_chapter_open_data.new_chapter_id = point_info.chapter_id
+        self.v_new_chapter_open_data.is_new = 1
+        self.v_new_chapter_open_data.length = newest_length
+        self:save_local_new_chapter_open_data(self.v_new_chapter_open_data)
+      end
+    end
+  else
+    self.v_new_chapter_open_data = {
+      length = newest_length,
+      is_new = 0,
+      new_chapter_id = chapter_data.chapter_list[1].id
+    }
+    self:save_local_new_chapter_open_data(self.v_new_chapter_open_data)
+  end
+end
+
+function M:on_ret_material_list(material_data)
+  for key, data in pairs(material_data.material_list) do
+    self.v_material_map[data.id] = data
+  end
+end
+
+function M:get_material_max_floor_by_id(material_id)
+  local material_data = self.v_material_map[material_id]
+  if not material_data then
+    return
+  end
+  return material_data.history_max_floor
+end
+
+function M:on_episode_archives_info(data)
+  if not data then
+    return
+  end
+  for _, archives_id in pairs(data.episode_id_list) do
+    self.v_episode_archives_info[archives_id] = true
+  end
+end
+
+function M:on_add_episode_archives_id(data)
+  self.v_episode_archives_info[data.episode_id] = true
+end
+
+function M:on_del_episode_archives_id(data)
+  self.v_episode_archives_info[data.episode_id] = nil
+end
+
+function M:check_episode_archives_by_id(id)
+  return self.v_episode_archives_info[id]
+end
+
+function M:get_material_data_by_id(material_id)
+  local material_data = self.v_material_map[material_id]
+  if not material_data then
+    return
+  end
+  return material_data
+end
+
+function M:on_material_list_update(material_data)
+  for key, value in pairs(material_data.material_list) do
+    self.v_material_map[value.id] = value
+  end
+end
+
+function M:on_material_data_update(data)
+  self.v_material_map[data.material.id] = data.material
+end
+
+function M:on_material_expire(id)
+  local msg = MsgGame:mq_publish2(Const.MSG_CLOSE_MATERIAL)
+  msg.mm_obj = id
+end
+
+function M:on_material_chapter_update_floor(material_data)
+  local info = self.v_material_map[material_data.material_id]
+  if not info then
+    return
+  end
+  info.history_max_floor = material_data.history_max_floor
+  info.curr_pass_floor = material_data.curr_pass_floor
+end
+
+function M:get_mainline_max_floor_by_id(chapter_id, point_id)
+  local point_data = self:get_point_data_by_id(chapter_id, point_id)
+  if not point_data then
+    return 0
+  end
+  return point_data.history_max_floor
+end
+
+function M:check_episode_complete(point_id)
+  if self.v_episode_data[point_id] then
+    return self.v_episode_data[point_id]
+  end
+  for _, all_data in pairs(self.v_chapter_map) do
+    for key, episode in pairs(all_data.episode_list) do
+      if episode.complete_cnt > 0 then
+        self.v_episode_data[episode.id] = true
+        if episode.id == point_id then
+          return true
+        end
+      end
+    end
+  end
+  return false
+end
+
+function M:on_chapter_update(chapter_data)
+  local data = chapter_data.chapter
+  local last_episode_list = self.v_chapter_map[data.id] and self.v_chapter_map[data.id].episode_list
+  if not data.episode_list then
+    data.episode_list = last_episode_list
+  end
+  local show_chapter_map = self.v_chapter_map[data.id]
+  self.v_chapter_map[data.id] = data
+  MsgGame:mq_publish2(Const.MSG_ON_CHAPTER_UPDATE)
+  local newest_length = UtilTable.hash_lenth(self.v_chapter_map)
+  if newest_length > self.v_new_chapter_open_data.length then
+    local point_info = self:get_lastest_main_point_info()
+    if point_info then
+      self.v_new_chapter_open_data.new_chapter_id = point_info.chapter_id
+      self.v_new_chapter_open_data.is_new = 1
+      self.v_new_chapter_open_data.length = newest_length
+      self:save_local_new_chapter_open_data(self.v_new_chapter_open_data)
+    end
+  end
+end
+
+function M:update_chapter_point_data(data)
+  local chapter_data = self.v_chapter_map[data.chapter_id]
+  local new_point_data = data.episode
+  local point_list = chapter_data.episode_list
+  if not point_list then
+    return
+  end
+  for index, point_data in pairs(point_list) do
+    if point_data.id == new_point_data.id and point_data.chapter_id == new_point_data.chapter_id then
+      point_list[index] = new_point_data
+      break
+    end
+  end
+  MsgGame:mq_publish2(Const.MSG_ON_POINT_UPDATE)
+end
+
+function M:get_chapter_data_by_chapter_id(chapter_id)
+  return self.v_chapter_map[chapter_id]
+end
+
+function M:get_chapter_dp_by_chapter_id(chapter_id)
+  local chapter_data = self.v_chapter_map[chapter_id]
+  return chapter_data and chapter_data.dp or 0
+end
+
+function M:get_chapter_task_complete_num(chapter_id, group_id)
+  local chapter_cfg = ShareRes.get_chapter_cfg(chapter_id)
+  local task_group_id = chapter_cfg.TaskGroupId
+  local num, receive_num = 0, 0
+  local task_list = ShareRes.get_chapter_task_cfg(task_group_id)
+  for _, task_cfg in pairs(task_list) do
+    if not group_id or task_cfg.StageGroup == group_id then
+      local task_data = TaskMgr:get_task_by_id(task_cfg.Id)
+      if task_data then
+        if task_data.state ~= TASK_STATE.none then
+          num = num + 1
+          if task_data.state == TASK_STATE.receive then
+            receive_num = receive_num + 1
+          end
+        end
+      else
+        Log.Error("章节任务数据获取失败，任务id：", task_cfg.Id, "章节id：", chapter_id, "玩家id：", PlayerMgr:get_player_uid(), debug.traceback())
+      end
+    end
+  end
+  return num, receive_num
+end
+
+function M:check_no_first_suc_by_point_id(chapter_id, point_id)
+  local chapter_data = self.v_chapter_map[chapter_id]
+  if not chapter_data then
+    return true
+  end
+  local point_data = chapter_data.episode_list
+  if not point_data then
+    return true
+  end
+  for _, data in pairs(point_data) do
+    if data.id == point_id and data.complete_cnt > 0 then
+      return
+    end
+  end
+  return true
+end
+
+function M:get_point_data_by_id(chapter_id, point_id)
+  local chapter_data = self.v_chapter_map[chapter_id]
+  if not chapter_data then
+    return
+  end
+  local point_data = chapter_data.episode_list
+  if not point_data then
+    return
+  end
+  for _, data in pairs(point_data) do
+    if data.id == point_id then
+      return data
+    end
+  end
+end
+
+function M:get_hard_node_star_count_by_id(chapter_id, point_id)
+  local point_data = self:get_point_data_by_id(chapter_id, point_id)
+  if point_data then
+    return point_data.star_staing_state
+  else
+    return
+  end
+end
+
+function M:check_chapter_complete(chapter_id)
+  if not self.v_chapter_map[chapter_id] then
+    return
+  end
+  return self.v_chapter_map[chapter_id].complete
+end
+
+function M:get_fight_val()
+  return 10000
+end
+
+function M:buy_challenge_num(chapter_id, point_id)
+  Network:call("c2gs_buy_challenge_cnt", {chapter_id = chapter_id, episode_id = point_id}, function(ok, resp)
+    if ok then
+      Global.log.Debug("buy challenge ok")
+      Util.show_message_tip(2048)
+    end
+  end)
+end
+
+function M:request_reborn(hero_uuid, callback)
+  Network:call("c2gs_revive_single_hero", {uuid = hero_uuid}, function(ok, resp)
+    if ok then
+      Global.log.Debug("reborn ok, uuid = ", hero_uuid)
+      if TowerMgr then
+        local tower = TowerMgr:get_tower()
+        if tower then
+          tower:reborn_hero(hero_uuid)
+        end
+        if callback then
+          callback()
+        end
+      end
+      local msg = MsgGame:mq_publish2(Const.MSG_ON_HERO_REBORN_END)
+      msg.mm_x = hero_uuid
+    end
+  end)
+end
+
+function M:request_reborn_all(callback)
+  Network:call("c2gs_revive_heros", {}, function(ok, resp)
+    if ok then
+      if TowerMgr then
+        local tower = TowerMgr:get_tower()
+        if tower then
+          tower:reborn_all_hero()
+        end
+        if callback then
+          callback()
+        end
+      end
+      MsgGame:mq_publish2(Const.MSG_ON_ALL_HERO_REBORN_END)
+    end
+  end)
+end
+
+function M:request_archieve_reborn_all(callback)
+  local fight_type = TowerMgr:get_fight_type()
+  local proto_name = fight_type == CommonDefine.CHALLENGE_TYPE.LONG_CHAPTER and "c2gs_long_chapter_tp_revive_room" or "c2gs_tp_revive_room"
+  Network:call(proto_name, {}, function(ok, resp)
+    if ok then
+      Global.log.Debug("archieve reborn all ok")
+      if TowerMgr then
+        local tower = TowerMgr:get_tower()
+        if not tower then
+          return
+        end
+        resp.floor_idx = resp.floor_idx <= 0 and 1 or resp.floor_idx
+        resp.room_num = resp.room_num <= 0 and tower:get_start_room_num() or resp.room_num
+        resp.src_tp_dir = resp.src_tp_dir <= 0 and 0 or resp.src_tp_dir
+        tower:on_enter_archive(resp, nil, true)
+        if callback then
+          SceneMgr:reset_reversible_scene_timeline_dic()
+          callback()
+        end
+      end
+    end
+  end)
+end
+
+function M:tp_revive_room(resp)
+  if TowerMgr then
+    local tower = TowerMgr:get_tower()
+    if not tower then
+      return
+    end
+    resp.floor_idx = resp.floor_idx <= 0 and 1 or resp.floor_idx
+    resp.room_num = resp.room_num <= 0 and tower:get_start_room_num() or resp.room_num
+    resp.src_tp_dir = resp.src_tp_dir <= 0 and 0 or resp.src_tp_dir
+    tower:on_enter_archive(resp, function()
+      local scene_map = SceneMgr:get_scene_map()
+      if not scene_map then
+        return
+      end
+      local pos = scene_map:get_area_position(resp.pos_key)
+      local hero = Global.hero
+      if hero and SceneMgr:check_wall_collision(hero, pos.X, pos.Y, pos.Z) then
+        hero:set_pos(pos.X, pos.Y, pos.Z)
+      end
+    end)
+  end
+end
+
+function M:story_suc(chapter_id, point_id, node_id)
+  if node_id then
+    if not self:check_node_is_first_save_suc(node_id) then
+      return
+    end
+  else
+    local point_data = self:get_point_data_by_id(chapter_id, point_id)
+    if point_data.complete_cnt > 0 then
+      return
+    end
+  end
+  Network:call("c2gs_play_story", {chapter_id = chapter_id, episode_id = point_id}, function(ok, resp)
+    if ok then
+      Global.log.Debug("story ok")
+    end
+  end)
+end
+
+function M:get_dp_reward(chapter_id, dp_id, callback)
+  Network:call("c2gs_get_dp_award", {chapter_id = chapter_id, dp_id = dp_id}, function(ok, resp)
+    if ok then
+      local chapter_data = self.v_chapter_map[resp.chapter_id]
+      _tinsert(chapter_data.dp_list, resp.dp_id)
+      callback()
+      MsgGame:mq_publish2(Const.MSG_ON_TASK_UPDATE)
+    end
+  end)
+end
+
+function M:get_dp_reward_list(chapter_id, callback)
+  Network:call("c2gs_get_all_dp_award", {chapter_id = chapter_id}, function(ok, resp)
+    if ok then
+      local chapter_data = self.v_chapter_map[resp.chapter_id]
+      local dp_list = resp.dp_id_list
+      for _, dp_id in pairs(dp_list) do
+        _tinsert(chapter_data.dp_list, dp_id)
+      end
+      callback()
+      MsgGame:mq_publish2(Const.MSG_ON_TASK_UPDATE)
+    end
+  end)
+end
+
+function M:on_ret_inf_chapter_list(chapter_data)
+  for key, data in pairs(chapter_data.infinite_list) do
+    self.v_inf_chapter_map[data.id] = data
+  end
+  ChapterEndlessMgr:update_endless_award_bit(chapter_data.reward_bit)
+  ChapterEndlessMgr:update_unlock_entry_list(chapter_data.entry_list)
+  ChapterEndlessMgr:update_endless_end_time(chapter_data.end_time)
+end
+
+function M:on_inf_chapter_update(data)
+  local infinite = data.infinite
+  self.v_inf_chapter_map[infinite.id] = infinite
+  MsgGame:mq_publish2(Const.MSG_CHAPTER_INF_OPEN)
+end
+
+function M:on_inf_chapter_update_floor(data)
+  local info = self.v_inf_chapter_map[data.infinite_id]
+  if not info then
+    return
+  end
+  info.history_max_floor = data.history_max_floor
+  info.curr_pass_floor = data.curr_pass_floor
+end
+
+function M:get_inf_chapter_data(id)
+  return self.v_inf_chapter_map[id]
+end
+
+function M:get_inf_chapter_map()
+  return self.v_inf_chapter_map
+end
+
+function M:get_inf_chapter_count()
+  return UtilTable.hash_lenth(self.v_inf_chapter_map)
+end
+
+function M:get_inf_id_list()
+  local inf_id_list = {}
+  for _, data in pairs(self.v_inf_chapter_map) do
+    table.insert(inf_id_list, data.id)
+  end
+  return inf_id_list
+end
+
+function M:get_inf_single_red_point_state(infinite_id)
+  return self:get_inf_task_red_point_state(infinite_id) or self:get_inf_reward_red_point_state(infinite_id) or self:get_inf_chapter_new(infinite_id)
+end
+
+function M:get_inf_all_red_point_state()
+  local infinite_cfg_list = ShareRes.get_inf_chapter_cfg()
+  local new_infinite_cfg_list = {}
+  for _, infinite_cfg in pairs(infinite_cfg_list) do
+    _tinsert(new_infinite_cfg_list, infinite_cfg)
+  end
+  local red_point_is_show = false
+  for index, infinite_cfg in ipairs(new_infinite_cfg_list) do
+    local infinite_id = infinite_cfg.Id
+    local infinite_info = self:get_inf_chapter_data(infinite_id)
+    if infinite_info and not infinite_cfg.IsHide and self:get_inf_single_red_point_state(infinite_id) then
+      red_point_is_show = true
+      break
+    end
+  end
+  return red_point_is_show
+end
+
+function M:get_inf_num_by_inf_episode(episode_id)
+  local infinite_cfg_list = ShareRes.get_inf_chapter_cfg()
+  local temp = {}
+  for _, cfg in pairs(infinite_cfg_list) do
+    table.insert(temp, cfg)
+  end
+  table.sort(temp, function(a, b)
+    local a_cfg = ShareRes.get_inf_chapter_cfg(a.Id)
+    local b_cfg = ShareRes.get_inf_chapter_cfg(b.Id)
+    if a_cfg.Priority == b_cfg.Priority then
+      return a_cfg.Id < b_cfg.Id
+    else
+      return a_cfg.Priority > b_cfg.Priority
+    end
+  end)
+  for index, cfg in ipairs(temp) do
+    if episode_id == cfg.EpisodeId then
+      return index
+    end
+  end
+  return 1
+end
+
+function M:get_inf_history_max_floor(id)
+  local data = self.v_inf_chapter_map[id]
+  if not data then
+    return
+  end
+  return data.history_max_floor
+end
+
+function M:get_inf_cfg_max_floor(id)
+  local infinite_cfg = ShareRes.get_inf_chapter_cfg(id)
+  if not infinite_cfg then
+    return
+  end
+  local chapter_point_cfg = ShareRes.create("chapter.chapter_point", infinite_cfg.EpisodeId)
+  local tower_cfg = ShareRes.create("tower.tower", chapter_point_cfg.FightId)
+  local floor_group = tower_cfg.FloorGroup
+  local temp_group = floor_group[#floor_group]
+  return temp_group[#temp_group]
+end
+
+function M:get_inf_task_cfg_list(infinite_id)
+  local infinite_cfg = ShareRes.get_inf_chapter_cfg(infinite_id)
+  local list = ShareRes.get_task_group(infinite_cfg.TaskGroup)
+  local task_list = {}
+  for k, v in pairs(list) do
+    table.insert(task_list, v)
+  end
+  table.sort(task_list, function(a, b)
+    if a.Priority == b.Priority then
+      return a.Id < b.Id
+    else
+      return a.Priority > b.Priority
+    end
+  end)
+  return task_list
+end
+
+function M:get_inf_task_red_point_state(infinite_id)
+  local task_list = self:get_inf_task_cfg_list(infinite_id)
+  local red_point_is_show = false
+  for _, task_cfg in ipairs(task_list) do
+    local task_state = TaskMgr:get_task_state(task_cfg.Id)
+    if task_state == TASK_STATE.receive then
+      red_point_is_show = true
+      break
+    end
+  end
+  return red_point_is_show
+end
+
+function M:get_cur_infinite_id_list()
+  return self.v_cur_infinite_id_list
+end
+
+function M:on_battle_infinite_privilege(data)
+  if data.privilege_ids and next(data.privilege_ids) then
+    self.v_cur_infinite_id_list = data.privilege_ids
+  else
+    self.v_cur_infinite_id_list = {}
+  end
+  if data.privilege_ids and next(data.privilege_ids) then
+    self.v_hero_attr_list = {}
+    self.v_god_attr_list = {}
+    self.v_hero_magic_list = {}
+    self.v_god_magic_list = {}
+    self.v_currency_add_list = {}
+    for _, id in pairs(data.privilege_ids) do
+      local infinite_privilege_cfg = ShareRes.create("chapter.infinite_privilege", id)
+      assert(infinite_privilege_cfg, "配置表chapter.infinite_privilege中的id不存在, 缺失的id为：" .. id)
+      for index, type in pairs(infinite_privilege_cfg.EffectType) do
+        if 0 ~= type and type ~= INFINITE_EFFECT_TYPE.CURRENCY_ADD then
+          if type == INFINITE_EFFECT_TYPE.HERO_ATTR then
+            for _, param in pairs(infinite_privilege_cfg.EffectParam[index]) do
+              local attr_id = param[1]
+              local attr_val = param[2]
+              local val_type = param[3]
+              local attr = self.v_hero_attr_list[attr_id]
+              if not attr then
+                attr = FightDefine.init_single_attr()
+                self.v_hero_attr_list[attr_id] = attr
+              end
+              if val_type == VALUE_TYPE.FIXED then
+                attr.FIXED = attr.FIXED + attr_val
+              else
+                attr.RATIO = attr.RATIO + attr_val
+              end
+            end
+          elseif type == INFINITE_EFFECT_TYPE.GOD_ATTR then
+            for _, param in pairs(infinite_privilege_cfg.EffectParam[index]) do
+              local attr_id = param[1]
+              local attr_val = param[2]
+              local val_type = param[3]
+              local attr = self.v_god_attr_list[attr_id]
+              if not attr then
+                attr = FightDefine.init_single_attr()
+                self.v_god_attr_list[attr_id] = attr
+              end
+              if val_type == VALUE_TYPE.FIXED then
+                attr.FIXED = attr.FIXED + attr_val
+              else
+                attr.RATIO = attr.RATIO + attr_val
+              end
+            end
+          elseif type == INFINITE_EFFECT_TYPE.HERO_MAGIC then
+            for _, magic_id in pairs(infinite_privilege_cfg.EffectParam[index]) do
+              if not self.v_hero_magic_list[magic_id] then
+                self.v_hero_magic_list[magic_id] = magic_id
+              end
+            end
+          elseif type == INFINITE_EFFECT_TYPE.GOD_MAGIC then
+            for _, magic_id in pairs(infinite_privilege_cfg.EffectParam[index]) do
+              if not self.v_god_magic_list[magic_id] then
+                self.v_god_magic_list[magic_id] = magic_id
+              end
+            end
+          end
+        elseif type == INFINITE_EFFECT_TYPE.CURRENCY_ADD then
+          local param = infinite_privilege_cfg.EffectParam[index]
+          local item_id = param[1]
+          local attr_value = param[2]
+          self.v_currency_add_list[item_id] = self.v_currency_add_list[item_id] or 0
+          self.v_currency_add_list[item_id] = self.v_currency_add_list[item_id] + attr_value
+        end
+      end
+    end
+  end
+end
+
+function M:get_hero_attr_list()
+  return self.v_hero_attr_list
+end
+
+function M:get_god_attr_list()
+  return self.v_god_attr_list
+end
+
+function M:get_hero_magic_list()
+  return self.v_hero_magic_list
+end
+
+function M:get_god_magic_list()
+  return self.v_god_magic_list
+end
+
+function M:get_currency_add_list()
+  return self.v_currency_add_list
+end
+
+function M:reset_inf_privilege_data()
+  self.v_hero_attr_list = nil
+  self.v_god_attr_list = nil
+  self.v_hero_magic_list = nil
+  self.v_god_magic_list = nil
+  self.v_currency_add_list = nil
+end
+
+function M:get_inf_privilege_node_cfg_list(infinite_id)
+  local infinite_privilege_cfg = ShareRes.create("chapter.infinite_privilege")
+  local infinite_cfg = ShareRes.get_inf_chapter_cfg(infinite_id)
+  assert(infinite_cfg, "获取infinite_privilege出错，数据为空，infinit_id为：" .. infinite_id)
+  local privilege_node_cfg_list = {}
+  for _, cfg in pairs(infinite_privilege_cfg) do
+    if cfg.GroupId == infinite_cfg.PrivilegeGroup then
+      table.insert(privilege_node_cfg_list, cfg)
+    end
+  end
+  table.sort(privilege_node_cfg_list, function(a, b)
+    return a.Id < b.Id
+  end)
+  return privilege_node_cfg_list
+end
+
+function M:get_inf_privilege_group_len(infinite_id)
+  local privilege_node_cfg_list = self:get_inf_privilege_node_cfg_list(infinite_id)
+  return #privilege_node_cfg_list
+end
+
+function M:update_inf_privilege_unlock_id(infinite_id, privilege_id)
+  local infinite_info = self:get_inf_chapter_data(infinite_id)
+  if not infinite_info then
+    return
+  end
+  if infinite_info.privilege_ids then
+    _tinsert(infinite_info.privilege_ids, privilege_id)
+  end
+end
+
+function M:get_inf_privilege_unlock_count(infinite_id)
+  local infinite_info = self:get_inf_chapter_data(infinite_id)
+  if not infinite_info then
+    return
+  end
+  if infinite_info.privilege_ids and next(infinite_info.privilege_ids) then
+    return UtilTable.hash_lenth(infinite_info.privilege_ids)
+  else
+    return 0
+  end
+end
+
+function M:inf_privilege_current_node_is_unlock(infinite_id, privilege_id)
+  local infinite_info = self:get_inf_chapter_data(infinite_id)
+  local is_unlock = false
+  if infinite_info.privilege_ids and next(infinite_info.privilege_ids) then
+    for _, id in pairs(infinite_info.privilege_ids) do
+      if id == privilege_id then
+        is_unlock = true
+        break
+      end
+    end
+  else
+    is_unlock = false
+  end
+  return is_unlock
+end
+
+function M:inf_privilege_pre_node_is_unlock(infinite_id, privilege_node_cfg)
+  local infinite_info = self:get_inf_chapter_data(infinite_id)
+  local privilege_ids = {}
+  if infinite_info.privilege_ids and next(infinite_info.privilege_ids) then
+    for _, id in pairs(infinite_info.privilege_ids) do
+      privilege_ids[id] = id
+    end
+  end
+  local pre_id_list = privilege_node_cfg.PreId
+  if pre_id_list and next(pre_id_list) == nil then
+    return true
+  else
+    local condition1_is_unlock = true
+    local condition2_is_unlock = true
+    if pre_id_list[1] and next(pre_id_list[1]) then
+      for _, id in pairs(pre_id_list[1]) do
+        if nil == privilege_ids[id] then
+          condition1_is_unlock = false
+          break
+        end
+      end
+    else
+      condition1_is_unlock = false
+    end
+    if pre_id_list[2] and next(pre_id_list[2]) then
+      for _, id in pairs(pre_id_list[2]) do
+        if nil == privilege_ids[id] then
+          condition2_is_unlock = false
+          break
+        end
+      end
+    else
+      condition2_is_unlock = false
+    end
+    return condition1_is_unlock or condition2_is_unlock
+  end
+end
+
+function M:get_inf_privilege_red_point_state(infinite_id)
+  local privilege_node_cfg_list = self:get_inf_privilege_node_cfg_list(infinite_id)
+  local infinite_cfg = ShareRes.get_inf_chapter_cfg(infinite_id)
+  local red_point_is_show = false
+  for _, cfg in ipairs(privilege_node_cfg_list) do
+    if BagMgr:get_item_num(infinite_cfg.PrivilegeCostId) >= cfg.CostCnt and not self:inf_privilege_current_node_is_unlock(infinite_id, cfg.Id) and self:inf_privilege_pre_node_is_unlock(infinite_id, cfg) and self:get_inf_privilege_unlock_count(infinite_id) < self:get_inf_privilege_group_len(infinite_id) then
+      red_point_is_show = true
+    end
+  end
+  return red_point_is_show
+end
+
+function M:remove_inf_reward_lv(infinite_id, remove_lv_list)
+  local infinite_info = self:get_inf_chapter_data(infinite_id)
+  local infinite_award_ids = infinite_info.addition_award_ids
+  if not infinite_award_ids or next(infinite_award_ids) == nil then
+    return
+  end
+  for index, award_lv in pairs(infinite_award_ids) do
+    for _, remove_lv in pairs(remove_lv_list) do
+      if award_lv == remove_lv then
+        infinite_award_ids[index] = nil
+      end
+    end
+  end
+end
+
+function M:on_update_infinite_award_info(data)
+  local infinite_info = self:get_inf_chapter_data(data.id)
+  if not infinite_info then
+    return
+  end
+  infinite_info.addition_award_lv = data.new_lv
+  for _, level in pairs(data.new_award_lv) do
+    _tinsert(infinite_info.addition_award_ids, level)
+  end
+end
+
+function M:get_inf_award_group_cfg_list(infinite_id)
+  local infinite_cfg = ShareRes.get_inf_chapter_cfg(infinite_id)
+  local award_group_cfg_list = {}
+  local group_cfg = ShareRes.create("chapter.infinite_addition_award", infinite_cfg.AdditionAwardGroup)
+  for _, cfg in pairs(group_cfg) do
+    _tinsert(award_group_cfg_list, cfg)
+  end
+  table.sort(award_group_cfg_list, function(a, b)
+    return a.Level < b.Level
+  end)
+  return award_group_cfg_list
+end
+
+function M:get_inf_reward_red_point_state(infinite_id)
+  local infinite_cfg = ShareRes.get_inf_chapter_cfg(infinite_id)
+  local infinite_info = self:get_inf_chapter_data(infinite_id)
+  local award_group_cfg_list = self:get_inf_award_group_cfg_list(infinite_id)
+  local can_receive_award_ids = infinite_info.addition_award_ids
+  local current_lv = infinite_info.addition_award_lv or 0
+  local next_lv_cfg = award_group_cfg_list[current_lv + 1]
+  if nil == next_lv_cfg then
+    next_lv_cfg = award_group_cfg_list[current_lv]
+  end
+  local now_exp = BagMgr:get_item_num(infinite_cfg.CostId)
+  local max_exp = next_lv_cfg.CostCnt
+  local red_point_is_show = false
+  if can_receive_award_ids then
+    if next(can_receive_award_ids) or now_exp >= max_exp then
+      red_point_is_show = true
+    else
+      red_point_is_show = false
+    end
+  else
+    red_point_is_show = false
+  end
+  return red_point_is_show
+end
+
+function M:get_inf_chapter_new(id)
+  local data = self.v_inf_chapter_map[id]
+  if not data then
+    return false
+  end
+  return data.new
+end
+
+function M:remove_infinite_new_mask(id)
+  local data = self.v_inf_chapter_map[id]
+  if not data then
+    return false
+  end
+  Network:call("c2gs_remove_infinite_new_mask", {infinite_id = id})
+  data.new = false
+  MsgGame:mq_publish2(Const.MSG_CHAPTER_INF_OPEN)
+end
+
+function M:on_update_infinite_rank_data(data)
+  self.v_inf_chapter_rank[data.rank_list.rank_name] = data.rank_list
+end
+
+function M:request_inf_chapter_rank()
+  local rank_name = RANK_NAME.INFINITE_SCORE .. "-1"
+  if self.v_inf_chapter_rank[rank_name] and self.v_rank_request_time > _os_time() then
+    local msg = MsgGame:mq_publish2(Const.MSG_CHAPTER_RANK_UPDATE)
+    msg.mm_x = self.v_inf_chapter_rank[rank_name]
+    return
+  end
+  local rank_batch_list = {}
+  local inf_id_list = self:get_inf_id_list()
+  for _, inf_id in pairs(inf_id_list) do
+    local infinite_cfg = ShareRes.get_inf_chapter_cfg(inf_id)
+    local param = {}
+    param.rank_name = RANK_NAME.INFINITE_SCORE .. "-1"
+    param.count = infinite_cfg.rankNum
+    table.insert(rank_batch_list, param)
+  end
+  Network:call("c2gs_get_rank_batch_list", {rank_batch_list = rank_batch_list}, function(ok, resp)
+    if 0 == resp.errcode then
+      local msg = MsgGame:mq_publish2(Const.MSG_CHAPTER_RANK_UPDATE)
+      msg.mm_x = self.v_inf_chapter_rank[rank_name]
+    end
+  end)
+  self.v_rank_request_time = _os_time() + RANK_REFRESH_TIME[RANK_NAME.INFINITE_SCORE]
+end
+
+function M:set_continue_fight_time(fight_time)
+  if fight_time and fight_time > 0 then
+    FightDataMgr:start_fight_timer(fight_time)
+    local ui = UIMgr:try_get_visible_ui("gecao_battle")
+    if not ui then
+      UIMgr:get_ui("gecao_battle"):ui_show(nil, fight_time, true)
+    end
+  end
+end
+
+function M:check_material_open(material_id)
+  local material_cfg = ShareRes.get_chapter_material_cfg(material_id)
+  assert(material_cfg, "material error = " .. material_id)
+  local NUM_WEEK_CHINESE = {
+    "周一开放",
+    "周二开放",
+    "周三开放",
+    "周四开放",
+    "周五开放",
+    "周六开放",
+    "周日开放"
+  }
+  local tip = "暂未开启"
+  if not Condition:check_condition(material_cfg.Condition) and 0 ~= material_cfg.Condition then
+    tip = ShareRes.create("condition.condition", material_cfg.Condition).Desc
+    return false, tip
+  end
+  local material_data = self:get_material_data_by_id(material_id)
+  if not material_data then
+    if material_cfg.OpenDay then
+      tip = ""
+      for index, day in ipairs(material_cfg.OpenDay) do
+        tip = tip .. NUM_WEEK_CHINESE[day]
+      end
+    end
+    return false, tip
+  end
+  return true
+end
+
+function M:get_floor_num(point_id, node_id)
+  local point_cfg = ShareRes.get_chapter_point_cfg(point_id)
+  if not point_cfg then
+    return
+  end
+  local floor_num = 1
+  local tower = TowerMgr:get_tower()
+  if tower then
+    local cache_floor_num = tower:get_temp_formation_data()
+    if not cache_floor_num then
+      floor_num = tower:get_floor_num()
+    end
+  elseif node_id then
+    local node_cfg = ShareRes.get_chapter_node_cfg(node_id)
+    if node_cfg then
+      floor_num = node_cfg.FloorId
+    end
+  end
+  return floor_num
+end
+
+function M:get_floor_cfg(point_id, node_id, floor_num)
+  local point_cfg = ShareRes.get_chapter_point_cfg(point_id)
+  if not point_cfg then
+    return
+  end
+  local tower = TowerMgr:get_tower()
+  local floor_cfg
+  if not floor_num then
+    local node_cfg = ShareRes.get_chapter_node_cfg(node_id)
+    if tower then
+      floor_num = tower:get_temp_formation_data()
+      if floor_num then
+        floor_num = node_cfg.FloorId
+      else
+        local floor_id = tower:get_cur_floor_id()
+        floor_cfg = ShareRes.get_floor_cfg(floor_id)
+      end
+    elseif node_cfg then
+      floor_num = node_cfg.FloorId
+    end
+  end
+  if floor_num then
+    floor_cfg = ShareRes.get_floor_cfg_by_tower_id(point_cfg.FightId, floor_num)
+  end
+  return floor_cfg
+end
+
+function M:get_cur_fight_index(chapter_id)
+  local chapter_cfg = ShareRes.get_chapter_cfg(chapter_id)
+  Util.assert(chapter_cfg, "chapter_cfg error = " .. chapter_id)
+  local point_data = chapter_cfg.Point
+  for index, point_id in ipairs(point_data) do
+    if 0 ~= point_id and self:check_no_first_suc_by_point_id(chapter_id, point_id) then
+      return index
+    end
+  end
+end
+
+function M:get_lastest_main_chapter_id()
+  local max_id
+  for id, data in pairs(self.v_chapter_map) do
+    local cfg = ShareRes.get_chapter_cfg(id)
+    if cfg and cfg.ChapterMode == Config.Chapter_Mode.NORMAL then
+      if nil == max_id then
+        max_id = id
+      elseif id > max_id then
+        max_id = id
+      end
+    end
+  end
+  if not max_id then
+    return
+  end
+  return max_id
+end
+
+function M:get_mainline_chapter_id()
+  local max_id
+  for id, data in pairs(self.v_chapter_map) do
+    local cfg = ShareRes.get_chapter_cfg(id)
+    if cfg and cfg.ChapterPage == Config.Chapter_Mode.NORMAL and cfg.ChapterMode == Config.Chapter_Mode.NORMAL and not Util.is_true(cfg.ShowOff) and not Util.is_more_than_zero(cfg.OriginalChapter) then
+      if nil == max_id then
+        max_id = id
+      elseif id > max_id then
+        max_id = id
+      end
+    end
+  end
+  if not max_id then
+    local temp = {}
+    for id, data in pairs(self.v_chapter_map) do
+      temp[#temp + 1] = id .. tostring(data.complete == true)
+    end
+    Log.Error("获取最新章节失败， 将默认使用第一章， chapter_map", table.concat(temp, ","), debug.traceback())
+    return 10011
+  end
+  return max_id
+end
+
+function M:get_lastest_main_point_info()
+  local max_id
+  for id, data in pairs(self.v_chapter_map) do
+    local cfg = ShareRes.get_chapter_cfg(id)
+    if cfg and cfg.ChapterPage == Config.Chapter_Mode.NORMAL and cfg.ChapterMode == Config.Chapter_Mode.NORMAL and not Util.is_more_than_zero(cfg.OriginalChapter) and self:get_chapter_open_by_time(cfg) then
+      if nil == max_id then
+        max_id = id
+      elseif id > max_id then
+        max_id = id
+      end
+    end
+  end
+  if not max_id then
+    return
+  end
+  return self:get_chapter_newst_point_data(max_id)
+end
+
+function M:get_chapter_newst_point_data(chapter_id)
+  if not self.v_chapter_map[chapter_id] then
+    return
+  end
+  local temp_map = {}
+  for k, data in pairs(self.v_chapter_map[chapter_id].episode_list) do
+    _tinsert(temp_map, data)
+  end
+  table.sort(temp_map, function(a, b)
+    return a.id < b.id
+  end)
+  for i, data in ipairs(temp_map) do
+    if data.complete_cnt == EPISODE.NONE then
+      return data
+    end
+  end
+  return temp_map[#temp_map]
+end
+
+function M:get_newest_node_info()
+  local point_data = self:get_lastest_main_point_info()
+  if point_data then
+    return self:get_cur_chapter_newest_node_info(point_data.id, point_data.chapter_id)
+  end
+end
+
+function M:get_cur_chapter_newest_node_info(point_id, chapter_id)
+  local node_cfg_list = ShareRes.get_chapter_all_node_id_by_point_id(point_id)
+  if not node_cfg_list then
+    return
+  end
+  local temp_list = self:get_chapter_node_data_list(chapter_id)
+  if temp_list then
+    local last_main_line_node_cfg
+    for index = #temp_list, 1, -1 do
+      local node_cfg = node_cfg_list[temp_list[index].node_id]
+      if node_cfg and node_cfg.NodeType ~= CommonDefine.CHAPTER_NODE_TYPE.BRANCH_LINE then
+        if temp_list[index].state == CommonDefine.CHAPTER_NODE_STATE.UNLOCK then
+          return node_cfg
+        end
+        last_main_line_node_cfg = last_main_line_node_cfg or node_cfg
+      end
+    end
+    return last_main_line_node_cfg, true
+  else
+    local all_node_list = ShareRes.create("chapter.chapter_episode_node")
+    local node_list = all_node_list[point_id]
+    if node_list and node_list[1] then
+      return node_list[1]
+    else
+      Log.Error("章节无节点信息, 章节Id为", point_id)
+    end
+  end
+end
+
+function M:load_local_new_chapter_open_data()
+  self.v_all_new_chapter_open_data = LocalStorage:load_table(Config.NEW_CHAPTER_OPEN_KEY) or {}
+  return self.v_all_new_chapter_open_data[Global.player_uuid] or {}
+end
+
+function M:save_local_new_chapter_open_data(data)
+  self.v_all_new_chapter_open_data[Global.player_uuid] = data
+  LocalStorage:save_table(Config.NEW_CHAPTER_OPEN_KEY, self.v_all_new_chapter_open_data)
+end
+
+function M:get_new_chapter_open_data()
+  return self.v_new_chapter_open_data
+end
+
+function M:get_chapter_num_by_episode(episode_id)
+  local serial_num = "1"
+  local chapter_cfg_list = ShareRes.get_chapter_cfg()
+  local have_found = false
+  for _, cfg in pairs(chapter_cfg_list) do
+    for _, id in pairs(cfg.Point) do
+      if episode_id == id then
+        serial_num = cfg.SerialNum
+        have_found = true
+        break
+      end
+    end
+    if have_found then
+      break
+    end
+  end
+  return serial_num
+end
+
+function M:get_chapter_by_episode(episode_id)
+  local chapter_cfg_list = ShareRes.get_chapter_cfg()
+  for _, cfg in pairs(chapter_cfg_list) do
+    for _, id in pairs(cfg.Point) do
+      if episode_id == id then
+        return cfg
+      end
+    end
+  end
+end
+
+function M:get_cut_grass_epi_data_by_id(id)
+  return self.v_cut_grass_epi_map[id]
+end
+
+function M:get_cut_grass_star_num()
+  return self.v_cut_grass_info.star_num
+end
+
+function M:get_cut_grass_epi_star_num(id)
+  local num = 0
+  for key, value in pairs(self.v_cut_grass_epi_map[id].condition_list) do
+    if value.is_finish then
+      num = num + 1
+    end
+  end
+  return num
+end
+
+function M:is_cut_grass_epi_task_finish(id, index)
+  local condition_list = self.v_cut_grass_epi_map[id].condition_list
+  if not condition_list then
+    return false
+  end
+  for key, value in pairs(condition_list) do
+    if index == value.condition_id and value.is_finish then
+      return true
+    end
+  end
+  return false
+end
+
+function M:is_cut_grass_star_box_can_get(star)
+  for key, value in pairs(self.v_cut_grass_info.star_box_list) do
+    if value == star then
+      return 2
+    end
+  end
+  if star <= self.v_cut_grass_info.star_num then
+    return 1
+  else
+    return 0
+  end
+end
+
+function M:get_cut_grass_epi_name_by_id(id)
+  local chapter_cfg = ShareRes.get_gecao_cfg(id)
+  return chapter_cfg.Name
+end
+
+function M:on_ret_cut_grass_epi_list(data)
+  self.v_cut_grass_info = data
+  for key, value in pairs(data.cut_grass_list) do
+    self.v_cut_grass_epi_map[value.cut_grass_id] = value
+  end
+end
+
+function M:on_ret_cut_grass_epi_data(data)
+  self.v_cut_grass_epi_map[data.cut_grass_data.cut_grass_id] = data.cut_grass_data
+  self.v_cut_grass_info.star_num = data.star_num
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_GECAO_EPI_NET_UPDATE)
+  msg.mm_obj = data.cut_grass_id
+end
+
+function M:update_cut_grass_box_data(box_list)
+  self.v_cut_grass_info.star_box_list = box_list
+end
+
+function M:get_reserve_red_point_state()
+  local cfg_list = ShareRes.get_gecao_award_cfg()
+  for key, value in pairs(cfg_list) do
+    local award_state = self:is_cut_grass_star_box_can_get(key)
+    if 1 == award_state then
+      return true
+    end
+  end
+  local have_first_open_red = self:is_system_first_red(ACTY_TYPE.CUT_GRASS)
+  return have_first_open_red
+end
+
+function M:on_chapter_collection_list(data)
+  self.v_chapter_collection_map = {}
+  for key, value in pairs(data.collection_list) do
+    self.v_chapter_collection_map[value.id] = value
+  end
+end
+
+function M:on_chapter_collection_data(data)
+  self.v_chapter_collection_map = self.v_chapter_collection_map or {}
+  self.v_chapter_collection_map[data.collection_data.id] = data.collection_data
+end
+
+function M:get_chapter_collection_net_data(id)
+  if not self.v_chapter_collection_map then
+    return nil
+  end
+  return self.v_chapter_collection_map[id]
+end
+
+function M:get_chapter_collections_count()
+  return self.v_chapter_collection_map and UtilTable.hash_lenth(self.v_chapter_collection_map) or 0
+end
+
+function M:get_all_collections_count()
+  local collection_cfg = ShareRes.get_chapter_collection_cfg()
+  local count = 0
+  for key, value in pairs(collection_cfg) do
+    count = count + UtilTable.hash_lenth(value.CollectionIds)
+  end
+  return count
+end
+
+function M:is_chapter_collection_red()
+  if not self.v_chapter_collection_map then
+    return false
+  end
+  local have_red = false
+  for key, value in pairs(self.v_chapter_collection_map) do
+    have_red = have_red or value.red_status
+  end
+  return have_red
+end
+
+function M:reset_all_collection_red()
+  if not self.v_chapter_collection_map then
+    return
+  end
+  for key, value in pairs(self.v_chapter_collection_map) do
+    value.red_status = false
+  end
+end
+
+function M:click_collection_item(id, call_back)
+  Network:call("c2gs_click_collection_id", {collection_id = id}, function()
+    if call_back then
+      call_back()
+    end
+  end)
+end
+
+function M:clear_collection_red()
+  Network:call("c2gs_sign_out_collection_ui", {}, nil)
+end
+
+function M:_check_point_state(point_data, point_cfg)
+  if not point_data then
+    return CommonDefine.CHAPTER_NODE_STATE.LOCK, "关卡信息缺失"
+  end
+  if point_data.complete_cnt > 0 then
+    return CommonDefine.CHAPTER_NODE_STATE.FINISHED
+  else
+    return CommonDefine.CHAPTER_NODE_STATE.UNLOCK, "请通关前置关卡" .. point_cfg.SerialNum
+  end
+end
+
+function M:get_chapter_point_state(chapter_id, point_id)
+  local point_cfg = ShareRes.get_chapter_point_cfg(point_id)
+  local point_data = self:get_point_data_by_id(chapter_id, point_id)
+  if not point_data then
+    local chapter_cfg = ShareRes.get_chapter_cfg(chapter_id)
+    local hard_chapter_id = chapter_cfg and chapter_cfg.DifficultyChapter
+    if hard_chapter_id then
+      point_data = self:get_point_data_by_id(hard_chapter_id, point_id)
+    end
+  end
+  if point_cfg.Condition and point_cfg.Condition > 0 then
+    if 0 ~= Condition:check_condition_list(point_cfg.Condition) then
+      local con_cfg = ShareRes.create("condition.condition", self.v_node_cfg.Condition)
+      return CommonDefine.CHAPTER_NODE_STATE.LOCK, con_cfg.Desc
+    else
+      return self:_check_point_state(point_data, point_cfg)
+    end
+  end
+  local FrontPointId = point_cfg.FrontPointId
+  if FrontPointId > 0 then
+    local front_point_data = self:get_point_data_by_id(chapter_id, FrontPointId)
+    if not point_data then
+      return CommonDefine.CHAPTER_NODE_STATE.LOCK, "无关卡数据"
+    elseif point_data.complete_cnt > 0 then
+      return CommonDefine.CHAPTER_NODE_STATE.FINISHED
+    elseif front_point_data.complete_cnt > 0 then
+      return CommonDefine.CHAPTER_NODE_STATE.UNLOCK
+    else
+      return CommonDefine.CHAPTER_NODE_STATE.LOCK, "请通关前置关卡" .. point_cfg.SerialNum
+    end
+  end
+  return self:_check_point_state(point_data, point_cfg)
+end
+
+function M:update_node_list(data)
+  self.v_chapter_node_data_dict = {}
+  self.v_chapter_node_data_map = {}
+  local node_data_list = data.nodes
+  for key, node_data in pairs(node_data_list) do
+    local chapter_id = self:get_chapter_by_node_id(node_data.node_id).Id
+    self:add_node_to_data_container(chapter_id, node_data)
+  end
+end
+
+function M:update_node_state(data)
+  local node_data_list = data.nodes
+  local chapter_id_dict = {}
+  for key, node_data in pairs(node_data_list) do
+    local cur_node_data = self.v_chapter_node_data_map[node_data.node_id]
+    if cur_node_data then
+      if cur_node_data.state ~= node_data.state and node_data.state == CommonDefine.CHAPTER_NODE_STATE.FINISHED then
+        self:update_container_node_data(node_data)
+        local msg = MsgGame:mq_publish2(Const.MSG_CHAPTER_NODE_COMPLETE)
+        msg.mm_obj = node_data
+      end
+    else
+      local chapter_id = self:get_chapter_by_node_id(node_data.node_id).Id
+      self:add_node_to_data_container(chapter_id, node_data)
+      chapter_id_dict[chapter_id] = chapter_id
+      local msg = MsgGame:mq_publish2(Const.MSG_CHAPTER_NODE_UNLOCK)
+      msg.mm_obj = node_data
+    end
+  end
+end
+
+function M:add_node_to_data_container(chapter_id, node_data)
+  if not self.v_chapter_node_data_dict[chapter_id] then
+    self.v_chapter_node_data_dict[chapter_id] = {}
+  end
+  self.v_chapter_node_data_dict[chapter_id][node_data.node_id] = node_data
+  local curr_node_data = self.v_chapter_node_data_map[node_data.node_id]
+  if curr_node_data and curr_node_data.state ~= node_data.state and node_data.state == CommonDefine.CHAPTER_NODE_STATE.FINISHED then
+    local msg = MsgGame:mq_publish2(Const.MSG_CHAPTER_NODE_COMPLETE)
+    msg.mm_obj = node_data
+  end
+  self.v_chapter_node_data_map[node_data.node_id] = node_data
+end
+
+function M:update_container_node_data(new_node_data)
+  local cur_node_data = self.v_chapter_node_data_map[new_node_data.node_id]
+  for key, data in pairs(new_node_data) do
+    cur_node_data[key] = data
+  end
+end
+
+function M:get_chapter_node_data_dict(chapter_id)
+  return self.v_chapter_node_data_dict[chapter_id]
+end
+
+function M:get_chapter_node_data_list(chapter_id)
+  if not self.v_chapter_node_data_dict[chapter_id] then
+    return
+  end
+  return UtilTable.map2list(self.v_chapter_node_data_dict[chapter_id], function(a, b)
+    if a.node_id ~= b.node_id then
+      return a.node_id < b.node_id
+    else
+      return false
+    end
+  end)
+end
+
+function M:get_node_data(node_id)
+  local chapter_cfg, point_cfg, node_cfg = self:get_chapter_by_node_id(node_id)
+  local node_data = {
+    chapter_id = chapter_cfg.Id,
+    state = self:get_node_state(chapter_cfg.Id, node_id),
+    node_id = node_id,
+    node_cfg = node_cfg
+  }
+  return node_data
+end
+
+function M:get_first_node_state(chapter_id, node_id)
+  chapter_id = chapter_id or self:get_chapter_by_node_id(node_id).Id
+  local chapter_cfg = ShareRes.get_chapter_cfg(chapter_id)
+  if not chapter_cfg then
+    Log.Error("未找到章节配置，章节:", chapter_id, "节点:", node_id, debug.traceback())
+    return
+  end
+  if 0 ~= Condition:check_condition_list(chapter_cfg.Condition) then
+    return CommonDefine.CHAPTER_NODE_STATE.LOCK
+  else
+    return CommonDefine.CHAPTER_NODE_STATE.UNLOCK
+  end
+end
+
+function M:get_node_state(chapter_id, node_id)
+  if self.v_chapter_node_data_map[node_id] then
+    return self.v_chapter_node_data_map[node_id].state
+  else
+    local pre_node_id = ShareRes.get_chapter_node_pre_node_id(node_id)
+    if not pre_node_id or pre_node_id <= 0 then
+      return self:get_first_node_state(chapter_id, node_id)
+    else
+      local pre_node_cfg = ShareRes.get_chapter_node_cfg(pre_node_id)
+      if pre_node_cfg.PreNodeId and pre_node_cfg.PreNodeId <= 0 then
+        local pre_node_state = self:get_first_node_state(chapter_id, node_id)
+        return pre_node_state == CommonDefine.CHAPTER_NODE_STATE.FINISHED and CommonDefine.CHAPTER_NODE_STATE.UNLOCK or CommonDefine.CHAPTER_NODE_STATE.LOCK
+      end
+    end
+    return CommonDefine.CHAPTER_NODE_STATE.LOCK
+  end
+end
+
+function M:check_node_is_first_save_suc(node_id)
+  return not self.v_chapter_node_data_map[node_id] or self.v_chapter_node_data_map[node_id].state ~= CommonDefine.CHAPTER_NODE_STATE.FINISHED
+end
+
+function M:get_all_normal_node(chapter_id, is_layout_key, is_all_get)
+  local node_cfg_list = ShareRes.get_chapter_all_node_id_by_chapter_id(chapter_id)
+  local max_row = 0
+  if not node_cfg_list then
+    Log.Error("章节：", chapter_id, "没有章节节点信息")
+    return nil, nil, max_row
+  end
+  local node_data_list = {}
+  local node_data_dict
+  if is_all_get then
+    node_data_dict = {}
+  end
+  for key, node_cfg in pairs(node_cfg_list) do
+    local node_id = node_cfg.Id
+    local layout_point = node_cfg.LayoutPoint
+    local row = node_cfg.Row
+    local column = node_cfg.Column
+    max_row = math.max(row, max_row)
+    local node_data = {
+      chapter_id = chapter_id,
+      state = self:get_node_state(chapter_id, node_id),
+      node_id = node_id,
+      node_cfg = node_cfg,
+      row = row,
+      column = column,
+      layout_point = layout_point
+    }
+    if is_all_get then
+      if node_data_list[layout_point] then
+        Log.Error("节点位置重复， 位置：", layout_point, node_data_list[layout_point].node_id, node_data.node_id)
+      end
+      node_data_list[layout_point] = node_data
+      node_data_dict[node_id] = node_data
+    elseif true == is_layout_key then
+      if node_data_list[layout_point] then
+        Log.Error("节点位置重复， 位置：", layout_point, node_data_list[layout_point].node_id, node_data.node_id)
+      end
+      node_data_list[layout_point] = node_data
+    else
+      node_data_list[node_id] = node_data
+    end
+  end
+  return node_data_list, node_data_dict, max_row
+end
+
+function M:get_all_hard_node(chapter_id, is_layout_key, is_all_get)
+  local chapter_cfg = ShareRes.get_chapter_cfg(chapter_id)
+  local difficulty_chapter_id = chapter_cfg.DifficultyChapter
+  local point_list = ShareRes.get_chapter_points(difficulty_chapter_id)
+  local max_row = 0
+  if not point_list then
+    Log.Error("章节：", chapter_id, "没有章节关卡信息")
+    return nil, nil, max_row
+  end
+  local point_data_list = {}
+  local point_data_dict
+  if is_all_get then
+    point_data_dict = {}
+  end
+  local recom_point
+  for key, point_id in pairs(point_list) do
+    repeat
+      if not (point_id <= 0) then
+        local layout_point = Config.HARD_NODE_POS[key]
+        local temp = Util.split_str(layout_point, ",")
+        local column = tonumber(temp[3])
+        max_row = math.max(tonumber(temp[2]), max_row)
+        local state, tip_srt = self:get_chapter_point_state(difficulty_chapter_id, point_id)
+        local node_data = {
+          chapter_id = chapter_id,
+          dfc_chapter_id = difficulty_chapter_id,
+          state = state,
+          tip_srt = tip_srt,
+          point_id = point_id,
+          point_cfg = ShareRes.get_chapter_point_cfg(point_id),
+          index = key,
+          column = column,
+          layout_point = layout_point
+        }
+        if state == CommonDefine.CHAPTER_NODE_STATE.UNLOCK then
+          recom_point = {
+            LayoutPoint = node_data.layout_point,
+            Id = node_data.point_id
+          }
+        end
+        if is_all_get then
+          point_data_list[layout_point] = node_data
+          point_data_dict[point_id] = node_data
+        elseif is_layout_key then
+          if point_data_list[layout_point] then
+            Log.Error("节点位置重复， 位置：", layout_point, point_data_list[layout_point].point_id, node_data.point_id)
+          end
+          point_data_list[layout_point] = node_data
+        else
+          point_data_list[point_id] = node_data
+          break -- pseudo-goto
+        end
+      end
+    until true
+  end
+  return point_data_list, point_data_dict, max_row, recom_point
+end
+
+function M:get_next_unlock_chapter_need_item(chapter_id)
+  local chapter_cfg_list = ShareRes.get_chapter_cfg()
+  local cur_chapter_cfg = chapter_cfg_list[chapter_id]
+  if not cur_chapter_cfg then
+    return
+  end
+  if cur_chapter_cfg.ChapterMode == Config.Chapter_Mode.DIFFICULTY then
+    chapter_id = self:get_chapter_by_hard_chapter_id(chapter_id)
+  end
+  local next_chapter_cfg
+  for key, cfg in pairs(chapter_cfg_list) do
+    if cfg.FrontChapterId == chapter_id then
+      next_chapter_cfg = cfg
+      return Condition:get_condition_need_item(next_chapter_cfg.Condition[1])
+    end
+  end
+end
+
+function M:update_chapter_throw_id_list(data)
+  local throw_id_list = data.throw_ids
+  for key, id in pairs(throw_id_list) do
+    self.v_throw_id_dict[id] = id
+  end
+end
+
+function M:update_chapter_throw_id(data)
+  local throw_id = data.throw_id
+  self.v_throw_id_dict[throw_id] = throw_id
+end
+
+function M:get_throw_id_dict()
+  return self.v_throw_id_dict
+end
+
+function M:check_throw_is_gained(throw_id)
+  return self.v_throw_id_dict[throw_id] ~= nil
+end
+
+function M:get_throw_get_away(point_id, res)
+  local cur_chapter_throw_cfg = ShareRes.create("chapter.chapter_throw", point_id)
+  local result = res or {}
+  if cur_chapter_throw_cfg then
+    local throw_id_dict = self:get_throw_id_dict()
+    for throw_type, cfgs in pairs(cur_chapter_throw_cfg) do
+      if not result[throw_type] then
+        result[throw_type] = {count = 0, max_count = 0}
+      end
+      for key, cfg in pairs(cfgs) do
+        if throw_id_dict[cfg.Id] then
+          result[throw_type].count = result[throw_type].count + cfg.ItemNum
+        end
+        result[throw_type].max_count = result[throw_type].max_count + cfg.ItemNum
+      end
+    end
+  end
+  return result
+end
+
+function M:get_throw_get_away_by_chapter(chapter_id)
+  local chapter_cfg = ShareRes.get_chapter_cfg(chapter_id)
+  local result = {}
+  local max_count = 0
+  self:_get_throw_get_away_by_chapter(chapter_id, result)
+  if chapter_cfg.DifficultyChapter and chapter_cfg.DifficultyChapter > 0 then
+    self:_get_throw_get_away_by_chapter(chapter_cfg.DifficultyChapter, result)
+  end
+  for key, data in pairs(result) do
+    max_count = max_count + data.max_count
+  end
+  return result, max_count
+end
+
+function M:_get_throw_get_away_by_chapter(chapter_id, result)
+  local chapter_cfg = ShareRes.get_chapter_cfg(chapter_id)
+  for key, point_id in pairs(chapter_cfg.Point) do
+    if point_id > 0 then
+      self:get_throw_get_away(point_id, result)
+    end
+  end
+end
+
+function M:get_chapter_by_node_id(node_id)
+  node_id = node_id or TowerMgr:get_cur_node_id()
+  if not node_id then
+    return
+  end
+  local cfg = ShareRes.get_chapter_node_cfg(node_id)
+  if not cfg then
+    Log.Error("节点配置为空，id为", node_id, debug.traceback())
+    return
+  end
+  local point_cfg = ShareRes.get_chapter_point_cfg(cfg.EpisodeId)
+  local chapter_cfg = self:get_chapter_by_episode(cfg.EpisodeId)
+  return chapter_cfg, point_cfg, cfg
+end
+
+function M:request_branch_task_progress(task_id, episode_id, callback)
+  Network:call("c2gs_chapter_branch_task_state", {task_id = task_id, episode_id = episode_id}, function(ok, resp)
+    if ok and callback then
+      callback(resp)
+    end
+  end)
+end
+
+function M:record_suc_node(node_id)
+  self.v_long_chapter_record_node_map = self.v_long_chapter_record_node_map or {}
+  self.v_long_chapter_record_node_map[node_id] = true
+  local index = ShareRes.get_chapter_node_sort_index(node_id)
+  if index then
+    self.v_long_chapter_record_node_index = index
+  end
+end
+
+function M:is_node_has_been_comp(node_id)
+  local has_been_comp
+  if self.v_long_chapter_record_node_index then
+    local index = ShareRes.get_chapter_node_sort_index(node_id)
+    has_been_comp = index <= self.v_long_chapter_record_node_index
+  end
+  has_been_comp = has_been_comp or self.v_long_chapter_record_node_map ~= nil and self.v_long_chapter_record_node_map[node_id] ~= nil
+  return has_been_comp
+end
+
+function M:chapter_node_play_story(chapter_id, node_id, callback, force)
+  local node_state = self:get_node_state(chapter_id, node_id)
+  if not force and SceneMgr:check_main_scene() and node_state == CommonDefine.CHAPTER_NODE_STATE.FINISHED then
+    if callback then
+      callback()
+    end
+  else
+    Network:call("c2gs_chapter_node_play_story", {node_id = node_id}, function(ok, resp)
+      if ok and callback then
+        callback()
+      end
+    end)
+    local node_data = {
+      node_id = node_id,
+      state = CommonDefine.CHAPTER_NODE_STATE.FINISHED
+    }
+    ChapterMgr:add_node_to_data_container(chapter_id, node_data)
+  end
+end
+
+function M:get_node_story_id_queue(node_id)
+  local node_cfg = ShareRes.get_chapter_node_cfg(node_id)
+  if not node_cfg then
+    return
+  end
+  local story_id_dict = {}
+  local story_id_queue = {}
+  while node_cfg and node_cfg.NodeType == CommonDefine.CHAPTER_NODE_TYPE.STORY_LINE and node_cfg.Param > 0 do
+    table.insert(story_id_queue, node_cfg.Param)
+    story_id_dict[node_cfg.Param] = node_cfg.Id
+    node_cfg = ShareRes.get_chapter_node_cfg(node_cfg.BehindNodeId)
+  end
+  return story_id_queue, story_id_dict
+end
+
+function M:check_point_star_pass(chapter_id, point_id, star_count)
+  local data = self:get_hard_node_star_count_by_id(chapter_id, point_id)
+  if not data or not data[star_count] then
+    local epi_cfg = ShareRes.get_chapter_point_cfg(point_id)
+    if epi_cfg.FightType == CommonDefine.CHALLENGE_TYPE.LINEAR then
+      return LinearMgr:get_condition_is_finish_with_point_id(point_id, star_count)
+    elseif epi_cfg.FightType == CommonDefine.CHALLENGE_TYPE.CLIMBING_TOWER then
+      return ClimbingTowerMgr:get_condition_is_finish_with_point_id(point_id, star_count)
+    end
+    return false
+  else
+    return data[star_count] ~= CommonDefine.CHAPTER_STAR_STAING_STATE.INCOMPLETE
+  end
+end
+
+function M:get_chapter_by_hard_chapter_id(hard_chapter_id)
+  local all_chapter_cfg = ShareRes.get_chapter_cfg()
+  for key, cfg in pairs(all_chapter_cfg) do
+    if cfg.DifficultyChapter == hard_chapter_id then
+      return cfg.Id
+    end
+  end
+end
+
+function M:get_chapter_area_data(chapter_id)
+  local all_area_data = {}
+  local area_list = ShareRes.get_chapter_area_list(chapter_id)
+  local data, area_unlock, max_index, point_gather, module_param, module_type, state
+  if area_list then
+    for index, area_id in pairs(area_list) do
+      point_gather = ShareRes.get_chapter_area_point_gather(area_id)
+      area_unlock = false
+      for key, point_cfg in pairs(point_gather) do
+        module_param = point_cfg.ModuleParam
+        module_type = point_cfg.ModuleType
+        if module_type == Config.AREA_POINT_MODULE_TYPE.CHAPTER_NODE then
+          state = self:get_node_state(chapter_id, module_param)
+        elseif module_type == Config.AREA_POINT_MODULE_TYPE.CHAPTER_POINT then
+          state = self:get_chapter_point_state(chapter_id, module_param)
+        end
+        if state <= CommonDefine.CHAPTER_NODE_STATE.UNLOCK then
+          area_unlock = true
+          break
+        end
+      end
+      if area_unlock then
+        max_index = index
+        data = {}
+        data.area_cfg = ShareRes.get_chapter_ared_cfg(area_id)
+        data.point_gather = point_gather
+        all_area_data[index] = data
+      end
+    end
+    if max_index then
+      local target_index = max_index + 1
+      data = self:get_target_index_area_data(chapter_id, target_index)
+      if data then
+        all_area_data[target_index] = data
+      end
+    end
+  else
+    Log.Error("章節未配置區域信息", chapter_id)
+    return
+  end
+  return all_area_data
+end
+
+function M:get_target_index_area_data(chapter_id, target_index)
+  local area_list = ShareRes.get_chapter_area_list(chapter_id)
+  local length = #area_list
+  local point_gather, data
+  if target_index <= length and area_list[target_index] then
+    local area_id = area_list[target_index]
+    point_gather = ShareRes.get_chapter_area_point_gather(area_id)
+    data = {}
+    data.area_cfg = ShareRes.get_chapter_ared_cfg(area_id)
+    data.point_gather = point_gather
+  end
+  return data
+end
+
+function M:get_all_unlock_chapter_cfg(page, ignore_pre_open_chapter)
+  local tb = {}
+  for id, data in pairs(self.v_chapter_map) do
+    local cfg = ShareRes.get_chapter_cfg(id)
+    if cfg and cfg.ChapterMode == Config.Chapter_Mode.NORMAL and cfg.ShowOff <= 0 and (not ignore_pre_open_chapter or not cfg.OriginalChapter) and (not page or page == cfg.ChapterPage) then
+      table.insert(tb, cfg.Id)
+    end
+  end
+  table.sort(tb)
+  return tb
+end
+
+function M:check_point_is_difficult(chapter_id, point_id)
+  local chapter_cfg
+  if not chapter_id then
+    chapter_cfg = self:get_chapter_by_episode(point_id)
+  end
+  chapter_cfg = ShareRes.get_chapter_cfg(chapter_id)
+  if chapter_cfg.ChapterMode == Config.Chapter_Mode.DIFFICULTY then
+    for key, contain_point in pairs(chapter_cfg.Point) do
+      if point_id == contain_point then
+        return true
+      end
+    end
+  end
+  return false
+end
+
+function M:get_next_point_id(chapter_id, point_id)
+  local chapter_cfg
+  if not chapter_id then
+    chapter_cfg = self:get_chapter_by_episode(point_id)
+  end
+  chapter_cfg = ShareRes.get_chapter_cfg(chapter_id)
+  for index, contain_point in ipairs(chapter_cfg.Point) do
+    if point_id == contain_point then
+      return chapter_cfg.Point[index + 1]
+    end
+  end
+  return false
+end
+
+function M:get_next_main_line_node(node_id)
+  local all_node_cfg = ShareRes.create("chapter.chapter_node")
+  local node_cfg = all_node_cfg[node_id]
+  local next_node_cfg = all_node_cfg[node_cfg.BehindNodeId]
+  if next_node_cfg then
+    while next_node_cfg and next_node_cfg.NodeType ~= CommonDefine.CHAPTER_NODE_TYPE.MAIN_LINE do
+      next_node_cfg = all_node_cfg[next_node_cfg.BehindNodeId]
+    end
+    return next_node_cfg
+  end
+end
+
+function M:get_chapter_max_node_id(chapter_id)
+  local chapter_node_data = self:get_chapter_node_data_list(chapter_id)
+  if chapter_node_data then
+    local count = #chapter_node_data
+    local node_data
+    for index = count, 1, -1 do
+      node_data = chapter_node_data[index]
+      if node_data.state == CommonDefine.CHAPTER_NODE_STATE.FINISHED then
+        return node_data.node_id
+      end
+    end
+  end
+end
+
+function M:record_chapter_max_save_node_id(chapter_id)
+  self.v_chapter_max_save_node_id = self:get_chapter_max_node_id(chapter_id) or 0
+end
+
+function M:is_first_save_node(node_id)
+  return node_id >= (self.v_chapter_max_save_node_id or 0)
+end
+
+function M:check_chapter_is_unlock(chapter_id, show_tips)
+  local chapter_cfg = ShareRes.get_chapter_cfg(chapter_id)
+  local con_result_id = Condition:check_condition_list(chapter_cfg.Condition)
+  if 0 ~= con_result_id then
+    local con_cfg = ShareRes.create("condition.condition", con_result_id)
+    if show_tips then
+      Util.show_message_tip(con_cfg.Desc)
+    end
+    return false, con_cfg.Desc
+  else
+    local is_time_open = self:is_chapter_time_open(chapter_id)
+    if show_tips and not is_time_open then
+      Util.show_message_tip(2349)
+    end
+    return is_time_open, not is_time_open and Util.get_errcode_msg(2349).tips or nil
+  end
+end
+
+function M:get_chapter_team_config(point_id, node_id, floor_num)
+  if node_id and not floor_num then
+    floor_num = self:get_floor_num(point_id, node_id)
+  end
+  return ShareRes.get_chapter_team_cfg(point_id, floor_num)
+end
+
+function M:get_floor_ban_buddy_map(point_id, node_id, floor_num)
+  local chapter_team_cfg = self:get_chapter_team_config(point_id, node_id, floor_num)
+  if not chapter_team_cfg then
+    return
+  end
+  local ban_buddy = chapter_team_cfg.BanBuddy
+  if ban_buddy then
+    local tbl = {}
+    if type(ban_buddy) == "table" then
+      for _, buddy_id in ipairs(ban_buddy) do
+        tbl[buddy_id] = true
+      end
+    else
+      tbl[ban_buddy] = true
+    end
+    return tbl
+  end
+end
+
+function M:get_floor_fixed_buddy_map(point_id, node_id, floor_num)
+  local chapter_team_cfg = self:get_chapter_team_config(point_id, node_id, floor_num)
+  if not chapter_team_cfg then
+    return
+  end
+  local fixed_buddy = chapter_team_cfg.BuddyId
+  if fixed_buddy then
+    local tbl = {}
+    for pos, fixed_robot_id in pairs(fixed_buddy) do
+      if 0 ~= fixed_robot_id then
+        local fixed_buddy_cfg = ShareRes.get_fixed_buddy_config(fixed_robot_id)
+        local buddy_id = fixed_buddy_cfg.BuddyId
+        tbl[buddy_id] = true
+      end
+    end
+    return tbl
+  end
+end
+
+function M:check_fixed_team_by_point_id(point_id, node_id, floor_num)
+  local chapter_team_cfg = self:get_chapter_team_config(point_id, node_id, floor_num)
+  if not chapter_team_cfg then
+    return
+  end
+  if next(chapter_team_cfg.BuddyId) ~= nil then
+    return true
+  end
+  return false
+end
+
+function M:get_floor_robot_pool_map(point_id, node_id, floor_num)
+  local chapter_team_cfg = self:get_chapter_team_config(point_id, node_id, floor_num)
+  if not chapter_team_cfg then
+    return
+  end
+  local robot_pool = chapter_team_cfg.RobotPool
+  if robot_pool then
+    local tbl = {}
+    if type(robot_pool) == "table" then
+      for _, robot_id in ipairs(robot_pool) do
+        tbl[robot_id] = 1
+      end
+    else
+      tbl[robot_pool] = 1
+    end
+    return tbl
+  end
+end
+
+function M:get_floor_standby_robot_map(point_id, node_id, floor_num)
+  local chapter_team_cfg = self:get_chapter_team_config(point_id, node_id, floor_num)
+  if not chapter_team_cfg then
+    return {}
+  end
+  local standby_buddy = chapter_team_cfg.StandbyId
+  local tbl = {}
+  for _, robot_id in pairs(standby_buddy) do
+    tbl[robot_id] = true
+  end
+  return tbl
+end
+
+function M:get_team_offer_robot_list(point_id, node_id, floor_num)
+  local standby_robot_map = self:get_floor_standby_robot_map(point_id, node_id, floor_num)
+  local robot_pool_map = self:get_floor_robot_pool_map(point_id, node_id, floor_num)
+  if not robot_pool_map then
+    return
+  end
+  local tbl = {}
+  for robot_id, _ in pairs(robot_pool_map) do
+    if not standby_robot_map[robot_id] then
+      tbl[#tbl + 1] = robot_id
+    end
+  end
+  return #tbl > 0 and tbl
+end
+
+function M:get_all_team_offer_robot_map(point_id, node_id, floor_num)
+  local robot_pool_map = self:get_floor_robot_pool_map(point_id, node_id, floor_num)
+  if not robot_pool_map then
+    return
+  end
+  local tbl = {}
+  for robot_id, _ in pairs(robot_pool_map) do
+    local fixed_buddy_cfg = ShareRes.get_fixed_buddy_config(robot_id)
+    local buddy_id = fixed_buddy_cfg.BuddyId
+    tbl[buddy_id] = robot_id
+  end
+  return tbl
+end
+
+function M:get_enter_fight_limit(point_id, node_id, floor_num)
+  local chapter_team_cfg = self:get_chapter_team_config(point_id, node_id, floor_num)
+  if not chapter_team_cfg then
+    return
+  end
+  if 0 == chapter_team_cfg.LimitCount then
+    return nil
+  end
+  local limit_data = {
+    ele = chapter_team_cfg.ElementId,
+    job = chapter_team_cfg.JobId,
+    count = chapter_team_cfg.LimitCount,
+    desc = chapter_team_cfg.LimitDesc
+  }
+  return limit_data
+end
+
+function M:check_cur_fight_robot_id(buddy_id)
+  if not TowerMgr then
+    return
+  end
+  local progress = TowerMgr:get_tower_progress()
+  if not progress then
+    return
+  end
+  local point_id = progress.episode_id
+  local floor_num = progress.floor_id
+  local tower = TowerMgr:get_tower()
+  if tower and (progress.challenge_type == CommonDefine.CHALLENGE_TYPE.LONG_CHAPTER or progress.challenge_type == CommonDefine.CHALLENGE_TYPE.NEWBIE_TOWER) then
+    floor_num = tower:get_temp_formation_data()
+    floor_num = floor_num or tower:get_floor_num()
+  end
+  local buddy_to_robot = self:get_all_team_offer_robot_map(point_id, nil, floor_num)
+  return buddy_to_robot and buddy_to_robot[buddy_id]
+end
+
+function M:check_cur_fight_fixed_team()
+  if not TowerMgr then
+    return
+  end
+  local progress = TowerMgr:get_tower_progress()
+  if not progress then
+    return
+  end
+  local point_id = progress.episode_id
+  local point_cfg = ShareRes.get_chapter_point_cfg(point_id)
+  local tower = TowerMgr:get_tower()
+  if tower and (progress.challenge_type == CommonDefine.CHALLENGE_TYPE.LONG_CHAPTER or progress.challenge_type == CommonDefine.CHALLENGE_TYPE.NEWBIE_TOWER) then
+    local floor_num = tower:get_temp_formation_data()
+    local floor_id
+    if floor_num then
+      local floor_cfg = ShareRes.get_floor_cfg_by_tower_id(point_cfg.FightId, floor_num)
+      if floor_cfg then
+        floor_id = floor_cfg.FloorID
+      end
+    else
+      floor_id = tower:get_cur_floor_id()
+      floor_num = tower:get_floor_num()
+    end
+    return false, point_id, self:check_fixed_team_by_point_id(point_id, nil, floor_num), floor_id
+  else
+    local floor_num = progress.floor_id
+    return self:check_fixed_team_by_point_id(point_id, nil, floor_num), point_id
+  end
+end
+
+function M:get_story_preheat_count_down_time(preheat_id)
+  local count_down_time = 0
+  if not self.v_preheat_map[preheat_id] then
+    return count_down_time
+  end
+  local cfg = ShareRes.get_story_preheat_cfg(preheat_id)
+  local group_id = cfg.GroupId
+  if not self.v_preheat_group_map[group_id] then
+    return count_down_time
+  end
+  local open_time = self.v_preheat_group_map[group_id].open_time
+  if cfg then
+    local now_time = Date.server_time()
+    local start_time = cfg.StartTime and Date.get_time_stamp_by_scheme_id(cfg.StartTime)
+    if cfg.Type == PREHEAT_GROUP_TYPE.NORMAL then
+      if start_time then
+        count_down_time = start_time - now_time
+      end
+    elseif cfg.Type == PREHEAT_GROUP_TYPE.COUNT_DOWN then
+      local end_time = cfg.EndTime and Date.get_time_stamp_by_scheme_id(cfg.EndTime)
+      if end_time then
+        count_down_time = open_time + end_time * 60 - now_time
+      end
+    end
+  end
+  return count_down_time
+end
+
+function M:check_story_preheat_group_open(chapter_id, show_tips)
+  local group_id = ShareRes.get_story_preheat_group_id_by_chapter_id(chapter_id)
+  if not self.v_preheat_group_map[group_id] then
+    return false
+  end
+  local open_time = self.v_preheat_group_map[group_id].open_time
+  local cfg = ShareRes.get_story_preheat_group_cfg(group_id)
+  local is_open = false
+  local in_time = false
+  if cfg then
+    local now_time = Date.server_time()
+    local start_time = cfg.StartTime and Date.get_time_stamp_by_scheme_id(cfg.StartTime)
+    if cfg.Type == PREHEAT_GROUP_TYPE.NORMAL then
+      local end_time = cfg.EndTime and Date.get_time_stamp_by_scheme_id(cfg.EndTime)
+      if not start_time and not end_time then
+        in_time = true
+      elseif start_time and not end_time then
+        in_time = now_time >= start_time
+      else
+        in_time = now_time <= end_time and now_time >= start_time
+      end
+    elseif cfg.Type == PREHEAT_GROUP_TYPE.COUNT_DOWN then
+      local end_time = cfg.EndTime and Date.get_time_stamp_by_scheme_id(cfg.EndTime)
+      in_time = not end_time or now_time >= open_time + end_time * 60
+    end
+    if in_time then
+      if not UtilTable.is_empty(cfg.BasicLimit) then
+        is_open = 0 == Condition:check_condition_list(cfg.BasicLimit, show_tips)
+      else
+        is_open = true
+      end
+    end
+  end
+  return is_open
+end
+
+function M:on_plot_preheat_list(data)
+  self.v_preheat_map = data.plot_preheat_list
+  self.v_preheat_group_map = data.plot_preheat_group_list
+  local record_suc = false
+  for node_id, value in pairs(self.v_preheat_map) do
+    if not self.v_lock_preheat_map[node_id] and self:get_story_preheat_count_down_time(node_id) > 0 then
+      record_suc = true
+      self:recore_lock_preheat(node_id)
+    end
+  end
+  if record_suc then
+    self:save_lock_preheat()
+  end
+end
+
+function M:on_plot_preheat_update(data)
+  local plot_preheat = data.plot_preheat
+  self.v_preheat_map[plot_preheat.id] = plot_preheat
+  local node_id = plot_preheat.id
+  if not self.v_lock_preheat_map[node_id] and self:get_story_preheat_count_down_time(node_id) > 0 then
+    self:recore_lock_preheat(node_id)
+    self:save_lock_preheat()
+  end
+end
+
+function M:on_plot_preheat_group_update(data)
+  local plot_preheat_group = data.plot_preheat_group
+  self.v_preheat_group_map[plot_preheat_group.group_id] = plot_preheat_group
+end
+
+function M:save_lock_preheat()
+  LocalStorage:save_table(Config.PREHEAT_RECORD_KEY, self.v_lock_preheat_map, true)
+end
+
+function M:preheat_is_recorded(preheat_id)
+  return self.v_lock_preheat_map[preheat_id] ~= nil
+end
+
+function M:recore_lock_preheat(preheat_id)
+  self.v_lock_preheat_map[preheat_id] = 1
+end
+
+function M:remove_lock_preheat(preheat_id)
+  self.v_lock_preheat_map[preheat_id] = nil
+end
+
+function M:request_click_preheat(id, cb)
+  Network:call("c2gs_plot_preheat_click", {id = id}, function(ok)
+    if ok and cb then
+      cb()
+    end
+  end)
+end
+
+function M:request_preheat_unlock(id, cb)
+  Network:call("c2gs_plot_preheat_unlock", {id = id}, function(ok)
+    if ok and cb then
+      cb()
+    end
+  end)
+end
+
+function M:get_preheat_is_unlock(id)
+  return self.v_preheat_map[id] ~= nil
+end
+
+function M:get_preheat_is_red(id)
+  local data = self.v_preheat_map[id]
+  return data and data.is_red
+end
+
+function M:set_record_select_chapter_id(chapter_id)
+  self.v_record_select_info = self.v_record_select_info or {}
+  self.v_record_select_info.chapter_id = chapter_id
+end
+
+function M:set_record_select_param_id(param_id)
+  self.v_record_select_info = self.v_record_select_info or {}
+  self.v_record_select_info.param_id = param_id
+end
+
+function M:set_record_select_challenge_type(challenge_type)
+  self.v_record_select_info = self.v_record_select_info or {}
+  self.v_record_select_info.challenge_type = challenge_type
+end
+
+function M:get_record_select_chapter_id()
+  return self.v_record_select_info and self.v_record_select_info.chapter_id
+end
+
+function M:get_record_select_param_id()
+  return self.v_record_select_info and self.v_record_select_info.param_id
+end
+
+function M:get_record_select_challenge_type()
+  return self.v_record_select_info and self.v_record_select_info.challenge_type
+end
+
+function M:clear_record_select_chapter_id()
+  self.v_record_select_info = nil
+end
+
+function M:check_in_preopen_chapter(chapter_id)
+  local chapter_cfg = ShareRes.get_chapter_cfg(chapter_id)
+  if Util.is_more_than_zero(chapter_cfg.OriginalChapter) and not self:check_chapter_is_unlock(chapter_cfg.OriginalChapter) then
+    return self:get_chapter_open_by_time(chapter_cfg)
+  end
+  return false
+end
+
+function M:is_chapter_time_open(chapter_id)
+  local chapter_cfg = ShareRes.get_chapter_cfg(chapter_id)
+  return self:get_chapter_open_by_time(chapter_cfg)
+end
+
+function M:get_chapter_open_by_time(chapter_cfg)
+  local cur_time = Date.server_time()
+  local start_time = chapter_cfg.PreOpenStartTime and Date.get_time_stamp_by_scheme_id(chapter_cfg.PreOpenStartTime)
+  local end_time = chapter_cfg.PreOpenEndTime and Date.get_time_stamp_by_scheme_id(chapter_cfg.PreOpenEndTime)
+  if not start_time and not end_time then
+    return true
+  elseif not start_time then
+    return cur_time < end_time
+  elseif not end_time then
+    return cur_time > start_time
+  else
+    return cur_time > start_time and cur_time < end_time
+  end
+end
+
+function M:go_to_new_chapter_node()
+  local newest_node_cfg = ChapterMgr:get_newest_node_info()
+  if not newest_node_cfg then
+    return
+  end
+  local newest_chapter_cfg = ChapterMgr:get_chapter_by_node_id(newest_node_cfg.Id)
+  if not newest_chapter_cfg then
+    return
+  end
+  if not ResMgr:check_is_can_fight_with_res(newest_chapter_cfg) then
+    return
+  end
+  UIMgr:get_ui("ui_chapter_detail"):ui_show(newest_chapter_cfg.Id, nil, nil, nil, newest_node_cfg.Id)
+end
+
+function M:get_epi_max_star(epi_id)
+  local epi_cfg = ShareRes.create("chapter.chapter_point", epi_id)
+  local nStarRating = epi_cfg.StarRating
+  if not nStarRating or 0 == nStarRating then
+    return 0
+  end
+  local max_star = 0
+  local RatingCfg = ShareRes.create("chapter.chapter_star_rating")[nStarRating]
+  if RatingCfg then
+    for _, condition in pairs(RatingCfg.Condition) do
+      if condition and condition > 0 then
+        max_star = max_star + 1
+      end
+    end
+  end
+  return max_star
+end
+
+return M

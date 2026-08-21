@@ -1,0 +1,82 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local QUALITY_ICON_PREFIX = "UICommon/"
+local ICON_PREFIX = "Icon/Item/%s"
+
+function ui:on_click_synthesis_item(msg)
+  if not self.v_uiobjects.Choose:IsNull() then
+    self.v_uiobjects.Choose:SetActive(msg.mm_x == self.v_data.targetInfo.Id)
+  end
+end
+
+function ui:ui_finish_load()
+  self.v_btn = self:get_button(nil, self.v_object)
+end
+
+function ui:ui_on_show()
+  self:bind_auto_mq(Const.MSG_ON_CLICK_SYNTHESIS_ITEM, self.on_click_synthesis_item, self)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(data)
+  if nil == data then
+    return
+  end
+  self.v_data = data
+  local condition = self.v_data.Condition
+  local components = self.v_uicompents
+  local targetInfo = data.targetInfo
+  local icon_path = ShareRes.create("item.item_quality", targetInfo.quality).QualityIcon
+  components.ItemName_txt.text = targetInfo.name
+  local quality_parent_name = Util.get_obj_parent_name(components.ItemIcon_img)
+  ResMgr:load_set_icon(components.Quality_img, QUALITY_ICON_PREFIX .. icon_path, nil, nil, nil, quality_parent_name)
+  local icon_parent_name = Util.get_obj_parent_name(components.ItemIcon_img)
+  ResMgr:load_set_icon(components.ItemIcon_img, string.format(ICON_PREFIX, targetInfo.icon), nil, nil, nil, icon_parent_name)
+  if condition and condition > 0 and not Condition:check_condition(condition) then
+    self.v_uiobjects.Lock:SetActive(true)
+    local conditon_desc = ShareRes.get_condition_desc(condition)
+    self.v_uicompents.LockCondition_txt.text = conditon_desc
+  else
+    self.v_uiobjects.Lock:SetActive(false)
+  end
+  local cur_select_id = self:get_select_exchange_id()
+  self.v_uiobjects.Choose:SetActive(cur_select_id == targetInfo.Id)
+  self:add_button_listener()
+end
+
+function ui:add_button_listener()
+  self:set_button_listener(self.v_btn, function()
+    self:on_click_item()
+  end)
+  if self.v_uicompents.Lock_btn then
+    self:set_button_listener(self.v_uicompents.Lock_btn, function()
+      self:on_click_item()
+    end)
+  end
+end
+
+function ui:update_all()
+  self.v_parent_ui:update_all()
+end
+
+function ui:on_click_item(is_first)
+  if self.v_uiobjects.Lock.activeSelf then
+    local condition = self.v_data.Condition
+    if condition and condition > 0 then
+      Condition:check_condition(condition, not is_first)
+    end
+    return
+  end
+  self.v_parent_ui:on_click_item(self.v_data, is_first)
+end
+
+function ui:get_select_exchange_id()
+  return self.v_parent_ui:get_select_exchange_id()
+end
+
+return ui

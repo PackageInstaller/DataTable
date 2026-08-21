@@ -1,0 +1,942 @@
+return {
+  {
+    GroupId = 1,
+    Id = 1,
+    Magic = 1000,
+    ShowPriority = 1
+  },
+  {
+    GroupId = 1,
+    Id = 2,
+    Magic = 1001,
+    ShowPriority = 1
+  },
+  {
+    GroupId = 1,
+    Id = 3,
+    Magic = 1002,
+    ShowPriority = 1
+  },
+  {
+    GroupId = 2,
+    Id = 4,
+    Magic = 1003,
+    ShowPriority = 1
+  },
+  {
+    GroupId = 2,
+    Id = 5,
+    Magic = 1004,
+    ShowPriority = 1
+  },
+  {
+    GroupId = 2,
+    Id = 6,
+    Magic = 1005,
+    ShowPriority = 1
+  },
+  {
+    Desc = "<color=#dd7a39>伤害加深</color>+15%",
+    Element = 1,
+    GroupId = 100,
+    Id = 7,
+    Magic = 6061001,
+    ShowPriority = 2
+  },
+  {
+    Desc = "<color=#dd7a39>暴击率</color>+30%",
+    Element = 1,
+    GroupId = 100,
+    Id = 8,
+    Magic = 6061002,
+    ShowPriority = 2
+  },
+  {
+    Desc = "<color=#dd7a39>伤害减免</color>+10%",
+    Element = 1,
+    GroupId = 100,
+    Id = 9,
+    Magic = 6061003,
+    ShowPriority = 2
+  },
+  {
+    Desc = "击杀金币加25",
+    Element = 1,
+    GroupId = 100,
+    Id = 10,
+    Magic = 6061004,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，下一次造成的<color=#dd7a39>伤害</color>+150%，每3秒只能触发一次效果。",
+    Element = 2,
+    GroupId = 101,
+    Id = 11,
+    Magic = 6051001,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成暴击时，<color=#dd7a39>暴击伤害率</color>+60%",
+    Element = 2,
+    GroupId = 101,
+    Id = 12,
+    Magic = 6051002,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成伤害时，角色自身<color=#dd7a39>暴击率</color>+3%，持续5秒，可以叠加8层，达到最高层数时刷新持续时间。",
+    Element = 2,
+    GroupId = 101,
+    Id = 13,
+    Magic = 6051003,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，本次异常期间造成伤害累计超过怪物<color=#dd7a39>最大生命值</color>25%时，立刻<color=#dd7a39>冻结</color>怪物2秒",
+    Element = 2,
+    GroupId = 101,
+    Id = 14,
+    Magic = 6051005,
+    ShowPriority = 2
+  },
+  {
+    Desc = "<color=#dd7a39>冻结</color>效果结束时，有30%的几率触发碎冰，对怪物造成<color=#dd7a39>最大生命值</color>15%的伤害",
+    Element = 2,
+    GroupId = 101,
+    Id = 15,
+    Magic = 6051006,
+    ShowPriority = 2
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>凝滞</color>状态的怪物后，3秒内所有角色的<color=#dd7a39>怒气/能量/魔法值</color>消耗量-30%，效果不可叠加",
+    Element = 2,
+    GroupId = 101,
+    Id = 16,
+    Magic = 6051007,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成<color=#dd7a39>普攻伤害</color>时，有15%的几率触发连击，造成该次<color=#dd7a39><color=#dd7a39>普攻伤害</color></color>的1.6倍的伤害",
+    Element = 3,
+    GroupId = 102,
+    Id = 17,
+    Magic = 6052001,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成伤害时，有20%几率触发爆炸，爆炸造成<color=#dd7a39>物理攻击</color>60%的伤害",
+    Element = 3,
+    GroupId = 102,
+    Id = 18,
+    Magic = 6052002,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成技能伤害时，有10%几率对周围的怪物造成50%的<color=#dd7a39>溅射伤害</color>",
+    Element = 3,
+    GroupId = 102,
+    Id = 19,
+    Magic = 6052004,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成技能伤害时，有10%的几率该次技能<color=#dd7a39>伤害加深</color>+100%",
+    Element = 3,
+    GroupId = 102,
+    Id = 20,
+    Magic = 6052005,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，每造成一次伤害，提高自身4%的<color=#dd7a39>物理、元素攻击</color>，最多叠加5层，持续5秒，每次获得加成时刷新持续时间。",
+    Element = 3,
+    GroupId = 102,
+    Id = 21,
+    Magic = 6052006,
+    ShowPriority = 2
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>灼烧</color>状态的怪物时，重置<color=#dd7a39>技能1</color>的充能",
+    Element = 3,
+    GroupId = 102,
+    Id = 22,
+    Magic = 6052008,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，每次攻击有10%造成<color=#dd7a39>眩晕</color>，<color=#dd7a39>眩晕</color>持续1秒",
+    Element = 4,
+    GroupId = 103,
+    Id = 23,
+    Magic = 6053001,
+    ShowPriority = 2
+  },
+  {
+    Desc = "受到<color=#dd7a39>雷噪</color>状态的怪物攻击时，有30%几率无视该次伤害，并<color=#dd7a39>眩晕</color>怪物0.5秒。",
+    Element = 4,
+    GroupId = 103,
+    Id = 24,
+    Magic = 6053002,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，造成伤害时，额外造成怪物<color=#dd7a39>已损失生命</color>3%的伤害。",
+    Element = 4,
+    GroupId = 103,
+    Id = 25,
+    Magic = 6053003,
+    ShowPriority = 2
+  },
+  {
+    Desc = "怪物因进入<color=#dd7a39>雷噪</color>状态而受到的<color=#dd7a39>最大生命值</color>伤害提高至15%",
+    Element = 4,
+    GroupId = 103,
+    Id = 26,
+    Magic = 6053005,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，普通攻击造成伤害时，对自身半径4米范围的所有怪物也造成20%的<color=#dd7a39>溅射伤害</color>",
+    Element = 4,
+    GroupId = 103,
+    Id = 27,
+    Magic = 6053006,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物造成伤害时，怪物的<color=#dd7a39>雷伤害抗性</color>-20%，持续2s，不可叠加，重复触发刷新冷却时间",
+    Element = 4,
+    GroupId = 103,
+    Id = 28,
+    Magic = 6053007,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成伤害时，角色自身的<color=#dd7a39>伤害加深</color>+7%，持续1.5秒，可以叠加3层，达到最高层数时刷新持续时间。",
+    Element = 5,
+    GroupId = 104,
+    Id = 29,
+    Magic = 6054001,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成伤害时，造成的伤害的30%转换为角色<color=#dd7a39>护盾</color>，<color=#dd7a39>护盾</color>存在的时候，角色获得<color=#dd7a39>霸体</color>状态。<color=#dd7a39>护盾</color>持续8秒，并且最大上限为角色生命值的20%。",
+    Element = 5,
+    GroupId = 104,
+    Id = 30,
+    Magic = 6054002,
+    ShowPriority = 2
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>眩光</color>状态的怪物时，角色<color=#dd7a39>移动速度</color>+30%，并且获得<color=#dd7a39>护盾</color>。<color=#dd7a39>护盾</color>存在时，角色获得<color=#dd7a39>霸体</color>状态。<color=#dd7a39>护盾</color>持续8秒，并且最大上限为角色生命值的20%。",
+    Element = 5,
+    GroupId = 104,
+    Id = 31,
+    Magic = 6054003,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成技能伤害会使角色<color=#dd7a39>普攻伤害</color>+30%，持续3秒，重复触发刷新持续时间",
+    Element = 5,
+    GroupId = 104,
+    Id = 32,
+    Magic = 6054005,
+    ShowPriority = 2
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>眩光</color>状态的怪物时，使自身半径4米范围内的所有怪物当前<color=#dd7a39>霸体值</color>-50%，并使当前场上角色获得<color=#dd7a39>霸体</color>状态，持续5秒，冷却时间10秒",
+    Element = 5,
+    GroupId = 104,
+    Id = 33,
+    Magic = 6054007,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，造成伤害时，有20%几率回复角色<color=#dd7a39>最大生命值</color>1.5%的生命。",
+    Element = 6,
+    GroupId = 105,
+    Id = 34,
+    Magic = 6055001,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，造成伤害时，攻击者恢复该次伤害30%的<color=#dd7a39>生命值</color>，每3秒可以触发一次。",
+    Element = 6,
+    GroupId = 105,
+    Id = 35,
+    Magic = 6055002,
+    ShowPriority = 2
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，触发其他异常状态效果时，结算<color=#dd7a39>腐蚀</color>剩余伤害，并获得<color=#dd7a39>深度腐蚀</color>效果，使怪物每秒受到当前场上角色20%<color=#dd7a39>元素攻击</color>的伤害，持续8秒。",
+    Element = 6,
+    GroupId = 105,
+    Id = 36,
+    Magic = 6055003,
+    ShowPriority = 2
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>暗蚀</color>状态的怪物时，全队获得<color=#dd7a39>月蚀</color>效果，持续3秒，<color=#dd7a39>月蚀</color>存在时令普攻时暗异常增幅+200%，冷却时间10s",
+    Element = 6,
+    GroupId = 105,
+    Id = 37,
+    Magic = 6055006,
+    ShowPriority = 2
+  },
+  {
+    Desc = "令怪物进入<color=#dd7a39>暗蚀</color>状态时，为自身也附加<color=#dd7a39>腐蚀</color>状态，自身<color=#dd7a39>腐蚀</color>期间获得<color=#dd7a39>霸体</color>，<color=#dd7a39>伤害减免</color>+40%，<color=#dd7a39>暗伤害增幅</color>+25%，持续6秒，冷却时间20秒",
+    Element = 6,
+    GroupId = 105,
+    Id = 38,
+    Magic = 6055007,
+    ShowPriority = 2
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>凝滞</color>状态的怪物时，使自身半径4米范围内的所有怪物<color=#dd7a39>冻结</color>2秒。",
+    Element = 2,
+    GroupId = 200,
+    Id = 39,
+    Magic = 6051004,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成技能伤害后，使其本次<color=#dd7a39>凝滞</color>状态持续时间延长2秒，冷却时间20秒，效果不可叠加",
+    Element = 2,
+    GroupId = 200,
+    Id = 40,
+    Magic = 6051008,
+    ShowPriority = 1
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>灼烧</color>状态的怪物时，使自身半径4米范围内的所有怪物陷入易伤状态，受到<color=#dd7a39>伤害</color>+15%，持续5秒。",
+    Element = 3,
+    GroupId = 200,
+    Id = 41,
+    Magic = 6052003,
+    ShowPriority = 1
+  },
+  {
+    Desc = "<color=#dd7a39>灼烧</color>状态造成的<color=#dd7a39>融甲</color>效果增强，效果上升至：<color=#dd7a39>伤害减免</color>-30%",
+    Element = 3,
+    GroupId = 200,
+    Id = 42,
+    Magic = 6052007,
+    ShowPriority = 1
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>雷噪</color>状态的怪物时，使自身半径4米范围内的所有怪物受到<color=#dd7a39>最大生命值</color>5%的伤害。",
+    Element = 4,
+    GroupId = 200,
+    Id = 43,
+    Magic = 6053004,
+    ShowPriority = 1
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>雷噪</color>状态的怪物时，使自身半径4米范围内的另一个随机怪物进入<color=#dd7a39>雷噪</color>状态",
+    Element = 4,
+    GroupId = 200,
+    Id = 44,
+    Magic = 6053008,
+    ShowPriority = 1
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>眩光</color>状态的怪物时，使自身半径4米范围内的所有怪物<color=#dd7a39>霸体值</color>受到<color=#dd7a39>霸体最大值</color>40%的伤害。",
+    Element = 5,
+    GroupId = 200,
+    Id = 45,
+    Magic = 6054004,
+    ShowPriority = 1
+  },
+  {
+    Desc = "<color=#dd7a39>眩光</color>状态造成的<color=#dd7a39>霸体值</color>伤害增强，效果提高至55%",
+    Element = 5,
+    GroupId = 200,
+    Id = 46,
+    Magic = 6054006,
+    ShowPriority = 1
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>暗蚀</color>状态的怪物时，使自身半径4米范围内的所有怪物陷入<color=#dd7a39>猩红腐蚀</color>状态，每秒受到<color=#dd7a39>最大生命值</color>0.6%的伤害，持续8秒。",
+    Element = 6,
+    GroupId = 200,
+    Id = 47,
+    Magic = 6055004,
+    ShowPriority = 1
+  },
+  {
+    Desc = "<color=#dd7a39>暗蚀</color>状态造成的腐蚀效果增强，每秒<color=#dd7a39>最大生命值</color>伤害增加至1.3%",
+    Element = 6,
+    GroupId = 200,
+    Id = 48,
+    Magic = 6055005,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成的<color=#dd7a39>火异常增幅</color>+35%",
+    Element = 2,
+    GroupId = 200,
+    Id = 49,
+    Magic = 60610051,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成的<color=#dd7a39>雷异常增幅</color>+35%",
+    Element = 2,
+    GroupId = 200,
+    Id = 50,
+    Magic = 60610052,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成的<color=#dd7a39>光异常增幅</color>+35%",
+    Element = 2,
+    GroupId = 200,
+    Id = 51,
+    Magic = 60610053,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成的<color=#dd7a39>暗异常增幅</color>+35%",
+    Element = 2,
+    GroupId = 200,
+    Id = 52,
+    Magic = 60610054,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成的<color=#dd7a39>水异常增幅</color>+35%",
+    Element = 3,
+    GroupId = 200,
+    Id = 53,
+    Magic = 60610061,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成的<color=#dd7a39>雷异常增幅</color>+35%",
+    Element = 3,
+    GroupId = 200,
+    Id = 54,
+    Magic = 60610062,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成的<color=#dd7a39>光异常增幅</color>+35%",
+    Element = 3,
+    GroupId = 200,
+    Id = 55,
+    Magic = 60610063,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成的<color=#dd7a39>暗异常增幅</color>+35%",
+    Element = 3,
+    GroupId = 200,
+    Id = 56,
+    Magic = 60610064,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，造成的<color=#dd7a39>水异常增幅</color>+35%",
+    Element = 4,
+    GroupId = 200,
+    Id = 57,
+    Magic = 60610071,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，造成的<color=#dd7a39>火异常增幅</color>+35%",
+    Element = 4,
+    GroupId = 200,
+    Id = 58,
+    Magic = 60610072,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，造成的<color=#dd7a39>光异常增幅</color>+35%",
+    Element = 4,
+    GroupId = 200,
+    Id = 59,
+    Magic = 60610073,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，造成的<color=#dd7a39>暗异常增幅</color>+35%",
+    Element = 4,
+    GroupId = 200,
+    Id = 60,
+    Magic = 60610074,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成的<color=#dd7a39>水异常增幅</color>+35%",
+    Element = 5,
+    GroupId = 200,
+    Id = 61,
+    Magic = 60610081,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成的<color=#dd7a39>火异常增幅</color>+35%",
+    Element = 5,
+    GroupId = 200,
+    Id = 62,
+    Magic = 60610082,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成的<color=#dd7a39>雷异常增幅</color>+35%",
+    Element = 5,
+    GroupId = 200,
+    Id = 63,
+    Magic = 60610083,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成的<color=#dd7a39>暗异常增幅</color>+35%",
+    Element = 5,
+    GroupId = 200,
+    Id = 64,
+    Magic = 60610084,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，造成的<color=#dd7a39>水异常增幅</color>+35%",
+    Element = 6,
+    GroupId = 200,
+    Id = 65,
+    Magic = 60610091,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，造成的<color=#dd7a39>火异常增幅</color>+35%",
+    Element = 6,
+    GroupId = 200,
+    Id = 66,
+    Magic = 60610092,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，造成的<color=#dd7a39>雷异常增幅</color>+35%",
+    Element = 6,
+    GroupId = 200,
+    Id = 67,
+    Magic = 60610093,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，造成的<color=#dd7a39>光异常增幅</color>+35%",
+    Element = 6,
+    GroupId = 200,
+    Id = 68,
+    Magic = 60610094,
+    ShowPriority = 1
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>凝滞</color>状态的怪物时，使自身半径4米范围内的所有怪物<color=#dd7a39>冻结</color>2秒。",
+    Element = 2,
+    GroupId = 201,
+    Id = 69,
+    Magic = 6051004,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成技能伤害后，使其本次<color=#dd7a39>凝滞</color>状态持续时间延长2秒，冷却时间20秒，效果不可叠加",
+    Element = 2,
+    GroupId = 201,
+    Id = 70,
+    Magic = 6051008,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成的<color=#dd7a39>火异常增幅</color>+35%",
+    Element = 2,
+    GroupId = 201,
+    Id = 71,
+    Magic = 60610051,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成的<color=#dd7a39>雷异常增幅</color>+35%",
+    Element = 2,
+    GroupId = 201,
+    Id = 72,
+    Magic = 60610052,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成的<color=#dd7a39>光异常增幅</color>+35%",
+    Element = 2,
+    GroupId = 201,
+    Id = 73,
+    Magic = 60610053,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成的<color=#dd7a39>暗异常增幅</color>+35%",
+    Element = 2,
+    GroupId = 201,
+    Id = 74,
+    Magic = 60610054,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成的<color=#dd7a39>水异常增幅</color>+35%",
+    Element = 3,
+    GroupId = 201,
+    Id = 75,
+    Magic = 60610061,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，造成的<color=#dd7a39>水异常增幅</color>+35%",
+    Element = 4,
+    GroupId = 201,
+    Id = 76,
+    Magic = 60610071,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成的<color=#dd7a39>水异常增幅</color>+35%",
+    Element = 5,
+    GroupId = 201,
+    Id = 77,
+    Magic = 60610081,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，造成的<color=#dd7a39>水异常增幅</color>+35%",
+    Element = 6,
+    GroupId = 201,
+    Id = 78,
+    Magic = 60610091,
+    ShowPriority = 1
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>灼烧</color>状态的怪物时，使自身半径4米范围内的所有怪物陷入易伤状态，受到<color=#dd7a39>伤害</color>+15%，持续5秒。",
+    Element = 3,
+    GroupId = 202,
+    Id = 79,
+    Magic = 6052003,
+    ShowPriority = 1
+  },
+  {
+    Desc = "<color=#dd7a39>灼烧</color>状态造成的<color=#dd7a39>融甲</color>效果增强，效果上升至：<color=#dd7a39>伤害减免</color>-30%",
+    Element = 3,
+    GroupId = 202,
+    Id = 80,
+    Magic = 6052007,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成的<color=#dd7a39>水异常增幅</color>+35%",
+    Element = 3,
+    GroupId = 202,
+    Id = 81,
+    Magic = 60610061,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成的<color=#dd7a39>雷异常增幅</color>+35%",
+    Element = 3,
+    GroupId = 202,
+    Id = 82,
+    Magic = 60610062,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成的<color=#dd7a39>光异常增幅</color>+35%",
+    Element = 3,
+    GroupId = 202,
+    Id = 83,
+    Magic = 60610063,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成的<color=#dd7a39>暗异常增幅</color>+35%",
+    Element = 3,
+    GroupId = 202,
+    Id = 84,
+    Magic = 60610064,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成的<color=#dd7a39>火异常增幅</color>+35%",
+    Element = 2,
+    GroupId = 202,
+    Id = 85,
+    Magic = 60610051,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，造成的<color=#dd7a39>火异常增幅</color>+35%",
+    Element = 4,
+    GroupId = 202,
+    Id = 86,
+    Magic = 60610072,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成的<color=#dd7a39>火异常增幅</color>+35%",
+    Element = 5,
+    GroupId = 202,
+    Id = 87,
+    Magic = 60610082,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，造成的<color=#dd7a39>火异常增幅</color>+35%",
+    Element = 6,
+    GroupId = 202,
+    Id = 88,
+    Magic = 60610092,
+    ShowPriority = 1
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>雷噪</color>状态的怪物时，使自身半径4米范围内的所有怪物受到<color=#dd7a39>最大生命值</color>5%的伤害。",
+    Element = 4,
+    GroupId = 203,
+    Id = 89,
+    Magic = 6053004,
+    ShowPriority = 1
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>雷噪</color>状态的怪物时，使自身半径4米范围内的另一个随机怪物进入<color=#dd7a39>雷噪</color>状态",
+    Element = 4,
+    GroupId = 203,
+    Id = 90,
+    Magic = 6053008,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，造成的<color=#dd7a39>水异常增幅</color>+35%",
+    Element = 4,
+    GroupId = 203,
+    Id = 91,
+    Magic = 60610071,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，造成的<color=#dd7a39>火异常增幅</color>+35%",
+    Element = 4,
+    GroupId = 203,
+    Id = 92,
+    Magic = 60610072,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，造成的<color=#dd7a39>光异常增幅</color>+35%",
+    Element = 4,
+    GroupId = 203,
+    Id = 93,
+    Magic = 60610073,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，造成的<color=#dd7a39>暗异常增幅</color>+35%",
+    Element = 4,
+    GroupId = 203,
+    Id = 94,
+    Magic = 60610074,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成的<color=#dd7a39>雷异常增幅</color>+35%",
+    Element = 2,
+    GroupId = 203,
+    Id = 95,
+    Magic = 60610052,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成的<color=#dd7a39>雷异常增幅</color>+35%",
+    Element = 3,
+    GroupId = 203,
+    Id = 96,
+    Magic = 60610062,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成的<color=#dd7a39>雷异常增幅</color>+35%",
+    Element = 5,
+    GroupId = 203,
+    Id = 97,
+    Magic = 60610083,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，造成的<color=#dd7a39>雷异常增幅</color>+35%",
+    Element = 6,
+    GroupId = 203,
+    Id = 98,
+    Magic = 60610093,
+    ShowPriority = 1
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>眩光</color>状态的怪物时，使自身半径4米范围内的所有怪物<color=#dd7a39>霸体值</color>受到<color=#dd7a39>霸体最大值</color>40%的伤害。",
+    Element = 5,
+    GroupId = 204,
+    Id = 99,
+    Magic = 6054004,
+    ShowPriority = 1
+  },
+  {
+    Desc = "<color=#dd7a39>眩光</color>状态造成的<color=#dd7a39>霸体值</color>伤害增强，效果提高至55%",
+    Element = 5,
+    GroupId = 204,
+    Id = 100,
+    Magic = 6054006,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成的<color=#dd7a39>水异常增幅</color>+35%",
+    Element = 5,
+    GroupId = 204,
+    Id = 101,
+    Magic = 60610081,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成的<color=#dd7a39>火异常增幅</color>+35%",
+    Element = 5,
+    GroupId = 204,
+    Id = 102,
+    Magic = 60610082,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成的<color=#dd7a39>雷异常增幅</color>+35%",
+    Element = 5,
+    GroupId = 204,
+    Id = 103,
+    Magic = 60610083,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成的<color=#dd7a39>暗异常增幅</color>+35%",
+    Element = 5,
+    GroupId = 204,
+    Id = 104,
+    Magic = 60610084,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成的<color=#dd7a39>光异常增幅</color>+35%",
+    Element = 2,
+    GroupId = 204,
+    Id = 105,
+    Magic = 60610053,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成的<color=#dd7a39>光异常增幅</color>+35%",
+    Element = 3,
+    GroupId = 204,
+    Id = 106,
+    Magic = 60610063,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，造成的<color=#dd7a39>光异常增幅</color>+35%",
+    Element = 4,
+    GroupId = 204,
+    Id = 107,
+    Magic = 60610073,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，造成的<color=#dd7a39>光异常增幅</color>+35%",
+    Element = 6,
+    GroupId = 204,
+    Id = 108,
+    Magic = 60610094,
+    ShowPriority = 1
+  },
+  {
+    Desc = "击杀处于<color=#dd7a39>暗蚀</color>状态的怪物时，使自身半径4米范围内的所有怪物陷入<color=#dd7a39>猩红腐蚀</color>状态，每秒受到<color=#dd7a39>最大生命值</color>0.6%的伤害，持续8秒。",
+    Element = 6,
+    GroupId = 205,
+    Id = 109,
+    Magic = 6055004,
+    ShowPriority = 1
+  },
+  {
+    Desc = "<color=#dd7a39>暗蚀</color>状态造成的腐蚀效果增强，每秒<color=#dd7a39>最大生命值</color>伤害增加至1.3%",
+    Element = 6,
+    GroupId = 205,
+    Id = 110,
+    Magic = 6055005,
+    ShowPriority = 1
+  },
+  {
+    Desc = "场上每有一个处于腐蚀状态的单位，在场角色<color=#dd7a39>物理、元素攻击</color>+6%",
+    Element = 6,
+    GroupId = 205,
+    Id = 111,
+    Magic = 6055008,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，造成的<color=#dd7a39>水异常增幅</color>+35%",
+    Element = 6,
+    GroupId = 205,
+    Id = 112,
+    Magic = 60610091,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，造成的<color=#dd7a39>火异常增幅</color>+35%",
+    Element = 6,
+    GroupId = 205,
+    Id = 113,
+    Magic = 60610092,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，造成的<color=#dd7a39>雷异常增幅</color>+35%",
+    Element = 6,
+    GroupId = 205,
+    Id = 114,
+    Magic = 60610093,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>暗蚀</color>状态的怪物，造成的<color=#dd7a39>光异常增幅</color>+35%",
+    Element = 6,
+    GroupId = 205,
+    Id = 115,
+    Magic = 60610094,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>凝滞</color>状态的怪物，造成的<color=#dd7a39>暗异常增幅</color>+35%",
+    Element = 2,
+    GroupId = 205,
+    Id = 116,
+    Magic = 60610054,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>灼烧</color>状态的怪物，造成的<color=#dd7a39>暗异常增幅</color>+35%",
+    Element = 3,
+    GroupId = 205,
+    Id = 117,
+    Magic = 60610064,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>雷噪</color>状态的怪物，造成的<color=#dd7a39>暗异常增幅</color>+35%",
+    Element = 4,
+    GroupId = 205,
+    Id = 118,
+    Magic = 60610074,
+    ShowPriority = 1
+  },
+  {
+    Desc = "对处于<color=#dd7a39>眩光</color>状态的怪物，造成的<color=#dd7a39>暗异常增幅</color>+35%",
+    Element = 5,
+    GroupId = 205,
+    Id = 119,
+    Magic = 60610084,
+    ShowPriority = 1
+  }
+}

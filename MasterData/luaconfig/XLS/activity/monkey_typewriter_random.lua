@@ -1,0 +1,44 @@
+return {
+  {
+    Duration = 50,
+    Lv = 1,
+    MaxInterval = 50,
+    MinInterval = 20,
+    TxtGroupID = 1
+  },
+  {
+    Duration = 50,
+    Lv = 2,
+    MaxInterval = 40,
+    MinInterval = 10,
+    TxtGroupID = 1
+  },
+  {
+    Duration = 50,
+    Lv = 3,
+    MaxInterval = 40,
+    MinInterval = 10,
+    TxtGroupID = 1
+  },
+  {
+    Duration = 50,
+    Lv = 4,
+    MaxInterval = 30,
+    MinInterval = 10,
+    TxtGroupID = 1
+  },
+  {
+    Duration = 50,
+    Lv = 5,
+    MaxInterval = 20,
+    MinInterval = 10,
+    TxtGroupID = 1
+  },
+  {
+    Duration = 50,
+    Lv = 6,
+    MaxInterval = 15,
+    MinInterval = 10,
+    TxtGroupID = 1
+  }
+}

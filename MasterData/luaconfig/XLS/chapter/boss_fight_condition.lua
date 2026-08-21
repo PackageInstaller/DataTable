@@ -1,0 +1,37 @@
+return {
+  Condition = {
+    100702,
+    100402,
+    100501,
+    100502,
+    100600,
+    100602,
+    100302,
+    100400
+  },
+  ShowConditionToBossFight = {
+    [100302] = {
+      {Id = 1, UnlockCondition = 100302},
+      {Id = 2, UnlockCondition = 100302},
+      {Id = 3, UnlockCondition = 100400}
+    },
+    [100402] = {
+      {Id = 4, UnlockCondition = 100501}
+    },
+    [100502] = {
+      {Id = 5, UnlockCondition = 100600}
+    },
+    [100602] = {
+      {Id = 6, UnlockCondition = 100602},
+      {Id = 7, UnlockCondition = 100702}
+    }
+  },
+  UnlockConditionToBossFight = {
+    [100302] = {1, 2},
+    [100400] = {3},
+    [100501] = {4},
+    [100600] = {5},
+    [100602] = {6},
+    [100702] = {7}
+  }
+}

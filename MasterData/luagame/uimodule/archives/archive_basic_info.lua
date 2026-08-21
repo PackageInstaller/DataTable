@@ -1,0 +1,48 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local Char_Helper = require("uimodule.character.char_helper")
+
+function ui:ui_finish_load()
+  self:set_button("ChangeHeroIcon", function()
+    self.v_parent_ui:switch_model_or_icon(self.v_switch_flag)
+  end)
+  self:set_button("BtnHeroIcon", function()
+    UIMgr:get_ui("char_spine_display"):ui_show(self.v_cur_buddy_id)
+  end)
+  self:set_button("Fashion", function()
+    self.v_parent_ui:release_model()
+    UIMgr:get_ui("ui_fashionable_dress"):ui_show(self.v_cur_buddy_id, nil, nil, nil, nil, nil, true)
+  end)
+  self:set_button("HideUI", function()
+    self.v_parent_ui:show_or_hide_all_info(false)
+  end)
+end
+
+function ui:ui_on_show(buddy_id)
+  self.v_cur_buddy_id = buddy_id
+  local cfg = ShareRes.get_buddy_archive_overview(buddy_id)
+  self.v_uicompents.Birthday_txt.text = cfg.Date
+  self.v_uicompents.CharDesc_txt.text = cfg.BuddyDesc
+  self.v_uicompents.Camp_txt.text = cfg.CampName
+  local buddy_cfg = ShareRes.create("buddy.buddy", buddy_id)
+  self.v_uicompents.CharName_txt.text = Util.format_quality_txt_color(buddy_cfg.Name, buddy_cfg.Quality)
+  local icon_path = Char_Helper.get_char_element_icon(buddy_id)
+  ResMgr:load_set_icon(self.v_uicompents.CharEle_img, icon_path)
+  icon_path = Char_Helper.get_char_job_icon(buddy_id)
+  ResMgr:load_set_icon(self.v_uicompents.CharJob_img, icon_path)
+  Char_Helper.set_buddy_quality_star(self.v_uiobjects, nil, buddy_id)
+end
+
+function ui:ui_on_hide()
+  self.v_switch_flag = nil
+end
+
+function ui:set_twodimensional_button(enable)
+  if nil ~= enable then
+    self.v_switch_flag = enable
+  end
+  self.v_uiobjects.TwoDimensional:SetActive(self.v_switch_flag)
+  self.v_uiobjects.ThreeDimensional:SetActive(not self.v_switch_flag)
+end
+
+return ui

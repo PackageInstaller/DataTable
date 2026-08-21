@@ -1,0 +1,153 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local ARCHIVE_CHAPTER_ITEM_KEY = "ARCHIVE_CHAPTER_ITEM_KEY"
+local ARCHIVE_CHAPTER_SMALL_ITEM_KEY = "ARCHIVE_CHAPTER_SMALL_ITEM_KEY"
+local UIChapterPath = "%s"
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local MOVE_VIDEO_TAG_TOG_KEY = "MOVE_VIDEO_TAG_TOG_KEY"
+
+function ui:ui_finish_load()
+  self:set_button("BtnRet1", function()
+    self.v_tag_toggle_tab:set_toggle_by_index(1)
+    self.v_is_rest_tag = true
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(ARCHIVE_CHAPTER_ITEM_KEY, self.v_uiobjects.ChapTem, self.v_uiobjects.Content)
+  self:register_exist_auto_template(ARCHIVE_CHAPTER_SMALL_ITEM_KEY, self.v_uiobjects.SmallChapTem, self.v_uiobjects.Content)
+  self:register_exist_auto_template(MOVE_VIDEO_TAG_TOG_KEY, self.v_uiobjects.TagItem, self.v_uiobjects.TagList)
+  self.v_is_rest_tag = true
+  self.v_show_tag_index = 1
+end
+
+function ui:ui_on_show()
+  self:init_tog()
+  self:update_item_list_show()
+end
+
+function ui:init_tog()
+  self.v_tog_list = UtilTable.copy_table(ShareRes.create("archives.move_video_title"))
+  UtilTable.list_delete_by_func(self.v_tog_list, function(info)
+    local is_show = ShareRes.get_archive_group_cfg(info.Id)
+    return not is_show
+  end)
+  if not self.v_tag_toggle then
+    self.v_tag_toggle = {}
+    for _, data in ipairs(self.v_tog_list) do
+      local item = self:get_auto_cache(MOVE_VIDEO_TAG_TOG_KEY)
+      local name = Util.get_text("TagName", item)
+      local red_point = Util.get_child_gameobj("Redpoint", name.gameObject)
+      red_point:SetActive(ArchiveMgr:update_voieo_title_red(data.Id))
+      name.text = data.Name
+      local tog = Util.get_toggle(nil, item)
+      table.insert(self.v_tag_toggle, tog)
+    end
+  end
+  self.v_tag_toggle_tab = ToggleTab:new(self)
+  self.v_tag_toggle_tab:init_by_toggles(self.v_tag_toggle, function(cur_select)
+    self:click_select_toggle(cur_select)
+  end, self.v_show_tag_index, false)
+  self:click_select_toggle(self.v_show_tag_index)
+end
+
+function ui:click_select_toggle(index)
+  self.v_show_tag_index = index
+  self.v_show_tag_id = self.v_tog_list[index].Id
+  self:update_item_list_show()
+end
+
+function ui:update_tag_show(cur_index)
+  for index, tog in pairs(self.v_tag_toggle) do
+    local tog_text_Eng = Util.get_text("TagEnName", tog.gameObject)
+    local page_name = Util.get_text("TagName", tog.gameObject)
+    tog_text_Eng.color = index == cur_index and ArchiveMgr.v_en_color or ArchiveMgr.v_en_un_color
+    page_name.color = index == cur_index and ArchiveMgr.v_color or ArchiveMgr.v_un_color
+  end
+end
+
+function ui:update_item_list_show()
+  local group_id_list = ShareRes.get_archive_group_cfg(self.v_show_tag_id)
+  group_id_list = group_id_list or {}
+  table.sort(group_id_list, function(a, b)
+    if a.Order then
+      return a.Order < b.Order
+    else
+      return a.Id < b.Id
+    end
+  end)
+  self:give_back_auto_cache(ARCHIVE_CHAPTER_ITEM_KEY)
+  self:give_back_auto_cache(ARCHIVE_CHAPTER_SMALL_ITEM_KEY)
+  local parent
+  for idx, data in ipairs(group_id_list) do
+    local chapter_cfg = ShareRes.get_chapter_cfg(data.ChapterId)
+    if chapter_cfg and 1 ~= chapter_cfg.ShowOff or not chapter_cfg then
+      local is_small_item = chapter_cfg and 1 == chapter_cfg.IsSmallItem
+      local item
+      if not is_small_item then
+        item = self:get_auto_cache(ARCHIVE_CHAPTER_ITEM_KEY)
+        parent = Util.get_child_gameobj("ChildContainer", item).transform
+        parent.gameObject:SetActive(false)
+      else
+        item = self:get_auto_cache(ARCHIVE_CHAPTER_SMALL_ITEM_KEY)
+        if parent then
+          parent.gameObject:SetActive(true)
+          item.transform:SetParent(parent)
+        end
+      end
+      self:set_item_data(item, data, idx)
+    end
+  end
+end
+
+function ui:set_item_data(item, data, idx)
+  local container_obj = Util.get_child_gameobj("Container", item)
+  local lock_go = Util.get_child("LockMask_", container_obj)
+  local condition_des = Util.get_text("LockMask_/ChapLock/Condition/Condition_", container_obj)
+  local chapter_info_obj = Util.get_child_gameobj("ChapInfo_", container_obj)
+  local chapter_name = Util.get_text("ChapInfo_/ChapName_", container_obj)
+  local chapter_num = Util.get_text("ChapInfo_/ChapterNum/ChapNum_", container_obj)
+  local chapter_num_node = Util.get_canvas_group("ChapInfo_/ChapterNum", container_obj)
+  local chapter_cover = Util.get_image("ChapIcon_", container_obj)
+  local red_point = Util.get_child("ChapRed_", container_obj)
+  local ani_eff_down = Util.get_child_gameobj("Animation/AfterIN/Ani_ChapTem_Loop_Down", container_obj)
+  local ani_eff_up = Util.get_child_gameobj("Animation/AfterIN/Ani_ChapTem_Loop_Up", container_obj)
+  local chapter_name_canvas_group = Util.get_canvas_group("ChapInfo_", container_obj)
+  local frame_go = Util.get_child_gameobj("Frame_", container_obj)
+  local bg_img = Util.get_image("ChapIcon_", container_obj)
+  local icon_path = string.format(UIChapterPath, data.CoverImage)
+  chapter_name.text = data.Name
+  chapter_num.text = data.StageNum
+  local con_result_id = Condition:check_condition_list(data.ConditionID)
+  chapter_num_node.alpha = 1
+  if 0 ~= con_result_id then
+    local con_cfg = ShareRes.create("condition.condition", con_result_id)
+    condition_des.text = con_cfg.Desc
+    chapter_num_node.alpha = 0
+  end
+  red_point:SetActive(ArchiveMgr:update_voieo_group_red(data))
+  local is_lock = not ArchiveMgr:is_to_achieve_Condition(data.ConditionID, false)
+  lock_go:SetActive(is_lock)
+  chapter_info_obj:SetActive(not is_lock)
+  chapter_name_canvas_group.alpha = is_lock and 0.04 or 1
+  Util.apply_grey_ex(frame_go.gameObject, is_lock)
+  Util.apply_grey_ex(bg_img.gameObject, is_lock)
+  ResMgr:load_set_icon(chapter_cover, icon_path, nil, true, self)
+  self:set_button_listener(Util.get_button(nil, container_obj), function()
+    if ArchiveMgr:is_to_achieve_Condition(data.ConditionID, true) then
+      UIMgr:get_ui("archive_story_main"):ui_show(data.Id)
+    end
+  end)
+  ani_eff_down:SetActive(false)
+  ani_eff_up:SetActive(false)
+  ani_eff_down:SetActive(0 == idx % 2)
+  ani_eff_up:SetActive(0 ~= idx % 2)
+end
+
+function ui:ui_on_hide()
+  self.v_tag_toggle = nil
+end
+
+function ui:cache_ui()
+  return true
+end
+
+return ui

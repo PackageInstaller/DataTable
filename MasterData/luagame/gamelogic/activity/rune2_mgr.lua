@@ -1,0 +1,574 @@
+local Base = require("gamelogic.base_system")
+local CommonDefine = require("cs_share.common_define")
+local AttrSyncHelper = require("uimodule.fight_bag.sync_attr_helper")
+local RUNE_HELPER = require("gamelogic.activity.rune2_helper")
+local VALUE_TYPE = CommonDefine.VALUE_TYPE
+local RUNE2_TYPE = CommonDefine.RUNE2_TYPE
+local TEAM_LV_CHANGE_STATE = RUNE_HELPER.TEAM_LV_CHANGE_STATE
+local RUNE2_CAST_TYPE = CommonDefine.RUNE2_CAST_TYPE
+local RUNE2_SOURCE = CommonDefine.RUNE2_SOURCE
+local RUNE_COLOR = RUNE_HELPER.RUNE_COLOR
+local RUNE_TYPE_NAME = {
+  [RUNE2_TYPE.RED_RUNE] = "red",
+  [RUNE2_TYPE.YELLOW_RUNE] = "yellow",
+  [RUNE2_TYPE.BULE_RUNE] = "blue"
+}
+local M = Util.create_child_mt(Base)
+
+function M:init_sys()
+  Base.init_sys(self)
+  self:init_data()
+  self:sys_mq_bind(Const.MSG_ON_ALL_HERO_REBORN_END, self.hero_reborn, self)
+end
+
+function M:init_data()
+  self.v_rune_team_level = 0
+  self.v_team_change_state = TEAM_LV_CHANGE_STATE.NO_CHANGE
+  self.v_rune_team_effect_list = {}
+  self.v_rune_level_type = {
+    [RUNE2_TYPE.RED_RUNE] = 0,
+    [RUNE2_TYPE.YELLOW_RUNE] = 0,
+    [RUNE2_TYPE.BULE_RUNE] = 0
+  }
+  self.v_buddy_rune_info = {}
+  self.v_is_setting_rune = false
+  self.v_is_casting_rune = false
+  self.v_source_type = nil
+  self.v_use_lv = nil
+end
+
+function M:on_reconnect()
+end
+
+function M:on_init_buddy_rune_list(data)
+  local buddy_rune_list = data.buddy_rune2_list
+  local exist_buddy_id_map = {}
+  local list = SceneMgr:get_hero_list()
+  for _, hero in pairs(list) do
+    local id = hero.buddy_cfg.Id
+    exist_buddy_id_map[id] = true
+  end
+  for _, buddy_rune_data in ipairs(buddy_rune_list) do
+    local buddy_id = buddy_rune_data.id
+    if exist_buddy_id_map[buddy_id] then
+      local rune_data = buddy_rune_data.rune2_data
+      self.v_buddy_rune_info[buddy_id] = {
+        level = rune_data.rune_grade,
+        pos = rune_data.pos,
+        rune_item = rune_data.rune_item,
+        entry_list = rune_data.rune_entry
+      }
+      self:init_rune_entry_list(buddy_id)
+      self:init_rune_effect(buddy_id)
+    end
+  end
+  self:refresh_rune_type_level()
+end
+
+function M:on_update_buddy_rune(data)
+  self.v_cache_rune_info = data
+end
+
+function M:refresh_buddy_rune_info(data)
+  local total_buddy_cfg = ShareRes.create("buddy.buddy")
+  local buddy_rune_data = data.buddy_rune2_data
+  local buddy_id = buddy_rune_data.id
+  local rune_data = buddy_rune_data.rune2_data
+  self.v_buddy_rune_info[buddy_id] = {
+    level = rune_data.rune_grade,
+    pos = rune_data.pos,
+    rune_item = rune_data.rune_item,
+    entry_list = rune_data.rune_entry
+  }
+end
+
+function M:refresh_rune_type_level()
+  local total_buddy_cfg = ShareRes.create("buddy.buddy")
+  for buddy_id, rune_data in pairs(self.v_buddy_rune_info) do
+    local pos = rune_data.pos
+    local cfg = total_buddy_cfg[buddy_id]
+    local rune_type_list = cfg.RuneType
+    local rune_type = rune_type_list[pos]
+    rune_data.rune_type = rune_type
+  end
+  self:refresh_rune_team_level()
+end
+
+function M:refresh_rune_team_level()
+  local lv = 0
+  for key, rune_data in pairs(self.v_buddy_rune_info) do
+    lv = lv + rune_data.level
+  end
+  self:refresh_rune_team_effect(lv)
+  if self.v_rune_team_level then
+    if lv > self.v_rune_team_level then
+      self.v_team_change_state = TEAM_LV_CHANGE_STATE.UP
+    elseif lv < self.v_rune_team_level then
+      self.v_team_change_state = TEAM_LV_CHANGE_STATE.DOWN
+    end
+  end
+  self.v_rune_team_level = lv
+  self:call_on_ball_level_change()
+end
+
+function M:call_on_ball_level_change()
+  local ball_level = self:get_ball_level()
+end
+
+function M:call_on_npc_ball_level_change(npc)
+  local ball_level = self:get_ball_level_on_npc(npc)
+end
+
+function M:refresh_rune_team_effect(lv)
+  local team_level_cfg = ShareRes.get_team_level_rune_cfg(lv)
+  if team_level_cfg then
+    local use_lv = team_level_cfg.Level
+    if use_lv == self.v_use_lv then
+      return
+    end
+    self.v_use_lv = use_lv
+    local effect_list = team_level_cfg.EffectList
+    local report_list = {}
+    for _, info in pairs(effect_list) do
+      local attr_id = info[1]
+      local attr_val = info[2]
+      local val_type = info[3]
+      if not report_list[attr_id] then
+        report_list[attr_id] = {
+          FIXED = 0,
+          RATIO = 0,
+          OTHER_RATIO = {}
+        }
+      end
+      if val_type == VALUE_TYPE.FIXED then
+        report_list[attr_id].FIXED = report_list[attr_id].FIXED + attr_val
+      else
+        report_list[attr_id].RATIO = report_list[attr_id].RATIO + attr_val
+      end
+    end
+    AttrSyncHelper.sync_module_attrs(CommonDefine.MODULE_ATTR_TYPE.RUNE2, report_list)
+  else
+    self.v_use_lv = 0
+    AttrSyncHelper.sync_module_attrs(CommonDefine.MODULE_ATTR_TYPE.RUNE2, {})
+  end
+end
+
+function M:cal_total_rune_level()
+  return self.v_red_rune_level + self.v_yellow_rune_level + self.v_blue_rune_level
+end
+
+function M:is_rune_lv_max(buddy_id, rune_type)
+  local rune_info = self.v_buddy_rune_info[buddy_id]
+  if rune_info and rune_info.rune_type and rune_info.rune_type == rune_type then
+    local max_lv = ShareRes.get_buddy_rune_max_lv(self.v_buddy_id, rune_type)
+    return max_lv <= rune_info.level
+  end
+  return false
+end
+
+function M:get_rune_type_level(buddy_id)
+  return self.v_buddy_rune_info[buddy_id] and self.v_buddy_rune_info[buddy_id].level or 0
+end
+
+function M:get_rune_team_level()
+  return self.v_rune_team_level
+end
+
+function M:get_rune_buddy_info(buddy_id)
+  return self.v_buddy_rune_info[buddy_id]
+end
+
+function M:get_rune_buudy_skill_level(buddy_id)
+  local rune_info = self.v_buddy_rune_info[buddy_id]
+  if rune_info then
+    local pos = rune_info.pos
+    local level = self:get_rune_type_level(buddy_id)
+    local rune_type = ShareRes.get_buddy_rune_type(buddy_id, pos)
+    local rune_skill_cfg = ShareRes.get_buddy_rune_list_cfg(buddy_id, rune_type, level)
+    if rune_skill_cfg then
+      return rune_type, rune_skill_cfg.Level
+    end
+  end
+end
+
+function M:get_ball_level()
+  local ball_level = {}
+  for _, rune_type in pairs(CommonDefine.RUNE2_TYPE) do
+    ball_level[RUNE_TYPE_NAME[rune_type]] = 0
+    local hero_list = SceneMgr:get_hero_list()
+    for buddy_id, hero in pairs(hero_list) do
+      ball_level[RUNE_TYPE_NAME[rune_type]] = ball_level[RUNE_TYPE_NAME[rune_type]] + (self:get_rune_type_level(buddy_id) or 0)
+    end
+  end
+  return ball_level
+end
+
+function M:get_ball_level_on_npc(npc)
+  local buddy_id = npc.id
+  local ball_level = {}
+  local buddy_rune_type_list = ShareRes.get_buddy_rune_type_list(buddy_id)
+  local buddy_rune_info = self:get_rune_buddy_info(buddy_id)
+  for _, rune_type in pairs(CommonDefine.RUNE2_TYPE) do
+    ball_level[RUNE_TYPE_NAME[rune_type]] = nil
+    if UtilTable.table_find(buddy_rune_type_list, rune_type) then
+      ball_level[RUNE_TYPE_NAME[rune_type]] = 0
+      if buddy_rune_type_list[buddy_rune_info.pos] == rune_type then
+        ball_level[RUNE_TYPE_NAME[rune_type]] = buddy_rune_info.level
+      end
+    end
+  end
+  return ball_level
+end
+
+function M:get_npc_rune2_level_by_color(npc, color)
+  local buddy_rune_info = self:get_rune_buddy_info(npc.id)
+  if not buddy_rune_info then
+    return 0
+  end
+  local rune_type = buddy_rune_info.rune_type
+  local now_color = RUNE_TYPE_NAME[rune_type]
+  return color == now_color and buddy_rune_info.level or 0
+end
+
+function M:get_npc_rune2_info(npc)
+  local buddy_rune_info = self:get_rune_buddy_info(npc.id)
+  if not buddy_rune_info then
+    return {color = "none", level = 0}
+  end
+  local rune_type = buddy_rune_info.rune_type
+  local color = RUNE_TYPE_NAME[rune_type]
+  return {
+    color = color,
+    level = buddy_rune_info.level
+  }
+end
+
+function M:set_buddy_rune(refresh_data, cb)
+  local hero_id = refresh_data.hero_id
+  local rune_pos = refresh_data.rune_pos
+  local hero = SceneMgr:get_hero_by_uuid(hero_id)
+  local buddy_id = hero.buddy_cfg.Id
+  self:request_set_rune(refresh_data, function()
+    self.v_team_change_state = TEAM_LV_CHANGE_STATE.NO_CHANGE
+    self:change_buddy_rune(buddy_id, hero, rune_pos)
+    MsgGame:mq_publish2(Const.MSG_ON_CURSE_RING_RUNE_CHANGE)
+    if cb then
+      cb()
+      UIMgr:get_ui("ui_rune_set_suc"):ui_show(buddy_id)
+    end
+  end)
+end
+
+function M:change_buddy_rune(buddy_id, npc, rune_pos)
+  if self.v_cache_rune_info then
+    if self.v_buddy_rune_info[buddy_id] then
+      self:delete_old_rune(buddy_id, rune_pos)
+    end
+    self:refresh_buddy_rune_info(self.v_cache_rune_info)
+    self.v_cache_rune_info = nil
+    self:add_new_rune(buddy_id, rune_pos)
+    self:refresh_rune_type_level()
+    self:call_on_npc_ball_level_change(npc)
+  else
+    Log.Error("cache rune info not exist")
+  end
+end
+
+function M:refresh_buddy_rune(npc)
+  if self.v_cache_rune_info then
+    self:refresh_buddy_rune_info(self.v_cache_rune_info)
+    local info = self:get_rune_buddy_info(npc.id)
+    self:change_buddy_rune(npc.id, npc, info.pos)
+    self.v_cache_rune_info = nil
+    self:refresh_rune_type_level()
+    self:call_on_npc_ball_level_change(npc)
+  else
+    Log.Error("cache rune info not exist")
+  end
+end
+
+function M:add_new_rune(buddy_id, rune_pos)
+  local rune_data = self.v_buddy_rune_info[buddy_id]
+  local rune_type = ShareRes.get_buddy_rune_type(buddy_id, rune_pos)
+  local rune_condition_lv = self:get_rune_type_level(buddy_id)
+  local hero = SceneMgr:get_hero_by_id(buddy_id)
+  local rune_cfg = ShareRes.get_buddy_rune_list_cfg(buddy_id, rune_type, rune_condition_lv)
+  local magic_id_list = rune_cfg.Effect
+  for _, magic_id in pairs(magic_id_list) do
+    hero.magic_mgr:add_magic(hero, magic_id)
+  end
+  local entry_list = rune_data.entry_list
+  local entry_cfg_list = ShareRes.create("entry.entry_main")
+  if entry_list then
+    for _, entry_id in pairs(entry_list) do
+      local entry_cfg = entry_cfg_list[entry_id]
+      if entry_cfg then
+        local magic_id = entry_cfg.Effect
+        hero.magic_mgr:add_magic(hero, magic_id)
+      end
+    end
+  end
+end
+
+function M:delete_old_rune(buddy_id, rune_pos)
+  local hero = SceneMgr:get_hero_by_id(buddy_id)
+  local rune_info = self.v_buddy_rune_info[buddy_id]
+  if not rune_info then
+    Log.Error("rune info is not exist, buddy id = ", buddy_id)
+    return
+  end
+  local rune_condition_lv = self:get_rune_type_level(buddy_id)
+  local rune_type = ShareRes.get_buddy_rune_type(buddy_id, rune_pos)
+  local hero_rune_cfg = ShareRes.get_buddy_rune_list_cfg(buddy_id, rune_type, rune_condition_lv)
+  if hero_rune_cfg and hero_rune_cfg.Effect then
+    for _, magic_id in pairs(hero_rune_cfg.Effect) do
+      hero.magic_mgr:remove_magic_by_id(magic_id)
+    end
+  end
+  local entry_list = rune_info.entry_list
+  if entry_list then
+    local entry_cfg_list = ShareRes.create("entry.entry_main")
+    for _, entry_id in pairs(entry_list) do
+      local entry_cfg = entry_cfg_list[entry_id]
+      if entry_cfg then
+        local magic_id = entry_cfg.Effect
+        hero.magic_mgr:remove_magic_by_id(magic_id)
+      end
+    end
+  end
+  self.v_buddy_rune_info[buddy_id] = nil
+end
+
+function M:request_set_rune(refresh_data, cb)
+  if self.v_wait_setting_rune then
+    Util.show_message_tip(2045)
+    return
+  end
+  self.v_is_setting_rune = true
+  self.v_wait_setting_rune = true
+  local hero_id = refresh_data.hero_id
+  local uuid = refresh_data.uuid
+  local rune_pos = refresh_data.rune_pos
+  local source_type = refresh_data.source_type
+  local npc_id = refresh_data.npc_id
+  local drop_uuid = refresh_data.drop_uuid
+  self.v_source_type = source_type
+  Network:call("c2gs_set_buddy_rune", {
+    hero_id = hero_id,
+    uuid = uuid,
+    rune_pos = rune_pos,
+    source_type = source_type,
+    npc_id = npc_id
+  }, function(ok)
+    if ok then
+      if cb then
+        cb()
+      end
+      if self.v_source_type == RUNE2_SOURCE.DROP or self.v_source_type == RUNE2_SOURCE.NPC_DROP then
+        local scene_item_mgr = SceneMgr:get_scene_item_mgr()
+        do
+          local item_id = scene_item_mgr:get_item_id(drop_uuid)
+          if TowerMgr and item_id then
+            TowerMgr:trace_pick_item(item_id)
+          end
+          scene_item_mgr:delete_item(drop_uuid)
+        end
+      end
+      local hero_list = SceneMgr:get_hero_list()
+      for hero_uuid, hero in pairs(hero_list) do
+        if hero_id == hero_uuid then
+          local rune_info = self:get_rune_buddy_info(hero.id)
+          local buddy_cfg = ShareRes.get_buddy_cfg(hero.id)
+          local rune_type = buddy_cfg.RuneType[rune_pos]
+          local rune_cfg = ShareRes.get_buddy_rune_lv_cfg(hero.id, rune_type, rune_info.level)
+          local effect_list = rune_cfg.Effect
+          for key, effect_id in pairs(effect_list) do
+            BehaviorMgr:call_event_fun("on_get_battle_skill", hero, effect_id)
+          end
+          break
+        end
+      end
+    end
+    self.v_wait_setting_rune = false
+  end)
+end
+
+function M:request_cast_rune(hero_uuid, cast_type, cb)
+  if self.v_is_casting_rune then
+    Util.show_message_tip(2045)
+    return
+  end
+  self.v_is_casting_rune = true
+  Network:call("c2gs_cast_rune", {hero_id = hero_uuid, cast_type = cast_type}, function(ok)
+    if ok and cb then
+      local show_tip
+      if cast_type == RUNE2_CAST_TYPE.UPGRADE then
+        show_tip = "升级成功"
+      else
+        show_tip = "洗词条成功"
+      end
+      Util.show_message_tip(show_tip)
+      local hero = SceneMgr:get_hero_by_uuid(hero_uuid)
+      self:refresh_buddy_rune(hero)
+      cb()
+    end
+    self.v_is_casting_rune = false
+  end)
+end
+
+function M:sell_rune_item(sell_param, source_type, cb)
+  self.v_source_type = source_type
+  local uuid = sell_param.uuid
+  local npc_id = sell_param.npc_id
+  local drop_uuid = sell_param.drop_uuid
+  Network:call("c2gs_rune2_item_sell", {
+    uuid = uuid,
+    source_type = source_type,
+    npc_id = npc_id
+  }, function(ok)
+    if ok then
+      local scene_item_mgr = SceneMgr:get_scene_item_mgr()
+      local item_id = scene_item_mgr:get_item_id(drop_uuid)
+      if TowerMgr and item_id then
+        TowerMgr:trace_pick_item(item_id)
+      end
+      if drop_uuid and (self.v_source_type == RUNE2_SOURCE.DROP or self.v_source_type == RUNE2_SOURCE.NPC_DROP) then
+        scene_item_mgr:delete_item(drop_uuid)
+      end
+      if cb then
+        cb()
+      end
+      if self.v_source_type == RUNE2_SOURCE.TREASURE then
+        ChallengeRingMgr:on_ring_card_end()
+      end
+      self.v_source_type = nil
+    end
+  end)
+end
+
+function M:on_gm_add_rune2_drop(data)
+  local drop_item_data = {
+    item_id = data.id,
+    uuid = data.uuid,
+    ran_ans_uuid = data.ran_ans_uuid,
+    count = data.count
+  }
+  UIMgr:get_ui("ui_rune_set"):ui_show(drop_item_data, RUNE2_SOURCE.DROP)
+end
+
+function M:set_rune_end()
+  self.v_is_setting_rune = false
+  if self.v_source_type == RUNE2_SOURCE.TREASURE then
+    ChallengeRingMgr:on_ring_card_end()
+  end
+  self.v_source_type = nil
+end
+
+function M:is_setting_rune()
+  return self.v_is_setting_rune
+end
+
+function M:is_casting_rune()
+  return self.v_is_casting_rune
+end
+
+function M:exit_tower()
+  self:init_data()
+end
+
+function M:init_rune_effect(buddy_id)
+  local rune_data = self.v_buddy_rune_info[buddy_id]
+  local pos = rune_data.pos
+  if not pos then
+    return
+  end
+  local rune_condition_lv = self:get_rune_type_level(buddy_id)
+  local hero = SceneMgr:get_hero_by_id(buddy_id)
+  local buddy_cfg = ShareRes.get_buddy_cfg(buddy_id)
+  local rune_type = buddy_cfg.RuneType[pos]
+  local rune_cfg = ShareRes.get_buddy_rune_list_cfg(buddy_id, rune_type, rune_condition_lv)
+  local magic_id_list = rune_cfg.Effect
+  for _, magic_id in pairs(magic_id_list) do
+    hero.magic_mgr:add_magic(hero, magic_id)
+  end
+end
+
+function M:init_rune_entry_list(buddy_id)
+  local hero = SceneMgr:get_hero_by_id(buddy_id)
+  local rune_data = self.v_buddy_rune_info[buddy_id]
+  local entry_list = rune_data.entry_list
+  local entry_cfg_list = ShareRes.create("entry.entry_main")
+  if entry_list then
+    for _, entry_id in pairs(entry_list) do
+      local entry_cfg = entry_cfg_list[entry_id]
+      if entry_cfg then
+        local magic_id = entry_cfg.Effect
+        hero.magic_mgr:add_magic(hero, magic_id)
+      end
+    end
+  end
+end
+
+function M:hero_reborn()
+  local hero_list = SceneMgr:get_hero_list()
+  for uuid, hero in pairs(hero_list) do
+    if not hero:is_die() and self.v_buddy_rune_info[hero.id] then
+      self:init_rune_effect(hero.id)
+    end
+  end
+end
+
+function M:set_team_change_state(state)
+  self.v_team_change_state = state
+end
+
+function M:get_team_change_state()
+  return self.v_team_change_state
+end
+
+function M:open_cast_ui(cast_id)
+  UIMgr:get_ui("ui_rune_cast"):ui_show(cast_id)
+end
+
+function M:get_team_rune_count_by_type(rune_type)
+  local total_count = 0
+  for key, rune_data in pairs(self.v_buddy_rune_info) do
+    if rune_data.rune_type and rune_data.rune_type == rune_type then
+      total_count = total_count + rune_data.level
+    end
+  end
+  return total_count
+end
+
+function M:buy_rune_by_npc_shop(npc_id, good_index, hero, pos, cb)
+  local buddy_id = hero.buddy_cfg.Id
+  Network:call("c2gs_buy_npc_shop", {
+    id = npc_id,
+    good_index = good_index,
+    hero_id = hero.uuid,
+    pos = pos
+  }, function(ok, resp)
+    if ok then
+      Rune2Mgr:set_team_change_state(TEAM_LV_CHANGE_STATE.NO_CHANGE)
+      Rune2Mgr:change_buddy_rune(buddy_id, hero, pos)
+      if cb then
+        cb()
+      end
+      UIMgr:get_ui("ui_rune_set_suc"):ui_show(buddy_id)
+      MsgGame:mq_publish2(Const.MSG_ON_CURSE_RING_RUNE_CHANGE)
+    end
+  end)
+end
+
+function M:set_ball_img(ball_image, rune_type)
+  local a = ball_image.color.a
+  local color = UtilTable.copy_table(RUNE_COLOR[rune_type].color)
+  local color_temp = RUNE_HELPER.RUNE_COLOR_TEMP
+  color_temp.a = a
+  color_temp.r = color.r
+  color_temp.g = color.g
+  color_temp.b = color.b
+  ball_image.color = color_temp
+end
+
+return M

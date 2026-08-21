@@ -1,0 +1,18 @@
+local Base = require("manager.magic.magic_imp.magic_base")
+local Math = require("base.mathx")
+local _rotate_vec2 = Math.rotate_vec2
+local MagicEffectFunc = require("manager.magic.magic_event.magic_effect_func")
+local M = Util.create_child_mt(Base)
+
+function M:_init(owner, magic_info)
+  Base._init(self, owner, magic_info)
+end
+
+function M:on_effect()
+  MagicEffectFunc.call_effect_func_by_object(self)
+end
+
+function M:on_remove(magic_list)
+end
+
+return M

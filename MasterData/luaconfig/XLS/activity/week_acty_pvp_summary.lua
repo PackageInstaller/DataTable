@@ -1,0 +1,17 @@
+return {
+  {
+    BuddyAddRatio = 500,
+    ChangeSegmentCnt = 2,
+    ChapterDesc = "在有限的时间内，击败所有敌人",
+    Condition = 660028,
+    Id = 1,
+    LastRankBgRes = "WeeklyAct1/Endlessfield_bg_dwxq_dbh",
+    LastRankIcon = "Icon/Weekact1/RankIcon_ds",
+    MailId = 220005,
+    OpenTime = 150001,
+    RefreshPeriod = 14,
+    SegmentMailID = 130001,
+    ShopId = 22000,
+    TaskGroup = 8001
+  }
+}

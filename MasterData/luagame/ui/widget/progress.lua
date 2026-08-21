@@ -1,0 +1,28 @@
+local Base = require("ui.widget.widget_base")
+local M = Util.create_child_mt(Base)
+
+function M:_init(gameobj)
+  Base._init(self)
+  self.gameObject = gameobj
+  self.v_rect_transform = Util.get_rect_transform(nil, gameobj)
+  self.v_width = self.v_rect_transform:getsizeDeltaA()
+end
+
+function M:reset_obj(gameobj)
+  if self.v_rect_transform then
+    self.v_rect_transform:SetSizeDeltaWidthA(self.v_width)
+  end
+  self.gameObject = gameobj
+  self.v_rect_transform = Util.get_rect_transform(nil, gameobj)
+end
+
+function M:update_progress(progress)
+  if progress < 0 then
+    progress = 0
+  elseif progress > 1 then
+    progress = 1
+  end
+  self.v_rect_transform:SetSizeDeltaWidthA(self.v_width * progress)
+end
+
+return M

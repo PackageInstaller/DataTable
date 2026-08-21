@@ -1,0 +1,71 @@
+local Base = require("ui.uiobject")
+local ITEM_OBJ_CLASS = require("uimodule.item.item_obj_com")
+local DayAwardItem = Util.create_child_mt(Base)
+
+function DayAwardItem:ui_finish_load()
+  self.v_item_list = {}
+end
+
+function DayAwardItem:ui_on_hide()
+  self:clear_wrap_award()
+end
+
+function DayAwardItem:set_data(cfg)
+  local data = LivenessGiftMgr:get_liveness_gift_data(cfg.Id)
+  local end_time = data and data.end_time or 0
+  local not_buy = 0 == end_time
+  local can_get = not not_buy and data.buyed_sign_day >= cfg.SignDay and data.buyed_gained_day < cfg.SignDay
+  local is_next = not not_buy and data.buyed_sign_day + 1 == cfg.SignDay
+  local done = not not_buy and data.buyed_gained_day >= cfg.SignDay
+  local show_bg = true
+  if self.v_uiobjects.BgCanRecive then
+    self.v_uiobjects.BgCanRecive:SetActive(can_get)
+    if can_get then
+      show_bg = false
+    end
+  end
+  if self.v_uiobjects.BgNextDay then
+    self.v_uiobjects.BgNextDay:SetActive(is_next)
+    if is_next then
+      show_bg = false
+    end
+  end
+  if self.v_uiobjects.BgRecived then
+    self.v_uiobjects.BgRecived:SetActive(done)
+    if done then
+      show_bg = false
+    end
+  end
+  if self.v_uiobjects.Bg then
+    self.v_uiobjects.Bg:SetActive(show_bg)
+  end
+  self:clear_wrap_award()
+  local awards = {}
+  ShareRes.get_item_obj_use_award_list(cfg.AwardGroupId, awards)
+  for index = 1, 5 do
+    local item_obj = self.v_uiobjects["ItemObjCom" .. index]
+    if item_obj then
+      local award_data = awards[index]
+      item_obj:SetActiveEx(nil ~= award_data)
+      if nil ~= award_data then
+        local item = ITEM_OBJ_CLASS:ui_wrap_ex(self, item_obj, true)
+        item:set_data(award_data, true, nil, false)
+        item.v_uiobjects.Recived:SetActive(done)
+        table.insert(self.v_item_list, item)
+      end
+    else
+      break
+    end
+  end
+end
+
+function DayAwardItem:clear_wrap_award()
+  if self.v_item_list then
+    for key, item in pairs(self.v_item_list) do
+      item:ui_destroy()
+      self.v_item_list[key] = nil
+    end
+  end
+end
+
+return DayAwardItem

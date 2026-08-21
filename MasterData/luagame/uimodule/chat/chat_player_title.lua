@@ -1,0 +1,91 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_member_title = {
+    "MemberTitle",
+    BIND_TYPE.OBJECT
+  },
+  v_course_title = {
+    "CourseTitle",
+    BIND_TYPE.OBJECT
+  },
+  v_no_title = {
+    "NoTitle",
+    BIND_TYPE.OBJECT
+  },
+  v_bg_member = {
+    "MemberTitle",
+    BIND_TYPE.IMAGE
+  },
+  v_bg_course = {
+    "CourseTitle",
+    BIND_TYPE.IMAGE
+  },
+  v_lv_member = {
+    "MemberLv",
+    BIND_TYPE.TEXT
+  },
+  v_lv_course = {
+    "CourseLv",
+    BIND_TYPE.TEXT
+  },
+  v_quality_bg_member = {
+    "QualityBg2",
+    BIND_TYPE.IMAGE
+  },
+  v_quality_bg_course = {
+    "QualityBg1",
+    BIND_TYPE.IMAGE
+  },
+  v_name_member = {
+    "MemberName",
+    BIND_TYPE.TEXT
+  },
+  v_name_course = {
+    "CourseName",
+    BIND_TYPE.TEXT
+  },
+  v_icon_member = {
+    "MemberEyes",
+    BIND_TYPE.IMAGE
+  },
+  v_icon_course = {
+    "CourseIcon2",
+    BIND_TYPE.IMAGE
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+end
+
+function ui:set_data(title)
+  self.v_member_title:SetActive(false)
+  self.v_course_title:SetActive(false)
+  self.v_no_title:SetActive(false)
+  self.v_object:SetActive(true)
+  if 0 == title then
+    self.v_object:SetActive(false)
+    self.v_no_title:SetActive(true)
+  else
+    local title_cfg = ShareRes.get_title(title)
+    self.v_member_title:SetActive(1 == title_cfg.Type)
+    self.v_course_title:SetActive(2 == title_cfg.Type)
+    local suffix
+    local title_quality_path_cfg = ShareRes.get_title_quality_path(title_cfg.Quality)
+    if 1 == title_cfg.Type then
+      suffix = "_member"
+    elseif 2 == title_cfg.Type then
+      suffix = "_course"
+    end
+    ResMgr:load_set_icon(self["v_quality_bg" .. suffix], title_quality_path_cfg.Qualitybox)
+    ResMgr:load_set_icon(self["v_icon" .. suffix], title_cfg.BaseMapPreview)
+    ResMgr:load_set_icon(self["v_bg" .. suffix], title_cfg.BaseMap)
+    self["v_lv" .. suffix].gameObject:SetActive(1 == title_cfg.ShowLevel)
+    self["v_lv" .. suffix].text = title_cfg.Level
+    self["v_name" .. suffix].text = ""
+  end
+end
+
+return ui

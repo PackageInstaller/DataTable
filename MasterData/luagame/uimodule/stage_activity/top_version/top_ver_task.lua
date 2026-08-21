@@ -1,0 +1,135 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local TOP_VER_STAGE_TASK_ITEM = "TOP_VER_STAGE_TASK_ITEM"
+local TOP_VER_TASK_AWARD_ITEM_KEY = "TOP_VER_TASK_AWARD_ITEM_KEY"
+local TASK_STATE = {
+  NOT_RECEIVE = 0,
+  CAN_RECEIVE = 1,
+  RECEIVE = 2,
+  COMPLETE = 3,
+  GET_REWARD = 4
+}
+
+function ui:ui_finish_load()
+  self:set_button("BtnReturn", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(TOP_VER_STAGE_TASK_ITEM, self.v_uiobjects.TaskTem, self.v_uiobjects.TaskContent)
+end
+
+function ui:ui_on_show()
+  self:_regist_client_event()
+  self:_refresh_task()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_TASK_UPDATE, self._refresh_task, self)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:_refresh_task()
+  self:release_items_by_template_key(TOP_VER_TASK_AWARD_ITEM_KEY)
+  self:give_back_auto_cache(TOP_VER_STAGE_TASK_ITEM, false)
+  local cfg = ShareRes.create("activity.best_config_task")
+  local tb = {}
+  for _, v in pairs(cfg) do
+    table.insert(tb, v)
+  end
+  table.sort(tb, function(a, b)
+    local state_a = TaskMgr:get_task_state(a.Id)
+    local state_b = TaskMgr:get_task_state(b.Id)
+    local sort_a = self:get_sort_id(state_a)
+    local sort_b = self:get_sort_id(state_b)
+    if sort_a == sort_b then
+      if a.Priority == b.Priority then
+        return a.Id < b.Id
+      else
+        return a.Priority < b.Priority
+      end
+    else
+      return sort_a < sort_b
+    end
+  end)
+  self.v_complete_num = 0
+  for i, v in ipairs(tb) do
+    local obj = self:get_auto_cache(TOP_VER_STAGE_TASK_ITEM)
+    self:_set_task_info(obj, v.Id)
+  end
+  self.v_uicompents.CtFinish_txt.text = self.v_complete_num
+  self.v_uicompents.CtTotal_txt.text = #tb
+end
+
+function ui:get_sort_id(state)
+  if state == TASK_STATE.COMPLETE then
+    return 1
+  elseif state == TASK_STATE.GET_REWARD then
+    return 3
+  else
+    return 2
+  end
+end
+
+function ui:_set_task_info(item, task_Id)
+  local task_cfg = ShareRes.create("condition.task", task_Id)
+  local name = self:get_text("TaskTitle", item)
+  name.text = task_cfg.Name
+  local task_desc = self:get_text("TaskContent", item)
+  task_desc.text = task_cfg.Desc
+  local slider = self:get_slider("TaskBar", item)
+  local condition = ShareRes.create("condition.condition", task_cfg.Condition[1])
+  if not condition then
+    Log.Error("read condition config failure! condition_id=", task_cfg.Condition[1])
+  end
+  slider.maxValue = condition.Value
+  local taskInfo = TaskMgr:get_task_by_id(task_cfg.Id)
+  local taks_pro = taskInfo and taskInfo.progress and #taskInfo.progress > 0 and taskInfo.progress[1].progress or 0
+  slider.value = taks_pro
+  local reward_list = ShareRes.get_award_item_data(task_cfg.Award)
+  local get_Obj_list = {}
+  for i = 1, 6 do
+    local path = "ItemList/Viewport/Content/ItemTem" .. tostring(i)
+    local replace_obj = self:get_child_gameobj(path, item)
+    local item_num = self:get_text("ItemAmount", replace_obj)
+    local get_obj = self:get_child_gameobj("GetMask", replace_obj)
+    get_obj:SetActive(false)
+    local reward_data = reward_list[i]
+    if reward_data then
+      table.insert(get_Obj_list, get_obj)
+      self:create_item_obj(nil, replace_obj, TOP_VER_TASK_AWARD_ITEM_KEY, {
+        item_id = reward_data[1],
+        click_cb = function()
+          UIMgr:get_ui("itemTip"):ui_show({
+            item_id = reward_data[1]
+          })
+        end
+      })
+      item_num.text = reward_data[2]
+      item_num.transform:SetAsLastSibling()
+    else
+      replace_obj:SetActive(false)
+    end
+  end
+  local state = TaskMgr:get_task_state(task_cfg.Id)
+  local notFinishLab = self:get_child_gameobj("NowText", item)
+  notFinishLab:SetActive(state < TASK_STATE.COMPLETE)
+  local get_btn = self:get_button("BtnGet", item)
+  get_btn:SetActive(state == TASK_STATE.COMPLETE)
+  self:set_button_listener(get_btn, function()
+    TaskMgr:submit_task(task_cfg.Id)
+  end)
+  local finish = self:get_child_gameobj("FinishMask", item)
+  finish:SetActive(state == TASK_STATE.GET_REWARD)
+  for _, v in ipairs(get_Obj_list) do
+    v.transform:SetAsLastSibling()
+    v:SetActive(state == TASK_STATE.GET_REWARD)
+  end
+  local canvas_group = self:get_canvas_group(nil, item)
+  canvas_group.alpha = state == TASK_STATE.GET_REWARD and 0.6 or 1
+  if state >= TASK_STATE.COMPLETE then
+    self.v_complete_num = self.v_complete_num + 1
+  end
+end
+
+return ui

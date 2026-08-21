@@ -1,0 +1,31 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:set_data(combo_id, skill_item_obj_list)
+  local combo_cfg = ShareRes.get_buddy_combo_cfg(combo_id)
+  self.v_uicompents.TitleName_txt.text = combo_cfg.ComboName
+  self.v_uicompents.Desc_txt.text = combo_cfg.ComboDesc
+  for index, _ in ipairs(combo_cfg.ComboIcon) do
+    local skill_obj = skill_item_obj_list[index]
+    skill_obj.transform:SetParent(self.v_uiobjects.SkillContent.transform)
+    skill_obj.transform:ResetAttr()
+    self:skill_tem_set_data(skill_obj, combo_cfg, index)
+    self:skill_type_set_data(skill_obj, combo_cfg, index)
+  end
+end
+
+function ui:skill_tem_set_data(skill_obj, cfg, index)
+  local icon_img = Util.get_image("Skill/Icon", skill_obj)
+  local line_obj = Util.get_child_gameobj("Line", skill_obj)
+  local line_txt = Util.get_text("Line/ActionText", skill_obj)
+  ResMgr:load_set_icon(icon_img, cfg.ComboIcon[index])
+  line_obj:SetActive(cfg.ShowArrow[index])
+  line_txt.text = cfg.ArrowDesc[index]
+end
+
+function ui:skill_type_set_data(skill_obj, cfg, index)
+  local skill_type_txt = Util.get_text("Skill/SkillType", skill_obj)
+  skill_type_txt.text = cfg.SkillType[index]
+end
+
+return ui

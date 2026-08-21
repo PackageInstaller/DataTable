@@ -1,0 +1,116 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local _tinsert = table.insert
+local normal_con_color = Util.get_unity_color_by_hex(tonumber("d7d7d7", 16))
+local rev_con_color = Util.get_unity_color_by_hex(tonumber("efc66e", 16))
+
+function ui:on_click_BtnReStart()
+  if self.v_parent_ui ~= nil and self.v_parent_ui:visible() then
+    self.v_parent_ui:on_click_restart()
+  end
+  self:ui_hide()
+end
+
+function ui:on_click_confirm()
+  if self.v_parent_ui ~= nil and self.v_parent_ui:visible() then
+    self.v_parent_ui:on_click_exit()
+  end
+  self:ui_hide()
+end
+
+function ui:on_click_BtnNext()
+  if self.v_parent_ui ~= nil and self.v_parent_ui:visible() then
+    self.v_parent_ui:on_click_BtnNext()
+  end
+  self:ui_hide()
+end
+
+function ui:ui_finish_load()
+  self:set_button("BtnConfirm", function()
+    self:on_click_confirm()
+  end)
+  self:set_button("ReStart", function()
+    self:on_click_BtnReStart()
+  end)
+  self:set_button("BtnNext", function()
+    self:on_click_BtnNext()
+  end)
+end
+
+function ui:ui_on_show(parent_ui)
+  self.v_parent_ui = parent_ui
+  local ACT_ID = NoviceMgr:get_fish_game_act_id()
+  self.v_episode_cfg = NoviceMgr:get_fish_game_data(parent_ui:get_fish_episode_id())
+  self.v_uicompents.ComboNum_txt.text = self.v_episode_cfg.score
+  local is_success, star_cnt, cur_count, star_cpl, star_cfg, use_time = parent_ui:get_is_suc()
+  self.v_uiobjects.Success:SetActiveEx(is_success)
+  self.v_uiobjects.Fail:SetActiveEx(not is_success)
+  self.v_uicompents.ScoreNum_txt.text = cur_count
+  if is_success and cur_count > self.v_episode_cfg.score then
+    self.v_uiobjects.NewIcon:SetActive(true)
+  else
+    self.v_uiobjects.NewIcon:SetActive(false)
+  end
+  local con_cfg = ShareRes.get_fish_game_stage_by_id(parent_ui:get_fish_episode_id()).StarScore
+  for idx = 1, 3 do
+    local cfg = star_cfg[idx]
+    local con_icon = self.v_uicompents["TargetImage" .. idx .. "_img"]
+    if cfg.Icon and cfg.Icon ~= "" then
+      con_icon.gameObject:SetActive(true)
+      ResMgr:load_set_icon(con_icon, cfg.Icon)
+    else
+      con_icon.gameObject:SetActive(false)
+    end
+    local star_light = self.v_uiobjects["StarLight" .. idx]
+    star_light:SetActive(star_cpl[idx])
+    local star_con_txt = self.v_uicompents["StarConditionTxt" .. idx .. "_txt"]
+    star_con_txt.text = cfg.Desc
+    local use_con_cfg = ShareRes.get_fish_game_cond_cfg(con_cfg[idx])
+    local Current = self.v_uicompents["Current" .. idx .. "_txt"]
+    local Cur = self.v_uicompents["Cur" .. idx .. "_txt"]
+    local Must = self.v_uicompents["Must" .. idx .. "_txt"]
+    if use_con_cfg then
+      parent_ui:set_con_start_num(Current, Must, nil, use_con_cfg, nil, nil, true)
+    else
+      Current.text = ""
+      Cur.text = ""
+      Must.text = ""
+    end
+    if star_cpl[idx] then
+      Current.color = rev_con_color
+      Cur.color = rev_con_color
+      Must.color = rev_con_color
+    else
+      Current.color = normal_con_color
+      Cur.color = normal_con_color
+      Must.color = normal_con_color
+    end
+  end
+  self.v_uiobjects.BtnNext:SetActive(false)
+  if is_success then
+    local finsh_star = {}
+    for idx, cpl in pairs(star_cpl) do
+      if cpl then
+        _tinsert(finsh_star, idx)
+      end
+    end
+    local episode_id = parent_ui:get_fish_episode_id()
+    use_time = math.floor(use_time)
+    local data = {
+      episode_id = episode_id,
+      soce = cur_count,
+      pass_time = use_time,
+      finsh_star = finsh_star,
+      activity_id = ACT_ID
+    }
+    NoviceMgr:upload_fish_game_data(data)
+    if parent_ui:get_next_stage() ~= nil then
+      self.v_uiobjects.BtnNext:SetActive(true)
+    end
+    Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.fish_game_battle_settle_suc_UI_SOUND)
+  else
+    Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.fish_game_battle_settle_fail_UI_SOUND)
+  end
+end
+
+return ui

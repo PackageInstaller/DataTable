@@ -1,0 +1,94 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local REWARD_ITEM = require("uimodule.weekly.star_reward_item")
+local MODEL = {}
+local _sformat = string.format
+local HURDLE_STAGE_DEFAULT_REWARD = "HURDLE_STAGE_DEFAULT_REWARD"
+local HURDLE_STAGE_DEFAULT_REWARD_ITEM = "HURDLE_STAGE_DEFAULT_REWARD_ITEM"
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnClose", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(HURDLE_STAGE_DEFAULT_REWARD, self.v_uiobjects.AwardTem, self.v_uiobjects.ItemContent)
+  self:register_exist_auto_template(HURDLE_STAGE_DEFAULT_REWARD_ITEM, self.v_uiobjects.ItemObjCom1, self.v_uiobjects.AwardContent)
+end
+
+function ui:ui_update()
+end
+
+function ui:ui_on_show()
+  self.v_wrap_list = {}
+  self:update_reward_view()
+end
+
+function ui:ui_on_hide()
+  self:remove_wrap_list()
+end
+
+function ui:remove_wrap_list()
+  for _, obj in pairs(self.v_wrap_list) do
+    self:remove_wrap_ui(obj)
+  end
+  self.v_wrap_list = {}
+end
+
+function ui:update_reward_view()
+  local all_hurdle_cfg = ShareRes.get_weekly_prepare_war()
+  self:give_back_auto_cache(HURDLE_STAGE_DEFAULT_REWARD)
+  self:give_back_auto_cache(HURDLE_STAGE_DEFAULT_REWARD_ITEM)
+  self.item_list = {}
+  for _, cfg in ipairs(all_hurdle_cfg) do
+    local item = self:get_auto_cache(HURDLE_STAGE_DEFAULT_REWARD)
+    self:update_item_info(item, cfg)
+    self:update_reward_item_view(item, cfg.FirstReward)
+    table.insert(self.item_list, item)
+  end
+  local index = WeeklyMgr:get_weekly_target_award()
+  if index < 7 then
+    index = index + 1
+  end
+  if index < 3 then
+    return
+  end
+  if index >= 6 then
+    index = 6
+  end
+  index = index - 2
+  self.v_delay_timer = Timer:add_timer("update_rank_view", 0.05, function()
+    local item_lua = self.item_list[7]
+    local item_lua2 = self.item_list[6]
+    if item_lua then
+      local content_trans = self.v_uiobjects.ItemContent.transform
+      local pos = content_trans.localPosition
+      local offset = math.abs(item_lua.transform.localPosition.y - item_lua2.transform.localPosition.y)
+      content_trans:SetLocalPositionA(pos.x, index * offset, pos.z)
+    end
+  end)
+end
+
+function ui:update_item_info(item, cfg)
+  local idx = cfg.Id
+  local hurdle_id = cfg.EpiID
+  local id_txt = Util.get_text("StageNum", item)
+  id_txt.text = cfg.EpiName
+  local hurdle_data = WeeklyMgr:get_hurdle_data(hurdle_id)
+  local is_get_reward = hurdle_data and hurdle_data.first_reward or false
+  local complete_obj = Util.get_child_gameobj("Complete", item)
+  complete_obj:SetActiveEx(is_get_reward)
+end
+
+function ui:update_reward_item_view(item, reward_id)
+  local reward_cfg = ShareRes.get_award_item_data(reward_id)
+  local parent = Util.get_child_gameobj("AwardContent_", item)
+  for _, data in ipairs(reward_cfg) do
+    local award_ui = self:get_auto_cache(HURDLE_STAGE_DEFAULT_REWARD_ITEM)
+    award_ui.transform:SetParent(parent.transform)
+    local item_lua_obj = REWARD_ITEM:ui_wrap_ex(self, award_ui, false)
+    item_lua_obj:set_enable(true, data)
+    table.insert(self.v_wrap_list, item_lua_obj)
+  end
+end
+
+return ui

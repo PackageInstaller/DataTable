@@ -1,0 +1,95 @@
+local t = {
+  {
+    [2] = {
+      SubtypeId = 2,
+      TypeId = 1,
+      TypeName = "dp_item"
+    }
+  },
+  {
+    {
+      SubtypeId = 1,
+      TypeId = 2,
+      TypeName = "stamina_item"
+    },
+    {
+      SubtypeId = 2,
+      TypeId = 2,
+      TypeName = "treasure_chest_unlocked"
+    },
+    {
+      SubtypeId = 3,
+      TypeId = 2,
+      TypeName = "treasure_chest_select"
+    },
+    {
+      SubtypeId = 4,
+      TypeId = 2,
+      TypeName = "favor_item"
+    },
+    {
+      SubtypeId = 5,
+      TypeId = 2,
+      TypeName = "award_item"
+    },
+    {
+      SubtypeId = 6,
+      TypeId = 2,
+      TypeName = "active_system_item"
+    },
+    {
+      SubtypeId = 7,
+      TypeId = 2,
+      TypeName = "passport_weapon_gift"
+    },
+    {
+      SubtypeId = 8,
+      TypeId = 2,
+      TypeName = "buddy_develop_call_back"
+    },
+    {
+      SubtypeId = 9,
+      TypeId = 2,
+      TypeName = "weapon_develop_call_back"
+    }
+  },
+  {
+    {
+      SubtypeId = 1,
+      TypeId = 3,
+      TypeName = "buddy_break_item"
+    }
+  },
+  [12] = {
+    {
+      SubtypeId = 1,
+      TypeId = 12,
+      TypeName = "treasure_chest"
+    }
+  },
+  active_system_item = nil,
+  award_item = nil,
+  buddy_break_item = nil,
+  buddy_develop_call_back = nil,
+  dp_item = nil,
+  favor_item = nil,
+  passport_weapon_gift = nil,
+  stamina_item = nil,
+  treasure_chest = nil,
+  treasure_chest_select = nil,
+  treasure_chest_unlocked = nil,
+  weapon_develop_call_back = nil
+}
+t.active_system_item = t[2][6]
+t.award_item = t[2][5]
+t.buddy_break_item = t[3][1]
+t.buddy_develop_call_back = t[2][8]
+t.dp_item = t[1][2]
+t.favor_item = t[2][4]
+t.passport_weapon_gift = t[2][7]
+t.stamina_item = t[2][1]
+t.treasure_chest = t[12][1]
+t.treasure_chest_select = t[2][3]
+t.treasure_chest_unlocked = t[2][2]
+t.weapon_develop_call_back = t[2][9]
+return t

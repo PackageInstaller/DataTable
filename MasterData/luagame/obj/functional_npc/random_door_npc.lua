@@ -1,0 +1,7 @@
+local Base = require("obj.functional_npc.functional_npc")
+local M = Util.create_child_mt(Base)
+
+function M:player_anim(anim_type, end_cb)
+end
+
+return M

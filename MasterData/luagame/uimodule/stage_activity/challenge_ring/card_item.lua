@@ -1,0 +1,448 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local ICON_PATH = "UIChallengeRing/%s"
+local CR_RING_CFG_PATH = require("uimodule.stage_activity.challenge_ring.challenge_ring_cfg")
+local CR_HELPER = require("uimodule.stage_activity.challenge_ring.cr_helper")
+local CommonDef = require("cs_share.common_define")
+local Vec3 = require("base.vec3")
+local RING_CARD_TYPE = CommonDef.CHL_RING_CARD_TYPE
+local TYPE_EFFECT_STATUS = TypeEffectStatus
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_back = {
+    "Back",
+    BIND_TYPE.OBJECT
+  },
+  v_battle_card_info = {
+    "BattleCardInfo",
+    BIND_TYPE.OBJECT
+  },
+  v_card_icon = {
+    "CardIcon",
+    BIND_TYPE.BUTTON
+  },
+  v_card_sign = {
+    "CardSign",
+    BIND_TYPE.IMAGE
+  },
+  v_card_sign_bg = {
+    "CardSignBg",
+    BIND_TYPE.IMAGE
+  },
+  v_card_type = {
+    "CardType",
+    BIND_TYPE.IMAGE
+  },
+  v_event_card_info = {
+    "EventCardInfo",
+    BIND_TYPE.OBJECT
+  },
+  v_face = {
+    "Face",
+    BIND_TYPE.OBJECT
+  },
+  v_num = {
+    "Num",
+    BIND_TYPE.TEXT
+  },
+  v_test_card1 = {
+    "TestCard1",
+    BIND_TYPE.OBJECT
+  },
+  v_door = {
+    "door",
+    BIND_TYPE.IMAGE
+  },
+  v_receive = {
+    "receive",
+    BIND_TYPE.IMAGE
+  },
+  v_shop = {
+    "shop",
+    BIND_TYPE.IMAGE
+  },
+  v_treasure = {
+    "treasure",
+    BIND_TYPE.IMAGE
+  },
+  v_heal = {
+    "heal",
+    BIND_TYPE.IMAGE
+  }
+}
+local SHRINK_EFFECT = "Fx_UI_Card_01"
+local DELETE_EFFECT = "Fx_UI_Card_02"
+local HEAL_EFFECT = "Fx_UI_Card_03"
+local CREATE_EFFECT = "Fx_UI_Card_07"
+local KEY_CARD_ICON = "Ring_icon_key"
+local CARD_MAIN_TYPE = {BATTLE_CARD = 1, EVENT_CARD = 2}
+local CARD_STATE = {POSITIVE = 1, NEGITIVE = 2}
+local _tinsert = table.insert
+local CARD_CATEGORY = {
+  [RING_CARD_TYPE.MONSTER] = 1,
+  [RING_CARD_TYPE.MOBS] = 1,
+  [RING_CARD_TYPE.BOSS] = 1,
+  [RING_CARD_TYPE.CHALLENGE] = 1,
+  [RING_CARD_TYPE.TREASURE] = 2,
+  [RING_CARD_TYPE.HEAL] = 2,
+  [RING_CARD_TYPE.SHOP] = 2,
+  [RING_CARD_TYPE.RECEIVE] = 2,
+  [RING_CARD_TYPE.DOOR] = 2
+}
+local EVENT_CARD2UI_NAME = {
+  [RING_CARD_TYPE.TREASURE] = "treasure",
+  [RING_CARD_TYPE.HEAL] = "heal",
+  [RING_CARD_TYPE.SHOP] = "shop",
+  [RING_CARD_TYPE.RECEIVE] = "receive",
+  [RING_CARD_TYPE.DOOR] = "door"
+}
+local BATTLE_CARD2UI_NAME = {
+  [RING_CARD_TYPE.MONSTER] = "normal",
+  [RING_CARD_TYPE.MOBS] = "elite",
+  [RING_CARD_TYPE.CHALLENGE] = "challenge"
+}
+
+function M:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("CardIcon", function()
+    self:send_select_msg()
+  end)
+  self.v_busy_idxs = {}
+  self:register_effect(SHRINK_EFFECT)
+  self:register_effect(DELETE_EFFECT)
+  self:register_effect(HEAL_EFFECT)
+  self:register_effect(CREATE_EFFECT)
+end
+
+function M:ui_on_hide()
+  self.v_data = nil
+  self.v_cfg = nil
+  self:remove_heal_timer()
+  if self.v_enlarge_card_seq then
+    self:clear_ani_seq(self.v_enlarge_card_seq)
+    self.v_enlarge_card_seq = nil
+  end
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_CR_ANI_END)
+  msg.mm_x = CR_RING_CFG_PATH.AniType.Card
+end
+
+function M:remove_heal_timer()
+  if self.v_heal_timer then
+    Timer:remove_timer(self.v_heal_timer)
+    self.v_heal_timer = nil
+  end
+end
+
+function M:ui_on_destory()
+  self.v_busy_idxs = nil
+end
+
+function M:set_bg(path)
+  ResMgr:load_set_icon(self.v_uicompents.CardBg_img, path)
+end
+
+function M:set_num(num)
+  self.v_uicompents.Num_txt.text = num
+end
+
+function M:set_face_enable()
+  self.v_uiobjects.Face:SetActive(true)
+  self:set_back_disable()
+end
+
+function M:set_face_disable()
+  self.v_uiobjects.Face:SetActive(false)
+end
+
+function M:set_back_enable()
+  self.v_uiobjects.Back:SetActive(true)
+  self:set_face_disable()
+end
+
+function M:set_back_disable()
+  self.v_uiobjects.Back:SetActive(false)
+end
+
+function M:set_card_angle(angle)
+  self.v_object.transform:SetEulerY(angle)
+end
+
+function M:set_card_selected()
+  self.v_is_select = true
+end
+
+function M:set_data(data)
+  self.v_data = data
+  self.v_go = data.go
+  self:reset_card_size()
+  self:set_back_enable()
+end
+
+function M:enable_card()
+  self.v_object:SetActive(true)
+end
+
+function M:disable_card()
+  self.v_object:SetActive(false)
+end
+
+function M:refresh_data(card_id, card_uuid)
+  self:enable_card()
+  self:init_go()
+  self.v_cfg = ShareRes.create("activity.challenge_ring_card", card_id)
+  self.v_card_uuid = card_uuid
+  self.v_card_data = ChallengeRingMgr:get_card_by_uuid(card_uuid)
+  self:refresh_card_icon()
+  self:refresh_card_type()
+  self:refresh_card_sign()
+  self:refresh_lock()
+end
+
+function M:play_shrink_effect()
+  self:play_delete_effect()
+  self:play_effect(SHRINK_EFFECT)
+end
+
+function M:play_delete_effect()
+  self:play_effect(DELETE_EFFECT)
+end
+
+function M:play_heal_effect(cb)
+  local heal_effect = self:get_effect(HEAL_EFFECT)
+  local length = heal_effect.length
+  self:play_effect(HEAL_EFFECT)
+  if cb then
+    self:remove_heal_timer()
+    self.v_heal_timer = Timer:add_timer("heal_status", length, cb)
+  end
+end
+
+function M:play_create_card_effect()
+  self:play_effect(CREATE_EFFECT)
+end
+
+function M:card_remove()
+  self.v_object_transform:SetActive(false)
+end
+
+function M:card_init()
+  self:enable_card()
+  self:init_go()
+end
+
+function M:refresh_card_icon()
+  local card_icon_img = self.v_uicompents.CardIcon_img
+  local card_type_idx = self.v_cfg.Type
+  local icon_name
+  if card_type_idx == RING_CARD_TYPE.RECEIVE then
+    local item_id = self.v_cfg.Arg[1]
+    local icon_path = UtilUI.get_battle_item_icon(item_id)
+    ResMgr:load_set_icon(card_icon_img, icon_path)
+  else
+    icon_name = self.v_cfg.CoverPic
+    local card_path = string.format(ICON_PATH, icon_name)
+    ResMgr:load_set_icon(card_icon_img, card_path)
+  end
+end
+
+function M:refresh_card_type()
+  local total_card_type = ShareRes.create("activity.challenge_ring_card_type")
+  local card_type_img = self.v_uicompents.CardType_img
+  local card_type_obj = self.v_uiobjects.CardType
+  local card_type_idx = self.v_cfg.ShowType
+  local batt_info_obj = self.v_uiobjects.BattleCardInfo
+  local event_info_obj = self.v_uiobjects.EventCardInfo
+  local card_main_type = CARD_CATEGORY[card_type_idx]
+  card_type_obj:SetActive(true)
+  if card_main_type == CARD_MAIN_TYPE.BATTLE_CARD then
+    for now_card_tpye, ui_name in pairs(BATTLE_CARD2UI_NAME) do
+      self.v_uiobjects[ui_name]:SetActive(now_card_tpye == card_type_idx)
+    end
+    batt_info_obj:SetActive(true)
+    event_info_obj:SetActive(false)
+  else
+    for now_card_tpye, ui_name in pairs(EVENT_CARD2UI_NAME) do
+      self.v_uiobjects[ui_name]:SetActive(now_card_tpye == card_type_idx)
+    end
+    self.v_uiobjects.ReceiveBg:SetActive(card_type_idx == RING_CARD_TYPE.RECEIVE)
+    event_info_obj:SetActive(true)
+    batt_info_obj:SetActive(false)
+  end
+  local type_cfg = total_card_type[card_type_idx]
+  local card_type_name = type_cfg.Icon
+  local is_key_card = self.v_cfg.KeyThreshold
+  self.v_uiobjects.Key:SetActive(false)
+  if is_key_card then
+    event_info_obj:SetActive(false)
+    batt_info_obj:SetActive(false)
+    local replica = self.v_card_data.replica
+    if not replica then
+      self.v_uiobjects.Key:SetActive(true)
+    else
+      card_type_obj:SetActive(false)
+    end
+    card_type_name = KEY_CARD_ICON
+  end
+  local card_path = string.format(ICON_PATH, card_type_name)
+  ResMgr:load_set_icon(card_type_img, card_path)
+end
+
+function M:refresh_card_sign()
+  local is_show = self.v_cfg.EmblemCnt
+  local sign_go = self.v_uiobjects.CardSign
+  local sign_bg = self.v_uiobjects.CardSignBg
+  if is_show and is_show > 0 then
+    sign_go:SetActive(true)
+    sign_bg:SetActive(true)
+  else
+    sign_go:SetActive(false)
+    sign_bg:SetActive(false)
+  end
+end
+
+function M:refresh_lock()
+  if not self.v_cfg then
+    return
+  end
+  local uobj = self.v_uiobjects
+  local ucom = self.v_uicompents
+  local lock_obj = uobj.Lock
+  local unlock_obj = uobj.UnLock
+  local is_unlock = self.v_card_data.unlock
+  local lock_attr = self.v_cfg.UnlockAttrId
+  self.v_is_lock = false
+  self.v_is_have_lock = false
+  unlock_obj:SetActive(false)
+  lock_obj:SetActive(false)
+  if is_unlock then
+    return
+  end
+  if lock_attr then
+    self.v_is_have_lock = true
+    local lock_text = ucom.LockText_txt
+    local unlock_text = ucom.UnLockText_txt
+    local need_val = self.v_cfg.UnlockAttrSum
+    local attr_name = ShareRes.get_buddy_attr_name(lock_attr)
+    local now_val = CR_HELPER.get_team_single_attr(lock_attr)
+    if need_val > now_val then
+      lock_text.text = Util.format_str("需要【{1}】{2}点解锁", attr_name, need_val)
+      self.v_is_lock = true
+      lock_obj:SetActive(true)
+    else
+      unlock_text.text = Util.format_str("【{1}】{2}点击解锁", attr_name, need_val)
+      unlock_obj:SetActive(true)
+    end
+  end
+end
+
+function M:reset_card_size()
+  self.v_go.transform:SetLocalScaleA(1, 1, 1)
+end
+
+function M:get_card_cfg()
+  return self.v_cfg
+end
+
+function M:send_select_msg()
+  local is_selecting_card = ChallengeRingMgr:is_selecting_card()
+  if is_selecting_card then
+    return
+  end
+  if self.v_is_lock then
+    Util.show_message_tip(2279)
+    return
+  end
+  if self.v_is_have_lock and not self.v_is_lock then
+    self:unlock_card()
+    return
+  end
+  if not self.v_is_can_select or self.v_is_select then
+    return
+  end
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_CR_SELECT_CARD)
+  msg.mm_obj = self.v_data
+  self.v_is_select = true
+end
+
+function M:clear_ani_seq(seq_list)
+  if not seq_list then
+    return
+  end
+  for _, seq in pairs(seq_list) do
+    self:remove_busy_idx_by_seq(seq)
+    seq:Kill()
+  end
+end
+
+function M:enlarge_card(cb)
+  if self.v_enlarge_card_seq then
+    self:clear_ani_seq(self.v_enlarge_card_seq)
+  end
+  self.v_enlarge_card_seq = {}
+  local seq = Util.create_sequence()
+  local busy_idx = self:add_busy_idx()
+  _tinsert(self.v_enlarge_card_seq, seq)
+  seq:Append(self.v_object.transform:DOScale(Vec3.New(1.1, 1.1, 1.1), 0.7))
+  seq:OnComplete(function()
+    self:remove_busy_idx(busy_idx)
+    cb()
+  end)
+end
+
+function M:get_busy_idx()
+  for i = 1, 1000 do
+    if not self.v_busy_idxs[i] then
+      return i
+    end
+  end
+end
+
+function M:add_busy_idx(seq)
+  local busy_idx = self:get_busy_idx()
+  self.v_busy_idxs[busy_idx] = seq
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_CR_ANI_BEGIN)
+  msg.mm_x = CR_RING_CFG_PATH.AniType.Card
+  return busy_idx
+end
+
+function M:remove_busy_idx(busy_idx)
+  self.v_busy_idxs[busy_idx] = nil
+  if self.v_busy_idxs and nil == next(self.v_busy_idxs) then
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_CR_ANI_END)
+    msg.mm_x = CR_RING_CFG_PATH.AniType.Card
+  end
+end
+
+function M:remove_busy_idx_by_seq(seq)
+  if self.v_busy_idxs then
+    for idx, now_seq in pairs(self.v_busy_idxs) do
+      if now_seq == seq then
+        self.v_busy_idxs[idx] = nil
+        break
+      end
+    end
+  end
+end
+
+function M:set_is_can_select(is_can)
+  self.v_is_can_select = is_can
+  self.v_is_select = not is_can
+end
+
+function M:init_go()
+  self:reset_card_size()
+  self:set_back_enable()
+end
+
+function M:unlock_card()
+  self.v_is_have_lock = false
+  self.v_is_lock = false
+  local uobj = self.v_uiobjects
+  local lock_obj = uobj.Lock
+  local unlock_obj = uobj.UnLock
+  unlock_obj:SetActive(false)
+  lock_obj:SetActive(false)
+  ChallengeRingMgr:on_unlock_card(self.v_card_uuid)
+end
+
+return M

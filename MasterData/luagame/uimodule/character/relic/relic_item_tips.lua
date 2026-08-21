@@ -1,0 +1,136 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local _tinsert = table.insert
+local _tsort = table.sort
+local _tremove = table.remove
+local CommonDefine = require("cs_share.common_define")
+local RELIC_ENTRY_TYPE = CommonDefine.RELIC_ENTRY_TYPE
+local RELIC_ITEM_TIPS_ATTR_KEY = "RELIC_ITEM_TIPS_ATTR_KEY"
+local RELIC_ITEM_TIPS_SUIT_KEY = "RELIC_ITEM_TIPS_SUIT_KEY"
+local MODEL = {
+  v_attr_content = {
+    "AttrContent",
+    BIND_TYPE.OBJECT
+  },
+  v_attr_temp = {
+    "AttrTemp",
+    BIND_TYPE.OBJECT
+  },
+  v_btn_close = {
+    "BtnClose",
+    BIND_TYPE.BUTTON
+  },
+  v_engrave_name = {
+    "EngraveName",
+    BIND_TYPE.TEXT
+  },
+  v_lv_num = {
+    "LvNum",
+    BIND_TYPE.TEXT
+  },
+  v_suit_content = {
+    "SuitContent",
+    BIND_TYPE.OBJECT
+  },
+  v_suit_name = {
+    "SuitName",
+    BIND_TYPE.TEXT
+  },
+  v_suit_tem = {
+    "SuitTem",
+    BIND_TYPE.TEXT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnClose", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(RELIC_ITEM_TIPS_ATTR_KEY, self.v_attr_temp, self.v_attr_content)
+  self:register_exist_auto_template(RELIC_ITEM_TIPS_SUIT_KEY, self.v_suit_tem, self.v_suit_content)
+end
+
+function ui:ui_on_show(relic_uuid)
+end
+
+function ui:ui_after_show(relic_uuid)
+  self.v_uuid = relic_uuid
+  self.v_relic_data = RelicMgr:get_relic_data_by_uuid(relic_uuid)
+  self.v_relic_cfg = ShareRes.get_relic_cfg(self.v_relic_data.id)
+  self.v_lv_num.text = self.v_relic_data.lv
+  self.v_engrave_name.text = self.v_relic_cfg.Name
+  self:refresh_attr_list()
+  self:refresh_suit_info()
+end
+
+function ui:refresh_attr_list()
+  local attr_list = {}
+  for _, entry in ipairs(self.v_relic_data.entrys) do
+    local relic_entry_cfg = ShareRes.create("relic.relic_entry", entry.entry_id)
+    local attr_id, val = relic_entry_cfg.AttrId, relic_entry_cfg.BaseAttr
+    if entry.type == RELIC_ENTRY_TYPE.PRINCIPAL then
+      val = val + self.v_relic_data.lv * relic_entry_cfg.LevelAttr
+    end
+    _tinsert(attr_list, {
+      attr_id = attr_id,
+      val = val,
+      type = entry.type,
+      idx = entry.id
+    })
+  end
+  _tsort(attr_list, function(a, b)
+    if a.type ~= b.type then
+      return a.type < b.type
+    end
+    return a.idx < b.idx
+  end)
+  self:give_back_auto_cache(RELIC_ITEM_TIPS_ATTR_KEY)
+  for _, attr_data in ipairs(attr_list) do
+    local attr_id = attr_data.attr_id
+    local val = attr_data.val
+    local item = self:get_auto_cache(RELIC_ITEM_TIPS_ATTR_KEY)
+    local main_attr_bg = Util.get_child_gameobj("MainAttrBg", item)
+    local icon = Util.get_image("AttrIcon", item)
+    local name_txt = Util.get_text("AttrName", item)
+    local val_txt = Util.get_text("AttrVal", item)
+    main_attr_bg:SetActive(attr_data.type == RELIC_ENTRY_TYPE.PRINCIPAL)
+    local icon_name = ShareRes.get_attr_icon(attr_id)
+    if icon_name then
+      Util.load_attr_icon(icon, icon_name)
+    end
+    local icon_color = attr_data.type == RELIC_ENTRY_TYPE.PRINCIPAL and "292929" or "b19f89"
+    icon.color = Util.get_unity_color_by_hex(tonumber(icon_color, 16))
+    local color = attr_data.type == RELIC_ENTRY_TYPE.PRINCIPAL and "292929" or "484243"
+    name_txt.text = string.format("<color=#%s>%s</color>", color, ShareRes.get_attr_name(attr_id))
+    local is_ration = ShareRes.get_is_ration_attr(attr_id)
+    local val_str = is_ration and string.format("%.2f", val / 100) .. "%" or Util.round(val)
+    val_txt.text = string.format("<color=#%s>%s</color>", color, val_str)
+  end
+end
+
+function ui:refresh_suit_info()
+  self.v_suit_active_count = RelicMgr:get_suit_active_count(self.v_uuid)
+  local suit_id = self.v_relic_cfg.SuitId
+  local suit_cfg = ShareRes.create("relic.relic_suit", suit_id)
+  self.v_suit_name.text = suit_cfg.Name
+  local suit_sub_cfg_list = {}
+  for _, data in pairs(suit_cfg.Suit) do
+    _tinsert(suit_sub_cfg_list, data)
+  end
+  _tsort(suit_sub_cfg_list, function(a, b)
+    return a.Count < b.Count
+  end)
+  self:give_back_auto_cache(RELIC_ITEM_TIPS_SUIT_KEY)
+  for _, data in ipairs(suit_sub_cfg_list) do
+    local item = self:get_auto_cache(RELIC_ITEM_TIPS_SUIT_KEY)
+    local desc = Util.get_text(nil, item)
+    desc.text = Util.format_str("{1}件套:{2}", data.Count, data.Desc)
+  end
+end
+
+function ui:ui_on_hide()
+end
+
+return ui

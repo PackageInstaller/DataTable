@@ -1,0 +1,7 @@
+local empty = {}
+return {
+  StoryId = 3226102,
+  TalkDatas = {
+    "步骤Id:1号 坏了，阿紫在拍vlog，没看见猴子冲她去了"
+  }
+}

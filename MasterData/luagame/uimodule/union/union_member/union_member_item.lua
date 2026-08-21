@@ -1,0 +1,66 @@
+local Base = require("ui.uiobject")
+local UnionCfg = require("uimodule.union.union_config")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_member_lv = {
+    "MemberLV",
+    BIND_TYPE.TEXT
+  },
+  v_member_name = {
+    "MemberName",
+    BIND_TYPE.TEXT
+  },
+  v_member_post = {
+    "MemberPost",
+    BIND_TYPE.TEXT
+  },
+  v_member_state = {
+    "MemberState",
+    BIND_TYPE.TEXT
+  }
+}
+local UNION_TITLE = UnionCfg.UNION_TITLE
+local UNION_TITLE_LAB = {
+  [UNION_TITLE.CHAIRMAN] = Util.format_str("会长"),
+  [UNION_TITLE.NORMAL_MEMBER] = Util.format_str("成员")
+}
+local LOGIN_STATE = UnionCfg.PLAYER_LOGIN_STATE
+local MEMEBER_LOGIN_STATE = {
+  [LOGIN_STATE.ONLINE] = Util.format_str("在线"),
+  [LOGIN_STATE.OFFLINE] = Util.format_str("离线")
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("MemberName", function()
+    self:_onclick_memeber_btn()
+  end)
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:set_data(go, data_list, index)
+  self.v_member_data = data_list[index]
+  self.v_member_name.text = self.v_member_data.name
+  local color = self.v_member_data.position == UNION_TITLE.CHAIRMAN and "#C15E38" or "#292929"
+  self.v_member_post.text = string.format("<color=%s>%s</color>", color, UNION_TITLE_LAB[self.v_member_data.position])
+  self.v_member_lv.text = self.v_member_data.lv
+  local login_state = 0 == self.v_member_data.offline_time and LOGIN_STATE.ONLINE or LOGIN_STATE.OFFLINE
+  local color2 = 0 == self.v_member_data.offline_time and "#1F725C" or "#8C8473"
+  self.v_member_state.text = string.format("<color=%s>%s</color>", color2, MEMEBER_LOGIN_STATE[login_state])
+end
+
+function ui:_onclick_memeber_btn()
+  if self.v_member_data.uuid == Global.player_uuid then
+    return
+  end
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_CHOOSE_UNION_MEMBER_ITEM)
+  msg.mm_obj = self.v_member_data
+end
+
+return ui

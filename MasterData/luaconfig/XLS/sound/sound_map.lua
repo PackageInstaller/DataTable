@@ -1,0 +1,6 @@
+return {
+  ["FX05_glass_broken_1-2"] = {
+    [3001001] = "FX05_glass_broken_1-3",
+    OriginName = "FX05_glass_broken_1-2"
+  }
+}

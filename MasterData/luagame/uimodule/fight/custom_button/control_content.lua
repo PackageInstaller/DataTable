@@ -1,0 +1,114 @@
+local Base = require("ui.uiobject")
+local Fight_Layout_Cfg = require("uimodule.fight.custom_button.fight_layout_cfg")
+local ui = Util.create_child_mt(Base)
+local SliderEX = CS.SliderEX
+local LayoutRebuilder = UnityEngine.UI.LayoutRebuilder
+local layout_update_mode = {
+  Init = 1,
+  Add = 2,
+  INDEX = 3,
+  Delete = 4
+}
+local LAYOUT_ITEM_KEY = "LAYOUT_ITEM_KEY"
+
+function ui:on_click_BtnHide()
+  self.v_parent_ui:hide_operation_content()
+end
+
+function ui:on_click_BtnReturn()
+  self.v_parent_ui:on_click_BtnReturn(self.v_name)
+end
+
+function ui:on_click_BtnSave()
+  self.v_parent_ui:on_click_BtnSave(self.v_name)
+end
+
+function ui:on_click_FlipTog(isOn)
+  self.v_parent_ui:on_click_FlipTog(isOn)
+end
+
+function ui:on_drag_view()
+  local cur_pos = self.v_drag_listener.Pos
+  local x, y = cur_pos.x, cur_pos.y
+  self:set_view_pos(x, y)
+  local detail_content = self.v_parent_ui:get_panel("detail_content")
+  detail_content:set_view_pos(x, y)
+end
+
+function ui:set_view_pos(x, y)
+  local trans = self:get_object_transform()
+  trans:SetLocalPositionA(x, y, 0)
+end
+
+function ui:click_border_offset_sld(sld_value)
+  self.v_uicompents.BorderOffsetData_txt.text = sld_value
+end
+
+function ui:ui_finish_load()
+  self.v_name = "control_content"
+  self:set_button("BtnHide", function()
+    self:on_click_BtnHide()
+  end)
+  self:set_button("BtnReturn", function()
+    self:on_click_BtnReturn()
+  end)
+  self:set_button("BtnSave", function()
+    self:on_click_BtnSave()
+  end)
+  local btn = self.v_uiobjects.DragBtn
+  local root = self.v_parent_ui:get_object()
+  Util.set_start_drag2(btn, root, function()
+    self:on_drag_view()
+  end)
+  Util.set_drag2(btn, root, function()
+    self:on_drag_view()
+  end)
+  Util.set_end_drag2(btn, root, function()
+    self:on_drag_view()
+  end)
+  self.v_drag_listener = self:get_component(nil, btn, CS.Game.DragEventListener2)
+  self.v_border_offset_sld_ex = self:get_component(nil, self.v_uiobjects.BorderOffsetSld, typeof(SliderEX))
+  self:set_slider_listener(self.v_border_offset_sld_ex, function()
+    local sld_value = self.v_border_offset_sld_ex.value
+    self:click_border_offset_sld(sld_value)
+    self.v_parent_ui:click_border_offset_sld(sld_value)
+    self.v_parent_ui.v_panel_fight_panel:check_all_overlap(false)
+    self:change_save_interactable()
+  end)
+  Global.listener_mgr:add_listener(self.v_object, self.v_border_offset_sld_ex.onBeginDrag, function()
+    self.v_parent_ui:click_border_begin_drag()
+  end)
+  self:set_toggle("FlipTog", function(isOn)
+    self:on_click_FlipTog(isOn)
+  end)
+end
+
+function ui:ui_on_show()
+  self.v_parent_ui:set_plan_list_obj_parent(self.v_uicompents.PlanListNode_rect)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_view()
+end
+
+function ui:change_save_interactable()
+  local has_change = self.v_parent_ui:has_change()
+  local has_overlap = self.v_parent_ui:has_overlap()
+  Util.apply_grey_ex(self.v_uiobjects.BtnSave, not has_change or has_overlap)
+end
+
+function ui:set_flip_tog_is_on(isOn)
+  self.v_uicompents.FlipTog_tog:SetIsOnWithoutNotify(isOn)
+end
+
+function ui:change_custom_layout(border_offset)
+  self:click_border_offset_sld(border_offset)
+  self.v_border_offset_sld_ex:SetValueWithoutNotify(border_offset)
+end
+
+return ui

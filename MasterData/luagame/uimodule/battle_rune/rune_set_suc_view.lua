@@ -1,0 +1,107 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local RUNE_DETAIL_SKILL_ITEM_CLASS = require("uimodule.battle_rune.rune_detail_item")
+local RUNE_HELPER = require("gamelogic.activity.rune2_helper")
+local TEAM_LV_CHANGE_STATE = RUNE_HELPER.TEAM_LV_CHANGE_STATE
+
+function ui:ui_finish_load()
+  self:set_button("BtnRet", function()
+    self:ui_hide()
+    UIMgr:try_hide_ui("ui_rune_set")
+    UIMgr:try_hide_ui("challenge_ring_plus_shop_room")
+  end)
+end
+
+function ui:ui_on_show(hero_id)
+  self.v_buddy_id = hero_id
+  self.v_rune_info = Rune2Mgr:get_rune_buddy_info(hero_id)
+  MsgGame:mq_publish2(Const.MSG_ON_OPEN_DROP_UI)
+  if not self.v_rune_info then
+    self:ui_hide()
+    return
+  end
+  self:refresh_hero_icon()
+  self:refresh_rune_info()
+  self:refresh_team_lv_ui()
+  local pos = self.v_rune_info.pos
+  self:refresh_rune_skill_list(self.v_buddy_id, pos)
+end
+
+function ui:ui_on_hide()
+  Rune2Mgr:set_rune_end()
+  if self.v_rune_skill_item then
+    self.v_rune_skill_item:ui_hide()
+    self:remove_wrap_ui(self.v_rune_skill_item)
+  end
+  MsgGame:mq_publish2(Const.MSG_ON_CLOSE_DROP_UI)
+end
+
+function ui:refresh_hero_icon()
+  local buddy_id = self.v_buddy_id
+  local ucom = self.v_uicompents
+  local hero_img = ucom.hero_img
+  local hero_icon = UtilUI.get_hero_images(buddy_id, Config.HERO_ICON_LV.HD_FULL_IMG)
+  if not hero_icon then
+    return
+  end
+  ResMgr:load_set_icon(hero_img, hero_icon, nil, true, self)
+end
+
+function ui:refresh_rune_info()
+  local ucom = self.v_uicompents
+  local char_mode_txt = ucom.CharMode_txt
+  local rune_icon_img = ucom.RuneIcon_img
+  local rune_level_txt = ucom.RuneLevel_txt
+  local rune_bg_img = ucom.RuneBg_img
+  local rune_condition_lv = self.v_rune_info.level
+  local pos = self.v_rune_info.pos
+  local buddy_cfg = ShareRes.get_buddy_cfg(self.v_buddy_id)
+  char_mode_txt.text = buddy_cfg.RuneName[pos]
+  rune_level_txt.text = Util.format_str("等级：{1}", rune_condition_lv)
+  local icon_name = buddy_cfg.RuneIcon[pos]
+  local rune_icon_path = RUNE_HELPER.get_rune_icon(icon_name)
+  ResMgr:load_set_icon(rune_icon_img, rune_icon_path)
+  local rune_type = buddy_cfg.RuneType[pos]
+  rune_bg_img.color = RUNE_HELPER.RUNE_COLOR_A[rune_type].color
+end
+
+function ui:refresh_rune_skill_list(buddy_id)
+  if self.v_rune_skill_item then
+    self.v_rune_skill_item:ui_hide()
+    self:remove_wrap_ui(self.v_rune_skill_item)
+  end
+  self.v_uiobjects.Set:SetActive(false)
+  self.v_uiobjects.Activate:SetActive(true)
+  self.v_rune_skill_item = RUNE_DETAIL_SKILL_ITEM_CLASS:ui_wrap_ex(self, self.v_uiobjects.RuneDetail, true)
+  local buddy_rune_info = Rune2Mgr:get_rune_buddy_info(buddy_id)
+  if buddy_rune_info then
+    local pos = buddy_rune_info.pos
+    local entry_list = buddy_rune_info.entry_list
+    local buddy_rune_lv = buddy_rune_info.level
+    local rune_type = ShareRes.get_buddy_rune_type(buddy_id, pos)
+    local skill_param = {
+      buddy_id = buddy_id,
+      rune_type = rune_type,
+      buddy_rune_lv = buddy_rune_lv,
+      is_now_pos = true,
+      entry_list = entry_list
+    }
+    self.v_rune_skill_item:set_data(skill_param, RUNE_HELPER.DETAIL_ITEM_SHOW_TYPE.SUC_VIEW)
+  end
+end
+
+function ui:refresh_team_lv_ui()
+  local team_change_state = Rune2Mgr:get_team_change_state()
+  local ucom = self.v_uicompents
+  local lv_change_content = ""
+  if team_change_state == TEAM_LV_CHANGE_STATE.UP then
+    lv_change_content = Util.format_str("队伍等级提升至")
+  elseif team_change_state == TEAM_LV_CHANGE_STATE.DOWN then
+    lv_change_content = Util.format_str("队伍等级降低至")
+  end
+  self.v_uiobjects.TeamLV:SetActive(team_change_state ~= TEAM_LV_CHANGE_STATE.NO_CHANGE)
+  ucom.TeamContent_txt.text = lv_change_content
+  ucom.TeamLVNum_txt.text = Rune2Mgr:get_rune_team_level()
+end
+
+return ui

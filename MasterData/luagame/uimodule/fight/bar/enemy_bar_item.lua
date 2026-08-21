@@ -1,0 +1,1123 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local HP_BG_DISAPPEAR_TIME = 0.8
+local HP_SHAKER_TIME = 0.2
+local FightDefine = require("cs_share.fight_define")
+local FightConfig = require("uimodule.fight.fight_config")
+local ATTR_TYPE = FightDefine.ATTR_TYPE
+local SEQ_MAX_NUM = 1000
+local Math = require("base.mathx")
+local WEAK_ITEM_CLASS = require("uimodule.fight.bar.weakness_tem")
+local BUFF_ITEM_CLASS = require("uimodule.fight.bar.bar_buff_item")
+local RED_SKILL_BAR_X_OFFSET = -6.68
+local FIGHT_UI_EFFECT = FightConfig.FIGHT_UI_EFFECT
+local CSTweening = CS.DG.Tweening
+local RECOVER_TIME = 0.8
+local RECOVER_GREEN_TIME = RECOVER_TIME / 2
+local EFFECT_NAME = {
+  toughness_star_obj = "FX_UI_toughness_Star",
+  common_life_obj = "Fx_Common_LifeTem",
+  bar_effect = "Fx_UI_Element_Dark_2_1",
+  hp_effect = "Fx_UI_Common_HP_1",
+  boss_break_particle = "Fx_UI_Bloodbreak_Boss",
+  multi_break_particle = "Fx_UI_DoubleEnemyBlood1",
+  elite_break_particle = "Fx_UI_Bloodbreak_Elite",
+  line_effect_obj = "Fx_UI_Element_Dark_1_2"
+}
+local BOSS_BREAK_MAGIC = ShareRes.get_comm_string_value("BossToughBreakMagic")
+local ELITE_BREAK_MAGIC = ShareRes.get_comm_string_value("EliteToughBreakMagic")
+
+function ui:ui_finish_load()
+  self.v_hp_width = 0
+  self.v_eb_scale_x = 0
+  self.v_interval_right_x = 0
+  self:register_template()
+  self.v_rect_tf = self:get_rect_transform()
+  self.v_right_rect = self.v_uicompents.Decorate_right_rect
+  self.v_weak_item_list = {}
+  self.v_abnormal_item_list = {}
+  self.v_init_blood_pos_x, self.v_init_blood_pos_y, self.v_init_blood_pos_z = self.v_uiobjects.Blood.transform:GetLocalPositionA3()
+  self.v_dt_count = 0
+  self.v_buff_item = {}
+  self.v_interval_item = {}
+  self.v_dynamic_effect_map = {}
+  self.v_energy_bar_width = self.v_uicompents.Enemy_energy_rect:GetRectWH()
+  self.v_buff_count = 0
+  self.v_last_enemy_uid = -1
+  self.v_hp_up_cg = self:get_canvas_group(nil, self.v_uiobjects.BloodHpUp).component
+  self.v_hp_cg = self:get_canvas_group(nil, self.v_uiobjects.Blood_Hp).component
+  self.v_hp_btm_cg = self:get_canvas_group(nil, self.v_uiobjects.BloodHpBttom).component
+  self.v_enemy_cg = self:get_canvas_group(nil, self.v_uiobjects.enemy).component
+  local TypeDOTweenAnimation = typeof(CS.DG.Tweening.DOTweenAnimation)
+  self.v_blood_dot = self.v_uiobjects.Blood:GetComponent(TypeDOTweenAnimation)
+  self.v_increase_dot = self.v_uiobjects.InjuriesUp:GetComponent(TypeDOTweenAnimation)
+  self.v_sa_outline = Util.get_component(nil, self.v_uiobjects.Super_Armor_now, typeof(CS.UnityEngine.UI.Outline))
+  self.v_increase_damage_tmp = self:get_component(nil, self.v_uiobjects.InjuriesUpNum, typeof(CS.TMPro.TextMeshProUGUI))
+  self.v_injuries_up_cg = self:get_canvas_group(nil, self.v_uiobjects.InjuriesUp)
+  self.v_injuries_up_init_pos_x, self.v_injuries_up_init_pos_y = self.v_uicompents.InjuriesUp_rect:GetAnchoredPositionA()
+  self.v_display_dot = self:get_custom_dotween(nil, self.v_uiobjects.Display)
+  self.v_uicompents.Display_cg.alpha = 1
+  self:set_flash_long_visible(false)
+  self:init_dynamic_effect()
+end
+
+function ui:ui_on_show()
+  Util.change_component_alpha2(self.v_uicompents.Flash_long_img, 1)
+  self.v_hp_bg_disappear_seq = {}
+  self.v_abnormal_img_seq = {}
+end
+
+function ui:ui_follow_target(target)
+  Util.set_ui_follow_npc(self.v_rect_tf.component, target, 0)
+end
+
+function ui:ui_on_hide()
+  self.v_last_increase_value = nil
+  self.v_increase_dot = nil
+  self:clear_weak_item()
+  self:clear_phase_item()
+  if self.v_phase_temp_key then
+    self:unregister_template(self.v_phase_temp_key)
+  end
+  self:clear_buff_item()
+  self:clear_abnormal_item()
+  if self.v_buff_temp_key then
+    self:unregister_template(self.v_buff_temp_key)
+  end
+  self:clear_dotween_seq()
+  self.v_last_frame_hp = nil
+  self.v_last_enemy_uid = -1
+  self.v_target_uuid = nil
+  self:clear_interval_item()
+  self:clear_all_tween()
+  Util.set_color(self.v_uicompents.Super_Armor_now_img, "FFD57C")
+  self.v_sa_outline.enabled = false
+  self.v_uiobjects.EnergyRedSkill:SetActive(false)
+  if self.v_flash_loop_tw then
+    self.v_flash_loop_tw:Kill(false)
+    self.v_flash_loop_tw = nil
+  end
+end
+
+function ui:ui_on_destroy()
+  self.v_injuries_upset_parent_suc = nil
+  self.v_last_enemy_uid = nil
+  self.v_hit_effect_key = nil
+  self.v_increase_damage_tmp = nil
+  self:clear_interval_item()
+  self:release_dynamic_effect()
+  self:release_red_skill_effect()
+end
+
+function ui:create_dotween()
+  self.v_dt_count = (self.v_dt_count + 1) % SEQ_MAX_NUM
+  local new_seq = Util.create_sequence()
+  self.v_hp_bg_disappear_seq[self.v_dt_count] = new_seq
+  return self.v_dt_count
+end
+
+function ui:clear_seq(dt_count)
+  self.v_hp_bg_disappear_seq[dt_count]:Kill()
+  self.v_hp_bg_disappear_seq[dt_count] = nil
+end
+
+function ui:clear_dotween_seq()
+  for _, dt_obj in pairs(self.v_hp_bg_disappear_seq) do
+    dt_obj:Kill()
+  end
+  for _, obj in pairs(self.v_abnormal_img_seq) do
+    obj:Kill()
+  end
+  self.v_hp_bg_disappear_seq = nil
+  self.v_abnormal_img_seq = nil
+  self.v_on_dotween = nil
+end
+
+function ui:on_game_pause_state_change(pause)
+  for key, item in pairs(self.v_abnormal_item_list) do
+    item:on_game_pause_state_change(pause)
+  end
+end
+
+function ui:on_enemy_blood_zero()
+  local phase_data = FightDataMgr:get_npc_phase_data(self.v_target_uuid)
+  local phase_num = 0
+  if phase_data then
+    for _, state in pairs(phase_data) do
+      if state then
+        phase_num = phase_num + 1
+      end
+    end
+  end
+  if phase_num > 0 then
+    return
+  end
+  local comps = self.v_uicompents
+  local effect_root, break_effect_name
+  if self.v_bar_type == Config.ENEMY_BAR_TYPE.MAIN_TARGET then
+    effect_root = comps.Bloodbreak_Boss_rect
+    break_effect_name = EFFECT_NAME.boss_break_particle
+  elseif self.v_bar_type == Config.ENEMY_BAR_TYPE.MULTI_TARGET then
+    effect_root = comps.Bloodbreak_Multi_rect
+    break_effect_name = EFFECT_NAME.multi_break_particle
+  elseif self.v_bar_type == Config.ENEMY_BAR_TYPE.ELITE_TARGET then
+    effect_root = comps.Bloodbreak_Elite_rect
+    break_effect_name = EFFECT_NAME.elite_break_particle
+  end
+  self:play_effect_by_mgr(break_effect_name, effect_root)
+  self.v_display_dot:Restart(0)
+  self.v_blood_dot:DORestart()
+  self.v_parent_ui:set_destroy_left(self.v_is_left)
+end
+
+function ui:update_enemy_blood_on_recover(target)
+  local hp_percent = target.attr_mgr:get_hp_percent()
+  local x, _ = self.v_uicompents.Blood_Hp_rect:GetSizeDeltaA()
+  local cur_per = x / self.v_hp_width
+  if hp_percent <= cur_per then
+    self.v_last_frame_hp = target.attr_mgr:get_attr(ATTR_TYPE.CHAR_HP)
+    self:pause_recover_anima()
+  end
+  if self.v_is_in_recover_green_tween then
+    local fillAmount = self.v_uicompents.Blood_Green_img.fillAmount
+    if hp_percent <= fillAmount then
+      self:pause_recover_green_anima()
+    end
+  end
+end
+
+function ui:do_hp_deduct_anima(last_frame_per, percent)
+  if last_frame_per - percent > 0.01 then
+    self.v_is_in_hp_tween = true
+    if not self.v_hp_bg_fill_tween then
+      self.v_hp_bg_fill_tween = self.v_uicompents.Blood_Dong_img:DOFillAmount(percent, HP_BG_DISAPPEAR_TIME)
+      self.v_hp_bg_fill_tween:ChangeStartValue(last_frame_per)
+      self.v_hp_bg_fill_tween:SetAutoKill(false)
+      self.v_hp_bg_fill_tween:OnComplete(function()
+        self.v_is_in_hp_tween = false
+      end)
+    else
+      self.v_hp_bg_fill_tween:ChangeStartValue(last_frame_per)
+      self.v_hp_bg_fill_tween:ChangeEndValue(percent)
+      self.v_hp_bg_fill_tween:Restart()
+    end
+  else
+    self.v_is_in_hp_tween = false
+    self.v_uicompents.Blood_Dong_img.fillAmount = percent
+    if self.v_hp_bg_fill_tween and self.v_hp_bg_fill_tween:IsPlaying() then
+      self.v_hp_bg_fill_tween:Pause()
+    end
+  end
+  if not self.v_hp_bg_shake_tween then
+    self.v_hp_bg_shake_tween = self.v_uiobjects.Blood.transform:DOShakeAnchorPos(HP_SHAKER_TIME, 10, 40, 50, true)
+    self.v_hp_bg_shake_tween:SetAutoKill(false)
+    self.v_hp_bg_shake_tween:OnComplete(function()
+      self.v_uicompents.Blood_rect.transform:SetLocalPositionA(self.v_init_blood_pos_x, self.v_init_blood_pos_y, self.v_init_blood_pos_z)
+    end)
+  else
+    self.v_uicompents.Blood_rect.transform:SetLocalPositionA(self.v_init_blood_pos_x, self.v_init_blood_pos_y, self.v_init_blood_pos_z)
+    self.v_hp_bg_shake_tween:Restart()
+  end
+end
+
+function ui:update_enemy_blood(target)
+  target = target or SceneMgr:pick_by_uuid(self.v_target_uuid)
+  local hp = target.attr_mgr:get_attr(ATTR_TYPE.CHAR_HP)
+  local hp_max = target.attr_mgr:get_attr(ATTR_TYPE.CHAR_HP_MAX)
+  local shield_val = target:get_shield_num()
+  local hp_width, hp_percent, shield_percent
+  if 0 ~= shield_val then
+    if hp_max >= shield_val + hp then
+      hp_percent = hp / hp_max
+      hp_width = self.v_hp_width * hp_percent
+      shield_percent = shield_val / hp_max
+    else
+      hp_max = hp_max + shield_val
+      hp_percent = hp / hp_max
+      hp_width = self.v_hp_width * hp_percent
+      shield_percent = 1 - hp_percent
+    end
+    self:update_enemy_shield(shield_percent)
+  else
+    hp_percent = hp / hp_max
+    hp_width = self.v_hp_width * hp_percent
+    self:update_ui_visible(self.v_uiobjects.Blood_Shield, false)
+  end
+  self.v_uicompents.Blood_Hp_rect:SetSizeDeltaWidthA(hp_width)
+  self:update_ui_visible(self.v_uiobjects.Display, true)
+  self.v_last_frame_hp = self.v_last_frame_hp or hp
+  if self.v_last_frame_hp ~= hp then
+    if hp < self.v_last_frame_hp then
+      local length = self.v_hp_width / 2
+      self.v_uicompents.CommonHPNode_rect:SetAnchoredPositionX(Math.lerp_number(-length, length, hp_percent))
+      local effect_name = EFFECT_NAME.hp_effect
+      self:play_effect_by_mgr(effect_name, self.v_uicompents.CommonHPNode_rect)
+      local last_frame_per = self.v_last_frame_hp / hp_max
+      self:do_hp_deduct_anima(last_frame_per, hp_percent)
+    end
+    if self.v_last_frame_hp > 0 and hp <= 0 then
+      self:on_enemy_blood_zero()
+    end
+    self.v_last_frame_hp = hp
+  elseif not self.v_is_in_hp_tween then
+    self.v_uicompents.Blood_Dong_img.fillAmount = hp_percent
+  end
+end
+
+function ui:update_enemy_shield(shield_percent)
+  self:update_ui_visible(self.v_uiobjects.Blood_Shield, true)
+  self.v_uicompents.Blood_Shield_img.fillAmount = shield_percent
+end
+
+function ui:do_tough_deduct_anima(last_frame_per, percent)
+  if last_frame_per - percent > 0.01 then
+    self.v_is_in_tough_dotween = true
+    if not self.v_last_tough_tween then
+      self.v_last_tough_tween = self.v_uicompents.EnergyDong_img:DOFillAmount(percent, HP_BG_DISAPPEAR_TIME)
+      self.v_last_tough_tween:ChangeStartValue(last_frame_per)
+      self.v_last_tough_tween:SetAutoKill(false)
+      self.v_last_tough_tween:OnComplete(function()
+        self.v_is_in_tough_dotween = false
+      end)
+    else
+      self.v_last_tough_tween:ChangeStartValue(last_frame_per)
+      self.v_last_tough_tween:ChangeEndValue(percent)
+      self.v_last_tough_tween:Restart()
+    end
+  else
+    self.v_is_in_tough_dotween = false
+    self.v_uicompents.EnergyDong_img.fillAmount = percent
+    if self.v_last_tough_tween and self.v_last_tough_tween:IsPlaying() then
+      self.v_last_tough_tween:Pause()
+    end
+  end
+end
+
+function ui:update_enemy_armor(target)
+  local info = target:get_toughness_info()
+  if info then
+    local percent = info.cur_tough_value / info.max_tough_value
+    if info.on_recover then
+      self:update_ui_visible(self.v_uiobjects.EnergyDong, false)
+    elseif self.v_last_frame_tough and self.v_last_frame_tough ~= info.cur_tough_value then
+      self:update_ui_visible(self.v_uiobjects.EnergyDong, true)
+      local last_frame_per = self.v_last_frame_tough / info.max_tough_value
+      self:do_tough_deduct_anima(last_frame_per, percent)
+    else
+      self.v_uicompents.EnergyDong_img.fillAmount = percent
+    end
+    self.v_last_frame_tough = info.cur_tough_value
+    self:update_ui_visible(self.v_uiobjects.Enemy_energy, true)
+    self.v_uicompents.Super_Armor_now_img.fillAmount = percent
+    if not Util.is_nil(self.v_red_skill_bar) then
+      self.v_red_skill_bar:SetAnchoredPositionA(RED_SKILL_BAR_X_OFFSET * (1 - percent), 0)
+    end
+    self.v_right_rect:SetAnchoredPositionX(self.v_interval_right_x * percent)
+  else
+    self:update_ui_visible(self.v_uiobjects.Enemy_energy, false)
+  end
+end
+
+function ui:on_role_heal(msg)
+  local target = SceneMgr:get_npc_by_id(self.v_target_uuid)
+  if Util.is_destroy(target) or target:is_die() then
+    return
+  end
+  local before_hp, now_hp = msg.mm_y, msg.mm_obj
+  local hp_max = target.attr_mgr:get_attr(Config.CHAR_ATTR_TYPE.CHAR_HP_MAX)
+  local init_percent, final_percent = before_hp / hp_max, now_hp / hp_max
+  local shield = target:get_shield_num()
+  if hp_max < shield + now_hp then
+    local shield_percent = shield / hp_max
+    final_percent = 1 - shield_percent
+  end
+  if init_percent >= final_percent then
+    return
+  end
+  self:do_recover_anima(init_percent, final_percent)
+end
+
+function ui:on_role_hp_value_change(uuid)
+  local cur_target = SceneMgr:get_npc_by_id(uuid)
+  if Util.is_destroy(cur_target) or self.v_is_in_recover_tween then
+    return
+  end
+  self:update_enemy_blood()
+end
+
+function ui:on_npc_reset_tough_param()
+  local target = SceneMgr:pick_by_uuid(self.v_target_uuid)
+  if not target or target:is_destroy() then
+    return
+  end
+  local info = target:get_toughness_info()
+  if not info then
+    return
+  end
+  local lv_down_values = info.lv_down_values
+  local lv_count = #lv_down_values
+  if lv_count >= 2 then
+    local index = 1
+    for i = 1, #lv_down_values - 1 do
+      local obj_info = self:get_interval_item(index)
+      obj_info.lvdown_obj:SetActive(false)
+      obj_info.black_obj:SetActive(false)
+      local item_tf = obj_info.obj.transform
+      self:update_ui_visible(obj_info.obj, true)
+      local img = obj_info.img
+      Util.change_component_alpha2(img, 1)
+      local per = lv_down_values[i] / info.cur_lv_tough_val_limit
+      local x = per * self.v_energy_bar_width
+      item_tf:SetAnchoredPositionX(x)
+      index = index + 1
+    end
+  end
+end
+
+function ui:try_create_buff_item(magic, element_data, index)
+  if not self.v_buff_item[index] then
+    local obj = self:get_auto_cache(self.v_buff_temp_key)
+    local item = BUFF_ITEM_CLASS:ui_wrap_ex(self, obj, true)
+    if element_data then
+      item:set_element_buff_data(magic, element_data)
+    else
+      item:set_data(magic)
+    end
+    self.v_buff_item[index] = item
+  elseif self.v_buff_item[index]:get_magic() ~= magic then
+    self.v_buff_item[index]:set_data(magic)
+  else
+    self.v_buff_item[index]:update_level()
+  end
+end
+
+function ui:update_buff_level()
+  for key, item in pairs(self.v_buff_item) do
+    item:update_level()
+  end
+end
+
+function ui:update_buff_list(target)
+  local list = target.magic_mgr:get_visible_magic_list()
+  for magic_id, magic in pairs(list) do
+    self:try_create_buff_item(magic, nil, magic_id)
+  end
+end
+
+function ui:remove_buff(index, force)
+  if self.v_buff_item[index] then
+    local target = SceneMgr:get_npc_by_id(self.v_target_uuid)
+    if not Util.is_destroy(target) and target.magic_mgr:get_magic_num(index) > 0 and not force then
+      local magic_id = self.v_buff_item[index]:get_magic_id()
+      local magic_cfg = ShareRes.get_magic_cfg(magic_id)
+      if magic_cfg.logic.UpdateType ~= Config.MagicDefine.UPDATE_TYPE.SeparateTime then
+        local magic = target.magic_mgr:get_magic_by_id(magic_id)
+        if magic then
+          self.v_buff_item[index]:set_data(magic)
+          return
+        end
+      else
+        self.v_buff_item[index]:update_level()
+        return
+      end
+    end
+    local item = self.v_buff_item[index]
+    self.v_buff_item[index] = nil
+    item:ui_hide()
+    item:ui_destroy()
+    local obj = item:get_lua_object()
+    if self.v_auto_cache_to_key[obj] then
+      self:give_back_auto_cache_obj(self.v_buff_temp_key, obj)
+    end
+  end
+end
+
+function ui:update_buff_duration(cur_target)
+  local ELEMENT_TYPE = FightDefine.ELEMENT_TYPE
+  for index, item in pairs(self.v_buff_item) do
+    if not item.v_element_id or item.v_element_id == ELEMENT_TYPE.WATER or item.v_element_id == ELEMENT_TYPE.LIGHT or item.v_element_id == ELEMENT_TYPE.DARK then
+      local magic = item:get_magic()
+      if not magic then
+        self:remove_buff(index)
+      elseif magic.cfg.each_frame_update then
+        item:update_fillamount(magic.left_duration / magic.duration)
+      end
+    else
+      local percent = cur_target.element_abnormal_mgr:get_element_duration_per(item.v_magic_rtid)
+      if not percent then
+        self:remove_buff(index)
+      else
+        item:update_fillamount(percent)
+      end
+    end
+  end
+end
+
+function ui:clear_buff_item()
+  for index, item in pairs(self.v_buff_item) do
+    self:remove_buff(index, true)
+  end
+end
+
+function ui:clear_abnormal_item()
+  for _, item in pairs(self.v_abnormal_item_list) do
+    item:ui_hide()
+    item:ui_destroy()
+  end
+end
+
+function ui:on_element_timer_remove(uuid, element_id)
+  if self.v_target_uuid ~= uuid then
+    return
+  end
+  if self.v_weak_item_list[element_id] then
+    self.v_weak_item_list[element_id]:set_data(true)
+  end
+  self:remove_abnormal_duration_item(element_id)
+end
+
+function ui:on_element_state_change(uuid)
+  if self.v_target_uuid ~= uuid then
+    return
+  end
+  self:update_enemy_weakness()
+end
+
+function ui:on_element_value_change(uuid, element_id)
+  if self.v_target_uuid ~= uuid then
+    return
+  end
+  local target = SceneMgr:pick_by_uuid(self.v_target_uuid)
+  if Util.is_destroy(target) then
+    return
+  end
+  if element_id and self.v_weak_item_list[element_id] then
+    local attr_id = Config.FightDefine.ELEMENT_TO_AB_ATTR[element_id]
+    local ab_state = target.attr_mgr:get_abnormal_status(attr_id)
+    if ab_state ~= FightDefine.ABNORMAL_STATUS.CLOSE then
+      local weak_item = self.v_weak_item_list[element_id]
+      weak_item:set_data()
+    end
+  end
+end
+
+function ui:on_element_timer_start(uuid, element_id)
+  if self.v_target_uuid ~= uuid then
+    return
+  end
+  if self.v_weak_item_list[element_id] then
+    self.v_weak_item_list[element_id]:show_effect()
+  end
+  self:refresh_abnormal_duration_item(element_id)
+end
+
+function ui:on_abnormal_flag_change(uuid, element_id)
+  if self.v_target_uuid ~= uuid or not self.v_weak_item_list[element_id] then
+    return
+  end
+  self.v_weak_item_list[element_id]:set_data(true)
+end
+
+function ui:on_npc_tough_recover_state_change(uuid, is_on)
+  if not self.v_target_uuid or self.v_target_uuid ~= uuid then
+    return
+  end
+  self:set_recover_tough_trigger(is_on)
+end
+
+function ui:on_npc_tough_value_change(uuid)
+  if not self.v_target_uuid or self.v_target_uuid ~= uuid then
+    return
+  end
+  local cur_target = SceneMgr:get_npc_by_id(uuid)
+  if not Util.is_destroy(cur_target) and not self.v_recover_tough_on then
+    self:update_enemy_armor(cur_target)
+  end
+end
+
+function ui:on_npc_tough_param_reset(uuid)
+  if not self.v_target_uuid or self.v_target_uuid ~= uuid then
+    return
+  end
+  self:hide_interval_item()
+  self:on_npc_reset_tough_param(uuid)
+end
+
+function ui:on_npc_tough_lv_down(msg)
+  local before_level = msg.mm_obj
+  for index, obj_info in pairs(self.v_interval_item) do
+    if index == before_level - 1 then
+      obj_info.lvdown_obj:SetActive(true)
+      self:play_effect_by_mgr(EFFECT_NAME.toughness_star_obj, obj_info.obj.transform)
+      obj_info.black_obj:SetActive(true)
+    end
+  end
+end
+
+function ui:on_npc_tough_lv_up(msg)
+  local cur_level = msg.mm_obj
+  for index, obj_info in pairs(self.v_interval_item) do
+    if index == cur_level - 1 then
+      obj_info.lvdown_obj:SetActive(false)
+      local img = obj_info.img
+      local temp = img.color
+      temp.a = 1
+      img.color = temp
+      obj_info.black_obj:SetActive(false)
+    end
+  end
+end
+
+function ui:on_npc_tough_clear(msg)
+  self.v_uiobjects.Flash_long:SetActive(true)
+  self:set_flash_long_visible(true)
+  self:play_flash_loop_anima()
+end
+
+function ui:on_npc_tough_recover_done(msg)
+  self.v_uiobjects.Flash_long:SetActive(false)
+  if self.v_flash_loop_tw then
+    self.v_flash_loop_tw:Kill(false)
+    self.v_flash_loop_tw = nil
+  end
+  self:set_flash_long_visible(false)
+end
+
+function ui:on_change_npc_phase_state(msg)
+  self:update_npc_phase_state(msg)
+end
+
+function ui:play_flash_loop_anima()
+  if self.v_flash_loop_tw then
+    self.v_flash_loop_tw:Kill(false)
+    self.v_flash_loop_tw = nil
+  end
+  self.v_flash_loop_tw = self.v_uicompents.Flash_long_img:DOFade(0.2, 0.4)
+  self.v_flash_loop_tw:SetAutoKill(false)
+  self.v_flash_loop_tw:From(1)
+  self.v_flash_loop_tw:SetLoops(-1, CSTweening.LoopType.Yoyo)
+  self.v_flash_loop_tw:SetEase(CSTweening.Ease.Linear)
+end
+
+function ui:update_npc_phase_state(msg)
+  local phase_data = FightDataMgr:get_npc_phase_data(self.v_target_uuid)
+  self:clear_phase_item()
+  if UtilTable.is_empty(phase_data) then
+    return
+  end
+  local phase, phase_active
+  local child_name = "Active"
+  local is_phase_state_change = msg and msg.mm_y
+  local target_phase
+  for index, oepn in ipairs(phase_data) do
+    phase = self:get_auto_cache(self.v_phase_temp_key)
+    phase_active = self:get_child_gameobj(child_name, phase)
+    phase_active:SetActive(oepn)
+    if is_phase_state_change and msg.mm_obj == index then
+      target_phase = phase
+    end
+  end
+  if is_phase_state_change then
+    self:do_recover_anima(0, 1)
+    if target_phase then
+      local effect_name = EFFECT_NAME.common_life_obj
+      self:play_effect_by_mgr(effect_name, target_phase.transform)
+      self.v_display_dot:Restart(1)
+    end
+  end
+end
+
+function ui:update_enemy_weakness(target)
+  target = target or SceneMgr:pick_by_uuid(self.v_target_uuid)
+  if Util.is_destroy(target) then
+    return
+  end
+  for element_id, attr_id in ipairs(FightDefine.ELEMENT_TO_AB_ATTR) do
+    local ab_state = target.attr_mgr:get_abnormal_status(attr_id)
+    if ab_state ~= FightDefine.ABNORMAL_STATUS.CLOSE then
+      if not self.v_weak_item_list[element_id] then
+        local obj = self.v_parent_ui:get_weakness_temp_obj()
+        obj.transform:SetParent(self.v_uiobjects.WeaknessList.transform)
+        obj.transform:ResetAttr()
+        self.v_weak_item_list[element_id] = WEAK_ITEM_CLASS:ui_wrap(self, obj, true)
+        self.v_weak_item_list[element_id]:set_element_info(element_id)
+      end
+      local weak_item = self.v_weak_item_list[element_id]
+      weak_item:set_id_info(attr_id, self.v_target_uuid)
+      weak_item:set_enable(true)
+      weak_item:set_data(true, target)
+      weak_item:set_state(ab_state)
+    elseif self.v_weak_item_list[element_id] then
+      self.v_weak_item_list[element_id]:set_enable(false)
+    end
+  end
+end
+
+function ui:set_recover_tough_trigger(is_on)
+  self.v_recover_tough_on = is_on
+end
+
+function ui:update_enemy_bar(cur_target)
+  if self.v_recover_tough_on then
+    self:update_enemy_armor(cur_target)
+  end
+end
+
+function ui:low_update_enemy_bar(cur_target)
+  if Util.is_destroy(cur_target) then
+    return
+  end
+  if self.v_is_in_recover_tween then
+    self:update_enemy_blood_on_recover(cur_target)
+  end
+  self:update_buff_duration(cur_target)
+end
+
+function ui:disable_enemy_bar()
+  self:update_ui_visible(self.v_uiobjects.Display, false)
+  self.v_last_frame_hp = nil
+end
+
+function ui:set_effect_bar_show(is_show)
+  self.v_uiobjects.Blood_Hp_Effect:SetActive(is_show)
+  if is_show then
+    if not self.v_dynamic_effect_map.line_effect_obj then
+      self:try_get_dynamic_effect("line_effect_obj", self.v_uiobjects.EffectLine, true)
+    end
+    if not self.v_dynamic_effect_map.bar_effect then
+      self:try_get_dynamic_effect("bar_effect", self.v_uiobjects.EffectBar, true)
+    end
+  end
+end
+
+function ui:set_effect_bar_length(percent)
+  local _, scale_y, scale_z = self.v_uicompents.EffectBar_rect:GetLocalScaleA3()
+  self.v_uicompents.EffectBar_rect:SetLocalScaleA(percent, scale_y, scale_z)
+  if not self.v_dynamic_effect_map.line_effect_obj then
+    self:try_get_dynamic_effect("line_effect_obj", self.v_uiobjects.EffectLine, true)
+  end
+  self.v_dynamic_effect_map.line_effect_obj.transform:SetPositionA(self.v_uicompents.EffectLineNode_rect:GetPositionA())
+end
+
+function ui:set_scale(scale)
+  self.v_scale = scale
+  local scale_x, scale_y, scale_z = self.v_object_transform:GetLocalScaleA3()
+  if scale_x ~= self.v_scale then
+    self.v_object.transform:SetLocalScaleA(scale_x, scale_y, scale_z)
+  end
+end
+
+function ui:set_width_info(hp_width, eb_scale_x, interval_right_x)
+  self.v_hp_width, self.v_eb_scale_x, self.v_interval_right_x = hp_width, eb_scale_x, interval_right_x
+end
+
+function ui:set_bar_type(bar_type)
+  self.v_bar_type = bar_type
+end
+
+function ui:get_interval_item(index)
+  local obj_info = self.v_interval_item[index]
+  if not obj_info or obj_info.obj:IsNull() then
+    obj_info = {}
+    obj_info.obj = self.v_parent_ui:get_interval_temp_obj()
+    obj_info.obj.transform:SetParent(self.v_uiobjects.IntervalRoot.transform)
+    obj_info.obj.transform:ResetAttr()
+    obj_info.lvdown_obj = self:get_child_gameobj("LvDown", obj_info.obj)
+    obj_info.black_obj = self:get_child_gameobj("Interval_Black", obj_info.obj)
+    obj_info.img = self:get_image(nil, obj_info.obj)
+    self.v_interval_item[index] = obj_info
+  end
+  return obj_info
+end
+
+function ui:hide_interval_item()
+  for key, obj_info in pairs(self.v_interval_item) do
+    self:update_ui_visible(obj_info.obj, false)
+    obj_info.lvdown_obj:SetActive(false)
+  end
+end
+
+function ui:clear_interval_item()
+  for key, item in pairs(self.v_interval_item) do
+    self.v_parent_ui:give_back_interval_temp_obj(item.obj)
+  end
+  self.v_interval_item = {}
+end
+
+function ui:clear_weak_item()
+  for key, item in pairs(self.v_weak_item_list) do
+    item:ui_hide()
+    item:ui_destroy()
+    self.v_parent_ui:give_back_weakness_temp_obj(item:get_lua_object())
+    self.v_weak_item_list[key] = nil
+  end
+end
+
+function ui:clear_phase_item()
+  self:give_back_auto_cache(self.v_phase_temp_key)
+end
+
+function ui:set_target_info(target, target_uuid)
+  self.v_target_uuid = target_uuid
+  self.v_hit_effect_key = EFFECT_NAME.hp_effect .. target_uuid
+  target = target or SceneMgr:pick_by_uuid(target_uuid)
+  if target then
+    self.v_uiobjects.enemy:SetActive(self.v_bar_type ~= Config.ENEMY_BAR_TYPE.ELITE_TARGET)
+    self.v_uicompents.enemy_txt.text = target:get_name()
+    self.v_last_frame_tough = nil
+    self:set_effect_bar_show(false)
+    self:update_npc_phase_state()
+    self:update_enemy_weakness(target)
+    self:update_enemy_blood(target)
+    self:update_enemy_armor(target)
+  else
+    self.v_uiobjects.enemy:SetActive(false)
+  end
+  self:after_set_target_info()
+end
+
+function ui:after_set_target_info()
+  self:reset_flash_visible()
+  self:reset_bar_alpha()
+  self:set_recover_tough_trigger(false)
+  if self.v_bar_type == Config.ENEMY_BAR_TYPE.MULTI_TARGET then
+    local scale = self.v_is_left and 1 or -1
+    local frame = self:get_rect_transform("Frame", self.v_uiobjects.BloodHpUp)
+    frame:SetLocalScaleA(scale, 1, 1)
+    frame:SetAnchoredPositionX(self.v_is_left and -18 or 12.5)
+  end
+  self:on_tough_break_magic_change()
+end
+
+function ui:register_template()
+  self.v_phase_temp_key = self.v_parent_ui:panel_get_template_key("phase_temp_key")
+  self:register_exist_auto_template(self.v_phase_temp_key, self.v_uiobjects.PhaseTem, self.v_uiobjects.PhaseList)
+  self.v_buff_temp_key = self.v_parent_ui:panel_get_template_key("buff_temp_key")
+  self:register_exist_auto_template(self.v_buff_temp_key, self.v_uiobjects.BuffTem, self.v_uiobjects.BuffEnemyList)
+end
+
+function ui:get_element_effect(element_id, callback)
+  local effect_name = FightConfig.ELEMENT_ICON_EFFECT[element_id]
+  self.v_parent_ui:get_cache_element_effect(effect_name, callback)
+end
+
+function ui:give_back_element_effect(element_id, obj)
+  local effect_name = FightConfig.ELEMENT_ICON_EFFECT[element_id]
+  self.v_parent_ui:give_back_element_effect(effect_name, obj)
+end
+
+function ui:set_flash_long_visible(visible)
+  self.v_flash_long_visible = visible
+end
+
+function ui:reset_flash_visible()
+  if self:is_destroy() or Util.is_nil(self.v_object) then
+    return
+  end
+  self.v_uiobjects.Flash_long:SetActive(self.v_flash_long_visible)
+  if self.v_flash_long_visible then
+    self:play_flash_loop_anima()
+  elseif self.v_flash_loop_tw then
+    self.v_flash_loop_tw:Kill(false)
+    self.v_flash_loop_tw = nil
+  end
+end
+
+function ui:reset_bar_alpha()
+  self.v_hp_up_cg.alpha = 1
+  self.v_hp_cg.alpha = 1
+  self.v_hp_btm_cg.alpha = 1
+  self.v_enemy_cg.alpha = 1
+end
+
+function ui:set_left(is_left)
+  self.v_is_left = is_left
+end
+
+function ui:set_destroy_left()
+  self.v_parent_ui:set_destroy_left(self.v_is_left)
+end
+
+function ui:set_bar_parent(tf)
+  self.v_object.transform:SetParent(tf)
+  self.v_object.transform:ResetAttr()
+end
+
+function ui:clear_all_tween()
+  if self.v_last_tough_tween then
+    self.v_last_tough_tween:Kill(false)
+    self.v_last_tough_tween = nil
+  end
+  if self.v_hp_bg_fill_tween then
+    self.v_hp_bg_fill_tween:Kill(false)
+    self.v_hp_bg_fill_tween = nil
+  end
+  if self.v_hp_bg_shake_tween then
+    self.v_hp_bg_shake_tween:Kill(false)
+    self.v_hp_bg_shake_tween = nil
+  end
+  if self.v_recover_green_tween then
+    self.v_recover_green_tween:Kill(false)
+    self.v_recover_green_tween = nil
+  end
+  self.v_is_in_tough_dotween = false
+  self.v_is_in_hp_tween = false
+  self.v_is_in_recover_tween = false
+  self.v_is_in_recover_green_tween = false
+end
+
+function ui:do_recover_anima(init_percent, final_percent)
+  local comps = self.v_uicompents
+  local per = final_percent - init_percent
+  if per > 0.01 then
+    local _, size_y = comps.Blood_Hp_rect:GetSizeDeltaA()
+    self.v_is_in_recover_tween = true
+    local size_x
+    if not self.v_recover_tween then
+      size_x = self.v_hp_width * final_percent
+      self.v_recover_tween = comps.Blood_Hp_rect:DOSizeDeltaA(size_x, size_y, RECOVER_TIME)
+      size_x = self.v_hp_width * init_percent
+      self.v_recover_tween:ChangeStartValueVec2A(size_x, size_y)
+      self.v_recover_tween:SetAutoKill(false)
+      self.v_recover_tween:SetEase(CSTweening.Ease.OutExpo)
+      self.v_recover_tween:OnComplete(function()
+        self.v_is_in_recover_tween = false
+        self.v_uiobjects.Blood_Green:SetActive(false)
+        self:update_enemy_blood()
+      end)
+    else
+      size_x = self.v_hp_width * init_percent
+      self.v_recover_tween:ChangeStartValueVec2A(size_x, size_y)
+      size_x = self.v_hp_width * final_percent
+      self.v_recover_tween:ChangeEndValueVec2A(size_x, size_y)
+      self.v_recover_tween:Restart()
+    end
+    self.v_uiobjects.Blood_Green:SetActive(true)
+    if per > 0.15 then
+      self.v_is_in_recover_green_tween = true
+      if not self.v_recover_green_tween then
+        self.v_recover_green_tween = comps.Blood_Green_img:DOFillAmount(final_percent, RECOVER_GREEN_TIME)
+        self.v_recover_green_tween:ChangeStartValue(init_percent)
+        self.v_recover_green_tween:SetAutoKill(false)
+        self.v_recover_green_tween:SetEase(CSTweening.Ease.OutExpo)
+        self.v_recover_green_tween:OnComplete(function()
+          self.v_is_in_recover_green_tween = false
+        end)
+      else
+        self.v_recover_green_tween:ChangeStartValue(init_percent)
+        self.v_recover_green_tween:ChangeEndValue(final_percent)
+        self.v_recover_green_tween:Restart()
+      end
+    else
+      self.v_is_in_recover_green_tween = false
+      if self.v_recover_green_tween and self.v_recover_green_tween:IsPlaying() then
+        self.v_recover_green_tween:Pause()
+      end
+      comps.Blood_Green_img.fillAmount = final_percent
+    end
+  else
+    comps.Blood_Hp_rect:SetSizeDeltaWidthA(self.v_hp_width * final_percent)
+    self:pause_recover_anima()
+  end
+  comps.Blood_Dong_img.fillAmount = 0
+end
+
+function ui:pause_recover_anima()
+  self.v_is_in_recover_tween = false
+  if self.v_recover_tween and self.v_recover_tween:IsPlaying() then
+    self.v_recover_tween:Pause()
+  end
+  self:update_enemy_blood()
+  self:pause_recover_green_anima()
+end
+
+function ui:pause_recover_green_anima()
+  self.v_is_in_recover_green_tween = false
+  self.v_uiobjects.Blood_Green:SetActive(false)
+  if self.v_recover_green_tween and self.v_recover_green_tween:IsPlaying() then
+    self.v_recover_green_tween:Pause()
+  end
+end
+
+function ui:reset_weakness()
+  for key, item in pairs(self.v_weak_item_list) do
+    item:set_data(true)
+  end
+end
+
+function ui:init_dynamic_effect()
+end
+
+function ui:try_get_dynamic_effect(key, root, active)
+  if not EFFECT_NAME[key] then
+    Log.Error("特效名映射获取失败", key, debug.traceback())
+    return
+  end
+  local obj
+  if self.v_dynamic_effect_map[key] then
+    obj = self.v_dynamic_effect_map[key]
+    obj.transform:SetParent(root.transform)
+    obj.transform:ResetAttr()
+    obj.transform:SetAnchoredPositionA(0, 0)
+    obj.transform:SetActive(active)
+  else
+    local prefab_name = EFFECT_NAME[key]
+    obj = ResPoolMgr:get_ui_effect(prefab_name)
+    self.v_dynamic_effect_map[key] = obj
+  end
+  obj.transform:SetParent(root.transform)
+  obj.transform:ResetAttr()
+  obj.transform:SetAnchoredPositionA(0, 0)
+  obj.transform:SetActive(active)
+  return obj
+end
+
+function ui:remove_single_dynamic_effect(key)
+  if self.v_dynamic_effect_map[key] then
+    ResPoolMgr:release(self.v_dynamic_effect_map[key])
+    self.v_dynamic_effect_map[key] = nil
+  end
+end
+
+function ui:release_dynamic_effect()
+  for key, obj in pairs(self.v_dynamic_effect_map) do
+    ResPoolMgr:release(obj)
+    self[key] = nil
+  end
+end
+
+function ui:set_tough_bar_protect_state(state)
+  if state == Config.TOUGH_BAR_PROTECT_STATE.PLAY_BREAK_EFFECT then
+    local effect_name = FIGHT_UI_EFFECT.FX_UI_Energy_Break
+    self:play_effect_by_mgr(effect_name, self.v_uicompents.EnergyRedSkill_rect)
+  else
+    if Util.is_nil(self.v_red_skill_effect) then
+      local effect_name = FIGHT_UI_EFFECT.FX_UI_Energy_Lock
+      self.v_red_skill_effect_key = effect_name .. self.v_target_uuid
+      local effect = Util.get_fight_ui_effect(self.v_red_skill_effect_key, effect_name)
+      effect.gameObject:SetActive(true)
+      effect.transform:SetParent(self.v_uiobjects.EnergyRedSkill.transform)
+      effect:ResetAttr()
+      self.v_red_skill_effect = self:get_effect_status(nil, effect)
+      self.v_red_skill_bar = self:get_rect_transform("Bar", effect)
+    end
+    if state == Config.TOUGH_BAR_PROTECT_STATE.CREATE_PROTECT then
+      self.v_sa_outline.enabled = true
+      Util.set_color(self.v_uicompents.Super_Armor_now_img, "C88182")
+      self.v_uiobjects.EnergyRedSkill:SetActive(true)
+    elseif state == Config.TOUGH_BAR_PROTECT_STATE.EXIT_PROTECT then
+      local left_time = self.v_red_skill_effect:GetEndLength()
+      if left_time > 0 then
+        self.v_red_skill_effect:PlayEndEffect()
+        self.v_red_skill_effect_timer = Timer:add_timer(self.v_red_skill_effect_key, left_time, function()
+          self:release_red_skill_effect()
+          Util.set_color(self.v_uicompents.Super_Armor_now_img, "FFD57C")
+          self.v_sa_outline.enabled = false
+          self.v_uiobjects.EnergyRedSkill:SetActive(false)
+        end)
+      end
+    end
+  end
+end
+
+function ui:release_red_skill_effect()
+  if self.v_red_skill_effect_timer then
+    Timer:remove_timer(self.v_red_skill_effect_timer)
+    self.v_red_skill_effect_timer = nil
+  end
+  if self.v_red_skill_effect_key then
+    Util.release_fight_ui_effect(self.v_red_skill_effect_key)
+    self.v_red_skill_effect = nil
+    self.v_red_skill_effect_key = nil
+  end
+end
+
+function ui:on_tough_break_magic_change()
+  local objs = self.v_uiobjects
+  if not self.v_increase_damage_tmp then
+    objs.InjuriesUp:SetActive(false)
+    return
+  end
+  local target = SceneMgr:get_npc_by_id(self.v_target_uuid)
+  if Util.is_destroy(target) then
+    objs.InjuriesUp:SetActive(false)
+    return
+  end
+  local kind = target:get_role_kind()
+  if kind ~= Config.CommonDefine.NPC_KIND.BOSS and kind ~= Config.CommonDefine.NPC_KIND.ELITE then
+    return
+  end
+  local break_magic = kind == Config.CommonDefine.NPC_KIND.BOSS and BOSS_BREAK_MAGIC or ELITE_BREAK_MAGIC
+  local magic_count
+  local display_value = 0
+  for _, magic in ipairs(break_magic) do
+    if Util.is_table(magic) then
+      local magic_id = magic[1]
+      if Util.is_more_than_zero(magic_id) then
+        magic_count = target.magic_mgr:get_magic_count_by_magic_id(magic_id)
+        if magic_count > 0 then
+          local magic_cfg = ShareRes.get_magic_cfg(magic_id)
+          if magic_cfg and magic_cfg.logic[2] and magic_cfg.logic[2][1] then
+            display_value = display_value + magic_count * math.floor(-magic_cfg.logic[2][1] / 100)
+          end
+        end
+      end
+    elseif Util.is_number(magic) then
+      magic_count = target.magic_mgr:get_magic_count_by_magic_id(magic)
+      if magic_count > 0 then
+        local magic_cfg = ShareRes.get_magic_cfg(magic)
+        if magic_cfg and magic_cfg.logic[2] and magic_cfg.logic[2][1] then
+          display_value = display_value + magic_count * math.floor(-magic_cfg.logic[2][1] / 100)
+        end
+      end
+    end
+  end
+  if display_value <= 0 then
+    objs.InjuriesUp:SetActive(false)
+    return
+  end
+  objs.InjuriesUp:SetActive(true)
+  if self.v_last_increase_value ~= display_value then
+    display_value = display_value + 100
+    local tmp_str = FightDataMgr:get_tmp_string(display_value, 0)
+    self.v_increase_damage_tmp.component.text = tmp_str
+    local effect_name = FIGHT_UI_EFFECT.Fx_InjuriesUp_Bg
+    self:play_effect_by_mgr(effect_name, self.v_uicompents.InjuriesUpBg_rect)
+    self.v_injuries_up_cg.alpha = 0
+    self.v_uicompents.InjuriesUp_rect:SetLocalScaleA(3.5)
+    self.v_uicompents.InjuriesUp_rect:SetAnchoredPositionA(self.v_injuries_up_init_pos_x, self.v_injuries_up_init_pos_y)
+    self.v_last_increase_value = display_value
+    self.v_increase_dot:DORestart()
+    if self.v_bar_type == Config.ENEMY_BAR_TYPE.MULTI_TARGET and not self.v_injuries_upset_parent_suc then
+      self.v_injuries_upset_parent_suc = true
+      local transform = objs.InjuriesUp.transform
+      local parent = self.v_is_left and objs.InjuriesUpLeft or objs.InjuriesUpRight
+      transform:SetParent(parent.transform)
+      transform:ResetAttr()
+    end
+  end
+end
+
+function ui:refresh_abnormal_duration_item(element_id)
+  local cur_target = SceneMgr:get_npc_by_id(self.v_target_uuid)
+  if Util.is_destroy(cur_target) then
+    return
+  end
+  if not self.v_abnormal_item_list[element_id] then
+    local obj = self:get_auto_cache(self.v_buff_temp_key)
+    self.v_abnormal_item_list[element_id] = BUFF_ITEM_CLASS:ui_wrap_ex(self, obj, true)
+  end
+  local time_attr_id = Config.FightDefine.AB_ATTR_TO_TIME[element_id]
+  local cd_time = cur_target.attr_mgr:get_attr(time_attr_id)
+  self.v_abnormal_item_list[element_id]:set_element_buff_data(element_id, cd_time)
+end
+
+function ui:remove_abnormal_duration_item(element_id)
+  if self.v_abnormal_item_list[element_id] then
+    self.v_abnormal_item_list[element_id]:ui_hide()
+    self.v_abnormal_item_list[element_id]:ui_destroy()
+    self.v_abnormal_item_list[element_id] = nil
+  end
+end
+
+return ui

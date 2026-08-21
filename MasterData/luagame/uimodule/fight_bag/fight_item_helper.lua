@@ -1,0 +1,233 @@
+local fight_define = require("cs_share.fight_define")
+local ATTR_TYPE = fight_define.ATTR_TYPE
+local BLOOD_USE_TYPE = {SINGLE = 1, GROUP = 2}
+local check_list = {
+  ["2_1"] = "_check_drug_use"
+}
+local effect_list = {
+  ["2_1"] = "_add_drug_effect",
+  ["2_2"] = "_add_no_check_drug_effect"
+}
+local hepler = {}
+
+function hepler._get_role_alive(role)
+  if nil ~= role then
+    if role:is_destroy() == true then
+      return false
+    end
+    return not role:is_die()
+  end
+  return false
+end
+
+function hepler._get_magic_attr_id(item_cfg)
+  local magic_id = item_cfg.Arg[1]
+  local magic_cfg = ShareRes.create("magic.magic", magic_id)
+  if not magic_cfg then
+    return 0
+  end
+  return magic_cfg.logic[1]
+end
+
+function hepler.check_can_use(item_id, param, not_notice)
+  local cfg = ShareRes.create("battle.battle_item", item_id)
+  local key = string.format("%s_%s", cfg.Type, cfg.Subtype)
+  local func_name = check_list[key]
+  if not func_name then
+    return true
+  end
+  return hepler[func_name](cfg, param, not_notice)
+end
+
+local drag_check_list = {
+  [ATTR_TYPE.CHAR_HP_MAX] = "_check_blood_item"
+}
+
+function hepler._check_drug_use(cfg, param, not_notice)
+  local fun_name = drag_check_list[hepler._get_magic_attr_id(cfg)]
+  if not fun_name then
+    return true
+  end
+  return hepler[fun_name](cfg, param, not_notice)
+end
+
+function hepler._check_blood_item(item_cfg, param, not_notice)
+  local arg = item_cfg.Arg
+  if not arg or not arg[2] then
+    return false
+  end
+  if arg[2] == BLOOD_USE_TYPE.SINGLE then
+    return hepler._check_single_blood_item(arg[1], item_cfg.Id, param, not_notice)
+  elseif arg[2] == BLOOD_USE_TYPE.GROUP then
+    return hepler._check_team_blood_item(arg[1], item_cfg.Id, param, not_notice)
+  else
+    return true
+  end
+end
+
+function hepler._check_single_blood_item(magic_id, item_id, param, not_notice)
+  local role = param.role
+  local num = param.num
+  if not (magic_id and role) or not num then
+    return false
+  end
+  if hepler._get_role_alive(role) == false then
+    if not not_notice then
+      Util.show_message_tip(2185)
+    end
+    return false
+  end
+  local attr_list = role.attr_mgr.attrs
+  local cur = attr_list[ATTR_TYPE.CHAR_HP]
+  local max = attr_list[ATTR_TYPE.CHAR_HP_MAX]
+  local can_use = cur < max
+  if not can_use and not not_notice then
+    Util.show_message_tip(2186)
+  end
+  local max_num = hepler.get_used_max_num(role, item_id)
+  can_use = num <= max_num
+  if not can_use and not not_notice then
+    Util.show_message_tip(2187)
+  end
+  return can_use
+end
+
+function hepler._check_team_blood_item(magic_id, item_id, param, not_notice)
+  local list = SceneMgr:get_hero_list()
+  for _, hero in pairs(list) do
+    if hepler._get_role_alive(hero) == true then
+      local can_use = hepler._check_single_blood_item(magic_id, item_id, {
+        role = hero,
+        num = param.num
+      }, true)
+      if true == can_use then
+        return can_use
+      end
+    end
+  end
+  if not not_notice then
+    Util.show_message_tip(2188)
+  end
+  return false
+end
+
+function hepler.add_use_effect(item_id, num, param)
+  local cfg = ShareRes.create("battle.battle_item", item_id)
+  local key = string.format("%s_%s", cfg.Type, cfg.Subtype)
+  local func_name = effect_list[key]
+  if func_name then
+    hepler[func_name](cfg, num, param)
+    Util.show_message_tip(2070)
+  end
+end
+
+local drag_effect_list = {
+  [ATTR_TYPE.CHAR_HP_MAX] = "_add_blood_magic"
+}
+
+function hepler._add_drug_effect(item_cfg, use_num, param)
+  local fun_name = drag_effect_list[hepler._get_magic_attr_id(item_cfg)]
+  if fun_name then
+    hepler[fun_name](item_cfg, use_num, param)
+  else
+    Log.Error("find function", fun_name, "failure!")
+  end
+end
+
+function hepler._add_no_check_drug_effect(item_cfg, use_num, param)
+  hepler._add_blood_magic(item_cfg, use_num, param)
+end
+
+function hepler._add_default_effect(item_cfg, use_num, param)
+end
+
+function hepler._add_blood_magic(item_cfg, use_num, param)
+  local arg = item_cfg.Arg
+  if not arg or not arg[2] then
+    return
+  end
+  if 1 == arg[2] then
+    return hepler._add_single_blood_magic(item_cfg, use_num, param)
+  elseif 2 == arg[2] then
+    return hepler._add_team_blood_magic(item_cfg, use_num, param)
+  else
+    return true
+  end
+end
+
+function hepler._add_single_blood_magic(item_cfg, use_num, param)
+  local hero = param.hero
+  if not hero then
+    Log.Error("_add_single_blood_magic no hero!")
+    return
+  end
+  if hepler._get_role_alive(hero) == false then
+    Util.show_message_tip(2189)
+    return
+  end
+  local cb = param.cb
+  if cb then
+    cb(hero, item_cfg.Id, use_num)
+  end
+  if item_cfg.Arg ~= nil and item_cfg.Arg[1] ~= nil then
+    for i = 1, use_num do
+      hero.magic_mgr:add_magic(hero, item_cfg.Arg[1], nil, nil, 1)
+    end
+  end
+end
+
+function hepler._add_team_blood_magic(item_cfg, use_num, param)
+  local list = SceneMgr:get_hero_list()
+  for _, hero in pairs(list) do
+    local cb = param.cb
+    if cb then
+      cb(hero, item_cfg.Id, use_num)
+    end
+    if item_cfg.Arg ~= nil and item_cfg.Arg[1] ~= nil then
+      local magic_id = item_cfg.Arg[1]
+      if hepler._get_role_alive(hero) == true then
+        for i = 1, use_num do
+          hero.magic_mgr:add_magic(hero, magic_id, nil, nil, 1)
+        end
+      end
+    end
+  end
+end
+
+function hepler.get_used_max_num(hero, item_id)
+  if not hero then
+    return 0
+  end
+  local cfg = ShareRes.create("battle.battle_item", item_id)
+  local magic_id = cfg.Arg[1]
+  local magic_cfg = ShareRes.create("magic.magic", magic_id)
+  if not magic_cfg then
+    return 0
+  end
+  local attr_id = magic_cfg.logic[1]
+  if attr_id == ATTR_TYPE.CHAR_HP_MAX then
+    attr_id = ATTR_TYPE.CHAR_HP
+  end
+  local radio = 0
+  local value = 0
+  if 2 == magic_cfg.logic[3] then
+    radio = magic_cfg.logic[2][1] / 10000
+  else
+    value = magic_cfg.logic[2][1]
+  end
+  local cur_attr = hero.attr_mgr:get_attr(attr_id)
+  local max_attr = hero.attr_mgr:get_attr(fight_define.HERO_RES2MAX[attr_id])
+  local diff = max_attr - cur_attr
+  if 0 == diff then
+    return 0
+  end
+  if radio > 0 then
+    local totoal_num = max_attr * radio * (FightBagMgr:get_blood_buff_addtional() / 10000 + 1)
+    return math.ceil(diff / totoal_num)
+  elseif value > 0 then
+    return math.ceil(diff / value)
+  end
+  return 0
+end
+
+return hepler

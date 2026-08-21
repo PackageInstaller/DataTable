@@ -1,0 +1,177 @@
+local Base = require("ui.widget.widget_base")
+local M = Util.create_child_mt(Base)
+local TWEEN_EASE_OUT_EXPO = CS.DG.Tweening.Ease.OutExpo
+
+function M:_init(parent_ui, scroll_rect_ex, template_item, template_class, template_key, template_index, on_item_change_cb)
+  parent_ui:register_exist_auto_template(template_key, template_item, scroll_rect_ex.content.gameObject)
+  self.v_template_key = template_key
+  self.ItemClass = template_class
+  self.v_parent_ui = parent_ui
+  self.v_on_item_change_cb = on_item_change_cb
+  self.v_item_count = 0
+  self.v_items = {}
+  self.v_scroll_rect_ex = scroll_rect_ex
+  self.v_is_horizontal = scroll_rect_ex.horizontal
+  self.v_content_trans = scroll_rect_ex.content.transform
+  template_index = template_index or 0
+  local template = self.v_content_trans:GetChild(template_index).gameObject
+  local templatex, templatey = template.transform:GetSizeDeltaA()
+  self.v_cell_size = self.v_is_horizontal and templatex or templatey
+  self.v_cur_idx = 1
+  parent_ui:set_scrollrect_ex_listener(scroll_rect_ex, function(offset)
+    self.v_start_pos = self.v_is_horizontal and offset.x or offset.y
+  end, nil, function(offset)
+    self.v_end_pos = self.v_is_horizontal and offset.x or offset.y
+    local can_scroll = false
+    local is_right = false
+    if self.v_is_horizontal then
+      is_right = self.v_end_pos > self.v_start_pos
+    else
+      is_right = self.v_end_pos < self.v_start_pos
+    end
+    if math.abs(self.v_end_pos - self.v_start_pos) < 1 / self.v_data_length / 2 then
+      can_scroll = true
+    elseif is_right and self.v_cur_idx < #self.v_items then
+      self.v_cur_idx = self.v_cur_idx + 1
+      can_scroll = true
+    elseif not is_right and self.v_cur_idx > 1 then
+      self.v_cur_idx = self.v_cur_idx - 1
+      can_scroll = true
+    end
+    if not can_scroll then
+      return
+    end
+    self:_do_anim()
+  end)
+end
+
+function M:check_do_anim(threshold)
+  local half_cell = self.v_cell_size / 2
+  local should_pos = half_cell - self.v_cur_idx * self.v_cell_size
+  local cur_pos = (self.v_is_horizontal and self.v_content_trans.localPosition.x or self.v_content_trans.localPosition.y) - half_cell
+  local idx_cache = self.v_cur_idx
+  if math.abs(cur_pos - should_pos) > self.v_cell_size * threshold then
+    local is_right = false
+    if self.v_is_horizontal then
+      is_right = should_pos > cur_pos
+    else
+      is_right = should_pos < cur_pos
+    end
+    if is_right and idx_cache < #self.v_items then
+      self.v_cur_idx = idx_cache + 1
+    elseif not is_right and idx_cache > 1 then
+      self.v_cur_idx = idx_cache - 1
+    end
+  end
+  self:_do_anim()
+  return idx_cache ~= self.v_cur_idx
+end
+
+function M:_do_anim()
+  self.v_scroll_rect_ex.enabled = false
+  local half_cell = self.v_cell_size / 2
+  local sequence = Util.create_sequence()
+  if self.v_is_horizontal then
+    sequence:Append(self.v_content_trans:DOAnchorPosX(self.v_cur_idx * -self.v_cell_size + half_cell, 0.2):SetEase(TWEEN_EASE_OUT_EXPO))
+  else
+    sequence:Append(self.v_content_trans:DOAnchorPosY(self.v_cur_idx * self.v_cell_size - half_cell, 0.2):SetEase(TWEEN_EASE_OUT_EXPO))
+  end
+  sequence:OnComplete(function()
+    self.v_scroll_rect_ex.enabled = true
+    sequence:Kill(false)
+    sequence = nil
+  end)
+  self:on_select_change(self.v_items[self.v_cur_idx])
+  if self.v_on_item_change_cb then
+    self.v_on_item_change_cb(self.v_cur_idx)
+  end
+end
+
+function M:on_select_change(selected_item)
+  local list = self.v_items
+  for i = 1, #list do
+    if list[i].set_selected then
+      list[i]:set_selected(list[i] == selected_item)
+    end
+  end
+end
+
+function M:get_item_count()
+  return self.v_item_count or 0
+end
+
+function M:get_cur_item()
+  return self.v_items[self.v_cur_idx]
+end
+
+function M:get_items()
+  return self.v_items
+end
+
+function M:get_item()
+  local obj = self.v_parent_ui:get_auto_cache(self.v_template_key)
+  local item = self.ItemClass:ui_wrap(nil, obj)
+  item.go = obj
+  return item
+end
+
+function M:add_item(data)
+  local item = self:get_item()
+  local item_gameobj = item.go
+  item_gameobj.transform:SetParent(self.v_content_trans)
+  local rect_transform = Util.get_rect_transform(nil, item_gameobj)
+  self.v_item_count = self.v_item_count + 1
+  if item.set_data then
+    data.idx = self.v_item_count
+    item:set_data(data)
+  end
+  item.rect_trans = rect_transform
+  table.insert(self.v_items, item)
+  item_gameobj:SetActive(true)
+end
+
+function M:update_list(res_list)
+  self:clear()
+  if not res_list then
+    return
+  end
+  local length = #res_list
+  for i = 1, length do
+    self:add_item(res_list[i], i)
+  end
+  self.v_data_length = length
+end
+
+function M:last_page()
+  if self.v_cur_idx > 1 then
+    self.v_cur_idx = self.v_cur_idx - 1
+  end
+  self:_do_anim()
+end
+
+function M:next_page()
+  if self.v_cur_idx < self.v_data_length then
+    self.v_cur_idx = self.v_cur_idx + 1
+  end
+  self:_do_anim()
+end
+
+function M:reset_to_first_page()
+  self.v_cur_idx = 1
+  local y = self.v_content_trans.anchoredPosition.y
+  self.v_content_trans:SetAnchoredPositionA(-self.v_cell_size * 0.5, y)
+end
+
+function M:clear()
+  self:reset_to_first_page()
+  for _, item in ipairs(self.v_items) do
+    item:on_clear()
+    item:ui_hide(true)
+    item:ui_destroy()
+  end
+  self.v_parent_ui:give_back_auto_cache(self.v_template_key)
+  UtilTable.clear_list(self.v_items)
+  self.v_item_count = 0
+end
+
+return M

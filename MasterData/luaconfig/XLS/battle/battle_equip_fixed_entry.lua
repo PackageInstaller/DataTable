@@ -1,0 +1,2026 @@
+return {
+  [601001] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 37,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 15,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 1000,
+        Type = 1
+      }
+    },
+    Context = "额外伤害增加+10%",
+    Id = 601001
+  },
+  [601002] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 37,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 15,
+        Type = 1
+      },
+      {
+        Attr = 28,
+        Num = 1000,
+        Type = 1
+      }
+    },
+    Context = "额外异常伤害增加+10%",
+    Id = 601002
+  },
+  [601003] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 37,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 15,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 1000,
+        Type = 2
+      }
+    },
+    Context = "能量恢复+10%",
+    Id = 601003
+  },
+  [601004] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 37,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 15,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 1250,
+        Type = 1
+      }
+    },
+    Context = "暴击率+12.5%",
+    Id = 601004
+  },
+  [601101] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 356,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 10,
+        Type = 1
+      },
+      {
+        Attr = 25,
+        Num = 900,
+        Type = 1
+      }
+    },
+    Context = "额外伤害减免+10%",
+    Id = 601101
+  },
+  [601102] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 356,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 10,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 1000,
+        Type = 2
+      }
+    },
+    Context = "血量上限+10%",
+    Id = 601102
+  },
+  [601103] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 356,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 10,
+        Type = 1
+      },
+      {
+        Attr = 83,
+        Num = 1200,
+        Type = 1
+      }
+    },
+    Context = "受到治疗效果+12%",
+    Id = 601103
+  },
+  [601104] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 356,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 10,
+        Type = 1
+      },
+      {
+        Attr = 24,
+        Num = 650,
+        Type = 2
+      }
+    },
+    Context = "移动速度+6.5%",
+    Id = 601104
+  },
+  [602001] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 2200,
+        Type = 1
+      }
+    },
+    Context = "额外伤害增加+22%",
+    Id = 602001
+  },
+  [602002] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 28,
+        Num = 2200,
+        Type = 1
+      }
+    },
+    Context = "额外异常增加+22%",
+    Id = 602002
+  },
+  [602003] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 2200,
+        Type = 2
+      }
+    },
+    Context = "能量恢复+22%",
+    Id = 602003
+  },
+  [602004] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 2750,
+        Type = 1
+      }
+    },
+    Context = "暴击率+27.5%",
+    Id = 602004
+  },
+  [602005] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 1200,
+        Type = 1
+      },
+      {
+        Attr = 28,
+        Num = 1000,
+        Type = 1
+      }
+    },
+    Context = "额外伤害增加+12%,额外异常增加+10%",
+    Id = 602005
+  },
+  [602006] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 1200,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 1000,
+        Type = 2
+      }
+    },
+    Context = "额外伤害增加+12%,能量恢复+10%",
+    Id = 602006
+  },
+  [602007] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 1200,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 1250,
+        Type = 1
+      }
+    },
+    Context = "额外伤害增加+12%,暴击+12.5%",
+    Id = 602007
+  },
+  [602008] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 28,
+        Num = 1200,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 1000,
+        Type = 2
+      }
+    },
+    Context = "额外异常增加+12%,能量恢复+10%",
+    Id = 602008
+  },
+  [602009] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 28,
+        Num = 1200,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 1250,
+        Type = 1
+      }
+    },
+    Context = "额外异常增加+12%,暴击+12.5%",
+    Id = 602009
+  },
+  [602010] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 1200,
+        Type = 2
+      },
+      {
+        Attr = 76,
+        Num = 1250,
+        Type = 1
+      }
+    },
+    Context = "能量恢复+12%,暴击+12.5%",
+    Id = 602010
+  },
+  [602011] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 28,
+        Num = 1200,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 1000,
+        Type = 1
+      }
+    },
+    Context = "额外异常增加+12%,额外伤害增加+10%",
+    Id = 602011
+  },
+  [602012] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 1200,
+        Type = 2
+      },
+      {
+        Attr = 26,
+        Num = 1000,
+        Type = 1
+      }
+    },
+    Context = "能量恢复+12%,额外伤害增加+10%",
+    Id = 602012
+  },
+  [602013] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 1500,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 1000,
+        Type = 1
+      }
+    },
+    Context = "暴击+15%,额外伤害增加+10%",
+    Id = 602013
+  },
+  [602014] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 1200,
+        Type = 2
+      },
+      {
+        Attr = 28,
+        Num = 1000,
+        Type = 1
+      }
+    },
+    Context = "能量恢复+12%,额外异常增加+10%",
+    Id = 602014
+  },
+  [602015] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 1500,
+        Type = 1
+      },
+      {
+        Attr = 28,
+        Num = 1000,
+        Type = 1
+      }
+    },
+    Context = "暴击+15%,额外异常增加+10%",
+    Id = 602015
+  },
+  [602016] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 1500,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 1000,
+        Type = 2
+      }
+    },
+    Context = "暴击+15%,能量恢复+10%",
+    Id = 602016
+  },
+  [602017] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 20,
+        Num = 1500,
+        Type = 2
+      }
+    },
+    Context = "总攻击+15%",
+    Id = 602017
+  },
+  [602018] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 1500,
+        Type = 2
+      }
+    },
+    Context = "总异常攻击+15%",
+    Id = 602018
+  },
+  [602019] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 75,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 31,
+        Type = 1
+      },
+      {
+        Attr = 78,
+        Num = 4000,
+        Type = 1
+      }
+    },
+    Context = "暴击伤害+40%",
+    Id = 602019
+  },
+  [602101] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 25,
+        Num = 1980,
+        Type = 1
+      }
+    },
+    Context = "额外伤害减免+19.8%",
+    Id = 602101
+  },
+  [602102] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 2200,
+        Type = 2
+      }
+    },
+    Context = "生命最大值+22.0%",
+    Id = 602102
+  },
+  [602103] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 83,
+        Num = 2640,
+        Type = 1
+      }
+    },
+    Context = "受到治疗增加+26.4%",
+    Id = 602103
+  },
+  [602104] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 24,
+        Num = 1500,
+        Type = 2
+      }
+    },
+    Context = "移动速度+15%",
+    Id = 602104
+  },
+  [602105] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 25,
+        Num = 1070,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 1000,
+        Type = 2
+      }
+    },
+    Context = "额外伤害减免+10.7%,生命最大值+10.0%",
+    Id = 602105
+  },
+  [602106] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 25,
+        Num = 1070,
+        Type = 1
+      },
+      {
+        Attr = 83,
+        Num = 1200,
+        Type = 1
+      }
+    },
+    Context = "额外伤害减免+10.7%,受到治疗增加+12.0%",
+    Id = 602106
+  },
+  [602107] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 25,
+        Num = 1070,
+        Type = 1
+      },
+      {
+        Attr = 24,
+        Num = 680,
+        Type = 2
+      }
+    },
+    Context = "额外伤害减免+10.7%,移动速度+6.8%",
+    Id = 602107
+  },
+  [602108] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 1200,
+        Type = 2
+      },
+      {
+        Attr = 83,
+        Num = 1200,
+        Type = 1
+      }
+    },
+    Context = "生命最大值+12.0%,受到治疗增加+12.0%",
+    Id = 602108
+  },
+  [602109] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 1200,
+        Type = 2
+      },
+      {
+        Attr = 24,
+        Num = 680,
+        Type = 2
+      }
+    },
+    Context = "生命最大值+12.0%,移动速度+6.8%",
+    Id = 602109
+  },
+  [602110] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 83,
+        Num = 1440,
+        Type = 1
+      },
+      {
+        Attr = 24,
+        Num = 680,
+        Type = 2
+      }
+    },
+    Context = "受到治疗增加+14.4%,移动速度+6.8%",
+    Id = 602110
+  },
+  [602111] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 1200,
+        Type = 2
+      },
+      {
+        Attr = 25,
+        Num = 910,
+        Type = 1
+      }
+    },
+    Context = "生命最大值+12.0%,额外伤害减免+9.1%",
+    Id = 602111
+  },
+  [602112] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 83,
+        Num = 1440,
+        Type = 1
+      },
+      {
+        Attr = 25,
+        Num = 910,
+        Type = 1
+      }
+    },
+    Context = "受到治疗增加+14.4%,额外伤害减免+9.1%",
+    Id = 602112
+  },
+  [602113] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 24,
+        Num = 820,
+        Type = 2
+      },
+      {
+        Attr = 25,
+        Num = 910,
+        Type = 1
+      }
+    },
+    Context = "移动速度+8.2%,额外伤害减免+9.1%",
+    Id = 602113
+  },
+  [602114] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 83,
+        Num = 1440,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 1000,
+        Type = 2
+      }
+    },
+    Context = "受到治疗增加+14.4%,生命最大值+10.0%",
+    Id = 602114
+  },
+  [602115] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 24,
+        Num = 820,
+        Type = 2
+      },
+      {
+        Attr = 4,
+        Num = 1000,
+        Type = 2
+      }
+    },
+    Context = "移动速度+8.2%,生命最大值+10.0%",
+    Id = 602115
+  },
+  [602116] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 24,
+        Num = 820,
+        Type = 2
+      },
+      {
+        Attr = 83,
+        Num = 1200,
+        Type = 1
+      }
+    },
+    Context = "移动速度+8.2%,受到治疗增加+12.0%",
+    Id = 602116
+  },
+  [602117] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 2000,
+        Type = 2
+      }
+    },
+    Context = "总防御+20.0%",
+    Id = 602117
+  },
+  [602118] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 712,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 20,
+        Type = 1
+      },
+      {
+        Attr = 82,
+        Num = 3000,
+        Type = 1
+      }
+    },
+    Context = "治疗加成+30.0%",
+    Id = 602118
+  },
+  [603001] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 1500,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 1000,
+        Type = 1
+      },
+      {
+        Attr = 78,
+        Num = 4000,
+        Type = 1
+      }
+    },
+    Context = "暴击率+15.0%,额外伤害增加+10.0%,暴击伤害+40.0%",
+    Id = 603001
+  },
+  [603002] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 1500,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 2000,
+        Type = 2
+      },
+      {
+        Attr = 26,
+        Num = 1200,
+        Type = 1
+      }
+    },
+    Context = "暴击率+15.0%,能量恢复+20.0%,额外伤害增加+12.0%",
+    Id = 603002
+  },
+  [603003] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 2400,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 1250,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 1000,
+        Type = 2
+      }
+    },
+    Context = "额外伤害增加+24.0%,暴击率+12.5%,能量恢复+10.0%",
+    Id = 603003
+  },
+  [603004] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 2400,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 1000,
+        Type = 2
+      },
+      {
+        Attr = 76,
+        Num = 1250,
+        Type = 1
+      }
+    },
+    Context = "额外伤害增加+24.0%,能量恢复+10.0%,暴击率+12.5%",
+    Id = 603004
+  },
+  [603005] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 3200,
+        Type = 2
+      },
+      {
+        Attr = 76,
+        Num = 1500,
+        Type = 1
+      }
+    },
+    Context = "能量恢复+32.0%,暴击率+15.0%",
+    Id = 603005
+  },
+  [603006] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 1200,
+        Type = 2
+      },
+      {
+        Attr = 76,
+        Num = 1250,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 2200,
+        Type = 1
+      }
+    },
+    Context = "能量恢复+12.0%,暴击率+12.5%,额外伤害增加+22.0%",
+    Id = 603006
+  },
+  [603007] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 2200,
+        Type = 2
+      },
+      {
+        Attr = 20,
+        Num = 1500,
+        Type = 2
+      }
+    },
+    Context = "能量恢复+22.0%,总攻击+15.0%",
+    Id = 603007
+  },
+  [603008] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 2200,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 2200,
+        Type = 2
+      }
+    },
+    Context = "额外伤害增加+22.0%,能量恢复+22.0%",
+    Id = 603008
+  },
+  [603009] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 2750,
+        Type = 1
+      },
+      {
+        Attr = 78,
+        Num = 4000,
+        Type = 1
+      }
+    },
+    Context = "暴击率+27.5%,暴击伤害+40.0%",
+    Id = 603009
+  },
+  [603010] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 28,
+        Num = 2200,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 1500,
+        Type = 2
+      }
+    },
+    Context = "额外异常增加+22.0%,总异常攻击+15.0%",
+    Id = 603010
+  },
+  [603011] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 2200,
+        Type = 1
+      },
+      {
+        Attr = 20,
+        Num = 1500,
+        Type = 2
+      }
+    },
+    Context = "额外伤害增加+22.0%,总攻击+15.0%",
+    Id = 603011
+  },
+  [603012] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 1200,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 1250,
+        Type = 1
+      },
+      {
+        Attr = 78,
+        Num = 4000,
+        Type = 1
+      }
+    },
+    Context = "额外伤害增加+12.0%,暴击率+12.5%,暴击伤害+40.0%",
+    Id = 603012
+  },
+  [603013] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 2200,
+        Type = 1
+      },
+      {
+        Attr = 28,
+        Num = 2200,
+        Type = 1
+      }
+    },
+    Context = "额外伤害增加+22.0%,额外异常增加+22.0%",
+    Id = 603013
+  },
+  [603014] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 1500,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 2000,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 1200,
+        Type = 2
+      }
+    },
+    Context = "暴击率+15.0%,额外伤害增加+20.0%,能量恢复+12.0%",
+    Id = 603014
+  },
+  [603015] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 19,
+        Num = 2400,
+        Type = 2
+      },
+      {
+        Attr = 26,
+        Num = 1000,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 1250,
+        Type = 1
+      }
+    },
+    Context = "能量恢复+24.0%,额外伤害增加+10.0%,暴击率+12.5%",
+    Id = 603015
+  },
+  [603016] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 150,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 63,
+        Type = 1
+      },
+      {
+        Attr = 76,
+        Num = 2750,
+        Type = 1
+      },
+      {
+        Attr = 20,
+        Num = 1500,
+        Type = 2
+      }
+    },
+    Context = "暴击率+27.5%,总攻击+15.0%",
+    Id = 603016
+  },
+  [603101] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 24,
+        Num = 820,
+        Type = 2
+      },
+      {
+        Attr = 4,
+        Num = 3200,
+        Type = 2
+      }
+    },
+    Context = "移动速度+8.2%,生命最大值+32.0%",
+    Id = 603101
+  },
+  [603102] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 25,
+        Num = 1800,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 1200,
+        Type = 2
+      },
+      {
+        Attr = 83,
+        Num = 1200,
+        Type = 1
+      }
+    },
+    Context = "额外伤害减免+18.0%,生命最大值+12.0%,受到治疗增加+12.0%",
+    Id = 603102
+  },
+  [603103] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 83,
+        Num = 2640,
+        Type = 1
+      },
+      {
+        Attr = 25,
+        Num = 1070,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 1000,
+        Type = 2
+      }
+    },
+    Context = "受到治疗增加+26.4%,额外伤害减免+10.7%,生命最大值+10.0%",
+    Id = 603103
+  },
+  [603104] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 24,
+        Num = 1500,
+        Type = 2
+      },
+      {
+        Attr = 22,
+        Num = 2000,
+        Type = 2
+      }
+    },
+    Context = "移动速度+15.0%,总防御+20.0%",
+    Id = 603104
+  },
+  [603105] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 24,
+        Num = 1640,
+        Type = 2
+      },
+      {
+        Attr = 83,
+        Num = 1200,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 1000,
+        Type = 2
+      }
+    },
+    Context = "移动速度+16.4%,受到治疗增加+12.0%,生命最大值+10.0%",
+    Id = 603105
+  },
+  [603106] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 1200,
+        Type = 2
+      },
+      {
+        Attr = 83,
+        Num = 3840,
+        Type = 1
+      }
+    },
+    Context = "生命最大值+12.0%,受到治疗增加+38.4%",
+    Id = 603106
+  },
+  [603107] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 24,
+        Num = 1640,
+        Type = 2
+      },
+      {
+        Attr = 25,
+        Num = 910,
+        Type = 1
+      },
+      {
+        Attr = 83,
+        Num = 1200,
+        Type = 1
+      }
+    },
+    Context = "移动速度+16.4%,额外伤害减免+9.1%,受到治疗增加+12.0%",
+    Id = 603107
+  },
+  [603108] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 25,
+        Num = 1800,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 1000,
+        Type = 2
+      },
+      {
+        Attr = 83,
+        Num = 1440,
+        Type = 1
+      }
+    },
+    Context = "额外伤害减免+18.0%,生命最大值+10.0%,受到治疗增加+14.4%",
+    Id = 603108
+  },
+  [603109] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 2400,
+        Type = 2
+      },
+      {
+        Attr = 25,
+        Num = 910,
+        Type = 1
+      },
+      {
+        Attr = 24,
+        Num = 680,
+        Type = 2
+      }
+    },
+    Context = "生命最大值+24.0%,额外伤害减免+9.1%,移动速度+6.8%",
+    Id = 603109
+  },
+  [603110] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 1200,
+        Type = 2
+      },
+      {
+        Attr = 24,
+        Num = 680,
+        Type = 2
+      },
+      {
+        Attr = 25,
+        Num = 1800,
+        Type = 1
+      }
+    },
+    Context = "生命最大值+12.0%,移动速度+6.8%,额外伤害减免+18.0%",
+    Id = 603110
+  },
+  [603111] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 83,
+        Num = 2880,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 2000,
+        Type = 2
+      }
+    },
+    Context = "受到治疗增加+28.8%,生命最大值+20.0%",
+    Id = 603111
+  },
+  [603112] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 83,
+        Num = 1440,
+        Type = 1
+      },
+      {
+        Attr = 24,
+        Num = 2180,
+        Type = 2
+      }
+    },
+    Context = "受到治疗增加+14.4%,移动速度+21.8%",
+    Id = 603112
+  },
+  [603113] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 83,
+        Num = 1440,
+        Type = 1
+      },
+      {
+        Attr = 25,
+        Num = 1670,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 1200,
+        Type = 2
+      }
+    },
+    Context = "受到治疗增加+14.4%,额外伤害减免+16.7%,生命最大值+12.0%",
+    Id = 603113
+  },
+  [603114] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 25,
+        Num = 1800,
+        Type = 1
+      },
+      {
+        Attr = 24,
+        Num = 1500,
+        Type = 2
+      }
+    },
+    Context = "额外伤害减免+18.0%,移动速度+15.0%",
+    Id = 603114
+  },
+  [603115] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 2200,
+        Type = 2
+      },
+      {
+        Attr = 22,
+        Num = 2000,
+        Type = 2
+      }
+    },
+    Context = "生命最大值+22.0%,总防御+20.0%",
+    Id = 603115
+  },
+  [603116] = {
+    Attr = {
+      {
+        Attr = 4,
+        Num = 1425,
+        Type = 1
+      },
+      {
+        Attr = 22,
+        Num = 40,
+        Type = 1
+      },
+      {
+        Attr = 25,
+        Num = 1070,
+        Type = 1
+      },
+      {
+        Attr = 83,
+        Num = 1200,
+        Type = 1
+      },
+      {
+        Attr = 82,
+        Num = 3000,
+        Type = 1
+      }
+    },
+    Context = "额外伤害减免+10.7%,受到治疗增加+12.0%,治疗加成+30.0%",
+    Id = 603116
+  },
+  [609999] = {
+    Attr = {
+      {
+        Attr = 20,
+        Num = 5000,
+        Type = 1
+      },
+      {
+        Attr = 4,
+        Num = 5000,
+        Type = 1
+      },
+      {
+        Attr = 21,
+        Num = 20,
+        Type = 1
+      }
+    },
+    Context = "就是无敌",
+    Id = 609999
+  },
+  [610000] = {
+    Attr = {
+      {
+        Attr = 76,
+        Num = 20000,
+        Type = 1
+      },
+      {
+        Attr = 78,
+        Num = 20000,
+        Type = 1
+      },
+      {
+        Attr = 26,
+        Num = 30000,
+        Type = 1
+      }
+    },
+    Context = "啊哈哈还是无敌",
+    Id = 610000
+  }
+}

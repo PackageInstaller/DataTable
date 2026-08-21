@@ -1,0 +1,20 @@
+local Base = require("gamemode.base")
+local Util = require("utils.util")
+local M = Util.create_child_mt(Base)
+
+function M:gd_update(delta_time)
+  Base.gd_update(self, delta_time)
+  Global.scene_mgr:update()
+  Global.scene_effect_mgr:update()
+end
+
+function M:gd_late_update()
+  Global.scene_mgr:late_update()
+end
+
+function M:gd_on_enter()
+  Base.gd_on_enter(self)
+  Global.scene_effect_mgr = require("system.utils_mgr.scene_effect_mgr_new"):new()
+end
+
+return M

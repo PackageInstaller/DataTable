@@ -1,0 +1,23 @@
+return {
+  AddWeight = {
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000
+  },
+  BorrowCount = 10,
+  DefaultBoxAwardGroup = 41201,
+  FastLimit = 48,
+  FixedBranchTaskId = 33,
+  HelpPoint = 50,
+  HelpPointLimit = 200,
+  SpeedUpCondition = 40030200,
+  SpeedUpItemCount = 200,
+  SpeedUpItemId = 31,
+  SpeedUpViewTip = "每消耗<color=#d56d2e>200</color>个筑塔活沙可加速1小时|加速时间不可超过满仓倒计时",
+  TaskFlushCount = 1,
+  TaskGroupId = 30200,
+  UnlockSystemAward = 41301
+}

@@ -1,0 +1,226 @@
+local Base = require("ui.uiobject")
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local BagCfg = require("uimodule.uibag.uibag_configs")
+local ItemSell = require("uimodule.uibag.bottom_item_sell")
+local WeaponDec = require("uimodule.uibag.bottom_weapon_decompose")
+local _tinsert = table.insert
+local WEAPEN_IDX = BagCfg.WEAPEN_IDX
+local ui = Util.create_child_mt(Base)
+local IMPORTANT_QUALITY = BagCfg.IMPORTANT_QUALITY
+local TRIGGER_DYNAMIC_EFFECT_TYPE = BagCfg.TRIGGER_DYNAMIC_EFFECT_TYPE
+local DrawDown_texts = {
+  "品  质",
+  "等  级",
+  "最  近"
+}
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_weapon_select_obj = {
+    "WeaponSelect",
+    BIND_TYPE.OBJECT
+  },
+  v_weapon_dec_obj = {
+    "Bottom_weapon_decompose",
+    BIND_TYPE.OBJECT
+  },
+  v_down_content = {
+    "WeaponDownContent",
+    BIND_TYPE.OBJECT
+  },
+  v_cancel_btn = {
+    "BtnCancel",
+    BIND_TYPE.BUTTON
+  },
+  v_resolve_btn = {
+    "BtnResolve",
+    BIND_TYPE.BUTTON
+  },
+  v_draw_down_btn = {
+    "BtnWeaponDrawDown",
+    BIND_TYPE.BUTTON
+  },
+  v_close_down_content_btn = {
+    "BtnCloseDrawDown",
+    BIND_TYPE.BUTTON
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:init_weapon_sort()
+  self:set_button_listener(self.v_cancel_btn, function()
+    self:onclick_cancel_btn()
+  end)
+  self:set_button_listener(self.v_resolve_btn, function()
+    self:onclick_resolve_btn()
+  end)
+  local panel_weapon_dec = WeaponDec:ui_wrap_ex(self, self.v_weapon_dec_obj)
+  self:add_panel("weapon_dec", panel_weapon_dec, false)
+end
+
+function ui:ui_on_show()
+  self.v_resolve_btn.interactable = true
+  self:bind_auto_mq(Const.MSG_ROLE_WEAPENLIST_CHANGE, self.recover_btn_interactable, self)
+  self:update_sort_type()
+  Util.get_child_gameobj("Select", self.v_draw_down_btn.gameObject):SetActive(false)
+  self.v_down_content:SetActive(false)
+  self.v_close_down_content_btn:SetActive(false)
+  self:set_button_active(false)
+end
+
+function ui:ui_on_hide()
+  if self.v_remove_dynamic_effect_timer then
+    Timer:remove_timer(self.v_remove_dynamic_effect_timer)
+  end
+  self.v_remove_dynamic_effect_timer = nil
+end
+
+function ui:init_weapon_sort()
+  local pages = {}
+  _tinsert(pages, Util.get_toggle("WeaponTogQuality_", self.v_down_content))
+  _tinsert(pages, Util.get_toggle("WeaponTogLevel_", self.v_down_content))
+  _tinsert(pages, Util.get_toggle("WeaponTogRecent_", self.v_down_content))
+  local sort_direct_btn = Util.get_button("Button_direct", self.v_weapon_select_obj)
+  self.v_direct_up = sort_direct_btn.gameObject:FindChild("Direct_up")
+  self.v_direct_down = sort_direct_btn.gameObject:FindChild("Direct_down")
+  self.weapon_sort_by_dec = true
+  self:update_sort_type()
+  self:set_button_listener(sort_direct_btn, function()
+    self.weapon_sort_by_dec = not self.weapon_sort_by_dec
+    self.v_parent_ui.bag_list:sort_list(WEAPEN_IDX)
+    self.v_parent_ui.bag_list:update_bag(nil, WEAPEN_IDX)
+    self.v_parent_ui:set_cannot_touch(WEAPEN_IDX)
+    self:update_sort_type()
+  end)
+  self:set_button_listener(self.v_draw_down_btn, function()
+    Util.get_child_gameobj("Select", self.v_draw_down_btn.gameObject):SetActive(not self.v_down_content.activeInHierarchy)
+    self.v_down_content:SetActive(not self.v_down_content.activeInHierarchy)
+    self.v_close_down_content_btn.gameObject:SetActive(not self.v_close_down_content_btn.gameObject.activeInHierarchy)
+  end)
+  self:set_button_listener(self.v_close_down_content_btn, function()
+    self.v_close_down_content_btn:SetActive(false)
+    Util.get_child_gameobj("Select", self.v_draw_down_btn.gameObject):SetActive(false)
+    self.v_down_content:SetActive(false)
+  end)
+  self.v_weapon_select_toggle_tab = ToggleTab:new(self)
+  self.v_weapon_select_toggle_tab:init_by_toggles(pages, function(cur_select, pre_select, cur_toggle, pre_toggle)
+    Util.get_text("Text", self.v_draw_down_btn.gameObject).text = Util.format_str(DrawDown_texts[cur_select])
+    Util.get_child_gameobj("Select", self.v_draw_down_btn.gameObject):SetActive(false)
+    self.v_down_content:SetActive(false)
+    self.v_close_down_content_btn.gameObject:SetActive(false)
+    self.v_parent_ui:select_weapon_type_tag_toggle(cur_select, pre_select, cur_toggle, pre_toggle)
+  end, 0)
+end
+
+function ui:update_sort_type()
+  if self.weapon_sort_by_dec then
+    self.v_direct_up.gameObject:SetActive(false)
+    self.v_direct_down.gameObject:SetActive(true)
+  else
+    self.v_direct_up.gameObject:SetActive(true)
+    self.v_direct_down.gameObject:SetActive(false)
+  end
+end
+
+function ui:set_weapon_sort_state(state)
+  self.weapon_sort_by_dec = state
+end
+
+function ui:get_weapon_sort_state()
+  return self.weapon_sort_by_dec
+end
+
+function ui:get_pre_weapon_sort_state()
+  return self.pre_weapon_sort_by_dec
+end
+
+function ui:onclick_cancel_btn()
+  local bag_list = self.v_parent_ui.bag_list
+  local need_dec_weapons = bag_list:get_selected_list(WEAPEN_IDX)
+  if 0 ~= #need_dec_weapons then
+    UIMgr:get_ui("uinotice_tips"):ui_show(function()
+      self:_play_dynamic_effect()
+      self:set_button_active(false)
+    end, nil, Util.format_str("将取消选择，是否继续"))
+  else
+    self:_play_dynamic_effect()
+    self:set_button_active(false)
+  end
+end
+
+function ui:_play_dynamic_effect()
+  local out_pd = self.v_parent_ui.v_uicompents.WeaponOutPd_pd
+  local duration = out_pd.duration
+  self.v_parent_ui:play_dynamic_effect(TRIGGER_DYNAMIC_EFFECT_TYPE.LEFT_VIEW_HIDE, duration)
+  self.v_parent_ui:set_cannot_touch_obj_state(duration)
+  if self.v_remove_dynamic_effect_timer then
+    Timer:remove_timer(self.v_remove_dynamic_effect_timer)
+  end
+  out_pd:Stop()
+  out_pd:Play()
+  self.v_remove_dynamic_effect_timer = nil
+  self.v_remove_dynamic_effect_timer = Timer:add_timer("remove_dynamic_effect_timer", duration, function()
+    self:get_panel("weapon_dec"):set_enable(false)
+  end)
+end
+
+function ui:onclick_resolve_btn()
+  local bag_list = self.v_parent_ui.bag_list
+  local need_dec_weapons, id_list = bag_list:get_selected_list(WEAPEN_IDX)
+  if 0 == #need_dec_weapons then
+    Util.show_message_tip(2345)
+    return
+  end
+  self.v_resolve_btn.interactable = false
+  local temp_quality, need_tips
+  for i = 1, #id_list do
+    temp_quality = ShareRes.get_equip_quality(id_list[i])
+    if IMPORTANT_QUALITY[temp_quality] then
+      need_tips = true
+      break
+    end
+  end
+  self.v_need_dec_weapons = need_dec_weapons
+  local tips = need_tips and "选择武器中包含高品质武器，是否确定分解" or "分解操作不可撤回，是否继续？"
+  UIMgr:get_ui("uinotice_tips"):ui_show(function()
+    self:do_decompose()
+  end, function()
+    self:recover_btn_interactable()
+  end, Util.format_str(tips))
+end
+
+function ui:do_decompose()
+  BagMgr:decompose_equip(self.v_need_dec_weapons)
+end
+
+function ui:recover_btn_interactable()
+  self.v_resolve_btn.interactable = true
+end
+
+function ui:set_button_active(param)
+  self.v_cancel_btn.gameObject:SetActive(param)
+  self.v_resolve_btn.gameObject:SetActive(param)
+end
+
+function ui:set_delete_btn_active(param)
+  self.v_parent_ui:set_delete_btn_active(param)
+end
+
+function ui:set_return_btn_active(param)
+  self.v_parent_ui:set_return_btn_active(param)
+end
+
+function ui:set_button_grey(param)
+  Util.apply_grey(nil, self.v_resolve_btn, param)
+end
+
+function ui:get_item_scroll_view_rect()
+  return self.v_parent_ui.v_uicompents.ItemScrollView_rect
+end
+
+function ui:play_decompose_show_pd()
+  self.v_parent_ui.v_uicompents.WeaponInPd_pd:Stop()
+  self.v_parent_ui.v_uicompents.WeaponInPd_pd:Play()
+end
+
+return ui

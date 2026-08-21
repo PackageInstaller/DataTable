@@ -1,0 +1,90 @@
+local M = Util.create_class()
+
+function M:_init(system_name)
+  self.v_msg_handles = {}
+  self.v_debug_system_name = nil
+  self.v_activate = false
+  self.v_system_name = system_name
+  self.v_can_update = false
+end
+
+function M:init_sys()
+  self:complete_sys()
+end
+
+function M:on_init_sys()
+end
+
+function M:set_can_update(flag)
+  self.v_can_update = flag
+end
+
+function M:can_update()
+  return self.v_can_update
+end
+
+function M:complete_sys()
+  self.v_activate = true
+  local msg = MsgGame:mq_publish2(Const.MSG_SYS_ON_SYSTEM_INIT_COMPLETE)
+  msg.mm_x = self.v_system_name
+end
+
+function M:on_destroy()
+  self.v_debug_system_name = nil
+  self.v_activate = false
+  self.v_is_destroy = true
+  self:sys_all_mq_unbind()
+end
+
+function M:is_activated()
+  return self.v_activate
+end
+
+function M:sys_mq_bind(msg_type, callback, cbdata)
+  local msg_handle = MsgGame:mq_bind(msg_type, callback, cbdata)
+  self.v_msg_handles[msg_handle] = msg_type
+  return msg_handle
+end
+
+function M:sys_mq_unbind(msg_handle)
+  self.v_msg_handles[msg_handle] = nil
+  MsgGame:mq_unbind(msg_handle)
+end
+
+function M:sys_all_mq_unbind()
+  for msg_handle, _ in pairs(self.v_msg_handles) do
+    MsgGame:mq_unbind(msg_handle)
+  end
+  self.v_msg_handles = {}
+end
+
+function M:_set_debug_system_name(system_name)
+  self.v_debug_system_name = string.format("#%s#", system_name)
+end
+
+function M:_network_call(protocol_name, data, cb, info)
+  assert(self.v_debug_system_name)
+  if Global.sys_test_print then
+    Global.log.Info(self.v_debug_system_name, info, "请求", data)
+  end
+  Network:call_no_waiting(protocol_name, data, function(ok, resp)
+    if Global.sys_test_print then
+      Global.log.Info(self.v_debug_system_name, info, "返回", resp)
+    end
+    if ok and cb then
+      cb(resp)
+    end
+  end)
+end
+
+function M:_network_notify(resp, info)
+  assert(self.v_debug_system_name)
+  if Global.sys_test_print then
+    Global.log.Info(self.v_debug_system_name, info, "通知", resp)
+  end
+end
+
+function M:on_reconnect()
+end
+
+return M

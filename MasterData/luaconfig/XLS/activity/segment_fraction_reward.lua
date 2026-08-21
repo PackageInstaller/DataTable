@@ -1,0 +1,64 @@
+return {
+  {
+    [3] = {
+      Fraction = 3,
+      Id = 1,
+      RewardGroupId = 500101
+    },
+    [6] = {
+      Fraction = 6,
+      Id = 1,
+      RewardGroupId = 500102
+    },
+    [9] = {
+      Fraction = 9,
+      Id = 1,
+      RewardGroupId = 500103
+    },
+    [12] = {
+      Fraction = 12,
+      Id = 1,
+      RewardGroupId = 500104
+    },
+    [15] = {
+      Fraction = 15,
+      Id = 1,
+      RewardGroupId = 500105
+    },
+    [18] = {
+      Fraction = 18,
+      Id = 1,
+      RewardGroupId = 500106
+    },
+    [21] = {
+      Fraction = 21,
+      Id = 1,
+      RewardGroupId = 500107
+    },
+    [24] = {
+      Fraction = 24,
+      Id = 1,
+      RewardGroupId = 500108
+    },
+    [27] = {
+      Fraction = 27,
+      Id = 1,
+      RewardGroupId = 500109
+    },
+    [30] = {
+      Fraction = 30,
+      Id = 1,
+      RewardGroupId = 500110
+    },
+    [33] = {
+      Fraction = 33,
+      Id = 1,
+      RewardGroupId = 500111
+    },
+    [36] = {
+      Fraction = 36,
+      Id = 1,
+      RewardGroupId = 500112
+    }
+  }
+}

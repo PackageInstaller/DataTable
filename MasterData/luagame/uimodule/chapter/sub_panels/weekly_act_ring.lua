@@ -1,0 +1,77 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local AssetBarView = require("ui.asset_bar.asset_bar")
+local commonDef = require("cs_share.common_define")
+local ACTY_TYPE = commonDef.ACTY_TYPE
+local ActivityCfg = require("gamelogic.activity.activity_config")
+local ACTY_TYPE_TO_SYSID = ActivityCfg.ACTY_TYPE_TO_SYSID
+local RES_ITEM_ID = 11
+local MODEL = {
+  v_add_btn = {
+    "AddBtn",
+    BIND_TYPE.BUTTON
+  },
+  v_amount = {
+    "Amount",
+    BIND_TYPE.TEXT
+  },
+  v_btn_start = {
+    "BtnStart",
+    BIND_TYPE.BUTTON
+  },
+  v_desc = {
+    "Desc",
+    BIND_TYPE.TEXT
+  },
+  v_label = {
+    "Label",
+    BIND_TYPE.IMAGE
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnStart", function()
+    if SysOpenMgr:get_sys_is_open(ACTY_TYPE_TO_SYSID[ACTY_TYPE.CURSE_CIRCLE], true) then
+      if ActivityMgr:get_activity_is_open(ACTY_TYPE.CURSE_CIRCLE) then
+        UIMgr:get_ui("fate_book_main"):ui_show()
+      else
+        Util.show_message_tip(2148)
+      end
+    end
+  end)
+  self:set_button("AddBtn", function()
+    UIMgr:get_ui("itemTip"):ui_show({item_id = RES_ITEM_ID})
+  end)
+end
+
+function ui:ui_on_show()
+  self:regist_event()
+  self:refresh_desc()
+  self:refresh_res()
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.fate_book_tog_UI_SOUND)
+end
+
+function ui:regist_event()
+  self:bind_auto_mq(Const.MSG_ON_ITEM_UPDATE, self.refresh_res, self)
+end
+
+function ui:refresh_desc()
+  local game_id = 1
+  local cfg = ShareRes.create("activity.curse_ring_main", game_id)
+  self.v_desc.text = cfg.ChapterDesc
+end
+
+function ui:refresh_res()
+  local item_config = ShareRes.create("item.item", RES_ITEM_ID)
+  local item_num = BagMgr:get_item_num(RES_ITEM_ID)
+  local item_maxnum = item_config.MaxCount
+  if 0 ~= item_maxnum and 99999999 ~= item_maxnum then
+    self.v_amount.text = string.format("%s/%s", item_num, item_maxnum)
+  else
+    self.v_amount.text = item_num
+  end
+end
+
+return ui

@@ -1,0 +1,127 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local SHOW_ITEM_QUEUE_KEY = "SHOW_ITEM_QUEUE_KEY"
+local TYPE_DOTWEEN_ANIM = typeof(CS.DG.Tweening.DOTweenAnimation)
+local _tinsert = table.insert
+local _tremove = table.remove
+
+function M:ui_finish_load()
+  self:init_template()
+end
+
+function M:init_template()
+  self.v_index = self.v_object:GetInstanceID()
+  self.v_key_name = SHOW_ITEM_QUEUE_KEY .. self.v_index
+  self:register_exist_auto_template(self.v_key_name, self.v_uiobjects.Item, self.v_object)
+end
+
+function M:ui_on_show()
+end
+
+function M:set_data(data_list, max_limit)
+  if not data_list or next(data_list) == nil then
+    return
+  end
+  self:clear()
+  self.v_object:SetActive(true)
+  self.v_data_list = data_list
+  self.v_max_limit = max_limit or 3
+  self:refresh_item_list()
+  self.v_num = #self.v_data_list
+  if self.v_num > self.v_max_limit then
+    self.v_rock_item_timer = Timer:add_timer("rock_item_queue", 1.5, function()
+      self:play_anim()
+      self.v_rock_item_timer = nil
+    end)
+  else
+    self:play_fade()
+  end
+end
+
+function M:clear()
+  self.v_data = nil
+  if self.v_item_list then
+    for _, item_go in pairs(self.v_item_list) do
+      local txt_obj = Util.get_child_gameobj("Text", item_go)
+      local txt_tween = txt_obj:GetComponent(TYPE_DOTWEEN_ANIM)
+      local tween = item_go:GetComponent(TYPE_DOTWEEN_ANIM)
+      tween:DOKill()
+      txt_tween:DOKill()
+    end
+    self.v_item_list = nil
+  end
+  if self.v_rock_item_timer then
+    Timer:remove_timer(self.v_rock_item_timer)
+    self.v_rock_item_timer = nil
+  end
+end
+
+function M:ui_on_hide()
+  self:clear()
+end
+
+function M:refresh_item_list()
+  self:give_back_auto_cache(self.v_key_name)
+  self.v_item_list = {}
+  for idx, data in ipairs(self.v_data_list) do
+    local item_go = self:get_auto_cache(self.v_key_name)
+    local alpha_target = item_go:GetComponent("CanvasGroup")
+    alpha_target.alpha = 1
+    local txt_obj = Util.get_child_gameobj("Text", item_go)
+    local item_text = Util.get_text(nil, txt_obj)
+    local txt_rect = Util.get_rect_transform(nil, txt_obj)
+    local rect = Util.get_rect_transform(nil, item_go)
+    rect:SetAnchoredPositionA(0, -30 * (idx - 1))
+    txt_rect:SetAnchoredPositionA(0, 0)
+    item_text.text = data
+    _tinsert(self.v_item_list, item_go)
+  end
+end
+
+function M:play_anim()
+  if 0 == self.v_num then
+    return
+  end
+  self.v_play_num = 0
+  for _, item_go in pairs(self.v_item_list) do
+    local txt_obj = Util.get_child_gameobj("Text", item_go)
+    local txt_tween = txt_obj:GetComponent(TYPE_DOTWEEN_ANIM)
+    txt_tween:RecreateTween()
+    item_go:SetActive(true)
+    txt_tween:DOPlay()
+    txt_tween.onComplete:AddListener(function()
+      txt_tween.onComplete:RemoveAllListeners()
+      self:complete_anim()
+    end)
+  end
+end
+
+function M:complete_anim()
+  self.v_play_num = self.v_play_num + 1
+  if self.v_play_num == self.v_num then
+    local go = self.v_item_list[1]
+    if not go and not go:IsNull() then
+      self:give_back_auto_cache_obj(nil, go)
+    end
+    _tremove(self.v_item_list, 1)
+    self:refresh_num()
+    self:play_anim()
+  end
+end
+
+function M:refresh_num()
+  self.v_num = #self.v_item_list
+end
+
+function M:play_fade()
+  for _, item_go in pairs(self.v_item_list) do
+    local alpha_target = item_go:GetComponent("CanvasGroup")
+    alpha_target.alpha = 1
+    local tween = item_go:GetComponent(TYPE_DOTWEEN_ANIM)
+    tween:RecreateTween()
+    item_go:SetActive(true)
+    tween:DOPlay()
+  end
+end
+
+return M

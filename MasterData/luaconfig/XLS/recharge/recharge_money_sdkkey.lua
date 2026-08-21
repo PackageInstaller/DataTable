@@ -1,0 +1,20 @@
+return {
+  ["com.bb.aos.19800purchase1"] = 4,
+  ["com.bb.aos.3000purchase1"] = 2,
+  ["com.bb.aos.32800purchase1"] = 5,
+  ["com.bb.aos.600purchase1"] = 1,
+  ["com.bb.aos.64800purchase1"] = 6,
+  ["com.bb.aos.9800purchase1"] = 3,
+  ["com.bb.ios.19800purchase1"] = 4,
+  ["com.bb.ios.3000purchase1"] = 2,
+  ["com.bb.ios.32800purchase1"] = 5,
+  ["com.bb.ios.600purchase1"] = 1,
+  ["com.bb.ios.64800purchase1"] = 6,
+  ["com.bb.ios.9800purchase1"] = 3,
+  ["tc.bb.19800purchase1"] = 4,
+  ["tc.bb.3000purchase1"] = 2,
+  ["tc.bb.32800purchase1"] = 5,
+  ["tc.bb.600purchase1"] = 1,
+  ["tc.bb.64800purchase1"] = 6,
+  ["tc.bb.9800purchase1"] = 3
+}

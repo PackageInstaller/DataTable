@@ -1,0 +1,12 @@
+return {
+  [0] = {Id = 0, PickCount = 0},
+  [2] = {Id = 2, PickCount = 1},
+  [7] = {Id = 7, PickCount = 1},
+  [8] = {Id = 8, PickCount = 2},
+  [10] = {Id = 10, PickCount = 3},
+  [11] = {Id = 11, PickCount = 1},
+  [12] = {Id = 12, PickCount = 1},
+  [13] = {Id = 13, PickCount = 1},
+  [15] = {Id = 15, PickCount = 1},
+  [17] = {Id = 17, PickCount = 2}
+}

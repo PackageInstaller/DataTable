@@ -1,0 +1,282 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local Vec3 = require("base.vec3")
+local CAMPS = Global.config.CAMPS
+local ONE_MINUTE_SEC = 60
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_enemy_magic_layout = {
+    "EnemyMagicLayout",
+    BIND_TYPE.OBJECT
+  },
+  v_time_layout = {
+    "TimeLayout",
+    BIND_TYPE.OBJECT
+  },
+  v_time = {
+    "Time",
+    BIND_TYPE.TEXT
+  },
+  v_desc = {
+    "Desc",
+    BIND_TYPE.TEXT
+  },
+  v_curse_icon = {
+    "CurseIcon",
+    BIND_TYPE.OBJECT
+  },
+  v_text_bg = {
+    "TextBg",
+    BIND_TYPE.OBJECT
+  },
+  v_magic_tips = {
+    "MagicTips",
+    BIND_TYPE.TEXT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+end
+
+function ui:ui_on_show(delay_magic_cfg, is_fight_end)
+  if is_fight_end then
+    self:ui_hide()
+    return
+  end
+  self:bind_auto_mq(Const.MSG_ON_NPC_BIRTH, self.new_npc_birth, self)
+  self:bind_auto_mq(Const.MSG_ON_ALL_HERO_REBORN_END, self.hero_reborn, self)
+  self:bind_auto_mq(Const.MSG_ON_FIGHT_END, self.fight_end, self)
+  self.v_delay_magic_cfg = delay_magic_cfg
+  self.v_camp_list = self.v_delay_magic_cfg.Camp
+  self.v_desc_list = self.v_delay_magic_cfg.Desc
+  self.v_magic_list = self.v_delay_magic_cfg.Magic
+  self.v_time_list = self.v_delay_magic_cfg.Time
+  self.v_start_desc_list = self.v_delay_magic_cfg.StartDesc
+  self.v_sort_by_time_list = {}
+  for index, time in ipairs(self.v_time_list) do
+    table.insert(self.v_sort_by_time_list, {original_index = index, time = time})
+  end
+  table.sort(self.v_sort_by_time_list, function(a, b)
+    return a.time < b.time
+  end)
+  self.v_length = #self.v_sort_by_time_list
+  self.v_cur_index = 1
+  self.v_remain_time = self.v_sort_by_time_list[1].time
+  self.v_temp_remain_time = self.v_remain_time
+  self.v_is_end = false
+  self.v_is_first = true
+  self.v_is_show = false
+  self.v_is_first_show = true
+  self.v_dynamic_is_end = false
+  self.v_is_in_add_magic_dynamic = false
+  self.v_is_stop_time = false
+  self.v_is_add_magic = false
+  if next(self.v_start_desc_list) == nil or next(self.v_desc_list) == nil then
+    self.v_time_layout:SetActive(false)
+    self.v_enemy_magic_layout:SetActive(false)
+  end
+end
+
+function ui:ui_on_hide()
+  self:clear_sequence()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:ui_on_update(delta_time)
+  if SceneMgr:get_game_pause() or self.v_is_end or self.v_is_in_add_magic_dynamic or self.v_is_stop_time or not self.v_temp_remain_time then
+    return
+  end
+  self.v_temp_remain_time = self.v_temp_remain_time - delta_time
+  self.v_remain_time = math.ceil(self.v_temp_remain_time)
+  if self.v_remain_time > 0 then
+    if self.v_is_first then
+      self.v_is_first = false
+      local original_index = self.v_sort_by_time_list[self.v_cur_index].original_index
+      self.v_is_show = not Util.is_empty(self.v_start_desc_list[original_index]) and not Util.is_empty(self.v_desc_list[original_index])
+      self.v_enemy_magic_layout:SetActive(false)
+      if self.v_is_show then
+        self.v_time_layout:SetActive(true)
+        self.v_desc.gameObject:SetActive(true)
+        self.v_time.gameObject:SetActive(true)
+      else
+        self.v_time_layout:SetActive(false)
+      end
+    end
+    if self.v_is_show then
+      if self.v_is_first_show then
+        self.v_is_first_show = false
+        self:play_dynamic_effect()
+      end
+      if self.v_dynamic_is_end then
+        self.v_time.text = self:get_time_text()
+      end
+    end
+  else
+    self.v_dynamic_is_end = false
+    self.v_is_add_magic = true
+    self.v_time_layout:SetActive(false)
+    self:add_magic()
+  end
+end
+
+function ui:add_magic()
+  local original_index = self.v_sort_by_time_list[self.v_cur_index].original_index
+  local magic_id = self.v_magic_list[original_index]
+  if magic_id > 0 then
+    if self.v_camp_list[original_index] == CAMPS.FRIEND then
+      local hero_list = SceneMgr:get_hero_list()
+      for uuid, hero in pairs(hero_list) do
+        if not hero:is_die() then
+          hero.magic_mgr:add_magic(hero, magic_id)
+        end
+      end
+    else
+      local all_npc = SceneMgr:get_all_npc()
+      if nil ~= all_npc and nil ~= next(all_npc) then
+        for _, npc in pairs(all_npc) do
+          if npc:get_camp() == CAMPS.ENEMY then
+            npc.magic_mgr:add_magic(npc, magic_id)
+          end
+        end
+      end
+    end
+  end
+  if self.v_is_show then
+    self:play_add_magic_dynamic()
+  else
+    self:add_magic_after_logic()
+  end
+end
+
+function ui:play_dynamic_effect()
+  self:clear_sequence()
+  local desc_canvas_group = self:get_canvas_group(nil, self.v_desc.gameObject)
+  local time_canvas_group = self:get_canvas_group(nil, self.v_time.gameObject)
+  desc_canvas_group.alpha = 1
+  time_canvas_group.alpha = 0
+  local original_index = self.v_sort_by_time_list[self.v_cur_index].original_index
+  self.v_desc.text = self.v_start_desc_list[original_index]
+  self.v_time.text = self:get_time_text()
+  self.v_is_stop_time = true
+  self.v_desc.transform:SetLocalPositionA(0, 0, 0)
+  self.v_desc.transform:SetLocalScaleA(2.5, 2.5, 2.5)
+  self.v_time.transform:SetLocalPositionA(0, -100, 0)
+  self.v_sequence = Util.create_sequence()
+  self.v_sequence:Append(self.v_desc.transform:DOScale(Vec3.New(1, 1, 1), 1))
+  self.v_sequence:Append(self.v_desc.transform:DOLocalMoveY(100, 1))
+  self.v_sequence:Join(desc_canvas_group:DOFade(0, 1))
+  self.v_sequence:Join(self.v_time.transform:DOLocalMoveY(0, 1))
+  self.v_sequence:Join(time_canvas_group:DOFade(1, 1))
+  self.v_sequence:OnComplete(function()
+    self.v_dynamic_is_end = true
+    self.v_is_stop_time = false
+  end)
+end
+
+function ui:play_add_magic_dynamic()
+  self:clear_sequence()
+  self.v_is_in_add_magic_dynamic = true
+  self.v_enemy_magic_layout:SetActive(true)
+  local original_index = self.v_sort_by_time_list[self.v_cur_index].original_index
+  self.v_magic_tips.text = self.v_desc_list[original_index]
+  local curse_icon_canvas_group = self:get_canvas_group(nil, self.v_curse_icon)
+  local text_bg_canvas_group = self:get_canvas_group(nil, self.v_text_bg)
+  curse_icon_canvas_group.alpha = 1
+  text_bg_canvas_group.alpha = 1
+  self.v_sequence = Util.create_sequence()
+  self.v_sequence:Append(curse_icon_canvas_group:DOFade(0.1, 1))
+  self.v_sequence:Join(text_bg_canvas_group:DOFade(0.1, 1))
+  self.v_sequence:Append(curse_icon_canvas_group:DOFade(1, 1))
+  self.v_sequence:Join(text_bg_canvas_group:DOFade(1, 1))
+  self.v_sequence:Append(curse_icon_canvas_group:DOFade(0.1, 1))
+  self.v_sequence:Join(text_bg_canvas_group:DOFade(0.1, 1))
+  self.v_sequence:OnComplete(function()
+    self:add_magic_after_logic()
+    self.v_enemy_magic_layout:SetActive(false)
+    self.v_is_in_add_magic_dynamic = false
+  end)
+end
+
+function ui:add_magic_after_logic()
+  if self.v_cur_index >= self.v_length then
+    self.v_is_end = true
+    self.v_time_layout:SetActive(false)
+    self.v_enemy_magic_layout:SetActive(false)
+    self:clear_sequence()
+  else
+    self.v_is_first_show = true
+    self.v_is_first = true
+    self.v_cur_index = self.v_cur_index + 1
+    self.v_temp_remain_time = self.v_sort_by_time_list[self.v_cur_index].time - self.v_sort_by_time_list[self.v_cur_index - 1].time
+  end
+end
+
+function ui:get_time_text()
+  local minute = math.floor(self.v_remain_time / ONE_MINUTE_SEC)
+  local second = self.v_remain_time - minute * ONE_MINUTE_SEC
+  return string.format("%02d:%02d", minute, second)
+end
+
+function ui:new_npc_birth(msg)
+  if self.v_is_add_magic == false then
+    return
+  end
+  local npc = msg.mm_obj
+  if npc:get_camp() == CAMPS.ENEMY then
+    for index = 1, self.v_cur_index do
+      local original_index = self.v_sort_by_time_list[index].original_index
+      local magic_id = self.v_magic_list[original_index]
+      local camp = self.v_camp_list[original_index]
+      if camp == CAMPS.ENEMY then
+        npc.magic_mgr:add_magic(npc, magic_id)
+      end
+    end
+  end
+end
+
+function ui:hero_reborn()
+  if self.v_is_add_magic == false then
+    return
+  end
+  self:add_or_remove_heroes_magic(true)
+end
+
+function ui:fight_end()
+  self:ui_hide()
+  if self.v_is_add_magic == false then
+    return
+  end
+  self:add_or_remove_heroes_magic(false)
+end
+
+function ui:add_or_remove_heroes_magic(is_add)
+  local hero_list = SceneMgr:get_hero_list()
+  for index = 1, self.v_cur_index do
+    local original_index = self.v_sort_by_time_list[index].original_index
+    local magic_id = self.v_magic_list[original_index]
+    local camp = self.v_camp_list[original_index]
+    if camp == CAMPS.FRIEND then
+      for uuid, hero in pairs(hero_list) do
+        if not hero:is_die() then
+          if is_add then
+            hero.magic_mgr:add_magic(hero, magic_id)
+          else
+            hero.magic_mgr:remove_magic_by_id(magic_id)
+          end
+        end
+      end
+    end
+  end
+end
+
+function ui:clear_sequence()
+  if self.v_sequence then
+    self.v_sequence:Kill(false)
+    self.v_sequence = nil
+  end
+end
+
+return ui

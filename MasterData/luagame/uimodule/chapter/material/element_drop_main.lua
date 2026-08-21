@@ -1,0 +1,57 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_full_screen_background = {
+    "FullScreenBackground",
+    BIND_TYPE.BUTTON
+  },
+  v_safe_area = {
+    "SafeArea",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+end
+
+function ui:ui_on_show(day_of_week)
+  self:set_button_listener(self.v_full_screen_background, function()
+    self:ui_hide()
+  end)
+  for i = 1, 7 do
+    local list = ChapterMaterialMgr:get_element_list_with_day(i)
+    local len = #list
+    for k = 1, 5 do
+      local ele_path = string.format("Day%s/Ele%s", i, k)
+      local image = Util.get_image(ele_path, self.v_safe_area)
+      local tips_path = string.format("Day%s/Tips", i)
+      local tips_obj = Util.get_child_gameobj(tips_path, self.v_safe_area)
+      if 2 == len then
+        if 3 == k or 4 == k then
+          ResMgr:load_set_icon(image, list[k - 2].ElementIconPath)
+        else
+          image.gameObject:SetActive(false)
+        end
+        tips_obj:SetActive(false)
+      else
+        ResMgr:load_set_icon(image, list[k].ElementIconPath)
+      end
+    end
+    local todayPath = string.format("Day%s/Today", i)
+    local notTodayPath = string.format("Day%s/NotToday", i)
+    local todayObj = Util.get_child_gameobj(todayPath, self.v_safe_area)
+    local notTodayObj = Util.get_child_gameobj(notTodayPath, self.v_safe_area)
+    todayObj:SetActive(i == day_of_week)
+    notTodayObj:SetActive(i ~= day_of_week)
+  end
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+return ui

@@ -1,0 +1,179 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local MUSIC_GAME_CHAPTER_ITEM_TEMP_KEY = "MUSIC_GAME_CHAPTER_ITEM_TEMP_KEY"
+local MUSIC_GAME_STAGE_ITEM_TEMP_KEY = "MUSIC_GAME_STAGE_ITEM_TEMP_KEY"
+local MusicGameChapterItem = require("uimodule.activity.music_game.music_game_chapter_item")
+local MusicGameStageItem = require("uimodule.activity.music_game.music_game_stage_item")
+
+function ui:on_click_BtnRet1()
+  if self.v_cur_chapter then
+    self:show_chapter()
+    return
+  end
+  self:ui_hide()
+end
+
+function ui:on_click_BtnTask()
+  UIMgr:get_ui("music_game_task"):ui_show(self.v_activity_id)
+end
+
+function ui:ui_finish_load()
+  self:set_button("BtnRet1", function()
+    self:on_click_BtnRet1()
+  end)
+  self:set_button("BtnTask", function()
+    self:on_click_BtnTask()
+  end)
+  self:register_exist_auto_template(MUSIC_GAME_CHAPTER_ITEM_TEMP_KEY, self.v_uiobjects.ChapTem, self.v_uiobjects.ChapContent)
+  self:register_exist_auto_template(MUSIC_GAME_STAGE_ITEM_TEMP_KEY, self.v_uiobjects.StageTem, self.v_uiobjects.StageContent)
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.TaskRed, RedEnum.MUSIC_GAME_ACT_TASK)
+end
+
+function ui:ui_on_show(chapter, stage)
+  self.v_cur_chapter, self.v_cur_stage = chapter, stage
+  self.v_activity_id = MusicGameMgr:get_activity_id()
+  self.v_activity_cfg = ShareRes.get_activity_cfg(self.v_activity_id)
+  self:check_close()
+  NoviceMgr:read_novice_activity(self.v_activity_id)
+  local cfg = ShareRes.get_music_game_act_cfg(self.v_activity_id)
+  if not cfg then
+    Log.Error("音游小游戏-音游表 无对应活动id配置：", self.v_activity_id)
+    return
+  end
+  self.v_task_group = cfg.TaskGroupId
+  self.v_chapter_list = {}
+  for chapter_idx, chapter_id in ipairs(cfg.ChapterId) do
+    local chapter_cfg = ShareRes.get_music_game_chapter_cfg(chapter_id)
+    local stage_cfgs = {}
+    for stage_idx, stage_id in ipairs(chapter_cfg.EpisodeId) do
+      stage_cfgs[stage_idx] = ShareRes.get_puzzle_game_stage_cfg(stage_id)
+    end
+    self.v_chapter_list[chapter_idx] = {}
+    self.v_chapter_list[chapter_idx].cfg = chapter_cfg
+    self.v_chapter_list[chapter_idx].stage_cfgs = stage_cfgs
+  end
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.TaskRed, RedEnum.MUSIC_GAME_ACT_TASK)
+  if chapter then
+    self:show_stage(chapter)
+  else
+    self:show_chapter()
+  end
+  self:refresh_time_remaining()
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
+end
+
+function ui:check_close(force_close)
+  NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name, true == force_close)
+end
+
+function ui:ui_on_hide()
+  self:clear_wrap_items_stage()
+  self:clear_wrap_items_chapter()
+end
+
+function ui:ui_on_destroy()
+  self:clear_wrap_items_stage()
+  self:clear_wrap_items_chapter()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.v_cur_chapter, self.v_cur_stage
+end
+
+function ui:show_chapter()
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.music_game_chapter_in_UI_SOUND)
+  self.v_cur_chapter, self.v_cur_stage = nil, nil
+  self.v_uiobjects.ChapList:SetActiveEx(true)
+  self.v_uiobjects.StageList:SetActiveEx(false)
+  if not self.v_chapter_items then
+    self:give_back_auto_cache(MUSIC_GAME_CHAPTER_ITEM_TEMP_KEY)
+    self.v_chapter_items = {}
+    for idx, data in ipairs(self.v_chapter_list) do
+      local obj = self:get_auto_cache(MUSIC_GAME_CHAPTER_ITEM_TEMP_KEY)
+      local item = MusicGameChapterItem:ui_wrap_ex(self, obj, true)
+      item:set_data(data.cfg, idx)
+      table.insert(self.v_chapter_items, item)
+    end
+  else
+    for _, item in ipairs(self.v_chapter_items) do
+      item:refresh_view()
+    end
+  end
+end
+
+function ui:show_stage(chapter, stage)
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.music_game_stage_in_UI_SOUND)
+  self.v_cur_chapter, self.v_cur_stage = chapter, stage
+  self.v_uiobjects.ChapList:SetActiveEx(false)
+  self.v_uiobjects.StageList:SetActiveEx(true)
+  self:give_back_auto_cache(MUSIC_GAME_STAGE_ITEM_TEMP_KEY)
+  self:clear_wrap_items_stage()
+  self.v_stage_items = {}
+  local stage_cfgs = self.v_chapter_list[chapter].stage_cfgs
+  for _, stage_cfg in ipairs(stage_cfgs) do
+    local obj = self:get_auto_cache(MUSIC_GAME_STAGE_ITEM_TEMP_KEY)
+    local item = MusicGameStageItem:ui_wrap_ex(self, obj, true)
+    item:set_data(self.v_cur_chapter, stage_cfg)
+    table.insert(self.v_stage_items, item)
+  end
+  self.v_uicompents.StageContent_rect:SetAnchoredPositionA(0, 0)
+  MusicGameMgr:read_chapter_new_stage(chapter)
+end
+
+function ui:clear_wrap_items_chapter()
+  if self.v_chapter_items then
+    for idx = #self.v_chapter_items, 1, -1 do
+      local item = self.v_chapter_items[idx]
+      item:ui_hide()
+      item:ui_destroy()
+      self.v_chapter_items[idx] = nil
+    end
+    self.v_chapter_items = nil
+  end
+end
+
+function ui:clear_wrap_items_stage()
+  if self.v_stage_items then
+    for idx = #self.v_stage_items, 1, -1 do
+      local item = self.v_stage_items[idx]
+      item:ui_hide()
+      item:ui_destroy()
+      self.v_stage_items[idx] = nil
+    end
+    self.v_stage_items = nil
+  end
+end
+
+function ui:ui_on_update()
+  if not self.v_cache_time then
+    self.v_cache_time = 0
+    return
+  end
+  self.v_cache_time = self.v_cache_time + 0.1
+  if self.v_cache_time > 10 then
+    self.v_cache_time = 0
+    self:refresh_time_remaining()
+  end
+end
+
+function ui:refresh_time_remaining()
+  local activity_data = NoviceMgr:get_novice_activity_data(self.v_activity_id)
+  if not activity_data or not self.v_activity_cfg.StopTime then
+    self.v_uiobjects.Time:SetActiveEx(false)
+    return
+  end
+  local time_length = NoviceMgr:get_time_remaining(self.v_activity_cfg.TimeType, self.v_activity_cfg.StopTime, activity_data.open_time, self.v_activity_cfg.SustainTime)
+  self.v_uiobjects.Time:SetActiveEx(nil ~= time_length)
+  if time_length then
+    self.v_uicompents.Time_txt.text = Date.get_time_formate_2(time_length, true)
+    if 0 == time_length then
+      self.v_uiobjects.Time:SetActiveEx(false)
+    end
+  end
+end
+
+return ui

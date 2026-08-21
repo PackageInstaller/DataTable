@@ -1,0 +1,43 @@
+local Base = require("manager.fight.movement.missile_movement")
+local Math = require("base.mathx")
+local deg2rad = Math.Deg2Rad
+local rad2deg = Math.Rad2Deg
+local _sin = math.sin
+local _cos = math.cos
+local M = Util.create_child_mt(Base)
+
+function M:_init(missile, lineparams)
+  Base._init(self, missile)
+  local params = lineparams or self.missile_cfg.lineparams
+  self:set_params(params)
+end
+
+function M:update(st_x, st_z)
+  local cur_live_time = self.v_missile:get_time()
+  local cur_rad = cur_live_time * self.v_rad_speed + self.v_start_rad
+  local cur_radius = self.v_start_radius + cur_live_time * self.v_radius_speed
+  if cur_radius >= self.v_end_radius then
+    self.v_missile:stop()
+    return
+  end
+  self.v_st_x = st_x or self.v_st_x
+  self.v_st_z = st_z or self.v_st_z
+  self.v_missile:set_pos2(_sin(cur_rad) * cur_radius + self.v_st_x, _cos(cur_rad) * cur_radius + self.v_st_z)
+  self.v_missile:set_target_dir(rad2deg * cur_rad, true)
+  if self.v_ground_destroy_height and self.v_terrain_height then
+    self:check_ground_destroy()
+  end
+end
+
+function M:set_params(params)
+  self.v_radius_speed = params[1] or 0
+  self.v_rad_speed = deg2rad * (params[2] or 0)
+  self.v_start_radius = params[3] or 0
+  self.v_end_radius = params[4] or 0
+  self.v_start_rad = self.v_missile:get_dir() * deg2rad
+  self.v_st_x = nil
+  self.v_st_z = nil
+  self.v_st_x, self.v_st_z = self.v_missile:get_pos2()
+end
+
+return M

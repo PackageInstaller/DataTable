@@ -1,0 +1,7 @@
+local M = {}
+M.Left_panel_list = {
+  DefaultLeft = "default_left",
+  AvatarChoose = "avatar_choose"
+}
+M.BORN_STATE = {Month = 1, Day = 2}
+return M

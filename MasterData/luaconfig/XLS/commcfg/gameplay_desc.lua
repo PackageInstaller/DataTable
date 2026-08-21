@@ -1,0 +1,6 @@
+return {
+  ClimbingTowerDesc = {
+    key = "ClimbingTowerDesc",
+    value = "前往更为遥远的过去，必将面临更为艰难的险境，不必忧心，我和图书馆都会为你提供助力。"
+  }
+}

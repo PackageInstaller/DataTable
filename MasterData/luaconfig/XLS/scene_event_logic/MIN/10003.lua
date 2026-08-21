@@ -1,0 +1,105 @@
+local empty = {}
+return {
+  Events = {
+    {
+      ConditionActions = {
+        {
+          Key = "W4",
+          IsRemoveAfterEnter = false,
+          IsRemoveForever = false,
+          Actions = {
+            {Type = 63, Timeout = 0.0}
+          },
+          ValidInTower = false
+        }
+      },
+      Type = 3,
+      ConditionVariable = "AB",
+      IsNotCondition = false
+    },
+    {
+      EventName = "AA",
+      Actions = {
+        {
+          PosKey = "VV",
+          IsOpen = true,
+          CameraStyle = 0,
+          Duration = 0.0,
+          Type = 62,
+          Timeout = 0.0
+        }
+      },
+      FinishMarkVariable = "AB",
+      ValidInTower = false,
+      Type = 9,
+      ConditionVariable = "",
+      IsNotCondition = false
+    },
+    {
+      ConditionActions = {
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = {
+            {
+              RefreshCfg = {
+                Weight = 100,
+                MonsterGroupId = 0,
+                MonsterWave = 1,
+                MonsterCount = 0,
+                SendWave = false,
+                WaveStyle = 0,
+                Conditions = {
+                  {
+                    RefreshCondition = 0,
+                    Id = 246470,
+                    param = 0,
+                    Name = "全部杀死",
+                    CustomEventName = "AA",
+                    Timeout = 0.0
+                  }
+                }
+              },
+              Type = 8,
+              Timeout = 0.0
+            },
+            {
+              PosKey = "SJB",
+              IsOpen = true,
+              CameraStyle = 0,
+              Duration = 0.0,
+              Type = 62,
+              Timeout = 0.0
+            },
+            {Type = 63, Timeout = 3.0}
+          },
+          ValidInTower = false
+        },
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = empty,
+          ValidInTower = false
+        },
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = empty,
+          ValidInTower = false
+        }
+      },
+      Type = 22,
+      ConditionVariable = "",
+      IsNotCondition = false
+    }
+  },
+  MonsterRefreshCfg = {
+    Weight = 100,
+    MonsterGroupId = 0,
+    MonsterWave = 0,
+    MonsterCount = 0,
+    SendWave = false,
+    WaveStyle = 0
+  },
+  FinishiConditionDict = empty
+}

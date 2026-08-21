@@ -1,0 +1,59 @@
+local Base = require("ui.uiobject")
+local CAN_GET_COLOR = Util.get_unity_color_by_hex(tonumber("8d4b15", 16))
+local CANT_GET_COLOR = Util.get_unity_color_by_hex(tonumber("ae9577", 16))
+local ITEM_OBJ_CLASS = require("uimodule.item.item_obj_com")
+local DayAwardItem = Util.create_child_mt(Base)
+
+function DayAwardItem:ui_finish_load()
+  self.v_item_list = {}
+end
+
+function DayAwardItem:ui_on_hide()
+  self:clear_wrap_award()
+end
+
+function DayAwardItem:set_data(day, is_exist_jump)
+  local login_day = RechargeMgr:get_first_recharge_login_day() or 0
+  local is_reach = day <= login_day
+  self.v_uiobjects.LockMask:SetActive(not is_reach)
+  self.v_uiobjects.Bg:SetActive(not is_reach)
+  self.v_uiobjects.CompleteBg:SetActive(is_reach)
+  local can_get_award = RechargeMgr:can_get_first_recharge_award(day)
+  self.v_uicompents.DayBg_img.color = can_get_award and CAN_GET_COLOR or CANT_GET_COLOR
+  self.v_uicompents.Num_txt.color = can_get_award and CAN_GET_COLOR or CANT_GET_COLOR
+  self.v_uicompents.Num_txt.text = "0" .. day
+  self.v_uicompents.DayNum_txt.text = Util.format_str("第{1}天", day)
+  self:clear_wrap_award()
+  local award_group_id = ShareRes.get_first_recharge_award(day)
+  local awards = {}
+  ShareRes.get_item_obj_use_award_list(award_group_id, awards)
+  for index = 1, 2 do
+    local item_obj = self.v_uiobjects["Item" .. index]
+    if item_obj then
+      local award_data = awards[index]
+      item_obj:SetActiveEx(nil ~= award_data)
+      if nil ~= award_data then
+        local item = ITEM_OBJ_CLASS:ui_wrap_ex(self, item_obj, true)
+        item:set_data(award_data, true, nil, is_exist_jump)
+        item.v_uiobjects.Mask:SetActive(is_reach and not can_get_award)
+        table.insert(self.v_item_list, item)
+        local item_id = award_data.id or award_data[1] or award_data.ItemId
+        local award_type = Util.get_item_type_cfg(item_id).AwardType
+        local show_effect = award_type == Config.AWARD_TYPE.EQUIP_FASHION
+        item.v_uiobjects.Fx_ItemIcon_Order:SetActiveEx(show_effect)
+      end
+    end
+  end
+end
+
+function DayAwardItem:clear_wrap_award()
+  if self.v_item_list then
+    for key, item in pairs(self.v_item_list) do
+      item:ui_hide()
+      item:ui_destroy()
+      self.v_item_list[key] = nil
+    end
+  end
+end
+
+return DayAwardItem

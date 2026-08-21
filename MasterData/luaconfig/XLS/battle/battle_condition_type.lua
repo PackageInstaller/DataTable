@@ -1,0 +1,133 @@
+return {
+  [100001] = {
+    CompareType = 0,
+    EventId = 10001,
+    Name = "cond_battle_get_item",
+    StopWhen = 0,
+    Type = 100001,
+    ValueType = 0
+  },
+  [100002] = {
+    CompareType = 0,
+    EventId = 10004,
+    Name = "cond_battle_room_pass",
+    StopWhen = 0,
+    Type = 100002,
+    ValueType = 0
+  },
+  [100003] = {
+    CompareType = 0,
+    EventId = 10005,
+    Name = "cond_revive_max_cnt",
+    StopWhen = 0,
+    Type = 100003,
+    UpdateType = 0,
+    ValueType = 0
+  },
+  [100004] = {
+    CompareType = 0,
+    EventId = 10004,
+    Name = "cond_all_buddy_min_ratio_hp",
+    StopWhen = 0,
+    Type = 100004,
+    UpdateType = 0,
+    ValueType = 1
+  },
+  [100005] = {
+    CompareType = 0,
+    EventId = 10004,
+    Name = "cond_all_buddy_min_ratio_hp",
+    StopWhen = 2,
+    Type = 100005,
+    UpdateType = 1,
+    ValueType = 1
+  },
+  [100006] = {
+    CompareType = 0,
+    EventId = 10001,
+    Name = "cond_tower_get_item_cnt",
+    StopWhen = 0,
+    Type = 100006,
+    UpdateType = 0,
+    ValueType = 0
+  },
+  [100007] = {
+    CompareType = 0,
+    EventId = 10001,
+    Name = "cond_all_get_item_cnt",
+    StopWhen = 0,
+    Type = 100007,
+    ValueType = 0
+  },
+  [100008] = {
+    CompareType = 0,
+    EventId = 10006,
+    Name = "cond_battle_api_cnt",
+    StopWhen = 0,
+    Type = 100008,
+    ValueType = 0
+  },
+  [100009] = {
+    CompareType = 3,
+    EventId = 10010,
+    Name = "cond_be_attack",
+    StopWhen = 1,
+    Type = 100009,
+    UpdateType = 0,
+    ValueType = 0
+  },
+  [100010] = {
+    CompareType = 0,
+    EventId = 10013,
+    Name = "cond_battle_monster_died",
+    StopWhen = 0,
+    Type = 100010,
+    UpdateType = 0,
+    ValueType = 0
+  },
+  [100011] = {
+    CompareType = 0,
+    EventId = 10014,
+    Name = "cond_curse_circel_open_card",
+    StopWhen = 0,
+    Type = 100011,
+    UpdateType = 0,
+    ValueType = 0
+  },
+  [100012] = {
+    CompareType = 0,
+    EventId = 10015,
+    Name = "cond_ornament_change",
+    StopWhen = 0,
+    Type = 100012,
+    UpdateType = 0,
+    ValueType = 0
+  },
+  [100013] = {
+    CompareType = 0,
+    EventId = 10016,
+    Name = "cond_curse_value_delete",
+    StopWhen = 0,
+    Type = 100013,
+    UpdateType = 0,
+    ValueType = 0
+  },
+  [100014] = {
+    CompareType = 0,
+    EventId = 10004,
+    Name = "cond_battle_room_pass_no_damage",
+    StopWhen = 0,
+    Type = 100014,
+    UpdateType = 0,
+    ValueType = 0
+  },
+  [100015] = {
+    CompareType = 3,
+    EventId = 10006,
+    Name = "cond_api_add_progress",
+    StopWhen = 1,
+    Type = 100015,
+    UpdateType = 0,
+    ValueType = 0
+  }
+}

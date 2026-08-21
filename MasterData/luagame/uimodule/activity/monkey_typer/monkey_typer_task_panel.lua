@@ -1,0 +1,209 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local TASK_CONFIG = require("gamelogic.task.task_config")
+local TASK_STATE = TASK_CONFIG.TASK_STATE
+local CONTENT_TASKTEM_TEMP_KEY = "MONKEY_TYPER_TASK_CONTENT_TASKTEM_TEMP_KEY"
+local CONTENT_TASKTEM_AWARD_TEMP_KEY = "MONKEY_TYPER_TASK_CONTENT_TASKTEM_AWARD_TEMP_KEY"
+local TASK_ITEM_CLASS = require("uimodule.activity.monkey_typer.monkey_typer_task_item")
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.v_activity_id, self.v_cur_page
+end
+
+function ui:on_click_BtnRet1()
+  self:ui_hide()
+end
+
+function ui:ui_finish_load()
+  self:set_toggle("TogTask", function(isOn)
+    if isOn then
+      self:refresh_list(1)
+    end
+  end, true)
+  self:set_toggle("TogProgress", function(isOn)
+    if isOn then
+      self:refresh_list(2)
+    end
+  end, true)
+  self:set_button("BtnRet1", function()
+    self:on_click_BtnRet1()
+  end)
+  local award_content = self:get_child_gameobj("content_/AwardScroll/Viewport/AwardContent_", self.v_uiobjects.TaskTem)
+  local award_item = self:get_child_gameobj("content_/AwardScroll/Viewport/AwardContent_/ItemObjCom1_", self.v_uiobjects.TaskTem)
+  self:register_exist_auto_template(CONTENT_TASKTEM_TEMP_KEY, self.v_uiobjects.TaskTem, self.v_uiobjects.Content)
+  self:register_exist_auto_template(CONTENT_TASKTEM_AWARD_TEMP_KEY, award_item, award_content)
+end
+
+function ui:ui_on_show(activity_id, page)
+  self.v_cur_page = nil
+  self.v_activity_id = activity_id
+  self.v_task_cfg = ShareRes.create("activity.monkey_typewriter_misc")[self.v_activity_id]
+  if not self.v_task_cfg then
+    return
+  end
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.TogTaskRed, RedEnum.MONKEY_TYPER_ACT_AWARD_TASK)
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.TogProgressRed, RedEnum.MONKEY_TYPER_ACT_AWARD_PROGRESS)
+  if not page then
+    if self.v_uiobjects.TogTaskRed.activeSelf then
+      page = 1
+    elseif self.v_uiobjects.TogProgressRed.activeSelf then
+      page = 2
+    else
+      page = 1
+    end
+  end
+  if 1 == page then
+    self.v_uicompents.TogTask_tog.isOn = false
+    self.v_uicompents.TogTask_tog.isOn = true
+  else
+    self.v_uicompents.TogProgress_tog.isOn = false
+    self.v_uicompents.TogProgress_tog.isOn = true
+  end
+  self.v_blocker = false
+  self:bind_auto_mq(Const.MSG_ON_NOVICE_ACTIVITY_OPEN, self.check_close, self)
+end
+
+function ui:ui_on_hide()
+  self:clear_timer()
+  self:clear_wrap_items()
+end
+
+function ui:ui_on_destroy()
+end
+
+local PageKey = {
+  [1] = "TaskGroupId",
+  [2] = "ProgressTaskGroupId"
+}
+
+function ui:refresh_list(page)
+  if not self.v_task_cfg or page == self.v_cur_page then
+    return
+  end
+  self.v_cur_page = page or self.v_cur_page
+  local group_id = self.v_task_cfg[PageKey[self.v_cur_page]]
+  self.v_group_id = group_id
+  self.v_task_list = ShareRes.get_task_group(self.v_group_id)
+  if not self.v_task_list then
+    return
+  end
+  local new_task_data = {}
+  for _, task in pairs(self.v_task_list) do
+    local task_data = TaskMgr:get_task_by_id(task.Id)
+    if task_data then
+      if task_data.state == TASK_STATE.receive then
+        task_data.sort_index = 0
+      elseif task_data.state == TASK_STATE.received then
+        task_data.sort_index = 2
+      else
+        task_data.sort_index = 1
+      end
+      task_data.task_group_cfg = task
+      table.insert(new_task_data, task_data)
+    end
+  end
+  table.sort(new_task_data, function(a, b)
+    local a_priority = a.task_cfg.Priority
+    local b_priority = b.task_cfg.Priority
+    if a.sort_index == b.sort_index then
+      if a_priority == b_priority then
+        return a.id < b.id
+      else
+        return a_priority < b_priority
+      end
+    end
+    return a.sort_index < b.sort_index
+  end)
+  self:clear_wrap_items()
+  self:give_back_auto_cache(CONTENT_TASKTEM_TEMP_KEY)
+  self:give_back_auto_cache(CONTENT_TASKTEM_AWARD_TEMP_KEY)
+  self.v_task_items = {}
+  for _, task in pairs(new_task_data) do
+    local task_id = task.id
+    local task_data = TaskMgr:get_task_by_id(task_id)
+    if task_data then
+      local task_ui = self:get_auto_cache(CONTENT_TASKTEM_TEMP_KEY)
+      local item = TASK_ITEM_CLASS:ui_wrap_ex(self, task_ui, true)
+      item:set_data(self.v_activity_id, task_id, function()
+        self:ui_hide()
+      end, true)
+      self.v_task_items[task_id] = item
+    end
+  end
+  local task_content_trans = Util.get_rect_transform(nil, self.v_uiobjects.Content)
+  local x = task_content_trans.anchoredPosition.x
+  task_content_trans.transform:SetAnchoredPositionA(x, 0)
+end
+
+function ui:click_get_award_btn(task_id)
+  local task_data = TaskMgr:get_task_by_id(task_id)
+  if task_data.state ~= TASK_STATE.receive then
+    return
+  end
+  self:play_task_finish_anim(task_id)
+end
+
+function ui:refresh_task_view()
+  if not self.v_task_items then
+    return
+  end
+  for task_id, item in pairs(self.v_task_items) do
+    item:refresh_task_get_state(task_id)
+  end
+end
+
+function ui:play_task_finish_anim(task_id)
+  if self.v_blocker then
+    return
+  end
+  if not self.v_task_items then
+    return
+  end
+  for _task_id, item in pairs(self.v_task_items) do
+    if task_id == _task_id then
+      self.v_blocker = true
+      item:play_finish_anim(task_id)
+      self:clear_timer()
+      self.v_anim_timer = Timer:add_timer("monkey_typer_task_item_timer", 0.2, function()
+        self.v_blocker = false
+        TaskMgr:submit_task(task_id, function()
+          self:refresh_list()
+        end)
+      end)
+      return
+    end
+  end
+end
+
+function ui:clear_wrap_items()
+  if self.v_task_items then
+    for task_id, item in pairs(self.v_task_items) do
+      item:clear_wrap_items()
+      item:ui_hide()
+      item:ui_destroy()
+      self.v_task_items[task_id] = nil
+    end
+    self.v_task_items = nil
+  end
+end
+
+function ui:clear_timer()
+  if self.v_anim_timer then
+    Timer:remove_timer(self.v_anim_timer)
+    self.v_anim_timer = nil
+  end
+end
+
+function ui:get_award_item()
+  return self:get_auto_cache(CONTENT_TASKTEM_AWARD_TEMP_KEY)
+end
+
+function ui:check_close()
+  NoviceMgr:check_close_activity_ui(self.v_activity_id, self.v_ui_name)
+end
+
+return ui

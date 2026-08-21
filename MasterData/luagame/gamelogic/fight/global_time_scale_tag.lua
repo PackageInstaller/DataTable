@@ -1,0 +1,12 @@
+local Base = require("gamelogic.fight.simple_tag_base")
+local M = Util.create_child_mt(Base)
+
+function M:set_time_scale_info(time_scale)
+  self.v_time_scale = time_scale
+end
+
+function M:get_time_scale()
+  return self.v_time_scale
+end
+
+return M

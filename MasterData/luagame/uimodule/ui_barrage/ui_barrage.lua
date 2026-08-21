@@ -1,0 +1,335 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {}
+local total_row = 5
+local barrage_key = "barrage_key"
+local cost_move_speed = 200
+local move_speed = 0
+local interval_time = 0
+local curr_time = 10
+local row_last_text_index = {}
+local is_pause = false
+local curr_gift_time = 0
+local curr_gift_interval = 0
+local gift_info_list = {
+  {is_need_show_gift = true, gift_interval = 1},
+  {
+    is_need_show_gift = true,
+    random_min_num = 3,
+    random_max_num = 5
+  },
+  {is_need_show_gift = false}
+}
+local curr_gift_info
+local gift_count_list = {
+  0,
+  0,
+  0,
+  0
+}
+local last_gift_index = 0
+local last_gift_item_index = 0
+local gift_item_list
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self.v_canvas_group = Util.get_canvas_group(nil, self.v_uiobjects.TextContainer)
+  self.v_canvas = Util.get_canvas(nil, self.v_object)
+  self:register_exist_auto_template(barrage_key, self.v_uiobjects.RawItem, self.v_uiobjects.TextContainer)
+  self:set_button("BtnConcern", function()
+    Util.show_message_tip(2236)
+  end)
+  self:refresh_gift_item_list()
+end
+
+function ui:ui_on_update(delta_time)
+  if is_pause then
+    return
+  end
+  if not self.v_text_data_list or 0 == #self.v_text_data_list then
+    return
+  end
+  if self.v_need_show_barrages and #self.v_need_show_barrages > 0 then
+    if curr_time >= interval_time then
+      self:get_barrage()
+      curr_time = 0
+    else
+      curr_time = curr_time + delta_time
+    end
+  end
+  for row_idx, row_list in pairs(self.v_text_data_list) do
+    for data_idx, text_data in pairs(row_list) do
+      if text_data.is_moving then
+        text_data.curr_pos.x = text_data.curr_pos.x - move_speed * delta_time
+        text_data.txt.transform.localPosition = text_data.curr_pos
+        self:try_reset_text_data(text_data)
+      end
+    end
+  end
+  if not curr_gift_info or not curr_gift_info.is_need_show_gift then
+    return
+  end
+  if curr_gift_interval <= 0 then
+    if curr_gift_info.gift_interval then
+      curr_gift_interval = curr_gift_info.gift_interval
+    else
+      curr_gift_interval = math.random(curr_gift_info.random_min_num, curr_gift_info.random_max_num)
+    end
+  end
+  if curr_gift_time >= curr_gift_interval then
+    if not curr_gift_info.gift_interval then
+      curr_gift_interval = 0
+    end
+    curr_gift_time = 0
+    self:refresh_gift_info()
+  else
+    curr_gift_time = curr_gift_time + delta_time
+  end
+end
+
+function ui:ui_on_show(story_id, barrages, barrage_type, alpha, speed)
+  self:refresh_data(story_id, barrages, barrage_type, alpha, speed, true)
+  self:refresh_fight_task_ui()
+  self:register_listener()
+end
+
+function ui:register_listener()
+  self:bind_auto_mq(Const.MSG_ON_GAME_PAUSE, self.on_game_pause, self)
+end
+
+function ui:on_game_pause(msg)
+  self:set_alpha_with_other_ui(msg.mm_x)
+end
+
+function ui:refresh_data(story_id, barrages, barrage_type, alpha, speed, is_init)
+  barrage_type = barrage_type or 0
+  alpha = alpha or 1
+  speed = speed or cost_move_speed
+  self.v_barrage_type = barrage_type
+  move_speed = speed
+  self.v_alpha = alpha
+  if 0 == self.v_barrage_type then
+    interval_time = 0.2
+  elseif 1 == self.v_barrage_type then
+    interval_time = 1.5
+  elseif 2 == self.v_barrage_type then
+    interval_time = 2.5
+  end
+  self:refresh_alpha()
+  if self.v_story_id ~= story_id then
+    self.v_story_id = story_id
+    if is_init then
+      self:refresh_text_list()
+    end
+    self.v_total_barrages = barrages
+    self:reset_need_show_barrages()
+  end
+  if self.v_barrage_type >= #gift_info_list then
+    Log.Error("弹幕类型大于礼物信息列表长度,需要在gift_info_list中添加新的类型数据")
+    curr_gift_info = gift_info_list[2]
+  else
+    curr_gift_info = gift_info_list[self.v_barrage_type + 1]
+  end
+  self:refresh_gift_ui()
+end
+
+function ui:refresh_text_list()
+  self:give_back_auto_cache(barrage_key)
+  self.v_text_data_list = {}
+  for row_index = 1, total_row do
+    local barrage_row_item = self:get_auto_cache(barrage_key)
+    local child_count = barrage_row_item.transform.childCount
+    for idx = 1, child_count do
+      local trans = barrage_row_item.transform:GetChild(idx - 1)
+      local txt = Util.get_text(nil, trans.gameObject)
+      local data = {}
+      if self.v_text_data_list[row_index] == nil then
+        self.v_text_data_list[row_index] = {}
+      end
+      local pos = txt.transform.localPosition
+      data.is_moving = false
+      data.txt = txt
+      data.obj = txt.transform.gameObject
+      data.init_pos = UnityVector3(pos.x, pos.y, pos.z)
+      data.curr_pos = UnityVector3(pos.x, pos.y, pos.z)
+      data.rect = Util.get_rect_transform(nil, txt.gameObject)
+      data.obj:SetActive(false)
+      table.insert(self.v_text_data_list[row_index], data)
+    end
+  end
+end
+
+function ui:refresh_alpha()
+  if not self.v_canvas_group then
+    return
+  end
+  self.v_canvas_group.alpha = self.v_alpha
+end
+
+function ui:reset_need_show_barrages()
+  self.v_need_show_barrages = {}
+  for i, content in pairs(self.v_total_barrages) do
+    table.insert(self.v_need_show_barrages, content)
+  end
+end
+
+function ui:get_barrage()
+  local text_data = self:get_text_data(1)
+  if not text_data then
+    return
+  end
+  local num = math.random(1, #self.v_need_show_barrages)
+  local tips = self.v_need_show_barrages[num]
+  text_data.txt.text = tips
+  text_data.is_moving = true
+  text_data.obj:SetActive(true)
+  table.remove(self.v_need_show_barrages, num)
+  if not self.v_need_show_barrages or 0 == #self.v_need_show_barrages then
+    self:reset_need_show_barrages()
+  end
+end
+
+function ui:get_text_data(depth)
+  if depth > 10 then
+    return nil
+  end
+  local row = math.random(1, total_row)
+  local txt_list = self.v_text_data_list[row]
+  for idx, text_data in ipairs(txt_list) do
+    local is_moving = text_data.is_moving
+    if not is_moving then
+      if 1 == idx then
+        row_last_text_index[row] = idx
+        return text_data
+      else
+        local is_effective = self:check_text_last_char(txt_list[row_last_text_index[row]])
+        if is_effective then
+          row_last_text_index[row] = idx
+          return text_data
+        else
+          return self:get_text_data(depth + 1)
+        end
+      end
+    end
+  end
+  return self:get_text_data(depth + 1)
+end
+
+function ui:check_text_last_char(text_data)
+  local txt_width = text_data.rect.sizeDelta.x
+  if txt_width < text_data.init_pos.x - text_data.txt.transform.localPosition.x then
+    return true
+  end
+  return false
+end
+
+function ui:try_reset_text_data(text_data)
+  local screen_width = Global.screen_width
+  local txt_width = text_data.rect.sizeDelta.x
+  if math.abs(text_data.init_pos.x - text_data.txt.transform.localPosition.x) > screen_width + txt_width then
+    self:reset_text_data(text_data)
+  end
+end
+
+function ui:reset_text_data(text_data)
+  text_data.is_moving = false
+  text_data.txt.transform.localPosition = UnityVector3(text_data.init_pos.x, text_data.init_pos.y, text_data.init_pos.z)
+  text_data.curr_pos = UnityVector3(text_data.init_pos.x, text_data.init_pos.y, text_data.init_pos.z)
+  text_data.obj:SetActive(false)
+end
+
+function ui:ui_on_hide()
+  self:clear_data()
+  self:refresh_fight_task_ui(true)
+end
+
+function ui:clear_data()
+  for row_idx, row_list in pairs(self.v_text_data_list) do
+    for data_idx, text_data in pairs(row_list) do
+      self:reset_text_data(text_data)
+    end
+  end
+  row_last_text_index = {}
+  self.v_story_id = nil
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_alpha_with_other_ui(is_other_ui_open)
+  if not self.v_canvas then
+    return
+  end
+  self.v_canvas.enabled = not is_other_ui_open
+  is_pause = is_other_ui_open
+end
+
+function ui:refresh_fight_task_ui(is_normal)
+  local ui_fight = UIMgr:try_get_ui("fight")
+  if not ui_fight then
+    return
+  end
+  ui_fight:refresh_fight_task_ui(is_normal)
+end
+
+function ui:refresh_gift_ui()
+  for i = 1, #gift_item_list do
+    gift_item_list[i].obj:SetActive(curr_gift_info.is_need_show_gift)
+    gift_item_list[i].canvas_group.alpha = 0
+  end
+  self.v_uiobjects.BtnConcern:SetActive(true)
+end
+
+function ui:refresh_gift_info()
+  local index = math.random(1, #gift_count_list)
+  local gift_count = gift_count_list[index]
+  gift_count = gift_count + 1
+  gift_count_list[index] = gift_count
+  local gift_item_index
+  if 0 == last_gift_item_index then
+    gift_item_index = 1
+  else
+    gift_item_index = last_gift_item_index + 1
+    if gift_item_index > #gift_item_list then
+      gift_item_index = 1
+    end
+  end
+  if index == last_gift_index then
+    gift_item_index = last_gift_item_index
+  end
+  self:refresh_gift_count(index, gift_count, gift_item_index)
+  last_gift_index = index
+  last_gift_item_index = gift_item_index
+end
+
+function ui:refresh_gift_count(gift_index, gift_count, gift_item_index)
+  local item = gift_item_list[gift_item_index]
+  self.v_sequence = Util.create_sequence()
+  self:refresh_gift_icon(item.icon, gift_index)
+  item.text.text = Util.format_str("x{1}", gift_count)
+  item.canvas_group.alpha = 0
+  self.v_sequence:Append(item.canvas_group:DOFade(1, 0.4))
+end
+
+function ui:refresh_gift_icon(icon, icon_index)
+  local icon_path = Util.format_str("UISPStageBattle1/Fight_icon_zblw{1}", icon_index)
+  ResMgr:load_set_icon(icon, icon_path)
+end
+
+function ui:refresh_gift_item_list()
+  gift_item_list = {}
+  for i = 1, 2 do
+    local obj = self.v_uiobjects["GiftObj" .. i]
+    local icon = self.v_uicompents["GiftIcon" .. i .. "_img"]
+    local text = self.v_uicompents["GiftCount" .. i .. "_txt"]
+    local data = {}
+    data.obj = obj
+    data.canvas_group = Util.get_canvas_group(nil, obj)
+    data.icon = icon
+    data.text = text
+    table.insert(gift_item_list, data)
+  end
+end
+
+return ui

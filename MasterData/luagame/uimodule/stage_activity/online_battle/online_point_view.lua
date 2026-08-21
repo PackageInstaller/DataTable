@@ -1,0 +1,109 @@
+local Base = require("ui.uiobject")
+local CHAPTER_POINT_ITEM_CLASS = require("uimodule.stage_activity.online_battle.online_point_item")
+local CommonDef = require("cs_share.common_define")
+local ui = Util.create_child_mt(Base)
+local _insert = table.insert
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show(chapter_id, points, fight_type, ...)
+  if chapter_id then
+    self.v_chapter_id = chapter_id
+    local chapter_cfg = ShareRes.get_chapter_cfg(self.v_chapter_id)
+    self.v_point_data = chapter_cfg.Point
+  else
+    self.v_point_data = points
+    self.v_fight_type = fight_type
+  end
+  self:refresh_chapter_point_list()
+end
+
+function ui:ui_on_hide()
+  self.v_point_data = nil
+  self:clear_chapter_point_list()
+end
+
+function ui:clear_chapter_point_list()
+  if self.v_chapter_point_list then
+    self:remove_wrap_ui_list(self.v_chapter_point_list)
+  end
+end
+
+function ui:refresh_chapter_point_list()
+  self:clear_chapter_point_list()
+  self.v_chapter_point_list = {}
+  for i = 1, 10 do
+    local point_id = self.v_point_data[i]
+    local item_obj = self.v_uiobjects["StageTem" .. i]
+    if point_id and 0 ~= point_id then
+      local lua_obj = CHAPTER_POINT_ITEM_CLASS:ui_wrap_ex(self, item_obj, false)
+      lua_obj:set_enable(true, point_id)
+      _insert(self.v_chapter_point_list, lua_obj)
+    else
+      item_obj:SetActive(false)
+    end
+  end
+  self:update_cur_fight_mark()
+end
+
+function ui:check_point_open(point_id)
+  if self.v_fight_type == CommonDef.CHALLENGE_TYPE.BEST_CONF then
+    return self:_check_best_point_open(point_id)
+  elseif self.v_fight_type == CommonDef.CHALLENGE_TYPE.CHALLENGE_RING then
+    return self:_check_online_point_open(point_id)
+  end
+  return self:_check_chapter_point_open(point_id)
+end
+
+function ui:_check_best_point_open(point_id)
+  return true
+end
+
+function ui:_check_online_point_open(point_id)
+end
+
+function ui:_check_chapter_point_open(point_id)
+  local point_cfg = ShareRes.get_chapter_point_cfg(point_id)
+  local condition = Condition:check_condition(point_cfg.Condition)
+  if not condition then
+    return
+  end
+  local FrontPointId = point_cfg.FrontPointId
+  if 0 ~= FrontPointId then
+    local no_first_suc = ChapterMgr:check_no_first_suc_by_point_id(self.v_chapter_id, FrontPointId)
+    if no_first_suc then
+      return
+    end
+  end
+  return true
+end
+
+function ui:update_cur_fight_mark()
+  if self.v_fight_type == CommonDef.CHALLENGE_TYPE.BEST_CONF then
+    self:_set_best_point_mark()
+  elseif self.v_fight_type == CommonDef.CHALLENGE_TYPE.ONLINE_BATTLE then
+    return self:_set_online_point_mark()
+  else
+    self:_set_chapter_point_mark()
+  end
+end
+
+function ui:_set_best_point_mark()
+end
+
+function ui:_set_online_point_mark()
+end
+
+function ui:_set_chapter_point_mark()
+  local cur_fight_index = ChapterMgr:get_cur_fight_index(self.v_chapter_id)
+  if not cur_fight_index then
+    return
+  end
+  local lua_obj = self.v_chapter_point_list[cur_fight_index]
+  if lua_obj then
+    lua_obj:refresh_mark_state(true)
+  end
+end
+
+return ui

@@ -1,0 +1,37 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:set_data(go, data_list, index)
+  local use_data = data_list[index]
+  local cfg = use_data.cfg
+  local uicom = self.v_uicompents
+  self.v_data = use_data
+  self.v_puzzle_id = cfg.Id
+  ResMgr:load_set_icon(uicom.ItemIcon_img, ShareRes.get_item_icon_path(cfg.Id))
+  uicom.PluginsName_txt.text = cfg.Name
+  self.v_uiobjects.RedPoint:SetActive(use_data.puzzle_isred)
+  self.v_uiobjects.NoGet:SetActive(not use_data.puzzle_isunlock)
+  self:update_selected()
+  local btn = Util.get_button(nil, self.v_object)
+  self:set_button_listener(btn, function()
+    self.v_parent_ui:click_item(use_data.id)
+  end)
+end
+
+function ui:set_linked_parent(parent_ui)
+  self.v_parent_ui = parent_ui
+end
+
+function ui:update_selected()
+  local selected = self.v_parent_ui:get_selected_puzzle_id() == self.v_puzzle_id
+  self.v_uiobjects.Select:SetActiveEx(selected)
+  if selected and self.v_data then
+    if self.v_data.puzzle_isred then
+      self.v_data.puzzle_isred = false
+      ArchiveMgr:req_click_action(ArchiveMgr.CommonDefind.ARCH_TYPE.PUZZLE_SYS, self.v_puzzle_id)
+    end
+    self.v_uiobjects.RedPoint:SetActive(false)
+  end
+end
+
+return ui

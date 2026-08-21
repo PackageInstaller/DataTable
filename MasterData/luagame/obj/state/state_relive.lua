@@ -1,0 +1,19 @@
+local Base = require("obj.state.state_obj_base")
+local M = Util.create_child_mt(Base)
+
+function M:state_on_enter()
+  Base.state_on_enter(self)
+  self:try_action_auto_leave("relive")
+  if self.v_owner.uicomponent then
+    self.v_owner.uicomponent:update_name()
+  end
+  if self.v_owner:is_hero() and Global.camera then
+    Global.camera:update_angle_by_target()
+  end
+end
+
+function M:state_get_name()
+  return Config.STATE_NAME.relive
+end
+
+return M

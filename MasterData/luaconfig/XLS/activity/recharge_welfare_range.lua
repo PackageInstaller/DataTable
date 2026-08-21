@@ -1,0 +1,20 @@
+return {
+  {
+    Id = 1,
+    LowerBound = 0,
+    Ratio = 20,
+    UpperBound = 2000
+  },
+  {
+    Id = 2,
+    LowerBound = 2000,
+    Ratio = 15,
+    UpperBound = 3000
+  },
+  {
+    Id = 3,
+    LowerBound = 3000,
+    Ratio = 13,
+    UpperBound = 999999999
+  }
+}

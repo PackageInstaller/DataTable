@@ -1,0 +1,26 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:set_button("BtnBag", function()
+    self:_on_click_bag_btn()
+  end)
+  self:bind_auto_mq(Const.MSG_ON_FIGHT_BAG_ITEM_UPDATE, self.ui_on_show, self)
+end
+
+function ui:ui_on_show()
+  self.v_uicompents.ItemNow_txt.text = FightBagMgr:get_used_capacity()
+  self.v_uicompents.ItemMax_txt.text = FightBagMgr:get_bag_capacity()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:_on_click_bag_btn()
+  UIMgr:get_ui("battle_drop_item"):ui_show()
+end
+
+return ui

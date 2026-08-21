@@ -1,0 +1,60 @@
+local M = Util.create_class()
+
+function M:_init(tag_type, index)
+  self.tag_type = tag_type
+  self.index = index
+  self.v_is_destroy = nil
+end
+
+function M:set_role_info(uuid)
+  self.role_uuid = uuid
+end
+
+function M:set_timer_info(timer_type, end_time)
+  self.v_need_update = timer_type and timer_type ~= Config.SIMPLE_TAG_TIMER_TYPE.NONE
+  self.timer_type = timer_type
+  self.v_end_time = end_time
+end
+
+function M:update_timer(time)
+  if not self.v_need_update then
+    return
+  end
+  if time >= self.v_end_time then
+    self:timer_count_done()
+  end
+end
+
+function M:timer_count_done()
+  self.v_timer_count_done = true
+end
+
+function M:is_timer_done()
+  return self.v_timer_count_done
+end
+
+function M:set_mark_remove()
+  self.v_mark_remove = true
+end
+
+function M:is_mark_remove()
+  return self.v_mark_remove
+end
+
+function M:is_destroy()
+  return self.v_is_destroy
+end
+
+function M:on_destroy()
+  self.tag_type = nil
+  self.index = nil
+  self.v_need_update = nil
+  self.timer_type = nil
+  self.role_uuid = nil
+  self.v_end_time = nil
+  self.v_timer_count_done = nil
+  self.v_mark_remove = nil
+  self.v_is_destroy = true
+end
+
+return M

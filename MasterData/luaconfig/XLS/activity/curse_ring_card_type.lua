@@ -1,0 +1,152 @@
+return {
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "阻挡你的，必须尝试通过",
+    Icon = "FateBook/Event_bg_gnp_zd",
+    Id = 1,
+    Name = "战 斗",
+    RemoveType = 1,
+    ShowPriority = 90,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt1"
+  },
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "更好的机遇需要更大的勇气",
+    Icon = "FateBook/Event_bg_gnp_gjzd",
+    Id = 2,
+    Name = "强敌",
+    RemoveType = 1,
+    ShowPriority = 80,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt2"
+  },
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "只要努力，就能获得收益",
+    Icon = "FateBook/Event_bg_gnp_zd",
+    Id = 3,
+    Name = "资 源",
+    RemoveType = 1,
+    ShowPriority = 70,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt1"
+  },
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "必须击败它，才有逃离的资本",
+    Icon = "FateBook/Event_bg_gnp_boss",
+    Id = 4,
+    Name = "钥 匙",
+    RemoveType = 1,
+    ShowPriority = 20,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt3"
+  },
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "这是提升的途径",
+    Icon = "FateBook/Event_bg_gnp_zd",
+    Id = 5,
+    Name = "符文商店",
+    RemoveType = 2,
+    ShowPriority = 60,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt1"
+  },
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "这是提升的途径",
+    Icon = "FateBook/Event_bg_gnp_zd",
+    Id = 6,
+    Name = "奇珍商店",
+    RemoveType = 2,
+    ShowPriority = 40,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt1"
+  },
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "需要付出一点什么",
+    Icon = "FateBook/Event_bg_gnp_zd",
+    Id = 7,
+    Name = "治 疗",
+    RemoveType = 2,
+    ShowPriority = 30,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt1"
+  },
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "这是提升的途径",
+    Icon = "FateBook/Event_bg_gnp_zd",
+    Id = 8,
+    Name = "锻造升级",
+    RemoveType = 2,
+    ShowPriority = 50,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt1"
+  },
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "这是提升的途径",
+    Icon = "FateBook/Event_bg_gnp_zd",
+    Id = 9,
+    Name = "锻造词条",
+    RemoveType = 2,
+    ShowPriority = 10,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt1"
+  },
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "点击通过当前环",
+    Icon = "FateBook/Event_bg_gnp_zd",
+    Id = 10,
+    Name = "门 卡",
+    RemoveType = 1,
+    ShowPriority = 1,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt1"
+  },
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "好的开始是成功的一半",
+    Icon = "FateBook/Event_bg_gnp_rw",
+    Id = 11,
+    Name = "任 务",
+    RemoveType = 2,
+    ShowPriority = 2,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt7"
+  },
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "前方危险，做足准备前进",
+    Icon = "FateBook/Event_bg_gnp_zb",
+    Id = 12,
+    Name = "休 整",
+    RemoveType = 2,
+    ShowPriority = 3,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt4"
+  },
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "前方危险，做足准备前进",
+    Icon = "FateBook/Event_bg_gnp_sj",
+    Id = 13,
+    Name = "事件牌",
+    RemoveType = 2,
+    ShowPriority = 4,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt5"
+  },
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "小游戏牌",
+    Icon = "FateBook/Event_bg_gnp_game",
+    Id = 14,
+    Name = "小游戏牌",
+    RemoveType = 1,
+    ShowPriority = 5,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt6"
+  },
+  {
+    Bg = "FateBook/Event_bg_zjm_gnd",
+    Desc = "交易章节",
+    Icon = "FateBook/Event_bg_gnp_shop",
+    Id = 15,
+    Name = "交易",
+    RemoveType = 2,
+    ShowPriority = 6,
+    TypeIcon = "FateBook/Event_bg_zjm_gnbt8"
+  }
+}

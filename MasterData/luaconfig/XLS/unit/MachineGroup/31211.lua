@@ -1,0 +1,40 @@
+local empty = {}
+return {
+  unitList = {
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      Camp = 4,
+      UnitID = 3002002,
+      InitPos = "trap1",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "1_31211_0",
+      AutoLevel = 0,
+      Delay = 0.0
+    },
+    {
+      Rotate = 0.0,
+      IsEdit = true,
+      IsShow = false,
+      IsNoUse = false,
+      Camp = 4,
+      UnitID = 3002002,
+      InitPos = "trap2",
+      OffSetX = 0.0,
+      OffSetZ = 0.0,
+      Level = 0,
+      IsChange = false,
+      UnitKey = "1_31211_1",
+      AutoLevel = 0,
+      Delay = 0.0
+    }
+  },
+  Name = "31221",
+  Id = 31211,
+  Type = 1
+}

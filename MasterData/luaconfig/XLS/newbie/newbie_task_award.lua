@@ -1,0 +1,44 @@
+return {
+  {
+    AwardGoupId = 20001,
+    Id = 1,
+    Progress = 5,
+    TaskId = 20001
+  },
+  {
+    AwardGoupId = 20002,
+    Id = 2,
+    Progress = 10,
+    TaskId = 20002
+  },
+  {
+    AwardGoupId = 20003,
+    Id = 3,
+    Progress = 15,
+    TaskId = 20003
+  },
+  {
+    AwardGoupId = 20004,
+    Id = 4,
+    Progress = 20,
+    TaskId = 20004
+  },
+  {
+    AwardGoupId = 20005,
+    Id = 5,
+    Progress = 25,
+    TaskId = 20005
+  },
+  {
+    AwardGoupId = 20006,
+    Id = 6,
+    Progress = 30,
+    TaskId = 20006
+  },
+  {
+    AwardGoupId = 20007,
+    Id = 7,
+    Progress = 35,
+    TaskId = 20007
+  }
+}

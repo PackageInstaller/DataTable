@@ -1,0 +1,185 @@
+local M = Util.create_class()
+local ENAMY_TAR = 4
+local LOCK_EFFECT_NAME = "Fx_PreLockEnemy"
+local SEARCH_RANGE = 99
+local SEARCH_ANGLE = 55.0
+local CLICK_JUGE_TIME = 0.2
+local LOCK_TAR_CODE = Config.INPUT_CODE.INPUT_LOCK_TAR
+local _get_vec2_angle = require("base.mathx").get_vec2_angle
+local _abs = math.abs
+local indicator_cfg = {
+  type = 5,
+  res = "Fx_skillarea_N3",
+  with_line = true,
+  sizex = 2,
+  sizey = 2
+}
+local area_cfg = {type = 1, sizex = 9}
+
+function M:_init(ui_fight)
+  self.v_press_time = 0
+  self.ui_fight = ui_fight
+  self:set_enable(true)
+end
+
+function M:get_indicator_cfg()
+  return area_cfg, indicator_cfg
+end
+
+function M:get_force_target()
+  return self.v_selected_tar
+end
+
+function M:clear_target()
+  self:_set_cur_target(nil)
+  self.v_selected_tar = nil
+end
+
+function M:_set_cur_target(tar)
+  if tar and not tar:is_destroy() then
+    self.v_cur_tar = tar
+    self.v_tar_attach_point = tar:get_setting_point("Bip001 Chest") or tar.transform
+  else
+    self.v_cur_tar = nil
+    self.v_tar_attach_point = nil
+  end
+end
+
+function M:switch_range_target()
+  if not Global.hero then
+    return
+  end
+  local range_list = SceneMgr:get_in_range_targets(Global.hero, ENAMY_TAR, SEARCH_RANGE)
+  table.sort(range_list, function(c1, c2)
+    if c1.temp_sign_search_dist ~= c2.temp_sign_search_dist then
+      return c1.temp_sign_search_dist < c2.temp_sign_search_dist
+    end
+    return c1.uuid > c2.uuid
+  end)
+  local list_len = #range_list
+  if 0 == list_len then
+    return
+  end
+  for i = 1, list_len do
+    range_list[i].temp_sign_search_dist = nil
+  end
+  local cur_pos = self.v_cur_select_pos
+  local next_pos = cur_pos % list_len + 1
+  local next_tar = range_list[next_pos]
+  if next_tar == self.v_cur_tar or next_tar == Global.hero:get_target() then
+    next_pos = next_pos % list_len + 1
+    next_tar = range_list[next_pos]
+  end
+  self:_set_cur_target(next_tar)
+  self.v_cur_select_pos = next_pos
+end
+
+function M:get_dir_target(tar_x, tar_z)
+  local char_pos = Global.hero:get_pos_vec3()
+  local next_select
+  local all_npc = SceneMgr:get_all_npc()
+  local px, py, deg
+  local min_deg = 360
+  for _, npc in pairs(all_npc) do
+    px, py = npc:get_pos2()
+    deg = _abs(_get_vec2_angle(char_pos.x, char_pos.z, tar_x, tar_z, px, py))
+    if min_deg > deg and deg < SEARCH_ANGLE then
+      min_deg = deg
+      next_select = npc
+    end
+  end
+  self:_set_cur_target(next_select)
+end
+
+function M:set_enable(enbale)
+  if self.v_enable == enbale then
+    return
+  end
+  self.v_enable = enbale
+  if enbale then
+    self:on_enable()
+  else
+    self:on_disable()
+  end
+end
+
+function M:on_enable()
+  self.v_target_cache = {}
+  self:_set_cur_target(nil)
+  self.v_selected_tar = nil
+  self.v_cur_select_pos = 0
+  Global.res_pool_mgr:get_shadow_async(LOCK_EFFECT_NAME, function(gameobj)
+    self.v_effect_obj = gameobj
+    self.v_effect_obj:SetActiveEx(false)
+  end)
+end
+
+function M:update()
+  if self.v_cur_tar and self.v_cur_tar:is_die() then
+    self:clear_target()
+  end
+  if self.v_selected_tar and self.v_selected_tar:is_die() then
+    self.v_selected_tar = nil
+  end
+  if self.v_pressed then
+    self.v_press_time = self.v_press_time + Global.delta_time
+    if self.v_press_time > CLICK_JUGE_TIME then
+      self:set_search_show(true)
+      local tar_x, tar_z = self.ui_fight:get_indicator_pos(LOCK_TAR_CODE)
+      self:_set_cur_target(indicator_cfg.tar)
+      self.v_effect_obj:SetActiveEx(self.v_cur_tar ~= nil)
+    end
+  end
+  if self.v_cur_tar and self.v_effect_obj then
+    local pos = self.v_tar_attach_point.position
+    self.v_effect_obj.transform:SetPositionA(pos.x, pos.y, pos.z)
+  end
+end
+
+function M:on_btn_down()
+  self.v_pressed = true
+  self.v_press_time = 0
+end
+
+function M:set_search_show(param)
+  if self.v_show_status == param then
+    return
+  end
+  self.v_show_status = param
+  self.ui_fight:set_indicator_active(LOCK_TAR_CODE, param)
+end
+
+function M:on_btn_up(is_cancle)
+  self.v_pressed = nil
+  if self.v_press_time < CLICK_JUGE_TIME then
+    self:switch_range_target()
+    is_cancle = false
+  end
+  if self.v_effect_obj then
+    self.v_effect_obj:SetActiveEx(false)
+  end
+  self:set_search_show(false)
+  if is_cancle then
+    self.v_selected_tar = nil
+  else
+    self.v_selected_tar = self.v_cur_tar
+  end
+  self:_set_cur_target(nil)
+  self.v_press_time = 0
+end
+
+function M:on_disable()
+  self.v_target_cache = nil
+  self:clear_target()
+  if self.v_effect_obj then
+    Global.res_pool_mgr:release(self.v_effect_obj)
+    self.v_effect_obj = nil
+  end
+end
+
+function M:on_destroy()
+  self:on_disable()
+  self.ui_fight = nil
+end
+
+return M

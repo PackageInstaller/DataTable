@@ -1,0 +1,70 @@
+return {
+  [101] = {
+    {
+      EntryId = 1001,
+      GroupID = 101,
+      Id = 1,
+      Weight = 100
+    },
+    {
+      EntryId = 1002,
+      GroupID = 101,
+      Id = 2,
+      Weight = 200
+    },
+    {
+      EntryId = 1003,
+      GroupID = 101,
+      Id = 3,
+      Weight = 300
+    },
+    {
+      EntryId = 1004,
+      GroupID = 101,
+      Id = 4,
+      Weight = 4
+    },
+    {
+      EntryId = 1005,
+      GroupID = 101,
+      Id = 5,
+      Weight = 5
+    },
+    {
+      EntryId = 1006,
+      GroupID = 101,
+      Id = 6,
+      Weight = 6
+    },
+    {
+      EntryId = 1007,
+      GroupID = 101,
+      Id = 7,
+      Weight = 7
+    },
+    {
+      EntryId = 1008,
+      GroupID = 101,
+      Id = 8,
+      Weight = 8
+    },
+    {
+      EntryId = 1009,
+      GroupID = 101,
+      Id = 9,
+      Weight = 9
+    },
+    {
+      EntryId = 1012,
+      GroupID = 101,
+      Id = 10,
+      Weight = 10
+    },
+    {
+      EntryId = 1013,
+      GroupID = 101,
+      Id = 11,
+      Weight = 11
+    }
+  }
+}

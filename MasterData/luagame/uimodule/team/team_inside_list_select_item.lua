@@ -1,0 +1,142 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local CommonDefine = require("cs_share.common_define")
+local minesweeper_misc_cfg = ShareRes.get_minesweeper_misc()
+
+function ui:ui_finish_load()
+  self:set_button("Btn", function()
+    self:click_char()
+  end)
+end
+
+function ui:ui_on_hide()
+  self.v_buddy_info = nil
+end
+
+function ui:set_linked_parent(parent)
+  self.v_linked_parent = parent
+end
+
+function ui:set_data(buddy_info)
+  self.v_buddy_info = buddy_info.info
+  self.v_robot_info = buddy_info.robot_info
+  self.v_buddy_id = buddy_info.id
+  self.v_robot_id = buddy_info.robot_id
+  self.v_buddy_cfg = ShareRes.get_buddy_cfg(self.v_buddy_id)
+  self.v_is_ban = buddy_info.is_ban
+  self.v_is_weekly_used = buddy_info.is_weekly_used
+  self.v_is_fixed = buddy_info.is_fixed
+  self.v_is_assist = buddy_info.is_assist
+  self.v_team_pos = buddy_info.team_pos
+  self.v_fashion_id = buddy_info.fashion_id
+  self:refresh_quailty_icon()
+  self:refresh_element_icon()
+  self:refresh_char_icon()
+  self:refresh_lv_num()
+  self:refresh_mask()
+  self:refresh_minesweeper_cost()
+  self:update_selected()
+end
+
+function ui:refresh_quailty_icon()
+  local qual_val = self.v_buddy_cfg.Quality
+  local icon_path = ShareRes.get_buddy_qualityIcon_small_square(qual_val)
+  ResMgr:load_set_icon(self.v_uicompents.QualityBg_img, icon_path)
+end
+
+function ui:refresh_element_icon()
+  local icon_path = ShareRes.get_element_cfg(self.v_buddy_cfg.Element).ElementIconPath
+  ResMgr:load_set_icon(self.v_uicompents.EleIcon_img, icon_path)
+end
+
+function ui:refresh_char_icon()
+  local icon_path = UtilUI.get_hero_images(self.v_buddy_id, 1, self.v_fashion_id)
+  ResMgr:load_set_icon(self.v_uicompents.CharIcon_img, icon_path)
+end
+
+function ui:refresh_lv_num()
+  local is_self_buddy = self.v_buddy_info ~= nil
+  self.v_uiobjects.Lv:SetActive(is_self_buddy)
+  self.v_uiobjects.LvTxt:SetActive(is_self_buddy)
+  self.v_uiobjects.Trial:SetActive(not is_self_buddy)
+  if is_self_buddy then
+    self.v_uicompents.LvTxt_txt.text = self.v_buddy_info.lv
+  else
+    self.v_uicompents.Trial_txt.text = Util.format_str(self.v_is_assist and "助战" or "关卡试用")
+  end
+end
+
+function ui:refresh_mask()
+  local is_repeat = not self.v_is_ban and not self.v_is_weekly_used and not self.v_team_pos and self.v_linked_parent:check_buddy_repeat(self.v_buddy_id)
+  local show_mask = is_repeat or self.v_is_ban or self.v_is_weekly_used
+  self.v_uiobjects.Mask:SetActive(show_mask)
+  if show_mask then
+    self.v_uiobjects.Ban:SetActive(self.v_is_ban)
+    self.v_uiobjects.SameChar:SetActive(is_repeat)
+    self.v_uiobjects.Used:SetActive(self.v_is_weekly_used)
+  end
+end
+
+function ui:refresh_minesweeper_cost()
+  if self.v_parent_ui.fight_type == CommonDefine.CHALLENGE_TYPE.ACTIVITY_MINESWEEPER then
+    local record_buddy_list = MineSweeperMgr:get_minesweeper_record_buddy_list() or E
+    local recorded
+    for _, buddy_id in ipairs(record_buddy_list) do
+      if self.v_buddy_id == buddy_id then
+        recorded = true
+        break
+      end
+    end
+    if recorded then
+      self.v_uiobjects.ActMine:SetActiveEx(true)
+      self.v_uicompents.Num_txt.text = -minesweeper_misc_cfg.RepeatBuddyStamina
+    else
+      self.v_uiobjects.ActMine:SetActiveEx(false)
+    end
+  else
+    self.v_uiobjects.ActMine:SetActiveEx(false)
+  end
+end
+
+function ui:update_selected()
+  self.v_uiobjects.Select_Loop:SetActive(self.v_team_pos ~= nil)
+  self.v_uiobjects.Unlock:SetActive(self.v_team_pos ~= nil and not self.v_is_fixed)
+  self.v_uiobjects.Lock:SetActive(self.v_team_pos ~= nil and self.v_is_fixed)
+  if self.v_team_pos and not self.v_is_fixed then
+    self.v_uicompents.Number_txt.text = self.v_team_pos
+  end
+end
+
+function ui:click_char()
+  if self:check_click() then
+    self.v_team_pos = self.v_linked_parent:on_select_buddy(self.v_buddy_id, self.v_robot_id, self.v_team_pos)
+    self:update_selected()
+    self.v_linked_parent:refresh_item_mask()
+  end
+end
+
+function ui:check_click()
+  local tips_code
+  if self.v_is_assist then
+    tips_code = 2340
+  elseif self.v_is_fixed then
+    if self.v_team_pos ~= nil then
+      tips_code = 2341
+    else
+      tips_code = 2150
+    end
+  elseif self.v_is_weekly_used then
+    tips_code = 2149
+  elseif self.v_is_ban then
+    tips_code = 2151
+  elseif not self.v_team_pos and self.v_linked_parent:check_buddy_repeat(self.v_buddy_id) then
+    tips_code = 2342
+  end
+  if tips_code then
+    Util.show_message_tip(tips_code)
+    return false
+  end
+  return true
+end
+
+return ui

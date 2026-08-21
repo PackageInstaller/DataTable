@@ -1,0 +1,63 @@
+local TWEEN_EASE_OUT_EXPO = CS.DG.Tweening.Ease.OutExpo
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:set_button("TouchMask", function()
+    if not self.v_click_block then
+      self:ui_hide()
+    end
+  end)
+end
+
+function ui:ui_on_show(award_list)
+  self:register_event()
+  self.v_click_block = true
+  local uicom = self.v_uicompents
+  local award = award_list[1]
+  local id = award.id
+  local count = award.count
+  local item_config = ShareRes.get_item_cfg(id)
+  uicom.Name_txt.text = item_config.Name
+  uicom.Num_txt.text = "X" .. count
+  local path = ShareRes.get_item_icon_path(id)
+  ResMgr:load_set_icon(uicom.Icon_img, path)
+  local trans = uicom.ExtraReward_rect
+  local pos = trans.anchoredPosition
+  trans:SetAnchoredPositionA(0, pos.y)
+  local extra_width = trans.sizeDelta.x
+  self:clear_squence()
+  self.v_sequence = Util.create_sequence()
+  self.v_sequence:AppendInterval(0.5)
+  self.v_sequence:AppendCallback(function()
+    Util.show_message_tip(2222)
+  end)
+  self.v_sequence:Append(trans:DOAnchorPosX(-extra_width, 0.3):SetEase(TWEEN_EASE_OUT_EXPO))
+  self.v_sequence:AppendInterval(2)
+  self.v_sequence:AppendCallback(function()
+    self.v_click_block = false
+  end)
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_ON_HIDE_UI, self.on_hide_msg, self)
+end
+
+function ui:on_hide_msg(msg)
+  if msg.mm_obj == "award_show_panel" then
+    self:ui_hide()
+  end
+end
+
+function ui:clear_squence()
+  if self.v_sequence then
+    self.v_sequence:Kill(false)
+    self.v_sequence = nil
+  end
+end
+
+function ui:ui_on_hide()
+  self:clear_squence()
+end
+
+return ui

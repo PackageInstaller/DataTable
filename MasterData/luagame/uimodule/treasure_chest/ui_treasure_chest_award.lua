@@ -1,0 +1,70 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local UI_TREASURE_CHEST_AWARD_KEY = "UI_TREASURE_CHEST_AWARD_KEY"
+
+function ui:ui_finish_load()
+  self:set_button("BgClose", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(UI_TREASURE_CHEST_AWARD_KEY, self.v_uiobjects.AwardItem, self.v_uiobjects.ItemList)
+end
+
+function ui:ui_on_show(award_list)
+  award_list = BagMgr:get_sort_award_list(award_list)
+  self:refresh_award_list(award_list)
+  self:refresh_tips()
+end
+
+function ui:refresh_award_list(award_list)
+  self:give_back_auto_cache(UI_TREASURE_CHEST_AWARD_KEY)
+  for _, cfg in ipairs(award_list) do
+    local item_obj = self:get_auto_cache(UI_TREASURE_CHEST_AWARD_KEY)
+    self:set_data(item_obj, cfg)
+  end
+end
+
+function ui:set_data(item_obj, cfg)
+  local item_quality = Util.get_image("ItemQuality_", item_obj)
+  local item_icon = Util.get_image("ItemIcon_", item_obj)
+  local item_amount = Util.get_text("ItemAmount_/Bg/ItemNum_", item_obj)
+  local item_icon_path = ShareRes.get_item_icon_path(cfg.id)
+  local item_quality_path = ShareRes.get_item_quality_path(cfg.id)
+  item_amount.text = cfg.count
+  ResMgr:load_set_icon(item_icon, item_icon_path)
+  ResMgr:load_set_icon(item_quality, item_quality_path)
+  local btn = Util.get_button(nil, item_obj)
+  self:set_button_listener(btn, function()
+    UIMgr:get_ui("itemTip"):ui_show({
+      item_id = cfg.id,
+      is_exist_jump = false
+    })
+  end)
+end
+
+function ui:refresh_tips()
+  local box_id = TreasureChestMgr:get_last_building_box_id()
+  if not box_id or 0 == box_id then
+    self.v_uiobjects.GetBox:SetActive(false)
+    self.v_uiobjects.NoBox:SetActive(true)
+    return
+  end
+  self.v_uiobjects.GetBox:SetActive(true)
+  self.v_uiobjects.NoBox:SetActive(false)
+  local treasure_chest_cfg = ShareRes.create("episode_box.episode_box")
+  local group_id = treasure_chest_cfg[box_id].BoxGroup
+  local all_node_cfg = ShareRes.create("chapter.chapter_node")
+  local name
+  for _, node_cfg in pairs(all_node_cfg) do
+    if node_cfg.BoxGroupId == group_id then
+      name = node_cfg.TagNumName
+      break
+    end
+  end
+  self.v_uicompents.GetBox_txt.text = Util.format_str("预见者，外出探索的伙伴在<color=#D56D2E>关卡{1}</color>中帮你带回来了遗漏的宝箱，快来看看里面有什么好东西!", name)
+  TreasureChestMgr:reset_last_building_box_id()
+end
+
+function ui:ui_on_hide()
+end
+
+return ui

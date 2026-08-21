@@ -1,0 +1,16 @@
+local Base = require("obj.state.state_obj_base")
+local ACT_DEFINE = Config.ACT_DEFINE
+local M = Util.create_child_mt(Base)
+
+function M:state_update_value()
+end
+
+function M:state_get_name()
+  return Config.STATE_NAME.idle
+end
+
+function M:state_can_reenter()
+  return true
+end
+
+return M

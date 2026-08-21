@@ -1,0 +1,39 @@
+local Vec3 = require("base.vec3")
+local Quat = require("base.quat")
+local transform_state = {}
+transform_state.__index = transform_state
+
+function transform_state.New(vec3, quat)
+  local ts = {}
+  if vec3 then
+    ts.position = vec3:Clone()
+  else
+    ts.position = Vec3.New()
+  end
+  if quat then
+    ts.rotation = quat:Clone()
+  else
+    ts.rotation = Quat.New()
+  end
+  setmetatable(ts, transform_state)
+  return ts
+end
+
+function transform_state:SetA(vx, vy, vz, qx, qy, qz, qw)
+  self.position:Set(vx, vy, vz)
+  self.rotation:Set(qx, qy, qz, qw)
+end
+
+function transform_state:SetPositionA(x, y, z)
+  self.position:Set(x, y, z)
+end
+
+function transform_state:SetRotationA(x, y, z, w)
+  self.rotation:Set(x, y, z, w)
+end
+
+function transform_state:Clone()
+  return transform_state.New(self.position, self.rotation)
+end
+
+return transform_state

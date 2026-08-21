@@ -1,0 +1,422 @@
+return {
+  {
+    Award = 0,
+    Level = 1,
+    NeedEXP = 200,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 2,
+    NeedEXP = 250,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 3,
+    NeedEXP = 300,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 4,
+    NeedEXP = 350,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 5,
+    NeedEXP = 400,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 6,
+    NeedEXP = 450,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 7,
+    NeedEXP = 500,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 8,
+    NeedEXP = 550,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 9,
+    NeedEXP = 600,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 10,
+    NeedEXP = 660,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 11,
+    NeedEXP = 730,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 12,
+    NeedEXP = 800,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 13,
+    NeedEXP = 880,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 14,
+    NeedEXP = 960,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 15,
+    NeedEXP = 1050,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 16,
+    NeedEXP = 1150,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 17,
+    NeedEXP = 1250,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 18,
+    NeedEXP = 1350,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 19,
+    NeedEXP = 1450,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 20,
+    NeedEXP = 1600,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 21,
+    NeedEXP = 1750,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 22,
+    NeedEXP = 1900,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 23,
+    NeedEXP = 2050,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 24,
+    NeedEXP = 2200,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 25,
+    NeedEXP = 2350,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 26,
+    NeedEXP = 2500,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 27,
+    NeedEXP = 2650,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 28,
+    NeedEXP = 2800,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 29,
+    NeedEXP = 3000,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 30,
+    NeedEXP = 3200,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 31,
+    NeedEXP = 3500,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 32,
+    NeedEXP = 3800,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 33,
+    NeedEXP = 4100,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 34,
+    NeedEXP = 4500,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 35,
+    NeedEXP = 5000,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 36,
+    NeedEXP = 5500,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 37,
+    NeedEXP = 6000,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 38,
+    NeedEXP = 6500,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 39,
+    NeedEXP = 7000,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 40,
+    NeedEXP = 7500,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 41,
+    NeedEXP = 8000,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 42,
+    NeedEXP = 8600,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 43,
+    NeedEXP = 9200,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 44,
+    NeedEXP = 9800,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 45,
+    NeedEXP = 10400,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 46,
+    NeedEXP = 11000,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 47,
+    NeedEXP = 11600,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 48,
+    NeedEXP = 12200,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 49,
+    NeedEXP = 12800,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 50,
+    NeedEXP = 14500,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 51,
+    NeedEXP = 19200,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 52,
+    NeedEXP = 25650,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 53,
+    NeedEXP = 33600,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 54,
+    NeedEXP = 45800,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 55,
+    NeedEXP = 57100,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 56,
+    NeedEXP = 72000,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 57,
+    NeedEXP = 82460,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 58,
+    NeedEXP = 96500,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 59,
+    NeedEXP = 120000,
+    RecAward = 0,
+    RecLimit = 240
+  },
+  {
+    Award = 0,
+    Level = 60,
+    NeedEXP = 0,
+    RecAward = 0,
+    RecLimit = 240
+  }
+}

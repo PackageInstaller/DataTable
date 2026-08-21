@@ -1,0 +1,61 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local SaticSv = require("ui.widget.static_scroll_view")
+local ItemClass = require("uimodule.collection.local_widgets.collection_item")
+local ItemKey = "CHAPTER_COLLECTION_ITEM_KEY"
+local _sort = table.sort
+local _insert = table.insert
+
+function M:ui_finish_load()
+  local obj = self.v_object.obj
+  self.v_static_sv = SaticSv:new(self, obj, ItemClass, ItemKey .. obj.transform:GetSiblingIndex(), 2)
+end
+
+function M:set_data(data)
+  self.v_data = data
+  local ucom = self.v_uicompents
+  local chapter_cfg = ShareRes.get_chapter_cfg(data.Id)
+  ucom.ChapterNum_txt.text = string.format("%02d", chapter_cfg.SerialNum)
+  ucom.ChapterName_txt.text = chapter_cfg.Name
+  local data_list = {}
+  for key, value in pairs(data.CollectionIds) do
+    local have_red, is_lock = self:get_collection_net_data(value)
+    _insert(data_list, {
+      id = value,
+      have_red = have_red,
+      is_lock = is_lock
+    })
+  end
+  _sort(data_list, function(a, b)
+    if a.is_lock == b.is_lock then
+      return a.id < b.id
+    elseif a.is_lock then
+      return false
+    else
+      return true
+    end
+  end)
+  self.v_static_sv:update_list(data_list)
+  local count = data.CollectionIds and #data.CollectionIds or 0
+  self.v_uiobjects.Empty:SetActive(0 == count)
+end
+
+function M:get_collection_net_data(id)
+  local net_data = ChapterMgr:get_chapter_collection_net_data(id)
+  local have_red = net_data and net_data.red_status or false
+  return have_red, nil == net_data
+end
+
+function M:on_clear()
+  self.v_static_sv:clear()
+end
+
+function M:ui_on_hide()
+  self.v_static_sv:clear()
+end
+
+function M:ui_on_destroy()
+  self.v_static_sv = nil
+end
+
+return M

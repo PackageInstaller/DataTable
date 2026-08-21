@@ -1,0 +1,51 @@
+local Base = require("manager.magic.magic_imp.magic_base")
+local M = Util.create_child_mt(Base)
+
+function M:_init(owner, magic_info)
+  Base._init(self, owner, magic_info)
+end
+
+local ARMOR_ATK_TYPE = 1
+local ARMOR_DEF_TYPE = 2
+
+function M:on_effect(magic_map)
+  self.set_armor_type = self.cfg[1]
+  self.set_level = self.cfg[2]
+  self.set_type = self.cfg[3]
+  self:set_armor_level(magic_map)
+end
+
+function M:set_armor_level(magic_map)
+  local level = 0
+  local force_level, use_magic_rtid
+  for k, v in pairs(magic_map) do
+    if self.set_armor_type == v.set_armor_type then
+      if v.set_type == Config.ATTR_SET_TYPE.REPLACE then
+        if not use_magic_rtid or use_magic_rtid < v.rtid then
+          force_level = v.set_level
+          use_magic_rtid = v.rtid
+        end
+      elseif not force_level and v.set_type == Config.ATTR_SET_TYPE.CHANGE_BY_DELTA then
+        level = level + v.set_level
+      end
+    end
+  end
+  local is_force = false
+  if force_level then
+    level = force_level
+    is_force = true
+  end
+  if self.set_armor_type == ARMOR_ATK_TYPE then
+    self.owner:set_atk_armor_level(level, is_force)
+  elseif self.set_armor_type == ARMOR_DEF_TYPE then
+    self.owner:set_def_armor_level(level, is_force)
+  else
+    Log.Info("set_armor_level type error")
+  end
+end
+
+function M:on_remove(magic_map)
+  self:set_armor_level(magic_map)
+end
+
+return M

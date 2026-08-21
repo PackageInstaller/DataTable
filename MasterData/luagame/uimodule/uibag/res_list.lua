@@ -1,0 +1,67 @@
+local Base = require("ui.uiobject")
+local ResItem = require("uimodule.uibag.res_item")
+local _insert = table.insert
+local _remove = table.remove
+local ui = Util.create_child_mt(Base)
+local TEMPLATE_KEY = "uibag_reslist_template"
+
+function ui:ui_wrap(parent, gameobj, tag)
+  self = Base.ui_wrap(self, parent, gameobj)
+  gameobj:SetActive(true)
+  self.v_frees = {}
+  self.v_childs = {}
+  self.v_template = gameobj.transform:GetChild(0).gameObject
+  self.v_template_key = TEMPLATE_KEY .. tag
+  self:register_exist_auto_template(self.v_template_key, self.v_template, gameobj)
+  return self
+end
+
+function ui:get_new()
+  local size = #self.v_frees
+  local item
+  if 0 ~= size then
+    item = self.v_frees[size]
+    _remove(self.v_frees, size)
+  else
+    local obj = self:get_auto_cache(self.v_template_key)
+    item = ResItem:ui_wrap(self, obj)
+  end
+  item.go:SetActiveEx(true)
+  return item
+end
+
+function ui:update_list(res_list)
+  self.cur_res_list = res_list
+  local list_num = res_list and #res_list or 0
+  local cur_item_num = #self.v_childs
+  if list_num > cur_item_num then
+    for i = 1, list_num - cur_item_num do
+      _insert(self.v_childs, self:get_new())
+    end
+  elseif list_num < cur_item_num then
+    for i = cur_item_num, list_num + 1, -1 do
+      local item = self.v_childs[i]
+      _remove(self.v_childs, i)
+      _insert(self.v_frees, item)
+      item.go:SetActiveEx(false)
+    end
+  end
+  if res_list then
+    for i = 1, #res_list do
+      self.v_childs[i]:set_data(res_list[i], i)
+    end
+  end
+end
+
+function ui:on_show()
+  self:update_list()
+end
+
+function ui:on_hide()
+  self:update_list()
+end
+
+function ui:ui_on_destroy()
+end
+
+return ui

@@ -1,0 +1,48 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local KEYWORDCONTENT_KEYWORDTEM_TEMP_KEY = "KEYWORDCONTENT_KEYWORDTEM_TEMP_KEY"
+
+function ui:on_click_CloseBg()
+  self:ui_hide()
+end
+
+function ui:ui_finish_load()
+  self:set_button("CloseBg", function()
+    self:on_click_CloseBg()
+  end)
+  self:register_exist_auto_template(KEYWORDCONTENT_KEYWORDTEM_TEMP_KEY, self.v_uiobjects.KeyWordTem, self.v_uiobjects.KeyWordContent)
+end
+
+function ui:ui_on_show(key_word_list)
+  local init_x = self.v_uicompents.KeyWordContent_rect:GetAnchoredPositionA()
+  self.v_uicompents.KeyWordContent_rect:SetAnchoredPositionA(init_x, 0)
+  self:refresh_view(key_word_list)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_view(key_word_list)
+  local buddy_keyword_cfg = ShareRes.create("buddy.buddy_keyword")
+  self:give_back_auto_cache(KEYWORDCONTENT_KEYWORDTEM_TEMP_KEY)
+  local last_index = #key_word_list
+  for index, id in ipairs(key_word_list) do
+    local cfg = buddy_keyword_cfg[id]
+    if cfg then
+      local item = self:get_auto_cache(KEYWORDCONTENT_KEYWORDTEM_TEMP_KEY)
+      local name = Util.get_text("Title", item)
+      local desc = Util.get_text("Desc", item)
+      local line = self:get_child_gameobj("Line", item)
+      name.text = cfg.Name
+      desc.text = cfg.Desc
+      line:SetActive(last_index ~= index)
+    else
+      Log.Error("关键字配置不存在，ID", id, debug.traceback())
+    end
+  end
+end
+
+return ui

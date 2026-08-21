@@ -1,0 +1,264 @@
+return {
+  H1001001_UI = {
+    CameraHeight = 1.6,
+    LookAtHeight = 1.51,
+    id = "H1001001_UI"
+  },
+  H1001004_UI = {
+    CameraHeight = 1.71,
+    LookAtHeight = 1.49,
+    id = "H1001004_UI"
+  },
+  H1001008_UI = {
+    CameraHeight = 1.65,
+    FollowFace = "face1",
+    LookAtHeight = 1.57,
+    id = "H1001008_UI"
+  },
+  H1001009_UI = {
+    CameraHeight = 1.7,
+    LookAtHeight = 1.61,
+    id = "H1001009_UI"
+  },
+  H1001010_UI = {
+    CameraHeight = 1.75,
+    LookAtHeight = 1.4,
+    id = "H1001010_UI"
+  },
+  H1001011_UI = {
+    CameraHeight = 1.58,
+    LookAtHeight = 1.48,
+    id = "H1001011_UI"
+  },
+  H1001012_UI = {
+    CameraHeight = 1.64,
+    LookAtHeight = 1.62,
+    id = "H1001012_UI"
+  },
+  H1001013_UI = {
+    CameraHeight = 1.48,
+    LookAtHeight = 1.27,
+    id = "H1001013_UI"
+  },
+  H1001014_UI = {
+    CameraHeight = 1.6,
+    LookAtHeight = 1.49,
+    id = "H1001014_UI"
+  },
+  H1001015_UI = {
+    CameraHeight = 0,
+    LookAtHeight = 0,
+    id = "H1001015_UI"
+  },
+  H1001016_UI = {
+    CameraHeight = 1.6,
+    LookAtHeight = 1.49,
+    id = "H1001016_UI"
+  },
+  H1001017_UI = {
+    CameraHeight = 1.6,
+    LookAtHeight = 1.49,
+    id = "H1001017_UI"
+  },
+  H1001018_UI = {
+    CameraHeight = 1.6,
+    LookAtHeight = 1.49,
+    id = "H1001018_UI"
+  },
+  H1001019_UI = {
+    CameraHeight = 1.64,
+    LookAtHeight = 1.4,
+    id = "H1001019_UI"
+  },
+  H1001020_UI = {
+    CameraHeight = 0,
+    LookAtHeight = 0,
+    id = "H1001020_UI"
+  },
+  H1001021_UI = {
+    CameraHeight = 1.6,
+    LookAtHeight = 1.49,
+    id = "H1001021_UI"
+  },
+  H1001022_UI = {
+    CameraHeight = 1.63,
+    LookAtHeight = 1.53,
+    id = "H1001022_UI"
+  },
+  H1001023_UI = {
+    CameraHeight = 1.93,
+    LookAtHeight = 1.84,
+    id = "H1001023_UI"
+  },
+  H1001024_UI = {
+    CameraHeight = 1.45,
+    LookAtHeight = 1.31,
+    id = "H1001024_UI"
+  },
+  H1001025_UI = {
+    CameraHeight = 1.68,
+    LookAtHeight = 1.53,
+    id = "H1001025_UI"
+  },
+  H1001026_UI = {
+    CameraHeight = 1.67,
+    LookAtHeight = 1.48,
+    id = "H1001026_UI"
+  },
+  H1001027_UI = {
+    CameraHeight = 0,
+    LookAtHeight = 0,
+    id = "H1001027_UI"
+  },
+  H1001028_UI = {
+    CameraHeight = 1.75,
+    LookAtHeight = 1.36,
+    id = "H1001028_UI"
+  },
+  H1001029_UI = {
+    CameraHeight = 1.86,
+    LookAtHeight = 1.55,
+    id = "H1001029_UI"
+  },
+  H1001030_UI = {
+    CameraHeight = 1.65,
+    LookAtHeight = 1.46,
+    id = "H1001030_UI"
+  },
+  H1001101_UI = {
+    CameraHeight = 1.6,
+    LookAtHeight = 1.51,
+    id = "H1001101_UI"
+  },
+  H1001104_UI = {
+    CameraHeight = 1.71,
+    LookAtHeight = 1.49,
+    id = "H1001104_UI"
+  },
+  H1001108_UI = {
+    CameraHeight = 1.65,
+    FollowFace = "face1",
+    LookAtHeight = 1.57,
+    id = "H1001108_UI"
+  },
+  H1001109_UI = {
+    CameraHeight = 1.7,
+    LookAtHeight = 1.61,
+    id = "H1001109_UI"
+  },
+  H1001110_UI = {
+    CameraHeight = 1.75,
+    LookAtHeight = 1.4,
+    id = "H1001110_UI"
+  },
+  H1001111_UI = {
+    CameraHeight = 1.58,
+    LookAtHeight = 1.48,
+    id = "H1001111_UI"
+  },
+  H1001112_UI = {
+    CameraHeight = 1.64,
+    LookAtHeight = 1.62,
+    id = "H1001112_UI"
+  },
+  H1001113_UI = {
+    CameraHeight = 1.48,
+    LookAtHeight = 1.27,
+    id = "H1001113_UI"
+  },
+  H1001114_UI = {
+    CameraHeight = 1.6,
+    LookAtHeight = 1.49,
+    id = "H1001114_UI"
+  },
+  H1001115_UI = {
+    CameraHeight = 0,
+    LookAtHeight = 0,
+    id = "H1001115_UI"
+  },
+  H1001116_UI = {
+    CameraHeight = 1.6,
+    LookAtHeight = 1.49,
+    id = "H1001116_UI"
+  },
+  H1001117_UI = {
+    CameraHeight = 1.6,
+    LookAtHeight = 1.49,
+    id = "H1001117_UI"
+  },
+  H1001118_UI = {
+    CameraHeight = 1.6,
+    LookAtHeight = 1.49,
+    id = "H1001118_UI"
+  },
+  H1001119_UI = {
+    CameraHeight = 1.64,
+    LookAtHeight = 1.4,
+    id = "H1001119_UI"
+  },
+  H1001120_UI = {
+    CameraHeight = 0,
+    LookAtHeight = 0,
+    id = "H1001120_UI"
+  },
+  H1001121_UI = {
+    CameraHeight = 1.6,
+    LookAtHeight = 1.49,
+    id = "H1001121_UI"
+  },
+  H1001122_UI = {
+    CameraHeight = 1.63,
+    LookAtHeight = 1.53,
+    id = "H1001122_UI"
+  },
+  H1001123_UI = {
+    CameraHeight = 1.93,
+    LookAtHeight = 1.84,
+    id = "H1001123_UI"
+  },
+  H1001124_UI = {
+    CameraHeight = 1.45,
+    LookAtHeight = 1.31,
+    id = "H1001124_UI"
+  },
+  H1001126_UI = {
+    CameraHeight = 1.67,
+    LookAtHeight = 1.48,
+    id = "H1001126_UI"
+  },
+  H1001127_UI = {
+    CameraHeight = 0,
+    LookAtHeight = 0,
+    id = "H1001127_UI"
+  },
+  H1002101_UI = {
+    CameraHeight = 1.6,
+    LookAtHeight = 1.51,
+    id = "H1002101_UI"
+  },
+  H1002216_UI = {
+    CameraHeight = 1.6,
+    LookAtHeight = 1.49,
+    id = "H1002216_UI"
+  },
+  H1002220_UI = {
+    CameraHeight = 0,
+    LookAtHeight = 0,
+    id = "H1002220_UI"
+  },
+  H1002309_UI = {
+    CameraHeight = 1.56,
+    LookAtHeight = 1.47,
+    id = "H1002309_UI"
+  },
+  H1002326_UI = {
+    CameraHeight = 1.67,
+    LookAtHeight = 1.48,
+    id = "H1002326_UI"
+  },
+  H1003209_UI = {
+    CameraHeight = 1.7,
+    LookAtHeight = 1.45,
+    id = "H1003209_UI"
+  }
+}

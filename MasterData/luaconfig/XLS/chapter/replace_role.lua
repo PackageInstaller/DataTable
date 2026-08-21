@@ -1,0 +1,20 @@
+return {
+  [10000001] = {
+    Id = 10000001,
+    RobotList = {
+      {BuddyId = 1001001, RobotId = 10000001}
+    }
+  },
+  [10000008] = {
+    Id = 10000008,
+    RobotList = {
+      {BuddyId = 1001008, RobotId = 10000008}
+    }
+  },
+  [10000015] = {
+    Id = 10000015,
+    RobotList = {
+      {BuddyId = 1001015, RobotId = 10000015}
+    }
+  }
+}

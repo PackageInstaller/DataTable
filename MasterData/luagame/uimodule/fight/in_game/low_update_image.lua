@@ -1,0 +1,63 @@
+local M = Util.create_class()
+local UPDATE_FRAME_INTERVAL = 5
+
+function M:_init(unity_image, init_value, update_frame_interval)
+  self.v_update_frame_interval = update_frame_interval or UPDATE_FRAME_INTERVAL
+  assert(unity_image)
+  self.v_image = unity_image
+  self.v_image_go = unity_image.gameObject
+  local cur_frame = Global.frame_id
+  self.v_cur_frame = cur_frame
+  self.v_last_update_frame_id = cur_frame
+  init_value = init_value or 0
+  self:force_set_value(init_value)
+end
+
+function M:on_destroy()
+  self.v_image = nil
+  self.v_image_go = nil
+end
+
+function M:update()
+  if self.v_cur_val == self.v_cache_val then
+    return
+  end
+  local cur_frame = Global.frame_id
+  if cur_frame - self.v_last_update_frame_id > self.v_update_frame_interval then
+    self.v_image.fillAmount = self.v_cache_val
+    self.v_last_update_frame_id = cur_frame
+    self.v_cur_val = self.v_cache_val
+  end
+end
+
+function M:set_value(val)
+  self.v_cache_val = val
+end
+
+function M:force_set_value(val)
+  self.v_cache_val = val
+  self.v_cur_val = val
+  self.v_image.fillAmount = val
+end
+
+function M:get_go()
+  return self.v_image_go
+end
+
+function M:is_go_active()
+  return self.v_image_go.activeSelf
+end
+
+function M:set_go_active(is_active)
+  self.v_image_go.gameObject:SetActiveEx(is_active)
+end
+
+function M:get_cache_value()
+  return self.v_cache_val
+end
+
+function M:get_lua_obj()
+  return self.v_lua_obj
+end
+
+return M

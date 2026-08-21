@@ -1,0 +1,384 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local CHAR_SKILL_TASK_KEY = "CHAR_SKILL_TASK_KEY"
+local SKILL_TASK_ITEM_CLASS = require("uimodule.character.char_skill_task_item")
+local TASK_CONFIG = require("gamelogic.task.task_config")
+local GETSTATETYPE_ORDER = TASK_CONFIG.GETSTATETYPE_ORDER
+local TASK_STATE = TASK_CONFIG.TASK_STATE
+local LayoutRebuilder = UnityEngine.UI.LayoutRebuilder
+local Vec2 = require("base.vec2")
+local _tinsert = table.insert
+local _tsort = table.sort
+local MODEL = {
+  v_btn_last = {
+    "BtnLast",
+    BIND_TYPE.OBJECT
+  },
+  v_btn_lv_up = {
+    "BtnLvUp",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_next = {
+    "BtnNext",
+    BIND_TYPE.OBJECT
+  },
+  v_next_lv_max = {
+    "NextLvMax",
+    BIND_TYPE.TEXT
+  },
+  v_next_lv_now = {
+    "NextLvNow",
+    BIND_TYPE.TEXT
+  },
+  v_now_lv_max = {
+    "NowLvMax",
+    BIND_TYPE.TEXT
+  },
+  v_now_lv_now = {
+    "NowLvNow",
+    BIND_TYPE.TEXT
+  },
+  v_now_lv_scroll = {
+    "NowLvScroll",
+    BIND_TYPE.IMAGE
+  },
+  v_skill1 = {
+    "Skill1",
+    BIND_TYPE.TOGGLE
+  },
+  v_skill2 = {
+    "Skill2",
+    BIND_TYPE.TOGGLE
+  },
+  v_skill3 = {
+    "Skill3",
+    BIND_TYPE.TOGGLE
+  },
+  v_skill4 = {
+    "Skill4",
+    BIND_TYPE.TOGGLE
+  },
+  v_skill5 = {
+    "Skill5",
+    BIND_TYPE.TOGGLE
+  },
+  v_skill6 = {
+    "Skill6",
+    BIND_TYPE.TOGGLE
+  },
+  v_skill_desc_next = {
+    "SkillDescNext",
+    BIND_TYPE.TEXT
+  },
+  v_skill_desc_now = {
+    "SkillDescNow",
+    BIND_TYPE.TEXT
+  },
+  v_skill_list_obj = {
+    "SkillList",
+    BIND_TYPE.OBJECT
+  },
+  v_skill_name = {
+    "SkillName",
+    BIND_TYPE.TEXT
+  },
+  v_skill_type = {
+    "SkillType",
+    BIND_TYPE.TEXT
+  },
+  v_task_content = {
+    "TaskContent",
+    BIND_TYPE.OBJECT
+  },
+  v_next_level_obj = {
+    "NextLevel",
+    BIND_TYPE.OBJECT
+  },
+  v_next_lv_scroll_obj = {
+    "NextLvScroll",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnLast", function()
+    if self.v_select_index - 1 <= 0 then
+      return
+    end
+    self.v_select_index = self.v_select_index - 1
+    local skill_tog = self["v_skill" .. self.v_select_index]
+    skill_tog.isOn = true
+  end)
+  self:set_button("BtnNext", function()
+    if self.v_select_index + 1 > self.v_skill_length then
+      return
+    end
+    self.v_select_index = self.v_select_index + 1
+    local skill_tog = self["v_skill" .. self.v_select_index]
+    skill_tog.isOn = true
+  end)
+  self:set_button("BtnLvUp", function()
+    local select_data = self.v_skill_list[self.v_select_index]
+    local skill_id = select_data.id
+    self.v_submit_skill_index = self.v_select_index
+    TaskMgr:submit_task_list(self.v_complete_tasks, function()
+      Util.show_message_tip(2153)
+      self:play_task_eff()
+    end)
+  end)
+  self:init_template()
+  self.v_desc_eff = Util.get_child_gameobj("Animation/Ani_VX_NorTaskObj_Re", self.v_parent_ui.v_object)
+end
+
+function ui:init_template()
+  self:register_exist_auto_template(CHAR_SKILL_TASK_KEY, self.v_uiobjects.TaskTem, self.v_uiobjects.TaskContent)
+end
+
+function ui:ui_on_show(data)
+  self.v_select_index = data.select_index
+  self.v_buddy_id = data.buddy_id
+  self.v_task_item_list = {}
+  self.v_buddy_skill_cfg = ShareRes.get_buddy_skill_list_cfg(self.v_buddy_id)
+  self.v_auto_drag = true
+  self.v_complete_tasks = {}
+  self:refresh_skill_list()
+  for i = 1, #self.v_skill_list do
+    self:refresh_skill_task(i)
+    local partical_eff = Util.get_child_gameobj("FX_leveup_Particle_" .. i, self["v_skill" .. i].gameObject)
+    partical_eff:SetActive(false)
+  end
+  self:init_content()
+  self:bind_auto_mq(Const.MSG_ON_SUBMIT_CHAR_TASK_SKILL, self.response_submit_char_task, self)
+  self:bind_auto_mq(Const.MSG_ON_TASK_UPDATE, self.response_task_update, self)
+end
+
+function ui:refresh_all()
+  self:refresh_skill_list()
+  self:refresh_skill_task(self.v_select_index)
+  self:refresh_level_info(self.v_select_index)
+end
+
+function ui:init_content()
+  if self.v_skill_list == nil then
+    return
+  end
+  for i = 1, #self.v_skill_list do
+    local skill_id = self.v_skill_list[i].id
+    local skill_lv = self.v_skill_list[i].lv
+    local name = "v_skill" .. i
+    local skill_tog = self[name]
+    local skill_obj = skill_tog.gameObject
+    local icon = Util.get_image("icon", skill_obj)
+    local skill_details_cfg = ShareRes.get_buddy_skill_details_cfg(skill_id)
+    Util.load_skill_icon(skill_details_cfg.Icon, icon)
+    local level_txt = Util.get_text("SKillLV", skill_obj)
+    level_txt.text = skill_lv
+    self.v_desc_eff:SetActive(false)
+    self:set_toggle_listener(skill_tog, function(is_on)
+      if is_on then
+        if self.v_eff_sequence then
+          self.v_eff_sequence:Kill(false)
+          self.v_eff_sequence = nil
+          self:refresh_all()
+        end
+        self.v_desc_eff:SetActive(false)
+        self.v_desc_eff:SetActive(true)
+        self.v_select_index = i
+        self:refresh_skill_task(i)
+        self:refresh_level_info(i)
+        local content_rect = Util.get_rect_transform("Image/content", self.v_skill_list_obj)
+        if 3 == self.v_select_index or self.v_auto_drag and self.v_select_index <= 3 then
+          content_rect:SetAnchoredPositionA(0, 0, 0)
+        elseif 4 == self.v_select_index or self.v_auto_drag and self.v_select_index >= 4 then
+          if self.v_auto_drag then
+            content_rect:SetAnchoredPositionA(0, content_rect.rect.height, 0)
+          else
+            content_rect:SetAnchoredPositionA(0, content_rect.sizeDelta.y, 0)
+          end
+        end
+        self.v_auto_drag = nil
+        self.v_btn_last:SetActive(1 ~= self.v_select_index)
+        self.v_btn_next:SetActive(6 ~= self.v_select_index)
+      end
+    end)
+    if self.v_select_index == i then
+      skill_tog.isOn = false
+      skill_tog.isOn = true
+    end
+  end
+end
+
+function ui:refresh_skill_list()
+  local buddy_info = CharacterMgr:get_buddy_by_id(self.v_buddy_id)
+  local skill_list = buddy_info.lSkill
+  table.sort(skill_list, function(a, b)
+    if a.sort_index == b.sort_index then
+      return a.id > b.id
+    end
+    return a.sort_index < b.sort_index
+  end)
+  self.v_skill_list = skill_list
+  self.v_skill_length = #self.v_skill_list
+end
+
+function ui:refresh_level_info(skill_idx)
+  local skill_id = self.v_skill_list[skill_idx].id
+  local skill_lv = self.v_skill_list[skill_idx].lv
+  local max_level = ShareRes.get_buddy_skill_max_lv(skill_id)
+  local cur_level_cfg = ShareRes.get_buddy_skill_lv_cfg(skill_id, skill_lv)
+  local next_level_cfg = ShareRes.get_buddy_skill_lv_cfg(skill_id, skill_lv + 1)
+  local name = "v_skill" .. self.v_select_index
+  local skill_obj = self[name].gameObject
+  local level_txt = Util.get_text("SKillLV", skill_obj)
+  level_txt.text = skill_lv
+  self.v_now_lv_now.text = skill_lv
+  self.v_now_lv_max.text = max_level
+  self.v_skill_desc_now.text = cur_level_cfg.Desc
+  if nil == next_level_cfg then
+    self.v_next_level_obj:SetActive(false)
+    self.v_next_lv_scroll_obj:SetActive(false)
+    self.v_is_full_level = true
+  else
+    self.v_is_full_level = false
+    self.v_next_level_obj:SetActive(true)
+    self.v_next_lv_scroll_obj:SetActive(true)
+    self.v_next_lv_now.text = skill_lv + 1
+    self.v_next_lv_max.text = max_level
+    self.v_skill_desc_next.text = next_level_cfg.Desc
+  end
+  local skill_details_cfg = ShareRes.get_buddy_skill_details_cfg(skill_id)
+  self.v_skill_name.text = skill_details_cfg.Name
+  self.v_skill_type.text = skill_details_cfg.SkillTypeName
+end
+
+function ui:refresh_skill_task(sort_idx)
+  local skill_id = self.v_skill_list[sort_idx].id
+  local skill_idx = self:get_skill_idx(self.v_buddy_skill_cfg, skill_id)
+  self:give_back_auto_cache(CHAR_SKILL_TASK_KEY)
+  local task_group_list = self.v_buddy_skill_cfg.TaskGroup
+  local task_group_id = task_group_list[skill_idx]
+  local task_list = ShareRes.get_task_group_cfg(task_group_id)
+  local show_task_list = {}
+  self.v_complete_tasks = {}
+  local exist_complete_task = false
+  for task_id, _ in pairs(task_list) do
+    local task_data = TaskMgr:get_task_by_id(task_id)
+    local order = GETSTATETYPE_ORDER[task_data.state]
+    if order == GETSTATETYPE_ORDER[TASK_STATE.receive] then
+      _tinsert(self.v_complete_tasks, task_id)
+      exist_complete_task = true
+    end
+    local temp_data = {
+      task_id = task_id,
+      order = order,
+      priority = ShareRes.get_task_cfg(task_id).Priority
+    }
+    _tinsert(show_task_list, temp_data)
+  end
+  self:set_red_dot(sort_idx, exist_complete_task)
+  if exist_complete_task then
+    Util.enable_btn(self.v_btn_lv_up)
+  else
+    Util.disable_btn(self.v_btn_lv_up, true)
+  end
+  _tsort(show_task_list, function(a, b)
+    if a.order == b.order and a.priority == b.priority then
+      return a.task_id < b.task_id
+    elseif a.order == b.order then
+      return b.priority < a.priority
+    else
+      return a.order < b.order
+    end
+  end)
+  self.v_task_tem_objs = {}
+  for _, task_data in ipairs(show_task_list) do
+    local task_id = task_data.task_id
+    local task_skill_item = self:get_auto_cache(CHAR_SKILL_TASK_KEY)
+    local task_skill_obj = SKILL_TASK_ITEM_CLASS:ui_wrap_ex(self, task_skill_item, true)
+    task_skill_obj.go = task_skill_item
+    task_skill_obj:set_data(task_id)
+    _tinsert(self.v_task_tem_objs, task_skill_obj)
+  end
+end
+
+function ui:play_task_eff(task_id)
+  local submit_idx = self.v_submit_skill_index
+  local skill_eff = Util.get_child_gameobj("FX_leveup_Particle_" .. submit_idx, self["v_skill" .. submit_idx].gameObject)
+  skill_eff:SetActive(false)
+  skill_eff:SetActive(true)
+  if submit_idx ~= self.v_select_index then
+    return
+  end
+  local eff_interval = 1.6
+  local sequence = Util.create_sequence()
+  self.v_eff_sequence = sequence
+  sequence:AppendCallback(function()
+    if self.v_task_tem_objs then
+      for _, task_tem in pairs(self.v_task_tem_objs) do
+        if task_id then
+          task_tem:play_eff_by_id(task_id)
+        else
+          task_tem:play_eff()
+        end
+      end
+    end
+  end)
+  sequence:AppendInterval(eff_interval)
+  sequence:OnComplete(function()
+    self:refresh_all()
+  end)
+end
+
+function ui:set_red_dot(skill_idx, exist_complete_task)
+  local skill_obj_name = "v_skill" .. skill_idx
+  local red_obj = Util.get_child_gameobj("red", self[skill_obj_name].gameObject)
+  red_obj:SetActive(exist_complete_task)
+end
+
+function ui:gm_show_task_id()
+  self.is_show_task_id = true
+  self:refresh_skill_task(self.v_select_index)
+end
+
+function ui:response_submit_char_task(msg)
+  if nil == msg or nil == msg.mm_obj then
+    return
+  end
+  local task_data = msg.mm_obj
+  local task_id = task_data.id
+  self.v_submit_skill_index = self.v_select_index
+  TaskMgr:submit_task(task_id, function()
+    Util.show_message_tip(2153)
+    self:play_task_eff(task_id)
+  end)
+end
+
+function ui:response_task_update()
+end
+
+function ui:ui_on_hide()
+  for _, obj in pairs(self.v_task_item_list) do
+    ResMgr:destroy_gameobj(obj)
+  end
+  self.v_task_item_list = {}
+  self.is_show_task_id = false
+  self.v_wrap_uis = {}
+  self.v_task_tem_objs = {}
+  if self.v_eff_sequence then
+    self.v_eff_sequence:Kill(false)
+    self.v_eff_sequence = nil
+  end
+end
+
+function ui:get_skill_idx(buddy_skill_cfg, skill_id)
+  local skill_list = buddy_skill_cfg.Skill
+  for i, v in ipairs(skill_list) do
+    if skill_id == v then
+      return i
+    end
+  end
+end
+
+return ui

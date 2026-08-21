@@ -1,0 +1,152 @@
+local Base = require("ui.uibase")
+local tip_en_to_ch = {
+  ReLogin = "账号已在其它设备登录，当前设备账号已强制下线",
+  ServiceExit = "服务器已停止开放，当前账号已强制下线",
+  BanRole = "当前账号存在数据异常，已强制封禁"
+}
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_on_show(sure_func, cancel_func, tips_text, sur_btn_txt, cancel_btn_txt, title_txt, one_btn, battle_setting, use_warning, show_callback, use_notice, enable_bg_click)
+  self:refresh_data(sure_func, cancel_func, tips_text, sur_btn_txt, cancel_btn_txt, title_txt, one_btn, battle_setting, use_warning, show_callback, use_notice, enable_bg_click)
+end
+
+function ui:refresh_data(sure_func, cancel_func, tips_text, sur_btn_txt, cancel_btn_txt, title_txt, one_btn, battle_setting, use_warning, show_callback, use_notice, enable_bg_click)
+  if tips_text and tip_en_to_ch[tips_text] then
+    tips_text = tip_en_to_ch[tips_text]
+  end
+  self:set_enable(true)
+  local components = self.v_uicompents
+  local objects = self.v_uiobjects
+  objects.IFEject:SetActive(false)
+  if use_notice then
+    objects.IFEject:SetActive(true)
+    components.IFEject_tog.isOn = false
+  end
+  self.v_tog_text = Util.get_text("Text", objects.IFEject)
+  self.v_tog_text.text = "今日不再弹出"
+  self.v_cancel_func = cancel_func
+  self.v_call_cancel_func_count = 0
+  self.v_call_cancel_on_hide = nil
+  self:change_warning_state(use_warning)
+  if nil ~= battle_setting and battle_setting then
+    objects.Blur:SetActiveEx(false)
+    objects.LayoutBtn:SetActiveEx(false)
+    objects.Text:SetActiveEx(false)
+    objects.TextTips:SetActive(true)
+    components.TextTips_txt.text = Util.format_str(tips_text)
+    self:enable_bg_click(true)
+  else
+    objects.LayoutBtn:SetActiveEx(true)
+    objects.Text:SetActiveEx(true)
+    objects.TextTips:SetActive(false)
+    self:enable_bg_click(true == enable_bg_click)
+  end
+  title_txt = title_txt or ""
+  components.TtitleText_txt.text = title_txt
+  sur_btn_txt = sur_btn_txt or Util.format_str("是")
+  cancel_btn_txt = cancel_btn_txt or Util.format_str("否")
+  local sur_text = Util.get_text("Text", components.Button_yes_btn.transform)
+  sur_text.text = sur_btn_txt
+  local cancel_text = Util.get_text("Text", components.Button_no_btn.transform)
+  cancel_text.text = cancel_btn_txt
+  components.Text_txt.text = Util.format_str(tips_text)
+  self.v_one_btn = one_btn
+  if true == one_btn then
+    components.Button_yes_btn.gameObject:SetActiveEx(true)
+    components.Button_no_btn.gameObject:SetActiveEx(false)
+    components.CloseBtn_btn.gameObject:SetActiveEx(false)
+  else
+    components.CloseBtn_btn.gameObject:SetActiveEx(false)
+    components.Button_yes_btn.gameObject:SetActiveEx(true)
+    components.Button_no_btn.gameObject:SetActiveEx(true)
+  end
+  if show_callback then
+    show_callback()
+  end
+  self:set_button_listener(components.Button_yes_btn, function()
+    if sure_func then
+      sure_func()
+    end
+    self:ui_hide()
+  end)
+  self:set_button_listener(components.Button_no_btn, function()
+    if cancel_func then
+      cancel_func()
+      self.v_call_cancel_func_count = self.v_call_cancel_func_count + 1
+    end
+    self:ui_hide()
+  end)
+  self:set_button_listener(components.CloseBtn_btn, function()
+    if true == one_btn then
+      return
+    end
+    self:ui_hide()
+  end)
+end
+
+function ui:enable_bg_click(value)
+  local components = self.v_uicompents
+  if true == value then
+    self:set_button_listener(components.BgBtn_btn, function()
+      self:ui_hide()
+    end)
+  else
+    self:set_button_listener(components.BgBtn_btn, function()
+    end)
+  end
+end
+
+function ui:only_show_no_btn()
+  local components = self.v_uicompents
+  components.Button_yes_btn.gameObject:SetActiveEx(false)
+  components.Button_no_btn.gameObject:SetActiveEx(true)
+end
+
+function ui:change_warning_state(use_warning)
+  local objects = self.v_uiobjects
+  objects.Warning:SetActive(false)
+  if use_warning then
+    objects.Warning:SetActive(true)
+  end
+end
+
+function ui:ui_on_hide()
+  local components = self.v_uicompents
+  local objects = self.v_uiobjects
+  if objects.IFEject.activeSelf and components.IFEject_tog.isOn then
+    if self.v_tog_on_cb then
+      self.v_tog_on_cb()
+    else
+      ChallengeRingPlusMgr:request_save_notify_card()
+    end
+  end
+  if self.v_call_cancel_on_hide and self.v_cancel_func and 0 == self.v_call_cancel_func_count then
+    self.v_cancel_func()
+  end
+end
+
+function ui:set_ex_param(param_tbl)
+  self.v_tog_on_cb = param_tbl.tog_on_cb
+  if self.v_tog_on_cb then
+    self.v_uiobjects.IFEject:SetActive(true)
+    self.v_uicompents.IFEject_tog.isOn = false
+  end
+  local tog_text = param_tbl.tog_text
+  if tog_text then
+    self.v_tog_text.text = tog_text
+  end
+  self.v_call_cancel_on_hide = param_tbl.call_cancel_on_hide
+end
+
+function ui:response_click_escape()
+  if self.v_one_btn then
+    return UIMgr.RESPONCE_ESCAPE_TYPE.ESCAPE_CUSTOM
+  end
+  if not SceneMgr:check_main_scene() then
+    self:ui_hide()
+    return UIMgr.RESPONCE_ESCAPE_TYPE.ESCAPE_CUSTOM
+  end
+  return UIMgr.RESPONCE_ESCAPE_TYPE.AUTO_CALL
+end
+
+return ui

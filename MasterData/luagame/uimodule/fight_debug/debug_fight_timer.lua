@@ -1,0 +1,59 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:set_button("OpenTimerBtn", function()
+    self:start_timer()
+  end)
+  self:set_button("StopTimerBtn", function()
+    self:stop_timer()
+  end)
+  self:set_button("PauseTimerBtn", function()
+    self:pause_timer()
+  end)
+  self:set_button("CloseBtn", function()
+    self:ui_hide()
+  end)
+  self.v_time = 0
+  self.v_timer_on = false
+end
+
+function ui:ui_on_update(delta_time)
+  if self.v_timer_on then
+    self.v_time = delta_time + self.v_time
+    self.v_uicompents.TimeText_txt.text = string.format("%.2fs", self.v_time)
+    if JournalMgr:get_oepn_record_jiournal_info() then
+      JournalMgr:record_cur_time(self.v_time)
+    end
+  end
+end
+
+function ui:ui_on_show()
+  self.v_uicompents.TimeText_txt.text = "0s"
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:start_timer()
+  self.v_timer_on = true
+  JournalMgr:oepn_record_jiournal_info(true)
+end
+
+function ui:pause_timer()
+  self.v_timer_on = false
+end
+
+function ui:stop_timer()
+  if JournalMgr:get_oepn_record_jiournal_info() then
+    JournalMgr:oepn_record_jiournal_info(false)
+  end
+  self.v_timer_on = false
+  self.v_time = 0
+  self.v_uicompents.TimeText_txt.text = "0s"
+end
+
+return ui

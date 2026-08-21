@@ -1,0 +1,21 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:set_data(src_data, idx)
+  self.v_src_data = src_data
+  self.v_idx = idx
+end
+
+function ui:set_selected(is_select)
+  local LightUp = Util.get_child_gameobj("Select", self.v_object)
+  LightUp.gameObject:SetActiveEx(is_select)
+  if is_select then
+    self.v_src_data.parent_ui:auto_next_page()
+    self.v_src_data.parent_ui:update_cur_select(self.v_idx or 1)
+  end
+end
+
+function ui:on_clear()
+end
+
+return ui

@@ -1,0 +1,353 @@
+return {
+  Sound_Common_ultimateorb = {
+    FadeTime = 6,
+    ObjectName = "Sound_Common_ultimateorb",
+    ObjectSoundName = "Sound_Common_ultimateorb"
+  },
+  Sound_Common_ultimateorb_big_0 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Common_ultimateorb_big_0",
+    ObjectSoundName = "Sound_Common_ultimateorb_big_0"
+  },
+  Sound_Common_ultimateorb_big_1 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Common_ultimateorb_big_1",
+    ObjectSoundName = "Sound_Common_ultimateorb_big_1"
+  },
+  Sound_Sc01_04_anmen2 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc01_04_anmen2",
+    ObjectSoundName = "Sound_Sc01_04_anmen2"
+  },
+  Sound_Sc01_06_down = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc01_06_down",
+    ObjectSoundName = "Sound_Sc01_06_down"
+  },
+  Sound_Sc01_06_loop = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc01_06_loop",
+    ObjectSoundName = "Sound_Sc01_06_loop"
+  },
+  Sound_Sc01_06_stop = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc01_06_stop",
+    ObjectSoundName = "Sound_Sc01_06_stop"
+  },
+  Sound_Sc01_06_up = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc01_06_up",
+    ObjectSoundName = "Sound_Sc01_06_up"
+  },
+  Sound_Sc01_07 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc01_07",
+    ObjectSoundName = "Sound_Sc01_07"
+  },
+  Sound_Sc02_01 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc02_01",
+    ObjectSoundName = "Sound_Sc02_01"
+  },
+  Sound_Sc02_02 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc02_02",
+    ObjectSoundName = "Sound_Sc02_02"
+  },
+  Sound_Sc02_03 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc02_03",
+    ObjectSoundName = "Sound_Sc02_03"
+  },
+  Sound_Sc02_04 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc02_04",
+    ObjectSoundName = "Sound_Sc02_04"
+  },
+  Sound_Sc02_05 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc02_05",
+    ObjectSoundName = "Sound_Sc02_05"
+  },
+  Sound_Sc02_06 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc02_06",
+    ObjectSoundName = "Sound_Sc02_06"
+  },
+  Sound_Sc02_07 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc02_07",
+    ObjectSoundName = "Sound_Sc02_07"
+  },
+  Sound_Sc02_08_1 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc02_08_1",
+    ObjectSoundName = "Sound_Sc02_08_1"
+  },
+  Sound_Sc02_08_2 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc02_08_2",
+    ObjectSoundName = "Sound_Sc02_08_2"
+  },
+  Sound_Sc02_09 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc02_09",
+    ObjectSoundName = "Sound_Sc02_09"
+  },
+  Sound_Sc02_10 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc02_10",
+    ObjectSoundName = "Sound_Sc02_10"
+  },
+  Sound_Sc02_11 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc02_11",
+    ObjectSoundName = "Sound_Sc02_11"
+  },
+  Sound_Sc02_BreakWall = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc02_BreakWall",
+    ObjectSoundName = "Sound_Sc02_BreakWall"
+  },
+  Sound_Sc02_penquan = {
+    FadeTime = 6,
+    IsLoop = 1,
+    ObjectName = "Sound_Sc02_penquan",
+    ObjectSoundName = "Sound_Sc02_penquan"
+  },
+  Sound_Sc03_01 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_01",
+    ObjectSoundName = "Sound_Sc03_01"
+  },
+  Sound_Sc03_02 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_02",
+    ObjectSoundName = "Sound_Sc03_02"
+  },
+  Sound_Sc03_03 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_03",
+    ObjectSoundName = "Sound_Sc03_03"
+  },
+  Sound_Sc03_04 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_04",
+    ObjectSoundName = "Sound_Sc03_04"
+  },
+  Sound_Sc03_05 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_05",
+    ObjectSoundName = "Sound_Sc03_05"
+  },
+  Sound_Sc03_06 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_06",
+    ObjectSoundName = "Sound_Sc03_06"
+  },
+  Sound_Sc03_07 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_07",
+    ObjectSoundName = "Sound_Sc03_07"
+  },
+  Sound_Sc03_08 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_08",
+    ObjectSoundName = "Sound_Sc03_08"
+  },
+  Sound_Sc03_09 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_09",
+    ObjectSoundName = "Sound_Sc03_09"
+  },
+  Sound_Sc03_10 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_10",
+    ObjectSoundName = "Sound_Sc03_10"
+  },
+  Sound_Sc03_12 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_12",
+    ObjectSoundName = "Sound_Sc03_12"
+  },
+  ["Sound_Sc03_13 "] = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_13 ",
+    ObjectSoundName = "Sound_Sc03_13 "
+  },
+  ["Sound_Sc03_14 "] = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_14 ",
+    ObjectSoundName = "Sound_Sc03_14 "
+  },
+  ["Sound_Sc03_15 "] = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_15 ",
+    ObjectSoundName = "Sound_Sc03_15 "
+  },
+  ["Sound_Sc03_16 "] = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_16 ",
+    ObjectSoundName = "Sound_Sc03_16 "
+  },
+  Sound_Sc03_17 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc03_17",
+    ObjectSoundName = "Sound_Sc03_17"
+  },
+  Sound_Sc04_01 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc04_01",
+    ObjectSoundName = "Sound_Sc04_01"
+  },
+  Sound_Sc04_02 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc04_02",
+    ObjectSoundName = "Sound_Sc04_02"
+  },
+  Sound_Sc04_04 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc04_04",
+    ObjectSoundName = "Sound_Sc04_04"
+  },
+  Sound_Sc04_05 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc04_05",
+    ObjectSoundName = "Sound_Sc04_05"
+  },
+  Sound_Sc04_06 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc04_06",
+    ObjectSoundName = "Sound_Sc04_06"
+  },
+  Sound_Sc04_07 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc04_07",
+    ObjectSoundName = "Sound_Sc04_07"
+  },
+  Sound_Sc04_09 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc04_09",
+    ObjectSoundName = "Sound_Sc04_09"
+  },
+  Sound_Sc04_10 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc04_10",
+    ObjectSoundName = "Sound_Sc04_10"
+  },
+  Sound_Sc04_11 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc04_11",
+    ObjectSoundName = "Sound_Sc04_11"
+  },
+  Sound_Sc05_K01 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc05_K01",
+    ObjectSoundName = "Sound_Sc05_K01"
+  },
+  Sound_Sc05_K02 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc05_K02",
+    ObjectSoundName = "Sound_Sc05_K02"
+  },
+  Sound_Sc05_K03 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc05_K03",
+    ObjectSoundName = "Sound_Sc05_K03"
+  },
+  Sound_Sc05_K04 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc05_K04",
+    ObjectSoundName = "Sound_Sc05_K04"
+  },
+  Sound_Sc05_K05 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc05_K05",
+    ObjectSoundName = "Sound_Sc05_K05"
+  },
+  Sound_Sc05_K06 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc05_K06",
+    ObjectSoundName = "Sound_Sc05_K06"
+  },
+  Sound_Sc05_K07 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc05_K07",
+    ObjectSoundName = "Sound_Sc05_K07"
+  },
+  Sound_Sc05_K08 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc05_K08",
+    ObjectSoundName = "Sound_Sc05_K08"
+  },
+  Sound_Sc05_K10 = {
+    FadeTime = 6,
+    ObjectName = "Sound_Sc05_K10",
+    ObjectSoundName = "Sound_Sc05_K10"
+  },
+  Sound_chouka_H_1 = {
+    DoStop = 1,
+    FadeTime = 6,
+    ObjectName = "Sound_chouka_H_1",
+    ObjectSoundName = "Sound_chouka_H_1"
+  },
+  Sound_chouka_H_2 = {
+    DoStop = 1,
+    FadeTime = 6,
+    ObjectName = "Sound_chouka_H_2",
+    ObjectSoundName = "Sound_chouka_H_2"
+  },
+  Sound_chouka_weapon_1 = {
+    DoStop = 1,
+    FadeTime = 6,
+    ObjectName = "Sound_chouka_weapon_1",
+    ObjectSoundName = "Sound_chouka_weapon_1"
+  },
+  Sound_chouka_weapon_2 = {
+    DoStop = 1,
+    FadeTime = 6,
+    ObjectName = "Sound_chouka_weapon_2",
+    ObjectSoundName = "Sound_chouka_weapon_2"
+  },
+  Sound_chouka_weapon_3 = {
+    DoStop = 1,
+    FadeTime = 6,
+    ObjectName = "Sound_chouka_weapon_3",
+    ObjectSoundName = "Sound_chouka_weapon_3"
+  },
+  Sound_stream_heavy = {
+    FadeTime = 6,
+    IsLoop = 1,
+    ObjectName = "Sound_stream_heavy",
+    ObjectSoundName = "Sound_stream_heavy"
+  },
+  Sound_stream_light = {
+    FadeTime = 6,
+    IsLoop = 1,
+    ObjectName = "Sound_stream_light",
+    ObjectSoundName = "Sound_stream_light"
+  },
+  Sound_uimain_interact4_1 = {
+    FadeTime = 6,
+    ObjectName = "Sound_uimain_interact4_1",
+    ObjectSoundName = "Sound_uimain_interact4_1"
+  },
+  sound_BlackBeacon_whisper_loop = {
+    FadeTime = 6,
+    IsLoop = 1,
+    ObjectName = "sound_BlackBeacon_whisper_loop",
+    ObjectSoundName = "sound_BlackBeacon_whisper_loop"
+  },
+  sound_bonfire_small_burnning_loop = {
+    FadeTime = 6,
+    IsLoop = 1,
+    ObjectName = "sound_bonfire_small_burnning_loop",
+    ObjectSoundName = "sound_bonfire_small_burnning_loop"
+  },
+  sound_brazier_burnning_loop = {
+    FadeTime = 6,
+    IsLoop = 1,
+    ObjectName = "sound_brazier_burnning_loop",
+    ObjectSoundName = "sound_brazier_burnning_loop"
+  }
+}

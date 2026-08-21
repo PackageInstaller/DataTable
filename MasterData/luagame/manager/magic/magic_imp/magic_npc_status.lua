@@ -1,0 +1,67 @@
+local Base = require("manager.magic.magic_imp.magic_base")
+local M = Util.create_child_mt(Base)
+
+function M:_init(owner, magic_info)
+  Base._init(self, owner, magic_info)
+end
+
+local NPC_STATUS_KIND = Config.NPC_STATUS_KIND
+local STATUS_FUN = {
+  [NPC_STATUS_KIND.IS_GHOST] = "_set_is_ghost",
+  [NPC_STATUS_KIND.IS_AIR] = "_set_is_air",
+  [NPC_STATUS_KIND.GODMODE] = "_set_godmode",
+  [NPC_STATUS_KIND.IS_SUPER_GHOST] = "_set_is_super_ghost",
+  [NPC_STATUS_KIND.IS_FRIENDLY_GHOST] = "_set_is_friendly_ghost",
+  [NPC_STATUS_KIND.IS_FRIENDLY_AIR] = "_set_is_friendly_air"
+}
+
+function M:on_effect()
+  self.status = self.cfg[1]
+  self.fun_name = STATUS_FUN[self.status]
+  if not self.fun_name then
+    return
+  end
+  self[self.fun_name](self, true)
+end
+
+function M:on_remove(magic_map)
+  if not self.fun_name then
+    return
+  end
+  local is_remove_all = true
+  for k, magic in pairs(magic_map) do
+    if self.status == magic.status then
+      is_remove_all = false
+      break
+    end
+  end
+  if is_remove_all then
+    self[self.fun_name](self, false)
+  end
+end
+
+function M:_set_is_ghost(value)
+  self.owner:set_is_ghost(value)
+end
+
+function M:_set_is_friendly_ghost(value)
+  self.owner:set_is_friendly_ghost(value)
+end
+
+function M:_set_is_air(value)
+  self.owner:set_is_air(value)
+end
+
+function M:_set_is_friendly_air(value)
+  self.owner:set_is_friendly_air(value)
+end
+
+function M:_set_is_super_ghost(value)
+  self.owner:set_is_super_ghost(value)
+end
+
+function M:_set_godmode(value)
+  self.owner:set_godmode(value, "magic")
+end
+
+return M

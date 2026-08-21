@@ -1,0 +1,56 @@
+return {
+  {
+    BuddyBreakLevel = 1,
+    BuddyLevel = 20,
+    EquipBreakLevel = 1,
+    EquipLevel = 20,
+    Id = 1,
+    MaxLevel = 9,
+    MinLevel = 1
+  },
+  {
+    BuddyBreakLevel = 2,
+    BuddyLevel = 40,
+    EquipBreakLevel = 2,
+    EquipLevel = 40,
+    Id = 2,
+    MaxLevel = 19,
+    MinLevel = 10
+  },
+  {
+    BuddyBreakLevel = 3,
+    BuddyLevel = 60,
+    EquipBreakLevel = 3,
+    EquipLevel = 60,
+    Id = 3,
+    MaxLevel = 29,
+    MinLevel = 20
+  },
+  {
+    BuddyBreakLevel = 4,
+    BuddyLevel = 70,
+    EquipBreakLevel = 4,
+    EquipLevel = 70,
+    Id = 4,
+    MaxLevel = 39,
+    MinLevel = 30
+  },
+  {
+    BuddyBreakLevel = 5,
+    BuddyLevel = 80,
+    EquipBreakLevel = 5,
+    EquipLevel = 80,
+    Id = 5,
+    MaxLevel = 49,
+    MinLevel = 40
+  },
+  {
+    BuddyBreakLevel = 6,
+    BuddyLevel = 90,
+    EquipBreakLevel = 6,
+    EquipLevel = 90,
+    Id = 6,
+    MaxLevel = 60,
+    MinLevel = 50
+  }
+}

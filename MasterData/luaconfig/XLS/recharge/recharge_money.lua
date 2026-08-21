@@ -1,0 +1,128 @@
+return {
+  {
+    Desc = "60枚楔石",
+    ExtraItemId = 5,
+    ExtraItemNum = 0,
+    FirstItemId = 5,
+    FirstItemNum = 60,
+    Icon = "Common/Shop_db_xssd_6",
+    IconBg = "Shop_czdh_bgd_01",
+    Id = 1,
+    ItemId = 5,
+    ItemNum = 60,
+    Name = "60枚楔石",
+    Priority = 9,
+    ResetTime = 1650535200,
+    ShowPrice = 6,
+    sdkkey = {
+      "tc.bb.600purchase1",
+      "com.bb.aos.600purchase1",
+      "com.bb.ios.600purchase1"
+    }
+  },
+  {
+    Desc = "300枚楔石",
+    ExtraItemId = 5,
+    ExtraItemNum = 50,
+    FirstItemId = 5,
+    FirstItemNum = 300,
+    Icon = "Common/Shop_db_xssd_30",
+    IconBg = "Shop_czdh_bgd_01",
+    Id = 2,
+    ItemId = 5,
+    ItemNum = 300,
+    Name = "300枚楔石",
+    Priority = 8,
+    ResetTime = 1650535200,
+    ShowPrice = 30,
+    sdkkey = {
+      "tc.bb.3000purchase1",
+      "com.bb.aos.3000purchase1",
+      "com.bb.ios.3000purchase1"
+    }
+  },
+  {
+    Desc = "980枚楔石",
+    ExtraItemId = 5,
+    ExtraItemNum = 180,
+    FirstItemId = 5,
+    FirstItemNum = 980,
+    Icon = "Common/Shop_db_xssd_98",
+    IconBg = "Shop_czdh_bgd_01",
+    Id = 3,
+    ItemId = 5,
+    ItemNum = 980,
+    Name = "980枚楔石",
+    Priority = 7,
+    ResetTime = 1650535200,
+    ShowPrice = 98,
+    sdkkey = {
+      "tc.bb.9800purchase1",
+      "com.bb.aos.9800purchase1",
+      "com.bb.ios.9800purchase1"
+    }
+  },
+  {
+    Desc = "1980枚楔石",
+    ExtraItemId = 5,
+    ExtraItemNum = 450,
+    FirstItemId = 5,
+    FirstItemNum = 1980,
+    Icon = "Common/Shop_db_xssd_198",
+    IconBg = "Shop_czdh_bgd_02",
+    Id = 4,
+    ItemId = 5,
+    ItemNum = 1980,
+    Name = "1980枚楔石",
+    Priority = 6,
+    ResetTime = 1650535200,
+    ShowPrice = 198,
+    sdkkey = {
+      "tc.bb.19800purchase1",
+      "com.bb.aos.19800purchase1",
+      "com.bb.ios.19800purchase1"
+    }
+  },
+  {
+    Desc = "3280枚楔石",
+    ExtraItemId = 5,
+    ExtraItemNum = 850,
+    FirstItemId = 5,
+    FirstItemNum = 3280,
+    Icon = "Common/Shop_db_xssd_328",
+    IconBg = "Shop_czdh_bgd_03",
+    Id = 5,
+    ItemId = 5,
+    ItemNum = 3280,
+    Name = "3280枚楔石",
+    Priority = 5,
+    ResetTime = 1650535200,
+    ShowPrice = 328,
+    sdkkey = {
+      "tc.bb.32800purchase1",
+      "com.bb.aos.32800purchase1",
+      "com.bb.ios.32800purchase1"
+    }
+  },
+  {
+    Desc = "6480枚楔石",
+    ExtraItemId = 5,
+    ExtraItemNum = 2080,
+    FirstItemId = 5,
+    FirstItemNum = 6480,
+    Icon = "Common/Shop_db_xssd_648",
+    IconBg = "Shop_czdh_bgd_03",
+    Id = 6,
+    ItemId = 5,
+    ItemNum = 6480,
+    Name = "6480枚楔石",
+    Priority = 4,
+    ResetTime = 1650535200,
+    ShowPrice = 648,
+    sdkkey = {
+      "tc.bb.64800purchase1",
+      "com.bb.aos.64800purchase1",
+      "com.bb.ios.64800purchase1"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+return {
+  [701000] = {ItemId = 701000, RelationID = 5},
+  [701001] = {ItemId = 701001, RelationID = 4},
+  [701002] = {ItemId = 701002, RelationID = 3},
+  [701003] = {ItemId = 701003, RelationID = 2},
+  [701004] = {ItemId = 701004, RelationID = 1}
+}

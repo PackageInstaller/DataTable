@@ -1,0 +1,37 @@
+local Base = require("ui.uiobject")
+local Char_Helper = require("uimodule.character.char_helper")
+local util_get_color = Util.get_unity_color_by_hex
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local QUALITY_IMG = {
+  [0] = "UIDraw/Draw_db_ckxq_js_b02",
+  [4] = "UIDraw/Draw_db_ckxq_js_b02",
+  [5] = "UIDraw/Draw_db_ckxq_js_b01"
+}
+local QUALITY_COLOR = {
+  [0] = "9366d9",
+  [4] = "9366d9",
+  [5] = "efc66e"
+}
+
+function ui:ui_finish_load()
+end
+
+function ui:set_data(buddy_id)
+  local buddy_config = ShareRes.create("buddy.buddy", buddy_id)
+  self.v_uicompents.CharName_txt.text = buddy_config.Name
+  local icon_name = buddy_config.Icon[2]
+  local path = string.format("Icon/Profile/%s", icon_name)
+  ResMgr:load_set_icon(self.v_uicompents.CharIcon_img, path)
+  local element_icon_path = Char_Helper.get_char_element_icon(buddy_id)
+  ResMgr:load_set_icon(self.v_uicompents.EleIcon_img, element_icon_path)
+  local job_icon_path = Char_Helper.get_char_job_icon(buddy_id)
+  ResMgr:load_set_icon(self.v_uicompents.ProfessionIcon_img, job_icon_path)
+  local quality = buddy_config.Quality
+  local quality_img = QUALITY_IMG[quality] or QUALITY_IMG[0]
+  ResMgr:load_set_icon(self.v_uicompents.Quality1_img, quality_img)
+  local qulity_color = QUALITY_COLOR[quality] or QUALITY_COLOR[0]
+  self.v_uicompents.Quality2_img.color = util_get_color(tonumber(qulity_color, 16))
+end
+
+return ui

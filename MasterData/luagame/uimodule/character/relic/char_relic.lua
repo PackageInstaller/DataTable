@@ -1,0 +1,293 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local _tinsert = table.insert
+local _tsort = table.sort
+local Timer = Global.timer
+local CharcterConfig = require("uimodule.character.character_config")
+local PanelType = CharcterConfig.PANEL_TYPE
+local Char_Helper = require("uimodule.character.char_helper")
+local AssetBarView = require("ui.asset_bar.asset_bar")
+local CONSUMETEM_CLASS = require("uimodule.character.consumeTem")
+local TEMPLATE_KEY_ATTR = "CHAR_RELIC_TEMPLATE_KEY_ATTR"
+local TEMPLATE_KEY_SUIT = "CHAR_RELIC_TEMPLATE_KEY_SUIT"
+local Slot_Num = 4
+local MODEL = {
+  v_attr_content = {
+    "AttrContent",
+    BIND_TYPE.OBJECT
+  },
+  v_attr_temp = {
+    "AttrTemp",
+    BIND_TYPE.OBJECT
+  },
+  v_btn_all_remove = {
+    "BtnAllRemove",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_quick_equip = {
+    "BtnQuickEquip",
+    BIND_TYPE.BUTTON
+  },
+  v_engrave1 = {
+    "Engrave1",
+    BIND_TYPE.IMAGE
+  },
+  v_engrave2 = {
+    "Engrave2",
+    BIND_TYPE.IMAGE
+  },
+  v_engrave3 = {
+    "Engrave3",
+    BIND_TYPE.IMAGE
+  },
+  v_engrave4 = {
+    "Engrave4",
+    BIND_TYPE.IMAGE
+  },
+  v_engrave_info = {
+    "EngraveInfo",
+    BIND_TYPE.OBJECT
+  },
+  v_no_engrave = {
+    "NOEngrave",
+    BIND_TYPE.OBJECT
+  },
+  v_red_char_up = {
+    "RedCharUp",
+    BIND_TYPE.IMAGE
+  },
+  v_suit_content = {
+    "SuitContent",
+    BIND_TYPE.OBJECT
+  },
+  v_suit_group = {
+    "SuitGroup",
+    BIND_TYPE.OBJECT
+  },
+  v_suit = {
+    "Suit",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:init_slot_items()
+  self:set_button("BtnAllRemove", function()
+    self:remove_all()
+  end)
+  self:set_button("BtnQuickEquip", function()
+    self:auto_wear()
+  end)
+  self:register_exist_auto_template(TEMPLATE_KEY_ATTR, self.v_attr_temp, self.v_attr_content)
+  self:register_exist_auto_template(TEMPLATE_KEY_SUIT, self.v_suit_group, self.v_suit_content)
+end
+
+function ui:ui_on_show()
+  self.v_buddy_id = CharacterMgr.v_last_select_buddy_id
+  self:bind_auto_mq(Const.MSG_ON_RELIC_UPDATE, self.refresh_slot_items, self)
+end
+
+function ui:refresh(buddy_id)
+  if buddy_id then
+    self.v_buddy_id = buddy_id
+  end
+  self:refresh_slot_items()
+end
+
+function ui:init_slot_items()
+  self.v_slot_items = {}
+  for idx = 1, Slot_Num do
+    local item_obj = self.v_uiobjects["Engrave" .. idx]
+    local btn = Util.get_button(nil, item_obj)
+    local add_obj = Util.get_child_gameobj("Add_", item_obj)
+    local quality_img = Util.get_image("Quality_", item_obj)
+    local icon = Util.get_image("EngraveIcon_", item_obj)
+    local lv_txt = Util.get_text("Lower/EngraveLv_", item_obj)
+    local lock_obj = Util.get_child_gameobj("Lock_", item_obj)
+    local red_obj = Util.get_child_gameobj("Red_", item_obj)
+    self.v_slot_items[idx] = {
+      item_obj = item_obj,
+      add_obj = add_obj,
+      quality_img = quality_img,
+      icon = icon,
+      lv_txt = lv_txt,
+      lock_obj = lock_obj,
+      red_obj = red_obj
+    }
+    self:set_button_listener(btn, function()
+      self:on_click_slot(idx)
+    end)
+  end
+end
+
+function ui:refresh_slot_items()
+  local can_auto_fill = false
+  for idx, slot_item in ipairs(self.v_slot_items) do
+    local relic_info = RelicMgr:get_relic_info_by_buddy_slot(self.v_buddy_id, idx)
+    local relic_data = relic_info.data
+    local is_unlock = relic_info.unlock == true
+    local is_empty = nil == relic_data
+    slot_item.lock_obj:SetActiveEx(not is_unlock)
+    slot_item.add_obj:SetActiveEx(is_empty and is_unlock)
+    slot_item.quality_img.gameObject:SetActiveEx(not is_empty and is_unlock)
+    slot_item.icon.gameObject:SetActiveEx(not is_empty and is_unlock)
+    slot_item.lv_txt.text = not (not is_empty and is_unlock) and Util.format_str("空") or Util.format_str("lv.{1}", relic_data.lv)
+    local color = slot_item.lv_txt.color
+    color.a = not (not is_empty and is_unlock) and 0.3 or 1
+    slot_item.lv_txt.color = color
+    if not is_empty and is_unlock then
+      local relic_cfg = ShareRes.get_relic_cfg(relic_data.id)
+      local quality_path = ShareRes.get_item_quality_cfg(relic_cfg.Quality).RelicCircleBgIcon
+      ResMgr:load_set_icon(slot_item.quality_img, quality_path)
+      local icon_path = UtilUI.get_item_icon(relic_data.id)
+      ResMgr:load_set_icon(slot_item.icon, icon_path)
+    end
+    local has_free_relic = RelicMgr:check_buddy_slot_has_free_relic(true, self.v_buddy_id, idx)
+    local wait_apply_refine = RelicMgr:check_new_entry_by_buddy_slot(self.v_buddy_id, idx)
+    slot_item.red_obj:SetActiveEx(has_free_relic or wait_apply_refine)
+    if has_free_relic then
+      can_auto_fill = true
+    end
+  end
+  self.v_can_auto_fill = can_auto_fill
+  self:refresh_info_layout()
+end
+
+function ui:on_click_slot(idx)
+  local relic_info = RelicMgr:get_relic_info_by_buddy_slot(self.v_buddy_id, idx)
+  local is_lock = relic_info.unlock ~= true
+  if is_lock then
+    local buddy_slot_cfg = ShareRes.get_relic_slot_cfg(self.v_buddy_id)
+    local condition = buddy_slot_cfg[idx].Condition
+    if condition then
+      local tip = ShareRes.create("condition.condition", condition).Desc
+      Util.show_message_tip(tip)
+    end
+    return
+  end
+  local uuid
+  if relic_info.data then
+    uuid = relic_info.data.uuid
+  end
+  if not uuid and not RelicMgr:check_buddy_slot_has_free_relic(false, self.v_buddy_id, idx) then
+    Util.show_message_tip(2261)
+    return
+  end
+  UIMgr:get_ui("relic_operate_panel"):ui_show(self.v_buddy_id, idx, uuid, false, false)
+end
+
+function ui:refresh_info_layout()
+  local is_buddy_empty = RelicMgr:is_buddy_empty(self.v_buddy_id)
+  self.v_uiobjects.AttrContent:SetActive(not is_buddy_empty)
+  self.v_uiobjects.SuitContent:SetActive(not is_buddy_empty)
+  self.v_uiobjects.NoAttr:SetActive(is_buddy_empty)
+  self:refresh_btns(is_buddy_empty)
+  if is_buddy_empty then
+    return
+  end
+  self:refresh_attr_list()
+  self:refresh_suit_info()
+end
+
+function ui:refresh_attr_list()
+  self:give_back_auto_cache(TEMPLATE_KEY_ATTR)
+  local attr_list = RelicMgr:get_attr_list_by_buddy(self.v_buddy_id)
+  if not attr_list then
+    return
+  end
+  for idx, attr_data in ipairs(attr_list) do
+    local attr_id = attr_data.attr_id
+    local val = attr_data.val
+    local item = self:get_auto_cache(TEMPLATE_KEY_ATTR)
+    local icon = Util.get_image("AttrIcon", item)
+    local name_txt = Util.get_text("AttrName", item)
+    local val_txt = Util.get_text("AttrVal", item)
+    local bg = Util.get_child_gameobj("MainAttrBg", item)
+    bg:SetActive(0 ~= idx % 2)
+    local icon_name = ShareRes.get_attr_icon(attr_id)
+    if icon_name then
+      Util.load_attr_icon(icon, icon_name)
+    end
+    name_txt.text = ShareRes.get_attr_name(attr_id)
+    local is_ration = ShareRes.get_is_ration_attr(attr_id)
+    val_txt.text = is_ration and string.format("%.2f", val / 100) .. "%" or Util.round(val)
+  end
+end
+
+function ui:refresh_suit_info()
+  local suit_list = RelicMgr:get_active_suit_list_by_buddy(self.v_buddy_id)
+  local is_suit_empty = not suit_list or not next(suit_list)
+  self.v_uiobjects.NoSuit:SetActive(is_suit_empty)
+  if is_suit_empty then
+    return
+  end
+  self:give_back_auto_cache(TEMPLATE_KEY_SUIT)
+  for _, data in ipairs(suit_list) do
+    local item = self:get_auto_cache(TEMPLATE_KEY_SUIT)
+    local suit_name = Util.get_text("SuitName/SuitName_", item)
+    local suit_cfg = ShareRes.create("relic.relic_suit", data.suit_id)
+    suit_name.text = suit_cfg.Name
+    self:set_suit_desc_obj(1, data, item)
+    self:set_suit_desc_obj(2, data, item)
+  end
+end
+
+function ui:set_suit_desc_obj(idx, data, item)
+  local suit_obj = Util.get_child_gameobj("SuitEffect" .. idx, item)
+  local active_count_key = data.active_suit[idx]
+  suit_obj:SetActive(nil ~= active_count_key)
+  if not active_count_key then
+    return
+  end
+  local suit_desc = Util.get_text(nil, suit_obj)
+  local suit_sub_cfg = ShareRes.create("relic.relic_suit", data.suit_id).Suit[active_count_key]
+  suit_desc.text = Util.format_str("{1}件套：{2}", active_count_key, suit_sub_cfg.Desc)
+  local canvas_group = Util.get_canvas_group(nil, suit_obj)
+  local act_obj = Util.get_child_gameobj("SuitState/Active", suit_obj)
+  local not_act_obj = Util.get_child_gameobj("SuitState/NoActive", suit_obj)
+  canvas_group.alpha = 1
+  act_obj:SetActive(true)
+  not_act_obj:SetActive(false)
+end
+
+function ui:refresh_btns(is_buddy_empty)
+  Util.apply_grey_ex(self.v_uiobjects.BtnAllRemove, is_buddy_empty)
+  self.v_btn_all_remove.interactable = not is_buddy_empty
+  self.v_uiobjects.RedCharUp:SetActive(self.v_can_auto_fill)
+  Util.apply_grey_ex(self.v_uiobjects.BtnQuickEquip, not self.v_can_auto_fill)
+  self.v_btn_quick_equip.interactable = self.v_can_auto_fill
+end
+
+function ui:remove_all()
+  for idx = 1, Slot_Num do
+    local relic_data = RelicMgr:get_relic_info_by_buddy_slot(self.v_buddy_id, idx).data
+    if relic_data then
+      RelicMgr:req_take_off_relic(relic_data.uuid)
+    end
+  end
+end
+
+function ui:auto_wear()
+  for idx = 1, Slot_Num do
+    local relic_data = RelicMgr:get_relic_info_by_buddy_slot(self.v_buddy_id, idx).data
+    if not relic_data then
+      local temp_sort_list = RelicMgr:get_filter_sort_list(idx)
+      for _, data in ipairs(temp_sort_list) do
+        if not data.is_wear then
+          RelicMgr:req_wear_relic(data.relic_uuid, self.v_buddy_id)
+          break
+        end
+      end
+    end
+  end
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+return ui

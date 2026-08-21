@@ -1,0 +1,157 @@
+local Base = require("ui.uiobject")
+local MathX = require("base.mathx")
+local _clamp = MathX.Clamp
+local Player_Hero_Helper = require("uimodule.friend.player_hero_info.player_hero_helper")
+local ui = Util.create_child_mt(Base)
+local QiannnengProgressImgFill = ShareRes.get_comm_string_value("QiannnengProgressImgFill")
+local Prop_Name_To_Show_Name = {
+  hp = "血量",
+  sparmor = "霸体值",
+  energy = "能量",
+  cvenergy = "能量恢复",
+  exenergy = "大招能量",
+  cvexenergy = "大招能量恢复",
+  attack = "物理攻击",
+  beacon_level = "信标等级",
+  penetrate = "穿防",
+  defense = "防御"
+}
+
+function ui:ui_finish_load()
+  self.v_btn_txt = Util.get_text("BtnAdvanceText", self.v_uiobjects.AdvanceBtn)
+  self.v_btn_list = {}
+  for i = 1, 6 do
+    self:set_button("Advance" .. i, function()
+      self:on_click_btn(i)
+    end)
+    local go = self.v_uiobjects["Advance" .. i]
+    self.v_btn_list[i] = {
+      normal_bg = Util.get_child_gameobj("NorBg_", go),
+      normal_selected = Util.get_child_gameobj("NorBg_/NorSelect_", go),
+      active_bg = Util.get_child_gameobj("ActiveBg_", go),
+      active_selected = Util.get_child_gameobj("ActiveBg_/ActiveSelect_", go),
+      red_go = Util.get_child_gameobj("Red", go),
+      icon = Util.get_image("AdvanceIcon_", go)
+    }
+  end
+  self:set_button("AdvanceDesc", function()
+    self:try_show_keyword()
+  end)
+  self:set_button("BtnLast", function()
+    local select_idx = self.v_cur_selected_idx - 1
+    if select_idx <= 1 then
+      select_idx = 1
+    end
+    self:on_click_btn(select_idx)
+  end)
+  self:set_button("BtnNext", function()
+    local select_idx = self.v_cur_selected_idx + 1
+    if select_idx >= 6 then
+      select_idx = 6
+    end
+    self:on_click_btn(select_idx)
+  end)
+  self.v_tmp_text = self.v_uiobjects.AdvanceDesc:GetComponent(typeof(CS.TMPro.TMP_Text))
+end
+
+function ui:on_click_btn(idx)
+  self.v_cur_selected_idx = idx
+  self:update_info()
+end
+
+function ui:ui_on_show()
+  self.v_cur_selected_idx = nil
+  self.v_uiobjects.BgTouch:SetActive(false)
+  self:update_btn_list_img()
+  self:update_info()
+end
+
+function ui:get_prop_desc(lv)
+  local cfg = ShareRes.create("buddy.buddy_upgrade_advance_attr", self.v_buddy_id)[lv]
+  for prop_name, _ in pairs(Prop_Name_To_Show_Name) do
+    if cfg[prop_name] > 0 then
+      return Prop_Name_To_Show_Name[prop_name], cfg[prop_name]
+    end
+  end
+  return "", 0
+end
+
+function ui:update_btn_list_img()
+  for i, v in ipairs(self.v_btn_list) do
+    local advance_icon_cfg = ShareRes.create("buddy.buddy_advance_icon", i + 1)
+    local icon_path = advance_icon_cfg.AdvacneAfter
+    ResMgr:load_set_icon(v.icon, icon_path, nil, true)
+  end
+end
+
+function ui:update_btn_list()
+  for i, v in ipairs(self.v_btn_list) do
+    v.normal_bg:SetActiveEx(i >= self.v_role_cur_lv)
+    v.active_bg:SetActiveEx(i < self.v_role_cur_lv)
+    local is_selected = self.v_cur_selected_idx == i
+    local alpha = (i < self.v_role_cur_lv or is_selected) and 1 or 0.2
+    Util.set_color(v.icon, is_selected and "292929" or "f5ede2", alpha)
+    if i >= self.v_role_cur_lv then
+      v.normal_selected:SetActiveEx(is_selected)
+    else
+      v.active_selected:SetActiveEx(is_selected)
+    end
+    v.red_go:SetActive(false)
+  end
+  if QiannnengProgressImgFill then
+    local fill_amount = QiannnengProgressImgFill[self.v_role_cur_lv] or 0
+    self.v_uicompents.ProcessFill_img.fillAmount = fill_amount
+  end
+end
+
+function ui:update_info()
+  self.v_buddy_info = Player_Hero_Helper.get_hero_data()
+  self.v_buddy_id = self.v_buddy_info.id
+  local advance_cfg = ShareRes.create("buddy.buddy_advance", self.v_buddy_id)
+  self.v_role_cur_lv = self.v_buddy_info.advance
+  if self.v_cur_selected_idx == nil then
+    self.v_cur_selected_idx = advance_cfg[self.v_role_cur_lv + 1] ~= nil and self.v_role_cur_lv or self.v_role_cur_lv - 1
+  end
+  self.v_cur_selected_idx = _clamp(self.v_cur_selected_idx, 1, #self.v_btn_list)
+  self:update_btn_list()
+  self.v_uiobjects.IconBgActive:SetActive(self.v_cur_selected_idx <= self.v_role_cur_lv - 1)
+  local advance_icon_cfg = ShareRes.create("buddy.buddy_advance_icon", self.v_cur_selected_idx + 1)
+  local icon_path = advance_icon_cfg.AdvacneAfter
+  ResMgr:load_set_icon(self.v_uicompents.AdcanveIcon_img, icon_path, nil, true)
+  local advance_skill_cfg = advance_cfg[self.v_cur_selected_idx + 1]
+  self.v_uicompents.AdvanceLv_txt.text = Config.NUM_2_ROMAN[self.v_cur_selected_idx]
+  self.v_uicompents.AdvanceName_txt.text = advance_skill_cfg.SkillName
+  local skill_desc = ""
+  if advance_skill_cfg.SkillDesc and "" ~= advance_skill_cfg.SkillDesc then
+    skill_desc = advance_skill_cfg.SkillDesc
+  elseif advance_skill_cfg.UpSkillLv > 0 then
+    skill_desc = Util.format_str("技能等级+{1}", advance_skill_cfg.UpSkillLv)
+  else
+    local add_value = 0
+    skill_desc, add_value = self:get_prop_desc(advance_skill_cfg.Lv)
+    if add_value > 0 then
+      skill_desc = Util.format_str("{1}+{2}", skill_desc, add_value)
+    end
+  end
+  self.v_tmp_text.text = skill_desc
+  self.v_keyword_list = advance_skill_cfg.Keywords
+  self:update_cost_info()
+  self.v_uiobjects.BtnLast:SetActive(self.v_cur_selected_idx > 1)
+  self.v_uiobjects.BtnNext:SetActive(self.v_cur_selected_idx < 6)
+end
+
+function ui:update_cost_info()
+  self.v_uiobjects.AdvanceCost:SetActive(false)
+  self.v_uiobjects.AdvanceBtn:SetActive(false)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:try_show_keyword()
+  if self.v_keyword_list then
+    UIMgr:try_show_ui("keyword_tips_v2", nil, self.v_keyword_list)
+  end
+end
+
+return ui

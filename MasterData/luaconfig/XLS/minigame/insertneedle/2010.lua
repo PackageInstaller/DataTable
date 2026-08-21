@@ -1,0 +1,27 @@
+local empty = {}
+return {
+  note = "暝个人番外-3200501插针小游戏1",
+  awardId = 0,
+  spacing = 2.0,
+  uiType = 3,
+  uiTypeIcon = "UIBattleGame3/唯实社",
+  uiTypeEffect = 1,
+  moveType = 1,
+  isLeftStart = true,
+  isDubbleBtn = false,
+  useOrder = false,
+  useIcon = false,
+  speed = 5.0,
+  nodeNum = 21,
+  nodesA = {
+    {3, 2},
+    {15, 2},
+    {10, 3}
+  },
+  nodesB = empty,
+  orderA = empty,
+  orderB = empty,
+  iconA = empty,
+  iconB = empty,
+  id = 2010
+}

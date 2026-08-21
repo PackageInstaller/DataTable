@@ -1,0 +1,32 @@
+return {
+  [20040101] = {
+    Id = 20040101,
+    ResetItemCount = 1,
+    ResetItemId = 11,
+    RingReward = {
+      400000,
+      400001,
+      400002
+    }
+  },
+  [20040102] = {
+    Id = 20040102,
+    ResetItemCount = 1,
+    ResetItemId = 11,
+    RingReward = {
+      400003,
+      400004,
+      400005
+    }
+  },
+  [20040103] = {
+    Id = 20040103,
+    ResetItemCount = 1,
+    ResetItemId = 11,
+    RingReward = {
+      400003,
+      400004,
+      400005
+    }
+  }
+}

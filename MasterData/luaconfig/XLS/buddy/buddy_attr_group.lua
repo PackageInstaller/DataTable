@@ -1,0 +1,22 @@
+return {
+  {
+    {AttrId = 76, CheckRes = 0},
+    {AttrId = 78, CheckRes = 0},
+    {AttrId = 4, CheckRes = 0},
+    {AttrId = 20, CheckRes = 0},
+    {AttrId = 21, CheckRes = 0},
+    {AttrId = 22, CheckRes = 0},
+    {AttrId = 23, CheckRes = 0},
+    {AttrId = 147, CheckRes = 0},
+    {AttrId = 154, CheckRes = 0},
+    {AttrId = 19, CheckRes = 0},
+    {AttrId = 5, CheckRes = 0}
+  },
+  {
+    {AttrId = 30, CheckRes = 0},
+    {AttrId = 32, CheckRes = 0},
+    {AttrId = 34, CheckRes = 0},
+    {AttrId = 33, CheckRes = 0},
+    {AttrId = 31, CheckRes = 0}
+  }
+}

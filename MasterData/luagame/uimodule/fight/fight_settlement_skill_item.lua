@@ -1,0 +1,68 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local SKILL_BOOK_ICON_PATH = "UISkillBook/%s"
+local util_get_color = Util.get_unity_color_by_hex
+local CHAR_HELPER = require("uimodule.character.char_helper")
+local color_first = util_get_color(tonumber("BF9046", 16))
+local color_second = util_get_color(tonumber("BF4646", 16))
+local color_third = util_get_color(tonumber("396CA5", 16))
+local TEAM_INDEX = {
+  First = 1,
+  Second = 2,
+  Third = 3
+}
+
+function M:set_data(src_data)
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  self.v_idx = src_data.idx
+  local skill_cfg = src_data.skill_cfg
+  local show_item_obj = uobj.ShowItem
+  local total_item_obj = uobj.SkillItem
+  local max_col = 5
+  local row = src_data.row
+  local col = src_data.col
+  local skill_item_rect = ucom.SkillItem_rect
+  show_item_obj:SetActive(true)
+  total_item_obj:SetActive(true)
+  if 0 == row % 2 then
+    skill_item_rect:SetAnchoredPositionA(50, 0)
+    if col == max_col then
+      total_item_obj:SetActive(false)
+    end
+  else
+    skill_item_rect:SetAnchoredPositionA(0, 0)
+  end
+  if not skill_cfg then
+    show_item_obj:SetActive(false)
+    return
+  end
+  local skill_icon = ucom.SkillIcon_img
+  local skill_type_txt = ucom.Skill_type_txt
+  local TeamBg_img = ucom.TeamBg_img
+  local icon_name = skill_cfg.Icon
+  local skill_id = skill_cfg.SkillId
+  local skill_icon_path = CHAR_HELPER.get_battle_skill_icon(skill_id)
+  local icon_path = string.format(skill_icon_path, icon_name)
+  local pos_id = src_data.pos_id
+  ResMgr:load_set_icon(skill_icon, icon_path)
+  skill_type_txt.text = pos_id
+  local color = color_first
+  if pos_id == TEAM_INDEX.First then
+    color = color_first
+  elseif pos_id == TEAM_INDEX.Second then
+    color = color_second
+  elseif pos_id == TEAM_INDEX.Third then
+    color = color_third
+  end
+  TeamBg_img.color = color
+end
+
+function M:on_clear()
+  self:unbind_all_auto_mq()
+end
+
+function M:set_selected(is_select)
+end
+
+return M

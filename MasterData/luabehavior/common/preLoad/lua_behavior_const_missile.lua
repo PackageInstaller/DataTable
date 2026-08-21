@@ -1,0 +1,3 @@
+local M = {}
+M.RED_SKILL_COUNTER_MIS = 10019900601
+return M

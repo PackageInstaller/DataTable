@@ -1,0 +1,99 @@
+local empty = {}
+return {
+  Events = {
+    {
+      ConditionActions = {
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = {
+            {
+              NPCId = 300701,
+              NPCName = "food1",
+              Type = 1,
+              Timeout = 0.0
+            },
+            {
+              NPCId = 300702,
+              NPCName = "food2",
+              Type = 1,
+              Timeout = 0.0
+            },
+            {
+              NPCId = 300703,
+              NPCName = "food3",
+              Type = 1,
+              Timeout = 0.0
+            },
+            {
+              NPCId = 300704,
+              NPCName = "food4",
+              Type = 1,
+              Timeout = 0.0
+            },
+            {
+              NPCId = 300705,
+              NPCName = "food5",
+              Type = 1,
+              Timeout = 0.0
+            },
+            {
+              NPCId = 300706,
+              NPCName = "food6",
+              Type = 1,
+              Timeout = 0.0
+            },
+            {
+              TaskId = 30703,
+              Type = 5,
+              Timeout = 0.0
+            },
+            {
+              PosKey = "N4",
+              Rotation = 0,
+              NPCId = 300710,
+              NPCName = "收藏品",
+              Type = 0,
+              Timeout = 0.0
+            }
+          },
+          ValidInTower = false
+        },
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = {
+            {
+              PosKey = "N4",
+              Rotation = 0,
+              NPCId = 300703,
+              NPCName = "food3",
+              Type = 0,
+              Timeout = 0.5,
+              TimeoutKey = "hWmqfOUl"
+            }
+          },
+          ValidInTower = false
+        },
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = empty,
+          ValidInTower = false
+        }
+      },
+      Type = 22,
+      ConditionVariable = "",
+      IsNotCondition = false
+    }
+  },
+  MonsterRefreshCfg = {
+    Weight = 100,
+    MonsterGroupId = 0,
+    MonsterWave = 0,
+    MonsterCount = 0,
+    SendWave = false,
+    WaveStyle = 0
+  },
+  FinishiConditionDict = empty
+}

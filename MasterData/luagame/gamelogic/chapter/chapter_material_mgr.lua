@@ -1,0 +1,666 @@
+local Base = require("gamelogic.base_system")
+local M = Util.create_child_mt(Base)
+local LocalStorage = require("utils.localstorage")
+local Jump_Helper = require("gamelogic.sys_open.jump_helper")
+M.null_key_num = -100
+M.drop_sign = 1
+M.show_element_select_day = 6
+M.all_element_list = {
+  2,
+  3,
+  4,
+  5,
+  6
+}
+M.first_pass = 1
+M.exp = 2
+M.prob_up = 3
+M.other = 4
+M.first_pass_received = 5
+M.exp_item_id = 1
+M.material_server_info_list = {}
+M.choose_epi_type_drop_list = {}
+M.chapter_material_level_type = 0
+M.today_element_list = {}
+M.refresh_hour = Global.daily_reset_hour
+M.curr_multiple_num = 1
+M.ingore_multiple_num = true
+M.LOCAL_MATERIAL_SELECT_DROP_KEY = "LOCAL_MATERIAL_SELECT_DROP_KEY"
+M.LOCAL_MATERIAL_SELECT_MULT_KEY = "LOCAL_MATERIAL_SELECT_MULT_KEY"
+M.WEEK_NUMBER_TO_CHINESE = {
+  [1] = "周一",
+  [2] = "周二",
+  [3] = "周三",
+  [4] = "周四",
+  [5] = "周五",
+  [6] = "周六",
+  [7] = "周日"
+}
+
+function M:set_curr_multiple_num(num)
+  self.curr_multiple_num = num
+end
+
+function M:get_curr_multiple_num(num)
+  return self.curr_multiple_num
+end
+
+function M:get_day_of_week()
+  local day = tonumber(Date:get_week())
+  local hour = self:get_hour()
+  if hour >= self.refresh_hour then
+    return day
+  end
+  if day > 1 then
+    day = day - 1
+  else
+    day = 7
+  end
+  return day
+end
+
+function M:get_today_element_list()
+  local day_of_week = self:get_day_of_week()
+  return self:get_element_list_with_day(day_of_week)
+end
+
+function M:get_element_list_with_day(day)
+  local element_cfg_list = ShareRes.create("buddy.buddy_element")
+  local list = {}
+  local element_drop_list = ShareRes.create("chapter.new_material_epi_day_drop")
+  local element_id_list = {}
+  for i, data in pairs(element_drop_list) do
+    local item = ShareRes.create("chapter.new_material_epi_day_drop", i)
+    local isHave = false
+    for k, v in pairs(data) do
+      if v.Day == day then
+        if v.ShowRewardList == nil or 0 == #v.ShowRewardList then
+          isHave = true
+          element_id_list = self.all_element_list
+          break
+        end
+        if v.ShowRewardList[1] > 0 then
+          element_id_list = v.ShowRewardList
+          isHave = true
+          break
+        end
+      end
+    end
+    if isHave then
+      break
+    end
+  end
+  for i = 1, #element_id_list do
+    if element_id_list[i] > 0 then
+      for _, data in pairs(element_cfg_list) do
+        if data.Id == element_id_list[i] then
+          table.insert(list, data)
+        end
+      end
+    end
+  end
+  return list
+end
+
+function M:set_cur_drop_select_index(index)
+  self.v_cur_select_index = index
+end
+
+function M:get_cur_drop_select_index()
+  return self.v_cur_select_index
+end
+
+function M:set_select_element_id(value)
+  self.select_element_id = value
+end
+
+function M:get_select_element_id()
+  local data = self:get_choose_epi_info_with_epi_type(self.chapter_material_level_type)
+  return data.drop_type + 1
+end
+
+function M:set_chapter_material_level_type(value)
+  self.chapter_material_level_type = value
+end
+
+function M:get_chapter_material_level_type()
+  return self.chapter_material_level_type
+end
+
+function M:get_show_reward_list(point_id)
+  local list = ShareRes.get_chapter_point_cfg(point_id)
+  if list.ShowRewardList == nil or 0 == #list.ShowRewardList then
+    list = ShareRes.get_chapter_point_cfg(10020101)
+  end
+  return list.ShowRewardList
+end
+
+function M:get_first_pass_list(episode_id)
+  local item = ShareRes.get_chapter_point_cfg(episode_id)
+  return item.AwardId[1]
+end
+
+function M:get_material_epi_list()
+  local list = ShareRes.create("chapter.new_material_epi")
+  return list
+end
+
+function M:get_material_drop_list()
+  local list = ShareRes.create("chapter.new_material_epi_day_drop")
+  return list
+end
+
+function M:get_material_auto_select_drop_list()
+  local list = ShareRes.create("chapter.new_material_epi_free_drop")
+  return list
+end
+
+function M:get_material_is_drop_sign(epi_type)
+  local list = self:get_material_epi_list()
+  for i, v in pairs(list) do
+    if v.MaterialType == epi_type then
+      return v.DropSign
+    end
+  end
+  return 0
+end
+
+function M:get_material_is_auto_select_with_epi(episode_id)
+  local list = self:get_material_drop_list()
+  if not list then
+    return nil
+  end
+  local data_list = list[episode_id]
+  local now_day = self:day_of_week()
+  for i, v in pairs(data_list) do
+    if v.Day == now_day then
+      return 1 == v.IsFree
+    end
+  end
+end
+
+function M:get_material_is_auto_select_with_type(epi_type)
+  local epi_list = self:get_material_epi_list()
+  local epi_id = 0
+  for i, v in pairs(epi_list) do
+    if v.MaterialType == epi_type then
+      epi_id = v.EpisodeId
+    end
+  end
+  local list = self:get_material_drop_list()
+  if not list then
+    return false
+  end
+  local data_list = list[epi_id]
+  local now_day = self:get_day_of_week()
+  for i, v in pairs(data_list) do
+    if v.Day == now_day then
+      return 1 == v.IsFree
+    end
+  end
+  return false
+end
+
+function M:get_not_select_element_reward_group_id(episode_id)
+  local list = self:get_material_drop_list()
+  local data = list[episode_id]
+  for i, v in pairs(data) do
+    if v.Day == self:get_day_of_week() then
+      return v.RewardGroupId
+    end
+  end
+  return 0
+end
+
+function M:get_select_element_up_reward_group_id(episode_id)
+  local item = self:get_material_auto_select_drop_list()
+  local drop_data = self:get_choose_epi_info_with_epi_type(self.chapter_material_level_type)
+  local data = item[episode_id]
+  return data.AwardUpShow[drop_data.drop_type]
+end
+
+function M:get_select_element_other_reward_group_id(episode_id)
+  local item = self:get_material_auto_select_drop_list()
+  local drop_data = self:get_choose_epi_info_with_epi_type(self.chapter_material_level_type)
+  local data = item[episode_id]
+  return data.AwardShow[drop_data.drop_type]
+end
+
+function M:get_drop_index_with_select_element_id(element_id)
+end
+
+function M:is_auto_select_material(config)
+  if config.DropSign ~= self.drop_sign then
+    return false
+  end
+  local day_of_week = self:get_day_of_week()
+  local element_drop_list = self:get_material_drop_list()
+  local toDayList = element_drop_list[config.EpisodeId]
+  for k, v in pairs(toDayList) do
+    if v.Episode == config.EpisodeId and v.Day == day_of_week and 1 == v.IsFree then
+      return true
+    end
+  end
+  return false
+end
+
+function M:is_chapter_material_epi_task_finish(id, index)
+  local material_server_info = self.material_server_info_list[id]
+  if not material_server_info then
+    return false
+  end
+  local condition_list = material_server_info.condition_list
+  if not condition_list then
+    return false
+  end
+  for key, value in pairs(condition_list) do
+    if index == value.condition_id and value.is_finish then
+      return true
+    end
+  end
+  return false
+end
+
+function M:get_is_first_pass_over(episode_id)
+  for i, v in pairs(self.material_server_info_list) do
+    if v.index == episode_id then
+      if v.first_reward == false then
+        return true
+      else
+        return false
+      end
+    end
+  end
+end
+
+function M:on_material_epi_list_update(list)
+  self.material_server_info_list = {}
+  self.choose_epi_type_drop_list = {}
+  for i, v in pairs(list.new_material_epi_list) do
+    self.material_server_info_list[v.index] = v
+  end
+  self:check_red()
+end
+
+function M:on_material_epi_data_update(data)
+  local info = data.new_material_epi_data
+  self.material_server_info_list[info.index] = info
+  self:check_red()
+  MsgGame:mq_publish2(Const.MSG_UPDATE_MATERIAL_LEVEL_INFO)
+end
+
+function M:request_choose_new_material_drop(epi_type, drop_index, callback)
+  Network:call("c2gs_choose_new_material_drop_id", {epi_type = epi_type, drop_index = drop_index}, function(ok, resp)
+    if ok and callback then
+      self.choose_epi_type_drop_list[epi_type].drop_type = drop_index
+      self.choose_epi_type_drop_list[epi_type].update_time = Date:server_time()
+      callback(resp)
+    end
+  end)
+end
+
+function M:material_episode_sweep(episode_id, drop_id, multi, callback)
+  local ingore_multiple = self:get_ingore_multiple_num()
+  Network:call("c2gs_material_episode_sweep", {
+    episode_id = episode_id,
+    drop_id = drop_id,
+    multi = multi,
+    ingore_multiple = ingore_multiple
+  }, function(ok, resp)
+    if ok and callback then
+      callback(resp)
+    end
+  end)
+end
+
+function M:get_material_server_info(episode_id)
+  return self.material_server_info_list[episode_id]
+end
+
+function M:is_choose_epi_info_nil(epi_type)
+  if not self.choose_epi_type_drop_list[epi_type] then
+    return true
+  end
+  return false
+end
+
+function M:check_is_same_week()
+  local data = self:get_choose_epi_info_with_epi_type(self.chapter_material_level_type)
+  local time1 = Date:server_time() - 3600 * self.refresh_hour
+  local time2 = data.update_time - 3600 * self.refresh_hour
+  local is_same_week = self:is_same_week(time1, time2)
+  if true == is_same_week then
+    return false
+  end
+  return true
+end
+
+function M:get_choose_epi_info_with_epi_type(epi_type)
+  if not self.choose_epi_type_drop_list[epi_type] then
+    local server_time = Date:server_time()
+    local data = {
+      epi_type = epi_type,
+      drop_type = 1,
+      update_time = server_time
+    }
+    self.choose_epi_type_drop_list[epi_type] = data
+  end
+  return self.choose_epi_type_drop_list[epi_type]
+end
+
+function M:get_material_epi_star_num(id)
+  local num = 0
+  if not self.material_server_info_list[id] then
+    return num
+  end
+  if self.material_server_info_list then
+    for key, value in pairs(self.material_server_info_list[id].condition_list) do
+      if value.is_finish then
+        num = num + 1
+      end
+    end
+  end
+  return num
+end
+
+function M:get_material_star_num_with_epi_id(epi_id)
+  local num = 0
+  if not self.material_server_info_list then
+    return num
+  end
+  for i, v in pairs(self.material_server_info_list) do
+    local epi_cfg = ShareRes.create("chapter.new_material_epi", i)
+    if epi_cfg and epi_cfg.EpisodeId == epi_id then
+      num = self:get_material_epi_star_num(i)
+      break
+    end
+  end
+  return num
+end
+
+function M:get_material_max_star(material_id)
+  local material_epi_cfg = ShareRes.create("chapter.new_material_epi", material_id)
+  return ChapterMgr:get_epi_max_star(material_epi_cfg.EpisodeId)
+end
+
+function M:is_need_show_auto_select()
+  local is_show = self:get_material_is_auto_select_with_type(self:get_chapter_material_level_type())
+  if is_show then
+    return true
+  end
+  return false
+end
+
+function M:get_fight_cost(epi_id)
+  local num = self:get_material_epi_star_num(epi_id)
+  local epi_cfg = ShareRes.create("chapter.chapter_point", epi_id)
+  if num > 0 then
+    return epi_cfg.FightCost[2]
+  end
+  return epi_cfg.FightCost[2]
+end
+
+function M:get_level_name(epi_id)
+  local epi_cfg = ShareRes.create("chapter.chapter_point", epi_id)
+  if not epi_cfg then
+    Log.Error("副本-副本关卡表找到对应id：" .. epi_id)
+  end
+  return epi_cfg.PointName
+end
+
+function M:check_red()
+  if not self.material_server_info_list then
+    return
+  end
+  local page_red = {}
+  local page_cfg = ShareRes.create("chapter.chapter_material_page")
+  self.v_left_tab_list = {}
+  for _, v in pairs(page_cfg) do
+    if 1 == v.IfShow then
+      page_red[v.PageType] = false
+    end
+  end
+  local type_table = {}
+  for i, v in pairs(self.material_server_info_list) do
+    local material_type_cfg = ShareRes.get_material_epi_cfg(v.index)
+    if material_type_cfg then
+      local material_type = material_type_cfg.MaterialType
+      local data = type_table[material_type]
+      if nil == data or data.index > v.index then
+        type_table[material_type] = v
+      end
+    end
+  end
+  local page_cfg = ShareRes.create("chapter.chapter_material_page")
+  local material_type_data = ShareRes.get_chapter_material_type_cfg()
+  for i, v in pairs(material_type_data) do
+    local is_show_red = false
+    if 1 == page_cfg[v.PageType].IfShow and 1 == v.IfShow and Condition:check_condition(page_cfg[v.PageType].Condition) and Condition:check_condition(v.Condition) then
+      local day_open = self:is_material_type_day_open(v.Id)
+      local server_info = type_table[v.MaterialType]
+      if day_open and server_info and server_info.red_status == true then
+        is_show_red = true
+        page_red[v.PageType] = true
+      end
+    end
+    RedPointMgr:enable_dynamic_redpoint(v.MaterialType, Global.red_enum.MATERIAL_BTN_RED, is_show_red)
+  end
+  for page_ty, val in pairs(page_red) do
+    RedPointMgr:enable_dynamic_redpoint(page_ty, Global.red_enum.MATERIAL_PAGE_RED, val)
+  end
+end
+
+function M:check_chapter_material_type_is_open(material_type_id, show_tips)
+  local mat_cfg = ShareRes.create("chapter.chapter_material_type", material_type_id)
+  if not mat_cfg then
+    if show_tips then
+      Log.Error("副本-材料副本2.0 -> 副本类型表中找不到id ：", tostring(material_type_id))
+    end
+    return false
+  end
+  local result = Condition:check_condition(mat_cfg.Condition, show_tips)
+  if result then
+    local tips
+    result, tips = self:is_material_type_day_open(material_type_id)
+    if not result then
+      Util.show_message_tip(tips)
+    end
+  end
+  return result, mat_cfg.MaterialType
+end
+
+function M:check_chapter_material_epi_is_open(epi_id, show_tips)
+  local net_data = self:get_material_server_info(epi_id)
+  if not net_data or net_data.is_lock then
+    if show_tips then
+      Util.show_message_tip(2068)
+    end
+    return false
+  end
+  local epi_cfg = ShareRes.get_material_epi_cfg(epi_id)
+  if not epi_cfg then
+    if show_tips then
+      Log.Error("不存在材料副本：", tostring(epi_id))
+    end
+    return false
+  end
+  local result = Condition:check_condition(epi_cfg.OpenCondition, show_tips)
+  return result
+end
+
+function M:before_in_material_level_win(material_type)
+  self:request_click_new_material_epi(material_type)
+  self:set_chapter_material_level_type(material_type)
+end
+
+function M:request_click_new_material_epi(material_type, callback)
+  local material_server_data
+  for i, v in pairs(self.material_server_info_list) do
+    local material_type_cfg = ShareRes.get_material_epi_cfg(v.index)
+    if material_type_cfg and material_type_cfg.MaterialType == material_type and (nil == material_server_data or material_server_data.index > v.index) then
+      material_server_data = v
+    end
+  end
+  if nil == material_server_data or material_server_data.red_status ~= true then
+    return
+  end
+  Network:call("c2gs_click_new_material_epi", {
+    epi_index = material_server_data.index
+  }, function(ok, resp)
+    if ok then
+      self.material_server_info_list[material_server_data.index].red_status = false
+      self:check_red()
+      if callback then
+        callback(resp)
+      end
+    end
+  end)
+end
+
+function M:get_chapter_id_with_epi_id(epi_id)
+  local list = ShareRes.get_material_epi_cfg()
+  for i, v in pairs(list) do
+    if v.EpisodeId == epi_id then
+      return v.Id
+    end
+  end
+  return 0
+end
+
+function M:get_hour()
+  local time = os.date("!*t", Date:server_time())
+  return time.hour
+end
+
+function M:is_same_week(epoch1, epoch2)
+  if not epoch1 or not epoch2 then
+    return false
+  end
+  local w1 = tonumber(os.date("!%w", epoch1))
+  if 0 == w1 then
+    w1 = 7
+  end
+  local t = os.date("!*t", epoch1)
+  local time = Date.to_timestamp({
+    year = t.year,
+    month = t.month,
+    day = t.day,
+    hour = 0,
+    min = 0,
+    sec = 0
+  })
+  if not time then
+    return false
+  end
+  local timeBegin = time - (w1 - 1) * 86400
+  local timeEndTime = timeBegin + 604800
+  return epoch2 >= timeBegin and epoch2 < timeEndTime
+end
+
+function M:is_material_type_cond_done(material_type_id)
+  local cfg = ShareRes.get_chapter_material_type_cfg(material_type_id)
+  if not cfg.Condition or 0 == cfg.Condition then
+    return true
+  end
+  local cond_cfg = ShareRes.create("condition.condition", cfg.Condition)
+  return Condition:check_condition(cfg.Condition), cond_cfg.Desc
+end
+
+function M:is_material_type_day_open(material_type_id)
+  local cfg = ShareRes.get_chapter_material_type_cfg(material_type_id)
+  if not cfg or not cfg.OpenDay then
+    return true
+  end
+  local cur_week_day = Date.get_week()
+  local cur_time = Date.server_time()
+  local today_five_time = Date.get_time_stamp(0, Global.daily_reset_hour)
+  if cur_time < today_five_time then
+    cur_week_day = (cur_week_day - 1) % 7
+    cur_week_day = 0 ~= cur_week_day and cur_week_day or 7
+  end
+  local tip = ""
+  local open_days = cfg.OpenDay
+  if type(open_days) == "number" then
+    open_days = {open_days}
+  end
+  for _, v in ipairs(open_days) do
+    if cur_week_day == v then
+      return true
+    end
+    local week_day_str = self.WEEK_NUMBER_TO_CHINESE[v]
+    tip = week_day_str
+  end
+  tip = Util.format_str("{1}开放", tip)
+  return false, tip
+end
+
+function M:set_mat_select_index(chapter_id, select_index)
+  local key = self.LOCAL_MATERIAL_SELECT_DROP_KEY
+  local local_select_data = LocalStorage:load_table(key, true)
+  local_select_data[chapter_id] = select_index
+  LocalStorage:save_table(key, local_select_data, true)
+  self:set_cur_drop_select_index(select_index)
+end
+
+local MaterialStage_UIName = "material_stage"
+
+function M:try_cache_lack_item(jump_id, lack_id, lack_count)
+  self.v_lack_cache = nil
+  if not (jump_id and lack_id) or not lack_count then
+    return
+  end
+  if Jump_Helper.get_jump_ui_name(jump_id) ~= MaterialStage_UIName then
+    return
+  end
+  self.v_lack_cache = {lack_id = lack_id, lack_count = lack_count}
+end
+
+function M:try_clear_lack_item_cache()
+  self.v_lack_cache = nil
+end
+
+function M:try_get_lack_item()
+  if self.v_lack_cache then
+    return self.v_lack_cache.lack_id, self.v_lack_cache.lack_count
+  end
+end
+
+function M:set_restore_sweep_data(material_id)
+  self.v_restore_sweep_material_id = material_id
+end
+
+function M:get_restore_sweep_data()
+  return self.v_restore_sweep_material_id
+end
+
+function M:set_multi_use_tog(chapter_id, select_index)
+  local key = self.LOCAL_MATERIAL_SELECT_MULT_KEY
+  local local_select_data = LocalStorage:load_table(key, true) or {}
+  if select_index then
+    local_select_data[chapter_id] = 1
+  else
+    local_select_data[chapter_id] = 0
+  end
+  LocalStorage:save_table(key, local_select_data, true)
+end
+
+function M:get_multi_use_tog(chapter_id)
+  local key = self.LOCAL_MATERIAL_SELECT_MULT_KEY
+  local local_select_data = LocalStorage:load_table(key, true) or {}
+  if 1 == local_select_data[chapter_id] then
+    return true
+  elseif 0 == local_select_data[chapter_id] then
+    return false
+  end
+  return local_select_data[chapter_id]
+end
+
+function M:set_ingore_multiple_num(set_val)
+  self.ingore_multiple_num = set_val
+end
+
+function M:get_ingore_multiple_num()
+  return self.ingore_multiple_num
+end
+
+return M

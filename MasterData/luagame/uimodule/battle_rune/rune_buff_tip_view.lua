@@ -1,0 +1,50 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local RUNE_TEAM_BUFF_SHOW_KEY = "RUNE_TEAM_BUFF_SHOW_KEY"
+
+function ui:ui_finish_load()
+  self:set_button("BtnRtn", function()
+    self:ui_hide()
+  end)
+  self:register_template()
+end
+
+function ui:register_template()
+  self:register_exist_auto_template(RUNE_TEAM_BUFF_SHOW_KEY, self.v_uiobjects.BuffTem, self.v_uiobjects.BuffContent)
+end
+
+function ui:ui_on_show()
+  local active_idx = 0
+  local total_team_rune_cfg = ShareRes.get_team_rune_cfg()
+  local level = Rune2Mgr:get_rune_team_level()
+  local _, level_idx = ShareRes.get_team_level_rune_cfg(level)
+  if level_idx then
+    active_idx = level_idx
+  end
+  self:give_back_auto_cache(RUNE_TEAM_BUFF_SHOW_KEY)
+  local active_data = total_team_rune_cfg[active_idx]
+  if active_data then
+    local go = self:get_auto_cache(RUNE_TEAM_BUFF_SHOW_KEY)
+    self:refresh_team_rune_buff_item(active_data, go, true)
+  end
+  for idx, team_rune_cfg in pairs(total_team_rune_cfg) do
+    local is_active = active_idx == idx
+    if not is_active then
+      local go = self:get_auto_cache(RUNE_TEAM_BUFF_SHOW_KEY)
+      self:refresh_team_rune_buff_item(team_rune_cfg, go, false)
+    end
+  end
+end
+
+function ui:refresh_team_rune_buff_item(cfg, go, is_active)
+  local active_obj = Util.get_child_gameobj("Active", go)
+  local lv_txt = Util.get_text("LV/Level", go)
+  local desc_txt = Util.get_text("Desc", go)
+  active_obj:SetActive(is_active)
+  lv_txt.text = cfg.Level
+  local desc_list = cfg.Desc
+  local result_str = table.concat(desc_list, ",")
+  desc_txt.text = result_str
+end
+
+return ui

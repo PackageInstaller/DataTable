@@ -1,0 +1,113 @@
+return {
+  [1211] = {
+    {
+      AwardId = 121100,
+      Id = 101,
+      Sort = 1,
+      StartRoomId = 121110000,
+      TowerId = 1211
+    },
+    {
+      AwardId = 121101,
+      Id = 102,
+      Sort = 2,
+      StartRoomId = 121120000,
+      TowerId = 1211
+    },
+    {
+      AwardId = 121102,
+      Id = 103,
+      Sort = 3,
+      StartRoomId = 121130000,
+      TowerId = 1211
+    },
+    {
+      AwardId = 121103,
+      Id = 104,
+      Sort = 4,
+      StartRoomId = 121140000,
+      TowerId = 1211
+    },
+    {
+      AwardId = 121104,
+      Id = 105,
+      Sort = 5,
+      StartRoomId = 121150000,
+      TowerId = 1211
+    }
+  },
+  [1311] = {
+    {
+      AwardId = 131100,
+      Id = 201,
+      Sort = 1,
+      StartRoomId = 131110000,
+      TowerId = 1311
+    },
+    {
+      AwardId = 131101,
+      Id = 202,
+      Sort = 2,
+      StartRoomId = 131120000,
+      TowerId = 1311
+    },
+    {
+      AwardId = 131102,
+      Id = 203,
+      Sort = 3,
+      StartRoomId = 131130000,
+      TowerId = 1311
+    },
+    {
+      AwardId = 131103,
+      Id = 204,
+      Sort = 4,
+      StartRoomId = 131140000,
+      TowerId = 1311
+    },
+    {
+      AwardId = 131104,
+      Id = 205,
+      Sort = 5,
+      StartRoomId = 131150000,
+      TowerId = 1311
+    }
+  },
+  [1411] = {
+    {
+      AwardId = 141100,
+      Id = 301,
+      Sort = 1,
+      StartRoomId = 131110000,
+      TowerId = 1411
+    },
+    {
+      AwardId = 141101,
+      Id = 302,
+      Sort = 2,
+      StartRoomId = 131120000,
+      TowerId = 1411
+    },
+    {
+      AwardId = 141102,
+      Id = 303,
+      Sort = 3,
+      StartRoomId = 131130000,
+      TowerId = 1411
+    },
+    {
+      AwardId = 141103,
+      Id = 304,
+      Sort = 4,
+      StartRoomId = 131140000,
+      TowerId = 1411
+    },
+    {
+      AwardId = 141104,
+      Id = 305,
+      Sort = 5,
+      StartRoomId = 131150000,
+      TowerId = 1411
+    }
+  }
+}

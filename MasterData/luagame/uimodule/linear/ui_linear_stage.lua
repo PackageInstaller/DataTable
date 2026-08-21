@@ -1,0 +1,235 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local CommonDef = require("cs_share.common_define")
+local MODEL = {
+  v_btn_main = {
+    "BtnMain",
+    BIND_TYPE.BUTTON
+  },
+  v_btn_ret1 = {
+    "BtnRet1",
+    BIND_TYPE.BUTTON
+  },
+  v_content = {
+    "Content",
+    BIND_TYPE.OBJECT
+  },
+  v_star_num_now = {
+    "StarNumNow",
+    BIND_TYPE.TEXT
+  },
+  v_star_slider = {
+    "StarSlider",
+    BIND_TYPE.SLIDER
+  },
+  v_title_txt = {
+    "TitleTxt",
+    BIND_TYPE.TEXT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnRet1", function()
+    self:ui_hide()
+  end)
+  local content_trans = self.v_content.transform
+  self.child_item_count = content_trans.childCount
+  self.child_item_list = {}
+  for i = 1, self.child_item_count do
+    local item = Util.get_child_gameobj(Util.format_str("Stage{1}", i), self.v_content)
+    item:SetActive(false)
+    table.insert(self.child_item_list, item)
+  end
+end
+
+function ui:ui_on_show(group_id)
+  self.group_id = group_id
+  local list = LinearMgr:get_linear_list(self.group_id)
+  for i = 1, self.child_item_count do
+    self.child_item_list[i]:SetActive(false)
+  end
+  local index = 1
+  for i, linear_info in ipairs(list) do
+    local item = self.child_item_list[index]
+    item:SetActive(true)
+    self:refresh_item_info(linear_info, item)
+    index = index + 1
+  end
+  self:refresh_title()
+  self:refresh_curr_star_and_award_info()
+  self:register_event()
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_ON_LINEAR_STAR_AWARD_RECEIVE, self.on_linear_award_receive, self)
+end
+
+function ui:on_linear_award_receive()
+  self:refresh_award()
+end
+
+function ui:refresh_title()
+  local cfg = ShareRes.create("chapter.linear", self.group_id)
+  self.v_title_txt.text = cfg.Name
+end
+
+function ui:refresh_item_info(info, item)
+  local is_open, tips = self:refresh_item_lock_state(info, item)
+  self:refresh_point_bg_image(info, item)
+  self:refresh_item_name_and_index(info, item, is_open)
+  self:refresh_item_icon(info, item)
+  self:refresh_item_star(info, item)
+  self:refresh_red(info, item)
+  local item_btn = Util.get_button("Content", item)
+  self:set_button_listener(item_btn, function()
+    if is_open then
+      if info.data.tip then
+        LinearMgr:request_remove_tips(info.cfg.Id, function()
+          self:refresh_red(info, item)
+        end)
+      end
+      UIMgr:get_ui("ui_chapter_detail_info"):ui_show(info)
+    else
+      Util.show_message_tip(tips)
+    end
+  end)
+end
+
+function ui:refresh_point_bg_image(info, item)
+  if not info.cfg.BgIcon then
+    return
+  end
+  local img = Util.get_image("Content/ChapterIcon", item)
+  ResMgr:load_set_icon(img, info.cfg.BgIcon)
+end
+
+function ui:refresh_item_lock_state(info, item)
+  local lock_obj = Util.get_child_gameobj("Content/Locked", item)
+  local condition_open = false
+  local front_open = false
+  if info.data then
+    condition_open = info.data.condition_open
+    front_open = info.data.front_open
+  end
+  local is_open = false
+  if condition_open and front_open then
+    is_open = true
+  end
+  lock_obj:SetActive(not is_open)
+  local tips
+  if not is_open then
+    if not front_open then
+      tips = "前置关卡未通关"
+    else
+      local condition = ShareRes.create("condition.condition", info.cfg.Condition)
+      if condition then
+        tips = condition.Desc
+      end
+    end
+  end
+  return is_open, tips
+end
+
+function ui:refresh_item_name_and_index(info, item, is_open)
+  local cfg = info.cfg
+  local episode_cfg = ShareRes.get_chapter_point_cfg(info.cfg.PointId)
+  if episode_cfg then
+    local name = Util.get_text("Content/ChapterName", item)
+    name.text = episode_cfg.PointName
+  end
+  local difficulty = Util.get_text("Content/Difficulty/Difficulty", item)
+  difficulty.text = cfg.Difficulty
+  local lock_img = Util.get_image("Content/Difficulty/Lock", item)
+  local color = lock_img.color
+  if is_open then
+    color.a = 0
+  else
+    color.a = 0.8
+  end
+  lock_img.color = color
+end
+
+function ui:refresh_item_icon(info, item)
+  local icon = Util.get_image("Content/Icon", item)
+end
+
+function ui:refresh_item_star(info, item)
+  local star_layout = Util.get_child_gameobj("Content/StarLayout", item)
+  local star_layout_child_count = star_layout.transform.childCount
+  local light_list = {}
+  for i = 1, star_layout_child_count do
+    local un_light = Util.get_child_gameobj(Util.format_str("Star{1}/UnLight", i), star_layout)
+    local light = Util.get_child_gameobj(Util.format_str("Star{1}/Light", i), star_layout)
+    light:SetActive(false)
+    un_light:SetActive(true)
+    table.insert(light_list, light)
+  end
+  local star_count = 0
+  if info.data then
+    star_count = LinearMgr:get_star_with_bit(info.data.star)
+    for i = 1, star_count do
+      light_list[i]:SetActive(true)
+    end
+  end
+end
+
+function ui:refresh_curr_star_and_award_info()
+  local curr_star = LinearMgr:get_group_star(self.group_id)
+  local max_star = LinearMgr:get_group_max_star(self.group_id)
+  self.v_star_num_now.text = curr_star
+  self.v_star_slider.value = curr_star / max_star
+  self:refresh_award()
+end
+
+function ui:refresh_award()
+  local star_cfg_list = LinearMgr:get_group_award_cfg_list(self.group_id)
+  for index, star_cfg in ipairs(star_cfg_list) do
+    local award = Util.get_child_gameobj(Util.format_str("Award{1}", index), self.v_star_slider.transform)
+    local bg_finish = Util.get_child_gameobj("BgFinish", award)
+    local bg_un_finish = Util.get_child_gameobj("BgUnFinish", award)
+    local got = Util.get_child_gameobj("BgGot", award)
+    local award_status = LinearMgr:get_award_state(star_cfg.Id)
+    bg_finish:SetActive(award_status == CommonDef.JOURNEY_STATE.COMPLETE)
+    bg_un_finish:SetActive(award_status == CommonDef.JOURNEY_STATE.UNCOMPLETE)
+    got:SetActive(award_status == CommonDef.JOURNEY_STATE.GAINED)
+    local star_num = Util.get_text("Lower/StarNum", award)
+    star_num.text = star_cfg.StarNum
+    local got_mask = Util.get_child_gameobj("GotMask", award)
+    got_mask:SetActive(award_status == CommonDef.JOURNEY_STATE.UNCOMPLETE)
+    local award_btn = Util.get_button(nil, award)
+    self:set_button_listener(award_btn, function()
+      if award_status ~= CommonDef.JOURNEY_STATE.COMPLETE then
+        UIMgr:get_ui("ui_linear_award"):ui_show(self.group_id)
+      else
+        LinearMgr:request_linear_award(star_cfg.Id)
+      end
+    end)
+  end
+end
+
+function ui:refresh_red(info, item)
+  local red = Util.get_child_gameobj("Content/Red", item)
+  local is_need_show_red = LinearMgr:is_need_show_red(info.cfg.Id)
+  red:SetActive(is_need_show_red)
+end
+
+function ui:refresh_anim(index)
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.group_id
+end
+
+return ui

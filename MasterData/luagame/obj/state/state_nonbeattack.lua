@@ -1,0 +1,8 @@
+local Base = require("obj.state.state_obj_base")
+local M = Util.create_child_mt(Base)
+
+function M:state_get_name()
+  return Config.STATE_NAME.nonbeattack
+end
+
+return M

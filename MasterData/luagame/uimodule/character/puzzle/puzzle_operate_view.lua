@@ -1,0 +1,613 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local ImageType = TypeUnityUIImage
+local RectTransformUtility = UnityEngine.RectTransformUtility
+local Input = UnityEngine.Input
+local Vec2 = require("base.vec2")
+local PuzzleHelper = require("uimodule.character.puzzle.puzzle_helper")
+local PREVIEW_COLOR_LEGAL = Util.get_unity_color_by_hex(tonumber("efc66e", 16), 0.6)
+local PREVIEW_COLOR_ILLEGAL = Util.get_unity_color_by_hex(tonumber("d74343", 16), 0.6)
+
+function ui:ui_finish_load()
+  self:set_button("BtnAdditionPreview", function()
+    local buddy_info = CharacterMgr:get_buddy_by_id(self.v_buddy_id)
+    local puzzle_place_infos = buddy_info.puzzle_graph.puzzle_place_infos
+    UIMgr:get_ui("puzzle_addition_tips"):ui_show(puzzle_place_infos)
+  end)
+  self:set_button("BtnPluginsRecommend", function()
+    UIMgr:get_ui("puzzle_recommend_tips"):ui_show(self.v_buddy_id)
+  end)
+  self:set_button("BtnRemove", function()
+    PuzzleMgr:remove_buddy_all_puzzle(self.v_buddy_id)
+  end)
+  self:set_button("BtnQuickEquip", function()
+    UIMgr:get_ui("puzzle_recommend_suit_tips"):ui_show(self.v_buddy_id)
+  end)
+  self:set_button("BtnDecompose", function()
+    self.v_parent_ui:set_view_enable(Config.PUZZLE_OPERATE_PANEL_VIEW_TYPE.DECOMPOSE)
+  end)
+  self:set_button("BtnRefine", function()
+    self.v_parent_ui:set_view_enable(Config.PUZZLE_OPERATE_PANEL_VIEW_TYPE.REFINE)
+  end)
+  self.v_tem_obj_root_trans = self.v_uiobjects.TempObjs.transform
+  Util.set_point_down(nil, self.v_uiobjects.MapContent, self, function()
+    self:on_point_down_at_map()
+  end)
+  Util.set_click(nil, self.v_uiobjects.MapContent, self, function()
+    self:on_point_click_at_map()
+  end)
+  local map_click_area = self.v_uiobjects.MapContent
+  Util.set_start_drag(map_click_area, self, function(x, y)
+    self:on_operate_obj_drag_start()
+  end)
+  Util.set_drag(map_click_area, self, function(x, y)
+    self:on_operate_obj_drag()
+  end)
+  Util.set_end_drag(map_click_area, self, function(x, y)
+    self:on_operate_obj_drag_end()
+  end)
+  self.v_canvas_camera = self.v_parent_ui:get_canvas().worldCamera
+  self.v_preview_unit_obj_num = self.v_uiobjects.PreviewUnitObjs.transform.childCount
+  self:init_all_preview_unit_obj()
+end
+
+function ui:ui_on_show(buddy_id)
+  self.v_buddy_id = buddy_id
+  self:on_map_id_change()
+  self:hide_all_preview_unit_obj()
+  self:cache_attr()
+  self.v_uiobjects.Ani_SetPluginsObj_In:SetActive(false)
+  if self.v_need_show_anim then
+    self.v_need_show_anim = false
+    self.v_uiobjects.Ani_SetPluginsObj_In:SetActive(true)
+  end
+  local recommend_cfg = ShareRes.get_recommend_puzzle_cfg(buddy_id, self.v_map_graph_id)
+  self.v_uiobjects.DragEndReciver:SetActive(false)
+  self.v_uiobjects.BtnPluginsRecommend:SetActive(nil ~= recommend_cfg)
+  self:bind_auto_mq(Const.MSG_BUDDY_DATA_UPDATE, self.refresh_map_nodes, self)
+end
+
+function ui:set_need_show_anim(bool_val)
+  self.v_need_show_anim = bool_val
+end
+
+function ui:ui_on_hide()
+  self:clear_node_objs()
+end
+
+function ui:register_event()
+end
+
+function ui:on_map_id_change()
+  if not self.v_buddy_id then
+    return
+  end
+  local buddy_info = CharacterMgr:get_buddy_by_id(self.v_buddy_id)
+  local puzzle_graph = buddy_info.puzzle_graph
+  local map_graph_id = puzzle_graph.id
+  self.v_map_graph_id = map_graph_id
+  local map_trans = self.v_uiobjects.MapContent.transform
+  local map_obj_num = map_trans.childCount
+  for idx = 0, map_obj_num - 1 do
+    map_trans:GetChild(idx):SetActive(false)
+  end
+  self.v_map_graph = self.v_uiobjects["MapGraph" .. map_graph_id]
+  if not self.v_map_graph then
+    Log.Error("没有与地图id匹配的地图UI，需要将该地图命名为MapGraph" .. map_graph_id)
+    return
+  end
+  self.v_map_graph:SetActive(true)
+  self.v_map_graph_trans = self.v_map_graph.transform
+  self.v_map_position_list = PuzzleHelper.get_garph_position_list(map_graph_id, 0)
+  self.v_map_hex_pos_list = ShareRes.get_buddy_puzzle_graph_hex_pos(map_graph_id, 0)
+  self:refresh_map_nodes()
+end
+
+function ui:refresh_map_nodes(msg)
+  if msg and msg.mm_x ~= self.v_buddy_id then
+    return
+  end
+  self:reset_operate_obj_data()
+  self:show_using_puzzle_item()
+  self:refresh_map_nodes_occupy()
+  if msg then
+    self:check_attr_change()
+  end
+end
+
+function ui:show_using_puzzle_item()
+  local buddy_info = CharacterMgr:get_buddy_by_id(self.v_buddy_id)
+  local puzzle_graph = buddy_info.puzzle_graph or {}
+  local map_graph_id = puzzle_graph.id
+  local puzzle_place_infos = puzzle_graph.puzzle_place_infos or {}
+  self:clear_node_objs()
+  self.v_node_objs = {}
+  self.v_uuid_to_node_obj_idx = {}
+  for idx, node_data in ipairs(puzzle_place_infos) do
+    local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(node_data.id)
+    local obj = UnityGameObject.Instantiate(self.v_uiobjects["TempObj" .. puzzle_cfg.GraphID], self.v_uiobjects.ObjContent.transform)
+    self.v_node_objs[idx] = obj
+    self.v_uuid_to_node_obj_idx[node_data.uuid] = idx
+    local hex_pos = node_data.position
+    local position = PuzzleHelper.hex_to_position(hex_pos)
+    obj.transform:SetAnchoredPositionA(position.x, position.y)
+    obj.transform:SetLocalEuler(0, 0, 60 * node_data.rotate_count)
+    obj:SetActive(true)
+    local icon_path = puzzle_cfg.IconPath[node_data.quality]
+    local img = obj:GetComponent(ImageType)
+    ResMgr:load_set_icon(img, icon_path, nil, true)
+  end
+end
+
+function ui:clear_node_objs()
+  if self.v_node_objs and #self.v_node_objs > 0 then
+    for i = #self.v_node_objs, 1, -1 do
+      UnityDestroy(self.v_node_objs[i])
+    end
+  end
+  self.v_node_objs = nil
+end
+
+function ui:show_all_node_objs()
+  if self.v_node_objs then
+    for _, obj in ipairs(self.v_node_objs) do
+      obj:SetActive(true)
+    end
+  end
+end
+
+function ui:refresh_map_nodes_occupy()
+  local buddy_info = CharacterMgr:get_buddy_by_id(self.v_buddy_id)
+  local puzzle_graph = buddy_info.puzzle_graph or {}
+  local map_graph_id = puzzle_graph.id
+  local puzzle_place_infos = puzzle_graph.puzzle_place_infos or {}
+  local hex_to_puzzle_id = {}
+  for idx, node_data in ipairs(puzzle_place_infos) do
+    local anchor_hex_pos = node_data.position
+    local graph_hex_pos_list = ShareRes.get_buddy_puzzle_graph_hex_pos_by_puzzle_id(node_data.id, node_data.rotate_count)
+    for _, relative_hex_pos in ipairs(graph_hex_pos_list) do
+      local real_hex_x = anchor_hex_pos[1] + relative_hex_pos[1]
+      local real_hex_y = anchor_hex_pos[2] + relative_hex_pos[2]
+      if not hex_to_puzzle_id[real_hex_x] then
+        hex_to_puzzle_id[real_hex_x] = {}
+      end
+      local mark_uuid = hex_to_puzzle_id[real_hex_x][real_hex_y]
+      if mark_uuid then
+        Log.Error("已保存插件位置存在重叠,插件uuid:", mark_uuid, node_data.uuid)
+      end
+      hex_to_puzzle_id[real_hex_x][real_hex_y] = node_data.uuid
+    end
+  end
+  self.v_map_node_idx_to_puzzle_item_uuid = {}
+  for idx, node_hex_pos in ipairs(self.v_map_hex_pos_list) do
+    local puzzle_item_uuid = hex_to_puzzle_id[node_hex_pos[1]] and hex_to_puzzle_id[node_hex_pos[1]][node_hex_pos[2]]
+    if puzzle_item_uuid then
+      self.v_map_node_idx_to_puzzle_item_uuid[idx] = puzzle_item_uuid
+    end
+  end
+end
+
+function ui:refresh_operate_graph_data_list(rotate_count)
+  local operate_graph_relative_position_list = PuzzleHelper.get_garph_position_list(self.v_operate_graph_id, rotate_count)
+  self.v_operate_graph_data_list = {}
+  for idx, vec2 in ipairs(operate_graph_relative_position_list) do
+    self.v_operate_graph_data_list[idx] = {relative_position = vec2, closest_node_idx = nil}
+  end
+end
+
+function ui:on_drag_start(data)
+  self:reset_operate_obj_data()
+  self.v_operate_uuid = data.uuid
+  self.v_match_any_node = false
+  self.v_operate_graph_id = data.graph_id
+  local tem_obj_num = self.v_tem_obj_root_trans.childCount
+  for idx = 0, tem_obj_num - 1 do
+    self.v_tem_obj_root_trans:GetChild(idx):SetActive(false)
+  end
+  local obj_name = "TempObj" .. data.graph_id
+  local operate_graph_obj = self.v_uiobjects[obj_name]
+  if operate_graph_obj then
+    local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(data.id)
+    self.v_operate_graph_trans = operate_graph_obj.transform
+    operate_graph_obj:SetActive(true)
+    local icon_path = puzzle_cfg.IconPath[data.quality]
+    ResMgr:load_set_icon(self.v_uicompents[obj_name .. "_img"], icon_path, nil, true)
+    self.v_operate_graph_trans:SetLocalEuler(0, 0, 0)
+    self.v_operate_obj_data = {
+      start_hex = nil,
+      graph_id = puzzle_cfg.GraphID,
+      rotate_count = 0
+    }
+    self:refresh_operate_graph_data_list(0)
+  else
+    self.v_operate_graph_trans = nil
+    if not self.v_map_graph then
+      Log.Error("没有与图形id匹配的预制，需要将TempObjs下的节点命名为TempObj" .. data.graph_id)
+    end
+  end
+  Util.show_puzzle_tip(nil)
+end
+
+local vec2_pos = Vec2.New()
+
+function ui:on_drag()
+  if not self.v_operate_graph_trans or not self.v_operate_graph_data_list then
+    return
+  end
+  local click_pos = self:get_click_pos(self.v_operate_obj_data.offset)
+  self.v_operate_graph_trans:SetAnchoredPositionA(click_pos.x, click_pos.y, 0)
+  self.v_match_any_node = self:_match_closest_node(click_pos)
+  self:show_preview_on_map()
+end
+
+function ui:on_drag_end(is_add_new)
+  self.v_is_add_new = false
+  self.v_parent_ui:set_temp_selected_uuid(nil)
+  if not self.v_operate_graph_trans or not self.v_operate_graph_data_list then
+    return
+  end
+  if not self.v_match_any_node then
+    if not PuzzleMgr:try_remove_puzzle(self.v_operate_uuid, self.v_buddy_id) then
+      self:reset_operate_obj_data()
+    end
+    self:send_operate_uuid_update_msg()
+    return
+  end
+  for idx, data in ipairs(self.v_operate_graph_data_list) do
+    if data.closest_node_idx then
+      local target_relative_position = self.v_map_position_list[data.closest_node_idx] - data.relative_position
+      self.v_operate_graph_trans:SetAnchoredPositionA(target_relative_position.x, target_relative_position.y, 0)
+      local rotate_count = self.v_operate_obj_data and self.v_operate_obj_data.rotate_count or 0
+      local graph_hex_pos_list = ShareRes.get_buddy_puzzle_graph_hex_pos(self.v_operate_graph_id, rotate_count)
+      local start_hex = self._hex_pos_sub(self.v_map_hex_pos_list[data.closest_node_idx], graph_hex_pos_list[idx])
+      if self:is_all_fit() then
+        PuzzleMgr:install_puzzle(self.v_operate_uuid, rotate_count, start_hex, self.v_buddy_id)
+        self:hide_all_preview_unit_obj()
+        self:send_operate_uuid_update_msg()
+        self.v_operate_obj_data = nil
+        self.v_parent_ui:show_equip_suc_eff()
+      else
+        self.v_is_add_new = is_add_new
+        self.v_operate_obj_data.start_hex = start_hex
+        self.v_parent_ui:set_temp_selected_uuid(self.v_operate_uuid)
+      end
+      return
+    end
+  end
+end
+
+function ui:_check_rect_overlap()
+  local is_overlap = self.v_uicompents.MapContent_rect:isOverlap(self.v_operate_graph_trans)
+  return is_overlap
+end
+
+function ui:_match_closest_node(operate_graph_cur_pos)
+  if not self:_check_rect_overlap() then
+    for _, data in ipairs(self.v_operate_graph_data_list) do
+      data.closest_node_idx = nil
+    end
+    return false
+  end
+  local match_suc = false
+  local closest_node_idx
+  for _, data in ipairs(self.v_operate_graph_data_list) do
+    closest_node_idx = PuzzleHelper.match_closest_node_idx(self.v_map_position_list, data.relative_position + operate_graph_cur_pos)
+    data.closest_node_idx = closest_node_idx
+    if closest_node_idx then
+      match_suc = true
+    end
+  end
+  return match_suc
+end
+
+function ui:is_all_fit()
+  if not self.v_operate_graph_data_list then
+    return false
+  end
+  for _, data in ipairs(self.v_operate_graph_data_list) do
+    local closest_node_idx = data.closest_node_idx
+    if closest_node_idx then
+      local occupy_uuid = self.v_map_node_idx_to_puzzle_item_uuid[closest_node_idx]
+      if occupy_uuid and occupy_uuid ~= self.v_operate_uuid then
+        return false
+      end
+    else
+      return false
+    end
+  end
+  return true
+end
+
+function ui:show_preview_on_map()
+  for idx, data in ipairs(self.v_operate_graph_data_list) do
+    local closest_node_idx = data.closest_node_idx
+    if closest_node_idx then
+      local uuid = self.v_map_node_idx_to_puzzle_item_uuid[closest_node_idx]
+      self.v_preview_unit_objs[idx].img.color = uuid and uuid ~= self.v_operate_uuid and PREVIEW_COLOR_ILLEGAL or PREVIEW_COLOR_LEGAL
+      local target_anchor_pos = self.v_map_position_list[closest_node_idx]
+      self.v_preview_unit_objs[idx].trans:SetAnchoredPositionA(target_anchor_pos.x, target_anchor_pos.y)
+      self.v_uiobjects["UnitObj" .. idx]:SetActiveEx(true)
+    else
+      self.v_uiobjects["UnitObj" .. idx]:SetActiveEx(false)
+    end
+  end
+end
+
+function ui:init_all_preview_unit_obj()
+  self.v_preview_unit_objs = {}
+  for i = 1, self.v_preview_unit_obj_num do
+    local key = "UnitObj" .. i
+    self.v_preview_unit_objs[i] = {
+      obj = self.v_uiobjects[key],
+      img = self.v_uicompents[key .. "_img"],
+      trans = self.v_uiobjects[key].transform
+    }
+  end
+end
+
+function ui:hide_all_preview_unit_obj()
+  for _, v in ipairs(self.v_preview_unit_objs) do
+    v.obj:SetActiveEx(false)
+  end
+end
+
+function ui:get_click_pos(offset)
+  local touch_0_pos
+  if UNITY_EDITOR or UNITY_STANDALONE_WIN then
+    touch_0_pos = Input.mousePosition
+  elseif Input.touchCount > 0 then
+    touch_0_pos = Input.GetTouch(0).position
+  else
+    return
+  end
+  local click_pos_x, click_pos_y = CSHelper.ScreenPointToLocalPointInRectangle(self.v_tem_obj_root_trans, touch_0_pos.x, touch_0_pos.y, self.v_canvas_camera)
+  vec2_pos.x = click_pos_x
+  vec2_pos.y = click_pos_y
+  if offset then
+    return vec2_pos + offset
+  else
+    return vec2_pos
+  end
+end
+
+function ui:reset_operate_obj_data()
+  if not self.v_visible then
+    return
+  end
+  if self.v_node_objs and self.v_operate_uuid and self.v_uuid_to_node_obj_idx[self.v_operate_uuid] then
+    self.v_node_objs[self.v_uuid_to_node_obj_idx[self.v_operate_uuid]]:SetActive(true)
+  end
+  if self.v_operate_graph_trans then
+    self.v_operate_graph_trans.gameObject:SetActive(false)
+  end
+  self.v_operate_graph_trans = nil
+  self.v_operate_graph_data_list = nil
+  self.v_operate_uuid = nil
+  self.v_operate_obj_data = nil
+  self.v_parent_ui:set_temp_selected_uuid(nil)
+  self:hide_all_preview_unit_obj()
+end
+
+function ui:rotate_operate_obj()
+  if self.v_operate_obj_data then
+    local rotate_count = self.v_operate_obj_data.rotate_count
+    rotate_count = (rotate_count - 1) % 6
+    self.v_operate_obj_data.rotate_count = rotate_count
+    local position = PuzzleHelper.hex_to_position(self.v_operate_obj_data.start_hex)
+    self.v_operate_graph_trans:SetAnchoredPositionA(position.x, position.y)
+    self.v_operate_graph_trans:SetLocalEuler(0, 0, 60 * rotate_count)
+    self:refresh_operate_graph_data_list(rotate_count)
+    self.v_match_any_node = self:_match_closest_node(position)
+    self:show_preview_on_map()
+    self:on_drag_end(self.v_is_add_new)
+  end
+end
+
+function ui:check_click_on_operate_obj(click_pos)
+  if not self.v_operate_obj_data then
+    return false
+  end
+  local selected_obj_data = self.v_operate_obj_data
+  local selected_obj_position_list = PuzzleHelper.get_garph_position_list(selected_obj_data.graph_id, selected_obj_data.rotate_count, selected_obj_data.start_hex)
+  local closest_node_idx = PuzzleHelper.match_closest_node_idx(selected_obj_position_list, click_pos)
+  return nil ~= closest_node_idx
+end
+
+function ui:on_point_click_at_map()
+  if self.v_show_tip_when_point_up and self.v_operate_uuid then
+    if UNITY_EDITOR or UNITY_STANDALONE_WIN then
+      local id = PuzzleMgr:get_puzzle_data(self.v_operate_uuid).id
+      local hex = self.v_operate_obj_data.start_hex
+      Log.Info("插件打印：x,y,z,id,旋转次数")
+      Log.Info(string.format(">>>%s,%s,%s,%s,%s", hex[1], hex[2], hex[3], id, self.v_operate_obj_data.rotate_count))
+    end
+    Util.show_puzzle_tip(self.v_operate_uuid, {
+      offset = Config.PUZZLE_TIPS_OFFSET.MAP_ITEM,
+      show_refine_btn = true,
+      show_up_lv_btn = true,
+      show_remove_btn = false,
+      show_select_btn = false,
+      hide_close_btn = true
+    })
+  else
+    Util.show_puzzle_tip(nil)
+  end
+  if self.v_do_rotate_when_point_up and self.v_operate_graph_trans then
+    local is_click_on_operate_obj = self:check_click_on_operate_obj(self.v_start_click_pos)
+    if is_click_on_operate_obj then
+      self:rotate_operate_obj()
+    end
+  end
+end
+
+function ui:on_point_down_at_map()
+  self.v_is_drag_operate_obj = false
+  self.v_do_rotate_when_point_up = false
+  self.v_show_tip_when_point_up = false
+  local click_pos = self:get_click_pos()
+  self.v_start_click_pos = click_pos
+  if self.v_operate_graph_trans then
+    local is_click_on_operate_obj = self:check_click_on_operate_obj(click_pos)
+    if not is_click_on_operate_obj then
+      local closest_node_idx = PuzzleHelper.match_closest_node_idx(self.v_map_position_list, click_pos)
+      local uuid = closest_node_idx and self.v_map_node_idx_to_puzzle_item_uuid[closest_node_idx]
+      if closest_node_idx then
+        self:reset_operate_obj_data()
+        self:send_operate_uuid_update_msg()
+      end
+      return
+    else
+      self.v_do_rotate_when_point_up = true
+    end
+    return
+  end
+  self.v_is_add_new = false
+  local closest_node_idx = PuzzleHelper.match_closest_node_idx(self.v_map_position_list, click_pos)
+  local uuid = closest_node_idx and self.v_map_node_idx_to_puzzle_item_uuid[closest_node_idx]
+  if uuid then
+    self.v_operate_uuid = uuid
+    self.v_node_objs[self.v_uuid_to_node_obj_idx[uuid]]:SetActive(false)
+    local puzzle_data = PuzzleMgr:get_puzzle_data(uuid)
+    local puzzle_id = puzzle_data.id
+    local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(puzzle_id)
+    local obj_name = "TempObj" .. puzzle_cfg.GraphID
+    local operate_graph_obj = self.v_uiobjects[obj_name]
+    if operate_graph_obj then
+      self.v_operate_graph_trans = operate_graph_obj.transform
+      operate_graph_obj:SetActive(true)
+      local icon_path = puzzle_cfg.IconPath[puzzle_data.quality]
+      ResMgr:load_set_icon(self.v_uicompents[obj_name .. "_img"], icon_path, nil, true)
+      local hex_pos = puzzle_data.position
+      local position = PuzzleHelper.hex_to_position(hex_pos)
+      self.v_operate_graph_trans:SetAnchoredPositionA(position.x, position.y)
+      self.v_operate_graph_trans:SetLocalEuler(0, 0, 60 * puzzle_data.rotate_count)
+      self.v_operate_obj_data = {
+        start_hex = hex_pos,
+        graph_id = puzzle_cfg.GraphID,
+        rotate_count = puzzle_data.rotate_count
+      }
+      self.v_operate_graph_id = puzzle_cfg.GraphID
+      self:refresh_operate_graph_data_list(puzzle_data.rotate_count)
+      self.v_match_any_node = self:_match_closest_node(position)
+      self:show_preview_on_map()
+      self.v_show_tip_when_point_up = true
+    end
+    self:send_operate_uuid_update_msg()
+  else
+    self:reset_operate_obj_data()
+  end
+end
+
+function ui:on_operate_obj_drag_start()
+  if not self.v_operate_graph_trans then
+    return
+  end
+  local click_pos = self.v_start_click_pos
+  local selected_obj_data = self.v_operate_obj_data
+  local selected_obj_position_list = PuzzleHelper.get_garph_position_list(selected_obj_data.graph_id, selected_obj_data.rotate_count, selected_obj_data.start_hex)
+  local closest_node_idx = PuzzleHelper.match_closest_node_idx(selected_obj_position_list, click_pos)
+  if closest_node_idx then
+    selected_obj_data.offset = self.v_operate_graph_trans.anchoredPosition - click_pos
+    self:refresh_operate_graph_data_list(selected_obj_data.rotate_count)
+    self.v_is_drag_operate_obj = true
+    self.v_show_tip_when_point_up = false
+    self.v_do_rotate_when_point_up = false
+    self.v_uiobjects.DragEndReciver:SetActive(true)
+  end
+end
+
+function ui:on_operate_obj_drag()
+  if not self.v_is_drag_operate_obj then
+    return
+  end
+  self:on_drag()
+end
+
+function ui:on_operate_obj_drag_end()
+  self.v_uiobjects.DragEndReciver:SetActive(false)
+  if not self.v_is_drag_operate_obj then
+    return
+  end
+  self:on_drag_end()
+end
+
+function ui._hex_pos_sub(hex_pos1, hex_pos2)
+  return {
+    hex_pos1[1] - hex_pos2[1],
+    hex_pos1[2] - hex_pos2[2],
+    hex_pos1[3] - hex_pos2[3]
+  }
+end
+
+function ui:send_operate_uuid_update_msg()
+  self.v_parent_ui:send_update_item_state_msg()
+end
+
+function ui:get_new_attr_map()
+  local buddy_info = CharacterMgr:get_buddy_by_id(self.v_buddy_id)
+  local puzzle_place_infos = buddy_info.puzzle_graph.puzzle_place_infos
+  local attr_id2value = {}
+  for _, node_data in ipairs(puzzle_place_infos) do
+    for _, attr_cfg_id in ipairs(node_data.attr_list) do
+      local attr_cfg = ShareRes.get_buddy_puzzle_attr_cfg(attr_cfg_id)
+      attr_id2value[attr_cfg.AttrId] = (attr_id2value[attr_cfg.AttrId] or 0) + attr_cfg.AttrValue
+    end
+  end
+  local entry_map = {}
+  for _, puzzle_place_info in ipairs(puzzle_place_infos) do
+    local puzzle_id = puzzle_place_info.id
+    local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(puzzle_id)
+    local entry_id = puzzle_cfg.EntryId
+    if entry_id and (not entry_map[entry_id] or entry_map[entry_id] < puzzle_place_info.quality) then
+      entry_map[entry_id] = puzzle_place_info.quality
+    end
+  end
+  return attr_id2value, entry_map
+end
+
+function ui:cache_attr()
+  self.v_attr_cache, self.v_entry_cache = self:get_new_attr_map()
+end
+
+function ui:check_attr_change()
+  if not self.v_attr_cache then
+    self:cache_attr()
+    return
+  end
+  local new_attr_map, new_entry_map = self:get_new_attr_map()
+  local new_attr = {}
+  local is_new, diff_val
+  for id, val in pairs(new_attr_map) do
+    is_new = true
+    diff_val = val
+    for _id, _val in pairs(self.v_attr_cache) do
+      if id == _id then
+        is_new = _val < val
+        diff_val = val - _val
+        break
+      end
+    end
+    if is_new then
+      new_attr[#new_attr + 1] = {id = id, val = diff_val}
+    end
+  end
+  local new_entry = {}
+  for id, quality in pairs(new_entry_map) do
+    is_new = true
+    for _id, _quality in pairs(self.v_entry_cache) do
+      if id == _id and _quality >= quality then
+        is_new = false
+        break
+      end
+    end
+    if is_new then
+      new_entry[#new_entry + 1] = {id = id, quality = quality}
+    end
+  end
+  if #new_attr > 0 or #new_entry > 0 then
+    UIMgr:get_ui("puzzle_attr_pop_tips"):ui_show(new_attr, new_entry)
+  end
+  self:cache_attr()
+end
+
+return ui

@@ -1,0 +1,72 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local SKILL_BOOK_ICON_PATH = "UISkillBook/%s"
+local CHAR_HELPER = require("uimodule.character.char_helper")
+local Cs_color = UnityEngine.Color
+local util_get_color = Util.get_unity_color_by_hex
+local bg_select_bg_name = "SkillBook_bg_hexagon"
+local bg_unselect_bg_name = "SkillBook_bg_hexagon_black"
+local skill_icon_select = Cs_color(0, 0, 0, 1)
+local skill_icon_unselect = Cs_color(1, 1, 1, 1)
+local skill_desc_select = util_get_color(tonumber("FFFFFF", 16))
+local skill_desc_unselect = util_get_color(tonumber("BEBEBE", 16))
+local skill_desc_bg_select = Cs_color(0, 0, 0, 0.47058823529411764)
+local skill_desc_bg_unselect = Cs_color(1, 1, 1, 0.00784313725490196)
+local skill_bg_font_select = util_get_color(tonumber("FFFFFF", 16))
+local skill_bg_font_unselect = util_get_color(tonumber("585b5c", 16))
+
+function M:set_data(src_data)
+  local ucom = self.v_uicompents
+  local uobj = self.v_uiobjects
+  local skill_cfg = src_data.skill_cfg
+  local skill_id = skill_cfg.SkillId
+  self.v_idx = src_data.idx
+  local hero_icon_path = src_data.buddy_icon
+  local skill_icon_path = CHAR_HELPER.get_battle_skill_icon(skill_id)
+  local skill_desc = Util.format_str(skill_cfg.SkillDesc)
+  local skill_name = Util.format_str(skill_cfg.Name)
+  local skill_level = skill_cfg.SkillLevel
+  local select_btn = self:get_button(nil, nil)
+  local skill_icon = ucom.SkillIcon_img
+  local hero_icon = ucom.HeroIcon_img
+  local skill_content_txt = ucom.SkillContent_txt
+  local choose_obj = uobj.Choose
+  local skill_name_txt = ucom.SkillName_txt
+  local skill_bg = ucom.SkillBg_img
+  local desc_name_txt = ucom.SkillDesc_txt
+  local bg2_img = ucom.Bg2_img
+  local bg2_font_img = ucom.Bg_font_img
+  skill_icon.color = skill_icon_unselect
+  desc_name_txt.color = skill_desc_unselect
+  bg2_img.color = skill_desc_bg_unselect
+  bg2_font_img.color = skill_bg_font_unselect
+  local skill_bg_path = string.format(SKILL_BOOK_ICON_PATH, bg_unselect_bg_name)
+  ResMgr:load_set_icon(skill_bg, skill_bg_path)
+  choose_obj:SetActive(false)
+  ResMgr:load_set_icon(skill_icon, skill_icon_path)
+  ResMgr:load_set_icon(hero_icon, hero_icon_path, nil, true, self)
+  skill_content_txt.text = skill_desc
+  if skill_level then
+    local level_content = Util.format_str("({1}级)", skill_level)
+    local result = string.format([[
+%s
+%s]], skill_name, level_content)
+    skill_name_txt.text = result
+  else
+    skill_name_txt.text = skill_name
+  end
+  self:set_button_listener(select_btn, function()
+    local msg = MsgGame:mq_publish2(Const.MSG_ON_BATTLE_SKILL_SELECTED)
+    msg.mm_obj = src_data
+  end)
+end
+
+function M:on_clear()
+  self:unbind_all_auto_mq()
+end
+
+function M:set_selected(is_select)
+  self.v_uiobjects.Choose:SetActive(is_select)
+end
+
+return M

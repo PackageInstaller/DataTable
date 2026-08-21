@@ -1,0 +1,30 @@
+local class = require("utils.component.middle_class")
+local LuaComponent = require("utils.component.lua_component")
+local LuaComponentTest = class("LuaBehaviourTest", LuaComponent)
+LuaComponentTest:AddDefineList({
+  {
+    name = "Age",
+    type = CS.System.Int32
+  },
+  {
+    name = "Name",
+    type = CS.System.String
+  }
+})
+if ExecuteInEditorScript then
+  return LuaComponentTest
+end
+
+function LuaComponentTest:initialize()
+end
+
+function LuaComponentTest:Awake()
+end
+
+function LuaComponentTest:OnEnable()
+end
+
+function LuaComponentTest:OnDisable()
+end
+
+return LuaComponentTest

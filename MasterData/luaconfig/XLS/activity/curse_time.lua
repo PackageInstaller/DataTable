@@ -1,0 +1,278 @@
+return {
+  [101] = {
+    {
+      {
+        AddCurseVal = 0,
+        CardType = 1,
+        CurseId = 101,
+        CurseTime = 0,
+        Id = 1,
+        TimeUIType = 1
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 1,
+        CurseId = 101,
+        CurseTime = 10,
+        Id = 2,
+        TimeUIType = 2
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 1,
+        CurseId = 101,
+        CurseTime = 30,
+        Id = 3,
+        TimeUIType = 3
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 1,
+        CurseId = 101,
+        CurseTime = 60,
+        Id = 4,
+        TimeUIType = 3
+      }
+    },
+    {
+      {
+        AddCurseVal = 0,
+        CardType = 2,
+        CurseId = 101,
+        CurseTime = 0,
+        Id = 5,
+        TimeUIType = 1
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 2,
+        CurseId = 101,
+        CurseTime = 10,
+        Id = 6,
+        TimeUIType = 2
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 2,
+        CurseId = 101,
+        CurseTime = 30,
+        Id = 7,
+        TimeUIType = 3
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 2,
+        CurseId = 101,
+        CurseTime = 60,
+        Id = 8,
+        TimeUIType = 3
+      }
+    },
+    {
+      {
+        AddCurseVal = 0,
+        CardType = 3,
+        CurseId = 101,
+        CurseTime = 0,
+        Id = 9,
+        TimeUIType = 1
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 3,
+        CurseId = 101,
+        CurseTime = 10,
+        Id = 10,
+        TimeUIType = 2
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 3,
+        CurseId = 101,
+        CurseTime = 30,
+        Id = 11,
+        TimeUIType = 3
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 3,
+        CurseId = 101,
+        CurseTime = 60,
+        Id = 12,
+        TimeUIType = 3
+      }
+    },
+    {
+      {
+        AddCurseVal = 0,
+        CardType = 4,
+        CurseId = 101,
+        CurseTime = 0,
+        Id = 13,
+        TimeUIType = 1
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 4,
+        CurseId = 101,
+        CurseTime = 20,
+        Id = 14,
+        TimeUIType = 2
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 4,
+        CurseId = 101,
+        CurseTime = 45,
+        Id = 15,
+        TimeUIType = 3
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 4,
+        CurseId = 101,
+        CurseTime = 70,
+        Id = 16,
+        TimeUIType = 3
+      }
+    }
+  },
+  [102] = {
+    {
+      {
+        AddCurseVal = 0,
+        CardType = 1,
+        CurseId = 102,
+        CurseTime = 0,
+        Id = 17,
+        TimeUIType = 1
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 1,
+        CurseId = 102,
+        CurseTime = 10,
+        Id = 18,
+        TimeUIType = 2
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 1,
+        CurseId = 102,
+        CurseTime = 30,
+        Id = 19,
+        TimeUIType = 3
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 1,
+        CurseId = 102,
+        CurseTime = 60,
+        Id = 20,
+        TimeUIType = 3
+      }
+    },
+    {
+      {
+        AddCurseVal = 0,
+        CardType = 2,
+        CurseId = 102,
+        CurseTime = 0,
+        Id = 21,
+        TimeUIType = 1
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 2,
+        CurseId = 102,
+        CurseTime = 10,
+        Id = 22,
+        TimeUIType = 2
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 2,
+        CurseId = 102,
+        CurseTime = 30,
+        Id = 23,
+        TimeUIType = 3
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 2,
+        CurseId = 102,
+        CurseTime = 60,
+        Id = 24,
+        TimeUIType = 3
+      }
+    },
+    {
+      {
+        AddCurseVal = 0,
+        CardType = 3,
+        CurseId = 102,
+        CurseTime = 0,
+        Id = 25,
+        TimeUIType = 1
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 3,
+        CurseId = 102,
+        CurseTime = 10,
+        Id = 26,
+        TimeUIType = 2
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 3,
+        CurseId = 102,
+        CurseTime = 30,
+        Id = 27,
+        TimeUIType = 3
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 3,
+        CurseId = 102,
+        CurseTime = 60,
+        Id = 28,
+        TimeUIType = 3
+      }
+    },
+    {
+      {
+        AddCurseVal = 0,
+        CardType = 4,
+        CurseId = 102,
+        CurseTime = 0,
+        Id = 29,
+        TimeUIType = 1
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 4,
+        CurseId = 102,
+        CurseTime = 20,
+        Id = 30,
+        TimeUIType = 2
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 4,
+        CurseId = 102,
+        CurseTime = 45,
+        Id = 31,
+        TimeUIType = 3
+      },
+      {
+        AddCurseVal = 0,
+        CardType = 4,
+        CurseId = 102,
+        CurseTime = 70,
+        Id = 32,
+        TimeUIType = 3
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+local empty = {}
+return {
+  idle = {
+    Animation = "idle",
+    Cos = empty,
+    Sin = empty,
+    OffsetX = {
+      0.0,
+      0.0,
+      0.0
+    },
+    OffsetZ = {
+      0.0,
+      0.0,
+      0.0
+    },
+    Layer = 0,
+    TotalFrame = 2,
+    TailLength = 0.016667,
+    IsBaked = false,
+    RootMotion = false
+  }
+}

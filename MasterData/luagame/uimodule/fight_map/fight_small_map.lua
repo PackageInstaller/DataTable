@@ -1,0 +1,414 @@
+local Base = require("ui.uiobject")
+local ActiveRoomClass = require("uimodule.fight_map.active_room")
+local NoActiveRoomClass = require("uimodule.fight_map.no_active_room")
+local RandomRoomClass = require("uimodule.fight_map.random_room")
+local Vec3 = require("base.vec3")
+local MAP_HELPER = require("uimodule.fight_map.fight_map_helper")
+local ui = Util.create_child_mt(Base)
+local FIGHT_RES_KEY = "FIGHT_RES_KEY"
+local TEMPLATE_KEY = {
+  SMALL_MAP_NO_ACTIVE_ROOM = "SMALL_MAP_NO_ACTIVE_ROOM",
+  SMALL_MAP_ACTIVE_ROOM = "SMALL_MAP_ACTIVE_ROOM",
+  SMALL_MAP_RANDOM_ROOM = "SMALL_MAP_RANDOM_ROOM"
+}
+local Defatult_dis = 103.5
+local bagConfig = require("gamelogic.character.fight_bag_configs")
+local _format = string.format
+local Mathx = require("base.mathx")
+local CAMERA_DRAG_TYPE = {
+  NONE = 0,
+  ROTATION = 1,
+  MOVE = 2
+}
+local UPDATE_INTERVAL = 0.1
+
+function ui:ui_finish_load()
+  self:set_button("BtnOpen", function()
+    UIMgr:get_ui("fight_map"):ui_show()
+  end)
+  self:set_button("Collection", function()
+    UIMgr:get_ui("fight_bag"):ui_show()
+  end)
+  self:_init_map_view()
+  self.v_active_list = {}
+  self.v_no_active_list = {}
+  self.v_random_list = {}
+  self.v_out_room = nil
+  self.v_out_port = 0
+  self.v_can_rotate = false
+end
+
+function ui:_init_map_view()
+  self:register_exist_auto_template(TEMPLATE_KEY.SMALL_MAP_NO_ACTIVE_ROOM, self.v_uiobjects.RoomNotTemp, self.v_uiobjects.MapView)
+  self:register_exist_auto_template(TEMPLATE_KEY.SMALL_MAP_ACTIVE_ROOM, self.v_uiobjects.RoomActiveTemp, self.v_uiobjects.MapView)
+  self:register_exist_auto_template(TEMPLATE_KEY.SMALL_MAP_RANDOM_ROOM, self.v_uiobjects.RandomRoomTemp, self.v_uiobjects.MapView)
+  self:register_exist_auto_template(FIGHT_RES_KEY, self.v_uiobjects.ResTemplate, self.v_uiobjects.ResContent)
+  self.v_map_view_rect = self:get_rect_transform(nil, self.v_uiobjects.MapView)
+  self.v_map_parent = self.v_uiobjects.MapView.transform.parent
+  self.v_hero_arrow = self.v_uiobjects.HeroArrow
+  self.v_hero_arrow_tra = self.v_hero_arrow.transform
+  self.v_view_tra = self.v_uiobjects.View.transform
+end
+
+function ui:ui_on_show()
+  local parent_tra = self.v_object_transform.parent
+  local parent_ui_tra = self.v_parent_ui.v_object_transform
+  self.scale_factor = parent_tra.localScale.x * parent_ui_tra.localScale.x
+  self.v_delta_time = 0
+  self:_regist_client_event()
+  self:_refresh_map()
+  self:init_fight_res()
+  self:on_update_fight_bag()
+  self:refresh_angle()
+end
+
+function ui:ui_on_update(delta_time)
+  self.v_delta_time = self.v_delta_time + delta_time
+  if self.v_delta_time > UPDATE_INTERVAL then
+    self:_rotate_map()
+    self.v_delta_time = self.v_delta_time - UPDATE_INTERVAL
+  end
+end
+
+function ui:ui_on_hide()
+  self.v_wrap_uis = {}
+  self.v_active_list = {}
+  self.v_no_active_list = {}
+  self.v_random_list = {}
+  self.v_can_rotate = false
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_ENTER_ROOM, self.response_enter_room_event, self)
+  self:bind_auto_mq(Const.MSG_SCENE_LOAD_FINISH, self.response_secen_load_finish_event, self)
+  self:bind_auto_mq(Const.MSG_ON_FIGHT_BAG_INIT, self.on_update_fight_res_view, self)
+  self:bind_auto_mq(Const.MSG_ON_FIGHT_DIAMOND_UPDATE, self.on_update_fight_res_view, self)
+  self:bind_auto_mq(Const.MSG_ON_CHANGE_CAMERA, self.on_camera_changed, self)
+  self:bind_auto_mq(Const.MSG_ON_FIGHT_BAG_UPDATE, self.on_update_fight_bag, self)
+  self:bind_auto_mq(Const.MSG_ON_CHANGE_CAMERA_ANGLE, self.response_update_map_angle, self)
+end
+
+function ui:response_enter_room_event(msg)
+  if nil == msg or nil == msg.mm_obj then
+    return
+  end
+  local roomId = msg.mm_obj
+  local tower = TowerMgr:get_tower()
+  if tower:is_pass_room(roomId) == false then
+    self:ui_hide()
+  else
+    self:_refresh_map()
+  end
+end
+
+function ui:response_secen_load_finish_event(msg)
+  local parent_tra = self.v_object_transform.parent
+  local parent_ui_tra = self.v_parent_ui.v_object_transform
+  self.scale_factor = parent_tra.localScale.x * parent_ui_tra.localScale.x
+  self:_set_conncet()
+end
+
+function ui:on_camera_changed(msg)
+  if nil == msg or nil == msg.mm_obj then
+    return
+  end
+  self:_set_view()
+end
+
+function ui:on_rotate_camera(msg)
+  self:_rotate_map()
+end
+
+function ui:_refresh_map()
+  local tower = TowerMgr:get_tower()
+  local tower_info = tower:get_towet_info()
+  self:_create_room()
+  self:_set_background()
+  self:_set_conncet()
+  self:_set_view()
+end
+
+function ui:_rebuild_list()
+  for k, v in pairs(self.v_active_list) do
+    if self.v_no_active_list[k] ~= nil then
+      local ui = self.v_no_active_list[k]
+      self:give_back_auto_cache_obj(nil, ui.v_object, true)
+      self:remove_wrap_ui(ui)
+      ui:ui_on_hide()
+      self.v_no_active_list[k] = nil
+    end
+  end
+end
+
+function ui:_create_room()
+  self:_rebuild_list()
+  local tower = TowerMgr:get_tower()
+  local roomList = tower:get_cur_floor_room_list()
+  if not roomList then
+    return
+  end
+  self.v_room_dis = nil
+  for _, room in pairs(roomList) do
+    if tower:is_pass_room(room.RoomNum) then
+      self:_get_active_room(room.RoomNum):set_data(room, true)
+      for _, connect in pairs(room.RoomConnectDic) do
+        if tower:is_pass_room(connect.TargetRoomNum) == false then
+          self:_get_no_active_room(connect.TargetRoomNum):set_data(roomList[connect.TargetRoomNum], true)
+        end
+      end
+      if room.EndDir > 0 then
+        self.v_out_port = room.EndDir
+        self.v_out_room = self:_get_no_active_room(-1)
+        self.v_out_room:set_data(nil)
+        local cur_room = self.v_active_list[room.RoomNum]
+        local pos = cur_room:get_room_anchored_position()
+        self.v_out_room:set_pos(self:_get_point_by_port(room.EndDir, pos, self.v_room_dis), self.v_room_dis == nil)
+      end
+      local random_list = tower:get_random_room_list(room.RoomNum)
+      if random_list and #random_list > 0 then
+        for _, random_data in pairs(random_list) do
+          if tower:is_pass_room(random_data.target_room_num) then
+            local random_room = self:_get_random_room(random_data.target_room_num)
+            local room_data = {
+              RoomType = tower:get_random_room_relate_type(random_data.target_room_num),
+              RoomNum = random_data.target_room_num
+            }
+            random_room:set_data(room_data, true)
+            local cur_room = self.v_active_list[room.RoomNum]
+            local pos = cur_room:get_room_anchored_position()
+            random_room:set_pos(self:_get_point_by_port(random_data.src_dir, pos, self.v_room_dis), self.v_room_dis == nil)
+          end
+        end
+      end
+    end
+  end
+end
+
+function ui:_get_active_room(roomId)
+  if self.v_active_list[roomId] ~= nil then
+    return self.v_active_list[roomId]
+  end
+  local obj = self:get_auto_cache(TEMPLATE_KEY.SMALL_MAP_ACTIVE_ROOM)
+  obj.name = "RoomActiveTemp_" .. roomId
+  local item = ActiveRoomClass:ui_wrap(self, obj, true)
+  self.v_active_list[roomId] = item
+  return item
+end
+
+function ui:_get_no_active_room(roomId)
+  if self.v_no_active_list[roomId] ~= nil then
+    return self.v_no_active_list[roomId]
+  end
+  local obj = self:get_auto_cache(TEMPLATE_KEY.SMALL_MAP_NO_ACTIVE_ROOM)
+  obj.name = "RoomNotTemp_" .. roomId
+  local item = NoActiveRoomClass:ui_wrap(self, obj, true)
+  self.v_no_active_list[roomId] = item
+  return item
+end
+
+function ui:_get_random_room(roomId)
+  if self.v_random_list[roomId] ~= nil then
+    return self.v_random_list[roomId]
+  end
+  local obj = self:get_auto_cache(TEMPLATE_KEY.SMALL_MAP_RANDOM_ROOM)
+  obj.name = "RoomRandomTemp_" .. roomId
+  local item = RandomRoomClass:ui_wrap(self, obj, true)
+  self.v_random_list[roomId] = item
+  return item
+end
+
+function ui:_set_background()
+  local pos
+  for _, v in pairs(self.v_active_list) do
+    if v:get_is_player_in() == true then
+      pos = v:get_room_world_position()
+      break
+    end
+  end
+  if not pos then
+    for _, v in pairs(self.v_random_list) do
+      if v:get_is_player_in() == true then
+        pos = v:get_room_world_position()
+        break
+      end
+    end
+  end
+  if nil == pos then
+    return
+  end
+  local center = self.v_map_parent.position
+  local x_offset = center.x - pos.x
+  local y_offset = center.y - pos.y
+  local originWorldPos = self.v_uiobjects.MapView.transform.position
+  self.v_uiobjects.MapView.transform:SetPositionA(originWorldPos.x + x_offset, originWorldPos.y + y_offset, originWorldPos.z)
+  local originRectPos = self.v_map_view_rect.anchoredPosition
+  self.v_map_view_rect:SetAnchoredPositionA(originRectPos.x - 34.5, originRectPos.y + 34.5)
+end
+
+function ui:_set_conncet()
+  local tower = TowerMgr:get_tower()
+  local roomList = tower:get_cur_floor_room_list()
+  for room_id, room_ui in pairs(self.v_active_list) do
+    if nil ~= roomList[room_id] then
+      local connect_data = roomList[room_id].RoomConnectDic
+      for _, connect in pairs(connect_data) do
+        local target_room = tower:is_pass_room(connect.TargetRoomNum) and self.v_active_list[connect.TargetRoomNum] or self.v_no_active_list[connect.TargetRoomNum]
+        room_ui:set_line(connect, target_room)
+      end
+      local random_list = tower:get_random_room_list(room_id)
+      if random_list and #random_list > 0 then
+        for _, random_data in pairs(random_list) do
+          if tower:is_pass_room(random_data.target_room_num) then
+            local connect = {
+              SrcDir = random_data.src_dir,
+              TargetDir = random_data.target_dir,
+              TargetRoomNum = random_data.target_room_num
+            }
+            room_ui:set_line(connect, self.v_random_list[random_data.target_room_num])
+          end
+        end
+      end
+      if roomList[room_id].EndDir > 0 then
+        local tp = {
+          SrcDir = self.v_out_port,
+          TargetRoomNum = -1,
+          TargetDir = self.v_out_port > 2 and self.v_out_port - 2 or self.v_out_port + 2
+        }
+        room_ui:set_line(tp, self.v_out_room)
+      end
+    end
+  end
+end
+
+function ui:_get_point_by_port(port, origin_pos, dis)
+  if nil == dis or dis > Defatult_dis or dis < 0.8 * Defatult_dis then
+    dis = Defatult_dis
+  end
+  if 1 == port then
+    return Vec3.New(origin_pos.x, origin_pos.y + dis, origin_pos.z)
+  elseif 2 == port then
+    return Vec3.New(origin_pos.x - dis, origin_pos.y, origin_pos.z)
+  elseif 3 == port then
+    return Vec3.New(origin_pos.x, origin_pos.y - dis, origin_pos.z)
+  else
+    return Vec3.New(origin_pos.x + dis, origin_pos.y, origin_pos.z)
+  end
+end
+
+function ui:init_fight_res()
+  self.v_fight_res = {}
+  self:give_back_auto_cache(FIGHT_RES_KEY)
+  local show_res_list = bagConfig.SHOW_CURRENCY
+  for _, res_id in pairs(show_res_list) do
+    local obj = self:get_auto_cache(FIGHT_RES_KEY)
+    self.v_fight_res[res_id] = obj
+  end
+  self:on_update_fight_res_view()
+end
+
+function ui:on_update_fight_res_view()
+  if Util.is_client_only() then
+    return
+  end
+  if not self.v_fight_res then
+    return
+  end
+  local ITEM_ICON_PATH = "Icon/BattleItem/%s"
+  for res_id, obj in pairs(self.v_fight_res) do
+    local res_val = CharacterMgr:get_res_val(res_id)
+    local cfg = FightBagMgr:get_cfg_by_id(res_id)
+    local icon = self:get_image("ResIcon", obj)
+    ResMgr:load_set_icon(icon, _format(ITEM_ICON_PATH, cfg.Icon))
+    icon:SetNativeSize()
+    local txt = self:get_text("ResVal", obj)
+    txt.text = res_val
+  end
+end
+
+function ui:on_update_fight_bag()
+  self.v_uicompents.Collection_Amount_txt.text = FightBagMgr:get_collect_num()
+end
+
+function ui:_set_view()
+  if not Global.camera or not Global.hero then
+    self:_reset_view()
+    return
+  end
+  local camera_id = Global.camera:get_camera_id()
+  if not camera_id then
+    self:_reset_view()
+    return
+  end
+  local camera_cfg = ShareRes.create("camera.camera", camera_id)
+  if camera_cfg.DragType == CAMERA_DRAG_TYPE.NONE then
+    self:_reset_view()
+    return
+  end
+  self.v_can_rotate = true
+  local tower = TowerMgr:get_tower()
+  if not tower then
+    return
+  end
+  local ui = self.v_active_list[tower:get_room_num()]
+  ui = ui or self.v_random_list[tower:get_room_num()]
+  if not ui then
+    return
+  end
+  ui:force_hide_room_icon(true)
+  self:_rotate_map()
+end
+
+function ui:_reset_view()
+  self.v_hero_arrow:SetActiveEx(false)
+  CSHelper.SetEuler(self.v_hero_arrow_tra, 0, 0, 0)
+  local tower = TowerMgr:get_tower()
+  if not tower then
+    return
+  end
+  local ui = self.v_active_list[tower:get_room_num()]
+  if ui then
+    ui:force_hide_room_icon(false)
+  end
+  self.v_can_rotate = false
+end
+
+function ui:_rotate_map()
+  if self.v_can_rotate == false then
+    self:_reset_view()
+    return
+  end
+  if not Global.hero then
+    return
+  end
+  self.v_hero_arrow:SetActiveEx(true)
+  local cur_dir = Global.hero:get_dir()
+  if self.v_map_angle then
+    cur_dir = cur_dir - self.v_map_angle
+  end
+  CSHelper.SetEuler(self.v_hero_arrow_tra, 0, 0, -cur_dir)
+end
+
+function ui:response_update_map_angle(msg)
+  if nil == msg then
+    return
+  end
+  local z_angle = msg.mm_x
+  local view_obj = self.v_uiobjects.View
+  local rect = Util.get_rect_transform(nil, view_obj)
+  rect:SetEuler(0, 0, z_angle)
+  self.v_map_angle = z_angle
+end
+
+function ui:refresh_angle()
+  self.v_map_angle = MAP_HELPER.get_map_angle()
+  if self.v_map_angle then
+    local view_obj = self.v_uiobjects.View
+    local rect = Util.get_rect_transform(nil, view_obj)
+    rect:SetEuler(0, 0, self.v_map_angle)
+  end
+end
+
+return ui

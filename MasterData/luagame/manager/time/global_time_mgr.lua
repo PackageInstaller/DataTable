@@ -1,0 +1,104 @@
+local M = {}
+local scale = 1
+local last_scale = 1
+local total_stop_time = 0
+local start_stop_time = 0
+local is_time_stop = false
+
+function M:get_dt_time()
+  return Global.delta_time * scale
+end
+
+function M:get_low_dt_time()
+  return Global.low_delta_time * scale
+end
+
+function M:get_fixed_dt_time()
+  return Global.fixed_delta_time
+end
+
+function M:get_time_scale()
+  return scale
+end
+
+function M:get_unscaled_time()
+  local cur_stop_time = 0 == start_stop_time and 0 or Global.time - start_stop_time
+  return Global.time - total_stop_time - cur_stop_time
+end
+
+function M:get_time()
+  return Global.scaled_time
+end
+
+function M:on_stop()
+  is_time_stop = true
+  start_stop_time = Global.time
+  if 0 ~= scale then
+    last_scale = scale
+  end
+  scale = 0
+end
+
+function M:on_resume()
+  if is_time_stop then
+    total_stop_time = total_stop_time + (Global.time - start_stop_time)
+  end
+  is_time_stop = false
+  start_stop_time = 0
+  scale = last_scale
+end
+
+function M:get_is_time_stop()
+  return is_time_stop
+end
+
+function M:set_time_scale(new_scale)
+  if is_time_stop then
+    if last_scale ~= new_scale then
+      last_scale = new_scale
+    end
+    return
+  end
+  if scale == new_scale then
+    return
+  end
+  scale = new_scale or 1
+end
+
+local CUR_EFFECT_TAG
+
+function M:add_global_time_scale(new_scale)
+  CUR_EFFECT_TAG = SimpleTagMgr:add_tag(Config.SIMPLE_TAG_TYPE.GLOBAL_TIME_SCALE)
+  CUR_EFFECT_TAG:set_time_scale_info(new_scale)
+  self:update_global_time_scale()
+  return CUR_EFFECT_TAG.index
+end
+
+function M:update_global_time_scale()
+  if CUR_EFFECT_TAG then
+    self:set_time_scale(CUR_EFFECT_TAG:get_time_scale())
+  else
+    self:set_time_scale(1)
+  end
+end
+
+function M:remove_globale_time_scale(index)
+  local is_cur_effec_tag = CUR_EFFECT_TAG and CUR_EFFECT_TAG.index == index
+  SimpleTagMgr:remove_tag(index)
+  local next_tag = SimpleTagMgr:get_last_tag_by_type(Config.SIMPLE_TAG_TYPE.GLOBAL_TIME_SCALE)
+  if is_cur_effec_tag then
+    CUR_EFFECT_TAG = next_tag
+    self:update_global_time_scale()
+  end
+  if is_time_stop then
+    return false
+  end
+  return not CUR_EFFECT_TAG
+end
+
+function M:init_time_scale()
+  scale = 1
+  last_scale = 1
+end
+
+return M

@@ -1,0 +1,159 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local SKIN_TRYOUT_AWARD_ = "SKIN_TRYOUT_AWARD_"
+local Shop_Helper = require("uimodule.shop.shop_helper")
+
+function ui:ui_finish_load()
+  self:set_button("BtnDetail", function()
+    UIMgr:get_ui("ui_fashionable_dress"):ui_show(self.v_skin_tryout_cfg.BuddyId, nil, self.v_skin_tryout_cfg.SkinId, nil, {
+      skins = {
+        {
+          Id = self.v_skin_tryout_cfg.SkinId
+        }
+      }
+    }, nil, true)
+  end)
+  self:set_button("BtnBuy", function()
+    UIMgr:get_ui("ui_fashionable_dress"):ui_show(self.v_skin_tryout_cfg.BuddyId, nil, self.v_skin_tryout_cfg.SkinId, nil, {
+      skins = {
+        {
+          Id = self.v_skin_tryout_cfg.SkinId
+        }
+      },
+      gifts = {
+        ShareRes.get_gift_shop_cfg(self.v_skin_tryout_cfg.GiftId)
+      }
+    }, nil, nil, nil, nil, true)
+  end)
+  self:set_button("BtnStart", function()
+    if TowerMgr:check_fight_progress() then
+      return
+    end
+    if self.v_skin_tryout_cfg.EpisodeId then
+      UIMgr:get_ui("team"):ui_show(nil, self.v_skin_tryout_cfg.EpisodeId)
+    end
+  end)
+  self:set_button("BtnRecive", function()
+    local award_info = NoviceMgr:get_fashion_probation_info(self.v_activity_id)
+    if 1 == award_info.state then
+      NoviceMgr:request_fashion_probation_get_award(self.v_activity_id, 1, function()
+        self:refresh()
+      end)
+    else
+      Util.show_errcode(self.v_skin_tryout_cfg.ErrorCode)
+    end
+  end)
+  self:set_button("BtnWeaponDetail", function()
+    if self.v_skin_tryout_cfg.RuleTextId then
+      UIMgr:get_ui("info_tips"):ui_show(self.v_skin_tryout_cfg.RuleTextId)
+    end
+  end)
+  self:set_button("BtnWeaponRecive", function()
+    local award_info = NoviceMgr:get_fashion_probation_info(self.v_activity_id)
+    if 1 == award_info.second_award_state then
+      NoviceMgr:request_fashion_probation_get_award(self.v_activity_id, 2, function()
+        self:refresh()
+      end)
+    else
+      Util.show_errcode(self.v_skin_tryout_cfg.ErrorCode)
+    end
+  end)
+  self:set_button("BtnWeaponPreview", function()
+    local weapon_awards = ShareRes.get_awards(self.v_skin_tryout_cfg.SecondAwardGroupId)
+    if weapon_awards then
+      local item_id = weapon_awards[1].ItemId
+      UIMgr:get_ui("itemTip"):ui_show({item_id = item_id, is_exist_jump = false})
+    end
+  end)
+  self:register_exist_auto_template(SKIN_TRYOUT_AWARD_ .. self.v_ui_name, self.v_uiobjects.ItemObjCom1, self.v_uiobjects.Content)
+end
+
+function ui:ui_on_show(activity_id)
+  self.v_last_text_update_time = 0
+  self.v_activity_id = activity_id
+  self.v_activity_cfg = ShareRes.get_activity_cfg(self.v_activity_id)
+  self.v_skin_tryout_cfg = ShareRes.get_skin_tryout_cfg(self.v_activity_id)
+  self:refresh()
+end
+
+function ui:ui_on_update()
+  if Global.time - self.v_last_text_update_time > 10 then
+    local activity_data = NoviceMgr:get_novice_activity_data(self.v_activity_id)
+    local time_length = NoviceMgr:get_time_remaining(self.v_activity_cfg.TimeType, self.v_activity_cfg.StopTime, activity_data.open_time, self.v_activity_cfg.SustainTime)
+    if time_length then
+      self.v_uicompents.LessTime_txt.text = Date.get_time_format_7(time_length)
+    end
+  end
+end
+
+function ui:ui_on_hide()
+  UIMgr:try_hide_ui("info_tips")
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh()
+  self:give_back_auto_cache(SKIN_TRYOUT_AWARD_ .. self.v_ui_name)
+  local awards = {}
+  ShareRes.get_item_obj_use_award_list(self.v_skin_tryout_cfg.AwardGroupId, awards)
+  for _, award_data in ipairs(awards) do
+    local item_obj = self:get_auto_cache(SKIN_TRYOUT_AWARD_ .. self.v_ui_name)
+    self:set_data(item_obj, award_data)
+  end
+  local complete = Util.get_child_gameobj("Complete", self.v_uiobjects.BtnRecive)
+  local Uncomplete = Util.get_child_gameobj("Uncomplete", self.v_uiobjects.BtnRecive)
+  local redpoint = Util.get_child_gameobj("redpoint", self.v_uiobjects.BtnRecive)
+  local award_info = NoviceMgr:get_fashion_probation_info(self.v_activity_id)
+  if 1 == award_info.state then
+    complete:SetActiveEx(true)
+    redpoint:SetActiveEx(true)
+    Uncomplete:SetActiveEx(false)
+    self.v_uiobjects.HaveRecivedObj:SetActiveEx(true)
+  else
+    complete:SetActiveEx(false)
+    redpoint:SetActiveEx(false)
+    Uncomplete:SetActiveEx(true)
+  end
+  Util.apply_grey_ex(self.v_uiobjects.BtnWeaponRecive, 0 == award_info.second_award_state or 2 == award_info.second_award_state)
+  self.v_uiobjects.HaveRecivedObj:SetActiveEx(2 == award_info.second_award_state and true or false)
+  self.v_uiobjects.ReciveObj:SetActiveEx(award_info.second_award_state < 2)
+  self.v_uiobjects.Fx_SGlow:SetActiveEx(1 == award_info.second_award_state)
+  self.v_uicompents.BtnRecive_btn.interactable = 0 == award_info.state or 1 == award_info.state
+  self.v_uicompents.BtnWeaponRecive_btn.interactable = 0 == award_info.second_award_state or 1 == award_info.second_award_state
+  if 0 == NoviceMgr:get_skin_tryout_localdata(self.v_activity_id) then
+    NoviceMgr:set_skin_tryout_localdata(self.v_activity_id)
+  end
+  NoviceMgr:update_skin_tryout_redpoint(self.v_activity_id)
+end
+
+function ui:set_data(item_obj, item_data)
+  local item_id = item_data.id
+  local ItemIcon = Util.get_child_gameobj("ItemIcon_", item_obj)
+  local ItemQuality = Util.get_child_gameobj("ItemQuality_", item_obj)
+  local Mask = Util.get_child_gameobj("Mask_", item_obj)
+  local ItemAmount = Util.get_child_gameobj("ItemAmount_", item_obj)
+  local ItemNum_txt = Util.get_text("Bg/ItemNum_", ItemAmount)
+  ItemAmount:SetActiveEx(item_data.count > 1)
+  ItemIcon:SetActive(false)
+  ItemQuality:SetActive(false)
+  local award_info = NoviceMgr:get_fashion_probation_info(self.v_activity_id)
+  Mask:SetActiveEx(2 == award_info.state)
+  local icon_path, quality_path = UtilUI.get_item_icon(item_id, true)
+  ResMgr:load_set_icon(Util.get_image(nil, ItemQuality), quality_path, function()
+    ItemQuality:SetActive(true)
+  end)
+  ResMgr:load_set_icon(Util.get_image(nil, ItemIcon), icon_path, function()
+    ItemIcon:SetActive(true)
+  end)
+  if item_data.count > 1 then
+    ItemNum_txt.text = item_data.count
+  end
+  local btn = Util.get_button(nil, item_obj)
+  self:remove_button_listener(btn)
+  self:set_button_listener(btn, function()
+    UIMgr:get_ui("itemTip"):ui_show({item_id = item_id, is_exist_jump = false})
+  end)
+end
+
+return ui

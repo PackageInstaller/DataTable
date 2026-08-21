@@ -1,0 +1,84 @@
+return {
+  {
+    ArchiveQualityBg = "UIArchive/UIEquip/Archive_wqlb_bg_ldb",
+    ArchiveQualityBgBottom = "UIArchive/UIEquip/Archive_wqlb_bg_lzz",
+    BirthSlot = {
+      false,
+      false,
+      false
+    },
+    GemstoneSlotId = {},
+    Id = 1,
+    QualityIcon = "Char_pzz_sp",
+    Quality_Bg = "Common_pzk_02"
+  },
+  {
+    ArchiveQualityBg = "UIArchive/UIEquip/Archive_wqlb_bg_ldb",
+    ArchiveQualityBgBottom = "UIArchive/UIEquip/Archive_wqlb_bg_lzz",
+    BirthSlot = {
+      false,
+      false,
+      false
+    },
+    GemstoneSlotId = {},
+    Id = 2,
+    QualityIcon = "Char_pzz_sp",
+    Quality_Bg = "Common_pzk_02"
+  },
+  {
+    ArchiveQualityBg = "UIArchive/UIEquip/Archive_wqlb_bg_ldb",
+    ArchiveQualityBgBottom = "UIArchive/UIEquip/Archive_wqlb_bg_lzz",
+    BirthSlot = {
+      true,
+      false,
+      false
+    },
+    GemstoneSlotId = {3},
+    Id = 3,
+    QualityIcon = "Char_pzz_sp",
+    Quality_Bg = "Common_pzk_02"
+  },
+  {
+    ArchiveQualityBg = "UIArchive/UIEquip/Archive_wqlb_bg_zdb",
+    ArchiveQualityBgBottom = "UIArchive/UIEquip/Archive_wqlb_bg_zzz",
+    BirthSlot = {
+      true,
+      false,
+      false
+    },
+    GemstoneSlotId = {3, 3},
+    Id = 4,
+    QualityIcon = "Char_pzz_xt",
+    Quality_Bg = "Common_pzk_03"
+  },
+  {
+    ArchiveQualityBg = "UIArchive/UIEquip/Archive_wqlb_bg_jdb",
+    ArchiveQualityBgBottom = "UIArchive/UIEquip/Archive_wqlb_bg_jzz",
+    BirthSlot = {
+      true,
+      false,
+      false
+    },
+    GemstoneSlotId = {
+      4,
+      3,
+      3
+    },
+    Id = 5,
+    QualityIcon = "Char_pzz_wm",
+    Quality_Bg = "Common_pzk_04"
+  },
+  {
+    ArchiveQualityBg = "UIArchive/UIEquip/Archive_wqlb_bg_jdb",
+    ArchiveQualityBgBottom = "UIArchive/UIEquip/Archive_wqlb_bg_jzz",
+    BirthSlot = {
+      false,
+      false,
+      false
+    },
+    GemstoneSlotId = {},
+    Id = 6,
+    QualityIcon = "Char_pzz_zs",
+    Quality_Bg = "Common_pzk_04"
+  }
+}

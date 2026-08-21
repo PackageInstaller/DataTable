@@ -1,0 +1,517 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local TEMPLATE_KEY_PAGE_TOG = "TEMPLATE_KEY_PAGE_TOG"
+local TEMPLATE_KEY_AWARD_TEM = "TEMPLATE_KEY_AWARD_TEM"
+local TEMPLATE_KEY_TASK_TEM = "TEMPLATE_KEY_TASK_TEM"
+local NOVICE_TASK_ITEM = require("uimodule.activity.novice_task_item")
+local SpineHelper = require("ui.model_rt_view.spine_helper")
+local SPINE_RT_VIEW = require("ui.model_rt_view.spine_rt_view")
+local TASK_STATE = Config.TASK_STATE
+local COLOR = {DARK = "6a6a6a"}
+
+function ui:on_task_update()
+  if self.v_is_play_get_award_anima then
+    return
+  end
+  local cur_index = self.v_select_day or self.v_default_day
+  self.v_select_day = nil
+  self:_on_click_tog_page(cur_index, true)
+end
+
+function ui:on_novice_info_update()
+end
+
+function ui:ui_finish_load()
+  self.v_button_id_list = {}
+  self.v_button_list = {}
+  self.v_item_objs = {}
+  self.v_task_item_list = {}
+  self.v_task_id_list = {}
+  self.v_finished_task_list = {}
+  self.v_finished_task_award_list = {}
+  self:register_exist_auto_template(TEMPLATE_KEY_PAGE_TOG, self.v_uiobjects.TaskGroupTem, self.v_uiobjects.TaskGroupList)
+  self:register_exist_auto_template(TEMPLATE_KEY_TASK_TEM, self.v_uiobjects.TaskTem, self.v_uiobjects.Content)
+  self.v_task_cfg = ShareRes.create("newbie.newbie_task_group")
+  self.v_novice_days = ShareRes.get_comm_value("NewbieSignInPeriod")
+  table.sort(self.v_task_cfg, function(a, b)
+    return a.Priority > b.Priority
+  end)
+  self:set_button("ShowHero", function()
+    self:animate_spine()
+  end)
+  self.v_novice_task_res_cfg = ShareRes.create("newbie.newbie_task_res")[1]
+  self.v_task_main_pd = Util.get_playabledirector("Animation/Ani_TaskMain_Finsh_", self.v_uiobjects.TaskMain)
+  self.v_effect_timer_list = {}
+end
+
+function ui:ui_on_show()
+  self:bind_auto_mq(Const.MSG_ON_TASK_UPDATE, self.on_task_update, self)
+  self:bind_auto_mq(Const.MSG_ON_TASK_GROUP_UPDATE, self.on_task_update, self)
+  self:bind_auto_mq(Const.MSG_NOVICE_INFO_UPDATE, self.on_novice_info_update, self)
+  self:bind_auto_mq(Const.MSG_ROLE_RES_CHANGE, self.on_novice_info_update, self)
+  self.v_is_play_get_award_anima = false
+  self:refresh()
+  self:show_preview_awards()
+  self.v_low_update = Global.real_time
+  self.v_start_time = Global.real_time
+  self.v_anim_data = SpineHelper.get_init_anim_info()
+  self:clear_spine_rt()
+  if self.v_novice_task_res_cfg.SpineId then
+    self.v_spine_id = self.v_novice_task_res_cfg.SpineId
+    self.v_anim_interval = SpineHelper.get_anim_interval(self.v_spine_id)
+    self.v_spine_rt = self.v_spine_rt or SPINE_RT_VIEW:new(self, self.v_uiobjects.ShowHero)
+    SpineHelper.load_char_spine_res(self.v_spine_rt, self.v_spine_id, self.v_uiobjects.ShowHero)
+    self.v_uiobjects.CharRes:SetActiveEx(false)
+    self.v_uiobjects.ShowHeroPic:SetActiveEx(true)
+  elseif self.v_novice_task_res_cfg.ImageRes then
+    ResMgr:load_set_icon(self.v_uicompents.CharRes_img, self.v_novice_task_res_cfg.ImageRes, nil, true)
+    self.v_uiobjects.CharRes:SetActiveEx(true)
+    self.v_uiobjects.ShowHeroPic:SetActiveEx(false)
+  end
+end
+
+function ui:ui_after_show(activity_id, sub_param)
+  if sub_param then
+    self.v_select_day = sub_param
+    self:refresh()
+  end
+end
+
+function ui:ui_on_update()
+  if not self.v_spine_id then
+    return
+  end
+  if Global.real_time - self.v_low_update < SpineHelper.UPDATE_TIME then
+    return
+  end
+  self.v_low_update = Global.real_time
+  if self.v_anim_data.record_data.play_end then
+    self.v_start_time = self.v_start_time or Global.real_time
+    if self.v_anim_interval and Global.real_time - self.v_start_time > self.v_anim_interval then
+      SpineHelper.init_anim_info(self.v_spine_id, self.v_anim_data, SpineHelper.ANIM_TYPE.INTERVAL)
+    end
+  else
+    self.v_start_time = Global.real_time
+  end
+  SpineHelper.check_play_anim(self.v_spine_rt, self.v_anim_data)
+end
+
+function ui:ui_on_hide()
+  self.v_select_day = nil
+  self.v_before_jump_select_day = nil
+  for k, v in pairs(self.v_button_id_list) do
+    RedPointMgr:unbind_redpoint_by_id(self, v, RedEnum.NOVICE_DAILY_TASK)
+  end
+  self:remove_all_task_item()
+  self.v_spine_id = nil
+  self:clear_spine_rt()
+  if self.v_TaskMain_msg_handler then
+    MsgGame:mq_unbind(self.v_TaskMain_msg_handler)
+    self.v_TaskMain_msg_handler = nil
+  end
+  for _, value in pairs(self.v_effect_timer_list) do
+    Timer:remove_timer(value)
+  end
+end
+
+function ui:ui_on_destroy()
+  self.v_finished_task_list = nil
+  self.v_finished_task_award_list = nil
+  self.v_effect_timer_list = nil
+  self:clear_spine_rt()
+end
+
+function ui:show_preview_awards()
+  local id_list = ShareRes.get_comm_string_value("SevenDayTaskAwardsID")
+  local num_list = ShareRes.get_comm_string_value("SevenDayTaskAwardsNum")
+  for idx, id in ipairs(id_list) do
+    ResMgr:load_set_icon(self.v_uicompents["PreviewItemIcon" .. idx .. "_img"], UtilUI.get_item_icon(id))
+    self.v_uicompents["PreviewItemNum" .. idx .. "_txt"].text = num_list[idx]
+    self:set_button("PreviewItemIcon" .. idx, function()
+      UIMgr:get_ui("itemTip"):ui_show({item_id = id})
+    end)
+  end
+end
+
+function ui:refresh()
+  if self.v_is_play_get_award_anima then
+    return
+  end
+  if not self.v_select_day or self:check_is_all_finish(self.v_select_day) then
+    self.v_default_day = self:_get_default_idx()
+  else
+    self.v_default_day = self.v_select_day
+  end
+  self.v_select_day = nil
+  self:refresh_page_tog()
+  self:on_change_select_state(self.v_default_day)
+  self:_on_click_tog_page(self.v_default_day, true)
+  self.v_select_day = self.v_default_day
+end
+
+function ui:refresh_page_tog()
+  self:give_back_auto_cache(TEMPLATE_KEY_PAGE_TOG)
+  self.v_button_list = {}
+  local select_day = self.v_select_day or self.v_before_jump_select_day or self.v_default_day
+  for i = 1, self.v_novice_days do
+    local task_cfg = self.v_task_cfg[i]
+    local obj = self:get_auto_cache(TEMPLATE_KEY_PAGE_TOG)
+    self.v_button_list[i] = self:set_task_page(obj, i, task_cfg, select_day)
+  end
+  local rect_trans = Util.get_rect_transform(nil, self.v_uiobjects.TaskGroupList)
+  if select_day > 4 then
+    rect_trans:SetAnchoredPositionX(-900)
+  else
+    rect_trans:SetAnchoredPositionX(-435)
+  end
+end
+
+function ui:set_task_page(obj, index, task_cfg, select_day)
+  local is_select_day = select_day == index
+  local red_id = RedEnum.NOVICE_DAILY_TASK + index
+  self.v_button_id_list[index] = red_id
+  self:change_active_select_obj(index, obj, is_select_day)
+  local notice_str
+  local is_lock = TaskMgr:get_task_group(task_cfg.TaskGroupId) == nil
+  local task_group = ShareRes.create("condition.task_group", task_cfg.TaskGroupId)
+  if is_lock then
+    local name = Util.get_text("UnSelect/TaskGroupName", obj)
+    Util.set_color(name, COLOR.DARK)
+    local is_condition = true
+    if is_condition and task_cfg.Condition then
+      local condition = ShareRes.create("condition.condition", task_cfg.Condition)
+      notice_str = condition.Desc
+    end
+  end
+  local button = self:get_button(nil, obj)
+  self:set_button_listener(button, function()
+    if not is_lock then
+      self:on_change_select_state(index)
+    end
+    self:_on_click_tog_page(index, true, notice_str)
+  end)
+  return button
+end
+
+function ui:refresh_award()
+end
+
+function ui:refresh_task_content(data)
+  if self.v_scroll_to_top then
+    self.v_uicompents.Content_rect:SetAnchoredPositionA(0, 0)
+    self.v_scroll_to_top = false
+  end
+  UtilTable.clear_list(self.v_finished_task_list)
+  for k, v in pairs(self.v_task_id_list) do
+    RedPointMgr:unbind_redpoint_by_id(self, v[1], v[2])
+    self.v_task_id_list[k] = nil
+  end
+  self:remove_all_task_item()
+  self.v_uiobjects.TaskAllFinish:SetActive(false)
+  local task_list = ShareRes.get_task_group(data.TaskGroupId)
+  if not task_list then
+    return
+  end
+  local temp_list = {}
+  for _, task_cfg in pairs(task_list) do
+    if not task_cfg.PreTaskId or TaskMgr:get_task_state(task_cfg.PreTaskId) >= TASK_STATE.COMPLETE then
+      table.insert(temp_list, task_cfg)
+    end
+  end
+  table.sort(temp_list, function(a, b)
+    local state_a = TaskMgr:get_task_state(a.Id)
+    local state_b = TaskMgr:get_task_state(b.Id)
+    local sort_a = self:get_sort_id(state_a)
+    local sort_b = self:get_sort_id(state_b)
+    if sort_a == sort_b then
+      return a.Priority > b.Priority
+    else
+      return sort_a < sort_b
+    end
+  end)
+  local has_no_received = false
+  for index, task_cfg in ipairs(temp_list) do
+    local state = TaskMgr:get_task_state(task_cfg.Id)
+    has_no_received = has_no_received or 4 ~= state
+    if state == TASK_STATE.COMPLETE then
+      table.insert(self.v_finished_task_list, task_cfg.Id)
+    end
+  end
+  local unlock = true
+  local all_received = true
+  for index, task_cfg in ipairs(temp_list) do
+    local obj = self:get_auto_cache(TEMPLATE_KEY_TASK_TEM)
+    local task_item = NOVICE_TASK_ITEM:ui_wrap(self, obj, true)
+    task_item:set_data(task_cfg, TEMPLATE_KEY_TASK_TEM, not has_no_received)
+    self.v_task_item_list[index] = task_item
+    local state = TaskMgr:get_task_state(task_cfg.Id)
+    unlock = unlock and (state == TASK_STATE.GET_REWARD or state == TASK_STATE.COMPLETE)
+    all_received = all_received and state == TASK_STATE.GET_REWARD
+  end
+  local received
+  if unlock then
+    received = TaskMgr:is_task_group_award_received(data.TaskGroupId)
+  end
+  local BtnContinue = Util.get_child_gameobj("BtnContinue_", self.v_uiobjects.TaskMain)
+  local BtnGet = Util.get_child_gameobj("BtnGet_", self.v_uiobjects.TaskMain)
+  local HasGet = Util.get_child_gameobj("HasGet_", self.v_uiobjects.TaskMain)
+  local bgGet = Util.get_child_gameobj("BgGet_", self.v_uiobjects.TaskMain)
+  BtnContinue:SetActiveEx(not unlock)
+  BtnGet:SetActiveEx(unlock and not received)
+  HasGet:SetActiveEx(received)
+  bgGet:SetActiveEx(received)
+  local BtnGet_btn = self:get_button(nil, BtnGet)
+  if self.v_TaskMain_msg_handler then
+    MsgGame:mq_unbind(self.v_TaskMain_msg_handler)
+    self.v_TaskMain_msg_handler = nil
+  end
+  self:set_button_listener(BtnGet_btn, function()
+    self.v_TaskMain_msg_handler = MsgGame:mq_bind(Const.MSG_ON_AWARD_SHOW_PANEL_HIDE, function()
+      self:animate_spine()
+    end)
+    TaskMgr:receive_task_group_submit(data.TaskGroupId)
+  end)
+  local task_group_id = self.v_task_cfg[self.v_select_day].TaskGroupId
+  local award_group_id = ShareRes.create("condition.task_group", task_group_id).Award
+  local reward_list = ShareRes.get_award_item_data(award_group_id)
+  if UtilTable.is_empty(self.v_item_objs) then
+    local item_list = Util.get_child_gameobj("Scroll View/Viewport/ItemList", self.v_uiobjects.TaskMain)
+    for i = 1, 6 do
+      local obj_name = "ItemObj" .. i .. "_"
+      local key = "ItemObj" .. i
+      local item_obj = Util.get_child_gameobj(obj_name, item_list)
+      self.v_item_objs[key] = item_obj
+    end
+  end
+  for i = 1, 6 do
+    local item_obj = self.v_item_objs["ItemObj" .. i]
+    local replace_obj = self:get_child_gameobj("Hang", item_obj)
+    local item_num = self:get_text("AmountBg/ItemAmount", item_obj)
+    local has_get_obj = self:get_child_gameobj("Got_", item_obj)
+    local reward_data = reward_list[i]
+    item_obj:SetActive(nil ~= reward_data)
+    if reward_data then
+      self:create_item_obj(nil, replace_obj, TEMPLATE_KEY_TASK_TEM, {
+        item_id = reward_data[1],
+        click_cb = function()
+          UIMgr:get_ui("itemTip"):ui_show({
+            item_id = reward_data[1]
+          })
+        end
+      })
+      item_num.text = reward_data[2]
+      item_num.transform:SetAsLastSibling()
+      has_get_obj:SetActive(received)
+    end
+  end
+  if all_received and received then
+    RedPointMgr:enable_dynamic_redpoint(RedEnum.NOVICE_DAILY_TASK + self.v_select_day, RedEnum.NOVICE_DAILY_TASK, false)
+  end
+  self:play_anim()
+end
+
+function ui:check_is_all_finish(day)
+  if not self.v_task_cfg then
+    return false
+  end
+  local task_group_id = self.v_task_cfg[day].TaskGroupId
+  local task_list = ShareRes.get_task_group(task_group_id)
+  local is_all_done = true
+  local is_can_receive = false
+  for i, info in pairs(task_list) do
+    local state = TaskMgr:get_task_state(info.Id)
+    if state ~= TASK_STATE.GET_REWARD then
+      is_all_done = false
+    end
+    if state == TASK_STATE.COMPLETE then
+      is_can_receive = true
+    end
+  end
+  if is_all_done then
+    local received = TaskMgr:is_task_group_award_received(task_group_id)
+    if not received then
+      is_all_done = false
+    end
+    is_can_receive = is_can_receive or not received
+  end
+  RedPointMgr:enable_dynamic_redpoint(RedEnum.NOVICE_DAILY_TASK + day, RedEnum.NOVICE_DAILY_TASK, is_can_receive)
+  return is_all_done
+end
+
+function ui:on_change_select_state(index)
+  for key, button in pairs(self.v_button_list) do
+    local is_settle = key == index
+    self:change_active_select_obj(key, button.gameObject, is_settle)
+  end
+end
+
+function ui:change_active_select_obj(index, obj, is_select_day)
+  local UnSelect = self:get_child_gameobj("UnSelect", obj)
+  local Select = self:get_child_gameobj("Select", obj)
+  local select_task_group = self.v_task_cfg[index]
+  local red_id = self.v_button_id_list[index]
+  if red_id then
+    RedPointMgr:unbind_redpoint_by_id(self, red_id, RedEnum.NOVICE_DAILY_TASK)
+  end
+  local name
+  if is_select_day then
+    Select:SetActive(true)
+    UnSelect:SetActive(false)
+    name = self:get_text("TaskGroupName", Select)
+  else
+    Select:SetActive(false)
+    UnSelect:SetActive(true)
+    local lock = self:get_child_gameobj("Lock", obj)
+    name = self:get_text("TaskGroupName", UnSelect)
+    local is_lock = TaskMgr:get_task_group(select_task_group.TaskGroupId) == nil
+    lock:SetActive(is_lock)
+  end
+  local redpoint = self:get_child_gameobj("RedDot", obj)
+  RedPointMgr:bind_redpoint(self, redpoint, red_id, RedEnum.NOVICE_DAILY_TASK)
+  name.text = "0" .. index
+  local finish = self:get_child_gameobj("TaskFinish", obj)
+  finish.gameObject:SetActive(TaskMgr:get_task_group_state(select_task_group.TaskGroupId) == TASK_STATE.GET_REWARD)
+end
+
+function ui:get_sort_id(state)
+  if state == TASK_STATE.COMPLETE then
+    return 1
+  elseif state == TASK_STATE.GET_REWARD then
+    return 3
+  else
+    return 2
+  end
+end
+
+function ui:_get_default_idx()
+  local temp_day_state_list = {}
+  for i = 1, self.v_novice_days do
+    local task_cfg = self.v_task_cfg[i]
+    local task_list = ShareRes.get_task_group(task_cfg.TaskGroupId)
+    if task_list then
+      local tb = {}
+      table.insert(temp_day_state_list, tb)
+      tb.day = i
+      tb.complete = 0
+      tb.receive = 0
+      tb.all_done = 1
+      if TaskMgr:get_task_group(task_cfg.TaskGroupId) ~= nil then
+        for _, info in pairs(task_list) do
+          local state = TaskMgr:get_task_state(info.Id)
+          if state ~= TASK_STATE.GET_REWARD then
+            tb.all_done = 0
+          end
+          if state == TASK_STATE.COMPLETE then
+            tb.complete = 1
+            break
+          end
+        end
+        tb.is_unlock = 1
+      else
+        tb.is_unlock = 0
+      end
+    end
+  end
+  table.sort(temp_day_state_list, function(a, b)
+    if a.complete ~= b.complete then
+      return a.complete > b.complete
+    end
+    if a.receive ~= b.receive then
+      return a.receive > b.receive
+    end
+    if a.is_unlock ~= b.is_unlock then
+      return a.is_unlock > b.is_unlock
+    end
+    if a.all_done ~= b.all_done then
+      return b.all_done > a.all_done
+    end
+    if a.day ~= b.day then
+      return a.day > b.day
+    end
+    return false
+  end)
+  return temp_day_state_list[1] and temp_day_state_list[1].day or 1
+end
+
+function ui:_on_click_tog_page(index, isOn, notice_str)
+  if self.v_select_day == index then
+    return
+  end
+  if isOn and notice_str then
+    Util.show_message_tip(notice_str)
+    return
+  end
+  if isOn then
+    self.v_select_day = index
+    self.v_scroll_to_top = true
+    self.v_parent_panel:set_sub_param(self.v_select_day)
+    self:refresh_task_content(self.v_task_cfg[index])
+  end
+end
+
+function ui:remove_all_task_item()
+  self:give_back_auto_cache(TEMPLATE_KEY_TASK_TEM)
+  self:release_items_by_template_key(TEMPLATE_KEY_TASK_TEM)
+  for key, task_item in pairs(self.v_task_item_list) do
+    task_item:ui_hide()
+    task_item:ui_destroy()
+  end
+  UtilTable.clear_map(self.v_task_item_list)
+end
+
+function ui:set_is_play_get_award_anima(is_play)
+  self.v_is_play_get_award_anima = is_play
+end
+
+function ui:get_finished_task_list()
+  return self.v_finished_task_list
+end
+
+function ui:get_finished_task_award_list()
+  return self.v_finished_task_award_list
+end
+
+function ui:get_select_day()
+  return self.v_select_day
+end
+
+function ui:before_jump(select_day)
+  self.v_before_jump_select_day = select_day
+end
+
+function ui:clear_spine_rt()
+  if self.v_spine_rt then
+    self.v_spine_rt:on_destroy()
+    self.v_spine_rt = nil
+  end
+end
+
+function ui:animate_spine()
+  if self.v_anim_data.record_data.play_start then
+    if self.v_anim_data.record_data.play_interrupt then
+      SpineHelper.init_anim_info(self.v_spine_id, self.v_anim_data, SpineHelper.ANIM_TYPE.CLICK)
+    end
+  else
+    SpineHelper.init_anim_info(self.v_spine_id, self.v_anim_data, SpineHelper.ANIM_TYPE.CLICK)
+  end
+end
+
+function ui:play_anim()
+  for _, value in pairs(self.v_effect_timer_list) do
+    Timer:remove_timer(value)
+  end
+  self.v_task_main_pd:RePlayPD()
+  if not self.v_task_item_list or 0 == #self.v_task_item_list then
+    return
+  end
+  for i = 1, #self.v_task_item_list do
+    local pd = self.v_task_item_list[i].v_uicompents.Ani_TaskTem_Finsh_pd
+    pd:ResetPD()
+    pd:Evaluate()
+    self.v_effect_timer_list[i] = Timer:add_timer(nil, 0.09 * i, function()
+      pd:Play()
+    end)
+  end
+end
+
+return ui

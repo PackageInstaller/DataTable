@@ -1,0 +1,245 @@
+local Util = require("utils.util")
+local M = Util.create_class()
+
+function M:_init()
+  self.v_node_list = {}
+  self.v_convert_list = {}
+  self.v_dynamic_id_counter = -1
+  self:_regist_red_point()
+end
+
+function M:_build_redpoint_node()
+  return {
+    node_id = 0,
+    node_obj = nil,
+    node_ui_name = "",
+    node_show = false,
+    parent_node = nil,
+    children_nodes = {}
+  }
+end
+
+function M:_regist_red_point()
+  local list = ShareRes.create("red_point.red_point")
+  for k, v in pairs(list) do
+    if v.parent_id > 0 then
+      self:_inner_regist_redpoint(v.id, v.parent_id)
+    else
+      self:_inner_regist_redpoint(v.id)
+    end
+  end
+end
+
+function M:_inner_regist_redpoint(id, parent_id)
+  local node = self.v_node_list[id]
+  if not node then
+    node = self:_build_redpoint_node()
+    self.v_node_list[id] = node
+  else
+    if node.node_id ~= id then
+      Log.Error("注册的id=", id, "和缓存的id=", node.node_id, "不一致！", debug.traceback())
+      return
+    end
+    if parent_id and node.parent_node and parent_id ~= node.parent_node.node_id then
+      Log.Error("注册的id的父节点id和缓存的id不一致！", debug.traceback())
+      return
+    end
+  end
+  node.node_id = id
+  if parent_id then
+    local parent_node = self.v_node_list[parent_id]
+    if not parent_node then
+      if ShareRes.create("red_point.red_point", parent_id) then
+        self:_inner_regist_redpoint(parent_id)
+        self:_inner_regist_redpoint(id, parent_id)
+      else
+        Log.Error("找不到注册id=", node.node_id, "的父节点！", debug.traceback())
+      end
+      return
+    end
+    node.parent_node = parent_node
+    parent_node.children_nodes[id] = node
+  end
+  return node
+end
+
+function M:bind_redpoint(ui, obj, id, parent_id)
+  if self.v_convert_list[parent_id] and self.v_convert_list[parent_id][id] then
+    id = self.v_convert_list[parent_id][id]
+  end
+  local node = self:_inner_regist_redpoint(id, parent_id)
+  if not node then
+    return
+  end
+  if not obj or obj:IsNull() then
+    return
+  end
+  node.node_obj = obj.gameObject
+  obj.gameObject:SetActive(node.node_show)
+  node.node_ui_name = ui.v_parent_ui and ui.v_parent_ui:ui_get_name() or ui:ui_get_name()
+end
+
+function M:unbind_redpoint_by_ui(ui)
+  for _, node in pairs(self.v_node_list) do
+    if node.node_ui_name == ui:ui_get_name() then
+      node.node_obj = nil
+    end
+  end
+end
+
+function M:unbind_redpoint_by_id(ui, id, parent_id)
+  if parent_id and self.v_convert_list[parent_id] and self.v_convert_list[parent_id][id] then
+    id = self.v_convert_list[parent_id][id]
+  end
+  local node = self.v_node_list[id]
+  if not node then
+    return
+  end
+  local ui_name = ui.v_parent_ui and ui.v_parent_ui:ui_get_name() or ui:ui_get_name()
+  if node.node_ui_name ~= "" and node.node_ui_name ~= ui_name then
+    Log.Error("解绑id的界面和缓存界面不一致！", debug.traceback())
+    return
+  end
+  node.node_obj = nil
+end
+
+function M:enable_redpoint(id, show, force_no_log)
+  local node = self.v_node_list[id]
+  if not node then
+    if not force_no_log then
+      Log.Error("id=", id, "对应的红点节点不存在！", debug.traceback())
+    end
+    return
+  end
+  local child_count = UtilTable.hash_lenth(node.children_nodes)
+  if child_count > 0 then
+    Log.Error("不能对非叶子节点进行操作！", id, "child_count", child_count, debug.traceback())
+    return
+  end
+  self:_inner_enable_redpoint(id, show)
+end
+
+function M:_inner_enable_redpoint(id, show)
+  local node = self.v_node_list[id]
+  while node do
+    if not show then
+      for _, v in pairs(node.children_nodes) do
+        if v.node_show then
+          return
+        end
+      end
+    end
+    node.node_show = show
+    if node.node_obj then
+      if node.node_obj:IsNull() then
+        node.node_obj = nil
+      else
+        node.node_obj:SetActive(show)
+      end
+    end
+    node = node.parent_node
+  end
+end
+
+function M:set_root_node_enable(id, show)
+  local node = self.v_node_list[id]
+  if node.node_show == show then
+    return
+  end
+  if node.parent_node then
+    Log.Error("不能对非根节点进行操作！", debug.traceback())
+    return
+  end
+  self:_set_children_node_enable(node, show)
+  self:_inner_enable_redpoint(id, show)
+end
+
+function M:_set_children_node_enable(node, show)
+  for key, children_node in pairs(node.children_nodes) do
+    children_node.node_show = show
+    if children_node.node_obj then
+      if children_node.node_obj:IsNull() then
+        children_node.node_obj = nil
+      else
+        children_node.node_obj:SetActive(show)
+      end
+    end
+    self:_set_children_node_enable(children_node, show)
+  end
+end
+
+function M:enable_dynamic_redpoint(id, parent_id, show)
+  if not self.v_node_list[parent_id] then
+    Log.Error("不能对非叶子节点进行操作！parent_id=", parent_id, debug.traceback())
+    return
+  end
+  local new_id = self:create_dynamic_id(id, parent_id)
+  if not self.v_convert_list[parent_id] then
+    self.v_convert_list[parent_id] = {}
+  end
+  if not self.v_convert_list[parent_id][id] then
+    self.v_convert_list[parent_id][id] = new_id
+  end
+  local node = self.v_node_list[new_id]
+  if not node then
+    self:_inner_regist_redpoint(new_id, parent_id)
+  end
+  self:enable_redpoint(new_id, show)
+end
+
+function M:create_dynamic_id(id, parent_id)
+  if self.v_convert_list[parent_id] and self.v_convert_list[parent_id][id] then
+    return self.v_convert_list[parent_id][id]
+  end
+  self.v_dynamic_id_counter = self.v_dynamic_id_counter - 1
+  return self.v_dynamic_id_counter
+end
+
+function M:get_dynamic_id(id, parent_id)
+  if self.v_convert_list[parent_id] and self.v_convert_list[parent_id][id] then
+    return self.v_convert_list[parent_id][id]
+  end
+end
+
+function M:debug_tree(root_id)
+  local ret = {}
+  self:_inner_debug_tree(self.v_node_list[root_id], ret)
+  Log.Error("red point tree", ret)
+end
+
+function M:_inner_debug_tree(node, ret)
+  local new_node = self:_build_redpoint_node()
+  for _, v in pairs(node.children_nodes) do
+    self:_inner_debug_tree(v, new_node.children_nodes)
+  end
+  local find = false
+  if node.parent_node ~= nil and self.v_convert_list[node.parent_node.node_id] then
+    for s, t in pairs(self.v_convert_list[node.parent_node.node_id]) do
+      if node.node_id == t then
+        new_node.node_id = s
+        find = true
+        break
+      end
+    end
+  end
+  if not find then
+    new_node.node_id = node.node_id
+  end
+  new_node.node_ui_name = node.node_ui_name
+  new_node.node_show = node.node_show
+  ret[new_node.node_id] = new_node
+end
+
+function M:get_redpoint_enable_by_id(id)
+  local node = self.v_node_list[id]
+  if not node then
+    return false
+  end
+  return node.node_show
+end
+
+function M:get_redpoint_node_by_id(id)
+  return self.v_node_list[id]
+end
+
+return M

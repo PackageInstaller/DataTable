@@ -1,0 +1,50 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local UI_POINT_NAME = "attachpoint"
+
+function ui:ui_finish_load()
+  self.v_rect_tf = self:get_rect_transform()
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+  self.v_rect_tf = nil
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(char)
+  self.v_char = char
+end
+
+function ui:set_text(debug_text)
+  if self.v_debug_text ~= debug_text then
+    self.v_uicompents.DebugText_txt.text = debug_text
+  end
+  self.v_debug_text = debug_text
+  self:update_text_visible()
+end
+
+function ui:set_time_scale_text(time_scale_text)
+  if self.v_time_scale_text ~= time_scale_text then
+    self.v_uicompents.TimeScaleDebugText_txt.text = time_scale_text
+  end
+  self.v_time_scale_text = time_scale_text
+  self:update_text_visible()
+end
+
+function ui:update_text_visible()
+  self.v_uiobjects.DebugText:SetActive(not Util.is_empty(self.v_debug_text))
+  self.v_uiobjects.TimeScaleDebugText:SetActive(not Util.is_empty(self.v_time_scale_text))
+end
+
+function ui:ui_on_update()
+  if self.v_rect_tf then
+    Util.set_ui_follow_npc(self.v_rect_tf.component, self.v_char, 0, UI_POINT_NAME)
+  end
+end
+
+return ui

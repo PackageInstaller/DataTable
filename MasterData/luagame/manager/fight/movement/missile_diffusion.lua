@@ -1,0 +1,120 @@
+local Base = require("manager.fight.movement.missile_movement")
+local M = Util.create_child_mt(Base)
+local Vec3 = require("base.vec3")
+local _sin = math.sin
+local _cos = math.cos
+local _deg2rad = math.rad(1)
+local DIR_LINE = {
+  FORWARD = 1,
+  RIGHT = 2,
+  BACK = 3,
+  LEFT = 4
+}
+local FOLLOW_TYPE = {
+  OWNER = 1,
+  TRAGET = 2,
+  PARENT = 3
+}
+
+function M:_init(missile, lineparams)
+  Base._init(self, missile)
+  local param = lineparams or self.missile_cfg.lineparams
+  self:set_params(param)
+  self:_set_follow_go()
+end
+
+function M:set_params(params)
+  self.speed_x = params[1]
+  self.acc_x = params[2]
+  self.speed_z = params[3]
+  self.acc_z = params[4]
+  self.extend_time = tonumber(params[5])
+  self.extend_line = params[6]
+  self.v_dir_vec = Vec3.New(0, 0, 0)
+  self.v_follow_go = tonumber(params[7])
+end
+
+function M:update()
+  local missile = self.v_missile
+  local time = self.v_missile:get_time()
+  local dt = GlobalTimeMgr:get_dt_time()
+  if self.extend_time and self.extend_time < 0 then
+    return
+  end
+  if self.extend_line and next(self.extend_line) then
+    for _, dir_line in ipairs(self.extend_line) do
+      self:_update_line_move(dir_line)
+    end
+  else
+    if self.speed_x and self.acc_x then
+      local update_radius = missile:get_radius() + dt * (self.speed_x + self.acc_x * time) * self.v_time_scale * self.v_missile:get_owner_time_scale()
+      missile:set_radius(update_radius)
+    end
+    if self.speed_z and self.acc_z then
+      local update_size_z = missile:get_size_z() + dt * (self.speed_z + self.acc_z * time) * self.v_time_scale * self.v_missile:get_owner_time_scale()
+      missile:set_size_z(update_size_z)
+    end
+  end
+  if self.extend_time then
+    self.extend_time = self.extend_time - dt
+  end
+  missile:update_collider()
+  if self.v_ground_destroy_height and self.v_terrain_height then
+    self:check_ground_destroy()
+  end
+end
+
+function M:_update_line_move(dir_line)
+  local missile = self.v_missile
+  local dt = GlobalTimeMgr:get_dt_time()
+  local time = self.v_missile:get_time()
+  local pos = missile:get_pos_vec3()
+  local usedir
+  if dir_line == DIR_LINE.FORWARD or dir_line == DIR_LINE.BACK then
+    usedir = missile:get_dir_vec()
+    local update_size_z = missile:get_size_z() + dt * (self.speed_z + self.acc_z * time) / 2
+    missile:set_size_z(update_size_z)
+  else
+    local dir = (missile:get_dir() + 90) % 360
+    local x = _sin(_deg2rad * dir)
+    local z = _cos(_deg2rad * dir)
+    self.v_dir_vec.x = x
+    self.v_dir_vec.z = z
+    usedir = self.v_dir_vec
+    local update_radius = missile:get_radius() + dt * (self.speed_x + self.acc_x * time) / 2
+    missile:set_radius(update_radius)
+  end
+  if pos and usedir then
+    if dir_line == DIR_LINE.FORWARD then
+      pos = pos + usedir * dt * ((self.speed_z + self.acc_z * time) / 4)
+    elseif dir_line == DIR_LINE.BACK then
+      pos = pos - usedir * dt * ((self.speed_z + self.acc_z * time) / 4)
+    elseif dir_line == DIR_LINE.LEFT then
+      pos = pos - usedir * dt * ((self.speed_x + self.acc_x * time) / 4)
+    else
+      pos = pos + usedir * dt * ((self.speed_x + self.acc_x * time) / 4)
+    end
+    missile:set_pos(pos.x, pos.y, pos.z)
+  end
+end
+
+function M:_set_follow_go()
+  if not self.v_follow_go then
+    return
+  end
+  local missile = self.v_missile
+  local follow_go
+  if self.v_follow_go == FOLLOW_TYPE.OWNER and missile.v_owner then
+    follow_go = missile.v_owner
+  elseif self.v_follow_go == FOLLOW_TYPE.TRAGET and missile.v_target then
+    follow_go = missile.v_target
+  elseif self.v_follow_go == FOLLOW_TYPE.PARENT and missile.v_parent then
+    follow_go = missile.v_parent
+  end
+  if follow_go then
+    missile:set_pos(0, 0, 0)
+    missile.transform:SetParent(follow_go.transform)
+  end
+end
+
+return M

@@ -1,0 +1,29 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show(widget_id)
+  self.v_widget_id = widget_id
+  self.v_widget_cfg = ShareRes.get_pop_widget_cfg(widget_id)
+end
+
+function ui:ui_on_update()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:manual_close()
+  PopUpWindowMgr:pop_up()
+end
+
+function ui:pop_up_precondition()
+  return true
+end
+
+return ui

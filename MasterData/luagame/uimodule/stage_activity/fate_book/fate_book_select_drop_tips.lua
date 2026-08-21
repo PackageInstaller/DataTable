@@ -1,0 +1,199 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local FATE_BOOK_SELECT_DROP_TIPS_ITEM = require("uimodule.stage_activity.fate_book.fate_book_select_drop_tips_item")
+local PUZZLECONTENT_PUZZLETEM_TEMP_KEY = "PUZZLECONTENT_PUZZLETEM_TEMP_KEY"
+local curse_com_def = require("uimodule.stage_activity.challenge_ring_plus.curse_common_define")
+local DESTINY_DROP_STATE = curse_com_def.DESTINY_DROP_STATE
+
+function ui:on_click_item_btn(index)
+  ChallengeRingPlusMgr:set_destiny_drop_red(self.v_ring_id, index)
+  if self.v_select_index == index then
+    return
+  end
+  local state, unlock_time = ChallengeRingPlusMgr:get_destiny_drop_state(self.v_ring_id, index)
+  if state < DESTINY_DROP_STATE.CAN_SELECT then
+    if unlock_time then
+      Util.show_message_tip(Date.get_time_desc2(unlock_time - Date.server_time()) .. "后解锁")
+    end
+    return
+  end
+  self.v_select_index = index
+  self:refresh_select()
+end
+
+function ui:on_click_BtnBgClose()
+  self:ui_hide()
+end
+
+function ui:on_click_BtnClose()
+  self:ui_hide()
+end
+
+function ui:on_click_BtnChoose()
+  if not self.v_select_index then
+    return
+  end
+  local state = ChallengeRingPlusMgr:get_destiny_drop_state(self.v_ring_id, self.v_select_index)
+  if state < DESTINY_DROP_STATE.CAN_SELECT then
+    return
+  end
+  ChallengeRingPlusMgr:set_destiny_drop_index(self.v_ring_id, self.v_select_index, function()
+    if self:visible() then
+      self:ui_hide()
+    end
+  end)
+end
+
+function ui:ui_finish_load()
+  self:set_button("BtnBgClose", function()
+    self:on_click_BtnBgClose()
+  end)
+  self:set_button("BtnClose", function()
+    self:on_click_BtnClose()
+  end)
+  self:set_button("BtnChoose", function()
+    self:on_click_BtnChoose()
+  end)
+  self.v_drop_item_list = {}
+  self:register_exist_auto_template(PUZZLECONTENT_PUZZLETEM_TEMP_KEY, self.v_uiobjects.PuzzleTem, self.v_uiobjects.PuzzleContent)
+end
+
+function ui:ui_on_show(ring_id)
+  self:bind_auto_mq(Const.MSG_ON_RING_DATA_UPDATE, self.refresh_select, self)
+  self:refresh_view(ring_id)
+end
+
+function ui:ui_on_hide()
+  self:clear_update_timer()
+  for index in pairs(self.v_drop_item_list) do
+    ChallengeRingPlusMgr:set_destiny_drop_red(self.v_ring_id, index)
+  end
+  self.v_select_index = nil
+  self:clear_drop_item()
+  ChallengeRingPlusMgr:save_destiny_drop_red()
+  UIMgr:try_call_ui_func("fate_book_point_detail", "refresh_destiny_drop")
+  UIMgr:try_call_ui_func("fate_book_level_tips", "refresh_destiny_drop")
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_view(ring_id)
+  self.v_ring_id = ring_id
+  self.v_ring_cfg = ShareRes.get_curse_ring_config(ring_id)
+  self:refresh_drop_data()
+end
+
+function ui:refresh_drop_data()
+  self:clear_update_timer()
+  self:clear_drop_item()
+  if self.v_ring_cfg.DestinyLevelDropType ~= Config.CommonDefine.CURSE_DROP_TYPE.SELECT_DROP then
+    return
+  end
+  self.v_destiny_group_cfg = ShareRes.get_curse_destiny_level_select_drop(self.v_ring_cfg.DestinyLevelDrop)
+  self.v_first_unlock_index = nil
+  local has_puzzle = false
+  local less_timer
+  local cur_time = Date.server_time()
+  local temp = UtilTable.map2list(self.v_destiny_group_cfg, function(a, b)
+    if a.Index ~= b.Index then
+      return a.Index < b.Index
+    end
+    return false
+  end)
+  for _, drop_cfg in ipairs(temp) do
+    local drop_index = drop_cfg.Index
+    local state, state_time = ChallengeRingPlusMgr:get_destiny_drop_state(self.v_ring_id, drop_index)
+    if state >= DESTINY_DROP_STATE.CAN_SHOW then
+      local result = {}
+      has_puzzle = true
+      ShareRes.get_item_obj_use_award_list(drop_cfg.ShowAwardId, result)
+      local first_result = result[1]
+      if first_result then
+        self.v_first_unlock_index = self.v_first_unlock_index or drop_index
+        local obj = self:get_auto_cache(PUZZLECONTENT_PUZZLETEM_TEMP_KEY)
+        local item = FATE_BOOK_SELECT_DROP_TIPS_ITEM:ui_wrap_ex(self, obj, true)
+        item:set_data(self.v_ring_id, drop_index, first_result.id, state, state_time)
+        self.v_drop_item_list[drop_index] = item
+      end
+    end
+    if state_time and cur_time < state_time then
+      local remain_time = state_time - cur_time
+      less_timer = less_timer and math.min(less_timer, remain_time) or remain_time
+    end
+  end
+  if less_timer then
+    self.v_update_timer = Timer:add_timer(nil, less_timer, function()
+      self:on_update_time_out()
+    end)
+  end
+  if not has_puzzle then
+    Log.Error("不存在插件掉落，请检查配置", debug.traceback())
+  end
+  self.v_uiobjects.PuzzleInfo:SetActive(has_puzzle)
+  self:refresh_select()
+end
+
+function ui:on_update_time_out()
+  if self.v_select_index then
+    local state = ChallengeRingPlusMgr:get_destiny_drop_state(self.v_ring_id, self.v_select_index)
+    if state <= DESTINY_DROP_STATE.END then
+      self.v_select_index = nil
+    end
+  end
+  self:refresh_drop_data()
+end
+
+function ui:refresh_select()
+  local real_select_index = ChallengeRingPlusMgr:get_destiny_drop_index(self.v_ring_id)
+  self.v_select_index = self.v_select_index or real_select_index
+  if not self.v_select_index then
+    self.v_select_index = self.v_first_unlock_index
+  end
+  for index, item in pairs(self.v_drop_item_list) do
+    if self.v_first_unlock_index == index then
+      ChallengeRingPlusMgr:set_destiny_drop_red(self.v_ring_id, index)
+    end
+    item:set_select(index == self.v_select_index, index == real_select_index)
+  end
+  self:refresh_select_item_info()
+end
+
+function ui:refresh_select_item_info()
+  local select_item = self.v_drop_item_list[self.v_select_index]
+  if select_item then
+    local item_id = select_item:get_item_id()
+    local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(item_id)
+    local graph_show_cfg = ShareRes.get_buddy_puzzle_graph_show_cfg(puzzle_cfg.GraphID)
+    ResMgr:load_set_icon(self.v_uicompents.PuzzleSize_img, graph_show_cfg.SmallIcon, nil, true)
+    self.v_uicompents.PuzzleName_txt.text = puzzle_cfg.Name
+    if puzzle_cfg.EntryId then
+      local entry_cfg = ShareRes.get_buddy_puzzle_entry_cfg(puzzle_cfg.EntryId, puzzle_cfg.Quality)
+      if entry_cfg then
+        self.v_uicompents.EffectDesc_txt.text = entry_cfg.Desc
+        self.v_uicompents.EffectName_txt.text = entry_cfg.Name
+      end
+    end
+  end
+  local is_real_select = ChallengeRingPlusMgr:get_destiny_drop_index(self.v_ring_id) == self.v_select_index
+  self.v_uiobjects.BtnChoose:SetActive(not is_real_select)
+  self.v_uiobjects.Choosed:SetActive(is_real_select)
+end
+
+function ui:clear_drop_item()
+  self:give_back_auto_cache(PUZZLECONTENT_PUZZLETEM_TEMP_KEY)
+  for index, item in pairs(self.v_drop_item_list) do
+    item:ui_hide()
+    item:ui_destroy()
+    self.v_drop_item_list[index] = nil
+  end
+end
+
+function ui:clear_update_timer()
+  if self.v_update_timer then
+    Timer:remove_timer(self.v_update_timer)
+    self.v_update_timer = nil
+  end
+end
+
+return ui

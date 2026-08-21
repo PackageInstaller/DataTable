@@ -1,0 +1,169 @@
+local M = {}
+local CommonDef = require("cs_share.common_define")
+M.TAKS_AWARD_TYPE = {
+  DROP_ORNAMENT = 1,
+  GET_MAGIC = 2,
+  DECREASE_CURSE = 3,
+  ABILITY_DROP = 4,
+  CURRENCY_DROP = 5,
+  DROP_RAMDOM_ORNAMENT = 6
+}
+M.PRORITY_ICON_PREFIX = "UICommon/Event_spk_0"
+M.QUALITY_TO_IDX = {
+  [1] = 4,
+  [2] = 3,
+  [3] = 3,
+  [4] = 2,
+  [5] = 1
+}
+local AWARD_TYPE = {ORNAMENT = 0, ABILITY = 1}
+M.AWARD_TYPE = AWARD_TYPE
+M.CURSE_GET_AWARD_TIP_STR = {
+  GET_ABILITY = "获得片语",
+  ABILITY_UPGRADE = "片语升级",
+  GET_ORNAMENT = "获得奇珍",
+  REMOVE_ORNAMENT_LIST = "失去奇珍",
+  RESTORE_ORNAMENT_LIST = "修复奇珍"
+}
+M.CURSE_GET_AWARD_TIP_TYPE = {
+  GET_ABILITY = 1,
+  ABILITY_UPGRADE = 3,
+  GET_ABILITY_LIST = 5,
+  GET_ORNAMENT = 2,
+  GET_ORNAMENT_LIST = 4,
+  REMOVE_ORNAMENT_LIST = 8,
+  RESTORE_ORNAMENT_LIST = 10
+}
+M.CURSE_GET_AWARD_TIP = {
+  [M.CURSE_GET_AWARD_TIP_TYPE.GET_ABILITY] = M.CURSE_GET_AWARD_TIP_STR.GET_ABILITY,
+  [M.CURSE_GET_AWARD_TIP_TYPE.ABILITY_UPGRADE] = M.CURSE_GET_AWARD_TIP_STR.ABILITY_UPGRADE,
+  [M.CURSE_GET_AWARD_TIP_TYPE.GET_ORNAMENT] = M.CURSE_GET_AWARD_TIP_STR.GET_ORNAMENT,
+  [M.CURSE_GET_AWARD_TIP_TYPE.GET_ABILITY_LIST] = M.CURSE_GET_AWARD_TIP_STR.GET_ABILITY,
+  [M.CURSE_GET_AWARD_TIP_TYPE.GET_ORNAMENT_LIST] = M.CURSE_GET_AWARD_TIP_STR.GET_ORNAMENT,
+  [M.CURSE_GET_AWARD_TIP_TYPE.REMOVE_ORNAMENT_LIST] = M.CURSE_GET_AWARD_TIP_STR.REMOVE_ORNAMENT_LIST,
+  [M.CURSE_GET_AWARD_TIP_TYPE.RESTORE_ORNAMENT_LIST] = M.CURSE_GET_AWARD_TIP_STR.RESTORE_ORNAMENT_LIST
+}
+M.SOURCE_TO_AWARD_TIP = {
+  [CommonDef.ORNAMENTS_OR_ABILITY_SYNC_REASON.ADD] = M.CURSE_GET_AWARD_TIP_TYPE.GET_ABILITY,
+  [CommonDef.ORNAMENTS_OR_ABILITY_SYNC_REASON.UP_GRADE] = M.CURSE_GET_AWARD_TIP_TYPE.ABILITY_UPGRADE
+}
+M.CURSE_CHOOSE_ITEM_TYPE = {
+  ABILITY = 1,
+  BUFF_ABILITY = 3,
+  UPDAGRADE_ABILITY = 5,
+  TASK_ABILITY_AWARD = 7,
+  OPTION_ABILITY = 9,
+  REBUILD_ABILITY = 11,
+  COST_UPDAGRADE_ABILITY = 13,
+  ORNAMENT = 2,
+  BUFF_ORNAMENT = 4,
+  OPTION_ORNAMENT = 8,
+  MINI_GAME_ORNAMENT = 10,
+  TASK_ORNAMENT_AWARD = 12
+}
+
+function M.is_ability_type(type)
+  local result = type % 2
+  return result == AWARD_TYPE.ABILITY
+end
+
+function M.is_ornament_type(type)
+  local result = type % 2
+  return result == AWARD_TYPE.ORNAMENT
+end
+
+M.HARD_DIFFICULTY_NUM = 2
+M.DROP_ITEM_EFFECT_NAME = {
+  EQUIP_CUBE = "EquipCubeNew",
+  SMALL_ENERGY_BALL = "Fx_Common_ultimateorb",
+  BIG_ENERGY_BALL = "Fx_Common_ultimateorb_big",
+  FX_DROP_JINBI = "Fx_drop_jinbi",
+  FX_DROP_04 = "Fx_drop_04",
+  FX_TREASURE_ITEM1 = "Fx_treasure_item1",
+  FX_TREASURE_ITEM2 = "Fx_treasure_item2",
+  FX_TREASURE_ITEM3 = "Fx_treasure_item3",
+  FX_TREASURE_ITEM4 = "Fx_treasure_item4"
+}
+M.WORLD_EFFECT_NAME = {
+  FX_BAOSHI = "Fx_Baoshi",
+  FX_TREASURE_DROP = "Fx_treasure_drop"
+}
+M.EQUATION_OPERATION_TYPE = {
+  SHOW_GET_EQUATION = 1,
+  CHOOSE_DROP_EQUATION = 2,
+  SHOW_BRANCH_LEVEL_UP = 3,
+  CHOOSE_BRANCH_ACTIVE = 4,
+  ILLUSTATED = 5,
+  PAUSE_VIEW = 6,
+  QUICK_VIEW = 7,
+  SHOW_TIPS = 8,
+  FILE_VIEW = 9
+}
+M.BATTLE_EVENT_NAME = {
+  [Const.MSG_ON_DROP_SHOW_ITEM_END] = "response_drop_show_item_end",
+  [Const.MSG_ON_ALL_HERO_REBORN_END] = "hero_reborn",
+  [Const.MSG_SCENE_LOAD_FINISH] = "on_scene_load_finish",
+  [Const.MSG_HERO_ATTR_CHANGE] = "on_hero_attr_change",
+  [Const.MSG_ON_SKIP_CARD_FAIL_BUFF_EFFECT] = "on_skip_card_fail_buff_effect",
+  [Const.MSG_PRE_TP_ROOM] = "on_pre_tp_room",
+  [Const.MSG_TP_ROOM_FINISH] = "on_tp_room_finish",
+  [Const.MSG_ON_CHANGE_TRACK_BATTLE_TASK_ID] = "on_change_track_battle_task_id",
+  [Const.MSG_ON_UIQUEUE_EMPTY] = "on_uiqueue_empty",
+  [Const.MSG_ON_SHOW_UI] = "on_show_ui",
+  [Const.MSG_ON_HIDE_UI] = "on_hide_ui"
+}
+M.SHOW_MAIN_UI_NAME = {
+  challenge_ring_plus = true,
+  curse_ring_card = true,
+  curse_ability_upgrade = true,
+  curse_task_room = true,
+  curse_recuperation_room = true,
+  fate_book_event_card = true,
+  fate_book_shop_card = true
+}
+M.NOT_PUASE_SHOW_MAIN_UI_NAME = {
+  fate_book_initial_option = true,
+  choose_equation_view = true,
+  choose_ability_view = true,
+  curse_get_award_tips = true,
+  equation_show_tips = true,
+  equation_condition_tips = true
+}
+M.QUICK_FILTER_UI_MAP = {
+  ui_click_effect = true,
+  ui_debug_info = true,
+  common_battle_tips = true,
+  fate_book_quick_view = true,
+  curse_ring_hero_tip = true,
+  uimessagetip = true
+}
+M.ADD_CURSE_TYPE = {
+  SELECT_CARD = "select_card",
+  KILL_ENEMY = "kill_enemy",
+  KILL_BOSS = "kill_boss",
+  FIGHT_END = "fight_end",
+  SELL_ORN = "sell_orn",
+  SHOP_BUY = "shop_buy"
+}
+M.FILE_VIEW_STATE = {
+  NORMAL = 1,
+  QUICK_CHALLENGE = 2,
+  SETTLE = 3
+}
+M.PREVIEW_PANEL_NAME = {
+  orn_view = "orn_view",
+  ability_view = "ability_view",
+  equation_view = "equation_view"
+}
+M.FILE_TIME_LIMIT_TYPE = {
+  NONE = 1,
+  LIMIT = 2,
+  END_OF_VERSION = 3
+}
+M.DESTINY_DROP_STATE = {
+  LOCK = 0,
+  END = 1,
+  CAN_SHOW = 2,
+  CAN_SELECT = 3
+}
+return M

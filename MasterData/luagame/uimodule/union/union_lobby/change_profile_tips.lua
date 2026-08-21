@@ -1,0 +1,82 @@
+local Base = require("ui.uiobject")
+local UnionHelper = require("uimodule.union.union_helper")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_apply_btn = {
+    "ApplyBtn",
+    BIND_TYPE.BUTTON
+  },
+  v_avatar_content = {
+    "Avatar_Content",
+    BIND_TYPE.OBJECT
+  },
+  v_avatar_template = {
+    "Avatar_template",
+    BIND_TYPE.OBJECT
+  },
+  v_not_get = {
+    "NotGet",
+    BIND_TYPE.IMAGE
+  },
+  v_now_profile = {
+    "NowProfile",
+    BIND_TYPE.IMAGE
+  },
+  v_profile_name = {
+    "ProfileName",
+    BIND_TYPE.TEXT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("ApplyBtn", function()
+    self:_onclick_sure_btn()
+  end)
+  self:set_button("BgReturn", function()
+    self:ui_hide()
+  end)
+  self.template_key = "UNITON_ICON" .. self.v_object.gameObject.name
+  self:register_exist_auto_template(self.template_key, self.v_avatar_template, self.v_avatar_content)
+end
+
+function ui:ui_on_show(callback, cbdata, ...)
+  self.v_callback = callback
+  self.v_cbdata = cbdata
+  self.v_union_info = UnionMgr:get_union_info()
+  self.v_icon_cfg = ShareRes.create("guild.guild_icon")
+  ResMgr:load_set_icon(self.v_now_profile, UnionHelper.get_union_icon_path(self.v_union_info.icon))
+  self.v_profile_name.text = self.v_icon_cfg[self.v_union_info.icon].icon_name
+  self:_set_avatar_list()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:_set_avatar_list()
+  self:give_back_auto_cache(self.template_key, false)
+  for i, v in ipairs(self.v_icon_cfg) do
+    local item = self:get_auto_cache(self.template_key)
+    local icon = self:get_image("Profile_bg/Icon", item)
+    ResMgr:load_set_icon(icon, v.name)
+    local used = self:get_child_gameobj("Used", item)
+    used:SetActive(self.v_union_info.icon == v.Id)
+    local tog = self:get_toggle(nil, item)
+    tog.isOn = self.v_union_info.icon == v.Id
+    self:set_toggle_listener(tog, function(isOn)
+      if isOn then
+        ResMgr:load_set_icon(self.v_now_profile, v.name)
+        self.v_profile_name.text = v.icon_name
+        self.new_icon = v.Id
+      end
+    end)
+  end
+end
+
+function ui:_onclick_sure_btn()
+  self.v_callback(self.v_cbdata, self.new_icon)
+  self:ui_hide()
+end
+
+return ui

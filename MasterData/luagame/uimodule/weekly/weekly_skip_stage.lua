@@ -1,0 +1,33 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_finish_load()
+  self:set_button("FullClose", function()
+    self:ui_hide()
+  end)
+end
+
+function ui:ui_on_show(stage_data)
+  local group_cfg = ShareRes.get_weekly_pvp_epi_pool_cfg(stage_data.epi_group_id)
+  self.v_uicompents.ExplorationArea_txt.text = group_cfg.StageName
+  local max_star = 0
+  local show_epi_id = 0
+  local max_index = 0
+  local history_max_star = stage_data.history_max_star
+  for _, data in ipairs(stage_data.epi_data) do
+    if data.is_open and max_index < data.epi_index then
+      max_index = data.epi_index
+      show_epi_id = data.epi_id
+    end
+    max_star = max_star + ChapterMgr:get_epi_max_star(data.epi_id)
+  end
+  self.v_uicompents.StarNow_txt.text = history_max_star
+  self.v_uicompents.StarMax_txt.text = max_star
+  local epi_cfg = ShareRes.get_chapter_point_cfg(show_epi_id)
+  self.v_uicompents.StageName_txt.text = epi_cfg.PointName
+end
+
+function ui:ui_on_hide()
+end
+
+return ui

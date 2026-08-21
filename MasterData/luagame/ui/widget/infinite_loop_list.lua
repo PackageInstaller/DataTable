@@ -1,0 +1,237 @@
+local Base = require("ui.widget.widget_base")
+local M = Util.create_child_mt(Base)
+local LayoutComponents = {
+  [1] = typeof(UnityEngine.UI.GridLayoutGroup),
+  [2] = typeof(UnityEngine.UI.HorizontalLayoutGroup),
+  [3] = typeof(UnityEngine.UI.VerticalLayoutGroup)
+}
+
+function M:_init(parent_ui, scroll_gameobj, template_class, scroll_change_event)
+  self.v_parent_ui = parent_ui
+  self.v_scroll_gameobj = scroll_gameobj
+  self.v_scrollviewex = scroll_gameobj:GetComponent(typeof(CS.Game.ScrollViewEx))
+  assert(self.v_scrollviewex, "should have ScrollViewEx component !!")
+  self.v_scrollret = scroll_gameobj:GetComponent(typeof(UnityEngine.UI.ScrollRect))
+  for _, v in ipairs(LayoutComponents) do
+    local com = self.v_scrollret.content:GetComponent(v)
+    if com and com.enabled then
+      Log.Error("使用ScrollViewEx，需要关闭布局组件！")
+      return
+    end
+  end
+  local fitter = self.v_scrollret.content:GetComponent(typeof(UnityEngine.UI.ContentSizeFitter))
+  if fitter and fitter.enabled then
+    Log.Error("使用ScrollViewEx，需要关闭自适应组件！")
+    return
+  end
+  
+  function self.v_scrollviewex.LoopItemRefreshData(obj, index, src_idx)
+    self:_update_scrollview_cell(obj, index, src_idx)
+  end
+  
+  self.v_scrollviewex.ScrollChangeEvent = scroll_change_event
+  self.ItemClass = template_class
+  self.v_data = nil
+  self.v_items = {}
+  self.v_need_item_parent_ui = nil
+end
+
+function M:refresh_data(list)
+  if not self.v_has_setColNum then
+    if self.v_scrollviewex.openUIAdaptationX then
+      self:set_col_num()
+    else
+      self.v_has_setColNum = true
+    end
+  end
+  if not self.v_has_setRowNum then
+    if self.v_scrollviewex.openUIAdaptationY then
+      self:set_row_num()
+    else
+      self.v_has_setRowNum = true
+    end
+  end
+  self:_clear_uis()
+  self.v_data = list
+  self.v_scrollviewex.dataCount = #list
+end
+
+function M:reload_data()
+  self.v_scrollviewex:ReloadData()
+end
+
+function M:_update_scrollview_cell(item, index, src_idx)
+  index = index + 1
+  src_idx = src_idx + 1
+  local item_ui
+  if index == src_idx then
+    if self.v_items[index] == nil then
+      if self.v_need_item_parent_ui then
+        item_ui = self.ItemClass:ui_wrap_ex(self.v_parent_ui, item)
+      else
+        item_ui = self.ItemClass:ui_wrap_ex(nil, item)
+      end
+      self.v_items[index] = item_ui
+    else
+      item_ui = self.v_items[index]
+    end
+  else
+    item_ui = self.v_items[src_idx]
+    if nil == item_ui then
+      Log.Error("没有找到序号scr_idx=", src_idx, "的ui对象！")
+    end
+    self.v_items[index] = item_ui
+    self.v_items[src_idx] = nil
+  end
+  if item_ui.set_linked_parent then
+    item_ui:set_linked_parent(self.v_parent_ui)
+  end
+  item_ui:set_enable_ex(false)
+  if index > #self.v_data then
+    if item_ui.v_object and not item_ui.v_object:IsNull() then
+      item_ui.v_object:SetActiveEx(false)
+    end
+    return
+  end
+  item_ui:set_enable_ex(true)
+  item_ui:set_data(item, self.v_data, index)
+end
+
+function M:get_item_ui(index)
+  return self.v_items[index] or nil
+end
+
+function M:get_all_uis()
+  return self.v_items
+end
+
+function M:scroll_to_old_pos()
+  self.v_scrollviewex:ScrollToOldPos()
+end
+
+function M:scroll_to_item(index)
+  self.v_scrollviewex:ScrollToItem(index)
+end
+
+function M:set_custom_move(custom_move)
+  self.v_scrollviewex:SetCustomMove(custom_move)
+end
+
+function M:scroll_item_to_mid(index)
+end
+
+function M:get_is_in_view(index)
+  local stat_idx = self.v_scrollviewex:GetVisualStartIdx()
+  local end_idx = self.v_scrollviewex:GetVisualEndIdx()
+  return index >= stat_idx and index <= end_idx
+end
+
+function M:_clear_uis()
+  if self.v_items ~= nil and nil ~= next(self.v_items) then
+    for k, v in pairs(self.v_items) do
+      v:ui_hide(true)
+      v:ui_destroy()
+    end
+  end
+  self.v_items = {}
+end
+
+function M:ui_on_hide()
+  self:_clear_uis()
+end
+
+function M:ui_on_destroy()
+  self:_clear_uis()
+  self.v_items = nil
+  self.v_need_item_parent_ui = nil
+  if self.v_scrollviewex then
+    self.v_scrollviewex:ClearCells()
+    self.v_scrollviewex.LoopItemRefreshData = nil
+    self.v_scrollviewex.OnEndDragAction = nil
+    self.v_scrollviewex.OnBeginDragAction = nil
+  end
+end
+
+function M:stop_scroll()
+  if self.v_scrollviewex then
+    self.v_scrollviewex:EnabledScroll(true, false)
+    self.v_scrollviewex:EnabledScroll(true, true)
+  end
+end
+
+function M:select_item(idx)
+  if not self.v_items[idx] then
+    return
+  end
+  self.v_items[idx]:on_click_tog(true)
+end
+
+function M:check_vertical_scoll_bottom()
+  if not self.v_scrollret then
+    return
+  end
+  return self.v_scrollret.verticalNormalizedPosition <= 0
+end
+
+function M:set_col_num()
+  local right_padding = self.v_scrollviewex.restPadding
+  local content_width = self.v_scrollret.content.rect.width
+  local cell_width = self.v_scrollviewex.m_CellTemplateTrans.rect.width
+  local spacingX = self.v_scrollviewex.spacing.x
+  local colNum = math.floor((content_width + spacingX) / (cell_width + spacingX))
+  if colNum <= 1 then
+    return
+  end
+  self.v_has_setColNum = true
+  self.v_scrollviewex.colNum = colNum
+  local rest_width = (content_width + spacingX) % (cell_width + spacingX) - right_padding
+  local new_spacing = UnityVector2(spacingX + rest_width / (self.v_scrollviewex.colNum - 1), self.v_scrollviewex.spacing.y)
+  local cellSize = self.v_scrollviewex.m_CellTemplateTrans.rect.size
+  self.v_scrollviewex.spacing = new_spacing
+  self.v_scrollviewex.SizeCell = UnityVector2(cellSize.x + new_spacing.x, cellSize.y + new_spacing.y)
+end
+
+function M:set_row_num()
+  local right_padding = self.v_scrollviewex.restPadding
+  local content_height = self.v_scrollret.content.rect.height
+  local cell_height = self.v_scrollviewex.m_CellTemplateTrans.rect.height
+  local spacingY = self.v_scrollviewex.spacing.y
+  local rowNum = math.floor((content_height + spacingY) / (cell_height + spacingY))
+  if rowNum <= 1 then
+    return
+  end
+  self.v_has_setRowNum = true
+  self.v_scrollviewex.rowNum = rowNum
+  local rest_hight = (content_height + spacingY) % (content_height + spacingY) - right_padding
+  local new_spacing = UnityVector2(self.v_scrollviewex.spacing.x, spacingY + rest_hight / (self.v_scrollviewex.rowNum - 1))
+  local cellSize = self.v_scrollviewex.m_CellTemplateTrans.rect.size
+  self.v_scrollviewex.spacing = new_spacing
+  self.v_scrollviewex.SizeCell = UnityVector2(cellSize.x + new_spacing.x, cellSize.y + new_spacing.y)
+end
+
+function M:set_need_item_parent_ui(need)
+  self.v_need_item_parent_ui = need
+end
+
+function M:get_scrollview_colnum()
+  return self.v_scrollviewex.colNum
+end
+
+function M:register_OnEndDrag(fun)
+  self.v_scrollviewex.OnEndDragAction = fun
+end
+
+function M:register_OnBeginDrag(fun)
+  self.v_scrollviewex.OnBeginDragAction = fun
+end
+
+function M:get_velocity()
+  local velocity_x, velocity_y = self.v_scrollviewex:GetVelocity()
+  return velocity_x, velocity_y
+end
+
+function M:stop_movement()
+  self.v_scrollret:StopMovement()
+end
+
+return M

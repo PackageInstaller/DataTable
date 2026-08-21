@@ -1,0 +1,39 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+
+function M:set_data(src_data)
+  self.v_uicompents.Num_txt.text = string.format("%.2d", src_data.num, 1)
+  self.v_src_data = src_data
+  self:set_text_unselect()
+end
+
+function M:on_clear()
+  self:unbind_all_auto_mq()
+  self.v_src_data = nil
+end
+
+function M:set_selected()
+  local msg = MsgGame:mq_publish2(Const.MSG_ON_SELECTED_PLAYER_BORN_ITEM)
+  msg.mm_obj = self.v_src_data
+  self:set_text_select()
+end
+
+function M:set_text_select()
+  local txt = self.v_uicompents.Num_txt
+  txt.fontSize = 42
+  Util.set_color(txt, "FFFFFF", 0.9)
+  local color = txt.color
+  color.a = 1
+  txt.color = color
+end
+
+function M:set_text_unselect()
+  local txt = self.v_uicompents.Num_txt
+  txt.fontSize = 32
+  Util.set_color(txt, "484243")
+  local color = txt.color
+  color.a = 0.9
+  txt.color = color
+end
+
+return M

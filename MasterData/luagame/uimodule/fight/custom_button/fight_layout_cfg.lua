@@ -1,0 +1,137 @@
+local cfg = {}
+cfg.dir_btn_state = {
+  CLICK = 1,
+  LONGPRESS = 2,
+  TOUCH_UP = 3
+}
+cfg.layout_init_info = {
+  {
+    file_name = "layout1",
+    name = "默认方案",
+    idx = 1
+  },
+  {
+    file_name = "layout2",
+    name = "放大布局",
+    idx = 2
+  }
+}
+cfg.regulation_dir = {
+  Left = 1,
+  Up = 2,
+  Right = 3,
+  Down = 4
+}
+cfg.choose_sld_type = {
+  btn_scale = "btn_scale",
+  border_offset = "border_offset",
+  position_data = "position_data"
+}
+cfg.layout_custom = {custom = 1, origin = 2}
+cfg.layout_is_use = {not_using = 1, using = 2}
+cfg.layout_is_flip = {not_flip = 0, is_flip = 1}
+cfg.min_sld_num = 0
+cfg.max_sld_num = 150
+cfg.btn_scale_sld_min = 50
+cfg.border_sld_min_num = 0
+cfg.border_sld_max_num = 120
+cfg.ui_border_offset_min = 0
+cfg.ui_border_offset_max = 320
+cfg.standard_scale_path = "./ConfigData/Json/Layout/standard_scale.json"
+cfg.ui_layout_path = "./ConfigData/Json/Layout/%s.json"
+local layout_group_name = {
+  NORMAL_BUTTON = 1,
+  LOCK_BUTTON = 2,
+  CANCLE_AREA = 3,
+  TEAM_HEADS = 4,
+  PANEL_JOYSTICK = 5,
+  INTERACT_BUTTON = 6,
+  HERO_BAR = 7
+}
+cfg.layout_group_name = layout_group_name
+cfg.layout_group = {
+  [layout_group_name.NORMAL_BUTTON] = {
+    "Btn_skill1",
+    "Btn_skill2",
+    "Btn_skill3",
+    "Btn_skill4",
+    "Btn_skill5",
+    "Btn_skill7",
+    "Btn_skill8",
+    "Btn_Interact"
+  },
+  [layout_group_name.CANCLE_AREA] = {
+    "CancleSkill"
+  },
+  [layout_group_name.TEAM_HEADS] = {"ChangHero1", "ChangHero2"},
+  [layout_group_name.PANEL_JOYSTICK] = {
+    "PanelJoystick"
+  }
+}
+cfg.layout_group_map = {}
+for group_name, tb in pairs(cfg.layout_group) do
+  for _, obj_name in pairs(tb) do
+    cfg.layout_group_map[obj_name] = group_name
+  end
+end
+cfg.overlay_group = {"LeftBlock", "TopBlock"}
+cfg.right_border_offset_group = {
+  layout_group_name.NORMAL_BUTTON,
+  layout_group_name.CANCLE_AREA,
+  layout_group_name.TEAM_HEADS,
+  layout_group_name.PANEL_JOYSTICK
+}
+cfg.container_obj_name = {TeamHeads = "TeamHeads"}
+cfg.layout_container_root = {
+  [layout_group_name.TEAM_HEADS] = cfg.container_obj_name.TeamHeads
+}
+cfg.layout_child_obj_name = {
+  [cfg.container_obj_name.TeamHeads] = "hero_head_view"
+}
+cfg.layout_data_key = {
+  x = "x",
+  y = "y",
+  scale_x = "scale_x",
+  scale_y = "scale_y",
+  scale_z = "scale_z",
+  anchor_max_x = "anchor_max_x",
+  anchor_min_x = "anchor_min_x",
+  anchor_min_y = "anchor_min_y",
+  anchor_max_y = "anchor_max_y",
+  pivot_x = "pivot_x",
+  pivot_y = "pivot_y"
+}
+cfg.custom_layout_max_num = 5
+cfg.child_name = {
+  control_content = "control_content",
+  detail_content = "detail_content"
+}
+cfg.MOVE_AREA = {
+  TeamHeadArea = "TeamHeadArea",
+  ButtonArea = "ButtonArea",
+  JoystickArea = "JoystickArea"
+}
+cfg.GOURP_TO_AREA_NAME = {
+  [layout_group_name.TEAM_HEADS] = cfg.MOVE_AREA.TeamHeadArea,
+  [layout_group_name.CANCLE_AREA] = cfg.MOVE_AREA.TeamHeadArea,
+  [layout_group_name.PANEL_JOYSTICK] = cfg.MOVE_AREA.JoystickArea
+}
+cfg.CAN_FLIP_GROUP_TO_AREA_NAME = {
+  [cfg.layout_is_flip.not_flip] = {
+    [layout_group_name.NORMAL_BUTTON] = cfg.MOVE_AREA.ButtonArea,
+    [layout_group_name.PANEL_JOYSTICK] = cfg.MOVE_AREA.JoystickArea
+  },
+  [cfg.layout_is_flip.is_flip] = {
+    [layout_group_name.NORMAL_BUTTON] = cfg.MOVE_AREA.JoystickArea,
+    [layout_group_name.PANEL_JOYSTICK] = cfg.MOVE_AREA.ButtonArea
+  }
+}
+cfg.FLIP_GROUP = {
+  layout_group_name.NORMAL_BUTTON,
+  layout_group_name.PANEL_JOYSTICK
+}
+cfg.AREA_FLIP_EXCHANGE = {
+  [cfg.MOVE_AREA.JoystickArea] = cfg.MOVE_AREA.ButtonArea,
+  [cfg.MOVE_AREA.ButtonArea] = cfg.MOVE_AREA.JoystickArea
+}
+return cfg

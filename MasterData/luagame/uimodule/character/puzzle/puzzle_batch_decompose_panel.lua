@@ -1,0 +1,253 @@
+local Base = require("ui.uibase")
+local LoopListClass = require("ui.widget.infinite_loop_list")
+local ITEM_OBJ_COM = require("uimodule.item.item_obj_com")
+local PuzzleDecomposeItemClass = require("uimodule.character.puzzle.puzzle_decompose_item")
+local TEMPLATE_KEY_AWARD = "CHAR_PUZZLE_TEMPLATE_KEY_BATCH_DEC_AWARD"
+local TEMPLATE_KEY_ATTR = "PUZZLE_ITEM_TIPS_TEMPLATE_KEY_BATCH_DEC_ATTR"
+local ui = Util.create_child_mt(Base)
+local AssetBarView = require("ui.asset_bar.asset_bar")
+
+function ui:ui_finish_load()
+  self:set_button("BtnRet1", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnAllChoose", function()
+    self:set_all_choose(not self.v_uiobjects.AllChooseIcon.activeSelf)
+  end)
+  self:set_button("BtnScreen", function()
+    UIMgr:get_ui("puzzle_filter_tips"):ui_show(false, Config.PUZZLE_MIN_QUALITY)
+  end)
+  self:set_button("BtnDecompose", function()
+    if not self.v_cost_enough then
+      return
+    end
+    if not self.v_choose_uuid_map or not next(self.v_choose_uuid_map) then
+      return
+    end
+    local choose_list = {}
+    for uuid, _ in pairs(self.v_choose_uuid_map) do
+      choose_list[#choose_list + 1] = uuid
+    end
+    PuzzleMgr:decompose_puzzle(choose_list, function()
+      self:reset_view()
+    end)
+  end)
+  self:register_exist_auto_template(TEMPLATE_KEY_ATTR, self.v_uiobjects.AttrTemp, self.v_uiobjects.AttrObj)
+  self:register_exist_auto_template(TEMPLATE_KEY_AWARD, self.v_uiobjects.ItemObjCom1, self.v_uiobjects.GetContent)
+  self.v_size_scroll_list = LoopListClass:new(self, self.v_uiobjects.ScrollView, PuzzleDecomposeItemClass)
+  self.v_asset_bar_view = AssetBarView:new(self, self.v_uiobjects.AssetBar)
+end
+
+function ui:on_click_return()
+  PuzzleMgr:reset_filter_record()
+  self:ui_hide()
+end
+
+function ui:on_go_to_main()
+  PuzzleMgr:reset_filter_record()
+end
+
+function ui:ui_on_hide()
+  self.v_size_scroll_list:ui_on_hide()
+  Util.show_puzzle_tip(nil)
+  self.v_asset_bar_view:on_hide()
+end
+
+function ui:ui_on_destroy()
+  self.v_size_scroll_list:ui_on_destroy()
+  self.v_asset_bar_view:on_destory()
+  self.v_asset_bar_view = nil
+end
+
+function ui:ui_on_show()
+  PuzzleMgr:reset_filter_record()
+  self.v_choose_uuid_map = nil
+  self.v_uiobjects.PluginsInfo:SetActive(false)
+  self.v_uiobjects.AllChooseIcon:SetActive(false)
+  self:refresh_scroll_list()
+  self:refresh_award()
+  self.v_asset_bar_view:reset_by_id_list({
+    Config.COIN_ITEMID
+  })
+  self.v_asset_bar_view:on_create()
+  self:bind_auto_mq(Const.MSG_ON_PUZZLE_FILTER_UPDATE, self.refresh_scroll_list, self)
+end
+
+function ui:reset_view()
+  self.v_choose_uuid_map = nil
+  self.v_uiobjects.PluginsInfo:SetActive(false)
+  self.v_uiobjects.AllChooseIcon:SetActive(false)
+  self:refresh_scroll_list()
+  self:refresh_award()
+end
+
+function ui:set_all_choose(bool_val)
+  self.v_uiobjects.AllChooseIcon:SetActive(bool_val)
+  self.v_choose_uuid_map = nil
+  if bool_val then
+    self.v_choose_uuid_map = {}
+    for _, data in ipairs(self.v_size_scroll_list_data) do
+      if not data.buddy_id or 0 == data.buddy_id then
+        self.v_choose_uuid_map[data.uuid] = true
+      end
+    end
+  end
+  MsgGame:mq_publish2(Const.MSG_ON_UPDATE_PUZZLE_DECOMPOSE_ITEM_STATE)
+  self:refresh_award()
+end
+
+function ui:refresh_scroll_list()
+  self.v_size_scroll_list_data = PuzzleMgr:get_puzzle_list_by_filter(false, Config.PUZZLE_MIN_QUALITY)
+  table.sort(self.v_size_scroll_list_data, function(dataA, dataB)
+    if dataA.id ~= dataB.id then
+      return dataA.id < dataB.id
+    end
+    return dataA.uuid < dataB.uuid
+  end)
+  self.v_size_scroll_list:refresh_data(self.v_size_scroll_list_data)
+  local is_list_empty = 0 == #self.v_size_scroll_list_data
+  self.v_uiobjects.NoItem:SetActive(is_list_empty)
+end
+
+function ui:refresh_award()
+  local is_empty = not self.v_choose_uuid_map or not next(self.v_choose_uuid_map)
+  self.v_uiobjects.Empty:SetActive(is_empty)
+  self.v_uiobjects.CurrGet:SetActive(not is_empty)
+  self:clear_award_item()
+  if is_empty then
+    self.v_uiobjects.PluginsInfo:SetActive(false)
+    return
+  end
+  local choose_count = 0
+  for k, v in pairs(self.v_choose_uuid_map) do
+    choose_count = choose_count + 1
+  end
+  local dec_cfg = ShareRes.create("buddy.buddy_puzzle_quality", Config.PUZZLE_MIN_QUALITY)
+  local cost_count = dec_cfg.DecomposeCount or 0
+  if 0 ~= cost_count then
+    local cost_id = dec_cfg.DecomposeId
+    cost_count = dec_cfg.DecomposeCount * choose_count
+    local own_num = BagMgr:get_item_num(cost_id)
+    local cost_icon_path = ShareRes.get_item_icon_path(cost_id)
+    ResMgr:load_set_icon(self.v_uicompents.CurrIcon_img, cost_icon_path)
+    self.v_uicompents.CurrNum_txt.text = string.format("<color=#%s>%s</color>", cost_count > own_num and "e0212c" or "F5EDE2", cost_count)
+    self.v_cost_enough = cost_count <= own_num and not is_empty
+  else
+    self.v_cost_enough = true
+  end
+  self.v_uiobjects.CurrGet:SetActive(cost_count > 0)
+  Util.apply_grey_ex(self.v_uiobjects.BtnDecompose, not self.v_cost_enough)
+  self.v_award_item_list = {}
+  local temp_award_map = {}
+  for uuid, _ in pairs(self.v_choose_uuid_map) do
+    local puzzle_data = PuzzleMgr:get_puzzle_data(uuid)
+    local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(puzzle_data.id)
+    local temp_awards = ShareRes.get_awards(puzzle_cfg.DecomposeAwardId)
+    for _, award in ipairs(temp_awards) do
+      local id = award.ItemId
+      local count = award.Num
+      temp_award_map[id] = temp_award_map[id] and temp_award_map[id] + count or count
+    end
+  end
+  for id, count in pairs(temp_award_map) do
+    local obj = self:get_auto_cache(TEMPLATE_KEY_AWARD)
+    local item = ITEM_OBJ_COM:ui_wrap_ex(self, obj, true)
+    item:set_data({id, count}, true)
+    table.insert(self.v_award_item_list, item)
+  end
+end
+
+function ui:clear_award_item()
+  self:give_back_auto_cache(TEMPLATE_KEY_AWARD)
+  if self.v_award_item_list and #self.v_award_item_list > 0 then
+    for i = #self.v_award_item_list, 1, -1 do
+      local item = self.v_award_item_list[i]
+      item:ui_hide()
+      item:ui_destroy()
+      self.v_award_item_list[i] = nil
+    end
+  end
+  self.v_award_item_list = nil
+end
+
+function ui:is_cost_uuid(uuid)
+  return self.v_choose_uuid_map and self.v_choose_uuid_map[uuid] == true
+end
+
+function ui:on_click_puzzle_item(uuid)
+  if not self.v_choose_uuid_map then
+    self.v_choose_uuid_map = {}
+  end
+  self.v_choose_uuid_map[uuid] = true
+  MsgGame:mq_publish2(Const.MSG_ON_UPDATE_PUZZLE_DECOMPOSE_ITEM_STATE)
+  self:refresh_award()
+  self:show_puzzle_info(uuid)
+end
+
+function ui:on_click_remove_puzzle_item(uuid)
+  if self.v_choose_uuid_map then
+    self.v_choose_uuid_map[uuid] = nil
+  end
+  MsgGame:mq_publish2(Const.MSG_ON_UPDATE_PUZZLE_DECOMPOSE_ITEM_STATE)
+  self:refresh_award()
+end
+
+function ui:show_puzzle_info(uuid)
+  self.v_uiobjects.PluginsInfo:SetActive(nil ~= uuid)
+  self:refresh_base_info(uuid)
+  self:refresh_attr_list(uuid)
+  self:refresh_entry_info(uuid)
+end
+
+function ui:refresh_base_info(uuid)
+  local puzzle_data = PuzzleMgr:get_puzzle_data(uuid)
+  local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(puzzle_data.id)
+  self.v_uicompents.PluginsName_txt.text = puzzle_cfg.Name
+  local quality_icon_path = ShareRes.get_equip_quality_icon_path(puzzle_data.quality)
+  ResMgr:load_set_icon(self.v_uicompents.PluginsQuality_img, quality_icon_path)
+end
+
+function ui:refresh_attr_list(uuid)
+  local puzzle_data = PuzzleMgr:get_puzzle_data(uuid)
+  self:give_back_auto_cache(TEMPLATE_KEY_ATTR)
+  local attr_id2value = {}
+  for _, attr_cfg_id in ipairs(puzzle_data.attr_list) do
+    local attr_cfg = ShareRes.get_buddy_puzzle_attr_cfg(attr_cfg_id)
+    attr_id2value[attr_cfg.AttrId] = (attr_id2value[attr_cfg.AttrId] or 0) + attr_cfg.AttrValue
+  end
+  local is_empty = not next(attr_id2value)
+  if is_empty then
+    return
+  end
+  for _, attr_show_cfg in ipairs(ShareRes.get_buddy_puzzle_attr_show_list()) do
+    local attr_id = attr_show_cfg.AttrId
+    local attr_val = attr_id2value[attr_id]
+    if attr_val then
+      local item = self:get_auto_cache(TEMPLATE_KEY_ATTR)
+      local icon = Util.get_image("AttrIcon", item)
+      local name_txt = Util.get_text("AttrName", item)
+      local val_txt = Util.get_text("AttrVal", item)
+      Util.load_attr_icon(icon, ShareRes.get_attr_icon(attr_id))
+      name_txt.text = attr_show_cfg.Desc
+      local is_ration = 1 == attr_show_cfg.AttrType
+      val_txt.text = Util.format_number(attr_val, is_ration)
+    end
+  end
+end
+
+function ui:refresh_entry_info(uuid)
+  local puzzle_data = PuzzleMgr:get_puzzle_data(uuid)
+  local puzzle_cfg = ShareRes.get_buddy_puzzle_cfg(puzzle_data.id)
+  local entry_id = puzzle_cfg.EntryId
+  local quality = puzzle_data.quality
+  self.v_uiobjects.EffectObj:SetActive(nil ~= entry_id)
+  if not entry_id then
+    return
+  end
+  local entry_cfg = ShareRes.get_buddy_puzzle_entry_cfg(entry_id, quality)
+  self.v_uicompents.EffectName_txt.text = entry_cfg.Name
+  self.v_uicompents.LvNum_txt.text = entry_cfg.Lv
+  self.v_uicompents.EffectDesc_txt.text = entry_cfg.Desc
+end
+
+return ui

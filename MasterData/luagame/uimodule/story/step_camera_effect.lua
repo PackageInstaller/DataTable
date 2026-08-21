@@ -1,0 +1,85 @@
+local Base = require("uimodule.story.step_base")
+local M = Util.create_child_mt(Base)
+local Vec3 = require("base.vec3")
+
+function M:_init(...)
+  Base._init(self, ...)
+end
+
+function M:on_destroy()
+  Base.on_destroy(self)
+end
+
+function M:start()
+  local step_cfg = self.v_step_cfg
+  local background_move = step_cfg.BackgroundMove
+  if not background_move then
+    self:complete()
+    return
+  end
+  if step_cfg.IsContinuous then
+    self.v_lua_obj:step_camera_special_effect(step_cfg)
+    self:complete()
+    return
+  end
+  self.v_lua_obj:sequence_kill_by_key("camera_move_sequence")
+  self.v_cur_use_bg_layer = self.v_lua_obj:get_cur_bg_layer()
+  self:set_start_pos()
+  self:move_background()
+end
+
+function M:set_start_pos()
+  local step_cfg = self.v_step_cfg
+  local start_data = step_cfg.Start
+  local is_spine_bg = step_cfg.IsSpineBg
+  local posx = start_data[1]
+  local posy = start_data[2]
+  local scale = start_data[3]
+  local select_bg_obj_rect
+  if is_spine_bg then
+    select_bg_obj_rect = self.v_uicompents["StorySpineBg" .. self.v_cur_use_bg_layer .. "_rect"]
+  else
+    select_bg_obj_rect = self.v_uicompents["StoryBg" .. self.v_cur_use_bg_layer .. "_rect"]
+  end
+  if not select_bg_obj_rect then
+    return
+  end
+  select_bg_obj_rect.transform:SetLocalScaleA(scale, scale, 1)
+  local new_posx = 0
+  local new_posy = 0
+  new_posx, new_posy = self:clamp_move_pos(posx, posy, scale)
+  select_bg_obj_rect:SetAnchoredPositionA(new_posx, new_posy)
+end
+
+function M:move_background()
+  local step_cfg = self.v_step_cfg
+  local end_data = step_cfg.End
+  local posx = end_data[1]
+  local posy = end_data[2]
+  local scale = end_data[3]
+  local time = end_data[4]
+  local is_spine_bg = step_cfg.IsSpineBg
+  local select_bg_obj_rect
+  if is_spine_bg then
+    select_bg_obj_rect = self.v_uicompents["StorySpineBg" .. self.v_cur_use_bg_layer .. "_rect"]
+  else
+    select_bg_obj_rect = self.v_uicompents["StoryBg" .. self.v_cur_use_bg_layer .. "_rect"]
+  end
+  local new_scale = Vec3.New(scale, scale, 1)
+  local new_posx = 0
+  local new_posy = 0
+  new_posx, new_posy = self:clamp_move_pos(end_data[1], end_data[2], new_scale)
+  local end_pos = Vec3.New(new_posx, new_posy, 1)
+  local sequence = self:get_new_sequence("camera_move_sequence")
+  sequence:Append(select_bg_obj_rect:DOLocalMove(end_pos, time))
+  sequence:Join(select_bg_obj_rect.transform:DOScale(new_scale, time))
+  sequence:OnComplete(function()
+    self:complete()
+  end)
+end
+
+function M:clamp_move_pos(posx, posy, scale)
+  return (self.v_lua_obj:clamp_move_pos(posx, posy, scale))
+end
+
+return M

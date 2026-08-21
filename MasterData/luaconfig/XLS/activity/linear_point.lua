@@ -1,0 +1,132 @@
+return {
+  {
+    Condition = 70,
+    Difficulty = "普通",
+    Group = 1,
+    Id = 1,
+    PointId = 20020102,
+    Serial = 1
+  },
+  {
+    Condition = 70,
+    Difficulty = "困难",
+    Group = 1,
+    Id = 2,
+    PointId = 20020102,
+    PreId = 1,
+    Serial = 2
+  },
+  {
+    Condition = 70,
+    Difficulty = "噩梦",
+    Group = 1,
+    Id = 3,
+    PointId = 20020102,
+    PreId = 2,
+    Serial = 3
+  },
+  {
+    Condition = 70,
+    Difficulty = "普通",
+    Group = 2,
+    Id = 4,
+    PointId = 20020102,
+    Serial = 1
+  },
+  {
+    Condition = 70,
+    Difficulty = "困难",
+    Group = 2,
+    Id = 5,
+    PointId = 20020102,
+    PreId = 4,
+    Serial = 2
+  },
+  {
+    Condition = 70,
+    Difficulty = "噩梦",
+    Group = 2,
+    Id = 6,
+    PointId = 20020102,
+    PreId = 5,
+    Serial = 3
+  },
+  {
+    Condition = 70,
+    Difficulty = "普通",
+    Group = 3,
+    Id = 7,
+    PointId = 20020102,
+    Serial = 1
+  },
+  {
+    Condition = 70,
+    Difficulty = "困难",
+    Group = 3,
+    Id = 8,
+    PointId = 20020102,
+    PreId = 7,
+    Serial = 2
+  },
+  {
+    Condition = 70,
+    Difficulty = "噩梦",
+    Group = 3,
+    Id = 9,
+    PointId = 20020102,
+    PreId = 8,
+    Serial = 3
+  },
+  {
+    Condition = 70,
+    Difficulty = "普通",
+    Group = 4,
+    Id = 10,
+    PointId = 20020102,
+    Serial = 1
+  },
+  {
+    Condition = 70,
+    Difficulty = "困难",
+    Group = 4,
+    Id = 11,
+    PointId = 20020102,
+    PreId = 10,
+    Serial = 2
+  },
+  {
+    Condition = 70,
+    Difficulty = "噩梦",
+    Group = 4,
+    Id = 12,
+    PointId = 20020102,
+    PreId = 11,
+    Serial = 3
+  },
+  {
+    Condition = 70,
+    Difficulty = "普通",
+    Group = 5,
+    Id = 13,
+    PointId = 20020102,
+    Serial = 1
+  },
+  {
+    Condition = 70,
+    Difficulty = "困难",
+    Group = 5,
+    Id = 14,
+    PointId = 20020102,
+    PreId = 13,
+    Serial = 2
+  },
+  {
+    Condition = 70,
+    Difficulty = "噩梦",
+    Group = 5,
+    Id = 15,
+    PointId = 20020102,
+    PreId = 14,
+    Serial = 3
+  }
+}

@@ -1,0 +1,98 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local Timer = Global.timer
+local _tinsert = table.insert
+local bagConfig = require("gamelogic.character.fight_bag_configs")
+local MODEL = {
+  v_attr_content = {
+    "AttrList",
+    BIND_TYPE.OBJECT
+  },
+  v_attr_temp = {
+    "AttrTemp",
+    BIND_TYPE.OBJECT
+  }
+}
+local SCNE_SKILL_DETAIL = "SCNE_SKILL_DETAIL"
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnReturn", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(SCNE_SKILL_DETAIL, self.v_attr_temp, self.v_attr_content)
+end
+
+function ui:ui_on_show()
+  self.v_scene_skill_data, self.v_scene_entry_attrs = TowerMgr:get_scene_skill_data()
+  self:update_skill_info()
+  self:update_attr_list()
+  self:update_effect_desc()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:update_skill_info()
+  local skill_id = self.v_scene_skill_data.id
+  local skill_lv = self.v_scene_skill_data.lv
+  local skill_cfg = ShareRes.get_scene_skill_cfg(skill_id)
+  if not skill_cfg then
+    return
+  end
+  local skill_lv_cfg = ShareRes.get_scene_skill_lv_cfg(skill_id, skill_lv)
+  if not skill_lv_cfg then
+    return
+  end
+  self.v_uicompents.SkillName_txt.text = Util.get_i18n("等级") .. skill_lv .. skill_cfg.Name
+  self.v_uicompents.SkillDesc_txt.text = skill_cfg.Desc
+  ResMgr:load_set_icon(self.v_uicompents.SkillIcon_img, skill_lv_cfg.IconPath)
+  self.v_uicompents.SkillPzBg_img.color = bagConfig.Quality_Color[skill_lv_cfg.Quality]
+end
+
+function ui:update_attr_list()
+  local skill_id = self.v_scene_skill_data.id
+  local skill_cfg = ShareRes.get_scene_skill_cfg(skill_id)
+  if not skill_cfg then
+    return
+  end
+  local show_attr_list = skill_cfg.ShowAttrId
+  local god_npc = SceneMgr:get_god_npc()
+  if not god_npc then
+    return
+  end
+  local attr_mgr = god_npc.attr_mgr
+  for _, attr_id in ipairs(show_attr_list) do
+    if 0 ~= attr_id then
+      local attr_val = attr_mgr:get_attr(attr_id) or 0
+      if 0 ~= attr_val then
+        local ui_obj = self:get_auto_cache(SCNE_SKILL_DETAIL)
+        local name_txt = Util.get_text("AttrStr", ui_obj)
+        name_txt.text = ShareRes.equip_attr_str(attr_id)
+        local val_txt = Util.get_text("AttrStrNum", ui_obj)
+        val_txt.text = attr_val
+      end
+    end
+  end
+end
+
+function ui:update_effect_desc()
+  local skill_id = self.v_scene_skill_data.id
+  local skill_lv = self.v_scene_skill_data.lv
+  local skill_lv_cfg = ShareRes.get_scene_skill_lv_cfg(skill_id)
+  if not skill_lv_cfg then
+    return
+  end
+  local now_cfg = skill_lv_cfg[skill_lv]
+  self.v_uicompents.EffectNowDesc_txt.text = now_cfg.Desc
+  local next_cfg = skill_lv_cfg[skill_lv + 1]
+  if not next_cfg then
+    self.v_uicompents.EffectNext_rect.gameObject:SetActive(false)
+    return
+  end
+  self.v_uicompents.EffectNext_rect.gameObject:SetActive(true)
+  self.v_uicompents.EffectNextDesc_txt.text = next_cfg.Desc
+end
+
+return ui

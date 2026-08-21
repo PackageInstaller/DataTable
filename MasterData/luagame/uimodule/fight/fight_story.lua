@@ -1,0 +1,159 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local Timer = Global.timer
+local MAX_BRANCH = 3
+local ANIM_TIME = 0.5
+local OBJ_VISIBLE_TYPE = Config.FIGHT_OBJ_VISIBLE_TYPE
+local MODEL = {}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("MainContent", function()
+    if self.v_is_brahch then
+      return
+    end
+    if not self:click_next_step() then
+      self:ui_hide()
+    end
+  end)
+  for index = 1, MAX_BRANCH do
+    self:set_button("Branch" .. index, function()
+      self:click_branch(index)
+    end)
+  end
+end
+
+function ui:ui_on_show(story_id)
+  self.v_uicompents.Mask_img.gameObject:SetActive(false)
+  self.v_init_story_id = story_id
+  self:update_tip(story_id)
+  self:refresh_npc_info(story_id)
+  local ui_fight = UIMgr:try_get_visible_ui("fight")
+  if ui_fight then
+    ui_fight:set_ui_node_visible("Main", OBJ_VISIBLE_TYPE.STORY, false)
+    ui_fight:uiobject_visible("Main", false)
+  end
+end
+
+function ui:ui_on_hide()
+  self.v_is_brahch = false
+  if self.v_sequence then
+    self.v_sequence:Kill()
+    self.v_sequence = nil
+  end
+  local tower = TowerMgr:get_tower()
+  local ui_fight = UIMgr:try_get_visible_ui("fight")
+  if ui_fight and tower then
+    ui_fight:set_ui_node_visible("Main", OBJ_VISIBLE_TYPE.STORY, true)
+    ui_fight:uiobject_visible("Main", true)
+  end
+end
+
+function ui:click_next_step()
+  if not self.v_cur_story_id then
+    return
+  end
+  local fight_story_cfg = ShareRes.get_fight_story_config(self.v_cur_story_id)
+  local next_step_id = fight_story_cfg.NextStep
+  SceneMgr:c2gs_call_scene("on_click_fight_story", self.v_cur_story_id, 0)
+  BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.ON_CLICK_FIGHT_STORY, self.v_cur_story_id, 0)
+  if not next_step_id or 0 == next_step_id then
+    return
+  end
+  self:update_tip(next_step_id)
+  return true
+end
+
+function ui:click_branch(index)
+  if self.v_is_brahch then
+    return
+  end
+  local fight_story_cfg = ShareRes.get_fight_story_config(self.v_cur_story_id)
+  if not fight_story_cfg then
+    return
+  end
+  local branch_id_list = fight_story_cfg.BranchId
+  local branch_id = branch_id_list[index]
+  self.v_select_index = index
+  self:play_branch_anim(index, branch_id)
+end
+
+function ui:play_branch_anim(select_index, new_story_id)
+  if self.v_sequence then
+    self.v_sequence:Kill()
+    self.v_sequence = nil
+  end
+  for index = 1, MAX_BRANCH do
+    if index ~= select_index then
+      local ui_obj = self.v_uicompents["Branch" .. index .. "_rect"]
+      local canvas_group = ui_obj:GetComponent("CanvasGroup")
+      canvas_group.alpha = 0
+    end
+  end
+  self.v_is_brahch = true
+  local ui_obj = self.v_uicompents["Branch" .. select_index .. "_rect"]
+  local canvas_group = ui_obj:GetComponent("CanvasGroup")
+  self.v_sequence = Util.create_sequence()
+  self.v_sequence:Append(canvas_group:DOFade(0, ANIM_TIME))
+  self.v_sequence:OnComplete(function()
+    SceneMgr:c2gs_call_scene("on_click_fight_story", self.v_cur_story_id, select_index)
+    BehaviorMgr:call_event_fun(BehaviorMgr.EVENTS.ON_CLICK_FIGHT_STORY, self.v_cur_story_id, select_index)
+    if 0 == new_story_id then
+      self:ui_hide()
+      return
+    end
+    self.v_uicompents.Mask_img.gameObject:SetActive(false)
+    self.v_is_brahch = false
+    self:update_tip(new_story_id)
+  end)
+end
+
+function ui:update_tip(story_id)
+  local fight_story_cfg = ShareRes.get_fight_story_config(story_id)
+  Util.assert(fight_story_cfg, "no fight story cfg story id = " .. story_id)
+  local content_desc = fight_story_cfg.Content
+  self.v_uicompents.TipContent_txt.text = content_desc
+  self.v_cur_story_id = story_id
+  self.v_uicompents.Next_rect.gameObject:SetActive(false)
+  self.v_uicompents.Branch_list_rect.gameObject:SetActive(false)
+  local is_branch = 0 ~= fight_story_cfg.IsBranch
+  if is_branch then
+    self:refresh_branch_info(fight_story_cfg)
+    return
+  end
+  local next_step_id = fight_story_cfg.NextStep or 0
+  self.v_uicompents.Next_rect.gameObject:SetActive(0 ~= next_step_id)
+end
+
+function ui:refresh_branch_info(fight_story_cfg)
+  self.v_uicompents.Branch_list_rect.gameObject:SetActive(true)
+  self.v_uicompents.Mask_img.gameObject:SetActive(true)
+  local branch_desc_list = fight_story_cfg.BranchDesc
+  local branch_id_list = fight_story_cfg.BranchId
+  for index = 1, MAX_BRANCH do
+    local branch_tip = branch_desc_list[index]
+    local ui_obj = self.v_uicompents["Branch" .. index .. "_rect"]
+    ui_obj.gameObject:SetActive(false)
+    local branch_id = branch_id_list[index]
+    if branch_tip and "" ~= branch_tip then
+      ui_obj.gameObject:SetActive(true)
+      local canvas_group = ui_obj:GetComponent("CanvasGroup")
+      canvas_group.alpha = 1
+      local txt = self.v_uicompents["Branch_Text" .. index .. "_txt"]
+      txt.text = branch_tip
+    end
+  end
+end
+
+function ui:refresh_npc_info(story_id)
+  local fight_story_cfg = ShareRes.get_fight_story_config(story_id)
+  Util.assert(fight_story_cfg, "no fight story cfg story id = " .. story_id)
+  local icon_name = fight_story_cfg.NpcIcon
+  local path = string.format("Icon/Profile/%s", icon_name)
+  local icon = self.v_uicompents.Icon_img
+  ResMgr:load_set_icon(icon, path)
+  self.v_uicompents.Name_txt.text = fight_story_cfg.NpcName
+end
+
+return ui

@@ -1,0 +1,43 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local KEYWORD_TIP_ITEM_TEMP_KEY = "KEYWORD_TIP_ITEM_TEMP_KEY"
+
+function ui:ui_finish_load()
+  self:set_button("TouchMask", function()
+    self:ui_hide()
+  end)
+  self:register_exist_auto_template(KEYWORD_TIP_ITEM_TEMP_KEY, self.v_uiobjects.WordTem, self.v_uiobjects.WordTipsContent)
+end
+
+function ui:ui_on_show(keyword_list, offset_x, hide_ui_by_other, target_pos)
+  self:refresh_view(keyword_list, offset_x, hide_ui_by_other, target_pos)
+end
+
+function ui:refresh_view(keyword_list, offset_x, hide_ui_by_other, target_pos)
+  self.v_target_pos = target_pos
+  self.v_offset_x = offset_x or 0
+  self.v_uiobjects.TouchMask:SetActive(not hide_ui_by_other)
+  if not keyword_list or not next(keyword_list) then
+    self:ui_hide()
+    return
+  end
+  local content_trans = self.v_uicompents.MoveNode_rect
+  content_trans:SetAnchoredPositionA(self.v_offset_x, content_trans.anchoredPosition.y, 0)
+  self.v_uicompents.WordTipsContent_rect:SetAnchoredPositionA(0, 0, 0)
+  local buddy_keyword_cfg = ShareRes.create("buddy.buddy_keyword")
+  self:give_back_auto_cache(KEYWORD_TIP_ITEM_TEMP_KEY)
+  for _, id in ipairs(keyword_list) do
+    local cfg = buddy_keyword_cfg[id]
+    if cfg then
+      local item = self:get_auto_cache(KEYWORD_TIP_ITEM_TEMP_KEY)
+      local name = Util.get_text("WordName", item)
+      local desc = Util.get_text("WordDesc", item)
+      name.text = cfg.Name
+      desc.text = cfg.Desc
+    else
+      Log.Error("关键字配置不存在，ID", id)
+    end
+  end
+end
+
+return ui

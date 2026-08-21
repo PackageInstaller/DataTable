@@ -1,0 +1,148 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BOSS_CHALLENGE_MAIN_ITEM = require("uimodule.stage_activity.boss_challenge.boss_challenge_main_item")
+local LOOP_LIST_CLASS2 = require("ui.widget.infinite_loop_list2")
+local STAGECONTENT_STAGETEM_TEMP_KEY = "STAGECONTENT_STAGETEM_TEMP_KEY"
+local SCREEN_WIDTH = CS.UnityEngine.Screen.width
+local MIDDLE_X = SCREEN_WIDTH / 2
+local INTERVAL = 960
+local Y_MOVE_DIST = 100
+local INIT_Y = -344.2162
+local START_UPLIFT_X = MIDDLE_X - INTERVAL
+local END_UPLIFT_X = MIDDLE_X + INTERVAL
+
+function ui:on_click_BtnRet1()
+  self:ui_hide()
+end
+
+function ui:on_scroll_value_change(offset_x, offset_y)
+  for key, cell_rect in pairs(self.v_cell_rect_list) do
+    self:update_cell_pos_y(cell_rect)
+  end
+end
+
+function ui:update_cell_pos_y(cell_rect)
+  local ui_camera = UIMgr:get_root_camera()
+  local wx, wy, wz = cell_rect:GetPositionA()
+  local sx = ui_camera:WorldToScreenPointA(wx, wy, wz)
+  local lposx = sx
+  local x, y = cell_rect:GetAnchoredPositionA()
+  if lposx < START_UPLIFT_X or lposx > END_UPLIFT_X then
+    y = INIT_Y
+  elseif lposx > MIDDLE_X then
+    y = (END_UPLIFT_X - lposx) / INTERVAL * Y_MOVE_DIST + INIT_Y
+  else
+    y = (lposx - START_UPLIFT_X) / INTERVAL * Y_MOVE_DIST + INIT_Y
+  end
+  cell_rect:SetAnchoredPositionA(x, y)
+end
+
+function ui:ui_finish_load()
+  self.v_center_index = 1
+  self:set_button("BtnRet1", function()
+    self:on_click_BtnRet1()
+  end)
+  self.v_point_to_index_map = {}
+  self.v_index_to_point_map = {}
+  self.v_point_item_map = {}
+  self.v_point_item_list = LOOP_LIST_CLASS2:new(self, self.v_uiobjects.StageScrollView, BOSS_CHALLENGE_MAIN_ITEM)
+  self.v_point_item_list:set_scroll_value_chang(function(offset_x, offset_y)
+    self:on_scroll_value_change(offset_x, offset_y)
+  end)
+  self.v_cell_rect_list = {}
+  local gameobj_list = self.v_point_item_list:get_cell_gameobj_list()
+  for key, gameobj in pairs(gameobj_list) do
+    self.v_cell_rect_list[key] = self:get_rect_transform(nil, gameobj)
+  end
+end
+
+function ui:ui_on_show()
+  self:refresh_view()
+  self:check_show_reset_tips()
+end
+
+function ui:check_show_reset_tips()
+  local cfg = BossChallengeMgr:get_reset_show_id_list()
+  if next(cfg) ~= nil then
+    UIMgr:get_ui("ui_boss_reset_tip"):ui_show(cfg)
+  end
+end
+
+function ui:play_select_sound()
+  if self.v_play_select_sound then
+    Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.left_right_common_UI_SOUND)
+    self.v_play_select_sound = false
+    self:clear_sound_timer()
+    self.v_delay_refresh_timer = Timer:add_timer("boss_challenge_delay_refresh_timer", 0.5, function()
+      self.v_play_select_sound = true
+    end)
+  end
+end
+
+function ui:clear_sound_timer()
+  if self.v_delay_refresh_timer then
+    Timer:remove_timer(self.v_delay_refresh_timer)
+    self.v_delay_refresh_timer = nil
+  end
+end
+
+function ui:ui_on_hide()
+  self:clear_sound_timer()
+  if self.v_point_item_list then
+    self.v_point_item_list:ui_on_hide()
+  end
+end
+
+function ui:ui_on_destroy()
+  if self.v_point_item_list then
+    self.v_point_item_list:ui_on_destroy()
+  end
+end
+
+function ui:refresh_view()
+  self.v_play_select_sound = false
+  self.v_index_to_point_map = BossChallengeMgr:get_show_id_list()
+  if UtilTable.is_empty(self.v_index_to_point_map) then
+    Log.Error("获取boss副本数据失败")
+    self.v_uiobjects.StageScrollView:SetActive(false)
+    return
+  end
+  self.v_uiobjects.StageScrollView:SetActive(true)
+  self.v_point_item_list:refresh_data(self.v_index_to_point_map)
+  self.v_point_item_list:refresh_show_list()
+  self.v_play_select_sound = true
+end
+
+function ui:change_center_index(index)
+  self.v_center_index = index
+end
+
+function ui:is_arror_not_in_screen(item, is_right)
+  local trans = item:get_object_transform()
+  local rect = self:get_rect_transform(nil, trans)
+  local w = rect:GetSizeDeltaA()
+  w = is_right and w or -w
+  local wx, wy, wz = rect:GetPositionA()
+  local ui_camera = UIMgr:get_root_camera()
+  local sx = ui_camera:WorldToScreenPointA(wx + w / 2, wy, wz)
+  if is_right then
+    return sx < 0
+  else
+    return sx > SCREEN_WIDTH
+  end
+end
+
+function ui:clear_point_item_map()
+  self:give_back_auto_cache(STAGECONTENT_STAGETEM_TEMP_KEY)
+  for key, item in pairs(self.v_point_item_map) do
+    item:ui_hide()
+    item:ui_destroy()
+    self.v_point_item_map[key] = nil
+  end
+end
+
+function ui:cache_ui()
+  return true
+end
+
+return ui

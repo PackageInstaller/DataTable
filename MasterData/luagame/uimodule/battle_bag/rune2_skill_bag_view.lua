@@ -1,0 +1,345 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local RUNE_HELPER = require("gamelogic.activity.rune2_helper")
+local RUNE_BAG_HERO_ITEM_CLASS = require("uimodule.battle_bag.rune_skill_hero_item")
+local RUNE_DETAIL_SKILL_ITEM_CLASS = require("uimodule.battle_rune.rune_detail_item")
+local CommonDefine = require("cs_share.common_define")
+local RUNE2_TYPE = CommonDefine.RUNE2_TYPE
+local BUDDY_RUNE_SKILL_ITEM_KEY = "BUDDY_RUNE_SKILL_ITEM_KEY"
+local RUNE2_POSITION = CommonDefine.RUNE2_POSITION
+local ITEM_ICON_PATH = "Icon/BattleItem/%s"
+local bagConfig = require("gamelogic.character.fight_bag_configs")
+local NOT_HAVE_RUNE = 0
+local SKILL_LV_START = 1
+local SKILL_LV_END = 3
+local RUNE_POS_START = 1
+local RUNE_POS_END = 2
+local NORMAL_SKILL_START = 1
+local NORMAL_SKILL_END = 5
+local SHOW_TYPE = {NORMAL = 1, RUNE = 2}
+local _tinsert = table.insert
+
+function ui:ui_finish_load()
+  self.v_rune_tog_list = {}
+  for i = RUNE_POS_START, RUNE_POS_END do
+    local rune_tog = self.v_uicompents["RuneSkill" .. i .. "_tog"]
+    self.v_rune_tog_list[i] = rune_tog
+    self:set_toggle_listener(rune_tog, function(is_on)
+      self:_on_click_rune_tog(is_on, i)
+    end)
+  end
+  self.v_normal_skill_tog_list = {}
+  for i = NORMAL_SKILL_START, NORMAL_SKILL_END do
+    local normal_skill_tog = self.v_uicompents["NorSkill" .. i .. "_tog"]
+    self.v_normal_skill_tog_list[i] = normal_skill_tog
+    self:set_toggle_listener(normal_skill_tog, function(is_on)
+      self:_on_click_normal_skill_tog(is_on, i)
+    end)
+  end
+  self:register_template()
+end
+
+function ui:register_template()
+  self:register_exist_auto_template(BUDDY_RUNE_SKILL_ITEM_KEY, self.v_uiobjects.CharTem, self.v_uiobjects.CharList)
+end
+
+function ui:ui_on_show(hero)
+  self.v_hero = hero
+  self:refresh_hero_list()
+  self:register_event()
+end
+
+function ui:register_event()
+  self:bind_auto_mq(Const.MSG_ON_SELECT_RUNE_HERO_ITEM, self.response_click_hero_item, self)
+end
+
+function ui:ui_on_hide()
+  self:clear_hero_item_list()
+  if self.v_rune_skill_item then
+    self.v_rune_skill_item:ui_hide()
+    self:remove_wrap_ui(self.v_rune_skill_item)
+  end
+  self.v_normal_skill_list = nil
+  self.v_hero = nil
+end
+
+function ui:ui_on_destroy()
+  self.v_rune_tog_list = nil
+  self.v_currency_list = nil
+  self.v_bag_fun_tog_list = nil
+  self.v_total_width = nil
+end
+
+function ui:refresh_hero_list()
+  local hero_list = SceneMgr:get_hero_list()
+  self:give_back_auto_cache(BUDDY_RUNE_SKILL_ITEM_KEY)
+  self:clear_hero_item_list()
+  self.v_hero_item_list = {}
+  self.v_hero_item_map = {}
+  local idx = 1
+  local select_hero_uuid = self.v_hero.uuid
+  for uuid, hero in pairs(hero_list) do
+    local hero_item_go = self:get_auto_cache(BUDDY_RUNE_SKILL_ITEM_KEY)
+    local lua_obj = RUNE_BAG_HERO_ITEM_CLASS:ui_wrap_ex(self, hero_item_go, true)
+    lua_obj:set_data(hero, idx)
+    self.v_hero_item_list[idx] = lua_obj
+    self.v_hero_item_map[uuid] = idx
+    idx = idx + 1
+  end
+  local select_idx = self.v_hero_item_map[select_hero_uuid]
+  self.v_hero_item_list[select_idx]:on_select(select_idx)
+end
+
+function ui:clear_hero_item_list()
+  if self.v_hero_item_list then
+    self:remove_wrap_ui_list(self.v_hero_item_list)
+    self.v_hero_item_list = nil
+    self.v_hero_item_map = nil
+  end
+end
+
+function ui:refresh_show_hero_skill(hero)
+  self.v_hero = hero
+  local buddy_id = hero.buddy_cfg.Id
+  local buddy_rune_info = Rune2Mgr:get_rune_buddy_info(buddy_id)
+  if buddy_rune_info then
+    self.v_rune_pos = buddy_rune_info.pos
+  else
+    self.v_rune_pos = RUNE2_POSITION.MAIN_POS
+  end
+  self.v_rune_lv = SKILL_LV_START
+  self:refresh_normal_skill_list(hero)
+end
+
+function ui:refresh_rune_skill(hero, pos, lv)
+  local buddy_id = hero.buddy_cfg.Id
+  local ucom = self.v_uicompents
+  local name_text = ucom.RuneSkillName_txt
+  local desc_text = ucom.RuneSkillDesc_txt
+  name_text.text = Util.format_str("暂无")
+  desc_text.text = ""
+  self.v_rune_lv = lv
+  local rune_type = ShareRes.get_buddy_rune_type(buddy_id, pos)
+  local rune_cfg = ShareRes.get_buddy_rune_lv_cfg(buddy_id, rune_type, lv)
+  if rune_cfg then
+    name_text.text = Util.format_str(rune_cfg.SkillName)
+    desc_text.text = Util.format_str(rune_cfg.SkillDesc)
+  end
+  self:refresh_rune_tog_state(hero)
+end
+
+function ui:refresh_entry_item(entry_id, go, idx)
+  local entry_cfg = ShareRes.get_entry_cfg(entry_id)
+  local entry_desc_text = Util.get_text("EntryDesc", go)
+  entry_desc_text.text = entry_cfg.Desc
+end
+
+function ui:refresh_rune_list(hero)
+  local buddy_id = hero.buddy_cfg.Id
+  local buddy_cfg = hero.buddy_cfg
+  local buddy_rune_cfg = ShareRes.get_buddy_cfg(buddy_id)
+  local buddy_rune_info = Rune2Mgr:get_rune_buddy_info(buddy_id)
+  local pos = RUNE2_POSITION.MAIN_POS
+  if buddy_rune_info then
+    pos = buddy_rune_info.pos
+  end
+  local rune_type_list = buddy_rune_cfg.RuneType
+  for idx, cfg_rune_type in pairs(rune_type_list) do
+    local rune_mask_obj = self.v_uiobjects["RuneMask" .. idx]
+    rune_mask_obj:SetActive(true)
+    if pos == idx and buddy_rune_info then
+      rune_mask_obj:SetActive(false)
+    end
+    local rune_image = self.v_uicompents["RuneIcon" .. idx .. "_img"]
+    local rune_bg_img = self.v_uicompents["Bg" .. idx .. "_img"]
+    rune_bg_img.color = RUNE_HELPER.RUNE_COLOR_A[cfg_rune_type].color
+    local icon_name = buddy_cfg.RuneIcon[idx]
+    local icon_path = RUNE_HELPER.get_rune_icon(icon_name)
+    ResMgr:load_set_icon(rune_image, icon_path)
+  end
+end
+
+function ui:refresh_team_rune_effect(level)
+  local team_rune_cfg = ShareRes.get_team_level_rune_cfg(level)
+  if team_rune_cfg then
+    self.v_uiobjects.TeamBuffContent:SetActive(true)
+  else
+    self.v_uiobjects.TeamBuffContent:SetActive(false)
+  end
+end
+
+function ui:refresh_team_level()
+  local lv = Rune2Mgr:get_rune_team_level()
+  self.v_uicompents.TeaMBallLV_txt.text = lv
+  self:refresh_team_rune_effect(lv)
+end
+
+function ui:response_click_hero_item(msg)
+  if not msg then
+    return
+  end
+  local select_hero = msg.mm_obj
+  self:refresh_show_hero_skill(select_hero)
+end
+
+function ui:_on_click_skill_tog(is_on, lv)
+  if is_on then
+    self:refresh_rune_skill(self.v_hero, self.v_rune_pos, lv)
+  end
+end
+
+function ui:_on_click_rune_tog(is_on, pos)
+  if is_on then
+    self:refresh_show_skill_ui(SHOW_TYPE.RUNE)
+    self.v_rune_pos = pos
+    self:refresh_rune_skill_list(self.v_hero, self.v_rune_pos)
+  end
+  for now_pos, tog in pairs(self.v_rune_tog_list) do
+    tog.interactable = pos ~= now_pos
+  end
+end
+
+function ui:refresh_rune_tog_state(hero)
+  local buddy_id = hero.buddy_cfg.Id
+  local buddy_rune_info = Rune2Mgr:get_rune_buddy_info(buddy_id)
+  local rune_lv = 0
+  local have_rune = false
+  if buddy_rune_info then
+    local condition_lv = Rune2Mgr:get_rune_type_level(buddy_id)
+    local pos = buddy_rune_info.pos
+    local rune_type = ShareRes.get_buddy_rune_type(buddy_id, pos)
+    have_rune = self.v_rune_pos == pos and true or false
+    local rune_cfg = ShareRes.get_buddy_rune_list_cfg(buddy_id, rune_type, condition_lv)
+    if rune_cfg then
+      rune_lv = rune_cfg.Level
+    end
+  end
+end
+
+function ui:refresh_rune_skill_list(hero, pos)
+  local buddy_id = hero.buddy_cfg.Id
+  if self.v_rune_skill_item then
+    self.v_rune_skill_item:ui_hide()
+    self:remove_wrap_ui(self.v_rune_skill_item)
+  end
+  self.v_rune_skill_item = RUNE_DETAIL_SKILL_ITEM_CLASS:ui_wrap_ex(self, self.v_uiobjects.RuneDetail, true)
+  local entry_list
+  local now_rune_lv = 0
+  local rune_type = ShareRes.get_buddy_rune_type(buddy_id, pos)
+  local buddy_rune_info = Rune2Mgr:get_rune_buddy_info(buddy_id)
+  local buddy_now_pos
+  if buddy_rune_info then
+    buddy_now_pos = buddy_rune_info.pos
+    if buddy_now_pos == pos then
+      entry_list = buddy_rune_info.entry_list
+    end
+    local rune_lv = buddy_rune_info.level
+    now_rune_lv = rune_lv
+  end
+  local is_now_pos = buddy_now_pos and buddy_now_pos == pos
+  local skill_param = {
+    buddy_id = buddy_id,
+    rune_type = rune_type,
+    buddy_rune_lv = now_rune_lv,
+    entry_list = entry_list,
+    is_now_pos = is_now_pos
+  }
+  self.v_rune_skill_item:set_data(skill_param, RUNE_HELPER.DETAIL_ITEM_SHOW_TYPE.BAG_VIEW)
+end
+
+function ui:response_select_rune_skill(msg)
+  if not msg then
+    return
+  end
+  local rune_cfg = msg.mm_obj
+  self.v_uicompents["RuneName" .. self.v_rune_pos .. "_txt"].text = rune_cfg.Name
+end
+
+function ui:_on_click_normal_skill_tog(is_on, idx)
+  if is_on then
+    self:refresh_show_skill_ui(SHOW_TYPE.NORMAL)
+    self:refresh_normal_skill_desc(idx)
+  end
+  for now_idx, tog in pairs(self.v_normal_skill_tog_list) do
+    tog.interactable = idx ~= now_idx
+  end
+end
+
+function ui:refresh_normal_skill_desc(idx)
+  local skill_info = self.v_normal_skill_list[idx]
+  local skill_id = skill_info.id
+  local skill_lv = skill_info.lv
+  local skill_details_cfg = ShareRes.get_buddy_skill_details_cfg(skill_id)
+  local skill_lv_cfg = ShareRes.get_buddy_skill_lv_cfg(skill_id, skill_lv)
+  if skill_details_cfg and skill_lv_cfg then
+    local ucom = self.v_uicompents
+    ucom.NormalSkillName_txt.text = skill_details_cfg.Name
+    ucom.NormalSkillDesc_txt.text = skill_lv_cfg.Desc
+  end
+end
+
+function ui:get_buddy_skill_info_by_id(buddy_id)
+  local info = TowerMgr:get_battle_team_info()
+  local hero_list = info.hero_list
+  for _, buddy_data in ipairs(hero_list) do
+    local data = buddy_data.data
+    if buddy_id == data.id then
+      local skill_data = {}
+      for key, data in pairs(data.skill_data) do
+        table.insert(skill_data, data)
+      end
+      return skill_data
+    end
+  end
+end
+
+function ui:refresh_normal_skill_list(hero)
+  local buddy_id = hero.buddy_cfg.Id
+  local skill_list = self:get_buddy_skill_info_by_id(buddy_id)
+  local new_skill_list = {}
+  for _, info in ipairs(skill_list) do
+    local skill_details_cfg = ShareRes.get_buddy_skill_details_cfg(info.id)
+    info.sort_index = skill_details_cfg.SortIndex
+    _tinsert(new_skill_list, info)
+  end
+  table.sort(new_skill_list, function(a, b)
+    if a.sort_index == b.sort_index then
+      return a.id > b.id
+    end
+    return a.sort_index > b.sort_index
+  end)
+  for i = NORMAL_SKILL_START, NORMAL_SKILL_END do
+    local skill_go = self.v_uiobjects["NorSkill" .. i]
+    local skill_info = new_skill_list[i]
+    local skill_id = skill_info.id
+    local skill_icon = Util.get_image("Icon", skill_go)
+    local skill_details_cfg = ShareRes.get_buddy_skill_details_cfg(skill_id)
+    Util.load_skill_icon(skill_details_cfg.Icon, skill_icon)
+  end
+  self.v_normal_skill_list = new_skill_list
+  local start_tog = self.v_normal_skill_tog_list[NORMAL_SKILL_START]
+  start_tog.isOn = false
+  start_tog.isOn = true
+end
+
+function ui:refresh_show_skill_ui(show_type)
+  local uobj = self.v_uiobjects
+  uobj.NormalSkillContent:SetActive(show_type == SHOW_TYPE.NORMAL)
+  uobj.RuneDetail:SetActive(show_type == SHOW_TYPE.RUNE)
+  if show_type == SHOW_TYPE.NORMAL then
+    for _, tog in pairs(self.v_rune_tog_list) do
+      tog.isOn = false
+    end
+  end
+  if show_type == SHOW_TYPE.RUNE then
+    for _, tog in pairs(self.v_normal_skill_tog_list) do
+      tog.isOn = false
+    end
+  end
+end
+
+function ui:cache_ui()
+  return true
+end
+
+return ui

@@ -1,0 +1,88 @@
+local const = require("const")
+local M = {}
+M.__index = M
+
+function M:gd_init()
+  self.v_in_pre_enter = false
+  self.v_init_tasks = {}
+end
+
+function M:gd_on_enter()
+  self.v_in_pre_enter = false
+  self.dummy_cnt = 0
+  self.v_cur_task_idx = 1
+end
+
+function M:gd_on_leave()
+end
+
+function M:gd_update(delta_time)
+  Global.ui_mgr:high_update(delta_time)
+  Global.scene_mgr:update(delta_time)
+end
+
+function M:gd_low_update(delta_time)
+  Global.ui_mgr:update(delta_time)
+end
+
+function M:gd_late_update()
+  Global.scene_mgr:late_update()
+  InputMgr:late_update()
+end
+
+function M:gd_fixed_update()
+  Global.scene_mgr:fixed_update()
+end
+
+function M:gd_name()
+  assert(nil)
+end
+
+function M:gd_next_task()
+  self.v_cur_task_idx = self.v_cur_task_idx + 1
+  self.dummy_cnt = 0
+end
+
+function M:gd_set_task_idx(idx)
+  self.v_cur_task_idx = idx
+  self.dummy_cnt = 0
+end
+
+function M:_exec_task()
+  if self.v_cur_task_idx > #self.v_init_tasks then
+    return true
+  end
+  local task_idx = self.v_cur_task_idx
+  local task = self.v_init_tasks[task_idx]
+  local finished = task[1](self)
+  if finished then
+    Global.gamemode:cur_mode_task_finish()
+    self:gd_next_task()
+  end
+  return false
+end
+
+function M:_load_empty_scene()
+  if 0 == self.dummy_cnt then
+    self.dummy_cnt = self.dummy_cnt + 1
+    if SceneLoader then
+      SceneLoader:load_scene(Config.EMPTY_SCENE_CFG)
+    end
+  end
+  if not SceneLoader then
+    return true
+  end
+  if SceneLoader:is_load_scene_done() then
+    Util.collectgarbage()
+    return true
+  end
+end
+
+function M:cur_task_finish()
+end
+
+function M:gd_pre_enter()
+  self.v_in_pre_enter = true
+end
+
+return M

@@ -1,0 +1,128 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local TASK_CONFIG = require("gamelogic.task.task_config")
+local GETSTATETYPE_ORDER = TASK_CONFIG.GETSTATETYPE_ORDER
+local TASK_STATE = TASK_CONFIG.TASK_STATE
+local player_card_path_prefix = "CardBG/%s"
+local _sformat = string.format
+local QUALITY_IDX = {
+  [0] = "UICommon/Common_pzk_01",
+  [1] = "UICommon/Common_pzk_01",
+  [2] = "UICommon/Common_pzk_02",
+  [3] = "UICommon/Common_pzk_02",
+  [4] = "UICommon/Common_pzk_03",
+  [5] = "UICommon/Common_pzk_04"
+}
+local ITEM_TYPE = {
+  TITLE = 19,
+  HEAD_ICON = 11,
+  CARD = 22
+}
+local TASK_PAGE_IDX = {
+  ALL = 1,
+  COMPLETE = 2,
+  UNCOMPLETE = 3
+}
+local QUALITY_ICON_PREFIX = "UICommon/"
+local ICON_PREFIX = "Icon/Item/"
+local active_color = Util.get_unity_color_by_hex(tonumber("292929", 16))
+local completed_color = Util.get_unity_color_by_hex(tonumber("f5ede2", 16))
+local active_color_time = Util.get_unity_color_by_hex(tonumber("484243", 16))
+local completed_color_time = Util.get_unity_color_by_hex(tonumber("ae9577", 16))
+
+function ui:ui_finish_load()
+  self:set_button("ItemObjCom1", function()
+    UIMgr:get_ui("itemTip"):ui_show({
+      item_id = self.v_award_item_id
+    })
+  end)
+  local btn = self:get_button(nil, nil)
+  self:set_button_listener(btn, function()
+    self:on_click_task()
+  end)
+  self.v_item_quality = Util.get_image("ItemQuality_", self.v_uiobjects.ItemObjCom1)
+  self.v_item_icon = Util.get_image("ItemIcon_", self.v_uiobjects.ItemObjCom1)
+  self.v_item_num = Util.get_text("ItemAmount_/Bg/ItemNum_", self.v_uiobjects.ItemObjCom1)
+  self.v_complete_txt = Util.get_text("Complete", self.v_uiobjects.Complete)
+  self.v_check_obj = Util.get_child_gameobj("Check", self.v_uiobjects.Complete)
+end
+
+function ui:set_data(go, data_list, index)
+  local data = data_list[index]
+  self.v_achievement = data
+  self.v_task_id = data.TaskId
+  self.v_name = data.Name
+  self.v_isHide = data.IsHide
+  self.v_task_cfg = ShareRes.get_task_cfg(data.TaskId)
+  self.v_task_data = TaskMgr:get_task_by_id(data.TaskId)
+  local condition_id = self.v_task_cfg.Condition[1]
+  local condition_cfg = ShareRes.get_battle_task_condition_cfg(condition_id)
+  local now_num = self.v_task_data.condition[condition_id]
+  local need_num = condition_cfg.Value
+  self.v_uicompents.TaskName_txt.text = self.v_name
+  self.v_uicompents.Now_txt.text = now_num
+  self.v_uicompents.Need_txt.text = need_num
+  self.v_uicompents.TaskDesc_txt.text = ShareRes.get_condition_desc(condition_id)
+  if 0 ~= need_num then
+    self.v_uicompents.ProgressBarFill_img.fillAmount = now_num / need_num
+  end
+  local award_list = ShareRes.get_award_item_data(self.v_task_cfg.Award)
+  self.v_award_item_id = award_list[1][1]
+  local award_item_num = award_list[1][2]
+  self.v_item_icon.gameObject:SetActive(true)
+  local item_cfg = ShareRes.get_item_cfg(self.v_award_item_id)
+  ResMgr:load_set_icon(self.v_item_quality, QUALITY_ICON_PREFIX .. ShareRes.get_item_quality_cfg(item_cfg.Quality).QualityIcon)
+  ResMgr:load_set_icon(self.v_item_icon, ICON_PREFIX .. item_cfg.Icon)
+  self.v_item_num.text = award_item_num
+  self.v_uicompents.ItemObjCom1_btn.enabled = true
+  self.v_uicompents.CompleteTime_txt.text = PlayerMgr:get_task_complete_time(self.v_task_id)
+  self.v_uiobjects.ItemObjCom1:SetActive(true)
+  self.v_uiobjects.ProgressBarFill:SetActive(true)
+  self.v_uiobjects.Progress:SetActive(false)
+  self.v_uiobjects.Complete:SetActive(false)
+  self.v_uiobjects.RedPoint:SetActive(false)
+  self.v_uiobjects.UnKnown:SetActive(false)
+  self.v_check_obj:SetActive(false)
+  local is_active_ui_state = true
+  self.v_order = GETSTATETYPE_ORDER[self.v_task_data.state]
+  if self.v_order == GETSTATETYPE_ORDER[TASK_STATE.receive] then
+    self.v_uiobjects.Complete:SetActive(true)
+    self.v_uiobjects.RedPoint:SetActive(true)
+  elseif self.v_order == GETSTATETYPE_ORDER[TASK_STATE.received] then
+    is_active_ui_state = false
+    self.v_uiobjects.Complete:SetActive(true)
+    self.v_check_obj:SetActive(true)
+  elseif 1 == self.v_isHide then
+    is_active_ui_state = false
+    self.v_uicompents.ItemObjCom1_btn.enabled = false
+    self.v_uiobjects.ItemObjCom1:SetActive(false)
+    self.v_uiobjects.ProgressBarFill:SetActive(false)
+    self.v_uiobjects.UnKnown:SetActive(true)
+    self.v_uicompents.TaskName_txt.text = "? ? ?"
+    self.v_uicompents.TaskDesc_txt.text = "? ? ? ?"
+  else
+    self.v_uiobjects.Progress:SetActive(true)
+  end
+  self:update_txt_color(is_active_ui_state)
+end
+
+function ui:update_txt_color(is_active)
+  local color = is_active and active_color or completed_color
+  local time_color = is_active and active_color_time or completed_color_time
+  self.v_uicompents.TaskName_txt.color = color
+  self.v_uicompents.TaskDesc_txt.color = color
+  self.v_uicompents.CompleteTime_txt.color = time_color
+  self.v_complete_txt.color = time_color
+  self.v_uiobjects.BgComplete:SetActive(is_active)
+end
+
+function ui:on_click_task()
+  if self.v_task_data.state == TASK_STATE.receive then
+    TaskMgr:submit_task(self.v_task_id, function()
+      PlayerMgr:get_all_achievement_list_form_server()
+      MsgGame:mq_publish2(Const.MSG_ON_GET_ACHIEVEMENT_AWARD)
+    end)
+  end
+end
+
+return ui

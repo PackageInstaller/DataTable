@@ -1,0 +1,107 @@
+local empty = {}
+return {
+  Events = {
+    {
+      ConditionActions = {
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = {
+            {
+              NPCId = 3029356,
+              NPCName = "最终交互",
+              Type = 1,
+              Timeout = 0.1,
+              TimeoutKey = "OzWNEPOk"
+            },
+            {
+              PosKey = "M2",
+              Rotation = 0,
+              NPCId = 3029356,
+              NPCName = "最终交互",
+              Type = 0,
+              Timeout = 0.2,
+              TimeoutKey = "HDPvmzeO"
+            }
+          },
+          ValidInTower = false
+        },
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = {
+            {
+              NPCId = 3029356,
+              NPCName = "最终交互",
+              Type = 1,
+              Timeout = 0.1,
+              TimeoutKey = "ZrIVVCgM"
+            },
+            {
+              PosKey = "M2",
+              Rotation = 0,
+              NPCId = 3029356,
+              NPCName = "最终交互",
+              Type = 0,
+              Timeout = 0.2,
+              TimeoutKey = "wJXSGAuf"
+            }
+          },
+          ValidInTower = false
+        },
+        {
+          IsValid = true,
+          IsNeedRetain = false,
+          Actions = {
+            {
+              NPCId = 3029356,
+              NPCName = "最终交互",
+              Type = 1,
+              Timeout = 0.1,
+              TimeoutKey = "cAECSUUy"
+            },
+            {
+              TaskId = 32905103,
+              Type = 5,
+              Timeout = 0.0
+            },
+            {
+              StoryId = 100229702,
+              EnableBlackFade = false,
+              DelayDestroy = false,
+              PlayFadeInTime = 0.3,
+              PlayStayTime = 0.5,
+              PlayFadeOutTime = 0.3,
+              StopFadeInTime = 0.0,
+              StopStayTime = 0.0,
+              StopFadeOutTime = 0.0,
+              NoSkipStory = false,
+              IsSettleStory = true,
+              Type = 10,
+              Timeout = 0.5,
+              TimeoutKey = "eNttsizP"
+            }
+          },
+          ValidInTower = false
+        }
+      },
+      Type = 22,
+      ConditionVariable = "",
+      IsNotCondition = false,
+      IsForeverVariable = false
+    }
+  },
+  MonsterRefreshCfg = {
+    Weight = 100,
+    MonsterLockEnemyCount = 0,
+    MonsterGroupId = 0,
+    MonsterWave = 0,
+    MonsterCount = 0,
+    SendWave = false,
+    WaveStyle = 0,
+    EndPerform = true
+  },
+  FinishiConditionDict = empty,
+  mDefaultStartTime = true,
+  mDefaultEndTime = true
+}

@@ -1,0 +1,139 @@
+return {
+  {
+    ClueCount = 0,
+    FlushDay = 0,
+    FlushType = 1,
+    Level = {
+      1,
+      2,
+      3
+    },
+    Name = "普通派遣",
+    TaskCount = {
+      {
+        2,
+        1,
+        0,
+        0
+      },
+      {
+        2,
+        2,
+        0,
+        0
+      },
+      {
+        2,
+        2,
+        1,
+        0
+      }
+    },
+    Type = 1
+  },
+  {
+    ClueCount = 5,
+    FlushDay = 0,
+    FlushType = 2,
+    Level = {
+      1,
+      2,
+      3
+    },
+    Name = "特殊派遣",
+    TaskCount = {
+      {
+        0,
+        0,
+        0,
+        1
+      },
+      {
+        0,
+        0,
+        0,
+        2
+      },
+      {
+        0,
+        0,
+        0,
+        3
+      }
+    },
+    Type = 2
+  },
+  {
+    ClueCount = 0,
+    FlushDay = 1,
+    FlushType = 3,
+    Level = {
+      1,
+      2,
+      3
+    },
+    Name = "支线派遣",
+    TaskCount = {
+      {
+        0,
+        0,
+        0,
+        0,
+        1
+      },
+      {
+        0,
+        0,
+        0,
+        0,
+        1
+      },
+      {
+        0,
+        0,
+        0,
+        0,
+        1
+      }
+    },
+    Type = 3
+  },
+  {
+    ClueCount = 0,
+    FlushDay = 0,
+    FlushType = 1,
+    Level = {
+      1,
+      2,
+      3
+    },
+    Name = "宝箱派遣",
+    TaskCount = {
+      {
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      },
+      {
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      },
+      {
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      }
+    },
+    Type = 4
+  }
+}

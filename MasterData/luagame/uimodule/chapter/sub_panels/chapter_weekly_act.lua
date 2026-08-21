@@ -1,0 +1,216 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local _tinsert = table.insert
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local commonDef = require("cs_share.common_define")
+local ACTY_TYPE = commonDef.ACTY_TYPE
+local ActivityCfg = require("gamelogic.activity.activity_config")
+local ACTY_TYPE_TO_SYSID = ActivityCfg.ACTY_TYPE_TO_SYSID
+local ENDLESS_SYS_ID = 8
+local BUDDY_TEACH_SYS_ID = ACTY_TYPE_TO_SYSID[ACTY_TYPE.BUDDY_TEACH]
+local CHAPTER_PAGE_MODEL = {
+  CLIMBING_TOWER = 1,
+  RING = 2,
+  WEEKLY_ACT = 3
+}
+
+function ui:ui_finish_load()
+end
+
+function ui:ui_on_show(page)
+  self:_regist_client_event()
+  if not page then
+    if SysOpenMgr:get_sys_is_open(ACTY_TYPE_TO_SYSID[ACTY_TYPE.CURSE_CIRCLE]) then
+      page = CHAPTER_PAGE_MODEL.RING
+    else
+      page = CHAPTER_PAGE_MODEL.CLIMBING_TOWER
+    end
+  end
+  self:init_page_list(page or 1)
+  self:refresh_sys_state()
+  self:refresh_weekly_red_point()
+  self:refresh_climbing_tower_red()
+end
+
+function ui:ui_on_hide()
+  self:remove_timer()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_NEW_SYS_OPEN, self.refresh_sys_state, self)
+  self:bind_auto_mq(Const.MSG_ACTIVITY_OPEN, self.refresh_sys_state, self)
+  self:bind_auto_mq(Const.MSG_ACTIVITY_CLOSE, self.refresh_sys_state, self)
+  self:bind_auto_mq(Const.MSG_ON_WEEKLY_REFRESH_HURDLE_DATA, self.refresh_weekly_red_point, self)
+end
+
+function ui:init_page_list(page)
+  self.v_tog_info = {
+    [CHAPTER_PAGE_MODEL.RING] = {
+      tog_name = "Page_ChalRing",
+      sys_id = ACTY_TYPE_TO_SYSID[ACTY_TYPE.CURSE_CIRCLE],
+      panel_name = "ring"
+    },
+    [CHAPTER_PAGE_MODEL.WEEKLY_ACT] = {
+      tog_name = "Page_WeekAct1",
+      sys_id = ACTY_TYPE_TO_SYSID[ACTY_TYPE.WEEK_ACTY],
+      panel_name = "weekly_act"
+    },
+    [CHAPTER_PAGE_MODEL.CLIMBING_TOWER] = {
+      tog_name = "Page_Tower",
+      sys_id = ACTY_TYPE_TO_SYSID[ACTY_TYPE.CLIMBING_TOWER],
+      panel_name = "climbing_tower"
+    }
+  }
+  local pages = {}
+  for i, v in ipairs(self.v_tog_info) do
+    local tog = self:get_toggle(nil, self.v_uiobjects[v.tog_name])
+    _tinsert(pages, tog)
+    v.tog_obj = tog.gameObject
+    v.mask_obj = self:get_child_gameobj("UnSelectMask", tog.gameObject)
+    v.panel = self:get_panel(v.panel_name)
+    v.panel:set_enable(false)
+    v.time_obj = self:get_child_gameobj("Time", tog.gameObject)
+    v.time_txt = self:get_text("Time/TimeNum", tog.gameObject)
+    v.time_obj:SetActive(false)
+    local red_obj = Util.get_child_gameobj("Redpoint", tog.gameObject)
+    v.red_obj = red_obj
+    if v.red_id and red_obj then
+      RedPointMgr:bind_redpoint(self, red_obj, v.red_id)
+    end
+  end
+  self.v_toggle_list = pages
+  self.v_page_toggle_tab = ToggleTab:new(self)
+  self.v_page_toggle_tab:init_by_toggles(pages, function(page)
+    self:switch_page(page)
+  end, page)
+  self:switch_page(page)
+  local is_start, activity_id = NoviceMgr:is_double_challenge_start(commonDef.DOUBLE_TYPE.FATEBOOK)
+  local multi_obj = Util.get_child_gameobj("Multi", self.v_uiobjects.Page_ChalRing)
+  multi_obj:SetActive(is_start)
+  if is_start then
+    local multi_times_txt = Util.get_text("MultiTimes", multi_obj)
+    multi_times_txt.text = ShareRes.get_double_challenge_cfg(activity_id).Double .. "倍"
+  end
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:get_cache_data()
+  return self.v_current_page
+end
+
+function ui:get_cache()
+  return self.v_current_page
+end
+
+function ui:clear_cache()
+  self.v_current_page = nil
+end
+
+function ui:switch_toggle(page)
+  for k, v in pairs(self.v_toggle_list) do
+    v.isOn = page == k
+  end
+  self:switch_page(page)
+end
+
+function ui:switch_page(page)
+  if self.v_tog_info[page].sys_id and not SysOpenMgr:get_sys_is_open(self.v_tog_info[page].sys_id, true) then
+    if self.v_current_page == nil then
+      Log.Error("叠境功能未开启 请检查挑战页签功能开启条件")
+      return
+    end
+    self:switch_toggle(self.v_current_page)
+    return
+  end
+  for k, v in ipairs(self.v_tog_info) do
+    v.mask_obj:SetActiveEx(page ~= k)
+    v.panel:set_enable(page == k)
+  end
+  self.v_current_page = page
+  if page == CHAPTER_PAGE_MODEL.WEEKLY_ACT then
+    self:refresh_weekly_tog_time()
+  end
+end
+
+function ui:refresh_sys_state()
+  for k, v in pairs(self.v_tog_info) do
+    if v.sys_id then
+      local open = SysOpenMgr:get_sys_is_open(v.sys_id)
+      v.tog_obj:SetActiveEx(open)
+    end
+    if k == CHAPTER_PAGE_MODEL.WEEKLY_ACT then
+      self:refresh_weekly_tog_time()
+    end
+  end
+end
+
+function ui:refresh_weekly_tog_time()
+  local show_time = false
+  if SysOpenMgr:get_sys_is_open(ACTY_TYPE_TO_SYSID[ACTY_TYPE.WEEK_ACTY]) and ActivityMgr:get_activity_is_open(ACTY_TYPE.WEEK_ACTY) then
+    show_time = WeeklyMgr:check_weekly_pvp_opn()
+  end
+  if show_time then
+    local remain_time = WeeklyMgr:get_pvp_remaining_time()
+    if not remain_time then
+      return
+    end
+    if remain_time < 0 then
+      show_time = false
+    elseif remain_time <= 3600 then
+      self:refresh_remain_timer(remain_time)
+    else
+      self:refresh_remain_text(remain_time)
+    end
+  end
+  self.v_tog_info[CHAPTER_PAGE_MODEL.WEEKLY_ACT].time_obj:SetActive(show_time)
+end
+
+function ui:refresh_remain_timer(remain_time)
+  self:remove_timer()
+  self.v_remian_timer = Global.ct_timer:add_timer("weekly_remain_timer", remain_time, function(time)
+    self:refresh_remain_text(time)
+  end)
+end
+
+function ui:refresh_remain_text(remain_time)
+  if remain_time <= 0 then
+    self:remove_timer()
+    self.v_tog_info[CHAPTER_PAGE_MODEL.WEEKLY_ACT].time_obj:SetActive(false)
+    return
+  end
+  local show_desc = Util.format_str("{1}后结束", Date.get_time_desc(remain_time))
+  self.v_tog_info[CHAPTER_PAGE_MODEL.WEEKLY_ACT].time_txt.text = show_desc
+end
+
+function ui:remove_timer()
+  if self.v_remian_timer then
+    Global.ct_timer:remove_timer(self.v_remian_timer)
+    self.v_remian_timer = nil
+  end
+end
+
+function ui:refresh_weekly_red_point()
+  local is_have_red = WeeklyMgr:get_entry_red()
+  self.v_tog_info[CHAPTER_PAGE_MODEL.WEEKLY_ACT].red_obj:SetActive(is_have_red)
+end
+
+function ui:refresh_endless_red_point()
+  local is_have_red = ChapterEndlessMgr:get_endless_red_state()
+  self.v_tog_info[CHAPTER_PAGE_MODEL.ENDLESS].red_obj:SetActive(is_have_red)
+  local endless_panel = self:get_panel(self.v_tog_info[CHAPTER_PAGE_MODEL.ENDLESS].panel_name)
+  if not endless_panel then
+    return
+  end
+  endless_panel:get_btn_start_red():SetActive(is_have_red)
+end
+
+function ui:refresh_climbing_tower_red()
+  local is_have_red = ClimbingTowerMgr:get_is_need_show_red()
+  self.v_tog_info[CHAPTER_PAGE_MODEL.CLIMBING_TOWER].red_obj:SetActive(is_have_red)
+end
+
+return ui

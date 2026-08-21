@@ -1,0 +1,64 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+
+function ui:on_click_BtnJump()
+  if not self.v_task_cfg or not Util.is_more_than_zero(self.v_task_cfg.Jump) then
+    return
+  end
+  self.v_parent_ui:ui_hide()
+  SysOpenMgr:jump_to_sys(self.v_task_cfg.Jump, true)
+end
+
+function ui:ui_finish_load()
+  self:set_button("BtnJump", function()
+    self:on_click_BtnJump()
+  end)
+end
+
+function ui:ui_on_show()
+end
+
+function ui:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:set_data(task_id)
+  self.v_task_id = task_id
+  self.v_task_cfg = ShareRes.get_task_cfg(task_id)
+  self:refresh_task_state()
+  local cur_value, target_value = TaskMgr:get_task_progress_value_by_id(self.v_task_id)
+  self.v_uicompents.TaskProgress_txt.text = string.format("(%d/%d)", cur_value, target_value)
+end
+
+function ui:refresh_task_state()
+  local task_state = TaskMgr:get_task_state(self.v_task_id)
+  local cur_time = Date.server_time()
+  local is_unlock
+  local date = self.v_task_cfg.ActiveTime and Date.get_time_stamp_by_scheme_id(self.v_task_cfg.ActiveTime) or 0
+  if date then
+    local dif_time = date - cur_time
+    is_unlock = dif_time <= 0
+  else
+    is_unlock = true
+  end
+  local comp
+  self.v_uiobjects.TaskDesc:SetActive(is_unlock)
+  if is_unlock then
+    comp = task_state == Config.CommonDefine.TaskState.Complete or task_state == Config.CommonDefine.TaskState.GotAward
+    self.v_uiobjects.TaskUnLockTime:SetActive(false)
+    self.v_uicompents.TaskDesc_txt.text = self.v_task_cfg.Desc
+  else
+    comp = false
+    local time_str = Date.get_time_formate_2(date - cur_time, false)
+    self.v_uicompents.TaskUnLockTime_txt.text = time_str
+    self.v_uiobjects.TaskUnLockTime:SetActive(true)
+  end
+  self.v_uiobjects.BtnJump:SetActive(is_unlock and not comp and Util.is_more_than_zero(self.v_task_cfg.Jump))
+  self.v_uiobjects.Complete:SetActive(is_unlock and comp)
+  self.v_uiobjects.CompleteMask:SetActive(is_unlock and comp)
+  self.v_uiobjects.Lock:SetActive(not is_unlock)
+end
+
+return ui

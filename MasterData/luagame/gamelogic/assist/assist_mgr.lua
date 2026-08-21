@@ -1,0 +1,301 @@
+local Base = require("gamelogic.base_system")
+local CombatEffectiveness = require("cs_share.combat_effectiveness")
+local all_fashionable_info = ShareRes.create("buddy.buddy_fashion")
+local Player_Hero_Helper = require("uimodule.friend.player_hero_info.player_hero_helper")
+local _tinsert = table.insert
+local _sort = table.sort
+local CommonDefine = require("cs_share.common_define")
+local Timer = Global.timer
+local M = Util.create_child_mt(Base)
+M.ASSIST_SYS_ID = 48
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_push_data = {}
+  self.v_push_buddys = {}
+end
+
+function M:get_sys_open(show_tips)
+  return SysOpenMgr:get_sys_is_open(M.ASSIST_SYS_ID, show_tips)
+end
+
+function M:on_reconnect()
+  self.v_push_data = {}
+  self.v_push_buddys = {}
+end
+
+function M:on_get_assist_fight_data(data)
+  self:on_update_push_data(data)
+end
+
+function M:request_refresh_push_list(element_id, cb)
+  Network:call("c2gs_refresh_push_list", {element_id = element_id}, function(ok, msg)
+    if ok and nil ~= cb then
+      cb()
+    end
+  end)
+end
+
+function M:request_refresh_all_push_list(cb)
+  Network:call("c2gs_refresh_all_push_list", {}, function(ok, msg)
+    if ok and nil ~= cb then
+      cb()
+    end
+  end)
+end
+
+function M:on_update_push_data(data)
+  for key, value in pairs(data) do
+    self.v_push_data[key] = value
+    if "buddy_data" == key then
+      self.v_push_buddys = {}
+      for _, push_elment_buddy in pairs(value) do
+        for _, assist_buddy in ipairs(push_elment_buddy.push_buddy) do
+          self.v_push_buddys[#self.v_push_buddys + 1] = self:build_buddy_info(assist_buddy)
+        end
+      end
+      _sort(self.v_push_buddys, function(a, b)
+        if a.lv ~= b.lv then
+          return a.lv > b.lv
+        end
+        if a.power ~= b.power then
+          return a.power > b.power
+        end
+        if a.type ~= b.type then
+          return a.type < b.type
+        end
+        if a.element ~= b.element then
+          return a.element < b.element
+        end
+        return a.index < b.index
+      end)
+    end
+  end
+  MsgGame:mq_publish2(Const.MSG_ON_ASSIST_DATA_UPDATE)
+end
+
+function M:request_set_fight_assist(episode_id, element_id, index, pos, callback)
+  Network:call("c2gs_set_fight_assist_buddy", {
+    episode_id = episode_id,
+    element_id = element_id,
+    index = index,
+    pos = pos
+  }, function(ok, resp)
+    if ok and callback then
+      callback()
+    end
+  end)
+end
+
+function M:get_stranger_help_cnt()
+  return self.v_push_data.stranger_help_cnt or 0
+end
+
+function M:get_refresh_time()
+  return self.v_push_data.refresh_time or 0
+end
+
+function M:get_remain_cd_time()
+  local cfg = ShareRes.create("helpfight.help_fight_push")[1]
+  local pass_time = Date.server_time() - (self.v_push_data.refresh_time or 0)
+  local remain_cd_time = cfg.RefreshCD - pass_time
+  return remain_cd_time > 0 and remain_cd_time or 0
+end
+
+function M:get_yesterday_friend_point()
+  return self.v_push_data.yesterday_friend_point or 0
+end
+
+function M:get_today_assist_cnt()
+  return self.v_push_data.today_assist_cnt or 0
+end
+
+function M:get_in_fight_buddy()
+  return self.v_push_data.in_fight_buddy
+end
+
+function M:get_max_assist_cnt()
+  local cfg = ShareRes.create("helpfight.help_fight_push")[1]
+  return cfg.StrangerHelpCnt
+end
+
+function M:get_max_assist_friend_point()
+  local cfg = ShareRes.create("helpfight.help_fight_push")[1]
+  return cfg.FriendPointLimit
+end
+
+function M:get_refresh_CD()
+  local cfg = ShareRes.create("helpfight.help_fight_push")[1]
+  return cfg.RefreshCD
+end
+
+function M:get_buddy_list(not_deep_copy)
+  return not_deep_copy and self.v_push_buddys or UtilTable.copy_table(self.v_push_buddys)
+end
+
+function M:set_assist_buddy(buddy_info)
+  self.v_selected_buddy_old_info = self.v_selected_buddy
+  self.v_selected_buddy = buddy_info
+end
+
+function M:get_assist_buddy_info()
+  return self.v_selected_buddy
+end
+
+function M:clear_assist_buddy_info()
+  self.v_selected_buddy = nil
+  self:clear_assist_buddy_old_info()
+end
+
+function M:is_buddy_assist(buddy_id)
+  if self.v_selected_buddy then
+    return self.v_selected_buddy.id == buddy_id
+  end
+  return false
+end
+
+function M:get_assist_buddy_old_info()
+  return self.v_selected_buddy_old_info
+end
+
+function M:clear_assist_buddy_old_info()
+  self.v_selected_buddy_old_info = nil
+end
+
+function M:check_today_refresh()
+  local refresh_time = self:get_refresh_time()
+  local cur_time = Date.server_time()
+  local today_five_time = Date.get_time_stamp(0, 5)
+  if cur_time >= today_five_time then
+    if refresh_time < today_five_time then
+      self:request_refresh_push_list()
+    end
+  else
+    local yesterday_five_time = Date.get_time_stamp(-1, 5)
+    if refresh_time < yesterday_five_time then
+      self:request_refresh_push_list()
+    end
+  end
+end
+
+function M:check_selected(buddy_info)
+  local fight_buddy = self:get_in_fight_buddy()
+  if not fight_buddy or fight_buddy.uuid ~= buddy_info.uuid then
+    return false
+  end
+  if fight_buddy.id ~= buddy_info.id then
+    return false
+  end
+  if fight_buddy.type ~= buddy_info.type then
+    return false
+  end
+  return true
+end
+
+function M:build_buddy_info(assist_buddy)
+  local buddy_info = {}
+  buddy_info.uuid = assist_buddy.uuid
+  buddy_info.type = assist_buddy.type
+  buddy_info.snap_info = assist_buddy.snap_info
+  buddy_info.fashion = assist_buddy.fashion
+  buddy_info.skill = assist_buddy.skill
+  buddy_info.fix_buddy_id = assist_buddy.fix_buddy_id
+  buddy_info.puzzle_graph = assist_buddy.puzzle_graph
+  buddy_info.id = assist_buddy.id
+  buddy_info.lv = assist_buddy.lv
+  buddy_info.break_lv = assist_buddy.break_lv
+  buddy_info.advance = assist_buddy.advance_lv
+  buddy_info.talent_lv = assist_buddy.talent_lv
+  buddy_info.relic_data = assist_buddy.relic_data
+  buddy_info.relic_slot = assist_buddy.relic_slot
+  buddy_info.gemstone_list = assist_buddy.gemstone_list
+  buddy_info.exp = 0
+  local weapon_info = {}
+  weapon_info.id = assist_buddy.weapon_id
+  weapon_info.lv = assist_buddy.weapon_lv
+  weapon_info.break_lv = assist_buddy.weapon_break_lv
+  weapon_info.advance = assist_buddy.weapon_advance_lv or 1
+  weapon_info.gemstone_list = assist_buddy.gemstone_list
+  weapon_info.exp = 0
+  buddy_info.weapon_info = weapon_info
+  buddy_info.power = assist_buddy.power or 0
+  buddy_info.index = assist_buddy.index
+  local buddy_cfg = ShareRes.get_buddy_cfg(assist_buddy.id)
+  buddy_info.element = buddy_cfg.Element
+  buddy_info.job = buddy_cfg.Job
+  buddy_info.equip_fashion = assist_buddy.equip_fashion
+  return buddy_info
+end
+
+function M:get_buddy_combat_effectiveness(buddy_info, entry_temp)
+  local buddy_id = buddy_info.id
+  local equip_info = buddy_info.weapon_info
+  local args_map = {}
+  args_map.buddy_lv = buddy_info.lv
+  args_map.buddy_break = buddy_info.break_lv
+  args_map.buddy_advance = buddy_info.advance
+  args_map.buddy_talent = buddy_info.talent_lv
+  args_map.equip_id = equip_info.id
+  args_map.equip_advance = equip_info.advance
+  args_map.gemstone_list = buddy_info.gemstone_list
+  local _, buddy_attr = CharacterMgr.cal_buddy_attr(buddy_id, buddy_info.break_lv, buddy_info.lv, buddy_info.advance)
+  local _, equip_attr = CharacterMgr.cal_equip_attr_no_floor(equip_info.id, equip_info.break_lv, equip_info.lv)
+  args_map.attr_list = CharacterMgr:cal_double_arry_sum(buddy_attr, equip_attr)
+  args_map.skill_data = self.get_buddy_skill_list_by_id(buddy_info.skill)
+  local is_ok, msg = xpcall(CombatEffectiveness.calc_buddy_final_score, debug.traceback, buddy_id, args_map)
+  if is_ok then
+    return msg
+  else
+    Log.Error("助战获取战力失败", string.format("buddy_id: %s, msg: %s", buddy_id, msg))
+    return 0
+  end
+end
+
+function M.get_buddy_skill_list_by_id(skill_list)
+  local skill_list_new = {}
+  for _, skill in pairs(skill_list) do
+    skill_list_new[skill.id] = skill.lv
+  end
+  return skill_list_new
+end
+
+function M:check_show_add_assist_friend_tips()
+  local assist_buddy = self:get_assist_buddy_info()
+  if assist_buddy and assist_buddy.type == CommonDefine.ASSIST_BUDDY_TYPE.STRANGER then
+    local snap_info = assist_buddy.snap_info
+    local player_data = {
+      uuid = assist_buddy.uuid,
+      name = snap_info.name,
+      lv = snap_info.grade,
+      icon = snap_info.face_id
+    }
+    FriendMgr:show_add_friend_tips(player_data)
+  end
+end
+
+function M:try_hide_add_assist_friend_tips()
+  FriendMgr:hide_add_friend_tips()
+  self:clear_assist_buddy_info()
+end
+
+function M:request_player_info(uuid)
+  ChatMgr:request_get_role_snapinfo(uuid, function(player_data)
+    if player_data then
+      UIMgr:get_ui("ui_player_new_info"):ui_show(player_data)
+    end
+  end)
+end
+
+function M:refresh_relationship()
+  if not self.v_push_buddys then
+    return
+  end
+  for i, data in ipairs(self.v_push_buddys) do
+    if data.type ~= CommonDefine.ASSIST_BUDDY_TYPE.ROBOT then
+      local is_friend = FriendMgr:is_in_friend(data.uuid)
+      data.type = is_friend and CommonDefine.ASSIST_BUDDY_TYPE.FRIEND or CommonDefine.ASSIST_BUDDY_TYPE.STRANGER
+    end
+  end
+end
+
+return M

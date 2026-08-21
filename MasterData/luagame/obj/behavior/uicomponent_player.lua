@@ -1,0 +1,32 @@
+local Base = require("obj.behavior.uicomponent_char")
+local M = Util.create_child_mt(Base)
+
+function M:_init(char, data)
+  Base._init(self, char)
+  self.v_flag_style_idx = data.profile.guild_bdage
+  self.v_flag_color_idx = data.profile.guild_bdage_color
+  self.v_flag_word = data.profile.guild_bdage_word
+end
+
+function M:setup_headbar()
+  self:add_headbar(self.v_char.attr_mgr.name)
+end
+
+function M:update_headbar_text(...)
+  Base.update_headbar_text(self, ...)
+  if self.v_headbar then
+    self:_update_guild_icon(self.v_flag_style_idx, self.v_flag_color_idx, self.v_flag_word)
+  end
+end
+
+function M:update_guild_icon(flag_style_idx, flag_color_idx, flag_word)
+  if self.v_flag_style_idx == flag_style_idx and self.v_flag_color_idx == flag_color_idx and self.v_flag_word == flag_word then
+    return
+  end
+  self:_update_guild_icon(flag_style_idx, flag_color_idx, flag_word)
+  self.v_flag_style_idx = flag_style_idx
+  self.v_flag_color_idx = flag_color_idx
+  self.v_flag_word = flag_word
+end
+
+return M

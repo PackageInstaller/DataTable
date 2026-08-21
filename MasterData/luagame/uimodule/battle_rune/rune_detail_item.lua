@@ -1,0 +1,168 @@
+local Base = require("ui.uiobject")
+local ui = Util.create_child_mt(Base)
+local RUNE_HELPER = require("gamelogic.activity.rune2_helper")
+local NOT_HAVE_RUNE = 0
+local RUNE_COLOR = RUNE_HELPER.RUNE_COLOR
+local DETAIL_ITEM_SHOW_TYPE = RUNE_HELPER.DETAIL_ITEM_SHOW_TYPE
+local util_get_color = Util.get_unity_color_by_hex
+local BUDDY_RUNE_SKILL_ENTRY_KEY = "BUDDY_RUNE_SKILL_ENTRY_KEY"
+local LV_START = 1
+local LV_END = 3
+local SHOW_TYPE = {SINGLE = 1, MULTIPLE = 2}
+
+function ui:register_template()
+  self.v_cid = self.v_object:GetInstanceID()
+  self.v_temp_key = BUDDY_RUNE_SKILL_ENTRY_KEY .. self.v_cid
+  self:register_exist_auto_template(self.v_temp_key, self.v_uiobjects.EntryItem, self.v_uiobjects.EntryContent)
+end
+
+function ui:ui_on_show()
+  self.v_skill_tog_list = {}
+  for i = LV_START, LV_END do
+    local skill_tog = self.v_uicompents["SkillLevel" .. i .. "_tog"]
+    self.v_skill_tog_list[i] = skill_tog
+    self:set_toggle_listener(skill_tog, function(is_on)
+      self:_on_click_skill_lv(is_on, i)
+    end)
+  end
+  self:register_template()
+end
+
+function ui:ui_on_hide()
+  self.v_skill_tog_list = nil
+  self:unregister_template(self.v_temp_key)
+  self.v_cid = nil
+  self.v_temp_key = nil
+  self.v_show_type = nil
+  self.v_rune_skill_list = nil
+  self.v_buddy_id = nil
+  self.v_rune_type = nil
+  self.v_buddy_skill_lv = nil
+  self.v_entry_list = nil
+  self.v_is_now_pos = nil
+end
+
+function ui:set_data(skill_param, show_type)
+  if not skill_param then
+    return
+  end
+  self.v_show_type = show_type
+  self.v_buddy_id = skill_param.buddy_id
+  self.v_rune_type = skill_param.rune_type
+  self.v_is_now_pos = skill_param.is_now_pos
+  self.v_change_entry_color = skill_param.change_entry_color
+  local buddy_rune_lv = skill_param.buddy_rune_lv
+  self.star_list_info = skill_param.star_list_info
+  self.v_buddy_skill_lv = buddy_rune_lv
+  self.v_entry_list = skill_param.entry_list
+  self.v_active_lv = LV_START
+  self:init_skill_data_list()
+  self:refresh_skill_rune_ui()
+  self:refresh_skill_active()
+  self:refresh_skill_info(LV_START)
+  self:refresh_entry_list()
+  self:init_tog_state()
+end
+
+function ui:init_skill_data_list()
+  self.v_rune_skill_list = {}
+  for lv = LV_START, LV_END do
+    local rune_cfg = ShareRes.get_buddy_rune_lv_cfg(self.v_buddy_id, self.v_rune_type, lv)
+    self.v_rune_skill_list[lv] = rune_cfg
+  end
+end
+
+function ui:refresh_skill_rune_ui()
+  self.v_uiobjects.RuneSkillList:SetActive(true)
+  self:_set_star_list_state()
+end
+
+function ui:_set_star_list_state()
+  local star_list_key = self.star_list_info and self.star_list_info.star_list_key or "SkillStar"
+  local star_key = self.star_list_info and self.star_list_info.star_key or "Star"
+  local star_light_key = self.star_list_info and self.star_list_info.star_light_key or "Light"
+  local star_list = self.v_parent_ui.v_uiobjects[star_list_key]
+  if star_list then
+    star_list:SetActive(true)
+    for lv = LV_START, LV_END do
+      local star = self.v_parent_ui.v_uiobjects[star_key .. lv]
+      local star_light = Util.get_child(star_light_key, star)
+      star_light.gameObject:SetActive(lv <= self.v_buddy_skill_lv)
+    end
+  end
+end
+
+function ui:refresh_skill_active()
+  for lv = LV_START, LV_END do
+    local skill_obj = self.v_uiobjects["SkillLevel" .. lv]
+    local active_obj = Util.get_child_gameobj("Active", skill_obj)
+    local is_active = self.v_buddy_skill_lv == lv and self.v_is_now_pos
+    active_obj:SetActive(is_active)
+    if is_active then
+      self.v_active_lv = lv
+    end
+  end
+end
+
+function ui:refresh_skill_info(lv)
+  local ucom = self.v_uicompents
+  local name_text = ucom.RuneSkillName_txt
+  local desc_text = ucom.RuneSkillDesc_txt
+  local rune_cfg = self.v_rune_skill_list[lv]
+  name_text.text = Util.format_str("暂无")
+  desc_text.text = ""
+  if rune_cfg then
+    local condition = rune_cfg.Condition
+    local skill_name = rune_cfg.SkillName
+    name_text.text = skill_name
+    desc_text.text = rune_cfg.SkillDesc
+  end
+end
+
+function ui:refresh_entry_list()
+  self:give_back_auto_cache(self.v_temp_key)
+  self.v_uiobjects.NormalEntryItem:SetActive(false)
+  if not self.v_entry_list or not next(self.v_entry_list) then
+    self.v_uiobjects.NormalEntryItem:SetActive(true)
+    local no_entry_content
+    if self.v_show_type == DETAIL_ITEM_SHOW_TYPE.SET_NEXT_VIEW then
+      no_entry_content = "替换后随机生成零到三条"
+    else
+      no_entry_content = "无词条"
+    end
+    self.v_uicompents.NoEntryName_txt.text = no_entry_content
+    return
+  end
+  for _, entry_id in pairs(self.v_entry_list) do
+    local go = self:get_auto_cache(self.v_temp_key)
+    self:refresh_entry_item(entry_id, go)
+  end
+end
+
+function ui:refresh_entry_item(entry_id, go)
+  local change_entry_color = self.v_change_entry_color
+  local entry_color
+  if change_entry_color then
+    local is_change = change_entry_color.is_change
+    entry_color = is_change and change_entry_color.change_color or change_entry_color.not_change_color
+  end
+  local entry_cfg = ShareRes.get_entry_cfg(entry_id)
+  local entry_desc_text = Util.get_text("EntryDesc", go)
+  entry_desc_text.text = entry_cfg.Desc
+  if entry_color then
+    entry_desc_text.color = entry_color
+  end
+end
+
+function ui:_on_click_skill_lv(is_on, idx)
+  if is_on then
+    self:refresh_skill_info(idx)
+  end
+end
+
+function ui:init_tog_state()
+  self.v_skill_tog_list[self.v_active_lv].isOn = false
+  self.v_skill_tog_list[self.v_active_lv].isOn = true
+end
+
+return ui

@@ -1,0 +1,98 @@
+local M = {}
+M.__index = M
+local listenerMT = {}
+
+function listenerMT.__eq(a, b)
+  return a.func == b.func and a.scope == b.scope
+end
+
+function M:new(...)
+  local class = {}
+  class = setmetatable({}, self)
+  class.__index = class
+  class.listeners = {}
+  class.oneTimeListeners = {}
+  class.numListeners = 0
+  return class
+end
+
+function M:add(func, scope)
+  if nil == func then
+    error("Function passed to signal:add() must not non-nil.")
+    return nil
+  end
+  local listener = self:_new_listener(func, scope)
+  local index = self:_index_of(self.listeners, listener)
+  if nil ~= index then
+    return nil
+  end
+  table.insert(self.listeners, listener)
+  self.numListeners = self.numListeners + 1
+  return listener
+end
+
+function M:addOnce(func, scope)
+  local listener = self:add(func, scope)
+  if nil == listener then
+    return nil
+  end
+  table.insert(self.oneTimeListeners, listener)
+  return listener
+end
+
+function M:dispatch(...)
+  for i, listener in ipairs(self.listeners) do
+    if listener.scope then
+      listener.func(listener.scope, ...)
+    else
+      listener.func(...)
+    end
+  end
+  while #self.oneTimeListeners > 0 do
+    self:remove(self.oneTimeListeners[1])
+  end
+end
+
+function M:remove(func, scope)
+  local listener
+  if type(func) == "function" then
+    listener = self:_new_listener(func, scope)
+  else
+    listener = func
+  end
+  local index = self:_index_of(self.listeners, listener)
+  if nil ~= index then
+    table.remove(self.listeners, index)
+    self.numListeners = self.numListeners - 1
+    index = self:_index_of(self.oneTimeListeners, listener)
+    if nil ~= index then
+      table.remove(self.oneTimeListeners, index)
+    end
+  end
+end
+
+function M:removeAll()
+  while #self.listeners > 0 do
+    self:remove(self.listeners[1])
+  end
+end
+
+function M:_index_of(t, value, start)
+  if nil == start then
+    start = 1
+  end
+  for i, v in ipairs(t) do
+    if i >= start and v == value then
+      return i
+    end
+  end
+  return nil
+end
+
+function M:_new_listener(func, scope)
+  local listener = {func = func, scope = scope}
+  setmetatable(listener, listenerMT)
+  return listener
+end
+
+return M

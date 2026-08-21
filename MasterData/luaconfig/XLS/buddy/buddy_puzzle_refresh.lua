@@ -1,0 +1,17 @@
+return {
+  {
+    ConsumeItemCount = 1,
+    ConsumeItemId = 37,
+    Count = 1
+  },
+  {
+    ConsumeItemCount = 2,
+    ConsumeItemId = 37,
+    Count = 2
+  },
+  {
+    ConsumeItemCount = 3,
+    ConsumeItemId = 37,
+    Count = 3
+  }
+}

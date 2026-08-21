@@ -1,0 +1,57 @@
+return {
+  {
+    Arg = {2},
+    Desc = "迷失值-2",
+    IconPath = "FateBook/Event_icon_zbpyh_yx",
+    Id = 1,
+    Name = "专注",
+    Type = 6,
+    UseCount = 1
+  },
+  {
+    Arg = {},
+    Desc = "强化一个片语",
+    IconPath = "FateBook/Event_icon_zbpyh_yx",
+    Id = 2,
+    Name = "研习",
+    Type = 4,
+    UseCount = 1
+  },
+  {
+    Arg = {},
+    Desc = "消耗[光尘]强化片语",
+    IconPath = "FateBook/Event_icon_zbpyh_yx",
+    Id = 3,
+    Name = "最终准备",
+    Type = 5
+  },
+  {
+    Arg = {1},
+    Desc = "获得一件奇珍",
+    IconPath = "FateBook/Event_icon_zbpyh_ts",
+    Id = 4,
+    Name = "探索",
+    Type = 3,
+    UseCount = 1
+  },
+  {
+    Arg = {2000},
+    CostCount = 300,
+    CostItem = 500001,
+    Desc = "复活和治疗成员",
+    IconPath = "FateBook/Event_icon_zbpyh_xx",
+    Id = 5,
+    Name = "休息",
+    Type = 8
+  },
+  {
+    Arg = {7000001},
+    CostCount = 150,
+    CostItem = 500001,
+    Desc = "复活和治疗成员",
+    IconPath = "FateBook/Event_icon_zbpyh_xx",
+    Id = 6,
+    Name = "休息",
+    Type = 9
+  }
+}

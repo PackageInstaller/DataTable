@@ -1,0 +1,1362 @@
+return {
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 1,
+    Row = {
+      [2] = {
+        2,
+        3,
+        4
+      },
+      [3] = {
+        2,
+        3,
+        4
+      },
+      [4] = {
+        4,
+        5,
+        6
+      },
+      [5] = {
+        4,
+        5,
+        6
+      }
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 2,
+    Row = {
+      [2] = {
+        3,
+        4,
+        5
+      },
+      [3] = {
+        3,
+        4,
+        5
+      },
+      [4] = {
+        3,
+        4,
+        5
+      },
+      [5] = {3, 5}
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 3,
+    Row = {
+      [2] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      [3] = {3, 5},
+      [4] = {3, 5},
+      [5] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      }
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 4,
+    Row = {
+      {4},
+      {
+        3,
+        4,
+        5
+      },
+      {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      {3, 5}
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 5,
+    Row = {
+      [2] = {2, 3},
+      [3] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      [4] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      [5] = {5, 6}
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 6,
+    Row = {
+      [2] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      [3] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      [4] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      [5] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      }
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 7,
+    Row = {
+      [2] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      [3] = {
+        2,
+        3,
+        5,
+        6
+      },
+      [4] = {
+        2,
+        3,
+        5,
+        6
+      },
+      [5] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      }
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 8,
+    Row = {
+      [2] = {
+        2,
+        3,
+        5,
+        6
+      },
+      [3] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      [4] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      [5] = {
+        2,
+        3,
+        5,
+        6
+      }
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 9,
+    Row = {
+      [2] = {2, 6},
+      [3] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      [4] = {
+        3,
+        4,
+        5
+      },
+      [5] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      [6] = {2, 6}
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 10,
+    Row = {
+      {4},
+      {
+        3,
+        4,
+        5
+      },
+      {
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      },
+      {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      {
+        3,
+        4,
+        5
+      },
+      {4}
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 11,
+    Row = {
+      [2] = {
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      },
+      [3] = {
+        2,
+        3,
+        6,
+        7
+      },
+      [4] = {
+        2,
+        3,
+        6,
+        7
+      },
+      [5] = {
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      }
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 12,
+    Row = {
+      {
+        3,
+        4,
+        5
+      },
+      {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      {
+        3,
+        4,
+        5
+      },
+      {
+        3,
+        4,
+        5
+      },
+      {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      {
+        3,
+        4,
+        5
+      }
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 13,
+    Row = {
+      [2] = {
+        3,
+        4,
+        5
+      },
+      [3] = {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      [4] = {
+        3,
+        4,
+        5
+      },
+      [5] = {
+        2,
+        4,
+        6
+      }
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 14,
+    Row = {
+      {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      {
+        3,
+        4,
+        5
+      },
+      {4},
+      {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      {
+        3,
+        4,
+        5
+      },
+      {4}
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 15,
+    Row = {
+      {3, 6},
+      {
+        3,
+        4,
+        5,
+        6
+      },
+      {
+        3,
+        4,
+        5,
+        6
+      },
+      {4, 5},
+      {
+        2,
+        3,
+        6,
+        7
+      },
+      {
+        2,
+        3,
+        6,
+        7
+      }
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 16,
+    Row = {
+      {
+        2,
+        3,
+        5,
+        6
+      },
+      {
+        2,
+        4,
+        6
+      },
+      {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      {
+        2,
+        4,
+        6
+      },
+      {
+        2,
+        4,
+        6
+      },
+      {
+        2,
+        3,
+        4,
+        5,
+        6
+      }
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 17,
+    Row = {
+      {
+        2,
+        4,
+        6
+      },
+      {
+        2,
+        4,
+        6
+      },
+      [4] = {
+        2,
+        3,
+        5,
+        6
+      },
+      [5] = {
+        2,
+        3,
+        5,
+        6
+      }
+    }
+  },
+  {
+    Icon = "ActPuzzle/qqb_bg_play_gz_grey",
+    Id = 18,
+    Row = {
+      {
+        2,
+        3,
+        4,
+        5,
+        6
+      },
+      {
+        3,
+        4,
+        5
+      },
+      {4},
+      {4},
+      {
+        3,
+        4,
+        5
+      },
+      {
+        2,
+        3,
+        4,
+        5,
+        6
+      }
+    }
+  },
+  [101] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 101,
+    Row = {
+      {2, 3},
+      {2, 3}
+    }
+  },
+  [102] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 102,
+    Row = {
+      {
+        1,
+        2,
+        3
+      },
+      {1}
+    }
+  },
+  [103] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 103,
+    Row = {
+      {
+        1,
+        2,
+        3
+      },
+      {1}
+    }
+  },
+  [201] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 201,
+    Row = {
+      {1},
+      {1},
+      {1}
+    }
+  },
+  [202] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 202,
+    Row = {
+      {2},
+      {2, 3},
+      {3}
+    }
+  },
+  [203] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 203,
+    Row = {
+      [2] = {
+        1,
+        2,
+        3
+      },
+      [3] = {3}
+    }
+  },
+  [301] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 301,
+    Row = {
+      {
+        1,
+        2,
+        3
+      },
+      {2}
+    }
+  },
+  [302] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 302,
+    Row = {
+      {
+        1,
+        2,
+        3
+      },
+      {3}
+    }
+  },
+  [303] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 303,
+    Row = {
+      {
+        1,
+        2,
+        3
+      }
+    }
+  },
+  [304] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 304,
+    Row = {
+      {1, 2},
+      {2}
+    }
+  },
+  [401] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 401,
+    Row = {
+      {2},
+      {1, 2},
+      {2}
+    }
+  },
+  [402] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 402,
+    Row = {
+      {2},
+      {2, 3},
+      {2}
+    }
+  },
+  [403] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 403,
+    Row = {
+      [2] = {1, 2},
+      [3] = {2, 3}
+    }
+  },
+  [404] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 404,
+    Row = {
+      {2, 3},
+      {1, 2}
+    }
+  },
+  [501] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 501,
+    Row = {
+      {
+        1,
+        2,
+        3
+      }
+    }
+  },
+  [502] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 502,
+    Row = {
+      {
+        1,
+        2,
+        3
+      }
+    }
+  },
+  [503] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 503,
+    Row = {
+      {
+        1,
+        2,
+        3
+      },
+      {1}
+    }
+  },
+  [504] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 504,
+    Row = {
+      {2, 3},
+      {2, 3}
+    }
+  },
+  [601] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 601,
+    Row = {
+      {
+        1,
+        2,
+        3
+      },
+      {2}
+    }
+  },
+  [602] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 602,
+    Row = {
+      {
+        1,
+        2,
+        3
+      },
+      {2}
+    }
+  },
+  [603] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 603,
+    Row = {
+      {1, 2},
+      {2, 3}
+    }
+  },
+  [604] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 604,
+    Row = {
+      {2, 3},
+      {1, 2}
+    }
+  },
+  [605] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_red",
+    Id = 605,
+    Row = {
+      {1},
+      {1},
+      {1, 2}
+    }
+  },
+  [701] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 701,
+    Row = {
+      {1, 2},
+      {2}
+    }
+  },
+  [702] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 702,
+    Row = {
+      {
+        1,
+        2,
+        3
+      },
+      {1}
+    }
+  },
+  [703] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 703,
+    Row = {
+      {
+        1,
+        2,
+        3
+      }
+    }
+  },
+  [704] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 704,
+    Row = {
+      {1, 2},
+      {2, 3}
+    }
+  },
+  [705] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_red",
+    Id = 705,
+    Row = {
+      {2, 3},
+      {1, 2}
+    }
+  },
+  [801] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 801,
+    Row = {
+      {
+        1,
+        2,
+        3
+      },
+      {3}
+    }
+  },
+  [802] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 802,
+    Row = {
+      {
+        1,
+        2,
+        3
+      },
+      {3}
+    }
+  },
+  [803] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 803,
+    Row = {
+      {1, 2},
+      {2, 3}
+    }
+  },
+  [804] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 804,
+    Row = {
+      {
+        1,
+        2,
+        3
+      }
+    }
+  },
+  [805] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_red",
+    Id = 805,
+    Row = {
+      {1, 2},
+      {1}
+    }
+  },
+  [901] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 901,
+    Row = {
+      {1, 2},
+      {2, 3}
+    }
+  },
+  [902] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 902,
+    Row = {
+      {1, 2},
+      {1, 2}
+    }
+  },
+  [903] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 903,
+    Row = {
+      {2},
+      {2}
+    }
+  },
+  [904] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 904,
+    Row = {
+      {2},
+      {2},
+      {1, 2}
+    }
+  },
+  [905] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_red",
+    Id = 905,
+    Row = {
+      {1, 2},
+      {2}
+    }
+  },
+  [1001] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 1001,
+    Row = {
+      [2] = {2},
+      [3] = {
+        1,
+        2,
+        3
+      }
+    }
+  },
+  [1002] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 1002,
+    Row = {
+      {1, 2},
+      {2, 3}
+    }
+  },
+  [1003] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 1003,
+    Row = {
+      [2] = {1, 2},
+      [3] = {2, 3}
+    }
+  },
+  [1004] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 1004,
+    Row = {
+      {3},
+      {2, 3},
+      {2}
+    }
+  },
+  [1005] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_red",
+    Id = 1005,
+    Row = {
+      {2, 3},
+      {1, 2}
+    }
+  },
+  [1101] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 1101,
+    Row = {
+      {
+        1,
+        2,
+        3
+      },
+      {2}
+    }
+  },
+  [1102] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 1102,
+    Row = {
+      {2},
+      {2},
+      {2, 3}
+    }
+  },
+  [1103] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 1103,
+    Row = {
+      {1, 2},
+      {2, 3}
+    }
+  },
+  [1104] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 1104,
+    Row = {
+      {1, 2}
+    }
+  },
+  [1105] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_red",
+    Id = 1105,
+    Row = {
+      {
+        1,
+        2,
+        3
+      }
+    }
+  },
+  [1106] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_yellow",
+    Id = 1106,
+    Row = {
+      {1, 2},
+      {1}
+    }
+  },
+  [1201] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 1201,
+    Row = {
+      {1, 2},
+      {2, 3}
+    }
+  },
+  [1202] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 1202,
+    Row = {
+      {
+        1,
+        2,
+        3
+      }
+    }
+  },
+  [1203] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 1203,
+    Row = {
+      {2},
+      {2},
+      {2, 3}
+    }
+  },
+  [1204] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 1204,
+    Row = {
+      {2},
+      {2, 3}
+    }
+  },
+  [1205] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_red",
+    Id = 1205,
+    Row = {
+      {
+        1,
+        2,
+        3
+      },
+      {2}
+    }
+  },
+  [1206] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_yellow",
+    Id = 1206,
+    Row = {
+      {2},
+      {1, 2},
+      {2}
+    }
+  },
+  [1301] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 1301,
+    Row = {
+      {1, 3},
+      {2, 3}
+    }
+  },
+  [1302] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 1302,
+    Row = {
+      {
+        1,
+        2,
+        3
+      },
+      {2}
+    }
+  },
+  [1303] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 1303,
+    Row = {
+      {2, 3},
+      [3] = {3}
+    }
+  },
+  [1304] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 1304,
+    Row = {
+      {1},
+      {1},
+      {1}
+    }
+  },
+  [1401] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 1401,
+    Row = {
+      {1},
+      {2},
+      {3}
+    }
+  },
+  [1402] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 1402,
+    Row = {
+      {2},
+      {2},
+      {1}
+    }
+  },
+  [1403] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 1403,
+    Row = {
+      {1, 2},
+      {2, 3}
+    }
+  },
+  [1404] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 1404,
+    Row = {
+      {3},
+      {2, 3},
+      {2}
+    }
+  },
+  [1405] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_red",
+    Id = 1405,
+    Row = {
+      [2] = {2},
+      [3] = {
+        1,
+        2,
+        3
+      }
+    }
+  },
+  [1501] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 1501,
+    Row = {
+      {1, 2},
+      {1, 2}
+    }
+  },
+  [1502] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 1502,
+    Row = {
+      {1, 2},
+      {2}
+    }
+  },
+  [1503] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 1503,
+    Row = {
+      {1, 3},
+      {1, 2},
+      {2}
+    }
+  },
+  [1504] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 1504,
+    Row = {
+      [2] = {3},
+      [3] = {
+        1,
+        2,
+        3
+      }
+    }
+  },
+  [1505] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_red",
+    Id = 1505,
+    Row = {
+      {2},
+      {2},
+      {2, 3}
+    }
+  },
+  [1601] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 1601,
+    Row = {
+      {1},
+      {1},
+      {2, 3}
+    }
+  },
+  [1602] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 1602,
+    Row = {
+      {1, 2},
+      {2},
+      {2}
+    }
+  },
+  [1603] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 1603,
+    Row = {
+      {2, 3},
+      {2},
+      {2}
+    }
+  },
+  [1604] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 1604,
+    Row = {
+      {3},
+      {2},
+      {2}
+    }
+  },
+  [1605] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_red",
+    Id = 1605,
+    Row = {
+      {1, 2},
+      {2},
+      {2}
+    }
+  },
+  [1606] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_yellow",
+    Id = 1606,
+    Row = {
+      {2, 3},
+      {3},
+      {2}
+    }
+  },
+  [1701] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 1701,
+    Row = {
+      [2] = {3},
+      [3] = {2, 3}
+    }
+  },
+  [1702] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 1702,
+    Row = {
+      {1},
+      [3] = {1}
+    }
+  },
+  [1703] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 1703,
+    Row = {
+      {1},
+      {2}
+    }
+  },
+  [1704] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 1704,
+    Row = {
+      {1, 3}
+    }
+  },
+  [1705] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_red",
+    Id = 1705,
+    Row = {
+      {2},
+      [3] = {2}
+    }
+  },
+  [1706] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_yellow",
+    Id = 1706,
+    Row = {
+      [2] = {1},
+      [3] = {1, 3}
+    }
+  },
+  [1801] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_purple",
+    Id = 1801,
+    Row = {
+      {
+        1,
+        2,
+        3
+      }
+    }
+  },
+  [1802] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_blue",
+    Id = 1802,
+    Row = {
+      {1},
+      {2},
+      {3}
+    }
+  },
+  [1803] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_cyan",
+    Id = 1803,
+    Row = {
+      {2},
+      {2},
+      {1}
+    }
+  },
+  [1804] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_green",
+    Id = 1804,
+    Row = {
+      {3},
+      {1}
+    }
+  },
+  [1805] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_red",
+    Id = 1805,
+    Row = {
+      {3},
+      {2},
+      {1}
+    }
+  },
+  [1806] = {
+    Icon = "ActPuzzle/qqb_bg_play_gz_yellow",
+    Id = 1806,
+    Row = {
+      {
+        1,
+        2,
+        3
+      },
+      {3}
+    }
+  }
+}

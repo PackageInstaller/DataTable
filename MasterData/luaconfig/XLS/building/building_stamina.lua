@@ -1,0 +1,27 @@
+return {
+  {
+    Capacity = 100,
+    Level = 1,
+    StaminaExchangeId = 7
+  },
+  {
+    Capacity = 200,
+    Level = 2,
+    StaminaExchangeId = 7
+  },
+  {
+    Capacity = 300,
+    Level = 3,
+    StaminaExchangeId = 7
+  },
+  {
+    Capacity = 400,
+    Level = 4,
+    StaminaExchangeId = 7
+  },
+  {
+    Capacity = 500,
+    Level = 5,
+    StaminaExchangeId = 7
+  }
+}

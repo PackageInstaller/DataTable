@@ -1,0 +1,98 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local Timer = Global.timer
+local DESC_STORY_KEY = "DESC_STORY_KEY"
+local MODEL = {
+  v_chapter_content = {
+    "DescList",
+    BIND_TYPE.OBJECT
+  },
+  v_chapter_template = {
+    "DescTemp",
+    BIND_TYPE.OBJECT
+  }
+}
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnBack", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnLast", function()
+    self:click_last()
+  end)
+  self:set_button("BtnNext", function()
+    self:click_next()
+  end)
+  self:register_exist_auto_template(DESC_STORY_KEY, self.v_chapter_template, self.v_chapter_content)
+end
+
+function ui:click_last()
+  if self.v_idx <= 1 then
+    return
+  end
+  self.v_idx = self.v_idx - 1
+  self:update_desc_info(self.v_idx)
+end
+
+function ui:click_next()
+  if self.v_idx >= #self.v_detail_list then
+    return
+  end
+  self.v_idx = self.v_idx + 1
+  self:update_desc_info(self.v_idx)
+end
+
+function ui:update_btn_visible()
+  self.v_uiobjects.BtnLast:SetActive(self.v_idx > 1)
+  self.v_uiobjects.BtnNext:SetActive(self.v_idx < #self.v_detail_list)
+end
+
+function ui:ui_on_show(story_id)
+  SceneMgr:set_game_pause(true)
+  self.v_story_id = story_id
+  self.v_story_cfg = ShareRes.get_desc_story_cfg(story_id)
+  Util.assert(self.v_story_cfg, "desc story cfg error = " .. story_id)
+  self.v_detail_list = self.v_story_cfg.StoryDetailId
+  self:update_desc_info(1)
+end
+
+function ui:ui_on_hide()
+  SceneMgr:set_game_pause(false)
+  SceneMgr:c2gs_call_scene("on_desc_story_end", self.v_story_id)
+  BehaviorMgr:call_scene_logic_event_fun("on_desc_story_end", self.v_story_id)
+end
+
+function ui:update_desc_info(idx)
+  self.v_idx = idx
+  self:update_btn_visible()
+  self:give_back_auto_cache(DESC_STORY_KEY)
+  local detail_list = self.v_detail_list
+  local select_id = detail_list[idx]
+  if not select_id then
+    return
+  end
+  local story_detail = ShareRes.get_desc_story_detail_cfg(select_id)
+  local show_num = #story_detail.Desc
+  local title_list = story_detail.Title
+  local desc_lsit = story_detail.Desc
+  for i = 1, show_num do
+    local obj = self:get_auto_cache(DESC_STORY_KEY)
+    local title = title_list[i]
+    local desc = desc_lsit[i]
+    local title_obj = Util.get_child_gameobj("Title", obj)
+    title_obj:SetActive(false)
+    if title and "" ~= title then
+      title_obj:SetActive(true)
+      local title_txt = Util.get_text("TitleDesc", title_obj)
+      title_txt.text = title
+    end
+    local desc_txt = Util.get_text("Desc", obj)
+    desc_txt.text = desc
+  end
+  local pro_txt = self.v_idx .. "/" .. #self.v_detail_list
+  self.v_uicompents.Progress_txt.text = pro_txt
+end
+
+return ui

@@ -1,0 +1,81 @@
+local Base = require("gamelogic.base_system")
+local JOURNEY_STATE = Config.CommonDefine.JOURNEY_STATE
+local M = Util.create_child_mt(Base)
+local _tsort = table.sort
+
+function M:init_sys()
+  Base.init_sys(self)
+  self.v_journey_map = {}
+  local cfg = ShareRes.create("player.journey")
+  for i, v in pairs(cfg) do
+    self.v_journey_map[v.Id] = v
+    self.v_journey_map[v.Id].state = JOURNEY_STATE.UNCOMPLETE
+  end
+  self:update_journey_list()
+end
+
+function M:on_get_journey_data(data)
+  local data = data.level
+  if self.v_journey_map[data.level] then
+    self.v_journey_map[data.level].state = data.state or JOURNEY_STATE.UNCOMPLETE
+    self:update_journey_list()
+  end
+end
+
+function M:on_get_journey_list(data)
+  local datas = data.levels
+  for i, v in pairs(datas) do
+    if self.v_journey_map[v.level] then
+      self.v_journey_map[v.level].state = v.state or JOURNEY_STATE.UNCOMPLETE
+    end
+  end
+  self:update_journey_list()
+end
+
+function M:req_journey_gain_reward(id)
+  Network:call("c2gs_journey_gain_reward", {level = id})
+end
+
+function M:get_journey_red()
+  for _, v in pairs(self.v_journey_list) do
+    if v.state == JOURNEY_STATE.COMPLETE then
+      return true
+    end
+  end
+  return false
+end
+
+function M:update_journey_list()
+  self.v_journey_list = {}
+  for _, v in pairs(self.v_journey_map) do
+    self.v_journey_list[#self.v_journey_list + 1] = v
+  end
+  _tsort(self.v_journey_list, function(a, b)
+    return a.SortId < b.SortId
+  end)
+  local unlock_counter = 5
+  for k, v in ipairs(self.v_journey_list) do
+    if v.state == JOURNEY_STATE.UNCOMPLETE then
+      v.unlock = unlock_counter > 0
+      unlock_counter = unlock_counter - 1
+    else
+      v.unlock = true
+    end
+  end
+  MsgGame:mq_publish2(Const.MSG_ON_JOURNEY_UPDATE)
+end
+
+function M:get_journey_list()
+  return self.v_journey_list
+end
+
+function M:get_first_not_gained_lv()
+  for idx, v in ipairs(self.v_journey_list) do
+    if v.state ~= JOURNEY_STATE.GAINED then
+      return idx
+    end
+  end
+  return #self.v_journey_list
+end
+
+return M

@@ -1,0 +1,52 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local MODEL = {
+  v_award_content = {
+    "AwardContent",
+    BIND_TYPE.OBJECT
+  },
+  v_award_scroll_view = {
+    "AwardScrollView",
+    BIND_TYPE.IMAGE
+  },
+  v_award_tem = {
+    "AwardTem",
+    BIND_TYPE.OBJECT
+  },
+  v_bg_btn = {
+    "BgBtn",
+    BIND_TYPE.BUTTON
+  },
+  v_close_btn1 = {
+    "CloseBtn1",
+    BIND_TYPE.BUTTON
+  }
+}
+local SaticSv = require("ui.widget.static_scroll_view")
+local AwardItemKey = "ACHIEVEMENT_PRE_AWARD_ITEM_KEY"
+local ACHIEVENMENT_PRE_AWARD_ITEM = require("uimodule.achievement.achiev_pre_award_item")
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("CloseBtn1", function()
+    self:ui_hide()
+  end)
+  self.v_static_sv = SaticSv:new(self, self.v_uiobjects.AwardContent, ACHIEVENMENT_PRE_AWARD_ITEM, AwardItemKey)
+  self.v_scroll_view = self:get_scrollrect(nil, self.v_uiobjects.AwardScrollView)
+end
+
+function ui:ui_on_show(data)
+  self.v_static_sv:update_list(data)
+  self.v_scroll_view.verticalNormalizedPosition = 1
+end
+
+function ui:ui_on_hide()
+  self.v_static_sv:clear()
+end
+
+function ui:ui_on_destroy()
+  self.v_static_sv = nil
+end
+
+return ui

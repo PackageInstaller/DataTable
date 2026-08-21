@@ -1,0 +1,299 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local NAME_MAX_LEN = 9
+local setting_type = {WriteName = 1, PlayerSetting = 2}
+local MODEL = {
+  v_input_field = {
+    "NameInputField",
+    BIND_TYPE.INPUT
+  }
+}
+local QUALITY_DESC = {
+  "流畅",
+  "普通",
+  "高清",
+  "超清",
+  "极致"
+}
+local PLAYER_SETTING_QUAILTYTEM = "PLAYER_SETTING_QUAILTYTEM"
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  local input_obj = self.v_uicompents.NameInputField_rect
+  self:set_inputfield_listener(self.v_input_field, function()
+    self:_on_check_input_len(input_obj)
+  end, function()
+    self:_on_input_complete(input_obj)
+  end)
+  self:set_button("BtnNameConfirm", function()
+    self:click_name_confirm()
+    SDKManager:track_adjust_event("10_account_name")
+  end)
+  self:set_button("BtnQualityConfirm", function()
+    self:click_setting_confirm()
+    SDKManager:track_adjust_event("11_graphic_confirm")
+  end)
+  self.v_timer_list = {}
+end
+
+function ui:click_name_confirm()
+  if self.v_is_click == nil or self.v_is_click == true then
+    return
+  end
+  local change_name_num = PlayerMgr:get_player_rename_num()
+  if change_name_num and change_name_num > 0 then
+    self:ui_hide()
+    if self.v_callback then
+      self.v_callback()
+      self.v_callback = nil
+    end
+    return
+  end
+  if self.v_is_illegal then
+    self.v_is_illegal = false
+    return
+  end
+  local input_txt = self.v_input_field.text
+  if string.gsub(input_txt, " ", "") == "" then
+    self:update_tip("昵称不允许为空")
+    self.v_input_field.text = ""
+    return
+  end
+  local num = Util.get_string_len(input_txt)
+  if num < 1 then
+    self:update_tip("至少输入1个字")
+    return
+  end
+  if Util.has_special_char(input_txt) then
+    Util.show_message_tip(2356)
+    return
+  end
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.player_setting_quality_nameconfirm_UI_SOUND)
+  self.v_is_click = true
+  Word_Censor.check_has_sensitive(self:ui_get_name(), input_txt, function(ok)
+    if ok then
+      PlayerMgr:upgrade_player_name_by_story(input_txt, function(ok, resp)
+        if ok then
+          local msg = MsgGame:mq_publish2(Const.MSG_ON_CHANGE_NAME_SUCCESS)
+          msg.mm_obj = resp.new_name
+          self.v_uicompents.Ani_UI_InitialSet_Out_pd:Play()
+          Timer:add_timer(nil, 1, function()
+            if self.v_callback then
+              self.v_callback()
+              self.v_callback = nil
+            end
+          end)
+        else
+          self.v_input_field.text = ""
+          self.v_is_click = false
+          self:show_change_name_error_code(resp)
+        end
+      end, true)
+    else
+      self.v_is_click = false
+    end
+  end, "uistory_player_setting")
+end
+
+function ui:click_setting_confirm()
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.player_setting_quality_confirm_UI_SOUND)
+  BattleSettingMgr:set_camera_view_type(self.v_cur_view_tog_type)
+  BattleSettingMgr:set_local_graphic_quality(self.v_cur_quality_level)
+  BattleSettingMgr:save_local_setting_info()
+  BattleSettingMgr:save_online_setting_info()
+  self.v_uicompents.Ani_SetQuality_Out_pd:Play()
+  self.v_panel_out_timer = Timer:add_timer(nil, self.v_uicompents.Ani_SetQuality_Out_pd.duration, function()
+    if self.v_callback then
+      self.v_callback()
+      self.v_callback = nil
+    end
+    Global.sound_mgr:bgm2_stop()
+    self.v_panel_out_timer = nil
+    self:ui_destroy()
+  end)
+end
+
+function ui:show_change_name_error_code(resp)
+  local error_code = resp.errcode
+  local msg = Util.get_error_code_msg(error_code)
+  self:update_tip(msg)
+end
+
+function ui:ui_on_show(callback, type)
+  self.v_uiobjects.OverStepTips:SetActive(false)
+  self.v_callback = callback
+  self.v_is_click = false
+  self.v_type = setting_type[type]
+  if self.v_type == setting_type.WriteName then
+    self:update_player_name()
+  elseif self.v_type == setting_type.PlayerSetting then
+    self:_init_setting_panel()
+  end
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.player_setting_env_bgm_UI_SOUND)
+end
+
+function ui:ui_on_hide()
+  if self.v_type == setting_type.WriteName then
+    self.v_is_click = nil
+  elseif self.v_type == setting_type.PlayerSetting then
+    self:remove_toggle_listener(self.v_uicompents.View1_tog)
+    self:remove_toggle_listener(self.v_uicompents.View2_tog)
+  end
+end
+
+function ui:ui_on_destroy()
+  if self.v_quality_out_timer then
+    Timer:remove_timer(self.v_quality_out_timer)
+  end
+  if self.v_panel_out_timer then
+    Timer:remove_timer(self.v_panel_out_timer)
+  end
+end
+
+function ui:update_tip(tip)
+  self.v_uiobjects.OverStepTips:SetActive(nil ~= tip)
+  self.v_uicompents.OverStepTips_txt.text = tip
+end
+
+function ui:_on_check_input_len(obj)
+  local len = Util.get_string_len(self.v_input_field.text)
+  if len > NAME_MAX_LEN then
+    self:update_tip("不可超过8字")
+  else
+    self:update_tip()
+  end
+end
+
+function ui:_on_input_complete(obj)
+  local len = Util.get_string_len(self.v_input_field.text)
+  if len > NAME_MAX_LEN then
+    self.v_is_illegal = true
+    self.v_input_field.text = Util.get_sub_string_utf8(self.v_input_field.text, NAME_MAX_LEN)
+    self.v_input_field:ActivateInputField()
+    self:update_tip("不可超过8字")
+  else
+    self.v_is_illegal = false
+    self:update_tip()
+  end
+  self.v_input_team_name = self.v_input_field.text
+end
+
+function ui:update_player_name()
+  self.v_uiobjects.SetName:SetActive(true)
+  self.v_uiobjects.SetQuality:SetActive(false)
+  if not PlayerMgr then
+    return
+  end
+  local name = "预见者" .. PlayerMgr:get_player_initial_number()
+  self.v_input_field.text = name or ""
+  self.v_input_team_name = name
+end
+
+function ui:_init_setting_panel()
+  self.v_uiobjects.SetName:SetActive(false)
+  self.v_uiobjects.SetQuality:SetActive(true)
+  self.v_qualitytem_list = {}
+  self:set_toggle_listener(self.v_uicompents.View1_tog, function(is_on)
+    self:on_click_view_tog(is_on, Config.CAMERA_VIEW_TYPE.DEPRESSION, self.v_uicompents.View1_tog)
+  end)
+  self:set_toggle_listener(self.v_uicompents.View2_tog, function(is_on)
+    self:on_click_view_tog(is_on, Config.CAMERA_VIEW_TYPE.SHOULDER, self.v_uicompents.View2_tog)
+  end)
+  local init_quality_level = Global.render_mgr:get_initial_quality_level()
+  self.v_cur_quality_level = init_quality_level
+  self.v_options = ShareRes.get_quality_setting_option_cfg(self.v_cur_quality_level).Option
+  self:register_exist_auto_template(PLAYER_SETTING_QUAILTYTEM, self.v_uiobjects.QualityTem, self.v_uiobjects.SetQualityContent)
+  self:give_back_auto_cache(PLAYER_SETTING_QUAILTYTEM)
+  local toggle_ref
+  for i = 1, 3 do
+    local obj = self:get_auto_cache(PLAYER_SETTING_QUAILTYTEM)
+    table.insert(self.v_qualitytem_list, obj)
+    local toggle = Util.get_component(nil, obj, TypeUnityUIToggle)
+    local quality_text = Util.get_text("Connect/QualityName_", obj)
+    local quality_level = self.v_options[i]
+    quality_text.text = QUALITY_DESC[quality_level]
+    local recomment_obj = Util.get_child_gameobj("Connect/Recommend_", obj)
+    recomment_obj:SetActive(init_quality_level == quality_level)
+    toggle_ref = toggle_ref or init_quality_level == quality_level and toggle
+    local out_pd = Util.get_playabledirector("Connect/Select/Ani_Select_quality_Out", obj)
+    local in_pd = Util.get_playabledirector("Connect/Select/Ani_Select_quality", obj)
+    self:set_toggle_listener(toggle, function(is_on)
+      self:on_click_quality_tog(is_on, quality_level, in_pd, out_pd, i, toggle)
+    end)
+  end
+  toggle_ref.isOn = true
+  self.v_uicompents.View1_tog.isOn = true
+end
+
+local first_open = true
+
+function ui:on_click_view_tog(is_on, type, tog)
+  tog.interactable = not is_on
+  if not is_on or type == self.v_cur_view_tog_type then
+    return
+  end
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.camera_setting_tog_UI_SOUND)
+  self.v_cur_view_tog_type = type
+  BattleSettingMgr:set_camera_view_type(self.v_cur_view_tog_type)
+  local x = self.v_cur_view_tog_type == Config.CAMERA_VIEW_TYPE.DEPRESSION and 180 or 0
+  self.v_uiobjects.Anchor.transform:SetEulerY(x)
+  if first_open then
+    first_open = false
+    return
+  end
+  self.v_uicompents.Ani_Select2_pd.time = 0
+  self.v_uicompents.Ani_Select2_pd:Play()
+  self.v_uicompents.Ani_QualityTem_Out_pd.time = 0
+  self.v_uicompents.Ani_QualityTem_Out_pd:Play()
+  if self.v_quality_out_timer then
+    Timer:remove_timer(self.v_quality_out_timer)
+  else
+    self.v_uicompents.Ani_QualityTem_In_pd:Stop()
+  end
+  self.v_quality_out_timer = Timer:add_timer(nil, 0.33334, function()
+    self.v_uicompents.Ani_QualityTem_In_pd.time = 0
+    self.v_uicompents.Ani_QualityTem_In_pd:Play()
+    self:refresh_icon()
+    self.v_quality_out_timer = nil
+  end)
+end
+
+function ui:on_click_quality_tog(is_on, level, in_pd, out_pd, index, toggle)
+  toggle.interactable = not is_on
+  if not is_on then
+    in_pd:Stop()
+    out_pd.time = 0
+    out_pd:Play()
+    self.v_timer_list[index] = Timer:add_timer(nil, 0.4166667, function()
+      self.v_timer_list[index] = nil
+    end)
+    return
+  end
+  if self.v_timer_list[index] then
+    Timer:remove_timer(self.v_timer_list[index])
+  else
+  end
+  out_pd:Stop()
+  in_pd.time = 0
+  in_pd:Play()
+  Global.sound_mgr:play_ui_sound(Config.UI_SOUND_CFG.quality_setting_tog_UI_SOUND)
+  self.v_cur_quality_level = level
+end
+
+function ui:refresh_icon()
+  local images = ShareRes.get_quality_setting_image_cfg(self.v_cur_view_tog_type).Image
+  for index, obj in ipairs(self.v_qualitytem_list) do
+    local icon = Util.get_image("Connect/Icon/Icon", obj)
+    local icon_path = images[self.v_options[index]]
+    ResMgr:load_set_icon(icon, icon_path, nil, true)
+  end
+  local image_reflect = ShareRes.get_quality_setting_image_cfg(self.v_cur_view_tog_type).ImageReflect
+  for index, obj in ipairs(self.v_qualitytem_list) do
+    local icon_shadow = Util.get_image("Connect/Icon/Shadow_", obj)
+    local icon_path = image_reflect[self.v_options[index]]
+    ResMgr:load_set_icon(icon_shadow, icon_path, nil, true)
+  end
+end
+
+return ui

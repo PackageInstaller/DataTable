@@ -1,0 +1,24 @@
+return {
+  [20] = {
+    ActivityId = 20,
+    ChapterId = {
+      1,
+      2,
+      3
+    },
+    HardTaskGroupId = 326,
+    MailId = 220006,
+    TaskGroupId = 325
+  },
+  [30] = {
+    ActivityId = 30,
+    ChapterId = {
+      1,
+      2,
+      3
+    },
+    HardTaskGroupId = 329,
+    MailId = 220006,
+    TaskGroupId = 328
+  }
+}

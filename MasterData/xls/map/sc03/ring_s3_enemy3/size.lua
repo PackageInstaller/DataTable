@@ -1,0 +1,21 @@
+local empty = {}
+return
+{
+  CellWidth = 70,
+  CellHeight = 70,
+  OffsetX = 0.0,
+  OffsetY = 0.0,
+  Offset = { -9.0, 6.5, 3.0 },
+  Ratio = 0.25,
+  HasPlatform = false,
+  HasPathConfig = false,
+  LineConfig = "",
+  IsShowLine = false,
+  SceneOffset = { 0.0, 0.0, 0.0 },
+  SceneRotation = { 0.0, 0.0, 0.0 },
+  LightRotation = { 0.0, 0.0, 0.0 },
+  HasSetSceneTra = true,
+  LightMapIdx = 0,
+  PathFindCfg = "ring_S3_enemy3",
+  IsLayerGraph = false
+}

@@ -1,0 +1,205 @@
+local Base = require("ui.uibase")
+local FATE_BOOK_CURE_FUNC_ITEM = require("uimodule.stage_activity.fate_book.fate_book_cure_func_item")
+local ui = Util.create_child_mt(Base)
+
+function ui:on_click_hero_btn(uuid)
+  if not uuid or self.v_select_uuid == uuid then
+    return
+  end
+  self.v_select_uuid = uuid
+  self:refresh_select()
+  self:refresh_button()
+end
+
+function ui:on_click_BtnCure()
+  if not self:check_can_use_func(self.v_cure_cfg, self.v_cure_data, false) then
+    return
+  end
+  local arg = {
+    self.v_select_uuid
+  }
+  ChallengeRingPlusMgr:request_use_recuperation_func(self.v_cure_cfg.Id, arg, false, function(_, ok)
+    if ok and self:visible() then
+      self:on_response()
+    end
+  end)
+end
+
+function ui:on_click_BtnReborn()
+  if not self:check_can_use_func(self.v_reborn_cfg, self.v_reborn_data, true) then
+    return
+  end
+  local arg = {
+    self.v_select_uuid
+  }
+  ChallengeRingPlusMgr:request_use_recuperation_func(self.v_reborn_cfg.Id, arg, false, function(_, ok)
+    if ok and self:visible() then
+      self:on_response()
+    end
+  end)
+end
+
+function ui:on_click_BtnRet1()
+  self:ui_hide()
+end
+
+function ui:ui_finish_load()
+  self:set_button("BtnCure", function()
+    self:on_click_BtnCure()
+  end)
+  self:set_button("BtnReborn", function()
+    self:on_click_BtnReborn()
+  end)
+  self:set_button("BtnRet1", function()
+    self:on_click_BtnRet1()
+  end)
+  self.v_asset_item_info_list = {
+    {
+      item_id = Config.CURSE_GOLD
+    }
+  }
+  self.v_char_item_map = {}
+end
+
+function ui:ui_on_show(show_data)
+  self:refresh_view(show_data)
+end
+
+function ui:ui_on_hide()
+  self:clear_char_item()
+  self.v_select_uuid = nil
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:refresh_view(show_data)
+  self.v_data = show_data
+  local objs = self.v_uiobjects
+  local child_count = self.v_uicompents.CharRoot_rect.childCount
+  for i = 1, child_count do
+    local hero = SceneMgr:get_hero_by_pos(i)
+    local item = FATE_BOOK_CURE_FUNC_ITEM:ui_wrap_ex(self, objs["Char" .. i], true)
+    self.v_char_item_map[i] = item
+    self.v_char_item_map[i]:set_data(hero)
+  end
+  self:refresh_button()
+end
+
+function ui:refresh_button()
+  local objs = self.v_uiobjects
+  self.v_cure_cfg, self.v_reborn_cfg, self.v_cure_data, self.v_reborn_data = nil, nil, nil, nil
+  local data = ChallengeRingPlusMgr:get_recuperation_card_data()
+  local recuperation_datas = data.recuperation_data
+  local coms = self.v_uicompents
+  local hero = SceneMgr:pick_by_uuid(self.v_select_uuid)
+  local is_die = not hero or hero:is_die()
+  local hp, hp_max
+  if hero then
+    hp, hp_max = math.floor(hero.attr_mgr:get_attr(Config.CHAR_ATTR_TYPE.CHAR_HP)), math.floor(hero.attr_mgr:get_attr(Config.CHAR_ATTR_TYPE.CHAR_HP_MAX))
+  end
+  local full_hp = hp == hp_max
+  for _, recuperation_data in pairs(recuperation_datas) do
+    local cfg = ShareRes.get_recuperation_cfg(recuperation_data.id)
+    local cost_count = cfg.CostCount and ChallengeRingPlusMgr:get_after_discount_price(cfg.CostCount)
+    local need_cost = Util.is_more_than_zero(cfg.CostItem) and Util.is_more_than_zero(cost_count)
+    local enough = not need_cost or Util.check_item_cost_enough(cfg.CostItem, cost_count)
+    local gray_btn, gray_btn_comp
+    local use_limit = nil ~= cfg.UseCount and 0 == recuperation_data.use_count
+    local gray = not self.v_select_uuid or not enough or use_limit
+    if cfg.Type == Config.CommonDefine.RECUPERATION_TYPE.REVIVE_HERO then
+      self.v_reborn_data = recuperation_data
+      self.v_reborn_cfg = cfg
+      coms.BtnRebornText_txt.text = is_die and "复活" or "出战中"
+      gray_btn = objs.BtnReborn
+      gray_btn_comp = coms.BtnReborn_btn
+      gray = gray or not is_die
+      local desc_str = "复活并治疗%d%%生命"
+      coms.RebornDesc_txt.text = string.format(desc_str, self.v_reborn_cfg.Arg[1] / 100)
+      self:_refresh_button_cost(cfg.CostItem, cost_count, coms.RebornCurrNum_txt, coms.RebornCurrIcon_img, coms.RebornIcon_img, coms.RebornDesc_txt, need_cost, enough)
+    elseif cfg.Type == Config.CommonDefine.RECUPERATION_TYPE.TREATMENT_HERO then
+      self.v_cure_data = recuperation_data
+      self.v_cure_cfg = cfg
+      gray_btn = objs.BtnCure
+      gray_btn_comp = coms.BtnCure_btn
+      gray = gray or is_die or full_hp
+      local desc_str = "治疗%d%%生命"
+      local magic_id = self.v_cure_cfg.Arg[1]
+      local magic_cfg = ShareRes.get_magic_cfg(magic_id)
+      coms.CureDesc_txt.text = string.format(desc_str, magic_cfg.logic[2][1] / 100)
+      self:_refresh_button_cost(cfg.CostItem, cost_count, coms.CureCurrNum_txt, coms.CureCurrIcon_img, coms.CureIcon_img, coms.CureDesc_txt, need_cost, enough)
+    end
+    if gray_btn then
+      Util.apply_grey_ex(gray_btn, gray)
+      gray_btn_comp.enabled = not gray
+    end
+  end
+  objs.BtnReborn:SetActive(self.v_reborn_data ~= nil)
+  objs.BtnCure:SetActive(self.v_cure_data ~= nil)
+end
+
+function ui:_refresh_button_cost(item_id, cost_count, cnum_txt, cicon_img, icon_img, desc_txt, need_cost, enough)
+  if need_cost then
+    local path = ShareRes.get_item_icon_path(item_id)
+    cnum_txt.text = cost_count
+    ResMgr:load_set_icon(cicon_img, path)
+    local color_str = enough and "ffda6d" or "909090"
+    Util.set_color(icon_img, color_str)
+    Util.set_color(desc_txt, color_str)
+  end
+  cnum_txt.gameObject:SetActive(need_cost)
+  cicon_img.gameObject:SetActive(need_cost)
+  icon_img.gameObject:SetActive(need_cost)
+end
+
+function ui:on_response()
+  for i, item in pairs(self.v_char_item_map) do
+    local hero = SceneMgr:get_hero_by_pos(i)
+    item:set_data(hero, true)
+    item:set_select(self.v_select_uuid)
+  end
+  self:refresh_button()
+end
+
+function ui:refresh_select()
+  for key, item in pairs(self.v_char_item_map) do
+    item:set_select(self.v_select_uuid)
+  end
+end
+
+function ui:clear_char_item()
+  for key, item in pairs(self.v_char_item_map) do
+    item:ui_hide()
+    item:ui_destroy()
+    self.v_char_item_map[key] = nil
+  end
+end
+
+function ui:check_can_use_func(cfg, recuperation_data, is_reborn)
+  if not self.v_select_uuid then
+    return
+  end
+  local hero = SceneMgr:pick_by_uuid(self.v_select_uuid)
+  if not hero then
+    return
+  end
+  local is_die = hero:is_die()
+  if is_reborn and not is_die then
+    return
+  end
+  if not is_reborn and is_die then
+    return
+  end
+  local use_limit = cfg.UseCount ~= nil and 0 == recuperation_data.use_count
+  if use_limit then
+    return
+  end
+  local cost_count = cfg.CostCount and ChallengeRingPlusMgr:get_after_discount_price(cfg.CostCount)
+  local need_cost = Util.is_more_than_zero(cfg.CostItem) and Util.is_more_than_zero(cost_count)
+  if need_cost then
+    return Util.check_item_cost_enough(cfg.CostItem, cost_count)
+  end
+  return true
+end
+
+return ui

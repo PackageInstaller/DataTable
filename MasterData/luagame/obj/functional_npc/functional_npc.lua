@@ -1,0 +1,457 @@
+local Base = require("obj.char")
+local Layer = require("utils.layer")
+local SHADOW_PATH = "Fx_Common_Shadow"
+local CommonDefind = require("cs_share.common_define")
+local vec3 = require("base.vec3")
+local _tinsert = table.insert
+local SCENE_ITEM_DROP_TYPE = Config.SCENE_ITEM_DROP_TYPE
+local FUNCTIONAL_NPC_SHOW_TYPE = Config.FUNCTIONAL_NPC_SHOW_TYPE
+local FUN_NPC_HELPER = require("gamelogic.functional_npc.functional_npc_helper")
+local GET_DROP_TYPE = {NORMAL = 1, NONE = 2}
+local SHADOW_TYPE = {NONE = 0, NORMAL = 1}
+local M = Util.create_child_mt(Base)
+
+function M:_init(...)
+  Base._init(self, ...)
+end
+
+function M:presetup(...)
+  Base.presetup(self)
+end
+
+function M:setup(...)
+  Base.setup(self, ...)
+  if self.v_has_setup then
+    Log.Error("multi setup")
+    return
+  end
+  self:add_component("time_mgr", require("manager.time.time"):new(self))
+  self:add_component("act_effect_ctrl", require("obj.act.act_effect_ctl_new"):new(self))
+end
+
+function M:low_update()
+  Base.low_update(self)
+  if self:is_real_finish_init() then
+    self.act_effect_ctrl:low_update()
+  end
+end
+
+function M:on_init_gameobj(...)
+  Base.on_init_gameobj(self, ...)
+  local shadow_type = self.character_cfg.Shadow
+  if shadow_type == SHADOW_TYPE.NORMAL then
+    self.v_simple_shadow = ResMgr:load_gameobj(Path.get_res_path(SHADOW_PATH))
+    self.v_simple_shadow_go = self.v_simple_shadow.gameObject
+    local shadow_trans = self.v_simple_shadow_go.transform
+    local go_trans = self.gameobj.transform
+    shadow_trans:SetParent(go_trans)
+    if self.data and self.data.npc_cfg and self.data.npc_cfg.Type and FUN_NPC_HELPER.is_role_npc_with_type(self.data.npc_cfg.Type) then
+      local is_need_show_shadow = self.data.npc_cfg.Shadow and 1 == self.data.npc_cfg.Shadow
+      if is_need_show_shadow then
+        shadow_trans:SetLocalScaleA(self.data.npc_cfg.BodyRadius, 1, self.data.npc_cfg.BodyRadius)
+        shadow_trans:SetLocalPositionA(0, 0, 0)
+      end
+    end
+  end
+  self:set_layer(Layer.Layer.NPC)
+  local clips = self.animator.runtimeAnimatorController.animationClips
+  self.v_clip_list = {}
+  if clips.Length > 0 then
+    for i = 0, clips.Length - 1 do
+      self.v_clip_list[clips[i].name] = clips[i].length
+    end
+  end
+  self.v_end_cb = {}
+  self.v_effect_list = {}
+  self.v_finish_load = true
+  self:_check_toggle_contact()
+end
+
+function M:_check_toggle_contact()
+  local scene_logic = SceneMgr:get_scene_logic()
+  if not scene_logic then
+    return
+  end
+  local is_in = scene_logic:is_contacting_func_npc(self.data.npc_id)
+  if not is_in then
+    return
+  end
+  scene_logic:recheck_hero_contact_npc()
+end
+
+M.target_pos = nil
+M.speed = 1
+M.patrol_type = 0
+M.point_list = nil
+M.last_point_index = 0
+M.curr_point_index = 0
+M.const_stay_time = 3
+M.stay_time = 0
+M.is_change_status_over = false
+M.last_move_type = "walk"
+M.move_type_list = {walk = 1, run = 3}
+
+function M:set_speed_with_action(action_name)
+  for i, v in pairs(self.move_type_list) do
+    if string.find(action_name, i) then
+      self.speed = v
+      self.last_move_type = i
+      break
+    end
+  end
+end
+
+function M:set_target_pos(pos)
+  self:lookat_pos(pos)
+  self:player_anim("walk")
+  self.target_pos = pos
+end
+
+function M:set_to_running()
+  self:lookat_pos(self.target_pos)
+  self:player_anim("run")
+end
+
+function M:set_to_walking()
+  self:lookat_pos(self.target_pos)
+  self:player_anim("walk")
+end
+
+function M:set_to_moving()
+  for i, v in pairs(self.move_type_list) do
+    if i == self.last_move_type then
+      self:lookat_pos(self.target_pos)
+      self:player_anim(i)
+    end
+  end
+end
+
+function M:check_point_list()
+  if not self:is_role_npc() then
+    return
+  end
+  local list = FunctionalNpcMgr:get_point_list(self.data.npc_id)
+  if list and #list >= 2 then
+    self.patrol_type = tonumber(list[1])
+    self.point_list = {}
+    for i = 2, #list do
+      local pos = SceneMgr:get_scene_map():get_area_position(list[i])
+      self.point_list[i - 1] = vec3.New(pos.X, pos.Y, pos.Z)
+    end
+    self.stay_time = self.const_stay_time
+    self:refresh_next_point_index()
+  end
+end
+
+function M:refresh_next_point_index()
+  if 0 == self.patrol_type then
+    return
+  end
+  if 1 == self.patrol_type and #self.point_list >= 3 then
+    local temp_index = math.random(1, #self.point_list)
+    while temp_index == self.curr_point_index do
+      temp_index = math.random(1, #self.point_list)
+    end
+    self.last_point_index = M.curr_point_index
+    self.curr_point_index = temp_index
+  else
+    self.last_point_index = M.curr_point_index
+    self.curr_point_index = self.curr_point_index + 1
+    if self.curr_point_index > #self.point_list then
+      self.curr_point_index = 1
+    end
+  end
+  self.target_pos = self.point_list[self.curr_point_index]
+end
+
+function M:update()
+  Base.update(self)
+end
+
+function M:is_godmode()
+  return true
+end
+
+function M:get_camp()
+  assert(self.camp, "camp not inited")
+  return self.camp
+end
+
+function M:set_camp(camp)
+  if camp then
+    self.camp = camp
+  end
+end
+
+function M:on_destroy_luaobj()
+  if self.v_end_cb then
+    for _, v in pairs(self.v_end_cb) do
+      Timer:remove_timer(v)
+    end
+  end
+  self.v_end_cb = nil
+  if self.v_effect_list then
+    for _, v in pairs(self.v_effect_list) do
+      self:remove_effect(v)
+    end
+  end
+  self.v_effect_list = nil
+  Base.on_destroy_luaobj(self)
+end
+
+function M:on_destroy()
+  Base.on_destroy(self)
+  if self.v_simple_shadow and not self.v_simple_shadow_go:IsNull() then
+    ResMgr:destroy_gameobj(self.v_simple_shadow)
+    self.v_simple_shadow_go = nil
+    self.v_simple_shadow = nil
+  end
+end
+
+function M:has_part()
+  return false
+end
+
+function M:is_can_searched()
+  return false
+end
+
+function M:is_functional_npc()
+  return true
+end
+
+function M:is_functional_role_npc()
+  return self:is_role_npc()
+end
+
+function M:is_normal_drop_npc()
+  return false
+end
+
+function M:is_get_award_npc()
+  local npc_id = self.data.npc_id
+  return FUN_NPC_HELPER.is_reward_npc(npc_id)
+end
+
+function M:is_role_npc()
+  local npc_id = self.data.npc_id
+  return FUN_NPC_HELPER.is_role_npc(npc_id)
+end
+
+function M:get_npc_id()
+  return self.data and self.data.npc_id
+end
+
+function M:is_door_npc()
+  local npc_cfg = ShareRes.create("npc.functional_npc", self.data.npc_id)
+  if not npc_cfg then
+    return false
+  end
+  return npc_cfg.Type == CommonDefind.FUNCTIONAL_NPC_TYPE.DOOR_NPC
+end
+
+function M:player_anim(anim_type, end_cb)
+end
+
+function M:_play(ani_type, end_cb)
+  if not self.animator then
+    return
+  end
+  self.animator:Play(ani_type, -1, 0.0)
+  self:set_speed_with_action(ani_type)
+  if end_cb then
+    local len = self.v_clip_list[ani_type]
+    if not len or 0 == len then
+      end_cb()
+      return
+    end
+    if self.v_end_cb[ani_type] then
+      Timer:remove_timer(self.v_end_cb[ani_type])
+      self.v_end_cb[ani_type] = nil
+    end
+    self.v_end_cb[ani_type] = Timer:add_timer(ani_type, len, function()
+      end_cb()
+    end)
+  end
+end
+
+function M:play_effect(effect_id, cb)
+  if self.character_cfg.Effect and self.character_cfg.Effect[effect_id] then
+    local effect_param = self.act_effect_ctrl.create_effect_param()
+    effect_param.prefab_name = self.character_cfg.Effect[effect_id]
+    effect_param.parent = self.gameobj.transform
+    effect_param.callback = cb
+    self.v_effect_list[effect_id] = self.act_effect_ctrl:play_effect(effect_param)
+  end
+end
+
+function M:remove_effect(effect_id)
+  if self.act_effect_ctrl then
+    self.act_effect_ctrl:stop_effect(effect_id)
+  else
+    Log.Error("get act_effect_ctrl faulure!")
+  end
+  self.v_effect_list[effect_id] = nil
+end
+
+function M:get_play_end_effect_time()
+  local effect_key = self:get_effect_key()
+  if not effect_key then
+    return nil
+  end
+  return self.act_effect_ctrl:get_play_end_effect_time(effect_key)
+end
+
+function M:play_end_effect()
+  local effect_key = self:get_effect_key()
+  if not effect_key then
+    return
+  end
+  return self.act_effect_ctrl:play_end_effect(effect_key)
+end
+
+function M:get_effect_key()
+  if not self.act_effect_ctrl then
+    return nil
+  end
+  local effect_key
+  if self.v_effect_list then
+    for _, v in pairs(self.v_effect_list) do
+      effect_key = v
+      break
+    end
+  end
+  return effect_key
+end
+
+function M:set_ring_effect_visible(visible)
+  if not self.v_effect_list then
+    return
+  end
+  for i, v in pairs(self.v_effect_list) do
+    local obj = self.act_effect_ctrl:get_effect_gameobject(v)
+    if not obj then
+    else
+      local trans = obj.transform
+      local count = trans.childCount
+      if 0 == count then
+      else
+        local is_find = false
+        for i = 1, count do
+          local child_trans = trans:GetChild(i - 1)
+          if child_trans.name == "ring" then
+            child_trans:SetActive(visible)
+            is_find = true
+            break
+          end
+        end
+        if is_find then
+          break
+        end
+      end
+    end
+  end
+end
+
+function M:get_finish_load()
+  return self.v_finish_load
+end
+
+function M:get_in_global_scale()
+  return false
+end
+
+function M:get_npc_face_pos()
+  local x, y, z = self:get_pos()
+  local euler_x, euler_y, euler_z = self.transform:GetEulerAnglesA3()
+  local face_pos = vec3.New(x, y + 3, z + 5)
+  vec3.GetRotatedVector(euler_x, euler_y, euler_z, face_pos, face_pos)
+  return face_pos
+end
+
+function M:create_drop_item(get_cb)
+  local npc_data = self.data
+  local drop_list = npc_data.mArgs.drop_list
+  if UtilTable.hash_lenth(drop_list) <= 0 then
+    if get_cb then
+      get_cb()
+    end
+    return true
+  end
+  if drop_list and next(drop_list) then
+    local is_auto_get = self:is_auto_get_drop_item()
+    if is_auto_get and is_auto_get == GET_DROP_TYPE.NONE then
+      FunctionalNpcMgr:interact_reawrd_npc_auto_get(npc_data)
+    else
+      local cfg = self.character_cfg
+      local drop_point_list
+      if self:is_get_award_npc() and cfg.Arg[2] then
+        drop_point_list = UtilTable.copy_table(cfg.Arg[2])
+      end
+      local item_list = {}
+      for uuid, data in pairs(drop_list) do
+        local temp = {
+          id = data.id,
+          count = data.count,
+          scene_drop_type = SCENE_ITEM_DROP_TYPE.NPC,
+          npc_data = npc_data,
+          uuid = uuid,
+          ran_ans_uuid = data.ran_ans_uuid
+        }
+        _tinsert(item_list, temp)
+      end
+      DropShowMgr:fun_npc_refresh_drop_list(item_list)
+      local scene_item_mgr = SceneMgr:get_scene_item_mgr()
+      local pos = npc_data.pos
+      scene_item_mgr:peaceful_drop(pos, item_list, drop_point_list)
+    end
+    npc_data.is_get = true
+    if get_cb then
+      Util.show_message_tip(2102)
+      get_cb()
+    end
+    return true
+  end
+  return false
+end
+
+function M:is_auto_get_drop_item()
+  local cfg = self.character_cfg
+  if self:is_get_award_npc() then
+    local auto_get_param = cfg.Arg[3]
+    local is_auto_get = auto_get_param and auto_get_param[1][1] or nil
+    return is_auto_get
+  end
+end
+
+function M:hide_effect()
+  local effect_index = self.v_effect_list[1]
+  if not effect_index then
+    return
+  end
+  local effect_data = self.act_effect_ctrl:get_effect_data(effect_index)
+  if not effect_data then
+    return
+  end
+  local obj = effect_data[1]
+  if Util.is_nil(obj) then
+    return
+  end
+  obj:SetActive(false)
+end
+
+function M:set_enable(enable)
+  Base.set_enable(self, enable)
+  if FunctionalNpcMgr then
+    FunctionalNpcMgr:set_role_npc_bubble_chat_enable(self:get_npc_id(), self:get_enable())
+  end
+end
+
+function M:is_need_land_height()
+  if self:is_role_npc() then
+    return self:_is_scene_has_plat()
+  end
+  return false
+end
+
+return M

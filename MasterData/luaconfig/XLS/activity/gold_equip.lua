@@ -1,0 +1,32 @@
+return {
+  [15] = {
+    ActivityId = 15,
+    EquipGroupId = {1},
+    TaskCount = {5},
+    TaskGroupId = 5015021,
+    Tips = {
+      "完成任务自选<color=#ffd07b>5星</color>武器",
+      "完成5个任务后，可获得1次自选机会"
+    }
+  },
+  [26] = {
+    ActivityId = 26,
+    EquipGroupId = {2},
+    TaskCount = {5},
+    TaskGroupId = 5015022,
+    Tips = {
+      "完成任务自选<color=#ffd07b>5星</color>武器",
+      "完成5个任务后，可获得1次自选机会"
+    }
+  },
+  [40] = {
+    ActivityId = 40,
+    EquipGroupId = {3},
+    TaskCount = {5},
+    TaskGroupId = 5015023,
+    Tips = {
+      "完成任务自选<color=#ffd07b>5星</color>武器",
+      "完成5个任务后，可获得1次自选机会"
+    }
+  }
+}

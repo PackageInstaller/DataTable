@@ -1,0 +1,20 @@
+local Base = require("ui.uiobject")
+local M = Util.create_child_mt(Base)
+local ITEM_ICON_PATH = "Icon/BattleItem/%s"
+
+function M:set_data(data, parent_list)
+  self.data = data
+  self.cfg = FightBagMgr:get_cfg_by_id(self.data)
+  if self.cfg == nil then
+    Log.Error("没有在配置中找到id = ", self.data, "的货币配置！！！")
+    return
+  end
+  local components = self.v_uicompents
+  ResMgr:load_set_icon(components.CurrIcon_img, string.format(ITEM_ICON_PATH, self.cfg.Icon))
+  components.CurrAmount_txt.text = CharacterMgr:get_res_val(self.data)
+end
+
+function M:on_clear()
+end
+
+return M

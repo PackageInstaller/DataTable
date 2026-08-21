@@ -1,0 +1,8 @@
+return {
+  CDDay = 30,
+  FlybackCondition = 102410010106,
+  KeepDay = 14,
+  LeaveDay = 21,
+  ProgressItemId = 38,
+  TaskGroupId = 323
+}

@@ -1,0 +1,83 @@
+local Cfg = {
+  c2gs_draw = {wait_self_msg = true, delay_time = 0.2},
+  c2gs_challenge_episode = {wait_self_msg = true},
+  c2gs_chal_ring_choose_card = {wait_self_msg = true},
+  c2gs_chal_ring_card_end = {wait_self_msg = true}
+}
+local M = {}
+
+function M:reset()
+  self:clear()
+end
+
+function M:clear()
+  if self.v_wait_dic then
+    for name, _ in pairs(self.v_wait_dic) do
+      ScreenMaskMgr:close_one_tag(name)
+    end
+  end
+  self.v_wait_dic = {}
+end
+
+function M:check_config_in_editor(gs2c_map)
+  if UNITY_EDITOR and GAME_DEBUG then
+    for gc2s_name, config in pairs(Cfg) do
+      if config.wait_gs2c_msg ~= nil then
+        if type(config.wait_gs2c_msg) ~= "string" then
+          Log.Error("network_block_mgr 配置错误，检查 : ", gc2s_name)
+        elseif gs2c_map[config.wait_gs2c_msg] == nil then
+          Log.Error("network_block_mgr 配置错误，不存在gs2c消息，检查 : ", gc2s_name)
+        end
+      end
+    end
+  end
+end
+
+function M:_get_wait_time(msg_name)
+  local config = Cfg[msg_name]
+  if config.is_timeout then
+    return config.timeout or 5
+  else
+    return math.huge
+  end
+end
+
+function M:_get_delay_time(msg_name)
+  local config = Cfg[msg_name]
+  return config.delay_time or 2
+end
+
+function M:_get_delay_show(msg_name)
+  local config = Cfg[msg_name]
+  return config.delay_show_mask ~= false
+end
+
+function M:_add_mask(name, wait_time, delay_show_mask, delay_time)
+  ScreenMaskMgr:open_one_tag(name, wait_time, delay_show_mask, delay_time)
+  self.v_wait_dic[name] = true
+end
+
+function M:check_wait_lock(msg_name)
+  local config = Cfg[msg_name]
+  if config then
+    local wait_time = self:_get_wait_time(msg_name)
+    local delay_time = self:_get_delay_time(msg_name)
+    local delay_show_mask = self:_get_delay_show(msg_name)
+    if config.wait_self_msg then
+      self:_add_mask(msg_name, wait_time, delay_show_mask, delay_time)
+    elseif config.wait_gs2c_msg then
+      self:_add_mask(config.wait_gs2c_msg, wait_time, delay_show_mask, delay_time)
+    end
+    return true
+  end
+  return false
+end
+
+function M:check_wait_unlock(msg_name)
+  if self.v_wait_dic[msg_name] then
+    ScreenMaskMgr:close_one_tag(msg_name)
+    self.v_wait_dic[msg_name] = nil
+  end
+end
+
+return M

@@ -1,0 +1,135 @@
+local Base = require("ui.uiobject")
+local LoopListClass = require("ui.widget.infinite_loop_list")
+local GoodsItemClass = require("uimodule.fight_bag.bag_item")
+local BagCfg = require("gamelogic.character.fight_bag_configs")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local ITEM_ICON_PATH = "Icon/BattleItem/%s"
+
+function ui:ui_finish_load()
+  self.tempplate_key = {
+    toggle_item = string.format("%s_toggle_item", self.v_object.name)
+  }
+  local MODEL = {
+    v_cur_capacity_txt = {
+      "BagInfo",
+      BIND_TYPE.TEXT
+    },
+    v_max_capacity_txt = {
+      "BagInfo2",
+      BIND_TYPE.TEXT
+    }
+  }
+  self:init_model(MODEL)
+  self.v_loop_list = LoopListClass:new(self, self.v_uiobjects.ScrollView, GoodsItemClass)
+  self.v_tog_list = {}
+  self.v_currency_list = {}
+  self.v_tog_cfg = ShareRes.create("battle.battle_item_tog_type")
+end
+
+function ui:ui_on_show()
+  self:_regist_client_event()
+  local bag_idx = self.v_tog_cfg[1].type
+  self:_refresh_list_view(bag_idx)
+end
+
+function ui:ui_on_hide()
+  for k, v in pairs(self.v_tog_list) do
+    v.isOn = false
+  end
+  self.v_tog_list = {}
+  self.v_currency_list = {}
+  self.v_loop_list:ui_on_hide()
+end
+
+function ui:ui_on_destroy()
+  self.v_loop_list:ui_on_destroy()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_FIGHT_BAG_UPDATE, self.response_bag_update_event, self)
+end
+
+function ui:response_bag_update_event()
+  local bag_idx = self.v_tog_cfg[1].type
+  self:_refresh_list_view(bag_idx)
+end
+
+function ui:_refresh_toggle_list()
+  for idx, v in pairs(self.v_tog_cfg) do
+    if not self.v_tog_list[idx] then
+      local obj = self:get_auto_cache(self.tempplate_key.toggle_item)
+      self.v_tog_list[idx] = self:get_toggle(nil, obj)
+    end
+    self:_set_toggle(self.v_tog_list[idx], idx)
+  end
+end
+
+function ui:_refresh_list_view(bag_idx)
+  bag_idx = bag_idx or self.v_tog_cfg[1].type
+  self.bag_list = {}
+  local cur = 0
+  local max = 0
+  for _, bagType in pairs(bag_idx) do
+    local bag = FightBagMgr:get_bag(bagType)
+    if nil ~= bag and nil ~= next(bag) then
+      for _, item in pairs(bag) do
+        table.insert(self.bag_list, item)
+      end
+    end
+    cur = cur + FightBagMgr:get_used_capacity(bagType)
+    max = max + FightBagMgr:get_bag_capacity(bagType)
+  end
+  table.sort(self.bag_list, function(a, b)
+    local a_is_equip = FightBagMgr:get_is_collect_by_uuid(a.uuid) and 1 or 0
+    local b_is_equip = FightBagMgr:get_is_collect_by_uuid(b.uuid) and 1 or 0
+    if a_is_equip == b_is_equip then
+      if a.Quality == b.Quality then
+        return a.Cfg.ShowPriority > b.Cfg.ShowPriority
+      else
+        return a.Quality > b.Quality
+      end
+    else
+      return a_is_equip < b_is_equip
+    end
+  end)
+  self.v_loop_list:refresh_data(self.bag_list)
+  self.v_cur_capacity_txt.text = cur .. "/"
+  self.v_max_capacity_txt.text = max
+end
+
+function ui:_set_toggle(togObj, index)
+  local lab = self:get_text("Label", togObj.gameObject)
+  lab.text = self.v_tog_cfg[index].name
+  togObj.onValueChanged:RemoveAllListeners()
+  togObj.onValueChanged:AddListener(function(isOn)
+    if isOn then
+      lab.text = string.format("<color=black>%s</color>", self.v_tog_cfg[index].name)
+    else
+      lab.text = string.format("<color=white>%s</color>", self.v_tog_cfg[index].name)
+    end
+    self:_onclick_tog(isOn, index)
+  end)
+end
+
+function ui:_onclick_tog(isOn, index)
+  if isOn then
+    if index == self.v_cur_select_idx then
+      return
+    end
+    self.v_cur_select_idx = index
+    local bag_idx = self.v_tog_cfg[self.v_cur_select_idx].type
+    self:_refresh_list_view(bag_idx)
+  end
+end
+
+function ui:_set_currency(obj, index)
+  local data = BagCfg.SHOW_CURRENCY[index]
+  local cfg = FightBagMgr:get_cfg_by_id(data)
+  local moneyIcon = self:get_image("CurrIcon", obj)
+  ResMgr:load_set_icon(moneyIcon, string.format(ITEM_ICON_PATH, cfg.Icon))
+  local moneyNum = self:get_text("CurrAmount", obj)
+  moneyNum.text = CharacterMgr:get_res_val(data)
+end
+
+return ui

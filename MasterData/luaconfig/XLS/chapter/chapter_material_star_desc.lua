@@ -1,0 +1,18 @@
+return {
+  {
+    ConditionDesc = "至少通过{1}层",
+    ConditionId = 1
+  },
+  {
+    ConditionDesc = "通关关卡<color=#ffffff00>{1}次</color>",
+    ConditionId = 2
+  },
+  {
+    ConditionDesc = "通关时队伍总生命值不低于{1}",
+    ConditionId = 3
+  },
+  {
+    ConditionDesc = "通关时间不超过{1}秒",
+    ConditionId = 4
+  }
+}

@@ -1,0 +1,218 @@
+return {
+  {
+    ChapterId = 0,
+    ChapterName = "序章",
+    ConditionID = {
+      0,
+      0,
+      0
+    },
+    Id = 1,
+    Name = "未来之证",
+    ShowPriority = 9
+  },
+  {
+    ChapterId = 10011,
+    ChapterName = "第一章",
+    ConditionID = {
+      102410010100,
+      0,
+      0
+    },
+    Id = 2,
+    Name = "巴别图书馆",
+    ShowPriority = 8
+  },
+  {
+    ChapterId = 10021,
+    ChapterName = "第二章",
+    ConditionID = {
+      102410010200,
+      0,
+      0
+    },
+    Id = 3,
+    Name = "星",
+    ShowPriority = 7
+  },
+  {
+    ChapterId = 10031,
+    ChapterName = "第三章",
+    ConditionID = {
+      102410010300,
+      0,
+      0
+    },
+    Id = 4,
+    Name = "神的进制",
+    ShowPriority = 6
+  },
+  {
+    ChapterId = 10041,
+    ChapterName = "第四章",
+    ConditionID = {
+      102410010400,
+      0,
+      0
+    },
+    Id = 5,
+    Name = "永夏无实·永夏篇",
+    ShowPriority = 5
+  },
+  {
+    ChapterId = 10051,
+    ChapterName = "第五章",
+    ConditionID = {
+      102410010500,
+      0,
+      0
+    },
+    Id = 6,
+    Name = "永夏无实·无实篇",
+    ShowPriority = 4
+  },
+  {
+    ChapterId = 10061,
+    ChapterName = "第六章",
+    ConditionID = {
+      102410010600,
+      0,
+      0
+    },
+    Id = 7,
+    Name = "千秋作古",
+    ShowPriority = 3
+  },
+  {
+    ChapterId = 10071,
+    ChapterName = "第七章",
+    ConditionID = {
+      102410010700,
+      0,
+      0
+    },
+    Id = 8,
+    Name = "绝地天通",
+    ShowPriority = 2
+  },
+  {
+    ChapterId = 10075,
+    ChapterName = "间章",
+    ConditionID = {
+      102410010750,
+      0,
+      0
+    },
+    Id = 9,
+    Name = "悬丝系沉秋",
+    ShowPriority = 1
+  },
+  {
+    ChapterId = 11001,
+    ChapterName = "外篇",
+    ConditionID = {
+      102410010900,
+      0,
+      0
+    },
+    Id = 10,
+    Name = "十亿年后的回响",
+    ShowPriority = 1
+  },
+  [101] = {
+    ChapterId = 90011,
+    ChapterName = "角色轶事",
+    ConditionID = {
+      102410010001,
+      0,
+      0
+    },
+    Id = 101,
+    Name = "双子与流星",
+    ShowPriority = 8
+  },
+  [102] = {
+    ChapterId = 92041,
+    ChapterName = "角色轶事",
+    ConditionID = {
+      102410010002,
+      0,
+      0
+    },
+    Id = 102,
+    Name = "月之背面",
+    ShowPriority = 7
+  },
+  [103] = {
+    ChapterId = 92011,
+    ChapterName = "角色轶事",
+    ConditionID = {
+      102410010003,
+      0,
+      0
+    },
+    Id = 103,
+    Name = "原野追逐",
+    ShowPriority = 6
+  },
+  [104] = {
+    ChapterId = 92031,
+    ChapterName = "角色轶事",
+    ConditionID = {
+      102410010004,
+      0,
+      0
+    },
+    Id = 104,
+    Name = "客自唐门来",
+    ShowPriority = 5
+  },
+  [105] = {
+    ChapterId = 92021,
+    ChapterName = "角色轶事",
+    ConditionID = {
+      102410010005,
+      0,
+      0
+    },
+    Id = 105,
+    Name = "见",
+    ShowPriority = 4
+  },
+  [106] = {
+    ChapterId = 92051,
+    ChapterName = "角色轶事",
+    ConditionID = {
+      102410010006,
+      0,
+      0
+    },
+    Id = 106,
+    Name = "千钧",
+    ShowPriority = 3
+  },
+  [107] = {
+    ChapterId = 92071,
+    ChapterName = "角色轶事",
+    ConditionID = {
+      102410010007,
+      0,
+      0
+    },
+    Id = 107,
+    Name = "事古作刀铭",
+    ShowPriority = 2
+  },
+  [108] = {
+    ChapterId = 92061,
+    ChapterName = "角色轶事",
+    ConditionID = {
+      102410010008,
+      0,
+      0
+    },
+    Id = 108,
+    Name = "故人归",
+    ShowPriority = 1
+  }
+}

@@ -1,0 +1,41 @@
+local Cfg = {}
+Cfg.TP_POINT_STATE = {
+  ARDER_IDLE = "ARDER_IDLE",
+  OPEN = "OPEN",
+  CLOSE = "CLOSE",
+  IDLE = "IDLE",
+  TRANSMIT = "TRANSMIT"
+}
+Cfg.STATE2ANIM_NAME = {
+  [1] = {
+    [Cfg.TP_POINT_STATE.ARDER_IDLE] = "arder_idle",
+    [Cfg.TP_POINT_STATE.OPEN] = "skill1_1",
+    [Cfg.TP_POINT_STATE.CLOSE] = "skill2_1",
+    [Cfg.TP_POINT_STATE.IDLE] = "idle",
+    [Cfg.TP_POINT_STATE.TRANSMIT] = "transmit"
+  },
+  [3] = {
+    [Cfg.TP_POINT_STATE.TRANSMIT] = "End"
+  }
+}
+Cfg.TP_EFFECT_TYPE = {
+  Fx_Transmit = 1,
+  Fx_Transmit2 = 2,
+  Fx_Transmit3 = 3
+}
+Cfg.PREFAB_NAME = {
+  [1] = "T3002002",
+  [2] = "Fx_Transmit2",
+  [3] = "Fx_Transmit3_idel"
+}
+Cfg.EFFECTS = {
+  [1] = {
+    [Cfg.TP_POINT_STATE.ARDER_IDLE] = "Fx_T3002002_arder_idle",
+    [Cfg.TP_POINT_STATE.OPEN] = "Fx_T3002002_skill1_1_1",
+    [Cfg.TP_POINT_STATE.CLOSE] = "Fx_T3002002_skill2_1_1",
+    [Cfg.TP_POINT_STATE.IDLE] = "Bip001/Bone41/Fx_T3002002_idel"
+  },
+  [2] = {},
+  [3] = {}
+}
+return Cfg

@@ -1,0 +1,569 @@
+local Base = require("obj.base_component")
+local M = Util.create_child_mt(Base)
+local BUBBLE_WIDTH = 360
+local HEADBAR_TOP_NAME_DEFAULT_KEY = "head_default_top_name"
+local TOP_NAME_DESIGNATION = Config.TOP_NAME_TYPE.TOP_NAME_DESIGNATION
+local PATH_KEY_TBL = {
+  [TOP_NAME_DESIGNATION] = "designation"
+}
+local TOP_NAME_MGR = {
+  [TOP_NAME_DESIGNATION] = "DesignationSys"
+}
+local CHAT_BUBBLE = "head_chatbubble"
+local SPELL_SIGN_BUBBLE = "head_spell_sign_bubble"
+
+function M:_init(char, data)
+  Base._init(self)
+  self.v_char = char
+  self.v_total_height = 0
+  self:mgr_bind_auto_mq(Const.MSG_FACTION_CHANGE, M.update_name, self)
+end
+
+function M:on_enable()
+  if self.v_headbar then
+    self.v_headbar:SetActive(true)
+  end
+  if self.v_img_head then
+    self.v_img_head:SetActive(true)
+  end
+end
+
+function M:on_disable()
+  if self.v_headbar then
+    self.v_headbar:SetActive(false)
+  end
+  if self.v_img_head then
+    self.v_img_head:SetActive(false)
+  end
+end
+
+function M:clean_up()
+  self:clean_flag()
+  self:clean_headbar()
+  self:clean_head_image()
+  self:_remove_bubble()
+  self:_remove_bubble_timer()
+  self:_clear_top_name()
+end
+
+function M:clean_flag()
+  if self.v_camp_bg then
+    self.v_camp_bg.gameObject:SetActive(false)
+  end
+  if self.v_camp_title then
+    self.v_camp_title:SetActive(false)
+  end
+end
+
+function M:on_before_destroy()
+  self:clean_up()
+end
+
+local RELATION = Config.RELATION
+
+function M:get_name_color()
+  local gameargs = ShareRes.create("gameargs")
+  if self.v_char.state_manager:is_die_state() then
+    return gameargs.dead_name_color
+  elseif self.v_char:is_hero() then
+    return gameargs.hero_name_color
+  elseif Global.hero.team_mgr:has_member(self.v_char) then
+    return gameargs.teammates_name_color
+  elseif self.v_char:is_player() then
+    local relation = self.v_char:get_relation()
+    if relation == RELATION.FRIEND then
+      return gameargs.friend_name_color
+    elseif relation == RELATION.ENEMY then
+      return gameargs.enemy_name_color
+    elseif relation == RELATION.SAFE_AREA_ENEMY then
+      return gameargs.neutral_name_color
+    elseif relation == RELATION.COLD then
+      return gameargs.friend_name_color
+    end
+  elseif self.v_char:is_monster() then
+    local relation = self.v_char:get_relation()
+    local OBJ_TYPE = Global.share_res.create("scene_obj")
+    if OBJ_TYPE[self.v_char.sub_class]["场景对象小类"] == Config.FUNCTION_NPC_MONSTER then
+      return gameargs.function_npc_name_color
+    end
+    if relation == RELATION.FRIEND then
+      return gameargs.friend_name_color
+    elseif relation == RELATION.ENEMY then
+      return gameargs.enemy_name_color
+    elseif relation == RELATION.COLD then
+      return gameargs.friend_name_color
+    else
+      return gameargs.neutral_name_color
+    end
+  elseif self.v_char:is_npc() then
+    return gameargs.function_npc_name_color
+  elseif self.v_char:is_treasure_box() then
+    return gameargs.function_npc_name_color
+  else
+    return gameargs.enemy_name_color
+  end
+end
+
+function M:get_monster_title_color(default_color)
+  local OBJ_TYPE = Global.share_res.create("scene_obj")
+  if self.v_char:is_monster() and OBJ_TYPE[self.v_char.sub_class]["场景对象小类"] == Config.FUNCTION_NPC_MONSTER then
+    return ShareRes.create("color_def", self.v_char.v_config.quality).color
+  end
+  return default_color
+end
+
+function M:get_bind_target()
+  return self.v_char:is_on_riding() and self.v_char.v_ride or self.v_char
+end
+
+function M:add_chat_bubble(text, duration, rich_unit)
+  self:_show_bubble(CHAT_BUBBLE, text, duration, rich_unit)
+end
+
+function M:add_spell_sign_bubble(text, duration, rich_unit)
+  self:_show_bubble(SPELL_SIGN_BUBBLE, text, duration, rich_unit)
+end
+
+function M:_show_bubble(bubble_template, text, duration, rich_unit)
+  if not self.v_char:can_update() then
+    return
+  end
+  if not rich_unit then
+    text = Util.text_process(text, self.v_char.uuid)
+  end
+  self:_remove_bubble()
+  self:_remove_bubble_timer()
+  self:_update_or_create_cur_bubble(bubble_template, text, rich_unit)
+  self:_add_bubble_timer(duration or 2)
+end
+
+function M:_remove_bubble()
+  if self.v_bubble then
+    if self.v_bubble_bind.rich_text_com then
+      self.v_bubble_bind.rich_text_com:clear()
+      self.v_bubble_bind.rich_text_com = nil
+    end
+    Global.headbar_mgr:release_bubble(self.v_bubble_template, self.v_bubble, self.v_bubble_bind)
+    self.v_bubble_template = nil
+    self.v_bubble = nil
+    self.v_bubble_bind = nil
+  end
+end
+
+function M:_remove_bubble_timer()
+  if self.v_bubble_timer then
+    Timer:remove_timer(self.v_bubble_timer)
+    self.v_bubble_timer = nil
+  end
+end
+
+local CENTER_WIDTH = 52
+local CENTER_HEIGHT = 118
+
+function M:_update_or_create_cur_bubble(bubble_template, text, rich_unit)
+  local height = self.v_total_height + self.v_char:get_real_height() + 0.0
+  if not self.v_bubble_bind then
+    local bubble, bind = self:_get_bubble(bubble_template, height)
+    self.v_bubble_bind = bind
+    self.v_bubble = bubble
+    self.v_bubble_template = bubble_template
+    self.v_bubble:SetActive(true)
+  else
+    self.v_bubble_bind:set_height(height)
+    self.v_bubble_bind:set_char(self:get_bind_target())
+  end
+  local bg = self:_update_chat_bubble_appearance()
+  local label = Util.get_text("Text", self.v_bubble)
+  local ui_height, ui_width
+  if rich_unit then
+    local richtext_com = require("logic.chat.ui_rich_text_component"):new()
+    richtext_com:init(self.v_bubble_bind, label, rich_unit.rich_text_unit, BUBBLE_WIDTH)
+    ui_height = richtext_com:get_height() + 100
+    ui_width = richtext_com:get_width() + 50
+    self.v_bubble_bind.rich_text_com = richtext_com
+  else
+    label.text = text
+    label.transform:SetSizeDeltaWidthA(297)
+    ui_height = label.preferredHeight + 100
+    ui_width = label.preferredWidth + 50
+    if ui_width > BUBBLE_WIDTH then
+      ui_width = BUBBLE_WIDTH
+    end
+  end
+  if bg then
+    local left = Util.get_rect_transform("Left", bg)
+    local right = Util.get_rect_transform("Right", bg)
+    local space = ui_width - 86
+    local left_width = 60
+    local right_width = 26
+    if space > 0 then
+      left_width = left_width + space / 2
+      right_width = right_width + space / 2
+    end
+    left:SetSizeDeltaA(left_width, ui_height - 36)
+    right:SetSizeDeltaA(right_width, ui_height - 36)
+  end
+end
+
+function M:_get_bubble(bubble_template, height)
+  local bind_target = self:get_bind_target()
+  if bubble_template == CHAT_BUBBLE then
+    return Global.headbar_mgr:get_head_chatbubble(bind_target, height)
+  elseif bubble_template == SPELL_SIGN_BUBBLE then
+    return Global.headbar_mgr:get_head_spell_sign_bubble(bind_target, height)
+  end
+end
+
+function M:_update_chat_bubble_appearance()
+  local self_obj = Util.get_child("Self", self.v_bubble)
+  local other_obj = Util.get_child("Other", self.v_bubble)
+  if self.v_char:is_hero() then
+    self_obj:SetActive(true)
+    other_obj:SetActive(false)
+    return self_obj
+  else
+    self_obj:SetActive(false)
+    other_obj:SetActive(true)
+    return other_obj
+  end
+end
+
+function M:_add_bubble_timer(duration)
+  self.v_bubble_timer = Timer:add_timer("bubble end timer", duration, M.bubble_timeout, self)
+end
+
+function M:bubble_timeout()
+  self.v_bubble_timer = nil
+  self:_remove_bubble()
+  return true
+end
+
+function M:try_remove_spell_sign_bubble()
+  if self.v_bubble_template == SPELL_SIGN_BUBBLE then
+    self:_remove_bubble()
+    self:_remove_bubble_timer()
+  end
+end
+
+function M:has_headbar()
+  return self.v_headbar
+end
+
+function M:headbar_set_active(is_active)
+  if self.v_headbar.activeSelf ~= is_active then
+    self.v_headbar:SetActive(is_active)
+  end
+end
+
+function M:clean_headbar()
+  if self.v_headbar then
+    Global.headbar_mgr:release_head_text(self.v_headbar, self.v_headbar_bind)
+    self.v_headbar = nil
+  end
+  self.v_headbar_bind = nil
+  self.v_name_text = nil
+  self.v_title_text = nil
+  self.v_top_name = nil
+  self.v_monster_title = nil
+  self.v_status_text = nil
+  self.v_belong_title = nil
+  self.v_camp_title = nil
+end
+
+function M:add_headbar(text)
+  local height = self.v_char:get_real_height()
+  if not self.v_headbar then
+    local headbar, bind = Global.headbar_mgr:get_head_text(self.v_char, height)
+    self.v_headbar_bind = bind
+    self.v_headbar = headbar
+    self.v_name_text = Util.get_ejlabel("Name", self.v_headbar)
+    self.v_title_text = Util.get_ejlabel("TxtTitle", self.v_headbar)
+    self.v_top_name = Util.get_child("Top", self.v_headbar)
+    self.v_monster_title = Util.get_ejlabel("MonsterTitle", self.v_headbar)
+    self.v_status_text = Util.get_ejlabel("StatusText", self.v_headbar)
+    self.v_belong_title = Util.get_ejlabel("BelongTitle", self.v_headbar)
+    self.v_camp_title = Util.get_ejlabel("CampText", self.v_headbar)
+    _, self.v_headbar_init_y = self.v_name_text.transform:GetLocalPositionA()
+    self.v_headbar_line_count = 0
+    self:update_headbar_text(text)
+    self:update_headbar_trans()
+    self:set_headbar_image(self.v_should_sprite_name)
+  end
+end
+
+function M:update_headbar_trans()
+  if not self.v_headbar_bind then
+    return
+  end
+  if self.v_char:is_on_riding() then
+    self.v_headbar_bind:set_char(self.v_char:get_ride())
+    if self.v_img_bind then
+      self.v_img_bind:set_char(self.v_char:get_ride())
+    end
+  else
+    self.v_headbar_bind:set_char(self.v_char)
+    if self.v_img_bind then
+      self.v_img_bind:set_char(self.v_char)
+    end
+  end
+  self:update_headbar_height()
+end
+
+function M:get_line_count(...)
+  return self.v_headbar_line_count
+end
+
+function M:inc_line_count(...)
+  self.v_headbar_line_count = self.v_headbar_line_count + 1
+end
+
+function M:reset_line_count(...)
+  self.v_headbar_line_count = 0
+end
+
+function M:update_headbar_text(text)
+  if not self.v_headbar then
+    return
+  end
+  self:reset_line_count()
+  local color = self:get_name_color()
+  local attr_mgr = self.v_char.attr_mgr
+  local newbie = require("faction_def").enum.NEWBIE
+  if not DungeonMgr:is_in_dungeon() and attr_mgr and attr_mgr.faction and attr_mgr.faction ~= newbie then
+    local faction_cfg = ShareRes.create("faction", attr_mgr.faction)
+    text = string.format("%s (%s)", text, faction_cfg.headtext)
+  end
+  self.v_name_text.text = Util.format_ngui_color(text, color)
+  self:update_trans_position(self.v_name_text.transform)
+  self:inc_line_count()
+  self:update_title()
+  self:update_top_name()
+end
+
+function M:update_top_name()
+  if not self.v_headbar then
+    return
+  end
+  self:update_trans_position(self.v_top_name.transform)
+  local attr_mgr = self.v_char.attr_mgr
+  if not attr_mgr or not attr_mgr.top_name_type then
+    self.v_top_name:SetActive(false)
+    return
+  end
+  local type = attr_mgr.top_name_type
+  local id = attr_mgr.top_name_id
+  if self.v_pre_type == type and self.v_pre_id == id then
+    return
+  end
+  self.v_pre_type = type
+  self.v_pre_id = id
+  if 0 == id then
+    self:_clear_top_name()
+    self.v_top_name:SetActive(false)
+    return
+  end
+  local tbl_name = PATH_KEY_TBL[type]
+  if not tbl_name then
+    self.v_top_name:SetActive(false)
+    return
+  end
+  local path_key = ShareRes.create(tbl_name, id).path
+  if nil == path_key or "" == path_key then
+    path_key = HEADBAR_TOP_NAME_DEFAULT_KEY
+  end
+  if path_key ~= self.v_path_key then
+    self:_clear_top_name()
+    self.v_path_key = path_key
+    self.v_top_name_content = Global.headbar_mgr:get_top_name(self.v_path_key)
+    self.v_top_name_content.transform:SetParent(self.v_top_name.transform, false)
+    self.v_top_name_content:SetActive(true)
+  end
+  if nil ~= self.v_top_name_content then
+    self.v_top_name:SetActive(true)
+    local mgr = Global[TOP_NAME_MGR[self.v_pre_type]]
+    if mgr then
+      mgr:update_top_name(self.v_top_name_content, id)
+    end
+  end
+end
+
+function M:get_corrected_height(...)
+  return self.v_headbar_line_count * 20 + self.v_headbar_init_y
+end
+
+function M:update_trans_position(trans, y)
+  local y = y or self:get_corrected_height()
+  trans:SetLocalPositionA(0, y, 0)
+end
+
+function M:_clear_top_name()
+  if self.v_top_name_content == nil and nil == self.v_path_key then
+    return
+  end
+  if self.v_top_name_content then
+    self.v_top_name_content:SetActive(false)
+  end
+  Global.headbar_mgr:release_top_name(self.v_top_name_content, self.v_path_key)
+  self.v_top_name_content = nil
+  self.v_path_key = nil
+end
+
+function M:clean_head_image()
+  if self.v_img_head then
+    Global.headbar_mgr:release_head_image(self.v_img_head, self.v_img_bind)
+    self.v_img_head = nil
+  end
+  self.v_img_bind = nil
+  self.v_camp_bg = nil
+  self.v_title_bg = nil
+  self.v_status_bg = nil
+  self.v_quest_img = nil
+end
+
+function M:get_head_image()
+  if self.v_img_head then
+    return self.v_img_head
+  end
+  self.v_img_head, self.v_img_bind = Global.headbar_mgr:get_head_image(self.v_char, self.v_char:get_real_height())
+  self.v_camp_bg = Util.get_image("CampBg", self.v_img_head)
+  self.v_title_bg = Util.get_image("TitleBg", self.v_img_head)
+  self.v_status_bg = Util.get_child("StatusBg", self.v_img_head)
+  self.v_quest_img = Util.get_image("Quest", self.v_img_head)
+  self.v_camp_bg.gameObject:SetActive(false)
+  self.v_title_bg.gameObject:SetActive(false)
+  self.v_status_bg.gameObject:SetActive(false)
+  self.v_quest_img.gameObject:SetActive(false)
+  if not self.v_char:get_enable() then
+    self.v_img_head:SetActive(false)
+  end
+  return self.v_img_head
+end
+
+function M:update_title()
+  if not self.v_headbar then
+    return
+  end
+  self.v_title_text:SetActive(false)
+  local color = self:get_name_color()
+  if self.v_status_info then
+    self:get_head_image()
+    local info = self.v_status_info
+    self.v_status_text.text = info.text
+    self.v_status_text.gameObject:SetActive(true)
+    self:update_trans_position(self.v_status_text.transform)
+    self.v_status_bg:SetActive(true)
+    self.v_monster_title.gameObject:SetActive(false)
+    self.v_belong_title.gameObject:SetActive(false)
+  else
+    self.v_status_text.gameObject:SetActive(false)
+    if self.v_status_bg then
+      self.v_status_bg:SetActive(false)
+    end
+    if TitleSys then
+      local has_title = TitleSys:set_title_info_uicomponent(self, self.v_title_text, nil, self.v_char)
+      if has_title then
+        self:update_trans_position(self.v_title_text.transform)
+        self:update_trans_position(self.v_title_bg.transform)
+        self:inc_line_count()
+      end
+    end
+    local monster_title = self.v_char:get_monster_title()
+    if monster_title and "" ~= monster_title then
+      self.v_monster_title.text = Util.format_ngui_color("<" .. monster_title .. ">", self:get_monster_title_color(color))
+      self:update_trans_position(self.v_monster_title.transform)
+      self:inc_line_count()
+      self.v_monster_title.gameObject:SetActive(true)
+    else
+      self.v_monster_title.text = ""
+      self.v_monster_title.gameObject:SetActive(false)
+    end
+    local belong_title = self.v_char:get_belongtitle()
+    local has_belong_title
+    if belong_title and "" ~= belong_title then
+      self.v_belong_title.text = Util.format_ngui_color(belong_title, color)
+      self:update_trans_position(self.v_belong_title.transform)
+      self:inc_line_count()
+      self.v_belong_title.gameObject:SetActive(true)
+      has_belong_title = true
+    end
+    local title = self.v_char:get_buff_title()
+    if not has_belong_title and title and "" ~= title then
+      local id = assert(ShareRes.create("fvf_title").name_index[title], title)
+      local color = ShareRes.create("fvf_title", id)["颜色"]
+      self.v_belong_title.text = Util.format_ngui_color(title, color)
+      self:update_trans_position(self.v_belong_title.transform)
+      self:inc_line_count()
+      self.v_belong_title.gameObject:SetActive(true)
+      has_belong_title = true
+    end
+    if not has_belong_title then
+      self.v_belong_title.gameObject:SetActive(false)
+    end
+  end
+end
+
+function M:set_status_text(text)
+  if text then
+    self.v_status_info = {text = text}
+  else
+    self.v_status_info = nil
+  end
+  self:update_title()
+end
+
+function M:update_name()
+  self:update_headbar_text(self.v_char.attr_mgr.name)
+end
+
+function M:set_headbar_image(sprite_name)
+  if self.v_headbar then
+    if sprite_name then
+      if sprite_name ~= self.v_last_sprite_name then
+        if not self.v_img_head then
+          self:get_head_image()
+        end
+        local sprite = ResMgr:load_atlas_sprite("HeadBar", sprite_name)
+        self.v_quest_img.overrideSprite = sprite
+        self.v_quest_img:SetNativeSize()
+        self.v_last_sprite_name = sprite_name
+        local y = self:get_corrected_height()
+        self:update_trans_position(self.v_quest_img.transform, y + 30)
+      end
+      self.v_quest_img.gameObject:SetActive(true)
+    else
+      if self.v_quest_img then
+        self.v_quest_img.gameObject:SetActive(false)
+      end
+      self.v_last_sprite_name = nil
+      self.v_should_sprite_name = nil
+    end
+    if self.v_char:is_selected() then
+      MsgGame:mq_publish2(Const.MSG_LOKC_CHAR_IMAGE_CHANGE)
+    end
+  else
+    self.v_should_sprite_name = sprite_name
+  end
+end
+
+function M:is_headbar_image_visible()
+  return self.v_quest_img and self.v_quest_img.gameObject.activeSelf
+end
+
+function M:update_headbar_height()
+  if not self.v_headbar_bind then
+    return
+  end
+  if not self.v_char.attr_mgr then
+    return
+  end
+  local height = self.v_char:get_real_height()
+  self.v_headbar_bind:set_height(height)
+  if self.v_img_bind then
+    self.v_img_bind:set_height(height)
+  end
+end
+
+function M:setup_headbar(...)
+end
+
+return M

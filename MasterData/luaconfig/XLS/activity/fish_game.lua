@@ -1,0 +1,7 @@
+return {
+  [35] = {
+    ActivityId = 35,
+    MailId = 220010,
+    TaskGroupId = 331
+  }
+}

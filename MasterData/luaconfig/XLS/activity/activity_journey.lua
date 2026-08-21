@@ -1,0 +1,56 @@
+return {
+  {
+    ActivityId = 4,
+    AwardGroup = 5001002,
+    ChapterId = 10011,
+    Condition = 5001001,
+    Id = 1,
+    Name = "第三章",
+    SpineID = 101
+  },
+  {
+    ActivityId = 4,
+    AwardGroup = 5001001,
+    ChapterId = 10011,
+    Condition = 5001002,
+    Id = 2,
+    Name = "第一章",
+    SpineID = 101
+  },
+  {
+    ActivityId = 4,
+    AwardGroup = 5001001,
+    ChapterId = 10021,
+    Condition = 5001003,
+    Id = 3,
+    Name = "第二章",
+    SpineID = 101
+  },
+  {
+    ActivityId = 4,
+    AwardGroup = 5001001,
+    ChapterId = 10031,
+    Condition = 5001004,
+    Id = 4,
+    Name = "第三章",
+    SpineID = 101
+  },
+  {
+    ActivityId = 4,
+    AwardGroup = 5001001,
+    ChapterId = 10041,
+    Condition = 5001005,
+    Id = 5,
+    Name = "第四章",
+    SpineID = 101
+  },
+  {
+    ActivityId = 4,
+    AwardGroup = 5001003,
+    ChapterId = 10051,
+    Condition = 5001006,
+    Id = 6,
+    Name = "第五章",
+    SpineID = 101
+  }
+}

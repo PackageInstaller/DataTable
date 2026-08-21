@@ -1,0 +1,101 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local ToggleTab = require("ui.widget.widget_toggle_tab")
+local ItemSynthesisList = require("uimodule.uibag.item_synthesis_list")
+local AssetBarView = require("ui.asset_bar.asset_bar")
+local _tinsert = table.insert
+local BIND_TYPE = Config.BIND_TYPE
+local util_get_color = Util.get_unity_color_by_hex
+local select_color = util_get_color(tonumber("fff0d5", 16))
+local unselect_color = util_get_color(tonumber("b6ae9f", 16))
+local MODEL = {
+  v_asset_bar_obj = {
+    "AssetBar",
+    BIND_TYPE.OBJECT
+  },
+  v_page_obj = {
+    "Page",
+    BIND_TYPE.OBJECT
+  },
+  v_marquee_area_obj = {
+    "MarqueeArea",
+    BIND_TYPE.OBJECT
+  },
+  v_content = {
+    "Content",
+    BIND_TYPE.OBJECT
+  },
+  v_return_btn = {
+    "Button_return",
+    BIND_TYPE.BUTTON
+  },
+  v_tupo_item = {
+    "TupoItem",
+    BIND_TYPE.TOGGLE
+  },
+  v_engrave = {
+    "Engrave",
+    BIND_TYPE.TOGGLE
+  },
+  v_engrave_item = {
+    "EngraveItem",
+    BIND_TYPE.TOGGLE
+  }
+}
+
+function ui:ui_finish_load()
+  self.is_click_return = true
+  self:init_model(MODEL)
+  self:set_button_listener(self.v_return_btn, function()
+    self.is_click_return = true
+    self:ui_hide()
+    UIMgr:get_ui("uibag"):ui_show()
+  end)
+  local pages = {}
+  _tinsert(pages, self.v_tupo_item)
+  _tinsert(pages, self.v_engrave)
+  _tinsert(pages, self.v_engrave_item)
+  self.v_page_toggle_tab = ToggleTab:new(self)
+  self.v_page_toggle_tab:init_by_toggles(pages, function(idx)
+    self:_on_click_page(idx)
+  end, 0, false)
+  self:init_item_list()
+  self.v_asset_bar = AssetBarView:new(self, self.v_uiobjects.AssetBar)
+end
+
+function ui:ui_on_show()
+  self:update_date()
+  self.v_asset_bar:on_create()
+end
+
+function ui:ui_on_hide()
+  self.v_asset_bar:on_hide()
+end
+
+function ui:ui_on_destroy()
+  self.v_asset_bar:on_destory()
+end
+
+function ui:_on_click_page(idx)
+  if self.v_last_idx == idx then
+    return
+  end
+  self.item_synthesis_list:set_bag_type(idx)
+end
+
+function ui:init_item_list()
+  self.item_synthesis_list = ItemSynthesisList:ui_wrap(self, self.v_content)
+  local items = BagMgr:get_bag(2) or EMPTY_TABLE
+  local item_exchange = ShareRes.get_all_item_combine_cfg()
+  self.item_synthesis_list:setup(items, item_exchange)
+  self.item_synthesis_list:update_bag(items, item_exchange)
+end
+
+function ui:update_date()
+  local items = BagMgr:get_bag(2) or EMPTY_TABLE
+  local item_exchange = ShareRes.get_all_item_combine_cfg()
+  self.item_synthesis_list:update_bag(items, item_exchange)
+  MsgGame:mq_publish2(Const.MSG_BAG_ITEM_SELECT_CHANGE)
+end
+
+return ui

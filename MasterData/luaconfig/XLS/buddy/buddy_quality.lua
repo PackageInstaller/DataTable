@@ -1,0 +1,35 @@
+return {
+  [3] = {
+    IconName = "Common_pz_r",
+    Id = 3,
+    QualityIcon = {
+      "js_jsd_03",
+      "js_img_09",
+      "player_db_hero_sr",
+      "player_db_hero_yl_sr",
+      "UICharacter/2024.6.26/Char_bg_jslb_txpz2"
+    }
+  },
+  [4] = {
+    IconName = "Common_pz_sr",
+    Id = 4,
+    QualityIcon = {
+      "js_jsd_02",
+      "js_img_10",
+      "player_db_hero_sr",
+      "player_db_hero_yl_sr",
+      "UICharacter/2024.6.26/Char_bg_jslb_txpz2"
+    }
+  },
+  [5] = {
+    IconName = "Common_pz_ssr",
+    Id = 5,
+    QualityIcon = {
+      "js_jsd_01",
+      "js_img_11",
+      "player_db_hero_ssr",
+      "player_db_hero_yl_ssr",
+      "UICharacter/2024.6.26/Char_bg_jslb_txpz1"
+    }
+  }
+}

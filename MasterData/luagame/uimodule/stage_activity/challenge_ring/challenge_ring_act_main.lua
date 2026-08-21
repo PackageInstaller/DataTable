@@ -1,0 +1,110 @@
+local Base = require("ui.uibase")
+local commonDef = require("cs_share.common_define")
+local ui = Util.create_child_mt(Base)
+local Act_ID = commonDef.ACTY_TYPE.CHALLENGE_RING
+local CHALLENGE_RING_STAGE_ITEM = "CHALLENGE_RING_STAGE_ITEM"
+local STAGE_STATE = {
+  LOCK = 1,
+  CHALLENGE = 2,
+  PASS = 3
+}
+local TASK_STATE = {
+  NOT_RECEIVE = 0,
+  CAN_RECEIVE = 1,
+  RECEIVE = 2,
+  COMPLETE = 3,
+  GET_REWARD = 4
+}
+local TASK_RED_ID = 27
+local CHAPTER_CONFIG = require("uimodule.chapter.chapter_config")
+local CommonDef = require("cs_share.common_define")
+
+function ui:ui_finish_load()
+  self:set_button("BtnReturn", function()
+    self:ui_hide()
+  end)
+  self:set_button("BtnTask", function()
+    UIMgr:get_ui("top_ver_task"):ui_show()
+  end)
+  self:register_exist_auto_template(CHALLENGE_RING_STAGE_ITEM, self.v_uiobjects.StageTem, self.v_uiobjects.Content)
+end
+
+function ui:ui_on_show()
+  self:_refresh_stage()
+  self:_refresh_task_info()
+  self:_regist_client_event()
+end
+
+function ui:_regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_UPDATE_CR_TOWER_INFO, self._refresh_stage, self)
+end
+
+function ui:_refresh_stage()
+  self:give_back_auto_cache(CHALLENGE_RING_STAGE_ITEM, false)
+  local game_id = ActivityMgr:invoke(Act_ID, "get_game_id")
+  local list = ShareRes.create("activity.challenge_ring_main", game_id)
+  for _, episode_id in ipairs(list.EpisodeIds) do
+    local obj = self:get_auto_cache(CHALLENGE_RING_STAGE_ITEM)
+    self:_set_stage_info(obj, episode_id)
+  end
+end
+
+function ui:_set_stage_info(item, episode_id)
+  local stage_cfg = ShareRes.get_chapter_point_cfg(episode_id)
+  local chapter_num = self:get_text("StageName", item)
+  chapter_num.text = stage_cfg.SerialNum
+  local chapter_name = self:get_text("StNameBg/StName", item)
+  chapter_name.text = stage_cfg.PointName
+  local lock = self:get_child_gameobj("Lock", item)
+  local state = self:get_stage_state(episode_id, stage_cfg.FrontPointId)
+  lock:SetActive(state == STAGE_STATE.LOCK)
+  local btn = self:get_button(nil, item)
+  self:set_button_listener(btn, function()
+    local game_open = ActivityMgr:get_game_is_open(Act_ID)
+    if not game_open then
+      Util.show_message_tip(2280)
+      return
+    end
+    if state == STAGE_STATE.LOCK then
+      if stage_cfg.FrontPointId and stage_cfg.FrontPointId > 0 then
+        local str = Util.format_str("请先完成{1}关", ShareRes.get_chapter_point_cfg(stage_cfg.FrontPointId).PointName)
+        UIMgr:get_ui("uimessagetip"):ui_show(str)
+      end
+    elseif not TowerMgr:check_fight_progress() then
+      UIMgr:get_ui("point_detail"):ui_show(nil, 20040101, CommonDef.CHALLENGE_TYPE.CURSE_CIRCLE)
+    end
+  end)
+end
+
+function ui:get_stage_state(stage_id, front_id)
+  if front_id > 0 then
+    local state = ActivityMgr:invoke(Act_ID, "get_stage_state", front_id)
+    if state == STAGE_STATE.PASS then
+      return ActivityMgr:invoke(Act_ID, "get_stage_state", stage_id)
+    end
+    return STAGE_STATE.LOCK
+  else
+    return ActivityMgr:invoke(Act_ID, "get_stage_state", stage_id)
+  end
+end
+
+function ui:_refresh_task_info()
+  RedPointMgr:bind_redpoint(self, self.v_uiobjects.TaskRed, TASK_RED_ID)
+  local cfg = ShareRes.create("activity.best_config_task")
+  local cur = 0
+  local total = 0
+  for i, v in pairs(cfg) do
+    total = total + 1
+    local state = TaskMgr:get_task_state(v.Id)
+    if state >= TASK_STATE.COMPLETE then
+      cur = cur + 1
+    end
+  end
+  self.v_uicompents.Progress_txt.text = string.format("%s/%s", cur, total)
+end
+
+function ui:cache_ui()
+  return true
+end
+
+return ui

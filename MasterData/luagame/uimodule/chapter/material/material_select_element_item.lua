@@ -1,0 +1,23 @@
+local Base = require("ui.uiobject")
+local item = Util.create_child_mt(Base)
+
+function item:refresh(index, item_obj, element_cfg_info)
+  self.obj = item_obj
+  self.obj:SetActive(true)
+  self.id = element_cfg_info.Id
+  self.v_toggle = Util.get_toggle(nil, self.obj)
+  local image = Util.get_image("EleIcon", self.obj)
+  local select_id = ChapterMaterialMgr:get_select_element_id()
+  if select_id == element_cfg_info.Id then
+    self.v_toggle.isOn = true
+  else
+    self.v_toggle.isOn = false
+  end
+  ResMgr:load_set_icon(image, element_cfg_info.ElementIconPath)
+end
+
+function item:is_select()
+  return self.v_toggle.isOn
+end
+
+return item

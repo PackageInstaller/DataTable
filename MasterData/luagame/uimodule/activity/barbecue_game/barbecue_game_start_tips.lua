@@ -1,0 +1,30 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+
+function ui:ui_on_show(stage_cfg)
+  local target_score = stage_cfg.TargetScore
+  self.v_uicompents.StageName_txt.text = stage_cfg.Name
+  self.v_uicompents.Time_txt.text = stage_cfg.Duration .. "s"
+  self.v_uicompents.TargetScore_txt.text = target_score
+  local is_special = nil == target_score
+  self.v_uiobjects.StageTarget:SetActive(not is_special)
+  self.v_uiobjects.SpecialBg:SetActive(is_special)
+  self.v_uiobjects.NormalBg:SetActive(not is_special)
+  self:remove_auto_hide_timer()
+  self.v_auto_hide_timer = Timer:add_timer("bbq_customer_start_tips_auto_hide_timer", 2, function()
+    self:ui_hide()
+  end)
+end
+
+function ui:ui_on_hide()
+  self:remove_auto_hide_timer()
+end
+
+function ui:remove_auto_hide_timer()
+  if self.v_auto_hide_timer then
+    Timer:remove_timer(self.v_auto_hide_timer)
+    self.v_auto_hide_timer = nil
+  end
+end
+
+return ui

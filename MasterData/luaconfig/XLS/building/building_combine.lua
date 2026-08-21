@@ -1,0 +1,376 @@
+return {
+  [101] = {
+    [2] = {
+      AfterRepleceId = 1101,
+      Id = 101,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2101,
+      Id = 101,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3101,
+      Id = 101,
+      Lv = 4
+    }
+  },
+  [102] = {
+    [2] = {
+      AfterRepleceId = 1102,
+      Id = 102,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2102,
+      Id = 102,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3102,
+      Id = 102,
+      Lv = 4
+    }
+  },
+  [103] = {
+    [2] = {
+      AfterRepleceId = 1103,
+      Id = 103,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2103,
+      Id = 103,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3103,
+      Id = 103,
+      Lv = 4
+    }
+  },
+  [104] = {
+    [2] = {
+      AfterRepleceId = 1104,
+      Id = 104,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2104,
+      Id = 104,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3104,
+      Id = 104,
+      Lv = 4
+    }
+  },
+  [105] = {
+    [2] = {
+      AfterRepleceId = 1105,
+      Id = 105,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2105,
+      Id = 105,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3105,
+      Id = 105,
+      Lv = 4
+    }
+  },
+  [106] = {
+    [2] = {
+      AfterRepleceId = 1106,
+      Id = 106,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2106,
+      Id = 106,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3106,
+      Id = 106,
+      Lv = 4
+    }
+  },
+  [107] = {
+    [2] = {
+      AfterRepleceId = 1107,
+      Id = 107,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2107,
+      Id = 107,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3107,
+      Id = 107,
+      Lv = 4
+    }
+  },
+  [108] = {
+    [2] = {
+      AfterRepleceId = 1108,
+      Id = 108,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2108,
+      Id = 108,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3108,
+      Id = 108,
+      Lv = 4
+    }
+  },
+  [109] = {
+    [2] = {
+      AfterRepleceId = 1109,
+      Id = 109,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2109,
+      Id = 109,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3109,
+      Id = 109,
+      Lv = 4
+    }
+  },
+  [110] = {
+    [2] = {
+      AfterRepleceId = 1110,
+      Id = 110,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2110,
+      Id = 110,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3110,
+      Id = 110,
+      Lv = 4
+    }
+  },
+  [111] = {
+    [2] = {
+      AfterRepleceId = 1111,
+      Id = 111,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2111,
+      Id = 111,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3111,
+      Id = 111,
+      Lv = 4
+    }
+  },
+  [112] = {
+    [2] = {
+      AfterRepleceId = 1112,
+      Id = 112,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2112,
+      Id = 112,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3112,
+      Id = 112,
+      Lv = 4
+    }
+  },
+  [113] = {
+    [2] = {
+      AfterRepleceId = 1113,
+      Id = 113,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2113,
+      Id = 113,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3113,
+      Id = 113,
+      Lv = 4
+    }
+  },
+  [114] = {
+    [2] = {
+      AfterRepleceId = 1114,
+      Id = 114,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2114,
+      Id = 114,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3114,
+      Id = 114,
+      Lv = 4
+    }
+  },
+  [115] = {
+    [2] = {
+      AfterRepleceId = 1115,
+      Id = 115,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2115,
+      Id = 115,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3115,
+      Id = 115,
+      Lv = 4
+    }
+  },
+  [116] = {
+    [2] = {
+      AfterRepleceId = 1116,
+      Id = 116,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2116,
+      Id = 116,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3116,
+      Id = 116,
+      Lv = 4
+    }
+  },
+  [117] = {
+    [2] = {
+      AfterRepleceId = 1117,
+      Id = 117,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2117,
+      Id = 117,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3117,
+      Id = 117,
+      Lv = 4
+    }
+  },
+  [118] = {
+    [2] = {
+      AfterRepleceId = 1118,
+      Id = 118,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2118,
+      Id = 118,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3118,
+      Id = 118,
+      Lv = 4
+    }
+  },
+  [119] = {
+    [2] = {
+      AfterRepleceId = 1119,
+      Id = 119,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2119,
+      Id = 119,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3119,
+      Id = 119,
+      Lv = 4
+    }
+  },
+  [120] = {
+    [2] = {
+      AfterRepleceId = 1120,
+      Id = 120,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2120,
+      Id = 120,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3120,
+      Id = 120,
+      Lv = 4
+    }
+  },
+  [121] = {
+    [2] = {
+      AfterRepleceId = 1121,
+      Id = 121,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2121,
+      Id = 121,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3121,
+      Id = 121,
+      Lv = 4
+    }
+  },
+  [122] = {
+    [2] = {
+      AfterRepleceId = 1122,
+      Id = 122,
+      Lv = 2
+    },
+    [3] = {
+      AfterRepleceId = 2122,
+      Id = 122,
+      Lv = 3
+    },
+    [4] = {
+      AfterRepleceId = 3122,
+      Id = 122,
+      Lv = 4
+    }
+  }
+}

@@ -1,0 +1,32 @@
+local empty = {}
+return {
+  [0] = {
+    arder_idle = 1.0,
+    ui_idle_2 = 0.1,
+    ui_idle = 1.0,
+    ui_idle_1 = 0.1,
+    uimain_interact1 = 1.0,
+    uimain_interact2 = 1.0,
+    uimain_interact3 = 1.0,
+    uimain_interact4 = 1.0,
+    uimain_interact5 = 0.1,
+    uimain_interact6 = 1.0,
+    uimain_UpgradedFavorability1 = 1.0,
+    uimain_UpgradedFavorability2 = 1.0,
+    uimain_UpgradedFavorability3 = 1.0,
+    uimain_UpgradedFavorability4 = 1.0,
+    uimain_thank = 1.0,
+    uimain_QuickClick = 1.0,
+    weapon_idle = 1.0,
+    uimain_idle = 1.0,
+    uimain_interact10 = 1.0,
+    uimain_interact12 = 1.0,
+    uimain_interact9 = 1.0,
+    uimain_interact11 = 1.0,
+    uimain_interact8 = 1.0,
+    uimain_interact7 = 1.0,
+    uimain_interact13 = 1.0,
+    uimain_Login = 1.0,
+    uimain_LongTimeIdle = 1.0
+  }
+}

@@ -1,0 +1,167 @@
+local Base = require("ui.uibase")
+local ui = Util.create_child_mt(Base)
+local BIND_TYPE = Config.BIND_TYPE
+local Battle_Shop_Cfg = require("uimodule.battle_shop.battle_shop_cfg")
+local ShopItemClass = require("uimodule.stage_activity.challenge_ring.cr_shop_item")
+local ITEM_ICON_PATH = "Icon/BattleItem/%s"
+local BagConfig = require("gamelogic.character.fight_bag_configs")
+local Item_Helper = require("utils.item_helper")
+local _tinsert = table.insert
+local MODEL = {
+  v_bag_text = {
+    "BagText",
+    BIND_TYPE.TEXT
+  },
+  v_blur = {
+    "Blur",
+    BIND_TYPE.RAW_IMAGE
+  },
+  v_btn_ret = {
+    "BtnRet",
+    BIND_TYPE.BUTTON
+  },
+  v_currency_obj = {
+    "CurrencyObj",
+    BIND_TYPE.OBJECT
+  },
+  v_refresh_item_obj = {
+    "RefreshItemObj",
+    BIND_TYPE.BUTTON
+  },
+  v_shop_item = {
+    "ShopItem",
+    BIND_TYPE.OBJECT
+  },
+  v_shop_panel_obj = {
+    "ShopPanelObj",
+    BIND_TYPE.OBJECT
+  },
+  v_shop_panel = {
+    "ShopPanel",
+    BIND_TYPE.OBJECT
+  }
+}
+local CR_SHOP_ITEM_KEY = "CR_SHOP_ITEM_KEY"
+local CHALLGENGT_BAG_POINT = 28
+
+function ui:ui_finish_load()
+  self:init_model(MODEL)
+  self:set_button("BtnRet", function()
+    self:ui_hide()
+    ChallengeRingMgr:on_ring_card_end()
+  end)
+  self:set_button("RefreshItemObj", function()
+    self:refresh_shop()
+  end)
+  self:set_button("BtnCRBag", function()
+    UIMgr:get_ui("battle_bag"):ui_show(nil, 2)
+  end)
+  self:init_template()
+  self.v_bag_red_point = self:get_child_gameobj("RedPoint", self.v_uiobjects.BtnCRBag)
+end
+
+function ui:ui_on_show()
+  self:refresh_sell_item()
+  self:_refresh_currency()
+  self:refresh_shop_cnt()
+  self.v_bag_red_point:SetActive(FightBagMgr:get_has_new_item())
+  self:regist_client_event()
+end
+
+function ui:ui_on_hide()
+  self.v_shop_item_list = nil
+  self.v_wrap_uis = {}
+end
+
+function ui:ui_on_destroy()
+end
+
+function ui:init_template()
+  self:register_exist_auto_template(CR_SHOP_ITEM_KEY, self.v_shop_item, self.v_shop_panel)
+end
+
+function ui:regist_client_event()
+  self:bind_auto_mq(Const.MSG_ON_SELECT_SHOP_ITEM, self._response_select_item, self)
+  self:bind_auto_mq(Const.MSG_ON_SHOP_ITEM_BUY, self._response_buy_item, self)
+  self:bind_auto_mq(Const.MSG_ON_FIGHT_DIAMOND_UPDATE, self._refresh_currency, self)
+  self:bind_auto_mq(Const.MSG_ON_FIGHT_BAG_UPDATE, self._respone_bag_update, self)
+end
+
+function ui:refresh_sell_item()
+  local item_list = BattleShopMgr:get_battle_shop_item_list()
+  self:give_back_auto_cache(CR_SHOP_ITEM_KEY)
+  self.v_shop_item_list = {}
+  for idx, item_info in ipairs(item_list) do
+    local item = self:get_auto_cache(CR_SHOP_ITEM_KEY)
+    local item_lua_obj = ShopItemClass:ui_wrap_ex(self, item, true)
+    item_info.idx = idx
+    _tinsert(self.v_shop_item_list, item_lua_obj)
+    item_lua_obj:set_data(item_info)
+  end
+end
+
+function ui:refresh_shop_cnt()
+  local shop_id = BattleShopMgr:get_battle_shop_id()
+  local refresh_cost_cfg = ShareRes.create(Battle_Shop_Cfg.BATTLE_SHOP_REFRESH)
+  local shop_cfg = ShareRes.create("battle.battle_shop")
+  local shop_refresh_id = shop_cfg[shop_id].RefreshId
+  local time = BattleShopMgr:get_refresh_cnt()
+  time = time + 1
+  local max_time = 0
+  local cost_cfg = refresh_cost_cfg[shop_refresh_id]
+  if cost_cfg.ItemCount ~= nil then
+    max_time = #cost_cfg.ItemCount
+  end
+  if time > max_time then
+    time = max_time
+  end
+  Util.get_text("CurrencyVal", self.v_uiobjects.RefreshItemObj).text = cost_cfg.ItemCount[time]
+  self:refresh_sell_item()
+end
+
+function ui:refresh_shop()
+  local is_reach_limit = BattleShopMgr:is_reach_refresh_limit()
+  if is_reach_limit then
+    Util.show_message_tip(2130)
+  end
+  BattleShopMgr:refresh_battle_shop(function()
+    self:refresh_shop_cnt()
+  end)
+end
+
+function ui:_response_select_item(msg)
+  local param = {
+    tips_source = BagConfig.TIPS_SOURCE.SHOP,
+    buy_idx = msg.mm_obj.idx,
+    show_num = msg.mm_obj.item_count,
+    go = msg.mm_obj.go,
+    has_buy = msg.mm_obj.buy
+  }
+  Item_Helper.show_battle_tips(msg.mm_obj.item_id, msg.mm_obj.ran_ans_uuid, param)
+end
+
+function ui:_response_buy_item(msg)
+  if nil == msg or nil == msg.mm_x then
+    return
+  end
+  self:refresh_sell_item()
+end
+
+function ui:_refresh_currency()
+  local moneyId = BagConfig.SHOW_CURRENCY[1]
+  local cfg = FightBagMgr:get_cfg_by_id(moneyId)
+  local moneyIcon = Util.get_image("CurrencyIcon", self.v_currency_obj)
+  ResMgr:load_set_icon(moneyIcon, string.format(ITEM_ICON_PATH, cfg.Icon))
+  local moneyTxt = Util.get_text("CurrencyVal", self.v_currency_obj)
+  moneyTxt.text = CharacterMgr:get_res_val(moneyId)
+end
+
+function ui:cache_ui()
+  return true
+end
+
+function ui:_respone_bag_update()
+  self.v_bag_red_point:SetActive(FightBagMgr:get_has_new_item())
+end
+
+return ui

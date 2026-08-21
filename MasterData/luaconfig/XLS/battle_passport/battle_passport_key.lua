@@ -1,0 +1,32 @@
+return {
+  {
+    Id = 1,
+    Name = "高维演算",
+    ShowPrice = 68,
+    sdkkey = {
+      "tc.bb.6800battlepass1",
+      "com.bb.aos.6800battlepass1",
+      "com.bb.ios.6800battlepass1"
+    }
+  },
+  {
+    Id = 2,
+    Name = "高维演算升阶",
+    ShowPrice = 60,
+    sdkkey = {
+      "tc.bb.6000battlepass1",
+      "com.bb.aos.6000battlepass1",
+      "com.bb.ios.6000battlepass1"
+    }
+  },
+  {
+    Id = 3,
+    Name = "无穷演算",
+    ShowPrice = 128,
+    sdkkey = {
+      "tc.bb.12800battlepass1",
+      "com.bb.aos.12800battlepass1",
+      "com.bb.ios.12800battlepass1"
+    }
+  }
+}
