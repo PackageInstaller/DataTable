@@ -1,0 +1,1877 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -3771936546307380935
+    },
+    "m_Name": "rogue_oracle_skill_data",
+    "records": [
+        {
+            "id": 100001,
+            "rarity": 0,
+            "name": "敵ステータス強化",
+            "kana": "",
+            "text": "敵の最大耐久、攻撃力、物理防御、魔法防御+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 100002,
+            "rarity": 0,
+            "name": "敵最大耐久増加",
+            "kana": "",
+            "text": "敵の最大耐久+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 100003,
+            "rarity": 0,
+            "name": "敵攻撃力増加",
+            "kana": "",
+            "text": "敵の攻撃力+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 100004,
+            "rarity": 0,
+            "name": "敵物理防御増加",
+            "kana": "",
+            "text": "敵の物理防御+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 100005,
+            "rarity": 0,
+            "name": "敵魔法防御増加",
+            "kana": "",
+            "text": "敵の魔法防御+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 1,
+            "rarity": 0,
+            "name": "味方最大耐久増加",
+            "kana": "",
+            "text": "味方の最大耐久+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 1
+        },
+        {
+            "id": 2,
+            "rarity": 0,
+            "name": "味方攻撃力増加",
+            "kana": "",
+            "text": "味方の攻撃力+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 1
+        },
+        {
+            "id": 3,
+            "rarity": 0,
+            "name": "味方物理防御増加",
+            "kana": "",
+            "text": "味方の物理防御+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 1
+        },
+        {
+            "id": 4,
+            "rarity": 0,
+            "name": "味方魔法防御増加",
+            "kana": "",
+            "text": "味方の魔法防御+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 1
+        },
+        {
+            "id": 5,
+            "rarity": 0,
+            "name": "味方移動速度増加",
+            "kana": "",
+            "text": "味方の移動速度+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 1
+        },
+        {
+            "id": 6,
+            "rarity": 0,
+            "name": "味方最大耐久増加",
+            "kana": "",
+            "text": "味方の最大耐久+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 1
+        },
+        {
+            "id": 7,
+            "rarity": 0,
+            "name": "味方攻撃力増加",
+            "kana": "",
+            "text": "味方の攻撃力+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 1
+        },
+        {
+            "id": 8,
+            "rarity": 0,
+            "name": "味方物理防御増加",
+            "kana": "",
+            "text": "味方の物理防御+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 1
+        },
+        {
+            "id": 9,
+            "rarity": 0,
+            "name": "味方魔法防御増加",
+            "kana": "",
+            "text": "味方の魔法防御+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 1
+        },
+        {
+            "id": 10,
+            "rarity": 0,
+            "name": "味方移動速度増加",
+            "kana": "",
+            "text": "味方の移動速度+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 1
+        },
+        {
+            "id": 10001,
+            "rarity": 0,
+            "name": "味方回復率減少",
+            "kana": "",
+            "text": "味方の回復率-20%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 89,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10002,
+            "rarity": 0,
+            "name": "味方与ダメ減少",
+            "kana": "",
+            "text": "味方の与ダメ-10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                90
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10003,
+            "rarity": 0,
+            "name": "味方被ダメ上昇",
+            "kana": "",
+            "text": "味方の被ダメ+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1006,
+                    "param": [
+                        {
+                            "num": [
+                                110
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10004,
+            "rarity": 0,
+            "name": "味方会心率減少",
+            "kana": "",
+            "text": "味方の会心率-10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 79,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10005,
+            "rarity": 0,
+            "name": "味方会心ダメージ率減少",
+            "kana": "",
+            "text": "味方の会心ダメージ率-20%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 81,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10006,
+            "rarity": 0,
+            "name": "味方攻撃速度減少",
+            "kana": "",
+            "text": "味方の攻撃速度-10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 27,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10007,
+            "rarity": 0,
+            "name": "敵最大耐久増加",
+            "kana": "",
+            "text": "敵の最大耐久+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10008,
+            "rarity": 0,
+            "name": "敵攻撃力増加",
+            "kana": "",
+            "text": "敵の攻撃力+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10009,
+            "rarity": 0,
+            "name": "敵物理防御増加",
+            "kana": "",
+            "text": "敵の物理防御+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10010,
+            "rarity": 0,
+            "name": "敵魔法防御増加",
+            "kana": "",
+            "text": "敵の魔法防御+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10011,
+            "rarity": 0,
+            "name": "敵移動速度増加",
+            "kana": "",
+            "text": "敵の移動速度+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10012,
+            "rarity": 0,
+            "name": "敵最大耐久増加",
+            "kana": "",
+            "text": "敵の最大耐久+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10013,
+            "rarity": 0,
+            "name": "敵攻撃力増加",
+            "kana": "",
+            "text": "敵の攻撃力+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10014,
+            "rarity": 0,
+            "name": "敵物理防御増加",
+            "kana": "",
+            "text": "敵の物理防御+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10015,
+            "rarity": 0,
+            "name": "敵魔法防御増加",
+            "kana": "",
+            "text": "敵の魔法防御+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10016,
+            "rarity": 0,
+            "name": "敵移動速度増加",
+            "kana": "",
+            "text": "敵の移動速度+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10017,
+            "rarity": 0,
+            "name": "敵貫通率増加",
+            "kana": "",
+            "text": "敵の貫通率+20%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 86,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10018,
+            "rarity": 0,
+            "name": "味方回復率減少",
+            "kana": "",
+            "text": "味方の回復率-25%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 89,
+                    "param": [
+                        {
+                            "num": [
+                                25
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10019,
+            "rarity": 0,
+            "name": "味方与ダメ減少",
+            "kana": "",
+            "text": "味方の与ダメ-15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                85
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10020,
+            "rarity": 0,
+            "name": "味方被ダメ上昇",
+            "kana": "",
+            "text": "味方の被ダメ+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1006,
+                    "param": [
+                        {
+                            "num": [
+                                115
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10021,
+            "rarity": 0,
+            "name": "味方会心率減少",
+            "kana": "",
+            "text": "味方の会心率-15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 79,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10022,
+            "rarity": 0,
+            "name": "味方会心ダメージ率減少",
+            "kana": "",
+            "text": "味方の会心ダメージ率-25%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 81,
+                    "param": [
+                        {
+                            "num": [
+                                25
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10023,
+            "rarity": 0,
+            "name": "味方攻撃速度減少",
+            "kana": "",
+            "text": "味方の攻撃速度-20%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 27,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10024,
+            "rarity": 0,
+            "name": "耐久特化",
+            "kana": "",
+            "text": "敵の最大耐久+40%\r\n敵の攻撃力-10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                40
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 7,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10025,
+            "rarity": 0,
+            "name": "攻撃力特化",
+            "kana": "",
+            "text": "敵の攻撃力+40%\r\n敵の物理防御-10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                40
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 12,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10026,
+            "rarity": 0,
+            "name": "攻撃力強化",
+            "kana": "",
+            "text": "敵の攻撃力+25%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                25
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10027,
+            "rarity": 0,
+            "name": "耐久強化",
+            "kana": "",
+            "text": "敵の最大耐久+25%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                25
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10028,
+            "rarity": 0,
+            "name": "韋駄天",
+            "kana": "",
+            "text": "敵の最大耐久+10%\r\n敵の移動速度+20%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10029,
+            "rarity": 0,
+            "name": "聖なる盾",
+            "kana": "",
+            "text": "敵の最大耐久+10%\r\n敵の物理防御+25%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                25
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10030,
+            "rarity": 0,
+            "name": "戦力低下",
+            "kana": "",
+            "text": "味方の与ダメージ-10%\r\n味方の被ダメージ+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                -10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1006,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10031,
+            "rarity": 0,
+            "name": "防御無効化",
+            "kana": "",
+            "text": "敵の攻撃力+10%\r\n敵の貫通率+25%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 86,
+                    "param": [
+                        {
+                            "num": [
+                                25
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10032,
+            "rarity": 0,
+            "name": "神軍強化",
+            "kana": "",
+            "text": "敵の最大耐久+15%\r\n敵の攻撃力+15%\r\n敵の物理防御+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10033,
+            "rarity": 0,
+            "name": "致命傷",
+            "kana": "",
+            "text": "味方の被ダメージ+30%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1006,
+                    "param": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        }
+    ]
+}

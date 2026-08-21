@@ -1,0 +1,566 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 985377714375690906
+    },
+    "m_Name": "item_template",
+    "records": [
+        {
+            "item_id": "item.lottery_fragment.unit_faction_1_R",
+            "display_name": "☆1ルルイエ全能因子",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "60個集めることで、【ルルイエ勢力】のキャラクターを抽選で入手可能",
+            "sort_priority": 10000
+        },
+        {
+            "item_id": "item.lottery_fragment.unit_faction_2_R",
+            "display_name": "☆1カルコサ全能因子",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "60個集めることで、【カルコサ勢力】のキャラクターを抽選で入手可能",
+            "sort_priority": 10100
+        },
+        {
+            "item_id": "item.lottery_fragment.unit_faction_3_R",
+            "display_name": "☆1アーカム全能因子",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "60個集めることで、【アーカム勢力】のキャラクターを抽選で入手可能",
+            "sort_priority": 10200
+        },
+        {
+            "item_id": "item.lottery_fragment.unit_faction_4_R",
+            "display_name": "☆1ケイオス全能因子",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "60個集めることで、【ケイオス勢力】のキャラクターを抽選で入手可能",
+            "sort_priority": 10300
+        },
+        {
+            "item_id": "item.lottery_fragment.unit_faction_1_SR",
+            "display_name": "☆2ルルイエ全能因子",
+            "rarity": 5460529,
+            "val_cap": 99999999,
+            "text": "60個集めることで、【ルルイエ勢力】のキャラクターを抽選で入手可能",
+            "sort_priority": 10001
+        },
+        {
+            "item_id": "item.lottery_fragment.unit_faction_2_SR",
+            "display_name": "☆2カルコサ全能因子",
+            "rarity": 5460529,
+            "val_cap": 99999999,
+            "text": "60個集めることで、【カルコサ勢力】のキャラクターを抽選で入手可能",
+            "sort_priority": 10101
+        },
+        {
+            "item_id": "item.lottery_fragment.unit_faction_3_SR",
+            "display_name": "☆2アーカム全能因子",
+            "rarity": 5460529,
+            "val_cap": 99999999,
+            "text": "60個集めることで、【アーカム勢力】のキャラクターを抽選で入手可能",
+            "sort_priority": 10201
+        },
+        {
+            "item_id": "item.lottery_fragment.unit_faction_4_SR",
+            "display_name": "☆2ケイオス全能因子",
+            "rarity": 5460529,
+            "val_cap": 99999999,
+            "text": "60個集めることで、【ケイオス勢力】のキャラクターを抽選で入手可能",
+            "sort_priority": 10301
+        },
+        {
+            "item_id": "item.lottery_fragment.unit_faction_1_SSR",
+            "display_name": "☆3ルルイエ全能因子",
+            "rarity": 1397969457,
+            "val_cap": 99999999,
+            "text": "60個集めることで、【ルルイエ勢力】のキャラクターを抽選で入手可能",
+            "sort_priority": 10002
+        },
+        {
+            "item_id": "item.lottery_fragment.unit_faction_2_SSR",
+            "display_name": "☆3カルコサ全能因子",
+            "rarity": 1397969457,
+            "val_cap": 99999999,
+            "text": "60個集めることで、【カルコサ勢力】のキャラクターを抽選で入手可能",
+            "sort_priority": 10102
+        },
+        {
+            "item_id": "item.lottery_fragment.unit_faction_3_SSR",
+            "display_name": "☆3アーカム全能因子",
+            "rarity": 1397969457,
+            "val_cap": 99999999,
+            "text": "60個集めることで、【アーカム勢力】のキャラクターを抽選で入手可能",
+            "sort_priority": 10202
+        },
+        {
+            "item_id": "item.lottery_fragment.unit_faction_4_SSR",
+            "display_name": "☆3ケイオス全能因子",
+            "rarity": 1397969457,
+            "val_cap": 99999999,
+            "text": "60個集めることで、【ケイオス勢力】のキャラクターを抽選で入手可能",
+            "sort_priority": 10302
+        },
+        {
+            "item_id": "item.lottery_fragment.unit_faction_R",
+            "display_name": "☆1全能因子",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "60個集めることで、☆1キャラクターを抽選で入手可能",
+            "sort_priority": 11000
+        },
+        {
+            "item_id": "item.lottery_fragment.unit_faction_SR",
+            "display_name": "☆2全能因子",
+            "rarity": 5460529,
+            "val_cap": 99999999,
+            "text": "60個集めることで、☆2キャラクターを抽選で入手可能\t",
+            "sort_priority": 11001
+        },
+        {
+            "item_id": "item.lottery_fragment.unit_faction_SSR",
+            "display_name": "☆3全能因子",
+            "rarity": 1397969457,
+            "val_cap": 99999999,
+            "text": "60個集めることで、☆3キャラクターを抽選で入手可能",
+            "sort_priority": 11002
+        },
+        {
+            "item_id": "item.lottery_fragment.poss_unit_faction_SR",
+            "display_name": "所持☆3全能因子",
+            "rarity": 1397969457,
+            "val_cap": 99999999,
+            "text": "60個集めることで、所持済みの☆3キャラクターを抽選で入手可能",
+            "sort_priority": 11003
+        },
+        {
+            "item_id": "item.bom_skill_material.r",
+            "display_name": "アビサルⅠ",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "深緑の結晶のペンデュラム。邪神の強化に使用できる\r\n<color=#87cefa>試練の祭壇等で入手できる</color>",
+            "sort_priority": 20000
+        },
+        {
+            "item_id": "item.bom_skill_material.sr",
+            "display_name": "アビサルⅡ",
+            "rarity": 5460529,
+            "val_cap": 99999999,
+            "text": "深緑の結晶のペンデュラム。邪神の強化に使用できる\r\n<color=#87cefa>試練の祭壇等で入手できる</color>",
+            "sort_priority": 20001
+        },
+        {
+            "item_id": "item.bom_skill_material.ssr",
+            "display_name": "アビサルⅢ",
+            "rarity": 1397969457,
+            "val_cap": 99999999,
+            "text": "深緑の結晶のペンデュラム。邪神の強化に使用できる\r\n<color=#87cefa>試練の祭壇等で入手できる</color>",
+            "sort_priority": 20002
+        },
+        {
+            "item_id": "item.bom_skill_material.descend_1",
+            "display_name": "アビサル・オリジンⅠ",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "アビサルに使用されている結晶体。エルダーパワーの強化に使用できる\r\n<color=#87cefa>試練の祭壇等で入手できる</color>",
+            "sort_priority": 21000
+        },
+        {
+            "item_id": "item.bom_skill_material.descend_2",
+            "display_name": "アビサル・オリジンⅡ",
+            "rarity": 5460529,
+            "val_cap": 99999999,
+            "text": "アビサルに使用されている結晶体。エルダーパワーの強化に使用できる\r\n<color=#87cefa>試練の祭壇等で入手できる</color>",
+            "sort_priority": 21001
+        },
+        {
+            "item_id": "item.level_link.unlock_frame_item",
+            "display_name": "共鳴の輪",
+            "rarity": 17201,
+            "val_cap": 99999999,
+            "text": "ヴァイスとの繋がりを強くするペンダント。使用するとレベルリンクのキャラクターの枠を開放する\r\n<color=#87cefa>フレンドptで交換、継承ランク上昇、【実績】ミッション等で入手できる</color>",
+            "sort_priority": 300000
+        },
+        {
+            "item_id": "item.citadel_skin.1",
+            "display_name": "城壁スキン1",
+            "rarity": 17201,
+            "val_cap": 1,
+            "text": "城壁スキン1のフレーバーテキスト",
+            "sort_priority": 130000
+        },
+        {
+            "item_id": "item.unit_exp.threshold_item",
+            "display_name": "エナジー・コア",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "禍々しいエネルギーを持つ希少な球体。使用するとヴァイスのレベルを上昇させる\r\n<color=#87cefa>放置報酬等で入手できる</color>",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.unit_exp.common_item",
+            "display_name": "EXPエナジー",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "活力のエネルギーを持つ球体。使用するとヴァイスのレベルを上昇させる",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.select_artifactbox.grade_low",
+            "display_name": "アーティファクトセレクトボックス(☆1)",
+            "rarity": 21041,
+            "val_cap": 9999999,
+            "text": "選択したアーティファクト(低グレード)を入手可能",
+            "sort_priority": 30000
+        },
+        {
+            "item_id": "item.select_artifactbox.grade_Middle",
+            "display_name": "アーティファクトセレクトボックス(☆2)",
+            "rarity": 5460529,
+            "val_cap": 9999999,
+            "text": "選択したアーティファクト(中グレード)を入手可能",
+            "sort_priority": 30010
+        },
+        {
+            "item_id": "item.select_artifactbox.grade_High",
+            "display_name": "アーティファクトセレクトボックス(☆3)",
+            "rarity": 1397969457,
+            "val_cap": 9999999,
+            "text": "選択したアーティファクト(高グレード)を入手可能",
+            "sort_priority": 30020
+        },
+        {
+            "item_id": "item.unit_skin.19_1",
+            "display_name": "ペイント・アーカム・レッド",
+            "rarity": 1397969457,
+            "val_cap": 1,
+            "text": "見た目を変更するコスチューム",
+            "sort_priority": 110000
+        },
+        {
+            "item_id": "item.bom_skin.40001_1",
+            "display_name": "エルダークトゥルフ",
+            "rarity": 1397969457,
+            "val_cap": 1,
+            "text": "見た目を変更するコスチューム",
+            "sort_priority": 120000
+        },
+        {
+            "item_id": "item.engraving.break",
+            "display_name": "刻印の霊譜【破壊】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【破壊】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 40000
+        },
+        {
+            "item_id": "item.engraving.ironclad",
+            "display_name": "刻印の霊譜【鉄壁】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【鉄壁】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 40100
+        },
+        {
+            "item_id": "item.engraving.strongbeast",
+            "display_name": "刻印の霊譜【強獣】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【強獣】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 40200
+        },
+        {
+            "item_id": "item.engraving.spiritshield",
+            "display_name": "刻印の霊譜【霊盾】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【霊盾】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 40300
+        },
+        {
+            "item_id": "item.engraving.critical",
+            "display_name": "刻印の霊譜【会心】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【会心】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 40500
+        },
+        {
+            "item_id": "item.engraving_exp.common_r",
+            "display_name": "印章Ⅰ",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "刻まれた刻印を強化することができる印\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.engraving_exp.common_sr",
+            "display_name": "印章Ⅱ",
+            "rarity": 5460529,
+            "val_cap": 99999999,
+            "text": "刻まれた刻印を強化することができる印\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.engraving_exp.common_ssr",
+            "display_name": "印章Ⅲ",
+            "rarity": 1397969457,
+            "val_cap": 99999999,
+            "text": "刻まれた刻印を強化することができる印\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.engraving_mutate.common",
+            "display_name": "変異の印章",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "刻まれた刻印を変化させる禍々しい印\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.engraving_mutate_lock.common",
+            "display_name": "ロックコーティング",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "変異した刻印を固定することが出来る機械。一度使用すると壊れてしまう\r\n入手が非常に困難な貴重なアイテム",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.select_equipbox.grade_1",
+            "display_name": "魔晶Ⅰ選択BOX",
+            "rarity": 21041,
+            "val_cap": 9999999,
+            "text": "選択した魔晶Ⅰを入手可能",
+            "sort_priority": 30100
+        },
+        {
+            "item_id": "item.select_equipbox.grade_2",
+            "display_name": "魔晶Ⅱ選択BOX",
+            "rarity": 21041,
+            "val_cap": 9999999,
+            "text": "選択した魔晶Ⅱを入手可能",
+            "sort_priority": 30110
+        },
+        {
+            "item_id": "item.select_equipbox.grade_3",
+            "display_name": "魔晶Ⅲ選択BOX",
+            "rarity": 21041,
+            "val_cap": 9999999,
+            "text": "選択した魔晶Ⅲを入手可能",
+            "sort_priority": 30120
+        },
+        {
+            "item_id": "item.select_equipbox.grade_4",
+            "display_name": "魔晶Ⅳ選択BOX",
+            "rarity": 5460529,
+            "val_cap": 9999999,
+            "text": "選択した魔晶Ⅳを入手可能",
+            "sort_priority": 30130
+        },
+        {
+            "item_id": "item.select_equipbox.grade_5",
+            "display_name": "魔晶Ⅴ選択BOX",
+            "rarity": 5460529,
+            "val_cap": 9999999,
+            "text": "選択した魔晶Ⅴを入手可能",
+            "sort_priority": 30140
+        },
+        {
+            "item_id": "item.engraving.vitality",
+            "display_name": "刻印の霊譜【活力】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【活力】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 40600
+        },
+        {
+            "item_id": "item.engraving.magicseal",
+            "display_name": "刻印の霊譜【魔封】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【魔封】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 40700
+        },
+        {
+            "item_id": "item.engraving.healing",
+            "display_name": "刻印の霊譜【治癒】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【治癒】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 40800
+        },
+        {
+            "item_id": "item.engraving.avoidance",
+            "display_name": "刻印の霊譜【霊避】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【霊避】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 40900
+        },
+        {
+            "item_id": "item.engraving.attackspeed",
+            "display_name": "刻印の霊譜【撃速】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【撃速】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 41000
+        },
+        {
+            "item_id": "item.engraving.movespeed",
+            "display_name": "刻印の霊譜【飛脚】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【飛脚】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 41100
+        },
+        {
+            "item_id": "item.engraving.demolition",
+            "display_name": "刻印の霊譜【瓦解】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【瓦解】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 41200
+        },
+        {
+            "item_id": "item.lottery_potential.crystal_r",
+            "display_name": "ランダム☆1潜在結晶BOX",
+            "rarity": 21041,
+            "val_cap": 9999999,
+            "text": "☆1キャラの潜在覚醒ポイントを\r\n1増加させる潜在結晶を1個入手できる\r\n<color=#ff6600>どのクラス用の潜在結晶が出るかはランダム</color>",
+            "sort_priority": 31000
+        },
+        {
+            "item_id": "item.lottery_potential.crystal_hr",
+            "display_name": "ランダム☆2潜在結晶BOX",
+            "rarity": 5460529,
+            "val_cap": 9999999,
+            "text": "☆2キャラの潜在覚醒ポイントを\r\n1増加させる潜在結晶を1個入手できる\r\n<color=#ff6600>どのクラス用の潜在結晶が出るかはランダム</color>",
+            "sort_priority": 31010
+        },
+        {
+            "item_id": "item.lottery_potential.crystal_sr",
+            "display_name": "ランダム☆3潜在結晶BOX",
+            "rarity": 1397969457,
+            "val_cap": 9999999,
+            "text": "☆3キャラの潜在覚醒ポイントを\r\n1増加させる潜在結晶を1個入手できる\r\n<color=#ff6600>どのクラス用の潜在結晶が出るかはランダム</color>",
+            "sort_priority": 31020
+        },
+        {
+            "item_id": "item.select_unit.tdfes1",
+            "display_name": "☆3選択券（第七回超TD祭り）",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "以下の☆3キャラクターの中から一体を選択して入手可能\r\n・石造都市ルルイエ\r\n・【バイコーン娘】ヴァリナ\r\n・ホルテウス",
+            "sort_priority": 90000
+        },
+        {
+            "item_id": "item.select_potential.crystal_hr",
+            "display_name": "選択☆2潜在結晶BOX",
+            "rarity": 5460529,
+            "val_cap": 9999999,
+            "text": "☆2キャラの潜在覚醒ポイントを\r\n1増加させる潜在結晶を1個選択して入手できる",
+            "sort_priority": 32010
+        },
+        {
+            "item_id": "item.select_potential.crystal_sr",
+            "display_name": "選択☆3潜在結晶BOX",
+            "rarity": 1397969457,
+            "val_cap": 9999999,
+            "text": "☆3キャラの潜在覚醒ポイントを\r\n1増加させる潜在結晶を1個選択して入手できる\r\n",
+            "sort_priority": 32020
+        },
+        {
+            "item_id": "item.ticket.quest_skip",
+            "display_name": "スキップチケット",
+            "rarity": 17201,
+            "val_cap": 9999,
+            "text": "クリア済みメインストーリーのクエストとアポカリプスモードのノーマルバトルを\r\nバトルなしで完了できる",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.restore.pvp_try",
+            "display_name": "追加挑戦券（闘技場）",
+            "rarity": 17201,
+            "val_cap": 9999,
+            "text": "闘技場の対戦可能回数を1回復します\r\n付与された対戦可能回数は5:00にリセットされます",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.restore.event_try",
+            "display_name": "追加挑戦券（イベント）",
+            "rarity": 17201,
+            "val_cap": 9999,
+            "text": "イベントの挑戦可能回数を1回復します\r\n付与された挑戦可能回数は5:00にリセットされます",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.restore.sp_quest_try",
+            "display_name": "追加挑戦券（試練の祭壇）",
+            "rarity": 17201,
+            "val_cap": 9999,
+            "text": "試練の祭壇の挑戦可能回数を1回復します\r\n付与された挑戦可能回数は5:00にリセットされます",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.restore.boss_quest_try",
+            "display_name": "追加挑戦券（残響シアター）",
+            "rarity": 17201,
+            "val_cap": 9999,
+            "text": "クリア済みクエストの挑戦可能回数を1回復します\r\n付与された挑戦可能回数は5:00にリセットされます",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.select_unit.fes_ev1",
+            "display_name": "☆3選択券（邪神祭）",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "以下の☆3キャラクターの中から一体を選択して入手可能\r\n・ルゥ=ルルサ\r\n・ルセ=ルルカ",
+            "sort_priority": 90000
+        },
+        {
+            "item_id": "item.select_engraving.common",
+            "display_name": "刻印の霊譜選択BOX",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "選択した刻印の霊譜を入手可能",
+            "sort_priority": 33010
+        },
+        {
+            "item_id": "item.select_unit.nor_ticket1",
+            "display_name": "☆3選択券（ネオン、グラン）",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "以下の☆3キャラクターの中から一体を選択して入手可能\r\n・ネオン\r\n・グラン・ヴェルノ",
+            "sort_priority": 90000
+        },
+        {
+            "item_id": "item.select_unit.nor_startdash_ticket1",
+            "display_name": "☆3選択券（スタートダッシュ）",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "以下の☆3キャラクターの中から一体を選択して入手可能\r\n\r\n<対象キャラクター>\r\n・ネオン\r\n・ユラナ・ゾッタ\r\n・カルヴァレーナ\r\n・エレノワール\r\n・ミューゼ\r\n・シャーコット\r\n・グラン・ヴェルノ\r\n・フィロス\r\n・シゼル＝メ\r\n・ディオネ",
+            "sort_priority": 90001
+        },
+        {
+            "item_id": "item.lottery_startdash.unit_faction_1_SSR",
+            "display_name": "☆3全能因子（スタートダッシュ）",
+            "rarity": 1397969457,
+            "val_cap": 99999999,
+            "text": "60個集めることで、対象の☆3キャラクターを抽選で入手可能\r\n\r\n<対象キャラクター>\r\n・ネオン\r\n・ユラナ・ゾッタ\r\n・カルヴァレーナ\r\n・エレノワール\r\n・ミューゼ\r\n・シャーコット\r\n・グラン・ヴェルノ\r\n・フィロス\r\n・シゼル＝メ\r\n・ディオネ",
+            "sort_priority": 12000
+        },
+        {
+            "item_id": "item.lottery_summercp2026.unit_faction_1_SSR",
+            "display_name": "☆3全能因子（サマーCP）",
+            "rarity": 1397969457,
+            "val_cap": 99999999,
+            "text": "60個集めることで、対象の☆3キャラクターを抽選で入手可能\r\n\r\n<対象キャラクター>\r\n・ムルミィ・ゾォム\r\n・ゼラニュート\r\n・レヴナント\r\n・シェルン\r\n・キャピノラ\r\n・ルナリス\r\n・ネア・ウルム",
+            "sort_priority": 12001
+        }
+    ]
+}

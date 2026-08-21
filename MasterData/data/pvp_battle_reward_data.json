@@ -1,0 +1,82 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -7159998153709115182
+    },
+    "m_Name": "pvp_battle_reward_data",
+    "records": [
+        {
+            "rewardId": 1,
+            "lotteryRewardMasterList": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "gold",
+                        "m_count": 300,
+                        "m_odds": 500
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "gold",
+                        "m_count": 150,
+                        "m_odds": 5000
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "gold",
+                        "m_count": 100,
+                        "m_odds": 1000
+                    },
+                    {
+                        "m_walletCategory": "ugift",
+                        "m_walletName": "s_f",
+                        "m_count": 1,
+                        "m_odds": 3500
+                    }
+                ]
+            }
+        },
+        {
+            "rewardId": 2,
+            "lotteryRewardMasterList": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "gold",
+                        "m_count": 1,
+                        "m_odds": 2000
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "gold",
+                        "m_count": 2000,
+                        "m_odds": 3000
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "gold",
+                        "m_count": 3500,
+                        "m_odds": 4000
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "gold",
+                        "m_count": 4500,
+                        "m_odds": 2000
+                    },
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "gold",
+                        "m_count": 5000,
+                        "m_odds": 2000
+                    }
+                ]
+            }
+        }
+    ]
+}

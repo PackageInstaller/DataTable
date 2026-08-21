@@ -1,0 +1,30 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 6827220925793674778
+    },
+    "m_Name": "composition_template",
+    "records": [
+        {
+            "section": "unit_deck",
+            "label_max_len": 7,
+            "init_composition_cpacity": 15,
+            "max_composition_cpacity": 15,
+            "init_slot_capacity": 14,
+            "max_slot_capacity": 14
+        },
+        {
+            "section": "rogue_deck",
+            "label_max_len": 1,
+            "init_composition_cpacity": 1,
+            "max_composition_cpacity": 1,
+            "init_slot_capacity": 14,
+            "max_slot_capacity": 14
+        }
+    ]
+}

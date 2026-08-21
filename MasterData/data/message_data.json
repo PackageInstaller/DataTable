@@ -1,0 +1,5814 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -1409865878851358658
+    },
+    "m_Name": "message_data",
+    "records": [
+        {
+            "id": "PURCHASE_STAMINA",
+            "title": "スタミナ回復",
+            "message": "プレイヤーランクアップ！\r\nスタミナが回復しました。"
+        },
+        {
+            "id": "SHORTAGE_STONE",
+            "title": "原石不足",
+            "message": "原石が足りません。\r\n購入しますか?"
+        },
+        {
+            "id": "DECK_PASTE",
+            "title": "",
+            "message": "編成をペーストしました"
+        },
+        {
+            "id": "REINFORCE_SR_CHECK",
+            "title": "",
+            "message": "<color=#ff0000>SR以上のユニットが含まれています。</color>\r\nこのまま強化合成を実行しますか？"
+        },
+        {
+            "id": "REINFORCE_SKILL_CHECK",
+            "title": "",
+            "message": "<color=#ff0000>スキルLvが上限に達しています。</color>\r\n同じスキルを持ったユニットまたは\r\nスキルLv上昇効果のある素材が選択されています。\r\nこれ以上スキルLvは上昇しませんが、\r\nこのまま強化合成を実行しますか？"
+        },
+        {
+            "id": "REINFORCE_COST_CHECK",
+            "title": "",
+            "message": "<color=#ff0000>出撃コストが下限に達しています。</color>\r\n同じユニットまたはコスト減少効果のある素材が\r\n選択されています。\r\nこれ以上出撃コストは減少しませんが、\r\nこのまま強化合成を実行しますか？"
+        },
+        {
+            "id": "LEVEL_UP1",
+            "title": "Lv.UP",
+            "message": "レベルアップ！"
+        },
+        {
+            "id": "LEVEL_UP2",
+            "title": "Lv.UP",
+            "message": ""
+        },
+        {
+            "id": "LEVEL_UP3",
+            "title": "Lv.UP",
+            "message": ""
+        },
+        {
+            "id": "RETIRE_SR_CHECK",
+            "title": "",
+            "message": "<color=#ff0000>SR以上のユニットが含まれています。</color>\r\nこのまま引退を実行しますか？"
+        },
+        {
+            "id": "REINFORCE_RESULT_1",
+            "title": "",
+            "message": "スキルレベルが上昇しました。\r\n・スキルLv　{0}　→　{1}\r\n\r\n出撃コストが減少しました。\r\n・出撃コスト　{2}　→　{3}\r\n"
+        },
+        {
+            "id": "REINFORCE_RESULT_2",
+            "title": "",
+            "message": "スキルレベルが上昇しました。\r\n・スキルLv　{0}　→　{1}\r\n"
+        },
+        {
+            "id": "REINFORCE_RESULT_3",
+            "title": "",
+            "message": "出撃コストが減少しました。\r\n・出撃コスト　{0}　→　{1}\r\n"
+        },
+        {
+            "id": "PLAYER_RANKUP_TITLE",
+            "title": "",
+            "message": "スタミナが回復しました"
+        },
+        {
+            "id": "PLAYER_RANKUP_TEXT_RANK",
+            "title": "",
+            "message": "プレイヤーランク"
+        },
+        {
+            "id": "PLAYER_RANKUP_TEXT_STAMINA",
+            "title": "",
+            "message": "スタミナ最大値"
+        },
+        {
+            "id": "PLAYER_RANKUP_TEXT_FOLLOW",
+            "title": "",
+            "message": "フレンド数上限"
+        },
+        {
+            "id": "BATTLE_EVACUATION_UNIT",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "STONE",
+            "title": "",
+            "message": "原石"
+        },
+        {
+            "id": "PAID_STONE",
+            "title": "",
+            "message": "有償原石"
+        },
+        {
+            "id": "CONSUME_STONE",
+            "title": "",
+            "message": "消費原石"
+        },
+        {
+            "id": "POSSESS_STONE",
+            "title": "",
+            "message": "所持原石"
+        },
+        {
+            "id": "FRIEND_POINT",
+            "title": "",
+            "message": "フレンドP"
+        },
+        {
+            "id": "STAMINA_SHORTAGE",
+            "title": "スタミナ不足",
+            "message": "スタミナが不足しています。\r\nスタミナを回復しますか？"
+        },
+        {
+            "id": "COMMON_STONE_PURCHASE_TITLE",
+            "title": "",
+            "message": "原石購入"
+        },
+        {
+            "id": "COMMON_STONE_PURCHASE_SETTLEMENT",
+            "title": "",
+            "message": "資金決済に基づく表示"
+        },
+        {
+            "id": "COMMON_STONE_PURCHASE_LAW",
+            "title": "",
+            "message": "特定商取引法に基づく表示"
+        },
+        {
+            "id": "COMMON_QUEST_SELECT_CHAPTER_TITLE",
+            "title": "",
+            "message": "章選択"
+        },
+        {
+            "id": "COMMON_QUEST_SELECT_CHAPTER_NAME",
+            "title": "",
+            "message": "第{0}章"
+        },
+        {
+            "id": "COMMON_QUEST_SELECT_CHAPTER_ACHIEVE_TITLE",
+            "title": "",
+            "message": "達成度:"
+        },
+        {
+            "id": "COMMON_QUEST_SELECT_CHAPTER_ACHIEVE_TEXT",
+            "title": "",
+            "message": "{0}%"
+        },
+        {
+            "id": "COMMON_PROFILE_TITLE",
+            "title": "",
+            "message": "プロフィール"
+        },
+        {
+            "id": "COMMON_PROFILE_RANK",
+            "title": "",
+            "message": "Rank"
+        },
+        {
+            "id": "COMMON_PROFILE_ID",
+            "title": "",
+            "message": "ID"
+        },
+        {
+            "id": "COMMON_PROFILE_RENTAL_UNIT",
+            "title": "",
+            "message": "レンタルユニット"
+        },
+        {
+            "id": "COMMON_PROFILE_FRIEND_POINT",
+            "title": "",
+            "message": "フレンドpt"
+        },
+        {
+            "id": "COMMON_LOGIN_NEXT_TITLE",
+            "title": "",
+            "message": "翌月のログインボーナス"
+        },
+        {
+            "id": "COMMON_LOGIN_NEXT_COUNT",
+            "title": "",
+            "message": "個"
+        },
+        {
+            "id": "COMMON_LOGIN_LINEUP_TITLE",
+            "title": "",
+            "message": "翌月のラインナップ"
+        },
+        {
+            "id": "COMMON_HOME_APP_CLOSE",
+            "title": "終了確認",
+            "message": "ゲームを終了しますか?"
+        },
+        {
+            "id": "COMMON_SLASH_NUMBER",
+            "title": "",
+            "message": "{0}/{1}"
+        },
+        {
+            "id": "COMMON_SECOND_J",
+            "title": "",
+            "message": "{0:f0}秒"
+        },
+        {
+            "id": "COMMON_SECOND_E",
+            "title": "",
+            "message": "{0:f1} s"
+        },
+        {
+            "id": "COMMON_MULTI_SELECT_MATERIAL_TITLE",
+            "title": "",
+            "message": "素材数選択"
+        },
+        {
+            "id": "COMMON_SECURITY_STRENGTH",
+            "title": "最低戦力保証",
+            "message": "実行後のユニット数が少なすぎるため実行できません。\r\n近接キャラ1体を含む総数3体以上のユニットを\r\n保有する必要があります。"
+        },
+        {
+            "id": "COMMON_TIME_RATIO",
+            "title": "",
+            "message": "{0}/{1}時間"
+        },
+        {
+            "id": "COMMON_BUTTON_CONFIRM",
+            "title": "",
+            "message": "確認"
+        },
+        {
+            "id": "COMMON_BUTTON_YES",
+            "title": "",
+            "message": "は い"
+        },
+        {
+            "id": "COMMON_BUTTON_NO",
+            "title": "",
+            "message": "いいえ"
+        },
+        {
+            "id": "COMMON_BUTTON_OK",
+            "title": "",
+            "message": "O K"
+        },
+        {
+            "id": "COMMON_BUTTON_APP_QUIT",
+            "title": "",
+            "message": "アプリ終了"
+        },
+        {
+            "id": "COMMON_UNIT_LIMIT_MESSAGE",
+            "title": "",
+            "message": "ユニットの所持数が上限を超えています。\r\nユニットの整理を行ってください。"
+        },
+        {
+            "id": "COMMON_UNIT_LIMIT_TITLE",
+            "title": "",
+            "message": "ユニット所持数上限"
+        },
+        {
+            "id": "COMMON_UNIT_LIMIT_BUTTON",
+            "title": "",
+            "message": "ユニットへ"
+        },
+        {
+            "id": "COMMON_CANCEL_BUTTON",
+            "title": "",
+            "message": "<cspace=-1>キ<cspace=-3>ャ<cspace=0>ンセル"
+        },
+        {
+            "id": "COMMON_DECISION_BUTTON",
+            "title": "",
+            "message": "決 定"
+        },
+        {
+            "id": "COMMON_DETAIL_BUTTON",
+            "title": "",
+            "message": "詳細"
+        },
+        {
+            "id": "COMMON_SKIP_BUTTON",
+            "title": "",
+            "message": "<cspace=-0.5>ス<cspace=-1>キ<cspace=-2>ップ"
+        },
+        {
+            "id": "COMMON_STORY_BUTTON",
+            "title": "",
+            "message": "<cspace=-3>ス<cspace=-1>ト<cspace=-2>ーリ<cspace=1.5>ーヘ"
+        },
+        {
+            "id": "COMMON_RESET_BUTTON",
+            "title": "",
+            "message": "リ<cspace=-1>セ<cspace=-3.5>ット"
+        },
+        {
+            "id": "COMMON_CONFIRM_TITLE",
+            "title": "",
+            "message": "確認"
+        },
+        {
+            "id": "COMMON_MORE_DAY_AGE",
+            "title": "",
+            "message": "{0}日以上前"
+        },
+        {
+            "id": "COMMON_DAY_AGE",
+            "title": "",
+            "message": "{0}日前"
+        },
+        {
+            "id": "COMMON_HOUR_AGE",
+            "title": "",
+            "message": "{0}時間前"
+        },
+        {
+            "id": "COMMON_MIN_AGE",
+            "title": "0",
+            "message": "{0}分前"
+        },
+        {
+            "id": "URL_HOMEPAGE",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "URL_MAIL",
+            "title": "",
+            "message": "mobile-game.dmm.com"
+        },
+        {
+            "id": "MAIL_INFORMATION",
+            "title": "",
+            "message": "(メーラーが起動します)"
+        },
+        {
+            "id": "MAIL_TITLE",
+            "title": "",
+            "message": "{0} {1} {2}：ユーザーID({3})"
+        },
+        {
+            "id": "MAXIMUM_PURCHASE",
+            "title": "",
+            "message": "これ以上購入することはできません"
+        },
+        {
+            "id": "MAXIMUM_FORMATION",
+            "title": "",
+            "message": "これ以上編成することはできません"
+        },
+        {
+            "id": "MAXIMUM_SKILL_LEVEL",
+            "title": "",
+            "message": "これ以上強化できません"
+        },
+        {
+            "id": "SHORTAGE_GOLD",
+            "title": "",
+            "message": "必要なゴールドが不足しています"
+        },
+        {
+            "id": "SHORTAGE_MATERIAL",
+            "title": "",
+            "message": "必要な素材が不足しています"
+        },
+        {
+            "id": "DELEGATION_DISABLE",
+            "title": "",
+            "message": "★3クリアすると解放されます"
+        },
+        {
+            "id": "MAXIMUM_SELECT",
+            "title": "",
+            "message": "これ以上選択できません"
+        },
+        {
+            "id": "COMMON_REMAIN_DAY",
+            "title": "",
+            "message": "あと{0}日"
+        },
+        {
+            "id": "COMMON_REMAIN_HOUR",
+            "title": "",
+            "message": "あと{0}時間{1}分"
+        },
+        {
+            "id": "COMMON_REMAIN_MIN",
+            "title": "",
+            "message": "あと{0}分"
+        },
+        {
+            "id": "DEBUG_DEVELOP",
+            "title": "開発中",
+            "message": "この画面は開発中です"
+        },
+        {
+            "id": "COMMON_REMOVE",
+            "title": "",
+            "message": "解除"
+        },
+        {
+            "id": "COMMON_APPROVED",
+            "title": "",
+            "message": "承認"
+        },
+        {
+            "id": "COMMON_CANCEL1",
+            "title": "",
+            "message": "<cspace=-5>キャ<cspace=-3>ン<cspace=-2>セル"
+        },
+        {
+            "id": "COMMON_CANCEL2",
+            "title": "",
+            "message": "取消す"
+        },
+        {
+            "id": "COMMON_REJECTION",
+            "title": "",
+            "message": "断る"
+        },
+        {
+            "id": "COMMON_NULL_DATA",
+            "title": "",
+            "message": "データを取得できませんでした"
+        },
+        {
+            "id": "COMMON_BRACKETS",
+            "title": "",
+            "message": "【{0}】"
+        },
+        {
+            "id": "COMMON_MOVE_R18",
+            "title": "",
+            "message": "R-18版へ"
+        },
+        {
+            "id": "COMMON_PLAY",
+            "title": "",
+            "message": "再生"
+        },
+        {
+            "id": "COMMON_BEGINNING",
+            "title": "",
+            "message": "<cspace=2>冒頭"
+        },
+        {
+            "id": "COMMON_MOVE_ADULT_SCENE",
+            "title": "",
+            "message": "<scale=0.9><cspace=-4>ア<cspace=-3>ダ<cspace=-6>ル<cspace=-4>ト<cspace=-6>シ<scale=0.7><cspace=-1>ー<scale=0.9>ン"
+        },
+        {
+            "id": "COMMON_MOVE_SHOP",
+            "title": "",
+            "message": "<cspace=-6>シ<cspace=-8>ョ<cspace=-6>ッ<cspace=-2>プへ"
+        },
+        {
+            "id": "COMMON_PURCHASE",
+            "title": "",
+            "message": "購入"
+        },
+        {
+            "id": "COMMON_CLOSE",
+            "title": "",
+            "message": "<indent=3%><cspace=-1>閉じる"
+        },
+        {
+            "id": "COMMON_NOT_POSS_UNIT",
+            "title": "",
+            "message": "未所持のキャラクターです。"
+        },
+        {
+            "id": "INPUT_USER_NAME",
+            "title": "プレイヤー名入力",
+            "message": "プレイヤー名を入力してください。"
+        },
+        {
+            "id": "INPUT_PROFILE",
+            "title": "プロフィール入力",
+            "message": "プロフィールを入力してください。"
+        },
+        {
+            "id": "INPUT_ID",
+            "title": "ID入力",
+            "message": "IDを入力してください。"
+        },
+        {
+            "id": "HELP",
+            "title": "",
+            "message": "ヘルプ"
+        },
+        {
+            "id": "FAQ",
+            "title": "",
+            "message": "FAQ"
+        },
+        {
+            "id": "COPYRIGHT_TEXT",
+            "title": "権利表記",
+            "message": "権利表記内容です"
+        },
+        {
+            "id": "TERMS_OF_SERVICE",
+            "title": "",
+            "message": "利用規約"
+        },
+        {
+            "id": "PRIVACY",
+            "title": "",
+            "message": "<cspace=-1>プ<cspace=-2>ラ<cspace=-3>イ<cspace=0>バ<cspace=-1>シ<cspace=1>ー<cspace=-1>ポリシー"
+        },
+        {
+            "id": "GAME_TITLE",
+            "title": "",
+            "message": "邪神戦記ルルイエ少女隊"
+        },
+        {
+            "id": "INSCRIPTION_BASED_ON_SPECIFICTRADE",
+            "title": "",
+            "message": "資金決済に基づく表示"
+        },
+        {
+            "id": "SPECIFIED_COMMERCIAL_TRANSACTIONS_LAW_NOTICE",
+            "title": "",
+            "message": "特定商取引法に基づく表示"
+        },
+        {
+            "id": "COMMON_TIME_DAY",
+            "title": "",
+            "message": "{0}日"
+        },
+        {
+            "id": "COMMON_TIME_HOUR",
+            "title": "",
+            "message": "{0}時間"
+        },
+        {
+            "id": "COMMON_TIME_MIN",
+            "title": "",
+            "message": "{0}分"
+        },
+        {
+            "id": "CURRENCY_DMM_POINT",
+            "title": "",
+            "message": "DMMポイント"
+        },
+        {
+            "id": "NETWORK_ERROR_UNKNOWN",
+            "title": "エラー",
+            "message": "通信エラーが発生しました。\r\n時間をおいて再度お試し下さい。"
+        },
+        {
+            "id": "NETWORK_ERROR_WITH_HTTP_STATUS_CODE",
+            "title": "エラー",
+            "message": "通信エラーが発生しました。\r\n時間をおいて再度お試し下さい。\r\nエラーコード: {0}"
+        },
+        {
+            "id": "NETWORK_ERROR_WITH_API_STATUS_CODE",
+            "title": "エラー",
+            "message": "通信エラーが発生しました。\r\n時間をおいて再度お試し下さい。\r\nエラーコード: {0}-{1}"
+        },
+        {
+            "id": "NETWORK_ERROR_WITH_HTTP_STATUS_CODE_0",
+            "title": "エラー",
+            "message": "混雑中のため、時間をおいてログインください"
+        },
+        {
+            "id": "SESSION_ERROR",
+            "title": "エラー",
+            "message": "別の機器からのログインや通信エラーのため、\r\nセッションが無効になりました。\r\nタイトル画面に戻ります。"
+        },
+        {
+            "id": "CERTIFICATION_ERROR_WITH_API_STATUS_CODE_0",
+            "title": "エラー",
+            "message": "認証に失敗しました\r\nコード：{0}"
+        },
+        {
+            "id": "ASSET_BUNDLE_VERSION_UPDATED",
+            "title": "確認",
+            "message": "データが更新されました。\r\nタイトル画面に戻ります。"
+        },
+        {
+            "id": "GAME_DATE_CHANGED",
+            "title": "確認",
+            "message": "日付が変わりました。\r\n拠点に戻ります。"
+        },
+        {
+            "id": "COMMON_REMAINING_TEXT",
+            "title": "",
+            "message": "残り：{0}"
+        },
+        {
+            "id": "INCOMPLETE_PAYMENT_COUNT",
+            "title": "確認",
+            "message": "{0}件の未完了となっている購入を再開します。"
+        },
+        {
+            "id": "COMPLETE_PAYMENT_COUNT",
+            "title": "確認",
+            "message": "{0}件の購入を完了しました。"
+        },
+        {
+            "id": "BATTLE_SKILL_MOVE_UNIT",
+            "title": "",
+            "message": "スキルが解除されますが移動を行いますか？"
+        },
+        {
+            "id": "STAMINA_RECOVERED",
+            "title": "確認",
+            "message": "スタミナを{0}回復しました。"
+        },
+        {
+            "id": "COMMON_NOT_POSS_SUB_SKILL",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "SOUND_WARNING_TEXT",
+            "title": "確認",
+            "message": "このゲームでは音声が再生されます。\r\n音量にはご注意ください。"
+        },
+        {
+            "id": "MAIL_EXPIRED",
+            "title": "確認",
+            "message": "受け取り期限を過ぎました。"
+        },
+        {
+            "id": "TERM_IS_ALREADY_END",
+            "title": "確認",
+            "message": "開催期間が終了しました。"
+        },
+        {
+            "id": "COMMON_TOTAL_COUNT",
+            "title": "",
+            "message": "合計 {0}"
+        },
+        {
+            "id": "MAX_ITEM_MESSAGE",
+            "title": "確認",
+            "message": "所持最大数を超過したアイテムを\r\n受け取ることができませんでした。"
+        },
+        {
+            "id": "MAX_ITEM_REWARD",
+            "title": "確認",
+            "message": "所持最大数を超過した報酬を\r\n受け取ることができませんでした。"
+        },
+        {
+            "id": "COMMON_PURCHASE_ITEM",
+            "title": "",
+            "message": "{0}を購入"
+        },
+        {
+            "id": "COMMON_YEAR_AGE",
+            "title": "",
+            "message": "{0}年前"
+        },
+        {
+            "id": "COMMON_UNLOCK",
+            "title": "確認",
+            "message": "解除する"
+        },
+        {
+            "id": "COMMON_ITEM_USE_CHECK",
+            "title": "確認",
+            "message": "{0}を使いますか？"
+        },
+        {
+            "id": "COMMON_CONDITIONS_TEXT",
+            "title": "確認",
+            "message": "条件: {0}"
+        },
+        {
+            "id": "COMMON_EXCHANGE_TEXT",
+            "title": "確認",
+            "message": "交換"
+        },
+        {
+            "id": "COMMON_HOME_APP_TITLE",
+            "title": "確認",
+            "message": "タイトル画面に戻りますか?"
+        },
+        {
+            "id": "COMMON_GET_REWARD_TEXT",
+            "title": "確認",
+            "message": "{0}を獲得しました。"
+        },
+        {
+            "id": "DMM_PREMIUM_REWARD_TEXT",
+            "title": "確認",
+            "message": "DMMプレミアム特典{0}月分"
+        },
+        {
+            "id": "MICRO_MAINTENANCE_MESSAGE",
+            "title": "確認",
+            "message": "選択された機能はただ今メンテナンス中です。\r\n詳細はお知らせをご確認ください。\r\n拠点へ戻ります。"
+        },
+        {
+            "id": "MICRO_MAINTENANCE_MESSAGE_IN_MY_PAGE",
+            "title": "確認",
+            "message": "選択された機能はただ今メンテナンス中です。\r\n詳細はお知らせをご確認ください。"
+        },
+        {
+            "id": "COMMON_SYSTEM_LOCKED_EVENT_TERM",
+            "title": "確認",
+            "message": "この機能はイベント期間終了後から使用できます"
+        },
+        {
+            "id": "POSSESS_COUNT_FORMAT",
+            "title": "",
+            "message": "所持数:{0}"
+        },
+        {
+            "id": "COMMON_NOT_ENOUGH_LEVEL",
+            "title": "確認",
+            "message": "必要Lv.が不足しています。"
+        },
+        {
+            "id": "DECK_AUTO_SELECT_POPUP",
+            "title": "おまかせ編成",
+            "message": "現在の編成をリセットし\r\nこの編成をおまかせ編成しますか？"
+        },
+        {
+            "id": "COMMON_NOT_POSS_ITEM",
+            "title": "確認",
+            "message": "現在アイテムを所持していません"
+        },
+        {
+            "id": "COMMON_NOT_POSS_ATTACK_SKILL",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "COMMON_NAME_TEXT",
+            "title": "",
+            "message": "名前： {0}"
+        },
+        {
+            "id": "COMMON_COSTUME_NAME_TEXT",
+            "title": "",
+            "message": "コスチューム名： {0}"
+        },
+        {
+            "id": "COMMON_UNIT_TYPE_NAME_TEXT",
+            "title": "",
+            "message": "種族名： {0}"
+        },
+        {
+            "id": "COMMON_USE_TEXT",
+            "title": "確認",
+            "message": "使用"
+        },
+        {
+            "id": "COMMON_OPEN_TEXT",
+            "title": "確認",
+            "message": "開く"
+        },
+        {
+            "id": "COMMON_USE_NUM_TEXT",
+            "title": "確認",
+            "message": "使用数"
+        },
+        {
+            "id": "REQUIRED_COUNT",
+            "title": "",
+            "message": "必要数:{0}"
+        },
+        {
+            "id": "COMMON_STEP_TEXT",
+            "title": "確認",
+            "message": "ステップ"
+        },
+        {
+            "id": "NOT_ATTACH_SUBSKILL",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "COMMON_SUSPENSION",
+            "title": "",
+            "message": "中断"
+        },
+        {
+            "id": "COMMON_GIVE_UP",
+            "title": "",
+            "message": "あきらめる"
+        },
+        {
+            "id": "COMMON_RETIRE",
+            "title": "",
+            "message": "リタイア"
+        },
+        {
+            "id": "COMMON_REWARD_VIEW",
+            "title": "確認",
+            "message": "下記報酬が獲得できます。"
+        },
+        {
+            "id": "COMMON_VOTE",
+            "title": "確認",
+            "message": "投票"
+        },
+        {
+            "id": "COMMON_RESTART",
+            "title": "",
+            "message": "再開する"
+        },
+        {
+            "id": "COMMON_NOT_RESTART",
+            "title": "",
+            "message": "再開しない"
+        },
+        {
+            "id": "COMMON_ELAPSED_TIME",
+            "title": "確認",
+            "message": "経過時間"
+        },
+        {
+            "id": "COMMON_TIME_SEC",
+            "title": "確認",
+            "message": "{0}秒"
+        },
+        {
+            "id": "COMMON_MIN_TIME_REWARD",
+            "title": "確認",
+            "message": "{0}分毎の獲得量"
+        },
+        {
+            "id": "COMMON_TITLE_GOLD",
+            "title": "確認",
+            "message": "ゴールド :"
+        },
+        {
+            "id": "COMMON_TITLE_EXP",
+            "title": "確認",
+            "message": "EXP  :"
+        },
+        {
+            "id": "COMMON_REWARD_RECEIVE_OVER",
+            "title": "確認",
+            "message": "アイテムが超過していますが、受け取りますか？\r\n※超過分は消失します。"
+        },
+        {
+            "id": "COMMON_REWARD_NOT_RECEIVE",
+            "title": "確認",
+            "message": "受け取ることができる報酬がありません"
+        },
+        {
+            "id": "COMMON_LIMIT_HOUR_TIMER",
+            "title": "確認",
+            "message": "最大{0}時間まで"
+        },
+        {
+            "id": "COMMON_PAREN",
+            "title": "確認",
+            "message": "({0})"
+        },
+        {
+            "id": "COMMON_REWARD_COUNT",
+            "title": "確認",
+            "message": "残り報酬:"
+        },
+        {
+            "id": "COMMON_CHANGE_TEXT",
+            "title": "確認",
+            "message": "切り替える"
+        },
+        {
+            "id": "COMMON_SORTIE_COST_STAMINA",
+            "title": "確認",
+            "message": "消費スタミナ{0}"
+        },
+        {
+            "id": "COMMON_LOGIN_ONLINE",
+            "title": "",
+            "message": "オンライン"
+        },
+        {
+            "id": "DECK_COPY",
+            "title": "",
+            "message": "編成をコピーしました"
+        },
+        {
+            "id": "DECK_CHANGE_NAME",
+            "title": "編成名変更",
+            "message": "編成名を入力してください"
+        },
+        {
+            "id": "DECK_CHANGE_NAME_DESCRIPTION",
+            "title": "",
+            "message": "<color=#ff0000>最大文字数は7文字までです</color>"
+        },
+        {
+            "id": "DECK_AUTO_SELECT_POPUP_DESCRIPTION",
+            "title": "",
+            "message": "選択した属性で編成します"
+        },
+        {
+            "id": "GET_REWARD_ITEM",
+            "title": "",
+            "message": "獲得報酬"
+        },
+        {
+            "id": "SYNTHESIS_ARTIFACT_SUCCESS",
+            "title": "",
+            "message": "合成成功"
+        },
+        {
+            "id": "ITEM_NOT_POSSESS",
+            "title": "",
+            "message": "アイテムがありません"
+        },
+        {
+            "id": "COMMON_RECEIVE_BUTTON",
+            "title": "",
+            "message": "受取る"
+        },
+        {
+            "id": "SYNTHESIS_ARTIFACT_CHECK",
+            "title": "",
+            "message": "アーティファクトの合成を行います"
+        },
+        {
+            "id": "ONE_HUNDRED_MILLION",
+            "title": "",
+            "message": "億"
+        },
+        {
+            "id": "OPTION_UNIT_ACTIVESKILL_PRIORITY",
+            "title": "",
+            "message": "オーバースキルの発動を優先"
+        },
+        {
+            "id": "OPTION_BOM_SPECIALSKILL_AUTO_SHOT",
+            "title": "",
+            "message": "エルダーパワーの自動発動"
+        },
+        {
+            "id": "OPTION_BOM_NORMALSKILL_AUTO_SHOT",
+            "title": "",
+            "message": "エルダーショットの自動発動"
+        },
+        {
+            "id": "OPTION_BOM_SPECIALSKILL_PERFORMANCE_DISPLAY",
+            "title": "",
+            "message": "エルダーパワー演出の表示"
+        },
+        {
+            "id": "OPTION_TEXT_WAIT_TIME",
+            "title": "",
+            "message": "オート速度【待ち時間{0}秒】"
+        },
+        {
+            "id": "PROFILE_VIPRANK_SHOP_TRANSITION_BUTTON",
+            "title": "",
+            "message": "継承メダルを購入"
+        },
+        {
+            "id": "SESSION_EXPIRED",
+            "title": "エラー",
+            "message": "セッションの有効期限が切れました。"
+        },
+        {
+            "id": "OUT_OF_SCHEDULE",
+            "title": "エラー",
+            "message": "開催期間外です。"
+        },
+        {
+            "id": "REJECTED_BY_MUTEX_LOCKED",
+            "title": "エラー",
+            "message": "直前の取引が残っています。\r\n5分ほど時間をおいて再度お試しください。"
+        },
+        {
+            "id": "COMMON_VIPRANK_TITLE",
+            "title": "",
+            "message": "継承者ランク"
+        },
+        {
+            "id": "COMMON_CAN_USE",
+            "title": "",
+            "message": "使用可"
+        },
+        {
+            "id": "COMMON_CHALLENGE_COUNT_RECOVERY_POPUP_MESSAGE",
+            "title": "",
+            "message": "回復する挑戦回数を選択してください。"
+        },
+        {
+            "id": "COMMON_CHALLENGE_REMAIN_RECOVERY_COUNT",
+            "title": "",
+            "message": "本日の残り回復可能回数 <color=#FF4C45>{0}</color=#FF4C45>回"
+        },
+        {
+            "id": "COMMON_CHALLENGE_NOT_OVER_RECOVERY",
+            "title": "",
+            "message": "最大値を超えての回復はできません"
+        },
+        {
+            "id": "ITEM_SELECT_LIST",
+            "title": "",
+            "message": "リストから選択してください"
+        },
+        {
+            "id": "LONG_PRESS_CHECK_DETAIL",
+            "title": "",
+            "message": "<color=#D4D200>長押しで詳細を確認できます</color>"
+        },
+        {
+            "id": "COMMON_CHALLENGE_COUNT_RESET_MESSAGE",
+            "title": "",
+            "message": "回復した挑戦回数は翌日にリセットされます"
+        },
+        {
+            "id": "PVP_OUT_OF_SCHEDULE",
+            "title": "エラー",
+            "message": "シーズン期間外です"
+        },
+        {
+            "id": "LOGIN_BONUS_CHECK",
+            "title": "",
+            "message": "原石をあと<space=1em>{0}<space=1em>使用すると\r\n<size=25>{1}</size>\r\n<line-height=60%>※原石の仕様数は当月１日午前４時から\r\n翌月１日午前３時59分までの数です。"
+        },
+        {
+            "id": "LOGIN_BONUS_REWARD_PREVIEW_POPUP",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "GACHA_CONFIRM",
+            "title": "消費確認",
+            "message": "<color=#ffff1e>{0}を{1}個</color>消費してガチャを<color=#ffff1e>{2}回</color>引きます\r\nよろしいですか?"
+        },
+        {
+            "id": "GACHA_SHORTAGE",
+            "title": "確認",
+            "message": "※{0}が不足しています"
+        },
+        {
+            "id": "GACHA_ATTENTION_1",
+            "title": "",
+            "message": "注意事項\r\n　※「10回引く」でSR以上が抽選されなかった場合、\r\n　抽選された中で最もレアリティの低いユニット１体を\r\n　「SR以上確定」の割合に準じて、再度抽選を行います。\r\n　※ユニット別の提供割合は小数点第5位を切り捨てて表示しているため、\r\n　　合算しても100％にならない場合があります。\r\n　※本ガチャから出現するユニットは、重複する場合があります。\r\n　※開催期間は予告なく変更する場合があります。\r\n　※本ガチャから出現するユニットの能力やイラストなどのコンテンツは\r\n　　変更する場合があります。\r\n"
+        },
+        {
+            "id": "GACHA_ATTENTION_2",
+            "title": "",
+            "message": "注意事項\r\n　※ユニット別の提供割合は小数点第５位を切り捨てて表示しているため、\r\n　　合算しても100％にならない場合があります。\r\n　※本ガチャから出現するユニットは重複する場合があります。\r\n　※開催期間は予告なく変更する場合があります。\r\n　※本ガチャから出現するユニットの能力やイラストなどのコンテンツは\r\n　　変更する場合があります。\r\n"
+        },
+        {
+            "id": "GACHA_PERCENTAGE",
+            "title": "",
+            "message": "{0:f4}%"
+        },
+        {
+            "id": "GACHA_POSSESS_COUNT",
+            "title": "",
+            "message": "{0}/{1}"
+        },
+        {
+            "id": "GACHA_UNIT_INFORMATION",
+            "title": "ユニット詳細",
+            "message": "※図鑑から出現率アップ中以外のユニットも\r\n確認することができます"
+        },
+        {
+            "id": "GACHA_PROVISION_RATE",
+            "title": "",
+            "message": "提供割合"
+        },
+        {
+            "id": "GACHA_PROVISION_RATE_NORMAL",
+            "title": "",
+            "message": "●通常ガチャ提供割合"
+        },
+        {
+            "id": "GACHA_PROVISION_RATE_SPECIAL",
+            "title": "",
+            "message": "●SR以上確定ガチャ提供割合"
+        },
+        {
+            "id": "GACHA_RARITY",
+            "title": "",
+            "message": "レアリティ"
+        },
+        {
+            "id": "GACHA_CLASS",
+            "title": "",
+            "message": "クラス"
+        },
+        {
+            "id": "GACHA_ATTRIBUTE",
+            "title": "",
+            "message": "属性"
+        },
+        {
+            "id": "GACHA_NAME",
+            "title": "",
+            "message": "名前"
+        },
+        {
+            "id": "GACHA_RATE",
+            "title": "",
+            "message": "出現率"
+        },
+        {
+            "id": "GACHA_10",
+            "title": "",
+            "message": "ガチャ"
+        },
+        {
+            "id": "GACHA_11",
+            "title": "",
+            "message": "ガチャ"
+        },
+        {
+            "id": "GACHA_12",
+            "title": "",
+            "message": "ガチャ"
+        },
+        {
+            "id": "GACHA_13",
+            "title": "",
+            "message": "ガチャ"
+        },
+        {
+            "id": "GACHA_14",
+            "title": "",
+            "message": "ガチャ"
+        },
+        {
+            "id": "GACHA_15",
+            "title": "",
+            "message": "ガチャ"
+        },
+        {
+            "id": "GACHA_16",
+            "title": "",
+            "message": "ガチャ"
+        },
+        {
+            "id": "GACHA_TRANS_TOP",
+            "title": "",
+            "message": "ガチャへ"
+        },
+        {
+            "id": "GACHA_GET_OMAKE",
+            "title": "確認",
+            "message": "おまけ獲得！"
+        },
+        {
+            "id": "GACHA_SEND_MAIL_OMAKE",
+            "title": "確認",
+            "message": "所持最大数を超えたガチャのおまけ"
+        },
+        {
+            "id": "GACHA_CONFIRM_FREE",
+            "title": "消費確認",
+            "message": "召喚を<color=#ffff1e>{0}回</color>引きます\r\nよろしいですか?"
+        },
+        {
+            "id": "GACHA_STAMP_NAME",
+            "title": "",
+            "message": "スタンプ"
+        },
+        {
+            "id": "GACHA_STAMP_COUNT",
+            "title": "",
+            "message": "{0}回目"
+        },
+        {
+            "id": "GACHA_STAMP_PAGE",
+            "title": "",
+            "message": "({0}/{1})"
+        },
+        {
+            "id": "GACHA_STAMP_REWARD_CONFIRMATION",
+            "title": "確認",
+            "message": "下記報酬を確認できます。"
+        },
+        {
+            "id": "GACHA_STAMP_RESET_ON_WARNING",
+            "title": "",
+            "message": "※最後までスタンプが押されると\r\nスタンプカードがリセットされます。"
+        },
+        {
+            "id": "GACHA_STAMP_RESET_OFF_WARNING",
+            "title": "",
+            "message": "※最後までスタンプが押されると\r\nスタンプカードは終了します。"
+        },
+        {
+            "id": "GACHA_LOOT_BOX_DETAIL",
+            "title": "宝箱詳細",
+            "message": "宝箱を開きますか？"
+        },
+        {
+            "id": "UNIT_NEXT_TEXT",
+            "title": "",
+            "message": "あと"
+        },
+        {
+            "id": "UNIT_EVOL_RANK_TEXT",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "UNIT_HP_TITLE",
+            "title": "",
+            "message": "耐久"
+        },
+        {
+            "id": "UNIT_ATTACK_TITLE",
+            "title": "",
+            "message": "攻撃力"
+        },
+        {
+            "id": "UNIT_DEFENSE_TITLE",
+            "title": "",
+            "message": "物理防御"
+        },
+        {
+            "id": "UNIT_MAGICRESIST_TITLE",
+            "title": "",
+            "message": "魔法防御"
+        },
+        {
+            "id": "UNIT_RANGE_TITLE",
+            "title": "",
+            "message": "射程"
+        },
+        {
+            "id": "UNIT_BLOCK_TITLE",
+            "title": "",
+            "message": "ブ<cspace=-2>ロッ<cspace=1>ク数"
+        },
+        {
+            "id": "UNIT_ATTACK_SPEED",
+            "title": "",
+            "message": "攻撃速度"
+        },
+        {
+            "id": "UNIT_ATTACK_INTERVAL",
+            "title": "",
+            "message": "攻撃硬直時間"
+        },
+        {
+            "id": "UNIT_CRITICAL_RATE",
+            "title": "",
+            "message": "会心率"
+        },
+        {
+            "id": "UNIT_CRITICAL_DOWN_RATE",
+            "title": "",
+            "message": "会心抵抗率"
+        },
+        {
+            "id": "UNIT_CRITICAL_DAMAGE_RATE",
+            "title": "",
+            "message": "会心ダメージ率"
+        },
+        {
+            "id": "UNIT_CRITICAL_DAMAGE_DOWN_RATE",
+            "title": "",
+            "message": "会心ダメージ抵抗率"
+        },
+        {
+            "id": "UNIT_MOVE_SPEED",
+            "title": "",
+            "message": "移動速度"
+        },
+        {
+            "id": "UNIT_PENETRATION_RATE",
+            "title": "",
+            "message": "貫通率"
+        },
+        {
+            "id": "UNIT_HEALING_RATE",
+            "title": "",
+            "message": "回復率"
+        },
+        {
+            "id": "UNIT_EVASION_RATE",
+            "title": "",
+            "message": "回避率"
+        },
+        {
+            "id": "UNIT_COST_TITLE",
+            "title": "",
+            "message": "出撃コ<cspace=-2>スト"
+        },
+        {
+            "id": "UNIT_REINFORCE_AFTER_LEVEL",
+            "title": "",
+            "message": "強化後Lv"
+        },
+        {
+            "id": "UNIT_REINFORCE_MATERIAL_TITLE",
+            "title": "",
+            "message": "合成素材"
+        },
+        {
+            "id": "UNIT_GET_EXP_J",
+            "title": "",
+            "message": "獲得経験値"
+        },
+        {
+            "id": "UNIT_GET_GOLD",
+            "title": "",
+            "message": "獲得ゴールド"
+        },
+        {
+            "id": "UNIT_GET_POINT",
+            "title": "",
+            "message": "獲得ポイント"
+        },
+        {
+            "id": "UNIT_SKILL_CHECK_TITLE",
+            "title": "",
+            "message": "スキル確認"
+        },
+        {
+            "id": "UNIT_SKILL_CHECK_NAME",
+            "title": "",
+            "message": "スキル:"
+        },
+        {
+            "id": "UNIT_SKILL_CHECK_LEVEL",
+            "title": "",
+            "message": "Lv. {0}/{1}"
+        },
+        {
+            "id": "UNIT_NEED_FIRST_TIME",
+            "title": "",
+            "message": "初回<cspace=-1>まで"
+        },
+        {
+            "id": "UNIT_NEED_RECAST_TIME",
+            "title": "",
+            "message": "再使<cspace=-1.8>用<cspace=-1.6>まで"
+        },
+        {
+            "id": "UNIT_20",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "UNIT_AUTO_SELECT_TITLE",
+            "title": "",
+            "message": "おまかせ選択設定"
+        },
+        {
+            "id": "UNIT_AUTO_SELECT_TARGET_TITLE",
+            "title": "",
+            "message": "選択対象"
+        },
+        {
+            "id": "UNIT_AUTO_SELECT_TARGET_1",
+            "title": "",
+            "message": "ユニット"
+        },
+        {
+            "id": "UNIT_AUTO_SELECT_TARGET_2",
+            "title": "",
+            "message": "素材"
+        },
+        {
+            "id": "UNIT_AUTO_SELECT_RARITY_TITLE",
+            "title": "",
+            "message": "レアリティ"
+        },
+        {
+            "id": "UNIT_AUTO_SELECT_ATTRIBUTE_TITLE",
+            "title": "",
+            "message": "属性"
+        },
+        {
+            "id": "UNIT_AUTO_SELECT_ATTRIBUTE_1",
+            "title": "",
+            "message": "同属性のみ"
+        },
+        {
+            "id": "UNIT_AUTO_SELECT_REINFORCE_TITLE",
+            "title": "",
+            "message": "<cspace=2>強化"
+        },
+        {
+            "id": "UNIT_AUTO_SELECT_REINFORCE_1",
+            "title": "",
+            "message": "未強化のみ"
+        },
+        {
+            "id": "UNIT_AUTO_SELECT_TEXT",
+            "title": "",
+            "message": "※素材から優先的に選択されます。\r\n※素材はすべてのレアリティの中から低い順に選択されます。\r\n※SR以上のユニットは選択されません。"
+        },
+        {
+            "id": "UNIT_LEVEL",
+            "title": "",
+            "message": "<cspace=-2>Lv."
+        },
+        {
+            "id": "UNIT_SKILL_LEVEL_DOT",
+            "title": "",
+            "message": "スキルLv."
+        },
+        {
+            "id": "UNIT_COST_LEVEL",
+            "title": "",
+            "message": "コスト"
+        },
+        {
+            "id": "UNIT_GET_EXP_E",
+            "title": "",
+            "message": "獲得EXP"
+        },
+        {
+            "id": "UNIT_GET_SKILL_EXP",
+            "title": "",
+            "message": "獲得スキルEXP"
+        },
+        {
+            "id": "UNIT_GET_COST_EXP",
+            "title": "",
+            "message": "獲得コストEXP"
+        },
+        {
+            "id": "UNIT_GET_UNIT_POINT",
+            "title": "",
+            "message": "獲得ユ<cspace=-2>ニ<cspace=-5>ッ<cspace=0>トP"
+        },
+        {
+            "id": "UNIT_SKILL_LEVEL",
+            "title": "",
+            "message": "スキルLv"
+        },
+        {
+            "id": "UNIT_GENERATE_CHECK_TITLE",
+            "title": "",
+            "message": "錬成確認"
+        },
+        {
+            "id": "UNIT_CONSUME_GOLD",
+            "title": "",
+            "message": "消費ゴールド"
+        },
+        {
+            "id": "UNIT_POSSESS_GOLD",
+            "title": "",
+            "message": "所持ゴールド"
+        },
+        {
+            "id": "UNIT_GENERATE_CHECK_TEXT",
+            "title": "",
+            "message": "上記の装備を錬成して装備します。\r\nよろしいですか？"
+        },
+        {
+            "id": "UNIT_RANKUP_CHECK_TITLE",
+            "title": "",
+            "message": "ランクアップ確認"
+        },
+        {
+            "id": "UNIT_RANKUP_CHECK_TEXT",
+            "title": "",
+            "message": "以下の内容でランクアップします。"
+        },
+        {
+            "id": "UNIT_RANKUP_CHECK_RESULT_1",
+            "title": "",
+            "message": "・最大レベル上昇"
+        },
+        {
+            "id": "UNIT_RANKUP_CHECK_RESULT_2",
+            "title": "",
+            "message": "・基礎ステータス上昇"
+        },
+        {
+            "id": "UNIT_RANKUP_CHECK_RESULT_3",
+            "title": "",
+            "message": "・交流イベント追加"
+        },
+        {
+            "id": "UNIT_RANKUP_CHECK_RESULT_4",
+            "title": "",
+            "message": "・武装イラスト変化"
+        },
+        {
+            "id": "UNIT_RANKUP_CHECK_RESULT_5",
+            "title": "",
+            "message": "・SDキャラ変化"
+        },
+        {
+            "id": "UNIT_RETIRE_TITLE",
+            "title": "",
+            "message": "引退確認"
+        },
+        {
+            "id": "UNIT_RETIRE_TEXT",
+            "title": "",
+            "message": "上記のユニットを引退します。よろしいですか?"
+        },
+        {
+            "id": "UNIT_EQUIPMENT_SHORTAGE_MATERIAL",
+            "title": "",
+            "message": "素材が不足しています。"
+        },
+        {
+            "id": "UNIT_RETIRE_SR_WARNING_TEXT",
+            "title": "",
+            "message": "SR以上のユニットが含まれています。"
+        },
+        {
+            "id": "UNIT_ILLUST_CATEGORY_ARMED",
+            "title": "",
+            "message": "武装"
+        },
+        {
+            "id": "UNIT_ILLUST_CATEGORY_CASUAL",
+            "title": "",
+            "message": "制服"
+        },
+        {
+            "id": "UNIT_TYPE",
+            "title": "",
+            "message": "種族:{0}"
+        },
+        {
+            "id": "UNIT_NEXT_EXP_TITLE",
+            "title": "",
+            "message": "あと"
+        },
+        {
+            "id": "UNIT_CLASS_TITLE",
+            "title": "",
+            "message": "クラス"
+        },
+        {
+            "id": "UNIT_RENTAL_BUTTON",
+            "title": "",
+            "message": "レンタル"
+        },
+        {
+            "id": "UNIT_SELECTED_UNIT_TITLE",
+            "title": "",
+            "message": "選択中のユ<cspace=-1><cspace=-2>ニ<cspace=-4>ット"
+        },
+        {
+            "id": "UNIT_ALL_RELEASE",
+            "title": "",
+            "message": "<cspace=-1>すべ</cspace>て解除"
+        },
+        {
+            "id": "UNIT_FORMATION_BUTTON",
+            "title": "",
+            "message": "編 成"
+        },
+        {
+            "id": "UNIT_TARGET_COUNT",
+            "title": "",
+            "message": "最大ターゲット数"
+        },
+        {
+            "id": "UNIT_ABILITY_TITLE",
+            "title": "",
+            "message": "アビリティ"
+        },
+        {
+            "id": "UNIT_SPECIAL_SKILL_TITLE",
+            "title": "",
+            "message": "奥義"
+        },
+        {
+            "id": "UNIT_SKILL_TITLE",
+            "title": "",
+            "message": "<cspace=-1>ス<cspace=-2>キル"
+        },
+        {
+            "id": "UNIT_TOKEN_TITLE",
+            "title": "",
+            "message": "トークン"
+        },
+        {
+            "id": "UNIT_ENABLE_TIME_TITLE",
+            "title": "",
+            "message": "有効時間"
+        },
+        {
+            "id": "UNIT_USE_COST_TITLE",
+            "title": "",
+            "message": "使用コスト"
+        },
+        {
+            "id": "UNIT_SEX_TITLE",
+            "title": "",
+            "message": "性別"
+        },
+        {
+            "id": "UNIT_DEPERTMENT_TITLE",
+            "title": "",
+            "message": "学科"
+        },
+        {
+            "id": "UNIT_GOT_TITLE",
+            "title": "",
+            "message": "加護"
+        },
+        {
+            "id": "UNIT_CV_TITLE",
+            "title": "",
+            "message": "CV."
+        },
+        {
+            "id": "UNIT_ILLUST_TITLE",
+            "title": "",
+            "message": "ｲﾗｽﾄ"
+        },
+        {
+            "id": "UNIT_EVENT_TITLE",
+            "title": "",
+            "message": "<cspace=1>交<cspace=0>流<cspace=-2>イ<cspace=1>ベ<cspace=-2>ント"
+        },
+        {
+            "id": "UNIT_VIEW_SETTING",
+            "title": "",
+            "message": "<scale=0.9>表示設定"
+        },
+        {
+            "id": "UNIT_VOICE_BUTTON",
+            "title": "",
+            "message": "<cspace=-1>ボイス"
+        },
+        {
+            "id": "UNIT_ABILITY_SKILL_BUTTON",
+            "title": "",
+            "message": "<cspace=-1>アビリ<cspace=-3>ティ\r\n<cspace=0.5>ス<cspace=-1>キル"
+        },
+        {
+            "id": "UNIT_PROFILE_BUTTON",
+            "title": "",
+            "message": "プ<cspace=-1>ロ<cspace=-3.5>フ<cspace=-2>ィール"
+        },
+        {
+            "id": "UNIT_VIEW_SETTING_TEXT",
+            "title": "",
+            "message": "ユニットの表示を変更できます。"
+        },
+        {
+            "id": "UNIT_ILLUST_TITLE_FULL",
+            "title": "",
+            "message": "イラスト"
+        },
+        {
+            "id": "UNIT_AFTER_CHANGE_BUTTON",
+            "title": "",
+            "message": "変化後"
+        },
+        {
+            "id": "UNIT_BEFORE_CHANGE_BUTTON",
+            "title": "",
+            "message": "変化前"
+        },
+        {
+            "id": "UNIT_ICON_TITLE",
+            "title": "",
+            "message": "アイコン"
+        },
+        {
+            "id": "UNIT_SD_CHARA_TITLE",
+            "title": "",
+            "message": "SDキャラ"
+        },
+        {
+            "id": "UNIT_ILLUST_SETTING_TITLE",
+            "title": "",
+            "message": "イラスト設定"
+        },
+        {
+            "id": "UNIT_ILLUST_SETTING_TEXT",
+            "title": "",
+            "message": "マイページに表示するイラストを選択してください。"
+        },
+        {
+            "id": "UNIT_PARAM_ADD_TITLE",
+            "title": "",
+            "message": "追加"
+        },
+        {
+            "id": "UNIT_GENERATE_TITLE",
+            "title": "",
+            "message": "練成"
+        },
+        {
+            "id": "UNIT_OBTAINING_METHOD",
+            "title": "",
+            "message": "入手方法"
+        },
+        {
+            "id": "UNIT_EQUIPMENT_BUTTON",
+            "title": "",
+            "message": "装 備"
+        },
+        {
+            "id": "UNIT_REINFORCE_BUTTON",
+            "title": "",
+            "message": "強 化"
+        },
+        {
+            "id": "UNIT_REINFORCE_EXECUTION_BUTTON",
+            "title": "",
+            "message": "強化実行"
+        },
+        {
+            "id": "UNIT_RANKUP_BUTTON",
+            "title": "",
+            "message": "<cspace=-1>ラン</cspace>ク<cspace=-2>ア<cspace=-3>ップ"
+        },
+        {
+            "id": "UNIT_BULK_EQUIP_BUTTON",
+            "title": "",
+            "message": "一括装備"
+        },
+        {
+            "id": "UNIT_RENTAL_POPUP",
+            "title": "確認",
+            "message": "このユニットをレンタルしますか？"
+        },
+        {
+            "id": "UNIT_PLAYER_NAME_TITLE",
+            "title": "",
+            "message": "<cspace=-2>プレ<cspace=-3>イヤ<cspace=-1>ー名"
+        },
+        {
+            "id": "UNIT_FRIEND_PT_TITLE",
+            "title": "",
+            "message": "<cspace=-2>フ<cspace=-2>レ<cspace=-3>ン<cspace=1>ドPt"
+        },
+        {
+            "id": "UNIT_CONSUME_FRIEND_PT_TITLE",
+            "title": "",
+            "message": "<cspace=-1>消<cspace=2>費<cspace=-2>フ<cspace=-2>レ<cspace=-3>ン<cspace=1>ドPt"
+        },
+        {
+            "id": "UNIT_CHANGE_BASE_BUTTON",
+            "title": "",
+            "message": "ベ<cspace=-1>ース変更"
+        },
+        {
+            "id": "UNIT_GET_POINT_TITLE",
+            "title": "",
+            "message": "獲得<cspace=0>ポ<cspace=-1>イ<cspace=-2>ント"
+        },
+        {
+            "id": "UNIT_AUTO_SELECT_BUTTON",
+            "title": "",
+            "message": "おまかせ"
+        },
+        {
+            "id": "UNIT_RENTAL_CHANGE_UNIT_POPUP",
+            "title": "確認",
+            "message": "既にユニットをレンタルしています。\r\n新たにレンタルしますか？\r\n※今までのユニットは使用できなくなります。"
+        },
+        {
+            "id": "UNIT_RETIRE_BUTTON",
+            "title": "",
+            "message": "引 退"
+        },
+        {
+            "id": "UNIT_SKILL_CHANGE_BUTTON",
+            "title": "",
+            "message": "スキル"
+        },
+        {
+            "id": "UNIT_SPECIAL_SKILL_CHANGE_BUTTON",
+            "title": "",
+            "message": "奥義"
+        },
+        {
+            "id": "UNIT_TEAM_SELECT_TITLE",
+            "title": "",
+            "message": "チーム選択"
+        },
+        {
+            "id": "UNIT_TEAM_NAME_TITLE",
+            "title": "",
+            "message": "チーム名"
+        },
+        {
+            "id": "UNIT_TEAM_DISPERSION",
+            "title": "",
+            "message": "解 散"
+        },
+        {
+            "id": "UNIT_TEAM_CANCEL_BUTTON",
+            "title": "",
+            "message": "<cspace=-3.5>キ<cspace=-6.5>ャ<cspace=-2>ン<cspace=-2.5>セル"
+        },
+        {
+            "id": "UNIT_TEAM_COPY_BUTTON",
+            "title": "",
+            "message": "<cspace=-1>チ<cspace=-4>ー<cspace=-2>ムを<cspace=-2>コピー"
+        },
+        {
+            "id": "UNIT_TEAM_PASTE_BUTTON",
+            "title": "",
+            "message": "<cspace=-1>チ<cspace=-4>ー<cspace=-2>ムを<cspace=-2>ペー<cspace=-3>スト"
+        },
+        {
+            "id": "UNIT_TEAM_BULK_SET",
+            "title": "",
+            "message": "一括<cspace=-1>編成"
+        },
+        {
+            "id": "UNIT_TEAM_NAME_CANCEL_BUTTON",
+            "title": "",
+            "message": "<cspace=-1>キ<cspace=-3>ャ<cspace=0>ンセル"
+        },
+        {
+            "id": "UNIT_TEAM_NAME_DECISION_BUTTON",
+            "title": "",
+            "message": "決定"
+        },
+        {
+            "id": "UNIT_TEAM_NAME_INPUT_TEXT",
+            "title": "",
+            "message": "Enter text..."
+        },
+        {
+            "id": "UNIT_TEAM_NAME_INPUT_TITLE",
+            "title": "",
+            "message": "チーム名入力"
+        },
+        {
+            "id": "INPUT_TEAM_NAME",
+            "title": "チーム名入力",
+            "message": "任意のチーム名を入力してください。"
+        },
+        {
+            "id": "UNIT_AWAKING_BUTTON",
+            "title": "潜在覚醒確認",
+            "message": "潜在覚醒をおこないますがよろしいですか？"
+        },
+        {
+            "id": "UNIT_AWAKING_RESET",
+            "title": "覚醒リセット確認",
+            "message": ""
+        },
+        {
+            "id": "UNIT_CLASS_CHANGE_NEED_LEVEL",
+            "title": "",
+            "message": "必要Lv.{0}"
+        },
+        {
+            "id": "UNIT_SKILL_FIRST_COOL_TIME_TEXT",
+            "title": "",
+            "message": "初回のみ <color=#78F9D3>{0}</color>秒"
+        },
+        {
+            "id": "UNIT_SKILL_COOL_TIME_TEXT",
+            "title": "",
+            "message": "準備時間 <color=#78F9D3>{0}</color>秒"
+        },
+        {
+            "id": "UNIT_AWAKE_ITEM_USE_TEXT",
+            "title": "使用確認",
+            "message": ""
+        },
+        {
+            "id": "UNIT_SHORTAGE_AWAKE_ITEM",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "UNIT_GET_AWAKE_POINT",
+            "title": "",
+            "message": "潜在覚醒ポイントを獲得しました"
+        },
+        {
+            "id": "UNIT_MAX_AWAKE_POINT",
+            "title": "",
+            "message": "これ以上潜在覚醒ポイントを増やすことはできません"
+        },
+        {
+            "id": "UNIT_RESET_AWAKE_POINT",
+            "title": "",
+            "message": "潜在覚醒をリセットしました"
+        },
+        {
+            "id": "UNIT_EVENT_TARGET_NOT_USE_AWAKE_POINT",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "UNIT_SUBSTORY_TARGET_NOT_USE_AWAKE_POINT",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "UNIT_EX_SKILL_LOCKED",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "UNIT_EX_SKILL_NOT_IMPLEMENTED",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "UNIT_EX_SKILL_LEVEL_UP",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "UNIT_EX_SKILL_MAX_LEVEL",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "UNIT_LEVELUP_IS_MAX_LEVEL",
+            "title": "確認",
+            "message": "これ以上強化できません"
+        },
+        {
+            "id": "UNIT_EQUIP_EQUIPPED_ALL_SLOT",
+            "title": "確認",
+            "message": "全て装備済です"
+        },
+        {
+            "id": "UNIT_EQUIP_NO_EQUIPMENT_ALL_SLOT",
+            "title": "確認",
+            "message": "装着可能な装備がありません"
+        },
+        {
+            "id": "UNIT_CLASS_CHANGE_MAX",
+            "title": "確認",
+            "message": "これ以上クラスチェンジできません"
+        },
+        {
+            "id": "UNIT_CLASS_CHANGE_EQUIP_EMPTY_SLOT",
+            "title": "確認",
+            "message": "4つの装備を身に着けないとクラスチェンジはできません"
+        },
+        {
+            "id": "UNIT_EQUIP_NOT_POSS_EQUIP",
+            "title": "確認",
+            "message": "装備がありません"
+        },
+        {
+            "id": "UNIT_NOT_OPEN_SKILL_DETAIL",
+            "title": "確認",
+            "message": "この画面では、EXスキルの強化・変更することができません"
+        },
+        {
+            "id": "UNIT_NOT_OPEN_SKILL_DETAIL_RENTAL",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "UNIT_NOT_OPEN_SKILL_DETAIL_PICTURE",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "UNIT_NOT_OPEN_SKILL_DETAIL_GACHA",
+            "title": "確認",
+            "message": "この画面では操作を受け付けません"
+        },
+        {
+            "id": "UNIT_NOT_OPEN_SUB_SKILL_DETAIL",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "UNIT_NOT_OPEN_EX_SKILL_DETAIL",
+            "title": "確認",
+            "message": "この画面では、EXスキルの強化ができません"
+        },
+        {
+            "id": "UNIQUE_WEAPON_OWNER",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "TOAST_NOT_POSSESS_UNIT",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "TOAST_UNIQUE_WEAPON_ALREADY_CREATED",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "UNIQUE_WEAPON_CREATE_COMPLETE_POPUP",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "UNIT_AUTO_SELECT_DECK_NOT_POSSESS",
+            "title": "確認",
+            "message": "選択した属性のヴァイスを所持しておりません。"
+        },
+        {
+            "id": "TOAST_DECK_COPYING",
+            "title": "",
+            "message": "編成コピー中のため、この操作は行えません。"
+        },
+        {
+            "id": "UNIT_TEAM_SUBSKILL_OVER_POPUP",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "UNIT_PARAM_SIGNED_VALUE",
+            "title": "",
+            "message": "{0:+0;-0}"
+        },
+        {
+            "id": "TOAST_UNIQUE_WEAPON_IS_MAX_LEVEL",
+            "title": "",
+            "message": "これ以上強化できません"
+        },
+        {
+            "id": "UNIQUE_WEAPON_REINFORCE_OVER_RATE",
+            "title": "確認",
+            "message": "成功率が100%を超えています"
+        },
+        {
+            "id": "UNIQUE_WEAPON_REINFORCE_LEVEL_FORMAT",
+            "title": "",
+            "message": "＋{0}"
+        },
+        {
+            "id": "TOAST_UNIQUE_WEAPON_REINFORCE_FAILURE",
+            "title": "",
+            "message": "強化に失敗しました……。"
+        },
+        {
+            "id": "TOAST_REQUIRE_EQUIP_MAIN_BOM",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "TOAST_ALREADY_EQUIP_MAIN_BOM",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "UNIT_REINFORCE_TRANSITION",
+            "title": "",
+            "message": "育 成"
+        },
+        {
+            "id": "UNIT_PICTUREBOOK_TRANSITION",
+            "title": "",
+            "message": "図 鑑"
+        },
+        {
+            "id": "UNIT_STATUS_TAB",
+            "title": "",
+            "message": "ステータス"
+        },
+        {
+            "id": "UNIT_MAX_STATUS_TAB",
+            "title": "",
+            "message": "最大ステータス"
+        },
+        {
+            "id": "REINFORCE_BOM_ACTIVE_SKILL_TITLE",
+            "title": "",
+            "message": "エルダーショット強化"
+        },
+        {
+            "id": "REINFORCE_BOM_SPECIAL_SKILL_TITLE",
+            "title": "",
+            "message": "エルダーパワー強化"
+        },
+        {
+            "id": "REINFORCE_BOM_ACTIVE_SKILL_TEXT",
+            "title": "",
+            "message": "エルダーショットを強化します"
+        },
+        {
+            "id": "REINFORCE_BOM_SPECIAL_SKILL_TEXT",
+            "title": "",
+            "message": "エルダーパワーを強化します"
+        },
+        {
+            "id": "DECK_ARTIFACT_STATE_AUTO_SELECT_BUTTON",
+            "title": "",
+            "message": "<scale=0.7>おまかせ装備"
+        },
+        {
+            "id": "DECK_ARTIFACT_AUTO_SELECT",
+            "title": "",
+            "message": "おまかせ装備"
+        },
+        {
+            "id": "DECK_DEFAULT_STATE_AUTO_SELECT_BUTTON",
+            "title": "",
+            "message": "<scale=0.7>おまかせ編成"
+        },
+        {
+            "id": "DECK_DEFAULT_AUTO_SELECT",
+            "title": "",
+            "message": "おまかせ編成"
+        },
+        {
+            "id": "SHOP_COMMMA_NUMBER",
+            "title": "",
+            "message": "{0:#,0} "
+        },
+        {
+            "id": "SHOP_PRICE",
+            "title": "",
+            "message": "￥{0:#,0} "
+        },
+        {
+            "id": "SHOP_REMAIN_COUNT",
+            "title": "",
+            "message": "あと{0}回"
+        },
+        {
+            "id": "SHOP_REMAIN_DAY",
+            "title": "",
+            "message": "あと  {0}日"
+        },
+        {
+            "id": "DAY",
+            "title": "",
+            "message": "{0}日"
+        },
+        {
+            "id": "YEAR_MONTH_DAY",
+            "title": "",
+            "message": "{0}/{1:00}/{2:00}"
+        },
+        {
+            "id": "HOUR_MINUTE",
+            "title": "",
+            "message": "{0}:{1}"
+        },
+        {
+            "id": "PURCHASE_POSSESS_UNIT",
+            "title": "ユニット所持枠拡張",
+            "message": "ユニットの所持枠を拡張しますか?"
+        },
+        {
+            "id": "STAMINA",
+            "title": "",
+            "message": "スタミナ"
+        },
+        {
+            "id": "POSSESS_UNIT",
+            "title": "",
+            "message": "所持枠"
+        },
+        {
+            "id": "INFORMATION_UNIT_POINT",
+            "title": "ユニットポイント",
+            "message": "ユニットPはユニットを強化合成の素材に使用\r\nまたは引退させることで入手できます。"
+        },
+        {
+            "id": "INFORMATION_EQUIPMENT_POINT",
+            "title": "装備ポイント",
+            "message": "装備Pは装備または装備の欠片を\r\n売却することで入手できます。"
+        },
+        {
+            "id": "PRAYER_CONFIRM_1",
+            "title": "",
+            "message": "【{0}】の\r\n祈りを発動しますか?"
+        },
+        {
+            "id": "PRAYER_CONFIRM_2",
+            "title": "",
+            "message": "効果\r\n{0}"
+        },
+        {
+            "id": "PRAYER_CONFIRM_3",
+            "title": "",
+            "message": "【{0}】の\r\n祈りを発動しました。\r\n\r\n残り時間\r\n{1}日{2}時間{3}分\r\n"
+        },
+        {
+            "id": "SHORTAGE_STONE_POPUP",
+            "title": "確認",
+            "message": "原石が足りません。\r\n購入しますか？"
+        },
+        {
+            "id": "CROSS_COUNT",
+            "title": "確認",
+            "message": "×{0}"
+        },
+        {
+            "id": "POSSESS_COUNT",
+            "title": "確認",
+            "message": "所持数"
+        },
+        {
+            "id": "ACQUISITION_GOLD",
+            "title": "確認",
+            "message": "獲得エーテル"
+        },
+        {
+            "id": "ACQUISITION_EQUIPMENT_POINT",
+            "title": "確認",
+            "message": "獲得装備P"
+        },
+        {
+            "id": "ACQUISITION_STAMINA",
+            "title": "確認",
+            "message": "獲得スタミナ"
+        },
+        {
+            "id": "POSSESS_GOLD",
+            "title": "確認",
+            "message": "所持エーテル"
+        },
+        {
+            "id": "POSSESS_EQUIPMENT_POINT",
+            "title": "確認",
+            "message": "所持装備P"
+        },
+        {
+            "id": "POSSESS_STAMINA",
+            "title": "確認",
+            "message": "所持スタミナ"
+        },
+        {
+            "id": "CHECK_USE",
+            "title": "確認",
+            "message": "使用確認"
+        },
+        {
+            "id": "CHECK_SALE",
+            "title": "確認",
+            "message": "売却確認"
+        },
+        {
+            "id": "CHECK_USE_ITEM_TEXT",
+            "title": "確認",
+            "message": "上記のアイテムを使用します。\r\nよろしいですか?"
+        },
+        {
+            "id": "CHECK_SALE_ITEM_TEXT",
+            "title": "確認",
+            "message": "上記のアイテムを売却します。\r\nよろしいですか?"
+        },
+        {
+            "id": "CHECK_SALE_EQUIPMENT_TEXT",
+            "title": "確認",
+            "message": "上記の装備を売却します。\r\nよろしいですか?"
+        },
+        {
+            "id": "TALK_EVENT_SCENARIO_TRANSITION_NORMAL",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "TALK_EVENT_SCENARIO_TRANSITION_R18",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "SMELTING_COUNT",
+            "title": "確認",
+            "message": "( 欠片数 : {0} )"
+        },
+        {
+            "id": "GET_EXP_TEXT",
+            "title": "確認",
+            "message": "経験値獲得!"
+        },
+        {
+            "id": "CLASS_CHANGE_EXECUTED_TEXT",
+            "title": "確認",
+            "message": "クラスチェンジ!"
+        },
+        {
+            "id": "SELECT_QUEST_LOCKED",
+            "title": "確認",
+            "message": "このクエストは開放されていません。"
+        },
+        {
+            "id": "PROFILE_ID_COPY",
+            "title": "確認",
+            "message": "IDをコピーしました"
+        },
+        {
+            "id": "EXCHANGE_QUESTION_TEXT",
+            "title": "確認",
+            "message": "{0} を交換しますか？"
+        },
+        {
+            "id": "CONSUMPTION_TEXT",
+            "title": "確認",
+            "message": "消費 {0}"
+        },
+        {
+            "id": "POSSESSION_TEXT",
+            "title": "確認",
+            "message": "所持 {0}"
+        },
+        {
+            "id": "CANCEL_TEXT",
+            "title": "確認",
+            "message": "キャンセルしました。"
+        },
+        {
+            "id": "CAVEAT_POSSESSION_MAX_TEXT",
+            "title": "確認",
+            "message": "{0} は {1} {2} 以上所持できません。"
+        },
+        {
+            "id": "UNLOCK_CLASS_CHANGE_COUNT_TEXT",
+            "title": "確認",
+            "message": "クラスチェンジ{0}回目で開放"
+        },
+        {
+            "id": "GET_REWARD_MAIL_ITEM_TEXT",
+            "title": "確認",
+            "message": "下記報酬を獲得しました。"
+        },
+        {
+            "id": "GET_REWARD_ITEM_TEXT",
+            "title": "確認",
+            "message": "下記報酬を獲得しました。"
+        },
+        {
+            "id": "GET_REWARD_ITEM_PARTIAL_TEXT",
+            "title": "確認",
+            "message": "下記報酬を獲得しました。\r\n一部受け取れないものがありました。"
+        },
+        {
+            "id": "EXCHANGE_EFF_STAMINA_TEXT",
+            "title": "確認",
+            "message": "スタミナを{0}回復します"
+        },
+        {
+            "id": "GET_REWARD_AWAKE_POINT",
+            "title": "確認",
+            "message": "潜在覚醒ポイントを獲得しました。"
+        },
+        {
+            "id": "SHOP_FIRST_PURCHASE_INDUCTION",
+            "title": "初購入特典",
+            "message": "<size=26><color=#33FF99>600</size> DMMポイント</color>以上の<size=25><color=#33FF99>原石パック</color></size>を<size=25><color=#33FF99>初回購入</color></size>で\r\n<size=25><color=#FFCC33>レジェンド{0}</color></size>を<size=25>プレゼント！</size>\r\n<align=\"left\"><indent=8%><size=17>※{0} はガチャから排出されません。\r\n※プレゼントは1アカウントにつき一回限りです。\r\n※過去にご購入された方も受け取れます。その場合、覚醒ポイントが増加します。"
+        },
+        {
+            "id": "SHOP_FIRST_PURCHASE_INDUCTION_STORE",
+            "title": "初購入特典",
+            "message": "<size=26><color=#33FF99>650</size>円</color>以上の<size=25><color=#33FF99>原石パック</color></size>を<size=25><color=#33FF99>初回購入</color></size>で\r\n<size=25><color=#FFCC33>レジェンド{0}</color></size>を<size=25>プレゼント！</size>\r\n<align=\"left\"><indent=8%><size=17>※{0} はガチャから排出されません。\r\n※プレゼントは1アカウントにつき一回限りです。\r\n※過去にご購入された方も受け取れます。その場合、覚醒ポイントが増加します。"
+        },
+        {
+            "id": "SHOP_SKIN_CHANGE_CHECK",
+            "title": "確認",
+            "message": "{0} を獲得しました。\r\nすぐに着替えますか？"
+        },
+        {
+            "id": "SHOP_SKIN_UNIT_CHECK",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "SHOP_SKIN_MESSAGE",
+            "title": "確認",
+            "message": "{0} を獲得しました。"
+        },
+        {
+            "id": "SHOP_EXCHANGE_FREE_COIN_TEXT",
+            "title": "確認",
+            "message": "※原石は無償分から消費されます。"
+        },
+        {
+            "id": "SHOP_EXCHANGE_PAID_COIN_TEXT",
+            "title": "確認",
+            "message": "※原石(有償)でのみ交換できます。"
+        },
+        {
+            "id": "SHOP_EX_SKILL_KEY_UNIT_CHECK",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "SHOP_SALE_RESET_SELECTION",
+            "title": "",
+            "message": "リセットしました"
+        },
+        {
+            "id": "SHOP_SALE_NO_SELECTION",
+            "title": "",
+            "message": "売却するものがありません"
+        },
+        {
+            "id": "SHOP_SALE_AUTO_SELECTION",
+            "title": "お任せ選択",
+            "message": "複数選択可能"
+        },
+        {
+            "id": "SHOP_SALE_AUTO_SELECTION_SUCCESS",
+            "title": "",
+            "message": "お任せ選択を行いました"
+        },
+        {
+            "id": "SHOP_SALE_AUTO_SELECTION_FAILED",
+            "title": "",
+            "message": "お任せ選択を行いましたが、売却できるものがありません"
+        },
+        {
+            "id": "SHOP_SALE_MAX_SELECTION",
+            "title": "",
+            "message": "これ以上は選択できません"
+        },
+        {
+            "id": "SHOP_SALE_ITEM_TYPE_NAME",
+            "title": "",
+            "message": "アイテム"
+        },
+        {
+            "id": "SHOP_SALE_EQUIPMENT_TYPE_NAME",
+            "title": "",
+            "message": "装備"
+        },
+        {
+            "id": "SHOP_SALE_SUBSKILL_TYPE_NAME",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "SHOP_SALE_CONFIRMATION",
+            "title": "売却確認",
+            "message": "選択されている{0}を売却しますか？"
+        },
+        {
+            "id": "SHOP_SALE_CONFIRMATION_CHECKBOX",
+            "title": "",
+            "message": "{0}を売却する"
+        },
+        {
+            "id": "SHOP_SALE_WARNING_GOLD_OVERFLOW",
+            "title": "",
+            "message": "ゴールドコインの所持上限を超えてしまいます。\r\n所持上限を超えた分のゴールドコインは切り捨てされます。"
+        },
+        {
+            "id": "SHOP_SALE_WARNING_EPIC_RARITY",
+            "title": "",
+            "message": "エピック以上の{0}が含まれています。"
+        },
+        {
+            "id": "SHOP_SALE_ITEM_PRICE",
+            "title": "",
+            "message": "ゴールドコイン {0}"
+        },
+        {
+            "id": "SHOP_SALE_RESULT",
+            "title": "売却確認",
+            "message": "{0}を売却し、ゴールドコインを獲得しました。"
+        },
+        {
+            "id": "SHOP_SALE_RESULT_GOLD_OVERFLOW",
+            "title": "",
+            "message": "所持上限を超えた分のゴールドコインは切り捨てされました。"
+        },
+        {
+            "id": "SHOP_SALE_NO_ITEM",
+            "title": "",
+            "message": "売却できるものがありません"
+        },
+        {
+            "id": "SHOP_EXCHANGE_NOT_ENOUGH_MATERIAL",
+            "title": "",
+            "message": "交換に必要なアイテムが不足しています。"
+        },
+        {
+            "id": "SHOP_EXCHANGE_LIMIT_ITEM",
+            "title": "",
+            "message": "このアイテムはこれ以上取得できません"
+        },
+        {
+            "id": "SHOP_EXCHANGE_LIMIT_SKIN",
+            "title": "",
+            "message": "このコスチュームはこれ以上交換できません"
+        },
+        {
+            "id": "SHOP_EXCHANGE_VALUE_MAX",
+            "title": "",
+            "message": "これ以上は選択できません"
+        },
+        {
+            "id": "SHOP_EXCHANGE_VALUE_MIN",
+            "title": "",
+            "message": "これ以上は選択できません"
+        },
+        {
+            "id": "SHOP_PURCHASE_LIMIT_ITEM",
+            "title": "",
+            "message": "このアイテムはこれ以上購入できません"
+        },
+        {
+            "id": "SHOP_PURCHASE_LIMIT_SKIN",
+            "title": "",
+            "message": "このコスチュームはこれ以上購入できません"
+        },
+        {
+            "id": "SHOP_STEPUP_WINDOW_TEXT",
+            "title": "",
+            "message": "現在のステップを購入すると、次の商品が購入できます。\r\n全ての商品を購入すると終了します。"
+        },
+        {
+            "id": "SHOP_STEPUP_WINDOW_TITLE",
+            "title": "",
+            "message": "購入ステップ"
+        },
+        {
+            "id": "SHOP_USAGE_PERIOD_TEXT",
+            "title": "",
+            "message": "※原石（有償）の利用期限は購入日から180日間"
+        },
+        {
+            "id": "SHOP_LIMITED_SALE_TEXT",
+            "title": "",
+            "message": "※販売期限 {0}まで"
+        },
+        {
+            "id": "BENEFIT_VALUE_NONE",
+            "title": "",
+            "message": "-"
+        },
+        {
+            "id": "BENEFIT_VALUE_PERCENT_FORMAT",
+            "title": "",
+            "message": "{0}%"
+        },
+        {
+            "id": "BENEFIT_VALUE_UNLOCK",
+            "title": "",
+            "message": "解放"
+        },
+        {
+            "id": "SHOP_BUY_OUT_OF_SCHEDULE",
+            "title": "エラー",
+            "message": "期限切れの商品です"
+        },
+        {
+            "id": "SHOP_EXCHANGE_POSS_LIMIT",
+            "title": "",
+            "message": "所持数限界です"
+        },
+        {
+            "id": "TITLE_SAMPLE_1",
+            "title": "",
+            "message": "タイトル"
+        },
+        {
+            "id": "TITLE_APPLICATION_UPDATE",
+            "title": "アプリ更新",
+            "message": "アプリの新しいバージョンが見つかりました。\r\n最新版への更新をお願いいたします。"
+        },
+        {
+            "id": "TITLE_CASH_CLEAR",
+            "title": "キャッシュクリア",
+            "message": "ダウンロードしたすべての\r\nキャッシュデータを削除します。\r\nよろしいですか?\r\n\r\n※セーブデータには影響ありません。"
+        },
+        {
+            "id": "TITLE_FIRST_DOWNLOAD",
+            "title": "初回ダウンロード",
+            "message": "ゲームに必要なデータをダウンロードします。\r\n\r\nダウンロードサイズ:{0:#.#}MB\r\n\r\n※ボイスなど一部のデータは必要に応じて都度ダウンロードされます。\r\nゲーム開始後に一括ダウンロードをおこなうことが可能です。\r\n※ご利用の環境によってはダウンロードに時間がかかる場合があります。\r\nWi-Fi環境での実行をおすすめいたします。"
+        },
+        {
+            "id": "TITLE_TERMS_OF_SERVICE",
+            "title": "",
+            "message": "利用規約"
+        },
+        {
+            "id": "TITLE_PRIVACY",
+            "title": "",
+            "message": "プライバシーポリシー"
+        },
+        {
+            "id": "TITLE_CHECK_CONSENT",
+            "title": "",
+            "message": "利用規約とプライバシーポリシーに\r\n同意しますか?"
+        },
+        {
+            "id": "TITLE_ID",
+            "title": "",
+            "message": "ID : {0}"
+        },
+        {
+            "id": "TITLE_VERSION",
+            "title": "",
+            "message": "ver : {0}"
+        },
+        {
+            "id": "TITLE_LOAD_PARCENTAGE",
+            "title": "",
+            "message": "{0}%"
+        },
+        {
+            "id": "TITLE_PRECAUTIONS",
+            "title": "",
+            "message": "■ご注意■\r\nこのアプリは無料でプレイできますが、\r\n一部有料アイテムがございます。\r\n\r\n■未成年(20歳未満)の方へ■\r\n有料アイテムをご購入される際には必ず保護者の許可をもらうか\r\n一緒に購入するようにしてください。"
+        },
+        {
+            "id": "TITLE_DELETE_DATA_BUTTON",
+            "title": "",
+            "message": "データ削除"
+        },
+        {
+            "id": "TITLE_CACHE_CLEAR_BUTTON",
+            "title": "",
+            "message": "<cspace=-2><scale=0.8>キ<cspace=-3>ャ<cspace=-2>ッシ<cspace=-1>ュ<cspace=-2>ク<cspace=-1>リア"
+        },
+        {
+            "id": "TITLE_NEWS_BUTTON",
+            "title": "",
+            "message": "お<cspace=0>しらせ"
+        },
+        {
+            "id": "TITLE_CONSENT_BUTTON",
+            "title": "",
+            "message": "同<cspace=1>意<cspace=-2>する"
+        },
+        {
+            "id": "TITLE_NON_CONSENT_BUTTON",
+            "title": "",
+            "message": "同<cspace=-1>意<cspace=-1>し<cspace=1>ない"
+        },
+        {
+            "id": "TITLE_FIRST_DOWNLOAD_TITLE",
+            "title": "",
+            "message": "初回ダウンロード"
+        },
+        {
+            "id": "TITLE_FIRST_DOWNLOAD_BUTTON",
+            "title": "",
+            "message": "<cspace=-1>ダウ<cspace=0>ン<cspace=-1>ロ<cspace=-3>ード"
+        },
+        {
+            "id": "TITLE_FIRST_DOWNLOAD_CANCEL_BUTTON",
+            "title": "",
+            "message": "<cspace=-1>キ<cspace=-3>ャ<cspace=0>ンセル"
+        },
+        {
+            "id": "TITLE_APPLICATION_UPDATE_TITLE",
+            "title": "",
+            "message": "アプリ更新"
+        },
+        {
+            "id": "TITLE_APPLICATION_UPDATE_BUTTON",
+            "title": "",
+            "message": "<cspace=1>更新<cspace=-2>する"
+        },
+        {
+            "id": "ACCOUNT_DELETION_SUCCESS",
+            "title": "アカウント削除",
+            "message": "アカウントを削除しました。"
+        },
+        {
+            "id": "ACCOUNT_DELETION_FAILURE",
+            "title": "アカウント削除",
+            "message": "アカウントの削除に失敗しました。"
+        },
+        {
+            "id": "ACCOUNT_DELETION_POPUP",
+            "title": "アカウント削除",
+            "message": "アカウントを削除しますか？"
+        },
+        {
+            "id": "ACCOUNT_DELETION_WARNING",
+            "title": "",
+            "message": "端末に保存されているアカウントデータを削除します"
+        },
+        {
+            "id": "ACCOUNT_DELETION_CHECKBOX",
+            "title": "",
+            "message": "アカウントを削除します"
+        },
+        {
+            "id": "ACCOUNT_DELETION_CONFIRMATION",
+            "title": "",
+            "message": "アカウントデータを削除しますか？"
+        },
+        {
+            "id": "ACCOUNT_DELETION_CONFIRMATION_WARNING_1",
+            "title": "",
+            "message": "・端末に保存されているアカウントデータを削除します"
+        },
+        {
+            "id": "ACCOUNT_DELETION_CONFIRMATION_WARNING_2",
+            "title": "",
+            "message": "・データ削除後の原石(有償)の返金対応/アカウントの\r\n復旧対応は致しませんのでご注意下さい"
+        },
+        {
+            "id": "TITLE_PRE_RELEASE",
+            "title": "お知らせ",
+            "message": ""
+        },
+        {
+            "id": "TUTORIAL_SKIP",
+            "title": "チュートリアルスキップ",
+            "message": "チュートリアルではゲームの操作方法や\r\nシナリオを見ることができます。"
+        },
+        {
+            "id": "TUTORIAL_SKIP_WARNING",
+            "title": "",
+            "message": "タワーディフェンスゲームを初めてプレイされる方は\r\nチュートリアルをプレイされることをお勧めいたします。"
+        },
+        {
+            "id": "TUTORIAL_SKIP_CONFIRMATION",
+            "title": "お知らせ",
+            "message": "<size=24>チュートリアルをスキップしますか？</size>\r\n<line-height=14>\r\n</line-height><align=left><size=18><pos=20>※</pos><indent=40>スキップをされても、チュートリアル中に\r\n獲得できるキャラクターやアイテムは獲得できます。</indent></size></margin></align>"
+        },
+        {
+            "id": "STORY_CHECK_PLAY_EPISODE",
+            "title": "エピソード再生確認",
+            "message": "未読のシナリオがあります。\r\n続けて再生しますか?"
+        },
+        {
+            "id": "STORY_UNLOCK_CONDITION",
+            "title": "開示条件",
+            "message": "・{0}の進化ランク{1}を達成する\r\n・前の話を閲覧する"
+        },
+        {
+            "id": "STORY_CHECK_RESUME_EPISODE",
+            "title": "再開確認",
+            "message": "以下の場所からノベルイベントを再開しますか?"
+        },
+        {
+            "id": "STORY_INTERRUPT_DATA",
+            "title": "",
+            "message": "中断データ"
+        },
+        {
+            "id": "STORY_CHECK_REWARD",
+            "title": "報酬確認",
+            "message": "下記の報酬を獲得しました。"
+        },
+        {
+            "id": "STORY_REWARD_NAME",
+            "title": "",
+            "message": "報酬名{0}"
+        },
+        {
+            "id": "STORY_SAMPLE_7",
+            "title": "",
+            "message": "ストーリー"
+        },
+        {
+            "id": "STORY_SAMPLE_8",
+            "title": "",
+            "message": "ストーリー"
+        },
+        {
+            "id": "STORY_SAMPLE_9",
+            "title": "",
+            "message": "ストーリー"
+        },
+        {
+            "id": "STORY_SAMPLE_10",
+            "title": "",
+            "message": "ストーリー"
+        },
+        {
+            "id": "STORY_SAMPLE_11",
+            "title": "",
+            "message": "ストーリー"
+        },
+        {
+            "id": "STORY_SAMPLE_12",
+            "title": "",
+            "message": "ストーリー"
+        },
+        {
+            "id": "STORY_SAMPLE_13",
+            "title": "",
+            "message": "ストーリー"
+        },
+        {
+            "id": "STORY_SAMPLE_14",
+            "title": "",
+            "message": "ストーリー"
+        },
+        {
+            "id": "STORY_SAMPLE_15",
+            "title": "",
+            "message": "ストーリー"
+        },
+        {
+            "id": "STORY_SAMPLE_16",
+            "title": "",
+            "message": "ストーリー"
+        },
+        {
+            "id": "STORY_PLAY_MOVE_R18",
+            "title": "確認",
+            "message": "このまま再生しますか？\r\n※アダルトシーンを観覧するには<color=#FF454A>R-18版</color>に移行してください。"
+        },
+        {
+            "id": "STORY_MOVE_R18_VERSION",
+            "title": "確認",
+            "message": "このシナリオは<color=#FF454A>アダルトシーン</color>が含まれています。\r\n閲覧するには<color=#FF454A>R-18版</color>に移行してください。"
+        },
+        {
+            "id": "STORY_CHECK_PLAY_TIMING",
+            "title": "確認",
+            "message": "このシナリオは<color=#FF454A>アダルトシーン</color>が含まれています。\r\nどこから再生しますか？"
+        },
+        {
+            "id": "STORY_MOVE_LEVEL_UP",
+            "title": "確認",
+            "message": "このシナリオは <color=#7fffd4>Lv{0}</color> 以上で開放されます。"
+        },
+        {
+            "id": "STORY_NOT_POSS_STORY_MOVE_SHOP",
+            "title": "",
+            "message": "未所持のシナリオです。\r\n【{0}】の購入で開放されます。"
+        },
+        {
+            "id": "STORY_CHECK_NEXT_PLAY",
+            "title": "確認",
+            "message": "次のシナリオがあります。\r\n続けて再生しますか？"
+        },
+        {
+            "id": "STORY_PLAY",
+            "title": "確認",
+            "message": "{0} を再生しますか？"
+        },
+        {
+            "id": "STORY_NEXT_PLAY",
+            "title": "確認",
+            "message": "次のシナリオ\r\n{0} を再生しますか？"
+        },
+        {
+            "id": "GROUP_STORY_NOT_POSS_UNIT",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "GROUP_STORY_NOT_CLEAR_QUEST",
+            "title": "確認",
+            "message": "このシナリオは\r\n{0}クリアで解放されます"
+        },
+        {
+            "id": "QUEST_CHAPTER_TITLE",
+            "title": "",
+            "message": "第{0}章"
+        },
+        {
+            "id": "QUEST_CHAPTER_ACHIEVEMENT_TITLE",
+            "title": "",
+            "message": "達成度:"
+        },
+        {
+            "id": "QUEST_CHAPTER_ACHIEVEMENT_TEXT",
+            "title": "",
+            "message": "{0}%"
+        },
+        {
+            "id": "QUEST_DAILY_EXP_TIME",
+            "title": "",
+            "message": "あと{0}時間"
+        },
+        {
+            "id": "QUEST_DAILY_EQUIPMENT_TIME",
+            "title": "",
+            "message": "土/月/木"
+        },
+        {
+            "id": "QUEST_DAILY_GOLD_TIME",
+            "title": "",
+            "message": "日/火/金"
+        },
+        {
+            "id": "QUEST_CHALLENGE_TEXT_1",
+            "title": "",
+            "message": "残り挑戦回数"
+        },
+        {
+            "id": "QUEST_CHALLENGE_TEXT_2",
+            "title": "",
+            "message": "(毎日5:00更新)"
+        },
+        {
+            "id": "QUEST_EVENT_TEXT",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "QUEST_DELEGATE_COUNT_TITLE",
+            "title": "",
+            "message": "委任回数"
+        },
+        {
+            "id": "QUEST_DELEGATE_COUNT_TEXT",
+            "title": "",
+            "message": "{0}回"
+        },
+        {
+            "id": "QUEST_DELEGATE_POSSESS_TICKET",
+            "title": "",
+            "message": "所持チケット"
+        },
+        {
+            "id": "QUEST_DELEGATE_CONSUME_STAMINA",
+            "title": "",
+            "message": "消費スタミナ"
+        },
+        {
+            "id": "QUEST_DELEGATE_REMAIN_CHALLENGE",
+            "title": "",
+            "message": "残り挑戦回数"
+        },
+        {
+            "id": "QUEST_SAMPLE_15",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_16",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_17",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_18",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_19",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_20",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_21",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_22",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_23",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_24",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_25",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_26",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_27",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_28",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_29",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_30",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_31",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_SAMPLE_32",
+            "title": "",
+            "message": "クエスト"
+        },
+        {
+            "id": "QUEST_REWARD_NOTHING",
+            "title": "",
+            "message": "なし"
+        },
+        {
+            "id": "QUEST_REWARD_RECIEVED",
+            "title": "",
+            "message": "獲得済み"
+        },
+        {
+            "id": "QUEST_ALERT_DECK_EMPTY",
+            "title": "",
+            "message": "出撃にはユニットが１体以上必要です。"
+        },
+        {
+            "id": "QUEST_ALERT_DECK_AVG_LEVEL",
+            "title": "",
+            "message": "推奨レベルを満たしていません。\r\nこのまま出撃しますか？"
+        },
+        {
+            "id": "DELEGATE_START_TEXT",
+            "title": "",
+            "message": "<color=#FF454A>{0}</color>と<color=#FF454A>{1}</color>を消費して\r\nクエストをスキップします。"
+        },
+        {
+            "id": "QUEST_BOSS_CHALLENGE_UNLOCK_CONDITION",
+            "title": "",
+            "message": "1章クリアで開放"
+        },
+        {
+            "id": "QUEST_SP_CHALLENGE_UNLOCK_CONDITION",
+            "title": "",
+            "message": "2章クリアで開放"
+        },
+        {
+            "id": "QUEST_DELEGATE_NOT_POSSESS_TICKET",
+            "title": "",
+            "message": "スキップチケット未所持"
+        },
+        {
+            "id": "QUEST_DELEGATE_NOT_SELF_CLEAR",
+            "title": "",
+            "message": "レンタルなしで☆３獲得が必要"
+        },
+        {
+            "id": "CHAPTER_CLEAR_UNLOCK_CONDITION",
+            "title": "",
+            "message": "{0}クリアで開放"
+        },
+        {
+            "id": "BOSS_LEVEL_MAX_TEXT",
+            "title": "",
+            "message": "MAX"
+        },
+        {
+            "id": "QUEST_RETRY",
+            "title": "やりなおす",
+            "message": "バトルを最初からやりなおします。\r\n本当によろしいですか？"
+        },
+        {
+            "id": "QUEST_START_WARNING_SAME_UNIT",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "GET_QUEST_SSR_SUBSKILL",
+            "title": "確認",
+            "message": "<line-height=150%><color=#ffd700>{0}の固有スキルGET！</color>\r\n</line-height><line-height=88%>引き続き、固有スキルは獲得できますが\r\nドロップ率は増加しなくなります。"
+        },
+        {
+            "id": "QUEST_REWARD_EVENT_UNIT_TEXT",
+            "title": "",
+            "message": "報酬【{0}】{1}"
+        },
+        {
+            "id": "QUEST_SUB_STORY_UNLOCK_CONDITION",
+            "title": "",
+            "message": "序章クリアで開放"
+        },
+        {
+            "id": "DELEGATE_TRAINING_START_TEXT",
+            "title": "",
+            "message": "<color=#FF454A>スキップチケット</color>と<color=#FF454A>スタミナ</color>を消費して\r\nクエストをスキップします。"
+        },
+        {
+            "id": "DELEGATE_TRAINING_SUB_TEXT",
+            "title": "",
+            "message": "<size=18>※<color=#FF454A>最高修行ランク</color>の修行ポイントを獲得します。"
+        },
+        {
+            "id": "CONFIRM_CONTINUE_ENDLESS_CHECK_POINT",
+            "title": "確認",
+            "message": "最高討伐数<color=#FF454A>{0}</color>を達成したため途中から開始できます。\r\n<color=#FF454A>スタート時から手強い敵が出現しますが</color>\r\n<color=#FF454A>制限時間が足りないご主人さまにオススメです！</color>"
+        },
+        {
+            "id": "ENDLESS_QUEST_START_FROM_BEGINING",
+            "title": "",
+            "message": "最初から"
+        },
+        {
+            "id": "ENDLESS_QUEST_START_CONTINUE",
+            "title": "",
+            "message": "討伐数{0}から"
+        },
+        {
+            "id": "BOM_RECOVER_CONFIRM",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "BOM_RECOVERED_TOAST",
+            "title": "",
+            "message": "召喚回数を回復しました"
+        },
+        {
+            "id": "QUEST_SKIP_CONDITION_TEXT",
+            "title": "確認",
+            "message": "☆3クリアでスキップが開放されます"
+        },
+        {
+            "id": "QUEST_CAN_NOT_SELECT_RENTAL",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "QUEST_BOSS_CHALLENGE_POPUP",
+            "title": "",
+            "message": "討伐完了したボスに再度挑戦します。\r\n※クリア報酬はございません。"
+        },
+        {
+            "id": "QUEST_DELEGATE_CANCEL_SKILL",
+            "title": "確認",
+            "message": "固有スキルを獲得したので、スキップを中断しました。"
+        },
+        {
+            "id": "QUEST_DELEGATE_CANCEL_REWARD",
+            "title": "確認",
+            "message": "スキップを中断したので\r\n下記アイテムを返却しました。"
+        },
+        {
+            "id": "QUEST_EXPLORE_RANK_CONDITIONS",
+            "title": "",
+            "message": "{0}への派遣を{1}回クリア"
+        },
+        {
+            "id": "QUEST_EXPLORE_RANK_1",
+            "title": "",
+            "message": "★"
+        },
+        {
+            "id": "QUEST_EXPLORE_RANK_2",
+            "title": "",
+            "message": "★★"
+        },
+        {
+            "id": "QUEST_EXPLORE_RANK_3",
+            "title": "",
+            "message": "★★★"
+        },
+        {
+            "id": "QUEST_EXPLORE_RANK_4",
+            "title": "",
+            "message": "★★★★"
+        },
+        {
+            "id": "QUEST_EXPLORE_RANK_5",
+            "title": "",
+            "message": "★★★★★"
+        },
+        {
+            "id": "QUEST_EXPLORE_RANK_6",
+            "title": "",
+            "message": "★★★★★★"
+        },
+        {
+            "id": "QUEST_EXPLORE_EXECUTE",
+            "title": "確認",
+            "message": "{0}{1}を消費して\r\n派遣を実行します。よろしいですか？"
+        },
+        {
+            "id": "QUEST_EXPLORE_EXECUTE_COMPLETE",
+            "title": "確認",
+            "message": "{0}を{1}個消費して派遣を完了します。\r\nよろしいですか？"
+        },
+        {
+            "id": "QUEST_EXPLORE_ALL_UPDATE_PAID",
+            "title": "確認",
+            "message": "{0}を{1}個消費して派遣先を更新します。\r\nよろしいですか？"
+        },
+        {
+            "id": "QUEST_EXPLORE_ALL_UPDATE_FREE",
+            "title": "確認",
+            "message": "無料更新回数残り{0}回です。\r\n派遣先を更新しますか？"
+        },
+        {
+            "id": "GROWTH_WINDOW_TITLE",
+            "title": "",
+            "message": "☆育成"
+        },
+        {
+            "id": "GROWTH_ALTERNATIVE_ITEM_DISTRIBUTION",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "EVENT_SHOP_BUTTON_TEXT",
+            "title": "",
+            "message": "ショップへ"
+        },
+        {
+            "id": "EVENT_EXCHANGE_BUTTON_TEXT",
+            "title": "",
+            "message": "交換所へ"
+        },
+        {
+            "id": "EVENT_TRAINING_MENU_OPEN_TERMS",
+            "title": "",
+            "message": "{0} をつけてクリアすることで開放できます。"
+        },
+        {
+            "id": "QUEST_KILL_EVENT_GET_REWARD_REMAIN_FIRST",
+            "title": "",
+            "message": "あと{0}体で"
+        },
+        {
+            "id": "QUEST_KILL_EVENT_GET_REWARD_REMAIN_SECOND",
+            "title": "",
+            "message": "「{0}」獲得"
+        },
+        {
+            "id": "QUEST_KILL_EVENT_GET_REWARD_NEXT_FIRST",
+            "title": "",
+            "message": "{0}体到達で"
+        },
+        {
+            "id": "QUEST_KILL_EVENT_GET_REWARD_NEXT_SECOND",
+            "title": "",
+            "message": "「{0}」獲得！"
+        },
+        {
+            "id": "QUEST_KILL_EVENT_LOCK_EPISODE",
+            "title": "",
+            "message": "このエピソードはまだ開放されていません。開放されるまでお待ちください"
+        },
+        {
+            "id": "QUEST_KILL_EVENT_UNALREADY_READ_EPISODE",
+            "title": "",
+            "message": "未読のエピソードがあります。開放済のエピソードを全て読むと開放されます"
+        },
+        {
+            "id": "QUEST_KILL_EVENT_REWARD_CAUTION_TEXT",
+            "title": "",
+            "message": "報酬はそれぞれ1度だけ入手できます。1回の最高討伐数報酬は、\r\n3倍出撃時は3倍される前の討伐数に応じて獲得できます。"
+        },
+        {
+            "id": "QUEST_KILL_EVENT_GET_REWARD",
+            "title": "確認",
+            "message": "討伐報酬を獲得したので\r\nメールに送付します。"
+        },
+        {
+            "id": "QUEST_KILL_EVENT_REWARD_COND_EVERYONES",
+            "title": "",
+            "message": "みんなの討伐数　{0}体達成"
+        },
+        {
+            "id": "QUEST_KILL_EVENT_REWARD_COND_SELF_TOTAL",
+            "title": "",
+            "message": "討伐数合計　{0}体達成"
+        },
+        {
+            "id": "QUEST_KILL_EVENT_REWARD_COND_SELF_MAX",
+            "title": "",
+            "message": "最高討伐数　{0}体達成"
+        },
+        {
+            "id": "QUEST_KILL_EVENT_SELF_TOTAL_REWARD_RECEIVED",
+            "title": "",
+            "message": "討伐数合計での報酬を全て受け取りました。"
+        },
+        {
+            "id": "QUEST_KILL_EVENT_SELF_MAX_REWARD_RECEIVED",
+            "title": "",
+            "message": "最高討伐数での報酬は全て受け取りました。"
+        },
+        {
+            "id": "GET_CHARACTER_ENHANCE_REWARD_ITEM_TEXT",
+            "title": "確認",
+            "message": "<{0}>の期間が終了\r\nイベントの報酬を獲得しました\r\n ※報酬はメールに送られず直接付与されます。"
+        },
+        {
+            "id": "SUGOROKU_STAGE_LOCK_TEXT",
+            "title": "",
+            "message": "{0}ステージクリアで開放されます。"
+        },
+        {
+            "id": "SUGOROKU_MENU_SUSPENSION_TEXT",
+            "title": "確認",
+            "message": "中断しますか？"
+        },
+        {
+            "id": "SUGOROKU_MENU_GIVE_UP_TEXT",
+            "title": "確認",
+            "message": "あきらめますか？\r\n使用した島巡り券は戻りません。"
+        },
+        {
+            "id": "SUGOROKU_USE_ITEM_TEXT",
+            "title": "確認",
+            "message": "イカサマアイテムを使用すると\r\n次のサイコロの目が{0}になります。"
+        },
+        {
+            "id": "SUGOROKU_CANCEL_ITEM_TEXT",
+            "title": "確認",
+            "message": "イカサマアイテムを使用中ですが\r\nキャンセルしますか？"
+        },
+        {
+            "id": "SUGOROKU_MAP_CLEAR_DETAIL_TEXT",
+            "title": "",
+            "message": "未使用のさいころを引き継いで、\r\nボーナスステージをプレイします。"
+        },
+        {
+            "id": "SUGOROKU_BATTLE_CANCEL_TEXT",
+            "title": "確認",
+            "message": "バトルを行わずに次に進みます。\r\n※バトル後に入手できる報酬は獲得できません。"
+        },
+        {
+            "id": "SUGOROKU_BATTLE_RETRY_TEXT",
+            "title": "やりなおす",
+            "message": "バトルを最初からやりなおします。\r\n本当によろしいですか？"
+        },
+        {
+            "id": "SUGOROKU_BATTLE_BOSS_RETIRE_CONFIRM",
+            "title": "ボスバトルのリタイア",
+            "message": "ボスとのバトルを諦め、リタイアします。\r\n本当によろしいですか？\r\n\r\nリタイアするとこれまでの報酬を獲得し、すごろくを終了します。"
+        },
+        {
+            "id": "SUGOROKU_BATTLE_FORCE_BATTLE_RETIRE_CONFIRM",
+            "title": "強制バトルのリタイア",
+            "message": "強制バトルを諦め、リタイアします。\r\n本当によろしいですか？\r\n\r\nリタイアするとこれまでの報酬を獲得し、すごろくを終了します。"
+        },
+        {
+            "id": "SUGOROKU_START_BOUNUS_STAGE_TEXT",
+            "title": "",
+            "message": "ボーナスステージスタート！"
+        },
+        {
+            "id": "SUGOROKU_ADD_DICE_TEXT",
+            "title": "",
+            "message": "さいころを{0}個入手しました。"
+        },
+        {
+            "id": "SUGOROKU_STEP_REWARD_TOAST",
+            "title": "",
+            "message": "チェックポイントを通過しました。"
+        },
+        {
+            "id": "SUGOROKU_LOOP_COUNT_TOAST",
+            "title": "",
+            "message": "1周しました！"
+        },
+        {
+            "id": "SUGOROKU_BATTLE_WIN_TOAST",
+            "title": "",
+            "message": "バトルに勝利！"
+        },
+        {
+            "id": "SUGOROKU_NOT_EXIST_SORTIE_UNIT",
+            "title": "",
+            "message": "出撃するユニットがいません。"
+        },
+        {
+            "id": "SUGOROKU_NOT_EXIST_SORTIE_UNIT_END",
+            "title": "確認",
+            "message": "出撃するユニットがいないので\r\nすごろくを終了します。"
+        },
+        {
+            "id": "SUGOROKU_VERSION_CHANGE_END",
+            "title": "確認",
+            "message": "すごろくの内容が変わったため、\r\n獲得したアイテムを入手して、すごろくを終了します。"
+        },
+        {
+            "id": "SUGOROKU_NOTHING_POPUP",
+            "title": "確認",
+            "message": "開催されているすごろくはありません。"
+        },
+        {
+            "id": "BONUS_PASS_GET_REWARD_POPUP",
+            "title": "確認",
+            "message": "下記報酬をメールへ送りました。"
+        },
+        {
+            "id": "SUGOROKU_RESUME_CONFIRM",
+            "title": "確認",
+            "message": "中断データからすごろくを再開しますか？\r\n（再開しない場合、中断時点での報酬を受け取って終了します。）"
+        },
+        {
+            "id": "SUGOROKU_LOCKED_DECK_SLOT",
+            "title": "",
+            "message": "編成上限によりセット不可能な枠です。"
+        },
+        {
+            "id": "EVENT_BOXGACHA_BOX_NUM",
+            "title": "",
+            "message": "{0}箱目"
+        },
+        {
+            "id": "EVENT_BOXGACHA_BOX_LIST_TITLE",
+            "title": "確認",
+            "message": "ボックス一覧"
+        },
+        {
+            "id": "EVENT_BOXGACHA_BOX_VIEW_TITLE",
+            "title": "確認",
+            "message": "ボックスガチャ : {0}箱目"
+        },
+        {
+            "id": "EVENT_BOXGACHA_LIST_TEXT",
+            "title": "確認",
+            "message": "ボックス一覧"
+        },
+        {
+            "id": "EVENT_BOXGACHA_NEXT_TEXT",
+            "title": "確認",
+            "message": "<scale=0.9><cspace=-1>次の<cspace=-4>ボ<cspace=-5>ッ<cspace=-3.5>ク<cspace=-5><cspace=-3>スへ"
+        },
+        {
+            "id": "EVENT_BOXGACHA_REWARD_ALL_GET",
+            "title": "確認",
+            "message": "ボックス内のすべての報酬を獲得済です"
+        },
+        {
+            "id": "EVENT_BOXGACHA_REWARD_EMPTY",
+            "title": "確認",
+            "message": "ボックス内の報酬が不足しています"
+        },
+        {
+            "id": "EVENT_BOXGACHA_COST_EMPTY",
+            "title": "確認",
+            "message": "必要なイベントポイントが不足しています。"
+        },
+        {
+            "id": "EVENT_BOXGACHA_NEXT_BOX_NULL",
+            "title": "確認",
+            "message": "次のボックスはありません。"
+        },
+        {
+            "id": "EVENT_BOXGACHA_CHANGE_NEXT_BOX",
+            "title": "確認",
+            "message": "次のボックスへ切り替えますか？\r\n<color=\"yellow\">切り替えると現在のボックス内の残り報酬は\r\n獲得できなくなります。</color>"
+        },
+        {
+            "id": "EVENT_BOXGACHA_NEXT_BOX_OUT_RANGE_TIME",
+            "title": "確認",
+            "message": "次のボックスは後半で追加されます。"
+        },
+        {
+            "id": "EVENT_BOX_CONTENT_OUT_RANGE_TIME",
+            "title": "確認",
+            "message": "イベント後半時に追加します。"
+        },
+        {
+            "id": "EVENT_CHARA_UNWISH_REWARD_TEXT",
+            "title": "確認",
+            "message": "最高封印ランク{0}到達で\\n{1}\""
+        },
+        {
+            "id": "EVENT_CHARA_UNWISH_REWARD_COMPLETE_TEXT",
+            "title": "確認",
+            "message": "全て獲得済"
+        },
+        {
+            "id": "EVENT_CHARA_UNWISH_NO_CLEAR_LOCK_TEXT",
+            "title": "確認",
+            "message": "クリア後に選択できるようになります"
+        },
+        {
+            "id": "EVENT_CHARA_UNWISH_LOCK_TEXT",
+            "title": "確認",
+            "message": "最高封印ランク合計{0}以上達成で選択できるようになります"
+        },
+        {
+            "id": "EVENT_CHARA_UNWISH_LOW_RANK_START_QUEST",
+            "title": "確認",
+            "message": "最高封印ランク合計が更新できませんが\\nクエストを開始しますか？"
+        },
+        {
+            "id": "EVENT_UNLOCK_SKIP_TEXT",
+            "title": "確認",
+            "message": "クリアでスキップが開放されます"
+        },
+        {
+            "id": "EXCHANGE_BOX_RULE_TITLE",
+            "title": "",
+            "message": "BOX更新ルール"
+        },
+        {
+            "id": "EXCHANGE_BOX_RULE_TEXT1",
+            "title": "",
+            "message": "・目玉報酬を獲得すると次のBOXに\r\n　進むことができます。"
+        },
+        {
+            "id": "EXCHANGE_BOX_RULE_TEXT2",
+            "title": "",
+            "message": "・先に進んでも前のBOXに\r\n　戻ることができます。"
+        },
+        {
+            "id": "EXCHANGE_BOX_RULE_TEXT3",
+            "title": "",
+            "message": "・すべての報酬を入手すると\r\n　自動的に次のBOXに進みます。"
+        },
+        {
+            "id": "EXCHANGE_BOX_CHANGE",
+            "title": "BOX変更",
+            "message": "BOX {0} に変更しました。"
+        },
+        {
+            "id": "EXCHANGE_GACHA_RESULT",
+            "title": "",
+            "message": "ガチャ結果"
+        },
+        {
+            "id": "EXCHANGE_BOX_CHANGE_CONFIRMATION",
+            "title": "BOX更新確認",
+            "message": "目玉報酬を獲得しました。\r\nBOXを更新し、次へ進みますか?"
+        },
+        {
+            "id": "EXCHANGE_BOX_NOW",
+            "title": "",
+            "message": "現在のBOX"
+        },
+        {
+            "id": "EXCHANGE_BOX_UPDATE",
+            "title": "BOX更新",
+            "message": "全ての報酬を獲得したので\r\nBOXを更新します。"
+        },
+        {
+            "id": "EXCHANGE_REWARD_CHECK",
+            "title": "報酬確認",
+            "message": ""
+        },
+        {
+            "id": "EXCHANGE_REWARD_RULE_TITLE",
+            "title": "",
+            "message": "報酬獲得ルール"
+        },
+        {
+            "id": "EXCHANGE_REWARD_RULE_TEXT1",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "EXCHANGE_REWARD_RULE_TEXT2",
+            "title": "",
+            "message": "・報酬は条件達成時に自動的に\r\n　メールに送られます。"
+        },
+        {
+            "id": "EXCHANGE_CHECK",
+            "title": "交換確認",
+            "message": "下記の報酬を獲得しました。"
+        },
+        {
+            "id": "EXCHANGE_HAS_ITEM",
+            "title": "",
+            "message": "このアイテムは既に入手しているため、これ以上交換することができません"
+        },
+        {
+            "id": "FILTER_TITLE",
+            "title": "",
+            "message": "フィルター"
+        },
+        {
+            "id": "FILTER_SETTING_NONE",
+            "title": "",
+            "message": "なし"
+        },
+        {
+            "id": "FILTER_SETTING_ACTIVE",
+            "title": "",
+            "message": "設定中"
+        },
+        {
+            "id": "FILTER_RARITY_TITLE",
+            "title": "",
+            "message": "星の数"
+        },
+        {
+            "id": "FILTER_ATTRIBUTE_TITLE",
+            "title": "",
+            "message": "属性"
+        },
+        {
+            "id": "FILTER_PLACEMENT_TITLE",
+            "title": "",
+            "message": "配置タイプ"
+        },
+        {
+            "id": "FILTER_PLACEMENT_1",
+            "title": "",
+            "message": "前衛"
+        },
+        {
+            "id": "FILTER_PLACEMENT_2",
+            "title": "",
+            "message": "後衛"
+        },
+        {
+            "id": "FILTER_PLACEMENT_ALL",
+            "title": "",
+            "message": "遠近距離"
+        },
+        {
+            "id": "FILTER_ATTACK_TITLE",
+            "title": "",
+            "message": "攻撃タイプ"
+        },
+        {
+            "id": "FILTER_ATTACK_1",
+            "title": "",
+            "message": "物理"
+        },
+        {
+            "id": "FILTER_ATTACK_2",
+            "title": "",
+            "message": "魔法"
+        },
+        {
+            "id": "FILTER_ATTACK_3",
+            "title": "",
+            "message": "貫通"
+        },
+        {
+            "id": "FILTER_ATTACK_4",
+            "title": "",
+            "message": "回復"
+        },
+        {
+            "id": "FILTER_LOCK_TITLE",
+            "title": "",
+            "message": "保護中"
+        },
+        {
+            "id": "FILTER_LOCK_1",
+            "title": "",
+            "message": "保護中"
+        },
+        {
+            "id": "FILTER_LOCK_2",
+            "title": "",
+            "message": "非保護"
+        },
+        {
+            "id": "FILTER_FORMATION_TITLE",
+            "title": "",
+            "message": "編成"
+        },
+        {
+            "id": "FILTER_FORMATION_1",
+            "title": "",
+            "message": "編成中"
+        },
+        {
+            "id": "FILTER_FORMATION_2",
+            "title": "",
+            "message": "非編成"
+        },
+        {
+            "id": "FILTER_MAIL_TITLE",
+            "title": "",
+            "message": "メール"
+        },
+        {
+            "id": "FILTER_DECISION_BUTTON",
+            "title": "",
+            "message": "決 定"
+        },
+        {
+            "id": "FILTER_RESET_BUTTON",
+            "title": "",
+            "message": "リセ<cspace=-3>ット"
+        },
+        {
+            "id": "FILTER_26",
+            "title": "",
+            "message": "フィルター"
+        },
+        {
+            "id": "FILTER_MAIL_STONE",
+            "title": "",
+            "message": "原石"
+        },
+        {
+            "id": "FILTER_MAIL_GOLD",
+            "title": "",
+            "message": "ゴールド"
+        },
+        {
+            "id": "FILTER_MAIL_EQUIP",
+            "title": "",
+            "message": "装備"
+        },
+        {
+            "id": "FILTER_MAIL_REIN_ITEM",
+            "title": "",
+            "message": "強化アイテム"
+        },
+        {
+            "id": "FILTER_MAIL_ATTACH_SKILL",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "FILTER_MAIL_OTHER",
+            "title": "",
+            "message": "その他"
+        },
+        {
+            "id": "FILTER_MOVE_TYPE_GROUND",
+            "title": "",
+            "message": "地上"
+        },
+        {
+            "id": "FILTER_MOVE_TYPE_FLY",
+            "title": "",
+            "message": "飛行"
+        },
+        {
+            "id": "FILTER_MOVE_TYPE_NONE",
+            "title": "",
+            "message": "なし"
+        },
+        {
+            "id": "FILTER_CLASS_TITLE",
+            "title": "",
+            "message": "クラス"
+        },
+        {
+            "id": "FILTER_MOVE_TYPE_TITLE",
+            "title": "",
+            "message": "移動タイプ"
+        },
+        {
+            "id": "FILTER_NO_TARGET",
+            "title": "",
+            "message": "表示できる対象がありません"
+        },
+        {
+            "id": "SORT_TITLE",
+            "title": "",
+            "message": "ソート"
+        },
+        {
+            "id": "SORT_RARITY_TITLE",
+            "title": "",
+            "message": "星の数"
+        },
+        {
+            "id": "SORT_RARITY_BUTTON",
+            "title": "",
+            "message": "レア度"
+        },
+        {
+            "id": "SORT_ATTRIBUTE_TITLE",
+            "title": "",
+            "message": "属性"
+        },
+        {
+            "id": "SORT_ATTRIBUTE_BUTTON",
+            "title": "",
+            "message": "属性"
+        },
+        {
+            "id": "SORT_CLASS_TITLE",
+            "title": "",
+            "message": "クラス"
+        },
+        {
+            "id": "SORT_CLASS_BUTTON",
+            "title": "",
+            "message": "クラス"
+        },
+        {
+            "id": "SORT_LEVEL_TITLE",
+            "title": "",
+            "message": "レベル"
+        },
+        {
+            "id": "SORT_LEVEL_BUTTON",
+            "title": "",
+            "message": "レベル"
+        },
+        {
+            "id": "SORT_RANK_TITLE",
+            "title": "",
+            "message": "ランク"
+        },
+        {
+            "id": "SORT_RANK_BUTTON",
+            "title": "",
+            "message": "ランク"
+        },
+        {
+            "id": "SORT_GET_TITLE",
+            "title": "",
+            "message": "入手順"
+        },
+        {
+            "id": "SORT_GET_BUTTON",
+            "title": "",
+            "message": "入手"
+        },
+        {
+            "id": "SORT_REINFORCE_TITLE",
+            "title": "",
+            "message": "合成"
+        },
+        {
+            "id": "SORT_REINFORCE_BUTTON",
+            "title": "",
+            "message": "合成"
+        },
+        {
+            "id": "SORT_TYPE_TITLE",
+            "title": "",
+            "message": "種類"
+        },
+        {
+            "id": "SORT_TYPE_BUTTON",
+            "title": "",
+            "message": "種類"
+        },
+        {
+            "id": "SORT_ID_TITLE",
+            "title": "",
+            "message": "追加順"
+        },
+        {
+            "id": "SORT_ID_BUTTON",
+            "title": "",
+            "message": "ID"
+        },
+        {
+            "id": "SORT_USERRANK",
+            "title": "",
+            "message": "ランク順"
+        },
+        {
+            "id": "SORT_LOGIN",
+            "title": "",
+            "message": "最終ログイン順"
+        },
+        {
+            "id": "SORT_NAME",
+            "title": "",
+            "message": "名前"
+        },
+        {
+            "id": "SORT_HP",
+            "title": "",
+            "message": "HP"
+        },
+        {
+            "id": "SORT_ATTACK_POWER",
+            "title": "",
+            "message": "攻撃力"
+        },
+        {
+            "id": "SORT_DEFENSE_POWER",
+            "title": "",
+            "message": "物理防御"
+        },
+        {
+            "id": "SORT_MAGIC_DEFENSE_POWER",
+            "title": "",
+            "message": "魔法防御"
+        },
+        {
+            "id": "SORT_BLOCK_COUNT",
+            "title": "",
+            "message": "ブロック数"
+        },
+        {
+            "id": "SORT_ATTACK_RANGE",
+            "title": "",
+            "message": "射程"
+        },
+        {
+            "id": "SORT_MOVE_SPEED",
+            "title": "",
+            "message": "移動速度"
+        },
+        {
+            "id": "SORT_DECK_STATE",
+            "title": "",
+            "message": "編成中の優先表示"
+        },
+        {
+            "id": "SORT_ACQUIRED",
+            "title": "",
+            "message": "入手済の優先表示"
+        },
+        {
+            "id": "SORT_REMAINING",
+            "title": "",
+            "message": "残り数1つ以上の優先表示"
+        },
+        {
+            "id": "SORT_SUBSKILL_RESTRICTION",
+            "title": "",
+            "message": "装着制限のあるスキルの優先表示"
+        },
+        {
+            "id": "SORT_SORTIE_COST",
+            "title": "",
+            "message": "出撃コスト"
+        },
+        {
+            "id": "SORT_EX_SKILL_LEVEL",
+            "title": "",
+            "message": "EXスキルLv"
+        },
+        {
+            "id": "SORT_AWAKING_ABILITY_COUNT",
+            "title": "",
+            "message": "潜在覚醒数"
+        },
+        {
+            "id": "SORT_POSS_COUNT",
+            "title": "",
+            "message": "所持数"
+        },
+        {
+            "id": "SORT_BASIC_INFO_TITLE",
+            "title": "",
+            "message": "基本性能"
+        },
+        {
+            "id": "SORT_ABILITY_TITLE",
+            "title": "",
+            "message": "能力値"
+        },
+        {
+            "id": "SORT_OTHER_TITLE",
+            "title": "",
+            "message": "その他"
+        },
+        {
+            "id": "SORT_ICON_LABEL_LEVEL",
+            "title": "",
+            "message": "Lv"
+        },
+        {
+            "id": "SORT_ICON_LABEL_ID",
+            "title": "",
+            "message": "図鑑ID"
+        },
+        {
+            "id": "SORT_ICON_LABEL_EX_SKILL_LEVEL",
+            "title": "",
+            "message": "スキルLv"
+        },
+        {
+            "id": "SORT_ICON_LABEL_AWAKING_ABILITY_COUNT",
+            "title": "",
+            "message": "覚醒数"
+        },
+        {
+            "id": "SORT_ICON_LABEL_HP",
+            "title": "",
+            "message": "HP"
+        },
+        {
+            "id": "SORT_ICON_LABEL_ATTACK_POWER",
+            "title": "",
+            "message": "攻撃力"
+        },
+        {
+            "id": "SORT_ICON_LABEL_DEFENSE_POWER",
+            "title": "",
+            "message": "物理防御"
+        },
+        {
+            "id": "SORT_ICON_LABEL_MAGIC_DEFENSE_POWER",
+            "title": "",
+            "message": "魔法防御"
+        },
+        {
+            "id": "SORT_ICON_LABEL_BLOCK_COUNT",
+            "title": "",
+            "message": "ブロック数"
+        },
+        {
+            "id": "SORT_ICON_LABEL_ATTACK_RANGE",
+            "title": "",
+            "message": "射程"
+        },
+        {
+            "id": "SORT_ICON_LABEL_ATTACK_SPEED",
+            "title": "",
+            "message": "攻撃速度"
+        },
+        {
+            "id": "SORT_ICON_LABEL_SORTIE_COST",
+            "title": "",
+            "message": "コスト"
+        },
+        {
+            "id": "SORT_MY_PAGE_SELECT",
+            "title": "",
+            "message": "設定中の優先表示"
+        },
+        {
+            "id": "SORT_UNIQUE_WEAPON",
+            "title": "",
+            "message": "作成可能を優先表示"
+        },
+        {
+            "id": "SORT_REMAIN_COUNT",
+            "title": "",
+            "message": "残り数"
+        },
+        {
+            "id": "FILTER_ATTACK_CATEGORY",
+            "title": "",
+            "message": "攻撃強化"
+        },
+        {
+            "id": "FILTER_DEFENSE_CATEGORY",
+            "title": "",
+            "message": "防御強化"
+        },
+        {
+            "id": "FILTER_SUPPORT_CATEGORY",
+            "title": "",
+            "message": "支援"
+        },
+        {
+            "id": "FILTER_SPECIAL_CATEGORY",
+            "title": "",
+            "message": "特殊"
+        },
+        {
+            "id": "FILTER_SUBSKILL_CATEGORY_TITLE",
+            "title": "",
+            "message": "カテゴリ"
+        },
+        {
+            "id": "FILTER_POSS_SUBSKILL_TITLE",
+            "title": "",
+            "message": "所持状況"
+        },
+        {
+            "id": "FILTER_POSS_SUBSKILL",
+            "title": "",
+            "message": "入手済"
+        },
+        {
+            "id": "FILTER_NOT_POSS_SUBSKILL",
+            "title": "",
+            "message": "未入手"
+        },
+        {
+            "id": "SORT_POPULAR_VOTE_SELECT",
+            "title": "",
+            "message": "選択済みの優先表示"
+        },
+        {
+            "id": "SORT_UNSPECIFIED",
+            "title": "",
+            "message": "ランダム"
+        },
+        {
+            "id": "FILTER_WEAPON_TYPE",
+            "title": "",
+            "message": "武器種"
+        },
+        {
+            "id": "FILTER_UNIT_TRAIT",
+            "title": "",
+            "message": "タイプ"
+        },
+        {
+            "id": "FILTER_POSS_TITLE",
+            "title": "",
+            "message": "所持状況"
+        },
+        {
+            "id": "FILTER_POSS",
+            "title": "",
+            "message": "所持"
+        },
+        {
+            "id": "FILTER_NOT_POSS",
+            "title": "",
+            "message": "未所持"
+        },
+        {
+            "id": "FILTER_POSS_ARTIFACT_GRADE_LOW",
+            "title": "",
+            "message": "低グレード所持"
+        },
+        {
+            "id": "FILTER_POSS_ARTIFACT_GRADE_MIDDLE",
+            "title": "",
+            "message": "中グレード所持"
+        },
+        {
+            "id": "FILTER_POSS_ARTIFACT_GRADE_HIGH",
+            "title": "",
+            "message": "高グレード所持"
+        },
+        {
+            "id": "FILTER_ARTIFACT_CATEGORY_TITLE",
+            "title": "",
+            "message": "カテゴリ"
+        },
+        {
+            "id": "FILTER_FACTION_TITLE",
+            "title": "",
+            "message": "所属"
+        },
+        {
+            "id": "SORT_TOTAL_POWER",
+            "title": "",
+            "message": "戦力"
+        },
+        {
+            "id": "FILTER_ARTIFACT_GRADE_LOW",
+            "title": "",
+            "message": "低グレード"
+        },
+        {
+            "id": "FILTER_ARTIFACT_GRADE_MIDDLE",
+            "title": "",
+            "message": "中グレード"
+        },
+        {
+            "id": "FILTER_ARTIFACT_GRADE_HIGH",
+            "title": "",
+            "message": "高グレード"
+        },
+        {
+            "id": "FILTER_ARTIFACT_GRADE",
+            "title": "",
+            "message": "グレード"
+        },
+        {
+            "id": "SORT_ARTIFACT_GRADE",
+            "title": "",
+            "message": "グレード"
+        },
+        {
+            "id": "MISSION_REWARD",
+            "title": "",
+            "message": "報酬:{0}"
+        },
+        {
+            "id": "MISSION_PROGRESS",
+            "title": "",
+            "message": "進行度:{0}/{1}"
+        },
+        {
+            "id": "MISSION_LIMIT_DAY",
+            "title": "",
+            "message": "{0}:{1}"
+        },
+        {
+            "id": "MISSION_LIMIT_MONTH",
+            "title": "",
+            "message": "{0}日{1}時間"
+        },
+        {
+            "id": "MISSION_LIMIT_EVENT",
+            "title": "",
+            "message": "yyyy/MM/dd"
+        },
+        {
+            "id": "MISSION_5",
+            "title": "",
+            "message": "ミッション"
+        },
+        {
+            "id": "MISSION_6",
+            "title": "",
+            "message": "ミッション"
+        },
+        {
+            "id": "MISSION_7",
+            "title": "",
+            "message": "ミッション"
+        },
+        {
+            "id": "MISSION_8",
+            "title": "",
+            "message": "ミッション"
+        },
+        {
+            "id": "MISSION_9",
+            "title": "",
+            "message": "ミッション"
+        },
+        {
+            "id": "BEGINNER_PANEL_MISSION_DESCRIPTION",
+            "title": "",
+            "message": "1stパネルをクリアし「<color=#00fa9a>E以上確定ガチャチケット</color>」を獲得しよう！\r\nさらに、2ndパネルクリアで「<color=#ffd700>L確定ガチャチケット</color>」もGETできるぞ！"
+        },
+        {
+            "id": "BEGINNER_PANEL_MISSION_2",
+            "title": "",
+            "message": "<space=0.26em>1stパネルをクリアすると開放します。"
+        },
+        {
+            "id": "BEGINNER_PANEL_MISSION_3",
+            "title": "",
+            "message": "2ndパネルをクリアすると開放します。"
+        },
+        {
+            "id": "BEGINNER_PANEL_MISSION_4",
+            "title": "",
+            "message": "コンテンツが開放されていません。"
+        },
+        {
+            "id": "PANEL_MISSION_START_DASH_TEXT1",
+            "title": "",
+            "message": "<font=\"FOT-NewRodinProN-EB SDF\" material=\"FOT-NewRodinProN-EB SDF_01\">{0}目のコンプリート報酬は</font>\r\n<font=\"FOT-NewRodinProN-EB SDF\" material=\"FOT-NewRodinProN-EB SDF_02\"><size=27>{1}</size>\r\n<font=\"FOT-NewRodinProN-EB SDF\" material=\"FOT-NewRodinProN-EB SDF_07\"><size=15><color=#504646><voffset=10><cspace=-2>ミッショ</cspace>ン全クリアを目指せ！</color>"
+        },
+        {
+            "id": "PANEL_MISSION_START_DASH_TEXT2",
+            "title": "",
+            "message": "毎日コンプして最高レア確定チケットを含む豪華アイテムGET！"
+        },
+        {
+            "id": "FLY_TEXT_LIFE_PLUS",
+            "title": "",
+            "message": "耐久力アップ"
+        },
+        {
+            "id": "FLY_TEXT_LIFE_MINUS",
+            "title": "",
+            "message": "耐久力ダウン"
+        },
+        {
+            "id": "FLY_TEXT_LIFE_FIXED",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "FLY_TEXT_POWER_PLUS",
+            "title": "",
+            "message": "攻撃力アップ"
+        },
+        {
+            "id": "FLY_TEXT_POWER_MINUS",
+            "title": "",
+            "message": "攻撃力ダウン"
+        },
+        {
+            "id": "FLY_TEXT_POWER_FIXED",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "FLY_TEXT_DEFENSE_PLUS",
+            "title": "",
+            "message": "物理防御アップ"
+        },
+        {
+            "id": "FLY_TEXT_DEFENSE_MINUS",
+            "title": "",
+            "message": "物理防御ダウン"
+        },
+        {
+            "id": "FLY_TEXT_DEFENSE_FIXED",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "FLY_TEXT_MAGIC_DEFENSE_PLUS",
+            "title": "",
+            "message": "魔法防御アップ"
+        },
+        {
+            "id": "FLY_TEXT_MAGIC_DEFENSE_MINUS",
+            "title": "",
+            "message": "魔法防御ダウン"
+        },
+        {
+            "id": "FLY_TEXT_MAGIC_DEFENSE_FIXED",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "FLY_TEXT_MOVE_SPEED_PLUS",
+            "title": "",
+            "message": "移動速度アップ"
+        },
+        {
+            "id": "FLY_TEXT_MOVE_SPEED_MINUS",
+            "title": "",
+            "message": "移動速度ダウン"
+        },
+        {
+            "id": "FLY_TEXT_MOVE_SPEED_FIXED",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "FLY_TEXT_ATTACK_SPEED_PLUS",
+            "title": "",
+            "message": "攻撃速度アップ"
+        },
+        {
+            "id": "FLY_TEXT_ATTACK_SPEED_MINUS",
+            "title": "",
+            "message": "攻撃速度ダウン"
+        },
+        {
+            "id": "FLY_TEXT_ATTACK_SPEED_FIXED",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "FLY_TEXT_ATTACK_INTERVAL_PLUS",
+            "title": "",
+            "message": "攻撃間隔増大"
+        },
+        {
+            "id": "FLY_TEXT_ATTACK_INTERVAL_MINUS",
+            "title": "",
+            "message": "攻撃間隔短縮"
+        },
+        {
+            "id": "FLY_TEXT_ATTACK_INTERVAL_FIXED",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "FLY_TEXT_ATTACK_RANGE_PLUS",
+            "title": "",
+            "message": "射程アップ"
+        },
+        {
+            "id": "FLY_TEXT_ATTACK_RANGE_MINUS",
+            "title": "",
+            "message": "射程ダウン"
+        },
+        {
+            "id": "FLY_TEXT_ATTACK_RANGE_FIXED",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "FLY_TEXT_ATTACK_COUNT_PLUS",
+            "title": "",
+            "message": "攻撃回数アップ"
+        },
+        {
+            "id": "FLY_TEXT_ATTACK_COUNT_MINUS",
+            "title": "",
+            "message": "攻撃回数ダウン"
+        },
+        {
+            "id": "FLY_TEXT_ATTACK_COUNT_FIXED",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "FLY_TEXT_BLOCK_NUM_PLUS",
+            "title": "",
+            "message": "ブロック数アップ"
+        },
+        {
+            "id": "FLY_TEXT_BLOCK_NUM_MINUS",
+            "title": "",
+            "message": "ブロック数ダウン"
+        },
+        {
+            "id": "FLY_TEXT_BLOCK_NUM_FIXED",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "FLY_TEXT_TARGET_NUM_PLUS",
+            "title": "",
+            "message": "攻撃対象数アップ"
+        },
+        {
+            "id": "FLY_TEXT_TARGET_NUM_MINUS",
+            "title": "",
+            "message": "攻撃対象数ダウン"
+        },
+        {
+            "id": "FLY_TEXT_TARGET_NUM_FIXED",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "FLY_TEXT_RANGE_SHAPE",
+            "title": "",
+            "message": "範囲形状変化"
+        },
+        {
+            "id": "FLY_TEXT_CRITICAL_RATE_PLUS",
+            "title": "",
+            "message": "会心率アップ"
+        },
+        {
+            "id": "FLY_TEXT_CRITICAL_RATE_MINUS",
+            "title": "",
+            "message": "会心率ダウン"
+        },
+        {
+            "id": "FLY_TEXT_CRITICAL_DAMAGE_RATE_PLUS",
+            "title": "",
+            "message": "会心ダメージ率アップ"
+        },
+        {
+            "id": "FLY_TEXT_CRITICAL_DAMAGE_RATE_MINUS",
+            "title": "",
+            "message": "会心ダメージ率ダウン"
+        },
+        {
+            "id": "FLY_TEXT_CRITICAL_DOWN_RATE_PLUS",
+            "title": "",
+            "message": "会心抵抗率アップ"
+        },
+        {
+            "id": "FLY_TEXT_CRITICAL_DOWN_RATE_MISNU",
+            "title": "",
+            "message": "会心抵抗率ダウン"
+        },
+        {
+            "id": "FLY_TEXT_CRITICAL_DAMAGE_DOWN_RATE_UP",
+            "title": "",
+            "message": "会心ダメージ抵抗率アップ"
+        },
+        {
+            "id": "FLY_TEXT_CRITICAL_DAMAGE_DOWN_RATE_MISNU",
+            "title": "",
+            "message": "会心ダメージ抵抗率ダウン"
+        },
+        {
+            "id": "FLY_TEXT_PENETRATION_RATE_PLUS",
+            "title": "",
+            "message": "貫通率アップ"
+        },
+        {
+            "id": "FLY_TEXT_PENETRATION_RATE_MINUS",
+            "title": "",
+            "message": "貫通率ダウン"
+        },
+        {
+            "id": "FLY_TEXT_HEALING_RATE_PLUS",
+            "title": "",
+            "message": "回復率アップ"
+        },
+        {
+            "id": "FLY_TEXT_HEALING_RATE_MINUS",
+            "title": "",
+            "message": "回復率ダウン"
+        },
+        {
+            "id": "FLY_TEXT_EVASION_RATE_PLUS",
+            "title": "",
+            "message": "回避率アップ"
+        },
+        {
+            "id": "FLY_TEXT_EVASION_RATE_MINUS",
+            "title": "",
+            "message": "回避率ダウン"
+        },
+        {
+            "id": "BUFF_TEXT_LIFE_RATE",
+            "title": "",
+            "message": "耐久力＋{0}％"
+        },
+        {
+            "id": "BUFF_TEXT_LIFE_ACTUAL",
+            "title": "",
+            "message": "耐久力＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_ATK_RATE",
+            "title": "",
+            "message": "攻撃力＋{0}％"
+        },
+        {
+            "id": "BUFF_TEXT_ATK_ACTUAL",
+            "title": "",
+            "message": "攻撃力＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_DEF_RATE",
+            "title": "",
+            "message": "物理防御＋{0}％"
+        },
+        {
+            "id": "BUFF_TEXT_DEF_ACTUAL",
+            "title": "",
+            "message": "物理防御＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_MAGDEF_RATE",
+            "title": "",
+            "message": "魔法防御＋{0}％"
+        },
+        {
+            "id": "BUFF_TEXT_MAGDEF_ACTUAL",
+            "title": "",
+            "message": "魔法防御＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_MOVSPD_RATE",
+            "title": "",
+            "message": "移動速度＋{0}％"
+        },
+        {
+            "id": "BUFF_TEXT_MOVSPD_ACTUAL",
+            "title": "",
+            "message": "移動速度＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_ATKSPD_RATE",
+            "title": "",
+            "message": "攻撃速度＋{0}％"
+        },
+        {
+            "id": "BUFF_TEXT_ATKSPD_ACTUAL",
+            "title": "",
+            "message": "攻撃速度＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_ATKINT_RATE",
+            "title": "",
+            "message": "攻撃間隔－{0}％"
+        },
+        {
+            "id": "BUFF_TEXT_ATKINT_ACTUAL",
+            "title": "",
+            "message": "攻撃間隔－{0}"
+        },
+        {
+            "id": "BUFF_TEXT_ATKRNG_RATE",
+            "title": "",
+            "message": "攻撃範囲＋{0}％"
+        },
+        {
+            "id": "BUFF_TEXT_ATKRNG_ACTUAL",
+            "title": "",
+            "message": "攻撃範囲＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_ATKCNT_ACTUAL",
+            "title": "",
+            "message": "攻撃回数＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_TARGET",
+            "title": "",
+            "message": "攻撃対象数＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_CRITICAL_RATE",
+            "title": "",
+            "message": "会心率＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_CRITICAL_DAMAGE_RATE",
+            "title": "",
+            "message": "会心ダメージ率＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_CRITICAL_DOWN_RATE",
+            "title": "",
+            "message": "会心抵抗率＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_CRITICAL_DAMAGE_DOWN_RATE",
+            "title": "",
+            "message": "会心ダメージ抵抗率＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_PENETRATION_RATE",
+            "title": "",
+            "message": "貫通率＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_HEALING_RATE",
+            "title": "",
+            "message": "回復率＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_EVASION_RATE",
+            "title": "",
+            "message": "回避率＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_BASE_PARAM",
+            "title": "",
+            "message": "基礎能力耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_MOVSPD",
+            "title": "",
+            "message": "移動速度耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_ATKSPD",
+            "title": "",
+            "message": "攻撃速度耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_ATKINT",
+            "title": "",
+            "message": "攻撃間隔耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_STUN",
+            "title": "",
+            "message": "スタン耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_STUN_TIME",
+            "title": "",
+            "message": "スタン時間耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_PETRI",
+            "title": "",
+            "message": "石化耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_PETRI_TIME",
+            "title": "",
+            "message": "石化時間耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_POISON",
+            "title": "",
+            "message": "毒耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_POISON_DMG",
+            "title": "",
+            "message": "毒ダメージ耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_KNOCKBACK",
+            "title": "",
+            "message": "ノックバック耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_BURN",
+            "title": "",
+            "message": "火傷耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_FROZEN",
+            "title": "",
+            "message": "凍結耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_DARKNESS",
+            "title": "",
+            "message": "暗闇耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_MADNESS",
+            "title": "",
+            "message": "狂気耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_FEAR",
+            "title": "",
+            "message": "恐怖耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_DEATH",
+            "title": "",
+            "message": "即死耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_RES_TIMESTOP",
+            "title": "",
+            "message": "時間停止耐性＋{0}"
+        },
+        {
+            "id": "BUFF_TEXT_INVALID_STUN",
+            "title": "",
+            "message": "スタン無効"
+        },
+        {
+            "id": "BUFF_TEXT_INVALID_PETRI",
+            "title": "",
+            "message": "石化無効"
+        },
+        {
+            "id": "BUFF_TEXT_INVALID_POISON",
+            "title": "",
+            "message": "毒無効"
+        },
+        {
+            "id": "BUFF_TEXT_INVALID_KNOCKBACK",
+            "title": "",
+            "message": "ノックバック無効"
+        },
+        {
+            "id": "BUFF_TEXT_INVALID_BURN",
+            "title": "",
+            "message": "火傷無効"
+        },
+        {
+            "id": "BUFF_TEXT_INVALID_DARKNESS",
+            "title": "",
+            "message": "暗闇無効"
+        },
+        {
+            "id": "BUFF_TEXT_INVALID_MADNESS",
+            "title": "",
+            "message": "狂気無効"
+        },
+        {
+            "id": "BUFF_TEXT_INVALID_FEAR",
+            "title": "",
+            "message": "恐怖無効"
+        },
+        {
+            "id": "BUFF_TEXT_INVALID_DEATH",
+            "title": "",
+            "message": "即死無効"
+        },
+        {
+            "id": "BUFF_TEXT_INVALID_TIMESTOP",
+            "title": "",
+            "message": "時間停止無効"
+        },
+        {
+            "id": "TOAST_GET_TREASURE",
+            "title": "",
+            "message": "{0} 獲得!"
+        },
+        {
+            "id": "TOAST_GAME_WEATHER",
+            "title": "",
+            "message": "悪天候:{0}・{1}"
+        },
+        {
+            "id": "TOAST_4",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "TOAST_5",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "TOAST_6",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "TOAST_7",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "TOAST_8",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "HARD_LOCKED",
+            "title": "",
+            "message": "まだ解放されていません"
+        },
+        {
+            "id": "TOAST_9",
+            "title": "",
+            "message": "解除しました"
+        },
+        {
+            "id": "TOAST_10",
+            "title": "",
+            "message": "取消しました"
+        },
+        {
+            "id": "TOAST_11",
+            "title": "",
+            "message": "リプレイ共有はまだありません"
+        },
+        {
+            "id": "GAME_MESSAGE_1",
+            "title": "",
+            "message": "封印ポイントには直接配置できませんが、\r\n移動することで侵入できます。\r\n\r\n一度侵入すると封印が解除され、\r\n直接配置が可能になります。\r\n"
+        },
+        {
+            "id": "TOAST_12",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "TOAST_13",
+            "title": "",
+            "message": "このシナリオは{0}を入手することで開放されます"
+        },
+        {
+            "id": "TOAST_14",
+            "title": "",
+            "message": "【{0}】を入手していないため選択できません"
+        },
+        {
+            "id": "TOAST_15",
+            "title": "",
+            "message": "最高討伐数更新！"
+        },
+        {
+            "id": "FRIEND_TEXT_1",
+            "title": "",
+            "message": "フレンド"
+        },
+        {
+            "id": "FRIEND_TEXT_2",
+            "title": "",
+            "message": "フレンドは まだいません"
+        },
+        {
+            "id": "FRIEND_TEXT_3",
+            "title": "",
+            "message": "フレンド申請"
+        },
+        {
+            "id": "FRIEND_TEXT_4",
+            "title": "",
+            "message": "フレンド申請しました"
+        },
+        {
+            "id": "FRIEND_TEXT_5",
+            "title": "",
+            "message": "フレンド一覧へ"
+        },
+        {
+            "id": "FRIEND_TEXT_6",
+            "title": "",
+            "message": "申請はありません"
+        },
+        {
+            "id": "FRIEND_TEXT_7",
+            "title": "",
+            "message": "申請はまだありません"
+        },
+        {
+            "id": "FRIEND_TEXT_8",
+            "title": "",
+            "message": "フレンドを断りました"
+        },
+        {
+            "id": "FRIEND_TEXT_9",
+            "title": "",
+            "message": "フレンドになりました"
+        },
+        {
+            "id": "FRIEND_TEXT_10",
+            "title": "",
+            "message": "あなたのＩＤです"
+        },
+        {
+            "id": "FRIEND_TEXT_11",
+            "title": "",
+            "message": "そのＩＤは見つかりません"
+        },
+        {
+            "id": "FRIEND_TEXT_12",
+            "title": "",
+            "message": "フレンド解除"
+        },
+        {
+            "id": "FRIEND_WINDOW_ALL_REMOVE",
+            "title": "確認",
+            "message": "全てのフレンドを解除しますか？"
+        },
+        {
+            "id": "FRIEND_WINDOW_REMOVE",
+            "title": "確認",
+            "message": "{0}\r\nフレンドを解除しますか？"
+        },
+        {
+            "id": "FRIEND_WINDOW_APPLICATION",
+            "title": "確認",
+            "message": "{0}\r\nフレンド申請しますか？"
+        },
+        {
+            "id": "FRIEND_WINDOW_APPLICATION_ALL_CANCEL",
+            "title": "確認",
+            "message": "全てのフレンド申請を取消しますか？"
+        },
+        {
+            "id": "FRIEND_WINDOW_APPLICATION_CANCEL",
+            "title": "確認",
+            "message": "{0}\r\nフレンド申請を取消しますか？"
+        },
+        {
+            "id": "FRIEND_WINDOW_APPLICATION_FAILED_1",
+            "title": "確認",
+            "message": "相手のフレンド数が上限に達しているため\r\n申請できませんでした。"
+        },
+        {
+            "id": "FRIEND_WINDOW_MY_MAX",
+            "title": "確認",
+            "message": "フレンド数が上限に達しています。\r\n一覧に移動しますか？"
+        },
+        {
+            "id": "FRIEND_WINDOW_APPROVED_CANCEL",
+            "title": "確認",
+            "message": "全てのフレンド申請を断りますか？"
+        },
+        {
+            "id": "FRIEND_WINDOW_APPROVED_ALL",
+            "title": "確認",
+            "message": "全てのフレンド申請を承認しますか？"
+        },
+        {
+            "id": "FRIEND_WINDOW_SLOT_MAX",
+            "title": "確認",
+            "message": "フレンド枠が足りません。\r\n一覧に移動しますか？"
+        },
+        {
+            "id": "FRIEND_WINDOW_APPROVED_1",
+            "title": "確認",
+            "message": "{0}\r\nフレンドになりますか？"
+        },
+        {
+            "id": "FRIEND_WINDOW_APPROVED_2",
+            "title": "確認",
+            "message": "フレンドになりました\r\n一部フレンド数が上限に達している相手がいました。"
+        },
+        {
+            "id": "FRIEND_WINDOW_APPLIED",
+            "title": "確認",
+            "message": "フレンド申請しました。\r\n一部フレンド数が上限に達している相手がいました。"
+        },
+        {
+            "id": "FRIEND_SEARCH",
+            "title": "確認",
+            "message": "フレンドIDを入力してください。"
+        },
+        {
+            "id": "FRIEND_WINDOW_ALL_APPLIED",
+            "title": "確認",
+            "message": "一括申請しますか？"
+        },
+        {
+            "id": "FOLLOW_TEXT_1",
+            "title": "確認",
+            "message": "フォロー"
+        },
+        {
+            "id": "FOLLOW_TEXT_2",
+            "title": "確認",
+            "message": "フォローしました"
+        },
+        {
+            "id": "FOLLOW_TEXT_3",
+            "title": "確認",
+            "message": "フォロー一覧へ"
+        },
+        {
+            "id": "FOLLOW_TEXT_4",
+            "title": "確認",
+            "message": "フォローは まだいません"
+        },
+        {
+            "id": "FOLLOW_WINDOW_ALL_REMOVE",
+            "title": "確認",
+            "message": "全てのフォローを解除しますか？"
+        },
+        {
+            "id": "FOLLOW_WINDOW_REMOVE",
+            "title": "確認",
+            "message": "{0}\r\nフォローを解除しますか？"
+        },
+        {
+            "id": "FOLLOW_WINDOW_MY_MAX",
+            "title": "確認",
+            "message": "フォロー数が上限に達しています。"
+        },
+        {
+            "id": "WORNIG_NG_WORD",
+            "title": "確認",
+            "message": "使用できない文字が含まれております。"
+        },
+        {
+            "id": "FOLLOW_WINDOW_APPLIED_FOLLOW",
+            "title": "確認",
+            "message": "<color=#ffd700>{0}</color> をフォローしますか？"
+        },
+        {
+            "id": "FOLLOW_WINDOW_REMOVE_FOLLOW",
+            "title": "確認",
+            "message": "<line-height=110%>プレイヤー名 : <color=#ffd700>{0}</color>\r\n</line-height>フォローを解除しますか？"
+        },
+        {
+            "id": "FOLLOW_TEXT_SEARCH_ERROR",
+            "title": "確認",
+            "message": "無効なＩＤです。"
+        },
+        {
+            "id": "FOLLOW_TEXT_FOLLOW_ENTER",
+            "title": "確認",
+            "message": "<cspace=-5>フォ<cspace=-6.5>ロ<scale=0.7><cspace=1>ー<scale=1><cspace=-4>する"
+        },
+        {
+            "id": "FOLLOWER_TEXT_1",
+            "title": "確認",
+            "message": "フォロワーは まだいません"
+        },
+        {
+            "id": "FOLLOW_TEXT_COUNTER",
+            "title": "確認",
+            "message": "現在のフォロー数　{0}/{1}"
+        },
+        {
+            "id": "FRIEND_BLOCK_USER_ERROR",
+            "title": "",
+            "message": "ブロック状態のためフレンドに出来ません"
+        },
+        {
+            "id": "FRIEND_LIMIT_COUNT_ERROR",
+            "title": "",
+            "message": "フレンドが上限に達しています"
+        },
+        {
+            "id": "FRIEND_OTHER_LIMIT_COUNT_ERROR",
+            "title": "",
+            "message": "相手のフレンドが上限に達しています"
+        },
+        {
+            "id": "FRIEND_NOT_ADDITION_ERROR",
+            "title": "",
+            "message": "フレンドに追加出来なかったユーザーがいます"
+        },
+        {
+            "id": "FRIEND_REQUESTED_ERROR",
+            "title": "",
+            "message": "すでにフレンド申請済みです"
+        },
+        {
+            "id": "FRIEND_NOT_REQUEST_ERROR",
+            "title": "",
+            "message": "申請出来なかったユーザーがいます"
+        },
+        {
+            "id": "FRIEND_SEARCH_ERROR",
+            "title": "",
+            "message": "該当するユーザーが見つかりませんでした"
+        },
+        {
+            "id": "FRIEND_REQUEST_BUTTON",
+            "title": "",
+            "message": "申請"
+        },
+        {
+            "id": "FRIEND_REQUEST_CANCEL_BUTTON",
+            "title": "",
+            "message": "申請削除"
+        },
+        {
+            "id": "BATTLE_LOG_DIALOG",
+            "title": "バトルログ",
+            "message": "※バトルログは最大20件まで保存します。\r\n※2週間以上経過したバトルログは自動的に削除されます。\r\n※長すぎるバトルのログは保存されません。"
+        },
+        {
+            "id": "BATTLE_LOG_CANNOT_PLAY",
+            "title": "",
+            "message": "このバトルログは再生できません。"
+        },
+        {
+            "id": "BATTLE_LOG_EXPIRED",
+            "title": "確認",
+            "message": "保存期間を超過したバトルログが削除されました。\r\nバトルを再生することができません。"
+        },
+        {
+            "id": "BATTLE_LOG_WIN_LABEL",
+            "title": "",
+            "message": "勝利"
+        },
+        {
+            "id": "BATTLE_LOG_LOSS_LABEL",
+            "title": "",
+            "message": "敗北"
+        },
+        {
+            "id": "BATTLE_LOG_SIZE_OVER",
+            "title": "確認",
+            "message": "※バトルのログが長すぎるため\r\n保存できませんでした。"
+        },
+        {
+            "id": "INPUT_BATTLE_LOG_SHARE_COMMENT",
+            "title": "コメント入力",
+            "message": "共有するバトルログについてのコメントを入力してください。"
+        },
+        {
+            "id": "SHARE_USER_DECK_COPY",
+            "title": "チームコピー",
+            "message": "{0}さんの編成をコピーしますか？"
+        },
+        {
+            "id": "NOT_EXIST_COPY_UNIT_NOT_DECK_COPY",
+            "title": "確認",
+            "message": ""
+        },
+        {
+            "id": "BATTLE_LOG_UNSHARE_CONFIRM",
+            "title": "確認",
+            "message": "このバトルログはフォロワーに共有しています。\r\nバトルログの共有を中断しますか？"
+        },
+        {
+            "id": "STOP_SHARE_BATTLE_LOG",
+            "title": "確認",
+            "message": "バトルログの共有を停止しました。"
+        },
+        {
+            "id": "BATTLE_LOG_SHARE_OVER_CONFIRM",
+            "title": "確認",
+            "message": "サーバーに共有されているバトルログが10件あります。\r\n一番古いバトルログの共有が解除されますがよろしいですか？"
+        },
+        {
+            "id": "BATTLE_LOG_SHARE_CONFIRM_MAX_EVALUATE",
+            "title": "確認",
+            "message": "☆３でクリアしました。\r\nバトルログを共有しますか？\r\nバトルログ共有ミッションは後から共有しても達成できます。"
+        },
+        {
+            "id": "BATTLE_LOG_SHARED_POPUP",
+            "title": "確認",
+            "message": "バトルログを共有しました。"
+        },
+        {
+            "id": "IN_APP_PURCHASING_NOT_READY",
+            "title": "エラー",
+            "message": "購入準備ができていません。時間を置いてもう一度お試しください。"
+        },
+        {
+            "id": "IN_APP_PURCHASING_PURCHASE_RESTRICTED",
+            "title": "エラー",
+            "message": "端末の設定で購入が制限されています。設定を変更してもう一度お試しください。"
+        },
+        {
+            "id": "IN_APP_PURCHASING_STORE_FAILURE",
+            "title": "エラー",
+            "message": "購入できませんでした。時間を置いてもう一度お試しください。"
+        },
+        {
+            "id": "IN_APP_PURCHASING_RECEIPT_RETRYABLE",
+            "title": "エラー",
+            "message": "ストア側で一時的なエラーが起きました。商品の引き換えのために時間を置いてゲームを再起動してみてください。"
+        },
+        {
+            "id": "IN_APP_PURCHASING_RECEIPT_INVALID",
+            "title": "エラー",
+            "message": "エラーのため商品の引き換えができませんでした。お手数ですが保留中の支払いがある場合はストアに払い戻しを申請してください。"
+        },
+        {
+            "id": "IN_APP_PURCHASING_PENDING_EXISTS_ALREADY",
+            "title": "エラー",
+            "message": "処理中の購入が残っています。処理中のものがある間は新しい購入を始められません。処理中の購入を中断しますか？中断後、保留中の支払いがある場合はストアに払い戻しを申請してください。"
+        },
+        {
+            "id": "SERIAL_CODE_POPUP",
+            "title": "シリアルコード入力",
+            "message": "シリアルコードを入力してください。"
+        },
+        {
+            "id": "SERIAL_CODE_WARNING",
+            "title": "",
+            "message": "・<indent=1em>1つのシリアルコードによる特典入手は1回限りとなります。</indent>\r\n・<indent=1em>一定時間内に無効なシリアルコードを5回入力した場合、\r\n1時間入力ができなくなります。</indent>"
+        },
+        {
+            "id": "SERIAL_CODE_INPUT_NO_VALUE",
+            "title": "",
+            "message": "半角英数字で入力してください。"
+        },
+        {
+            "id": "SERIAL_CODE_FAILURE_INVALID_INPUT",
+            "title": "確認",
+            "message": "入力されたシリアルコードは正しくありません。"
+        },
+        {
+            "id": "SERIAL_CODE_FAILURE_ALREADY_USED",
+            "title": "確認",
+            "message": "入力されたシリアルコードは使用済みです。"
+        },
+        {
+            "id": "SERIAL_CODE_FAILURE_RESTRICTED",
+            "title": "確認",
+            "message": "時間をおいてから再度入力をお試しください。"
+        },
+        {
+            "id": "SERIAL_CODE_FAILURE_EXPIRED",
+            "title": "確認",
+            "message": "入力したシリアルコードの有効期限が切れています。"
+        },
+        {
+            "id": "MOVIE_LINK_HEADLINE",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "MOVIE_LINK_CONFIRM_HEADLINE",
+            "title": "",
+            "message": "確認"
+        },
+        {
+            "id": "MOVIE_LINK_CONFIRM",
+            "title": "",
+            "message": "YouTubeの動画を再生するため\r\n外部サイトへアクセスします。"
+        },
+        {
+            "id": "MOVIE_LINK_NOTHING",
+            "title": "",
+            "message": "動画はありません。"
+        },
+        {
+            "id": "MOVIE_LINK_MENU_BUTTON",
+            "title": "",
+            "message": "<cspace=-3>Y<cspace=0>o<cspace=-0.2>uT<cspace=-1>u<cspace=-0.1>b<cspace=1>e"
+        },
+        {
+            "id": "SHOP_FUND_SETTLEMENT_LAW_ANDROID_TEXT",
+            "title": "資金決済法に基づく表示",
+            "message": ""
+        },
+        {
+            "id": "SHOP_SPECIFIED_COMMERCIAL_TRANSACTION_LAW_ANDROID_TEXT",
+            "title": "特定商取引法に基づく表示",
+            "message": ""
+        },
+        {
+            "id": "SHOP_SPECIFIED_COMMERCIAL_TRANSACTION_PAYMENT_ANDROID_TEXT",
+            "title": "支払い方法",
+            "message": ""
+        },
+        {
+            "id": "SHOP_SPECIFIED_COMMERCIAL_TRANSACTION_SEASON_ANDROID_TEXT",
+            "title": "商品提供時期",
+            "message": ""
+        },
+        {
+            "id": "SHOP_SPECIFIED_COMMERCIAL_TRANSACTION_RETURN_ANDROID_TEXT",
+            "title": "返品について",
+            "message": ""
+        },
+        {
+            "id": "SHOP_FUND_SETTLEMENT_LAW_IOS_TEXT",
+            "title": "資金決済法に基づく表示",
+            "message": ""
+        },
+        {
+            "id": "SHOP_SPECIFIED_COMMERCIAL_TRANSACTION_LAW_IOS_TEXT",
+            "title": "特定商取引法に基づく表示",
+            "message": ""
+        },
+        {
+            "id": "SHOP_SPECIFIED_COMMERCIAL_TRANSACTION_PAYMENT_IOS_TEXT",
+            "title": "支払い方法",
+            "message": ""
+        },
+        {
+            "id": "SHOP_SPECIFIED_COMMERCIAL_TRANSACTION_SEASON_IOS_TEXT",
+            "title": "商品提供時期",
+            "message": ""
+        },
+        {
+            "id": "SHOP_SPECIFIED_COMMERCIAL_TRANSACTION_RETURN_IOS_TEXT",
+            "title": "返品について",
+            "message": ""
+        },
+        {
+            "id": "DATA_COOPERATION_POPUP",
+            "title": "データ連携",
+            "message": "プレイヤーIDと連携パスワードを入力してください。"
+        },
+        {
+            "id": "DATA_COOPERATION_PLAYER_ID_INPUT",
+            "title": "プレイヤーID入力",
+            "message": "プレイヤーIDを入力してください"
+        },
+        {
+            "id": "DATA_COOPERATION_PASSWORD_INPUT",
+            "title": "連携パスワード入力",
+            "message": "連携パスワードを入力してください"
+        },
+        {
+            "id": "DATA_COOPERATION_RETYPE_PASSWORD_INPUT",
+            "title": "連携パスワード再入力",
+            "message": "連携パスワードを再入力してください"
+        },
+        {
+            "id": "DATA_COOPERATION_PASSWORD_INPUT_WARNING",
+            "title": "",
+            "message": "パスワードを半角8～12文字で入力してください。"
+        },
+        {
+            "id": "DATA_COOPERATION_WARNING",
+            "title": "",
+            "message": "パスワードをお忘れの場合は再発行を行って下さい。\r\n連携パスワードは発行から24時間有効です。"
+        },
+        {
+            "id": "DATA_COOPERATION_INVALID_INPUT",
+            "title": "",
+            "message": "入力された内容が正しくありません。\r\n入力した内容をご確認ください。"
+        },
+        {
+            "id": "DATA_COOPERATION_TARGET_OWN",
+            "title": "",
+            "message": "連携するプレイヤーデータは\r\n既にこの端末で連携済みです。"
+        },
+        {
+            "id": "DATA_COOPERATION_PASSWORD_EXPIRED",
+            "title": "",
+            "message": "<color=red>パスワードの有効期限が切れています。</color>"
+        },
+        {
+            "id": "DATA_COOPERATION_CONFIRMATION_POPUP",
+            "title": "確認",
+            "message": "このゲームデータと連携しますか？"
+        },
+        {
+            "id": "DATA_COOPERATION_CONFIRMATION_WARNING",
+            "title": "",
+            "message": "データ連携を行うと、現在この端末でプレイされているデータは\r\n連携元のデータで上書きされ、プレイできなくなります。\r\n異なるプラットフォーム間でデータ連携した場合、\r\n連携元で所持していた有償原石は連携先では使用できません。\r\nメンテナンス直前でのデータ連携は、ゲームデータ破損の恐れがありますのでご注意ください。"
+        },
+        {
+            "id": "DATA_COOPERATION_SUCCESS",
+            "title": "データ連携",
+            "message": "データ連携が完了しました。\r\n引き続き邪神戦記ルルイエ少女隊をお楽しみください。"
+        },
+        {
+            "id": "DATA_COOPERATION_PASSWORD_REGISTRATION_POPUP",
+            "title": "データ連携パスワード発行",
+            "message": "パスワードを半角8～12文字で入力してください。"
+        },
+        {
+            "id": "DATA_COOPERATION_PASSWORD_REGISTRATION_WARNING",
+            "title": "",
+            "message": "連携パスワードは発行から24時間有効です。"
+        },
+        {
+            "id": "DATA_COOPERATION_PASSWORD_REGISTRATION_SUCCESS_POPUP",
+            "title": "確認",
+            "message": "連携パスワードを発行しました。"
+        },
+        {
+            "id": "DATA_COOPERATION_PASSWORD_REGISTRATION_SUCCESS_WARNING",
+            "title": "",
+            "message": "連携パスワードは発行から24時間有効です。\r\n連携パスワードは第三者に教えたり、公開したりは絶対にしないでください。"
+        },
+        {
+            "id": "DATA_COOPERATION_PASSWORD_TOO_SHORT",
+            "title": "",
+            "message": "パスワードが短すぎます。"
+        },
+        {
+            "id": "DATA_COOPERATION_PASSWORD_TOO_LONG",
+            "title": "",
+            "message": "パスワードが長すぎます。"
+        },
+        {
+            "id": "DATA_COOPERATION_PASSWORD_MISMATCH",
+            "title": "",
+            "message": "パスワードが一致していません。"
+        },
+        {
+            "id": "DATA_COOPERATION_PASSWORD_INVALID_CHARACTER",
+            "title": "",
+            "message": "使用できない文字が含まれています。"
+        },
+        {
+            "id": "USE_TERMS_ANDROID",
+            "title": "利用規約",
+            "message": ""
+        },
+        {
+            "id": "PRIVACY_POLICY_ANDROID",
+            "title": "プライバシーポリシー",
+            "message": ""
+        },
+        {
+            "id": "USE_TERMS_IOS",
+            "title": "利用規約",
+            "message": ""
+        },
+        {
+            "id": "PRIVACY_POLICY_IOS",
+            "title": "プライバシーポリシー",
+            "message": ""
+        },
+        {
+            "id": "USE_TERMS_CONFIRMATION",
+            "title": "利用規約・プライバシーポリシー",
+            "message": "このゲームをプレイするには\r\n利用規約に同意していただく必要があります。"
+        },
+        {
+            "id": "RIGHT_NOTATION_COMMON",
+            "title": "権利表記",
+            "message": "【UniTask】\r\nThe MIT License (MIT)\r\n\r\nCopyright (c) 2019 Yoshifumi Kawai / Cysharp, Inc.\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy\r\nof this software and associated documentation files (the \"Software\"), to deal\r\nin the Software without restriction, including without limitation the rights\r\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\ncopies of the Software, and to permit persons to whom the Software is\r\nfurnished to do so, subject to the following conditions:\r\n\r\nThe above copyright notice and this permission notice shall be included in all\r\ncopies or substantial portions of the Software.\r\n\r\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\nSOFTWARE.\r\n\r\n【UniRx】\r\nThe MIT License (MIT)\r\n\r\nCopyright (c) 2018 Yoshifumi Kawai\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy\r\nof this software and associated documentation files (the \"Software\"), to deal\r\nin the Software without restriction, including without limitation the rights\r\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\ncopies of the Software, and to permit persons to whom the Software is\r\nfurnished to do so, subject to the following conditions:\r\n\r\nThe above copyright notice and this permission notice shall be included in all\r\ncopies or substantial portions of the Software.\r\n\r\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\nSOFTWARE.\r\n\r\n【MessagePipe】\r\nMIT License\r\n\r\nCopyright (c) 2021 Cysharp, Inc.\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy\r\nof this software and associated documentation files (the \"Software\"), to deal\r\nin the Software without restriction, including without limitation the rights\r\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\ncopies of the Software, and to permit persons to whom the Software is\r\nfurnished to do so, subject to the following conditions:\r\n\r\nThe above copyright notice and this permission notice shall be included in all\r\ncopies or substantial portions of the Software.\r\n\r\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\nSOFTWARE.\r\n\r\n【Utf8Json】\r\nMIT License\r\n\r\nCopyright (c) 2017 Yoshifumi Kawai\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy\r\nof this software and associated documentation files (the \"Software\"), to deal\r\nin the Software without restriction, including without limitation the rights\r\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\ncopies of the Software, and to permit persons to whom the Software is\r\nfurnished to do so, subject to the following conditions:\r\n\r\nThe above copyright notice and this permission notice shall be included in all\r\ncopies or substantial portions of the Software.\r\n\r\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\nSOFTWARE.\r\n\r\n【VContainer】\r\nCopyright (c) 2020 hadashiA\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy\r\nof this software and associated documentation files (the \"Software\"), to deal\r\nin the Software without restriction, including without limitation the rights\r\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\ncopies of the Software, and to permit persons to whom the Software is\r\nfurnished to do so, subject to the following conditions:\r\n\r\nThe above copyright notice and this permission notice shall be included in all\r\ncopies or substantial portions of the Software.\r\n\r\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\nSOFTWARE.\r\n\r\n【spine-unity】\r\nSpine Runtimes License Agreement\r\nLast updated April 5, 2025. Replaces all prior versions.\r\n\r\nCopyright (c) 2013-2025, Esoteric Software LLC\r\n\r\nIntegration of the Spine Runtimes into software or otherwise creating\r\nderivative works of the Spine Runtimes is permitted under the terms and\r\nconditions of Section 2 of the Spine Editor License Agreement:\r\nhttps://esotericsoftware.com/spine-editor-license\r\n\r\nOtherwise, it is permitted to integrate the Spine Runtimes into software\r\nor otherwise create derivative works of the Spine Runtimes (collectively,\r\n\"Products\"), provided that each user of the Products must obtain their own\r\nSpine Editor license and redistribution of the Products in any form must\r\ninclude this license and copyright notice.\r\n\r\nTHE SPINE RUNTIMES ARE PROVIDED BY ESOTERIC SOFTWARE LLC \"AS IS\" AND ANY\r\nEXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\r\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\r\nDISCLAIMED. IN NO EVENT SHALL ESOTERIC SOFTWARE LLC BE LIABLE FOR ANY\r\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\r\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES,\r\nBUSINESS INTERRUPTION, OR LOSS OF USE, DATA, OR PROFITS) HOWEVER CAUSED AND\r\nON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\r\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF\r\nTHE SPINE RUNTIMES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+        },
+        {
+            "id": "RIGHT_NOTATION_DMM_ANDROID",
+            "title": "",
+            "message": "【AndroidX Coreライブラリ / Androidマテリアルライブラリ / AndroidXブラウザライブラリ】\r\nCopyright 2015 The Android Open Source Project\r\n  \r\nLicensed under the Apache License, Version 2.0 (the \"License\");\r\nyou may not use this file except in compliance with the License.\r\nYou may obtain a copy of the License at\r\n  \r\n   http://www.apache.org/licenses/LICENSE-2.0\r\n  \r\nUnless required by applicable law or agreed to in writing, software\r\ndistributed under the License is distributed on an \"AS IS\" BASIS,\r\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\nSee the License for the specific language governing permissions and\r\nlimitations under the License.\r\n\r\n【OkHttp3】\r\nCopyright 2019 Square, Inc.\r\n  \r\nLicensed under the Apache License, Version 2.0 (the \"License\");\r\nyou may not use this file except in compliance with the License.\r\nYou may obtain a copy of the License at\r\n  \r\n   http://www.apache.org/licenses/LICENSE-2.0\r\n  \r\nUnless required by applicable law or agreed to in writing, software\r\ndistributed under the License is distributed on an \"AS IS\" BASIS,\r\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\nSee the License for the specific language governing permissions and\r\nlimitations under the License.\r\n\r\n【kotlinx-serialization-core/kotlinx-serialization-json】\r\nCopyright 2017-2019 JetBrains s.r.o.\r\n\r\nLicensed under the Apache License, Version 2.0 (the \"License\");\r\nyou may not use this file except in compliance with the License.\r\nYou may obtain a copy of the License at\r\n\r\nhttp://www.apache.org/licenses/LICENSE-2.0\r\n\r\nUnless required by applicable law or agreed to in writing, software\r\ndistributed under the License is distributed on an \"AS IS\" BASIS,\r\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\nSee the License for the specific language governing permissions and\r\nlimitations under the License.\r\n\r\nCopyright 2015 The Android Open Source Project\r\n  \r\nLicensed under the Apache License, Version 2.0 (the \"License\");\r\nyou may not use this file except in compliance with the License.\r\nYou may obtain a copy of the License at\r\n  \r\n   http://www.apache.org/licenses/LICENSE-2.0\r\n  \r\nUnless required by applicable law or agreed to in writing, software\r\ndistributed under the License is distributed on an \"AS IS\" BASIS,\r\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\nSee the License for the specific language governing permissions and\r\nlimitations under the License.\r\n  \r\nGoogle gson Modifications copyright (C) 2022 EXNOA LLC\r\nAndroid Volley Library Modifications copyright (C) 2022 EXNOA LLC"
+        },
+        {
+            "id": "RIGHT_NOTATION_DMM_WEBGL",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "RIGHT_NOTATION_DMM_WINDOWS",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "RIGHT_NOTATION_PLAY_STORE",
+            "title": "",
+            "message": "【Firebase Unity SDK】\r\nCopyright (C) 2020 Google LLC\r\n\r\nLicensed under the Apache License, Version 2.0 (the \"License\");\r\nyou may not use this file except in compliance with the License.\r\nYou may obtain a copy of the License at\r\n\r\nhttp://www.apache.org/licenses/LICENSE-2.0\r\n\r\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
+        },
+        {
+            "id": "RIGHT_NOTATION_APP_STORE",
+            "title": "",
+            "message": "【Firebase Unity SDK】\r\nCopyright (C) 2020 Google LLC\r\n\r\nLicensed under the Apache License, Version 2.0 (the \"License\");\r\nyou may not use this file except in compliance with the License.\r\nYou may obtain a copy of the License at\r\n\r\nhttp://www.apache.org/licenses/LICENSE-2.0\r\n\r\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
+        },
+        {
+            "id": "SHORTAGE_BINGO_DUPLICATION_POINT",
+            "title": "",
+            "message": "重複ポイントが不足しています"
+        },
+        {
+            "id": "SHORTAGE_BINGO_LOTTERY_TICKET",
+            "title": "",
+            "message": "抽選券が不足しています"
+        },
+        {
+            "id": "BINGO_NUM_SELECT_CONFIRM_WINDOW",
+            "title": "",
+            "message": "<cspace=0>重複ポ<cspace=-1>イント<cspace=1>を<color=#FF454A>{0}</color><cspace=-1>使<cspace=-3>っ<cspace=-8>て<color=#FF454A>【</cspace>{1}<cspace=-7>】</color>が</cspace><cspace=1>開放<cspace=0>できます。\r\n<cspace=1>開<cspace=0>放しますか？"
+        },
+        {
+            "id": "BINGO_REWARD_ITEM_VIEW_POPUP",
+            "title": "確認",
+            "message": "下記報酬が獲得できます。"
+        },
+        {
+            "id": "BINGO_GET_DUPLICATION_POINT",
+            "title": "",
+            "message": "重複ポイントを1入手しました"
+        },
+        {
+            "id": "BINGO_OUT_OF_SCHEDULE",
+            "title": "確認",
+            "message": "すでに終了しているビンゴキャンペーンです"
+        },
+        {
+            "id": "BINGO_LOTTERY_COMPLETE_BREAK",
+            "title": "",
+            "message": "コンプリート報酬を獲得したので、抽選を終了しました"
+        },
+        {
+            "id": "MY_PAGE_UNIT_ALREADY_SELECT",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "MY_PAGE_LIMIT_UNIT_SELECT",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "MYPAGE_ENCYCLOPEDIA_BUTTON",
+            "title": "",
+            "message": "図鑑"
+        },
+        {
+            "id": "MYPAGE_RANKING_BUTTON",
+            "title": "",
+            "message": "ランキング"
+        },
+        {
+            "id": "MYPAGE_ARTIFACT_BUTTON",
+            "title": "",
+            "message": "アーティファクト"
+        },
+        {
+            "id": "MYPAGE_LEVEL_LINK_BUTTON",
+            "title": "",
+            "message": "レベルリンク"
+        },
+        {
+            "id": "MYPAGE_MINIGAME_BUTTON",
+            "title": "",
+            "message": "ミニゲーム"
+        },
+        {
+            "id": "MYPAGE_GUILD_BUTTON",
+            "title": "",
+            "message": "???"
+        },
+        {
+            "id": "SUB_SKILL_COMBINE_CONFIRM",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "SHORTAGE_COMBINE_MATERIAL",
+            "title": "",
+            "message": "合成素材が不足しています"
+        },
+        {
+            "id": "NOT_SET_ALL_COMBINE_MATERIAL",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "SUB_SKILL_POSSESS_MAX",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "NOTHING_COMBINE_MATERIAL",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "NEED_SUB_SKILL_EQUIP_UNIT",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "SET_COMBINE_MATERIAL",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "SET_ALL_COMBINE_MATERIAL",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "SET_COMPLETE_ALL_COMBINE_MATERIAL",
+            "title": "",
+            "message": "全てセット済みです"
+        },
+        {
+            "id": "SUB_SKILL_COMBINE_EXECUTION",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "GET_COMBINE_SUB_SKILL",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "SUB_SKILL_COMBINE_SPECIFY_MATERIAL_TITLE",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "SUB_SKILL_COMBINE_SPECIFY_MATERIAL_SUFFIX",
+            "title": "",
+            "message": "(任意)"
+        },
+        {
+            "id": "MAIL_ACCEPT_EMPTY_TEXT",
+            "title": "",
+            "message": "受け取れるメールがありません"
+        },
+        {
+            "id": "MAIL_HISTORY_EMPTY_TEXT",
+            "title": "",
+            "message": "表示される履歴がありません"
+        },
+        {
+            "id": "POPULAR_VOTE_PLEASE_SELECT_UNIT",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "POPULAR_VOTE_LESS_LIMIT_SELCT_UNIT_CONFIRM",
+            "title": "確認",
+            "message": "最大3体まで投票できますが、このまま投票しますか？"
+        },
+        {
+            "id": "POPULAR_VOTE_DECISION_CONFIRM",
+            "title": "確認",
+            "message": "投票しますか？"
+        },
+        {
+            "id": "POPULAR_VOTE_GET_REWARD_ITEM_TEXT",
+            "title": "投票のお礼",
+            "message": "下記アイテムを獲得しました。"
+        },
+        {
+            "id": "POPULAR_VOTE_FIRST_PERIOD_TEXT",
+            "title": "",
+            "message": "前半終了期日{0}メンテナンスまで"
+        },
+        {
+            "id": "POPULAR_VOTE_LATTER_PERIOD_TEXT",
+            "title": "",
+            "message": "後半終了期日{0}まで"
+        },
+        {
+            "id": "POPULAR_VOTE_ONE_DAY_SELECT_CHARACTER_TEXT",
+            "title": "",
+            "message": "1日{0}キャラまで投票できます。 ※毎朝5時更新"
+        },
+        {
+            "id": "POPULAR_VOTE_END_TODAY",
+            "title": "",
+            "message": "本日の投票は終了しました"
+        },
+        {
+            "id": "POPULAR_VOTE_UNIT_ALREADY_SELECT",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "POPULAR_VOTE_LIMIT_UNIT_SELECT",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "POPULAR_VOTE_AGGREGATING",
+            "title": "",
+            "message": "現在集計中です。"
+        },
+        {
+            "id": "FARMING_TITLE",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "FARMING_REWARD_INFO",
+            "title": "",
+            "message": ""
+        },
+        {
+            "id": "PROFILE_CHANGE_NAME",
+            "title": "",
+            "message": "プレイヤー名を入力してください"
+        },
+        {
+            "id": "PROFILE_CHANGE_NAME_CHECK",
+            "title": "",
+            "message": "プレイヤー名を変更しますか？"
+        },
+        {
+            "id": "PROFILE_INPUT_NG_WORD",
+            "title": "",
+            "message": "不適切な内容が含まれています。内容を変更してください"
+        },
+        {
+            "id": "PROFILE_SHORTAGE_ITEM",
+            "title": "",
+            "message": "必要アイテムが足りません"
+        },
+        {
+            "id": "PROFILE_COPY_USER_ID",
+            "title": "",
+            "message": "プレイヤーIDをコピーしました"
+        },
+        {
+            "id": "PROFILE_SEND_FRIEND_SUCCESS",
+            "title": "",
+            "message": "フレンド申請しました"
+        },
+        {
+            "id": "PROFILE_SEND_FRIEND_ALREADY",
+            "title": "",
+            "message": "すでにフレンド申請済みです"
+        },
+        {
+            "id": "PROFILE_SEND_FRIEND_OVERFLOW_MY",
+            "title": "",
+            "message": "フレンドが上限に達しています"
+        },
+        {
+            "id": "PROFILE_SEND_FRIEND_OVERFLOW_OTHER",
+            "title": "",
+            "message": "相手のフレンドが上限に達しています"
+        },
+        {
+            "id": "PROFILE_SEND_FRIEND_APPROVAL_OVERFLOW_OTHER",
+            "title": "",
+            "message": "相手のフレンドが上限に達しています"
+        },
+        {
+            "id": "PROFILE_SEND_FRIEND_BLOCK",
+            "title": "",
+            "message": "相手のフレンドが上限に達しています"
+        },
+        {
+            "id": "PROFILE_BLOCK",
+            "title": "",
+            "message": "ブロックしました"
+        },
+        {
+            "id": "PROFILE_BLOCK_OVERFLOW",
+            "title": "",
+            "message": "ブロック数が上限に達しています"
+        },
+        {
+            "id": "PROFILE_BLOCK_CANCEL",
+            "title": "",
+            "message": "ブロックを解除しました"
+        },
+        {
+            "id": "PROFILE_BLOCK_FRIEND",
+            "title": "",
+            "message": "フレンドはブロックできません"
+        },
+        {
+            "id": "PROFILE_CHANGE_NAME_TITLE",
+            "title": "",
+            "message": "プレイヤー名変更"
+        },
+        {
+            "id": "PROFILE_CHANGE_NAME_LIMIT",
+            "title": "",
+            "message": "全角12文字まで入力可能"
+        },
+        {
+            "id": "PROFILE_CHANGE_NAME_FIRST_SESSION_FREE",
+            "title": "",
+            "message": "※初回無料"
+        },
+        {
+            "id": "PROFILE_USER_NAME",
+            "title": "",
+            "message": "プレイヤー名"
+        },
+        {
+            "id": "PROFILE_USER_LEVEL",
+            "title": "",
+            "message": "プレイヤーLv"
+        },
+        {
+            "id": "PROFILE_USER_NEXT_LEVEL",
+            "title": "",
+            "message": "次のLvまで"
+        },
+        {
+            "id": "PROFILE_USER_TOTAL_POWER",
+            "title": "",
+            "message": "総合戦力"
+        },
+        {
+            "id": "PROFILE_USER_BELONG_GUILD",
+            "title": "",
+            "message": "所属ギルド"
+        },
+        {
+            "id": "PROFILE_USER_COMMENT",
+            "title": "",
+            "message": "コメント"
+        },
+        {
+            "id": "PROFILE_USER_SERVER_INFO",
+            "title": "",
+            "message": "サーバー情報"
+        },
+        {
+            "id": "PROFILE_USER_ID",
+            "title": "",
+            "message": "プレイヤーID"
+        },
+        {
+            "id": "PROFILE_FORMATION",
+            "title": "",
+            "message": "編成"
+        },
+        {
+            "id": "PROFILE_INPUT_SERIAL_CODE_BUTTON",
+            "title": "",
+            "message": "シリアルコード入力"
+        },
+        {
+            "id": "GUILD_MANAGE_LEADER_ONLY_TOAST",
+            "title": "",
+            "message": "リーダーのみ操作可能です"
+        },
+        {
+            "id": "GUILD_DESTROY_WARNING_TEXT",
+            "title": "",
+            "message": "※解散後、次のギルドへの申請が可能になるまで\r\n{0}時間のクールタイムが発生します"
+        },
+        {
+            "id": "GUILD_LEAVE_WARNING_TEXT",
+            "title": "",
+            "message": "※脱退後、次のギルドへの申請が可能になるまで\r\n{0}時間のクールタイムが発生します"
+        }
+    ]
+}

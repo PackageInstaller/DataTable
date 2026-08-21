@@ -1,0 +1,2429 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 1338947996867666285
+    },
+    "m_Name": "engraving_ability_data",
+    "records": [
+        {
+            "id": 1,
+            "abilityDataList": [
+                {
+                    "id": 1,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃力+10%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 6,
+                            "param": [
+                                {
+                                    "num": [
+                                        10
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
+                {
+                    "id": 1,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃力+15%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 6,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 1,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃力+20%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 6,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
+                {
+                    "id": 1,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃力+25%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 6,
+                            "param": [
+                                {
+                                    "num": [
+                                        25
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
+                {
+                    "id": 1,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃力+30%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 6,
+                            "param": [
+                                {
+                                    "num": [
+                                        30
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "abilityDataList": [
+                {
+                    "id": 2,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "物理防御力+10%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        10
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
+                {
+                    "id": 2,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "物理防御力+15%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 2,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "物理防御力+20%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
+                {
+                    "id": 2,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "物理防御力+25%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        25
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
+                {
+                    "id": 2,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "物理防御力+30%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        30
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "abilityDataList": [
+                {
+                    "id": 3,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃力+4% 耐久+4% ",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 6,
+                            "param": [
+                                {
+                                    "num": [
+                                        4
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 1,
+                            "param": [
+                                {
+                                    "num": [
+                                        4
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
+                {
+                    "id": 3,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃力+8% 耐久+8%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 6,
+                            "param": [
+                                {
+                                    "num": [
+                                        8
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 1,
+                            "param": [
+                                {
+                                    "num": [
+                                        8
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 3,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃力+12% 耐久+12%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 6,
+                            "param": [
+                                {
+                                    "num": [
+                                        12
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 1,
+                            "param": [
+                                {
+                                    "num": [
+                                        12
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
+                {
+                    "id": 3,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃力+16% 耐久+16%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 6,
+                            "param": [
+                                {
+                                    "num": [
+                                        16
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 1,
+                            "param": [
+                                {
+                                    "num": [
+                                        16
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
+                {
+                    "id": 3,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃力+20% 耐久+20%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 6,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 1,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "abilityDataList": [
+                {
+                    "id": 4,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "物理防御力+5% 魔法防御力+5%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        5
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 16,
+                            "param": [
+                                {
+                                    "num": [
+                                        5
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
+                {
+                    "id": 4,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "物理防御力+10% 魔法防御力+10%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        10
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 16,
+                            "param": [
+                                {
+                                    "num": [
+                                        10
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 4,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "物理防御力+15% 魔法防御力+15%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 16,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
+                {
+                    "id": 4,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "物理防御力+20% 魔法防御力+20%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 16,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
+                {
+                    "id": 4,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "物理防御力+25% 魔法防御力+25%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        25
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 16,
+                            "param": [
+                                {
+                                    "num": [
+                                        25
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "abilityDataList": [
+                {
+                    "id": 5,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "会心率+3% 会心ダメージ率+3%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 78,
+                            "param": [
+                                {
+                                    "num": [
+                                        3
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 80,
+                            "param": [
+                                {
+                                    "num": [
+                                        3
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
+                {
+                    "id": 5,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "会心率+6% 会心ダメージ率+6%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 78,
+                            "param": [
+                                {
+                                    "num": [
+                                        6
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 80,
+                            "param": [
+                                {
+                                    "num": [
+                                        6
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 5,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "会心率+9% 会心ダメージ率+9%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 78,
+                            "param": [
+                                {
+                                    "num": [
+                                        9
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 80,
+                            "param": [
+                                {
+                                    "num": [
+                                        9
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
+                {
+                    "id": 5,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "会心率+12% 会心ダメージ率+12%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 78,
+                            "param": [
+                                {
+                                    "num": [
+                                        12
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 80,
+                            "param": [
+                                {
+                                    "num": [
+                                        12
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
+                {
+                    "id": 5,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "会心率+15% 会心ダメージ率+15%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 78,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 80,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "abilityDataList": [
+                {
+                    "id": 6,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "耐久力+10%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 1,
+                            "param": [
+                                {
+                                    "num": [
+                                        10
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
+                {
+                    "id": 6,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "耐久力+15%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 1,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 6,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "耐久力+20%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 1,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
+                {
+                    "id": 6,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "耐久力+25%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 1,
+                            "param": [
+                                {
+                                    "num": [
+                                        25
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
+                {
+                    "id": 6,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "耐久力+30%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 1,
+                            "param": [
+                                {
+                                    "num": [
+                                        30
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "abilityDataList": [
+                {
+                    "id": 7,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "魔法防御力+10%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 16,
+                            "param": [
+                                {
+                                    "num": [
+                                        10
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
+                {
+                    "id": 7,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "魔法防御力+15%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 16,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 7,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "魔法防御力+20%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 16,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
+                {
+                    "id": 7,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "魔法防御力+25%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 16,
+                            "param": [
+                                {
+                                    "num": [
+                                        25
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
+                {
+                    "id": 7,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "魔法防御力+30%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 16,
+                            "param": [
+                                {
+                                    "num": [
+                                        30
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "abilityDataList": [
+                {
+                    "id": 8,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "回復率+10%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 88,
+                            "param": [
+                                {
+                                    "num": [
+                                        10
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
+                {
+                    "id": 8,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "回復率+15%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 88,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 8,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "回復率+20%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 88,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
+                {
+                    "id": 8,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "回復率+25%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 88,
+                            "param": [
+                                {
+                                    "num": [
+                                        25
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
+                {
+                    "id": 8,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "回復率+30%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 88,
+                            "param": [
+                                {
+                                    "num": [
+                                        30
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "abilityDataList": [
+                {
+                    "id": 9,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "回避率+10%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 90,
+                            "param": [
+                                {
+                                    "num": [
+                                        10
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
+                {
+                    "id": 9,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "回避率+15%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 90,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 9,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "回避率+20%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 90,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
+                {
+                    "id": 9,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "回避率+25%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 90,
+                            "param": [
+                                {
+                                    "num": [
+                                        25
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
+                {
+                    "id": 9,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "回避率+30%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 90,
+                            "param": [
+                                {
+                                    "num": [
+                                        30
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "abilityDataList": [
+                {
+                    "id": 10,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃速度+10%(同効果は重複しない)",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 26,
+                            "param": [
+                                {
+                                    "num": [
+                                        10
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
+                {
+                    "id": 10,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃速度+15%(同効果は重複しない)",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 26,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 10,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃速度+20%(同効果は重複しない)",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 26,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
+                {
+                    "id": 10,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃速度+25%(同効果は重複しない)",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 26,
+                            "param": [
+                                {
+                                    "num": [
+                                        25
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
+                {
+                    "id": 10,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "攻撃速度+30%(同効果は重複しない)",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 26,
+                            "param": [
+                                {
+                                    "num": [
+                                        30
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "abilityDataList": [
+                {
+                    "id": 11,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "移動速度+20%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 21,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
+                {
+                    "id": 11,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "移動速度+25%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 21,
+                            "param": [
+                                {
+                                    "num": [
+                                        25
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 11,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "移動速度+30%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 21,
+                            "param": [
+                                {
+                                    "num": [
+                                        30
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
+                {
+                    "id": 11,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "移動速度+35%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 21,
+                            "param": [
+                                {
+                                    "num": [
+                                        35
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
+                {
+                    "id": 11,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "移動速度+40%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 21,
+                            "param": [
+                                {
+                                    "num": [
+                                        40
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "abilityDataList": [
+                {
+                    "id": 12,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "貫通率+5%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 86,
+                            "param": [
+                                {
+                                    "num": [
+                                        5
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
+                {
+                    "id": 12,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "貫通率+10%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 86,
+                            "param": [
+                                {
+                                    "num": [
+                                        10
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 12,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "貫通率+15%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 86,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
+                {
+                    "id": 12,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "貫通率+20%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 86,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
+                {
+                    "id": 12,
+                    "rarity": 0,
+                    "name": "",
+                    "kana": "",
+                    "text": "貫通率+25%",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 86,
+                            "param": [
+                                {
+                                    "num": [
+                                        25
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 26,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
+                }
+            ]
+        }
+    ]
+}
