@@ -27,7 +27,7 @@ https://open.ys4fun.com/game-website-server/pass/sdk/get_game_hot_update_version
 <downloadUrl>/<md5>.ys
 ```
 
-本地布局与官方修复逻辑一致，按**原始路径**保存（不做 hash 重命名）：
+本地布局与官方修复逻辑一致，按**原始路径**保存：
 
 ```text
 <输出目录>/Assets/<清单原始路径>
