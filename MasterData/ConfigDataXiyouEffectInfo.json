@@ -1,0 +1,440 @@
+[
+  {
+    "ID": 1001,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": 100
+  },
+  {
+    "ID": 1002,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -100
+  },
+  {
+    "ID": 1003,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -100,
+    "P2": 1
+  },
+  {
+    "ID": 2001,
+    "FuncType": "XiyouEffectType_ChangePackCoin",
+    "P1": 100
+  },
+  {
+    "ID": 2002,
+    "FuncType": "XiyouEffectType_ChangePackCoin",
+    "P1": -100
+  },
+  {
+    "ID": 2003,
+    "FuncType": "XiyouEffectType_ChangePackCoin",
+    "P1": -100,
+    "P2": 1
+  },
+  {
+    "ID": 3001,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 1,
+    "P2": 1000
+  },
+  {
+    "ID": 3002,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": 200
+  },
+  {
+    "ID": 4001,
+    "FuncType": "XiyouEffectType_GetCardRandom",
+    "P1": 1,
+    "P4": [
+      40042008,
+      40042009
+    ]
+  },
+  {
+    "ID": 4002,
+    "FuncType": "XiyouEffectType_GetCardRandom",
+    "P1": 2
+  },
+  {
+    "ID": 5001,
+    "FuncType": "XiyouEffectType_GetCard",
+    "P1": 40042008,
+    "P2": 1
+  },
+  {
+    "ID": 5002,
+    "FuncType": "XiyouEffectType_GetCard",
+    "P1": 40042008,
+    "P2": 2
+  },
+  {
+    "ID": 6001,
+    "FuncType": "XiyouEffectType_RemoveCard",
+    "P1": 1
+  },
+  {
+    "ID": 6002,
+    "FuncType": "XiyouEffectType_RemoveCard",
+    "P1": 2
+  },
+  {
+    "ID": 7001,
+    "FuncType": "XiyouEffectType_CopyCardFromCardGroup",
+    "P1": 1,
+    "P2": 2
+  },
+  {
+    "ID": 7002,
+    "FuncType": "XiyouEffectType_CopyCardFromCardGroup",
+    "P1": 2,
+    "P2": 2
+  },
+  {
+    "ID": 8001,
+    "FuncType": "XiyouEffectType_ChangeHpLimit",
+    "P1": 1,
+    "P2": 1000
+  },
+  {
+    "ID": 8002,
+    "FuncType": "XiyouEffectType_ChangeHpLimit",
+    "P1": 2,
+    "P2": 2000
+  },
+  {
+    "ID": 10001,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": 100
+  },
+  {
+    "ID": 10002,
+    "FuncType": "XiyouEffectType_ChangePackCoin",
+    "P1": 1
+  },
+  {
+    "ID": 10003,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": 20
+  },
+  {
+    "ID": 10004,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": 5000
+  },
+  {
+    "ID": 20001,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": 20000
+  },
+  {
+    "ID": 20002,
+    "FuncType": "XiyouEffectType_RemoveCard",
+    "P1": 1
+  },
+  {
+    "ID": 20003,
+    "FuncType": "XiyouEffectType_CopyCardFromCardGroup",
+    "P1": 1,
+    "P2": 1
+  },
+  {
+    "ID": 20004,
+    "FuncType": "XiyouEffectType_GetCard",
+    "P1": 50044013,
+    "P2": 1
+  },
+  {
+    "ID": 20005,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": 150
+  },
+  {
+    "ID": 20006,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": -15000
+  },
+  {
+    "ID": 20007,
+    "FuncType": "XiyouEffectType_RemoveCard",
+    "P1": 1
+  },
+  {
+    "ID": 20008,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": 50
+  },
+  {
+    "ID": 20009,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -30
+  },
+  {
+    "ID": 20010,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": -4000
+  },
+  {
+    "ID": 20011
+  },
+  {
+    "ID": 20012,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": -999999
+  },
+  {
+    "ID": 20013,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": 500
+  },
+  {
+    "ID": 20014,
+    "FuncType": "XiyouEffectType_RemoveCard",
+    "P1": 1
+  },
+  {
+    "ID": 20015,
+    "FuncType": "XiyouEffectType_ChangeHpLimit",
+    "P1": 2,
+    "P2": 5000
+  },
+  {
+    "ID": 20016,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": 30000
+  },
+  {
+    "ID": 20017,
+    "FuncType": "XiyouEffectType_ChangeHpLimit",
+    "P1": 2,
+    "P2": 10000
+  },
+  {
+    "ID": 20018,
+    "FuncType": "XiyouEffectType_GetCard",
+    "P1": 50044049,
+    "P2": 1
+  },
+  {
+    "ID": 20019,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": 50
+  },
+  {
+    "ID": 20020,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": -10000
+  },
+  {
+    "ID": 20021,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -50
+  },
+  {
+    "ID": 20022,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": 40000
+  },
+  {
+    "ID": 20023,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": -20000
+  },
+  {
+    "ID": 20024,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": 50
+  },
+  {
+    "ID": 20025,
+    "FuncType": "XiyouEffectType_ChangePackCoin",
+    "P1": 2
+  },
+  {
+    "ID": 20026,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": -5000
+  },
+  {
+    "ID": 20027
+  },
+  {
+    "ID": 20028,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -20,
+    "P2": 1
+  },
+  {
+    "ID": 20029,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -30,
+    "P2": 1
+  },
+  {
+    "ID": 20030,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -50,
+    "P2": 1
+  },
+  {
+    "ID": 20031,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -150,
+    "P2": 1
+  },
+  {
+    "ID": 20032,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": -5000
+  },
+  {
+    "ID": 20033,
+    "FuncType": "XiyouEffectType_CopyCardFromCardGroup",
+    "P1": 1,
+    "P2": 2
+  },
+  {
+    "ID": 20034,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -30,
+    "P2": 1
+  },
+  {
+    "ID": 20035,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": 10000
+  },
+  {
+    "ID": 20036,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -90,
+    "P2": 1
+  },
+  {
+    "ID": 20037,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": 20000
+  },
+  {
+    "ID": 20038,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -150,
+    "P2": 1
+  },
+  {
+    "ID": 20039,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": 60000
+  },
+  {
+    "ID": 20040,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -100
+  },
+  {
+    "ID": 20041,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": -15000
+  },
+  {
+    "ID": 20042,
+    "FuncType": "XiyouEffectType_RemoveCard",
+    "P1": 1
+  },
+  {
+    "ID": 20043,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": -10000
+  },
+  {
+    "ID": 20044,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": 50
+  },
+  {
+    "ID": 20045,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -50,
+    "P2": 1
+  },
+  {
+    "ID": 20046,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": 15000
+  },
+  {
+    "ID": 20047,
+    "FuncType": "XiyouEffectType_ChangePackCoin",
+    "P1": -999
+  },
+  {
+    "ID": 20048,
+    "FuncType": "XiyouEffectType_CopyCardFromCardGroup",
+    "P1": 1,
+    "P2": 1
+  },
+  {
+    "ID": 20049,
+    "FuncType": "XiyouEffectType_ChangeHpLimit",
+    "P1": 2,
+    "P2": -10000
+  },
+  {
+    "ID": 20050,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": 60
+  },
+  {
+    "ID": 20051,
+    "FuncType": "XiyouEffectType_RecoverHp",
+    "P1": 2,
+    "P2": 5000
+  },
+  {
+    "ID": 20052,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -100,
+    "P2": 1
+  },
+  {
+    "ID": 20053,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -180,
+    "P2": 1
+  },
+  {
+    "ID": 20054,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -40,
+    "P2": 1
+  },
+  {
+    "ID": 20055,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": -80,
+    "P2": 1
+  },
+  {
+    "ID": 20056,
+    "FuncType": "XiyouEffectType_ChangeGold",
+    "P1": 100
+  }
+]

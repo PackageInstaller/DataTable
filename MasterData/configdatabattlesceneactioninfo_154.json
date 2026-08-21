@@ -1,0 +1,10034 @@
+[
+  {
+    "ID": 902561136,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902561137,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      201
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 4
+      }
+    ],
+    "Param4": [
+      300
+    ]
+  },
+  {
+    "ID": 902561138,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902561139,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902561113
+    ]
+  },
+  {
+    "ID": 902561140,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902561141,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902561142,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902561143,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      1
+    ]
+  },
+  {
+    "ID": 902561144,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902561145,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 902561146,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902561147,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4
+    ],
+    "Param2": [
+      21
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 10
+      }
+    ],
+    "Param4": [
+      100130493
+    ],
+    "Param6": [
+      0
+    ],
+    "Param7": [
+      {
+        "X": 13
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      201
+    ],
+    "Param11": [
+      2
+    ]
+  },
+  {
+    "ID": 902561148,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902561149,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 902561150,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902561151,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4,
+      4,
+      4,
+      4
+    ],
+    "Param2": [
+      21,
+      21,
+      21,
+      21
+    ],
+    "Param3": [
+      {
+        "X": 12,
+        "Y": 6
+      },
+      {
+        "X": 14,
+        "Y": 6
+      },
+      {
+        "X": 12,
+        "Y": 8
+      },
+      {
+        "X": 14,
+        "Y": 8
+      }
+    ],
+    "Param4": [
+      121300025,
+      121300025,
+      121300025,
+      121300025
+    ],
+    "Param6": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Param7": [
+      {
+        "X": 12
+      },
+      {
+        "X": 14
+      },
+      {
+        "X": 12
+      },
+      {
+        "X": 14
+      }
+    ],
+    "Param8": [
+      10000,
+      10000,
+      10000,
+      10000
+    ],
+    "Param9": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "Param10": [
+      221,
+      222,
+      223,
+      224
+    ],
+    "Param11": [
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "ID": 902561152,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902563101,
+    "ActionType": "BattleSceneActionType_Music",
+    "Param5": "BGM_Emotion_Uncertain_3"
+  },
+  {
+    "ID": 902563102,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      202
+    ],
+    "Param2": [
+      800009187
+    ]
+  },
+  {
+    "ID": 902563103,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      100
+    ],
+    "Param5": "Stun",
+    "Param6": [
+      -1
+    ]
+  },
+  {
+    "ID": 902563104,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902563105,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      404113101
+    ]
+  },
+  {
+    "ID": 902571101,
+    "ActionType": "BattleSceneActionType_AttachBuff",
+    "Param1": [
+      201,
+      101
+    ],
+    "Param2": [
+      700000010,
+      700000115
+    ]
+  },
+  {
+    "ID": 902571102,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 3
+      },
+      {
+        "X": 11,
+        "Y": 2
+      },
+      {
+        "X": 9,
+        "Y": 2
+      },
+      {
+        "X": 10,
+        "Y": 2
+      },
+      {
+        "X": 11,
+        "Y": 1
+      },
+      {
+        "X": 9,
+        "Y": 1
+      },
+      {
+        "X": 10,
+        "Y": 1
+      }
+    ],
+    "Param7": [
+      {
+        "X": 10,
+        "Y": 6
+      },
+      {
+        "X": 10,
+        "Y": 6
+      },
+      {
+        "X": 10,
+        "Y": 6
+      },
+      {
+        "X": 10,
+        "Y": 6
+      },
+      {
+        "X": 10,
+        "Y": 6
+      },
+      {
+        "X": 10,
+        "Y": 6
+      },
+      {
+        "X": 10,
+        "Y": 6
+      }
+    ]
+  },
+  {
+    "ID": 902571103,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571104,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 6
+      }
+    ]
+  },
+  {
+    "ID": 902571105,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      102
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 5
+      }
+    ],
+    "Param7": [
+      {
+        "X": 10,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 902571106,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      102
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 5
+      }
+    ],
+    "Param7": [
+      {
+        "X": 10,
+        "Y": 9
+      }
+    ]
+  },
+  {
+    "ID": 902571107,
+    "ActionType": "BattleSceneActionType_Music",
+    "Param5": "BGM_Emotion_Uncertain_2"
+  },
+  {
+    "ID": 902571108,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571101
+    ]
+  },
+  {
+    "ID": 902571109,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571110,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      800009074
+    ]
+  },
+  {
+    "ID": 902571111,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1200
+    ]
+  },
+  {
+    "ID": 902571112,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571108
+    ]
+  },
+  {
+    "ID": 902571113,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571114,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_Idle",
+    "Param6": [
+      -1
+    ]
+  },
+  {
+    "ID": 902571115,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571116,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 2
+      }
+    ],
+    "Param12": 1
+  },
+  {
+    "ID": 902571117,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      102
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 5
+      }
+    ],
+    "Param7": [
+      {
+        "X": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571118,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      102
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 3
+      }
+    ],
+    "Param7": [
+      {
+        "X": 10,
+        "Y": 2
+      }
+    ]
+  },
+  {
+    "ID": 902571119,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571120,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      102
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 2
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902571121,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571122,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      101,
+      103,
+      104,
+      105,
+      106,
+      107
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 3
+      },
+      {
+        "X": 11,
+        "Y": 3
+      },
+      {
+        "X": 11,
+        "Y": 3
+      },
+      {
+        "X": 11,
+        "Y": 3
+      },
+      {
+        "X": 11,
+        "Y": 3
+      },
+      {
+        "X": 11,
+        "Y": 3
+      }
+    ],
+    "Param4": [
+      500,
+      500,
+      500,
+      500,
+      500,
+      500
+    ]
+  },
+  {
+    "ID": 902571123,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571124,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571109
+    ]
+  },
+  {
+    "ID": 902571125,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571126,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 8
+      },
+      {
+        "X": 10,
+        "Y": 8
+      },
+      {
+        "X": 10,
+        "Y": 8
+      },
+      {
+        "X": 10,
+        "Y": 8
+      },
+      {
+        "X": 10,
+        "Y": 8
+      },
+      {
+        "X": 10,
+        "Y": 8
+      },
+      {
+        "X": 10,
+        "Y": 8
+      }
+    ],
+    "Param4": [
+      500,
+      500,
+      500,
+      500,
+      500,
+      500,
+      500
+    ]
+  },
+  {
+    "ID": 902571127,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571128,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 6
+      },
+      {
+        "X": 11,
+        "Y": 6
+      },
+      {
+        "X": 8,
+        "Y": 7
+      },
+      {
+        "X": 9,
+        "Y": 6
+      },
+      {
+        "X": 12,
+        "Y": 7
+      },
+      {
+        "X": 8,
+        "Y": 6
+      },
+      {
+        "X": 12,
+        "Y": 6
+      }
+    ],
+    "Param7": [
+      {
+        "X": 10,
+        "Y": 8
+      },
+      {
+        "X": 10,
+        "Y": 8
+      },
+      {
+        "X": 10,
+        "Y": 8
+      },
+      {
+        "X": 10,
+        "Y": 8
+      },
+      {
+        "X": 10,
+        "Y": 8
+      },
+      {
+        "X": 10,
+        "Y": 8
+      },
+      {
+        "X": 10,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 902571129,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      500
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 902571130,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      102
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571131,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571132,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      120000400
+    ],
+    "Param2": [
+      10001
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 902571133,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      103
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571134,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571135,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      120600200
+    ],
+    "Param2": [
+      10002
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 902571136,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      104
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571137,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571138,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      114400100
+    ],
+    "Param2": [
+      10003
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 902571139,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      105
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571140,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571141,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      120800100
+    ],
+    "Param2": [
+      10004
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 902571142,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      106
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571143,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571144,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      110000600
+    ],
+    "Param2": [
+      10005
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 902571145,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      107
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571146,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571147,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      101
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 7
+      }
+    ],
+    "Param7": [
+      {
+        "X": 10,
+        "Y": 9
+      }
+    ]
+  },
+  {
+    "ID": 902571148,
+    "ActionType": "BattleSceneActionType_ActorCastSkill",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      201
+    ],
+    "Param4": [
+      61110000
+    ]
+  },
+  {
+    "ID": 902571149,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Stun",
+    "Param6": [
+      -1
+    ]
+  },
+  {
+    "ID": 902571150,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571151,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571111
+    ]
+  },
+  {
+    "ID": 902571152,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571153,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 18
+      }
+    ]
+  },
+  {
+    "ID": 902571154,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571155,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4
+    ],
+    "Param2": [
+      21
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 18
+      }
+    ],
+    "Param4": [
+      100114304
+    ],
+    "Param6": [
+      0
+    ],
+    "Param7": [
+      {
+        "X": 11
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      202
+    ],
+    "Param11": [
+      2
+    ]
+  },
+  {
+    "ID": 902571156,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571157,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571112
+    ]
+  },
+  {
+    "ID": 902571158,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571159,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      202
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "SkillAnnounce",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571160,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571161,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 6
+      }
+    ]
+  },
+  {
+    "ID": 902571162,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      1
+    ]
+  },
+  {
+    "ID": 902571163,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571164,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 18
+      }
+    ]
+  },
+  {
+    "ID": 902571165,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571166,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4
+    ],
+    "Param2": [
+      21
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 18
+      }
+    ],
+    "Param4": [
+      100120100
+    ],
+    "Param6": [
+      0
+    ],
+    "Param7": [
+      {
+        "X": 9
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      201
+    ],
+    "Param11": [
+      2
+    ]
+  },
+  {
+    "ID": 902571167,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571168,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571169,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571170,
+    "ActionType": "BattleSceneActionType_CameraShake",
+    "Param1": [
+      1000
+    ],
+    "Param2": [
+      2000
+    ],
+    "Param4": [
+      1500
+    ]
+  },
+  {
+    "ID": 902571171,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      810500580
+    ],
+    "Param2": [
+      10006
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571172,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571173,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      810500180
+    ],
+    "Param2": [
+      10007
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571174,
+    "ActionType": "BattleSceneActionType_Music",
+    "Param5": "BGM_Combat_Crisis_2"
+  },
+  {
+    "ID": 902571175,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4
+    ],
+    "Param2": [
+      21
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ],
+    "Param4": [
+      124010359
+    ],
+    "Param6": [
+      0
+    ],
+    "Param7": [
+      {
+        "X": 10
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      203
+    ],
+    "Param11": [
+      1
+    ]
+  },
+  {
+    "ID": 902571176,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      810701140
+    ],
+    "Param2": [
+      10910
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571177,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571178,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 18
+      }
+    ]
+  },
+  {
+    "ID": 902571179,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571180,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571113
+    ]
+  },
+  {
+    "ID": 902571181,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571182,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 902571183,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571184,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 6
+      },
+      {
+        "X": 11,
+        "Y": 6
+      },
+      {
+        "X": 8,
+        "Y": 7
+      },
+      {
+        "X": 9,
+        "Y": 6
+      },
+      {
+        "X": 12,
+        "Y": 7
+      },
+      {
+        "X": 8,
+        "Y": 6
+      },
+      {
+        "X": 12,
+        "Y": 6
+      }
+    ],
+    "Param7": [
+      {
+        "X": 10,
+        "Y": 10
+      },
+      {
+        "X": 10,
+        "Y": 10
+      },
+      {
+        "X": 10,
+        "Y": 10
+      },
+      {
+        "X": 10,
+        "Y": 10
+      },
+      {
+        "X": 10,
+        "Y": 10
+      },
+      {
+        "X": 10,
+        "Y": 10
+      },
+      {
+        "X": 10,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 902571185,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571186,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      500
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 902571187,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571188,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      102
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571189,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571190,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      120000400
+    ],
+    "Param2": [
+      10008
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571191,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571192,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571193,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      120600200
+    ],
+    "Param2": [
+      10009
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571194,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      103
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571195,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571196,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      114400100
+    ],
+    "Param2": [
+      10010
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571197,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      104
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571198,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571199,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      122500051
+    ],
+    "Param2": [
+      10011
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571200,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      105
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571201,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571202,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      110000600
+    ],
+    "Param2": [
+      10012
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571203,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      106
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571204,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      107
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571205,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571206,
+    "ActionType": "BattleSceneActionType_CameraShake",
+    "Param1": [
+      1000
+    ],
+    "Param2": [
+      2000
+    ],
+    "Param4": [
+      1000
+    ]
+  },
+  {
+    "ID": 902571207,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      203
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571208,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      300
+    ]
+  },
+  {
+    "ID": 902571209,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_ReturnBackRootMotion",
+    "Param6": [
+      0
+    ],
+    "Param12": 1000
+  },
+  {
+    "ID": 902571210,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      102
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_ReturnBackRootMotion",
+    "Param6": [
+      0
+    ],
+    "Param12": 1000
+  },
+  {
+    "ID": 902571211,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      103
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_ReturnBackRootMotion",
+    "Param6": [
+      0
+    ],
+    "Param12": 1000
+  },
+  {
+    "ID": 902571212,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      104
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_ReturnBackRootMotion",
+    "Param6": [
+      0
+    ],
+    "Param12": 1000
+  },
+  {
+    "ID": 902571213,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      105
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_ReturnBackRootMotion",
+    "Param6": [
+      0
+    ],
+    "Param12": 1000
+  },
+  {
+    "ID": 902571214,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      106
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_ReturnBackRootMotion",
+    "Param6": [
+      0
+    ],
+    "Param12": 1000
+  },
+  {
+    "ID": 902571215,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      107
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_ReturnBackRootMotion",
+    "Param6": [
+      0
+    ],
+    "Param12": 1000
+  },
+  {
+    "ID": 902571216,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800000001
+    ],
+    "Param2": [
+      10025
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 10
+      }
+    ],
+    "Param4": [
+      1
+    ]
+  },
+  {
+    "ID": 902571217,
+    "ActionType": "BattleSceneActionType_CameraShake",
+    "Param1": [
+      1000
+    ],
+    "Param2": [
+      2000
+    ],
+    "Param4": [
+      1000
+    ]
+  },
+  {
+    "ID": 902571218,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 902571219,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 18
+      }
+    ]
+  },
+  {
+    "ID": 902571220,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571221,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571116
+    ]
+  },
+  {
+    "ID": 902571222,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571223,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      500
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 902571224,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571225,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      104
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 7
+      }
+    ],
+    "Param7": [
+      {
+        "X": 10,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 902571226,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571227,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      101
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 7
+      }
+    ],
+    "Param7": [
+      {
+        "X": 9,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 902571228,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571229,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      104
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 7
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902571230,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571231,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571118
+    ]
+  },
+  {
+    "ID": 902571232,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571233,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      104
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 10
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902571234,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571235,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571121
+    ]
+  },
+  {
+    "ID": 902571236,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571237,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      104
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill03",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571238,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571239,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 18
+      }
+    ]
+  },
+  {
+    "ID": 902571240,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571241,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 902571242,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571243,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      29000007
+    ],
+    "Param2": [
+      201
+    ]
+  },
+  {
+    "ID": 902571244,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571245,
+    "ActionType": "BattleSceneActionType_CameraFadeIn",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 902571246,
+    "ActionType": "BattleSceneActionType_Music",
+    "Param5": "BGM_Emotion_Uncertain_5"
+  },
+  {
+    "ID": 902571247,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009037
+    ],
+    "Param2": [
+      10013
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 902571248,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      2
+    ],
+    "Param2": [
+      11
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 10
+      }
+    ],
+    "Param4": [
+      100110400
+    ],
+    "Param6": [
+      0
+    ],
+    "Param7": [
+      {
+        "X": 3
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      108
+    ],
+    "Param11": [
+      1
+    ]
+  },
+  {
+    "ID": 902571249,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009096
+    ],
+    "Param2": [
+      10014
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 902571250,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      29000016
+    ],
+    "Param2": [
+      108
+    ]
+  },
+  {
+    "ID": 902571251,
+    "ActionType": "BattleSceneActionType_CameraFadeOut",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 902571252,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 902571253,
+    "ActionType": "BattleSceneActionType_CameraFadeIn",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 902571254,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      108
+    ],
+    "Param2": [
+      1
+    ]
+  },
+  {
+    "ID": 902571255,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10014
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 902571256,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      2
+    ],
+    "Param2": [
+      11
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 10
+      }
+    ],
+    "Param4": [
+      100110500
+    ],
+    "Param6": [
+      0
+    ],
+    "Param7": [
+      {
+        "X": 3,
+        "Y": 20
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      109
+    ],
+    "Param11": [
+      1
+    ]
+  },
+  {
+    "ID": 902571257,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      2
+    ],
+    "Param2": [
+      11
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 11
+      }
+    ],
+    "Param4": [
+      100111300
+    ],
+    "Param6": [
+      0
+    ],
+    "Param7": [
+      {
+        "X": 3
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      110
+    ],
+    "Param11": [
+      1
+    ]
+  },
+  {
+    "ID": 902571258,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      29000012
+    ],
+    "Param2": [
+      110
+    ]
+  },
+  {
+    "ID": 902571259,
+    "ActionType": "BattleSceneActionType_CameraFadeOut",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 902571260,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 902571261,
+    "ActionType": "BattleSceneActionType_CameraFadeIn",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 902571262,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      109
+    ],
+    "Param2": [
+      1
+    ]
+  },
+  {
+    "ID": 902571263,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      110
+    ],
+    "Param2": [
+      1
+    ]
+  },
+  {
+    "ID": 902571264,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10013
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 902571265,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      29000007
+    ],
+    "Param2": [
+      201
+    ]
+  },
+  {
+    "ID": 902571266,
+    "ActionType": "BattleSceneActionType_CameraFadeOut",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 902571267,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 902571268,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      0
+    ]
+  },
+  {
+    "ID": 902571269,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571270,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      201
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 10
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902571271,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571272,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill03",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571273,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571274,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 9
+      }
+    ]
+  },
+  {
+    "ID": 902571275,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      120100040
+    ],
+    "Param2": [
+      10015
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 9
+      }
+    ]
+  },
+  {
+    "ID": 902571276,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      104
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Story_injured",
+    "Param6": [
+      -1
+    ]
+  },
+  {
+    "ID": 902571277,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      104
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Story_injured_Loop",
+    "Param6": [
+      -1
+    ]
+  },
+  {
+    "ID": 902571278,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571279,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      800009001
+    ]
+  },
+  {
+    "ID": 902571280,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1200
+    ]
+  },
+  {
+    "ID": 902571281,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571124
+    ]
+  },
+  {
+    "ID": 902571282,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571283,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 18
+      }
+    ]
+  },
+  {
+    "ID": 902571284,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571285,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571126
+    ]
+  },
+  {
+    "ID": 902571286,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571287,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill03",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571288,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571289,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571129
+    ]
+  },
+  {
+    "ID": 902571290,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571291,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      202
+    ],
+    "Param2": [
+      800009001
+    ]
+  },
+  {
+    "ID": 902571292,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1200
+    ]
+  },
+  {
+    "ID": 902571293,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      202
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 18
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902571294,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571295,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571130
+    ]
+  },
+  {
+    "ID": 902571296,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571297,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill03",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571298,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571299,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      1
+    ]
+  },
+  {
+    "ID": 902571300,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571301,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 12
+      }
+    ]
+  },
+  {
+    "ID": 902571302,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571303,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4
+    ],
+    "Param2": [
+      21
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 13
+      }
+    ],
+    "Param4": [
+      100120100
+    ],
+    "Param6": [
+      0
+    ],
+    "Param7": [
+      {
+        "X": 10
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      201
+    ],
+    "Param11": [
+      2
+    ]
+  },
+  {
+    "ID": 902571304,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571305,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      101
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 13
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902571306,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571307,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571131
+    ]
+  },
+  {
+    "ID": 902571308,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571309,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      201
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 10
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902571310,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571311,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 902571312,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571313,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571133
+    ]
+  },
+  {
+    "ID": 902571314,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571315,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      0
+    ]
+  },
+  {
+    "ID": 902571316,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571317,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571135
+    ]
+  },
+  {
+    "ID": 902571318,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571319,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill03",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902571320,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571321,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      120100032
+    ],
+    "Param2": [
+      10020
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 902571322,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571323,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      500
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 902571324,
+    "ActionType": "BattleSceneActionType_CameraShake",
+    "Param1": [
+      1000
+    ],
+    "Param2": [
+      2000
+    ],
+    "Param4": [
+      1000
+    ]
+  },
+  {
+    "ID": 902571325,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      120100041
+    ],
+    "Param2": [
+      10016
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571326,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      120100071
+    ],
+    "Param2": [
+      10017
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571327,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      120100020
+    ],
+    "Param2": [
+      10018
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571328,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10019
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571329,
+    "ActionType": "BattleSceneActionType_CameraFadeIn",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 902571330,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10020
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 902571331,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      1
+    ]
+  },
+  {
+    "ID": 902571332,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      203
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Stun",
+    "Param6": [
+      -1
+    ]
+  },
+  {
+    "ID": 902571333,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10910
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 902571334,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 902571335,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      104
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 10
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902571336,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      101
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 10
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902571337,
+    "ActionType": "BattleSceneActionType_CameraFadeOut",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 902571338,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571138
+    ]
+  },
+  {
+    "ID": 902571339,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571340,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      500
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 902571341,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571342,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902571139
+    ]
+  },
+  {
+    "ID": 902571343,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902571344,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_Idle",
+    "Param6": [
+      -1
+    ]
+  },
+  {
+    "ID": 902571345,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      102
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_Idle",
+    "Param6": [
+      -1
+    ]
+  },
+  {
+    "ID": 902571346,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      103
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_Idle",
+    "Param6": [
+      -1
+    ]
+  },
+  {
+    "ID": 902571347,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      104
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_Idle",
+    "Param6": [
+      -1
+    ]
+  },
+  {
+    "ID": 902571348,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      105
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_Idle",
+    "Param6": [
+      -1
+    ]
+  },
+  {
+    "ID": 902571349,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      106
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_Idle",
+    "Param6": [
+      -1
+    ]
+  },
+  {
+    "ID": 902571350,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      107
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Combat_Idle",
+    "Param6": [
+      -1
+    ]
+  },
+  {
+    "ID": 902573101,
+    "ActionType": "BattleSceneActionType_Music",
+    "Param5": "BGM_Emotion_Crisis_4"
+  },
+  {
+    "ID": 902573102,
+    "ActionType": "BattleSceneActionType_ActorCastSkill",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      202
+    ],
+    "Param4": [
+      61110000
+    ]
+  },
+  {
+    "ID": 902573103,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573104,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573105,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 20
+      }
+    ]
+  },
+  {
+    "ID": 902573106,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573107,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902573101
+    ]
+  },
+  {
+    "ID": 902573108,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573109,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "SkillAnnounce",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902573110,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573111,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      1
+    ]
+  },
+  {
+    "ID": 902573112,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 14
+      }
+    ]
+  },
+  {
+    "ID": 902573113,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573114,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      101
+    ],
+    "Param3": [
+      {
+        "X": 10
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902573115,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      102,
+      103,
+      104,
+      105,
+      106,
+      107
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 15
+      },
+      {
+        "X": 10,
+        "Y": 15
+      },
+      {
+        "X": 10,
+        "Y": 15
+      },
+      {
+        "X": 10,
+        "Y": 15
+      },
+      {
+        "X": 10,
+        "Y": 15
+      },
+      {
+        "X": 10,
+        "Y": 15
+      }
+    ],
+    "Param4": [
+      500,
+      500,
+      500,
+      500,
+      500,
+      500
+    ]
+  },
+  {
+    "ID": 902573116,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573117,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902573102
+    ]
+  },
+  {
+    "ID": 902573118,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573119,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      104
+    ],
+    "Param2": [
+      800009001
+    ]
+  },
+  {
+    "ID": 902573120,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 902573121,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      104
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 14
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902573122,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902573105
+    ]
+  },
+  {
+    "ID": 902573123,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573124,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      101,
+      103,
+      104,
+      105,
+      106,
+      107
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 14
+      },
+      {
+        "X": 11,
+        "Y": 14
+      },
+      {
+        "X": 11,
+        "Y": 14
+      },
+      {
+        "X": 11,
+        "Y": 14
+      },
+      {
+        "X": 11,
+        "Y": 14
+      },
+      {
+        "X": 11,
+        "Y": 14
+      }
+    ],
+    "Param4": [
+      500,
+      500,
+      500,
+      500,
+      500,
+      500
+    ]
+  },
+  {
+    "ID": 902573125,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573126,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902573106
+    ]
+  },
+  {
+    "ID": 902573127,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573128,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      102
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1000
+    ],
+    "Param5": "SkillAnnounce",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 902573129,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 17
+      }
+    ]
+  },
+  {
+    "ID": 902573130,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      }
+    ],
+    "Param4": [
+      300,
+      300,
+      300,
+      300,
+      300,
+      300,
+      300
+    ]
+  },
+  {
+    "ID": 902573131,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009013
+    ],
+    "Param2": [
+      10002
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 17
+      }
+    ]
+  },
+  {
+    "ID": 902573132,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      3000
+    ]
+  },
+  {
+    "ID": 902573133,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      2
+    ],
+    "Param2": [
+      11
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 17
+      }
+    ],
+    "Param4": [
+      100120100
+    ],
+    "Param6": [
+      0
+    ],
+    "Param7": [
+      {
+        "X": 10
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      108
+    ],
+    "Param11": [
+      1
+    ]
+  },
+  {
+    "ID": 902573134,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10002
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 17
+      }
+    ]
+  },
+  {
+    "ID": 902573135,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573136,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902573112
+    ]
+  },
+  {
+    "ID": 902573137,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573138,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      108
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 17
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902573139,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573140,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      108
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 17
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902573141,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573142,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      108
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 16
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902573143,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573144,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902573113
+    ]
+  },
+  {
+    "ID": 902573145,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      108
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 14
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902573146,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573147,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902573115
+    ]
+  },
+  {
+    "ID": 902573148,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573149,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902573116
+    ]
+  },
+  {
+    "ID": 902573150,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573151,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      108
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 16
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902573152,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573153,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902573117
+    ]
+  },
+  {
+    "ID": 902573154,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573155,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      108
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 20
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902573156,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573157,
+    "ActionType": "BattleSceneActionType_Music",
+    "Param5": "BGM_Emotion_Sad_1"
+  },
+  {
+    "ID": 902573158,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902573121
+    ]
+  },
+  {
+    "ID": 902573159,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573160,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      108
+    ],
+    "Param2": [
+      800009001
+    ]
+  },
+  {
+    "ID": 902573161,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 902573162,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      108
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 16
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902573163,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 902573164,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902573123
+    ]
+  },
+  {
+    "ID": 902760001,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902761101
+    ]
+  },
+  {
+    "ID": 902760002,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      103
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 4
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902760003,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      105
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 2
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902760004,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 902760005,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902761201
+    ]
+  },
+  {
+    "ID": 902760006,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 902760101,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      800
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 14
+      }
+    ]
+  },
+  {
+    "ID": 902760102,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      2,
+      2,
+      2
+    ],
+    "Param2": [
+      41,
+      41,
+      41
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 15
+      },
+      {
+        "X": 3,
+        "Y": 14
+      },
+      {
+        "X": 2,
+        "Y": 13
+      }
+    ],
+    "Param4": [
+      131055023,
+      131054623,
+      131054623
+    ],
+    "Param6": [
+      0,
+      0,
+      0
+    ],
+    "Param7": [
+      {
+        "X": 3,
+        "Y": 3
+      },
+      {
+        "X": 3,
+        "Y": 3
+      },
+      {
+        "X": 3,
+        "Y": 3
+      }
+    ],
+    "Param8": [
+      10000,
+      10000,
+      10000
+    ],
+    "Param9": [
+      1,
+      1,
+      1
+    ],
+    "Param10": [
+      201,
+      202,
+      203
+    ],
+    "Param11": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "ID": 902760103,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902761301
+    ]
+  },
+  {
+    "ID": 902760104,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 902760199,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      103
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 12
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 902760200,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 902760201,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902761401
+    ]
+  },
+  {
+    "ID": 902760202,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      101,
+      103,
+      104
+    ],
+    "Param2": [
+      800009001,
+      800009001,
+      800009001
+    ],
+    "Param4": [
+      10001,
+      10003,
+      10004
+    ]
+  },
+  {
+    "ID": 902760203,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      902761501
+    ]
+  },
+  {
+    "ID": 902760204,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      101,
+      103,
+      104,
+      105,
+      107,
+      201
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 13
+      },
+      {
+        "X": 8,
+        "Y": 13
+      },
+      {
+        "X": 8,
+        "Y": 14
+      },
+      {
+        "X": 9,
+        "Y": 14
+      },
+      {
+        "X": 9,
+        "Y": 13
+      },
+      {
+        "X": 7,
+        "Y": 12
+      }
+    ]
+  },
+  {
+    "ID": 902760205,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      500
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 3
+      }
+    ],
+    "Param12": 2
+  },
+  {
+    "ID": 902760206,
+    "ActionType": "BattleSceneActionType_FadeOut",
+    "Param1": [
+      101,
+      103,
+      104,
+      105,
+      107,
+      201
+    ]
+  },
+  {
+    "ID": 902760207,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 902760208,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      401
+    ],
+    "Param2": [
+      800009079
+    ],
+    "Param4": [
+      10005
+    ]
+  },
+  {
+    "ID": 902760209,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      800
+    ]
+  },
+  {
+    "ID": 960132001,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 12
+      }
+    ]
+  },
+  {
+    "ID": 960132002,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 960132003,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 4,
+        "Y": 17
+      }
+    ]
+  },
+  {
+    "ID": 960132004,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 960132005,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 17
+      }
+    ]
+  },
+  {
+    "ID": 960132006,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 960132007,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      601326101
+    ]
+  },
+  {
+    "ID": 960132008,
+    "ActionType": "BattleSceneActionType_AttachBuff",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      742412051
+    ]
+  },
+  {
+    "ID": 960132009,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 12
+      }
+    ]
+  },
+  {
+    "ID": 960132010,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercent",
+    "Param1": [
+      101,
+      102,
+      103,
+      104
+    ],
+    "Param2": [
+      -3000
+    ]
+  },
+  {
+    "ID": 960132011,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 960132012,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      1
+    ],
+    "Param2": [
+      11
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 12
+      }
+    ],
+    "Param4": [
+      100121205
+    ],
+    "Param6": [
+      -3
+    ],
+    "Param7": [
+      {
+        "X": 7,
+        "Y": 17
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      102
+    ],
+    "Param11": [
+      1
+    ]
+  },
+  {
+    "ID": 960132013,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 960132014,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      601326102
+    ]
+  },
+  {
+    "ID": 960132015,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 4,
+        "Y": 17
+      }
+    ]
+  },
+  {
+    "ID": 960132016,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercent",
+    "Param1": [
+      101,
+      102,
+      103,
+      104
+    ],
+    "Param2": [
+      -3000
+    ]
+  },
+  {
+    "ID": 960132017,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 960132018,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      1
+    ],
+    "Param2": [
+      11
+    ],
+    "Param3": [
+      {
+        "X": 4,
+        "Y": 17
+      }
+    ],
+    "Param4": [
+      100121205
+    ],
+    "Param6": [
+      -3
+    ],
+    "Param7": [
+      {
+        "X": 7,
+        "Y": 17
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      103
+    ],
+    "Param11": [
+      1
+    ]
+  },
+  {
+    "ID": 960132019,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 960132020,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 17
+      }
+    ]
+  },
+  {
+    "ID": 960132021,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercent",
+    "Param1": [
+      101,
+      102,
+      103,
+      104
+    ],
+    "Param2": [
+      -3000
+    ]
+  },
+  {
+    "ID": 960132022,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 960132023,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      1
+    ],
+    "Param2": [
+      11
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 17
+      }
+    ],
+    "Param4": [
+      100121205
+    ],
+    "Param6": [
+      -3
+    ],
+    "Param7": [
+      {
+        "X": 7,
+        "Y": 17
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      104
+    ],
+    "Param11": [
+      1
+    ]
+  },
+  {
+    "ID": 960132024,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 991205001,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      42702
+    ],
+    "Param2": [
+      901
+    ]
+  },
+  {
+    "ID": 991205002,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 991205003,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 10
+      }
+    ]
+  },
+  {
+    "ID": 991205004,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      43002
+    ],
+    "Param2": [
+      904
+    ]
+  },
+  {
+    "ID": 991205005,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
+    "Param1": [
+      2000
+    ],
+    "Param3": [
+      {
+        "X": 10
+      }
+    ]
+  },
+  {
+    "ID": 991205006,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 991205007,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      42801
+    ],
+    "Param2": [
+      903
+    ]
+  },
+  {
+    "ID": 991205008,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      42701
+    ],
+    "Param2": [
+      901
+    ]
+  },
+  {
+    "ID": 991205009,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 991205010,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      2000
+    ],
+    "Param3": [
+      {
+        "X": 10
+      }
+    ]
+  },
+  {
+    "ID": 991205011,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      43001
+    ],
+    "Param2": [
+      904
+    ]
+  },
+  {
+    "ID": 991205012,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 991205013,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      42801
+    ],
+    "Param2": [
+      902
+    ]
+  },
+  {
+    "ID": 991205014,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      43101
+    ],
+    "Param2": [
+      906
+    ]
+  },
+  {
+    "ID": 991205015,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      42702
+    ],
+    "Param2": [
+      905
+    ]
+  },
+  {
+    "ID": 991205016,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 991205017,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 12,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 991205018,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      43102
+    ],
+    "Param2": [
+      906
+    ]
+  },
+  {
+    "ID": 991205019,
+    "ActionType": "BattleSceneActionType_ResetSceneAction",
+    "Param1": [
+      999120503
+    ]
+  },
+  {
+    "ID": 991205020,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 991205021,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      42801
+    ],
+    "Param2": [
+      908
+    ]
+  },
+  {
+    "ID": 991205022,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      42701
+    ],
+    "Param2": [
+      905
+    ]
+  },
+  {
+    "ID": 991205023,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 991205024,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      2000
+    ],
+    "Param3": [
+      {
+        "X": 12,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 991205025,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      43101
+    ],
+    "Param2": [
+      906
+    ]
+  },
+  {
+    "ID": 991205026,
+    "ActionType": "BattleSceneActionType_ResetSceneAction",
+    "Param1": [
+      999120504
+    ]
+  },
+  {
+    "ID": 991205027,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 991205028,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      42801
+    ],
+    "Param2": [
+      907
+    ]
+  },
+  {
+    "ID": 991205029,
+    "ActionType": "BattleSceneActionType_ResetSceneAction",
+    "Param1": [
+      999120506
+    ]
+  },
+  {
+    "ID": 991205030,
+    "ActionType": "BattleSceneActionType_ResetSceneAction",
+    "Param1": [
+      999120505
+    ]
+  },
+  {
+    "ID": 991205031,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      912056101
+    ]
+  },
+  {
+    "ID": 991205032,
+    "ActionType": "BattleSceneActionType_ResetSceneAction",
+    "Param1": [
+      999120503,
+      999120504
+    ]
+  },
+  {
+    "ID": 991205033,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      42801
+    ],
+    "Param2": [
+      907
+    ]
+  },
+  {
+    "ID": 991205034,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      42702
+    ],
+    "Param2": [
+      905
+    ]
+  },
+  {
+    "ID": 999017001,
+    "ActionType": "BattleSceneActionType_ChangeTerrain",
+    "Param1": [
+      0
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 999017002,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009154
+    ],
+    "Param2": [
+      10050
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 999017003,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000032
+    ],
+    "Param2": [
+      10001
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 9
+      }
+    ]
+  },
+  {
+    "ID": 999017004,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000032
+    ],
+    "Param2": [
+      10002
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 999017005,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000032
+    ],
+    "Param2": [
+      10003
+    ],
+    "Param3": [
+      {
+        "X": 4,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 999017006,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000032
+    ],
+    "Param2": [
+      10004
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 999017007,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamSet",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      0
+    ]
+  },
+  {
+    "ID": 999017008,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10001
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 9
+      }
+    ],
+    "SkipCondId": 99901701
+  },
+  {
+    "ID": 999017009,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      0
+    ],
+    "SkipCondId": 99901701
+  },
+  {
+    "ID": 999017010,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamAdd",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "SkipCondId": 99901701
+  },
+  {
+    "ID": 999017011,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10002
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 7
+      }
+    ],
+    "SkipCondId": 99901702
+  },
+  {
+    "ID": 999017012,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      0
+    ],
+    "SkipCondId": 99901702
+  },
+  {
+    "ID": 999017013,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamAdd",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "SkipCondId": 99901702
+  },
+  {
+    "ID": 999017014,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10003
+    ],
+    "Param3": [
+      {
+        "X": 4,
+        "Y": 7
+      }
+    ],
+    "SkipCondId": 99901703
+  },
+  {
+    "ID": 999017015,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      0
+    ],
+    "SkipCondId": 99901703
+  },
+  {
+    "ID": 999017016,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamAdd",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "SkipCondId": 99901703
+  },
+  {
+    "ID": 999017017,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10004
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 5
+      }
+    ],
+    "SkipCondId": 99901704
+  },
+  {
+    "ID": 999017018,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      0
+    ],
+    "SkipCondId": 99901704
+  },
+  {
+    "ID": 999017019,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamAdd",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "SkipCondId": 99901704
+  },
+  {
+    "ID": 999017020,
+    "ActionType": "BattleSceneActionType_ChangeTerrain",
+    "Param1": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 999017021,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      906
+    ]
+  },
+  {
+    "ID": 999017022,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000031
+    ],
+    "Param2": [
+      10006
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 999017023,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10006
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 7
+      }
+    ],
+    "SkipCondId": 99901705
+  },
+  {
+    "ID": 999017024,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      0
+    ],
+    "SkipCondId": 99901705
+  },
+  {
+    "ID": 999017025,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      0
+    ],
+    "SkipCondId": 99901705
+  },
+  {
+    "ID": 999017026,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamSet",
+    "Param1": [
+      1
+    ],
+    "Param2": [
+      0
+    ]
+  },
+  {
+    "ID": 999017027,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamSet",
+    "Param1": [
+      2
+    ],
+    "Param2": [
+      0
+    ]
+  },
+  {
+    "ID": 999017028,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamSet",
+    "Param1": [
+      3
+    ],
+    "Param2": [
+      0
+    ]
+  },
+  {
+    "ID": 999017029,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamSet",
+    "Param1": [
+      4
+    ],
+    "Param2": [
+      0
+    ]
+  },
+  {
+    "ID": 999017030,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamAdd",
+    "Param1": [
+      1
+    ],
+    "Param2": [
+      1
+    ],
+    "SkipCondId": 99901701
+  },
+  {
+    "ID": 999017031,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamAdd",
+    "Param1": [
+      2
+    ],
+    "Param2": [
+      1
+    ],
+    "SkipCondId": 99901702
+  },
+  {
+    "ID": 999017032,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamAdd",
+    "Param1": [
+      3
+    ],
+    "Param2": [
+      1
+    ],
+    "SkipCondId": 99901703
+  },
+  {
+    "ID": 999017033,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamAdd",
+    "Param1": [
+      4
+    ],
+    "Param2": [
+      1
+    ],
+    "SkipCondId": 99901704
+  },
+  {
+    "ID": 999017034,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamSet",
+    "Param1": [
+      5
+    ],
+    "Param2": [
+      0
+    ]
+  },
+  {
+    "ID": 999017035,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamAdd",
+    "Param1": [
+      5
+    ],
+    "Param2": [
+      1
+    ],
+    "SkipCondId": 99901705
+  },
+  {
+    "ID": 999017036,
+    "ActionType": "BattleSceneActionType_SummonFacilitie",
+    "Param1": [
+      92,
+      1051,
+      10000,
+      905,
+      -1,
+      0
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 7
+      },
+      {
+        "X": 5,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 999017037,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000034
+    ],
+    "Param2": [
+      10007
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 9
+      }
+    ],
+    "SkipCondId": 99901701
+  },
+  {
+    "ID": 999017038,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000034
+    ],
+    "Param2": [
+      10008
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 7
+      }
+    ],
+    "SkipCondId": 99901702
+  },
+  {
+    "ID": 999017039,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000034
+    ],
+    "Param2": [
+      10009
+    ],
+    "Param3": [
+      {
+        "X": 4,
+        "Y": 7
+      }
+    ],
+    "SkipCondId": 99901703
+  },
+  {
+    "ID": 999017040,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000034
+    ],
+    "Param2": [
+      10010
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 5
+      }
+    ],
+    "SkipCondId": 99901704
+  },
+  {
+    "ID": 999017041,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000035
+    ],
+    "Param2": [
+      10011
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 7
+      }
+    ],
+    "SkipCondId": 99901705
+  },
+  {
+    "ID": 999017042,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10050
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 999018001,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      104400500
+    ],
+    "Param2": [
+      10001
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 999018002,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      901
+    ]
+  },
+  {
+    "ID": 999018003,
+    "ActionType": "BattleSceneActionType_ChangeTerrain",
+    "Param1": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 7
+      },
+      {
+        "X": 7,
+        "Y": 7
+      },
+      {
+        "X": 5,
+        "Y": 6
+      },
+      {
+        "X": 6,
+        "Y": 6
+      },
+      {
+        "X": 7,
+        "Y": 6
+      },
+      {
+        "X": 5,
+        "Y": 5
+      },
+      {
+        "X": 6,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 999018004,
+    "ActionType": "BattleSceneActionType_ChangeTerrain",
+    "Param1": [
+      10
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 7
+      },
+      {
+        "X": 7,
+        "Y": 7
+      },
+      {
+        "X": 5,
+        "Y": 6
+      },
+      {
+        "X": 6,
+        "Y": 6
+      },
+      {
+        "X": 7,
+        "Y": 6
+      },
+      {
+        "X": 5,
+        "Y": 5
+      },
+      {
+        "X": 6,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 999018005,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      801
+    ]
+  },
+  {
+    "ID": 999018006,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      802
+    ]
+  },
+  {
+    "ID": 999018007,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      803
+    ]
+  },
+  {
+    "ID": 999018008,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      804
+    ]
+  },
+  {
+    "ID": 999018009,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      805
+    ]
+  },
+  {
+    "ID": 999018010,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      806
+    ]
+  },
+  {
+    "ID": 999024021,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      921
+    ]
+  },
+  {
+    "ID": 999024022,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      922
+    ]
+  },
+  {
+    "ID": 999024121,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      800
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 999024122,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24011
+    ],
+    "Param3": [
+      {
+        "X": 4,
+        "Y": 6
+      }
+    ],
+    "Param16": [
+      {
+        "X": 3,
+        "Y": 6
+      }
+    ]
+  },
+  {
+    "ID": 999024123,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24012
+    ],
+    "Param3": [
+      {
+        "X": 12,
+        "Y": 4
+      }
+    ],
+    "Param16": [
+      {
+        "X": 13,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 999024124,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1500
+    ]
+  },
+  {
+    "ID": 999024125,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
+    "Param1": [
+      5000
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 6
+      },
+      {
+        "X": 6,
+        "Y": 6
+      },
+      {
+        "X": 7,
+        "Y": 6
+      },
+      {
+        "X": 9,
+        "Y": 4
+      },
+      {
+        "X": 10,
+        "Y": 4
+      },
+      {
+        "X": 11,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 999024126,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      501,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {},
+      {
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024127,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      521,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 16
+      },
+      {
+        "X": 16,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024128,
+    "ActionType": "BattleSceneActionType_SceneRectEclipse",
+    "Param3": [
+      {
+        "X": 1
+      },
+      {
+        "X": 15,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024129,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      921
+    ]
+  },
+  {
+    "ID": 999024130,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      922
+    ]
+  },
+  {
+    "ID": 999024131,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      911
+    ]
+  },
+  {
+    "ID": 999024132,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      912
+    ]
+  },
+  {
+    "ID": 999024141,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      800
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 999024142,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24011
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 3
+      }
+    ],
+    "Param16": [
+      {
+        "X": 6,
+        "Y": 2
+      }
+    ]
+  },
+  {
+    "ID": 999024143,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24012
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 7
+      }
+    ],
+    "Param16": [
+      {
+        "X": 10,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 999024144,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1500
+    ]
+  },
+  {
+    "ID": 999024145,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
+    "Param1": [
+      5000
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 4
+      },
+      {
+        "X": 6,
+        "Y": 5
+      },
+      {
+        "X": 6,
+        "Y": 6
+      },
+      {
+        "X": 10,
+        "Y": 4
+      },
+      {
+        "X": 10,
+        "Y": 5
+      },
+      {
+        "X": 10,
+        "Y": 6
+      }
+    ]
+  },
+  {
+    "ID": 999024146,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      541,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 1
+      },
+      {
+        "X": 1,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024147,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      561,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 15
+      },
+      {
+        "X": 15,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024148,
+    "ActionType": "BattleSceneActionType_SceneRectEclipse",
+    "Param3": [
+      {
+        "X": 2
+      },
+      {
+        "X": 14,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024149,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      911
+    ]
+  },
+  {
+    "ID": 999024150,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      912
+    ]
+  },
+  {
+    "ID": 999024151,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      921
+    ]
+  },
+  {
+    "ID": 999024152,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      922
+    ]
+  },
+  {
+    "ID": 999024161,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      800
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 999024162,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24011
+    ],
+    "Param3": [
+      {
+        "X": 4,
+        "Y": 6
+      }
+    ],
+    "Param16": [
+      {
+        "X": 3,
+        "Y": 6
+      }
+    ]
+  },
+  {
+    "ID": 999024163,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24012
+    ],
+    "Param3": [
+      {
+        "X": 12,
+        "Y": 4
+      }
+    ],
+    "Param16": [
+      {
+        "X": 13,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 999024164,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1500
+    ]
+  },
+  {
+    "ID": 999024165,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
+    "Param1": [
+      5000
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 6
+      },
+      {
+        "X": 6,
+        "Y": 6
+      },
+      {
+        "X": 7,
+        "Y": 6
+      },
+      {
+        "X": 9,
+        "Y": 4
+      },
+      {
+        "X": 10,
+        "Y": 4
+      },
+      {
+        "X": 11,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 999024166,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      581,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 2
+      },
+      {
+        "X": 2,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024167,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      601,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 14
+      },
+      {
+        "X": 14,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024168,
+    "ActionType": "BattleSceneActionType_SceneRectEclipse",
+    "Param3": [
+      {
+        "X": 3
+      },
+      {
+        "X": 13,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024169,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      921
+    ]
+  },
+  {
+    "ID": 999024170,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      922
+    ]
+  },
+  {
+    "ID": 999024171,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      911
+    ]
+  },
+  {
+    "ID": 999024172,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      912
+    ]
+  },
+  {
+    "ID": 999024181,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      800
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 999024182,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24011
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 3
+      }
+    ],
+    "Param16": [
+      {
+        "X": 6,
+        "Y": 2
+      }
+    ]
+  },
+  {
+    "ID": 999024183,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24012
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 7
+      }
+    ],
+    "Param16": [
+      {
+        "X": 10,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 999024184,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1500
+    ]
+  },
+  {
+    "ID": 999024185,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
+    "Param1": [
+      5000
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 4
+      },
+      {
+        "X": 6,
+        "Y": 5
+      },
+      {
+        "X": 6,
+        "Y": 6
+      },
+      {
+        "X": 10,
+        "Y": 4
+      },
+      {
+        "X": 10,
+        "Y": 5
+      },
+      {
+        "X": 10,
+        "Y": 6
+      }
+    ]
+  },
+  {
+    "ID": 999024186,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      621,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 3
+      },
+      {
+        "X": 3,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024187,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      641,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 13
+      },
+      {
+        "X": 13,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024188,
+    "ActionType": "BattleSceneActionType_SceneRectEclipse",
+    "Param3": [
+      {
+        "X": 4
+      },
+      {
+        "X": 12,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024189,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      911
+    ]
+  },
+  {
+    "ID": 999024190,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      912
+    ]
+  },
+  {
+    "ID": 999024191,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      921
+    ]
+  },
+  {
+    "ID": 999024192,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      922
+    ]
+  },
+  {
+    "ID": 999024201,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      800
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 999024202,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24011
+    ],
+    "Param3": [
+      {
+        "X": 4,
+        "Y": 6
+      }
+    ],
+    "Param16": [
+      {
+        "X": 3,
+        "Y": 6
+      }
+    ]
+  },
+  {
+    "ID": 999024203,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24012
+    ],
+    "Param3": [
+      {
+        "X": 12,
+        "Y": 4
+      }
+    ],
+    "Param16": [
+      {
+        "X": 13,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 999024204,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1500
+    ]
+  },
+  {
+    "ID": 999024205,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
+    "Param1": [
+      5000
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 6
+      },
+      {
+        "X": 6,
+        "Y": 6
+      },
+      {
+        "X": 7,
+        "Y": 6
+      },
+      {
+        "X": 9,
+        "Y": 4
+      },
+      {
+        "X": 10,
+        "Y": 4
+      },
+      {
+        "X": 11,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 999024206,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      661,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 4
+      },
+      {
+        "X": 4,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024207,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      681,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 12
+      },
+      {
+        "X": 12,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024208,
+    "ActionType": "BattleSceneActionType_SceneRectEclipse",
+    "Param3": [
+      {
+        "X": 5
+      },
+      {
+        "X": 11,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024209,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      921
+    ]
+  },
+  {
+    "ID": 999024210,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      922
+    ]
+  },
+  {
+    "ID": 999024211,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      911
+    ]
+  },
+  {
+    "ID": 999024212,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      912
+    ]
+  },
+  {
+    "ID": 999024221,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      800
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 999024222,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24011
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 3
+      }
+    ],
+    "Param16": [
+      {
+        "X": 6,
+        "Y": 2
+      }
+    ]
+  },
+  {
+    "ID": 999024223,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24012
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 7
+      }
+    ],
+    "Param16": [
+      {
+        "X": 10,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 999024224,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1500
+    ]
+  },
+  {
+    "ID": 999024225,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
+    "Param1": [
+      5000
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 4
+      },
+      {
+        "X": 6,
+        "Y": 5
+      },
+      {
+        "X": 6,
+        "Y": 6
+      },
+      {
+        "X": 10,
+        "Y": 4
+      },
+      {
+        "X": 10,
+        "Y": 5
+      },
+      {
+        "X": 10,
+        "Y": 6
+      }
+    ]
+  },
+  {
+    "ID": 999024226,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      701,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 5
+      },
+      {
+        "X": 11
+      }
+    ]
+  },
+  {
+    "ID": 999024227,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      721,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 10
+      },
+      {
+        "X": 11,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999024228,
+    "ActionType": "BattleSceneActionType_SceneRectEclipse",
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 1
+      },
+      {
+        "X": 11,
+        "Y": 9
+      }
+    ]
+  },
+  {
+    "ID": 999024229,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      911
+    ]
+  },
+  {
+    "ID": 999024230,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      912
+    ]
+  },
+  {
+    "ID": 999024231,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      921
+    ]
+  },
+  {
+    "ID": 999024232,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      922
+    ]
+  },
+  {
+    "ID": 999024241,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      800
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 999024242,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24011
+    ],
+    "Param3": [
+      {
+        "X": 4,
+        "Y": 6
+      }
+    ],
+    "Param16": [
+      {
+        "X": 3,
+        "Y": 6
+      }
+    ]
+  },
+  {
+    "ID": 999024243,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24012
+    ],
+    "Param3": [
+      {
+        "X": 12,
+        "Y": 4
+      }
+    ],
+    "Param16": [
+      {
+        "X": 13,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 999024244,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1500
+    ]
+  },
+  {
+    "ID": 999024245,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
+    "Param1": [
+      5000
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 6
+      },
+      {
+        "X": 6,
+        "Y": 6
+      },
+      {
+        "X": 7,
+        "Y": 6
+      },
+      {
+        "X": 9,
+        "Y": 4
+      },
+      {
+        "X": 10,
+        "Y": 4
+      },
+      {
+        "X": 11,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 999024246,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      741,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 1
+      },
+      {
+        "X": 11,
+        "Y": 1
+      }
+    ]
+  },
+  {
+    "ID": 999024247,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      761,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 9
+      },
+      {
+        "X": 11,
+        "Y": 9
+      }
+    ]
+  },
+  {
+    "ID": 999024248,
+    "ActionType": "BattleSceneActionType_SceneRectEclipse",
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 2
+      },
+      {
+        "X": 11,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 999024249,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      921
+    ]
+  },
+  {
+    "ID": 999024250,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      922
+    ]
+  },
+  {
+    "ID": 999024251,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      911
+    ]
+  },
+  {
+    "ID": 999024252,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      912
+    ]
+  },
+  {
+    "ID": 999024261,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      800
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 999024262,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24011
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 3
+      }
+    ],
+    "Param16": [
+      {
+        "X": 6,
+        "Y": 2
+      }
+    ]
+  },
+  {
+    "ID": 999024263,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24012
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 7
+      }
+    ],
+    "Param16": [
+      {
+        "X": 10,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 999024264,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1500
+    ]
+  },
+  {
+    "ID": 999024265,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
+    "Param1": [
+      5000
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 4
+      },
+      {
+        "X": 6,
+        "Y": 5
+      },
+      {
+        "X": 6,
+        "Y": 6
+      },
+      {
+        "X": 10,
+        "Y": 4
+      },
+      {
+        "X": 10,
+        "Y": 5
+      },
+      {
+        "X": 10,
+        "Y": 6
+      }
+    ]
+  },
+  {
+    "ID": 999024266,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      781,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 2
+      },
+      {
+        "X": 11,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 999024267,
+    "ActionType": "BattleSceneActionType_SceneRectEclipse",
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 3
+      },
+      {
+        "X": 10,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 999024268,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      911
+    ]
+  },
+  {
+    "ID": 999024269,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69402
+    ],
+    "Param2": [
+      912
+    ]
+  },
+  {
+    "ID": 999024270,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      921
+    ]
+  },
+  {
+    "ID": 999024271,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      922
+    ]
+  },
+  {
+    "ID": 999024281,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      800
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 999024282,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24011
+    ],
+    "Param3": [
+      {
+        "X": 4,
+        "Y": 6
+      }
+    ],
+    "Param16": [
+      {
+        "X": 3,
+        "Y": 6
+      }
+    ]
+  },
+  {
+    "ID": 999024283,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009134
+    ],
+    "Param2": [
+      24012
+    ],
+    "Param3": [
+      {
+        "X": 12,
+        "Y": 4
+      }
+    ],
+    "Param16": [
+      {
+        "X": 13,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 999024284,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1500
+    ]
+  },
+  {
+    "ID": 999024285,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
+    "Param1": [
+      5000
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 6
+      },
+      {
+        "X": 6,
+        "Y": 6
+      },
+      {
+        "X": 7,
+        "Y": 6
+      },
+      {
+        "X": 9,
+        "Y": 4
+      },
+      {
+        "X": 10,
+        "Y": 4
+      },
+      {
+        "X": 11,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 999024286,
+    "ActionType": "BattleSceneActionType_SummonGroundBuf",
+    "Param1": [
+      346,
+      821,
+      -1,
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 3
+      },
+      {
+        "X": 10,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 999024287,
+    "ActionType": "BattleSceneActionType_SceneRectEclipse",
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 4
+      },
+      {
+        "X": 9,
+        "Y": 6
+      }
+    ]
+  },
+  {
+    "ID": 999024288,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      911
+    ]
+  },
+  {
+    "ID": 999024289,
+    "ActionType": "BattleSceneActionType_TriggerFacilitie",
+    "Param1": [
+      69401
+    ],
+    "Param2": [
+      912
+    ]
+  },
+  {
+    "ID": 999990101,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      5
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999990102,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      101,
+      102
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 10
+      },
+      {
+        "X": 6,
+        "Y": 9
+      }
+    ]
+  },
+  {
+    "ID": 999990103,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999990101
+    ]
+  },
+  {
+    "ID": 999990104,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      5
+    ],
+    "Param3": [
+      {
+        "X": 12,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 999990105,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999990201
+    ]
+  },
+  {
+    "ID": 999990106,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      5
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999990107,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999990301
+    ]
+  },
+  {
+    "ID": 999990108,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      5
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 999990109,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      11,
+      12
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 12
+      },
+      {
+        "X": 10,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999990110,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      13
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 13
+      }
+    ],
+    "Param4": [
+      300
+    ]
+  },
+  {
+    "ID": 999990111,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      14
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 13
+      }
+    ],
+    "Param4": [
+      300
+    ]
+  },
+  {
+    "ID": 999990112,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999990401
+    ]
+  },
+  {
+    "ID": 999990113,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      11
+    ],
+    "Param2": [
+      699999901
+    ],
+    "Param4": [
+      1500
+    ]
+  },
+  {
+    "ID": 999990114,
+    "ActionType": "BattleSceneActionType_Summon",
+    "Param1": [
+      1,
+      55,
+      101520000,
+      1,
+      10000
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 999990115,
+    "ActionType": "BattleSceneActionType_ChangeAI",
+    "Param1": [
+      106,
+      107,
+      108
+    ],
+    "Param2": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "ID": 999990116,
+    "ActionType": "BattleSceneActionType_ChangeAI",
+    "Param1": [
+      999,
+      209,
+      208,
+      207
+    ],
+    "Param2": [
+      3,
+      2,
+      0,
+      0
+    ]
+  },
+  {
+    "ID": 999990117,
+    "ActionType": "BattleSceneActionType_ChangeAI",
+    "Param1": [
+      206,
+      205,
+      204
+    ],
+    "Param2": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "ID": 999990118,
+    "ActionType": "BattleSceneActionType_ChangeAI",
+    "Param1": [
+      206,
+      205,
+      204
+    ],
+    "Param2": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "ID": 999990119,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 999990120,
+    "ActionType": "BattleSceneActionType_ChangeAI",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      5
+    ]
+  },
+  {
+    "ID": 999990121,
+    "ActionType": "BattleSceneActionType_ChangeAI",
+    "Param1": [
+      999,
+      209
+    ],
+    "Param2": [
+      3,
+      2
+    ]
+  },
+  {
+    "ID": 999990122,
+    "ActionType": "BattleSceneActionType_ChangeAI",
+    "Param1": [
+      208,
+      207,
+      204
+    ],
+    "Param2": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "ID": 999990123,
+    "ActionType": "BattleSceneActionType_Music",
+    "Param5": "BGM_Emotion_Crisis_1"
+  },
+  {
+    "ID": 999990124,
+    "ActionType": "BattleSceneActionType_Music",
+    "Param5": "BGM_None"
+  },
+  {
+    "ID": 999990201,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999990500
+    ]
+  },
+  {
+    "ID": 999990202,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      101
+    ]
+  },
+  {
+    "ID": 999990203,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999990505
+    ]
+  },
+  {
+    "ID": 999990204,
+    "ActionType": "BattleSceneActionType_ActorCastSkill",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      201
+    ],
+    "Param4": [
+      61110001
+    ]
+  },
+  {
+    "ID": 999990205,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999990501
+    ]
+  },
+  {
+    "ID": 999990206,
+    "ActionType": "BattleSceneActionType_Summon",
+    "Param1": [
+      1,
+      1,
+      100110000,
+      1,
+      100,
+      301,
+      2
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999990207,
+    "ActionType": "BattleSceneActionType_FadeOut",
+    "Param1": [
+      101,
+      102
+    ]
+  },
+  {
+    "ID": 999990208,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      2000
+    ]
+  },
+  {
+    "ID": 999990209,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999990511
+    ]
+  },
+  {
+    "ID": 999990210,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999990512
+    ]
+  },
+  {
+    "ID": 999990211,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      101
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 10
+      }
+    ],
+    "Param7": [
+      {
+        "X": 8,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999990212,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      101,
+      102
+    ]
+  },
+  {
+    "ID": 999990221,
+    "ActionType": "BattleSceneActionType_CameraFadeIn"
+  },
+  {
+    "ID": 999990222,
+    "ActionType": "BattleSceneActionType_CameraFadeOut"
+  },
+  {
+    "ID": 999990223,
+    "ActionType": "BattleSceneActionType_CameraShake",
+    "Param1": [
+      10
+    ],
+    "Param2": [
+      1
+    ],
+    "Param4": [
+      2000
+    ],
+    "ActionSoundName": "EFT_Camera_Vibration"
+  },
+  {
+    "ID": 999990601,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999990601
+    ]
+  },
+  {
+    "ID": 999990602,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999990603
+    ]
+  },
+  {
+    "ID": 999991001,
+    "ActionType": "BattleSceneActionType_CutScene",
+    "Param1": [
+      0
+    ]
+  },
+  {
+    "ID": 999991002,
+    "ActionType": "BattleSceneActionType_CutScene",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 999991003,
+    "ActionType": "BattleSceneActionType_ActorAISet",
+    "Param1": [
+      111
+    ],
+    "Param2": [
+      4
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 14
+      }
+    ],
+    "Param4": [
+      0
+    ],
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 999991004,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991302
+    ]
+  },
+  {
+    "ID": 999991005,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991303
+    ]
+  },
+  {
+    "ID": 999991006,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991304
+    ]
+  },
+  {
+    "ID": 999991007,
+    "ActionType": "BattleSceneActionType_TeamAIStateSet",
+    "Param1": [
+      22
+    ],
+    "Param2": [
+      3
+    ],
+    "Param4": [
+      211
+    ]
+  },
+  {
+    "ID": 999991008,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991305
+    ]
+  },
+  {
+    "ID": 999991009,
+    "ActionType": "BattleSceneActionType_TeamAIStateSet",
+    "Param1": [
+      22
+    ],
+    "Param2": [
+      4
+    ],
+    "Param4": [
+      9997
+    ]
+  },
+  {
+    "ID": 999991010,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991306
+    ]
+  },
+  {
+    "ID": 999991011,
+    "ActionType": "BattleSceneActionType_BattleEventTriggerFail",
+    "Param1": [
+      9999919
+    ]
+  },
+  {
+    "ID": 999991012,
+    "ActionType": "BattleSceneActionType_TeamAIStateSet",
+    "Param1": [
+      21
+    ],
+    "Param2": [
+      0
+    ]
+  },
+  {
+    "ID": 999991013,
+    "ActionType": "BattleSceneActionType_ActorAISet",
+    "Param1": [
+      211
+    ],
+    "Param2": [
+      3
+    ],
+    "Param4": [
+      111
+    ],
+    "Param5": "1",
+    "Param6": [
+      0
+    ],
+    "Param8": [
+      0
+    ],
+    "Param9": [
+      0
+    ]
+  },
+  {
+    "ID": 999991014,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991307
+    ]
+  },
+  {
+    "ID": 999991015,
+    "ActionType": "BattleSceneActionType_TeamAIStateSet",
+    "Param1": [
+      22
+    ],
+    "Param2": [
+      0
+    ]
+  },
+  {
+    "ID": 999991016,
+    "ActionType": "BattleSceneActionType_ActorAISet",
+    "Param1": [
+      221
+    ],
+    "Param2": [
+      1
+    ],
+    "Param4": [
+      111
+    ],
+    "Param5": "1",
+    "Param6": [
+      0
+    ],
+    "Param8": [
+      0
+    ],
+    "Param9": [
+      0
+    ]
+  },
+  {
+    "ID": 999991017,
+    "ActionType": "BattleSceneActionType_ActorAISet",
+    "Param1": [
+      222
+    ],
+    "Param2": [
+      1
+    ],
+    "Param4": [
+      111
+    ],
+    "Param5": "1",
+    "Param6": [
+      1
+    ],
+    "Param8": [
+      0
+    ],
+    "Param9": [
+      0
+    ]
+  },
+  {
+    "ID": 999991018,
+    "ActionType": "BattleSceneActionType_ActorAISet",
+    "Param1": [
+      223
+    ],
+    "Param2": [
+      1
+    ],
+    "Param4": [
+      111
+    ],
+    "Param5": "0",
+    "Param6": [
+      1
+    ],
+    "Param8": [
+      0
+    ],
+    "Param9": [
+      0
+    ]
+  },
+  {
+    "ID": 999991019,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991308
+    ]
+  },
+  {
+    "ID": 999991020,
+    "ActionType": "BattleSceneActionType_ActorAISet",
+    "Param1": [
+      221
+    ],
+    "Param2": [
+      2
+    ],
+    "Param4": [
+      9997
+    ],
+    "Param5": "1",
+    "Param6": [
+      0
+    ],
+    "Param8": [
+      0
+    ],
+    "Param9": [
+      0
+    ]
+  },
+  {
+    "ID": 999991021,
+    "ActionType": "BattleSceneActionType_ActorAISet",
+    "Param1": [
+      222
+    ],
+    "Param2": [
+      2
+    ],
+    "Param4": [
+      9997
+    ],
+    "Param5": "1",
+    "Param6": [
+      1
+    ],
+    "Param8": [
+      0
+    ],
+    "Param9": [
+      0
+    ]
+  },
+  {
+    "ID": 999991022,
+    "ActionType": "BattleSceneActionType_ActorAISet",
+    "Param1": [
+      223
+    ],
+    "Param2": [
+      2
+    ],
+    "Param4": [
+      9997
+    ],
+    "Param5": "0",
+    "Param6": [
+      1
+    ],
+    "Param8": [
+      0
+    ],
+    "Param9": [
+      0
+    ]
+  },
+  {
+    "ID": 999991023,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991309
+    ]
+  },
+  {
+    "ID": 999991024,
+    "ActionType": "BattleSceneActionType_ActorAISet",
+    "Param1": [
+      211
+    ],
+    "Param2": [
+      3
+    ],
+    "Param4": [
+      111
+    ],
+    "Param5": "1",
+    "Param6": [
+      1
+    ],
+    "Param8": [
+      0
+    ],
+    "Param9": [
+      0
+    ]
+  },
+  {
+    "ID": 999991025,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991310
+    ]
+  },
+  {
+    "ID": 999991026,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991301
+    ]
+  },
+  {
+    "ID": 999991101,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991101
+    ]
+  },
+  {
+    "ID": 999991102,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991102
+    ]
+  },
+  {
+    "ID": 999991103,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991103
+    ]
+  },
+  {
+    "ID": 999991104,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991104
+    ]
+  },
+  {
+    "ID": 999991105,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991105
+    ]
+  },
+  {
+    "ID": 999991111,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      3000
+    ]
+  },
+  {
+    "ID": 999991112,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991112
+    ]
+  },
+  {
+    "ID": 999991121,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      699999999
+    ],
+    "Param4": [
+      2000
+    ]
+  },
+  {
+    "ID": 999991122,
+    "ActionType": "BattleSceneActionType_ActorAnimationEnd",
+    "Param1": [
+      101
+    ]
+  },
+  {
+    "ID": 999991123,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991123
+    ]
+  },
+  {
+    "ID": 999991130,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991130
+    ]
+  },
+  {
+    "ID": 999991131,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991131
+    ]
+  },
+  {
+    "ID": 999991132,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      1
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 16
+      }
+    ],
+    "Param4": [
+      100110000
+    ],
+    "Param6": [
+      3
+    ],
+    "Param7": [
+      {
+        "X": 6,
+        "Y": 16
+      }
+    ],
+    "Param8": [
+      500
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      301
+    ],
+    "Param11": [
+      1
+    ]
+  },
+  {
+    "ID": 999991133,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991132
+    ]
+  },
+  {
+    "ID": 999991134,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991133
+    ]
+  },
+  {
+    "ID": 999991135,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4
+    ],
+    "Param2": [
+      11
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 16
+      }
+    ],
+    "Param4": [
+      100110000
+    ],
+    "Param6": [
+      5
+    ],
+    "Param7": [
+      {
+        "X": 6,
+        "Y": 16
+      }
+    ],
+    "Param8": [
+      5000
+    ],
+    "Param9": [
+      2
+    ],
+    "Param10": [
+      301
+    ],
+    "Param11": [
+      2
+    ]
+  },
+  {
+    "ID": 999991136,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991134
+    ]
+  },
+  {
+    "ID": 999991137,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991135
+    ]
+  },
+  {
+    "ID": 999991141,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      101,
+      201
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 14
+      },
+      {
+        "X": 7,
+        "Y": 14
+      }
+    ],
+    "Param7": [
+      {
+        "X": 7,
+        "Y": 14
+      },
+      {
+        "X": 8,
+        "Y": 14
+      }
+    ]
+  },
+  {
+    "ID": 999991142,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991151
+    ]
+  },
+  {
+    "ID": 999991143,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      301
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 11
+      }
+    ],
+    "Param7": [
+      {
+        "X": 10,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999991144,
+    "ActionType": "BattleSceneActionType_AttachBuff",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      700090001
+    ]
+  },
+  {
+    "ID": 999991145,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 999991146,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 999991150,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      2,
+      4
+    ],
+    "Param2": [
+      21,
+      11
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 16
+      },
+      {
+        "X": 8,
+        "Y": 15
+      }
+    ],
+    "Param4": [
+      100110000,
+      100110000
+    ],
+    "Param6": [
+      20,
+      20
+    ],
+    "Param7": [
+      {
+        "X": 8,
+        "Y": 15
+      },
+      {
+        "X": 8,
+        "Y": 14
+      }
+    ],
+    "Param8": [
+      10000,
+      100
+    ],
+    "Param9": [
+      1,
+      1
+    ],
+    "Param10": [
+      301,
+      401
+    ],
+    "Param11": [
+      2,
+      1
+    ]
+  },
+  {
+    "ID": 999991151,
+    "ActionType": "BattleSceneActionType_AttachBuff",
+    "Param1": [
+      301
+    ],
+    "Param2": [
+      791000040
+    ]
+  },
+  {
+    "ID": 999991152,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000158
+    ],
+    "Param2": [
+      10001
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 14
+      }
+    ]
+  },
+  {
+    "ID": 999991153,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991150
+    ]
+  },
+  {
+    "ID": 999991154,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      401
+    ],
+    "Param2": [
+      800009001
+    ]
+  },
+  {
+    "ID": 999991155,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 999991156,
+    "ActionType": "BattleSceneActionType_BindFaceTarget",
+    "Param1": [
+      401
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 16
+      }
+    ]
+  },
+  {
+    "ID": 999991157,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      401
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 14
+      }
+    ]
+  },
+  {
+    "ID": 999991158,
+    "ActionType": "BattleSceneActionType_UnBindFaceTarget",
+    "Param1": [
+      401
+    ]
+  },
+  {
+    "ID": 999991159,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 999991160,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      301
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 15
+      }
+    ],
+    "Param7": [
+      {
+        "X": 8,
+        "Y": 14
+      }
+    ]
+  },
+  {
+    "ID": 999991161,
+    "ActionType": "BattleSceneActionType_ActorCastSkill",
+    "Param1": [
+      301
+    ],
+    "Param2": [
+      401
+    ],
+    "Param4": [
+      61110000
+    ]
+  },
+  {
+    "ID": 999991162,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 999991171,
+    "ActionType": "BattleSceneActionType_Summon",
+    "Param1": [
+      1,
+      1,
+      100110000,
+      1,
+      100,
+      301,
+      2
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 14
+      },
+      {
+        "X": 8,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 999991172,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      301
+    ],
+    "Param2": [
+      611100013
+    ],
+    "Param4": [
+      3000
+    ]
+  },
+  {
+    "ID": 999991173,
+    "ActionType": "BattleSceneActionType_CloseLoadingUI"
+  },
+  {
+    "ID": 999991174,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      3000
+    ]
+  },
+  {
+    "ID": 999991175,
+    "ActionType": "BattleSceneActionType_ActorAnimationEnd",
+    "Param1": [
+      301
+    ]
+  },
+  {
+    "ID": 999991176,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991170
+    ]
+  },
+  {
+    "ID": 999991180,
+    "ActionType": "BattleSceneActionType_CameraFadeIn"
+  },
+  {
+    "ID": 999991181,
+    "ActionType": "BattleSceneActionType_FadeOut",
+    "Param1": [
+      111,
+      112
+    ]
+  },
+  {
+    "ID": 999991182,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      111,
+      112
+    ]
+  },
+  {
+    "ID": 999991183,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      2,
+      2
+    ],
+    "Param2": [
+      11,
+      11
+    ],
+    "Param3": [
+      {
+        "X": 1,
+        "Y": 9
+      },
+      {
+        "X": 3,
+        "Y": 9
+      }
+    ],
+    "Param4": [
+      100110531,
+      100110231
+    ],
+    "Param6": [
+      1,
+      1
+    ],
+    "Param7": [
+      {
+        "X": 1,
+        "Y": 11
+      },
+      {
+        "X": 3,
+        "Y": 11
+      }
+    ],
+    "Param8": [
+      10000,
+      10000
+    ],
+    "Param9": [
+      1,
+      1
+    ],
+    "Param10": [
+      211,
+      212
+    ],
+    "Param11": [
+      1,
+      1
+    ]
+  },
+  {
+    "ID": 999991184,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      10
+    ],
+    "Param3": [
+      {
+        "X": 2,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 999991185,
+    "ActionType": "BattleSceneActionType_CameraFadeOut"
+  },
+  {
+    "ID": 999991186,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      211,
+      212
+    ],
+    "Param3": [
+      {
+        "X": 1,
+        "Y": 11
+      },
+      {
+        "X": 3,
+        "Y": 11
+      }
+    ],
+    "Param7": [
+      {
+        "X": 2,
+        "Y": 11
+      },
+      {
+        "X": 2,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 999991187,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991180
+    ]
+  },
+  {
+    "ID": 999991188,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991181
+    ]
+  },
+  {
+    "ID": 999991189,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991182
+    ]
+  },
+  {
+    "ID": 999991190,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991183
+    ]
+  },
+  {
+    "ID": 999991191,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991184
+    ]
+  },
+  {
+    "ID": 999991192,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000158
+    ],
+    "Param2": [
+      10002
+    ],
+    "Param3": [
+      {
+        "X": 2,
+        "Y": 13
+      }
+    ]
+  },
+  {
+    "ID": 999991193,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      2000
+    ]
+  },
+  {
+    "ID": 999991194,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      5
+    ],
+    "Param3": [
+      {
+        "X": 7
+      }
+    ]
+  },
+  {
+    "ID": 999991195,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      2000
+    ]
+  },
+  {
+    "ID": 999991201,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991201
+    ]
+  },
+  {
+    "ID": 999991202,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000158
+    ],
+    "Param2": [
+      10000
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 999991203,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 999991204,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      100
+    ],
+    "Param5": "Story_Smile",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 999991205,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      100
+    ],
+    "Param5": "Story_Talk",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 999991206,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      860000201
+    ]
+  },
+  {
+    "ID": 999991207,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      10
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 3
+      }
+    ]
+  },
+  {
+    "ID": 999991208,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4
+    ],
+    "Param2": [
+      15
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 3
+      }
+    ],
+    "Param4": [
+      131010531
+    ],
+    "Param6": [
+      1
+    ],
+    "Param7": [
+      {
+        "X": 1,
+        "Y": 6
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      215
+    ],
+    "Param11": [
+      2
+    ]
+  },
+  {
+    "ID": 999991209,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 999991210,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      10
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 9
+      }
+    ]
+  },
+  {
+    "ID": 999991211,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4
+    ],
+    "Param2": [
+      15
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 9
+      }
+    ],
+    "Param4": [
+      131010531
+    ],
+    "Param6": [
+      1
+    ],
+    "Param7": [
+      {
+        "X": 1,
+        "Y": 6
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      216
+    ],
+    "Param11": [
+      2
+    ]
+  },
+  {
+    "ID": 999991212,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      10
+    ],
+    "Param3": [
+      {
+        "X": 1,
+        "Y": 6
+      }
+    ]
+  },
+  {
+    "ID": 999991213,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      860000202
+    ]
+  },
+  {
+    "ID": 999991214,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4
+    ],
+    "Param2": [
+      15
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 3
+      }
+    ],
+    "Param4": [
+      131010531
+    ],
+    "Param6": [
+      -2
+    ],
+    "Param7": [
+      {
+        "X": 1,
+        "Y": 6
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      215
+    ],
+    "Param11": [
+      2
+    ]
+  },
+  {
+    "ID": 999991215,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4
+    ],
+    "Param2": [
+      15
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 9
+      }
+    ],
+    "Param4": [
+      131010531
+    ],
+    "Param6": [
+      -2
+    ],
+    "Param7": [
+      {
+        "X": 1,
+        "Y": 6
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      216
+    ],
+    "Param11": [
+      2
+    ]
+  },
+  {
+    "ID": 999991216,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      300
+    ],
+    "SkipCondId": 1,
+    "ActionSoundName": "1"
+  },
+  {
+    "ID": 999991221,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991220
+    ]
+  },
+  {
+    "ID": 999991222,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 15
+      }
+    ]
+  },
+  {
+    "ID": 999991223,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000158
+    ],
+    "Param2": [
+      10999
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 15
+      }
+    ]
+  },
+  {
+    "ID": 999991224,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 12
+      }
+    ]
+  },
+  {
+    "ID": 999991225,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000158
+    ],
+    "Param2": [
+      11000
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 12
+      }
+    ]
+  },
+  {
+    "ID": 999991226,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      999991221
+    ]
+  },
+  {
+    "ID": 999991300,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      300
+    ]
+  },
+  {
+    "ID": 999991500,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 999999101,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900005
+    ],
+    "Param2": [
+      102
+    ]
+  },
+  {
+    "ID": 999999102,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900007
+    ],
+    "Param2": [
+      102
+    ]
+  },
+  {
+    "ID": 999999103,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900008
+    ],
+    "Param2": [
+      102
+    ]
+  },
+  {
+    "ID": 999999104,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900009
+    ],
+    "Param2": [
+      102
+    ]
+  },
+  {
+    "ID": 999999105,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900010
+    ],
+    "Param2": [
+      102
+    ]
+  },
+  {
+    "ID": 999999107,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900012
+    ],
+    "Param2": [
+      212
+    ]
+  },
+  {
+    "ID": 999999108,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900013
+    ],
+    "Param2": [
+      101
+    ]
+  },
+  {
+    "ID": 999999109,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      106
+    ],
+    "Param5": "Shock"
+  },
+  {
+    "ID": 999999110,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      101
+    ],
+    "Param5": "Idle"
+  },
+  {
+    "ID": 999999111,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      101
+    ],
+    "Param5": "Fear"
+  },
+  {
+    "ID": 999999112,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      101
+    ],
+    "Param5": "fun"
+  },
+  {
+    "ID": 999999113,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900013
+    ],
+    "Param2": [
+      103
+    ]
+  },
+  {
+    "ID": 999999114,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900014
+    ],
+    "Param2": [
+      103
+    ]
+  },
+  {
+    "ID": 999999115,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900015
+    ],
+    "Param2": [
+      103
+    ]
+  },
+  {
+    "ID": 999999116,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900016
+    ],
+    "Param2": [
+      111
+    ]
+  },
+  {
+    "ID": 999999117,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900017
+    ],
+    "Param2": [
+      102
+    ]
+  },
+  {
+    "ID": 999999118,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900018
+    ],
+    "Param2": [
+      102
+    ]
+  },
+  {
+    "ID": 999999119,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      101
+    ],
+    "Param5": "MouthSmile_L"
+  },
+  {
+    "ID": 999999120,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      101
+    ],
+    "Param5": "Unhappy"
+  },
+  {
+    "ID": 999999121,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      106
+    ],
+    "Param5": "Idle"
+  },
+  {
+    "ID": 999999122,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      106
+    ],
+    "Param5": "Happy"
+  },
+  {
+    "ID": 999999123,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      101
+    ],
+    "Param5": "Angry"
+  },
+  {
+    "ID": 999999124,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      101
+    ],
+    "Param5": "Smile"
+  },
+  {
+    "ID": 999999125,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900019
+    ],
+    "Param2": [
+      103
+    ]
+  },
+  {
+    "ID": 999999126,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900020
+    ],
+    "Param2": [
+      103
+    ]
+  },
+  {
+    "ID": 999999127,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      100
+    ],
+    "Param5": "Idle"
+  },
+  {
+    "ID": 999999128,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      102
+    ],
+    "Param5": "Fear"
+  },
+  {
+    "ID": 999999129,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      102
+    ],
+    "Param5": "Idle"
+  },
+  {
+    "ID": 999999130,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      102
+    ],
+    "Param5": "Smile_eye"
+  },
+  {
+    "ID": 999999131,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      102
+    ],
+    "Param5": "Smile"
+  },
+  {
+    "ID": 999999132,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      200
+    ],
+    "Param2": [
+      101
+    ],
+    "Param5": "Angry"
+  },
+  {
+    "ID": 999999133,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      105
+    ],
+    "Param5": "Shock，2，Normal"
+  },
+  {
+    "ID": 999999134,
+    "ActionType": "BattleSceneActionType_MorphAnimation",
+    "Param1": [
+      230
+    ],
+    "Param2": [
+      105
+    ],
+    "Param5": "Idle"
+  },
+  {
+    "ID": 999999135,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27900024
+    ],
+    "Param2": [
+      102
+    ]
+  },
+  {
+    "ID": 999999136,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27910020
+    ],
+    "Param2": [
+      103
+    ]
+  },
+  {
+    "ID": 999999137,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27910021
+    ],
+    "Param2": [
+      103
+    ]
+  },
+  {
+    "ID": 999999138,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      27910022
+    ],
+    "Param2": [
+      103
+    ]
+  },
+  {
+    "ID": 999999222,
+    "ActionType": "BattleSceneActionType_TimeLine",
+    "Param1": [
+      0
+    ]
+  },
+  {
+    "ID": 1860000001,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      2110141001
+    ]
+  },
+  {
+    "ID": 1860000002,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      10
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 1860000003,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      2110141003
+    ]
+  },
+  {
+    "ID": 1860000004,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      10
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 10
+      }
+    ]
+  },
+  {
+    "ID": 1860000005,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      2110141005
+    ]
+  },
+  {
+    "ID": 1861000001,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      2110131001
+    ]
+  },
+  {
+    "ID": 1861000002,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      10
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 1861000003,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 1861000004,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      10
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 3
+      }
+    ]
+  },
+  {
+    "ID": 1861000005,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 1861000006,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      10
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 1861000007,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      2110131002
+    ]
+  },
+  {
+    "ID": 1862000001,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      2110151001
+    ]
+  },
+  {
+    "ID": 1862000006,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      2110161001
+    ]
+  },
+  {
+    "ID": 1862000007,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      2010310001
+    ]
+  }
+]

@@ -1,0 +1,1068 @@
+[
+  {
+    "ID": 104099981,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_UpgradeMonsterRefinerSkill"
+      }
+    ],
+    "NameStrKey": "ST:214392"
+  },
+  {
+    "ID": 104099982,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_UpgradeMonsterRefinerSkill"
+      }
+    ],
+    "NameStrKey": "ST:214393"
+  },
+  {
+    "ID": 104099983,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_UpgradeMonsterRefinerSkill"
+      }
+    ],
+    "NameStrKey": "ST:214394"
+  },
+  {
+    "ID": 104099991,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20001
+      }
+    ],
+    "DialogIdId": 550015514,
+    "NameStrKey": "ST:159573",
+    "NormalDescStrKey": "ST:212732",
+    "SelectDescStrKey": "ST:215062"
+  },
+  {
+    "ID": 104099992,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20002
+      }
+    ],
+    "DialogIdId": 550015515,
+    "NameStrKey": "ST:212678",
+    "NormalDescStrKey": "ST:215207",
+    "SelectDescStrKey": "ST:215209"
+  },
+  {
+    "ID": 104099993,
+    "ConditionList": [
+      {
+        "Type": "XiyouConditionType_OwnRelic",
+        "P1": 1,
+        "P2": 11006
+      }
+    ],
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20003
+      }
+    ],
+    "DialogIdId": 550015516,
+    "NameStrKey": "ST:209363",
+    "NormalDescStrKey": "ST:215350",
+    "SelectDescStrKey": "ST:215350"
+  },
+  {
+    "ID": 104110011,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20004
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20005
+      }
+    ],
+    "DialogIdId": 550015517,
+    "NameStrKey": "ST:212679",
+    "NormalDescStrKey": "ST:215058",
+    "SelectDescStrKey": "ST:215063"
+  },
+  {
+    "ID": 104110012,
+    "EffectList": [
+      {}
+    ],
+    "DialogIdId": 550015518,
+    "NameStrKey": "ST:212680",
+    "NormalDescStrKey": "ST:93266",
+    "SelectDescStrKey": "ST:93266"
+  },
+  {
+    "ID": 104110021,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20006
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20007
+      }
+    ],
+    "DialogIdId": 550015506,
+    "NameStrKey": "ST:212681",
+    "NormalDescStrKey": "ST:214412",
+    "SelectDescStrKey": "ST:214455"
+  },
+  {
+    "ID": 104110022,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20008
+      }
+    ],
+    "DialogIdId": 550015507,
+    "NameStrKey": "ST:212682",
+    "NormalDescStrKey": "ST:214413",
+    "SelectDescStrKey": "ST:215064"
+  },
+  {
+    "ID": 104110031,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20009
+      }
+    ],
+    "DialogIdId": 550015510,
+    "NameStrKey": "ST:212683",
+    "NormalDescStrKey": "ST:214414",
+    "SelectDescStrKey": "ST:214456"
+  },
+  {
+    "ID": 104110032,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20010
+      }
+    ],
+    "DialogIdId": 550015511,
+    "NameStrKey": "ST:212684",
+    "NormalDescStrKey": "ST:214415",
+    "SelectDescStrKey": "ST:214457"
+  },
+  {
+    "ID": 104110041,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20011
+      }
+    ],
+    "PostEventId": 10990001,
+    "DialogIdId": 550015513,
+    "NameStrKey": "ST:212685",
+    "NormalDescStrKey": "ST:214416",
+    "SelectDescStrKey": "ST:214416"
+  },
+  {
+    "ID": 104310011,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20012
+      }
+    ],
+    "PostEventId": 10990002,
+    "DialogIdId": 550015501,
+    "NameStrKey": "ST:212686",
+    "NormalDescStrKey": "ST:214417",
+    "SelectDescStrKey": "ST:214417"
+  },
+  {
+    "ID": 104310012,
+    "EffectList": [
+      {}
+    ],
+    "PostEventId": 10990003,
+    "DialogIdId": 550015525,
+    "NameStrKey": "ST:212687",
+    "NormalDescStrKey": "ST:214418",
+    "SelectDescStrKey": "ST:214458"
+  },
+  {
+    "ID": 104310013,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20013
+      }
+    ],
+    "DialogIdId": 550015526,
+    "NameStrKey": "ST:212688",
+    "NormalDescStrKey": "ST:214419",
+    "SelectDescStrKey": "ST:214419"
+  },
+  {
+    "ID": 104410011,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20014
+      }
+    ],
+    "DialogIdId": 550015502,
+    "NameStrKey": "ST:212689",
+    "NormalDescStrKey": "ST:214420",
+    "SelectDescStrKey": "ST:214420"
+  },
+  {
+    "ID": 104410012,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_DropRelic",
+        "P1": 111
+      }
+    ],
+    "DialogIdId": 550015503,
+    "NameStrKey": "ST:212690",
+    "NormalDescStrKey": "ST:214421",
+    "SelectDescStrKey": "ST:214421"
+  },
+  {
+    "ID": 104410021,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20016
+      }
+    ],
+    "DialogIdId": 550015529,
+    "NameStrKey": "ST:212691",
+    "NormalDescStrKey": "ST:214422",
+    "SelectDescStrKey": "ST:215065"
+  },
+  {
+    "ID": 104410022,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_DropRelic",
+        "P1": 112
+      }
+    ],
+    "DialogIdId": 550015530,
+    "NameStrKey": "ST:212692",
+    "NormalDescStrKey": "ST:214423",
+    "SelectDescStrKey": "ST:214423"
+  },
+  {
+    "ID": 104410023,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20018
+      }
+    ],
+    "PostEventId": 10990004,
+    "DialogIdId": 550015531,
+    "NameStrKey": "ST:212693",
+    "NormalDescStrKey": "ST:217043",
+    "SelectDescStrKey": "ST:215645"
+  },
+  {
+    "ID": 104410031,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20056
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20020
+      }
+    ],
+    "DialogIdId": 550015508,
+    "NameStrKey": "ST:212694",
+    "NormalDescStrKey": "ST:214425",
+    "SelectDescStrKey": "ST:215067"
+  },
+  {
+    "ID": 104410032,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20021
+      }
+    ],
+    "DialogIdId": 550015533,
+    "NameStrKey": "ST:212695",
+    "NormalDescStrKey": "ST:214426",
+    "SelectDescStrKey": "ST:214461"
+  },
+  {
+    "ID": 104410041,
+    "EffectList": [
+      {}
+    ],
+    "PostEventId": 10990005,
+    "NameStrKey": "ST:212696",
+    "NormalDescStrKey": "ST:214427",
+    "SelectDescStrKey": "ST:214462"
+  },
+  {
+    "ID": 104410042,
+    "EffectList": [
+      {}
+    ],
+    "DialogIdId": 550015534,
+    "NameStrKey": "ST:212697",
+    "NormalDescStrKey": "ST:92628",
+    "SelectDescStrKey": "ST:92628"
+  },
+  {
+    "ID": 104410051,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20022
+      }
+    ],
+    "DialogIdId": 550015535,
+    "NameStrKey": "ST:212698",
+    "NormalDescStrKey": "ST:214428",
+    "SelectDescStrKey": "ST:215068"
+  },
+  {
+    "ID": 104410052,
+    "EffectList": [
+      {}
+    ],
+    "DialogIdId": 550015536,
+    "NameStrKey": "ST:212699",
+    "NormalDescStrKey": "ST:92628",
+    "SelectDescStrKey": "ST:92628"
+  },
+  {
+    "ID": 104410061,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20024
+      }
+    ],
+    "DialogIdId": 550015539,
+    "NameStrKey": "ST:214395",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 104410062,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20024
+      }
+    ],
+    "DialogIdId": 550015539,
+    "NameStrKey": "ST:214396",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 104410063,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20024
+      }
+    ],
+    "DialogIdId": 550015539,
+    "NameStrKey": "ST:214397",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 104410064,
+    "EffectList": [
+      {}
+    ],
+    "NameStrKey": "ST:212703",
+    "NormalDescStrKey": "ST:92628",
+    "SelectDescStrKey": "ST:92628"
+  },
+  {
+    "ID": 104410071,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20029
+      }
+    ],
+    "PostEventId": 10990008,
+    "DialogIdId": 550015544,
+    "NameStrKey": "ST:214398",
+    "NormalDescStrKey": "ST:214431",
+    "SelectDescStrKey": "ST:214431"
+  },
+  {
+    "ID": 104410072,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20029
+      }
+    ],
+    "PostEventId": 10990008,
+    "DialogIdId": 550015544,
+    "NameStrKey": "ST:214399",
+    "NormalDescStrKey": "ST:214431",
+    "SelectDescStrKey": "ST:214431"
+  },
+  {
+    "ID": 104410073,
+    "EffectList": [
+      {}
+    ],
+    "NameStrKey": "ST:212706",
+    "NormalDescStrKey": "ST:92628",
+    "SelectDescStrKey": "ST:92628"
+  },
+  {
+    "ID": 104410081,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20030
+      }
+    ],
+    "PostEventId": 10990015,
+    "NameStrKey": "ST:214400",
+    "NormalDescStrKey": "ST:214432",
+    "SelectDescStrKey": "ST:214432"
+  },
+  {
+    "ID": 104410082,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20031
+      }
+    ],
+    "PostEventId": 10990016,
+    "NameStrKey": "ST:214401",
+    "NormalDescStrKey": "ST:214433",
+    "SelectDescStrKey": "ST:214464"
+  },
+  {
+    "ID": 104410083,
+    "EffectList": [
+      {}
+    ],
+    "NameStrKey": "ST:212709",
+    "NormalDescStrKey": "ST:212757",
+    "SelectDescStrKey": "ST:212757"
+  },
+  {
+    "ID": 104410091,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20032
+      }
+    ],
+    "NameStrKey": "ST:212710",
+    "NormalDescStrKey": "ST:214434",
+    "SelectDescStrKey": "ST:214465"
+  },
+  {
+    "ID": 104510011,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20033
+      }
+    ],
+    "DialogIdId": 550015504,
+    "NameStrKey": "ST:212711",
+    "NormalDescStrKey": "ST:214435",
+    "SelectDescStrKey": "ST:214435"
+  },
+  {
+    "ID": 104510012,
+    "EffectList": [
+      {}
+    ],
+    "DialogIdId": 550015546,
+    "NameStrKey": "ST:212712",
+    "NormalDescStrKey": "ST:93266",
+    "SelectDescStrKey": "ST:93266"
+  },
+  {
+    "ID": 104510021,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20034
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20035
+      }
+    ],
+    "DialogIdId": 550015547,
+    "NameStrKey": "ST:214402",
+    "NormalDescStrKey": "ST:214436",
+    "SelectDescStrKey": "ST:215069"
+  },
+  {
+    "ID": 104510022,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20036
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20037
+      }
+    ],
+    "DialogIdId": 550015548,
+    "NameStrKey": "ST:214403",
+    "NormalDescStrKey": "ST:214437",
+    "SelectDescStrKey": "ST:215070"
+  },
+  {
+    "ID": 104510023,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20038
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20039
+      }
+    ],
+    "DialogIdId": 550015549,
+    "NameStrKey": "ST:214404",
+    "NormalDescStrKey": "ST:214438",
+    "SelectDescStrKey": "ST:215071"
+  },
+  {
+    "ID": 104510024,
+    "EffectList": [
+      {}
+    ],
+    "DialogIdId": 550015550,
+    "NameStrKey": "ST:212712",
+    "NormalDescStrKey": "ST:93266",
+    "SelectDescStrKey": "ST:93266"
+  },
+  {
+    "ID": 104510031,
+    "ConditionList": [
+      {
+        "Type": "XiyouConditionType_OwnRelic",
+        "P1": 1,
+        "P2": 11005
+      }
+    ],
+    "EffectList": [
+      {}
+    ],
+    "PostEventId": 10990009,
+    "DialogIdId": 550015551,
+    "NameStrKey": "ST:212716",
+    "NormalDescStrKey": "ST:215351",
+    "SelectDescStrKey": "ST:215351"
+  },
+  {
+    "ID": 104510032,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20040
+      }
+    ],
+    "DialogIdId": 550015552,
+    "NameStrKey": "ST:212717",
+    "NormalDescStrKey": "ST:214440",
+    "SelectDescStrKey": "ST:214466"
+  },
+  {
+    "ID": 104510033,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20041
+      }
+    ],
+    "DialogIdId": 550015553,
+    "NameStrKey": "ST:212718",
+    "NormalDescStrKey": "ST:214441",
+    "SelectDescStrKey": "ST:214467"
+  },
+  {
+    "ID": 104510041,
+    "EffectList": [
+      {}
+    ],
+    "PostEventId": 10990003,
+    "NameStrKey": "ST:212719",
+    "NormalDescStrKey": "ST:214442",
+    "SelectDescStrKey": "ST:214442"
+  },
+  {
+    "ID": 104510042,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20042
+      }
+    ],
+    "DialogIdId": 550015554,
+    "NameStrKey": "ST:214804",
+    "NormalDescStrKey": "ST:214420",
+    "SelectDescStrKey": "ST:214420"
+  },
+  {
+    "ID": 104510051,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20043
+      }
+    ],
+    "PostEventId": 10990003,
+    "NameStrKey": "ST:212721",
+    "NormalDescStrKey": "ST:214443",
+    "SelectDescStrKey": "ST:214468"
+  },
+  {
+    "ID": 104510052,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20044
+      }
+    ],
+    "DialogIdId": 550015512,
+    "NameStrKey": "ST:212722",
+    "NormalDescStrKey": "ST:214444",
+    "SelectDescStrKey": "ST:215352"
+  },
+  {
+    "ID": 104610011,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20045
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20046
+      }
+    ],
+    "NameStrKey": "ST:212723",
+    "NormalDescStrKey": "ST:215061",
+    "SelectDescStrKey": "ST:215061"
+  },
+  {
+    "ID": 104610012,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20047
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20048
+      }
+    ],
+    "NameStrKey": "ST:43569",
+    "NormalDescStrKey": "ST:214446",
+    "SelectDescStrKey": "ST:214446"
+  },
+  {
+    "ID": 104610021,
+    "EffectList": [
+      {}
+    ],
+    "PostEventId": 10531002,
+    "DialogIdId": 550015556,
+    "NameStrKey": "ST:212724",
+    "NormalDescStrKey": "ST:214447",
+    "SelectDescStrKey": "ST:214469"
+  },
+  {
+    "ID": 104610031,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_DropRelic",
+        "P1": 116
+      }
+    ],
+    "PostEventId": 10990010,
+    "NameStrKey": "ST:212725",
+    "NormalDescStrKey": "ST:214448",
+    "SelectDescStrKey": "ST:214448"
+  },
+  {
+    "ID": 104610032,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20050
+      }
+    ],
+    "NameStrKey": "ST:212726",
+    "NormalDescStrKey": "ST:212774",
+    "SelectDescStrKey": "ST:215353"
+  },
+  {
+    "ID": 104610033,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20051
+      }
+    ],
+    "NameStrKey": "ST:212727",
+    "NormalDescStrKey": "ST:214449",
+    "SelectDescStrKey": "ST:215074"
+  },
+  {
+    "ID": 104610041,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20052
+      }
+    ],
+    "PostEventId": 10990011,
+    "NameStrKey": "ST:214405",
+    "NormalDescStrKey": "ST:214450",
+    "SelectDescStrKey": "ST:214450"
+  },
+  {
+    "ID": 104610042,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20053
+      }
+    ],
+    "PostEventId": 10990012,
+    "NameStrKey": "ST:214406",
+    "NormalDescStrKey": "ST:214447",
+    "SelectDescStrKey": "ST:214469"
+  },
+  {
+    "ID": 104610043,
+    "EffectList": [
+      {}
+    ],
+    "NameStrKey": "ST:212730",
+    "NormalDescStrKey": "ST:92628",
+    "SelectDescStrKey": "ST:92628"
+  },
+  {
+    "ID": 104610051,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20054
+      }
+    ],
+    "PostEventId": 10990013,
+    "NameStrKey": "ST:214407",
+    "NormalDescStrKey": "ST:214451",
+    "SelectDescStrKey": "ST:214451"
+  },
+  {
+    "ID": 104610052,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20055
+      }
+    ],
+    "PostEventId": 10990014,
+    "NameStrKey": "ST:214408",
+    "NormalDescStrKey": "ST:214452",
+    "SelectDescStrKey": "ST:214452"
+  },
+  {
+    "ID": 104610053,
+    "EffectList": [
+      {}
+    ],
+    "NameStrKey": "ST:171195",
+    "NormalDescStrKey": "ST:212776",
+    "SelectDescStrKey": "ST:212776"
+  },
+  {
+    "ID": 1044100511,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20023
+      }
+    ],
+    "DialogIdId": 550015537,
+    "NameStrKey": "ST:212698",
+    "NormalDescStrKey": "ST:214428",
+    "SelectDescStrKey": "ST:215068"
+  },
+  {
+    "ID": 1044100512,
+    "EffectList": [
+      {}
+    ],
+    "DialogIdId": 550015536,
+    "NameStrKey": "ST:212699",
+    "NormalDescStrKey": "ST:92628",
+    "SelectDescStrKey": "ST:92628"
+  },
+  {
+    "ID": 1044100611,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20025
+      }
+    ],
+    "DialogIdId": 550015540,
+    "NameStrKey": "ST:214395",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 1044100612,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20026
+      }
+    ],
+    "DialogIdId": 550015541,
+    "NameStrKey": "ST:214395",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 1044100613,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {}
+    ],
+    "DialogIdId": 550015542,
+    "NameStrKey": "ST:214395",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 1044100614,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {}
+    ],
+    "PostEventId": 10990007,
+    "DialogIdId": 550015543,
+    "NameStrKey": "ST:214395",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 1044100621,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20025
+      }
+    ],
+    "DialogIdId": 550015540,
+    "NameStrKey": "ST:214396",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 1044100622,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20026
+      }
+    ],
+    "DialogIdId": 550015541,
+    "NameStrKey": "ST:214396",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 1044100623,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {}
+    ],
+    "DialogIdId": 550015542,
+    "NameStrKey": "ST:214396",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 1044100624,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {}
+    ],
+    "PostEventId": 10990007,
+    "DialogIdId": 550015543,
+    "NameStrKey": "ST:214396",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 1044100631,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20025
+      }
+    ],
+    "DialogIdId": 550015540,
+    "NameStrKey": "ST:214397",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 1044100632,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20026
+      }
+    ],
+    "DialogIdId": 550015541,
+    "NameStrKey": "ST:214397",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 1044100633,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {}
+    ],
+    "DialogIdId": 550015542,
+    "NameStrKey": "ST:214397",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 1044100634,
+    "EffectList": [
+      {
+        "Type": "XiyouChooseEffectType_TriggerEffect",
+        "P1": 20028
+      },
+      {}
+    ],
+    "PostEventId": 10990007,
+    "DialogIdId": 550015543,
+    "NameStrKey": "ST:214397",
+    "NormalDescStrKey": "ST:215060",
+    "SelectDescStrKey": "ST:215060"
+  },
+  {
+    "ID": 1044100641,
+    "EffectList": [
+      {}
+    ],
+    "NameStrKey": "ST:212703",
+    "NormalDescStrKey": "ST:92628",
+    "SelectDescStrKey": "ST:92628"
+  },
+  {
+    "ID": 1044100642,
+    "EffectList": [
+      {}
+    ],
+    "NameStrKey": "ST:212703",
+    "NormalDescStrKey": "ST:92628",
+    "SelectDescStrKey": "ST:92628"
+  },
+  {
+    "ID": 1044100643,
+    "EffectList": [
+      {}
+    ],
+    "NameStrKey": "ST:212703",
+    "NormalDescStrKey": "ST:92628",
+    "SelectDescStrKey": "ST:92628"
+  },
+  {
+    "ID": 1044100644,
+    "EffectList": [
+      {}
+    ],
+    "NameStrKey": "ST:212703",
+    "NormalDescStrKey": "ST:92628",
+    "SelectDescStrKey": "ST:92628"
+  }
+]

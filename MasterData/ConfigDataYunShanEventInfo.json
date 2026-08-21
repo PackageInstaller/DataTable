@@ -1,0 +1,1005 @@
+[
+  {
+    "ID": 1001,
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24441100,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 100,
+    "Reward": 351360101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187651"
+  },
+  {
+    "ID": 1002,
+    "PreEventIds": [
+      1001
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330620001,
+    "IsProgress": true,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187845"
+  },
+  {
+    "ID": 1003,
+    "PreEventIds": [
+      1002
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24441200,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 100,
+    "Reward": 351360102,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187846"
+  },
+  {
+    "ID": 1004,
+    "PreEventIds": [
+      1003
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24441300,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 120,
+    "Reward": 351360103,
+    "JoinCharId": 100113110,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187827"
+  },
+  {
+    "ID": 1005,
+    "PreEventIds": [
+      1004
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330620301,
+    "IsProgress": true,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187847"
+  },
+  {
+    "ID": 1006,
+    "PreEventIds": [
+      1005
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24441400,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 120,
+    "Reward": 351360104,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187848"
+  },
+  {
+    "ID": 1007,
+    "PreEventIds": [
+      1006
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24441500,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 120,
+    "Reward": 351360105,
+    "JoinCharId": 100113710,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187849"
+  },
+  {
+    "ID": 1008,
+    "PreEventIds": [
+      1007
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24441600,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 150,
+    "Reward": 351360106,
+    "DialogBeforeId": 330620401,
+    "DialogAfterId": 330625101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187850"
+  },
+  {
+    "ID": 1101,
+    "PreEventIds": [
+      1004
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24445100,
+    "IsProgress": true,
+    "Exp": 140,
+    "Reward": 351360107,
+    "DialogAfterId": 330626101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 1102,
+    "PreEventIds": [
+      1101
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330627101,
+    "IsProgress": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 1103,
+    "DisapperEventIds": [
+      1203
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 231115201,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 1104,
+    "PreEventIds": [
+      1203
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 231115101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 1105,
+    "PreEventIds": [
+      1104
+    ],
+    "Area": 1
+  },
+  {
+    "ID": 1106,
+    "PreEventIds": [
+      1104
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330628101,
+    "IsProgress": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 1107,
+    "PreEventIds": [
+      1106
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24445200,
+    "IsProgress": true,
+    "Exp": 130,
+    "Reward": 351360108,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 1108,
+    "PreEventIds": [
+      1102
+    ],
+    "DisapperEventIds": [
+      1201
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330627103,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 1201,
+    "PreEventIds": [
+      1102
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330629101,
+    "IsProgress": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 1202,
+    "PreEventIds": [
+      1201
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24445300,
+    "IsProgress": true,
+    "Exp": 140,
+    "Reward": 351360109,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 1203,
+    "PreEventIds": [
+      1202
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24445400,
+    "IsProgress": true,
+    "Exp": 110,
+    "Reward": 351360110,
+    "DialogAfterId": 330630101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 1301,
+    "PreEventIds": [
+      1202
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24445500,
+    "IsProgress": true,
+    "Exp": 100,
+    "Reward": 351360111,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 1401,
+    "PreEventIds": [
+      1006
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24445600,
+    "IsProgress": true,
+    "Exp": 140,
+    "Reward": 351360112,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Battle.prefab"
+  },
+  {
+    "ID": 1901,
+    "PreEventIds": [
+      1202
+    ],
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Puzzle",
+    "Param": 10,
+    "IsProgress": true,
+    "Reward": 351360113,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Secrete.prefab"
+  },
+  {
+    "ID": 1902,
+    "Area": 1,
+    "TriggerType": "YunShanEventTriggerType_Puzzle",
+    "Param": 20,
+    "IsProgress": true,
+    "Reward": 351360114,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Secrete.prefab"
+  },
+  {
+    "ID": 2001,
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330620501,
+    "IsProgress": true,
+    "IsMaster": true,
+    "NameStrKey": "ST:187851"
+  },
+  {
+    "ID": 2002,
+    "PreEventIds": [
+      2001
+    ],
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330620601,
+    "IsProgress": true,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187852"
+  },
+  {
+    "ID": 2003,
+    "PreEventIds": [
+      2002
+    ],
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330620701,
+    "IsProgress": true,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187853"
+  },
+  {
+    "ID": 2004,
+    "PreEventIds": [
+      2003
+    ],
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24442100,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 340,
+    "Reward": 351360115,
+    "JoinCharId": 100114810,
+    "DialogBeforeId": 330620801,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187854"
+  },
+  {
+    "ID": 2005,
+    "PreEventIds": [
+      2004
+    ],
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24442200,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 340,
+    "Reward": 351360116,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187829"
+  },
+  {
+    "ID": 2006,
+    "PreEventIds": [
+      2005
+    ],
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24442300,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 340,
+    "Reward": 351360117,
+    "JoinCharId": 100201810,
+    "DialogAfterId": 330620901,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187855"
+  },
+  {
+    "ID": 2007,
+    "PreEventIds": [
+      2006
+    ],
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330622401,
+    "IsProgress": true,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187856"
+  },
+  {
+    "ID": 2101,
+    "PreEventIds": [
+      2003
+    ],
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24446100,
+    "IsProgress": true,
+    "Exp": 340,
+    "Reward": 351360118,
+    "DialogAfterId": 330631101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 2102,
+    "PreEventIds": [
+      2101
+    ],
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24446200,
+    "IsProgress": true,
+    "Exp": 340,
+    "Reward": 351360119,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 2103,
+    "PreEventIds": [
+      2102
+    ],
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24446300,
+    "IsProgress": true,
+    "Exp": 340,
+    "Reward": 351360120,
+    "DialogAfterId": 330632101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 2201,
+    "PreEventIds": [
+      2004
+    ],
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24446400,
+    "IsProgress": true,
+    "Exp": 340,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 2202,
+    "PreEventIds": [
+      2201
+    ],
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330633101,
+    "IsProgress": true,
+    "Reward": 351360121,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 2901,
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Puzzle",
+    "Param": 30,
+    "IsProgress": true,
+    "Reward": 351360123,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Secrete.prefab"
+  },
+  {
+    "ID": 2902,
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Puzzle",
+    "Param": 40,
+    "IsProgress": true,
+    "Reward": 351360124,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Secrete.prefab"
+  },
+  {
+    "ID": 2903,
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24446500,
+    "IsProgress": true,
+    "Exp": 1000,
+    "Reward": 351360122,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Monster01.prefab"
+  },
+  {
+    "ID": 2904,
+    "DisapperEventIds": [
+      2002
+    ],
+    "Area": 2,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 231115301,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 3001,
+    "Area": 3,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330621001,
+    "IsProgress": true,
+    "IsMaster": true,
+    "NameStrKey": "ST:187857"
+  },
+  {
+    "ID": 3002,
+    "PreEventIds": [
+      3001
+    ],
+    "Area": 3,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24443100,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 400,
+    "Reward": 351360125,
+    "DialogBeforeId": 330621101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187858"
+  },
+  {
+    "ID": 3003,
+    "PreEventIds": [
+      3002
+    ],
+    "Area": 3,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24443200,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 400,
+    "Reward": 351360126,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187859"
+  },
+  {
+    "ID": 3004,
+    "PreEventIds": [
+      3003
+    ],
+    "Area": 3,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24443300,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 400,
+    "Reward": 351360127,
+    "DialogAfterId": 330621301,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187860"
+  },
+  {
+    "ID": 3101,
+    "PreEventIds": [
+      3003
+    ],
+    "Area": 3,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330634101,
+    "IsProgress": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 3102,
+    "PreEventIds": [
+      3101
+    ],
+    "Area": 3,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24447100,
+    "IsProgress": true,
+    "Exp": 400,
+    "Reward": 351360128,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 3201,
+    "PreEventIds": [
+      3002
+    ],
+    "Area": 3,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330650101,
+    "IsProgress": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 3202,
+    "PreEventIds": [
+      3201
+    ],
+    "Area": 3,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330650102,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 3203,
+    "PreEventIds": [
+      3201
+    ],
+    "Area": 3,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330650103,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 3204,
+    "PreEventIds": [
+      3201
+    ],
+    "Area": 3,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330650104,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 3205,
+    "PreEventIds": [
+      3202,
+      3203,
+      3204
+    ],
+    "Area": 3,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330650105,
+    "IsProgress": true,
+    "Reward": 351360129,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 3206,
+    "PreEventIds": [
+      3201
+    ],
+    "DisapperEventIds": [
+      3202,
+      3203,
+      3204
+    ],
+    "Area": 3,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330650101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 4001,
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330621401,
+    "IsProgress": true,
+    "IsMaster": true,
+    "NameStrKey": "ST:187861"
+  },
+  {
+    "ID": 4002,
+    "PreEventIds": [
+      4001
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330621501,
+    "IsProgress": true,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187862"
+  },
+  {
+    "ID": 4003,
+    "PreEventIds": [
+      4002
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24444100,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 920,
+    "Reward": 351360130,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187863"
+  },
+  {
+    "ID": 4004,
+    "PreEventIds": [
+      4003
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24444200,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 920,
+    "Reward": 351360131,
+    "DialogBeforeId": 330621601,
+    "DialogAfterId": 330621701,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187864"
+  },
+  {
+    "ID": 4005,
+    "PreEventIds": [
+      4004
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24444300,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 920,
+    "Reward": 351360132,
+    "DialogAfterId": 330621801,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187865"
+  },
+  {
+    "ID": 4006,
+    "PreEventIds": [
+      4005
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330621901,
+    "IsProgress": true,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187866"
+  },
+  {
+    "ID": 4007,
+    "PreEventIds": [
+      4006
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24444400,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 1000,
+    "Reward": 351360133,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187867"
+  },
+  {
+    "ID": 4008,
+    "PreEventIds": [
+      4007
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24444500,
+    "IsProgress": true,
+    "IsMaster": true,
+    "Exp": 1000,
+    "Reward": 351360134,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187868"
+  },
+  {
+    "ID": 4101,
+    "PreEventIds": [
+      4002
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24448100,
+    "IsProgress": true,
+    "Exp": 920,
+    "Reward": 351360135,
+    "DialogAfterId": 330636101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 4102,
+    "PreEventIds": [
+      4101
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330637101,
+    "IsProgress": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 4103,
+    "PreEventIds": [
+      4102
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24448200,
+    "IsProgress": true,
+    "Exp": 920,
+    "Reward": 351360136,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 4201,
+    "PreEventIds": [
+      4003
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24448300,
+    "IsProgress": true,
+    "Exp": 920,
+    "Reward": 351360137,
+    "DialogAfterId": 330638101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 4202,
+    "PreEventIds": [
+      4201
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330639101,
+    "IsProgress": true,
+    "Reward": 351360138,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 4301,
+    "PreEventIds": [
+      4003
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24448400,
+    "IsProgress": true,
+    "Exp": 920,
+    "Reward": 351360139,
+    "DialogAfterId": 330640101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 4401,
+    "PreEventIds": [
+      4002
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330641101,
+    "IsProgress": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 4402,
+    "PreEventIds": [
+      4401
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24448500,
+    "IsProgress": true,
+    "Exp": 920,
+    "Reward": 351360140,
+    "DialogAfterId": 330642101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 4403,
+    "PreEventIds": [
+      4402
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24448600,
+    "IsProgress": true,
+    "Exp": 920,
+    "Reward": 351360141,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 4901,
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Puzzle",
+    "Param": 50,
+    "IsProgress": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Secrete.prefab"
+  },
+  {
+    "ID": 4902,
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Puzzle",
+    "Param": 60,
+    "IsProgress": true,
+    "Reward": 351360146,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Secrete.prefab"
+  },
+  {
+    "ID": 4903,
+    "PreEventIds": [
+      4901
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24448700,
+    "IsProgress": true,
+    "Exp": 2000,
+    "Reward": 351360142,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Monster02.prefab"
+  },
+  {
+    "ID": 4904,
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24448800,
+    "IsProgress": true,
+    "Exp": 2000,
+    "Reward": 351360143,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Monster03.prefab"
+  },
+  {
+    "ID": 4905,
+    "DisapperEventIds": [
+      4005
+    ],
+    "Area": 4,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 231115401,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 5001,
+    "Area": 5,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 330622001,
+    "IsMaster": true,
+    "NameStrKey": "ST:187869"
+  },
+  {
+    "ID": 5002,
+    "PreEventIds": [
+      5001
+    ],
+    "Area": 5,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24444700,
+    "IsMaster": true,
+    "Exp": 1000,
+    "DialogAfterId": 330622003,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Battle.prefab",
+    "NameStrKey": "ST:190146"
+  },
+  {
+    "ID": 5003,
+    "PreEventIds": [
+      5002
+    ],
+    "Area": 5,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24444800,
+    "IsMaster": true,
+    "Exp": 1000,
+    "DialogAfterId": 330622101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Battle.prefab",
+    "NameStrKey": "ST:187870"
+  },
+  {
+    "ID": 5004,
+    "PreEventIds": [
+      5003
+    ],
+    "Area": 5,
+    "TriggerType": "YunShanEventTriggerType_Battle",
+    "Param": 24444600,
+    "IsMaster": true,
+    "Exp": 1200,
+    "Reward": 351360144,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:187871"
+  },
+  {
+    "ID": 5101,
+    "PreEventIds": [
+      5002
+    ],
+    "DisapperEventIds": [
+      5003
+    ],
+    "Area": 5,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 2023112101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 5102,
+    "PreEventIds": [
+      5003
+    ],
+    "DisapperEventIds": [
+      5004
+    ],
+    "Area": 5,
+    "TriggerType": "YunShanEventTriggerType_Dialogue",
+    "Param": 2023112201,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 5103,
+    "DisapperEventIds": [
+      5004
+    ],
+    "Area": 5
+  }
+]

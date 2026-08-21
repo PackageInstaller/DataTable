@@ -1,0 +1,484 @@
+[
+  {
+    "ID": 1,
+    "Name": "主-商品",
+    "NodeLocation": 101,
+    "LevelExp": [
+      100
+    ],
+    "EffectID": "GuildTalentTreeEffectType_ShopUnlockItem",
+    "EffectValue": [
+      1
+    ],
+    "Info": "商店解锁新商品1",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1021.png@Skill_None_1021"
+  },
+  {
+    "ID": 2,
+    "Name": "PVE-双防",
+    "NodeLocation": 102,
+    "Prerequests": [
+      {
+        "TalentID": 1,
+        "Level": 1
+      }
+    ],
+    "LevelExp": [
+      100,
+      200,
+      300,
+      400,
+      500
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4PVE",
+    "EffectValue": [
+      3120301,
+      3120302,
+      3120303,
+      3120304,
+      3120305
+    ],
+    "Info": "PVE玩法中双防提升2%/PVE玩法中双防提升4%/PVE玩法中双防提升6%/PVE玩法中双防提升8%/PVE玩法中双防提升10%",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1024.PNG@GPassive_1024"
+  },
+  {
+    "ID": 3,
+    "Name": "再行动-1",
+    "NodeLocation": 103,
+    "Prerequests": [
+      {
+        "TalentID": 2,
+        "Level": 2
+      }
+    ],
+    "LevelExp": [
+      100
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4AttackFormationAttacker",
+    "EffectValue": [
+      3120104
+    ],
+    "Info": "击败水晶的英灵获得再行动",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1066.PNG@Skill_Boss_1066"
+  },
+  {
+    "ID": 4,
+    "Name": "PVE-气血",
+    "NodeLocation": 104,
+    "Prerequests": [
+      {
+        "TalentID": 3,
+        "Level": 1
+      }
+    ],
+    "LevelExp": [
+      100,
+      200,
+      300,
+      400,
+      500
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4PVE",
+    "EffectValue": [
+      3120311,
+      3120312,
+      3120313,
+      3120314,
+      3120315
+    ],
+    "Info": "PVE玩法中气血提升2%/PVE玩法中气血提升4%/PVE玩法中气血提升6%/PVE玩法中气血提升8%/PVE玩法中气血提升10%",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1003.png@GPassive_1003"
+  },
+  {
+    "ID": 5,
+    "Name": "再行动-2",
+    "NodeLocation": 105,
+    "Prerequests": [
+      {
+        "TalentID": 4,
+        "Level": 2
+      }
+    ],
+    "LevelExp": [
+      100
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4AttackFormationAttacker",
+    "EffectValue": [
+      3120105
+    ],
+    "Info": "击败水晶的英灵，三格范围内的英灵获得再行动",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1066.PNG@Skill_Boss_1066"
+  },
+  {
+    "ID": 6,
+    "Name": "柱子升级",
+    "NodeLocation": 106,
+    "Prerequests": [
+      {
+        "TalentID": 5,
+        "Level": 1
+      }
+    ],
+    "LevelExp": [
+      100
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4AttackFormationDefender",
+    "EffectValue": [
+      3120101
+    ],
+    "Info": "柱子天赋升级",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1001.PNG@Skill_Boss_1001"
+  },
+  {
+    "ID": 7,
+    "Name": "进攻玩法-双攻",
+    "NodeLocation": 107,
+    "Prerequests": [
+      {
+        "TalentID": 6,
+        "Level": 1
+      }
+    ],
+    "LevelExp": [
+      100,
+      200,
+      300,
+      400,
+      500
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4AttackFormationAttacker",
+    "EffectValue": [
+      3120306,
+      3120307,
+      3120308,
+      3120309,
+      3120310
+    ],
+    "Info": "进攻玩法中双攻提升2%/进攻玩法中双攻提升4%/进攻玩法中双攻提升6%/进攻玩法中双攻提升8%/进攻玩法中双攻提升10%",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1002.png@GPassive_1002"
+  },
+  {
+    "ID": 8,
+    "Name": "再行动-3",
+    "NodeLocation": 108,
+    "Prerequests": [
+      {
+        "TalentID": 7,
+        "Level": 2
+      }
+    ],
+    "LevelExp": [
+      100
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4AttackFormationAttacker",
+    "EffectValue": [
+      3120106
+    ],
+    "Info": "击败水晶后，全队英灵获得再行动",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1066.PNG@Skill_Boss_1066"
+  },
+  {
+    "ID": 201,
+    "Name": "防守-双防",
+    "NodeLocation": 201,
+    "Prerequests": [
+      {
+        "TalentID": 1,
+        "Level": 1
+      }
+    ],
+    "LevelExp": [
+      100,
+      200,
+      300,
+      400,
+      500
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4AttackFormationDefender",
+    "EffectValue": [
+      3120401,
+      3120402,
+      3120403,
+      3120404,
+      3120405
+    ],
+    "Info": "公会防守上阵角色双防提升2%/公会防守上阵角色双防提升4%/公会防守上阵角色双防提升6%/公会防守上阵角色双防提升8%/公会防守上阵角色双防提升10%",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1024.PNG@GPassive_1024"
+  },
+  {
+    "ID": 202,
+    "Name": "柱子天赋",
+    "NodeLocation": 202,
+    "Prerequests": [
+      {
+        "TalentID": 201,
+        "Level": 2
+      }
+    ],
+    "LevelExp": [
+      100
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4AttackFormationDefender",
+    "EffectValue": [
+      3120102
+    ],
+    "Info": "柱子天赋升级",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1001.PNG@Skill_Boss_1001"
+  },
+  {
+    "ID": 203,
+    "Name": "防守-双攻",
+    "NodeLocation": 203,
+    "Prerequests": [
+      {
+        "TalentID": 202,
+        "Level": 1
+      }
+    ],
+    "LevelExp": [
+      100,
+      200,
+      300,
+      400,
+      500
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4AttackFormationDefender",
+    "EffectValue": [
+      3120406,
+      3120407,
+      3120408,
+      3120409,
+      3120410
+    ],
+    "Info": "公会防守上阵角色双攻提升2%/公会防守上阵角色双攻提升4%/公会防守上阵角色双攻提升6%/公会防守上阵角色双攻提升8%/公会防守上阵角色双攻提升10%",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1002.png@GPassive_1002"
+  },
+  {
+    "ID": 204,
+    "Name": "上-商店",
+    "NodeLocation": 204,
+    "Prerequests": [
+      {
+        "TalentID": 203,
+        "Level": 2
+      }
+    ],
+    "LevelExp": [
+      100
+    ],
+    "EffectID": "GuildTalentTreeEffectType_ShopUnlockItem",
+    "EffectValue": [
+      1
+    ],
+    "Info": "商店解锁新商品2",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1021.png@Skill_None_1021"
+  },
+  {
+    "ID": 205,
+    "Name": "防守-气血",
+    "NodeLocation": 205,
+    "Prerequests": [
+      {
+        "TalentID": 204,
+        "Level": 1
+      }
+    ],
+    "LevelExp": [
+      100,
+      200,
+      300,
+      400,
+      500
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4AttackFormationDefender",
+    "EffectValue": [
+      3120411,
+      3120412,
+      3120413,
+      3120414,
+      3120415
+    ],
+    "Info": "公会防守上阵角色气血提升2%/公会防守上阵角色气血提升4%/公会防守上阵角色气血提升6%/公会防守上阵角色气血提升8%/公会防守上阵角色气血提升10%",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1003.png@GPassive_1003"
+  },
+  {
+    "ID": 206,
+    "Name": "商店折扣",
+    "NodeLocation": 206,
+    "Prerequests": [
+      {
+        "TalentID": 205,
+        "Level": 2
+      }
+    ],
+    "LevelExp": [
+      100
+    ],
+    "EffectID": "GuildTalentTreeEffectType_ShopDiscount",
+    "EffectValue": [
+      1
+    ],
+    "Info": "公会商店物品打折",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1021.png@Skill_None_1021"
+  },
+  {
+    "ID": 301,
+    "Name": "公会战收益",
+    "NodeLocation": 301,
+    "Prerequests": [
+      {
+        "TalentID": 1,
+        "Level": 1
+      }
+    ],
+    "LevelExp": [
+      100,
+      200,
+      300,
+      400,
+      500
+    ],
+    "EffectID": "GuildTalentTreeEffectType_ExtraDrop",
+    "EffectValue": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Info": "货币掉落提升2%/货币掉落提升4%/货币掉落提升6%/货币掉落提升8%/货币掉落提升10%",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1019.png@Skill_None_1019"
+  },
+  {
+    "ID": 302,
+    "Name": "PVE-双攻",
+    "NodeLocation": 302,
+    "Prerequests": [
+      {
+        "TalentID": 301,
+        "Level": 2
+      }
+    ],
+    "LevelExp": [
+      100,
+      200,
+      300,
+      400,
+      500
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4PVE",
+    "EffectValue": [
+      3120306,
+      3120307,
+      3120308,
+      3120309,
+      3120310
+    ],
+    "Info": "PVE玩法中双攻提升2%/PVE玩法中双攻提升4%/PVE玩法中双攻提升6%/PVE玩法中双攻提升8%/PVE玩法中双攻提升10%",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1002.png@GPassive_1002"
+  },
+  {
+    "ID": 303,
+    "Name": "进攻-双防",
+    "NodeLocation": 303,
+    "Prerequests": [
+      {
+        "TalentID": 302,
+        "Level": 2
+      }
+    ],
+    "LevelExp": [
+      100,
+      200,
+      300,
+      400,
+      500
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4AttackFormationAttacker",
+    "EffectValue": [
+      3120301,
+      3120302,
+      3120303,
+      3120304,
+      3120305
+    ],
+    "Info": "进攻玩法中双防提升2%/进攻玩法中双防提升4%/进攻玩法中双防提升6%/进攻玩法中双防提升8%/进攻玩法中双防提升10%",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1024.PNG@GPassive_1024"
+  },
+  {
+    "ID": 304,
+    "Name": "柱子天赋",
+    "NodeLocation": 304,
+    "Prerequests": [
+      {
+        "TalentID": 303,
+        "Level": 2
+      }
+    ],
+    "LevelExp": [
+      100
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4AttackFormationDefender",
+    "EffectValue": [
+      3120103
+    ],
+    "Info": "柱子天赋升级",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1001.PNG@Skill_Boss_1001"
+  },
+  {
+    "ID": 305,
+    "Name": "进攻-气血",
+    "NodeLocation": 305,
+    "Prerequests": [
+      {
+        "TalentID": 304,
+        "Level": 1
+      }
+    ],
+    "LevelExp": [
+      100,
+      200,
+      300,
+      400,
+      500
+    ],
+    "EffectID": "GuildTalentTreeEffectType_EventTrigger4AttackFormationAttacker",
+    "EffectValue": [
+      3120311,
+      3120312,
+      3120313,
+      3120314,
+      3120315
+    ],
+    "Info": "进攻玩法中气血提升2%/进攻玩法中气血提升4%/进攻玩法中气血提升6%/进攻玩法中气血提升8%/进攻玩法中气血提升10%",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1003.png@GPassive_1003"
+  },
+  {
+    "ID": 306,
+    "Name": "公会战收益-二",
+    "NodeLocation": 306,
+    "Prerequests": [
+      {
+        "TalentID": 305,
+        "Level": 2
+      }
+    ],
+    "LevelExp": [
+      100,
+      200,
+      300,
+      400,
+      500
+    ],
+    "EffectID": "GuildTalentTreeEffectType_ExtraDrop",
+    "EffectValue": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Info": "货币掉落提升2%/货币掉落提升4%/货币掉落提升6%/货币掉落提升8%/货币掉落提升10%",
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1019.png@Skill_None_1019"
+  }
+]

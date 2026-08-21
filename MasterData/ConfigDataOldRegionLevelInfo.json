@@ -1,0 +1,4122 @@
+[
+  {
+    "ID": 1001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 350044101,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 96,
+    "MonsterLevel": 52,
+    "BattleSceneId": 25010300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 1002,
+    "PreLevel": 1001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 350044102,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 56,
+    "BattleSceneId": 25010100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 1003,
+    "PreLevel": 1002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 350044103,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25010200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 2001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 350044201,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25010400,
+    "TeamBattleSceneId": 25010400,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 3001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010101,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25020100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 3002,
+    "PreLevel": 3001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010102,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25020200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 3003,
+    "PreLevel": 3002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010103,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25020300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 3004,
+    "PreLevel": 3003,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 350044201,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25020400,
+    "TeamBattleSceneId": 25020400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_23.png@mosterhead_23",
+    "ShowMonsters": [
+      124050156
+    ],
+    "RecommandProperty": [
+      4,
+      1,
+      16
+    ],
+    "NameStrKey": "ST:88043"
+  },
+  {
+    "ID": 4001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020011,
+    "DropId": 351020012,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25020400,
+    "TeamBattleSceneId": 25020400,
+    "ShowMonsters": [
+      124050156
+    ],
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:88043",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 6001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020021,
+    "DropId": 351020022,
+    "TeamPlusDropId": 351020000,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25030100,
+    "TeamBattleSceneId": 25030150,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 8001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020021,
+    "DropId": 351020022,
+    "TeamPlusDropId": 351020000,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25040100,
+    "TeamBattleSceneId": 25040150,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 10001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020021,
+    "DropId": 351020022,
+    "TeamPlusDropId": 351020000,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25050100,
+    "TeamBattleSceneId": 25050150,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 12001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020021,
+    "DropId": 351020022,
+    "TeamPlusDropId": 351020000,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25060200,
+    "TeamBattleSceneId": 25060250,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 13001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010601,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 63,
+    "BattleSceneId": 25070100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 13002,
+    "PreLevel": 13001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010602,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 64,
+    "BattleSceneId": 25070200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 13003,
+    "PreLevel": 13002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010603,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25070300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 14001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020021,
+    "DropId": 351020022,
+    "TeamPlusDropId": 351020000,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25071100,
+    "TeamBattleSceneId": 25071150,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 16001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25081100,
+    "TeamBattleSceneId": 25081200,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 17001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25090100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 17002,
+    "PreLevel": 17001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25090200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 17003,
+    "PreLevel": 17002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25090300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 18001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamMihe",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25091100,
+    "TeamBattleSceneId": 25091200,
+    "ShowMonsters": [
+      250911001
+    ],
+    "ModelShowMonsters": [
+      2223040
+    ],
+    "TeamMonsterPos": "Boss_Sha",
+    "RecommandChar": [
+      100110300,
+      100101900,
+      100110400
+    ],
+    "NameStrKey": "ST:122390",
+    "AttributeDescStrKey": "ST:122391"
+  },
+  {
+    "ID": 20001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25100200,
+    "TeamBattleSceneId": 25100300,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 22001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25110100,
+    "TeamBattleSceneId": 25110200,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 23001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25120100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 23002,
+    "PreLevel": 23001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25120200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 23003,
+    "PreLevel": 23002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25120300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 24001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25121100,
+    "TeamBattleSceneId": 25121200,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 26001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamMihe",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25130200,
+    "TeamBattleSceneId": 25130300,
+    "ShowMonsters": [
+      250911001
+    ],
+    "ModelShowMonsters": [
+      2223040
+    ],
+    "TeamMonsterPos": "Boss_Sha",
+    "RecommandChar": [
+      100110300,
+      100101900,
+      100110400
+    ],
+    "NameStrKey": "ST:122390",
+    "AttributeDescStrKey": "ST:122391"
+  },
+  {
+    "ID": 27001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25140100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 27002,
+    "PreLevel": 27001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25140200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 27003,
+    "PreLevel": 27002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25140300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 28001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25141100,
+    "TeamBattleSceneId": 25141200,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 30001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 60,
+    "BattleSceneId": 25150200,
+    "TeamBattleSceneId": 25150300,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 32001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25160100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 32002,
+    "PreLevel": 32001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25160200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 32003,
+    "PreLevel": 32002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25160300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 33001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25161100,
+    "TeamBattleSceneId": 25161200,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 34001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamMihe",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25170200,
+    "TeamBattleSceneId": 25170300,
+    "ShowMonsters": [
+      250911001
+    ],
+    "ModelShowMonsters": [
+      2223040
+    ],
+    "TeamMonsterPos": "Boss_Sha",
+    "RecommandChar": [
+      100110300,
+      100101900,
+      100110400
+    ],
+    "NameStrKey": "ST:122390",
+    "AttributeDescStrKey": "ST:122391"
+  },
+  {
+    "ID": 36001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25180100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 36002,
+    "PreLevel": 36001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25180200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 36003,
+    "PreLevel": 36002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25180300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 37001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25181100,
+    "TeamBattleSceneId": 25181200,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 38001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 65,
+    "BattleSceneId": 25191100,
+    "TeamBattleSceneId": 25191200,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 40001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25200100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 40002,
+    "PreLevel": 40001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25200200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 40003,
+    "PreLevel": 40002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25200300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 41001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25201100,
+    "TeamBattleSceneId": 25201200,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 42001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamMihe",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25210200,
+    "TeamBattleSceneId": 25210300,
+    "ShowMonsters": [
+      250911001
+    ],
+    "ModelShowMonsters": [
+      2223040
+    ],
+    "TeamMonsterPos": "Boss_Sha",
+    "RecommandChar": [
+      100110300,
+      100101900,
+      100110400
+    ],
+    "NameStrKey": "ST:122390",
+    "AttributeDescStrKey": "ST:122391"
+  },
+  {
+    "ID": 44001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25220100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 44002,
+    "PreLevel": 44001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25220200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 44003,
+    "PreLevel": 44002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25220300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 45001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25221100,
+    "TeamBattleSceneId": 25221200,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 46001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25230100,
+    "TeamBattleSceneId": 25230200,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 48001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25240100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 48002,
+    "PreLevel": 48001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25240200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 48003,
+    "PreLevel": 48002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25240300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 49001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25241100,
+    "TeamBattleSceneId": 25241200,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 50001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamMihe",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25250200,
+    "TeamBattleSceneId": 25250300,
+    "ShowMonsters": [
+      250911001
+    ],
+    "ModelShowMonsters": [
+      2223040
+    ],
+    "TeamMonsterPos": "Boss_Sha",
+    "RecommandChar": [
+      100110300,
+      100101900,
+      100110400
+    ],
+    "NameStrKey": "ST:122390",
+    "AttributeDescStrKey": "ST:122391"
+  },
+  {
+    "ID": 51001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25260100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 51002,
+    "PreLevel": 51001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25260200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 51003,
+    "PreLevel": 51002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25260300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 52001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25261100,
+    "TeamBattleSceneId": 25261200,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 54001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25270200,
+    "TeamBattleSceneId": 25270300,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 55001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25280100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 56001,
+    "PreLevel": 55001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25280200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 57001,
+    "PreLevel": 56001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25280300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 58001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25281100,
+    "TeamBattleSceneId": 25281200,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 59001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamMihe",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25290200,
+    "TeamBattleSceneId": 25290300,
+    "ShowMonsters": [
+      250911001
+    ],
+    "ModelShowMonsters": [
+      2223040
+    ],
+    "TeamMonsterPos": "Boss_Sha",
+    "RecommandChar": [
+      100110300,
+      100101900,
+      100110400
+    ],
+    "NameStrKey": "ST:122390",
+    "AttributeDescStrKey": "ST:122391"
+  },
+  {
+    "ID": 60001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25300100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 60002,
+    "PreLevel": 60001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25300200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 60003,
+    "PreLevel": 60002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25300300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 61001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25301100,
+    "TeamBattleSceneId": 25301200,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 62001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25310200,
+    "TeamBattleSceneId": 25310300,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 64001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25320100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 64002,
+    "PreLevel": 64001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25320200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 64003,
+    "PreLevel": 64002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25320300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 65001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25321100,
+    "TeamBattleSceneId": 25321200,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 66001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamMihe",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25330200,
+    "TeamBattleSceneId": 25330300,
+    "ShowMonsters": [
+      250911001
+    ],
+    "ModelShowMonsters": [
+      2223040
+    ],
+    "TeamMonsterPos": "Boss_Sha",
+    "RecommandChar": [
+      100110300,
+      100101900,
+      100110400
+    ],
+    "NameStrKey": "ST:122390",
+    "AttributeDescStrKey": "ST:122391"
+  },
+  {
+    "ID": 68001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25340100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 68002,
+    "PreLevel": 68001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25340200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 68003,
+    "PreLevel": 68002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25340300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 69001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25341100,
+    "TeamBattleSceneId": 25341200,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 70001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25350200,
+    "TeamBattleSceneId": 25350300,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 72001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25360100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 72002,
+    "PreLevel": 72001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25360200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 72003,
+    "PreLevel": 72002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25360300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 73001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25361100,
+    "TeamBattleSceneId": 25361200,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 74001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamMihe",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25370200,
+    "TeamBattleSceneId": 25370300,
+    "ShowMonsters": [
+      250911001
+    ],
+    "ModelShowMonsters": [
+      2223040
+    ],
+    "TeamMonsterPos": "Boss_Sha",
+    "RecommandChar": [
+      100110300,
+      100101900,
+      100110400
+    ],
+    "NameStrKey": "ST:122390",
+    "AttributeDescStrKey": "ST:122391"
+  },
+  {
+    "ID": 76001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25380100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 76002,
+    "PreLevel": 76001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25380200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 76003,
+    "PreLevel": 76002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25380300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 77001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25381100,
+    "TeamBattleSceneId": 25381200,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 79001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25390200,
+    "TeamBattleSceneId": 25390300,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 81001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25400100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 81002,
+    "PreLevel": 81001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25400200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 81003,
+    "PreLevel": 81002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25400300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 82001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25401100,
+    "TeamBattleSceneId": 25401200,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 83001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamMihe",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25410200,
+    "TeamBattleSceneId": 25420300,
+    "ShowMonsters": [
+      250911001
+    ],
+    "ModelShowMonsters": [
+      2223040
+    ],
+    "TeamMonsterPos": "Boss_Sha",
+    "RecommandChar": [
+      100110300,
+      100101900,
+      100110400
+    ],
+    "NameStrKey": "ST:122390",
+    "AttributeDescStrKey": "ST:122391"
+  },
+  {
+    "ID": 84001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25422100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 84002,
+    "PreLevel": 84001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25422200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 84003,
+    "PreLevel": 84002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25422300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 85001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25421100,
+    "TeamBattleSceneId": 25421200,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 87001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25430200,
+    "TeamBattleSceneId": 25430300,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 89001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25440100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 89002,
+    "PreLevel": 89001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25440200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 89003,
+    "PreLevel": 89002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25440300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 90001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25441100,
+    "TeamBattleSceneId": 25441200,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 92001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamMihe",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25450200,
+    "TeamBattleSceneId": 25450300,
+    "ShowMonsters": [
+      250911001
+    ],
+    "ModelShowMonsters": [
+      2223040
+    ],
+    "TeamMonsterPos": "Boss_Sha",
+    "RecommandChar": [
+      100110300,
+      100101900,
+      100110400
+    ],
+    "NameStrKey": "ST:122390",
+    "AttributeDescStrKey": "ST:122391"
+  },
+  {
+    "ID": 93001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25470100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 93002,
+    "PreLevel": 93001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25470200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 93003,
+    "PreLevel": 93002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25470300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 94001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25470400,
+    "TeamBattleSceneId": 25470410,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 95001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25480200,
+    "TeamBattleSceneId": 25480210,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 97001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25490100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 97002,
+    "PreLevel": 97001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25490200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 97003,
+    "PreLevel": 97002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25490300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 98001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25490400,
+    "TeamBattleSceneId": 25490500,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 100001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamMihe",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25500200,
+    "TeamBattleSceneId": 25500210,
+    "ShowMonsters": [
+      250911001
+    ],
+    "ModelShowMonsters": [
+      2223040
+    ],
+    "TeamMonsterPos": "Boss_Sha",
+    "RecommandChar": [
+      100110300,
+      100101900,
+      100110400
+    ],
+    "NameStrKey": "ST:122390",
+    "AttributeDescStrKey": "ST:122391"
+  },
+  {
+    "ID": 101001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25510100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 101002,
+    "PreLevel": 101001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25510200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 101003,
+    "PreLevel": 101002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25510300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 102001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25510400,
+    "TeamBattleSceneId": 25510410,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 103001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25520300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 103002,
+    "PreLevel": 103001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25520400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 103003,
+    "PreLevel": 103002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25520500,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 104001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25520200,
+    "TeamBattleSceneId": 25520210,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 105001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25520700,
+    "TeamBattleSceneId": 25520710,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 108001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25521100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 108002,
+    "PreLevel": 108001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25521200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 108003,
+    "PreLevel": 108002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25521300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 109001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamMihe",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25521400,
+    "TeamBattleSceneId": 25521410,
+    "ShowMonsters": [
+      250911001
+    ],
+    "ModelShowMonsters": [
+      2223040
+    ],
+    "TeamMonsterPos": "Boss_Sha",
+    "RecommandChar": [
+      100110300,
+      100101900,
+      100110400
+    ],
+    "NameStrKey": "ST:122390",
+    "AttributeDescStrKey": "ST:122391"
+  },
+  {
+    "ID": 110001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25521600,
+    "TeamBattleSceneId": 25521610,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 120001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25521700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 120002,
+    "PreLevel": 120001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25521710,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 120003,
+    "PreLevel": 120002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25521720,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 130001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25521800,
+    "TeamBattleSceneId": 25521810,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 150001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25522000,
+    "TeamBattleSceneId": 25522010,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 160001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25522100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 160002,
+    "PreLevel": 160001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25522200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 160003,
+    "PreLevel": 160002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25522300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 170001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamMihe",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25522400,
+    "TeamBattleSceneId": 25522410,
+    "ShowMonsters": [
+      250911001
+    ],
+    "ModelShowMonsters": [
+      2223040
+    ],
+    "TeamMonsterPos": "Boss_Sha",
+    "RecommandChar": [
+      100110300,
+      100101900,
+      100110400
+    ],
+    "NameStrKey": "ST:122390",
+    "AttributeDescStrKey": "ST:122391"
+  },
+  {
+    "ID": 190001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25522600,
+    "TeamBattleSceneId": 25522610,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 200001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25522700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 200002,
+    "PreLevel": 200001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25522710,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 200003,
+    "PreLevel": 200002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25522720,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 210001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25522800,
+    "TeamBattleSceneId": 25522810,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 230001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25523100,
+    "TeamBattleSceneId": 25523110,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 240001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25523200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 240002,
+    "PreLevel": 240001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25523210,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 240003,
+    "PreLevel": 240002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25523220,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 250001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamMihe",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25523300,
+    "TeamBattleSceneId": 25523310,
+    "ShowMonsters": [
+      250911001
+    ],
+    "ModelShowMonsters": [
+      2223040
+    ],
+    "TeamMonsterPos": "Boss_Sha",
+    "RecommandChar": [
+      100110300,
+      100101900,
+      100110400
+    ],
+    "NameStrKey": "ST:122390",
+    "AttributeDescStrKey": "ST:122391"
+  },
+  {
+    "ID": 270001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25523500,
+    "TeamBattleSceneId": 25523510,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 280001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25523600,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 280002,
+    "PreLevel": 280001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25523610,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 280003,
+    "PreLevel": 280002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25523620,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 290001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 25523700,
+    "TeamBattleSceneId": 25523710,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  },
+  {
+    "ID": 300001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleYingkui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 26502100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_20.png@mosterhead_20",
+    "ShowMonsters": [
+      123090070
+    ],
+    "RecommandProperty": [
+      16
+    ],
+    "NameStrKey": "ST:96259"
+  },
+  {
+    "ID": 300002,
+    "PreLevel": 300001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLeichi",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 26502110,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_21.png@mosterhead_21",
+    "ShowMonsters": [
+      123110270
+    ],
+    "RecommandProperty": [
+      4,
+      16
+    ],
+    "NameStrKey": "ST:96260"
+  },
+  {
+    "ID": 300003,
+    "PreLevel": 300002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleJintui",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 26502120,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_22.png@mosterhead_22",
+    "ShowMonsters": [
+      122230170
+    ],
+    "RecommandProperty": [
+      1,
+      2,
+      4
+    ],
+    "NameStrKey": "ST:96261"
+  },
+  {
+    "ID": 302001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLongzheng",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 26502300,
+    "TeamBattleSceneId": 26502310,
+    "ShowMonsters": [
+      131052770,
+      131052270,
+      131053470
+    ],
+    "ModelShowMonsters": [
+      3105270,
+      3105221,
+      3105343
+    ],
+    "TeamMonsterPos": "Boss_3P/1P|Boss_3P/2P|Boss_3P/3P",
+    "RecommandChar": [
+      100100100,
+      100101900,
+      100120000
+    ],
+    "NameStrKey": "ST:101557",
+    "AttributeDescStrKey": "ST:102128"
+  },
+  {
+    "ID": 304001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLonghun",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 26602200,
+    "TeamBattleSceneId": 26602210,
+    "ShowMonsters": [
+      122407011,
+      122407012,
+      122407014
+    ],
+    "ModelShowMonsters": [
+      2407010
+    ],
+    "TeamMonsterPos": "Boss_Dragon",
+    "RecommandChar": [
+      100110200,
+      100120000,
+      100100200
+    ],
+    "NameStrKey": "ST:89910",
+    "AttributeDescStrKey": "ST:90541"
+  },
+  {
+    "ID": 305001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleWeiji",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010301,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 26702200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "ShowMonsters": [
+      122030131
+    ],
+    "RecommandProperty": [
+      4
+    ],
+    "NameStrKey": "ST:15836"
+  },
+  {
+    "ID": 305002,
+    "PreLevel": 305001,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleLiangqiang",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010302,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 26702300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "ShowMonsters": [
+      121400121,
+      121110001
+    ],
+    "RecommandProperty": [
+      2,
+      16
+    ],
+    "NameStrKey": "ST:89908"
+  },
+  {
+    "ID": 305003,
+    "PreLevel": 305002,
+    "CopyBattleType": "OldRegionCopyBattleType_SingleBujue",
+    "FirstEnergySuccess": 30,
+    "FirstRewardDropId": 351010303,
+    "FirstPlayerExp": 30,
+    "FirstCharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 26702400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "ShowMonsters": [
+      122120041
+    ],
+    "RecommandProperty": [
+      8,
+      16
+    ],
+    "NameStrKey": "ST:89909"
+  },
+  {
+    "ID": 306001,
+    "CopyBattleType": "OldRegionCopyBattleType_TeamLuohou",
+    "FirstEnergySuccess": 30,
+    "EnergySuccess": 30,
+    "FirstRewardDropId": 351020031,
+    "DropId": 351020032,
+    "TeamPlusDropId": 351020033,
+    "TeamRetreatEnergy": 15,
+    "FirstPlayerExp": 30,
+    "PlayerExp": 30,
+    "FirstCharExp": 105,
+    "CharExp": 105,
+    "MonsterLevel": 68,
+    "BattleSceneId": 26702500,
+    "TeamBattleSceneId": 26702510,
+    "ShowMonsters": [
+      124050156,
+      124050157
+    ],
+    "ModelShowMonsters": [
+      2405010
+    ],
+    "TeamMonsterPos": "Boss_Luohou",
+    "RecommandChar": [
+      100102000,
+      100120400,
+      100101900
+    ],
+    "NameStrKey": "ST:97558",
+    "AttributeDescStrKey": "ST:99257"
+  }
+]

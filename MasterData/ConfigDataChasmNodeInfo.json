@@ -1,0 +1,412 @@
+[
+  {
+    "ID": 1001,
+    "NodeType": "ChasmNodeType_Funciton",
+    "EffectList": [
+      1001
+    ]
+  },
+  {
+    "ID": 1002,
+    "NodeType": "ChasmNodeType_Funciton",
+    "EffectList": [
+      1004
+    ]
+  },
+  {
+    "ID": 1003,
+    "NodeType": "ChasmNodeType_Information",
+    "NodeParam": [
+      1004,
+      1005,
+      1007
+    ]
+  },
+  {
+    "ID": 1004,
+    "NodeType": "ChasmNodeType_Reward",
+    "DropId": 350041011,
+    "ProgressIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/Icon_Reels.png@Icon_Reels",
+    "NameStrKey": "ST:89563",
+    "DescStrKey": "ST:90205"
+  },
+  {
+    "ID": 1005,
+    "NodeType": "ChasmNodeType_Reward",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 1008000
+      }
+    ],
+    "DropId": 350041012,
+    "ProgressIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/Icon_Reels.png@Icon_Reels",
+    "NameStrKey": "ST:89564",
+    "DescStrKey": "ST:90206"
+  },
+  {
+    "ID": 1006,
+    "NodeType": "ChasmNodeType_Funciton",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 1386000
+      }
+    ],
+    "EffectList": [
+      1008
+    ]
+  },
+  {
+    "ID": 1007,
+    "NodeType": "ChasmNodeType_Reward",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 1701000
+      }
+    ],
+    "DropId": 350041013,
+    "ProgressIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/Icon_Reels.png@Icon_Reels",
+    "NameStrKey": "ST:89565",
+    "DescStrKey": "ST:90207"
+  },
+  {
+    "ID": 1008,
+    "NodeType": "ChasmNodeType_Information",
+    "NodeParam": [
+      1009,
+      1013,
+      1015
+    ],
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 2520000
+      }
+    ]
+  },
+  {
+    "ID": 1009,
+    "NodeType": "ChasmNodeType_Reward",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 2520000
+      }
+    ],
+    "DropId": 350041021,
+    "ProgressIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/Icon_Reels.png@Icon_Reels",
+    "NameStrKey": "ST:89563",
+    "DescStrKey": "ST:90636"
+  },
+  {
+    "ID": 1010,
+    "NodeType": "ChasmNodeType_Funciton",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 2520000
+      }
+    ],
+    "EffectList": [
+      1009
+    ]
+  },
+  {
+    "ID": 1011,
+    "NodeType": "ChasmNodeType_Funciton",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 2520000
+      }
+    ],
+    "EffectList": [
+      1002
+    ]
+  },
+  {
+    "ID": 1012,
+    "NodeType": "ChasmNodeType_Funciton",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 2520000
+      }
+    ],
+    "EffectList": [
+      1005
+    ]
+  },
+  {
+    "ID": 1013,
+    "NodeType": "ChasmNodeType_Reward",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 3402000
+      }
+    ],
+    "DropId": 350041022,
+    "ProgressIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/Icon_Reels.png@Icon_Reels",
+    "NameStrKey": "ST:89564",
+    "DescStrKey": "ST:90209"
+  },
+  {
+    "ID": 1014,
+    "NodeType": "ChasmNodeType_Funciton",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 4410000
+      }
+    ],
+    "EffectList": [
+      1010
+    ]
+  },
+  {
+    "ID": 1015,
+    "NodeType": "ChasmNodeType_Reward",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 5355000
+      }
+    ],
+    "DropId": 350041023,
+    "ProgressIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/Icon_Reels.png@Icon_Reels",
+    "NameStrKey": "ST:89565",
+    "DescStrKey": "ST:90210"
+  },
+  {
+    "ID": 1016,
+    "NodeType": "ChasmNodeType_Funciton",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 6300000
+      }
+    ],
+    "EffectList": [
+      1011
+    ]
+  },
+  {
+    "ID": 1017,
+    "NodeType": "ChasmNodeType_Information",
+    "NodeParam": [
+      1022,
+      1023,
+      1024,
+      1035
+    ],
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 6300000
+      }
+    ]
+  },
+  {
+    "ID": 1018,
+    "NodeType": "ChasmNodeType_Funciton",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 6300000
+      }
+    ],
+    "EffectList": [
+      1007
+    ]
+  },
+  {
+    "ID": 1022,
+    "NodeType": "ChasmNodeType_BossReward",
+    "NodeParam": [
+      1001
+    ],
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 6300000
+      }
+    ],
+    "BossIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_01.png@mosterhead_01",
+    "BossNameStrKey": "ST:15836"
+  },
+  {
+    "ID": 1023,
+    "NodeType": "ChasmNodeType_BossReward",
+    "NodeParam": [
+      1002
+    ],
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 6300000
+      }
+    ],
+    "BossIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_11.png@mosterhead_11",
+    "BossNameStrKey": "ST:89908"
+  },
+  {
+    "ID": 1024,
+    "NodeType": "ChasmNodeType_BossReward",
+    "NodeParam": [
+      1003
+    ],
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 6300000
+      }
+    ],
+    "DropId": 350041001,
+    "ProgressIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/Icon_Reels.png@Icon_Reels",
+    "BossIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OldAreaImage_ABS/mosterhead_16.png@mosterhead_16",
+    "NameStrKey": "ST:89563",
+    "DescStrKey": "ST:90211",
+    "BossNameStrKey": "ST:89909"
+  },
+  {
+    "ID": 1025,
+    "NodeType": "ChasmNodeType_Information",
+    "NodeParam": [
+      1026,
+      1027
+    ],
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_SystemPoint",
+        "P1": 7000000
+      }
+    ]
+  },
+  {
+    "ID": 1026,
+    "NodeType": "ChasmNodeType_Reward",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_SystemPoint",
+        "P1": 7000000
+      }
+    ],
+    "DropId": 350041031,
+    "NameStrKey": "ST:89563",
+    "DescStrKey": "ST:90212"
+  },
+  {
+    "ID": 1027,
+    "NodeType": "ChasmNodeType_Reward",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_SystemPoint",
+        "P1": 7400000
+      }
+    ],
+    "DropId": 350041032,
+    "NameStrKey": "ST:89564",
+    "DescStrKey": "ST:90213"
+  },
+  {
+    "ID": 1028,
+    "NodeType": "ChasmNodeType_Funciton",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_SystemPoint",
+        "P1": 7000000
+      }
+    ],
+    "EffectList": [
+      1003
+    ]
+  },
+  {
+    "ID": 1029,
+    "NodeType": "ChasmNodeType_Funciton",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_SystemPoint",
+        "P1": 7000000
+      }
+    ],
+    "EffectList": [
+      1006
+    ]
+  },
+  {
+    "ID": 1030,
+    "NodeType": "ChasmNodeType_Funciton",
+    "EffectList": [
+      1012
+    ]
+  },
+  {
+    "ID": 1031,
+    "NodeType": "ChasmNodeType_Funciton",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 2520000
+      }
+    ],
+    "EffectList": [
+      1013
+    ]
+  },
+  {
+    "ID": 1032,
+    "NodeType": "ChasmNodeType_Funciton",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_TotalPoint",
+        "P1": 6300000
+      }
+    ],
+    "EffectList": [
+      1014
+    ]
+  },
+  {
+    "ID": 1033,
+    "NodeType": "ChasmNodeType_Funciton",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_SystemPoint",
+        "P1": 7000000
+      }
+    ],
+    "EffectList": [
+      1015
+    ]
+  },
+  {
+    "ID": 1034,
+    "NodeType": "ChasmNodeType_Funciton",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_SystemPoint",
+        "P1": 7600000
+      }
+    ],
+    "EffectList": [
+      1016
+    ]
+  },
+  {
+    "ID": 1035,
+    "NodeType": "ChasmNodeType_Reward",
+    "ChasmNodeOpenCond": [
+      {
+        "OpenCondType": "ChasmNodeOpenCondType_SystemPoint",
+        "P1": 6600000
+      }
+    ],
+    "DropId": 350041024,
+    "NameStrKey": "ST:89564",
+    "DescStrKey": "ST:90525"
+  }
+]

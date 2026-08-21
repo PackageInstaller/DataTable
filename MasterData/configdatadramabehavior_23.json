@@ -1,0 +1,2081 @@
+[
+  {
+    "ID": 694000920,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "SkillAnnounce",
+    "OnHitEffect": [
+      800002002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 694000920
+  },
+  {
+    "ID": 694001070,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02",
+    "CastEffect": [
+      110600200,
+      110600201
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 694001070
+  },
+  {
+    "ID": 694001071,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill03",
+    "CastEffect": [
+      110600040
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 694001071
+  },
+  {
+    "ID": 694001250,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "SkillAnnounce",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 694001250
+  },
+  {
+    "ID": 694001380,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      110600100
+    ],
+    "OnHitEffect": [
+      10000002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 694001380
+  },
+  {
+    "ID": 695000090,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      310100010,
+      310100011,
+      310100012
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      30,
+      30,
+      40
+    ],
+    "SkillSound": 695000090,
+    "AttackWeapon": [
+      "WeaponType_Hammer",
+      "WeaponType_Hammer",
+      "WeaponType_Hammer",
+      "WeaponType_Hammer"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None",
+      "AttackAngleType_None",
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 695000091,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "CastEffect": [
+      310100020,
+      310100021
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 695000091,
+    "AttackWeapon": [
+      "WeaponType_Hammer",
+      "WeaponType_Hammer"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None",
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 695000092,
+    "ReturnToIdle": true,
+    "Animation": "Combat_DoubleHitRootMotion",
+    "CastEffect": [
+      310100020,
+      310100021
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 695000092,
+    "AttackWeapon": [
+      "WeaponType_Hammer",
+      "WeaponType_Hammer"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None",
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 695000120,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      310101010,
+      310101011
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 695000120,
+    "AttackWeapon": [
+      "WeaponType_Spear",
+      "WeaponType_Spear"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Stab"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 695000121,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "CastEffect": [
+      310101020,
+      310101021
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 695000121,
+    "AttackWeapon": [
+      "WeaponType_Spear",
+      "WeaponType_Spear"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Stab"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 695000122,
+    "ReturnToIdle": true,
+    "Animation": "Combat_DoubleHitRootMotion",
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 695000122,
+    "AttackWeapon": [
+      "WeaponType_Spear",
+      "WeaponType_Spear"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Stab"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 695000123,
+    "ReturnToIdle": true,
+    "Animation": "Combat_ChaseHitRootMotion",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 695000123,
+    "AttackWeapon": [
+      "WeaponType_Spear"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Stab"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 695000230,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      310105010,
+      310105011,
+      310105012
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 695000230
+  },
+  {
+    "ID": 695000231,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "CastEffect": [
+      310105020,
+      310105021
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 695000231
+  },
+  {
+    "ID": 695000270,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "SkillAnnounce",
+    "OnHitEffect": [
+      800002002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 695000270
+  },
+  {
+    "ID": 695000710,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 695000710
+  },
+  {
+    "ID": 695000720,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 695000720
+  },
+  {
+    "ID": 695000730,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 695000730
+  },
+  {
+    "ID": 695000800,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      310100010,
+      310100011,
+      310100012
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 695000800,
+    "AttackWeapon": [
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 699000300,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "SkillAnnounce",
+    "OnHitEffect": [
+      810600790
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 699000300
+  },
+  {
+    "ID": 699999840,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "SkillAnnounce",
+    "OnHitEffect": [
+      810600790
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 699999840
+  },
+  {
+    "ID": 699999901,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_Announce",
+    "OnHitEffect": [
+      -1
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 699999901
+  },
+  {
+    "ID": 699999972,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      110000200
+    ],
+    "OnHitEffect": [
+      800002002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 699999972
+  },
+  {
+    "ID": 699999973,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      810600700
+    ],
+    "OnHitEffect": [
+      800002002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 699999973
+  },
+  {
+    "ID": 699999974,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      810600700
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 699999974
+  },
+  {
+    "ID": 699999986,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      100100200
+    ],
+    "OnHitEffect": [
+      800002002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 699999986
+  },
+  {
+    "ID": 699999987,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      110000200
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 699999987
+  },
+  {
+    "ID": 699999988,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02",
+    "CastEffect": [
+      100100200
+    ],
+    "OnHitEffect": [
+      800002002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 699999988
+  },
+  {
+    "ID": 699999989,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02",
+    "CastEffect": [
+      -1
+    ],
+    "OnHitEffect": [
+      -1
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 699999989
+  },
+  {
+    "ID": 699999996,
+    "ReturnToIdle": true,
+    "Animation": "Combat_Announce",
+    "OnHitEffect": [
+      -1
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 699999996
+  },
+  {
+    "ID": 699999997,
+    "ReturnToIdle": true,
+    "Animation": "Combat_Announce",
+    "CastEffect": [
+      800000001
+    ],
+    "OnHitEffect": [
+      -1
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 699999997
+  },
+  {
+    "ID": 699999998,
+    "ReturnToIdle": true,
+    "Animation": "Combat_Announce",
+    "OnHitEffect": [
+      -1
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 699999998
+  },
+  {
+    "ID": 699999999,
+    "ReturnToIdle": true,
+    "Animation": "Combat_Announce",
+    "OnHitEffect": [
+      -1
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 699999999
+  },
+  {
+    "ID": 700000000,
+    "ReturnToIdle": true,
+    "Animation": "Dead01",
+    "OnHitEffect": [
+      -1
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 700000000
+  },
+  {
+    "ID": 800000001,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      990000101
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 800000001
+  },
+  {
+    "ID": 800000002,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02",
+    "CastEffect": [
+      990000201
+    ],
+    "OnHitEffect": [
+      -1
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 800000002
+  },
+  {
+    "ID": 800000003,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill03",
+    "CastEffect": [
+      990000301,
+      990000302
+    ],
+    "OnHitEffect": [
+      -1
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 800000003
+  },
+  {
+    "ID": 800000004,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill04",
+    "CastEffect": [
+      990000401,
+      990000402
+    ],
+    "OnHitEffect": [
+      -1
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 800000004
+  },
+  {
+    "ID": 800000005,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill05",
+    "CastEffect": [
+      990000501
+    ],
+    "OnHitEffect": [
+      -1
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 800000005
+  },
+  {
+    "ID": 800000006,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill06",
+    "CastEffect": [
+      990000601
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 800000006
+  },
+  {
+    "ID": 800000007,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill08",
+    "OnHitEffect": [
+      -1
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 800000007
+  },
+  {
+    "ID": 800000008,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill09",
+    "OnHitEffect": [
+      -1
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 800000008
+  },
+  {
+    "ID": 800000009,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill10",
+    "OnHitEffect": [
+      -1
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 800000009
+  },
+  {
+    "ID": 800000010,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 611076001,
+    "AttackWeapon": [
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 800000011,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 611076002,
+    "AttackWeapon": [
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword",
+      "WeaponType_BroadSword"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 800000012,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill04",
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 623150001
+  },
+  {
+    "ID": 800000013,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill05",
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 623150002
+  },
+  {
+    "ID": 800000014,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill06",
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 623150003
+  },
+  {
+    "ID": 800000021,
+    "ReturnToIdle": true,
+    "Animation": "SkillAnnounce",
+    "OnHitEffect": [
+      800002002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 800000021,
+    "StartEffect": 990000202
+  },
+  {
+    "ID": 800000022,
+    "ReturnToIdle": true,
+    "Animation": "SkillAnnounce",
+    "OnHitEffect": [
+      800002002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 800000021,
+    "StartEffect": 10000002
+  },
+  {
+    "ID": 800420000,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "OnHitEffect": [
+      105700054
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 600000030
+  },
+  {
+    "ID": 800420001,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000034
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420002,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000077
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420003,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000017
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420004,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000027
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420005,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000058
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420006,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000001
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420007,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000004
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420008,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000043
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420009,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000085
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420010,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill04",
+    "CastEffect": [
+      500000013
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420011,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill02",
+    "CastEffect": [
+      500000046
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420012,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000012
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420013,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000078
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420014,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000086
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420015,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000079
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420016,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000014
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420017,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000072
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420018,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000081
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420019,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000015
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420020,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000016
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420021,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000082
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420022,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000063
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420023,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000073
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420024,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000073
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420025,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000018
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420026,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000019
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420027,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000020
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420028,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000021
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420029,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000022
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420030,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000083
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420031,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000083
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420032,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000083
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420033,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000083
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420034,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000083
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420035,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000023
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420036,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000023
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420037,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000023
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420038,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000023
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420039,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000026
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420040,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000026
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420041,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000026
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420042,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000028
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420043,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000029
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420044,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000030
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420045,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000031
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420046,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000033
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420047,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000034
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420048,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000035
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420049,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000066
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420050,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000036
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420051,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000036
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420052,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000059
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420053,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000037
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420054,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000069
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420055,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000040
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420056,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000076
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420057,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000036
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420058,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000036
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420059,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000065
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420060,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000069
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420061,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill07",
+    "CastEffect": [
+      103600062,
+      103600063
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 611036050
+  },
+  {
+    "ID": 800420062,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill06",
+    "CastEffect": [
+      102500061
+    ],
+    "OnHitEffect": [
+      102500062
+    ],
+    "FlyObjetId": [
+      1025000
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 611025051
+  },
+  {
+    "ID": 800420072,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000099
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420073,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill06",
+    "CastEffect": [
+      500000095
+    ],
+    "OnHitEffect": [
+      500000097
+    ],
+    "FlyObjetId": [
+      4200730
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420074,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000087
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420075,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000088
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420076,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000089
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420077,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000090
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420078,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000091
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420079,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000092
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420080,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000093
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420081,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000094
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800420082,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "SkillAnnounce",
+    "CastEffect": [
+      500000020
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 600000011
+  },
+  {
+    "ID": 800429999,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000049
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800430000,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000066
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800430001,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000036
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800440001,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000036
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800440028,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      500000100
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800440029,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill02",
+    "CastEffect": [
+      500000101
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800440038,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill03",
+    "CastEffect": [
+      500000102
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800440039,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill04",
+    "CastEffect": [
+      500000103
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 800440040,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill05",
+    "CastEffect": [
+      500000104
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 810100001,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/BackupSkill/BackupSkillDrama_1000.prefab",
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 810100201,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/BackupSkill/BackupSkillDrama_1002.prefab",
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 810100701,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/BackupSkill/BackupSkillDrama_1007.prefab",
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 810112501,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/BackupSkill/BackupSkillDrama_1125.prefab",
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 810113401,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/BackupSkill/BackupSkillDrama_1134.prefab",
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 810114301,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/BackupSkill/BackupSkillDrama_1143.prefab",
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 810120401,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/BackupSkill/BackupSkillDrama_1204.prefab",
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 810121201,
+    "ExtraDramaBehaviorIds": [
+      810121202
+    ],
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/BackupSkill/BackupSkillDrama_1212.prefab",
+    "FlyObjetId": [
+      1212000
+    ],
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 810121202,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Common_ABS/SkillBounceDrama.prefab",
+    "OnHitEffect": [
+      121200401
+    ],
+    "FlyObjetId": [
+      1212000
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 611212213
+  },
+  {
+    "ID": 810132101,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/BackupSkill/BackupSkillDrama_1321.prefab",
+    "BloodDamageShow": [
+      100
+    ]
+  },
+  {
+    "ID": 999999900,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02",
+    "CastEffect": [
+      102400060
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 611024008,
+    "MultiPerformDramaBehaviorList": [
+      999999900,
+      999999901
+    ]
+  },
+  {
+    "ID": 999999901,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 611024005,
+    "DramaOnSkillStageEnd": "CastSkill03"
+  }
+]

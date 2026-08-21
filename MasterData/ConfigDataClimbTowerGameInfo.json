@@ -1,0 +1,161 @@
+[
+  {
+    "ID": 1,
+    "Name": "轩辕剑挑战",
+    "PlayType": "ClimbTowerPlayType_XuanYuanSword_Challenge",
+    "Desc": "轩辕剑挑战",
+    "StartPoint": [
+      111011,
+      112011,
+      113011
+    ],
+    "EndPoint": [
+      151081,
+      151082,
+      151083
+    ],
+    "ActorPool": 7,
+    "ActorNumber": 3,
+    "Currencies": [
+      14,
+      15
+    ],
+    "UnlockInterfaceEventIds": [
+      151081001,
+      151082001,
+      151083001
+    ],
+    "ReviveCharacterCost": [
+      {
+        "CurrencyType": "CurrencyType_ClimbTowerCoin2",
+        "Count": 1
+      }
+    ],
+    "DailyChallengeCout": 30
+  },
+  {
+    "ID": 2,
+    "Name": "轩辕剑挑战",
+    "PlayType": "ClimbTowerPlayType_XuanYuanSword_Challenge",
+    "Desc": "轩辕剑挑战",
+    "StartPoint": [
+      211011
+    ],
+    "EndPoint": [
+      214263
+    ],
+    "ActorPool": 8,
+    "ActorNumber": 3,
+    "Currencies": [
+      14,
+      15
+    ],
+    "UnlockInterfaceEventIds": [
+      351081001,
+      351082001,
+      351083001
+    ],
+    "ReviveCharacterCost": [
+      {
+        "CurrencyType": "CurrencyType_ClimbTowerCoin2",
+        "Count": 1
+      }
+    ],
+    "DailyChallengeCout": 99,
+    "FreeCurrency": [
+      {
+        "CurrencyType": "CurrencyType_ClimbTowerCoin2",
+        "Count": 10
+      }
+    ],
+    "Limitators": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "ActorUnlockCondition": [
+      {
+        "ActorId": 810000301,
+        "FinishCount": 1
+      },
+      {
+        "ActorId": 810000401,
+        "FinishCount": 1
+      },
+      {
+        "ActorId": 810000501,
+        "FinishCount": 1
+      },
+      {
+        "ActorId": 810000601,
+        "FinishCount": 1
+      },
+      {
+        "ActorId": 810000701,
+        "FinishCount": 1
+      },
+      {
+        "ActorId": 810000801,
+        "FinishCount": 1
+      },
+      {
+        "ActorId": 810000901,
+        "FinishCount": 1
+      },
+      {
+        "ActorId": 810001001,
+        "FinishCount": 1
+      },
+      {
+        "ActorId": 810001101,
+        "FinishCount": 1
+      },
+      {
+        "ActorId": 810001201,
+        "FinishCount": 1
+      },
+      {
+        "ActorId": 810001401,
+        "FinishCount": 1
+      },
+      {
+        "ActorId": 810001501,
+        "FinishCount": 1
+      },
+      {
+        "ActorId": 810001601,
+        "FinishCount": 1
+      },
+      {
+        "ActorId": 810001701,
+        "FinishCount": 1
+      },
+      {
+        "ActorId": 810001801,
+        "FinishCount": 1
+      }
+    ],
+    "TreasureCardDropFreeRefreshCount": 20,
+    "TreasureCardDropRefreshCost": [
+      {
+        "CurrencyType": "CurrencyType_ClimbTowerCoin2",
+        "Count": 3
+      }
+    ],
+    "DisplayItems": [
+      400020142
+    ]
+  }
+]

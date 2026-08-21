@@ -1,0 +1,1220 @@
+[
+  {
+    "ID": 100110,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2010110,
+    "GroupSectionIds": [
+      100111
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020178,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:144",
+    "DescStrKey": "ST:26735"
+  },
+  {
+    "ID": 100111,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2010111,
+    "GroupSectionIds": [
+      100110
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7010111,
+        "P1": 7010101
+      },
+      {
+        "Key": 7010112,
+        "P1": 7010102
+      },
+      {
+        "Key": 7010113,
+        "P1": 7010103
+      },
+      {
+        "Key": 7010111,
+        "P1": 7010101
+      }
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020179,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:144",
+    "DescStrKey": "ST:26735"
+  },
+  {
+    "ID": 100120,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2010120,
+    "PreSectionId": 100110,
+    "GroupSectionIds": [
+      100121
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020178,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:537",
+    "DescStrKey": "ST:15838"
+  },
+  {
+    "ID": 100121,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2010121,
+    "PreSectionId": 100111,
+    "GroupSectionIds": [
+      100120
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7010211,
+        "P1": 7010201
+      },
+      {
+        "Key": 7010212,
+        "P1": 7010202
+      },
+      {
+        "Key": 7010213,
+        "P1": 7010203
+      },
+      {
+        "Key": 7010211,
+        "P1": 7010201
+      }
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020179,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:537",
+    "DescStrKey": "ST:15838"
+  },
+  {
+    "ID": 100130,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2010130,
+    "PreSectionId": 100120,
+    "GroupSectionIds": [
+      100131
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020178,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:33600",
+    "DescStrKey": "ST:51088",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100131,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2010131,
+    "PreSectionId": 100121,
+    "GroupSectionIds": [
+      100130
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7010311,
+        "P1": 7010301
+      },
+      {
+        "Key": 7010312,
+        "P1": 7010302
+      },
+      {
+        "Key": 7010313,
+        "P1": 7010303
+      },
+      {
+        "Key": 7010311,
+        "P1": 7010301
+      }
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020179,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:33600",
+    "DescStrKey": "ST:51088",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100140,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2010140,
+    "PreSectionId": 100130,
+    "GroupSectionIds": [
+      100141
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020178,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:15830",
+    "DescStrKey": "ST:6460",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100141,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2010141,
+    "PreSectionId": 100131,
+    "GroupSectionIds": [
+      100140
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7010411,
+        "P1": 7010401
+      },
+      {
+        "Key": 7010412,
+        "P1": 7010402
+      },
+      {
+        "Key": 7010413,
+        "P1": 7010403
+      },
+      {
+        "Key": 7010411,
+        "P1": 7010401
+      }
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020179,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:15830",
+    "DescStrKey": "ST:6460",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100150,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2010150,
+    "PreSectionId": 100140,
+    "GroupSectionIds": [
+      100151
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020178,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:3492",
+    "DescStrKey": "ST:26765",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100151,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2010151,
+    "PreSectionId": 100141,
+    "GroupSectionIds": [
+      100150
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7010511,
+        "P1": 7010501
+      },
+      {
+        "Key": 7010512,
+        "P1": 7010502
+      },
+      {
+        "Key": 7010513,
+        "P1": 7010503
+      },
+      {
+        "Key": 7010511,
+        "P1": 7010501
+      }
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020179,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:3492",
+    "DescStrKey": "ST:26765",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100160,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2010160,
+    "PreSectionId": 100150,
+    "GroupSectionIds": [
+      100161
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020178,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:5329",
+    "DescStrKey": "ST:26741",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100161,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2010161,
+    "PreSectionId": 100151,
+    "GroupSectionIds": [
+      100160
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7010611,
+        "P1": 7010601
+      },
+      {
+        "Key": 7010612,
+        "P1": 7010602
+      },
+      {
+        "Key": 7010613,
+        "P1": 7010603
+      },
+      {
+        "Key": 7010611,
+        "P1": 7010601
+      }
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020179,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:5329",
+    "DescStrKey": "ST:26741",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100210,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2703010,
+    "DialogAfterId": 703056105,
+    "AchievementCompleteDialogAfterId": 703017601,
+    "GroupSectionIds": [
+      100211
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020180,
+        "MaxCount": 2
+      }
+    ],
+    "NameStrKey": "ST:14693",
+    "DescStrKey": "ST:221763"
+  },
+  {
+    "ID": 100211,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2703011,
+    "DialogAfterId": 703056105,
+    "AchievementCompleteDialogAfterId": 703017601,
+    "GroupSectionIds": [
+      100210
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7030111,
+        "P1": 7030101
+      }
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020181,
+        "MaxCount": 2
+      }
+    ],
+    "NameStrKey": "ST:14693",
+    "DescStrKey": "ST:221763"
+  },
+  {
+    "ID": 100220,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2703020,
+    "DialogBeforeId": 703027101,
+    "DialogAfterId": 703056105,
+    "AchievementCompleteDialogAfterId": 703027601,
+    "PreSectionId": 100210,
+    "GroupSectionIds": [
+      100221
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020180,
+        "MaxCount": 2
+      }
+    ],
+    "NameStrKey": "ST:29686",
+    "DescStrKey": "ST:221764"
+  },
+  {
+    "ID": 100221,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2703012,
+    "DialogBeforeId": 703027101,
+    "DialogAfterId": 703056105,
+    "AchievementCompleteDialogAfterId": 703027601,
+    "PreSectionId": 100211,
+    "GroupSectionIds": [
+      100220
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7030211,
+        "P1": 7030201
+      }
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020181,
+        "MaxCount": 2
+      }
+    ],
+    "NameStrKey": "ST:29686",
+    "DescStrKey": "ST:221764"
+  },
+  {
+    "ID": 100230,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2703030,
+    "DialogBeforeId": 703037201,
+    "DialogAfterId": 703056105,
+    "AchievementCompleteDialogAfterId": 703037601,
+    "PreSectionId": 100220,
+    "GroupSectionIds": [
+      100231
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020180,
+        "MaxCount": 2
+      }
+    ],
+    "NameStrKey": "ST:220003",
+    "DescStrKey": "ST:221765",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100231,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2703013,
+    "DialogBeforeId": 703037201,
+    "DialogAfterId": 703056105,
+    "AchievementCompleteDialogAfterId": 703037601,
+    "PreSectionId": 100221,
+    "GroupSectionIds": [
+      100230
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7030311,
+        "P1": 7030301
+      }
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020181,
+        "MaxCount": 2
+      }
+    ],
+    "NameStrKey": "ST:220003",
+    "DescStrKey": "ST:221765",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100240,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2703040,
+    "DialogBeforeId": 703047101,
+    "DialogAfterId": 703056105,
+    "AchievementCompleteDialogAfterId": 703047601,
+    "PreSectionId": 100230,
+    "GroupSectionIds": [
+      100241
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020180,
+        "MaxCount": 2
+      }
+    ],
+    "NameStrKey": "ST:220534",
+    "DescStrKey": "ST:221766",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100241,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2703014,
+    "DialogBeforeId": 703047101,
+    "DialogAfterId": 703056105,
+    "AchievementCompleteDialogAfterId": 703047601,
+    "PreSectionId": 100231,
+    "GroupSectionIds": [
+      100240
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7030411,
+        "P1": 7030401
+      }
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020181,
+        "MaxCount": 2
+      }
+    ],
+    "NameStrKey": "ST:220534",
+    "DescStrKey": "ST:221766",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100250,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2703050,
+    "DialogBeforeId": 703057101,
+    "DialogAfterId": 703056105,
+    "AchievementCompleteDialogAfterId": 703057601,
+    "PreSectionId": 100240,
+    "GroupSectionIds": [
+      100251
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020180,
+        "MaxCount": 2
+      }
+    ],
+    "NameStrKey": "ST:220289",
+    "DescStrKey": "ST:221767",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100251,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2703015,
+    "DialogBeforeId": 703057101,
+    "DialogAfterId": 703056105,
+    "AchievementCompleteDialogAfterId": 703057601,
+    "PreSectionId": 100241,
+    "GroupSectionIds": [
+      100250
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7030511,
+        "P1": 7030501
+      }
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020181,
+        "MaxCount": 2
+      }
+    ],
+    "NameStrKey": "ST:220289",
+    "DescStrKey": "ST:221767",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100260,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2703060,
+    "DialogBeforeId": 703067101,
+    "DialogAfterId": 703056105,
+    "AchievementCompleteDialogAfterId": 703067601,
+    "PreSectionId": 100250,
+    "GroupSectionIds": [
+      100261
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020180,
+        "MaxCount": 2
+      }
+    ],
+    "NameStrKey": "ST:220535",
+    "DescStrKey": "ST:221768",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100261,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2703016,
+    "DialogBeforeId": 703067101,
+    "DialogAfterId": 703056105,
+    "AchievementCompleteDialogAfterId": 703067601,
+    "PreSectionId": 100251,
+    "GroupSectionIds": [
+      100260
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7030611,
+        "P1": 7030601
+      }
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020181,
+        "MaxCount": 2
+      }
+    ],
+    "NameStrKey": "ST:220535",
+    "DescStrKey": "ST:221768",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100310,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2011110,
+    "GroupSectionIds": [
+      100311
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020185,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:33603",
+    "DescStrKey": "ST:51093"
+  },
+  {
+    "ID": 100311,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2011111,
+    "GroupSectionIds": [
+      100310
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7010711,
+        "P1": 7010701
+      },
+      {
+        "Key": 7010712,
+        "P1": 7010702
+      },
+      {
+        "Key": 7010713,
+        "P1": 7010703
+      }
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020186,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:33603",
+    "DescStrKey": "ST:51093"
+  },
+  {
+    "ID": 100320,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2011120,
+    "PreSectionId": 100310,
+    "GroupSectionIds": [
+      100321
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020185,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:3496",
+    "DescStrKey": "ST:26769"
+  },
+  {
+    "ID": 100321,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2011121,
+    "PreSectionId": 100311,
+    "GroupSectionIds": [
+      100320
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7010811,
+        "P1": 7010801
+      },
+      {
+        "Key": 7010812,
+        "P1": 7010802
+      },
+      {
+        "Key": 7010813,
+        "P1": 7010803
+      }
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020186,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:3496",
+    "DescStrKey": "ST:26769"
+  },
+  {
+    "ID": 100330,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2011130,
+    "PreSectionId": 100320,
+    "GroupSectionIds": [
+      100331
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020185,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:33605",
+    "DescStrKey": "ST:51095",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100331,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2011131,
+    "PreSectionId": 100321,
+    "GroupSectionIds": [
+      100330
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7010911,
+        "P1": 7010901
+      },
+      {
+        "Key": 7010912,
+        "P1": 7010902
+      },
+      {
+        "Key": 7010913,
+        "P1": 7010903
+      }
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020186,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:33605",
+    "DescStrKey": "ST:51095",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100340,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2011140,
+    "PreSectionId": 100330,
+    "GroupSectionIds": [
+      100341
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020185,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:33607",
+    "DescStrKey": "ST:51097",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100341,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2011141,
+    "PreSectionId": 100331,
+    "GroupSectionIds": [
+      100340
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7011011,
+        "P1": 7011001
+      },
+      {
+        "Key": 7011012,
+        "P1": 7011002
+      },
+      {
+        "Key": 7011013,
+        "P1": 7011003
+      }
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020186,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:33607",
+    "DescStrKey": "ST:51097",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100350,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2011150,
+    "PreSectionId": 100340,
+    "GroupSectionIds": [
+      100351
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020185,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:6370",
+    "DescStrKey": "ST:26748",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100351,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2011151,
+    "PreSectionId": 100341,
+    "GroupSectionIds": [
+      100350
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7011111,
+        "P1": 7011101
+      },
+      {
+        "Key": 7011112,
+        "P1": 7011102
+      },
+      {
+        "Key": 7011113,
+        "P1": 7011103
+      }
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020186,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:6370",
+    "DescStrKey": "ST:26748",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100360,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2011160,
+    "PreSectionId": 100350,
+    "GroupSectionIds": [
+      100361
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020185,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:6371",
+    "DescStrKey": "ST:26749",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100361,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2011161,
+    "PreSectionId": 100351,
+    "GroupSectionIds": [
+      100360
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7011211,
+        "P1": 7011201
+      },
+      {
+        "Key": 7011212,
+        "P1": 7011202
+      },
+      {
+        "Key": 7011213,
+        "P1": 7011203
+      }
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020186,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:6371",
+    "DescStrKey": "ST:26749",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100410,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2011210,
+    "GroupSectionIds": [
+      100411
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020195,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:6372",
+    "DescStrKey": "ST:26750"
+  },
+  {
+    "ID": 100411,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2011211,
+    "GroupSectionIds": [
+      100410
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7011311,
+        "P1": 7011301
+      },
+      {
+        "Key": 7011312,
+        "P1": 7011302
+      },
+      {
+        "Key": 7011313,
+        "P1": 7011303
+      }
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020196,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:6372",
+    "DescStrKey": "ST:26750"
+  },
+  {
+    "ID": 100420,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2011220,
+    "PreSectionId": 100410,
+    "GroupSectionIds": [
+      100421
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020195,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:5283",
+    "DescStrKey": "ST:26751"
+  },
+  {
+    "ID": 100421,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2011221,
+    "PreSectionId": 100411,
+    "GroupSectionIds": [
+      100420
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7011411,
+        "P1": 7011401
+      },
+      {
+        "Key": 7011412,
+        "P1": 7011402
+      },
+      {
+        "Key": 7011413,
+        "P1": 7011403
+      }
+    ],
+    "MaxReward": [
+      {
+        "ItemId": 400020196,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:5283",
+    "DescStrKey": "ST:26751"
+  },
+  {
+    "ID": 100430,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2011230,
+    "PreSectionId": 100420,
+    "GroupSectionIds": [
+      100431
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020195,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:6373",
+    "DescStrKey": "ST:51102",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100431,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2011231,
+    "PreSectionId": 100421,
+    "GroupSectionIds": [
+      100430
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7011511,
+        "P1": 7011501
+      },
+      {
+        "Key": 7011512,
+        "P1": 7011502
+      },
+      {
+        "Key": 7011513,
+        "P1": 7011503
+      }
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020196,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:6373",
+    "DescStrKey": "ST:51102",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100440,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2011240,
+    "PreSectionId": 100430,
+    "GroupSectionIds": [
+      100441
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020195,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:6375",
+    "DescStrKey": "ST:51103",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100441,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2011241,
+    "PreSectionId": 100431,
+    "GroupSectionIds": [
+      100440
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7011611,
+        "P1": 7011601
+      },
+      {
+        "Key": 7011612,
+        "P1": 7011602
+      },
+      {
+        "Key": 7011613,
+        "P1": 7011603
+      }
+    ],
+    "OpenDay": 2,
+    "MaxReward": [
+      {
+        "ItemId": 400020196,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:6375",
+    "DescStrKey": "ST:51103",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100450,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2011250,
+    "PreSectionId": 100440,
+    "GroupSectionIds": [
+      100451
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020195,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:33614",
+    "DescStrKey": "ST:6479",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100451,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2011251,
+    "PreSectionId": 100441,
+    "GroupSectionIds": [
+      100450
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7011711,
+        "P1": 7011701
+      },
+      {
+        "Key": 7011712,
+        "P1": 7011702
+      },
+      {
+        "Key": 7011713,
+        "P1": 7011703
+      }
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020196,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:33614",
+    "DescStrKey": "ST:6479",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100460,
+    "Difficulty": "RiftChapterDifficult_Hard",
+    "RiftLevelId": 2011260,
+    "PreSectionId": 100450,
+    "GroupSectionIds": [
+      100461
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020195,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:5159",
+    "DescStrKey": "ST:26758",
+    "TipStrKey": "ST:211126"
+  },
+  {
+    "ID": 100461,
+    "Difficulty": "RiftChapterDifficult_Difficult",
+    "RiftLevelId": 2011261,
+    "PreSectionId": 100451,
+    "GroupSectionIds": [
+      100460
+    ],
+    "AutoCompleteAchievement": [
+      {
+        "Key": 7011811,
+        "P1": 7011801
+      },
+      {
+        "Key": 7011812,
+        "P1": 7011802
+      },
+      {
+        "Key": 7011813,
+        "P1": 7011803
+      }
+    ],
+    "OpenDay": 4,
+    "MaxReward": [
+      {
+        "ItemId": 400020196,
+        "MaxCount": 4
+      }
+    ],
+    "NameStrKey": "ST:5159",
+    "DescStrKey": "ST:26758",
+    "TipStrKey": "ST:211126"
+  }
+]

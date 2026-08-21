@@ -1,0 +1,98 @@
+[
+  {
+    "ID": 1,
+    "FunType": "BackFlowBlessFunType_JiuruTower",
+    "AssistIds": [
+      48001
+    ],
+    "ConditionsForOpen": [
+      {
+        "CondType": "ConditionType_CondOrCombine"
+      },
+      {
+        "CondType": "ConditionType_JiuruTownBattleInLevel",
+        "P1": 1,
+        "P2": 1,
+        "P3": 30
+      },
+      {
+        "CondType": "ConditionType_JiuruTownBattleInLevel",
+        "P1": 101,
+        "P2": 1,
+        "P3": 30
+      },
+      {
+        "CondType": "ConditionType_JiuruTownBattleInLevel",
+        "P1": 102,
+        "P2": 1,
+        "P3": 30
+      },
+      {
+        "CondType": "ConditionType_JiuruTownBattleInLevel",
+        "P1": 103,
+        "P2": 1,
+        "P3": 30
+      },
+      {
+        "CondType": "ConditionType_JiuruTownBattleInLevel",
+        "P1": 104,
+        "P2": 1,
+        "P3": 30
+      },
+      {
+        "CondType": "ConditionType_JiuruTownBattleInLevel",
+        "P1": 105,
+        "P2": 1,
+        "P3": 30
+      }
+    ]
+  },
+  {
+    "ID": 2,
+    "FunType": "BackFlowBlessFunType_CliqueChallenge",
+    "AssistIds": [
+      48002
+    ],
+    "ConditionsForOpen": [
+      {
+        "CondType": "ConditionType_CondOrCombine"
+      },
+      {
+        "CondType": "ConditionType_CliqueChallengeNormalBattleInLevel",
+        "P1": 1,
+        "P2": 1,
+        "P3": 12
+      },
+      {
+        "CondType": "ConditionType_CliqueChallengeNormalBattleInLevel",
+        "P1": 2,
+        "P2": 1,
+        "P3": 12
+      },
+      {
+        "CondType": "ConditionType_CliqueChallengeNormalBattleInLevel",
+        "P1": 3,
+        "P2": 1,
+        "P3": 12
+      },
+      {
+        "CondType": "ConditionType_CliqueChallengeNormalBattleInLevel",
+        "P1": 4,
+        "P2": 1,
+        "P3": 12
+      },
+      {
+        "CondType": "ConditionType_CliqueChallengeNormalBattleInLevel",
+        "P1": 5,
+        "P2": 1,
+        "P3": 12
+      },
+      {
+        "CondType": "ConditionType_CliqueChallengeNormalBattleInLevel",
+        "P1": 6,
+        "P2": 1,
+        "P3": 12
+      }
+    ]
+  }
+]

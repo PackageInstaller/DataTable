@@ -1,0 +1,58 @@
+{
+  "ID": 202501,
+  "LevelList": [
+    20250101,
+    20250102,
+    20250103,
+    20250104
+  ],
+  "MaxFeeling": 1000,
+  "LevelScoreLimit": 9999,
+  "LevelFeelingLimit": 1000,
+  "ShowLevelId": 20250104,
+  "ShowMinScore": 3000,
+  "ShowMaxScore": 7000,
+  "ComboDurationSeconds": 12,
+  "ComboEffect": 50,
+  "ComboProgressEffectList": [
+    {
+      "Progress": 30,
+      "ScoreBonus": 10,
+      "WishSpeedBonus": 20
+    },
+    {
+      "Progress": 60,
+      "ScoreBonus": 20,
+      "WishSpeedBonus": 33
+    },
+    {
+      "Progress": 90,
+      "ScoreBonus": 30,
+      "WishSpeedBonus": 50
+    }
+  ],
+  "ScoreToStartSpaTime": 1800,
+  "SpaTimeMillSconds": 10000,
+  "SpaTimeHeartSpawnLimit": 5,
+  "SpaTimeHeartSpawnTotalLimit": 2,
+  "SpaTimeHeartSpwenWeight": [
+    10,
+    10
+  ],
+  "SpaTimeSmallHeartLikability": 25,
+  "SpaTimeBigHeartLikability": 50,
+  "SpaTimeSmallHeartScore": 25,
+  "SpaTimeBigHeartScore": 50,
+  "TeaInfusionMillSeconds": 3000,
+  "TotalRoleList": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "LikeBubbleSpawnCirclePosDelta": -150,
+  "LikeBubbleSpawnRadius": 70
+}

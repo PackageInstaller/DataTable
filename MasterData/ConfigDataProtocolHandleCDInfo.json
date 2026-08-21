@@ -1,0 +1,56 @@
+[
+  {
+    "ID": 1,
+    "Req": "ArenaTopRankPlayersGetReq",
+    "Ack": "ArenaTopRankPlayersGetAck"
+  },
+  {
+    "ID": 2,
+    "Req": "WeChatOfficialAccountsFollowReq",
+    "Ack": "WeChatOfficialAccountsFollowAck"
+  },
+  {
+    "ID": 3,
+    "Req": "GetRechargeBenefitInfoReq",
+    "Ack": "GetRechargeBenefitInfoAck"
+  },
+  {
+    "ID": 4,
+    "Req": "AbysslChallengeQueryTopDamageCompletedInfoReq",
+    "Ack": "AbysslChallengeQueryTopDamageCompletedInfoAck"
+  },
+  {
+    "ID": 5,
+    "Req": "GuildInfoGetReq",
+    "Ack": "GuildInfoGetAck"
+  },
+  {
+    "ID": 6,
+    "Req": "GuildRandomListReq",
+    "Ack": "GuildRandomListAck"
+  },
+  {
+    "ID": 7,
+    "Req": "GetPassLevelRecordSummaryInfoReq",
+    "Ack": "GetPassLevelRecordSummaryInfoAck",
+    "CD": 1000
+  },
+  {
+    "ID": 8,
+    "Req": "GetPassLevelRecordBattleRecordReq",
+    "Ack": "GetPassLevelRecordBattleRecordAck",
+    "CD": 1000
+  },
+  {
+    "ID": 9,
+    "Req": "FishGetScoreInfoReq",
+    "Ack": "FishGetScoreInfoAck",
+    "CD": 1000
+  },
+  {
+    "ID": 10,
+    "Req": "HotSpringGetBroadcastInfoReq",
+    "Ack": "HotSpringGetBroadcastInfoAck",
+    "CD": 1000
+  }
+]

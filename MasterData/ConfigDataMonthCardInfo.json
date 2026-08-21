@@ -1,0 +1,71 @@
+[
+  {
+    "ID": 1,
+    "Name": "天授百禄",
+    "DailyMissionId": 1015,
+    "EffectInfoList": [
+      {
+        "Type": "MonthCardEffectType_EnergyMaxTimes",
+        "P1": 50
+      },
+      {
+        "Type": "MonthCardEffectType_DelegateReduceTime",
+        "P1": 20
+      },
+      {
+        "Type": "MonthCardEffectType_BackFlowSignRewardMultiple",
+        "P1": 1
+      }
+    ],
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/UIspine/ui_yueka2/ui_yueka2_Graphic_Prefab.prefab",
+    "DescStrKey": "ST:234311",
+    "SimpleDescStrKey": "ST:234313"
+  },
+  {
+    "ID": 2,
+    "Name": "独享光阴",
+    "DailyMissionId": 1016,
+    "EffectInfoList": [
+      {
+        "Type": "MonthCardEffectType_AbysslChallengeNewSweepExtDrop",
+        "P1": 1
+      }
+    ],
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/UIspine/ui_yueka3/ui_yueka3_Graphic_Prefab.prefab",
+    "DescStrKey": "ST:259717",
+    "SimpleDescStrKey": "ST:260087"
+  },
+  {
+    "ID": 3,
+    "Name": "逆时溯刻",
+    "EffectInfoList": [
+      {
+        "Type": "MonthCardEffectType_RegretTimes",
+        "P1": 8
+      }
+    ],
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/UIspine/ui_yueka1/ui_yueka1_Graphic_Prefab.prefab",
+    "DescStrKey": "ST:104150",
+    "SimpleDescStrKey": "ST:202058"
+  },
+  {
+    "ID": 4,
+    "Name": "轮回时转",
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 1888
+      }
+    ],
+    "EffectInfoList": [
+      {
+        "Type": "MonthCardEffectType_DailyFreeSingleSelectCard",
+        "P1": 1
+      }
+    ],
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/UIspine/ui_yueka4/ui_yueka4_Graphic_Prefab.prefab",
+    "DescStrKey": "ST:250626",
+    "SimpleDescStrKey": "ST:203839"
+  }
+]

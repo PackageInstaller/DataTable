@@ -1,0 +1,3578 @@
+[
+  {
+    "ID": 1001,
+    "Level": 1,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1001,
+        "Weight": 10000
+      }
+    ],
+    "DescStrKey": "ST:212823"
+  },
+  {
+    "ID": 1002,
+    "Level": 1,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1001,
+        "Weight": 10000
+      }
+    ],
+    "DescStrKey": "ST:212824"
+  },
+  {
+    "ID": 1003,
+    "Level": 1,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1001,
+        "Weight": 10000
+      }
+    ],
+    "DescStrKey": "ST:212825"
+  },
+  {
+    "ID": 1004,
+    "Level": 1,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1001,
+        "Weight": 10000
+      }
+    ],
+    "DescStrKey": "ST:212826"
+  },
+  {
+    "ID": 1005,
+    "Level": 1,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1001,
+        "Weight": 10000
+      }
+    ],
+    "DescStrKey": "ST:212827"
+  },
+  {
+    "ID": 1006,
+    "Level": 1,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1001,
+        "Weight": 10000
+      }
+    ],
+    "DescStrKey": "ST:212828"
+  },
+  {
+    "ID": 2001,
+    "Level": 2,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 2000
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1002,
+      1003
+    ],
+    "DescStrKey": "ST:212829"
+  },
+  {
+    "ID": 2002,
+    "Level": 2,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 2000
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1002,
+      1003
+    ],
+    "DescStrKey": "ST:212830"
+  },
+  {
+    "ID": 2003,
+    "Level": 2,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 2000
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1002,
+      1003
+    ],
+    "DescStrKey": "ST:212831"
+  },
+  {
+    "ID": 2004,
+    "Level": 2,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 2000
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1002,
+      1003
+    ],
+    "DescStrKey": "ST:212832"
+  },
+  {
+    "ID": 2005,
+    "Level": 2,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 2000
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1002,
+      1003
+    ],
+    "DescStrKey": "ST:212833"
+  },
+  {
+    "ID": 2006,
+    "Level": 2,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 2000
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1002,
+      1003
+    ],
+    "DescStrKey": "ST:212834"
+  },
+  {
+    "ID": 3001,
+    "Level": 3,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 3000
+      },
+      {
+        "Id": 1012,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1003
+    ],
+    "DescStrKey": "ST:212835"
+  },
+  {
+    "ID": 3002,
+    "Level": 3,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 3000
+      },
+      {
+        "Id": 1012,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1003
+    ],
+    "DescStrKey": "ST:212836"
+  },
+  {
+    "ID": 3003,
+    "Level": 3,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 3000
+      },
+      {
+        "Id": 1012,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1003
+    ],
+    "DescStrKey": "ST:212837"
+  },
+  {
+    "ID": 3004,
+    "Level": 3,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 3000
+      },
+      {
+        "Id": 1012,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1003
+    ],
+    "DescStrKey": "ST:212838"
+  },
+  {
+    "ID": 3005,
+    "Level": 3,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 3000
+      },
+      {
+        "Id": 1012,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1003
+    ],
+    "DescStrKey": "ST:212839"
+  },
+  {
+    "ID": 3006,
+    "Level": 3,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 3000
+      },
+      {
+        "Id": 1012,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1003
+    ],
+    "DescStrKey": "ST:212840"
+  },
+  {
+    "ID": 4001,
+    "Level": 4,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 3000
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1012
+    ],
+    "DescStrKey": "ST:212841"
+  },
+  {
+    "ID": 4002,
+    "Level": 4,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 3000
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1012
+    ],
+    "DescStrKey": "ST:212842"
+  },
+  {
+    "ID": 4003,
+    "Level": 4,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 3000
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1012
+    ],
+    "DescStrKey": "ST:212843"
+  },
+  {
+    "ID": 4004,
+    "Level": 4,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 3000
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1012
+    ],
+    "DescStrKey": "ST:212844"
+  },
+  {
+    "ID": 4005,
+    "Level": 4,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 3000
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1012
+    ],
+    "DescStrKey": "ST:212845"
+  },
+  {
+    "ID": 4006,
+    "Level": 4,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 3000
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1012
+    ],
+    "DescStrKey": "ST:212846"
+  },
+  {
+    "ID": 5001,
+    "Level": 5,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212847"
+  },
+  {
+    "ID": 5002,
+    "Level": 5,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212848"
+  },
+  {
+    "ID": 5003,
+    "Level": 5,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212849"
+  },
+  {
+    "ID": 5004,
+    "Level": 5,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212850"
+  },
+  {
+    "ID": 5005,
+    "Level": 5,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212851"
+  },
+  {
+    "ID": 5006,
+    "Level": 5,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212852"
+  },
+  {
+    "ID": 6001,
+    "Level": 6,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 4000
+      },
+      {
+        "Id": 1012,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1003
+    ],
+    "DescStrKey": "ST:212853"
+  },
+  {
+    "ID": 6002,
+    "Level": 6,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 4000
+      },
+      {
+        "Id": 1012,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1003
+    ],
+    "DescStrKey": "ST:212854"
+  },
+  {
+    "ID": 6003,
+    "Level": 6,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 4000
+      },
+      {
+        "Id": 1012,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1003
+    ],
+    "DescStrKey": "ST:212855"
+  },
+  {
+    "ID": 6004,
+    "Level": 6,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 4000
+      },
+      {
+        "Id": 1012,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1003
+    ],
+    "DescStrKey": "ST:212856"
+  },
+  {
+    "ID": 6005,
+    "Level": 6,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 4000
+      },
+      {
+        "Id": 1012,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1003
+    ],
+    "DescStrKey": "ST:212857"
+  },
+  {
+    "ID": 6006,
+    "Level": 6,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1002,
+        "Weight": 10000
+      },
+      {
+        "Id": 1003,
+        "Weight": 4000
+      },
+      {
+        "Id": 1012,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1003
+    ],
+    "DescStrKey": "ST:212858"
+  },
+  {
+    "ID": 7001,
+    "Level": 7,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1008,
+        "Weight": 100
+      }
+    ],
+    "EventAfterComplete": 10409998,
+    "DescStrKey": "ST:212859"
+  },
+  {
+    "ID": 7002,
+    "Level": 7,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1008,
+        "Weight": 100
+      }
+    ],
+    "EventAfterComplete": 10409998,
+    "DescStrKey": "ST:212860"
+  },
+  {
+    "ID": 7003,
+    "Level": 7,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1008,
+        "Weight": 100
+      }
+    ],
+    "EventAfterComplete": 10409998,
+    "DescStrKey": "ST:212861"
+  },
+  {
+    "ID": 7004,
+    "Level": 7,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1008,
+        "Weight": 100
+      }
+    ],
+    "EventAfterComplete": 10409998,
+    "DescStrKey": "ST:212862"
+  },
+  {
+    "ID": 7005,
+    "Level": 7,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1008,
+        "Weight": 100
+      }
+    ],
+    "EventAfterComplete": 10409998,
+    "DescStrKey": "ST:212863"
+  },
+  {
+    "ID": 7006,
+    "Level": 7,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1008,
+        "Weight": 100
+      }
+    ],
+    "EventAfterComplete": 10409998,
+    "DescStrKey": "ST:212864"
+  },
+  {
+    "ID": 8001,
+    "Level": 8,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212865"
+  },
+  {
+    "ID": 8002,
+    "Level": 8,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212866"
+  },
+  {
+    "ID": 8003,
+    "Level": 8,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212867"
+  },
+  {
+    "ID": 8004,
+    "Level": 8,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212868"
+  },
+  {
+    "ID": 8005,
+    "Level": 8,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212869"
+  },
+  {
+    "ID": 8006,
+    "Level": 8,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212870"
+  },
+  {
+    "ID": 9001,
+    "Level": 9,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1004,
+      1005
+    ],
+    "DescStrKey": "ST:212871"
+  },
+  {
+    "ID": 9002,
+    "Level": 9,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1004,
+      1005
+    ],
+    "DescStrKey": "ST:212872"
+  },
+  {
+    "ID": 9003,
+    "Level": 9,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1004,
+      1005
+    ],
+    "DescStrKey": "ST:212873"
+  },
+  {
+    "ID": 9004,
+    "Level": 9,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1004,
+      1005
+    ],
+    "DescStrKey": "ST:212874"
+  },
+  {
+    "ID": 9005,
+    "Level": 9,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1004,
+      1005
+    ],
+    "DescStrKey": "ST:212875"
+  },
+  {
+    "ID": 9006,
+    "Level": 9,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1004,
+      1005
+    ],
+    "DescStrKey": "ST:212876"
+  },
+  {
+    "ID": 10001,
+    "Level": 10,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1005
+    ],
+    "DescStrKey": "ST:212877"
+  },
+  {
+    "ID": 10002,
+    "Level": 10,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1005
+    ],
+    "DescStrKey": "ST:212878"
+  },
+  {
+    "ID": 10003,
+    "Level": 10,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1005
+    ],
+    "DescStrKey": "ST:212879"
+  },
+  {
+    "ID": 10004,
+    "Level": 10,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1005
+    ],
+    "DescStrKey": "ST:212880"
+  },
+  {
+    "ID": 10005,
+    "Level": 10,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1005
+    ],
+    "DescStrKey": "ST:212881"
+  },
+  {
+    "ID": 10006,
+    "Level": 10,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1005
+    ],
+    "DescStrKey": "ST:212882"
+  },
+  {
+    "ID": 11001,
+    "Level": 11,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212883"
+  },
+  {
+    "ID": 11002,
+    "Level": 11,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212884"
+  },
+  {
+    "ID": 11003,
+    "Level": 11,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212885"
+  },
+  {
+    "ID": 11004,
+    "Level": 11,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212886"
+  },
+  {
+    "ID": 11005,
+    "Level": 11,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212887"
+  },
+  {
+    "ID": 11006,
+    "Level": 11,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1004,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212888"
+  },
+  {
+    "ID": 12001,
+    "Level": 12,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1013
+    ],
+    "DescStrKey": "ST:212889"
+  },
+  {
+    "ID": 12002,
+    "Level": 12,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1013
+    ],
+    "DescStrKey": "ST:212890"
+  },
+  {
+    "ID": 12003,
+    "Level": 12,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1013
+    ],
+    "DescStrKey": "ST:212891"
+  },
+  {
+    "ID": 12004,
+    "Level": 12,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1013
+    ],
+    "DescStrKey": "ST:212892"
+  },
+  {
+    "ID": 12005,
+    "Level": 12,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1013
+    ],
+    "DescStrKey": "ST:212893"
+  },
+  {
+    "ID": 12006,
+    "Level": 12,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1013
+    ],
+    "DescStrKey": "ST:212894"
+  },
+  {
+    "ID": 13001,
+    "Level": 13,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212895"
+  },
+  {
+    "ID": 13002,
+    "Level": 13,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212896"
+  },
+  {
+    "ID": 13003,
+    "Level": 13,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212897"
+  },
+  {
+    "ID": 13004,
+    "Level": 13,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212898"
+  },
+  {
+    "ID": 13005,
+    "Level": 13,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212899"
+  },
+  {
+    "ID": 13006,
+    "Level": 13,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212900"
+  },
+  {
+    "ID": 14001,
+    "Level": 14,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212901"
+  },
+  {
+    "ID": 14002,
+    "Level": 14,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212902"
+  },
+  {
+    "ID": 14003,
+    "Level": 14,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212903"
+  },
+  {
+    "ID": 14004,
+    "Level": 14,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212904"
+  },
+  {
+    "ID": 14005,
+    "Level": 14,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212905"
+  },
+  {
+    "ID": 14006,
+    "Level": 14,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1005,
+        "Weight": 2500
+      },
+      {
+        "Id": 1013,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212906"
+  },
+  {
+    "ID": 15001,
+    "Level": 15,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1009,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212907"
+  },
+  {
+    "ID": 15002,
+    "Level": 15,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1009,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212908"
+  },
+  {
+    "ID": 15003,
+    "Level": 15,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1009,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212909"
+  },
+  {
+    "ID": 15004,
+    "Level": 15,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1009,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212910"
+  },
+  {
+    "ID": 15005,
+    "Level": 15,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1009,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212911"
+  },
+  {
+    "ID": 15006,
+    "Level": 15,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1009,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212912"
+  },
+  {
+    "ID": 16001,
+    "Level": 16,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212913"
+  },
+  {
+    "ID": 16002,
+    "Level": 16,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212914"
+  },
+  {
+    "ID": 16003,
+    "Level": 16,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212915"
+  },
+  {
+    "ID": 16004,
+    "Level": 16,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212916"
+  },
+  {
+    "ID": 16005,
+    "Level": 16,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212917"
+  },
+  {
+    "ID": 16006,
+    "Level": 16,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212918"
+  },
+  {
+    "ID": 17001,
+    "Level": 17,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212919"
+  },
+  {
+    "ID": 17002,
+    "Level": 17,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212920"
+  },
+  {
+    "ID": 17003,
+    "Level": 17,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212921"
+  },
+  {
+    "ID": 17004,
+    "Level": 17,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212922"
+  },
+  {
+    "ID": 17005,
+    "Level": 17,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212923"
+  },
+  {
+    "ID": 17006,
+    "Level": 17,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1006,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212924"
+  },
+  {
+    "ID": 18001,
+    "Level": 18,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212925"
+  },
+  {
+    "ID": 18002,
+    "Level": 18,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212926"
+  },
+  {
+    "ID": 18003,
+    "Level": 18,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212927"
+  },
+  {
+    "ID": 18004,
+    "Level": 18,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212928"
+  },
+  {
+    "ID": 18005,
+    "Level": 18,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212929"
+  },
+  {
+    "ID": 18006,
+    "Level": 18,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1016,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212930"
+  },
+  {
+    "ID": 19001,
+    "Level": 19,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1007
+    ],
+    "DescStrKey": "ST:212931"
+  },
+  {
+    "ID": 19002,
+    "Level": 19,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1007
+    ],
+    "DescStrKey": "ST:212932"
+  },
+  {
+    "ID": 19003,
+    "Level": 19,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1007
+    ],
+    "DescStrKey": "ST:212933"
+  },
+  {
+    "ID": 19004,
+    "Level": 19,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1007
+    ],
+    "DescStrKey": "ST:212934"
+  },
+  {
+    "ID": 19005,
+    "Level": 19,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1007
+    ],
+    "DescStrKey": "ST:212935"
+  },
+  {
+    "ID": 19006,
+    "Level": 19,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1007
+    ],
+    "DescStrKey": "ST:212936"
+  },
+  {
+    "ID": 20001,
+    "Level": 20,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1015
+    ],
+    "DescStrKey": "ST:212937"
+  },
+  {
+    "ID": 20002,
+    "Level": 20,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1015
+    ],
+    "DescStrKey": "ST:212938"
+  },
+  {
+    "ID": 20003,
+    "Level": 20,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1015
+    ],
+    "DescStrKey": "ST:212939"
+  },
+  {
+    "ID": 20004,
+    "Level": 20,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1015
+    ],
+    "DescStrKey": "ST:212940"
+  },
+  {
+    "ID": 20005,
+    "Level": 20,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1015
+    ],
+    "DescStrKey": "ST:212941"
+  },
+  {
+    "ID": 20006,
+    "Level": 20,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1015
+    ],
+    "DescStrKey": "ST:212942"
+  },
+  {
+    "ID": 21001,
+    "Level": 21,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212943"
+  },
+  {
+    "ID": 21002,
+    "Level": 21,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212944"
+  },
+  {
+    "ID": 21003,
+    "Level": 21,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212945"
+  },
+  {
+    "ID": 21004,
+    "Level": 21,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212946"
+  },
+  {
+    "ID": 21005,
+    "Level": 21,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212947"
+  },
+  {
+    "ID": 21006,
+    "Level": 21,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "DescStrKey": "ST:212948"
+  },
+  {
+    "ID": 22001,
+    "Level": 22,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1014
+    ],
+    "DescStrKey": "ST:212949"
+  },
+  {
+    "ID": 22002,
+    "Level": 22,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1014
+    ],
+    "DescStrKey": "ST:212950"
+  },
+  {
+    "ID": 22003,
+    "Level": 22,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1014
+    ],
+    "DescStrKey": "ST:212951"
+  },
+  {
+    "ID": 22004,
+    "Level": 22,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1014
+    ],
+    "DescStrKey": "ST:212952"
+  },
+  {
+    "ID": 22005,
+    "Level": 22,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1014
+    ],
+    "DescStrKey": "ST:212953"
+  },
+  {
+    "ID": 22006,
+    "Level": 22,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1018,
+        "Weight": 10000
+      },
+      {
+        "Id": 1007,
+        "Weight": 2500
+      },
+      {
+        "Id": 1014,
+        "Weight": 100
+      },
+      {
+        "Id": 1015,
+        "Weight": 100
+      },
+      {
+        "Id": 1017,
+        "Weight": 10
+      }
+    ],
+    "FixedGroupIdList": [
+      1014
+    ],
+    "DescStrKey": "ST:212954"
+  },
+  {
+    "ID": 23001,
+    "Level": 23,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212955"
+  },
+  {
+    "ID": 23002,
+    "Level": 23,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212956"
+  },
+  {
+    "ID": 23003,
+    "Level": 23,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212957"
+  },
+  {
+    "ID": 23004,
+    "Level": 23,
+    "LevelWeight": 2000,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212958"
+  },
+  {
+    "ID": 23005,
+    "Level": 23,
+    "LevelWeight": 500,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212959"
+  },
+  {
+    "ID": 23006,
+    "Level": 23,
+    "LevelWeight": 200,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1015,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212960"
+  },
+  {
+    "ID": 24001,
+    "Level": 24,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1010,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212961"
+  },
+  {
+    "ID": 24002,
+    "Level": 24,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1010,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212962"
+  },
+  {
+    "ID": 24003,
+    "Level": 24,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1010,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212963"
+  },
+  {
+    "ID": 24004,
+    "Level": 24,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1010,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212964"
+  },
+  {
+    "ID": 24005,
+    "Level": 24,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1010,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212965"
+  },
+  {
+    "ID": 24006,
+    "Level": 24,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1010,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212966"
+  },
+  {
+    "ID": 25001,
+    "Level": 25,
+    "LevelWeight": 100,
+    "GameId": 1,
+    "MinPointCount": 1,
+    "MaxPointCount": 1,
+    "GroupWeightItemList": [
+      {
+        "Id": 1011,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212967"
+  },
+  {
+    "ID": 25002,
+    "Level": 25,
+    "GameId": 1,
+    "MinPointCount": 2,
+    "MaxPointCount": 2,
+    "GroupWeightItemList": [
+      {
+        "Id": 1011,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212968"
+  },
+  {
+    "ID": 25003,
+    "Level": 25,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 3,
+    "GroupWeightItemList": [
+      {
+        "Id": 1011,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212969"
+  },
+  {
+    "ID": 25004,
+    "Level": 25,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 4,
+    "GroupWeightItemList": [
+      {
+        "Id": 1011,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212970"
+  },
+  {
+    "ID": 25005,
+    "Level": 25,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 5,
+    "GroupWeightItemList": [
+      {
+        "Id": 1011,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212971"
+  },
+  {
+    "ID": 25006,
+    "Level": 25,
+    "GameId": 1,
+    "MinPointCount": 3,
+    "MaxPointCount": 6,
+    "GroupWeightItemList": [
+      {
+        "Id": 1011,
+        "Weight": 100
+      }
+    ],
+    "DescStrKey": "ST:212972"
+  }
+]

@@ -1,0 +1,873 @@
+[
+  {
+    "ID": 1,
+    "SkillGroupList": [
+      "SkillGroup_Attack",
+      "SkillGroup_Physic",
+      "SkillGroup_Damage"
+    ]
+  },
+  {
+    "ID": 2,
+    "SkillGroupList": [
+      "SkillGroup_Attack",
+      "SkillGroup_Magic",
+      "SkillGroup_Damage"
+    ]
+  },
+  {
+    "ID": 3,
+    "SkillGroupList": [
+      "SkillGroup_Attack",
+      "SkillGroup_Absolute",
+      "SkillGroup_Damage"
+    ]
+  },
+  {
+    "ID": 8,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Heal"
+    ]
+  },
+  {
+    "ID": 9,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Enhance"
+    ]
+  },
+  {
+    "ID": 10,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Weak"
+    ]
+  },
+  {
+    "ID": 111,
+    "SkillGroupList": [
+      "SkillGroup_Attack",
+      "SkillGroup_Physic",
+      "SkillGroup_Damage",
+      "SkillGroup_Normal",
+      "SkillGroup_Show"
+    ]
+  },
+  {
+    "ID": 112,
+    "SkillGroupList": [
+      "SkillGroup_Attack",
+      "SkillGroup_Magic",
+      "SkillGroup_Damage",
+      "SkillGroup_Normal",
+      "SkillGroup_Show"
+    ]
+  },
+  {
+    "ID": 211,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Physic",
+      "SkillGroup_Damage",
+      "SkillGroup_Battle",
+      "SkillGroup_Show",
+      "SkillGroup_Single"
+    ]
+  },
+  {
+    "ID": 212,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Magic",
+      "SkillGroup_Damage",
+      "SkillGroup_Battle",
+      "SkillGroup_Show",
+      "SkillGroup_Single"
+    ]
+  },
+  {
+    "ID": 213,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Absolute",
+      "SkillGroup_Damage",
+      "SkillGroup_Battle",
+      "SkillGroup_Show",
+      "SkillGroup_Single"
+    ]
+  },
+  {
+    "ID": 311,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Physic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_Single",
+      "SkillGroup_SingleAttack"
+    ]
+  },
+  {
+    "ID": 312,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Magic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_Single",
+      "SkillGroup_SingleAttack"
+    ]
+  },
+  {
+    "ID": 313,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Absolute",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_Single",
+      "SkillGroup_SingleAttack"
+    ]
+  },
+  {
+    "ID": 314,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Magic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_Single",
+      "SkillGroup_SingleAttack",
+      "SkillGroup_AOEAttack"
+    ]
+  },
+  {
+    "ID": 321,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Heal",
+      "SkillGroup_Single",
+      "SkillGroup_SingleHeal"
+    ]
+  },
+  {
+    "ID": 325,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Heal",
+      "SkillGroup_Single",
+      "SkillGroup_SingleHeal",
+      "SkillGroup_ActiveAgin"
+    ]
+  },
+  {
+    "ID": 326,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Heal",
+      "SkillGroup_Single",
+      "SkillGroup_SingleHeal",
+      "SkillGroup_Enhance",
+      "SkillGroup_SingleMinusCoolDown"
+    ]
+  },
+  {
+    "ID": 327,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Heal",
+      "SkillGroup_Single",
+      "SkillGroup_SingleHeal",
+      "SkillGroup_Enhance",
+      "SkillGroup_SingleDisperseDebuff"
+    ]
+  },
+  {
+    "ID": 328,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Heal",
+      "SkillGroup_Single",
+      "SkillGroup_SingleHeal",
+      "SkillGroup_Enhance",
+      "SkillGroup_SingleArmorEnhance"
+    ]
+  },
+  {
+    "ID": 329,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Heal",
+      "SkillGroup_Single",
+      "SkillGroup_SingleHeal",
+      "SkillGroup_Enhance",
+      "SkillGroup_SingleAttackEnhance"
+    ]
+  },
+  {
+    "ID": 331,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Enhance",
+      "SkillGroup_Single",
+      "SkillGroup_SingleAttackEnhance"
+    ]
+  },
+  {
+    "ID": 332,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Enhance",
+      "SkillGroup_Single",
+      "SkillGroup_SingleArmorEnhance"
+    ]
+  },
+  {
+    "ID": 333,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Enhance",
+      "SkillGroup_Single",
+      "SkillGroup_SingleDisperseDebuff"
+    ]
+  },
+  {
+    "ID": 334,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Enhance",
+      "SkillGroup_Single",
+      "SkillGroup_SingleMinusCoolDown"
+    ]
+  },
+  {
+    "ID": 341,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Weak",
+      "SkillGroup_Single",
+      "SkillGroup_SingleWeak"
+    ]
+  },
+  {
+    "ID": 342,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Weak",
+      "SkillGroup_Single",
+      "SkillGroup_SingleDisperseBuff"
+    ]
+  },
+  {
+    "ID": 411,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Physic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_AOEAttack",
+      "SkillGroup_Limits"
+    ]
+  },
+  {
+    "ID": 412,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Magic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_AOEAttack",
+      "SkillGroup_Limits"
+    ]
+  },
+  {
+    "ID": 413,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Absolute",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_AOEAttack",
+      "SkillGroup_Limits"
+    ]
+  },
+  {
+    "ID": 414,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Physic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_DamageShare",
+      "SkillGroup_Limits"
+    ]
+  },
+  {
+    "ID": 415,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Magic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_DamageShare",
+      "SkillGroup_Limits"
+    ]
+  },
+  {
+    "ID": 416,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Absolute",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_DamageShare",
+      "SkillGroup_Limits"
+    ]
+  },
+  {
+    "ID": 417,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Magic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_Limits",
+      "SkillGroup_BossAOE"
+    ]
+  },
+  {
+    "ID": 418,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Magic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_Limits",
+      "SkillGroup_BossAOE",
+      "SkillGroup_SingleAttack"
+    ]
+  },
+  {
+    "ID": 421,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Heal",
+      "SkillGroup_AOEHeal",
+      "SkillGroup_Limits"
+    ]
+  },
+  {
+    "ID": 427,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Heal",
+      "SkillGroup_AOEHeal",
+      "SkillGroup_Limits",
+      "SkillGroup_Enhance",
+      "SkillGroup_AOEMinusCoolDown"
+    ]
+  },
+  {
+    "ID": 428,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Heal",
+      "SkillGroup_AOEHeal",
+      "SkillGroup_Limits",
+      "SkillGroup_Enhance",
+      "SkillGroup_AOEDisperseDebuff"
+    ]
+  },
+  {
+    "ID": 429,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Heal",
+      "SkillGroup_AOEHeal",
+      "SkillGroup_Limits",
+      "SkillGroup_Enhance",
+      "SkillGroup_AOEEnhance"
+    ]
+  },
+  {
+    "ID": 431,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Enhance",
+      "SkillGroup_AOEEnhance",
+      "SkillGroup_Limits"
+    ]
+  },
+  {
+    "ID": 432,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Enhance",
+      "SkillGroup_AOEDisperseDebuff",
+      "SkillGroup_Limits"
+    ]
+  },
+  {
+    "ID": 433,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Enhance",
+      "SkillGroup_AOEMinusCoolDown",
+      "SkillGroup_Limits"
+    ]
+  },
+  {
+    "ID": 441,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Weak",
+      "SkillGroup_AOEWeak",
+      "SkillGroup_Limits"
+    ]
+  },
+  {
+    "ID": 442,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Weak",
+      "SkillGroup_AOEDisperseBuff",
+      "SkillGroup_Limits"
+    ]
+  },
+  {
+    "ID": 451,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Physic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_AOEAttack",
+      "SkillGroup_Limits",
+      "SkillGroup_SingleAttack",
+      "SkillGroup_SelfEnhance"
+    ]
+  },
+  {
+    "ID": 510,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Single",
+      "SkillGroup_SelfEnhance"
+    ]
+  },
+  {
+    "ID": 511,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Single",
+      "SkillGroup_Protected"
+    ]
+  },
+  {
+    "ID": 512,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Single",
+      "SkillGroup_Aura"
+    ]
+  },
+  {
+    "ID": 513,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Single",
+      "SkillGroup_Cooperate",
+      "SkillGroup_CooperateEnhance"
+    ]
+  },
+  {
+    "ID": 514,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Single",
+      "SkillGroup_Cooperate",
+      "SkillGroup_CooperateAttack"
+    ]
+  },
+  {
+    "ID": 518,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Single",
+      "SkillGroup_SelfEnhance",
+      "SkillGroup_SingleDisperseDebuff"
+    ]
+  },
+  {
+    "ID": 519,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Single",
+      "SkillGroup_Protected",
+      "SkillGroup_SelfEnhance"
+    ]
+  },
+  {
+    "ID": 521,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Single",
+      "SkillGroup_ActiveAgin"
+    ]
+  },
+  {
+    "ID": 522,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Summon"
+    ]
+  },
+  {
+    "ID": 523,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Single",
+      "SkillGroup_Teleport"
+    ]
+  },
+  {
+    "ID": 524,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Trap",
+      "SkillGroup_Summon"
+    ]
+  },
+  {
+    "ID": 525,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Limits",
+      "SkillGroup_Teleport"
+    ]
+  },
+  {
+    "ID": 526,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Traction"
+    ]
+  },
+  {
+    "ID": 527,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Single",
+      "SkillGroup_Teleport",
+      "SkillGroup_TeleportAttackEnhance"
+    ]
+  },
+  {
+    "ID": 528,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Single",
+      "SkillGroup_Teleport",
+      "SkillGroup_TeleportArmorEnhance"
+    ]
+  },
+  {
+    "ID": 529,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_ExtraSkill"
+    ]
+  },
+  {
+    "ID": 530,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Single",
+      "SkillGroup_Teleport",
+      "SkillGroup_SingleAttackEnhance"
+    ]
+  },
+  {
+    "ID": 610,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Single",
+      "SkillGroup_SelfEnhance",
+      "SkillGroup_ExtraSkill"
+    ]
+  },
+  {
+    "ID": 611,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Physic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_Single",
+      "SkillGroup_SingleAttack",
+      "SkillGroup_ExtraSkill"
+    ]
+  },
+  {
+    "ID": 612,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Magic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_Single",
+      "SkillGroup_SingleAttack",
+      "SkillGroup_ExtraSkill"
+    ]
+  },
+  {
+    "ID": 613,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Enhance",
+      "SkillGroup_Single",
+      "SkillGroup_SingleAttackEnhance",
+      "SkillGroup_ExtraSkill"
+    ]
+  },
+  {
+    "ID": 614,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Weak",
+      "SkillGroup_Single",
+      "SkillGroup_SingleWeak",
+      "SkillGroup_ExtraSkill"
+    ]
+  },
+  {
+    "ID": 621,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Physic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_Single",
+      "SkillGroup_SingleAttack",
+      "SkillGroup_ExtraSkill",
+      "SkillGroup_SelfEnhance"
+    ]
+  },
+  {
+    "ID": 622,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_ExtraSkill",
+      "SkillGroup_Skill",
+      "SkillGroup_FacilitieWeak"
+    ]
+  },
+  {
+    "ID": 623,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_ExtraSkill",
+      "SkillGroup_Skill",
+      "SkillGroup_FacilitieEnhance"
+    ]
+  },
+  {
+    "ID": 624,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Physic",
+      "SkillGroup_Damage",
+      "SkillGroup_Battle",
+      "SkillGroup_Show",
+      "SkillGroup_Single",
+      "SkillGroup_ExtraSkill"
+    ]
+  },
+  {
+    "ID": 625,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Physic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_DamageShare",
+      "SkillGroup_Limits",
+      "SkillGroup_ExtraSkill"
+    ]
+  },
+  {
+    "ID": 626,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Summon",
+      "SkillGroup_ExtraSkill"
+    ]
+  },
+  {
+    "ID": 641,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_ExtraSkill",
+      "SkillGroup_Weak",
+      "SkillGroup_AOEWeak",
+      "SkillGroup_Limits"
+    ]
+  },
+  {
+    "ID": 642,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Traction",
+      "SkillGroup_ExtraSkill"
+    ]
+  },
+  {
+    "ID": 643,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Trap",
+      "SkillGroup_Summon",
+      "SkillGroup_ExtraSkill"
+    ]
+  },
+  {
+    "ID": 700,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_ArtifactSkill"
+    ]
+  },
+  {
+    "ID": 710,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Physic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_AOEAttack",
+      "SkillGroup_Limits",
+      "SkillGroup_ArtifactSkill"
+    ]
+  },
+  {
+    "ID": 711,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Magic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_AOEAttack",
+      "SkillGroup_Limits",
+      "SkillGroup_ArtifactSkill"
+    ]
+  },
+  {
+    "ID": 712,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Physic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_Single",
+      "SkillGroup_SingleAttack",
+      "SkillGroup_ArtifactSkill"
+    ]
+  },
+  {
+    "ID": 713,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Attack",
+      "SkillGroup_Magic",
+      "SkillGroup_Damage",
+      "SkillGroup_Skill",
+      "SkillGroup_Single",
+      "SkillGroup_SingleAttack",
+      "SkillGroup_ArtifactSkill"
+    ]
+  },
+  {
+    "ID": 714,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Heal",
+      "SkillGroup_AOEHeal",
+      "SkillGroup_Limits",
+      "SkillGroup_Enhance",
+      "SkillGroup_AOEEnhance",
+      "SkillGroup_ArtifactSkill"
+    ]
+  },
+  {
+    "ID": 715,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Enhance",
+      "SkillGroup_AOEEnhance",
+      "SkillGroup_Limits",
+      "SkillGroup_ArtifactSkill",
+      "SkillGroup_ZhiShi"
+    ]
+  },
+  {
+    "ID": 716,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Trap",
+      "SkillGroup_ArtifactSkill",
+      "SkillGroup_FacilitieEnhance"
+    ]
+  },
+  {
+    "ID": 717,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Summon",
+      "SkillGroup_ArtifactSkill"
+    ]
+  },
+  {
+    "ID": 718,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Single",
+      "SkillGroup_Teleport",
+      "SkillGroup_ArtifactSkill"
+    ]
+  },
+  {
+    "ID": 719,
+    "SkillGroupList": [
+      "SkillGroup_ActiveSkill",
+      "SkillGroup_Weak",
+      "SkillGroup_AOEWeak",
+      "SkillGroup_Limits",
+      "SkillGroup_ArtifactSkill"
+    ]
+  }
+]

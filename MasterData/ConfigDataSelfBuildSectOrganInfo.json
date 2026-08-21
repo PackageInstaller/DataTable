@@ -1,0 +1,199 @@
+[
+  {
+    "ID": 100000,
+    "Type": "SBSectOrganType_JuMa",
+    "DefaultUnlock": true,
+    "Cost": 1,
+    "DefaultMaxLevel": 3,
+    "DefaultDefenceCount": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Monster231603_HeadIcon_Basic 1.png@Monster231603_HeadIcon_Basic 1",
+    "InvokeRangeTextStrKey": "ST:6249"
+  },
+  {
+    "ID": 100100,
+    "Type": "SBSectOrganType_Organ",
+    "DefaultUnlock": true,
+    "Cost": 3,
+    "DefaultMaxLevel": 5,
+    "DefaultDefenceCount": 2,
+    "Range": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Monster231600_HeadIcon_Basic 1.png@Monster231600_HeadIcon_Basic 1",
+    "IsDynamicInvokeRange": true,
+    "InvokeRangeTextStrKey": "ST:27388"
+  },
+  {
+    "ID": 100200,
+    "Type": "SBSectOrganType_Organ",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300110
+      }
+    ],
+    "Cost": 3,
+    "DefaultMaxLevel": 5,
+    "DefaultDefenceCount": 2,
+    "Range": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Monster231601_HeadIcon_Basic.png@Monster231601_HeadIcon_Basic",
+    "IsDynamicInvokeRange": true,
+    "InvokeRangeTextStrKey": "ST:27388"
+  },
+  {
+    "ID": 100300,
+    "Type": "SBSectOrganType_Organ",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300120
+      }
+    ],
+    "Cost": 3,
+    "DefaultMaxLevel": 5,
+    "DefaultDefenceCount": 2,
+    "Range": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Monster231602_HeadIcon_Basic.png@Monster231602_HeadIcon_Basic",
+    "IsDynamicInvokeRange": true,
+    "InvokeRangeTextStrKey": "ST:27387"
+  },
+  {
+    "ID": 100400,
+    "Type": "SBSectOrganType_Organ",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300130
+      }
+    ],
+    "Cost": 4,
+    "DefaultMaxLevel": 5,
+    "DefaultDefenceCount": 2,
+    "Range": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Monster231604_HeadIcon_Basic.png@Monster231604_HeadIcon_Basic",
+    "IsDynamicInvokeRange": true,
+    "InvokeRangeTextStrKey": "ST:18315"
+  },
+  {
+    "ID": 100500,
+    "Type": "SBSectOrganType_Organ",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300140
+      }
+    ],
+    "Cost": 3,
+    "DefaultMaxLevel": 5,
+    "DefaultDefenceCount": 2,
+    "Range": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Monster231605_HeadIcon_Basic.png@Monster231605_HeadIcon_Basic",
+    "IsDynamicInvokeRange": true,
+    "InvokeRangeTextStrKey": "ST:27388"
+  },
+  {
+    "ID": 100600,
+    "Type": "SBSectOrganType_Trap",
+    "DefaultUnlock": true,
+    "Cost": 1,
+    "DefaultMaxLevel": 3,
+    "DefaultDefenceCount": 5,
+    "Range": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Facilitie100132B_HeadIcon_Basic.png@Facilitie100132B_HeadIcon_Basic",
+    "InvokeRangeTextStrKey": "ST:27386"
+  },
+  {
+    "ID": 100700,
+    "Type": "SBSectOrganType_Trap",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300410
+      }
+    ],
+    "Cost": 1,
+    "DefaultMaxLevel": 3,
+    "DefaultDefenceCount": 5,
+    "Range": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Facilitie100131B_HeadIcon_Basic.png@Facilitie100131B_HeadIcon_Basic",
+    "InvokeRangeTextStrKey": "ST:27386"
+  },
+  {
+    "ID": 100800,
+    "Type": "SBSectOrganType_Trap",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300420
+      }
+    ],
+    "Cost": 1,
+    "DefaultMaxLevel": 3,
+    "DefaultDefenceCount": 5,
+    "Range": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Facilitie261007B_HeadIcon_Basic.png@Facilitie261007B_HeadIcon_Basic",
+    "InvokeRangeTextStrKey": "ST:6241"
+  },
+  {
+    "ID": 100900,
+    "Type": "SBSectOrganType_Trap",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300430
+      }
+    ],
+    "Cost": 1,
+    "DefaultMaxLevel": 3,
+    "DefaultDefenceCount": 5,
+    "Range": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Facilitie401004_HeadIcon_Basic.png@Facilitie401004_HeadIcon_Basic",
+    "InvokeRangeTextStrKey": "ST:27386"
+  },
+  {
+    "ID": 101000,
+    "Type": "SBSectOrganType_Flag",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300600
+      }
+    ],
+    "Cost": 6,
+    "DefaultMaxLevel": 1,
+    "DefaultDefenceCount": 1,
+    "Range": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Monster231651_HeadIcon_Basic.png@Monster231651_HeadIcon_Basic",
+    "InvokeRangeTextStrKey": "ST:27390"
+  },
+  {
+    "ID": 101100,
+    "Type": "SBSectOrganType_Flag",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300610
+      }
+    ],
+    "Cost": 6,
+    "DefaultMaxLevel": 1,
+    "DefaultDefenceCount": 1,
+    "Range": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Monster231652_HeadIcon_Basic.png@Monster231652_HeadIcon_Basic",
+    "InvokeRangeTextStrKey": "ST:27390"
+  },
+  {
+    "ID": 101200,
+    "Type": "SBSectOrganType_Flag",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300620
+      }
+    ],
+    "Cost": 6,
+    "DefaultMaxLevel": 1,
+    "DefaultDefenceCount": 1,
+    "Range": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Card01_ABS/Monster231653_HeadIcon_Basic.png@Monster231653_HeadIcon_Basic",
+    "InvokeRangeTextStrKey": "ST:27390"
+  }
+]

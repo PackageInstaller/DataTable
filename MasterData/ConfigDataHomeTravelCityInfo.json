@@ -1,0 +1,60 @@
+[
+  {
+    "ID": 1,
+    "BannerImg": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Banner/Map_youli_yizhou.png@Map_youli_yizhou",
+    "NameLoc": "ST:133911",
+    "UnlockDescLoc": "ST:3245"
+  },
+  {
+    "ID": 2,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_HomeTravelCityLevel",
+        "P1": 1,
+        "P2": 2
+      }
+    ],
+    "BannerImg": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Banner/Map_youli_chengdu.png@Map_youli_chengdu",
+    "NameLoc": "ST:106238",
+    "UnlockDescLoc": "ST:133915"
+  },
+  {
+    "ID": 3,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_HomeTravelCityLevel",
+        "P1": 2,
+        "P2": 3
+      }
+    ],
+    "BannerImg": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Banner/Map_youli_luoyang.png@Map_youli_luoyang",
+    "NameLoc": "ST:133912",
+    "UnlockDescLoc": "ST:134570"
+  },
+  {
+    "ID": 4,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_HomeTravelCityLevel",
+        "P1": 3,
+        "P2": 4
+      }
+    ],
+    "BannerImg": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Banner/Map_youli_linan.png@Map_youli_linan",
+    "NameLoc": "ST:133913",
+    "UnlockDescLoc": "ST:134571"
+  },
+  {
+    "ID": 5,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_HomeTravelCityLevel",
+        "P1": 4,
+        "P2": 6
+      }
+    ],
+    "BannerImg": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Banner/Map_youli_jianyang.png@Map_youli_jianyang",
+    "NameLoc": "ST:133914",
+    "UnlockDescLoc": "ST:144164"
+  }
+]

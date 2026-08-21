@@ -1,0 +1,37 @@
+[
+  {
+    "ID": 1,
+    "NewSection": "无功能",
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      }
+    ],
+    "DescStrKey": "ST:160227",
+    "UnlockDescStrKey": "ST:246843"
+  },
+  {
+    "ID": 2,
+    "NewSection": "新活动自带",
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      }
+    ],
+    "DescStrKey": "ST:220406",
+    "UnlockDescStrKey": "ST:246843"
+  },
+  {
+    "ID": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      }
+    ],
+    "DescStrKey": "ST:240935",
+    "UnlockDescStrKey": "ST:246843"
+  }
+]

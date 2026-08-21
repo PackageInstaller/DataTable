@@ -1,0 +1,2523 @@
+[
+  {
+    "ID": 1101,
+    "FlowerPoolLevel": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 1,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 1
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 12
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 9
+      }
+    ],
+    "NeedTime": 300,
+    "NodeName": "Dummy1",
+    "LineNames": "LineDummyItem1",
+    "NameStrKey": "ST:133710",
+    "DescStrKey": "ST:136799",
+    "NodeUnlockCondDescStrKey": "ST:133880"
+  },
+  {
+    "ID": 1102,
+    "FlowerPoolLevel": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 1,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1101
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 20
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 15
+      }
+    ],
+    "NeedTime": 720,
+    "NodeName": "Dummy2",
+    "LineNames": "LineDummyItem2|LineDummyItem3",
+    "NameStrKey": "ST:133803",
+    "DescStrKey": "ST:136799",
+    "NodeUnlockCondDescStrKey": "ST:133710"
+  },
+  {
+    "ID": 1103,
+    "FlowerPoolLevel": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 1,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1102
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 30
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 24
+      }
+    ],
+    "NeedTime": 1440,
+    "NodeName": "Dummy4",
+    "LineNames": "LineDummyItem4",
+    "NameStrKey": "ST:133804",
+    "DescStrKey": "ST:136799",
+    "NodeUnlockCondDescStrKey": "ST:133803"
+  },
+  {
+    "ID": 1104,
+    "FlowerPoolLevel": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Secrets.png@FlowerPool_Secrets",
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1102
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 65
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 30
+      }
+    ],
+    "NeedTime": 3600,
+    "NodeName": "Dummy3",
+    "NameStrKey": "ST:133805",
+    "DescStrKey": "ST:258814",
+    "NodeUnlockCondDescStrKey": "ST:133803"
+  },
+  {
+    "ID": 1105,
+    "FlowerPoolLevel": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1101,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 1
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 16
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 12
+      }
+    ],
+    "NeedTime": 300,
+    "NodeName": "Dummy8",
+    "LineNames": "LineDummyItem7",
+    "NameStrKey": "ST:133711",
+    "DescStrKey": "ST:133854",
+    "NodeUnlockCondDescStrKey": "ST:133880"
+  },
+  {
+    "ID": 1106,
+    "FlowerPoolLevel": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1101,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1105
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 26
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 20
+      }
+    ],
+    "NeedTime": 720,
+    "NodeName": "Dummy7",
+    "LineNames": "LineDummyItem6",
+    "NameStrKey": "ST:133806",
+    "DescStrKey": "ST:133854",
+    "NodeUnlockCondDescStrKey": "ST:133711"
+  },
+  {
+    "ID": 1107,
+    "FlowerPoolLevel": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1101,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1106
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 40
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 32
+      }
+    ],
+    "NeedTime": 1440,
+    "NodeName": "Dummy6",
+    "LineNames": "LineDummyItem5",
+    "NameStrKey": "ST:133807",
+    "DescStrKey": "ST:133854",
+    "NodeUnlockCondDescStrKey": "ST:133806"
+  },
+  {
+    "ID": 1108,
+    "FlowerPoolLevel": 1,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Travel.png@FlowerPool_Travel",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelCharacterQuantity",
+        "P1": 1
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1103
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1107
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 100
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 80
+      }
+    ],
+    "NeedTime": 3600,
+    "NodeName": "Dummy5",
+    "NameStrKey": "ST:133808",
+    "DescStrKey": "ST:133855",
+    "NodeUnlockCondDescStrKey": "ST:133881"
+  },
+  {
+    "ID": 1201,
+    "FlowerPoolLevel": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 2,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 2
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 45
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 60
+      }
+    ],
+    "NeedTime": 480,
+    "NodeName": "Dummy1",
+    "LineNames": "LineDummyItem1",
+    "NameStrKey": "ST:133712",
+    "DescStrKey": "ST:136800",
+    "NodeUnlockCondDescStrKey": "ST:133882"
+  },
+  {
+    "ID": 1202,
+    "FlowerPoolLevel": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 2,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1201
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 60
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 80
+      }
+    ],
+    "NeedTime": 960,
+    "NodeName": "Dummy2",
+    "LineNames": "LineDummyItem2|LineDummyItem3",
+    "NameStrKey": "ST:133809",
+    "DescStrKey": "ST:136800",
+    "NodeUnlockCondDescStrKey": "ST:133712"
+  },
+  {
+    "ID": 1203,
+    "FlowerPoolLevel": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 2,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1208
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 75
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 100
+      }
+    ],
+    "NeedTime": 1800,
+    "NodeName": "Dummy4",
+    "LineNames": "LineDummyItem5",
+    "NameStrKey": "ST:133810",
+    "DescStrKey": "ST:136800",
+    "NodeUnlockCondDescStrKey": "ST:135081"
+  },
+  {
+    "ID": 1204,
+    "FlowerPoolLevel": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Mountain.png@FlowerPool_Mountain",
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1202
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 120
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 100
+      }
+    ],
+    "NeedTime": 6000,
+    "NodeName": "Dummy3",
+    "NameStrKey": "ST:133811",
+    "DescStrKey": "ST:145184",
+    "NodeUnlockCondDescStrKey": "ST:133809"
+  },
+  {
+    "ID": 1205,
+    "FlowerPoolLevel": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1201,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 2
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 60
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 30
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 80
+      }
+    ],
+    "NeedTime": 480,
+    "NodeName": "Dummy9",
+    "LineNames": "LineDummyItem9",
+    "NameStrKey": "ST:133713",
+    "DescStrKey": "ST:133858",
+    "NodeUnlockCondDescStrKey": "ST:133882"
+  },
+  {
+    "ID": 1206,
+    "FlowerPoolLevel": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1201,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1205
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 80
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 40
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 106
+      }
+    ],
+    "NeedTime": 960,
+    "NodeName": "Dummy8",
+    "LineNames": "LineDummyItem8",
+    "NameStrKey": "ST:133812",
+    "DescStrKey": "ST:133858",
+    "NodeUnlockCondDescStrKey": "ST:133713"
+  },
+  {
+    "ID": 1207,
+    "FlowerPoolLevel": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1201,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1208
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 100
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 50
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 135
+      }
+    ],
+    "NeedTime": 1800,
+    "NodeName": "Dummy6",
+    "LineNames": "LineDummyItem6",
+    "NameStrKey": "ST:133813",
+    "DescStrKey": "ST:133858",
+    "NodeUnlockCondDescStrKey": "ST:135081"
+  },
+  {
+    "ID": 1208,
+    "FlowerPoolLevel": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_ShenBing1.png@FlowerPool_ShenBing1",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 402084001,
+        "P3": 20
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1202
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1206
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 60
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 145
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 200
+      }
+    ],
+    "NeedTime": 3600,
+    "NodeName": "Dummy7",
+    "LineNames": "LineDummyItem4|LineDummyItem7",
+    "NameStrKey": "ST:135081",
+    "DescStrKey": "ST:258606",
+    "NodeUnlockCondDescStrKey": "ST:133883"
+  },
+  {
+    "ID": 1209,
+    "FlowerPoolLevel": 2,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Travel.png@FlowerPool_Travel",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelCharacterQuantity",
+        "P1": 1
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1203
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1207
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 285
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 616
+      }
+    ],
+    "NeedTime": 7200,
+    "NodeName": "Dummy5",
+    "NameStrKey": "ST:133815",
+    "DescStrKey": "ST:133855",
+    "NodeUnlockCondDescStrKey": "ST:133884"
+  },
+  {
+    "ID": 1301,
+    "FlowerPoolLevel": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 3,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 3
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 140
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 120
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 240
+      }
+    ],
+    "NeedTime": 720,
+    "NodeName": "Dummy1",
+    "LineNames": "LineDummyItem1",
+    "NameStrKey": "ST:133714",
+    "DescStrKey": "ST:136801",
+    "NodeUnlockCondDescStrKey": "ST:133885"
+  },
+  {
+    "ID": 1302,
+    "FlowerPoolLevel": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 3,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1308
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 180
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 180
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 310
+      }
+    ],
+    "NeedTime": 1800,
+    "NodeName": "Dummy2",
+    "LineNames": "LineDummyItem3|LineDummyItem4",
+    "NameStrKey": "ST:133816",
+    "DescStrKey": "ST:136801",
+    "NodeUnlockCondDescStrKey": "ST:133821"
+  },
+  {
+    "ID": 1303,
+    "FlowerPoolLevel": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 3,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1309
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 250
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 220
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 375
+      }
+    ],
+    "NeedTime": 3600,
+    "NodeName": "Dummy4",
+    "LineNames": "LineDummyItem6",
+    "NameStrKey": "ST:133817",
+    "DescStrKey": "ST:136801",
+    "NodeUnlockCondDescStrKey": "ST:133822"
+  },
+  {
+    "ID": 1304,
+    "FlowerPoolLevel": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Delegate.png@FlowerPool_Delegate",
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1302
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 195
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 210
+      }
+    ],
+    "NeedTime": 9600,
+    "NodeName": "Dummy3",
+    "NameStrKey": "ST:133818",
+    "DescStrKey": "ST:145186",
+    "NodeUnlockCondDescStrKey": "ST:133816"
+  },
+  {
+    "ID": 1305,
+    "FlowerPoolLevel": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1301,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 3
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 190
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 165
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 325
+      }
+    ],
+    "NeedTime": 720,
+    "NodeName": "Dummy10",
+    "LineNames": "LineDummyItem11",
+    "NameStrKey": "ST:133715",
+    "DescStrKey": "ST:133862",
+    "NodeUnlockCondDescStrKey": "ST:133885"
+  },
+  {
+    "ID": 1306,
+    "FlowerPoolLevel": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1301,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1308
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 240
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 240
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 410
+      }
+    ],
+    "NeedTime": 1800,
+    "NodeName": "Dummy8",
+    "LineNames": "LineDummyItem9",
+    "NameStrKey": "ST:133819",
+    "DescStrKey": "ST:133862",
+    "NodeUnlockCondDescStrKey": "ST:133821"
+  },
+  {
+    "ID": 1307,
+    "FlowerPoolLevel": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1301,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1309
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 335
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 290
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 500
+      }
+    ],
+    "NeedTime": 3600,
+    "NodeName": "Dummy6",
+    "LineNames": "LineDummyItem7",
+    "NameStrKey": "ST:133820",
+    "DescStrKey": "ST:133862",
+    "NodeUnlockCondDescStrKey": "ST:133822"
+  },
+  {
+    "ID": 1308,
+    "FlowerPoolLevel": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_ShenBing1.png@FlowerPool_ShenBing1",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 402084003,
+        "P3": 30
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1301
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1305
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 140
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 335
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 525
+      }
+    ],
+    "NeedTime": 7200,
+    "NodeName": "Dummy9",
+    "LineNames": "LineDummyItem2|LineDummyItem10",
+    "NameStrKey": "ST:133821",
+    "DescStrKey": "ST:258607",
+    "NodeUnlockCondDescStrKey": "ST:133886"
+  },
+  {
+    "ID": 1309,
+    "FlowerPoolLevel": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_ShenBing2.png@FlowerPool_ShenBing2",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 402084002,
+        "P3": 20
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1302
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1306
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 220
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 535
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 445
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 1670
+      }
+    ],
+    "NeedTime": 6000,
+    "NodeName": "Dummy7",
+    "LineNames": "LineDummyItem5|LineDummyItem8",
+    "NameStrKey": "ST:133822",
+    "DescStrKey": "ST:258608",
+    "NodeUnlockCondDescStrKey": "ST:133887"
+  },
+  {
+    "ID": 1310,
+    "FlowerPoolLevel": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Travel.png@FlowerPool_Travel",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelCharacterQuantity",
+        "P1": 1
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1303
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1307
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 670
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 1670
+      }
+    ],
+    "NeedTime": 12000,
+    "NodeName": "Dummy5",
+    "NameStrKey": "ST:133823",
+    "DescStrKey": "ST:133855",
+    "NodeUnlockCondDescStrKey": "ST:133888"
+  },
+  {
+    "ID": 1311,
+    "FlowerPoolLevel": 3,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_UnlockOneClickPlant",
+        "P1": 1
+      },
+      {
+        "FuncType": "FlowerPoolNodeFuncType_UnlockOneClickGainPlant",
+        "P1": 1
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 3
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 195
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 210
+      }
+    ],
+    "NeedTime": 720,
+    "NodeName": "Dummy11",
+    "NameStrKey": "ST:148625",
+    "DescStrKey": "ST:148626",
+    "NodeUnlockCondDescStrKey": "ST:133885"
+  },
+  {
+    "ID": 1401,
+    "FlowerPoolLevel": 4,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 4,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1408
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 240
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 240
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 385
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 780
+      }
+    ],
+    "NeedTime": 1080,
+    "NodeName": "Dummy2",
+    "LineNames": "LineDummyItem2",
+    "NameStrKey": "ST:133716",
+    "DescStrKey": "ST:136802",
+    "NodeUnlockCondDescStrKey": "ST:133830"
+  },
+  {
+    "ID": 1402,
+    "FlowerPoolLevel": 4,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 4,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1409
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 320
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 320
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 640
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 1030
+      }
+    ],
+    "NeedTime": 2400,
+    "NodeName": "Dummy4",
+    "LineNames": "LineDummyItem4|LineDummyItem5",
+    "NameStrKey": "ST:133824",
+    "DescStrKey": "ST:136802",
+    "NodeUnlockCondDescStrKey": "ST:133831"
+  },
+  {
+    "ID": 1403,
+    "FlowerPoolLevel": 4,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 4,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1410
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 400
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 400
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 800
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 1280
+      }
+    ],
+    "NeedTime": 5400,
+    "NodeName": "Dummy6",
+    "LineNames": "LineDummyItem7",
+    "NameStrKey": "ST:133825",
+    "DescStrKey": "ST:136802",
+    "NodeUnlockCondDescStrKey": "ST:135082"
+  },
+  {
+    "ID": 1404,
+    "FlowerPoolLevel": 4,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Prestige.png@FlowerPool_Prestige",
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1402
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 470
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 585
+      }
+    ],
+    "NeedTime": 18000,
+    "NodeName": "Dummy5",
+    "NameStrKey": "ST:133826",
+    "DescStrKey": "ST:258815",
+    "NodeUnlockCondDescStrKey": "ST:133824"
+  },
+  {
+    "ID": 1405,
+    "FlowerPoolLevel": 4,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1401,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1408
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 320
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 320
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 515
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 1030
+      }
+    ],
+    "NeedTime": 1080,
+    "NodeName": "Dummy11",
+    "LineNames": "LineDummyItem12",
+    "NameStrKey": "ST:133827",
+    "DescStrKey": "ST:133867",
+    "NodeUnlockCondDescStrKey": "ST:133830"
+  },
+  {
+    "ID": 1406,
+    "FlowerPoolLevel": 4,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1401,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1409
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 430
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 430
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 855
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 1370
+      }
+    ],
+    "NeedTime": 2400,
+    "NodeName": "Dummy10",
+    "LineNames": "LineDummyItem10",
+    "NameStrKey": "ST:133828",
+    "DescStrKey": "ST:133867",
+    "NodeUnlockCondDescStrKey": "ST:133831"
+  },
+  {
+    "ID": 1407,
+    "FlowerPoolLevel": 4,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1401,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1410
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 535
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 535
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 1070
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 1710
+      }
+    ],
+    "NeedTime": 5400,
+    "NodeName": "Dummy9",
+    "LineNames": "LineDummyItem8",
+    "NameStrKey": "ST:133829",
+    "DescStrKey": "ST:133867",
+    "NodeUnlockCondDescStrKey": "ST:135082"
+  },
+  {
+    "ID": 1408,
+    "FlowerPoolLevel": 4,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_ShenBing1.png@FlowerPool_ShenBing1",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 402084001,
+        "P3": 20
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 4
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 440
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 1050
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 1750
+      }
+    ],
+    "NeedTime": 10800,
+    "NodeName": "Dummy1",
+    "LineNames": "LineDummyItem1|LineDummyItem13",
+    "NameStrKey": "ST:133830",
+    "DescStrKey": "ST:258606",
+    "NodeUnlockCondDescStrKey": "ST:133889"
+  },
+  {
+    "ID": 1409,
+    "FlowerPoolLevel": 4,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_ShenBing2.png@FlowerPool_ShenBing2",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 402084003,
+        "P3": 30
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1401
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1405
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 585
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 1400
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 1170
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 3510
+      }
+    ],
+    "NeedTime": 9600,
+    "NodeName": "Dummy3",
+    "LineNames": "LineDummyItem3|LineDummyItem11",
+    "NameStrKey": "ST:133831",
+    "DescStrKey": "ST:258607",
+    "NodeUnlockCondDescStrKey": "ST:133890"
+  },
+  {
+    "ID": 1410,
+    "FlowerPoolLevel": 4,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_HunJi.png@FlowerPool_HunJi",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 16,
+        "P3": 2
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1402
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1406
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 260
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 440
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 265
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 350
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 2650
+      }
+    ],
+    "NeedTime": 7200,
+    "NodeName": "Dummy7",
+    "LineNames": "LineDummyItem6|LineDummyItem9",
+    "NameStrKey": "ST:135082",
+    "DescStrKey": "ST:258609",
+    "NodeUnlockCondDescStrKey": "ST:133891"
+  },
+  {
+    "ID": 1411,
+    "FlowerPoolLevel": 4,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Travel.png@FlowerPool_Travel",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelCharacterQuantity",
+        "P1": 1
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1403
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1407
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 3200
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 6800
+      }
+    ],
+    "NeedTime": 18000,
+    "NodeName": "Dummy8",
+    "NameStrKey": "ST:133833",
+    "DescStrKey": "ST:133855",
+    "NodeUnlockCondDescStrKey": "ST:133892"
+  },
+  {
+    "ID": 1501,
+    "FlowerPoolLevel": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 5,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 5
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 675
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 675
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 1350
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 2250
+      }
+    ],
+    "NeedTime": 1440,
+    "NodeName": "Dummy1",
+    "LineNames": "LineDummyItem1",
+    "NameStrKey": "ST:133717",
+    "DescStrKey": "ST:133870",
+    "NodeUnlockCondDescStrKey": "ST:133893"
+  },
+  {
+    "ID": 1502,
+    "FlowerPoolLevel": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 5,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1507
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 940
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 975
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 2050
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 2775
+      }
+    ],
+    "NeedTime": 3600,
+    "NodeName": "Dummy3",
+    "LineNames": "LineDummyItem3",
+    "NameStrKey": "ST:133834",
+    "DescStrKey": "ST:133870",
+    "NodeUnlockCondDescStrKey": "ST:133838"
+  },
+  {
+    "ID": 1503,
+    "FlowerPoolLevel": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_City.png@FlowerPool_City",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelResourcesQuantity",
+        "P1": 5,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1509
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1125
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 1125
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 2250
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 3225
+      }
+    ],
+    "NeedTime": 7200,
+    "NodeName": "Dummy6",
+    "LineNames": "LineDummyItem6",
+    "NameStrKey": "ST:133835",
+    "DescStrKey": "ST:133870",
+    "NodeUnlockCondDescStrKey": "ST:133840"
+  },
+  {
+    "ID": 1504,
+    "FlowerPoolLevel": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1501,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 5
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 900
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 900
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 1800
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 3000
+      }
+    ],
+    "NeedTime": 1440,
+    "NodeName": "Dummy11",
+    "LineNames": "LineDummyItem12",
+    "NameStrKey": "ST:133718",
+    "DescStrKey": "ST:133871",
+    "NodeUnlockCondDescStrKey": "ST:133893"
+  },
+  {
+    "ID": 1505,
+    "FlowerPoolLevel": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1501,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1507
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1250
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 1300
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 2757
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 3700
+      }
+    ],
+    "NeedTime": 3600,
+    "NodeName": "Dummy10",
+    "LineNames": "LineDummyItem10",
+    "NameStrKey": "ST:133836",
+    "DescStrKey": "ST:133871",
+    "NodeUnlockCondDescStrKey": "ST:133838"
+  },
+  {
+    "ID": 1506,
+    "FlowerPoolLevel": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Plant.png@FlowerPool_Plant",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddPlantProductionQuantity",
+        "P1": 1501,
+        "P2": 1000
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1510
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1500
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 1500
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 3000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 4300
+      }
+    ],
+    "NeedTime": 7200,
+    "NodeName": "Dummy8",
+    "LineNames": "LineDummyItem7",
+    "NameStrKey": "ST:133837",
+    "DescStrKey": "ST:133871",
+    "NodeUnlockCondDescStrKey": "ST:135084"
+  },
+  {
+    "ID": 1507,
+    "FlowerPoolLevel": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_ShenBing2.png@FlowerPool_ShenBing2",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 402084002,
+        "P3": 20
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1501
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1504
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1570
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 3800
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 2700
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 8450
+      }
+    ],
+    "NeedTime": 14400,
+    "NodeName": "Dummy2",
+    "LineNames": "LineDummyItem2|LineDummyItem11",
+    "NameStrKey": "ST:133838",
+    "DescStrKey": "ST:258608",
+    "NodeUnlockCondDescStrKey": "ST:133894"
+  },
+  {
+    "ID": 1508,
+    "FlowerPoolLevel": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_HunJi.png@FlowerPool_HunJi",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 16,
+        "P3": 2
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1502
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1505
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1400
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 2350
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 1400
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 2000
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 1215
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 6350
+      }
+    ],
+    "NeedTime": 14400,
+    "NodeName": "Dummy4",
+    "LineNames": "LineDummyItem4|LineDummyItem9",
+    "NameStrKey": "ST:135083",
+    "DescStrKey": "ST:258609",
+    "NodeUnlockCondDescStrKey": "ST:133895"
+  },
+  {
+    "ID": 1509,
+    "FlowerPoolLevel": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_ShiSui.png@FlowerPool_ShiSui",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 403011200,
+        "P3": 1
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1508
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 780
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 1550
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 1300
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 1100
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 1850
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 6900
+      }
+    ],
+    "NeedTime": 12000,
+    "NodeName": "Dummy5",
+    "LineNames": "LineDummyItem5",
+    "NameStrKey": "ST:133840",
+    "DescStrKey": "ST:258610",
+    "NodeUnlockCondDescStrKey": "ST:135083"
+  },
+  {
+    "ID": 1510,
+    "FlowerPoolLevel": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_HeHun.png@FlowerPool_HeHun",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 403089003,
+        "P3": 2
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1508
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 840
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 1400
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 835
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 2400
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 600
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 7500
+      }
+    ],
+    "NeedTime": 14400,
+    "NodeName": "Dummy9",
+    "LineNames": "LineDummyItem8",
+    "NameStrKey": "ST:135084",
+    "DescStrKey": "ST:258611",
+    "NodeUnlockCondDescStrKey": "ST:135083"
+  },
+  {
+    "ID": 1511,
+    "FlowerPoolLevel": 5,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Travel.png@FlowerPool_Travel",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelCharacterQuantity",
+        "P1": 1
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1503
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1506
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 5500
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 11500
+      }
+    ],
+    "NeedTime": 21600,
+    "NodeName": "Dummy7",
+    "NameStrKey": "ST:133842",
+    "DescStrKey": "ST:133855",
+    "NodeUnlockCondDescStrKey": "ST:133896"
+  },
+  {
+    "ID": 1601,
+    "FlowerPoolLevel": 6,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_HunJi.png@FlowerPool_HunJi",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 16,
+        "P3": 3
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 6
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 5000
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 7550
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 5050
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 7550
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 3800
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 11800
+      }
+    ],
+    "NeedTime": 21600,
+    "NodeName": "Dummy10",
+    "LineNames": "LineDummyItem1|LineDummyItem12",
+    "NameStrKey": "ST:133719",
+    "DescStrKey": "ST:258612",
+    "NodeUnlockCondDescStrKey": "ST:133897"
+  },
+  {
+    "ID": 1602,
+    "FlowerPoolLevel": 6,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_QiRen.png@FlowerPool_QiRen",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 402022001,
+        "P3": 2
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1601
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 4050
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 2015
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 2015
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 4030
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 9500
+      }
+    ],
+    "NeedTime": 18000,
+    "NodeName": "Dummy1",
+    "LineNames": "LineDummyItem2|LineDummyItem3",
+    "NameStrKey": "ST:133843",
+    "DescStrKey": "ST:258613",
+    "NodeUnlockCondDescStrKey": "ST:133719"
+  },
+  {
+    "ID": 1603,
+    "FlowerPoolLevel": 6,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Regret.png@FlowerPool_Regret",
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1602
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 920
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 1150
+      }
+    ],
+    "NeedTime": 28800,
+    "NodeName": "Dummy2",
+    "NameStrKey": "ST:133844",
+    "DescStrKey": "ST:145195",
+    "NodeUnlockCondDescStrKey": "ST:133843"
+  },
+  {
+    "ID": 1604,
+    "FlowerPoolLevel": 6,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_HeHun.png@FlowerPool_HeHun",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 403089003,
+        "P3": 2
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1601
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 3600
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 6050
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 3600
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 6060
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 2100
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 14150
+      }
+    ],
+    "NeedTime": 19200,
+    "NodeName": "Dummy9",
+    "LineNames": "LineDummyItem11",
+    "NameStrKey": "ST:135085",
+    "DescStrKey": "ST:258611",
+    "NodeUnlockCondDescStrKey": "ST:133719"
+  },
+  {
+    "ID": 1605,
+    "FlowerPoolLevel": 6,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_ShiSui.png@FlowerPool_ShiSui",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 403011200,
+        "P3": 1
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1604
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1650
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 3350
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 2770
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 2770
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 4850
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 1300
+      }
+    ],
+    "NeedTime": 16800,
+    "NodeName": "Dummy8",
+    "LineNames": "LineDummyItem10",
+    "NameStrKey": "ST:133846",
+    "DescStrKey": "ST:258610",
+    "NodeUnlockCondDescStrKey": "ST:135085"
+  },
+  {
+    "ID": 1606,
+    "FlowerPoolLevel": 6,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_Travel.png@FlowerPool_Travel",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddTravelCharacterQuantity",
+        "P1": 1
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1602
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1605
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 15150
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 18950
+      }
+    ],
+    "NeedTime": 32400,
+    "NodeName": "Dummy3",
+    "LineNames": "LineDummyItem4|LineDummyItem9",
+    "NameStrKey": "ST:133847",
+    "DescStrKey": "ST:133855",
+    "NodeUnlockCondDescStrKey": "ST:133898"
+  },
+  {
+    "ID": 1607,
+    "FlowerPoolLevel": 6,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_QiRen.png@FlowerPool_QiRen",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 402022001,
+        "P3": 2
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 6
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1606
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 10000
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 5050
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 5038
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 10076
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 19000
+      }
+    ],
+    "NeedTime": 30000,
+    "NodeName": "Dummy5",
+    "NameStrKey": "ST:133848",
+    "DescStrKey": "ST:258613",
+    "NodeUnlockCondDescStrKey": "ST:133899"
+  },
+  {
+    "ID": 1609,
+    "FlowerPoolLevel": 6,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/FlowerPool_HeHun.png@FlowerPool_HeHun",
+    "NodeFunc": [
+      {
+        "FuncType": "FlowerPoolNodeFuncType_AddLimitedResourcesQuantity",
+        "P1": 47,
+        "P2": 403089003,
+        "P3": 3
+      }
+    ],
+    "NodeUnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 6
+      },
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1606
+      }
+    ],
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 15100
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 22500
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 15000
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 15000
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 6000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 19,
+        "Count": 28400
+      }
+    ],
+    "NeedTime": 27000,
+    "NodeName": "Dummy7",
+    "NameStrKey": "ST:135086",
+    "DescStrKey": "ST:258614",
+    "NodeUnlockCondDescStrKey": "ST:133899"
+  }
+]

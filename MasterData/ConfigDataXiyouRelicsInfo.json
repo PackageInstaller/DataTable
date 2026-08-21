@@ -1,0 +1,639 @@
+[
+  {
+    "ID": 101,
+    "RelicsType": "XiyouRelicsType_Hide",
+    "ItemId": 502000101
+  },
+  {
+    "ID": 102,
+    "RelicsType": "XiyouRelicsType_Hide",
+    "ItemId": 502000102
+  },
+  {
+    "ID": 103,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440111,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 111,
+    "RelicsType": "XiyouRelicsType_Hide",
+    "FuncType": "XiyouRelicsFuncType_FixHpMax",
+    "P1": 5000,
+    "P2": 900440103,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 112,
+    "RelicsType": "XiyouRelicsType_Hide",
+    "FuncType": "XiyouRelicsFuncType_FixHpMax",
+    "P1": 10000,
+    "P2": 900440104,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 113,
+    "RelicsType": "XiyouRelicsType_Hide",
+    "FuncType": "XiyouRelicsFuncType_FixHpMax",
+    "P1": 15000,
+    "P2": 900440105,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 114,
+    "RelicsType": "XiyouRelicsType_Hide",
+    "FuncType": "XiyouRelicsFuncType_FixHpMax",
+    "P1": 20000,
+    "P2": 900440106,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 115,
+    "RelicsType": "XiyouRelicsType_Hide",
+    "FuncType": "XiyouRelicsFuncType_FixHpMax",
+    "P1": -5000,
+    "P2": 900440107,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 116,
+    "RelicsType": "XiyouRelicsType_Hide",
+    "FuncType": "XiyouRelicsFuncType_FixHpMax",
+    "P1": -10000,
+    "P2": 900440108,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 117,
+    "RelicsType": "XiyouRelicsType_Hide",
+    "FuncType": "XiyouRelicsFuncType_FixHpMax",
+    "P1": -15000,
+    "P2": 900440109,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 118,
+    "RelicsType": "XiyouRelicsType_Hide",
+    "FuncType": "XiyouRelicsFuncType_FixHpMax",
+    "P1": -20000,
+    "P2": 900440110,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 201,
+    "RelicsType": "XiyouRelicsType_Faculty",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AddBattleAssist",
+    "P1": 50101,
+    "P2": 1,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 202,
+    "RelicsType": "XiyouRelicsType_Faculty",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_ShopItemPriceFix",
+    "P1": 2000,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 203,
+    "RelicsType": "XiyouRelicsType_Faculty",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AddBattleAssist",
+    "P1": 50102,
+    "P2": 1,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 204,
+    "RelicsType": "XiyouRelicsType_Faculty",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_GoldGetFix",
+    "P1": -2000,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 205,
+    "RelicsType": "XiyouRelicsType_Faculty",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_MonsterRefinerRecoverFix",
+    "P1": -2000,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 206,
+    "RelicsType": "XiyouRelicsType_Faculty",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AddBattleAssist",
+    "P1": 50103,
+    "P2": 1,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 207,
+    "RelicsType": "XiyouRelicsType_Faculty",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_LuckyOpenProbabilityFix",
+    "P1": -1000,
+    "ItemId": 502000103
+  },
+  {
+    "ID": 10001,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_TriggerEffectImm",
+    "P1": 10001,
+    "ItemId": 502010001
+  },
+  {
+    "ID": 10002,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_CardPackCoinReplaceGold",
+    "ItemId": 502010002,
+    "UnlockDescStrKey": "ST:214779"
+  },
+  {
+    "ID": 10003,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_LuckyOpenCardPackage",
+    "P1": 2,
+    "ItemId": 502010003,
+    "UnlockDescStrKey": "ST:214779"
+  },
+  {
+    "ID": 10004,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_GetSameCardPackProbabilityWhenOpen",
+    "P1": 1000,
+    "ItemId": 502010004,
+    "UnlockDescStrKey": "ST:214779"
+  },
+  {
+    "ID": 10005,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_TriggerEffectOnEnterWayPointWithCardPackCoinLimit",
+    "P1": 10002,
+    "P2": 1,
+    "ItemId": 502010005,
+    "UnlockDescStrKey": "ST:214779"
+  },
+  {
+    "ID": 11001,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_TriggerEffectOnOpenCardPack",
+    "P1": 10003,
+    "ItemId": 502011001
+  },
+  {
+    "ID": 11002,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_UnlockStoreBuyPermissionForCardPack",
+    "P1": 8,
+    "ItemId": 502011002
+  },
+  {
+    "ID": 11003,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_UnlockStoreBuyPermissionForCardPack",
+    "P1": 4,
+    "ItemId": 502011003
+  },
+  {
+    "ID": 11004,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_UnlockStoreBuyPermissionForCardPack",
+    "P1": 1,
+    "ItemId": 502011004
+  },
+  {
+    "ID": 11005,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_TriggerEffectOnEnterWayPoint",
+    "P1": 10004,
+    "ItemId": 502011005
+  },
+  {
+    "ID": 11006,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "ItemId": 502011006
+  },
+  {
+    "ID": 11007,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_LuckyOpenProbabilityFix",
+    "P1": 1000,
+    "ItemId": 502011007
+  },
+  {
+    "ID": 12011,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440007,
+    "ItemId": 502012011
+  },
+  {
+    "ID": 12012,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440039,
+    "ItemId": 502012012
+  },
+  {
+    "ID": 12013,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440042,
+    "ItemId": 502012013
+  },
+  {
+    "ID": 12014,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440032,
+    "ItemId": 502012014
+  },
+  {
+    "ID": 12015,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440008,
+    "ItemId": 502012015
+  },
+  {
+    "ID": 12016,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440044,
+    "ItemId": 502012016
+  },
+  {
+    "ID": 12017,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440046,
+    "ItemId": 502012017
+  },
+  {
+    "ID": 12018,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440048,
+    "ItemId": 502012018
+  },
+  {
+    "ID": 12019,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440051,
+    "ItemId": 502012019
+  },
+  {
+    "ID": 12021,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440009,
+    "ItemId": 502012021
+  },
+  {
+    "ID": 12022,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440056,
+    "ItemId": 502012022
+  },
+  {
+    "ID": 12023,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440058,
+    "ItemId": 502012023
+  },
+  {
+    "ID": 12024,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440011,
+    "ItemId": 502012024
+  },
+  {
+    "ID": 12025,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440012,
+    "ItemId": 502012025
+  },
+  {
+    "ID": 12026,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440013,
+    "ItemId": 502012026
+  },
+  {
+    "ID": 12027,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440065,
+    "ItemId": 502012027
+  },
+  {
+    "ID": 12028,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440014,
+    "ItemId": 502012028
+  },
+  {
+    "ID": 12029,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440066,
+    "ItemId": 502012029
+  },
+  {
+    "ID": 12031,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440067,
+    "ItemId": 502012031
+  },
+  {
+    "ID": 12032,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440076,
+    "ItemId": 502012032
+  },
+  {
+    "ID": 12033,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440078,
+    "ItemId": 502012033
+  },
+  {
+    "ID": 12034,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440083,
+    "ItemId": 502012034
+  },
+  {
+    "ID": 12035,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_GetCardAfterBattleStart",
+    "P1": 50044044,
+    "P2": 1,
+    "ItemId": 502012035
+  },
+  {
+    "ID": 12036,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440086,
+    "ItemId": 502012036
+  },
+  {
+    "ID": 12037,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440015,
+    "ItemId": 502012037
+  },
+  {
+    "ID": 12038,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_GetCardAfterBattleStart",
+    "P1": 50044014,
+    "P2": 1,
+    "ItemId": 502012038
+  },
+  {
+    "ID": 12039,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_GetCardAfterBattleStart",
+    "P1": 50042001,
+    "P2": 1,
+    "ItemId": 502012039
+  },
+  {
+    "ID": 13001,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_TriggerEffectOnBattleStart",
+    "P1": 440070,
+    "ItemId": 502013001
+  },
+  {
+    "ID": 13002,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440018,
+    "ItemId": 502013002
+  },
+  {
+    "ID": 13003,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_StashManaPoint",
+    "ItemId": 502013003
+  },
+  {
+    "ID": 13004,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440013,
+    "ItemId": 502013004
+  },
+  {
+    "ID": 13005,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440023,
+    "ItemId": 502013005
+  },
+  {
+    "ID": 13006,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440025,
+    "ItemId": 502013006
+  },
+  {
+    "ID": 13007,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440026,
+    "ItemId": 502013007
+  },
+  {
+    "ID": 13008,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440033,
+    "ItemId": 502013008
+  },
+  {
+    "ID": 13009,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440027,
+    "ItemId": 502013009
+  },
+  {
+    "ID": 13010,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440034,
+    "ItemId": 502013010
+  },
+  {
+    "ID": 13011,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_GetCardAfterBattleStart",
+    "P1": 50042001,
+    "P2": 1,
+    "ItemId": 502013011
+  },
+  {
+    "ID": 13012,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440090,
+    "ItemId": 502013012
+  },
+  {
+    "ID": 13013,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440091,
+    "ItemId": 502013013
+  },
+  {
+    "ID": 13014,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_AttachBufToMonsterRefiner",
+    "P1": 900440102,
+    "ItemId": 502013014
+  },
+  {
+    "ID": 13015,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_GoodLuckCharmByHp",
+    "P1": 5000,
+    "P2": 440058,
+    "ItemId": 502013015
+  },
+  {
+    "ID": 13016,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_BufToMonsterRefinerByCoin",
+    "P1": 100,
+    "P2": 900440099,
+    "ItemId": 502013016
+  },
+  {
+    "ID": 13017,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_GrowWithBattleWinAndAttachBufToMonsterRefiner",
+    "P1": 900440093,
+    "ItemId": 502013017
+  },
+  {
+    "ID": 13018,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_GrowAndFixHpMax",
+    "P1": 5000,
+    "P2": 900440094,
+    "ItemId": 502013018
+  },
+  {
+    "ID": 13019,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440029,
+    "ItemId": 502013019
+  },
+  {
+    "ID": 13020,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_SouShenBuf",
+    "P1": 440030,
+    "ItemId": 502013020
+  },
+  {
+    "ID": 13021,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_GetCardAfterBattleStart",
+    "P1": 50044045,
+    "P2": 1,
+    "ItemId": 502013021
+  },
+  {
+    "ID": 14001,
+    "RelicsType": "XiyouRelicsType_Normal",
+    "StackLimit": 1,
+    "FuncType": "XiyouRelicsFuncType_TriggerEffectOnEnterWayPoint",
+    "P1": 10004,
+    "ItemId": 502014001
+  }
+]

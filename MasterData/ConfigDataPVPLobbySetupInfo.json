@@ -1,0 +1,68 @@
+{
+  "ID": 1,
+  "ESType": "EquipSeparatorType_PVPLobby",
+  "BattleModes": [
+    "PVPLobbyBattleModeType_PVPNormal",
+    "PVPLobbyBattleModeType_PVPBanPic",
+    "PVPLobbyBattleModeType_PVPPlus"
+  ],
+  "RoundTotals": [
+    6,
+    10,
+    15
+  ],
+  "RoundTimes": [
+    10,
+    30
+  ],
+  "BackupTimes": [
+    0,
+    180,
+    300
+  ],
+  "FormationChars": [
+    5,
+    6,
+    7
+  ],
+  "IgnoreCharMax": 50,
+  "BattleSceneIds": [
+    999510,
+    999513,
+    999517,
+    999520,
+    999522,
+    999523,
+    999526,
+    999527
+  ],
+  "RoomNameMax": 20,
+  "RoomPwdMax": 6,
+  "RoomUserNum": 2,
+  "QueryRoomNum": 10,
+  "StartBattleOT": 60,
+  "LobbyRefreshTime": 10,
+  "LobbyRoomAutoRefreshTime": 15,
+  "DefaultSettings": [
+    {
+      "SettingType": "PVPLobbyRoomTagRulesType_RoundNumMax",
+      "SettingValue": 15
+    },
+    {
+      "SettingType": "PVPLobbyRoomTagRulesType_RoundTime",
+      "SettingValue": 30
+    },
+    {
+      "SettingType": "PVPLobbyRoomTagRulesType_BackupTime",
+      "SettingValue": 180
+    },
+    {
+      "SettingType": "PVPLobbyRoomTagRulesType_FormationCharNum",
+      "SettingValue": 5
+    },
+    {
+      "SettingType": "PVPLobbyRoomTagRulesType_BattleMode",
+      "SettingValue": 2
+    }
+  ]
+}

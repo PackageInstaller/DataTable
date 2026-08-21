@@ -1,0 +1,3548 @@
+[
+  {
+    "ID": 1,
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_MoralePointCompare"
+    ]
+  },
+  {
+    "ID": 2,
+    "BufFuncType": "BufFuncType_ViewTag"
+  },
+  {
+    "ID": 3,
+    "BufFuncType": "BufFuncType_CooperateAttack",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 4,
+    "BufFuncType": "BufFuncType_CooperateDefend",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount"
+    ]
+  },
+  {
+    "ID": 5,
+    "BufFuncType": "BufFuncType_Aura",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_StandOnSPLandform",
+      "ActorBufActiveCondType_MoralePointCompare"
+    ]
+  },
+  {
+    "ID": 6,
+    "BufFuncType": "BufFuncType_Pack"
+  },
+  {
+    "ID": 7,
+    "BufFuncType": "BufFuncType_Batch"
+  },
+  {
+    "ID": 8,
+    "BufFuncType": "BufFuncType_BatchRandom",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_Probability"
+    ]
+  },
+  {
+    "ID": 9,
+    "BufFuncType": "BufFuncType_Immune",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_OriginalPosNearbyFriendlyCount",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_InWarFog"
+    ]
+  },
+  {
+    "ID": 10,
+    "BufFuncType": "BufFuncType_Heal2Damage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_SrcActorAlive"
+    ]
+  },
+  {
+    "ID": 11,
+    "BufFuncType": "BufFuncType_HealSource2Damage"
+  },
+  {
+    "ID": 12,
+    "BufFuncType": "BufFuncType_SkillSignChange"
+  },
+  {
+    "ID": 13,
+    "BufFuncType": "BufFuncType_CastSkillBySelfOnSelfDead"
+  },
+  {
+    "ID": 14,
+    "BufFuncType": "BufFuncType_RemainMovepointTransfer2MovepointMax"
+  },
+  {
+    "ID": 15,
+    "BufFuncType": "BufFuncType_BanSpecificActiveSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 16,
+    "BufFuncType": "BufFuncType_ReviveAfterDeadWithSlaver"
+  },
+  {
+    "ID": 17,
+    "BufFuncType": "BufFuncType_RetreatImm"
+  },
+  {
+    "ID": 18,
+    "BufFuncType": "BufFuncType_ChangeTeam"
+  },
+  {
+    "ID": 19,
+    "BufFuncType": "BufFuncType_TriggerSrcFacilitieImm"
+  },
+  {
+    "ID": 20,
+    "BufFuncType": "BufFuncType_TriggerFacilitieImm"
+  },
+  {
+    "ID": 21,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfOnOtherDead",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ActiveSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_NumberOfSkillInCD",
+      "ActorBufActiveCondType_IsSkillOwnerIngoreBattleActionStage",
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_TargetDeadState",
+      "ActorBufActiveCondType_ContainsSkillID",
+      "ActorBufActiveCondType_CondOrCombine"
+    ]
+  },
+  {
+    "ID": 22,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_StandOnSPLandform",
+      "ActorBufActiveCondType_NearFacilitiesCount",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_IsStandOnCountlessTiesSegment",
+      "ActorBufActiveCondType_MovePoint",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_InDangerZone",
+      "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+      "ActorBufActiveCondType_MoveGrids",
+      "ActorBufActiveCondType_NumberOfSkillInCD",
+      "ActorBufActiveCondType_NearTargetCountCompare",
+      "ActorBufActiveCondType_CondAndCombine",
+      "ActorBufActiveCondType_StandOnWeather",
+      "ActorBufActiveCondType_InOpenSpace",
+      "ActorBufActiveCondType_SrcActorAlive",
+      "ActorBufActiveCondType_InWarFog"
+    ]
+  },
+  {
+    "ID": 23,
+    "BufFuncType": "BufFuncType_DisperseBuf4SelfOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_MoralePointCompare"
+    ]
+  },
+  {
+    "ID": 24,
+    "BufFuncType": "BufFuncType_Heal4SelfOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_StandOnSPLandform"
+    ]
+  },
+  {
+    "ID": 25,
+    "BufFuncType": "BufFuncType_Damage4SelfOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_StandOnSPLandform"
+    ]
+  },
+  {
+    "ID": 26,
+    "BufFuncType": "BufFuncType_DisperseBufBySelfOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 27,
+    "BufFuncType": "BufFuncType_AttachBufBySelfOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ActiveSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_StandOnSPLandform",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_ActionInitiatorIsMyCamp",
+      "ActorBufActiveCondType_ActionInitiatorIsDead",
+      "ActorBufActiveCondType_IsSkillTarget"
+    ]
+  },
+  {
+    "ID": 28,
+    "BufFuncType": "BufFuncType_HealBySelfOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 29,
+    "BufFuncType": "BufFuncType_DamageBySelfOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_NearFacilitiesCount"
+    ]
+  },
+  {
+    "ID": 30,
+    "BufFuncType": "BufFuncType_SummonOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_InOpenSpace"
+    ]
+  },
+  {
+    "ID": 31,
+    "BufFuncType": "BufFuncType_StealBufFromOpponentsBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_ContainsBufAndSrcIsMe",
+      "ActorBufActiveCondType_MoveGrids",
+      "ActorBufActiveCondType_ActiveSkillCastDistanceCenter"
+    ]
+  },
+  {
+    "ID": 32,
+    "BufFuncType": "BufFuncType_StealBufFromOpponentsAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 33,
+    "BufFuncType": "BufFuncType_Heal4SelfBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_OpponentInCommonSkillRange",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_ActiveSkillCastDistanceCenter",
+      "ActorBufActiveCondType_StandOnSPLandform"
+    ]
+  },
+  {
+    "ID": 34,
+    "BufFuncType": "BufFuncType_Heal4SelfAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_TargetCamp",
+      "ActorBufActiveCondType_TargetBufLevel"
+    ]
+  },
+  {
+    "ID": 35,
+    "BufFuncType": "BufFuncType_Damage4SelfBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 36,
+    "BufFuncType": "BufFuncType_Damage4SelfAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_SrcActorAlive"
+    ]
+  },
+  {
+    "ID": 37,
+    "BufFuncType": "BufFuncType_DisperseBufBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_StandOnSPLandform"
+    ]
+  },
+  {
+    "ID": 38,
+    "BufFuncType": "BufFuncType_DisperseBufAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 39,
+    "BufFuncType": "BufFuncType_HealBySelfBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_ActiveSkillCastDistanceCenter",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 40,
+    "BufFuncType": "BufFuncType_HealBySelfAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_TargetBufLevel"
+    ]
+  },
+  {
+    "ID": 41,
+    "BufFuncType": "BufFuncType_DamageBySelfBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 42,
+    "BufFuncType": "BufFuncType_DamageBySelfAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_ActionInitiatorIsDead",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_NearbyEnemyCount"
+    ]
+  },
+  {
+    "ID": 43,
+    "BufFuncType": "BufFuncType_Damage2OpponentsBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 44,
+    "BufFuncType": "BufFuncType_Damage2OpponentsAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_ActorSignRestraint",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_TargetBufLevel",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 45,
+    "BufFuncType": "BufFuncType_Heal2OpponentsAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType"
+    ]
+  },
+  {
+    "ID": 46,
+    "BufFuncType": "BufFuncType_HealByTargetAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType"
+    ]
+  },
+  {
+    "ID": 47,
+    "BufFuncType": "BufFuncType_DamageByTargetAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_ActorSignRestraint",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType"
+    ]
+  },
+  {
+    "ID": 48,
+    "BufFuncType": "BufFuncType_AttachBufBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_ActorSignRestraint",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_AttackStage",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_OpponentInCommonSkillRange",
+      "ActorBufActiveCondType_MovePoint",
+      "ActorBufActiveCondType_DissatisfyCareerAttackFast",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_TargetIsSrcActor",
+      "ActorBufActiveCondType_ActiveSkillCastDistanceCenter",
+      "ActorBufActiveCondType_NumberOfSkillInCD",
+      "ActorBufActiveCondType_TargetBufLevel",
+      "ActorBufActiveCondType_TargetDeadState",
+      "ActorBufActiveCondType_TargetAndMeOnSameLine",
+      "ActorBufActiveCondType_SpecailActorCountBetweenTargetAndMeOnSameLine",
+      "ActorBufActiveCondType_TargetCamp",
+      "ActorBufActiveCondType_InDangerZone",
+      "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+      "ActorBufActiveCondType_ContainsBufAndSrcIsMe",
+      "ActorBufActiveCondType_Compare2TargetPlus",
+      "ActorBufActiveCondType_MoveGrids",
+      "ActorBufActiveCondType_ActiveSkillCasterAndMeDistance",
+      "ActorBufActiveCondType_NearTargetCountCompare",
+      "ActorBufActiveCondType_CondOrCombine",
+      "ActorBufActiveCondType_HpPercentProbability",
+      "ActorBufActiveCondType_DmgHpPercent",
+      "ActorBufActiveCondType_ActionInitiator",
+      "ActorBufActiveCondType_TargetNearbyActorCount",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_StandOnSPLandform"
+    ]
+  },
+  {
+    "ID": 49,
+    "BufFuncType": "BufFuncType_AttachBufAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_ActorSignRestraint",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_TargetCamp",
+      "ActorBufActiveCondType_MovePoint",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_TargetIsSrcActor",
+      "ActorBufActiveCondType_ActiveSkillCastDistanceCenter",
+      "ActorBufActiveCondType_StandOnSPLandform",
+      "ActorBufActiveCondType_TargetBufLevel",
+      "ActorBufActiveCondType_AttackTargetSumNumberOfSkillInCD",
+      "ActorBufActiveCondType_NearFacilitiesCount",
+      "ActorBufActiveCondType_IsActionInitiatorSkillOwner",
+      "ActorBufActiveCondType_NumberOfSkillInCD",
+      "ActorBufActiveCondType_TargetAndMeOnSameLine",
+      "ActorBufActiveCondType_SpecailActorCountBetweenTargetAndMeOnSameLine",
+      "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+      "ActorBufActiveCondType_TargetDeadState",
+      "ActorBufActiveCondType_TargetDeadStateAndKillByMe",
+      "ActorBufActiveCondType_Compare2TargetPlus",
+      "ActorBufActiveCondType_MoveGrids",
+      "ActorBufActiveCondType_SrcActorAlive",
+      "ActorBufActiveCondType_NearTargetCountCompare",
+      "ActorBufActiveCondType_CondOrCombine",
+      "ActorBufActiveCondType_CondAndCombine",
+      "ActorBufActiveCondType_SrcActorAlive",
+      "ActorBufActiveCondType_StandOnWeather",
+      "ActorBufActiveCondType_OwnerSign",
+      "ActorBufActiveCondType_MoralePointCompare"
+    ]
+  },
+  {
+    "ID": 50,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfBeforeAttack",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackStage",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 51,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfAfterAttack",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_AttackStage",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 52,
+    "BufFuncType": "BufFuncType_AttackTypeExchange",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 53,
+    "BufFuncType": "BufFuncType_PropertiesModifyCombat",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_ActorSignRestraint",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillGroup",
+      "ActorBufActiveCondType_AttackStage",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_MovePoint",
+      "ActorBufActiveCondType_DissatisfyCareerAttackFast",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_TargetIsSrcActor",
+      "ActorBufActiveCondType_ActiveSkillCastDistanceCenter",
+      "ActorBufActiveCondType_NumberOfSkillInCD",
+      "ActorBufActiveCondType_StandOnSPLandform",
+      "ActorBufActiveCondType_NearFacilitiesCount",
+      "ActorBufActiveCondType_BufCategoryLevel",
+      "ActorBufActiveCondType_AllSkillInCD",
+      "ActorBufActiveCondType_TargetAndMeOnSameLine",
+      "ActorBufActiveCondType_TargetAndMeOnSameLine",
+      "ActorBufActiveCondType_SpecailActorCountBetweenTargetAndMeOnSameLine",
+      "ActorBufActiveCondType_OriginalPosNearbyFriendlyCount",
+      "ActorBufActiveCondType_MoveGrids",
+      "ActorBufActiveCondType_Compare2TargetPlus",
+      "ActorBufActiveCondType_NearTargetCountCompare",
+      "ActorBufActiveCondType_InDangerZone",
+      "ActorBufActiveCondType_TargetBufLevel",
+      "ActorBufActiveCondType_CondOrCombine",
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_TargetNearbyActorCount",
+      "ActorBufActiveCondType_CondOrCombine",
+      "ActorBufActiveCondType_CondAndCombine",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_TargetStandOnSPLandform",
+      "ActorBufActiveCondType_StandOnWeather",
+      "ActorBufActiveCondType_MoralePointCompare",
+      "ActorBufActiveCondType_InWarFog"
+    ]
+  },
+  {
+    "ID": 54,
+    "BufFuncType": "BufFuncType_PropertiesModifyCombatConversion",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 55,
+    "BufFuncType": "BufFuncType_PropertiesModifyCombatByHpLoss",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 56,
+    "BufFuncType": "BufFuncType_PropertiesModifyCombatByMoveDistanceOnlyAttacker",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_MoralePointCompare"
+    ]
+  },
+  {
+    "ID": 57,
+    "BufFuncType": "BufFuncType_PropertiesModifyCombatByTargetDistance",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 58,
+    "BufFuncType": "BufFuncType_RemoveCD4ActiveSkillBySkillType",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ActorSignRestraint",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 59,
+    "BufFuncType": "BufFuncType_RemoveCD4ActiveSkillBySkillId",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ActorSignRestraint",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 60,
+    "BufFuncType": "BufFuncType_RemoveCD4CurActiveSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ActorSignRestraint",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_NearTargetCountCompare",
+      "ActorBufActiveCondType_TargetDeadState",
+      "ActorBufActiveCondType_ActiveSkillOverHealEffect"
+    ]
+  },
+  {
+    "ID": 61,
+    "BufFuncType": "BufFuncType_GotoOrgPosition",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 62,
+    "BufFuncType": "BufFuncType_ExchangePosition",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 63,
+    "BufFuncType": "BufFuncType_Bloodsuck",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_TargetDeadState",
+      "ActorBufActiveCondType_Compare2Target"
+    ]
+  },
+  {
+    "ID": 64,
+    "BufFuncType": "BufFuncType_Rebound",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 65,
+    "BufFuncType": "BufFuncType_AttachBufBySelfBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_HpPercentProbability",
+      "ActorBufActiveCondType_TargetCamp"
+    ]
+  },
+  {
+    "ID": 66,
+    "BufFuncType": "BufFuncType_AttachBufBySelfAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_BufCategoryLevel",
+      "ActorBufActiveCondType_TargetBufLevel",
+      "ActorBufActiveCondType_HpPercentProbability",
+      "ActorBufActiveCondType_NearbyEnemyCount"
+    ]
+  },
+  {
+    "ID": 67,
+    "BufFuncType": "BufFuncType_AttachBufByTargetAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_TargetDeadState"
+    ]
+  },
+  {
+    "ID": 68,
+    "BufFuncType": "BufFuncType_DisperseBufBySelfBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 69,
+    "BufFuncType": "BufFuncType_DisperseBufBySelfAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType"
+    ]
+  },
+  {
+    "ID": 70,
+    "BufFuncType": "BufFuncType_DisperseBufByTargetAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_TargetBufLevel",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 71,
+    "BufFuncType": "BufFuncType_ExtraMove",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 72,
+    "BufFuncType": "BufFuncType_ExtraAction",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_TargetRevive",
+      "ActorBufActiveCondType_CondOrCombine"
+    ]
+  },
+  {
+    "ID": 73,
+    "BufFuncType": "BufFuncType_AttachBufAfterCastSkillByDamange",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType"
+    ]
+  },
+  {
+    "ID": 74,
+    "BufFuncType": "BufFuncType_AttachBufAfterCastSkill2Probability",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 75,
+    "BufFuncType": "BufFuncType_AttachBufImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_TargetCamp",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_NumberOfSkillInCD",
+      "ActorBufActiveCondType_AttackTargetSumNumberOfSkillInCD",
+      "ActorBufActiveCondType_ActionInitiatorIsDead",
+      "ActorBufActiveCondType_MovePoint",
+      "ActorBufActiveCondType_StandOnSPLandform",
+      "ActorBufActiveCondType_NearFacilitiesCount",
+      "ActorBufActiveCondType_AllSkillInCD",
+      "ActorBufActiveCondType_BufCategoryLevel",
+      "ActorBufActiveCondType_CondAndCombine",
+      "ActorBufActiveCondType_NearTargetCount"
+    ]
+  },
+  {
+    "ID": 76,
+    "BufFuncType": "BufFuncType_DisperseBufImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_BufCategoryLevel",
+      "ActorBufActiveCondType_StandOnSPLandform",
+      "ActorBufActiveCondType_NearTargetCount"
+    ]
+  },
+  {
+    "ID": 77,
+    "BufFuncType": "BufFuncType_AttachBuf4Self",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_ActionInitiatorIsDead",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_StandOnWeather",
+      "ActorBufActiveCondType_ShieldEffective"
+    ]
+  },
+  {
+    "ID": 78,
+    "BufFuncType": "BufFuncType_DisperseBuf4Self",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_DeadState"
+    ]
+  },
+  {
+    "ID": 79,
+    "BufFuncType": "BufFuncType_AttachBuf2Opponents",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ActionInitiatorIsDead"
+    ]
+  },
+  {
+    "ID": 80,
+    "BufFuncType": "BufFuncType_DisperseBuf2Opponents",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_DeadState"
+    ]
+  },
+  {
+    "ID": 81,
+    "BufFuncType": "BufFuncType_ReplaceByAttrOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_ShieldEffective"
+    ]
+  },
+  {
+    "ID": 82,
+    "BufFuncType": "BufFuncType_BloodsuckBySelf",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 83,
+    "BufFuncType": "BufFuncType_AttractNearbyBySelf",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 84,
+    "BufFuncType": "BufFuncType_ReplaceBufBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_AttackStage",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DissatisfyCareerAttackFast",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 85,
+    "BufFuncType": "BufFuncType_ReplaceBufAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 86,
+    "BufFuncType": "BufFuncType_ReplaceBufImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_NumberOfSkillInCD",
+      "ActorBufActiveCondType_BufCategoryLevel"
+    ]
+  },
+  {
+    "ID": 87,
+    "BufFuncType": "BufFuncType_ReviveAfterDead",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_DmgHpPercent",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 88,
+    "BufFuncType": "BufFuncType_SummonFacilityOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_DeadState"
+    ]
+  },
+  {
+    "ID": 89,
+    "BufFuncType": "BufFuncType_RemoveCD4ActiveSkillImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ActiveSkillGroup",
+      "ActorBufActiveCondType_AttackStage",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_NumberOfSkillInCD"
+    ]
+  },
+  {
+    "ID": 90,
+    "BufFuncType": "BufFuncType_DamageBySelfByMoveDistance",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType"
+    ]
+  },
+  {
+    "ID": 91,
+    "BufFuncType": "BufFuncType_CostSelfHpBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearTargetCount"
+    ]
+  },
+  {
+    "ID": 92,
+    "BufFuncType": "BufFuncType_CostSelfHpAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearTargetCount"
+    ]
+  },
+  {
+    "ID": 93,
+    "BufFuncType": "BufFuncType_AttachBufOrConvertBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_MovePoint"
+    ]
+  },
+  {
+    "ID": 94,
+    "BufFuncType": "BufFuncType_AttachBufOrConvertAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_MovePoint",
+      "ActorBufActiveCondType_TargetCountDamage"
+    ]
+  },
+  {
+    "ID": 95,
+    "BufFuncType": "BufFuncType_AttachBufOrConvert4SelfOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_MovePoint",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_TargetCountDamage"
+    ]
+  },
+  {
+    "ID": 96,
+    "BufFuncType": "BufFuncType_PassiveMoveAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_MovePoint"
+    ]
+  },
+  {
+    "ID": 97,
+    "BufFuncType": "BufFuncType_PassiveMoveBySelfAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_NearbyEnemyCount"
+    ]
+  },
+  {
+    "ID": 98,
+    "BufFuncType": "BufFuncType_TeleportToRandomTargetAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_IsSkillTarget"
+    ]
+  },
+  {
+    "ID": 99,
+    "BufFuncType": "BufFuncType_TeleportOpponentsNearSelfAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup"
+    ]
+  },
+  {
+    "ID": 100,
+    "BufFuncType": "BufFuncType_SpreadBufBySelfBeforeCastSkill"
+  },
+  {
+    "ID": 101,
+    "BufFuncType": "BufFuncType_SpreadBufBySelfAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TargetCountDamage"
+    ]
+  },
+  {
+    "ID": 102,
+    "BufFuncType": "BufFuncType_SpreadBufByOpponentAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 103,
+    "BufFuncType": "BufFuncType_PassiveMoveBySelfOnStage"
+  },
+  {
+    "ID": 104,
+    "BufFuncType": "BufFuncType_TeleportToRandomTargetOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_InDangerZone"
+    ]
+  },
+  {
+    "ID": 105,
+    "BufFuncType": "BufFuncType_RandomShiftSingleBySelfOnStage"
+  },
+  {
+    "ID": 106,
+    "BufFuncType": "BufFuncType_RandomShiftSingleAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_NearbyEnemyCount"
+    ]
+  },
+  {
+    "ID": 107,
+    "BufFuncType": "BufFuncType_PassiveMoveByTargetAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_TargetDeadState"
+    ]
+  },
+  {
+    "ID": 108,
+    "BufFuncType": "BufFuncType_RemoveCD4ActiveSkillByPetsOnStage"
+  },
+  {
+    "ID": 109,
+    "BufFuncType": "BufFuncType_AddAnger4CurActiveSkillAfterCastSkill"
+  },
+  {
+    "ID": 110,
+    "BufFuncType": "BufFuncType_RemoveCD4CurActiveAOESkill"
+  },
+  {
+    "ID": 111,
+    "BufFuncType": "BufFuncType_ReplaceOtherBySelfAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect"
+    ]
+  },
+  {
+    "ID": 112,
+    "BufFuncType": "BufFuncType_ReplaceOnDeath",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 113,
+    "BufFuncType": "BufFuncType_ReduceBufLvlAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 114,
+    "BufFuncType": "BufFuncType_ExtraSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsSkillIDNotInCd",
+      "ActorBufActiveCondType_SkillAngerSlotStatus",
+      "ActorBufActiveCondType_NearTargetCount"
+    ]
+  },
+  {
+    "ID": 115,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfFromCooperateAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 116,
+    "BufFuncType": "BufFuncType_PropertiesModifyCombatByOtherCharacter",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_HpPercent"
+    ]
+  },
+  {
+    "ID": 117,
+    "BufFuncType": "BufFuncType_ReviveAfterDeadFinal",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 118,
+    "BufFuncType": "BufFuncType_PropertiesModifyCombatBySrcHpRemain",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup"
+    ]
+  },
+  {
+    "ID": 119,
+    "BufFuncType": "BufFuncType_DuplicateBufAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_AttackSkillGroup"
+    ]
+  },
+  {
+    "ID": 120,
+    "BufFuncType": "BufFuncType_DuplicateBufBeforeCastSkill"
+  },
+  {
+    "ID": 121,
+    "BufFuncType": "BufFuncType_DuplicateBufBySelfAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_TargetCountDamage"
+    ]
+  },
+  {
+    "ID": 122,
+    "BufFuncType": "BufFuncType_ReplaceOtherBySelfOnStage"
+  },
+  {
+    "ID": 123,
+    "BufFuncType": "BufFuncType_HealBySelfAndFacilitieOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_FacilitieCount"
+    ]
+  },
+  {
+    "ID": 124,
+    "BufFuncType": "BufFuncType_SummonAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_TargetBufLevel",
+      "ActorBufActiveCondType_SkillID"
+    ]
+  },
+  {
+    "ID": 125,
+    "BufFuncType": "BufFuncType_CreateSPLandformAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_StandOnWeather"
+    ]
+  },
+  {
+    "ID": 126,
+    "BufFuncType": "BufFuncType_BanlanceHpOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 127,
+    "BufFuncType": "BufFuncType_MetamorphosisImm"
+  },
+  {
+    "ID": 128,
+    "BufFuncType": "BufFuncType_DamageSrcActorAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_KillByHeal2DamageIfDie"
+    ]
+  },
+  {
+    "ID": 129,
+    "BufFuncType": "BufFuncType_DisperseSrcActorBufAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_KillByHeal2DamageIfDie",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_IsSkillOwner"
+    ]
+  },
+  {
+    "ID": 130,
+    "BufFuncType": "BufFuncType_HealBySelfImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_TargetBufLevel",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearTargetCount"
+    ]
+  },
+  {
+    "ID": 131,
+    "BufFuncType": "BufFuncType_AttachBufAfterRevive",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 132,
+    "BufFuncType": "BufFuncType_BanlanceHpAndHealByMagitAttackOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent"
+    ]
+  },
+  {
+    "ID": 133,
+    "BufFuncType": "BufFuncType_Heal4SelfBySrcActorAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_TargetCamp"
+    ]
+  },
+  {
+    "ID": 134,
+    "BufFuncType": "BufFuncType_PassiveMoveByMoveDistanceAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup"
+    ]
+  },
+  {
+    "ID": 135,
+    "BufFuncType": "BufFuncType_ProvideExtraBufWhenAttachBuf"
+  },
+  {
+    "ID": 136,
+    "BufFuncType": "BufFuncType_Heal4SelfByHitNumberAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_TargetCamp"
+    ]
+  },
+  {
+    "ID": 137,
+    "BufFuncType": "BufFuncType_ImmuneSelectSrcActor"
+  },
+  {
+    "ID": 138,
+    "BufFuncType": "BufFuncType_PropertiesModifyCombatByBufCategorySet",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 139,
+    "BufFuncType": "BufFuncType_PropertiesModifyCombatByAttackTargetHpRemain",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_AttackSkillGroup"
+    ]
+  },
+  {
+    "ID": 140,
+    "BufFuncType": "BufFuncType_Heal4SrcActorBySelfOnStage"
+  },
+  {
+    "ID": 141,
+    "BufFuncType": "BufFuncType_SummonByTargetAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 142,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfFromAccumulatedMovement"
+  },
+  {
+    "ID": 143,
+    "BufFuncType": "BufFuncType_ReduceBufLvlOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_SpecailBuffIsNotInCd"
+    ]
+  },
+  {
+    "ID": 144,
+    "BufFuncType": "BufFuncType_AttachBuf2OpponentsOnDeath"
+  },
+  {
+    "ID": 145,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfOnOtherDeadAndKillByMe",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner"
+    ]
+  },
+  {
+    "ID": 146,
+    "BufFuncType": "BufFuncType_CanGuardAttack",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ActionInitiatorHasExtraMoveChance",
+      "ActorBufActiveCondType_ActionInitiatorIsActiveSkillOwner",
+      "ActorBufActiveCondType_ActionInitiatorIsDead"
+    ]
+  },
+  {
+    "ID": 147,
+    "BufFuncType": "BufFuncType_Damage4SelfImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_BufCategoryLevel",
+      "ActorBufActiveCondType_NearTargetCount"
+    ]
+  },
+  {
+    "ID": 148,
+    "BufFuncType": "BufFuncType_PassiveMoveBySelfImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ActionInitiatorHasExtraMoveChance",
+      "ActorBufActiveCondType_ActionInitiatorIsActiveSkillOwner",
+      "ActorBufActiveCondType_ActionInitiatorIsDead"
+    ]
+  },
+  {
+    "ID": 149,
+    "BufFuncType": "BufFuncType_AttachBuf2SrcActorAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_IsSkillOwnerIngoreBattleActionStage",
+      "ActorBufActiveCondType_TargetCountDamageNearSrcActor",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_StandOnSPLandform"
+    ]
+  },
+  {
+    "ID": 151,
+    "BufFuncType": "BufFuncType_Damage4ActionInitiatorImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_ActionInitiatorHasExtraMoveChance",
+      "ActorBufActiveCondType_ActionInitiatorIsActiveSkillOwner",
+      "ActorBufActiveCondType_ActionInitiatorIsDead"
+    ]
+  },
+  {
+    "ID": 152,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfBeforeAnyoneActionExec",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NumberOfSkillInCD",
+      "ActorBufActiveCondType_ActionInitiatorIsMyCamp"
+    ]
+  },
+  {
+    "ID": 153,
+    "BufFuncType": "BufFuncType_TriggerBuffBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 154,
+    "BufFuncType": "BufFuncType_PassiveMoveActionInitiatorImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ActionInitiatorHasExtraMoveChance",
+      "ActorBufActiveCondType_ActionInitiatorIsDead"
+    ]
+  },
+  {
+    "ID": 155,
+    "BufFuncType": "BufFuncType_PropertiesModifyCombatByOtherCharacterSkillCDNum",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_AttackTargetSumNumberOfSkillInCD",
+      "ActorBufActiveCondType_HpPercent"
+    ]
+  },
+  {
+    "ID": 156,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfOnExtraAction",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_StandOnWeather"
+    ]
+  },
+  {
+    "ID": 157,
+    "BufFuncType": "BufFuncType_PauseBufTicking"
+  },
+  {
+    "ID": 158,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfOnDefaultActorActive",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 159,
+    "BufFuncType": "BufFuncType_TriggerBuffAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 160,
+    "BufFuncType": "BufFuncType_AttachBufOrConvert4SelfFromCooperateAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 161,
+    "BufFuncType": "BufFuncType_AddAnger4MyAngerSkillImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 162,
+    "BufFuncType": "BufFuncType_RemoveCD4ActiveSkillBySkillTypeVersion2",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_IsSkillOwner"
+    ]
+  },
+  {
+    "ID": 163,
+    "BufFuncType": "BufFuncType_RemoveCD4ActiveSkillImmVersion2",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ActiveSkillGroup",
+      "ActorBufActiveCondType_AttackStage",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_NumberOfSkillInCD",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 164,
+    "BufFuncType": "BufFuncType_ExtraSkillListActionEnd",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_CondOrCombine",
+      "ActorBufActiveCondType_CondAndCombine",
+      "ActorBufActiveCondType_StandOnWeather",
+      "ActorBufActiveCondType_FacilitieCount"
+    ]
+  },
+  {
+    "ID": 165,
+    "BufFuncType": "BufFuncType_AttachBufOrConvert2SrcActorAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_MovePoint"
+    ]
+  },
+  {
+    "ID": 166,
+    "BufFuncType": "BufFuncType_ReplaceBufBySelfAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect"
+    ]
+  },
+  {
+    "ID": 167,
+    "BufFuncType": "BufFuncType_AttachBufByTargetOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType"
+    ]
+  },
+  {
+    "ID": 168,
+    "BufFuncType": "BufFuncType_HealByTargetOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType"
+    ]
+  },
+  {
+    "ID": 169,
+    "BufFuncType": "BufFuncType_AttachBufBySpecialActorOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType"
+    ]
+  },
+  {
+    "ID": 170,
+    "BufFuncType": "BufFuncType_HealBySpecialActorOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType"
+    ]
+  },
+  {
+    "ID": 171,
+    "BufFuncType": "BufFuncType_AttachBufBySpecialActorAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType"
+    ]
+  },
+  {
+    "ID": 172,
+    "BufFuncType": "BufFuncType_DamageBySpecialActorAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType"
+    ]
+  },
+  {
+    "ID": 173,
+    "BufFuncType": "BufFuncType_AttachBufOrConvert2SrcActorBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_MovePoint"
+    ]
+  },
+  {
+    "ID": 174,
+    "BufFuncType": "BufFuncType_AttachBuf2SrcActorBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_AttackStage",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_StandOnSPLandform"
+    ]
+  },
+  {
+    "ID": 175,
+    "BufFuncType": "BufFuncType_TriggerBuffImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 176,
+    "BufFuncType": "BufFuncType_AttachBuf2SrcActorImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_NumberOfSkillInCD",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_StandOnSPLandform",
+      "ActorBufActiveCondType_BufCategoryLevel"
+    ]
+  },
+  {
+    "ID": 177,
+    "BufFuncType": "BufFuncType_SummonFacilityBySelfBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup"
+    ]
+  },
+  {
+    "ID": 178,
+    "BufFuncType": "BufFuncType_DeleteFacilityBySelfImm"
+  },
+  {
+    "ID": 179,
+    "BufFuncType": "BufFuncType_SummonFacilitiesBySelfOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_NearFacilitiesCount"
+    ]
+  },
+  {
+    "ID": 180,
+    "BufFuncType": "BufFuncType_DamageByTargetImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_ActorSignRestraint",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_TargetBufLevel",
+      "ActorBufActiveCondType_AttackTargetHpPercent"
+    ]
+  },
+  {
+    "ID": 181,
+    "BufFuncType": "BufFuncType_ExtraActive2Other"
+  },
+  {
+    "ID": 182,
+    "BufFuncType": "BufFuncType_DivertBufBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_ContainsBufAndSrcIsMe",
+      "ActorBufActiveCondType_TargetIsSrcActor"
+    ]
+  },
+  {
+    "ID": 183,
+    "BufFuncType": "BufFuncType_ExtraMoveVersion2",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 184,
+    "BufFuncType": "BufFuncType_DamageBySelfImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_TargetDeadState",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 185,
+    "BufFuncType": "BufFuncType_SummonWeatherBufAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 186,
+    "BufFuncType": "BufFuncType_TriggerOnlyByTriggerBuff"
+  },
+  {
+    "ID": 187,
+    "BufFuncType": "BufFuncType_AddBuffLifeTimeWhenAttachingBuffToTargetByMe",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwnerIngoreBattleActionStage"
+    ]
+  },
+  {
+    "ID": 188,
+    "BufFuncType": "BufFuncType_DivertBufBySelfOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_DeadState"
+    ]
+  },
+  {
+    "ID": 189,
+    "BufFuncType": "BufFuncType_DivertBufAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_ActiveSkillCastDistanceCenter",
+      "ActorBufActiveCondType_ActiveSkillCasterAndMeDistance"
+    ]
+  },
+  {
+    "ID": 190,
+    "BufFuncType": "BufFuncType_ReplaceBufImmVersion2"
+  },
+  {
+    "ID": 191,
+    "BufFuncType": "BufFuncType_AttachBufAfterCastSkillStage2",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_ActorSignRestraint",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_TargetCamp",
+      "ActorBufActiveCondType_MovePoint",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_TargetIsSrcActor",
+      "ActorBufActiveCondType_TargetBufLevel",
+      "ActorBufActiveCondType_AttackTargetSumNumberOfSkillInCD",
+      "ActorBufActiveCondType_TargetDeadState",
+      "ActorBufActiveCondType_IsSkillOwnerIngoreBattleActionStage",
+      "ActorBufActiveCondType_NumberOfSkillInCD",
+      "ActorBufActiveCondType_AnyEnermyDeadState"
+    ]
+  },
+  {
+    "ID": 192,
+    "BufFuncType": "BufFuncType_BloodSuckImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_TargetDeadState"
+    ]
+  },
+  {
+    "ID": 193,
+    "BufFuncType": "BufFuncType_DuplicateBufBySelfImm"
+  },
+  {
+    "ID": 194,
+    "BufFuncType": "BufFuncType_AttachBufAfterCastSkillVersion2",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_ActorSignRestraint",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_AttackTargetHpPercent",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_TargetCountDamage",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_TargetCamp",
+      "ActorBufActiveCondType_MovePoint",
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_TargetIsSrcActor",
+      "ActorBufActiveCondType_TargetBufLevel",
+      "ActorBufActiveCondType_AttackTargetSumNumberOfSkillInCD",
+      "ActorBufActiveCondType_TargetDeadState",
+      "ActorBufActiveCondType_IsSkillOwnerIngoreBattleActionStage",
+      "ActorBufActiveCondType_NumberOfSkillInCD",
+      "ActorBufActiveCondType_AnyEnermyDeadState",
+      "ActorBufActiveCondType_TargetDeadStateAndKillByMe",
+      "ActorBufActiveCondType_AnyEnermyDeadStateAndKillByMe",
+      "ActorBufActiveCondType_SpecailEnermyDeadStateAndKillByMe",
+      "ActorBufActiveCondType_CondOrCombine",
+      "ActorBufActiveCondType_TargetRevive"
+    ]
+  },
+  {
+    "ID": 195,
+    "BufFuncType": "BufFuncType_PreventDisperseBufProcessWithBufLevel"
+  },
+  {
+    "ID": 196,
+    "BufFuncType": "BufFuncType_NoSensation"
+  },
+  {
+    "ID": 197,
+    "BufFuncType": "BufFuncType_KillMeOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_InOpenSpace",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 198,
+    "BufFuncType": "BufFuncType_AttachBuf2SrcActorAfterCastSkillAndBeforePosChange",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_IsSkillOwnerIngoreBattleActionStage",
+      "ActorBufActiveCondType_TargetCountDamageNearSrcActor"
+    ]
+  },
+  {
+    "ID": 199,
+    "BufFuncType": "BufFuncType_SkillCanBeATrigerSrcFinalDamageMult",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 200,
+    "BufFuncType": "BufFuncType_StoreValueBySkillCanBeATrigerSrcFinalDamagePercent",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect"
+    ]
+  },
+  {
+    "ID": 201,
+    "BufFuncType": "BufFuncType_DamageBySelfByStoreValueBuffPercentImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 202,
+    "BufFuncType": "BufFuncType_StoreValueForShow"
+  },
+  {
+    "ID": 203,
+    "BufFuncType": "BufFuncType_AttachBuf2MyKillerOnDeath"
+  },
+  {
+    "ID": 204,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfByMovePassThroughTargetImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner"
+    ]
+  },
+  {
+    "ID": 205,
+    "BufFuncType": "BufFuncType_StealBuffByMovePassThroughTargetImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner"
+    ]
+  },
+  {
+    "ID": 206,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfAfterCastSkillByDamangeTarget",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID"
+    ]
+  },
+  {
+    "ID": 207,
+    "BufFuncType": "BufFuncType_StealBuffAfterCastSkillByDamangeTarget",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect"
+    ]
+  },
+  {
+    "ID": 208,
+    "BufFuncType": "BufFuncType_AttachBufBySpecialActorImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ActionInitiatorHasExtraMoveChance",
+      "ActorBufActiveCondType_ActionInitiatorIsDead",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_AttackSkillGroup"
+    ]
+  },
+  {
+    "ID": 209,
+    "BufFuncType": "BufFuncType_SpreadBufBySelfOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_DeadState"
+    ]
+  },
+  {
+    "ID": 210,
+    "BufFuncType": "BufFuncType_CreateGroundBufBySpecialActorImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_DeadState"
+    ]
+  },
+  {
+    "ID": 211,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfByTeleportToFarPassThroughAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID"
+    ]
+  },
+  {
+    "ID": 212,
+    "BufFuncType": "BufFuncType_StealBuffByTeleportToFarPassThroughAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID"
+    ]
+  },
+  {
+    "ID": 213,
+    "BufFuncType": "BufFuncType_CleanMovePassThroughInfoImm"
+  },
+  {
+    "ID": 214,
+    "BufFuncType": "BufFuncType_ModifyP1OnExtraAction"
+  },
+  {
+    "ID": 215,
+    "BufFuncType": "BufFuncType_DamageBySpecialActorImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ActionInitiatorHasExtraMoveChance",
+      "ActorBufActiveCondType_ActionInitiatorIsDead",
+      "ActorBufActiveCondType_StandOnSPLandform",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 216,
+    "BufFuncType": "BufFuncType_DisperseSrcActorBufOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_KillByHeal2DamageIfDie"
+    ]
+  },
+  {
+    "ID": 217,
+    "BufFuncType": "BufFuncType_DisperseSrcActorBufImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_KillByHeal2DamageIfDie"
+    ]
+  },
+  {
+    "ID": 218,
+    "BufFuncType": "BufFuncType_DisperseBufBySelfImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_TriggerStageTypeStage",
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_NearbyEnemyCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_DeadState",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_DmgBySrcActor",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_DmgBySrcActorTeamType",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 219,
+    "BufFuncType": "BufFuncType_SpreadBufBySelf",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 220,
+    "BufFuncType": "BufFuncType_MovementLimit"
+  },
+  {
+    "ID": 221,
+    "BufFuncType": "BufFuncType_SummonFacilitiesBySpecialActorImm"
+  },
+  {
+    "ID": 222,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfByPosChange"
+  },
+  {
+    "ID": 223,
+    "BufFuncType": "BufFuncType_AttachBufByTargetImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 224,
+    "BufFuncType": "BufFuncType_TurnBackTime",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 225,
+    "BufFuncType": "BufFuncType_RemoveTrigerCD4BufByBufIdImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SpecailBuffIsNotInCd"
+    ]
+  },
+  {
+    "ID": 226,
+    "BufFuncType": "BufFuncType_AttachBufBySelfAfterCastSkillByDamangeTarget",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ActiveSkillAttackEffect"
+    ]
+  },
+  {
+    "ID": 227,
+    "BufFuncType": "BufFuncType_ExtraActive2OtherImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID"
+    ]
+  },
+  {
+    "ID": 228,
+    "BufFuncType": "BufFuncType_AttachBufBeforeDamageBuffBeforeCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID"
+    ]
+  },
+  {
+    "ID": 229,
+    "BufFuncType": "BufFuncType_AttachBufBySelfAfterCastSkillByKillTarget",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_HpPercent",
+      "ActorBufActiveCondType_NearbyFriendlyCount",
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_Probability",
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_CanAction",
+      "ActorBufActiveCondType_AttackSkillSign",
+      "ActorBufActiveCondType_Compare2Target",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_TargetEthnic",
+      "ActorBufActiveCondType_TargetClique",
+      "ActorBufActiveCondType_TargetGender",
+      "ActorBufActiveCondType_TargetCareer",
+      "ActorBufActiveCondType_TargetSign",
+      "ActorBufActiveCondType_SkillID",
+      "ActorBufActiveCondType_ShieldEffective",
+      "ActorBufActiveCondType_ActiveSkillCastDistance"
+    ]
+  },
+  {
+    "ID": 230,
+    "BufFuncType": "BufFuncType_AttachBufOrConvertBySelfImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 231,
+    "BufFuncType": "BufFuncType_Replace4SelfImm"
+  },
+  {
+    "ID": 232,
+    "BufFuncType": "BufFuncType_DeleteFacilityAndGroundBuffImm"
+  },
+  {
+    "ID": 233,
+    "BufFuncType": "BufFuncType_BanSpecificActiveSkillBySkillGroup"
+  },
+  {
+    "ID": 234,
+    "BufFuncType": "BufFuncType_BanSpecificPassiveSkill"
+  },
+  {
+    "ID": 235,
+    "BufFuncType": "BufFuncType_AttachBuf2EnemyThreeSameColorNeighborsImm"
+  },
+  {
+    "ID": 236,
+    "BufFuncType": "BufFuncType_Damage4EnemyThreeSameColorNeighborsImm"
+  },
+  {
+    "ID": 237,
+    "BufFuncType": "BufFuncType_ReduceBufLvlImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_BufLevel",
+      "ActorBufActiveCondType_StandOnSPLandform"
+    ]
+  },
+  {
+    "ID": 238,
+    "BufFuncType": "BufFuncType_StoreValueDamageValueChangeTo"
+  },
+  {
+    "ID": 239,
+    "BufFuncType": "BufFuncType_ChangeBufLifetimeImm"
+  },
+  {
+    "ID": 240,
+    "BufFuncType": "BufFuncType_RankUpBuf2OtherBufImm"
+  },
+  {
+    "ID": 241,
+    "BufFuncType": "BufFuncType_DamageBySelfHurtAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_NearTargetCount"
+    ]
+  },
+  {
+    "ID": 242,
+    "BufFuncType": "BufFuncType_ExchangeHpImm"
+  },
+  {
+    "ID": 243,
+    "BufFuncType": "BufFuncType_StealBuffBySelfImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 244,
+    "BufFuncType": "BufFuncType_AttachBuf4SelfOnExtraActive",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 245,
+    "BufFuncType": "BufFuncType_SummonFacilitieInSkillEdgeGridForRhombus"
+  },
+  {
+    "ID": 246,
+    "BufFuncType": "BufFuncType_SummonFacilitieInSkillEdgeGridForSquare"
+  },
+  {
+    "ID": 247,
+    "BufFuncType": "BufFuncType_RecalcMovePointImm"
+  },
+  {
+    "ID": 248,
+    "BufFuncType": "BufFuncType_Zoc"
+  },
+  {
+    "ID": 249,
+    "BufFuncType": "BufFuncType_RemoveCD4ActiveSkillBySkillIdImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_BufLevel"
+    ]
+  },
+  {
+    "ID": 250,
+    "BufFuncType": "BufFuncType_CreateSPLandformByMove",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_MoveGrids"
+    ]
+  },
+  {
+    "ID": 251,
+    "BufFuncType": "BufFuncType_SignChange"
+  },
+  {
+    "ID": 252,
+    "BufFuncType": "BufFuncType_SkillBatchChange"
+  },
+  {
+    "ID": 253,
+    "BufFuncType": "BufFuncType_PropertiesModifyCombatConversionBySrcActor"
+  },
+  {
+    "ID": 254,
+    "BufFuncType": "BufFuncType_ShieldHeal4SelfImm"
+  },
+  {
+    "ID": 255,
+    "BufFuncType": "BufFuncType_ShieldLifetimeChange4SelfImm"
+  },
+  {
+    "ID": 256,
+    "BufFuncType": "BufFuncType_LifetimeNotReduceAfterPostImm"
+  },
+  {
+    "ID": 257,
+    "BufFuncType": "BufFuncType_ShieldHeal4SelfImmVersion2",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ShieldEffective"
+    ]
+  },
+  {
+    "ID": 258,
+    "BufFuncType": "BufFuncType_SummonDuplicatedActorOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_DeadState"
+    ]
+  },
+  {
+    "ID": 259,
+    "BufFuncType": "BufFuncType_SummonDuplicatedActorAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 260,
+    "BufFuncType": "BufFuncType_SummonWeatherBufOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_CondOrCombine",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_StandOnWeather"
+    ]
+  },
+  {
+    "ID": 261,
+    "BufFuncType": "BufFuncType_AddEnergy4MyFaBaoSkillImm"
+  },
+  {
+    "ID": 262,
+    "BufFuncType": "BufFuncType_StoreValueofSpecialActorSkillParamImm"
+  },
+  {
+    "ID": 263,
+    "BufFuncType": "BufFuncType_SetSkillParamofSkillIDByStoreValue"
+  },
+  {
+    "ID": 264,
+    "BufFuncType": "BufFuncType_RemoveCD4ArtifactActiveSkillImm"
+  },
+  {
+    "ID": 265,
+    "BufFuncType": "BufFuncType_DivertBuf2SrcActorAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_IsSkillOwner"
+    ]
+  },
+  {
+    "ID": 266,
+    "BufFuncType": "BufFuncType_DeleteFacilityAndGroundBuffOnStage",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_DeadState"
+    ]
+  },
+  {
+    "ID": 267,
+    "BufFuncType": "BufFuncType_HealSpecialActorByHurtImm"
+  },
+  {
+    "ID": 268,
+    "BufFuncType": "BufFuncType_AttachBufBeforeDamageBuffBeforeCastSkillV2",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_IsSkillOwner",
+      "ActorBufActiveCondType_IsSkillTarget",
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SkillID"
+    ]
+  },
+  {
+    "ID": 269,
+    "BufFuncType": "BufFuncType_HealBySelfByStoreValueBuffPercentImm"
+  },
+  {
+    "ID": 270,
+    "BufFuncType": "BufFuncType_ChangeAllGroundImm"
+  },
+  {
+    "ID": 271,
+    "BufFuncType": "BufFuncType_HealSpecialActorByHurtAfterCastSkill"
+  },
+  {
+    "ID": 272,
+    "BufFuncType": "BufFuncType_AddStoreValueBySpecialActorImm"
+  },
+  {
+    "ID": 273,
+    "BufFuncType": "BufFuncType_PassiveGuardAttack",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ActionInitiatorHasExtraMoveChance",
+      "ActorBufActiveCondType_ActionInitiatorIsDead",
+      "ActorBufActiveCondType_ShieldEffective"
+    ]
+  },
+  {
+    "ID": 274,
+    "BufFuncType": "BufFuncType_SpecialShieldChangeImm"
+  },
+  {
+    "ID": 275,
+    "BufFuncType": "BufFuncType_MovementLimitToSpecialActor",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_SrcActorAlive"
+    ]
+  },
+  {
+    "ID": 276,
+    "BufFuncType": "BufFuncType_PropertiesModifyCombatByOtherCharacterProperties",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_NearTargetCount",
+      "ActorBufActiveCondType_MoralePointCompare"
+    ]
+  },
+  {
+    "ID": 277,
+    "BufFuncType": "BufFuncType_CreateGroundBufBySelfImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_BufCategoryLevel"
+    ]
+  },
+  {
+    "ID": 278,
+    "BufFuncType": "BufFuncType_SpreadBufBySelfOnDeath"
+  },
+  {
+    "ID": 279,
+    "BufFuncType": "BufFuncType_ChangeBufLifetimeOnStage"
+  },
+  {
+    "ID": 280,
+    "BufFuncType": "BufFuncType_DamageShareByOtherAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_AttackSkillGroup",
+      "ActorBufActiveCondType_IsSkillTarget"
+    ]
+  },
+  {
+    "ID": 281,
+    "BufFuncType": "BufFuncType_AddEnergy4MyHuanShouImm"
+  },
+  {
+    "ID": 283,
+    "BufFuncType": "BufFuncType_SummonFacilitiesOnGridSelectAfterCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ActiveSkillAttackEffect",
+      "ActorBufActiveCondType_IsSkillOwner"
+    ]
+  },
+  {
+    "ID": 303,
+    "BufFuncType": "BufFuncType_ReplaceOnDeathWithBuf",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 304,
+    "BufFuncType": "BufFuncType_TransformToCharacterNewImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 321,
+    "BufFuncType": "BufFuncType_ChangeWeatherLifeTimeImm",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_StandOnWeather",
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 327,
+    "BufFuncType": "BufFuncType_FixBufOnBufAttach",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory",
+      "ActorBufActiveCondType_CondOrCombine"
+    ]
+  },
+  {
+    "ID": 332,
+    "BufFuncType": "BufFuncType_DamageByTargetLocationAfterOtherCastSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_ContainsBufCategory"
+    ]
+  },
+  {
+    "ID": 337,
+    "BufFuncType": "BufFuncType_RemoveCD4TargetSwapSkill",
+    "AttentionActiveCondTypeSet": [
+      "ActorBufActiveCondType_AnyEnermyDeadState"
+    ]
+  }
+]

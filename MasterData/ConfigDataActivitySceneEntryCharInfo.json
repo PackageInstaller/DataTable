@@ -1,0 +1,276 @@
+[
+  {
+    "ID": 100110007,
+    "ActionList": [
+      "NormalIdle"
+    ],
+    "InteractActionList": [
+      "NormalIdle"
+    ],
+    "PosType": 16,
+    "Condition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 914
+      }
+    ]
+  },
+  {
+    "ID": 100110008,
+    "ActionList": [
+      "TaitoukanIdle"
+    ],
+    "InteractActionList": [
+      "TaitoukanJiaohu"
+    ],
+    "PosType": 6,
+    "Condition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 908
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 914
+      }
+    ]
+  },
+  {
+    "ID": 100110510,
+    "ActionList": [
+      "TuosaiIdle"
+    ],
+    "InteractActionList": [
+      "TuosaiJiaohu"
+    ],
+    "PosType": 1,
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 905
+      }
+    ]
+  },
+  {
+    "ID": 100110511,
+    "ActionList": [
+      "Camp_Sit02"
+    ],
+    "InteractActionList": [
+      "Camp_Sit02"
+    ],
+    "PosType": 15,
+    "Condition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 914
+      }
+    ]
+  },
+  {
+    "ID": 100111310,
+    "ActionList": [
+      "JusangIdle"
+    ],
+    "InteractActionList": [
+      "JusangJiaohu"
+    ],
+    "PosType": 3,
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 905
+      }
+    ]
+  },
+  {
+    "ID": 100111311,
+    "ActionList": [
+      "Camp_Sit02"
+    ],
+    "InteractActionList": [
+      "Camp_Sit02"
+    ],
+    "PosType": 9,
+    "Condition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 914
+      }
+    ]
+  },
+  {
+    "ID": 100114908,
+    "ActionList": [
+      "JusangIdle"
+    ],
+    "InteractActionList": [
+      "JusangJiaohu"
+    ],
+    "PosType": 4,
+    "Condition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 905
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 908
+      }
+    ]
+  },
+  {
+    "ID": 100120010,
+    "ActionList": [
+      "HejiuIdle"
+    ],
+    "InteractActionList": [
+      "HejiuJiaohu"
+    ],
+    "PosType": 2,
+    "Condition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 904
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 905
+      }
+    ]
+  },
+  {
+    "ID": 100120011,
+    "ActionList": [
+      "HejiuIdle"
+    ],
+    "InteractActionList": [
+      "HejiuJiaohu"
+    ],
+    "PosType": 5,
+    "Condition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 908
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 912
+      }
+    ]
+  },
+  {
+    "ID": 100120012,
+    "ActionList": [
+      "NormalIdle"
+    ],
+    "InteractActionList": [
+      "NormalIdle"
+    ],
+    "PosType": 8,
+    "Condition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 914
+      }
+    ]
+  },
+  {
+    "ID": 100120108,
+    "ActionList": [
+      "HejiuIdle"
+    ],
+    "InteractActionList": [
+      "HejiuJiaohu"
+    ],
+    "PosType": 7,
+    "Condition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 908
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 914
+      }
+    ]
+  },
+  {
+    "ID": 899999963,
+    "PosType": 10,
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 901
+      }
+    ]
+  },
+  {
+    "ID": 899999964,
+    "PosType": 11,
+    "Condition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 901
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 905
+      }
+    ]
+  },
+  {
+    "ID": 899999965,
+    "PosType": 12,
+    "Condition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 905
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 908
+      }
+    ]
+  },
+  {
+    "ID": 899999966,
+    "PosType": 13,
+    "Condition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 908
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 914
+      }
+    ]
+  },
+  {
+    "ID": 899999967,
+    "PosType": 14,
+    "Condition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 914
+      }
+    ]
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "ID": 101,
+    "NeedItem": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 800041001,
+        "Count": 10
+      }
+    ],
+    "RemoveAbility": [
+      {
+        "Count": 1
+      }
+    ]
+  },
+  {
+    "ID": 102,
+    "NeedItem": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 800041001,
+        "Count": 10
+      }
+    ],
+    "RemoveAbility": [
+      {
+        "Count": 1
+      },
+      {
+        "TermGroup": "SBSectHuanShouCrystalTermGroupType_Better",
+        "Count": 1
+      }
+    ]
+  },
+  {
+    "ID": 103,
+    "NeedItem": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 800041001,
+        "Count": 10
+      }
+    ],
+    "RemoveAbility": [
+      {
+        "Count": 1
+      },
+      {
+        "TermGroup": "SBSectHuanShouCrystalTermGroupType_Better",
+        "Count": 1
+      },
+      {
+        "TermGroup": "SBSectHuanShouCrystalTermGroupType_Advanced",
+        "Count": 1
+      }
+    ]
+  }
+]

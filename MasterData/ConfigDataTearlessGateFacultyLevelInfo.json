@@ -1,0 +1,2457 @@
+[
+  {
+    "ID": 100101,
+    "FacultyId": 1001,
+    "Level": 1,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1001
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:179551"
+  },
+  {
+    "ID": 100102,
+    "FacultyId": 1001,
+    "Level": 2,
+    "UnlockConds": [
+      {
+        "Key": 1001,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1002
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:179552"
+  },
+  {
+    "ID": 100103,
+    "FacultyId": 1001,
+    "Level": 3,
+    "UnlockConds": [
+      {
+        "Key": 1001,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1003
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:179553"
+  },
+  {
+    "ID": 100104,
+    "FacultyId": 1001,
+    "Level": 4,
+    "UnlockConds": [
+      {
+        "Key": 1001,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1004
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:179554"
+  },
+  {
+    "ID": 100105,
+    "FacultyId": 1001,
+    "Level": 5,
+    "UnlockConds": [
+      {
+        "Key": 1001,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1005
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:179555"
+  },
+  {
+    "ID": 100201,
+    "FacultyId": 1002,
+    "Level": 1,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1006
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176518"
+  },
+  {
+    "ID": 100202,
+    "FacultyId": 1002,
+    "Level": 2,
+    "UnlockConds": [
+      {
+        "Key": 1002,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1007
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:171111"
+  },
+  {
+    "ID": 100203,
+    "FacultyId": 1002,
+    "Level": 3,
+    "UnlockConds": [
+      {
+        "Key": 1002,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1008
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176519"
+  },
+  {
+    "ID": 100204,
+    "FacultyId": 1002,
+    "Level": 4,
+    "UnlockConds": [
+      {
+        "Key": 1002,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1009
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:171112"
+  },
+  {
+    "ID": 100205,
+    "FacultyId": 1002,
+    "Level": 5,
+    "UnlockConds": [
+      {
+        "Key": 1002,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1010
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176520"
+  },
+  {
+    "ID": 100301,
+    "FacultyId": 1003,
+    "Level": 1,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1011
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:171116"
+  },
+  {
+    "ID": 100302,
+    "FacultyId": 1003,
+    "Level": 2,
+    "UnlockConds": [
+      {
+        "Key": 1003,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1012
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:172906"
+  },
+  {
+    "ID": 100303,
+    "FacultyId": 1003,
+    "Level": 3,
+    "UnlockConds": [
+      {
+        "Key": 1003,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1013
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:172907"
+  },
+  {
+    "ID": 100304,
+    "FacultyId": 1003,
+    "Level": 4,
+    "UnlockConds": [
+      {
+        "Key": 1003,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1014
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176521"
+  },
+  {
+    "ID": 100305,
+    "FacultyId": 1003,
+    "Level": 5,
+    "UnlockConds": [
+      {
+        "Key": 1003,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1015
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:177432"
+  },
+  {
+    "ID": 100401,
+    "FacultyId": 1004,
+    "Level": 1,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1016
+    ],
+    "ItemStateName": "Special",
+    "DescStrKey": "ST:173165"
+  },
+  {
+    "ID": 100402,
+    "FacultyId": 1004,
+    "Level": 2,
+    "UnlockFacultyLevel": 5,
+    "UnlockConds": [
+      {
+        "Key": 1004,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1017
+    ],
+    "ItemStateName": "Special",
+    "DescStrKey": "ST:173166"
+  },
+  {
+    "ID": 100403,
+    "FacultyId": 1004,
+    "Level": 3,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 1004,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1018
+    ],
+    "ItemStateName": "Special",
+    "DescStrKey": "ST:173167"
+  },
+  {
+    "ID": 200101,
+    "FacultyId": 2001,
+    "Level": 1,
+    "UnlockFacultyLevel": 5,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1019
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:178918"
+  },
+  {
+    "ID": 200102,
+    "FacultyId": 2001,
+    "Level": 2,
+    "UnlockFacultyLevel": 5,
+    "UnlockConds": [
+      {
+        "Key": 2001,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1020
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:178919"
+  },
+  {
+    "ID": 200103,
+    "FacultyId": 2001,
+    "Level": 3,
+    "UnlockFacultyLevel": 5,
+    "UnlockConds": [
+      {
+        "Key": 2001,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1021
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:178920"
+  },
+  {
+    "ID": 200201,
+    "FacultyId": 2002,
+    "Level": 1,
+    "UnlockFacultyLevel": 5,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1022
+    ],
+    "ItemStateName": "Special",
+    "DescStrKey": "ST:172911"
+  },
+  {
+    "ID": 200202,
+    "FacultyId": 2002,
+    "Level": 2,
+    "UnlockFacultyLevel": 5,
+    "UnlockConds": [
+      {
+        "Key": 2002,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1023
+    ],
+    "ItemStateName": "Special",
+    "DescStrKey": "ST:172912"
+  },
+  {
+    "ID": 200203,
+    "FacultyId": 2002,
+    "Level": 3,
+    "UnlockFacultyLevel": 5,
+    "UnlockConds": [
+      {
+        "Key": 2002,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1024
+    ],
+    "ItemStateName": "Special",
+    "DescStrKey": "ST:172913"
+  },
+  {
+    "ID": 200204,
+    "FacultyId": 2002,
+    "Level": 4,
+    "UnlockFacultyLevel": 5,
+    "UnlockConds": [
+      {
+        "Key": 2002,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1025
+    ],
+    "ItemStateName": "Special",
+    "DescStrKey": "ST:172914"
+  },
+  {
+    "ID": 200205,
+    "FacultyId": 2002,
+    "Level": 5,
+    "UnlockFacultyLevel": 5,
+    "UnlockConds": [
+      {
+        "Key": 2002,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1026
+    ],
+    "ItemStateName": "Special",
+    "DescStrKey": "ST:172915"
+  },
+  {
+    "ID": 200301,
+    "FacultyId": 2003,
+    "Level": 1,
+    "UnlockFacultyLevel": 5,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1027
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:174774"
+  },
+  {
+    "ID": 200302,
+    "FacultyId": 2003,
+    "Level": 2,
+    "UnlockFacultyLevel": 5,
+    "UnlockConds": [
+      {
+        "Key": 2003,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1028
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:174775"
+  },
+  {
+    "ID": 200303,
+    "FacultyId": 2003,
+    "Level": 3,
+    "UnlockFacultyLevel": 5,
+    "UnlockConds": [
+      {
+        "Key": 2003,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1029
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:174776"
+  },
+  {
+    "ID": 200304,
+    "FacultyId": 2003,
+    "Level": 4,
+    "UnlockFacultyLevel": 5,
+    "UnlockConds": [
+      {
+        "Key": 2003,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1030
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:174777"
+  },
+  {
+    "ID": 200305,
+    "FacultyId": 2003,
+    "Level": 5,
+    "UnlockFacultyLevel": 5,
+    "UnlockConds": [
+      {
+        "Key": 2003,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1031
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:174778"
+  },
+  {
+    "ID": 300101,
+    "FacultyId": 3001,
+    "Level": 1,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 1001,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1032
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:179556"
+  },
+  {
+    "ID": 300102,
+    "FacultyId": 3001,
+    "Level": 2,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 3001,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1033
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:179557"
+  },
+  {
+    "ID": 300103,
+    "FacultyId": 3001,
+    "Level": 3,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 3001,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1034
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:179558"
+  },
+  {
+    "ID": 300104,
+    "FacultyId": 3001,
+    "Level": 4,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 3001,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1035
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:179559"
+  },
+  {
+    "ID": 300105,
+    "FacultyId": 3001,
+    "Level": 5,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 3001,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1036
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:179560"
+  },
+  {
+    "ID": 300201,
+    "FacultyId": 3002,
+    "Level": 1,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 1002,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1037
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178921"
+  },
+  {
+    "ID": 300202,
+    "FacultyId": 3002,
+    "Level": 2,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 3002,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1038
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178922"
+  },
+  {
+    "ID": 300203,
+    "FacultyId": 3002,
+    "Level": 3,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 3002,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1039
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178923"
+  },
+  {
+    "ID": 300204,
+    "FacultyId": 3002,
+    "Level": 4,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 3002,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1040
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178924"
+  },
+  {
+    "ID": 300205,
+    "FacultyId": 3002,
+    "Level": 5,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 3002,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1041
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178925"
+  },
+  {
+    "ID": 300301,
+    "FacultyId": 3003,
+    "Level": 1,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 1003,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1042
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178387"
+  },
+  {
+    "ID": 300302,
+    "FacultyId": 3003,
+    "Level": 2,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 3003,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1043
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178388"
+  },
+  {
+    "ID": 300303,
+    "FacultyId": 3003,
+    "Level": 3,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 3003,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1044
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178389"
+  },
+  {
+    "ID": 300304,
+    "FacultyId": 3003,
+    "Level": 4,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 3003,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1045
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178390"
+  },
+  {
+    "ID": 300305,
+    "FacultyId": 3003,
+    "Level": 5,
+    "UnlockFacultyLevel": 10,
+    "UnlockConds": [
+      {
+        "Key": 3003,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1046
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178391"
+  },
+  {
+    "ID": 400101,
+    "FacultyId": 4001,
+    "Level": 1,
+    "UnlockFacultyLevel": 15,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1047
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176533"
+  },
+  {
+    "ID": 400102,
+    "FacultyId": 4001,
+    "Level": 2,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4001,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1048
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:171146"
+  },
+  {
+    "ID": 400103,
+    "FacultyId": 4001,
+    "Level": 3,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4001,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1049
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176534"
+  },
+  {
+    "ID": 400104,
+    "FacultyId": 4001,
+    "Level": 4,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4001,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1050
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:171147"
+  },
+  {
+    "ID": 400105,
+    "FacultyId": 4001,
+    "Level": 5,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4001,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1051
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176535"
+  },
+  {
+    "ID": 400201,
+    "FacultyId": 4002,
+    "Level": 1,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 2001,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1052
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:177703"
+  },
+  {
+    "ID": 400202,
+    "FacultyId": 4002,
+    "Level": 2,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4002,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1053
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:177704"
+  },
+  {
+    "ID": 400203,
+    "FacultyId": 4002,
+    "Level": 3,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4002,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1054
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:174783"
+  },
+  {
+    "ID": 400204,
+    "FacultyId": 4002,
+    "Level": 4,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4002,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1055
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:177705"
+  },
+  {
+    "ID": 400205,
+    "FacultyId": 4002,
+    "Level": 5,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4002,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1056
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:177706"
+  },
+  {
+    "ID": 400301,
+    "FacultyId": 4003,
+    "Level": 1,
+    "UnlockFacultyLevel": 15,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1057
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176536"
+  },
+  {
+    "ID": 400302,
+    "FacultyId": 4003,
+    "Level": 2,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4003,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1058
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176537"
+  },
+  {
+    "ID": 400303,
+    "FacultyId": 4003,
+    "Level": 3,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4003,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1059
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176538"
+  },
+  {
+    "ID": 400304,
+    "FacultyId": 4003,
+    "Level": 4,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4003,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1060
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176539"
+  },
+  {
+    "ID": 400305,
+    "FacultyId": 4003,
+    "Level": 5,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4003,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1061
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176540"
+  },
+  {
+    "ID": 400401,
+    "FacultyId": 4004,
+    "Level": 1,
+    "UnlockFacultyLevel": 15,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1062
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176541"
+  },
+  {
+    "ID": 400402,
+    "FacultyId": 4004,
+    "Level": 2,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4004,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1063
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176542"
+  },
+  {
+    "ID": 400403,
+    "FacultyId": 4004,
+    "Level": 3,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4004,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1064
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176543"
+  },
+  {
+    "ID": 400404,
+    "FacultyId": 4004,
+    "Level": 4,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4004,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1065
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176544"
+  },
+  {
+    "ID": 400405,
+    "FacultyId": 4004,
+    "Level": 5,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4004,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1066
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:176545"
+  },
+  {
+    "ID": 400501,
+    "FacultyId": 4005,
+    "Level": 1,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 2003,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1067
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:177707"
+  },
+  {
+    "ID": 400502,
+    "FacultyId": 4005,
+    "Level": 2,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4005,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1068
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:171741"
+  },
+  {
+    "ID": 400503,
+    "FacultyId": 4005,
+    "Level": 3,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4005,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1069
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:177708"
+  },
+  {
+    "ID": 400504,
+    "FacultyId": 4005,
+    "Level": 4,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4005,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1070
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:177709"
+  },
+  {
+    "ID": 400505,
+    "FacultyId": 4005,
+    "Level": 5,
+    "UnlockFacultyLevel": 15,
+    "UnlockConds": [
+      {
+        "Key": 4005,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1071
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:177710"
+  },
+  {
+    "ID": 500101,
+    "FacultyId": 5001,
+    "Level": 1,
+    "UnlockFacultyLevel": 20,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1072,
+      2901
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:197886"
+  },
+  {
+    "ID": 500102,
+    "FacultyId": 5001,
+    "Level": 2,
+    "UnlockFacultyLevel": 20,
+    "UnlockConds": [
+      {
+        "Key": 5001,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1073,
+      2902
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:197887"
+  },
+  {
+    "ID": 500103,
+    "FacultyId": 5001,
+    "Level": 3,
+    "UnlockFacultyLevel": 20,
+    "UnlockConds": [
+      {
+        "Key": 5001,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1074,
+      2903
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:197888"
+  },
+  {
+    "ID": 500104,
+    "FacultyId": 5001,
+    "Level": 4,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 5001,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1105,
+      2904
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:197889"
+  },
+  {
+    "ID": 500105,
+    "FacultyId": 5001,
+    "Level": 5,
+    "UnlockFacultyLevel": 30,
+    "UnlockConds": [
+      {
+        "Key": 5001,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 60
+      }
+    ],
+    "EffectIds": [
+      1106,
+      2904
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:197890"
+  },
+  {
+    "ID": 500201,
+    "FacultyId": 5002,
+    "Level": 1,
+    "UnlockFacultyLevel": 20,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1075
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:178957"
+  },
+  {
+    "ID": 500202,
+    "FacultyId": 5002,
+    "Level": 2,
+    "UnlockFacultyLevel": 20,
+    "UnlockConds": [
+      {
+        "Key": 5002,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1076
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:178958"
+  },
+  {
+    "ID": 500203,
+    "FacultyId": 5002,
+    "Level": 3,
+    "UnlockFacultyLevel": 20,
+    "UnlockConds": [
+      {
+        "Key": 5002,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1077
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:178959"
+  },
+  {
+    "ID": 500204,
+    "FacultyId": 5002,
+    "Level": 4,
+    "UnlockFacultyLevel": 20,
+    "UnlockConds": [
+      {
+        "Key": 5002,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1078
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:178960"
+  },
+  {
+    "ID": 500205,
+    "FacultyId": 5002,
+    "Level": 5,
+    "UnlockFacultyLevel": 20,
+    "UnlockConds": [
+      {
+        "Key": 5002,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1079
+    ],
+    "ItemStateName": "LowLevel",
+    "DescStrKey": "ST:178961"
+  },
+  {
+    "ID": 600101,
+    "FacultyId": 6001,
+    "Level": 1,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 4001,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1080
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178929"
+  },
+  {
+    "ID": 600102,
+    "FacultyId": 6001,
+    "Level": 2,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 6001,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1081
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178930"
+  },
+  {
+    "ID": 600103,
+    "FacultyId": 6001,
+    "Level": 3,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 6001,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1082
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178931"
+  },
+  {
+    "ID": 600104,
+    "FacultyId": 6001,
+    "Level": 4,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 6001,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1083
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178932"
+  },
+  {
+    "ID": 600105,
+    "FacultyId": 6001,
+    "Level": 5,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 6001,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1084
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178933"
+  },
+  {
+    "ID": 600201,
+    "FacultyId": 6002,
+    "Level": 1,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 4003,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1085
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178934"
+  },
+  {
+    "ID": 600202,
+    "FacultyId": 6002,
+    "Level": 2,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 6002,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1086
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178935"
+  },
+  {
+    "ID": 600203,
+    "FacultyId": 6002,
+    "Level": 3,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 6002,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1087
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178936"
+  },
+  {
+    "ID": 600204,
+    "FacultyId": 6002,
+    "Level": 4,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 6002,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1088
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178937"
+  },
+  {
+    "ID": 600205,
+    "FacultyId": 6002,
+    "Level": 5,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 6002,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1089
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:194116"
+  },
+  {
+    "ID": 600301,
+    "FacultyId": 6003,
+    "Level": 1,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 4004,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1090
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178590"
+  },
+  {
+    "ID": 600302,
+    "FacultyId": 6003,
+    "Level": 2,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 6003,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1091
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178591"
+  },
+  {
+    "ID": 600303,
+    "FacultyId": 6003,
+    "Level": 3,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 6003,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1092
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178592"
+  },
+  {
+    "ID": 600304,
+    "FacultyId": 6003,
+    "Level": 4,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 6003,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1093
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178593"
+  },
+  {
+    "ID": 600305,
+    "FacultyId": 6003,
+    "Level": 5,
+    "UnlockFacultyLevel": 25,
+    "UnlockConds": [
+      {
+        "Key": 6003,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1094
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178594"
+  },
+  {
+    "ID": 700201,
+    "FacultyId": 7002,
+    "Level": 1,
+    "UnlockFacultyLevel": 30,
+    "UnlockConds": [
+      {
+        "Key": 5002,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1095
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178962"
+  },
+  {
+    "ID": 700202,
+    "FacultyId": 7002,
+    "Level": 2,
+    "UnlockFacultyLevel": 30,
+    "UnlockConds": [
+      {
+        "Key": 7002,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1096
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178963"
+  },
+  {
+    "ID": 700203,
+    "FacultyId": 7002,
+    "Level": 3,
+    "UnlockFacultyLevel": 30,
+    "UnlockConds": [
+      {
+        "Key": 7002,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1097
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178964"
+  },
+  {
+    "ID": 700204,
+    "FacultyId": 7002,
+    "Level": 4,
+    "UnlockFacultyLevel": 30,
+    "UnlockConds": [
+      {
+        "Key": 7002,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1098
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178965"
+  },
+  {
+    "ID": 700205,
+    "FacultyId": 7002,
+    "Level": 5,
+    "UnlockFacultyLevel": 30,
+    "UnlockConds": [
+      {
+        "Key": 7002,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1099
+    ],
+    "ItemStateName": "HighLevel",
+    "DescStrKey": "ST:178966"
+  },
+  {
+    "ID": 700301,
+    "FacultyId": 7003,
+    "Level": 1,
+    "UnlockFacultyLevel": 30,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 4
+      }
+    ],
+    "EffectIds": [
+      1100
+    ],
+    "ItemStateName": "Special",
+    "DescStrKey": "ST:179013"
+  },
+  {
+    "ID": 700302,
+    "FacultyId": 7003,
+    "Level": 2,
+    "UnlockFacultyLevel": 30,
+    "UnlockConds": [
+      {
+        "Key": 7003,
+        "Value": 1
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 8
+      }
+    ],
+    "EffectIds": [
+      1101
+    ],
+    "ItemStateName": "Special",
+    "DescStrKey": "ST:179014"
+  },
+  {
+    "ID": 700303,
+    "FacultyId": 7003,
+    "Level": 3,
+    "UnlockFacultyLevel": 30,
+    "UnlockConds": [
+      {
+        "Key": 7003,
+        "Value": 2
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 16
+      }
+    ],
+    "EffectIds": [
+      1102
+    ],
+    "ItemStateName": "Special",
+    "DescStrKey": "ST:179015"
+  },
+  {
+    "ID": 700304,
+    "FacultyId": 7003,
+    "Level": 4,
+    "UnlockFacultyLevel": 30,
+    "UnlockConds": [
+      {
+        "Key": 7003,
+        "Value": 3
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 28
+      }
+    ],
+    "EffectIds": [
+      1103
+    ],
+    "ItemStateName": "Special",
+    "DescStrKey": "ST:179016"
+  },
+  {
+    "ID": 700305,
+    "FacultyId": 7003,
+    "Level": 5,
+    "UnlockFacultyLevel": 30,
+    "UnlockConds": [
+      {
+        "Key": 7003,
+        "Value": 4
+      }
+    ],
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 400020703,
+        "Count": 40
+      }
+    ],
+    "EffectIds": [
+      1104
+    ],
+    "ItemStateName": "Special",
+    "DescStrKey": "ST:179017"
+  }
+]

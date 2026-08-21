@@ -1,0 +1,2616 @@
+[
+  {
+    "ID": 10101,
+    "AssistId": 56000,
+    "Level": 1,
+    "ItemId": 950110101,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:6670",
+    "PropAddDesc1StrKey": "ST:239281",
+    "PropName2StrKey": "ST:6671",
+    "PropAddDesc2StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239756"
+  },
+  {
+    "ID": 10102,
+    "AssistId": 56001,
+    "Level": 2,
+    "PreBufList": [
+      10101
+    ],
+    "ItemId": 950110102,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:6670",
+    "PropAddDesc1StrKey": "ST:239282",
+    "PropName2StrKey": "ST:6671",
+    "PropAddDesc2StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239290"
+  },
+  {
+    "ID": 10103,
+    "AssistId": 56002,
+    "Level": 3,
+    "PreBufList": [
+      10102
+    ],
+    "ItemId": 950110103,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:6670",
+    "PropAddDesc1StrKey": "ST:239283",
+    "PropName2StrKey": "ST:6671",
+    "PropAddDesc2StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239757"
+  },
+  {
+    "ID": 10201,
+    "AssistId": 56003,
+    "Level": 1,
+    "ItemId": 950110201,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_RealCriticalRate_D",
+        "Value": 1500
+      }
+    ],
+    "PropName1StrKey": "ST:76867",
+    "PropAddDesc1StrKey": "ST:239284",
+    "BuffDescStrKey": "ST:239291"
+  },
+  {
+    "ID": 10202,
+    "AssistId": 56004,
+    "Level": 2,
+    "PreBufList": [
+      10201
+    ],
+    "ItemId": 950110202,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_RealCriticalRate_D",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:76867",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239292"
+  },
+  {
+    "ID": 10203,
+    "AssistId": 56005,
+    "Level": 3,
+    "PreBufList": [
+      10202
+    ],
+    "ItemId": 950110203,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_RealCriticalRate_D",
+        "Value": 4500
+      }
+    ],
+    "PropName1StrKey": "ST:76867",
+    "PropAddDesc1StrKey": "ST:239700",
+    "BuffDescStrKey": "ST:239293"
+  },
+  {
+    "ID": 10301,
+    "AssistId": 56006,
+    "Level": 1,
+    "ItemId": 950110301,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:6667",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239759"
+  },
+  {
+    "ID": 10302,
+    "AssistId": 56007,
+    "Level": 2,
+    "PreBufList": [
+      10301
+    ],
+    "ItemId": 950110302,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:6667",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239760"
+  },
+  {
+    "ID": 10303,
+    "AssistId": 56008,
+    "Level": 3,
+    "PreBufList": [
+      10302
+    ],
+    "ItemId": 950110303,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 4000
+      }
+    ],
+    "PropName1StrKey": "ST:6667",
+    "PropAddDesc1StrKey": "ST:239287",
+    "BuffDescStrKey": "ST:239761"
+  },
+  {
+    "ID": 10401,
+    "AssistId": 56009,
+    "Level": 1,
+    "ItemId": 950110401,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:6668",
+    "PropAddDesc1StrKey": "ST:239281",
+    "PropName2StrKey": "ST:6669",
+    "PropAddDesc2StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239762"
+  },
+  {
+    "ID": 10402,
+    "AssistId": 56010,
+    "Level": 2,
+    "PreBufList": [
+      10401
+    ],
+    "ItemId": 950110402,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:6668",
+    "PropAddDesc1StrKey": "ST:239282",
+    "PropName2StrKey": "ST:6669",
+    "PropAddDesc2StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239763"
+  },
+  {
+    "ID": 10403,
+    "AssistId": 56011,
+    "Level": 3,
+    "PreBufList": [
+      10402
+    ],
+    "ItemId": 950110403,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 4000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 4000
+      }
+    ],
+    "PropName1StrKey": "ST:6668",
+    "PropAddDesc1StrKey": "ST:239287",
+    "PropName2StrKey": "ST:6669",
+    "PropAddDesc2StrKey": "ST:239287",
+    "BuffDescStrKey": "ST:239764"
+  },
+  {
+    "ID": 20101,
+    "AssistId": 56012,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_SecretItem",
+    "ItemId": 950120101,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:6671",
+    "PropAddDesc1StrKey": "ST:239281",
+    "PropName2StrKey": "ST:6669",
+    "PropAddDesc2StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239300"
+  },
+  {
+    "ID": 20102,
+    "AssistId": 56013,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "PreBufList": [
+      20101
+    ],
+    "TagType": "CTriditionalStyleBufTagType_SecretItem",
+    "ItemId": 950120102,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:6671",
+    "PropAddDesc1StrKey": "ST:239282",
+    "PropName2StrKey": "ST:6669",
+    "PropAddDesc2StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239765"
+  },
+  {
+    "ID": 20103,
+    "AssistId": 56014,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "PreBufList": [
+      20102
+    ],
+    "TagType": "CTriditionalStyleBufTagType_SecretItem",
+    "ItemId": 950120103,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:6671",
+    "PropAddDesc1StrKey": "ST:239283",
+    "PropName2StrKey": "ST:6669",
+    "PropAddDesc2StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239766"
+  },
+  {
+    "ID": 20201,
+    "AssistId": 56015,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_SecretItem",
+    "ItemId": 950120201,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:6670",
+    "PropAddDesc1StrKey": "ST:239281",
+    "PropName2StrKey": "ST:6668",
+    "PropAddDesc2StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239767"
+  },
+  {
+    "ID": 20202,
+    "AssistId": 56016,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "PreBufList": [
+      20201
+    ],
+    "TagType": "CTriditionalStyleBufTagType_SecretItem",
+    "ItemId": 950120202,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:6670",
+    "PropAddDesc1StrKey": "ST:239282",
+    "PropName2StrKey": "ST:6668",
+    "PropAddDesc2StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239768"
+  },
+  {
+    "ID": 20203,
+    "AssistId": 56017,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "PreBufList": [
+      20202
+    ],
+    "TagType": "CTriditionalStyleBufTagType_SecretItem",
+    "ItemId": 950120203,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:6670",
+    "PropAddDesc1StrKey": "ST:239283",
+    "PropName2StrKey": "ST:6668",
+    "PropAddDesc2StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239769"
+  },
+  {
+    "ID": 20301,
+    "AssistId": 56036,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_SecretItem",
+    "ItemId": 950120301,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_MagicDefendBreakThroughAdditional_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:76905",
+    "PropAddDesc1StrKey": "ST:239281",
+    "PropName2StrKey": "ST:4710",
+    "PropAddDesc2StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239770"
+  },
+  {
+    "ID": 20302,
+    "AssistId": 56037,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "PreBufList": [
+      20301
+    ],
+    "TagType": "CTriditionalStyleBufTagType_SecretItem",
+    "ItemId": 950120302,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_MagicDefendBreakThroughAdditional_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:76905",
+    "PropAddDesc1StrKey": "ST:239282",
+    "PropName2StrKey": "ST:4710",
+    "PropAddDesc2StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239771"
+  },
+  {
+    "ID": 20303,
+    "AssistId": 56038,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "PreBufList": [
+      20302
+    ],
+    "TagType": "CTriditionalStyleBufTagType_SecretItem",
+    "ItemId": 950120303,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_MagicDefendBreakThroughAdditional_S",
+        "Value": 4000
+      }
+    ],
+    "PropName1StrKey": "ST:76905",
+    "PropAddDesc1StrKey": "ST:239287",
+    "PropName2StrKey": "ST:4710",
+    "PropAddDesc2StrKey": "ST:239287",
+    "BuffDescStrKey": "ST:239772"
+  },
+  {
+    "ID": 20401,
+    "AssistId": 56039,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_SecretItem",
+    "ItemId": 950120401,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_RealCriticalRate_D",
+        "Value": 1500
+      }
+    ],
+    "PropName1StrKey": "ST:76867",
+    "PropAddDesc1StrKey": "ST:239284",
+    "BuffDescStrKey": "ST:239309"
+  },
+  {
+    "ID": 20402,
+    "AssistId": 56040,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "PreBufList": [
+      20401
+    ],
+    "TagType": "CTriditionalStyleBufTagType_SecretItem",
+    "ItemId": 950120402,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_RealCriticalRate_D",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:76867",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239310"
+  },
+  {
+    "ID": 20403,
+    "AssistId": 56041,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "PreBufList": [
+      20402
+    ],
+    "TagType": "CTriditionalStyleBufTagType_SecretItem",
+    "ItemId": 950120403,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_RealCriticalRate_D",
+        "Value": 4500
+      }
+    ],
+    "PropName1StrKey": "ST:76867",
+    "PropAddDesc1StrKey": "ST:239700",
+    "BuffDescStrKey": "ST:239311"
+  },
+  {
+    "ID": 30101,
+    "AssistId": 56042,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10103,
+      20103
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130101,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239312"
+  },
+  {
+    "ID": 30102,
+    "AssistId": 56043,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30101
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130102,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239313"
+  },
+  {
+    "ID": 30103,
+    "AssistId": 56044,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30102
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130103,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239314"
+  },
+  {
+    "ID": 30201,
+    "AssistId": 56045,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10103,
+      20203
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130201,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239315"
+  },
+  {
+    "ID": 30202,
+    "AssistId": 56046,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30201
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130202,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239316"
+  },
+  {
+    "ID": 30203,
+    "AssistId": 56047,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30202
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130203,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239773"
+  },
+  {
+    "ID": 30301,
+    "AssistId": 56048,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10103,
+      20303
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130301,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239318"
+  },
+  {
+    "ID": 30302,
+    "AssistId": 56049,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30301
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130302,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239774"
+  },
+  {
+    "ID": 30303,
+    "AssistId": 56050,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30302
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130303,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239775"
+  },
+  {
+    "ID": 30401,
+    "AssistId": 56051,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10103,
+      20403
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130401,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239321"
+  },
+  {
+    "ID": 30402,
+    "AssistId": 56052,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30401
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130402,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239322"
+  },
+  {
+    "ID": 30403,
+    "AssistId": 56053,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30402
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130403,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239776"
+  },
+  {
+    "ID": 30501,
+    "AssistId": 56054,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10203,
+      20103
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130501,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239777"
+  },
+  {
+    "ID": 30502,
+    "AssistId": 56055,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30501
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130502,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239778"
+  },
+  {
+    "ID": 30503,
+    "AssistId": 56056,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30502
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130503,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239779"
+  },
+  {
+    "ID": 30601,
+    "AssistId": 56057,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10203,
+      20203
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130601,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239327"
+  },
+  {
+    "ID": 30602,
+    "AssistId": 56058,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30601
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130602,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239328"
+  },
+  {
+    "ID": 30603,
+    "AssistId": 56059,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30602
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130603,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239329"
+  },
+  {
+    "ID": 30701,
+    "AssistId": 56060,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10203,
+      20303
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130701,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239330"
+  },
+  {
+    "ID": 30702,
+    "AssistId": 56061,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30701
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130702,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239331"
+  },
+  {
+    "ID": 30703,
+    "AssistId": 56062,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30702
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130703,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239332"
+  },
+  {
+    "ID": 30801,
+    "AssistId": 56063,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10203,
+      20403
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130801,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:240054"
+  },
+  {
+    "ID": 30802,
+    "AssistId": 56064,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30801
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130802,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:240055"
+  },
+  {
+    "ID": 30803,
+    "AssistId": 56065,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30802
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130803,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:240056"
+  },
+  {
+    "ID": 30901,
+    "AssistId": 56066,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10303,
+      20103
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130901,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239336"
+  },
+  {
+    "ID": 30902,
+    "AssistId": 56067,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30901
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130902,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239337"
+  },
+  {
+    "ID": 30903,
+    "AssistId": 56068,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      30902
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950130903,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239338"
+  },
+  {
+    "ID": 31001,
+    "AssistId": 56069,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10303,
+      20203
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131001,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239339"
+  },
+  {
+    "ID": 31002,
+    "AssistId": 56070,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      31001
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131002,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239340"
+  },
+  {
+    "ID": 31003,
+    "AssistId": 56071,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      31002
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131003,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239341"
+  },
+  {
+    "ID": 31101,
+    "AssistId": 56072,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10303,
+      20303
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131101,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:240057"
+  },
+  {
+    "ID": 31102,
+    "AssistId": 56073,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      31101
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131102,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:240058"
+  },
+  {
+    "ID": 31103,
+    "AssistId": 56074,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      31102
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131103,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:240059"
+  },
+  {
+    "ID": 31201,
+    "AssistId": 56075,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10303,
+      20403
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131201,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:240060"
+  },
+  {
+    "ID": 31202,
+    "AssistId": 56076,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      31201
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131202,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:240061"
+  },
+  {
+    "ID": 31203,
+    "AssistId": 56077,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      31202
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131203,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:240062"
+  },
+  {
+    "ID": 31301,
+    "AssistId": 56078,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10403,
+      20103
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131301,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:239348"
+  },
+  {
+    "ID": 31302,
+    "AssistId": 56079,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      31301
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131302,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239349"
+  },
+  {
+    "ID": 31303,
+    "AssistId": 56080,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      31302
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131303,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239350"
+  },
+  {
+    "ID": 31401,
+    "AssistId": 56018,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10403,
+      20203
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131401,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:240063"
+  },
+  {
+    "ID": 31402,
+    "AssistId": 56019,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      31401
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131402,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:240064"
+  },
+  {
+    "ID": 31403,
+    "AssistId": 56020,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      31402
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131403,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:240065"
+  },
+  {
+    "ID": 31501,
+    "AssistId": 56021,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10403,
+      20303
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131501,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:240211"
+  },
+  {
+    "ID": 31502,
+    "AssistId": 56022,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      31501
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131502,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:240212"
+  },
+  {
+    "ID": 31503,
+    "AssistId": 56023,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      31502
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131503,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:240213"
+  },
+  {
+    "ID": 31601,
+    "AssistId": 56024,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      10403,
+      20403
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131601,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:240069"
+  },
+  {
+    "ID": 31602,
+    "AssistId": 56025,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      31601
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131602,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 2000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 2000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239282",
+    "BuffDescStrKey": "ST:239795"
+  },
+  {
+    "ID": 31603,
+    "AssistId": 56026,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_HighLevel",
+    "PreBufList": [
+      31602
+    ],
+    "TagType": "CTriditionalStyleBufTagType_HighLevel",
+    "ItemId": 950131603,
+    "ShowPropertiesList": [
+      {
+        "Id": "PropertiesId_AttackMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_SpiritMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_PhysicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendMult_S",
+        "Value": 3000
+      },
+      {
+        "Id": "PropertiesId_HpMaxMult_S",
+        "Value": 3000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239283",
+    "BuffDescStrKey": "ST:239796"
+  },
+  {
+    "ID": 40101,
+    "AssistId": 56027,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950140101,
+    "BuffDescStrKey": "ST:239360"
+  },
+  {
+    "ID": 40201,
+    "AssistId": 56028,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950140201,
+    "BuffDescStrKey": "ST:239361"
+  },
+  {
+    "ID": 40301,
+    "AssistId": 56029,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950140301,
+    "BuffDescStrKey": "ST:239362"
+  },
+  {
+    "ID": 40401,
+    "AssistId": 56030,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950140401,
+    "BuffDescStrKey": "ST:239363"
+  },
+  {
+    "ID": 40501,
+    "AssistId": 56031,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950140501,
+    "BuffDescStrKey": "ST:240566"
+  },
+  {
+    "ID": 40601,
+    "AssistId": 56032,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950140601,
+    "BuffDescStrKey": "ST:240223"
+  },
+  {
+    "ID": 40701,
+    "AssistId": 56033,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950140701,
+    "BuffDescStrKey": "ST:239366"
+  },
+  {
+    "ID": 40801,
+    "AssistId": 56034,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950140801,
+    "BuffDescStrKey": "ST:239367"
+  },
+  {
+    "ID": 41101,
+    "TriggerId": 4621711,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950140901,
+    "BuffDescStrKey": "ST:239368"
+  },
+  {
+    "ID": 41201,
+    "TriggerId": 4621721,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950141001,
+    "BuffDescStrKey": "ST:240070"
+  },
+  {
+    "ID": 41301,
+    "TriggerId": 4621731,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950141101,
+    "BuffDescStrKey": "ST:240071"
+  },
+  {
+    "ID": 41401,
+    "TriggerId": 4621741,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950141201,
+    "BuffDescStrKey": "ST:240072"
+  },
+  {
+    "ID": 41501,
+    "TriggerId": 4621751,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950141301,
+    "BuffDescStrKey": "ST:239799"
+  },
+  {
+    "ID": 41601,
+    "TriggerId": 4621761,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950141401,
+    "BuffDescStrKey": "ST:239848"
+  },
+  {
+    "ID": 41701,
+    "TriggerId": 4621771,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950141501,
+    "BuffDescStrKey": "ST:238646"
+  },
+  {
+    "ID": 41801,
+    "TriggerId": 4621781,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 950141601,
+    "BuffDescStrKey": "ST:240073"
+  },
+  {
+    "ID": 50201,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 95020101,
+    "SpecialCharBufList": [
+      {
+        "CharId": 100133600,
+        "BufId": 763201948
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:254561"
+  },
+  {
+    "ID": 50202,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 95020102,
+    "SpecialCharBufList": [
+      {
+        "CharId": 100133600,
+        "BufId": 763201949
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239284",
+    "BuffDescStrKey": "ST:254562"
+  },
+  {
+    "ID": 50203,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 95020103,
+    "SpecialCharBufList": [
+      {
+        "CharId": 100133600,
+        "BufId": 763202000
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239287",
+    "BuffDescStrKey": "ST:254563"
+  },
+  {
+    "ID": 50301,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 95020201,
+    "SpecialCharBufList": [
+      {
+        "CharId": 100115700,
+        "BufId": 763202001
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:256188"
+  },
+  {
+    "ID": 50302,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 95020202,
+    "SpecialCharBufList": [
+      {
+        "CharId": 100115700,
+        "BufId": 763202002
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239284",
+    "BuffDescStrKey": "ST:256189"
+  },
+  {
+    "ID": 50303,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 95020203,
+    "SpecialCharBufList": [
+      {
+        "CharId": 100115700,
+        "BufId": 763202003
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239287",
+    "BuffDescStrKey": "ST:256190"
+  },
+  {
+    "ID": 50401,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 95020301,
+    "SpecialCharBufList": [
+      {
+        "CharId": 100140300,
+        "BufId": 763162550
+      },
+      {
+        "CharId": 824100321,
+        "BufId": 763162550
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:256065"
+  },
+  {
+    "ID": 50402,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 95020302,
+    "SpecialCharBufList": [
+      {
+        "CharId": 100140300,
+        "BufId": 763162553
+      },
+      {
+        "CharId": 824100321,
+        "BufId": 763162553
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239284",
+    "BuffDescStrKey": "ST:256066"
+  },
+  {
+    "ID": 50403,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 95020303,
+    "SpecialCharBufList": [
+      {
+        "CharId": 100140300,
+        "BufId": 763162556
+      },
+      {
+        "CharId": 824100321,
+        "BufId": 763162556
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239287",
+    "BuffDescStrKey": "ST:256067"
+  },
+  {
+    "ID": 50501,
+    "Level": 1,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 95030301,
+    "SpecialCharBufList": [
+      {
+        "CharId": 100150400,
+        "BufId": 741504175
+      },
+      {
+        "CharId": 824100322,
+        "BufId": 741504175
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239281",
+    "BuffDescStrKey": "ST:256191"
+  },
+  {
+    "ID": 50502,
+    "Level": 2,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 95030302,
+    "SpecialCharBufList": [
+      {
+        "CharId": 100150400,
+        "BufId": 741504176
+      },
+      {
+        "CharId": 824100322,
+        "BufId": 741504176
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239284",
+    "BuffDescStrKey": "ST:256192"
+  },
+  {
+    "ID": 50503,
+    "Level": 3,
+    "Type": "CTriditionalStyleBufType_SecretItem",
+    "TagType": "CTriditionalStyleBufTagType_Te",
+    "ItemId": 95030303,
+    "SpecialCharBufList": [
+      {
+        "CharId": 100150400,
+        "BufId": 741504177
+      },
+      {
+        "CharId": 824100322,
+        "BufId": 741504177
+      }
+    ],
+    "PropName1StrKey": "ST:228291",
+    "PropAddDesc1StrKey": "ST:239287",
+    "BuffDescStrKey": "ST:256193"
+  }
+]

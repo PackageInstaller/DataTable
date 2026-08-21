@@ -1,0 +1,167 @@
+[
+  {
+    "ID": 1,
+    "InitOrderCount": 1,
+    "RefreshTime": 15000,
+    "RandonWeight": [
+      {
+        "OrderId": 1,
+        "Weight": 600
+      },
+      {
+        "OrderId": 2,
+        "Weight": 200
+      }
+    ],
+    "MaxOrder": 3,
+    "BonusOrderCount": 1,
+    "BonusOrderRate": 200,
+    "BonusRandonWeight": [
+      {
+        "OrderId": 2,
+        "Weight": 600
+      },
+      {
+        "OrderId": 3,
+        "Weight": 400
+      }
+    ],
+    "BonusOrderMaxCount": 50
+  },
+  {
+    "ID": 2,
+    "UnlockScore": 450,
+    "InitOrderCount": 1,
+    "RefreshTime": 12000,
+    "RandonWeight": [
+      {
+        "OrderId": 1,
+        "Weight": 600
+      },
+      {
+        "OrderId": 2,
+        "Weight": 300
+      },
+      {
+        "OrderId": 3,
+        "Weight": 100
+      }
+    ],
+    "MaxOrder": 3,
+    "BonusOrderCount": 1,
+    "BonusOrderRate": 200,
+    "BonusRandonWeight": [
+      {
+        "OrderId": 2,
+        "Weight": 300
+      },
+      {
+        "OrderId": 3,
+        "Weight": 500
+      }
+    ],
+    "BonusOrderMaxCount": 50
+  },
+  {
+    "ID": 3,
+    "UnlockScore": 1050,
+    "InitOrderCount": 2,
+    "RefreshTime": 10000,
+    "RandonWeight": [
+      {
+        "OrderId": 1,
+        "Weight": 400
+      },
+      {
+        "OrderId": 2,
+        "Weight": 300
+      },
+      {
+        "OrderId": 3,
+        "Weight": 300
+      }
+    ],
+    "MaxOrder": 4,
+    "BonusOrderCount": 2,
+    "BonusOrderRate": 200,
+    "BonusRandonWeight": [
+      {
+        "OrderId": 2,
+        "Weight": 200
+      },
+      {
+        "OrderId": 3,
+        "Weight": 500
+      }
+    ],
+    "BonusOrderMaxCount": 50
+  },
+  {
+    "ID": 4,
+    "UnlockScore": 1900,
+    "InitOrderCount": 3,
+    "RefreshTime": 9000,
+    "RandonWeight": [
+      {
+        "OrderId": 1,
+        "Weight": 150
+      },
+      {
+        "OrderId": 2,
+        "Weight": 250
+      },
+      {
+        "OrderId": 3,
+        "Weight": 600
+      }
+    ],
+    "MaxOrder": 5,
+    "BonusOrderCount": 2,
+    "BonusOrderRate": 200,
+    "BonusRandonWeight": [
+      {
+        "OrderId": 2,
+        "Weight": 100
+      },
+      {
+        "OrderId": 3,
+        "Weight": 400
+      }
+    ],
+    "BonusOrderMaxCount": 50
+  },
+  {
+    "ID": 5,
+    "UnlockScore": 3500,
+    "InitOrderCount": 3,
+    "RefreshTime": 8000,
+    "RandonWeight": [
+      {
+        "OrderId": 1,
+        "Weight": 150
+      },
+      {
+        "OrderId": 2,
+        "Weight": 250
+      },
+      {
+        "OrderId": 3,
+        "Weight": 600
+      }
+    ],
+    "MaxOrder": 5,
+    "BonusOrderCount": 2,
+    "BonusOrderRate": 200,
+    "BonusRandonWeight": [
+      {
+        "OrderId": 2,
+        "Weight": 100
+      },
+      {
+        "OrderId": 3,
+        "Weight": 500
+      }
+    ],
+    "BonusOrderMaxCount": 50
+  }
+]

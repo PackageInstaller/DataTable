@@ -1,0 +1,226 @@
+[
+  {
+    "ID": 1,
+    "Disable": true,
+    "IsMain": true,
+    "Priority": 100,
+    "GameFunctionType": "GameFunctionType_TianDiCollect_GodDemonStory",
+    "ConditionsForRecommend": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "ConditionsForOpen": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "Reward": 351360602,
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_59111UIPrefab.prefab",
+    "DropItems": [
+      402022001,
+      403011200,
+      402011101
+    ],
+    "PlayTitleKey": "ST:240935",
+    "PlayDescKey": "ST:244508"
+  },
+  {
+    "ID": 2,
+    "Disable": true,
+    "Priority": 99,
+    "GameFunctionType": "GameFunctionType_TianDiCollect_XunTianJi",
+    "ConditionsForRecommend": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "ConditionsForOpen": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "Reward": 351360602,
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_40106UIPrefab.prefab",
+    "DropItems": [
+      2,
+      402022001,
+      403011200
+    ],
+    "PlayTitleKey": "ST:198502",
+    "PlayDescKey": "ST:244509"
+  },
+  {
+    "ID": 3,
+    "Disable": true,
+    "Priority": 98,
+    "GameFunctionType": "GameFunctionType_YiJianLu",
+    "ConditionsForRecommend": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "ConditionsForOpen": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "Reward": 351360602,
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/BannerPrefab/ActivityBannerFull_27106UIPrefab.prefab",
+    "DropItems": [
+      400000001,
+      2,
+      402024902
+    ],
+    "PlayTitleKey": "ST:160227",
+    "PlayDescKey": "ST:188901"
+  },
+  {
+    "ID": 4,
+    "Disable": true,
+    "Priority": 97,
+    "GameFunctionType": "GameFunctionType_Rift",
+    "OperationalActivityParms": [
+      {
+        "P3": 3
+      }
+    ],
+    "ConditionsForRecommend": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "ConditionsForOpen": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "Reward": 351360602,
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab01_ABS/BannerPrefab/ActivityBannerFull_26107UIPrefab.prefab",
+    "DropItems": [
+      400000001,
+      402084001,
+      402084002,
+      402084004
+    ],
+    "PlayTitleKey": "ST:2485",
+    "PlayDescKey": "ST:188897"
+  },
+  {
+    "ID": 5,
+    "Disable": true,
+    "Priority": 96,
+    "GameFunctionType": "GameFunctionType_Rift",
+    "ConditionsForRecommend": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "ConditionsForOpen": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "Reward": 351360602,
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_shizhixiUIPrefab.prefab",
+    "DropItems": [
+      400000001,
+      2,
+      400000003,
+      403062003
+    ],
+    "PlayTitleKey": "ST:1718",
+    "PlayDescKey": "ST:188902"
+  },
+  {
+    "ID": 6,
+    "Disable": true,
+    "Priority": 95,
+    "ConditionsForRecommend": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "ConditionsForOpen": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "Reward": 351360602,
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_zhuxianUIPrefab.prefab",
+    "DropItems": [
+      400000001,
+      2,
+      400000003,
+      403062003
+    ],
+    "PlayTitleKey": "ST:92099",
+    "PlayDescKey": "ST:188903"
+  },
+  {
+    "ID": 7,
+    "Priority": 94,
+    "GameFunctionType": "GameFunctionType_OldWorldClassicTruly",
+    "ConditionsForRecommend": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 40
+      }
+    ],
+    "ConditionsForOpen": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 1
+      }
+    ],
+    "Reward": 351360602,
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_jiushijindianUIPrefab.prefab",
+    "DropItems": [
+      400000001,
+      2,
+      400000003,
+      403062003
+    ],
+    "PlayTitleKey": "ST:256547",
+    "PlayDescKey": "ST:258778"
+  },
+  {
+    "ID": 8,
+    "Priority": 93,
+    "GameFunctionType": "GameFunctionType_StorySummaryEntrance",
+    "ConditionsForRecommend": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 1
+      }
+    ],
+    "ConditionsForOpen": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 1
+      }
+    ],
+    "Reward": 351360602,
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/AcitivtyPrefab02_ABS/BannerPrefab/ActivityBannerFull_shilunxingjiUIPrefab.prefab",
+    "DropItems": [
+      400000001,
+      2,
+      400000003,
+      403062003
+    ],
+    "PlayTitleKey": "ST:254089",
+    "PlayDescKey": "ST:258778"
+  }
+]

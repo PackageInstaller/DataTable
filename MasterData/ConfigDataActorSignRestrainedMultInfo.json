@@ -1,0 +1,73 @@
+[
+  {
+    "SrcSign": "ActorSign_None"
+  },
+  {
+    "ID": 1,
+    "SrcSign": "ActorSign_Fire",
+    "IceMult": -2500,
+    "ElectricityMult": 3000,
+    "GodMult": -2000,
+    "DemonMult": 2000
+  },
+  {
+    "ID": 2,
+    "SrcSign": "ActorSign_Ice",
+    "FireMult": 3000,
+    "ElectricityMult": -2500,
+    "GodMult": -2000,
+    "DemonMult": 2000
+  },
+  {
+    "ID": 3,
+    "SrcSign": "ActorSign_Electricity",
+    "FireMult": -2500,
+    "IceMult": 3000,
+    "GodMult": -2000,
+    "DemonMult": 2000
+  },
+  {
+    "ID": 4,
+    "SrcSign": "ActorSign_Light",
+    "ShadowMult": 3000,
+    "DuskMult": -2000,
+    "GodMult": 2000,
+    "DemonMult": -2000
+  },
+  {
+    "ID": 5,
+    "SrcSign": "ActorSign_Shadow",
+    "LightMult": -2500,
+    "DuskMult": 2500,
+    "GodMult": 2000,
+    "DemonMult": -2000
+  },
+  {
+    "ID": 6,
+    "SrcSign": "ActorSign_Dusk",
+    "LightMult": 2500,
+    "ShadowMult": -2000,
+    "GodMult": 2000,
+    "DemonMult": -2000
+  },
+  {
+    "ID": 7,
+    "SrcSign": "ActorSign_God",
+    "FireMult": 1500,
+    "IceMult": 1500,
+    "ElectricityMult": 1500,
+    "LightMult": -2000,
+    "ShadowMult": -2000,
+    "DuskMult": -2000
+  },
+  {
+    "ID": 8,
+    "SrcSign": "ActorSign_Demon",
+    "FireMult": -2000,
+    "IceMult": -2000,
+    "ElectricityMult": -2000,
+    "LightMult": 1500,
+    "ShadowMult": 1500,
+    "DuskMult": 1500
+  }
+]

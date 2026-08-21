@@ -1,0 +1,214 @@
+[
+  {
+    "ID": 1,
+    "ExistMilliSeconds": 30000,
+    "LeftTimeRewards": [
+      {
+        "Time": 12000,
+        "Score": 100
+      },
+      {
+        "Time": 6000,
+        "Score": 80
+      },
+      {
+        "Score": 50
+      }
+    ],
+    "FinishScore": 50,
+    "RandomRecipes": 1
+  },
+  {
+    "ID": 2,
+    "ExistMilliSeconds": 35000,
+    "LeftTimeRewards": [
+      {
+        "Time": 20000,
+        "Score": 100
+      },
+      {
+        "Time": 14000,
+        "Score": 80
+      },
+      {
+        "Score": 50
+      }
+    ],
+    "FinishScore": 120,
+    "RandomRecipes": 2
+  },
+  {
+    "ID": 3,
+    "ExistMilliSeconds": 60000,
+    "LeftTimeRewards": [
+      {
+        "Time": 48000,
+        "Score": 100
+      },
+      {
+        "Time": 26000,
+        "Score": 80
+      },
+      {
+        "Time": 15000,
+        "Score": 50
+      },
+      {
+        "Score": 35
+      }
+    ],
+    "FinishScore": 250,
+    "RandomRecipes": 3
+  },
+  {
+    "ID": 101,
+    "ExistMilliSeconds": 35000,
+    "LeftTimeRewards": [
+      {
+        "Time": 24000,
+        "Score": 100
+      },
+      {
+        "Time": 14000,
+        "Score": 80
+      },
+      {
+        "Score": 50
+      }
+    ],
+    "FinishScore": 120,
+    "RandomRecipes": 2,
+    "FixRecipe": [
+      101,
+      201,
+      203,
+      301
+    ],
+    "UnlockCond": [
+      101,
+      301
+    ]
+  },
+  {
+    "ID": 102,
+    "IsCondOrder": true,
+    "ExistMilliSeconds": 30000,
+    "LeftTimeRewards": [
+      {
+        "Time": 24000,
+        "Score": 100
+      },
+      {
+        "Time": 14000,
+        "Score": 80
+      },
+      {
+        "Score": 50
+      }
+    ],
+    "FinishScore": 60,
+    "RandomRecipes": 1,
+    "FixRecipe": [
+      103,
+      203,
+      303
+    ],
+    "UnlockCond": [
+      103
+    ]
+  },
+  {
+    "ID": 103,
+    "IsCondOrder": true,
+    "ExistMilliSeconds": 45000,
+    "LeftTimeRewards": [
+      {
+        "Time": 24000,
+        "Score": 100
+      },
+      {
+        "Time": 14000,
+        "Score": 80
+      },
+      {
+        "Score": 50
+      }
+    ],
+    "FinishScore": 60,
+    "RandomRecipes": 2,
+    "FixRecipe": [
+      102,
+      202,
+      204,
+      302
+    ],
+    "UnlockCond": [
+      102,
+      302
+    ]
+  },
+  {
+    "ID": 104,
+    "IsCondOrder": true,
+    "ExistMilliSeconds": 60000,
+    "LeftTimeRewards": [
+      {
+        "Time": 24000,
+        "Score": 100
+      },
+      {
+        "Time": 14000,
+        "Score": 80
+      },
+      {
+        "Score": 50
+      }
+    ],
+    "FinishScore": 125,
+    "RandomRecipes": 3,
+    "FixRecipe": [
+      101,
+      203,
+      201,
+      205,
+      304
+    ],
+    "UnlockCond": [
+      101
+    ]
+  },
+  {
+    "ID": 105,
+    "IsCondOrder": true,
+    "ExistMilliSeconds": 60000,
+    "LeftTimeRewards": [
+      {
+        "Time": 45000,
+        "Score": 100
+      },
+      {
+        "Time": 26000,
+        "Score": 80
+      },
+      {
+        "Time": 15000,
+        "Score": 50
+      },
+      {
+        "Score": 35
+      }
+    ],
+    "FinishScore": 255,
+    "RandomRecipes": 3,
+    "FixRecipe": [
+      104,
+      202,
+      205,
+      204,
+      301
+    ],
+    "UnlockCond": [
+      104
+    ]
+  }
+]

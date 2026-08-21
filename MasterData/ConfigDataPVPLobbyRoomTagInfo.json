@@ -1,0 +1,125 @@
+[
+  {
+    "ID": 1,
+    "RoomTagCondition": [
+      {
+        "CondType": "PVPLobbyRoomTagRulesType_RoundNumMax",
+        "CondValue": 15
+      },
+      {
+        "CondType": "PVPLobbyRoomTagRulesType_RoundTime",
+        "CondValue": 30
+      },
+      {
+        "CondType": "PVPLobbyRoomTagRulesType_BackupTime",
+        "CondValue": 180
+      },
+      {
+        "CondType": "PVPLobbyRoomTagRulesType_FormationCharNum",
+        "CondValue": 5
+      },
+      {
+        "CondType": "PVPLobbyRoomTagRulesType_BanPoolOpen"
+      }
+    ],
+    "BattleModes": [
+      "PVPLobbyBattleModeType_PVPBanPic",
+      "PVPLobbyBattleModeType_PVPPlus"
+    ],
+    "TagColorId": 4,
+    "TagNameStrKey": "ST:252162",
+    "TagDescStrKey": "ST:250596"
+  },
+  {
+    "ID": 2,
+    "RoomTagCondition": [
+      {
+        "CondType": "PVPLobbyRoomTagRulesType_BanPoolOpen",
+        "CondValue": 1
+      }
+    ],
+    "TagColorId": 1,
+    "TagNameStrKey": "ST:250127",
+    "TagDescStrKey": "ST:250597"
+  },
+  {
+    "ID": 3,
+    "BattleModes": [
+      "PVPLobbyBattleModeType_PVPNormal"
+    ],
+    "TagColorId": 1,
+    "TagNameStrKey": "ST:252163",
+    "TagDescStrKey": "ST:250900"
+  },
+  {
+    "ID": 4,
+    "RoomTagCondition": [
+      {
+        "CondType": "PVPLobbyRoomTagRulesType_RoundNumMax",
+        "CondValue": 6
+      }
+    ],
+    "TagColorId": 3,
+    "TagNameStrKey": "ST:250129",
+    "TagDescStrKey": "ST:250599"
+  },
+  {
+    "ID": 5,
+    "RoomTagCondition": [
+      {
+        "CondType": "PVPLobbyRoomTagRulesType_RoundTime",
+        "CondValue": 10
+      }
+    ],
+    "TagColorId": 3,
+    "GroupId": 1,
+    "TagNameStrKey": "ST:250130",
+    "TagDescStrKey": "ST:250600"
+  },
+  {
+    "ID": 6,
+    "RoomTagCondition": [
+      {
+        "CondType": "PVPLobbyRoomTagRulesType_RoundTime",
+        "CondValue": 10
+      },
+      {
+        "CondType": "PVPLobbyRoomTagRulesType_BackupTime"
+      }
+    ],
+    "TagColorId": 3,
+    "GroupId": 1,
+    "TagNameStrKey": "ST:250131",
+    "TagDescStrKey": "ST:252164"
+  },
+  {
+    "ID": 7,
+    "RoomTagCondition": [
+      {
+        "CondType": "PVPLobbyRoomTagRulesType_FormationCharNum",
+        "CondValue": 6
+      }
+    ],
+    "BattleModes": [
+      "PVPLobbyBattleModeType_PVPNormal"
+    ],
+    "TagColorId": 2,
+    "TagNameStrKey": "ST:250703",
+    "TagDescStrKey": "ST:250901"
+  },
+  {
+    "ID": 8,
+    "RoomTagCondition": [
+      {
+        "CondType": "PVPLobbyRoomTagRulesType_FormationCharNum",
+        "CondValue": 7
+      }
+    ],
+    "BattleModes": [
+      "PVPLobbyBattleModeType_PVPNormal"
+    ],
+    "TagColorId": 2,
+    "TagNameStrKey": "ST:250704",
+    "TagDescStrKey": "ST:250902"
+  }
+]

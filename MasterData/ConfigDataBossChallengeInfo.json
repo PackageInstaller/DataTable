@@ -1,0 +1,834 @@
+[
+  {
+    "ID": 1,
+    "LevelList": [
+      1001,
+      1002,
+      1003
+    ],
+    "EntryId": 1,
+    "ActorSignId": "ActorSign_Fire",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/tiaozhantouxiang_2.png@tiaozhantouxiang_2",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:101615"
+  },
+  {
+    "ID": 2,
+    "LevelList": [
+      2001,
+      2002,
+      2003
+    ],
+    "EntryId": 1,
+    "ActorSignId": "ActorSign_Ice",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/tiaozhantouxiang_1.png@tiaozhantouxiang_1",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_04.png@BG_04",
+    "NameStrKey": "ST:102968"
+  },
+  {
+    "ID": 3,
+    "LevelList": [
+      3001,
+      3002,
+      3003
+    ],
+    "EntryId": 2,
+    "ActorSignId": "ActorSign_Shadow",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/Tiaozhantouxiang_03.png@Tiaozhantouxiang_03",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_09.png@BG_09",
+    "NameStrKey": "ST:31142"
+  },
+  {
+    "ID": 4,
+    "LevelList": [
+      4001,
+      4002,
+      4003
+    ],
+    "EntryId": 2,
+    "ActorSignId": "ActorSign_Shadow",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/Tiaozhantouxiang_04.png@Tiaozhantouxiang_04",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_09.png@BG_09",
+    "NameStrKey": "ST:106551"
+  },
+  {
+    "ID": 5,
+    "LevelList": [
+      5001,
+      5002,
+      5003
+    ],
+    "EntryId": 2,
+    "ActorSignId": "ActorSign_Electricity",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/Tiaozhantouxiang_05.png@Tiaozhantouxiang_05",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_08.png@BG_08",
+    "NameStrKey": "ST:106364"
+  },
+  {
+    "ID": 6,
+    "LevelList": [
+      6001,
+      6002,
+      6003
+    ],
+    "EntryId": 3,
+    "ActorSignId": "ActorSign_Electricity",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/PreHeatImage_ABS/NoTag/Tiaozhantouxiang_08.png@Tiaozhantouxiang_08",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_08.png@BG_08",
+    "NameStrKey": "ST:111353"
+  },
+  {
+    "ID": 7,
+    "LevelList": [
+      6011,
+      6012,
+      6013
+    ],
+    "EntryId": 3,
+    "ActorSignId": "ActorSign_Shadow",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/PreHeatImage_ABS/NoTag/Tiaozhantouxiang_06.png@Tiaozhantouxiang_06",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_09.png@BG_09",
+    "NameStrKey": "ST:111357"
+  },
+  {
+    "ID": 8,
+    "LevelList": [
+      6021,
+      6022,
+      6023
+    ],
+    "EntryId": 3,
+    "ActorSignId": "ActorSign_Fire",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/PreHeatImage_ABS/NoTag/Tiaozhantouxiang_07.png@Tiaozhantouxiang_07",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:111361"
+  },
+  {
+    "ID": 9,
+    "LevelList": [
+      9001,
+      9002,
+      9003
+    ],
+    "EntryId": 4,
+    "ActorSignId": "ActorSign_Ice",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/Tiaozhantouxiang_09.png@Tiaozhantouxiang_09",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_04.png@BG_04",
+    "NameStrKey": "ST:123889"
+  },
+  {
+    "ID": 10,
+    "LevelList": [
+      10001,
+      10002,
+      10003
+    ],
+    "EntryId": 4,
+    "ActorSignId": "ActorSign_Shadow",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/Tiaozhantouxiang_10.png@Tiaozhantouxiang_10",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_09.png@BG_09",
+    "NameStrKey": "ST:123258"
+  },
+  {
+    "ID": 11,
+    "LevelList": [
+      11001,
+      11002,
+      11003
+    ],
+    "EntryId": 4,
+    "ActorSignId": "ActorSign_Light",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/Tiaozhantouxiang_11.png@Tiaozhantouxiang_11",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:123310"
+  },
+  {
+    "ID": 12,
+    "LevelList": [
+      12001,
+      12002,
+      12003
+    ],
+    "EntryId": 5,
+    "ActorSignId": "ActorSign_Fire",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/tiaozhantouxiang_2.png@tiaozhantouxiang_2",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:101615"
+  },
+  {
+    "ID": 13,
+    "LevelList": [
+      13001,
+      13002,
+      13003
+    ],
+    "EntryId": 5,
+    "ActorSignId": "ActorSign_Ice",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/tiaozhantouxiang_1.png@tiaozhantouxiang_1",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_04.png@BG_04",
+    "NameStrKey": "ST:102968"
+  },
+  {
+    "ID": 14,
+    "LevelList": [
+      14001,
+      14002,
+      14003
+    ],
+    "EntryId": 6,
+    "ActorSignId": "ActorSign_Shadow",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/Tiaozhantouxiang_03.png@Tiaozhantouxiang_03",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_09.png@BG_09",
+    "NameStrKey": "ST:31142"
+  },
+  {
+    "ID": 15,
+    "LevelList": [
+      15001,
+      15002,
+      15003
+    ],
+    "EntryId": 6,
+    "ActorSignId": "ActorSign_Shadow",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/Tiaozhantouxiang_04.png@Tiaozhantouxiang_04",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_09.png@BG_09",
+    "NameStrKey": "ST:106551"
+  },
+  {
+    "ID": 16,
+    "LevelList": [
+      16001,
+      16002,
+      16003
+    ],
+    "EntryId": 6,
+    "ActorSignId": "ActorSign_Electricity",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/Tiaozhantouxiang_05.png@Tiaozhantouxiang_05",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_08.png@BG_08",
+    "NameStrKey": "ST:106364"
+  },
+  {
+    "ID": 17,
+    "LevelList": [
+      17001,
+      17002,
+      17003
+    ],
+    "EntryId": 7,
+    "ActorSignId": "ActorSign_Fire",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/BaoQingTian_ABS/NoTag/Tiaozhantouxiang_12.png@Tiaozhantouxiang_12",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_07.png@BG_07",
+    "NameStrKey": "ST:145934"
+  },
+  {
+    "ID": 18,
+    "LevelList": [
+      18001,
+      18002,
+      18003
+    ],
+    "EntryId": 7,
+    "ActorSignId": "ActorSign_Fire",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/BaoQingTian_ABS/NoTag/Tiaozhantouxiang_10.png@Tiaozhantouxiang_10",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_07.png@BG_07",
+    "NameStrKey": "ST:145935"
+  },
+  {
+    "ID": 19,
+    "LevelList": [
+      19001,
+      19002,
+      19003
+    ],
+    "EntryId": 7,
+    "ActorSignId": "ActorSign_Fire",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/BaoQingTian_ABS/NoTag/Tiaozhantouxiang_11.png@Tiaozhantouxiang_11",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_07.png@BG_07",
+    "NameStrKey": "ST:147490"
+  },
+  {
+    "ID": 20,
+    "LevelList": [
+      22001,
+      22002,
+      22003,
+      22004
+    ],
+    "EntryId": 8,
+    "ActorSignId": "ActorSign_Electricity",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/QingShe_ABS/NoTag/Tiaozhantouxiang_17.png@Tiaozhantouxiang_17",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_08.png@BG_08",
+    "NameStrKey": "ST:156033"
+  },
+  {
+    "ID": 21,
+    "LevelList": [
+      21001,
+      21002,
+      21003,
+      21004
+    ],
+    "EntryId": 8,
+    "ActorSignId": "ActorSign_Shadow",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/QingShe_ABS/NoTag/Tiaozhantouxiang_16.png@Tiaozhantouxiang_16",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_09.png@BG_09",
+    "NameStrKey": "ST:156232"
+  },
+  {
+    "ID": 22,
+    "LevelList": [
+      20001,
+      20002,
+      20003,
+      20004
+    ],
+    "EntryId": 8,
+    "ActorSignId": "ActorSign_Light",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/QingShe_ABS/NoTag/Tiaozhantouxiang_15.png@Tiaozhantouxiang_15",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:156231"
+  },
+  {
+    "ID": 23,
+    "LevelList": [
+      23001,
+      23002,
+      23003
+    ],
+    "EntryId": 9,
+    "ActorSignId": "ActorSign_Ice",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/Tiaozhantouxiang_09.png@Tiaozhantouxiang_09",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_04.png@BG_04",
+    "NameStrKey": "ST:123889"
+  },
+  {
+    "ID": 24,
+    "LevelList": [
+      24001,
+      24002,
+      24003
+    ],
+    "EntryId": 9,
+    "ActorSignId": "ActorSign_Shadow",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/Tiaozhantouxiang_10.png@Tiaozhantouxiang_10",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_09.png@BG_09",
+    "NameStrKey": "ST:123258"
+  },
+  {
+    "ID": 25,
+    "LevelList": [
+      25001,
+      25002,
+      25003
+    ],
+    "EntryId": 9,
+    "ActorSignId": "ActorSign_Light",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/Tiaozhantouxiang_11.png@Tiaozhantouxiang_11",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:123310"
+  },
+  {
+    "ID": 26,
+    "LevelList": [
+      26001,
+      26002,
+      26003
+    ],
+    "EntryId": 10,
+    "ActorSignId": "ActorSign_Fire",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/BaoQingTian_ABS/NoTag/Tiaozhantouxiang_12.png@Tiaozhantouxiang_12",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_07.png@BG_07",
+    "NameStrKey": "ST:145934"
+  },
+  {
+    "ID": 27,
+    "LevelList": [
+      27001,
+      27002,
+      27003
+    ],
+    "EntryId": 10,
+    "ActorSignId": "ActorSign_Fire",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/BaoQingTian_ABS/NoTag/Tiaozhantouxiang_10.png@Tiaozhantouxiang_10",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_07.png@BG_07",
+    "NameStrKey": "ST:145935"
+  },
+  {
+    "ID": 28,
+    "LevelList": [
+      28001,
+      28002,
+      28003
+    ],
+    "EntryId": 10,
+    "ActorSignId": "ActorSign_Fire",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/BaoQingTian_ABS/NoTag/Tiaozhantouxiang_11.png@Tiaozhantouxiang_11",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_07.png@BG_07",
+    "NameStrKey": "ST:147490"
+  },
+  {
+    "ID": 29,
+    "LevelList": [
+      29001,
+      29002,
+      29003,
+      29004
+    ],
+    "EntryId": 11,
+    "ActorSignId": "ActorSign_Ice",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/DunHuangImage_ABS/NoTag/Tiaozhantouxiang_18.png@Tiaozhantouxiang_18",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_04.png@BG_04",
+    "NameStrKey": "ST:172769"
+  },
+  {
+    "ID": 30,
+    "LevelList": [
+      30001,
+      30002,
+      30003,
+      30004
+    ],
+    "EntryId": 11,
+    "ActorSignId": "ActorSign_Light",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/DunHuangImage_ABS/NoTag/Tiaozhantouxiang_20.png@Tiaozhantouxiang_20",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:172770"
+  },
+  {
+    "ID": 31,
+    "LevelList": [
+      31001,
+      31002,
+      31003,
+      31004
+    ],
+    "EntryId": 11,
+    "ActorSignId": "ActorSign_Electricity",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/DunHuangImage_ABS/NoTag/Tiaozhantouxiang_19.png@Tiaozhantouxiang_19",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_08.png@BG_08",
+    "NameStrKey": "ST:172771"
+  },
+  {
+    "ID": 32,
+    "LevelList": [
+      32001,
+      32002,
+      32003,
+      32004
+    ],
+    "EntryId": 12,
+    "ActorSignId": "ActorSign_Electricity",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/QingShe_ABS/NoTag/Tiaozhantouxiang_17.png@Tiaozhantouxiang_17",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_08.png@BG_08",
+    "NameStrKey": "ST:156033"
+  },
+  {
+    "ID": 33,
+    "LevelList": [
+      33001,
+      33002,
+      33003,
+      33004
+    ],
+    "EntryId": 12,
+    "ActorSignId": "ActorSign_Shadow",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/QingShe_ABS/NoTag/Tiaozhantouxiang_16.png@Tiaozhantouxiang_16",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_09.png@BG_09",
+    "NameStrKey": "ST:156232"
+  },
+  {
+    "ID": 34,
+    "LevelList": [
+      34001,
+      34002,
+      34003,
+      34004
+    ],
+    "EntryId": 12,
+    "ActorSignId": "ActorSign_Light",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/QingShe_ABS/NoTag/Tiaozhantouxiang_15.png@Tiaozhantouxiang_15",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:156231"
+  },
+  {
+    "ID": 35,
+    "LevelList": [
+      35001,
+      35002,
+      35003,
+      35004
+    ],
+    "EntryId": 13,
+    "ActorSignId": "ActorSign_Shadow",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/Tiaozhantouxiang_03.png@Tiaozhantouxiang_03",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_09.png@BG_09",
+    "NameStrKey": "ST:31142"
+  },
+  {
+    "ID": 36,
+    "LevelList": [
+      36001,
+      36002,
+      36003,
+      36004
+    ],
+    "EntryId": 13,
+    "ActorSignId": "ActorSign_Light",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/XuanYuanJianImage_ABS/NoTag/Tiaozhantouxiang_21.png@Tiaozhantouxiang_21",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:186458"
+  },
+  {
+    "ID": 37,
+    "LevelList": [
+      37001,
+      37002,
+      37003,
+      37004
+    ],
+    "EntryId": 13,
+    "ActorSignId": "ActorSign_Dusk",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/XuanYuanJianImage_ABS/NoTag/Tiaozhantouxiang_22.png@Tiaozhantouxiang_22",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_11.png@BG_11",
+    "NameStrKey": "ST:188112"
+  },
+  {
+    "ID": 38,
+    "LevelList": [
+      38001,
+      38002,
+      38003,
+      38004
+    ],
+    "EntryId": 14,
+    "ActorSignId": "ActorSign_None",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Tiaozhantouxiang_23.png@Tiaozhantouxiang_23",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_12.png@BG_12",
+    "NameStrKey": "ST:199357"
+  },
+  {
+    "ID": 39,
+    "LevelList": [
+      39001,
+      39002,
+      39003,
+      39004
+    ],
+    "EntryId": 14,
+    "ActorSignId": "ActorSign_Electricity",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Tiaozhantouxiang_24.png@Tiaozhantouxiang_24",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_08.png@BG_08",
+    "NameStrKey": "ST:199358"
+  },
+  {
+    "ID": 40,
+    "LevelList": [
+      40001,
+      40002,
+      40003,
+      40004
+    ],
+    "EntryId": 14,
+    "ActorSignId": "ActorSign_Ice",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Tiaozhantouxiang_25.png@Tiaozhantouxiang_25",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_04.png@BG_04",
+    "NameStrKey": "ST:199359"
+  },
+  {
+    "ID": 41,
+    "LevelList": [
+      41001,
+      41002,
+      41003,
+      41004
+    ],
+    "EntryId": 15,
+    "ActorSignId": "ActorSign_Ice",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/DunHuangImage_ABS/NoTag/Tiaozhantouxiang_18.png@Tiaozhantouxiang_18",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_04.png@BG_04",
+    "NameStrKey": "ST:172769"
+  },
+  {
+    "ID": 42,
+    "LevelList": [
+      42001,
+      42002,
+      42003,
+      42004
+    ],
+    "EntryId": 15,
+    "ActorSignId": "ActorSign_Light",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/DunHuangImage_ABS/NoTag/Tiaozhantouxiang_20.png@Tiaozhantouxiang_20",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:172770"
+  },
+  {
+    "ID": 43,
+    "LevelList": [
+      43001,
+      43002,
+      43003,
+      43004
+    ],
+    "EntryId": 15,
+    "ActorSignId": "ActorSign_Electricity",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/DunHuangImage_ABS/NoTag/Tiaozhantouxiang_19.png@Tiaozhantouxiang_19",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_08.png@BG_08",
+    "NameStrKey": "ST:172771"
+  },
+  {
+    "ID": 44,
+    "LevelList": [
+      44001,
+      44002,
+      44003,
+      44004
+    ],
+    "EntryId": 16,
+    "ActorSignId": "ActorSign_Light",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/XiYouJiImage_ABS/NoTag/Tiaozhantouxiang_27.png@Tiaozhantouxiang_27",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:212364"
+  },
+  {
+    "ID": 45,
+    "LevelList": [
+      45001,
+      45002,
+      45003,
+      45004
+    ],
+    "EntryId": 16,
+    "ActorSignId": "ActorSign_None",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/XiYouJiImage_ABS/NoTag/Tiaozhantouxiang_28.png@Tiaozhantouxiang_28",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_12.png@BG_12",
+    "NameStrKey": "ST:212365"
+  },
+  {
+    "ID": 46,
+    "LevelList": [
+      46001,
+      46002,
+      46003,
+      46004
+    ],
+    "EntryId": 16,
+    "ActorSignId": "ActorSign_Fire",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/XiYouJiImage_ABS/NoTag/Tiaozhantouxiang_26.png@Tiaozhantouxiang_26",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_07.png@BG_07",
+    "NameStrKey": "ST:212366"
+  },
+  {
+    "ID": 47,
+    "LevelList": [
+      47001,
+      47002,
+      47003,
+      47004
+    ],
+    "EntryId": 17,
+    "ActorSignId": "ActorSign_Shadow",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Tiaozhantouxiang_29.png@Tiaozhantouxiang_29",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_09.png@BG_09",
+    "NameStrKey": "ST:220615"
+  },
+  {
+    "ID": 48,
+    "LevelList": [
+      48001,
+      48002,
+      48003,
+      48004
+    ],
+    "EntryId": 17,
+    "ActorSignId": "ActorSign_Dusk",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Tiaozhantouxiang_30.png@Tiaozhantouxiang_30",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_11.png@BG_11",
+    "NameStrKey": "ST:220614"
+  },
+  {
+    "ID": 49,
+    "LevelList": [
+      49001,
+      49002,
+      49003,
+      49004
+    ],
+    "EntryId": 17,
+    "ActorSignId": "ActorSign_Light",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Tiaozhantouxiang_31.png@Tiaozhantouxiang_31",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:220616"
+  },
+  {
+    "ID": 50,
+    "LevelList": [
+      50001,
+      50002,
+      50003,
+      50004
+    ],
+    "EntryId": 18,
+    "ActorSignId": "ActorSign_Light",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/FengShenImage_ABS/NoTag/Tiaozhantouxiang_32.png@Tiaozhantouxiang_32",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_09.png@BG_09",
+    "NameStrKey": "ST:227931",
+    "InfoStrKey": "ST:228778"
+  },
+  {
+    "ID": 51,
+    "LevelList": [
+      51001,
+      51002,
+      51003,
+      51004
+    ],
+    "EntryId": 18,
+    "ActorSignId": "ActorSign_Electricity",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/FengShenImage_ABS/NoTag/Tiaozhantouxiang_34.png@Tiaozhantouxiang_34",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_11.png@BG_11",
+    "NameStrKey": "ST:228738",
+    "InfoStrKey": "ST:227832"
+  },
+  {
+    "ID": 52,
+    "LevelList": [
+      52001,
+      52002,
+      52003,
+      52004
+    ],
+    "EntryId": 18,
+    "ActorSignId": "ActorSign_Fire",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/FengShenImage_ABS/NoTag/Tiaozhantouxiang_33.png@Tiaozhantouxiang_33",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:227930",
+    "InfoStrKey": "ST:227831"
+  },
+  {
+    "ID": 53,
+    "LevelList": [
+      53001,
+      53002,
+      53003,
+      53004
+    ],
+    "EntryId": 19,
+    "ActorSignId": "ActorSign_Light",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/XiYouJiImage_ABS/NoTag/Tiaozhantouxiang_27.png@Tiaozhantouxiang_27",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:212364"
+  },
+  {
+    "ID": 54,
+    "LevelList": [
+      54001,
+      54002,
+      54003,
+      54004
+    ],
+    "EntryId": 19,
+    "ActorSignId": "ActorSign_None",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/XiYouJiImage_ABS/NoTag/Tiaozhantouxiang_28.png@Tiaozhantouxiang_28",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_12.png@BG_12",
+    "NameStrKey": "ST:212365"
+  },
+  {
+    "ID": 55,
+    "LevelList": [
+      55001,
+      55002,
+      55003,
+      55004
+    ],
+    "EntryId": 19,
+    "ActorSignId": "ActorSign_Fire",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/XiYouJiImage_ABS/NoTag/Tiaozhantouxiang_26.png@Tiaozhantouxiang_26",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_07.png@BG_07",
+    "NameStrKey": "ST:212366"
+  },
+  {
+    "ID": 56,
+    "LevelList": [
+      56001,
+      56002,
+      56003,
+      56004
+    ],
+    "EntryId": 20,
+    "ActorSignId": "ActorSign_Light",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/FengShenImage_ABS/NoTag/Tiaozhantouxiang_32.png@Tiaozhantouxiang_32",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_09.png@BG_09",
+    "NameStrKey": "ST:227931",
+    "InfoStrKey": "ST:228778"
+  },
+  {
+    "ID": 57,
+    "LevelList": [
+      57001,
+      57002,
+      57003,
+      57004
+    ],
+    "EntryId": 20,
+    "ActorSignId": "ActorSign_Electricity",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/FengShenImage_ABS/NoTag/Tiaozhantouxiang_34.png@Tiaozhantouxiang_34",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_11.png@BG_11",
+    "NameStrKey": "ST:228738",
+    "InfoStrKey": "ST:227832"
+  },
+  {
+    "ID": 58,
+    "LevelList": [
+      58001,
+      58002,
+      58003,
+      58004
+    ],
+    "EntryId": 20,
+    "ActorSignId": "ActorSign_Fire",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/FengShenImage_ABS/NoTag/Tiaozhantouxiang_33.png@Tiaozhantouxiang_33",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_05.png@BG_05",
+    "NameStrKey": "ST:227930",
+    "InfoStrKey": "ST:227831"
+  },
+  {
+    "ID": 59,
+    "LevelList": [
+      59001,
+      59002,
+      59003
+    ],
+    "EntryId": 21,
+    "ActorSignId": "ActorSign_Fire",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Tiaozhantouxiang_37.png@Tiaozhantouxiang_37",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_07.png@BG_07",
+    "NameStrKey": "ST:249994"
+  },
+  {
+    "ID": 60,
+    "LevelList": [
+      60001,
+      60002,
+      60003
+    ],
+    "EntryId": 21,
+    "ActorSignId": "ActorSign_Ice",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Tiaozhantouxiang_38.png@Tiaozhantouxiang_38",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_04.png@BG_04",
+    "NameStrKey": "ST:249995"
+  },
+  {
+    "ID": 61,
+    "LevelList": [
+      61001,
+      61002,
+      61003
+    ],
+    "EntryId": 21,
+    "ActorSignId": "ActorSign_Shadow",
+    "BgImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Tiaozhantouxiang_39.png@Tiaozhantouxiang_39",
+    "BgSignImageStr": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/XianJianQiXia_ABS/NoTag/BG_09.png@BG_09",
+    "NameStrKey": "ST:249996"
+  }
+]

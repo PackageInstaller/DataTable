@@ -1,0 +1,558 @@
+[
+  {
+    "ID": 10101110,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Fire",
+    "Count": 1,
+    "Damage": 20,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10102110,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Fire",
+    "Count": 1,
+    "Damage": 80,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10201110,
+    "SelectType": "TearlessGateTargetSelectModeType_NoSelect",
+    "Sign": "ActorSign_Ice",
+    "Count": 1,
+    "Damage": 10,
+    "DamageFormType": "SkillFormType_All"
+  },
+  {
+    "ID": 10202110,
+    "SelectType": "TearlessGateTargetSelectModeType_NoSelect",
+    "Sign": "ActorSign_Ice",
+    "Count": 1,
+    "Damage": 40,
+    "DamageFormType": "SkillFormType_All"
+  },
+  {
+    "ID": 10301110,
+    "SelectType": "TearlessGateTargetSelectModeType_EveryTimeRandom",
+    "Sign": "ActorSign_Electricity",
+    "Count": 3,
+    "Damage": 8,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10302110,
+    "SelectType": "TearlessGateTargetSelectModeType_EveryTimeRandom",
+    "Sign": "ActorSign_Electricity",
+    "Count": 3,
+    "Damage": 28,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10401110,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Light",
+    "Count": 1,
+    "Damage": 18,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10402110,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Light",
+    "Count": 1,
+    "Damage": 72,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10501110,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Shadow",
+    "Count": 1,
+    "Damage": 12,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10501120,
+    "SelectType": "TearlessGateTargetSelectModeType_Random",
+    "DamageFlag": 4,
+    "Sign": "ActorSign_Shadow",
+    "Count": 1,
+    "Damage": 18,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10502110,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Shadow",
+    "Count": 1,
+    "Damage": 40,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10502120,
+    "SelectType": "TearlessGateTargetSelectModeType_Random",
+    "DamageFlag": 4,
+    "Sign": "ActorSign_Shadow",
+    "Count": 1,
+    "Damage": 64,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10601110,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Dusk",
+    "Count": 1,
+    "Damage": 14,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10601111,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "DamageFlag": 8,
+    "Sign": "ActorSign_None",
+    "Count": 1,
+    "Damage": 1500,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10601112,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "DamageFlag": 8,
+    "Sign": "ActorSign_None",
+    "Count": 1,
+    "Damage": 2000,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10601113,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "DamageFlag": 8,
+    "Sign": "ActorSign_None",
+    "Count": 1,
+    "Damage": 2000,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10601114,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "DamageFlag": 8,
+    "Sign": "ActorSign_None",
+    "Count": 1,
+    "Damage": 2500,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10601115,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "DamageFlag": 8,
+    "Sign": "ActorSign_None",
+    "Count": 1,
+    "Damage": 2500,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10601120,
+    "SelectType": "TearlessGateTargetSelectModeType_NoSelect",
+    "DamageFlag": 4,
+    "Sign": "ActorSign_Dusk",
+    "Count": 1,
+    "Damage": 6,
+    "DamageFormType": "SkillFormType_All"
+  },
+  {
+    "ID": 10602110,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Dusk",
+    "Count": 1,
+    "Damage": 56,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10602120,
+    "SelectType": "TearlessGateTargetSelectModeType_NoSelect",
+    "DamageFlag": 4,
+    "Sign": "ActorSign_Dusk",
+    "Count": 1,
+    "Damage": 24,
+    "DamageFormType": "SkillFormType_All"
+  },
+  {
+    "ID": 10701110,
+    "SelectType": "TearlessGateTargetSelectModeType_NoSelect",
+    "Sign": "ActorSign_None",
+    "Count": 1,
+    "Damage": 20,
+    "DamageFormType": "SkillFormType_All"
+  },
+  {
+    "ID": 10701120,
+    "SelectType": "TearlessGateTargetSelectModeType_NoSelect",
+    "Sign": "ActorSign_Light",
+    "Count": 1,
+    "Damage": 10,
+    "DamageFormType": "SkillFormType_All"
+  },
+  {
+    "ID": 10701130,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Light",
+    "Count": 1,
+    "Damage": 80,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 10701140,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_None",
+    "Count": 1,
+    "Damage": 15,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20101011,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Fire",
+    "Count": 1,
+    "Damage": 25,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20101021,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Fire",
+    "Count": 1,
+    "Damage": 31,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20101031,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Fire",
+    "Count": 1,
+    "Damage": 38,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20101041,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Fire",
+    "Count": 1,
+    "Damage": 44,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20101051,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Fire",
+    "Count": 1,
+    "Damage": 50,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20101061,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_Fire",
+    "Count": 1,
+    "Damage": 56,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20101062,
+    "SelectType": "TearlessGateTargetSelectModeType_EveryTimeRandom",
+    "DamageFlag": 4,
+    "Sign": "ActorSign_Fire",
+    "Count": 1,
+    "Damage": 10,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20102011,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Dusk",
+    "Count": 1,
+    "Damage": 33,
+    "DamageFormType": "SkillFormType_Rhombus1"
+  },
+  {
+    "ID": 20102021,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Dusk",
+    "Count": 1,
+    "Damage": 41,
+    "DamageFormType": "SkillFormType_Rhombus1"
+  },
+  {
+    "ID": 20102031,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Dusk",
+    "Count": 1,
+    "Damage": 49,
+    "DamageFormType": "SkillFormType_Rhombus1"
+  },
+  {
+    "ID": 20102041,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Dusk",
+    "Count": 1,
+    "Damage": 57,
+    "DamageFormType": "SkillFormType_Rhombus1"
+  },
+  {
+    "ID": 20102051,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Dusk",
+    "Count": 1,
+    "Damage": 65,
+    "DamageFormType": "SkillFormType_Rhombus1"
+  },
+  {
+    "ID": 20102061,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Dusk",
+    "Count": 1,
+    "Damage": 73,
+    "DamageFormType": "SkillFormType_Rhombus1"
+  },
+  {
+    "ID": 20103011,
+    "SelectType": "TearlessGateTargetSelectModeType_EveryTimeRandom",
+    "Sign": "ActorSign_Electricity",
+    "Count": 3,
+    "Damage": 10,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20103021,
+    "SelectType": "TearlessGateTargetSelectModeType_EveryTimeRandom",
+    "Sign": "ActorSign_Electricity",
+    "Count": 3,
+    "Damage": 13,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20103031,
+    "SelectType": "TearlessGateTargetSelectModeType_EveryTimeRandom",
+    "Sign": "ActorSign_Electricity",
+    "Count": 3,
+    "Damage": 15,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20103041,
+    "SelectType": "TearlessGateTargetSelectModeType_EveryTimeRandom",
+    "Sign": "ActorSign_Electricity",
+    "Count": 3,
+    "Damage": 18,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20103051,
+    "SelectType": "TearlessGateTargetSelectModeType_EveryTimeRandom",
+    "Sign": "ActorSign_Electricity",
+    "Count": 3,
+    "Damage": 20,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20103061,
+    "SelectType": "TearlessGateTargetSelectModeType_EveryTimeRandom",
+    "Sign": "ActorSign_Electricity",
+    "Count": 3,
+    "Damage": 23,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20104011,
+    "SelectType": "TearlessGateTargetSelectModeType_NoSelect",
+    "Sign": "ActorSign_Ice",
+    "Count": 1,
+    "Damage": 10,
+    "DamageFormType": "SkillFormType_All"
+  },
+  {
+    "ID": 20104021,
+    "SelectType": "TearlessGateTargetSelectModeType_NoSelect",
+    "Sign": "ActorSign_Ice",
+    "Count": 1,
+    "Damage": 13,
+    "DamageFormType": "SkillFormType_All"
+  },
+  {
+    "ID": 20104031,
+    "SelectType": "TearlessGateTargetSelectModeType_NoSelect",
+    "Sign": "ActorSign_Ice",
+    "Count": 1,
+    "Damage": 15,
+    "DamageFormType": "SkillFormType_All"
+  },
+  {
+    "ID": 20104041,
+    "SelectType": "TearlessGateTargetSelectModeType_NoSelect",
+    "Sign": "ActorSign_Ice",
+    "Count": 1,
+    "Damage": 18,
+    "DamageFormType": "SkillFormType_All"
+  },
+  {
+    "ID": 20104051,
+    "SelectType": "TearlessGateTargetSelectModeType_NoSelect",
+    "Sign": "ActorSign_Ice",
+    "Count": 1,
+    "Damage": 20,
+    "DamageFormType": "SkillFormType_All"
+  },
+  {
+    "ID": 20104061,
+    "SelectType": "TearlessGateTargetSelectModeType_NoSelect",
+    "Sign": "ActorSign_Ice",
+    "Count": 1,
+    "Damage": 23,
+    "DamageFormType": "SkillFormType_All"
+  },
+  {
+    "ID": 20105011,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Shadow",
+    "Count": 1,
+    "Damage": 19,
+    "DamageFormType": "SkillFormType_Square1"
+  },
+  {
+    "ID": 20105021,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Shadow",
+    "Count": 1,
+    "Damage": 23,
+    "DamageFormType": "SkillFormType_Square1"
+  },
+  {
+    "ID": 20105031,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Shadow",
+    "Count": 1,
+    "Damage": 28,
+    "DamageFormType": "SkillFormType_Square1"
+  },
+  {
+    "ID": 20105041,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Shadow",
+    "Count": 1,
+    "Damage": 33,
+    "DamageFormType": "SkillFormType_Square1"
+  },
+  {
+    "ID": 20105051,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Shadow",
+    "Count": 1,
+    "Damage": 38,
+    "DamageFormType": "SkillFormType_Square1"
+  },
+  {
+    "ID": 20105052,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "DamageFlag": 4,
+    "Sign": "ActorSign_Shadow",
+    "Count": 1,
+    "Damage": 25,
+    "DamageFormType": "SkillFormType_Square1"
+  },
+  {
+    "ID": 20105061,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Shadow",
+    "Count": 1,
+    "Damage": 42,
+    "DamageFormType": "SkillFormType_Square1"
+  },
+  {
+    "ID": 20105062,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "DamageFlag": 4,
+    "Sign": "ActorSign_Shadow",
+    "Count": 1,
+    "Damage": 40,
+    "DamageFormType": "SkillFormType_Square1"
+  },
+  {
+    "ID": 20106011,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Light",
+    "Count": 1,
+    "Damage": 20,
+    "DamageFormType": "SkillFormType_CrossMax"
+  },
+  {
+    "ID": 20106021,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Light",
+    "Count": 1,
+    "Damage": 25,
+    "DamageFormType": "SkillFormType_CrossMax"
+  },
+  {
+    "ID": 20106031,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Light",
+    "Count": 1,
+    "Damage": 30,
+    "DamageFormType": "SkillFormType_CrossMax"
+  },
+  {
+    "ID": 20106041,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Light",
+    "Count": 1,
+    "Damage": 35,
+    "DamageFormType": "SkillFormType_CrossMax"
+  },
+  {
+    "ID": 20106051,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Light",
+    "Count": 1,
+    "Damage": 40,
+    "DamageFormType": "SkillFormType_CrossMax"
+  },
+  {
+    "ID": 20106061,
+    "SelectType": "TearlessGateTargetSelectModeType_Grid",
+    "Sign": "ActorSign_Light",
+    "Count": 1,
+    "Damage": 45,
+    "DamageFormType": "SkillFormType_CrossMax"
+  },
+  {
+    "ID": 20108001,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_None",
+    "Count": 1,
+    "Damage": 30,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  },
+  {
+    "ID": 20108002,
+    "SelectType": "TearlessGateTargetSelectModeType_NoSelect",
+    "Sign": "ActorSign_None",
+    "Count": 1,
+    "Damage": 20,
+    "DamageFormType": "SkillFormType_All"
+  },
+  {
+    "ID": 20108003,
+    "SelectType": "TearlessGateTargetSelectModeType_NoSelect",
+    "Sign": "ActorSign_Dusk",
+    "Count": 1,
+    "Damage": 15,
+    "DamageFormType": "SkillFormType_All"
+  },
+  {
+    "ID": 20108004,
+    "SelectType": "TearlessGateTargetSelectModeType_Specific",
+    "Sign": "ActorSign_None",
+    "Count": 1,
+    "Damage": 10,
+    "DamageFormType": "SkillFormType_SpecifiedTarget"
+  }
+]

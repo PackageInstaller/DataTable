@@ -1,0 +1,2530 @@
+[
+  {
+    "ID": 1001,
+    "ContentId": 1,
+    "UIimage": 1,
+    "Next": 1002,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402051190,
+    "DialogAfterId": 402019601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24020500,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350031201,
+    "NameStrKey": "ST:85321",
+    "SectionDescStrKey": "ST:87336"
+  },
+  {
+    "ID": 1002,
+    "ContentId": 1,
+    "UIimage": 2,
+    "Next": 1003,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402029101,
+    "DialogAfterId": 402029601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24020200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350031202,
+    "NameStrKey": "ST:85611",
+    "SectionDescStrKey": "ST:87337"
+  },
+  {
+    "ID": 1003,
+    "ContentId": 1,
+    "UIimage": 3,
+    "Next": 1004,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 1001
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24020300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350031203,
+    "NameStrKey": "ST:85323",
+    "SectionDescStrKey": "ST:87338"
+  },
+  {
+    "ID": 1004,
+    "ContentId": 1,
+    "UIimage": 4,
+    "Next": 1005,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 101
+      }
+    ],
+    "DialogBeforeId": 402039101,
+    "DialogAfterId": 402039601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24020600,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350031204,
+    "NameStrKey": "ST:85612",
+    "SectionDescStrKey": "ST:87339"
+  },
+  {
+    "ID": 1005,
+    "ContentId": 1,
+    "UIimage": 5,
+    "Next": 1006,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 1003
+      }
+    ],
+    "DialogAfterId": 402049601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24020700,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350031205,
+    "NameStrKey": "ST:83747",
+    "SectionDescStrKey": "ST:87340"
+  },
+  {
+    "ID": 1006,
+    "ContentId": 1,
+    "UIimage": 6,
+    "Next": 1007,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402059101,
+    "DialogAfterId": 402059601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24020800,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350031206,
+    "NameStrKey": "ST:83805",
+    "SectionDescStrKey": "ST:87506"
+  },
+  {
+    "ID": 1007,
+    "ContentId": 1,
+    "UIimage": 7,
+    "Next": 1008,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 1004
+      }
+    ],
+    "DialogBeforeId": 402069101,
+    "DialogAfterId": 402041190,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24020400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350031207,
+    "NameStrKey": "ST:85324",
+    "SectionDescStrKey": "ST:87342"
+  },
+  {
+    "ID": 1008,
+    "ContentId": 1,
+    "UIimage": 8,
+    "Next": 1009,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402079101,
+    "DialogAfterId": 402089101,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24020900,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350031208,
+    "NameStrKey": "ST:83806",
+    "SectionDescStrKey": "ST:87507"
+  },
+  {
+    "ID": 1009,
+    "ContentId": 1,
+    "UIimage": 9,
+    "Next": 1010,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 102
+      }
+    ],
+    "DialogAfterId": 402089601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24021000,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350031209,
+    "NameStrKey": "ST:85613",
+    "SectionDescStrKey": "ST:87344"
+  },
+  {
+    "ID": 1010,
+    "ContentId": 1,
+    "UIimage": 10,
+    "Next": 1011,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 1005
+      }
+    ],
+    "DialogBeforeId": 402099101,
+    "DialogAfterId": 402099601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24021100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350031210,
+    "NameStrKey": "ST:85201",
+    "SectionDescStrKey": "ST:87345"
+  },
+  {
+    "ID": 1011,
+    "ContentId": 1,
+    "UIimage": 11,
+    "Next": 1012,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 1002
+      }
+    ],
+    "DialogBeforeId": 402109101,
+    "DialogAfterId": 402109601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24021200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350031211,
+    "NameStrKey": "ST:85202",
+    "SectionDescStrKey": "ST:87346"
+  },
+  {
+    "ID": 1012,
+    "ContentId": 1,
+    "UIimage": 12,
+    "Next": 1013,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogAfterId": 402119601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24021300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350031212,
+    "NameStrKey": "ST:85200",
+    "SectionDescStrKey": "ST:87347"
+  },
+  {
+    "ID": 1013,
+    "ContentId": 1,
+    "UIimage": 9,
+    "Next": 1014,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 103
+      }
+    ],
+    "DialogBeforeId": 402129101,
+    "DialogAfterId": 402129601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24021400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350031213,
+    "NameStrKey": "ST:85614",
+    "SectionDescStrKey": "ST:87348"
+  },
+  {
+    "ID": 1014,
+    "ContentId": 1,
+    "UIimage": 9,
+    "Next": 1015,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402139101,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24021500,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350031214,
+    "NameStrKey": "ST:85615",
+    "SectionDescStrKey": "ST:85104"
+  },
+  {
+    "ID": 1015,
+    "ContentId": 1,
+    "UIimage": 9,
+    "Next": 1016,
+    "DaysSinceFuncOpen": 2,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 104
+      }
+    ],
+    "DialogBeforeId": 402179101,
+    "DialogAfterId": 402179601,
+    "BattleSceneId": 24021800,
+    "FirstRewardDropId": 350031215,
+    "CheckUI": 1,
+    "NameStrKey": "ST:87334",
+    "SectionDescStrKey": "ST:87349"
+  },
+  {
+    "ID": 1016,
+    "ContentId": 1,
+    "UIimage": 9,
+    "DaysSinceFuncOpen": 4,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 105
+      }
+    ],
+    "DialogBeforeId": 402189101,
+    "FirstRewardDropId": 350031216,
+    "CheckUI": 1,
+    "NameStrKey": "ST:87335",
+    "SectionDescStrKey": "ST:87350"
+  },
+  {
+    "ID": 2001,
+    "ContentId": 2,
+    "UIimage": 201,
+    "Next": 2002,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 80963101,
+    "FirstEnergySuccess": 10,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350121301,
+    "CheckUI": 1,
+    "NameStrKey": "ST:120141",
+    "SectionDescStrKey": "ST:120815"
+  },
+  {
+    "ID": 2002,
+    "ContentId": 2,
+    "UIimage": 202,
+    "Next": 2003,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 201
+      }
+    ],
+    "DialogBeforeId": 70963201,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24101100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350121302,
+    "NameStrKey": "ST:120803",
+    "SectionDescStrKey": "ST:120350"
+  },
+  {
+    "ID": 2003,
+    "ContentId": 2,
+    "UIimage": 203,
+    "Next": 2004,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 2001
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24101200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350121303,
+    "NameStrKey": "ST:120804",
+    "SectionDescStrKey": "ST:120351"
+  },
+  {
+    "ID": 2004,
+    "ContentId": 2,
+    "UIimage": 202,
+    "Next": 2005,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24101300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350121304,
+    "NameStrKey": "ST:120805",
+    "SectionDescStrKey": "ST:120352"
+  },
+  {
+    "ID": 2005,
+    "ContentId": 2,
+    "UIimage": 204,
+    "Next": 2006,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 202
+      }
+    ],
+    "DialogAfterId": 70963601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24101400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350121305,
+    "NameStrKey": "ST:120857",
+    "SectionDescStrKey": "ST:119444"
+  },
+  {
+    "ID": 2006,
+    "ContentId": 2,
+    "UIimage": 203,
+    "Next": 2007,
+    "DaysSinceFuncOpen": 3,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 2002
+      }
+    ],
+    "DialogBeforeId": 70964101,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24102100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350121306,
+    "NameStrKey": "ST:120807",
+    "SectionDescStrKey": "ST:120353"
+  },
+  {
+    "ID": 2007,
+    "ContentId": 2,
+    "UIimage": 206,
+    "Next": 2008,
+    "DaysSinceFuncOpen": 3,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogAfterId": 70964601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24102200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350121308,
+    "NameStrKey": "ST:120808",
+    "SectionDescStrKey": "ST:120354"
+  },
+  {
+    "ID": 2008,
+    "ContentId": 2,
+    "UIimage": 205,
+    "Next": 2009,
+    "DaysSinceFuncOpen": 3,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 2003
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24102300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350121307,
+    "NameStrKey": "ST:120809",
+    "SectionDescStrKey": "ST:120355"
+  },
+  {
+    "ID": 2009,
+    "ContentId": 2,
+    "UIimage": 207,
+    "Next": 2010,
+    "DaysSinceFuncOpen": 3,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 203
+      }
+    ],
+    "DialogAfterId": 70965601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24102400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350121309,
+    "NameStrKey": "ST:120858",
+    "SectionDescStrKey": "ST:120356"
+  },
+  {
+    "ID": 2010,
+    "ContentId": 2,
+    "UIimage": 206,
+    "Next": 2011,
+    "DaysSinceFuncOpen": 6,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 2004
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350121310,
+    "NameStrKey": "ST:120810",
+    "SectionDescStrKey": "ST:120357"
+  },
+  {
+    "ID": 2011,
+    "ContentId": 2,
+    "UIimage": 203,
+    "Next": 2012,
+    "DaysSinceFuncOpen": 6,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350121311,
+    "NameStrKey": "ST:120811",
+    "SectionDescStrKey": "ST:120358"
+  },
+  {
+    "ID": 2012,
+    "ContentId": 2,
+    "UIimage": 202,
+    "Next": 2013,
+    "DaysSinceFuncOpen": 6,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 2005
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350121312,
+    "NameStrKey": "ST:120812",
+    "SectionDescStrKey": "ST:120359"
+  },
+  {
+    "ID": 2013,
+    "ContentId": 2,
+    "UIimage": 208,
+    "Next": 2014,
+    "DaysSinceFuncOpen": 9,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 204
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350121313,
+    "NameStrKey": "ST:120859",
+    "SectionDescStrKey": "ST:120360"
+  },
+  {
+    "ID": 2014,
+    "ContentId": 2,
+    "UIimage": 209,
+    "DaysSinceFuncOpen": 9,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 205
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103500,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350121314,
+    "NameStrKey": "ST:120860",
+    "SectionDescStrKey": "ST:120361"
+  },
+  {
+    "ID": 3001,
+    "ContentId": 3,
+    "UIimage": 301,
+    "Next": 3002,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 3001
+      }
+    ],
+    "DialogBeforeId": 926123101,
+    "FirstEnergySuccess": 10,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350122101,
+    "CheckUI": 1,
+    "NameStrKey": "ST:126043",
+    "SectionDescStrKey": "ST:126044"
+  },
+  {
+    "ID": 3002,
+    "ContentId": 3,
+    "UIimage": 302,
+    "Next": 3003,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 3001
+      }
+    ],
+    "DialogBeforeId": 946123101,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24130100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350122102,
+    "NameStrKey": "ST:125693",
+    "SectionDescStrKey": "ST:126045"
+  },
+  {
+    "ID": 3003,
+    "ContentId": 3,
+    "UIimage": 303,
+    "Next": 3004,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 3002
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24130200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350122103,
+    "NameStrKey": "ST:125694",
+    "SectionDescStrKey": "ST:126046"
+  },
+  {
+    "ID": 3004,
+    "ContentId": 3,
+    "UIimage": 304,
+    "Next": 3005,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24130300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350122104,
+    "NameStrKey": "ST:125695",
+    "SectionDescStrKey": "ST:127311"
+  },
+  {
+    "ID": 3005,
+    "ContentId": 3,
+    "UIimage": 305,
+    "Next": 3006,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 301
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24130400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350122105,
+    "NameStrKey": "ST:125696",
+    "SectionDescStrKey": "ST:126048"
+  },
+  {
+    "ID": 3006,
+    "ContentId": 3,
+    "UIimage": 306,
+    "Next": 3007,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 3003
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24130500,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350122106,
+    "NameStrKey": "ST:125697",
+    "SectionDescStrKey": "ST:126049"
+  },
+  {
+    "ID": 3007,
+    "ContentId": 3,
+    "UIimage": 307,
+    "Next": 3008,
+    "DaysSinceFuncOpen": 2,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 302
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24130600,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350122107,
+    "NameStrKey": "ST:125698",
+    "SectionDescStrKey": "ST:126050"
+  },
+  {
+    "ID": 3008,
+    "ContentId": 3,
+    "UIimage": 308,
+    "Next": 3009,
+    "DaysSinceFuncOpen": 2,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24130700,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350122108,
+    "NameStrKey": "ST:125699",
+    "SectionDescStrKey": "ST:126051"
+  },
+  {
+    "ID": 3009,
+    "ContentId": 3,
+    "UIimage": 309,
+    "Next": 3010,
+    "DaysSinceFuncOpen": 2,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 303
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24130800,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350122109,
+    "NameStrKey": "ST:125700",
+    "SectionDescStrKey": "ST:126052"
+  },
+  {
+    "ID": 3010,
+    "ContentId": 3,
+    "UIimage": 310,
+    "Next": 3011,
+    "DaysSinceFuncOpen": 2,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 3004
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24130900,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350122110,
+    "NameStrKey": "ST:125701",
+    "SectionDescStrKey": "ST:126053"
+  },
+  {
+    "ID": 3011,
+    "ContentId": 3,
+    "UIimage": 311,
+    "Next": 3012,
+    "DaysSinceFuncOpen": 5,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24131000,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350122111,
+    "NameStrKey": "ST:125702",
+    "SectionDescStrKey": "ST:126054"
+  },
+  {
+    "ID": 3012,
+    "ContentId": 3,
+    "UIimage": 312,
+    "Next": 3013,
+    "DaysSinceFuncOpen": 5,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 3005
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24131100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350122112,
+    "NameStrKey": "ST:125703",
+    "SectionDescStrKey": "ST:126055"
+  },
+  {
+    "ID": 3013,
+    "ContentId": 3,
+    "UIimage": 313,
+    "Next": 3014,
+    "DaysSinceFuncOpen": 5,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 304
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24131200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350122113,
+    "NameStrKey": "ST:125704",
+    "SectionDescStrKey": "ST:126056"
+  },
+  {
+    "ID": 3014,
+    "ContentId": 3,
+    "UIimage": 314,
+    "DaysSinceFuncOpen": 7,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 305
+      }
+    ],
+    "DialogAfterId": 956123101,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24131300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350122114,
+    "NameStrKey": "ST:125705",
+    "SectionDescStrKey": "ST:126057"
+  },
+  {
+    "ID": 4001,
+    "ContentId": 4,
+    "UIimage": 1,
+    "Next": 4002,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402051190,
+    "DialogAfterId": 402019601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24151500,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350123101,
+    "NameStrKey": "ST:85321",
+    "SectionDescStrKey": "ST:87336"
+  },
+  {
+    "ID": 4002,
+    "ContentId": 4,
+    "UIimage": 2,
+    "Next": 4003,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402029101,
+    "DialogAfterId": 402029601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24151200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350123102,
+    "NameStrKey": "ST:85611",
+    "SectionDescStrKey": "ST:87337"
+  },
+  {
+    "ID": 4003,
+    "ContentId": 4,
+    "UIimage": 3,
+    "Next": 4004,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 4001
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24151300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350123103,
+    "NameStrKey": "ST:85323",
+    "SectionDescStrKey": "ST:87338"
+  },
+  {
+    "ID": 4004,
+    "ContentId": 4,
+    "UIimage": 4,
+    "Next": 4005,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 401
+      }
+    ],
+    "DialogBeforeId": 402039101,
+    "DialogAfterId": 402039601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24151600,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350123104,
+    "NameStrKey": "ST:85612",
+    "SectionDescStrKey": "ST:87339"
+  },
+  {
+    "ID": 4005,
+    "ContentId": 4,
+    "UIimage": 5,
+    "Next": 4006,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 4003
+      }
+    ],
+    "DialogAfterId": 402049601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24151700,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350123105,
+    "NameStrKey": "ST:83747",
+    "SectionDescStrKey": "ST:87340"
+  },
+  {
+    "ID": 4006,
+    "ContentId": 4,
+    "UIimage": 6,
+    "Next": 4007,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402059101,
+    "DialogAfterId": 402059601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24151800,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350123106,
+    "NameStrKey": "ST:83805",
+    "SectionDescStrKey": "ST:87506"
+  },
+  {
+    "ID": 4007,
+    "ContentId": 4,
+    "UIimage": 7,
+    "Next": 4008,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 4004
+      }
+    ],
+    "DialogBeforeId": 402069101,
+    "DialogAfterId": 402041190,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24151400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350123107,
+    "NameStrKey": "ST:85324",
+    "SectionDescStrKey": "ST:87342"
+  },
+  {
+    "ID": 4008,
+    "ContentId": 4,
+    "UIimage": 8,
+    "Next": 4009,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402079101,
+    "DialogAfterId": 402089101,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24151900,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350123108,
+    "NameStrKey": "ST:83806",
+    "SectionDescStrKey": "ST:87507"
+  },
+  {
+    "ID": 4009,
+    "ContentId": 4,
+    "UIimage": 9,
+    "Next": 4010,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 402
+      }
+    ],
+    "DialogAfterId": 402089601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24152000,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350123109,
+    "NameStrKey": "ST:85613",
+    "SectionDescStrKey": "ST:87344"
+  },
+  {
+    "ID": 4010,
+    "ContentId": 4,
+    "UIimage": 10,
+    "Next": 4011,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 4005
+      }
+    ],
+    "DialogBeforeId": 402099101,
+    "DialogAfterId": 402099601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24152100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350123110,
+    "NameStrKey": "ST:85201",
+    "SectionDescStrKey": "ST:87345"
+  },
+  {
+    "ID": 4011,
+    "ContentId": 4,
+    "UIimage": 11,
+    "Next": 4012,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 4002
+      }
+    ],
+    "DialogBeforeId": 402109101,
+    "DialogAfterId": 402109601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24152200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350123111,
+    "NameStrKey": "ST:85202",
+    "SectionDescStrKey": "ST:87346"
+  },
+  {
+    "ID": 4012,
+    "ContentId": 4,
+    "UIimage": 12,
+    "Next": 4013,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogAfterId": 402119601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24152300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350123112,
+    "NameStrKey": "ST:85200",
+    "SectionDescStrKey": "ST:87347"
+  },
+  {
+    "ID": 4013,
+    "ContentId": 4,
+    "UIimage": 9,
+    "Next": 4014,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 403
+      }
+    ],
+    "DialogBeforeId": 402129101,
+    "DialogAfterId": 402129601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24152400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350123113,
+    "NameStrKey": "ST:85614",
+    "SectionDescStrKey": "ST:87348"
+  },
+  {
+    "ID": 4014,
+    "ContentId": 4,
+    "UIimage": 9,
+    "Next": 4015,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402139101,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24152500,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350123114,
+    "NameStrKey": "ST:85615",
+    "SectionDescStrKey": "ST:85104"
+  },
+  {
+    "ID": 4015,
+    "ContentId": 4,
+    "UIimage": 9,
+    "Next": 4016,
+    "DaysSinceFuncOpen": 2,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 404
+      }
+    ],
+    "DialogBeforeId": 402179101,
+    "DialogAfterId": 402179601,
+    "BattleSceneId": 24152600,
+    "FirstRewardDropId": 350123115,
+    "CheckUI": 1,
+    "NameStrKey": "ST:87334",
+    "SectionDescStrKey": "ST:87349"
+  },
+  {
+    "ID": 4016,
+    "ContentId": 4,
+    "UIimage": 9,
+    "DaysSinceFuncOpen": 4,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 405
+      }
+    ],
+    "DialogBeforeId": 402189101,
+    "FirstRewardDropId": 350123116,
+    "CheckUI": 1,
+    "NameStrKey": "ST:87335",
+    "SectionDescStrKey": "ST:87350"
+  },
+  {
+    "ID": 5001,
+    "ContentId": 5,
+    "UIimage": 201,
+    "Next": 5002,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 80963101,
+    "FirstEnergySuccess": 10,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350124101,
+    "CheckUI": 1,
+    "NameStrKey": "ST:120141",
+    "SectionDescStrKey": "ST:120815"
+  },
+  {
+    "ID": 5002,
+    "ContentId": 5,
+    "UIimage": 202,
+    "Next": 5003,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 501
+      }
+    ],
+    "DialogBeforeId": 70963201,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24101100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350124102,
+    "NameStrKey": "ST:120803",
+    "SectionDescStrKey": "ST:120350"
+  },
+  {
+    "ID": 5003,
+    "ContentId": 5,
+    "UIimage": 203,
+    "Next": 5004,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 5001
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24101200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350124103,
+    "NameStrKey": "ST:120804",
+    "SectionDescStrKey": "ST:120351"
+  },
+  {
+    "ID": 5004,
+    "ContentId": 5,
+    "UIimage": 202,
+    "Next": 5005,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24101300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350124104,
+    "NameStrKey": "ST:120805",
+    "SectionDescStrKey": "ST:120352"
+  },
+  {
+    "ID": 5005,
+    "ContentId": 5,
+    "UIimage": 204,
+    "Next": 5006,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 502
+      }
+    ],
+    "DialogAfterId": 70963601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24101400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350124105,
+    "NameStrKey": "ST:120857",
+    "SectionDescStrKey": "ST:119444"
+  },
+  {
+    "ID": 5006,
+    "ContentId": 5,
+    "UIimage": 203,
+    "Next": 5007,
+    "DaysSinceFuncOpen": 3,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 5002
+      }
+    ],
+    "DialogBeforeId": 70964101,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24102100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350124106,
+    "NameStrKey": "ST:120807",
+    "SectionDescStrKey": "ST:120353"
+  },
+  {
+    "ID": 5007,
+    "ContentId": 5,
+    "UIimage": 206,
+    "Next": 5008,
+    "DaysSinceFuncOpen": 3,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogAfterId": 70964601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24102200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350124107,
+    "NameStrKey": "ST:120808",
+    "SectionDescStrKey": "ST:120354"
+  },
+  {
+    "ID": 5008,
+    "ContentId": 5,
+    "UIimage": 205,
+    "Next": 5009,
+    "DaysSinceFuncOpen": 3,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 5003
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24102300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350124108,
+    "NameStrKey": "ST:120809",
+    "SectionDescStrKey": "ST:120355"
+  },
+  {
+    "ID": 5009,
+    "ContentId": 5,
+    "UIimage": 207,
+    "Next": 5010,
+    "DaysSinceFuncOpen": 3,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 503
+      }
+    ],
+    "DialogAfterId": 70965601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24102400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350124109,
+    "NameStrKey": "ST:120858",
+    "SectionDescStrKey": "ST:120356"
+  },
+  {
+    "ID": 5010,
+    "ContentId": 5,
+    "UIimage": 206,
+    "Next": 5011,
+    "DaysSinceFuncOpen": 6,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 5004
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350124110,
+    "NameStrKey": "ST:120810",
+    "SectionDescStrKey": "ST:120357"
+  },
+  {
+    "ID": 5011,
+    "ContentId": 5,
+    "UIimage": 203,
+    "Next": 5012,
+    "DaysSinceFuncOpen": 6,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350124111,
+    "NameStrKey": "ST:120811",
+    "SectionDescStrKey": "ST:120358"
+  },
+  {
+    "ID": 5012,
+    "ContentId": 5,
+    "UIimage": 202,
+    "Next": 5013,
+    "DaysSinceFuncOpen": 6,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 5005
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350124112,
+    "NameStrKey": "ST:120812",
+    "SectionDescStrKey": "ST:120359"
+  },
+  {
+    "ID": 5013,
+    "ContentId": 5,
+    "UIimage": 208,
+    "Next": 5014,
+    "DaysSinceFuncOpen": 9,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 504
+      }
+    ],
+    "DialogAfterId": 70966601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350124113,
+    "NameStrKey": "ST:120859",
+    "SectionDescStrKey": "ST:120360"
+  },
+  {
+    "ID": 5014,
+    "ContentId": 5,
+    "UIimage": 209,
+    "DaysSinceFuncOpen": 9,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 505
+      }
+    ],
+    "DialogAfterId": 70967601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103500,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350124114,
+    "NameStrKey": "ST:120860",
+    "SectionDescStrKey": "ST:120361"
+  },
+  {
+    "ID": 6001,
+    "ContentId": 6,
+    "UIimage": 1,
+    "Next": 6002,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402051190,
+    "DialogAfterId": 402019601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24153000,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350214101,
+    "NameStrKey": "ST:85321",
+    "SectionDescStrKey": "ST:87336"
+  },
+  {
+    "ID": 6002,
+    "ContentId": 6,
+    "UIimage": 2,
+    "Next": 6003,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402029101,
+    "DialogAfterId": 402029601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24152700,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350214102,
+    "NameStrKey": "ST:85611",
+    "SectionDescStrKey": "ST:87337"
+  },
+  {
+    "ID": 6003,
+    "ContentId": 6,
+    "UIimage": 3,
+    "Next": 6004,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 6001
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24152800,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350214103,
+    "NameStrKey": "ST:85323",
+    "SectionDescStrKey": "ST:87338"
+  },
+  {
+    "ID": 6004,
+    "ContentId": 6,
+    "UIimage": 4,
+    "Next": 6005,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 601
+      }
+    ],
+    "DialogBeforeId": 402039101,
+    "DialogAfterId": 402039601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24153100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350214104,
+    "NameStrKey": "ST:85612",
+    "SectionDescStrKey": "ST:87339"
+  },
+  {
+    "ID": 6005,
+    "ContentId": 6,
+    "UIimage": 5,
+    "Next": 6006,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 6003
+      }
+    ],
+    "DialogAfterId": 402049601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24153200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350214105,
+    "NameStrKey": "ST:83747",
+    "SectionDescStrKey": "ST:87340"
+  },
+  {
+    "ID": 6006,
+    "ContentId": 6,
+    "UIimage": 6,
+    "Next": 6007,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402059101,
+    "DialogAfterId": 402059601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24153300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350214106,
+    "NameStrKey": "ST:83805",
+    "SectionDescStrKey": "ST:87506"
+  },
+  {
+    "ID": 6007,
+    "ContentId": 6,
+    "UIimage": 7,
+    "Next": 6008,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 6004
+      }
+    ],
+    "DialogBeforeId": 402069101,
+    "DialogAfterId": 402041190,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24152900,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350214107,
+    "NameStrKey": "ST:85324",
+    "SectionDescStrKey": "ST:87342"
+  },
+  {
+    "ID": 6008,
+    "ContentId": 6,
+    "UIimage": 8,
+    "Next": 6009,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402079101,
+    "DialogAfterId": 402089101,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24153400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350214108,
+    "NameStrKey": "ST:83806",
+    "SectionDescStrKey": "ST:87507"
+  },
+  {
+    "ID": 6009,
+    "ContentId": 6,
+    "UIimage": 9,
+    "Next": 6010,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 602
+      }
+    ],
+    "DialogAfterId": 402089601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24153500,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350214109,
+    "NameStrKey": "ST:85613",
+    "SectionDescStrKey": "ST:87344"
+  },
+  {
+    "ID": 6010,
+    "ContentId": 6,
+    "UIimage": 10,
+    "Next": 6011,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 6005
+      }
+    ],
+    "DialogBeforeId": 402099101,
+    "DialogAfterId": 402099601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24153600,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350214110,
+    "NameStrKey": "ST:85201",
+    "SectionDescStrKey": "ST:87345"
+  },
+  {
+    "ID": 6011,
+    "ContentId": 6,
+    "UIimage": 11,
+    "Next": 6012,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 6002
+      }
+    ],
+    "DialogBeforeId": 402109101,
+    "DialogAfterId": 402109601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24153700,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350214111,
+    "NameStrKey": "ST:85202",
+    "SectionDescStrKey": "ST:87346"
+  },
+  {
+    "ID": 6012,
+    "ContentId": 6,
+    "UIimage": 12,
+    "Next": 6013,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogAfterId": 402119601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24153800,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350214112,
+    "NameStrKey": "ST:85200",
+    "SectionDescStrKey": "ST:87347"
+  },
+  {
+    "ID": 6013,
+    "ContentId": 6,
+    "UIimage": 9,
+    "Next": 6014,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 603
+      }
+    ],
+    "DialogBeforeId": 402129101,
+    "DialogAfterId": 402129601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24153900,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350214113,
+    "NameStrKey": "ST:85614",
+    "SectionDescStrKey": "ST:87348"
+  },
+  {
+    "ID": 6014,
+    "ContentId": 6,
+    "UIimage": 9,
+    "Next": 6015,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 402139101,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24154000,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350214114,
+    "NameStrKey": "ST:85615",
+    "SectionDescStrKey": "ST:85104"
+  },
+  {
+    "ID": 6015,
+    "ContentId": 6,
+    "UIimage": 9,
+    "Next": 6016,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 604
+      }
+    ],
+    "DialogBeforeId": 402179101,
+    "DialogAfterId": 402179601,
+    "BattleSceneId": 24154100,
+    "FirstRewardDropId": 350214115,
+    "CheckUI": 1,
+    "NameStrKey": "ST:87334",
+    "SectionDescStrKey": "ST:87349"
+  },
+  {
+    "ID": 6016,
+    "ContentId": 6,
+    "UIimage": 9,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 605
+      }
+    ],
+    "DialogBeforeId": 402189101,
+    "FirstRewardDropId": 350214116,
+    "CheckUI": 1,
+    "NameStrKey": "ST:87335",
+    "SectionDescStrKey": "ST:87350"
+  },
+  {
+    "ID": 7001,
+    "ContentId": 7,
+    "UIimage": 201,
+    "Next": 7002,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 80963101,
+    "FirstEnergySuccess": 10,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351392101,
+    "CheckUI": 1,
+    "NameStrKey": "ST:120141",
+    "SectionDescStrKey": "ST:120815"
+  },
+  {
+    "ID": 7002,
+    "ContentId": 7,
+    "UIimage": 202,
+    "Next": 7003,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 701
+      }
+    ],
+    "DialogBeforeId": 70963201,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24101110,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351392102,
+    "NameStrKey": "ST:120803",
+    "SectionDescStrKey": "ST:120350"
+  },
+  {
+    "ID": 7003,
+    "ContentId": 7,
+    "UIimage": 203,
+    "Next": 7004,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 7001
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24101210,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351392103,
+    "NameStrKey": "ST:120804",
+    "SectionDescStrKey": "ST:120351"
+  },
+  {
+    "ID": 7004,
+    "ContentId": 7,
+    "UIimage": 204,
+    "Next": 7005,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24101310,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351392104,
+    "NameStrKey": "ST:120805",
+    "SectionDescStrKey": "ST:120352"
+  },
+  {
+    "ID": 7005,
+    "ContentId": 7,
+    "UIimage": 204,
+    "Next": 7006,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 702
+      }
+    ],
+    "DialogAfterId": 70963601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24101410,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351392105,
+    "NameStrKey": "ST:120857",
+    "SectionDescStrKey": "ST:119444"
+  },
+  {
+    "ID": 7006,
+    "ContentId": 7,
+    "UIimage": 203,
+    "Next": 7007,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 7002
+      }
+    ],
+    "DialogBeforeId": 70964101,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24102110,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351392106,
+    "NameStrKey": "ST:120807",
+    "SectionDescStrKey": "ST:120353"
+  },
+  {
+    "ID": 7007,
+    "ContentId": 7,
+    "UIimage": 206,
+    "Next": 7008,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogAfterId": 70964601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24102210,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351392107,
+    "NameStrKey": "ST:120808",
+    "SectionDescStrKey": "ST:120354"
+  },
+  {
+    "ID": 7008,
+    "ContentId": 7,
+    "UIimage": 205,
+    "Next": 7009,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 7003
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24102310,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351392108,
+    "NameStrKey": "ST:120809",
+    "SectionDescStrKey": "ST:120355"
+  },
+  {
+    "ID": 7009,
+    "ContentId": 7,
+    "UIimage": 207,
+    "Next": 7010,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 703
+      }
+    ],
+    "DialogAfterId": 70965601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24102410,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351392109,
+    "NameStrKey": "ST:120858",
+    "SectionDescStrKey": "ST:120356"
+  },
+  {
+    "ID": 7010,
+    "ContentId": 7,
+    "UIimage": 206,
+    "Next": 7011,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 7004
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103110,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351392110,
+    "NameStrKey": "ST:120810",
+    "SectionDescStrKey": "ST:120357"
+  },
+  {
+    "ID": 7011,
+    "ContentId": 7,
+    "UIimage": 203,
+    "Next": 7012,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103210,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351392111,
+    "NameStrKey": "ST:120811",
+    "SectionDescStrKey": "ST:120358"
+  },
+  {
+    "ID": 7012,
+    "ContentId": 7,
+    "UIimage": 202,
+    "Next": 7013,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 7005
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103310,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351392112,
+    "NameStrKey": "ST:120812",
+    "SectionDescStrKey": "ST:120359"
+  },
+  {
+    "ID": 7013,
+    "ContentId": 7,
+    "UIimage": 208,
+    "Next": 7014,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 704
+      }
+    ],
+    "DialogAfterId": 70966601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103410,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351392113,
+    "NameStrKey": "ST:120859",
+    "SectionDescStrKey": "ST:120360"
+  },
+  {
+    "ID": 7014,
+    "ContentId": 7,
+    "UIimage": 209,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 705
+      }
+    ],
+    "DialogAfterId": 70967601,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24103510,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351392114,
+    "NameStrKey": "ST:120860",
+    "SectionDescStrKey": "ST:120361"
+  },
+  {
+    "ID": 8001,
+    "ContentId": 8,
+    "UIimage": 301,
+    "Next": 8002,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 8001
+      }
+    ],
+    "DialogBeforeId": 926123101,
+    "FirstEnergySuccess": 10,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350132101,
+    "CheckUI": 1,
+    "NameStrKey": "ST:126043",
+    "SectionDescStrKey": "ST:126044"
+  },
+  {
+    "ID": 8002,
+    "ContentId": 8,
+    "UIimage": 302,
+    "Next": 8003,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 8001
+      }
+    ],
+    "DialogBeforeId": 946123101,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24250100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350132102,
+    "NameStrKey": "ST:125693",
+    "SectionDescStrKey": "ST:126045"
+  },
+  {
+    "ID": 8003,
+    "ContentId": 8,
+    "UIimage": 303,
+    "Next": 8004,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 8002
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24250200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350132103,
+    "NameStrKey": "ST:125694",
+    "SectionDescStrKey": "ST:126046"
+  },
+  {
+    "ID": 8004,
+    "ContentId": 8,
+    "UIimage": 304,
+    "Next": 8005,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24250300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350132104,
+    "NameStrKey": "ST:125695",
+    "SectionDescStrKey": "ST:127311"
+  },
+  {
+    "ID": 8005,
+    "ContentId": 8,
+    "UIimage": 305,
+    "Next": 8006,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 801
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24250400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350132105,
+    "NameStrKey": "ST:125696",
+    "SectionDescStrKey": "ST:126048"
+  },
+  {
+    "ID": 8006,
+    "ContentId": 8,
+    "UIimage": 306,
+    "Next": 8007,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 8003
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24250500,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350132106,
+    "NameStrKey": "ST:125697",
+    "SectionDescStrKey": "ST:126049"
+  },
+  {
+    "ID": 8007,
+    "ContentId": 8,
+    "UIimage": 307,
+    "Next": 8008,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 802
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24250600,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350132107,
+    "NameStrKey": "ST:125698",
+    "SectionDescStrKey": "ST:126050"
+  },
+  {
+    "ID": 8008,
+    "ContentId": 8,
+    "UIimage": 308,
+    "Next": 8009,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24250700,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350132108,
+    "NameStrKey": "ST:125699",
+    "SectionDescStrKey": "ST:126051"
+  },
+  {
+    "ID": 8009,
+    "ContentId": 8,
+    "UIimage": 309,
+    "Next": 8010,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 803
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24250800,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350132109,
+    "NameStrKey": "ST:125700",
+    "SectionDescStrKey": "ST:126052"
+  },
+  {
+    "ID": 8010,
+    "ContentId": 8,
+    "UIimage": 310,
+    "Next": 8011,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 8004
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24250900,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350132110,
+    "NameStrKey": "ST:125701",
+    "SectionDescStrKey": "ST:126053"
+  },
+  {
+    "ID": 8011,
+    "ContentId": 8,
+    "UIimage": 311,
+    "Next": 8012,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24251000,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350132111,
+    "NameStrKey": "ST:125702",
+    "SectionDescStrKey": "ST:126054"
+  },
+  {
+    "ID": 8012,
+    "ContentId": 8,
+    "UIimage": 312,
+    "Next": 8013,
+    "DaysSinceFuncOpen": 1,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 8005
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24251100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350132112,
+    "NameStrKey": "ST:125703",
+    "SectionDescStrKey": "ST:126055"
+  },
+  {
+    "ID": 8013,
+    "ContentId": 8,
+    "UIimage": 313,
+    "Next": 8014,
+    "DaysSinceFuncOpen": 2,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 804
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24251200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350132113,
+    "NameStrKey": "ST:125704",
+    "SectionDescStrKey": "ST:126056"
+  },
+  {
+    "ID": 8014,
+    "ContentId": 8,
+    "UIimage": 314,
+    "DaysSinceFuncOpen": 4,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 805
+      }
+    ],
+    "DialogAfterId": 956123101,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24251300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 350132114,
+    "NameStrKey": "ST:125705",
+    "SectionDescStrKey": "ST:126057"
+  },
+  {
+    "ID": 9001,
+    "ContentId": 9,
+    "UIimage": 201,
+    "Next": 9002,
+    "UnlockUnits": [
+      {}
+    ],
+    "DialogBeforeId": 550017601,
+    "FirstEnergySuccess": 10,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351462101,
+    "CheckUI": 1,
+    "NameStrKey": "ST:219608",
+    "SectionDescStrKey": "ST:219609"
+  },
+  {
+    "ID": 9002,
+    "ContentId": 9,
+    "UIimage": 202,
+    "Next": 9003,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 9001
+      }
+    ],
+    "DialogBeforeId": 550017701,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24580100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351462102,
+    "NameStrKey": "ST:218804",
+    "SectionDescStrKey": "ST:219610"
+  },
+  {
+    "ID": 9003,
+    "ContentId": 9,
+    "UIimage": 203,
+    "Next": 9004,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 9002
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24580200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351462103,
+    "NameStrKey": "ST:219263",
+    "SectionDescStrKey": "ST:219611"
+  },
+  {
+    "ID": 9004,
+    "ContentId": 9,
+    "UIimage": 205,
+    "Next": 9005,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 9003
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24580300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351462104,
+    "NameStrKey": "ST:219266",
+    "SectionDescStrKey": "ST:219612"
+  },
+  {
+    "ID": 9005,
+    "ContentId": 9,
+    "UIimage": 7,
+    "Next": 9006,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 901
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24580400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351462105,
+    "NameStrKey": "ST:219265",
+    "SectionDescStrKey": "ST:219613"
+  },
+  {
+    "ID": 9006,
+    "ContentId": 9,
+    "UIimage": 208,
+    "Next": 9007,
+    "DaysSinceFuncOpen": 3,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 902
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24580500,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351462106,
+    "NameStrKey": "ST:219517",
+    "SectionDescStrKey": "ST:219614"
+  },
+  {
+    "ID": 9007,
+    "ContentId": 9,
+    "UIimage": 3,
+    "Next": 9008,
+    "DaysSinceFuncOpen": 3,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 903
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24580600,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351462107,
+    "NameStrKey": "ST:219446",
+    "SectionDescStrKey": "ST:219615"
+  },
+  {
+    "ID": 9008,
+    "ContentId": 9,
+    "UIimage": 8,
+    "Next": 9009,
+    "DaysSinceFuncOpen": 3,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 9004
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24580700,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351462108,
+    "NameStrKey": "ST:19367",
+    "SectionDescStrKey": "ST:219616"
+  },
+  {
+    "ID": 9009,
+    "ContentId": 9,
+    "UIimage": 7,
+    "Next": 9010,
+    "DaysSinceFuncOpen": 3,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 904
+      }
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24580800,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351462109,
+    "NameStrKey": "ST:219264",
+    "SectionDescStrKey": "ST:219617"
+  },
+  {
+    "ID": 9010,
+    "ContentId": 9,
+    "UIimage": 9,
+    "Next": 9011,
+    "DaysSinceFuncOpen": 7,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24580900,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351462110,
+    "NameStrKey": "ST:219447",
+    "SectionDescStrKey": "ST:219618"
+  },
+  {
+    "ID": 9011,
+    "ContentId": 9,
+    "UIimage": 204,
+    "Next": 9012,
+    "DaysSinceFuncOpen": 7,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24581000,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351462111,
+    "NameStrKey": "ST:219448",
+    "SectionDescStrKey": "ST:219619"
+  },
+  {
+    "ID": 9012,
+    "ContentId": 9,
+    "UIimage": 206,
+    "Next": 9013,
+    "DaysSinceFuncOpen": 7,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Skill",
+        "Param1": 9005
+      }
+    ],
+    "DialogBeforeId": 550017801,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24581100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351462112,
+    "NameStrKey": "ST:219449",
+    "SectionDescStrKey": "ST:219620"
+  },
+  {
+    "ID": 9013,
+    "ContentId": 9,
+    "UIimage": 7,
+    "Next": 9014,
+    "DaysSinceFuncOpen": 7,
+    "UnlockUnits": [
+      {}
+    ],
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24581200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351462113,
+    "NameStrKey": "ST:218659",
+    "SectionDescStrKey": "ST:219621"
+  },
+  {
+    "ID": 9014,
+    "ContentId": 9,
+    "UIimage": 7,
+    "DaysSinceFuncOpen": 7,
+    "UnlockUnits": [
+      {
+        "UnitType": "MoziBossUnitType_Core",
+        "Param1": 905
+      }
+    ],
+    "DialogBeforeId": 550017901,
+    "DialogAfterId": 550017951,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 24581300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351462114,
+    "NameStrKey": "ST:219450",
+    "SectionDescStrKey": "ST:219622"
+  }
+]

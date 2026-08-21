@@ -1,0 +1,443 @@
+[
+  {
+    "ID": 1,
+    "Type": "BackFlowRecommendType_Power",
+    "Priority": 110,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 65
+      }
+    ],
+    "CharConditions": [
+      {
+        "CondType": "CharacterConditionType_BattlePower",
+        "P1": 3000
+      },
+      {
+        "CondType": "CharacterConditionType_NonArcaneSkillLevelMax"
+      },
+      {
+        "CondType": "CharacterConditionType_HaveArcaneSkill"
+      }
+    ],
+    "RecommonTag": [
+      "BackFlowRecommendTag_ArcaneSkillUpgrade",
+      "BackFlowRecommendTag_ArcaneSkillUnlock"
+    ],
+    "TitleStrKey": "ST:153422",
+    "SubTitleStrKey": "ST:93260",
+    "DescriptionStrKey": "ST:188915"
+  },
+  {
+    "ID": 2,
+    "Type": "BackFlowRecommendType_Power",
+    "Priority": 109,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 65
+      }
+    ],
+    "CharConditions": [
+      {
+        "CondType": "CharacterConditionType_InnerPower",
+        "P1": 1,
+        "P2": 10
+      },
+      {
+        "CondType": "CharacterConditionType_InnerForcePoint",
+        "P1": 6,
+        "P2": 1
+      }
+    ],
+    "RecommonTag": [
+      "BackFlowRecommendTag_InnerForceImprove"
+    ],
+    "TitleStrKey": "ST:153394",
+    "SubTitleStrKey": "ST:93260",
+    "DescriptionStrKey": "ST:188916"
+  },
+  {
+    "ID": 3,
+    "Type": "BackFlowRecommendType_Power",
+    "Priority": 108,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 65
+      }
+    ],
+    "CharConditions": [
+      {
+        "CondType": "CharacterConditionType_BigStarStepTotalLevel",
+        "P1": 30,
+        "P2": 1
+      },
+      {
+        "CondType": "CharacterConditionType_Level",
+        "P1": 55
+      }
+    ],
+    "RecommonTag": [
+      "BackFlowRecommendTag_StargazingStarActive",
+      "BackFlowRecommendTag_StargazingStarEnhance"
+    ],
+    "TitleStrKey": "ST:188905",
+    "SubTitleStrKey": "ST:93260",
+    "DescriptionStrKey": "ST:188917"
+  },
+  {
+    "ID": 4,
+    "Type": "BackFlowRecommendType_Power",
+    "Priority": 107,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      }
+    ],
+    "CharConditions": [
+      {
+        "CondType": "CharacterConditionType_Level",
+        "P1": 55
+      },
+      {
+        "CondType": "CharacterConditionType_DivineWeaponSkillLevel",
+        "P1": 5,
+        "P2": 1
+      }
+    ],
+    "RecommonTag": [
+      "BackFlowRecommendTag_WeaponDivineFirstLevelUp",
+      "BackFlowRecommendTag_WeaponDivineLevelUp"
+    ],
+    "TitleStrKey": "ST:188906",
+    "SubTitleStrKey": "ST:93260",
+    "DescriptionStrKey": "ST:188918"
+  },
+  {
+    "ID": 5,
+    "Type": "BackFlowRecommendType_Power",
+    "Priority": 106,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 15
+      }
+    ],
+    "CharConditions": [
+      {
+        "CondType": "CharacterConditionType_InnerForcePoint",
+        "P1": 6,
+        "P2": 1
+      }
+    ],
+    "RecommonTag": [
+      "BackFlowRecommendTag_CommonImprove"
+    ],
+    "TitleStrKey": "ST:188907",
+    "SubTitleStrKey": "ST:93260",
+    "DescriptionStrKey": "ST:188919"
+  },
+  {
+    "ID": 6,
+    "Type": "BackFlowRecommendType_Power",
+    "Priority": 105,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 15
+      }
+    ],
+    "CharConditions": [
+      {
+        "CondType": "CharacterConditionType_Level",
+        "P1": 15
+      },
+      {
+        "CondType": "CharacterConditionType_LevelMax",
+        "P1": 70
+      }
+    ],
+    "RecommonTag": [
+      "BackFlowRecommendTag_CommonImprove"
+    ],
+    "TitleStrKey": "ST:188908",
+    "SubTitleStrKey": "ST:93260",
+    "DescriptionStrKey": "ST:188920"
+  },
+  {
+    "ID": 7,
+    "Type": "BackFlowRecommendType_Power",
+    "Priority": 104,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 15
+      }
+    ],
+    "CharConditions": [
+      {
+        "CondType": "CharacterConditionType_Weapon",
+        "P1": 1
+      },
+      {
+        "CondType": "CharacterConditionType_LevelMax",
+        "P1": 60
+      }
+    ],
+    "RecommonTag": [
+      "BackFlowRecommendTag_CommonImprove"
+    ],
+    "TitleStrKey": "ST:188909",
+    "SubTitleStrKey": "ST:93260",
+    "DescriptionStrKey": "ST:188921"
+  },
+  {
+    "ID": 8,
+    "Type": "BackFlowRecommendType_Power",
+    "Priority": 103,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 15
+      }
+    ],
+    "CharConditions": [
+      {
+        "CondType": "CharacterConditionType_Level",
+        "P1": 15
+      },
+      {
+        "CondType": "CharacterConditionType_LevelMax",
+        "P1": 70
+      }
+    ],
+    "RecommonTag": [
+      "BackFlowRecommendTag_CommonImprove"
+    ],
+    "TitleStrKey": "ST:188910",
+    "SubTitleStrKey": "ST:93260",
+    "DescriptionStrKey": "ST:188922"
+  },
+  {
+    "ID": 9,
+    "Type": "BackFlowRecommendType_Resource",
+    "Priority": 100,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 15
+      }
+    ],
+    "DropItems": [
+      400000001,
+      400000003,
+      2,
+      403062003
+    ],
+    "TitleStrKey": "ST:92099",
+    "SubTitleStrKey": "ST:188911",
+    "DescriptionStrKey": "ST:188923"
+  },
+  {
+    "ID": 10,
+    "Type": "BackFlowRecommendType_Resource",
+    "Priority": 151,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 46
+      }
+    ],
+    "DropItems": [
+      400000001,
+      400000003,
+      2,
+      403062003
+    ],
+    "TitleStrKey": "ST:92099",
+    "SubTitleStrKey": "ST:188911",
+    "DescriptionStrKey": "ST:188924"
+  },
+  {
+    "ID": 11,
+    "Type": "BackFlowRecommendType_Resource",
+    "Priority": 200,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      }
+    ],
+    "DropItems": [
+      400000001,
+      400000003,
+      2,
+      403062003
+    ],
+    "TitleStrKey": "ST:92099",
+    "SubTitleStrKey": "ST:188911",
+    "DescriptionStrKey": "ST:188925"
+  },
+  {
+    "ID": 12,
+    "Type": "BackFlowRecommendType_Resource",
+    "Priority": 398,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 65
+      }
+    ],
+    "DropItems": [
+      400000001,
+      400000003,
+      2,
+      403062003
+    ],
+    "TitleStrKey": "ST:92099",
+    "SubTitleStrKey": "ST:188911",
+    "DescriptionStrKey": "ST:188926"
+  },
+  {
+    "ID": 13,
+    "Type": "BackFlowRecommendType_Resource",
+    "Priority": 399,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      }
+    ],
+    "DropItems": [
+      400000001,
+      2,
+      402084001,
+      402084002,
+      402084004
+    ],
+    "TitleStrKey": "ST:1718",
+    "SubTitleStrKey": "ST:188912",
+    "DescriptionStrKey": "ST:188927"
+  },
+  {
+    "ID": 14,
+    "Type": "BackFlowRecommendType_Resource",
+    "Priority": 298,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      }
+    ],
+    "DropItems": [
+      400000001,
+      400000003,
+      2,
+      403062003
+    ],
+    "TitleStrKey": "ST:1718",
+    "SubTitleStrKey": "ST:2484",
+    "DescriptionStrKey": "ST:188928"
+  },
+  {
+    "ID": 15,
+    "Type": "BackFlowRecommendType_Resource",
+    "Priority": 150,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 15
+      }
+    ],
+    "DropItems": [
+      400000001,
+      400000003,
+      2,
+      403062003
+    ],
+    "TitleStrKey": "ST:1718",
+    "SubTitleStrKey": "ST:2483",
+    "DescriptionStrKey": "ST:188928"
+  },
+  {
+    "ID": 16,
+    "Type": "BackFlowRecommendType_Resource",
+    "Priority": 299,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      }
+    ],
+    "DropItems": [
+      400000001,
+      402024902,
+      2
+    ],
+    "TitleStrKey": "ST:160227",
+    "SubTitleStrKey": "ST:187823",
+    "DescriptionStrKey": "ST:188929"
+  },
+  {
+    "ID": 17,
+    "Type": "BackFlowRecommendType_Resource",
+    "Priority": 297,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      }
+    ],
+    "DropItems": [
+      400000001,
+      400000003,
+      402022001,
+      2
+    ],
+    "TitleStrKey": "ST:63134",
+    "SubTitleStrKey": "ST:188913",
+    "DescriptionStrKey": "ST:188930"
+  },
+  {
+    "ID": 18,
+    "Type": "BackFlowRecommendType_Resource",
+    "Priority": 296,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      }
+    ],
+    "DropItems": [
+      400000001,
+      400000003,
+      402022001,
+      2
+    ],
+    "TitleStrKey": "ST:83580",
+    "SubTitleStrKey": "ST:188913",
+    "DescriptionStrKey": "ST:188930"
+  },
+  {
+    "ID": 19,
+    "Type": "BackFlowRecommendType_Resource",
+    "Priority": 152,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      }
+    ],
+    "DropItems": [
+      439999993,
+      403062003,
+      2
+    ],
+    "TitleStrKey": "ST:41024",
+    "SubTitleStrKey": "ST:188914",
+    "DescriptionStrKey": "ST:188931"
+  }
+]

@@ -1,0 +1,427 @@
+[
+  {
+    "ID": 31113703,
+    "Rarity": "Rarity_SR",
+    "Next": 31113704,
+    "NeedRecipeId": 404511373,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403072006,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403011201,
+        "Count": 25
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403011200,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 1,
+        "Count": 8500
+      }
+    ],
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpMaxWeapon_S",
+        "Value": 74
+      },
+      {
+        "Id": "PropertiesId_AttackWeapon_S",
+        "Value": 55
+      }
+    ],
+    "ActorBuffId1": 751111020,
+    "ActorBuffId2": 751111010,
+    "BattlePower": 450,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_lengyuehansao.png@Weapon_lengyuehansao",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_lengyuehansao.png@Weapon_lengyuehansao",
+    "NameStrKey": "ST:46580",
+    "DescStrKey": "ST:53719",
+    "BuffId1DesStrKey": "ST:100725",
+    "BuffId2DesStrKey": "ST:100729",
+    "StoryStrKey": "ST:86528"
+  },
+  {
+    "ID": 31113704,
+    "Rarity": "Rarity_SSR",
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpMaxWeapon_S",
+        "Value": 93
+      },
+      {
+        "Id": "PropertiesId_AttackWeapon_S",
+        "Value": 69
+      }
+    ],
+    "ActorBuffId1": 751111020,
+    "ActorBuffId2": 751111010,
+    "ActorBuffId3": 751100010,
+    "BattlePower": 700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_hanjinglinsao.png@Weapon_hanjinglinsao",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_hanjinglinsao.png@Weapon_hanjinglinsao",
+    "NameStrKey": "ST:77476",
+    "DescStrKey": "ST:77547",
+    "BuffId1DesStrKey": "ST:100725",
+    "BuffId2DesStrKey": "ST:100729",
+    "BuffId3DesStrKey": "ST:100731",
+    "StoryStrKey": "ST:86529"
+  },
+  {
+    "ID": 31113801,
+    "Rarity": "Rarity_N",
+    "Next": 31113802,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 10
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 10
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:97343"
+  },
+  {
+    "ID": 31113802,
+    "Rarity": "Rarity_R",
+    "Next": 31113803,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 30
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 30
+      }
+    ],
+    "BattlePower": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:114212"
+  },
+  {
+    "ID": 31113803,
+    "Rarity": "Rarity_SR",
+    "Next": 31113804,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 50
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 50
+      }
+    ],
+    "BattlePower": 450,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:97344"
+  },
+  {
+    "ID": 31113804,
+    "Rarity": "Rarity_SSR",
+    "Next": 31113805,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 70
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 70
+      }
+    ],
+    "BattlePower": 700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:114213"
+  },
+  {
+    "ID": 31113805,
+    "Rarity": "Rarity_SSR",
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 70
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 70
+      }
+    ],
+    "BattlePower": 700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:97345"
+  },
+  {
+    "ID": 31113901,
+    "Rarity": "Rarity_N",
+    "Next": 31113902,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 10
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 10
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:97347"
+  },
+  {
+    "ID": 31113902,
+    "Rarity": "Rarity_R",
+    "Next": 31113903,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 30
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 30
+      }
+    ],
+    "BattlePower": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:114214"
+  },
+  {
+    "ID": 31113903,
+    "Rarity": "Rarity_SR",
+    "Next": 31113904,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 50
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 50
+      }
+    ],
+    "BattlePower": 450,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:97348"
+  },
+  {
+    "ID": 31113904,
+    "Rarity": "Rarity_SSR",
+    "Next": 31113905,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 70
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 70
+      }
+    ],
+    "BattlePower": 700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:114215"
+  },
+  {
+    "ID": 31113905,
+    "Rarity": "Rarity_SSR",
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 70
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 70
+      }
+    ],
+    "BattlePower": 700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:97349"
+  },
+  {
+    "ID": 31114001,
+    "Rarity": "Rarity_N",
+    "Next": 31114002,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 10
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 10
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:97351"
+  },
+  {
+    "ID": 31114002,
+    "Rarity": "Rarity_R",
+    "Next": 31114003,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 30
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 30
+      }
+    ],
+    "BattlePower": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:114216"
+  },
+  {
+    "ID": 31114003,
+    "Rarity": "Rarity_SR",
+    "Next": 31114004,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 50
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 50
+      }
+    ],
+    "BattlePower": 450,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:97352"
+  },
+  {
+    "ID": 31114004,
+    "Rarity": "Rarity_SSR",
+    "Next": 31114005,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 70
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 70
+      }
+    ],
+    "BattlePower": 700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:114217"
+  },
+  {
+    "ID": 31114005,
+    "Rarity": "Rarity_SSR",
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 70
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 70
+      }
+    ],
+    "BattlePower": 700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:97353"
+  },
+  {
+    "ID": 31114101,
+    "Rarity": "Rarity_N",
+    "Next": 31114102,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 10
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 10
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:97355"
+  },
+  {
+    "ID": 31114102,
+    "Rarity": "Rarity_R",
+    "Next": 31114103,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 30
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 30
+      }
+    ],
+    "BattlePower": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:114218"
+  },
+  {
+    "ID": 31114103,
+    "Rarity": "Rarity_SR",
+    "Next": 31114104,
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpBaseMax",
+        "Value": 50
+      },
+      {
+        "Id": "PropertiesId_AttackBase",
+        "Value": 50
+      }
+    ],
+    "BattlePower": 450,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/DynamicUIAtlas/ItemIconAtlas/I10100904.png@I10100904",
+    "NameStrKey": "ST:97356"
+  }
+]

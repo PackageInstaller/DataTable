@@ -1,0 +1,4131 @@
+[
+  {
+    "ID": 1,
+    "Next": 2,
+    "StartEventId": 10101,
+    "EndEventiId": 10201,
+    "KeyEventIds": [
+      10201
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10201
+      }
+    ],
+    "Reward": 331310200,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_2",
+    "RegionRes": "Region1",
+    "NameStrKey": "ST:19819",
+    "ChapterIndexStrKey": "ST:26860",
+    "DescStrKey": "ST:14693",
+    "DetailDescStrKey": "ST:40950",
+    "EndDescStrKey": "ST:40969"
+  },
+  {
+    "ID": 2,
+    "Next": 3,
+    "StartEventId": 10202,
+    "EndEventiId": 10301,
+    "KeyEventIds": [
+      10301
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10201
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10301
+      }
+    ],
+    "Reward": 331310201,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region2",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Treasure.png@ChapterIcon_Treasure",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_UnexpectedPerson.png@ChapterIcon_UnexpectedPerson",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Wanhuajianpai.png@ChapterIcon_Wanhuajianpai",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_DiscShards.png@ChapterIcon_DiscShards",
+    "LookAtWayPoint": 101301,
+    "NameStrKey": "ST:19820",
+    "ChapterIndexStrKey": "ST:6221",
+    "DescStrKey": "ST:19827",
+    "DetailDescStrKey": "ST:40951",
+    "EndDescStrKey": "ST:102234",
+    "PeotryStrKey": "ST:53039"
+  },
+  {
+    "ID": 3,
+    "Next": 4,
+    "StartEventId": 10302,
+    "EndEventiId": 10401,
+    "KeyEventIds": [
+      10401
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10301
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10401
+      }
+    ],
+    "Reward": 331310202,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region3",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_ShiZhiJi.png@ChapterIcon_ShiZhiJi",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_ShiZhiYuan.png@ChapterIcon_ShiZhiYuan",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_XuanMingJiao.png@ChapterIcon_XuanMingJiao",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_HalfMask.png@ChapterIcon_HalfMask",
+    "LookAtWayPoint": 101401,
+    "NameStrKey": "ST:19821",
+    "ChapterIndexStrKey": "ST:6222",
+    "DescStrKey": "ST:26722",
+    "DetailDescStrKey": "ST:40952",
+    "EndDescStrKey": "ST:102235",
+    "PeotryStrKey": "ST:52740"
+  },
+  {
+    "ID": 4,
+    "Next": 5,
+    "StartEventId": 10402,
+    "EndEventiId": 10501,
+    "KeyEventIds": [
+      10501
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10401
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10501
+      }
+    ],
+    "Reward": 331310203,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region4",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_MountainBandit.png@ChapterIcon_MountainBandit",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Escort.png@ChapterIcon_Escort",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_LingmaiGuangyuan.png@ChapterIcon_LingmaiGuangyuan",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_DiscHangingOnTheTentacles.png@ChapterIcon_DiscHangingOnTheTentacles",
+    "LookAtWayPoint": 101501,
+    "NameStrKey": "ST:19822",
+    "ChapterIndexStrKey": "ST:6223",
+    "DescStrKey": "ST:29325",
+    "DetailDescStrKey": "ST:40953",
+    "EndDescStrKey": "ST:102236",
+    "PeotryStrKey": "ST:53040"
+  },
+  {
+    "ID": 5,
+    "Next": 6,
+    "StartEventId": 10502,
+    "EndEventiId": 10701,
+    "KeyEventIds": [
+      10601,
+      10701
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10501
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10701
+      }
+    ],
+    "Reward": 331310204,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region5",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_UnexpectedPerson.png@ChapterIcon_UnexpectedPerson",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Dagger.png@ChapterIcon_Dagger",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Juma.png@ChapterIcon_Juma",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_City.png@ChapterIcon_City",
+    "LookAtWayPoint": 101601,
+    "NameStrKey": "ST:19823",
+    "ChapterIndexStrKey": "ST:3763",
+    "DescStrKey": "ST:29326",
+    "DetailDescStrKey": "ST:155246",
+    "EndDescStrKey": "ST:155247",
+    "PeotryStrKey": "ST:52742"
+  },
+  {
+    "ID": 6,
+    "Next": 7,
+    "StartEventId": 10702,
+    "EndEventiId": 10801,
+    "KeyEventIds": [
+      10801
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10701
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10801
+      }
+    ],
+    "Reward": 331310205,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region6",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_XuanMingJiao.png@ChapterIcon_XuanMingJiao",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Flag.png@ChapterIcon_Flag",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_City.png@ChapterIcon_City",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_LittleDragon.png@ChapterIcon_LittleDragon",
+    "LookAtWayPoint": 101801,
+    "NameStrKey": "ST:19824",
+    "ChapterIndexStrKey": "ST:6224",
+    "DescStrKey": "ST:29327",
+    "DetailDescStrKey": "ST:40955",
+    "EndDescStrKey": "ST:102238",
+    "PeotryStrKey": "ST:53041"
+  },
+  {
+    "ID": 7,
+    "Next": 8,
+    "StartEventId": 10802,
+    "EndEventiId": 10901,
+    "KeyEventIds": [
+      10901
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10801
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10901
+      }
+    ],
+    "Reward": 331310206,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region7",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Treasure.png@ChapterIcon_Treasure",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_InverseSunInverseMoon.png@ChapterIcon_InverseSunInverseMoon",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_StoneBola.png@ChapterIcon_StoneBola",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_WangDing.png@ChapterIcon_WangDing",
+    "LookAtWayPoint": 101901,
+    "NameStrKey": "ST:19825",
+    "ChapterIndexStrKey": "ST:6225",
+    "DescStrKey": "ST:29328",
+    "DetailDescStrKey": "ST:40956",
+    "EndDescStrKey": "ST:102239",
+    "PeotryStrKey": "ST:52744"
+  },
+  {
+    "ID": 8,
+    "Next": 9,
+    "StartEventId": 10902,
+    "EndEventiId": 11201,
+    "KeyEventIds": [
+      11101,
+      11201
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10901
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11201
+      }
+    ],
+    "Reward": 331310207,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region8",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_MingHuang.png@ChapterIcon_MingHuang",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_UnexpectedPerson.png@ChapterIcon_UnexpectedPerson",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Phalanx.png@ChapterIcon_Phalanx",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_DiscShards.png@ChapterIcon_DiscShards",
+    "LookAtWayPoint": 102101,
+    "NameStrKey": "ST:19826",
+    "ChapterIndexStrKey": "ST:6226",
+    "DescStrKey": "ST:29329",
+    "DetailDescStrKey": "ST:40957",
+    "EndDescStrKey": "ST:102240",
+    "PeotryStrKey": "ST:53042"
+  },
+  {
+    "ID": 9,
+    "Next": 10,
+    "StartEventId": 11202,
+    "EndEventiId": 11401,
+    "KeyEventIds": [
+      11401
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11201
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11401
+      }
+    ],
+    "Reward": 331310208,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region9",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_GraveMound.png@ChapterIcon_GraveMound",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_UnexpectedPerson.png@ChapterIcon_UnexpectedPerson",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Envelope.png@ChapterIcon_Envelope",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Inn.png@ChapterIcon_Inn",
+    "LookAtWayPoint": 102401,
+    "NameStrKey": "ST:26720",
+    "ChapterIndexStrKey": "ST:6227",
+    "DescStrKey": "ST:29330",
+    "DetailDescStrKey": "ST:40958",
+    "EndDescStrKey": "ST:102241",
+    "PeotryStrKey": "ST:52746"
+  },
+  {
+    "ID": 10,
+    "Next": 11,
+    "StartEventId": 11402,
+    "EndEventiId": 11501,
+    "KeyEventIds": [
+      11501
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11401
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11501
+      }
+    ],
+    "Reward": 331310209,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region10",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_PoolOfThree.png@ChapterIcon_PoolOfThree",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Beads2.png@ChapterIcon_Beads2",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_City.png@ChapterIcon_City",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Eagle.png@ChapterIcon_Eagle",
+    "LookAtWayPoint": 102501,
+    "NameStrKey": "ST:26721",
+    "ChapterIndexStrKey": "ST:6228",
+    "DescStrKey": "ST:29672",
+    "DetailDescStrKey": "ST:40959",
+    "EndDescStrKey": "ST:102242",
+    "PeotryStrKey": "ST:52747"
+  },
+  {
+    "ID": 11,
+    "Next": 12,
+    "StartEventId": 11502,
+    "EndEventiId": 11801,
+    "KeyEventIds": [
+      11503,
+      11701,
+      11801
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11501
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11801
+      }
+    ],
+    "Reward": 331310210,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region11",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_JiuQuan.png@ChapterIcon_JiuQuan",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Warrent.png@ChapterIcon_Warrent",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Beads1.png@ChapterIcon_Beads1",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_DiscShards.png@ChapterIcon_DiscShards",
+    "LookAtWayPoint": 102503,
+    "NameStrKey": "ST:29322",
+    "ChapterIndexStrKey": "ST:93420",
+    "DescStrKey": "ST:19830",
+    "DetailDescStrKey": "ST:40960",
+    "EndDescStrKey": "ST:102243",
+    "PeotryStrKey": "ST:53043"
+  },
+  {
+    "ID": 12,
+    "Next": 13,
+    "StartEventId": 11802,
+    "EndEventiId": 12001,
+    "KeyEventIds": [
+      11901,
+      12001
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11801
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12001
+      }
+    ],
+    "Reward": 331310211,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region12",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Buddhism.png@ChapterIcon_Buddhism",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_DinnerPlate.png@ChapterIcon_DinnerPlate",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Dagger.png@ChapterIcon_Dagger",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_DiscShards_Fake.png@ChapterIcon_DiscShards_Fake",
+    "LookAtWayPoint": 102901,
+    "NameStrKey": "ST:29323",
+    "ChapterIndexStrKey": "ST:105654",
+    "DescStrKey": "ST:19831",
+    "DetailDescStrKey": "ST:40961",
+    "EndDescStrKey": "ST:102244",
+    "PeotryStrKey": "ST:53044"
+  },
+  {
+    "ID": 13,
+    "Next": 14,
+    "StartEventId": 12002,
+    "EndEventiId": 12101,
+    "KeyEventIds": [
+      12101
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12001
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12101
+      }
+    ],
+    "Reward": 331310212,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region13",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Inn.png@ChapterIcon_Inn",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_DinnerPlate.png@ChapterIcon_DinnerPlate",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_HalfMask.png@ChapterIcon_HalfMask",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Envelope.png@ChapterIcon_Envelope",
+    "LookAtWayPoint": 103101,
+    "NameStrKey": "ST:29324",
+    "ChapterIndexStrKey": "ST:83439",
+    "DescStrKey": "ST:19832",
+    "DetailDescStrKey": "ST:40962",
+    "EndDescStrKey": "ST:102245",
+    "PeotryStrKey": "ST:53045"
+  },
+  {
+    "ID": 14,
+    "Next": 15,
+    "StartEventId": 12102,
+    "EndEventiId": 12301,
+    "KeyEventIds": [
+      12102,
+      12201,
+      12301
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12101
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12301
+      }
+    ],
+    "Reward": 331310213,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region14",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_UnexpectedPerson.png@ChapterIcon_UnexpectedPerson",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Wanhuajianpai.png@ChapterIcon_Wanhuajianpai",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Cangchengling.png@ChapterIcon_Cangchengling",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_MingHuang.png@ChapterIcon_MingHuang",
+    "LookAtWayPoint": 103102,
+    "NameStrKey": "ST:33581",
+    "ChapterIndexStrKey": "ST:105655",
+    "DescStrKey": "ST:40944",
+    "DetailDescStrKey": "ST:40963",
+    "EndDescStrKey": "ST:102246",
+    "PeotryStrKey": "ST:53046"
+  },
+  {
+    "ID": 15,
+    "Next": 16,
+    "StartEventId": 12302,
+    "EndEventiId": 12701,
+    "KeyEventIds": [
+      12601,
+      12701
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12301
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12701
+      }
+    ],
+    "Reward": 331310214,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region15",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_XuanMingJiao.png@ChapterIcon_XuanMingJiao",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_City.png@ChapterIcon_City",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Mirror.png@ChapterIcon_Mirror",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Huangpu.png@ChapterIcon_Huangpu",
+    "LookAtWayPoint": 103401,
+    "NameStrKey": "ST:33656",
+    "ChapterIndexStrKey": "ST:105656",
+    "DescStrKey": "ST:40945",
+    "DetailDescStrKey": "ST:40964",
+    "EndDescStrKey": "ST:102247",
+    "PeotryStrKey": "ST:53047"
+  },
+  {
+    "ID": 16,
+    "Next": 17,
+    "StartEventId": 12702,
+    "EndEventiId": 13001,
+    "KeyEventIds": [
+      12802,
+      13001
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12701
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13001
+      }
+    ],
+    "Reward": 331310215,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region16",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Phalanx.png@ChapterIcon_Phalanx",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_UnexpectedPerson.png@ChapterIcon_UnexpectedPerson",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_XuanMingJiao.png@ChapterIcon_XuanMingJiao",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_DiscShards.png@ChapterIcon_DiscShards",
+    "LookAtWayPoint": 103801,
+    "NameStrKey": "ST:33657",
+    "ChapterIndexStrKey": "ST:83440",
+    "DescStrKey": "ST:40946",
+    "DetailDescStrKey": "ST:40965",
+    "EndDescStrKey": "ST:102248",
+    "PeotryStrKey": "ST:85858"
+  },
+  {
+    "ID": 17,
+    "Next": 18,
+    "StartEventId": 13002,
+    "EndEventiId": 13202,
+    "KeyEventIds": [
+      13101,
+      13201,
+      13202
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13001
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13202
+      }
+    ],
+    "Reward": 331310216,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region17",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_XuanMingJiao.png@ChapterIcon_XuanMingJiao",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Xinggong.png@ChapterIcon_Xinggong",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Dagger.png@ChapterIcon_Dagger",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Loulangucheng.png@ChapterIcon_Loulangucheng",
+    "LookAtWayPoint": 104101,
+    "NameStrKey": "ST:33658",
+    "ChapterIndexStrKey": "ST:99880",
+    "DescStrKey": "ST:40947",
+    "DetailDescStrKey": "ST:40966",
+    "EndDescStrKey": "ST:102249",
+    "PeotryStrKey": "ST:53049"
+  },
+  {
+    "ID": 18,
+    "Next": 19,
+    "StartEventId": 13203,
+    "EndEventiId": 13501,
+    "KeyEventIds": [
+      13204,
+      13301,
+      13404,
+      13501
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13202
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13501
+      }
+    ],
+    "Reward": 331310217,
+    "WorldMapID": 1,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region18",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_City.png@ChapterIcon_City",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_UnexpectedPerson.png@ChapterIcon_UnexpectedPerson",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Fusangtree.png@ChapterIcon_Fusangtree",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Fenglingtai.png@ChapterIcon_Fenglingtai",
+    "LookAtWayPoint": 104301,
+    "NameStrKey": "ST:33659",
+    "ChapterIndexStrKey": "ST:83441",
+    "DescStrKey": "ST:40948",
+    "DetailDescStrKey": "ST:40967",
+    "EndDescStrKey": "ST:102250",
+    "PeotryStrKey": "ST:53050"
+  },
+  {
+    "ID": 19,
+    "Next": 20,
+    "StartEventId": 13502,
+    "EndEventiId": 13701,
+    "KeyEventIds": [
+      13601,
+      13701
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13501
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13701
+      }
+    ],
+    "Reward": 331310218,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region19",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Zhaoze.png@ChapterIcon_Zhaoze",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Horn.png@ChapterIcon_Horn",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Mirror.png@ChapterIcon_Mirror",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_UnexpectedPerson.png@ChapterIcon_UnexpectedPerson",
+    "LookAtWayPoint": 104601,
+    "NameStrKey": "ST:37121",
+    "ChapterIndexStrKey": "ST:99881",
+    "DescStrKey": "ST:40949",
+    "DetailDescStrKey": "ST:40968",
+    "EndDescStrKey": "ST:102251",
+    "PeotryStrKey": "ST:53051"
+  },
+  {
+    "ID": 20,
+    "Next": 21,
+    "StartEventId": 13702,
+    "EndEventiId": 14001,
+    "KeyEventIds": [
+      13703,
+      13901,
+      14001
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13701
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14001
+      }
+    ],
+    "Reward": 331310219,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region20",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Tianshuyigui.PNG@ChapterIcon_Tianshuyigui",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Fuxituteng.PNG@ChapterIcon_Fuxituteng",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_GraveMound.png@ChapterIcon_GraveMound",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Gaobie.PNG@ChapterIcon_Gaobie",
+    "LookAtWayPoint": 104703,
+    "NameStrKey": "ST:63081",
+    "ChapterIndexStrKey": "ST:83442",
+    "DescStrKey": "ST:69735",
+    "DetailDescStrKey": "ST:69668",
+    "EndDescStrKey": "ST:87719",
+    "PeotryStrKey": "ST:69739"
+  },
+  {
+    "ID": 21,
+    "Next": 22,
+    "StartEventId": 14002,
+    "EndEventiId": 14201,
+    "KeyEventIds": [
+      14101,
+      14201
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14001
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14201
+      }
+    ],
+    "Reward": 331310220,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region21",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_xiangmosi.png@ChapterIcon_xiangmosi",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Shuanghun.png@ChapterIcon_Shuanghun",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Phalanx.png@ChapterIcon_Phalanx",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Mohuayuchiliang.PNG@ChapterIcon_Mohuayuchiliang",
+    "LookAtWayPoint": 105101,
+    "NameStrKey": "ST:63082",
+    "ChapterIndexStrKey": "ST:93261",
+    "DescStrKey": "ST:69736",
+    "DetailDescStrKey": "ST:69669",
+    "EndDescStrKey": "ST:102252",
+    "PeotryStrKey": "ST:69740"
+  },
+  {
+    "ID": 22,
+    "Next": 23,
+    "StartEventId": 14202,
+    "EndEventiId": 14301,
+    "KeyEventIds": [
+      14301
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14201
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14301
+      }
+    ],
+    "Reward": 331310221,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region22",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Dagger.png@ChapterIcon_Dagger",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Fuxituteng.png@ChapterIcon_Fuxituteng",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_MingHuang.PNG@ChapterIcon_MingHuang",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Tieshou.PNG@ChapterIcon_Tieshou",
+    "LookAtWayPoint": 105301,
+    "NameStrKey": "ST:63083",
+    "ChapterIndexStrKey": "ST:83443",
+    "DescStrKey": "ST:85330",
+    "DetailDescStrKey": "ST:69670",
+    "EndDescStrKey": "ST:102253",
+    "PeotryStrKey": "ST:69741"
+  },
+  {
+    "ID": 23,
+    "Next": 24,
+    "StartEventId": 14302,
+    "EndEventiId": 14401,
+    "KeyEventIds": [
+      14401
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14301
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14401
+      }
+    ],
+    "Reward": 331310222,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region23",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_UnexpectedPerson.PNG@ChapterIcon_UnexpectedPerson",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_XuanMingJiaoLogo.png@ChapterIcon_XuanMingJiaoLogo",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Dagger.png@ChapterIcon_Dagger",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Zuoyoujuelie.PNG@ChapterIcon_Zuoyoujuelie",
+    "LookAtWayPoint": 105401,
+    "NameStrKey": "ST:63084",
+    "ChapterIndexStrKey": "ST:99882",
+    "DescStrKey": "ST:85331",
+    "DetailDescStrKey": "ST:85332",
+    "EndDescStrKey": "ST:102254",
+    "PeotryStrKey": "ST:85336"
+  },
+  {
+    "ID": 24,
+    "Next": 25,
+    "StartEventId": 14402,
+    "EndEventiId": 14501,
+    "KeyEventIds": [
+      14501
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14401
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14501
+      }
+    ],
+    "Reward": 331310223,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region24",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Hunjianghuaren.PNG@ChapterIcon_Hunjianghuaren",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_BeaconTower.png@ChapterIcon_BeaconTower",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Horn.png@ChapterIcon_Horn",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Binglidejian.PNG@ChapterIcon_Binglidejian",
+    "LookAtWayPoint": 105501,
+    "NameStrKey": "ST:85329",
+    "ChapterIndexStrKey": "ST:83444",
+    "DescStrKey": "ST:69738",
+    "DetailDescStrKey": "ST:69671",
+    "EndDescStrKey": "ST:102255",
+    "PeotryStrKey": "ST:67479"
+  },
+  {
+    "ID": 25,
+    "StartEventId": 14502,
+    "EndEventiId": 14508,
+    "KeyEventIds": [
+      14508
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14501
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14508
+      }
+    ],
+    "Reward": 331310224,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region25",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Diting.PNG@ChapterIcon_Diting",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Phalanx.png@ChapterIcon_Phalanx",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Dongkumidi.png@ChapterIcon_Dongkumidi",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Mohuayuchiliang.PNG@ChapterIcon_Mohuayuchiliang",
+    "LookAtWayPoint": 105508,
+    "NameStrKey": "ST:95313",
+    "ChapterIndexStrKey": "ST:92908",
+    "DescStrKey": "ST:99147",
+    "DetailDescStrKey": "ST:95317",
+    "EndDescStrKey": "ST:95320",
+    "PeotryStrKey": "ST:95323"
+  },
+  {
+    "ID": 26,
+    "StartEventId": 14602,
+    "EndEventiId": 14701,
+    "KeyEventIds": [
+      14701
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14601
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14701
+      }
+    ],
+    "Reward": 331310225,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region26",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Youjimubei.PNG@ChapterIcon_Youjimubei",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Mijuan.png@ChapterIcon_Mijuan",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_XuanYu.png@ChapterIcon_XuanYu",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Nvwatuteng.PNG@ChapterIcon_Nvwatuteng",
+    "LookAtWayPoint": 105701,
+    "NameStrKey": "ST:95313",
+    "ChapterIndexStrKey": "ST:92908",
+    "DescStrKey": "ST:99148",
+    "DetailDescStrKey": "ST:95318",
+    "EndDescStrKey": "ST:95321",
+    "PeotryStrKey": "ST:95324"
+  },
+  {
+    "ID": 27,
+    "Next": 28,
+    "StartEventId": 14702,
+    "EndEventiId": 14801,
+    "KeyEventIds": [
+      14801
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14600
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14801
+      }
+    ],
+    "Reward": 331310226,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region27",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Dagger.PNG@ChapterIcon_Dagger",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Bailu.png@ChapterIcon_Bailu",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Horn.png@ChapterIcon_Horn",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Tieshou.PNG@ChapterIcon_Tieshou",
+    "LookAtWayPoint": 105801,
+    "NameStrKey": "ST:95313",
+    "ChapterIndexStrKey": "ST:92908",
+    "DescStrKey": "ST:99149",
+    "DetailDescStrKey": "ST:95319",
+    "EndDescStrKey": "ST:95322",
+    "PeotryStrKey": "ST:98954"
+  },
+  {
+    "ID": 28,
+    "StartEventId": 14802,
+    "EndEventiId": 14901,
+    "KeyEventIds": [
+      14901
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14801
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14901
+      }
+    ],
+    "Reward": 331310227,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region28",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Chilian.PNG@ChapterIcon_Chilian",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Yidixue.png@ChapterIcon_Yidixue",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Binglidejian.png@ChapterIcon_Binglidejian",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Fuxituteng.PNG@ChapterIcon_Fuxituteng",
+    "LookAtWayPoint": 105901,
+    "NameStrKey": "ST:95313",
+    "ChapterIndexStrKey": "ST:92908",
+    "DescStrKey": "ST:99150",
+    "DetailDescStrKey": "ST:96033",
+    "EndDescStrKey": "ST:96034",
+    "PeotryStrKey": "ST:98955"
+  },
+  {
+    "ID": 29,
+    "Next": 30,
+    "StartEventId": 14902,
+    "EndEventiId": 14903,
+    "KeyEventIds": [
+      14903
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14901
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14701
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9033005
+      }
+    ],
+    "Reward": 331310228,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region29",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Youcheng.PNG@ChapterIcon_Youcheng",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Tieshou.png@ChapterIcon_Tieshou",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_WangDing.png@ChapterIcon_WangDing",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Mohuayuchiliang.PNG@ChapterIcon_Mohuayuchiliang",
+    "LookAtWayPoint": 105903,
+    "NameStrKey": "ST:94157",
+    "ChapterIndexStrKey": "ST:99883",
+    "DescStrKey": "ST:102212",
+    "DetailDescStrKey": "ST:102233",
+    "EndDescStrKey": "ST:102256",
+    "PeotryStrKey": "ST:112839"
+  },
+  {
+    "ID": 30,
+    "Next": 31,
+    "StartEventId": 16001,
+    "EndEventiId": 16101,
+    "KeyEventIds": [
+      16101
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9033005
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16101
+      }
+    ],
+    "Reward": 331310229,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region30",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Dongkumidi.PNG@ChapterIcon_Dongkumidi",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Buddhism.PNG@ChapterIcon_Buddhism",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_BeaconTower.PNG@ChapterIcon_BeaconTower",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Bailu.PNG@ChapterIcon_Bailu",
+    "LookAtWayPoint": 106101,
+    "NameStrKey": "ST:94158",
+    "ChapterIndexStrKey": "ST:83445",
+    "DescStrKey": "ST:112111",
+    "DetailDescStrKey": "ST:112832",
+    "EndDescStrKey": "ST:112835",
+    "PeotryStrKey": "ST:112840"
+  },
+  {
+    "ID": 31,
+    "StartEventId": 16102,
+    "EndEventiId": 16105,
+    "KeyEventIds": [
+      16105
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16101
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16105
+      }
+    ],
+    "Reward": 331310230,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region31",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Dagger.PNG@ChapterIcon_Dagger",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_XuanMingJiao.PNG@ChapterIcon_XuanMingJiao",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Youcheng.PNG@ChapterIcon_Youcheng",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Youjimubei.PNG@ChapterIcon_Youjimubei",
+    "LookAtWayPoint": 106105,
+    "NameStrKey": "ST:112110",
+    "ChapterIndexStrKey": "ST:92908",
+    "DescStrKey": "ST:112112",
+    "DetailDescStrKey": "ST:112833",
+    "EndDescStrKey": "ST:112836",
+    "PeotryStrKey": "ST:112841"
+  },
+  {
+    "ID": 32,
+    "Next": 33,
+    "StartEventId": 16202,
+    "EndEventiId": 16301,
+    "KeyEventIds": [
+      16301
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16200
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16301
+      }
+    ],
+    "Reward": 331310231,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region32",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Inn.PNG@ChapterIcon_Inn",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Flag.PNG@ChapterIcon_Flag",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_DinnerPlate.PNG@ChapterIcon_DinnerPlate",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_UnexpectedPerson.PNG@ChapterIcon_UnexpectedPerson",
+    "LookAtWayPoint": 106301,
+    "NameStrKey": "ST:112110",
+    "ChapterIndexStrKey": "ST:92908",
+    "DescStrKey": "ST:112113",
+    "DetailDescStrKey": "ST:113011",
+    "EndDescStrKey": "ST:113013",
+    "PeotryStrKey": "ST:112842"
+  },
+  {
+    "ID": 33,
+    "StartEventId": 16302,
+    "EndEventiId": 16401,
+    "KeyEventIds": [
+      16401
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16301
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16401
+      }
+    ],
+    "Reward": 331310232,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region33",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Yidixue.PNG@ChapterIcon_Yidixue",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Dagger.PNG@ChapterIcon_Dagger",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Mijuan.PNG@ChapterIcon_Mijuan",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Beads1.PNG@ChapterIcon_Beads1",
+    "LookAtWayPoint": 106401,
+    "NameStrKey": "ST:112110",
+    "ChapterIndexStrKey": "ST:92908",
+    "DescStrKey": "ST:112114",
+    "DetailDescStrKey": "ST:112834",
+    "EndDescStrKey": "ST:112837",
+    "PeotryStrKey": "ST:144870"
+  },
+  {
+    "ID": 34,
+    "Next": 35,
+    "StartEventId": 16402,
+    "EndEventiId": 16501,
+    "KeyEventIds": [
+      16501
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16201
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16501
+      }
+    ],
+    "Reward": 331310233,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region34",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Buddhism.PNG@ChapterIcon_Buddhism",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_UnexpectedPerson.PNG@ChapterIcon_UnexpectedPerson",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Envelope.PNG@ChapterIcon_Envelope",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Diting.PNG@ChapterIcon_Diting",
+    "LookAtWayPoint": 106501,
+    "NameStrKey": "ST:112110",
+    "ChapterIndexStrKey": "ST:92908",
+    "DescStrKey": "ST:112115",
+    "DetailDescStrKey": "ST:113012",
+    "EndDescStrKey": "ST:113014",
+    "PeotryStrKey": "ST:113016"
+  },
+  {
+    "ID": 35,
+    "StartEventId": 16502,
+    "EndEventiId": 16601,
+    "KeyEventIds": [
+      16601
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16501
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16601
+      }
+    ],
+    "Reward": 331310234,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region35",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_BeaconTower.PNG@ChapterIcon_BeaconTower",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Eagle.PNG@ChapterIcon_Eagle",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Bailu.PNG@ChapterIcon_Bailu",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Xinggong.PNG@ChapterIcon_Xinggong",
+    "LookAtWayPoint": 106601,
+    "NameStrKey": "ST:112110",
+    "ChapterIndexStrKey": "ST:92908",
+    "DescStrKey": "ST:112116",
+    "DetailDescStrKey": "ST:111315",
+    "EndDescStrKey": "ST:113015",
+    "PeotryStrKey": "ST:113017"
+  },
+  {
+    "ID": 36,
+    "Next": 37,
+    "StartEventId": 16602,
+    "EndEventiId": 16701,
+    "KeyEventIds": [
+      16701
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16601
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16401
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16701
+      }
+    ],
+    "Reward": 331310235,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region36",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Buddhism.PNG@ChapterIcon_Buddhism",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_XuanMingJiao.PNG@ChapterIcon_XuanMingJiao",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Dagger.PNG@ChapterIcon_Dagger",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Mohuayuchiliang.PNG@ChapterIcon_Mohuayuchiliang",
+    "LookAtWayPoint": 106701,
+    "NameStrKey": "ST:129840",
+    "ChapterIndexStrKey": "ST:99884",
+    "DescStrKey": "ST:130403",
+    "DetailDescStrKey": "ST:131558",
+    "EndDescStrKey": "ST:131559",
+    "PeotryStrKey": "ST:131563"
+  },
+  {
+    "ID": 37,
+    "Next": 38,
+    "StartEventId": 16702,
+    "EndEventiId": 16801,
+    "KeyEventIds": [
+      16801
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16701
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16801
+      }
+    ],
+    "Reward": 331310236,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region37",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Phalanx.PNG@ChapterIcon_Phalanx",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Fusangtree.PNG@ChapterIcon_Fusangtree",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_JiuRuTa.PNG@ChapterIcon_JiuRuTa",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Guiyi.PNG@ChapterIcon_Guiyi",
+    "LookAtWayPoint": 106801,
+    "NameStrKey": "ST:129841",
+    "ChapterIndexStrKey": "ST:83446",
+    "DescStrKey": "ST:130404",
+    "DetailDescStrKey": "ST:132546",
+    "EndDescStrKey": "ST:131560",
+    "PeotryStrKey": "ST:131564"
+  },
+  {
+    "ID": 38,
+    "Next": 39,
+    "StartEventId": 16802,
+    "EndEventiId": 16901,
+    "KeyEventIds": [
+      16901
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16801
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16901
+      }
+    ],
+    "Reward": 331310237,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region38",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_InverseSunInverseMoon.PNG@ChapterIcon_InverseSunInverseMoon",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Wanhuajianpai.PNG@ChapterIcon_Wanhuajianpai",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Shuangshenghua.PNG@ChapterIcon_Shuangshenghua",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Guiyi.PNG@ChapterIcon_Guiyi",
+    "LookAtWayPoint": 106901,
+    "NameStrKey": "ST:129842",
+    "ChapterIndexStrKey": "ST:99885",
+    "DescStrKey": "ST:129846",
+    "DetailDescStrKey": "ST:130024",
+    "EndDescStrKey": "ST:131561",
+    "PeotryStrKey": "ST:131565"
+  },
+  {
+    "ID": 39,
+    "Next": 40,
+    "StartEventId": 16902,
+    "EndEventiId": 17001,
+    "KeyEventIds": [
+      17001
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 16901
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17001
+      }
+    ],
+    "Reward": 331310238,
+    "WorldMapID": 2,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region39",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Diting.PNG@ChapterIcon_Diting",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Zhaoze.PNG@ChapterIcon_Zhaoze",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Daoba.PNG@ChapterIcon_Daoba",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Youcheng.PNG@ChapterIcon_Youcheng",
+    "LookAtWayPoint": 107001,
+    "NameStrKey": "ST:129843",
+    "ChapterIndexStrKey": "ST:83447",
+    "DescStrKey": "ST:130405",
+    "DetailDescStrKey": "ST:132547",
+    "EndDescStrKey": "ST:131562",
+    "PeotryStrKey": "ST:131566"
+  },
+  {
+    "ID": 40,
+    "Next": 41,
+    "StartEventId": 17002,
+    "EndEventiId": 17101,
+    "KeyEventIds": [
+      17002,
+      17101
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17001
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17101
+      }
+    ],
+    "Reward": 331310239,
+    "WorldMapID": 20,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region40",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Beacon.PNG@ChapterIcon_Beacon",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Dagger.PNG@ChapterIcon_Dagger",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Binglidejian.PNG@ChapterIcon_Binglidejian",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_BeaconTower.PNG@ChapterIcon_BeaconTower",
+    "LookAtWayPoint": 107101,
+    "NameStrKey": "ST:141787",
+    "ChapterIndexStrKey": "ST:92244",
+    "DescStrKey": "ST:141790",
+    "DetailDescStrKey": "ST:141793",
+    "EndDescStrKey": "ST:141795",
+    "PeotryStrKey": "ST:141797"
+  },
+  {
+    "ID": 41,
+    "Next": 42,
+    "StartEventId": 17102,
+    "EndEventiId": 17201,
+    "KeyEventIds": [
+      17201
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17101
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17201
+      }
+    ],
+    "Reward": 331310240,
+    "WorldMapID": 20,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region41",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Diting.PNG@ChapterIcon_Diting",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Eagle.PNG@ChapterIcon_Eagle",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_MountainBandit.PNG@ChapterIcon_MountainBandit",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Xinggong.PNG@ChapterIcon_Xinggong",
+    "LookAtWayPoint": 107201,
+    "NameStrKey": "ST:141788",
+    "ChapterIndexStrKey": "ST:83448",
+    "DescStrKey": "ST:141791",
+    "DetailDescStrKey": "ST:141794",
+    "EndDescStrKey": "ST:141796",
+    "PeotryStrKey": "ST:141798"
+  },
+  {
+    "ID": 42,
+    "Next": 43,
+    "StartEventId": 17202,
+    "EndEventiId": 17301,
+    "KeyEventIds": [
+      17301
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17201
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17301
+      }
+    ],
+    "Reward": 331310241,
+    "WorldMapID": 20,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region42",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_ShiZhiYuan.PNG@ChapterIcon_ShiZhiYuan",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_DinnerPlate.PNG@ChapterIcon_DinnerPlate",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Zhaoze.PNG@ChapterIcon_Zhaoze",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_XuanMingJiao.PNG@ChapterIcon_XuanMingJiao",
+    "LookAtWayPoint": 107301,
+    "NameStrKey": "ST:141789",
+    "ChapterIndexStrKey": "ST:99886",
+    "DescStrKey": "ST:141792",
+    "DetailDescStrKey": "ST:155234",
+    "EndDescStrKey": "ST:155235",
+    "PeotryStrKey": "ST:141799"
+  },
+  {
+    "ID": 43,
+    "Next": 44,
+    "StartEventId": 17302,
+    "EndEventiId": 17401,
+    "KeyEventIds": [
+      17401
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17301
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17401
+      }
+    ],
+    "Reward": 331310242,
+    "WorldMapID": 20,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region43",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Diting.PNG@ChapterIcon_Diting",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_liaoguo.PNG@ChapterIcon_liaoguo",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Flag.PNG@ChapterIcon_Flag",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_City.PNG@ChapterIcon_City",
+    "LookAtWayPoint": 107401,
+    "NameStrKey": "ST:154693",
+    "ChapterIndexStrKey": "ST:83449",
+    "DescStrKey": "ST:154696",
+    "DetailDescStrKey": "ST:154699",
+    "EndDescStrKey": "ST:154702",
+    "PeotryStrKey": "ST:154705"
+  },
+  {
+    "ID": 44,
+    "Next": 45,
+    "StartEventId": 17402,
+    "EndEventiId": 17501,
+    "KeyEventIds": [
+      17501
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17401
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17501
+      }
+    ],
+    "Reward": 331310243,
+    "WorldMapID": 20,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region44",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_UnexpectedPerson.PNG@ChapterIcon_UnexpectedPerson",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Escort.PNG@ChapterIcon_Escort",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Shuangshenghua.PNG@ChapterIcon_Shuangshenghua",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_zhihuizhidi.PNG@ChapterIcon_zhihuizhidi",
+    "LookAtWayPoint": 107501,
+    "NameStrKey": "ST:154694",
+    "ChapterIndexStrKey": "ST:99887",
+    "DescStrKey": "ST:154697",
+    "DetailDescStrKey": "ST:154700",
+    "EndDescStrKey": "ST:154703",
+    "PeotryStrKey": "ST:154706"
+  },
+  {
+    "ID": 45,
+    "Next": 46,
+    "StartEventId": 17502,
+    "EndEventiId": 17601,
+    "KeyEventIds": [
+      17601
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17501
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17601
+      }
+    ],
+    "Reward": 331310244,
+    "WorldMapID": 20,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region45",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Yidixue.PNG@ChapterIcon_Yidixue",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Eagle.PNG@ChapterIcon_Eagle",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_DiscHangingOnTheTentacles.PNG@ChapterIcon_DiscHangingOnTheTentacles",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Mijuan.PNG@ChapterIcon_Mijuan",
+    "LookAtWayPoint": 107601,
+    "NameStrKey": "ST:154695",
+    "ChapterIndexStrKey": "ST:83450",
+    "DescStrKey": "ST:154698",
+    "DetailDescStrKey": "ST:154701",
+    "EndDescStrKey": "ST:154704",
+    "PeotryStrKey": "ST:154707"
+  },
+  {
+    "ID": 46,
+    "Next": 47,
+    "StartEventId": 17602,
+    "EndEventiId": 17701,
+    "KeyEventIds": [
+      17701
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17601
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17701
+      }
+    ],
+    "Reward": 331310245,
+    "WorldMapID": 20,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region46",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Beacon.PNG@ChapterIcon_Beacon",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Cangchengling.PNG@ChapterIcon_Cangchengling",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Eagle.PNG@ChapterIcon_Eagle",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Fenglingtai.PNG@ChapterIcon_Fenglingtai",
+    "LookAtWayPoint": 107701,
+    "NameStrKey": "ST:181850",
+    "ChapterIndexStrKey": "ST:83451",
+    "DescStrKey": "ST:181853",
+    "DetailDescStrKey": "ST:181855",
+    "EndDescStrKey": "ST:181858",
+    "PeotryStrKey": "ST:183103"
+  },
+  {
+    "ID": 47,
+    "Next": 48,
+    "StartEventId": 17702,
+    "EndEventiId": 17801,
+    "KeyEventIds": [
+      17801
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17701
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17801
+      }
+    ],
+    "Reward": 331310246,
+    "WorldMapID": 20,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region47",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Escort.PNG@ChapterIcon_Escort",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_City.PNG@ChapterIcon_City",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Youjimubei.PNG@ChapterIcon_Youjimubei",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Mohuayuchiliang.PNG@ChapterIcon_Mohuayuchiliang",
+    "LookAtWayPoint": 107801,
+    "NameStrKey": "ST:181851",
+    "ChapterIndexStrKey": "ST:83452",
+    "DescStrKey": "ST:181854",
+    "DetailDescStrKey": "ST:181856",
+    "EndDescStrKey": "ST:181859",
+    "PeotryStrKey": "ST:181862"
+  },
+  {
+    "ID": 48,
+    "Next": 49,
+    "StartEventId": 17802,
+    "EndEventiId": 17901,
+    "KeyEventIds": [
+      17901
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17801
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17901
+      }
+    ],
+    "Reward": 331310247,
+    "WorldMapID": 20,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region48",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Horn.PNG@ChapterIcon_Horn",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Shuangshenghua.PNG@ChapterIcon_Shuangshenghua",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Fusangtree.PNG@ChapterIcon_Fusangtree",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_UnexpectedPerson.PNG@ChapterIcon_UnexpectedPerson",
+    "LookAtWayPoint": 107901,
+    "NameStrKey": "ST:181852",
+    "ChapterIndexStrKey": "ST:83453",
+    "DescStrKey": "ST:126043",
+    "DetailDescStrKey": "ST:181857",
+    "EndDescStrKey": "ST:181860",
+    "PeotryStrKey": "ST:182590"
+  },
+  {
+    "ID": 49,
+    "Next": 50,
+    "StartEventId": 17902,
+    "EndEventiId": 18001,
+    "KeyEventIds": [
+      18001
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17901
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18001
+      }
+    ],
+    "Reward": 331310248,
+    "WorldMapID": 20,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region49",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Escort.PNG@ChapterIcon_Escort",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Bailu.PNG@ChapterIcon_Bailu",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Fenglingtai.PNG@ChapterIcon_Fenglingtai",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_LingmaiGuangyuan.PNG@ChapterIcon_LingmaiGuangyuan",
+    "LookAtWayPoint": 108001,
+    "NameStrKey": "ST:196863",
+    "ChapterIndexStrKey": "ST:83454",
+    "DescStrKey": "ST:196866",
+    "DetailDescStrKey": "ST:196867",
+    "EndDescStrKey": "ST:196870",
+    "PeotryStrKey": "ST:196873"
+  },
+  {
+    "ID": 50,
+    "Next": 51,
+    "StartEventId": 18002,
+    "EndEventiId": 18101,
+    "KeyEventIds": [
+      18101
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18001
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18101
+      }
+    ],
+    "Reward": 331310249,
+    "WorldMapID": 21,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region50",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Dagger.PNG@ChapterIcon_Dagger",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Mirror.PNG@ChapterIcon_Mirror",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Mohuayuchiliang.PNG@ChapterIcon_Mohuayuchiliang",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Fusangtree.PNG@ChapterIcon_Fusangtree",
+    "LookAtWayPoint": 108101,
+    "NameStrKey": "ST:196864",
+    "ChapterIndexStrKey": "ST:83455",
+    "DescStrKey": "ST:196547",
+    "DetailDescStrKey": "ST:196868",
+    "EndDescStrKey": "ST:196871",
+    "PeotryStrKey": "ST:197357"
+  },
+  {
+    "ID": 51,
+    "StartEventId": 18102,
+    "EndEventiId": 18201,
+    "KeyEventIds": [
+      18201
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18101
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18201
+      }
+    ],
+    "Reward": 331310250,
+    "WorldMapID": 21,
+    "BackgroundMusic": "BGM_WorldMap_1",
+    "RegionRes": "Region51",
+    "ChapterIcon1": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Phalanx.PNG@ChapterIcon_Phalanx",
+    "ChapterIcon2": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_LittleDragon.PNG@ChapterIcon_LittleDragon",
+    "ChapterIcon3": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Jiuruta.PNG@ChapterIcon_Jiuruta",
+    "ChapterIcon4": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/ChapterIcon_ABS/ChapterIcon_Dial.PNG@ChapterIcon_Dial",
+    "LookAtWayPoint": 108201,
+    "NameStrKey": "ST:196865",
+    "ChapterIndexStrKey": "ST:83456",
+    "DescStrKey": "ST:195916",
+    "DetailDescStrKey": "ST:196869",
+    "EndDescStrKey": "ST:196872",
+    "PeotryStrKey": "ST:197358"
+  },
+  {
+    "ID": 5010,
+    "WorldMapID": 15,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5010"
+  },
+  {
+    "ID": 5020,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5001201
+      }
+    ],
+    "WorldMapID": 15,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5020",
+    "LookAtWayPoint": 5001303
+  },
+  {
+    "ID": 5030,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_BaoQingTianCaseCompleted",
+        "P1": 1
+      }
+    ],
+    "WorldMapID": 15,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5030",
+    "LookAtWayPoint": 5001501
+  },
+  {
+    "ID": 5041,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5002211
+      }
+    ],
+    "WorldMapID": 15,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5041",
+    "LookAtWayPoint": 5002301
+  },
+  {
+    "ID": 5042,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5002501
+      }
+    ],
+    "WorldMapID": 15,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5042",
+    "LookAtWayPoint": 5002601
+  },
+  {
+    "ID": 5050,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5002601
+      }
+    ],
+    "WorldMapID": 15,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5050",
+    "LookAtWayPoint": 5002701
+  },
+  {
+    "ID": 5060,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_BaoQingTianCaseCompleted",
+        "P1": 3
+      }
+    ],
+    "WorldMapID": 15,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5060",
+    "LookAtWayPoint": 5003101
+  },
+  {
+    "ID": 5110,
+    "WorldMapID": 17,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5110"
+  },
+  {
+    "ID": 5120,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5101201
+      }
+    ],
+    "WorldMapID": 17,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5120",
+    "LookAtWayPoint": 5101303
+  },
+  {
+    "ID": 5130,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_BaoQingTianCaseCompleted",
+        "P1": 101
+      }
+    ],
+    "WorldMapID": 17,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5130",
+    "LookAtWayPoint": 5101501
+  },
+  {
+    "ID": 5141,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5102211
+      }
+    ],
+    "WorldMapID": 17,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5141",
+    "LookAtWayPoint": 5102301
+  },
+  {
+    "ID": 5142,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5102501
+      }
+    ],
+    "WorldMapID": 17,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5142",
+    "LookAtWayPoint": 5102601
+  },
+  {
+    "ID": 5150,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5102601
+      }
+    ],
+    "WorldMapID": 17,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5150",
+    "LookAtWayPoint": 5102701
+  },
+  {
+    "ID": 5160,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_BaoQingTianCaseCompleted",
+        "P1": 103
+      }
+    ],
+    "WorldMapID": 17,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5160",
+    "LookAtWayPoint": 5103101
+  },
+  {
+    "ID": 5210,
+    "WorldMapID": 18,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5210"
+  },
+  {
+    "ID": 5220,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5201201
+      }
+    ],
+    "WorldMapID": 18,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5220",
+    "LookAtWayPoint": 5201303
+  },
+  {
+    "ID": 5230,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_BaoQingTianCaseCompleted",
+        "P1": 201
+      }
+    ],
+    "WorldMapID": 18,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5230",
+    "LookAtWayPoint": 5201501
+  },
+  {
+    "ID": 5241,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5202211
+      }
+    ],
+    "WorldMapID": 18,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5241",
+    "LookAtWayPoint": 5202301
+  },
+  {
+    "ID": 5242,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5202501
+      }
+    ],
+    "WorldMapID": 18,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5242",
+    "LookAtWayPoint": 5202601
+  },
+  {
+    "ID": 5250,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5202601
+      }
+    ],
+    "WorldMapID": 18,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5250",
+    "LookAtWayPoint": 5202701
+  },
+  {
+    "ID": 5260,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_BaoQingTianCaseCompleted",
+        "P1": 203
+      }
+    ],
+    "WorldMapID": 18,
+    "BackgroundMusic": "BGM_Theme_QianNianZhiYou",
+    "RegionRes": "Region5260",
+    "LookAtWayPoint": 5203101
+  },
+  {
+    "ID": 6100,
+    "StartEventId": 616100010,
+    "EndEventiId": 616400010,
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616400010
+      }
+    ],
+    "WorldMapID": 12,
+    "BackgroundMusic": "BGM_XianJianQiXiaZhuan_LinYueRu",
+    "RegionRes": "Region6100",
+    "LookAtWayPoint": 6100010,
+    "NameStrKey": "ST:105652",
+    "ChapterIndexStrKey": "ST:6221"
+  },
+  {
+    "ID": 6210,
+    "StartEventId": 626211030,
+    "EndEventiId": 626213030,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616200030
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 626213030
+      }
+    ],
+    "WorldMapID": 12,
+    "RegionRes": "Region6210",
+    "LookAtWayPoint": 6212030,
+    "NameStrKey": "ST:104060",
+    "ChapterIndexStrKey": "ST:6222"
+  },
+  {
+    "ID": 6211,
+    "StartEventId": 636214030,
+    "EndEventiId": 636214030,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 626213030
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 636214030
+      }
+    ],
+    "WorldMapID": 12,
+    "RegionRes": "Region6211",
+    "LookAtWayPoint": 6214030,
+    "NameStrKey": "ST:104516"
+  },
+  {
+    "ID": 6410,
+    "StartEventId": 646411010,
+    "EndEventiId": 646414010,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616400010
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 646414010
+      }
+    ],
+    "WorldMapID": 12,
+    "RegionRes": "Region6410",
+    "LookAtWayPoint": 6492010,
+    "NameStrKey": "ST:104061",
+    "ChapterIndexStrKey": "ST:6223"
+  },
+  {
+    "ID": 6411,
+    "StartEventId": 656414110,
+    "EndEventiId": 656414110,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 646414010
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 656414110
+      }
+    ],
+    "WorldMapID": 12,
+    "RegionRes": "Region6411",
+    "LookAtWayPoint": 6414110,
+    "NameStrKey": "ST:104518"
+  },
+  {
+    "ID": 6500,
+    "StartEventId": 666500010,
+    "EndEventiId": 666800010,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616400010
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666800010
+      }
+    ],
+    "WorldMapID": 12,
+    "BackgroundMusic": "BGM_XianJianQiXiaZhuan_ZhaoLingEr",
+    "RegionRes": "Region6500",
+    "NameStrKey": "ST:105653",
+    "ChapterIndexStrKey": "ST:3763"
+  },
+  {
+    "ID": 6510,
+    "StartEventId": 676511010,
+    "EndEventiId": 676514010,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666500020
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 676514010
+      }
+    ],
+    "WorldMapID": 12,
+    "RegionRes": "Region6510",
+    "LookAtWayPoint": 6513010,
+    "NameStrKey": "ST:104062",
+    "ChapterIndexStrKey": "ST:6224"
+  },
+  {
+    "ID": 6511,
+    "StartEventId": 686514110,
+    "EndEventiId": 686514110,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 676514010
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 686514110
+      }
+    ],
+    "WorldMapID": 12,
+    "RegionRes": "Region6511",
+    "LookAtWayPoint": 6514110,
+    "NameStrKey": "ST:104521"
+  },
+  {
+    "ID": 6900,
+    "StartEventId": 696900010,
+    "EndEventiId": 696900010,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666800010
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 696900010
+      }
+    ],
+    "WorldMapID": 12,
+    "BackgroundMusic": "BGM_XianJianQiXiaZhuan_DieLian",
+    "RegionRes": "Region6900",
+    "LookAtWayPoint": 6900010,
+    "NameStrKey": "ST:92478",
+    "ChapterIndexStrKey": "ST:6225"
+  },
+  {
+    "ID": 7000,
+    "WorldMapID": 13,
+    "RegionRes": "Region7000",
+    "LookAtWayPoint": 8700010,
+    "NameStrKey": "ST:113551"
+  },
+  {
+    "ID": 7001,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8101003,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 13,
+    "RegionRes": "Region7001",
+    "LookAtWayPoint": 8700110,
+    "NameStrKey": "ST:8198"
+  },
+  {
+    "ID": 7002,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8101003,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 13,
+    "RegionRes": "Region7002",
+    "LookAtWayPoint": 8700210,
+    "NameStrKey": "ST:46759"
+  },
+  {
+    "ID": 7003,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8101004,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 13,
+    "RegionRes": "Region7003",
+    "LookAtWayPoint": 8700310,
+    "NameStrKey": "ST:46760"
+  },
+  {
+    "ID": 7004,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8101004,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 13,
+    "RegionRes": "Region7004",
+    "LookAtWayPoint": 8700410,
+    "NameStrKey": "ST:46761"
+  },
+  {
+    "ID": 7005,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8101005,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 13,
+    "RegionRes": "Region7005",
+    "LookAtWayPoint": 8700510,
+    "NameStrKey": "ST:46762"
+  },
+  {
+    "ID": 7006,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8101005,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 13,
+    "RegionRes": "Region7006",
+    "LookAtWayPoint": 8700610,
+    "NameStrKey": "ST:19024"
+  },
+  {
+    "ID": 7007,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8102015
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8102005
+      }
+    ],
+    "WorldMapID": 13,
+    "RegionRes": "Region7007",
+    "LookAtWayPoint": 8700700,
+    "NameStrKey": "ST:111578"
+  },
+  {
+    "ID": 7008,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8103015
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8103005
+      }
+    ],
+    "WorldMapID": 13,
+    "RegionRes": "Region7008",
+    "LookAtWayPoint": 8700800,
+    "NameStrKey": "ST:111579"
+  },
+  {
+    "ID": 7009,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8104015
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8104005
+      }
+    ],
+    "WorldMapID": 13,
+    "RegionRes": "Region7009",
+    "LookAtWayPoint": 8700900,
+    "NameStrKey": "ST:111580"
+  },
+  {
+    "ID": 7010,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8102000
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8103000
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8104000
+      }
+    ],
+    "WorldMapID": 13,
+    "RegionRes": "Region7010",
+    "LookAtWayPoint": 8701000,
+    "NameStrKey": "ST:111581"
+  },
+  {
+    "ID": 8001,
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8001",
+    "LookAtWayPoint": 8010000
+  },
+  {
+    "ID": 8100,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8011000
+      }
+    ],
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8100",
+    "LookAtWayPoint": 8012000
+  },
+  {
+    "ID": 8200,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8012000
+      }
+    ],
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8200",
+    "LookAtWayPoint": 8013200
+  },
+  {
+    "ID": 8310,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8013100,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8310",
+    "LookAtWayPoint": 8013112
+  },
+  {
+    "ID": 8320,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8013100,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8320",
+    "LookAtWayPoint": 8013122
+  },
+  {
+    "ID": 8330,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8013200,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8330",
+    "LookAtWayPoint": 8013212
+  },
+  {
+    "ID": 8340,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8013200,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8340",
+    "LookAtWayPoint": 8013222
+  },
+  {
+    "ID": 8350,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8013300,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8350",
+    "LookAtWayPoint": 8013312
+  },
+  {
+    "ID": 8360,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8013300,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8360",
+    "LookAtWayPoint": 8013322
+  },
+  {
+    "ID": 8410,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8013113
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8013123
+      }
+    ],
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8410",
+    "LookAtWayPoint": 8014100
+  },
+  {
+    "ID": 8420,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8013213
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8013223
+      }
+    ],
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8420",
+    "LookAtWayPoint": 8014200
+  },
+  {
+    "ID": 8430,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8013313
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8013323
+      }
+    ],
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8430",
+    "LookAtWayPoint": 8014300
+  },
+  {
+    "ID": 8500,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8014100
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8014200
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8014300
+      }
+    ],
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8500",
+    "LookAtWayPoint": 8015000
+  },
+  {
+    "ID": 8600,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8015000
+      }
+    ],
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8600",
+    "LookAtWayPoint": 8016000
+  },
+  {
+    "ID": 8700,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 8016000
+      }
+    ],
+    "WorldMapID": 7,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8700"
+  },
+  {
+    "ID": 9001,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11401
+      }
+    ],
+    "WorldMapID": 3,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region9001"
+  },
+  {
+    "ID": 9002,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9010016
+      }
+    ],
+    "WorldMapID": 3,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region9002",
+    "LookAtWayPoint": 9010003
+  },
+  {
+    "ID": 9003,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9010003
+      }
+    ],
+    "WorldMapID": 3,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region9003",
+    "LookAtWayPoint": 9010005
+  },
+  {
+    "ID": 9004,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9010006,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 3,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region9004",
+    "LookAtWayPoint": 9010008
+  },
+  {
+    "ID": 9005,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9010006,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 3,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region9005",
+    "LookAtWayPoint": 9010010
+  },
+  {
+    "ID": 9006,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9010011
+      }
+    ],
+    "WorldMapID": 3,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region9006",
+    "LookAtWayPoint": 9010012
+  },
+  {
+    "ID": 9007,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9010013,
+        "P2": 2
+      },
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9010006,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 3,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region9007",
+    "LookAtWayPoint": 9010014
+  },
+  {
+    "ID": 9008,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9010014
+      },
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9010006,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 3,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region9008",
+    "LookAtWayPoint": 9010015
+  },
+  {
+    "ID": 9100,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13701
+      }
+    ],
+    "WorldMapID": 4,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9100",
+    "LookAtWayPoint": 9020001
+  },
+  {
+    "ID": 9101,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9020002
+      }
+    ],
+    "WorldMapID": 4,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9101",
+    "LookAtWayPoint": 9020003
+  },
+  {
+    "ID": 9102,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9020006,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 4,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9102",
+    "LookAtWayPoint": 9020005
+  },
+  {
+    "ID": 9103,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9020003,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 4,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9103",
+    "LookAtWayPoint": 9020006
+  },
+  {
+    "ID": 9104,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9020006,
+        "P2": 1
+      },
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9020003,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 4,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9104",
+    "LookAtWayPoint": 9020008
+  },
+  {
+    "ID": 9105,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9020003,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 4,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9105",
+    "LookAtWayPoint": 9020009
+  },
+  {
+    "ID": 9106,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9020006,
+        "P2": 3
+      }
+    ],
+    "WorldMapID": 4,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9106",
+    "LookAtWayPoint": 9020010
+  },
+  {
+    "ID": 9200,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9020010
+      }
+    ],
+    "WorldMapID": 5,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9200",
+    "LookAtWayPoint": 9021001
+  },
+  {
+    "ID": 9201,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9021002
+      }
+    ],
+    "WorldMapID": 5,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9201",
+    "LookAtWayPoint": 9021003
+  },
+  {
+    "ID": 9202,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9021005,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 5,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9202",
+    "LookAtWayPoint": 9021007
+  },
+  {
+    "ID": 9203,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9021006
+      }
+    ],
+    "WorldMapID": 5,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9203",
+    "LookAtWayPoint": 9021008
+  },
+  {
+    "ID": 9204,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9021008,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 5,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9204",
+    "LookAtWayPoint": 9021010
+  },
+  {
+    "ID": 9206,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9021008,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 5,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9206",
+    "LookAtWayPoint": 9021011
+  },
+  {
+    "ID": 9300,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9021011
+      }
+    ],
+    "WorldMapID": 6,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9301",
+    "LookAtWayPoint": 9022001
+  },
+  {
+    "ID": 9400,
+    "WorldMapID": 8,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9400"
+  },
+  {
+    "ID": 9401,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14902
+      }
+    ],
+    "WorldMapID": 8,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9401",
+    "LookAtWayPoint": 9030003
+  },
+  {
+    "ID": 9402,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9030002
+      }
+    ],
+    "WorldMapID": 8,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9402",
+    "LookAtWayPoint": 9030005
+  },
+  {
+    "ID": 9403,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9030004,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 8,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9403",
+    "LookAtWayPoint": 9030006
+  },
+  {
+    "ID": 9404,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9030003,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 8,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9404",
+    "LookAtWayPoint": 9030007
+  },
+  {
+    "ID": 9405,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9030003,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 8,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9405",
+    "LookAtWayPoint": 9030008
+  },
+  {
+    "ID": 9406,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9030004,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 8,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9406",
+    "LookAtWayPoint": 9030009
+  },
+  {
+    "ID": 9407,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9030009
+      }
+    ],
+    "WorldMapID": 8,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9407",
+    "LookAtWayPoint": 9030011
+  },
+  {
+    "ID": 9421,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9030006,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 8,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9421",
+    "LookAtWayPoint": 9030003
+  },
+  {
+    "ID": 9422,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9030006,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 8,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9422",
+    "LookAtWayPoint": 9030007
+  },
+  {
+    "ID": 9431,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9030006,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 8,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9431",
+    "LookAtWayPoint": 9030007
+  },
+  {
+    "ID": 9432,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9030006,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 8,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9432",
+    "LookAtWayPoint": 9030003
+  },
+  {
+    "ID": 9441,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9030008,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 8,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9441"
+  },
+  {
+    "ID": 9481,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9030107
+      }
+    ],
+    "WorldMapID": 8,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9481"
+  },
+  {
+    "ID": 9500,
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9500"
+  },
+  {
+    "ID": 9501,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9030010
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9501",
+    "LookAtWayPoint": 9031002
+  },
+  {
+    "ID": 9502,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9031002
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9502",
+    "LookAtWayPoint": 9031002
+  },
+  {
+    "ID": 9503,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031003,
+        "P2": 3
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9503",
+    "LookAtWayPoint": 9031006
+  },
+  {
+    "ID": 9504,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031010,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9504",
+    "LookAtWayPoint": 9031007
+  },
+  {
+    "ID": 9505,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031003,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9505",
+    "LookAtWayPoint": 9031008
+  },
+  {
+    "ID": 9506,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031003,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9506",
+    "LookAtWayPoint": 9031010
+  },
+  {
+    "ID": 9507,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031010,
+        "P2": 3
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9507",
+    "LookAtWayPoint": 9031011
+  },
+  {
+    "ID": 9508,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031010,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9508",
+    "LookAtWayPoint": 9031012
+  },
+  {
+    "ID": 9509,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9031012
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9509",
+    "LookAtWayPoint": 9031014
+  },
+  {
+    "ID": 9521,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031009,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9521",
+    "LookAtWayPoint": 9031010
+  },
+  {
+    "ID": 9522,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031009,
+        "P2": 2
+      },
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031004,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9522",
+    "LookAtWayPoint": 9031007
+  },
+  {
+    "ID": 9531,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031009,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9531",
+    "LookAtWayPoint": 9031010
+  },
+  {
+    "ID": 9532,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031009,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9532",
+    "LookAtWayPoint": 9031004
+  },
+  {
+    "ID": 9533,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031004,
+        "P2": 1
+      },
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031009,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9533",
+    "LookAtWayPoint": 9031007
+  },
+  {
+    "ID": 9541,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031008,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9541"
+  },
+  {
+    "ID": 9581,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9031104
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9581"
+  },
+  {
+    "ID": 9582,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9031106
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9582"
+  },
+  {
+    "ID": 9583,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9031111
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9583"
+  },
+  {
+    "ID": 9599,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9031004,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 9,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9599",
+    "LookAtWayPoint": 9031014
+  },
+  {
+    "ID": 9600,
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9600"
+  },
+  {
+    "ID": 9601,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9032002
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9601",
+    "LookAtWayPoint": 9032002
+  },
+  {
+    "ID": 9602,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9032004
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9602",
+    "LookAtWayPoint": 9032005
+  },
+  {
+    "ID": 9603,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9032005,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9603",
+    "LookAtWayPoint": 9032006
+  },
+  {
+    "ID": 9604,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9032005,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9604",
+    "LookAtWayPoint": 9032007
+  },
+  {
+    "ID": 9605,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9032003
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9605",
+    "LookAtWayPoint": 9032009
+  },
+  {
+    "ID": 9606,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9032009,
+        "P2": 3
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9606",
+    "LookAtWayPoint": 9032010
+  },
+  {
+    "ID": 9607,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9032009,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9607",
+    "LookAtWayPoint": 9032012
+  },
+  {
+    "ID": 9608,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9032009,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9608",
+    "LookAtWayPoint": 9032013
+  },
+  {
+    "ID": 9609,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9032011
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9609",
+    "LookAtWayPoint": 9032015
+  },
+  {
+    "ID": 9621,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9032007,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9621",
+    "LookAtWayPoint": 9032011
+  },
+  {
+    "ID": 9622,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9032007,
+        "P2": 2
+      },
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9032008,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9622",
+    "LookAtWayPoint": 9032014
+  },
+  {
+    "ID": 9631,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9032007,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9631",
+    "LookAtWayPoint": 9032011
+  },
+  {
+    "ID": 9632,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9032007,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9632",
+    "LookAtWayPoint": 9032008
+  },
+  {
+    "ID": 9633,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9032007,
+        "P2": 2
+      },
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9032008,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9633",
+    "LookAtWayPoint": 9032014
+  },
+  {
+    "ID": 9641,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9032014,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9641"
+  },
+  {
+    "ID": 9681,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9032107
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9681"
+  },
+  {
+    "ID": 9682,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9032109
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9682"
+  },
+  {
+    "ID": 9683,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9032112
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9683"
+  },
+  {
+    "ID": 9684,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 9032115
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9684"
+  },
+  {
+    "ID": 9699,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_EventWithLastSelectIndex",
+        "P1": 9032008,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 10,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9699",
+    "LookAtWayPoint": 9032015
+  },
+  {
+    "ID": 9701,
+    "WorldMapID": 11,
+    "BackgroundMusic": "BGM_Theme_1202Mountain",
+    "RegionRes": "Region9701"
+  },
+  {
+    "ID": 16100,
+    "StartEventId": 1616100010,
+    "EndEventiId": 1616400010,
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616400010
+      }
+    ],
+    "WorldMapID": 16,
+    "BackgroundMusic": "BGM_XianJianQiXiaZhuan_LinYueRu",
+    "RegionRes": "Region16100",
+    "LookAtWayPoint": 16100010,
+    "NameStrKey": "ST:105652",
+    "ChapterIndexStrKey": "ST:6221"
+  },
+  {
+    "ID": 16210,
+    "StartEventId": 1626211030,
+    "EndEventiId": 1626213030,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616200030
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1626213030
+      }
+    ],
+    "WorldMapID": 16,
+    "BackgroundMusic": "BGM_XianJianQiXiaZhuan_LinYueRu",
+    "RegionRes": "Region16210",
+    "LookAtWayPoint": 16212030,
+    "NameStrKey": "ST:104060",
+    "ChapterIndexStrKey": "ST:6222"
+  },
+  {
+    "ID": 16211,
+    "StartEventId": 1636214030,
+    "EndEventiId": 1636214030,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1626213030
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1636214030
+      }
+    ],
+    "WorldMapID": 16,
+    "BackgroundMusic": "BGM_XianJianQiXiaZhuan_LinYueRu",
+    "RegionRes": "Region16211",
+    "LookAtWayPoint": 16214030,
+    "NameStrKey": "ST:104516"
+  },
+  {
+    "ID": 16410,
+    "StartEventId": 1646411010,
+    "EndEventiId": 1646414010,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616400010
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1646414010
+      }
+    ],
+    "WorldMapID": 16,
+    "BackgroundMusic": "BGM_XianJianQiXiaZhuan_LinYueRu",
+    "RegionRes": "Region16410",
+    "LookAtWayPoint": 16492010,
+    "NameStrKey": "ST:104061",
+    "ChapterIndexStrKey": "ST:6223"
+  },
+  {
+    "ID": 16411,
+    "StartEventId": 1656414110,
+    "EndEventiId": 1656414110,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1646414010
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1656414110
+      }
+    ],
+    "WorldMapID": 16,
+    "BackgroundMusic": "BGM_XianJianQiXiaZhuan_LinYueRu",
+    "RegionRes": "Region16411",
+    "LookAtWayPoint": 16414110,
+    "NameStrKey": "ST:104518"
+  },
+  {
+    "ID": 16500,
+    "StartEventId": 1666500010,
+    "EndEventiId": 1666800010,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616400010
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666800010
+      }
+    ],
+    "WorldMapID": 16,
+    "BackgroundMusic": "BGM_XianJianQiXiaZhuan_ZhaoLingEr",
+    "RegionRes": "Region16500",
+    "NameStrKey": "ST:105653",
+    "ChapterIndexStrKey": "ST:3763"
+  },
+  {
+    "ID": 16510,
+    "StartEventId": 1676511010,
+    "EndEventiId": 1676514010,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666500020
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1676514010
+      }
+    ],
+    "WorldMapID": 16,
+    "BackgroundMusic": "BGM_XianJianQiXiaZhuan_ZhaoLingEr",
+    "RegionRes": "Region16510",
+    "LookAtWayPoint": 16513010,
+    "NameStrKey": "ST:104062",
+    "ChapterIndexStrKey": "ST:6224"
+  },
+  {
+    "ID": 16511,
+    "StartEventId": 1686514110,
+    "EndEventiId": 1686514110,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1676514010
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1686514110
+      }
+    ],
+    "WorldMapID": 16,
+    "BackgroundMusic": "BGM_XianJianQiXiaZhuan_ZhaoLingEr",
+    "RegionRes": "Region16511",
+    "LookAtWayPoint": 16514110,
+    "NameStrKey": "ST:104521"
+  },
+  {
+    "ID": 16900,
+    "StartEventId": 1696900010,
+    "EndEventiId": 1696900010,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666800010
+      }
+    ],
+    "CompleteCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1696900010
+      }
+    ],
+    "WorldMapID": 16,
+    "BackgroundMusic": "BGM_XianJianQiXiaZhuan_DieLian",
+    "RegionRes": "Region16900",
+    "LookAtWayPoint": 16900010,
+    "NameStrKey": "ST:92478",
+    "ChapterIndexStrKey": "ST:6225"
+  },
+  {
+    "ID": 18001,
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8001",
+    "LookAtWayPoint": 18010000
+  },
+  {
+    "ID": 18100,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18011000
+      }
+    ],
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8100",
+    "LookAtWayPoint": 18012000
+  },
+  {
+    "ID": 18200,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18012000
+      }
+    ],
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8200",
+    "LookAtWayPoint": 18013200
+  },
+  {
+    "ID": 18310,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18013100,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8310",
+    "LookAtWayPoint": 18013112
+  },
+  {
+    "ID": 18320,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18013100,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8320",
+    "LookAtWayPoint": 18013122
+  },
+  {
+    "ID": 18330,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18013200,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8330",
+    "LookAtWayPoint": 18013212
+  },
+  {
+    "ID": 18340,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18013200,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8340",
+    "LookAtWayPoint": 18013222
+  },
+  {
+    "ID": 18350,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18013300,
+        "P2": 1
+      }
+    ],
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8350",
+    "LookAtWayPoint": 18013312
+  },
+  {
+    "ID": 18360,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18013300,
+        "P2": 2
+      }
+    ],
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8360",
+    "LookAtWayPoint": 18013322
+  },
+  {
+    "ID": 18410,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18013113
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18013123
+      }
+    ],
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8410",
+    "LookAtWayPoint": 18014100
+  },
+  {
+    "ID": 18420,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18013213
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18013223
+      }
+    ],
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8420",
+    "LookAtWayPoint": 18014200
+  },
+  {
+    "ID": 18430,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18013313
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18013323
+      }
+    ],
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8430",
+    "LookAtWayPoint": 18014300
+  },
+  {
+    "ID": 18500,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18014100
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18014200
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18014300
+      }
+    ],
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8500",
+    "LookAtWayPoint": 18015000
+  },
+  {
+    "ID": 18600,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18015000
+      }
+    ],
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8600",
+    "LookAtWayPoint": 18016000
+  },
+  {
+    "ID": 18700,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 18016000
+      }
+    ],
+    "WorldMapID": 51,
+    "BackgroundMusic": "BGM_Theme_JinYu",
+    "RegionRes": "Region8700"
+  }
+]

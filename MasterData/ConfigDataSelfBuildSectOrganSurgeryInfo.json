@@ -1,0 +1,1030 @@
+[
+  {
+    "ID": 100100,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 13
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeCityLevel",
+    "Params": [
+      1
+    ],
+    "CategoryID": 1,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Menpai_R.png@Icon_Menpai_R",
+    "Rarity": "Rarity_R",
+    "EffectDescStrKey": "ST:200497",
+    "NameStrKey": "ST:198010",
+    "GetPathDescStrKey": "ST:200794"
+  },
+  {
+    "ID": 100110,
+    "State": "SBSectOrganSurgeryState_Hide",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 100100
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 23
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 40
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeCityLevel",
+    "Params": [
+      1
+    ],
+    "CategoryID": 1,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Menpai_SR.png@Icon_Menpai_SR",
+    "Rarity": "Rarity_SR",
+    "EffectDescStrKey": "ST:200498",
+    "NameStrKey": "ST:198011",
+    "GetPathDescStrKey": "ST:200795"
+  },
+  {
+    "ID": 100120,
+    "State": "SBSectOrganSurgeryState_Hide",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 100110
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 40
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 60
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeCityLevel",
+    "Params": [
+      1
+    ],
+    "CategoryID": 1,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Menpai_SR.png@Icon_Menpai_SR",
+    "Rarity": "Rarity_SR",
+    "EffectDescStrKey": "ST:200499",
+    "NameStrKey": "ST:198012",
+    "GetPathDescStrKey": "ST:200796"
+  },
+  {
+    "ID": 100130,
+    "State": "SBSectOrganSurgeryState_Hide",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 100120
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 50
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 100
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeCityLevel",
+    "Params": [
+      1
+    ],
+    "CategoryID": 1,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Menpai_SSR.png@Icon_Menpai_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:198063",
+    "NameStrKey": "ST:198013",
+    "GetPathDescStrKey": "ST:200797"
+  },
+  {
+    "ID": 100200,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 17
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 10
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeCityLevel",
+    "Params": [
+      2
+    ],
+    "CategoryID": 1,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Menpai_SR.png@Icon_Menpai_SR",
+    "Rarity": "Rarity_SR",
+    "EffectDescStrKey": "ST:200500",
+    "NameStrKey": "ST:198016",
+    "GetPathDescStrKey": "ST:200798"
+  },
+  {
+    "ID": 100210,
+    "State": "SBSectOrganSurgeryState_Hide",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 100200
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 24
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeCityLevel",
+    "Params": [
+      2
+    ],
+    "CategoryID": 1,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Menpai_SSR.png@Icon_Menpai_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:200501",
+    "NameStrKey": "ST:198017",
+    "GetPathDescStrKey": "ST:200799"
+  },
+  {
+    "ID": 100300,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 32
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 10
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeCityLevel",
+    "Params": [
+      3
+    ],
+    "CategoryID": 1,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Menpai_SR.png@Icon_Menpai_SR",
+    "Rarity": "Rarity_SR",
+    "EffectDescStrKey": "ST:200502",
+    "NameStrKey": "ST:198018",
+    "GetPathDescStrKey": "ST:200800"
+  },
+  {
+    "ID": 100310,
+    "State": "SBSectOrganSurgeryState_Hide",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 100300
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 43
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeCityLevel",
+    "Params": [
+      3
+    ],
+    "CategoryID": 1,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Menpai_SSR.png@Icon_Menpai_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:201814",
+    "NameStrKey": "ST:198019",
+    "GetPathDescStrKey": "ST:200801"
+  },
+  {
+    "ID": 100400,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 37
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 10
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeCityLevel",
+    "Params": [
+      4
+    ],
+    "CategoryID": 1,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Menpai_SR.png@Icon_Menpai_SR",
+    "Rarity": "Rarity_SR",
+    "EffectDescStrKey": "ST:201815",
+    "NameStrKey": "ST:198014",
+    "GetPathDescStrKey": "ST:200802"
+  },
+  {
+    "ID": 100410,
+    "State": "SBSectOrganSurgeryState_Hide",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 100400
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 47
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeCityLevel",
+    "Params": [
+      4
+    ],
+    "CategoryID": 1,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Menpai_SSR.png@Icon_Menpai_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:201816",
+    "NameStrKey": "ST:198015",
+    "GetPathDescStrKey": "ST:200803"
+  },
+  {
+    "ID": 300110,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 7
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 10
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UnlockOrgan",
+    "Params": [
+      100100
+    ],
+    "CategoryID": 2,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_SR.png@Icon_Jianzhu_SR",
+    "Rarity": "Rarity_SR",
+    "EffectDescStrKey": "ST:198076",
+    "NameStrKey": "ST:197561",
+    "GetPathDescStrKey": "ST:200804"
+  },
+  {
+    "ID": 300120,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 9
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 10
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UnlockOrgan",
+    "Params": [
+      100200
+    ],
+    "CategoryID": 2,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_SR.png@Icon_Jianzhu_SR",
+    "Rarity": "Rarity_SR",
+    "EffectDescStrKey": "ST:198077",
+    "NameStrKey": "ST:197562",
+    "GetPathDescStrKey": "ST:200805"
+  },
+  {
+    "ID": 300130,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 12
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 10
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UnlockOrgan",
+    "Params": [
+      100300
+    ],
+    "CategoryID": 2,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_SR.png@Icon_Jianzhu_SR",
+    "Rarity": "Rarity_SR",
+    "EffectDescStrKey": "ST:198078",
+    "NameStrKey": "ST:197563",
+    "GetPathDescStrKey": "ST:200806"
+  },
+  {
+    "ID": 300140,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 22
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 10
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UnlockOrgan",
+    "Params": [
+      100400
+    ],
+    "CategoryID": 2,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_SR.png@Icon_Jianzhu_SR",
+    "Rarity": "Rarity_SR",
+    "EffectDescStrKey": "ST:198079",
+    "NameStrKey": "ST:197564",
+    "GetPathDescStrKey": "ST:200807"
+  },
+  {
+    "ID": 300200,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 6
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganDefenceCount",
+    "Params": [
+      100000,
+      3
+    ],
+    "CategoryID": 5,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_R.png@Icon_Jianzhu_R",
+    "Rarity": "Rarity_R",
+    "EffectDescStrKey": "ST:199467",
+    "NameStrKey": "ST:198026",
+    "GetPathDescStrKey": "ST:201233"
+  },
+  {
+    "ID": 300210,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 20
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganDefenceCount",
+    "Params": [
+      100100,
+      3
+    ],
+    "CategoryID": 5,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_SSR.png@Icon_Jianzhu_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:199468",
+    "NameStrKey": "ST:198027",
+    "GetPathDescStrKey": "ST:200808"
+  },
+  {
+    "ID": 300220,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300110
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 20
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganDefenceCount",
+    "Params": [
+      100200,
+      3
+    ],
+    "CategoryID": 5,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_SSR.png@Icon_Jianzhu_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:199469",
+    "NameStrKey": "ST:198028",
+    "GetPathDescStrKey": "ST:200809"
+  },
+  {
+    "ID": 300230,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300120
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 25
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganDefenceCount",
+    "Params": [
+      100300,
+      3
+    ],
+    "CategoryID": 5,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_SSR.png@Icon_Jianzhu_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:199470",
+    "NameStrKey": "ST:198029",
+    "GetPathDescStrKey": "ST:200810"
+  },
+  {
+    "ID": 300240,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300130
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 25
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganDefenceCount",
+    "Params": [
+      100400,
+      3
+    ],
+    "CategoryID": 5,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_SSR.png@Icon_Jianzhu_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:199471",
+    "NameStrKey": "ST:198030",
+    "GetPathDescStrKey": "ST:200811"
+  },
+  {
+    "ID": 300250,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300140
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 30
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganDefenceCount",
+    "Params": [
+      100500,
+      3
+    ],
+    "CategoryID": 5,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_SSR.png@Icon_Jianzhu_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:199472",
+    "NameStrKey": "ST:198031",
+    "GetPathDescStrKey": "ST:200812"
+  },
+  {
+    "ID": 300300,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 35
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganLevelMax",
+    "Params": [
+      100100,
+      2
+    ],
+    "CategoryID": 6,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_SSR.png@Icon_Jianzhu_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:198086",
+    "NameStrKey": "ST:198032",
+    "GetPathDescStrKey": "ST:200813"
+  },
+  {
+    "ID": 300310,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300110
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 35
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganLevelMax",
+    "Params": [
+      100200,
+      2
+    ],
+    "CategoryID": 6,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_SSR.png@Icon_Jianzhu_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:198087",
+    "NameStrKey": "ST:198033",
+    "GetPathDescStrKey": "ST:200814"
+  },
+  {
+    "ID": 300320,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300120
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 40
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganLevelMax",
+    "Params": [
+      100300,
+      2
+    ],
+    "CategoryID": 6,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_SSR.png@Icon_Jianzhu_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:198088",
+    "NameStrKey": "ST:198034",
+    "GetPathDescStrKey": "ST:200815"
+  },
+  {
+    "ID": 300330,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300130
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 40
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganLevelMax",
+    "Params": [
+      100400,
+      2
+    ],
+    "CategoryID": 6,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_SSR.png@Icon_Jianzhu_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:198089",
+    "NameStrKey": "ST:198035",
+    "GetPathDescStrKey": "ST:200816"
+  },
+  {
+    "ID": 300340,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300140
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 40
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganLevelMax",
+    "Params": [
+      100500,
+      2
+    ],
+    "CategoryID": 6,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Jianzhu_SSR.png@Icon_Jianzhu_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:198090",
+    "NameStrKey": "ST:198036",
+    "GetPathDescStrKey": "ST:200817"
+  },
+  {
+    "ID": 300410,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 4
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 10
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UnlockOrgan",
+    "Params": [
+      100600
+    ],
+    "CategoryID": 3,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Xianjing_SR.png@Icon_Xianjing_SR",
+    "Rarity": "Rarity_SR",
+    "EffectDescStrKey": "ST:201817",
+    "NameStrKey": "ST:197572",
+    "GetPathDescStrKey": "ST:201965"
+  },
+  {
+    "ID": 300420,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 16
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 10
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UnlockOrgan",
+    "Params": [
+      100700
+    ],
+    "CategoryID": 3,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Xianjing_SR.png@Icon_Xianjing_SR",
+    "Rarity": "Rarity_SR",
+    "EffectDescStrKey": "ST:201818",
+    "NameStrKey": "ST:197573",
+    "GetPathDescStrKey": "ST:201966"
+  },
+  {
+    "ID": 300430,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 26
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 10
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UnlockOrgan",
+    "Params": [
+      100800
+    ],
+    "CategoryID": 3,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Xianjing_SR.png@Icon_Xianjing_SR",
+    "Rarity": "Rarity_SR",
+    "EffectDescStrKey": "ST:201819",
+    "NameStrKey": "ST:197574",
+    "GetPathDescStrKey": "ST:201967"
+  },
+  {
+    "ID": 300440,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 15
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganDefenceCount",
+    "Params": [
+      100600,
+      3
+    ],
+    "CategoryID": 5,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Xianjing_SSR.png@Icon_Xianjing_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:201820",
+    "NameStrKey": "ST:198043",
+    "GetPathDescStrKey": "ST:201968"
+  },
+  {
+    "ID": 300450,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300410
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 20
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganDefenceCount",
+    "Params": [
+      100700,
+      3
+    ],
+    "CategoryID": 5,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Xianjing_SSR.png@Icon_Xianjing_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:201821",
+    "NameStrKey": "ST:198044",
+    "GetPathDescStrKey": "ST:201969"
+  },
+  {
+    "ID": 300460,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300420
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 25
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganDefenceCount",
+    "Params": [
+      100800,
+      3
+    ],
+    "CategoryID": 5,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Xianjing_SSR.png@Icon_Xianjing_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:201822",
+    "NameStrKey": "ST:200793",
+    "GetPathDescStrKey": "ST:201970"
+  },
+  {
+    "ID": 300470,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectOrganSurgeryGrasp",
+        "P1": 300430
+      },
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 30
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 20
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UpgradeOrganDefenceCount",
+    "Params": [
+      100900,
+      3
+    ],
+    "CategoryID": 5,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Xianjing_SSR.png@Icon_Xianjing_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:201823",
+    "NameStrKey": "ST:198046",
+    "GetPathDescStrKey": "ST:201971"
+  },
+  {
+    "ID": 300600,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 19
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 100
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UnlockOrgan",
+    "Params": [
+      101000
+    ],
+    "CategoryID": 4,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Shouyu_SSR.png@Icon_Shouyu_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:199477",
+    "NameStrKey": "ST:197566",
+    "GetPathDescStrKey": "ST:200825"
+  },
+  {
+    "ID": 300610,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 29
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 100
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UnlockOrgan",
+    "Params": [
+      101100
+    ],
+    "CategoryID": 4,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Shouyu_SSR.png@Icon_Shouyu_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:199478",
+    "NameStrKey": "ST:197567",
+    "GetPathDescStrKey": "ST:200826"
+  },
+  {
+    "ID": 300620,
+    "State": "SBSectOrganSurgeryState_Lock",
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 36
+      }
+    ],
+    "StudyCost": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 460100100,
+        "Count": 100
+      }
+    ],
+    "EffectType": "SBSectOrganSurgeryEffectType_UnlockOrgan",
+    "Params": [
+      101200
+    ],
+    "CategoryID": 4,
+    "IconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Item01_ABS/Icon_Shouyu_SSR.png@Icon_Shouyu_SSR",
+    "Rarity": "Rarity_SSR",
+    "EffectDescStrKey": "ST:199479",
+    "NameStrKey": "ST:197568",
+    "GetPathDescStrKey": "ST:200827"
+  }
+]

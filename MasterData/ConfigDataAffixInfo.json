@@ -1,0 +1,861 @@
+[
+  {
+    "ID": 100001,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32001
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148772",
+    "DescStrKey": "ST:148787"
+  },
+  {
+    "ID": 100002,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32001
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148773",
+    "DescStrKey": "ST:148787"
+  },
+  {
+    "ID": 100003,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32001,
+      32011
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148774",
+    "DescStrKey": "ST:148788"
+  },
+  {
+    "ID": 100004,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32001,
+      32011,
+      32006
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148775",
+    "DescStrKey": "ST:148789"
+  },
+  {
+    "ID": 100005,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32002,
+      32011,
+      32006
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148776",
+    "DescStrKey": "ST:148790"
+  },
+  {
+    "ID": 100006,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32002,
+      32012,
+      32006
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148777",
+    "DescStrKey": "ST:148791"
+  },
+  {
+    "ID": 100007,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32002,
+      32012,
+      32007
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148778",
+    "DescStrKey": "ST:148792"
+  },
+  {
+    "ID": 100008,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32003,
+      32012,
+      32007
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148779",
+    "DescStrKey": "ST:148793"
+  },
+  {
+    "ID": 100009,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32003,
+      32013,
+      32007
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148780",
+    "DescStrKey": "ST:148794"
+  },
+  {
+    "ID": 100010,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32003,
+      32013,
+      32008
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148781",
+    "DescStrKey": "ST:148795"
+  },
+  {
+    "ID": 100011,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32004,
+      32013,
+      32008
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148782",
+    "DescStrKey": "ST:148796"
+  },
+  {
+    "ID": 100012,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32004,
+      32014,
+      32008
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148783",
+    "DescStrKey": "ST:148797"
+  },
+  {
+    "ID": 100013,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32004,
+      32014,
+      32009
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148784",
+    "DescStrKey": "ST:148798"
+  },
+  {
+    "ID": 100014,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32005,
+      32014,
+      32009
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148785",
+    "DescStrKey": "ST:148799"
+  },
+  {
+    "ID": 100015,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      32005,
+      32015,
+      32009
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:148786",
+    "DescStrKey": "ST:148800"
+  },
+  {
+    "ID": 100016,
+    "Visible": true,
+    "NameStrKey": "ST:149157",
+    "DescStrKey": "ST:149208"
+  },
+  {
+    "ID": 100017,
+    "Visible": true,
+    "NameStrKey": "ST:149158",
+    "DescStrKey": "ST:149209"
+  },
+  {
+    "ID": 100018,
+    "Visible": true,
+    "NameStrKey": "ST:149159",
+    "DescStrKey": "ST:149210"
+  },
+  {
+    "ID": 100019,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Side",
+    "ParamList": [
+      32021
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:149160",
+    "DescStrKey": "ST:149059"
+  },
+  {
+    "ID": 100020,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Side",
+    "ParamList": [
+      32022
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:149161",
+    "DescStrKey": "ST:149169"
+  },
+  {
+    "ID": 100021,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Side",
+    "ParamList": [
+      32023
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:149162",
+    "DescStrKey": "ST:149369"
+  },
+  {
+    "ID": 100022,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Side",
+    "ParamList": [
+      32024
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:149163",
+    "DescStrKey": "ST:149370"
+  },
+  {
+    "ID": 100023,
+    "Visible": true,
+    "NameStrKey": "ST:149164",
+    "DescStrKey": "ST:149172"
+  },
+  {
+    "ID": 100024,
+    "Visible": true,
+    "NameStrKey": "ST:149165",
+    "DescStrKey": "ST:149173"
+  },
+  {
+    "ID": 100025,
+    "Visible": true,
+    "NameStrKey": "ST:149166",
+    "DescStrKey": "ST:149211"
+  },
+  {
+    "ID": 100026,
+    "Visible": true,
+    "NameStrKey": "ST:149167",
+    "DescStrKey": "ST:149212"
+  },
+  {
+    "ID": 100027,
+    "Visible": true,
+    "NameStrKey": "ST:149168",
+    "DescStrKey": "ST:149213"
+  },
+  {
+    "ID": 100028,
+    "Visible": true,
+    "NameStrKey": "ST:149207",
+    "DescStrKey": "ST:149371"
+  },
+  {
+    "ID": 101001,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44000
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157577",
+    "DescStrKey": "ST:157506"
+  },
+  {
+    "ID": 101002,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44001
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157578",
+    "DescStrKey": "ST:157507"
+  },
+  {
+    "ID": 101003,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44002
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157579",
+    "DescStrKey": "ST:157508"
+  },
+  {
+    "ID": 101004,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44003
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157580",
+    "DescStrKey": "ST:157509"
+  },
+  {
+    "ID": 101005,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44004
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157581",
+    "DescStrKey": "ST:157510"
+  },
+  {
+    "ID": 101006,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44005
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157582",
+    "DescStrKey": "ST:157511"
+  },
+  {
+    "ID": 101007,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44006
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157583",
+    "DescStrKey": "ST:157512"
+  },
+  {
+    "ID": 101008,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44007
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157584",
+    "DescStrKey": "ST:157513"
+  },
+  {
+    "ID": 102001,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44100
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157585",
+    "DescStrKey": "ST:157514"
+  },
+  {
+    "ID": 102002,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44101
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157586",
+    "DescStrKey": "ST:157515"
+  },
+  {
+    "ID": 102003,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44102
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157587",
+    "DescStrKey": "ST:157516"
+  },
+  {
+    "ID": 102004,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44103
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157588",
+    "DescStrKey": "ST:157517"
+  },
+  {
+    "ID": 102005,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44104
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157589",
+    "DescStrKey": "ST:157518"
+  },
+  {
+    "ID": 102006,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44105
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157590",
+    "DescStrKey": "ST:157531"
+  },
+  {
+    "ID": 102007,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44106
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157591",
+    "DescStrKey": "ST:157520"
+  },
+  {
+    "ID": 102008,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44107
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:157592",
+    "DescStrKey": "ST:157521"
+  },
+  {
+    "ID": 103001,
+    "Visible": true,
+    "NameStrKey": "ST:149157",
+    "DescStrKey": "ST:149208"
+  },
+  {
+    "ID": 103002,
+    "Visible": true,
+    "NameStrKey": "ST:149158",
+    "DescStrKey": "ST:149209"
+  },
+  {
+    "ID": 103003,
+    "Visible": true,
+    "NameStrKey": "ST:149159",
+    "DescStrKey": "ST:149210"
+  },
+  {
+    "ID": 103004,
+    "Visible": true,
+    "NameStrKey": "ST:160279",
+    "DescStrKey": "ST:160286"
+  },
+  {
+    "ID": 103005,
+    "Visible": true,
+    "NameStrKey": "ST:160280",
+    "DescStrKey": "ST:160287"
+  },
+  {
+    "ID": 103006,
+    "Visible": true,
+    "NameStrKey": "ST:160281",
+    "DescStrKey": "ST:160288"
+  },
+  {
+    "ID": 103007,
+    "Visible": true,
+    "NameStrKey": "ST:160282",
+    "DescStrKey": "ST:160289"
+  },
+  {
+    "ID": 103008,
+    "Visible": true,
+    "NameStrKey": "ST:160283",
+    "DescStrKey": "ST:160401"
+  },
+  {
+    "ID": 103009,
+    "Visible": true,
+    "NameStrKey": "ST:160284",
+    "DescStrKey": "ST:160402"
+  },
+  {
+    "ID": 103010,
+    "Visible": true,
+    "NameStrKey": "ST:160285",
+    "DescStrKey": "ST:160403"
+  },
+  {
+    "ID": 103011,
+    "Visible": true,
+    "NameStrKey": "ST:160400",
+    "DescStrKey": "ST:160404"
+  },
+  {
+    "ID": 104001,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44008
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:160449",
+    "DescStrKey": "ST:160408"
+  },
+  {
+    "ID": 104002,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44009
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:160450",
+    "DescStrKey": "ST:160409"
+  },
+  {
+    "ID": 104003,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44010
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:160451",
+    "DescStrKey": "ST:160410"
+  },
+  {
+    "ID": 104004,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44011
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:160452",
+    "DescStrKey": "ST:160411"
+  },
+  {
+    "ID": 104005,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44012
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:160453",
+    "DescStrKey": "ST:160412"
+  },
+  {
+    "ID": 104006,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44013
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:160454",
+    "DescStrKey": "ST:160413"
+  },
+  {
+    "ID": 104007,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44014
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:160456",
+    "DescStrKey": "ST:160472"
+  },
+  {
+    "ID": 104008,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44015
+    ],
+    "Visible": true,
+    "NameStrKey": "ST:160455",
+    "DescStrKey": "ST:160473"
+  },
+  {
+    "ID": 105001,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44200
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/Icon/Citiao_04.png@Citiao_04",
+    "SelectedIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/Icon/Citiao_01.png@Citiao_01",
+    "Visible": true,
+    "NameStrKey": "ST:162759",
+    "DescStrKey": "ST:162274"
+  },
+  {
+    "ID": 105002,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Enemy",
+    "ParamList": [
+      44201
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/Icon/Citiao_06.png@Citiao_06",
+    "SelectedIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/Icon/Citiao_03.png@Citiao_03",
+    "Visible": true,
+    "NameStrKey": "ST:162760",
+    "DescStrKey": "ST:162275"
+  },
+  {
+    "ID": 105003,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Side",
+    "ParamList": [
+      44202
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/Icon/Citiao_05.png@Citiao_05",
+    "SelectedIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/Icon/Citiao_02.png@Citiao_02",
+    "Visible": true,
+    "NameStrKey": "ST:162761",
+    "DescStrKey": "ST:162920"
+  },
+  {
+    "ID": 105004,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Side",
+    "ParamList": [
+      44203
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/Icon/Citiao_05.png@Citiao_05",
+    "SelectedIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/Icon/Citiao_02.png@Citiao_02",
+    "Visible": true,
+    "NameStrKey": "ST:162761",
+    "DescStrKey": "ST:163524"
+  },
+  {
+    "ID": 105005,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Side",
+    "ParamList": [
+      44204
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/Icon/Citiao_05.png@Citiao_05",
+    "SelectedIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/Icon/Citiao_02.png@Citiao_02",
+    "Visible": true,
+    "NameStrKey": "ST:162761",
+    "DescStrKey": "ST:163525"
+  },
+  {
+    "ID": 105006,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Side",
+    "ParamList": [
+      44205
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/Icon/Citiao_05.png@Citiao_05",
+    "SelectedIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/Icon/Citiao_02.png@Citiao_02",
+    "Visible": true,
+    "NameStrKey": "ST:162761",
+    "DescStrKey": "ST:163476"
+  },
+  {
+    "ID": 105007,
+    "Type": "AffixType_Buff",
+    "EffectTarget": "AffixEffectTarget_Side",
+    "ParamList": [
+      44206
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/Icon/Citiao_05.png@Citiao_05",
+    "SelectedIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/Icon/Citiao_02.png@Citiao_02",
+    "Visible": true,
+    "NameStrKey": "ST:162761",
+    "DescStrKey": "ST:163236"
+  },
+  {
+    "ID": 106001,
+    "NameStrKey": "ST:149157",
+    "DescStrKey": "ST:177957"
+  },
+  {
+    "ID": 106002,
+    "NameStrKey": "ST:149158",
+    "DescStrKey": "ST:177958"
+  },
+  {
+    "ID": 106003,
+    "NameStrKey": "ST:149159",
+    "DescStrKey": "ST:177959"
+  },
+  {
+    "ID": 106004,
+    "NameStrKey": "ST:177954",
+    "DescStrKey": "ST:177960"
+  },
+  {
+    "ID": 106005,
+    "NameStrKey": "ST:177955",
+    "DescStrKey": "ST:177961"
+  },
+  {
+    "ID": 106006,
+    "NameStrKey": "ST:160282",
+    "DescStrKey": "ST:177962"
+  },
+  {
+    "ID": 106007,
+    "NameStrKey": "ST:160283",
+    "DescStrKey": "ST:178914"
+  },
+  {
+    "ID": 106008,
+    "NameStrKey": "ST:160284",
+    "DescStrKey": "ST:178915"
+  },
+  {
+    "ID": 106009,
+    "NameStrKey": "ST:160285",
+    "DescStrKey": "ST:179161"
+  },
+  {
+    "ID": 106010,
+    "NameStrKey": "ST:177956",
+    "DescStrKey": "ST:179162"
+  },
+  {
+    "ID": 106011,
+    "NameStrKey": "ST:178331",
+    "DescStrKey": "ST:178336"
+  },
+  {
+    "ID": 106012,
+    "NameStrKey": "ST:178332",
+    "DescStrKey": "ST:178336"
+  },
+  {
+    "ID": 107001,
+    "NameStrKey": "ST:160282",
+    "DescStrKey": "ST:230890"
+  },
+  {
+    "ID": 107002,
+    "NameStrKey": "ST:160283",
+    "DescStrKey": "ST:230891"
+  },
+  {
+    "ID": 107003,
+    "NameStrKey": "ST:160284",
+    "DescStrKey": "ST:230892"
+  },
+  {
+    "ID": 107004,
+    "NameStrKey": "ST:160285",
+    "DescStrKey": "ST:230893"
+  },
+  {
+    "ID": 107005,
+    "NameStrKey": "ST:230883",
+    "DescStrKey": "ST:230894"
+  },
+  {
+    "ID": 107006,
+    "NameStrKey": "ST:230884",
+    "DescStrKey": "ST:230895"
+  },
+  {
+    "ID": 107007,
+    "NameStrKey": "ST:230885",
+    "DescStrKey": "ST:230896"
+  },
+  {
+    "ID": 107008,
+    "NameStrKey": "ST:230886",
+    "DescStrKey": "ST:230897"
+  },
+  {
+    "ID": 107009,
+    "NameStrKey": "ST:230887",
+    "DescStrKey": "ST:230898"
+  },
+  {
+    "ID": 107010,
+    "NameStrKey": "ST:230888",
+    "DescStrKey": "ST:230899"
+  },
+  {
+    "ID": 107011,
+    "NameStrKey": "ST:230889",
+    "DescStrKey": "ST:230900"
+  },
+  {
+    "ID": 108001,
+    "NameStrKey": "ST:253930",
+    "DescStrKey": "ST:253937"
+  },
+  {
+    "ID": 108002,
+    "NameStrKey": "ST:253931",
+    "DescStrKey": "ST:253938"
+  },
+  {
+    "ID": 108003,
+    "NameStrKey": "ST:253932",
+    "DescStrKey": "ST:253939"
+  },
+  {
+    "ID": 108004,
+    "NameStrKey": "ST:253933",
+    "DescStrKey": "ST:253940"
+  },
+  {
+    "ID": 108005,
+    "NameStrKey": "ST:253934",
+    "DescStrKey": "ST:253941"
+  },
+  {
+    "ID": 108006,
+    "NameStrKey": "ST:253935",
+    "DescStrKey": "ST:253942"
+  },
+  {
+    "ID": 108007,
+    "NameStrKey": "ST:253936",
+    "DescStrKey": "ST:253943"
+  }
+]

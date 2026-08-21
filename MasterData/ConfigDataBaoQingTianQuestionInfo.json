@@ -1,0 +1,947 @@
+[
+  {
+    "ID": 1,
+    "CaseId": 1,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5001401
+      }
+    ],
+    "AnswerList": [
+      3
+    ],
+    "SuccessedDialogueId": 180909001,
+    "FailedOnceDialogueId": 180909401,
+    "FailedThriceTimesDialogueId": 180909501,
+    "ContentStrKey": "ST:145611",
+    "SuccessedStrKey": "ST:145622"
+  },
+  {
+    "ID": 2,
+    "CaseId": 1,
+    "PerQuestionList": [
+      1
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5001401
+      }
+    ],
+    "AnswerList": [
+      1,
+      4
+    ],
+    "SuccessedDialogueId": 180909101,
+    "FailedOnceDialogueId": 180909601,
+    "FailedThriceTimesDialogueId": 180909701,
+    "ContentStrKey": "ST:145612",
+    "SuccessedStrKey": "ST:145623"
+  },
+  {
+    "ID": 3,
+    "CaseId": 1,
+    "PerQuestionList": [
+      1
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5001401
+      }
+    ],
+    "AnswerList": [
+      2,
+      5
+    ],
+    "SuccessedDialogueId": 180909201,
+    "FailedOnceDialogueId": 180909801,
+    "FailedThriceTimesDialogueId": 180909901,
+    "ContentStrKey": "ST:145613",
+    "SuccessedStrKey": "ST:145624"
+  },
+  {
+    "ID": 4,
+    "CaseId": 1,
+    "PerQuestionList": [
+      2,
+      3
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5001401
+      }
+    ],
+    "AnswerList": [
+      6
+    ],
+    "SuccessedDialogueId": 180909301,
+    "FailedOnceDialogueId": 180910001,
+    "FailedThriceTimesDialogueId": 180910101,
+    "ContentStrKey": "ST:145614",
+    "SuccessedStrKey": "ST:145625"
+  },
+  {
+    "ID": 5,
+    "CaseId": 2,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5002201
+      }
+    ],
+    "AnswerList": [
+      7,
+      8
+    ],
+    "SuccessedDialogueId": 1807140101,
+    "FailedOnceDialogueId": 1807140201,
+    "FailedThriceTimesDialogueId": 1807140301,
+    "ContentStrKey": "ST:145615",
+    "SuccessedStrKey": "ST:147310"
+  },
+  {
+    "ID": 6,
+    "CaseId": 2,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5002201
+      }
+    ],
+    "AnswerList": [
+      10,
+      11
+    ],
+    "SuccessedDialogueId": 1807140401,
+    "FailedOnceDialogueId": 1807140501,
+    "FailedThriceTimesDialogueId": 1807140601,
+    "ContentStrKey": "ST:145616",
+    "SuccessedStrKey": "ST:147311"
+  },
+  {
+    "ID": 7,
+    "CaseId": 2,
+    "PerQuestionList": [
+      5,
+      6
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5002201
+      }
+    ],
+    "AnswerList": [
+      13
+    ],
+    "SuccessedDialogueId": 1807140701,
+    "FailedOnceDialogueId": 1807140801,
+    "FailedThriceTimesDialogueId": 1807140901,
+    "ContentStrKey": "ST:145617",
+    "SuccessedStrKey": "ST:147312"
+  },
+  {
+    "ID": 8,
+    "CaseId": 2,
+    "PerQuestionList": [
+      7
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5002201
+      }
+    ],
+    "AnswerList": [
+      9,
+      12
+    ],
+    "SuccessedDialogueId": 1807141001,
+    "FailedOnceDialogueId": 1807141101,
+    "FailedThriceTimesDialogueId": 1807141201,
+    "ContentStrKey": "ST:147307",
+    "SuccessedStrKey": "ST:147313"
+  },
+  {
+    "ID": 9,
+    "CaseId": 3,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5002801
+      }
+    ],
+    "AnswerList": [
+      15,
+      17
+    ],
+    "SuccessedDialogueId": 1807141301,
+    "FailedOnceDialogueId": 1807141401,
+    "FailedThriceTimesDialogueId": 1807141501,
+    "ContentStrKey": "ST:145619",
+    "SuccessedStrKey": "ST:147314"
+  },
+  {
+    "ID": 10,
+    "CaseId": 3,
+    "PerQuestionList": [
+      9
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5002801
+      }
+    ],
+    "AnswerList": [
+      20
+    ],
+    "SuccessedDialogueId": 1807141601,
+    "FailedOnceDialogueId": 1807141701,
+    "FailedThriceTimesDialogueId": 1807141801,
+    "ContentStrKey": "ST:147308",
+    "SuccessedStrKey": "ST:147315"
+  },
+  {
+    "ID": 11,
+    "CaseId": 3,
+    "PerQuestionList": [
+      10
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5002801
+      }
+    ],
+    "AnswerList": [
+      14,
+      19,
+      18
+    ],
+    "SuccessedDialogueId": 1807141901,
+    "FailedOnceDialogueId": 1807142001,
+    "FailedThriceTimesDialogueId": 1807142101,
+    "ContentStrKey": "ST:145621",
+    "SuccessedStrKey": "ST:147316"
+  },
+  {
+    "ID": 12,
+    "CaseId": 4,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5004201
+      }
+    ],
+    "AnswerList": [
+      24,
+      25
+    ],
+    "SuccessedDialogueId": 1807142201,
+    "FailedOnceDialogueId": 1807142301,
+    "FailedThriceTimesDialogueId": 1807142401,
+    "ContentStrKey": "ST:146107",
+    "SuccessedStrKey": "ST:147317"
+  },
+  {
+    "ID": 13,
+    "CaseId": 4,
+    "PerQuestionList": [
+      12
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5004201
+      }
+    ],
+    "AnswerList": [
+      21
+    ],
+    "SuccessedDialogueId": 1807142501,
+    "FailedOnceDialogueId": 1807142601,
+    "FailedThriceTimesDialogueId": 1807142701,
+    "ContentStrKey": "ST:146108",
+    "SuccessedStrKey": "ST:147318"
+  },
+  {
+    "ID": 14,
+    "CaseId": 4,
+    "PerQuestionList": [
+      13
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5004201
+      }
+    ],
+    "AnswerList": [
+      27,
+      28,
+      29
+    ],
+    "SuccessedDialogueId": 1807143101,
+    "FailedOnceDialogueId": 1807143201,
+    "FailedThriceTimesDialogueId": 1807143301,
+    "ContentStrKey": "ST:147309",
+    "SuccessedStrKey": "ST:147319"
+  },
+  {
+    "ID": 15,
+    "CaseId": 4,
+    "PerQuestionList": [
+      14
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5004201
+      }
+    ],
+    "AnswerList": [
+      22,
+      23,
+      26
+    ],
+    "SuccessedDialogueId": 1807142801,
+    "FailedOnceDialogueId": 1807142901,
+    "FailedThriceTimesDialogueId": 1807143001,
+    "ContentStrKey": "ST:146109",
+    "SuccessedStrKey": "ST:147320"
+  },
+  {
+    "ID": 101,
+    "CaseId": 101,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5101401
+      }
+    ],
+    "AnswerList": [
+      103
+    ],
+    "SuccessedDialogueId": 180909001,
+    "FailedOnceDialogueId": 180909401,
+    "FailedThriceTimesDialogueId": 180909501,
+    "ContentStrKey": "ST:145611",
+    "SuccessedStrKey": "ST:145622"
+  },
+  {
+    "ID": 102,
+    "CaseId": 101,
+    "PerQuestionList": [
+      101
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5101401
+      }
+    ],
+    "AnswerList": [
+      101,
+      104
+    ],
+    "SuccessedDialogueId": 180909101,
+    "FailedOnceDialogueId": 180909601,
+    "FailedThriceTimesDialogueId": 180909701,
+    "ContentStrKey": "ST:145612",
+    "SuccessedStrKey": "ST:145623"
+  },
+  {
+    "ID": 103,
+    "CaseId": 101,
+    "PerQuestionList": [
+      101
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5101401
+      }
+    ],
+    "AnswerList": [
+      102,
+      105
+    ],
+    "SuccessedDialogueId": 180909201,
+    "FailedOnceDialogueId": 180909801,
+    "FailedThriceTimesDialogueId": 180909901,
+    "ContentStrKey": "ST:145613",
+    "SuccessedStrKey": "ST:145624"
+  },
+  {
+    "ID": 104,
+    "CaseId": 101,
+    "PerQuestionList": [
+      102,
+      103
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5101401
+      }
+    ],
+    "AnswerList": [
+      106
+    ],
+    "SuccessedDialogueId": 180909301,
+    "FailedOnceDialogueId": 180910001,
+    "FailedThriceTimesDialogueId": 180910101,
+    "ContentStrKey": "ST:145614",
+    "SuccessedStrKey": "ST:145625"
+  },
+  {
+    "ID": 105,
+    "CaseId": 102,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5102201
+      }
+    ],
+    "AnswerList": [
+      107,
+      108
+    ],
+    "SuccessedDialogueId": 1807140101,
+    "FailedOnceDialogueId": 1807140201,
+    "FailedThriceTimesDialogueId": 1807140301,
+    "ContentStrKey": "ST:145615",
+    "SuccessedStrKey": "ST:147310"
+  },
+  {
+    "ID": 106,
+    "CaseId": 102,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5102201
+      }
+    ],
+    "AnswerList": [
+      110,
+      111
+    ],
+    "SuccessedDialogueId": 1807140401,
+    "FailedOnceDialogueId": 1807140501,
+    "FailedThriceTimesDialogueId": 1807140601,
+    "ContentStrKey": "ST:145616",
+    "SuccessedStrKey": "ST:147311"
+  },
+  {
+    "ID": 107,
+    "CaseId": 102,
+    "PerQuestionList": [
+      105,
+      106
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5102201
+      }
+    ],
+    "AnswerList": [
+      113
+    ],
+    "SuccessedDialogueId": 1807140701,
+    "FailedOnceDialogueId": 1807140801,
+    "FailedThriceTimesDialogueId": 1807140901,
+    "ContentStrKey": "ST:145617",
+    "SuccessedStrKey": "ST:147312"
+  },
+  {
+    "ID": 108,
+    "CaseId": 102,
+    "PerQuestionList": [
+      107
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5102201
+      }
+    ],
+    "AnswerList": [
+      109,
+      112
+    ],
+    "SuccessedDialogueId": 1807141001,
+    "FailedOnceDialogueId": 1807141101,
+    "FailedThriceTimesDialogueId": 1807141201,
+    "ContentStrKey": "ST:147307",
+    "SuccessedStrKey": "ST:147313"
+  },
+  {
+    "ID": 109,
+    "CaseId": 103,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5102801
+      }
+    ],
+    "AnswerList": [
+      115,
+      117
+    ],
+    "SuccessedDialogueId": 1807141301,
+    "FailedOnceDialogueId": 1807141401,
+    "FailedThriceTimesDialogueId": 1807141501,
+    "ContentStrKey": "ST:145619",
+    "SuccessedStrKey": "ST:147314"
+  },
+  {
+    "ID": 110,
+    "CaseId": 103,
+    "PerQuestionList": [
+      109
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5102801
+      }
+    ],
+    "AnswerList": [
+      120
+    ],
+    "SuccessedDialogueId": 1807141601,
+    "FailedOnceDialogueId": 1807141701,
+    "FailedThriceTimesDialogueId": 1807141801,
+    "ContentStrKey": "ST:147308",
+    "SuccessedStrKey": "ST:147315"
+  },
+  {
+    "ID": 111,
+    "CaseId": 103,
+    "PerQuestionList": [
+      110
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5102801
+      }
+    ],
+    "AnswerList": [
+      114,
+      119,
+      118
+    ],
+    "SuccessedDialogueId": 1807141901,
+    "FailedOnceDialogueId": 1807142001,
+    "FailedThriceTimesDialogueId": 1807142101,
+    "ContentStrKey": "ST:145621",
+    "SuccessedStrKey": "ST:147316"
+  },
+  {
+    "ID": 112,
+    "CaseId": 104,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5104201
+      }
+    ],
+    "AnswerList": [
+      124,
+      125
+    ],
+    "SuccessedDialogueId": 1807142201,
+    "FailedOnceDialogueId": 1807142301,
+    "FailedThriceTimesDialogueId": 1807142401,
+    "ContentStrKey": "ST:146107",
+    "SuccessedStrKey": "ST:147317"
+  },
+  {
+    "ID": 113,
+    "CaseId": 104,
+    "PerQuestionList": [
+      112
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5104201
+      }
+    ],
+    "AnswerList": [
+      121
+    ],
+    "SuccessedDialogueId": 1807142501,
+    "FailedOnceDialogueId": 1807142601,
+    "FailedThriceTimesDialogueId": 1807142701,
+    "ContentStrKey": "ST:146108",
+    "SuccessedStrKey": "ST:147318"
+  },
+  {
+    "ID": 114,
+    "CaseId": 104,
+    "PerQuestionList": [
+      113
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5104201
+      }
+    ],
+    "AnswerList": [
+      127,
+      128,
+      129
+    ],
+    "SuccessedDialogueId": 1807143101,
+    "FailedOnceDialogueId": 1807143201,
+    "FailedThriceTimesDialogueId": 1807143301,
+    "ContentStrKey": "ST:147309",
+    "SuccessedStrKey": "ST:147319"
+  },
+  {
+    "ID": 115,
+    "CaseId": 104,
+    "PerQuestionList": [
+      114
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5104201
+      }
+    ],
+    "AnswerList": [
+      122,
+      123,
+      126
+    ],
+    "SuccessedDialogueId": 1807142801,
+    "FailedOnceDialogueId": 1807142901,
+    "FailedThriceTimesDialogueId": 1807143001,
+    "ContentStrKey": "ST:146109",
+    "SuccessedStrKey": "ST:147320"
+  },
+  {
+    "ID": 201,
+    "CaseId": 201,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5201401
+      }
+    ],
+    "AnswerList": [
+      203
+    ],
+    "SuccessedDialogueId": 180909001,
+    "FailedOnceDialogueId": 180909401,
+    "FailedThriceTimesDialogueId": 180909501,
+    "ContentStrKey": "ST:145611",
+    "SuccessedStrKey": "ST:145622"
+  },
+  {
+    "ID": 202,
+    "CaseId": 201,
+    "PerQuestionList": [
+      201
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5201401
+      }
+    ],
+    "AnswerList": [
+      201,
+      204
+    ],
+    "SuccessedDialogueId": 180909101,
+    "FailedOnceDialogueId": 180909601,
+    "FailedThriceTimesDialogueId": 180909701,
+    "ContentStrKey": "ST:145612",
+    "SuccessedStrKey": "ST:145623"
+  },
+  {
+    "ID": 203,
+    "CaseId": 201,
+    "PerQuestionList": [
+      201
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5201401
+      }
+    ],
+    "AnswerList": [
+      202,
+      205
+    ],
+    "SuccessedDialogueId": 180909201,
+    "FailedOnceDialogueId": 180909801,
+    "FailedThriceTimesDialogueId": 180909901,
+    "ContentStrKey": "ST:145613",
+    "SuccessedStrKey": "ST:145624"
+  },
+  {
+    "ID": 204,
+    "CaseId": 201,
+    "PerQuestionList": [
+      202,
+      203
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5201401
+      }
+    ],
+    "AnswerList": [
+      206
+    ],
+    "SuccessedDialogueId": 180909301,
+    "FailedOnceDialogueId": 180910001,
+    "FailedThriceTimesDialogueId": 180910101,
+    "ContentStrKey": "ST:145614",
+    "SuccessedStrKey": "ST:145625"
+  },
+  {
+    "ID": 205,
+    "CaseId": 202,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5202201
+      }
+    ],
+    "AnswerList": [
+      207,
+      208
+    ],
+    "SuccessedDialogueId": 1807140101,
+    "FailedOnceDialogueId": 1807140201,
+    "FailedThriceTimesDialogueId": 1807140301,
+    "ContentStrKey": "ST:145615",
+    "SuccessedStrKey": "ST:147310"
+  },
+  {
+    "ID": 206,
+    "CaseId": 202,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5202201
+      }
+    ],
+    "AnswerList": [
+      210,
+      211
+    ],
+    "SuccessedDialogueId": 1807140401,
+    "FailedOnceDialogueId": 1807140501,
+    "FailedThriceTimesDialogueId": 1807140601,
+    "ContentStrKey": "ST:145616",
+    "SuccessedStrKey": "ST:147311"
+  },
+  {
+    "ID": 207,
+    "CaseId": 202,
+    "PerQuestionList": [
+      205,
+      206
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5202201
+      }
+    ],
+    "AnswerList": [
+      213
+    ],
+    "SuccessedDialogueId": 1807140701,
+    "FailedOnceDialogueId": 1807140801,
+    "FailedThriceTimesDialogueId": 1807140901,
+    "ContentStrKey": "ST:145617",
+    "SuccessedStrKey": "ST:147312"
+  },
+  {
+    "ID": 208,
+    "CaseId": 202,
+    "PerQuestionList": [
+      207
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5202201
+      }
+    ],
+    "AnswerList": [
+      209,
+      212
+    ],
+    "SuccessedDialogueId": 1807141001,
+    "FailedOnceDialogueId": 1807141101,
+    "FailedThriceTimesDialogueId": 1807141201,
+    "ContentStrKey": "ST:147307",
+    "SuccessedStrKey": "ST:147313"
+  },
+  {
+    "ID": 209,
+    "CaseId": 203,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5202801
+      }
+    ],
+    "AnswerList": [
+      215,
+      217
+    ],
+    "SuccessedDialogueId": 1807141301,
+    "FailedOnceDialogueId": 1807141401,
+    "FailedThriceTimesDialogueId": 1807141501,
+    "ContentStrKey": "ST:145619",
+    "SuccessedStrKey": "ST:147314"
+  },
+  {
+    "ID": 210,
+    "CaseId": 203,
+    "PerQuestionList": [
+      209
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5202801
+      }
+    ],
+    "AnswerList": [
+      220
+    ],
+    "SuccessedDialogueId": 1807141601,
+    "FailedOnceDialogueId": 1807141701,
+    "FailedThriceTimesDialogueId": 1807141801,
+    "ContentStrKey": "ST:147308",
+    "SuccessedStrKey": "ST:147315"
+  },
+  {
+    "ID": 211,
+    "CaseId": 203,
+    "PerQuestionList": [
+      210
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5202801
+      }
+    ],
+    "AnswerList": [
+      214,
+      219,
+      218
+    ],
+    "SuccessedDialogueId": 1807141901,
+    "FailedOnceDialogueId": 1807142001,
+    "FailedThriceTimesDialogueId": 1807142101,
+    "ContentStrKey": "ST:145621",
+    "SuccessedStrKey": "ST:147316"
+  },
+  {
+    "ID": 212,
+    "CaseId": 204,
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5204201
+      }
+    ],
+    "AnswerList": [
+      224,
+      225
+    ],
+    "SuccessedDialogueId": 1807142201,
+    "FailedOnceDialogueId": 1807142301,
+    "FailedThriceTimesDialogueId": 1807142401,
+    "ContentStrKey": "ST:146107",
+    "SuccessedStrKey": "ST:147317"
+  },
+  {
+    "ID": 213,
+    "CaseId": 204,
+    "PerQuestionList": [
+      212
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5204201
+      }
+    ],
+    "AnswerList": [
+      221
+    ],
+    "SuccessedDialogueId": 1807142501,
+    "FailedOnceDialogueId": 1807142601,
+    "FailedThriceTimesDialogueId": 1807142701,
+    "ContentStrKey": "ST:146108",
+    "SuccessedStrKey": "ST:147318"
+  },
+  {
+    "ID": 214,
+    "CaseId": 204,
+    "PerQuestionList": [
+      213
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5204201
+      }
+    ],
+    "AnswerList": [
+      227,
+      228,
+      229
+    ],
+    "SuccessedDialogueId": 1807143101,
+    "FailedOnceDialogueId": 1807143201,
+    "FailedThriceTimesDialogueId": 1807143301,
+    "ContentStrKey": "ST:147309",
+    "SuccessedStrKey": "ST:147319"
+  },
+  {
+    "ID": 215,
+    "CaseId": 204,
+    "PerQuestionList": [
+      214
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 5204201
+      }
+    ],
+    "AnswerList": [
+      222,
+      223,
+      226
+    ],
+    "SuccessedDialogueId": 1807142801,
+    "FailedOnceDialogueId": 1807142901,
+    "FailedThriceTimesDialogueId": 1807143001,
+    "ContentStrKey": "ST:146109",
+    "SuccessedStrKey": "ST:147320"
+  }
+]

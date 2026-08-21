@@ -1,0 +1,2969 @@
+[
+  {
+    "ID": 1,
+    "StoreID": "StoreId_BlackMarket",
+    "Type": "StoreType_Random",
+    "StoreName": "博物斋"
+  },
+  {
+    "ID": 2,
+    "StoreID": "StoreId_Crystal",
+    "Type": "StoreType_Fixed",
+    "StoreName": "高级集市"
+  },
+  {
+    "ID": 3,
+    "StoreID": "StoreId_Honor",
+    "Disable": true,
+    "Type": "StoreType_Fixed",
+    "StoreName": "江湖市坊"
+  },
+  {
+    "ID": 4,
+    "StoreID": "StoreId_Friendship",
+    "Disable": true,
+    "Type": "StoreType_Fixed",
+    "StoreName": "友情商店"
+  },
+  {
+    "ID": 5,
+    "StoreID": "StoreId_SkinHero",
+    "Type": "StoreType_Fixed",
+    "StoreName": "英雄皮肤商店"
+  },
+  {
+    "ID": 6,
+    "StoreID": "StoreId_SkinSoldier",
+    "Type": "StoreType_Fixed",
+    "StoreName": "士兵皮肤商店"
+  },
+  {
+    "ID": 7,
+    "StoreID": "StoreId_Gift",
+    "Type": "StoreType_Gift",
+    "StoreName": "周期礼包商店"
+  },
+  {
+    "ID": 8,
+    "StoreID": "StoreId_Privilege",
+    "Type": "StoreType_Gift",
+    "StoreName": "特权商店"
+  },
+  {
+    "ID": 9,
+    "StoreID": "StoreId_Medal",
+    "Type": "StoreType_Fixed",
+    "StoreName": "勋章商店"
+  },
+  {
+    "ID": 10,
+    "StoreID": "StoreId_Union",
+    "Disable": true,
+    "Type": "StoreType_Fixed",
+    "StoreName": "公会商店"
+  },
+  {
+    "ID": 11,
+    "StoreID": "StoreId_Recharge",
+    "Type": "StoreType_Fixed",
+    "StoreName": "通天宝阁"
+  },
+  {
+    "ID": 12,
+    "StoreID": "StoreId_Memory",
+    "Type": "StoreType_Fixed",
+    "StoreName": "记忆商店"
+  },
+  {
+    "ID": 13,
+    "StoreID": "StoreId_Equipment",
+    "Type": "StoreType_Fixed",
+    "StoreName": "装备商店(泫露商店)"
+  },
+  {
+    "ID": 14,
+    "StoreID": "StoreId_GuildPerson",
+    "Type": "StoreType_Fixed",
+    "StoreName": "旅团个人商店"
+  },
+  {
+    "ID": 15,
+    "StoreID": "StoreId_UnchartedEquip",
+    "Type": "StoreType_Fixed",
+    "StoreName": "秘境装备商店"
+  },
+  {
+    "ID": 16,
+    "StoreID": "StoreId_UnchartedSkin",
+    "Type": "StoreType_Fixed",
+    "StoreName": "秘境皮肤商店"
+  },
+  {
+    "ID": 17,
+    "StoreID": "StoreId_RefluxBoon",
+    "Type": "StoreType_Gift",
+    "StoreName": "回流福利商店"
+  },
+  {
+    "ID": 18,
+    "StoreID": "StoreId_SealBattleField",
+    "Type": "StoreType_Fixed",
+    "StoreName": "封印战域商店"
+  },
+  {
+    "ID": 19,
+    "StoreID": "StoreId_SnowPrestigeShop",
+    "Type": "StoreType_Fixed",
+    "StoreName": "雪域高原声望商店"
+  },
+  {
+    "ID": 20,
+    "StoreID": "StoreId_PlainPrestigeShop",
+    "Type": "StoreType_Fixed",
+    "StoreName": "天府之国声望商店"
+  },
+  {
+    "ID": 21,
+    "StoreID": "StoreId_BorderPrestigeShop",
+    "Type": "StoreType_Fixed",
+    "StoreName": "塞外戈壁声望商店"
+  },
+  {
+    "ID": 22,
+    "StoreID": "StoreId_PrestigeShop",
+    "Type": "StoreType_Fixed",
+    "StoreName": "总声望上商店"
+  },
+  {
+    "ID": 23,
+    "StoreID": "StoreId_SpGift",
+    "Type": "StoreType_Gift",
+    "StoreName": "特殊礼包商店"
+  },
+  {
+    "ID": 24,
+    "StoreID": "StoreId_StrangeMaze",
+    "Type": "StoreType_Fixed",
+    "StoreName": "新年怪谈商店"
+  },
+  {
+    "ID": 25,
+    "StoreID": "StoreId_StarColor",
+    "Type": "StoreType_Fixed",
+    "StoreName": "星之彩"
+  },
+  {
+    "ID": 26,
+    "StoreID": "StoreId_Maze",
+    "Type": "StoreType_Exchange",
+    "StoreName": "月令狸歌商店",
+    "ActivityID": 210209,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020101,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020102,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020103,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020104,
+        "GoldRate": 500
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020105
+      }
+    ],
+    "ItemRecycleMail": 232,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020101
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020102
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020103
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020104
+      }
+    ]
+  },
+  {
+    "ID": 27,
+    "StoreID": "StoreId_Mishi",
+    "Type": "StoreType_Exchange",
+    "StoreName": "靡世之音商店",
+    "ActivityID": 27,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020401,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020402,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020403,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020404
+      }
+    ],
+    "ItemRecycleMail": 233,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1109_ABS/Hero1109_Graphic_Prefab.prefab",
+    "NpcCharId": 110900,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020401
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020402
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020403
+      }
+    ]
+  },
+  {
+    "ID": 28,
+    "StoreID": "StoreId_GiftFree",
+    "Type": "StoreType_Fixed",
+    "StoreName": "礼包商店中的免费"
+  },
+  {
+    "ID": 29,
+    "StoreID": "StoreId_FuTuTa",
+    "Type": "StoreType_Fixed",
+    "StoreName": "浮屠塔活动商店",
+    "ActivityID": 210310,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 12,
+        "GoldRate": 20
+      }
+    ],
+    "ItemRecycleMail": 234,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Monster/Monster810103_ABS/Monster810103_Graphic_Prefab.prefab",
+    "EnterDialogId": 44,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 12,
+        "GoldRate": 20
+      }
+    ]
+  },
+  {
+    "ID": 30,
+    "StoreID": "StoreId_OldRegionDiTing",
+    "Disable": true,
+    "Type": "StoreType_Fixed",
+    "StoreName": "旧域谛听商店",
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Monster/Monster810103_ABS/Monster810103_Graphic_Prefab.prefab",
+    "EnterDialogId": 44
+  },
+  {
+    "ID": 31,
+    "StoreID": "StoreId_Xianjian",
+    "Type": "StoreType_Exchange",
+    "StoreName": "仙剑联动商店",
+    "ActivityID": 210501,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020106,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020107,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020108,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020109
+      }
+    ],
+    "ItemRecycleMail": 235,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2000_ABS/Hero2000_Graphic_Prefab.prefab",
+    "NpcCharId": 200000,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020106
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020107
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020108
+      }
+    ]
+  },
+  {
+    "ID": 32,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "猫的骰子（兑换商店）",
+    "ActivityID": 210504,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020405,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 237,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020405
+      }
+    ]
+  },
+  {
+    "ID": 33,
+    "StoreID": "StoreId_XuanyuanSword",
+    "Type": "StoreType_Exchange",
+    "StoreName": "轩辕剑联动商店",
+    "ActivityID": 210601,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020110,
+        "GoldRate": 1
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020111,
+        "GoldRate": 5
+      }
+    ],
+    "ItemRecycleMail": 238,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2003_ABS/Hero2003_Graphic_Prefab.prefab",
+    "NpcCharId": 200300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020110
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020111
+      }
+    ]
+  },
+  {
+    "ID": 36,
+    "StoreID": "StoreId_SoulStone",
+    "Type": "StoreType_Fixed",
+    "StoreName": "镇魂商店"
+  },
+  {
+    "ID": 37,
+    "StoreID": "StoreId_SantuStore",
+    "Type": "StoreType_Exchange",
+    "StoreName": "三途烽燧兑换商店",
+    "ActivityID": 210705,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020112,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020113,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020114,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020115
+      }
+    ],
+    "ItemRecycleMail": 239,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1223_ABS/Hero1223_Graphic_Prefab.prefab",
+    "NpcCharId": 122300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020112
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020113
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020114
+      }
+    ]
+  },
+  {
+    "ID": 38,
+    "StoreID": "StoreId_FeiNiao",
+    "Type": "StoreType_Exchange",
+    "StoreName": "飞鸟魂渡商店",
+    "ActivityID": 210801,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020116,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020117,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020118,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020119,
+        "GoldRate": 200
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020120
+      }
+    ],
+    "ItemRecycleMail": 240,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1022_ABS/Hero1022_Graphic_Prefab.prefab",
+    "NpcCharId": 102200,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020116
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020117
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020118
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020119
+      }
+    ]
+  },
+  {
+    "ID": 39,
+    "StoreID": "StoreId_RechargeActivity",
+    "Type": "StoreType_Fixed",
+    "StoreName": "限时特惠商店",
+    "ActivityID": 256036
+  },
+  {
+    "ID": 40,
+    "StoreID": "StoreId_Glacier",
+    "Type": "StoreType_Exchange",
+    "StoreName": "寒川止息商店",
+    "ActivityID": 211006,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020121,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020122,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020123,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020124
+      }
+    ],
+    "ItemRecycleMail": 241,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1022_ABS/Hero1022_Graphic_Prefab.prefab",
+    "NpcCharId": 102500,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020121
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020122
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020123
+      }
+    ]
+  },
+  {
+    "ID": 42,
+    "StoreID": "StoreId_QianNv",
+    "Type": "StoreType_Exchange",
+    "StoreName": "聂小倩商店",
+    "ActivityID": 221101,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020125,
+        "GoldRate": 50
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020126,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020127
+      }
+    ],
+    "ItemRecycleMail": 243,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2009_ABS/Hero2009_Graphic_Prefab.prefab",
+    "NpcCharId": 200900,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020125
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020126
+      }
+    ]
+  },
+  {
+    "ID": 43,
+    "Type": "StoreType_Exchange",
+    "StoreName": "梦境摘星（正式）",
+    "ActivityID": 221111,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020406,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 242,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020406
+      }
+    ]
+  },
+  {
+    "ID": 44,
+    "StoreID": "StoreId_HuanHai",
+    "Type": "StoreType_Exchange",
+    "StoreName": "幻海迷城",
+    "ActivityID": 221203,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020128,
+        "GoldRate": 50
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020129,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020130
+      }
+    ],
+    "ItemRecycleMail": 244,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1103_ABS/Hero1103_Graphic_Prefab.prefab",
+    "NpcCharId": 110300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020128
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020129
+      }
+    ]
+  },
+  {
+    "ID": 45,
+    "StoreID": "StoreId_ShiLun",
+    "Type": "StoreType_Exchange",
+    "StoreName": "时轮变兑换商店",
+    "ActivityID": 221305,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020131,
+        "GoldRate": 50
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020132,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020133
+      }
+    ],
+    "ItemRecycleMail": 245,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1103_ABS/Hero1314_Graphic_Prefab.prefab",
+    "NpcCharId": 131400,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020131
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020132
+      }
+    ]
+  },
+  {
+    "ID": 46,
+    "StoreID": "StoreId_Xianjian",
+    "Type": "StoreType_Exchange",
+    "StoreName": "仙剑联动商店（复刻）",
+    "ActivityID": 221401,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020134,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020135,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020136,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020137
+      }
+    ],
+    "ItemRecycleMail": 235,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2000_ABS/Hero2000_Graphic_Prefab.prefab",
+    "NpcCharId": 200000,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020134
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020135
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020136
+      }
+    ]
+  },
+  {
+    "ID": 47,
+    "StoreID": "StoreId_HomeStore",
+    "Type": "StoreType_Fixed",
+    "StoreName": "家园币商店"
+  },
+  {
+    "ID": 48,
+    "StoreID": "StoreId_HomeJournalStore",
+    "Disable": true,
+    "Type": "StoreType_Fixed",
+    "StoreName": "游历币商店"
+  },
+  {
+    "ID": 49,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "猫的骰子（兑换商店）",
+    "ActivityID": 221418,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020409,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 237,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020409
+      }
+    ]
+  },
+  {
+    "ID": 50,
+    "StoreID": "StoreId_QuJiQiYou",
+    "Type": "StoreType_Exchange",
+    "StoreName": "鼩及其友兑换",
+    "ActivityID": 221501,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020138,
+        "GoldRate": 50
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020139,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020140
+      }
+    ],
+    "ItemRecycleMail": 246,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1148_ABS/Hero1148_Graphic_Prefab.prefab",
+    "NpcCharId": 114800,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020138
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020139
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020140
+      }
+    ]
+  },
+  {
+    "ID": 51,
+    "StoreID": "StoreId_XuanyuanSword",
+    "Type": "StoreType_Exchange",
+    "StoreName": "轩辕剑复刻",
+    "ActivityID": 221601,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020142,
+        "GoldRate": 10
+      }
+    ],
+    "ItemRecycleMail": 247,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2003_ABS/Hero2003_Graphic_Prefab.prefab",
+    "NpcCharId": 200300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020142
+      }
+    ]
+  },
+  {
+    "ID": 52,
+    "StoreID": "StoreId_BaoQingTian",
+    "Type": "StoreType_Exchange",
+    "StoreName": "包青天",
+    "ActivityID": 221801,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020143,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020144,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020145,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020146
+      }
+    ],
+    "ItemRecycleMail": 248,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2013_ABS/Hero2013_Graphic_Prefab.prefab",
+    "NpcCharId": 201300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020143
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020144
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020145
+      }
+    ]
+  },
+  {
+    "ID": 53,
+    "StoreID": "StoreId_YinQingYuanQue",
+    "Type": "StoreType_Exchange",
+    "StoreName": "阴晴圆缺兑换",
+    "ActivityID": 221901,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020151,
+        "GoldRate": 50
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020152,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020153
+      }
+    ],
+    "ItemRecycleMail": 249,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1149_ABS/Hero1149_Graphic_Prefab.prefab",
+    "NpcCharId": 114900,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020151
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020152
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020153
+      }
+    ]
+  },
+  {
+    "ID": 54,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "梦境摘星（中秋）",
+    "ActivityID": 221907,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020411,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 250,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020406
+      }
+    ]
+  },
+  {
+    "ID": 55,
+    "StoreID": "StoreId_HuanHaiChangZhu",
+    "Type": "StoreType_Exchange",
+    "StoreName": "幻海迷城",
+    "ActivityID": 222003,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020157,
+        "GoldRate": 50
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020158,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020159
+      }
+    ],
+    "ItemRecycleMail": 244,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1103_ABS/Hero1103_Graphic_Prefab.prefab",
+    "NpcCharId": 110300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020157
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020158
+      }
+    ]
+  },
+  {
+    "ID": 56,
+    "StoreID": "StoreId_HomeExchangeStore",
+    "Type": "StoreType_Fixed",
+    "StoreName": "家园兑换商店（溢出资源回收）"
+  },
+  {
+    "ID": 57,
+    "StoreID": "StoreId_XiaozuGuohe",
+    "Type": "StoreType_Exchange",
+    "StoreName": "幻海迷城",
+    "ActivityID": 222004,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020154,
+        "GoldRate": 50
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020155,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020156
+      }
+    ],
+    "ItemRecycleMail": 251,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1041_ABS/Hero1041_Graphic_Prefab.prefab",
+    "NpcCharId": 104100,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020154
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020155
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020156
+      }
+    ]
+  },
+  {
+    "ID": 58,
+    "StoreID": "StoreId_MishiRemix",
+    "Type": "StoreType_Exchange",
+    "StoreName": "靡世之音复刻",
+    "ActivityID": 222101,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020414,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020415,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020416
+      }
+    ],
+    "ItemRecycleMail": 233,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1109_ABS/Hero1109_Graphic_Prefab.prefab",
+    "NpcCharId": 110900,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020414
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020415
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020416
+      }
+    ]
+  },
+  {
+    "ID": 59,
+    "StoreID": "StoreId_GreenSnake",
+    "Type": "StoreType_Exchange",
+    "StoreName": "青蛇",
+    "ActivityID": 222401,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020160,
+        "GoldRate": 50
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020161,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020162
+      }
+    ],
+    "ItemRecycleMail": 252,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2015_ABS/Hero2015_Graphic_Prefab.prefab",
+    "NpcCharId": 201500,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020160,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020161,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020162
+      }
+    ]
+  },
+  {
+    "ID": 60,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "梦境摘星（青蛇）",
+    "ActivityID": 222307,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020502,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 242,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020502
+      }
+    ]
+  },
+  {
+    "ID": 61,
+    "StoreID": "StoreId_BossChallengeOne",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB24BOSS挑战兑换",
+    "ActivityID": 221902,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020163,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 253,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1043_Skin01_ABS/Hero1043_Skin01_Graphic_Prefab.prefab",
+    "NpcCharId": 114301,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020163,
+        "GoldRate": 100
+      }
+    ]
+  },
+  {
+    "ID": 62,
+    "StoreID": "StoreId_QianNvRemix",
+    "Type": "StoreType_Exchange",
+    "StoreName": "聂小倩复刻",
+    "ActivityID": 232501,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020164,
+        "GoldRate": 50
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020165,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020166
+      }
+    ],
+    "ItemRecycleMail": 255,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2009_ABS/Hero2009_Graphic_Prefab.prefab",
+    "NpcCharId": 200900,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020164
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020165
+      }
+    ]
+  },
+  {
+    "ID": 63,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "梦境摘星（复刻小钱）",
+    "ActivityID": 232518,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020419,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 242,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020420
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020419
+      }
+    ]
+  },
+  {
+    "ID": 64,
+    "StoreID": "StoreId_TianDiZhanJi",
+    "Type": "StoreType_Exchange",
+    "StoreName": "天地战纪",
+    "ActivityID": 232601,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020167,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleMail": 256,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1301_ABS/Hero1301_Graphic_Prefab.prefab",
+    "NpcCharId": 130100,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020167
+      }
+    ]
+  },
+  {
+    "ID": 65,
+    "StoreID": "StoreId_YouHunJueLun",
+    "Type": "StoreType_Exchange",
+    "StoreName": "幽绝浑沦（OB+27浮屠城换皮）",
+    "ActivityID": 232701,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020168,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 257,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1062_ABS/Hero1062_Graphic_Prefab.prefab",
+    "NpcCharId": 106200,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020168
+      }
+    ]
+  },
+  {
+    "ID": 66,
+    "StoreID": "StoreId_LevelGift",
+    "Type": "StoreType_Gift",
+    "StoreName": "等级礼包（付费）"
+  },
+  {
+    "ID": 67,
+    "StoreID": "StoreId_MonsterAndGod",
+    "Type": "StoreType_Exchange",
+    "StoreName": "怪物与神明",
+    "ActivityID": 232801,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020423,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020422
+      }
+    ],
+    "ItemRecycleMail": 259,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1301_ABS/Hero1061_Graphic_Prefab.prefab",
+    "NpcCharId": 106100,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020423
+      }
+    ]
+  },
+  {
+    "ID": 68,
+    "StoreID": "StoreId_BaoQingTian",
+    "Type": "StoreType_Exchange",
+    "StoreName": "包青天",
+    "ActivityID": 232901,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020424,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020425,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020426,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020427
+      }
+    ],
+    "ItemRecycleMail": 248,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2013_ABS/Hero2013_Graphic_Prefab.prefab",
+    "NpcCharId": 201300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020424
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020425
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020426
+      }
+    ]
+  },
+  {
+    "ID": 69,
+    "StoreID": "StoreId_GateShop",
+    "Type": "StoreType_Fixed",
+    "StoreName": "忆海商坊"
+  },
+  {
+    "ID": 70,
+    "StoreID": "StoreId_QuJiQiYou",
+    "Type": "StoreType_Exchange",
+    "StoreName": "鼩及其友兑换",
+    "ActivityID": 233021,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020147,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020148,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020149
+      }
+    ],
+    "ItemRecycleMail": 246,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1148_ABS/Hero1148_Graphic_Prefab.prefab",
+    "NpcCharId": 114800,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020147
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020148
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020149
+      }
+    ]
+  },
+  {
+    "ID": 71,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "梦境摘星（31敦煌）",
+    "ActivityID": 233115,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020429,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 242,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020430
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020429
+      }
+    ]
+  },
+  {
+    "ID": 72,
+    "StoreID": "StoreId_BossChallengeTwo",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB32BOSS挑战兑换",
+    "ActivityID": 233216,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020801,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 261,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1043_Skin01_ABS/Hero1043_Skin01_Graphic_Prefab.prefab",
+    "NpcCharId": 114301,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020801,
+        "GoldRate": 100
+      }
+    ]
+  },
+  {
+    "ID": 73,
+    "StoreID": "StoreId_GreenSnakeRemix",
+    "Type": "StoreType_Exchange",
+    "StoreName": "青蛇（复刻）",
+    "ActivityID": 233301,
+    "ItemRecycleMail": 252,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2015_ABS/Hero2015_Graphic_Prefab.prefab",
+    "NpcCharId": 201500,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020901,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020902,
+        "GoldRate": 100
+      }
+    ]
+  },
+  {
+    "ID": 74,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "梦境摘星（33中秋）",
+    "ActivityID": 233320,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020431,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 250,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020431
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020432
+      }
+    ]
+  },
+  {
+    "ID": 100,
+    "StoreID": "StoreId_LevelGiftFree",
+    "Type": "StoreType_Fixed",
+    "StoreName": "等级礼包（免费）"
+  },
+  {
+    "ID": 101,
+    "StoreID": "StoreId_DunHuang",
+    "Type": "StoreType_Exchange",
+    "StoreName": "敦煌兑换商店",
+    "ActivityID": 233101,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020711,
+        "GoldRate": 50
+      }
+    ],
+    "ItemRecycleMail": 260,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1064_ABS/Hero1064_Graphic_Prefab.prefab",
+    "NpcCharId": 106400,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020711
+      }
+    ]
+  },
+  {
+    "ID": 102,
+    "StoreID": "StoreId_YanGuangXingZhe",
+    "Type": "StoreType_Exchange",
+    "StoreName": "湮光行者（OB34浮屠城）",
+    "ActivityID": 233321,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020170,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 262,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1051_ABS/Hero1051_Graphic_Prefab.prefab",
+    "NpcCharId": 105100,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020170
+      }
+    ]
+  },
+  {
+    "ID": 103,
+    "StoreID": "StoreId_XiaozuGuohe",
+    "Type": "StoreType_Exchange",
+    "StoreName": "幻海迷城",
+    "ActivityID": 233501,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020435,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020436,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 251,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1041_ABS/Hero1041_Graphic_Prefab.prefab",
+    "NpcCharId": 104100,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020435
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020436
+      }
+    ]
+  },
+  {
+    "ID": 104,
+    "StoreID": "StoreId_BackFlowExchange",
+    "Type": "StoreType_Exchange",
+    "StoreName": "*回归兑换商店",
+    "ActivityID": 233602,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 23,
+        "GoldRate": 10
+      }
+    ],
+    "ItemRecycleMail": 263,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 23,
+        "GoldRate": 10
+      }
+    ]
+  },
+  {
+    "ID": 105,
+    "StoreID": "StoreId_YunShan",
+    "Type": "StoreType_Exchange",
+    "StoreName": "云山彼端",
+    "ActivityID": 233601,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020510,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 264,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1041_ABS/Hero2017_Graphic_Prefab.prefab",
+    "NpcCharId": 201700,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020510
+      }
+    ]
+  },
+  {
+    "ID": 106,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "梦境摘星（36云山）",
+    "ActivityID": 233609,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020437,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 242,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020438
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020437
+      }
+    ]
+  },
+  {
+    "ID": 107,
+    "StoreID": "StoreId_TianDiZhanJiRemix",
+    "Type": "StoreType_Exchange",
+    "StoreName": "天地战纪",
+    "ActivityID": 243702,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020172,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleMail": 256,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1301_ABS/Hero1301_Graphic_Prefab.prefab",
+    "NpcCharId": 130100,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020172
+      }
+    ]
+  },
+  {
+    "ID": 108,
+    "StoreID": "StoreId_BossChallengeThree",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB38BOSS挑战兑换",
+    "ActivityID": 243800,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020802,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 265,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1022_ABS/Hero1022_Graphic_Prefab.prefab",
+    "NpcCharId": 102200,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020802,
+        "GoldRate": 100
+      }
+    ]
+  },
+  {
+    "ID": 109,
+    "StoreID": "StoreId_FuYunZhaoLu",
+    "Type": "StoreType_Exchange",
+    "StoreName": "浮云朝露",
+    "ActivityID": 243910,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020440,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 266,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1336_ABS/Hero1336_Graphic_Prefab.prefab",
+    "NpcCharId": 133600,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020440
+      }
+    ]
+  },
+  {
+    "ID": 110,
+    "StoreID": "StoreId_QianNvChangZhu",
+    "Type": "StoreType_Exchange",
+    "StoreName": "聂小倩常驻",
+    "ActivityID": 244000,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020174,
+        "GoldRate": 50
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020175,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 255,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2009_ABS/Hero2009_Graphic_Prefab.prefab",
+    "NpcCharId": 200900,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020174
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020175
+      }
+    ]
+  },
+  {
+    "ID": 111,
+    "StoreID": "StoreId_XunTianJi",
+    "Type": "StoreType_Exchange",
+    "StoreName": "徇天记",
+    "ActivityID": 244002,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020173,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 267,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1150_ABS/Hero1150_Graphic_Prefab.prefab",
+    "NpcCharId": 115000,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020173
+      }
+    ]
+  },
+  {
+    "ID": 112,
+    "StoreID": "StoreId_DunHuang",
+    "Type": "StoreType_Exchange",
+    "StoreName": "敦煌兑换商店",
+    "ActivityID": 244115,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020712,
+        "GoldRate": 50
+      }
+    ],
+    "ItemRecycleMail": 260,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1064_ABS/Hero1064_Graphic_Prefab.prefab",
+    "NpcCharId": 106400,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020712
+      }
+    ]
+  },
+  {
+    "ID": 113,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "梦境摘星（41）",
+    "ActivityID": 244105,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020442,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 242,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020443
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020442
+      }
+    ]
+  },
+  {
+    "ID": 114,
+    "StoreID": "StoreId_SouShen",
+    "Type": "StoreType_Exchange",
+    "StoreName": "搜神本相",
+    "ActivityID": 244204,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400021002,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 268,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1064_ABS/Hero1081_Graphic_Prefab.prefab",
+    "NpcCharId": 108100,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400021002
+      }
+    ],
+    "SweepId": 114
+  },
+  {
+    "ID": 115,
+    "StoreID": "StoreId_BaoQingTian",
+    "Type": "StoreType_Exchange",
+    "StoreName": "包青天",
+    "ActivityID": 244302,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020444,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020445,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020446,
+        "GoldRate": 100
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020447
+      }
+    ],
+    "ItemRecycleMail": 248,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2013_ABS/Hero2013_Graphic_Prefab.prefab",
+    "NpcCharId": 201300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020444
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020445
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020446
+      }
+    ]
+  },
+  {
+    "ID": 116,
+    "StoreID": "StoreId_QuHaiJinGe",
+    "Type": "StoreType_Exchange",
+    "StoreName": "曲海金戈",
+    "ActivityID": 244301,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020448,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 269,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1083_ABS/Hero1083_Graphic_Prefab.prefab",
+    "NpcCharId": 108300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020448
+      }
+    ]
+  },
+  {
+    "ID": 117,
+    "StoreID": "StoreId_XiYouStory",
+    "Type": "StoreType_Exchange",
+    "StoreName": "西游国风",
+    "ActivityID": 244401,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020176,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 270,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2023_ABS/Hero2023_Graphic_Prefab.prefab",
+    "NpcCharId": 202300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020176
+      }
+    ],
+    "SweepId": 117
+  },
+  {
+    "ID": 118,
+    "StoreID": "StoreId_NewPlayerLimitGiftFree",
+    "Type": "StoreType_Fixed",
+    "StoreName": "新手等级礼包（免费）"
+  },
+  {
+    "ID": 119,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "梦境摘星（44）",
+    "ActivityID": 244400,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020449,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 271,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020450
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020449
+      }
+    ]
+  },
+  {
+    "ID": 120,
+    "StoreID": "StoreId_BackFlowExchange",
+    "Type": "StoreType_Exchange",
+    "StoreName": "*回归兑换商店",
+    "ActivityID": 244422,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 23,
+        "GoldRate": 10
+      }
+    ],
+    "ItemRecycleMail": 263,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 23,
+        "GoldRate": 10
+      }
+    ]
+  },
+  {
+    "ID": 121,
+    "StoreID": "StoreId_SouShen",
+    "Type": "StoreType_Exchange",
+    "StoreName": "蛮荒妖域",
+    "ActivityID": 244503,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400021003,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 268,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1085_ABS/Hero1085_Graphic_Prefab.prefab",
+    "NpcCharId": 108500,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400021003
+      }
+    ],
+    "SweepId": 121
+  },
+  {
+    "ID": 122,
+    "StoreID": "StoreId_ShuYingHengXie",
+    "Type": "StoreType_Exchange",
+    "StoreName": "疏影横斜",
+    "ActivityID": 244708,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020182,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 273,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2500_ABS/Hero2500_Graphic_Prefab.prefab",
+    "NpcCharId": 250000,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020182
+      }
+    ],
+    "SweepId": 122
+  },
+  {
+    "ID": 123,
+    "StoreID": "StoreId_XunTianJi2",
+    "Type": "StoreType_Exchange",
+    "StoreName": "徇天记·贰",
+    "ActivityID": 244806,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020183,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 274,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1088_ABS/Hero1088_Graphic_Prefab.prefab",
+    "NpcCharId": 108800,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020183
+      }
+    ],
+    "SweepId": 123
+  },
+  {
+    "ID": 124,
+    "StoreID": "StoreId_FengShenStory",
+    "Type": "StoreType_Exchange",
+    "StoreName": "九州志异·封神",
+    "ActivityID": 244905,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020184,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 275,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2026_ABS/Hero2026_Graphic_Prefab.prefab",
+    "NpcCharId": 202600,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020184
+      }
+    ],
+    "SweepId": 124
+  },
+  {
+    "ID": 125,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "梦境摘星（49）",
+    "ActivityID": 244907,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020453,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 278,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020454
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020453
+      }
+    ]
+  },
+  {
+    "ID": 126,
+    "StoreID": "StoreId_YeHuoChunFeng",
+    "Type": "StoreType_Exchange",
+    "StoreName": "野火春风",
+    "ActivityID": 245017,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020187,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 279,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2503_ABS/Hero2503_Graphic_Prefab.prefab",
+    "NpcCharId": 250300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020187
+      }
+    ],
+    "SweepId": 125
+  },
+  {
+    "ID": 127,
+    "StoreID": "StoreId_Maze",
+    "Type": "StoreType_Exchange",
+    "StoreName": "月令狸歌商店",
+    "ActivityID": 255101,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020190,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 232,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1145_ABS/Hero1145_Graphic_Prefab.prefab",
+    "NpcCharId": 114500,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020190
+      }
+    ],
+    "SweepId": 127
+  },
+  {
+    "ID": 128,
+    "StoreID": "StoreId_YuYinZhuoQuan",
+    "Type": "StoreType_Exchange",
+    "StoreName": "玉引浊泉",
+    "ActivityID": 255201,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020191,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 280,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1500_ABS/Hero1500_Graphic_Prefab.prefab",
+    "NpcCharId": 150001,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020191
+      }
+    ],
+    "SweepId": 128
+  },
+  {
+    "ID": 130,
+    "StoreID": "StoreId_BaoQingTianChangZhu",
+    "Type": "StoreType_Exchange",
+    "StoreName": "包青天常驻",
+    "ActivityID": 255202,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020458,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 248,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2013_ABS/Hero2013_Graphic_Prefab.prefab",
+    "NpcCharId": 201300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020458
+      }
+    ]
+  },
+  {
+    "ID": 131,
+    "StoreID": "StoreId_MoShangXiaoMeng",
+    "Type": "StoreType_Exchange",
+    "StoreName": "漠上晓梦",
+    "ActivityID": 255306,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020194,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 281,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2504_ABS/Hero2504_Graphic_Prefab.prefab",
+    "NpcCharId": 250400,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020194
+      }
+    ],
+    "SweepId": 129
+  },
+  {
+    "ID": 132,
+    "StoreID": "StoreId_XiYouStory",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB54 西游复刻",
+    "ActivityID": 255404,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020197,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 282,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2023_ABS/Hero2023_Graphic_Prefab.prefab",
+    "NpcCharId": 202300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020197
+      }
+    ],
+    "SweepId": 130
+  },
+  {
+    "ID": 133,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB54 梦境摘星复刻",
+    "ActivityID": 255417,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020904,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 271,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020905
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020904
+      }
+    ]
+  },
+  {
+    "ID": 134,
+    "StoreID": "StoreId_YanGuangXingZhe2",
+    "Type": "StoreType_Exchange",
+    "StoreName": "湮光行者（OB55浮屠城）",
+    "ActivityID": 255519,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020198,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 262,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1051_ABS/Hero1051_Graphic_Prefab.prefab",
+    "NpcCharId": 105100,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020198
+      }
+    ],
+    "SweepId": 134
+  },
+  {
+    "ID": 135,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB56 梦境摘星",
+    "ActivityID": 255626,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020202,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 242,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020203
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020202
+      }
+    ]
+  },
+  {
+    "ID": 136,
+    "StoreID": "StoreId_ZhaoYun",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB56 国风玩法",
+    "ActivityID": 255602,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020200,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 283,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1401_ABS/Hero1401_Graphic_Prefab.prefab",
+    "NpcCharId": 140100,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020200
+      }
+    ],
+    "SweepId": 136
+  },
+  {
+    "ID": 137,
+    "StoreID": "StoreId_XuZhouRuMeng",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB57寰神结幻海",
+    "ActivityID": 255701,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020204,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 284,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1301_ABS/Hero1301_Graphic_Prefab.prefab",
+    "NpcCharId": 130100,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020204
+      }
+    ],
+    "SweepId": 137
+  },
+  {
+    "ID": 138,
+    "StoreID": "StoreId_FengShenStory",
+    "Type": "StoreType_Exchange",
+    "StoreName": "九州志异·封神",
+    "ActivityID": 255818,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020205,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 275,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2026_ABS/Hero2026_Graphic_Prefab.prefab",
+    "NpcCharId": 202600,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020205
+      }
+    ],
+    "SweepId": 138
+  },
+  {
+    "ID": 139,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB58 梦境摘星",
+    "ActivityID": 255829,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020207,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 285,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020206
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020207
+      }
+    ]
+  },
+  {
+    "ID": 140,
+    "StoreID": "StoreId_DustOfTime",
+    "Type": "StoreType_Fixed",
+    "StoreName": "时之尘商店",
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000010
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 30
+      }
+    ]
+  },
+  {
+    "ID": 141,
+    "StoreID": "StoreId_BackFlowExchange",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB59 回归兑换商店",
+    "ActivityID": 255901,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 23,
+        "GoldRate": 10
+      }
+    ],
+    "ItemRecycleMail": 263,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 23,
+        "GoldRate": 10
+      }
+    ]
+  },
+  {
+    "ID": 142,
+    "StoreID": "StoreId_KaiMenJianShan",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB59 殷无邪典藏",
+    "ActivityID": 255918,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020208,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 286,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2506_ABS/Hero2506_Graphic_Prefab.prefab",
+    "NpcCharId": 250600,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020208
+      }
+    ],
+    "SweepId": 139
+  },
+  {
+    "ID": 143,
+    "StoreID": "StoreId_BotGame",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB59 下注玩法",
+    "ActivityID": 255902,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000001,
+        "GoldRate": 1000
+      }
+    ],
+    "ItemRecycleMail": 287,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1038_ABS/Hero1038_Graphic_Prefab.prefab",
+    "NpcCharId": 103800,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000001
+      }
+    ],
+    "ShowStoreNameStrKey": "ST:245174"
+  },
+  {
+    "ID": 144,
+    "StoreID": "StoreId_GreenSnakeChangZhu",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB60 青蛇常驻",
+    "ActivityID": 256018,
+    "ItemRecycleMail": 252,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2015_ABS/Hero2015_Graphic_Prefab.prefab",
+    "NpcCharId": 201500,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020908
+      }
+    ]
+  },
+  {
+    "ID": 145,
+    "StoreID": "StoreId_Yijianluxinzhang",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB60 奕剑录新章活动",
+    "ActivityID": 256001,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020209,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 289,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1047_ABS/Hero1047_Graphic_Prefab.prefab",
+    "NpcCharId": 104700,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020209
+      }
+    ],
+    "SweepId": 140
+  },
+  {
+    "ID": 146,
+    "StoreID": "StoreId_BotGame",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB61 下注玩法",
+    "ActivityID": 256114,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000002,
+        "GoldRate": 1000
+      }
+    ],
+    "ItemRecycleMail": 287,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1038_ABS/Hero1038_Graphic_Prefab.prefab",
+    "NpcCharId": 103800,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000002
+      }
+    ],
+    "ShowStoreNameStrKey": "ST:245174"
+  },
+  {
+    "ID": 147,
+    "StoreID": "StoreId_FuYunZhaoLu2",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB61浮云朝露",
+    "ActivityID": 256119,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020909,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 266,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1336_ABS/Hero1336_Graphic_Prefab.prefab",
+    "NpcCharId": 133600,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020909
+      }
+    ],
+    "SweepId": 141
+  },
+  {
+    "ID": 148,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB62 梦境摘星",
+    "ActivityID": 256216,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020210,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 291,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020211
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020210
+      }
+    ]
+  },
+  {
+    "ID": 149,
+    "StoreID": "StoreId_LiBai",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB62 李白剧情",
+    "ActivityID": 256202,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020212,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 292,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2027_ABS/Hero2027_Graphic_Prefab.prefab",
+    "NpcCharId": 202700,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020212
+      }
+    ],
+    "SweepId": 142
+  },
+  {
+    "ID": 150,
+    "StoreID": "StoreId_BotGame",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB63 下注玩法",
+    "ActivityID": 256314,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000003,
+        "GoldRate": 1000
+      }
+    ],
+    "ItemRecycleMail": 287,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1038_ABS/Hero1038_Graphic_Prefab.prefab",
+    "NpcCharId": 103800,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000003
+      }
+    ],
+    "ShowStoreNameStrKey": "ST:245174"
+  },
+  {
+    "ID": 151,
+    "StoreID": "StoreId_DianCangYangHuan",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB63 典藏阳寰",
+    "ActivityID": 256316,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020213,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 292,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2507_ABS/Hero2507_Graphic_Prefab.prefab",
+    "NpcCharId": 250700,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020213
+      }
+    ],
+    "SweepId": 143
+  },
+  {
+    "ID": 152,
+    "StoreID": "StoreId_ZhaoYun2",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB64 赵云复刻",
+    "ActivityID": 256424,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020214,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 294,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1401_ABS/Hero1401_Graphic_Prefab.prefab",
+    "NpcCharId": 140100,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020214
+      }
+    ],
+    "SweepId": 144
+  },
+  {
+    "ID": 153,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB64 梦境摘星",
+    "ActivityID": 256431,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020215,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 295,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020216
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020215
+      }
+    ]
+  },
+  {
+    "ID": 154,
+    "StoreID": "StoreId_BotGame",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB65 下注玩法",
+    "ActivityID": 266527,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000004,
+        "GoldRate": 1000
+      }
+    ],
+    "ItemRecycleMail": 287,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1038_ABS/Hero1038_Graphic_Prefab.prefab",
+    "NpcCharId": 103800,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000004
+      }
+    ],
+    "ShowStoreNameStrKey": "ST:245174"
+  },
+  {
+    "ID": 155,
+    "StoreID": "StoreId_DunHuangChangZhu",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB65 敦煌常驻",
+    "ActivityID": 266503,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1064_ABS/Hero1064_Graphic_Prefab.prefab",
+    "NpcCharId": 106400,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020713
+      }
+    ]
+  },
+  {
+    "ID": 156,
+    "StoreID": "StoreId_UnrealSeaAnniversary",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB65 白浪逐潮",
+    "ActivityID": 266505,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020218,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 296,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1403_ABS/Hero1403_Graphic_Prefab.prefab",
+    "NpcCharId": 140300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020218
+      }
+    ],
+    "SweepId": 145
+  },
+  {
+    "ID": 157,
+    "StoreID": "StoreId_DianCangZiFeng",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB66 典藏紫枫",
+    "ActivityID": 266611,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020219,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 297,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2509_ABS/Hero2509_Graphic_Prefab.prefab",
+    "NpcCharId": 250900,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020219
+      }
+    ],
+    "SweepId": 146
+  },
+  {
+    "ID": 158,
+    "StoreID": "StoreId_OldWorldClassic",
+    "Type": "StoreType_Fixed",
+    "StoreName": "旧世经典",
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 34
+      }
+    ],
+    "SweepId": 147
+  },
+  {
+    "ID": 159,
+    "StoreID": "StoreId_BotGame",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB67 下注玩法",
+    "ActivityID": 266713,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000005,
+        "GoldRate": 1000
+      }
+    ],
+    "ItemRecycleMail": 287,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1038_ABS/Hero1038_Graphic_Prefab.prefab",
+    "NpcCharId": 103800,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000005
+      }
+    ],
+    "ShowStoreNameStrKey": "ST:245174"
+  },
+  {
+    "ID": 160,
+    "StoreID": "StoreId_MonsterAndGod2",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB67 怪物与神明",
+    "ActivityID": 266719,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020459,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 259,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1301_ABS/Hero1061_Graphic_Prefab.prefab",
+    "NpcCharId": 106100,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020459
+      }
+    ],
+    "SweepId": 160
+  },
+  {
+    "ID": 9901,
+    "StoreID": "StoreId_UniversalMaterialStore",
+    "Type": "StoreType_Exchange",
+    "StoreName": "万能材料兑换"
+  }
+]

@@ -1,0 +1,3940 @@
+[
+  {
+    "ID": 1,
+    "BattleSectionId": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_01.png@Map_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_01a.png@Map_01a",
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:81369"
+  },
+  {
+    "ID": 2,
+    "DialogSectionId": 1,
+    "PreSection": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_02.png@Map_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_02a.png@Map_02a",
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:81370"
+  },
+  {
+    "ID": 3,
+    "BattleSectionId": 2,
+    "PreSection": 2,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_03.png@Map_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_03a.png@Map_03a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:81371"
+  },
+  {
+    "ID": 4,
+    "BattleSectionId": 3,
+    "PreSection": 3,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_04.png@Map_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_04a.png@Map_04a",
+    "NameStrKey": "ST:5467",
+    "ScenarioStrKey": "ST:81372"
+  },
+  {
+    "ID": 5,
+    "BattleSectionId": 4,
+    "PreSection": 4,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_05.png@Map_05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_05a.png@Map_05a",
+    "NameStrKey": "ST:5570",
+    "ScenarioStrKey": "ST:81373"
+  },
+  {
+    "ID": 6,
+    "BattleSectionId": 5,
+    "PreSection": 5,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_06.png@Map_06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_06a.png@Map_06a",
+    "NameStrKey": "ST:5571",
+    "ScenarioStrKey": "ST:81374"
+  },
+  {
+    "ID": 7,
+    "DialogSectionId": 2,
+    "PreSection": 6,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_07.png@Map_07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_07a.png@Map_07a",
+    "NameStrKey": "ST:5572",
+    "ScenarioStrKey": "ST:81375"
+  },
+  {
+    "ID": 8,
+    "BattleSectionId": 6,
+    "PreSection": 7,
+    "DaysSinceFuncOpen": 5,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_08.png@Map_08",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_08a.png@Map_08a",
+    "NameStrKey": "ST:5573",
+    "ScenarioStrKey": "ST:81376"
+  },
+  {
+    "ID": 101,
+    "BattleSectionId": 1001,
+    "UnLockBeforeAction": [
+      2001002,
+      2001003
+    ],
+    "UnLockAfterAction": [
+      2001004,
+      2001005
+    ],
+    "NameStrKey": "ST:79476",
+    "ScenarioStrKey": "ST:102883"
+  },
+  {
+    "ID": 102,
+    "BattleSectionId": 1002,
+    "PreSection": 101,
+    "DaysSinceFuncOpen": 1,
+    "UnLockBeforeAction": [
+      2002001
+    ],
+    "UnLockAfterAction": [
+      2002002,
+      2002003,
+      2002004,
+      2002005,
+      2002006,
+      2002007,
+      2002008,
+      2002009,
+      2002010
+    ],
+    "NameStrKey": "ST:78979",
+    "ScenarioStrKey": "ST:102884"
+  },
+  {
+    "ID": 103,
+    "BattleSectionId": 1003,
+    "PreSection": 102,
+    "DaysSinceFuncOpen": 2,
+    "UnLockBeforeAction": [
+      2003001,
+      2003002
+    ],
+    "UnLockAfterAction": [
+      2003003
+    ],
+    "NameStrKey": "ST:79594",
+    "ScenarioStrKey": "ST:102885"
+  },
+  {
+    "ID": 104,
+    "DialogSectionId": 1001,
+    "PreSection": 103,
+    "DaysSinceFuncOpen": 2,
+    "UnLockAfterAction": [
+      2004001,
+      2004002,
+      2004003,
+      2004004,
+      2004005,
+      2004006,
+      2004007,
+      2004008
+    ],
+    "NameStrKey": "ST:83568",
+    "ScenarioStrKey": "ST:102886"
+  },
+  {
+    "ID": 105,
+    "BattleSectionId": 1004,
+    "PreSection": 104,
+    "DaysSinceFuncOpen": 3,
+    "UnLockBeforeAction": [
+      2005001
+    ],
+    "UnLockAfterAction": [
+      2005002,
+      2005003
+    ],
+    "NameStrKey": "ST:81054",
+    "ScenarioStrKey": "ST:102887"
+  },
+  {
+    "ID": 106,
+    "BattleSectionId": 1005,
+    "PreSection": 105,
+    "DaysSinceFuncOpen": 4,
+    "UnLockBeforeAction": [
+      2006001
+    ],
+    "UnLockAfterAction": [
+      2006002,
+      2006003,
+      2006004,
+      2006005,
+      2006006,
+      2006007,
+      2006008,
+      2006009,
+      2006010,
+      2006011
+    ],
+    "NameStrKey": "ST:79712",
+    "ScenarioStrKey": "ST:102888"
+  },
+  {
+    "ID": 107,
+    "DialogSectionId": 1002,
+    "PreSection": 106,
+    "DaysSinceFuncOpen": 4,
+    "UnLockBeforeAction": [
+      2007001
+    ],
+    "UnLockAfterAction": [
+      2007002
+    ],
+    "NameStrKey": "ST:83569",
+    "ScenarioStrKey": "ST:101984"
+  },
+  {
+    "ID": 108,
+    "BattleSectionId": 1006,
+    "PreSection": 107,
+    "DaysSinceFuncOpen": 5,
+    "UnLockBeforeAction": [
+      2008001
+    ],
+    "UnLockAfterAction": [
+      2008002,
+      2008003,
+      2008004,
+      2008006,
+      2008007,
+      2008008
+    ],
+    "NameStrKey": "ST:81389",
+    "ScenarioStrKey": "ST:102889"
+  },
+  {
+    "ID": 201,
+    "BattleSectionId": 2001,
+    "NameStrKey": "ST:103188",
+    "ScenarioStrKey": "ST:104050"
+  },
+  {
+    "ID": 202,
+    "BattleSectionId": 2002,
+    "PreSection": 201,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:103189",
+    "ScenarioStrKey": "ST:104051"
+  },
+  {
+    "ID": 203,
+    "BattleSectionId": 2003,
+    "PreSection": 202,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:103190",
+    "ScenarioStrKey": "ST:104052"
+  },
+  {
+    "ID": 211,
+    "BattleSectionId": 2101,
+    "NameStrKey": "ST:103188",
+    "ScenarioStrKey": "ST:104050"
+  },
+  {
+    "ID": 212,
+    "BattleSectionId": 2102,
+    "PreSection": 211,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:103189",
+    "ScenarioStrKey": "ST:104051"
+  },
+  {
+    "ID": 213,
+    "BattleSectionId": 2103,
+    "PreSection": 212,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:103190",
+    "ScenarioStrKey": "ST:104052"
+  },
+  {
+    "ID": 301,
+    "BattleSectionId": 3001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_01.png@Map_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_01a.png@Map_01a",
+    "NameStrKey": "ST:5113"
+  },
+  {
+    "ID": 302,
+    "BattleSectionId": 3002,
+    "PreSection": 301,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_02.png@Map_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_02a.png@Map_02a",
+    "NameStrKey": "ST:5465"
+  },
+  {
+    "ID": 303,
+    "BattleSectionId": 3003,
+    "PreSection": 302,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_03.png@Map_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_03a.png@Map_03a",
+    "NameStrKey": "ST:5466"
+  },
+  {
+    "ID": 304,
+    "BattleSectionId": 3004,
+    "PreSection": 303,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_04.png@Map_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_04a.png@Map_04a",
+    "NameStrKey": "ST:5467"
+  },
+  {
+    "ID": 305,
+    "BattleSectionId": 3005,
+    "PreSection": 304,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_05.png@Map_05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_05a.png@Map_05a",
+    "NameStrKey": "ST:5570"
+  },
+  {
+    "ID": 306,
+    "BattleSectionId": 3006,
+    "PreSection": 305,
+    "DaysSinceFuncOpen": 5,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_06.png@Map_06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_06a.png@Map_06a",
+    "NameStrKey": "ST:5571"
+  },
+  {
+    "ID": 307,
+    "BattleSectionId": 3007,
+    "PreSection": 306,
+    "DaysSinceFuncOpen": 6,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_07.png@Map_07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_07a.png@Map_07a",
+    "NameStrKey": "ST:5572"
+  },
+  {
+    "ID": 401,
+    "BattleSectionId": 4001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_01.png@Map_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_01a.png@Map_01a",
+    "NameStrKey": "ST:5113"
+  },
+  {
+    "ID": 402,
+    "BattleSectionId": 4002,
+    "PreSection": 401,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_02.png@Map_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_02a.png@Map_02a",
+    "NameStrKey": "ST:5465"
+  },
+  {
+    "ID": 403,
+    "DialogSectionId": 4003,
+    "PreSection": 402,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_03.png@Map_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_03a.png@Map_03a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:123379"
+  },
+  {
+    "ID": 404,
+    "BattleSectionId": 4004,
+    "PreSection": 403,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_04.png@Map_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_04a.png@Map_04a",
+    "NameStrKey": "ST:5467"
+  },
+  {
+    "ID": 405,
+    "BattleSectionId": 4005,
+    "PreSection": 404,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_05.png@Map_05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_05a.png@Map_05a",
+    "NameStrKey": "ST:5570"
+  },
+  {
+    "ID": 406,
+    "BattleSectionId": 4006,
+    "PreSection": 405,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_06.png@Map_06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_06a.png@Map_06a",
+    "NameStrKey": "ST:5571"
+  },
+  {
+    "ID": 407,
+    "BattleSectionId": 4007,
+    "PreSection": 406,
+    "DaysSinceFuncOpen": 5,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_07.png@Map_07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_07a.png@Map_07a",
+    "NameStrKey": "ST:5572"
+  },
+  {
+    "ID": 408,
+    "BattleSectionId": 4008,
+    "PreSection": 407,
+    "DaysSinceFuncOpen": 6,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_08.png@Map_08",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_08a.png@Map_08a",
+    "NameStrKey": "ST:5573"
+  },
+  {
+    "ID": 409,
+    "BattleSectionId": 4009,
+    "PreSection": 408,
+    "DaysSinceFuncOpen": 6,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_09.png@Map_09",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_09a.png@Map_09a",
+    "NameStrKey": "ST:5574"
+  },
+  {
+    "ID": 501,
+    "BattleSectionId": 5001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Dingfengliu_01.png@Dingfengliu_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_01.png@Xzhezi_01",
+    "NameStrKey": "ST:5113"
+  },
+  {
+    "ID": 502,
+    "BattleSectionId": 5002,
+    "PreSection": 501,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Shuangsiwang_01.png@Shuangsiwang_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_02.png@Xzhezi_02",
+    "NameStrKey": "ST:5465"
+  },
+  {
+    "ID": 503,
+    "BattleSectionId": 5003,
+    "PreSection": 502,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Ehongyao_01.png@Ehongyao_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_03.png@Xzhezi_03",
+    "NameStrKey": "ST:5466"
+  },
+  {
+    "ID": 504,
+    "BattleSectionId": 5004,
+    "PreSection": 503,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Shuilongning_01.png@Shuilongning_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_04.png@Xzhezi_04",
+    "NameStrKey": "ST:5467"
+  },
+  {
+    "ID": 505,
+    "BattleSectionId": 5005,
+    "PreSection": 504,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Suoqianhun_01.png@Suoqianhun_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_05.png@Xzhezi_05",
+    "NameStrKey": "ST:5570"
+  },
+  {
+    "ID": 506,
+    "BattleSectionId": 5006,
+    "PreSection": 505,
+    "DaysSinceFuncOpen": 5,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xiaojusan_01.png@Xiaojusan_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_06.png@Xzhezi_06",
+    "NameStrKey": "ST:5571"
+  },
+  {
+    "ID": 507,
+    "BattleSectionId": 5007,
+    "PreSection": 506,
+    "DaysSinceFuncOpen": 6,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Waizhuan_01.png@Waizhuan_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_07.png@Xzhezi_07",
+    "NameStrKey": "ST:5572"
+  },
+  {
+    "ID": 601,
+    "BattleSectionId": 6001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_01.png@Map_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_01a.png@Map_01a",
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:81369"
+  },
+  {
+    "ID": 602,
+    "DialogSectionId": 6001,
+    "PreSection": 601,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_02.png@Map_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_02a.png@Map_02a",
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:81370"
+  },
+  {
+    "ID": 603,
+    "BattleSectionId": 6002,
+    "PreSection": 602,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_03.png@Map_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_03a.png@Map_03a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:81371"
+  },
+  {
+    "ID": 604,
+    "BattleSectionId": 6003,
+    "PreSection": 603,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_04.png@Map_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_04a.png@Map_04a",
+    "NameStrKey": "ST:5467",
+    "ScenarioStrKey": "ST:81372"
+  },
+  {
+    "ID": 605,
+    "BattleSectionId": 6004,
+    "PreSection": 604,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_05.png@Map_05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_05a.png@Map_05a",
+    "NameStrKey": "ST:5570",
+    "ScenarioStrKey": "ST:81373"
+  },
+  {
+    "ID": 606,
+    "BattleSectionId": 6005,
+    "PreSection": 605,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_06.png@Map_06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_06a.png@Map_06a",
+    "NameStrKey": "ST:5571",
+    "ScenarioStrKey": "ST:81374"
+  },
+  {
+    "ID": 607,
+    "DialogSectionId": 6002,
+    "PreSection": 606,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_07.png@Map_07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_07a.png@Map_07a",
+    "NameStrKey": "ST:5572",
+    "ScenarioStrKey": "ST:81375"
+  },
+  {
+    "ID": 608,
+    "BattleSectionId": 6006,
+    "PreSection": 607,
+    "DaysSinceFuncOpen": 5,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_08.png@Map_08",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_08a.png@Map_08a",
+    "NameStrKey": "ST:5573",
+    "ScenarioStrKey": "ST:81376"
+  },
+  {
+    "ID": 701,
+    "DialogSectionId": 7001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_01.png@Map_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_01a.png@Map_01a",
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:132097"
+  },
+  {
+    "ID": 702,
+    "BattleSectionId": 7002,
+    "PreSection": 701,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_02.png@Map_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_02a.png@Map_02a",
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:132098"
+  },
+  {
+    "ID": 703,
+    "BattleSectionId": 7003,
+    "PreSection": 702,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_03.png@Map_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_03a.png@Map_03a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:132099"
+  },
+  {
+    "ID": 704,
+    "BattleSectionId": 7004,
+    "PreSection": 703,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_04.png@Map_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_04a.png@Map_04a",
+    "NameStrKey": "ST:5467",
+    "ScenarioStrKey": "ST:132100"
+  },
+  {
+    "ID": 705,
+    "DialogSectionId": 7005,
+    "PreSection": 704,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_05.png@Map_05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_05a.png@Map_05a",
+    "NameStrKey": "ST:5570",
+    "ScenarioStrKey": "ST:132101"
+  },
+  {
+    "ID": 706,
+    "BattleSectionId": 7006,
+    "PreSection": 705,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_06.png@Map_06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_06a.png@Map_06a",
+    "NameStrKey": "ST:5571",
+    "ScenarioStrKey": "ST:132102"
+  },
+  {
+    "ID": 707,
+    "BattleSectionId": 7007,
+    "PreSection": 706,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_07.png@Map_07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_07a.png@Map_07a",
+    "NameStrKey": "ST:5572",
+    "ScenarioStrKey": "ST:132103"
+  },
+  {
+    "ID": 708,
+    "BattleSectionId": 7008,
+    "PreSection": 707,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_08.png@Map_08",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_08a.png@Map_08a",
+    "NameStrKey": "ST:5573",
+    "ScenarioStrKey": "ST:132104"
+  },
+  {
+    "ID": 709,
+    "BattleSectionId": 7009,
+    "PreSection": 708,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_09.png@Map_09",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_09a.png@Map_09a",
+    "NameStrKey": "ST:5574",
+    "ScenarioStrKey": "ST:132105"
+  },
+  {
+    "ID": 710,
+    "BattleSectionId": 7010,
+    "PreSection": 709,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_10.png@Map_10",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_10a.png@Map_10a",
+    "NameStrKey": "ST:5575",
+    "ScenarioStrKey": "ST:132106"
+  },
+  {
+    "ID": 711,
+    "BattleSectionId": 7011,
+    "PreSection": 710,
+    "DaysSinceFuncOpen": 5,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_11.png@Map_11",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_11a.png@Map_11a",
+    "NameStrKey": "ST:5576",
+    "ScenarioStrKey": "ST:132107"
+  },
+  {
+    "ID": 712,
+    "PreSection": 711,
+    "DaysSinceFuncOpen": 5,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_12.png@Map_12",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiLunBian_ABS/NoTag/Map_12a.png@Map_12a",
+    "NameStrKey": "ST:5577",
+    "ScenarioStrKey": "ST:132108"
+  },
+  {
+    "ID": 801,
+    "BattleSectionId": 8001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_01.png@Map_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_01a.png@Map_01a",
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:135759"
+  },
+  {
+    "ID": 802,
+    "BattleSectionId": 8002,
+    "PreSection": 801,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_02.png@Map_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_02a.png@Map_02a",
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:135760"
+  },
+  {
+    "ID": 803,
+    "BattleSectionId": 8003,
+    "PreSection": 802,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_03.png@Map_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_03a.png@Map_03a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:135761"
+  },
+  {
+    "ID": 804,
+    "BattleSectionId": 8004,
+    "PreSection": 803,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_04.png@Map_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_04a.png@Map_04a",
+    "NameStrKey": "ST:5467",
+    "ScenarioStrKey": "ST:135762"
+  },
+  {
+    "ID": 805,
+    "BattleSectionId": 8005,
+    "PreSection": 804,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_05.png@Map_05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_05a.png@Map_05a",
+    "NameStrKey": "ST:5570",
+    "ScenarioStrKey": "ST:135763"
+  },
+  {
+    "ID": 806,
+    "BattleSectionId": 8006,
+    "PreSection": 805,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_06.png@Map_06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_06a.png@Map_06a",
+    "NameStrKey": "ST:5571",
+    "ScenarioStrKey": "ST:135764"
+  },
+  {
+    "ID": 807,
+    "BattleSectionId": 8007,
+    "PreSection": 806,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_07.png@Map_07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_07a.png@Map_07a",
+    "NameStrKey": "ST:5572",
+    "ScenarioStrKey": "ST:135540"
+  },
+  {
+    "ID": 808,
+    "BattleSectionId": 8008,
+    "PreSection": 807,
+    "DaysSinceFuncOpen": 5,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_08.png@Map_08",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_08a.png@Map_08a",
+    "NameStrKey": "ST:5573",
+    "ScenarioStrKey": "ST:135765"
+  },
+  {
+    "ID": 901,
+    "BattleSectionId": 9001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage_ABS/NoTag/ChaHua/chahua_01.png@chahua_01",
+    "NameStrKey": "ST:147677",
+    "ScenarioStrKey": "ST:148166"
+  },
+  {
+    "ID": 902,
+    "BattleSectionId": 9002,
+    "PreSection": 901,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage_ABS/NoTag/ChaHua/chahua_02.png@chahua_02",
+    "NameStrKey": "ST:147678",
+    "ScenarioStrKey": "ST:148167"
+  },
+  {
+    "ID": 903,
+    "BattleSectionId": 9003,
+    "PreSection": 902,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage_ABS/NoTag/ChaHua/chahua_03.png@chahua_03",
+    "NameStrKey": "ST:147679",
+    "ScenarioStrKey": "ST:148168"
+  },
+  {
+    "ID": 904,
+    "BattleSectionId": 9004,
+    "PreSection": 903,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage_ABS/NoTag/ChaHua/chahua_04.png@chahua_04",
+    "NameStrKey": "ST:147680",
+    "ScenarioStrKey": "ST:148169"
+  },
+  {
+    "ID": 905,
+    "BattleSectionId": 9005,
+    "PreSection": 904,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage_ABS/NoTag/ChaHua/chahua_05.png@chahua_05",
+    "NameStrKey": "ST:148162",
+    "ScenarioStrKey": "ST:148170"
+  },
+  {
+    "ID": 906,
+    "BattleSectionId": 9006,
+    "PreSection": 905,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage_ABS/NoTag/ChaHua/chahua_06.png@chahua_06",
+    "NameStrKey": "ST:148163",
+    "ScenarioStrKey": "ST:148171"
+  },
+  {
+    "ID": 907,
+    "BattleSectionId": 9007,
+    "PreSection": 906,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage_ABS/NoTag/ChaHua/chahua_07.png@chahua_07",
+    "NameStrKey": "ST:148164",
+    "ScenarioStrKey": "ST:148172"
+  },
+  {
+    "ID": 908,
+    "BattleSectionId": 9008,
+    "PreSection": 907,
+    "DaysSinceFuncOpen": 5,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage_ABS/NoTag/ChaHua/chahua_08.png@chahua_08",
+    "NameStrKey": "ST:148165",
+    "ScenarioStrKey": "ST:148173"
+  },
+  {
+    "ID": 1001,
+    "BattleSectionId": 10001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_01.png@Map_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_01a.png@Map_01a",
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:150114"
+  },
+  {
+    "ID": 1002,
+    "BattleSectionId": 10002,
+    "PreSection": 1001,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_02.png@Map_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_02a.png@Map_02a",
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:150115"
+  },
+  {
+    "ID": 1003,
+    "BattleSectionId": 10003,
+    "PreSection": 1002,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_03.png@Map_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_03a.png@Map_03a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:150116"
+  },
+  {
+    "ID": 1004,
+    "BattleSectionId": 10004,
+    "PreSection": 1003,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_04.png@Map_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_04a.png@Map_04a",
+    "NameStrKey": "ST:5467",
+    "ScenarioStrKey": "ST:150117"
+  },
+  {
+    "ID": 1005,
+    "BattleSectionId": 10005,
+    "PreSection": 1004,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_05.png@Map_05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_05a.png@Map_05a",
+    "NameStrKey": "ST:5570",
+    "ScenarioStrKey": "ST:150118"
+  },
+  {
+    "ID": 1006,
+    "BattleSectionId": 10006,
+    "PreSection": 1005,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_06.png@Map_06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_06a.png@Map_06a",
+    "NameStrKey": "ST:5571",
+    "ScenarioStrKey": "ST:150119"
+  },
+  {
+    "ID": 1007,
+    "BattleSectionId": 10007,
+    "PreSection": 1006,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_07.png@Map_07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_07a.png@Map_07a",
+    "NameStrKey": "ST:5572",
+    "ScenarioStrKey": "ST:150120"
+  },
+  {
+    "ID": 1008,
+    "BattleSectionId": 10008,
+    "PreSection": 1007,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_08.png@Map_08",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_08a.png@Map_08a",
+    "NameStrKey": "ST:5573",
+    "ScenarioStrKey": "ST:150121"
+  },
+  {
+    "ID": 1101,
+    "BattleSectionId": 11001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_01.png@Map_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_01a.png@Map_01a",
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:81369"
+  },
+  {
+    "ID": 1102,
+    "DialogSectionId": 11001,
+    "PreSection": 1101,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_02.png@Map_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_02a.png@Map_02a",
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:81370"
+  },
+  {
+    "ID": 1103,
+    "BattleSectionId": 11002,
+    "PreSection": 1102,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_03.png@Map_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_03a.png@Map_03a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:81371"
+  },
+  {
+    "ID": 1104,
+    "BattleSectionId": 11003,
+    "PreSection": 1103,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_04.png@Map_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_04a.png@Map_04a",
+    "NameStrKey": "ST:5467",
+    "ScenarioStrKey": "ST:81372"
+  },
+  {
+    "ID": 1105,
+    "BattleSectionId": 11004,
+    "PreSection": 1104,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_05.png@Map_05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_05a.png@Map_05a",
+    "NameStrKey": "ST:5570",
+    "ScenarioStrKey": "ST:81373"
+  },
+  {
+    "ID": 1106,
+    "BattleSectionId": 11005,
+    "PreSection": 1105,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_06.png@Map_06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_06a.png@Map_06a",
+    "NameStrKey": "ST:5571",
+    "ScenarioStrKey": "ST:81374"
+  },
+  {
+    "ID": 1107,
+    "DialogSectionId": 11002,
+    "PreSection": 1106,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_07.png@Map_07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_07a.png@Map_07a",
+    "NameStrKey": "ST:5572",
+    "ScenarioStrKey": "ST:81375"
+  },
+  {
+    "ID": 1108,
+    "BattleSectionId": 11006,
+    "PreSection": 1107,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_08.png@Map_08",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage_ABS/NoTag/Map_08a.png@Map_08a",
+    "NameStrKey": "ST:5573",
+    "ScenarioStrKey": "ST:81376"
+  },
+  {
+    "ID": 1201,
+    "BattleSectionId": 12001,
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:104050"
+  },
+  {
+    "ID": 1202,
+    "BattleSectionId": 12002,
+    "PreSection": 1201,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:104051"
+  },
+  {
+    "ID": 1203,
+    "BattleSectionId": 12003,
+    "PreSection": 1202,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:104052"
+  },
+  {
+    "ID": 1301,
+    "BattleSectionId": 13001,
+    "UnLockBeforeAction": [
+      2001002,
+      2001003
+    ],
+    "UnLockAfterAction": [
+      2001004,
+      2001005
+    ],
+    "NameStrKey": "ST:79476",
+    "ScenarioStrKey": "ST:102883"
+  },
+  {
+    "ID": 1302,
+    "BattleSectionId": 13002,
+    "PreSection": 1301,
+    "DaysSinceFuncOpen": 1,
+    "UnLockBeforeAction": [
+      2002001
+    ],
+    "UnLockAfterAction": [
+      2002002,
+      2002003,
+      2002004,
+      2002005,
+      2002006,
+      2002007,
+      2002008,
+      2002009,
+      2002010
+    ],
+    "NameStrKey": "ST:78979",
+    "ScenarioStrKey": "ST:102884"
+  },
+  {
+    "ID": 1303,
+    "BattleSectionId": 13003,
+    "PreSection": 1302,
+    "DaysSinceFuncOpen": 2,
+    "UnLockBeforeAction": [
+      2003001,
+      2003002
+    ],
+    "UnLockAfterAction": [
+      2003003
+    ],
+    "NameStrKey": "ST:79594",
+    "ScenarioStrKey": "ST:102885"
+  },
+  {
+    "ID": 1304,
+    "DialogSectionId": 12001,
+    "PreSection": 1303,
+    "DaysSinceFuncOpen": 2,
+    "UnLockAfterAction": [
+      2004001,
+      2004002,
+      2004003,
+      2004004,
+      2004005,
+      2004006,
+      2004007,
+      2004008
+    ],
+    "NameStrKey": "ST:83568",
+    "ScenarioStrKey": "ST:102886"
+  },
+  {
+    "ID": 1305,
+    "BattleSectionId": 13004,
+    "PreSection": 1304,
+    "DaysSinceFuncOpen": 3,
+    "UnLockBeforeAction": [
+      2005001
+    ],
+    "UnLockAfterAction": [
+      2005002,
+      2005003
+    ],
+    "NameStrKey": "ST:81054",
+    "ScenarioStrKey": "ST:102887"
+  },
+  {
+    "ID": 1306,
+    "BattleSectionId": 13005,
+    "PreSection": 1305,
+    "DaysSinceFuncOpen": 4,
+    "UnLockBeforeAction": [
+      2006001
+    ],
+    "UnLockAfterAction": [
+      2006002,
+      2006003,
+      2006004,
+      2006005,
+      2006006,
+      2006007,
+      2006008,
+      2006009,
+      2006010,
+      2006011
+    ],
+    "NameStrKey": "ST:79712",
+    "ScenarioStrKey": "ST:102888"
+  },
+  {
+    "ID": 1307,
+    "DialogSectionId": 12002,
+    "PreSection": 1306,
+    "DaysSinceFuncOpen": 4,
+    "UnLockBeforeAction": [
+      2007001
+    ],
+    "UnLockAfterAction": [
+      2007002
+    ],
+    "NameStrKey": "ST:83569",
+    "ScenarioStrKey": "ST:101984"
+  },
+  {
+    "ID": 1308,
+    "BattleSectionId": 13006,
+    "PreSection": 1307,
+    "DaysSinceFuncOpen": 5,
+    "UnLockBeforeAction": [
+      2008001
+    ],
+    "UnLockAfterAction": [
+      2008002,
+      2008003,
+      2008004,
+      2008006,
+      2008007,
+      2008008
+    ],
+    "NameStrKey": "ST:81389",
+    "ScenarioStrKey": "ST:102889"
+  },
+  {
+    "ID": 1401,
+    "BattleSectionId": 14001,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156577"
+  },
+  {
+    "ID": 1402,
+    "BattleSectionId": 14002,
+    "PreSection": 1401,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156578"
+  },
+  {
+    "ID": 1403,
+    "BattleSectionId": 14003,
+    "PreSection": 1402,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156579"
+  },
+  {
+    "ID": 1404,
+    "DialogSectionId": 14004,
+    "PreSection": 1403,
+    "DaysSinceFuncOpen": 1,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156580"
+  },
+  {
+    "ID": 1405,
+    "BattleSectionId": 14005,
+    "PreSection": 1404,
+    "DaysSinceFuncOpen": 1,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156581"
+  },
+  {
+    "ID": 1406,
+    "BattleSectionId": 14006,
+    "PreSection": 1405,
+    "DaysSinceFuncOpen": 1,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156582"
+  },
+  {
+    "ID": 1407,
+    "BattleSectionId": 14007,
+    "PreSection": 1406,
+    "DaysSinceFuncOpen": 1,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156583"
+  },
+  {
+    "ID": 1408,
+    "BattleSectionId": 14008,
+    "PreSection": 1407,
+    "DaysSinceFuncOpen": 2,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156584"
+  },
+  {
+    "ID": 1409,
+    "BattleSectionId": 14009,
+    "PreSection": 1408,
+    "DaysSinceFuncOpen": 2,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156585"
+  },
+  {
+    "ID": 1410,
+    "BattleSectionId": 14010,
+    "PreSection": 1409,
+    "DaysSinceFuncOpen": 2,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156586"
+  },
+  {
+    "ID": 1411,
+    "BattleSectionId": 14011,
+    "PreSection": 1410,
+    "DaysSinceFuncOpen": 3,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156587"
+  },
+  {
+    "ID": 1412,
+    "DialogSectionId": 14012,
+    "PreSection": 1411,
+    "DaysSinceFuncOpen": 3,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156588"
+  },
+  {
+    "ID": 1413,
+    "BattleSectionId": 14013,
+    "PreSection": 1412,
+    "DaysSinceFuncOpen": 3,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156589"
+  },
+  {
+    "ID": 1501,
+    "BattleSectionId": 15001,
+    "NameStrKey": "ST:158391"
+  },
+  {
+    "ID": 1502,
+    "BattleSectionId": 15002,
+    "PreSection": 1501,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:158392"
+  },
+  {
+    "ID": 1503,
+    "BattleSectionId": 15003,
+    "PreSection": 1502,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:158393"
+  },
+  {
+    "ID": 1504,
+    "BattleSectionId": 15004,
+    "PreSection": 1503,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:63096"
+  },
+  {
+    "ID": 1505,
+    "BattleSectionId": 15005,
+    "PreSection": 1504,
+    "DaysSinceFuncOpen": 4,
+    "NameStrKey": "ST:158394"
+  },
+  {
+    "ID": 1601,
+    "BattleSectionId": 16001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Dingfengliu_01.png@Dingfengliu_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_01.png@Xzhezi_01",
+    "NameStrKey": "ST:5113"
+  },
+  {
+    "ID": 1602,
+    "BattleSectionId": 16002,
+    "PreSection": 1601,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Shuangsiwang_01.png@Shuangsiwang_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_02.png@Xzhezi_02",
+    "NameStrKey": "ST:5465"
+  },
+  {
+    "ID": 1603,
+    "BattleSectionId": 16003,
+    "PreSection": 1602,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Ehongyao_01.png@Ehongyao_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_03.png@Xzhezi_03",
+    "NameStrKey": "ST:5466"
+  },
+  {
+    "ID": 1604,
+    "BattleSectionId": 16004,
+    "PreSection": 1603,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Shuilongning_01.png@Shuilongning_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_04.png@Xzhezi_04",
+    "NameStrKey": "ST:5467"
+  },
+  {
+    "ID": 1605,
+    "BattleSectionId": 16005,
+    "PreSection": 1604,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Suoqianhun_01.png@Suoqianhun_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_05.png@Xzhezi_05",
+    "NameStrKey": "ST:5570"
+  },
+  {
+    "ID": 1606,
+    "BattleSectionId": 16006,
+    "PreSection": 1605,
+    "DaysSinceFuncOpen": 5,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xiaojusan_01.png@Xiaojusan_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_06.png@Xzhezi_06",
+    "NameStrKey": "ST:5571"
+  },
+  {
+    "ID": 1607,
+    "BattleSectionId": 16007,
+    "PreSection": 1606,
+    "DaysSinceFuncOpen": 6,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Waizhuan_01.png@Waizhuan_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_07.png@Xzhezi_07",
+    "NameStrKey": "ST:5572"
+  },
+  {
+    "ID": 1701,
+    "DialogSectionId": 17001,
+    "NameStrKey": "ST:162917",
+    "ScenarioStrKey": "ST:163523"
+  },
+  {
+    "ID": 1702,
+    "TreasureBoxSectionId": 17002,
+    "PreSection": 1701,
+    "NameStrKey": "ST:22048"
+  },
+  {
+    "ID": 1703,
+    "BattleSectionId": 17003,
+    "PreSection": 1702,
+    "NameStrKey": "ST:162118",
+    "ScenarioStrKey": "ST:162259"
+  },
+  {
+    "ID": 1704,
+    "BattleSectionId": 17004,
+    "PreSection": 1703,
+    "NameStrKey": "ST:162119",
+    "ScenarioStrKey": "ST:162260"
+  },
+  {
+    "ID": 1705,
+    "BattleSectionId": 17005,
+    "PreSection": 1704,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:162120",
+    "ScenarioStrKey": "ST:162261"
+  },
+  {
+    "ID": 1706,
+    "BattleSectionId": 17006,
+    "PreSection": 1705,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:106986",
+    "ScenarioStrKey": "ST:162262"
+  },
+  {
+    "ID": 1707,
+    "TreasureBoxSectionId": 17007,
+    "PreSection": 1706,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:22048"
+  },
+  {
+    "ID": 1708,
+    "DialogSectionId": 17008,
+    "PreSection": 1707,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:162296",
+    "ScenarioStrKey": "ST:162871"
+  },
+  {
+    "ID": 1709,
+    "BattleSectionId": 17009,
+    "PreSection": 1708,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:162121",
+    "ScenarioStrKey": "ST:162263"
+  },
+  {
+    "ID": 1710,
+    "TreasureBoxSectionId": 17010,
+    "PreSection": 1709,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:22048"
+  },
+  {
+    "ID": 1711,
+    "BattleSectionId": 17011,
+    "PreSection": 1710,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:162122",
+    "ScenarioStrKey": "ST:163008"
+  },
+  {
+    "ID": 1801,
+    "BattleSectionId": 18001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_01.png@Map_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_01a.png@Map_01a",
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:168566"
+  },
+  {
+    "ID": 1802,
+    "BattleSectionId": 18002,
+    "PreSection": 1801,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_02.png@Map_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_02a.png@Map_02a",
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:168567"
+  },
+  {
+    "ID": 1803,
+    "BattleSectionId": 18003,
+    "PreSection": 1802,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_03.png@Map_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_03a.png@Map_03a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:168568"
+  },
+  {
+    "ID": 1804,
+    "BattleSectionId": 18004,
+    "PreSection": 1803,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_04.png@Map_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_04a.png@Map_04a",
+    "NameStrKey": "ST:5467",
+    "ScenarioStrKey": "ST:168569"
+  },
+  {
+    "ID": 1805,
+    "BattleSectionId": 18005,
+    "PreSection": 1804,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_05.png@Map_05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_05a.png@Map_05a",
+    "NameStrKey": "ST:5570",
+    "ScenarioStrKey": "ST:168570"
+  },
+  {
+    "ID": 1806,
+    "BattleSectionId": 18006,
+    "PreSection": 1805,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_06.png@Map_06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_06a.png@Map_06a",
+    "NameStrKey": "ST:5571",
+    "ScenarioStrKey": "ST:168571"
+  },
+  {
+    "ID": 1807,
+    "BattleSectionId": 18007,
+    "PreSection": 1806,
+    "DaysSinceFuncOpen": 5,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_07.png@Map_07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_07a.png@Map_07a",
+    "NameStrKey": "ST:5572",
+    "ScenarioStrKey": "ST:168572"
+  },
+  {
+    "ID": 1808,
+    "BattleSectionId": 18008,
+    "PreSection": 1807,
+    "DaysSinceFuncOpen": 6,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_08.png@Map_08",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_08a.png@Map_08a",
+    "NameStrKey": "ST:5573",
+    "ScenarioStrKey": "ST:168573"
+  },
+  {
+    "ID": 1901,
+    "BattleSectionId": 19001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_01.png@Map_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_01a.png@Map_01a",
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:135759"
+  },
+  {
+    "ID": 1902,
+    "BattleSectionId": 19002,
+    "PreSection": 1901,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_02.png@Map_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_02a.png@Map_02a",
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:135760"
+  },
+  {
+    "ID": 1903,
+    "BattleSectionId": 19003,
+    "PreSection": 1902,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_03.png@Map_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_03a.png@Map_03a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:135761"
+  },
+  {
+    "ID": 1904,
+    "BattleSectionId": 19004,
+    "PreSection": 1903,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_04.png@Map_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_04a.png@Map_04a",
+    "NameStrKey": "ST:5467",
+    "ScenarioStrKey": "ST:135762"
+  },
+  {
+    "ID": 1905,
+    "BattleSectionId": 19005,
+    "PreSection": 1904,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_05.png@Map_05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_05a.png@Map_05a",
+    "NameStrKey": "ST:5570",
+    "ScenarioStrKey": "ST:135763"
+  },
+  {
+    "ID": 1906,
+    "BattleSectionId": 19006,
+    "PreSection": 1905,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_06.png@Map_06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_06a.png@Map_06a",
+    "NameStrKey": "ST:5571",
+    "ScenarioStrKey": "ST:135764"
+  },
+  {
+    "ID": 1907,
+    "BattleSectionId": 19007,
+    "PreSection": 1906,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_07.png@Map_07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_07a.png@Map_07a",
+    "NameStrKey": "ST:5572",
+    "ScenarioStrKey": "ST:135540"
+  },
+  {
+    "ID": 1908,
+    "BattleSectionId": 19008,
+    "PreSection": 1907,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_08.png@Map_08",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuJiQiYou_ABS/NoTag/Map_08a.png@Map_08a",
+    "NameStrKey": "ST:5573",
+    "ScenarioStrKey": "ST:135765"
+  },
+  {
+    "ID": 2001,
+    "BattleSectionId": 20001,
+    "NameStrKey": "ST:5113"
+  },
+  {
+    "ID": 2002,
+    "BattleSectionId": 20002,
+    "PreSection": 2001,
+    "NameStrKey": "ST:5465"
+  },
+  {
+    "ID": 2003,
+    "BattleSectionId": 20003,
+    "PreSection": 2002,
+    "NameStrKey": "ST:5466"
+  },
+  {
+    "ID": 2004,
+    "BattleSectionId": 20004,
+    "PreSection": 2003,
+    "NameStrKey": "ST:5467"
+  },
+  {
+    "ID": 2005,
+    "BattleSectionId": 20005,
+    "PreSection": 2004,
+    "NameStrKey": "ST:5570"
+  },
+  {
+    "ID": 2006,
+    "BattleSectionId": 20006,
+    "PreSection": 2005,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5571"
+  },
+  {
+    "ID": 2007,
+    "BattleSectionId": 20007,
+    "PreSection": 2006,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5572"
+  },
+  {
+    "ID": 2008,
+    "BattleSectionId": 20008,
+    "PreSection": 2007,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5573"
+  },
+  {
+    "ID": 2009,
+    "BattleSectionId": 20009,
+    "PreSection": 2008,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5574"
+  },
+  {
+    "ID": 2010,
+    "BattleSectionId": 20010,
+    "PreSection": 2009,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:172602"
+  },
+  {
+    "ID": 2011,
+    "BattleSectionId": 20011,
+    "PreSection": 2010,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5576"
+  },
+  {
+    "ID": 2012,
+    "BattleSectionId": 20012,
+    "PreSection": 2011,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:5577"
+  },
+  {
+    "ID": 2013,
+    "BattleSectionId": 20013,
+    "PreSection": 2012,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:41196"
+  },
+  {
+    "ID": 2014,
+    "BattleSectionId": 20014,
+    "PreSection": 2013,
+    "DaysSinceFuncOpen": 6,
+    "NameStrKey": "ST:41197"
+  },
+  {
+    "ID": 2101,
+    "BattleSectionId": 21001,
+    "NameStrKey": "ST:103188",
+    "ScenarioStrKey": "ST:104050"
+  },
+  {
+    "ID": 2102,
+    "BattleSectionId": 21002,
+    "PreSection": 2101,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:103189",
+    "ScenarioStrKey": "ST:104051"
+  },
+  {
+    "ID": 2103,
+    "BattleSectionId": 21003,
+    "PreSection": 2102,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:103190",
+    "ScenarioStrKey": "ST:104052"
+  },
+  {
+    "ID": 2201,
+    "BattleSectionId": 22001,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156577"
+  },
+  {
+    "ID": 2202,
+    "BattleSectionId": 22002,
+    "PreSection": 2201,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156578"
+  },
+  {
+    "ID": 2203,
+    "BattleSectionId": 22003,
+    "PreSection": 2202,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156579"
+  },
+  {
+    "ID": 2204,
+    "DialogSectionId": 22004,
+    "PreSection": 2203,
+    "DaysSinceFuncOpen": 1,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156580"
+  },
+  {
+    "ID": 2205,
+    "BattleSectionId": 22005,
+    "PreSection": 2204,
+    "DaysSinceFuncOpen": 1,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156581"
+  },
+  {
+    "ID": 2206,
+    "BattleSectionId": 22006,
+    "PreSection": 2205,
+    "DaysSinceFuncOpen": 1,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156582"
+  },
+  {
+    "ID": 2207,
+    "BattleSectionId": 22007,
+    "PreSection": 2206,
+    "DaysSinceFuncOpen": 1,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156583"
+  },
+  {
+    "ID": 2208,
+    "BattleSectionId": 22008,
+    "PreSection": 2207,
+    "DaysSinceFuncOpen": 2,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156584"
+  },
+  {
+    "ID": 2209,
+    "BattleSectionId": 22009,
+    "PreSection": 2208,
+    "DaysSinceFuncOpen": 2,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156585"
+  },
+  {
+    "ID": 2210,
+    "BattleSectionId": 22010,
+    "PreSection": 2209,
+    "DaysSinceFuncOpen": 2,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156586"
+  },
+  {
+    "ID": 2211,
+    "BattleSectionId": 22011,
+    "PreSection": 2210,
+    "DaysSinceFuncOpen": 3,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156587"
+  },
+  {
+    "ID": 2212,
+    "DialogSectionId": 22012,
+    "PreSection": 2211,
+    "DaysSinceFuncOpen": 3,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156588"
+  },
+  {
+    "ID": 2213,
+    "BattleSectionId": 22013,
+    "PreSection": 2212,
+    "DaysSinceFuncOpen": 3,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156589"
+  },
+  {
+    "ID": 2301,
+    "BattleSectionId": 23001
+  },
+  {
+    "ID": 2302,
+    "BattleSectionId": 23002,
+    "PreSection": 2301
+  },
+  {
+    "ID": 2303,
+    "BattleSectionId": 23003,
+    "PreSection": 2302,
+    "DaysSinceFuncOpen": 1
+  },
+  {
+    "ID": 2304,
+    "BattleSectionId": 23004,
+    "PreSection": 2303,
+    "DaysSinceFuncOpen": 2
+  },
+  {
+    "ID": 2305,
+    "BattleSectionId": 23005,
+    "PreSection": 2304,
+    "DaysSinceFuncOpen": 3
+  },
+  {
+    "ID": 2306,
+    "BattleSectionId": 23006,
+    "PreSection": 2305,
+    "DaysSinceFuncOpen": 4
+  },
+  {
+    "ID": 2307,
+    "BattleSectionId": 23007,
+    "PreSection": 2306,
+    "DaysSinceFuncOpen": 4
+  },
+  {
+    "ID": 2308,
+    "BattleSectionId": 23008,
+    "PreSection": 2307,
+    "DaysSinceFuncOpen": 5
+  },
+  {
+    "ID": 2401,
+    "BattleSectionId": 24001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_01.png@Map_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_01a.png@Map_01a",
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:150114"
+  },
+  {
+    "ID": 2402,
+    "BattleSectionId": 24002,
+    "PreSection": 2401,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_02.png@Map_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_02a.png@Map_02a",
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:150115"
+  },
+  {
+    "ID": 2403,
+    "BattleSectionId": 24003,
+    "PreSection": 2402,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_03.png@Map_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_03a.png@Map_03a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:150116"
+  },
+  {
+    "ID": 2404,
+    "BattleSectionId": 24004,
+    "PreSection": 2403,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_04.png@Map_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_04a.png@Map_04a",
+    "NameStrKey": "ST:5467",
+    "ScenarioStrKey": "ST:150117"
+  },
+  {
+    "ID": 2405,
+    "BattleSectionId": 24005,
+    "PreSection": 2404,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_05.png@Map_05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_05a.png@Map_05a",
+    "NameStrKey": "ST:5570",
+    "ScenarioStrKey": "ST:150118"
+  },
+  {
+    "ID": 2406,
+    "BattleSectionId": 24006,
+    "PreSection": 2405,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_06.png@Map_06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_06a.png@Map_06a",
+    "NameStrKey": "ST:5571",
+    "ScenarioStrKey": "ST:150119"
+  },
+  {
+    "ID": 2407,
+    "BattleSectionId": 24007,
+    "PreSection": 2406,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_07.png@Map_07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_07a.png@Map_07a",
+    "NameStrKey": "ST:5572",
+    "ScenarioStrKey": "ST:150120"
+  },
+  {
+    "ID": 2408,
+    "BattleSectionId": 24008,
+    "PreSection": 2407,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_08.png@Map_08",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XiaoZuGuoHe_ABS/NoTag/Map_08a.png@Map_08a",
+    "NameStrKey": "ST:5573",
+    "ScenarioStrKey": "ST:150121"
+  },
+  {
+    "ID": 2501,
+    "BattleSectionId": 25001,
+    "NameStrKey": "ST:191244"
+  },
+  {
+    "ID": 2502,
+    "BattleSectionId": 25002,
+    "PreSection": 2501,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:191245"
+  },
+  {
+    "ID": 2503,
+    "BattleSectionId": 25003,
+    "PreSection": 2502,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:191246"
+  },
+  {
+    "ID": 2504,
+    "BattleSectionId": 25004,
+    "PreSection": 2503,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:191247"
+  },
+  {
+    "ID": 2505,
+    "BattleSectionId": 25005,
+    "PreSection": 2504,
+    "DaysSinceFuncOpen": 4,
+    "NameStrKey": "ST:191248"
+  },
+  {
+    "ID": 2601,
+    "DialogSectionId": 26001,
+    "NameStrKey": "ST:162917",
+    "ScenarioStrKey": "ST:163523"
+  },
+  {
+    "ID": 2602,
+    "TreasureBoxSectionId": 26002,
+    "PreSection": 2601,
+    "NameStrKey": "ST:22048"
+  },
+  {
+    "ID": 2603,
+    "BattleSectionId": 26003,
+    "PreSection": 2602,
+    "NameStrKey": "ST:162118",
+    "ScenarioStrKey": "ST:162259"
+  },
+  {
+    "ID": 2604,
+    "BattleSectionId": 26004,
+    "PreSection": 2603,
+    "NameStrKey": "ST:162119",
+    "ScenarioStrKey": "ST:162260"
+  },
+  {
+    "ID": 2605,
+    "BattleSectionId": 26005,
+    "PreSection": 2604,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:162120",
+    "ScenarioStrKey": "ST:162261"
+  },
+  {
+    "ID": 2606,
+    "BattleSectionId": 26006,
+    "PreSection": 2605,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:106986",
+    "ScenarioStrKey": "ST:162262"
+  },
+  {
+    "ID": 2607,
+    "TreasureBoxSectionId": 26007,
+    "PreSection": 2606,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:22048"
+  },
+  {
+    "ID": 2608,
+    "DialogSectionId": 26008,
+    "PreSection": 2607,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:162296",
+    "ScenarioStrKey": "ST:162871"
+  },
+  {
+    "ID": 2609,
+    "BattleSectionId": 26009,
+    "PreSection": 2608,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:162121",
+    "ScenarioStrKey": "ST:162263"
+  },
+  {
+    "ID": 2610,
+    "TreasureBoxSectionId": 26010,
+    "PreSection": 2609,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:22048"
+  },
+  {
+    "ID": 2611,
+    "BattleSectionId": 26011,
+    "PreSection": 2610,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:162122",
+    "ScenarioStrKey": "ST:163008"
+  },
+  {
+    "ID": 2701,
+    "BattleSectionId": 27001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Dingfengliu_01.png@Dingfengliu_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_01.png@Xzhezi_01",
+    "NameStrKey": "ST:5113"
+  },
+  {
+    "ID": 2702,
+    "BattleSectionId": 27002,
+    "PreSection": 2701,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Shuangsiwang_01.png@Shuangsiwang_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_02.png@Xzhezi_02",
+    "NameStrKey": "ST:5465"
+  },
+  {
+    "ID": 2703,
+    "BattleSectionId": 27003,
+    "PreSection": 2702,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Ehongyao_01.png@Ehongyao_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_03.png@Xzhezi_03",
+    "NameStrKey": "ST:5466"
+  },
+  {
+    "ID": 2704,
+    "BattleSectionId": 27004,
+    "PreSection": 2703,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Shuilongning_01.png@Shuilongning_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_04.png@Xzhezi_04",
+    "NameStrKey": "ST:5467"
+  },
+  {
+    "ID": 2705,
+    "BattleSectionId": 27005,
+    "PreSection": 2704,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Suoqianhun_01.png@Suoqianhun_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_05.png@Xzhezi_05",
+    "NameStrKey": "ST:5570"
+  },
+  {
+    "ID": 2706,
+    "BattleSectionId": 27006,
+    "PreSection": 2705,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xiaojusan_01.png@Xiaojusan_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_06.png@Xzhezi_06",
+    "NameStrKey": "ST:5571"
+  },
+  {
+    "ID": 2707,
+    "BattleSectionId": 27007,
+    "PreSection": 2706,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Waizhuan_01.png@Waizhuan_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/LinkageImage/Qiannvyouhun_ABS/NoTag/Xzhezi_07.png@Xzhezi_07",
+    "NameStrKey": "ST:5572"
+  },
+  {
+    "ID": 2801,
+    "BattleSectionId": 28001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map01.png@Xuntianji_map01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map01a.png@Xuntianji_map01a",
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:200867"
+  },
+  {
+    "ID": 2802,
+    "BattleSectionId": 28002,
+    "PreSection": 2801,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map02.png@Xuntianji_map02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map02a.png@Xuntianji_map02a",
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:200868"
+  },
+  {
+    "ID": 2803,
+    "BattleSectionId": 28003,
+    "PreSection": 2802,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map03.png@Xuntianji_map03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map03a.png@Xuntianji_map03a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:200869"
+  },
+  {
+    "ID": 2804,
+    "BattleSectionId": 28004,
+    "PreSection": 2803,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map04.png@Xuntianji_map04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map04a.png@Xuntianji_map04a",
+    "NameStrKey": "ST:5467",
+    "ScenarioStrKey": "ST:200870"
+  },
+  {
+    "ID": 2805,
+    "BattleSectionId": 28005,
+    "PreSection": 2804,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map05.png@Xuntianji_map05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map05a.png@Xuntianji_map05a",
+    "NameStrKey": "ST:5570",
+    "ScenarioStrKey": "ST:200871"
+  },
+  {
+    "ID": 2806,
+    "BattleSectionId": 28006,
+    "PreSection": 2805,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map06.png@Xuntianji_map06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map06a.png@Xuntianji_map06a",
+    "NameStrKey": "ST:5571",
+    "ScenarioStrKey": "ST:200872"
+  },
+  {
+    "ID": 2807,
+    "BattleSectionId": 28007,
+    "PreSection": 2806,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map07.png@Xuntianji_map07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map07a.png@Xuntianji_map07a",
+    "NameStrKey": "ST:5572",
+    "ScenarioStrKey": "ST:200873"
+  },
+  {
+    "ID": 2808,
+    "BattleSectionId": 28008,
+    "PreSection": 2807,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map08.png@Xuntianji_map08",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map08a.png@Xuntianji_map08a",
+    "NameStrKey": "ST:5573",
+    "ScenarioStrKey": "ST:200874"
+  },
+  {
+    "ID": 2809,
+    "DialogSectionId": 28009,
+    "PreSection": 2808,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map09.png@Xuntianji_map09",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map09a.png@Xuntianji_map09a",
+    "NameStrKey": "ST:5574",
+    "ScenarioStrKey": "ST:200875"
+  },
+  {
+    "ID": 2901,
+    "BattleSectionId": 29001,
+    "NameStrKey": "ST:19820"
+  },
+  {
+    "ID": 2902,
+    "BattleSectionId": 29002,
+    "PreSection": 2901,
+    "NameStrKey": "ST:19821"
+  },
+  {
+    "ID": 2903,
+    "BattleSectionId": 29003,
+    "PreSection": 2902,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:19822"
+  },
+  {
+    "ID": 2904,
+    "BattleSectionId": 29004,
+    "PreSection": 2903,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:19823"
+  },
+  {
+    "ID": 2905,
+    "BattleSectionId": 29005,
+    "PreSection": 2904,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:19824"
+  },
+  {
+    "ID": 2906,
+    "BattleSectionId": 29006,
+    "PreSection": 2905,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:19825"
+  },
+  {
+    "ID": 2907,
+    "BattleSectionId": 29007,
+    "PreSection": 2906,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:19826"
+  },
+  {
+    "ID": 2908,
+    "BattleSectionId": 29008,
+    "PreSection": 2907,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:26720"
+  },
+  {
+    "ID": 3001,
+    "BattleSectionId": 30001,
+    "NameStrKey": "ST:103188",
+    "ScenarioStrKey": "ST:104050"
+  },
+  {
+    "ID": 3002,
+    "BattleSectionId": 30002,
+    "PreSection": 3001,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:103189",
+    "ScenarioStrKey": "ST:104051"
+  },
+  {
+    "ID": 3003,
+    "BattleSectionId": 30003,
+    "PreSection": 3002,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:103190",
+    "ScenarioStrKey": "ST:104052"
+  },
+  {
+    "ID": 3101,
+    "BattleSectionId": 31001,
+    "NameStrKey": "ST:5113"
+  },
+  {
+    "ID": 3102,
+    "BattleSectionId": 31002,
+    "PreSection": 3101,
+    "NameStrKey": "ST:5465"
+  },
+  {
+    "ID": 3103,
+    "BattleSectionId": 31003,
+    "PreSection": 3102,
+    "NameStrKey": "ST:5466"
+  },
+  {
+    "ID": 3104,
+    "BattleSectionId": 31004,
+    "PreSection": 3103,
+    "NameStrKey": "ST:5467"
+  },
+  {
+    "ID": 3105,
+    "BattleSectionId": 31005,
+    "PreSection": 3104,
+    "NameStrKey": "ST:5570"
+  },
+  {
+    "ID": 3106,
+    "BattleSectionId": 31006,
+    "PreSection": 3105,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5571"
+  },
+  {
+    "ID": 3107,
+    "BattleSectionId": 31007,
+    "PreSection": 3106,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5572"
+  },
+  {
+    "ID": 3108,
+    "BattleSectionId": 31008,
+    "PreSection": 3107,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5573"
+  },
+  {
+    "ID": 3109,
+    "BattleSectionId": 31009,
+    "PreSection": 3108,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5574"
+  },
+  {
+    "ID": 3110,
+    "BattleSectionId": 31010,
+    "PreSection": 3109,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:172602"
+  },
+  {
+    "ID": 3111,
+    "BattleSectionId": 31011,
+    "PreSection": 3110,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5576"
+  },
+  {
+    "ID": 3112,
+    "BattleSectionId": 31012,
+    "PreSection": 3111,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:5577"
+  },
+  {
+    "ID": 3113,
+    "BattleSectionId": 31013,
+    "PreSection": 3112,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:41196"
+  },
+  {
+    "ID": 3114,
+    "BattleSectionId": 31014,
+    "PreSection": 3113,
+    "DaysSinceFuncOpen": 6,
+    "NameStrKey": "ST:41197"
+  },
+  {
+    "ID": 3201,
+    "DialogSectionId": 32001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map01.png@Wuhaijinge_map01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map01a.png@Wuhaijinge_map01a",
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:210032"
+  },
+  {
+    "ID": 3202,
+    "BattleSectionId": 32002,
+    "PreSection": 3201,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map02.png@Wuhaijinge_map02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map02a.png@Wuhaijinge_map02a",
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:210033"
+  },
+  {
+    "ID": 3203,
+    "DialogSectionId": 32003,
+    "PreSection": 3202,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map03.png@Wuhaijinge_map03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map03a.png@Wuhaijinge_map03a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:210034"
+  },
+  {
+    "ID": 3204,
+    "BattleSectionId": 32004,
+    "PreSection": 3203,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map04.png@Wuhaijinge_map04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map04a.png@Wuhaijinge_map04a",
+    "NameStrKey": "ST:5467",
+    "ScenarioStrKey": "ST:210035"
+  },
+  {
+    "ID": 3205,
+    "BattleSectionId": 32005,
+    "PreSection": 3204,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map05.png@Wuhaijinge_map05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map05a.png@Wuhaijinge_map05a",
+    "NameStrKey": "ST:5570",
+    "ScenarioStrKey": "ST:210036"
+  },
+  {
+    "ID": 3206,
+    "BattleSectionId": 32006,
+    "PreSection": 3205,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map06.png@Wuhaijinge_map06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map06a.png@Wuhaijinge_map06a",
+    "NameStrKey": "ST:5571",
+    "ScenarioStrKey": "ST:210037"
+  },
+  {
+    "ID": 3207,
+    "BattleSectionId": 32007,
+    "PreSection": 3206,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map07.png@Wuhaijinge_map07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map07a.png@Wuhaijinge_map07a",
+    "NameStrKey": "ST:5572",
+    "ScenarioStrKey": "ST:210038"
+  },
+  {
+    "ID": 3208,
+    "BattleSectionId": 32008,
+    "PreSection": 3207,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map08.png@Wuhaijinge_map08",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map08a.png@Wuhaijinge_map08a",
+    "NameStrKey": "ST:5573",
+    "ScenarioStrKey": "ST:210039"
+  },
+  {
+    "ID": 3209,
+    "BattleSectionId": 32009,
+    "PreSection": 3208,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map09.png@Wuhaijinge_map09",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map09a.png@Wuhaijinge_map09a",
+    "NameStrKey": "ST:5574",
+    "ScenarioStrKey": "ST:210040"
+  },
+  {
+    "ID": 3210,
+    "BattleSectionId": 32010,
+    "PreSection": 3209,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map10.png@Wuhaijinge_map10",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/QuHaiJinGe_ABS/NoTag/Wuhaijinge_map10a.png@Wuhaijinge_map10a",
+    "NameStrKey": "ST:5575",
+    "ScenarioStrKey": "ST:210041"
+  },
+  {
+    "ID": 3301,
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:213269"
+  },
+  {
+    "ID": 3302,
+    "PreSection": 3301,
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:213270"
+  },
+  {
+    "ID": 3303,
+    "PreSection": 3302,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:213271"
+  },
+  {
+    "ID": 3401,
+    "BattleSectionId": 34001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_17.png@Syhx_17",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2488"
+  },
+  {
+    "ID": 3402,
+    "BattleSectionId": 34002,
+    "PreSection": 3401,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_18.png@Syhx_18",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2614"
+  },
+  {
+    "ID": 3403,
+    "BattleSectionId": 34003,
+    "PreSection": 3402,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_19.png@Syhx_19",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2615"
+  },
+  {
+    "ID": 3404,
+    "BattleSectionId": 34004,
+    "PreSection": 3403,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_20.png@Syhx_20",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2616"
+  },
+  {
+    "ID": 3801,
+    "BattleSectionId": 3801,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map10.png@Xuntianji_map10",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map10a.png@Xuntianji_map10a",
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:223006"
+  },
+  {
+    "ID": 3802,
+    "BattleSectionId": 3802,
+    "PreSection": 3801,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map11.png@Xuntianji_map11",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map11a.png@Xuntianji_map11a",
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:223007"
+  },
+  {
+    "ID": 3803,
+    "BattleSectionId": 3803,
+    "PreSection": 3802,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map12.png@Xuntianji_map12",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map12a.png@Xuntianji_map12a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:223008"
+  },
+  {
+    "ID": 3804,
+    "BattleSectionId": 3804,
+    "PreSection": 3803,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map13.png@Xuntianji_map13",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map13a.png@Xuntianji_map13a",
+    "NameStrKey": "ST:5467",
+    "ScenarioStrKey": "ST:223009"
+  },
+  {
+    "ID": 3805,
+    "BattleSectionId": 3805,
+    "PreSection": 3804,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map14.png@Xuntianji_map14",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map14a.png@Xuntianji_map14a",
+    "NameStrKey": "ST:5570",
+    "ScenarioStrKey": "ST:223010"
+  },
+  {
+    "ID": 3806,
+    "BattleSectionId": 3806,
+    "PreSection": 3805,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map15.png@Xuntianji_map15",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map15a.png@Xuntianji_map15a",
+    "NameStrKey": "ST:5571",
+    "ScenarioStrKey": "ST:223011"
+  },
+  {
+    "ID": 3807,
+    "BattleSectionId": 3807,
+    "PreSection": 3806,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map16.png@Xuntianji_map16",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map16a.png@Xuntianji_map16a",
+    "NameStrKey": "ST:5572",
+    "ScenarioStrKey": "ST:223012"
+  },
+  {
+    "ID": 3808,
+    "BattleSectionId": 3808,
+    "PreSection": 3807,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map17.png@Xuntianji_map17",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map17a.png@Xuntianji_map17a",
+    "NameStrKey": "ST:5573",
+    "ScenarioStrKey": "ST:223013"
+  },
+  {
+    "ID": 3809,
+    "DialogSectionId": 38091,
+    "PreSection": 3808,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map18.png@Xuntianji_map18",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/XunTianJi_ABS/NoTag/Xuntianji_map18a.png@Xuntianji_map18a",
+    "NameStrKey": "ST:5574",
+    "ScenarioStrKey": "ST:223014"
+  },
+  {
+    "ID": 3901,
+    "BattleSectionId": 3901,
+    "NameStrKey": "ST:5113"
+  },
+  {
+    "ID": 3902,
+    "BattleSectionId": 3902,
+    "PreSection": 3901,
+    "NameStrKey": "ST:5465"
+  },
+  {
+    "ID": 3903,
+    "BattleSectionId": 3903,
+    "PreSection": 3902,
+    "NameStrKey": "ST:5466"
+  },
+  {
+    "ID": 3904,
+    "BattleSectionId": 3904,
+    "PreSection": 3903,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5467"
+  },
+  {
+    "ID": 3905,
+    "BattleSectionId": 3905,
+    "PreSection": 3904,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5570"
+  },
+  {
+    "ID": 3906,
+    "BattleSectionId": 3906,
+    "PreSection": 3905,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5571"
+  },
+  {
+    "ID": 3907,
+    "BattleSectionId": 3907,
+    "PreSection": 3906,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5572"
+  },
+  {
+    "ID": 3908,
+    "BattleSectionId": 3908,
+    "PreSection": 3907,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5573"
+  },
+  {
+    "ID": 3909,
+    "BattleSectionId": 3909,
+    "PreSection": 3908,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5574"
+  },
+  {
+    "ID": 3910,
+    "BattleSectionId": 3910,
+    "PreSection": 3909,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:5575"
+  },
+  {
+    "ID": 3911,
+    "BattleSectionId": 3911,
+    "PreSection": 3910,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:5576"
+  },
+  {
+    "ID": 3912,
+    "BattleSectionId": 3912,
+    "PreSection": 3911,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:5577"
+  },
+  {
+    "ID": 3913,
+    "BattleSectionId": 3913,
+    "PreSection": 3912,
+    "DaysSinceFuncOpen": 4,
+    "NameStrKey": "ST:41196"
+  },
+  {
+    "ID": 3914,
+    "BattleSectionId": 3914,
+    "PreSection": 3913,
+    "DaysSinceFuncOpen": 4,
+    "NameStrKey": "ST:41197"
+  },
+  {
+    "ID": 3915,
+    "BattleSectionId": 3915,
+    "PreSection": 3914,
+    "DaysSinceFuncOpen": 4,
+    "NameStrKey": "ST:41198"
+  },
+  {
+    "ID": 4001,
+    "BattleSectionId": 40001,
+    "NameStrKey": "ST:191244"
+  },
+  {
+    "ID": 4002,
+    "BattleSectionId": 40002,
+    "PreSection": 4001,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:191245"
+  },
+  {
+    "ID": 4003,
+    "BattleSectionId": 40003,
+    "PreSection": 4002,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:191246"
+  },
+  {
+    "ID": 4004,
+    "BattleSectionId": 40004,
+    "PreSection": 4003,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:191247"
+  },
+  {
+    "ID": 4005,
+    "BattleSectionId": 40005,
+    "PreSection": 4004,
+    "DaysSinceFuncOpen": 4,
+    "NameStrKey": "ST:191248"
+  },
+  {
+    "ID": 4101,
+    "BattleSectionId": 41001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang50_01.png@Diancang50_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2488"
+  },
+  {
+    "ID": 4102,
+    "BattleSectionId": 41002,
+    "PreSection": 4101,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang50_02.png@Diancang50_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2614"
+  },
+  {
+    "ID": 4103,
+    "BattleSectionId": 41003,
+    "PreSection": 4102,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang50_03.png@Diancang50_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2615"
+  },
+  {
+    "ID": 4104,
+    "BattleSectionId": 41004,
+    "PreSection": 4103,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang50_04.png@Diancang50_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2616"
+  },
+  {
+    "ID": 4201,
+    "BattleSectionId": 42001,
+    "NameStrKey": "ST:38458",
+    "ScenarioStrKey": "ST:234292"
+  },
+  {
+    "ID": 4202,
+    "BattleSectionId": 42002,
+    "PreSection": 4201,
+    "NameStrKey": "ST:234285",
+    "ScenarioStrKey": "ST:234293"
+  },
+  {
+    "ID": 4203,
+    "BattleSectionId": 42003,
+    "PreSection": 4202,
+    "NameStrKey": "ST:153948",
+    "ScenarioStrKey": "ST:234294"
+  },
+  {
+    "ID": 4204,
+    "BattleSectionId": 42004,
+    "PreSection": 4203,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:234286",
+    "ScenarioStrKey": "ST:234295"
+  },
+  {
+    "ID": 4205,
+    "BattleSectionId": 42005,
+    "PreSection": 4204,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:234287",
+    "ScenarioStrKey": "ST:234296"
+  },
+  {
+    "ID": 4206,
+    "BattleSectionId": 42006,
+    "PreSection": 4205,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:234288",
+    "ScenarioStrKey": "ST:234297"
+  },
+  {
+    "ID": 4207,
+    "BattleSectionId": 42007,
+    "PreSection": 4206,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:234289",
+    "ScenarioStrKey": "ST:234298"
+  },
+  {
+    "ID": 4208,
+    "BattleSectionId": 42008,
+    "PreSection": 4207,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:211818",
+    "ScenarioStrKey": "ST:234299"
+  },
+  {
+    "ID": 4209,
+    "BattleSectionId": 42009,
+    "PreSection": 4208,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:234290",
+    "ScenarioStrKey": "ST:234300"
+  },
+  {
+    "ID": 4210,
+    "BattleSectionId": 42010,
+    "PreSection": 4209,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:234291",
+    "ScenarioStrKey": "ST:234301"
+  },
+  {
+    "ID": 4301,
+    "BattleSectionId": 43001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_01.png@Diancang53_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2488"
+  },
+  {
+    "ID": 4302,
+    "BattleSectionId": 43002,
+    "PreSection": 4301,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_02.png@Diancang53_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2614"
+  },
+  {
+    "ID": 4303,
+    "BattleSectionId": 43003,
+    "PreSection": 4302,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_03.png@Diancang53_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2615"
+  },
+  {
+    "ID": 4304,
+    "BattleSectionId": 43004,
+    "PreSection": 4303,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_04.png@Diancang53_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2616"
+  },
+  {
+    "ID": 4401,
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:213269"
+  },
+  {
+    "ID": 4402,
+    "PreSection": 4401,
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:213270"
+  },
+  {
+    "ID": 4403,
+    "PreSection": 4402,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:213271"
+  },
+  {
+    "ID": 4501,
+    "BattleSectionId": 45001,
+    "NameStrKey": "ST:5113"
+  },
+  {
+    "ID": 4502,
+    "BattleSectionId": 45002,
+    "PreSection": 4501,
+    "NameStrKey": "ST:5465"
+  },
+  {
+    "ID": 4503,
+    "BattleSectionId": 45003,
+    "PreSection": 4502,
+    "NameStrKey": "ST:5466"
+  },
+  {
+    "ID": 4504,
+    "BattleSectionId": 45004,
+    "PreSection": 4503,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5467"
+  },
+  {
+    "ID": 4505,
+    "BattleSectionId": 45005,
+    "PreSection": 4504,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5570"
+  },
+  {
+    "ID": 4506,
+    "BattleSectionId": 45006,
+    "PreSection": 4505,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5571"
+  },
+  {
+    "ID": 4507,
+    "BattleSectionId": 45007,
+    "PreSection": 4506,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5572"
+  },
+  {
+    "ID": 4508,
+    "BattleSectionId": 45008,
+    "PreSection": 4507,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5573"
+  },
+  {
+    "ID": 4509,
+    "BattleSectionId": 45009,
+    "PreSection": 4508,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5574"
+  },
+  {
+    "ID": 4601,
+    "BattleSectionId": 4601,
+    "NameStrKey": "ST:5113"
+  },
+  {
+    "ID": 4602,
+    "BattleSectionId": 4602,
+    "PreSection": 4601,
+    "NameStrKey": "ST:5465"
+  },
+  {
+    "ID": 4603,
+    "BattleSectionId": 4603,
+    "PreSection": 4602,
+    "NameStrKey": "ST:5466"
+  },
+  {
+    "ID": 4604,
+    "BattleSectionId": 4604,
+    "PreSection": 4603,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5467"
+  },
+  {
+    "ID": 4605,
+    "BattleSectionId": 4605,
+    "PreSection": 4604,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5570"
+  },
+  {
+    "ID": 4606,
+    "BattleSectionId": 4606,
+    "PreSection": 4605,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5571"
+  },
+  {
+    "ID": 4607,
+    "BattleSectionId": 4607,
+    "PreSection": 4606,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5572"
+  },
+  {
+    "ID": 4608,
+    "BattleSectionId": 4608,
+    "PreSection": 4607,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5573"
+  },
+  {
+    "ID": 4609,
+    "BattleSectionId": 4609,
+    "PreSection": 4608,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5574"
+  },
+  {
+    "ID": 4610,
+    "BattleSectionId": 4610,
+    "PreSection": 4609,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:5575"
+  },
+  {
+    "ID": 4611,
+    "BattleSectionId": 4611,
+    "PreSection": 4610,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:5576"
+  },
+  {
+    "ID": 4612,
+    "BattleSectionId": 4612,
+    "PreSection": 4611,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:5577"
+  },
+  {
+    "ID": 4613,
+    "BattleSectionId": 4613,
+    "PreSection": 4612,
+    "DaysSinceFuncOpen": 4,
+    "NameStrKey": "ST:41196"
+  },
+  {
+    "ID": 4614,
+    "BattleSectionId": 4614,
+    "PreSection": 4613,
+    "DaysSinceFuncOpen": 4,
+    "NameStrKey": "ST:41197"
+  },
+  {
+    "ID": 4615,
+    "BattleSectionId": 4615,
+    "PreSection": 4614,
+    "DaysSinceFuncOpen": 4,
+    "NameStrKey": "ST:41198"
+  },
+  {
+    "ID": 4701,
+    "BattleSectionId": 4701,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_01.png@Diancang53_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2488"
+  },
+  {
+    "ID": 4702,
+    "BattleSectionId": 4702,
+    "PreSection": 4701,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_02.png@Diancang53_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2614"
+  },
+  {
+    "ID": 4703,
+    "BattleSectionId": 4703,
+    "PreSection": 4702,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_03.png@Diancang53_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2615"
+  },
+  {
+    "ID": 4704,
+    "BattleSectionId": 4704,
+    "PreSection": 4703,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_04.png@Diancang53_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2616"
+  },
+  {
+    "ID": 4801,
+    "BattleSectionId": 4801,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156577"
+  },
+  {
+    "ID": 4802,
+    "BattleSectionId": 4802,
+    "PreSection": 4801,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156578"
+  },
+  {
+    "ID": 4803,
+    "BattleSectionId": 4803,
+    "PreSection": 4802,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156579"
+  },
+  {
+    "ID": 4804,
+    "DialogSectionId": 4804,
+    "PreSection": 4803,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156580"
+  },
+  {
+    "ID": 4805,
+    "BattleSectionId": 4805,
+    "PreSection": 4804,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156581"
+  },
+  {
+    "ID": 4806,
+    "BattleSectionId": 4806,
+    "PreSection": 4805,
+    "ChapterType": "UnrealSeaNodeChapterType_ShangTie",
+    "NameStrKey": "ST:156582"
+  },
+  {
+    "ID": 4807,
+    "BattleSectionId": 4807,
+    "PreSection": 4806,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156583"
+  },
+  {
+    "ID": 4808,
+    "BattleSectionId": 4808,
+    "PreSection": 4807,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156584"
+  },
+  {
+    "ID": 4809,
+    "BattleSectionId": 4809,
+    "PreSection": 4808,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156585"
+  },
+  {
+    "ID": 4810,
+    "BattleSectionId": 4810,
+    "PreSection": 4809,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156586"
+  },
+  {
+    "ID": 4811,
+    "BattleSectionId": 4811,
+    "PreSection": 4810,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156587"
+  },
+  {
+    "ID": 4812,
+    "DialogSectionId": 4812,
+    "PreSection": 4811,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156588"
+  },
+  {
+    "ID": 4813,
+    "BattleSectionId": 4813,
+    "PreSection": 4812,
+    "ChapterType": "UnrealSeaNodeChapterType_DownTie",
+    "NameStrKey": "ST:156589"
+  },
+  {
+    "ID": 4901,
+    "BattleSectionId": 49001,
+    "NameStrKey": "ST:19820"
+  },
+  {
+    "ID": 4902,
+    "BattleSectionId": 49002,
+    "PreSection": 4901,
+    "NameStrKey": "ST:19821"
+  },
+  {
+    "ID": 4903,
+    "BattleSectionId": 49003,
+    "PreSection": 4902,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:19822"
+  },
+  {
+    "ID": 4904,
+    "BattleSectionId": 49004,
+    "PreSection": 4903,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:19823"
+  },
+  {
+    "ID": 4905,
+    "BattleSectionId": 49005,
+    "PreSection": 4904,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:19824"
+  },
+  {
+    "ID": 4906,
+    "BattleSectionId": 49006,
+    "PreSection": 4905,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:19825"
+  },
+  {
+    "ID": 4907,
+    "BattleSectionId": 49007,
+    "PreSection": 4906,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:19826"
+  },
+  {
+    "ID": 4908,
+    "BattleSectionId": 49008,
+    "PreSection": 4907,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:26720"
+  },
+  {
+    "ID": 5001,
+    "BattleSectionId": 50001,
+    "NameStrKey": "ST:249247"
+  },
+  {
+    "ID": 5002,
+    "BattleSectionId": 50002,
+    "PreSection": 5001,
+    "NameStrKey": "ST:249248",
+    "ScenarioStrKey": "ST:249766"
+  },
+  {
+    "ID": 5003,
+    "BattleSectionId": 50003,
+    "PreSection": 5002,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:249249",
+    "ScenarioStrKey": "ST:250356"
+  },
+  {
+    "ID": 5004,
+    "BattleSectionId": 50004,
+    "PreSection": 5003,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:247981",
+    "ScenarioStrKey": "ST:249768"
+  },
+  {
+    "ID": 5005,
+    "BattleSectionId": 50005,
+    "PreSection": 5004,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:247982",
+    "ScenarioStrKey": "ST:249769"
+  },
+  {
+    "ID": 5006,
+    "BattleSectionId": 50006,
+    "PreSection": 5005,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:153944",
+    "ScenarioStrKey": "ST:249770"
+  },
+  {
+    "ID": 5007,
+    "BattleSectionId": 50007,
+    "PreSection": 5006,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:249250",
+    "ScenarioStrKey": "ST:249771"
+  },
+  {
+    "ID": 5008,
+    "BattleSectionId": 50008,
+    "PreSection": 5007,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:249251",
+    "ScenarioStrKey": "ST:249772"
+  },
+  {
+    "ID": 5009,
+    "BattleSectionId": 50009,
+    "PreSection": 5008,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:247933",
+    "ScenarioStrKey": "ST:249773"
+  },
+  {
+    "ID": 5010,
+    "BattleSectionId": 50010,
+    "PreSection": 5009,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:126485",
+    "ScenarioStrKey": "ST:249774"
+  },
+  {
+    "ID": 5101,
+    "BattleSectionId": 5101,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_01.png@Diancang53_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2488"
+  },
+  {
+    "ID": 5102,
+    "BattleSectionId": 5102,
+    "PreSection": 5101,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_02.png@Diancang53_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2614"
+  },
+  {
+    "ID": 5103,
+    "BattleSectionId": 5103,
+    "PreSection": 5102,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_03.png@Diancang53_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2615"
+  },
+  {
+    "ID": 5104,
+    "BattleSectionId": 5104,
+    "PreSection": 5103,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_04.png@Diancang53_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2616"
+  },
+  {
+    "ID": 5110,
+    "DialogSectionId": 35101,
+    "NameStrKey": "ST:252470"
+  },
+  {
+    "ID": 5111,
+    "DialogSectionId": 35102,
+    "PreSection": 5110,
+    "NameStrKey": "ST:252409"
+  },
+  {
+    "ID": 5112,
+    "DialogSectionId": 35103,
+    "PreSection": 5111,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:252410"
+  },
+  {
+    "ID": 5113,
+    "DialogSectionId": 35104,
+    "PreSection": 5112,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:252411"
+  },
+  {
+    "ID": 5114,
+    "DialogSectionId": 35105,
+    "PreSection": 5113,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:252412"
+  },
+  {
+    "ID": 5115,
+    "DialogSectionId": 35106,
+    "PreSection": 5114,
+    "DaysSinceFuncOpen": 4,
+    "NameStrKey": "ST:252413"
+  },
+  {
+    "ID": 5201,
+    "BattleSectionId": 5201,
+    "NameStrKey": "ST:5113"
+  },
+  {
+    "ID": 5202,
+    "BattleSectionId": 5202,
+    "PreSection": 5201,
+    "NameStrKey": "ST:5465"
+  },
+  {
+    "ID": 5203,
+    "BattleSectionId": 5203,
+    "PreSection": 5202,
+    "NameStrKey": "ST:5466"
+  },
+  {
+    "ID": 5204,
+    "BattleSectionId": 5204,
+    "PreSection": 5203,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5467"
+  },
+  {
+    "ID": 5205,
+    "BattleSectionId": 5205,
+    "PreSection": 5204,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5570"
+  },
+  {
+    "ID": 5206,
+    "BattleSectionId": 5206,
+    "PreSection": 5205,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5571"
+  },
+  {
+    "ID": 5207,
+    "BattleSectionId": 5207,
+    "PreSection": 5206,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5572"
+  },
+  {
+    "ID": 5208,
+    "BattleSectionId": 5208,
+    "PreSection": 5207,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5573"
+  },
+  {
+    "ID": 5209,
+    "BattleSectionId": 5209,
+    "PreSection": 5208,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5574"
+  },
+  {
+    "ID": 5401,
+    "BattleSectionId": 54001,
+    "UnLockBeforeAction": [
+      3001002,
+      3001003
+    ],
+    "UnLockAfterAction": [
+      3001004,
+      3001005
+    ],
+    "NameStrKey": "ST:79476",
+    "ScenarioStrKey": "ST:102883"
+  },
+  {
+    "ID": 5402,
+    "BattleSectionId": 54002,
+    "PreSection": 5401,
+    "DaysSinceFuncOpen": 1,
+    "UnLockBeforeAction": [
+      3002001
+    ],
+    "UnLockAfterAction": [
+      3002002,
+      3002003,
+      3002004,
+      3002005,
+      3002006,
+      3002007,
+      3002008,
+      3002009,
+      3002010
+    ],
+    "NameStrKey": "ST:78979",
+    "ScenarioStrKey": "ST:102884"
+  },
+  {
+    "ID": 5403,
+    "BattleSectionId": 54003,
+    "PreSection": 5402,
+    "DaysSinceFuncOpen": 2,
+    "UnLockBeforeAction": [
+      3003001,
+      3003002
+    ],
+    "UnLockAfterAction": [
+      3003003
+    ],
+    "NameStrKey": "ST:79594",
+    "ScenarioStrKey": "ST:102885"
+  },
+  {
+    "ID": 5404,
+    "DialogSectionId": 54101,
+    "PreSection": 5403,
+    "DaysSinceFuncOpen": 2,
+    "UnLockAfterAction": [
+      3004001,
+      3004002,
+      3004003,
+      3004004,
+      3004005,
+      3004006,
+      3004007,
+      3004008
+    ],
+    "NameStrKey": "ST:83568",
+    "ScenarioStrKey": "ST:102886"
+  },
+  {
+    "ID": 5405,
+    "BattleSectionId": 54004,
+    "PreSection": 5404,
+    "DaysSinceFuncOpen": 3,
+    "UnLockBeforeAction": [
+      3005001
+    ],
+    "UnLockAfterAction": [
+      3005002,
+      3005003
+    ],
+    "NameStrKey": "ST:81054",
+    "ScenarioStrKey": "ST:102887"
+  },
+  {
+    "ID": 5406,
+    "BattleSectionId": 54005,
+    "PreSection": 5405,
+    "DaysSinceFuncOpen": 4,
+    "UnLockBeforeAction": [
+      3006001
+    ],
+    "UnLockAfterAction": [
+      3006002,
+      3006003,
+      3006004,
+      3006005,
+      3006006,
+      3006007,
+      3006008,
+      3006009,
+      3006010,
+      3006011
+    ],
+    "NameStrKey": "ST:79712",
+    "ScenarioStrKey": "ST:102888"
+  },
+  {
+    "ID": 5407,
+    "DialogSectionId": 54102,
+    "PreSection": 5406,
+    "DaysSinceFuncOpen": 4,
+    "UnLockBeforeAction": [
+      3007001
+    ],
+    "UnLockAfterAction": [
+      3007002
+    ],
+    "NameStrKey": "ST:83569",
+    "ScenarioStrKey": "ST:101984"
+  },
+  {
+    "ID": 5408,
+    "BattleSectionId": 54006,
+    "PreSection": 5407,
+    "DaysSinceFuncOpen": 5,
+    "UnLockBeforeAction": [
+      3008001
+    ],
+    "UnLockAfterAction": [
+      3008002,
+      3008003,
+      3008004,
+      3008006,
+      3008007,
+      3008008
+    ],
+    "NameStrKey": "ST:81389",
+    "ScenarioStrKey": "ST:102889"
+  },
+  {
+    "ID": 5501,
+    "BattleSectionId": 55001,
+    "NameStrKey": "ST:5113"
+  },
+  {
+    "ID": 5502,
+    "BattleSectionId": 55002,
+    "PreSection": 5501,
+    "NameStrKey": "ST:5465"
+  },
+  {
+    "ID": 5503,
+    "BattleSectionId": 55003,
+    "PreSection": 5502,
+    "NameStrKey": "ST:5466"
+  },
+  {
+    "ID": 5504,
+    "BattleSectionId": 55004,
+    "PreSection": 5503,
+    "NameStrKey": "ST:5467"
+  },
+  {
+    "ID": 5505,
+    "BattleSectionId": 55005,
+    "PreSection": 5504,
+    "NameStrKey": "ST:5570"
+  },
+  {
+    "ID": 5506,
+    "BattleSectionId": 55006,
+    "PreSection": 5505,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5571"
+  },
+  {
+    "ID": 5507,
+    "BattleSectionId": 55007,
+    "PreSection": 5506,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5572"
+  },
+  {
+    "ID": 5508,
+    "BattleSectionId": 55008,
+    "PreSection": 5507,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:5573"
+  },
+  {
+    "ID": 5509,
+    "BattleSectionId": 55009,
+    "PreSection": 5508,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5574"
+  },
+  {
+    "ID": 5510,
+    "BattleSectionId": 55010,
+    "PreSection": 5509,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:172602"
+  },
+  {
+    "ID": 5511,
+    "BattleSectionId": 55011,
+    "PreSection": 5510,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:5576"
+  },
+  {
+    "ID": 5512,
+    "BattleSectionId": 55012,
+    "PreSection": 5511,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:5577"
+  },
+  {
+    "ID": 5513,
+    "BattleSectionId": 55013,
+    "PreSection": 5512,
+    "DaysSinceFuncOpen": 3,
+    "NameStrKey": "ST:41196"
+  },
+  {
+    "ID": 5514,
+    "BattleSectionId": 55014,
+    "PreSection": 5513,
+    "DaysSinceFuncOpen": 6,
+    "NameStrKey": "ST:41197"
+  },
+  {
+    "ID": 5601,
+    "BattleSectionId": 56001,
+    "NameStrKey": "ST:255712",
+    "ScenarioStrKey": "ST:256079"
+  },
+  {
+    "ID": 5602,
+    "BattleSectionId": 56002,
+    "PreSection": 5601,
+    "NameStrKey": "ST:255713",
+    "ScenarioStrKey": "ST:256080"
+  },
+  {
+    "ID": 5603,
+    "BattleSectionId": 56003,
+    "PreSection": 5602,
+    "NameStrKey": "ST:255714",
+    "ScenarioStrKey": "ST:256081"
+  },
+  {
+    "ID": 5604,
+    "BattleSectionId": 56004,
+    "PreSection": 5603,
+    "NameStrKey": "ST:255715",
+    "ScenarioStrKey": "ST:256082"
+  },
+  {
+    "ID": 5605,
+    "BattleSectionId": 56005,
+    "PreSection": 5604,
+    "NameStrKey": "ST:255716",
+    "ScenarioStrKey": "ST:256083"
+  },
+  {
+    "ID": 5606,
+    "BattleSectionId": 56006,
+    "PreSection": 5605,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:255717",
+    "ScenarioStrKey": "ST:256084"
+  },
+  {
+    "ID": 5607,
+    "BattleSectionId": 56007,
+    "PreSection": 5606,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:255718",
+    "ScenarioStrKey": "ST:256085"
+  },
+  {
+    "ID": 5608,
+    "BattleSectionId": 56008,
+    "PreSection": 5607,
+    "DaysSinceFuncOpen": 1,
+    "NameStrKey": "ST:255719",
+    "ScenarioStrKey": "ST:256086"
+  },
+  {
+    "ID": 5609,
+    "BattleSectionId": 56009,
+    "PreSection": 5608,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:255720",
+    "ScenarioStrKey": "ST:256087"
+  },
+  {
+    "ID": 5610,
+    "BattleSectionId": 56010,
+    "PreSection": 5609,
+    "DaysSinceFuncOpen": 2,
+    "NameStrKey": "ST:255721",
+    "ScenarioStrKey": "ST:256088"
+  },
+  {
+    "ID": 5701,
+    "BattleSectionId": 5701,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_01.png@Diancang53_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2488"
+  },
+  {
+    "ID": 5702,
+    "BattleSectionId": 5702,
+    "PreSection": 5701,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_02.png@Diancang53_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2614"
+  },
+  {
+    "ID": 5703,
+    "BattleSectionId": 5703,
+    "PreSection": 5702,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_03.png@Diancang53_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2615"
+  },
+  {
+    "ID": 5704,
+    "BattleSectionId": 5704,
+    "PreSection": 5703,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Diancang53_04.png@Diancang53_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/MidAutumnImage2024_ABS/NoTag/Syhx_04.png@Syhx_04",
+    "NameStrKey": "ST:2616"
+  },
+  {
+    "ID": 5801,
+    "BattleSectionId": 58001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_01.png@Map_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_01a.png@Map_01a",
+    "NameStrKey": "ST:5113"
+  },
+  {
+    "ID": 5802,
+    "BattleSectionId": 58002,
+    "PreSection": 5801,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_02.png@Map_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_02a.png@Map_02a",
+    "NameStrKey": "ST:5465"
+  },
+  {
+    "ID": 5803,
+    "BattleSectionId": 58003,
+    "PreSection": 5802,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_03.png@Map_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_03a.png@Map_03a",
+    "NameStrKey": "ST:5466"
+  },
+  {
+    "ID": 5804,
+    "BattleSectionId": 58004,
+    "PreSection": 5803,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_04.png@Map_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_04a.png@Map_04a",
+    "NameStrKey": "ST:5467"
+  },
+  {
+    "ID": 5805,
+    "BattleSectionId": 58005,
+    "PreSection": 5804,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_05.png@Map_05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_05a.png@Map_05a",
+    "NameStrKey": "ST:5570"
+  },
+  {
+    "ID": 5806,
+    "BattleSectionId": 58006,
+    "PreSection": 5805,
+    "DaysSinceFuncOpen": 5,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_06.png@Map_06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_06a.png@Map_06a",
+    "NameStrKey": "ST:5571"
+  },
+  {
+    "ID": 5807,
+    "BattleSectionId": 58007,
+    "PreSection": 5806,
+    "DaysSinceFuncOpen": 6,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_07.png@Map_07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/ShiJianJi_ABS/NoTag/Map_07a.png@Map_07a",
+    "NameStrKey": "ST:5572"
+  },
+  {
+    "ID": 5901,
+    "BattleSectionId": 59001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_01.png@Map_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_01a.png@Map_01a",
+    "NameStrKey": "ST:5113",
+    "ScenarioStrKey": "ST:168566"
+  },
+  {
+    "ID": 5902,
+    "BattleSectionId": 59002,
+    "PreSection": 5901,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_02.png@Map_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_02a.png@Map_02a",
+    "NameStrKey": "ST:5465",
+    "ScenarioStrKey": "ST:168567"
+  },
+  {
+    "ID": 5903,
+    "BattleSectionId": 59003,
+    "PreSection": 5902,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_03.png@Map_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_03a.png@Map_03a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:168568"
+  },
+  {
+    "ID": 5904,
+    "BattleSectionId": 59004,
+    "PreSection": 5903,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_04.png@Map_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_04a.png@Map_04a",
+    "NameStrKey": "ST:5467",
+    "ScenarioStrKey": "ST:168569"
+  },
+  {
+    "ID": 5905,
+    "BattleSectionId": 59005,
+    "PreSection": 5904,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_05.png@Map_05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_05a.png@Map_05a",
+    "NameStrKey": "ST:5570",
+    "ScenarioStrKey": "ST:168570"
+  },
+  {
+    "ID": 5906,
+    "BattleSectionId": 59006,
+    "PreSection": 5905,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_06.png@Map_06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_06a.png@Map_06a",
+    "NameStrKey": "ST:5571",
+    "ScenarioStrKey": "ST:168571"
+  },
+  {
+    "ID": 5907,
+    "BattleSectionId": 59007,
+    "PreSection": 5906,
+    "DaysSinceFuncOpen": 5,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_07.png@Map_07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_07a.png@Map_07a",
+    "NameStrKey": "ST:5572",
+    "ScenarioStrKey": "ST:168572"
+  },
+  {
+    "ID": 5908,
+    "BattleSectionId": 59008,
+    "PreSection": 5907,
+    "DaysSinceFuncOpen": 6,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_08.png@Map_08",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/MonsterAndGod_ABS/Map_08a.png@Map_08a",
+    "NameStrKey": "ST:5573",
+    "ScenarioStrKey": "ST:168573"
+  },
+  {
+    "ID": 6001,
+    "BattleSectionId": 60001,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_01.png@Map_01",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_01a.png@Map_01a",
+    "NameStrKey": "ST:5113"
+  },
+  {
+    "ID": 6002,
+    "BattleSectionId": 60002,
+    "PreSection": 6001,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_02.png@Map_02",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_02a.png@Map_02a",
+    "NameStrKey": "ST:5465"
+  },
+  {
+    "ID": 6003,
+    "DialogSectionId": 60003,
+    "PreSection": 6002,
+    "DaysSinceFuncOpen": 1,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_03.png@Map_03",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_03a.png@Map_03a",
+    "NameStrKey": "ST:5466",
+    "ScenarioStrKey": "ST:123379"
+  },
+  {
+    "ID": 6004,
+    "BattleSectionId": 60004,
+    "PreSection": 6003,
+    "DaysSinceFuncOpen": 2,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_04.png@Map_04",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_04a.png@Map_04a",
+    "NameStrKey": "ST:5467"
+  },
+  {
+    "ID": 6005,
+    "BattleSectionId": 60005,
+    "PreSection": 6004,
+    "DaysSinceFuncOpen": 3,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_05.png@Map_05",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_05a.png@Map_05a",
+    "NameStrKey": "ST:5570"
+  },
+  {
+    "ID": 6006,
+    "BattleSectionId": 60006,
+    "PreSection": 6005,
+    "DaysSinceFuncOpen": 4,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_06.png@Map_06",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_06a.png@Map_06a",
+    "NameStrKey": "ST:5571"
+  },
+  {
+    "ID": 6007,
+    "BattleSectionId": 60007,
+    "PreSection": 6006,
+    "DaysSinceFuncOpen": 5,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_07.png@Map_07",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_07a.png@Map_07a",
+    "NameStrKey": "ST:5572"
+  },
+  {
+    "ID": 6008,
+    "BattleSectionId": 60008,
+    "PreSection": 6007,
+    "DaysSinceFuncOpen": 6,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_08.png@Map_08",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_08a.png@Map_08a",
+    "NameStrKey": "ST:5573"
+  },
+  {
+    "ID": 6009,
+    "BattleSectionId": 60009,
+    "PreSection": 6008,
+    "DaysSinceFuncOpen": 6,
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_09.png@Map_09",
+    "ImageBefore": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/HanChuanZhixi_ABS/NoTag/Map_09a.png@Map_09a",
+    "NameStrKey": "ST:5574"
+  }
+]
