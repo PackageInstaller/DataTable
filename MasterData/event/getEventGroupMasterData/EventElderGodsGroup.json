@@ -1,0 +1,90 @@
+[
+ {
+  "eventId": 453,
+  "originalEventId": 0,
+  "lastTimeEventId": 0,
+  "oldEventIds": "",
+  "relationshipEventIds": "",
+  "attributes": "5"
+ },
+ {
+  "eventId": 462,
+  "originalEventId": 0,
+  "lastTimeEventId": 0,
+  "oldEventIds": "",
+  "relationshipEventIds": "453",
+  "attributes": "1,5"
+ },
+ {
+  "eventId": 470,
+  "originalEventId": 0,
+  "lastTimeEventId": 0,
+  "oldEventIds": "",
+  "relationshipEventIds": "462,453",
+  "attributes": "4,1,5"
+ },
+ {
+  "eventId": 480,
+  "originalEventId": 0,
+  "lastTimeEventId": 0,
+  "oldEventIds": "",
+  "relationshipEventIds": "470,462,453",
+  "attributes": "3,4,1,5"
+ },
+ {
+  "eventId": 488,
+  "originalEventId": 0,
+  "lastTimeEventId": 0,
+  "oldEventIds": "",
+  "relationshipEventIds": "480,470,462,453",
+  "attributes": "2,3,4,1,5"
+ },
+ {
+  "eventId": 499,
+  "originalEventId": 0,
+  "lastTimeEventId": 0,
+  "oldEventIds": "",
+  "relationshipEventIds": "488,480,470,462,453",
+  "attributes": "6,2,3,4,1,5"
+ },
+ {
+  "eventId": 508,
+  "originalEventId": 453,
+  "lastTimeEventId": 453,
+  "oldEventIds": "453",
+  "relationshipEventIds": "499,488,480,470,462,453",
+  "attributes": "5,6,2,3,4,1"
+ },
+ {
+  "eventId": 516,
+  "originalEventId": 462,
+  "lastTimeEventId": 462,
+  "oldEventIds": "462,453",
+  "relationshipEventIds": "508,499,488,480,470,462,453",
+  "attributes": "1,5,6,2,3,4"
+ },
+ {
+  "eventId": 522,
+  "originalEventId": 470,
+  "lastTimeEventId": 470,
+  "oldEventIds": "470,462,453",
+  "relationshipEventIds": "516,508,499,488,480,470,462,453",
+  "attributes": "4,1,5,6,2,3"
+ },
+ {
+  "eventId": 533,
+  "originalEventId": 480,
+  "lastTimeEventId": 480,
+  "oldEventIds": "480,470,462,453",
+  "relationshipEventIds": "522,516,508,499,488,480,470,462,453",
+  "attributes": "3,4,1,5,6,2"
+ },
+ {
+  "eventId": 540,
+  "originalEventId": 488,
+  "lastTimeEventId": 488,
+  "oldEventIds": "488,480,470,462,453",
+  "relationshipEventIds": "533,522,516,508,499,488,480,470,462,453",
+  "attributes": "2,3,4,1,5,6"
+ }
+]
