@@ -1,0 +1,118 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x04",
+    "record_count": 10,
+    "record_size": 20,
+    "custom_id": null
+  },
+  "_fields": [
+    {
+      "name": "RuleID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "RarityIDList",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "CardIDList",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "RuleType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "EnsuredCount",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "RuleID": 1,
+      "RarityIDList": "5,6,",
+      "CardIDList": "",
+      "RuleType": 1,
+      "EnsuredCount": 2
+    },
+    {
+      "RuleID": 6,
+      "RarityIDList": "6,",
+      "CardIDList": "",
+      "RuleType": 1,
+      "EnsuredCount": 1
+    },
+    {
+      "RuleID": 2,
+      "RarityIDList": "12,",
+      "CardIDList": "",
+      "RuleType": 1,
+      "EnsuredCount": 1
+    },
+    {
+      "RuleID": 3,
+      "RarityIDList": "5,",
+      "CardIDList": "",
+      "RuleType": 2,
+      "EnsuredCount": 0
+    },
+    {
+      "RuleID": 4,
+      "RarityIDList": "6,",
+      "CardIDList": "",
+      "RuleType": 2,
+      "EnsuredCount": 0
+    },
+    {
+      "RuleID": 5,
+      "RarityIDList": "",
+      "CardIDList": "2619,",
+      "RuleType": 3,
+      "EnsuredCount": 1
+    },
+    {
+      "RuleID": 7,
+      "RarityIDList": "6,",
+      "CardIDList": "",
+      "RuleType": 1,
+      "EnsuredCount": 3
+    },
+    {
+      "RuleID": 8,
+      "RarityIDList": "",
+      "CardIDList": "2082,2229,",
+      "RuleType": 3,
+      "EnsuredCount": 1
+    },
+    {
+      "RuleID": 9,
+      "RarityIDList": "5,",
+      "CardIDList": "",
+      "RuleType": 1,
+      "EnsuredCount": 1
+    },
+    {
+      "RuleID": 10,
+      "RarityIDList": "5,6,",
+      "CardIDList": "",
+      "RuleType": 1,
+      "EnsuredCount": 1
+    }
+  ]
+}

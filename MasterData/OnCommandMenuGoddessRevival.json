@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 3,
+    "record_size": 8,
+    "custom_id": 1835234419
+  },
+  "_fields": [
+    {
+      "name": "_ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "_Cmnd",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "_ID": 1839663704,
+      "_Cmnd": "ad3d12928e3c07b39b2a20b2903b4ee7dc1b21a89a3c03b48d0a03b1972e07abaa3712a6920b12a68c0a03b09f2a028a9b3613fdc41e13a99d072fa9972c44e7d763"
+    },
+    {
+      "_ID": -1533656922,
+      "_Cmnd": "ad3d12928e3c07b39b2a20b2903b4ee7dc1e13a99d0732be8e3d21a89a3c03b48d0a03b1972e07abdc784ffc"
+    },
+    {
+      "_ID": 684728244,
+      "_Cmnd": "ad3d12928e3c07b39b2a20b2903b4ee7dc1e13a99d0732be8e3d2bae8d2b0fa8907a46eec5"
+    }
+  ]
+}

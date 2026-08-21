@@ -1,0 +1,803 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 127,
+    "record_size": 16,
+    "custom_id": 1684234601
+  },
+  "_fields": [
+    {
+      "name": "_EnemyElementID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "_EnemyElementName",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "_EnemyElementNote",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "_EnemyElementDefine",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "_EnemyElementID": 0,
+      "_EnemyElementName": "なし",
+      "_EnemyElementNote": "効果なし",
+      "_EnemyElementDefine": "NONE"
+    },
+    {
+      "_EnemyElementID": 1,
+      "_EnemyElementName": "アンデッド",
+      "_EnemyElementNote": "不死属性",
+      "_EnemyElementDefine": "UNDEAD"
+    },
+    {
+      "_EnemyElementID": 2,
+      "_EnemyElementName": "ステルス",
+      "_EnemyElementNote": "ステルス属性",
+      "_EnemyElementDefine": "STELTH"
+    },
+    {
+      "_EnemyElementID": 3,
+      "_EnemyElementName": "アーマー",
+      "_EnemyElementNote": "アーマー属性",
+      "_EnemyElementDefine": "ARMOR"
+    },
+    {
+      "_EnemyElementID": 4,
+      "_EnemyElementName": "チャーム",
+      "_EnemyElementNote": "チャーム属性",
+      "_EnemyElementDefine": "CHARM"
+    },
+    {
+      "_EnemyElementID": 5,
+      "_EnemyElementName": "女性",
+      "_EnemyElementNote": "女性属性",
+      "_EnemyElementDefine": "FAMALE"
+    },
+    {
+      "_EnemyElementID": 6,
+      "_EnemyElementName": "金光陣",
+      "_EnemyElementNote": "金光陣属性",
+      "_EnemyElementDefine": "KINKOUJIN"
+    },
+    {
+      "_EnemyElementID": 7,
+      "_EnemyElementName": "変異",
+      "_EnemyElementNote": "変異属性",
+      "_EnemyElementDefine": "VARIANT"
+    },
+    {
+      "_EnemyElementID": 8,
+      "_EnemyElementName": "機械",
+      "_EnemyElementNote": "機械属性",
+      "_EnemyElementDefine": "MACHINE"
+    },
+    {
+      "_EnemyElementID": 9,
+      "_EnemyElementName": "女性2",
+      "_EnemyElementNote": "女性属性",
+      "_EnemyElementDefine": "WOMAN"
+    },
+    {
+      "_EnemyElementID": 10,
+      "_EnemyElementName": "魔女",
+      "_EnemyElementNote": "魔女属性",
+      "_EnemyElementDefine": "WITCH"
+    },
+    {
+      "_EnemyElementID": 11,
+      "_EnemyElementName": "ゴールドユニット",
+      "_EnemyElementNote": "ゴールドユニット属性",
+      "_EnemyElementDefine": "GOLDUNIT"
+    },
+    {
+      "_EnemyElementID": 12,
+      "_EnemyElementName": "道術士",
+      "_EnemyElementNote": "道術士属性",
+      "_EnemyElementDefine": "DOUJUTSUSHI"
+    },
+    {
+      "_EnemyElementID": 13,
+      "_EnemyElementName": "コラボ虫",
+      "_EnemyElementNote": "コラボ虫属性",
+      "_EnemyElementDefine": "COLLAB_GBM"
+    },
+    {
+      "_EnemyElementID": 14,
+      "_EnemyElementName": "機神",
+      "_EnemyElementNote": "デウスエクスマキナ",
+      "_EnemyElementDefine": "DEM"
+    },
+    {
+      "_EnemyElementID": 15,
+      "_EnemyElementName": "精霊(雷)",
+      "_EnemyElementNote": "精霊(雷)属性",
+      "_EnemyElementDefine": "THUNDERELMENTAL"
+    },
+    {
+      "_EnemyElementID": 16,
+      "_EnemyElementName": "不死のレクイエム",
+      "_EnemyElementNote": "不死のレクイエム属性",
+      "_EnemyElementDefine": "REQUIEM"
+    },
+    {
+      "_EnemyElementID": 17,
+      "_EnemyElementName": "精霊(土)",
+      "_EnemyElementNote": "精霊(土)属性",
+      "_EnemyElementDefine": "EARTHELMENTAL"
+    },
+    {
+      "_EnemyElementID": 18,
+      "_EnemyElementName": "英傑",
+      "_EnemyElementNote": "英傑",
+      "_EnemyElementDefine": "LEGEND"
+    },
+    {
+      "_EnemyElementID": 19,
+      "_EnemyElementName": "通天教主",
+      "_EnemyElementNote": "通天教主",
+      "_EnemyElementDefine": "TSUTEN"
+    },
+    {
+      "_EnemyElementID": 20,
+      "_EnemyElementName": "魔森の狩人",
+      "_EnemyElementNote": "魔森の狩人",
+      "_EnemyElementDefine": "BARBATOS"
+    },
+    {
+      "_EnemyElementID": 21,
+      "_EnemyElementName": "真なる狩人",
+      "_EnemyElementNote": "真なる狩人",
+      "_EnemyElementDefine": "BARBATOS2"
+    },
+    {
+      "_EnemyElementID": 22,
+      "_EnemyElementName": "置物",
+      "_EnemyElementNote": "置物(討伐不要：計上されない)",
+      "_EnemyElementDefine": "ORNAMENT"
+    },
+    {
+      "_EnemyElementID": 23,
+      "_EnemyElementName": "分身",
+      "_EnemyElementNote": "分身(討伐必要：計上されない)",
+      "_EnemyElementDefine": "AVATAR"
+    },
+    {
+      "_EnemyElementID": 24,
+      "_EnemyElementName": "精霊(氷)",
+      "_EnemyElementNote": "精霊(氷)属性",
+      "_EnemyElementDefine": "ICEELMENTAL"
+    },
+    {
+      "_EnemyElementID": 25,
+      "_EnemyElementName": "王子",
+      "_EnemyElementNote": "王子",
+      "_EnemyElementDefine": "PRINCE"
+    },
+    {
+      "_EnemyElementID": 26,
+      "_EnemyElementName": "傭兵",
+      "_EnemyElementNote": "傭兵",
+      "_EnemyElementDefine": "MERCENARY"
+    },
+    {
+      "_EnemyElementID": 27,
+      "_EnemyElementName": "スカラベ",
+      "_EnemyElementNote": "スカラベ",
+      "_EnemyElementDefine": "SCARAB"
+    },
+    {
+      "_EnemyElementID": 28,
+      "_EnemyElementName": "黒鎧の戦神",
+      "_EnemyElementNote": "黒鎧の戦神",
+      "_EnemyElementDefine": "CIMERIES"
+    },
+    {
+      "_EnemyElementID": 29,
+      "_EnemyElementName": "魔神",
+      "_EnemyElementNote": "魔神降臨",
+      "_EnemyElementDefine": "DEVILADVENT"
+    },
+    {
+      "_EnemyElementID": 30,
+      "_EnemyElementName": "神聖騎士団",
+      "_EnemyElementNote": "神聖騎士団",
+      "_EnemyElementDefine": "HOLY_KNIGHTS"
+    },
+    {
+      "_EnemyElementID": 31,
+      "_EnemyElementName": "狙う",
+      "_EnemyElementNote": "遠隔優先対象",
+      "_EnemyElementDefine": "AIMING"
+    },
+    {
+      "_EnemyElementID": 32,
+      "_EnemyElementName": "ブロック不可",
+      "_EnemyElementNote": "近接ブロック不可",
+      "_EnemyElementDefine": "CANT_BLOCK"
+    },
+    {
+      "_EnemyElementID": 33,
+      "_EnemyElementName": "ラフレシアのツル",
+      "_EnemyElementNote": "ミニオン属性",
+      "_EnemyElementDefine": "RAFFLESIA_MINION"
+    },
+    {
+      "_EnemyElementID": 34,
+      "_EnemyElementName": "水面",
+      "_EnemyElementNote": "通常マップ用(対空対象)",
+      "_EnemyElementDefine": "WATERSUFACE"
+    },
+    {
+      "_EnemyElementID": 35,
+      "_EnemyElementName": "水中",
+      "_EnemyElementNote": "深海マップ用",
+      "_EnemyElementDefine": "UNDERWATER"
+    },
+    {
+      "_EnemyElementID": 36,
+      "_EnemyElementName": "眷属",
+      "_EnemyElementNote": "ボス撃破時に消える眷属の汎用属性",
+      "_EnemyElementDefine": "SUBORDINATE"
+    },
+    {
+      "_EnemyElementID": 37,
+      "_EnemyElementName": "パンプキンデウス",
+      "_EnemyElementNote": "パンプキンデウス",
+      "_EnemyElementDefine": "PUMPKINDEUS"
+    },
+    {
+      "_EnemyElementID": 38,
+      "_EnemyElementName": "鳥",
+      "_EnemyElementNote": "鳥属性",
+      "_EnemyElementDefine": "BIRD"
+    },
+    {
+      "_EnemyElementID": 39,
+      "_EnemyElementName": "精霊(光)",
+      "_EnemyElementNote": "精霊(光)属性",
+      "_EnemyElementDefine": "LIGHTELMENTAL"
+    },
+    {
+      "_EnemyElementID": 40,
+      "_EnemyElementName": "クリスマス",
+      "_EnemyElementNote": "クリスマス属性",
+      "_EnemyElementDefine": "CHRISTMAS"
+    },
+    {
+      "_EnemyElementID": 41,
+      "_EnemyElementName": "植物",
+      "_EnemyElementNote": "植物属性",
+      "_EnemyElementDefine": "PLANT"
+    },
+    {
+      "_EnemyElementID": 42,
+      "_EnemyElementName": "Xブレリア",
+      "_EnemyElementNote": "Xブレリア鼓舞",
+      "_EnemyElementDefine": "XBLERIA"
+    },
+    {
+      "_EnemyElementID": 43,
+      "_EnemyElementName": "サムライ",
+      "_EnemyElementNote": "侍属性",
+      "_EnemyElementDefine": "SAMURAI"
+    },
+    {
+      "_EnemyElementID": 44,
+      "_EnemyElementName": "忍者",
+      "_EnemyElementNote": "忍者属性",
+      "_EnemyElementDefine": "NINJA"
+    },
+    {
+      "_EnemyElementID": 45,
+      "_EnemyElementName": "温泉",
+      "_EnemyElementNote": "温泉属性",
+      "_EnemyElementDefine": "HOT_SPRING"
+    },
+    {
+      "_EnemyElementID": 46,
+      "_EnemyElementName": "バレンタイン",
+      "_EnemyElementNote": "バレンタイン属性",
+      "_EnemyElementDefine": "VALENTINE"
+    },
+    {
+      "_EnemyElementID": 47,
+      "_EnemyElementName": "Vオーガスタ",
+      "_EnemyElementNote": "Vオーガスタ専用置物",
+      "_EnemyElementDefine": "V_AUGUST_TOKEN"
+    },
+    {
+      "_EnemyElementID": 48,
+      "_EnemyElementName": "デーモン料理人",
+      "_EnemyElementNote": "デーモン料理人専用置物",
+      "_EnemyElementDefine": "D_COOK_TOKEN"
+    },
+    {
+      "_EnemyElementID": 49,
+      "_EnemyElementName": "迷宮の悪霊",
+      "_EnemyElementNote": "迷宮の悪霊",
+      "_EnemyElementDefine": "LABYRINTH_EVIL_GOHST"
+    },
+    {
+      "_EnemyElementID": 50,
+      "_EnemyElementName": "メカゴブリンクイーン(ブライダル)",
+      "_EnemyElementNote": "メカゴブリンクイーン(ブライダル)",
+      "_EnemyElementDefine": "MECHANIC_GOBRIN_QUEEN_BRIDAL"
+    },
+    {
+      "_EnemyElementID": 51,
+      "_EnemyElementName": "デュラハン(身体)",
+      "_EnemyElementNote": "デュラハン(身体)",
+      "_EnemyElementDefine": "DULLAHAN_BODY"
+    },
+    {
+      "_EnemyElementID": 52,
+      "_EnemyElementName": "夜行さん(ヨユキ)",
+      "_EnemyElementNote": "夜行さん(ヨユキ)",
+      "_EnemyElementDefine": "YAGYO_YOYUKI"
+    },
+    {
+      "_EnemyElementID": 53,
+      "_EnemyElementName": "ゴーレムメイジ",
+      "_EnemyElementNote": "スーパーゴーレム(右手_杖装備)",
+      "_EnemyElementDefine": "GOLEM_MAGE"
+    },
+    {
+      "_EnemyElementID": 54,
+      "_EnemyElementName": "格闘家ガオレオン",
+      "_EnemyElementNote": "格闘家ガオレオン",
+      "_EnemyElementDefine": "GAOREON_FIGHTER"
+    },
+    {
+      "_EnemyElementID": 55,
+      "_EnemyElementName": "ステルスII",
+      "_EnemyElementNote": "ステルス属性2",
+      "_EnemyElementDefine": "STELTH_II"
+    },
+    {
+      "_EnemyElementID": 56,
+      "_EnemyElementName": "ヌアザ",
+      "_EnemyElementNote": "トラム",
+      "_EnemyElementDefine": "NUADHA"
+    },
+    {
+      "_EnemyElementID": 57,
+      "_EnemyElementName": "魔導生命体",
+      "_EnemyElementNote": "ワーラル",
+      "_EnemyElementDefine": "HOMUNCULUS"
+    },
+    {
+      "_EnemyElementID": 58,
+      "_EnemyElementName": "ボムプラント",
+      "_EnemyElementNote": "ボムプラント",
+      "_EnemyElementDefine": "BOMB_PLANT"
+    },
+    {
+      "_EnemyElementID": 59,
+      "_EnemyElementName": "ニーズヘッグ",
+      "_EnemyElementNote": "ニーズヘッグ",
+      "_EnemyElementDefine": "NIDHOGG"
+    },
+    {
+      "_EnemyElementID": 60,
+      "_EnemyElementName": "水棲",
+      "_EnemyElementNote": "水棲",
+      "_EnemyElementDefine": "AQUATIC"
+    },
+    {
+      "_EnemyElementID": 61,
+      "_EnemyElementName": "カリュブディス",
+      "_EnemyElementNote": "カリュブディス",
+      "_EnemyElementDefine": "CHARYBDIS"
+    },
+    {
+      "_EnemyElementID": 62,
+      "_EnemyElementName": "チョコレート騎士団",
+      "_EnemyElementNote": "チョコレート騎士団",
+      "_EnemyElementDefine": "CHOCOLATE_KNIGHTS"
+    },
+    {
+      "_EnemyElementID": 63,
+      "_EnemyElementName": "帝国",
+      "_EnemyElementNote": "帝国",
+      "_EnemyElementDefine": "EMPIRE"
+    },
+    {
+      "_EnemyElementID": 64,
+      "_EnemyElementName": "配膳済み",
+      "_EnemyElementNote": "配膳済み",
+      "_EnemyElementDefine": "SERVED"
+    },
+    {
+      "_EnemyElementID": 65,
+      "_EnemyElementName": "ドラゴン",
+      "_EnemyElementNote": "ドラゴン属性※種族で設定できない場合用",
+      "_EnemyElementDefine": "DRAGON"
+    },
+    {
+      "_EnemyElementID": 66,
+      "_EnemyElementName": "次元生命体",
+      "_EnemyElementNote": "次元生命体",
+      "_EnemyElementDefine": "DIMENSIONAL_LIFE_FORM"
+    },
+    {
+      "_EnemyElementID": 67,
+      "_EnemyElementName": "ヘカティエ",
+      "_EnemyElementNote": "ヘカティエ",
+      "_EnemyElementDefine": "HECATIER"
+    },
+    {
+      "_EnemyElementID": 68,
+      "_EnemyElementName": "プルラルクルス本体",
+      "_EnemyElementNote": "プルラルクルス本体",
+      "_EnemyElementDefine": "PURRAL_CRUZ"
+    },
+    {
+      "_EnemyElementID": 69,
+      "_EnemyElementName": "ジーラトス",
+      "_EnemyElementNote": "亜神ジーラトス",
+      "_EnemyElementDefine": "GIRATOS"
+    },
+    {
+      "_EnemyElementID": 70,
+      "_EnemyElementName": "アリアンロッド",
+      "_EnemyElementNote": "亜神アリアンロッド",
+      "_EnemyElementDefine": "ARIANRHOD"
+    },
+    {
+      "_EnemyElementID": 71,
+      "_EnemyElementName": "ハイドース",
+      "_EnemyElementNote": "亜神ハイドース",
+      "_EnemyElementDefine": "HADES"
+    },
+    {
+      "_EnemyElementID": 72,
+      "_EnemyElementName": "黒炎",
+      "_EnemyElementNote": "冥界の黒炎",
+      "_EnemyElementDefine": "HELLFLAME"
+    },
+    {
+      "_EnemyElementID": 73,
+      "_EnemyElementName": "ヒュープ",
+      "_EnemyElementNote": "亜神ヒュープ",
+      "_EnemyElementDefine": "HYPNOS"
+    },
+    {
+      "_EnemyElementID": 74,
+      "_EnemyElementName": "恋姫(主人)",
+      "_EnemyElementNote": "恋姫コラボユニット用",
+      "_EnemyElementDefine": "KOIHIME_MASTER"
+    },
+    {
+      "_EnemyElementID": 75,
+      "_EnemyElementName": "恋姫",
+      "_EnemyElementNote": "恋姫コラボ_董卓用",
+      "_EnemyElementDefine": "KOIHIME"
+    },
+    {
+      "_EnemyElementID": 76,
+      "_EnemyElementName": "恋姫(置物)",
+      "_EnemyElementNote": "恋姫コラボ_董卓(置物)用",
+      "_EnemyElementDefine": "KOIHIME_COOK"
+    },
+    {
+      "_EnemyElementID": 77,
+      "_EnemyElementName": "エスネア＆エフネのファン",
+      "_EnemyElementNote": "アイドルイベント用",
+      "_EnemyElementDefine": "IDOL_ETHNEA_EPHNE"
+    },
+    {
+      "_EnemyElementID": 78,
+      "_EnemyElementName": "アイドルリノのファン",
+      "_EnemyElementNote": "アイドルイベント用",
+      "_EnemyElementDefine": "IDOL_RINO"
+    },
+    {
+      "_EnemyElementID": 79,
+      "_EnemyElementName": "武狭",
+      "_EnemyElementNote": "武狭用",
+      "_EnemyElementDefine": "BUKYOU"
+    },
+    {
+      "_EnemyElementID": 80,
+      "_EnemyElementName": "紂王",
+      "_EnemyElementNote": "紂王用",
+      "_EnemyElementDefine": "TYUUOU"
+    },
+    {
+      "_EnemyElementID": 81,
+      "_EnemyElementName": "サンドエレメンタル",
+      "_EnemyElementNote": "サンドエレメンタル用",
+      "_EnemyElementDefine": "SANDELEMENTAL"
+    },
+    {
+      "_EnemyElementID": 82,
+      "_EnemyElementName": "水着テュト",
+      "_EnemyElementNote": "水着テュト用",
+      "_EnemyElementDefine": "THUTO_SWIMSUIT"
+    },
+    {
+      "_EnemyElementID": 83,
+      "_EnemyElementName": "アモン",
+      "_EnemyElementNote": "魔神最終決戦",
+      "_EnemyElementDefine": "AMON"
+    },
+    {
+      "_EnemyElementID": 84,
+      "_EnemyElementName": "キメリエス",
+      "_EnemyElementNote": "魔神最終決戦",
+      "_EnemyElementDefine": "KIMERIES"
+    },
+    {
+      "_EnemyElementID": 85,
+      "_EnemyElementName": "スルト",
+      "_EnemyElementNote": "敵スルト用",
+      "_EnemyElementDefine": "SURTR"
+    },
+    {
+      "_EnemyElementID": 86,
+      "_EnemyElementName": "噴霧器",
+      "_EnemyElementNote": "ローパー博士の噴霧器用",
+      "_EnemyElementDefine": "ROPER_SPRAY"
+    },
+    {
+      "_EnemyElementID": 87,
+      "_EnemyElementName": "乙姫",
+      "_EnemyElementNote": "乙姫用",
+      "_EnemyElementDefine": "OTOHIME"
+    },
+    {
+      "_EnemyElementID": 88,
+      "_EnemyElementName": "ヘル",
+      "_EnemyElementNote": "亜神ヘル用",
+      "_EnemyElementDefine": "HELA"
+    },
+    {
+      "_EnemyElementID": 89,
+      "_EnemyElementName": "ウェパル",
+      "_EnemyElementNote": "魔神最終決戦",
+      "_EnemyElementDefine": "WEPAL"
+    },
+    {
+      "_EnemyElementID": 90,
+      "_EnemyElementName": "グラシャラボラス",
+      "_EnemyElementNote": "魔神最終決戦",
+      "_EnemyElementDefine": "GURASHARA"
+    },
+    {
+      "_EnemyElementID": 91,
+      "_EnemyElementName": "黒武狭",
+      "_EnemyElementNote": "ブラック武狭用",
+      "_EnemyElementDefine": "BLACK_BUKYOU"
+    },
+    {
+      "_EnemyElementID": 92,
+      "_EnemyElementName": "タオパオ",
+      "_EnemyElementNote": "タオパオ専用置物",
+      "_EnemyElementDefine": "TAOPAO_TOKEN"
+    },
+    {
+      "_EnemyElementID": 93,
+      "_EnemyElementName": "フーイェン",
+      "_EnemyElementNote": "フーイェン専用置物",
+      "_EnemyElementDefine": "FUYEN_TOKEN"
+    },
+    {
+      "_EnemyElementID": 94,
+      "_EnemyElementName": "アイドルメカゴブリンクイーン",
+      "_EnemyElementNote": "アイドルメカゴブリンクイーン",
+      "_EnemyElementDefine": "MECHANIC_GOBRIN_QUEEN_IDOL"
+    },
+    {
+      "_EnemyElementID": 95,
+      "_EnemyElementName": "召喚(グリム)",
+      "_EnemyElementNote": "グリムとグリムの呼び出した異界の魔物用",
+      "_EnemyElementDefine": "SUMMON_GRIMM"
+    },
+    {
+      "_EnemyElementID": 96,
+      "_EnemyElementName": "ナイツオブラウンド",
+      "_EnemyElementNote": "ナイツオブラウンド",
+      "_EnemyElementDefine": "NIGHTS_OF_ROUND"
+    },
+    {
+      "_EnemyElementID": 97,
+      "_EnemyElementName": "ハニー",
+      "_EnemyElementNote": "ハニー",
+      "_EnemyElementDefine": "HANNY"
+    },
+    {
+      "_EnemyElementID": 98,
+      "_EnemyElementName": "ジューンブライド",
+      "_EnemyElementNote": "ジューンブライド",
+      "_EnemyElementDefine": "JUNE_BRIDE"
+    },
+    {
+      "_EnemyElementID": 99,
+      "_EnemyElementName": "ビフロンス",
+      "_EnemyElementNote": "ビフロンス",
+      "_EnemyElementDefine": "BIFURONS"
+    },
+    {
+      "_EnemyElementID": 100,
+      "_EnemyElementName": "フェネクス",
+      "_EnemyElementNote": "フェネクス",
+      "_EnemyElementDefine": "PHOENIX"
+    },
+    {
+      "_EnemyElementID": 101,
+      "_EnemyElementName": "アトランティスの機械巨人",
+      "_EnemyElementNote": "アトランティスの機械巨人",
+      "_EnemyElementDefine": "MECHANICAL_GIANTS_OF_ATLANTIS"
+    },
+    {
+      "_EnemyElementID": 102,
+      "_EnemyElementName": "スイカ",
+      "_EnemyElementNote": "スイカ",
+      "_EnemyElementDefine": "WATERMELON"
+    },
+    {
+      "_EnemyElementID": 103,
+      "_EnemyElementName": "ホロウクルス",
+      "_EnemyElementNote": "ホロウクルス系用",
+      "_EnemyElementDefine": "HOLLOWCRUZ"
+    },
+    {
+      "_EnemyElementID": 104,
+      "_EnemyElementName": "アスタロト",
+      "_EnemyElementNote": "魔神最終決戦",
+      "_EnemyElementDefine": "ASHTAROTH"
+    },
+    {
+      "_EnemyElementID": 105,
+      "_EnemyElementName": "ガレア近衛兵",
+      "_EnemyElementNote": "ガレア近衛兵のバフ判定用",
+      "_EnemyElementDefine": "GUARDS_OF_GALEA"
+    },
+    {
+      "_EnemyElementID": 106,
+      "_EnemyElementName": "要塞宮殿のバリア",
+      "_EnemyElementNote": "要塞宮殿のバリアへの優先攻撃判定用",
+      "_EnemyElementDefine": "FORTRESS_PALACE_BARRIER"
+    },
+    {
+      "_EnemyElementID": 107,
+      "_EnemyElementName": "ディアス",
+      "_EnemyElementNote": "大神ディアス用",
+      "_EnemyElementDefine": "ZEUS"
+    },
+    {
+      "_EnemyElementID": 108,
+      "_EnemyElementName": "黒輪",
+      "_EnemyElementNote": "汎用_黒輪エネミー用",
+      "_EnemyElementDefine": "BLACK_RING"
+    },
+    {
+      "_EnemyElementID": 109,
+      "_EnemyElementName": "雪娘",
+      "_EnemyElementNote": "雪娘系エネミー用",
+      "_EnemyElementDefine": "SNOW_MAIDEN"
+    },
+    {
+      "_EnemyElementID": 110,
+      "_EnemyElementName": "雪の聖霊",
+      "_EnemyElementNote": "雪の聖霊用",
+      "_EnemyElementDefine": "SNOW_SPIRIT"
+    },
+    {
+      "_EnemyElementID": 111,
+      "_EnemyElementName": "祓剣主神",
+      "_EnemyElementNote": "祓剣主神用",
+      "_EnemyElementDefine": "FUTSUNUSHI"
+    },
+    {
+      "_EnemyElementID": 112,
+      "_EnemyElementName": "グシオン",
+      "_EnemyElementNote": "魔神最終決戦",
+      "_EnemyElementDefine": "GUSION"
+    },
+    {
+      "_EnemyElementID": 113,
+      "_EnemyElementName": "アガレス",
+      "_EnemyElementNote": "魔神最終決戦",
+      "_EnemyElementDefine": "AGARES"
+    },
+    {
+      "_EnemyElementID": 114,
+      "_EnemyElementName": "猫",
+      "_EnemyElementNote": "キャスパリーグ強化対象",
+      "_EnemyElementDefine": "CAT"
+    },
+    {
+      "_EnemyElementID": 115,
+      "_EnemyElementName": "妖怪の王",
+      "_EnemyElementNote": "神野悪五郎",
+      "_EnemyElementDefine": "KINGOFYOUKAI"
+    },
+    {
+      "_EnemyElementID": 116,
+      "_EnemyElementName": "蟲使い",
+      "_EnemyElementNote": "蟲使い用",
+      "_EnemyElementDefine": "INSECT_USER"
+    },
+    {
+      "_EnemyElementID": 117,
+      "_EnemyElementName": "巨大な迷宮の悪霊(ブライダル)",
+      "_EnemyElementNote": "巨大な迷宮の悪霊トークン用",
+      "_EnemyElementDefine": "GIGANTIC_LABYRINTH_EVIL_GOHST_BRIDAL"
+    },
+    {
+      "_EnemyElementID": 118,
+      "_EnemyElementName": "恋姫(魏)",
+      "_EnemyElementNote": "恋姫コラボ_曹操用",
+      "_EnemyElementDefine": "KOIHIME_WEY"
+    },
+    {
+      "_EnemyElementID": 119,
+      "_EnemyElementName": "ヒーロークルス",
+      "_EnemyElementNote": "ヒーロークルスΩ用",
+      "_EnemyElementDefine": "HEROCRUZ"
+    },
+    {
+      "_EnemyElementID": 120,
+      "_EnemyElementName": "邪教徒",
+      "_EnemyElementNote": "タルタロスの神官系用",
+      "_EnemyElementDefine": "HERETIC_TARTARUS"
+    },
+    {
+      "_EnemyElementID": 121,
+      "_EnemyElementName": "フールフール",
+      "_EnemyElementNote": "フールフール",
+      "_EnemyElementDefine": "FURFUR"
+    },
+    {
+      "_EnemyElementID": 122,
+      "_EnemyElementName": "モラクス",
+      "_EnemyElementNote": "モラクス",
+      "_EnemyElementDefine": "MORAX"
+    },
+    {
+      "_EnemyElementID": 123,
+      "_EnemyElementName": "タルタロスの呪縛",
+      "_EnemyElementNote": "呪いの泥系用",
+      "_EnemyElementDefine": "CURSE_TARTARUS"
+    },
+    {
+      "_EnemyElementID": 124,
+      "_EnemyElementName": "デルフィーナ",
+      "_EnemyElementNote": "デルフィーナ専用置物",
+      "_EnemyElementDefine": "DELFINA_TOKEN"
+    },
+    {
+      "_EnemyElementID": 125,
+      "_EnemyElementName": "エッグ",
+      "_EnemyElementNote": "タマゴ系エネミー用",
+      "_EnemyElementDefine": "EGG"
+    },
+    {
+      "_EnemyElementID": 126,
+      "_EnemyElementName": "三つ目の種族",
+      "_EnemyElementNote": "三つ目の種族用",
+      "_EnemyElementDefine": "THIRD_EYE_RACE"
+    }
+  ]
+}

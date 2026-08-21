@@ -1,0 +1,143 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 5,
+    "record_size": 40,
+    "custom_id": 1835234419
+  },
+  "_fields": [
+    {
+      "name": "ConfigId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "DisplayId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "TriggerId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "MissionId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "SummonId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "PackageId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "BannerTextuerId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "OpenDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "CloseDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "ExtendProperty",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 36,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ConfigId": 1,
+      "DisplayId": 1,
+      "TriggerId": -2013822311,
+      "MissionId": 200562,
+      "SummonId": 0,
+      "PackageId": 0,
+      "BannerTextuerId": 965076927,
+      "OpenDate": "2026/04/30 13:00:00",
+      "CloseDate": "2026/05/14 11:00:00",
+      "ExtendProperty": ""
+    },
+    {
+      "ConfigId": 2,
+      "DisplayId": 6,
+      "TriggerId": -1820237201,
+      "MissionId": 200555,
+      "SummonId": 0,
+      "PackageId": 0,
+      "BannerTextuerId": 1317197609,
+      "OpenDate": "2026/04/01 00:00:00",
+      "CloseDate": "2026/04/23 11:00:00",
+      "ExtendProperty": ""
+    },
+    {
+      "ConfigId": 3,
+      "DisplayId": 2,
+      "TriggerId": 1241680893,
+      "MissionId": 0,
+      "SummonId": 26043001,
+      "PackageId": 0,
+      "BannerTextuerId": -678721901,
+      "OpenDate": "2026/04/30 11:30:00",
+      "CloseDate": "2026/05/14 11:30:00",
+      "ExtendProperty": ""
+    },
+    {
+      "ConfigId": 4,
+      "DisplayId": 3,
+      "TriggerId": 411623108,
+      "MissionId": 0,
+      "SummonId": 0,
+      "PackageId": 589,
+      "BannerTextuerId": -1601391099,
+      "OpenDate": "2026/04/30 11:30:00",
+      "CloseDate": "2026/05/14 11:30:00",
+      "ExtendProperty": ""
+    },
+    {
+      "ConfigId": 5,
+      "DisplayId": 4,
+      "TriggerId": 411623108,
+      "MissionId": 0,
+      "SummonId": 0,
+      "PackageId": 590,
+      "BannerTextuerId": 1055400870,
+      "OpenDate": "2026/04/30 11:30:00",
+      "CloseDate": "2026/05/14 11:30:00",
+      "ExtendProperty": ""
+    }
+  ]
+}

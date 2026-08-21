@@ -1,0 +1,329 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 15,
+    "record_size": 52,
+    "custom_id": 1953391973
+  },
+  "_fields": [
+    {
+      "name": "EnemyID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Wait",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "RouteNo",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Loop",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "Level",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "PrizeEnemySpawnPercent",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "PrizeCardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "PrizeEnemyDropPercent",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "RouteOffset",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "IsAppear",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 36,
+      "size": 4
+    },
+    {
+      "name": "FreeCommand",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "EntryCommand",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 44,
+      "size": 4
+    },
+    {
+      "name": "DeadCommand",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 48,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "EnemyID": 2000,
+      "Wait": 60,
+      "RouteNo": 5,
+      "Loop": 3,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 0,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    },
+    {
+      "EnemyID": 9,
+      "Wait": 0,
+      "RouteNo": 5,
+      "Loop": 1,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 1,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    },
+    {
+      "EnemyID": 2000,
+      "Wait": 60,
+      "RouteNo": 6,
+      "Loop": 3,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 0,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    },
+    {
+      "EnemyID": 9,
+      "Wait": 500,
+      "RouteNo": 6,
+      "Loop": 1,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 0,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    },
+    {
+      "EnemyID": 11,
+      "Wait": 0,
+      "RouteNo": 10,
+      "Loop": 1,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 2,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    },
+    {
+      "EnemyID": 11,
+      "Wait": 0,
+      "RouteNo": 11,
+      "Loop": 1,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 0,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    },
+    {
+      "EnemyID": -1,
+      "Wait": 1500,
+      "RouteNo": 0,
+      "Loop": 1,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 0,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    },
+    {
+      "EnemyID": 2000,
+      "Wait": 60,
+      "RouteNo": 10,
+      "Loop": 3,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 0,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    },
+    {
+      "EnemyID": 9,
+      "Wait": 0,
+      "RouteNo": 10,
+      "Loop": 1,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 0,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    },
+    {
+      "EnemyID": 2000,
+      "Wait": 60,
+      "RouteNo": 11,
+      "Loop": 3,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 0,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    },
+    {
+      "EnemyID": 9,
+      "Wait": 300,
+      "RouteNo": 11,
+      "Loop": 1,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 0,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    },
+    {
+      "EnemyID": 11,
+      "Wait": 0,
+      "RouteNo": 5,
+      "Loop": 1,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 3,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    },
+    {
+      "EnemyID": 11,
+      "Wait": 500,
+      "RouteNo": 6,
+      "Loop": 1,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 4,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    },
+    {
+      "EnemyID": 9,
+      "Wait": 0,
+      "RouteNo": 10,
+      "Loop": 1,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 0,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    },
+    {
+      "EnemyID": 9,
+      "Wait": 0,
+      "RouteNo": 11,
+      "Loop": 1,
+      "Level": 0,
+      "PrizeEnemySpawnPercent": 0,
+      "PrizeCardID": 0,
+      "PrizeEnemyDropPercent": 0,
+      "RouteOffset": 0,
+      "IsAppear": "OFFSET_0",
+      "FreeCommand": "OFFSET_0",
+      "EntryCommand": "OFFSET_0",
+      "DeadCommand": "OFFSET_0"
+    }
+  ]
+}

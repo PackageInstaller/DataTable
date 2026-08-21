@@ -1,0 +1,164 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x04",
+    "record_count": 1,
+    "record_size": 96,
+    "custom_id": null
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "MenuID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "NodeID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "ParentNodeID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "EnabledStrechFrame",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 16,
+      "size": 1
+    },
+    {
+      "name": "\b\u0012\u0012BeginFrameSpriteID",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "teID",
+      "type": "unknown",
+      "mapped_type": 83,
+      "rec_offset": 25965,
+      "size": 2828
+    },
+    {
+      "name": "nelType",
+      "type": "unknown",
+      "mapped_type": 101,
+      "rec_offset": 28793,
+      "size": 0
+    },
+    {
+      "name": "field_8",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ContentScaleType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 40,
+      "size": 4
+    },
+    {
+      "name": "Index",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 44,
+      "size": 4
+    },
+    {
+      "name": "HorizontalAlignment",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 48,
+      "size": 4
+    },
+    {
+      "name": "VerticalAlignment",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 52,
+      "size": 4
+    },
+    {
+      "name": "Margin",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 56,
+      "size": 4
+    },
+    {
+      "name": "ItemsMargin",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 60,
+      "size": 4
+    },
+    {
+      "name": "ItemsSourceType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 64,
+      "size": 4
+    },
+    {
+      "name": "UseSize",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 68,
+      "size": 1
+    },
+    {
+      "name": "\b\u0005\u0005Width",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "eight",
+      "type": "unknown",
+      "mapped_type": 77,
+      "rec_offset": 2313,
+      "size": 23652
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "MenuID": 5243908,
+      "NodeID": "WD01",
+      "ParentNodeID": "",
+      "EnabledStrechFrame": false,
+      "\b\u0012\u0012BeginFrameSpriteID": "01000000",
+      "field_8": "01000000",
+      "ContentScaleType": 0,
+      "Index": 0,
+      "HorizontalAlignment": 0,
+      "VerticalAlignment": 0,
+      "Margin": "",
+      "ItemsMargin": "",
+      "ItemsSourceType": 0,
+      "UseSize": false,
+      "\b\u0005\u0005Width": "01000000"
+    }
+  ]
+}

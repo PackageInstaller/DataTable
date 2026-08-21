@@ -1,0 +1,191 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 9,
+    "record_size": 40,
+    "custom_id": 1668314227
+  },
+  "_fields": [
+    {
+      "name": "_Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ConfigId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "_GradeID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "_GradeNameTextID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "_UseBorderCount",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "_MenuTagID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "_MenuPattern",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "_ResName",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "CookGainBorder",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "OpenDate",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 36,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "_Name": "stpc_000",
+      "ConfigId": 1,
+      "_GradeID": 0,
+      "_GradeNameTextID": 4238,
+      "_UseBorderCount": 0,
+      "_MenuTagID": 2,
+      "_MenuPattern": 0,
+      "_ResName": "StampItemData.atb",
+      "CookGainBorder": 0,
+      "OpenDate": ""
+    },
+    {
+      "_Name": "stpc_001",
+      "ConfigId": 2,
+      "_GradeID": 1,
+      "_GradeNameTextID": 4239,
+      "_UseBorderCount": 50,
+      "_MenuTagID": 3,
+      "_MenuPattern": 1,
+      "_ResName": "StampItemDataSP.atb",
+      "CookGainBorder": 0,
+      "OpenDate": ""
+    },
+    {
+      "_Name": "stpc_002",
+      "ConfigId": 3,
+      "_GradeID": 2,
+      "_GradeNameTextID": 4240,
+      "_UseBorderCount": 100,
+      "_MenuTagID": 4,
+      "_MenuPattern": 2,
+      "_ResName": "StampItemDataDX.atb",
+      "CookGainBorder": 0,
+      "OpenDate": ""
+    },
+    {
+      "_Name": "stpc_003",
+      "ConfigId": 4,
+      "_GradeID": 3,
+      "_GradeNameTextID": 4241,
+      "_UseBorderCount": 150,
+      "_MenuTagID": 5,
+      "_MenuPattern": 3,
+      "_ResName": "StampItemDataLG.atb",
+      "CookGainBorder": 0,
+      "OpenDate": ""
+    },
+    {
+      "_Name": "stpc_004",
+      "ConfigId": 5,
+      "_GradeID": 4,
+      "_GradeNameTextID": 4242,
+      "_UseBorderCount": 250,
+      "_MenuTagID": 6,
+      "_MenuPattern": 4,
+      "_ResName": "StampItemDataSL.atb",
+      "CookGainBorder": 250,
+      "OpenDate": ""
+    },
+    {
+      "_Name": "stpc_005",
+      "ConfigId": 6,
+      "_GradeID": 5,
+      "_GradeNameTextID": 4249,
+      "_UseBorderCount": 350,
+      "_MenuTagID": 7,
+      "_MenuPattern": 5,
+      "_ResName": "StampItemDataPREM.atb",
+      "CookGainBorder": 0,
+      "OpenDate": "2020/05/01 04:00:00"
+    },
+    {
+      "_Name": "stpc_006",
+      "ConfigId": 7,
+      "_GradeID": 6,
+      "_GradeNameTextID": 4250,
+      "_UseBorderCount": 500,
+      "_MenuTagID": 8,
+      "_MenuPattern": 6,
+      "_ResName": "StampItemDataPREMS.atb",
+      "CookGainBorder": 0,
+      "OpenDate": "2020/05/01 04:00:00"
+    },
+    {
+      "_Name": "stpc_007",
+      "ConfigId": 8,
+      "_GradeID": 7,
+      "_GradeNameTextID": 5526,
+      "_UseBorderCount": 650,
+      "_MenuTagID": 9,
+      "_MenuPattern": 7,
+      "_ResName": "StampItemDataPREMSS.atb",
+      "CookGainBorder": 0,
+      "OpenDate": "2024/03/01 04:00:00"
+    },
+    {
+      "_Name": "stpc_008",
+      "ConfigId": 9,
+      "_GradeID": 8,
+      "_GradeNameTextID": 5527,
+      "_UseBorderCount": 800,
+      "_MenuTagID": 10,
+      "_MenuPattern": 8,
+      "_ResName": "StampItemDataPREMU.atb",
+      "CookGainBorder": 0,
+      "OpenDate": "2024/03/01 04:00:00"
+    }
+  ]
+}

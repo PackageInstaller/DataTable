@@ -1,0 +1,299 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 18,
+    "record_size": 40,
+    "custom_id": 1702126963
+  },
+  "_fields": [
+    {
+      "name": "Type",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Effect",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Target",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "TargetType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "Target1",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "Target2",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "Target3",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "Target4",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "TargetSize",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 36,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Type": 0,
+      "Name": "女神の盾",
+      "Effect": "出撃したユニットの受ける\n物理ダメージを%s％減少！",
+      "Target": "対象：全ユニット",
+      "TargetType": -1,
+      "Target1": 0,
+      "Target2": 0,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.65
+    },
+    {
+      "Type": 1,
+      "Name": "神秘の護り",
+      "Effect": "出撃したユニットの受ける\n魔法ダメージを%s％減少！",
+      "Target": "対象：全ユニット",
+      "TargetType": -1,
+      "Target1": 0,
+      "Target2": 0,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.65
+    },
+    {
+      "Type": 2,
+      "Name": "速攻陣形",
+      "Effect": "全ユニットの出撃コスト%s",
+      "Target": "対象：全ユニット",
+      "TargetType": -1,
+      "Target1": 0,
+      "Target2": 0,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.65
+    },
+    {
+      "Type": 3,
+      "Name": "まとめて発動",
+      "Effect": "",
+      "Target": "全て発動中！",
+      "TargetType": -1,
+      "Target1": 0,
+      "Target2": 0,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.65
+    },
+    {
+      "Type": 4,
+      "Name": "新たなる力",
+      "Effect": "攻撃力%s倍、コスト１／２",
+      "Target": "対象：",
+      "TargetType": 0,
+      "Target1": 0,
+      "Target2": 0,
+      "Target3": 151,
+      "Target4": 0,
+      "TargetSize": 0.6
+    },
+    {
+      "Type": 5,
+      "Name": "祝福の鎚矛",
+      "Effect": "ヘビーアーマー系と\n神官戦士系の攻撃力%s倍",
+      "Target": "対象：ヘビーアーマー系\n　神官戦士系",
+      "TargetType": 0,
+      "Target1": 2,
+      "Target2": 0,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.65
+    },
+    {
+      "Type": 6,
+      "Name": "聖なる槍",
+      "Effect": "ワルキューレ系と\nペガサスライダー系の攻撃力%s倍",
+      "Target": "対象：ワルキューレ系\n　ペガサスライダー系",
+      "TargetType": 0,
+      "Target1": 3,
+      "Target2": 0,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.6
+    },
+    {
+      "Type": 7,
+      "Name": "疾風の短剣",
+      "Effect": "ローグ系の攻撃力%s倍",
+      "Target": "対象：ローグ系",
+      "TargetType": 0,
+      "Target1": 4,
+      "Target2": 0,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.65
+    },
+    {
+      "Type": 8,
+      "Name": "東方の刃",
+      "Effect": "忍者系、サムライ系\n前衛戦術家系の攻撃力%s倍",
+      "Target": "対象：忍者、サムライ系\n　前衛戦術家系",
+      "TargetType": 0,
+      "Target1": 8,
+      "Target2": 10,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.65
+    },
+    {
+      "Type": 9,
+      "Name": "光の矢",
+      "Effect": "アーチャー系、レンジャー系と\nボウライダー系の攻撃力%s倍",
+      "Target": "対象：ボウライダー系\nアーチャー、レンジャー系",
+      "TargetType": 0,
+      "Target1": 100,
+      "Target2": 121,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.6
+    },
+    {
+      "Type": 10,
+      "Name": "銀の弾丸",
+      "Effect": "パイレーツ系の攻撃力%s倍",
+      "Target": "対象：パイレーツ系",
+      "TargetType": 0,
+      "Target1": 104,
+      "Target2": 0,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.65
+    },
+    {
+      "Type": 11,
+      "Name": "退魔の矢",
+      "Effect": "ヴァンパイアハンター系の\n攻撃力%s倍",
+      "Target": "対象：\n　ヴァンパイアハンター系",
+      "TargetType": 0,
+      "Target1": 106,
+      "Target2": 0,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.56
+    },
+    {
+      "Type": 12,
+      "Name": "高速治癒",
+      "Effect": "ドラゴンシャーマン、ヒーラー系\n風水使い系の回復力%s倍",
+      "Target": "対象：ドラゴンシャーマン\nヒーラー系、風水使い系",
+      "TargetType": 0,
+      "Target1": 102,
+      "Target2": 105,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.6
+    },
+    {
+      "Type": 13,
+      "Name": "聖なる剣",
+      "Effect": "プリンセス系の攻撃力%s倍",
+      "Target": "対象：プリンセス系",
+      "TargetType": 0,
+      "Target1": 5,
+      "Target2": 0,
+      "Target3": 99,
+      "Target4": 0,
+      "TargetSize": 0.65
+    },
+    {
+      "Type": 14,
+      "Name": "魔法の刃",
+      "Effect": "魔法剣士系、プリンセス系の\n攻撃力%s倍",
+      "Target": "対象：魔法剣士系\n　プリンセス系",
+      "TargetType": 0,
+      "Target1": 5,
+      "Target2": 16,
+      "Target3": 99,
+      "Target4": 0,
+      "TargetSize": 0.65
+    },
+    {
+      "Type": 15,
+      "Name": "魔力増大",
+      "Effect": "メイジ系の攻撃力%s倍",
+      "Target": "対象：メイジ系",
+      "TargetType": 0,
+      "Target1": 101,
+      "Target2": 0,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.65
+    },
+    {
+      "Type": 16,
+      "Name": "竜滅印章",
+      "Effect": "竜族への攻撃力%s倍",
+      "Target": "対象：敵竜族",
+      "TargetType": 1,
+      "Target1": 0,
+      "Target2": 0,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.65
+    },
+    {
+      "Type": 17,
+      "Name": "山賊の意地",
+      "Effect": "バンデット系の攻撃力%s倍",
+      "Target": "対象：バンデット系",
+      "TargetType": 0,
+      "Target1": 0,
+      "Target2": 0,
+      "Target3": 0,
+      "Target4": 0,
+      "TargetSize": 0.65
+    }
+  ]
+}

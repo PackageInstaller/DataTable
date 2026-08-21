@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 9,
+    "record_size": 16,
+    "custom_id": 1667593072
+  },
+  "_fields": [
+    {
+      "name": "ID_AbilityType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Param_Delay",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Param_CCBonus",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Param_Conditon",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID_AbilityType": 500,
+      "Param_Delay": 30,
+      "Param_CCBonus": 2,
+      "Param_Conditon": 2
+    },
+    {
+      "ID_AbilityType": 501,
+      "Param_Delay": 0,
+      "Param_CCBonus": 0,
+      "Param_Conditon": 1
+    },
+    {
+      "ID_AbilityType": 502,
+      "Param_Delay": 0,
+      "Param_CCBonus": 20,
+      "Param_Conditon": 0
+    },
+    {
+      "ID_AbilityType": 503,
+      "Param_Delay": 32,
+      "Param_CCBonus": 0,
+      "Param_Conditon": 1
+    },
+    {
+      "ID_AbilityType": 504,
+      "Param_Delay": 0,
+      "Param_CCBonus": 0,
+      "Param_Conditon": 0
+    },
+    {
+      "ID_AbilityType": 505,
+      "Param_Delay": 0,
+      "Param_CCBonus": 0,
+      "Param_Conditon": 0
+    },
+    {
+      "ID_AbilityType": 506,
+      "Param_Delay": 32,
+      "Param_CCBonus": 0,
+      "Param_Conditon": 0
+    },
+    {
+      "ID_AbilityType": 507,
+      "Param_Delay": 32,
+      "Param_CCBonus": 0,
+      "Param_Conditon": 0
+    },
+    {
+      "ID_AbilityType": 508,
+      "Param_Delay": 32,
+      "Param_CCBonus": 0,
+      "Param_Conditon": 0
+    }
+  ]
+}

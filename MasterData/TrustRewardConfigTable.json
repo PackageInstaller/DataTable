@@ -1,0 +1,215 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 20,
+    "record_size": 24,
+    "custom_id": 1835234419
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "TrustCondition",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Rare",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "RewardType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "RewardID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "Amount",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "TrustCondition": 150,
+      "Rare": 3,
+      "RewardType": 0,
+      "RewardID": "",
+      "Amount": 1
+    },
+    {
+      "ID": 2,
+      "TrustCondition": 150,
+      "Rare": 7,
+      "RewardType": 0,
+      "RewardID": "",
+      "Amount": 2
+    },
+    {
+      "ID": 3,
+      "TrustCondition": 150,
+      "Rare": 4,
+      "RewardType": 0,
+      "RewardID": "",
+      "Amount": 3
+    },
+    {
+      "ID": 4,
+      "TrustCondition": 150,
+      "Rare": 5,
+      "RewardType": 0,
+      "RewardID": "",
+      "Amount": 5
+    },
+    {
+      "ID": 5,
+      "TrustCondition": 150,
+      "Rare": 10,
+      "RewardType": 0,
+      "RewardID": "",
+      "Amount": 3
+    },
+    {
+      "ID": 6,
+      "TrustCondition": 150,
+      "Rare": 11,
+      "RewardType": 0,
+      "RewardID": "",
+      "Amount": 5
+    },
+    {
+      "ID": 7,
+      "TrustCondition": 100,
+      "Rare": 2,
+      "RewardType": 1,
+      "RewardID": "2",
+      "Amount": 1
+    },
+    {
+      "ID": 8,
+      "TrustCondition": 100,
+      "Rare": 3,
+      "RewardType": 1,
+      "RewardID": "3",
+      "Amount": 1
+    },
+    {
+      "ID": 9,
+      "TrustCondition": 100,
+      "Rare": 7,
+      "RewardType": 1,
+      "RewardID": "4",
+      "Amount": 1
+    },
+    {
+      "ID": 10,
+      "TrustCondition": 100,
+      "Rare": 4,
+      "RewardType": 1,
+      "RewardID": "4",
+      "Amount": 1
+    },
+    {
+      "ID": 11,
+      "TrustCondition": 100,
+      "Rare": 5,
+      "RewardType": 1,
+      "RewardID": "5",
+      "Amount": 1
+    },
+    {
+      "ID": 12,
+      "TrustCondition": 100,
+      "Rare": 10,
+      "RewardType": 1,
+      "RewardID": "4",
+      "Amount": 1
+    },
+    {
+      "ID": 13,
+      "TrustCondition": 100,
+      "Rare": 11,
+      "RewardType": 1,
+      "RewardID": "5",
+      "Amount": 1
+    },
+    {
+      "ID": 14,
+      "TrustCondition": 1,
+      "Rare": 2,
+      "RewardType": 1,
+      "RewardID": "2",
+      "Amount": 1
+    },
+    {
+      "ID": 15,
+      "TrustCondition": 1,
+      "Rare": 3,
+      "RewardType": 1,
+      "RewardID": "3",
+      "Amount": 1
+    },
+    {
+      "ID": 16,
+      "TrustCondition": 1,
+      "Rare": 7,
+      "RewardType": 1,
+      "RewardID": "4",
+      "Amount": 1
+    },
+    {
+      "ID": 17,
+      "TrustCondition": 1,
+      "Rare": 4,
+      "RewardType": 1,
+      "RewardID": "4",
+      "Amount": 1
+    },
+    {
+      "ID": 18,
+      "TrustCondition": 1,
+      "Rare": 5,
+      "RewardType": 1,
+      "RewardID": "5",
+      "Amount": 1
+    },
+    {
+      "ID": 19,
+      "TrustCondition": 1,
+      "Rare": 10,
+      "RewardType": 1,
+      "RewardID": "4",
+      "Amount": 1
+    },
+    {
+      "ID": 20,
+      "TrustCondition": 1,
+      "Rare": 11,
+      "RewardType": 1,
+      "RewardID": "5",
+      "Amount": 1
+    }
+  ]
+}

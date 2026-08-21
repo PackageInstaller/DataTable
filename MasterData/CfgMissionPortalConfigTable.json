@@ -1,0 +1,119 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 13,
+    "record_size": 16,
+    "custom_id": 1853190768
+  },
+  "_fields": [
+    {
+      "name": "RecordIndex",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "TargetNode",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "FlagName",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "RecordIndex": 1,
+      "ID": -93379165,
+      "TargetNode": "SP50",
+      "FlagName": "mission_portal_sp50_20230921"
+    },
+    {
+      "RecordIndex": 2,
+      "ID": -98424230,
+      "TargetNode": "SP51",
+      "FlagName": "mission_portal_sp51_20230921"
+    },
+    {
+      "RecordIndex": 3,
+      "ID": 714550076,
+      "TargetNode": "SP52",
+      "FlagName": "mission_portal_sp52_20230921"
+    },
+    {
+      "RecordIndex": 4,
+      "ID": -402175529,
+      "TargetNode": "SP53",
+      "FlagName": "mission_portal_sp53_20230921"
+    },
+    {
+      "RecordIndex": 5,
+      "ID": -77019394,
+      "TargetNode": "SP54",
+      "FlagName": "mission_portal_sp54_20230921"
+    },
+    {
+      "RecordIndex": 6,
+      "ID": 1608174496,
+      "TargetNode": "SP55",
+      "FlagName": "mission_portal_sp55_20260326"
+    },
+    {
+      "RecordIndex": 7,
+      "ID": -139080563,
+      "TargetNode": "SP56",
+      "FlagName": "mission_portal_sp56_20231228"
+    },
+    {
+      "RecordIndex": 8,
+      "ID": -940644390,
+      "TargetNode": "SP57",
+      "FlagName": "mission_portal_sp57_20230921"
+    },
+    {
+      "RecordIndex": 9,
+      "ID": -1614051228,
+      "TargetNode": "SP58",
+      "FlagName": "mission_portal_sp58_20230921"
+    },
+    {
+      "RecordIndex": 10,
+      "ID": 1439043221,
+      "TargetNode": "SP59",
+      "FlagName": "mission_portal_sp59_20230921"
+    },
+    {
+      "RecordIndex": 11,
+      "ID": -2095229168,
+      "TargetNode": "SP60",
+      "FlagName": "mission_portal_sp60_20230921"
+    },
+    {
+      "RecordIndex": 12,
+      "ID": 1441801082,
+      "TargetNode": "SP61",
+      "FlagName": "mission_portal_sp61_20230921"
+    },
+    {
+      "RecordIndex": 13,
+      "ID": -1398111696,
+      "TargetNode": "SP62",
+      "FlagName": "mission_portal_sp62_20230921"
+    }
+  ]
+}

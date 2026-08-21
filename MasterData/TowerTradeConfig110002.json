@@ -1,0 +1,124 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 0,
+    "record_size": 76,
+    "custom_id": 2020897645
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "TradeCount",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Limitation",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "CardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "DiscloseEmblemIDs",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "DiscloseGeneralItemID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "GeneralItemID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "RequiredGeneralItemID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "RequiredValue",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 32,
+      "size": 4
+    },
+    {
+      "name": "StartDateTime",
+      "type": "double",
+      "mapped_type": 9,
+      "rec_offset": 40,
+      "size": 8
+    },
+    {
+      "name": "EndDateTime",
+      "type": "double",
+      "mapped_type": 9,
+      "rec_offset": 48,
+      "size": 8
+    },
+    {
+      "name": "GeneralTextID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 56,
+      "size": 4
+    },
+    {
+      "name": "ConfirmationTextID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 60,
+      "size": 4
+    },
+    {
+      "name": "CompleteTextID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 64,
+      "size": 4
+    },
+    {
+      "name": "CategoryType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 68,
+      "size": 4
+    },
+    {
+      "name": "SingleBuyOnly",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 72,
+      "size": 4
+    }
+  ],
+  "records": []
+}

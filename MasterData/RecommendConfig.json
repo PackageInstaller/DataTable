@@ -1,0 +1,512 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 50,
+    "record_size": 28,
+    "custom_id": 1734567780
+  },
+  "_fields": [
+    {
+      "name": "PackageID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ConditionRank",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "SalesTime",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "BannerID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "ResaleStartDateTime",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "ResaleEndDateTime",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "ResaleTime",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "PackageID": 169,
+      "ConditionRank": 10,
+      "SalesTime": 48,
+      "BannerID": 0,
+      "ResaleStartDateTime": "2023/12/07 11:30:00",
+      "ResaleEndDateTime": "2023/12/14 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 170,
+      "ConditionRank": 30,
+      "SalesTime": 48,
+      "BannerID": 1,
+      "ResaleStartDateTime": "2023/12/07 11:30:00",
+      "ResaleEndDateTime": "2023/12/14 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 171,
+      "ConditionRank": 50,
+      "SalesTime": 48,
+      "BannerID": 2,
+      "ResaleStartDateTime": "2023/12/07 11:30:00",
+      "ResaleEndDateTime": "2023/12/14 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 172,
+      "ConditionRank": 70,
+      "SalesTime": 48,
+      "BannerID": 3,
+      "ResaleStartDateTime": "2023/12/07 11:30:00",
+      "ResaleEndDateTime": "2023/12/14 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 173,
+      "ConditionRank": 90,
+      "SalesTime": 48,
+      "BannerID": 4,
+      "ResaleStartDateTime": "2023/12/07 11:30:00",
+      "ResaleEndDateTime": "2023/12/14 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 174,
+      "ConditionRank": 100,
+      "SalesTime": 48,
+      "BannerID": 5,
+      "ResaleStartDateTime": "2023/12/07 11:30:00",
+      "ResaleEndDateTime": "2023/12/14 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 175,
+      "ConditionRank": 110,
+      "SalesTime": 48,
+      "BannerID": 6,
+      "ResaleStartDateTime": "2023/12/14 11:30:00",
+      "ResaleEndDateTime": "2023/12/21 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 176,
+      "ConditionRank": 120,
+      "SalesTime": 48,
+      "BannerID": 7,
+      "ResaleStartDateTime": "2023/12/14 11:30:00",
+      "ResaleEndDateTime": "2023/12/21 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 177,
+      "ConditionRank": 130,
+      "SalesTime": 48,
+      "BannerID": 8,
+      "ResaleStartDateTime": "2023/12/14 11:30:00",
+      "ResaleEndDateTime": "2023/12/21 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 178,
+      "ConditionRank": 140,
+      "SalesTime": 48,
+      "BannerID": 9,
+      "ResaleStartDateTime": "2023/12/14 11:30:00",
+      "ResaleEndDateTime": "2023/12/21 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 179,
+      "ConditionRank": 150,
+      "SalesTime": 48,
+      "BannerID": 10,
+      "ResaleStartDateTime": "2023/12/14 11:30:00",
+      "ResaleEndDateTime": "2023/12/21 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 180,
+      "ConditionRank": 160,
+      "SalesTime": 48,
+      "BannerID": 11,
+      "ResaleStartDateTime": "2023/12/14 11:30:00",
+      "ResaleEndDateTime": "2023/12/21 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 181,
+      "ConditionRank": 170,
+      "SalesTime": 48,
+      "BannerID": 12,
+      "ResaleStartDateTime": "2023/12/14 11:30:00",
+      "ResaleEndDateTime": "2023/12/21 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 182,
+      "ConditionRank": 180,
+      "SalesTime": 48,
+      "BannerID": 13,
+      "ResaleStartDateTime": "2023/12/14 11:30:00",
+      "ResaleEndDateTime": "2023/12/21 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 183,
+      "ConditionRank": 190,
+      "SalesTime": 48,
+      "BannerID": 14,
+      "ResaleStartDateTime": "2023/12/14 11:30:00",
+      "ResaleEndDateTime": "2023/12/21 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 184,
+      "ConditionRank": 200,
+      "SalesTime": 48,
+      "BannerID": 15,
+      "ResaleStartDateTime": "2023/12/14 11:30:00",
+      "ResaleEndDateTime": "2023/12/21 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 252,
+      "ConditionRank": 10,
+      "SalesTime": 48,
+      "BannerID": 0,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 253,
+      "ConditionRank": 30,
+      "SalesTime": 48,
+      "BannerID": 1,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 254,
+      "ConditionRank": 50,
+      "SalesTime": 48,
+      "BannerID": 2,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 255,
+      "ConditionRank": 70,
+      "SalesTime": 48,
+      "BannerID": 3,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 256,
+      "ConditionRank": 90,
+      "SalesTime": 48,
+      "BannerID": 4,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 257,
+      "ConditionRank": 100,
+      "SalesTime": 48,
+      "BannerID": 5,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 258,
+      "ConditionRank": 110,
+      "SalesTime": 48,
+      "BannerID": 6,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 259,
+      "ConditionRank": 120,
+      "SalesTime": 48,
+      "BannerID": 7,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 260,
+      "ConditionRank": 130,
+      "SalesTime": 48,
+      "BannerID": 8,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 261,
+      "ConditionRank": 140,
+      "SalesTime": 48,
+      "BannerID": 9,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 262,
+      "ConditionRank": 150,
+      "SalesTime": 48,
+      "BannerID": 10,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 263,
+      "ConditionRank": 160,
+      "SalesTime": 48,
+      "BannerID": 11,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 264,
+      "ConditionRank": 170,
+      "SalesTime": 48,
+      "BannerID": 12,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 265,
+      "ConditionRank": 180,
+      "SalesTime": 48,
+      "BannerID": 13,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 266,
+      "ConditionRank": 190,
+      "SalesTime": 48,
+      "BannerID": 14,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 267,
+      "ConditionRank": 200,
+      "SalesTime": 48,
+      "BannerID": 15,
+      "ResaleStartDateTime": "2025/04/17 11:30:00",
+      "ResaleEndDateTime": "2025/05/01 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 481,
+      "ConditionRank": 10,
+      "SalesTime": 48,
+      "BannerID": 0,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 482,
+      "ConditionRank": 30,
+      "SalesTime": 48,
+      "BannerID": 1,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 483,
+      "ConditionRank": 50,
+      "SalesTime": 48,
+      "BannerID": 2,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 484,
+      "ConditionRank": 60,
+      "SalesTime": 48,
+      "BannerID": 3,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 485,
+      "ConditionRank": 70,
+      "SalesTime": 48,
+      "BannerID": 4,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 486,
+      "ConditionRank": 80,
+      "SalesTime": 48,
+      "BannerID": 5,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 487,
+      "ConditionRank": 90,
+      "SalesTime": 48,
+      "BannerID": 16,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 488,
+      "ConditionRank": 100,
+      "SalesTime": 48,
+      "BannerID": 17,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 490,
+      "ConditionRank": 110,
+      "SalesTime": 48,
+      "BannerID": 6,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 491,
+      "ConditionRank": 120,
+      "SalesTime": 48,
+      "BannerID": 7,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 492,
+      "ConditionRank": 130,
+      "SalesTime": 48,
+      "BannerID": 8,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 493,
+      "ConditionRank": 140,
+      "SalesTime": 48,
+      "BannerID": 9,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 494,
+      "ConditionRank": 150,
+      "SalesTime": 48,
+      "BannerID": 10,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 495,
+      "ConditionRank": 160,
+      "SalesTime": 48,
+      "BannerID": 11,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 496,
+      "ConditionRank": 170,
+      "SalesTime": 48,
+      "BannerID": 12,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 497,
+      "ConditionRank": 180,
+      "SalesTime": 48,
+      "BannerID": 13,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 498,
+      "ConditionRank": 190,
+      "SalesTime": 48,
+      "BannerID": 14,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 499,
+      "ConditionRank": 200,
+      "SalesTime": 48,
+      "BannerID": 15,
+      "ResaleStartDateTime": "2026/01/29 11:30:00",
+      "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    }
+  ]
+}

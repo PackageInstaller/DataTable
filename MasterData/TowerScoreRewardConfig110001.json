@@ -1,0 +1,4569 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 450,
+    "record_size": 32,
+    "custom_id": 2020897645
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "QuestID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "RewardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "RewardType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "RequiredScore",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "GeneralItemID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "CardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "Count",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "QuestID": 10001,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 904,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10002,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10003,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10004,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10005,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 533,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 460,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 383,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 1,
+      "RequiredScore": 30000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 333,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 800
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 384,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 1500
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 433,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 2,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 415,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10006,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10007,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10008,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10009,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10010,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 533,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 460,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 383,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 1,
+      "RequiredScore": 30000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 333,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 800
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 384,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 1500
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 433,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 2,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 97,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10011,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10012,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10013,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10014,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10015,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 533,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 460,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 383,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 1,
+      "RequiredScore": 30000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 333,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 800
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 384,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 1500
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 433,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 2,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 415,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10016,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10017,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10018,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10019,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10020,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 533,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 460,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 383,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 1,
+      "RequiredScore": 30000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 333,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 800
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 384,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 1500
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 433,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 2,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 97,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10021,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10022,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10023,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10024,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10025,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 533,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 460,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 383,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 1,
+      "RequiredScore": 30000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 333,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 800
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 384,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 1500
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 433,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 2,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 415,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10026,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10027,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10028,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10029,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10030,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 533,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 460,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 383,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 1,
+      "RequiredScore": 30000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 333,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 800
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 384,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 1500
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 433,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 2,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 97,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10031,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10032,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10033,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10034,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10035,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 533,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 460,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 383,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 1,
+      "RequiredScore": 30000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 333,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 800
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 384,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 1500
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 433,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 2,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 97,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10036,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10037,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10038,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10039,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10040,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 533,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 460,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 383,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 1,
+      "RequiredScore": 30000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 333,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 800
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 384,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 1500
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 433,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 2,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 97,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10041,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10042,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10043,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10044,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 57,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 2,
+      "RequiredScore": 30000,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 900,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 300
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 58,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 59,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 3,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 10045,
+      "RewardID": 1,
+      "RewardType": 2,
+      "RequiredScore": 5000,
+      "GeneralItemID": "",
+      "CardID": 533,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 2,
+      "RewardType": 2,
+      "RequiredScore": 10000,
+      "GeneralItemID": "",
+      "CardID": 460,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 3,
+      "RewardType": 2,
+      "RequiredScore": 20000,
+      "GeneralItemID": "",
+      "CardID": 383,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 4,
+      "RewardType": 1,
+      "RequiredScore": 30000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 400
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 5,
+      "RewardType": 2,
+      "RequiredScore": 40000,
+      "GeneralItemID": "",
+      "CardID": 333,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 6,
+      "RewardType": 1,
+      "RequiredScore": 50000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 800
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 7,
+      "RewardType": 2,
+      "RequiredScore": 60000,
+      "GeneralItemID": "",
+      "CardID": 384,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 8,
+      "RewardType": 1,
+      "RequiredScore": 70000,
+      "GeneralItemID": "tower_crystal_110001",
+      "CardID": 0,
+      "Count": 1500
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 9,
+      "RewardType": 2,
+      "RequiredScore": 80000,
+      "GeneralItemID": "",
+      "CardID": 433,
+      "Count": 1
+    },
+    {
+      "ID": 0,
+      "QuestID": 0,
+      "RewardID": 10,
+      "RewardType": 2,
+      "RequiredScore": 90000,
+      "GeneralItemID": "",
+      "CardID": 97,
+      "Count": 1
+    }
+  ]
+}

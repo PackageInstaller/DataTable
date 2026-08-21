@@ -1,0 +1,179 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x00",
+    "record_count": 11,
+    "record_size": 32,
+    "custom_id": null
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "GloryConditionID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "DescriptionTextID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "EventCharaID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "CharaOffsetX",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "CharaOffsetY",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "MessageTextID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "AchievedMessageTextID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "GloryConditionID": 10001,
+      "DescriptionTextID": 5683,
+      "EventCharaID": 0,
+      "CharaOffsetX": 0,
+      "CharaOffsetY": 0,
+      "MessageTextID": 5694,
+      "AchievedMessageTextID": 5705
+    },
+    {
+      "ID": 2,
+      "GloryConditionID": 10002,
+      "DescriptionTextID": 5684,
+      "EventCharaID": 1,
+      "CharaOffsetX": 0,
+      "CharaOffsetY": 0,
+      "MessageTextID": 5695,
+      "AchievedMessageTextID": 5706
+    },
+    {
+      "ID": 3,
+      "GloryConditionID": 10003,
+      "DescriptionTextID": 5685,
+      "EventCharaID": 1,
+      "CharaOffsetX": 0,
+      "CharaOffsetY": 0,
+      "MessageTextID": 5696,
+      "AchievedMessageTextID": 5707
+    },
+    {
+      "ID": 4,
+      "GloryConditionID": 10004,
+      "DescriptionTextID": 5686,
+      "EventCharaID": 1,
+      "CharaOffsetX": 0,
+      "CharaOffsetY": 0,
+      "MessageTextID": 5697,
+      "AchievedMessageTextID": 5708
+    },
+    {
+      "ID": 5,
+      "GloryConditionID": 10005,
+      "DescriptionTextID": 5687,
+      "EventCharaID": 1,
+      "CharaOffsetX": 0,
+      "CharaOffsetY": 0,
+      "MessageTextID": 5698,
+      "AchievedMessageTextID": 5709
+    },
+    {
+      "ID": 6,
+      "GloryConditionID": 10006,
+      "DescriptionTextID": 5688,
+      "EventCharaID": 1,
+      "CharaOffsetX": 0,
+      "CharaOffsetY": 0,
+      "MessageTextID": 5699,
+      "AchievedMessageTextID": 5710
+    },
+    {
+      "ID": 7,
+      "GloryConditionID": 10007,
+      "DescriptionTextID": 5689,
+      "EventCharaID": 1,
+      "CharaOffsetX": 0,
+      "CharaOffsetY": 0,
+      "MessageTextID": 5700,
+      "AchievedMessageTextID": 5711
+    },
+    {
+      "ID": 8,
+      "GloryConditionID": 10008,
+      "DescriptionTextID": 5690,
+      "EventCharaID": 1,
+      "CharaOffsetX": 0,
+      "CharaOffsetY": 0,
+      "MessageTextID": 5701,
+      "AchievedMessageTextID": 5712
+    },
+    {
+      "ID": 9,
+      "GloryConditionID": 10009,
+      "DescriptionTextID": 5691,
+      "EventCharaID": 1,
+      "CharaOffsetX": 0,
+      "CharaOffsetY": 0,
+      "MessageTextID": 5702,
+      "AchievedMessageTextID": 5713
+    },
+    {
+      "ID": 10,
+      "GloryConditionID": 10010,
+      "DescriptionTextID": 5692,
+      "EventCharaID": 1,
+      "CharaOffsetX": 0,
+      "CharaOffsetY": 0,
+      "MessageTextID": 5703,
+      "AchievedMessageTextID": 5714
+    },
+    {
+      "ID": 11,
+      "GloryConditionID": 10011,
+      "DescriptionTextID": 5693,
+      "EventCharaID": 1,
+      "CharaOffsetX": 0,
+      "CharaOffsetY": 0,
+      "MessageTextID": 5704,
+      "AchievedMessageTextID": 5715
+    }
+  ]
+}

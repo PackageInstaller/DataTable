@@ -1,0 +1,659 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 59,
+    "record_size": 32,
+    "custom_id": 1734567780
+  },
+  "_fields": [
+    {
+      "name": "RewardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "StartDateTime",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "EndDateTime",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "ConsumeCrystal",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "RewardType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "GeneralItemID",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "CardID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "Count",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "RewardID": 1,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 5,
+      "RewardType": 1,
+      "GeneralItemID": "item_smn_ticket_18003",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "RewardID": 2,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 10,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "RewardID": 3,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 15,
+      "RewardType": 1,
+      "GeneralItemID": "crystal_item_001000",
+      "CardID": 0,
+      "Count": 10
+    },
+    {
+      "RewardID": 4,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 20,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "RewardID": 5,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 25,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "RewardID": 6,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 30,
+      "RewardType": 1,
+      "GeneralItemID": "trade_item_001000",
+      "CardID": 0,
+      "Count": 10
+    },
+    {
+      "RewardID": 7,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 35,
+      "RewardType": 1,
+      "GeneralItemID": "gift_0002_ruby",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "RewardID": 8,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 40,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 60,
+      "Count": 1
+    },
+    {
+      "RewardID": 9,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 45,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 56,
+      "Count": 1
+    },
+    {
+      "RewardID": 10,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 50,
+      "RewardType": 1,
+      "GeneralItemID": "item_smn_ticket_18002",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "RewardID": 11,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 60,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "RewardID": 12,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 70,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 383,
+      "Count": 1
+    },
+    {
+      "RewardID": 13,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 80,
+      "RewardType": 1,
+      "GeneralItemID": "gift_0103_ring",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "RewardID": 14,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 90,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 333,
+      "Count": 1
+    },
+    {
+      "RewardID": 15,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 100,
+      "RewardType": 5,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 10
+    },
+    {
+      "RewardID": 16,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 110,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 77,
+      "Count": 1
+    },
+    {
+      "RewardID": 17,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 120,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 384,
+      "Count": 1
+    },
+    {
+      "RewardID": 18,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 130,
+      "RewardType": 1,
+      "GeneralItemID": "gift_0104_ring",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "RewardID": 19,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 140,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 334,
+      "Count": 1
+    },
+    {
+      "RewardID": 20,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 150,
+      "RewardType": 5,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 10
+    },
+    {
+      "RewardID": 21,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 170,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 533,
+      "Count": 1
+    },
+    {
+      "RewardID": 22,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 190,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 433,
+      "Count": 1
+    },
+    {
+      "RewardID": 23,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 200,
+      "RewardType": 5,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 10
+    },
+    {
+      "RewardID": 24,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 210,
+      "RewardType": 1,
+      "GeneralItemID": "gift_0105_ring",
+      "CardID": 0,
+      "Count": 1
+    },
+    {
+      "RewardID": 25,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 230,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 335,
+      "Count": 1
+    },
+    {
+      "RewardID": 26,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "2023/04/01 03:59:59",
+      "ConsumeCrystal": 250,
+      "RewardType": 6,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 2
+    },
+    {
+      "RewardID": 52,
+      "StartDateTime": "2023/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 250,
+      "RewardType": 5,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 40
+    },
+    {
+      "RewardID": 27,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 270,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 533,
+      "Count": 1
+    },
+    {
+      "RewardID": 28,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 290,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 800,
+      "Count": 1
+    },
+    {
+      "RewardID": 29,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 300,
+      "RewardType": 5,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 10
+    },
+    {
+      "RewardID": 30,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 310,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 320,
+      "Count": 1
+    },
+    {
+      "RewardID": 31,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 330,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 491,
+      "Count": 1
+    },
+    {
+      "RewardID": 32,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "2023/04/01 03:59:59",
+      "ConsumeCrystal": 350,
+      "RewardType": 6,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 2
+    },
+    {
+      "RewardID": 53,
+      "StartDateTime": "2023/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 350,
+      "RewardType": 5,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 40
+    },
+    {
+      "RewardID": 33,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 370,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 533,
+      "Count": 1
+    },
+    {
+      "RewardID": 34,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 390,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 250,
+      "Count": 1
+    },
+    {
+      "RewardID": 35,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 400,
+      "RewardType": 5,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 10
+    },
+    {
+      "RewardID": 36,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 410,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 415,
+      "Count": 1
+    },
+    {
+      "RewardID": 37,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 430,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 902,
+      "Count": 1
+    },
+    {
+      "RewardID": 38,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 450,
+      "RewardType": 5,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 10
+    },
+    {
+      "RewardID": 39,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 470,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 320,
+      "Count": 1
+    },
+    {
+      "RewardID": 40,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 490,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 97,
+      "Count": 1
+    },
+    {
+      "RewardID": 41,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "2023/04/01 03:59:59",
+      "ConsumeCrystal": 500,
+      "RewardType": 6,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 3
+    },
+    {
+      "RewardID": 54,
+      "StartDateTime": "2023/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 500,
+      "RewardType": 5,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 60
+    },
+    {
+      "RewardID": 42,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 520,
+      "RewardType": 4,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 30000
+    },
+    {
+      "RewardID": 43,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 540,
+      "RewardType": 1,
+      "GeneralItemID": "trade_item_001000",
+      "CardID": 0,
+      "Count": 20
+    },
+    {
+      "RewardID": 44,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 560,
+      "RewardType": 1,
+      "GeneralItemID": "crystal_item_001000",
+      "CardID": 0,
+      "Count": 25
+    },
+    {
+      "RewardID": 45,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 580,
+      "RewardType": 1,
+      "GeneralItemID": "gift_0003_diamond",
+      "CardID": 0,
+      "Count": 3
+    },
+    {
+      "RewardID": 46,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 600,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "RewardID": 47,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 620,
+      "RewardType": 4,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 30000
+    },
+    {
+      "RewardID": 48,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 640,
+      "RewardType": 1,
+      "GeneralItemID": "trade_item_001000",
+      "CardID": 0,
+      "Count": 20
+    },
+    {
+      "RewardID": 49,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 660,
+      "RewardType": 1,
+      "GeneralItemID": "crystal_item_001000",
+      "CardID": 0,
+      "Count": 25
+    },
+    {
+      "RewardID": 50,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 680,
+      "RewardType": 1,
+      "GeneralItemID": "gift_0003_diamond",
+      "CardID": 0,
+      "Count": 3
+    },
+    {
+      "RewardID": 51,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 700,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    },
+    {
+      "RewardID": 55,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 720,
+      "RewardType": 4,
+      "GeneralItemID": "",
+      "CardID": 0,
+      "Count": 30000
+    },
+    {
+      "RewardID": 56,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 740,
+      "RewardType": 1,
+      "GeneralItemID": "trade_item_001000",
+      "CardID": 0,
+      "Count": 20
+    },
+    {
+      "RewardID": 57,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 760,
+      "RewardType": 1,
+      "GeneralItemID": "crystal_item_001000",
+      "CardID": 0,
+      "Count": 25
+    },
+    {
+      "RewardID": 58,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 780,
+      "RewardType": 1,
+      "GeneralItemID": "gift_0003_diamond",
+      "CardID": 0,
+      "Count": 3
+    },
+    {
+      "RewardID": 59,
+      "StartDateTime": "2020/04/01 04:00:00",
+      "EndDateTime": "",
+      "ConsumeCrystal": 800,
+      "RewardType": 2,
+      "GeneralItemID": "",
+      "CardID": 133,
+      "Count": 1
+    }
+  ]
+}

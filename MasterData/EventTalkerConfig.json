@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 9,
+    "record_size": 12,
+    "custom_id": 1802794597
+  },
+  "_fields": [
+    {
+      "name": "EventID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "TalkerName",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type_GuidCharaType",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "EventID": 0,
+      "TalkerName": "アンナ",
+      "Type_GuidCharaType": 0
+    },
+    {
+      "EventID": 1,
+      "TalkerName": "女神アイギス",
+      "Type_GuidCharaType": 1
+    },
+    {
+      "EventID": 10,
+      "TalkerName": "光彩の聖霊フェス",
+      "Type_GuidCharaType": 3
+    },
+    {
+      "EventID": 11,
+      "TalkerName": "ケイティ",
+      "Type_GuidCharaType": 2
+    },
+    {
+      "EventID": 12,
+      "TalkerName": "クローディア",
+      "Type_GuidCharaType": 4
+    },
+    {
+      "EventID": 13,
+      "TalkerName": "バシラ",
+      "Type_GuidCharaType": 7
+    },
+    {
+      "EventID": 14,
+      "TalkerName": "シャオ",
+      "Type_GuidCharaType": 5
+    },
+    {
+      "EventID": 15,
+      "TalkerName": "グローリア",
+      "Type_GuidCharaType": 6
+    },
+    {
+      "EventID": 16,
+      "TalkerName": "アンナ",
+      "Type_GuidCharaType": 8
+    }
+  ]
+}

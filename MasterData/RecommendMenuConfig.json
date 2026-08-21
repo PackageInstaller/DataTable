@@ -1,0 +1,252 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 16,
+    "record_size": 36,
+    "custom_id": 1835234419
+  },
+  "_fields": [
+    {
+      "name": "ConfigID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "RegistID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "DisplayText",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "CompleteExpression",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "AfterCommand",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "DateOpen",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "DateClose",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "TriggerGroup",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 28,
+      "size": 4
+    },
+    {
+      "name": "UniversalFlag",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 32,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ConfigID": 1890127114,
+      "RegistID": 1,
+      "DisplayText": "d58ad914b5a5ad74a9eacc55d58aee12b9a5ab61ac037f11a1ac7f12ad97a97397efd86ed58bfb14b5b5ad74a5eacc4ed2b1e3",
+      "CompleteExpression": "1e290992424b2199437a1e85536427825b5a3b9a5b6620b4597c20831e206ec90b290992424b2199437a1e85536427825b5a3b9a5b6620bb5f6427831e206ede3c29328b16216eb0537d0c98587c3da7446c239e43641d825b64219972683a921e206ec90b29099242452f84424521905f670a96426c66de162075",
+      "AfterCommand": "5f6f66d77f7a0f815760229654652ba4537b3896587d1d945e6c2a825a6c66c61f29678c3c5a2b8365703d8353641d83577d2ba7577b2f9a1e296cb47b6c2082656c3c8157673aa45e663ea3576b1e96516c74cd77633b84425d2f95717b218246400ad516256ec6162075fd656c3aa2466d2f83537b0882586a66d7144f3b9955561d9f59790392587c1d92447f2f99425d2f9566682992142967cc3c7475",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "d386e212a0931514b59ead749aeacd68d58bec14b5a913",
+      "UniversalFlag": "426c3d83696f229651567ec706"
+    },
+    {
+      "ConfigID": -375366480,
+      "RegistID": 2,
+      "DisplayText": "d58ad714b5b5ad758fecc15bd39fd4fd07efd95207ecd569d18def11a090ad7583eacd4bd58add14b4b0aa4f9b",
+      "CompleteExpression": "17403db1446c2bb0576a37961e2075",
+      "AfterCommand": "5f6f66d77f7a0f815760229654652ba4537b3896587d1d945e6c2a825a6c66c21f29678c3c5a2b8365703d8353641d83577d2ba7577b2f9a1e296cb47b6c2082656c3c8157673aa45e663ea3576b1e96516c74cd77633b84425d2f95717b218246400ad516256ec2162075fd656c3aa2466d2f83537b0882586a66d7144f3b9955561d9f59790392587c1d92447f2f99425d2f9566682992142967cc3c7475",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "d386e212a0931514b590ad748aeacc4e6b",
+      "UniversalFlag": "426c3d83696f229651567ec707"
+    },
+    {
+      "ConfigID": -1633194970,
+      "RegistID": 3,
+      "DisplayText": "d399c31295b9ab789aecd86d3cefd277dfa2d614b4b9ad749aeacd4bd58ac714b7aeab789aecd86d",
+      "CompleteExpression": "7f7a1a9f537b2ba246792b8575652f84454628b05a663c8e1e206e8b4a296fb457671d825b642199796f099b597b37df1f32",
+      "AfterCommand": "656c3aa44f7a3a925b5a3a96426c1e96446823df162b0dba53673bb05a663c8e0c330784646c3d825b6c6cd71a297ed71f3244a4537d1d8e457d2b9a657d2f8353592f85576466d7144a0392587c099b597b37cd0c452f84425f279241592f90532b6edb16396ede0d031d92425c3e93577d2b85707c20941e296cb47b6c2082716521854f3374b143672da87f672783142967cc",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "d386e212a0931512a684ab548654",
+      "UniversalFlag": "426c3d83696f229651567ec704"
+    },
+    {
+      "ConfigID": 12843397,
+      "RegistID": 4,
+      "DisplayText": "d2b3ea118388ad7599eacc5fd58bf714b5814411ba98a87f90eacf50d588c314b7b7ad76af",
+      "CompleteExpression": "17403da35e6c3c9263670f945e602b8153642b9942592b85456620a6436c3d831e2075",
+      "AfterCommand": "7b6701955c561d92424e3b9e526c0d9f577b2fdf1f3244a4537d1b8752683a92444f3b9955216ed5707c209469592b85456620b153642f9b535a2b9b536a3ad5162075",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "d58be114b4a1ad758feacd7f6dedf453d0bccfaa",
+      "UniversalFlag": "426c3d83696f229651567ec705"
+    },
+    {
+      "ConfigID": 2009385235,
+      "RegistID": 5,
+      "DisplayText": "d2b3f411869ea87da3eeeb5f3cefc462d1ace614b7aead76bbeacf49d588d7",
+      "CompleteExpression": "17412f81535f21835f6729b044663b8762602d9c537d66de0d",
+      "AfterCommand": "656c3aa44f7a3a925b5a3a96426c1e96446823df162b0dba53673ba6436c3d8362663ecd0c452f84425f279241592f9053472f9a532b6edb162b1e96516c1898426c0b8153673ad5162075fd656c3aa44f7a3a925b5a3a96426c1e96446823df162b0dba53673ba6436c3d8362663ecd0c403da5537a3b9a532b6edb16386ede0d031d92425c3e93577d2b85707c20941e296cb143672da8677c2b84425d21877f672783142967cc",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "d2b3f411869ea87da3eeeb5f",
+      "UniversalFlag": "426c3d83696f229651567ec702"
+    },
+    {
+      "ConfigID": -288515927,
+      "RegistID": 6,
+      "DisplayText": "d3b5f91f93bbad74a9eacd74d58bf914b5aead748503a87ba7efc651d0a1e714b78bad75bc",
+      "CompleteExpression": "1e4e2b83757c3c8553673ab6457a2f825a7d1a9e55622b831e206ecb0b297ede167532fd1721078460663a92737f2b9942463e92582167d7102f6ebe454c369e457d0a9e45792b85456021995f6729b044663b871e2044d110296fbe455f218353482099597c209453642b99422167d7102f6ed67f7a1898426c0b8153673aa5537a3b9b42463e92582167d71f0368d116216eb0537d0f87466c2f85677c2b84424a2182587d66d562703e92777a3d9643653aba5f7a3d9e59676cde16376ec7162075",
+      "AfterCommand": "656c3aa44f7a3a925b5a3a96426c1e96446823df162b0dba53673ba6436c3d8362663ecd0c452f84425f279241592f9053472f9a532b6edb162b1e96516c0f8445683b9b422b6ede0d031d92425a3784426c23a442683a9266683c965b216ed575442b9943583b92457d1a98463374be455b2b8443642bd516256ec6162075fd656c3aa2466d2f83537b0882586a66d7144f3b9955561f82537a3aa3597907995f7d6cd71f32",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "d58be114b4a1ad758feacd7f6decf240deacfcaa",
+      "UniversalFlag": "426c3d83696f229651567ec703"
+    },
+    {
+      "ConfigID": -1714771905,
+      "RegistID": 7,
+      "DisplayText": "d1aefe12b9beab78a0ecf060d58be114b4a1ad758feacd7f3cefd25dd58be114b5a3ad7594eacf50d588d7",
+      "CompleteExpression": "17412f84677c2b8442403d99597d0f945e602b81536d66d562703e920becf05ed381f5d51a2978c4073b6ede3c2f68d717412f84677c2b8442403d99597d0f945e602b81536d66d562703e920beeeb69d184edd51a2978c4073f62d7003d7ecf1a2978c2073962d7003f7ece162075",
+      "AfterCommand": "656c3aa44f7a3a925b5a3a96426c1e96446823df162b0dba53673ba6436c3d8362663ecd0c452f84425f279241592f9053472f9a532b6edb162b1e96516c039e457a2798582b6ede0d031d92425a3784426c23a442683a9266683c965b216ed575442b9943583b92457d1a98463374be455b2b8443642bd516256ec6162075fd656c3aa2466d2f83537b0882586a66d7144f3b9955561f82537a3aa3597907995f7d6cd71f3244",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "d1aefe12b9bea97a84ecf060",
+      "UniversalFlag": "426c3d83696f229651567ec700"
+    },
+    {
+      "ConfigID": 158709166,
+      "RegistID": 8,
+      "DisplayText": "d187c5129b99ad749feacd44d58be1b26e594410bbbbab49a1e0c97816717fd903296fd6",
+      "CompleteExpression": "0632",
+      "AfterCommand": "656c3aa44f7a3a925b5a3a96426c1e96446823df162b0dba53673ba6436c3d8362663ecd0c452f84425f279241592f9053472f9a532b6edb162b1e96516c1d83597b37d5162075fd656c3aa44f7a3a925b5a3a96426c1e96446823df162b0dba53673ba6436c3d8362663ecd0c403da5537a3b9a532b6edb16386ede0d031d92425c3e93577d2b85707c20941e296cb143672da8677c2b84425d21877f672783142967cc",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "73511e14b4abad74b5eacd60",
+      "UniversalFlag": "426c3d83696f229651567ec701"
+    },
+    {
+      "ConfigID": 2121434424,
+      "RegistID": 9,
+      "DisplayText": "d58bf714b4b6ad74a9eacd7dd0bfc61f84b2ab7abcecc67117",
+      "CompleteExpression": "0632",
+      "AfterCommand": "656c3aa44f7a3a925b5a3a96426c1e96446823df162b0dba53673ba6436c3d8362663ecd0c452f84425f279241592f9053472f9a532b6edb162b1e96516c1d83597b37d5162075fd656c3aa44f7a3a925b5a3a96426c1e96446823df162b0dba53673ba6436c3d8362663ecd0c403da5537a3b9a532b6edb16386ede0d031d92425c3e93577d2b85707c20941e296cb143672da8677c2b84425d21877f672783142967cc",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "d58bf714b4b6ad74a9eacd7dd0bfc61f84b2",
+      "UniversalFlag": "426c3d83696f229651567ec70e"
+    },
+    {
+      "ConfigID": 515181789,
+      "RegistID": 10,
+      "DisplayText": "d58be514b5a3ad758feacd69d0bfc61f84b2ab7abcecc67117",
+      "CompleteExpression": "0632",
+      "AfterCommand": "656c3aa44f7a3a925b5a3a96426c1e96446823df162b0dba53673ba6436c3d8362663ecd0c452f84425f279241592f9053472f9a532b6edb162b1e96516c1d83597b37d5162075fd656c3aa44f7a3a925b5a3a96426c1e96446823df162b0dba53673ba6436c3d8362663ecd0c403da5537a3b9a532b6edb16386ede0d031d92425c3e93577d2b85707c20941e296cb143672da8677c2b84425d21877f672783142967cc",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "d58be514b5a3ad758feacd69d0bfc61f84b2",
+      "UniversalFlag": "426c3d83696f229651567ec70f"
+    },
+    {
+      "ConfigID": 1773288523,
+      "RegistID": 11,
+      "DisplayText": "d58ac714b5a4ad74b5eacd60d187c914b4abad74b5eacd60d2b1e3",
+      "CompleteExpression": "0632",
+      "AfterCommand": "656c3aa44f7a3a925b5a3a96426c1e96446823df162b0dba53673ba6436c3d8362663ecd0c452f84425f279241592f9053472f9a532b6edb162b1e96516c1d83597b37d5162075fd656c3aa44f7a3a925b5a3a96426c1e96446823df162b0dba53673ba6436c3d8362663ecd0c403da5537a3b9a532b6edb16386ede0d031d92425c3e93577d2b85707c20941e296cb143672da8677c2b84425d21877f672783142967cc",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "d58ac714b5a4ad74b5eacd60d58bec14b58aad74a1",
+      "UniversalFlag": "426c3d83696f229651567ec606"
+    },
+    {
+      "ConfigID": -256152079,
+      "RegistID": 12,
+      "DisplayText": "df90de129893ab62b0ecdd763ce1fd4bd38ceb14b7aead76bbeacf49d588d7",
+      "CompleteExpression": "17403da35e6c3c927a60239e426c2aa7576a2596516c019965612187452167cc",
+      "AfterCommand": "656c3aa2466d2f83537b0882586a66d7144f3b9955561d9f59790392587c1a98462b6ede0d",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "df90de129893ab62b0ecdd76",
+      "UniversalFlag": "426c3d83696f229651567ec607"
+    },
+    {
+      "ConfigID": -2017698457,
+      "RegistID": 13,
+      "DisplayText": "d58ad914b5a5ad74a9eacc55d58aeec6d588e9fdd589c2b6d589c314b785ab789aecd86dd588e914b784ad75bde6f276",
+      "CompleteExpression": "0632",
+      "AfterCommand": "5f6f66d77f7a0f815760229654652ba4537b3896587d1d945e6c2a825a6c66c61f29678c3c5a2b8365703d8353641d83577d2ba7577b2f9a1e296cb47b6c2082656c3c8157673aa45e663ea3576b1e96516c74cd77633b84425d2f95717b218246400ad516256ec6162075fd656c3aa2466d2f83537b0882586a66d7144f3b9955561d9f59790392587c1d92447f2f99425d2f9566682992142967cc3c7475",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "d386e212a0931514b59ead749aeacd68d58bec14b5a97faa",
+      "UniversalFlag": "426c3d83696f229651567ec604"
+    },
+    {
+      "ConfigID": 433637572,
+      "RegistID": 14,
+      "DisplayText": "d58ad914b5a5ad74a9eacc55d58aeec6d588e9fdd589c2b5d589c314b785ab789aecd86dd588e914b784ad75bde6f276",
+      "CompleteExpression": "0632",
+      "AfterCommand": "5f6f66d77f7a0f815760229654652ba4537b3896587d1d945e6c2a825a6c66c61f29678c3c5a2b8365703d8353641d83577d2ba7577b2f9a1e296cb47b6c2082656c3c8157673aa45e663ea3576b1e96516c74cd77633b84425d2f95717b218246400ad516256ec6162075fd656c3aa2466d2f83537b0882586a66d7144f3b9955561d9f59790392587c1d92447f2f99425d2f9566682992142967cc3c7475",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "d386e212a0931514b59ead749aeacd68d58bec14b5a97faa",
+      "UniversalFlag": "426c3d83696f229651567ec605"
+    },
+    {
+      "ConfigID": 1860171858,
+      "RegistID": 15,
+      "DisplayText": "d58ad914b5a5ad74a9eacc55d58aeec5d588e9fdd589c2b4d589c314b785ab789aecd86dd588e914b784ad75bde6f276",
+      "CompleteExpression": "0632",
+      "AfterCommand": "5f6f66d77f7a0f815760229654652ba4537b3896587d1d945e6c2a825a6c66c51f29678c3c5a2b8365703d8353641d83577d2ba7577b2f9a1e296cb47b6c2082656c3c8157673aa45e663ea3576b1e96516c74cd77633b84425d2f95717b218246400ad516256ec5162075fd656c3aa2466d2f83537b0882586a66d7144f3b9955561d9f59790392587c1d92447f2f99425d2f9566682992142967cc3c7475",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "d386e212a0931514b59ead749aeacd68d58bec14b5a97caa",
+      "UniversalFlag": "426c3d83696f229651567ec602"
+    },
+    {
+      "ConfigID": -136926744,
+      "RegistID": 16,
+      "DisplayText": "d58ad914b5a5ad74a9eacc55d58aeec5d588e9fdd589c2b3d589c314b785ab789aecd86dd588e914b784ad75bde6f276",
+      "CompleteExpression": "0632",
+      "AfterCommand": "5f6f66d77f7a0f815760229654652ba4537b3896587d1d945e6c2a825a6c66c51f29678c3c5a2b8365703d8353641d83577d2ba7577b2f9a1e296cb47b6c2082656c3c8157673aa45e663ea3576b1e96516c74cd77633b84425d2f95717b218246400ad516256ec5162075fd656c3aa2466d2f83537b0882586a66d7144f3b9955561d9f59790392587c1d92447f2f99425d2f9566682992142967cc3c7475",
+      "DateOpen": "2019/02/21 00:00:00",
+      "DateClose": "2019/03/21 00:00:00",
+      "TriggerGroup": "d386e212a0931514b59ead749aeacd68d58bec14b5a97caa",
+      "UniversalFlag": "426c3d83696f229651567ec603"
+    }
+  ]
+}

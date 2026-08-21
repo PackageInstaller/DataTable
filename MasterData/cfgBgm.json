@@ -1,0 +1,1619 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 155,
+    "record_size": 32,
+    "custom_id": 1818848115
+  },
+  "_fields": [
+    {
+      "name": "ID_Config",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ID_Bgm",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Data_LoopParam",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Length",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "LoopPoint",
+      "type": "float",
+      "mapped_type": 4,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "SamplingRate",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "Channel",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "Format",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 28,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID_Config": 0,
+      "ID_Bgm": 0,
+      "Data_LoopParam": 0,
+      "Length": 0.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 0,
+      "Channel": 0,
+      "Format": 0
+    },
+    {
+      "ID_Config": 1697199350,
+      "ID_Bgm": 9437184,
+      "Data_LoopParam": 2745044,
+      "Length": 105.0,
+      "LoopPoint": 14.3,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1011901527,
+      "ID_Bgm": 9437185,
+      "Data_LoopParam": 5038740,
+      "Length": 113.0,
+      "LoopPoint": 26.26,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -247451042,
+      "ID_Bgm": 9437186,
+      "Data_LoopParam": 0,
+      "Length": 76.250999,
+      "LoopPoint": 17.4,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 417016270,
+      "ID_Bgm": 9437187,
+      "Data_LoopParam": 0,
+      "Length": 137.951996,
+      "LoopPoint": 44.900002,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1876695384,
+      "ID_Bgm": 9437188,
+      "Data_LoopParam": 0,
+      "Length": 80.325996,
+      "LoopPoint": 17.629999,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -153794334,
+      "ID_Bgm": 9437189,
+      "Data_LoopParam": 0,
+      "Length": 76.928001,
+      "LoopPoint": 20.9,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 758145173,
+      "ID_Bgm": 9437190,
+      "Data_LoopParam": 0,
+      "Length": 80.217003,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -257393564,
+      "ID_Bgm": 9437191,
+      "Data_LoopParam": 714684,
+      "Length": 44.0,
+      "LoopPoint": 3.75,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1319346594,
+      "ID_Bgm": 9437192,
+      "Data_LoopParam": 0,
+      "Length": 80.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 555280153,
+      "ID_Bgm": 9437193,
+      "Data_LoopParam": 0,
+      "Length": 129.778,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 780590447,
+      "ID_Bgm": 9437194,
+      "Data_LoopParam": 0,
+      "Length": 117.584999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1093079347,
+      "ID_Bgm": 9437195,
+      "Data_LoopParam": 0,
+      "Length": 96.390999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 379073043,
+      "ID_Bgm": 9437196,
+      "Data_LoopParam": 0,
+      "Length": 124.005997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1538059778,
+      "ID_Bgm": 9437197,
+      "Data_LoopParam": 0,
+      "Length": 141.541,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1331783164,
+      "ID_Bgm": 9437198,
+      "Data_LoopParam": 0,
+      "Length": 67.839996,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 63553845,
+      "ID_Bgm": 9437199,
+      "Data_LoopParam": 0,
+      "Length": 144.082001,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 2091696252,
+      "ID_Bgm": 9437200,
+      "Data_LoopParam": 0,
+      "Length": 110.768997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1274261673,
+      "ID_Bgm": 9437201,
+      "Data_LoopParam": 0,
+      "Length": 106.237999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1131687757,
+      "ID_Bgm": 9437202,
+      "Data_LoopParam": 0,
+      "Length": 118.251999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 448165799,
+      "ID_Bgm": 9437203,
+      "Data_LoopParam": 0,
+      "Length": 106.998001,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 394561877,
+      "ID_Bgm": 9437204,
+      "Data_LoopParam": 0,
+      "Length": 115.105003,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1642662053,
+      "ID_Bgm": 9437205,
+      "Data_LoopParam": 0,
+      "Length": 117.778,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1906393279,
+      "ID_Bgm": 9437206,
+      "Data_LoopParam": 0,
+      "Length": 114.778999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1617945294,
+      "ID_Bgm": 9437207,
+      "Data_LoopParam": 0,
+      "Length": 97.081001,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 2020285787,
+      "ID_Bgm": 9437208,
+      "Data_LoopParam": 0,
+      "Length": 107.893997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1184013514,
+      "ID_Bgm": 9437209,
+      "Data_LoopParam": 0,
+      "Length": 108.148003,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -606389847,
+      "ID_Bgm": 9437210,
+      "Data_LoopParam": 0,
+      "Length": 89.552002,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -231121522,
+      "ID_Bgm": 9437211,
+      "Data_LoopParam": 0,
+      "Length": 120.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1696479969,
+      "ID_Bgm": 9437212,
+      "Data_LoopParam": 0,
+      "Length": 109.166,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 353070920,
+      "ID_Bgm": 9437213,
+      "Data_LoopParam": 0,
+      "Length": 146.703003,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 195360177,
+      "ID_Bgm": 9437214,
+      "Data_LoopParam": 0,
+      "Length": 131.800995,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 461717800,
+      "ID_Bgm": 9437215,
+      "Data_LoopParam": 0,
+      "Length": 71.737999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -268456053,
+      "ID_Bgm": 9437216,
+      "Data_LoopParam": 0,
+      "Length": 116.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1672893476,
+      "ID_Bgm": 9437217,
+      "Data_LoopParam": 0,
+      "Length": 121.211998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1455868145,
+      "ID_Bgm": 9437218,
+      "Data_LoopParam": 0,
+      "Length": 108.875999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 312522485,
+      "ID_Bgm": 9437219,
+      "Data_LoopParam": 0,
+      "Length": 172.981995,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1922795558,
+      "ID_Bgm": 9437220,
+      "Data_LoopParam": 0,
+      "Length": 153.600006,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 607057589,
+      "ID_Bgm": 9437221,
+      "Data_LoopParam": 0,
+      "Length": 96.999001,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 197555823,
+      "ID_Bgm": 9437222,
+      "Data_LoopParam": 0,
+      "Length": 109.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -2142075495,
+      "ID_Bgm": 9437223,
+      "Data_LoopParam": 0,
+      "Length": 130.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 2084368229,
+      "ID_Bgm": 9437224,
+      "Data_LoopParam": 0,
+      "Length": 134.912003,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 372002220,
+      "ID_Bgm": 9437225,
+      "Data_LoopParam": 0,
+      "Length": 105.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -793762581,
+      "ID_Bgm": 9437226,
+      "Data_LoopParam": 0,
+      "Length": 96.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1942931975,
+      "ID_Bgm": 9437228,
+      "Data_LoopParam": 0,
+      "Length": 98.582001,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 149235463,
+      "ID_Bgm": 9437229,
+      "Data_LoopParam": 0,
+      "Length": 117.75,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -2089018005,
+      "ID_Bgm": 9437231,
+      "Data_LoopParam": 0,
+      "Length": 99.555,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1130112572,
+      "ID_Bgm": 9437230,
+      "Data_LoopParam": 0,
+      "Length": 106.744003,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -654409003,
+      "ID_Bgm": 9437232,
+      "Data_LoopParam": 0,
+      "Length": 132.705002,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1737085159,
+      "ID_Bgm": 9437233,
+      "Data_LoopParam": 0,
+      "Length": 111.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1751812295,
+      "ID_Bgm": 9437234,
+      "Data_LoopParam": 0,
+      "Length": 101.040001,
+      "LoopPoint": 13.282,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -937724867,
+      "ID_Bgm": 9437235,
+      "Data_LoopParam": 0,
+      "Length": 90.654999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 628696900,
+      "ID_Bgm": 9437236,
+      "Data_LoopParam": 0,
+      "Length": 105.046997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -931978396,
+      "ID_Bgm": 9437237,
+      "Data_LoopParam": 0,
+      "Length": 140.714005,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -254058132,
+      "ID_Bgm": 9437238,
+      "Data_LoopParam": 0,
+      "Length": 157.688995,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 2018340764,
+      "ID_Bgm": 9437239,
+      "Data_LoopParam": 0,
+      "Length": 91.636002,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 784948772,
+      "ID_Bgm": 9437240,
+      "Data_LoopParam": 0,
+      "Length": 105.516998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 161093793,
+      "ID_Bgm": 9437241,
+      "Data_LoopParam": 0,
+      "Length": 105.599998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 715066304,
+      "ID_Bgm": 9437242,
+      "Data_LoopParam": 0,
+      "Length": 107.585999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1721846846,
+      "ID_Bgm": 9437243,
+      "Data_LoopParam": 0,
+      "Length": 114.323997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1042886960,
+      "ID_Bgm": 9437244,
+      "Data_LoopParam": 0,
+      "Length": 111.890999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1110589244,
+      "ID_Bgm": 9437245,
+      "Data_LoopParam": 0,
+      "Length": 111.271004,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -919508472,
+      "ID_Bgm": 9437246,
+      "Data_LoopParam": 0,
+      "Length": 135.817993,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -173134460,
+      "ID_Bgm": 9437247,
+      "Data_LoopParam": 0,
+      "Length": 121.211998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1737125895,
+      "ID_Bgm": 9437248,
+      "Data_LoopParam": 0,
+      "Length": 113.454002,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 479161290,
+      "ID_Bgm": 9437249,
+      "Data_LoopParam": 0,
+      "Length": 108.168999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1326303198,
+      "ID_Bgm": 9437250,
+      "Data_LoopParam": 0,
+      "Length": 97.390999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1433737822,
+      "ID_Bgm": 9437251,
+      "Data_LoopParam": 0,
+      "Length": 108.235001,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -2012946308,
+      "ID_Bgm": 9437252,
+      "Data_LoopParam": 0,
+      "Length": 90.098999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 2098699839,
+      "ID_Bgm": 9437253,
+      "Data_LoopParam": 0,
+      "Length": 99.711998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -153251551,
+      "ID_Bgm": 9437254,
+      "Data_LoopParam": 0,
+      "Length": 113.599998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1996376466,
+      "ID_Bgm": 9437255,
+      "Data_LoopParam": 0,
+      "Length": 111.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 566792577,
+      "ID_Bgm": 9437256,
+      "Data_LoopParam": 0,
+      "Length": 120.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1612877683,
+      "ID_Bgm": 9437257,
+      "Data_LoopParam": 0,
+      "Length": 111.073997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 953332710,
+      "ID_Bgm": 9437258,
+      "Data_LoopParam": 0,
+      "Length": 113.778,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1957834917,
+      "ID_Bgm": 9437259,
+      "Data_LoopParam": 0,
+      "Length": 113.778,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1402599852,
+      "ID_Bgm": 9437260,
+      "Data_LoopParam": 0,
+      "Length": 99.938004,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 935251719,
+      "ID_Bgm": 9437261,
+      "Data_LoopParam": 0,
+      "Length": 109.713997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1998770132,
+      "ID_Bgm": 9437262,
+      "Data_LoopParam": 0,
+      "Length": 115.038002,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 600776253,
+      "ID_Bgm": 9437263,
+      "Data_LoopParam": 0,
+      "Length": 107.367996,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -674705370,
+      "ID_Bgm": 9437264,
+      "Data_LoopParam": 0,
+      "Length": 109.565002,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 259879963,
+      "ID_Bgm": 9437265,
+      "Data_LoopParam": 0,
+      "Length": 115.408997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -55475052,
+      "ID_Bgm": 9437266,
+      "Data_LoopParam": 0,
+      "Length": 104.726997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 676919840,
+      "ID_Bgm": 9437267,
+      "Data_LoopParam": 0,
+      "Length": 83.933998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1628422125,
+      "ID_Bgm": 9437268,
+      "Data_LoopParam": 0,
+      "Length": 219.304001,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1131783787,
+      "ID_Bgm": 9437269,
+      "Data_LoopParam": 0,
+      "Length": 77.502998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1297403246,
+      "ID_Bgm": 9437270,
+      "Data_LoopParam": 0,
+      "Length": 110.768997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1034153710,
+      "ID_Bgm": 9437271,
+      "Data_LoopParam": 0,
+      "Length": 103.255997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1546579725,
+      "ID_Bgm": 9437272,
+      "Data_LoopParam": 0,
+      "Length": 96.521004,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1026375363,
+      "ID_Bgm": 9437273,
+      "Data_LoopParam": 0,
+      "Length": 104.788002,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 2035807108,
+      "ID_Bgm": 9437274,
+      "Data_LoopParam": 0,
+      "Length": 109.523003,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1096193729,
+      "ID_Bgm": 9437275,
+      "Data_LoopParam": 0,
+      "Length": 104.488998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1213201639,
+      "ID_Bgm": 9437276,
+      "Data_LoopParam": 0,
+      "Length": 77.599998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -145733715,
+      "ID_Bgm": 9437277,
+      "Data_LoopParam": 0,
+      "Length": 107.199997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1527221275,
+      "ID_Bgm": 9437278,
+      "Data_LoopParam": 0,
+      "Length": 99.309998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1718225835,
+      "ID_Bgm": 9437280,
+      "Data_LoopParam": 0,
+      "Length": 109.713997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 905637393,
+      "ID_Bgm": 9437281,
+      "Data_LoopParam": 0,
+      "Length": 113.141998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1295286265,
+      "ID_Bgm": 9437282,
+      "Data_LoopParam": 0,
+      "Length": 62.426998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -92353244,
+      "ID_Bgm": 9437283,
+      "Data_LoopParam": 0,
+      "Length": 100.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -624185439,
+      "ID_Bgm": 9437284,
+      "Data_LoopParam": 0,
+      "Length": 116.755997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -587936006,
+      "ID_Bgm": 9437285,
+      "Data_LoopParam": 0,
+      "Length": 101.511002,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1726325076,
+      "ID_Bgm": 9437286,
+      "Data_LoopParam": 0,
+      "Length": 96.404999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -540120610,
+      "ID_Bgm": 9437287,
+      "Data_LoopParam": 0,
+      "Length": 110.080002,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1554635573,
+      "ID_Bgm": 9437288,
+      "Data_LoopParam": 0,
+      "Length": 77.836998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1760643777,
+      "ID_Bgm": 9437289,
+      "Data_LoopParam": 0,
+      "Length": 112.653,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1635521063,
+      "ID_Bgm": 9437290,
+      "Data_LoopParam": 0,
+      "Length": 112.653,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -294550188,
+      "ID_Bgm": 9437291,
+      "Data_LoopParam": 0,
+      "Length": 102.400002,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1476211754,
+      "ID_Bgm": 9437292,
+      "Data_LoopParam": 0,
+      "Length": 102.857002,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 158467394,
+      "ID_Bgm": 9437293,
+      "Data_LoopParam": 0,
+      "Length": 147.832993,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 262264678,
+      "ID_Bgm": 9437294,
+      "Data_LoopParam": 0,
+      "Length": 169.313004,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 92176374,
+      "ID_Bgm": 9437295,
+      "Data_LoopParam": 0,
+      "Length": 101.647003,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1511334424,
+      "ID_Bgm": 9437296,
+      "Data_LoopParam": 0,
+      "Length": 108.935997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1039408043,
+      "ID_Bgm": 9437297,
+      "Data_LoopParam": 0,
+      "Length": 109.089996,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 902644711,
+      "ID_Bgm": 9437298,
+      "Data_LoopParam": 0,
+      "Length": 90.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -705236659,
+      "ID_Bgm": 9437299,
+      "Data_LoopParam": 0,
+      "Length": 76.700996,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -2138805157,
+      "ID_Bgm": 9437300,
+      "Data_LoopParam": 0,
+      "Length": 79.533997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -202040707,
+      "ID_Bgm": 9437301,
+      "Data_LoopParam": 0,
+      "Length": 106.433998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1016216486,
+      "ID_Bgm": 9437302,
+      "Data_LoopParam": 0,
+      "Length": 76.700996,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -677234876,
+      "ID_Bgm": 9437303,
+      "Data_LoopParam": 0,
+      "Length": 79.533997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1484858304,
+      "ID_Bgm": 9437304,
+      "Data_LoopParam": 0,
+      "Length": 109.878998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -2058249398,
+      "ID_Bgm": 9437305,
+      "Data_LoopParam": 0,
+      "Length": 72.278,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 972462995,
+      "ID_Bgm": 9437306,
+      "Data_LoopParam": 0,
+      "Length": 207.141998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1881163086,
+      "ID_Bgm": 9437307,
+      "Data_LoopParam": 0,
+      "Length": 96.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1934243487,
+      "ID_Bgm": 9437308,
+      "Data_LoopParam": 0,
+      "Length": 96.337997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1151277232,
+      "ID_Bgm": 9437309,
+      "Data_LoopParam": 0,
+      "Length": 109.713997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1902263120,
+      "ID_Bgm": 9437310,
+      "Data_LoopParam": 0,
+      "Length": 100.570999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1060402217,
+      "ID_Bgm": 9437311,
+      "Data_LoopParam": 0,
+      "Length": 108.333,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -2085160968,
+      "ID_Bgm": 9437312,
+      "Data_LoopParam": 0,
+      "Length": 96.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1555739166,
+      "ID_Bgm": 9437313,
+      "Data_LoopParam": 0,
+      "Length": 94.925003,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1945871334,
+      "ID_Bgm": 9437314,
+      "Data_LoopParam": 0,
+      "Length": 91.394997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1996940578,
+      "ID_Bgm": 9437315,
+      "Data_LoopParam": 0,
+      "Length": 102.857002,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -485847287,
+      "ID_Bgm": 9437316,
+      "Data_LoopParam": 0,
+      "Length": 100.172997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1808276370,
+      "ID_Bgm": 9437317,
+      "Data_LoopParam": 0,
+      "Length": 101.407997,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1164630642,
+      "ID_Bgm": 9437318,
+      "Data_LoopParam": 0,
+      "Length": 96.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 793166758,
+      "ID_Bgm": 9437319,
+      "Data_LoopParam": 0,
+      "Length": 100.464996,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -379699786,
+      "ID_Bgm": 9437320,
+      "Data_LoopParam": 0,
+      "Length": 106.105003,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1544659012,
+      "ID_Bgm": 9437321,
+      "Data_LoopParam": 0,
+      "Length": 96.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -748465365,
+      "ID_Bgm": 9437322,
+      "Data_LoopParam": 0,
+      "Length": 83.933998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 300626825,
+      "ID_Bgm": 9437323,
+      "Data_LoopParam": 0,
+      "Length": 73.459999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1057147302,
+      "ID_Bgm": 9437324,
+      "Data_LoopParam": 0,
+      "Length": 73.453003,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 396280748,
+      "ID_Bgm": 9437325,
+      "Data_LoopParam": 0,
+      "Length": 177.802002,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1875137061,
+      "ID_Bgm": 9437326,
+      "Data_LoopParam": 0,
+      "Length": 186.132996,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1624603193,
+      "ID_Bgm": 9437327,
+      "Data_LoopParam": 0,
+      "Length": 296.540009,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1458185464,
+      "ID_Bgm": 9437328,
+      "Data_LoopParam": 0,
+      "Length": 109.267998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1183376915,
+      "ID_Bgm": 9437329,
+      "Data_LoopParam": 0,
+      "Length": 63.792999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -922778243,
+      "ID_Bgm": 9437330,
+      "Data_LoopParam": 0,
+      "Length": 92.903,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1850200797,
+      "ID_Bgm": 9437331,
+      "Data_LoopParam": 0,
+      "Length": 96.0,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1205774383,
+      "ID_Bgm": 9437332,
+      "Data_LoopParam": 0,
+      "Length": 94.544998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 106580673,
+      "ID_Bgm": 9437333,
+      "Data_LoopParam": 0,
+      "Length": 92.431999,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -1988710438,
+      "ID_Bgm": 9437334,
+      "Data_LoopParam": 0,
+      "Length": 93.176003,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1603073987,
+      "ID_Bgm": 9437335,
+      "Data_LoopParam": 0,
+      "Length": 91.428001,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 1858466610,
+      "ID_Bgm": 9437336,
+      "Data_LoopParam": 0,
+      "Length": 90.389,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 292134409,
+      "ID_Bgm": 9437337,
+      "Data_LoopParam": 0,
+      "Length": 74.722,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": -172903269,
+      "ID_Bgm": 9437338,
+      "Data_LoopParam": 0,
+      "Length": 74.969002,
+      "LoopPoint": 0.0,
+      "SamplingRate": 44100,
+      "Channel": 2,
+      "Format": 16
+    },
+    {
+      "ID_Config": 2041935559,
+      "ID_Bgm": 9437339,
+      "Data_LoopParam": 0,
+      "Length": 99.642998,
+      "LoopPoint": 0.0,
+      "SamplingRate": 48000,
+      "Channel": 2,
+      "Format": 16
+    }
+  ]
+}

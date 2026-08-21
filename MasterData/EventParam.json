@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 12,
+    "custom_id": 1836086373
+  },
+  "_fields": [
+    {
+      "name": "Param",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Texture",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Flavor",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Param": 30,
+      "Texture": 1005,
+      "Flavor": "今となっては父の形見……\n兵法書を取り戻してください。"
+    },
+    {
+      "Param": 100,
+      "Texture": 1005,
+      "Flavor": "こんな私でもお役に立ちたい\nと、父が書き記した兵法書で\n勉強しておりますの……"
+    },
+    {
+      "Param": 200,
+      "Texture": 1005,
+      "Flavor": "数では魔物に勝てませんが\n戦術を用いれば勝機を\nつかむことはできます。"
+    },
+    {
+      "Param": 400,
+      "Texture": 1005,
+      "Flavor": "先人たちの英知は\nこの苦境を打ち砕く\n矛となりましょう。"
+    },
+    {
+      "Param": 700,
+      "Texture": 1005,
+      "Flavor": "父の兵法をさらに発展\nさせることが私の使命と\n心得ております。"
+    },
+    {
+      "Param": 3000,
+      "Texture": 1005,
+      "Flavor": "魔物が兵法を学んでも\n怖れることはありません。\nさらに上を行くだけです。"
+    }
+  ]
+}

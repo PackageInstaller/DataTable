@@ -1,0 +1,149 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x10",
+    "record_count": 8,
+    "record_size": 32,
+    "custom_id": 1953854053
+  },
+  "_fields": [
+    {
+      "name": "@X",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "@Y",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "@RouteID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "@JumpPoint",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "@WarpDelay",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "@WaitTime",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    },
+    {
+      "name": "@SpeedModify",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 24,
+      "size": 4
+    },
+    {
+      "name": "@OnEvent",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 28,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "@X": 609,
+      "@Y": 25,
+      "@RouteID": 0,
+      "@JumpPoint": 0,
+      "@WarpDelay": 0,
+      "@WaitTime": 0,
+      "@SpeedModify": 0,
+      "@OnEvent": "OFFSET_0"
+    },
+    {
+      "@X": 607,
+      "@Y": 168,
+      "@RouteID": 0,
+      "@JumpPoint": 0,
+      "@WarpDelay": 0,
+      "@WaitTime": 0,
+      "@SpeedModify": 0,
+      "@OnEvent": "OFFSET_0"
+    },
+    {
+      "@X": 717,
+      "@Y": 227,
+      "@RouteID": 0,
+      "@JumpPoint": 0,
+      "@WarpDelay": 0,
+      "@WaitTime": 0,
+      "@SpeedModify": 0,
+      "@OnEvent": "OFFSET_0"
+    },
+    {
+      "@X": 747,
+      "@Y": 369,
+      "@RouteID": 0,
+      "@JumpPoint": 0,
+      "@WarpDelay": 0,
+      "@WaitTime": 0,
+      "@SpeedModify": 0,
+      "@OnEvent": "OFFSET_0"
+    },
+    {
+      "@X": 557,
+      "@Y": 431,
+      "@RouteID": 0,
+      "@JumpPoint": 0,
+      "@WarpDelay": 0,
+      "@WaitTime": 0,
+      "@SpeedModify": 0,
+      "@OnEvent": "OFFSET_0"
+    },
+    {
+      "@X": 271,
+      "@Y": 360,
+      "@RouteID": 0,
+      "@JumpPoint": 0,
+      "@WarpDelay": 0,
+      "@WaitTime": 0,
+      "@SpeedModify": 0,
+      "@OnEvent": "OFFSET_0"
+    },
+    {
+      "@X": 21,
+      "@Y": 425,
+      "@RouteID": 0,
+      "@JumpPoint": 0,
+      "@WarpDelay": 0,
+      "@WaitTime": 0,
+      "@SpeedModify": 0,
+      "@OnEvent": "OFFSET_0"
+    },
+    {
+      "@X": -50,
+      "@Y": 425,
+      "@RouteID": 0,
+      "@JumpPoint": 0,
+      "@WarpDelay": 0,
+      "@WaitTime": 0,
+      "@SpeedModify": 0,
+      "@OnEvent": "OFFSET_0"
+    }
+  ]
+}

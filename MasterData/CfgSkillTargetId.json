@@ -1,0 +1,144 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 22,
+    "record_size": 12,
+    "custom_id": 2020899187
+  },
+  "_fields": [
+    {
+      "name": "ConfigId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "TargetId",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "ConfigName",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ConfigId": 1746233816,
+      "TargetId": 0,
+      "ConfigName": "なし"
+    },
+    {
+      "ConfigId": 1754760902,
+      "TargetId": 1,
+      "ConfigName": "士気高揚"
+    },
+    {
+      "ConfigId": 846039986,
+      "TargetId": 2,
+      "ConfigName": "自分"
+    },
+    {
+      "ConfigId": 740511456,
+      "TargetId": 3,
+      "ConfigName": "味方"
+    },
+    {
+      "ConfigId": -498922221,
+      "TargetId": 4,
+      "ConfigName": "味方全体"
+    },
+    {
+      "ConfigId": 381818449,
+      "TargetId": 5,
+      "ConfigName": "味方コリジョン"
+    },
+    {
+      "ConfigId": -303516813,
+      "TargetId": 6,
+      "ConfigName": "範囲攻撃化"
+    },
+    {
+      "ConfigId": -301208914,
+      "TargetId": 7,
+      "ConfigName": "攻撃魔法化"
+    },
+    {
+      "ConfigId": -1529573314,
+      "TargetId": 8,
+      "ConfigName": "回復魔法化"
+    },
+    {
+      "ConfigId": -738724929,
+      "TargetId": 9,
+      "ConfigName": "全体魔法化"
+    },
+    {
+      "ConfigId": -1987174082,
+      "TargetId": 10,
+      "ConfigName": "エリアヒール"
+    },
+    {
+      "ConfigId": -631222785,
+      "TargetId": 11,
+      "ConfigName": "ヒールシャワー"
+    },
+    {
+      "ConfigId": -13871072,
+      "TargetId": 12,
+      "ConfigName": "式神"
+    },
+    {
+      "ConfigId": 1537798113,
+      "TargetId": 13,
+      "ConfigName": "召喚"
+    },
+    {
+      "ConfigId": -451720100,
+      "TargetId": 14,
+      "ConfigName": "敵"
+    },
+    {
+      "ConfigId": -1679894509,
+      "TargetId": 15,
+      "ConfigName": "敵全体"
+    },
+    {
+      "ConfigId": 895618406,
+      "TargetId": 16,
+      "ConfigName": "トークン(自分)"
+    },
+    {
+      "ConfigId": 2130254797,
+      "TargetId": 17,
+      "ConfigName": "トークン(種別)"
+    },
+    {
+      "ConfigId": -837535545,
+      "TargetId": 18,
+      "ConfigName": "トークン(全体)"
+    },
+    {
+      "ConfigId": 1250532906,
+      "TargetId": 19,
+      "ConfigName": "チーム"
+    },
+    {
+      "ConfigId": 309025842,
+      "TargetId": 20,
+      "ConfigName": "射程内"
+    },
+    {
+      "ConfigId": 1433091457,
+      "TargetId": 21,
+      "ConfigName": "戦場"
+    }
+  ]
+}

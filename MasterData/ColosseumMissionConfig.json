@@ -1,0 +1,104 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 56,
+    "custom_id": 2020897645
+  },
+  "_fields": [
+    {
+      "name": "MissionID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "QuestIdList",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Enable",
+      "type": "bool",
+      "mapped_type": 5,
+      "rec_offset": 12,
+      "size": 1
+    },
+    {
+      "name": "\b\r\fStartDateTime",
+      "type": "unknown",
+      "mapped_type": 0,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ime",
+      "type": "unknown",
+      "mapped_type": 97,
+      "rec_offset": 17508,
+      "size": 40738
+    },
+    {
+      "name": "field_6",
+      "type": "unknown",
+      "mapped_type": 131,
+      "rec_offset": 58246,
+      "size": 0
+    }
+  ],
+  "records": [
+    {
+      "MissionID": 930015,
+      "Name": "戦神コロシアム　ブレイブリージャーニー",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "df300e00"
+    },
+    {
+      "MissionID": 930016,
+      "Name": "ブレイブリージャーニー 決勝",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "e0300e00"
+    },
+    {
+      "MissionID": 930017,
+      "Name": "戦神コロシアム　バグズリベリオン",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "e1300e00"
+    },
+    {
+      "MissionID": 930018,
+      "Name": "バグズリベリオン 決勝",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "e2300e00"
+    },
+    {
+      "MissionID": 930019,
+      "Name": "戦神コロシアム 豪傑タッグトーナメント",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "e3300e00"
+    },
+    {
+      "MissionID": 930020,
+      "Name": "豪傑タッグトーナメント 決勝",
+      "QuestIdList": "",
+      "Enable": false,
+      "\b\r\fStartDateTime": "e4300e00"
+    }
+  ]
+}

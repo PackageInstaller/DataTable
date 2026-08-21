@@ -1,0 +1,111 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 7,
+    "record_size": 24,
+    "custom_id": 1835234419
+  },
+  "_fields": [
+    {
+      "name": "ItemID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "ItemName",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Category",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "Price",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 12,
+      "size": 4
+    },
+    {
+      "name": "AmountOfRequire",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 16,
+      "size": 4
+    },
+    {
+      "name": "AmountOfCreate",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 20,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ItemID": -1101114277,
+      "ItemName": "evolve_orb_100001",
+      "Category": 2051995164,
+      "Price": 15000,
+      "AmountOfRequire": 5,
+      "AmountOfCreate": 1
+    },
+    {
+      "ItemID": 660014561,
+      "ItemName": "evolve_orb_100002",
+      "Category": 2051995164,
+      "Price": 15000,
+      "AmountOfRequire": 5,
+      "AmountOfCreate": 1
+    },
+    {
+      "ItemID": 1347433847,
+      "ItemName": "evolve_orb_100003",
+      "Category": 2051995164,
+      "Price": 15000,
+      "AmountOfRequire": 5,
+      "AmountOfCreate": 1
+    },
+    {
+      "ItemID": -835411756,
+      "ItemName": "evolve_orb_100004",
+      "Category": 2051995164,
+      "Price": 15000,
+      "AmountOfRequire": 5,
+      "AmountOfCreate": 1
+    },
+    {
+      "ItemID": -1187803070,
+      "ItemName": "evolve_orb_100005",
+      "Category": 2051995164,
+      "Price": 15000,
+      "AmountOfRequire": 5,
+      "AmountOfCreate": 1
+    },
+    {
+      "ItemID": 540721656,
+      "ItemName": "evolve_orb_100006",
+      "Category": 2051995164,
+      "Price": 15000,
+      "AmountOfRequire": 5,
+      "AmountOfCreate": 1
+    },
+    {
+      "ItemID": 1463677294,
+      "ItemName": "evolve_orb_100007",
+      "Category": 2051995164,
+      "Price": 15000,
+      "AmountOfRequire": 5,
+      "AmountOfCreate": 1
+    }
+  ]
+}

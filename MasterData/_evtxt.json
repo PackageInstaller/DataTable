@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 8,
+    "record_size": 16,
+    "custom_id": 1818848115
+  },
+  "_fields": [
+    {
+      "name": "_TextID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 0,
+      "size": 4
+    },
+    {
+      "name": "_FaceID",
+      "type": "int32",
+      "mapped_type": 1,
+      "rec_offset": 4,
+      "size": 4
+    },
+    {
+      "name": "_TalkerName",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 8,
+      "size": 4
+    },
+    {
+      "name": "_TalkText",
+      "type": "string",
+      "mapped_type": 32,
+      "rec_offset": 12,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "_TextID": 0,
+      "_FaceID": -1,
+      "_TalkerName": "name",
+      "_TalkText": "text"
+    },
+    {
+      "_TextID": 1,
+      "_FaceID": -1,
+      "_TalkerName": "name",
+      "_TalkText": "text"
+    },
+    {
+      "_TextID": 2,
+      "_FaceID": -1,
+      "_TalkerName": "name",
+      "_TalkText": "text"
+    },
+    {
+      "_TextID": 3,
+      "_FaceID": -1,
+      "_TalkerName": "name",
+      "_TalkText": "text"
+    },
+    {
+      "_TextID": 4,
+      "_FaceID": -1,
+      "_TalkerName": "name",
+      "_TalkText": "text"
+    },
+    {
+      "_TextID": 5,
+      "_FaceID": -1,
+      "_TalkerName": "name",
+      "_TalkText": "text"
+    },
+    {
+      "_TextID": 6,
+      "_FaceID": -1,
+      "_TalkerName": "name",
+      "_TalkText": "text"
+    },
+    {
+      "_TextID": 7,
+      "_FaceID": -1,
+      "_TalkerName": "name",
+      "_TalkText": "text"
+    }
+  ]
+}
