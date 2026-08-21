@@ -1,0 +1,822 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_WILD_HOG_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 3,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3"
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "오, 단장. 왔어?",
+      "UnitTalk_JPN": "おっ、団長か。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "EmotionEffect": "QMARK"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오오! 뭐야, 품에 안고 있는 그 녀석은? 바이크 호그 새끼잖아!",
+      "UnitTalk_JPN": "何だよ！バイクホッグの子を抱えてんじゃねぇか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "단장도 드디어 인생을 함께 달릴 운명의 파트너와 만난 건가?",
+      "UnitTalk_JPN": "団長もついに、人生を共に走る運命のパートナーに出会ったのかぁ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "캔들 스퀘어 앞에 혼자 있더라고.",
+          "JumpAnchorStringId_JPN": "キャンドル・スクエアの前にいたんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아무래도 버려진 것 같아.",
+          "JumpAnchorStringId_JPN": "捨てられたんだと思う…"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아아… 그런 거였구만.",
+      "UnitTalk_JPN": "あぁ…そういうことだったのか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "많지. 어릴 때는 귀엽다고 키우다가, 좀 크면 돌보기 힘들다느니 질렸다느니 하면서 버리는 녀석들이.",
+      "UnitTalk_JPN": "多いんだよな。かわいいって飼い始めたくせに…ちとデカくなったら世話が大変だとか、飽きたとか言って捨てる奴がよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐, 어쨌든 구해 준 이상 당분간은 단장이 맡아야겠네.",
+      "UnitTalk_JPN": "ま、助けてやったからには当分は団長が世話してやらねぇとな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "바이크 호그를 기르는 방법은 알고 있어?",
+      "UnitTalk_JPN": "バイクホッグの育て方は知ってるか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "키울지 말지는 아직 안 정했지만…",
+          "JumpAnchorStringId_JPN": "育てるかどうかまだ決めてませんが…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "가르침을 주십시오.",
+          "JumpAnchorStringId_JPN": "どうかご教授ください…"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그렇게 어렵진 않아. 한 가지만 기억하면 돼.",
+      "UnitTalk_JPN": "そんなに難しくないぜ。一つだけ覚えておけばいい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "사나이의 첫 번째 덕목은 근성이다!",
+      "UnitTalk_JPN": "漢にとって一番大切なのは、根性だぁ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그것만 알면 나머진 식은 죽 먹기지!",
+      "UnitTalk_JPN": "それさえ分かってれば、あとは朝飯前だぜ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…어디서부터 설명을 요구해야 할지 모르겠다.",
+      "UnitTalk_JPN": "…何から質問すべきだろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "제대로 달릴 줄 아는 호그가 되려면 근성이 있어야 하거든.",
+      "UnitTalk_JPN": "ちゃんと走れるようになるには、根性が必要なんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "오늘은 닿지 않았던 저 석양을, 내일은 움켜쥐겠다는 마음가짐이라고.",
+      "UnitTalk_JPN": "今日は届かなかったあの夕日を、明日は掴んでやるって心構えのことだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "기왕 파트너를 만났는데 최고를 노려야지. 안 그러냐, 데이브?",
+      "UnitTalk_JPN": "せっかくパートナーに出会ったんだから、最高を目指さねぇと。そうだろ、デイヴ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DAVE"
+      ],
+      "UnitTalk_KOR": "킁, 킁.",
+      "UnitTalk_JPN": "クンクン。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "…근거 없는 근성 타령은 그만두시죠.",
+      "UnitTalk_JPN": "…根拠のない根性論は、やめてください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "뭐라고?",
+      "UnitTalk_JPN": "なんだとぉ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "실례했습니다. 지나가다 두 분의 이야기를 우연히 듣게 되어서요.",
+      "UnitTalk_JPN": "失礼しました。通りすがりに、お二人の会話を偶然耳にしたもので。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "메이드라면 들어도 못 들은 척하는 것이 옳겠지만….",
+      "UnitTalk_JPN": "メイドとしては、聞こえなかったフリをすべきですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "어린 바이크 호그의 앞날을 생각하니, 가만히 있을 수 없더군요.",
+      "UnitTalk_JPN": "幼いバイクホッグの将来を考えると、黙ってはいられませんでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "뭐야, 그럼 내 말이 틀렸다는 거냐?",
+      "UnitTalk_JPN": "なんだよ、俺の言ってることが間違ってるって言うのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네. 어린 바이크 호그에게는 무엇보다 세심한 관찰과 체계적인 훈육이 필요합니다.",
+      "UnitTalk_JPN": "はい。幼いバイクホッグには、何よりも細やかな観察と体系的なしつけが必要です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "그렇게 해서 좋은 습관을 들이고, 파트너와의 유대를 쌓은 바이크 호그가 되어야 비로소 일류로 향하는 출발선에 설 수 있는 거죠. ",
+      "UnitTalk_JPN": "そうして良い習慣を身につけ、パートナーとの絆を深めたバイクホッグこそ、ようやく一流へと向かうスタートラインに立てるのです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "바이크 호그의 양육법은 이미 과학의 영역으로 접어들었으니까요.",
+      "UnitTalk_JPN": "バイクホッグの育て方は、すでに科学の領域に入っているのですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "시대에 뒤떨어진 야만적인 근성론만으로는 일류 바이크 호그로 거듭날 수 없죠.",
+      "UnitTalk_JPN": "時代遅れの野蛮な根性論だけでは、一流のバイクホッグにはなれません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "누가 시대에 뒤떨어졌다고…!",
+      "UnitTalk_JPN": "誰が時代遅れだぁ…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "바이크 호그 축사에 최적의 온도는 몇 도인지 알고 있습니까?",
+      "UnitTalk_JPN": "バイクホッグの厩舎に、最適な温度はご存知ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그런 걸 일일이 신경 써? 그냥 따뜻하면 되지.",
+      "UnitTalk_JPN": "そんなことまでいちいち気にすんのか？暖かきゃいいだろ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DAVE"
+      ],
+      "UnitTalk_KOR": "킁킁.",
+      "UnitTalk_JPN": "クンクン。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "역시 모르는군요. 평소에 연료의 배합식이나 건강 관리는 하고 있나요?",
+      "UnitTalk_JPN": "やはりご存知でないようですね。普段から燃料の配合や健康管理はされてますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "자, 잘 먹고 별탈 없으면 되는 거 아냐?",
+      "UnitTalk_JPN": "よ、よく食べて、何事もなけりゃそれでいいだろぉ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DAVE"
+      ],
+      "UnitTalk_KOR": "크, 킁…!",
+      "UnitTalk_JPN": "ク、クン！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "…할리 님의 실력은 인정하지만, 지금에 안주해서는 금방 뒤처지게 될 겁니다. ",
+      "UnitTalk_JPN": "ハーレー様の実力は認めますが…現状に甘んじていては、すぐ時代に取り残されてしまいます。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "시대가 바뀌었으니까요. 라이더도 달라진 시대에 적응을 해야죠.",
+      "UnitTalk_JPN": "時代は変わったのですから。ライダーも時代に適応しなければなりません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "길에 따라 다르게 달리는 것처럼.",
+      "UnitTalk_JPN": "道によって走り方を変えるように、です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "큭! 잘난 척은…!",
+      "UnitTalk_JPN": "うぐぐっ！偉そうにしやがってぇ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하지만…",
+      "UnitTalk_JPN": "しかし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…맞는 말이라는 건 부정할 수가 없구만.",
+      "UnitTalk_JPN": "…否定はできねぇな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "의외로 쉽게 인정하네?",
+          "JumpAnchorStringId_JPN": "意外とあっさり認めるんだね？"
+        }
+      ]
+    },
+    {
+      "Uid": 83,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "틀린 건 틀렸다고 인정할 줄 알아야 사나이지.",
+      "UnitTalk_JPN": "間違いは間違いだって認めてこそ、漢だからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "뭣보다 호그가 건강하게 클 수 있다면 그걸로 된 거야.",
+      "UnitTalk_JPN": "何より、ホッグが健康に育つのが一番だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "USN_UI_REST",
+      "UnitTalk_KOR": "하지만 방금 그 얘기…. 어째 옛날 생각이 나는데.",
+      "UnitTalk_JPN": "ところで、さっきの話…なんだか懐かしいぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "옛날 생각이라고 하심은?",
+      "UnitTalk_JPN": "懐かしいとは？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아아, 비슷한 소리를 하던 녀석이 있었거든.",
+      "UnitTalk_JPN": "ああ、似たようなことを言ってた奴がいたんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "푸른 외투를 휘날리면서, 언제나 내 앞을 달리던 녀석이.",
+      "UnitTalk_JPN": "青い上着をなびかせて、いつも俺の前を走ってた奴がな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…다, 다른 사람과 착각하신 것 아닌지?",
+      "UnitTalk_JPN": "…ひ、人違いではありませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아냐. 분명히 했어.",
+      "UnitTalk_JPN": "いや。間違いなく言ってたぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "지금도 그 얼굴이 생생하게 기억난다고.",
+      "UnitTalk_JPN": "今でも、鮮明に思い出せる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "검은색 단발머리, 꺽다리에 눈초리는 쓸데없이 날카롭고…",
+      "UnitTalk_JPN": "黒いショートヘアで、デカくて、目つきは妙に鋭くて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…왠지 내 눈앞에 있는 사람과 닮은 것 같다.",
+      "UnitTalk_JPN": "…なんだか、目の前にいる奴と似てるような…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "크흠, 흠!",
+      "UnitTalk_JPN": "こ、こほんっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "저는 이만 물러나겠습니다. 일이 바빠서.",
+      "UnitTalk_JPN": "忙しいので、これにて失礼いたします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "뭐야, 가 버렸네…",
+      "UnitTalk_JPN": "なんだ、行っちまったのか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아쉽구만. 호그에 대해 꽤 잘 아는 눈치라 이것저것 얘기하고 싶었는데.",
+      "UnitTalk_JPN": "残念だぜ。ホッグに詳しい奴だったから、いろいろと話したかったのに。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "일단은 모른 척 해 주자.",
+          "JumpAnchorStringId_JPN": "まぁ、見逃してあげよう。"
+        }
+      ]
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "음? 무슨 소리야, 그게?",
+      "UnitTalk_JPN": "ん？どういう意味だ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무래도 할리는 눈치채지 못한 모양이다….",
+      "UnitTalk_JPN": "やっぱりハーレーは、気づいていないようだった…",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 68,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 70,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…결국, 새끼 바이크 호그는 가까운 동물 보호 단체에 맡겼다.",
+      "UnitTalk_JPN": "…結局、バイクホッグは近くの動物保護団体に預けた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

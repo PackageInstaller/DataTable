@@ -1,0 +1,1257 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_CONSTRUCT_BOMB_08",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OFFICE_01.png",
+      "StartBgmFileName": "EMPTY.mp3",
+      "FilterType": "CFT_SEPIA"
+    },
+    {
+      "Uid": 130,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_2.wav"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_06.wav",
+      "UnitTalk_KOR": "콰앙-!!",
+      "UnitTalk_JPN": "ドカーン！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "냐하핫! <color=#F7BE45>페트라 조합</color>, 집합―!!",
+      "UnitTalk_JPN": "にゃはは！<color=#F7BE45>ペトラ組合</color>、しゅうご―う！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "이것 봐, 이것 봐! 장난 아니니까, 얼른!",
+      "UnitTalk_JPN": "見て見て！すごいことになってるから、はやくー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "또 아침부터 무슨 난리…",
+      "UnitTalk_JPN": "また朝っぱらから、何の騒ぎだぁ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이것 봐! 우리 일이 <color=#F7BE45>벨라스키버 타임즈</color>에 실렸다구!",
+      "UnitTalk_JPN": "ほら！ペトラたちのことが、<color=#F7BE45>ベラスキーバー・タイムズ</color>に載ったんだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "뭣…! 어디 봐!",
+      "UnitTalk_JPN": "なっ…！どこだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "CameraOffset": "TRIPLE_2",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "나도 볼래.",
+      "UnitTalk_JPN": "わたしも、見る。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "<color=#F7BE45>한동안 페트라 조합의 뒤를 따라다니던 부정적인 소문이 전부 사실이 아닌 것으로 확인되었다.</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>長らくペトラ組合につきまとっていた否定的な噂は、すべて事実ではないことが確認された。</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "<color=#F7BE45>해당 소문들은 경쟁사인 케메트 인더스트리의 고위급 임직원 남성이 의도적으로 퍼뜨린 유언비어인 것으로 밝혀졌으며…</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>該当の噂は、ライバル社であるケメット・インダストリーの幹部の男性が意図的に流したデマであることが明らかになり…</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "<color=#F7BE45>녹음본을 제출한 익명의 제보자로 인해 이 사건의 진실이 알려졌다.</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>匿名で提出された録音データによって、この事件の真相が知られることとなった。</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS2_2X",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "익명의 제보자?",
+      "UnitTalk_JPN": "匿名だと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL_LOOP"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "빤히―",
+      "UnitTalk_JPN": "じーっ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 118,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL_LOOP"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS2_2X",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장이네.",
+      "UnitTalk_JPN": "団長だな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응. 단장이야.",
+      "UnitTalk_JPN": "うん、団長だよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "CameraOffset": "POS4_2X",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…그게 뭐지?",
+      "UnitTalk_JPN": "…どういうこと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그, 그것보다 계속 읽어 봐…",
+          "JumpAnchorStringId_JPN": "…そ、それより、読み進めてみて…"
+        }
+      ]
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS2_2X",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "<color=#F7BE45>케메트 인더스트리는 기업 이미지 실추와 과거의 직장 내 괴롭힘을 근거로 들어 남자를 해고하기로…</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>ケメット・インダストリーは、企業イメージの失墜と過去の職場いじめを根拠に、男性を解雇することとし…</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "아, 그 부분 말고 맨 아래 읽어 봐! 완전 끝부분!",
+      "UnitTalk_JPN": "ううん、そこじゃなくて下の方を読んでみて！いっちばん最後のところ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS2_2X",
+      "UnitTalk_KOR": "…<color=#F7BE45>반면, 페트라 조합을 오해했던 사람들이 미안한 마음에 다시금 그쪽으로 발걸음을 돌리고 있다.</color>",
+      "UnitTalk_JPN": "…<color=#F7BE45>一方、ペトラ組合のことを誤解していた人々は、申し訳ない気持ちから再び足を運び始めている。</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "<color=#F7BE45>그에 따른 페트라 조합의 이후 행보가 기대된다.</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>それに伴い、今後のペトラ組合の活躍に期待が高まっている。</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…이게 끝인데? 여기 말하는 거 맞냐?",
+      "UnitTalk_JPN": "…これで終わりだろ？ここのこと言ってるのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "안 되겠어~ 마르실은 정말이지 눈치가 없다니까~ 타냐, 아무래도 우리가 가르쳐 줘야…",
+      "UnitTalk_JPN": "もぉ～、マルシルは本当に空気が読めないんだから。ターニャ、私たちが教えてあげないと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "응…? 타냐, 어디 갔어? 타냐!",
+      "UnitTalk_JPN": "あれ…？ターニャ、どこに行ったの？ターニャ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "응. 나비 쫓기.",
+      "UnitTalk_JPN": "うん。チョウチョ、追いかけっこ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "어려운 말은 재미없어. 나비 쫓는 건 재밌으니까. 응.",
+      "UnitTalk_JPN": "むずかしい話は楽しくない。チョウチョを追いかけるの、楽しい。うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "으으… 두 사람 다 너무 빠진 거 아냐? 중요한 걸 놓치고 있다고.",
+      "UnitTalk_JPN": "うぅ、二人とも…大事なことを見落としてるよぅ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "잘 들어, 지금부터 귀여운 페트라가 가르침을 줄 테니까! 둘 다 명심해!",
+      "UnitTalk_JPN": "よーく聞いててよ！今から可愛いペトラが教えてあげるから！二人とも、肝に銘じるんだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>기사에서 가장 중요한 부분은 맨 마지막에 있다</color>!",
+      "UnitTalk_JPN": "<color=#F7BE45>記事で最も重要な部分は、一番最後にある</color>！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "기사에서 가장…?",
+      "UnitTalk_JPN": "きじ…もっとも…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "우리 기사에서 가장 중요한 부분이 그럼 뭐겠어?",
+      "UnitTalk_JPN": "だとしたら、私たちの記事の中で…最も重要な部分は？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…<color=#F7BE45>페트라 조합의 이후 행보가 기대된다</color>?",
+      "UnitTalk_JPN": "…<color=#F7BE45>今後のペトラ組合の活躍に期待が高まっている</color>？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그렇지! 그 부분이 중요한 거야! 그럼 지금부터 뭘 해야겠어?",
+      "UnitTalk_JPN": "その通りっ！じゃあ、今から何をすればいいと思う？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "EmotionEffect": "QMARK",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_WRENCH_GADGET"
+      ],
+      "UnitTalk_KOR": "…?",
+      "UnitTalk_JPN": "…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 2.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "물 들어올 때 노 저어야지!!",
+      "UnitTalk_JPN": "鉄は熱いうちに打たないとね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARALL",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…라는 게 얼마 전의 일이었다.",
+      "UnitTalk_JPN": "…というのが、ついこの前のことだった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 이후, 페트라의 포부대로 <color=#F7BE45>페트라 조합</color>은 의뢰가 들어오는 족족 빠르게 해치우며 신명 나게 노를 젓기 시작했고…",
+      "UnitTalk_JPN": "その後、ペトラの抱負どおり…<color=#F7BE45>ペトラ組合</color>は依頼を次々とこなし、好機を逃さず突き進んでいった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "덤으로 페트라가 개발해 출시한 신제품 <color=#F7BE45>안전 좋아</color> 폭탄의 반응도 꽤 좋은 반응을 얻었다.",
+      "UnitTalk_JPN": "おまけに、ペトラが開発・発売した新製品<color=#F7BE45>安全確認ヨシ</color>爆弾も、かなりの高評価を得ていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 103,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STORE_GENERAL.png"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitTalk_KOR": "페트라는 이 타이밍을 놓치지 않고, 지금 당장 <color=#F7BE45>공격적인 마케팅</color>을 준비해야 한다면서 쇼핑을 핑계로 상점가로 향했다.",
+      "UnitTalk_JPN": "ペトラはこのタイミングを逃さず、今すぐ<color=#F7BE45>攻めのマーケティング</color>を仕掛けようと、買い物を口実に街へと向かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기껏해야 옷이나 화장품을 살 줄 알았는데… 의외로 도착한 곳은 공업 재료들을 전문으로 취급하는 상점이었다.",
+      "UnitTalk_JPN": "てっきり服や化粧品を買うのかと思いきや、意外にもたどり着いたのは工業用品を専門に扱う店だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "으음~ 뭐가 좋을까?",
+      "UnitTalk_JPN": "うーん…何がいいかな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "공격적인 마케팅을 위해선, <color=#F7BE45>안전 좋아</color> 폭탄의 안전함을 보여주는 게 제일 좋긴 한데…",
+      "UnitTalk_JPN": "攻めのマーケティングとして、<color=#F7BE45>安全確認ヨシ</color>爆弾の安全性を証明できたら一番いいんだけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "음, 이건 괜찮지만 너무 환경 파괴 물질이 많이 나오니까 별로고… 이건 폭발력은 강하지만 너무 위험해서 패스.",
+      "UnitTalk_JPN": "うーん、これは環境破壊物質が多すぎるからダメだし…これは爆発力は強いけど、危険すぎるからダメ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "이건… 다루기가 좀 힘들긴 하지만, 그래도 저거랑 같이 결합해서 쓰면 괜찮을 것도 같고.",
+      "UnitTalk_JPN": "これは…扱いがちょっと難しいけど、あれと組み合わせればいけるかも。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 물론 페트라의 귀여움에 걸맞은 귀여운 재료면 더 좋지만.",
+      "UnitTalk_JPN": "もちろん、ペトラの可愛さに似合う可愛い材料ならなおさらいいんだけどね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…엄청 신중하게 고르네.",
+          "JumpAnchorStringId_JPN": "…すごく慎重に選ぶんだな。"
+        }
+      ]
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "응? 당연한 거지, 단장!",
+      "UnitTalk_JPN": "んー？当然でしょ、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "이렇게 연약해 보이는 페트라지만, 사실 폭탄에 조예가 깊다는 반전 매력도 갖고 있는걸♪",
+      "UnitTalk_JPN": "か弱く見えるペトラだけど、爆弾のことはちょー詳しいっていうギャップがあるんだから♪",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "장난스럽게 말한 페트라는 다시 가판대 위의 재료들로 시선을 돌렸다.",
+      "UnitTalk_JPN": "おどけるように言ったペトラは、再び陳列された材料に視線を戻した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 눈빛이 사뭇 진지해 보였다.",
+      "UnitTalk_JPN": "その眼差しは、かなり真剣だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "있지. 사실 페트라, 처음엔 폭발하는 걸 보는 게 좋았어. 참았던 게 <color=#F7BE45>빵-!!</color> 터지는 느낌이라… 스트레스가 풀린다고 해야 하나?",
+      "UnitTalk_JPN": "そうそう。実はペトラ、最初は爆発を見るのが好きだったの。我慢してたものが、<color=#F7BE45>バーンッ！</color>って弾ける感じで…ストレス解消になるっていうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "근데 단장이랑 조합원들이랑 함께하면서 알게 됐어.",
+      "UnitTalk_JPN": "でも、団長と組合員と一緒に過ごすうちに気づいたんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "페트라의 폭탄은 단순히 폭발만을 위한 게 아니구나. 멋진 집을 만들기 위해서 꼭 필요한 거구나, 하고.",
+      "UnitTalk_JPN": "ペトラの爆弾は、ただ爆発させるためだけのものじゃないんだって。素敵なおうちを作るために、必ず必要なものなんだってね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "페트라, 지금 곁에 있는 사람들이 정말 소중해. 소중해서 힘들게 하고 싶지 않아.",
+      "UnitTalk_JPN": "ペトラ、今そばにいる人たちが本当に大切なんだ。だから、苦労させたくない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "그러니까 앞으로도 모두가 다치지 않고, 즐겁게 집을 만들기 위해선 지금보다 더 안전하고 더 강력한 폭탄이 필요해.",
+      "UnitTalk_JPN": "これからも、みんなで怪我なく楽しくおうちを作るためには…もっと安全で、もっと強力な爆弾が必要になるの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "거기서 페트라는, 페트라의 재능이 최고로 잘 쓰일 수 있는 방법을 찾은 거야.",
+      "UnitTalk_JPN": "そこで、ペトラの才能を最高に活かせる方法を見つけたんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "어때, 똑똑하지?",
+      "UnitTalk_JPN": "どう？賢いでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "응…? 단장, 왠지 시선이 좀 뜨거운데…",
+      "UnitTalk_JPN": "んー…？団長、なんだか視線が熱いんだけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "설마 또 페트라한테 반해 버렸어? 정말♡ 자꾸 그러면 결혼해 버린다♡",
+      "UnitTalk_JPN": "まさか、本気でペトラに惚れちゃった？もぉ～♡そんなんだと、マジで結婚しちゃうからね♡",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "물론, 여전히 가볍고 촐싹대긴 하지만…",
+      "UnitTalk_JPN": "相変わらず、軽くて落ち着きはないが……",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "최근 들어 페트라가 좀 성숙해진 것 같아서…",
+          "JumpAnchorStringId_JPN": "最近、ペトラが少し大人になった気がして…"
+        }
+      ]
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "으, 응?! 뭐야 그거?!",
+      "UnitTalk_JPN": "え、えーっ！なにそれっ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "설마… 드디어 페트라가 여자로 보인다거나? 좀 섹시해 보인다거나? 그런 말이야?!",
+      "UnitTalk_JPN": "まさか……ついにペトラのこと女性として見るようになったとか？ちょっとセクシーに見えるとか、そういうこと！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그런 것보다, 내면에 관한 이야기야.",
+          "JumpAnchorStringId_JPN": "…内面の話だよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "흐음~ 그렇단 말이지. 음음♪ 알겠어, 알겠어.",
+      "UnitTalk_JPN": "な～んだ、そういうことか。うんうん、分かったよ♪",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…?",
+          "JumpAnchorStringId_JPN": "…？"
+        }
+      ]
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "냐하핫! 그러니까 결국은 단장도 결국 페트라의 내면에 한 번 더 반해버렸다는 말이잖아?",
+      "UnitTalk_JPN": "にゃはは！つまり、ペトラの内面に惚れ直しちゃったってことじゃん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "으음~♡ 어떡하지. 그냥 못 이기는 척 받아 줘버릴까~♪",
+      "UnitTalk_JPN": "う～ん、どうしよっかな♡しょうがないから、受け入れちゃおうかな～♪",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만 역시, 지금은 안 돼~",
+      "UnitTalk_JPN": "でもやっぱり、今はダメだね～。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "페트라는 <color=#F7BE45>페트라 조합</color>의 대표니까! 아직 할 일이 너무 많거든.",
+      "UnitTalk_JPN": "ペトラは、<color=#F7BE45>ペトラ組合</color>の代表だから！まだやることが山積みなんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "먼저, 예정대로 <color=#F7BE45>케메트 인더스트리</color>를 보기 좋게 이겨야 하고…",
+      "UnitTalk_JPN": "まずは予定通り、<color=#F7BE45>ケメット・インダストリー</color>にしっかり勝って…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그리고 나서는 모두가 함께 살 수 있는, 엄청나게 큰 집을 지을 거야!",
+      "UnitTalk_JPN": "それから、みんなで一緒に暮らせるすっごく大きなおうちを建てるんだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그게 페트라의 최종 목표가 됐어. 모두 웃으면서 지낼 수 있는 집을, 함께 만드는 거!",
+      "UnitTalk_JPN": "それがペトラの最終目標になったの。みんなが笑顔で暮らせるおうちを、一緒に作るんだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그리고… 그리고…",
+      "UnitTalk_JPN": "そしてそして…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그리고…?",
+          "JumpAnchorStringId_JPN": "そして…？"
+        }
+      ]
+    },
+    {
+      "Uid": 133,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 134,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_CONSTRUCT_BOMB_02.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 135,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PETRA"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그리고… 그, 그 집엔… 단장의 방도 있으면 좋겠어…",
+      "UnitTalk_JPN": "そ…その家には…だ、団長の部屋もあればいいなぁって…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PETRA"
+      ],
+      "UnitTalk_KOR": "그, 그러니까… 그러니까!",
+      "UnitTalk_JPN": "え、えと…だから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PETRA"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그러니까… 그때가 됐을 때, 페트라한테 다시 정식으로 프러포즈해 줘…",
+      "UnitTalk_JPN": "その時が来たら…改めて、またプロポーズしてほしいの…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PETRA"
+      ],
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그땐 페트라도 단장에게 지지 않을 만큼 훨씬! 훨씬 멋진 여자가 되어 있을 테니까!",
+      "UnitTalk_JPN": "その時には、ペトラも団長に負けないくらい！ずっとずっと素敵な人になってるはずだから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PETRA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그렇게 멋진 여자가 돼서… 단장도 본인이 싫어질 때가 오면, 페트라가 꼭 알려줄게…",
+      "UnitTalk_JPN": "素敵な女性になって…もし団長が自分のこと嫌いになったとしても、ペトラがちゃんと伝えてあげるから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PETRA"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "페트라는 다, 단장을… 조, 조조좋아한다고…!",
+      "UnitTalk_JPN": "ペトラは、団長のこと…だ、だだだ大好きだって…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쩐지 본인이 더 민망해하는 것 같은 페트라에게 마주 웃어주었다.",
+      "UnitTalk_JPN": "なんだか恥ずかしそうにしているペトラに、微笑み返した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 136,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 137,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STORE_GENERAL.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 139,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나도 힘들 때마다 그 사실을 떠올릴게. 그런데…",
+          "JumpAnchorStringId_JPN": "つらい時は、そのことを思い出すよ。でも…"
+        }
+      ]
+    },
+    {
+      "Uid": 132,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>다시</color>라니. 내가 언제 프러포즈했던가…?",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>また</color>って、いつプロポーズしたっけ…？"
+        }
+      ]
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "!!!",
+      "UnitTalk_JPN": "！！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 2.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "바보바보바보!! 하나도 안 중요해 그런 거!!",
+      "UnitTalk_JPN": "団長のばかばかばかぁ！！そんなこと全然重要じゃないの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…?",
+          "JumpAnchorStringId_JPN": "…？"
+        }
+      ]
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "다, 단장은 진짜… 페트라 말고도 여자 여럿 울렸을 거야~!!",
+      "UnitTalk_JPN": "団長ってば…ペトラ以外にも、たくさんの女の子を泣かせてきたでしょ～！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "장난처럼 우는소리를 하며 얼굴을 붉히는 페트라를 데리고, 상점 내부를 마저 둘러보았다.",
+      "UnitTalk_JPN": "泣きマネをし、顔を赤くするペトラを連れて…店の中をさらに見て回った。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 109,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STORE_GENERAL.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 111,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_BAND_BASS_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

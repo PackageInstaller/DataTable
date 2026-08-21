@@ -1,0 +1,24 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_SAINTESS_ELF_07",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN_DESTROYED.png",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "대본을 잃어버린 엘리사는, 즉석에서 하고 싶은 말을 거침없이 쏟아냈다…",
+      "UnitTalk_JPN": "台本を失くしたエリサは、その場の勢いで思うままに言葉をぶつけた……",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_MONSTER.txt",
+    "UseRespawnFocus": false,
+    "UnitHudHeight": 2,
+    "BuffEffectPosition": {
+      "HEAD": 2,
+      "BODY": 0.9
+    },
+    "UnitBuffEffectScale": 1.3,
+    "UiStates": [
+      {
+        "StateName": "NORMAL",
+        "StateType": "NUST_UI",
+        "AnimName": "BATTLE_ASTAND",
+        "AnimLoop": true
+      }
+    ],
+    "BattleStates": [
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": false,
+        "EndFadeOut": false
+      },
+      {
+        "StateName": "USN_HYPER",
+        "PlaySkillCutIn": false,
+        "StartUnitShow": {
+          "ShowOffMyTeam": false
+        },
+        "BattleMapSceneName": "",
+        "UseInternalCamera": false,
+        "InternalCameraShowUI": false,
+        "StartFadeOutIn": false,
+        "EndFadeOut": false
+      },
+      {
+        "StateName": "USN_NOVA_BURST",
+        "AnimName": "BATTLE_ASTAND",
+        "UseInternalCamera": false,
+        "VfxNovaBurstFrame": 15
+      }
+    ]
+  }
+}

@@ -1,0 +1,630 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_05",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_05",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기술적 접근도 실패.",
+      "UnitTalk_JPN": "技術的アプローチも失敗。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "감정적 접근도 실패.",
+      "UnitTalk_JPN": "感情的アプローチも失敗。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무래도 스마일에게 웃음을 가르치는 일은 쉽지 않을 것 같다.",
+      "UnitTalk_JPN": "やっぱり、スマイルに笑い方を教えるのは簡単なことじゃなかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "물론 포기했다는 뜻은 아니다.",
+      "UnitTalk_JPN": "もちろん、諦めたわけじゃない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "분명 어딘가 스마일이 <color=#F7BE45>즐거움</color>을 느낄 만한 일이 있을 것이다.",
+      "UnitTalk_JPN": "きっとどこかに、スマイルが<color=#F7BE45>嬉しさ</color>を感じられるものがあるはず。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 일을 반드시 찾아주겠다고 다짐하면서 훈련장에 도착했는데…",
+      "UnitTalk_JPN": "それを見つけてあげようと決意した私は、訓練場に到着するも…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그물?",
+          "JumpAnchorStringId_JPN": "…罠？"
+        }
+      ]
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그런 단순한 명칭으로는 본 발명품의 본질을 표현할 수 없음.",
+      "UnitTalk_JPN": "そんな単純な名称では、この発明品の本質を表現できない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼?",
+          "JumpAnchorStringId_JPN": "じゃあ？"
+        }
+      ]
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "일반 생물학적 웃음 촉매제 포획기, <color=#F7BE45>스마일 캐치 시작 1호</color>.",
+      "UnitTalk_JPN": "一般生物学的な笑いの誘発トラップ、<color=#F7BE45>スマイルキャッチ試作1号機</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그러니까 이걸로…",
+          "JumpAnchorStringId_JPN": "つまり、これで…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "고양이를 잡겠다고?",
+          "JumpAnchorStringId_JPN": "猫を捕まえるってこと？"
+        }
+      ]
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "동의.",
+      "UnitTalk_JPN": "同意。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "통계학적으로 봤을 때 애완동물은 인간에게 즐거움의 감정을 유발.",
+      "UnitTalk_JPN": "統計学的に見た時、ペットは人間の嬉しいという感情を誘発。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "그중에서도 고양이는 다수의 인간에게 선택받은 종족.",
+      "UnitTalk_JPN": "その中でも、猫は多くの人間に選ばれた種族。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "물론 즐거움이란 비과학적 표현.",
+      "UnitTalk_JPN": "もちろん、「嬉しい」は非科学的な表現。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "하지만 단장의 의견대로 일단 즐거움을 느껴야 웃을 수 있다는 지적은 동의.",
+      "UnitTalk_JPN": "でも団長の言うとおり、嬉しさを感じてこそ笑えるはずだって指摘には同意。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "그렇다면 애완동물과의 상호작용을 실험해 볼 가치는 충분.",
+      "UnitTalk_JPN": "だったら、ペットとの相互作用を実験してみる価値は十分あり。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "좋아! 나도 도와줄게!",
+          "JumpAnchorStringId_JPN": "よし！私も手伝うよ！"
+        }
+      ]
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일이 의욕을 가진다는 건 좋은 징조다.",
+      "UnitTalk_JPN": "スマイルが意欲的だなんて、幸先がいい。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "나는 스마일과 함께 애완 고양이를 잡기 위해 그물…",
+      "UnitTalk_JPN": "私はスマイルと共に、猫を捕まえるために罠を…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아니, 스마일 캐치 1호를 가지고 거리로 나섰다.",
+      "UnitTalk_JPN": "いや、スマイルキャッチ1号機を持って街へと出た。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 70,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 실패했다.",
+      "UnitTalk_JPN": "そして、失敗した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "또, 또 놓쳤어!",
+          "JumpAnchorStringId_JPN": "ま、また逃した！"
+        }
+      ]
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "고양이… 예상치보다 250% 이상 신속한 기동성 보유.",
+      "UnitTalk_JPN": "猫…予想値より250％以上速い機敏性を発揮。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "스마일 캐치 1호의 기동성으로는 포획 불가.",
+      "UnitTalk_JPN": "スマイルキャッチ1号機では、捕獲不可。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하루 종일 고양이를 쫓아다녔지만 이런 작은 그물로는 재빠른 고양이를 잡을 수 없었다.",
+      "UnitTalk_JPN": "一日中猫を追いかけたが、小さな罠で素早い猫を捕まえることはできなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일은 기껏 생각해 낸 방법이 통하지 않아 실망한 것 같았다.",
+      "UnitTalk_JPN": "スマイルは一生懸命考えたアイデアが通じず、がっかりしたようだった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "잠시 고민하던 나는 어떤 생각이 떠올랐다.",
+      "UnitTalk_JPN": "私は少し悩んだ末に…いい考えが浮かんだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "스마일, 이렇게 해 보자.",
+          "JumpAnchorStringId_JPN": "スマイル、こうしてみよう。"
+        }
+      ]
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "단장…?",
+      "UnitTalk_JPN": "団長…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.8
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitTalk_KOR": "나는 스마일을 이끌고 잡화점을 돌며 준비물을 구했다.",
+      "UnitTalk_JPN": "私はスマイルを連れて雑貨屋を回り、必要なものを買い集めた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "헝겊과 솜. 단추, 그리고 바늘과 실까지.",
+      "UnitTalk_JPN": "布に綿。ボタン、そして針と糸。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "처음이라 자신은 없지만 이 정도면 시도는 해볼 수 있을 것 같다.",
+      "UnitTalk_JPN": "初めてで自信はなかったけど、これくらいなら挑戦してみてもいいはず。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH.wav",
+      "UnitTalk_KOR": "얼굴에 의문을 가득 띄우고 있는 스마일을 옆에 두고 나는 사온 준비물로 한참을 낑낑댔다.",
+      "UnitTalk_JPN": "頭にはてなを浮かべるスマイルの横で、私はかなり手こずっていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": false,
+      "WaitTime": 0.5
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고는 마침내 완성했다.",
+      "UnitTalk_JPN": "そして、ついに完成した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 102,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_VOYAGER_SMILE_02.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.8
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "완성! 유사 생물학적 웃음 촉매제, <color=#F7BE45>헝겊 고양이 1호</color>!",
+          "JumpAnchorStringId_JPN": "完成！類似生物学的な笑いの誘発剤、<color=#F7BE45>猫のぬいぐるみ1号</color>！"
+        }
+      ]
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SMILE"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "이, 이건…!!",
+      "UnitTalk_JPN": "こ、これは…！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "진짜 고양이는 아니지만… 일단 이거라도 받아 줄래?",
+          "JumpAnchorStringId_JPN": "本物の猫じゃないけど…とりあえず、もらってくれる？"
+        }
+      ]
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일은 내가 만든 헝겊 고양이 인형을 조심스레 받아들었다.",
+      "UnitTalk_JPN": "スマイルは、私が作った猫のぬいぐるみをそっと受け取った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여기저기 솜이 삐져나오고 바느질은 일정하지 않다.",
+      "UnitTalk_JPN": "あちこちから綿が飛び出していて、縫い目もガタガタだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "눈은 간단하게 단추를 다는 것으로 마무리하고 솜이 뭉쳐서 울퉁불퉁하다.",
+      "UnitTalk_JPN": "それに…目にはボタンを付けただけだし、綿が偏ってデコボコしている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "비록 아마추어의 작품이라 만듦새가 그리 훌륭하다고는 할 수 없지만…",
+      "UnitTalk_JPN": "素人の作品だから、出来栄えはそんな立派なものじゃないけど…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쨌든 고양이처럼 보이긴 하니까.",
+      "UnitTalk_JPN": "とにかく、猫に見えない事はないし。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 인형이 스마일에게 조금이나마 도움이 되었으면 좋겠다.",
+      "UnitTalk_JPN": "このぬいぐるみが、スマイルにとって少しでも助けになればいいんだけど。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SMILE"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응…",
+      "UnitTalk_JPN": "うん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SMILE"
+      ],
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "고마워, 단장.",
+      "UnitTalk_JPN": "ありがとう、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일은 한참이나 내가 준 고양이 인형을 바라보고 있었다.",
+      "UnitTalk_JPN": "スマイルは、私があげた猫のぬいぐるみをしばらく見つめていた。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

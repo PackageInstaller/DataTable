@@ -1,0 +1,54 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_INDEPENDENT_DRAGON_REST_NORMAL",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_NORMAL",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "흐암~, 잠이라는 건 어찌하여 자도 자도 모자란 것인지…",
+      "UnitTalk_JPN": "ふぁ～。何ゆえに、寝ても寝ても眠いのじゃ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그래도 푹 자서 그런지, 몸도 가볍고 머리도 맑아진 것 같구나.",
+      "UnitTalk_JPN": "しかし、ぐっすり寝たおかげか…体も軽く、頭も冴えているようじゃのう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아, 방금 좋은 영감이 떠올랐다. 어서 적어둬야겠어!",
+      "UnitTalk_JPN": "ああっ、インスピレーションが湧いてきたのじゃ。急いで書き留めねば！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT"
+    }
+  ]
+}

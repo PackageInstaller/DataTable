@@ -1,0 +1,207 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_34B_KLD_BT_READY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN_KALAID.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "칼라이드의 거리가 유난히 소란스럽다.",
+      "UnitTalk_JPN": "カライドの街が妙に騒がしい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "건장한 시민들이 방한 장비와 사냥용 도구를 들고 모여 있다.",
+      "UnitTalk_JPN": "体格のいい市民が、防寒装備と狩猟道具を持って集まっている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitTalk_KOR": "저분들은 새로운 수원을 파내러 가시는 거예요.",
+      "UnitTalk_JPN": "あの方たちは、新たな水源を探しに行かれるんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitTalk_KOR": "지난번 소동으로 큰 수원 몇 곳이 못 쓸 정도로 망가져 버렸거든요.",
+      "UnitTalk_JPN": "この前の騒動で、大きな水源がいくつか使い物にならなくなってしまったんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "사냥용 도구는 왜 가져가는 거야?",
+          "JumpAnchorStringId_JPN": "狩猟道具はなんで持っていくんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "수원을 파내려면 어쩔 수 없이 큰 소리가 나거든요. 땅도 흔들리고요.",
+      "UnitTalk_JPN": "水源を掘る時、どうしても大きな音が出ちゃうんですよ。地面も揺れますしね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitTalk_KOR": "거기에 자극받은 마수들이 공격해 올 수도 있으니까요.",
+      "UnitTalk_JPN": "それに刺激された魔獣が襲ってくる可能性もありますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "평소에는 마수들이 잠잠한 시기를 골라 움직이겠지만…",
+      "UnitTalk_JPN": "いつもなら、魔獣が大人しい時期に行うんですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitTalk_KOR": "지금은 축제가 코앞으로 다가왔으니까요.",
+      "UnitTalk_JPN": "今は祭りが目前に迫っていますからね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitTalk_KOR": "그래서 수원을 파는 동안 지켜 줄 사람들도 모집하는 모양이더라고요.",
+      "UnitTalk_JPN": "水源を掘る間、護衛してくれる人も募集してたみたいですよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그 정도로 위험한 거야?",
+          "JumpAnchorStringId_JPN": "そんなに危険なの？"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 네. 흥분한 상태의 마수는 평소보다 훨씬 위협적이니까요. ",
+      "UnitTalk_JPN": " はい。興奮状態の魔獣は、普段よりはるかに危険ですから。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitTalk_KOR": " 어떠세요? 단장님도 동행해 보시는 건?",
+      "UnitTalk_JPN": " 団長も同行されるのはいかがですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitTalk_KOR": " 단장님과 단원분이 계시면 사람들도 안심하고 작업할 수 있을 거예요.",
+      "UnitTalk_JPN": " きっと、皆さんも安心して作業できると思いますよ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

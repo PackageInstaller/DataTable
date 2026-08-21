@@ -1,0 +1,258 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_34B_KLD_BT_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN_KALAID.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "새로운 수원을 개발한 덕분에, 축제는 성황리에 열렸다.",
+      "UnitTalk_JPN": "新たな水源を確保できたおかげで、祭りは大盛況となった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": " 친구들! 여기 있었구먼!",
+      "UnitTalk_JPN": " おっ！ここにいたのか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "덕분에 무사히 축제를 개최할 수 있었어. ",
+      "UnitTalk_JPN": "おかげで無事に祭りを開催できたよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "UnitTalk_KOR": "이거 어떻게 감사하다고 해야 할지 모르겠구먼.",
+      "UnitTalk_JPN": "感謝してもしきれないさ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "잔뜩 흥분한 마수들이 달려올 때는 나도 간담이 서늘했는데 말이야! 하하! ",
+      "UnitTalk_JPN": "興奮した魔獣が突進してきた時は、オレも肝が冷えたってもんだよ！ははっ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그 괴물 같은 녀석들에게도 겁먹지 않고 맞서다니, 사나이의 모범이야.",
+      "UnitTalk_JPN": "あの怪物のような奴らにも怯まず立ち向かうとは、まさに漢の鑑だよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "아저씨들! 두 분도 피곤하실 텐데 그러지 마세요!",
+      "UnitTalk_JPN": "おじさんたち！お二人ともお疲れなんですから、長話は禁止です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitTalk_KOR": "허허, 녀석. 야단은.",
+      "UnitTalk_JPN": "ハハ、まったく。叱られてしまったね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "UnitTalk_KOR": "여유 부릴 시간이 어디 있어? 축제를 즐기려면 하루가 아까울 텐데!",
+      "UnitTalk_JPN": "のんびりしてる暇はねぇぞ！一秒たりとも無駄にせず、祭りを満喫しねぇとな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "자, 어서 가세나!",
+      "UnitTalk_JPN": "ほら、行ってこい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_34B_KLD_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "우여곡절에도 불구하고 축제는 성황리에 진행되었고, 즐거운 시간을 보낼 수 있었다.",
+      "UnitTalk_JPN": "紆余曲折はあったものの、祭りは成功に終わり、楽しい時間を過ごすことができた。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 21,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.3
+    },
+    {
+      "Uid": 19,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN_KALAID.png",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.3
+    }
+  ]
+}

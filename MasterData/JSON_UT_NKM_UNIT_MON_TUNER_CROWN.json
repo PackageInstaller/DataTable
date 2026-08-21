@@ -1,0 +1,302 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_VOIDER.txt",
+    "UnitHudHeight": 3.6,
+    "UseRespawnFocus": true,
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "VoiceSeries": [
+         {
+           "DataList": [
+              {
+                "EventFrame": 0,
+               "VoiceName": "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_VOICE_05.wav"
+              }
+           ]
+         }
+       ]
+      },
+      {
+        "StateName": "USN_START",
+          "SoundEvents": [
+            {
+              "EventFrame": 0,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK.wav"
+              ]
+            },
+            {
+              "EventFrame": 0,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_02.wav"
+              ]
+            },
+          ]
+      },
+      {
+        "StateName": "USN_START_FOCUS",
+          "SoundEvents": [
+            {
+              "EventFrame": 3,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_DRONE.wav"
+              ]
+            },
+            {
+              "EventFrame": 31,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_03.wav"
+              ]
+            },
+            {
+              "EventFrame": 77,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_04.wav"
+              ]
+            },
+            {
+              "EventFrame": 92,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_05.wav"
+              ]
+            },
+            {
+              "EventFrame": 107,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_06.wav"
+              ]
+            },
+          ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,          
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "FormationEnemy": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 65,
+            "ReActType": "NRT_DAMAGE_A",
+            // "StopTimeDef": 0.15,
+            // "CameraCrashGap": 0.1,
+            // "CameraCrashTime": 0.2,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+            {
+              "EventFrame": 0,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_07.wav"
+              ]
+            },
+            {
+              "EventFrame": 8,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_VOICE.wav"
+              ]
+            },
+            {
+              "EventFrame": 39,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_08.wav"
+              ]
+            },
+            {
+              "EventFrame": 52,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_HIT.wav"
+              ]
+            }
+          ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 80,
+            "ReActType": "NRT_DAMAGE_A",
+            // "CameraCrashGap": 0.2,
+            // "CameraCrashTime": 0.4,
+            "ReAttackCount": 4,
+            "ReAttackGap": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }        
+        ],
+        "VoiceSeries": [
+         {
+           "DataList": [
+              {
+                "EventFrame": 0,
+               "VoiceName": "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_VOICE_02.wav"
+              }
+           ]
+         }
+       ],
+        "SoundEvents": [
+          {
+              "EventFrame": 0,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_VOICE_02.wav"
+              ]
+            },
+            {
+              "EventFrame": 3,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_09.wav"
+              ]
+            },
+            {
+              "EventFrame": 21,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_10.wav"
+              ]
+            },
+            {
+              "EventFrame": 73,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_HIT_03.wav"
+              ]
+            }
+          ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "FormationMyTeam": "",
+          "FormationEnemy": "SFT_CENTER_TARGET_ONLY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 231,
+            "ReActType": "NRT_DAMAGE_A",
+            // "CameraCrashGap": 0.2,
+            // "CameraCrashTime": 0.4,
+            "ReAttackCount": 8,
+            "ReAttackGap": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "VoiceSeries": [
+         {
+           "DataList": [
+              {
+                "EventFrame": 16,
+               "VoiceName": "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_VOICE_03.wav"
+              }
+           ]
+         }
+       ],
+        "SoundEvents": [
+            {
+              "EventFrame": 5,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_11.wav"
+              ]
+            },
+            {
+              "EventFrame": 16,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_VOICE_03.wav"
+              ]
+            },
+            {
+              "EventFrame": 54,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_12.wav"
+              ]
+            },
+            {
+              "EventFrame": 73,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_13.wav"
+              ]
+            },
+            {
+              "EventFrame": 105,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_14.wav"
+              ]
+            },
+            {
+              "EventFrame": 138,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_15.wav"
+              ]
+            },
+            {
+              "EventFrame": 184,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_16.wav"
+              ]
+            },
+            {
+              "EventFrame": 208,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_CHAIN.wav"
+              ]
+            },
+            {
+              "EventFrame": 224,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_HIT_02.wav"
+              ]
+            }
+          ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "DyingDissolveStartTime": 1.16,
+        "SoundEvents": [
+            {
+              "EventFrame": 0,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_17.wav"
+              ]
+            },
+            {
+              "EventFrame": 6,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_VOICE_04.wav"
+              ]
+            },
+            {
+              "EventFrame": 31,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_18.wav"
+              ]
+            }
+          ]
+      }
+    ]
+  }
+}

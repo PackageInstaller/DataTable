@@ -1,0 +1,67 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: HEAL_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "HtStrId" : "HT_NKM_UNIT_S_KINGDOM_PRAY_SPECIAL",
+          "HpFactor" : 1800
+        },
+        {
+          "HtStrId" : "HT_NKM_UNIT_S_KINGDOM_PRAY_HYPER",
+          "HpFactor" : 1250
+        },
+        {
+          "HtStrId" : "HT_NKM_UNIT_S_EASTERN_OWL_HYPER",
+          "HpFactor" : 1250
+        },
+        {
+          "HtStrId" : "HT_NKM_UNIT_S_SAINTESS_ELF_SPECIAL",
+          "HpFactor" : 1800
+        },
+        {
+          "HtStrId" : "HT_NKM_UNIT_S_SAINTESS_ELF_HYPER",
+          "HpFactor" : 2000
+        },
+        {
+          "HtStrId" : "HT_NKM_UNIT_S_OFFICER_POLICE_SPECIAL",
+          "HpFactor" : 1800
+        },
+        {
+          "HtStrId" : "HT_NKM_UNIT_S_OFFICER_POLICE_HYPER",
+          "HpFactor" : 2000
+        },
+        {
+          "HtStrId" : "HT_NKM_UNIT_S_LPU_POST_SPECIAL",
+          "HpFactor" : 1300
+        },
+        {
+          "HtStrId" : "HT_NKM_UNIT_S_LPU_POST_HYPER",
+          "HpFactor" : 1000
+        },
+        {
+          "HtStrId" : "HT_NKM_UNIT_MON_KNIGHT_AID_ELITE_SPECIAL",
+          "HpFactor" : 1500
+        },
+        {
+          "HtStrId" : "HT_NKM_UNIT_MON_KINGDOM_PRAY_ELITE_EASY_SPECIAL",
+          "HpFactor" : 1800
+        },
+        {
+          "HtStrId" : "HT_NKM_UNIT_MON_KINGDOM_PRAY_ELITE_EASY_HYPER",
+          "HpFactor" : 1250
+        },
+        {
+          "HtStrId" : "HT_CONTINUOUS_HEAL",
+          "TargetMaxHpFactor" : 1500
+        },
+        {
+          "HtStrId" : "HT_CONTINUOUS_HEAL_ATK",
+          "AtkFactor" : 8000
+        },
+        {
+          "HtStrId" : "HT_ORBITAL_ARRAY_OMEGA",
+          "AllyAllHpFactor" : 200
+        }
+    ]
+}

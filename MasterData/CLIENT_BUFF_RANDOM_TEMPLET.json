@@ -1,0 +1,177 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: BUFF_RANDOM_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "RandomBuffId" : 1,
+          "RandomBuffStrId" : "TEST_RANDOM_BUFF_01",
+          "RandomBuffName" : "SI_RANDOM_POSITIVE_BUFF",
+          "IconName" : "BUFF_RANDOM_POSITIVE.png",
+          "PositiveType" : "PT_POSITIVE",
+          "BuffStrId" : ["BI_ATTACK_INCREASE", "BI_DEFENSE_INCREASE", "BI_CRITICAL_DAMAGE_INCREASE"],
+          "BuffCount" : 2
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "RandomBuffId" : 2,
+          "RandomBuffStrId" : "TEST_RANDOM_BUFF_02",
+          "RandomBuffName" : "SI_RANDOM_POSITIVE_BUFF",
+          "IconName" : "BUFF_RANDOM_POSITIVE.png",
+          "PositiveType" : "PT_POSITIVE",
+          "BuffStrId" : ["BI_ATTACK_INCREASE", "BI_DEFENSE_INCREASE", "BI_CRITICAL_DAMAGE_INCREASE", "BI_HIDE", "BI_DEBUFFBAN"],
+          "BuffCount" : 2
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "RandomBuffId" : 3,
+          "RandomBuffStrId" : "TEST_RANDOM_BUFF_03",
+          "RandomBuffName" : "SI_RANDOM_POSITIVE_BUFF",
+          "IconName" : "BUFF_RANDOM_POSITIVE.png",
+          "PositiveType" : "PT_POSITIVE",
+          "BuffStrId" : ["BI_BARRIER", "BI_SKILL_NULLIFIER"],
+          "BuffCount" : 1
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "RandomBuffId" : 4,
+          "RandomBuffStrId" : "TEST_RANDOM_BUFF_04",
+          "RandomBuffName" : "SI_RANDOM_POSITIVE_BUFF",
+          "IconName" : "BUFF_RANDOM_POSITIVE.png",
+          "PositiveType" : "PT_POSITIVE",
+          "BuffStrId" : ["BI_BARRIER", "BI_CONTINUOUS_HEAL"],
+          "BuffCount" : 1
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "RandomBuffId" : 5,
+          "RandomBuffStrId" : "TEST_RANDOM_DEBUFF_01",
+          "RandomBuffName" : "SI_RANDOM_NEGATIVE_BUFF",
+          "IconName" : "DEBUFF_RANDOM_NEGATIVE.png",
+          "PositiveType" : "PT_NEGATIVE",
+          "BuffStrId" : ["BI_ATTACK_DECREASE", "BI_DEFENSE_DECREASE", "BI_BURN"],
+          "BuffCount" : 2
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "RandomBuffId" : 6,
+          "RandomBuffStrId" : "TEST_RANDOM_DEBUFF_02",
+          "RandomBuffName" : "SI_RANDOM_NEGATIVE_BUFF",
+          "IconName" : "DEBUFF_RANDOM_NEGATIVE.png",
+          "PositiveType" : "PT_NEGATIVE",
+          "BuffStrId" : ["BI_BURN", "BI_BLEEDING", "BI_POISON"],
+          "BuffCount" : 2
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "RandomBuffId" : 7,
+          "RandomBuffStrId" : "TEST_RANDOM_DEBUFF_03",
+          "RandomBuffName" : "SI_RANDOM_NEGATIVE_BUFF",
+          "IconName" : "DEBUFF_RANDOM_NEGATIVE.png",
+          "PositiveType" : "PT_NEGATIVE",
+          "BuffStrId" : ["BI_AGGRO", "BI_SPEED_DECREASE"],
+          "BuffCount" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RandomBuffId" : 10431,
+          "RandomBuffStrId" : "RBI_BUNNY_SCISSORS_1",
+          "RandomBuffName" : "SI_PINBALL_TIME",
+          "IconName" : "BUFF_PINBALL_TIME.png",
+          "PositiveType" : "PT_POSITIVE",
+          "BuffStrId" : ["BI_BUNNY_SCISSORS_1", "BI_BUNNY_SCISSORS_2"],
+          "BuffCount" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RandomBuffId" : 15071,
+          "RandomBuffStrId" : "RBI_LPU_POST_1",
+          "RandomBuffName" : "SI_EXPRESS_DELIVERY",
+          "IconName" : "BUFF_RANDOM_POSITIVE.png",
+          "PositiveType" : "PT_POSITIVE",
+          "BuffStrId" : ["BI_ATTACK_INCREASE", "BI_DEFENSE_INCREASE", "BI_SPEED_INCREASE", "BI_CONTINUOUS_HEAL"],
+          "BuffCount" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RandomBuffId" : 15072,
+          "RandomBuffStrId" : "RBI_LPU_POST_2",
+          "RandomBuffName" : "SI_EXPRESS_DELIVERY",
+          "IconName" : "BUFF_RANDOM_POSITIVE.png",
+          "PositiveType" : "PT_POSITIVE",
+          "BuffStrId" : ["BI_ATTACK_INCREASE", "BI_DEFENSE_INCREASE", "BI_SPEED_INCREASE", "BI_CONTINUOUS_HEAL"],
+          "BuffCount" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RandomBuffId" : 320362,
+          "RandomBuffStrId" : "RBI_BODYGUARD_HANDS_1",
+          "RandomBuffName" : "SI_DEAD_SPIN",
+          "IconName" : "DEBUFF_RANDOM_NEGATIVE.png",
+          "PositiveType" : "PT_NEGATIVE",
+          "BuffStrId" : ["BI_ATTACK_DECREASE", "BI_DEFENSE_DECREASE", "BI_SPEED_DECREASE"],
+          "BuffCount" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RandomBuffId" : 320363,
+          "RandomBuffStrId" : "RBI_BODYGUARD_HANDS_2",
+          "RandomBuffName" : "SI_WILD_SYMBOL",
+          "IconName" : "BUFF_RANDOM_POSITIVE.png",
+          "PositiveType" : "PT_POSITIVE",
+          "BuffStrId" : ["BI_ATTACK_INCREASE", "BI_DEFENSE_INCREASE", "BI_SPEED_INCREASE"],
+          "BuffCount" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RandomBuffId" : 6001,
+          "RandomBuffStrId" : "RBI_POTEN_PASSIVE_25001",
+          "RandomBuffName" : "SI_RANDOM_POSITIVE_BUFF",
+          "IconName" : "BUFF_RANDOM_POSITIVE.png",
+          "PositiveType" : "PT_POSITIVE",
+          "BuffStrId" : ["BI_ATTACK_INCREASE", "BI_DEFENSE_INCREASE", "BI_EFFECT_HIT_INCREASE", "BI_EFFECT_EVADE_INCREASE"],
+          "BuffCount" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RandomBuffId" : 6002,
+          "RandomBuffStrId" : "RBI_CHARM_1050421",
+          "RandomBuffName" : "SI_RANDOM_POSITIVE_BUFF",
+          "IconName" : "BUFF_RANDOM_POSITIVE.png",
+          "PositiveType" : "PT_POSITIVE",
+          "BuffStrId" : ["BI_BARRIER", "BI_EFFECT_HIT_INCREASE", "BI_EFFECT_EVADE_INCREASE"],
+          "BuffCount" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RandomBuffId" : 33003011,
+          "RandomBuffStrId" : "RBI_FALLEN_DUALSWORD_1",
+          "RandomBuffName" : "SI_TWILIGHT_GRACE",
+          "IconName" : "BUFF_TWILIGHT_GRACE.png",
+          "PositiveType" : "PT_POSITIVE",
+          "BuffStrId" : ["BI_ATTACK_INCREASE", "BI_CRITICAL_CHANCE_INCREASE", "BI_CRITICAL_DAMAGE_INCREASE"],
+          "BuffCount" : 1
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "RandomBuffId" : 9991,
+          "RandomBuffStrId" : "RBI_TEST_1",
+          "RandomBuffName" : "SI_RANDOM_NEGATIVE_TEST1",
+          "IconName" : "DEBUFF_RANDOM_NEGATIVE.png",
+          "PositiveType" : "PT_NEGATIVE",
+          "BuffStrId" : ["BI_ATTACK_DECREASE", "BI_DEFENSE_DECREASE", "BI_BURN"],
+          "BuffCount" : 1
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "RandomBuffId" : 9992,
+          "RandomBuffStrId" : "RBI_TEST_2",
+          "RandomBuffName" : "SI_RANDOM_NEGATIVE_TEST2",
+          "IconName" : "DEBUFF_RANDOM_NEGATIVE.png",
+          "PositiveType" : "PT_NEGATIVE",
+          "BuffStrId" : ["BI_BURN", "BI_BLEEDING", "BI_POISON"],
+          "BuffCount" : 1
+        }
+    ]
+}

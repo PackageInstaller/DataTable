@@ -1,0 +1,1077 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_WILD_HOG_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 3,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAYING_FIELD.png",
+      "StartBgmFileName": "MUSIC_MONASTIR.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_01.wav",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "CameraOffset": "TWIN_1",
+      "UnitPos": "POS6",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "호그 그랑프리! 선두의 영광을 향해 빛나는 선수들이 모였습니다!",
+      "UnitTalk_JPN": "ホッググランプリ！一位の栄光を目指して、輝く選手たちが集まりました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "어느덧 오늘의 마지막 경기로군요!",
+      "UnitTalk_JPN": "いよいよ本日の最終レースとなります！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "자아, 과연 최후의 승부에서 영광을 거머쥐는 자는 누구일 것인지!",
+      "UnitTalk_JPN": "さぁ、果たして勝利の栄光を掴むのは誰なのか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "할리와 함께, 호그 레이싱이 열린다는 경기장에 구경을 하러 왔는데…",
+      "UnitTalk_JPN": "ハーレーと一緒に、ホッグレースが開催される競技場に来たが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "으아아아아…!",
+      "UnitTalk_JPN": "うぇぇぇぇぇん…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "어떻게 배팅한 호그마다 전부 꼴등으로 들어오는 거냐구!",
+      "UnitTalk_JPN": "アタシが賭けたホッグ、毎回ビリになるんですけど！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "이건 꿈이야, 그것도 끔찍한 악몽…!",
+      "UnitTalk_JPN": "これは夢よ…うん、最悪の夢…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "못 본 척하자.",
+          "JumpAnchorStringId_JPN": "見て見ぬフリしよう。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "저런 사람하고 엮이면 안 돼.",
+          "JumpAnchorStringId_JPN": "あんな人と関わっちゃダメだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "이 목소리는…?",
+      "UnitTalk_JPN": "この声は…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_1"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "단장! 와 줄 줄 알았어!",
+      "UnitTalk_JPN": "だんちょーう！来てくれると思ってたよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그렇다는데? 선약이 있었나 봐?",
+      "UnitTalk_JPN": "…らしいが？先約があったのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "절대 아닙니다.",
+          "JumpAnchorStringId_JPN": "知らない人です。"
+        }
+      ]
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "마침 잘 왔어! 돈 좀 빌려 주세요!",
+      "UnitTalk_JPN": "ナイスタイミングだよーん！お金貸して！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "거절한다!",
+          "JumpAnchorStringId_JPN": "断る！"
+        }
+      ]
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "제바알! 오늘 경기 전부 탈탈 털렸단 말이야!",
+      "UnitTalk_JPN": "おねがぁい！今日のレースで、すっからかんになっちゃったの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "내 직감이 외치고 있어! 마지막에 전부 만회할 수 있을 거라고!",
+      "UnitTalk_JPN": "アタシの直感が叫んでる！最後のレースで全部取り返せるって！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "호오, 여기는 배팅도 가능한 건가? ",
+      "UnitTalk_JPN": "ほぉ、ここは賭けもできんのか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "하긴 내기 없는 레이싱은 좀 심심하긴 하지.",
+      "UnitTalk_JPN": "たしかに…賭けがなきゃ、ちと退屈かもしれねぇしな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "앗, 할리 너도 배팅에 관심 있구나?",
+      "UnitTalk_JPN": "あっ！ハーレーも賭けに興味ある感じ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "잘됐네! 처음이면 내가 가르쳐 줄게!",
+      "UnitTalk_JPN": "ちょうどよかった！初めてなら、アタシが教えてあげるよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아니, 나는 그냥 구경하는 걸로 충분한데.",
+      "UnitTalk_JPN": "いや、俺は見てるだけで十分だぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "기왕 경기장에 왔잖아. 한 번 정도 경험해 보는 게 뭐 어때서.",
+      "UnitTalk_JPN": "せっかく競技場に来たんだし～、一回ぐらい経験してみるのもいいんじゃない？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "으음… 그럴까?",
+      "UnitTalk_JPN": "んー…そうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "좋아. 그럼 여기 카탈로그 중에서 골라 볼래?",
+      "UnitTalk_JPN": "よしっ。じゃあ、このカタログの中から選んでみて？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "전문가들이 분석한 내용도 들어 있으니까.",
+      "UnitTalk_JPN": "専門家が分析した情報も載ってるよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아니. 고맙지만 필요없어.",
+      "UnitTalk_JPN": "あんがとよ。でも、俺には必要ねぇ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "레이싱에서 중요한 건 지금이야. 내 눈으로 직접 확인하는 편이 나아.",
+      "UnitTalk_JPN": "レースで重要なのは、今この瞬間だ。俺の目で直接確かめた方がいい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 91,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "패덕에서는 경기에 나갈 호그들이 막바지 준비 중이었다….",
+      "UnitTalk_JPN": "パドックでは、レースに出るホッグたちが最終準備をしていた…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "오, 저 덩치 큰 호그 어때? 멀리서 봐도 기운이 넘치잖아.",
+      "UnitTalk_JPN": "おっ、あの大きいホッグはどう？ここからでも迫力が感じられるよ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "카탈로그에는… 지난해 성적도 상위권!",
+      "UnitTalk_JPN": "えーと、カタログでは…去年の成績も上位じゃん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "확실해! 내 직감으로는 분명히 쟤가 이번 경주의 1등이야!",
+      "UnitTalk_JPN": "間違いないよ！アタシの直感では、あの子が一位に輝くはず！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "USN_UI_REST",
+      "UnitTalk_KOR": "나쁘지는 않아. 하지만….",
+      "UnitTalk_JPN": "悪くはねぇが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "마음에 걸리는 거 있어?",
+          "JumpAnchorStringId_JPN": "何か気にかかることでもあるの？"
+        }
+      ]
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "상태가 안 좋은 것 같아. 배앓이라도 하나…",
+      "UnitTalk_JPN": "調子が悪そうなんだよ。腹でも壊したか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "에이, 설마. 경기에 나오면서 검사도 안 했으려고.",
+      "UnitTalk_JPN": "えー、まさか。レースに出る前に検査してるはずだもん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "글쎄. 원래 저런 기 센 녀석들일수록 못 버틸 때까지 꾹꾹 참거든.",
+      "UnitTalk_JPN": "さぁな。ああいう気が強い奴ほど、限界まで我慢するもんなんだぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "어디, 다른 녀석들은….",
+      "UnitTalk_JPN": "さて、他の奴らは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": false,
+      "WaitTime": 0.75,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "정했어. 저기 있는 녀석한테 거는 걸로.",
+      "UnitTalk_JPN": "決めた。俺はアイツに賭ける。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "에에? 저 회색 호그 말이야?",
+      "UnitTalk_JPN": "えぇー？あのグレーのホッグのこと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "덩치도 작고 땅딸막해서 전혀 빨라 보이지 않는데.",
+      "UnitTalk_JPN": "ちっちゃいし、ずんぐりむっくりで全然速そうに見えないけど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "게다가 카탈로그에는 이번이 처음으로 출전하는 경기래.",
+      "UnitTalk_JPN": "カタログにも、これが初レースだって書いてるよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "작은 건 나도 마찬가지야. 덩치가 작다고 약하다는 법은 없어.",
+      "UnitTalk_JPN": "ちっせぇのは俺も同じだ。図体が小さいからって、弱いとは限らないもんだぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그리고 저 녀석…. 눈빛이 달라.",
+      "UnitTalk_JPN": "それに、アイツ…目つきが違う。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "너야말로 저 녀석한테 걸어 보는 게 어때?",
+      "UnitTalk_JPN": "お前こそ、アイツに賭けてみんのはどうだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "헤에…. 초심자면서 자신만만하네.",
+      "UnitTalk_JPN": "ふーん…初心者なのに自信満々だね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "좋아! 누구 안목이 맞는지 승부야!",
+      "UnitTalk_JPN": "よし！どっちが見る目があるのか、勝負だよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "진 사람은 이긴 사람한테 카페 스트레가의 한정 디저트를 사 주는 걸로! 어때?",
+      "UnitTalk_JPN": "負けた人が、カフェ・ストレガの限定スイーツをおごるってのはどう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "호오, 승부란 말이지.",
+      "UnitTalk_JPN": "ほぉ、勝負ってことだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "좋아! 어디 한번 해보자고!",
+      "UnitTalk_JPN": "よっしゃあ！やってやろうじゃねぇかぁ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 97,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 곧이어 시작된 경기의 결과는….",
+      "UnitTalk_JPN": "そして、すぐに始まったレースの結果は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "WaitClick": false,
+      "WaitTime": 0.75,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HORSES_STEP.wav",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "지난해 상위권의 성적을 거두었던 마르스! 맥을 못 춥니다! ",
+      "UnitTalk_JPN": "去年の上位入賞者だったマース！力を出し切れません！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "WaitClick": false,
+      "WaitTime": 0.75,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "말씀드리는 순간, 대열에서 치고 나가는 회색 그림자!",
+      "UnitTalk_JPN": "そう言っている間に、隊列から飛び出す灰色の影！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "결승선까지 얼마 남지 않은 상황! 이대로 승부가…!",
+      "UnitTalk_JPN": "ゴールまで残りわずか！このまま勝負が決まるのか…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_01.wav",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "이변이다! 마지막 경기의 승자는 회색의 괴물!",
+      "UnitTalk_JPN": "番狂わせだ！最後のレースの勝者は、灰色の怪物だぁぁぁ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "다른 선수들에게 치일 만큼 작은 몸집인데도, 단독 선두로 결승선을 끊었습니다!",
+      "UnitTalk_JPN": "他の選手に埋もれるほどの小さな体が！トップでゴールテープを切りました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "역시! 할 수 있을 줄 알았어!",
+      "UnitTalk_JPN": "やっぱりなぁ！予想通りだぜ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아아아아아! 또 꼴등이라니!",
+      "UnitTalk_JPN": "うあぁぁぁぁぁ！またビリだなんて！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "이럴 수는 없어…. 이럴 수는 없는 거야….",
+      "UnitTalk_JPN": "こんなこと…あっていい訳ないのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그러길래 바꾸라고 했잖냐.",
+      "UnitTalk_JPN": "だから変えるように言ったろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "저 회색털, 눈빛을 보고 느꼈거든.",
+      "UnitTalk_JPN": "あのグレーの奴、目つきが違ったんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "승부욕이 장난 아니었어. 저런 녀석들은 어떻게든 일을 저지른단 말이지.",
+      "UnitTalk_JPN": "勝負欲が半端じゃなかった。ああいう奴らは、やってくれるもんなんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "한정 디저트라고 했지? 약속은 지켜라?",
+      "UnitTalk_JPN": "限定スイーツって言ったよな？約束守ってくれよぉ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "흑… 흐흑…",
+      "UnitTalk_JPN": "ぐすっ…ぐすんっ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…응?",
+      "UnitTalk_JPN": "…あれ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "잠깐만. 그럼 넌 잠깐 본 것만으로도 어떤 호그가 1등을 할지 알았다는 거잖아?",
+      "UnitTalk_JPN": "ちょっと見ただけで、どのホッグが一位になるか分かったってことでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "뭐… 기백을 느끼는 거지. 결과는 해봐야 알지만.",
+      "UnitTalk_JPN": "ま…気迫を感じたんだよ。結果は俺にも分かんねぇってもんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.75,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "저기, 나랑 동업 안 할래?",
+      "UnitTalk_JPN": "ねぇねぇ、アタシと組まない？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "동업? 무슨 동업?",
+      "UnitTalk_JPN": "組む？何をだぁ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "어떤 호그한테 배팅해야 하는지만 알려 줘! 나머지는 내가 할 테니까!",
+      "UnitTalk_JPN": "どのホッグに賭ければいいか教えてくれるだけでいいの！あとはアタシがやるから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "우리 둘이 힘을 합치면 이 업계에서 최고의 콤비가 될 거야!",
+      "UnitTalk_JPN": "アタシたち二人が力を合わせれば、この業界で最高のコンビになれるよん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "관둬. 재미로 하는 내기를 돈벌이로 삼아서 되겠냐.",
+      "UnitTalk_JPN": "やめとけ。遊びを金儲けの手段にすんじゃねぇ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "제바알! 밥 먹듯이 패배만 하는 내가 가엾지도 않아?",
+      "UnitTalk_JPN": "おねがぁい！いつも負けてばっかりのアタシが、かわいそうじゃないの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "나도 가끔은 승리의 희열을 만끽하고 싶다고!",
+      "UnitTalk_JPN": "アタシだってたまには、勝利の喜びを味わってみたいの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "으윽…! 내, 내가 알 바냐?!",
+      "UnitTalk_JPN": "ぐぬぬっ…！そ、そんなこと俺は知らねぇよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "단장, 나 먼저 간다!",
+      "UnitTalk_JPN": "団長、先に行くからな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "앗! 기다려!!",
+      "UnitTalk_JPN": "あーっ！待ってよ！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE"
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "줄행랑을 치는 할리와 뒤쫓아 가는 루나를 보며 생각했다.",
+      "UnitTalk_JPN": "急いで逃げるハーレーと、その後を追うルナを見てこう思った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "역시 경주는 보는 걸로 만족하자… 라고.",
+      "UnitTalk_JPN": "やっぱりレースは、見るだけが一番だ…",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_KINGDOM_KNIGHT_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

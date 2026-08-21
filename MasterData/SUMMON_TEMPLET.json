@@ -1,0 +1,245 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/Summon.jsonc",
+  "_Version": 1,
+  "Data": [
+    {
+      "SummonGroupId": 9999, // 테스트용 데이터
+      "SummonData": [
+        {
+          "SpawnPosIndex": 1,
+          "UnitStrId": "NKM_UNIT_MON_KNIGHT_SWORD_RED_06",
+          "SpecialSkillAvailable": true,
+          "ChangeAdjustType": "NUAT_ORDER",
+          "UnitLevel": 30,
+          "AddStatData": {
+            "NST_NV_RATE_ATK": -2500,
+            "NST_NV_RATE_HP": -2000,
+            "NST_NV_RATE_TURN_SPEED": -2000
+          }
+        },
+        {
+          "SpawnPosIndex": 3,
+          "UnitStrId": "NKM_UNIT_MON_KNIGHT_SWORD_RED_06",
+          "ChangeAdjustType": "NUAT_ORDER",
+          "UnitLevel": 30,
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            "NST_NV_RATE_ATK": -2500,
+            "NST_NV_RATE_HP": -2000,
+            "NST_NV_RATE_TURN_SPEED": -2000
+          }
+        }
+      ]
+    },
+    {
+      "SummonGroupId": 1001, // 특수 토벌 페르세스_01
+      "SummonData": [
+        {
+          "SpawnPosIndex": 0,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_01",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        },
+        {
+          "SpawnPosIndex": 4,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_01",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        }
+      ]
+    },
+    {
+      "SummonGroupId": 1002, // 특수 토벌 페르세스_02
+      "SummonData": [
+        {
+          "SpawnPosIndex": 0,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_02",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        },
+        {
+          "SpawnPosIndex": 4,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_02",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        }
+      ]
+    },
+    {
+      "SummonGroupId": 1003, // 특수 토벌 페르세스_03
+      "SummonData": [
+        {
+          "SpawnPosIndex": 0,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_03",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        },
+        {
+          "SpawnPosIndex": 4,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_03",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        }
+      ]
+    },
+    {
+      "SummonGroupId": 1004, // 특수 토벌 페르세스_04
+      "SummonData": [
+        {
+          "SpawnPosIndex": 0,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_04",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        },
+        {
+          "SpawnPosIndex": 4,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_04",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        }
+      ]
+    },
+    {
+      "SummonGroupId": 1005, // 특수 토벌 페르세스_05
+      "SummonData": [
+        {
+          "SpawnPosIndex": 0,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_05",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        },
+        {
+          "SpawnPosIndex": 4,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_05",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        }
+      ]
+    },
+    {
+      "SummonGroupId": 1006, // 특수 토벌 페르세스_06
+      "SummonData": [
+        {
+          "SpawnPosIndex": 0,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_06",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        },
+        {
+          "SpawnPosIndex": 4,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_06",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        }
+      ]
+    },
+    {
+      "SummonGroupId": 1007, // 특수 토벌 페르세스_07
+      "SummonData": [
+        {
+          "SpawnPosIndex": 0,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_07",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        },
+        {
+          "SpawnPosIndex": 4,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_07",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        }
+      ]
+    },
+    {
+      "SummonGroupId": 1008, // 특수 토벌 페르세스_08
+      "SummonData": [
+        {
+          "SpawnPosIndex": 0,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_08",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        },
+        {
+          "SpawnPosIndex": 4,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_08",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        }
+      ]
+    },
+    {
+      "SummonGroupId": 1009, // 특수 토벌 페르세스_09
+      "SummonData": [
+        {
+          "SpawnPosIndex": 0,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_09",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        },
+        {
+          "SpawnPosIndex": 4,
+          "UnitStrId": "NKM_UNIT_MON_ARCHON_SPEAR_GREEN_EQUIP3_09",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        }
+      ]
+    },
+    {
+      "SummonGroupId": 1010, // 카본펑크 칸
+      "SummonData": [
+        {
+          "SpawnPosIndex": 0,
+          "UnitStrId": "NKM_UNIT_MON_HOODLUM_TORCH_BLACK_EVENT_00",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        },
+        {
+          "SpawnPosIndex": 4,
+          "UnitStrId": "NKM_UNIT_MON_HOODLUM_TORCH_BLACK_EVENT_00",
+          "SpecialSkillAvailable": true,
+          "AddStatData": {
+            //"NST_NV_RATE_HP": -3000
+          }
+        }
+      ]
+    }
+  ]
+}

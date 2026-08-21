@@ -1,0 +1,79 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_ELF_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_KINDERGARTEN.png",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "임시 교사를 맡은 엘리사가 아이들을 어떻게 대해야 할지 고민 중이다. 어떻게 할까?",
+      "UnitTalk_JPN": "臨時教師を務めるエリサは、子どもたちにどう接すべきか悩んでいる。どうすればいい？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "아이들이 좋아하는 이야기를 해줘.",
+          "JumpAnchorStringId_JPN": "子どもたちが好きな話をしてあげて。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "단호하게 수업을 해봐.",
+          "JumpAnchorStringId_JPN": "きっぱりと授業を進めてみよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "엘리사는 단호하게 수업의 진도를 나갔다.",
+      "UnitTalk_JPN": "エリサは、振り回されず授業を進めた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 5,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "엘리사는 아이들이 좋아하는 이야기를 해줬다.",
+      "UnitTalk_JPN": "エリサは子どもたちが好きな話をした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 6,
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

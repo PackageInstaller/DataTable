@@ -1,0 +1,1640 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WILD_HOG_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_REQUEST.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "할리가 오기를 기다리면서 게시판에 붙은 의뢰서들을 살펴보는 중이었다.",
+      "UnitTalk_JPN": "ハーレーが来るのを待ちながら、掲示板に張られた依頼書を見ていたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitTalk_KOR": "갑자기 굉음과 함께 건물이 흔들렸다.",
+      "UnitTalk_JPN": "突然、轟音が鳴り響くと同時に建物が揺れた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "실내 공사라도 하는 중이야?",
+          "JumpAnchorStringId_JPN": "館内で工事でもしてるのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아뇨. 제가 파악하고 있는 한, 캔들 스퀘어에 보수 내지 증축 일정은 없습니다.",
+      "UnitTalk_JPN": "いえ。私が知る限り、キャンドル・スクエアで補修や増築の予定はありませんが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "소리는… 밖에서 들리는 것 같군요.",
+      "UnitTalk_JPN": "音は…外から聞こえるようです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "무슨 일인지 확인해 보고 오겠습니다. 잠시만 기다려 주시길.",
+      "UnitTalk_JPN": "私が確認してまいりますので、少々お待ちくださいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "같이 가자.",
+          "JumpAnchorStringId_JPN": "一緒に行こう。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "사람이 필요할지도 모르니까.",
+          "JumpAnchorStringId_JPN": "人手が必要かもしれないし。"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "캔들 스퀘어에는 평소에도 신세를 지고 있다.",
+      "UnitTalk_JPN": "キャンドル・スクエアには、いつもお世話になっている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "도울 수 있는 일이라면 성심껏 돕는 편이 좋을 것이다.",
+      "UnitTalk_JPN": "私にできることなら、快く手助けしてあげた方がいいだろう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "좋습니다. 그럼 함께 가시죠.",
+      "UnitTalk_JPN": "良いでしょう。それでは、行きましょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_BELL.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "소음의 원인은 가까운 곳에 있었다.",
+      "UnitTalk_JPN": "騒音の原因は、近いところにあった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "오, 단장! 기다리고 있었어?",
+      "UnitTalk_JPN": "おっ、団長！待ってたのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이리 와 봐! 단장이랑 만나고 싶어 하는 녀석이 있거든!",
+      "UnitTalk_JPN": "こっちに来てみろよぉ！団長に会わせたい奴がいんだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "할리 옆에는 커다란 멧돼지…",
+      "UnitTalk_JPN": "ハーレーの隣には、巨大なイノシシ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOG_GRUNT_2.wav",
+      "UnitTalk_KOR": "그러니까 바이크 호그가 거친 숨을 몰아쉬고 있었다.",
+      "UnitTalk_JPN": "えっと、バイクホッグが息を切らしていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "웬 바이크 호그야?",
+          "JumpAnchorStringId_JPN": "なんでバイクホッグなの？"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "지난번에 단장이 그랬잖아. 친구 쪽이 더 좋다고.",
+      "UnitTalk_JPN": "この前、団長が言っただろ？ダチの方がいいって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "하지만 그러려면 우선 사나이가 되어야지.",
+      "UnitTalk_JPN": "そのためには、まずは漢にならねぇとな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그러니까 바이크 호그다.",
+      "UnitTalk_JPN": "だからバイクホッグだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "갑자기 논리가 사라져 버렸다.",
+      "UnitTalk_JPN": "話の流れが読めない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "바이크 호그랑 사나이…",
+          "JumpAnchorStringId_JPN": "バイクホッグと、漢…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "둘 사이에 어떤 상관관계가?",
+          "JumpAnchorStringId_JPN": "この二つに何の関係があるんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "푸하하하!",
+      "UnitTalk_JPN": "ぷはははっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "재밌는 농담이었어. 사나이가 달리는 데 바이크 호그 말고 다른 선택지가 있을 리 없잖아.",
+      "UnitTalk_JPN": "おもしれぇ冗談だな！漢が走るのに、バイクホッグ以外の選択肢はねぇってのに。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "부정할 수 없군요.",
+      "UnitTalk_JPN": "否定できませんね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "클레어?!",
+          "JumpAnchorStringId_JPN": "クレア！？"
+        }
+      ]
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "저 말을 납득하는 거야?",
+          "JumpAnchorStringId_JPN": "同じ意見なのか！？"
+        }
+      ]
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "물론입니다, 단장님.",
+      "UnitTalk_JPN": "もちろんです、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "주인과 호그 사이의 굳건한 유대, 거친 진동을 이겨내고 질주하는 도전 정신.",
+      "UnitTalk_JPN": "主とホッグの固い絆…そして激しい揺れに打ち勝ち、走り抜くチャレンジ精神…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "바이크 호그는 사나이입니다.",
+      "UnitTalk_JPN": "バイクホッグとは、漢です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐야, 메이드면서 꽤 잘 알고 있잖아.",
+      "UnitTalk_JPN": "お？メイドなのに詳しいんだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "혹시 폭주단 출신이야?",
+      "UnitTalk_JPN": "もしかして、暴走族出身か？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.2,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아뇨! 절대로! 그럴 리가요!",
+      "UnitTalk_JPN": "いえ！絶対に！そんな訳ありませんから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…크흠, 여정 단원이 라이더로 활동하셨다는 소식을 듣고 공부해 뒀을 뿐입니다.",
+      "UnitTalk_JPN": "…コホン。旅の団員がライダーとして活動されていたという話を聞き、勉強しておいただけです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "흐음, 그래?",
+      "UnitTalk_JPN": "ほぉ、そう",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐, 아무튼. 메이드가 말한 대로야, 단장.",
+      "UnitTalk_JPN": "ま、とにかく。メイドの言う通りだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "진정한 사나이만이 우리 헬 세이비어의 친구가 될 수 있지.",
+      "UnitTalk_JPN": "真の漢だけが、ヘルセイヴァーのダチになれんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "다시 말해 나랑 진심으로 친구가 되기로 각오했다면,",
+      "UnitTalk_JPN": "改めて、俺と真のダチになる覚悟ができたなら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "적어도 어깨를 나란히 하고 달릴 정도는 돼야 해.",
+      "UnitTalk_JPN": "少なくとも、肩を並べて走れるぐらいにはならねぇとな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "과격한 논리에 혼란스러웠지만… ",
+      "UnitTalk_JPN": "論理が飛躍していて、理解が追いつかないが… ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "바이크 호그를 몬다는 건 폭주단의 통과 의례인 모양이다.",
+      "UnitTalk_JPN": "バイクホッグに乗るのが、暴走族の通過儀礼のようなものらしい。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래서 단장을 위해 이 녀석을 특별히 찾아왔어.",
+      "UnitTalk_JPN": "だから、団長のためにコイツを特別に用意したんだぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "자, 인사해.",
+      "UnitTalk_JPN": "さぁ、挨拶しろよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잘 부탁해…?",
+          "JumpAnchorStringId_JPN": "よろしく…？"
+        }
+      ]
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOG_GRUNT_1.wav",
+      "UnitNameString": [
+        "SI_BIKEHOG"
+      ],
+      "UnitTalk_KOR": "크르릉…!",
+      "UnitTalk_JPN": "グルルル…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오오, 되게 좋아하네. 단장이랑 죽이 잘 맞을 것 같더라니.",
+      "UnitTalk_JPN": "おっ、喜んでんなぁ。団長と相性が合いそうだと思ってたんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "돼지가 아니라 맹수 아냐?",
+          "JumpAnchorStringId_JPN": "イノシシじゃなくて、猛獣じゃないの？"
+        }
+      ]
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "울음소리가 전혀 다른데?",
+          "JumpAnchorStringId_JPN": "鳴き声が全然違うけど。"
+        }
+      ]
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그렇지. 그게 바로 <color=#F7BE45>카바노치</color>의 매력이야.",
+      "UnitTalk_JPN": "そうだ。これこそがまさに<color=#F7BE45>カバノス</color>の魅力だからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "어때, 듣기만 해도 가슴 떨리는 배기음이? 죽여 주지?",
+      "UnitTalk_JPN": "どうだ、排気音を聞いてるだけで胸が高ぶるだろ？たまんねぇよな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다른 의미로 가슴이 떨리고 있다…",
+      "UnitTalk_JPN": "違う意味でドキドキする…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "자, 어서 올라타 봐. 누가 주인인지 가르쳐 주자고.",
+      "UnitTalk_JPN": "よぉし、早く乗ってみろ。主だってことを教えてやらねぇとな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "잠시 기다려 주세요.",
+      "UnitTalk_JPN": "少々お待ちください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "<color=#F7BE45>카바노치</color>는 걸리적거리는 모든 걸 거침없이 부수며 질주하는 난폭한 종입니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>カバノス</color>は…すべての障害物をためらいなく破壊し、暴走する乱暴なホッグです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "숙련된 라이더도 몰기 힘든 종인데, 초심자인 단장님께는 무리예요.",
+      "UnitTalk_JPN": "ベテランライダーでも苦戦するというのに、初心者の団長には危険すぎます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "바이크 호그에 대해서는 잘 알아도 단장에 대해서는 모르는구만.",
+      "UnitTalk_JPN": "バイクホッグのことはよく知ってても、団長のことは全然分かってねぇんだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "단장은 나한테 대들 수 있을 만큼 대범한 녀석이야.",
+      "UnitTalk_JPN": "団長は俺に臆せず意見を言うぐらいに、大胆な奴なんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그 정도의 배짱이라면 <color=#F7BE45>카바노치</color>도 충분히 몰 수 있어.",
+      "UnitTalk_JPN": "それぐらいの度胸があれば、<color=#F7BE45>カバノス</color>にも十分乗れるはずだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그건…",
+      "UnitTalk_JPN": "それは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어의 걱정은 합리적이다.",
+      "UnitTalk_JPN": "クレアが心配するのも、当然のことだった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 여기서 바이크 호그를 몰지 않겠다고 하면, 할리는 크게 실망할 것이다.",
+      "UnitTalk_JPN": "だが、ここでバイクホッグに乗らないと言えば…ハーレーをガッカリさせてしまうはず。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "좋아. 타 볼게.",
+          "JumpAnchorStringId_JPN": "よし、乗ってみるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "단장님!",
+      "UnitTalk_JPN": "団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "역시! 잘 생각했어, 단장!",
+      "UnitTalk_JPN": "やっぱりなぁ！いい決断だぜ、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "어디 한 번 네 배짱을 보여 주라고! 사나이답게!",
+      "UnitTalk_JPN": "団長の度胸を見せてくれよな！漢らしく！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "할리의 격려를 받으며 으르렁거리는 바이크 호그 위에 올라탔다.",
+      "UnitTalk_JPN": "ハーレーの応援を受け、唸るバイクホッグにまたがった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의외로 얌전히 있다고 생각한 순간─",
+      "UnitTalk_JPN": "意外と大人しいな、と思った瞬間──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 4.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_14.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOG_GRUNT_3.wav",
+      "UnitTalk_KOR": "\r\n쿵! 쿵! 쿵! 쿵!",
+      "UnitTalk_JPN": "ドッ！ドッ！ドッ！ドッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "우오오오오오!",
+          "JumpAnchorStringId_JPN": "うおぉぉぉぉぉ！"
+        }
+      ]
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "바이크 호그가 엄청난 속도로 질주하기 시작했다!",
+      "UnitTalk_JPN": "バイクホッグがすごい速度で走り始めた！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "어떻게 된 거죠? 설마 고삐도 안 묶어 둔 건가요?",
+      "UnitTalk_JPN": "どうなっているのですか？まさか、手綱を結んでいなかったのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "아냐! 혼자서 끊어 버렸어!",
+      "UnitTalk_JPN": "いや！勝手に切っちまったようだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "데이브! 이리 와! 쫓자!",
+      "UnitTalk_JPN": "デイヴ！来い、追いかけるぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOG_GRUNT_1.wav",
+      "UnitNameString": [
+        "SI_DAVE"
+      ],
+      "UnitTalk_KOR": "킁킁!",
+      "UnitTalk_JPN": "クンクン！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 84,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 3.0,
+      "UnitTalk_KOR": "쿵! 쿵! 쿵! 쿵!",
+      "UnitTalk_JPN": "ドッ！ドッ！ドッ！ドッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_COLLAPSE_03.wav",
+      "UnitTalk_KOR": "클레어가 말한 대로 바이크 호그는 눈앞에 보이는 건 모두 들이받았다.",
+      "UnitTalk_JPN": "クレアが言った通り、バイクホッグは目の前にあるものをすべて突き飛ばしている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "거리가 삽시간에 난장판이 되자 타운가드들까지 따라붙었다.",
+      "UnitTalk_JPN": "街が一瞬にして荒れると、タウンガードまで追いかけてきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_YELLOW",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 144,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHISTLE.wav",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "전방의 폭주족에게 경고한다! 지금 당장 멈추지 않으면 발포하겠다!",
+      "UnitTalk_JPN": "前方の暴走族に警告する！今すぐ止まらなければ、発砲する！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "멈출 수가 없다니까!",
+          "JumpAnchorStringId_JPN": "いや、止まれないんだって！"
+        }
+      ]
+    },
+    {
+      "Uid": 153,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 90,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_WILD_HOG_01.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 154,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 158,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HORSES_STEP.wav",
+      "UnitTalk_KOR": "가까스로 떨어지지 않고 매달려 있는데, 낯익은 바이크 호그가 옆에 따라붙었다.",
+      "UnitTalk_JPN": "落ちまいと必死に掴まっていると、隣に見慣れたバイクホッグが現れた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "단장! 괜찮아?!",
+      "UnitTalk_JPN": "団長？大丈夫か！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "할리! 마침 잘 왔어!",
+          "JumpAnchorStringId_JPN": "ハーレー！よく来てくれた！"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "이 녀석 말을 듣지 않아!",
+          "JumpAnchorStringId_JPN": "バイクホッグが言うことを聞かないんだ！"
+        }
+      ]
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "침착하게 핸들을 잡아!",
+      "UnitTalk_JPN": "落ち着いてハンドルを握れ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "그래, 그게 브레이크 스위치야! 있는 힘껏 잡아당겨!",
+      "UnitTalk_JPN": "そうだ、それがブレーキのスイッチだ！思いっきり引っ張れぇ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "할리의 말대로 스위치를 잡아당기자 바이크 호그의 등이 들썩였다.",
+      "UnitTalk_JPN": "ハーレーに言われた通りスイッチを引っ張ると、バイクホッグの背中が傾いた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOG_GRUNT_1.wav",
+      "UnitNameString": [
+        "SI_BIKEHOG"
+      ],
+      "UnitTalk_KOR": "크르릉…!",
+      "UnitTalk_JPN": "グルルル…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CAR_BREAK.wav",
+      "UnitTalk_KOR": "끼이익!",
+      "UnitTalk_JPN": "キィーーッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "죽다 살아났다…",
+          "JumpAnchorStringId_JPN": "死ぬかと思った…"
+        }
+      ]
+    },
+    {
+      "Uid": 156,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 157,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png"
+    },
+    {
+      "Uid": 155,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "잘했어, 단장!",
+      "UnitTalk_JPN": "よくやったぜぇ、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "첫 파트너로 카바노치라니, 부하들이 들으면 놀라 자빠지겠어! 푸하하하!",
+      "UnitTalk_JPN": "初めての相棒にカバノスなんて、子分たちが聞いたら腰を抜かしちまうかもな！ぷはははっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "좋아하기엔 이른 것 같아.",
+          "JumpAnchorStringId_JPN": "喜ぶのはまだ早いよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "응?",
+      "UnitTalk_JPN": "ん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_YELLOW",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 147,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_03.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHISTLE.wav",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "폭주족들에게 알린다! 우리는 NOA 치안국이다!",
+      "UnitTalk_JPN": "暴走族に警告する！我らはNOA治安局だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_YELLOW",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "너희들을 선로 파손 및 속도위반으로 체포하겠다! 순순히 호그를 세우도록!",
+      "UnitTalk_JPN": "お前たちを線路破壊および速度違反の容疑で逮捕する！大人しくホッグから降りるように！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHISTLE.wav",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitTalk_KOR": "경고한다! 너희들은 포위됐다! ",
+      "UnitTalk_JPN": "警告する！お前たちは包囲されている！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitTalk_KOR": "순순히 바이크 호그에서 내리도록!",
+      "UnitTalk_JPN": "大人しくバイクホッグから降りるように！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "주위에는 치안국 타운가드들이 진을 치고 있었다.",
+      "UnitTalk_JPN": "辺りには、治安局のタウンガードたちが待ち構えていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "이런 젠장, 타운가드 놈들이잖아…",
+      "UnitTalk_JPN": "ちくしょう、タウンガードの奴らか…   ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_YELLOW",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "CameraOffset": "TRIPLE_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "할리 맥코이? 이번에도 네가 저지른 짓이었나!",
+      "UnitTalk_JPN": "ハーレー・マッコイか？またもやお前の仕業だったとは！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_YELLOW",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "도시 한복판에서 날뛰다니 간도 크군! 달리는 데 미쳐도 적당히 했어야지!",
+      "UnitTalk_JPN": "街の真ん中で暴れるなんて肝が座っているな！いくら走るのが好きだと言っても、限度があるだろう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "……",
+      "UnitTalk_JPN": "……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "상황을 수습했는데도 할리는 아무 말도 하지 않았다.",
+      "UnitTalk_JPN": "ハーレーは事態を収拾しに来ただけなのに、何も言わなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "바이크 호그가 제멋대로 날뛴 상황인데… 일단은 데리고 온 책임이 있다는 걸까.",
+      "UnitTalk_JPN": "バイクホッグが好き勝手に暴れてこうなった訳だが…連れてきた自分に責任があると思っているのだろう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitTalk_KOR": "뭐 하고 있나? 어서 가서 체포해!",
+      "UnitTalk_JPN": "何をしている、早く逮捕しろ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "제가 몰고 싶다고 했습니다.",
+          "JumpAnchorStringId_JPN": "私が乗りたいと言いました。"
+        }
+      ]
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장, 갑자기 무슨 소리야?",
+      "UnitTalk_JPN": "団長、突然どうしたんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "음? 단장님 아니십니까?",
+      "UnitTalk_JPN": "あれ？団長ではありませんか。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_YELLOW",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "바이크 호그를 몰고 싶었다니요? 휘말리신 게 아니라는 겁니까?",
+      "UnitTalk_JPN": "バイクホッグに乗りたかったのですか？巻き込まれた訳ではなく？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "피해는 최선을 다해 배상하겠습니다.",
+          "JumpAnchorStringId_JPN": "被害に関しては、きちんと弁償します。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "죄송합니다.",
+          "JumpAnchorStringId_JPN": "すみません…"
+        }
+      ]
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으음… 뭐, 천만다행으로 큰 피해는 없었습니다만…",
+      "UnitTalk_JPN": "うぅん…幸いにも、大きな被害はありませんでしたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "저런 난폭한 호그는 도시에 들였다간 큰일 납니다.",
+      "UnitTalk_JPN": "こんな乱暴なホッグを、街に連れてくるなんて大変なことになりますよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_YELLOW",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "다음부터는 조심해 주십시오. 저 호그는 저희가 안전한 곳에 풀어 주겠습니다.",
+      "UnitTalk_JPN": "今後、気をつけてくださいね。このホッグは私どもが安全な場所で放すこととします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 152,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 150,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 151,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_YELLOW",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_02.wav",
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "NR"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "녀석들… 돌아가 버렸네…",
+      "UnitTalk_JPN": "奴ら…引き返したな…   ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "아니, 그보다 단장. 방금 왜 그런 거야.",
+      "UnitTalk_JPN": "それより、団長。さっきはどうしたんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "내가 너무 난폭한 녀석을 억지로 권유한 탓인데.",
+      "UnitTalk_JPN": "俺が乱暴な奴に乗せたせいなのに。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "단원의 실수를 책임진 거야.",
+          "JumpAnchorStringId_JPN": "団員のミスを、責任取っただけだよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "단장으로서.",
+          "JumpAnchorStringId_JPN": "団長として。"
+        }
+      ]
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "그건…!",
+      "UnitTalk_JPN": "それはっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "단장, 방금 그 대답 굉장히 사나이다웠어!",
+      "UnitTalk_JPN": "団長。今のその言葉、マジで漢らしかったぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇다면 다행이네.",
+          "JumpAnchorStringId_JPN": "それなら良かったよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아니, 정말 한 수 배웠다니까?",
+      "UnitTalk_JPN": "へん、団長から一つ習ったぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 132,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "호그만 안 탔지 이미 훌륭한 사나이였잖아.",
+      "UnitTalk_JPN": "ホッグに乗ったことなかっただけで、元から立派な漢だったんだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "이거 조금 쑥스러운데…",
+      "UnitTalk_JPN": "これはちと恥ずかしいぜ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "할리한테 배운 거지.",
+          "JumpAnchorStringId_JPN": "私もハーレーから習ったんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "다음엔 순한 녀석으로 소개해 줘.",
+          "JumpAnchorStringId_JPN": "今度は大人しいホッグを紹介してくれ。"
+        }
+      ]
+    },
+    {
+      "Uid": 136,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "음, 좋아. 맡겨 둬.",
+      "UnitTalk_JPN": "あぁ、任せてくれよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그리고 단장, 기대하고 있으라고.",
+      "UnitTalk_JPN": "あと、団長。期待してろよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 138,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "이 빚은 언젠가 꼭 갚을 테니까.",
+      "UnitTalk_JPN": "この借りはいつか必ず返すからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 139,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 140,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_6",
+      "UnitTalk_KOR": "멋진 미소를 지으며 호언장담하는 할리였지만…",
+      "UnitTalk_JPN": "笑顔を浮かべ、自信満々に話すハーレーだったが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "캔들 스퀘어로 돌아간 우리는 클레어에게 실컷 혼이 나야 했다.",
+      "UnitTalk_JPN": "キャンドル・スクエアに戻った私たちは、クレアにこっぴどく叱られた。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 142,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3"
+    }
+  ]
+}

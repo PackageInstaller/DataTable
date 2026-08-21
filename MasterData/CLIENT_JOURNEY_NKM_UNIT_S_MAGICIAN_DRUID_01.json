@@ -1,0 +1,990 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "광장에 나왔는데, 소녀 한 명을 제외하고는 아무도 보이지 않았다.",
+      "UnitTalk_JPN": "広場に到着したが…少女が一人いるだけで、他に人は見当たらなかった。",
+      "UnitTalk_TWN": "走到廣場時，除了一位少女外，沒看到其他人。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "설마 저 소녀가 여정 단원은 아니겠지…?",
+      "UnitTalk_JPN": "まさか、あの少女が旅の団員な訳ないよな…？",
+      "UnitTalk_TWN": "難道那女孩是旅行團員嗎…？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "언니, 조심해!",
+      "UnitTalk_JPN": "おねえちゃん、気をつけて！",
+      "UnitTalk_TWN": "姊姊，小心！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "앗?! 하필 지금…",
+      "UnitTalk_JPN": "あっ！？このままじゃぶつかっちゃう…",
+      "UnitTalk_TWN": "啊？！怎麼偏偏是現在…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_1.ogg",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "피, 피해주세요! 죄송해요!",
+      "UnitTalk_JPN": "よ、避けてください！すみません！",
+      "UnitTalk_TWN": "請、請讓開！對不起！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_2.ogg",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 1.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_01.wav",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "꺄악!",
+      "UnitTalk_JPN": "きゃっ！",
+      "UnitTalk_TWN": "嘎啊！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_3.ogg"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_MAGICIAN_DRUID_01.png"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DANA"
+      ],
+      "UnitTalk_KOR": "아야야…!",
+      "UnitTalk_JPN": "あいたた…！",
+      "UnitTalk_TWN": "好痛…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_4.ogg"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DANA"
+      ],
+      "UnitTalk_KOR": "죄송해요. 밑에 사람이 있는 줄 모르고 그만...",
+      "UnitTalk_JPN": "すみません。下に人がいるとは知らずに…",
+      "UnitTalk_TWN": "對不起，我不知道下面有人，就不小心…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_5.ogg"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "프랜시스! 으아아앙, 걱정했잖아~!",
+      "UnitTalk_JPN": "フランシス！うわーん、心配したじゃない～！",
+      "UnitTalk_TWN": "法蘭西斯！嗚嗚嗚，我好擔心你啊～！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ANIMAL_CAT.wav",
+      "UnitNameString": [
+        "SI_TABBYCAT"
+      ],
+      "UnitTalk_KOR": "냐앙~!",
+      "UnitTalk_JPN": "ニャ～ン！",
+      "UnitTalk_TWN": "喵～！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "프랜시스를 구해줘서 고마워, 언니!",
+      "UnitTalk_JPN": "フランシスを助けてくれてありがとう、おねえちゃん！",
+      "UnitTalk_TWN": "姊姊，謝謝你救了法蘭西斯！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DANA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아하하! 뭘 이런 걸 가지고.",
+      "UnitTalk_JPN": "あはは！これくらい、どうってことないよ。",
+      "UnitTalk_TWN": "啊哈哈！這點小事算什麼。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_6.ogg"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DANA"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "프랜시스는 호기심이 많은 아이 같아. 다음부터는 놓치지 않게 주의해야 돼?",
+      "UnitTalk_JPN": "フランシスは好奇心が強い子みたいだね。次からは離しちゃダメだよ？",
+      "UnitTalk_TWN": "法蘭西斯看起來充滿了好奇心，下次要注意別讓牠走丟哦？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_7.ogg"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "응! 알았어. 조심할게.",
+      "UnitTalk_JPN": "うん！気をつけるね。",
+      "UnitTalk_TWN": "嗯！知道了，我會小心的。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "고마워, 언니. 나중에 또 봐!",
+      "UnitTalk_JPN": "ありがとう、おねえちゃん。またね！",
+      "UnitTalk_TWN": "姊姊謝謝你，下次再見！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DANA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그래, 나중에 봐~",
+      "UnitTalk_JPN": "うん、またね～。",
+      "UnitTalk_TWN": "好，下次見～",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_8.ogg"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…슬슬 내려와줄래?",
+          "JumpAnchorStringId_JPN": "…そろそろ降りてもらってもいい？",
+          "JumpAnchorStringId_TWN": "…可以請你從我身上下來嗎？"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DANA"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아아앗! 맞다!",
+      "UnitTalk_JPN": "あああっ！そうでした！",
+      "UnitTalk_TWN": "啊啊啊！對吼！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_9.ogg"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DANA"
+      ],
+      "UnitTalk_KOR": "죄, 죄, 죄송해요! 많이 무거우셨죠?",
+      "UnitTalk_JPN": "す、す、すみません！重かったですよね？",
+      "UnitTalk_TWN": "對、對、對不起！很重吧？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_10.ogg"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DANA"
+      ],
+      "UnitTalk_KOR": "네? 여러가지 의미로 괜찮다고요?",
+      "UnitTalk_JPN": "はい？色んな意味で大丈夫…ですか？",
+      "UnitTalk_TWN": "什麼？你說以各方面來說都沒事嗎？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_11.ogg"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DANA"
+      ],
+      "UnitTalk_KOR": "그, 그렇다면 다행이지만…",
+      "UnitTalk_JPN": "そ、それなら良いんですが…",
+      "UnitTalk_TWN": "那、那就好…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_12.ogg"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "TWIN_1",
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "그런데 어디서 본 것 같은데요?",
+      "UnitTalk_JPN": "ところで、どこかでお見かけしたような…？",
+      "UnitTalk_TWN": "但是您看起來好眼熟…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_13.ogg"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "앗! 설마!",
+      "UnitTalk_JPN": "あっ！まさか！",
+      "UnitTalk_TWN": "啊！難道！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_14.ogg"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "유명한 분인가요? 몰라 봬서 죄송해요!",
+      "UnitTalk_JPN": "有名な方ですか？気づかなくてすみません！",
+      "UnitTalk_TWN": "您是名人嗎？真抱歉沒能認出來！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_15.ogg"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "사실 제가 고향에서만 살다가 NOA에는 어제 처음 왔거든요.",
+      "UnitTalk_JPN": "実はわたし、ずっと故郷で暮らしていて…NOAには昨日初めて来たんです。",
+      "UnitTalk_TWN": "其實我一直住在家鄉，昨天才第一次來到NOA。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_16.ogg"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "고향이 NOA랑 먼 곳에 있나 보네?",
+          "JumpAnchorStringId_JPN": "なら、故郷はNOAから離れた所にあるんだね？",
+          "JumpAnchorStringId_TWN": "看來你的家鄉離NOA很遠吧？"
+        }
+      ]
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아하하! 네, 저 멀리 카노푸스 산맥 산골짜기에 있어요.",
+      "UnitTalk_JPN": "あはは！そうなんです。あの遠くに見えるカノプス山脈の、そのまた奥にあります。",
+      "UnitTalk_TWN": "啊哈哈！是啊，在遙遠的卡諾普斯山脈的山谷裡。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_17.ogg"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "전기는 물론, 수도도 안 들어오는 시골 마을이죠.",
+      "UnitTalk_JPN": "電気はもちろん、水道も通らない田舎の村です。",
+      "UnitTalk_TWN": "是連電力和自來水都沒有的鄉下小村莊。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_18.ogg"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그런데 어디서 봤을까요…? 잡지? 전단지? 아니면 현수막이었나?",
+      "UnitTalk_JPN": "しかし、どこでお見かけしたのでしょうか…？雑誌？チラシ？それとも垂れ幕とか？",
+      "UnitTalk_TWN": "但我到底在哪見過您呢…？雜誌？傳單？還是布條？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_19.ogg"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭔가 오해가 있는 것 같은데…",
+          "JumpAnchorStringId_JPN": "何か誤解してるみたいだけど…",
+          "JumpAnchorStringId_TWN": "你好像有什麼誤會…"
+        }
+      ]
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "네?",
+      "UnitTalk_JPN": "はい？",
+      "UnitTalk_TWN": "嗯？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_20.ogg"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "ONE_6",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "단장님이셨군요!",
+      "UnitTalk_JPN": "団長だったんですね！",
+      "UnitTalk_TWN": "原來您是團長啊！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_21.ogg"
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "캔들 스퀘어에서 들은 모습 그대로예요. 어쩐지 어디서 본 것 같더라니.",
+      "UnitTalk_JPN": "キャンドル・スクエアでお聞きしたとおりの方ですね。どうりで見覚えがあると思いました。",
+      "UnitTalk_TWN": "您跟我在燭光廣場聽到的樣子一模一樣，難怪我覺得眼熟。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_22.ogg"
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>여정 단원</color>, 맞지?",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>旅の団員</color>、だよね？",
+          "JumpAnchorStringId_TWN": "你是<color=#F7BE45>旅行團員</color>，對吧？"
+        }
+      ]
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네! 제가 <color=#F7BE45>여정 단원</color>, 카노푸스 경비대의 다나랍니다.",
+      "UnitTalk_JPN": "はい！わたしが<color=#F7BE45>旅の団員</color>、カノプス警備隊のダーナです。",
+      "UnitTalk_TWN": "對！我是<color=#F7BE45>旅行團員</color>，卡諾普斯警備隊的達娜。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_23.ogg"
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "NOA에는 어제 막 도착했어요.",
+      "UnitTalk_JPN": "NOAには、昨日着いたばかりなんです。",
+      "UnitTalk_TWN": "我昨天才剛到NOA。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_24.ogg"
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "도시도, <color=#F7BE45>여정</color>도 처음이라 많이 서툴겠죠.",
+      "UnitTalk_JPN": "都会も<color=#F7BE45>救援の旅</color>も初めてなので、至らないところもあるかと思いますが…",
+      "UnitTalk_TWN": "城市和<color=#F7BE45>旅行</color>對我來說都是第一次，所以我肯定會很生疏。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_25.ogg"
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "하지만 최선을 다하겠습니다!",
+      "UnitTalk_JPN": "精一杯がんばります！",
+      "UnitTalk_TWN": "但我會全力以赴！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_26.ogg"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "높은 산도 꾸준히 걸어가면 언젠가는 정상에 다다를 수 있으니까요!",
+      "UnitTalk_JPN": "どんなに高い山でも…一歩ずつ登っていけば、必ず頂上に辿りつけるものですから！",
+      "UnitTalk_TWN": "因為只要持續向上爬，即使是再高的山峰，總有一天也能到達頂端！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_27.ogg"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>여정</color>에 참가한 목적이 뭐야?",
+          "JumpAnchorStringId_JPN": "どうして<color=#F7BE45>救援の旅</color>に参加したの？",
+          "JumpAnchorStringId_TWN": "你參加<color=#F7BE45>旅行</color>的目的是什麼？"
+        }
+      ]
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "제가 <color=#F7BE45>여정</color>에 참가한 목적… 그건 바로!",
+      "UnitTalk_JPN": "わたしが<color=#F7BE45>救援の旅</color>に参加した理由…それはズバリ！",
+      "UnitTalk_TWN": "我參加<color=#F7BE45>旅行</color>的目的…就是！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_28.ogg"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "<color=#F7BE45>사람들의 웃는 모습</color>이 보고 싶어서요!",
+      "UnitTalk_JPN": "<color=#F7BE45>みんなの笑顔</color>が見たいからです！",
+      "UnitTalk_TWN": "想看到<color=#F7BE45>人們歡笑的樣子</color>！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_29.ogg"
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…웃는 모습?",
+          "JumpAnchorStringId_JPN": "…笑顔？",
+          "JumpAnchorStringId_TWN": "…歡笑的樣子？"
+        }
+      ]
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "아하하! 네, 웃는 모습이요.",
+      "UnitTalk_JPN": "あはは！そうなんです。",
+      "UnitTalk_TWN": "啊哈哈！是的，歡笑的樣子。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_30.ogg"
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "다른 사람이 웃는 모습을 보면, 보는 사람도 기분이 좋아지잖아요?",
+      "UnitTalk_JPN": "笑顔って、見ている人までいい気分になりますよね？",
+      "UnitTalk_TWN": "看到別人笑，連看的人也會心情變好不是嗎？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_31.ogg"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "드루이드 사이에는 <color=#F7BE45>로로카</color>라는 말이 있어요.",
+      "UnitTalk_JPN": "ドルイドには、<color=#F7BE45>ロロカ</color>という言葉があります。",
+      "UnitTalk_TWN": "我們德魯伊人之間有<color=#F7BE45>洛洛卡</color>這個詞。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_32.ogg"
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "<color=#F7BE45>선행을 베풀면 세상이 행복해진다</color>, <color=#F7BE45>선행은 언젠가 되돌아온다</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>善を行うと世界が幸せになる</color>、<color=#F7BE45>めぐり巡って自分に返ってくる</color>。",
+      "UnitTalk_TWN": "意思是<color=#F7BE45>行善會讓世界變幸福</color>，<color=#F7BE45>善行總有一天會有回報</color>。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_33.ogg"
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "그 밖에 많은 의미가 있지만, 중요한 의미는 <color=#F7BE45>서로 도와 행복해진다</color>는 거죠!",
+      "UnitTalk_JPN": "他にも色んな意味がありますが、大事なのは<color=#F7BE45>助け合い幸せになる</color>ということです！",
+      "UnitTalk_TWN": "雖然還有很多其他意思，但最重要的意思是大家<color=#F7BE45>互相幫助才會變得幸福</color>！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_34.ogg"
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그래서 다른 사람을 <color=#F7BE45>로로카</color>하는 게 제 취미예요. 사람들의 미소가 좋으니까!",
+      "UnitTalk_JPN": "だから他の人を<color=#F7BE45>ロロカ</color>するのが、わたしの趣味なんです。みんなの笑顔が好きだから！",
+      "UnitTalk_TWN": "所以我的興趣就是讓別人<color=#F7BE45>洛洛卡</color>。因為我喜歡看到人們的笑容！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_35.ogg"
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "<color=#F7BE45>여정</color>을 통과하면 더 많은 사람을 도울 수 있다고 들었어요.",
+      "UnitTalk_JPN": "<color=#F7BE45>救援の旅</color>を成し遂げることができれば、より多くの人の力になれるのでしょう？",
+      "UnitTalk_TWN": "我聽說通過<color=#F7BE45>旅行</color>後就能幫助更多人。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_36.ogg"
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "그 옛날 암흑시대에 <color=#F7BE45>별의 구원자</color>님이 사람들을 미소 짓게 만든 것처럼요!",
+      "UnitTalk_JPN": "遠い昔の暗黒時代に、<color=#F7BE45>星の救援者</color>さまがみんなを笑顔にしたように！",
+      "UnitTalk_TWN": "就像古時候黑暗時代的<color=#F7BE45>星之救援者</color>讓人們展露笑容那樣！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_37.ogg"
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_4",
+      "UnitNameString": [
+        "SI_SHYVOICEWOMAN"
+      ],
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SAD",
+      "UnitQuickSet": true,
+      "UnitPos": "POS8",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "어떡하지?! 시간 내에 배달해야 되는데.",
+      "UnitTalk_JPN": "どうしよう！？時間内に届けないといけないのに。",
+      "UnitTalk_TWN": "該怎麼辦？！必須在時間內送達的說。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_4",
+      "UnitNameString": [
+        "SI_SHYVOICEWOMAN"
+      ],
+      "UnitTalk_KOR": "혼자서 가능할까?",
+      "UnitTalk_JPN": "一人でできるかしら？",
+      "UnitTalk_TWN": "我一個人行嗎？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS6",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "앗! 혹시 도움이 필요하시나요?",
+      "UnitTalk_JPN": "あっ！何かお困りですか？",
+      "UnitTalk_TWN": "啊！請問您需要幫忙嗎？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_01_DRUID_38.ogg"
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "곤란해하는 사람의 목소리가 들려오자 다나는 망설임 없이 뛰어갔다.",
+      "UnitTalk_JPN": "困っている様子を見ると、ダーナは迷いなく走って行った。",
+      "UnitTalk_TWN": "一聽到有人感到為難的聲音，達娜便毫不猶豫地跑了過去。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "<color=#F7BE45>사람들의 웃는 모습</color>이 좋다. 사람을 돕는 게 취미.",
+      "UnitTalk_JPN": "<color=#F7BE45>みんなの笑顔</color>が好き。人助けするのが趣味。",
+      "UnitTalk_TWN": "她喜歡看到<color=#F7BE45>人們歡笑的樣子</color>，興趣是幫助別人。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다나가 어떤 아이인지 조금은 알 것 같다.",
+      "UnitTalk_JPN": "ダーナがどんな子なのか、少し分かった気がする。",
+      "UnitTalk_TWN": "我開始有點了解達娜是什麼樣的人了。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "NORMAL"
+    }
+  ]
+}

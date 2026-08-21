@@ -1,0 +1,26 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_TUTO_03_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_03_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_03_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "구원자 지원 기관 캔들 스퀘어에 대한 설명을 듣고, 3주 뒤 기초 평가전을 치르기로 했다.",
+      "UnitTalk_JPN": "救援者支援機関であるキャンドル・スクエアについての説明を受け、3週間後に基礎試験を受けることになった。",
+      "TalkTime": 0.03
+    }
+  ]
+}

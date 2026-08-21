@@ -1,0 +1,2044 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: EV_CANDLE_BUNNY_05_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOBLE_CORRIDOR.png",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_03.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "단장님, 괜찮으십니까?",
+      "UnitTalk_JPN": "団長、大丈夫ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "난 문제 없어.",
+          "JumpAnchorStringId_JPN": "私は大丈夫だ。"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "스칼렛?",
+      "UnitTalk_JPN": "スカーレット？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "오오! 이제 슬슬 몸이 풀리는 것 같다!",
+      "UnitTalk_JPN": "おお！やっと体が温まってきたのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "다들 괜찮으신 것 같아서 다행입니다만…",
+      "UnitTalk_JPN": "お二人とも無事で何よりですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "EMARK",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 145,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "CutsceneClear": "CLEARALL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_MON_CASINO_FIGHTER_BLACK_A",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 147,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_MON_BODYGUARD_HANDS_BLACK",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 148,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_MON_CASINO_FIGHTER_BLACK_B",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 149,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 150,
+      "WaitClick": false,
+      "WaitTime": 1.0
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "쓰러트려도 끝이 없네.",
+          "JumpAnchorStringId_JPN": "倒してもキリがないな。"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_MON_BODYGUARD_HANDS_BLACK",
+      "UnitNameString": [
+        "SI_CAPTAINGUARD"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "겁도 없이 <color=#F7BE45>[딥 필드]</color>에 들어올 생각을 할 만큼의 실력은 있는 것 같군…",
+      "UnitTalk_JPN": "恐れもせず、<color=#F7BE45>「ディープフィールド」</color>に踏み入るだけの腕はあるようだな…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_MON_BODYGUARD_HANDS_BLACK",
+      "UnitNameString": [
+        "SI_CAPTAINGUARD"
+      ],
+      "UnitTalk_KOR": "하지만 계속 버틸 수 있을 거라 생각하지 마라.",
+      "UnitTalk_JPN": "だが、いつまでも耐えられると思わないことだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_MON_BODYGUARD_HANDS_BLACK",
+      "UnitNameString": [
+        "SI_CAPTAINGUARD"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "위치별 최소 인원 제외하고 전원 이곳으로 집합시켜라!",
+      "UnitTalk_JPN": "各配置の最低限の人数を除いて、全員ここに集まれ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 151,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 153,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 152,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "여기까지 왔으면 모조리 쓰러트려서라도 지나가야겠군요.",
+      "UnitTalk_JPN": "こうなったら、全員倒してでも進まなければなりませんね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "당연하지 않느냐!",
+      "UnitTalk_JPN": "当然なのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "각오를 다지며 다시 전투 준비를 하던 그때였다.",
+      "UnitTalk_JPN": "覚悟を決め、再び戦闘態勢に入ろうとしたその時だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "EmotionEffect": "EMARK",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "EmotionEffect": "EMARK",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "잠시만 기다려 주세요.",
+      "UnitTalk_JPN": "少々お待ちください。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어디선가 기계음이 섞인 목소리가 들려왔다.",
+      "UnitTalk_JPN": "どこからか、機械音が混じった声が聞こえてきた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 154,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "경비원 한 명이 가져온 이상한 모양의 기계 장치에서, 변조된 목소리가 흘러나오고 있었다.",
+      "UnitTalk_JPN": "警備隊員が持って来た奇妙な形の機械装置から、変調された声が流れているようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_22.mp3",
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitPos": "POS9",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "잠깐, 잠깐.",
+      "UnitTalk_JPN": "コホン。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "이곳은 NOA의 지성인들이 모여 고귀한 욕망을 추구하는 곳.",
+      "UnitTalk_JPN": "ここはNOAの知性人が集い、崇高な欲望を追求する場所。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "클럽 <color=#F7BE45>[딥 필드]</color>입니다.",
+      "UnitTalk_JPN": "クラブ <color=#F7BE45>「ディープ・フィールド」</color>です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "물론 폭력 또한 욕망의 한 종류이긴 합니다만…",
+      "UnitTalk_JPN": "もちろん、暴力もまた欲望の一種ではありますが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "규칙도, 목적도 없는 폭력은 저희 클럽에서 취급할 만큼 가치 있는 욕망은 아니죠.",
+      "UnitTalk_JPN": "規則も目的もない暴力は、私どものクラブが扱うほどに価値のある欲望ではありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "여기 모인 분들은 모두 NOA의 저명한 신사와 숙녀분들로 알고 있습니다.",
+      "UnitTalk_JPN": "ここに集まった方々は皆、NOAの著名な紳士淑女だと存じ上げております。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "그러니… 지성인답게 일단 대화로 일을 풀어 보는 것은 어떨까요?",
+      "UnitTalk_JPN": "ですので…知性人らしく、まずは対話で事を解決するのはいかがでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "누구야, 넌?",
+          "JumpAnchorStringId_JPN": "何者なんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "이런 실례를…!",
+      "UnitTalk_JPN": "これはこれは、失礼を…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "소개가 늦었음을 사과드립니다.",
+      "UnitTalk_JPN": "自己紹介が遅れましたこと、お詫び申し上げます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "제 이름은 <color=#F7BE45>[허블]</color>",
+      "UnitTalk_JPN": "私の名は <color=#F7BE45>「ハッブル」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "이곳, 클럽 <color=#F7BE45>딥 필드</color>의 오너이자 순수한 욕망의 탐구자… 로 알아주시면 감사하겠습니다.",
+      "UnitTalk_JPN": "ここ、クラブ<color=#F7BE45>ディープ・フィールド</color>のオーナーであり、純粋な欲望の探求者…といったところです。どうぞお見知りおきを。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "<color=#F7BE45>[허블]</color>… 들어본 적 있습니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「ハッブル」</color>…聞いたことがあります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "NOA 뒷세계의 주인이라는 이야기를.",
+      "UnitTalk_JPN": "NOAの裏社会を牛耳っているという話を。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitTalk_KOR": "하하하, 뒷세계의 주인이라니 당치도 않은 말씀을 하시는군요.",
+      "UnitTalk_JPN": "ハハハ、とんでもない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "숙녀분이 말씀하신 <color=#F7BE45>뒷세계</color>에는 저 같은 것과는 비교할 수도 없는 괴물과 비밀들이 존재하고 있답니다.",
+      "UnitTalk_JPN": "淑女様がおっしゃる<color=#F7BE45>裏社会</color>には、私のような者と比べものにならない怪物や秘密が存在しているのですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "전 그저 제가 가진 조그만 클럽을 운영하기 위해 약간의 <color=#F7BE45>관리</color>를 할 뿐이죠.",
+      "UnitTalk_JPN": "私はただ、自分が持つ小さなクラブを運営するために、少し<color=#F7BE45>管理</color>をしているだけです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 155,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_MON_BODYGUARD_HANDS_BLACK",
+      "CameraOffset": "TWIN_7",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_MON_BODYGUARD_HANDS_BLACK",
+      "UnitNameString": [
+        "SI_CAPTAINGUARD"
+      ],
+      "UnitTalk_KOR": "면목 없습니다, 허블님…!",
+      "UnitTalk_JPN": "申し訳ございません、ハッブル様…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후후, 괜찮습니다.",
+      "UnitTalk_JPN": "フフ、構いません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "이 세상에는 분명 당신의 능력으로는 감당할 수 없는 상대라는 것이 있으니까요.",
+      "UnitTalk_JPN": "この世には、あなたの能力では太刀打ちできない相手がいるのですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_MON_BODYGUARD_HANDS_BLACK",
+      "UnitNameString": [
+        "SI_CAPTAINGUARD"
+      ],
+      "UnitTalk_KOR": "그, 그렇다면 용서를…",
+      "UnitTalk_JPN": "な、ならばお許しを…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "하지만…",
+      "UnitTalk_JPN": "ですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "상대의 격을 알아보지 못하고 하찮은 폭력을 휘두른 것은…",
+      "UnitTalk_JPN": "相手の格を見抜けず、くだらない暴力を振るったことは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "경비대장으로서는 조금 실망스럽긴 하군요.",
+      "UnitTalk_JPN": "警備隊長としては少し残念ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_MON_BODYGUARD_HANDS_BLACK",
+      "UnitNameString": [
+        "SI_CAPTAINGUARD"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그, 그건!",
+      "UnitTalk_JPN": "そ、それは！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "이 이야기는 조금 있다가 하도록 하지요.",
+      "UnitTalk_JPN": "この件は後ほどお話しましょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "지금은 더 중요한 용건이 있으니까요.",
+      "UnitTalk_JPN": "今は、より重要な用件がありますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_MON_BODYGUARD_HANDS_BLACK",
+      "UnitNameString": [
+        "SI_CAPTAINGUARD"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "크윽…!",
+      "UnitTalk_JPN": "くっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 157,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 156,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_02.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_MON_BODYGUARD_HANDS_BLACK",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "NR"
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래서 대화로 풀어보자고…?",
+          "JumpAnchorStringId_JPN": "つまり、話し合いで解決しようってこと…？"
+        }
+      ]
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "그렇습니다.",
+      "UnitTalk_JPN": "その通りです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "대화야말로 신이 인간에게 주신 최고의 도구.",
+      "UnitTalk_JPN": "対話こそ、神が人間に与えた最高の道具。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "야만과 문명을 가르는 경계라고 할 수 있죠.",
+      "UnitTalk_JPN": "野蛮と文明を分かつ境界と言えるでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "그러니 우리 사이에 놓인 오해의 구덩이를 메우기에 그보다 더 나은 방법은 없을 것 같군요.",
+      "UnitTalk_JPN": "ですから…私たちの間に横たわる誤解の溝を埋めるには、これ以上の方法はないでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "제가 추측하기로…",
+      "UnitTalk_JPN": "私が推測するに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "여러분들은 아마 캔들 스퀘어의 <color=#F7BE45>벨 리스</color> 님을 찾아 이곳에 오신 것 같습니다만…",
+      "UnitTalk_JPN": "皆様はおそらく、キャンドル・スクエアの<color=#F7BE45>ベル・リース</color>様を捜してここへいらしたようですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "역시! 무덤쟁이는 네가 납치한 게로구나!",
+      "UnitTalk_JPN": "やっぱりなのだ！墓石オタクはお主が拉致したのだな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitTalk_KOR": "하하, 첫 번째 오해의 구덩이를 메울 수 있게 되어 기쁘군요.",
+      "UnitTalk_JPN": "ハハ。まず、誤解の溝を一つ埋めることができて嬉しいですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitMotion": "SERIOUS",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "비록 저희 측에서 벨 리스 님을 모셔 온 건 맞습니다만…",
+      "UnitTalk_JPN": "確かに私どもが、ベル・リース様をお連れしたのは事実ですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "납치라니, 당치도 않은 일입니다.",
+      "UnitTalk_JPN": "拉致だなんて、とんでもない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "저는 그분께 상호 간의 이득이 될 수 있는 제안을 드렸고…",
+      "UnitTalk_JPN": "私は、相互の利益となるご提案をし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "벨 리스 님은 그 제안을 수락하신 것뿐이죠.",
+      "UnitTalk_JPN": "ベル・リース様が、それを受け入れられただけです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "무엇보다 벨 리스 님은 <color=#F7BE45>캔들 스퀘어</color>의 일원.",
+      "UnitTalk_JPN": "何より、ベル・リース様は<color=#F7BE45>キャンドル・スクエア</color>の一員。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "아무런 이득도 없이 그런 분께 위해를 가할 리가 있겠습니까?",
+      "UnitTalk_JPN": "何の利益もなしに、危害を加えることなどありましょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이득이 된다면 해칠 수도 있다는 거네.",
+          "JumpAnchorStringId_JPN": "利益になるなら、危害を加えることもあるってことだな。"
+        }
+      ]
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아아, 그쪽은…",
+      "UnitTalk_JPN": "ああ、そちらは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그렇군요. 이번에 새로 부임하신 <color=#F7BE45>[여정 단장]</color> 님이 아니신지요?",
+      "UnitTalk_JPN": "なるほど。今回新たに就任された<color=#F7BE45>「旅の団長」</color>様では？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나를 알아?",
+          "JumpAnchorStringId_JPN": "私のことを知っているのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "물론이지요.",
+      "UnitTalk_JPN": "もちろんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "이곳 NOA의 설립자이자 신비에 싸인 대마녀.",
+      "UnitTalk_JPN": "ここNOAの設立者であり、謎に包まれた大魔女。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "<color=#F7BE45>[알리시아]</color>님께서 직접 영입해 온 사람이 아닙니까?",
+      "UnitTalk_JPN": "<color=#F7BE45>「アリシア」</color>様が、直々に任命された方ではありませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장님은 단장님 생각보다 훨씬 더 유명하다는 걸 자각하실 필요가 있습니다.",
+      "UnitTalk_JPN": "団長様は、ご自身が思っている以上にずっと有名だということを自覚する必要があります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "계획대로였다면 다음 달 즈음에 정식으로 초대장을 보내 드릴 생각이었습니다만…",
+      "UnitTalk_JPN": "計画通りであれば、来月あたりに正式な招待状をお送りするつもりでしたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "이렇게 부적절한 형태로 첫인사를 하게 되다니… 안타까울 뿐이군요.",
+      "UnitTalk_JPN": "このように不適切な形で最初のご挨拶をすることになり…残念でなりません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "하지만 제 진심을 오해하지는 말아주세요.",
+      "UnitTalk_JPN": "ですが、私の真心だけは誤解なさらないでください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "저는 단장님과… 아주 좋은 관계를 만들어 나가고 싶습니다.",
+      "UnitTalk_JPN": "私は団長様と…良い関係を築いていきたいのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "오래, 오래, 말이지요.",
+      "UnitTalk_JPN": "長く長く、です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…벨은 어디에 있지?",
+          "JumpAnchorStringId_JPN": "…ベルはどこにいる？"
+        }
+      ]
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "벨 리스 님은… 클럽 안쪽의 비밀 공간에 계십니다.",
+      "UnitTalk_JPN": "ベル・リース様は…クラブの奥にある秘密の空間にいらっしゃいます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "물론!",
+      "UnitTalk_JPN": "もちろん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "어떠한 위협도 없이 안전하고 편안하게 쉬고 계시지요.",
+      "UnitTalk_JPN": "いかなる脅威もなく、安全で快適にお休みになっておられますよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "현재로서는… 말입니다.",
+      "UnitTalk_JPN": "現時点では…の話ですが。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "TWIN_1",
+      "UnitTalk_KOR": "…왠지 협박하는 것처럼 들리는군요.",
+      "UnitTalk_JPN": "…脅しているように聞こえますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitTalk_KOR": "이런, 저에 대한 신뢰도가 많이 낮아 보이네요. ",
+      "UnitTalk_JPN": "おっと、私への信頼度がずいぶん低いようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "물론 상황이 상황이다 보니 이해는 합니다만…",
+      "UnitTalk_JPN": "もちろん、状況が状況ですから理解はできますが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "그래도 제 말은 진실입니다.",
+      "UnitTalk_JPN": "それでも、私の言葉は真実です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "제가 드린 제안을 수락하기만 한다면 벨 리스 님은 안전하게 돌아가실 수 있을 겁니다.",
+      "UnitTalk_JPN": "私の提案さえ受け入れてくだされば、ベル・リース様は無事にお帰りになれます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "덤으로 아주 커다란 보상까지 받아서 말이지요.",
+      "UnitTalk_JPN": "おまけに…非常に大きな報酬まで受け取って、です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "그러니 여러분도 이만 진정하고 서로 이쯤에서 물러나는 건 어떨까요?",
+      "UnitTalk_JPN": "ですから、皆さんもそろそろ落ち着いて…お互いここで引き下がるのはいかがでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그 말을 어떻게 믿냐! 지금 당장 벨을 데려와라!",
+      "UnitTalk_JPN": "そんな言葉、どう信じろというのだ！今すぐベルを連れてくるがよい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "동감입니다. 제안을 거부하면 어떤 일이 있을지 모른다는 뜻이로군요.",
+      "UnitTalk_JPN": "同感です。提案を拒否すれば、何が起こるか分からないという意味ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitTalk_KOR": "으음, 저로서는 많이 양보해 드렸다고 생각합니다만…",
+      "UnitTalk_JPN": "うーん、私としてはずいぶん譲歩したつもりでしたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "할 수 없군요. 알겠습니다.",
+      "UnitTalk_JPN": "仕方ありませんね。承知しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 어서…",
+          "JumpAnchorStringId_JPN": "だったら、さっさと…"
+        }
+      ]
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "CameraOffset": "ONE_9",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "게임으로 결정하도록 하죠.",
+      "UnitTalk_JPN": "ゲームで決めましょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "게임? 무슨 소리야?",
+          "JumpAnchorStringId_JPN": "ゲーム？どういうことだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitMotion": "SERIOUS",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitMotion": "NORMAL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_NORMAL_03.mp3",
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "여긴 게임이라는 룰을 통해 각자의 욕망을 추구하는 곳.",
+      "UnitTalk_JPN": "ここは…ゲームというルールを通じて、それぞれの欲望を追求する場所。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "클럽 <color=#F7BE45>[딥 필드]</color> 이니까요.",
+      "UnitTalk_JPN": "クラブ<color=#F7BE45>「ディープフィールド」</color>ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "저와 여러분이 승부하는 겁니다.",
+      "UnitTalk_JPN": "私と皆様で勝負するのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "여러분이 승리한다면 바로 벨 리스님과 함께 이곳을 나가시면 됩니다.",
+      "UnitTalk_JPN": "皆様が勝利すれば、すぐにベル・リース様と共にここを出てくださって構いません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "하지만 제가 승리한다면…",
+      "UnitTalk_JPN": "ですが、私が勝利した場合…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "흐음, 뭘로 할까요…?",
+      "UnitTalk_JPN": "フーン、どうしましょうか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "아, 그래 이렇게 하기로 하죠.",
+      "UnitTalk_JPN": "ああ、そうだ。こうしましょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "벨 리스님을 대신해서 단장님이 이곳 클럽 딥 필드에 남아주시는 걸로.",
+      "UnitTalk_JPN": "ベル・リース様の代わりとして…団長様にクラブ・ディープフィールドに残っていただく、ということで。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "ONE_6",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "뭐, 뭐냐, 그게!",
+      "UnitTalk_JPN": "な、何を言うのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그런 억지를…!",
+      "UnitTalk_JPN": "そんな無茶を…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "CameraOffset": "ONE_9",
+      "UnitTalk_KOR": "억지라니요. 억울한 말씀을 하시는군요.",
+      "UnitTalk_JPN": "無茶だなんて。心外なことをおっしゃりますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "제 영업장에 와서 억지를 부리고 있는 건 오히려 여러분들이 아니신가요?",
+      "UnitTalk_JPN": "私の営業場所に来て無理を通そうとしているのは、むしろ皆様の方ではありませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…왜 우리가 당신의 규칙에 맞춰줘야 하지?",
+          "JumpAnchorStringId_JPN": "…どうしてお前のルールに従わなければならないんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 120,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "첫째로, 여러분은 초대받지 않은 손님이니까요.",
+      "UnitTalk_JPN": "第一に、皆様は招待されていないお客様ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "제 초대를 받아 정식으로 방문하셨다면 이야기가 다르겠습니다만…",
+      "UnitTalk_JPN": "私の招待を受け、正式に訪問されたのであれば話は別ですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "지금 당신들은 분명 이 클럽의 룰을 위반하고 들어온 불청객입니다.",
+      "UnitTalk_JPN": "今、あなた方はこのクラブのルールを破って入ってきた不審者です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "둘째로, 그것이 이곳의 룰이니까요.",
+      "UnitTalk_JPN": "第二に、それがここのルールだからです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "원하는 것, 욕망하는 것은 게임을 통해 얻어간다.",
+      "UnitTalk_JPN": "望むもの、渇望するものはゲームを通じて手に入れる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "그것이 클럽 딥 필드의 규칙입니다.",
+      "UnitTalk_JPN": "それがクラブ・ディープフィールドのルールです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "별 리스님과 모종의 거래를 하고 싶은 건 저의 욕망.",
+      "UnitTalk_JPN": "ベル・リース様と、とある取引をしたいのは私の欲望。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "즉시 벨 리스 님의 귀환을 요구하는 것은 귀하의 욕망.",
+      "UnitTalk_JPN": "ベル・リース様の帰還を要求するのは、あなたの欲望。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "상호간의 욕망이 충돌하는 상황이라면…",
+      "UnitTalk_JPN": "互いの欲望が衝突する状況ならば…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "룰에 따라 결과를 정하는 것이 공정하지 않겠습니까? ",
+      "UnitTalk_JPN": "ルールに従い、結果を決めるのが公平ではありませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내가 지면 언제까지 남아야 하지?",
+          "JumpAnchorStringId_JPN": "私が負けたら、いつまでここに残らないといけないんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "글쎄요…",
+      "UnitTalk_JPN": "そうですね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기분 탓일까, 기계를 통해 흘러나오는 목소리의 변조 톤이 더 기괴하게 변한 느낌이 들었다.",
+      "UnitTalk_JPN": "気のせいか、機械を通して流れる声の変調トーンが…さらに不気味になったように感じられた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "저는 어릴 때부터 항상 관찰력이 뛰어났답니다.",
+      "UnitTalk_JPN": "私は幼い頃から、優れた観察力を持っていました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "바닥을 기어다니는 개미부터 저 하늘의 별들까지…",
+      "UnitTalk_JPN": "地面を這うアリから、あの空の星々まで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "많은 것들을 관찰하고 그 본질을 깨닫기 위해 노력해 왔죠.",
+      "UnitTalk_JPN": "数多くのものを観察し、その本質を理解しようと努めてきました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "그리고 그것이 제 근원적인 욕망이었음을 알게 되었을 때…",
+      "UnitTalk_JPN": "そして、それが私の根源的な欲望であると知った時…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "모순적이게도 저는 더 이상 관찰할 것이 없다는 사실을 직면하게 되었습니다.",
+      "UnitTalk_JPN": "皮肉なことに、私はもうこれ以上観察するものがないという事実に直面したのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 138,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "그런 저에게 단장님은… 보물의 산과 같은 존재입니다.",
+      "UnitTalk_JPN": "そんな私にとって、団長様は……宝の山のような存在です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 139,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "단장님과 관련된 그 모든 소문에도 불구하고…",
+      "UnitTalk_JPN": "団長様に関するあらゆる噂にもかかわらず…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 140,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "단장님은 놀라울 정도로 아무것도 확인된 것이 없더군요.",
+      "UnitTalk_JPN": "団長様は驚くほどに、まだ確認されていない部分が多いのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "그러니 단장님에 대해서 제가 만족할 만큼 관찰할 때까지…",
+      "UnitTalk_JPN": "ですから団長様を観察し…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 142,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitTalk_KOR": "그때까지 남아주시면 좋겠군요.",
+      "UnitTalk_JPN": "私の気が済むまで、留まっていただきたいところですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_05_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitNameString": [
+        "SI_HUBBLE"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…후후후후.",
+      "UnitTalk_JPN": "…フフフフ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

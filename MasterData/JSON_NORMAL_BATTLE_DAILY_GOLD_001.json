@@ -1,0 +1,80 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_CROSSBOW_RED_DAILY_00", //필중의 기사(레드)
+            "ChangeAdjustType": "NUAT_SUN",
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -5000,
+              "NST_NV_RATE_HP": -7000
+            }
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_SWORD_RED_DAILY_00", //강격의 기사(레드)
+            "ChangeAdjustType": "NUAT_SUN",
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -5000,
+              "NST_NV_RATE_HP": -7000
+            }
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_CROSSBOW_RED_DAILY_00", //필중의 기사(레드)
+            "ChangeAdjustType": "NUAT_SUN",
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -5000,
+              "NST_NV_RATE_HP": -7000
+            }
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_SWORD_RED_DAILY_00", //강격의 기사(레드)
+            "ChangeAdjustType": "NUAT_SUN",
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -5000,
+              "NST_NV_RATE_HP": -7000
+            }
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_VETERAN_SHIELD_GOLD_BOSS_DAILY_00", //황금기사 아르투르
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_SUN",
+            "IsBoss": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -5000,
+              "NST_NV_RATE_HP": -7000
+            }
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_KNIGHT_SWORD_RED_DAILY_00", //강격의 기사(레드)
+            "ChangeAdjustType": "NUAT_SUN",
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -5000,
+              "NST_NV_RATE_HP": -7000
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

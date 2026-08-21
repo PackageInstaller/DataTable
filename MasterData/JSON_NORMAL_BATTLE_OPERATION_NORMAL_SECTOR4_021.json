@@ -1,0 +1,33 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_OPERATION_00", //처단자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_OPERATION_00", //망자의 처단자
+            "ChangeAdjustType": "NUAT_STAR",
+            "IsBoss": true,
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_OPERATION_00", //처단자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR"
+          }
+        ]
+      }
+    ]
+  }
+}

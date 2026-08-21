@@ -1,0 +1,33 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_BONE_BLACK_OPERATION_05",//전파자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_ELITEBONE_BLACK_ELITE_OPERATION_05",//맹목의 전파자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_BONE_BLACK_OPERATION_05",//전파자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+          }
+        ]
+      }
+    ]
+  }
+}

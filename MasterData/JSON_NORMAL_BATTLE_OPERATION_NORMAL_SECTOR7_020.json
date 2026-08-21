@@ -1,0 +1,48 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_MINION_OPERATION_02", //추적자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2500,
+              "NST_NV_RATE_HP": -3500,
+              "NST_TURN_SPEED" : -30
+            }
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_CLOAKING_CLAW_BOSS_OPERATION_02", //공허 습격자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2500,
+              "NST_NV_RATE_HP": -3500,
+              "NST_TURN_SPEED" : -30
+            }
+          },
+          {
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_MINION_OPERATION_02", //추적자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2500,
+              "NST_NV_RATE_HP": -3500,
+              "NST_TURN_SPEED" : -30
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

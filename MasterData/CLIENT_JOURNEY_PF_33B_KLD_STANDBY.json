@@ -1,0 +1,336 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_33B_KLD_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_SHOP",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS3",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "칼라이드 광장을 걷던 중, 웬 커다란 개가 쏜살같이 달려들어 품에 안겼다. ",
+      "UnitTalk_JPN": "カライド広場を歩いていると…大きな犬が、ものすごい勢いで胸に飛び込んで来た。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "멍멍!",
+      "UnitTalk_JPN": "ワンワン！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "육중한 덩치로 나를 깔아뭉갠 녀석은 꼬리를 격하게 흔들며 한참 동안 볼을 핥아댔다. ",
+      "UnitTalk_JPN": "その巨体で私を押し倒した犬は、激しく尻尾を振りながら私の頬を舐め続けた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_PEDDLER"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "이 녀석아! 또 어디로 간 거─ 응?",
+      "UnitTalk_JPN": "こら、またどこへ行ったんだ！…うむ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_PEDDLER"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "찾았다! 여기 있었구나, 이 녀석! ",
+      "UnitTalk_JPN": "見つけたぞ、ここにいたのか！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…주인 되십니까?",
+          "JumpAnchorStringId_JPN": "…飼い主さんですか？"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_PEDDLER"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "에구, 죄송합니다. 이 녀석이 워낙 장난기가 많아서요.",
+      "UnitTalk_JPN": "いやはや、申し訳ありません。この子はどうもやんちゃでして。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_PEDDLER"
+      ],
+      "UnitTalk_KOR": "원래 썰매견들이 힘이 넘치긴 하는데, 이 녀석은 그중에서도 좀 심하거든요.",
+      "UnitTalk_JPN": "元々、ソリ犬は力が有り余っているものですが…この子は特にひどくてね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_PEDDLER"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "잠깐이라도 한눈팔면 이렇게 멋대로 뛰어나가 버리니, 원…",
+      "UnitTalk_JPN": "少しでも目を離すと、こうして勝手に飛び出して行くのです。困ったものですよ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_PEDDLER"
+      ],
+      "UnitTalk_KOR": "이 녀석아, 곧 출발할 테니까 기다리라고 했잖아. ",
+      "UnitTalk_JPN": "こら、すぐに出発するから待っていなさいと言っただろう。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "행상인은 썰매견의 엉덩이를 찰싹찰싹 두들겼다. ",
+      "UnitTalk_JPN": "行商人はソリ犬のお尻をポンと叩いた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "썰매견이요?",
+          "JumpAnchorStringId_JPN": "ソリ犬なんですか？"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_PEDDLER"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 네. 전 행상인이라 개 썰매를 끌고 멀리 떨어진 마을들을 돌아다니거든요.",
+      "UnitTalk_JPN": "ええ。私は行商人なので、犬ぞりを引いて遠く離れた村々を巡っているんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_PEDDLER"
+      ],
+      "UnitTalk_KOR": "칼라이드에서는 도시를 조금만 벗어나도 설원이 펼쳐지죠.",
+      "UnitTalk_JPN": "カライドでは、街を少し離れると雪原が広がっていますからね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_PEDDLER"
+      ],
+      "UnitTalk_KOR": "특히 오지 같은 데는 개 썰매 없인 움직이지 못할 정도예요.",
+      "UnitTalk_JPN": "特に奥地では、犬ぞりなしでは移動できないほどです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_PEDDLER"
+      ],
+      "UnitTalk_KOR": "추위에 강한 칼라이드 말들도 발이 눈 속에 빠지면 달릴 수가 없으니까요.",
+      "UnitTalk_JPN": "寒さに強いカライドの馬でも、足が雪に埋もれてしまっては走れませんから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_PEDDLER"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그나저나 덕분에 늦지 않고 제시간에 출발할 수 있겠네요.",
+      "UnitTalk_JPN": "この子を捕まえてくださったおかげで、時間通りに出発できそうです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_CLOTH_01.wav",
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_PEDDLER"
+      ],
+      "UnitTalk_KOR": "대단한 건 아니지만 괜찮다면 받아 주시겠습니까?",
+      "UnitTalk_JPN": "大した物ではありませんが、よろしければ受け取っていただけませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_PEDDLER"
+      ],
+      "UnitTalk_KOR": "원래는 팔려고 했던 물건입니다만, 도움을 주신 분께 드린다면 아깝지 않죠.",
+      "UnitTalk_JPN": "販売しようと思っていた物ですが、助けてくださった方に差し上げるなら惜しくはありませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS8",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_33B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "행상인이 품속에서 꺼낸 물건에서 묘한 인연이 느껴진다!",
+      "UnitTalk_JPN": "行商人が懐から取り出した物から、不思議な縁が感じられた！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

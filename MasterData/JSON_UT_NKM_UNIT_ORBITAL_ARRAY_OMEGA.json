@@ -1,0 +1,98 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_SAVIOR.txt",
+    "UiStates": [],
+    "BattleStates": [
+    
+      {
+        "StateName": "USN_ORBITAL_ARRAY",
+        "BattleMapSceneName": "MAP_BATTLE_ORBITAL_OMEGA_SCENE.unity",
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "FormationMyTeam": "",
+          "FormationEnemy": "SFT_NORMAL_LINE"
+        },
+        "ShowEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 126,
+            "ShowOnMyTeam" : true
+          }
+        ],
+        "HealEvent": {
+          "UseAnimTime": false,
+          "EventFrame": 135,
+          "HealTargetType": "NHTT_ALL_TEAM",
+          "EffectData": {
+            "EffectName": "VFX_BUFF_UNIT_ORBITAL_OMEGA_HEAL.prefab",
+            "EffectHeight": "BVH_BODY"
+          }
+        },
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_OMEGA_BT_BREAKSKILL_1.wav"
+              }
+            ],
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_OMEGA_BT_BREAKSKILL_1.wav"
+              }
+            ]
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_OMEGA_BREAK_SKILL_SCIFI_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BATTLE_OMEGA_BREAK_SKILL_SPARKLE.wav"
+            ]
+          },
+          {
+            "EventFrame": 28,
+            "listSoundName": [
+              "SFX_BATTLE_OMEGA_BREAK_SKILL_SPARKLE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 50,
+            "listSoundName": [
+              "SFX_BATTLE_OMEGA_BREAK_SKILL_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 71,
+            "listSoundName": [
+              "SFX_BATTLE_OMEGA_BREAK_SKILL_HIT.wav"
+            ]
+          },
+          {
+            "EventFrame": 79,
+            "listSoundName": [
+              "SFX_BATTLE_OMEGA_BREAK_SKILL_WHOOSH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 113,
+            "listSoundName": [
+              "SFX_BATTLE_OMEGA_BREAK_SKILL_HIT_02.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

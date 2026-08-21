@@ -1,0 +1,97 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_SAVIOR.txt",
+    "UiStates": [],
+    "BattleStates": [
+    
+      {
+        "StateName": "USN_ORBITAL_ARRAY",
+        "BattleMapSceneName": "MAP_BATTLE_ORBITAL_LISA_SCENE.unity",
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "FormationMyTeam": "",
+          "FormationEnemy": "SFT_NORMAL_LINE"
+        },
+        "ShowEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 135,
+            "ShowOnEnemy" : true
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 135,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            },
+            "SlowSpeedDef": 0.1
+            // "ReAttackCount": 4,
+            // "ReAttackGap": 0.2
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_LISA_BT_BREAKSKILL_1.wav"
+              }
+            ],
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_LISA_BT_BREAKSKILL_1.wav"
+              }
+            ]
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_LISA_BREAK_SKILL_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 23,
+            "listSoundName": [
+              "SFX_BATTLE_LISA_BREAK_SKILL_EQUIPMENT.wav"
+            ]
+          },
+          {
+            "EventFrame": 31,
+            "listSoundName": [
+              "SFX_BATTLE_LISA_BREAK_SKILL_WHOOSH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 64,
+            "listSoundName": [
+              "SFX_BATTLE_LISA_BREAK_SKILL_WHOOSH_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 89,
+            "listSoundName": [
+              "SFX_BATTLE_LISA_BREAK_SKILL_SPARKLE.wav"
+            ]
+          },
+          {
+            "EventFrame": 107,
+            "listSoundName": [
+              "SFX_BATTLE_LISA_BREAK_SKILL_HIT.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,188 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_CONSTRUCT_BOMB_REST_GOOD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_NORMAL",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "흐아암~ 단장, 잘 잤어?",
+      "UnitTalk_JPN": "ふぁ～。団長、よく眠れた？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "좋은 아침 좋은 아침♪",
+      "UnitTalk_JPN": "おはよーん♪",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "좋은 아침, 페트라.",
+          "JumpAnchorStringId_JPN": "おはよう、ペトラ。"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어째 평소보다 기운이 좋네.",
+          "JumpAnchorStringId_JPN": "いつもより元気そうだね。"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "응응♪ 사실 페트라, 좋은 꿈을 꿨거든!",
+      "UnitTalk_JPN": "うんうん♪実はペトラ、いい夢を見たんだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그것 때문인지 몸도 엄~청 가벼워! 냐하하!",
+      "UnitTalk_JPN": "そのせいか、体もすっごく軽いの！にゃはは！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무슨 꿈이길래?",
+          "JumpAnchorStringId_JPN": "どんな夢だったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "응, <color=#F7BE45>페트라 조합</color>이 잘 돼서 <color=#F7BE45>케메트 인더스트리</color>를 이기는 꿈이었어.",
+      "UnitTalk_JPN": "<color=#F7BE45>ペトラ組合</color>が上手くいって、<color=#F7BE45>ケメット・インダストリー</color>に勝つ夢だよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "확실히 좋은 꿈이었…",
+          "JumpAnchorStringId_JPN": "確かに良い夢だな…"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그리고 나서는, 다 같이 집을 짓고, 거기서 함께 사는 꿈이었거든!",
+      "UnitTalk_JPN": "それから、みんなでおうちを建てて…一緒に暮らす夢！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "근데 단장이랑 페트라의 방이 엄-청 좁게 만들어져서, 꼭 붙어있을 수밖에 없었어♡",
+      "UnitTalk_JPN": "で、団長とペトラの部屋はすごく狭くて…ぎゅーってくっついてるしかなかったの♡",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "그래서 페트라, 이 꿈에서 영감을 얻어서 나중에 우리 안방을 엄-청 좁게 만들기로 결심했어♪",
+      "UnitTalk_JPN": "だからペトラ、この夢からヒントを得て…二人の寝室は、すごく狭く作ることに決めたんだ♪",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "그러니까 단장도 페트라의 계획에 협조해줘♡",
+      "UnitTalk_JPN": "だから団長も、ペトラの計画に協力してね♡",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…?",
+          "JumpAnchorStringId_JPN": "…？"
+        }
+      ]
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "뭔진 모르겠지만, 페트라는 유난히 기분이 좋아 보인다.",
+      "UnitTalk_JPN": "どういうわけか、ペトラはいつもよりご機嫌だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오늘 훈련은 더 과감하게 진행해도 괜찮을 것 같다.",
+      "UnitTalk_JPN": "今日のトレーニングは、少し思い切っても良いかもしれない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

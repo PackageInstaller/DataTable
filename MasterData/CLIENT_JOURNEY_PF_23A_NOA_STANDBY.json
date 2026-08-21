@@ -1,0 +1,1281 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_23A_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_1",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "안녕하세요, 단장님! 푹 쉬셨나요?",
+      "UnitTalk_JPN": "こんにちは、団長！ゆっくり休まれましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "여행의 피로가 남아있는 건 아닌지 걱정했는데,",
+      "UnitTalk_JPN": "旅の疲れが残っていないか心配でしたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "후후, 괜찮아 보이시네요.",
+      "UnitTalk_JPN": "ふふっ、お元気そうですね。",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "처음 <color=#F7BE45>[여정]</color>을 시작했을 때 낯설어하시던 모습이 생각나는데…",
+      "UnitTalk_JPN": "<color=#F7BE45>「旅」</color>を始めた頃の、不慣れで戸惑っていた姿を思い出します…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그때에 비하면 지금은 단장님도, 여정 단원도 훨씬 더 성장하신 것 같아요.",
+      "UnitTalk_JPN": "あの頃に比べると、お二人ともずっと成長されたようです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "뭐, 저처럼 유능한 연락관이 붙어 있으니 당연한 결과겠죠.",
+      "UnitTalk_JPN": "まぁ、私のような有能な連絡官がついているのですから。当然の結果でしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하지만 방심은 금물이랍니다.",
+      "UnitTalk_JPN": "ですが、油断は禁物ですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "앞으로의 <color=#F7BE45>[여정]</color>에도 최선을 다해 주세요.",
+      "UnitTalk_JPN": "これからも<color=#F7BE45>「救援の旅」</color>にご尽力くださいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "자, 그럼 다음 평가전에 대해 말씀드리겠습니다.",
+      "UnitTalk_JPN": "さぁ、次の試験についてご説明します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "다음 평가전은 <color=#F7BE45>[경쟁 평가전]</color>입니다.",
+      "UnitTalk_JPN": "次の試験は<color=#F7BE45>「対人試験」</color>です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "구원자로 활동하다 보면 때로는 다른 구원자와 싸워야 할 때도 있습니다.",
+      "UnitTalk_JPN": "救援者として活動していると、時には他の救援者と戦わなければならないこともあります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "사소한 오해일 수도, 서로의 입장 차이 때문일 수도…",
+      "UnitTalk_JPN": "その理由は、些細な誤解かもしれないし、お互いの立場の違いかもしれない…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "때로는 <color=#F7BE45>공허의 세력에 협력하는 구원자</color>들이 나타나 라비스타의 평화를 위협하는 경우도 있습니다.",
+      "UnitTalk_JPN": "時には、<color=#F7BE45><r=ヴォイド>空虚</r>の勢力に協力する救援者</color>が現れ、ラビスターの平和を脅かす場合もあります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "안타깝지만 분명 일어나는 일이에요.",
+      "UnitTalk_JPN": "残念ですが、実際に起こりうることです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "경쟁 평가전은 그런 경우를 대비하여 구원자끼리의 전투 능력을 평가하는 시험입니다.",
+      "UnitTalk_JPN": "対人試験は…そのような場合に備え、救援者同士の戦闘能力を評価する試験です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "당연한 이야기지만 쉽지는 않을 거예요.",
+      "UnitTalk_JPN": "当然、簡単な試験ではありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "인간은 마수나 공허체보다 전술적으로 훨씬 더 치밀하고 교활하니까요.",
+      "UnitTalk_JPN": "人間は魔獣や<r=ヴォイドボーン>空虚体</r>よりも、戦術的にずっと緻密で狡猾ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "상대가 수많은 실전을 거쳐온 베테랑 구원자라면 말할 것도 없겠죠.",
+      "UnitTalk_JPN": "相手が数多くの実戦を経験してきたベテラン救援者なら、尚更です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그래서 이번 <color=#F7BE45>[경쟁 평가전]</color>의 상대는…",
+      "UnitTalk_JPN": "という訳で、今回の<color=#F7BE45>「対人試験」</color>のお相手は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_4",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_20.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "…당신인가? <color=#F7BE45>[여정 단장]</color>이라는 사람이.",
+      "UnitTalk_JPN": "…貴様が<color=#F7BE45>「旅の団長」</color>か？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "어머~ 귀여운 친구들이네요. 안녕?",
+      "UnitTalk_JPN": "あら〜、かわいい子たちですね。こんにちは。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이렇게 만난 것도 인연인데 같이 아이스크림이나 먹으러 갈까요?",
+      "UnitTalk_JPN": "こうして出会えたのも何かの縁ですし、一緒にアイスクリームでも食べに行きませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "저희가 주둔하는 <color=#F7BE45>[레이븐 월]</color>에는 아이스크림은 고사하고 얼음물도 찾기가 힘들거든요.",
+      "UnitTalk_JPN": "私たちが駐屯する<color=#F7BE45>「レイヴン・ウォール」</color>では、アイスクリームどころか氷水さえ手に入れるのが難しいんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "NOA에 온 게 얼마 만인지… 이럴 때라도 잔뜩 먹어둬야죠.",
+      "UnitTalk_JPN": "NOAに来るのはいつぶりかな…こういう時にたっぷり食べておかないと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "놀러 온 관광객 같은 나사 빠진 소리는 삼가라, 리디아.",
+      "UnitTalk_JPN": "リディア。観光客のような気の抜けたことを言うな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "우리는 우리의 임무만 마치면 바로 서부로 귀환한다.",
+      "UnitTalk_JPN": "任務を終えれば、すぐに西部へ帰還する。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "시답잖은 곳에 놀러 다닐 여유로운 시간 따윈 없다!",
+      "UnitTalk_JPN": "つまらぬ場所へ遊びに行く余裕などない！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아이참, 우리 대장은 너무 사고방식이 딱딱하다니까요.",
+      "UnitTalk_JPN": "まったく、隊長ったら頭が固すぎるんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "맛있는 걸 먹고 기분이 좋아져야 임무에도 힘을 쏟을 수 있는 거라고요.",
+      "UnitTalk_JPN": "おいしいものを食べて気分が良くなってこそ、任務を頑張れるんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "임무라고?",
+          "JumpAnchorStringId_JPN": "任務って？"
+        }
+      ]
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래, 너희들 평가전의 상대가 되는 것.",
+      "UnitTalk_JPN": "貴様らの試験相手になることだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그게 우리에게 하달된 임무다.",
+      "UnitTalk_JPN": "それが我々に下された任務だからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아… 벌써 도착해 계셨네요.",
+      "UnitTalk_JPN": "あっ…もう到着されていたようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이분들이 바로 이번 <color=#F7BE45>[경쟁 평가전]</color>의 상대.",
+      "UnitTalk_JPN": "この方々が、今回の<color=#F7BE45>「対人試験」</color>のお相手…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " <color=#F7BE45>[서부 탈환대]</color> 입니다.",
+      "UnitTalk_JPN": " <color=#F7BE45>「西部奪還隊」</color>です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "평가전의 상대를 위해 NOA로 초청했어요.",
+      "UnitTalk_JPN": "試験のお相手として、NOAにご招待しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[서부 탈환대]</color>는 과거 공허의 별이 강림했던 장소.",
+      "UnitTalk_JPN": "<color=#F7BE45>「西部奪還隊」</color>は、かつて<r=ヴォイドスター>空虚の星</r>が降臨した場所。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " <color=#F7BE45>[서부 재난 지대]</color>의 방어를 주 임무로 하는 구원단입니다.",
+      "UnitTalk_JPN": " <color=#F7BE45>「西部被災地」</color>の防衛を主な任務とする救援団です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 서부 재난 지대는 공허의 별 강림 이후로 사람이 살 수 없는 땅이 되어 버렸어요.",
+      "UnitTalk_JPN": " 西部被災地は…<r=ヴォイドスター>空虚の星</r>の降臨以降、人が住める地ではなくなってしまいました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 그래서 주기적으로 대규모의 마수나 공허체들이 몰려들곤 합니다.",
+      "UnitTalk_JPN": " そのため、定期的に大量の魔獣や<r=ヴォイドボーン>空虚体</r>が押し寄せてきます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": " 그러한 공격이 대륙 중앙으로 침투하지 못하게 방벽 요새 <color=#F7BE45>[레이븐 월]</color>에서 막아내고 있죠.",
+      "UnitTalk_JPN": " そうした攻撃が大陸中央に及ばないよう、防壁要塞である<color=#F7BE45>「レイヴン・ウォール」</color>が食い止めているのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 당연히 격렬한 실전을 가장 많이 치르는 구원단 중의 하나입니다.",
+      "UnitTalk_JPN": " 当然ながら、西部奪還隊は最も激しい実戦をこなしている救援団の一つです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "때로는 전사자도… 발생하고요.",
+      "UnitTalk_JPN": "時には戦死者が…出てしまうほどに。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "대단하네.",
+          "JumpAnchorStringId_JPN": "すごいな。"
+        }
+      ]
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 네, 중앙 대륙의 모두가 빚을 지고 있다고 해도 과언이 아니죠.",
+      "UnitTalk_JPN": " はい。中央大陸の誰もが、西部奪還隊に借りがあると言っても過言ではありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아까 이야기한 수많은 실전을 거쳐온 베테랑 구원자의 자격에 이분들만큼 어울리는 분들은 없을 거예요.",
+      "UnitTalk_JPN": "先ほどお話した「数多くの実戦を経験してきたベテラン救援者」という資格に、西部奪還隊ほどふさわしい方はいませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그렇기에 이번 평가전의 상대로 알리시아님이 내정하셨습니다.",
+      "UnitTalk_JPN": "そのため、今回の試験の相手としてアリシア様が指定されました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그리고 세레스님? 이쪽은…",
+      "UnitTalk_JPN": "そして、セレス様？こちらは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "됐다. 쓸데없는 통성명 따윈 필요 없어.",
+      "UnitTalk_JPN": "無駄な自己紹介など必要ない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "마음 같아서는 여기서 당장 빠르게 결판을 내고, 서부로 돌아가고 싶으니까.",
+      "UnitTalk_JPN": "ここで速やかに決着をつけ、西部へ戻りたいぐらいだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "거기 연락관이 설명한 대로 지금도 서부에서는 공허체들의 위협이 계속되고 있어.",
+      "UnitTalk_JPN": "そこの連絡官が説明した通り、今も西部では<r=ヴォイドボーン>空虚体</r>の脅威が続いている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "이런 뜨뜻미지근한 평화의 분위기가 가득 찬 곳은 조금이라도 오래 머물고 싶지 않다는 거다.",
+      "UnitTalk_JPN": "こんな生ぬるい平和な場所から、一刻も早く出たいという訳だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "알겠나!",
+      "UnitTalk_JPN": "分かったか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알겠습니다.",
+          "JumpAnchorStringId_JPN": "分かりました。"
+        }
+      ]
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_EMOTION_UPSET.wav",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "CameraOffset": "ONE_4",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "알긴 뭘 알아!!",
+      "UnitTalk_JPN": "ひとつも分かっておらぬだろう！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "여정이라고? 별의 구원자의 힘을 계승 받는다고?",
+      "UnitTalk_JPN": "救援の旅だと？「星の救援者」の力を継承するだと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "그런 강한 힘을 가질 기회가 어째서 우리가 아니라 너희인 거지?",
+      "UnitTalk_JPN": "そんな強い力を得る機会が、どうして我々ではなく貴様らに授けられたのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "얼굴만 봐도 긴장감이라고는 하나도 없어!",
+      "UnitTalk_JPN": "顔を見ても、緊張感など微塵もない！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_61.wav",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "CameraOffset": "ONE_4",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "분명 어제도 딸기 케이크와 파르페를 배부르게 먹으며 웃고 떠들었겠지!",
+      "UnitTalk_JPN": "どうせ昨日もイチゴのショートケーキとパフェを腹いっぱい食べ、\n笑いながら馬鹿騒ぎしていたのだろう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 안 먹었는데…",
+          "JumpAnchorStringId_JPN": "いや、食べてないけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "물러!",
+      "UnitTalk_JPN": "甘い！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "물러 터졌어!",
+      "UnitTalk_JPN": "甘すぎる！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "나는 납득할 수 없다. 별의 구원자의 힘을 얻을 수 있다면 응당 더 강한 자가 가져가야 해.",
+      "UnitTalk_JPN": "我は納得できぬ。星の救援者の力は、強者が手に入れるべきだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "매일매일 마들렌이나 푸딩 같은 걸 먹으러 다니는 놈들의 뒷바라지를 해야 한다니…!",
+      "UnitTalk_JPN": "毎日マドレーヌやプリンを食べ歩く者の面倒を、我が見なければならないとは…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "우리도 여정을 위한 각오는 진지해.",
+          "JumpAnchorStringId_JPN": "私たちも覚悟はできてる。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "우습게 보면 곤란해.",
+          "JumpAnchorStringId_JPN": "舐めてもらっては困るな。"
+        }
+      ]
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "흥, 말만큼의 실력이 있다면 인정해 주지.",
+      "UnitTalk_JPN": "フン。言葉に見合う実力があるのなら、認めてやろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "그것 역시, 강한 자가 가져간다, 라는 결과에 부합하니까.",
+      "UnitTalk_JPN": "「強者が手に入れるべき」という結果に合致するからだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "하지만 정말로 우릴 이기고 여정을 계속 진행하고 싶다면…",
+      "UnitTalk_JPN": "だが本当に、我々に勝って旅を続けたいなら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그 얼굴에 좀 더 긴장감을 새겨 놓는 게 좋을 거다.",
+      "UnitTalk_JPN": "その顔に、もう少し緊張感を刻んでおくことだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "정말~ 이제 충분하잖아요? 왜 매번 만나는 사람들과 싸우려 드는지 몰라~.",
+      "UnitTalk_JPN": "まったく、もういいでしょう？どうしていつも喧嘩腰なんですか～。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "대장은 좀 더 긴장감을 푸는 게 좋다니까요.",
+      "UnitTalk_JPN": "隊長はもう少しリラックスした方がいいですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "리디아! 그런 솜사탕같이 무른 생각은…!",
+      "UnitTalk_JPN": "リディア！そんな綿あめのような甘い考えは…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…혹시 먹고 싶은 거야?",
+          "JumpAnchorStringId_JPN": "…もしかして、食べたいの？"
+        }
+      ]
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "케이크나 푸딩이나 솜사탕 같은 거.",
+          "JumpAnchorStringId_JPN": "ケーキとかプリンとか綿あめとか。"
+        }
+      ]
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "…뭐, 뭐?!",
+      "UnitTalk_JPN": "…な、何だとっ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "무, 무슨 소리냐! 그런 나약한 음식들에 내가 왜 관심을 가질 거라 생각하지!",
+      "UnitTalk_JPN": "な、何を言っているのだ！そんな軟弱な食べ物に、我が興味を持つとでも思ったか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아까부터 그런 얘기만 하고 있잖아…",
+          "JumpAnchorStringId_JPN": "さっきから甘い物の話ばっかりだけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아- 여정 단장님도 눈치챘나 보네요.",
+      "UnitTalk_JPN": "あ～、団長さんも気づいちゃいましたか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "맞아요, 맞아. 엄청 먹고 싶어 하는 거 맞아요, 응.",
+      "UnitTalk_JPN": "そうそう。すごく食べたがってるんです、うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "리, 리디아! 쓸데없는 소리 하지 마라!",
+      "UnitTalk_JPN": "リ、リディア！余計なことを言うな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "에에잇, 볼일은 끝났다. 돌아간다!",
+      "UnitTalk_JPN": "ええい、用事は済んだだろう。帰るぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아앗! 벌써? 한창 재미있어지려고 하는데~",
+      "UnitTalk_JPN": "ああっ！もう、面白くなってきたところだったのに～。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "어쩔 수 없죠. 그럼 돌아가는 길에 어딜 들려볼까요?",
+      "UnitTalk_JPN": "仕方ないですね。じゃあ、帰りにどこに寄ります？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": " 일단 아이스크림부터 시작해서, 찻집이랑, 화로구이…",
+      "UnitTalk_JPN": " まずはアイスクリームから食べて、カフェとか、炭火焼きとか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "시끄러워, 저녁은 전투식량이다.",
+      "UnitTalk_JPN": "口を慎め。夕食は戦闘糧食だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "네?!",
+      "UnitTalk_JPN": "ええっ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_61.wav",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "CameraOffset": "ONE_4",
+      "UnitTalk_KOR": "아침도, 점심도, 저녁도!",
+      "UnitTalk_JPN": "朝も、昼も、夜も！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitTalk_KOR": "NOA에 있는 동안은 계속 긴장감을 유지하며 서부에서 가져온 전투식량으로 식사한다!",
+      "UnitTalk_JPN": "NOAにいる間も緊張感を保つため、西部から持参した戦闘糧食を食べねばならぬ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "아앗! 아아앗…!",
+      "UnitTalk_JPN": "いや！いやぁっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "트래벌 타임즈에 소개된 맛집들로 엄선한 제 투어 동선이…!!",
+      "UnitTalk_JPN": "トラベル・タイムズで紹介された名店を厳選した、私のツアーコースが…！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "대장~! 잠깐만요~! 진짜예요 그 말~?",
+      "UnitTalk_JPN": "隊長～！ちょっと、本気ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "CutsceneClear": "CLEARALL",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…가버렸네요.",
+      "UnitTalk_JPN": "…行ってしまいましたね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그러게…",
+          "JumpAnchorStringId_JPN": "そうだな…"
+        }
+      ]
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": " 승리하려면 최선을 다해야 하겠어요.",
+      "UnitTalk_JPN": " 勝利するためには、最善を尽くさなければなりません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "보셨듯이 강하다는 것에 대해 절대적인 자부심을 가질 정도로…",
+      "UnitTalk_JPN": "ご覧の通り、強さに対して絶対的なプライドを持つほど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " <color=#F7BE45>[서부 탈환대]</color>는 라비스타 전체에서도 수위를 다투는 강력한 구원단이니까요.",
+      "UnitTalk_JPN": " <color=#F7BE45>「西部奪還隊」</color>は、ラビスターでもトップクラスの救援団ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[경쟁 평가전]</color> 일정은 여정 일지에 기록해 드릴게요.",
+      "UnitTalk_JPN": "<color=#F7BE45>「対人試験」</color>の日程は、旅の日誌に記録しておきます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_23A_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "오늘부터 특훈입니다! 단장님!",
+      "UnitTalk_JPN": "今日から特訓ですよ！団長！",
+      "TalkTime": 0.03
+    }
+  ]
+}

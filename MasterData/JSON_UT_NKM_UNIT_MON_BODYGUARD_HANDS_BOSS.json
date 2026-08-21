@@ -1,0 +1,334 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_KNIGHT.txt",
+    "UnitHudHeight": 2.5,
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_IRON_HIT.wav"
+            ]
+          },
+          {
+            "EventFrame": 3,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_VOICE_09.wav"
+            ]
+          },
+          {
+            "EventFrame": 47,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_IRON.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventMoveEaseType": "NEMET_LINEAR",
+            "EventFrame": 12,
+            "EventEndFrame": 38,
+            "EventMoveTarget": "NEMT_TARGET",
+            "OffsetFront": -1
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 148,
+            "EventEndFrame": 165,
+            "EventMoveTarget": "NEMT_SELF",
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 43,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 98,
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "ReActType": "NRT_DAMAGE_B",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 11,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_STEP.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_PUNCH.wav"
+            ]
+          },
+          {
+            "EventFrame": 45,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_VOICE.wav"
+            ]
+          },
+          {
+            "EventFrame": 63,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_STEP_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 92,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_KICK.wav"
+            ]
+          },
+          {
+            "EventFrame": 97,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_VOICE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 115,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_STEP_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 148,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_STEP_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 166,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_STEP_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 198,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_IRON.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": false,
+        "UseEnemyTargetCamera": true,
+        "StartUnitShow": {
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 39,
+            "StopTimeDef": 0.2,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_IRON_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 7,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_VOICE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 22,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_THROW.wav"
+            ]
+          },
+          {
+            "EventFrame": 33,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_VOICE_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 42,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_EXPLOSION.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "PlaySkillCutIn": false,
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowUnitHudOffEnemy": false,
+          "ShowUnitHudOnEnemy": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 132,
+            "StopTimeDef": 0.2,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 158,
+            "StopTimeDef": 0.3,
+            "CameraCrashGap": 0.5,
+            "CameraCrashTime": 0.3,
+            "ReActType": "NRT_DAMAGE_B",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_WOOD.wav"
+            ]
+          },
+          {
+            "EventFrame": 22,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_VOICE_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 29,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_WOOD_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 85,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_VOICE_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 86,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_THROW_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 126,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_IMPACT.wav"
+            ]
+          },
+          {
+            "EventFrame": 150,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_EXPLOSION_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 33,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_BODY.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_BODY_02.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 29,
+                "VoiceName": "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_VOICE_07.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 32,
+                "VoiceName": "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_VOICE_08.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 60,
+                "VoiceName": "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_VOICE_10.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 60,
+                "VoiceName": "SFX_BT_UNIT_MON_CASINO_GORILLA_BLACK_BOSS_VOICE_11.wav"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,358 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: BATTLE_EFFECT_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "BattleEffectId" : 10101,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL1_01",
+          "BattleEffectTarget" : "BCT_ATEAM_HOST_BATTLE_EFFECT",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL1_01_01"]
+        },
+        {
+          "BattleEffectId" : 10102,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL2_01",
+          "BattleEffectTarget" : "BCT_ATEAM_HOST_BATTLE_EFFECT",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL2_01_01"]
+        },
+        {
+          "BattleEffectId" : 10103,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL3_01",
+          "BattleEffectTarget" : "BCT_ATEAM_HOST_BATTLE_EFFECT",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL3_01_01"]
+        },
+        {
+          "BattleEffectId" : 10104,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL4_01",
+          "BattleEffectTarget" : "BCT_ATEAM_HOST_BATTLE_EFFECT",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL4_01_01"]
+        },
+        {
+          "BattleEffectId" : 10105,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL5_01",
+          "BattleEffectTarget" : "BCT_ATEAM_HOST_BATTLE_EFFECT",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL5_01_01"]
+        },
+        {
+          "BattleEffectId" : 10106,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL6_01",
+          "BattleEffectTarget" : "BCT_ATEAM_HOST_BATTLE_EFFECT",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL6_01_01"]
+        },
+        {
+          "BattleEffectId" : 20101,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_01",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_DAMAGE_UP",
+          "BattleEffectStatValue" : 1000
+        },
+        {
+          "BattleEffectId" : 20102,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_01",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_DAMAGE_UP",
+          "BattleEffectStatValue" : 2000
+        },
+        {
+          "BattleEffectId" : 20103,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_01",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_DAMAGE_UP",
+          "BattleEffectStatValue" : 3000
+        },
+        {
+          "BattleEffectId" : 20104,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_01",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_DAMAGE_UP",
+          "BattleEffectStatValue" : 4000
+        },
+        {
+          "BattleEffectId" : 20105,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_01",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_DAMAGE_UP",
+          "BattleEffectStatValue" : 5000
+        },
+        {
+          "BattleEffectId" : 20111,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_02",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_EFFECT_HIT",
+          "BattleEffectStatValue" : 1000
+        },
+        {
+          "BattleEffectId" : 20112,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_02",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_EFFECT_HIT",
+          "BattleEffectStatValue" : 2500
+        },
+        {
+          "BattleEffectId" : 20113,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_02",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_EFFECT_HIT",
+          "BattleEffectStatValue" : 5000
+        },
+        {
+          "BattleEffectId" : 20114,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_02",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_EFFECT_HIT",
+          "BattleEffectStatValue" : 7500
+        },
+        {
+          "BattleEffectId" : 20115,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_02",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_EFFECT_HIT",
+          "BattleEffectStatValue" : 10000
+        },
+        {
+          "BattleEffectId" : 20121,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_03",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 20122,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_03",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 20123,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_03",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 20124,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_03",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -4000
+        },
+        {
+          "BattleEffectId" : 20125,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_03",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -5000
+        },
+        {
+          "BattleEffectId" : 20131,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_04",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 20132,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_04",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 20133,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_04",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -4000
+        },
+        {
+          "BattleEffectId" : 20134,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_04",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -6000
+        },
+        {
+          "BattleEffectId" : 20135,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_04",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -8000
+        },
+        {
+          "BattleEffectId" : 30101,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE1_01",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_01_01"]
+        },
+        {
+          "BattleEffectId" : 30102,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE1_02",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_02_01"]
+        },
+        {
+          "BattleEffectId" : 30103,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE1_03",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_03_01"]
+        },
+        {
+          "BattleEffectId" : 30104,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE1_04",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_04_01"]
+        },
+        {
+          "BattleEffectId" : 30105,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE1_05",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_05_01"]
+        },
+        {
+          "BattleEffectId" : 30201,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE2_01",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_01_01"]
+        },
+        {
+          "BattleEffectId" : 30202,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE2_02",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_02_01"]
+        },
+        {
+          "BattleEffectId" : 30203,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE2_03",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_03_01"]
+        },
+        {
+          "BattleEffectId" : 30204,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE2_04",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_04_01"]
+        },
+        {
+          "BattleEffectId" : 30205,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE2_05",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_05_01"]
+        },
+        {
+          "BattleEffectId" : 30301,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE3_01",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_01_01"]
+        },
+        {
+          "BattleEffectId" : 30302,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE3_02",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_02_01"]
+        },
+        {
+          "BattleEffectId" : 30303,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE3_03",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_03_01"]
+        },
+        {
+          "BattleEffectId" : 30304,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE3_04",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_04_01"]
+        },
+        {
+          "BattleEffectId" : 30305,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE3_05",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_05_01"]
+        },
+        {
+          "BattleEffectId" : 30401,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE4_01",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_01_01"]
+        },
+        {
+          "BattleEffectId" : 30402,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE4_02",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_02_01"]
+        },
+        {
+          "BattleEffectId" : 30403,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE4_03",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_03_01"]
+        },
+        {
+          "BattleEffectId" : 30404,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE4_04",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_04_01"]
+        },
+        {
+          "BattleEffectId" : 30405,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE4_05",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_05_01"]
+        },
+        {
+          "BattleEffectId" : 30501,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE5_01",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_01_01"]
+        },
+        {
+          "BattleEffectId" : 30502,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE5_02",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_02_01"]
+        },
+        {
+          "BattleEffectId" : 30503,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE5_03",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_03_01"]
+        },
+        {
+          "BattleEffectId" : 30504,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE5_04",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_04_01"]
+        },
+        {
+          "BattleEffectId" : 30505,
+          "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE5_05",
+          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_05_01"]
+        }
+    ]
+}

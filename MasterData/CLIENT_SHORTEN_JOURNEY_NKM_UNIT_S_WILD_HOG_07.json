@@ -1,0 +1,36 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WILD_HOG_07",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_WILD_HOG_02.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "불꽃놀이를 보러 가던 할리를 이전의 갱단이 습격했다. 하지만 여정을 망치고 싶지 않았던 할리는 혼자 린치를 견뎌냈다.",
+      "UnitTalk_JPN": "花火を見に行く途中、ハーレーは以前のギャング団に襲撃された。しかし旅を台無しにしたくなかったハリは、一人でリンチに耐え抜いた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

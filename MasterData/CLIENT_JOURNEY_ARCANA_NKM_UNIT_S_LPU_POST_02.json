@@ -1,0 +1,1467 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "CameraOffset": "TWIN_3"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "길을 걷다가 운이 좋게 베라를 발견했다.",
+      "UnitTalk_JPN": "道を歩いていると、偶然ベラを見かけた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "한 건장한 노인과 실랑이 중이었다.",
+      "UnitTalk_JPN": "…体格のいい老人と揉めているようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "하지만 갑자기 말씀하셔도...",
+      "UnitTalk_JPN": "でも、急にそんな事を言われましても…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "자네가 소포를 들고 불량배들을 따돌리는 걸 봤네.",
+      "UnitTalk_JPN": "お前さんが荷物を持って、不良たちから逃げるのを見たんじゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitTalk_KOR": "그 엄청난 속도, 빠른 방향 전환과 순발력...!",
+      "UnitTalk_JPN": "尋常ではないあの速度、素早い方向転換に、瞬発力…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그야말로 별이 내린 재능이야! 라비스타 볼에는 자네 같은 인재가 필요해!",
+      "UnitTalk_JPN": "あれはまさに、天からの贈り物！お前さんのような人材こそ、ラビスターボールに必要なんじゃ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "라비스타 볼?",
+          "JumpAnchorStringId_JPN": "ラビスターボール？"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "앗, 단장님?! ",
+      "UnitTalk_JPN": "あっ、団長！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "라비스타 볼은 혜성처럼 떠오르는 스포츠일세. ",
+      "UnitTalk_JPN": "ラビスターボールとは、彗星のごとく登場したスポーツのことじゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아직 아마추어 리그밖에 없지만.",
+      "UnitTalk_JPN": "今はまだ、アマチュアリーグしかないがの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "길쭉한 공을 들고 달려가서 상대편의 진지에 도착하면 점수를 따지! 어때, 간단하지?",
+      "UnitTalk_JPN": "楕円形のボールを持って走り、相手の陣地までたどり着けば得点ゲット！どうじゃ、簡単だろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "우리가 프로 리그로 성장하려면 슈퍼스타가 필요해. 바로 자네 같은 친구 말일세!",
+      "UnitTalk_JPN": "プロリーグまで成長させるためには、お前さんのようなスーパースターが必要なんじゃよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "조, 좋게 봐주신 건 감사하지만...",
+      "UnitTalk_JPN": "ほ…褒めてくださるのは嬉しいんですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "저는 스포츠 쪽으로는 생각해 본 적이 없어서요... 죄송합니다!",
+      "UnitTalk_JPN": "私、スポーツには興味が無くて…すみません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitTalk_KOR": "아쉽군, 참으로 아쉬워. 프로로 가면 가볍게 연봉 1위를 할 수 있는 잠재력인데!",
+      "UnitTalk_JPN": "残念じゃな…プロになれば、年俸ランキングで1位を獲れるポテンシャルだというのに！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…여, 연봉 1 위요?",
+      "UnitTalk_JPN": "ね…年俸ランキング1位ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitTalk_KOR": "프로를 꿈꾸는 수많은 선수들에게 희망을 줄 수 있을 텐데! 참으로 아쉽구먼!",
+      "UnitTalk_JPN": "そうじゃ！プロを目指す選手たちにとって、希望の星になれるぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…하, 한 번쯤 도전해보는 정도라면…",
+      "UnitTalk_JPN": "…い、一回やってみるくらいなら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "잘 생각했네! 그럼 자네는 오늘부터 NOA 스트라이더즈의 윙백일세!",
+      "UnitTalk_JPN": "よくぞ判断したのう！今からお前さんは、NOA・ストライダーズのウィングバックじゃ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "위, 윙백이요…",
+      "UnitTalk_JPN": "ウ、ウィングバック…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitTalk_KOR": "이틀 뒤가 데뷔전이니, 훈련은 오늘부터 바로 들어가세나!",
+      "UnitTalk_JPN": "デビュー戦は二日後じゃ！さっそく今日からトレーニングを開始するぞい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "네?",
+      "UnitTalk_JPN": "はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "전임 윙백이 척추가 부러져서 휴식 중이거든. 자네가 그 후임일세.",
+      "UnitTalk_JPN": "前任のウィングバックが背骨を骨折して、今は療養中でのう。お前さんが後任を務めることになるんじゃよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "…척추가 부러져요?",
+      "UnitTalk_JPN": "…背骨を骨折？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "준비되면 바로 연락하겠네, 조금만 기다리게나!",
+      "UnitTalk_JPN": "準備ができたら連絡するぞい。ちょっとばかし待っといとくれ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR"
+    },
+    {
+      "Uid": 111,
+      "WaitClick": false,
+      "WaitTime": 1.7,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "...저, 실수한 걸까요?",
+      "UnitTalk_JPN": "…私、やっちゃいましたかね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "글쎄...",
+          "JumpAnchorStringId_JPN": "…どうだろうね。"
+        }
+      ]
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAYING_FIELD.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이틀 뒤.",
+      "UnitTalk_JPN": "二日後。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.6
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE_LOOP",
+      "UnitTalk_KOR": "으에, 결국 왔어요... 결국 와버렸어요!",
+      "UnitTalk_JPN": "ふえっ…結局来てしまいました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "관중도 생각보다 많고, 선수들은 다들 건장하고... 머리가 하얘졌어요…",
+      "UnitTalk_JPN": "思ってたより観客も多いし、選手も大きい人ばかりで…頭が真っ白です…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "어떡하죠, 단장님?!",
+      "UnitTalk_JPN": "団長、どうしましょう！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "마음을 편하게 먹어.",
+          "JumpAnchorStringId_JPN": "気楽にやればいいよ。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "평소처럼 소포를 배달한다고 생각해.",
+          "JumpAnchorStringId_JPN": "いつもみたいに、荷物を運んでるって考えればいい。"
+        }
+      ]
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "평소처럼... 배달을...",
+      "UnitTalk_JPN": "いつもみたいに…荷物を運ぶ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "이건 소포다... 이건 그냥 배달이다... ",
+      "UnitTalk_JPN": "これは小包…これは配達のお仕事…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_02.mp3",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "네, NOA 스트라이더즈 대 플로라 워리어즈의 친선전! 경기 시작합니다!",
+      "UnitTalk_JPN": "さぁ、NOA・ストライダーズとフローラ・ウォリアーズの親善試合がまもなく始まります！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 8.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BRAWL.wav",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "시작하자마자 대격돌! NOA 선수들이 일방적으로 밀리고 있네요!",
+      "UnitTalk_JPN": "開始早々に大激突！NOAの選手が押されています！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "아! 스트라이더즈의 신입 선수가 공을 받았습니다만... 완전히 얼어붙었습니다!",
+      "UnitTalk_JPN": "おっと、ストライダーズの新人選手がボールを受けとりましたが…完全に硬直しています！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "다, 다가오지 마세요!",
+      "UnitTalk_JPN": "ち、近づかないでください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "패스라도 해, 베라!",
+          "JumpAnchorStringId_JPN": "ベラ、パスするんだ！"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "공을 던져!",
+          "JumpAnchorStringId_JPN": "ボールを投げろ！"
+        }
+      ]
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "던지라구요? 소포를요?!",
+      "UnitTalk_JPN": "投げる？小包をですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "망가지면 어떡해요?!",
+      "UnitTalk_JPN": "中身が壊れてしまったら、どうするんですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그거 던져도 안 망가져!!",
+          "JumpAnchorStringId_JPN": "それは投げても壊れないから！！"
+        }
+      ]
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "배달부가 목숨을 포기하면 포기하지 화물은... ",
+      "UnitTalk_JPN": "荷物は配達屋の命…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": " 히엑?!",
+      "UnitTalk_JPN": "ヒャッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "말씀드리는 순간 상대 선수의 태클! ",
+      "UnitTalk_JPN": "ウォリアーズがタックルを仕掛けたー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "덩치 차이가 두 배는 납니다! 베라 선수 그냥 깔리겠는데요!",
+      "UnitTalk_JPN": "体格の差は約二倍！ベラ選手、そのまま下敷きにされてしまいそうです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "앗… 베라 선수가...",
+      "UnitTalk_JPN": "おっと…ベラ選手が…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.4,
+      "StartBgmFileName": "MUSIC_BATTLE_NORMAL_01.mp3",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "상대를... 뛰어넘습니다!!",
+      "UnitTalk_JPN": "相手選手を…飛び越えたァァァ！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "방금 서전트 점프가 2미터를 넘지 않았나요?!",
+      "UnitTalk_JPN": "2メートル以上跳んだのではないでしょうか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "화, 화물은 못 넘겨줘요!",
+      "UnitTalk_JPN": "に、荷物は絶対に渡しません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "베라 선수에게 두 명이 동시에 달려듭니다...만!",
+      "UnitTalk_JPN": "二人同時にベラ選手に飛び掛かりました…がっ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "세상에! 스핀으로 한 명 제치고 곧바로 전진 페인트! ",
+      "UnitTalk_JPN": "なんと！スピンで一人をかわした！そして次は前進と見せかけたフェイント！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "나머지 한 명이 멋지게 속아넘어가 허공에 태클을 합니다! ",
+      "UnitTalk_JPN": "もう一人がタックルした場所には、誰もいません！見事に騙されました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "정말 동물적인 감각입니다! 저 선수 대체 뭐죠?! ",
+      "UnitTalk_JPN": "素晴らしい動物的感覚！彼女は一体何者なんでしょうか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SAD_LOOP",
+      "UnitTalk_KOR": "이건 배달이다! 이건 그냥 배달이다!",
+      "UnitTalk_JPN": "これは配達！これは配達ーっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "달려, 베라! 달려!",
+          "JumpAnchorStringId_JPN": "ベラ、行けー！"
+        }
+      ]
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "꼭 들소들 틈에서 뛰는 토끼 같습니다!",
+      "UnitTalk_JPN": "まるで野牛の群れの中を駆け回る、ウサギのようです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "적 디펜시브 엔드와 일대일 상황에서… 좌로 페인트 걸고 우로 스핀!",
+      "UnitTalk_JPN": "敵のディフェンシブエンドと一対一の状況で…左にフェイントをかけて右にスピン！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "제쳤습니다! 베라 선수, 그대로 달려가서!",
+      "UnitTalk_JPN": "なんとベラ選手、これも抜いたァァ！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartBgmFileName": "MUSIC_MONASTIR.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BRAWL.wav",
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "득점입니다! 득점!",
+      "UnitTalk_JPN": "ベラ選手、見事な得点です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SAD_LOOP",
+      "UnitTalk_KOR": "이건 그냥 배달이다! 이건 그냥 배달이다! 이건…",
+      "UnitTalk_JPN": "これは配達！これは配達！これは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE_LOOP",
+      "UnitTalk_KOR": "…헤?",
+      "UnitTalk_JPN": "…へっ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "상대팀 15명, 우리 팀 14명, 혼자서 29명을 제친 슈퍼플레이였습니다!",
+      "UnitTalk_JPN": "敵を15人、味方を14人！たった一人で29人を抜き去るスーパープレーでした！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "멋졌어, 베라!",
+          "JumpAnchorStringId_JPN": "ベラ、かっこよかったよ！"
+        }
+      ]
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "에헤헤헤…",
+      "UnitTalk_JPN": "えへへへ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_EMCEE"
+      ],
+      "UnitTalk_KOR": "어리벙벙하던 베라 선수, 드디어 웃음을 짓습니다! ",
+      "UnitTalk_JPN": "困惑していたベラ選手も、ようやく笑みを浮かべました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitTalk_KOR": "베라의 맹활약 덕분에 그날 경기는 32:10으로 스트라이더즈의 승리로 돌아갔다.",
+      "UnitTalk_JPN": "ベラの活躍により、32対10でストライダーズが勝利を収めた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STREET_STALL_NIGHT.png",
+      "UnitTalk_KOR": "베라는 헹가래를 열 번쯤 당하고서야 겨우 풀려났다.",
+      "UnitTalk_JPN": "ベラは10回ほど胴上げをされた後、ようやく開放された。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "얼마 뒤.",
+      "UnitTalk_JPN": "やがて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.6
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "네?! 팀 해체요?!",
+      "UnitTalk_JPN": "えっ！？チーム解散ですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitTalk_KOR": "리그 규모가 반토막이 났어. 인기도 반토막 났고.",
+      "UnitTalk_JPN": "リーグの規模が半分になったんじゃ…人気も減ってしまってのう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "어, 어째서요?",
+      "UnitTalk_JPN": "ど、どうしてですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "우리 팀이 저번 세 경기에서 164득점을 했지?",
+      "UnitTalk_JPN": "ワシらのチームが、直近の3試合で164点を取ったじゃろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitTalk_KOR": "자네 혼자 155점을 땄고.",
+      "UnitTalk_JPN": "そのうち155点はお前さんの点数じゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네에…",
+      "UnitTalk_JPN": "はい…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitTalk_KOR": "자네가 원패턴 플레이로 다 부수고 다니니까 보는 재미가 없다지 뭔가!",
+      "UnitTalk_JPN": "お前さんがワンパターンのプレーで全部ぶっ壊すもんじゃから、見てても面白くなくなったんじゃ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitTalk_KOR": "심지어 플로라 워리어즈랑 NOA 넥타이즈는 팀 해체까지 했어! 자네가 끼니 더 이상 재미가 없대!",
+      "UnitTalk_JPN": "そのうえ、フローラ・ウォリアーズとNOA・ネクタイズは解散してしもうた！お前さんのせいで、試合をしていても面白くないとな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "내가 잘못 생각했네… 우린 아직 자네를 품기에 너무 작았어…",
+      "UnitTalk_JPN": "ワシが間違っていたんじゃ…お前さんを招き入れるには、まだ早すぎたんじゃ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "그, 그럼 프로 리그는요…?",
+      "UnitTalk_JPN": "じ、じゃあプロリーグのお話は…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitTalk_KOR": "미안하네…",
+      "UnitTalk_JPN": "すまんのう…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitTalk_KOR": "라비스타 볼 프로 리그는… ",
+      "UnitTalk_JPN": "ラビスターボールのプロリーグ設立の話は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "서비스 종료일세… ",
+      "UnitTalk_JPN": "白紙に戻ったそうじゃ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE"
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD_LOOP",
+      "UnitTalk_KOR": "노력했는데… ",
+      "UnitTalk_JPN": "頑張ったのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_LPU_POST_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "노력했는데에!!",
+      "UnitTalk_JPN": "頑張ったのにぃ！！",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN"
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_6",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

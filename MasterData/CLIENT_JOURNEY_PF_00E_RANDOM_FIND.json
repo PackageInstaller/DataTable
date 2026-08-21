@@ -1,0 +1,266 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00E_RANDOM_FIND",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 33,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeOutTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_LIGHT_03.wav"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "비품을 정리하던 도중에, 안쪽에서 알 수 없는 빛이 흘러나왔다.",
+      "UnitTalk_JPN": "備品を整理していると、奥から不思議な光が漏れ出してきた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 빛은 지난번 숲의 석상에게서 가져온 칼로부터 흘러나오고 있었다.",
+      "UnitTalk_JPN": "この前、森の石像から持ち帰った剣から流れ出ているらしい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이럴 때는…",
+      "UnitTalk_JPN": "こういう時は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "석상의 칼을 집어 든다.",
+          "JumpAnchorStringId_JPN": "石像の剣を手に取る。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "그대로 놔둔다.",
+          "JumpAnchorStringId_JPN": "そのままにしておく。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 41,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쩌면 지난번과같이 신비한 기운을 얻을 수 있을지도 모른다.",
+      "UnitTalk_JPN": "もしかすると、この前のように神秘的な力を得られるかもしれない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_04.wav",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "같은 생각을 한 <color=#F7BE45>[CHARACTER_NAME]</color>(이)가 칼을 집어 들었다.",
+      "UnitTalk_JPN": "同じ考えだった<color=#F7BE45>[CHARACTER_NAME]</color>が剣を手に取った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgFlashBang": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_LIGHT_03.wav",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "칼에서 흘러나오던 빛이 <color=#F7BE45>[CHARACTER_NAME]</color>에게 흘러 들어갔다.",
+      "UnitTalk_JPN": "剣から流れ出ていた光が、<color=#F7BE45>[CHARACTER_NAME]</color>へと流れ込む。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 한층 더 강해진 기분이라고 한다!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、さらに強くなった気分だそうだ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 60,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쩌면 지난번과같이 신비한 기운을 얻을 수 있을지도 모른다.",
+      "UnitTalk_JPN": "もしかすると、この前のように神秘的な力を得られるかもしれない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_04.wav",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "같은 생각을 한 <color=#F7BE45>[CHARACTER_NAME]</color>(이)가 칼을 집어 들었다.",
+      "UnitTalk_JPN": "同じ考えだった<color=#F7BE45>[CHARACTER_NAME]</color>が剣を手に取った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "하지만 이번에는 반대로, <color=#F7BE45>[CHARACTER_NAME]</color>에게서 흘러나온 빛이 칼에 빨려 들어갔다.",
+      "UnitTalk_JPN": "だが今回は逆に、<color=#F7BE45>[CHARACTER_NAME]</color>から溢れ出た光が剣に吸い込まれてしまった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 새로운 힘을 느꼈지만, 갑작스러운 피로가 찾아온 모양이다…",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は新たな力を感じたが、突然の疲労に襲われてしまったようだ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 59,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 51,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "가만히 지켜보자, 칼에서 흘러나오는 빛이 점점 흐려지더니 완전히 사라졌다.",
+      "UnitTalk_JPN": "じっと見守っていると…剣から流れ出る光は次第に薄れ、やがて完全に消えた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기회가 된다면 유물에 대해 잘 아는 사람에게 조사를 부탁해 보자….",
+      "UnitTalk_JPN": "機会があれば、遺物に詳しい人に調査を頼もう…",
+      "TalkTime": 0.03
+    }
+  ]
+}

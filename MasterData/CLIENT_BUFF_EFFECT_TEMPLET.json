@@ -1,0 +1,172 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: BUFF_EFFECT_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_BURN",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffBasePrefab" : "VFX_BUFF_BURN.prefab",
+          "BuffHitPrefab" : "VFX_BUFF_BURN_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_BLEEDING",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffBasePrefab" : "VFX_BUFF_BLEEDING.prefab",
+          "BuffHitPrefab" : "VFX_BUFF_BLEEDING_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_POISON",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffBasePrefab" : "VFX_BUFF_POISON.prefab",
+          "BuffHitPrefab" : "VFX_BUFF_POISON_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_FREEZING",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffBasePrefab" : "VFX_BUFF_FREEZING.prefab",
+          "BuffHitPrefab" : "VFX_BUFF_FREEZING_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_COSMIC",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffBasePrefab" : "VFX_BUFF_COSMIC.prefab",
+          "BuffHitPrefab" : "VFX_BUFF_COSMIC_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_HEAL",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffHitPrefab" : "VFX_BUFF_HEAL_HIT.prefab",
+          "BuffHitTiming" : "BHT_HEAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_STUN",
+          "BuffVfxHeight" : "BVH_HEAD",
+          "BuffStartPrefab" : "VFX_BUFF_STUN_START.prefab",
+          "BuffBasePrefab" : "VFX_BUFF_STUN.prefab"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_SLEEP",
+          "BuffVfxHeight" : "BVH_HEAD",
+          "BuffStartPrefab" : "VFX_BUFF_SLEEP_START.prefab",
+          "BuffBasePrefab" : "VFX_BUFF_SLEEP.prefab"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_SILENCE",
+          "BuffVfxHeight" : "BVH_HEAD",
+          "BuffStartPrefab" : "VFX_BUFF_SILENCE_START.prefab",
+          "BuffBasePrefab" : "VFX_BUFF_SILENCE.prefab"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_AGGRO",
+          "BuffVfxHeight" : "BVH_HEAD",
+          "BuffStartPrefab" : "VFX_BUFF_PROVOKE_START.prefab",
+          "BuffBasePrefab" : "VFX_BUFF_PROVOKE.prefab"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_IMMORTAL",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffStartPrefab" : "VFX_BUFF_IMMORTAL_START.prefab",
+          "BuffBasePrefab" : "VFX_BUFF_IMMORTAL.prefab"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_RESURRECTION",
+          "BuffVfxHeight" : "BVH_ZERO",
+          "BuffHitPrefab" : "VFX_BUFF_RESURRECTION.prefab",
+          "BuffHitTiming" : "BHT_RESURRECTION"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_INVINCIBLE",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffBasePrefab" : "VFX_BUFF_INVINCIBLE.prefab"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_PERSES_SWORD_1",
+          "BuffVfxHeight" : "BVH_ZERO",
+          "BuffStartPrefab" : "VFX_BUFF_UNIT_MON_PERSES_SPECIAL_START.prefab",
+          "BuffBasePrefab" : "VFX_BUFF_UNIT_MON_PERSES_SPECIAL_LOOP.prefab"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_COHESION_FLOWER_1",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffBasePrefab" : "VFX_BUFF_UNIT_MON_COHESION_FLOWER_BLACK.prefab",
+          "BuffHitPrefab" : "VFX_BUFF_UNIT_MON_COHESION_FLOWER_BLACK_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_THUNDERBOLT",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffHitPrefab" : "VFX_BUFF_THUNDERBOLT_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_EXPLOSION",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffHitPrefab" : "VFX_BUFF_EXPLOSION_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_BLADE",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffHitPrefab" : "VFX_BUFF_BLADE_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_ICE_EXPLOSION",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffHitPrefab" : "VFX_BUFF_ICE_EXPLOSION_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_EXCEED_CHAIN_BLUE",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffHitPrefab" : "VFX_BUFF_EXCEED_CHAIN_BLUE_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_EXCEED_CHAIN_RED",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffHitPrefab" : "VFX_BUFF_EXCEED_CHAIN_RED_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_SUDDENDEATH_THUNDER",
+          "BuffVfxHeight" : "BVH_ZERO",
+          "BuffHitPrefab" : "VFX_BUFF_SUDDENDEATH_THUNDER_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_EXTRA_TURN",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffStartPrefab" : "VFX_EXTRA_TURN.prefab"
+        }
+    ]
+}

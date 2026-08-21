@@ -1,0 +1,1713 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: EV_CANDLE_BUNNY_07_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_DEEP_FIELD_HALL.png",
+      "StartBgmFileName": "MUSIC_BATTLE_NORMAL_01.mp3",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "<color=#F7BE45>히트.</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>ヒット。</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 140,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "<color=#F7BE45>히트!</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>ヒット！</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "ANGRY",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "<color=#F7BE45>히트!!!</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>ヒットー！！！</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 141,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "NORMAL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "굉장해, 4연승이야!",
+      "UnitTalk_JPN": "すごいのだ、4連勝だぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "말도 안 돼…",
+          "JumpAnchorStringId_JPN": "嘘だろ…"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기세라는 것이 작용한 것인지, 클레어의 강운이 대단한 건지는 알 수 없지만…",
+      "UnitTalk_JPN": "勢いというものが働いたのか、クレアの強運が尋常ではないのか…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "게임의 흐름이 완전히 바뀌었다.",
+      "UnitTalk_JPN": "ゲームの流れが完全に変わった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "조금 전에는 처음으로 허블이 <color=#F7BE45>버스트</color>를 내면서 흔들렸다.",
+      "UnitTalk_JPN": "さっきは、初めてハッブルが<color=#F7BE45>バスト</color>を出して動揺を見せた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "<color=#F7BE45>승부</color>는 <color=#F7BE45>기세</color>라고 했나요…",
+      "UnitTalk_JPN": "<color=#F7BE45>勝負</color>は<color=#F7BE45>勢い</color>だとおっしゃいましたか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "완전히 무시할 수는 없겠군요.",
+      "UnitTalk_JPN": "完全に無視することはできないようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "사라지던 칩들도 다시 허블과 대등한 정도로 회복했다.  ",
+      "UnitTalk_JPN": "消えかけていたチップも、再びハッブルと互角になった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아니, 조금이지만 역전한 것 같아 보인다.",
+      "UnitTalk_JPN": "いや、わずかだが逆転したように見える。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아아, 오랜만에 느끼는 이 서늘한 승부의 감각…",
+      "UnitTalk_JPN": "あぁ、このゾクゾクする感覚…久しぶりね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "이런 자신을 인정하기 싫지만…",
+      "UnitTalk_JPN": "こんな自分を認めたくはないけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CAR_ENGINE.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "피가 끓어오른단 말이지…! 정말로…!",
+      "UnitTalk_JPN": "血が騒いで仕方がないの…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…후후후, 하하하.",
+      "UnitTalk_JPN": "…フフフ、ハハハ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "…왜 웃지?",
+      "UnitTalk_JPN": "…どうして笑うの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아니, 이런. 실례했습니다.",
+      "UnitTalk_JPN": "これはこれは、失礼しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "요새는 게임에서 <color=#F7BE45>기세</color>나 <color=#F7BE45>흐름</color> 같은 표현을 입에 담는 분이 드물다 보니.",
+      "UnitTalk_JPN": "最近は、ゲームで<color=#F7BE45>勢い</color>や<color=#F7BE45>流れ</color>といった表現を口にする方は珍しいもので。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "클레어 님 같은 타입과의 승부는 정말 오랜만이라서요.",
+      "UnitTalk_JPN": "クレア様のようなタイプの方との勝負は、実に久しぶりです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "그런 타입을 싫어하진 않지만… 그 불꽃을 계속 태우게 둘 수는 없을 것 같네요.",
+      "UnitTalk_JPN": "このようなタイプも嫌いではありませんが…その炎を燃え続けさせる訳にはいかないようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "하, 끌 수 있다면 어디 한번 꺼 보시지.",
+      "UnitTalk_JPN": "はぁ、消せるものならやってみたらどう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "자, 다음! 다음 라운드로 가자!",
+      "UnitTalk_JPN": "さぁ、次のラウンドよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "좋습니다. 그럼 다음 라운드에서도 계속 보여주시죠.",
+      "UnitTalk_JPN": "良いでしょう。では、次のラウンドでも引き続き見せていただきましょうか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EXPLOSION_02.wav",
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "<color=#F7BE45>파란 장미의 질주</color>를.",
+      "UnitTalk_JPN": "<color=#F7BE45>青薔薇の疾走</color>を。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 142,
+      "WaitClick": false,
+      "WaitTime": 2.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WIND_BLOW.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.7,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_18.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…히끅.",
+      "UnitTalk_JPN": "…ヒクッ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어의 온몸을 휘감아 오르던 검은 투기가, 갑자기 순식간에 사라졌다.",
+      "UnitTalk_JPN": "クレアの全身を包み込んでいた黒い闘気が、一瞬にして消え去った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "ONE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "불꽃이 꺼졌다?!",
+      "UnitTalk_JPN": "炎が消えたのか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "TWIN_3",
+      "UnitTalk_KOR": "어…",
+      "UnitTalk_JPN": "い…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "방금 뭐, 뭐라고…",
+      "UnitTalk_JPN": "今、な、なんと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "하셨… 죠?",
+      "UnitTalk_JPN": "おっしゃい…ましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "<color=#F7BE45>파란 장미의 질주</color>를 계속 보고 싶다고 말씀드렸습니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>青薔薇の疾走</color>をもっと見たいと申し上げたのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "지금의 클레어 님을 보고 있자니, 어떤 이야기가 생각나서 말이죠.",
+      "UnitTalk_JPN": "今のクレア様を見ていると、ある物語を思い出しましてね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "고고할 정도로 뒤를 돌아보지 않고 오직 앞을 향해 질주했던…",
+      "UnitTalk_JPN": "孤高なまでに後ろを振り返らず、ひたすら前だけを見て疾走した…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "어떤 승부에도 피하지 않고 진심으로 임했던…",
+      "UnitTalk_JPN": "どんな勝負にもひるまず、本気で臨んだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "지금은 모습을 감춘… <color=#F7BE45>파란 장미</color>의 이야기가.",
+      "UnitTalk_JPN": "今は姿を消してしまった…<color=#F7BE45>青薔薇</color>の物語を。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.6,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_18.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…딸꾹.",
+      "UnitTalk_JPN": "…ヒック。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "ONE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "크, 클레어?! 어찌 된 거냐! 기세가… 기세가 죽었다…!",
+      "UnitTalk_JPN": "ク、クレアよ！どうしたのだ！勢いが…勢いが死んでしまったぞ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "당신이… 그걸 왜…? 어떻게…?",
+      "UnitTalk_JPN": "あなたが…どうして…それを…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그야 저는 관찰자니까요.",
+      "UnitTalk_JPN": "私は観察者ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "세상을 관찰하다 보면 알게 되는 것도 많은 법이죠.",
+      "UnitTalk_JPN": "世界を観察していると、様々なことが分かってくるものです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "캔들 스퀘어의 선임 메이드도 예외는 아니랍니다.",
+      "UnitTalk_JPN": "キャンドル・スクエアのノーブルメイドも例外ではありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "나… 나는…",
+      "UnitTalk_JPN": "わ…私は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "클레어…?",
+          "JumpAnchorStringId_JPN": "クレア…？"
+        }
+      ]
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "단장님, 저는…",
+      "UnitTalk_JPN": "団長、私は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "클레어, 괜찮아?",
+          "JumpAnchorStringId_JPN": "クレア、大丈夫か？"
+        }
+      ]
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.4,
+      "BgCrash": 0.6,
+      "BgCrashTime": 0.6,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL3",
+      "UnitTalk_KOR": "저는 과거를 버렸습니다!!",
+      "UnitTalk_JPN": "私は過去を捨てたんです！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_01.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR"
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_07.wav",
+      "UnitTalk_KOR": "외침과 동시에 클레어는 바닥에 무너지듯 주저앉았다.",
+      "UnitTalk_JPN": "そう叫ぶと同時に、クレアは床に崩れ落ちるように座り込んだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "ONE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "클레어!",
+      "UnitTalk_JPN": "クレアよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "UnitTalk_KOR": "스칼렛이 클레어에게 달려가 상태를 살피더니, 이쪽을 보면서 팔로 X자를 만들어 보였다.",
+      "UnitTalk_JPN": "スカーレットはクレアに駆け寄り、状態を確認すると…こちらに向かって腕でバツ印を作ってみせた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…선수 교체, 선수 교체.",
+      "UnitTalk_JPN": "…選手交代なのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "StartBgmFileName": "EMPTY.mp3",
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_12.mp3",
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "이런, 아주 조금만 흔들어 볼 생각이었는데…",
+      "UnitTalk_JPN": "いやはや、ほんの少し揺さぶるつもりでしたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "예상보다 효과가 훨씬 강했군요.",
+      "UnitTalk_JPN": "予想以上の効果でしたね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…무슨 말을 한 거야?",
+          "JumpAnchorStringId_JPN": "…何を言ったんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "별거 아닙니다. 클레어 님의 기세가 워낙 대단하셔서.",
+      "UnitTalk_JPN": "大したことではありません。クレア様の勢いがあまりにもすごかったもので。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "알고 있는 <color=#F7BE45>정보</color>를 통해 약간의 심리전을 해볼까 하는 생각이었는데…",
+      "UnitTalk_JPN": "知っている<color=#F7BE45>情報</color>を使って、少しばかり心理戦を仕掛けてみようかと思ったのですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이 정도일 줄은 몰랐군요.",
+      "UnitTalk_JPN": "これほどとは思いませんでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "어쨌든 클레어 님은 더 이상 <color=#F7BE45>승부</color>를 하실 수 없어 보이네요.",
+      "UnitTalk_JPN": "いずれにせよ、クレア様はもう<color=#F7BE45>勝負</color>を続けられそうにない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…이제 남은 건 단장님뿐인가요? 후후후.",
+      "UnitTalk_JPN": "…残っているのは、団長様だけでしょうか？フフフ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "ONE_1",
+      "UnitMotion": "SPECIAL3",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "다, 단장님…",
+      "UnitTalk_JPN": "だ、団長…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어는 억지로라도 일어서려고 했지만 다리에 힘이 들어가지 않는 것 같았다.",
+      "UnitTalk_JPN": "クレアはなんとか立ち上がろうとしたが、足に力が入らないようだった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괜찮아, 클레어. 훌륭했어.",
+          "JumpAnchorStringId_JPN": "大丈夫だ、クレア。よくやった。"
+        }
+      ]
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "부끄러운 모습을 보여드렸습니다…",
+      "UnitTalk_JPN": "お恥ずかしい姿をお見せしてしまいました…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괜찮아, 덕분에 승기를 잡을 수 있게 됐으니.",
+          "JumpAnchorStringId_JPN": "大丈夫、おかげで流れに乗れたよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "마지막은 내게 맡겨줘.",
+          "JumpAnchorStringId_JPN": "最後は私に任せろ。"
+        }
+      ]
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "단장님…",
+      "UnitTalk_JPN": "団長…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "지금의 클레어는 기세를 잃어버렸다.",
+      "UnitTalk_JPN": "今のクレアは、勢いを失っている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "ONE_2",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS2",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "스칼렛은…",
+      "UnitTalk_JPN": "スカーレットは…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "단장!",
+      "UnitTalk_JPN": "人間の団長よ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…스칼렛은, 다른 의미로 승부를 맡기기에는 조금.",
+      "UnitTalk_JPN": "スカーレットは、別の意味で勝負を任せるには少し…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "단장! 방금 나 보면서 무슨 생각한 거냐!!",
+      "UnitTalk_JPN": "むむ！今、わがはいを見ながら何を考えていたのだ！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "이 승부를 하겠다고 받아들인 건 나였다.",
+      "UnitTalk_JPN": "この勝負に受けて立つと言い出したのは、私だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇다면 승부의 마지막과 그 책임도 내가 져야 한다.",
+      "UnitTalk_JPN": "ならば、勝負の結末と責任は私が負うべきだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 승리를 위해 필요한 것은… 클레어에게 모두 배웠다.",
+      "UnitTalk_JPN": "そして、勝つために必要なものは…クレアから学んだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "CameraOffset": "TWIN_7",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "준비되셨나요, 단장님?",
+      "UnitTalk_JPN": "準備はよろしいですか、団長様？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "준비 완료야.",
+          "JumpAnchorStringId_JPN": "準備万端だ。"
+        }
+      ]
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_20.mp3",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나와 허블은 한 번씩 히트를 선언하며 차례가 오갔다.",
+      "UnitTalk_JPN": "私とハッブルは一度ずつヒットを宣言した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "내 카드의 합계는 <color=#F7BE45>14</color>, 허블은 <color=#F7BE45>8</color>.",
+      "UnitTalk_JPN": "私のカードの合計は<color=#F7BE45>14</color>、ハッブルは<color=#F7BE45>8</color>。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "무난하게 나의 승리로 끝나게 될 게임이다.",
+      "UnitTalk_JPN": "無難に私の勝利で終わるゲームだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "이런, 이번 게임은 저의 패배로군요.",
+      "UnitTalk_JPN": "おっと、今回は私の負けですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "그럼 다음 경기를…",
+      "UnitTalk_JPN": "では次のゲームを…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 게임은 아직 끝나지 않았어.",
+          "JumpAnchorStringId_JPN": "いや、まだ終わってない。"
+        }
+      ]
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "네? 대체 무슨 말씀을…?",
+      "UnitTalk_JPN": "はい？一体どういう意味でしょうか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 대답 대신 쌓여 있는 칩을 바라보았다.",
+      "UnitTalk_JPN": "私は返事をする代わりに、積まれたチップを見つめた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이번 게임에 승리한다고 해도, 시간이 길어지면 분명 패배할 것이다.",
+      "UnitTalk_JPN": "今回のゲームに勝ったとしても、時間が長引けば必ず負けてしまうだろう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SPECIAL3",
+      "UnitPos": "POS6",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나와 허블의 역량은 그 정도의 차이가 나니까.",
+      "UnitTalk_JPN": "私とハッブルの実力には、それほどの差があったからだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만…",
+      "UnitTalk_JPN": "だが…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "나는 아직까지 주저앉아 있는 클레어를 돌아보았다.",
+      "UnitTalk_JPN": "私はまだ座り込んでいるクレアの方を見た。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "승리는, <color=#F7BE45>기세</color>인 거지?",
+          "JumpAnchorStringId_JPN": "勝利とは、<color=#F7BE45>勢い</color>なんだよね？"
+        }
+      ]
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "네, 네…?",
+      "UnitTalk_JPN": "は、はい…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어는 잠시 당황한 듯 말을 더듬었다.",
+      "UnitTalk_JPN": "クレアは戸惑ったように言葉を詰まらせた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 그녀의 대답을 기다렸고… 클레어는 호흡을 고른 후… ",
+      "UnitTalk_JPN": "私は返事を待った。クレアは息を整えた後…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마침내 굳건한 눈으로 고개를 끄덕였다.",
+      "UnitTalk_JPN": "ついに、揺るぎない眼差しでうなずいた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "네! 그렇습니다. 단장님!",
+      "UnitTalk_JPN": "はい！そうです、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "좋아. 히트!",
+          "JumpAnchorStringId_JPN": "よし。ヒット！"
+        }
+      ]
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "CameraOffset": "TWIN_7",
+      "UnitTalk_KOR": "…진심이십니까?",
+      "UnitTalk_JPN": "…本気ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "승리가 확정된 <color=#F7BE45>14</color>에서 <color=#F7BE45>히트</color>를 하신다고요?",
+      "UnitTalk_JPN": "勝利が確定した<color=#F7BE45>14</color>で、<color=#F7BE45>ヒット</color>をされるのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래. <color=#F7BE45>퀸즈</color>가 되면 2배 지급으로 우리의 완전한 승리다.",
+          "JumpAnchorStringId_JPN": "あぁ。<color=#F7BE45>クイーンズ</color>になれば2倍で、私たちの勝利だ。"
+        }
+      ]
+    },
+    {
+      "Uid": 121,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "허어…",
+      "UnitTalk_JPN": "ほう…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "물론 운이 좋다면 그런 일이 벌어질 수도 있습니다.",
+      "UnitTalk_JPN": "もちろん運が良ければ、そんなことも起こり得るでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "하지만 지금은…",
+      "UnitTalk_JPN": "ですが今は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "히트!!",
+          "JumpAnchorStringId_JPN": "ヒット！！"
+        }
+      ]
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "어쩌면… 제가 단장님을 과대평가하고 있었던 것일지도 모르겠군요.",
+      "UnitTalk_JPN": "私は…団長様を過大評価していたのかもしれません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "뭐, 좋습니다. 굳이 예정된 패배를 맞이하시겠다면… 보내 드려야겠죠.",
+      "UnitTalk_JPN": "まぁ、良いでしょう。敗北を迎えたいのであれば…どうぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitTalk_KOR": "딜러.",
+      "UnitTalk_JPN": "ディーラー。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ITEM_OUT.wav",
+      "UnitTalk_KOR": "딜러가 카드를 뽑고, 뒤집었다.",
+      "UnitTalk_JPN": "ディーラーがカードを引き、裏返す。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "카드는…",
+      "UnitTalk_JPN": "カードは…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CASINO_DEALER"
+      ],
+      "UnitTalk_KOR": "에이스 카드. ",
+      "UnitTalk_JPN": "エース。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CASINO_01.mp3",
+      "UnitNameString": [
+        "SI_CASINO_DEALER"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>퀸즈</color>, 승리입니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>クイーンズ</color>、勝利です。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NPC_HUBBLE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…그럴 리가?!",
+      "UnitTalk_JPN": "…そんな馬鹿な！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "SMILE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS7",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": "단장님!!!",
+      "UnitTalk_JPN": "団長！！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "이겼다-!!!",
+      "UnitTalk_JPN": "勝ったのだー！！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "카드 합계는 15. <color=#F7BE45>퀸즈</color> 달성을 통한 2배 획득.",
+      "UnitTalk_JPN": "カードの合計は15。<color=#F7BE45>クイーンズ</color>達成による2倍の獲得。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 138,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이걸로 허블의 칩은 모두 사라졌다.",
+      "UnitTalk_JPN": "これで、ハッブルのチップはすべて消えた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 139,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_07_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "우리의 승리였다.",
+      "UnitTalk_JPN": "私たちの勝利だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    }
+  ]
+}

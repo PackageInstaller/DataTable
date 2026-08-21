@@ -1,0 +1,94 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "SkipProgressWithHistory": true,
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_3_BOSS_A",
+        "BattleEvents": [
+          {
+            "OnWaveStart": {},
+            "PlayCutscene": {
+              "CutsceneId": 890160000
+            }
+          },
+          {
+            "OnGlobalTurn": { 
+              "TurnNumber" : 2,
+              "TurnUnit" : "NKM_UNIT_S_VOYAGER_STRANIS_TUTORIAL_00" 
+             },
+             "PlayProgress": { 
+              "ProgressId": 1
+            }
+          },
+          {
+            "OnGlobalTurn": { 
+              "TurnNumber" : 3,
+              "TurnUnit" : "NKM_UNIT_S_VOYAGER_ORACLE_TUTORIAL_00"
+            },
+            "PlayProgress": {
+               "ProgressId": 2
+             }
+          },
+          {
+            "OnGlobalTurn": {
+              "TurnNumber": 6,
+              "TurnUnit": "NKM_UNIT_S_VOYAGER_SMILE_TUTORIAL_00"
+            },
+            "PlayProgress": {
+              "ProgressId": 3
+            }
+          },
+          {
+            "OnGlobalTurn": {
+              "TurnNumber": 7,
+              "TurnUnit": "NKM_UNIT_S_VOYAGER_STRANIS_TUTORIAL_00"
+            },
+            "PlayProgress": {
+              "ProgressId": 4
+            }
+          },
+          {
+            "OnAfterOrbitalSkill": {
+              "TurnNumber": 7,
+              "TurnUnit": "NKM_UNIT_S_VOYAGER_STRANIS_TUTORIAL_00"
+            },
+            "PlayProgress": {
+              "ProgressId": 5
+            }
+          },
+          {
+            "OnAfterNovaBurstActive": {
+              "TurnNumber": 7,
+              "TurnUnit": "NKM_UNIT_S_VOYAGER_STRANIS_TUTORIAL_00",
+              "NovaBurstLevel" : 1
+            },
+            "PlayProgress": {
+              "ProgressId": 6
+            }
+          }
+        ],
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_TUTORIAL_00",
+            "UnitLevel": 60
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_APOSTLE_GILLE_TUTORIAL_00",
+            "UnitLevel": 60,
+            "IsBoss": true,
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_TUTORIAL_00",
+            "UnitLevel": 60
+          }
+        ]
+      }
+    ]
+  }
+}

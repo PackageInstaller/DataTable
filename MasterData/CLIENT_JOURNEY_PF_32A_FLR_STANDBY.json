@@ -1,0 +1,587 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_32A_FLR_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_CLASS_FLORA.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "대기실에서 쉬고 있는데 누군가가 다가왔다.",
+      "UnitTalk_JPN": "待合室で休んでいると、誰かが近づいてきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP.wav",
+      "UnitStrId": "NPC_MODULE_RICH_MALE_W",
+      "UnitNameString": [
+        "SI_ATHLETE_BEACHVOLLEY"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "반갑군. 자네들이 이번 상대인가?",
+      "UnitTalk_JPN": "ようこそ。君たちが今回の相手かい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_MALE_W",
+      "UnitNameString": [
+        "SI_ATHLETE_BEACHVOLLEY"
+      ],
+      "UnitTalk_KOR": "나는 한때 비치발리볼의 황제로 불리던 남자. 지금은 후배 선수들을 가르치고 있지.",
+      "UnitTalk_JPN": "私はかつて、ビーチバレーの皇帝と呼ばれた男だ。今は後輩選手たちの指導をしているよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_MALE_W",
+      "UnitNameString": [
+        "SI_ATHLETE_BEACHVOLLEY"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오늘은 경기 시작 전에 먼저 인사를 나누러 온 걸세.",
+      "UnitTalk_JPN": "今日は試合前に挨拶に来たのさ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_MALE_W",
+      "UnitNameString": [
+        "SI_ATHLETE_BEACHVOLLEY"
+      ],
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "서로 경기에 아쉬움이 없게 최선을 다해 보세나!",
+      "UnitTalk_JPN": "お互い悔いが残らないよう、最善を尽くそう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_RICH_MALE_W"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "[EVENT_FIXED_FLORA_02_01]",
+      "UnitTalk_JPN": "[EVENT_FIXED_FLORA_02_01]",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의욕적인 <color=#F7BE45>[CHARACTER_NAME]</color>에게 나는…",
+      "UnitTalk_JPN": "意欲的な<color=#F7BE45>[CHARACTER_NAME]</color>に、私は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "일단 배부터 채울까?",
+          "JumpAnchorStringId_JPN": "まずは腹ごしらえでもする？",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "심호흡으로 긴장을 풀자.",
+          "JumpAnchorStringId_JPN": "深呼吸で緊張をほぐそう。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "언제나 그렇듯이 최선을 다하자.",
+          "JumpAnchorStringId_JPN": "いつも通りベストを尽くそう。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND_FLORA.png",
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 맛있는 식사로 기력을 채우고 경기장에 들어섰다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と美味しい食事でエネルギーを満たし、コートに足を踏み入れた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_MALE_W",
+      "UnitNameString": [
+        "SI_ATHLETE_BEACHVOLLEY"
+      ],
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_MALE_W",
+      "UnitNameString": [
+        "SI_ATHLETE_BEACHVOLLEY"
+      ],
+      "UnitTalk_KOR": "현역이 아니란 사실이 아쉬울 만큼 멋진 승부였다.",
+      "UnitTalk_JPN": "現役ではないのが惜しいくらい、見事な勝負だったよ。",
+      "TalkTime": 0.03,
+      "AmbientSound": "SFX_CUTSCENE_COMMON_CROWD_NOISE_1.wav"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_MALE_W",
+      "UnitNameString": [
+        "SI_ATHLETE_BEACHVOLLEY"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "우리 팀을 이긴 이상, 반드시 우승해라!",
+      "UnitTalk_JPN": "我々のチームに勝った以上、必ず優勝してくれ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3",
+      "EmotionEffect": "FUN",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_01.wav",
+      "UnitTalk_KOR": "관중석에서 뜨거운 환호성이 터져 나왔다.",
+      "UnitTalk_JPN": "観客席から熱い歓声が沸き起こった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND_FLORA.png",
+      "UnitTalk_KOR": "경기 전까지 명상을 하면서 정신을 가다듬었다.",
+      "UnitTalk_JPN": "試合前まで瞑想をして、精神を整えた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_MALE_W",
+      "UnitNameString": [
+        "SI_ATHLETE_BEACHVOLLEY"
+      ],
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_MALE_W",
+      "UnitNameString": [
+        "SI_ATHLETE_BEACHVOLLEY"
+      ],
+      "UnitTalk_KOR": "슬퍼하지 마라, 제자들아! 너희는 최선을 다했으니까!",
+      "UnitTalk_JPN": "弟子たちよ、悲しむ必要はない！君たちは最善を尽くした！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_MALE_W",
+      "UnitNameString": [
+        "SI_ATHLETE_BEACHVOLLEY"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "부탁하겠네! 우리 몫까지 결승전을 빛내 주게!",
+      "UnitTalk_JPN": "我々の分まで、決勝戦を盛り上げてくれ。頼んだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "EmotionEffect": "FUN",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_01.wav",
+      "UnitTalk_KOR": "감독과 악수를 나누자 관중석에서 환호성이 터져 나왔다.",
+      "UnitTalk_JPN": "握手を交わすと、観客席から歓声が沸き起こった。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "DARK",
+      "AmbientSound": "SFX_CUTSCENE_COMMON_CROWD_NOISE_1.wav"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND_FLORA.png",
+      "UnitTalk_KOR": "긴장된 마음으로 경기장에 들어섰다.",
+      "UnitTalk_JPN": "緊張した気持ちでコートに入った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_MALE_W",
+      "UnitNameString": [
+        "SI_ATHLETE_BEACHVOLLEY"
+      ],
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND_FLORA.png",
+      "UnitTalk_KOR": "아슬아슬했지만 가까스로 승리를 얻어낼 수 있었다…!",
+      "UnitTalk_JPN": "際どい勝負だったが、なんとか勝利を掴み取ることができた…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_MALE_W",
+      "UnitNameString": [
+        "SI_ATHLETE_BEACHVOLLEY"
+      ],
+      "UnitTalk_KOR": "하하! 굉장한 실력이군! 우리 선수들에게 좋은 경험이 됐어!",
+      "UnitTalk_JPN": "ハハ、見事な実力だ！こちらにとっても、良い経験になったよ！",
+      "TalkTime": 0.03,
+      "AmbientSound": "SFX_CUTSCENE_COMMON_CROWD_NOISE_1.wav"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_MALE_W",
+      "UnitNameString": [
+        "SI_ATHLETE_BEACHVOLLEY"
+      ],
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "내년에는 우리도 호락호락하지 않을 거다!",
+      "UnitTalk_JPN": "だが、来年はそう簡単には負けないさ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3",
+      "EmotionEffect": "FUN",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_32A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_01.wav",
+      "UnitTalk_KOR": "선수들이 새로운 도전을 기약하는 노래를 부르자 관중들이 호응해 줬다.",
+      "UnitTalk_JPN": "選手たちが新たな挑戦を誓う歌を歌うと、観客が声援を送った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

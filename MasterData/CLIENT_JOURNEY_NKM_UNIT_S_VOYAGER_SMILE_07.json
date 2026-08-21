@@ -1,0 +1,773 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET_SUNSET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "냐아옹~",
+      "UnitTalk_JPN": "にゃあ～ん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "냐아옹~",
+      "UnitTalk_JPN": "にゃあ～ん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "냐아아옹~",
+      "UnitTalk_JPN": "にゃあぁ～ん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐 하는 거야? 스마일.",
+          "JumpAnchorStringId_JPN": "スマイル、何してるの？"
+        }
+      ]
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "고양이의 울음소리를 분석하여 대화를 시도.",
+      "UnitTalk_JPN": "猫の鳴き声を分析し、会話に挑戦。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "깨어나자마자 주인을 공격하고 탈주한 일에 대해 정상 참작을 할 의사가 있음을 표현.",
+      "UnitTalk_JPN": "起きてすぐに持ち主を攻撃し、その後脱走した事に関して…情状酌量の余地ありと伝達。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "스마일, 그런다고 스마일 캣이 돌아올 것 같진 않아.",
+          "JumpAnchorStringId_JPN": "スマイル。そんなことしても、スマイルキャットは戻ってこないよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…동의.",
+      "UnitTalk_JPN": "…同意。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "가동을 시작한 스마일 캣은 원인 불명의 문제로 폭주했다.",
+      "UnitTalk_JPN": "可動し始めたスマイルキャットは、原因不明のエラーで暴走してしまった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문제는 폭주한 녀석이 어딘가로 사라져 버린 것이다.",
+      "UnitTalk_JPN": "問題は、どこかに消えてしまったということだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "위험한 무기를 가진 스마일 캣을 이대로 둘 수는 없다.",
+      "UnitTalk_JPN": "危険な武器を持ったスマイルキャットを、このまま放っておくわけにはいかない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일과 나는 그 후 매일 시간을 내어 녀석을 찾아다니고 있다.",
+      "UnitTalk_JPN": "その後、スマイルと私は毎日探し回っている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 스마일 캣은 찾을 수 없었고… 벌써 신년 축제 기간이 되었다.",
+      "UnitTalk_JPN": "でも、スマイルキャットは見つからないまま…新年祭の期間になった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "얼른 따라와! 조금 있다가 불꽃놀이가 시작한다고!",
+      "UnitTalk_JPN": "早く早く！もうちょっとで花火が始まるんだぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "조, 조금만 천천히 가!",
+      "UnitTalk_JPN": "そ、そんなに急がなくても！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그러고 보니 신년 축제 기간이구나…",
+          "JumpAnchorStringId_JPN": "そういえば、新年祭の期間か…"
+        }
+      ]
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "우리도 불꽃놀이나 보러 갈까?",
+          "JumpAnchorStringId_JPN": "私たちも花火でも見に行こっか？"
+        }
+      ]
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…불필요.",
+      "UnitTalk_JPN": "…不必要。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "불꽃놀이는 화학반응을 통한 산화일 뿐.",
+      "UnitTalk_JPN": "花火は、化学反応による酸化に過ぎない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "특별히 기대되는 현상은 아님.",
+      "UnitTalk_JPN": "特別に期待するような現象じゃない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "하지만 달리 할 일이 있는 것도 아니잖아?",
+          "JumpAnchorStringId_JPN": "でも、他にすることもないでしょ？"
+        }
+      ]
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어쩌면 스마일 캣도 불꽃놀이를 보러 올 지 몰라.",
+          "JumpAnchorStringId_JPN": "もしかしたら、スマイルキャットも花火を見に来るかもしれないし。"
+        }
+      ]
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…그럴 가능성은 낮다고 생각하지만.",
+      "UnitTalk_JPN": "…その可能性は低いと思うけど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "알겠어. 단장의 뜻이라면.",
+      "UnitTalk_JPN": "分かった。団長の意思なら。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "우리는 사람들을 따라 광장으로 향했다.",
+      "UnitTalk_JPN": "私たちは人々に続いて広場へと向かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "조금 기다리자 NOA 신년 축제의 명물인 로켓 점화식이 끝나고 불꽃놀이가 시작되었다.",
+      "UnitTalk_JPN": "少し待っていると、NOA新年祭の名物であるロケットの打ち上げが終わり、花火が始まった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.6,
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FIREWORKS_01.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_01.wav",
+      "CutsceneClear": "CLEARALL",
+      "UnitTalk_KOR": "형형색색의 빛이 밤하늘 전체를 물들였다.",
+      "UnitTalk_JPN": "そして色とりどりの光が、夜空を染めた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.4,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_02.wav"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFlashBang": 0.6,
+      "BgFileName": "ILLUST_BG_FIREWORKS_02.png"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFlashBang": 0.6,
+      "BgFileName": "ILLUST_BG_FIREWORKS_03.png"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "저기! 저기! 17단 나선 폭발이야!",
+      "UnitTalk_JPN": "あそこ！あそこ！17段の螺旋爆発だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "멋져! 역시 폭발은 예술이 맞아!",
+      "UnitTalk_JPN": "かっこいー！やっぱり爆発は芸術ね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_02.wav"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.6
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAZA_NIGHT.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "주변은 가족, 친구들과 함께 불꽃놀이를 보러 온 사람들로 북적이고 있었다.",
+      "UnitTalk_JPN": "辺りには家族、友人と共に花火を見に来た人で賑わっていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 모습을 보던 나는 문득 어떤 생각이 들었다.",
+      "UnitTalk_JPN": "その様子を見た私は、ふと思ったことがあった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "EndBgmFileName": "MUSIC_CUTSCENE_12.mp3",
+      "UnitTalk_KOR": "스마일에게 그 생각을 말하려던 순간, 길 건너 골목 어귀에서 익숙한 모습이 보였다.",
+      "UnitTalk_JPN": "それをスマイルに伝えようとした瞬間…向こう側の路地で、見覚えのある姿を発見した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "스마일, 저쪽.",
+          "JumpAnchorStringId_JPN": "スマイル、あっち。"
+        }
+      ]
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "응? 저쪽에 무슨 특이 사항이…",
+      "UnitTalk_JPN": "うん？向こう側に特異事項はなさ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 171,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "앗!",
+      "UnitTalk_JPN": "あっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일은 힘없는 표정으로 내가 가리킨 쪽을 바라보곤 깜짝 놀란 표정이 되었다.",
+      "UnitTalk_JPN": "元気のないスマイルは、私が指差した方向を見ると驚いた顔をした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나와 스마일은 급히 골목으로 다가갔다.",
+      "UnitTalk_JPN": "そして私たちは、急いで路地に向かった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 168,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 170,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET_NIGHT.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 169,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그곳에는 몸 여기저기가 찢어진 스마일 캣이 쓰러져 있었다.",
+      "UnitTalk_JPN": "そこには、体のあちこちが破れたスマイルキャットが倒れていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 150,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "어, 어째서 이런 곳에…?",
+      "UnitTalk_JPN": "ど、どうしてこんな所に…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 151,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐만.",
+          "JumpAnchorStringId_JPN": "ちょっと待って。"
+        }
+      ]
+    },
+    {
+      "Uid": 173,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 152,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "나는 스마일을 잠시 멈추고는 스마일 캣을 바라보았다.",
+      "UnitTalk_JPN": "私はスマイルを止め、スマイルキャットを見つめた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 153,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일 캣은 골목 저편을 바라보고 있었고…",
+      "UnitTalk_JPN": "スマイルキャットは、路地の向こう側を見つめていた…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 154,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "EndBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "UnitTalk_KOR": "그 시선 끝에는 불꽃놀이가 신기한지, 몰려나온 아기고양이 무리가 있었다.",
+      "UnitTalk_JPN": "その視線の先には…花火が不思議なのか、表に出てきた赤ちゃん猫たちがいた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 155,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "외로웠던 거구나. 혼자라서.",
+          "JumpAnchorStringId_JPN": "寂しかったんだね。一人で。"
+        }
+      ]
+    },
+    {
+      "Uid": 156,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장…?",
+      "UnitTalk_JPN": "団長…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 157,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무리 맛있는 음식, 좋은 구경거리가 있어도 혼자서는 외로울 수밖에 없다.",
+      "UnitTalk_JPN": "いくら美味しい食べ物、素敵なものがあったとしても、一人では寂しいもの。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 158,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "더구나 세상에서 처음 만들어진, 동족이라곤 전혀 없는 인공생명체라면 더욱.",
+      "UnitTalk_JPN": "ましては世界で初めて作られた、同族のいない人工生命体だとしたらなおさらだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그러니까, 너무 외롭고 두려워서 어찌할 줄을 몰랐던 거겠지.",
+      "UnitTalk_JPN": "だから…怖くて、寂しくて、どうすればいいのか分からなかったのかな。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 160,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 스마일 캣을 안아 들었다.",
+      "UnitTalk_JPN": "私はスマイルキャットを抱き上げた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 161,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 스마일에게 아까 생각했던 말을 꺼냈다.",
+      "UnitTalk_JPN": "そしてスマイルに、さっき伝えようとしていたことを話した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 162,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "친구를 만들어주자.",
+          "JumpAnchorStringId_JPN": "友達を作ってあげよう。"
+        }
+      ]
+    },
+    {
+      "Uid": 176,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 163,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 178,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세상에 혼자가 아니도록.",
+      "UnitTalk_JPN": "この世界で、ひとりぼっちにならないように。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 164,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "자신을 이해해 주고, 자신이 이해할 수 있는 동족을 만들어 주자.",
+      "UnitTalk_JPN": "自分のことを理解してくれて、自分が理解してあげられる…同族を作ってあげよう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 165,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일 캣에게 필요한 건 분명 그것일 테니까.",
+      "UnitTalk_JPN": "スマイルキャットに必要なのは、きっとそういう存在だから。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 166,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_03.wav",
+      "UnitTalk_KOR": "퍼펑!",
+      "UnitTalk_JPN": "パパーン！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 167,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마치 정답이라는 듯, 스마일의 머리 위에서 불꽃이 화려하게 반짝였다.",
+      "UnitTalk_JPN": "まるで正解と言うかのように…スマイルの頭上では、花火が華やかに咲いていた。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 180,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 179,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3"
+    }
+  ]
+}

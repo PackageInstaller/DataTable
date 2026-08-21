@@ -1,0 +1,63 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WILD_HOG_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "흠, 역시 이 정도는 몸풀기도 안 되지.",
+      "UnitTalk_JPN": "ふん。やっぱこの程度じゃ、準備運動にもならねぇな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "단장도 나쁘지 않았어. 앞으로도 계속 이런 페이스로 가 보자고.",
+      "UnitTalk_JPN": "団長も悪くなかったぜ。これからも、このペースを維持しような。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "자, 그럼 돌아갈 때는 데이브랑 신나게 달려 보실까?",
+      "UnitTalk_JPN": "じゃっ、帰りはデイヴとひとっ走りするか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "음? 단장은 걸어가겠다고?",
+      "UnitTalk_JPN": "お？団長は歩いて帰るのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "하하, 모처럼인데 어서 타. 얌전 떠는 건 됐으니까.",
+      "UnitTalk_JPN": "ははっ、せっかくなんだから乗れよぉ。遠慮なんていらねぇって。",
+      "TalkTime": 0.03
+    }
+  ]
+}

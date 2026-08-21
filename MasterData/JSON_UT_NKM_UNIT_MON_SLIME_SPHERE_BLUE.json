@@ -1,0 +1,191 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_SLIME.txt",
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BUBBLE_06.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BUBBLE_14.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BUBBLE_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 28,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BUBBLE_08.wav"
+            ]
+          }
+        ]
+      },
+          {
+        "StateName": "USN_ATTACK",
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 5,
+            "EventEndFrame": 40,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 77,
+            "EventEndFrame": 102,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 53,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.15,
+            "CameraCrashTime": 0.2,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 3,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SLIME_SPHERE_BLUE_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SLIME_SPHERE_BLUE_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 50,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SLIME_SPHERE_BLUE_ATK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 78,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SLIME_SPHERE_BLUE_ATK_04.wav"
+            ]
+          }
+        ]      
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 64,
+            "ReActType": "NRT_DAMAGE_A",
+            //"StopTimeDef": 0.05,
+            "CameraCrashGap": 0.2,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 67,
+            "ReActType": "NRT_DAMAGE_A",
+            //"StopTimeDef": 0.05,
+            "CameraCrashGap": 0.2,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 70,
+            "ReActType": "NRT_DAMAGE_A",
+            //"StopTimeDef": 0.05,
+            "CameraCrashGap": 0.2,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 17,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SLIME_SPHERE_BLUE_SPECIAL.wav"
+            ]
+          },
+          {
+            "EventFrame": 61,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SLIME_SPHERE_BLUE_SPECIAL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 99,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SLIME_SPHERE_BLUE_SPECIAL_03.wav"
+            ]
+          }
+        ]       
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BUBBLE_15.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BUBBLE_10.wav"
+            ]
+          },
+          {
+            "EventFrame": 22,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CARTOON_69.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_LIGHT_192.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,180 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00A_RANDOM_LISSETH",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_CANDLE_TRADE.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아포칼립스 상단에서 발매한 추첨권을 갖고 있는 사람은 추첨을 진행할 수 있다고 한다.",
+      "UnitTalk_JPN": "アポカリプス商会が発売した抽選券を持っている者は、抽選に参加できるそうだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "추첨권을 왼쪽 상자에 넣는다.",
+          "JumpAnchorStringId_JPN": "抽選券を左の箱に入れる。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "추첨권을 오른쪽 상자에 넣는다.",
+          "JumpAnchorStringId_JPN": "抽選券を右の箱に入れる。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "다음 기회를 노린다.",
+          "JumpAnchorStringId_JPN": "次の機会を狙う。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "당첨됐다! 이 행운이 앞으로의 여정에 계속되기를!",
+      "UnitTalk_JPN": "当選した！この幸運がこれからの旅に続きますように！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitPos": "POS6",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 12,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "낙첨이다. <color=#F7BE45>[CHARACTER_NAME]</color>(와)과 앞으로는 운에 의존하지 말자고 다짐했다...",
+      "UnitTalk_JPN": "落選だ。<color=#F7BE45>[CHARACTER_NAME]</color>と、これからは運に頼らないと誓った…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "JumpAnchorInfo": "JUMPANCHOR_2_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "역시 내 선택은 적중한다! 실전에서도 이런 날카로운 직감을 발휘할 수 있도록 하자! ",
+      "UnitTalk_JPN": "やはり俺の選択は的中する！実戦でもこんな鋭い直感を発揮できるようにしよう！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitPos": "POS6",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 14,
+      "JumpAnchorInfo": "JUMPANCHOR_2_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "실패했다. 다음 기회를 노려보기로 했다... ",
+      "UnitTalk_JPN": "失敗した。次の機会を狙うことにした… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아직은 때가 아니다...!",
+      "UnitTalk_JPN": "まだ時期尚早だ…！",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,1203 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00A_RANDOM_LISSETH",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_CANDLE_TRADE.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_4",
+      "UnitPos": "POS9",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 170,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 아포칼립스 상단을 찾았는데….",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>とアポカリプス商会にやって来たが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_01.wav",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "오른쪽~ 왼쪽~ 원하시는 상자를 골라 보세요!",
+      "UnitTalk_JPN": "右か左か、お好きな箱を選んでくださ～い！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "오래된 주화! 그리고 NOA에서 협찬해 주신 특별한 상품까지!",
+      "UnitTalk_JPN": "古のコインに！NOAから提供された特別な品まで！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "푸짐한 경품이 준비되어 있어요! 추첨권이 있다면 지금 바로 도전해 보세요!",
+      "UnitTalk_JPN": "豪華な景品が用意されています！抽選券をお持ちの方は、今すぐ挑戦してみてください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 183,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "앗! 어서 오세요, 손님!",
+      "UnitTalk_JPN": "あっ！いらっしゃいませ、お客様！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "리세트가 행사를 연 거야?",
+          "JumpAnchorStringId_JPN": "リセットがイベントを開いたの？"
+        }
+      ]
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "네. 어떻게 해야 고객을 더 많이 모을 수 있을지 고민해 봤거든요.",
+      "UnitTalk_JPN": "はい。どうすればお客様をもっと集められるか、考えてみたんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래서 경품 추첨 행사를 기획해 봤어요!",
+      "UnitTalk_JPN": "それで、景品抽選イベントを企画してみたという訳です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "손님도 해 보실래요? 원하시는 상자에 추첨권을 넣으면 자동으로 추첨이 돼요.",
+      "UnitTalk_JPN": "お客様もいかがですか？ご希望の箱に抽選券を入れると、自動的に抽選が行われるんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 168,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>도 흥미가 가는 모양이다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>も興味があるようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 172,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇다면…",
+      "UnitTalk_JPN": "だったら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "추첨권을 왼쪽 상자에 넣는다.",
+          "JumpAnchorStringId_JPN": "左の箱に抽選券を入れる。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "추첨권을 오른쪽 상자에 넣는다.",
+          "JumpAnchorStringId_JPN": "右の箱に抽選券を入れる。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "다음 기회를 노린다.",
+          "JumpAnchorStringId_JPN": "次の機会を狙う。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 26,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이건 우리의 행운을 평가할 기회다.",
+      "UnitTalk_JPN": "これは私たちの運を試す機会だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 174,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마침 가지고 있던 추첨권을 왼쪽 상자에 넣었다.",
+      "UnitTalk_JPN": "ちょうど持っていた抽選券を左の箱に入れた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_07.wav",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "좋아요! 두구두구두구~",
+      "UnitTalk_JPN": "よぉし！ドゥルルルル～…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_01.wav",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_03.wav",
+      "UnitTalk_KOR": "추첨권을 넣은 상자 안에서 톱니바퀴 돌아가는 소리가 들리더니….",
+      "UnitTalk_JPN": "抽選券を入れた箱の中から、歯車が回る音が聞こえたかと思うと…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFlashBang": 0.2,
+      "BgCrash": 1.0,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_03.wav",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 93,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgCrash": 1.0,
+      "BgCrashTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_BELL.wav"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgCrash": 1.0,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_CLAP.wav"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": false,
+      "WaitTime": 0.3
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "와아…!",
+      "UnitTalk_JPN": "わぁ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 175,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "축하드려요, 손님! 단번에 당첨되셨네요!",
+      "UnitTalk_JPN": "おめでとうございます、お客様！一発で当選されましたね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "당첨 상품은 오래된 주화예요.",
+      "UnitTalk_JPN": "景品は、古のコインです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그럼 앞으로도 저희 아포칼립스 상단에 많은 사랑 부탁드릴게요!",
+      "UnitTalk_JPN": "それではこれからも、アポカリプス商会をどうぞよろしくお願いします！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…그날, 주머니가 무거워졌지만 발걸음은 평소보다 가벼웠다.",
+      "UnitTalk_JPN": "…ポケットは重くなったが、足取りはいつもより軽かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 행운, 틀림없이 앞으로의 여정이 순탄하리라는 전조다!",
+      "UnitTalk_JPN": "この幸運は、間違いなくこれからの旅が順調に進む前兆だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 215,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 216,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_TRADE.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 217,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 218,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 219,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 194,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이건 우리의 행운을 평가할 기회다.",
+      "UnitTalk_JPN": "これは私たちの運を試す機会だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 195,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 196,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마침 가지고 있던 추첨권을 왼쪽 상자에 넣었다.",
+      "UnitTalk_JPN": "ちょうど持っていた抽選券を左の箱に入れた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 197,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_07.wav",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "좋아요! 두구두구두구~",
+      "UnitTalk_JPN": "よぉし！ドゥルルルル～…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 198,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_01.wav",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 200,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_03.wav",
+      "UnitTalk_KOR": "추첨권을 넣은 상자 안에서 톱니바퀴 돌아가는 소리가 들리더니….",
+      "UnitTalk_JPN": "抽選券を入れた箱の中から、歯車が回る音が聞こえたかと思うと…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_TRADE.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffset": "TWIN_5",
+      "UnitQuickSet": true,
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 97,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_SWOOSH_03.wav",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 176,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아앗…. 아깝게도 이번에는 실패네요.",
+      "UnitTalk_JPN": "あっ…惜しくも今回は失敗ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만 너무 실망하지 마세요, 손님!",
+      "UnitTalk_JPN": "でも、あまりガッカリしないでくださいね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "다음에는 꼭 당첨되실 수 있을 거예요!",
+      "UnitTalk_JPN": "次はきっと当選できますよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 178,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "앗…! 이렇게 말하면 주최자로서 공정성이 없는 걸까요…. 우으으….",
+      "UnitTalk_JPN": "あっ…！こんなことを言うのは、主催者として公平性に欠けるのでしょうか…ううぅ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "고뇌에 빠진 리세트를 달래 주고 숙소로 돌아갔다.",
+      "UnitTalk_JPN": "苦悩に陥ったリセットを慰め、宿へと戻った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 앞으로는 운에 의존하지 말자고 다짐했다….",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と、これからは運に頼らないと誓った…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 230,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 231,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_TRADE.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 232,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 233,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 234,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 53,
+      "JumpAnchorInfo": "JUMPANCHOR_2_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_TRADE.png",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffset": "TWIN_5",
+      "UnitQuickSet": true,
+      "UnitPos": "POS6",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 102,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitQuickSet": true,
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이건 우리의 직감을 시험할 기회다.",
+      "UnitTalk_JPN": "これは私たちの直感を試す機会だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마침 가지고 있던 추첨권을 오른쪽 상자에 넣었다.",
+      "UnitTalk_JPN": "ちょうど持っていた抽選券を右の箱に入れた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 212,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_07.wav",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "좋아요! 두구두구두구~",
+      "UnitTalk_JPN": "よぉし！ドゥルルルル～…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffsetTime": "NR",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 132,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitQuickSet": true,
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_01.wav"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_03.wav",
+      "UnitTalk_KOR": "추첨권을 넣은 상자 안에서 톱니바퀴 돌아가는 소리가 들리더니…",
+      "UnitTalk_JPN": "抽選券を入れた箱の中から、歯車が回る音が聞こえたかと思うと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFlashBang": 0.2,
+      "BgCrash": 1.0,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_03.wav",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS7",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgCrash": 1.0,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_BELL.wav"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgCrash": 1.0,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_CLAP.wav"
+    },
+    {
+      "Uid": 211,
+      "WaitClick": false,
+      "WaitTime": 0.5
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "축하드려요, 손님! 단번에 당첨되셨네요!",
+      "UnitTalk_JPN": "おめでとうございます、お客様！一発で当選されましたね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "이건 특별상인 <color=#F7BE45>별빛의 정수</color>예요.",
+      "UnitTalk_JPN": "これは特別賞の<color=#F7BE45>星光の結晶</color>です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "구원자님들의 잠재력을 끌어올릴 수 있다고 들었어요!",
+      "UnitTalk_JPN": "救援者の潜在能力を引き出すことができるそうです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 182,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 169,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 171,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_LIGHT_03.wav",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>의 손에 닿은 보석이 빛의 입자로 변해 녹아들었다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>の手に触れた宝石が、光の粒子へと変わり溶け込んだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 새로운 힘을 얻은 듯하다!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は新たな力を得たようだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "와아…! 바로 효과가 나타났나 봐요!",
+      "UnitTalk_JPN": "わぁ…！すぐに効果が出たようですね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그럼 앞으로도 저희 아포칼립스 상단에 많은 사랑 부탁드릴게요!",
+      "UnitTalk_JPN": "それではこれからも、アポカリプス商会をどうぞよろしくお願いします！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 115,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 116,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…그날, <color=#F7BE45>[CHARACTER_NAME]</color>(와)과 직감의 힘에 대해 이야기를 나눴다.",
+      "UnitTalk_JPN": "…<color=#F7BE45>[CHARACTER_NAME]</color>と、直感の力について語り合った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 행운, 틀림없이 앞으로의 여정이 순탄하리라는 전조다!",
+      "UnitTalk_JPN": "この幸運は、間違いなくこれからの旅が順調に進む前兆だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 225,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 226,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_TRADE.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 227,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 228,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 229,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 201,
+      "JumpAnchorInfo": "JUMPANCHOR_2_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_TRADE.png",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffset": "TWIN_5",
+      "UnitQuickSet": true,
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 202,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitQuickSet": true,
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 204,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이건 우리의 직감을 시험할 기회다.",
+      "UnitTalk_JPN": "これは私たちの直感を試す機会だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 205,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마침 가지고 있던 추첨권을 오른쪽 상자에 넣었다.",
+      "UnitTalk_JPN": "ちょうど持っていた抽選券を右の箱に入れた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 213,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_07.wav",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "좋아요! 두구두구두구~",
+      "UnitTalk_JPN": "よぉし！ドゥルルルル～…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 206,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffsetTime": "NR",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 207,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitQuickSet": true,
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 208,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_01.wav"
+    },
+    {
+      "Uid": 210,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_03.wav",
+      "UnitTalk_KOR": "추첨권을 넣은 상자 안에서 톱니바퀴 돌아가는 소리가 들리더니…",
+      "UnitTalk_JPN": "抽選券を入れた箱の中から、歯車が回る音が聞こえたかと思うと…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitQuickSet": true,
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_SWOOSH_03.wav",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 180,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아앗… 아깝게도 이번에는 실패네요.",
+      "UnitTalk_JPN": "あっ…惜しくも今回は失敗ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래도 다음 기회가 있을 테니까요!",
+      "UnitTalk_JPN": "でも、次がありますから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "직접 보지는 못했지만 분명 아슬아슬했을 거예요!",
+      "UnitTalk_JPN": "直接見てはいませんが、きっと惜しかったと思います！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 127,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 128,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리세트의 위로를 뒤로 하고 숙소로 돌아갔다.",
+      "UnitTalk_JPN": "リセットの慰めを後に、宿へと戻った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 앞으로는 신중한 자세를 취하기로 했다...",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と、今後は慎重な姿勢を取ることにした…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 235,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 236,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_TRADE.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 237,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 238,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 239,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 138,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_TRADE.png",
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitQuickSet": true,
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 140,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "UnitQuickSet": true,
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 147,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": "추첨권이 없으시다니…",
+      "UnitTalk_JPN": "抽選券をお持ちでないなんて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 151,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "으으…. 아쉽지만 원칙은 지켜야 하니까요!",
+      "UnitTalk_JPN": "うぅ…残念ですが、ルールは守らなければなりません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 214,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 152,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괜찮아.",
+          "JumpAnchorStringId_JPN": "大丈夫だ。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "앞으로도 잘 부탁해, 리세트.",
+          "JumpAnchorStringId_JPN": "これからもよろしく、リセット。"
+        }
+      ]
+    },
+    {
+      "Uid": 155,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "네! 언제든 찾아와 주세요, 손님!",
+      "UnitTalk_JPN": "はい！いつでもお越しくださいね、お客様！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 158,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 159,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 160,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 161,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리세트와 인사를 나누고 필요한 물건만 사서 돌아갔다.",
+      "UnitTalk_JPN": "リセットと挨拶を交わし、必要な物だけ買って帰った。",
+      "TalkTime": 0.03
+    }
+  ]
+}

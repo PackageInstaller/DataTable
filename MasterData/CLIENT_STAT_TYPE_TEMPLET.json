@@ -1,0 +1,201 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: STAT_TYPE_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_ATK",
+          "IconImg" : "ICON_NST_ATK.png",
+          "StatName" : "NST_ATK",
+          "StatDesc" : "SI_NST_ATK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_HP",
+          "IconImg" : "ICON_NST_HP.png",
+          "StatName" : "NST_HP",
+          "StatDesc" : "SI_NST_HP_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_DEF",
+          "IconImg" : "ICON_NST_DEF.png",
+          "StatName" : "NST_DEF",
+          "StatDesc" : "SI_NST_DEF_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_TURN_SPEED",
+          "IconImg" : "ICON_NST_TURN_SPEED.png",
+          "StatName" : "NST_TURN_SPEED",
+          "StatDesc" : "SI_NST_TURN_SPEED_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_NV_RATE_ATK",
+          "IconImg" : "ICON_NST_NV_RATE_ATK.png",
+          "StatName" : "NST_ATK",
+          "StatDesc" : "SI_NST_NV_RATE_ATK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_NV_RATE_HP",
+          "IconImg" : "ICON_NST_NV_RATE_HP.png",
+          "StatName" : "NST_HP",
+          "StatDesc" : "SI_NST_NV_RATE_HP_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_NV_RATE_DEF",
+          "IconImg" : "ICON_NST_NV_RATE_DEF.png",
+          "StatName" : "NST_DEF",
+          "StatDesc" : "SI_NST_NV_RATE_DEF_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_NV_RATE_TURN_SPEED",
+          "IconImg" : "ICON_NST_NV_RATE_TURN_SPEED.png",
+          "StatName" : "NST_TURN_SPEED",
+          "StatDesc" : "SI_NST_NV_RATE_TURN_SPEED_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_CRITICAL",
+          "IconImg" : "ICON_NST_RATE_CRITICAL.png",
+          "StatName" : "NST_RATE_CRITICAL",
+          "StatDesc" : "SI_NST_RATE_CRITICAL_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_CRITICAL_DAMAGE",
+          "IconImg" : "ICON_NST_RATE_CRITICAL_DAMAGE.png",
+          "StatName" : "NST_RATE_CRITICAL_DAMAGE",
+          "StatDesc" : "SI_NST_RATE_CRITICAL_DAMAGE_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_EFFECT_HIT",
+          "IconImg" : "ICON_NST_RATE_EFFECT_HIT.png",
+          "StatName" : "NST_RATE_EFFECT_HIT",
+          "StatDesc" : "SI_NST_RATE_EFFECT_HIT_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_EFFECT_EVADE",
+          "IconImg" : "ICON_NST_RATE_EFFECT_EVADE.png",
+          "StatName" : "NST_RATE_EFFECT_EVADE",
+          "StatDesc" : "SI_NST_RATE_EFFECT_EVADE_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_HIT",
+          "IconImg" : "ICON_NST_RATE_HIT.png",
+          "StatName" : "NST_RATE_HIT",
+          "StatDesc" : "SI_NST_RATE_HIT_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_EVADE",
+          "IconImg" : "ICON_NST_RATE_EVADE.png",
+          "StatName" : "NST_RATE_EVADE",
+          "StatDesc" : "SI_NST_RATE_EVADE_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_CROSS_ATTACK",
+          "IconImg" : "ICON_NST_RATE_CROSS_ATTACK.png",
+          "StatName" : "NST_RATE_CROSS_ATTACK",
+          "StatDesc" : "SI_NST_RATE_CROSS_ATTACK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_REVENGE_ATTACK",
+          "IconImg" : "ICON_NST_RATE_REVENGE_ATTACK.png",
+          "StatName" : "NST_RATE_REVENGE_ATTACK",
+          "StatDesc" : "SI_NST_RATE_REVENGE_ATTACK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_DAMAGE_UP_SKILL_ATTACK",
+          "IconImg" : "ICON_NST_RATE_DAMAGE_UP_SKILL_ATTACK.png",
+          "StatName" : "NST_RATE_DAMAGE_UP_SKILL_ATTACK",
+          "StatDesc" : "SI_NST_RATE_DAMAGE_UP_SKILL_ATTACK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_DAMAGE_REDUCE_SKILL_ATTACK",
+          "IconImg" : "ICON_NST_RATE_DAMAGE_REDUCE_SKILL_ATTACK.png",
+          "StatName" : "NST_RATE_DAMAGE_REDUCE_SKILL_ATTACK",
+          "StatDesc" : "SI_NST_RATE_DAMAGE_REDUCE_SKILL_ATTACK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_HEAL_GIVE",
+          "IconImg" : "ICON_NST_RATE_HEAL_GIVE.png",
+          "StatName" : "NST_RATE_HEAL_GIVE",
+          "StatDesc" : "SI_NST_RATE_HEAL_GIVE_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_HEAL_RECEIVE",
+          "IconImg" : "ICON_NST_RATE_HEAL_RECEIVE.png",
+          "StatName" : "NST_RATE_HEAL_RECEIVE",
+          "StatDesc" : "SI_NST_RATE_HEAL_RECEIVE_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_DAMAGE_UP",
+          "IconImg" : "ICON_NST_ATK.png",
+          "StatName" : "NST_RATE_DAMAGE_UP",
+          "StatDesc" : "SI_NST_RATE_DAMAGE_UP_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_DAMAGE_REDUCE",
+          "IconImg" : "ICON_NST_ATK.png",
+          "StatName" : "NST_RATE_DAMAGE_REDUCE",
+          "StatDesc" : "SI_NST_RATE_DAMAGE_REDUCE_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "JST_POWER",
+          "IconImg" : "AB_UNIT_STAT_POWER.png",
+          "RewardEffectIcon" : "JOURNEY_CMN_STAT_POWER_GET.png",
+          "StatName" : "JST_POWER",
+          "StatDesc" : "SI_JST_POWER_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "JST_HEALTH",
+          "IconImg" : "AB_UNIT_STAT_HEALTH.png",
+          "RewardEffectIcon" : "JOURNEY_CMN_STAT_HEALTH_GET.png",
+          "StatName" : "JST_HEALTH",
+          "StatDesc" : "SI_JST_HEALTH_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "JST_ENDURANCE",
+          "IconImg" : "AB_UNIT_STAT_ENDURANCE.png",
+          "RewardEffectIcon" : "JOURNEY_CMN_STAT_ENDURANCE_GET.png",
+          "StatName" : "JST_ENDURANCE",
+          "StatDesc" : "SI_JST_ENDURANCE_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "JST_FOCUS",
+          "IconImg" : "AB_UNIT_STAT_FOCUS.png",
+          "RewardEffectIcon" : "JOURNEY_CMN_STAT_FOCUS_GET.png",
+          "StatName" : "JST_FOCUS",
+          "StatDesc" : "SI_JST_FOCUS_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "JST_PROTECT",
+          "IconImg" : "AB_UNIT_STAT_PROTECT.png",
+          "RewardEffectIcon" : "JOURNEY_CMN_STAT_PROTECT_GET.png",
+          "StatName" : "JST_PROTECT",
+          "StatDesc" : "SI_JST_PROTECT_DESC"
+        }
+    ]
+}

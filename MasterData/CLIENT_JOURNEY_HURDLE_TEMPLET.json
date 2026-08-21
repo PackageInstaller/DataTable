@@ -1,0 +1,223 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: JOURNEY_HURDLE_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 1,
+          "HurdleType" : "HT_BATTLE_ATTEND",
+          "HurdleTargetId" : 1,
+          "HurdleTargetTurn" : 4,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_01",
+          "HurdleFailEvent" : 890250000,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10101,
+          "HurdleType" : "HT_BATTLE_ATTEND",
+          "HurdleTargetId" : 110101,
+          "HurdleTargetTurn" : 7,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_01",
+          "HurdleFailEvent" : 890250000,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10102,
+          "HurdleType" : "HT_BATTLE_WIN",
+          "HurdleTargetId" : 110102,
+          "HurdleTargetTurn" : 14,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_02",
+          "HurdleFailEvent" : 1072,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10103,
+          "HurdleType" : "HT_MOVE_TOWN",
+          "HurdleTargetId" : 11,
+          "HurdleTargetTurn" : 15,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_03",
+          "HurdleFailEvent" : 890250000,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10104,
+          "HurdleType" : "HT_BATTLE_WIN",
+          "HurdleTargetId" : 110103,
+          "HurdleTargetTurn" : 22,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_04",
+          "HurdleFailEvent" : 1670,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10105,
+          "HurdleType" : "HT_BATTLE_WIN",
+          "HurdleTargetId" : 110104,
+          "HurdleTargetTurn" : 29,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_05",
+          "HurdleFailEvent" : 1182,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10106,
+          "HurdleType" : "HT_MOVE_TOWN_ANY",
+          "HurdleTargetTurn" : 30,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_06",
+          "HurdleFailEvent" : 890250000,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10107,
+          "HurdleType" : "HT_WAIT",
+          "HurdleTargetTurn" : 37,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_07",
+          "HurdleFailEvent" : 890250000,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10108,
+          "HurdleType" : "HT_BATTLE_WIN",
+          "HurdleTargetId" : 110105,
+          "HurdleTargetTurn" : 41,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_08",
+          "HurdleFailEvent" : 1302,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10109,
+          "HurdleType" : "HT_BATTLE_WIN",
+          "HurdleTargetId" : 110106,
+          "HurdleTargetTurn" : 45,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_09",
+          "HurdleFailEvent" : 1332,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 99103,
+          "HurdleType" : "HT_MOVE_TOWN",
+          "HurdleTargetId" : 11,
+          "HurdleTargetTurn" : 3,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_03",
+          "HurdleFailEvent" : 890250000,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 99104,
+          "HurdleType" : "HT_BATTLE_WIN",
+          "HurdleTargetId" : 110103,
+          "HurdleTargetTurn" : 6,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_04",
+          "HurdleFailEvent" : 1670,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 99101,
+          "HurdleType" : "HT_BATTLE_ATTEND",
+          "HurdleTargetId" : 1,
+          "HurdleTargetTurn" : 2,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_01",
+          "HurdleFailEvent" : 890250000,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10201,
+          "HurdleType" : "HT_BATTLE_ATTEND",
+          "HurdleTargetId" : 120101,
+          "HurdleTargetTurn" : 7,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_01",
+          "HurdleFailEvent" : 890250000,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10202,
+          "HurdleType" : "HT_BATTLE_WIN",
+          "HurdleTargetId" : 120102,
+          "HurdleTargetTurn" : 14,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_02",
+          "HurdleFailEvent" : 1072,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10203,
+          "HurdleType" : "HT_MOVE_TOWN",
+          "HurdleTargetId" : 11,
+          "HurdleTargetTurn" : 15,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_03",
+          "HurdleFailEvent" : 890250000,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10204,
+          "HurdleType" : "HT_BATTLE_WIN",
+          "HurdleTargetId" : 120103,
+          "HurdleTargetTurn" : 22,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_04",
+          "HurdleFailEvent" : 1670,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10205,
+          "HurdleType" : "HT_BATTLE_WIN",
+          "HurdleTargetId" : 120104,
+          "HurdleTargetTurn" : 29,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_05",
+          "HurdleFailEvent" : 1182,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10206,
+          "HurdleType" : "HT_MOVE_TOWN_ANY",
+          "HurdleTargetTurn" : 30,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_06",
+          "HurdleFailEvent" : 890250000,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10207,
+          "HurdleType" : "HT_WAIT",
+          "HurdleTargetTurn" : 37,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_07",
+          "HurdleFailEvent" : 890250000,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10208,
+          "HurdleType" : "HT_BATTLE_WIN",
+          "HurdleTargetId" : 120105,
+          "HurdleTargetTurn" : 41,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_08",
+          "HurdleFailEvent" : 1302,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "HurdleId" : 10209,
+          "HurdleType" : "HT_BATTLE_WIN",
+          "HurdleTargetId" : 120106,
+          "HurdleTargetTurn" : 45,
+          "HurdleNameString" : "SI_ALDEBARAN_EASY_HURDLE_09",
+          "HurdleFailEvent" : 1332,
+          "HurdleFailMainPhase" : "MPT_BADEND"
+        }
+    ]
+}

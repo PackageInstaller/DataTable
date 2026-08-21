@@ -1,0 +1,228 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00B_RANDOM_ENCOUNTER",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 6,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_85.wav",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰를 수행하러 가는 길에, 약탈자들의 함정에 빠지고 말았다!",
+      "UnitTalk_JPN": "依頼を遂行しに行く途中、レイダーたちの罠に落ちてしまった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_SWORD_RED",
+      "CameraOffset": "TWIN_1",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 59,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_RED",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "우리의 처우에 대해 약탈자들이 논쟁하는 사이…",
+      "UnitTalk_JPN": "レイダーたちが我々の処遇について議論している間に…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "혼쭐을 내 주자!",
+          "JumpAnchorStringId_JPN": "こいつらを懲らしめてやろう！",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "말로 타이르자.",
+          "JumpAnchorStringId_JPN": "言葉で諭そう。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "평범한 시체입니다.",
+          "JumpAnchorStringId_JPN": "普通の死体です。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 26,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWORD_SLASH_BIG_04.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "약탈자들이 혼란에 빠진 틈을 타서 위협 공격을 가했다!",
+      "UnitTalk_JPN": "レイダーたちが混乱した隙に脅威攻撃を仕掛けた！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기습에 놀란 약탈자들은 뿔뿔이 흩어져 달아나 버렸다.",
+      "UnitTalk_JPN": "奇襲に驚いたレイダーたちは四散して逃げ去ってしまった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 상대의 허를 찌른 경험에서 새로운 깨달음을 얻은 모양이다!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は敵の隙を突いたことで何かを掴んだようだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 37,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "약탈자들에게 공격해서는 안 되는 이유를 설득하자, 논쟁은 더욱 격렬해졌다.",
+      "UnitTalk_JPN": "レイダーたちに攻撃すべきでない理由を説得すると、論争はさらに激化した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…결국, 약탈자들은 오랜 논의 끝에 결론을 내리지 못하고 돌아갔다.",
+      "UnitTalk_JPN": "…結局、レイダーたちは長い議論の末、結論を出せずに帰っていった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS6",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 50,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_03.wav",
+      "CameraOffset": "TWIN_1",
+      "UnitTalk_KOR": "눈을 감고 구덩이 속에 가만히 누워 있자, 곧 약탈자들이 술렁거렸다.",
+      "UnitTalk_JPN": "目を閉じて穴の中にじっと横たわっていると、すぐにレイダーたちがざわめき始めた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "우리가 죽은 줄 알고 약탈자들이 도망간 덕분에 안전하게 구덩이를 탈출할 수 있었다…",
+      "UnitTalk_JPN": "我々が死んだと思い込みレイダーたちが逃げたおかげで、無事に穴から脱出できた…",
+      "TalkTime": 0.03
+    }
+  ]
+}

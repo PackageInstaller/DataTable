@@ -1,0 +1,1763 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP3_7S",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 215,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CINEMA_MAIN_EP3_7S.mp4"
+    },
+    {
+      "Uid": 213,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CUBE_PALACE_DARK.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_18.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "EmotionEffect": "HEART",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니다! 이 악마야!",
+          "JumpAnchorStringId_JPN": "違う！誰がパパだ！？"
+        }
+      ]
+    },
+    {
+      "Uid": 176,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이상한 여자에게 이끌려 다른 세계에 떨어진 것만도 이미 충분히 힘들다.",
+      "UnitTalk_JPN": "知らない女性に導かれて異世界に来ただけでもびっくりなのに…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "사정 따윈 모르겠고 갑자기 유부남이 되는 걸 받아들일 수 있겠냐?",
+      "UnitTalk_JPN": "いきなり子持ちになるなんて、想定外だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "쾌락 없는 책임은 단호히 거부한다!",
+      "UnitTalk_JPN": "身に覚えのない責任なんて、誰が背負えるものか…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "악마 아니야, 아빠! 오메가야!",
+      "UnitTalk_JPN": "違わないもん、パパ！オメガだよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_003.wav"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오메가, 엄청 오래 잤어! 엄청 오래 기다렸어!",
+      "UnitTalk_JPN": "オメガ、ずーっと眠っていたの！ずーっと待っていたの！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_004.wav"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "잘했지? 잘했지? 오메가 착한 딸이지?",
+      "UnitTalk_JPN": "えらい？えらいでしょ？オメガ、いい子だよね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_005.wav"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "그럼 이제 오메가 나가도 돼? 나가서 놀아도 돼?",
+      "UnitTalk_JPN": "オメガ、もう外に出てもいい？外で遊んでもいい？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_006.wav"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아빠 아니라니까…!",
+          "JumpAnchorStringId_JPN": "だからパパじゃないってば…"
+        }
+      ]
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…정말로 아니야?",
+      "UnitTalk_JPN": "ほんとに違うの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_007.wav"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "이상하네… 분명 아빠 냄새가 나는데…",
+      "UnitTalk_JPN": "おかしいな…確かにパパの匂いがするのに…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_008.wav"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "소녀는 잠시 실망한 듯 슬픈 표정이 되었다.",
+      "UnitTalk_JPN": "少女はガッカリしたように、悲しい表情をした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "약간의 죄책감이 든다.",
+      "UnitTalk_JPN": "私は少し罪悪感を抱いた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만… 진짜 아빠 아니라고…",
+      "UnitTalk_JPN": "でも…私は本当にパパじゃないんだ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "그렇구나…",
+      "UnitTalk_JPN": "そっか…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_009.wav"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그럼 오메가, 다시 잘게.",
+      "UnitTalk_JPN": "じゃあオメガ、また寝るね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_010.wav"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "안녕히 주무세요…",
+      "UnitTalk_JPN": "おやすみなさい…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_011.wav"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "자, 잠깐만!",
+          "JumpAnchorStringId_JPN": "ちょ、ちょっと待って！"
+        }
+      ]
+    },
+    {
+      "Uid": 188,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여긴 어디야?",
+          "JumpAnchorStringId_JPN": "ここってどこなんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "여기? 여긴 스타피어서야. 그리고 오메가네 집이야.",
+      "UnitTalk_JPN": "ここ？ここはスターピアサーだよ。そして、オメガのお家。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_012.wav"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "스타피어서 안이라고…?!",
+          "JumpAnchorStringId_JPN": "スターピアサーの中だって…！？"
+        }
+      ]
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_21.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "응! 데이터베이스라고도 해.",
+      "UnitTalk_JPN": "うん！データベースとも呼んでいるよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_013.wav"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "어라? 다른 사람이 여기 들어온 건 오메가도 처음 봐.",
+      "UnitTalk_JPN": "あれ？そういえば、他の人がここに入ってきたのは初めてだね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_014.wav"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "신기하네!",
+      "UnitTalk_JPN": "不思議！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_015.wav"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "데이터베이스?",
+          "JumpAnchorStringId_JPN": "データベース、って何だ？"
+        }
+      ]
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "응!",
+      "UnitTalk_JPN": "うん！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_016.wav"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "여기 책들이 엄청 많지?",
+      "UnitTalk_JPN": "ここ、本がたくさんあるでしょ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_017.wav"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "책이랄지, 데이터 뭉치랄지…",
+          "JumpAnchorStringId_JPN": "本というか、データの塊というか…"
+        }
+      ]
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "아빠가 오메가 보라고 만들어준 거야! …아마도.",
+      "UnitTalk_JPN": "パパがオメガのために作ってくれたんだ！…たぶん。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_018.wav"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "오메가가 기다리는 동안 심심하지 않게.",
+      "UnitTalk_JPN": "オメガが待っている間、寂しくないように。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_019.wav"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "사실 거의 다 잠겨 있어서 읽지는 못하지만…",
+      "UnitTalk_JPN": "実はね、ほとんどロックされていて読めないけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_020.wav"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "아마 오래돼서 그런가 봐.",
+      "UnitTalk_JPN": "たぶん古くなってるせいかな。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_021.wav"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇구나.",
+          "JumpAnchorStringId_JPN": "そうなのか。"
+        }
+      ]
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…넌 여기서 뭘 하고 있었어?",
+          "JumpAnchorStringId_JPN": "…君はここで何をしていたんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "응, 그건 말이지!",
+      "UnitTalk_JPN": "うん、それはね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_022.wav"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "모르겠어!",
+      "UnitTalk_JPN": "分かんない！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_023.wav"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…몰라?",
+          "JumpAnchorStringId_JPN": "…分からない？"
+        }
+      ]
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그게… 누군가를 도와줘야 한다는 약속을 한 것 같은데…",
+      "UnitTalk_JPN": "それがね…誰かを助ける約束をしてたみたいなんだけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_024.wav"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SPECIAL2",
+      "UnitTalk_KOR": "오메가 머리가 텅텅 비었어. 때려도 깡깡 소리밖에 안 나.",
+      "UnitTalk_JPN": "オメガのあたま、空っぽになっちゃった。叩いてもカンカンって鳴るだけ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_025.wav"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그래서 아까 오메가 엄청 신났어. 아빠 냄새인 줄 알고.",
+      "UnitTalk_JPN": "だからさっき、オメガすごく嬉しかった。きっとパパの匂いだって。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_026.wav"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아빠라면 가르쳐줄 수 있었을 테니까.",
+      "UnitTalk_JPN": "パパなら教えてくれるはずだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_027.wav"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "오메가가 뭘 기다렸는지… 누굴 도와줘야 하는지.",
+      "UnitTalk_JPN": "オメガが何を待っていたのか…誰を助けるのか。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_028.wav"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "……",
+          "JumpAnchorStringId_JPN": "……"
+        }
+      ]
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "…하지만 괜찮아. 더 기다릴 수 있어.",
+      "UnitTalk_JPN": "でも大丈夫。まだまだ待っていられるよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_029.wav"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "오메가, 기다리는 거 잘해.",
+      "UnitTalk_JPN": "オメガは誰かを待つの、上手なんだよ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_030.wav"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "나는 잠시 소녀를 바라보았다.",
+      "UnitTalk_JPN": "私はしばらくの間、少女を見つめていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 장소도 그렇고 분명 평범한 아이는 아니겠지.",
+      "UnitTalk_JPN": "この不思議な空間を見るに、きっと普通の子供ではないのだろう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "처음 보는 아이지만… 어쩐지 이런 곳에 홀로 두어서는 안 된다는 생각이 들었다.",
+      "UnitTalk_JPN": "初めて会った子だが…何だかこの場所で一人にさせてはならない気がした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 206,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그럼 나랑 같이 나갈래?",
+          "JumpAnchorStringId_JPN": "…じゃあ、一緒に外に出ないかい？"
+        }
+      ]
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "응? 하지만…",
+      "UnitTalk_JPN": "え？でも…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_031.wav"
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "함께 오메가가 잃은 기억을 찾아보자.",
+          "JumpAnchorStringId_JPN": "オメガが失った記憶を、一緒に見つけ出そう。"
+        }
+      ]
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그리고 오메가의 도움도 필요할 것 같아.",
+          "JumpAnchorStringId_JPN": "それと、私にはオメガの助けも必要になると思うんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…헤.",
+      "UnitTalk_JPN": "え…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_032.wav"
+    },
+    {
+      "Uid": 183,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "좋아! 오메가 갈래! 오빠랑 갈래!",
+      "UnitTalk_JPN": "…うん！オメガ行く！お兄ちゃんと一緒に行く！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_033.wav"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아, 오빠라고 불러도 돼? 아빠랑 비슷한 냄새가 나니까!",
+      "UnitTalk_JPN": "あ、お兄ちゃんて呼んでもいいかな？パパとそっくりな匂いがするから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_034.wav"
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…오빠?",
+          "JumpAnchorStringId_JPN": "…お兄ちゃん？"
+        }
+      ]
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…삼촌이 좋아?",
+      "UnitTalk_JPN": "…おじさんのほうがいい？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_035.wav"
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아니면 할아버지…",
+      "UnitTalk_JPN": "それともおじいちゃん…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_036.wav"
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "오빠로 하자! 오빠가 마음에 들어!",
+          "JumpAnchorStringId_JPN": "お兄ちゃんにしよう！気に入った！"
+        }
+      ]
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "응! 오빠!",
+      "UnitTalk_JPN": "うん！お兄ちゃん！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_037.wav"
+    },
+    {
+      "Uid": 216,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 217,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 218,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.2,
+      "BgFileName": "CINEMA_MAIN_EP3_7S_02.mp4",
+      "VideoDependsOnText": false
+    },
+    {
+      "Uid": 212,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "EndBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "BgFileName": "ILLUST_BG_CUBE_PALACE.png",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "오빠! 뭘 하고 싶어? 오메가가 뭘 도와줄까?",
+      "UnitTalk_JPN": "お兄ちゃん！何がしたいの？オメガは何を手伝えばいい？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_040.wav"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "우선 여기서 나가야 하는데…",
+          "JumpAnchorStringId_JPN": "まずはここから出ないとだな…"
+        }
+      ]
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "응, 나가자! 나가자!",
+      "UnitTalk_JPN": "うん！出よう出よう！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_041.wav"
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "바깥은 어떨까? 해님이 짱짱할까? 눈이 오고 있을까? 포근한 바람이 불까?",
+      "UnitTalk_JPN": "外ってどんな感じかな？お日様は明るいのかな？雪が降っているのかな？ああ、気持ちいい風が吹いているかも？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_042.wav"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오메가 궁금한 게 너무 많아!",
+      "UnitTalk_JPN": "オメガ、知りたいことがいっぱい！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_043.wav"
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아…",
+          "JumpAnchorStringId_JPN": "あー…"
+        }
+      ]
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "바깥 상황 말인데…",
+          "JumpAnchorStringId_JPN": "外の状況なんだけどね…"
+        }
+      ]
+    },
+    {
+      "Uid": 182,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFlashBang": 0.1,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "어라? 바깥에서 핑- 하고 왔어.",
+      "UnitTalk_JPN": "あれ？外からピーンと届いた。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_044.wav"
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "이건… 큐브 팰리스?",
+      "UnitTalk_JPN": "これは…キューブパレス？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_045.wav"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "큐브 팰리스를 알아?",
+          "JumpAnchorStringId_JPN": "キューブパレスの事を知っているの？"
+        }
+      ]
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응! 아빠가 만든 오메가 친구야.",
+      "UnitTalk_JPN": "うん！パパが作ったオメガの友だち。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_046.wav"
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SPECIAL2",
+      "UnitTalk_KOR": "오메가가 쿨쿨 자는데 있지, 머리에 책이 쾅 떨어졌거든!",
+      "UnitTalk_JPN": "オメガがぐっすり寝ている時にね、頭にガン！って本が落ちてきてね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_047.wav"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그게 큐브 팰리스에 대한 책이었어!",
+      "UnitTalk_JPN": "それがキューブパレスの本だったの！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_048.wav"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "이거 봐. 오메가 혹 났어. 보이지? 엄청 크지?",
+      "UnitTalk_JPN": "見て見て。オメガたんこぶができたんだよ。見える？大きいでしょ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_049.wav"
+    },
+    {
+      "Uid": 180,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFlashBang": 0.05,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "StartBgmFileName": "EMPTY.mp3",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 179,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFlashBang": 0.05,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.05,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "UnitTalk_KOR": "오메가가 자신의 이마를 가리키자 무슨 노이즈 같은 게 지직거렸다.",
+      "UnitTalk_JPN": "オメガが自分の額を指差すと、何かノイズのようなものがザーザーと鳴った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 181,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그리고는 작은 혹이 나타났다.",
+      "UnitTalk_JPN": "そして、小さなたんこぶが現れた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…나는 깊이 생각하는 것을 관두기로 했다.",
+      "UnitTalk_JPN": "…私は、深く考えるのをやめることにした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아무튼 얼른 내보내 줘.",
+          "JumpAnchorStringId_JPN": "とにかく、早く出たいんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "동료들이 위험할지도 몰라.",
+          "JumpAnchorStringId_JPN": "仲間が危険に晒されているかもしれないし。"
+        }
+      ]
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "응! 알았어.",
+      "UnitTalk_JPN": "うん！分かった。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_050.wav"
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "자, 눈을 감고 셋을 세는 거야.",
+      "UnitTalk_JPN": "さぁ、目を閉じて3つ数えてね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_051.wav"
+    },
+    {
+      "Uid": 160,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.5,
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 161,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_MONOLITH_TEMPLE.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 162,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 163,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 95,
+      "WaitClick": false,
+      "WaitTime": 3.0,
+      "UnitNameString": [
+        "SI_OMEGA"
+      ],
+      "CameraOffset": "ONE_1",
+      "UnitTalk_KOR": "하나, 둘… ",
+      "UnitTalk_JPN": "いち、にー…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 209,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_OMEGA"
+      ],
+      "UnitTalk_KOR": "셋!",
+      "UnitTalk_JPN": "さんっ！",
+      "TalkTime": 0.03,
+      "TalkAppend": true,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_052.wav"
+    },
+    {
+      "Uid": 164,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 165,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeOutTime": 1.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWOOSH_21.wav"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 1.0,
+      "BgCrashTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_BOMB_02.wav",
+      "UnitTalk_KOR": "콰아앙!!",
+      "UnitTalk_JPN": "ドーーン！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.5,
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "눈을 뜨자 폭음과 함께 나뒹구는 성녀들이 보였다.",
+      "UnitTalk_JPN": "目を開けると、爆音とともに転がっていく聖女たちの姿が見えた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS5_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "꺄아악! 성녀 죽는다! 살려줘요!!",
+      "UnitTalk_JPN": "キャーーッ！うち、死んじゃうー！助けてください！！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_001.wav"
+    },
+    {
+      "Uid": 166,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "ONE_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "여, 역시 이건 성물을 깨트려서 분노하신 가프님의 천벌이에요!",
+      "UnitTalk_JPN": "や、やはりこれは聖遺物を壊されてお怒りになられた、ガプ様からの天罰です！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_ELF_001.wav"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "시, 신의 분노를 잠재우려면 역시 제가 타락한 성녀가 되어 인신 공양을 해야…",
+      "UnitTalk_JPN": "か、神の怒りを鎮めるためには、私が堕落した聖女となって生贄をお供えしなければ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_ELF_002.wav"
+    },
+    {
+      "Uid": 184,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "너 솔직히 말해! 하고 싶어서 그러는 거지?!",
+      "UnitTalk_JPN": "あんた、正直に言いなさい！本当はそうしたいんでしょ！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_002.wav"
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "ONE_1",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장! 단장, 정신이 들어?",
+      "UnitTalk_JPN": "団長！団長、気がついた！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "갑자기 정신을 잃고 쓰러지길래 깜짝 놀랐어!",
+      "UnitTalk_JPN": "突然意識を失って倒れたから、ビックリしたのよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 193,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "지금… 무슨 상황이지?",
+          "JumpAnchorStringId_JPN": "これは…どういう状況？"
+        }
+      ]
+    },
+    {
+      "Uid": 191,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "성녀들이 깨트린 성물로부터 정체불명의 적성 개체 다수 등장.",
+      "UnitTalk_JPN": "聖女たちが壊した聖遺物から、正体不明の敵性存在が多数出現。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_SMILE_001.wav"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "즉시 전투 상황 돌입 후 교전 중.",
+      "UnitTalk_JPN": "直ちに戦闘に突入し、現在交戦中。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_SMILE_002.wav"
+    },
+    {
+      "Uid": 192,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "높은 확률로 성녀들의 함정으로 추측.",
+      "UnitTalk_JPN": "高い確率で、聖女たちの罠と推測。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_SMILE_003.wav"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아, 아니야! 우리가 꾸민 일 아니라고!",
+      "UnitTalk_JPN": "ち、違うわ！うちらが仕組んだんじゃないってば！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_003.wav"
+    },
+    {
+      "Uid": 185,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "애초에 내가 같이 휘말릴 함정을 팔 리가 없잖아!",
+      "UnitTalk_JPN": "うちまで一緒に巻き込まれる罠なんて、仕掛けるわけないでしょ！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_004.wav"
+    },
+    {
+      "Uid": 195,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "뮤, 뮤리엘 님… 결국 이 모든 건 뮤리엘 님의 업보가 만든 결과…",
+      "UnitTalk_JPN": "ミュ、ミュリエル様…結局、すべてはミュリエル様の悪行から派生した結果…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_ELF_003.wav"
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "어쩌면… 뮤리엘 님이 꾸민 일이라고 해도 틀리지 않을지도 몰라요…",
+      "UnitTalk_JPN": "…諸悪の根源がミュリエル様であることは、否定できないかもしれません…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_ELF_004.wav"
+    },
+    {
+      "Uid": 167,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE"
+    },
+    {
+      "Uid": 168,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS"
+    },
+    {
+      "Uid": 186,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "시끄러워! 이 배신자!",
+      "UnitTalk_JPN": "うるさいのよ！この裏切り者！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_005.wav"
+    },
+    {
+      "Uid": 187,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "내가 혼자 죽을 것 같아?! 우린 이미 한배를 탄 거라고!",
+      "UnitTalk_JPN": "うちが一人で死ぬとでも思ってる！？あんたも同じ泥船に乗ったんだから、覚悟しなさいよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_006.wav"
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "엣.",
+      "UnitTalk_JPN": "えっ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_053.wav"
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "엄청 난장판…",
+      "UnitTalk_JPN": " すんごいめちゃくちゃなことになってる…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_054.wav"
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…좀 난장판이지?",
+          "JumpAnchorStringId_JPN": "…そうだね？"
+        }
+      ]
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "침착하게 마음을 가라앉히고…",
+          "JumpAnchorStringId_JPN": "心を落ち着かせて…"
+        }
+      ]
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "히햐핫! 사람이 많아! 그리고 엄청 시끄러워!",
+      "UnitTalk_JPN": "きゃははっ！人が多いね！それにすごく賑やか！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_055.wav"
+    },
+    {
+      "Uid": 173,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "오메가 무지무지 신나!",
+      "UnitTalk_JPN": "オメガすごい楽しい！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_056.wav"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "신나는 건가…!",
+          "JumpAnchorStringId_JPN": "楽しいって…！"
+        }
+      ]
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS7",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "히익?! 이 꼬마는 갑자기 어디서 나타난 거야?",
+      "UnitTalk_JPN": "わわっ！？このおチビはどこから出てきたの！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_ORACLE_001.wav"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "여긴 이상한 것들이 나와서 위험하니까 얼른 저리 가, 얘!",
+      "UnitTalk_JPN": "ここは危ないから、早くあっちに行くのよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_ORACLE_002.wav"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "꼬마 아니야, 오메가는 오메가야!",
+      "UnitTalk_JPN": "おチビじゃないよ。オメガはオメガだよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_057.wav"
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "그리고 이건 복제체들이야!",
+      "UnitTalk_JPN": "それと、これは複製体たち！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_058.wav"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "복제체? 이게 뭔 말인지…",
+      "UnitTalk_JPN": "複製体？いったい何の話なんだか…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_ORACLE_003.wav"
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나중에 설명해 줄게.",
+          "JumpAnchorStringId_JPN": "後で説明してあげるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 172,
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffset": "POS6_2X",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그보다 오메가, 뭔가 방법이 있을까?",
+          "JumpAnchorStringId_JPN": "それよりオメガ、何か解決策はある？"
+        }
+      ]
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "응, 있어!",
+      "UnitTalk_JPN": "うん、あるよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_059.wav"
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "큐브 팰리스는 원래 오메가의 친구야.",
+      "UnitTalk_JPN": "キューブパレスは元々、オメガの友だちなんだ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_060.wav"
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "그러니까 나쁜 애가 아니야. 잠깐 고장 난 거지.",
+      "UnitTalk_JPN": "だから悪い子じゃないんだよ？ちょっと故障しただけ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_061.wav"
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "고장 난 건 오메가가 고쳐줄 수 있어!",
+      "UnitTalk_JPN": "故障ならオメガが直せるよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_062.wav"
+    },
+    {
+      "Uid": 132,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "수리할 방법이 있는 거야?",
+          "JumpAnchorStringId_JPN": "直せる方法があるのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "응! 때리면 돼!",
+      "UnitTalk_JPN": "うん！叩けば直る！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_063.wav"
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "때린다고?!",
+          "JumpAnchorStringId_JPN": "叩く！？"
+        }
+      ]
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "옛날에 있지? 고장 난 건 때리면 고쳐진다고 가르쳐준 사람이 있었어!",
+      "UnitTalk_JPN": "昔ね、故障したら叩けば直るって教えてくれた人がいたんだ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_064.wav"
+    },
+    {
+      "Uid": 136,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SPECIAL2",
+      "UnitTalk_KOR": "그러니까 큐브 팰리스도 때리면 다시 착해질 거야!",
+      "UnitTalk_JPN": "だからキューブパレスも、叩けばいい子に戻るはずだよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_065.wav"
+    },
+    {
+      "Uid": 137,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "진짜?!",
+          "JumpAnchorStringId_JPN": "マジ！？"
+        }
+      ]
+    },
+    {
+      "Uid": 138,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "진짜야, 오메가만 믿어!",
+      "UnitTalk_JPN": "マジだよ、オメガを信じて！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_066.wav"
+    }
+  ]
+}

@@ -1,0 +1,1508 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_SAVIOR.txt",
+    "UiStates": [
+      {
+        "StateName": "USN_UI_SELECTOR_INFO1_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "StopSoundControl": "EXCEPT_END_STATE",
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_STEP_06.wav"
+            ]
+          }
+        ]
+      }
+    ],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 5,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_CLOTH.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 8,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 26,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_STEP.wav"
+            ]
+          },
+          {
+            "EventFrame": 37,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_STEP_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START_FOCUS",
+        "StartOffsetZ": -2.5,
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_LIGHT_27.wav"
+            ]
+          },
+          {
+            "EventFrame": 10,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_LIGHT_28.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_19.wav"
+            ]
+          },
+          {
+            "EventFrame": 56,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_20.wav"
+            ]
+          },
+          {
+            "EventFrame": 71,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_FIRE.wav"
+            ]
+          },
+          {
+            "EventFrame": 91,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_LIGHT_29.wav"
+            ]
+          },
+          {
+            "EventFrame": 121,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_LIGHT_30.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_ATTACK_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_WHOOSH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 17,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_STEP_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 34,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_STEP_04.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 2,
+                "VoiceName": "UNIT_1003_BT_TURN_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_TURN_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 2,
+                "VoiceName": "UNIT_1003_BT_TURN_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_TURN_START_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList": [
+              {
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "PlayNextCineCamFrame": 36, //PVE의 루나가 적으로 등장할 경우 36f에 시네 카메라를 사용, PVP에서는 PVP 룰에 따라 해당 기능이 동작하지 않음음
+        "StartUnitShow": {
+          "ShowUnitHudOffEnemy": false,
+          "ShowOffMyTeam": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 60,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 5,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_MAGIC.wav"
+            ]
+          },
+          {
+            "EventFrame": 42,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_BLAST.wav"
+            ]
+          },
+          {
+            "EventFrame": 58,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_EXPLOSION.wav"
+            ]
+          },
+          {
+            "EventFrame": 81,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_WHOOSH_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 100,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_STEP_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 106,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_GRAB.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "UseAttackType": "NormalAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL1_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL1_START_1.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "NormalAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 9,
+                "VoiceName": "UNIT_1003_BT_SKILL1_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL1_START_2.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "CrossAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 9,
+                "VoiceName": "UNIT_1003_BT_CROSS_ATTACK_1.wav"
+              },
+              {
+                "EventFrame": 43,
+                "VoiceName": "UNIT_1003_BT_SHOUT_4_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_CROSS_ATTACK_1.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "CrossAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 9,
+                "VoiceName": "UNIT_1003_BT_CROSS_ATTACK_2.wav"
+              },
+              {
+                "EventFrame": 43,
+                "VoiceName": "UNIT_1003_BT_SHOUT_6_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_CROSS_ATTACK_2.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "RevengeAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 9,
+                "VoiceName": "UNIT_1003_BT_REVENGE_ATTACK_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_REVENGE_ATTACK_1.wav"
+              }
+            ]
+          },
+          {
+            "UseAttackType": "RevengeAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 9,
+                "VoiceName": "UNIT_1003_BT_REVENGE_ATTACK_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_REVENGE_ATTACK_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "NormalAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL1_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL1_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "NormalAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 9,
+                "VoiceName": "UNIT_1003_BT_SKILL1_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL1_START_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "CrossAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 9,
+                "VoiceName": "UNIT_1003_BT_CROSS_ATTACK_1.wav"
+              },
+              {
+                "EventFrame": 43,
+                "VoiceName": "UNIT_1003_BT_SHOUT_4_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_CROSS_ATTACK_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "CrossAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 9,
+                "VoiceName": "UNIT_1003_BT_CROSS_ATTACK_2.wav"
+              },
+              {
+                "EventFrame": 43,
+                "VoiceName": "UNIT_1003_BT_SHOUT_6_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_CROSS_ATTACK_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "RevengeAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 9,
+                "VoiceName": "UNIT_1003_BT_REVENGE_ATTACK_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_REVENGE_ATTACK_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "UseAttackType": "RevengeAttack",
+            "DataList_KOR": [
+              {
+                "EventFrame": 9,
+                "VoiceName": "UNIT_1003_BT_REVENGE_ATTACK_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_REVENGE_ATTACK_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_SPECIAL_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_WHOOSH_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 27,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_CASTING.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 2,
+                "VoiceName": "UNIT_1003_BT_SKILL2_READY_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL2_READY_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 2,
+                "VoiceName": "UNIT_1003_BT_SKILL2_READY_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL2_READY_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList": [
+              {
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "StartUnitShow": {
+          "ShowUnitHudOffEnemy": false
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 90,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.2,
+            "CameraCrashTime": 0.4
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_MAGIC_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 29,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_MAGIC_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 54,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_MAGIC_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 72,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_CIRCLE.wav"
+            ]
+          },
+          {
+            "EventFrame": 90,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_EXPLOSION_02.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 34,
+                "VoiceName": "UNIT_1003_BT_SKILL2_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL2_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 34,
+                "VoiceName": "UNIT_1003_BT_SKILL2_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL2_START_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 34,
+                "VoiceName": "UNIT_1003_BT_SKILL2_START_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL2_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 34,
+                "VoiceName": "UNIT_1003_BT_SKILL2_START_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL2_START_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_HYPER_READY",
+        "MapFadeEvents": [],
+        "InternalCameraTrackingTime": 0,
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_WHOOSH_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 18,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_BLINK.wav"
+            ]
+          },
+          {
+            "EventFrame": 38,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_WHOOSH_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 65,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_CIRCLE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 70,
+            "IsLoop": true,
+            "StopSoundControl": "EXCEPT_END_STATE",
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_HYPER_LOOP.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 6,
+                "VoiceName": "UNIT_1003_BT_SKILL3_READY_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL3_READY_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 6,
+                "VoiceName": "UNIT_1003_BT_SKILL3_READY_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL3_READY_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList": [
+              {
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "SeeTarget": false,
+        "StartUnitShow": {
+          "FormationEnemy": "SFT_NORMAL_LINE"
+        },
+        "BattleMapSceneName": "MAP_BATTLE_EMPTY_SCENE.unity",
+        "MoveEvents": [
+          {
+            "IsInstant": true,
+            "UseAnimTime": true,
+            "EventFrame": 1,
+            "EventMoveTarget": "NEMT_CENTER"
+          }
+        ],
+        "ShowEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 50,
+            "ShowOffEnemy": true
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 184,
+            "ShowUnitHudOffEnemy": false,
+            "ShowUnitHudOnEnemy": true,
+            "FormationMyTeam": "",
+            "FormationEnemy": "SFT_ORACLE_HYPER_01"
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 209,
+            "ShowUnitHudOffEnemy": true,
+            "ShowUnitHudOnEnemy": false
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 184,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.7,
+            "CameraCrashTime": 0.7
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_EYE.wav"
+            ]
+          },
+          {
+            "EventFrame": 24,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_CASTING_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 57,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_STAFF.wav"
+            ]
+          },
+          {
+            "EventFrame": 68,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_WHOOSH_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 95,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_STAFF_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 124,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_METEOR.wav"
+            ]
+          },
+          {
+            "EventFrame": 182,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_METEOR_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 203,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_METEOR_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 245,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_EERIE.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 13,
+                "VoiceName": "UNIT_1003_BT_SKILL3_START_1_3.wav"
+              },
+              {
+                "EventFrame": 66,
+                "VoiceName": "UNIT_1003_BT_SKILL3_START_1_4.wav"
+              },
+              {
+                "EventFrame": 251,
+                "VoiceName": "UNIT_1003_BT_DIE_2_3.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL3_START_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 13,
+                "VoiceName": "UNIT_1003_BT_SKILL3_START_2_3.wav"
+              },
+              {
+                "EventFrame": 108,
+                "VoiceName": "UNIT_1003_BT_SKILL3_START_2_4.wav"
+              },
+              {
+                "EventFrame": 251,
+                "VoiceName": "UNIT_1003_BT_DIE_2_3.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL3_START_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 13,
+                "VoiceName": "UNIT_1003_BT_SKILL3_START_1_3.wav"
+              },
+              {
+                "EventFrame": 80,
+                "VoiceName": "UNIT_1003_BT_SKILL3_START_1_4.wav"
+              },
+              {
+                "EventFrame": 251,
+                "VoiceName": "UNIT_1003_BT_DIE_2_3.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL3_START_1_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 13,
+                "VoiceName": "UNIT_1003_BT_SKILL3_START_2_3.wav"
+              },
+              {
+                "EventFrame": 145,
+                "VoiceName": "UNIT_1003_BT_SKILL3_START_2_4.wav"
+              },
+              {
+                "EventFrame": 251,
+                "VoiceName": "UNIT_1003_BT_DIE_2_3.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_SKILL3_START_2_1.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_NOVA_BURST",
+        "VfxNovaBurstFrame": 52,
+        "SoundEvents": [
+          {
+            "EventFrame": 13,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_CRYSTAL.wav"
+            ]
+          },
+          {
+            "EventFrame": 13,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_NOVA_BURST_ACTIVE.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_WHOOSH_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 52,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_SHINE.wav"
+            ]
+          },
+          {
+            "EventFrame": 54,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_NOVA_BURST_IMPACT.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1003_BT_NOVA_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_NOVA_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1003_BT_NOVA_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_NOVA_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1003_BT_NOVA_1_3.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_NOVA_1_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1003_BT_NOVA_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_NOVA_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_CLOTH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_CLOTH_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 46,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1003_BT_DIE_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DIE_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1003_BT_DIE_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DIE_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1003_BT_DIE_1_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DIE_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1003_BT_DIE_2_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DIE_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_WIN",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_WHOOSH_09.wav"
+            ]
+          },
+          {
+            "EventFrame": 28,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_SHIMMER.wav"
+            ]
+          },
+          {
+            "EventFrame": 66,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_BLINK_02.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1003_BT_VICTORY_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_VICTORY_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1003_BT_VICTORY_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_VICTORY_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_LOSE",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_WIND.wav"
+            ]
+          },
+          {
+            "EventFrame": 31,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_BLINK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 66,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_ORACLE_WHOOSH_10.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1003_BT_DEFEAT_1.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DEFEAT_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 1,
+                "VoiceName": "UNIT_1003_BT_DEFEAT_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DEFEAT_2.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DAMAGE_A",
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_1_4.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_2.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_3.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_3.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_4.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_5.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_6.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_6.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_1_4.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_3.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_3.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_4.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_5.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_6.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_6.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DAMAGE_B",
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_1_4.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_1.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_2.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_3.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_3.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_4.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_5.wav"
+              }
+            ]
+          },
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_6.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_6.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_1_4.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_1.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_2.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_2.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_3.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_3.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_4.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_5.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_6.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_1003_BT_DAMAGE_6.wav"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00A_RANDOM_CHARM",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>열세 번째 공허체 13</color>의 초회 관람 특전을 거래하고 싶다는 남자를 만났다.",
+      "UnitTalk_JPN": "<color=#F7BE45>13番目の空虚体13</color>の初回観覧特典を取引したいという男に出会った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "교환을 승낙한다.",
+          "JumpAnchorStringId_JPN": "交換を承諾する。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "거래하고 싶은 마음은 없다.",
+          "JumpAnchorStringId_JPN": "取引したい気持ちはない。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "특전과 남자의 전시품을 교환했다.",
+      "UnitTalk_JPN": "特典と男の展示品を交換した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "CameraOffset": "TWIN_7"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS4",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 5,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "남자의 제안은 매력적이었지만, 그것보다는 <color=#F7BE45>[CHARACTER_NAME]</color>(와)과의 추억이 담긴 물건을 소중히 보관하기로 했다.",
+      "UnitTalk_JPN": "男の提案は魅力的だったが、それよりも<color=#F7BE45>[CHARACTER_NAME]</color>との思い出が詰まった物を大切に保管することにした。",
+      "TalkTime": 0.03
+    }
+  ]
+}

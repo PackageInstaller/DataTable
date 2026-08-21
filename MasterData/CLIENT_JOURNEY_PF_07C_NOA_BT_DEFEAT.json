@@ -1,0 +1,203 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_07C_NOA_BT_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_07A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.2,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_BATTLE_COMMON_EXPLOSION_11.wav"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_07A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.2
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_07A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.2
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_07A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.2,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_EXPLOSION_02.wav"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_07A_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgCrash": 0.8,
+      "BgCrashTime": 1.5,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_EXPLOSION.wav"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "…이상하군요.",
+      "UnitTalk_JPN": "…おかしいですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "분명 기초 평가전을 시작하기 전에는 엄청 열심히 훈련을 하셨다고 했던 것 같은데…",
+      "UnitTalk_JPN": "基礎試験を始める前は、とても熱心にトレーニングしたとおっしゃっていたはずなのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "막상 평가전을 치러보니 힘, 지구력, 기술, 무엇 하나 평가 기준을 충족하는 부분이 없군요.",
+      "UnitTalk_JPN": "いざ試験を行ってみると、力、持久力、技術…どれも評価基準を満たしていないようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그, 그게 오늘 몸 상태가 안 좋아서…",
+          "JumpAnchorStringId_JPN": "え、えっと、今日はコンディションが良くなくて…"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "그 몸 상태를 관리하는 것 역시 단장님의 역할입니다.",
+      "UnitTalk_JPN": "その体調管理もまた、団長の役割です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이게 실전이었어도 상대에게 같은 말씀을 하실 생각인가요?",
+      "UnitTalk_JPN": "これが実戦だったとしても、相手に同じことを言うつもりですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어의 정론에 더는 반박할 말이 없어 고개를 떨구었다.",
+      "UnitTalk_JPN": "クレアの正論にこれ以上反論する言葉もなく、私はうなだれた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "구원자가 되는 것은 결코 쉬운 일이 아닙니다. 의욕만 있다고 하여 될 수 있는 것은 더욱이 아니고요.",
+      "UnitTalk_JPN": "救援者になるのは、決して簡単なことではありません。意欲があるからといって、なれるものではありませんから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "부디 진지하게 임해주세요. 단장이란 결코 가벼운 자리가 아님을 알아주셨으면 합니다.",
+      "UnitTalk_JPN": "どうか真剣に取り組んでください。団長という立場が、決して軽いものではないことを理解していただきたいのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀의 말대로다. 이게 실전이었다면, 나는 물론 에밀리까지 무사하지 못했겠지…",
+      "UnitTalk_JPN": "クレアの言う通りだ。これが実戦だったら、私だけではなくエミリーも無事ではいられなかっただろう…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇게 생각하자 스스로가 한심해 견디기 힘든 기분이 든다.",
+      "UnitTalk_JPN": "そう思うと、情けなくて耐えがたい気持ちになった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "쥐구멍이라도 있으면 숨고 싶다는 게 바로 이런 기분일까?",
+      "UnitTalk_JPN": "「穴があったら入りたい」とは、まさにこういう気持ちなのだろうか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "후우~, 표정을 보아하니 반성 정도는 하고 있는 것 같군요. 부디 오늘의 결과가 앞으로의 교훈이 되었기를 바랍니다.",
+      "UnitTalk_JPN": "ふぅ…その表情を見る限り、反省はしているようですね。どうか本日の結果が、今後の教訓となることを願います。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 앞으로도 두 분의 <color=#F7BE45>[여정]</color>이 계속되기를 기원하겠습니다.",
+      "UnitTalk_JPN": "それでは、お二人の<color=#F7BE45>「救援の旅」</color>がこれからも続くことを願っています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "이후로도 도움이 필요하시다면, 언제든지 캔들 스퀘어를 방문해 주세요.",
+      "UnitTalk_JPN": "お困りの際は、いつでもキャンドル・スクエアへお越しくださいね。",
+      "TalkTime": 0.03
+    }
+  ]
+}

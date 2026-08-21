@@ -1,0 +1,147 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_MONSTER.txt",
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_KNIFE_SPAWN.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 13,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_BOMBER_SPAWN.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "NonAttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 35,
+            "ReActType": "NRT_NO_ACTION",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_BOMBER_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 9,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_BOMBER_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 28,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_BOMBER_ATK_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": false,
+        "UseEnemyTargetCamera": true,
+        "PlayNextCineCamFrame": 15,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowUnitHudOffEnemy": false,
+          "ShowUnitHudOnEnemy": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 35,
+            "EventEndFrame": 49,
+            "EventMoveTarget": "NEMT_CENTER_FRONT"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 83,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.5,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_DOLL_BOMBER_BLACK_SPECIAL.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_BOMBER_SPECIAL.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_BOMBER_SPECIAL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 51,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_BOMBER_SPECIAL_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 83,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_BOMBER_SPECIAL_04.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 21,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_BOMBER_DYING.wav"
+            ]
+          },
+          {
+            "EventFrame": 49,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_DOLL_BOMBER_DYING_02.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: REQUEST_VICTORY_0000",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "REQUEST_VICTORY_0000",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "REQUEST_VICTORY_0000",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "성공적으로 의뢰를 마치고 돌아온 단원이 흐뭇해하고 있다.",
+      "UnitTalk_JPN": "依頼を無事に終え、戻ってきた団員は満足そうにしている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "REQUEST_VICTORY_0000",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "고생 많았어.",
+          "JumpAnchorStringId_JPN": "お疲れ様。"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "REQUEST_VICTORY_0000",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "가벼운 칭찬을 받고 단원이 들뜬 것도 잠시.",
+      "UnitTalk_JPN": "軽い褒め言葉に、団員が浮かれたのも束の間。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "REQUEST_VICTORY_0000",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다음엔 더 활약할 거라며 내게 약속했다.",
+      "UnitTalk_JPN": "次はもっと活躍すると約束してくれた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "REQUEST_VICTORY_0000",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "REQUEST_VICTORY_0000",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "신이 난 채로 돌아가는 단원을 배웅하며 자리에 앉았다.",
+      "UnitTalk_JPN": "嬉しそうに戻っていく団員を見送りながら、腰を下ろした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "REQUEST_VICTORY_0000",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나날이 성장하는 단원을 떠올리니 어느새 입꼬리가 올라가있었다.",
+      "UnitTalk_JPN": "日々成長する団員のことを思うと、つい口元が緩んでいた。",
+      "TalkTime": 0.03
+    }
+  ]
+}

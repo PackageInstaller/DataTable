@@ -1,0 +1,288 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00A_RANDOM_AIDA",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 12,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_DOWNTOWN",
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "우연히 마주친 아이다에게 구원자를 강하게 만들어 준다는 약을 권유 받았다. 어떤 걸 마시면 좋을까…?",
+      "UnitTalk_JPN": "偶然出会ったアイーダに、救援者を強くする薬を勧められた。何を飲めばいいのだろう…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "섬뜩하게 붉은 빛의 물약",
+          "JumpAnchorStringId_JPN": "不気味なほど赤い色の薬",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "차갑도록 푸른 빛의 물약",
+          "JumpAnchorStringId_JPN": "冷たく青く光る薬",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "눈부시게 노란 빛의 물약",
+          "JumpAnchorStringId_JPN": "眩しいほど黄色い光を放つ薬",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        },
+        {
+          "Uid": 4,
+          "JumpAnchorStringId_KOR": "옆에 놓여 있는 평범한 음료수",
+          "JumpAnchorStringId_JPN": "横に置かれた普通の飲み物",
+          "JumpAnchorId": "REWARD_ANCHOR_4"
+        }
+      ]
+    },
+    {
+      "Uid": 36,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "물약을 마신 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 엄청난 기운이 솟아오른다고 한다!",
+      "UnitTalk_JPN": "薬を飲んだ<color=#F7BE45>[CHARACTER_NAME]</color>は、途方もない気が湧き上がってくるという！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 51,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "물약을 마신 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 갑자기 온몸의 기문이 쭉 빠진다고 한다…",
+      "UnitTalk_JPN": "薬を飲んだ<color=#F7BE45>[CHARACTER_NAME]</color>は、突然全身の気門がすっと抜けたという…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 126,
+      "JumpAnchorInfo": "JUMPANCHOR_2_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "물약을 마신 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 무슨 일이든 할 수 있을 것 같다고 한다!",
+      "UnitTalk_JPN": "薬を飲んだ<color=#F7BE45>[CHARACTER_NAME]</color>は、何でもできるような気がすると言う！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 130,
+      "JumpAnchorInfo": "JUMPANCHOR_2_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 132,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "물약을 마신 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 갑자기 세상 모두가 자기를 비난하는 것 같다고 한다…",
+      "UnitTalk_JPN": "薬を飲んだ<color=#F7BE45>[CHARACTER_NAME]</color>は、突然、世界中の誰もが自分を非難しているように感じるという…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 133,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 134,
+      "JumpAnchorInfo": "JUMPANCHOR_3_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 136,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "물약을 마신 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 자신이 모르고 있었던 힘을 깨우친 것 같다고 한다!",
+      "UnitTalk_JPN": "薬を飲んだ<color=#F7BE45>[CHARACTER_NAME]</color>は、自分が知らなかった力を目覚めさせたようだと言う！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 138,
+      "JumpAnchorInfo": "JUMPANCHOR_3_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 139,
+      "WaitClick": true,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 140,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "물약을 마신 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 갑자기 지금까지의 삶에 회의가 느껴진다고 한다…",
+      "UnitTalk_JPN": "薬を飲んだ<color=#F7BE45>[CHARACTER_NAME]</color>は、突然今までの人生に疑問を感じているという…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 111,
+      "JumpAnchorInfo": "JUMPANCHOR_4",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SAD",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 114,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "음료수는 맛있었지만, 아이다는 실망한 모양이다.",
+      "UnitTalk_JPN": "飲み物は美味しかったが、アイーダはがっかりした様子だ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

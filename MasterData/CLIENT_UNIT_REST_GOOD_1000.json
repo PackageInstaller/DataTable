@@ -1,0 +1,61 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: CUT",
+  "_Version": 4,
+  "Data": [
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_GOOD_1000",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐야! 아침부터 기분 끝내주는데!",
+      "TalkTime": 0.03,
+      "Uid": 1
+    },
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_GOOD_1000",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitTalk_KOR": "꿈자리가 좋았나? 하핫! 뭘 해도 잘 될 것 같은 느낌이야!",
+      "TalkTime": 0.03,
+      "Uid": 2
+    },
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_GOOD_1000",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitTalk_KOR": "읏차! 이럴 때가 아니지. 하루는 짧으니까.",
+      "TalkTime": 0.03,
+      "Uid": 3
+    },
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_GOOD_1000",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitTalk_KOR": "이 기세로 뭐라도 해야지 않겠어?",
+      "TalkTime": 0.03,
+      "Uid": 4
+    },
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_GOOD_1000",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitTalk_KOR": "오늘은 뭔가, 좋은 일이 생길 것 같은 걸!",
+      "TalkTime": 0.03,
+      "Uid": 5
+    }
+  ]
+}

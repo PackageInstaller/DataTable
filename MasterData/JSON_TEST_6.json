@@ -1,0 +1,47 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_DOLL_KNIFE_BLACK_OPERATION_00",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -3500,
+              "NST_NV_RATE_TURN_SPEED": -500
+            }
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_PLUMP_HAMMER_BLACK_ELITE_DAILY_00",
+            "AllSkillAvailable": true,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -3500,
+              "NST_NV_RATE_TURN_SPEED": -500
+            }
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_DOLL_KNIFE_BLACK_OPERATION_00",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -3500,
+              "NST_NV_RATE_TURN_SPEED": -500
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

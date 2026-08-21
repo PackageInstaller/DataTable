@@ -1,0 +1,813 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: FUNNEL_LOG_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "EventName" : "01_app_launch",
+          "IsUnique" : true,
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "02_download_start",
+          "IsUnique" : true,
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "03_download_complete",
+          "IsUnique" : true,
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "04_loading_complete",
+          "IsUnique" : true,
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "05_login_complete",
+          "IsUnique" : true,
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "06_prologue_start",
+          "IsUnique" : true,
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "07_nickname",
+          "IsUnique" : true,
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "08_prologue_complete",
+          "IsUnique" : true,
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "09_tutorial_pickup_savior",
+          "IsUnique" : true,
+          "FunnelType" : "TUTORIAL_PROGRESS",
+          "Value" : 10011
+        },
+        {
+          "EventName" : "10_journey_tutorial_start",
+          "IsUnique" : true,
+          "FunnelType" : "TUTORIAL_PROGRESS",
+          "Value" : 10041
+        },
+        {
+          "EventName" : "11_journey_tutorial_complete",
+          "IsUnique" : true,
+          "FunnelType" : "TUTORIAL_PROGRESS",
+          "Value" : 11011
+        },
+        {
+          "EventName" : "12_stellar_archieve_tutorial",
+          "IsUnique" : true,
+          "FunnelType" : "TUTORIAL_PROGRESS",
+          "Value" : 11012
+        },
+        {
+          "EventName" : "13_noa_financial_tutorial",
+          "IsUnique" : true,
+          "FunnelType" : "TUTORIAL_PROGRESS",
+          "Value" : 11021
+        },
+        {
+          "EventName" : "14_operation_s1-1_start",
+          "IsUnique" : true,
+          "FunnelType" : "TUTORIAL_PROGRESS",
+          "Value" : 11023
+        },
+        {
+          "EventName" : "15_operation_s1-1_complete",
+          "IsUnique" : true,
+          "FunnelType" : "TUTORIAL_PROGRESS",
+          "Value" : 11031
+        },
+        {
+          "EventName" : "16_guide_mission_1",
+          "IsUnique" : true,
+          "FunnelType" : "TUTORIAL_PROGRESS",
+          "Value" : 11032
+        },
+        {
+          "EventName" : "first_purchase",
+          "IsUnique" : true,
+          "FunnelType" : "REVENUE",
+          "Value" : 1
+        },
+        {
+          "EventName" : "second_purchase",
+          "IsUnique" : true,
+          "FunnelType" : "REVENUE",
+          "Value" : 2
+        },
+        {
+          "EventName" : "10th_purchase",
+          "IsUnique" : true,
+          "FunnelType" : "REVENUE",
+          "Value" : 10
+        },
+        {
+          "EventName" : "first_gaunltlet",
+          "IsUnique" : true,
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "daily_gauntlet",
+          "FunnelType" : "DAILY_GAUNTLET_PLAY",
+          "Value" : 1
+        },
+        {
+          "EventName" : "daily_gauntlet_5time",
+          "FunnelType" : "DAILY_GAUNTLET_PLAY",
+          "Value" : 5
+        },
+        {
+          "EventName" : "daily_mission_100",
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "account_level_01",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 1
+        },
+        {
+          "EventName" : "account_level_04",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 4
+        },
+        {
+          "EventName" : "account_level_05",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 5
+        },
+        {
+          "EventName" : "account_level_06",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 6
+        },
+        {
+          "EventName" : "account_level_07",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 7
+        },
+        {
+          "EventName" : "account_level_08",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 8
+        },
+        {
+          "EventName" : "account_level_09",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 9
+        },
+        {
+          "EventName" : "account_level_10",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 10
+        },
+        {
+          "EventName" : "account_level_11",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 11
+        },
+        {
+          "EventName" : "account_level_12",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 12
+        },
+        {
+          "EventName" : "account_level_13",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 13
+        },
+        {
+          "EventName" : "account_level_14",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 14
+        },
+        {
+          "EventName" : "account_level_15",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 15
+        },
+        {
+          "EventName" : "account_level_20",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 20
+        },
+        {
+          "EventName" : "account_level_30",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 30
+        },
+        {
+          "EventName" : "account_level_40",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 40
+        },
+        {
+          "EventName" : "account_level_50",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 50
+        },
+        {
+          "EventName" : "account_level_60",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 60
+        },
+        {
+          "EventName" : "account_level_70",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 70
+        },
+        {
+          "EventName" : "account_level_80",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 80
+        },
+        {
+          "EventName" : "account_level_90",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 90
+        },
+        {
+          "EventName" : "account_level_100",
+          "IsUnique" : true,
+          "FunnelType" : "ACCOUNT_LEVEL",
+          "Value" : 100
+        },
+        {
+          "EventName" : "clear_operation_s1-2",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11001002
+        },
+        {
+          "EventName" : "clear_operation_s1-3",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11001003
+        },
+        {
+          "EventName" : "clear_operation_s1-4",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11001004
+        },
+        {
+          "EventName" : "clear_operation_s1-5",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11001005
+        },
+        {
+          "EventName" : "clear_operation_s1-6",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11001006
+        },
+        {
+          "EventName" : "clear_operation_s1-7",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11001007
+        },
+        {
+          "EventName" : "clear_operation_s1-8",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11001008
+        },
+        {
+          "EventName" : "clear_operation_s2-1",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002001
+        },
+        {
+          "EventName" : "clear_operation_s2-2",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002002
+        },
+        {
+          "EventName" : "clear_operation_s2-3",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002003
+        },
+        {
+          "EventName" : "clear_operation_s2-4",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002004
+        },
+        {
+          "EventName" : "clear_operation_s2-5",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002005
+        },
+        {
+          "EventName" : "clear_operation_s2-6",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002006
+        },
+        {
+          "EventName" : "clear_operation_s2-7",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002007
+        },
+        {
+          "EventName" : "clear_operation_s2-8",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002008
+        },
+        {
+          "EventName" : "clear_operation_s2-9",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002009
+        },
+        {
+          "EventName" : "clear_operation_s2-10",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002010
+        },
+        {
+          "EventName" : "clear_operation_s2-11",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002011
+        },
+        {
+          "EventName" : "clear_operation_s2-12",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002012
+        },
+        {
+          "EventName" : "clear_operation_s2-13",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002013
+        },
+        {
+          "EventName" : "clear_operation_s2-14",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002014
+        },
+        {
+          "EventName" : "clear_operation_s2-15",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11002015
+        },
+        {
+          "EventName" : "clear_operation_s3",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11003018
+        },
+        {
+          "EventName" : "clear_operation_s4",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11004025
+        },
+        {
+          "EventName" : "clear_operation_s5",
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 11005028
+        },
+        {
+          "EventName" : "noa_financial_aid",
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "journey_001_easy",
+          "IsUnique" : true,
+          "FunnelType" : "JOUNREY_CLEAR",
+          "Value" : 1
+        },
+        {
+          "EventName" : "journey_001_normal",
+          "IsUnique" : true,
+          "FunnelType" : "JOUNREY_CLEAR",
+          "Value" : 2
+        },
+        {
+          "EventName" : "journey_001_easy_clear",
+          "FunnelType" : "JOUNREY_CLEAR",
+          "Value" : 1
+        },
+        {
+          "EventName" : "journey_001_normal_clear",
+          "FunnelType" : "JOUNREY_CLEAR",
+          "Value" : 2
+        },
+        {
+          "EventName" : "gatcha_pickup_savior",
+          "IsUnique" : true,
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "gatcha_pickup_arcana",
+          "IsUnique" : true,
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "gatcha_normal_savior",
+          "IsUnique" : true,
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "gatcha_normal_arcana",
+          "IsUnique" : true,
+          "FunnelType" : "CODED"
+        },
+        {
+          "EventName" : "clear_story_0-1",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001000001
+        },
+        {
+          "EventName" : "clear_story_0-2",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001000002
+        },
+        {
+          "EventName" : "clear_story_0-3",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001000003
+        },
+        {
+          "EventName" : "clear_story_0-4",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001000004
+        },
+        {
+          "EventName" : "clear_story_0-5",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001001001
+        },
+        {
+          "EventName" : "clear_story_1-1",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001001002
+        },
+        {
+          "EventName" : "clear_story_1-2",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001001003
+        },
+        {
+          "EventName" : "clear_story_1-3",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001001004
+        },
+        {
+          "EventName" : "clear_story_1-4",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001001005
+        },
+        {
+          "EventName" : "clear_story_1-5",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001001006
+        },
+        {
+          "EventName" : "clear_story_1-6",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001002001
+        },
+        {
+          "EventName" : "clear_story_1-7",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001002002
+        },
+        {
+          "EventName" : "clear_story_1-8",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001002003
+        },
+        {
+          "EventName" : "clear_story_1-9",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001002004
+        },
+        {
+          "EventName" : "clear_story_1-10",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001002005
+        },
+        {
+          "EventName" : "clear_story_1-11",
+          "IsUnique" : true,
+          "FunnelType" : "BATTLE_CLEAR",
+          "Value" : 1001002006
+        },
+        {
+          "EventName" : "noa_level_2",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 2
+        },
+        {
+          "EventName" : "noa_level_3",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 3
+        },
+        {
+          "EventName" : "noa_level_4",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 4
+        },
+        {
+          "EventName" : "noa_level_5",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 5
+        },
+        {
+          "EventName" : "noa_level_6",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 6
+        },
+        {
+          "EventName" : "noa_level_7",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 7
+        },
+        {
+          "EventName" : "noa_level_8",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 8
+        },
+        {
+          "EventName" : "noa_level_9",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 9
+        },
+        {
+          "EventName" : "noa_level_10",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 10
+        },
+        {
+          "EventName" : "noa_level_11",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 11
+        },
+        {
+          "EventName" : "noa_level_12",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 12
+        },
+        {
+          "EventName" : "noa_level_13",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 13
+        },
+        {
+          "EventName" : "noa_level_14",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 14
+        },
+        {
+          "EventName" : "noa_level_15",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 15
+        },
+        {
+          "EventName" : "noa_level_16",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 16
+        },
+        {
+          "EventName" : "noa_level_17",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 17
+        },
+        {
+          "EventName" : "noa_level_18",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 18
+        },
+        {
+          "EventName" : "noa_level_19",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 19
+        },
+        {
+          "EventName" : "noa_level_20",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 20
+        },
+        {
+          "EventName" : "noa_level_30",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 30
+        },
+        {
+          "EventName" : "noa_level_40",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 40
+        },
+        {
+          "EventName" : "noa_level_50",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 50
+        },
+        {
+          "EventName" : "noa_level_60",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 60
+        },
+        {
+          "EventName" : "noa_level_70",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 70
+        },
+        {
+          "EventName" : "noa_level_80",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 80
+        },
+        {
+          "EventName" : "noa_level_90",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 90
+        },
+        {
+          "EventName" : "noa_level_100",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 100
+        },
+        {
+          "EventName" : "noa_level_110",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 110
+        },
+        {
+          "EventName" : "noa_level_120",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 120
+        },
+        {
+          "EventName" : "noa_level_130",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 130
+        },
+        {
+          "EventName" : "noa_level_140",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 140
+        },
+        {
+          "EventName" : "noa_level_150",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 150
+        },
+        {
+          "EventName" : "noa_level_160",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 160
+        },
+        {
+          "EventName" : "noa_level_170",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 170
+        },
+        {
+          "EventName" : "noa_level_180",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 180
+        },
+        {
+          "EventName" : "noa_level_190",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 190
+        },
+        {
+          "EventName" : "noa_level_200",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 200
+        },
+        {
+          "EventName" : "noa_level_210",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 210
+        },
+        {
+          "EventName" : "noa_level_220",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 220
+        },
+        {
+          "EventName" : "noa_level_230",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 230
+        },
+        {
+          "EventName" : "noa_level_240",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 240
+        },
+        {
+          "EventName" : "noa_level_250",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 250
+        },
+        {
+          "EventName" : "noa_level_260",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 260
+        },
+        {
+          "EventName" : "noa_level_270",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 270
+        },
+        {
+          "EventName" : "noa_level_280",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 280
+        },
+        {
+          "EventName" : "noa_level_290",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 290
+        },
+        {
+          "EventName" : "noa_level_300",
+          "IsUnique" : true,
+          "FunnelType" : "ACCRUE_LEVEL",
+          "Value" : 300
+        }
+    ]
+}

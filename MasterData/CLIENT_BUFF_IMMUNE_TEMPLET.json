@@ -1,0 +1,94 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: BUFF_IMMUNE_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1001,
+          "ImmuneBuffIdList" : ["BI_AGGRO"]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1001,
+          "ImmuneBuffIdList" : ["BI_STUN"]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1001,
+          "ImmuneBuffIdList" : ["BI_SLEEP"]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1001,
+          "ImmuneBuffIdList" : ["BI_SILENCE"]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1001,
+          "ImmuneBuffIdList" : ["BI_BUFFBAN"]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1001,
+          "ImmuneBuffName" : "BI_NAME_SKILL_COOL_TURN_INCREASE",
+          "ImmuneBuffDesc" : "BI_DESC_SKILL_COOL_TURN_INCREASE",
+          "IconName" : "DEBUFF_SKILL_COOL_TURN_INCREASE.png",
+          "ImmuneBuffIdList" : ["BI_SKILL_COOL_TURN_UP", "BI_HYPER_COOL_TURN_UP", "BI_SPECIAL_COOL_TURN_UP"]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1002,
+          "ImmuneBuffIdList" : ["BI_AGGRO"]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1002,
+          "ImmuneBuffIdList" : ["BI_STUN"]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1002,
+          "ImmuneBuffIdList" : ["BI_SLEEP"]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1002,
+          "ImmuneBuffIdList" : ["BI_SILENCE"]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1002,
+          "ImmuneBuffIdList" : ["BI_BUFFBAN"]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1002,
+          "ImmuneBuffName" : "BI_NAME_SKILL_COOL_TURN_INCREASE",
+          "ImmuneBuffDesc" : "BI_DESC_SKILL_COOL_TURN_INCREASE",
+          "IconName" : "DEBUFF_SKILL_COOL_TURN_INCREASE.png",
+          "ImmuneBuffIdList" : ["BI_SKILL_COOL_TURN_UP", "BI_HYPER_COOL_TURN_UP", "BI_SPECIAL_COOL_TURN_UP"]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1003,
+          "ImmuneBuffName" : "BI_NAME_LIST_TEST_1",
+          "ImmuneBuffDesc" : "BI_DESC_LIST_TEST_1",
+          "IconName" : "BUFF_DUMMY.png",
+          "ImmuneBuffIdList" : ["BI_BURN", "BI_SKILL_COOL_TURN_UP", "BI_HYPER_COOL_TURN_UP", "BI_SPECIAL_COOL_TURN_UP"]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1003,
+          "ImmuneBuffName" : "BI_NAME_LIST_TEST_2",
+          "ImmuneBuffDesc" : "BI_DESC_LIST_TEST_2",
+          "IconName" : "BUFF_DUMMY.png",
+          "ImmuneBuffIdList" : ["BI_AGGRO", "BI_BUFFBAN", "BI_SILENCE"]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ImmuneGroupId" : 1003,
+          "ImmuneBuffIdList" : ["BI_STUN"]
+        }
+    ]
+}

@@ -1,0 +1,503 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_08_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "기초 평가전 결과는 전해 들었어요. 수고하셨습니다, 단장님.",
+      "UnitTalk_JPN": "基礎試験の結果、お聞きしましたよ。お疲れ様でした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이제부터는 본격적인 <color=#F7BE45>[여정]</color>의 시작이네요.",
+      "UnitTalk_JPN": "いよいよ、本格的に<color=#F7BE45>「救援の旅」</color>が始まりますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그렇지 않아도 다음 평가전 일정이 확정되어 말씀드리러 왔어요.",
+      "UnitTalk_JPN": "ちょうど次の試験日程が決まりましたので、お伝えしに来ました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "다음 평가전은 <color=#F7BE45>[토벌 평가전]</color>입니다.",
+      "UnitTalk_JPN": "次の試験は、<color=#F7BE45>「討伐試験」</color>です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "토벌 평가전?",
+          "JumpAnchorStringId_JPN": "討伐試験？"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "캔들 스퀘어의 의뢰 게시판에는 매일 수많은 의뢰가 등록되고 있어요.",
+      "UnitTalk_JPN": "キャンドル・スクエアの依頼掲示板には、毎日数多くの依頼が登録されています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그 종류는 잃어버린 고양이를 찾아달라는 사소한 부탁부터 강력한 마수의 토벌을 요청하는 의뢰까지 다양하죠.",
+      "UnitTalk_JPN": "迷子の猫を探してほしいという依頼から、強力な魔獣の討伐まで様々です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[토벌 평가전]</color>은 그중에서 <color=#F7BE45>[폴라리스]</color>가 선정한 의뢰를 해결하는 것입니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「討伐試験」</color>は、その中から<color=#F7BE45>「<r=ポラリス>観測士評議会</r>」</color>が\n選んだ依頼を解決していただくものです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "공문에 따르면, 이번에 선정된 의뢰는 <color=#F7BE45>[별부스러기 요새 탈환]</color>입니다.",
+      "UnitTalk_JPN": "公文書によると、今回選ばれた依頼は<color=#F7BE45>「星屑の要塞奪還」</color>です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "요새 자체는 NOA 남쪽에 있는 평범한 유적지에 불과합니다.",
+      "UnitTalk_JPN": "要塞自体は、NOAの南にあるごく普通の遺跡に過ぎません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "문제는 그곳에 묻혀 있는 <color=#F7BE45>[별의 심장]</color>이죠.",
+      "UnitTalk_JPN": "問題は、そこに埋まっている<color=#F7BE45>「星の心臓」</color>です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "별의 심장이라고?",
+          "JumpAnchorStringId_JPN": "星の心臓って？"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "라비스타 대륙 곳곳에 흩어져 있는 신비한 보석의 이름입니다.",
+      "UnitTalk_JPN": "ラビスター大陸のあちこちに散らばっている、神秘的な宝石の名前です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "오래된 전승에서는 수명이 다한 별의 잔해에서 추출한 결정이라고 해요.",
+      "UnitTalk_JPN": "古い伝承では、寿命が尽きた星の残骸から抽出された結晶だと言われています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "동물과 생물을 번성하게 하거나 지력이 다한 황무지에 새로운 생명을 불어넣기도 하고…",
+      "UnitTalk_JPN": "動物や生物を繁栄させたり、地力が尽きた荒れ地に新たな生命を吹き込んだり…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "최근에는 마도 공학의 발전으로 그 힘을 가공해서 전기를 생산해 내기도 해요.",
+      "UnitTalk_JPN": "最近では、魔道工学の発展により…その力を加工して電気を生産することもあります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "바로 그 <color=#F7BE45>[별의 심장]</color>들 중 하나가 <color=#F7BE45>[별부스러기 요새]</color> 지하에 있습니다.",
+      "UnitTalk_JPN": "まさにその<color=#F7BE45>「星の心臓」</color>の一つが、<color=#F7BE45>「星屑の要塞」</color>の地下にあるのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그곳에 문제가 생긴 건가?",
+          "JumpAnchorStringId_JPN": "そこで問題が起きたのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "네. 최근 호전적인 족장이 이끄는 약탈자 무리가 요새를 점거했어요.",
+      "UnitTalk_JPN": "はい。最近、好戦的な族長が率いるレイダーの群れが、要塞を占拠しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "정황상 <color=#F7BE45>[별의 심장]</color>을 노리는 것으로 추정됩니다.",
+      "UnitTalk_JPN": "状況から見て、<color=#F7BE45>「星の心臓」</color>を狙っていると推測されます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "약탈자…",
+          "JumpAnchorStringId_JPN": "レイダー…"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "네, 숲이나 초원에서 쉽게 찾아볼 수 있는 소형 마수 무리입니다.",
+      "UnitTalk_JPN": "森や草原でよく見かける小型の魔獣です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "크게 위험한 녀석들은 아니지만 종종 인간의 영역을 침범하곤 해요.",
+      "UnitTalk_JPN": "それほど危険な相手ではありませんが、時々人間の領域を犯すことがあるんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "만약 그들에게 <color=#F7BE45>[별의 심장]</color>을 빼앗기면 요새 주변은 급격히 황폐화될 거예요.",
+      "UnitTalk_JPN": "もしレイダーに<color=#F7BE45>「星の心臓」</color>を奪われれば、要塞周辺は急速に荒廃するでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "뿐만 아니라 에너지를 공급받던 NOA 남부도 큰 피해를 입게 되겠죠.",
+      "UnitTalk_JPN": "それだけでなく、エネルギー供給を受けているNOA南部も大きな被害を受けることになります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어디에 쓰는 에너지인데?",
+          "JumpAnchorStringId_JPN": "何に使うエネルギーなんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "온수 난방이요.",
+      "UnitTalk_JPN": "温水暖房です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.1,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "저처럼 남부 주택가에 사는 가난한 하숙생들한테 온수가 끊긴다는 건 엄청난 고통이라고요.",
+      "UnitTalk_JPN": "私のように南部の住宅街に住む貧しい下宿人にとって、お湯が出なくなるというのはとてつもない苦痛なんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "지금도 하루의 절반은 찬물만 나와서 씻을 때마다 얼마나 괴로운지…",
+      "UnitTalk_JPN": "今でも一日の半分は冷たい水しか出ず、シャワーするたびにどれほど辛いことか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "다시 생각해 봐도 용서할 수가 없군요!",
+      "UnitTalk_JPN": "やはり、何度考えても許せません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그, 그래…",
+          "JumpAnchorStringId_JPN": "そ、そっか…"
+        }
+      ]
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "역시 단장님은 이해해 주실 줄 알았어요!",
+      "UnitTalk_JPN": "うんうん、団長は分かってくださると思っていました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.1,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그럼 이 지역의 모든 생명들을 위해! ",
+      "UnitTalk_JPN": "それでは、この地域のすべての生命のために！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "NOA의 가난한 하숙생들을 위해!",
+      "UnitTalk_JPN": "NOAの貧しい下宿人のために！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "별부스러기 요새를 점거한 약탈자들을 몰아내고 별의 심장을 지켜 주세요, 단장님!",
+      "UnitTalk_JPN": "星屑の要塞を占拠したレイダーを追い出し、星の心臓を守ってください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알겠어.",
+          "JumpAnchorStringId_JPN": "分かった。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "사심이 잔뜩 들어간 것 같지만… ",
+          "JumpAnchorStringId_JPN": "私情が入りまくりだな… "
+        }
+      ]
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "후후, 그럼 단장님만 믿고 있겠습니다.",
+      "UnitTalk_JPN": "ふふっ。それでは、信じていますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하지만 주의해 주세요. 이번 평가전부터는 실패할 경우 <color=#F7BE45>[여정]</color>이 중단되니까요.",
+      "UnitTalk_JPN": "ただし、ご注意ください。今回の試験からは…失敗した場合、<color=#F7BE45>「救援の旅」</color>が中断されてしまいます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_08_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "예상 못 할 위협이 도사리는 실전인 만큼, 철저한 준비를 부탁드릴게요.",
+      "UnitTalk_JPN": "予期せぬ脅威が潜む実戦ですので、入念な準備をお願いします。",
+      "TalkTime": 0.03
+    }
+  ]
+}

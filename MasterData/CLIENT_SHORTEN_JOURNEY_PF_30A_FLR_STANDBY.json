@@ -1,0 +1,27 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_30A_FLR_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN_FLORA.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_30A_FLR_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "플로라 시티에서는 <color=#F7BE45>비치발리볼</color>이라는 특별 훈련을 진행할 수 있다. 여정 단원이 효과적으로 강해질 수 있도록 적절한 훈련을 진행하자.",
+      "UnitTalk_JPN": "フローラシティでは<color=#F7BE45>ビーチバレー</color>という特別トレーニングを実施できる。旅の団員が効果的に強くなれるよう、適切なトレーニングを進めよう。",
+      "TalkTime": 0.03
+    }
+  ]
+}

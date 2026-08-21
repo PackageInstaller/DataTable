@@ -1,0 +1,1990 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WILD_HOG_07",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_CANDLE_REQUEST.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "단장, 여기야.",
+      "UnitTalk_JPN": "よぉ、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "오늘은 일찍 왔네?",
+          "JumpAnchorStringId_JPN": "今日は早かったな？"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "아. 하긴 그렇지, 뭐.",
+      "UnitTalk_JPN": "ま、そうだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "평소에는 데이브랑 같이 한바탕 달리고 나서 왔는데…",
+      "UnitTalk_JPN": "いつもなら、デイヴとひとっ走りしてから来るんだけどよ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "오늘은 타운가드 놈들 눈빛이 뭔가 다르더라고. 꼬투리 잡으려고 잔뜩 벼르는 것 같았어.",
+      "UnitTalk_JPN": "今日はタウンガードの奴ら、様子が違ったんだぜ？粗探ししてやろうと、目を光らせてやがった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "상점가에서 벌어진 난투극 이후, 타운가드는 할리에게 촉각을 곤두세우고 있었다.",
+      "UnitTalk_JPN": "商店街での騒動があってから、タウンガードはハーレーのことを警戒している。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오늘따라 조금 지나친 이유는 아마도…",
+      "UnitTalk_JPN": "今日は特に気を張っているらしい。その理由は恐らく…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아마 축제 때문일 거야.",
+          "JumpAnchorStringId_JPN": "今日は祭りの日だからだろう。"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "아아, 불꽃놀이? 그게 오늘이었어?",
+      "UnitTalk_JPN": "おぉ、花火の？今日だったのか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "모르고 있었구나.",
+          "JumpAnchorStringId_JPN": "知らなかったんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "딱히 신경 안 쓰지. 달리고 있을 때는 매일이 축제니까.",
+      "UnitTalk_JPN": "そんなこと特に気にしてねぇからな。だって、走ってれば毎日がお祭りなんだぜ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그리고 원래 달릴 때는 결승선만 보는 편이거든.",
+      "UnitTalk_JPN": "それに、走ってる時はゴールラインだけを見てるんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "혹시 불꽃놀이를 본 적은 있어?",
+          "JumpAnchorStringId_JPN": "もしかして、花火見たことない？"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으음… 아니. 한 번쯤 보고 싶기는 하지만.",
+      "UnitTalk_JPN": "うぅん…いや、一度ぐらいは見てみたいが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "부하들이 그러더라. NOA에서 볼 수 있는 불꽃놀이는 특히 장관이라고.",
+      "UnitTalk_JPN": "子分たちが言ってたんだよ。NOAで見る花火は、特に壮観だってな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 오늘 보러 가는 건 어때?",
+          "JumpAnchorStringId_JPN": "じゃあ、今日見に行くのはどう？"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "구경하기 좋은 장소가 있대.",
+          "JumpAnchorStringId_JPN": "良い場所があるらしいんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "단장이랑? 좋지.",
+      "UnitTalk_JPN": "一緒にか？いいぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그럼 말 나온 김에 바로 출발하자.",
+      "UnitTalk_JPN": "じゃ、話が出たついでに出発するかぁ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "잠시 기다리세요.",
+      "UnitTalk_JPN": "少々お待ちください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "우왓! 깜짝이야!",
+      "UnitTalk_JPN": "おわぁっ！ビックリしたじゃねぇか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐야, 메이드? 나한테 무슨 볼일이라도 있어?",
+      "UnitTalk_JPN": "なんだ、メイドか。俺になんの用だ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그 차림으로 다니다간 타운가드분들께 불필요한 걱정을 끼쳐 드리겠죠.",
+      "UnitTalk_JPN": "その身なりでは、タウンガードの方に余計な心配をおかけしてしまうでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "모처럼의 축제인데 감시의 눈초리 속에서 다니는 건 단장님께 실례가 될 겁니다.",
+      "UnitTalk_JPN": "せっかくのお祭りなのに、監視の目を気にしながら過ごすなんて…団長にも失礼です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "끄응… 할 말이 없네.",
+      "UnitTalk_JPN": "うぅん…その通りだぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "성장했구나, 할리.",
+          "JumpAnchorStringId_JPN": "成長したな、ハーレー。"
+        }
+      ]
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "시끄러워. 동물원 원숭이처럼 시선을 끌기 싫어서 그런 것뿐이야.",
+      "UnitTalk_JPN": "ふん。動物園のサルを見るような目で、ジロジロ見られんのが嫌なだけだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "캔들 스퀘어에서는 구원자분들을 위한 스타일링 서비스도 겸하고 있습니다.",
+      "UnitTalk_JPN": "キャンドル・スクエアでは、救援者の方々にスタイリング・サービスも行っています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "이번 기회에 체험해 보시면 좋겠군요.",
+      "UnitTalk_JPN": "この機会に、お試しになられるのはいかがですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "뭐? 야, 잠깐! 야! 이거 안 놔?!",
+      "UnitTalk_JPN": "あぁん！？おい、ちょっと待て！放せよっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "시간이 오래 걸릴 수 있으니, 단장님께선 먼저 가 계시지요.",
+      "UnitTalk_JPN": "少し時間がかかりますので、団長は先に出発していてくださいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "기대하고 있을게, 할리.",
+          "JumpAnchorStringId_JPN": "楽しみにしてるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "야! 이 프릴 바보들한테 맡겨 놓고 뭘 기대한다는 거야!?",
+      "UnitTalk_JPN": "おいっ！このフリル馬鹿に任せておいて、何が楽しみってんだよ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOG_GRUNT_2.wav",
+      "UnitNameString": [
+        "SI_DAVE"
+      ],
+      "UnitTalk_KOR": "킁킁킁!",
+      "UnitTalk_JPN": "クンクンクン！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "데이브 너도 조용히 해!",
+      "UnitTalk_JPN": "デイヴ、お前も黙ってろぉ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "클레어에게 잡혀 몸부림치는 할리를 뒤로 하고 캔들 스퀘어를 나섰다…",
+      "UnitTalk_JPN": "クレアに捕まり、あがくハーレーを後に…私はキャンドル・スクエアを出た。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_HOTEL_3.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 150,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_BLUE",
+      "UnitNameString": [
+        "SI_MAID_A"
+      ],
+      "CameraOffset": "TRIPLE_2",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 151,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_B"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 152,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 1.0,
+      "CameraOffset": "TRIPLE_2"
+    },
+    {
+      "Uid": 149,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_BLUE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아앗! 구원자님! 벌써 욕실을 나가시면 안 돼요!",
+      "UnitTalk_JPN": "あぁっ！救援者様！まだ浴室を出られてはいけませんよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "으윽, 왜 또?",
+      "UnitTalk_JPN": "ううっ、今度は何だよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_BLUE",
+      "UnitNameString": [
+        "SI_MAID_A"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "향유를 발라 드려야 하거든요. 자, 어서 여기 누워 주세요!",
+      "UnitTalk_JPN": "香油を塗って差し上げなければなりません。さあ、早く横になってください！    ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하아… 귀찮게…",
+      "UnitTalk_JPN": "はぁ…めんどくせぇ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "머리 손질은 저한테 맡겨 주세요.",
+      "UnitTalk_JPN": "髪のセットは私にお任せくださいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "손질은 무슨. 움직이기 편하게 대충 깎아 줘.",
+      "UnitTalk_JPN": "セットってなんだよ。動きやすいように、テキトーに刈ってくれりゃいいから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_B"
+      ],
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "대충이라니요! 소중한 머리카락인데 예쁘게 가꿔야죠!",
+      "UnitTalk_JPN": "適当だなんて！大切な髪なのに、綺麗にセットしないと！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "젠장… 너네들 마음대로 해.",
+      "UnitTalk_JPN": "ちくしょ…もう、好きなようにしてくれ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 153,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 154,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 155,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "헉… 헉… 이제 가도 되는 거지?",
+      "UnitTalk_JPN": "ハァ…ハァ…もう行っていいだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "무슨 말씀이시죠? 이제 겨우 기초만 끝냈을 뿐입니다.",
+      "UnitTalk_JPN": "何をおっしゃっているのですか？まだ終わっていませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "기, 기초라고…?",
+      "UnitTalk_JPN": "ま、まだだと…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "네. 다음은 구원자님께 어울리는 옷을 입으셔야죠.",
+      "UnitTalk_JPN": "えぇ。救援者様にピッタリの服に着替えないといけないでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "안심하시길. 마침 사고뭉치지만 유능한 재단사가 있으니까요.",
+      "UnitTalk_JPN": "ご安心くださいね。問題児ではありますが、有能な仕立屋がいますので。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ITEM_OUT.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "자, 이 옷으로 갈아입으시면 됩니다.",
+      "UnitTalk_JPN": "さぁ、この服にお着がえください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "이, 이런 옷을 나더러 입으라고?! 이런 걸 불편해서 어떻게 입어!",
+      "UnitTalk_JPN": "こ、これを着ろってかぁ！？こんな服、着心地が悪くて着れねぇよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "특히 이 치마! 거추장스러운 주제에 다리가 썰렁해서 뛰지도 못하겠다고!",
+      "UnitTalk_JPN": "特にスカート！うっとおしい上に、スースーして走りもできねぇよぉ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "귀여우니 괜찮습니다. 아주 잘 어울릴 거예요.",
+      "UnitTalk_JPN": "かわいいので大丈夫です。きっと似合うはずですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "단장님도 무척 기뻐할 겁니다.",
+      "UnitTalk_JPN": "団長も喜ばれるはずです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "다, 단장이?",
+      "UnitTalk_JPN": "だ、団長が？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…그럴까?",
+      "UnitTalk_JPN": "…そうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "네. 구원자님이 성의를 다해 준비했는데 싫어하실 리 없습니다.",
+      "UnitTalk_JPN": "はい。一生懸命準備されたのですから、きっと喜んでくださいます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "불꽃놀이가 시작되기까지는 아직 시간이 남아 있습니다.",
+      "UnitTalk_JPN": "花火が上がるまで、まだ時間がありますが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "익숙하지 않으시면 제가 입혀 드릴까요?",
+      "UnitTalk_JPN": "慣れないようでしたら、私が着付けて差し上げましょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "됐어. 네가 내 엄마도 아니고.",
+      "UnitTalk_JPN": "いや。俺はお前の子どもじゃねんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그보다 이것저것 받았는데… 다 합치면 꽤 비싸지 않냐?",
+      "UnitTalk_JPN": "それより、色々してもらったけど…これ、ぜんぶ合わせるとかなり高くねぇか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "염려 마세요. 애초에 값을 받을 생각은 없었습니다.",
+      "UnitTalk_JPN": "遠慮はいりませんよ。最初から、お代をいただくつもりなどありませんでしたから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "구원자님의 평소 행색은 저도 무척 신경이 쓰였으니까요.",
+      "UnitTalk_JPN": "救援者様の身なりについては、以前から気になっていたんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그래…?",
+      "UnitTalk_JPN": "そうか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "고맙다. 신세 진 건 다음에 갚을게.",
+      "UnitTalk_JPN": "あんがとよ。この借りは、今度返すぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 156,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.8,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_BELL.wav"
+    },
+    {
+      "Uid": 157,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_WILD_HOG_02.png",
+      "StartBgmFileName": "EMPTY.mp3",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "단장이 오래 기다렸겠지. 서둘러야겠는데.",
+      "UnitTalk_JPN": "団長を待たせちまってる。急がねぇと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "으, 역시 치마는 어색하단 말이지…",
+      "UnitTalk_JPN": "うぅっ。やっぱスカートは慣れねぇなぁ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 222,
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FOOTSTEP_HIGHHEELS.wav",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 223,
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FOOTSTEP_HIGHHEELS.wav"
+    },
+    {
+      "Uid": 224,
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FOOTSTEP_HIGHHEELS.wav"
+    },
+    {
+      "Uid": 225,
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FOOTSTEP_HIGHHEELS.wav"
+    },
+    {
+      "Uid": 159,
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWOOSH_16.wav",
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_17.wav",
+      "UnitTalk_KOR": "퍽!",
+      "UnitTalk_JPN": "シュッ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 253,
+      "WaitClick": false,
+      "WaitTime": 1.0
+    },
+    {
+      "Uid": 220,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_20.mp3"
+    },
+    {
+      "Uid": 162,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "쳇, 빗나갔군. 뒤통수를 깨버릴 수 있었는데.",
+      "UnitTalk_JPN": "チッ、外したか。頭をかち割ってやろうと思ったのに。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 163,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "마침 잘됐구만. 안 그래도 네년한테 당했던 걸 언젠가 되갚아 줄 작정이었는데.",
+      "UnitTalk_JPN": "ちょうどよかったぜ。お前にやられた分、いつか仕返ししてやろうと思ってたんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "뭐야, 상점가에서 소란 피우던 놈들이잖아.",
+      "UnitTalk_JPN": "何だよ、商店街で騒ぎを起こしてた奴らじゃねぇか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "깜방에 들어갔을 놈들이 왜 여기서 설치고 있는 거지?",
+      "UnitTalk_JPN": "ムショに入れられた奴らが、なんでここをうろついてんだよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 173,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "하하, 보석금을 잔뜩 내고 풀려났지!",
+      "UnitTalk_JPN": "ハハッ、保釈金をたっぷりと払ったからな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 174,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitTalk_KOR": "널 아주 마음에 안 들어 하는 분이 대신 내줬거든.",
+      "UnitTalk_JPN": "お前のことを嫌うお方が、代わりに払ってくれたんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "그래서 다시 덤비러 왔다는 거냐? 두 번이나 작살난 놈들이 염치도 없이?",
+      "UnitTalk_JPN": "それで、また勝負を挑みに来たってのか？2回もやられた奴が、恥も知らずに？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 178,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그거야 맞아 보면 알겠─",
+      "UnitTalk_JPN": "それは、やってみないと分から──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 180,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_17.wav"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_03.wav",
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "UnitTalk_KOR": "─크헥!",
+      "UnitTalk_JPN": "──グヘッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그 실력으로 잘도 까분다, 야.",
+      "UnitTalk_JPN": "おい。その程度の実力で、イキってんじゃねぇぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "귀찮게 굴지 말고 꺼져. 땀나면 화장 번질 거 아냐.",
+      "UnitTalk_JPN": "目障りだからさっさと消えろ。汗かいたら化粧が滲んじまうだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 184,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "큭…! 크흐흐…!",
+      "UnitTalk_JPN": "クッ…！クフフッ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 186,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitTalk_KOR": "확실히 싸움 실력은 알아줘야겠군.",
+      "UnitTalk_JPN": "戦いの腕は確かだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 187,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그런데 반격해도 괜찮은 거냐? 싸우다가 타운가드들 눈에 띄면 좋을 게 없을 텐데?",
+      "UnitTalk_JPN": "でも、反撃していいのか？タウンガードの目につけば、困ったことになるだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "뭐?",
+      "UnitTalk_JPN": "なに？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 190,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "다 들었다고. 할리 네가 <color=#F7BE45>여정</color>인지 뭔지에 정신 팔려 있다는 거.",
+      "UnitTalk_JPN": "ぜんぶ聞いたんだよ。お前が<color=#F7BE45>旅</color>だか何だかを大事にしてるってな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 215,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이번에 들어가면 몇 년형이지? 깜방에 들어가도 완주할 수 있을까, 응?",
+      "UnitTalk_JPN": "ムショ行きになれば、何年出てこれないだろうな？それで旅を突破できると思うか？うん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이 자식들이…",
+      "UnitTalk_JPN": "てめーら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitTalk_KOR": "얘들아! 아주 박살을 내줘라!",
+      "UnitTalk_JPN": "お前ら！ボコボコにしてやれ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 226,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.3
+    },
+    {
+      "Uid": 227,
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_17.wav"
+    },
+    {
+      "Uid": 228,
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_59.wav"
+    },
+    {
+      "Uid": 229,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "윽!!",
+      "UnitTalk_JPN": "くっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 230,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "젠장, 약해 빠진 것들이… 콜록…!",
+      "UnitTalk_JPN": "ちくしょう、雑魚どもが…ゴホッ…！        ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 231,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitTalk_KOR": "하하! 멍청하긴! 진짜 못 덤비잖아!",
+      "UnitTalk_JPN": "はは！バカだな！本当に手も出せないでやがる！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 232,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "UnitTalk_KOR": "어울리지 않는 꼬라지 하고는. 남자라도 꼬시러 가는 거냐?",
+      "UnitTalk_JPN": "似合わない恰好しやがって。男でも口説きにいくのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 252,
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_17.wav"
+    },
+    {
+      "Uid": 234,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitTalk_KOR": "기껏 꾸며 놓은 게 걸레짝이 됐구만.",
+      "UnitTalk_JPN": "せっかく着飾ったってのに、ボロ雑巾みたいになっちまったな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 235,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitTalk_KOR": "흙먼지나 마시고 사는 너한테는 그편이 훨씬 어울리지만 말이야.",
+      "UnitTalk_JPN": "土埃を吸って生きるお前には、そっちの方がお似合いだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 236,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "이 자식이…!",
+      "UnitTalk_JPN": "てめぇっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 237,
+      "WaitClick": true,
+      "WaitTime": 2.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHISTLE.wav"
+    },
+    {
+      "Uid": 238,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NPC_TOWNGUARD"
+      ],
+      "UnitTalk_KOR": "이봐, 거기! 뭐 하는 거냐!",
+      "UnitTalk_JPN": "おい、そこ！何している！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 239,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_B"
+      ],
+      "UnitTalk_KOR": "이런 젠장…! 타운가드 놈들잖아!",
+      "UnitTalk_JPN": "ちくしょう…！タウンガードの奴らか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 240,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BULLY_A"
+      ],
+      "UnitTalk_KOR": "다들 튀어!",
+      "UnitTalk_JPN": "みんな逃げろ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 241,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav"
+    },
+    {
+      "Uid": 242,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NPC_TOWNGUARD"
+      ],
+      "UnitTalk_KOR": "저 녀석들, 도시 한복판에서 겁도 없이!",
+      "UnitTalk_JPN": "あいつら、街の中で堂々と！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 243,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TOWNGUARD_B"
+      ],
+      "UnitTalk_KOR": "자, 잠깐! 여기 사람이 쓰러져 있어!",
+      "UnitTalk_JPN": "おい！ここに人が倒れてるぞ！  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 244,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TOWNGUARD_B"
+      ],
+      "UnitTalk_KOR": "어서 병원으로 옮겨야…",
+      "UnitTalk_JPN": "早く病院に運ばないと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 245,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_92.wav"
+    },
+    {
+      "Uid": 246,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "…덕분에 살았구만. 고맙다.",
+      "UnitTalk_JPN": "…おかげで助かったぜ。あんがとよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 247,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TOWNGUARD_B"
+      ],
+      "UnitTalk_KOR": "잠깐, 너… 설마 할리 맥코이?",
+      "UnitTalk_JPN": "おい、お前…まさかハーレー・マッコイか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 248,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NPC_TOWNGUARD"
+      ],
+      "UnitTalk_KOR": "그런 피투성이인 꼴로 어딜 가려고?",
+      "UnitTalk_JPN": "そんな血まみれのままどこへ行くつもりだ？       ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 249,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav"
+    },
+    {
+      "Uid": 250,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "……",
+      "UnitTalk_JPN": "……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 251,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "약속을 잡아 뒀거든. 파트너랑.",
+      "UnitTalk_JPN": "約束したんだよ。相棒と。  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 196,
+      "WaitClick": false,
+      "WaitTime": 3.0,
+      "BgFileName": "ILLUST_BG_NOA_TOPVIEW_NIGHT.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_02.wav",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 197,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 1.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_02.wav",
+      "UnitTalk_KOR": "정각이 되자 불꽃놀이가 시작되었다.",
+      "UnitTalk_JPN": "時間通り、花火が上がり始めた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_01.wav",
+      "UnitTalk_KOR": "하늘에 피어오르는 불꽃을 보고 사람들이 탄성을 지른다.",
+      "UnitTalk_JPN": "空に咲き誇る花火を見て、人々は歓声を上げている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 할리는 나타나지 않았다.",
+      "UnitTalk_JPN": "だが、ハーレーはまだ来ていない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "약속을 어기는 성격은 아닐 텐데...",
+          "JumpAnchorStringId_JPN": "約束を破るような性格じゃないのに…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "오는 길에 무슨 일이 생긴 건…",
+          "JumpAnchorStringId_JPN": "来る途中で何かあったのか…？"
+        }
+      ]
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "시간이 흐르면서, 화려하게 터지던 불꽃의 수가 점점 줄어들 무렵…",
+      "UnitTalk_JPN": "時間が経ち、夜空を彩る花火の数が減ってきた頃…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "어이, 단장! 오래 기다렸지!",
+      "UnitTalk_JPN": "おい、団長！待たせたなぁ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 216,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왔구나, 할리.",
+          "JumpAnchorStringId_JPN": "来たね、ハーレー。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "그 옷은...?",
+          "JumpAnchorStringId_JPN": "その服は…？"
+        }
+      ]
+    },
+    {
+      "Uid": 218,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "할리의 행색은 클레어에게 끌려가기 전보다 더 엉망이었다.",
+      "UnitTalk_JPN": "ハーレーの身なりは、クレアに連れて行かれる前よりも乱れていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오히려 얼굴에는 여기저기 멍까지 들어 있었다.",
+      "UnitTalk_JPN": "それどころか、顔にはアザまでできている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "하하, 오는 길에 손 좀 봤어. 치마가 나랑 영 안 어울리더라고.",
+      "UnitTalk_JPN": "ははっ、来る途中で手直ししたんだ。俺にスカートは似合わなくってな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "역시 사람은 살던 대로 살아야 돼. 괜히 꾸미느라 시간만 낭비했잖아.",
+      "UnitTalk_JPN": "やっぱ、変わったことはするもんじゃないぜ。俺が着飾るなんて、時間をムダにしちまったよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "자, 자. 얼른 불꽃놀이나 보자고.",
+      "UnitTalk_JPN": "さぁさぁ、花火でも見るぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그보다 좋은 자리 잡았네. 이거 지각해 버려서 어쩐다.",
+      "UnitTalk_JPN": "それより、いい場所見つけたな。なのに遅刻しちまうなんて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괜찮아.",
+          "JumpAnchorStringId_JPN": "大丈夫だ。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "오느라 수고했어.",
+          "JumpAnchorStringId_JPN": "来てくれてありがとう。"
+        }
+      ]
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "……",
+      "UnitTalk_JPN": "……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "더 묻진 않는 거냐?",
+      "UnitTalk_JPN": "何も聞かないのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "말하지 않는 이유가 있을 테니까.",
+          "JumpAnchorStringId_JPN": "言わない理由があるんだろ？"
+        }
+      ]
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하아…. 정말이지 배짱 좋은 녀석이라니까.",
+      "UnitTalk_JPN": "はぁ…ほんとにブレない奴だな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "실은 오는 길에 놈들이 습격해 왔어. 왜, 지난번 상점가에서 마주쳤던.",
+      "UnitTalk_JPN": "実は…ここに向かってる時、奴らの襲撃に遭ったんだよ。商店街で出くわした奴らのこと、覚えてるだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래서 흠씬 패 준 거야?",
+          "JumpAnchorStringId_JPN": "それで、ボコボコにしたのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 122,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아니. 제풀에 지쳐 나가떨어질 때까지 맞아 줬지.",
+      "UnitTalk_JPN": "いや。アイツらがヘトヘトになって動けなくなるまで、攻撃を受けてやったよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "녀석들, 순 솜방망이더라고… 아야야.",
+      "UnitTalk_JPN": "アイツら、弱すぎんだよ…いてて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무리하지 마.",
+          "JumpAnchorStringId_JPN": "無理しないで。"
+        }
+      ]
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜 반격 안 한 거야?",
+          "JumpAnchorStringId_JPN": "どうして反撃しなかったんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "난 이미 타운가드 놈들한테 단단히 찍힌 몸이니까.",
+      "UnitTalk_JPN": "俺はもうタウンガードの連中にしっかりマークされてる身だからな。   ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "일 크게 벌였다가 또 깜방에 가 버리기라도 하면 여정은 실패라고.",
+      "UnitTalk_JPN": "事が大きくなってムショ行きにでもなれば、旅は失敗に終わる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장과 여정을 완주하기로 했는데, 그런 결말은 너무 시시하잖아.",
+      "UnitTalk_JPN": "団長と旅を突破するって約束したのに、そんな結末はつまんねぇだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "사나이다워.",
+          "JumpAnchorStringId_JPN": "漢らしいな。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "고맙다, 할리.",
+          "JumpAnchorStringId_JPN": "ありがとう、ハーレー。"
+        }
+      ]
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "헹… 뭐야, 갑자기. 쑥스럽게.",
+      "UnitTalk_JPN": "へへん…なんだよ、突然。照れるじゃねぇか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 132,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐, 옷이 찢어진 건 아쉽긴 해. 메이드들이 정성 들여 준비해 준 건데 말이지.",
+      "UnitTalk_JPN": "ま、服が破れちまったのは残念だけどな。メイドたちが一生懸命準備してくれたのによ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 133,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_01.wav"
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "퍼엉!",
+      "UnitTalk_JPN": "ドーン！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.4,
+      "UnitTalk_KOR": "그때, 밤하늘에 커다란 불꽃이 피어났다.",
+      "UnitTalk_JPN": "その時、夜空に大きな花火が上がった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 136,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "축제의 대미를 장식하는 것인지, 지금까지 중에서 가장 큰 불꽃이었다.",
+      "UnitTalk_JPN": "祭りのフィナーレを飾るものなのか、一番大きな花火だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 201,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.6,
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 202,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FIREWORKS_01.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_01.wav",
+      "CutsceneClear": "CLEARALL",
+      "UnitTalk_KOR": "형형색색의 빛이 밤하늘 전체를 물들였다.",
+      "UnitTalk_JPN": "そして色とりどりの光が、夜空を染めた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 203,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.4,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 204,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_02.wav"
+    },
+    {
+      "Uid": 205,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFlashBang": 0.6,
+      "BgFileName": "ILLUST_BG_FIREWORKS_02.png"
+    },
+    {
+      "Uid": 206,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFlashBang": 0.6,
+      "BgFileName": "ILLUST_BG_FIREWORKS_03.png"
+    },
+    {
+      "Uid": 207,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "오오… 부하들이 허풍 떨던 게 아니었구만…",
+      "UnitTalk_JPN": "おぉ…子分たちが話を盛ってた訳じゃなかったのか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 208,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "굉장하네, 불꽃놀이.",
+      "UnitTalk_JPN": "すげぇな、花火って。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 211,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "동감이야.",
+          "JumpAnchorStringId_JPN": "同感だよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 209,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIREWORK_02.wav"
+    },
+    {
+      "Uid": 140,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "……",
+      "UnitTalk_JPN": "……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "다행이야, 단장.",
+      "UnitTalk_JPN": "よかったぜ、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 142,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐가?",
+          "JumpAnchorStringId_JPN": "何が？"
+        }
+      ]
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HARLEY"
+      ],
+      "UnitTalk_KOR": "너랑 같이 볼 수 있어서.",
+      "UnitTalk_JPN": "お前と一緒に見れて、だよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 212,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_07",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.6
+    },
+    {
+      "Uid": 144,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_TOPVIEW_NIGHT.png",
+      "CutsceneClear": "CLEARALL",
+      "UnitTalk_KOR": "마지막 불꽃이 저물고 축제를 즐기던 사람들이 하나둘 흩어졌다.",
+      "UnitTalk_JPN": "最後の花火が散ると…祭りを楽しんでいた人たちが一人、二人と帰って行った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 145,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 우리는, 불꽃이 사라진 밤하늘을 마지막까지 바라보고 있었다.",
+      "UnitTalk_JPN": "だが私たちは、花火が散った夜空を最後まで見上げていた。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 213,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeOutTime": 0.2,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3"
+    }
+  ]
+}

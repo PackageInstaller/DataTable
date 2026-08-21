@@ -1,0 +1,2923 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "MOVIE_JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY_01.mp4",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "TalkTime": 0.03,
+      "BgChangeTime": 1.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitQuickSet": true,
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "다들! 다들 괜찮으세요?!",
+      "UnitTalk_JPN": "皆さん！大丈夫ですか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_001.wav"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "다친 곳은 없고요?!",
+      "UnitTalk_JPN": "お怪我はありませんか！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_002.wav"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": "…응.",
+      "UnitTalk_JPN": "…うん。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "다들 무사해.",
+      "UnitTalk_JPN": "みんな無事よ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "알데바란의 집행자 <color=#F7BE45>[길레]</color>… 소멸 확인.",
+      "UnitTalk_JPN": "アルデバラン執行者<color=#F7BE45>「ギーレ」</color>の消滅を確認。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_003.wav"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "정말로… 정말로 승리하셨네요!",
+      "UnitTalk_JPN": "本当に、本当に勝ったのですね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_004.wav"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffsetTime": "NR",
+      "UnitQuickSet": true,
+      "UnitPos": "POS7",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitQuickSet": true,
+      "UnitPos": "POS8",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "후후! 라비스타 최고의 예언자인 이 몸은 싸우기 전부터 예측하고 있었지.",
+      "UnitTalk_JPN": "ふっふーん！ラビスターNo.1予言者であるルナ様には、戦う前から分かってたんだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_001.wav"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "우리의 승리를 말이야!",
+      "UnitTalk_JPN": "アタシたちの勝利がね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_002.wav"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "루나의 전투 중 마법 명중률은 37%미만.",
+      "UnitTalk_JPN": "戦闘中ルナの魔法命中率は37%未満。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_001.wav"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "상대의 움직임을 전혀 예측하지 못함.",
+      "UnitTalk_JPN": "相手の動きを全く予測できてない。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_002.wav"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "자칭 <color=#F7BE45>[예언]</color>의 쓸모에 대한 심각한 의문 제기.",
+      "UnitTalk_JPN": "自称<color=#F7BE45>「予言」</color>の有効性について疑問を呈する。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_003.wav"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "스마일, 넌 예언자가 아니라서 잘 모르겠구나.",
+      "UnitTalk_JPN": "スマイルちゃん、キミは予言者ではないから分からないのだよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_003.wav"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "내 마법이 빗나갔기 때문에 결과적으로 우리가 승리할 수 있었던 거라고.",
+      "UnitTalk_JPN": "アタシの魔法が外れたからこそ、巡り巡って勝機を見出す事ができたの！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_004.wav"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "네가 좋아하는 과학 용어로는… ",
+      "UnitTalk_JPN": "キミの好きな科学用語で言うなら…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_005.wav"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "그래, 나비효과라는 거지!",
+      "UnitTalk_JPN": "そう、バタフライ効果ってわけ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_006.wav"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "NORMAL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "증명 불가능한 명제.",
+      "UnitTalk_JPN": "証明できない命題。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_004.wav"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "그런 건 과학이 아님.",
+      "UnitTalk_JPN": "そんなものは科学にあらず。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_005.wav"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "하하, 다들 그만해.",
+      "UnitTalk_JPN": "はは、ケンカはそれくらいにしようね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "정말 강한 적이었지만… 모두가 있어서 승리할 수 있었어.",
+      "UnitTalk_JPN": "本当に強い敵だったけど…みんながいたから勝てた。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그리고 연락관도, 걱정해 줘서 고마워.",
+      "UnitTalk_JPN": "それと連絡官も、心配してくれてありがとね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그러니까 다들 축하하자.",
+      "UnitTalk_JPN": "だから、皆で祝おう。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "우리의 승리를.",
+      "UnitTalk_JPN": "わたしたちの勝利を。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "정말… 정말 다행이에요.",
+      "UnitTalk_JPN": "本当に、本当に良かったです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_005.wav"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "수많은 구원자들이 여정에 도전했지만 최종 시험을 통과한 사람은 아무도 없었는데…",
+      "UnitTalk_JPN": "これまで数多くの救援者が救援の旅に挑みましたが、\n最終試験をクリア出来た人はいませんでした…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_006.wav"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "여러분들은 오늘 새로운 역사를 쓰신 거예요!",
+      "UnitTalk_JPN": "皆さんは今日、新たな歴史を刻んだのです！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_007.wav"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "자, 그럼… ",
+      "UnitTalk_JPN": "さて、では…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_008.wav"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "응?",
+      "UnitTalk_JPN": "うん？",
+      "TalkTime": 0.03,
+      "TalkAppend": true,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_009.wav"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "EndBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS1",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.5,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.25,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.25,
+      "BgFileName": "CINEMA_TUTO_2E.mp4",
+      "CutsceneClear": "CLEARUNIT",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "NR",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS1",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0,
+      "TalkTime": 0.03,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_12.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "이건…",
+      "UnitTalk_JPN": "これは…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "엄청난 힘의 격류가... 몸속으로 흘러 들어오고 있어.",
+      "UnitTalk_JPN": "ものすごい力が…体の中に流れ込んで来る。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "설마 이게…",
+      "UnitTalk_JPN": "もしかして、これが…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_010.wav"
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "…네.",
+      "UnitTalk_JPN": "…はい",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_010.wav"
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "저도 실제로 보는 건 처음이지만… 아마 맞을 것 같네요.",
+      "UnitTalk_JPN": "私も実際に見るのは初めてですけど…おそらく間違いないかと。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_011.wav"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그것이 별의 구원자가 남긴 힘.",
+      "UnitTalk_JPN": "まさにそれが星の救援者が残した力。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_012.wav"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[스텔라 아카이브]</color>.",
+      "UnitTalk_JPN": "<color=#F7BE45>「ステラーアーカイブ」</color>",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_013.wav"
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "마치… 별의 탄생에 필적하는 힘이네요.",
+      "UnitTalk_JPN": "まるで…星の誕生に匹敵するかのような力ですね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_014.wav"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS4",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_4",
+      "UnitQuickSet": true,
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "자자, 다들 재미없는 소리는 그만하고 이리 와, 스마일!",
+      "UnitTalk_JPN": "ささっ、みんな堅苦しい話はおしまい！こっちに来てよ、スマイルちゃん！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_007.wav"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "내가 기쁨의 포옹을 해 줄게!",
+      "UnitTalk_JPN": "アタシが喜びのハグをしてあげる！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_008.wav"
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "호, 호흡곤란!",
+      "UnitTalk_JPN": "こっ、呼吸困難！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_006.wav"
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.0,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "CutsceneClear": "CLEARALL",
+      "TalkTime": 0.03,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "MOVIE_JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY_02.mp4",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.1,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS9",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.4,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.4,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_12.mp3",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_015.wav"
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "다시 한번 축하드려요.",
+      "UnitTalk_JPN": "改めておめでとうございます。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_016.wav"
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "이걸로 여러분은 <color=#F7BE45>[여정]</color> 최종 시험을 통과하셨습니다.",
+      "UnitTalk_JPN": "これで皆さまは晴れて<color=#F7BE45>「救援の旅」</color>最終試験をクリアしました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_017.wav"
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 이제 돌아갈까요?",
+      "UnitTalk_JPN": "さて、戻りましょうか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_018.wav"
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[여정]</color>을 졸업한 여러분들을 위해 큰 축하 행사가 준비되어 있답니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>を成し得た皆さんのために、祝いのパーティーが用意されてますよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_019.wav"
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_1",
+      "UnitQuickSet": true,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS1",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS2",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "그래! 어서 가자고! 파티와 치즈케이크, 그리고 카지노가 날 기다리고 있으니까!",
+      "UnitTalk_JPN": "うんうん！はやく行こうよ！パーティーとチーズケーキ、\nそしてカジノがアタシを呼んでいるわ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_009.wav"
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "나, 조금이지만… 여정을 함께 하면서 웃는 법을 배운 느낌.",
+      "UnitTalk_JPN": "私、少しだけ…みんなとの旅で笑い方を学べた、感じ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_007.wav"
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "언젠가 언니를 만나면, 분명 기뻐해 줄 것.",
+      "UnitTalk_JPN": "いつか姉さんに会えたら、必ず喜んでくれる…はず。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_008.wav"
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitQuickSet": true,
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "어허, 스마일. 아직도 그런 시시한 이야길 하는 거야?",
+      "UnitTalk_JPN": "なーんだ、スマイルちゃん。まだそんなことを言ってるの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_010.wav"
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "나랑 같이 카지노에 가자!",
+      "UnitTalk_JPN": "アタシとカジノ行こうよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_011.wav"
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitQuickSet": true,
+      "UnitPos": "POS2",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "한 번 크게 따기만 하면 웃는 법 따윈 싫어도 배우게 될걸?",
+      "UnitTalk_JPN": "いちど大勝ちすると、笑い方なんて嫌でも覚えちゃうんだからね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_012.wav"
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "루나… 카지노 승률… 0%...",
+      "UnitTalk_JPN": "ルナ、カジノでの勝率…0%…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_009.wav"
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "루나를 따라가면… 영원히 웃지 못하게 될 것…",
+      "UnitTalk_JPN": "ルナについていくと…永遠に笑えなくなる…たぶん。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_010.wav"
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "무, 무슨 그런 음해를…!! ",
+      "UnitTalk_JPN": "し、辛辣ぅ…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_013.wav"
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "응…?",
+      "UnitTalk_JPN": "あれ…？",
+      "TalkTime": 0.03,
+      "TalkAppend": true,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_014.wav"
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "아세라?",
+      "UnitTalk_JPN": "アセラっち？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_015.wav"
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "거기서 뭐 해? 멍하니 서서.",
+      "UnitTalk_JPN": "どうしたの？ぼっーと突っ立って。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_016.wav"
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS9",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "어? 아아…",
+      "UnitTalk_JPN": "えっ？えーと…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_011.wav"
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그냥… 뭔가 잊어버린 것 같은 기분이 들어서.",
+      "UnitTalk_JPN": "ちょっとね…何かを忘れている気がして。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_012.wav"
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "분명 조금 전의 전투에서 집행자의 공격을 대신 막아준 사람이 있었던 것 같은데…",
+      "UnitTalk_JPN": "さっきの戦闘で、執行者の攻撃を防いでくれた人がいたような…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_013.wav"
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "누구였지…?",
+      "UnitTalk_JPN": "誰だったかしら…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_014.wav"
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "응? 그런 일이 있었나? 스마일, 넌 기억나?",
+      "UnitTalk_JPN": "そんな事あったかな？スマイルちゃん、おぼえてる？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_017.wav"
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "집행자의 공격 횟수 287회.",
+      "UnitTalk_JPN": "執行者の攻撃回数287回。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_011.wav"
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "해당 내용만으로 특정 상황을 지정하는 것은 불가능.",
+      "UnitTalk_JPN": "その記録のみで、状況を特定することは不可能。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_012.wav"
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "처음부터 최종 시험장에 진입한 인원은 우리들뿐.",
+      "UnitTalk_JPN": "最初から最終試験場に踏み入れたのは私たちだけ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_013.wav"
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "제3자의 존재 가능성은 비합리적.",
+      "UnitTalk_JPN": "第三者が存在したと考えるのは非合理的。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_014.wav"
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "전투 스트레스에 따른 환각일 가능성 다수.",
+      "UnitTalk_JPN": "戦闘ストレスによる幻覚である可能性大。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_SMILE_015.wav"
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.0,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0,
+      "BgFileName": "ILLUST_SPINE_TUTO_00_01_02.prefab",
+      "CutsceneClear": "CLEARALL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "그런가…?",
+      "UnitTalk_JPN": "そうかな…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_015.wav"
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "하지만… 분명 누군가… ",
+      "UnitTalk_JPN": "でも…きっと誰かが…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_016.wav"
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "소중한 사람이 같이 있었던 기분이 들어…",
+      "UnitTalk_JPN": "大事な人がいたような気がする…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_017.wav"
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.0,
+      "EndBgmFileName": "EMPTY.mp3",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "UnitQuickSet": true,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_SOMEONE_UNKNOWN_MEMORY.prefab",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "FilterType": "CFT_SEPIASTATIC"
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0,
+      "TalkTime": 0.03,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…슬슬 포기할 때도 되지 않았어?",
+      "UnitTalk_JPN": "…そろそろ諦めたら？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_ALICIA_001.wav"
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무리 너라고 해도 더 이상은 무리야.",
+      "UnitTalk_JPN": "いくらあなたでもこれ以上は無理よ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_ALICIA_002.wav"
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "별의 힘은 이 우주의 섭리.",
+      "UnitTalk_JPN": "星の力は、この宇宙の摂理。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_ALICIA_003.wav"
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "섭리에 간섭하는 일은 반드시 대가를 지불하게 되지.",
+      "UnitTalk_JPN": "摂理に干渉せし者は、必ず代価を支払うことになるわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_ALICIA_004.wav"
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기억도, 힘도, 심지어 너 자신마저도.",
+      "UnitTalk_JPN": "記憶も、力も…ひいてはあなた自身すら。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_ALICIA_005.wav"
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "네가 얼마나 숭고한 이유로 이런 일을 하든 상관없어.",
+      "UnitTalk_JPN": "あなたがどれだけ崇高な目的で行動したかも関係ない。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_ALICIA_006.wav"
+    },
+    {
+      "Uid": 120,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 우주는 잔혹하도록 공정하니까.",
+      "UnitTalk_JPN": "この宇宙は残酷なほどに公正なのだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_ALICIA_007.wav"
+    },
+    {
+      "Uid": 121,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 122,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_ALICIA_008.wav"
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쩔 수 없네.",
+      "UnitTalk_JPN": "仕方ないわね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_ALICIA_009.wav"
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다시 한번 네가 별의 천칭을 기울일 수 있을지 지켜봐 줄게.",
+      "UnitTalk_JPN": "もう一度、あなたが星の天秤を傾かせることができるかどうか、見守ってあげる。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_ALICIA_010.wav"
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나의 벗, 나의 계약자…",
+      "UnitTalk_JPN": "私の友、私の契約者…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_ALICIA_011.wav"
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 나의… 구원자님.",
+      "UnitTalk_JPN": "そして私の…救援者さま。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_ALICIA_012.wav"
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.0,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "UnitQuickSet": true,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "TalkTime": 0.03,
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "MOVIE_JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY_03.mp4",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.0,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…궤도 수정 완료.",
+      "UnitTalk_JPN": "…軌道修正完了。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오차율, 콤마 003.",
+      "UnitTalk_JPN": "誤差率、コンマ003。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "성운 재정렬 완료, 타임라인 조정 완료.",
+      "UnitTalk_JPN": "星雲の整列完了、タイムライン調整完了。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 138,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitTalk_KOR": "관측 개시.",
+      "UnitTalk_JPN": "観測開始。",
+      "TalkTime": 0.1
+    },
+    {
+      "Uid": 140,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_ASTRO_SANCTUM.png",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 142,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_WAKE_UP.prefab",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 4.0,
+      "UnitTalk_KOR": "…단장님.",
+      "UnitTalk_JPN": "…団長。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_025.wav"
+    },
+    {
+      "Uid": 145,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 4.0,
+      "UnitTalk_KOR": "괜찮으신가요? 단장님.",
+      "UnitTalk_JPN": "大丈夫ですか？団長。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_026.wav"
+    },
+    {
+      "Uid": 147,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.4,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_WAKE_UP 1.prefab",
+      "CutsceneClear": "CLEARUNIT",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.4,
+      "TalkTime": 0.03,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 150,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 7.0,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 151,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.8,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 152,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFileName": "ILLUST_BG_ASTRO_SANCTUM.png",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_6",
+      "UnitQuickSet": true,
+      "UnitPos": "POS3",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 153,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 154,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.8,
+      "TalkTime": 0.03,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 155,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "갑자기 쓰러지셔서 놀랐어요.",
+      "UnitTalk_JPN": "いきなり倒れられてびっくりしました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_027.wav"
+    },
+    {
+      "Uid": 156,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "혹시 몸이 안 좋으신가요?",
+      "UnitTalk_JPN": "お体の具合が悪いのですか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_028.wav"
+    },
+    {
+      "Uid": 157,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여기가… 어디지?",
+          "JumpAnchorStringId_JPN": "ここは…どこだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 158,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 흠… 아무래도 고산병을 겪으신 것 같네요.",
+      "UnitTalk_JPN": "ふむ…どうやら高山病になられたようですね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_029.wav"
+    },
+    {
+      "Uid": 159,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "이곳 <color=#F7BE45>[아스트로 생텀]</color>은 NOA 상공에 떠 있는 부유섬이라 고도가 꽤 높거든요.",
+      "UnitTalk_JPN": "ここ<color=#F7BE45>「アストロ・サンクタム」</color>はNOAの上空に浮かぶ浮遊島。\n高度も結構ありますからね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_030.wav"
+    },
+    {
+      "Uid": 160,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그래서 가끔 단장님처럼 저산소증으로 고생하는 분들이 계신답니다.",
+      "UnitTalk_JPN": "そのため時々、今の団長のように低酸素症を患う方がいるのです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_031.wav"
+    },
+    {
+      "Uid": 161,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아무튼 지금까지 말씀드린 내용은 잘 이해하셨나요?",
+      "UnitTalk_JPN": "それで、今まで話した内容はご理解できましたか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_032.wav"
+    },
+    {
+      "Uid": 162,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…미안, 아무것도 기억이 안 나는데.",
+          "JumpAnchorStringId_JPN": "…ごめん、何も思い出せない。"
+        }
+      ]
+    },
+    {
+      "Uid": 163,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "하아…",
+      "UnitTalk_JPN": "はぁ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_033.wav"
+    },
+    {
+      "Uid": 164,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "대체 <color=#F7BE45>[알리시아]</color> 님은 어째서 이런 사람을 <color=#F7BE45>[단장]</color>으로 추천하신 건지 모르겠네요.",
+      "UnitTalk_JPN": "なぜ<color=#F7BE45>「アリシア」</color>様はこのような方を<color=#F7BE45>「団長」</color>として推薦されたんでしょうね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_034.wav"
+    },
+    {
+      "Uid": 165,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "한 번 더 설명해 드릴 테니 이번엔 잘 들어주세요.",
+      "UnitTalk_JPN": "もう一度だけ説明しますので、よーく聞いてくださいね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_035.wav"
+    },
+    {
+      "Uid": 166,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "저희 <color=#F7BE45>[성운관측기관 NOA]</color>는 별의 궤도를 관측하여 이곳, 라비스타 행성에 발생하는 재난을 예측하고 대응하는 기관입니다.",
+      "UnitTalk_JPN": "我々<color=#F7BE45>「星雲観測機関NOA」</color>は、星の軌道を観測することで、\n惑星ラビスターにて発生する災害を予測し対処する機関です。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_036.wav"
+    },
+    {
+      "Uid": 167,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "또한 설립자이신 제 1관측사 알리시아님의 뜻에 따라 <color=#F7BE45>[별의 구원자 계승 시험]</color>.",
+      "UnitTalk_JPN": "設立者であられる第一観測士アリシア様のご意向により、\n本機関は<color=#F7BE45>「星の救援者を継承する試験」</color>。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_037.wav"
+    },
+    {
+      "Uid": 168,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "통칭 <color=#F7BE45>[여정]</color>을 주관하는 곳이기도 하죠.",
+      "UnitTalk_JPN": "いわゆる<color=#F7BE45>「救援の旅」</color>の主催も担っております。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_038.wav"
+    },
+    {
+      "Uid": 169,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐, 그보다 내가 왜 여기에 있는 거지?",
+          "JumpAnchorStringId_JPN": "待て。それよりなぜ\n私はここにいるんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 170,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그리고 넌 누구야?",
+          "JumpAnchorStringId_JPN": "そして君は誰なんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 171,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "누구라니… 설마 제 이름도 까먹으신 건가요?",
+      "UnitTalk_JPN": "誰かと言われましても…もしや私の名前もお忘れになったのですか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_039.wav"
+    },
+    {
+      "Uid": 172,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "으음, 증세가 심각하네요… 설마 고산병이 아니라 뇌진탕인가?",
+      "UnitTalk_JPN": "うーん、ひどい症状ですね…もしや高山病ではなく脳震とうなのでは…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_040.wav"
+    },
+    {
+      "Uid": 173,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "저는 이곳 NOA의 3급 관측사인 리사입니다.",
+      "UnitTalk_JPN": "私はNOAの3級観測士。リサです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_041.wav"
+    },
+    {
+      "Uid": 174,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "단장님의 <color=#F7BE45>[여정]</color>을 도울 연락관이기도 하죠.",
+      "UnitTalk_JPN": "団長の<color=#F7BE45>「救援の旅」</color>をサポートする連絡官でもあります。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_042.wav"
+    },
+    {
+      "Uid": 175,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…여정?",
+          "JumpAnchorStringId_JPN": "…救援の旅？"
+        }
+      ]
+    },
+    {
+      "Uid": 176,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네, 과거 <color=#F7BE45>[공허의 별]</color>들로부터 행성 라비스타를 지켜낸 전설적인 영웅.",
+      "UnitTalk_JPN": "はい、むかし<color=#F7BE45>「空虚の星」</color>から惑星ラビスターを守った伝説の英雄…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_043.wav"
+    },
+    {
+      "Uid": 177,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[별의 구원자]</color>의 힘을 계승 받기 위한 1년 간의 자격시험.",
+      "UnitTalk_JPN": "<color=#F7BE45>「星の救援者」</color>の力を受け継ぐため、1年間行われる資格試験。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_044.wav"
+    },
+    {
+      "Uid": 178,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그 시험의 이름이 바로 <color=#F7BE45>[여정]</color>입니다.",
+      "UnitTalk_JPN": "その試験の名こそ<color=#F7BE45>「救援の旅」</color>なのです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_045.wav"
+    },
+    {
+      "Uid": 179,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "시험을 통과한 자는 <color=#F7BE45>[별의 구원자]</color>가 세상에 남긴 힘을 계승 받게 됩니다.",
+      "UnitTalk_JPN": "試験をクリアした者には<color=#F7BE45>「星の救援者」</color>が残した力が継承されます。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_046.wav"
+    },
+    {
+      "Uid": 180,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": " 그 힘은… 글쎄요. ",
+      "UnitTalk_JPN": "その力は…そうですね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_047.wav"
+    },
+    {
+      "Uid": 181,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "소문에 따르면 어떤 소원이라도 이룰 수 있을 만큼 거대하다고 하네요.",
+      "UnitTalk_JPN": "噂によると、どんな願いでも叶えられるくらい巨大なものとされています。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_048.wav"
+    },
+    {
+      "Uid": 182,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "물론 그에 따른 부와 명예 역시 함께 따라오겠죠.",
+      "UnitTalk_JPN": "きっと、それに応じた富と名誉も付いてくるでしょうね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_049.wav"
+    },
+    {
+      "Uid": 183,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후, 누가 들어도 끌릴 수밖에 없는 매력적인 조건이죠?",
+      "UnitTalk_JPN": "ふふっ、誰であれ惹かれざるを得ない魅力的な条件ですよね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_050.wav"
+    },
+    {
+      "Uid": 184,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "당연히 그동안 수많은 구원자들이 <color=#F7BE45>[여정]</color>에 도전했답니다.",
+      "UnitTalk_JPN": "だからそれから、無数の救援者が<color=#F7BE45>「救援の旅」</color>に挑みました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_051.wav"
+    },
+    {
+      "Uid": 185,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…물론 성공한 사람은 아직 아무도 없지만요.",
+      "UnitTalk_JPN": "…当然のことながら、いまだに成功者はいませんが。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_052.wav"
+    },
+    {
+      "Uid": 186,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "굉장히 어려운 시험인가 보네.",
+          "JumpAnchorStringId_JPN": "すごく難しい試験なんだな。"
+        }
+      ]
+    },
+    {
+      "Uid": 187,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래서 알리시아님은 <color=#F7BE45>[여정]</color>을 마칠 구원자를 육성하기 위해 새로운 계획을 세웠답니다.",
+      "UnitTalk_JPN": "そこでアリシア様は<color=#F7BE45>「救援の旅」</color>を成し遂げる救援者を育て上げるため、新たな計画を立てたのです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_053.wav"
+    },
+    {
+      "Uid": 188,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "재능 있는 구원자를 발굴하고 체계적인 훈련과 관리를 통해 그 잠재력을 일깨워 줄 전문가.",
+      "UnitTalk_JPN": "才気あふれる救援者を発掘し、適切な訓練と管理によって潜在能力を開花させる専門家…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_054.wav"
+    },
+    {
+      "Uid": 189,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[여정 단장]</color>을 영입하기로요.",
+      "UnitTalk_JPN": "<color=#F7BE45>「旅の団長」</color>をスカウトする事にしました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_055.wav"
+    },
+    {
+      "Uid": 190,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여정 단장…?",
+          "JumpAnchorStringId_JPN": "旅の…団長？"
+        }
+      ]
+    },
+    {
+      "Uid": 191,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "네, 그게 바로 단장님, 당신입니다.",
+      "UnitTalk_JPN": "はい。その方こそ団長、あなたです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_056.wav"
+    },
+    {
+      "Uid": 192,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "단장님은 오늘부터 NOA의 <color=#F7BE45>[여정 단장]</color>이 되어 여정에 참가하는 <color=#F7BE45>[여정 단원]</color>들을 지도하게 됩니다.",
+      "UnitTalk_JPN": "団長は本日付けでNOAの<color=#F7BE45>「旅の団長」</color>として、\n救援の旅に参加する<color=#F7BE45>「旅の団員」</color>たちを指導する事になります。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_057.wav"
+    },
+    {
+      "Uid": 193,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "너무 걱정하지는 마세요.",
+      "UnitTalk_JPN": "あまりご心配なさらないでください。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_058.wav"
+    },
+    {
+      "Uid": 194,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "NOA에서는 특별한 운명을 가진 구원자들을 엄선하여 <color=#F7BE45>[초대장]</color>을 보내고 있습니다.",
+      "UnitTalk_JPN": "NOAでは特別な運命を有する救援者を厳選し、<color=#F7BE45>「招待状」</color>を送っております。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_059.wav"
+    },
+    {
+      "Uid": 195,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "초대장에 응해 여정에 참가한 <color=#F7BE45>[여정 단원]</color>이라면 분명 커다란 잠재력을 가지고 있겠죠.",
+      "UnitTalk_JPN": "招待に応じて旅に参加した<color=#F7BE45>「旅の団員」</color>であれば、きっと素晴らしい潜在力を秘めているに違いありません。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_060.wav"
+    },
+    {
+      "Uid": 196,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "단장님이라면 분명 단원과 함께 여정의 끝에 도달할 수 있을 겁니다.",
+      "UnitTalk_JPN": "団長であれば、きっと団員と共に旅の果てへと辿り着けるでしょう。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_061.wav"
+    },
+    {
+      "Uid": 197,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이걸로 기초적인 설명은 끝이네요. 이해하셨나요?",
+      "UnitTalk_JPN": "これで基礎的な説明は終わりです。ご理解いただけましたか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_062.wav"
+    },
+    {
+      "Uid": 198,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "대충은.",
+          "JumpAnchorStringId_JPN": "大体は。",
+          "JumpAnchorId": "JUMPANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "…아니, 전혀.",
+          "JumpAnchorStringId_JPN": "…いや、ぜんぜん。",
+          "JumpAnchorId": "JUMPANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 199,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "좋아요! 이해력이 빠르시네요.",
+      "UnitTalk_JPN": "よろしい！話が早くて助かります。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_063.wav"
+    },
+    {
+      "Uid": 200,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "괜찮아요. 차차 배워가면 되니까요.",
+      "UnitTalk_JPN": "大丈夫です。徐々に慣れていけば良いのです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_064.wav"
+    },
+    {
+      "Uid": 201,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 남은 계약 절차를 마무리하기로 하죠.",
+      "UnitTalk_JPN": "では、残りの契約手続きを進める事にしましょう。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_065.wav"
+    },
+    {
+      "Uid": 202,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "자, 단장님의 성함을 알려주시겠어요?",
+      "UnitTalk_JPN": "さあ、団長のお名前を教えていただけますか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_066.wav"
+    },
+    {
+      "Uid": 203,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내 이름은…",
+          "JumpAnchorStringId_JPN": "私の名前は…"
+        }
+      ]
+    },
+    {
+      "Uid": 204,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "NicknameInput": true
+    },
+    {
+      "Uid": 205,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "확인했습니다. ",
+      "UnitTalk_JPN": "確認いたしました。 ",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_067.wav"
+    },
+    {
+      "Uid": 206,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "전달받은 계약 서류의 이름과 일치하네요.",
+      "UnitTalk_JPN": "渡されていた契約書と名前が一致していますね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_068.wav"
+    },
+    {
+      "Uid": 207,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이후로 여정과 관련된 행정 업무는 3급 관측사이자 연락관인 제가 담당할 예정입니다.",
+      "UnitTalk_JPN": "これより、救援の旅に関する行政事務は連絡官である私が担当する予定です。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_069.wav"
+    },
+    {
+      "Uid": 208,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "잘 부탁드리겠습니다.",
+      "UnitTalk_JPN": "よろしくお願い致します。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_070.wav"
+    },
+    {
+      "Uid": 209,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 210,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_FIRST_GET_STARPIERCER.prefab",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 211,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.5,
+      "TalkTime": 0.03,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 212,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LISA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그리고… 한 가지 더 전달 드릴 물건이 있습니다.",
+      "UnitTalk_JPN": "それと…もう一つお渡しする物があります。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_071.wav"
+    },
+    {
+      "Uid": 213,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이건… 뭐지?",
+          "JumpAnchorStringId_JPN": "これは…何だ？"
+        }
+      ]
+    },
+    {
+      "Uid": 214,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LISA"
+      ],
+      "UnitTalk_KOR": "저도 잘은 모르겠지만 조금 특이한 형태의 무기인 것 같아요.",
+      "UnitTalk_JPN": "私も詳しいことは分かりませんが…少し特殊な形の武器のようです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_072.wav"
+    },
+    {
+      "Uid": 215,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LISA"
+      ],
+      "UnitTalk_KOR": "사용법은 단장님이 잘 아실 거라고 알리시아님께서 말씀하셨습니다.",
+      "UnitTalk_JPN": "扱い方については団長がよく知っているはず、とアリシア様が仰っていましたよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_073.wav"
+    },
+    {
+      "Uid": 216,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 무심코 그녀가 건넨 물건을 받아 들었다.",
+      "UnitTalk_JPN": "彼女が差し出したものを、無意識のうちに受け取った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 217,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀의 말대로 내 손은 익숙하게 <color=#F7BE45>[잠금]</color>을 해제하고 검을 뽑아낼 수 있었다.",
+      "UnitTalk_JPN": "まるで元から知っていたかのように…私は<color=#F7BE45>「ロック」</color>を解除して剣を抜いた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 218,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 순간 불현듯 알 수 없는 기억이 머릿속을 스치고 지나갔다.",
+      "UnitTalk_JPN": "その瞬間、ふと正体不明の記憶が脳裏をかすめた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 219,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 220,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 221,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "DRAMA_SOMEONE_UNKNOWN_MEMORY.prefab",
+      "TalkTime": 0.03,
+      "FilterType": "CFT_SEPIASTATIC"
+    },
+    {
+      "Uid": 222,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.2,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 223,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 224,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 225,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_ASTRO_SANCTUM.png",
+      "TalkTime": 0.03,
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 226,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 227,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": "…단장님? 단장님! 괜찮으세요?",
+      "UnitTalk_JPN": "…団長？団長！大丈夫ですか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_074.wav"
+    },
+    {
+      "Uid": 228,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": "설마 또 처음부터 말씀드려야 하는 건 아니죠?",
+      "UnitTalk_JPN": "もしや、また最初から説明が必要だとか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_075.wav"
+    },
+    {
+      "Uid": 229,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 괜찮아.",
+          "JumpAnchorStringId_JPN": "いや、大丈夫だ。"
+        }
+      ]
+    },
+    {
+      "Uid": 230,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "휴우, 다행이네요.",
+      "UnitTalk_JPN": "ほっ、良かったです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_076.wav"
+    },
+    {
+      "Uid": 231,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "자, 그럼 가실까요?",
+      "UnitTalk_JPN": "さあ、では行きましょうか。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_077.wav"
+    },
+    {
+      "Uid": 232,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "단장님과 <color=#F7BE45>[여정]</color>을 함께 할 첫 단원이 기다리고 있으니까요.",
+      "UnitTalk_JPN": "団長と<color=#F7BE45>「救援の旅」</color>に出る、最初の団員がお待ちしております。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_078.wav"
+    }
+  ]
+}

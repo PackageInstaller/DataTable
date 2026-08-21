@@ -1,0 +1,61 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: CUT",
+  "_Version": 4,
+  "Data": [
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_NORMAL_1000",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "좋아! 나쁘지 않은 걸.",
+      "TalkTime": 0.03,
+      "Uid": 1
+    },
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_NORMAL_1000",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitTalk_KOR": "상쾌한 기분이야. 어제보다 몸도 가볍고.",
+      "TalkTime": 0.03,
+      "Uid": 2
+    },
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_NORMAL_1000",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitTalk_KOR": "조금 아쉽긴 하지만, 이 정도면 만족해야겠지.",
+      "TalkTime": 0.03,
+      "Uid": 3
+    },
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_NORMAL_1000",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitTalk_KOR": "무기랑 장비는 잘 때 점검해뒀고. 몸 상태도 괜찮으니.",
+      "TalkTime": 0.03,
+      "Uid": 4
+    },
+    {
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "UNIT_REST_NORMAL_1000",
+      "WaitClick": true,
+      "WaitTime": 0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_GUNBLADE",
+      "UnitTalk_KOR": "벌 수 있을 때 잔뜩 벌어둬야겠지!",
+      "TalkTime": 0.03,
+      "Uid": 5
+    }
+  ]
+}

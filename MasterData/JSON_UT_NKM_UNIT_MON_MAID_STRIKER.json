@@ -1,0 +1,427 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_MAID.txt",
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_72.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_21.wav"
+            ]
+          },
+          {
+            "EventFrame": 5,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_199.wav"
+            ]
+          },
+          {
+            "EventFrame": 28,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_69.wav"
+            ]
+          },
+          {
+            "EventFrame": 27,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_FOOT_STEP_38.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 30,
+            "EventEndFrame": 39,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 88,
+            "EventEndFrame": 99,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 58,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "DataList": [
+              {
+                "EventFrame": 55,
+                "VoiceName": "SFX_BATTLE_COMMON_VOICE_MAID_03.wav"
+              }
+            ]
+          }
+        ], 
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_185.wav"
+            ]
+          },
+          {
+            "EventFrame": 29,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_175.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_186.wav"
+            ]
+          },
+          {
+            "EventFrame": 51,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_HIT_61.wav"
+            ]
+          },
+          {
+            "EventFrame": 80,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_67.wav"
+            ]
+          },
+          {
+            "EventFrame": 88,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_175.wav"
+            ]
+          },
+          {
+            "EventFrame": 101,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_21.wav"
+            ]
+          },
+          {
+            "EventFrame": 120,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_68.wav"
+            ]
+          },
+          {
+            "EventFrame": 151,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_69.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 40,
+            "EventEndFrame": 56,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 102,
+            "EventEndFrame": 113,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 60,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 70,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "DataList": [
+              {
+                "EventFrame": 60,
+                "VoiceName": "SFX_BATTLE_COMMON_VOICE_MAID_04.wav"
+              },
+              {
+                "EventFrame": 70,
+                "VoiceName": "SFX_BATTLE_COMMON_VOICE_MAID_05.wav"
+              }
+            ]
+          }
+        ], 
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_188.wav"
+            ]
+          },
+          {
+            "EventFrame": 15,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_189.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_190.wav"
+            ]
+          },
+          {
+            "EventFrame": 58,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_HIT_62.wav"
+            ]
+          },
+          {
+            "EventFrame": 68,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_HIT_63.wav"
+            ]
+          },
+          {
+            "EventFrame": 100,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_191.wav"
+            ]
+          },
+          {
+            "EventFrame": 116,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_21.wav"
+            ]
+          },
+          {
+            "EventFrame": 119,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_192.wav"
+            ]
+          },
+          {
+            "EventFrame": 134,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_68.wav"
+            ]
+          },
+          {
+            "EventFrame": 160,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_69.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "UseInternalCamera": false,
+        "UseEnemyTargetCamera": true,
+        "EndFadeOut": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 33,
+            "EventEndFrame": 43,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 122,
+            "EventEndFrame": 132,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 82,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.5,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "DataList": [
+              {
+                "EventFrame": 16,
+                "VoiceName": "SFX_BATTLE_COMMON_VOICE_MAID_04.wav"
+              },
+              {
+                "EventFrame": 80,
+                "VoiceName": "SFX_BATTLE_COMMON_VOICE_MAID_05.wav"
+              }
+            ]
+          }
+        ], 
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_181.wav"
+            ]
+          },
+          {
+            "EventFrame": 14,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_196.wav"
+            ]
+          },
+          {
+            "EventFrame": 34,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_175.wav"
+            ]
+          },
+          {
+            "EventFrame": 48,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_197.wav"
+            ]
+          },
+          {
+            "EventFrame": 79,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_HIT_64.wav"
+            ]
+          },
+          {
+            "EventFrame": 115,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_71.wav"
+            ]
+          },
+          {
+            "EventFrame": 120,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_175.wav"
+            ]
+          },
+          {
+            "EventFrame": 130,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_21.wav"
+            ]
+          },
+          {
+            "EventFrame": 130,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_198.wav"
+            ]
+          },
+          {
+            "EventFrame": 162,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_68.wav"
+            ]
+          },
+          {
+            "EventFrame": 185,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_69.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "VoiceSeries": [
+          {
+            "DataList": [
+              {
+                "EventFrame": 8,
+                "VoiceName": "SFX_BATTLE_COMMON_VOICE_MAID_06.wav"
+              }
+            ]
+          }
+        ], 
+        "SoundEvents": [
+          {
+            "EventFrame": 8,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_58.wav"
+            ]
+          },
+          {
+            "EventFrame": 9,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WEAPON_DROP_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 28,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_56.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

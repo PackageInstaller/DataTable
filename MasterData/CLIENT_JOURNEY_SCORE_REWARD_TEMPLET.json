@@ -1,0 +1,95 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: JOURNEY_SCORE_REWARD_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ScoreRewardGroupId" : 1,
+          "TargetScore" : 1000,
+          "ScoreRewardData" : 
+          [
+            {
+              "RewardItemId" : 201,
+              "RewardItemValue" : 50000
+            }
+          ]
+        },
+        {
+          "ScoreRewardGroupId" : 1,
+          "TargetScore" : 2000,
+          "ScoreRewardData" : 
+          [
+            {
+              "RewardItemId" : 33000011,
+              "RewardItemValue" : 50
+            }
+          ]
+        },
+        {
+          "ScoreRewardGroupId" : 1,
+          "TargetScore" : 3000,
+          "ScoreRewardData" : 
+          [
+            {
+              "RewardItemId" : 301,
+              "RewardItemValue" : 1
+            }
+          ]
+        },
+        {
+          "ScoreRewardGroupId" : 1,
+          "TargetScore" : 4000,
+          "ScoreRewardData" : 
+          [
+            {
+              "RewardItemId" : 103,
+              "RewardItemValue" : 200
+            }
+          ]
+        },
+        {
+          "ScoreRewardGroupId" : 1,
+          "TargetScore" : 5000,
+          "ScoreRewardData" : 
+          [
+            {
+              "RewardItemId" : 207,
+              "RewardItemValue" : 1
+            }
+          ]
+        },
+        {
+          "ScoreRewardGroupId" : 1,
+          "TargetScore" : 6000,
+          "ScoreRewardData" : 
+          [
+            {
+              "RewardItemId" : 70000003,
+              "RewardItemValue" : 1
+            }
+          ]
+        },
+        {
+          "ScoreRewardGroupId" : 1,
+          "TargetScore" : 7000,
+          "ScoreRewardData" : 
+          [
+            {
+              "RewardItemId" : 303,
+              "RewardItemValue" : 1
+            }
+          ]
+        },
+        {
+          "ScoreRewardGroupId" : 2,
+          "TargetScore" : 100000,
+          "ScoreRewardData" : 
+          [
+            {
+              "RewardItemId" : 103,
+              "RewardItemValue" : 200
+            }
+          ]
+        }
+    ]
+}

@@ -1,0 +1,468 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_INDEPENDENT_DRAGON_09",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_09",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "흐음… 이곳이 여의 이야기가 마무리될 장소인가?",
+      "UnitTalk_JPN": "ふうむ…ここが、余の物語が完結する場所かのう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "클라이맥스라고 하기에는 다소 아쉬운 장소다만… 나름의 운치는 있구나.",
+      "UnitTalk_JPN": "クライマックスと言うにはやや物足りない場所だが…それなりの風情はあるようじゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "마치 아해의 안에서 느껴졌던 것과 비슷한 묘한 힘이 느껴진다고 해야 할까…",
+      "UnitTalk_JPN": "其方の中から感じられたものに似た…妙な力が感じられると言うべきか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "뭐, 이 장소가 지닌 특별한 힘이 기시감을 불러일으키는 것이겠지.",
+      "UnitTalk_JPN": "この場所が持つ特別な力が、既視感を呼び起こしているのであろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "긴장돼?",
+          "JumpAnchorStringId_JPN": "緊張してる？"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "긴장…?",
+      "UnitTalk_JPN": "緊張…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "그대여, 지금 여에게 긴장이라고 했느냐?",
+      "UnitTalk_JPN": "其方よ、余に緊張しているかと聞いたのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "여에게 있어서 이 정도 시험은 여흥에 불과하니라.",
+      "UnitTalk_JPN": "余にとって、この程度の試験は余興に過ぎぬ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "아니지, 솔직히 여흥이라고까지 부를 수 있을지도 걱정이구나.",
+      "UnitTalk_JPN": "正直、余興と呼べるかすら心配な程じゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "걱정하지 말거라. 여는 용족, 그대가 생각할 수 없을 정도로 오랜 시간을 살아온 자다.",
+      "UnitTalk_JPN": "心配はいらぬぞ。余は龍族…其方が想像できないような長い時を生きてきた者じゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그보다 그대여, 최근 여가 다음에 쓸 책을 구상 중이니라.",
+      "UnitTalk_JPN": "それはそうと、其方よ。余は、次回作の構想を練っているところなのじゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "벌써?",
+          "JumpAnchorStringId_JPN": "もう？"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "어허, 벌써라니!",
+      "UnitTalk_JPN": "おや、「もう」とは何じゃ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "그때 도서관에서 여의 인기를 실감하지 않았느냐. 팬들은 지금쯤 애간장이 녹아내리고 있을 것이 분명하다.",
+      "UnitTalk_JPN": "あの時、図書館で人気を実感したじゃろう？ファンは今頃、さぞもどかしい思いをしているに違いない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "팬을 생각하는 마음도 프로 작가로서 갖춰야 할 덕목이니라.",
+      "UnitTalk_JPN": "ファンを思う心も、プロの作家として備えるべき徳目なのじゃよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그러고는 알겠냐는 듯 진지한 눈으로 나를 바라본다.",
+      "UnitTalk_JPN": "そう言うと、分かったかと言わんばかりに真剣な目で私を見つめる。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "훌륭한 마음가짐이네.",
+          "JumpAnchorStringId_JPN": "立派な心構えだな。"
+        }
+      ]
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "훗, 여는 훌륭하지 않았던 적이 없느니라.",
+      "UnitTalk_JPN": "ふっ、余は常に立派なのじゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그건 그렇고… 그대여.",
+      "UnitTalk_JPN": "それはさておき…其方よ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "다음 작품의 내용이 궁금하지 않으냐?",
+      "UnitTalk_JPN": "次回作の内容が気にならぬか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "원한다면 그대와 여의 사이를 생각하여 조금은 이야기해 줄 수도 있느니라.",
+      "UnitTalk_JPN": "其方と余の間柄じゃ…もし望むのであれば、少しは話してやってもよいぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "들어보겠느냐?",
+      "UnitTalk_JPN": "聞いてみるか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "은근히 물어오는 말투, 이건 분명 그렇다고 대답해 주기를 바라는 말투다.",
+      "UnitTalk_JPN": "さりげなく尋ねる口調…これは間違いなく「うん」と答えてほしい時の話し方だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "레이시의 다음 작품의 내용이라… 궁금하다. 궁금하지만…",
+      "UnitTalk_JPN": "次回作の内容は…気になる。気になるけど…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 듣지 않을래.",
+          "JumpAnchorStringId_JPN": "いや、聞かないでおくよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "뭐, 뭐라? 어째서냐? 그대는 여의 팬이면서 궁금하지 않다는 것이냐?",
+      "UnitTalk_JPN": "な、なぬ？どうしてじゃ？其方は余のファンでありながら、気にならないというのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "팬이다. 그렇기에 듣지 않기로 마음먹은 것이다.",
+      "UnitTalk_JPN": "ファンだからこそ、聞かないと決めたのだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "직접 읽고 싶어.",
+          "JumpAnchorStringId_JPN": "自分で読みたい。"
+        }
+      ]
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "한 명의 팬으로서, 레이시가 쓴 책을 직접 읽고 싶다. 그렇기에 스포일러는 사양이다.",
+      "UnitTalk_JPN": "一人のファンとして、レイシーの本を直接読みたい。だから、ネタバレは遠慮しよう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "흐음…",
+      "UnitTalk_JPN": "ふうむ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "여가 경솔했구나. 하긴 어설프게 내용을 들으면 막상 책을 읽었을 때 재미가 없기 마련이지. 놀라움도 적어질 테고 말이야.",
+      "UnitTalk_JPN": "余が軽率だったのう。たしかに、中途半端に内容を聞くと、いざ本を読んだ時に面白みや驚きが半減するものじゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "놀라움?",
+          "JumpAnchorStringId_JPN": "驚き？"
+        }
+      ]
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이제 와서 궁금한 것이냐?",
+      "UnitTalk_JPN": "なんじゃ、今さら気になってきたのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "늦었느니라. 여는 이제 말해줄 생각이 완전히 사라졌다.",
+      "UnitTalk_JPN": "もう遅いぞ。話してやる気はなくなったのじゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "궁금하다면 책이 나올 때까지 기다리도록 하거라.",
+      "UnitTalk_JPN": "気になるなら、本が出るまで待つことよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 얼른 이 최종 시험이라는 것을 끝내고 글을 쓰러 가보도록 하자꾸나.",
+      "UnitTalk_JPN": "さぁ、この最終試験とやらを終わらせて、文を書きに行くとしよう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "…준비되셨나요, 단장님?",
+      "UnitTalk_JPN": "…準備はできましたか、団長？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "시간이 되었나?",
+          "JumpAnchorStringId_JPN": "もう時間かな？"
+        }
+      ]
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "네, 지금부터 별의 구원자 계승 시험 <color=#F7BE45>[여정]</color>.",
+      "UnitTalk_JPN": "では、これより星の救援者・継承試験<color=#F7BE45>「救援の旅」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그 최종시험을 시작하겠습니다.",
+      "UnitTalk_JPN": "最終試験を開始します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "시험상대는 <color=#F7BE45>[알데바란의 집행자 길레]</color>.",
+      "UnitTalk_JPN": "対戦相手は<color=#F7BE45>「アルデバランの執行者・ギーレ」</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[디랙의 우물]</color>이 투영을 개시합니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「ディラックの井戸」</color>が投影を開始します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "오랜만에 힘을 좀 써보도록 할까?",
+      "UnitTalk_JPN": "久しぶりに、力を少し使ってみようかのう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "머릿속에서 써야 할 내용들이 날아가기 전에 끝내자꾸나.",
+      "UnitTalk_JPN": "頭の中に浮かんだ、文にしたい内容が飛んでしまう前に…終わらせるのじゃ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

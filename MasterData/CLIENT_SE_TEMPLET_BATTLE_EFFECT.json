@@ -1,0 +1,995 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: SKILL/SE_TEMPLET_BATTLE_EFFECT",
+    "_Version": 0,
+    "Data": [
+        {
+          "m_SEID" : 1010101,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL1_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ASYNC_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 100,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_END_BATTLE_EFFECT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 1010102,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL2_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ASYNC_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 150,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_END_BATTLE_EFFECT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 1010103,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL3_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ASYNC_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 200,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_END_BATTLE_EFFECT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 1010104,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL4_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ASYNC_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 250,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_END_BATTLE_EFFECT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 1010105,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL5_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ASYNC_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 300,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_END_BATTLE_EFFECT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 1010106,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL6_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ASYNC_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 400,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_END_BATTLE_EFFECT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9901101,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST1_A_LEVEL1_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 1500,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_END_BATTLE_EFFECT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3010101,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_01_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_01_01",
+          "SubShowSELog" : "True",
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_CUBE_RETRO_100TON_HAMMER_1",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 300
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_WAVE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3010201,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_02_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_02_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 5507,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_CUBE_COTTON_SWORD_1",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_DAMAGE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3010301,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_03_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_03_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 31009,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 5000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3010401,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_04_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_04_01",
+          "SubShowSELog" : "True",
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_HEAL",
+          "m_BuffLifeTurn" : 0,
+          "HealTargetType" : "NSETT_SELF",
+          "HealStatType" : "NST_HP",
+          "HealRate" : 2000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_WAVE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3010501,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_05_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_05_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 31008,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 3000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3020101,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_01_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_01_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 2000,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "AutoTargetId" : 6,
+          "m_BuffStrID" : "BI_BURN",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 2500
+          }
+        },
+        {
+          "m_SEID" : 3020201,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_02_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_02_01",
+          "SubShowSELog" : "True",
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_CUBE_ULTRA_ROLLER_SKATES_1",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 300
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3020301,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_03_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_03_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 4004,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_AUTO_ALLY_ONE",
+          "AutoTargetId" : 16,
+          "m_BuffStrID" : "BI_DELETEDEBUFF",
+          "m_BuffLifeTurn" : 0,
+          "BuffDeleteCount" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3020401,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_04_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_04_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 2121,
+          "SeCoolTurn" : 1,
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_ADD_DAMAGE_1",
+          "m_BuffLifeTurn" : 0,
+          "AddDamageTargetType" : "NSETT_SELF",
+          "AddDamageStatType" : "NST_ATK",
+          "AddDamageRate" : 2500,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3020501,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_05_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_05_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 8003,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DELETEDEBUFF",
+          "m_BuffLifeTurn" : 0,
+          "BuffDeleteCount" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3030101,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_01_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_01_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 8003,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_CUBE_ROCKET_BOARD_1",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3030201,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_02_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_02_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 7602,
+          "SeCoolTurn" : 3,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_HEAL",
+          "m_BuffLifeTurn" : 0,
+          "HealTargetType" : "NSETT_SELF",
+          "HealStatType" : "NST_HP",
+          "HealRate" : 1000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3030301,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_03_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_03_01",
+          "SubShowSELog" : "True",
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_SUPER_ARMOR_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 1
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3030401,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_04_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_04_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 5506,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_REDUCE",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_DAMAGE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3030501,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_05_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_05_01",
+          "SubShowSELog" : "True",
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_SUPER_ARMOR_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 2
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3040101,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_01_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_01_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 5011,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_CUBE_LEGEND_ARMOR_1",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_DAMAGE_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3040201,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_02_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_02_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 1000,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_SUPER_ARMOR_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 1
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 5000
+          }
+        },
+        {
+          "m_SEID" : 3040301,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_03_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_03_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 9007,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DELETEDEBUFF",
+          "m_BuffLifeTurn" : 0,
+          "BuffDeleteCount" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3040401,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_04_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_04_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 1115,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 3000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3040501,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_05_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_05_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 8003,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DEBUFFBAN",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3050101,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_01_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_01_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 8003,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_SPEED_GAUGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 1500,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3050201,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_02_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_02_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 5513,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_REDUCE",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_DAMAGE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3050301,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_03_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_03_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 2001,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_DELETEBUFF",
+          "m_BuffLifeTurn" : 0,
+          "BuffDeleteCount" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3050401,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_04_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_04_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 8003,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BARRIER",
+          "m_BuffLifeTurn" : 2,
+          "BarrierTargetType" : "NSETT_SELF",
+          "BarrierStatType" : "NST_ATK",
+          "BarrierRate" : 5000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 3050501,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_05_01",
+          "m_SEDesc" : "SI_DESC_COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_05_01",
+          "SubShowSELog" : "True",
+          "SkillConditionId" : 2002,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_DELETEBUFF",
+          "m_BuffLifeTurn" : 0,
+          "BuffDeleteCount" : 2,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900001,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL1_01",
+          "m_BuffTargetType" : "NSETT_MYTEAM_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 300,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900002,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL2_01",
+          "m_BuffTargetType" : "NSETT_MYTEAM_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 400,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900003,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL3_01",
+          "m_BuffTargetType" : "NSETT_MYTEAM_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 500,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900004,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL4_01",
+          "m_BuffTargetType" : "NSETT_MYTEAM_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 600,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900005,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL5_01",
+          "m_BuffTargetType" : "NSETT_MYTEAM_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 700,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900006,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL6_01",
+          "m_BuffTargetType" : "NSETT_MYTEAM_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 800,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900007,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL7_01",
+          "m_BuffTargetType" : "NSETT_MYTEAM_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 900,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900008,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL8_01",
+          "m_BuffTargetType" : "NSETT_MYTEAM_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 1000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900009,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_B_LEVEL1_01",
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 300,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900010,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_B_LEVEL2_01",
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 400,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900011,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_B_LEVEL3_01",
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 500,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900012,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_B_LEVEL4_01",
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 600,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900013,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_B_LEVEL5_01",
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 700,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900014,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_B_LEVEL6_01",
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 800,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900015,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_B_LEVEL7_01",
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 900,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900016,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_PVP_ASYNC_B_LEVEL8_01",
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 1000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900017,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST1_A_LEVEL1_01",
+          "m_BuffTargetType" : "NSETT_MYTEAM_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 1500,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9900018,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST1_A_LEVEL1_02",
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
+          "m_BuffStrID" : "BI_ADD_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "AddTrueDamageValue" : 1500,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9904901,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST4_A_LEVEL1_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ATTACK_INCREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9904902,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST4_A_LEVEL1_02",
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY",
+          "AutoTargetId" : 21,
+          "m_BuffStrID" : "BI_ATTACK_DECREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9905001,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST4_A_LEVEL2_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ATTACK_INCREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9905002,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST4_A_LEVEL2_02",
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY",
+          "AutoTargetId" : 21,
+          "m_BuffStrID" : "BI_ATTACK_DECREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9905003,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST4_A_LEVEL2_03",
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY",
+          "AutoTargetId" : 21,
+          "m_BuffStrID" : "BI_DEFENSE_DECREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9905101,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST4_A_LEVEL3_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ATTACK_INCREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9905102,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST4_A_LEVEL3_02",
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY",
+          "AutoTargetId" : 21,
+          "m_BuffStrID" : "BI_ATTACK_DECREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9905103,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST4_A_LEVEL3_03",
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY",
+          "AutoTargetId" : 21,
+          "m_BuffStrID" : "BI_DEFENSE_DECREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9905104,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST4_A_LEVEL3_04",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DEFENSE_INCREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9905201,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST4_A_LEVEL4_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ATTACK_INCREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9905202,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST4_A_LEVEL4_02",
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY",
+          "AutoTargetId" : 21,
+          "m_BuffStrID" : "BI_ATTACK_DECREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9905203,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST4_A_LEVEL4_03",
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY",
+          "AutoTargetId" : 21,
+          "m_BuffStrID" : "BI_DEFENSE_DECREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9905204,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST4_A_LEVEL4_04",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DEFENSE_INCREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 9905205,
+          "m_SEStrID" : "COND_BATTLE_EFFECT_TEST4_A_LEVEL4_05",
+          "m_BuffTargetType" : "NSETT_MYTEAM_ALL",
+          "m_BuffStrID" : "BI_SPEED_GAUGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 1000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        }
+    ]
+}

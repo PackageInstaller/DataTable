@@ -1,0 +1,1263 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00A_RANDOM_AIDA",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_DOWNTOWN",
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitPos": "POS6",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 의뢰에 필요한 물품을 사러 나왔는데…",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と共に、依頼に必要な物資を買いに出かけた時のことだった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffset": "TWIN_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "무후훗. 이런 곳에서 뵙는군요.",
+      "UnitTalk_JPN": "ムフフッ。こんな場所で会いますとはな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 200,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "무진장 수상쩍은 녀석과 마주치고 말았다!",
+      "UnitTalk_JPN": "怪しすぎる人物に遭遇してしまった！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 202,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_3",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitTalk_KOR": "이 넓은 도시에서 마주친 것도 운명적이군요.",
+      "UnitTalk_JPN": "この広い街で出会うとは、いやはや運命的ですぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitTalk_KOR": "공들께서는 혹시 <color=#F7BE45>[강화제]</color>에 관심 없으십니까?",
+      "UnitTalk_JPN": "団長殿は、<color=#F7BE45>「強化剤」</color>に興味はありませぬか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 203,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST",
+      "UnitPos": "POS3",
+      "EmotionEffect": "QMARK"
+    },
+    {
+      "Uid": 206,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "강화제라니?",
+          "JumpAnchorStringId_JPN": "強化剤って？"
+        }
+      ]
+    },
+    {
+      "Uid": 176,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "문자 그대로 구원자를 강하게 만들어 주는 약입니다.",
+      "UnitTalk_JPN": "文字通り、救援者を強くする薬のことです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "인스턴트를 선호하는 신시대의 풍조에 영합하기 위한 졸작이랄까…",
+      "UnitTalk_JPN": "インスタントを好む新時代の風潮に迎合するための駄作とでも言いましょうか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitTalk_KOR": "시제품 단계라 효과는 조금 불안정하지만 말이죠.",
+      "UnitTalk_JPN": "まだ試作品ですから、効果はすこーし不安定ですがな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 324,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아니! 확실하게 불안정합니다! 부작용이 오면 골로 갈 만큼!",
+      "UnitTalk_JPN": "いーや！確実に不安定ですぞ！それも、副作用が出れば命取りになるほどに！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 328,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "자랑스럽게 말하기냐!",
+          "JumpAnchorStringId_JPN": "自慢気に言うな！"
+        }
+      ]
+    },
+    {
+      "Uid": 329,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "무후훗, 어느 쪽이든 파격적인 효과니 말입니다.",
+      "UnitTalk_JPN": "ムフフッ。いずれにせよ、破格の効果ということです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 330,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitTalk_KOR": "반대로 강화제와 궁합이 잘 맞는다면 <color=#F7BE45>[여정]</color>에 큰 도움이 되겠지요. ",
+      "UnitTalk_JPN": "逆に強化剤との相性が良ければ、<color=#F7BE45>「救援の旅」</color>に大いに役立つでしょう。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 331,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "과감한 도전이냐, 안일한 안주냐. 선택은 단장 공께 달린 것입니다.",
+      "UnitTalk_JPN": "一か八の挑戦か、現状に甘んじるか…さぁ団長殿、選択するのです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 326,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무리 <color=#F7BE45>[CHARACTER_NAME]</color>에게 도움이 된다지만, 불안한 건 어쩔 수 없다…",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>の助けになるかもしれないが、不安は拭えない…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어떤 걸 마시면 좋을까?",
+      "UnitTalk_JPN": "何を飲むべきだろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "섬뜩하게 붉은빛의 물약.",
+          "JumpAnchorStringId_JPN": "ぞっとするほど赤いポーション。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 4,
+          "JumpAnchorStringId_KOR": "차갑도록 푸른빛의 물약.",
+          "JumpAnchorStringId_JPN": "冷たく青く光るポーション。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 5,
+          "JumpAnchorStringId_KOR": "눈부시게 노란빛의 물약.",
+          "JumpAnchorStringId_JPN": "眩しいほど黄色いポーション。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        },
+        {
+          "Uid": 6,
+          "JumpAnchorStringId_KOR": "옆에 놓여 있는 평범한 음료수.",
+          "JumpAnchorStringId_JPN": "横に置かれた普通のジュース。",
+          "JumpAnchorId": "REWARD_ANCHOR_4"
+        }
+      ]
+    },
+    {
+      "Uid": 42,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ]
+    },
+    {
+      "Uid": 43,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 가장 강해 보이는 물약을 골랐다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と、一番強そうなポーションを選んだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DRINKING.wav",
+      "UnitTalk_KOR": "물약을 마시자…",
+      "UnitTalk_JPN": "ポーションを飲むと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIRE_03.wav",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 엄청난 기운이 솟아오른다고 한다!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、ものすごい気力が湧き上がってきたそうだ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "호오, 이건…?",
+      "UnitTalk_JPN": "ほうほう、これは…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitTalk_KOR": "어쩌면 최강의 구원자가 탄생할지도 모르겠군요…",
+      "UnitTalk_JPN": "最強の救援者が誕生するかもしれませぬぞ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "무후훗!",
+      "UnitTalk_JPN": "ムフフッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_65.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아이다는 기분 나쁜 웃음소리와 함께 모습을 감췄다…",
+      "UnitTalk_JPN": "アイーダは不気味な笑い声と共に、姿を消した…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 55,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY"
+    },
+    {
+      "Uid": 187,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 물약을 집어 들었다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>がポーションを手に取った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 188,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DRINKING.wav",
+      "UnitTalk_KOR": "물약을 마시자…",
+      "UnitTalk_JPN": "ポーションを飲むと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 갑자기 온몸의 기문이 쭉 빠진다고 한다…",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、突然全身の力が抜けてしまったそうだ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "이건…",
+      "UnitTalk_JPN": "これは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "강화제와 궁합이 안 맞았나 보군요.",
+      "UnitTalk_JPN": "強化剤との相性が悪かったようですな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "보면 알아!",
+          "JumpAnchorStringId_JPN": "見れば分かる！"
+        }
+      ]
+    },
+    {
+      "Uid": 207,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "이제 손쉽게 강해지려는 그릇된 욕망이 얼마나 위험한지 아셨겠죠?",
+      "UnitTalk_JPN": "これで安易に強くなろうという誤った欲望がいかに危険かお分かりいただけたでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 208,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "교훈으로 삼으시길 바랍니다. 무후훗!",
+      "UnitTalk_JPN": "教訓にしてくだされ。ムフフッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_65.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아이다는 기분 나쁜 웃음소리와 함께 모습을 감췄다…",
+      "UnitTalk_JPN": "アイーダは不気味な笑い声と共に、姿を消した…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 70,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 267,
+      "JumpAnchorInfo": "JUMPANCHOR_2_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ]
+    },
+    {
+      "Uid": 268,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 269,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 가장 멋져 보이는 물약을 골랐다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と、一番カッコいいポーションを選んだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 270,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DRINKING.wav",
+      "UnitTalk_KOR": "물약을 마시자…",
+      "UnitTalk_JPN": "ポーションを飲むと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 271,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_IMPACT_02.wav",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 272,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 무슨 일이든 할 수 있을 것 같다고 한다!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、どんなことでもできそうだと言う！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 273,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "이런, 이런…",
+      "UnitTalk_JPN": "これはこれは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 274,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitTalk_KOR": "어쩌면 제 약이 잠자던 사자를 깨워 버린 걸지도 모르겠군요.",
+      "UnitTalk_JPN": "小生のポーションが、眠れる獅子を目覚めさせてしまったのかもしれませぬな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 275,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "무후훗!",
+      "UnitTalk_JPN": "ムフフッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 276,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 277,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 278,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_65.wav",
+      "UnitTalk_KOR": "아이다는 기분 나쁜 웃음소리와 함께 모습을 감췄다…",
+      "UnitTalk_JPN": "アイーダは不気味な笑い声と共に、姿を消した…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 279,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 280,
+      "JumpAnchorInfo": "JUMPANCHOR_2_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 281,
+      "WaitClick": true,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY"
+    },
+    {
+      "Uid": 282,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 물약을 집어 들었다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>がポーションを手に取った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 283,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DRINKING.wav",
+      "UnitTalk_KOR": "물약을 마시자…",
+      "UnitTalk_JPN": "ポーションを飲むと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 284,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 285,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 갑자기 세상 모두가 자기를 비난하는 것 같다고 한다…",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は突然、世界中が自分を非難しているように感じるという…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 286,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "이건…",
+      "UnitTalk_JPN": "これは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 287,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "강화제와 궁합이 안 맞았나 보군요.",
+      "UnitTalk_JPN": "強化剤との相性が悪かったようですな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 288,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "보면 알아!",
+          "JumpAnchorStringId_JPN": "見れば分かる！"
+        }
+      ]
+    },
+    {
+      "Uid": 289,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "이제 손쉽게 강해지려는 그릇된 욕망이 얼마나 위험한지 아셨겠죠?",
+      "UnitTalk_JPN": "これで安易に強くなろうという誤った欲望がいかに危険かお分かりいただけたでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 290,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "교훈으로 삼으시길 바랍니다. 무후훗!",
+      "UnitTalk_JPN": "教訓にしてくだされ。ムフフッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 291,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 292,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_65.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 293,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아이다는 기분 나쁜 웃음소리와 함께 모습을 감췄다…",
+      "UnitTalk_JPN": "アイーダは不気味な笑い声と共に、姿を消した…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 294,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 295,
+      "JumpAnchorInfo": "JUMPANCHOR_3_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ]
+    },
+    {
+      "Uid": 296,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 297,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 가장 값비싸 보이는 물약을 골랐다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と、一番高そうなポーションを選んだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 298,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DRINKING.wav",
+      "UnitTalk_KOR": "물약을 마시자…",
+      "UnitTalk_JPN": "ポーションを飲むと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 299,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 300,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 자신이 모르고 있었던 힘을 깨우친 것 같다고 한다!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、自分が知らなかった力が目覚めたようだ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 301,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "이런, 이런…",
+      "UnitTalk_JPN": "これはこれは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 302,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitTalk_KOR": "어쩌면 제 약이 잠자던 사자를 깨워 버린 걸지도 모르겠군요.",
+      "UnitTalk_JPN": "小生のポーションが、眠れる獅子を目覚めさせてしまったのかもしれませぬな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 303,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "무후훗!",
+      "UnitTalk_JPN": "ムフフッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 304,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 305,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_65.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 306,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아이다는 기분 나쁜 웃음소리와 함께 모습을 감췄다…",
+      "UnitTalk_JPN": "アイーダは不気味な笑い声と共に、姿を消した…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 307,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 308,
+      "JumpAnchorInfo": "JUMPANCHOR_3_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 309,
+      "WaitClick": true,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY"
+    },
+    {
+      "Uid": 310,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 물약을 집어 들었다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>がポーションを手に取った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 311,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DRINKING.wav",
+      "UnitTalk_KOR": "물약을 마시자…",
+      "UnitTalk_JPN": "ポーションを飲むと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 312,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 313,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 갑자기 지금까지의 삶에 회의가 느껴진다고 한다…",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は突然、これまでの人生に疑問を感じるそうだ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 314,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "이건…",
+      "UnitTalk_JPN": "これは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 315,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "강화제와 궁합이 안 맞았나 보군요.",
+      "UnitTalk_JPN": "強化剤との相性が悪かったようですな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 316,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "보면 알아!",
+          "JumpAnchorStringId_JPN": "見れば分かる！"
+        }
+      ]
+    },
+    {
+      "Uid": 317,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "이제 손쉽게 강해지려는 그릇된 욕망이 얼마나 위험한지 아셨겠죠?",
+      "UnitTalk_JPN": "これで安易に強くなろうという誤った欲望がいかに危険かお分かりいただけたでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 318,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "교훈으로 삼으시길 바랍니다. 무후훗!",
+      "UnitTalk_JPN": "教訓にしてくだされ。ムフフッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 319,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 320,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_65.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 321,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아이다는 기분 나쁜 웃음소리와 함께 모습을 감췄다…",
+      "UnitTalk_JPN": "アイーダは不気味な笑い声と共に、姿を消した…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 322,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 130,
+      "JumpAnchorInfo": "JUMPANCHOR_4",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "으음? 이건 강화제를 만들던 중 나온 실패작입니다만?",
+      "UnitTalk_JPN": "むむ？これは強化剤を作る過程でできた失敗作ですが？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 197,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "평범한 음료수에 불과합니다. 원한다면 마음껏 드시죠.",
+      "UnitTalk_JPN": "普通のジュースに過ぎませんぞ。お望みならどうぞお飲みくだされ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 199,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DRINKING.wav",
+      "UnitTalk_KOR": "한 모금 마시자, 입안에서 상큼하고 달달한 맛이 소용돌이친다!",
+      "UnitTalk_JPN": "一口飲むと、口の中に甘く爽やかな味が渦巻いた！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "만약 정식으로 팔게 된다면 매일 먹고 싶어질 정도다!",
+      "UnitTalk_JPN": "もし正式に販売されることになれば、毎日飲みたいほどだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이걸 파는 건 어때?",
+          "JumpAnchorStringId_JPN": "これを売るのはどう？"
+        }
+      ]
+    },
+    {
+      "Uid": 138,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "으음…! 연금술사의 긍지를 짓밟는 그 발언!",
+      "UnitTalk_JPN": "むむ…！錬金術師の誇りを踏みにじるその発言！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 139,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitTalk_KOR": "아무리 단장 공이라도 묵과할 수 없군요.",
+      "UnitTalk_JPN": "いくら団長殿だとしても看過できませぬぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 140,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "이 실추된 명예, 다음 기회에 반드시 만회하고 말겠습니다. ",
+      "UnitTalk_JPN": "この失墜した名誉、次の機会に必ず挽回してみせます。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY",
+      "UnitNameString": [
+        "SI_AIDA"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "무후훗……",
+      "UnitTalk_JPN": "ムフフ……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_EVEN_ALCHEMY"
+    },
+    {
+      "Uid": 142,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아이다는 기운 없는 웃음소리를 내며 터덜터덜 가 버렸다…",
+      "UnitTalk_JPN": "アイーダは力ない笑い声をあげながら、トボトボと立ち去っていった…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 323,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

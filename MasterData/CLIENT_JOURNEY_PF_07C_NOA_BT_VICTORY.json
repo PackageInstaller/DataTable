@@ -1,0 +1,182 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_07C_NOA_BT_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 19,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "과연, 여러분의 실력 잘 알았습니다.",
+      "UnitTalk_JPN": "なるほど、皆さんの実力がよく分かりました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "짧은 시간 동안 이만큼이나 성장하다니, 정말로 열심히 훈련하신 모양이네요.",
+      "UnitTalk_JPN": "短期間でここまで成長されるとは、一生懸命トレーニングに取り組まれたようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇다는 건…",
+          "JumpAnchorStringId_JPN": "ということは…"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "축하합니다. 합격이에요.",
+      "UnitTalk_JPN": "おめでとうございます。合格です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "해, 해냈다!",
+          "JumpAnchorStringId_JPN": "や、やったぞ！"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.6,
+      "BgCrashTime": 0.4,
+      "UnitTalk_KOR": "합격이라는 말에 안도감이 몰려들자 다리에 힘이 풀려 휘청인다.",
+      "UnitTalk_JPN": "合格という言葉に安堵すると、足の力が抜けてふらついてしまった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_09.wav",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "이대로 넘어진다고 생각한 찰나, 재빠르게 다가온 클레어가 팔을 잡아주었다.",
+      "UnitTalk_JPN": "このまま倒れてしまうと思った瞬間、素早く駆け寄ってきたクレアが腕を掴んでくれた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "괜찮으신가요?",
+      "UnitTalk_JPN": "大丈夫ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "설마 클레어가 잡아줄 줄은 몰랐기에, 얼떨떨한 마음으로 고개를 끄덕였다.",
+      "UnitTalk_JPN": "まさかクレアが支えてくれるとは思わず、ぼんやりしたまま頷いた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "고마워.",
+          "JumpAnchorStringId_JPN": "ありがとう。"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "고맙다는 말은 오히려 제가 드려야 할 말 같네요.",
+      "UnitTalk_JPN": "お礼を言うのは、むしろ私の方です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "캔들 스퀘어의 소중한 멤버를 옳은 방향으로 이끌어 주고 있으신 것 같아 감사할 따름입니다.",
+      "UnitTalk_JPN": "キャンドル・スクエアの大切なメンバーを、正しい方向へ導いてくださっているようで…感謝に堪えません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "에밀리를 단장님에게 맡긴 것은 옳은 선택이었던 것 같네요. 부디 앞으로도 그녀를 잘 이끌어 주세요.",
+      "UnitTalk_JPN": "エミリーを団長にお任せしたのは、正しい判断だったようです。どうかこれからもエミリーのことをお願いしますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "최선을 다할게.",
+          "JumpAnchorStringId_JPN": "精一杯やってみるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 앞으로도 두 분의 <color=#F7BE45>[여정]</color>이 계속되기를 기원하겠습니다.",
+      "UnitTalk_JPN": "それでは、お二人の<color=#F7BE45>「救援の旅」</color>がこれからも続くことを願っています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "이후로도 도움이 필요하시다면, 언제든지 캔들 스퀘어를 방문해 주시기를 바랍니다.",
+      "UnitTalk_JPN": "お困りの際は、いつでもキャンドル・スクエアへお越しくださいね。",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+﻿{
+  "$schema": "../../../../../DataSchema/EffectNode.jsonc",
+  "_Version": 4,
+  "Data": {
+    "EffectNodeStates": [
+      {
+        "EffectNodePrefabName": "VFX_BUFF_STUN_START",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_STUN.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_STUN",
+        "SoundEvents": []
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_SLEEP_START",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_SLEEP.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_SLEEP",
+        "SoundEvents": []
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_SILENCE_START",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_SILENCE.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_SILENCE",
+        "SoundEvents": []
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_PROVOKE_START",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_PROVOKE.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_PROVOKE",
+        "SoundEvents": []
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_HIDE",
+        "SoundEvents": []
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_IMMORTAL_START",
+        "SoundEvents": [
+        {
+          "EventType": "PLAY_ONCE", 
+          "FileName": "SFX_BATTLE_COMMON_BUFF_IMMORTAL_HIT.wav",
+          "SoundVolume": 1,
+          "StartFrame": 0,
+          "IsUnique": true
+        }
+      ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_IMMORTAL",
+        "SoundEvents": [
+        {
+          "EventType": "PLAY_LOOP", 
+          "FileName": "SFX_BATTLE_COMMON_BUFF_IMMORTAL_LOOP.wav",
+          "SoundVolume": 1,
+          "StartFrame": 1,
+          "IsUnique": true
+        }
+      ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_SHIELD",
+        "SoundEvents": [
+          {
+
+          "EventType": "PLAY_LOOP_MYTURN", 
+          "FileName": "SFX_BATTLE_COMMON_BUFF_SHIELD.wav",
+          "SoundVolume": 1,
+          "StartFrame": 0,
+          "IsUnique": true
+        }
+      ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_RESURRECTION",
+        "SoundEvents": [
+          {
+          "EventType": "PLAY_ONCE", 
+          "FileName": "SFX_BATTLE_COMMON_BUFF_RESURRECTION.wav",
+          "SoundVolume": 1,
+          "StartFrame": 0,
+          "IsUnique": true
+        }
+      ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_BURN",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_LOOP_MYTURN", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_BURN.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_BLEEDING",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_LOOP_MYTURN", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_BLEEDING_LOOP.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_POISON",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_LOOP_MYTURN", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_POISON_LOOP.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_FREEZING",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_LOOP_MYTURN", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_FREEZING.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_COSMIC",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_LOOP_MYTURN", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_COSMIC.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_NOVABURST_REBOUND",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_LOOP_MYTURN", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_NOVABURST_REBOUND.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_SHIELD_HIT",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_BARRIER.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_SHIELD_BREAK",
+        "SoundEvents": []
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_UNIT_MON_COHESION_FLOWER_BLACK",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_LOOP_MYTURN",
+            "FileName": "SFX_BATTLE_COMMON_BUFF_COHESION_FLOWER_LOOP.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_BURN_HIT",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_BURN_HIT.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_BLEEDING_HIT",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_BLEEDING_HIT.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_POISON_HIT",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_POISON_HIT.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_UNIT_MON_COHESION_FLOWER_BLACK_HIT",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE",
+            "FileName": "SFX_BATTLE_COMMON_BUFF_COHESION_FLOWER_HIT.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_FREEZING_HIT",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_FREEZING_HIT.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_COSMIC_HIT",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_COSMIC_HIT.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_HEAL_HIT",
+        "SoundEvents": [
+          {
+          "EventType": "PLAY_ONCE", 
+          "FileName": "SFX_BATTLE_COMMON_BUFF_HEAL_HIT.wav",
+          "SoundVolume": 1,
+          "StartFrame": 0,
+          "IsUnique": true
+        }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_BUFF_NOVA_BURST",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_LOOP_MYTURN", // 내 턴 일때만 루프
+            "FileName": "SFX_BATTLE_COMMON_NOVA_BURST_LOOP.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_NOVA_BURST_ACTION",
+        "SoundEvents": [
+          {
+          "EventType": "PLAY_ONCE", 
+          "FileName": "SFX_BATTLE_COMMON_BUFF_NOVA_BURST_ACTION.wav",
+          "SoundVolume": 1,
+          "StartFrame": 0,
+          "IsUnique": true
+        }
+      ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_NOVA_BURST_BREAK",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_BURST_BREAK.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_NOVA_BURST_END",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_BURST_END.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "BUFF_HYP_READY_01",
+          "SoundEvents": [
+          {
+            "EventType": "PLAY_LOOP_MYTURN", 
+            "FileName": "SFX_BATTLE_COMMON_HYPER_READY_LOOP.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_POTEN",
+          "SoundEvents": [
+          {
+            "EventType": "PLAY_LOOP_MYTURN", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_POTEN.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_TURN_CATCH",
+        "SoundEvents": []
+      },
+      {
+        "EffectNodePrefabName": "VFX_EMOTION_EMARK",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_CUTSCENE_EMOTION_EMARK.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_EMOTION_FUN",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_CUTSCENE_EMOTION_FUN.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_EMOTION_HEART",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_CUTSCENE_EMOTION_HEART.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_EMOTION_THINK",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_CUTSCENE_EMOTION_THINK.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_EMOTION_THINK2",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_CUTSCENE_EMOTION_THINK2.wav",
+            "SoundVolume": 1,
+            "StartFrame": 15,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_EMOTION_UPSET",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_CUTSCENE_EMOTION_UPSET.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_EMOTION_STRESS",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_CUTSCENE_EMOTION_STRESS.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_EMOTION_QMARK",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_CUTSCENE_EMOTION_QMARK.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {
+        "EffectNodePrefabName": "VFX_SUPER_ARMOR_RESTORE",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_SUPER_ARMOR_UP.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {//연쇄 피해 : 번개
+        "EffectNodePrefabName": "VFX_BUFF_THUNDERBOLT_HIT",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_THUNDERBOLT_HIT.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {//연쇄 피해 : 폭발
+        "EffectNodePrefabName": "VFX_BUFF_EXPLOSION_HIT",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_EXPLOSION_HIT.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {//연쇄 피해 : 칼날
+        "EffectNodePrefabName": "VFX_BUFF_BLADE_HIT",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_BLADE_HIT.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {//연쇄 피해 : 얼음폭발
+        "EffectNodePrefabName": "VFX_BUFF_ICE_EXPLOSION_HIT",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_ICE_EXPLOSION_HIT.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {//연쇄 피해 : 공허초월자
+        "EffectNodePrefabName": "VFX_BUFF_EXCEED_CHAIN_BLUE_HIT",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_EXCEED_EYES_HIT.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {//연쇄 피해 : 공허열반자
+        "EffectNodePrefabName": "VFX_BUFF_EXCEED_CHAIN_RED_HIT",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_EXCEED_UNSEAL_HIT.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      },
+      {//연쇄 피해 : 엘브스의 뇌격(전략전 서든데스용)
+        "EffectNodePrefabName": "VFX_BUFF_SUDDENDEATH_THUNDER_HIT",
+        "SoundEvents": [
+          {
+            "EventType": "PLAY_ONCE", 
+            "FileName": "SFX_BATTLE_COMMON_BUFF_SUDDENDEATH_THUNDER_HIT.wav",
+            "SoundVolume": 1,
+            "StartFrame": 0,
+            "IsUnique": true
+          }
+        ]
+      }
+    ]    
+  }
+}

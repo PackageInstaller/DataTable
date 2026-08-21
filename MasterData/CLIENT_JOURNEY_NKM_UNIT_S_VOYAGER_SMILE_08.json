@@ -1,0 +1,564 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_08",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_SMILE_08",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 실과 바늘, 단추를 들고 한참이나 끙끙거렸다.",
+      "UnitTalk_JPN": "私は針と糸、ボタンを持って、かなりの時間苦戦していた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여길 이렇게 꿰매고 단추를 달면…",
+      "UnitTalk_JPN": "ここをこうして縫って、ボタンを付ければ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "스마일 캣 2호! 제작 완료!",
+          "JumpAnchorStringId_JPN": "スマイルキャット2号！完成！"
+        }
+      ]
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "대단해…",
+      "UnitTalk_JPN": "すごい…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "정확한 치수가 적힌 설계도도 없이 대충 만들었는데도 똑같은 모양이라니…",
+      "UnitTalk_JPN": "正確な指数が書かれた設計図があるわけでもないのに、完全に同じ形を再現…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장의 성격적 특징 4호로 <color=#F7BE45>균일한 저점 유지</color>를 추가.",
+      "UnitTalk_JPN": "団長の性格的特徴4号に、<color=#F7BE45>安定した低水準維持</color>を追加。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "저점이라니… 너무하네.",
+      "UnitTalk_JPN": "低水準って…ひどい。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 정도면 아마추어의 작품치고는 상위권이라고 생각한다.",
+      "UnitTalk_JPN": "これぐらいなら、素人の作品にしてはかなりいい方だと思うんだけど。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무튼 스마일 캣 1호의 수선도 마쳤고 2호의 제작도 끝났다.",
+      "UnitTalk_JPN": "とにかく、スマイルキャット1号のお直しも終わったし、2号も完成したことだし。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이젠 네 차례야.",
+          "JumpAnchorStringId_JPN": "次は、スマイルの番だね。"
+        }
+      ]
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "응!",
+      "UnitTalk_JPN": "うん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "자율동작 2호 시스템은 이미 완성.",
+      "UnitTalk_JPN": "自律動作2号のシステムは既に完成。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "부착은 5분이면 충분.",
+      "UnitTalk_JPN": "装着は、5分あれば十分。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ITEM_OUT.wav",
+      "UnitTalk_KOR": "스마일은 내가 만든 헝겊인형 안에 복잡한 기계장치를 집어넣었다.",
+      "UnitTalk_JPN": "スマイルは私が作ったぬいぐるみの中に、複雑な機械装置を詰め込んだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…준비됐지?",
+          "JumpAnchorStringId_JPN": "…準備はいい？"
+        }
+      ]
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "응.",
+      "UnitTalk_JPN": "うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일은 조심스럽게 스마일 캣 1호와 2호의 스위치를 넣었다.",
+      "UnitTalk_JPN": "スマイルは、スマイルキャット1号と2号のスイッチをそっと入れた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MACHINE_06.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitNameString": [
+        "SI_CATSMILE_ONE"
+      ],
+      "UnitTalk_KOR": "…끼릭끼릭…",
+      "UnitTalk_JPN": "…ガガガガ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ANIMAL_CAT.wav",
+      "UnitNameString": [
+        "SI_CATSMILE_ONE"
+      ],
+      "UnitTalk_KOR": "…야옹?",
+      "UnitTalk_JPN": "…ニャーン？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일 캣 1호는 지난번과 마찬가지로 주변을 살피며 긴장한 모습을 보였다.",
+      "UnitTalk_JPN": "スマイルキャット1号は以前と同じように、辺りを見渡しながら警戒しているようだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 무기를 꺼내는 대신 옆에 있는 동족, 스마일 캣 2호기를 발견했다.",
+      "UnitTalk_JPN": "でも武器を取り出す代わりに、横にいる同族・スマイルキャット2号を発見した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ANIMAL_CAT.wav",
+      "UnitNameString": [
+        "SI_CATSMILE_ONE"
+      ],
+      "UnitTalk_KOR": "야옹?",
+      "UnitTalk_JPN": "ニャーン？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ANIMAL_CAT.wav",
+      "UnitNameString": [
+        "SI_CATSMILE_TWO"
+      ],
+      "UnitTalk_KOR": "야옹야옹!",
+      "UnitTalk_JPN": "ニャンニャーン！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ANIMAL_CAT.wav",
+      "UnitNameString": [
+        "SI_CATSMILE_ONE"
+      ],
+      "UnitTalk_KOR": "끼이잉…?!",
+      "UnitTalk_JPN": "ウィーン…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "둘은 잠시 서로를 바라보며 무언가를 탐색하는 듯하더니…",
+      "UnitTalk_JPN": "お互いを見つめ、何かを探っているようだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "EndBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "UnitTalk_KOR": "천천히 뺨을 부비며 몸을 떨었다.",
+      "UnitTalk_JPN": "そしてゆっくりと頬を擦り合わせ、身体を震わせた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 모습은 누가 보아도…",
+      "UnitTalk_JPN": "その様子は誰が見ても…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "즐거운 것 같지?",
+          "JumpAnchorStringId_JPN": "嬉しそうだね？"
+        }
+      ]
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SMILE"
+      ],
+      "UnitTalk_KOR": "…응. 그런 것 같아.",
+      "UnitTalk_JPN": "…うん。そう思う。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "대답을 하려던 나는 스마일을 보고 깜짝 놀랐다.",
+      "UnitTalk_JPN": "さらに話を続けようとした私は、スマイルを見て驚いた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어… 어어어?!",
+          "JumpAnchorStringId_JPN": "え…えぇぇ！？"
+        }
+      ]
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "너, 웃고 있잖아?!",
+          "JumpAnchorStringId_JPN": "スマイル、笑ってるけど！？"
+        }
+      ]
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "단장…?",
+      "UnitTalk_JPN": "団長…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일은 자신도 놀란 듯 입 주위를 매만졌다.",
+      "UnitTalk_JPN": "スマイル自身も驚いたのか、口元にそっと触れた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스치듯 지나간 미소는 어느새 흔적도 없이 사라졌다.",
+      "UnitTalk_JPN": "つかの間の笑顔は、気づけば跡形もなくなっていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 나는 분명 보았다.",
+      "UnitTalk_JPN": "でも、私ははっきりと見た。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일은 웃고 있었다.",
+      "UnitTalk_JPN": "スマイルは、笑っていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "역시… 소중한 사람이 필요한 거구나.",
+      "UnitTalk_JPN": "やっぱり…大切な人が必要なんだね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "웃음이란 건.",
+      "UnitTalk_JPN": "笑顔には。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일은 평소의 무표정한 모습으로 돌아왔다.",
+      "UnitTalk_JPN": "スマイルは、いつも通りの無表情になった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 나는 느낄 수 있었다. 스마일은 감정이 없는 것이 아니라는 걸.",
+      "UnitTalk_JPN": "でも、私には感じられた。スマイルにも感情があるということを。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "분명 지금, 작지만 따뜻한 행복이 스마일의 가슴안에 피어오르고 있을 것이다.",
+      "UnitTalk_JPN": "きっと今…小さいけど温かい幸せが、スマイルの胸の中にじんわりと広がっているはず。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이젠 그것을 밖으로 꺼내기만 하면 된다.",
+      "UnitTalk_JPN": "あとは、それを外に出すだけ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "찾으러 가자.",
+          "JumpAnchorStringId_JPN": "探しに行こう。"
+        }
+      ]
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "웃는 법을 배워서 언니를 찾아가는 것이 아니다.",
+      "UnitTalk_JPN": "笑い方を習得して、お姉さんを探しに行くんじゃない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "언니를 찾게 되면 웃을 수 있게 될 것이다.",
+      "UnitTalk_JPN": "お姉さんを見つけ出した時、きっと笑えるはず。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 132,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그것이 소중한 사람과 함께하는 행복이니까.",
+      "UnitTalk_JPN": "その瞬間こそ、大切な人と共にする幸せだから。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여정이 끝나면… 함께.",
+          "JumpAnchorStringId_JPN": "救援の旅が終わったら…一緒に。"
+        }
+      ]
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "응.",
+      "UnitTalk_JPN": "うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 138,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 137,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 136,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SMILE"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "정말… 특별한 실험이었어.",
+      "UnitTalk_JPN": "本当に…特別な実験になった。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 141,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 140,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SPECIAL",
+      "BgChangeTime": 1.0
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_SAVIOR.txt",
+    "UseRespawnFocus": false,
+    "UnitHudHeight": 3.8,
+    "HyperMoveModelRootZ": -0.3,
+    "UiStates": [],
+    "BuffEffectPosition": {
+      "HEAD": 4,
+      "BODY": 2
+    },
+    "UnitBuffEffectScale": 2.0,
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_VOICE_07.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 10,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_GROUND.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "UseInternalCamera": true,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,          
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          //"FormationEnemy": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 45,
+            "EventEndFrame": 55,
+            "EventMoveTarget": "NEMT_TARGET",
+            //"EventMoveEaseType": "NEMET_LINEAR"
+            //"OffsetFront": 1.0
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 97,
+            "EventEndFrame": 110,
+            "EventMoveTarget": "NEMT_SELF",
+            "EventMoveEaseType": "NEMET_LINEAR"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 53,
+            "ReActType": "NRT_DAMAGE_A",
+            // "StopTimeAtk": 0.1,
+            // "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.5,
+            "CameraCrashTime": 0.4,
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 3,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_JUMP_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 16,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_STEP.wav"
+            ]
+          },
+          {
+            "EventFrame": 33,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_WHOOSH_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 37,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_VOICE_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 49,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_HIT.wav"
+            ]
+          },
+          {
+            "EventFrame": 78,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_ROCK.wav"
+            ]
+          },
+          {
+            "EventFrame": 99,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_STEP_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,          
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "FormationEnemy": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 30,
+            "EventEndFrame": 45,
+            "EventMoveTarget": "NEMT_CENTER_FRONT",
+            "OffsetFront": -1.5
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 75,
+            "EventEndFrame": 95,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 43,
+            "ReActType": "NRT_DAMAGE_B",
+            "EffectData": {
+              "EffectName": ""              
+            },
+            "HitEffectOffsetPos": {
+            },
+            "HitEffectOffsetRotate": {
+            },
+            // "StopTimeAtk": 0.3,
+            // "StopTimeDef": 0.3,
+            // "CameraCrashGap": 0.3,
+            // "CameraCrashTime": 0.5,
+            "DamageRatio": 0.35
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 67,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectHeight": "BVH_BODY"            
+            },
+            "HitEffectOffsetPos": {
+            },
+            "HitEffectOffsetRotate": {
+            },
+            // "StopTimeAtk": 0.2,
+            // "StopTimeDef": 0.2,
+            // "CameraCrashGap": 0.3,
+            // "CameraCrashTime": 0.3,
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_ICE_IMPACT.wav"
+            ]
+          },
+          {
+            "EventFrame": 8,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_VOICE.wav"
+            ]
+          },
+          {
+            "EventFrame": 23,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_JUMP.wav"
+            ]
+          },
+          {
+            "EventFrame": 38,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_ICE_IMPACT_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 61,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_ICE_IMPACT_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 76,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 93,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_GROUND_02.wav"
+            ]
+          }        
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "PlaySkillCutIn": false,
+        "BattleMapSceneName": "",
+        "StartUnitShow": {
+          "ShowOffEnemy": true,
+          "ShowOffMyTeam": true          
+        },
+        "ShowEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 180,
+            "ShowOnEnemy": true
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 200,
+            "ReActType": "NRT_DAMAGE_A",
+            "SlowSpeedDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_WENDIGO_SNOW_WHITE_HIT.prefab",
+              "EffectHeight": "BVH_BODY"            
+            },
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_WHOOSH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 17,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_ICE_IMPACT_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 37,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_VOICE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 63,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_CHEST_HIT.wav"
+            ]
+          },
+          {
+            "EventFrame": 95,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_HOWLING_WIND.wav"
+            ]
+          },
+          {
+            "EventFrame": 142,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_VOICE_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 181,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_VOICE_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 197,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_SLASH.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 17,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_GROUND_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 22,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WENDIGO_SNOW_WHITE_VOICE_02.wav"
+            ]
+          }
+        ]
+      },
+    ]
+  }
+}

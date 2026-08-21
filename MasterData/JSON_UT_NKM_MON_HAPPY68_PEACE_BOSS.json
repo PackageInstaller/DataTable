@@ -1,0 +1,532 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_SAVIOR.txt",
+    "UseRespawnFocus": false,
+    "UseJourneyStartAnim": true,
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 10,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_ARMOR_10.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_FALL_DOWN_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_04.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START_FOCUS",
+        "StartOffsetZ": -2.5,
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 19,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_JINGLE.wav"
+            ]
+          },
+          {
+            "EventFrame": 42,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_JINGLE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 67,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 104,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_SPELL_LIGHT_04.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_ATTACK_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_04.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 64,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_S_VOYAGER_SMILE_EXPLOSION.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_ATK_01.wav"
+            ]
+          },
+          {
+            "EventFrame": 21,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 49,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_ATK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 66,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_ATK_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 93,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_ATK_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 108,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_ATK_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 116,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_ATK_07.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_HAPPY68_BT_SKILL1_START.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_HAPPY68_BT_SKILL1_START.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_HAPPY68_BT_SKILL1_START.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_HAPPY68_BT_SKILL1_START.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "StartUnitShow": {
+          "ShowOffMyTeam": true
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 65,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.03,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_HAPPY68_SPECIAL_HIT.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 6,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_SPECIAL_ATK_01.wav"
+            ]
+          },
+          {
+            "EventFrame": 26,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_SPECIAL_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_SPECIAL_ATK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 62,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_SPECIAL_ATK_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 62,
+            "listSoundName": [
+              "SFX_BT_UNIT_S_VOYAGER_SMILE_SPECIAL_ATK.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_HAPPY68_BT_SKILL2_START.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_HAPPY68_BT_SKILL2_START.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_HAPPY68_BT_SKILL2_START.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_HAPPY68_BT_SKILL2_START.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "PlaySkillCutIn": false,
+        "SeeTarget": false,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "FormationMyTeam": "",
+          "FormationEnemy": "SFT_CENTER_TARGET_ONLY_LONG"
+        },
+        "EndFadeOutWhite": true,
+        "ShowEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 222,
+            "ShowOffTarget": true,
+            "ShowOffEnemy": true,
+            "ShowUnitHudOnTarget": true
+          }
+        ],
+        "MoveEvents": [
+          {
+            "IsInstant": true,
+            "UseAnimTime": true,
+            "EventFrame": 1,
+            "EventMoveTarget": "NEMT_CENTER"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 105,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.02,
+            "CameraCrashTime": 0.5,
+            "ReAttackCount": 14,
+            "ReAttackGap": 0.1,
+            "DamageRatio": 0.015,
+            "EffectData": {
+              "EffectName": "VFX_HIT_EMPTY.prefab",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 230,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.01,
+            "CameraCrashTime": 1
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 7,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_HYPER_ATK_01.wav"
+            ]
+          },
+          {
+            "EventFrame": 24,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_HYPER_ATK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_HYPER_ATK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 100,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_HYPER_ATK_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 157,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_HYPER_ATK_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 177,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_HYPER_ATK_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 227,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_HAPPY68_PEACE_BLACK_HYPER_ATK_07.wav"
+            ]
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_HAPPY68_BT_SKILL3_START.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_HAPPY68_BT_SKILL3_START.wav"
+              }
+            ]
+          },
+          {
+            "Speed2x": true,
+            "Repeatable": false,
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_HAPPY68_BT_SKILL3_START.wav"
+              }
+            ],
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_HAPPY68_BT_SKILL3_START.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_NOVA_BURST",
+        "VfxNovaBurstFrame": 52,
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_NOVA_BURST_ACTIVE.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_VOYAGER_SMILE_NOVA_BURST_READY.wav"
+            ]
+          },
+          {
+            "EventFrame": 45,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_NOVA_BURST_IMPACT.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "StateType": "NUST_DYING",
+        "AnimName": "BATTLE_DIE",
+        "AnimLoop": false,
+        "SeeTarget": false,
+        "DyingDissolveStartTime": 1,
+        "DyingStateTimeChangeStateTime": 4,
+        "DyingStateTimeChangeState": "USN_DIE",
+        "SoundEvents": [
+          {
+            "EventFrame": 9,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_FALL_DOWN_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 37,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_WIN",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_WHOOSH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 16,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BOING_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 21,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BOING_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_WHOOSH_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 50,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_WHOOSH_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CLOTH_WHOOSH_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 70,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WHOOSH_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 90,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CAT_01.wav"
+            ]
+          },
+          {
+            "EventFrame": 90,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_JINGLE_11.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_LOSE",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_ARMOR_10.wav"
+            ]
+          },
+          {
+            "EventFrame": 30,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_FALL_DOWN_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 77,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_ANIMAL_CAT.wav"
+            ]
+          },
+          {
+            "EventFrame": 98,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_CARTOON.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

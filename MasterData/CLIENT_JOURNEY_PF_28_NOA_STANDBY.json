@@ -1,0 +1,319 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_28_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[경쟁 평가전]</color>을 훌륭하게 통과하신 것 축하드립니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「対人試験」</color>を見事に突破されましたね。おめでとうございます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "사실 이번 평가전은 상부에서 논란이 많았어요.",
+      "UnitTalk_JPN": "実は今回の試験に関して、上層部でも色んな意見が出ていたんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "이제까지의 선례와 비교해 봤을 때 <color=#F7BE45>[알리시아]</color>님의 인선이 지나친 것 아닌가, 라고요.",
+      "UnitTalk_JPN": "これまでの事例と比較して、<color=#F7BE45>「アリシア」</color>様の人選はやり過ぎなのではないか、というものでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "결과적으로는 괜한 걱정이었네요. 단장님과 여정 단원이 당당하게 승리했으니까요.",
+      "UnitTalk_JPN": "ですが、結果的には余計な心配でしたね。堂々と勝利されたのですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "예상을 한참 상회하는 결과라, 의문을 가진 분들도 많지만…",
+      "UnitTalk_JPN": "予想を大きく上回る結果だったため、疑問を持つ方も多いですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "전 알고 있어요. 이 결과는 단장님과 단원분의 노력이 만들어낸 것이라는 걸.",
+      "UnitTalk_JPN": "私は分かっていますよ。この結果は、努力が生み出したものだということをです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "저 역시 연락관으로서 그동안의 자세한 보고서를 작성하고 있어요.",
+      "UnitTalk_JPN": "私も連絡官として、これまでの報告書を作成しているんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "이 보고서가 올라가면 <color=#F7BE45>[폴라리스]</color>의 높으신 분들도 단장님의 노고를 조금은 알게 되겠죠.",
+      "UnitTalk_JPN": "この報告書が上がれば、<color=#F7BE45>「<r=ポラリス>観測士評議会</r>」</color>の上層部の方々も、団長の苦労を少しは理解されるでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "고마워, 응원해 줘서.",
+          "JumpAnchorStringId_JPN": "ありがとう、応援してくれて。"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후후, 천만에요.",
+      "UnitTalk_JPN": "ふふっ、とんでもないです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "단장님과 단원분에 대한 평가는 곧 저에 대한 평가로도 이어지거든요.",
+      "UnitTalk_JPN": "団長と団員の方々への評価は、私の評価にもつながりますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "이런 이례적인 실적을 행운으로 폄하하게 놔둘 수는 없죠!",
+      "UnitTalk_JPN": "このような異例の実績を、運で片付けさせる訳にはいきません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "한결같아서 좋네.",
+          "JumpAnchorStringId_JPN": "リサはブレなくていいな。"
+        }
+      ]
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "감사합니다.",
+      "UnitTalk_JPN": "ありがとうございます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그리고 <color=#F7BE45>[경쟁 평가전]</color>을 통과하신 결과, 새로운 동료를 영입할 기회가 주어졌어요.",
+      "UnitTalk_JPN": "<color=#F7BE45>「対人試験」</color>を突破された結果、新しい仲間を迎え入れる機会が与えられました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "지금쯤이면 <color=#F7BE45>[폴라리스]</color>의 추천을 받은 분이 로비에 도착하셨을 거예요.",
+      "UnitTalk_JPN": "そろそろ<color=#F7BE45>「<r=ポラリス>観測士評議会</r>」</color>の推薦を受けた方が、ロビーに到着しているはずですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "기다리게 하지 말고 바로 만나러 가시죠!",
+      "UnitTalk_JPN": "さぁ、すぐに向かいましょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.25,
+      "UnitStrId": "CURRENT_PARENT2",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리사의 안내를 받아 약속 장소에 도착하자, 기다리고 있던 구원자가 인사를 건넸다.",
+      "UnitTalk_JPN": "リサに案内され約束の場所に着くと、救援者に挨拶された。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_PARENT2",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "[PARENT_CHARACTER2_EVENT_FIXED_MEMORY_02_03]",
+      "UnitTalk_JPN": "[PARENT_CHARACTER2_EVENT_FIXED_MEMORY_02_03]",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_PARENT2",
+      "UnitTalk_KOR": "[PARENT_CHARACTER2_EVENT_FIXED_MEMORY_02_04]",
+      "UnitTalk_JPN": "[PARENT_CHARACTER2_EVENT_FIXED_MEMORY_02_04]",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_PARENT2",
+      "UnitTalk_KOR": "[PARENT_CHARACTER2_EVENT_FIXED_MEMORY_02_05]",
+      "UnitTalk_JPN": "[PARENT_CHARACTER2_EVENT_FIXED_MEMORY_02_05]",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_PARENT2",
+      "UnitTalk_KOR": "[PARENT_CHARACTER2_EVENT_FIXED_MEMORY_02_06]",
+      "UnitTalk_JPN": "[PARENT_CHARACTER2_EVENT_FIXED_MEMORY_02_06]",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_28_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[PARENT_CHARACTER2]</color>(이)가 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 동료로 합류하게 되었다!",
+      "UnitTalk_JPN": "<color=#F7BE45>[PARENT_CHARACTER2]</color>が<color=#F7BE45>[CHARACTER_NAME]</color>の旅に仲間として合流することになった！",
+      "TalkTime": 0.03
+    }
+  ]
+}

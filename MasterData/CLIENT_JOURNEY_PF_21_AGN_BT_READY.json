@@ -1,0 +1,812 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_21_AGN_BT_READY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_AGANON_RUIN.png",
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "그동안 모은 정보대로라면, 저희가 찾던 고대종은 이 부근에 있을 거예요.",
+      "UnitTalk_JPN": "これまで集めた情報によると、私たちが探している古代種はこの辺りにいるはずです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하지만… 아무리 생각해도 이상하네요.",
+      "UnitTalk_JPN": "でも…やはりおかしいですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "여기는 옛날부터 심층부로 가는 탐사꾼들이 사용하던 길이거든요.",
+      "UnitTalk_JPN": "ここは昔から、深層部へ向かう発掘屋が使っていた道なんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "동면 중인 고대종이 있었다면 훨씬 예전에 발견됐을 텐데…",
+      "UnitTalk_JPN": "冬眠中の古代種がいたとしたら、ずっと前に発見されているはずなのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐, 저기 뭔가가 있어.",
+          "JumpAnchorStringId_JPN": "リサ、あそこに何かいる。"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitPos": "POS2",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "족장! 오늘도 많은 유물 발견했다!",
+      "UnitTalk_JPN": "族長！今日も遺物をたくさん発見した！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitTalk_KOR": "족장의 말대로다! 우린 이제 부자다!",
+      "UnitTalk_JPN": "族長の言う通りだ！オレらはこれで金持ちだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "크르륵… 이제야 내 뜻을 깨달았나?",
+      "UnitTalk_JPN": "グルルッ…ようやく我の意図を理解したか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitTalk_KOR": "그렇다, 족장!",
+      "UnitTalk_JPN": "そうだ、族長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitTalk_KOR": "별부스러기 요새에서 쫓겨났을 때, 많은 전사들이 의심했다.",
+      "UnitTalk_JPN": "星屑の要塞から追い出された時、戦士たちは疑った！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitTalk_KOR": "인간 놈들을 피해 도망친 미궁 깊은 곳에서 고대종을 찾았을 때도…",
+      "UnitTalk_JPN": "人間どもから逃げて、迷宮の奥深くで古代種を見つけた時も…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitTalk_KOR": "고대종을 상층부로 유인해서 인간 놈들을 막고 미궁의 유물을 독차지하자는 계획을 말했을 때도…",
+      "UnitTalk_JPN": "古代種を上の方に誘い出して、人間どもを防ぎ、迷宮の遺物をひとり占めするって計画を話した時も…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitTalk_KOR": "족장이 드디어 정신병에 걸렸다고 주장하는 부족원들이 많았다.",
+      "UnitTalk_JPN": "部族員は言った！ついに族長の頭がおかしくなったって！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "허나 나 키리야스는 언제나 족장을 믿고 있었다!",
+      "UnitTalk_JPN": "でもオレ、キリヤスは常に族長を信じていた！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "CameraOffset": "ONE_1",
+      "UnitTalk_KOR": "그렇다.",
+      "UnitTalk_JPN": "そうだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "이제 우리 부족에게 별의 심장 같은 하찮은 물건은 필요 없다.",
+      "UnitTalk_JPN": "今や我らに、星の心臓のようなつまらん物は必要ない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "이 미궁의 유물을 독점하면 우린 최고의 약탈자 부족이 될 것이다!",
+      "UnitTalk_JPN": "この迷宮の遺物を独占すれば、我らは最高のレイダー部族となる！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "인간들은 유물을 얻기 위해 우리에게 온수를 공급하는 신세가 되겠지.",
+      "UnitTalk_JPN": "人間どもは遺物を手にするために、我らに温水を供給する立場になるのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "이것이 바로 경제의 순환이라는 것이다!",
+      "UnitTalk_JPN": "これぞ、経済の循環だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "CameraOffset": "ONE_3",
+      "UnitPos": "POS3",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "경제의… 뭐?",
+      "UnitTalk_JPN": "経済の…何だ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitTalk_KOR": "어려운 말은 모르겠지만 아무튼 족장은 똑똑하다.",
+      "UnitTalk_JPN": "難しい言葉は分からない、でもとにかく族長はエラい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_GREEN",
+      "UnitNameString": [
+        "SI_RAIDER_INFERIOR"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "족장! 보고한다!",
+      "UnitTalk_JPN": "族長！報告だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_GREEN",
+      "UnitNameString": [
+        "SI_RAIDER_INFERIOR"
+      ],
+      "UnitTalk_KOR": "고대종이 또 배가 고프다고 한다! 어떻게 해야 하나?",
+      "UnitTalk_JPN": "古代種が、またお腹が空かせている！どうすればいい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "CameraOffset": "ONE_1",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "그런 하찮은 일까지 일일이 보고하지 마라.",
+      "UnitTalk_JPN": "些細なことまでいちいち報告するな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "그런 것은 <color=#F7BE45>[실무진]</color>이 알아서 하는 거다!",
+      "UnitTalk_JPN": "そんなことは、<color=#F7BE45>「実務担当者」</color>が勝手にやるもんだろう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_GREEN",
+      "UnitNameString": [
+        "SI_RAIDER_INFERIOR"
+      ],
+      "CameraOffset": "TWIN_3",
+      "UnitPos": "POS4",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "실무진…? 그게 뭐냐?",
+      "UnitTalk_JPN": "じつむ…？って何だ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.1,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "멍청한 놈!",
+      "UnitTalk_JPN": "バカ物！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitTalk_KOR": "족장께서는 비리비리한 녀석 두어 명을 골라 먹이로 던져주라고 한 거다!",
+      "UnitTalk_JPN": "族長は、ひょろひょろした奴を二人選んで、餌にしろって言ったんだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_GREEN",
+      "UnitNameString": [
+        "SI_RAIDER_INFERIOR"
+      ],
+      "UnitTalk_KOR": "아! 그런 뜻이었나?",
+      "UnitTalk_JPN": "あぁ！そういう意味だったのか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_GREEN",
+      "UnitNameString": [
+        "SI_RAIDER_INFERIOR"
+      ],
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "잘 알아들었다! 당장 실행하겠다!",
+      "UnitTalk_JPN": "分かった！すぐに実行する！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "저거… 지난번 토벌전에서 도망치도록 놔둔 그 녀석들 아닌가요?",
+      "UnitTalk_JPN": "あれは…こないだの討伐試験で、逃げしてあげた連中ではないですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그때 뭐라고 하셨더라…?",
+      "UnitTalk_JPN": "あの時、何とおっしゃっていましたっけ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "비록 적이었지만 감동적인 모습이 어쩌고 하셨던 것 같은데…",
+      "UnitTalk_JPN": "たとえ敵でも感動的だとか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "아무래도 그 감동적인 장면이 지금까지 이어지고 있는 것 같네요.",
+      "UnitTalk_JPN": "どうやら、その感動的な物語が今も続いているようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "고개만 끄덕이고 계실 때가 아닙니다!",
+      "UnitTalk_JPN": "うなずいている場合じゃないでしょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "당장 저 녀석들 엉덩이를 걷어차서 쫓아내야 해요!",
+      "UnitTalk_JPN": "今すぐあの連中を蹴り飛ばして、追い出さなきゃ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "아가논 시 정부가 이 사실을 알고 NOA에 배상 요청이라도 하게 되면 시말서 정도로 끝날 일이 아니라고요!",
+      "UnitTalk_JPN": "アガノン市政がこの事を知って、NOAに賠償請求でもしたら…始末書だけでは済みませんよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "단장님… 알고 계시죠? 제 남은 할부랑 대출금…",
+      "UnitTalk_JPN": "団長…ご存知ですよね？私のローンのこと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "제 남은 인생은 이제 단장님에게 달렸어요.",
+      "UnitTalk_JPN": "私の人生は今、団長にかかっているんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그러니까… 힘내세요!",
+      "UnitTalk_JPN": "だから…頑張ってください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 각오를 다지며 적을 바라보았다.",
+      "UnitTalk_JPN": "私は覚悟を決め、敵を見据えた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "미궁의 질서를 위해서, 아가논의 평화를 위해서…",
+      "UnitTalk_JPN": "迷宮の秩序のため、アガノンの平和のため…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "반드시 승리해야 한다.",
+      "UnitTalk_JPN": "必ず勝たないと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_21_AGN_BT_READY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "겸사겸사 우리 연락관의 인생도 구하고 말이다.",
+      "UnitTalk_JPN": "ついでに、連絡官の人生も救うこととしよう。",
+      "TalkTime": 0.03
+    }
+  ]
+}

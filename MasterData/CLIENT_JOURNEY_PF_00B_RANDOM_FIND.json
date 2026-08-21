@@ -1,0 +1,567 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00B_RANDOM_FIND",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 10,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰 게시판을 확인하던 중에, 오래된 상자를 찾고 있다는 공고를 발견했다.",
+      "UnitTalk_JPN": "依頼掲示板を確認していたところ、古い箱を探しているという依頼を見かけた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "지난번 훈련장에서 찾은 <color=#F7BE45>[수상한 상자]</color>가 생각나서 의뢰인을 찾아갔는데….",
+      "UnitTalk_JPN": "先日、訓練場で見つけた<color=#F7BE45>「怪しい箱」</color>のことを思い出し、依頼主を訪ねてみると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_MONOLITH_TEMPLE.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 58,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 90,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitPos": "POS8",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "오오, 이 테두리의 마감 양식과 시건장치는….",
+      "UnitTalk_JPN": "おお、この縁取りの仕上げ様式と施錠装置は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "틀림없습니다. 저희 교단에서 만든 물건이군요.",
+      "UnitTalk_JPN": "間違いありません。当教団で作られた物です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST",
+      "UnitPos": "POS7",
+      "EmotionEffect": "QMARK"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런 물건이 왜 훈련장에 묻혀 있었던 거지?",
+          "JumpAnchorStringId_JPN": "どうしてそんな物が訓練場に？"
+        }
+      ]
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "흐음… 기록에 따르면…",
+      "UnitTalk_JPN": "ふむ…記録によりますと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "오래전, NOA가 공허체의 대대적인 공격을 받을 때 묻어 뒀다고 합니다.",
+      "UnitTalk_JPN": "昔、NOAが<r=ヴォイドボーン>空虚体</r>の大規模な攻撃を受けた際に埋められたそうです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "당시 관할 사제께서 남기셨던 기록이 최근에 발견되어, 수소문 중이었죠.",
+      "UnitTalk_JPN": "当時の司祭様が残された記録が最近発見され、行方を探していたところでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 뭐가 들어 있는지는 모르는 건가?",
+          "JumpAnchorStringId_JPN": "ということは、中身は分からないのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후대를 위해 남긴다는 말 이외에 다른 건 적혀 있지 않았습니다.",
+      "UnitTalk_JPN": "後世のために遺すという言葉以外には、何も記されていませんでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "다행히, 지부의 지하실에서 시건장치에 맞는 열쇠를 찾았습니다만…",
+      "UnitTalk_JPN": "幸い、支部の地下室で施錠装置に合う鍵は見つけましたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "어떻습니까? 이 자리에서 열어 보시는 건?",
+      "UnitTalk_JPN": "いかがですか？この場で開けてみられますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "우리가 결정하면 되는 건가?",
+          "JumpAnchorStringId_JPN": "私たちが決めていいものなのか？"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "교단에서 잃어버린 물건인데도?",
+          "JumpAnchorStringId_JPN": "教団の失くし物なのに？"
+        }
+      ]
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "허허, 경위야 어떻든 지금은 두 분께서 찾으신 물건이니까요.",
+      "UnitTalk_JPN": "ハハッ。経緯はどうであれ、お二人が見つけた物ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "이렇게 인연이 닿지 않았더라면 다시 볼 수 없었을 겁니다.",
+      "UnitTalk_JPN": "こうして縁が繋がらなければ、二度と見つからなかったでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "그러니 어떻게 처분할지도 두 분께 달린 것이죠.",
+      "UnitTalk_JPN": "ですから、どのように処分されるかもあなた方次第です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "사제의 말을 들으니 고민이 된다.",
+      "UnitTalk_JPN": "そう言われると悩むな…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇다면…",
+      "UnitTalk_JPN": "だったら…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어서 열어보자.",
+          "JumpAnchorStringId_JPN": "よし、今開けてみよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "다음에 열어보자.",
+          "JumpAnchorStringId_JPN": "後々開けてみよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 92,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 73,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_04.wav",
+      "UnitTalk_KOR": "사제에게 건네받은 열쇠로 자물쇠를 열었다.",
+      "UnitTalk_JPN": "司祭から受け取った鍵で錠を開けた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "USN_UI_REST",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 93,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "호오… 이것은…",
+      "UnitTalk_JPN": "ほう…これは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "책이로군요. 밀폐되어 있어서인지 보존 상태가 좋습니다.",
+      "UnitTalk_JPN": "本ですね。密封されていたおかげか、保存状態も良好です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "내용은… 구원자분들께 도움이 될 것 같군요.",
+      "UnitTalk_JPN": "内容は…救援者の方のお役に立ちそうですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "한 번 읽어 보시겠습니까?",
+      "UnitTalk_JPN": "一度お読みになりますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 82,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST",
+      "EmotionEffect": "THINK",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitTalk_KOR": "책에는 당시 구원자들의 실전에서 우러나온 조언이 가득 적혀 있었다.",
+      "UnitTalk_JPN": "本には、当時の救援者たちの実戦から得られた助言がびっしりと記されていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 새로운 관점이 열린 모양이다!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は新たな視点が開けたようだ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 81,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 46,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…그렇습니까.",
+      "UnitTalk_JPN": "…そうですか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "확실히, 이 상자 자체도 당시 사람들이 공허체에 저항했다는 증거니까요.",
+      "UnitTalk_JPN": "確かに、この箱自体も当時の人々が<r=ヴォイドボーン>空虚体</r>に抵抗した証拠ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitTalk_KOR": "열지 않고 그대로 두는 것도 의미가 있겠지요.",
+      "UnitTalk_JPN": "開けずにそのまま置いておくことにも意味があるでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그럼 아무쪼록 소중히 보관해 주시길 바라겠습니다.",
+      "UnitTalk_JPN": "それでは、どうか大切に保管してください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_DOWNTOWN",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 89,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "EmotionEffect": "FUN",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[여정]</color>의 의미를 되새기면서, <color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 숙소로 돌아갔다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>の意味を噛みしめながら、<color=#F7BE45>[CHARACTER_NAME]</color>と共に宿へ戻った。",
+      "TalkTime": 0.03
+    }
+  ]
+}

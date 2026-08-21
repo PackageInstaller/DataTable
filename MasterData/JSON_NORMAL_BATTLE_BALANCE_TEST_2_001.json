@@ -1,0 +1,30 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapCameraType": "NMCT_RAID_BATTLE_01",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_RAID_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_MAINSTORY_00",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_S_TEST_DUMMY_06",
+            "IsBoss": true,
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_MAINSTORY_00",
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

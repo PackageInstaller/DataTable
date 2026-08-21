@@ -1,0 +1,942 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WILD_HOG_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 221,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3"
+    },
+    {
+      "Uid": 222,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "며칠 전, 도둑맞은 결혼반지를 찾아 달라는 의뢰를 받았다.",
+      "UnitTalk_JPN": "数日前、盗まれた結婚指輪を探してほしいという依頼を受けた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "수소문 끝에, 한 장물아비 손에 들어갔다는 정보를 얻었는데…",
+      "UnitTalk_JPN": "聞き込みの結果、とある闇商人の手に渡ったという情報を得て…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 142,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장, 뭐 이런 어린애 심부름 같은 의뢰를 맡아 준 거야?",
+      "UnitTalk_JPN": "団長、こんな子どものおつかいみたいな依頼を引き受けてやったのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그렇게 중요한 물건이면 본인이 직접 되찾아야지.",
+      "UnitTalk_JPN": "そんな大事なものなら、自分で取り返さねぇと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "곤란한 사람을 돕는 것도 여정의 일환이야.",
+          "JumpAnchorStringId_JPN": "困った人を助けるのも、旅の一環なんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 145,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하아, 여정에 참가하면 매일매일 피가 끓어오르는 사건의 연속일 줄 알았는데…",
+      "UnitTalk_JPN": "はぁ。旅に参加すれば、毎日血が沸き立つような事件の連続だと思ってたのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "어째 한가한 일밖에 없구만.",
+      "UnitTalk_JPN": "退屈なことばっかりだぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 147,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그 열정을 훈련에 쏟는 건 어때?",
+          "JumpAnchorStringId_JPN": "その情熱をトレーニングに注ぐのはどう？"
+        }
+      ]
+    },
+    {
+      "Uid": 148,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "사나이 인생은 마지막까지 브레이크 없이 달리는 고독한 레이스야.",
+      "UnitTalk_JPN": "漢の人生は、最後までブレーキなしで走りぬく孤独なレースなんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "백날 훈련이니 연습이니 해 봤자 실전 한 번 치르는 것만 못해.",
+      "UnitTalk_JPN": "どれだけトレーニングだの練習だのしても、一回の実践には敵わねぇだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 150,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "단장도 나랑 달리고 싶다면 명심해 두라고.",
+      "UnitTalk_JPN": "団長も、俺と走りてぇなら肝に銘じておくことだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 151,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알겠습니다, 누님!",
+          "JumpAnchorStringId_JPN": "分かりました、姉御！"
+        }
+      ]
+    },
+    {
+      "Uid": 152,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "좋아. 이제 좀 기백이 느껴지는군.",
+      "UnitTalk_JPN": "よっしゃあ！その意気込みだぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 153,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래서 여기야? 반지를 가지고 있다는 장물아비 가게가?",
+      "UnitTalk_JPN": "で、ここか？指輪を持ってるって闇商人の店は。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 154,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런 것 같아.",
+          "JumpAnchorStringId_JPN": "そうだと思う。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "들어가서 확인해 보자.",
+          "JumpAnchorStringId_JPN": "中に入って確認してみよう。"
+        }
+      ]
+    },
+    {
+      "Uid": 225,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_BELL.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 224,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STORE_GENERAL.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 223,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 158,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "어서 오시게.",
+      "UnitTalk_JPN": "いらっしゃい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitTalk_KOR": "우리 가게에 안 어울리는 손님 같은데, 무슨 용무신지?",
+      "UnitTalk_JPN": "珍しいお客さんのようだが、何の用だい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 160,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "도난당한 결혼반지를 찾고 있어.",
+          "JumpAnchorStringId_JPN": "盗まれた指輪を探してるんだ。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "우리에게 팔아 줬으면 해.",
+          "JumpAnchorStringId_JPN": "それを私たちに売ってほしい。"
+        }
+      ]
+    },
+    {
+      "Uid": 162,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아아, 그 반지?",
+      "UnitTalk_JPN": "あぁ、あの指輪か。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 163,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "물론 팔아 줄 수 있지. 값만 제대로 쳐 준다면.",
+      "UnitTalk_JPN": "もちろん、売ることはできるさ。代金を支払ってくれるならね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 164,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "장물아비가 내민 종이에는 집 한 채를 사고 남을 액수가 적혀 있다…",
+      "UnitTalk_JPN": "闇商人が差し出した紙には、家を買ってもお釣りがくるような金額が書かれていた…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 165,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "너무 비싸게 받는 것 아닌가?",
+          "JumpAnchorStringId_JPN": "高すぎるんじゃないか？"
+        }
+      ]
+    },
+    {
+      "Uid": 166,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "흐흐, 물건이라는 건 찾는 사람이 많을수록 값이 오르거든.",
+      "UnitTalk_JPN": "ほっほっほ。物というのは、需要が多ければ多いほど値段があがるものなんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 167,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "도난당한 물건인데도?",
+          "JumpAnchorStringId_JPN": "盗まれた物だとしても？"
+        }
+      ]
+    },
+    {
+      "Uid": 168,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitTalk_KOR": "과정이야 어쨌든 지금은 내 것이지.",
+      "UnitTalk_JPN": "過程はどうであれ、今は私のものだからね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 169,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "사기 싫으면 돌아가. 나는 안 팔아도 그만이니까.",
+      "UnitTalk_JPN": "買いたくないなら帰りなさい。私は売らなくてもいいんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 170,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이쪽이 반지를 원한다는 걸 알고 폭리를 취하려는 모양이다.",
+      "UnitTalk_JPN": "私たちが指輪を欲しがっているのを知って、ぼったくろうとしているようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 171,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "……",
+      "UnitTalk_JPN": "……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 172,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장, 잠깐 거기서 비켜 봐.",
+      "UnitTalk_JPN": "団長、ちょっとそこをどいてみろ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 173,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭔가 좋은 수라도 있어?",
+          "JumpAnchorStringId_JPN": "何かいい考えでもあるのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 174,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "물론이지. 가만히 보고 있기나 해.",
+      "UnitTalk_JPN": "あたりめぇだぜ。黙って見てろよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 175,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "하하, 이제 보니 귀여운 꼬마 손님도 데려오셨구먼.",
+      "UnitTalk_JPN": "ははっ、かわいらしいお客さんも連れてきていたのかい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 176,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그런데 꼬마야, 어른들 말하는데 버릇없이 끼어드는 거 아니다.",
+      "UnitTalk_JPN": "でもだな、大人たちが話しているのに生意気に割り込むものじゃない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 235,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 178,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.50909084,
+      "BgCrashTime": 0.4,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWORD_HIT_12.wav",
+      "UnitTalk_KOR": "퍽!!",
+      "UnitTalk_JPN": "ドンッ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 179,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_20.mp3",
+      "UnitTalk_KOR": "할리의 도끼가 장물아비의 귓가를 스치고 날아가 벽에 꽂혔다. ",
+      "UnitTalk_JPN": "ハーレーの斧が飛んでいき、闇商人の耳元をかすめて壁に刺さった。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 180,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitTalk_KOR": "힉, 히익…!",
+      "UnitTalk_JPN": "ヒ、ヒィ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 181,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "할리!",
+          "JumpAnchorStringId_JPN": "ハーレー！"
+        }
+      ]
+    },
+    {
+      "Uid": 182,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "가만히 있으라니까, 단장.",
+      "UnitTalk_JPN": "団長。黙って見てろって言ったろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 183,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitTalk_KOR": "이 꼬마가 제정신이야? 하마터면 내 머리가 두 쪽 날 뻔했잖아!",
+      "UnitTalk_JPN": "このチビ、正気か？頭が真っ二つになるところだったじゃないか！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 184,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "쫑알대지 말고, 영감.",
+      "UnitTalk_JPN": "じじぃは黙ってな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 185,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그깟 금 쪼가리 하나로 얼마나 남겨 먹으려는 거야?",
+      "UnitTalk_JPN": "こんなちっせぇ金の欠片で、いくらぼったくろうってんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 186,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "자, 이 도끼한테도 다시 말해 봐.",
+      "UnitTalk_JPN": "さぁ、この斧にも言ってみろよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 187,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "정확히 얼마를 원한다고?",
+      "UnitTalk_JPN": "いくらだって？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 188,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "자, 잠깐… 이 도끼는…",
+      "UnitTalk_JPN": "ま、待った…この斧は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 189,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "설마…! 헬 세이비어…?!",
+      "UnitTalk_JPN": "まさか…！ヘルセイヴァー…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 190,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "뭐야, 알고 있었나. 그럼 얘기가 빠르겠네.",
+      "UnitTalk_JPN": "なんだよ、知ってんのか？だったら話が早いな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 191,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "저 녀석은 비실거리긴 해도 내 친구거든.",
+      "UnitTalk_JPN": "コイツは頼りねぇが、俺のダチなんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 192,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "헬 세이비어는 친구에게 장난질 치는 놈은 용서하지 않아.",
+      "UnitTalk_JPN": "ヘルセイヴァーは、ダチにふざけた真似した奴を許さねぇ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 193,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "각오는 하고 저지른 짓이겠지, 영감탱이.",
+      "UnitTalk_JPN": "覚悟した上で、さっきあぁしたんだろ？なぁ、じじぃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 236,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_OLD_MALE",
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 194,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_03.wav",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "장물아비가 사색이 되어 바닥에 넙죽 엎드렸다.",
+      "UnitTalk_JPN": "闇商人の顔は真っ青になり、床にひれ伏した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 195,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitTalk_KOR": "저, 정말 죄송합니다! 제가 아무것도 모르고 그만 실수를 저질렀습니다!",
+      "UnitTalk_JPN": "ほ、本当に申し訳ございませんでした！私が何も知らずに、過ちを犯してしまいました！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 196,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRADER_CHEATER"
+      ],
+      "UnitTalk_KOR": "반지는 그냥 가져가셔도 됩니다! 그러니 부디 용서를!",
+      "UnitTalk_JPN": "指輪はお持ち帰りください！ですので、どうかお許しを！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 226,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 227,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 228,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 199,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "공짜로 가져가도 된다는데 뭐 하러 돈을 준 거야?",
+      "UnitTalk_JPN": "タダで持ってけっつったのに、なんで金払ったんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 200,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "단장, 너는 역시 너무 물러.",
+      "UnitTalk_JPN": "団長、お前はやっぱり甘すぎるぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 201,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그냥 가져가면 강탈이잖아.",
+          "JumpAnchorStringId_JPN": "そのまま持っていったら、強奪になるだろ。"
+        }
+      ]
+    },
+    {
+      "Uid": 202,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "방금은 조금 심했어.",
+          "JumpAnchorStringId_JPN": "さっきのはやりすぎだよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 203,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "내버려둬. 이게 우리끼리 쓰는 방식이니까.",
+      "UnitTalk_JPN": "放っておけって。これが俺たちのやり方なんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 204,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "뒷골목에서 사는 인생들이 말로만 한다고 거래에 응할 것 같아?",
+      "UnitTalk_JPN": "日陰で生きる奴らが、言葉だけで取引に応じると思ってんのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 205,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "말로만 해서는 아까처럼 무시만 당해.",
+      "UnitTalk_JPN": "それじゃ、さっきみたいに馬鹿にされるだけだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 206,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그러니까 힘을 보여 줘야지. 얕잡아 볼 수 없게.",
+      "UnitTalk_JPN": "だから、力を見せつけねぇと。見下されねぇようにな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 207,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그건 이해했어.",
+          "JumpAnchorStringId_JPN": "それは分かった。"
+        }
+      ]
+    },
+    {
+      "Uid": 208,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "하지만 그러다간 원한을 살 거야.",
+          "JumpAnchorStringId_JPN": "でも、恨みを買うことになるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 209,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그러니 제대로 하라는 말이야.",
+      "UnitTalk_JPN": "だから、ちゃんとしろって言ってんだろぉ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 210,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "어쨌거나 여정에서는 단장이 리더고, 나는 네 부하로서 여기 있는 거라고.",
+      "UnitTalk_JPN": "この旅では団長がリーダーで、俺は子分としてここにいんだからよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 211,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "리더라면 부하 앞에서 당당하게 굴어.",
+      "UnitTalk_JPN": "リーダーなら、子分の前で堂々と振る舞えってことだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 212,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "널 믿고 따르는 녀석들한테 그럴 만한 이유를 만들어 주라고.",
+      "UnitTalk_JPN": "お前のことを信じてついてきてくれる奴らの気持ちに応えてやらねぇと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 213,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "꼭 리더와 부하여야 할까?",
+          "JumpAnchorStringId_JPN": "リーダーと子分じゃないとダメ？"
+        }
+      ]
+    },
+    {
+      "Uid": 214,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아까 말한 친구 쪽이 더 좋은데.",
+          "JumpAnchorStringId_JPN": "さっき言ってた、「ダチ」の方がいいんだけど。"
+        }
+      ]
+    },
+    {
+      "Uid": 215,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "뭐?",
+      "UnitTalk_JPN": "なに？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 216,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "…흥. 그래, 그렇게 대범한 자세도 나쁘진 않아.",
+      "UnitTalk_JPN": "…ふん、いいぜ。そういう大胆な姿勢もわるくねぇな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 217,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.4,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "할리는 나를 가볍게 치고 지나쳐 갔다.",
+      "UnitTalk_JPN": "ハーレーは私を軽く突き、歩いて行った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 229,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 230,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 231,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 219,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무래도 할리는 장물아비에게 대신 화를 내 준 모양이다.",
+      "UnitTalk_JPN": "やはりハーレーは、私の代わりに闇商人を懲らしめてくれたらしい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 220,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "고맙긴 했지만… 조금은 걱정스러운 것도 사실이었다.",
+      "UnitTalk_JPN": "ありがたいが…少し心配なのも事実だ。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 233,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.3
+    },
+    {
+      "Uid": 232,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_BEAMSWORD_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 234,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.3
+    }
+  ]
+}

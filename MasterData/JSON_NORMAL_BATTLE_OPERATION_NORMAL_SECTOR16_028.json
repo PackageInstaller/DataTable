@@ -1,0 +1,55 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_04", //추적자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_04", //은둔자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_04", //추적자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          }
+        ]
+      },
+      {
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_04", //은둔자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_MU_OPERATION_16", //업화의 추적자(강화)
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_04", //은둔자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          }
+        ]
+      }
+    ]
+  }
+}

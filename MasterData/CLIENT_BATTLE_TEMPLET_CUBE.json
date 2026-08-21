@@ -1,0 +1,131 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: BATTLE_TEMPLET_CUBE",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_CUBE_PALACE",
+          "BattleID" : 10401001,
+          "BattleStrID" : "NORMAL_BATTLE_CUBE_MATERIAL_001",
+          "OrderList" : 1,
+          "BattleTabId" : 10401,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_CUBE_MATERIAL_001.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CUBE_PALACE_TYPE_A",
+          "BattleType" : "NBT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "CubeType" : "CUBE_LIMIT_TURN_WAVE",
+          "BattleTitleName" : "SI_CUBE_PALACE",
+          "BattleName" : "SI_INTERFACE",
+          "BattleDesc" : "SI_NORMAL_BATTLE_DESC_CUBE_MATERIAL",
+          "AdviceDesc" : "SI_BATTLE_CUBE_ADVICE_01",
+          "BattleIcon" : "UFS_NKM_UNIT_MON_STALKER_SKELETON_BLACK.png",
+          "Difficulty" : "NORMAL",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 20,
+          "MusicName" : "MUSIC_BATTLE_CUBE_PALACE.mp3",
+          "BattlePower" : 3950,
+          "ReqNormalItem" : 401,
+          "ReqNormalItemCount" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_CUBE_PALACE",
+          "BattleID" : 10401002,
+          "BattleStrID" : "NORMAL_BATTLE_CUBE_MATERIAL_002",
+          "OrderList" : 2,
+          "BattleTabId" : 10401,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_CUBE_MATERIAL_002.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CUBE_PALACE_TYPE_A",
+          "BattleType" : "NBT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "CubeType" : "CUBE_LIMIT_TURN_WAVE",
+          "BattleTitleName" : "SI_CUBE_PALACE",
+          "BattleName" : "SI_KERNEL",
+          "BattleDesc" : "SI_NORMAL_BATTLE_DESC_CUBE_MATERIAL",
+          "AdviceDesc" : "SI_BATTLE_CUBE_ADVICE_01",
+          "BattleIcon" : "UFS_NKM_UNIT_MON_STALKER_SKELETON_BLACK.png",
+          "Difficulty" : "NORMAL",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 120,
+          "MusicName" : "MUSIC_BATTLE_CUBE_PALACE.mp3",
+          "BattlePower" : 21050,
+          "StellaMemoryWarning" : true,
+          "ReqNormalItem" : 401,
+          "ReqNormalItemCount" : 1,
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_ALL_MISSION_CLEAR",
+              "BattleUnlockReqId" : 10401001
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_CUBE_PALACE",
+          "BattleID" : 10401003,
+          "BattleStrID" : "NORMAL_BATTLE_CUBE_MATERIAL_003",
+          "OrderList" : 3,
+          "BattleTabId" : 10401,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_CUBE_MATERIAL_003.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CUBE_PALACE_TYPE_C",
+          "BattleType" : "NBT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "CubeType" : "CUBE_LIMIT_TURN_WAVE",
+          "BattleTitleName" : "SI_CUBE_PALACE",
+          "BattleName" : "SI_ASSEMBLER",
+          "BattleDesc" : "SI_NORMAL_BATTLE_DESC_CUBE_MATERIAL",
+          "AdviceDesc" : "SI_BATTLE_CUBE_ADVICE_01",
+          "BattleIcon" : "UFS_NKM_UNIT_MON_STALKER_SKELETON_BLACK.png",
+          "Difficulty" : "NORMAL",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 280,
+          "MusicName" : "MUSIC_BATTLE_CUBE_PALACE.mp3",
+          "BattlePower" : 45850,
+          "StellaMemoryWarning" : true,
+          "ReqNormalItem" : 401,
+          "ReqNormalItemCount" : 1,
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_ALL_MISSION_CLEAR",
+              "BattleUnlockReqId" : 10401002
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_CUBE_PALACE_STEP_4",
+          "BattleID" : 10401004,
+          "BattleStrID" : "NORMAL_BATTLE_CUBE_MATERIAL_004",
+          "OrderList" : 4,
+          "BattleTabId" : 10401,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_CUBE_MATERIAL_004.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CUBE_PALACE_TYPE_C",
+          "BattleType" : "NBT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "CubeType" : "CUBE_LIMIT_TURN_WAVE",
+          "BattleTitleName" : "SI_CUBE_PALACE",
+          "BattleName" : "SI_FIRMWARE",
+          "BattleDesc" : "SI_NORMAL_BATTLE_DESC_CUBE_MATERIAL",
+          "AdviceDesc" : "SI_BATTLE_CUBE_ADVICE_01",
+          "BattleIcon" : "UFS_NKM_UNIT_MON_STALKER_SKELETON_BLACK.png",
+          "Difficulty" : "NORMAL",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 460,
+          "MusicName" : "MUSIC_BATTLE_CUBE_PALACE.mp3",
+          "BattlePower" : 73750,
+          "StellaMemoryWarning" : true,
+          "ReqNormalItem" : 401,
+          "ReqNormalItemCount" : 1,
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_ALL_MISSION_CLEAR",
+              "BattleUnlockReqId" : 10401003
+            }
+          ]
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    //"VictoryUnderBossHpPercent": 5000,
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_3_RAID_BOSS_A",
+        "MapCameraType": "NMCT_RAID_BATTLE_01",
+        // "TeamASpawnList": [
+        //   {
+        //     "SpawnPosIndex": 0,
+        //     "UnitStrId": "NKM_UNIT_S_VOYAGER_SMILE",
+        //     "AllSkillAvailable": true
+        //   },
+        //   {
+        //     "SpawnPosIndex": 2,
+        //     "UnitStrId": "NKM_UNIT_S_VOYAGER_ORACLE",
+        //     "AllSkillAvailable": true
+        //   }
+        // ],
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_LANIAKEA_RULER_BLACK_BOSS_MAINSTORY_00",
+            "InfoBlind": true,
+            "IsBoss": true,
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false
+          }
+        ]
+      }
+    ]
+  }
+}

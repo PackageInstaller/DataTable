@@ -1,0 +1,51 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "SkipProgressWithHistory": false,
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_1_BOSS_JOURNEY",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_MAID_SCISSORS_BOSS_EASY_01",
+            "IsBoss": true,
+            "SpecialSkillAvailable": true,
+            "ConditionalSpawnData": [
+              {
+                "LeaderUnitIdList": [
+                  1509, 1510, 1008, 1043, 1044
+                ],
+                "UnitStrId": "NKM_UNIT_MON_MAID_TWOHANDER_BOSS_EASY_01",
+                "SpecialSkillAvailable": true
+              },
+              {
+                "LeaderUnitIdList": [
+                  1009, 1047
+                ],
+                "UnitStrId": "NKM_UNIT_MON_MAID_SPEAR_BOSS_EASY_01",
+                "SpecialSkillAvailable": true
+              }
+            ]
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_MAID_BELL_BOSS_EASY_01",
+            //"IsElite": true,
+            "SpecialSkillAvailable": true,
+            "ConditionalSpawnData": [
+              {
+                "LeaderUnitIdList": [
+                  1509, 1510, 1008, 1009, 1043, 1044, 1047
+                ],
+                "UnitStrId": "NKM_UNIT_MON_MAID_ORB_BLUE_BOSS_EASY_01",
+                "SpecialSkillAvailable": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: SKILL/SE_TEMPLET_ORBITAL_ARRAY",
+    "_Version": 0,
+    "Data": [
+        {
+          "m_SEID" : 102011,
+          "SEGroupID" : 1021,
+          "SEOrderList" : 0,
+          "m_SEStrID" : "COND_ORBITAL_ARRAY_VOYAGER_GUNBLADE_01_01",
+          "m_BuffTargetType" : "NSETT_MYTEAM_ALL",
+          "m_BuffStrID" : "BI_SPEED_GAUGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 2000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 103011,
+          "SEGroupID" : 1031,
+          "SEOrderList" : 0,
+          "m_SEStrID" : "COND_ORBITAL_ARRAY_OMEGA_01_01",
+          "m_BuffTargetType" : "NSETT_MYTEAM_ALL",
+          "m_BuffStrID" : "BI_ORBITAL_ARRAY_OMEGA",
+          "m_BuffLifeTurn" : 2,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 104011,
+          "SEGroupID" : 1041,
+          "SEOrderList" : 0,
+          "m_SEStrID" : "COND_ORBITAL_ARRAY_ALICIA_01_01",
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
+          "m_BuffStrID" : "BI_DEFENSE_DECREASE",
+          "m_BuffLifeTurn" : 1,
+          "EffectHitCheck" : false,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        }
+    ]
+}

@@ -1,0 +1,827 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_END_STARLIGHT_04_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STELLA_ARCHIVE_3.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_03.mp3",
+      "CameraOffset": "TRIPLE_2"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitQuickSet": true,
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitQuickSet": true,
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitQuickSet": true,
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_MOVEMENT_FOOT_STEP_04.wav"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "ONE_4",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "나 들어왔어!",
+      "UnitTalk_JPN": "アタシもオッケーだよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_03B_UNIT_S_VOYAGER_ORACLE_003.wav"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "스마일!",
+      "UnitTalk_JPN": "スマイル！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "POS2_2X",
+      "UnitTalk_KOR": "에너지 바이패스 정지, 회랑 입구 강제 폐쇄!",
+      "UnitTalk_JPN": "エネルギーバイパスを停止、回廊の入口を強制閉鎖！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_001.wav"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EARTHQUAKE_02.wav"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STELLA_ARCHIVE_4.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 4.0,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 3.0
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "다들, 괜찮아?",
+      "UnitTalk_JPN": "みんな、大丈夫？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SAD",
+      "UnitQuickSet": true,
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD",
+      "UnitQuickSet": true,
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "후우… 정말 죽는 줄 알았네.",
+      "UnitTalk_JPN": "ふう…マジで死ぬかと思った。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_ORACLE_001.wav"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "공허체들이 저렇게 몰려오는 건 <color=#F7BE45>[레이븐 월]</color> 함락 때 이후로 처음 보는 것 같아.",
+      "UnitTalk_JPN": "あんなにたくさんの空虚体を見たのは<color=#F7BE45>「レイヴン・ウォール」</color>がやられちゃった時以来かな。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_ORACLE_002.wav"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "동의.",
+      "UnitTalk_JPN": "同じく。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_002.wav"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "이 정도 수의 공허체가 라비스타로 낙하한다면 버틸 가능성은 전무.",
+      "UnitTalk_JPN": "あれだけの空虚体がラビスタ―に落下すれば、耐えられる可能性はゼロ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_003.wav"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아무튼, 여기가 <color=#F7BE45>[별의 전당]</color> 이라는 거지?",
+      "UnitTalk_JPN": "とにかく、ここが<color=#F7BE45>「星の殿堂」</color>ってことでいいんだよね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_ORACLE_003.wav"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "그런데… 왜 이렇게 컴컴해? ",
+      "UnitTalk_JPN": "でも…なんか暗くない？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_ORACLE_004.wav"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "난 별들이 반짝반짝하는 예쁜 곳인 줄 알았는데…",
+      "UnitTalk_JPN": "アタシはてっきり星がキラキラで映えるところかと…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_ORACLE_005.wav"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이래서야… <color=#F7BE45>[별의 무덤]</color>이라고 하는 게 더 어울리겠는걸?",
+      "UnitTalk_JPN": "むしろこれじゃ…<color=#F7BE45>「星の墓場」</color>って感じじゃない？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_ORACLE_006.wav"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "…뭔가 이상함.",
+      "UnitTalk_JPN": "…何か変。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_004.wav"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "광학, 적외선, X밴드, L밴드까지 전 주파수대역 색적 결과 반응 없음.",
+      "UnitTalk_JPN": "光学、赤外線、XバンドからLバンドまで、全周波数帯において索敵の反応無し。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_005.wav"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "전부 반응이 없다고? 그럼 텅 비었다는 거야?",
+      "UnitTalk_JPN": "全然反応ナシ？じゃあ何もないってこと？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_ORACLE_007.wav"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "제1 가설에 부합되는 결과임.",
+      "UnitTalk_JPN": "これは第一の仮説と一致する結果。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_006.wav"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "그리고 제2 가설은…",
+      "UnitTalk_JPN": "そして第二の仮説が正しければ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_007.wav"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TRIPLE_1",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "무언가가… 원래 있던 걸 전부 집어삼켰거나.",
+      "UnitTalk_JPN": "何かが…ここにあったものを、全部食べちゃったとか…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "뭐…?",
+      "UnitTalk_JPN": "マジで？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_ORACLE_008.wav"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "…잠깐.",
+      "UnitTalk_JPN": "…待って。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_008.wav"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "대규모 중력파 진동 확인. 전방 10km 앞에서…",
+      "UnitTalk_JPN": "大規模な重力波の振動を確認。前方10km…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_009.wav"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "급속 접근 중?",
+      "UnitTalk_JPN": "急速に接近中？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_010.wav"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "POS2_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "전원! 충격 대비!",
+      "UnitTalk_JPN": "みんな！衝撃に備えて！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 2.0,
+      "BgCrash": 1.0,
+      "BgCrashTime": 2.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_FIRE_ENERGY_04.wav"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgCrash": 1.0,
+      "BgCrashTime": 1.0,
+      "CameraOffset": "TRIPLE_1",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EARTHQUAKE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "히이익! 날아간다~~",
+      "UnitTalk_JPN": "ヒエーッ！飛ばされるー！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_ORACLE_009.wav"
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "전방, 초대규모 공허 반응.",
+      "UnitTalk_JPN": "前方から超大規模の<r=ヴォイド>空虚</r>反応あり。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_011.wav"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "패턴 수집 완료. 데이터베이스 내 존재 확인. ",
+      "UnitTalk_JPN": "パターンを収集完了。データベース内に存在を確認。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_012.wav"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "이 패턴의 주인은…",
+      "UnitTalk_JPN": "このパターンの持ち主は…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_013.wav"
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.5
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": " 결국 여기까지 왔구나. ",
+      "UnitTalk_JPN": "とうとうここまで辿りついたか。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_APOSTLE_LANIAKEA_001.wav"
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": " 부질없이 꺼져가는 어린 불씨들아.",
+      "UnitTalk_JPN": "儚く消えゆく幼き火種たちよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_APOSTLE_LANIAKEA_002.wav"
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_MAIN_END_STARLIGHT_04_STANDBY.png",
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_02.mp3"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 4.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 4.0
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "저건…",
+      "UnitTalk_JPN": "あれは…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_ORACLE_010.wav"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "…서쪽 하늘의 주성.",
+      "UnitTalk_JPN": "西空の主星…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>[알데바란]</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>「アルデバラン」</color>…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SMILE"
+      ],
+      "UnitTalk_KOR": "…오류 발생. 상황 해석 불가.",
+      "UnitTalk_JPN": "…エラー発生。状況の解析不能。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_014.wav"
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SMILE"
+      ],
+      "UnitTalk_KOR": "공허의 별, 알데바란은 분명 예전에 쓰러트린 적.",
+      "UnitTalk_JPN": "<r=ヴォイドスター>空虚の星</r>、アルデバランは以前倒したはずの敵。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_015.wav"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SMILE"
+      ],
+      "UnitTalk_KOR": "이곳에 다시 나온다는 건 비논리적인 결과.",
+      "UnitTalk_JPN": "再び現れるのは、非論理的。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_SMILE_016.wav"
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "아니… 뭔가 달라.",
+      "UnitTalk_JPN": "いや…何かが違う。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_ORACLE_011.wav"
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "분명 알데바란처럼 보이긴 하지만… 그건 겉모습일 뿐이야.",
+      "UnitTalk_JPN": "確かにアルデバランのように見えるけど…それは見た目だけ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_ORACLE_012.wav"
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "그 안에 있는 건… 분명…",
+      "UnitTalk_JPN": "あの中にいるのは…きっと…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_ORACLE_013.wav"
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "그 안에 있는 게 뭐든…",
+      "UnitTalk_JPN": "正体が何であったとしても―",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "우린 공허에 맞서 라비스타를 지킨다.",
+      "UnitTalk_JPN": "わたし達は<r=ヴォイド>空虚</r>からラビスターを守り抜く。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_04_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "보이저 구원단, 전투 준비!",
+      "UnitTalk_JPN": "ボイジャー救援団、戦闘準備！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_04_UNIT_S_VOYAGER_STRANIS_009.wav"
+    }
+  ]
+}

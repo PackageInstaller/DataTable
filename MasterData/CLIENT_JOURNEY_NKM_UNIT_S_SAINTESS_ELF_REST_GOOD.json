@@ -1,0 +1,176 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_SAINTESS_ELF_REST_GOOD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_REST_GOOD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "휴일 다음날, 숙소 앞에서 엘리사를 만났다.",
+      "UnitTalk_JPN": "休日の次の日、宿でエリサに会った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "엘리사, 좋은 아침.",
+          "JumpAnchorStringId_JPN": "エリサ、おはよう。"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "아, 단장님! 좋은 아침이에요!",
+      "UnitTalk_JPN": "あっ、団長！おはようございます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "저, 어제 도서관에서 이런 책을 발견했어요…",
+      "UnitTalk_JPN": "昨日、図書館でこんな本を見つけたんです…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "<color=#F7BE45>효율적인 신체 운용의 기본</color>… 이래요!",
+      "UnitTalk_JPN": "<color=#F7BE45>効率的な身体運用の基礎</color>…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "읽어보니 도움이 될 것 같아서요…!",
+      "UnitTalk_JPN": "読んでみたら、役立ちそうだったので…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "운동을 책으로…?",
+          "JumpAnchorStringId_JPN": "運動を、本で…？"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "네, 네!",
+      "UnitTalk_JPN": "は、はい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "책 내용은 조금 어려웠지만…",
+      "UnitTalk_JPN": "内容は少し難しかったですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "여기 나온 자세를 오늘 훈련에 적용해보고 싶어요!",
+      "UnitTalk_JPN": "ここに載っている姿勢を、今日のトレーニングで実戦してみたいんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "저, 저 같은 애라도… 체계적인 운동 과학 이론을 바탕으로 연습한다면…",
+      "UnitTalk_JPN": "私でも…体系的な運動科学理論に基づいて練習すれば…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "더, 덩치만 큰 허수아비에서 벗어날 수도 있으니까요...!",
+      "UnitTalk_JPN": "む、無駄に大きいだけのカカシから抜け出せるかもしれませんから…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "좋아, 한번 해볼까!",
+          "JumpAnchorStringId_JPN": "よし、やってみよう！"
+        }
+      ]
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어차피 큰 도움은 안 되겠지만, 엘리사가 의욕적으로 나서는 것은 좋은 징조다.",
+      "UnitTalk_JPN": "大した助けにはならないだろうが、エリサが意欲的なのは良い兆しだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오늘은 조금 더 적극적인 훈련을 해봐도 좋을 것 같다.",
+      "UnitTalk_JPN": "今日のトレーニングは、いつもより思い切っても良いかもしれない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

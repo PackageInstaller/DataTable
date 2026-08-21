@@ -1,0 +1,356 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_17_AGN_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 28,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "MOVIE_JOURNEY_ENTER_AREA_AGANON.mp4",
+      "VideoDependsOnText": true,
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0
+    },
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN_AGANON.png",
+      "StartBgmFileName": "MUSIC_CANDLE_AGANON.mp3",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.6
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "어서 오세요, 단장님.",
+      "UnitTalk_JPN": "団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[캔들 스퀘어 아가논 지부]</color>에 오신 것을 환영합니다.",
+      "UnitTalk_JPN": "キャンドル・スクエア<color=#F7BE45>「アガノン支部」</color>へようこそ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여기도 캔들 스퀘어가 있구나.",
+          "JumpAnchorStringId_JPN": "ここにもキャンドル・スクエアがあるのか。"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "네. 라비스타 어디서든 구원자분들께 NOA와 같은 지원을 제공해 드리기 위해서죠.",
+      "UnitTalk_JPN": "はい。ラビスターのどこにいても、救援者の皆さんにNOAと同じサポートをご提供するためです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "지역 특색이 반영된 인테리어를 감상하는 재미가 쏠쏠하답니다.",
+      "UnitTalk_JPN": "地域の特色が反映されたインテリアを見るのも、一つの楽しみなんですよね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 이번 평가전인 <color=#F7BE45>[원정 평가전]</color>을 소개해 드리겠습니다.",
+      "UnitTalk_JPN": "それでは、<color=#F7BE45>「遠征試験」</color>についてご説明します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[원정 평가전]</color>은 말 그대로 NOA가 아닌 다른 지역에서 진행되는 평가전입니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「遠征試験」</color>はその名の通り、NOA以外の地域で行われる試験のことです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "최초의 구원단이 라비스타를 여행하면서 곤경에 처한 사람들을 도운 것이 유래로,",
+      "UnitTalk_JPN": "最初の救援団がラビスターを旅しながら、困っている人々を助けたことに由来し…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "불특정 지역에서의 적응력과 활동 역량을 검증하는 평가전이라고 할 수 있습니다.",
+      "UnitTalk_JPN": "不特定地域での適応力と活動能力を検証する試験と言えます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 이 도시에 문제가 있다는 건가?",
+          "JumpAnchorStringId_JPN": "この都市にも何か問題があるのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "경우에 따라선 도시의 존속을 위협할 수도 있는 문제죠.",
+      "UnitTalk_JPN": "はい。場合によっては、都市の存続を脅かすほどの問題です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "이곳 아가논은 고대 유적인 <color=#F7BE45>[칙술루브 홀]</color>을 중심으로 형성된 도시입니다.",
+      "UnitTalk_JPN": "ここアガノンは、古代遺跡<color=#F7BE45>「チクシュルーブ・ホール」</color>を中心に形成された都市です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>[칙술루브 홀]</color>은 거대한 구덩이 형태의 미궁이에요.",
+      "UnitTalk_JPN": "<color=#F7BE45>「チクシュルーブ・ホール」</color>は、巨大な穴の形をした迷宮で…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "직경 3킬로미터, 깊이는 아직까지 정확하게 측량되지 않았습니다.",
+      "UnitTalk_JPN": "直径3キロメートル、深さはまだ正確に測量されていません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "<color=#F7BE45>[칙술루브 홀]</color>에서는 희귀한 마도공학 재료나 고대 문명의 유물이 계속 발굴되는 중입니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「チクシュルーブ・ホール」</color>からは、希少な魔導工学の材料や古代文明の遺物が絶えず発掘されています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "발굴을 하는 탐사꾼, 그것들을 사고파는 상단이 모여든 덕분에 상업도 크게 발전하게 됐죠.",
+      "UnitTalk_JPN": "発掘をする発掘屋、それらを売買する商会が集まったおかげで商業も大きく発展しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그런데 최근, 미궁에서 <color=#F7BE45>[고대종]</color>이 출몰해서 발굴이 난항을 겪고 있습니다.",
+      "UnitTalk_JPN": "ところが…最近は迷宮に<color=#F7BE45>「古代種」</color>が出現し、発掘は難航しています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "고대종?",
+          "JumpAnchorStringId_JPN": "古代種？"
+        }
+      ]
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "강력한 힘에 마법적인 능력까지 갖춘 위험한 마수입니다.",
+      "UnitTalk_JPN": "強力な力に魔法の能力まで備えた、危険な魔獣です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "오래된 유적이나 사람의 발길이 닿지 않는 오지에서 종종 동면 상태로 발견되죠.",
+      "UnitTalk_JPN": "古い遺跡や人の足が届かない奥地で、たびたび冬眠状態で発見されます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "고대종으로 인해 기존에 진행 중이던 발굴 작업은 완전히 중단된 상태입니다.",
+      "UnitTalk_JPN": "これまで進められていた発掘作業は、古代種によって完全に中断された状態なんですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "아가논의 자경대가 여러 차례 토벌에 나섰지만, 번번이 실패했다고 해요.",
+      "UnitTalk_JPN": "アガノンの自警団が何度も討伐に向かいましたが、ことごとく失敗してしまったそうです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "사태가 이대로 장기화되면 아가논과 이 일대의 경제가 무너지는 건 시간문제입니다.",
+      "UnitTalk_JPN": "このまま事態が長期化すれば…アガノンとこの一帯の経済が崩壊するのは時間の問題です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "따라서 이번 <color=#F7BE45>[원정 평가전]</color>의 목표는 고대종을 토벌해 발굴 작업이 재개되게 하는 것입니다.",
+      "UnitTalk_JPN": "今回の<color=#F7BE45>「遠征試験」</color>の目標は、古代種を討伐して発掘作業を再開させることです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "평가전 일정은 여정 일지에 기록해 뒀습니다.",
+      "UnitTalk_JPN": "試験の日程は、旅の日誌に記録しておきました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_17_AGN_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그때까지 부디 만반의 준비를 갖추시길 바랍니다.",
+      "UnitTalk_JPN": "それまでに、万全の準備をしておいてくださいね。",
+      "TalkTime": 0.03
+    }
+  ]
+}

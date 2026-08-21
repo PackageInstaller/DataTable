@@ -1,0 +1,2548 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_SAINTESS_ELF_07",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_LIBRARY.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_09.mp3"
+    },
+    {
+      "Uid": 203,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PENCIL.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 후, 엘리사는 훈련할 때를 제외하면 도서관에서 두문불출했다.",
+      "UnitTalk_JPN": "その後…エリサはトレーニングの時間を除けば、図書館にこもっていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나 역시 엘리사를 도와주는 데 최선을 다했다.",
+      "UnitTalk_JPN": "私もまた、エリサを全力で手伝った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "해… 해냈어요…! 완벽한 발표용 대본이에요…!",
+      "UnitTalk_JPN": "や、やりました…！完璧な台本ができました…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "이 대본의 내용을 들으면… 다들 아가논 XXXXV 유물이 전투용 병기가 아니라…",
+      "UnitTalk_JPN": "これを聞けば…皆さんも、アガノンXXXXV遺物が戦闘用兵器ではなく…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "쓰레기를 먹는 아이라는 걸 알 수 있을 거예요!",
+      "UnitTalk_JPN": "ゴミを食べる子だと分かってくれるはずです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 257,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitTalk_KOR": "엘리사가 거대한 종이 뭉치를 흔들며 기뻐했다.",
+      "UnitTalk_JPN": "エリサは分厚い紙の束を振りながら、喜んだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…상당히 거대한 종이 뭉치였다.",
+      "UnitTalk_JPN": "…かなり分厚い紙の束だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 298,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "좀 더 알기 쉽게 설명해 주는 게…",
+          "JumpAnchorStringId_JPN": "もう少し簡単に説明してあげた方が…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "좋지 않을까?",
+          "JumpAnchorStringId_JPN": "いいんじゃない？"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "이, 이것도 꽤나 줄인 건데요…!",
+      "UnitTalk_JPN": "こ、これでも、かなり削ったのですが…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 260,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "그렇군요… 생각해 보니 전 이걸로 설득을 해야 하는 거였죠.",
+      "UnitTalk_JPN": "そうですね…よく考えてみれば、これで説得しなければならないのですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "뮤리엘님 정도의 지능만 있어도 이해할 수 있도록, 좀 더 줄여 볼게요!",
+      "UnitTalk_JPN": "ミュリエル様ほどの知能でも理解できるよう、もう少し削ってみます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…어쩐지 요즘 말투가 좀 거칠어지지 않았어?!",
+          "JumpAnchorStringId_JPN": "…なんか、最近口調が荒くなってない！？"
+        }
+      ]
+    },
+    {
+      "Uid": 205,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "EmotionEffect": "QMARK"
+    },
+    {
+      "Uid": 204,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 206,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 207,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇게 시간은 흘러…",
+      "UnitTalk_JPN": "そうして時は流れ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 211,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 212,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_LIBRARY.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 214,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START"
+    },
+    {
+      "Uid": 213,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PENCIL.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "…이상의 내용을, 부디 고려해 주시기 바랍니다…",
+      "UnitTalk_JPN": "…以上の内容を、どうかご考慮ください…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…다 했어요, 단장님!",
+      "UnitTalk_JPN": "…終わりました、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "끝났어요… 이 정도면 충분히 줄인 것 같아요!",
+      "UnitTalk_JPN": "終わりました…これで、簡略化できたと思います！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "수고했어, 엘리사!",
+          "JumpAnchorStringId_JPN": "お疲れ様、エリサ！"
+        }
+      ]
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "얼른 교단에 가서 보고를 드린 뒤에 쉬고 싶어요…!",
+      "UnitTalk_JPN": "早く教団に報告を済ませて、休みたいです…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괜찮겠어?",
+          "JumpAnchorStringId_JPN": "大丈夫？"
+        }
+      ]
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "네…! 잘못된 고증으로 재현되어버린 고통받는 아이를 구할 수 있다면…",
+      "UnitTalk_JPN": "はい…！誤った考証で再現され、苦しむ子を救えるなら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "이런 비루한 몸 따위… 얼마든지 갈아 넣을 수 있어요!",
+      "UnitTalk_JPN": "こんな卑しい身体…いくらでも差し出します！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 갈진 말고…",
+          "JumpAnchorStringId_JPN": "いや、差し出さないで…"
+        }
+      ]
+    },
+    {
+      "Uid": 215,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 271,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_MALE_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 216,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_MONOLITH_TEMPLE.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_22.mp3",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "NORMAL_LOOP"
+    },
+    {
+      "Uid": 217,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "네에?!",
+      "UnitTalk_JPN": "はいぃ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "주임사제님이… 복원식에 참여하러 떠나셨다구요?!",
+      "UnitTalk_JPN": "主任司祭様が…復元式に参加するために出発されたのですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "하, 하지만 성체 복원식은 모레였잖아요!",
+      "UnitTalk_JPN": "で、ですが、聖体復元式は明後日のはずでは…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 273,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_MALE_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "계획은 그랬는데, 모레에 비가 온다는 뉴스가 있어서 말입니다.",
+      "UnitTalk_JPN": "その予定でしたが、明後日に雨が降るとのことで。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_MALE_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그래서 오늘 신년 축제도 함께 열리니까, 겸사겸사 좋지 않냐는 이야기가 있었습니다.",
+      "UnitTalk_JPN": "今日は新年祭も開かれることですし、一緒に行うのもよいのではないかという話になったんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "그럴 수가… 도서관에만 있어서… 이야기를 듣지 못했어요…",
+      "UnitTalk_JPN": "そんな…図書館にずっといたので…知りませんでした…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "그, 그러면 복원식은 오늘 어어언제쯤 시작할까요?",
+      "UnitTalk_JPN": "そ、それでは、復元式はいつ始まるのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_MALE_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "지금쯤이면… 시작했을 겁니다만…",
+      "UnitTalk_JPN": "そろそろ…始まっていると思いますが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 274,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHURCH_BELL.wav",
+      "UnitTalk_KOR": "데엥-",
+      "UnitTalk_JPN": "ガーン",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "오늘이라니… 오늘이라니…!",
+      "UnitTalk_JPN": "今日だなんて…今日だなんて…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "아아, 저는 또 쓸모없었어요. 또 늦고 말았나 봐요…!",
+      "UnitTalk_JPN": "あぁ、またお役に立てませんでした。また間に合いませんでした…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아직 절망하긴 일러.",
+          "JumpAnchorStringId_JPN": "絶望するにはまだ早い。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "일단 가보자, 엘리사.",
+          "JumpAnchorStringId_JPN": "まずは行ってみよう。"
+        }
+      ]
+    },
+    {
+      "Uid": 227,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 231,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "신년 축제 중인 거리에는 사람이 많았다.",
+      "UnitTalk_JPN": "新年祭の真っ最中…街は人で賑わっていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "엘리사와 함께 유달리 북적북적한 인파들 사이를 뚫고 들어가 보았다.",
+      "UnitTalk_JPN": "エリサと共に、特に人が集まっている場所をかき分けて進むと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PARISHPRIEST"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "그래서, 가프님의 위대한 육신을 일부나마 복원하여…",
+      "UnitTalk_JPN": "これより、ガプ様の偉大なる御身を一部復元し…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 232,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_N",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 233,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PARISHPRIEST"
+      ],
+      "UnitTalk_KOR": "그분의 영광의 작은 조각이나마 보여드리고자 합니다.",
+      "UnitTalk_JPN": "ガプ様の栄光を、小さな一片でもお見せしようと思います。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PARISHPRIEST"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "함께 영접합시다! 가프님의 성체를!",
+      "UnitTalk_JPN": "共にお迎えいたしましょう！ガプ様の聖体を！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitNameString": [
+        "SI_PERSON_A"
+      ],
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "뭐야? 공연이라도 하는 건가?",
+      "UnitTalk_JPN": "なになに？何かショーでもやってるのかしら？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_N",
+      "UnitNameString": [
+        "SI_PERSON_B"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "모노리스 교단이잖아. 또 재밌는 구경거리라도 보여주는 거지.",
+      "UnitTalk_JPN": "モノリス教団だな。また面白いものでも見せてくれるんじゃないか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 291,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_N",
+      "UnitNameString": [
+        "SI_PERSON_B"
+      ],
+      "UnitTalk_KOR": "시간도 많은데 구경이나 해볼까?",
+      "UnitTalk_JPN": "時間もあることだし、見ていこうか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여기다…!",
+          "JumpAnchorStringId_JPN": "ここだ…！"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "사람들이 엄청 몰려 있어.",
+          "JumpAnchorStringId_JPN": "すごい人だな。"
+        }
+      ]
+    },
+    {
+      "Uid": 234,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "아으아으아… 이미 행사가 시작됐어요…",
+      "UnitTalk_JPN": "あううぅ…もう始まってしまいましたね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "어쩌죠...?",
+      "UnitTalk_JPN": "どうしましょう…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괜찮아, 엘리사는 충분히 준비했으니까.",
+          "JumpAnchorStringId_JPN": "大丈夫。しっかり準備したんだから。"
+        }
+      ]
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그, 그렇겠죠? 단장님이 도와주셔서 만든 대본도 여기에 있으니…",
+      "UnitTalk_JPN": "そ、そうですよね？団長が手伝ってくださった台本もありますし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "이 대본대로만 읽으면… 읽으… 면…?",
+      "UnitTalk_JPN": "台本通りに…読め…ば…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 276,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK"
+    },
+    {
+      "Uid": 278,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "어라…?",
+      "UnitTalk_JPN": "あれ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…설마.",
+          "JumpAnchorStringId_JPN": "…まさか。"
+        }
+      ]
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "POS6_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "어, 어어어없어졌어요! 대본이…! 대본이 없어졌어요!",
+      "UnitTalk_JPN": "あ、ああああ、ありません！台本が…！台本を、失くしてしまいました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "어디지? 어디서 흘린 거지…?! 이 중요한 때에…!",
+      "UnitTalk_JPN": "どこで落としたの…！？こんな大事な時に…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "…아아…",
+      "UnitTalk_JPN": "…あぁ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_64.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "엘리사는 거리 한복판에 무너지듯 주저앉았다.",
+      "UnitTalk_JPN": "エリサは道の真ん中で、崩れ落ちるように座り込んだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_15.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS6",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "…끝났어요.",
+      "UnitTalk_JPN": "…もう終わりです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "역시 저는… 쓸모없는 아이였던 거예요.",
+      "UnitTalk_JPN": "やっぱり私は…役立たずなんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "아무리 노력해 봐도… 중요한 때에는 아무것도 하지 못하는…",
+      "UnitTalk_JPN": "どんなに努力しても…大事な時に何もできず…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇지 않아!",
+          "JumpAnchorStringId_JPN": "そんなことない！"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "내가 대본을 찾아볼게.",
+          "JumpAnchorStringId_JPN": "私が台本を探してくる。"
+        }
+      ]
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "길에다 흘린 거면 방법이 없다. 거리는 온통 축제 인파로 북적이고 있었다.",
+      "UnitTalk_JPN": "道に落としたなら、どうしようもない。通りは人でごった返している。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 그게 아니라면, 도서관이나 사제와 만난 교단 건물에 두고 왔을 수 있다. 거길 찾아보면 있을지도 모른다.",
+      "UnitTalk_JPN": "だが、図書館か教団に置いてきた可能性もある。そこを探せば見つかるかもしれない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "대본을 찾아올 동안만 시간을 끌어줘.",
+          "JumpAnchorStringId_JPN": "台本を探してる間、時間を稼いでくれ。"
+        }
+      ]
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "시, 시간을요? 제가 어떻게…?",
+      "UnitTalk_JPN": "じ、時間を？私がどうやって…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "마음을 가라앉혀.",
+          "JumpAnchorStringId_JPN": "心を落ち着かせて。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "대본대로만 하면 돼.",
+          "JumpAnchorStringId_JPN": "台本通りにやればいい。"
+        }
+      ]
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "대, 대본대로라고 하셔도…",
+      "UnitTalk_JPN": "だ、台本通りにと言われても…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그 대본이… 없는걸요…",
+      "UnitTalk_JPN": "その台本が…ないんです…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "엘리사가 노력해서 쓴 거잖아?",
+          "JumpAnchorStringId_JPN": "エリサが頑張って書いたんだろ？"
+        }
+      ]
+    },
+    {
+      "Uid": 237,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "엘리사는 머리가 좋다. 굳이 그 대본이 필요한 이유는 내용을 외우지 못해서가 아니다.",
+      "UnitTalk_JPN": "エリサは頭がいい。あの台本が必要な理由は、内容を覚えられないからじゃない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "말주변이 없기 때문에, 대본에 쓰인 대로 말하기 위해서 썼을 뿐이다.",
+      "UnitTalk_JPN": "口下手だから、台本に書かれた通りに話すためだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내용, 기억하고 있지?",
+          "JumpAnchorStringId_JPN": "内容は覚えてるよね？"
+        }
+      ]
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "그렇긴… 한데요…",
+      "UnitTalk_JPN": "覚えては…いますが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "하지만… 저는 이렇게나 덤벙대고… 무능한 사람인걸요…",
+      "UnitTalk_JPN": "ですが…私はどんくさくて…無能なエルフなんです…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "결국 그 대본의 내용도… 제가 다 틀린 걸지도…",
+      "UnitTalk_JPN": "あの台本の内容だって…ぜんぶ間違っているかも…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "엘리사.",
+          "JumpAnchorStringId_JPN": "エリサ。"
+        }
+      ]
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "네? 단장님?",
+      "UnitTalk_JPN": "はい？団長？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "네가 옳고, 저 사람들이 틀렸어.",
+          "JumpAnchorStringId_JPN": "エリサが正しくて、あの人たちが間違ってる。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "그 유물은 로봇 청소기야.",
+          "JumpAnchorStringId_JPN": "あの遺物はロボット掃除機だ。"
+        }
+      ]
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "로봇… 청소기…요…?",
+      "UnitTalk_JPN": "ロボット…掃除機…ですか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내가 있던 곳에는 흔하게 썼던 거니까.",
+          "JumpAnchorStringId_JPN": "私がいた場所では、よく使われてた。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "행운을 빌어!",
+          "JumpAnchorStringId_JPN": "じゃ、幸運を祈る！"
+        }
+      ]
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "다, 단장님! 잠깐만…!",
+      "UnitTalk_JPN": "だ、団長！待ってください…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "혼자 남았어요…",
+      "UnitTalk_JPN": "一人になってしまいました…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…이건 저만이 걸린 문제가 아니에요.",
+      "UnitTalk_JPN": "…これは、私だけの問題ではありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "단장님도, 유물도…",
+      "UnitTalk_JPN": "団長も、遺物も…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_22.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "전부, 제가 해결해야 해요…!",
+      "UnitTalk_JPN": "ぜんぶ、私が解決しないと…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "괜찮아요, 엘리사. 대본에 썼던 내용대로만… 그 내용대로만 하면 돼요…!",
+      "UnitTalk_JPN": "大丈夫よ、エリサ。台本に書いた通りに…すればいいんだから…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 218,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 242,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 280,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF"
+    },
+    {
+      "Uid": 240,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 241,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 243,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "여, 여러분!!",
+      "UnitTalk_JPN": "み、皆さん！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아, 엘리사 117번 성녀?",
+      "UnitTalk_JPN": "あっ、序列117番聖女ことエリサ様？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 282,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "복원식에도 참가한 걸 보니, 여정이 생각보다 한가한 모양이네요?",
+      "UnitTalk_JPN": "復元式にも参加なさるなんて、案外お暇なようですね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitTalk_KOR": "다음번에 나올 유물이 우리가 <color=#F7BE45>협업</color>해서 만든 거예요.",
+      "UnitTalk_JPN": "次に登場する遺物は、私たちが<color=#F7BE45>協力</color>して作りあげたものですわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitTalk_KOR": "어찌나 참신한 아이디어였는지, 사제 평의회에서도 만족했다고 하시네요.",
+      "UnitTalk_JPN": "斬新なアイデアだったと、司祭評議会でも評価されたのですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitTalk_KOR": "후훗, 아시죠? 음악으로 적을 유혹한다는 부분은 제 아이디어인 거.",
+      "UnitTalk_JPN": "ふふっ、ご存知でしょう？音楽で敵を誘惑する部分は、私のアイデアですの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "아으아으… 저, 저기요…",
+      "UnitTalk_JPN": "あうう…あ、あの…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "왜 그러시죠?",
+      "UnitTalk_JPN": "どうしましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 292,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그, 그건 틀렸어요! 그 유물은 그런 용도가 아니에요!",
+      "UnitTalk_JPN": "そ、それは間違っています！そういった用途の遺物ではありません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "뭐라고요?",
+      "UnitTalk_JPN": "何ですって？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "그런 얘기를 이제 와서 하시면 어떡해요?",
+      "UnitTalk_JPN": "そんな話を、どうして今になっておっしゃるのです？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그러니까, 제가 그것 때문에 대본을 써 왔었는데…",
+      "UnitTalk_JPN": "そこで、台本を書いたのですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "그러니까… 그 유물의 하부 구조는, 그, 그러니까, 폭발물을…",
+      "UnitTalk_JPN": "えっと…遺物の下部構造は、その、つまり、爆発物を…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "엘리사 117번 성녀.",
+      "UnitTalk_JPN": "序列117番聖女ことエリサ様。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitTalk_KOR": "지금 그런 사소한 게 중요한가요?",
+      "UnitTalk_JPN": "今、そんな些細なことが重要なのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…네? 사소한 거라뇨?",
+      "UnitTalk_JPN": "…はい？些細なことだなんて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "여긴 시민들 앞이잖아요. 저희가 만든 유물로 시민들의 이목을 사로잡을 수 있는 상황인데…",
+      "UnitTalk_JPN": "市民の前ですよ。私たちが作った遺物で、注目を集められる状況だといいますのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitTalk_KOR": "갑자기 갈팡질팡하기에는 최악의 타이밍이라고요.",
+      "UnitTalk_JPN": "突然そんなことを言われても、困ります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "그, 그건 죄송해요. 하지만 소중한 유물이…",
+      "UnitTalk_JPN": "す、すみません。ですが、大切な遺物が…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PARISHPRIEST"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "엘리사 성녀님.",
+      "UnitTalk_JPN": "エリサ様。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "주임사제님! 제 얘기를 들어봐 주세요…!",
+      "UnitTalk_JPN": "主任司祭様！私の話を聞いてください…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PARISHPRIEST"
+      ],
+      "UnitTalk_KOR": "사제로서 성녀님들의 교류에는 간섭하지 않는 것이 원칙입니다만…",
+      "UnitTalk_JPN": "司祭として、聖女様方の交流には干渉しないのが原則ですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 300,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PARISHPRIEST"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "지금은 때가 아닌 것 같군요. 사람들의 눈이 많습니다.",
+      "UnitTalk_JPN": "ここは人目が多いですから。お静かに願えますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아뇨, 제게는 합리적인 근거가… 이, 이대로는 유물이…!",
+      "UnitTalk_JPN": "いえ、私には合理的な根拠が…こ、このままでは遺物が…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PARISHPRIEST"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "지금은 의식이 진행 중입니다. 하실 말씀이 있으시면 끝난 후 해주세요.",
+      "UnitTalk_JPN": "今は、儀式が執り行われていますので。ご用がありましたら、終了後にお願いします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 301,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "흐흥, 융통성 없기는. 가만히 있으면 너한테도 좋은 일이 될 텐데.",
+      "UnitTalk_JPN": "フン、要領の悪いこと。大人しくしていれば、良いことがあるかもしれないのに。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "꼭 그렇게 사고를 치고 일을 만들지.",
+      "UnitTalk_JPN": "どうしてそんなに問題を起こしたがるのかしら？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 286,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "설마! 어쩌면 <color=#F7BE45>에라</color>의 유혹에서 아직 벗어나지 못해서 그런 거일지도 몰라!",
+      "UnitTalk_JPN": "まさか！まだ<color=#F7BE45>エラ</color>の誘惑から抜け出せていないの！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아하핫, 그러니까 어서 돌아가서 참회의 기도나-",
+      "UnitTalk_JPN": "アハハッ！早く帰って懺悔の祈りでも──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 244,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "UPSET",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 132,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.8,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BONE_BREAK.wav",
+      "CameraOffset": "ONE_3",
+      "UnitTalk_KOR": "빠직-",
+      "UnitTalk_JPN": "ムカッ──",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "…끄러워요.",
+      "UnitTalk_JPN": "…さいです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "CameraOffset": "ONE_2",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "응?",
+      "UnitTalk_JPN": "はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "WaitClick": false,
+      "WaitTime": 0.9,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "시, ",
+      "UnitTalk_JPN": "う、",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 245,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "시끄럽다고요…!",
+      "UnitTalk_JPN": "うるさいと言いました…！",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 219,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 220,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_LIBRARY.png",
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 221,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_92.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 141,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "역시 여기 두고 갔었구나…!",
+          "JumpAnchorStringId_JPN": "やっぱりここにあった…！"
+        }
+      ]
+    },
+    {
+      "Uid": 142,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "서둘러서 나오려다가 깜박했던 모양이었다.",
+      "UnitTalk_JPN": "慌てていて、うっかり忘れてしまったらしい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 222,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 223,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "ONE_5"
+    },
+    {
+      "Uid": 224,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "UnitTalk_KOR": "잽싸게 대본을 들고 거리로 뛰쳐나왔다.",
+      "UnitTalk_JPN": "すばやく台本を手に取り、街へ飛び出した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav",
+      "UnitTalk_KOR": "축제의 인파가 거리를 메우고 있었지만, 연신 미안하다고 외치며 사람들의 사이를 가르고 달렸다.",
+      "UnitTalk_JPN": "祭りということもあり、かなりの人混みだったが…「すみません」と叫びながら人々の間を縫って走った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 225,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 146,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "엘리사, 찾았…!",
+          "JumpAnchorStringId_JPN": "エリサ、見つけ…！"
+        }
+      ]
+    },
+    {
+      "Uid": 148,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "이, 이 이상 말을 끊으면 빅 클라우드로 보내버릴 거예요?!",
+      "UnitTalk_JPN": "こ、こ、これ以上話を遮るのであれば、ビッグクラウドに送りますよ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "당신 지금… 누구에게… 무슨 말을 하는지… 알고 있어…?",
+      "UnitTalk_JPN": "あなた…誰に向かって、何を言っているのか…分かっているのかしら…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 293,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 150,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "자, 자기가 무슨 말을 하는지도 모르는 건 일레느 성녀님이잖아요!",
+      "UnitTalk_JPN": "じ、自分が何を言っているのか分かっていないのは、イレーヌ様の方です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 151,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "음악을 틀어요? 저, 저 구조에 저 형태로요?",
+      "UnitTalk_JPN": "音楽を流す？あ、あの構造、あの形状でですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 152,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "연구 시간에 안 졸았으면 말이 안 된다는 건 바로 안다구요!",
+      "UnitTalk_JPN": "研究時間に居眠りしていなければ、そんなことはありえないとすぐに分かったはずです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 153,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "솔직히 연구 시간에 졸았죠, 일레느 성녀님? 조셨잖아요!",
+      "UnitTalk_JPN": "イレーヌ様。研究時間に居眠りしていましたよね？居眠りしてたじゃないですか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 294,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 154,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav",
+      "UnitNameString": [
+        "SI_PERSON_A"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "뭐야, 무슨 일이야?",
+      "UnitTalk_JPN": "何だ、何事だ？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 247,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 155,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PERSON_B"
+      ],
+      "UnitTalk_KOR": "더 재미있는 구경거리인가 봐!",
+      "UnitTalk_JPN": "面白い見世物をやってるみたいだぞ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 157,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitNameString": [
+        "SI_ILLENE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으으읏…?!",
+      "UnitTalk_JPN": "ううっ…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 158,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "ONE_4",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "프프프프픗, 일레느 녀석, 얼굴이 울그락붉으락해졌잖아?",
+      "UnitTalk_JPN": "ぷぷぷ～っ。イレーヌったら、顔が真っ赤になってるじゃない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 248,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1"
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "잘했어, 엘리사! 저 재수 없는 녀석 코를 아주 납작하게 만들어줬…",
+      "UnitTalk_JPN": "よくやったわ、エリサ！あのイヤなやつの鼻をへし折ってやっ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 160,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "다, 당신도 똑같아요, 뮤리엘 님!!",
+      "UnitTalk_JPN": "あ、あなたも同じですよ、ミュリエル様！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 161,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS4_2X",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "엑?!",
+      "UnitTalk_JPN": "うげぇ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 162,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "핑크색일 거라구요? 세상에 핑크색인 건 뮤, 뮤리엘 성녀님 머릿속밖에 없어요!",
+      "UnitTalk_JPN": "ピンクですって？この世界でピンク色なのは、ミュ、ミュリエル様の頭の中ぐらいですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 163,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "그, 그런 핑크색으로 가득 찬 뇌를 가지고 있는 거니까 아직 116번에서 올라가시지 못하는 거라구요!",
+      "UnitTalk_JPN": "そ、そんなピンク色でいっぱいの脳だから、序列116番から上がれないんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 164,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "에, 엘리…사…?",
+      "UnitTalk_JPN": "エ、エリ…サ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 295,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 165,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PARISHPRIEST"
+      ],
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "에, 엘리사 성녀…! 지금 무슨…!",
+      "UnitTalk_JPN": "エ、エリサ様…！今、何を…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 166,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_14.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "발목 날아가고 싶지 않으면 조용히 하세요!",
+      "UnitTalk_JPN": "足首を吹き飛ばされたくなければ、お黙りください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 167,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PARISHPRIEST"
+      ],
+      "CameraOffset": "POS2_2X",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "히, 히익?!",
+      "UnitTalk_JPN": "ヒ、ヒィーッ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 168,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "이 전투 병기 매니아…! 무슨 유물을 보던 모조리 전투 병기로 복원하려고 하죠!",
+      "UnitTalk_JPN": "この戦闘兵器マニア…！どんな遺物を見ても、ことごとく戦闘兵器に復元しようとするんですから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 169,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "또 한 번만 되도 않는 발상으로 유물을 복원하려고 하면…",
+      "UnitTalk_JPN": "また、馬鹿げた発想で遺物を復元しようものなら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 297,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 170,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "제가 이 유물로 사제님의 발목을 날려버릴 테니까요!",
+      "UnitTalk_JPN": "私がこの遺物で、司祭様の足首を吹き飛ばしますから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 289,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 171,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PARISHPRIEST"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "주의하겠습니다!!",
+      "UnitTalk_JPN": "気をつけます！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 172,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "전부 조용히 하고 제 이론을 들어요!!",
+      "UnitTalk_JPN": "全員、黙って私の理論を聞くのです！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 173,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "이 유물은!",
+      "UnitTalk_JPN": "この遺物は！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 174,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.7,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "바로 여러분 같은 쓰레기들을 먹으며 돌아다니는! 쓰레기통인 거예요!",
+      "UnitTalk_JPN": "まさに皆さんのようなゴミを食べながら歩き回る！ゴミ箱なのです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 175,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "엘리사…",
+          "JumpAnchorStringId_JPN": "エリサ…"
+        }
+      ]
+    },
+    {
+      "Uid": 176,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_04.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아아… 가프님.",
+      "UnitTalk_JPN": "あぁ…ガプ様。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 177,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "저는… 저는 가프님의 가르침에 어긋나고 말았어요…",
+      "UnitTalk_JPN": "私は…私は、ガプ様の教えに背いてしまいました…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 178,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "의식을 방해하고… 사랑 대신 원망을 토해내고…",
+      "UnitTalk_JPN": "儀式を妨げ…愛の代わりに怨みを吐き出し…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 179,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 180,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아아… 결국엔… 결국엔 이렇게 되는군요…",
+      "UnitTalk_JPN": "あぁ…結局は…結局はこうなるのですね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 181,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "그래요… 저는 태생부터… 음부의 골짜기에서 태어난… 타락한 영혼이었던 거예요…!",
+      "UnitTalk_JPN": "そうです…私は生まれながらにして…冥府の谷底から這い出てきたような…堕落した魂だったのです…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 182,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "…그러니까… 타락한 성녀니까 어쩔 수 없잖아요?",
+      "UnitTalk_JPN": "…だから…堕落した聖女だから、仕方ないじゃないですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 183,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이제 가프님의 곁을 떠나… 에라님의 품에 안길 수밖에 없어요…",
+      "UnitTalk_JPN": "今こそガプ様のそばを離れ…エラ様の懐に抱かれるしかありません…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 184,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "에라님의 왼편에 앉아… 모든 성녀들을 화형에 처하고, 그 재 위에 새로운 신전을 짓겠어요…!",
+      "UnitTalk_JPN": "エラ様の左に座り…全ての聖女を火あぶりにし、その灰の上に新たな神殿を築きます…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 185,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "계위도, 절 화나게 하는 귀찮은 방해도 없이…",
+      "UnitTalk_JPN": "序列も、私を怒らせるような妨害もなく…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 186,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "유물만을 연구하고 유물만을 바라보는 신전을요!",
+      "UnitTalk_JPN": "遺物だけを研究し、遺物だけを見つめられる神殿を！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 187,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "헤헤… 헤헤헤… 보여요… 아아… 선명해요…!",
+      "UnitTalk_JPN": "ヘヘ…エヘヘ…見えます…あぁ…鮮明に…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 188,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "아무 방해도 없이 유물에 파묻혀 지내는 낙원이…!",
+      "UnitTalk_JPN": "何の妨害もなく、遺物に埋もれて過ごす楽園が…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 189,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…엘리사!",
+          "JumpAnchorStringId_JPN": "…エリサ！"
+        }
+      ]
+    },
+    {
+      "Uid": 249,
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "BgFlashBang": 0.2,
+      "BgCrash": 1.0,
+      "BgCrashTime": 0.3,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN_DESTROYED.png",
+      "CutsceneClear": "CLEARTEXT",
+      "CameraOffset": "POS3_2X"
+    },
+    {
+      "Uid": 250,
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "BgFlashBang": 0.2,
+      "BgCrash": 1.0,
+      "BgCrashTime": 0.3
+    },
+    {
+      "Uid": 251,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 191,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "단장님…?",
+      "UnitTalk_JPN": "団長…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 192,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "저…",
+      "UnitTalk_JPN": "私…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 193,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장님 말씀이 옳았어요.",
+      "UnitTalk_JPN": "団長の言う通りでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 194,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "하고 싶은 말을 모두 하니까…",
+      "UnitTalk_JPN": "言いたいことを全部言ったら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 195,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "저, 후, 후련해진 것 같아요!",
+      "UnitTalk_JPN": "私、す、すっきりしました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 252,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MONOLITH_FEMALE_1",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 196,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "으응…",
+          "JumpAnchorStringId_JPN": "うーん…"
+        }
+      ]
+    },
+    {
+      "Uid": 197,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "주변을 둘러보았다.",
+      "UnitTalk_JPN": "辺りを見回した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 254,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_N",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 255,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_6",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 198,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "폭풍 같은 엘리사의 비난에 사색이 된 모노리스 교단의 사람들.",
+      "UnitTalk_JPN": "嵐のようなエリサの非難に、呆然とするモノリス教団の人々。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 199,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_01.wav",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그리고 재미있는 이벤트가 열렸다며 엘리사에게 열띤 환호와 호응을 보내는 사람들.",
+      "UnitTalk_JPN": "そして面白いイベントが始まったと、エリサに熱狂的な歓声と拍手を送る人々。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 256,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR"
+    },
+    {
+      "Uid": 200,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "그들에게 둘러싸여 환희를 느끼고 있는 엘리사.",
+      "UnitTalk_JPN": "彼らに囲まれ、歓喜しているエリサ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 201,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "…이제 나도 모르겠다.",
+      "UnitTalk_JPN": "…もう、私にも分からない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 306,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav"
+    },
+    {
+      "Uid": 202,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WIND_02.wav",
+      "UnitTalk_KOR": "더 이상 필요 없어진 대본이, 사람들의 환성이 실린 바람에 날아간다.",
+      "UnitTalk_JPN": "もはや必要がなくなった台本が、人々の歓声とともに風に舞って行った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 302,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 303,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 304,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 305,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_BAND_BASS_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

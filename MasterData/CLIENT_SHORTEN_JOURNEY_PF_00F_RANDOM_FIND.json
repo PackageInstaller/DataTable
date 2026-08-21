@@ -1,0 +1,109 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00F_RANDOM_FIND",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 7,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_TRAINING"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "CameraOffset": "TWIN_2",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_RED"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "모노리스 교단에게 <color=#F7BE45>[정체불명의 유물]</color>을 판매해 달라는 부탁을 받았다.",
+      "UnitTalk_JPN": "モノリス教団から<color=#F7BE45>[正体不明の遺物]</color>を販売してほしいと依頼を受けた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "교단에 유물을 매매한다.",
+          "JumpAnchorStringId_JPN": "教団に遺物を売買する。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "가지고 있어 보자.",
+          "JumpAnchorStringId_JPN": "持ってみよう。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 30,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitNameString": [
+        "SI_PRIEST"
+      ],
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "유물을 넘기는 대신 적절한 보상을 받았다!",
+      "UnitTalk_JPN": "遺物を渡す代わりに適切な報酬を受け取った！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_4"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS9",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 32,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MONOLITH_OLD_1",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "유물은 그대로 간직하기로 했다.",
+      "UnitTalk_JPN": "遺物はそのまま保管することにした。",
+      "TalkTime": 0.03
+    }
+  ]
+}

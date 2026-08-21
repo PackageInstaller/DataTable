@@ -1,0 +1,792 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_31B_KLD_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "칼라이드의 외곽 거리를 걷던 중이었다. ",
+      "UnitTalk_JPN": "カライドの外れを歩いていた時だった。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "UnitQuickSet": true,
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "어이, 내가 이 기둥은 좀 더 오른쪽에 세워야 한다고 했잖아.",
+      "UnitTalk_JPN": "おい、この柱はもっと右だって言っただろ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "흥, 무슨 소리. 이쪽에 세워야 사람들이 지나다닐 때 덜 걸리적거린다고.",
+      "UnitTalk_JPN": "フン、何を言っているのさ。こっちに立てた方が、人が通る時に邪魔にならないだろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "UnitTalk_KOR": "뭐라고? 지금 내 말이 틀렸다는 거냐?",
+      "UnitTalk_JPN": "あぁん？オレの言ってることが間違ってるってのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그렇다면 할 수 없지! 주먹으로 결판을 내는 수밖에!",
+      "UnitTalk_JPN": "それなら仕方ねぇ！拳で決着つけんぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "하하, 좋지! 칼라이드 사람답게 누가 옳은지 한 판 겨뤄 보자고!",
+      "UnitTalk_JPN": "ハハ、いいだろう！カライドの人間らしく、どちらが正しいか一戦交えてみようじゃないか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "저 사람들, 갑자기 왜 싸우는 거지?",
+          "JumpAnchorStringId_JPN": "あの人たち、なんで喧嘩してるんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitQuickSet": true,
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "싸우다뇨? 저 아저씨들이요?",
+      "UnitTalk_JPN": "喧嘩？あっ、あのおじさん達のことですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "설마요. 칼라이드에서 저 정도는 건강한 의견 교환에 속해요.",
+      "UnitTalk_JPN": "まさか。カライドでは、あの程度は健全な意見交換に過ぎませんから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "여기서 지내시는 동안에는 비슷한 광경을 자주 보실 거예요.",
+      "UnitTalk_JPN": "ここで過ごされる間、同じような光景を何度も見ることになると思いますよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitTalk_KOR": "축제 준비로 다들 일하느라 정신없거든요.",
+      "UnitTalk_JPN": "皆、祭りの準備でバタバタしてるんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "축제?",
+          "JumpAnchorStringId_JPN": "祭り？"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "CameraOffset": "ONE_9",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네. <color=#F7BE45>[칼라이드 온천 축제]</color> 말이에요!",
+      "UnitTalk_JPN": "はい。<color=#F7BE45>「カライド温泉祭」</color>です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitTalk_KOR": "맛있는 온천 달걀도 원 없이 먹을 수 있고, 따뜻한 온천수가 채워진 커다란 노천탕에서 밤새 신나는 파티도 즐길 수 있죠.",
+      "UnitTalk_JPN": "おいしい温泉卵を思う存分食べられますし、大きな露天風呂で夜通しパーティーも楽しめますよ。あっ、もちろん天然温泉です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "ONE_3",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "[EVENT_FIXED_KALAID_01_01]",
+      "UnitTalk_JPN": "[EVENT_FIXED_KALAID_01_01]",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_FIXED_KALAID_01_02]",
+      "UnitTalk_JPN": "[EVENT_FIXED_KALAID_01_02]",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "CameraOffset": "ONE_9",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "으음, 제때 열 수 있을지는 미지수지만요.",
+      "UnitTalk_JPN": "うーん、予定通り開催できるかは分かりませんけどね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitTalk_KOR": "축제를 위해 준비 중이던 시설을 마수들이 몽땅 망가뜨렸거든요.",
+      "UnitTalk_JPN": "祭りのために準備してた施設を、魔獣が全部壊しちゃったんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "산속 깊숙한 곳에서만 살던 녀석들이 왜 여기까지 몰려온 건지…",
+      "UnitTalk_JPN": "山奥に住む魔獣が、なんでここまで押し寄せて来たんでしょうね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "도울 일이 있다면 도와줄게.",
+          "JumpAnchorStringId_JPN": "私たちでよければ手伝うよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitNameString": [
+        "SI_KALAID_PIONEER"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "네? 정말요? 축제 준비를 도와주신다고요?",
+      "UnitTalk_JPN": "えっ、祭りの準備を手伝ってくれるんですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_APOCALYPSE_FEMALE_1",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "CameraOffset": "TRIPLE_5",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "축제 준비를 도와준다는 녀석들이 있다고?",
+      "UnitTalk_JPN": "手伝ってくれる奴がいんのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "UnitTalk_KOR": "하하! 기특한 친구들이군!",
+      "UnitTalk_JPN": "ハハ！頼もしいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "칼라이드에서 은인을 푸대접하는 일은 있을 수 없지! 머무는 동안 우리 집 온천을 마음껏 쓰게 해 주마!",
+      "UnitTalk_JPN": "カライドでは、恩人を粗末に扱うことなんてねぇんだ！滞在中は、うちの温泉を好きなだけ使えよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "우리 집에 오면 매일 저녁 따끈한 칼라이드식 식사를 대접하마!",
+      "UnitTalk_JPN": "うちに来れば、毎日夕食に温かいカライド式の食事をご馳走するよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "흥! 질 수 없지! 우리 집에 방문하면 곰을 탈 수 있게 해 주마!",
+      "UnitTalk_JPN": "フン！負けてたまるか！うちに来たら、熊に乗せてやろう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "곰은 못 참지!",
+          "JumpAnchorStringId_JPN": "熊！？乗るしかない！",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "전통식을 즐길 기회다!",
+          "JumpAnchorStringId_JPN": "伝統料理を楽しむチャンスだ！",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "지금은 숙소로 가 봐야 한다.",
+          "JumpAnchorStringId_JPN": "今は宿に戻らないと。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        },
+        {
+          "Uid": 4,
+          "JumpAnchorStringId_KOR": "일단 도망치자!",
+          "JumpAnchorStringId_JPN": "この場から逃げよう！",
+          "JumpAnchorId": "REWARD_ANCHOR_4"
+        }
+      ]
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "오오, 역시 사나이라면 곰이지!",
+      "UnitTalk_JPN": "おぉ、やっぱ男なら熊だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "축제 준비를 도와준다고 할 때부터 알아봤어! 하하핫!",
+      "UnitTalk_JPN": "祭りの準備を手伝うと言った時から、分かってたぞ！はははっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 후, 곰을 타고 다니는 신선한 경험을 할 수 있었다!",
+      "UnitTalk_JPN": "その後、熊に乗るという新鮮な体験をした！",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "하하핫! 그래! 칼라이드에 와서 식도락을 놓칠 수 없지!",
+      "UnitTalk_JPN": "ハハハ、そうだろう！カライドに来たら美味しいものを食べないと！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "UnitTalk_KOR": "우리 아내 요리 솜씨는 이 도시 제일이라고. 기대해도 좋을 거야.",
+      "UnitTalk_JPN": "妻の料理の腕は、この街で一番なのさ。楽しみにしているといいよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 후, 추위도 거뜬할 만큼 맛있는 요리를 먹을 수 있었다!",
+      "UnitTalk_JPN": "その後、寒さも吹き飛ぶほどのおいしい料理を食べた！",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아쉽구먼. 그래도 시간이 남으면 언제라도 놀러 오라고.",
+      "UnitTalk_JPN": "残念だな。また時間があれば、いつでも遊びに来てくれ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "음, 이 땅에서 살아가는 사람들은 모두 한 식구나 다름없으니까!",
+      "UnitTalk_JPN": "ここで暮らす人は皆、家族同然だからね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "칼라이드의 정을 느끼며 헤어졌다…",
+      "UnitTalk_JPN": "カライドの情を感じながら別れた…",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "JumpAnchorInfo": "JUMPANCHOR_4",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_THUG_MALE"
+      ],
+      "UnitTalk_KOR": "어이쿠, 이런. 우리가 너무 친한 척 굴었나.",
+      "UnitTalk_JPN": "ったく、いけねぇ。ちょっと馴れ馴れしすぎたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_S",
+      "UnitNameString": [
+        "SI_MUSCULAR_MALE"
+      ],
+      "UnitTalk_KOR": "자네 인상이 워낙 험해야지. 나 원.",
+      "UnitTalk_JPN": "君の人相があまりにも悪いからだろう。やれやれ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_31B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "쌓인 눈을 헤치고 달리느라 진이 빠졌다…!",
+      "UnitTalk_JPN": "積もった雪をかき分けて走ると、疲れ果ててしまった…！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

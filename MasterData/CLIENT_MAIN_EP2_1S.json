@@ -1,0 +1,577 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP2_1S",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5,
+      "BgFileName": "ILLUST_BG_BLACK.png"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_KNOCK.wav",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "…단장님.",
+      "UnitTalk_JPN": "…団長。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_001.wav"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "단장님, 계세요?",
+      "UnitTalk_JPN": "団長、いらっしゃいますか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_002.wav"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "0.49803922"
+      ],
+      "BgFadeInTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BIRD_CHIRPING.wav"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…누구?",
+      "UnitTalk_JPN": "…誰だ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "목소리에 이끌려 눈을 떠보니, 숙소의 침대 위였다.",
+      "UnitTalk_JPN": "誰かの呼び声が聞こえ、私は宿のベッドで目を覚ました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "창문을 통해 들어오는 햇빛이 딱 기분 좋을 정도로 몸을 데워주고 있었다.",
+      "UnitTalk_JPN": "もう朝だった。窓から入ってくる日光が、心地よく身体を温めてくれている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0.49803922"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_KNOCK.wav"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "단장님~?",
+      "UnitTalk_JPN": "団長～？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_003.wav"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문밖에서 들려오는 이 목소리는… 리사의 목소리다.",
+      "UnitTalk_JPN": "ドアの向こうから聞こえてくるこの声は…リサだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐만 기다려.",
+          "JumpAnchorStringId_JPN": "少し待ってくれ。"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어제는 이런저런 불안함에 뒤척이다가 너무 늦게 잠들었다…",
+      "UnitTalk_JPN": "昨晩はこの先の不安が積み重なって、なかなか寝付けなかった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…라는 흐름이어야 했던 것 같은데.",
+      "UnitTalk_JPN": "…という展開になると思っていたのだが。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "반대로 너무나 편안하고 안정된 마음으로 늘어지게 푹 자고 일어났음을 자각하자 살짝 당황스러운 기분이 되었다.",
+      "UnitTalk_JPN": "我ながら神経が図太いのか、逆にぐっすりと眠れてしまったため、目覚めた時に少し戸惑った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "대충 옷매무새를 가다듬은 후 문을 열었다.",
+      "UnitTalk_JPN": "適当に身なりを整えた後、ドアを開ける。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_1.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_COMMON_CORRIDOR_DOOR 1.png",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "좋은 아침이에요, 단장님!",
+      "UnitTalk_JPN": "おはようございます、団長！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_004.wav"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무슨 일이야?",
+          "JumpAnchorStringId_JPN": "おはよう。…どうしたんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "무슨 일이라뇨, 이제 단장이 되셨으니 업무를 시작하셔야죠!",
+      "UnitTalk_JPN": "どうしたもこうしたもないですよ！団長になったんですから、仕事を頑張らないと！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_005.wav"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "어제는 시간이 너무 늦어서 숙소 안내까지만 도와드렸지만…",
+      "UnitTalk_JPN": "昨晩は時間も遅かったので、詳しい話はできませんでしたが…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_006.wav"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장으로서의 업무는 어제부터 시작된 거나 마찬가지라고요!",
+      "UnitTalk_JPN": "団長としての仕事は、昨日から始まっているんですよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_007.wav"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 52,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_ASTRO_SANCTUM_NIGHT.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_S_NOA_ALICIA",
+      "FilterType": "CFT_SEPIASTATIC"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_ALICIA",
+      "UnitTalk_KOR": "그러니 그동안은, <color=#F7BE45>[단장님의 일]</color>을 해 주시면 고맙겠군요.",
+      "UnitTalk_JPN": "そのかわりと言ってはなんですが、<color=#F7BE45>「団長の仕事」</color>をしていただければと思います。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_05_NPC_NOA_ALICIA_024.wav"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_ALICIA",
+      "UnitTalk_KOR": "당신은 이제부터 NOA의 <color=#F7BE45>[여정 단장]</color>입니다.",
+      "UnitTalk_JPN": "あなたはこれから、NOAの<color=#F7BE45>「旅の団長」</color>となります。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_05_NPC_NOA_ALICIA_026.wav"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_ALICIA",
+      "UnitTalk_KOR": "그리고 재능 있는 구원자들을 찾아 <color=#F7BE45>[여정]</color>을 마칠 수 있게 도와야 하죠.",
+      "UnitTalk_JPN": "才能ある救援者を探し、<color=#F7BE45>「救援の旅」</color>を終えられるように手助けしなければなりません。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_05_NPC_NOA_ALICIA_027.wav"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_ALICIA",
+      "UnitTalk_KOR": "그리하여 조만간 이 라비스타에 닥쳐올 <color=#F7BE45>[재난]</color>을 막아내는 것이…",
+      "UnitTalk_JPN": "そして、このラビスタ―に迫っている<color=#F7BE45>「災い」</color>を防ぐことが…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_05_NPC_NOA_ALICIA_028.wav"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_ALICIA",
+      "UnitTalk_KOR": "당신의 일입니다.",
+      "UnitTalk_JPN": "あなたの仕事です。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_05_NPC_NOA_ALICIA_029.wav"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_ALICIA",
+      "UnitTalk_KOR": "<color=#F7BE45>[여정]</color>의 자세한 규칙이나 지원들은 당신에게 배정된 <color=#F7BE45>[연락관]</color>이 알려줄 겁니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>についての詳細は、担当の<color=#F7BE45>「連絡官」</color>が教えてくれるはずです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_05_NPC_NOA_ALICIA_036.wav"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 56,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_COMMON_CORRIDOR_DOOR 1.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS_LOOP",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 55,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…그래, <color=#F7BE45>[단장]</color>이라는 걸 하기로 했었지.",
+      "UnitTalk_JPN": "そうだ、私は<color=#F7BE45>「団長」</color>をやることになったんだっけ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 일이 오늘부터 시작된 모양이다.",
+      "UnitTalk_JPN": "どうやら、その仕事が始まるようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "뭘 해야 하는지는… 아직은 전혀 모르겠지만.",
+      "UnitTalk_JPN": "何をすべきなのかは…まだ全然分かっていないが。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "저도 오늘 아침에 정식 발령 공문을 받았어요.",
+      "UnitTalk_JPN": "私も今朝、正式な辞令を受け取ったんです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_008.wav"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "앞으로는 제가 담당 연락관이 되어 단장님을 도와드릴 예정입니다.",
+      "UnitTalk_JPN": "これからは私が担当連絡官として、団長をサポートしますね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_009.wav"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래. 잘 부탁해.",
+          "JumpAnchorStringId_JPN": "そうか、よろしく。"
+        }
+      ]
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "네! 저도 잘 부탁드려요!",
+      "UnitTalk_JPN": "はい！こちらこそよろしくお願いします！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_010.wav"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "원래라면 이런 작은 구원단에 소속되는 건 제 인생 계획에 없었지만…",
+      "UnitTalk_JPN": "こんな小さな救援団に所属することになるなんて、当初の人生設計からズレてしまいましたけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_011.wav"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "알리시아님이 직접 스카우트해 온 단장님이라면 분명 엄청난 재능을 가지고 계시겠죠.",
+      "UnitTalk_JPN": "アリシア様が直々にスカウトしてきた団長なら、かなりの才能をお持ちだと思うんです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_012.wav"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "단장님이 하루빨리 대기업, 아니 대 구원단이 될 수 있도록 최선을 다하겠습니다!",
+      "UnitTalk_JPN": "一日でも早く大企業、いえ、大救援団になれるように最善を尽くします！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_013.wav"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "각종 예산과 눈먼 지원금을 최대한 당겨올 테니 기대해 주세요!",
+      "UnitTalk_JPN": "予算もあらゆる手段でかき集めますので、期待していてくださいね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_014.wav"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "으응, 고마워.",
+          "JumpAnchorStringId_JPN": "あぁ、ありがとう。"
+        }
+      ]
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "자, 그럼 가실까요?",
+      "UnitTalk_JPN": "さぁ、それでは行きましょうか。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_015.wav"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "가다니, 어디로?",
+          "JumpAnchorStringId_JPN": "行くって、どこに？"
+        }
+      ]
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그야 당연히 <color=#F7BE45>[캔들 스퀘어]</color>죠!",
+      "UnitTalk_JPN": "当然、<color=#F7BE45>「キャンドル・スクエア」</color>ですよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_016.wav"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "여정은 결국 캔들 스퀘어에서 시작해서 캔들 스퀘어에서 끝나니까요.",
+      "UnitTalk_JPN": "救援の旅はキャンドル・スクエアで始まり、キャンドル・スクエアで終わるんですから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_017.wav"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "여정에 대한 자세한 설명은 도착해서 드리겠습니다.",
+      "UnitTalk_JPN": "旅の詳細は、着いてからご説明しますね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_1_NPC_NOA_LISA_018.wav"
+    }
+  ]
+}

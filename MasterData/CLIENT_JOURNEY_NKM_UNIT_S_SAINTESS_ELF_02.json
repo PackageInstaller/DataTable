@@ -1,0 +1,1030 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_SAINTESS_ELF_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_18.mp3"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "엘리사와 본격적으로 훈련을 시작했다.",
+      "UnitTalk_JPN": "エリサと本格的にトレーニングを始めた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "첫 만남 때 엘리사가 했던 말을 떠올려보았다.",
+      "UnitTalk_JPN": "出会った時、エリサが言った言葉を思い返してみる。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "FilterType": "CFT_SEPIA"
+    },
+    {
+      "Uid": 97,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitTalk_KOR": "호, 혹시 벌써 알아채신 건가요…?!",
+      "UnitTalk_JPN": "も、もしかして、もうお気づきになられたのですか…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "제가 둔하고… 순발력도 나쁘고, 몸은 비효율적이고…",
+      "UnitTalk_JPN": "私がどんくさくて…反射神経も悪くて、非効率的な身体の持ち主で…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitTalk_KOR": "있는 거라곤 도움도 안 되면서 무겁기만 한 지방덩어리밖에 없는…",
+      "UnitTalk_JPN": "あるものといえば、無駄に重いだけの脂肪の塊…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitTalk_KOR": "그런 도움 안 되는 아이라는 걸…!",
+      "UnitTalk_JPN": "そんな役立たずだということを…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "CutsceneClear": "CLEARUNIT",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 101,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래서 어느 정도는 각오했는데…",
+          "JumpAnchorStringId_JPN": "だから、ある程度は覚悟していたが…"
+        }
+      ]
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이 정도였을 줄은…",
+          "JumpAnchorStringId_JPN": "これほどとは…"
+        }
+      ]
+    },
+    {
+      "Uid": 118,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgFileName": "ILLUST_BG_JOURNEY_SAINTESS_ELF_01.png",
+      "BgChangeTime": 1.5
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "다, 다, 단장니이임…",
+      "UnitTalk_JPN": "だ、だ、団長ぉ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "도와주세요… 히에엥…",
+      "UnitTalk_JPN": "助けてください…ふぇぇん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "엘리사는 허수아비를 상대로 패배했다.",
+      "UnitTalk_JPN": "エリサは、カカシにさえ負けた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "사슬 철퇴를 엉거주춤 휘두르다가, 쇠사슬에 자기 손목이 묶인 채 쓰러졌다.",
+      "UnitTalk_JPN": "フレイルメイスをふらふらと振り回し、自分の手首が鎖に縛られたまま倒れたのだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…중간 과정은 직접 보고도 도저히 믿기지 않았다.",
+      "UnitTalk_JPN": "…なかなか信じられない光景だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.4,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "아, 아무나 저 좀 구해주세요오오…",
+      "UnitTalk_JPN": "あぁ、誰か助けてくださぁい…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitTalk_KOR": "단장님… 알리시아님… 가프니이임…",
+      "UnitTalk_JPN": "団長…アリシア様…ガプ様ぁ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…일단 풀어줄게, 기다려.",
+          "JumpAnchorStringId_JPN": "…とりあえず解いてあげるから、ちょっと待って。"
+        }
+      ]
+    },
+    {
+      "Uid": 102,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "아야야… 손목이 새빨갛게 부었어요…",
+      "UnitTalk_JPN": "いたた…手首が真っ赤に腫れてしまいました…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "몸을 쓰는 건 잘 못하는구나?",
+          "JumpAnchorStringId_JPN": "体を動かすのが苦手なんだな？"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "네에…",
+      "UnitTalk_JPN": "はいぃ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "항상 그랬어요. 유물 탐사 때도 항상 좁은 곳에 끼이고, 어디에 걸려 넘어지고…",
+      "UnitTalk_JPN": "いつもそうなんです。遺物探査の時も、いつも狭いところに挟まったり、どこかに引っかかって転んだり…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "다른 성녀님들은 어렵지 않게 피하는 함정도 항상 저만...",
+      "UnitTalk_JPN": "他の聖女様は難なく避ける罠も、いつも私だけ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "그래서 선택을 받았을 때도 걱정이 많았는데… 역시나네요…",
+      "UnitTalk_JPN": "だから選ばれた時もとても心配だったのですが…やっぱりこうなってしまいましたね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "엘리사가 말한 <color=#F7BE45>선택을 받았다</color>라는 표현이 신경 쓰였다.",
+      "UnitTalk_JPN": "エリサが言った、<color=#F7BE45>選ばれた</color>という言葉が気になった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여정의 초대장이 가긴 하지만…",
+          "JumpAnchorStringId_JPN": "旅の招待状が届いてから…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "선택은 자신이 하는 걸로 알고 있는데?",
+          "JumpAnchorStringId_JPN": "参加するかどうかは、自分で決めるんじゃないの？"
+        }
+      ]
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그, 그건…",
+      "UnitTalk_JPN": "そ、それは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "…어느 날, 주임사제님이 부르셨어요.",
+      "UnitTalk_JPN": "…ある日、主任司祭様に呼ばれたんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "묵상 시간에 꾸벅꾸벅 졸다 불려간 거라서, 당연히 혼날 거라고 생각하고 있었는데…",
+      "UnitTalk_JPN": "黙想の時間にウトウトしていたら呼ばれたので、当然叱られると思っていたのですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "주임사제님이 말씀해 주셨어요. 알리시아 님이 저를 지목하셨다고요.",
+      "UnitTalk_JPN": "主任司祭様がおっしゃったんです。アリシア様が私を指名されたと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래서…?",
+          "JumpAnchorStringId_JPN": "それで…？"
+        }
+      ]
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그, 그래서 저는…",
+      "UnitTalk_JPN": "そ、それで私は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "알리시아님이 지목하셨으니, 당연히 참가해야만 하는 걸로 알고…",
+      "UnitTalk_JPN": "アリシア様が指名されたのだから、当然参加しなければならないと思って…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그렇구나.",
+          "JumpAnchorStringId_JPN": "…そっか。"
+        }
+      ]
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "여, 역시 제가 잘못했던 거죠…! 저처럼 쓸모없고 둔하기만 한 아이는…",
+      "UnitTalk_JPN": "や、やっぱり私が間違っていましたよね…！役立たずでどんくさいくせに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "감히 알리시아님의 말씀을 거역하는 한이 있더래도… 역시 여정을 진행하면 안 되었던 거예요…!",
+      "UnitTalk_JPN": "たとえアリシア様のお言葉に逆らうことになっても…やっぱり旅に参加すべきではなかったんです…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그, 그런 뜻은 아냐!",
+          "JumpAnchorStringId_JPN": "そ、そういう意味じゃなくて！"
+        }
+      ]
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "한참동안, 엘리사가 여정을 감당할만한 충분한 재능을 가지고 있기에 선택된 거라고 이야기해줬지만…",
+      "UnitTalk_JPN": "しばらくの間、エリサが旅をやり遂げるのに十分な才能を持っているからこそ選ばれたのだ、と説明してあげたが…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "엘리사의 움츠러든 표정은 쉽게 펴지지 않았다.",
+      "UnitTalk_JPN": "エリサはしょんぼりとしたままだった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래도 여정을 시작하게 되었으니…",
+          "JumpAnchorStringId_JPN": "それでも、旅に参加することになったんだから…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "여정을 통해 이루길 바라는 꿈 같은게 있어?",
+          "JumpAnchorStringId_JPN": "旅を通して叶えたい夢はある？"
+        }
+      ]
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "꿈이요…?",
+      "UnitTalk_JPN": "夢ですか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "지원금이 목표라거나, 막대한 힘을 얻고 싶다거나…",
+          "JumpAnchorStringId_JPN": "支援金とか、大きな力を手に入れたいとか…"
+        }
+      ]
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "처음 만났을 때는 물어보는 걸 깜빡했다.",
+      "UnitTalk_JPN": "初めて会った時、聞きそびれていたことだった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그, 그런 걸 원하다니 당치도 않아요…!",
+      "UnitTalk_JPN": "そ、そんなものを望むなんて、とんでもないです…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "막대한 돈이나 힘이라니… 그런게 있으면… 분명 저는 악의 유혹에 넘어가 버릴거예요.",
+      "UnitTalk_JPN": "莫大なお金や力なんて…そんなものがあったら…きっと私は、悪の誘惑に負けてしまいます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "매일 스테이크를 먹고 길가의 돌멩이를 아무 생각 없이 걷어차며 걷는 사람이 되어버려요…!",
+      "UnitTalk_JPN": "毎日ステーキを食べて、何も考えずに道端の石ころを蹴りながら歩くエルフになってしまいます…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…딱히 크게 문제가 있어 보이진 않는데.",
+      "UnitTalk_JPN": "…別に問題ないと思うけど。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "하지만… 어쨌든 여정을 진행하게 되었으니…",
+      "UnitTalk_JPN": "とにかく…旅に参加することになったからには…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "제가 조금이라도 모노리스 교단에 도움이 되는 사람이 되면… 좋겠어요.",
+      "UnitTalk_JPN": "少しでも、モノリス教団のお役に立てれば…嬉しいです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "교단에?",
+          "JumpAnchorStringId_JPN": "教団のために？"
+        }
+      ]
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "네, 네에…",
+      "UnitTalk_JPN": "は、はいぃ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "교단은 저를 어릴 때부터 키워 주시고, 배움의 길을 열어 주셨거든요.",
+      "UnitTalk_JPN": "教団は、私が幼い頃から育ててくださり…学びの道を開いてくださったのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "처음 수업을 듣기로 한 날에… 저희를 가르쳐 주러 오신 사제님이 말씀해 주셨어요.",
+      "UnitTalk_JPN": "初めて授業を受けた日…私たちを指導してくださった司祭様が仰いました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "<color=#F7BE45>끊임없는 의심과 탐구야말로 가프님께 다가서는 올바른 자세</color>…라고요.",
+      "UnitTalk_JPN": "<color=#F7BE45>絶え間ない疑念と探求こそが、ガプ様にお近づきになる正しい姿勢</color>…だと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "그날은 정말 행복했어요. 제 힘으로 뭔가를 알 수 있다는 게 이렇게나 즐겁구나, 하고…",
+      "UnitTalk_JPN": "あの日は本当に幸せでした。自分の力で何かを知ることの楽しさを…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…핫! 죄, 죄송해요! 제가, 또 눈치없이 혼자만의 세계에…",
+      "UnitTalk_JPN": "…ハッ！す、すみません！私ったら、また空気を読まずに自分の世界に…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 괜찮아.",
+          "JumpAnchorStringId_JPN": "いや、大丈夫だ。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "그래서?",
+          "JumpAnchorStringId_JPN": "それで？"
+        }
+      ]
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "마, 만약에라도 모노리스 교단에 별의 구원자의 힘을 가져올 수 있다면…",
+      "UnitTalk_JPN": "も、もし、モノリス教団に星の救援者の力をもたらすことができれば…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "교단은 더 유명해지고...",
+      "UnitTalk_JPN": "教団はもっと有名になり…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "또, 부, 불신자 분들도 가프님을 더 확실하게 믿을 수 있지 않을까요?",
+      "UnitTalk_JPN": "それに、ふ、不信心者の皆さんも、確信を持ってガプ様のことを信じられるようになるのではないでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그러면… 이렇게 하찮고 멍청한 저라도… 교단에 도움이 될 수 있지 않을까... 해서...!",
+      "UnitTalk_JPN": "そうすれば…ちっぽけで愚かな私でも…教団のお役に立てるかもしれない…と思って…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "으음…",
+          "JumpAnchorStringId_JPN": "うーん…"
+        }
+      ]
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "단장님? 혹시 제가... 하, 하면 안 되는 말을 했나요...?",
+      "UnitTalk_JPN": "団長？もしかして…あっ。私、言ってはいけないことを言ってしまいましたか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 그런 건 아닌데.",
+          "JumpAnchorStringId_JPN": "いや、そういうことじゃなくて。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "너 자신을 위한 이유는 없나... 해서.",
+          "JumpAnchorStringId_JPN": "エリサのための理由はないのか…と思って。"
+        }
+      ]
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "네에?! 자, 자신을 위한 이유... 요?!",
+      "UnitTalk_JPN": "はいぃ！？えっと、私のための理由…ですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "아으으... 자, 자꾸 그, 그런 말씀을 하시면 안 돼요, 단장님!",
+      "UnitTalk_JPN": "あうう…えっと、その、そんなことはおっしゃらないでください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "모노리스의 성녀가... 자신의 욕구에만 충실하라니...",
+      "UnitTalk_JPN": "モノリスの聖女が…自分の欲望に忠実であれ、だなんて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "그런 건... 타, 타락의 지름길이니까요...!",
+      "UnitTalk_JPN": "そんなの…堕落への近道です…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "...",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "자의적인 마음은 부족한 것 같지만, 여정과 교단에 대한 엘리사의 마음은 진심인 것 같다.",
+      "UnitTalk_JPN": "自分の意志は欠けているようだが、旅と教団に対するエリサの気持ちは本物のようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇다면 엘리사를 어떻게든 훌륭한 구원자로 키워내야겠지.",
+      "UnitTalk_JPN": "ならば、エリサを何とか立派な救援者に育て上げなければならない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그러면 오늘은 우선 다른 훈련을 해보자.",
+          "JumpAnchorStringId_JPN": "今日は他のトレーニングをしてみよう。"
+        }
+      ]
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네에…",
+      "UnitTalk_JPN": "はいぃ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "허, 허수아비는 제가 치울게요.",
+      "UnitTalk_JPN": "カ、カカシは私がお片付けしますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "이렇게…",
+      "UnitTalk_JPN": "こうして…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무거울 수도 있으니 내가 할…",
+          "JumpAnchorStringId_JPN": "重いかもしれないから私が…"
+        }
+      ]
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "우웃… 차…!",
+      "UnitTalk_JPN": "よい…しょっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…어라?",
+          "JumpAnchorStringId_JPN": "…あれ？"
+        }
+      ]
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "다, 단장님? 왜 그러세요?",
+      "UnitTalk_JPN": "団長？どうされましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "엘리사, 혹시 무거운 거 많이 뽑아봤어?",
+          "JumpAnchorStringId_JPN": "エリサ、よく重いものを持ち上げてたりした？"
+        }
+      ]
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "방금의 자세와 힘쓰는 법은 완벽했다.",
+      "UnitTalk_JPN": "力の使い方と姿勢が完璧だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "네? 무, 무거운 걸 자주 들고 나르기는 했어요.",
+      "UnitTalk_JPN": "はい？重いものでしたら、よく運んでいました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "고위 성녀분들은 바쁘시니, 유적 발굴이나 몸 쓰는 일은 자주 해야 했거든요.",
+      "UnitTalk_JPN": "高位の聖女様はお忙しいので、遺跡発掘や力仕事を頻繁にしていたんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "어, 얼마나 오래 그랬냐고요?",
+      "UnitTalk_JPN": "き、期間ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "못해도 수 년 정도는…",
+      "UnitTalk_JPN": "少なくとも、数年は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…확실히 알았어.",
+          "JumpAnchorStringId_JPN": "…分かったぞ。"
+        }
+      ]
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "분명 엘리사는 스스로 자각하지 못할 뿐, 여정의 초대를 받을만한 재능을 가지고 있다.",
+      "UnitTalk_JPN": "きっとエリサは自覚していないだけで、旅に招待されるにふさわしい才能を持っている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그런 부분을 일깨워 주기 위해, 내가 단장을 맡고 있는 것이다.",
+      "UnitTalk_JPN": "その才能を目覚めさせるのが、私の役目だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그날은 뜀뛰기와 줄넘기 등, 엘리사의 운동 신경을 일깨우기 위한 기초 훈련에 매진했다.",
+      "UnitTalk_JPN": "その日は跳び箱や縄跳びなど、エリサの運動神経を目覚めさせるための基礎トレーニングに専念した。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_KNUCKLE_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

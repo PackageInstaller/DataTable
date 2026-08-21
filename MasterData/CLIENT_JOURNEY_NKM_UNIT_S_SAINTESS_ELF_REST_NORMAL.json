@@ -1,0 +1,125 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_SAINTESS_ELF_REST_NORMAL",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "휴식 다음날, 숙소 앞에서 엘리사를 만났다.",
+      "UnitTalk_JPN": "休日の次の日、宿でエリサに会った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "엘리사, 좋은 아침.",
+          "JumpAnchorStringId_JPN": "エリサ、おはよう。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "어제는 잘 쉬었어?",
+          "JumpAnchorStringId_JPN": "昨日はゆっくり休めた？"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "다, 단장님!",
+      "UnitTalk_JPN": "だ、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜 그렇게 놀라?",
+          "JumpAnchorStringId_JPN": "なんでそんなに驚くんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "아, 아뇨...! 저... 저는...!",
+      "UnitTalk_JPN": "い、いえ…！わ…私は…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "어제! 절대! 잠들면서 단장님의 얼굴을 떠올리거나 하지 않았으니까요...!",
+      "UnitTalk_JPN": "昨日！絶対に！眠りにつく時、団長の顔を思い浮かべたりしませんでしたから…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "열심히 기도하고 묵상해서...! 으, 음란하거나...! 불결한 생각... 아, 아니 부정한 생각을 하지 않도록... 노력했으니까요오...!",
+      "UnitTalk_JPN": "一生懸命、祈りと黙想をして…！は、破廉恥で…！淫らなことを…い、いえ、不純なことを考えないように…努力したんですよぉ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "그 말을 남기고 엘리사는 훈련장으로 달려갔다.",
+      "UnitTalk_JPN": "その言葉を残して、エリサは訓練場へと走り出した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "...잘은 모르겠지만, 뛰는 모습을 보니 컨디션은 좋아 보이는 것 같았다.",
+      "UnitTalk_JPN": "よく分からないが…走る様子を見るに、コンディションは良さそうだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_NORMAL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      { // 웨이브 1
+        "MapPosType": "NMPT_BATTLE_SLOT_4_B",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_SPARROW_BLACK_CUBE_03",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS"
+          },
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_WOODPECKER_BLACK_CUBE_03",
+            "ChangeAdjustType": "NUAT_ORDER",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_WOODPECKER_BLACK_CUBE_03",
+            "ChangeAdjustType": "NUAT_ORDER",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_SPARROW_BLACK_CUBE_03",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS"
+          }
+        ]
+      },
+      { // 웨이브 2
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitLevel": 325,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_WOODPECKER_BLACK_CUBE_03",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitLevel": 325,
+            "UnitStrId": "NKM_UNIT_MON_ARCHIVE_INFORMER_YELLOW_ELITE_CUBE_03",
+            "IsBoss": true,
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_ORDER"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitLevel": 325,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_WOODPECKER_BLACK_CUBE_03",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS"
+          }
+        ]
+      },
+      { // 웨이브 3
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitLevel": 370,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_SPARROW_BLACK_CUBE_03",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_ORDER"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitLevel": 370,
+            "UnitStrId": "NKM_UNIT_MON_CONSTRUCT_WRENCH_BOSS_CUBE_03",
+            "IsBoss": true,
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitLevel": 370,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_SPARROW_BLACK_CUBE_03",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_ORDER"
+          }
+        ]
+      },
+      { // 웨이브 4
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitLevel": 415,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_WOODPECKER_BLACK_CUBE_04",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_ORDER"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitLevel": 415,
+            "UnitStrId": "NKM_UNIT_MON_ARCHIVE_INFORMER_BLACK_ELITE_CUBE_04",
+            "IsBoss": true,
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitLevel": 415,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_WOODPECKER_BLACK_CUBE_04",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_ORDER"
+          }
+        ]
+      },
+      { // 웨이브 5
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitLevel": 460,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_SPARROW_BLACK_CUBE_04",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitLevel": 460,
+            "UnitStrId": "NKM_UNIT_MON_CONSTRUCT_GADGET_BOSS_CUBE_03",
+            "IsBoss": true,
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_ORDER"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitLevel": 460,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_SPARROW_BLACK_CUBE_04",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS"
+          }
+        ]
+      }
+    ]
+  }
+}

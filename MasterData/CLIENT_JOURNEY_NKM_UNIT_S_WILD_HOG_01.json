@@ -1,0 +1,945 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WILD_HOG_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "FilterType": "CFT_SEPIASTATIC"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "아, 그러고 보니 단장님.",
+      "UnitTalk_JPN": "そういえば、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "이번 여정 단원은 조금 독특한 분이 초대되었다고 들었어요.",
+      "UnitTalk_JPN": "今回は旅の団員として、少し変わった方が招待されたそうなんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "물론 단장님이라면 어떤 분과도 잘 지내실 수 있겠지만요!",
+      "UnitTalk_JPN": "もちろん、団長ならどんな方でも上手くやれるはずですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "여기, 이 쪽지에 적힌 주소를 찾아가면 만나실 수 있을 겁니다.",
+      "UnitTalk_JPN": "この紙に書かれた住所に向かえば、きっとお会いできます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그럼 행운을 빌게요, 단장님.",
+      "UnitTalk_JPN": "それでは、幸運を祈っていますね。団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 84,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitPos": "POS5",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇게 해서 리사가 알려 준 주소를 찾아갔는데…",
+      "UnitTalk_JPN": "そして、リサが教えてくれた住所まで向かってみると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FIELD_PLAIN.png",
+      "StartBgmFileName": "EMPTY.mp3",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WIND.wav",
+      "UnitTalk_KOR": "사람은커녕 건물 한 채 없는 황무지였다.",
+      "UnitTalk_JPN": "そこは、建物一つない荒地だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이런 곳에 여정 단원이…?",
+          "JumpAnchorStringId_JPN": "こんな所に旅の団員が…？"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOOVES_CLOP_1.wav",
+      "CameraOffset": "TWIN_4",
+      "UnitTalk_KOR": "갑작스러운 땅울림에 고개를 들어 보니, 뿌연 먼지구름이 피어오르고 있었다.",
+      "UnitTalk_JPN": "突然の地響きに振り返ると…砂ぼこりが濛々と立ち昇っていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_YELLOW",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_03.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHISTLE.wav",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "폭주족들에게 알린다! 우리는 NOA 치안국이다!",
+      "UnitTalk_JPN": "暴走族に警告する！我らはNOA治安局だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_YELLOW",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "너희들을 선로 파손 및 속도위반으로 체포하겠다! 순순히 호그를 세우도록!",
+      "UnitTalk_JPN": "お前たちを線路破壊および速度違反の容疑で逮捕する！大人しくホッグから降りるように！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HELLSAVIOR_A"
+      ],
+      "UnitTalk_KOR": "누님! 타운가드입니다! 타운가드 녀석들이 따라붙었습니다!",
+      "UnitTalk_JPN": "姉御！タウンガードです！ヤツらが追ってきました！ ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "CameraOffset": "TWIN_1",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "호오, 그래?",
+      "UnitTalk_JPN": "ほぉ、なるほど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "녀석들, 오늘은 어디서 바이크 호그도 구해 왔네. 타는 폼은 순 초짜지만.",
+      "UnitTalk_JPN": "アイツら、今日はバイクホッグを調達してきやがったか。ま、乗り方はど素人だけどな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HELLSAVIOR_B"
+      ],
+      "UnitTalk_KOR": "어떻게 할까요, 누님?",
+      "UnitTalk_JPN": "どうしますか、姉御！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "길 위에서 생긴 문제는 속도로 정한다. 그게 우리의 룰이야.",
+      "UnitTalk_JPN": "道の上で起きた問題は、速度でケリをつける。これが俺たちのルールだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "<color=#F7BE45>헬 세이비어</color>, 다들 전속력으로!",
+      "UnitTalk_JPN": "<color=#F7BE45>ヘルセイヴァー</color>、全速力で行くぜぇ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "저 굼벵이들에게 제대로 달리는 게 뭔지 보여 줘라!",
+      "UnitTalk_JPN": "あのダサい奴らに、まともな走りってものを教えてやれ！        ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.4,
+      "UnitNameString": [
+        "SI_HELL_SAVIOR"
+      ],
+      "UnitTalk_KOR": "오오!",
+      "UnitTalk_JPN": "おぉ！！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "바이크 호그를 모는 폭주족들과 치안국 타운가드들 간의 추격극이다.",
+      "UnitTalk_JPN": "バイクホッグに乗った暴走族と治安局のタウンガードが、追走劇を繰り広げている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문제는…",
+      "UnitTalk_JPN": "問題は…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "설마…",
+          "JumpAnchorStringId_JPN": "まさか…"
+        }
+      ]
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이쪽으로 오는 건가?!",
+          "JumpAnchorStringId_JPN": "こっちに向かって来てる！？"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HELLSAVIOR_C"
+      ],
+      "UnitTalk_KOR": "누님! 앞에 사람이!",
+      "UnitTalk_JPN": "姉御！前に人が！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "뭐라고?",
+      "UnitTalk_JPN": "何だと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "어이! 치여 죽기 싫으면 얼른 비켜!",
+      "UnitTalk_JPN": "おいっ！轢かれて死にたくなきゃ退きやがれ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "순식간에 가까워지는 바이크 호그.",
+      "UnitTalk_JPN": "瞬く間に迫ってくるバイクホッグ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "피하기에는 너무 늦었다고 생각한 찰나.",
+      "UnitTalk_JPN": "避けるには遅すぎると思った瞬間。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "CameraOffset": "ONE_6",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "젠장!",
+      "UnitTalk_JPN": "くっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.6,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_37.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "시야가 한 바퀴 돌더니 어느새 선두에 선 소녀 뒤에 올라타 있었다.",
+      "UnitTalk_JPN": "目の前がぐるっと回ると、いつのまにか先頭を走る少女の後ろに座っていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "충돌하기 직전에 진로를 틀면서 덜미를 낚아챈 모양이다.",
+      "UnitTalk_JPN": "衝突する直前に方向転換し、私の首根っこを掴んだらしい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_YELLOW",
+      "UnitNameString": [
+        "SI_TOWNGUARD"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHISTLE.wav",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_BLUE",
+      "UnitNameString": [
+        "SI_NPC_TOWNGUARD"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "녀석들이 방향을 바꿨다! 쫓아!",
+      "UnitTalk_JPN": "方向を変えたぞ！追えー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_KNIGHT_YELLOW",
+      "UnitNameString": [
+        "SI_TOWNGUARD_B"
+      ],
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아, 안 돼! 속도를 줄여!",
+      "UnitTalk_JPN": "うぉっ、駄目だ！速度を落とせ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_COLLAPSE_01.wav",
+      "UnitTalk_KOR": "뒤쫓아오던 치안국은 무리하게 방향을 바꾸려다가 도미노처럼 쓰러졌다.",
+      "UnitTalk_JPN": "追いかけてきていたタウンガードは…無理に方向を変えようとしたせいで、ドミノ倒しになっていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 90,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 91,
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFileName": "ILLUST_BG_FIELD_PLAIN_SUNSET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_09.mp3",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HELLSAVIOR_A"
+      ],
+      "UnitTalk_KOR": "하하, 누님! 최고의 드리프트였습니다!",
+      "UnitTalk_JPN": "ハハッ、姉御！最高のドリフトでした！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아부는 됐어. <color=#F7BE45>가시넝쿨</color>과 겨루기엔 아직 부족해.",
+      "UnitTalk_JPN": "お世辞はいらねぇぜ。<color=#F7BE45>イバラ</color>と勝負するにはまだまだだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "이봐, 비실비실하게 생긴 친구. 살아 있는 거냐?",
+      "UnitTalk_JPN": "おい、そこのフラフラの奴。生きてんのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "방금 날 구해 준 거야?",
+          "JumpAnchorStringId_JPN": "さっき、私を助けてくれたのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "흥. 딱히 구해 줄 생각 없었어.",
+      "UnitTalk_JPN": "ふん。別に助ける気なんてなかったぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그냥 데이브가 사람을 들이받는 게 싫어서야.",
+      "UnitTalk_JPN": "デイヴが人にぶつかんのが嫌だっただけだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "데이브?",
+          "JumpAnchorStringId_JPN": "デイヴ？"
+        }
+      ]
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "네가 지금 올라타 있는 녀석이야. 인사해.",
+      "UnitTalk_JPN": "お前が乗ってた奴のことだよ。さぁ、挨拶しろ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOG_GRUNT_1.wav",
+      "UnitNameString": [
+        "SI_DAVE"
+      ],
+      "UnitTalk_KOR": "킁, 킁.",
+      "UnitTalk_JPN": "クンクン。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잘 부탁해. 데이브.",
+          "JumpAnchorStringId_JPN": "よろしく、デイヴ。"
+        }
+      ]
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOG_GRUNT_2.wav",
+      "UnitNameString": [
+        "SI_DAVE"
+      ],
+      "UnitTalk_KOR": "킁, 킁!",
+      "UnitTalk_JPN": "クン、クン！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "수상한 녀석은 아닌가 보네.",
+      "UnitTalk_JPN": "怪しい奴じゃねぇみたいだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "데이브는 구린내를 귀신같이 잘 맡거든.",
+      "UnitTalk_JPN": "デイヴはこうやって、怪しい匂いを嗅ぎ当てんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "나는 할리 맥코이. 헬 세이비어의 리더다.",
+      "UnitTalk_JPN": "俺はハーレー・マッコイ。ヘルセイヴァーのリーダーだぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그런데 너, 대체 황무지 한복판에서 뭘 하고 있던 거야?",
+      "UnitTalk_JPN": "ところでお前、荒地のど真ん中で何してたんだよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "조난이라도 당했냐?",
+      "UnitTalk_JPN": "遭難でもしたのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여정 단원을 찾아왔어.",
+          "JumpAnchorStringId_JPN": "旅の団員を探しに来たんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "여정이라면… NOA에서 주최하는?",
+      "UnitTalk_JPN": "旅ってことは…NOAが主催するアレのことか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그런 녀석을 왜 여기서 찾아?",
+      "UnitTalk_JPN": "なんでそんな奴がここにいんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitNameString": [
+        "SI_HELLSAVIOR_A"
+      ],
+      "UnitTalk_KOR": "아, 누님. 초대장은 저희가 받았습니다.",
+      "UnitTalk_JPN": "あっ、姉御。招待状を受け取ってます。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "할리를 뒤따라오던 우락부락한 아저씨들이 다 같이 손을 들었다.",
+      "UnitTalk_JPN": "ハーレーについてきていた、強面のおじさんたちが一斉に手を挙げた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "족히 백 명은 넘을 것 같다.",
+      "UnitTalk_JPN": "100人を優に超えてそうだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "댁들이었어?!",
+          "JumpAnchorStringId_JPN": "団員って、まさか！？"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "수가 너무 많잖아!",
+          "JumpAnchorStringId_JPN": "人数多すぎだろ！"
+        }
+      ]
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HELLSAVIOR_A"
+      ],
+      "UnitTalk_KOR": "하하, 오해하지 마. 초대받은 사람은 누님 한 분만이거든.",
+      "UnitTalk_JPN": "ハハッ、誤解しないでくれよ。招待されたのは姉御ひとりだからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐?",
+      "UnitTalk_JPN": "なに？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "나는 여정 같은 데 관심 없어. 딴 사람 알아보라고 해.",
+      "UnitTalk_JPN": "俺は旅なんかに興味ねぇぞ。他を当たってくれよな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HELLSAVIOR_A"
+      ],
+      "UnitTalk_KOR": "하지만 누님, 모처럼의 기회가 아깝지 않습니까.",
+      "UnitTalk_JPN": "でも姉御、せっかくのチャンスなのにもったいないですよ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HELLSAVIOR_A"
+      ],
+      "UnitTalk_KOR": "여정이라고 하면 대륙 최고의 레이스나 마찬가지라고요.",
+      "UnitTalk_JPN": "旅は、大陸一のレースと言っても過言じゃないんですから。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "레이스…?",
+      "UnitTalk_JPN": "レース…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HELLSAVIOR_B"
+      ],
+      "UnitTalk_KOR": "시련을 넘어서서 골인 지점까지 달리는 오프로드 레이싱이란 말이죠.",
+      "UnitTalk_JPN": "試練を乗り越え、ゴール地点まで走りぬくオフロードレースという訳です。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HELLSAVIOR_C"
+      ],
+      "UnitTalk_KOR": "여정을 정복한다면 모두가 누님을 최고의 라이더로 인정할 겁니다!",
+      "UnitTalk_JPN": "旅を突破すれば、皆が最高のライダーとして認めてくれるはずですよ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "…듣고 보니 그럴싸한데.",
+      "UnitTalk_JPN": "…確かにそうかもしれねぇなぁ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "관심이 생겼어?",
+          "JumpAnchorStringId_JPN": "興味湧いてきた？"
+        },
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그만둬도 문제는 없으니까.",
+          "JumpAnchorStringId_JPN": "途中でやめても構わないよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "흐음… 좋아. 까짓거 한번 해 보지, 뭐.",
+      "UnitTalk_JPN": "ふぅん…いいぜ。やってやろうじゃねぇか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "여기서 거절하면 저 녀석들이 설레발친 게 불쌍해지잖아.",
+      "UnitTalk_JPN": "ここで断ったら、期待してるアイツらにもわりぃしな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "그래서, 출발선은 어디지?",
+      "UnitTalk_JPN": "で、スタートラインはどこだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여기서부터야.",
+          "JumpAnchorStringId_JPN": "ここだよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_NORMAL_01.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "하하, 좋아! 그럼 가볍게 NOA까지 주파해 볼까!",
+      "UnitTalk_JPN": "ははっ、よっしゃあ！軽くNOAまで突っ走るぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WILD_HOG",
+      "UnitTalk_KOR": "꽉 잡으라고! 내 운전은 좀 거칠거든!",
+      "UnitTalk_JPN": "しっかり捕まれよぉ！俺の運転はちと激しいからな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "그렇게… 할리 맥코이와의 여정이 시작되었다!",
+      "UnitTalk_JPN": "こうして…ハーレー・マッコイとの旅が始まった。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_BEAMSWORD_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SPECIAL",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

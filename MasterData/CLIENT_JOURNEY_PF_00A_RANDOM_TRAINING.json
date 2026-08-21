@@ -1,0 +1,1179 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00A_RANDOM_TRAINING",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS6",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "최근, <color=#F7BE45>[여정]</color>의 성과가 부진하다.",
+      "UnitTalk_JPN": "最近、<color=#F7BE45>「救援の旅」</color>の成果が振るわない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "막막한 심정에 고민이 길어지고 있었는데…",
+      "UnitTalk_JPN": "途方に暮れ、悩んでいたところ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "저어…. 갑자기 죄송해요.",
+      "UnitTalk_JPN": "あの…突然すみません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "혹시 훈련을 어떻게 해야 할지 고민 중이신 걸까요?",
+      "UnitTalk_JPN": "今後、トレーニングをどう進めるか悩んでいらっしゃるのでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "정확하게 맞췄어.",
+          "JumpAnchorStringId_JPN": "その通りだ。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "조언이라면 고맙게 받을게.",
+          "JumpAnchorStringId_JPN": "助言ならありがたく聞くよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 109,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "서, 설마요. 저 같은 게 조언이라니요.",
+      "UnitTalk_JPN": "ま、まさか。私なんかが助言だなんて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그런데 혹시….",
+      "UnitTalk_JPN": "ですが、あの…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitTalk_KOR": "캔들 스퀘어에 <color=#F7BE45>비밀의 지옥 특훈</color>이 있다는 소문을 들어 보셨어요?",
+      "UnitTalk_JPN": "キャンドル・スクエアに、<color=#F7BE45>秘密の地獄特訓</color>があるという噂を聞いたことがありますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "비밀의…",
+          "JumpAnchorStringId_JPN": "秘密の…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "지옥 특훈?",
+          "JumpAnchorStringId_JPN": "地獄特訓？"
+        }
+      ]
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네. 그 비밀 특훈은 메이드 중에서 단 한 명에게만 전해진다고 해요.",
+      "UnitTalk_JPN": "はい。その秘密の特訓は、メイドの中でたった一人にだけ伝えられるそうです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitTalk_KOR": "그리고 이번 대의 교관은….",
+      "UnitTalk_JPN": "そして今代の教官は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "CameraOffset": "POS7_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "바, 바로 접니다!",
+      "UnitTalk_JPN": "わ、私なんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐라고?!",
+          "JumpAnchorStringId_JPN": "何だって！？"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "쉿, 쉬잇!",
+      "UnitTalk_JPN": "シーッ、シーッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "다른 사람들한테 알려지면 안 돼요. ",
+      "UnitTalk_JPN": "他の人に知られてはいけません。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그냥 지옥 특훈이 아니라 비밀의 지옥 특훈이니까요.",
+      "UnitTalk_JPN": "ただの地獄特訓ではなく、秘密の地獄特訓ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알겠어. 비밀로 할게.",
+          "JumpAnchorStringId_JPN": "分かった、秘密にするよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "비밀이라고 하니 왠지 가슴이 두근거린다…",
+      "UnitTalk_JPN": "秘密という言葉に、なんだか胸が高鳴った…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네, 그러면….",
+      "UnitTalk_JPN": "はい、それでは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "지금 <color=#F7BE45>[CHARACTER_NAME]</color>님께 가장 필요한 건 뭘까요?",
+      "UnitTalk_JPN": "今、<color=#F7BE45>[CHARACTER_NAME]</color>様に最も必要なものは何でしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 말에, <color=#F7BE45>[CHARACTER_NAME]</color>(와)과 시선을 교환했다.",
+      "UnitTalk_JPN": "その言葉に、<color=#F7BE45>[CHARACTER_NAME]</color>と目を合わせた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "지금은…",
+      "UnitTalk_JPN": "今は…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "펀치 기계 잘 치는 법",
+          "JumpAnchorStringId_JPN": "パンチングマシンのコツ。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "지치지 않고 달리는 법",
+          "JumpAnchorStringId_JPN": "疲れずに走り続ける方法。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "지금은 괜찮다.",
+          "JumpAnchorStringId_JPN": "今は大丈夫だ。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 41,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그렇군요…",
+      "UnitTalk_JPN": "そうですね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "펀치 기계… 펀치 기계…. ",
+      "UnitTalk_JPN": "パンチングマシン…パンチングマシン… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 알겠습니다! 말이 나온 김에 지금 바로 시작하죠!",
+      "UnitTalk_JPN": "わ、分かりました！話が出たついでに、今すぐ始めましょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitTalk_KOR": "먼저 가서 기다리고 계세요. 저는 준비할 게 있어서요.",
+      "UnitTalk_JPN": "訓練場でお待ちいただけますか？私は準備することがありますので。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "EMPTY.mp3",
+      "CameraOffset": "TWIN_1",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 136,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitTalk_KOR": "…그렇게, 나와 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 훈련장에서 기다렸다.",
+      "UnitTalk_JPN": "…そうして、私と<color=#F7BE45>[CHARACTER_NAME]</color>は訓練場で待った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 113,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "잠시 후 메이드가 수레를 밀고 나타났다.",
+      "UnitTalk_JPN": "しばらくすると、メイドが台車を押して現れた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그건 뭐야?",
+          "JumpAnchorStringId_JPN": "それは何だ？"
+        }
+      ]
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 모래주머니예요.",
+      "UnitTalk_JPN": "あっ、砂袋です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitTalk_KOR": "앞으로는 팔에 이걸 차고 펀치 기계를 치면 돼요.",
+      "UnitTalk_JPN": "これからは、腕にこれを着けてパンチングマシンを打っていただきます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "하루에 1만 번씩!",
+      "UnitTalk_JPN": "一日に一万回ずつ、です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "너무 많아!",
+          "JumpAnchorStringId_JPN": "多すぎだ！"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "하루 종일 펀치 기계만 치라는 뜻이잖아.",
+          "JumpAnchorStringId_JPN": "一日中パンチングマシンを打ち続けろってことじゃないか。"
+        }
+      ]
+    },
+    {
+      "Uid": 138,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "하지만 소설….",
+      "UnitTalk_JPN": "でも、小説…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아니, 전수 받은 특훈법대로 하는 거니까요!",
+      "UnitTalk_JPN": "いえ、伝授された特訓法通りですから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitTalk_KOR": "성장은 요령으로 이루어지지 않아요, 단장님.",
+      "UnitTalk_JPN": "成長は、要領で成し遂げられるものではありませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "앞으로 한 방에 펀치 기계를 날려 버리는 그날까지 힘내 봐요!",
+      "UnitTalk_JPN": "一発でパンチングマシンを吹き飛ばすその日まで、頑張りましょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitTalk_KOR": "저, 저도 도와드릴 테니까요.",
+      "UnitTalk_JPN": "わ、私もお手伝いしますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_WHOOSH_11.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 그리고 이건 <color=#F7BE45>특훈 인증서</color>예요.",
+      "UnitTalk_JPN": "あっ、これは<color=#F7BE45>特訓認定証</color>です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>비밀의 지옥 특훈</color>에 참가했다는 사실을 증명할 수 있는 유일한 물건이죠.",
+      "UnitTalk_JPN": "<color=#F7BE45>秘密の地獄特訓</color>に参加したことを証明できる唯一の物ですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitTalk_KOR": "특훈이 끝날 때까지, 소중히 간직해 주세요.",
+      "UnitTalk_JPN": "特訓が終わるまで、大切に保管しておいてくださいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "믿어도 되는 걸까 싶지만….",
+      "UnitTalk_JPN": "信じて良いのか判断に迷ったが…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 133,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 벌써 펀치 기계를 날려 버릴 기세다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、もうパンチングマシンを吹き飛ばす勢いだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "단원도 의욕을 보이고 있으니, 열심히 하자!",
+      "UnitTalk_JPN": "団員も意欲を見せているのだから、頑張ろう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 69,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그렇군요… 체력을 기르기 위해서는…",
+      "UnitTalk_JPN": "なるほど…体力をつけるためには…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "지쳐 쓰러지더라도 포기하지 않아야 해요!",
+      "UnitTalk_JPN": "疲れ果てて倒れたとしても、諦めてはいけません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "일단 지금도 포기하지는 않았는데….",
+          "JumpAnchorStringId_JPN": "今のところ、まだ諦めてはないけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "다, 다행이에요. 시작이 반이라는 말도 있잖아요….",
+      "UnitTalk_JPN": "よ、よかったです。最初が肝心だと言いますしね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그럼 잠시 저와 함께 가시겠어요?",
+      "UnitTalk_JPN": "では、私と一緒に来ていただけますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 79,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_TRAIN_STATION.png",
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 139,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 80,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 81,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_STEAM_TRAIN.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitTalk_KOR": "…그렇게, 나와 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 기차역에 도착했다.",
+      "UnitTalk_JPN": "…そうして、私と<color=#F7BE45>[CHARACTER_NAME]</color>は駅に移動した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_TRAIN_HORN.wav",
+      "UnitTalk_KOR": "승강장에 서 있는 열차가 경적을 울리고 있었다.",
+      "UnitTalk_JPN": "ホームに停まっている列車は、警笛を鳴らしている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "혼자서 달리는 것보다는 경쟁할 상대가 있으면 더 좋죠.",
+      "UnitTalk_JPN": "一人で走るよりも、競争相手がいた方が良いですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "열차와 달리기 승부예요!",
+      "UnitTalk_JPN": "列車と競争です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "첫 상대부터 너무 강하잖아?!",
+          "JumpAnchorStringId_JPN": "最初の相手から強すぎない！？"
+        }
+      ]
+    },
+    {
+      "Uid": 130,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "하지만 더 빠른 건 생각이 안 나서….",
+      "UnitTalk_JPN": "ですが、もっと速い相手は思いつかなくて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아니, 전수 받은 특훈법대로 하는 거니까요!",
+      "UnitTalk_JPN": "いえ、伝授された特訓法通りですから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitTalk_KOR": "성장은 요령으로 이루어지지 않아요, 단장님.",
+      "UnitTalk_JPN": "成長は、要領で成し遂げられるものではありませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "앞으로 NOA 제일의 체력을 가질 수 있게 힘내 봐요!",
+      "UnitTalk_JPN": "これから、NOA一の体力を得られるように頑張ってください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitTalk_KOR": "저도 옆에서 두 분을 도와드릴 테니까요.",
+      "UnitTalk_JPN": "私もそばでお二人の手助けをしますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_WHOOSH_11.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 그리고 이건 <color=#F7BE45>특훈 인증서</color>예요.",
+      "UnitTalk_JPN": "あっ、これは<color=#F7BE45>特訓認定証</color>です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "<color=#F7BE45>비밀의 지옥 특훈</color>에 참가했다는 사실을 증명할 수 있는 유일한 물건이죠.",
+      "UnitTalk_JPN": "<color=#F7BE45>秘密の地獄特訓</color>に参加したことを証明できる唯一の物ですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "특훈이 끝날 때까지, 소중히 간직해 주세요.",
+      "UnitTalk_JPN": "特訓が終わるまで、大切に保管しておいてくださいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 131,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "믿어도 되는 걸까 싶지만….",
+      "UnitTalk_JPN": "信じて良いのか判断に迷ったが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_STEAM_TRAIN.wav",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 141,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "열차가 출발하자 <color=#F7BE45>[CHARACTER_NAME]</color>도 나란히 달려갔다.",
+      "UnitTalk_JPN": "列車が出発すると、<color=#F7BE45>[CHARACTER_NAME]</color>も並んで走り出した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "단원도 의욕을 보이고 있으니, 열심히 하자!",
+      "UnitTalk_JPN": "団員も意欲を見せているのだから、頑張ろう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 142,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 114,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그, 그러시군요...",
+      "UnitTalk_JPN": "そ、そうでしたか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN",
+      "UnitNameString": [
+        "SI_MAID_C"
+      ],
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "죄송합니다! 제가 괜한 이야기를!",
+      "UnitTalk_JPN": "申し訳ありません！私が余計なことを！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_GREEN"
+    },
+    {
+      "Uid": 128,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "메이드는 허둥지둥 자리를 피했다...",
+      "UnitTalk_JPN": "メイドは慌ててその場を去って行った…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 <color=#F7BE45>[여정]</color>에 대해서는, 좀 더 경각심을 가져야 할 것 같다.",
+      "UnitTalk_JPN": "しかし<color=#F7BE45>「救援の旅」</color>については、もう少し警戒心を持つべきだろう。",
+      "TalkTime": 0.03
+    }
+  ]
+}

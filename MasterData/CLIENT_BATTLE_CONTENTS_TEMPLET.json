@@ -1,0 +1,138 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: BATTLE_CONTENTS_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleContentsID" : 1,
+          "OrderList" : 1,
+          "BattleContentsType" : "OPERATION",
+          "BattleContentsIcon" : "I_CM_BG_DAILY.png",
+          "BattleContentsThumbnail" : "HUB_CM_DAILY.png",
+          "BattleContentsName" : "SI_OPERATION",
+          "BattleContentsNameENG" : "SI_OPERATION_ENG",
+          "BattleContentsComment" : "SI_OPERATION_COMMENT",
+          "BattleContentsDesc" : "SI_OPERATION_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleContentsID" : 100,
+          "OrderList" : 2,
+          "BattleContentsType" : "MAINSTORY",
+          "BattleContentsIcon" : "I_CM_BG_DAILY.png",
+          "BattleContentsThumbnail" : "HUB_CM_DAILY.png",
+          "BattleContentsName" : "SI_MAIN_STORY",
+          "BattleContentsNameENG" : "SI_MAIN_STORY_ENG",
+          "BattleContentsComment" : "SI_MAIN_STORY_COMMENT",
+          "BattleContentsDesc" : "SI_MAIN_STORY_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleContentsID" : 101,
+          "OrderList" : 1,
+          "BattleContentsType" : "NORMAL",
+          "BattleContentsIcon" : "I_CM_BG_DAILY.png",
+          "BattleContentsThumbnail" : "HUB_CM_EXPLORE.png",
+          "BattleContentsName" : "SI_REGULAR_QUEST",
+          "BattleContentsNameENG" : "SI_REGULAR_QUEST_ENG",
+          "BattleContentsComment" : "SI_DAILY_BATTLE_COMMENT",
+          "BattleContentsDesc" : "SI_REGULAR_QUEST_DESC",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutIndex" : 0,
+          "ContentsMainMaterial" : 111
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleContentsID" : 102,
+          "OrderList" : 2,
+          "BattleContentsType" : "SPECIAL_RAID",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_CM_RAID.png",
+          "BattleContentsName" : "SI_SPECIAL_RAID",
+          "BattleContentsNameENG" : "SI_SPECIAL_RAID_ENG",
+          "BattleContentsComment" : "SI_EXPLORE_BATTLE_COMMENT",
+          "BattleContentsDesc" : "SI_SPECIAL_RAID_DESC",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutIndex" : 1,
+          "ContentsMainMaterial" : 112
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleContentsID" : 103,
+          "OrderList" : 3,
+          "BattleContentsType" : "CLOISTER",
+          "BattleContentsIcon" : "I_CM_BG_CLOISTER.png",
+          "BattleContentsThumbnail" : "HUB_CM_CLOISTER.png",
+          "BattleContentsName" : "SI_INTERSTELLAR_CLOISTER",
+          "BattleContentsNameENG" : "SI_INTERSTELLAR_CLOISTER_ENG",
+          "BattleContentsComment" : "SI_CLOISTER_COMMENT",
+          "BattleContentsDesc" : "SI_CLOISTER_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleContentsID" : 104,
+          "OrderList" : 4,
+          "BattleContentsType" : "CUBE",
+          "BattleContentsIcon" : "I_CM_BG_CUBE.png",
+          "BattleContentsThumbnail" : "HUB_CM_CUBE.png",
+          "BattleContentsName" : "SI_CUBE_PALACE",
+          "BattleContentsNameENG" : "SI_CUBE_PALACE_ENG",
+          "BattleContentsComment" : "SI_CUBE_BATTLE_COMMENT",
+          "BattleContentsDesc" : "SI_CUBE_BATTLE_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleContentsID" : 105,
+          "OrderList" : 5,
+          "BattleContentsType" : "RANKING_RAID",
+          "BattleContentsIcon" : "I_CM_BG_GATE.png",
+          "BattleContentsThumbnail" : "HUB_CM_GATE.png",
+          "BattleContentsName" : "SI_COSMO_GATE",
+          "BattleContentsNameENG" : "SI_COSMO_GATE_ENG",
+          "BattleContentsComment" : "SI_COSMO_GATE_COMMENT",
+          "BattleContentsDesc" : "SI_COSMO_GATE_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_CASINO_01",
+          "BattleContentsID" : 201,
+          "OrderList" : 1,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_CASINO.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_CASINO.prefab",
+          "StoryEventBgm" : "MUSIC_CASINO_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_CASINO_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_CASINO",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_CASINO_SHOP.png",
+          "MissionTabGroupId" : 1001,
+          "MissionThumbnail" : "EC_B_CASINO_MISSION.png",
+          "EventPointGroupId" : 1,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2010203
+            },
+
+            {
+              "TopbarViewItemId" : 2010201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        }
+    ]
+}

@@ -1,0 +1,1192 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "모처럼의 휴일을 맞아 느긋하게 공원에서 산책을 즐기던 중. ",
+      "UnitTalk_JPN": "休日を迎え、私はのんびりと公園を散歩していた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어디선가 맛있는 냄새가 풍겨오고 있었다. ",
+      "UnitTalk_JPN": "するとどこかから、美味しそうな香りが漂ってきた。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_1",
+      "UnitNameString": [
+        "SI_NOBLE_LADYA"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>따뜻한 NOA, 함께 만들어가요</color>!",
+      "UnitTalk_JPN": "<color=#F7BE45>温かいNOAを、共に創りあげましょう</color>！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_1",
+      "UnitNameString": [
+        "SI_NOBLE_LADYA"
+      ],
+      "UnitTalk_KOR": "따뜻한 수프 한 그릇 받아 가세요!",
+      "UnitTalk_JPN": "温かいスープはいかがですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이건, 무슨 행사인가요?",
+          "JumpAnchorStringId_JPN": "何かのイベントですか？"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_1",
+      "UnitNameString": [
+        "SI_NOBLE_LADYA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "안녕하세요? 이제 제법 날씨가 쌀쌀해지지 않았나요?",
+      "UnitTalk_JPN": "こんにちは！最近は、ずいぶんと肌寒くなってきましたよね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_1",
+      "UnitNameString": [
+        "SI_NOBLE_LADYA"
+      ],
+      "UnitTalk_KOR": "그래서 시민분들께 따뜻한 수프를 나눠드리는 봉사활동을 하고 있어요. ",
+      "UnitTalk_JPN": "そこで、市民の方々に温かいスープをお配りするイベントを行っているんです。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_1",
+      "UnitNameString": [
+        "SI_NOBLE_LADYA"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "여기가 아무리 살기 좋은 NOA라지만…  ",
+      "UnitTalk_JPN": "NOAは暮らしやすい街ですが…  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_1",
+      "UnitNameString": [
+        "SI_NOBLE_LADYA"
+      ],
+      "UnitTalk_KOR": "그래도 온기 담긴 끼니 한 번을 챙겨 드시기 힘든 분들은 있으니까요.",
+      "UnitTalk_JPN": "温かい食事をすることすら、難しい方もいらっしゃいますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_1",
+      "UnitNameString": [
+        "SI_NOBLE_LADYA"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 꼭 형편이 어려운 분들만 받을 수 있는 건 아니예요.",
+      "UnitTalk_JPN": "あっ！経済的にお困りの方だけにお配りしている訳ではありませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_1",
+      "UnitNameString": [
+        "SI_NOBLE_LADYA"
+      ],
+      "UnitTalk_KOR": "누구든 따뜻한 수프 한 그릇이면 속도 마음도 든든해지는 법이죠.  ",
+      "UnitTalk_JPN": "誰でも温かいスープを飲めば、心も身体も満たされるものですから。  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_1",
+      "UnitNameString": [
+        "SI_NOBLE_LADYA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "저쪽에 있는 리디아 양 앞에 줄을 서서 기다려 주시겠어요?",
+      "UnitTalk_JPN": "あちらのリディア様の列で、お待ちいただけますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…<color=#F7BE45>리디아 양</color>이요?",
+          "JumpAnchorStringId_JPN": "…<color=#F7BE45>リディア様</color>？"
+        }
+      ]
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그곳에는… ",
+      "UnitTalk_JPN": "そこには… ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "따뜻한 미소를 가득 띄운 리디아가 국자를 들고 있었다. ",
+      "UnitTalk_JPN": "お玉を持ち、温かい笑顔を浮かべるリディアがいた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "어서 오세요~!",
+      "UnitTalk_JPN": "どうぞ～！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "따뜻한 수프 한 그릇 하고 가세요~! ",
+      "UnitTalk_JPN": "温かいスープはいかがですか～！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_OLDMAN"
+      ],
+      "UnitTalk_KOR": "아가씨, 괜찮으면 한 그릇만 떠 주겠나…?",
+      "UnitTalk_JPN": "お嬢ちゃん、一杯もらってもいいかい？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "어머, 그럼요 할머니! 잠시만 기다리세요… 자, 여기요!",
+      "UnitTalk_JPN": "あら、もちろんですよ！さぁ…どうぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "날씨도 쌀쌀한데, 몸조심하세요!",
+      "UnitTalk_JPN": "肌寒くなってきましたし、お身体に気をつけてくださいね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_2",
+      "UnitNameString": [
+        "SI_NOBLE_LADYB"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "리디아, 피곤하진 않아요?",
+      "UnitTalk_JPN": "リディア、疲れてはいませんか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "어머, 캐서린 님. 후후, 저는 아직 괜찮은걸요. 걱정해 주셔서 감사합니다! ",
+      "UnitTalk_JPN": "あら、キャサリン様。私は大丈夫ですよ。ふふ、お気遣いありがとうございます！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "힘든 분들을 도와드리는 일에 구원자씩이나 되어서 엄살 부릴 수는 없죠.",
+      "UnitTalk_JPN": "困っている人をお助けするのが、救援者の務めですから。このくらいで弱音を吐くわけにはいきませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_2",
+      "UnitNameString": [
+        "SI_NOBLE_LADYB"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "리디아는 상냥한 사람이네요. ",
+      "UnitTalk_JPN": "リディアは本当に優しいのですね。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_2",
+      "UnitNameString": [
+        "SI_NOBLE_LADYB"
+      ],
+      "UnitTalk_KOR": "고향을 위해서도 그렇게 고생하시면서… 더 약한 분들을 위해 힘을 쏟다뇨.",
+      "UnitTalk_JPN": "故郷のことだけでも大変でしょうに…お困りの方のために尽力されるとは。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_2",
+      "UnitNameString": [
+        "SI_NOBLE_LADYB"
+      ],
+      "UnitTalk_KOR": "부디, 서부에도 좋은 소식 있길 바랄게요. 응원하고 있답니다.",
+      "UnitTalk_JPN": "どうか、西部でも良いことが起こりますように。応援していますよ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_2",
+      "UnitNameString": [
+        "SI_NOBLE_LADYB"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아, 혹시 부탁할 게 있다면 언제든지 말해요. 힘닿는 데까지 도울게요.",
+      "UnitTalk_JPN": "あっ！もし力になれることがあれば、いつでもおっしゃってくださいね。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "감사합니다, 캐서린 님! ",
+      "UnitTalk_JPN": "ありがとうございます、キャサリン様！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_2",
+      "UnitNameString": [
+        "SI_NOBLE_LADYB"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아하하, 이젠 그냥 이름만 부르래도요. 이따 또 봐요, 리디아! ",
+      "UnitTalk_JPN": "おほほ、様はつけなくてもいいのですよ。では、ごきげんよう！ ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_2",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리디아와 봉사 활동이라니, 절대 같이 놓여선 안 될 단어들이 모인 기분이 든다.\r\n",
+      "UnitTalk_JPN": "リディアと、ボランティア…考えられない組み合わせだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…설마.",
+      "UnitTalk_JPN": "…まさか。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "지난번에 나의 조언에 감명을 받은 리디아가 마음을 조금 고쳐먹으려는건-",
+      "UnitTalk_JPN": "私の言葉に感銘を受けて、変わろうとしているのか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "엇… 단장님? ",
+      "UnitTalk_JPN": "あら…団長さん？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "갑자기 웬 봉사활동이냐구요?",
+      "UnitTalk_JPN": "どうしてボランティアをしているのか、ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "…에에. 단장님께 받은 도움을 나누어 주고 싶어진거냐니… ",
+      "UnitTalk_JPN": "…えぇ？団長さんから受けた恩を、他の人に分け与えようとしているのか、ですって…？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "당연히 그럴 리가 없잖아요.",
+      "UnitTalk_JPN": "まったく、そんな訳ないですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "바보인가요, 단장님은? 단장님한테 받은 도움을 왜 생판 남들한테 갚아요?",
+      "UnitTalk_JPN": "お馬鹿さんなんですか？団長さんから受けた恩を、他の人に分け与える意味が分かりませんけど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "...그럴 리 없지.",
+      "UnitTalk_JPN": "やっぱり違ったか。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "...설마, 지난번에 단장님이 했던 말에 제가 감명이라도 받아서-",
+      "UnitTalk_JPN": "まさか…私が、団長さんの言葉に感銘を受けて──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "성실히 봉사활동을 하는 새로운 아이가 되었다...",
+      "UnitTalk_JPN": "真面目にボランティアに取り組む子になった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "...그런 소름돋는 생각 하고 계신건 아니죠?",
+      "UnitTalk_JPN": "…そんな鳥肌が立つようなことを、考えていた訳ではありませんよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "...소름 돋는군.",
+      "UnitTalk_JPN": "…鳥肌が立った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "단장님 같은 바보나 이유도 없이 사서 고생을 하는 거라구요.",
+      "UnitTalk_JPN": "理由もなく苦労を買って出るのは、団長さんみたいなお馬鹿さんぐらいですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "이 행사의 주요 후원자는 저기 있는 유력 가문의 귀족 영애들이예요.",
+      "UnitTalk_JPN": "このイベントのメインスポンサーは、名家の令嬢たちなんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "저런 착하기만 하고 머리에 꽃밭이 가득한 사람들은 조금만 친해지면 유용하게 써먹을 수 있죠.",
+      "UnitTalk_JPN": "ああいう優しくて脳内お花畑な人たちこそ、仲良くなっておけば利用できるものですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "제가 추운 날씨에 괜히 이러고 있겠어요?",
+      "UnitTalk_JPN": "私がこの寒い中、訳もなくこんなことすると思います？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NOBLE_LADYC"
+      ],
+      "UnitTalk_KOR": "어머, 리디아 양! 오늘도 왔구나? ",
+      "UnitTalk_JPN": "あら、リディアさま！今日もいらっしゃったのね？ ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "안녕하세요~! 빅토리아 님! 오늘도 좋은 하루 보내세요!",
+      "UnitTalk_JPN": "ヴィクトリア様、こんにちは～！今日も素敵な一日を！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_NOBLE_LADYC"
+      ],
+      "UnitTalk_KOR": "그래요. 리디아 양도 좋은 하루 보내요~",
+      "UnitTalk_JPN": "えぇ、リディアさまも素敵な一日を～！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "순진한 영애들은 정말이지, 가지고 놀기 쉽다니까요?",
+      "UnitTalk_JPN": "本当におめでたい人たちですよね。扱いやすくて助かっちゃいます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "일단 이렇게 친목을 다져 놓은 다음…",
+      "UnitTalk_JPN": "まずは、こうして仲良くなっておいて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "중앙에 영향력이 필요한 결정적인 순간에 써먹는 거죠! ",
+      "UnitTalk_JPN": "ここぞという時に利用するんです！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "예를 들면 다다음 달에 있을 NOA의 서부 탈환대 지원 예산 책정이라든가…",
+      "UnitTalk_JPN": "例えば…NOAから西部奪還隊への支援予算を策定したり…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "민간 주도의 서부 복원 기금 조성이라든가… ",
+      "UnitTalk_JPN": "民間が主体になって、西部復興基金を募ったり… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그렇게 서부의 사정도 조금씩 나아지고 나면 서부 탈환대의 전투력도 증가…!",
+      "UnitTalk_JPN": "そうして西部の財政状況が改善されれば。西部奪還隊の戦闘力も上がる…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitTalk_KOR": "결과적으로 저와 쿠쿠가 <color=#F7BE45>공허 핵</color>의 힘을 흡수할 수 있는 가능성도 높아지죠.",
+      "UnitTalk_JPN": "結果的に、私とクゥクゥが<color=#F7BE45>空虚の核</color>の力を吸収できる可能性も高くなります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그러기 위해서는, 저 영애들도 모두 제가 깔아둔 판 위로 올라가 줘야 해요.",
+      "UnitTalk_JPN": "そのためには、あのお嬢様たちにも一役買ってもらわないと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇구나.",
+          "JumpAnchorStringId_JPN": "なるほどな。"
+        }
+      ]
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "그럼요.",
+      "UnitTalk_JPN": "はい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "후후! 단장님, 혹시 기대하셨나요?",
+      "UnitTalk_JPN": "ふふ！団長さん、もしかして期待してましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "아쉽지만… 전 단장님이 원하는 착한 아이는 될 수 없는걸요.",
+      "UnitTalk_JPN": "残念ですが…私は団長さんが望むような、いい子ちゃんにはなれないんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "단장님도 저에 대해 이제 슬슬 아시지 않나요?",
+      "UnitTalk_JPN": "団長さんも、私のことそろそろ分かってきたでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "너무 잘 알게 되어 탈이야.",
+          "JumpAnchorStringId_JPN": "私は知りすぎた。"
+        }
+      ]
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "여정을 함께 하며 많은 시간을 보냈지만...",
+      "UnitTalk_JPN": "旅を通して、多くの時間を共にしてきたが…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "세상을 비뚤어지게 바라보는 영악한 성격은, 결국 바뀌지 않은 모양이다.",
+      "UnitTalk_JPN": "世の中を斜めに見る捻くれた性格は、結局変わらなかったようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "...하지만-",
+      "UnitTalk_JPN": "…でも──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응?",
+          "JumpAnchorStringId_JPN": "うん？"
+        }
+      ]
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "앞으로는 또 모르죠?",
+      "UnitTalk_JPN": "未来は分かりませんよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "단장님이 지금처럼 바보같은 잔소리를 계속 옆에서 늘어놓으면...",
+      "UnitTalk_JPN": "団長さんが今みたいに、馬鹿みたいな小言を隣で言い続けたら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "언젠가 제가 개심해서 후회의 눈물을 흘리며...",
+      "UnitTalk_JPN": "いつか私が改心して、後悔の涙を流して…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "단장님이 원하는 착한 아이가 될 지도요?",
+      "UnitTalk_JPN": "団長さんが望むような、いい子ちゃんになるかもしれませんよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "리디아가 예의 그 미소를 지으며 나를 똑바로 바라보았다.",
+      "UnitTalk_JPN": "リディアはいつもの笑顔を浮かべ、私をまっすぐ見つめた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "...제가 엇나가는게 걱정 되신다면-",
+      "UnitTalk_JPN": "…私が道を踏み外さないか心配だったら──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "단장님도 제가 짠 판 위에 올라가 주세요.",
+      "UnitTalk_JPN": "私が空虚の核を手に入れる時まで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "제가 공허핵을 손에 넣을 때까지... 옆에서 같이 봐달라구요.",
+      "UnitTalk_JPN": "隣で見守っててください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "단장님의 잔소리는 최대한 들어보도록… 노력은 해볼 테니까요.",
+      "UnitTalk_JPN": "団長さんの小言も、できるだけ聞くように…努力はしてみますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "...알겠죠?",
+      "UnitTalk_JPN": "…分かりましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "...아, 알겠어.",
+          "JumpAnchorStringId_JPN": "…わ、分かった。"
+        }
+      ]
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "꼭이에요? 약속한 거예요?",
+      "UnitTalk_JPN": "絶対ですよ？約束しましたからね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 132,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "리디아의 미소는 광산에서 돌아오던 날 보여주었던 미소와 닮아보였다.",
+      "UnitTalk_JPN": "リディアの笑顔は、鉱山から戻った日に見せたものと似ていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "아무튼, 단장님도 기왕 오신 김에 수프나 한 그릇 드시고 가세-",
+      "UnitTalk_JPN": "とにかく、団長さんもせっかく来たんですから。スープでも飲んで──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…네? 봉사 활동, 같이 하자구요?",
+      "UnitTalk_JPN": "…はい？一緒にボランティアしよう…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "왜요…? 단장님은 딱히 이득 볼 게 없지 않나요?",
+      "UnitTalk_JPN": "なんでですか…？団長さんには、メリットもないですよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS1",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "옆에서 계속 지켜보라며?",
+          "JumpAnchorStringId_JPN": "隣で見守っててほしいんじゃなかったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "...",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "...후후후. 아하하하!",
+      "UnitTalk_JPN": "…ふふふ。あはははっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "단장님은 정말... 바보같네요.",
+      "UnitTalk_JPN": "団長さんって本当に…お馬鹿さんですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "좋아요. 그럼 앞치마 입기 전에 수프나 한 그릇 하세요.",
+      "UnitTalk_JPN": "いいですよ。じゃあ、その前にスープをどうぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "날씨도 쌀쌀한데, 감기 걸리면 안되잖아요?",
+      "UnitTalk_JPN": "寒くなってきたんですから、風邪引いちゃダメですよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…?!",
+      "UnitTalk_JPN": "…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "걱정해 주는 거 아닌데요…!",
+      "UnitTalk_JPN": "心配してあげてる訳じゃありませんから…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitPos": "POS3",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "됐어요! 바보는 감기에도 안 걸린다는데 단장님은 완전 건강하시겠네요…! ",
+      "UnitTalk_JPN": "もういいです！馬鹿は風邪を引かないって言いますし、団長さんには関係ない話ですね…！ ",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_ROD_08",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3"
+    }
+  ]
+}

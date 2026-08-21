@@ -1,0 +1,151 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00B_RANDOM_SUPPLY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_2",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "신설 부서의 설문지 작성 요청을 받았다.",
+      "UnitTalk_JPN": "新設部署のアンケート作成依頼を受けた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "설문 평가 : 좋음",
+          "JumpAnchorStringId_JPN": "アンケート評価：良い",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "설문 평가 : 보통",
+          "JumpAnchorStringId_JPN": "アンケート評価：普通",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "설문 평가 : 나쁨",
+          "JumpAnchorStringId_JPN": "アンケート評価：悪い",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        },
+        {
+          "Uid": 4,
+          "JumpAnchorStringId_KOR": "오늘은 좀…",
+          "JumpAnchorStringId_JPN": "今日はちょっと…",
+          "JumpAnchorId": "REWARD_ANCHOR_4"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "알고 있는 모든 수사를 동원해서 지원 부서를 칭찬하는 응원을 남겼다.",
+      "UnitTalk_JPN": "知っている全ての修辞を駆使して支援部署を称賛する応援を残した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_2",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 7,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "개선할 점이 몇 있지만, 보급품의 품질은 훌륭했다는 취지로 설문지에 체크했다.\r\n",
+      "UnitTalk_JPN": "改善点はいくつかあるが、補給品の品質は素晴らしかったという趣旨でアンケートにチェックした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_2",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS2",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 1,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그동안의 아쉬웠던 마음을 설문지에 듬뿍 담아서 전해 줬다.",
+      "UnitTalk_JPN": "これまでの悔しい思いをアンケートにたっぷり込めて伝えた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_2",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS2",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 8,
+      "JumpAnchorInfo": "JUMPANCHOR_4",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "설문에 응답하는 대신 설문지를 보관하기로 했다.",
+      "UnitTalk_JPN": "アンケートに回答する代わりに、アンケート用紙を保管することにした。",
+      "TalkTime": 0.03
+    }
+  ]
+}

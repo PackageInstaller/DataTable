@@ -1,0 +1,33 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00", //감독자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_VOIDREAPER_SCYTHE_BLACK_BOSS_OP_01",
+            "ChangeAdjustType": "NUAT_SUN",
+            "IsBoss": true,
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false
+          },
+          {
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00", //감독자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN" 
+          }
+        ]
+      }
+    ]
+  }
+}

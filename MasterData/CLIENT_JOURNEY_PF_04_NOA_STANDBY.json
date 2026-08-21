@@ -1,0 +1,367 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_04_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_09.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "훈련을 마치고 돌아와 보니, 방 앞에 소포가 놓여 있었다. ",
+      "UnitTalk_JPN": "トレーニングを終えて部屋に戻ると、ドアの前に小包が置いてあった。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "발신인 불명의 소포?",
+      "UnitTalk_JPN": "差出人不明の小包？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "흥, 난 그런 귀찮은 장난친 적 없어. 리스 가문의 후손을 뭐라고 생각하는 거야?",
+      "UnitTalk_JPN": "ふん、私がそんな面倒なイタズラする訳ないでしょ。リース家の後継者を何だと思ってるの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "보나 마나 사은품 같은 걸 받기로 해 놓고 잊어 버린 거겠지.",
+      "UnitTalk_JPN": "どうせ、プレゼントをもらう約束を忘れてただけに決まってる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…응? 아무리 생각해도 모르겠다고?",
+      "UnitTalk_JPN": "…えっ？いくら考えても分からないの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하아, 잠깐 이리 줘 봐.",
+      "UnitTalk_JPN": "はぁ、ちょっと貸してみなさい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_92.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "흐응… 그럼 이건 아무래도 <color=#F7BE45>[부적]</color>인 모양이네.",
+      "UnitTalk_JPN": "ふーん…これはどうやら、<color=#F7BE45>「<r=チャーム>呪物</r>」</color>みたいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "어떤 물건인지 모르는 눈치니까, 이번 한 번만 내가 몸소 설명해 줄게.",
+      "UnitTalk_JPN": "何か分かってないみたいだから、今回だけ特別に説明してあげる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "<color=#F7BE45>[부적]</color>은 과거 <color=#F7BE45>[별의 구원자]</color>와 관련 있다고 전해지는 물건들이야.",
+      "UnitTalk_JPN": "<color=#F7BE45>「<r=チャーム>呪物</r>」</color>は、かつて<color=#F7BE45>「星の救援者」</color>に縁があった物だって伝えられてるの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "<color=#F7BE45>[별의 구원자]</color>가 가지고 다녔거나, 스쳐 지나갔거나, 인연 있는 자들의 후손이 만들었다고 알려진 것들이지.",
+      "UnitTalk_JPN": "<color=#F7BE45>「星の救援者」</color>が持ち歩いてた物だとか、傍を通り過ぎた物だとか、縁ある人の子孫が作った物だとか言われてるわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "물론 평소에는 특별할 것 없는 잡동사니에 불과해.",
+      "UnitTalk_JPN": "もちろん、普段はただのガラクタに過ぎないけどね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_BEGIN_OF_EVERYTHING.prefab",
+      "FilterType": "CFT_SEPIA",
+      "SlateControlType": "SLATE_RESUME"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BELL"
+      ],
+      "UnitTalk_KOR": "하지만 <color=#F7BE45>[여정]</color>은 <color=#F7BE45>[별의 구원자]</color>의 행적을 밟아 그 힘을 계승하기 위한, 일종의 의식.",
+      "UnitTalk_JPN": "でも<color=#F7BE45>「救援の旅」</color>は、<color=#F7BE45>「星の救援者」</color>の軌跡に倣って、その力を継承するための一種の儀式だから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BELL"
+      ],
+      "UnitTalk_KOR": "평범한 바늘도 저주 의식에서는 저주의 도구로 쓰이잖아?",
+      "UnitTalk_JPN": "呪いの儀式では、普通の針だって呪いの道具として使われるでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BELL"
+      ],
+      "UnitTalk_KOR": "같은 원리로 이 물건들도 원래는 평범하지만, <color=#F7BE45>여정 중에는 신비로운 힘을 발휘할 수 있다</color>는 뜻이지.",
+      "UnitTalk_JPN": "それと同じ原理よ。平凡な物だけど、<color=#F7BE45>旅では神秘的な力を発揮できる</color>ってこと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BELL"
+      ],
+      "UnitTalk_KOR": "그렇다고 전부 가져도 의미는 없어.",
+      "UnitTalk_JPN": "だからって、色々持ってても意味ないの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BELL"
+      ],
+      "UnitTalk_KOR": "이 중에 단 하나, 너와 특별한 인연으로 묶여야 비로소 제 가치를 발휘하게 되는 법이거든.",
+      "UnitTalk_JPN": "その中でたった一つ…特別な縁で結ばれてこそ、初めて本当の価値を発揮するんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SMILE",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "자, 알았으면 이 중에서 마음에 드는 걸 하나 골라 봐.",
+      "UnitTalk_JPN": "さぁ、この中から気に入ったものを一つ選びなさい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "이런 귀중한 지식을 알려 준 나한테 평~생 감사하면서 말이야.",
+      "UnitTalk_JPN": "とっておきの知識を授けてくれてた私に、一生感謝することね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그런 물건을 누가 보내준 걸까 하는 의문이 남았지만, 소포 어디에도 보낸 이의 이름은 없었다.",
+      "UnitTalk_JPN": "誰がこんな物を送ってくれたのだろうと思ったが、小包のどこにも差出人の名前はなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "일단 내게 온 것은 확실했기에, 잘 사용해 보자는 생각으로 하나를 골라 들었다.",
+      "UnitTalk_JPN": "とにかく私に届いたのは確かだ。うまく活用しようと思い、一つ手に取った。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 33,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

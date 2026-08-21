@@ -1,0 +1,527 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00A_RANDOM_CHARM",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_CANDLE_REQUEST.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "캔들 스퀘어의 의뢰 게시판을 살펴보는데, 희한한 의뢰서가 붙어 있었다.",
+      "UnitTalk_JPN": "キャンドル・スクエアの依頼掲示板を見てみると、妙な依頼書が貼られていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "영화 <color=#F7BE45>열세 번째 공허체 13</color>의 초회 관람 특전을 찾는다는 내용이었다.",
+      "UnitTalk_JPN": "映画<color=#F7BE45>13番目の<r=ヴォイドボーン>空虚体</r></color>の初回上映特典を探しているという内容だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "CutsceneClear": "CLEARALL",
+      "FilterType": "CFT_SEPIA"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그러고 보니, 이전 휴일에 본 영화가 떠올랐다…",
+      "UnitTalk_JPN": "そういえば、休日にその映画を観たな…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STUDY_ROOM.png",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 59,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "오, 어서 오십시오. 여정 단장님.",
+      "UnitTalk_JPN": "おお、いらっしゃいましたか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "이야기는 들었습니다. <color=#F7BE45>열세 번째 공허체 13</color>의 초회 관람 특전 포스터를 가지고 계신다지요?",
+      "UnitTalk_JPN": "話は伺っております。<color=#F7BE45>13番目の空虚体</color>の初回上映特典ポスターをお持ちだと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 갑작스러우시겠지만… 물건을 확인해 봐도 되겠습니까?",
+      "UnitTalk_JPN": "では、突然で恐縮ですが…品物を確認させていただいてもよろしいですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "얼마든지.",
+          "JumpAnchorStringId_JPN": "もちろんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "호오… 보관은 잘 되어 있었군요.",
+      "UnitTalk_JPN": "ほう…しっかり保管されていたようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "상태가 굉장히 좋습니다. 만족스럽네요.",
+      "UnitTalk_JPN": "状態が非常に良い。大満足です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "<color=#F7BE45>[여정]</color> 때문에 바빠서 건드리지 않은 것이 오히려 좋게 작용한 모양이다…",
+      "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>のせいで、忙しくて触らなかったことがかえって良かったようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "특전이 가지고 싶다면...",
+          "JumpAnchorStringId_JPN": "特典が欲しいなら…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "영화를 보는 편이 빠르지 않아?",
+          "JumpAnchorStringId_JPN": "映画を見た方が早いんじゃないか？"
+        }
+      ]
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitTalk_KOR": "물론 봤습니다. 27회차 정도.",
+      "UnitTalk_JPN": "もちろん観ましたよ、それも27回ほど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "문제는 중요한 출장 때문에 개봉 첫 주 관람을 놓쳤다는 겁니다.",
+      "UnitTalk_JPN": "問題は…重要な出張のため、公開初週の鑑賞を逃したということです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그래서 말입니다만, 이 포스터를 제 수집품 중 하나와 바꾸면 어떠십니까?",
+      "UnitTalk_JPN": "そこでですが、このポスターを私のコレクションと交換していただけませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitTalk_KOR": "그동안 <color=#F7BE45>열세 번째 공허체</color> 시리즈의 특전은 하나도 놓치지 않았거든요.",
+      "UnitTalk_JPN": "これまで、<color=#F7BE45>13番目の空虚体</color>シリーズの特典は一つも逃していないのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이것만 제외하면 말입니다.",
+      "UnitTalk_JPN": "初回上映特典は除いて、ですが。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "남자의 수집품 중에서는 신기한 기운이 느껴지는 물건도 있다.",
+      "UnitTalk_JPN": "男のコレクションの中には、不思議な気が感じられる物もある。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여기서는…",
+      "UnitTalk_JPN": "どうしようか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "교환을 승낙한다.",
+          "JumpAnchorStringId_JPN": "交換を承諾する。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "거래하고 싶은 마음은 없다.",
+          "JumpAnchorStringId_JPN": "取引する気はない。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 31,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "좋습니다. 그럼 이 전시실에 원하시는 게 있습니까?",
+      "UnitTalk_JPN": "良いでしょう。では、この展示室にご希望のものはありますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…흐음, 정말 그걸로 괜찮으신가요?",
+      "UnitTalk_JPN": "…ふむ、本当にそれでよろしいのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitTalk_KOR": "알겠습니다. 단장님의 뜻이 그러시다면.",
+      "UnitTalk_JPN": "承知いたしました。団長様のご意向であれば。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "흔쾌히 수락해 주셔서 감사합니다. 살펴 가십시오.",
+      "UnitTalk_JPN": "快く承諾いただき、ありがとうございます。どうぞご確認ください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 65,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 66,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET_SUNSET.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 67,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 37,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "제안은 매력적이지만, <color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 보낸 시간을 기리는 물건이었다.",
+      "UnitTalk_JPN": "提案は魅力的だったが、<color=#F7BE45>[CHARACTER_NAME]</color>と共に過ごした時間を記念する物だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…아아, 그렇군요.",
+      "UnitTalk_JPN": "…ああ、そうでしたか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "괜찮습니다. 어떤 마음인지 이해가 되거든요.",
+      "UnitTalk_JPN": "もちろん構いません。お気持ちはよく分かりますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitTalk_KOR": "제가 <color=#F7BE45>열세 번째 공허체</color> 시리즈에 빠진 것도, 어머니와 처음으로 보러 간 영화이기 때문이었으니까요.",
+      "UnitTalk_JPN": "私が<color=#F7BE45>13番目の空虚体</color>シリーズにハマったのも、母と初めて観に行った映画だったからでしてね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "물론 그걸 계기로 시리즈의 매력에 푹 빠지기는 했습니다만.",
+      "UnitTalk_JPN": "それをきっかけに、シリーズの魅力にのめり込むことになったのですよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_COLLECTOR_MAN"
+      ],
+      "UnitTalk_KOR": "단장님께서도 이번 기회에 부디 이 시리즈를 사랑해 주시면 좋겠군요.",
+      "UnitTalk_JPN": "団長様もこれを機に、このシリーズを愛していただければ嬉しい限りです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": " ",
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET_SUNSET.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "돌아가면서 <color=#F7BE45>[CHARACTER_NAME]</color>(와)과 당시 봤던 영화에 대해 즐겁게 이야기를 나눴다.",
+      "UnitTalk_JPN": "帰り道、<color=#F7BE45>[CHARACTER_NAME]</color>と一緒に見た映画について楽しく語り合った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    }
+  ]
+}

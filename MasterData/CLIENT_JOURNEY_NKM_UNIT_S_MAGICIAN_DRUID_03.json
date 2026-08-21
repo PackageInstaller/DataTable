@@ -1,0 +1,1096 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_09.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아침에 눈을 뜨자 묘하게 몸이 무거웠다.",
+      "UnitTalk_JPN": "朝起きると、どうも体がだるかった。",
+      "UnitTalk_TWN": "早晨醒來，身體莫名沉重。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "감기 기운인가?",
+          "JumpAnchorStringId_JPN": "風邪かな？",
+          "JumpAnchorStringId_TWN": "是感冒了嗎？"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "무거운 몸을 일으켰다.",
+      "UnitTalk_JPN": "私は重い体を起こした。",
+      "UnitTalk_TWN": "我撐起了沉重的身體。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "하아… 하아…!",
+      "UnitTalk_JPN": "ハァ…ハァ…！",
+      "UnitTalk_TWN": "哈啊…哈啊…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_1.ogg"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "수고하셨어요, 단장님.",
+      "UnitTalk_JPN": "お疲れ様です、団長。",
+      "UnitTalk_TWN": "辛苦您了，團長。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_2.ogg"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…그런데 무슨 일 있으세요? 얼굴색이 안 좋은데요?",
+      "UnitTalk_JPN": "…ところで、どうかされましたか？顔色が悪いですよ？",
+      "UnitTalk_TWN": "…不過您怎麼了嗎？您的臉色不太好耶？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_3.ogg"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "감기 기운이 있다고 설명했더니 다나의 표정이 순식간에 진지해졌다.",
+      "UnitTalk_JPN": "風邪気味だと伝えた途端、ダーナは真剣な眼差しを向けてきた。",
+      "UnitTalk_TWN": "我說明感冒症狀後，達娜的表情立刻變得嚴肅。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "<color=#F7BE45>카파라카</color>예요!",
+      "UnitTalk_JPN": "<color=#F7BE45>カパラカ</color>です！",
+      "UnitTalk_TWN": "這是<color=#F7BE45>卡帕拉卡</color>！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_4.ogg"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>카파라카</color>?",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>カパラカ</color>？",
+          "JumpAnchorStringId_TWN": "<color=#F7BE45>卡帕拉卡</color>？"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "네! 저희 고향에서 <color=#F7BE45>카파라카</color>라고 부르는 병이에요.",
+      "UnitTalk_JPN": "はい！わたしの故郷では、<color=#F7BE45>カパラカ</color>と呼ぶ病気のことです。",
+      "UnitTalk_TWN": "對！在我的家鄉被稱為<color=#F7BE45>卡帕拉卡</color>的病。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_5.ogg"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "재채기, 기침, 콧물, 두통, 미열, 그리고 몸이 무거워지죠.",
+      "UnitTalk_JPN": "症状としては、くしゃみ、せき、鼻水、頭痛、微熱に加え、身体のだるさがあります。",
+      "UnitTalk_TWN": "症狀有打噴嚏、咳嗽、流鼻水、頭痛、微燒，而且身體沉重。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_6.ogg"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "단장님은 <color=#F7BE45>카파라카</color>에 걸린 게 틀림없어요!",
+      "UnitTalk_JPN": "つまり、団長は<color=#F7BE45>カパラカ</color>にかかったということです！",
+      "UnitTalk_TWN": "團長絕對是得了<color=#F7BE45>卡帕拉卡</color>！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_7.ogg"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그게 감기 아니야?",
+          "JumpAnchorStringId_JPN": "風邪とはまた違うの？",
+          "JumpAnchorStringId_TWN": "那不就是感冒嗎？"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "<color=#F7BE45>카파라카</color>는 잔불과 같죠.",
+      "UnitTalk_JPN": "<color=#F7BE45>カパラカ</color>は、<r=ボヤ>小火</r>と同じようなものです。",
+      "UnitTalk_TWN": "<color=#F7BE45>卡帕拉卡</color>就像零星的火焰。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_8.ogg"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "가만두면 산불이 돼서 단장님을 괴롭힐 거예요!",
+      "UnitTalk_JPN": "放っておくと山火事になって、団長を苦しめます！",
+      "UnitTalk_TWN": "要是放著不管就會變成森林大火，折磨著團長啊！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_9.ogg"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…한숨 자면 괜찮아질 테니까 걱정하지 않아도 된다고요?",
+      "UnitTalk_JPN": "…少し寝れば良くなるから大丈夫、ですか？",
+      "UnitTalk_TWN": "…您竟然說睡一覺就會好，要我別擔心？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_10.ogg"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.1,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "세상에! 도시 사람들은 <color=#F7BE45>카파라카</color>가 얼마나 무서운지 잘 모르는군요!",
+      "UnitTalk_JPN": "信じられません！都会の人は、<color=#F7BE45>カパラカ</color>の恐ろしさを分かっていないようですね！",
+      "UnitTalk_TWN": "天啊！城市人都不知道<color=#F7BE45>卡帕拉卡</color>有多可怕！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_11.ogg"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이러고 있을 때가 아니에요…!",
+      "UnitTalk_JPN": "こうしてはいられません…！",
+      "UnitTalk_TWN": "現在不是說這個的時候…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_12.ogg"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "어서 가요, 단장님!",
+      "UnitTalk_JPN": "はやく行きましょう！",
+      "UnitTalk_TWN": "快走吧，團長！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_13.ogg"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "단장님의 집으로!",
+      "UnitTalk_JPN": "団長のお部屋に！",
+      "UnitTalk_TWN": "回您的住處！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_14.ogg"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "<color=#F7BE45>카파라카</color>는 처음엔 버틸만해도 갈수록 증상이 심해지죠.",
+      "UnitTalk_JPN": "<color=#F7BE45>カパラカ</color>は…最初は大丈夫だと思っていても、どんどん悪化していくんです。",
+      "UnitTalk_TWN": "<color=#F7BE45>卡帕拉卡</color>一開始雖然還能忍受，但症狀會越來越嚴重。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_15.ogg"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "최악의 경우, 생명까지 위협해요!",
+      "UnitTalk_JPN": "最悪の場合、命にも関わるんですよ！",
+      "UnitTalk_TWN": "最糟的情況下，甚至還會危及生命！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_16.ogg"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇게 심각할 것까지야.",
+          "JumpAnchorStringId_JPN": "大げさだよ。",
+          "JumpAnchorStringId_TWN": "不至於那麼嚴重吧。"
+        }
+      ]
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "안심하세요, 단장님. 저만 믿으세요.",
+      "UnitTalk_JPN": "安心してくださいね、団長。わたしを信じてください。",
+      "UnitTalk_TWN": "放心，團長。相信我吧。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_17.ogg"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "이제까지 수많은 <color=#F7BE45>카파라카</color>를 퇴치해왔거든요.",
+      "UnitTalk_JPN": "これまで、数多くの<color=#F7BE45>カパラカ</color>を退治してきましたから。",
+      "UnitTalk_TWN": "我已經擊退過無數的<color=#F7BE45>卡帕拉卡</color>了。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_18.ogg"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "저희 드루이드 마을에 내려오는 <color=#F7BE45>카파라카</color>의 퇴치법, 그 첫번째!",
+      "UnitTalk_JPN": "ドルイドの村に伝わる、<color=#F7BE45>カパラカ</color>の退治法、その一！",
+      "UnitTalk_TWN": "我們德魯伊村流傳的<color=#F7BE45>卡帕拉卡</color>擊退法，第一步！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_19.ogg"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "주방으로 달려간 다나는 잠시 후 부글부글 끓는 ",
+      "UnitTalk_JPN": "小走りでキッチンに向かったダーナは、しばらくすると… ",
+      "UnitTalk_TWN": "達娜衝進廚房，不久後端著一碗冒著泡泡的… ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "TalkAppend": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav",
+      "UnitTalk_KOR": "새빨간 액체를 들고 나왔다.",
+      "UnitTalk_JPN": "ボコボコと煮えたぎる真っ赤な液体を持ってきた。",
+      "UnitTalk_TWN": "鮮紅液體回來了。",
+      "TalkTime": 0.03,
+      "TalkAppend": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그게 뭐야?",
+          "JumpAnchorStringId_JPN": "…これは何？",
+          "JumpAnchorStringId_TWN": "…那是什麼？"
+        }
+      ]
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "각종 허브와 골든씰, 페퍼민트, 겨울 고추와 서리 고추, 폭탄 고추를 넣고 끓인 <color=#F7BE45>약차</color>예요.",
+      "UnitTalk_JPN": "色んなハーブとヒドラスチス、ペパーミント、ウィンターペッパーとフロストペッパー、ボムペッパーを入れて煮込んだ<color=#F7BE45>薬茶</color>です。",
+      "UnitTalk_TWN": "這是用各種藥草、金印草、薄荷、冬辣椒、霜辣椒和炸彈辣椒煮成的<color=#F7BE45>藥茶</color>。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_20.ogg"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "한입 쭉 들이켜세요!",
+      "UnitTalk_JPN": "さぁ、一気に飲んでください！",
+      "UnitTalk_TWN": "請一口氣喝下去！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_21.ogg"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…잔 안에서 빨간 거품이 끊임없이 솟아오른다.",
+      "UnitTalk_JPN": "…コップの中には、赤い泡がブクブクと湧き上がっている。",
+      "UnitTalk_TWN": "…杯子裡的紅色泡沫不停冒出。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DRINKING.wav",
+      "UnitTalk_KOR": "기대하듯이 바라보는 다나의 눈앞에서 약차를 단숨에 들이켰다.",
+      "UnitTalk_JPN": "期待の眼差しを向けてくるダーナの善意を断れる訳もなく、一気に飲み干した。",
+      "UnitTalk_TWN": "在達娜期待的眼神下，我一口氣喝下了藥茶。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.3,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "콜록?! 콜록콜록!!",
+          "JumpAnchorStringId_JPN": "がはっ！？げほっげほっ…！",
+          "JumpAnchorStringId_TWN": "咳咳？！咳咳咳！！"
+        }
+      ]
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "어때요, 단장님?",
+      "UnitTalk_JPN": "どうですか、団長？",
+      "UnitTalk_TWN": "怎麼樣，團長？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_22.ogg"
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…몸이 가벼워졌어!",
+          "JumpAnchorStringId_JPN": "…体が軽くなった！",
+          "JumpAnchorStringId_TWN": "…我的身體變輕盈了！"
+        }
+      ]
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "아하하! 그렇죠?",
+      "UnitTalk_JPN": "あはは！そうでしょう？",
+      "UnitTalk_TWN": "啊哈哈！是吧？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_23.ogg"
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "<color=#F7BE45>카파라카</color> 퇴치는 제 전문이에요.",
+      "UnitTalk_JPN": "<color=#F7BE45>カパラカ</color>退治は、わたしの得意分野ですから。",
+      "UnitTalk_TWN": "擊退<color=#F7BE45>卡帕拉卡</color>是我的專長。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_24.ogg"
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "다음 퇴치법은 시간이 필요해요. 그동안 씻고 나오시겠어요?",
+      "UnitTalk_JPN": "さぁ、次の退治には時間がかかりますよ。その間に、団長はシャワーしてきてくださいね。",
+      "UnitTalk_TWN": "下一個擊退法需要一點時間。您先去洗個澡如何？",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_25.ogg"
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "ANGRY",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "따뜻한 물로 씻고 나왔더니 방안에 고소한 향기가 가득했다.",
+      "UnitTalk_JPN": "温かいシャワーを浴びて戻ると、部屋には香ばしい匂いが満ちていた。",
+      "UnitTalk_TWN": "用溫水洗完澡出來後，屋子裡充滿了香噴噴的氣味。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "<color=#F7BE45>카파라카</color>의 퇴치법, 그 두번째…",
+      "UnitTalk_JPN": "<color=#F7BE45>カパラカ</color>の対処法、その二とは…",
+      "UnitTalk_TWN": "<color=#F7BE45>卡帕拉卡</color>的擊退法，第二步…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_26.ogg"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "<color=#F7BE45>깨끗이 씻은 후에 영양가 높은 음식을 먹는다</color>!",
+      "UnitTalk_JPN": "<color=#F7BE45>清潔にした後に、栄養満点の食事を取ること</color>！",
+      "UnitTalk_TWN": "就是<color=#F7BE45>洗淨身體後吃營養豐富的食物</color>！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_27.ogg"
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>카파라카</color>에 걸렸을 때는 몸이 약해지거든요. 소화가 잘 되는 죽이 좋아요.",
+      "UnitTalk_JPN": "<color=#F7BE45>カパラカ</color>にかかると、体が弱ってしまいます。",
+      "UnitTalk_TWN": "得<color=#F7BE45>卡帕拉卡</color>時身體會變弱，所以吃容易消化的粥最好。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_28.ogg"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "닭을 끓여 만든 육수에 고향에서 가져온 <color=#F7BE45>해맞이꽃</color> 구근을 넣었어요.",
+      "UnitTalk_JPN": "鶏を煮込んだスープに、故郷から持ってきた<color=#F7BE45>ヒノミソウ</color>の球根を入れました。",
+      "UnitTalk_TWN": "我用雞煮出的高湯加上從家鄉帶來的<color=#F7BE45>迎日花</color>球莖做的。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_29.ogg"
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "<color=#F7BE45>해맞이꽃</color>은 불로장생의 약재라고 불릴 만큼 희귀한 약재이자 고급 식재료랍니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>ヒノミソウ</color>は不老不死の薬と呼ばれるほど貴重な薬草で、とっても高級なんですよ。",
+      "UnitTalk_TWN": "<color=#F7BE45>迎日花</color>被稱為長生不老的藥材，是非常珍貴的藥材兼高級食材喔。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_30.ogg"
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "자, 단장님. 드셔 보세요.",
+      "UnitTalk_JPN": "さあ、召し上がれ。",
+      "UnitTalk_TWN": "來，團長。請嚐嚐看。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_31.ogg"
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "한입 먹어보자 닭 육수의 진한 맛, <color=#F7BE45>해맞이꽃</color> 구근의 포근한 식감이 어우러졌다.",
+      "UnitTalk_JPN": "ひと口食べると…出汁の深い風味と、<color=#F7BE45>ヒノミソウ</color>のほくほくとした食感が合わさった。",
+      "UnitTalk_TWN": "我嚐了一口，雞湯的濃郁味道與<color=#F7BE45>迎日花</color>球莖的柔軟口感完美融合。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…맛있어!",
+          "JumpAnchorStringId_JPN": "…美味しい！",
+          "JumpAnchorStringId_TWN": "…好吃！"
+        }
+      ]
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "아하하! 맛있다니 다행이네요.",
+      "UnitTalk_JPN": "あはは！それはよかったです。",
+      "UnitTalk_TWN": "啊哈哈！聽您說好吃真是太好了。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_32.ogg"
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "제 요리를 대접한 도시 사람은 단장님이 처음이거든요.",
+      "UnitTalk_JPN": "都会の人に料理を振る舞うのは、今日が初めてなんです。",
+      "UnitTalk_TWN": "團長是第一個吃到我料理的城市人呢。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_33.ogg"
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그럼 마지막으로 넘어갈까요!",
+      "UnitTalk_JPN": "それでは、最後の退治法です！",
+      "UnitTalk_TWN": "那麼我們進入最後一步吧！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_34.ogg"
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…정말 하려고?",
+          "JumpAnchorStringId_JPN": "…本当にやるのか？",
+          "JumpAnchorStringId_TWN": "…真的要做嗎？"
+        }
+      ]
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitTalk_KOR": "네! 물론이죠.",
+      "UnitTalk_JPN": "はい！もちろんです。",
+      "UnitTalk_TWN": "嗯！當然啦。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_35.ogg"
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "<color=#F7BE45>카파라카</color>의 마지막 퇴치법. 그것은 바로…",
+      "UnitTalk_JPN": "<color=#F7BE45>カパラカ</color>最後の退治法。それはズバリ…",
+      "UnitTalk_TWN": "<color=#F7BE45>卡帕拉卡</color>擊退法的最後一步，就是…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_36.ogg"
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "<color=#F7BE45>자장자장 우리 아가</color>예요!",
+      "UnitTalk_JPN": "<color=#F7BE45>ねんねんころりよ</color>です！",
+      "UnitTalk_TWN": "<color=#F7BE45>搖籃曲哄寶寶睡覺</color>！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_37.ogg"
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "조금 부끄러운데…",
+          "JumpAnchorStringId_JPN": "ちょっと恥ずかしいんだけど…",
+          "JumpAnchorStringId_TWN": "有點害羞耶…"
+        }
+      ]
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아하하! 이해해요. 저도 그랬으니까.",
+      "UnitTalk_JPN": "あはは！その気持ち、分かりますよ。わたしもそうでしたから。",
+      "UnitTalk_TWN": "啊哈哈！我能理解，我也是那樣。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_38.ogg"
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만 할머니의 자장가를 듣고 푹 자고 나면 <color=#F7BE45>카파라카</color>가 씻은듯이 사라졌어요.",
+      "UnitTalk_JPN": "でも…おばあちゃんの子守唄を聴いてぐっすり眠ると、<color=#F7BE45>カパラカ</color>が嘘のように治っていたんです。",
+      "UnitTalk_TWN": "但聽了奶奶的搖籃曲後好好睡一覺，<color=#F7BE45>卡帕拉卡</color>就會完全痊癒。",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_39.ogg"
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "자, 그럼 부를게요!",
+      "UnitTalk_JPN": "それでは、歌いますね！",
+      "UnitTalk_TWN": "好，那我唱了！",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_40.ogg"
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "자장자장, 우리 단장님~ 잘도 잔다, 우리 단장님~",
+      "UnitTalk_JPN": "ねんねんころりよ、おころりよ～。団長はよい子だ、ねんねしな～。",
+      "UnitTalk_TWN": "寶寶睡，我們團長～寶寶睡，我們團長～",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_1021_JOURNEY_03_DRUID_41.ogg"
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "0.69803923"
+      ],
+      "BgFadeInTime": 1.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…",
+          "JumpAnchorStringId_TWN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0.69803923"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "자장가가 계속될수록 점점 눈이 감겼다.",
+      "UnitTalk_JPN": "子守唄を聞いているうちに、眠くなってきた。",
+      "UnitTalk_TWN": "隨著延續的搖籃曲，我漸漸閉上了雙眼。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID"
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다나의 간호 덕분에 다음 날 감기… 아니, <color=#F7BE45>카파라카</color>는 흔적도 없이 사라졌다.",
+      "UnitTalk_JPN": "ダーナが看病してくれたおかげで、次の日には風邪…いや、<color=#F7BE45>カパラカ</color>はすっかり治っていた。",
+      "UnitTalk_TWN": "多虧了達娜的照顧，隔天感冒…不，<color=#F7BE45>卡帕拉卡</color>就消失無蹤了。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_DRUID",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

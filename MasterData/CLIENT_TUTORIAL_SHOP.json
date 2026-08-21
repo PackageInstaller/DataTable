@@ -1,0 +1,214 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: TUTORIAL_SHOP",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 4,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_STORE_GENERAL.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_09.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_BELL.wav"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "별이 떨어져도 영업은 계속된다! <color=#F7BE45>[아포칼립스 상단]</color> NOA 지점에 어서 오세요!",
+      "UnitTalk_JPN": "星が落ちても営業し続けます！<color=#F7BE45>「アポカリプス商会」</color>NOA店へようこそ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "앗, 혹시… 소문으로만 듣던 <color=#F7BE45>[여정 단장]</color>님?",
+      "UnitTalk_JPN": "あれ？もしかして…噂の<color=#F7BE45>「旅の団長」</color>さん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "저희 가게를 찾아 주셔서 정말 고마워요!",
+      "UnitTalk_JPN": "当店へお越しいただき、誠にありがとうございます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "헤헤, 실제로 뵙는 건 처음이네요.",
+      "UnitTalk_JPN": "エヘヘ、お会いするのは初めてですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "제 이름은 <color=#F7BE45>리세트</color>! 이 가게의 점장이에요!",
+      "UnitTalk_JPN": "わたしは<color=#F7BE45>リセット</color>！ここの店長です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "거기에 더해서 점원이자 홍보 담당, 재고 관리, 신상품 개발…",
+      "UnitTalk_JPN": "それに加えて、店員兼広報担当、在庫管理、新商品開発…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "또 진열 담당, 시설 관리, 청소, 경리, 상품 운반에…",
+      "UnitTalk_JPN": "さらに陳列担当、施設管理、清掃、経理、商品運搬に…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STORE_GENERAL.png",
+      "CameraOffset": "ONE_3",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…그리고 마지막으로 이웃분들께 선물 받은 쿠키 먹기 담당도 겸하고 있어요.",
+      "UnitTalk_JPN": "…そしてそして、ご近所さんからいただいたクッキーを食べる担当も兼任しているんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "해냈다! 혀 깨물지 않고 전부 말하기!",
+      "UnitTalk_JPN": "やったぁ！舌を噛まずに全部言えた！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "앗, 죄송해요! 소개를 드리려던 게 그만!",
+      "UnitTalk_JPN": "あっ、すみません！自己紹介しようとして、つい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "흠, 흠… 그, 그러니까 이용 중에 궁금하신 건 뭐든 저한테 물어보시면 돼요.",
+      "UnitTalk_JPN": "えーっと、えーっと…その、気になることがあれば、何でもわたしに聞いてくださいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "예를 들어… 저희 지점에서는 구원단에 유용한 상품들을 팔고 있어요!",
+      "UnitTalk_JPN": "例えば…当店では、救援団にとって役立つ商品を販売してるんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "다른 곳에서는 구하기 힘든 희귀 상품들도 잔뜩이에요!",
+      "UnitTalk_JPN": "他ではなかなか手に入らない、レアアイテムもたくさんありますよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그중에 목록을 추려서 매일 <color=#F7BE45>[일일 상품]</color>으로 진열하고 있어요.",
+      "UnitTalk_JPN": "その中から厳選して、毎日<color=#F7BE45>「日替わり商品」</color>として陳列しているんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitTalk_KOR": "<color=#F7BE45>[일일 상품]</color> 중에는 특별한 가격의 한정 상품도 있으니까 놓치지 않는 걸 추천 드려요.",
+      "UnitTalk_JPN": "<color=#F7BE45>「日替わり商品」</color>の中には、特別価格の限定商品もあるのでお見逃しなくっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "진열되는 상품은 <color=#F7BE45>매일 새로 갱신</color>돼요! 날마다 방문하시면 도움이 될 거예요!",
+      "UnitTalk_JPN": "陳列される商品は、<color=#F7BE45>毎日更新</color>されます！毎日お越しいただければお役に立つと思いますよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "그럼 앞으로 잘 부탁드릴게요, 손님!",
+      "UnitTalk_JPN": "それでは今後ともよろしくお願いしますね、お客様！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    }
+  ]
+}

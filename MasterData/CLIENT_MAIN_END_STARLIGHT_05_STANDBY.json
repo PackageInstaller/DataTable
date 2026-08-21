@@ -1,0 +1,701 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_END_STARLIGHT_05_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_SPINE_MAIN_END_STARLIGHT_07_STANDBY_1.prefab",
+      "StartBgmFileName": "MUSIC_ARCANA_LONG_VER.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…춥네.",
+          "JumpAnchorStringId_JPN": "…寒いな。"
+        }
+      ]
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 옷깃을 여미며 집으로 가는 발걸음을 재촉했다.",
+      "UnitTalk_JPN": "襟を掴みながら、足早に帰路を辿った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오늘은 꽤 운이 나쁜 날이었다.",
+      "UnitTalk_JPN": "今日はついてない一日だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아르바이트 장소인 편의점에선 손님들이 클레임을 걸었고,",
+      "UnitTalk_JPN": "バイト先のコンビニではお客さんに絡まれるわ、",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "교대 인원이 말도 없이 30분이나 늦게 왔으며,",
+      "UnitTalk_JPN": "次のシフトの人も連絡無しで30分遅れて来るわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "갑작스러운 한파 덕분에 퇴근길 날씨도 평소보다 훨씬 차갑다.",
+      "UnitTalk_JPN": "さらには天気も最悪で、まさに踏んだり蹴ったりだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…뭐, 이런 날도 있는 법이지.",
+          "JumpAnchorStringId_JPN": "…ま、こんな日もあるさ。"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "경험상 이런 날엔 귀찮은 일에 휘말릴 가능성이 크다.",
+      "UnitTalk_JPN": "経験則から言えば、こういう時に限って面倒ごとに巻き込まれる可能性が高い。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 전에 얼른 집에 가서 밀린 애니메이션이나 보는 게 현명한 일이겠지.",
+      "UnitTalk_JPN": "そうなる前に、さっさと家に帰って溜まったアニメを消化するのが得策である。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 세상만사 뜻하는 대로 되지는 않는 법이다.",
+      "UnitTalk_JPN": "しかし、世の中は思い通りにいかないものだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_SPINE_MAIN_END_STARLIGHT_07_STANDBY_1.prefab"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "저기, 길의 가운데 서서 이쪽을 바라보는 금발의 소녀처럼…",
+      "UnitTalk_JPN": "たとえば、道のど真ん中でこちらを見つめている金髪の少女は…いったい何者なのだろうか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "드디어…",
+      "UnitTalk_JPN": "やっと…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "드디어 찾았어.",
+      "UnitTalk_JPN": "やっと見つけた。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 주변을 둘러보았지만 아무도 보이지 않았다.",
+      "UnitTalk_JPN": "周囲を見渡したが、自分以外に誰もいなかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "집으로 가는 길은 그리 인적이 드문 곳이 아니다.",
+      "UnitTalk_JPN": "この辺りは人通りの多い場所だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 어쩐지 오늘따라 거리는 약속이라도 한 듯 텅 비어 있었다.",
+      "UnitTalk_JPN": "しかし、今日に限っては何故かがらんとしていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_SPINE_MAIN_END_STARLIGHT_07_STANDBY_1.prefab",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "단장의 고향은… 이런 곳이었구나…",
+      "UnitTalk_JPN": "団長の故郷って…こんなところだったんだ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "모습을 드러낸 것은 마치 다른 세상에서 나타난 듯한 신비한 분위기의 소녀였다.",
+      "UnitTalk_JPN": "まるで異世界からやって来たような少女だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀의 긴 금발과 군청색 눈동자가 어둠 속에서도 은은히 빛나고 있었다.",
+      "UnitTalk_JPN": "長い金髪と群青色の瞳が、暗闇の中でもひときわ輝いている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "혹시 저에게 말씀하신 건가요?",
+          "JumpAnchorStringId_JPN": "あの…私に何か用ですか？"
+        }
+      ]
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_SPINE_MAIN_END_STARLIGHT_07_STANDBY_2.prefab",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "응, 단장.",
+      "UnitTalk_JPN": "うん、団長。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "나, 단장을 오랫동안… 정말 오랫동안 찾아다녔어.",
+      "UnitTalk_JPN": "ずっと…探してたんだから…ほんっとに…長かった。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…사람을 잘못 보신 것 같은데요.",
+          "JumpAnchorStringId_JPN": "…人違いでは？"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "혹시 도움이 필요하시면 경찰을 불러 드릴까요?",
+          "JumpAnchorStringId_JPN": "もしお困りでしたら、代わりに警察を呼びますよ？"
+        }
+      ]
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_SPINE_MAIN_END_STARLIGHT_07_STANDBY_2.prefab",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "괜찮아. 지금은 기억하지 못해도.",
+      "UnitTalk_JPN": "いいわ。今は思い出せなくても。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "우린 분명… <color=#F7BE45>[여정]</color>에서 만날 테니까.",
+      "UnitTalk_JPN": "わたしたちはきっと…<color=#F7BE45>「救援の旅」</color>で巡り合うから",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "단장이라면… 모두를 다시 찾아 줄 테니까.",
+      "UnitTalk_JPN": "団長ならきっと…またみんなを見つけ出してくれるはず。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여정…?",
+          "JumpAnchorStringId_JPN": "救援の…旅？"
+        }
+      ]
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "낯선 단어에 기억을 되짚어 봤지만, 떠오르는 것은 없었다.",
+      "UnitTalk_JPN": "聞き慣れない言葉だったので記憶を辿ってみたが、思い当たる節はない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_SPINE_MAIN_END_STARLIGHT_07_STANDBY_3.prefab",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 그녀는 잠시 웃더니 고개를 저었다.",
+      "UnitTalk_JPN": "しかし、彼女は少し笑ってから首を横に振った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "혹시 별 좋아해?",
+      "UnitTalk_JPN": "ねえ、星は好きかしら？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "별…?",
+          "JumpAnchorStringId_JPN": "星…？"
+        }
+      ]
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "좋아하고 자시고 애초에 그다지 생각해 본 적이 없다.",
+      "UnitTalk_JPN": "好きとか嫌いとか、そもそもあまり考えたこともない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "별은 그냥 별일 뿐이다. 저 먼 곳에 있는 오래된 수소 핵융합의 잔광일 뿐.",
+      "UnitTalk_JPN": "星は星だ。今見えている光も、水素による核融合の古い残滓に過ぎない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_SPINE_MAIN_END_STARLIGHT_07_STANDBY_3.prefab",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "아니, 그렇지 않아.",
+      "UnitTalk_JPN": "いいえ、そうじゃないわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_010.wav"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "별은 단순히 오래된 빛이 아니야.",
+      "UnitTalk_JPN": "星は、ただ古いだけの光ではない。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_011.wav"
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "거기엔… 누군가의 꿈과 소망, 인연… ",
+      "UnitTalk_JPN": "そこには……誰かの願いや夢、人の縁…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_012.wav"
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "그리고 다음을 향한 희망이 있어.",
+      "UnitTalk_JPN": "そして、未来への希望がある。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_013.wav"
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "아주 오래전에 단장이 내게 가르쳐줬어.",
+      "UnitTalk_JPN": "ずっと昔に団長が教えてくれたことよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_014.wav"
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "그러니까 이번엔… 내가 단장에게 알려 줄게.",
+      "UnitTalk_JPN": "だから今度は…わたしが団長に教えてあげる。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_015.wav"
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_SPINE_MAIN_END_STARLIGHT_07_STANDBY_3.prefab",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "우리가 아직 그곳에서 기다리고 있다는걸.",
+      "UnitTalk_JPN": "みんながまだ、あの場所で待っていることを。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_016.wav"
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀는 팔을 뻗어 하늘을 가리켰다.",
+      "UnitTalk_JPN": "彼女は腕を伸ばして空を指さした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "저기, 가장 밝게 빛나는 별 보여?",
+      "UnitTalk_JPN": "ねえ、一番明るく輝いている星が見える？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_017.wav"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 그녀의 손을 따라 하늘을 바라보았다.",
+      "UnitTalk_JPN": "私は彼女の手に導かれ、空を見上げた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "처음 보는 황금색 별이 하늘 가운데 빛나고 있었다.",
+      "UnitTalk_JPN": "そこには、見たこともない黄金色の星が輝いていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그런데… 어쩐지 그 빛이 점점 커지는 것 같았다. ",
+      "UnitTalk_JPN": "それに……なんだか、その光がどんどん大きくなっているように見える。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마치 밤의 어둠을 모두 지워 버리기라도 할 것처럼.",
+      "UnitTalk_JPN": "まるで夜の闇をすべて消し去ってしまうかのように。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_SPINE_MAIN_END_STARLIGHT_07_STANDBY_3.prefab",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "눈이 부셔 손을 들어 빛을 가리는 내 귀에 그녀의 마지막 목소리가 들려왔다.",
+      "UnitTalk_JPN": "眩しさのあまり手をかざして光を遮っていると、彼女の優しい声が響いた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "저 별의 이름은 <color=#F7BE45>[라비스타]</color>",
+      "UnitTalk_JPN": "あの星の名前は<color=#F7BE45>「ラビスター」</color>。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_018.wav"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "다시 별들의 세계에 온 걸 환영해.",
+      "UnitTalk_JPN": "星々の世界への帰還を歓迎するわ、団長。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_END_STARLIGHT_05_UNIT_S_VOYAGER_STRANIS_019.wav"
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "MAIN_END_STARLIGHT_05_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 말과 함께 나는 정신을 잃었다.",
+      "UnitTalk_JPN": "その言葉を聞きながら、私は意識を手放した。",
+      "TalkTime": 0.03
+    }
+  ]
+}

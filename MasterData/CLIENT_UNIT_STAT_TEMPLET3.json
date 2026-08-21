@@ -1,0 +1,28 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: STAT/UNIT_STAT_TEMPLET3",
+    "_Version": 0,
+    "Data": [
+        {
+          "m_StatStrID" : "NKM_UNIT_BASE_NPC",
+          "m_StatAddPerLevelStrID" : "SAPL_UNIT_NPC",
+          "m_StatData" : 
+          {
+            "NST_HP" : 100,
+            "NST_TURN_SPEED" : 50,
+            "NST_ATK" : 100,
+            "NST_DEF" : 100,
+            "NST_RATE_HIT" : 10000,
+            "NST_RATE_CRITICAL" : 0,
+            "NST_RATE_CRITICAL_DAMAGE" : 0,
+            "NST_RATE_EFFECT_HIT" : 0,
+            "NST_RATE_EFFECT_EVADE" : 0,
+            "NST_RATE_DEFINITE_EFFECT_HIT" : 0,
+            "NST_RATE_DEFINITE_EFFECT_EVADE" : 0,
+            "NST_RATE_ADJUST_DEFINITE_EFFECT_EVADE" : 0,
+            "NST_RATE_CROSS_ATTACK" : 0,
+            "NST_RATE_REVENGE_ATTACK" : 0
+          }
+        }
+    ]
+}

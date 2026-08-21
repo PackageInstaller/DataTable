@@ -1,0 +1,29 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00A_RANDOM_WEATHER",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00A_RANDOM_WEATHER",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_TRAINING",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00A_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "훈련 중에 예상치 못한 돌풍이 휘몰아 쳤다.\n집중하려 애썼지만 훈련의 효율은 좋지 못했다.",
+      "UnitTalk_JPN": "トレーニング中に予期せぬ突風が吹き荒れた。\n集中しようと努力したが、トレーニングの効率はあまり良くなかった。",
+      "TalkTime": 0.03
+    }
+  ]
+}

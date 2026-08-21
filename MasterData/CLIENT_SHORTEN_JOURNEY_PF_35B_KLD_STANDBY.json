@@ -1,0 +1,26 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_35B_KLD_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_TRAIN_STATION.png",
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_35B_KLD_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "합숙훈련 일정이 끝났다. NOA로 돌아가 다음 평가전을 준비하자.",
+      "UnitTalk_JPN": "合宿トレーニングの日程が終わった。NOAに戻り、次の試験を準備しよう。",
+      "TalkTime": 0.03
+    }
+  ]
+}

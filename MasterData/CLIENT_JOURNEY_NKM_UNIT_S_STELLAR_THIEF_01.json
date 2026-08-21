@@ -1,0 +1,1506 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OFFICE_01.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "CameraOffset": "TWIN_1"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여정 단원을 만나기 위해 <color=#F7BE45>아셀루스 협회</color>의 NOA 지부라는 곳에 방문했다.",
+      "UnitTalk_JPN": "旅の団員に会うため、<color=#F7BE45>アセルス協会</color>のNOA支部というところを訪れた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "안녕하세요. 저희 협회에는 처음 방문해주신 것 같은데, 어떤 용무이실까요?",
+      "UnitTalk_JPN": "こんにちは。アセルス協会に初めてお越しくださったようですが、どのようなご用件でしょうか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>헌터</color> 등록 때문에 오셨다면 여기 이 접수 카드 작성을 부탁드릴게요.",
+      "UnitTalk_JPN": "<color=#F7BE45>ハンター</color>登録にいらっしゃったのであれば、こちらの受付カードにご記入お願いします。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "성함이랑 주소, 그리고 <color=#F7BE45>선호 헌팅 유형</color>을 체크해주시면 됩니다. ",
+      "UnitTalk_JPN": "お名前と住所をご記入したら、<color=#F7BE45>ご希望のハンティングタイプ</color>にチェックしてくださいね。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>현상 수배범</color>이랑 <color=#F7BE45>마물 소탕</color>, <color=#F7BE45>위험 들짐승 퇴치</color>랑… ",
+      "UnitTalk_JPN": "<color=#F7BE45>賞金首狩り</color>に<color=#F7BE45>魔獣の討伐</color>、<color=#F7BE45>危険な野獣退治</color>や… ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭔가 오해가 있는 것 같은데…",
+          "JumpAnchorStringId_JPN": "何か誤解してるみたいだけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…예? 사람을 기다리고 계시다구요?",
+      "UnitTalk_JPN": "…はい？人を待っていらっしゃるのですか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "신규 <color=#F7BE45>헌터</color> 분이 아니셨군요. 오해했습니다. ",
+      "UnitTalk_JPN": "新規<color=#F7BE45>ハンター</color>の方ではなかったのですね。勘違いしてしまいました。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런데 <color=#F7BE45>아셀루스 협회</color>는 뭐하는 곳이야?",
+          "JumpAnchorStringId_JPN": "ところで、<color=#F7BE45>アセルス協会</color>って何をするところなの？"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 저희 협회는 <color=#F7BE45>헌터</color>들을 위한 길드라고 보시면 됩니다. ",
+      "UnitTalk_JPN": "あっ、アセルス協会は<color=#F7BE45>ハンター</color>のためのギルドだとお考えください。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "UnitTalk_KOR": "안전을 위협하는 몬스터나 민가에 피해를 끼치는 사나운 짐승부터-",
+      "UnitTalk_JPN": "安全を脅かすモンスターや、民家に被害を加える猛獣──",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "UnitTalk_KOR": "현상금이 걸린 범죄자까지. ",
+      "UnitTalk_JPN": "そして、懸賞金のかかった犯罪者まで。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "돈이 되는 것이라면 어떤 것이든 사냥하는 <color=#F7BE45>헌터</color>들에게 여러가지 서비스를 제공하죠.",
+      "UnitTalk_JPN": "お金のためなら何でも狩る<color=#F7BE45>ハンター</color>たちに、様々なサービスを提供しているんです。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "UnitTalk_KOR": "혹시 손님께서도 <color=#F7BE45>헌터</color>에 관심이 있으신가요?",
+      "UnitTalk_JPN": "お客様も<color=#F7BE45>ハンター</color>に興味がおありですか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "저희 협회에서는 <color=#F7BE45>초보 헌터</color>들을 위한 교육 프로그램도 진행하고 있으니 소정의 금액만 지불하시면-",
+      "UnitTalk_JPN": "アセルス協会では<color=#F7BE45>初心者ハンター</color>のための教育プログラムも実施しておりまして、料金さえお支払いいただければ──",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…사양할게.",
+          "JumpAnchorStringId_JPN": "…遠慮しとくよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…아쉽네요. ",
+      "UnitTalk_JPN": "…残念です。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitQuickSet": true,
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그런데 찾으시는 분이라는 게 혹시-",
+      "UnitTalk_JPN": "ところで、お探しの方は──",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_2.wav",
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "초 일류 헌터 트리쉬님 등장이요! ",
+      "UnitTalk_JPN": "超一流ハンター、トリッシュ様の登場だ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "여기 나쁜 놈 잡아왔다! 받아! ",
+      "UnitTalk_JPN": "悪い奴を捕まえて来た！受けとれ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "흐읏짜-!",
+      "UnitTalk_JPN": "えいしょーっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_MOVEMENT_FALL_DOWN_04.wav"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "CameraOffset": "TWIN_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "우, 우왓-! 깜짝이야!",
+      "UnitTalk_JPN": "う、うわーっ！ビックリした！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "얼른 확인하라구. 얼마 전에 상인 마차를 스무 대나 털어간 강도 녀석, 맞지?",
+      "UnitTalk_JPN": "はやく確認してくれ。少し前に商人の馬車を20台も盗んでいった強盗で合ってるだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…트리쉬. ",
+      "UnitTalk_JPN": "…トリッシュ。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "으응?",
+      "UnitTalk_JPN": "うん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "아무리 현상수배범이라고 해도 말이야… ",
+      "UnitTalk_JPN": "いくら賞金首だからって… ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "자루에 통째로 넣어서 들고 오는 짓은 그만둬 달라고 말했잖아?! ",
+      "UnitTalk_JPN": "麻袋にそのまま放り込んで持ってこないでって言ったでしょ！？ ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "TWIN_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "아하하! 그랬었나? ",
+      "UnitTalk_JPN": "はははっ！そうだったっけ？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "UnitTalk_KOR": "수갑을 채운다던가, 밧줄로 포박한다던가… ",
+      "UnitTalk_JPN": "手錠をかけたり、ロープで縛ったり… ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그것도 귀찮으면 그냥 미리 연락을 달라니까? ",
+      "UnitTalk_JPN": "それさえも面倒くさいなら、協会に連絡してってば。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "UnitTalk_KOR": "우리 쪽 협회원을 보내서 대신 데려오는 것도 가능하다고. ",
+      "UnitTalk_JPN": "協会員を送って、代わりにここまで連れてくることだってできるんだから。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "ONE_9",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "에에… 그치만 그러면 멋이 없잖아. ",
+      "UnitTalk_JPN": "えぇ…それじゃ、クールからほど遠いじゃねぇか。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "ONE_9",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "생각해봐. 밧줄로 묶고 질질 끌고 오는 건 그림이 안 산다구 그림이.",
+      "UnitTalk_JPN": "想像してみろ。ロープで縛ってズルズル引きずってくるなんて、絵にならないだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "CameraOffset": "TWIN_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…무슨 소린지 전혀 이해못하겠네. ",
+      "UnitTalk_JPN": "…何を言ってるのか全く理解できないわ。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그리고! 사냥감 좀 적당히 두들겨 패! ",
+      "UnitTalk_JPN": "それに！獲物を殴るのもほどほどにしてよ！ ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "UnitTalk_KOR": "이거 봐! 눈탱이가 시퍼렇게 됐잖아!",
+      "UnitTalk_JPN": "見なさいよ！目の周りが真っ青になってるじゃないの！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CRIM_ROB"
+      ],
+      "UnitTalk_KOR": "잘… 못… 했습니다… ",
+      "UnitTalk_JPN": "ご…めん…なさい… ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "쟨 맞아도 싸. 이 녀석 때문에 크게 다친 사람들도 있다고? ",
+      "UnitTalk_JPN": "ぶん殴られて当然だ。コイツのせいで大怪我した人もいるんだぜ？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하아… 법적으로 따지고 들면 귀찮아 진단 말이야!",
+      "UnitTalk_JPN": "はぁ…法的に追及されたりでもしたら、面倒なことになるんだってば！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "UnitTalk_KOR": "수배범은 그냥 곧장 치안국으로 가라고 했잖아.",
+      "UnitTalk_JPN": "手配犯はそのまま治安局に連れて行ってって言ったじゃない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "에헤~ 몰라 몰라. 그런 건 그냥 알아서 해줘. ",
+      "UnitTalk_JPN": "かーっ、細かいな。その辺はそっちで勝手にしてくれよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하아… 일단 수배지에 적힌 녀석 맞는 것 같으니까 현상금은 네 계좌로- ",
+      "UnitTalk_JPN": "はぁ…とにかく、賞金首で合ってるはずよ。懸賞金はあんたの口座に── ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "현금! 오로지 현금! ",
+      "UnitTalk_JPN": "現金！何が何でも現金！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…금액이 꽤 되는데? 전부 현금으로?",
+      "UnitTalk_JPN": "…かなりの金額よ？ぜんぶ現金で受け取るつもり？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "상관없어. ",
+      "UnitTalk_JPN": "関係ねぇ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "POS9_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "일류 헌터 특! 항상 현금으로 주머니가 묵직함! ",
+      "UnitTalk_JPN": "一流ハンターたる者！いつも現金で財布がパンパンなのである！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_BABYFACE_RECEPT"
+      ],
+      "CameraOffset": "TWIN_7",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "…잠깐만 기다려. ",
+      "UnitTalk_JPN": "…ちょっと待ってて。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_TALKATIVE_RECEPT"
+      ],
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "저분인가요? ",
+      "UnitTalk_JPN": "あの方ですか？ ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1"
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…직감적으로 그렇다는 기분이 드네.",
+          "JumpAnchorStringId_JPN": "…なんとなく、そんな気がする。"
+        }
+      ]
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "으응? 못 보던 얼굴인데. 신참이야?",
+      "UnitTalk_JPN": "ん？見ない顔だな。新人か？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "흐음. <color=#F7BE45>헌터</color> 치고는 움직이기 거추장스러운 코트야. 나처럼 일류 헌터가 되려면 복장에도 신경을-",
+      "UnitTalk_JPN": "ふむ。<color=#F7BE45>ハンター</color> にしては動きにくそうなコートを着ているな。オレのような一流ハンターになりたければ、服装にも気を──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "잠깐만. 인상 착의가 분명히 어디서 들어본 것 같은데.",
+      "UnitTalk_JPN": "待った。この人相と身なり、確かにどこかで聞いたことがある。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아아! 그쪽이 <color=#F7BE45>여정 단장</color>인가 하는 그 사람이지? ",
+      "UnitTalk_JPN": "あぁ！<color=#F7BE45>旅の団長</color>とかいう人だな？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "역시 네가 여정 단원이구나?",
+          "JumpAnchorStringId_JPN": "やっぱり君が旅の団員だったんだね？"
+        }
+      ]
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "역시? 역시나 제일 멋있어서 눈에 띄었다는 의미지? ",
+      "UnitTalk_JPN": "やっぱり？一番クールで目立ってたってことか？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "하하! 아무튼. 잘됐다! 마침 찾고 있었는데, 기다리고 있었구나?",
+      "UnitTalk_JPN": "ははっ！とにかく、よかったぜ！ちょうど探してたところだったが、オレを待っていたとはな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "따라와! 내가 근사한 식사 한 끼 대접할 테니까. ",
+      "UnitTalk_JPN": "ついてこい！オレがクールな食事をごちそうしてやる。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…갑자기?",
+          "JumpAnchorStringId_JPN": "…急に？"
+        }
+      ]
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐 어때? 마침 현상금도 받아서 주머니도 두둑해졌고. ",
+      "UnitTalk_JPN": "いいだろ？ちょうど賞金も受け取って、懐が潤ったことだしな。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "ONE_9",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "앞으로 1년이나 볼 사이인데 맛있는 거 먹으면서 이야기 하자구.",
+      "UnitTalk_JPN": "これから一年共にやってくんだから、美味しいものでも食べながら話そうぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "응? 응? 사양하지말구. 얼른 따라와.",
+      "UnitTalk_JPN": "ん？んん？遠慮するなって、はやくついてこい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_RESTAURANT_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_BELL.wav",
+      "UnitTalk_KOR": "트리쉬에게 반쯤 끌려가다시피 도착한 곳은 시내의 고급 레스토랑. ",
+      "UnitTalk_JPN": "トリッシュに引きずられるようにして着いたのは、街の高級レストランだった。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "호화스러운 인테리어와 잔잔하게 흘러나오는 음악, 부담스러울 정도로 정중한 서비스까지. ",
+      "UnitTalk_JPN": "豪華なインテリアと静かに流れる音楽、恐れ多いほどに丁寧なサービスまで。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "메뉴판을 보지 않아도 엄청나게 비싼 곳이라는 건 알 것 같다. ",
+      "UnitTalk_JPN": "メニューを見なくても、かなり高い店だということが分かった。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "진짜 여기서 먹어?",
+          "JumpAnchorStringId_JPN": "本当にここで食べるの？"
+        }
+      ]
+    },
+    {
+      "Uid": 106,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 107,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_STELLAR_THIEF_01.png"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitQuickSet": true,
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "으응? 가격 때문에 그래?",
+      "UnitTalk_JPN": "ん？値段のせいか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitTalk_KOR": "괜찮아 괜찮아~ 내가 쏘는 거니까.",
+      "UnitTalk_JPN": "大丈夫、大丈夫～。オレのおごりだしな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "단장도 먹고 싶은 건 뭐든 괜찮으니까 말만 하라구?",
+      "UnitTalk_JPN": "団長も、食べたいものは何でも言ってくれよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "일류 헌터 특! 입맛이 고급지고 친구에게도 맛있는 식사 대접함!",
+      "UnitTalk_JPN": "一流ハンターたる者！肥えた舌で、友人にもご馳走する！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "일단 나는 <color=#F7BE45>최상급 캐비어와 버터를 올린 사워크림 타르트</color>랑 <color=#F7BE45>동대륙산 향신료를 곁들인 토마토 슬라이스</color>.  ",
+      "UnitTalk_JPN": "まずオレは<color=#F7BE45>サワークリームタルト～最高級キャビアとバターを添えて～</color>と、<color=#F7BE45>トマトスライス～東大陸産のスパイス仕立て～</color>。  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitTalk_KOR": "그리고… 이거! <color=#F7BE45>레드 와인 소스와 야채를 곁들인 뒤 금박을 올린 채끝 스테이크.</color> ",
+      "UnitTalk_JPN": "あとは…これこれ！<color=#F7BE45>金箔サーロインステーキ～赤ワインソースと旬の野菜と共に～</color>。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "너, 그거 가격표는 본거야?",
+          "JumpAnchorStringId_JPN": "トリッシュ、価格は確認した？"
+        }
+      ]
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후후…! 일류 헌터 특. 가격표 같은 건 보지 않음.",
+      "UnitTalk_JPN": "ふっふっふ…！一流ハンターたる者、そんなものは確認しない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "트리쉬는 괜찮다며 손사래를 쳤지만… ",
+      "UnitTalk_JPN": "トリッシュは大丈夫だと言い、首を振ったが… ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무래도 걱정이 되는지라 그나마 적당한 가격대의 스테이크를 시켰다. ",
+      "UnitTalk_JPN": "やはり心配だったため、まだ手ごろな価格のステーキを注文した。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 111,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_STELLAR_THIEF_02.png",
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_MOVEMENT_ARMOR_09.wav"
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_COIN_03.wav",
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "흐아~ 잘 먹었다! 여기 돈!",
+      "UnitTalk_JPN": "ふぁ～、よく食ったぜ！はい、金！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitTalk_KOR": "알아서 계산해서 거슬러 줘. ",
+      "UnitTalk_JPN": "会計が済んだら、お釣りを頼むぜ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitNameString": [
+        "SI_SHOP_EMPLOYEE"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "…손님. 죄송하지만 금액이 안 맞는데요.",
+      "UnitTalk_JPN": "…お客様。申し訳ございませんが、金額が合いません。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "으, 으응? 그럴리가 없는데…?",
+      "UnitTalk_JPN": "ん、んん？そんな訳ないはずだが…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SHOP_EMPLOYEE"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "벌써 세 차례나 외상으로 처리하고 가셨잖습니까. ",
+      "UnitTalk_JPN": "既に3度もツケ払いにされていらっしゃいます。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SHOP_EMPLOYEE"
+      ],
+      "UnitTalk_KOR": "전부 합산하면 여기 돈 주머니에 있는 금액을 전부 내셔도 모자랍니다. ",
+      "UnitTalk_JPN": "このお金をすべて出されても足りません。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그걸로도 모자란다고…?",
+          "JumpAnchorStringId_JPN": "これでも足りないの…？"
+        }
+      ]
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "아하하! 그만큼이나 많이 쌓였었나?",
+      "UnitTalk_JPN": "あははっ！そんないっぱいツケてたっけ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "이건 예상 밖인데… ",
+      "UnitTalk_JPN": "これは予想外だ… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "으읏… 으으으… ",
+      "UnitTalk_JPN": "ううっ…うぅぅ… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "저기 단장. 그 첫날부터 이런 부탁해서 미안한데 말이야. ",
+      "UnitTalk_JPN": "おい、団長。初日からこんなお願いをして申し訳ないんだが… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "절대 그냥 달라는 건 아니고! 제대로 이자까지 쳐서 갚을 테니까. ",
+      "UnitTalk_JPN": "絶対に、払ってくれと言っている訳ではない！ちゃんと利子もつけて返すから。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "하하! 금방 다시 벌어올 테니까 걱정하지 말라구. ",
+      "UnitTalk_JPN": "ははっ！またすぐに稼いでくるぜ、心配するな！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 113,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 105,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "결국 그 날의 엄청난 식비는 내가 지불해야 했다. ",
+      "UnitTalk_JPN": "結局、その日の恐ろしい食費は私が出すしかなかった。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "괜찮을까… 이 녀석?",
+      "UnitTalk_JPN": "この子…大丈夫なのか？",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_RESTAURANT_MAIN.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 114,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    }
+  ]
+}

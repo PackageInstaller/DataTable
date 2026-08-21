@@ -1,0 +1,1655 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP3_7E",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 1.0,
+      "BgFileName": "ILLUST_BG_MONOLITH_TEMPLE.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_20.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MACHINE_11.wav"
+    },
+    {
+      "Uid": 207,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitTalk_KOR": "시스템… 손상.",
+      "UnitTalk_JPN": "システム…損傷。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_NPC_CUBEPALACE_NOTICE_001.wav"
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "복제 프로세스 폭주… 정지 불가…",
+      "UnitTalk_JPN": "複製プロセス暴走…停止不可…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_NPC_CUBEPALACE_NOTICE_002.wav"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "고장난 친구! 잠시만 기다려!",
+      "UnitTalk_JPN": "故障した友だち！ちょっと待っててね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_067.wav"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "오메가가 고쳐줄게!",
+      "UnitTalk_JPN": "オメガが直してあげる！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_068.wav"
+    },
+    {
+      "Uid": 237,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "CameraOffset": "ONE_5",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "오메가는 큐브 팰리스의 파편들을 피하며 핵이 있는 곳으로 달려갔다.",
+      "UnitTalk_JPN": "オメガはキューブパレスの欠片を避けながら、核があるところに走って行った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 236,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 1.0,
+      "BgCrashTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_18.wav",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이얍! 갱생 춉!!",
+      "UnitTalk_JPN": "やっ！更生チョップ！！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_069.wav"
+    },
+    {
+      "Uid": 222,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_5"
+    },
+    {
+      "Uid": 191,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.0
+    },
+    {
+      "Uid": 192,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeOutTime": 0.0
+    },
+    {
+      "Uid": 239,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_07.wav",
+      "UnitTalk_KOR": "깡!",
+      "UnitTalk_JPN": "ガンッ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "<color=#F7BE45>[오메가 컨트롤]</color> 개입 확인.",
+      "UnitTalk_JPN": "<color=#F7BE45>「オメガコントロール」</color>の介入を確認。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_NPC_CUBEPALACE_NOTICE_003.wav"
+    },
+    {
+      "Uid": 234,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0.69803923",
+        "0.13333334",
+        "0.13333334",
+        "0.29803923"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 241,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0.69803923",
+        "0.13333334",
+        "0.13333334",
+        "0.29803923"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "비상 정지 프로토콜 승인.",
+      "UnitTalk_JPN": "非常停止プロトコルを承認。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_NPC_CUBEPALACE_NOTICE_004.wav"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitNameString": [
+        "SI_CUBE_PALACE"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "시스템 재설치를 위해 <color=#F7BE45>[스타피어서]</color>의 하위 구조에 강제 병합합니다.",
+      "UnitTalk_JPN": "システム再インストールのため、<color=#F7BE45>「スターピアサー」</color>の下位構造に強制併合します。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_NPC_CUBEPALACE_NOTICE_005.wav"
+    },
+    {
+      "Uid": 228,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA"
+    },
+    {
+      "Uid": 240,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0.69803923",
+        "0.13333334",
+        "0.13333334",
+        "0.29803923"
+      ],
+      "BgFadeOutTime": 0.5,
+      "UnitTalk_KOR": "오메가의 손날치기에 맞은 큐브 팰리스는 다시 원래의 모습으로 돌아갔다.",
+      "UnitTalk_JPN": "オメガの手刀を受けたキューブパレスは、元通りの姿へと戻った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "그리고… 마치 원래 스타피어서의 부속품이었던 것처럼 안으로 수납되어 사라졌다.",
+      "UnitTalk_JPN": "そして…まるで元からスターピアサーの一部だったかのように、取り込まれて消えていった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "됐다! 수리 완료!",
+      "UnitTalk_JPN": "やった！直った！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_070.wav"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "큐브 팰리스 다시 착해졌어!",
+      "UnitTalk_JPN": "キューブパレス、いい子に戻った！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_071.wav"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "다 끝난 거야?",
+          "JumpAnchorStringId_JPN": "終わったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "응, 오빠!",
+      "UnitTalk_JPN": "うん！お兄ちゃん！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_072.wav"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "큐브 팰리스도 반성실로 보내놨어!",
+      "UnitTalk_JPN": "キューブパレスは反省室に送ったよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_073.wav"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "반성실에서 나오면 제대로 오빠를 도와달라고 말해둘게.",
+      "UnitTalk_JPN": "反省室から出たら、ちゃんとお兄ちゃんの手伝いをするように言っとくね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_074.wav"
+    },
+    {
+      "Uid": 229,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "도와준다니?",
+          "JumpAnchorStringId_JPN": "手伝うって？"
+        }
+      ]
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "큐브 팰리스도 아빠가 만들었다고 했잖아?",
+      "UnitTalk_JPN": "キューブパレスもパパが作ったって言ったでしょ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_075.wav"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아마 큐브 팰리스는 훈련용이었나 봐!",
+      "UnitTalk_JPN": "たぶんキューブパレスは訓練用に作られたみたい！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_076.wav"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "원하는 상대의 복제체를 만들어서 큐브 팰리스 안에서 싸울 수 있는 거야.",
+      "UnitTalk_JPN": " 好きな相手の複製体を作って、キューブパレスの中で戦えるんだよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_077.wav"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 아까 나타났던 이상한 것들이…",
+          "JumpAnchorStringId_JPN": "じゃあ、さっき出てきたおかしな連中って…"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "응! 큐브 팰리스가 만들어 낸 복제체야.",
+      "UnitTalk_JPN": "うん！キューブパレスが作った複製体！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_078.wav"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "이제 오빠가 원하면 언제든지 원하는 상대랑 대련을 할 수 있대.",
+      "UnitTalk_JPN": "これで、お兄ちゃんが望めばいつでも好きな相手と模擬戦闘ができるよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_079.wav"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "어때, 어때? 오메가랑 큐브, 도움이 되지?",
+      "UnitTalk_JPN": "ねっ、どう？オメガとキューブ、役に立つでしょ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_080.wav"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응, 상당히.",
+          "JumpAnchorStringId_JPN": "うん、えらい。"
+        }
+      ]
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "와아! 오메가 도움이 됐다!",
+      "UnitTalk_JPN": "わあ！オメガ、役に立てた！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_081.wav"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "자세한 건 나중에 알아보기로 하고 우선은 급한 일을 정리하기로 했다.",
+      "UnitTalk_JPN": "詳しいことは後で調べるとして、まずは急用から片づけることにした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_7",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "단장, 다친 곳은 없어?",
+      "UnitTalk_JPN": "団長、怪我はない？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 194,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "그런데… 이 아이는 누구야? 갑자기 나타났는데.",
+      "UnitTalk_JPN": "ところで…この子は誰なの？突然現れたみたいだけど。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그게…",
+          "JumpAnchorStringId_JPN": "それは…"
+        }
+      ]
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "좋은 질문이다. 하지만 어떻게 설명해야 할까?",
+      "UnitTalk_JPN": "当然の疑問だ。しかし、どう説明すれば良いのだろう？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 102,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 가급적 그녀가 알아들을 수 있게 스타피어서의 가상 공간에서 일어난 일을 설명해 주었다.",
+      "UnitTalk_JPN": "私はアセラが理解できるように、スターピアサーの仮想空間で起こったことを説明してあげた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_MONOLITH_TEMPLE.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_7",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "으음… 데이터… 베이스? 가상 공간…?",
+      "UnitTalk_JPN": "うーん…データ…ベース？仮想空間… ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "다, 단장은 어려운 말을 굉장히 많이 아는 것 같아.",
+      "UnitTalk_JPN": "だ、団長は難しい言葉をよく知ってるのね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "뭘 어렵게 생각하고 그래?",
+      "UnitTalk_JPN": "そんな難しく考えなくていいんじゃない？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_ORACLE_004.wav"
+    },
+    {
+      "Uid": 201,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그러니까… 스타피어서라고 했나? 아무튼 단장의 검에서 나온 정령이라는 뜻이잖아.",
+      "UnitTalk_JPN": "えっと…スターピアサーだったっけ？とにかく、団長の剣から出てきた精霊ってことでしょ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_ORACLE_005.wav"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "그, 그런가?",
+      "UnitTalk_JPN": "そ、そういうことなの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 165,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "ANGRY_LOOP",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 166,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL_LOOP",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "정령이 살고 있는 검이라니 대단하네.",
+      "UnitTalk_JPN": "精霊が宿る剣だなんて、すごいわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 218,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "역시 우리 단장이야!",
+      "UnitTalk_JPN": "さすが、わたしたちの団長ね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CUTE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "POS2_2X",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "…쿡.",
+      "UnitTalk_JPN": "…ツン。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_SMILE_004.wav"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 161,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL_LOOP"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffset": "POS1_2X",
+      "UnitPos": "POS1",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_082.wav"
+    },
+    {
+      "Uid": 162,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL_LOOP"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CUTE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "POS2_2X",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "…쿡.",
+      "UnitTalk_JPN": "…ツン。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_SMILE_005.wav"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffset": "POS1_2X",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_083.wav"
+    },
+    {
+      "Uid": 179,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CUTE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL_LOOP"
+    },
+    {
+      "Uid": 230,
+      "WaitClick": false,
+      "WaitTime": 0.2
+    },
+    {
+      "Uid": 177,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CUTE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "쿡. 쿡. 쿡.",
+      "UnitTalk_JPN": "ツン。ツン。ツン。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_SMILE_006.wav"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "언니? 오메가 볼은 찌르는 게 아닌데…",
+      "UnitTalk_JPN": "お姉ちゃん？オメガのほっぺをつっつくのはダメだよ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_084.wav"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "유질량 홀로그램은 언니도 구현 불가능했던 환상의 기술.",
+      "UnitTalk_JPN": "有質量ホログラムは、姉さんも実現できなかった幻の技術。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_SMILE_007.wav"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "현실에서 직접 보게 되다니 감동 그 자체.",
+      "UnitTalk_JPN": "実物をお目にかかれるなんて…感動そのもの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_SMILE_008.wav"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "헤…",
+      "UnitTalk_JPN": "へ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_085.wav"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그치? 그치? 오메가는 엄청 대단해!",
+      "UnitTalk_JPN": "でしょ？でしょ？？オメガはとーってもすごいんだよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_086.wav"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "뭐 보고 싶은 거 있어?",
+      "UnitTalk_JPN": "なんか見たい物ある？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_087.wav"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오메가가 다- 보여줄게!",
+      "UnitTalk_JPN": "オメガがぜーんぶ見せたげる！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_088.wav"
+    },
+    {
+      "Uid": 181,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뮤리엘과 엘리사였었나.",
+          "JumpAnchorStringId_JPN": "ミュリエルとエリサだったっけ…"
+        }
+      ]
+    },
+    {
+      "Uid": 233,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 182,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "...걔들은 어떻게 됐지?",
+          "JumpAnchorStringId_JPN": "あの二人はどうなったんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "어… 그게… 직접 보는 게 빠르겠네.",
+      "UnitTalk_JPN": "あっ…それは…直接見た方が早いかもしれないわね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_VOYAGER_STRANIS_010.wav",
+      "AutoHighlight": "ON"
+    },
+    {
+      "Uid": 235,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 243,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 242,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.2,
+      "BgFileName": "ILLUST_SPINE_MAIN_STORY_SS_EP_03_02.prefab",
+      "VideoDependsOnText": false
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 1.0,
+      "BgCrashTime": 2.0,
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "으아아 오지 마! 그만 쫓아오라고!",
+      "UnitTalk_JPN": "うああ、来ないで！もう追いかけて来ないでってば！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_007.wav"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_COPY_MUIREAL"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "후후후, 성녀 경쟁자는 제거한다!",
+      "UnitTalk_JPN": "あははは！聖女のライバルは排除するのみ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_CLONE_001.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_COPY_MUIREAL"
+      ],
+      "UnitTalk_KOR": "너를 없애 버리면 내가 116번 성녀가 되는 거니까!",
+      "UnitTalk_JPN": "あんたを消し去れば、うちが序列116番聖女になれるんだから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_CLONE_002.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "내, 내가 위로 올라가기 위해 나쁜 짓을 좀… 하긴 했지만…",
+      "UnitTalk_JPN": "た、確かにうちは…のし上がるために、悪いことを…ちょっとだけしたけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_008.wav"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "<color=#F7BE45>[경쟁자 직접 제거]</color> 같은 무시무시한 생각은 안 했다고!",
+      "UnitTalk_JPN": "<color=#F7BE45>「ライバルを直接蹴落とす」</color>みたいな、そんな恐ろしいことはしなかったんだから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_009.wav"
+    },
+    {
+      "Uid": 216,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "역시 뮤리엘 님...! 언제나 선을 지키는 교단의 양심이세요!",
+      "UnitTalk_JPN": "やはりミュリエル様…！いつもルールを守る、教団の良心です！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_ELF_005.wav"
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "엘리사! 넌 뭘 보고만 있는 거야!",
+      "UnitTalk_JPN": "エリサ！何見てるのよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_010.wav"
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "빨리 이 녀석을 어떻게든 하라고!",
+      "UnitTalk_JPN": "はやくこいつをどうにかしなさいよー！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_011.wav"
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "네? 하, 하지만 전 폭력에 재능이 없다고 몇 번이나 말씀드렸는데…",
+      "UnitTalk_JPN": "え…？で、でも、私には暴力の才能がないと何度も申し上げたはずですが…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_ELF_006.wav"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "시끄러워! 다리에 매달고 있는 철퇴는 장식용이냐고!",
+      "UnitTalk_JPN": "うるさい！ぶらさげてる鉄球は飾りなの！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_012.wav"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "이, 이건 이교도의 머리통을 부술 때만 예외적으로 사용하는…",
+      "UnitTalk_JPN": "こ、これは異教徒の頭をかち割る時にだけ、例外的に使うもので…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_ELF_007.wav"
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 1.0,
+      "BgCrashTime": 2.0,
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "엘리사아아아아!!",
+      "UnitTalk_JPN": "エリサァァァァ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_013.wav"
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아, 알겠어요! 뮤리엘 성녀님!",
+      "UnitTalk_JPN": "わ、分かりました！ミュリエル様！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_ELF_008.wav"
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "뮤리엘 성녀님을 위해서라면 가프님께 천벌을 받는 한이 있더라도…!",
+      "UnitTalk_JPN": "ミュリエル様のためならば、ガプ様から天罰を受けようとも…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_ELF_009.wav"
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "CameraOffset": "ONE_4",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS4",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_ELF_010.wav"
+    },
+    {
+      "Uid": 223,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFlashBang": 0.35,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWOOSH_34.wav",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 250,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFlashBang": 0.35,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWOOSH_34.wav",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 251,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFlashBang": 0.35,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWOOSH_34.wav",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "서, 성녀님! 헉헉!",
+      "UnitTalk_JPN": "ミュ、ミュリエル様…！ハァ、ハァ…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_ELF_011.wav"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "계속 그렇게 도망치시면 제가 공격할 수가… 헉헉! 없는데요…!",
+      "UnitTalk_JPN": "止まってください…！逃げ続けていたら、攻撃できませんっ…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_ELF_012.wav"
+    },
+    {
+      "Uid": 225,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 1.0,
+      "BgCrashTime": 2.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_14.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWOOSH_34.wav",
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "잠시만… 헉헉! 서시라고요!",
+      "UnitTalk_JPN": "待って…止まってくださいってば…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_ELF_013.wav"
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "바로 내 뒤에 쫓아오는 거 안 보여?!  지금 멈추면 내가 죽게 생겼다고!",
+      "UnitTalk_JPN": "すぐ後ろを追いかけてきてるのが見えないの！？今止まったらうちは死んじゃうのよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_014.wav"
+    },
+    {
+      "Uid": 221,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "으아아앙-! 죄송합니다-! 잘못했어요-! 제가 정말 잘못했어요-!",
+      "UnitTalk_JPN": "うわぁぁん！ごめんなさい！すみません！うちが悪かったんですー！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_015.wav"
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "도와줘요-!! 누가 좀 도와줘-!! 와아아아앙-!",
+      "UnitTalk_JPN": "助けてくださーい！！誰かー！！うわぁぁぁぁん！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_016.wav"
+    },
+    {
+      "Uid": 200,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 151,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_5",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "뮤리엘을 쫓는 복제체와 엘리사의 달리기가 끝없이 이어지고 있었다.",
+      "UnitTalk_JPN": "ミュリエルを追うミュリエルの複製体と、エリサの追いかけっこが延々と続いていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 152,
+      "WaitClick": false,
+      "WaitTime": 0.2
+    },
+    {
+      "Uid": 246,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 245,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_MONOLITH_TEMPLE.png",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 244,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "저게… 왜 아직 남아 있지?",
+          "JumpAnchorStringId_JPN": "あの複製体は…何なんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffset": "TWIN_4",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "잠깐만, 오메가가 한번 물어볼게!",
+      "UnitTalk_JPN": "待って、キューブパレスに聞いてみる！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_089.wav"
+    },
+    {
+      "Uid": 153,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK"
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…큐브 팰리스도 잘 모르겠대.",
+      "UnitTalk_JPN": "…分からないって。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_090.wav"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SPECIAL2",
+      "UnitTalk_KOR": "가끔 저런 불량 복제품이 나온다는데…",
+      "UnitTalk_JPN": "たまに不良品が出るらしいんだけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_091.wav"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "하지만 괜찮아!",
+      "UnitTalk_JPN": "大丈夫！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_092.wav"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitTalk_KOR": "좀만 지나면 알아서 없어질 거래!",
+      "UnitTalk_JPN": "時間が経てば消滅するって！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_STARPIERCER_OMEGA_093.wav"
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇구나, 시간이 지나면 서서히 흩어져서 없어지는구나.",
+      "UnitTalk_JPN": "なるほど…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 247,
+      "WaitClick": false,
+      "WaitTime": 0.25,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.25
+    },
+    {
+      "Uid": 248,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_SPINE_MAIN_STORY_SS_EP_03_02.prefab",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 249,
+      "WaitClick": false,
+      "WaitTime": 0.25,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.25
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 1.0,
+      "BgCrashTime": 2.0,
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "누가 좀 도와줘-!",
+      "UnitTalk_JPN": "誰か助けてー！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_017.wav"
+    },
+    {
+      "Uid": 159,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 156,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무리 저절로 사라진다고 해도 저런 괴생명체가 돌아다니게 놔둘 수는 없다.",
+      "UnitTalk_JPN": "…いくら自然に消えるといっても、あれを放置するわけにはいかない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "혹시나 교회 밖으로 나가기라도 하면 사람들이 다칠 수도 있으니까.",
+      "UnitTalk_JPN": "教会の外に出たりしたら、通行人に被害が及ぶかもしれなかった。しかし…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 뮤리엘에게 미소를 지으며 말했다.",
+      "UnitTalk_JPN": "私は、笑みを浮かべながらミュリエルに言った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "힘내!",
+          "JumpAnchorStringId_JPN": "ファイトー！"
+        }
+      ]
+    },
+    {
+      "Uid": 196,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "조금 쉬었다가 천천히 처리하는 것 정도는 괜찮겠지.",
+      "UnitTalk_JPN": "まぁ、何とかするのは少し休んでからでも大丈夫そうだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "함부로 교단의 보물을 팔아넘기려 한 교단의 성녀님들이 교훈을 얻을 수 있도록.",
+      "UnitTalk_JPN": "騒ぎを起こした聖女様たちが、しっかり反省するまで放置しておこう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "흐윽흐윽, 끄흑, 흐엉, 흐어엉, 흐어어엉-!",
+      "UnitTalk_JPN": "ふぅふぅ、ぐぇっ、ふぇ、ふぇぇ、ふぇーーん！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_7_UNIT_S_SAINTESS_DEMON_018.wav"
+    },
+    {
+      "Uid": 232,
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 158,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 116,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 118,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어느덧 하늘을 뒤덮은 빨간 석양을 배경으로, 뮤리엘의 달리기는 이후로도 한참 계속되었다.",
+      "UnitTalk_JPN": "いつの間にか夕日で茜色に染まった空を背景に、ミュリエルたちは走り続けた。",
+      "TalkTime": 0.03
+    }
+  ]
+}

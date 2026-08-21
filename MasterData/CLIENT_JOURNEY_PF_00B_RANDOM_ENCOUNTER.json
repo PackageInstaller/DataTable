@@ -1,0 +1,527 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00B_RANDOM_ENCOUNTER",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 6,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰를 수행하러 가고 있었는데…",
+      "UnitTalk_JPN": "依頼を遂行しに向かっていると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_85.wav",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "풀잎으로 가려 둔 함정에 빠지고 말았다!",
+      "UnitTalk_JPN": "草で覆い隠された落とし穴に落ちてしまった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 66,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_SWORD_RED",
+      "CameraOffset": "TWIN_1",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_RED",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "크르르… 기다리고 있었다, 인간.",
+      "UnitTalk_JPN": "グルルッ…待っていたぞ、人間。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_SWORD_RED",
+      "UnitTalk_KOR": "이런 단순한 함정에 걸려들다니….",
+      "UnitTalk_JPN": "こんな単純な罠に引っかかるとは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_SWORD_RED",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "역시 인간은 단순하다!",
+      "UnitTalk_JPN": "やっぱり人間は単純だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_RED",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "크륵! 어리석은 인간!",
+      "UnitTalk_JPN": "グルッ！愚かな人間め！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_RED",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "그동안 우리 동족들이 눈에 띌 때마다 괴롭혔겠다…!",
+      "UnitTalk_JPN": "よくも、これまで俺たちの仲間を苦しめてきたな…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_RED",
+      "UnitPos": "POS1",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "그 죄, 용서하지 않겠다!",
+      "UnitTalk_JPN": "許さない！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_WAND_RED",
+      "CameraOffset": "TWIN_4",
+      "UnitPos": "POS9",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "그런데 어떻게 해야 용서하지 않는 거냐?",
+      "UnitTalk_JPN": "だが、どうすれば許さないことになる？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_WAND_RED",
+      "CameraOffset": "TWIN_4",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "크륵, 불법적이고 반윤리적인 행동으로 되갚으면 명분이 사라진다…",
+      "UnitTalk_JPN": "グルッ。道義に反する仕返しをすれば、俺たちの信念が崩れる…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_1"
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_SWORD_RED",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "듣고 보니 그렇다, 크륵…",
+      "UnitTalk_JPN": "確かにそうだ、グルッ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_RED",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "으음… 그러면…",
+      "UnitTalk_JPN": "うーん…それなら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "약탈자 무리는 엉뚱한 복수심을 불태우고 있었다.",
+      "UnitTalk_JPN": "レイダーは、とんちんかんな復讐心を燃やしている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어떻게 해야 할까…?",
+      "UnitTalk_JPN": "どうすべきだ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "혼쭐을 내 주자!",
+          "JumpAnchorStringId_JPN": "懲らしめてやろう！",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "말로 타이르자.",
+          "JumpAnchorStringId_JPN": "言葉で諭そう。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "평범한 시체입니다.",
+          "JumpAnchorStringId_JPN": "ただのしかばねです。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWORD_SLASH_BIG_04.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "약탈자들이 혼란에 빠진 틈을 타서 위협 공격을 가했다!",
+      "UnitTalk_JPN": "レイダーたちが混乱している隙に、攻撃を仕掛けた！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_WAND_RED",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_SWORD_RED",
+      "UnitPos": "POS1",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "크, 크륵! 인간들이 공격해 온다!",
+      "UnitTalk_JPN": "グ、グルルッ！人間が攻撃してきた！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_WAND_RED",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "비겁하다…! 크르르…!",
+      "UnitTalk_JPN": "卑怯だ…！グルル…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_RED",
+      "CameraOffset": "TWIN_4",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "다들 도망쳐라! 살아서 보자!",
+      "UnitTalk_JPN": "皆、逃げろ！生きてまた会おう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 84,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "방금 전까지의 위세가 거짓말처럼, 약탈자들은 뿔뿔이 흩어져 달아나 버렸다.",
+      "UnitTalk_JPN": "先ほどまでの威勢が嘘かのように、レイダーたちは散り散りになって逃げてしまった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 상대의 허를 찌른 경험에서 새로운 깨달음을 얻은 모양이다!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は相手の隙を突く経験から、新たな気づきを得たようだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 39,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_RED",
+      "UnitPos": "POS1",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "크륵…? 괴롭힌 적이 없다고…?",
+      "UnitTalk_JPN": "グルッ…？苦しめた覚えはない…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_SWORD_RED",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "그러고 보니… 우리를 괴롭혔던 인간들은 떼로 몰려다녔다…",
+      "UnitTalk_JPN": "そういえば…俺らを苦しめた人間は、群れで行動していた…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_RED",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "크르르… 부당한 탄압은 우리 종족의 긍지를 더럽히는 짓이다.",
+      "UnitTalk_JPN": "グルル…不当な弾圧は、俺ら種族の誇りを汚す行為だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_WAND_RED",
+      "CameraOffset": "TWIN_4",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "잠깐!",
+      "UnitTalk_JPN": "待て！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_WAND_RED",
+      "CameraOffset": "TWIN_4",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "괴롭히지 않았다는 건 저 자들의 주장일 뿐이다.",
+      "UnitTalk_JPN": "苦しめていないと言うのは、あの連中の主張に過ぎない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_WAND_RED",
+      "CameraOffset": "TWIN_4",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "신중하게 검토해 보자, 크르륵…",
+      "UnitTalk_JPN": "慎重に検討しよう、グルルッ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…결국, 약탈자들은 오랜 논의 끝에 결론을 내리지 못하고 돌아갔다.",
+      "UnitTalk_JPN": "…結局、レイダーは長い議論の末、結論を出せずに帰っていった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "무사히 벗어나기는 했지만, 하루 종일 얘기를 나눴더니 지쳐 버렸다…",
+      "UnitTalk_JPN": "無事に抜け出すことはできたものの、一日中話し合ったせいでグッタリしてしまった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 93,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_03.wav",
+      "UnitTalk_KOR": "눈을 감고 구덩이 속에 가만히 누워 있자, 곧 약탈자들이 술렁거렸다.",
+      "UnitTalk_JPN": "目を閉じて穴の中にじっと横たわっていると、すぐにレイダーたちがざわめき始めた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_SWORD_RED",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "이, 인간들이 아무 반응도 없다…!",
+      "UnitTalk_JPN": "に、人間、反応がない…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_WAND_RED",
+      "CameraOffset": "TWIN_4",
+      "UnitTalk_KOR": "크륵…! 설마 구덩이에 빠진 충격으로 중태에 빠진 건가…!",
+      "UnitTalk_JPN": "グルルッ…！まさか穴に落ちた衝撃で重体になったのか…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_WAND_RED",
+      "UnitTalk_KOR": "만약 그렇다면 이건 중대한 과실이다…!",
+      "UnitTalk_JPN": "もしそうなら、これは重大な過失だ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_RED",
+      "CameraOffset": "TWIN_1",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "크르륵…! 우린 아, 아무것도 못 봤다!",
+      "UnitTalk_JPN": "グルルッ…！俺たち、な、何も見てない！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "약탈자들이 줄행랑을 친 덕분에 안전하게 구덩이를 탈출할 수 있었다…",
+      "UnitTalk_JPN": "レイダーが逃げて行ったおかげで、無事に穴から脱出できた…",
+      "TalkTime": 0.03
+    }
+  ]
+}

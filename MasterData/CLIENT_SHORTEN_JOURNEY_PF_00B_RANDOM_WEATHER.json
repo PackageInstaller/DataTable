@@ -1,0 +1,29 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00B_RANDOM_WEATHER",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00B_RANDOM_WEATHER",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00B_RANDOM_WEATHER",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하루 종일 비가 와서 캔들 스퀘어에 앉아 하루를 보냈다.\n세차게 내리는 비도 걱정과 근심을 씻겨 주진 못했다.",
+      "UnitTalk_JPN": "一日中雨が降っていたので、キャンドル・スクエアに座って一日を過ごした。\n激しく降る雨も、心配や悩みを洗い流してはくれなかった。",
+      "TalkTime": 0.03
+    }
+  ]
+}

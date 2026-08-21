@@ -1,0 +1,713 @@
+﻿{
+	"$schema": "../../../../../DataSchema/SkillFormation.jsonc",
+	"_Version": 0,
+	"Data": [
+	{		
+		"m_SkillFormationStrID" : "SFT_NORMAL_LINE", // -1 표시는 값을 바꾸지 않겠다는 의미의 좌표임
+
+		"m_PosFront" : [-1,0,0],
+		"m_Pos0" : [-1,0,-0.9],
+		"m_Pos1" : [-1,0,-0.9],
+		"m_Pos2" : [-1,0,-0.9],
+		"m_Pos3" : [-1,0,-0.9],
+		"m_Pos4" : [-1,0,-0.9],
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : -1,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1,
+						
+		"MaxSlotOverrides": [
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_3"],
+				"m_PosFront" : [-1,0,0],
+				"m_Pos0" : [-1,0,-0.9],
+				"m_Pos1" : [-1,0,-0.9],
+				"m_Pos2" : [-1,0,-0.9],
+
+				"m_RotateYFront" : -1,
+				"m_RotateY0" : -1,
+				"m_RotateY1" : -1,
+				"m_RotateY2" : -1,
+			},
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_2"],
+				"m_PosFront" : [-1,0,0],
+				"m_Pos0" : [3,0,0], // [4.1,0,0],
+				"m_Pos1" : [4.8,0,0], // [2.6,0,0],
+
+				"m_RotateYFront" : -1,
+				"m_RotateY0" : -1,
+				"m_RotateY1" : -1
+			},
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_1"],
+				"m_PosFront" : [-1,0,0],
+				"m_Pos0" : [3.8,0,0], // [4.1,0,0],
+
+				"m_RotateYFront" : -1,
+				"m_RotateY0" : -1
+			}
+		]
+	},
+
+	{
+		"m_SkillFormationStrID" : "SFT_CENTER_TARGET_ONLY",
+
+		"m_PosFront" : [3.4,0,0],
+		"m_Pos0" : [-1,0,-1],
+		"m_Pos1" : [-1,0,-1],
+		"m_Pos2" : [-1,0,-1],
+		"m_Pos3" : [-1,0,-1],
+		"m_Pos4" : [-1,0,-1],
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : -1,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1
+	},
+
+	{
+		"m_SkillFormationStrID" : "SFT_CENTER_TARGET_ONLY_LONG",
+
+		"m_PosFront" : [3.4,0,-3],
+		"m_Pos0" : [-1,0,-1],
+		"m_Pos1" : [-1,0,-1],
+		"m_Pos2" : [-1,0,-1],
+		"m_Pos3" : [-1,0,-1],
+		"m_Pos4" : [-1,0,-1],
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : -1,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1
+	},
+	
+	{
+		"m_SkillFormationStrID" : "SFT_CENTER_TARGET_ENEMY",
+
+		"m_PosFront" : [3.4,0,0],
+		"m_Pos0" : [-1,0,-1],
+		"m_Pos1" : [-1,0,-1],
+		"m_Pos2" : [-1,0,-1],
+		"m_Pos3" : [-1,0,-1],
+		"m_Pos4" : [-1,0,-1],
+
+		"m_RotateYFront" : 0,
+		"m_RotateY0" : 0,
+		"m_RotateY1" : 0,
+		"m_RotateY2" : 0,
+		"m_RotateY3" : 0,
+		"m_RotateY4" : 0
+	},
+
+	{
+		"m_SkillFormationStrID" : "SFT_FULL_MY_TEAM",
+		"m_bUseFront" : true,
+
+		"m_PosFront" : [-1,0,0], 
+		"m_Pos0" : [1.6,0,0], // [5.6,0,0], // 1.1
+		"m_Pos1" : [2.8,0,0], // [4.1,0,0], // 2.6
+		"m_Pos2" : [4.0,0,0], // [2.6,0,0], // 4.1
+		"m_Pos3" : [5.2,0,0], // [1.1,0,0], // 5.6
+		"m_Pos4" : [6.0,0,0], // [-0.4,0,0], // 6.0
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : -1,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1,
+				
+		"MaxSlotOverrides": [
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_3"],
+				"m_PosFront" : [-1,0,0], 
+				"m_Pos0" : [1.7,0,0], // [5.6,0,0],
+				"m_Pos1" : [3.8,0,0], // [4.1,0,0],
+				"m_Pos2" : [5.4,0,0], // [2.6,0,0],
+
+				"m_RotateYFront" : -1,
+				"m_RotateY0" : -1,
+				"m_RotateY1" : -1,
+				"m_RotateY2" : -1
+			},
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_2"],
+				"m_PosFront" : [-1,0,0],
+				"m_Pos0" : [3,0,0], // [4.1,0,0],
+				"m_Pos1" : [4.8,0,0], // [2.6,0,0],
+
+				"m_RotateYFront" : -1,
+				"m_RotateY0" : -1,
+				"m_RotateY1" : -1
+			},
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_1"],
+				"m_PosFront" : [-1,0,0],
+				"m_Pos0" : [3.8,0,0], // [4.1,0,0],
+
+				"m_RotateYFront" : -1,
+				"m_RotateY0" : -1
+			}
+		]
+	},
+	{
+		"m_SkillFormationStrID" : "SFT_FULL_MY_TEAM_WIDE",
+		"m_bUseFront" : true,
+
+		"m_PosFront" : [-1,0,0], 
+		"m_Pos0" : [1.1,0,0], // [5.6,0,0],
+		"m_Pos1" : [2.6,0,0], // [4.1,0,0],
+		"m_Pos2" : [4.1,0,0], // [2.6,0,0],
+		"m_Pos3" : [5.6,0,0], // [1.1,0,0],
+		"m_Pos4" : [6.0,0,0], // [-0.4,0,0],
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : -1,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1,
+				
+		"MaxSlotOverrides": [
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_3"],
+				"m_PosFront" : [-1,0,0], 
+				"m_Pos0" : [1.7,0,0], // [5.6,0,0],
+				"m_Pos1" : [3.8,0,0], // [4.1,0,0],
+				"m_Pos2" : [5.4,0,0], // [2.6,0,0],
+
+				"m_RotateYFront" : -1,
+				"m_RotateY0" : -1,
+				"m_RotateY1" : -1,
+				"m_RotateY2" : -1
+			},
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_2"],
+				"m_PosFront" : [-1,0,0],
+				"m_Pos0" : [3,0,0], // [4.1,0,0],
+				"m_Pos1" : [4.8,0,0], // [2.6,0,0],
+
+				"m_RotateYFront" : -1,
+				"m_RotateY0" : -1,
+				"m_RotateY1" : -1
+			},
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_1"],
+				"m_PosFront" : [-1,0,0],
+				"m_Pos0" : [3.8,0,0], // [4.1,0,0],
+
+				"m_RotateYFront" : -1,
+				"m_RotateY0" : -1
+			}
+		]
+	},
+	{
+		"m_SkillFormationStrID" : "SFT_CENTER_MYSELF_ONLY",
+		"m_bUseFront" : true,
+
+		"m_PosFront" : [0,0,0],
+		"m_RotateYFront" : 0
+	},
+	{
+		"m_SkillFormationStrID" : "SFT_ONE_MY_TEAM",
+		"m_bUseFront" : true,
+		"m_bUseTarget" : true,
+
+		"m_PosFront" : [0,0,0],
+		"m_RotateYFront" : 0,
+		"m_PosTarget" : [2,0,0],
+		"m_RotateYTarget" : 0
+	},
+	{
+		"m_SkillFormationStrID" : "SFT_ONE_MY_TEAM_CENTER",
+		"m_bUseFront" : true,
+		"m_bUseTarget" : true,
+
+		"m_PosFront" : [3,0,0],
+		"m_RotateYFront" : 0,
+		"m_PosTarget" : [5,0,1],
+		"m_RotateYTarget" : 0
+	},
+	{
+		"m_SkillFormationStrID" : "SFT_TARGET_ONE_MY_TEAM_SELF",
+		"m_bUseFront" : true,
+		"m_bUseTarget" : true,
+
+		"m_PosFront" : [0,0,0],
+		"m_RotateYFront" : 0,
+		"m_PosTarget" : [0,0,0],
+		"m_RotateYTarget" : 0
+	},
+		
+	{
+		"m_SkillFormationStrID" : "SFT_FULL_MY_TEAM_HYPER",
+		"m_bUseFront" : true,
+		"m_bUseOrder" : true,
+
+		"m_PosFront" : [0,0,0], // [0,0,0],
+		"m_Pos0" : [-1.7,0,-0.5], // [0.8,0,-1.4],
+		"m_Pos1" : [-0.6,0,-2.8], // [-0.6,0,-2.8],
+		"m_Pos2" : [0.8,0,-1.4], // [-1.7,0,-0.5],
+		"m_Pos3" : [0,0,0], // [0,0,0],
+		"m_Pos4" : [0,0,0], // [0,0,0],
+
+		"m_RotateYFront" : 0,
+		"m_RotateY0" : -20, //20
+		"m_RotateY1" : 0,
+		"m_RotateY2" : 20, //-20
+		"m_RotateY3" : 0,
+		"m_RotateY4" : 0
+	},
+
+	{
+		"m_SkillFormationStrID" : "SFT_TARGET_ONE_SELF",
+		"m_bUseFront" : true,
+		"m_bUseTarget" : true,
+
+		"m_PosFront" : [0,0,0],
+		"m_RotateYFront" : 0,
+		"m_PosTarget" : [2,0,0],
+		"m_RotateYTarget" : 0
+	},
+
+	{
+		"m_SkillFormationStrID" : "SFT_PRAY_HYPER_01",
+		"m_bUseFront" : true,
+		"m_bUseOrder" : true,
+
+		"m_PosFront" : [0,0,0], // [0,0,0], 
+		"m_Pos0" : [1.7, -5, 6.9], // [-1.5, -5, 6.85],
+		"m_Pos1" : [0.07, -5, 7.12], // [0.07, -5, 7.12],
+		"m_Pos2" : [-1.5, -5, 6.85], // [1.7, -5, 6.9],
+		"m_Pos3" : [0,0,0],
+		"m_Pos4" : [0,0,0],
+
+		"m_RotateYFront" : 0,
+		"m_RotateY0" : -160, //160
+		"m_RotateY1" : -180,
+		"m_RotateY2" : 160, //-160
+		"m_RotateY3" : 0,
+		"m_RotateY4" : 0
+	},
+
+	{
+		"m_SkillFormationStrID" : "SFT_PRAY_HYPER_02",
+		"m_bUseFront" : true,
+		"m_bUseOrder" : true,
+
+		"m_PosFront" : [0,0,0], // [0,0,0], 
+		"m_Pos0" : [1.2, 0.007, 6.9], // [-1.5, -5, 6.85],
+		"m_Pos1" : [-1.5, -5, 6.85], // [0.07, -5, 7.12],
+		"m_Pos2" : [-1.2, 0.007, 6.9], // [1.7, -5, 6.9],
+		"m_Pos3" : [0,0,0],
+		"m_Pos4" : [0,0,0],
+
+		"m_RotateYFront" : 0,
+		"m_RotateY0" : -160, // 160
+		"m_RotateY1" : -180,
+		"m_RotateY2" : 160, // -160
+		"m_RotateY3" : 0,
+		"m_RotateY4" : 0
+	},
+
+	{
+		"m_SkillFormationStrID" : "SFT_PRAY_HYPER_03",
+		"m_bUseFront" : true,
+		"m_bUseOrder" : true,
+
+		"m_PosFront" : [0,0,0], // [0,0,0],
+		"m_Pos0" : [-1.7, 0, -0.5], // [0.8, 0, -1.4],
+		"m_Pos1" : [-0.6, 0, -2.8], // [-0.6, 0, -2.8],
+		"m_Pos2" : [0.8, 0, -1.4], // [-1.7, 0, -0.5],
+		"m_Pos3" : [0, 0, 0],
+		"m_Pos4" : [0, 0, 0],
+
+		"m_RotateYFront" : 0,
+		"m_RotateY0" : 20, // -20
+		"m_RotateY1" : 0,
+		"m_RotateY2" : -20, // 20
+		"m_RotateY3" : 0,
+		"m_RotateY4" : 0
+	},
+
+	{
+		"m_SkillFormationStrID" : "SFT_DRUID_HYPER_01",
+		"m_bUseFront" : true,
+		"m_bUseOrder" : true,
+
+		"m_PosFront" : [-1,0,0], // [-1,0,0],
+		"m_Pos0" : [1.81, 0, -3.21], // [5.05, 0, -2.7],
+		"m_Pos1" : [1.15, 0, -0.32], // [5.76, 0, -0.92],
+		"m_Pos2" : [3.73, 0, 1.15], // [3.73, 0, 1.15],
+		"m_Pos3" : [5.76, 0, -0.92], // [1.15, 0, -0.32],
+		"m_Pos4" : [5.05, 0, -2.7], // [1.81, 0, -3.21],
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : -1,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1
+	},
+
+	{		
+		"m_SkillFormationStrID" : "SFT_SWORDMASTER_HYPER_01",
+		"m_bUseFront" : true,
+		"m_bUseOrder" : true,
+
+		"m_PosFront" : [-1,0,0], // [-1,0,0],
+		"m_Pos0" : [4.337, 0, 1.834], // [6.6, 0, 0.87],
+		"m_Pos1" : [2.6, 0, -0.15], // [6.5, 0, -1.8],
+		"m_Pos2" : [3.91, 0, -2.36], // [3.91, 0, -2.36],
+		"m_Pos3" : [6.5, 0, -1.8], // [2.6, 0, -0.15],
+		"m_Pos4" : [6.6, 0, 0.87], // [4.337, 0, 1.834],
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : -1,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1
+	},
+
+	{		
+		"m_SkillFormationStrID" : "SFT_SWORDMASTER_HYPER_02",
+		"m_bUseFront" : true,
+		"m_bUseOrder" : true,
+
+		"m_PosFront" : [-1,0,0], // [-1,0,0],
+		"m_Pos0" : [0, 0, -0.9], // [6.8, 0, -0.9],
+		"m_Pos1" : [1.7, 0, -0.9], // [5.1, 0, -0.9],
+		"m_Pos2" : [3.4, 0, -0.9], // [3.4, 0, -0.9],
+		"m_Pos3" : [5.1, 0, -0.9], // [1.7, 0, -0.9],
+		"m_Pos4" : [6.8, 0, -0.9], // [0, 0, -0.9],
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : -1,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1
+	},
+
+	{		
+		"m_SkillFormationStrID" : "SFT_SWORDMASTER_HYPER_03",
+		"m_bUseFront" : true,
+		"m_bUseOrder" : true,
+
+		"m_PosFront" : [-1,0,0],
+		"m_Pos0" : [-0.05, 6.1, -1.55], // [6.75, 6.1, -1.55],
+		"m_Pos1" : [1.65, 6.1, -1.55], // [5.05, 6.1, -1.55],
+		"m_Pos2" : [3.35, 6.1, -1.55], // [3.35, 6.1, -1.55],
+		"m_Pos3" : [5.05, 6.1, -1.55], // [1.65, 6.1, -1.55],
+		"m_Pos4" : [6.75, 6.1, -1.55], // [-0.05, 6.1, -1.55],
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : -1,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1
+	},
+
+	{		//라니아케아(알데바란) 기본 3인 포지션 전용
+		"m_SkillFormationStrID" : "SFT_ALDEBARAN_HYPER_01", 
+		"m_bUseFront" : true,
+		"m_bUseOrder" : true,
+
+		"m_PosFront" : [0,0,0],
+		"m_Pos0" : [6.6, 50.0, 0],
+		"m_Pos1" : [3.3, 50.0, 0],
+		"m_Pos2" : [0.0, 50.0, 0],
+
+		"MaxSlotOverrides": [
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_4"],
+				"m_PosFront" : [0,0,0],
+				"m_Pos0" : [6.6, 50.0, 0],
+				"m_Pos1" : [3.3, 50.0, 0],
+				"m_Pos2" : [0.0, 50.0, 0],
+				"m_Pos3" : [-3.3, 50.0, 0],
+				"m_Pos4" : [-6.6, 50.0, 0]
+			},
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_2"],
+				"m_PosFront" : [0,0,0],
+				"m_Pos0" : [3.3, 50.0, 0],
+				"m_Pos1" : [0.0, 50.0, 0],
+			},
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_1"],
+				"m_PosFront" : [0,0,0],
+				"m_Pos0" : [3.3, 50.0, 0]
+			}
+		]
+	},
+
+	{		
+		"m_SkillFormationStrID" : "SFT_ROD_HYPER_01",
+
+		"m_PosFront" : [2.4,0,-0.8],
+		"m_Pos0" : [0,0,0],
+		"m_Pos1" : [0,0,0],
+		"m_Pos2" : [0,0,0],
+		"m_Pos3" : [0,0,0],
+		"m_Pos4" : [0,0,0],
+
+		"m_RotateYFront" : 0,
+		"m_RotateY0" : 0,
+		"m_RotateY1" : 0,
+		"m_RotateY2" : 0,
+		"m_RotateY3" : 0,
+		"m_RotateY4" : 0
+	},
+
+	{		
+		"m_SkillFormationStrID" : "SFT_VOCAL_HYPER_01",
+
+		"m_bUseFront" : true,
+		"m_bUseOrder" : true,
+
+		"m_PosFront" : [0,0,0], // [0,0,0],
+		"m_Pos0" : [1.23, 0, -2.44], // [-0.654, 0, 0.012],
+		"m_Pos1" : [1.101, 0, -0.016], // [1.101, 0, -0.016],
+		"m_Pos2" : [-0.654, 0, 0.012], // [1.23, 0, -2.44],
+		"m_Pos3" : [0,0,0], // [0,0,0],
+		"m_Pos4" : [0,0,0], // [0,0,0],
+
+		"m_RotateYFront" : 0,
+		"m_RotateY0" : -60, // -40
+		"m_RotateY1" : 0,
+		"m_RotateY2" : -40, // -60
+		"m_RotateY3" : 0,
+		"m_RotateY4" : 0
+	},
+
+	{		
+		"m_SkillFormationStrID" : "SFT_INDEPENDENT_VAGABOND_01",
+
+		"m_PosFront" : [5.15,0.5,0],
+		"m_Pos0" : [-1,0,-1],
+		"m_Pos1" : [-1,0,-1],
+		"m_Pos2" : [-1,0,-1],
+		"m_Pos3" : [-1,0,-1],
+		"m_Pos4" : [-1,0,-1],
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : -1,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1
+	},
+
+	{		
+		"m_SkillFormationStrID" : "SFT_ORACLE_HYPER_01",
+
+		"m_PosFront" : [-1,0,0],
+		"m_Pos0" : [-1,1.5,-7],
+		"m_Pos1" : [-1,1.5,-7],
+		"m_Pos2" : [-1,1.5,-7],
+		"m_Pos3" : [-1,1.5,-7],
+		"m_Pos4" : [-1,1.5,-7],
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : -1,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1
+	},
+
+	{		
+		"m_SkillFormationStrID" : "SFT_MAID_TWOHANDER_01",
+
+		"m_PosFront" : [0,0,0],
+		"m_Pos0" : [-0.8,3.8,-1],
+		"m_Pos1" : [1.6,4,-1],
+		"m_Pos2" : [4,3.8,-1],
+		"m_Pos3" : [6.4,4,-1],
+		"m_Pos4" : [8.8,3.8,-1],
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : -1,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1
+	},
+
+	{
+		"m_SkillFormationStrID" : "SFT_CENTER_TARGET_ONLY_UP",
+
+		"m_PosFront" : [3.4,4,0],
+		"m_Pos0" : [-1,0,-1],
+		"m_Pos1" : [-1,0,-1],
+		"m_Pos2" : [-1,0,-1],
+		"m_Pos3" : [-1,0,-1],
+		"m_Pos4" : [-1,0,-1],
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : -1,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1
+	},
+
+	{		
+		"m_SkillFormationStrID" : "SFT_WATSON_SPECIAL_01",
+		"m_bUseFront" : true,
+		"m_bUseOrder" : true,
+
+		"m_PosFront" : [0,0,0],
+		"m_Pos0" : [0.39,0,-1.95], // [-1.5,0,-0.5],
+		"m_Pos1" : [1.2,0,-1.15], // [1.2,0,-1.15],
+		"m_Pos2" : [-1.5,0,-0.5], // [0.39,0,-1.95],
+		"m_Pos3" : [0,0,0],
+		"m_Pos4" : [0,0,0],
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : 20,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1
+	},
+
+	{		
+		"m_SkillFormationStrID" : "SFT_POST_SPECIAL_01",
+		"m_bUseFront" : true,
+		"m_bUseTarget" : true,
+
+		"m_PosFront" : [3,0,0],
+		"m_RotateYFront" : 0,
+		"m_PosTarget" : [4,0,0],
+		"m_RotateYTarget" : 0
+	},
+
+	{
+		"m_SkillFormationStrID" : "SFT_GADGET_HYPER_01",
+
+		"m_PosFront" : [3.4,0,-0.1],
+		"m_Pos0" : [-1,0,-1],
+		"m_Pos1" : [-1,0,-1],
+		"m_Pos2" : [-1,0,-1],
+		"m_Pos3" : [-1,0,-1],
+		"m_Pos4" : [-1,0,-1],
+
+		"m_RotateYFront" : -1,
+		"m_RotateY0" : -1,
+		"m_RotateY1" : -1,
+		"m_RotateY2" : -1,
+		"m_RotateY3" : -1,
+		"m_RotateY4" : -1
+	},
+
+	{
+		"m_SkillFormationStrID" : "SFT_SUMMER_ORACLE_HYPER_01", //시작 수영복 루나 포지션
+		"m_PosFront" : [-4.2,-1.1,-30.5],
+		"m_RotateYFront" : 0
+	},
+	{
+		"m_SkillFormationStrID" : "SFT_SUMMER_ORACLE_HYPER_02",//시작 적 포지션
+		"m_EnemyFormation" : true,
+		"m_PosFront" : [-4.2,-0.58,-26],
+		"m_RotateYFront" : 0	
+	},
+	{
+		"m_SkillFormationStrID" : "SFT_SUMMER_ORACLE_HYPER_03",//260f 수영복 루나 포지션		
+		"m_PosFront" : [8,-1.1,-25],
+		"m_RotateYFront" : 0
+	},
+	{
+		"m_SkillFormationStrID" : "SFT_SUMMER_ORACLE_HYPER_04",//260f 적 포지션
+		"m_EnemyFormation" : true,
+		"m_PosFront" : [6,-0.15,-16],
+		"m_RotateYFront" : 0
+	},
+
+	{		
+		"m_SkillFormationStrID" : "SFT_OWL_HYPER_01",
+        
+		"m_bUseStatic": true,
+		"m_bUseFront" : true,
+		"m_bUseOrder" : true,
+
+		"m_PosFront" : [0,0,0],
+		"m_Pos0" : [-2.724353, -0.239, -1.958077],
+		"m_Pos1" : [-2.795461, -0.283, -0.6020268],
+		"m_Pos2" : [-2.724353, -0.197, 0.6652238],
+		"m_Pos3" : [0,0,0],
+		"m_Pos4" : [0,0,0],
+
+		"m_RotateYFront" : 0,
+		"m_RotateY0" : 55,
+		"m_RotateY1" : 85,
+		"m_RotateY2" : 100,
+		"m_RotateY3" : 0,
+		"m_RotateY4" : 0
+	},
+
+	{		
+		"m_SkillFormationStrID" : "SFT_LANDGRAVE_HYPER_01",
+
+		"m_PosFront" : [3.4,4,0]
+	},
+
+	{		
+		"m_SkillFormationStrID" : "SFT_DRESS_STRANIS_HYPER_01",
+		"m_bUseFront" : true,
+		"m_bUseOrder" : true,
+		"m_PosFront" : [0,0,0],
+		"m_Pos0" : [-1.6,0,-0.7],
+		"m_Pos1" : [0,0,-2.3],
+		"m_Pos2" : [1.6,0,-0.7],
+
+		"m_RotateYFront" : 0
+	},
+////////////////////////////////브레이크 스킬////////////////////////////////
+	{		
+		"m_SkillFormationStrID" : "SFT_ORBITAL_GUNBLADE_01",
+		"m_Pos0" : [-20,0,-0.9],
+		"m_Pos1" : [-6.5,0,-0.9],
+		"m_Pos2" : [10,0,-0.9],
+		"m_Pos3" : [30,0,-0.9],
+
+		"MaxSlotOverrides": [
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_5"],
+				"m_Pos0" : [-24,0,-0.9],
+				"m_Pos1" : [-10.5,0,-0.9],
+				"m_Pos2" : [3.4,0,-0.9],
+				"m_Pos3" : [20,0,-0.9],
+				"m_Pos4" : [40.0,0,-0.9]
+			},
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_3"],
+				"m_Pos1" : [-10.5,0,-0.9],
+				"m_Pos2" : [3.4,0,-0.9],
+				"m_Pos3" : [20,0,-0.9],
+			},
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_2"],
+		        "m_Pos1" : [-6.5,0,-0.9],
+		        "m_Pos2" : [10,0,-0.9],
+			},
+			{
+				"m_FormationSlots": ["BATTLE_SLOT_1"],
+				"m_Pos2" : [3.4,0,-0.9],
+			}
+		]
+
+	}
+	]
+}

@@ -1,0 +1,1612 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_04",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_04",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "조금은 가까워진 줄 알았던 에데와의 거리는 지금까지의 노력이 무색할 정도로 멀어지고 말았다. ",
+      "UnitTalk_JPN": "少しは近づけたと思っていたエデとの距離は、これまでの努力が水の泡になるほど遠くなってしまった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "투덜거리면서도 내 말에 꼬박꼬박 대답해주던 에데였지만… ",
+      "UnitTalk_JPN": "文句を言いながらも、私の言葉にきちんと返事をしてくれていたエデだったが…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…흥.",
+      "UnitTalk_JPN": "…フン。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 날 화를 내며 돌아간 이후로는, 날 보면 기분 나쁜 걸 봤다는 듯 코웃음을 칠 뿐이다.",
+      "UnitTalk_JPN": "あの日以来…私を見ると、不愉快なものでも見たかのように鼻で笑うだけだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "에데.",
+          "JumpAnchorStringId_JPN": "エデ。"
+        }
+      ]
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "흔한 안부 인사나 잡담조차 해볼 틈이 없다. ",
+      "UnitTalk_JPN": "ありふれた挨拶や雑談さえ、交わす隙がない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "훈련이 끝나면 당연하다는 듯 아무 말 없이 사라진다. ",
+      "UnitTalk_JPN": "トレーニングが終わると、当然のように何も言わずに姿を消してしまう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "대체 어떤 부분에서 잘못한 거지…?",
+      "UnitTalk_JPN": "いったい、どこで間違えたんだ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 238,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 240,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "FilterType": "CFT_SEPIA"
+    },
+    {
+      "Uid": 239,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "<color=#F7BE45>알아간다</color>고? 나에 대해서?",
+      "UnitTalk_JPN": "私のことが、<color=#F7BE45>分かってきた</color>だと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "네가 나에 대해 뭘 아는데?",
+      "UnitTalk_JPN": "お前に何が分かる？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "나도 나에 대해 모르는데, 네가 날 안다고?",
+      "UnitTalk_JPN": "私ですら自分のことが分からないのに、お前に私のことが分かるとでも言うのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…주제 넘지 마.",
+      "UnitTalk_JPN": "…身の程を知れ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "네가 몇 번을 죽었다 깨어난다 해도-",
+      "UnitTalk_JPN": "何度死んで、蘇ったとしても──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "너는 날 이해할 수 없어.",
+      "UnitTalk_JPN": "お前には、私を理解できない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 241,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 242,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_6",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 243,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>나도 나에 대해 모른다</color>고…? ",
+      "UnitTalk_JPN": "<color=#F7BE45>私ですら自分のことが分からない</color>…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그게 무슨 뜻이었을까.",
+      "UnitTalk_JPN": "あれはどういう意味だったのだろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그런 고민을 하며 길을 걷던 도중, 시야 한 구석에 익숙한 실루엣이 스쳤다. ",
+      "UnitTalk_JPN": "そんなことを考えながら道を歩いていると、視界の隅に見慣れたシルエットがかすめた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitTalk_KOR": "경계하듯 주변을 두리번거리던 에데는 한 골목길로 들어갔다.",
+      "UnitTalk_JPN": "警戒するように周囲を見回していたエデは、路地裏へと入っていった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "그리고 얼마 지나지 않아, 두건을 깊숙이 눌러쓴 수상한 인물이 에데의 뒤를 쫓아 골목길로 사라졌다. ",
+      "UnitTalk_JPN": "そして間もなくして…フードを深く被った怪しい人物が、エデを追うように路地へと消えた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…스토커?",
+          "JumpAnchorStringId_JPN": "…ストーカー？"
+        }
+      ]
+    },
+    {
+      "Uid": 245,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 246,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_22.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER"
+    },
+    {
+      "Uid": 247,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "거침없이 걸음을 옮기던 에데는 골목길의 한 허름한 주점 앞에 멈춰섰다.",
+      "UnitTalk_JPN": "ためらうことなく歩みを進めていたエデは、路地にある古びた酒場の前で立ち止まった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "UnitTalk_KOR": "그와 동시에, 에데의 뒤를 밟던 괴한의 발걸음이 빨라지기 시작했다. ",
+      "UnitTalk_JPN": "それと同時に、エデの後をつけていた男の足音が速くなり始めた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "칫, 꼬리가 붙었었나…!",
+      "UnitTalk_JPN": "チッ、尾行されていたか…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.6,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ARROW_06.wav"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "급히 뒤돌아선 에데의 창이 괴한을 향해 내질러졌다. ",
+      "UnitTalk_JPN": "慌てて振り返ったエデの槍が、男に向かって繰り出される。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "날카로운 창끝은 괴한을 꿰뚫고 틀어박혔다. ",
+      "UnitTalk_JPN": "鋭い槍は男を貫いた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_DARK_75.wav",
+      "UnitTalk_KOR": "하지만, 괴한은 멈추지 않았다. ",
+      "UnitTalk_JPN": "だが、男は止まらなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 250,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_03.wav",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "두건이 벗겨져 드러난 괴한의 얼굴에는 일말의 고통도 드러나지 않는다. ",
+      "UnitTalk_JPN": "フードが脱げて露わになった男の顔には、一片の苦痛も見えない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "상처에서는 피 대신 검은 연기를 풀풀 쏟아내며, 녀석은 에데에게 달려들었다. ",
+      "UnitTalk_JPN": "傷口から血の代わりに黒い煙を噴き出し、それはエデに襲いかかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "뭣…?",
+      "UnitTalk_JPN": "なんだ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "순간 에데의 눈에 당황한 빛이 서렸다.",
+      "UnitTalk_JPN": "一瞬、エデの目に戸惑いの色が浮かんだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 뒤도 돌아보지 않고 전력으로 몸을 날렸다. ",
+      "UnitTalk_JPN": "私は振り返ることもなく、全力で身を投げ出した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHOOSH_SWORD_02.wav"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "고개 숙여-!",
+          "JumpAnchorStringId_JPN": "頭を下げろ──！"
+        }
+      ]
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.7,
+      "BgCrashTime": 0.7,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_68.wav"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_DARK_75.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "검격이 괴한을 반으로 가르자, 괴한의 형체는 순식간에 검은 안개로 화해 허공으로 사라졌다. ",
+      "UnitTalk_JPN": "そして剣撃で男を真っ二つに切り裂くと…それは一瞬で黒い霧へと化し、虚空へと消えていった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "네가 어떻게…?!",
+      "UnitTalk_JPN": "お前、どうやって…！？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "ON"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…아슬아슬했네.",
+          "JumpAnchorStringId_JPN": "…危なかったな。"
+        }
+      ]
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…하아. 너.",
+      "UnitTalk_JPN": "…はぁ。お前。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "다쳤잖아.",
+      "UnitTalk_JPN": "怪我してる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괜찮아. 살짝 베인 것뿐이야.",
+          "JumpAnchorStringId_JPN": "大丈夫。少し切れただけだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "왜 자기가 다치면서까지…",
+      "UnitTalk_JPN": "どうして自分が怪我をしてまで…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…아니. 그보다 여기까진 왜 쫓아온 거야?",
+      "UnitTalk_JPN": "いや、それより…どうしてここまでついて来たんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "뭐? 걱정돼서…?",
+      "UnitTalk_JPN": "えっ？それは、心配で…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 132,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "…하아. 도무지 이해할 수가 없네. 너란 사람은.",
+      "UnitTalk_JPN": "…はぁ。お前ってやつは、本当に理解に苦しむな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "모질게 굴면 좀 떨어지란 말이야…",
+      "UnitTalk_JPN": "冷たくしたら、少しは離れていくべきだろう…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그것보다, 방금 그건…?",
+          "JumpAnchorStringId_JPN": "それより、さっきのは…？"
+        }
+      ]
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "<color=#F7BE45>그 괴물</color>도 슬슬 우리의 추적을 눈치챈 거겠지.",
+      "UnitTalk_JPN": "<color=#F7BE45>あの怪物</color>も、そろそろ私たちの追跡に気づいたようだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "너무 서둘렀나… 결국 이렇게 될 줄은 알았지만…",
+      "UnitTalk_JPN": "急ぎすぎたか…結局こうなることは分かっていたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>괴물</color>…?",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>怪物</color>…？"
+        }
+      ]
+    },
+    {
+      "Uid": 138,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "하아… 상황 파악이 잘 안되는 모양이네.",
+      "UnitTalk_JPN": "はあ…状況を把握できていないようだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 139,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "바보. 고집불통. 멍청이.",
+      "UnitTalk_JPN": "バカ。頑固。間抜け。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 140,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "내가 그렇게 경고했는데 휘말려 버렸잖아.",
+      "UnitTalk_JPN": "私があれほど警告したのに、巻き込まれて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…너.",
+      "UnitTalk_JPN": "…お前。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 142,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "후회하지 않을 자신 있어?",
+      "UnitTalk_JPN": "後悔しない自信はあるか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "나중에 후회해도 늦으니까 잘 생각해.",
+      "UnitTalk_JPN": "後で後悔しても遅い。よく考えろ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "에데의 비밀이라면…",
+          "JumpAnchorStringId_JPN": "エデの秘密なら…"
+        }
+      ]
+    },
+    {
+      "Uid": 145,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "같이 알게 해줘. 감당할게.",
+          "JumpAnchorStringId_JPN": "教えてほしい。後悔はしないよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 146,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "…또 그렇게 낯 뜨거운 대사를 당당하게 하는구나. 놀랍네.",
+      "UnitTalk_JPN": "…またそんな恥ずかしい台詞を堂々と言うのか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 147,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "…정말이지. 너 바보야? 멍청하게 사서 고생을 하겠다니.",
+      "UnitTalk_JPN": "…まったく、お前はバカなの？苦労を買って出るなんて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…후우. 들어와.",
+      "UnitTalk_JPN": "…ふぅ。入れ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "밖에서 할만한 이야기는 아니니까.",
+      "UnitTalk_JPN": "外で話すようなことじゃない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 150,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "허름한 술집으로 걸어 들어간 에데는 찬장의 술병을 잡아당겼다. ",
+      "UnitTalk_JPN": "古びた酒場に入っていったエデは、棚の酒瓶を引っ張った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 151,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MACHINE_11.wav"
+    },
+    {
+      "Uid": 152,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "벽면이 미끄러지듯 젖혀지자, 그 안쪽으로 비밀스러운 공간이 드러났다.",
+      "UnitTalk_JPN": "壁面が滑るように横に開くと、その奥から秘密の空間が現れた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 153,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_W",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "부대표님, 방금 그 소란은…?",
+      "UnitTalk_JPN": "副代表、先ほどの騒ぎは…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 154,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "꼬리가 붙었어.",
+      "UnitTalk_JPN": "尾けられていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 155,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "쥐새끼는 죽였지만, 우리 정보는 새어 나갔다고 봐야겠지.",
+      "UnitTalk_JPN": "ネズミは始末したが、我々の情報が漏れたと考えた方がいい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 156,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "아마 다른 지부는 이미 당했을 거야.",
+      "UnitTalk_JPN": "おそらく、他の支部はすでに襲撃されたはずだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 157,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_W",
+      "UnitTalk_KOR": "그럼 어떻게…?",
+      "UnitTalk_JPN": "では、どうすれば…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 158,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "핵심 정보만 본사로 보내고 나머지는 싹 태워버려.",
+      "UnitTalk_JPN": "中核となるデータだけ本社に送り、残りは全て焼き払え。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_W",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…알겠습니다.",
+      "UnitTalk_JPN": "…承知しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 251,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_W",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 160,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이게 대체…",
+          "JumpAnchorStringId_JPN": "これは一体…"
+        }
+      ]
+    },
+    {
+      "Uid": 161,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "모렐 해운상회가 세워진 지는 기껏해야 10년도 지나지 않았어.",
+      "UnitTalk_JPN": "モレル海運商会が設立されてから、せいぜい10年も経っていない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 162,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "하지만 현재는 해상 무역의 아포칼립스 상단이라 불릴 정도로 거대해졌지.",
+      "UnitTalk_JPN": "だが今では、海上貿易のアポカリプス商団と呼ばれるほど巨大化した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 163,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "어떻게 이렇게 급격하게 클 수 있었을 것 같아?",
+      "UnitTalk_JPN": "どうしてこんなに急激に成長できたと思う？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 164,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "정보야.",
+      "UnitTalk_JPN": "情報だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 165,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "비밀리에 라비스타 전역의 각종 소식과 소문을 전부 모아 분석하고 공유하는 정보망을 구축해 뒀거든.",
+      "UnitTalk_JPN": "秘密裏にラビスター全域のあらゆる情報や噂を集め、分析して共有する情報網を構築したのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 166,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "덕분에 정확히 어떤 물건을 언제 어디에 사고팔지 알 수 있었지.",
+      "UnitTalk_JPN": "そのおかげで、どの商品をいつ、どこで売買すべきか知ることができた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 167,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하지만 우리가 정보를 수집하는 진짜 목적은 단순히 돈을 벌기 위해서가 아니야.",
+      "UnitTalk_JPN": "しかし、私たちが情報を集める真の目的は、単に金を稼ぐためじゃない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 168,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼?",
+          "JumpAnchorStringId_JPN": "じゃあ？"
+        }
+      ]
+    },
+    {
+      "Uid": 169,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "복수.",
+      "UnitTalk_JPN": "復讐。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 170,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…복수?",
+          "JumpAnchorStringId_JPN": "…復讐？"
+        }
+      ]
+    },
+    {
+      "Uid": 171,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래. 복수.",
+      "UnitTalk_JPN": "あぁ、復讐だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 172,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "<color=#F7BE45>모르세르</color>를 향한 복수.",
+      "UnitTalk_JPN": "<color=#F7BE45>モルセル</color>への復讐だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 173,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "<color=#F7BE45>모르세르</color>? 그게 누군데?",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>モルセル</color>って？"
+        }
+      ]
+    },
+    {
+      "Uid": 174,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "<color=#F7BE45>변방의 패자 모르세르 백작</color>.",
+      "UnitTalk_JPN": "<color=#F7BE45>辺境の覇者、モルセル伯爵</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 175,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "<color=#F7BE45>왕국의 현자 페르네트 몽데고</color>, <color=#F7BE45>멸망의 음유시인 제렐린 드 빌포르</color>…",
+      "UnitTalk_JPN": "<color=#F7BE45>王国の賢者、フェルネット・モンデゴ</color>、<color=#F7BE45>滅亡の吟遊詩人、ジェレリン・ド・ヴィルフォール</color>…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 176,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "그밖에 수많은 이름과 얼굴을 뒤집어쓴 채 영겁의 세월 동안 인류를 조롱하며 살아온 괴물.",
+      "UnitTalk_JPN": "その他、数多の名と顔を使い分け、永遠の時を嘲笑いながら生きてきた怪物。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 177,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…그리고.",
+      "UnitTalk_JPN": "そして…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 178,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "나의 모든 것을 앗아간 원수.",
+      "UnitTalk_JPN": "私の全てを奪った仇。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 179,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "모든 것이라니…",
+          "JumpAnchorStringId_JPN": "全てって…"
+        }
+      ]
+    },
+    {
+      "Uid": 180,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "말 그대로야.",
+      "UnitTalk_JPN": "言葉の通りだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 181,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "나한테는 남아있는 게 거의 없어.",
+      "UnitTalk_JPN": "私に残されたものはほとんどない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 182,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "내가 눈을 뜬 건, 어느 고대 유적의 폐허 속이었어.",
+      "UnitTalk_JPN": "私が目を覚ましたのは、ある古代遺跡の廃墟の中だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 183,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "<color=#F7BE45>모르세르</color>를 쫓던 크리스텔이 날 깨웠거든.",
+      "UnitTalk_JPN": "<color=#F7BE45>モルセル</color>を追っていたクリステルが、私を目覚めさせたのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 184,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "그리고 크리스텔이 내 정체를 물었을 때…",
+      "UnitTalk_JPN": "そして、クリステルが私の正体を尋ねた時…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 185,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "난 대답할 수 없었어. 아무것도.",
+      "UnitTalk_JPN": "私は何も答えられなかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 186,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "왜 그런 곳에 잠들어있었는지, 어떻게 살아남았는지, 나는 누구였는지…",
+      "UnitTalk_JPN": "どうしてそこに眠っていたのか、どうやって生き残ったのか、私は誰だったのか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 187,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "떠올리려고 해봐도 흐릿해서 떠올릴 수가 없어.",
+      "UnitTalk_JPN": "思い出そうとしても、ぼんやりしていて思い出せない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 188,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만 단 하나, 분명한 건 있었지.",
+      "UnitTalk_JPN": "だが一つだけ、はっきりしていることがあった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 189,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "<color=#F7BE45>현자 페르네트</color>.",
+      "UnitTalk_JPN": "<color=#F7BE45>賢者フェルネット</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 190,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "그에게 복수해야한다는 사실 말이야.",
+      "UnitTalk_JPN": "そいつに復讐しなければならない、という事実だ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 191,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그 녀석이 어떤 짓을 저질렀길래?",
+          "JumpAnchorStringId_JPN": "そいつが何をしたんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 192,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…왕국을 무너뜨리고, 살아있는 모든 걸 죽였어.",
+      "UnitTalk_JPN": "…王国を滅ぼし、生きているもの全てを殺した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 193,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…!",
+          "JumpAnchorStringId_JPN": "…！"
+        }
+      ]
+    },
+    {
+      "Uid": 194,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "…그런데 크리스텔이 그러더라. 그녀도 마침 <color=#F7BE45>그 괴물</color>을 쫓고 있었다고.",
+      "UnitTalk_JPN": "…偶然、クリステルも<color=#F7BE45>あの怪物</color>を追っていたことが分かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 195,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래서 우린 다짐했지. 모든 걸 바쳐서라도 함께 <color=#F7BE45>그 괴물</color>을 찾아내 죽이기로 말이야.",
+      "UnitTalk_JPN": "だから私たちは誓った。全てを捧げても、<color=#F7BE45>あの怪物</color>を見つけ出して殺すことを。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 196,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "이제 너도 짐작했겠지만, 사실 모렐 해운상회니 하는 건 전부 껍데기일 뿐이야.",
+      "UnitTalk_JPN": "お察しの通り…実はモレル海運商会なんてものは、表向きの姿にすぎない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 197,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "크리스텔과 내가 복수를 실행하기 위해 만들어낸 수단 같은 거지.",
+      "UnitTalk_JPN": "クリステルと私が、復讐を実行するために作り出した手段のようなものだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 198,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "미안하지만, 여정의 초대를 수락한 것도 마찬가지 이유야.",
+      "UnitTalk_JPN": "悪いが、旅の招待を受け入れたのも同じ理由だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 199,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "<color=#F7BE45>모르세르</color>가 NOA에 숨어있을 수도 있다는 정보를 얻었거든.",
+      "UnitTalk_JPN": "<color=#F7BE45>モルセル</color>が、NOAに潜伏しているかもしれないという情報を得たからな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 200,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "NOA에서 자유롭게 활동하기 위해 <color=#F7BE45>여정 단원</color>이라는 신분만큼 좋은 건 없잖아?",
+      "UnitTalk_JPN": "NOAで自由に活動するためには、<color=#F7BE45>旅の団員</color>という身分ほど都合の良いものはないだろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 201,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런데 이런 비밀을…",
+          "JumpAnchorStringId_JPN": "でも、こんな秘密を…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "나한테 알려줘도 되는 거야?",
+          "JumpAnchorStringId_JPN": "私に話してもよかったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 203,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…흥. 착각하지마.",
+      "UnitTalk_JPN": "…フン。勘違いするな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 204,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "딱히 널 특별히 신뢰한다거나 해서 그런 게 아니니까.",
+      "UnitTalk_JPN": "別に、お前を特別に信頼しているわけではない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 205,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "너에게는 그냥… <color=#F7BE45>협력 요청</color>의 차원에서 알려주는 거야.",
+      "UnitTalk_JPN": "お前にはただ…<color=#F7BE45>協力要請</color>の次元で教えているだけだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 206,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "협력 요청이라면?",
+          "JumpAnchorStringId_JPN": "協力要請って？"
+        }
+      ]
+    },
+    {
+      "Uid": 207,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "흥. 멋대로 확대해석하지는 마.",
+      "UnitTalk_JPN": "フン。都合のいいように解釈するなよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 208,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "아무 관계도 없는 너에게 복수를 직접 도와달라는 소리는 안 해. 다만-",
+      "UnitTalk_JPN": "何の関係もないお前には、復讐を直接手伝ってくれとは言わない。ただ──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 209,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "오늘 일로 녀석이 우리의 추적을 눈치챘다는 사실이 드러났어.",
+      "UnitTalk_JPN": "今日の件で、奴が私たちの追跡に気づいたことが分かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 210,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "아까 그건 경고의 의미 같은 거겠지.",
+      "UnitTalk_JPN": "さっきのは、警告のようなものだろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 211,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "아무래도 정보망을 다시 꾸릴 때까지는 당분간 몸을 사리는 척해야 할 텐데…",
+      "UnitTalk_JPN": "どうやら情報網を再構築するまでは、しばらく身を潜めるフリをする必要があるようだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 212,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그 동안 충실한 여정단원을 연기하는 게 좋겠다 생각했을 뿐이야.",
+      "UnitTalk_JPN": "その間、忠実な旅の団員を演じるのが良いと思っただけ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 213,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "너에겐 그 협력을 요청하기 위해 알려준 거고.",
+      "UnitTalk_JPN": "お前にはその協力を要請するために、教えたまでだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 214,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "아, 참고로 선택지는 <color=#F7BE45>협력한다</color> 하나뿐이니까.",
+      "UnitTalk_JPN": "ああ、ちなみに選択肢は<color=#F7BE45>協力する</color>の一択だけだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 237,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "내가 거절한다면?",
+          "JumpAnchorStringId_JPN": "もし拒否したら？"
+        }
+      ]
+    },
+    {
+      "Uid": 216,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "죽일 수 밖에.",
+      "UnitTalk_JPN": "殺すしかない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 217,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "1초 정도는 고민해 줘…! ",
+      "UnitTalk_JPN": "ちょっとは悩んでくれよ…！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 218,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "녀석의 심장을 꿰뚫어 죽이기 전까지는…",
+      "UnitTalk_JPN": "奴の心臓を貫いて殺すまでは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 219,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "우리 앞에 방해물이 있어서는 안 되니까.",
+      "UnitTalk_JPN": "私たちの前に、障害物があってはならない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 220,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "나는… 망설이지 않아.",
+      "UnitTalk_JPN": "私は…躊躇しない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 221,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "진득한 살의가 담긴 에데의 읊조림에, 나는 불현듯 한 가지 의문을 떠올렸다. ",
+      "UnitTalk_JPN": "じっとりとした殺意を滲ませるエデの呟きに、私は一つの疑念を抱いた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 222,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "에데.",
+          "JumpAnchorStringId_JPN": "エデ。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "…그럼 그 다음은?",
+          "JumpAnchorStringId_JPN": "…じゃあ、その後は？"
+        }
+      ]
+    },
+    {
+      "Uid": 224,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "…하아?",
+      "UnitTalk_JPN": "…はぁ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 225,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "복수를 끝낸 다음은?",
+          "JumpAnchorStringId_JPN": "復讐を終えたら…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "그 다음엔 어떻게 할 생각인데?",
+          "JumpAnchorStringId_JPN": "その後は、どうするつもりなんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 227,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…관심 없어.",
+      "UnitTalk_JPN": "…興味ない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 228,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "나에겐 <color=#F7BE45>복수</color>이외에는 모든 것이 의미를 가지지 못해.",
+      "UnitTalk_JPN": "私には<color=#F7BE45>復讐</color>以外、全て意味のないものだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 229,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "복수를 완수하면, 그 이후의 모든 건 나에게 아무런 의미가-",
+      "UnitTalk_JPN": "復讐を完遂すれば…その後は、すべてが無意味──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 230,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "음… 알 것 같아.",
+          "JumpAnchorStringId_JPN": "うーん…分かる気がする。"
+        }
+      ]
+    },
+    {
+      "Uid": 231,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "…또 무슨 소린지 모를 말을 하네.",
+      "UnitTalk_JPN": "…また意味不明なことを言うな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 232,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "뭘 알았다는 건데?",
+      "UnitTalk_JPN": "何が分かったというのだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 233,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "너, 내가 하는 말 듣고 있기는 한 거야?",
+      "UnitTalk_JPN": "お前、私の話を聞いてたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 234,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "지금 그녀에게 결여된 것이 무엇인지, ",
+      "UnitTalk_JPN": "今、エデに欠けているものが何なのか…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 235,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "무엇이 그녀를 위태롭게 만들고 있는지.",
+      "UnitTalk_JPN": "何が彼女を危うくしているのか。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 236,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이제야 조금 알 것 같았다.",
+      "UnitTalk_JPN": "ようやく少し分かった気がした。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

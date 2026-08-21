@@ -1,0 +1,2019 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: JOURNEY_REQUEST_GROUP_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 1,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_OFFICIAL_MISSION",
+          "MainMenuButtonSubTitle" : "SI_WORK_REQUEST",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_NOA_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 1,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 99,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 11,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 99,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 12,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 99,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 13,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110101,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_OFFICIAL_MISSION",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110101,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110102,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_OFFICIAL_MISSION",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110102,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110103,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_OFFICIAL_MISSION",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110103,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110104,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_OFFICIAL_MISSION",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110104,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110105,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_OFFICIAL_MISSION",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110105,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110106,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_OFFICIAL_MISSION",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110106,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110107,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_FLORA.png",
+          "BattleId" : 110151,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110108,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_KALAID.png",
+          "BattleId" : 110152,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110201,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110201,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110201,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110202,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110201,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110203,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110202,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110204,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110202,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110205,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110202,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110206,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110203,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110207,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110203,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110208,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110203,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110209,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120101,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_OFFICIAL_MISSION",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120101,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120102,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_OFFICIAL_MISSION",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120102,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120103,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_OFFICIAL_MISSION",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120103,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120104,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_OFFICIAL_MISSION",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120104,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120105,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_OFFICIAL_MISSION",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120105,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120106,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_OFFICIAL_MISSION",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120106,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120107,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_FLORA.png",
+          "BattleId" : 120151,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120108,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_GROUP_HURDLE_BOSS",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_KALAID.png",
+          "BattleId" : 120152,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120201,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120201,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120201,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120202,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120201,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120203,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120202,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120204,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120202,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120205,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120202,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120206,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120203,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120207,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120203,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120208,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120203,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120209,
+          "IsBattle" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110301,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110301,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110301,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110302,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110301,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110303,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110302,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110304,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110302,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110305,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110302,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110306,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110303,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110307,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110303,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110308,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110303,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110309,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110304,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110310,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110304,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110311,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110304,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110312,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110305,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110313,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110305,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110314,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110305,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110315,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110306,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110316,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110306,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110317,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110306,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110318,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110307,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110319,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110307,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110320,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110307,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110321,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110308,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110322,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110308,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110323,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110308,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110324,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110309,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_AGANON_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110325,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110309,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110326,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110309,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110327,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110310,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_AGANON_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110328,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110310,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110329,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110310,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110330,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110311,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_AGANON_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110331,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110311,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110332,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110311,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110333,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110312,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110334,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110312,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110335,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110312,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110336,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110313,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110337,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110313,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110338,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110313,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110339,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110314,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110340,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110314,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110341,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110314,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110342,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110315,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110343,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110315,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110344,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110315,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110345,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110316,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110346,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110316,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110347,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110316,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110348,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110317,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110349,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110317,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110350,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110317,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110351,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110318,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110352,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110318,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110353,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110318,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110354,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110319,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110355,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110319,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110356,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110319,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110357,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110320,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110358,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110320,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110359,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110320,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110360,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110321,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110361,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110321,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110362,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110321,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110363,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110322,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110364,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110322,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110365,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110322,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110366,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110323,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110367,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110323,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110368,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110323,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110369,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110324,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110370,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110324,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110371,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110324,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110372,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110325,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110373,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110325,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110374,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110325,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110375,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110326,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110376,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110326,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110377,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110326,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110378,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110327,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110379,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110327,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110380,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110327,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110381,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110328,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110382,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110328,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110383,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110328,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110384,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110329,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110385,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110329,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110386,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110329,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110387,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110330,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110388,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110330,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110389,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110330,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110390,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110331,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110391,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110331,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110392,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110331,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110393,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110332,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110394,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110332,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110395,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110332,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110396,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110333,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110397,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110333,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110398,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 110333,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 110399,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120301,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120301,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120301,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120302,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120301,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120303,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120302,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120304,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120302,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120305,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120302,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120306,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120303,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120307,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120303,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120308,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120303,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120309,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120304,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120310,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120304,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120311,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120304,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120312,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120305,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120313,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120305,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120314,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120305,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120315,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120306,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120316,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120306,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120317,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120306,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120318,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120307,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120319,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120307,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120320,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120307,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120321,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120308,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120322,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120308,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120323,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120308,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120324,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120309,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_AGANON_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120325,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120309,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120326,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120309,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120327,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120310,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_AGANON_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120328,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120310,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120329,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120310,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120330,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120311,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_AGANON_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120331,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120311,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120332,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120311,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120333,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120312,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120334,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120312,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120335,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120312,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120336,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120313,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120337,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120313,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120338,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120313,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120339,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120314,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120340,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120314,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120341,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120314,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120342,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120315,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120343,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120315,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120344,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120315,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120345,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120316,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120346,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120316,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120347,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120316,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120348,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120317,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120349,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120317,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120350,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120317,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120351,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120318,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120352,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120318,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120353,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120318,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120354,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120319,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120355,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120319,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120356,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120319,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120357,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120320,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120358,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120320,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120359,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120320,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120360,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120321,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120361,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120321,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120362,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120321,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120363,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120322,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120364,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120322,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120365,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120322,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120366,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120323,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120367,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120323,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120368,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120323,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120369,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120324,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120370,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120324,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120371,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120324,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120372,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120325,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120373,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120325,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120374,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120325,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120375,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120326,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120376,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120326,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120377,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120326,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120378,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120327,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120379,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120327,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120380,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120327,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120381,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120328,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120382,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120328,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120383,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120328,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120384,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120329,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120385,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120329,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120386,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120329,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120387,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120330,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120388,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120330,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120389,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120330,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120390,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120331,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120391,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120331,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120392,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120331,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120393,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120332,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120394,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120332,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120395,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120332,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120396,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120333,
+          "MainMenuButtonIcon" : "UI_JOURNEY_MENU_ICON_QUEST.png",
+          "MainMenuButtonTitle" : "SI_REQUEST",
+          "MainMenuButtonSubTitle" : "SI_NOA_CANDLE_REQUEST_BOARD_ENG",
+          "MainMenuButtonDesc" : "SI_BATTLE_MAIN_BUTTON_DESC_TEST",
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120397,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120333,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120398,
+          "IsBattle" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RequestGroupId" : 120333,
+          "RequestBackGroundPrefab" : "ILLUST_BG_CANDLE_REQUEST_CROWD.png",
+          "BattleId" : 120399,
+          "IsBattle" : false
+        }
+    ]
+}

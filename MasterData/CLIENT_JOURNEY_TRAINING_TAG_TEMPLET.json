@@ -1,0 +1,32 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: JOURNEY_TRAINING_TAG_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ScenarioId" : 1,
+          "TrainingTag" : "JST_POWER",
+          "TrainingTagIcon" : "AB_UNIT_STAT_POWER.png"
+        },
+        {
+          "ScenarioId" : 1,
+          "TrainingTag" : "JST_HEALTH",
+          "TrainingTagIcon" : "AB_UNIT_STAT_HEALTH.png"
+        },
+        {
+          "ScenarioId" : 1,
+          "TrainingTag" : "JST_ENDURANCE",
+          "TrainingTagIcon" : "AB_UNIT_STAT_WILL.png"
+        },
+        {
+          "ScenarioId" : 1,
+          "TrainingTag" : "JST_FOCUS",
+          "TrainingTagIcon" : "AB_UNIT_STAT_AGILITY.png"
+        },
+        {
+          "ScenarioId" : 1,
+          "TrainingTag" : "JST_PROTECT",
+          "TrainingTagIcon" : "AB_UNIT_STAT_FOCUS.png"
+        }
+    ]
+}

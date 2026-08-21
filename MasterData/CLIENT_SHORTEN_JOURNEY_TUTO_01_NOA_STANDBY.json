@@ -1,0 +1,25 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_TUTO_01_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_01_NOA_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_SPINE_JOURNEY_PF_OF_STAR_01_NOA_2.prefab"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_TUTO_01_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오늘부터 <color=#F7BE45>[별의 구원자]</color>의 이름을 계승받기 위한 <color=#F7BE45>[CHARACTER_NAME]</color>(와)과의 여정이 시작되었다!",
+      "UnitTalk_JPN": "<color=#F7BE45>「星の救援者」</color>の名を受け継ぐため、<color=#F7BE45>[CHARACTER_NAME]</color>との旅が始まった！",
+      "TalkTime": 0.03
+    }
+  ]
+}

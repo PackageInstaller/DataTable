@@ -1,0 +1,327 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: NPC_MODULE_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "NpcId" : "NPC_MODULE_TEST_FEMALE_1",
+          "NpcHeadName" : "NKM_UNIT_TEST_NPC_FEMALE_HEAD_A_ACTOR.prefab",
+          "NpcBodyName" : "NKM_UNIT_TEST_NPC_FEMALE_BODY_ACTOR.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_TEST_FEMALE_2",
+          "NpcHeadName" : "NKM_UNIT_TEST_NPC_FEMALE_HEAD_B_ACTOR.prefab",
+          "NpcBodyName" : "NKM_UNIT_TEST_NPC_FEMALE_BODY_ACTOR.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_TEST_MALE_1",
+          "NpcHeadName" : "NKM_UNIT_TEST_NPC_MALE_HEAD_C_ACTOR.prefab",
+          "NpcBodyName" : "NKM_UNIT_TEST_NPC_MALE_BODY_ACTOR.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_TEST_MALE_2",
+          "NpcHeadName" : "NKM_UNIT_TEST_NPC_MALE_HEAD_D_ACTOR.prefab",
+          "NpcBodyName" : "NKM_UNIT_TEST_NPC_MALE_BODY_ACTOR.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_EXPRESS_MALE_1",
+          "NpcHeadName" : "HEAD_B_BLUE_A_YELLOW_EXPRESS.prefab",
+          "NpcBodyName" : "BODY_A_EXPRESS.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MONOLITH_MALE_1",
+          "NpcHeadName" : "HEAD_D_GRAY_C_GRAY_MONOLITH.prefab",
+          "NpcBodyName" : "BODY_A_MONOLITH.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MONOLITH_OLD_1",
+          "NpcHeadName" : "HEAD_F_GREEN_D_GRAY_MONOLITH.prefab",
+          "NpcBodyName" : "BODY_A_MONOLITH.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MONOLITH_OLD_2",
+          "NpcHeadName" : "HEAD_F_GREEN_D_GRAY_MONOLITH_02.prefab",
+          "NpcBodyName" : "BODY_A_MONOLITH.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_OBSERVER_MALE_1",
+          "NpcHeadName" : "HEAD_A_BLUE_C_YELLOW.prefab",
+          "NpcBodyName" : "BODY_A_OBSERVER.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_RESEARCHER_MALE_1",
+          "NpcHeadName" : "HEAD_C_BROWN_B_BROWN_COACHMAN.prefab",
+          "NpcBodyName" : "BODY_A_RESEARCHER.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_APOCALYPSE_MALE_1",
+          "NpcHeadName" : "HEAD_A_BROWN_A_GRAY.prefab",
+          "NpcBodyName" : "BODY_B_APOCALYPSE.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_COOK_MALE_1",
+          "NpcHeadName" : "HEAD_D_BROWN_C_BROWN_COOK.prefab",
+          "NpcBodyName" : "BODY_B_COOK.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_TOWNGUARD_MALE_A",
+          "NpcHeadName" : "HEAD_A_BROWN_A_GRAY_TOWNGUARD.prefab",
+          "NpcBodyName" : "BODY_B_TOWNGUARD.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_RICH_MALE_F",
+          "NpcHeadName" : "HEAD_E_BLUE_C_YELLOW.prefab",
+          "NpcBodyName" : "BODY_A_RICH.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_RICH_MALE_W",
+          "NpcHeadName" : "HEAD_D_BROWN_C_BROWN.prefab",
+          "NpcBodyName" : "BODY_A_RICH.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_RICH_MALE_S",
+          "NpcHeadName" : "HEAD_C_BLUE_B_YELLOW.prefab",
+          "NpcBodyName" : "BODY_A_RICH.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_BULLY1_MALE_F",
+          "NpcHeadName" : "HEAD_E_BROWN_A_BROWN.prefab",
+          "NpcBodyName" : "BODY_B_BULLY_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_BULLY1_MALE_W",
+          "NpcHeadName" : "HEAD_D_BROWN_C_BROWN.prefab",
+          "NpcBodyName" : "BODY_B_BULLY_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_BULLY1_MALE_N",
+          "NpcHeadName" : "HEAD_A_BLUE_C_YELLOW.prefab",
+          "NpcBodyName" : "BODY_B_BULLY_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_BULLY2_MALE_S",
+          "NpcHeadName" : "HEAD_C_GRAY_C_GRAY.prefab",
+          "NpcBodyName" : "BODY_B_BULLY_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_BULLY2_MALE_D",
+          "NpcHeadName" : "HEAD_B_BROWN_B_BROWN.prefab",
+          "NpcBodyName" : "BODY_B_BULLY_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_BULLY2_MALE_N",
+          "NpcHeadName" : "HEAD_A_BROWN_A_GRAY.prefab",
+          "NpcBodyName" : "BODY_B_BULLY_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_COACHMAN_MALE_D",
+          "NpcHeadName" : "HEAD_B_GRAY_A_GRAY_COACHMAN.prefab",
+          "NpcBodyName" : "BODY_B_COACHMAN.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_COACHMAN_MALE_W",
+          "NpcHeadName" : "HEAD_D_GRAY_B_GRAY.prefab",
+          "NpcBodyName" : "BODY_B_COACHMAN.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_COACHMAN_MALE_S",
+          "NpcHeadName" : "HEAD_C_GRAY_C_GRAY.prefab",
+          "NpcBodyName" : "BODY_B_COACHMAN.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT1_MALE_N",
+          "NpcHeadName" : "HEAD_A_BROWN_A_GRAY.prefab",
+          "NpcBodyName" : "BODY_B_MERCHANT_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT1_MALE_D",
+          "NpcHeadName" : "HEAD_B_BROWN_B_BROWN.prefab",
+          "NpcBodyName" : "BODY_B_MERCHANT_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT1_MALE_S",
+          "NpcHeadName" : "HEAD_C_BLUE_B_YELLOW.prefab",
+          "NpcBodyName" : "BODY_B_MERCHANT_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT1_MALE_W",
+          "NpcHeadName" : "HEAD_D_BROWN_C_BROWN.prefab",
+          "NpcBodyName" : "BODY_B_MERCHANT_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT1_MALE_F",
+          "NpcHeadName" : "HEAD_E_BLUE_C_YELLOW.prefab",
+          "NpcBodyName" : "BODY_B_MERCHANT_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT2_MALE_N",
+          "NpcHeadName" : "HEAD_A_BROWN_A_GRAY.prefab",
+          "NpcBodyName" : "BODY_B_MERCHANT_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT2_MALE_D",
+          "NpcHeadName" : "HEAD_B_BROWN_B_BROWN.prefab",
+          "NpcBodyName" : "BODY_B_MERCHANT_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT2_MALE_S",
+          "NpcHeadName" : "HEAD_C_GRAY_A_GRAY.prefab",
+          "NpcBodyName" : "BODY_B_MERCHANT_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT2_MALE_W",
+          "NpcHeadName" : "HEAD_D_BROWN_C_BROWN.prefab",
+          "NpcBodyName" : "BODY_B_MERCHANT_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT2_MALE_F",
+          "NpcHeadName" : "HEAD_E_BROWN_A_BROWN.prefab",
+          "NpcBodyName" : "BODY_B_MERCHANT_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_COOK_FEMALE_1",
+          "NpcHeadName" : "F_HEAD_A_BROWN_A_BROWN_COOK.prefab",
+          "NpcBodyName" : "F_BODY_B_COOK.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_APOCALYPSE_FEMALE_1",
+          "NpcHeadName" : "F_HEAD_B_BROWN_C_BROWN_MERCHANT.prefab",
+          "NpcBodyName" : "F_BODY_B_APOCALYPSE.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MONOLITH_FEMALE_1",
+          "NpcHeadName" : "F_HEAD_C_BLUE_B_YELLOW_MONOLITH.prefab",
+          "NpcBodyName" : "F_BODY_A_MONOLITH.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_EXPRESS_FEMALE_1",
+          "NpcHeadName" : "F_HEAD_E_BLUE_A_YELLOW_EXPRESS.prefab",
+          "NpcBodyName" : "F_BODY_B_EXPRESS.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_TOWNGUARD_FEMALE_A",
+          "NpcHeadName" : "F_HEAD_E_BLUE_A_GRAY_TOWNGUARD.prefab",
+          "NpcBodyName" : "F_BODY_B_TOWNGUARD.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_OBSERVER_FEMALE_1",
+          "NpcHeadName" : "F_HEAD_A_BLUE_B_YELLOW.prefab",
+          "NpcBodyName" : "F_BODY_A_OBSERVER.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT_FEMALE_1",
+          "NpcHeadName" : "F_HEAD_A_BROWN_C_BROWN.prefab",
+          "NpcBodyName" : "F_BODY_B_MERCHANT_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT_FEMALE_2",
+          "NpcHeadName" : "F_HEAD_A_GRAY_B_GRAY.prefab",
+          "NpcBodyName" : "F_BODY_B_MERCHANT_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_BULLY2_FEMALE_1",
+          "NpcHeadName" : "F_HEAD_A_BLUE_A_GRAY.prefab",
+          "NpcBodyName" : "F_BODY_C_BULLY_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT_FEMALE_3",
+          "NpcHeadName" : "F_HEAD_B_BLUE_B_YELLOW.prefab",
+          "NpcBodyName" : "F_BODY_B_MERCHANT_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_RICH_FEMALE_1",
+          "NpcHeadName" : "F_HEAD_E_BROWN_B_GRAY.prefab",
+          "NpcBodyName" : "F_BODY_A_RICH.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_BULLY1_FEMALE_1",
+          "NpcHeadName" : "F_HEAD_B_BROWN_C_GRAY.prefab",
+          "NpcBodyName" : "F_BODY_C_BULLY_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_OBSERVER_FEMALE_2",
+          "NpcHeadName" : "F_HEAD_B_GRAY_A_BROWN.prefab",
+          "NpcBodyName" : "F_BODY_A_OBSERVER.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT_FEMALE_4",
+          "NpcHeadName" : "F_HEAD_C_GRAY_C_YELLOW.prefab",
+          "NpcBodyName" : "F_BODY_B_MERCHANT_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MONOLITH_FEMALE_2",
+          "NpcHeadName" : "F_HEAD_C_BLUE_B_GRAY.prefab",
+          "NpcBodyName" : "F_BODY_A_MONOLITH.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_BULLY1_FEMALE_2",
+          "NpcHeadName" : "F_HEAD_C_BROWN_C_BROWN.prefab",
+          "NpcBodyName" : "F_BODY_C_BULLY_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_RESEARCHER_FEMALE_1",
+          "NpcHeadName" : "F_HEAD_C_GRAY_A_GRAY.prefab",
+          "NpcBodyName" : "F_BODY_B_RESEARCHER.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_RICH_FEMALE_2",
+          "NpcHeadName" : "F_HEAD_D_GRAY_C_BROWN.prefab",
+          "NpcBodyName" : "F_BODY_A_RICH.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_BULLY1_FEMALE_3",
+          "NpcHeadName" : "F_HEAD_D_GRAY_C_BROWN.prefab",
+          "NpcBodyName" : "F_BODY_C_BULLY_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT_FEMALE_5",
+          "NpcHeadName" : "F_HEAD_D_BROWN_C_GRAY.prefab",
+          "NpcBodyName" : "F_BODY_B_MERCHANT_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_BULLY2_FEMALE_2",
+          "NpcHeadName" : "F_HEAD_D_BLUE_A_YELLOW.prefab",
+          "NpcBodyName" : "F_BODY_C_BULLY_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_OBSERVER_FEMALE_3",
+          "NpcHeadName" : "F_HEAD_D_BROWN_A_BROWN.prefab",
+          "NpcBodyName" : "F_BODY_A_OBSERVER.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_MERCHANT_FEMALE_6",
+          "NpcHeadName" : "F_HEAD_E_BLUE_B_GRAY.prefab",
+          "NpcBodyName" : "F_BODY_B_MERCHANT_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_RESEARCHER_FEMALE_2",
+          "NpcHeadName" : "F_HEAD_B_BLUE_C_GRAY.prefab",
+          "NpcBodyName" : "F_BODY_B_RESEARCHER.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_BULLY2_FEMALE_3",
+          "NpcHeadName" : "F_HEAD_E_BROWN_C_BROWN.prefab",
+          "NpcBodyName" : "F_BODY_C_BULLY_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_RICH_FEMALE_3",
+          "NpcHeadName" : "F_HEAD_E_GRAY_B_GRAY.prefab",
+          "NpcBodyName" : "F_BODY_A_RICH.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_NOBLE_FEMALE_1",
+          "NpcHeadName" : "F_HEAD_B_BLUE_B_YELLOW.prefab",
+          "NpcBodyName" : "F_BODY_D_NOBLE_01.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_NOBLE_FEMALE_2",
+          "NpcHeadName" : "F_HEAD_E_BROWN_B_GRAY.prefab",
+          "NpcBodyName" : "F_BODY_D_NOBLE_02.prefab"
+        },
+        {
+          "NpcId" : "NPC_MODULE_NOBLE_FEMALE_3",
+          "NpcHeadName" : "F_HEAD_C_GRAY_C_YELLOW.prefab",
+          "NpcBodyName" : "F_BODY_D_NOBLE_03.prefab"
+        }
+    ]
+}

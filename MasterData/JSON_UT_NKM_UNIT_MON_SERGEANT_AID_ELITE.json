@@ -1,0 +1,212 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_KNIGHT.txt",
+    "UiStates": [],
+    "UnitHudHeight": 2.35,
+    "BattleStates": [
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_74.wav"
+            ]
+          },
+          {
+            "EventFrame": 22,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_ARMOR_35.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_KNIGHT_INFO.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 25,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 10,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_AID_BLUE_ELITE_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 63,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_AID_BLUE_ELITE_ATK_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "SeeTarget": false,
+        "StartUnitShow": {
+          "ShowOnMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "ShowOnSelf": true,
+          "FormationMyTeam": "SFT_FULL_MY_TEAM"
+        },
+        "NonAttackEvents": [
+          {
+            "AnimTime": false,
+            "EventFrame": 41,
+            "ReActType": "NRT_NO_ACTION",
+            "EffectData": {
+              "EffectName": "VFX_BUFF_CMN_UP_GOLD.prefab",
+              "EffectHeight": "BVH_BODY"
+            },
+            "HitEffectOffsetPos": {
+            },
+            "HitEffectOffsetRotate": {
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 9,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_AID_BLUE_ELITE_SPECIAL.wav"
+            ]
+          },
+          {
+            "EventFrame": 38,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_AID_BLUE_ELITE_SPECIAL_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 86,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_AID_BLUE_ELITE_SPECIAL_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "SeeTarget": false,
+        "StartUnitShow": {
+          "ShowOnMyTeam": true,
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true,
+          "ShowOnSelf": true,
+          "FormationMyTeam": "SFT_FULL_MY_TEAM_WIDE"
+        },
+        "EndFadeOut": true,
+        "NonAttackEvents": [
+          {
+            "AnimTime": false,
+            "EventFrame": 46,
+            "ReActType": "NRT_NO_ACTION",
+            "EffectData": {
+              "EffectName": "VFX_BUFF_CMN_UP_GOLD.prefab",
+              "EffectHeight": "BVH_BODY"
+            },
+            "HitEffectOffsetPos": {
+            },
+            "HitEffectOffsetRotate": {
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 3,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_AID_BLUE_ELITE_HYPER.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_AID_BLUE_ELITE_HYPER_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 79,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SERGEANT_AID_BLUE_ELITE_HYPER_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "VoiceSeries": [
+          {
+            "DataList": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "SFX_BATTLE_COMMON_VOICE_KNIGHT_09.wav"
+              },
+              {
+                "EventFrame": 37,
+                "VoiceName": "SFX_BATTLE_COMMON_VOICE_KNIGHT_10.wav"
+              }
+            ]
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_MOVEMENT_ARMOR_34.wav"
+            ]
+          },
+          {
+            "EventFrame": 11,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_WEAPON_DROP_13.wav"
+            ]
+          },
+          {
+            "EventFrame": 17,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_72.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_BODYFALL_79.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BATTLE_COMMON_DIE.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

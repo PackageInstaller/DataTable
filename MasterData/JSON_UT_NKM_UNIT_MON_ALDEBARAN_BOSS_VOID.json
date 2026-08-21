@@ -1,0 +1,331 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_SAVIOR.txt",
+    "UiStates": [],
+    "UnitHudHeight": 5.5,
+    "BuffEffectPosition": {
+      "HEAD": 5,
+      "BODY": 3
+    },
+    "TargetBinderOffsetZ" : -1.5,
+    "UnitBuffEffectScale": 2.0,
+    "UnitBuffIndicatorOffsetY": -1.2,
+    "BattleStates": [ 
+      {
+        "StateName": "USN_START_FOCUS",
+        "StartOffsetZ": -2.5,
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT.wav"
+            ]
+          },
+          {
+            "EventFrame": 120,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 200,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 260,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_WHOOSH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 320,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_WHOOSH_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_WHOOSH_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_14.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_15.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_16.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_17.wav"
+            ]
+          },
+          {
+            "EventFrame": 98,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_18.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "UseInternalCamera": true,
+        "InternalCameraTrackingTime": 0,
+        "NonAttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 52,
+            "EffectData": {
+              "EffectName": ""
+            },
+            // "CameraCrashGap": 0.3,
+            // "CameraCrashTime": 0.3
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 59,
+            "ReActType": "NRT_DAMAGE_A",
+            // "StopTimeAtk": 0.2,
+            // "StopTimeDef": 0.2,
+            // "ReAttackCount": 5,
+            // "ReAttackGap": 0.034
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 65,
+            "ReActType": "NRT_DAMAGE_A",
+            // "StopTimeAtk": 0.1,
+            // "StopTimeDef": 0.25,
+            // "CameraCrashGap": 0.6,
+            // "CameraCrashTime": 0.55
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 50,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_HIT.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": true,
+        "SeeTarget": false,
+        "NonAttackEvents": [
+          {
+            "AnimTime": false,
+            "EventFrame": 80,
+            "ReActType": "NRT_NO_ACTION",
+            "EffectData": {
+              "EffectName": ""
+            }
+          }          
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 18,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_WHOOSH_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 50,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_WHOOSH_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 80,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_07.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "SeeTarget": false,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowOffEnemy": true,
+          "FormationMyTeam": "",
+          "FormationEnemy": "SFT_NORMAL_LINE"
+        },
+        "MoveEvents": [
+          {
+            "IsInstant": true,
+            "UseAnimTime": true,
+            "EventFrame": 1,
+            "EventMoveTarget": "NEMT_CENTER"
+          }
+        ],
+        "ShowEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 1,
+            "FormationEnemy": "SFT_ALDEBARAN_HYPER_01"
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 250,
+            "ShowOffSelf": true
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 200,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": ""
+            },
+            "ReAttackCount": 9,
+            "ReAttackGap": 0.2
+          }          
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_09.wav"
+            ]
+          },
+          {
+            "EventFrame": 52,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_10.wav"
+            ]
+          },
+          {
+            "EventFrame": 63,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_11.wav"
+            ]
+          },
+          {
+            "EventFrame": 112,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_12.wav"
+            ]
+          },
+          {
+            "EventFrame": 127,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_WHOOSH_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 148,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_WHOOSH_SWORD.wav"
+            ]
+          },
+          {
+            "EventFrame": 180,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_SPELL_LIGHT_13.wav"
+            ]
+          },
+          {
+            "EventFrame": 210,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_EXPLOSION.wav"
+            ]
+          },
+          {
+            "EventFrame": 253,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_EXPLOSION_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 280,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_WHOOSH_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 360,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_LANIAKEA_RULER_BLACK_HIT_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_PHASE2",
+        "StateType": "NUST_ATTACK",
+        "AnimName": "BATTLE_PHASE2",
+        "UseInternalCamera": true
+      },
+      {
+        "StateName": "USN_DIESKILL",
+        "StateType": "NUST_ATTACK",
+        "AnimName": "BATTLE_DIE",
+        "UseInternalCamera": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_SAVIOR.txt",
+    "UiStates": [],
+    "BattleStates": [
+    
+      {
+        "StateName": "USN_ORBITAL_ARRAY",
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "FormationMyTeam": "",
+          "FormationEnemy": "SFT_NORMAL_LINE"
+        },
+        // "MoveEvents": [
+        //   {
+        //     "IsInstant": true,
+        //     "UseAnimTime": true,
+        //     "EventFrame": 0,
+        //     "EventMoveTarget": "NEMT_CENTER"
+        //   }
+        // ],
+        // "HealEvent": {
+        //   "UseAnimTime": false,
+        //   "EventFrame": 400,
+        //   "HealTargetType": "NHTT_ALL_TEAM",
+        //   "EffectData": {
+        //     "EffectHeight": "BVH_ZERO"
+        //   }
+        // },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 248,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            },
+            "ReAttackCount": 4,
+            "ReAttackGap": 0.2
+          }
+        ],
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList_JPN": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_ALICIA_BT_BREAKSKILL_1.wav"
+              }
+            ],
+            "DataList_KOR": [
+              {
+                "EventFrame": 0,
+                "VoiceName": "UNIT_ALICIA_BT_BREAKSKILL_1.wav"
+              }
+            ]
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 7,
+            "listSoundName": [
+              "SFX_BATTLE_ALICIA_BREAK_SKILL_MAGIC_SPELL.wav"
+            ]
+          },
+          {
+            "EventFrame": 55,
+            "listSoundName": [
+              "SFX_BATTLE_ALICIA_BREAK_SKILL_CIRCLE.wav"
+            ]
+          },
+          {
+            "EventFrame": 92,
+            "listSoundName": [
+              "SFX_BATTLE_ALICIA_BREAK_SKILL_LASER_RISE.wav"
+            ]
+          },
+          {
+            "EventFrame": 130,
+            "listSoundName": [
+              "SFX_BATTLE_ALICIA_BREAK_SKILL_LASER_BLAST.wav"
+            ]
+          },
+          {
+            "EventFrame": 184,
+            "listSoundName": [
+              "SFX_BATTLE_ALICIA_BREAK_SKILL_LASER_BLAST_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 209,
+            "listSoundName": [
+              "SFX_BATTLE_ALICIA_BREAK_SKILL_BASS_DROP.wav"
+            ]
+          },
+          {
+            "EventFrame": 235,
+            "listSoundName": [
+              "SFX_BATTLE_ALICIA_BREAK_SKILL_EXPLOSION_02.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

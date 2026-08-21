@@ -1,0 +1,21 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_RAID_BOSS_A",
+        "MapCameraType": "NMCT_RAID_BATTLE_01",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_02",
+            "IsBoss": true,
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,251 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_VOIDER.txt",
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_SPAWN.wav"
+            ]
+          },
+          {
+            "EventFrame": 19,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_SPAWN_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_EXPLOSION.wav"
+            ]
+          },
+          {
+            "EventFrame": 21,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_EXPLOSION_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_WHOOSH.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 19,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 6,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_CHARGE.wav"
+            ]
+          },
+          {
+            "EventFrame": 18,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_BLAST.wav"
+            ]
+          }
+        ],
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 64,
+            "ReActType": "NRT_DAMAGE_B",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "ReAttackCount": 7,
+            "ReAttackGap": 0.1,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 95,
+            "ReActType": "NRT_DAMAGE_B",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 6,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_CHARGE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 29,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_CHARGE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 59,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_BLAST_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 91,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_BLAST_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_HYPER",
+        "UseInternalCamera": false,
+        "UseEnemyTargetCamera": true,
+        "PlayNextCineCamFrame": 65,
+        "StartUnitShow": {
+          "ShowOffMyTeam": true,
+          "ShowUnitHudOffEnemy": false,
+          "ShowUnitHudOnEnemy": true,
+          "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY"
+        },
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 70,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_ARCHIVE_INFORMER_HYP_YELLOW.prefab",//색상별로 존재합니다.(바리에이션 작업시 스크립트 분리 필요)
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 77,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_ARCHIVE_INFORMER_HYP_YELLOW.prefab",//색상별로 존재합니다.(바리에이션 작업시 스크립트 분리 필요)
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 81,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_ARCHIVE_INFORMER_HYP_YELLOW.prefab",//색상별로 존재합니다.(바리에이션 작업시 스크립트 분리 필요)
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 86,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_ARCHIVE_INFORMER_HYP_YELLOW.prefab",//색상별로 존재합니다.(바리에이션 작업시 스크립트 분리 필요)
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 90,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.5,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_ARCHIVE_INFORMER_HYP_YELLOW.prefab",//색상별로 존재합니다.(바리에이션 작업시 스크립트 분리 필요)
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 3,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_WHOOSH.wav"
+            ]
+          },
+          {
+            "EventFrame": 18,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_CHARGE_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 38,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_CHARGE_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_BLAST_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 67,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHIVE_INFORMER_ELITE_BLAST_05.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

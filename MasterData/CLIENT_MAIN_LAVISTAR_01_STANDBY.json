@@ -1,0 +1,2308 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_LAVISTAR_01_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 175,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN_CROWD.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "CameraOffset": "TRIPLE_4"
+    },
+    {
+      "Uid": 1,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "주점인지 호텔 로비인지 모를 커다란 홀.",
+      "UnitTalk_JPN": "大きなホール…まるでホテルのロビーのようだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "고급스럽지만 이국적인 스테인드글라스와 장식들.",
+      "UnitTalk_JPN": "高級感のある、異国風のステンドグラスと調度品。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 176,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 177,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "맞은편 메인 데스크 너머에서 서류를 뒤적거리는 메이드복을 입은 사람과…",
+      "UnitTalk_JPN": "正面のカウンターには、書類を整理するメイド服の人と…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 178,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…머리에 뿔이!",
+          "JumpAnchorStringId_JPN": "…頭に角が！"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그리고 꼬리가…!!",
+          "JumpAnchorStringId_JPN": "それに、尻尾…！"
+        }
+      ]
+    },
+    {
+      "Uid": 179,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "USN_UI_REST",
+      "UnitTalk_KOR": "음, 용족은 보기 드물긴 하지.",
+      "UnitTalk_JPN": "ああ、確かに竜族は珍しいわね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "기억상실과는 상관없이, 처음 보는 걸 수도 있겠구나.",
+      "UnitTalk_JPN": "記憶喪失を抜きにしても、目新しいものも多いんじゃないかしら？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…이곳이 내가 살던 곳이 아닌 것만큼은 다시 한번 확실히 알 수 있었다.",
+      "UnitTalk_JPN": "…ここが、以前住んでいた場所とは違うということを、改めて実感した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "자, 그럼!",
+      "UnitTalk_JPN": "さぁ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "잘 봐 두도록 해.",
+      "UnitTalk_JPN": "よく見てて！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "전설로 남을 구원자가 탄생하는 순간을!",
+      "UnitTalk_JPN": "歴史に名を刻む救援者が誕生する瞬間を！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_02.wav",
+      "UnitTalk_KOR": "그녀는 내 손을 잡고는 거침없이 중앙의 메인 데스크로 걸어갔다.",
+      "UnitTalk_JPN": "アセラは私の手を取ると、まっすぐ中央のカウンターへと歩いていった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 181,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 182,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 180,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "안 됩니다.",
+      "UnitTalk_JPN": "ダメです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_001.wav"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "아…",
+      "UnitTalk_JPN": "ダ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "안된다니?!",
+      "UnitTalk_JPN": "ダメですって！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "죄송하지만 아세라님의 구원자 등록은 허가해 드릴 수 없습니다.",
+      "UnitTalk_JPN": "申し訳ございませんが、アセラ様を救援者として登録することはできません。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_002.wav"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "어째서!",
+      "UnitTalk_JPN": "なんでよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "말씀드렸죠? 귀하의 본가인 스트라니스 백작가에서 정식 공문이 왔다고요.",
+      "UnitTalk_JPN": "お伝えしたでしょう？アセラ様のご実家である、ストラニス伯爵家から書状が届いています。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_003.wav"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "여기 읽어 보세요.",
+      "UnitTalk_JPN": "こちらをお読みください。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_004.wav"
+    },
+    {
+      "Uid": 183,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 184,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_LETTER_01.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 185,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "본가의 후계자인 아세라 스트라니스 영애는 현재 무단가출 중입니다.",
+      "UnitTalk_JPN": "本家の後継者であるアセラ・ストラニスは、現在無断で家出をしております。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀가 NOA에 나타나 정식 구원자 등록을 요청할 경우 거절할 것을 요청 드립니다.",
+      "UnitTalk_JPN": "彼女がNOAを訪れ、救援者の登録を申請した場合、お断りするようお願い申し上げます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 188,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 187,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN_CROWD.png"
+    },
+    {
+      "Uid": 189,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 186,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 190,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "이쪽에 스트라니스 백작님의 정식 직인도 찍혀 있네요.",
+      "UnitTalk_JPN": "こちらに、ストラニス伯爵のサインもございます。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_005.wav"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무… 무단가출?",
+          "JumpAnchorStringId_JPN": "む、無断で家出…？"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "아, 음- 설명하면 길지만-. 아니, 짧나?",
+      "UnitTalk_JPN": "あっ、うん、説明すれば長くなるけど…いや、短いかな？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "어쨌든!",
+      "UnitTalk_JPN": "とにかく！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_010.wav"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "내가 구원자가 되겠다는데 가문의 요청이 무슨 상관이야?",
+      "UnitTalk_JPN": "わたしが救援者になるって言ってるのに、実家の要請は関係ないでしょう？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_011.wav"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그것도 말씀드렸죠?",
+      "UnitTalk_JPN": "それもお伝えしたはずですよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_006.wav"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "스트라니스 가문과 저희 NOA는 동맹을 맺은 사이라고요.",
+      "UnitTalk_JPN": "ストラニス家と私たちNOAは、同盟を結んでいます。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_007.wav"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그리고 저희는 동맹 가문의 공식 요청에 응해야 할 의무가 있어요.",
+      "UnitTalk_JPN": "同盟を結んだ家門の公式要請には、応じなければならないという決まりがあります。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_008.wav"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "납득할 수 없어!",
+      "UnitTalk_JPN": "そんなの納得できないわ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_012.wav"
+    },
+    {
+      "Uid": 205,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "TRIPLE_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS6",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "음! 그래도 안락한 집을 박차고 나온 용기가 가상하지 않느냐!",
+      "UnitTalk_JPN": "うむ！住み慣れた家を飛び出した勇気は立派ではないか！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SCISSORS_001.wav"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "커다란 <color=#F7BE45>[이상]</color>을 꿈꾸는 존재는 누구나 다…",
+      "UnitTalk_JPN": "大きな<color=#F7BE45>「理想」</color>を胸に抱く者はみな…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SCISSORS_002.wav"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4090907,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "가출을 하는 법이다!",
+      "UnitTalk_JPN": "家出をするものなのだ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SCISSORS_003.wav"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "…하아, 여기도 가출범이 있었다는 걸 잊고 있었네요.",
+      "UnitTalk_JPN": "…はぁ、ここにも家出娘がいたことを忘れていました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_009.wav"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그러니 이럴 땐 행정… 뭐시기 오류라는 핑계를 대고…",
+      "UnitTalk_JPN": "だからこういう時は行政エラーだとかナントカ言い訳してだな…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SCISSORS_004.wav"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "대충 허가를 해 줘도 되지 않느냐?",
+      "UnitTalk_JPN": "適当に受理してやるのはどうだ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SCISSORS_005.wav"
+    },
+    {
+      "Uid": 191,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "제 사전에 <color=#F7BE45>[행정 오류]</color> 같은 건 존재하지 않습니다!",
+      "UnitTalk_JPN": "私の辞書に<color=#F7BE45>「行政エラー」</color>なんて言葉、存在しません！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_010.wav"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그나저나 오늘 하기로 한 창고 정리는 끝났습니까?",
+      "UnitTalk_JPN": "それよりも、倉庫整理の仕事は終わったのですか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_011.wav"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "이따가 검사해 보고 먼지 한 톨이라도 나오면… 일주일간 팬케이크 금지입니다.",
+      "UnitTalk_JPN": "後でチェックして、ほこりが少しでも残っていれば…一週間、パンケーキ禁止ですよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_012.wav"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "지, 지금 하려고 했었다!",
+      "UnitTalk_JPN": "い、今しようと思ってたところなのだ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SCISSORS_006.wav"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "일 처리는 천천히 꼼꼼하게 하고! 최대한 늦게 검사하러 오도록!",
+      "UnitTalk_JPN": "クレアよ、のんびりじっくり仕事に励み！なるべくゆっくりチェックしに来るのだぞ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SCISSORS_007.wav"
+    },
+    {
+      "Uid": 192,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…후우, 저 도마뱀은 언제쯤 사람이 될까…",
+      "UnitTalk_JPN": "…はぁ。あのトカゲは一体、いつになれば真人間になるのやら…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_013.wav"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "후후, 나처럼 위대한 용족이 사람 따위가 되는 날은 결코 오지 않는…",
+      "UnitTalk_JPN": "フフ。わがはいのように偉大な竜族が、どうして人間なんかになる日が来ようか…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SCISSORS_008.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4090907,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "스칼렛!",
+      "UnitTalk_JPN": "スカーレット！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_014.wav"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "지, 지금 간다! 간다고…!",
+      "UnitTalk_JPN": "い、今行くのだ！行くと言っているだろう…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SCISSORS_009.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "하아…",
+      "UnitTalk_JPN": "はぁ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_015.wav"
+    },
+    {
+      "Uid": 206,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아무튼 당신이 스트라니스 가문의 일원인 이상, 정식 구원자 등록 요청서는 거절입니다.",
+      "UnitTalk_JPN": "とにかく、あなたがストラニス家の一員である限り、救援者として正式に登録することはできません。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_016.wav"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "다른 질문이 있으신가요?",
+      "UnitTalk_JPN": "他に質問はございますか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_017.wav"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…내가 가문의 일원인 이상… 구원자가 될 수 없다고?",
+      "UnitTalk_JPN": "…わたしがストラニス家の一員である限り？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_013.wav"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "그, 그럼 내가… 가문의 사람이 아니면 되는 거지?",
+      "UnitTalk_JPN": "じゃあ、わたしが…ストラニス家の人間じゃなくなればいいってこと？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_014.wav"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그렇지? 내가 스트라니스 가문 사람이 아니면 문제없다는 뜻이잖아?",
+      "UnitTalk_JPN": "そうでしょ？一族を抜ければ、家の束縛から解放されるってことだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_015.wav"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "네? 물론 그렇긴 합니다만…",
+      "UnitTalk_JPN": "はい？もちろん、その通りですが…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_018.wav"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아세라님… 본인도 잘 알고 계시죠? 가문을 벗어난다는 건 구원자 등록보다 훨씬 더 많은 행정적 절차를 거쳐야 한다는 걸요.",
+      "UnitTalk_JPN": "アセラ様、ご存じでしょう？一族を抜ける場合、救援者の登録よりも遥かに多い行政手続きを踏まなければなりません。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_019.wav"
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "으윽…!",
+      "UnitTalk_JPN": "ううっ…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_016.wav"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…잘은 몰라도, 아세라의 구원자 등록은 힘든 상황이 되어가는 것 같았다.",
+      "UnitTalk_JPN": "…よく分からないが、アセラが救援者として登録するのは難しいようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "바로 그때-",
+      "UnitTalk_JPN": "その時ー",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 193,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "EndBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "음? 가문을 나오는 거? 그게 뭐가 어려워?",
+      "UnitTalk_JPN": "えー？一族を抜けることの何が難しいの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_ORACLE_001.wav"
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "아무 남자나 하나 골라잡아서 결혼을 해 버리면 되잖아?",
+      "UnitTalk_JPN": "テキトーな男を捕まえて、結婚しちゃえばいいんじゃないっ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_ORACLE_002.wav"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "마침 여기 적절해 보이는 친구도 있는데 딱 좋네!",
+      "UnitTalk_JPN": "ちょうど隣に、いい感じな人もいることだし！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_ORACLE_003.wav"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…뭐?",
+          "JumpAnchorStringId_JPN": "…え？"
+        }
+      ]
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "CameraOffset": "TRIPLE_4",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "봐봐, 여기 있는 사람이랑 결혼하겠다고 혼인 신고서를 내는 거야.",
+      "UnitTalk_JPN": "ほらほら、この人と結婚しまーすって婚姻届を出しちゃえばいいの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_ORACLE_004.wav"
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "그럼 그때부터 출가외인이니까 스트라니스 가문이 아니게 되는 거지.",
+      "UnitTalk_JPN": "そしたら、ストラニス家の一員じゃなくなるってわけ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_ORACLE_005.wav"
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그리고 구원자 등록을 마친 이후에 바로 이혼 서류를-",
+      "UnitTalk_JPN": "で、救援者の登録が終わったら、すぐに離婚届をー",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_ORACLE_006.wav"
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "잠깐-! 함부로 정신 나간 소리 하지 마세요!",
+      "UnitTalk_JPN": "いい加減な発言はおやめください！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_020.wav"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "루나님, 루나님을 오늘 캔들 스퀘어로 오시라고 한 이유는-",
+      "UnitTalk_JPN": "ルナ様、本日キャンドル・スクエアに呼ばれた理由が分かりますか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_021.wav"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "루나님의 의뢰 활동에 대한 불만 민원이 폭주했기 때문이라는 거, 잘 아시잖아요!",
+      "UnitTalk_JPN": "あなたの依頼活動に対する苦情が殺到しているからです！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_022.wav"
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으음, 그렇지만~ 결과적으로 의뢰들은 모두 의뢰자들이 원하는 대로 이루어졌잖아?",
+      "UnitTalk_JPN": "うぅん。でも～、結果的には依頼者の望み通りになったでしょ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_ORACLE_007.wav"
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "과정까지 마음에 들게 해달라는 얘기는 없었단 말야~.",
+      "UnitTalk_JPN": "やり方については何も指定がなかったし～。後で文句を言われてもねえ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_ORACLE_008.wav"
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "그걸 말이라고-…!",
+      "UnitTalk_JPN": "またそんな屁理屈を！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_023.wav"
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "아세라라고 했지? 잘 생각해 봐! 서류 한 장이면 문제 해결이라니까? 아하하!",
+      "UnitTalk_JPN": "アセラっていったよね？よーく考えてみて！紙切れ一枚で問題を解決できるんだよ！アハハ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_ORACLE_009.wav"
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "이 이상 상황을 엉망으로 만들지 마세요!",
+      "UnitTalk_JPN": "これ以上、この場を荒らさないでください！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_024.wav"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "벨 리스 님!",
+      "UnitTalk_JPN": "ベル・リース様！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_025.wav"
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "…무슨 일이야?",
+      "UnitTalk_JPN": "…何か用？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_BELL_001.wav"
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "루나 님을 개인 응접실로 끌고 가서 불만 민원서류부터 보여주세요!",
+      "UnitTalk_JPN": "ルナ様を応接室にお連れし、苦情に関する書類を見せてさしあげなさい！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_026.wav"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "에엑, 그런 걸 왜 나한테-",
+      "UnitTalk_JPN": "ええっ、なんで私がー",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_BELL_002.wav"
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "(찌릿)",
+      "UnitTalk_JPN": "（ギロッ）",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_027.wav"
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아, 알았어! 알았으니까 그렇게 무섭게 쳐다보지 마…!",
+      "UnitTalk_JPN": "わ、わかった！わかったからそんな怖い顔で睨まないで…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_BELL_003.wav"
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "치잇… 거기, 당신. 클레어가 더 화내는 거 보고 싶지 않으면 그냥 조용히 따라와.",
+      "UnitTalk_JPN": "ちぃっ…そこのあなた。クレアに怒られたくなかったら、大人しくついてきなさい。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_BELL_004.wav"
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아아, 이제 막 재밌어지려고 하는데~",
+      "UnitTalk_JPN": "えぇ、ここからが面白くなりそうなのに～。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_ORACLE_010.wav"
+    },
+    {
+      "Uid": 195,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE"
+    },
+    {
+      "Uid": 194,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "휴우… …모자란 모습들을 보이게 되어서 면목 없습니다.",
+      "UnitTalk_JPN": "ふぅ…お恥ずかしいところをお見せしてしまいました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_028.wav"
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "하지만 이것으로 충분히 상황에 대한 설명은 되었으리라 믿으며…",
+      "UnitTalk_JPN": "ですが、これでアセラ様の状況については十分に説明できたかと思います。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_029.wav"
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "아세라님은 손에 든 서류를 내려놓으시고… …응?",
+      "UnitTalk_JPN": "申し訳ございませんが、今日のところはお引き取りを……ん？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_030.wav"
+    },
+    {
+      "Uid": 197,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "…서류?",
+      "UnitTalk_JPN": "何ですか、その書類は…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_031.wav"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…서류?",
+          "JumpAnchorStringId_JPN": "…書類？"
+        }
+      ]
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어느샌가 아세라가 종이 한 장을 손에 쥐고 내 쪽을 바라보며 중얼거리고 있었다.",
+      "UnitTalk_JPN": "いつの間にか、アセラは一枚の紙を握り締め、私を見つめながら何かをぶつぶつと言っていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "종이에 쓰인 글자를… 어째서인지 자연스럽게 읽을 수 있었다.",
+      "UnitTalk_JPN": "紙に書かれた文字が…なぜかスッと目に入ってきた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "CameraOffset": "ONE_7",
+      "CameraEase": "OutBack",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "<color=#F7BE45>[혼인 신고서]</color>.",
+      "UnitTalk_JPN": "<color=#F7BE45>「婚姻届」</color>",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "서류 한 장이면… 구원자가… 될 수 있어!",
+      "UnitTalk_JPN": "紙切れ一枚で…救援者に…なれる！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_017.wav"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠깐-?!",
+          "JumpAnchorStringId_JPN": "ちょっと待つんだ！"
+        }
+      ]
+    },
+    {
+      "Uid": 208,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "호, 혹시 운명적 만남 같은 거 믿는 타입이야?",
+      "UnitTalk_JPN": "う、運命の出会いとか信じるタイプだったりする？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_018.wav"
+    },
+    {
+      "Uid": 209,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "내 생각엔… 지금이 바로 그때인 것 같아!",
+      "UnitTalk_JPN": "わたしは…これが運命の出会いだと思うんだけど！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_019.wav"
+    },
+    {
+      "Uid": 210,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "오, 캔들 스퀘어에서 결혼식 대관을 하는 건 오랜만이군.",
+      "UnitTalk_JPN": "へぇ、キャンドル・スクエアで結婚式なんて久しぶりね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_BELL_005.wav"
+    },
+    {
+      "Uid": 211,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "훌륭한 식이 되려면 부부가 함께 묻힐 때 쓸 최고급 비석이 필요하겠지.",
+      "UnitTalk_JPN": "素敵な式を挙げるには…夫婦が最後を共にする、最高級の墓石が必要でしょう…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_BELL_006.wav"
+    },
+    {
+      "Uid": 212,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "지금 주문한다면 내가 특별히 할인된 가격으로 제작을…",
+      "UnitTalk_JPN": "今なら、特別価格で私が作って…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_BELL_007.wav"
+    },
+    {
+      "Uid": 213,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TRIPLE_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "닥치세요. 그 비석으로 머리통 깨버리기 전에.",
+      "UnitTalk_JPN": "お黙りなさい。その墓石で頭をかち割られる前に。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_032.wav"
+    },
+    {
+      "Uid": 214,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_BELL_008.wav"
+    },
+    {
+      "Uid": 215,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이, 이런 건 신중하게 생각해야…",
+          "JumpAnchorStringId_JPN": "こ、こういうことは慎重に考えないと…"
+        }
+      ]
+    },
+    {
+      "Uid": 222,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL"
+    },
+    {
+      "Uid": 223,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR"
+    },
+    {
+      "Uid": 216,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "책임질게! 내가 책임진다니까!",
+      "UnitTalk_JPN": "わたしが！責任取るから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_020.wav"
+    },
+    {
+      "Uid": 217,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "우리 집, 꽤 부자니까! 그냥 몸만 오면 돼!",
+      "UnitTalk_JPN": "わたしの家、すごいお金持ちなの！あなたは何も心配する必要ないわ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_021.wav"
+    },
+    {
+      "Uid": 218,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "가출했다며!",
+          "JumpAnchorStringId_JPN": "家出したんだろ！"
+        }
+      ]
+    },
+    {
+      "Uid": 219,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "에에잇! 시끄러워!",
+      "UnitTalk_JPN": "もうっ！うるさい！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_022.wav"
+    },
+    {
+      "Uid": 220,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "POS7_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "잔말 말고 여기 도장이나 찍으라고!",
+      "UnitTalk_JPN": "とにかく、はやくここにハンコを押してってば！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_023.wav"
+    },
+    {
+      "Uid": 221,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_EMOTION_UPSET.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "진정하세요-!",
+      "UnitTalk_JPN": "落ち着いてください！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_033.wav"
+    },
+    {
+      "Uid": 94,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "EndBgmFileName": "EMPTY.mp3",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 200,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 199,
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 198,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…폭풍과 같은 소란이 지나간 후, 로비에는 고요한 적막만이 흘렀다.",
+      "UnitTalk_JPN": "…嵐のような騒ぎがおさまると、ロビーには静けさが訪れた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CANDLE_NOA.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "…미안.",
+      "UnitTalk_JPN": "…ごめん。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_024.wav"
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "예전부터 뭔가에 꽂히면 뒤도 돌아보지 않고 달려가곤 했거든.",
+      "UnitTalk_JPN": "前から、こうだ！って決めたら、後先考えずに行動しちゃうことがあって。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_025.wav"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "고쳐야 한다고 늘 생각했는데… 으음, 쉽지 않네.",
+      "UnitTalk_JPN": "いつも直さなきゃって思ってるんだけど…思うようにはいかないわね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_026.wav"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…하아, 이제 좀 진정이 되셨는지요.",
+      "UnitTalk_JPN": "…少しは落ち着きましたか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_034.wav"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "응… 미안.",
+      "UnitTalk_JPN": "はい…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_027.wav"
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그리고… 괜히 말려들게 해서 미안해, <color=#F7BE45>[PLAYER_NAME]</color>.",
+      "UnitTalk_JPN": "巻き込んじゃってごめんね、<color=#F7BE45>[PLAYER_NAME]</color>。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_028.wav"
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하지만 난 아직 구원자가 되는 걸 포기하지 않았으니까…!",
+      "UnitTalk_JPN": "でも、わたしは救援者になることを諦めたりしないから…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_029.wav"
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "며칠 더 NOA에 머물면서 방법을 찾아보면-",
+      "UnitTalk_JPN": "しばらくここで何か方法を探して―",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_030.wav"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…네?",
+      "UnitTalk_JPN": "…あの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_035.wav"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "지금 <color=#F7BE45>[PLAYER_NAME]</color>님이라고 하셨나요?",
+      "UnitTalk_JPN": "今、確か…<color=#F7BE45>[PLAYER_NAME]</color>様と仰いましたか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_036.wav"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "응? 그런데…?",
+      "UnitTalk_JPN": "え？言ったけど…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_031.wav"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "…<color=#F7BE45>[PLAYER_NAME]</color>님, 맞으신가요?",
+      "UnitTalk_JPN": "…<color=#F7BE45>[PLAYER_NAME]</color>で、お間違いないのですね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_037.wav"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응, 그런데?",
+          "JumpAnchorStringId_JPN": "そうだけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "잠시만… 잠시만 기다려 주세요.",
+      "UnitTalk_JPN": "少々…お待ちください。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_038.wav"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ITEM_OUT.wav",
+      "UnitTalk_KOR": "그녀는 조금 당황한 얼굴로 서류를 뒤적거렸다.",
+      "UnitTalk_JPN": "彼女は戸惑ったような表情で書類を探している。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "역시… 여기에 있네요.",
+      "UnitTalk_JPN": "やはり…ここにありました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_039.wav"
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐야? 또 무슨 문제라도 있는 거야?",
+      "UnitTalk_JPN": "どうしたの？何か問題でもあった？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_032.wav"
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그게 아니라 오늘 아침에 내려온 최우선 행정명령이 하나 있어서요.",
+      "UnitTalk_JPN": "それが…今朝、最優先の行政命令が下されました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_040.wav"
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "무려 제1관측사인 <color=#F7BE45>[알리시아]</color> 님이 직접 내리신 명령이죠.",
+      "UnitTalk_JPN": "なんと、第一観測士の<color=#F7BE45>「アリシア」</color>様からのご命令です。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_041.wav"
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그 알리시아님이? 대체 무슨 일인데?",
+      "UnitTalk_JPN": "あのアリシア様が…？一体どんな内容なの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_033.wav"
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>[PLAYER_NAME]</color>,  이 사람을 발견하는 즉시 상부에 보고할 것, 입니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[PLAYER_NAME]</color>を発見したら、すぐに報告するように…とのことです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_042.wav"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…나?",
+          "JumpAnchorStringId_JPN": "…私のことか？"
+        }
+      ]
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "…<color=#F7BE45>[PLAYER_NAME]</color>, 알리시아님과 아는 사이야?",
+      "UnitTalk_JPN": "…<color=#F7BE45>[PLAYER_NAME]</color>、アリシア様と知り合いなの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_034.wav"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "모른다. 여기가 어딘지, 지금 무슨 상황인지도 모르는걸.",
+      "UnitTalk_JPN": "アリシアなんて人は聞いたこともない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "알리시아라는 사람을 들어봤을 리가 없다.",
+      "UnitTalk_JPN": "ここがどこなのかも知らなかったわけだし…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 맞아. 기억을 잊어버렸다고 했지?",
+      "UnitTalk_JPN": "あっ、そうよね。記憶を失くしてるんだったわね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_035.wav"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST",
+      "UnitTalk_KOR": "으음-, 그래도 알리시아님 정도는 알고 있을 거라고 생각했는데…",
+      "UnitTalk_JPN": "でも、アリシア様のことぐらいは知ってると思ったんだけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_036.wav"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "이곳 성운관측기관의 최고 책임자니까.",
+      "UnitTalk_JPN": "ここ、星雲観測機関の最高責任者だしね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_037.wav"
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그런데 그분이 왜 <color=#F7BE45>[PLAYER_NAME]</color>를 찾는다는 거지…?",
+      "UnitTalk_JPN": "そんな方が、どうして<color=#F7BE45>[PLAYER_NAME]</color>のことを探しているのかしら…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_038.wav"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "어쨌든, 두 분 모두 잠시만 기다려 주시면-",
+      "UnitTalk_JPN": "とにかく、お二人は少しお待ちー",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_043.wav"
+    },
+    {
+      "Uid": 126,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFlashBang": 1.0,
+      "BgCrash": 1.0,
+      "BgCrashTime": 2.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_COLLAPSE_01.wav"
+    },
+    {
+      "Uid": 201,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 203,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 202,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFlashBang": 1.0,
+      "BgCrash": 1.0,
+      "BgCrashTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_COLLAPSE_02.wav"
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "뭐, 뭐야? 무슨 일이지?",
+      "UnitTalk_JPN": "な、なに？何が起こったの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_039.wav"
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "이 진동은…?",
+      "UnitTalk_JPN": "この揺れは…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_044.wav"
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "TRIPLE_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS6",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "클레어!",
+      "UnitTalk_JPN": "クレア！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SCISSORS_010.wav"
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "스칼렛! 창고 정리는 어쩌고… 아니, 아무튼 무슨 일이죠?",
+      "UnitTalk_JPN": "スカーレット！倉庫の整理は…いえ、何が起こったのですか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_045.wav"
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_01.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "ONE_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "공허체다! 공허체가 낙하했어!",
+      "UnitTalk_JPN": "<r=ヴォイドボーン>空虚体</r>だ！空虚体が落ちてきたのだ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SCISSORS_011.wav"
+    },
+    {
+      "Uid": 132,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TRIPLE_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "뭐라고요? 여긴 NOA 한복판입니다.",
+      "UnitTalk_JPN": "なんですって？ここはNOAの中心地ですよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_046.wav"
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "3중 신성 장벽으로 보호받고 있는 이 도시에 공허체가 나타날 리 없어요!",
+      "UnitTalk_JPN": "3重にもなる<r=ホーリーワード>神聖なる防壁</r>で護られているこの街に、空虚体が現れるはずがありません！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_047.wav"
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "하지만 나타났다고!",
+      "UnitTalk_JPN": "だが、現れたのだ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SCISSORS_012.wav"
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "민간인 거주 구역 쪽에 <color=#F7BE45>[공허균열]</color>이 구축되고 있어, 당장 가야 해!",
+      "UnitTalk_JPN": "民間人の居住区域に<color=#F7BE45>「<r=ヴォイドリフト>空虚の亀裂</r>」</color>が出現したぞ！今すぐ向かうのだ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SCISSORS_013.wav"
+    },
+    {
+      "Uid": 136,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그게 무슨 말도 안 되는….",
+      "UnitTalk_JPN": "そんな…信じられません…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_048.wav"
+    },
+    {
+      "Uid": 137,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 아무튼 알겠습니다, 그럼 전투 준비를…",
+      "UnitTalk_JPN": "と、とにかく分かりました。それでは戦闘準備を…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_049.wav"
+    },
+    {
+      "Uid": 138,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "CameraOffset": "TWIN_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "클레어! 클레어!",
+      "UnitTalk_JPN": "クレア！クレア！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_BELL_009.wav"
+    },
+    {
+      "Uid": 139,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "네? 거긴 또 무슨 일이죠?",
+      "UnitTalk_JPN": "…今度は何事ですか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_050.wav"
+    },
+    {
+      "Uid": 140,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "방금 관측사 평의회 <color=#F7BE45>[폴라리스]</color>에서 급전이 도착했어!",
+      "UnitTalk_JPN": "今、観測士評議会<color=#F7BE45>「ポラリス」</color>から至急の連絡があった！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_BELL_010.wav"
+    },
+    {
+      "Uid": 141,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "알리시아님의 특명을 받은 관측사 한 명이 공허체 낙하지점 근처에 고립되었다고 해.",
+      "UnitTalk_JPN": "アリシア様の特命を受けた観測士が、空虚体の落下地点の近くで孤立してるって。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_BELL_011.wav"
+    },
+    {
+      "Uid": 204,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS"
+    },
+    {
+      "Uid": 142,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "긴급 구조를 요청 중이라는데... 어쩌지…?",
+      "UnitTalk_JPN": "緊急救助が要請されてるけど…どうしよう…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_BELL_012.wav"
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "도움을 요청할 다른 구원자들은 없나요?! 궤도 수색대는…?",
+      "UnitTalk_JPN": "他の救援者に支援を要請できないのですか！？軌道捜索隊は…！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_051.wav"
+    },
+    {
+      "Uid": 144,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "지금 당장은 연락할 수 있는 방법이 없어.",
+      "UnitTalk_JPN": "今は連絡する方法がないの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_BELL_013.wav"
+    },
+    {
+      "Uid": 145,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "이, 일단 우리만이라도 움직여야 할까…?",
+      "UnitTalk_JPN": "と、とりあえず、私たちだけでも動いたほうがいい…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_BELL_014.wav"
+    },
+    {
+      "Uid": 146,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "이런…",
+      "UnitTalk_JPN": "そんな…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_052.wav"
+    },
+    {
+      "Uid": 147,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "인원을 나누면… 아니, 그러면 유사시에 대처할 수가 없는데…",
+      "UnitTalk_JPN": "チームを二つに分ければ…いや、それでは有事の際に対応することができない…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_053.wav"
+    },
+    {
+      "Uid": 148,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "나에게 맡겨줘!",
+      "UnitTalk_JPN": "わたしに任せて！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_040.wav"
+    },
+    {
+      "Uid": 149,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "네…?",
+      "UnitTalk_JPN": "え…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_054.wav"
+    },
+    {
+      "Uid": 150,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "도움이 필요한 상황이잖아?",
+      "UnitTalk_JPN": "助けが必要な状況なんでしょう？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_041.wav"
+    },
+    {
+      "Uid": 151,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "이래 봬도 가문에서 후계자로 불렸던 몸이야.",
+      "UnitTalk_JPN": "こう見えても、ストラニス家の後継者なんだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_042.wav"
+    },
+    {
+      "Uid": 152,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "검술이라면 꽤 자신 있다고.",
+      "UnitTalk_JPN": "剣術にはかなり自信があるわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_043.wav"
+    },
+    {
+      "Uid": 153,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하지만…",
+      "UnitTalk_JPN": "しかし…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_055.wav"
+    },
+    {
+      "Uid": 154,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아니, 그런 걸 따질 때가 아니군요.",
+      "UnitTalk_JPN": "いえ、躊躇している場合ではありませんね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_056.wav"
+    },
+    {
+      "Uid": 155,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "그럼 민간인 거주 구역 방어는 저희가 맡겠습니다.",
+      "UnitTalk_JPN": "それでは…民間人の居住区域は私たちが防衛します。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_057.wav"
+    },
+    {
+      "Uid": 156,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "관측사 구출은 아세라 님에게 부탁드리죠.",
+      "UnitTalk_JPN": "アセラ様は、観測士の救出をお願いします。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_058.wav"
+    },
+    {
+      "Uid": 157,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "알겠어. 걱정 말고 다녀와!",
+      "UnitTalk_JPN": "分かったわ。わたしのことは心配せずに行ってちょうだい！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_044.wav"
+    },
+    {
+      "Uid": 158,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "감사합니다. 아세라 스트라니스님.",
+      "UnitTalk_JPN": "ありがとうございます、アセラ・ストラニス様。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_059.wav"
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응! 그리고…",
+      "UnitTalk_JPN": "うん！あと…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_045.wav"
+    },
+    {
+      "Uid": 207,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR"
+    },
+    {
+      "Uid": 160,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "아세라가 나를 돌아보며 말했다.",
+      "UnitTalk_JPN": "アセラが私の方を向いて言った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 161,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "걱정하지 마! 돌아오면 꼭 구원자로 등록해서, <color=#F7BE45>[PLAYER_NAME]</color>의 기억도 되찾아 줄게.",
+      "UnitTalk_JPN": "心配しないで！戦いが終わったら必ず救援者の登録をして、<color=#F7BE45>[PLAYER_NAME]</color>の記憶を取り戻してあげるから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_046.wav"
+    },
+    {
+      "Uid": 162,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그러니 여기에 안전하게- 어?",
+      "UnitTalk_JPN": "だから、ここで……どうしたの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_047.wav"
+    },
+    {
+      "Uid": 163,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "흐릿한 기억과 알 수 없는 상황 때문에 혼란스러웠지만-",
+      "UnitTalk_JPN": "ぼやけた記憶。理解が追いつかない状況。頭が混乱しているがー",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 164,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇기 때문에 더욱, 모든 걸 남에게 맡겨만 두고 혼자 남고 싶진 않았다.",
+      "UnitTalk_JPN": "だからこそ、すべてを他人に任せるわけにはいかなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 165,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나도 같이 갈게.",
+          "JumpAnchorStringId_JPN": "私も一緒に行く。"
+        }
+      ]
+    },
+    {
+      "Uid": 166,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "하지만, 상황이 위험할 수도-",
+      "UnitTalk_JPN": "だけど、危険な目に遭うかもー",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_048.wav"
+    },
+    {
+      "Uid": 167,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "혼자서 기다리고 싶지는 않아.",
+          "JumpAnchorStringId_JPN": "一人で待つのは嫌なんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 168,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아세라가 더 이상 거절하지 못하도록, 앞서서 문 쪽으로 걸어 나갔다.",
+      "UnitTalk_JPN": "これ以上アセラに引き止められないように、私は率先して歩き始めた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 169,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "가자.",
+          "JumpAnchorStringId_JPN": "行こう。"
+        }
+      ]
+    },
+    {
+      "Uid": 170,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…좋아!",
+      "UnitTalk_JPN": "…分かったわ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_STRANIS_049.wav"
+    },
+    {
+      "Uid": 171,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "구출 대상인 관측사의 위치는 중앙 광장 쪽이라고 합니다.",
+      "UnitTalk_JPN": "救出対象の観測士は、中央広場の方にいるそうです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_060.wav"
+    },
+    {
+      "Uid": 172,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "명령서에 동봉된 자료에 따르면 그쪽에는 하급 공허체들뿐이라고 합니다만…",
+      "UnitTalk_JPN": "命令書に同封された資料によると、下級の空虚体のみ出現となっていますが…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_061.wav"
+    },
+    {
+      "Uid": 173,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래도 공허체는 공허체, 위험한 적입니다.",
+      "UnitTalk_JPN": "それでも、空虚体は空虚体。危険な敵です。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_062.wav"
+    },
+    {
+      "Uid": 174,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "부디 몸조심하시길.",
+      "UnitTalk_JPN": "どうか、お気をつけて。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_063.wav"
+    }
+  ]
+}

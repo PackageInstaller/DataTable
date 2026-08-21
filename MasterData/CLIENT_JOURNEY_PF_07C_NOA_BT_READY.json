@@ -1,0 +1,584 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_07C_NOA_BT_READY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "CameraOffset": "TWIN_1"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_1",
+      "UnitTalk_KOR": "기초 평가전 당일.",
+      "UnitTalk_JPN": "基礎試験当日。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나와 리사는 약속 시간이 되었는데도 나타나지 않는 에밀리를 찾아 온 거리를 뒤지고 있었다.",
+      "UnitTalk_JPN": "私とリサは、約束の時間になっても現れないエミリーを探して街中を駆け回っていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "단장님, 찾았어요! 이쪽으로 오세요, 빨리요!",
+      "UnitTalk_JPN": "団長、見つけました！こっちです、早くー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "NORMAL",
+      "UnitQuickSet": true,
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 65,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_7"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "CameraOffset": "TWIN_7",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "안녕하십니까 단장님, 땀까지 흘려가며 어디를 그렇게 바쁘게 가시는 중이신가요.",
+      "UnitTalk_JPN": "こんにちは、団長殿。汗を流して一体どこへ向かわれているのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "에밀리!",
+          "JumpAnchorStringId_JPN": "エミリー！"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "에밀리 님을 찾고 있었어요!",
+      "UnitTalk_JPN": "エミリー様のことを探していたんですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "USN_UI_REST",
+      "UnitTalk_KOR": "저를 말씀입니까?",
+      "UnitTalk_JPN": "自分を、ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "오늘 기초 평가전이 있다는 걸 잊은 거야?",
+          "JumpAnchorStringId_JPN": "基礎試験のこと、忘れてた？"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "기초… 평가전…?",
+      "UnitTalk_JPN": "基礎…試験…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitTalk_KOR": "흠…",
+      "UnitTalk_JPN": "うむ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "흐음…",
+      "UnitTalk_JPN": "ふーむ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…까먹었었구나.",
+          "JumpAnchorStringId_JPN": "…忘れてたんだな。"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "CameraOffset": "ONE_9",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "네, 깨끗하게 잊고 있었습니다.",
+      "UnitTalk_JPN": "はい、すっかり忘れていました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_7",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "아이참, 이렇게 만담이나 주고받고 있을 때가 아니에요!",
+      "UnitTalk_JPN": "もう！漫才なんてしてる場合じゃないですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_7",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "빨리 평가전 장소로 가지 않으면 클레어 님에게 혼나고 말 거라고요!",
+      "UnitTalk_JPN": "早く試験の場所に向かわないと、クレア様に怒られてしまいますよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitTalk_KOR": "클레어 님이라고요…?",
+      "UnitTalk_JPN": "クレア殿ですか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "설마 제 기초 평가전의 상대가 클레어 님이십니까?",
+      "UnitTalk_JPN": "まさか…基礎試験の相手は、クレア殿なのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "네, 맞아요!",
+      "UnitTalk_JPN": "ええ、そうです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFlashBang": 0.4,
+      "BgCrash": 0.6,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리사의 말이 끝나기가 무섭게 에밀리가 무서운 속도로 달려가기 시작한다.",
+      "UnitTalk_JPN": "リサがそう答えると、エミリーは恐ろしい速さで走り出した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "페, 페스트페이스… 페스트페이스…!",
+      "UnitTalk_JPN": "ぜ、全速前進…臨戦態勢に移行…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 55,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitTalk_KOR": "모두와 함께 서둘러 평가전 장소에 도착하자, 싸늘한 시선으로 시계를 바라보고 있는 클레어가 눈에 들어왔다.",
+      "UnitTalk_JPN": "到着すると、冷たい視線で時計を見つめているクレアの姿が目に入った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "…15분 8초, 늦으셨군요.",
+      "UnitTalk_JPN": "…15分8秒、遅刻ですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS4",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "시계를 바라보던 싸늘한 시선이 우리를 향하자, 에밀리가 왜 그렇게 서둘렀던 것인지 단번에 이해할 수 있었다.",
+      "UnitTalk_JPN": "その冷たい視線が私たちに向けられた時…エミリーがなぜあれほど急いでいたのか、一瞬で理解できた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이건 마치 뱀을 마주한 개구리가 된 심정이다.",
+      "UnitTalk_JPN": "まるで、ヘビに睨まれたカエルになった気分だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "어느 정도 늦을 거라고는 예상했지만, 설마 10분 이상 늦을 거라고는 예상 못 했습니다.",
+      "UnitTalk_JPN": "多少は遅れると予想していましたが、まさか10分以上とは。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "단장님이 함께 있으시니 이번에는 좀 다를지도 모를 거라고 기대했는데…",
+      "UnitTalk_JPN": "団長がご一緒ですし、今回は少し違うかと期待していましたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "미, 미안해…",
+          "JumpAnchorStringId_JPN": "ご、ごめん…"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장님께서 사과하실 필요 없습니다. 늦은 이유야 뻔할 테니까요.",
+      "UnitTalk_JPN": "団長が謝る必要はありません。遅れた理由は分かっていますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "또 잊어먹었던 거겠죠. 오늘 중요한 평가전이 있다는 걸.",
+      "UnitTalk_JPN": "また忘れていたのでしょう。今日、重要な試験があるということを。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "딸꾹…!",
+      "UnitTalk_JPN": "うぐっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "단원을 제대로 챙기지 못한 내 잘못이야.",
+          "JumpAnchorStringId_JPN": "団員をちゃんと管理できてなかった私の責任だよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "그렇습니까?",
+      "UnitTalk_JPN": "そうですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어의 시선이 오롯이 나를 향하자, 간담이 서늘해진다. 지금이라도 다시 생각해 보니 내 잘못이 아닌 것 같다고 말해볼까?",
+      "UnitTalk_JPN": "クレアの視線がまっすぐ私に向けられると、肝が冷えた。今からでも、私のせいではないと言い直すべきか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "후우… 알겠습니다.",
+      "UnitTalk_JPN": "ふぅ…分かりました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "원래 같았으면 한참을 잔소리했겠지만, 단장님께서 그렇게까지 말씀하시니 이번에는 그냥 넘어가도록 하겠습니다.",
+      "UnitTalk_JPN": "いつもなら長々と小言を言うところですが、団長がそこまでおっしゃるなら今回は見逃してあげましょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어의 말이 끝나자, 사색이 되어있던 에밀리의 얼굴에서 생기가 돌기 시작한다.",
+      "UnitTalk_JPN": "クレアがそう言い終わると、真っ青だったエミリーの顔に生気が戻り始めた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitTalk_KOR": "그게 정말입니까?!",
+      "UnitTalk_JPN": "本当ですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "대신, 이번 평가전을 통과하지 못할 시 지금 넘어가 준 것까지 포함해서 잔소리할 테니 각오하시길.",
+      "UnitTalk_JPN": "ただし…試験を通過できなかった場合、今回見逃した分も含めて小言を言うつもりです。覚悟しておくように。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그, 그럴 수가…!",
+      "UnitTalk_JPN": "そ、そんな…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "통과하면 그만일 텐데 뭘 그렇게 당황하는 거죠?",
+      "UnitTalk_JPN": "通過すればいいだけの話でしょう。どうしてそんなに動揺しているのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "설마 훈련을 게을리한 건…",
+      "UnitTalk_JPN": "まさか、トレーニングを怠っていたのでは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아주 성실하게, 최선을 다해 임했습니다!",
+      "UnitTalk_JPN": "とても真面目に、最善を尽くして臨みました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그렇군요. 기대하겠습니다.",
+      "UnitTalk_JPN": "そうですか。期待していますよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_02.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_4",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "말을 마친 클레어가 평가전 장소를 향해 앞서 걸어가자, 사색이 된 에밀리가 내 어깨를 움켜쥐고 흔들어대기 시작했다.",
+      "UnitTalk_JPN": "話し終えたクレアが歩き出すと、顔面蒼白のエミリーが私の肩を掴んで揺さぶった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "평가전, 반드시 통과하도록 하죠!",
+      "UnitTalk_JPN": "試験、必ず突破しましょう！",
+      "TalkTime": 0.03
+    }
+  ]
+}

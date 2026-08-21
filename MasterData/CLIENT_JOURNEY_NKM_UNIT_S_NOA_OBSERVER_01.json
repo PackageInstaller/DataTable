@@ -1,0 +1,1959 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN_DESTROYED.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.1,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BREAK_GLASS.wav",
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_W",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "향유가… 전 재산을 투자한 향유가…!",
+      "UnitTalk_JPN": "香油が…全財産をつぎ込んだ香油が…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "FA",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ANIMAL_CAT.wav",
+      "UnitNameString": [
+        "SI_TABBYCAT"
+      ],
+      "UnitTalk_KOR": "냐아아아앙~!!",
+      "UnitTalk_JPN": "ニャーーーーン！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "프랜시스! 으아아앙! 프랜시스~!",
+      "UnitTalk_JPN": "フランシス！うわーん！フランシス！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitNameString": [
+        "SI_YOUNGMAN"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "누군가… 누군가아아아!",
+      "UnitTalk_JPN": "だ…だれかぁぁ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_W",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS2",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_TEENAGER_MALE",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS4",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ALLPERSON"
+      ],
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "도와줘어어어어!",
+      "UnitTalk_JPN": "助けてーーー！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "대체 무슨 일이…?!",
+          "JumpAnchorStringId_JPN": "一体なにが…！？"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_09.mp3",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "안녕하세요, 단장님. 오늘부터 본격적인 여정이 시작되는군요!",
+      "UnitTalk_JPN": "おはようございます、団長。今日から、旅が本格的に始まりますね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "재능이라는 원석을 갈고닦는 것.",
+      "UnitTalk_JPN": "才能という原石を磨き上げるのは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "힘들고 고된 일이지만 분명 보람차겠죠.",
+      "UnitTalk_JPN": "非常に大変なことですが、きっとやりがいを感じられますよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후, 이야기가 길어졌군요. 그럼 어디, 우리에게 배정된 원석이 어떤 분이신지 한 번 서류를...",
+      "UnitTalk_JPN": "ふふ、話が長くなってしまいましたね。では…私たちが担当する原石は、どんな方なのか一度書類を…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…앗.",
+      "UnitTalk_JPN": "…あっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜 그래?",
+          "JumpAnchorStringId_JPN": "どうしたんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "벼, 별거 아니에요. 그냥 제가 아는 분이어서…",
+      "UnitTalk_JPN": "な、何でもありません。ただ、知っている方だったもので…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그… 단장님?",
+      "UnitTalk_JPN": "あの…団長？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "이런 말씀 드리기엔 조금 그렇지만…",
+      "UnitTalk_JPN": "こんなことを申し上げるのは、ちょっとアレなんですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "힘내세요!",
+      "UnitTalk_JPN": "ファイトです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무슨 뜻이었을까?",
+          "JumpAnchorStringId_JPN": "あれは、どういう意味なんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "생각하면서 광장으로 걸어가고 있는데…",
+      "UnitTalk_JPN": "そんなことを考えながら、広場へ向かっていると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOOVES_CLOP_1.wav",
+      "UnitNameString": [
+        "SI_HORSE"
+      ],
+      "UnitTalk_KOR": "히히이이잉!!",
+      "UnitTalk_JPN": "ヒヒィィィィン！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_D",
+      "UnitNameString": [
+        "SI_COACHMAN"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "죄, 죄송합니다! 다치지 않으셨나요?",
+      "UnitTalk_JPN": "も、申し訳ありません！お怪我はありませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_D",
+      "UnitNameString": [
+        "SI_COACHMAN"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이 녀석…! 멈춰, 제발! 거기 서!",
+      "UnitTalk_JPN": "おい、止まるんだ！お願いだから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "FA",
+      "TalkAppend": true
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "뒷골목으로 달려가는 말을 마부가 쫓아갔다.",
+      "UnitTalk_JPN": "路地裏へと走り去る馬を、御者が追いかけていった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…무슨 일이지?",
+          "JumpAnchorStringId_JPN": "…何事だ？"
+        }
+      ]
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN_DESTROYED.png",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "광장과 가까워질수록 참혹한 광경이 펼쳐졌다.",
+      "UnitTalk_JPN": "広場に近づくにつれ、見るも無残な光景が目に飛び込んで来た。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "으앙~! 프랜시스… 내려와~!",
+      "UnitTalk_JPN": "うわ～ん！フランシス…降りておいで～！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.8,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ANIMAL_CAT.wav",
+      "UnitNameString": [
+        "SI_TABBYCAT"
+      ],
+      "UnitTalk_KOR": "샤아아아!",
+      "UnitTalk_JPN": "シャーーーーッ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_W",
+      "UnitNameString": [
+        "SI_TRADER"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "전 재산을 투자한 사업이… 아아아…",
+      "UnitTalk_JPN": "全財産をつぎ込んだ事業が…あぁ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "UnitTalk_KOR": "엎어진 마차, 부서진 동상, 바닥에 가득한 기름.",
+      "UnitTalk_JPN": "倒れた馬車、壊れた銅像、地面には大量の油。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "거기에 사람들의 신음과도 같은 탄식이 가득 얹힌 광장은 마치 현세에 강림한 지옥과도 같아 보였다.",
+      "UnitTalk_JPN": "惨状に人々はうめき、広場は地獄絵図と化していた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "전쟁이라도 난 건가…?!",
+          "JumpAnchorStringId_JPN": "戦争でも起こったのか…！？"
+        }
+      ]
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "분명 저는 당신에게 사무실에서 대기하라는 명령을 했던 것으로 기억합니다.",
+      "UnitTalk_JPN": "確かに、事務所で待機するように命じたはずですが。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 138,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응?",
+          "JumpAnchorStringId_JPN": "うん？"
+        }
+      ]
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "TWIN_3",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "그것도 만약의 사태에 대비해 구두와 서류 각각 2회에 걸쳐 정확히 지시했죠.",
+      "UnitTalk_JPN": "その上、万が一の事態に備え、口頭と書類でそれぞれ二度に渡り指示を出しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 140,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "그런데…",
+      "UnitTalk_JPN": "それにも関わらず…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "대체 제가 왜 여기서 당신과 마주하고 있는 겁니까?",
+      "UnitTalk_JPN": "どうしてここにいるのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 142,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "견습.",
+      "UnitTalk_JPN": "答えなさい、見習い。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "TWIN_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "네! 그것은!",
+      "UnitTalk_JPN": "はいっ！それはですね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "저의 뛰어난 두뇌로 계산한 결과!",
+      "UnitTalk_JPN": "私の天才的な頭脳で計算した結果！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "사무실에 있는 것은 시간 낭비라는 결론이 나왔기 때문입니다!",
+      "UnitTalk_JPN": "事務所にいるのは、時間の無駄だという結論が出たからです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "그러니까 자의적 판단으로 상관의 명령을 무시한 채 무단으로 근무지를 이탈했다는 거군요.",
+      "UnitTalk_JPN": "つまり、独断で上司の命令を無視し、無断で持ち場を離れたということですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 145,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "맞습니까?",
+      "UnitTalk_JPN": "間違いありませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "네! 정확한 분석이에요!",
+      "UnitTalk_JPN": "はいっ！的確な分析です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 147,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "과연! 세기에 남을 역사적인 천재, 나루의 상관으로 어울리시는군요, 루그 부팀장님!",
+      "UnitTalk_JPN": "さすがルー先輩！歴史に残る天才、ナルの上司にふさわしい方です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "칭찬 감사합니다. 해고입니다.",
+      "UnitTalk_JPN": "お褒めいただき光栄です。解雇です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "ONE_9",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "네!",
+      "UnitTalk_JPN": "はい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 150,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 151,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "TWIN_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "네?",
+      "UnitTalk_JPN": "はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 152,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "못 들으셨습니까? 다시 한번 말씀드리겠습니다.",
+      "UnitTalk_JPN": "聞こえませんでしたか？では、もう一度お伝えします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 153,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "당신은 해고입니다.",
+      "UnitTalk_JPN": "あなたは解雇です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 154,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "네! 확실히 들었습니다.",
+      "UnitTalk_JPN": "はい、しっかり聞こえました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 155,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 156,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아니 잠깐! 왜?! 어째서?!",
+      "UnitTalk_JPN": "えぇ！ちょっと待ってください！！なんでですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 157,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "저처럼 뛰어난 인재를 해고하는 것은 제 개인적 인생 설계…! 아니, 궤도 수색대 전체…!",
+      "UnitTalk_JPN": "こんなにも優秀な人材を解雇するなんて、私の人生設計が…！いや、軌道捜索隊にとって…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 158,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "아니!",
+      "UnitTalk_JPN": "ううん！それ以上に！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "인류 전체에 커다란 손실인데요!?",
+      "UnitTalk_JPN": "人類にとって大きな損失ですよ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 160,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "당신이 뛰어난 인재라는 주장은 잘 들었습니다.",
+      "UnitTalk_JPN": "あなたが優秀な人材であるという主張は、よく分かりました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 161,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "하지만 궤도 수색대에는 홀로 뛰어난 인재보다 믿고 등을 맡길 수 있는 <color=#F7BE45>대원</color>이 필요합니다.",
+      "UnitTalk_JPN": "しかし軌道捜索隊には、一人の優秀な人材よりも、頼りになる<color=#F7BE45>隊員</color>が必要なのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 162,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "수색대 규약 7조 2항에는 <color=#F7BE45>직속상관의 명령을 정당한 이유 없이 거부할 경우 즉결 해고될 수 있다</color> 라는 조항이 있습니다.",
+      "UnitTalk_JPN": "捜索隊規約7条2項には、<color=#F7BE45>正当な理由なく直属上司の命令に従わない場合、即時解雇することができる</color>と書かれています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 163,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "따라서 당신은 해고입니다.",
+      "UnitTalk_JPN": "したがって、あなたは解雇です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 164,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그, 그럴 수가…!",
+      "UnitTalk_JPN": "そ、そんな…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 165,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "다들 여기 있었구나. 무슨 이야기 하고 있어?",
+      "UnitTalk_JPN": "二人とも、ここにいたのね。どうしたの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "아, 팀장님. 그것이…",
+      "UnitTalk_JPN": "あっ、リーダー。それが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 267,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 268,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "사, 살려주세요, 팀장님! ",
+      "UnitTalk_JPN": "リ、リーダー！助けてください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 166,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "이대로있다가는이궤도수색대에서의활약을발판으로삼아단숨에관측사평의회의원으로승진,NOA관측사전부를제조수로삼아<color=#F7BE45>완벽한미래예측방정식</color>을만들어보겠다는제꿈을펼쳐보기전에쫓겨나게생겼어요!",
+      "UnitTalk_JPN": "このままでは軌道捜索隊での活躍を基盤に評議会の議員まで一気に昇進しNOA観測査定部を利用して<color=#F7BE45>完璧な未来予測方程式</color>を作るという私の夢が実現する前に追い出されてしまいます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 168,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "잠깐…? 진정하고 다시 말해봐. 지금 무슨 말을 하는 거야?",
+      "UnitTalk_JPN": "ちょっと待って。落ち着いてもう一度話してくれる？頭に何も入ってこなかったわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 170,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "견습대원이 무단으로 대기 장소를 이탈하여 해고 절차를 밟던 중이었습니다.",
+      "UnitTalk_JPN": "見習いが無断で待機場所を離れたため、解雇手続きを行っていたところでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 171,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "그, 그렇구나…? 명령을 어긴 건 큰 잘못이지.",
+      "UnitTalk_JPN": "そ、そうだったのだね…？たしかに、命令に従わないのは大問題だけど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 172,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만 아직 견습인데 그걸로 해고하기엔 조금 지나치지 않을까?",
+      "UnitTalk_JPN": "でも、まだ見習いなのよ？それで解雇するのは、ちょっとやり過ぎじゃないかしら？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 173,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…사실 해고 사유는 그뿐만이 아닙니다.",
+      "UnitTalk_JPN": "…実は、解雇理由はそれだけではありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 174,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "그럼?",
+      "UnitTalk_JPN": "どういうこと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 175,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "주위를 둘러보십시오.",
+      "UnitTalk_JPN": "辺りをご覧ください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 253,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 176,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "UnitTalk_KOR": "무심코 주위를 둘러본 로베르타는 낯빛이 창백해졌다.",
+      "UnitTalk_JPN": "辺りを見渡したロベルタは、顔を真っ青にした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 254,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "뭐, 뭐야 이건?",
+      "UnitTalk_JPN": "い、一体何があったの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 178,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "백작급 공허체라도 낙하한 건가?",
+      "UnitTalk_JPN": "巨大な<r=ヴォイドボーン>空虚体</r>でも落ちてきたのかしら？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 179,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "TWIN_6",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "지금부터 이 참상에 대해 설명 드리겠습니다.",
+      "UnitTalk_JPN": "それでは、この惨状についてご説明します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 180,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "나루 견습 대원.",
+      "UnitTalk_JPN": "ナル見習い隊員。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 181,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "네!",
+      "UnitTalk_JPN": "はい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 182,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "사무실을 무단 이탈한 후 여기에서 뭘 하고 있었지?",
+      "UnitTalk_JPN": "無断で事務所を抜け出した後、ここで何をしていたのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 183,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "답변드리겠습니다! 돌부리입니다!",
+      "UnitTalk_JPN": "お答えします！石ころです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 184,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "CameraOffset": "ONE_8",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "돌부리…?",
+      "UnitTalk_JPN": "石…ころ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 185,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "ONE_6",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "네! 돌부리를 치우고 있었습니다!",
+      "UnitTalk_JPN": "はい。石ころを除去していました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 186,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "관측사 평의회에서 나온 관측 결괏값을 제 <color=#F7BE45>하이퍼 슈퍼 어퍼 방정식</color>에 대입한 결과!",
+      "UnitTalk_JPN": "評議会で観測された結果値を、私の<color=#F7BE45>ハイパースーパーアッパー方程式</color>に代入した結果！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 187,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "이 거리에 놓인 작은 돌부리 하나가 <color=#F7BE45>재앙</color>을 가져온다는 예측이 나왔기 때문에…",
+      "UnitTalk_JPN": "この大通りにある小さな石ころのうち一つが、<color=#F7BE45>災厄</color>をもたらすという予測結果が出たので…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 188,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "돌부리를 치웠을 뿐입니다!",
+      "UnitTalk_JPN": "石ころを拾っていただけです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 189,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그, 그래…? 그렇구나.",
+      "UnitTalk_JPN": "な、なるほど…そうだったのね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 190,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아무튼 그래서, 돌부리를 치운 게 이 난리와 무슨 관계인데?",
+      "UnitTalk_JPN": "でも石を除去するのと、この惨状にどういう関係があるの…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 191,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이번 사태의 원흉이 바로 그 돌부리입니다.",
+      "UnitTalk_JPN": "この騒動の元凶こそ、その石なのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 192,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "엥…?",
+      "UnitTalk_JPN": "…えっ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 193,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "돌부리를 치우기 위해 견습이 대로 한복판으로 뛰어들었습니다.",
+      "UnitTalk_JPN": "石を取り除くため、この見習いは大通りのど真ん中に飛び出したのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 194,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "견습을 피하려던 마차는 동상을 들이박고, 그로 인해 연쇄 추돌 사고가 발생.",
+      "UnitTalk_JPN": "見習いを避けようとした馬車が銅像に突っ込み、玉突き事故が発生。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 195,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "동상은 산산조각… 마차를 끌던 말들은 도주… 인근에 있던 주민들은 혼란에 빠졌고.",
+      "UnitTalk_JPN": "銅像はバラバラになり…馬車を引いていた馬は逃走…近くにいた住民は大混乱に陥りました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 196,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "짐칸에 실려 있던 향유가 몽땅 깨지면서 광장의 출입이 제한됐습니다.",
+      "UnitTalk_JPN": "荷台に積まれていた香油壺はすべて割れ、広場への立ち入りが規制されたという訳です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 197,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…농담이지?",
+      "UnitTalk_JPN": "…冗談でしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 198,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "돌부리 하나 때문에 일이 이렇게 커졌다고? 정말?",
+      "UnitTalk_JPN": "石ころのせいでこんな大事になったってこと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 199,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "저는 농담 같은 것을 할 줄 모릅니다.",
+      "UnitTalk_JPN": "私は冗談を言うような人間ではありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 200,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "저는 농담에 자신 있어요! 천재인 제가 만든 <color=#F7BE45>최신 유머 방정식</color>에 의하면—",
+      "UnitTalk_JPN": "私は冗談にも自信がありますっ！天才的な私が作った<color=#F7BE45>最新のユーモア方程式</color>では──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 201,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "……",
+      "UnitTalk_JPN": "……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 202,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "앗! 싸늘한 눈빛! <color=#F7BE45>위기 회피 방정식</color>대로라면 곧 아이언 클로가 날아올 거예요! 무서워!",
+      "UnitTalk_JPN": "あっ、冷たい視線！<color=#F7BE45>危機回避方程式</color>によると、もうすぐアイアンクローが飛んできます！怖いぃ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 203,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "후우…",
+      "UnitTalk_JPN": "ふぅ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 204,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "TRIPLE_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…아시겠지만 이번과 같은 일이 처음이 아닙니다.",
+      "UnitTalk_JPN": "…ご存じのように、このような事態は今回が初めてではありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 205,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitTalk_KOR": "추후 더 큰 사고로 번지기 전에 정식으로 견습의 해고를 건의드립니다, 팀장님.",
+      "UnitTalk_JPN": "より大きなトラブルが起こる前に、この見習いを正式に解雇することをご提案します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 206,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "앗!? 그런!? 그런~!",
+      "UnitTalk_JPN": "あっ、そんなぁ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 207,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "음, 합리적인 이유군.",
+      "UnitTalk_JPN": "なるほどね、合理的な理由だわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 208,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만 그 건의에 대한 내 결론은 기각이야.",
+      "UnitTalk_JPN": "でも、その提案は却下よ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 209,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "팀장님~!",
+      "UnitTalk_JPN": "リーダー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 210,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "…이유를 물어봐도 되겠습니까?",
+      "UnitTalk_JPN": "…理由をお聞かせいただけますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 269,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 211,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "두 가지 이유가 있어. 첫 번째, <color=#F7BE45>견습의 탓이 아니기 때문</color>이야.",
+      "UnitTalk_JPN": "理由は二つよ。まず、<color=#F7BE45>見習いのせいではないから</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 212,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "견습이 실수를 한 건 맞아. 하지만 사고는 우연히 일어난 거잖아?",
+      "UnitTalk_JPN": "見習いがミスを犯したのは事実だけど、事故は偶然起きたものでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 213,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "우연은 귀책 사유가 될 수 없어. 알지?",
+      "UnitTalk_JPN": "偶然起きたことは責められない。そうよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 214,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "흐음…",
+      "UnitTalk_JPN": "ふぅん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 215,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "옳소, 옳소!",
+      "UnitTalk_JPN": "そうだそうだーっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 216,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그리고 두 번째 이유. 오늘자로 나루에게 <color=#F7BE45>여정</color> 초대장이 날아왔거든.",
+      "UnitTalk_JPN": "そして二つ目。今日付でナルに<color=#F7BE45>旅</color>の招待状が届いたわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 217,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…예?",
+      "UnitTalk_JPN": "…はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 218,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…네?",
+      "UnitTalk_JPN": "…はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 219,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "여정이요?! 제가요?! 정말인가요!",
+      "UnitTalk_JPN": "旅ですか？私が！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 220,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후, 그래. 정말이야. 이런 걸로 내가 거짓말할 리가 없잖아?",
+      "UnitTalk_JPN": "ふふっ、そうよ。こんなことで嘘はつかないわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 221,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…히힛!",
+      "UnitTalk_JPN": "…にししっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 255,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 256,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 222,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "역시! 역시나! 언젠가 세상이 저의 재능을 알아줄 거라고는 예측했어요!",
+      "UnitTalk_JPN": "やっぱり！！いつか世の中が、私の才能を認めてくれると思ってました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 223,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이대로 여정을 완료해서 <color=#F7BE45>별의 구원자</color>의 유산을 계승한다면 저의 출세 가도는 기정사실…!",
+      "UnitTalk_JPN": "旅を終えて<color=#F7BE45>星の救援者</color>の遺産を継げば、出世も確定…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 224,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "그 후 승진에 승진을 거듭해 알리시아 님의 뒤를 이은 NOA 최고 권력자가 되는 거죠!",
+      "UnitTalk_JPN": "その後は昇進に昇進を重ね、アリシア様の後を継いでNOAの最高権力者になるのです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 225,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그러면 제일 먼저 아스트로 생텀의 망원경을 철거하고 거대 계산기를 설치할 거예요!",
+      "UnitTalk_JPN": "そしてそして、アストロ・サンクタムの望遠鏡を撤去し、巨大計算機を設置します！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 226,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "불어라, 바람이여! 돛을 펼쳐라! 천재 나루의 위대한 항해가 시작되었노라!",
+      "UnitTalk_JPN": "風よ、吹け！帆を広げよ！天才ナルの大航海が、今始まった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 259,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 257,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 258,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "…처치할까요? 팀장님.",
+      "UnitTalk_JPN": "…リーダー、始末いたしましょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 228,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후, 왜? 기운 넘치고 좋은데 뭘. 마치 옛날의 나를 보는 것 같네.",
+      "UnitTalk_JPN": "ふふっ、元気でいいじゃない。昔の自分を思い出すわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 260,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS7",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 229,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "그리고 이제 1년간 나루를 책임져줄 사람도 생겼으니까, 사고도 덜 치지 않겠어?",
+      "UnitTalk_JPN": "それに、一年間ナルの面倒を見てくれる人もいることだしね。トラブルもあまり起こさなくなるんじゃない？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 230,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "어디 보자… 마침 저기 와 있네.",
+      "UnitTalk_JPN": "ほら、ちょうど来たわよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 231,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "로베르타가 나를 바라보고 윙크했다.",
+      "UnitTalk_JPN": "ロベルタが私に向かってウィンクした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 232,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitTalk_KOR": "잘 부탁해. 단장.",
+      "UnitTalk_JPN": "頼んだわよ、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 261,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 262,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 233,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ROBERTA"
+      ],
+      "UnitTalk_KOR": "오늘부터 이 친구가 단장님의 <color=#F7BE45>여정 단원</color> 이야.",
+      "UnitTalk_JPN": "今日からこの子が<color=#F7BE45>旅の団員</color>よ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 234,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 235,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitTalk_KOR": "앗! 안녕하세요! 처음 뵙겠습니다!",
+      "UnitTalk_JPN": "あっ、こんにちはー！初めまして！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 236,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그쪽이 바로 소문이 자자한 <color=#F7BE45>여정 단장</color> 님이시군요!",
+      "UnitTalk_JPN": "あなたが噂の<color=#F7BE45>旅の団長</color>ですね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 237,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "지금 막 단장님과 성공적인 여정을 마치기 위한 <color=#F7BE45>이론</color>이 떠올랐어요!",
+      "UnitTalk_JPN": "ちょうど今、団長と旅を成し遂げるための<color=#F7BE45>理論</color>をひらめきました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 238,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "제 방정식에 따르면, 단장님과 함께 걸을 때는 이렇게 왼쪽으로 두 걸음 위치에 서는 것이 가장 효율적인 결과를 가져오는…",
+      "UnitTalk_JPN": "私の方程式によると、団長と歩く時は、こうして左に二歩の位置に立つのが最も効率的な結果をもたらし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 239,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitTalk_KOR": "나루는 그 말과 함께 옆으로 두 걸음 움직였다.",
+      "UnitTalk_JPN": "ナルはそう言うと、横に二歩移動した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 240,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "덕분에 길에 주차되어 있던 트럭을 엉덩이로 툭 하고 건드렸다.",
+      "UnitTalk_JPN": "そしてナルのお尻が、道に駐車してあったトラックにポンとぶつかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 241,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "주차 브레이크를 채워 두지 않았는지, 트럭은 부드럽게 도로를 따라 미끄러졌다.",
+      "UnitTalk_JPN": "サイドブレーキがかかっていなかったのか、トラックは滑らかに坂道を下っていった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 242,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 트럭은 겨우 마부가 진정시킨 말들에게로 돌진했다.",
+      "UnitTalk_JPN": "そしてトラックは、御者がようやく落ち着かせた馬の方へと突進していった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 243,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HOOVES_CLOP_1.wav",
+      "UnitTalk_KOR": "말들은 다시 한번 흥분하며 날뛰었고 그나마 멀쩡하던 동상들도 전부 박살 났다.",
+      "UnitTalk_JPN": "馬はまたもや興奮して暴れまわり、無傷だった銅像まで壊れてしまった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 244,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마지막으로 트럭 짐칸의 잠금이 헐거웠는지 덜컥 문이 열리더니…",
+      "UnitTalk_JPN": "挙句の果てには、トラックの荷台のロックが緩んでいたのか、リヤドアが勢いよく開き…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 245,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BREAK_GLASS.wav",
+      "UnitTalk_KOR": "마침 그 안에 실려 있던 향유가 전부 쏟아져 나와 깨져버렸다.",
+      "UnitTalk_JPN": "積まれていた香油壺はすべて割れ、香油が流れ出した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 246,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HORSE"
+      ],
+      "UnitTalk_KOR": "히히이이잉!!",
+      "UnitTalk_JPN": "ヒヒィィィィン！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 247,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_COACHMAN_MALE_D",
+      "UnitNameString": [
+        "SI_COACHMAN"
+      ],
+      "UnitTalk_KOR": "이 녀석…! 멈춰, 제발! 거기 서!",
+      "UnitTalk_JPN": "おい、止まるんだ！お願いだから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 248,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "으아아앙~! 프랜시스~!",
+      "UnitTalk_JPN": "うわーん！フランシス～！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 249,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ANIMAL_CAT.wav",
+      "UnitNameString": [
+        "SI_TABBYCAT"
+      ],
+      "UnitTalk_KOR": "샤아아아악!",
+      "UnitTalk_JPN": "シャーーーーッ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 250,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_APOCALYPSE_MALE_1",
+      "UnitNameString": [
+        "SI_SAD_MERCHANT"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "보험사… 보험사에 연락해야…",
+      "UnitTalk_JPN": "保険会社…保険会社に連絡しなければ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 251,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "도로에 가득한 향유 냄새에 머리가 아파 왔다.",
+      "UnitTalk_JPN": "香油の匂いで、頭がクラクラしてきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 252,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어느 때보다 정신없었던, 나루와의 첫 대면이었다.",
+      "UnitTalk_JPN": "ナルとの出会いは、とにかく慌ただしいものだった。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NOA_OBSERVER",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

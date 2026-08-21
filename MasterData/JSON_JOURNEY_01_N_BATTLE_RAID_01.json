@@ -1,0 +1,24 @@
+﻿{
+  "$schema": "../../../../../../DataSchema/BattleScript.jsonc",
+  "_Version": 6,
+  "Data": {
+    "SkipProgressWithHistory": false,
+    "Waves": [
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_1_B",
+          "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_SWORD_BLUE_03",
+            "AllSkillAvailable": true
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_WAND_GREEN_03",
+            "AllSkillAvailable": true
+          }
+        ]
+      }
+    ]
+  }
+}

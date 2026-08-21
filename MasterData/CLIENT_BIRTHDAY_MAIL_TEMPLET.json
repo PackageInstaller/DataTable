@@ -1,0 +1,24 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: BIRTHDAY_MAIL_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BirthdayMailId" : 1001,
+          "BirthdayCount" : 1,
+          "MailName" : "SI_MAIL_BIRTHDAY_NAME_1001",
+          "MailDesc" : "SI_MAIL_BIRTHDAY_DESC_1001",
+          "MailSenderName" : "SI_LISA",
+          "ExpiryDays" : 30,
+          "BirthdayMailRewards" : 
+          [
+            {
+              "RewardItemType" : "RT_NORMAL_ITEM",
+              "RewardItemId" : 101,
+              "RewardItemValue" : 100
+            }
+          ]
+        }
+    ]
+}

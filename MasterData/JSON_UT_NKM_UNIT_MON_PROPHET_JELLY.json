@@ -1,0 +1,130 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_VOIDER.txt",
+    "UiStates": [],
+    "UnitHudHeight": 3,
+    "BuffEffectPosition": {
+      "HEAD": 2.7,
+      "BODY": 1.7
+    },
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_FOCUS_INFO_READY.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_START.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "NonAttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 10,
+            "ReActType": "",
+            "CameraCrashGap": 0.05,
+            "CameraCrashTime": 1.7,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 60,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.2,
+            "CameraCrashTime": 0.4
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 57,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_ATK_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 65,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.2,
+            "CameraCrashTime": 0.4,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_SPECIAL_ATTACK.wav"
+            ]
+          },
+          {
+            "EventFrame": 38,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_SPECIAL_ATTACK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 67,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_SPECIAL_ATTACK_03.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_DYING.wav"
+            ]
+          },
+          {
+            "EventFrame": 30,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_DYING_02.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

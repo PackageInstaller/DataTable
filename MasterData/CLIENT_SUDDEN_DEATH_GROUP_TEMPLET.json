@@ -1,0 +1,89 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: SUDDEN_DEATH_GROUP_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "SuddenDeathGroupId" : 101,
+          "SuddenDeathLevel" : 1,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@100",
+          "EffectActiveTurn" : 13,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL1_01"]
+        },
+        {
+          "SuddenDeathGroupId" : 101,
+          "SuddenDeathLevel" : 2,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@150",
+          "EffectActiveTurn" : 25,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL2_01"]
+        },
+        {
+          "SuddenDeathGroupId" : 101,
+          "SuddenDeathLevel" : 3,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@200",
+          "EffectActiveTurn" : 36,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL3_01"]
+        },
+        {
+          "SuddenDeathGroupId" : 101,
+          "SuddenDeathLevel" : 4,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@250",
+          "EffectActiveTurn" : 46,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL4_01"]
+        },
+        {
+          "SuddenDeathGroupId" : 101,
+          "SuddenDeathLevel" : 5,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@300",
+          "EffectActiveTurn" : 56,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL5_01"]
+        },
+        {
+          "SuddenDeathGroupId" : 101,
+          "SuddenDeathLevel" : 6,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@400",
+          "EffectActiveTurn" : 66,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL6_01"]
+        },
+        {
+          "SuddenDeathGroupId" : 201,
+          "SuddenDeathLevel" : 1,
+          "SuddenDeathDesc" : "SI_PVP_RANK_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 13
+        },
+        {
+          "SuddenDeathGroupId" : 201,
+          "SuddenDeathLevel" : 2,
+          "SuddenDeathDesc" : "SI_PVP_RANK_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 22,
+          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 201,
+          "SuddenDeathLevel" : 3,
+          "SuddenDeathDesc" : "SI_PVP_RANK_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 30,
+          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 201,
+          "SuddenDeathLevel" : 4,
+          "SuddenDeathDesc" : "SI_PVP_RANK_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 37,
+          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 201,
+          "SuddenDeathLevel" : 5,
+          "SuddenDeathDesc" : "SI_PVP_RANK_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 43,
+          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 201,
+          "SuddenDeathLevel" : 6,
+          "SuddenDeathDesc" : "SI_PVP_RANK_DEATH_LEVEL_DESC",
+          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_04"]
+        }
+    ]
+}

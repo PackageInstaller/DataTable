@@ -1,0 +1,1304 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_BUNNY_SPEAR_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PARK_STAGE.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3"
+    },
+    {
+      "Uid": 254,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_01.wav",
+      "UnitTalk_KOR": "시끄러운 웅성거림에 눈을 떴다. ",
+      "UnitTalk_JPN": "騒がしさに目を覚ました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 255,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "뭐야 단장, 정신차리라구. 곧 대회 시작이니까.",
+      "UnitTalk_JPN": "何だよ団長、しっかりしろよー。もうすぐ大会が始まんだぜ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 256,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "심사위원이 그렇게 꾸벅꾸벅 졸고 있어서야, 하~나도 멋있지가 않단 말이야.",
+      "UnitTalk_JPN": "審査員が居眠りしてるなんて、ちっともクールじゃないだろ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 257,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "심사… 위원이라니?",
+          "JumpAnchorStringId_JPN": "審査…員って？"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "뭘 심사해…?",
+          "JumpAnchorStringId_JPN": "何を審査するんだ…？"
+        }
+      ]
+    },
+    {
+      "Uid": 259,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "그야 당연히… <color=#F7BE45>쇼미더토끼</color> 심사위원이죠?",
+      "UnitTalk_JPN": "それはもちろん… <color=#F7BE45>ラビッツ・ゴット・タレント</color>の審査員ですよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 260,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "라비스타 최고의 토끼를 가리는 대회 말이야!",
+      "UnitTalk_JPN": "ラビスター最高のウサギを決める大会だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 261,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "단장도 참, 이제 와서 무슨 소리를 하는거야?",
+      "UnitTalk_JPN": "ったく団長、今さら何言ってんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 262,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "단장님… 많이 피곤하셨나보다. 그치 토끼씨?",
+      "UnitTalk_JPN": "団長さん…かなりお疲れのようですね。ね、ウサギさん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 263,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…?",
+          "JumpAnchorStringId_JPN": "…？"
+        }
+      ]
+    },
+    {
+      "Uid": 373,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 265,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_CLAP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "자-! 많은 분들이 고대하시던 <color=#F7BE45>쇼미더토끼</color>, 지금 막을 올립니다!",
+      "UnitTalk_JPN": "さあ！多くの方が待ち望んでいた<color=#F7BE45>ラビッツ・ゴット・タレント</color>、ただいま開幕です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 266,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitTalk_KOR": "바로 오늘 이 자리에서, 라비스타 최고의 <color=#F7BE45>토끼</color>는 누구일지 가려지게 되는 거죠!",
+      "UnitTalk_JPN": "まさに今日この場で、ラビスター最高の<color=#F7BE45>ウサギ</color>が決まるのです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 267,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "벌써부터 두근거리지 않나요? 과연 상금의 주인공은 누가 될 것인가!",
+      "UnitTalk_JPN": "今からドキドキしますわね？果たして賞金の主人公は誰になるのか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 268,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아, 소정의 비용을 지불하면 본인이 밀어주고 싶은 참가자에게 인기점수를 올려줄 수 있으니 참고해주세요-!",
+      "UnitTalk_JPN": "あっ。費用をお支払いいただければ、推したい参加者の人気ポイントを上げることができます。ご参考までに！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 361,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 374,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 376,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 375,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 360,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 270,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "첫 번째 참가자는, 통통하게 살이 오른 하얀 토끼를 안고 나온 소녀였다. ",
+      "UnitTalk_JPN": "最初の参加者は、ふっくらと太った白いウサギを抱えて出てきた少女だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 271,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "여, 열심히 키웠어요…! 우리 깡총이, 예쁘게 봐주세요!",
+      "UnitTalk_JPN": "えっと、一生懸命育てました…！うちのぴょん吉を、よろしくおねがいします！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 272,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으음… 역시, 조금 애매하지 토끼씨?",
+      "UnitTalk_JPN": "うーん…少しパッとしませんよね、ウサギさん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 273,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "너무 약해보여! 나랑 싸우면 10초도 안 되어서 쓰러질 것 같은데?",
+      "UnitTalk_JPN": "弱すぎる！オレと戦ったら、10秒も持たずに倒れちまいそうだが？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 274,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "너랑 싸워서 이기는 토끼가 있으면 뭔가 단단히 잘못된 거 아닐까?",
+      "UnitTalk_JPN": "トリッシュと戦って勝つウサギがいたら、それはそれで問題になるだろう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 275,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "저는… 50점 드릴게요!",
+      "UnitTalk_JPN": "私は…50点あげます！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 276,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "난 30점!",
+      "UnitTalk_JPN": "オレは30点だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 277,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 362,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 377,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 363,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 279,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "두 번째 참가자는…",
+      "UnitTalk_JPN": "二人目の参加者は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 280,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아앙…? 뭐야 이건? 갑자기 무대에는 왜 올라가라는 건데?",
+      "UnitTalk_JPN": "あぁん…？なんだこれ？急にステージに上がれって？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 281,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "난 그냥 귀여운 토끼들이 많이 있다길래 구경하러 온건데-",
+      "UnitTalk_JPN": "ワシはただ、可愛いウサギが山ほどいるって聞いて見に来ただけで──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 282,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "마르실…?",
+          "JumpAnchorStringId_JPN": "マルシル…？"
+        }
+      ]
+    },
+    {
+      "Uid": 283,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "건강해 보이는 토끼네요…! 토끼씨도 동의하지?",
+      "UnitTalk_JPN": "健康そうなウサギですね…！ウサギさんもそう思いませんか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 284,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "투구랑 무기가 완전 멋있는데?",
+      "UnitTalk_JPN": "あの兜と武器、マジでクールだな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 285,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "그거, 어디서 산 거야? 일단 나는 70점 줄게!",
+      "UnitTalk_JPN": "それ、どこで買ったんだ？ひとまず70点やるよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 286,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "뭐, 뭐야? 무슨 점순데 그거?",
+      "UnitTalk_JPN": "な、なんだ？何の点数なんだよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 287,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "뭐, 일단 토끼는 토끼니까…",
+      "UnitTalk_JPN": "まぁ、とりあえずウサギはウサギだから…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 364,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 378,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 365,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 289,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세 번째 참가자는… ",
+      "UnitTalk_JPN": "三人目の参加者は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 290,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "안녕하세요! 배달부 베라에요! 잘 부탁드립니다!",
+      "UnitTalk_JPN": "こんにちは！配達屋のベラです！よろしくお願いします！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 291,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이젠 토끼도 아니잖아!",
+          "JumpAnchorStringId_JPN": "もうウサギですらないけど！"
+        }
+      ]
+    },
+    {
+      "Uid": 292,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "앗, 단장님! 잘 모르시고 하는 소리세요!",
+      "UnitTalk_JPN": "あっ、団長！ご存じないんですね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 293,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "저희 <color=#F7BE45>배달부 협회</color>의 배달부에게는 <color=#F7BE45>토끼</color>라는 별명이 붙여져 있다구요?",
+      "UnitTalk_JPN": "<color=#F7BE45>配達屋協会</color>の配達屋には、<color=#F7BE45>ウサギ</color>というあだ名がついてるんですよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 294,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "토끼처럼 날쎄고, 끈질기게 소중한 소포를 배달하라는 의미에서-",
+      "UnitTalk_JPN": "ウサギのように素早く、粘り強く大切な小包を配達するという意味で──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 295,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 296,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "으음… 일류헌터의 날카로운 감각으로 미루어 봤을 때…",
+      "UnitTalk_JPN": "んー…一流ハンターの鋭い感覚で推測するに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 297,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "이번 참가자는 힘을 숨기고 있는게 분명해!",
+      "UnitTalk_JPN": "今回の参加者は、力を隠してるに違いない！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 298,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그 점이… 완전 멋있어! 80점!",
+      "UnitTalk_JPN": "その点が… 最高にクールだ！80点！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 379,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST"
+    },
+    {
+      "Uid": 299,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "흐음… 아니야 토끼 씨. 나는 점수를 조금 더 주고 싶은걸?",
+      "UnitTalk_JPN": "うーん…違いますよ、ウサギさん。わたしはもう少し点数をあげたいぐらいなんですよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 300,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이젠 모르겠다…",
+          "JumpAnchorStringId_JPN": "もう分からない…"
+        }
+      ]
+    },
+    {
+      "Uid": 366,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 380,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 367,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 302,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마지막 참가자는… ",
+      "UnitTalk_JPN": "最後の参加者は…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 303,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_14.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "흠! 흐음…! 잘 부탁드리죠. 클레어입니다.",
+      "UnitTalk_JPN": "こ、こほん…！よろしくお願いします。クレアです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 304,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "네가 여기 왜 있어…?",
+          "JumpAnchorStringId_JPN": "クレアがどうしてここに…？"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "그 옷은 뭐고…?",
+          "JumpAnchorStringId_JPN": "その服は…？"
+        }
+      ]
+    },
+    {
+      "Uid": 306,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "그게… 설명하자면 깁니다만…",
+      "UnitTalk_JPN": "それが…説明すると長くなりますが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 307,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "스칼렛과 에밀리가 친 사고 때문에 캔들 스퀘어의 예산이 부족하게 되어서…",
+      "UnitTalk_JPN": "スカーレットとエミリーが起こした騒動のせいで、キャンドル・スクエアの予算が不足してしまって…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 308,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "상금을 타면 그걸 조금이나마 메꿀 수 있지 않나 하는 생각으로…",
+      "UnitTalk_JPN": "賞金を獲得すれば、少しでも補えるのではないかと思いまして…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 309,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "솔직히 반신반의했습니다만, 스칼렛이 그러더군요.",
+      "UnitTalk_JPN": "半信半疑でしたが、スカーレットがこう言ったのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 310,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "<color=#F7BE45>이몸이 만든 옷을 입으면 대회에 나갈 수 있을거다!</color>라고.",
+      "UnitTalk_JPN": "<color=#F7BE45>わがはいが作った服を着れば、大会に出られるはずだ！</color>と。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 311,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후우… 그 말이 틀리지 않았군요. 다행입니다.",
+      "UnitTalk_JPN": "ふぅ…その言葉は間違っていなかったようですね。良かったです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 312,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "조금 부끄럽지만, 일단 참가를 결정한 이상…!",
+      "UnitTalk_JPN": "少し恥ずかしいですが、一度参加を決めた以上…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 313,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "가장 완벽한 <color=#F7BE45>토끼</color>가 되겠다는 마음가짐으로 참가했습니다.",
+      "UnitTalk_JPN": "最も完璧な<color=#F7BE45>ウサギ</color>になるという心構えで参加しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 314,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "완벽한 토끼…",
+          "JumpAnchorStringId_JPN": "完璧なウサギ…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "어떻게 하는 건데 그거…",
+          "JumpAnchorStringId_JPN": "どうやるんだそれは…"
+        }
+      ]
+    },
+    {
+      "Uid": 316,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "흠흠. 저도 나름대로 사전에 예습을 조금 해왔습니다.",
+      "UnitTalk_JPN": "こほん。私もそれなりに予習をしてきました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 317,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "그러니까 이런 옷을 입고…",
+      "UnitTalk_JPN": "ですから、こういう服を着て…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 318,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "이렇게…",
+      "UnitTalk_JPN": "このように…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 319,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…!",
+          "JumpAnchorStringId_JPN": "…！"
+        }
+      ]
+    },
+    {
+      "Uid": 320,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SPECIAL3",
+      "UnitTalk_KOR": "혹은 이런 포즈라든가…!",
+      "UnitTalk_JPN": "もしくは、このようなポーズを…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 321,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…!!!",
+          "JumpAnchorStringId_JPN": "…！！！"
+        }
+      ]
+    },
+    {
+      "Uid": 322,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SPECIAL2",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "아니면 이렇게…",
+      "UnitTalk_JPN": "あるいは、このように…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 323,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "…하면 단장님이 좋아하실 거라는 정보를 얻었습니다만.",
+      "UnitTalk_JPN": "…すると団長が喜ぶという情報を得ましたが。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 324,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "100점!!!",
+          "JumpAnchorStringId_JPN": "100点！！！"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "아니, 1000점!!!",
+          "JumpAnchorStringId_JPN": "いや、1000点だ！！！"
+        }
+      ]
+    },
+    {
+      "Uid": 381,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 326,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "뭐, 뭐야 단장! 마음대로 그렇게 큰 점수를 주는 게 어디있어?",
+      "UnitTalk_JPN": "な、なんだよ団長！勝手にそんな高い点数をつけるなんて、アリなのかよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 327,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "맞아요…! 이건 불공평해요…!",
+      "UnitTalk_JPN": "そうですよ…！これは不公平です…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 328,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "시끄러워! 너네도 너네 마음대로 점수 줬잖아!",
+          "JumpAnchorStringId_JPN": "うるさい！二人だって勝手に点数をつけてただろ！"
+        }
+      ]
+    },
+    {
+      "Uid": 329,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_KNOCK.wav"
+    },
+    {
+      "Uid": 368,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 382,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STUDY_ROOM.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3",
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 369,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_KNOCK.wav",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 331,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "…단장님?",
+      "UnitTalk_JPN": "…団長？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 332,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어…?",
+          "JumpAnchorStringId_JPN": "え…？"
+        }
+      ]
+    },
+    {
+      "Uid": 333,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후우… 단장님.",
+      "UnitTalk_JPN": "ふぅ…団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 334,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "이번 분기 예산안을 작성해달라고 말씀드렸는데, 주무시고 계셨나요?",
+      "UnitTalk_JPN": "今期の予算案を作成していただくようお願いしたのですが、お休みになっていらっしゃったのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 335,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어째서…",
+          "JumpAnchorStringId_JPN": "どうして…"
+        }
+      ]
+    },
+    {
+      "Uid": 336,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "네…?",
+      "UnitTalk_JPN": "はい…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 337,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어째서 바니걸이 아닌거지!!!",
+          "JumpAnchorStringId_JPN": "どうしてバニーガールじゃないんだ！！！"
+        }
+      ]
+    },
+    {
+      "Uid": 338,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "그게 무슨…",
+      "UnitTalk_JPN": "それはどういう…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 339,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "대체 무슨 꿈을 꾸신 건가요, 단장님?",
+      "UnitTalk_JPN": "一体どんな夢を見たのですか、団長？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 372,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "솔직히 털어놓는다.",
+          "JumpAnchorStringId_JPN": "正直に打ち明ける。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "적당히 얼버무린다.",
+          "JumpAnchorStringId_JPN": "適当にごまかす。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 342,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "하아… 평소에 어떤 생각을 하시면 그런 꿈을 꾸시는 건가요?",
+      "UnitTalk_JPN": "はぁ…普段どんなことをお考えになれば、そのような夢を見るのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 343,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "면목 없습니다.",
+          "JumpAnchorStringId_JPN": "面目ありません。"
+        }
+      ]
+    },
+    {
+      "Uid": 344,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하지만…",
+      "UnitTalk_JPN": "ですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 345,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "단장님이 꿈에서 볼 정도로 원하시는 거라면.",
+      "UnitTalk_JPN": "団長が夢に見るほどお望みなら。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 346,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "그 정도로 원하신다면…",
+      "UnitTalk_JPN": "それほどお望みなら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 347,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "입어드리지 못할 것도 없는-",
+      "UnitTalk_JPN": "着てさしあげても構いま──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 348,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "정말…?!?!",
+          "JumpAnchorStringId_JPN": "本当に…！？！？"
+        }
+      ]
+    },
+    {
+      "Uid": 349,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "어, 어디까지나 그럴 수도 있다는 소리입니다.",
+      "UnitTalk_JPN": "あ、あくまでそういう可能性もあるという話です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 350,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "당장 입어드리겠다는 소리는 아니니까 너무 기대하지 마세요…!",
+      "UnitTalk_JPN": "今すぐ着てさしあげるというわけではありませんから、あまり期待しないでください…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 353,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 354,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "터무니없는 상상은 그쯤 해두고, 어서 요청드린 예산안 작성이나 마무리해 주시겠습니까?",
+      "UnitTalk_JPN": "とんでもない妄想はそこまでにして、早く予算案の作成を終わらせていただけますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 355,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "넵…",
+          "JumpAnchorStringId_JPN": "はい…"
+        }
+      ]
+    },
+    {
+      "Uid": 356,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 357,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "훌륭한 토끼가 나오는 꿈…",
+          "JumpAnchorStringId_JPN": "立派なウサギが出てくる夢…"
+        }
+      ]
+    },
+    {
+      "Uid": 358,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…토끼요?",
+      "UnitTalk_JPN": "…ウサギですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 359,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아무것도 아니야…",
+          "JumpAnchorStringId_JPN": "何でもない…"
+        }
+      ]
+    },
+    {
+      "Uid": 383,
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN"
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "…ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

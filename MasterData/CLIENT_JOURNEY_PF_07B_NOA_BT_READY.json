@@ -1,0 +1,603 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_07B_NOA_BT_READY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 72,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN_CROWD.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "안녕하세요, 단장님.",
+      "UnitTalk_JPN": "こんにちは、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "오늘은 <color=#F7BE45>[기초 평가전]</color>을 치르는 날입니다.",
+      "UnitTalk_JPN": "本日は<color=#F7BE45>「基礎試験」</color>の日です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "준비는 충분히 하셨나요?",
+      "UnitTalk_JPN": "準備は万端ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그럭저럭.",
+          "JumpAnchorStringId_JPN": "…まぁまぁかな。"
+        }
+      ]
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후, 여유가 느껴지는 대답이네요.",
+      "UnitTalk_JPN": "ふふっ、余裕が感じられますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "하긴 너무 긴장하실 필요는 없어요.",
+      "UnitTalk_JPN": "あまり緊張する必要はありませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "이전에 말씀드렸듯 기초 평가전은 패배하더라도 <color=#F7BE45>[여정]</color>에서 탈락하지 않으니까요.",
+      "UnitTalk_JPN": "以前お伝えした通り、基礎試験で敗北したとしても<color=#F7BE45>「救援の旅」</color>から脱落することはありませんから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "오늘 평가전을 도와줄 상대는 <color=#F7BE45>[캔들 스퀘어]</color>의 멤버분들입니다.",
+      "UnitTalk_JPN": "本日の試験のお相手は、<color=#F7BE45>「キャンドル・スクエア」</color>の方々です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "음…",
+          "JumpAnchorStringId_JPN": "うーん…"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "혹시 상대가 여정 단원분과 같은 소속이라 곤란할지도 모른다고 생각하셨나요?",
+      "UnitTalk_JPN": "お相手が旅の団員と同じ所属で、やりにくいとお考えですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "걱정하지 마세요.",
+      "UnitTalk_JPN": "心配いりませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "캔들 스퀘어의 멤버들은 공과 사의 구별이 철저하기로 유명하니까요.",
+      "UnitTalk_JPN": "キャンドル・スクエアの方々は、公私の区別を徹底することで有名ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "절대 사적인 관계로 인해 평가전의 결과가 달라지는 일은 없을 거예요.",
+      "UnitTalk_JPN": "決して個人的な関係によって、試験の結果が変わることはありませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그게 아니라…",
+          "JumpAnchorStringId_JPN": "そうじゃなくて…"
+        }
+      ]
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "혹시 다른 궁금한 점이 있으신가요?",
+      "UnitTalk_JPN": "他に何か気になることでも？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "상대가 아직 안 온 것 같아서 말이야.",
+          "JumpAnchorStringId_JPN": "まだ来てないみたいだけど。"
+        }
+      ]
+    },
+    {
+      "Uid": 81,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "어라, 그러고 보니 오실 시간이 지났는데 이상하네요.",
+      "UnitTalk_JPN": "あら、そういえば約束の時間を過ぎていますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "혹시 무슨 사고라도 당하신 걸까요?",
+      "UnitTalk_JPN": "何かトラブルに巻き込まれてしまったのでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "아뇨, 사고 같은 건 당하지 않았습니다.",
+      "UnitTalk_JPN": "いえ、そういう訳ではありません。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "누군가의 목소리가 들리는 순간, 한 실루엣이 우리 사이로 끼어들었다.",
+      "UnitTalk_JPN": "声が聞こえた瞬間、一つのシルエットが私たちの間に割って入った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "캔들 스퀘어 소속, 선임 메이드 에밀리라고 합니다. 마중이 늦어서 죄송합니다.",
+      "UnitTalk_JPN": "キャンドル・スクエア所属、ノーブルメイドのエミリーと申します。お迎えが遅くなり申し訳ありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "예정 시간이 지났는데도 오지 않으셔서 걱정했어요. 급한 일이라도 있으셨던 건가요?",
+      "UnitTalk_JPN": "約束の時間を過ぎてもいらっしゃらなかったので、心配していたんですよ。何か急用でもあったのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "급한 일이라고 할 정도로 대단한 이유는 아닙니다. 단지…",
+      "UnitTalk_JPN": "急用と呼べるほど大した理由ではありません。ただ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "단지…?",
+      "UnitTalk_JPN": "ただ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "USN_UI_REST",
+      "UnitTalk_KOR": "오늘이 평가전이라는 것을…",
+      "UnitTalk_JPN": "今日が試験だということを…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.4,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "CameraOffset": "POS4_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "잊고 있었을 뿐입니다.",
+      "UnitTalk_JPN": "忘れていただけです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐라고?!",
+          "JumpAnchorStringId_JPN": "何だって！？"
+        }
+      ]
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "그, 그러고 보니 캔들 스퀘어에 건망증이 심한 메이드분이 있다고 들었는데…",
+      "UnitTalk_JPN": "そ、そういえば…キャンドル・スクエアに、物忘れがひどいメイドの方がいらっしゃるとお聞きしていましたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "아무래도 그분이 에밀리 님이셨나 보네요.",
+      "UnitTalk_JPN": "どうやら、エミリー様のことだったようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "크윽, 이런 일이 있을 걸 예상해서 잊지 않도록 메모를 해뒀었는데…",
+      "UnitTalk_JPN": "くっ…こんなこともあろうかと、忘れないようにメモをしておいたのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런데도 까먹은 거야?",
+          "JumpAnchorStringId_JPN": "なのに忘れたのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아뇨, 그 정도로 바보는 아닙니다.",
+      "UnitTalk_JPN": "いえ、そこまで愚かではありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그러면 어째서 늦으신 건가요?",
+      "UnitTalk_JPN": "では、どうして遅れたのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "메모지를 잊어버리고 말았습니다.",
+      "UnitTalk_JPN": "メモを失くしてしまいました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 메모하는 의미가 없잖아!",
+          "JumpAnchorStringId_JPN": "それじゃメモした意味ないだろ！"
+        }
+      ]
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "후우… 방을 청소하다 우연히 메모지를 발견해서 다행이었습니다. 그렇지 않았다면, 오늘 이곳엔 오지도 못했겠지요.",
+      "UnitTalk_JPN": "ふぅ…部屋を掃除していたら、偶然メモを見つけたのです。このメモがなければ、今日ここに来ることもできなかったでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이런 사람에게 평가전 상대를 맡겨도 괜찮은 걸까?",
+      "UnitTalk_JPN": "こんな人に試験の相手を任せて大丈夫なのか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그 표정, 제 실력이 미덥지 않으신 모양이군요. 걱정하실 필요 없습니다.",
+      "UnitTalk_JPN": "その表情…自分の実力が信用できないようですね。ご心配なく。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "이래 봬도 캔들 스퀘어에 합류하기 전까지는 안타레스 용병단 소속이었으니까요. 평가전 상대로 부족하지는 않을 겁니다.",
+      "UnitTalk_JPN": "こう見えても、キャンドル・スクエアに合流する前はアンタレス傭兵団に所属していましたから。試験の相手としては、うってつけでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "안타레스 용병단이요?! 그게 정말인가요?",
+      "UnitTalk_JPN": "アンタレス傭兵団ですって！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇게 놀랄 정도로 대단한 곳이야?",
+          "JumpAnchorStringId_JPN": "そんなにすごい所なのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "안타레스 용병단이라면, 용병계의 엘리트만 모인다는 유명한 곳이잖아요!",
+      "UnitTalk_JPN": "アンタレス傭兵団といえば、傭兵界のエリートが集まる有名な場所ですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "에밀리 님께서 평가전의 상대로 뽑힌 이유를 이제야 알 것 같네요!",
+      "UnitTalk_JPN": "エミリー様が試験の相手として選ばれた理由が、ようやく分かりました！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "안타레스 용병단에 대해 잘 아는 모양이군요.",
+      "UnitTalk_JPN": "アンタレス傭兵団について、お詳しいようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그렇다면 기대에 부응할 수 있도록, 청소를 통해 익힌 새로운 전투술로 실전을 방불케 할 평가전을 실시하도록 하겠습니다.",
+      "UnitTalk_JPN": "では、期待に応えられるよう…掃除で培った戦闘術で、実戦さながらの試験と参りましょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "THINK2",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "과하게 의욕을 불태우기 시작한 에밀리로부터 시선을 돌려, 왜 괜한 말을 꺼냈냐는 원망을 담은 눈으로 리사를 바라보았다.",
+      "UnitTalk_JPN": "やる気満々のエミリーから視線を逸らし、どうして余計なことを言うんだと恨みがましくリサを見つめた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그, 그럼 더 늦어지기 전에 기초 평가전을 시작하도록 하겠습니다…!",
+      "UnitTalk_JPN": "そ、それでは、基礎試験を始めましょうか…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "기초 평가전은 말 그대로 여정 단원의 기초 능력을 확인하는 자리입니다.",
+      "UnitTalk_JPN": "基礎試験は文字通り、旅の団員の基礎能力を確認する場です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "큰 위험은 없겠지만, 전투 환경의 특성상 의도치 않은 돌발 상황이 있을 수도 있으니 주의해 주시기를 바랍니다.",
+      "UnitTalk_JPN": "大きな危険はないでしょうが…戦闘環境の特性上、予期せぬアクシデントが起こる可能性もあります。ご注意くださいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "큰 위험은 없다라…",
+      "UnitTalk_JPN": "大きな危険はないって…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "CameraOffset": "ONE_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "임전무퇴, 일격필살...",
+      "UnitTalk_JPN": "不退転、一撃必殺…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWORD_DRAW_06.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
+      "CameraOffset": "POS4_2X",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "초전박살!",
+      "UnitTalk_JPN": "一掃！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "정말로?",
+          "JumpAnchorStringId_JPN": "…本当か？"
+        }
+      ]
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "죄송합니다...",
+      "UnitTalk_JPN": "すみません…",
+      "TalkTime": 0.03
+    }
+  ]
+}

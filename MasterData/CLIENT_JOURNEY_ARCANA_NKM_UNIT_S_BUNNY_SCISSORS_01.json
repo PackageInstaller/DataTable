@@ -1,0 +1,1330 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_BUNNY_SCISSORS_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAYGROUND.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3"
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으으음… 어디에 숨어있으려나…",
+      "UnitTalk_JPN": "うぅむ…どこに隠れているのだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "후후… 어리석은 녀석들. 아무리 꽁꽁 숨어봤자 이몸은 위대한 용족.",
+      "UnitTalk_JPN": "ふっふっふ…愚かなやつらめ。いくら隠れても、わがはいは偉大な竜族。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "겨우 인간 녀석들이 숨은 장소 따위, 한눈에 알아볼 수가 있느니라!",
+      "UnitTalk_JPN": "たかが人間どもが隠れた場所など、一目で見抜けるものよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "여기 숨었지?!",
+      "UnitTalk_JPN": "ここであろう！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "우와앗?!",
+      "UnitTalk_JPN": "うわあっ！？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "우으… 들켜버렸네…",
+      "UnitTalk_JPN": "うぅ…見つかっちゃった…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "흐하하하! 너무 속상해하지 말거라! 상대가 나잖아?",
+      "UnitTalk_JPN": "ふははは！そう落ち込むでない！相手はこのわがはいなのだぞ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "스칼렛 누나, 어쩐지 저 특이한 옷을 입고 오는 날엔 더 잘 찾는 거 같지 않아?",
+      "UnitTalk_JPN": "スカーレットおねえちゃん。その変わった服を着てくる日は、いつもよりよく見つけるよね？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "듣고 보니까 그런 것 같기도 하고?",
+      "UnitTalk_JPN": "そういえば、そんな気もするなぁ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후후! 그야 당연한 것 아니겠어?",
+      "UnitTalk_JPN": "ふふ！それは当然のことではないか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "이몸이 직접 만든 이 <color=#F7BE45>바니슈트</color>를 입으면 특수한 힘을 얻게 되느니라!",
+      "UnitTalk_JPN": "わがはいが作ったこの<color=#F7BE45>バニー服</color>を着れば、特殊な力を得られるのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "날카로운 감각과 재빠른 몸놀림!",
+      "UnitTalk_JPN": "鋭い感覚と素早い身のこなし！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그야말로 <color=#F7BE45>최강의 위엄있고 대단하고 엄청난 토끼</color>가 되는 것이다!",
+      "UnitTalk_JPN": "まさに<color=#F7BE45>最強に威厳ある、すごくてとてつもないウサギ</color>になるという訳だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "자, 다음 술래는 단장이다!",
+      "UnitTalk_JPN": "さあ、次は団長が鬼だぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나?! 난 그냥 산책 나온 건데?",
+          "JumpAnchorStringId_JPN": "私？ただ散歩しに来ただけなんだけど？"
+        }
+      ]
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이러쿵저러쿵 시끄럽구나! 잔말 말고 단장이 다음 판 술래해라!",
+      "UnitTalk_JPN": "ごちゃごちゃうるさいのだ！黙って団長が鬼をするがよい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "근데… 저기 혼자 구석에 쪼그려 앉아있는 녀석은 누구냐? 못 보던 얼굴이다만.",
+      "UnitTalk_JPN": "しかし…隅っこで一人しゃがみ込んでいるのは誰だ？見かけない顔なのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "아, 쟤는 얼마 전에 새로 이사 온 친구야!",
+      "UnitTalk_JPN": "あっ、あの子は最近引っ越してきた子だよ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오오, 그럼 새 친구로구나? 흐하하! 동료가 늘어나는 건 즐거운 일이지.",
+      "UnitTalk_JPN": "おお、では新しい友達か？ふはは！仲間が増えるのは嬉しいことなのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "그런데, 왜 같이 놀지 않는 거냐?",
+      "UnitTalk_JPN": "しかし、どうして一緒に遊ばないのだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GIRL"
+      ],
+      "UnitTalk_KOR": "그게… 우리는 같이 놀고 싶은데-",
+      "UnitTalk_JPN": "それは…あたしたちは一緒に遊びたいんだけど──",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "엄청 쑥쓰러움이 많은 앤가봐. ",
+      "UnitTalk_JPN": "すごく恥ずかしがり屋さんなのかな。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_BOY"
+      ],
+      "UnitTalk_KOR": "같이 놀자고 말해봤는데, 자기는 혼자 노는게 편하대!",
+      "UnitTalk_JPN": "一緒に遊ぼうって言ったんだけど、一人で遊ぶ方が気が楽なんだって！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "으음…? 그러냐?",
+      "UnitTalk_JPN": "うむ…？そうなのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "분명, 같이 노는 게 훨씬 재미있을 텐데…",
+      "UnitTalk_JPN": "一緒に遊んだ方がずっと楽しいだろうに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 138,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "같이 설득해보러 갈까?",
+          "JumpAnchorStringId_JPN": "一緒に説得しに行ってみる？",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "혼자가 편할 수도 있지 않나?",
+          "JumpAnchorStringId_JPN": "一人の方が楽なこともあるんじゃない？",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 38,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오오, 좋은 생각이다!",
+      "UnitTalk_JPN": "おお、よい考えだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "후후! 바로 가보자꾸나!",
+      "UnitTalk_JPN": "ふふ！さっそく行くのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "흐음… 좋은 생각이긴 하다만…",
+      "UnitTalk_JPN": "ふむ…よい考えではあるが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "인간 단장이여, 한 가지 수정할 점이 있다.",
+      "UnitTalk_JPN": "人間の団長よ、一つ修正すべき点があるぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "수정할 점이라니?",
+          "JumpAnchorStringId_JPN": "修正って？"
+        }
+      ]
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "이몸이 직접 설득하겠다!",
+      "UnitTalk_JPN": "わがはいが説得してみせるのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "흐하하! 그러니 잠자코 이몸만 따라와라!",
+      "UnitTalk_JPN": "ふはは！だから、黙ってわがはいについて来るのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으응? 아무것도 모르는구나, 단장은.",
+      "UnitTalk_JPN": "うむ？人間の団長は、何も分かっていないのだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "원래 소심한 인간 꼬마들은 마음에도 없는 말을 하기도 하는 법이다!",
+      "UnitTalk_JPN": "内気な人間の小童は、本心ではない言葉も口にするものだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "분명 녀석도 친구들을 사귀고 싶어할 걸?",
+      "UnitTalk_JPN": "きっとあの子も友達が欲しいはずだぞ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "흐하하! 그러니 잠자코 이몸만 따라와라!",
+      "UnitTalk_JPN": "ふはは！だから、黙ってわがはいについて来るのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "거기, 처음 보는 인간 꼬마여!",
+      "UnitTalk_JPN": "おい、初めて見る人間の小童よ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRL"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "으, 으응?",
+      "UnitTalk_JPN": "う、うん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…?! 히익! 머, 머리에 뿔이 달려 있어…?",
+      "UnitTalk_JPN": "…！？ひぃっ！あ、頭に角が生えてる…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "흐하하! 그래그래. 이몸의 자랑스럽고 위엄있는 뿔을 본 거구나?",
+      "UnitTalk_JPN": "ふはは！そうだそうだ。わがはいの誇り高き角を見たのだな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "용족의 뿔, 역시 멋있지? 그치?",
+      "UnitTalk_JPN": "竜族の角、やはりかっこいいであろう？ん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRL"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "용족이라는 거… 실제로 보는 거 처음이야… 신기해!",
+      "UnitTalk_JPN": "竜族って…実際に見たのは初めて…すごい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "음음! 용족인 이몸을 영접하다니, 길이 기억될 영광이라고 할 수 있지!",
+      "UnitTalk_JPN": "うむ！竜族であるわがはいに会えるなど、後世まで語り継げる栄光と言えるな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그건 그렇고, 왜 같이 어울려 놀지 않는 것이냐?",
+      "UnitTalk_JPN": "それはそうと、どうして一緒に遊ばないのだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "혼자보다는 같이 노는게 훨씬 재미있다구?",
+      "UnitTalk_JPN": "一人で遊ぶより、一緒に遊んだ方がずっと楽しいぞ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRL"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아… 그건… ",
+      "UnitTalk_JPN": "あ…それは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRL"
+      ],
+      "UnitTalk_KOR": "그냥… 나랑 놀면 다른 애들이 재미없어하지 않을까…?",
+      "UnitTalk_JPN": "えっと…わたしと遊ぶの、みんなつまらないんじゃないかな…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRL"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "나… 소심하고… 재미없어서 인기 없으니까…",
+      "UnitTalk_JPN": "わたし…内気で…おもしろくないし、人気もないし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRL"
+      ],
+      "UnitTalk_KOR": "괜히 방해하고 싶지 않고…",
+      "UnitTalk_JPN": "みんなの邪魔はしたくないし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "으음? 괜한 걱정을 하는구나?",
+      "UnitTalk_JPN": "うむ？余計な心配をしているようなのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "나로서는 이해할 수가 없는 고민이다만…",
+      "UnitTalk_JPN": "わがはいには理解できぬ悩みではあるが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐, 인간들이란 원래 쓸데없는 고민을 하곤 하니까!",
+      "UnitTalk_JPN": "まあ人間という生き物は、くだらん悩みを抱えるものだからな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "흠… 좋은 생각이 떠올랐다!",
+      "UnitTalk_JPN": "ふむ…よいことを思いついたぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "인간 꼬마여, 이몸이 직접 네게 비장의 무기를 선물하마!",
+      "UnitTalk_JPN": "人間の小童よ、わがはいがとっておきの武器をプレゼントしてやろう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRL"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "<color=#F7BE45>비장의 무기</color>…? 그게 뭔데?",
+      "UnitTalk_JPN": "<color=#F7BE45>とっておきの武器</color>って…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스칼렛이 저렇게 자신만만한 걸 보니 어쩐지 불안한걸…",
+      "UnitTalk_JPN": "スカーレットがそんなに自信満々だと、なんだか不安になるな…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 144,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "자, 이몸이 특별히 널 위해 준비한 <color=#F7BE45>작품</color>이다!",
+      "UnitTalk_JPN": "さあ、わがはいがお主のために用意した<color=#F7BE45>作品</color>なのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스칼렛이 자랑스럽게 펼쳐 든 것은… ",
+      "UnitTalk_JPN": "スカーレットが誇らしげに広げたのは…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "이건, <color=#F7BE45>인기가 많아지는 옷</color>이다!",
+      "UnitTalk_JPN": "これは、<color=#F7BE45>人気者になれる服</color>だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "<color=#F7BE45>인기가 많아지는 옷</color>…?",
+      "UnitTalk_JPN": "<color=#F7BE45>人気者になれる服</color>…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRL"
+      ],
+      "UnitTalk_KOR": "그런데 이거, 언니가 입고 있는 옷이랑 같은 거 아니야?",
+      "UnitTalk_JPN": "でもこれ、お姉ちゃんが着てる服と同じじゃない？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "소녀의 키에 맞게 작은 사이즈로 만들어진… 바니걸 복장이었다. ",
+      "UnitTalk_JPN": "少女の背丈に合わせて小さく作られた…バニーガールの衣装だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRL"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "귀, 귀여워…! 토끼 머리도 달렸어! ",
+      "UnitTalk_JPN": "か、かわいい…！ウサギの耳もついてる！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRL"
+      ],
+      "UnitTalk_KOR": "나, 이거 지금 입어봐도 돼? ",
+      "UnitTalk_JPN": "これ、今着てみてもいい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "후후! 마음에 들었나보구나? 얼마든지 입어봐도 좋다!",
+      "UnitTalk_JPN": "ふふ！気に入ったようだな？いくらでも着るのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "머, 멈춰…!",
+          "JumpAnchorStringId_JPN": "ま、待った…！"
+        }
+      ]
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "으응? 뭐냐 단장?",
+      "UnitTalk_JPN": "うぅん？どうしたのだ、団長よ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "뭔가 문제라도 있는 거냐?",
+      "UnitTalk_JPN": "何か問題でもあるのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "단장, 이 옷 좋아하지 않았어?",
+      "UnitTalk_JPN": "団長も、この服が好きではないか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "좋아하는 건 맞지만…!!!",
+      "UnitTalk_JPN": "好きではあるけど…！！！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이건 뭔가… 윤리적으로 단단히 잘못된 기분이…!",
+      "UnitTalk_JPN": "これは何か…倫理的に間違っている気が…！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…?!?!?",
+      "UnitTalk_JPN": "…！？！？！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "자, 잠깐…!!!",
+      "UnitTalk_JPN": "ちょ、ちょっと…！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav"
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS2",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "으응? 뭐냐 인간? 나한테 뭔가 볼 일이라도?",
+      "UnitTalk_JPN": "うむ？人間よ、わがはいに用があるのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRL"
+      ],
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "엄마…?",
+      "UnitTalk_JPN": "ママ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRLSMOM"
+      ],
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "지, 지, 지금 이게 뭐하는 짓이야?",
+      "UnitTalk_JPN": "い、い、一体、何をしてるのよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "무슨 짓이냐니… 새로 친구가 된 꼬마에게 선물을 주고 있다만?",
+      "UnitTalk_JPN": "何と言われてもだな…新しく友達になった小童に、プレゼントをあげただけではないか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_92.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE"
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRLSMOM"
+      ],
+      "UnitTalk_KOR": "이, 이런 걸… 지금 우리 애한테 입으라고 시킨 거야?",
+      "UnitTalk_JPN": "こ、こんなものを…今、うちの子に着せようとしてたの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "꼬마 녀석을 위해 만든 옷이니까 입어보라고 권하긴 했지…?",
+      "UnitTalk_JPN": "小童のために作った服だから、着てみるように勧めはしたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그러면 안되는 거냐?",
+      "UnitTalk_JPN": "何がダメだというのだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRLSMOM"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "당연히 안되지…!!! ",
+      "UnitTalk_JPN": "ダメに決まってるでしょう…！！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "왜 안 되는 거냐…?",
+      "UnitTalk_JPN": "どうしてダメなのだ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "인간들은 가끔 보면 요상한 규칙들 때문에 화를 낸단 말이지.",
+      "UnitTalk_JPN": "人間というものは時々、妙なルールで怒るのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "내가 선물한 건 단순한 옷이 아니라 <color=#F7BE45>작품</color>이다!",
+      "UnitTalk_JPN": "わがはいがプレゼントしたのは、ただの服ではなく<color=#F7BE45>作品</color>だ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "조금만 자세히 들여다보면 이 옷 한 벌에 얼마나 많은 정성이 들어갔는지 알 수 있다!",
+      "UnitTalk_JPN": "よく見てみれば、この一着にどれほどの情熱が込められているのか分かるはずなのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "자, 여기를 잘 보도록 해라. 이 아름다운 박음질을 보거라. 장인의 솜씨지?",
+      "UnitTalk_JPN": "ほら、この美しい縫い目を見よ。職人技であろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRLSMOM"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…확실히. 깔끔하긴 한데…!",
+      "UnitTalk_JPN": "…確かに綺麗だけど…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그리고 이쪽 안쪽에는… 최고급 실크 안감을 덧대어 놨지!",
+      "UnitTalk_JPN": "この内側には…最高級シルクの裏地を仕込んでおいた！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "내가 입고 있는 옷에도 적용된 기법이다! 민감한 피부가 하나도 쓸리지 않지!",
+      "UnitTalk_JPN": "わがはいの服にも使われている技法なのだ！敏感な肌も、全く擦れないのだぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이뿐만이 아니다! 자, 보거라. 이쪽 여백에는 한땀한땀 정성스럽게 자수를 놓아서-",
+      "UnitTalk_JPN": "それだけではない！さあ、見るのだ。この余白には、一針一針丁寧に刺繍を施して──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_LONER_GIRLSMOM"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그러니까 그게 문제가 아니래도-!",
+      "UnitTalk_JPN": "だから、そういう問題ではないんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 139,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 140,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 124,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "손목에 이건 뭐냐 인간! 풀어줘라!",
+      "UnitTalk_JPN": "人間よ、手首のこれは何だ！はやく解くのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "난 아무 잘못도 하지 않았단 말이다!",
+      "UnitTalk_JPN": "わがはいは、何も悪いことなどしていないのだぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "자아자아- 자세한 이야기는 서에 가서 하시면 되고…",
+      "UnitTalk_JPN": "さぁさぁ、詳しい話は署でお話しま…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav"
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "스으칼레에엣-!",
+      "UnitTalk_JPN": "スカーレット！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오오…! 클레어! 구해주러 왔구나!",
+      "UnitTalk_JPN": "おお…！クレア！助けに来てくれたのか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "이 녀석이 아무 잘못도 없는 날 못살게 군-",
+      "UnitTalk_JPN": "わがはいは何も悪いことをしていないのに、こやつが──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_HIT.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "으갸읏?!",
+      "UnitTalk_JPN": "んぎゃっ！？",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "왜, 왜 날 때려?!",
+      "UnitTalk_JPN": "ど、どうしてわがはいを叩くのだ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "죄송합니다. 죄송합니다. 다시는 이 도마뱀이 사고치지 못하게 단단히 교육하겠습니다!",
+      "UnitTalk_JPN": "申し訳ありません。申し訳ありません。二度とこのトカゲが問題を起こさないよう、しっかりと教育しなおします！",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN"
+    },
+    {
+      "Uid": 134,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 135,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "…ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SCISSORS_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

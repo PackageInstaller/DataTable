@@ -1,0 +1,3859 @@
+﻿{
+    "$schema": "../../../../../../DataSchema/SkillCondition.jsonc",
+    "_Version": 1, 
+    "Data": [
+//========================조건 데이터==================================================
+    // 0000 : 테스트용
+    // 1000 : OnMyAttack
+    // 2000 : AfterMyAttack
+    // 3000 : OnMyNonAttack
+    // 4000 : AfterMyNonAttack
+    // 5000 : MyEffectiveHit
+    // 5500 : myEffectiveDamageStart
+    // 6000 : AllyEffectiveHit
+    // 7000 : OnEnemyAttack
+    // 7200 : AfterEnemyAttack
+    // 7400 : OnEnemyNonAttack
+    // 7600 : AfterEnemyNonAttack
+    // 7800 : OnMyAction
+    // 8000 : AfterMyAction
+    // 8200 : OnAllyAction
+    // 8400 : AfterAllyAction
+    // 8600 : OnEnemyAction
+    // 8800 : AfterEnemyAction
+    // 9000 : OnMyTurnStart
+    // 9200 : OnAllyTurnStart
+    // 9400 : OnEnemyTurnStart
+    // 9600 : MyEffectiveDie
+    // 9800 : AllyEffectiveDie
+    // 10000 : MyAttackHit
+    // 10200 : OnAllyAttack
+    // 10400 : AfterAllyAttack
+//========================공용 버프 및 디버프 데이터====================================
+    // 31000 : OnMyAttack
+    // 32000 : AfterMyAttack
+    // 33000 : OnMyNonAttack
+    // 34000 : AfterMyNonAttack
+    // 35000 : MyEffectiveHit
+    // 35500 : myEffectiveDamageStart
+    // 36000 : AllyEffectiveHit
+    // 37000 : OnEnemyAttack
+    // 37200 : AfterEnemyAttack
+    // 37400 : OnEnemyNonAttack
+    // 37600 : AfterEnemyNonAttack
+    // 37800 : OnMyAction
+    // 38000 : AfterMyAction
+    // 38200 : OnAllyAction
+    // 38400 : AfterAllyAction
+    // 38600 : OnEnemyAction
+    // 38800 : AfterEnemyAction
+    // 39000 : OnMyTurnStart
+    // 39200 : OnAllyTurnStart
+    // 39400 : OnEnemyTurnStart
+    // 39600 : MyEffectiveDie
+    // 39800 : AllyEffectiveDie
+    // 40000 : MyAttackHit
+    // 40200 : OnAllyAttack
+    // 40400 : AfterAllyAttack
+//========================고유 버프 및 디버프 데이터====================================
+    // 51000 : OnMyAttack
+    // 52000 : AfterMyAttack
+    // 53000 : OnMyNonAttack
+    // 54000 : AfterMyNonAttack
+    // 55000 : MyEffectiveHit
+    // 55500 : myEffectiveDamageStart
+    // 56000 : AllyEffectiveHit
+    // 57000 : OnEnemyAttack
+    // 57200 : AfterEnemyAttack
+    // 57400 : OnEnemyNonAttack
+    // 57600 : AfterEnemyNonAttack
+    // 57800 : OnMyAction
+    // 58000 : AfterMyAction
+    // 58200 : OnAllyAction
+    // 58400 : AfterAllyAction
+    // 58600 : OnEnemyAction
+    // 58800 : AfterEnemyAction
+    // 59000 : OnMyTurnStart
+    // 59200 : OnAllyTurnStart
+    // 59400 : OnEnemyTurnStart
+    // 59600 : MyEffectiveDie
+    // 59800 : AllyEffectiveDie
+    // 60000 : MyAttackHit
+    // 60200 : OnAllyAttack
+    // 60400 : AfterAllyAttack
+//====================================================================================
+
+//No.00--------------------------테스트용 조건 판단-------------------------------------
+//-------------------------------테스트용 조건 판단-------------------------------------
+        {
+            "Id": 1,
+             // 내가 타격 시
+            "MyAttackHit": {     
+                "DamageResultType": ["NormalHit"] //노말 히트 시            
+            }
+        },
+        {
+            "Id": 2,
+             // 내가 타격 시
+            "MyAttackHit": {     
+                "DamageResultType": ["CriticalHit"] //치명타 시
+            }
+        },
+        {
+            "Id": 3,
+             // 내가 타격 시
+            "MyAttackHit": {     
+                "DamageResultType": ["Evade"] //회피 시
+            }
+        },
+        {
+            "Id": 4,
+             // 내가 타격 시
+            "MyAttackHit": {     
+                "DamageResultType": ["NormalHit","Evade"] //비치명타 시
+            }
+        },
+        {
+            "Id": 5,
+             // 내가 타격 시
+            "MyAttackHit": {     
+                "DamageResultType": ["NormalHit","CriticalHit"] //명중 시
+            }
+        },
+        {
+            "Id": 6,
+             // 자신이 공격 후
+            "AfterMyAttack": {     
+                "DamageResultType": ["NormalHit"] //노말 히트 시
+            }
+        },
+        {
+            "Id": 7,
+             // 자신이 공격 후
+            "AfterMyAttack": {     
+                "DamageResultType": ["Evade"] //회피 시
+            }
+        },
+        {
+            "Id": 8,
+             // 자신이 피격 시
+            "MyEffectiveHit": {     
+                "DamageResultType": ["NormalHit"] //노말 히트 시
+            }
+        },
+        {
+            "Id": 9,
+             // 자신이 피격 시
+            "MyEffectiveHit": {     
+                "DamageResultType": ["NormalHit","Evade"] //비치명타 시
+            }
+        },
+        {
+            "Id": 10,
+             // 아군이 피격 시
+            "AllyEffectiveHit": {     
+                "DamageResultType": ["CriticalHit"] //치명타 시
+            }
+        },
+        {
+            "Id": 11,
+             // 아군이 피격 시
+            "AllyEffectiveHit": {     
+                "DamageResultType": ["NormalHit","Evade"] //비치명타 시
+            }
+        },
+        {
+            "Id": 15,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "TargetHpRateOverThan": 5000 // 타겟의 체력이 50% 이상인 경우
+            }
+        },
+        {
+            "Id": 16,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "TargetHpRateOverThan": 5000 // 타겟의 체력이 50% 이상인 경우
+            }
+        },
+        {
+            "Id": 36,
+             // 내가 사망한 경우
+            "MyEffectiveDie": {
+                
+            }
+        },
+        {
+            "Id": 37,
+             // 아군이 사망한 경우
+            "AllyEffectiveDie": {
+
+            }
+        },
+        {
+            "Id": 38,
+             // 아군이 사망한 경우
+            "AllyEffectiveDie": {
+                "IncludeSelf": true // 내가 사망한 경우도 포함
+            }
+        },
+        {
+            "Id": 50,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "TargetBuffStrId": ["BI_BURN","BI_BLEEDING"] // 적이 화상 상태거나 출혈 상태일 경우
+            }
+        },
+        {
+            "Id": 51,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_BURN","BI_BLEEDING"] // 내가 화상 상태거나 출혈 상태일 경우
+            }
+        },
+        {
+            "Id": 52,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "NotSelfBuffStrId": ["BI_BURN","BI_BLEEDING"] // 내가 화상 상태거나 출혈 상태가 아닐 경우
+            }
+        },
+        {
+            "Id": 53,
+            // 피격 전에
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"] // 자신이 보호막 상태일 경우
+            }
+        },
+        {
+            "Id": 54,
+            // 아군 타격 시
+            "OnAllyAttack": {
+            }
+        },
+        {
+            "Id": 55,
+            // 아군 타격 후
+            "AfterAllyAttack": {
+                "IncludeSelf": true,
+                "EliminateEnemy": true
+            }
+        },
+        {
+            "Id": 56,
+            // 아군 행동 시
+            "OnAllyAction":{                
+            }            
+        },
+        {
+            "Id": 57,
+            // 아군 행동 후
+            "AfterAllyAction": {
+            }
+        },
+        {
+            "Id": 58,
+            //적 공격 시
+            "OnEnemyAttack":{                
+            }            
+        },
+        {
+            "Id": 59,
+            // 적 공격 후
+            "AfterEnemyAttack": {
+            }
+        },
+        {
+            "Id": 60,
+            // 적 행동 시
+            "OnEnemyAction":{                
+            }            
+        },
+        {
+            "Id": 61,
+            // 적 행동 후
+            "AfterEnemyAction": {
+            }
+        },
+        {
+            "Id": 62,
+            // 적 비타격 스킬 사용 시
+            "OnEnemyNonAttack":{                
+            }            
+        },
+        {
+            "Id": 63,
+            // 적 비타격 스킬 사용 후
+            "AfterEnemyNonAttack": {
+            }
+        },
+        {
+            "Id": 64,
+            // 아군이 타격 스킬 사용 후
+            "AfterAllyAttack": {
+                "NotCasterAdjustType": "NUAT_STAR" //시전자가 별 속성이 아닐 경우
+            }
+        },
+        {
+            "Id": 65,
+            // 아군이 타격 스킬 사용 시
+            "OnAllyAttack": {
+                "NotCasterAdjustType": "NUAT_ORDER" //시전자가 질서 속성이 아닐 경우
+            }
+        },
+        {
+            "Id": 66,
+            //자신이 타격 시
+            "MyAttackHit": {
+                "DamageResultType": ["Evade","NormalHit"]       // 비치명타시
+            }
+        },
+        {
+            "Id": 67,
+            // 아군이 타격 후
+            "AfterAllyAttack": {
+                "IncludeSelf": true,                      // 자신 포함
+                "CasterAdjustType": "NUAT_MOON",          // 시전자(아군)가 달 속성일 때
+                "DamageResultType": ["CriticalHit","NormalHit"]       // 명중 시
+            }
+        },
+        {
+            "Id": 68,
+            // 자신이 타격 후
+            "AfterMyAttack": {
+                "ExistAllyLeader": true,                                    
+                "SelfBuffStrId": ["BI_ATTACK_INCREASE"],        //공격력 증가 상태일 경우
+                "DamageResultType": ["Evade","NormalHit"]       // 비치명타시
+            }
+        },
+        {
+            "Id": 70,
+             // 자신이 피격 시
+            "MyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK",     
+                "DamageResultType": ["NormalHit","Evade"] //비치명타 시
+            }
+        },
+//No.01--------------------------스킬 사용 시 조건-------------------------------------
+//-------------------------------스킬 사용 시 조건-------------------------------------
+        {
+            "Id": 1000,
+            // 내가 일반기 사용 시
+            "OnMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 1001,
+            // 내가 특수기 사용 시
+            "OnMyAttack": {
+                "SkillIndex": "NSI_SKILL_2_SPECIAL" // 특수 공격
+            }
+        },
+        {
+            "Id": 1002,
+            // 내가 궁극기 사용 시
+            "OnMyAttack": {
+                "SkillIndex": "NSI_SKILL_3_HYPER" // 궁극기
+            }
+        },
+        {
+            "Id": 1003,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "SelfPositiveBuff": true //내가 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 1004,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "SelfNegativeBuff": true //내가 약화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 1005,
+            // 내가 일반기 사용 시
+            "OnMyAttack": {
+                "SelfPositiveBuff": true, //내가 강화 효과를 가지고 있을 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 1006,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "TargetHpRateOverThan": 8000 // 타겟의 체력이 80% 이상인 경우
+            }
+        },
+        {
+            "Id": 1007,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "TargetNegativeBuff": true //적이 약화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 1008,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "TargetPositiveBuff": true //적이 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 1009,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "TargetNegativeBuff": true, //적이 약화 효과를 가지고 있을 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 1010,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "NotSelfNegativeBuff": true // 내가 약화 효과 상태가 아니라면
+            }
+        },
+        {
+            "Id": 1011,
+            // 내가 공격 시
+            "OnMyAttack": {             
+                "NotTargetAdjustType": "NUAT_MOON" // 대상이 달 속성이 아닐 경우
+            }
+        },
+        {
+            "Id": 1100,
+            // 내가 일반기 사용 시
+            "OnMyAttack": {                   // 만일 스킬의 타겟 대상이 광역일 경우 타겟을 참조하는 조건은 동작하지 않음
+                "TargetHpRateLessThan": 2500, // 타겟의 체력이 25% 이하인 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 1101,
+            // 내가 일반 스킬을 사용할 때
+            "OnMyAttack": {                   // 만일 스킬의 타겟 대상이 광역일 경우 타겟을 참조하는 조건은 동작하지 않음
+                "TargetHpRateLessThan": 5000, // 타겟의 체력이 50% 이하인 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 1102,
+            // 내가 일반기 사용 시
+            "OnMyAttack": {                   // 만일 스킬의 타겟 대상이 광역일 경우 타겟을 참조하는 조건은 동작하지 않음
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "TargetNegativeBuff": true //적이 약화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 1109,
+            // 내가 공격 시
+            "OnMyAttack": {                   // 만일 스킬의 타겟 대상이 광역일 경우 타겟을 참조하는 조건은 동작하지 않음
+                "TargetHpRateLessThan": 5000 // 타겟의 체력이 50% 이하인 경우
+            }
+        },
+        {
+            "Id": 1110,
+            // 내가 공격 시
+            "OnMyAttack": {                   // 만일 스킬의 타겟 대상이 광역일 경우 타겟을 참조하는 조건은 동작하지 않음
+                "TargetHpRateOverThan": 5000 // 타겟의 체력이 50% 이상인 경우
+            }
+        },
+        {
+            "Id": 1111,
+            // 내가 공격 시
+            "OnMyAttack": {                   // 만일 스킬의 타겟 대상이 광역일 경우 타겟을 참조하는 조건은 동작하지 않음
+                "TargetHpRateOverThan": 10000 // 타겟의 체력이 100% 이상인 경우
+            }
+        },
+        {
+            "Id": 1112,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "IsNotTargetSuperArmor": true // 대상의 강인도가 없을 때
+            }
+        },
+        {
+            "Id": 1113,
+            // 내가 궁극기 사용 시
+            "OnMyAttack": {
+                "SkillIndex": "NSI_SKILL_3_HYPER", // 궁극기
+                "TargetPositiveBuff": true //적이 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 1114,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "SelfNegativeBuff": true, // 내가 약화 효과를 지니고 있을 때
+                "BuffCountLess": 1 // 그 효과가 1개 이하일 때
+            }
+        },
+        {
+            "Id": 1115,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "SkillIndex": "NSI_SKILL_3_HYPER", // 궁극기
+                "SelfPositiveBuff": true //내가 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 1116,
+            // 내가 공격 시
+            "OnMyAttack": {                   // 만일 스킬의 타겟 대상이 광역일 경우 타겟을 참조하는 조건은 동작하지 않음
+                "TargetHpRateOverThan": 7500 // 타겟의 체력이 75% 이상인 경우
+            }
+        },
+        {
+            "Id": 1117,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "SelfPositiveBuff": true, // 내가 강화 효과를 지니고 있을 때
+                "BuffCountOver": 4 // 그 효과가 4개 이상일 때
+            }
+        },
+        {
+            "Id": 1118,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "NotTargetPositiveBuff": true //적이 강화 효과를 가지고 있지 않을 경우
+            }
+        },
+        {
+            "Id": 1119,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "TargetHpRateOverThan": 5000 // 타겟의 체력이 50% 이상인 경우
+            }
+        },
+        {
+            "Id": 1120,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "TargetBuffStrId": ["BI_BURN"], // 적이 화상 상태일 경우
+                "RateDamageUp": true // 해당 기능이 부착되면 전체 공격시 피해량 증가 효과를 개별적으로 적용합니다.
+            }
+        },
+        {
+            "Id": 1121,
+            // 내가 공격 시
+            "OnMyAttack": {             
+                "NotTargetAdjustType": "NUAT_CHAOS" // 대상이 공허 속성이 아닐 경우
+            }
+        },
+        {
+            "Id": 1122,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "IsNotTargetSuperArmor": true, // 대상의 강인도가 없을 때
+                "RateDamageUp": true // 해당 기능이 부착되면 전체 공격시 피해량 증가 효과를 개별적으로 적용합니다.
+            }
+        },
+        {
+            "Id": 1123,
+            // 내가 공격 시
+            "OnMyAttack": {             
+                "TargetHpRateLessThan": 1500 // 타겟의 체력이 15% 이하인 경우
+            }
+        },
+        {
+            "Id": 1124,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "SkillIndex": "NSI_SKILL_3_HYPER", // 궁극기
+                "SelfNegativeBuff": true, // 내가 약화 효과를 지니고 있을 때
+            }
+        },
+        {
+            "Id": 1125,
+            // 내가 일반기 사용 후
+            "OnMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "SelfPositiveBuff": true, // 내가 강화 효과를 지니고 있을 때
+                "BuffCountOver": 3 // 그 효과가 3개 이상일 때
+            }
+        },
+        {
+            "Id": 1126,
+            // 내가 공격 시
+            "OnMyAttack": {             
+                "TargetHpRateLessThan": 8000 // 타겟의 체력이 80% 이하인 경우
+            }
+        },
+        {
+            "Id": 1127,
+            // 내가 공격 시
+            "OnMyAttack": {             
+                "SelfBuffStrId": ["BI_HIDE"] // 자신이 은신 상태일 경우
+            }
+        },
+        {
+            "Id": 1128,
+            // 내가 공격 시
+            "OnMyAttack": {             
+                "NotSelfBuffStrId": ["BI_HIDE"] // 자신이 은신 상태가 아닐 경우
+            }
+        },
+        {
+            "Id": 1129,
+            // 내가 공격 시
+            "OnMyAttack": {                
+                "TargetAdjustType": "NUAT_SUN" // 대상이 별 속성인 경우
+            }
+        },
+        {
+            "Id": 1130,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "TargetBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"], // 적이 보호막 상태일 경우
+                "RateDamageUp": true // 해당 기능이 부착되면 전체 공격시 피해량 증가 효과를 개별적으로 적용합니다.
+            }
+        },
+        {
+            "Id": 1131,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "NotTargetPositiveBuff": true, //적이 강화 효과를 가지고 있지 않을 경우
+                "RateDamageUp": true // 해당 기능이 부착되면 전체 공격시 피해량 증가 효과를 개별적으로 적용합니다.
+            }
+        },
+        {
+            "Id": 1132,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "TargetPositiveBuff": true //타겟이 강화 효과 상태일 경우
+            }
+        },
+        {
+            "Id": 1133,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "SkillIndex": "NSI_SKILL_2_SPECIAL", // 특수 공격
+                "TargetPositiveBuff": true //타겟이 강화 효과 상태일 경우
+            }
+        },
+        {
+            "Id": 1134,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "SelfPositiveBuff": true, // 내가 강화 효과를 지니고 있을 때
+                "BuffCountOver": 1 // 그 효과가 1개 이상일 때
+            }
+        },
+        {
+            "Id": 1135,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "SelfPositiveBuff": true, // 내가 강화 효과를 지니고 있을 때
+                "BuffCountOver": 2 // 그 효과가 2개 이상일 때
+            }
+        },
+        {
+            "Id": 1136,
+            // 내가 공격 시
+            "OnMyAttack": {
+                "SelfPositiveBuff": true, // 내가 강화 효과를 지니고 있을 때
+                "BuffCountOver": 3 // 그 효과가 3개 이상일 때
+            }
+        },
+        {
+            "Id": 1137,
+            // 내가 일반기 사용 시
+            "OnMyAttack": {                   // 만일 스킬의 타겟 대상이 광역일 경우 타겟을 참조하는 조건은 동작하지 않음
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "TargetNegativeBuff": true //적이 약화 효과를 가지고 있을 경우 
+            }
+        },
+        {
+            "Id": 1138,
+            // 내가 공격 시
+            "OnMyAttack": {                 // 만일 스킬의 타겟 대상이 광역일 경우 타겟을 참조하는 조건은 동작하지 않음
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "IsNotTargetSuperArmor": true // 대상의 강인도가 없을 때
+            }
+        },
+//No.02--------------------------스킬 사용 후 조건-------------------------------------
+//-------------------------------스킬 사용 후 조건-------------------------------------
+        {
+            "Id": 2000,
+            // 내가 일반기 사용 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 2001,
+            // 내가 특수기 사용 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_2_SPECIAL" // 특수 공격
+            }
+        },
+        {
+            "Id": 2002,
+            // 내가 궁극기 사용 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_3_HYPER" // 궁극기
+            }
+        },
+        {
+            "Id": 2003,
+            // 내가 공격 후 적 처치
+            "AfterMyAttack": {
+                "EliminateEnemy": true  // 적을 한 명이라도 처치 시
+            }
+        },
+        {
+            "Id": 2004,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "SelfPositiveBuff": true //내가 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 2005,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "SelfNegativeBuff": true //내가 약화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 2006,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "TargetPositiveBuff": true //적이 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 2007,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "TargetNegativeBuff": true //적이 약화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 2008,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "NotTargetPositiveBuff": true //적이 강화 효과를 가지고 있지 않을 경우
+            }
+        },
+        {
+            "Id": 2009,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "NotTargetNegativeBuff": true //적이 약화 효과를 가지고 있지 않을 경우
+            }
+        },
+        {
+            "Id": 2010,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "TargetBuffStrId": ["BI_POISON"] // 대상이 중독 상태일 경우
+            }
+        },
+        {
+            "Id": 2011,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "TargetHpRateOverThan": 5000 // 타겟의 체력이 50% 이상인 경우
+            }
+        },
+        {
+            "Id": 2012,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "NotSelfPositiveBuff": true //내가 강화 효과를 가지고 있지 않을 경우
+            }
+        },
+        {
+            "Id": 2013,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "TargetHpRateLessThan": 5000 // 타겟의 체력이 50% 이하인 경우
+            }
+        },
+        {
+            "Id": 2014,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "TargetHpRateOverThan": 8000 // 타겟의 체력이 80% 이상인 경우
+            }
+        },
+        {
+            "Id": 2015,
+            // 내가 공격 후 : 해당 기능은 기능요청이 필요.
+            "AfterMyAttack": {
+                "NotSelfNegativeBuff": true //내가 약화 효과를 n개 미만으로 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 2016,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "NotEliminateEnemy": true // 적을 한 명이라도 처치하지 않았을 경우(적 한 명 생존 시)
+            }
+        },
+        {
+            "Id": 2017,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "NotEliminateEnemyAll": true // 적을 모두 처치하지 않았을 경우(적 모두 생존 시)
+            }
+        },
+        {
+            "Id": 2018,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "NotSelfNegativeBuff": true // 약화 효과 상태가 아니라면
+            }
+        },
+        {
+            "Id": 2019,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "EliminateEnemyAll": true // 적을 모두 처치하였을 경우(남아 있는 적이 없을 때)
+            }
+        },
+        {
+            "Id": 2020,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "DamageResultType": ["CriticalHit"] //치명타 발생 시
+            }
+        },
+        {
+            "Id": 2021,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "DamageResultType": ["CriticalHit"], //치명타 발생 시
+                "NotEliminateEnemy": true // 한명이라도 적을 처치 하지 않았을 경우
+            }
+        },
+        {
+            "Id": 2100,
+            // 내가 일반기 사용 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 기본 공격
+                "TargetPositiveBuff": true //타겟이 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 2101,
+            // 내가 특수기 사용 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_2_SPECIAL", // 특수기
+                "TargetPositiveBuff": true //타겟이 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 2102,
+            // 내가 궁극기 사용 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_3_HYPER", // 궁극기
+                "TargetPositiveBuff": true //타겟이 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 2103,
+            // 내가 일반기 사용 후
+            "AfterMyAttack": {
+                "TargetHpRateLessThan": 5000, // 타겟의 체력이 50% 이하인 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "NotEliminateEnemy": true // 적을 처치하지 않았을 경우
+            }
+        },
+        {
+            "Id": 2104,
+            // 내가 일반기 사용 후
+            "AfterMyAttack": {
+                "TargetHpRateLessThan": 2500, // 타겟의 체력이 25% 이하인 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 2105,
+            // 내가 일반기 사용 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "TargetNegativeBuff": true //적이 약화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 2106,
+            // 내가 일반기 사용 후
+            "AfterMyAttack": {
+                "TargetHpRateLessThan": 5000, // 타겟의 체력이 50% 이하인 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 2107,
+            // 내가 공격 후, 기타 조건 없음
+            "AfterMyAttack": {
+            }
+        },
+        {
+            "Id": 2108,
+            // 내가 궁극기 사용 후 적 처치
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_3_HYPER", // 궁극기
+                "EliminateEnemy": true  // 적 처치
+            }
+        },
+        {
+            "Id": 2109,
+            // 내가 일반기 사용 후
+            "AfterMyAttack": {
+                "TargetHpRateOverThan": 7500, // 타겟의 체력이 75% 이상인 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 2110,
+            // 내가 일반기 사용 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "NotTargetNegativeBuff": true // 적이 약화 효과를 가지고 있지 않을 경우
+            }
+        },
+        {
+            "Id": 2111,
+            // 내가 일반기 사용 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "TargetSuperArmorBreak": true // 대상의 강인도가 파괴되었을 때
+            }
+        },
+        {
+            "Id": 2112,
+            // 내가 특수기 사용 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_2_SPECIAL", // 특수기 공격
+                "TargetNegativeBuff": true //적이 약화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 2113,
+            // 내가 일반기 사용 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "SelfPositiveBuff": true, // 내가 강화 효과를 지니고 있을 때
+                "BuffCountOver": 3 // 그 효과가 3개 이상일 때
+            }
+        },
+        {
+            "Id": 2114,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "NotTargetPositiveBuff": true //적이 강화 효과를 가지고 있지 않을 경우
+            }
+        },
+        {
+            "Id": 2115,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_2_SPECIAL", // 특수기 공격
+                "NotTargetPositiveBuff": true //적이 강화 효과를 가지고 있지 않을 경우
+            }
+        },
+        {
+            "Id": 2116,
+            // 내가 궁극기 사용 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_3_HYPER", // 궁극기
+                "TargetSuperArmorBreak": true // 대상의 강인도가 파괴되었을 때
+            }
+        },
+        {
+            "Id": 2117,
+            // 내가 특수기 사용 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_2_SPECIAL", // 특수기
+                "DamageResultType": ["CriticalHit"] // 치명타 발생 시
+            }
+        },
+        {
+            "Id": 2118,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "TargetHpRateOverThan": 5000 // 타겟의 체력이 50% 이상인 경우
+            }
+        },
+        {
+            "Id": 2119,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "TargetHpRateLessThan": 5000 // 타겟의 체력이 50% 이하인 경우
+            }
+        },
+        {
+            "Id": 2120,
+            // 내가 공격 시
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "DamageResultType": ["CriticalHit"] //치명타 발생 시
+            }
+        },
+        {
+            "Id": 2121,
+            // 내가 일반기 사용 후
+            "AfterMyAttack": {
+                "TargetHpRateLessThan": 2000, // 타겟의 체력이 20% 이하인 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "NotEliminateEnemy": true // 한명이라도 적을 처치 하지 않았을 경우
+            }
+        },
+        {
+            "Id": 2122,
+            // 내가 공격 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "SelfPositiveBuff": true //내가 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 2123,
+            // 내가 스킬 사용 후
+            "AfterMyAttack": {
+                "TargetSuperArmorBreak": true // 대상의 강인도가 파괴되었을 때
+            }
+        },
+        {
+            "Id": 2124,
+            // 내가 스킬 사용 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "SelfNegativeBuff": true, // 내가 약화 효과를 가지고 있을 경우
+                "BuffCountLess": 2 // 그 효과가 2개 이하일 경우
+            }
+        },
+        {
+            "Id": 2125,
+            // 내가 스킬 사용 후
+            "AfterMyAttack": {
+                "SelfPositiveBuff": true, // 내가 강화 효과를 가지고 있을 경우
+                "BuffCountOver": 1 // 그 효과가 1개 이상일 경우
+            }
+        },
+        {
+            "Id": 2126,
+            // 내가 스킬 사용 후
+            "AfterMyAttack": {
+                "SelfPositiveBuff": true, // 내가 강화 효과를 가지고 있을 경우
+                "BuffCountOver": 2 // 그 효과가 2개 이상일 경우
+            }
+        },
+        {
+            "Id": 2127,
+            // 내가 스킬 사용 후
+            "AfterMyAttack": {
+                "SelfPositiveBuff": true, // 내가 강화 효과를 가지고 있을 경우
+                "BuffCountOver": 3 // 그 효과가 3개 이상일 경우
+            }
+        },
+        { 
+            "Id": 2128,
+            // 내가 스킬 사용 후
+            "AfterMyAttack": {
+                "SelfPositiveBuff": true, // 내가 강화 효과를 가지고 있을 경우
+                "BuffCountLess": 5 // 그 효과가 5개 이하일 경우
+            }
+        },
+//No.03--------------------------비타격 스킬 사용 시 조건-------------------------------------
+//-------------------------------비타격 스킬 사용 시 조건-------------------------------------
+        {
+            "Id": 3000,
+            // 내가 비타격 일반기 사용 시
+            "OnMyNonAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 3001,
+            // 내가 비타격 특수기 사용 시
+            "OnMyNonAttack": {
+                "SkillIndex": "NSI_SKILL_2_SPECIAL" // 특수 공격
+            }
+        },
+        {
+            "Id": 3002,
+            // 내가 비타격 궁극기 사용 시
+            "OnMyNonAttack": {
+                "SkillIndex": "NSI_SKILL_3_HYPER" // 궁극기
+            }
+        },
+//No.04--------------------------비타격 스킬 사용 후 조건-------------------------------------
+//-------------------------------비타격 스킬 사용 후 조건-------------------------------------
+        {
+            "Id": 4000,
+            // 내가 비타격 일반기 사용 후
+            "AfterMyNonAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 4001,
+            // 내가 비타격 특수기 사용 후
+            "AfterMyNonAttack": {
+                "SkillIndex": "NSI_SKILL_2_SPECIAL" // 특수 공격
+            }
+        },
+        {
+            "Id": 4002,
+            // 내가 비타격 궁극기 사용 후
+            "AfterMyNonAttack": {
+                "SkillIndex": "NSI_SKILL_3_HYPER" // 궁극기
+            }
+        },
+        {
+            "Id": 4003,
+            // 내가 비타격 스킬 사용 후
+            "AfterMyNonAttack": {                
+                "SelfPositiveBuff": true //내가 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 4004,
+            // 내가 비타격 스킬 사용 후
+            "AfterMyNonAttack": {                
+            }
+        },
+//No.05--------------------------내가 맞은 경우 조건-------------------------------------
+//-------------------------------내가 맞은 경우 조건-------------------------------------
+        {
+            "Id": 5000,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+            }
+        },
+        {
+            "Id": 5001,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillTargetType": "NSTT_ENEMY_ONE" // 얻어맞은 공격이 단일 타입일 때만
+            }
+        },
+        {
+            "Id": 5002,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillTargetType": "NSTT_ENEMY_ALL" // 얻어맞은 공격이 광역 타입일 때만
+            }
+        },
+        {
+            "Id": 5003,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "TargetPositiveBuff": true //내가 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 5004,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillTargetType": "NSTT_ENEMY_ALL", // 얻어맞은 공격이 광역 타입일 때만
+                "TargetPositiveBuff": true //내가 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 5005,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "EnemyNegativeBuff": true //적이 약화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 5006,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillTargetType": "NSTT_ENEMY_ONE", // 얻어맞은 공격이 단일 타입일 때만
+                "EnemyNegativeBuff": true //적이 약화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 5007,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "TargetSuperArmorBreak": true // 자신이 피격 후 강인도가 격파되었을 때만
+            }
+        },
+        {
+            "Id": 5008,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "ExistEnemySpecificBuff": ["BI_AGGRO"] // 적 누군가 도발 상태일 경우
+            }
+        },
+        {
+            "Id": 5009,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "NotTargetPositiveBuff": true //내가 강화 효과를 가지고 있지 않을 경우
+            }
+        },
+        {
+            "Id": 5010,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "NotEnemyNegativeBuff": true //적이 약화 효과를 가지고 있지 않은 경우
+            }
+        },
+        {
+            "Id": 5011,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 기본 공격
+            }
+        },
+        {
+            "Id": 5012,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_2_SPECIAL" // 특수기 공격
+            }
+        },
+        {
+            "Id": 5013,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_3_HYPER" // 궁극기 공격
+            }
+        },
+        {
+            "Id": 5014,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "EnemyPositiveBuff": true //적이 강화 효과 상태이면
+            }
+        },
+        {
+            "Id": 5015,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {          
+                "NotEnemyAdjustType": "NUAT_MOON" // 대상이 달 속성이 아닐 경우
+            }
+        },
+        {
+            "Id": 5016,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "NotEnemyPositiveBuff": true //적이 강화 효과 상태가 아니라면
+            }
+        },
+        {
+            "Id": 5017,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "EnemyPositiveBuff": true, //적이 강화 효과 상태라면
+                "BuffCountLess": 1 //그 효과가 1개 이하일 경우
+            }
+        },
+        {
+            "Id": 5018,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {             
+                "EnemyAdjustType": "NUAT_MOON" // 대상이 달 속성인 경우
+            }
+        },
+        {
+            "Id": 5019,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillTargetType": "NSTT_ENEMY_ALL", // 얻어맞은 공격이 광역 타입일 때만
+                "SelfBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"] // 자신이 보호막 상태일 경우
+            }
+        },
+        {
+            "Id": 5020,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "DamageResultType": ["Evade"] //회피 시
+            }
+        },
+        {
+            "Id": 5021,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "DamageResultType": ["CriticalHit"] //치명타 시
+            }
+        },
+        {
+            "Id": 5022,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 기본 공격
+                "EnemyNegativeBuff": true //적이 약화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 5023,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SelfNegativeBuff": true, //자신이 약화 효과를 가지고 있을 경우
+                "BuffCountLess": 2  // 그 개수가 2개 이하일 경우
+            }
+        },
+        {
+            "Id": 5024,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {             
+                "EnemyAdjustType": "NUAT_STAR" // 대상이 별 속성인 경우
+            }
+        },
+        {
+            "Id": 5025,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SelfNegativeBuff": true, //자신이 약화 효과를 가지고 있을 경우
+                "BuffCountOver": 1  // 그 개수가 1개 이상일 경우
+            }
+        },
+        {
+            "Id": 5026,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SelfNegativeBuff": true, //자신이 약화 효과를 가지고 있을 경우
+                "BuffCountOver": 2  // 그 개수가 2개 이상일 경우
+            }
+        },
+        {
+            "Id": 5027,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SelfNegativeBuff": true, //자신이 약화 효과를 가지고 있을 경우
+                "BuffCountOver": 3  // 그 개수가 3개 이상일 경우
+            }
+        },
+//No.06--------------------------아군이 맞은 경우 조건-------------------------------------
+//-------------------------------아군이 맞은 경우 조건-------------------------------------
+        {
+            "Id": 5500,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+            }
+        },        
+        {
+            "Id": 5501,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+                "EnemyNegativeBuff": true, //적이 약화 효과를 가지고 있을 경우
+                "BuffCountOver": 3 // 그 효과가 3개 이상일 때
+            }
+        },
+        {
+            "Id": 5502,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+                "EnemyPositiveBuff": true, //적이 강화 효과를 가지고 있을 경우
+                "BuffCountOver": 1 // 그 효과가 1개 이상일 때
+            }
+        },
+        {
+            "Id": 5503,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+                "EnemyPositiveBuff": true, //적이 강화 효과를 가지고 있을 경우
+                "BuffCountOver": 2 // 그 효과가 2개 이상일 때
+            }
+        },
+        {
+            "Id": 5504,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+                "EnemyPositiveBuff": true, //적이 강화 효과를 가지고 있을 경우
+                "BuffCountOver": 3 // 그 효과가 3개 이상일 때
+            }
+        },
+        {
+            "Id": 5505,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+                "SelfNegativeBuff": true //내가 약화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 5506,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+                "DamageResultType": ["CriticalHit"] //치명타 시
+            }
+        },
+        {
+            "Id": 5507,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 기본 공격
+            }
+        },
+        {
+            "Id": 5508,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+                "NotEnemyAdjustType": "NUAT_STAR" // 별속성 유닛이 아닐 경우
+            }
+        },
+        {
+            "Id": 5509,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+                "EnemyPositiveBuff": true, //적이 강화 효과를 가지고 있을 경우
+                "BuffCountLess": 1 // 그 효과가 1개 이하일 때
+            }
+        },
+        {
+            "Id": 5510,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"] // 자신이 보호막 상태일 경우
+            }
+        },
+        {
+            "Id": 5511,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+                "NotSelfBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1", "BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"] // 내가 보호막 상태가 아닌 경우
+            }
+        },
+        {
+            "Id": 5512,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+                "EnemyPositiveBuff": true //적이 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 5513,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+                "SkillTargetType": "NSTT_ENEMY_ALL" // 얻어맞은 공격이 광역 타입일 때만
+            }
+        },
+        {
+            "Id": 5514,
+            // 내가 맞기 전
+            "MyEffectiveDamageStart": {
+                "NotEnemyPositiveBuff": true //적이 강화 효과를 가지고 있지 않을 경우
+            }
+        },
+//No.06--------------------------아군이 맞은 경우 조건-------------------------------------
+//-------------------------------아군이 맞은 경우 조건-------------------------------------
+        {
+            "Id": 6000,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": false // 내가 맞는 경우는 제외
+            }
+        },
+        {
+            "Id": 6001,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": false, // 내가 맞는 경우는 제외
+                "SkillTargetType": "NSTT_ENEMY_ONE" // 얻어맞은 공격이 단일 타입일 때만
+            }
+        },
+        {
+            "Id": 6002,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": false, // 내가 맞는 경우는 제외
+                "SkillTargetType": "NSTT_ENEMY_ALL" // 얻어맞은 공격이 광역 타입일 때만
+            }
+        },
+        {
+            "Id": 6003,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": false, // 내가 맞는 경우는 제외
+                "TargetHpRateLessThan": 5000 // 타겟의 체력이 50% 이하인 경우
+            }
+        },
+        {
+            "Id": 6004,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": false, // 내가 맞는 경우는 제외
+                "SelfPositiveBuff": true //내가 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 6005,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 기본 공격
+                "NotSelfBuffStrId": []
+            }
+        },
+        {
+            "Id": 6006,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_2_SPECIAL" // 특수기 공격
+            }
+        },
+        {
+            "Id": 6007,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_3_HYPER" // 궁극기 공격
+            }
+        },
+//No.10--------------------------적이 비타격 스킬을 사용한 후 경우 조건-------------------------------------
+//-------------------------------적이 비타격 스킬을 사용한 후 경우 조건-------------------------------------
+        {
+            "Id": 7600,
+            // 적이 비타격 스킬을 사용한 후
+            "AfterEnemyNonAttack": {                
+            }
+        },
+//No.14--------------------------자신이 행동을 시작한 경우 조건-------------------------------------
+//-------------------------------자신이 행동을 시직한 경우 조건-------------------------------------
+        {
+            "Id": 7601,
+            // 자신이 스킬 사용 전
+            "OnMyAction": {                
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 기본기 공격
+            }
+        },
+        {
+            "Id": 7602,
+            // 자신이 스킬 사용 전
+            "OnMyAction": {                
+                "SkillIndex": "NSI_SKILL_2_SPECIAL" // 특수기 공격
+            }
+        },
+        {
+            "Id": 7603,
+            // 자신이 스킬 사용 전
+            "OnMyAction": {                
+                "SkillIndex": "NSI_SKILL_3_HYPER" // 특수기 공격
+            }
+        },
+        {
+            "Id": 7604,
+            // 자신이 스킬 사용 전
+            "OnMyAction": {                
+                "SkillIndex": "NSI_SKILL_3_HYPER" // 특수기 공격
+            }
+        },
+        {
+            "Id": 8000,
+            // 자신이 스킬 사용 후
+            "AfterMyAction": {      
+            }
+        },
+        {
+            "Id": 8001,
+            // 자신이 스킬 사용 후
+            "AfterMyAction": {      
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 기본기 공격
+            }
+        },
+        {
+            "Id": 8002,
+            // 자신이 스킬 사용 후
+            "AfterMyAction": {      
+                "SkillIndex": "NSI_SKILL_2_SPECIAL" // 특수기 공격
+            }
+        },
+        {
+            "Id": 8003,
+            // 자신이 스킬 사용 후
+            "AfterMyAction": {      
+                "SkillIndex": "NSI_SKILL_3_HYPER" // 궁극기 공격
+            }
+        },
+//No.18--------------------------아군이 행동을 시작한 경우 조건-------------------------------------
+//-------------------------------아군이 행동을 시직힌 경우 조건-------------------------------------
+        {
+            "Id": 8400,
+            // 아군이 스킬 사용 후
+            "AfterAllyAction": {
+            }
+        },
+        {
+            "Id": 8401,
+            // 아군이 스킬 사용 후
+            "AfterAllyAction": {
+                "IncludeSelf": false,
+                "EliminateEnemy": true
+            }
+        },
+        {
+            "Id": 8402,
+            // 아군이 스킬 사용 후
+            "AfterAllyAction": {
+                "IncludeSelf": false,
+                "TargetSuperArmorBreak": true // 강인도 격파 
+            }
+        },
+        {
+            "Id": 8403,
+            // 아군이 스킬 사용 후
+            "AfterAllyAction": {
+                "IncludeSelf": false,
+                "SkillIndex": "NSI_SKILL_3_HYPER" // 궁극기 공격
+            }
+        },
+        {
+            "Id": 8404,
+            // 아군이 스킬 사용 후
+            "AfterAllyAction": {
+                "IncludeSelf": false,
+                "SkillIndex": "NSI_SKILL_2_SPECIAL" // 특수기 공격
+            }
+        },
+//No.18--------------------------자신의 턴이 시작한 경우 조건-------------------------------------
+//-------------------------------자신의 턴이 시직힌 경우 조건-------------------------------------
+        {
+            "Id": 9000,
+            // 내가 턴 시작 시
+            "OnMyTurnStart": { //내가 턴 시작시
+                "NotSelfNegativeBuff": true // 내가 약화 효과 상태가 아니라면
+            }
+        },
+        {
+            "Id": 9001,
+            // 내가 턴 시작 시
+            "OnMyTurnStart": {
+                "SelfBuffStrId": ["BI_FALLEN_DUALSWORD_1"] // 자신이 공허 방패 버프 상태일 경우(황혼의 몰락자)
+            }
+        },
+        {
+            "Id": 9002,
+            // 내가 턴 시작 시
+            "OnMyTurnStart": { //내가 턴 시작시
+            "SelfPositiveBuff": true //내가 강화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 9003,
+            // 내가 턴 시작 시
+            "OnMyTurnStart": {
+                "SelfBuffStrId": ["BI_HIDE"] // 자신이 은신 상태일 경우
+            }
+        },
+        {
+            "Id": 9004,
+            // 내가 턴 시작 시
+            "OnMyTurnStart": {
+                "NotSelfBuffStrId": ["BI_EASTERN_SWORDMASTER_1"] // 자신이 청죽만검 상태가 아닐 경우
+            }
+        },
+        {
+            "Id": 9005,
+            // 내가 턴 시작 시
+            "OnMyTurnStart": { //내가 턴 시작시
+                "SelfNegativeBuff": true // 내가 약화 효과 상태라면
+            }
+        },
+        {
+            "Id": 9006,
+            // 내가 턴 시작 시
+            "OnMyTurnStart": { //내가 턴 시작시
+                "SelfNegativeBuff": true, // 내가 약화 효과 상태라면
+                "BuffCountOver": 2 // 그 효과가 2개 이상일 때
+            }
+        },
+        {
+            "Id": 9007,
+            // 내가 턴 시작 시
+            "OnMyTurnStart": { //내가 턴 시작시
+                "SelfNegativeBuff": true, // 내가 약화 효과 상태라면
+                "BuffCountOver": 3 // 그 효과가 2개 이상일 때
+            }
+        },
+        // {
+        //     "Id": 9008,
+        //     // 내가 턴 시작 시
+        //     "OnMyTurnStart": { //내가 턴 시작시
+        //         "SelfPositiveBuff": true, // 내가 강화 효과 상태라면
+        //         "BuffCountLess": 3 // 그 효과가 2개 이하일 때
+        //     }
+        // },
+//No.20--------------------------적 누군가 턴 시작 시의 경우 조건-------------------------------------
+//-------------------------------적 누군가 턴 시작 시의 경우 조건-------------------------------------
+        {
+            "Id": 9400,
+            // 적 누군가 턴 시작 시
+            "OnEnemyTurnStart": {
+            }
+        },
+        {
+            "Id": 9401,
+            // 적 누군가 턴 시작 시
+            "OnEnemyTurnStart": {
+                "NotSelfNegativeBuff": true  //내가 약화 효과 상태가 아니라면
+            }
+        },
+//No.21--------------------------자신이 사망한 경우 조건-------------------------------------
+//-------------------------------자신이 사망한 경우 조건-------------------------------------
+        {
+            "Id": 9600,
+            // 내가 사망한 경우
+            "MyEffectiveDie": {
+            }
+        },
+//No.22--------------------------아군이 사망한 경우 조건-------------------------------------
+//-------------------------------아군이 사망한 경우 조건-------------------------------------
+        {
+            "Id": 9800,
+             // 아군이 사망한 경우
+            "AllyEffectiveDie": {
+
+            }
+        },
+        {
+            "Id": 9801,
+             // 아군이 사망한 경우
+            "AllyEffectiveDie": {
+                "IncludeSelf": true // 내가 사망한 경우도 포함
+            }
+        },
+//No.23--------------------------자신이 타격(hit)한 경우 조건-------------------------------------
+//-------------------------------자신이 타격(hit)한 경우 조건-------------------------------------
+        {
+            "Id": 10000,
+            // 내가 타격 시
+            "MyAttackHit": {
+            }
+        },
+        {
+            "Id": 10001,
+            // 내가 타격 시
+            "MyAttackHit": {
+                "DamageResultType": ["CriticalHit"] //치명타 발생 시
+            }
+        },
+//No.24--------------------------아군이 타격 시 경우 조건-------------------------------------
+//-------------------------------아군이 타격 시 경우 조건-------------------------------------
+        {
+            "Id": 10200,
+            // 아군이 타격 시
+            "OnAllyAttack": {
+            }
+        },
+//No.25--------------------------아군이 타격 후 경우 조건-------------------------------------
+//-------------------------------아군이 타격 후 경우 조건-------------------------------------
+        {
+            "Id": 10400,
+            // 아군이 타격 후
+            "AfterAllyAttack": {
+            }
+        },
+        {
+            "Id": 10401,
+            // 아군이 타격 후
+            "AfterAllyAttack": {
+                "IncludeSelf": true,                      // 자신 포함
+                "CasterAdjustType": "NUAT_MOON",          // 시전자(아군)가 달 속성일 때
+                "DamageResultType": ["CriticalHit"]       // 치명타 발생 시
+            }
+        },
+        {
+            "Id": 10402,
+            // 아군이 타격 후
+            "AfterAllyAttack": {
+                "IncludeSelf": false,                      // 자신 미포함
+                "CasterAdjustType": "NUAT_SUN",          // 시전자(아군)가 태양 속성일 때
+                "SkillIndex": "NSI_SKILL_3_HYPER"       // 궁극기 사용                
+            }
+        },
+//No.31--------------------------공용 버프 조건 판단-------------------------------------
+//-------------------------------스킬 사용 시 버프 조건----------------------------------
+        {
+            "Id": 31000,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "TargetBuffStrId": ["BI_BURN"] // 적이 화상 상태일 경우
+            }
+        },
+        {
+            "Id": 31001,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "SelfBuffStrId": ["BI_HIDE"] // 자신이 은신 버프 상태일 경우
+            }
+        },
+        {
+            "Id": 31002,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "SelfBuffStrId": ["BI_SPEED_INCREASE"] // 자신이 속도 증가 버프 상태일 경우
+            }
+        },
+        {
+            "Id": 31003,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "TargetBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"] // 적이 보호막 상태일 경우
+            }
+        },
+        {
+            "Id": 31004,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "TargetBuffStrId": ["BI_BLEEDING"] // 적이 출혈 상태일 경우
+            }
+        },
+        {
+            "Id": 31005,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "TargetBuffStrId": ["BI_FREEZING"], // 적이 빙결 상태일 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 31006,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "TargetBuffStrId": ["BI_USURPER_CHAIR_1"], // 적이 찬탈의 흔적 상태일 경우
+                "RateDamageUp": true
+                // "EnemyNegativeBuff": true, //적이 약화 효과를 가지고 있을 경우
+            }
+        },
+        {
+            "Id": 31007,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "SelfBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"] // 자신이 보호막 상태일 경우
+            }
+        },
+        {
+            "Id": 31008,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "TargetBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"], // 적이 보호막 상태일 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 31009,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "TargetBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"], // 적이 보호막 상태일 경우
+                "SkillIndex": "NSI_SKILL_3_HYPER" // 궁극기
+            }
+        },
+        {
+            "Id": 31010,
+            // 자신이 공격 시
+            "OnMyAttack": {                   // 만일 스킬의 타겟 대상이 광역일 경우 타겟을 참조하는 조건은 동작하지 않음
+                "NotTargetBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"] // 적이 보호막 상태가 아닐 경우
+            }
+        },
+        {
+            "Id": 31011,
+            // 자신이 공격 시
+            "OnMyAttack": {                   // 만일 스킬의 타겟 대상이 광역일 경우 타겟을 참조하는 조건은 동작하지 않음
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "TargetBuffStrId": ["BI_HAPPY68_MAD_1"] // 적이 저주의 실 상태일 경우
+            }
+        },
+        {
+            "Id": 31012,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 31013,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 31014,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 31015,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 31016,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 31017,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 31018,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 31019,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 31020,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 31021,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 31022,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 31023,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 31024,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 31025,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 31026,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 31027,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 31028,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 31029,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 31030,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 31031,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 31032,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 31033,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 31034,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 31035,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 31036,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 31037,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "SkillIndex": "NSI_SKILL_3_HYPER", // 궁극기
+                "TargetBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"], // 적이 보호막 상태일 경우
+                "RateDamageUp": true // 해당 기능이 부착되면 전체 공격시 피해량 증가 효과를 개별적으로 적용합니다.
+            }
+        },
+        {
+            "Id": 31038,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "TargetBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"], // 적이 보호막 상태일 경우
+                "RateDamageUp": true // 해당 기능이 부착되면 전체 공격시 피해량 증가 효과를 개별적으로 적용합니다.
+            }
+        },
+        {
+            "Id": 31039,
+            // 자신이 공격 시
+            "OnMyAttack": {         
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+
+//No.32--------------------------공용 버프 조건 판단-------------------------------------
+//-------------------------------스킬 사용 후 버프 조건----------------------------------
+        {
+            "Id": 32000,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "TargetBuffStrId": ["BI_BURN"] // 적이 화상 상태일 경우
+            }
+        },
+        {
+            "Id": 32001,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_HIDE"] // 자신이 은신 상태일 경우
+            }
+        },
+        {
+            "Id": 32002,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"] // 자신이 보호막 상태일 경우
+            }
+        },
+        {
+            "Id": 32003,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "TargetBuffStrId": ["BI_FREEZING"] // 적이 빙결 상태일 경우
+            }
+        },
+        {
+            "Id": 32004,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "TargetNegativeBuff": true, // 적이 약화 효과 상태일 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        }, 
+        {
+            "Id": 32005,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "TargetBuffStrId": ["BI_BURN"], // 적이 연소 상태일 경우
+                "SkillIndex": "NSI_SKILL_3_HYPER" // 궁극기
+            }
+        },
+        {
+            "Id": 32006,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_GUARD"], // 자신이 수호 상태일 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 32007,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "TargetBuffStrId": ["BI_BURN"], // 적이 연소 상태일 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 32008,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "TargetBuffStrId": ["BI_FREEZING"], // 적이 빙결 상태일 경우
+                "SkillIndex": "NSI_SKILL_3_HYPER" // 궁극기
+            }
+        },
+        {
+            "Id": 32009,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_SPEED_INCREASE"] // 자신이 속도 증가 버프 상태일 경우
+            }
+        },
+        {
+            "Id": 32100,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "TargetBuffStrId": ["BI_BURN"], // 적이 화상 상태일 경우
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 32101,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "SelfBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"] // 자신이 보호막 상태일 경우
+            }
+        },
+        {
+            "Id": 32102,
+            // 자신이 공격 후
+            "AfterMyAttack": { 
+                "ExistEnemySpecificBuff": ["BI_POISON"] // 적 누군가 중독 상태일 경우
+            }
+        },
+        {
+            "Id": 32103,
+            // 자신이 공격 후
+            "AfterMyAttack": { 
+                "NotTargetBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"] // 적이 보호막 상태가 아닐 경우
+            }
+        },
+        {
+            "Id": 32104,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 32105,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 32106,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 32107,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 32108,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 32109,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 32110,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 32111,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 32112,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 32113,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 32114,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 32115,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 32116,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 32117,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 32118,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 32119,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 32120,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 32121,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 32122,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 32123,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 32124,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 32125,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 32126,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 32127,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 32128,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 32129,
+            // 자신이 공격 후
+            "AfterMyAttack": {         
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+//No.34--------------------------공용 버프 조건 판단-------------------------------------
+//-------------------------------내가 비타격 스킬을 사용한 경우 버프 조건----------------------------------
+
+        {
+            "Id": 34001,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 34002,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {          
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 34003,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {           
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 34004,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {           
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 34005,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 34006,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 34007,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 34008,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 34009,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 34010,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 34011,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 34012,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 34013,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 34014,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 34015,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 34016,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 34017,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 34018,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 34019,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 34020,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 34021,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 34022,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 34023,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 34024,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 34025,
+            // 자신이 비타격 스킬을 사용한 후
+            "AfterMyNonAttack": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+//----------------공용 버프 조건 판단-------------------------------------
+//-------------------------------내가 맞은 경우 버프 조건----------------------------------
+        {
+            "Id": 35000,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SelfBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"] // 내가 보호막 상태인 경우
+            }
+        },
+        {
+            "Id": 35001,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "NotSelfBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"] // 내가 보호막 상태가 아닌 경우
+            }
+        },
+        {
+            "Id": 35002,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "CasterBuffStrId": ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"] // 적이 보호막 상태인 경우
+            }
+        },
+        {
+            "Id": 35003,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "CasterBuffStrId": ["BI_AGGRO"], // 적이 도발 상태인 경우
+                "NotSelfBuffStrId": ["BI_STUN", "BI_SLEEP"] // 내가 도발 상태거나 수면 상태가 아닌 경우
+            }
+        },
+        {
+            "Id": 35004,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 35005,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 35006,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 35007,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 35008,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 35009,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 35010,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 35011,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 35012,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 35013,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 35014,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 35015,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 35016,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 35017,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 35018,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 35019,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 35020,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 35021,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 35022,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 35023,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 35024,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 35025,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 35026,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 35027,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 35028,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+//No.35.5--------------------------공용 버프 조건 판단-------------------------------------
+//-------------------------------내가 피격 전 경우 버프 조건----------------------------------
+        {
+            "Id": 35501,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 35502,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {       
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 35503,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {        
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 35504,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {        
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 35505,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {         
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 35506,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {        
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 35507,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {       
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 35508,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {       
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 35509,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {      
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 35510,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {     
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 35511,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 35512,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 35513,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 35514,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 35515,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 35516,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 35517,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 35518,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 35519,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 35520,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 35521,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 35522,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 35523,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 35524,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 35525,
+            // 내가 피격 전 경우
+            "MyEffectiveDamageStart": {
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+//No.36--------------------------공용 버프 조건 판단-------------------------------------
+//-------------------------------아군이 맞은 경우 버프 조건----------------------------------
+        {
+            "Id": 36001,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 36002,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함       
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 36003,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함        
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 36004,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함      
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 36005,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함       
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_SUN"], // 자신이 점화 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 36006,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함       
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 36007,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함       
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 36008,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함       
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 36009,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함       
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 36010,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함       
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_STAR"], // 자신이 도약 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 36011,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함       
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 36012,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함     
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 36013,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함     
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 36014,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 36015,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함   
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_MOON"], // 자신이 냉각 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 36016,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함   
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 36017,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함      
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 36018,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함      
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 36019,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함      
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 36020,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함   
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_CHAOS"], // 자신이 격동 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+        {
+            "Id": 36021,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함    
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 1   //1레벨일 경우
+            }
+        },
+        {
+            "Id": 36022,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함      
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 2   //2레벨일 경우
+            }
+        },
+        {
+            "Id": 36023,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함     
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 3   //3레벨일 경우
+            }
+        },
+        {
+            "Id": 36024,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함   
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 4   //4레벨일 경우
+            }
+        },
+        {
+            "Id": 36025,
+            // 아군이 맞은 경우
+            "AllyEffectiveHit": {
+                "IncludeSelf": true,    // 자신 포함    
+                "SelfBuffStrId": ["BI_ADJUSTTYPE_RESOURCE_ORDER"], // 자신이 통찰 상태일 경우
+                "SelfBuffLevelCount": 5   //5레벨일 경우
+            }
+        },
+//No.38--------------------------공용 버프 조건 판단-------------------------------------
+//-------------------------------자신이 행동 후 버프 조건----------------------------------
+        {
+            "Id": 38001,
+            // 내가 행동 후
+            "AfterMyAction": {
+                "ExistEnemySpecificBuff": ["BI_POISON"]
+            }
+        },
+        {
+            "Id": 38002,
+            // 내가 행동 후
+            "AfterMyAction": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 기본 공격
+                "SelfBuffStrId": ["BI_CHARM_50620061"] // 자신이 과충전 버프 상태일 경우(부적)
+            }
+        },
+        {
+            "Id": 38003,
+            // 내가 행동 후
+            "AfterMyAction": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 기본 공격
+                "ExistEnemySpecificBuff": ["BI_POISON"]
+            }
+        },
+//No.??--------------------------공용 버프 조건 판단-------------------------------------
+//-------------------------------아군이 타격 후 버프 조건----------------------------------
+        {
+            "Id": 40400,
+            // 아군이 타격 후
+            "AfterAllyAttack": {
+            }
+        },
+//No.51--------------------------고유 버프 조건 판단-------------------------------------
+//-------------------------------스킬 사용 시 버프 조건----------------------------------
+        // {
+        //     "Id": 51000,
+        //     // 자신이 공격 시
+        //     "OnMyAttack": {
+        //         "SelfBuffStrId": ["BI_BUNNY_KNIGHT_1"] // 자신이 행운 토큰 버프 상태일 경우(바니걸 샤를) //해당 조건 사용하지 않음
+        //     }
+        // },
+        {
+            "Id": 51001,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "SelfBuffStrId": ["BI_EASTERN_SWORDMASTER_1"] // 자신이 청죽만검 버프 상태일 경우(린)
+            }
+        },
+        {
+            "Id": 51002,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "SelfBuffStrId": ["BI_BUNNY_SCISSORS_1"] // 자신이 에이스 버프 상태일 경우(바니걸 스칼렛)
+            }
+        },
+        {
+            "Id": 51003,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "TargetBuffStrId": ["BI_SUMMER_SMILE_1"] // 적이 사소한 관심 디버프 상태일 경우(수영복 스마일)
+            }
+        },
+        {
+            "Id": 53001,
+            // 자신이 일반기 사용시
+            "OnMyNonAttack": { //기능 이슈로 임시로 일반기 사용후로 작업 진행, 이후 해결되면 사용시로 변경 예정
+                "SelfBuffStrId": ["BI_DOLL_BOMBER_1"], // 자신이 태엽 가속 버프 상태일 경우(인형 봄버)    
+                "SkillIndex": "NSI_SKILL_1_ATTACK" // 일반 공격
+            }
+        },
+        {
+            "Id": 51004,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "SelfBuffStrId": ["BI_STARPIERCER_OMEGA_1"], // 자신이 오메가 레벨 버프 상태일 경우(오메가)/ 특수기 발동 제어용
+                "SelfBuffLevelCount": 2  //오메가 레벨 버프가 2레벨 일 때(특수기 두번 째 공격)
+            }
+        },
+        {
+            "Id": 51005,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "SelfBuffStrId": ["BI_STARPIERCER_OMEGA_1"], // 자신이 오메가 레벨 버프 상태일 경우(오메가)/ 특수기 발동 제어용
+                "SelfBuffLevelCount": 3 //오메가 레벨 버프가 3레벨 일 때(특수기 세번 째 공격)
+            }
+        },
+        {
+            "Id": 51006,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "SelfBuffStrId": ["BI_FALLEN_DUALSWORD_1"] // 자신이 공허 방패 버프 상태일 경우(황혼의 몰락자)
+            }
+        },
+        {
+            "Id": 51007,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "TargetBuffStrId": ["BI_COHESION_FLOWER_1"] // 적이 공허 포자 디버프 상태일 경우(공허응집자)
+            }
+        },
+        {
+            "Id": 51008,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "SkillIndex": "NSI_SKILL_3_HYPER", // 궁극기
+                "TargetBuffStrId": ["BI_COHESION_FLOWER_1"] // 적이 공허 포자 디버프 상태일 경우(공허응집자)
+            }
+        },
+        {
+            "Id": 51009,
+            // 자신이 공격 후
+            "OnMyAttack": { // 로자리아 레벨 버프 1레벨 조건
+                "SelfBuffStrId": ["BI_HELLFIRE_1"], // 자신이 로자리아 레벨 버프 상태일 경우(로자리아)
+                "SelfBuffLevelCount": 1 //로자리아 레벨 버프가 1레벨일 경우
+            }
+        },
+        {
+            "Id": 51010,
+            // 자신이 공격 후
+            "OnMyAttack": { // 로자리아 레벨 버프 2레벨 조건
+                "SelfBuffStrId": ["BI_HELLFIRE_1"], // 자신이 로자리아 레벨 버프 상태일 경우(로자리아)
+                "SelfBuffLevelCount": 2 //로자리아 레벨 버프가 2레벨일 경우
+            }
+        },
+        {
+            "Id": 51011,
+            // 자신이 공격 후
+            "OnMyAttack": { // 로자리아 레벨 버프 3레벨 조건
+                "SelfBuffStrId": ["BI_HELLFIRE_1"], // 자신이 로자리아 레벨 버프 상태일 경우(로자리아)
+                "SelfBuffLevelCount": 3 //로자리아 레벨 버프가 3레벨일 경우
+            }
+        },        
+        {
+            "Id": 51012,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "TargetBuffStrId": ["BI_COHESION_FLOWER_1"], // 적이 공허 포자 디버프 상태일 경우(공허응집자)
+                "SelfBuffStrId": ["BI_COHESION_FUSION_1"],
+                "RateDamageUp": true
+            }
+        },        
+        {
+            "Id": 51013,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "TargetBuffStrId": ["BI_DEMORAIGIS_CORE_1"], // 적이 스며드는 공포 상태일 경우(데모라이기스)
+            }
+        },
+        {
+            "Id": 51014,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "TargetBuffStrId": ["BI_INDEPENDENT_DRAGON_1"] // 적이 뒤엉킨 꿈결 상태일 경우(레이시)
+            }
+        },
+        {
+            "Id": 51015,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "SelfBuffStrId": ["BI_DEMORAIGIS_CORE_LIGHT_1"], // 자신이 끝없는 장막 상태인 경우
+                "BuffCountOver": 3
+            }
+        },
+        {
+            "Id": 51016,
+            // 자신이 공격 시
+            "OnMyAttack": {
+                "SelfBuffStrId": ["BI_DEMORAIGIS_CORE_LIGHT_1"], // 자신이 끝없는 장막 상태인 경우
+                "BuffCountOver": 5
+            }
+        },
+//No.52--------------------------고유 버프 조건 판단-------------------------------------
+//-------------------------------스킬 사용 후 버프 조건----------------------------------
+        // {
+        //     "Id": 52000,
+        //     // 자신이 공격 후
+        //     "AfterMyAttack": {
+                //빈곳입니다. 새로운 고유 버프 조건이 들어오면 됩니다.
+        //     }
+        // },
+        {
+            "Id": 52001,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_BUNNY_KNIGHT_1"], // 자신이 행운 토큰 버프 상태일 경우(바니걸 샤를)
+                "SelfBuffLevelCount": 3
+            }
+        },
+        {
+            "Id": 52004,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_BUNNY_SCISSORS_1"] // 자신이 에이스 버프 상태일 경우(바니걸 스칼렛)
+            }
+        },
+        {
+            "Id": 52005,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "NotSelfBuffStrId": ["BI_BUNNY_SCISSORS_1"] // 자신이 에이스 버프 상태가 아닐 경우(바니걸 스칼렛)
+            }
+        },
+        {
+            "Id": 52006,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "TargetBuffStrId": ["BI_SUMMER_SMILE_1"] // 적이 사소한 관심 디버프 상태일 경우(수영복 스마일)
+            }
+        },
+        {
+            "Id": 52007,
+            // 자신이 공격 후
+            "AfterMyAttack": { 
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 일반 공격
+                "SelfBuffStrId": ["BI_WEST_BEAMSWORD_2"] // 돌파 베기 사용 후 자신이 압도적인 힘 상태일 경우(세레스 부적)
+            }
+        },
+        {
+            "Id": 52008,
+            // 자신이 공격 후
+            "AfterMyAttack": { 
+                "SelfBuffStrId": ["BI_CHARM_5011511_2"], // 좀 멀리 떨어져봐(일반기) 사용 후 자신이 부적 레벨 버프 상태일 경우(클라리사 부적)
+                "SelfBuffLevelCount": 3 //부적 레벨 버프가 2스택일 경우
+            }
+        },
+        {
+            "Id": 52009,
+            // 자신이 공격 후
+            "AfterMyAttack": { //적 처치와 오메가 레벨 버프 1레벨 조건이 동시에 만족해야 함(특수기 두 번째 공격 준비)
+                "EliminateEnemy": true,   //적 처치 
+                "SelfBuffStrId": ["BI_STARPIERCER_OMEGA_1"], // 자신이 오메가 레벨 버프 상태일 경우(오메가)/ 특수기 발동 제어용
+                "SelfBuffLevelCount": 1 //오메가 레벨 버프가 1레벨일 경우
+            }
+        },
+        {
+            "Id": 52010,
+            // 자신이 공격 후
+            "AfterMyAttack": { //적 처치와 오메가 레벨 버프 2레벨 조건이 동시에 만족해야 함(특수기 세 번째 공격 준비)
+                "EliminateEnemy": true,   //적 처치
+                "SelfBuffStrId": ["BI_STARPIERCER_OMEGA_1"], // 자신이 오메가 레벨 버프 상태일 경우(오메가)/ 특수기 발동 제어용
+                "SelfBuffLevelCount": 2 //오메가 레벨 버프가 2레벨일 경우
+            }
+        },
+        {
+            "Id": 52011,
+            // 자신이 공격 후
+            "AfterMyAttack": { //오메가 레벨 버프 3레벨 조건(레벨 버프 초기화용2)
+                "SelfBuffStrId": ["BI_STARPIERCER_OMEGA_1"], // 자신이 오메가 레벨 버프 상태일 경우(오메가)/ 특수기 발동 제어용
+                "SelfBuffLevelCount": 3 //오메가 레벨 버프가 3레벨일 경우
+            }
+        },
+        {
+            "Id": 52012,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "TargetBuffStrId": ["BI_PUNISHER_SWORD_1"] // 적이 낙인 디버프 상태일 경우(공허징벌자)
+            }
+        },
+        {
+            "Id": 52013,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 기본 공격
+                "SelfBuffStrId": ["BI_CHARM_50620061"] // 자신이 과충전 버프 상태일 경우(부적)
+            }
+        },
+        {
+            "Id": 52014,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 기본 공격
+                "TargetBuffStrId": ["BI_CHARM_50620071"] // 적이 파쇄 디버프 상태일 경우(부적)
+            }
+        },
+        {
+            "Id": 52015,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_PERSES_SWORD_1"] // 자신이 원령 버프 상태일 경우
+            }
+        },
+        {
+            "Id": 52016,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_VETERAN_SHIELD_1"] // 자신이 황금의 의지 상태일 경우(황금기사)
+            }
+        },
+        {
+            "Id": 52017,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_FALLEN_DUALSWORD_1"] // 자신이 공허 방패 버프 상태일 경우(황혼의 몰락자)
+            }
+        },
+        {
+            "Id": 52018,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "TargetBuffStrId": ["BI_COHESION_FLOWER_1"] // 적이 공허 포자 디버프 상태일 경우(공허응집자)
+            }
+        },
+        {
+            "Id": 52019,
+            // 자신이 공격 후
+            "AfterMyAttack": { // 로자리아 레벨 버프 3레벨 조건
+                "SelfBuffStrId": ["BI_HELLFIRE_1"], // 자신이 로자리아 레벨 버프 상태일 경우(로자리아)
+                "SelfBuffLevelCount": 3 //로자리아 레벨 버프가 3레벨일 경우
+            }
+        },
+        {
+            "Id": 52020,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_PILGRIM_ALIEN_2"] // 자신이 금제1 버프 상태일 경우(공허순례례자)
+            }
+        },
+        {
+            "Id": 52021,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_PILGRIM_ALIEN_3"] // 자신이 금제2 버프 상태일 경우(공허순례례자)
+            }
+        },
+        {
+            "Id": 52022,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_RECON_AMULET_BOSS_CUBE_1"] // 자신이 소멸부 버프 상태일 경우(큐브 팰리스 루그)
+            }
+        },
+        {
+            "Id": 52023,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_TUNER_CROWN_2"], // 자신이 조율 버프 상태일 경우(공허조율자)
+                "SelfBuffLevelCount": 3 //조율이 3레벨일 경우
+            }
+        },
+        {
+            "Id": 52024,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_TUNER_CROWN_2"], // 자신이 조율 버프 상태일 경우(공허조율자)
+                "SelfBuffLevelCount": 4 //조율이 4레벨일 경우
+            }
+        },
+        {
+            "Id": 52025,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_TUNER_CROWN_2"], // 자신이 조율 버프 상태일 경우(공허조율자)
+                "SelfBuffLevelCount": 5 //조율이 5레벨일 경우
+            }
+        },
+        {
+            "Id": 52026,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_EXCEED_EYES_1"], // 자신이 어긋난 본질 버프 상태일 경우(공허초월자)                
+            }
+        },
+        {
+            "Id": 52027,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_EXCEED_EYES_2"], // 자신이 뒤집힌 진리 버프 상태일 경우(공허초월자)                
+            }
+        },
+        {
+            "Id": 52028,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_EXCEED_EYES_3"], // 자신이 왜곡된 섭리 버프 상태일 경우(공허초월자)                
+            }
+        },
+        {
+            "Id": 52029,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_EASTERN_SWORDMASTER_1"] // 자신이 청죽만검 버프 상태일 경우(린)
+            }
+        },
+        {
+            "Id": 52030,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_WENDIGO_SNOW_1"] // 자신이 혹한의 서리 버프 상태일 경우(웬디고)
+            }
+        },
+        {
+            "Id": 52031,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", //기본기 사용
+                "TargetBuffStrId": ["BI_INDEPENDENT_DRAGON_1"] // 적이 뒤엉킨 꿈결 상태인 경우
+            }
+        },
+        {
+            "Id": 52032,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_DEMORAIGIS_CORE_LIGHT_1"], // 자신이 끝없는 장막 상태인 경우
+                "BuffCountOver": 4
+            }
+        },
+        {
+            "Id": 52033,
+            // 자신이 공격 후
+            "AfterMyAttack": {
+                "SelfBuffStrId": ["BI_DEMORAIGIS_CORE_LIGHT_1"], // 자신이 끝없는 장막 상태인 경우
+                "BuffCountOver": 6
+            }
+        },
+        
+//No.54--------------------------고유 버프 조건 판단-------------------------------------
+//-------------------------------비타격 스킬 사용한 경우 조건-------------------------------------
+        {
+            "Id": 54000,
+            // 자신이 비타격 스킬 사용 후
+            "AfterMyNonAttack": { 
+                "SelfBuffStrId": ["BI_CHARM_5011507_1"] // 자신이 배달 의지 버프 상태일 경우(베라 부적)
+            }
+        },
+        {
+            "Id": 54001,
+            // 자신이 비타격 스킬 사용 후
+            "AfterMyNonAttack": { 
+                "ExistEnemySpecificBuff": ["BI_POISON"] // 적 누군가 중독 상태일 경우
+            }
+        },
+//No.55--------------------------고유 버프 조건 판단-------------------------------------
+//-------------------------------내가 맞은 경우 조건-------------------------------------
+        {
+            "Id": 55100,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SelfBuffStrId": ["BI_DEMORAIGIS_CORE_3"], // 자신이 죄어오는 어둠의 장막 버프 상태일 경우(데모라이기스)
+                "SelfBuffLevelCount" : 5  // 지정 버프가 5레벨일 시
+            }
+        },
+        {
+            "Id": 55102,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_1_ATTACK", // 기본 공격
+                "SelfBuffStrId": ["BI_MOGULUS_CROWN_2"] // 자신이 어두운 집념 상태일 경우 (모굴루스)
+            }
+        },
+        {
+            "Id": 55103,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_2_SPECIAL", // 특수기 공격
+                "CasterBuffStrId": ["BI_MOGULUS_CROWN_1"] // 적이 몰락한 사념 상태일 경우 (모굴루스)
+            }
+        },
+        {
+            "Id": 55104,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_3_HYPER", // 궁극기 공격
+                "CasterBuffStrId": ["BI_MOGULUS_CROWN_1"] // 적이 몰락한 사념 상태일 경우 (모굴루스)
+            }
+        },
+        {
+            "Id": 55105,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SelfBuffStrId": ["BI_VETERAN_BARON_2"] // 자신이 전장의 검술 상태일 경우 (밴더빌트)
+            }
+        },
+        {
+            "Id": 55106,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "EnemyNegativeBuff": true, //적이 약화 효과를 가지고 있을 경우
+                "BuffCountOver": 3 // 그 효과가 3개 이상일 때
+            }
+        },
+        {
+            "Id": 55107,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "CasterBuffStrId": ["BI_BELLWETHER_MANE_1"] // 적이 영혼 구속 상태일 경우 (공허선도자)
+            }
+        },
+        {
+            "Id": 55108,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "CasterBuffStrId": ["BI_COHESION_FLOWER_1"] // 적이 공허 포자 상태일 경우 (공허응집자)
+            }
+        },
+        {
+            "Id": 55109,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_2_SPECIAL", // 특수기 공격
+                "NotSelfBuffStrId": ["BI_PILGRIM_ALIEN_2","BI_PILGRIM_ALIEN_3"] // 내가 금제1 상태거나 금제2 상태가 아닐 경우
+            }
+        },
+        {
+            "Id": 55110,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_3_HYPER", // 궁극기 공격
+                "NotSelfBuffStrId": ["BI_PILGRIM_ALIEN_2","BI_PILGRIM_ALIEN_3"] // 내가 금제1 상태거나 금제2 상태가 아닐 경우
+            }
+        },
+        {
+            "Id": 55111,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_2_SPECIAL", // 특수기 공격
+                "SelfBuffStrId": ["BI_PILGRIM_ALIEN_2"] // 내가 금제1 상태일 경우
+            }
+        },
+        {
+            "Id": 55112,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SkillIndex": "NSI_SKILL_3_HYPER", // 궁극기 공격
+                "SelfBuffStrId": ["BI_PILGRIM_ALIEN_3"] // 내가 금제2 상태일 경우
+            }
+        },        
+        {
+            "Id": 55113,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SelfBuffStrId": ["BI_TUNER_CROWN_1"], // 자신이 절망의 선율 레벨 버프 상태일 경우(공허조율자)
+                "SelfBuffLevelCount": 9 //절망의 선율 레벨 버프가 9레벨일 경우
+            }
+        },
+        {
+            "Id": 55114,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SelfBuffStrId": ["BI_CHARM_50630031"], // 자신이 연작의 딥펜 레벨 버프 상태일 경우(부적)
+                "SelfBuffLevelCount": 3 //연작의 딥펜 레벨 버프가 2레벨일 경우
+            }
+        },
+        {
+            "Id": 55115,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SelfBuffStrId": ["BI_WENDIGO_SNOW_2"], // 자신이 끝 없는 냉기 분노 레벨 버프 상태일 경우(웬디고)
+                "SelfBuffLevelCount": 5 //끝 없는 냉기 분노 레벨 버프가 5레벨일 경우
+            }
+        },
+        {
+            "Id": 55116,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SelfBuffStrId": ["BI_FALLEN_DUALSWORD_1"] // 자신이 공허 방패 상태일 경우 (공허절멸자)
+            }
+        },
+        {
+            "Id": 55117,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "ExistEnemySpecificBuff": ["BI_MOGULUS_CROWN_1"] // 적 누군가 몰락한 사념 상태일 경우(모굴루스)
+            }
+        },
+        {
+            "Id": 55118,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "CasterBuffStrId": ["BI_INDEPENDENT_DRAGON_1"] // 적이 뒤엉킨 꿈결 상태인 경우
+            }
+        },
+        {
+            "Id": 55119,
+            // 내가 맞은 경우
+            "MyEffectiveHit": {
+                "SelfBuffStrId": ["BI_CARBONPUNK_LORD_2"] // 자신이 퀵 시프트 상태일 경우 (카본펑크 칸)
+            }
+        },
+
+//No.56--------------------------고유 버프 조건 판단-------------------------------------
+//-------------------------------내가 맞은 경우 조건(DamageStart)------------------------
+        {
+            "Id": 55501,
+            // 피격 전에
+            "MyEffectiveDamageStart": {
+                "CasterBuffStrId": ["BI_SUMMER_SMILE_1"]
+            }
+        },
+    ]
+}
