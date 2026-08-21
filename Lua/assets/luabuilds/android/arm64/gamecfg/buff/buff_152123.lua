@@ -1,0 +1,181 @@
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				number = 100,
+				attr = "attackRating"
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddAttrRatio",
+				trigger = {
+					"onAttach",
+					"onStack"
+				},
+				arg_list = {
+					number = 100,
+					attr = "attackRating"
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddAttrRatio",
+				trigger = {
+					"onAttach",
+					"onStack"
+				},
+				arg_list = {
+					number = 200,
+					attr = "attackRating"
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddAttrRatio",
+				trigger = {
+					"onAttach",
+					"onStack"
+				},
+				arg_list = {
+					number = 300,
+					attr = "attackRating"
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddAttrRatio",
+				trigger = {
+					"onAttach",
+					"onStack"
+				},
+				arg_list = {
+					number = 400,
+					attr = "attackRating"
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddAttrRatio",
+				trigger = {
+					"onAttach",
+					"onStack"
+				},
+				arg_list = {
+					number = 500,
+					attr = "attackRating"
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddAttrRatio",
+				trigger = {
+					"onAttach",
+					"onStack"
+				},
+				arg_list = {
+					number = 600,
+					attr = "attackRating"
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddAttrRatio",
+				trigger = {
+					"onAttach",
+					"onStack"
+				},
+				arg_list = {
+					number = 700,
+					attr = "attackRating"
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddAttrRatio",
+				trigger = {
+					"onAttach",
+					"onStack"
+				},
+				arg_list = {
+					number = 800,
+					attr = "attackRating"
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddAttrRatio",
+				trigger = {
+					"onAttach",
+					"onStack"
+				},
+				arg_list = {
+					number = 900,
+					attr = "attackRating"
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddAttrRatio",
+				trigger = {
+					"onAttach",
+					"onStack"
+				},
+				arg_list = {
+					number = 1000,
+					attr = "attackRating"
+				}
+			}
+		}
+	},
+	name = "命中",
+	init_effect = "jinengchufared",
+	time = 0,
+	picture = "",
+	desc = "属性提升",
+	stack = 3,
+	id = 152123,
+	icon = 152120,
+	last_effect = ""
+}

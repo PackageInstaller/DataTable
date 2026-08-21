@@ -1,0 +1,38 @@
+﻿local var_0_0 = class("BattleGate")
+
+ys.Battle.BattleGate = var_0_0
+var_0_0.__name = "BattleGate"
+var_0_0.Gates = {
+	[SYSTEM_PROLOGUE] = ys.Battle.BattleGatePrologue,
+	[SYSTEM_PERFORM] = ys.Battle.BattleGatePerform,
+	[SYSTEM_SIMULATION] = ys.Battle.BattleGateSimulation,
+	[SYSTEM_DODGEM] = ys.Battle.BattleGateDodgem,
+	[SYSTEM_SUBMARINE_RUN] = ys.Battle.BattleGateSubmarine,
+	[SYSTEM_REWARD_PERFORM] = ys.Battle.BattleGateRewardPerform,
+	[SYSTEM_AIRFIGHT] = ys.Battle.BattleGateAirFight,
+	[SYSTEM_SCENARIO] = ys.Battle.BattleGateScenario,
+	[SYSTEM_ROUTINE] = ys.Battle.BattleGateRoutine,
+	[SYSTEM_SUB_ROUTINE] = ys.Battle.BattleGateSubRoutine,
+	[SYSTEM_BOSS_RUSH] = ys.Battle.BattleGateBossRush,
+	[SYSTEM_BOSS_RUSH_EX] = ys.Battle.BattleGateBossRushEX,
+	[SYSTEM_BOSS_RUSH_COLLABRATE] = ys.Battle.BattleGateBossRushCollabrate,
+	[SYSTEM_DUEL] = ys.Battle.BattleGateDuel,
+	[SYSTEM_SCENARIO_SUB_STRIKE] = ys.Battle.BattleGateScenarioSubStrike,
+	[SYSTEM_ACT_BOSS] = ys.Battle.BattleGateActBoss,
+	[SYSTEM_HP_SHARE_ACT_BOSS] = ys.Battle.BattleGateHPShareActBoss,
+	[SYSTEM_BOSS_EXPERIMENT] = ys.Battle.BattleGateBossExperiment,
+	[SYSTEM_ACT_BOSS_SP] = ys.Battle.BattleGateActBossSP,
+	[SYSTEM_CHALLENGE] = ys.Battle.BattleGateChallenge,
+	[SYSTEM_LIMIT_CHALLENGE] = ys.Battle.BattleGateLimitChallenge,
+	[SYSTEM_WORLD] = ys.Battle.BattleGateWorld,
+	[SYSTEM_WORLD_BOSS] = ys.Battle.BattleGateWorldBoss,
+	[SYSTEM_WORLD_BOSS_SIMULATE] = ys.Battle.BattleGateWorldBossSimulate,
+	[SYSTEM_GUILD] = ys.Battle.BattleGateGuild,
+	[SYSTEM_DEBUG] = ys.Battle.BattleGateDebug,
+	[SYSTEM_TEST] = ys.Battle.BattleGateTest,
+	[SYSTEM_CARDPUZZLE] = ys.Battle.BattleGateCardPuzzle,
+	[SYSTEM_BOSS_SINGLE] = ys.Battle.BattleGateBossSingle,
+	[SYSTEM_BOSS_SINGLE_VARIABLE] = ys.Battle.BattleGateBossSingleVariable
+}
+
+return var_0_0

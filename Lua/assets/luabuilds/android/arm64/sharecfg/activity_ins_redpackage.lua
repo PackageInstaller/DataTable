@@ -1,0 +1,194 @@
+﻿pg = pg or {}
+pg.activity_ins_redpackage = rawget(pg, "activity_ins_redpackage") or setmetatable({
+	__name = "activity_ins_redpackage"
+}, confNEO)
+pg.activity_ins_redpackage.all = {
+	1000,
+	1001,
+	1002,
+	1003,
+	1004,
+	1005
+}
+pg.base = pg.base or {}
+pg.base.activity_ins_redpackage = {}
+
+;(function()
+	pg.base.activity_ins_redpackage[1000] = {
+		type = 2,
+		id = 1000,
+		desc = "新年快乐，财源滚滚",
+		content = {
+			1,
+			1,
+			648
+		},
+		group_receive = {
+			{
+				50102,
+				1,
+				1,
+				46
+			},
+			{
+				0,
+				1,
+				1,
+				648
+			},
+			{
+				50101,
+				1,
+				1,
+				300
+			}
+		}
+	}
+	pg.base.activity_ins_redpackage[1001] = {
+		type = 2,
+		id = 1001,
+		desc = "新年吃好喝好！",
+		content = {
+			1,
+			1,
+			233
+		},
+		group_receive = {
+			{
+				50102,
+				1,
+				1,
+				15
+			},
+			{
+				0,
+				1,
+				1,
+				233
+			},
+			{
+				50107,
+				1,
+				1,
+				320
+			},
+			{
+				50104,
+				1,
+				1,
+				100
+			}
+		}
+	}
+	pg.base.activity_ins_redpackage[1002] = {
+		type = 2,
+		id = 1002,
+		desc = "新年天天开心",
+		content = {
+			1,
+			1,
+			88
+		},
+		group_receive = {
+			{
+				50102,
+				1,
+				1,
+				6
+			},
+			{
+				0,
+				1,
+				1,
+				88
+			},
+			{
+				50602,
+				1,
+				1,
+				426
+			}
+		}
+	}
+	pg.base.activity_ins_redpackage[1003] = {
+		group_receive = "",
+		type = 1,
+		id = 1003,
+		desc = "指挥官新年快乐",
+		content = {
+			1,
+			1,
+			888
+		}
+	}
+	pg.base.activity_ins_redpackage[1004] = {
+		type = 2,
+		id = 1004,
+		desc = "新年红包来咯！",
+		content = {
+			1,
+			1,
+			666
+		},
+		group_receive = {
+			{
+				50107,
+				1,
+				1,
+				88
+			},
+			{
+				0,
+				1,
+				1,
+				666
+			},
+			{
+				50210,
+				1,
+				1,
+				202
+			},
+			{
+				50109,
+				1,
+				1,
+				188
+			}
+		}
+	}
+	pg.base.activity_ins_redpackage[1005] = {
+		type = 2,
+		id = 1005,
+		desc = "祝指挥官和大家万事如意！",
+		content = {
+			1,
+			1,
+			888
+		},
+		group_receive = {
+			{
+				50301,
+				1,
+				1,
+				12
+			},
+			{
+				0,
+				1,
+				1,
+				888
+			},
+			{
+				50108,
+				1,
+				1,
+				188
+			}
+		}
+	}
+
+	return
+end)()
+
+return
